@@ -8,9 +8,8 @@ schema: 2.0.0
 # New-MgUserEvent
 
 ## SYNOPSIS
-Create one or more single-value extended properties in a new or existing instance of a resource.
-The following user resources are supported: The following group resources: See Extended properties overview for more information about when to use\nopen extensions or extended properties, and how to specify extended properties.
-This API is available in the following national cloud deployments.
+Create one or more multi-value extended properties in a new or existing instance of a resource.
+The following user resources are supported: The following group resources are supported: See Extended properties overview for more information about when to use\nopen extensions or extended properties, and how to specify extended properties.
 
 ## SYNTAX
 
@@ -71,9 +70,8 @@ New-MgUserEvent -InputObject <ICalendarIdentity> [-AdditionalProperties <Hashtab
 ```
 
 ## DESCRIPTION
-Create one or more single-value extended properties in a new or existing instance of a resource.
-The following user resources are supported: The following group resources: See Extended properties overview for more information about when to use\nopen extensions or extended properties, and how to specify extended properties.
-This API is available in the following national cloud deployments.
+Create one or more multi-value extended properties in a new or existing instance of a resource.
+The following user resources are supported: The following group resources are supported: See Extended properties overview for more information about when to use\nopen extensions or extended properties, and how to specify extended properties.
 
 ## EXAMPLES
 
@@ -1429,6 +1427,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[ExtensionId <String>]`: The unique identifier of extension
   - `[GroupId <String>]`: The unique identifier of group
   - `[PlaceId <String>]`: The unique identifier of place
+  - `[RoomId <String>]`: The unique identifier of room
   - `[UserId <String>]`: The unique identifier of user
 
 `INSTANCES <IMicrosoftGraphEvent[]>`: The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.

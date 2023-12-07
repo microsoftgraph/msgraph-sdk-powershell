@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Get the properties and relationships of a hostSslCertificate object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -65,7 +64,6 @@ Get-MgBetaSecurityThreatIntelligenceHostSslCertificate -HostId <String> [-Expand
 
 ## DESCRIPTION
 Get the properties and relationships of a hostSslCertificate object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

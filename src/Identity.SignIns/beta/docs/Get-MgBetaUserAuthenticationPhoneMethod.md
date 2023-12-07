@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Retrieve a single phoneAuthenticationMethod object.
 This method is available only for standard Microsoft Entra ID and B2B users, but not B2C users.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -36,7 +35,6 @@ Get-MgBetaUserAuthenticationPhoneMethod -InputObject <IIdentitySignInsIdentity> 
 ## DESCRIPTION
 Retrieve a single phoneAuthenticationMethod object.
 This method is available only for standard Microsoft Entra ID and B2B users, but not B2C users.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -271,6 +269,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[ActivityBasedTimeoutPolicyId <String>]`: The unique identifier of activityBasedTimeoutPolicy
   - `[AppManagementPolicyId <String>]`: The unique identifier of appManagementPolicy
   - `[AuthenticationCombinationConfigurationId <String>]`: The unique identifier of authenticationCombinationConfiguration
+  - `[AuthenticationConditionApplicationAppId <String>]`: The unique identifier of authenticationConditionApplication
   - `[AuthenticationContextClassReferenceId <String>]`: The unique identifier of authenticationContextClassReference
   - `[AuthenticationEventListenerId <String>]`: The unique identifier of authenticationEventListener
   - `[AuthenticationEventsFlowId <String>]`: The unique identifier of authenticationEventsFlow

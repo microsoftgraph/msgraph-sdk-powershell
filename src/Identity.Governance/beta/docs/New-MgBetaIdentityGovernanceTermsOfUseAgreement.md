@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new agreement object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -30,7 +29,6 @@ New-MgBetaIdentityGovernanceTermsOfUseAgreement -BodyParameter <IMicrosoftGraphA
 
 ## DESCRIPTION
 Create a new agreement object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

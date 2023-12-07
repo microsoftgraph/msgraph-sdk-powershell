@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Use this API to create a new itemPhone object in a user's profile.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -45,7 +44,6 @@ New-MgBetaUserProfilePhone -InputObject <IPeopleIdentity> [-AdditionalProperties
 
 ## DESCRIPTION
 Use this API to create a new itemPhone object in a user's profile.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new allowedValue object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -41,7 +40,6 @@ New-MgBetaDirectoryCustomSecurityAttributeDefinitionAllowedValue
 
 ## DESCRIPTION
 Create a new allowedValue object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

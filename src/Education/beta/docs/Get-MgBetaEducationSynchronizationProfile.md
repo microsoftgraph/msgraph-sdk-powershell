@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve a school data synchronization profile in the tenant based on the identifier.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -34,7 +33,6 @@ Get-MgBetaEducationSynchronizationProfile -InputObject <IEducationIdentity> [-Ex
 
 ## DESCRIPTION
 Retrieve a school data synchronization profile in the tenant based on the identifier.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

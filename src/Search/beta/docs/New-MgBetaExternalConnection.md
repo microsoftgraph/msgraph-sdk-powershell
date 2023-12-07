@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new externalConnection.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -37,7 +36,6 @@ New-MgBetaExternalConnection -BodyParameter <IMicrosoftGraphExternalConnectorsEx
 
 ## DESCRIPTION
 Create a new externalConnection.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

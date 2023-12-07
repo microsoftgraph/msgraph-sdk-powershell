@@ -12,7 +12,6 @@ Retrieve a callTranscript object associated with a scheduled onlineMeeting.
 This API doesn't support getting call transcripts from channel meetings.
 Retrieving the transcript returns the metadata of the single transcript associated with the online meeting.
 Retrieving the content of the transcript returns the stream of text associated with the transcript.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -40,7 +39,6 @@ Retrieve a callTranscript object associated with a scheduled onlineMeeting.
 This API doesn't support getting call transcripts from channel meetings.
 Retrieving the transcript returns the metadata of the single transcript associated with the online meeting.
 Retrieving the content of the transcript returns the stream of text associated with the transcript.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -297,6 +295,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[AudioRoutingGroupId <String>]`: The unique identifier of audioRoutingGroup
   - `[CallId <String>]`: The unique identifier of call
   - `[CallRecordId <String>]`: The unique identifier of callRecord
+  - `[CallRecordingId <String>]`: The unique identifier of callRecording
   - `[CallTranscriptId <String>]`: The unique identifier of callTranscript
   - `[CommsOperationId <String>]`: The unique identifier of commsOperation
   - `[ContentSharingSessionId <String>]`: The unique identifier of contentSharingSession

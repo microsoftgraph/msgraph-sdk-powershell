@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Retrieve a single phoneAuthenticationMethod object for a user.
 This method is available only for standard Microsoft Entra ID and B2B users, but not B2C users.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -36,7 +35,6 @@ Get-MgUserAuthenticationPhoneMethod -InputObject <IIdentitySignInsIdentity> [-Ex
 ## DESCRIPTION
 Retrieve a single phoneAuthenticationMethod object for a user.
 This method is available only for standard Microsoft Entra ID and B2B users, but not B2C users.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

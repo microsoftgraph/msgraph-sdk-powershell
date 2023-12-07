@@ -1,38 +1,38 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Beta.CrossDeviceExperiences
-online version: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.crossdeviceexperiences/get-mgbetauserdevice
+Module Name: Microsoft.Graph.Users
+online version: https://learn.microsoft.com/powershell/module/microsoft.graph.users/get-mgusertodolist
 schema: 2.0.0
 ---
 
-# Get-MgBetaUserDevice
+# Get-MgUserTodoList
 
 ## SYNOPSIS
-Get devices from users
+Read the properties and relationships of a todoTaskList object.
 
 ## SYNTAX
 
 ### List (Default)
 ```
-Get-MgBetaUserDevice -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgUserTodoList -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgBetaUserDevice -DeviceId <String> -UserId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
- [<CommonParameters>]
+Get-MgUserTodoList -TodoTaskListId <String> -UserId <String> [-ExpandProperty <String[]>]
+ [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgBetaUserDevice -InputObject <ICrossDeviceExperiencesIdentity> [-ExpandProperty <String[]>]
- [-Property <String[]>] [<CommonParameters>]
+Get-MgUserTodoList -InputObject <IUsersIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get devices from users
+Read the properties and relationships of a todoTaskList object.
 
 ## EXAMPLES
 
@@ -41,14 +41,8 @@ Get devices from users
 Import-Module Microsoft.Graph.Users
 ```
 
-{{ Add output here }}
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-{{ Add output here }}
+# A UPN can also be used as -UserId.
+Get-MgUserTodoList -UserId $userId
 
 ## PARAMETERS
 
@@ -77,21 +71,6 @@ Parameter Sets: List
 Aliases: CV
 
 Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -DeviceId
-The unique identifier of device
-
-```yaml
-Type: System.String
-Parameter Sets: Get
-Aliases:
-
-Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -133,7 +112,7 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.Beta.PowerShell.Models.ICrossDeviceExperiencesIdentity
+Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -219,6 +198,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -TodoTaskListId
+The unique identifier of todoTaskList
+
+```yaml
+Type: System.String
+Parameter Sets: Get
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Top
 Show only the first n items
 
@@ -254,11 +248,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.Beta.PowerShell.Models.ICrossDeviceExperiencesIdentity
+### Microsoft.Graph.PowerShell.Models.IUsersIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDevice
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTodoTaskList
 
 ## NOTES
 
@@ -269,14 +263,19 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-`INPUTOBJECT <ICrossDeviceExperiencesIdentity>`: Identity Parameter
-  - `[ActivityHistoryItemId <String>]`: The unique identifier of activityHistoryItem
-  - `[CommandId <String>]`: The unique identifier of command
-  - `[DeviceId <String>]`: The unique identifier of device
+`INPUTOBJECT <IUsersIdentity>`: Identity Parameter
+  - `[AttachmentBaseId <String>]`: The unique identifier of attachmentBase
+  - `[AttachmentSessionId <String>]`: The unique identifier of attachmentSession
+  - `[ChecklistItemId <String>]`: The unique identifier of checklistItem
   - `[DirectoryObjectId <String>]`: The unique identifier of directoryObject
   - `[ExtensionId <String>]`: The unique identifier of extension
-  - `[UsageRightId <String>]`: The unique identifier of usageRight
-  - `[UserActivityId <String>]`: The unique identifier of userActivity
+  - `[LicenseDetailsId <String>]`: The unique identifier of licenseDetails
+  - `[LinkedResourceId <String>]`: The unique identifier of linkedResource
+  - `[OAuth2PermissionGrantId <String>]`: The unique identifier of oAuth2PermissionGrant
+  - `[OutlookCategoryId <String>]`: The unique identifier of outlookCategory
+  - `[ProfilePhotoId <String>]`: The unique identifier of profilePhoto
+  - `[TodoTaskId <String>]`: The unique identifier of todoTask
+  - `[TodoTaskListId <String>]`: The unique identifier of todoTaskList
   - `[UserId <String>]`: The unique identifier of user
 
 ## RELATED LINKS

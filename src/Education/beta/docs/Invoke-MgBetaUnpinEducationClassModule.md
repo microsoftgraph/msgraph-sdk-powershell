@@ -11,7 +11,6 @@ schema: 2.0.0
 Unpin an educationModule in the classwork list.
 This action sets the isPinned property to false for an educationModule.
 Only teachers in the class can perform this operation.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -31,7 +30,6 @@ Invoke-MgBetaUnpinEducationClassModule -InputObject <IEducationIdentity> [-Confi
 Unpin an educationModule in the classwork list.
 This action sets the isPinned property to false for an educationModule.
 Only teachers in the class can perform this operation.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

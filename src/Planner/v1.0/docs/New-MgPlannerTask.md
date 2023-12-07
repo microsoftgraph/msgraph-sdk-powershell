@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new plannerTask.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -36,7 +35,6 @@ New-MgPlannerTask -BodyParameter <IMicrosoftGraphPlannerTask> [-Confirm] [-WhatI
 
 ## DESCRIPTION
 Create a new plannerTask.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

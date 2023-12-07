@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Stop the synchronization job, and permanently delete all the state associated with it.
 Synchronized accounts are left as-is.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -29,7 +28,6 @@ Remove-MgBetaServicePrincipalSynchronizationJob -InputObject <IApplicationsIdent
 ## DESCRIPTION
 Stop the synchronization job, and permanently delete all the state associated with it.
 Synchronized accounts are left as-is.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

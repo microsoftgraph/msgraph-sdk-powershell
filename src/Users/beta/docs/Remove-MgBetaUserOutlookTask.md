@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete the specified Outlook task in the user's mailbox.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Remove-MgBetaUserOutlookTask -InputObject <IUsersIdentity> [-IfMatch <String>] [
 
 ## DESCRIPTION
 Delete the specified Outlook task in the user's mailbox.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

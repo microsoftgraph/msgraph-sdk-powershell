@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgBetaWindowsUpdatesPolicyComplianceChange
 
 ## SYNOPSIS
-Read the properties and relationships of a contentApproval object.
-This API is available in the following national cloud deployments.
+Read the properties and relationships of a complianceChange object.
 
 ## SYNTAX
 
@@ -33,8 +32,7 @@ Get-MgBetaWindowsUpdatesPolicyComplianceChange -InputObject <IWindowsUpdatesIden
 ```
 
 ## DESCRIPTION
-Read the properties and relationships of a contentApproval object.
-This API is available in the following national cloud deployments.
+Read the properties and relationships of a complianceChange object.
 
 ## EXAMPLES
 

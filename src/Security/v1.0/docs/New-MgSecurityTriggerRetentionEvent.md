@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new retentionEvent object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -33,7 +32,6 @@ New-MgSecurityTriggerRetentionEvent -BodyParameter <IMicrosoftGraphSecurityReten
 
 ## DESCRIPTION
 Create a new retentionEvent object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

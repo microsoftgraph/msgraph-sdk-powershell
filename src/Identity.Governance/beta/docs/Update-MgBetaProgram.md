@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 In the Microsoft Entra access reviews feature, update an existing program object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -41,7 +40,6 @@ Update-MgBetaProgram -InputObject <IIdentityGovernanceIdentity> [-AdditionalProp
 
 ## DESCRIPTION
 In the Microsoft Entra access reviews feature, update an existing program object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

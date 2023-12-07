@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaIdentityGovernancePermissionManagementPermissionRequestChange
 
 ## SYNOPSIS
-Get permissionsRequestChanges from identityGovernance
+Read the properties and relationships of a permissionsRequestChange object.
 
 ## SYNTAX
 
@@ -33,7 +33,7 @@ Get-MgBetaIdentityGovernancePermissionManagementPermissionRequestChange
 ```
 
 ## DESCRIPTION
-Get permissionsRequestChanges from identityGovernance
+Read the properties and relationships of a permissionsRequestChange object.
 
 ## EXAMPLES
 

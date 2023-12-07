@@ -8,8 +8,7 @@ schema: 2.0.0
 # Remove-MgBetaGroupSiteContentType
 
 ## SYNOPSIS
-Remove a content type][contentType] from a [list][] or a [site][].
-This API is available in the following [national cloud deployments.
+Remove a [content type][contentType] from a [list][] or a [site][].
 
 ## SYNTAX
 
@@ -26,8 +25,7 @@ Remove-MgBetaGroupSiteContentType -InputObject <ISitesIdentity> [-IfMatch <Strin
 ```
 
 ## DESCRIPTION
-Remove a content type][contentType] from a [list][] or a [site][].
-This API is available in the following [national cloud deployments.
+Remove a [content type][contentType] from a [list][] or a [site][].
 
 ## EXAMPLES
 

@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Retrieve a list of a connectedOrganization's external sponsors.
 The external sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -23,7 +22,6 @@ Get-MgEntitlementManagementConnectedOrganizationExternalSponsor -ConnectedOrgani
 ## DESCRIPTION
 Retrieve a list of a connectedOrganization's external sponsors.
 The external sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

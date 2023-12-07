@@ -11,7 +11,6 @@ schema: 2.0.0
 You can use createLink action to share a driveItem via a sharing link.
 The createLink action will create a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, the existing sharing link will be returned.
 DriveItem resources inherit sharing permissions from their ancestors.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -49,7 +48,6 @@ New-MgBetaUserDriveRootLink -InputObject <IUsersActionsIdentity> [-AdditionalPro
 You can use createLink action to share a driveItem via a sharing link.
 The createLink action will create a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, the existing sharing link will be returned.
 DriveItem resources inherit sharing permissions from their ancestors.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -363,6 +361,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[NotebookId <String>]`: The unique identifier of notebook
   - `[OnenotePageId <String>]`: The unique identifier of onenotePage
   - `[OnenoteSectionId <String>]`: The unique identifier of onenoteSection
+  - `[OnlineMeetingId <String>]`: The unique identifier of onlineMeeting
   - `[OutlookTaskFolderId <String>]`: The unique identifier of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: The unique identifier of outlookTaskGroup
   - `[OutlookTaskId <String>]`: The unique identifier of outlookTask

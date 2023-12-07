@@ -182,38 +182,50 @@ To create the parameters described below, construct a hash table containing the 
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[CachedReportConfigurations <IMicrosoftGraphDeviceManagementCachedReportConfiguration[]>]`: Entity representing the configuration of a cached report
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
+    - `[ExpirationDateTime <DateTime?>]`: Time that the cached report expires. This property is read-only.
     - `[Filter <String>]`: Filters applied on report creation.
+    - `[LastRefreshDateTime <DateTime?>]`: Time that the cached report was last refreshed. This property is read-only.
     - `[Metadata <String>]`: Caller-managed metadata associated with the report
     - `[OrderBy <String[]>]`: Ordering of columns in the report
+    - `[ReportName <String>]`: Name of the report. This property is read-only.
     - `[Select <String[]>]`: Columns selected from the report
     - `[Status <DeviceManagementReportStatus?>]`: Possible statuses associated with a generated report
   - `[ExportJobs <IMicrosoftGraphDeviceManagementExportJob[]>]`: Entity representing a job to export a report
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
+    - `[ExpirationDateTime <DateTime?>]`: Time that the exported report expires. This property is read-only.
     - `[Filter <String>]`: Filters applied on the report
     - `[Format <DeviceManagementReportFileFormat?>]`: Possible values for the file format of a report
     - `[LocalizationType <DeviceManagementExportJobLocalizationType?>]`: Configures how the requested export job is localized
     - `[ReportName <String>]`: Name of the report
+    - `[RequestDateTime <DateTime?>]`: Time that the exported report was requested. This property is read-only.
     - `[Select <String[]>]`: Columns selected from the report
     - `[SnapshotId <String>]`: A snapshot is an identifiable subset of the dataset represented by the ReportName. A sessionId or CachedReportConfiguration id can be used here. If a sessionId is specified, Filter, Select, and OrderBy are applied to the data represented by the sessionId. Filter, Select, and OrderBy cannot be specified together with a CachedReportConfiguration id.
     - `[Status <DeviceManagementReportStatus?>]`: Possible statuses associated with a generated report
+    - `[Url <String>]`: Temporary location of the exported report. This property is read-only.
 
 `CACHEDREPORTCONFIGURATIONS <IMicrosoftGraphDeviceManagementCachedReportConfiguration[]>`: Entity representing the configuration of a cached report
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
+  - `[ExpirationDateTime <DateTime?>]`: Time that the cached report expires. This property is read-only.
   - `[Filter <String>]`: Filters applied on report creation.
+  - `[LastRefreshDateTime <DateTime?>]`: Time that the cached report was last refreshed. This property is read-only.
   - `[Metadata <String>]`: Caller-managed metadata associated with the report
   - `[OrderBy <String[]>]`: Ordering of columns in the report
+  - `[ReportName <String>]`: Name of the report. This property is read-only.
   - `[Select <String[]>]`: Columns selected from the report
   - `[Status <DeviceManagementReportStatus?>]`: Possible statuses associated with a generated report
 
 `EXPORTJOBS <IMicrosoftGraphDeviceManagementExportJob[]>`: Entity representing a job to export a report
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
+  - `[ExpirationDateTime <DateTime?>]`: Time that the exported report expires. This property is read-only.
   - `[Filter <String>]`: Filters applied on the report
   - `[Format <DeviceManagementReportFileFormat?>]`: Possible values for the file format of a report
   - `[LocalizationType <DeviceManagementExportJobLocalizationType?>]`: Configures how the requested export job is localized
   - `[ReportName <String>]`: Name of the report
+  - `[RequestDateTime <DateTime?>]`: Time that the exported report was requested. This property is read-only.
   - `[Select <String[]>]`: Columns selected from the report
   - `[SnapshotId <String>]`: A snapshot is an identifiable subset of the dataset represented by the ReportName. A sessionId or CachedReportConfiguration id can be used here. If a sessionId is specified, Filter, Select, and OrderBy are applied to the data represented by the sessionId. Filter, Select, and OrderBy cannot be specified together with a CachedReportConfiguration id.
   - `[Status <DeviceManagementReportStatus?>]`: Possible statuses associated with a generated report
+  - `[Url <String>]`: Temporary location of the exported report. This property is read-only.
 
 ## RELATED LINKS
 

@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new userAccountInformation object in a user's profile.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -48,7 +47,6 @@ New-MgBetaUserProfileAccount -InputObject <IPeopleIdentity> [-AdditionalProperti
 
 ## DESCRIPTION
 Create a new userAccountInformation object in a user's profile.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

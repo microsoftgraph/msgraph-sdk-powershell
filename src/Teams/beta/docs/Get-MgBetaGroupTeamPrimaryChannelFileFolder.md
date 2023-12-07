@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Get the metadata for the location where the files of a channel are stored.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Get-MgBetaGroupTeamPrimaryChannelFileFolder -InputObject <ITeamsIdentity> [-Expa
 
 ## DESCRIPTION
 Get the metadata for the location where the files of a channel are stored.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -136,6 +134,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[ChatMessageId <String>]`: The unique identifier of chatMessage
   - `[ChatMessageId1 <String>]`: The unique identifier of chatMessage
   - `[ConversationMemberId <String>]`: The unique identifier of conversationMember
+  - `[DayNoteId <String>]`: The unique identifier of dayNote
   - `[DeletedChatId <String>]`: The unique identifier of deletedChat
   - `[DeletedTeamId <String>]`: The unique identifier of deletedTeam
   - `[GroupId <String>]`: The unique identifier of group

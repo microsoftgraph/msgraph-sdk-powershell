@@ -8,10 +8,9 @@ schema: 2.0.0
 # Invoke-MgInstantiateApplicationTemplate
 
 ## SYNOPSIS
-Add an instance of an application from the Azure AD application gallery into your directory.
+Add an instance of an application from the Microsoft Entra application gallery into your directory.
 You can also use this API to instantiate non-gallery apps.
 Use the following ID for the applicationTemplate object: 8adf8e6e-67b2-4cf2-a259-e3dc5476c621.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -42,10 +41,9 @@ Invoke-MgInstantiateApplicationTemplate -InputObject <IApplicationsIdentity>
 ```
 
 ## DESCRIPTION
-Add an instance of an application from the Azure AD application gallery into your directory.
+Add an instance of an application from the Microsoft Entra application gallery into your directory.
 You can also use this API to instantiate non-gallery apps.
 Use the following ID for the applicationTemplate object: 8adf8e6e-67b2-4cf2-a259-e3dc5476c621.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -215,6 +213,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[ServicePrincipalId <String>]`: The unique identifier of servicePrincipal
   - `[SynchronizationJobId <String>]`: The unique identifier of synchronizationJob
   - `[SynchronizationTemplateId <String>]`: The unique identifier of synchronizationTemplate
+  - `[TargetDeviceGroupId <String>]`: The unique identifier of targetDeviceGroup
   - `[TokenIssuancePolicyId <String>]`: The unique identifier of tokenIssuancePolicy
   - `[TokenLifetimePolicyId <String>]`: The unique identifier of tokenLifetimePolicy
   - `[UserId <String>]`: The unique identifier of user

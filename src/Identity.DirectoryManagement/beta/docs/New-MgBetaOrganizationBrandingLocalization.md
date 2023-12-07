@@ -13,7 +13,6 @@ This creates a localized branding and at the same time, the default branding if 
 The default branding is created only once.
 It's loaded when a localized branding isn't configured for the user's browser language.
 To retrieve the default branding, see Get branding.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -73,7 +72,6 @@ This creates a localized branding and at the same time, the default branding if 
 The default branding is created only once.
 It's loaded when a localized branding isn't configured for the user's browser language.
 To retrieve the default branding, see Get branding.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

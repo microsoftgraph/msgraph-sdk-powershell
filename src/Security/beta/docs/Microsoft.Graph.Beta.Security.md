@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Security
-Module Guid: cbbabe97-39c2-4b69-b22d-e39bc609f811
+Module Guid: 0edd9e91-c732-47d9-b6d7-5ce4e0c36b6e
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.security
 Help Version: 1.0.0.0
 Locale: en-US
@@ -15,46 +15,39 @@ Microsoft Graph PowerShell Cmdlets
 Start the process of applying hold on eDiscovery custodians.
 After the operation is created, you can get the status by retrieving the Location parameter from the response headers.
 The location provides a URL that returns an eDiscoveryHoldOperation object.
-This API is available in the following national cloud deployments.
 
 ### [Add-MgBetaSecurityCaseEdiscoveryCaseNoncustodialDataSourceHold](Add-MgBetaSecurityCaseEdiscoveryCaseNoncustodialDataSourceHold.md)
 Start the process of applying hold on eDiscovery non-custodial data sources.
 After the operation is created, you can get the status by retrieving the Location parameter from the response headers.
 The location provides a URL that returns an eDiscoveryHoldOperation object.
-This API is available in the following national cloud deployments.
 
 ### [Add-MgBetaSecurityCaseEdiscoveryCaseReviewSetQueryTag](Add-MgBetaSecurityCaseEdiscoveryCaseReviewSetQueryTag.md)
 Apply tags to files in an eDiscovery review set.
 For details, see Tag documents in a review set in eDiscovery.
-This API is available in the following national cloud deployments.
 
 ### [Add-MgBetaSecurityCaseEdiscoveryCaseReviewSetToReviewSet](Add-MgBetaSecurityCaseEdiscoveryCaseReviewSetToReviewSet.md)
 Start the process of adding a collection from Microsoft 365 services to a review set.
 After the operation is created, you can get the status of the operation by retrieving the Location parameter from the response headers.
 The location provides a URL that will return a Add to review set operation.
-This API is available in the following national cloud deployments.
 
 ### [Clear-MgBetaSecurityCaseEdiscoveryCaseSearchData](Clear-MgBetaSecurityCaseEdiscoveryCaseSearchData.md)
 Delete Microsoft Teams messages contained in a eDiscovery search.
 You can collect and purge the following categories of Teams content:\n- Teams 1:1 chats - Chat messages, posts, and attachments shared in a Teams conversation between two people.
 Teams 1:1 chats are also called *conversations*.\n- Teams group chats - Chat messages, posts, and attachments shared in a Teams conversation between three or more people.
 Also called *1:N* chats or *group conversations*.\n- Teams channels - Chat messages, posts, replies, and attachments shared in a standard Teams channel.\n- Private channels - Message posts, replies, and attachments shared in a private Teams channel.\n- Shared channels - Message posts, replies, and attachments shared in a shared Teams channel.
-For more information about purging Teams messages, see:\n- eDiscovery solution series: Data spillage scenario - Search and purge\n- eDiscovery (Premium) workflow for content in Microsoft Teams  This API is available in the following national cloud deployments.
+For more information about purging Teams messages, see:\n- eDiscovery solution series: Data spillage scenario - Search and purge\n- eDiscovery (Premium) workflow for content in Microsoft Teams
 
 ### [Close-MgBetaSecurityCaseEdiscoveryCase](Close-MgBetaSecurityCaseEdiscoveryCase.md)
 Close an eDiscovery case.
 For details, see Close a case.
-This API is available in the following national cloud deployments.
 
 ### [Export-MgBetaSecurityCaseEdiscoveryCaseReviewSet](Export-MgBetaSecurityCaseEdiscoveryCaseReviewSet.md)
 Initiate an export from a reviewSet.
 For details, see Export documents from a review set in eDiscovery (Premium).
-This API is available in the following national cloud deployments.
 
 ### [Export-MgBetaSecurityCaseEdiscoveryCaseReviewSetQuery](Export-MgBetaSecurityCaseEdiscoveryCaseReviewSetQuery.md)
 Initiate an export from a ediscoveryReviewSetQuery.
 For details, see Export documents from a review set in eDiscovery (Premium).
-This API is available in the following national cloud deployments.
 
 ### [Export-MgBetaSecurityCaseEdiscoveryCaseSearchReport](Export-MgBetaSecurityCaseEdiscoveryCaseSearchReport.md)
 Invoke action exportReport
@@ -64,21 +57,18 @@ Invoke action exportResult
 
 ### [Get-MgBetaSecurityAction](Get-MgBetaSecurityAction.md)
 Retrieve the properties and relationships of a securityAction object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaSecurityActionCount](Get-MgBetaSecurityActionCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaSecurityAlert](Get-MgBetaSecurityAlert.md)
 Retrieve the properties and relationships of an alert object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaSecurityAlertCount](Get-MgBetaSecurityAlertCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaSecurityAlertV2](Get-MgBetaSecurityAlertV2.md)
 Get the properties and relationships of an alert in an organization based on the specified alert id property.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaSecurityAlertV2Count](Get-MgBetaSecurityAlertV2Count.md)
 Get the number of the resource
@@ -88,7 +78,6 @@ Provides tenants capability to launch a simulated and realistic phishing attack 
 
 ### [Get-MgBetaSecurityAttackSimulationAutomation](Get-MgBetaSecurityAttackSimulationAutomation.md)
 Get an attack simulation automation for a tenant.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaSecurityAttackSimulationAutomationCount](Get-MgBetaSecurityAttackSimulationAutomationCount.md)
 Get the number of the resource
@@ -134,7 +123,6 @@ Get the number of the resource
 
 ### [Get-MgBetaSecurityAttackSimulationOperation](Get-MgBetaSecurityAttackSimulationOperation.md)
 Get an attack simulation operation to track a long-running operation request for a tenant.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaSecurityAttackSimulationOperationCount](Get-MgBetaSecurityAttackSimulationOperationCount.md)
 Get the number of the resource
@@ -162,21 +150,18 @@ Get cases from security
 
 ### [Get-MgBetaSecurityCaseEdiscoveryCase](Get-MgBetaSecurityCaseEdiscoveryCase.md)
 Read the properties and relationships of an ediscoveryCase object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaSecurityCaseEdiscoveryCaseCount](Get-MgBetaSecurityCaseEdiscoveryCaseCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaSecurityCaseEdiscoveryCaseCustodian](Get-MgBetaSecurityCaseEdiscoveryCaseCustodian.md)
 Read the properties and relationships of an ediscoveryCustodian object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaSecurityCaseEdiscoveryCaseCustodianCount](Get-MgBetaSecurityCaseEdiscoveryCaseCustodianCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaSecurityCaseEdiscoveryCaseCustodianLastIndexOperation](Get-MgBetaSecurityCaseEdiscoveryCaseCustodianLastIndexOperation.md)
 Get a list of the ediscoveryIndexOperation associated with an ediscoveryCustodian.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaSecurityCaseEdiscoveryCaseCustodianSiteSource](Get-MgBetaSecurityCaseEdiscoveryCaseCustodianSiteSource.md)
 Data source entity for SharePoint sites associated with the custodian.
@@ -198,7 +183,6 @@ Represents a group.
 
 ### [Get-MgBetaSecurityCaseEdiscoveryCaseCustodianUnifiedGroupSourceGroupServiceProvisioningError](Get-MgBetaSecurityCaseEdiscoveryCaseCustodianUnifiedGroupSourceGroupServiceProvisioningError.md)
 Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a group object.
-Supports $filter (eq, not, for isResolved and serviceInstance).
 
 ### [Get-MgBetaSecurityCaseEdiscoveryCaseCustodianUnifiedGroupSourceGroupServiceProvisioningErrorCount](Get-MgBetaSecurityCaseEdiscoveryCaseCustodianUnifiedGroupSourceGroupServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -242,21 +226,18 @@ Operation entity that represents the latest indexing for the non-custodial data 
 
 ### [Get-MgBetaSecurityCaseEdiscoveryCaseOperation](Get-MgBetaSecurityCaseEdiscoveryCaseOperation.md)
 Read the properties and relationships of a caseOperation object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaSecurityCaseEdiscoveryCaseOperationCount](Get-MgBetaSecurityCaseEdiscoveryCaseOperationCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaSecurityCaseEdiscoveryCaseReviewSet](Get-MgBetaSecurityCaseEdiscoveryCaseReviewSet.md)
 Read the properties and relationships of an ediscoveryReviewSet object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaSecurityCaseEdiscoveryCaseReviewSetCount](Get-MgBetaSecurityCaseEdiscoveryCaseReviewSetCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaSecurityCaseEdiscoveryCaseReviewSetFile](Get-MgBetaSecurityCaseEdiscoveryCaseReviewSetFile.md)
 Read the properties and relationships of an ediscoveryFile object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaSecurityCaseEdiscoveryCaseReviewSetFileContent](Get-MgBetaSecurityCaseEdiscoveryCaseReviewSetFileContent.md)
 Get content for the navigation property files from security
@@ -278,14 +259,12 @@ Get the number of the resource
 
 ### [Get-MgBetaSecurityCaseEdiscoveryCaseReviewSetQuery](Get-MgBetaSecurityCaseEdiscoveryCaseReviewSetQuery.md)
 Read the properties and relationships of an ediscoveryReviewSetQuery object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaSecurityCaseEdiscoveryCaseReviewSetQueryCount](Get-MgBetaSecurityCaseEdiscoveryCaseReviewSetQueryCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaSecurityCaseEdiscoveryCaseSearch](Get-MgBetaSecurityCaseEdiscoveryCaseSearch.md)
 Read the properties and relationships of an ediscoverySearch object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaSecurityCaseEdiscoveryCaseSearchAdditionalSource](Get-MgBetaSecurityCaseEdiscoveryCaseSearchAdditionalSource.md)
 Adds an additional source to the eDiscovery search.
@@ -307,7 +286,6 @@ Get the number of the resource
 
 ### [Get-MgBetaSecurityCaseEdiscoveryCaseSearchLastEstimateStatisticsOperation](Get-MgBetaSecurityCaseEdiscoveryCaseSearchLastEstimateStatisticsOperation.md)
 Get the last ediscoveryEstimateOperation objects and their properties.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaSecurityCaseEdiscoveryCaseSearchNoncustodialSource](Get-MgBetaSecurityCaseEdiscoveryCaseSearchNoncustodialSource.md)
 noncustodialDataSource sources that are included in the eDiscovery search
@@ -317,11 +295,9 @@ Get the number of the resource
 
 ### [Get-MgBetaSecurityCaseEdiscoveryCaseSetting](Get-MgBetaSecurityCaseEdiscoveryCaseSetting.md)
 Read the properties and relationships of an ediscoveryCaseSettings object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaSecurityCaseEdiscoveryCaseTag](Get-MgBetaSecurityCaseEdiscoveryCaseTag.md)
 Read the properties and relationships of an ediscoveryReviewTag object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaSecurityCaseEdiscoveryCaseTagChildTag](Get-MgBetaSecurityCaseEdiscoveryCaseTagChildTag.md)
 Returns the tags that are a child of a tag.
@@ -363,7 +339,6 @@ Get the number of the resource
 Retrieve the properties and relationships of an incident object.
 Attacks are typically inflicted on different types of entities, such as devices, users, and mailboxes, resulting in multiple alert objects.
 Microsoft 365 Defender correlates alerts with the same attack techniques or the same attacker into an incident.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaSecurityIncidentAlert](Get-MgBetaSecurityIncidentAlert.md)
 The list of related alerts.
@@ -384,7 +359,6 @@ Get informationProtection from security
 ### [Get-MgBetaSecurityInformationProtectionLabelPolicySetting](Get-MgBetaSecurityInformationProtectionLabelPolicySetting.md)
 Read the properties and relationships of an informationProtectionPolicySetting object.
 The settings exposed by this API should be used in applications to populate the moreInfoUrl property for Microsoft Purview Information Protection help, and indicate whether labeling is mandatory for the user and whether justification must be provided on downgrade.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaSecurityInformationProtectionSensitivityLabel](Get-MgBetaSecurityInformationProtectionSensitivityLabel.md)
 Read the Microsoft Purview Information Protection labels for the user or organization.
@@ -407,14 +381,12 @@ Get labels from security
 
 ### [Get-MgBetaSecurityLabelAuthority](Get-MgBetaSecurityLabelAuthority.md)
 Read the properties and relationships of a authorityTemplate object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaSecurityLabelAuthorityCount](Get-MgBetaSecurityLabelAuthorityCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaSecurityLabelCategory](Get-MgBetaSecurityLabelCategory.md)
 Read the properties and relationships of a categoryTemplate object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaSecurityLabelCategoryCount](Get-MgBetaSecurityLabelCategoryCount.md)
 Get the number of the resource
@@ -427,21 +399,18 @@ Get the number of the resource
 
 ### [Get-MgBetaSecurityLabelCitation](Get-MgBetaSecurityLabelCitation.md)
 Read the properties and relationships of a citationTemplate object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaSecurityLabelCitationCount](Get-MgBetaSecurityLabelCitationCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaSecurityLabelDepartment](Get-MgBetaSecurityLabelDepartment.md)
 Read the properties and relationships of a departmentTemplate object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaSecurityLabelDepartmentCount](Get-MgBetaSecurityLabelDepartmentCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaSecurityLabelFilePlanReference](Get-MgBetaSecurityLabelFilePlanReference.md)
 Read the properties and relationships of a filePlanReferenceTemplate object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaSecurityLabelFilePlanReferenceCount](Get-MgBetaSecurityLabelFilePlanReferenceCount.md)
 Get the number of the resource
@@ -514,7 +483,6 @@ Returned only on $select.
 
 ### [Get-MgBetaSecuritySubjectRightsRequestApproverServiceProvisioningError](Get-MgBetaSecuritySubjectRightsRequestApproverServiceProvisioningError.md)
 Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
-Supports $filter (eq, not, for isResolved and serviceInstance).
 
 ### [Get-MgBetaSecuritySubjectRightsRequestApproverServiceProvisioningErrorCount](Get-MgBetaSecuritySubjectRightsRequestApproverServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -533,7 +501,6 @@ Returned only on $select.
 
 ### [Get-MgBetaSecuritySubjectRightsRequestCollaboratorServiceProvisioningError](Get-MgBetaSecuritySubjectRightsRequestCollaboratorServiceProvisioningError.md)
 Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
-Supports $filter (eq, not, for isResolved and serviceInstance).
 
 ### [Get-MgBetaSecuritySubjectRightsRequestCollaboratorServiceProvisioningErrorCount](Get-MgBetaSecuritySubjectRightsRequestCollaboratorServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -561,14 +528,12 @@ Get threatIntelligence from security
 
 ### [Get-MgBetaSecurityThreatIntelligenceArticle](Get-MgBetaSecurityThreatIntelligenceArticle.md)
 Read the properties and relationships of an article object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaSecurityThreatIntelligenceArticleCount](Get-MgBetaSecurityThreatIntelligenceArticleCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaSecurityThreatIntelligenceArticleIndicator](Get-MgBetaSecurityThreatIntelligenceArticleIndicator.md)
 Read the properties and relationships of an articleIndicator object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaSecurityThreatIntelligenceArticleIndicatorArtifact](Get-MgBetaSecurityThreatIntelligenceArticleIndicatorArtifact.md)
 The artifact related to this indicator.
@@ -579,7 +544,7 @@ Get the number of the resource
 ### [Get-MgBetaSecurityThreatIntelligenceHost](Get-MgBetaSecurityThreatIntelligenceHost.md)
 Read the properties and relationships of a host object.
 The host resource is the abstract base type that returns an implementation.
-A host can be of one of the following types: This API is available in the following national cloud deployments.
+A host can be of one of the following types:
 
 ### [Get-MgBetaSecurityThreatIntelligenceHostChildHostPair](Get-MgBetaSecurityThreatIntelligenceHostChildHostPair.md)
 The hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a cihldHost.
@@ -589,7 +554,6 @@ Get the number of the resource
 
 ### [Get-MgBetaSecurityThreatIntelligenceHostComponent](Get-MgBetaSecurityThreatIntelligenceHostComponent.md)
 Read the properties and relationships of a hostComponent object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaSecurityThreatIntelligenceHostComponentCount](Get-MgBetaSecurityThreatIntelligenceHostComponentCount.md)
 Get the number of the resource
@@ -601,7 +565,6 @@ When you navigate to components from a host, this should be assumed to be a retu
 
 ### [Get-MgBetaSecurityThreatIntelligenceHostCookie](Get-MgBetaSecurityThreatIntelligenceHostCookie.md)
 Read the properties and relationships of a hostCookie object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaSecurityThreatIntelligenceHostCookieCount](Get-MgBetaSecurityThreatIntelligenceHostCookieCount.md)
 Get the number of the resource
@@ -614,7 +577,6 @@ Get the number of the resource
 
 ### [Get-MgBetaSecurityThreatIntelligenceHostPair](Get-MgBetaSecurityThreatIntelligenceHostPair.md)
 Read the properties and relationships of a hostPair object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaSecurityThreatIntelligenceHostPairChildHost](Get-MgBetaSecurityThreatIntelligenceHostPairChildHost.md)
 Host reached via the parentHost.
@@ -659,11 +621,9 @@ The most recent sslCertificate used to communicate on the port.
 
 ### [Get-MgBetaSecurityThreatIntelligenceHostReputation](Get-MgBetaSecurityThreatIntelligenceHostReputation.md)
 Get the properties and relationships of a hostReputation object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaSecurityThreatIntelligenceHostSslCertificate](Get-MgBetaSecurityThreatIntelligenceHostSslCertificate.md)
 Get the properties and relationships of a hostSslCertificate object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaSecurityThreatIntelligenceHostSslCertificateCount](Get-MgBetaSecurityThreatIntelligenceHostSslCertificateCount.md)
 Get the number of the resource
@@ -679,7 +639,6 @@ Get the number of the resource
 
 ### [Get-MgBetaSecurityThreatIntelligenceHostTracker](Get-MgBetaSecurityThreatIntelligenceHostTracker.md)
 Read the properties and relationships of a hostTracker object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaSecurityThreatIntelligenceHostTrackerCount](Get-MgBetaSecurityThreatIntelligenceHostTrackerCount.md)
 Get the number of the resource
@@ -692,11 +651,9 @@ When navigating to a hostTracker from a host, this should be assumed to be a ret
 Get the specified whoisRecord resource.
 Specify the desired whoisRecord in one of the following two ways:\n- Identify a host and get its current whoisRecord.
 \n- Specify an id value to get the corresponding whoisRecord.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaSecurityThreatIntelligenceIntelProfile](Get-MgBetaSecurityThreatIntelligenceIntelProfile.md)
 Read the properties and relationships of a intelligenceProfile object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaSecurityThreatIntelligenceIntelProfileCount](Get-MgBetaSecurityThreatIntelligenceIntelProfileCount.md)
 Get the number of the resource
@@ -709,7 +666,6 @@ Get the number of the resource
 
 ### [Get-MgBetaSecurityThreatIntelligencePassiveDnsRecord](Get-MgBetaSecurityThreatIntelligencePassiveDnsRecord.md)
 Read the properties and relationships of a passiveDnsRecord object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaSecurityThreatIntelligencePassiveDnsRecordArtifact](Get-MgBetaSecurityThreatIntelligencePassiveDnsRecordArtifact.md)
 The artifact related to this passiveDnsRecord entry.
@@ -723,7 +679,6 @@ Generally, this is the value that you can search to discover this passiveDnsReco
 
 ### [Get-MgBetaSecurityThreatIntelligenceProfileIndicator](Get-MgBetaSecurityThreatIntelligenceProfileIndicator.md)
 Read the properties and relationships of a intelligenceProfileIndicator object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaSecurityThreatIntelligenceProfileIndicatorArtifact](Get-MgBetaSecurityThreatIntelligenceProfileIndicatorArtifact.md)
 The artifact related to this indicator.
@@ -733,7 +688,6 @@ Get the number of the resource
 
 ### [Get-MgBetaSecurityThreatIntelligenceSslCertificate](Get-MgBetaSecurityThreatIntelligenceSslCertificate.md)
 Get the properties and relationships of an sslCertificate object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaSecurityThreatIntelligenceSslCertificateCount](Get-MgBetaSecurityThreatIntelligenceSslCertificateCount.md)
 Get the number of the resource
@@ -746,7 +700,6 @@ Get the number of the resource
 
 ### [Get-MgBetaSecurityThreatIntelligenceSubdomain](Get-MgBetaSecurityThreatIntelligenceSubdomain.md)
 Read the properties and relationships of a subdomain object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaSecurityThreatIntelligenceSubdomainCount](Get-MgBetaSecurityThreatIntelligenceSubdomainCount.md)
 Get the number of the resource
@@ -756,7 +709,6 @@ The host of the subdomain.
 
 ### [Get-MgBetaSecurityThreatIntelligenceVulnerability](Get-MgBetaSecurityThreatIntelligenceVulnerability.md)
 Read the properties and relationships of a vulnerability object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaSecurityThreatIntelligenceVulnerabilityArticle](Get-MgBetaSecurityThreatIntelligenceVulnerabilityArticle.md)
 Articles related to this vulnerability.
@@ -766,7 +718,6 @@ Get the number of the resource
 
 ### [Get-MgBetaSecurityThreatIntelligenceVulnerabilityComponent](Get-MgBetaSecurityThreatIntelligenceVulnerabilityComponent.md)
 Read the properties and relationships of a vulnerabilityComponent object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaSecurityThreatIntelligenceVulnerabilityComponentCount](Get-MgBetaSecurityThreatIntelligenceVulnerabilityComponentCount.md)
 Get the number of the resource
@@ -787,7 +738,6 @@ The host associated to this WHOIS object.
 Get the specified whoisRecord resource.
 Specify the desired whoisRecord in one of the following two ways:\n- Identify a host and get its current whoisRecord.
 \n- Specify an id value to get the corresponding whoisRecord.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaSecurityThreatIntelligenceWhoisRecordCount](Get-MgBetaSecurityThreatIntelligenceWhoisRecordCount.md)
 Get the number of the resource
@@ -806,35 +756,30 @@ A threat submission sent to Microsoft; for example, a suspicious email threat, U
 
 ### [Get-MgBetaSecurityThreatSubmissionEmailThreat](Get-MgBetaSecurityThreatSubmissionEmailThreat.md)
 Read the properties and relationships of an emailThreatSubmission object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaSecurityThreatSubmissionEmailThreatCount](Get-MgBetaSecurityThreatSubmissionEmailThreatCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaSecurityThreatSubmissionEmailThreatSubmissionPolicy](Get-MgBetaSecurityThreatSubmissionEmailThreatSubmissionPolicy.md)
 Read the properties and relationships of an emailThreatSubmissionPolicy object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaSecurityThreatSubmissionEmailThreatSubmissionPolicyCount](Get-MgBetaSecurityThreatSubmissionEmailThreatSubmissionPolicyCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaSecurityThreatSubmissionFileThreat](Get-MgBetaSecurityThreatSubmissionFileThreat.md)
 Read the properties and relationships of a fileThreatSubmission object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaSecurityThreatSubmissionFileThreatCount](Get-MgBetaSecurityThreatSubmissionFileThreatCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaSecurityThreatSubmissionUrlThreat](Get-MgBetaSecurityThreatSubmissionUrlThreat.md)
 Read the properties and relationships of an urlThreatSubmission object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaSecurityThreatSubmissionUrlThreatCount](Get-MgBetaSecurityThreatSubmissionUrlThreatCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaSecurityTiIndicator](Get-MgBetaSecurityTiIndicator.md)
 Retrieve the properties and relationships of a tiIndicator object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaSecurityTiIndicatorCount](Get-MgBetaSecurityTiIndicatorCount.md)
 Get the number of the resource
@@ -844,7 +789,6 @@ Get triggers from security
 
 ### [Get-MgBetaSecurityTriggerRetentionEvent](Get-MgBetaSecurityTriggerRetentionEvent.md)
 Read the properties and relationships of a retentionEvent object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaSecurityTriggerRetentionEventCount](Get-MgBetaSecurityTriggerRetentionEventCount.md)
 Get the number of the resource
@@ -857,7 +801,6 @@ Get triggerTypes from security
 
 ### [Get-MgBetaSecurityTriggerTypeRetentionEventType](Get-MgBetaSecurityTriggerTypeRetentionEventType.md)
 Read the properties and relationships of a retentionEventType object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaSecurityTriggerTypeRetentionEventTypeCount](Get-MgBetaSecurityTriggerTypeRetentionEventTypeCount.md)
 Get the number of the resource
@@ -877,7 +820,6 @@ Get informationProtection from users
 ### [Get-MgBetaUserSecurityInformationProtectionLabelPolicySetting](Get-MgBetaUserSecurityInformationProtectionLabelPolicySetting.md)
 Read the properties and relationships of an informationProtectionPolicySetting object.
 The settings exposed by this API should be used in applications to populate the moreInfoUrl property for Microsoft Purview Information Protection help, and indicate whether labeling is mandatory for the user and whether justification must be provided on downgrade.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaUserSecurityInformationProtectionSensitivityLabel](Get-MgBetaUserSecurityInformationProtectionSensitivityLabel.md)
 Read the Microsoft Purview Information Protection labels for the user or organization.
@@ -892,7 +834,6 @@ Null if the label has no parent.
 ### [Initialize-MgBetaSecurityCaseEdiscoveryCaseCustodian](Initialize-MgBetaSecurityCaseEdiscoveryCaseCustodian.md)
 Activate a custodian that has been released from a case to make them part of the case again.
 For details, see Manage custodians in an eDiscovery (Premium) case.
-This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaAsSecurityCaseEdiscoveryCaseTagHierarchy](Invoke-MgBetaAsSecurityCaseEdiscoveryCaseTagHierarchy.md)
 Invoke function asHierarchy
@@ -903,21 +844,17 @@ Get the number of the resource
 ### [Invoke-MgBetaEstimateSecurityCaseEdiscoveryCaseSearchStatistics](Invoke-MgBetaEstimateSecurityCaseEdiscoveryCaseSearchStatistics.md)
 Run an estimate of the number of emails and documents in the eDiscovery search.
 To learn more about searches in eDiscovery, see Collect data for a case in eDiscovery (Premium).
-This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaExtractSecurityInformationProtectionSensitivityLabelContentLabel](Invoke-MgBetaExtractSecurityInformationProtectionSensitivityLabelContentLabel.md)
 Use the metadata that exists on an already-labeled piece of information to resolve the metadata to a specific sensitivity label.
 The contentInfo input is resolved to informationProtectionContentLabel.
-This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaReopenSecurityCaseEdiscoveryCase](Invoke-MgBetaReopenSecurityCaseEdiscoveryCase.md)
 Reopen an eDiscovery case that was closed.
 For details, see Reopen a closed case.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaSecurityAction](New-MgBetaSecurityAction.md)
 Create a new securityAction object.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaSecurityAlert](New-MgBetaSecurityAlert.md)
 Create new navigation property to alerts for security
@@ -927,7 +864,6 @@ Create new navigation property to alerts_v2 for security
 
 ### [New-MgBetaSecurityAttackSimulation](New-MgBetaSecurityAttackSimulation.md)
 Create an attack simulation campaign for a tenant.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaSecurityAttackSimulationAutomation](New-MgBetaSecurityAttackSimulationAutomation.md)
 Create new navigation property to simulationAutomations for security
@@ -964,65 +900,51 @@ Create new navigation property to languageDetails for security
 
 ### [New-MgBetaSecurityCaseEdiscoveryCase](New-MgBetaSecurityCaseEdiscoveryCase.md)
 Create a new ediscoveryCase object.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaSecurityCaseEdiscoveryCaseCustodian](New-MgBetaSecurityCaseEdiscoveryCaseCustodian.md)
 Create a new ediscoveryCustodian object.\nAfter the custodian object is created, you will need to create the custodian's userSource to reference their mailbox and OneDrive for Business site.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaSecurityCaseEdiscoveryCaseCustodianSiteSource](New-MgBetaSecurityCaseEdiscoveryCaseCustodianSiteSource.md)
 Create a new siteSource object associated with an eDiscovery custodian.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaSecurityCaseEdiscoveryCaseCustodianUnifiedGroupSource](New-MgBetaSecurityCaseEdiscoveryCaseCustodianUnifiedGroupSource.md)
 Create a new unifiedGroupSource object associated with an eDiscovery custodian.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaSecurityCaseEdiscoveryCaseCustodianUserSource](New-MgBetaSecurityCaseEdiscoveryCaseCustodianUserSource.md)
 Create a new userSource object associated with an eDiscovery custodian.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaSecurityCaseEdiscoveryCaseLegalHold](New-MgBetaSecurityCaseEdiscoveryCaseLegalHold.md)
 Create a new ediscoveryHoldPolicy object.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaSecurityCaseEdiscoveryCaseLegalHoldSiteSource](New-MgBetaSecurityCaseEdiscoveryCaseLegalHoldSiteSource.md)
 Create a new siteSource object.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaSecurityCaseEdiscoveryCaseLegalHoldUserSource](New-MgBetaSecurityCaseEdiscoveryCaseLegalHoldUserSource.md)
 Create a new userSource object.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaSecurityCaseEdiscoveryCaseNoncustodialDataSource](New-MgBetaSecurityCaseEdiscoveryCaseNoncustodialDataSource.md)
 Create a new ediscoveryNoncustodialDataSource object.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaSecurityCaseEdiscoveryCaseOperation](New-MgBetaSecurityCaseEdiscoveryCaseOperation.md)
 Create new navigation property to operations for security
 
 ### [New-MgBetaSecurityCaseEdiscoveryCaseReviewSet](New-MgBetaSecurityCaseEdiscoveryCaseReviewSet.md)
 Create a new ediscoveryReviewSet object.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaSecurityCaseEdiscoveryCaseReviewSetFile](New-MgBetaSecurityCaseEdiscoveryCaseReviewSetFile.md)
 Create new navigation property to files for security
 
 ### [New-MgBetaSecurityCaseEdiscoveryCaseReviewSetQuery](New-MgBetaSecurityCaseEdiscoveryCaseReviewSetQuery.md)
 Create a new ediscoveryReviewSetQuery object.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaSecurityCaseEdiscoveryCaseSearch](New-MgBetaSecurityCaseEdiscoveryCaseSearch.md)
 Create a new ediscoverySearch object.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaSecurityCaseEdiscoveryCaseSearchAdditionalSource](New-MgBetaSecurityCaseEdiscoveryCaseSearchAdditionalSource.md)
 Create a new additional source associated with an eDiscovery search.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaSecurityCaseEdiscoveryCaseTag](New-MgBetaSecurityCaseEdiscoveryCaseTag.md)
 Create a new ediscoveryReviewTag object.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaSecurityCloudAppSecurityProfile](New-MgBetaSecurityCloudAppSecurityProfile.md)
 Create new navigation property to cloudAppSecurityProfiles for security
@@ -1047,31 +969,25 @@ Create new navigation property to ipSecurityProfiles for security
 
 ### [New-MgBetaSecurityLabelAuthority](New-MgBetaSecurityLabelAuthority.md)
 Create a new authorityTemplate object.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaSecurityLabelCategory](New-MgBetaSecurityLabelCategory.md)
 Create a new categoryTemplate object.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaSecurityLabelCategorySubCategory](New-MgBetaSecurityLabelCategorySubCategory.md)
 Create a new subCategoryTemplate object.
 
 ### [New-MgBetaSecurityLabelCitation](New-MgBetaSecurityLabelCitation.md)
 Create a new citationTemplate object.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaSecurityLabelDepartment](New-MgBetaSecurityLabelDepartment.md)
 Create a new departmentTemplate object.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaSecurityLabelFilePlanReference](New-MgBetaSecurityLabelFilePlanReference.md)
 Create a new filePlanReferenceTemplate object.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaSecurityLabelRetentionLabel](New-MgBetaSecurityLabelRetentionLabel.md)
 Create a new retentionLabel object.
 To create a disposition review stage, include the actionAfterRetentionPeriod property in the request body with one of the possible values specified.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaSecurityLabelRetentionLabelDispositionReviewStage](New-MgBetaSecurityLabelRetentionLabelDispositionReviewStage.md)
 Create new navigation property to dispositionReviewStages for security
@@ -1090,7 +1006,6 @@ Create new navigation property to subjectRightsRequests for security
 
 ### [New-MgBetaSecuritySubjectRightsRequestNote](New-MgBetaSecuritySubjectRightsRequestNote.md)
 Create a new authoredNote object.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaSecurityThreatIntelligenceArticle](New-MgBetaSecurityThreatIntelligenceArticle.md)
 Create new navigation property to articles for security
@@ -1148,7 +1063,6 @@ Create new navigation property to whoisRecords for security
 
 ### [New-MgBetaSecurityThreatSubmissionEmailThreat](New-MgBetaSecurityThreatSubmissionEmailThreat.md)
 Create a new emailThreatSubmission object.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaSecurityThreatSubmissionEmailThreatSubmissionPolicy](New-MgBetaSecurityThreatSubmissionEmailThreatSubmissionPolicy.md)
 Create new navigation property to emailThreatSubmissionPolicies for security
@@ -1158,19 +1072,15 @@ Create new navigation property to fileThreats for security
 
 ### [New-MgBetaSecurityThreatSubmissionUrlThreat](New-MgBetaSecurityThreatSubmissionUrlThreat.md)
 Create a new urlThreatSubmission object.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaSecurityTiIndicator](New-MgBetaSecurityTiIndicator.md)
 Create a new tiIndicator object.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaSecurityTriggerRetentionEvent](New-MgBetaSecurityTriggerRetentionEvent.md)
 Create a new retentionEvent object.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaSecurityTriggerTypeRetentionEventType](New-MgBetaSecurityTriggerTypeRetentionEventType.md)
 Create a new retentionEventType object.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaSecurityUserSecurityProfile](New-MgBetaSecurityUserSecurityProfile.md)
 Create new navigation property to userSecurityProfiles for security
@@ -1181,11 +1091,9 @@ Create new navigation property to sensitivityLabels for users
 ### [Publish-MgBetaSecurityCaseEdiscoveryCaseCustodian](Publish-MgBetaSecurityCaseEdiscoveryCaseCustodian.md)
 Release a custodian from a case.
 For details, see Release a custodian from a case.
-This API is available in the following national cloud deployments.
 
 ### [Publish-MgBetaSecurityCaseEdiscoveryCaseNoncustodialDataSource](Publish-MgBetaSecurityCaseEdiscoveryCaseNoncustodialDataSource.md)
 Release the non-custodial data source from the case.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaSecurityAction](Remove-MgBetaSecurityAction.md)
 Delete navigation property securityActions for security
@@ -1234,7 +1142,6 @@ Delete navigation property cases for security
 
 ### [Remove-MgBetaSecurityCaseEdiscoveryCase](Remove-MgBetaSecurityCaseEdiscoveryCase.md)
 Delete an ediscoveryCase object.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaSecurityCaseEdiscoveryCaseCustodian](Remove-MgBetaSecurityCaseEdiscoveryCaseCustodian.md)
 Delete navigation property custodians for security
@@ -1243,7 +1150,6 @@ Delete navigation property custodians for security
 Start the process of removing hold from eDiscovery custodians.
 After the operation is created, you can get the status by retrieving the Location parameter from the response headers.
 The location provides a URL that will return an eDiscoveryHoldOperation object.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaSecurityCaseEdiscoveryCaseCustodianSiteSource](Remove-MgBetaSecurityCaseEdiscoveryCaseCustodianSiteSource.md)
 Delete navigation property siteSources for security
@@ -1270,7 +1176,6 @@ Delete navigation property noncustodialDataSources for security
 Start the process of removing hold from eDiscovery non-custodial data sources.
 After the operation is created, you can get the status by retrieving the Location parameter from the response headers.
 The location provides a URL that returns an eDiscoveryHoldOperation object.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaSecurityCaseEdiscoveryCaseOperation](Remove-MgBetaSecurityCaseEdiscoveryCaseOperation.md)
 Delete navigation property operations for security
@@ -1283,11 +1188,9 @@ Delete navigation property files for security
 
 ### [Remove-MgBetaSecurityCaseEdiscoveryCaseReviewSetQuery](Remove-MgBetaSecurityCaseEdiscoveryCaseReviewSetQuery.md)
 Delete an ediscoveryReviewSetQuery object.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaSecurityCaseEdiscoveryCaseSearch](Remove-MgBetaSecurityCaseEdiscoveryCaseSearch.md)
 Delete an ediscoverySearch object.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaSecurityCaseEdiscoveryCaseSearchAdditionalSource](Remove-MgBetaSecurityCaseEdiscoveryCaseSearchAdditionalSource.md)
 Delete navigation property additionalSources for security
@@ -1303,7 +1206,6 @@ Delete navigation property settings for security
 
 ### [Remove-MgBetaSecurityCaseEdiscoveryCaseTag](Remove-MgBetaSecurityCaseEdiscoveryCaseTag.md)
 Remove an ediscoveryReviewTag object.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaSecurityCloudAppSecurityProfile](Remove-MgBetaSecurityCloudAppSecurityProfile.md)
 Delete navigation property cloudAppSecurityProfiles for security
@@ -1340,30 +1242,24 @@ Delete navigation property labels for security
 
 ### [Remove-MgBetaSecurityLabelAuthority](Remove-MgBetaSecurityLabelAuthority.md)
 Delete a authorityTemplate object.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaSecurityLabelCategory](Remove-MgBetaSecurityLabelCategory.md)
 Delete a categoryTemplate object.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaSecurityLabelCategorySubCategory](Remove-MgBetaSecurityLabelCategorySubCategory.md)
 Delete a subCategoryTemplate object.
 
 ### [Remove-MgBetaSecurityLabelCitation](Remove-MgBetaSecurityLabelCitation.md)
 Delete a citationTemplate object.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaSecurityLabelDepartment](Remove-MgBetaSecurityLabelDepartment.md)
 Delete a departmentTemplate object.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaSecurityLabelFilePlanReference](Remove-MgBetaSecurityLabelFilePlanReference.md)
 Delete a filePlanReferenceTemplate object.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaSecurityLabelRetentionLabel](Remove-MgBetaSecurityLabelRetentionLabel.md)
 Delete a retentionLabel object.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaSecurityLabelRetentionLabelDescriptor](Remove-MgBetaSecurityLabelRetentionLabelDescriptor.md)
 Delete navigation property descriptors for security
@@ -1463,22 +1359,18 @@ Delete navigation property urlThreats for security
 
 ### [Remove-MgBetaSecurityTiIndicator](Remove-MgBetaSecurityTiIndicator.md)
 Delete a tiIndicator object.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaSecurityTiIndicatorByExternalId](Remove-MgBetaSecurityTiIndicatorByExternalId.md)
 Delete multiple threat intelligence (TI) indicators in one request instead of multiple requests, when the request contains external IDs instead of IDs.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaSecurityTiIndicatorMultiple](Remove-MgBetaSecurityTiIndicatorMultiple.md)
 Delete multiple threat intelligence (TI) indicators in one request instead of multiple requests.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaSecurityTrigger](Remove-MgBetaSecurityTrigger.md)
 Delete navigation property triggers for security
 
 ### [Remove-MgBetaSecurityTriggerRetentionEvent](Remove-MgBetaSecurityTriggerRetentionEvent.md)
 Delete a retentionEvent object.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaSecurityTriggerType](Remove-MgBetaSecurityTriggerType.md)
 Delete navigation property triggerTypes for security
@@ -1506,7 +1398,6 @@ Delete navigation property parent for users
 
 ### [Reset-MgBetaSecurityCaseEdiscoveryCaseSettingToDefault](Reset-MgBetaSecurityCaseEdiscoveryCaseSettingToDefault.md)
 Reset a caseSettings object to the default values.
-This API is available in the following national cloud deployments.
 
 ### [Set-MgBetaSecurityAlert](Set-MgBetaSecurityAlert.md)
 Sets a new value for the collection of alertComment.
@@ -1528,26 +1419,24 @@ Invoke action runHuntingQuery
 
 ### [Stop-MgBetaSecurityAction](Stop-MgBetaSecurityAction.md)
 Cancel a security operation.
-This API is available in the following national cloud deployments.
 
 ### [Submit-MgBetaSecurityTiIndicator](Submit-MgBetaSecurityTiIndicator.md)
 Upload multiple threat intelligence (TI) indicators in one request instead of multiple requests.
-This API is available in the following national cloud deployments.
 
 ### [Test-MgBetaSecurityInformationProtectionSensitivityLabelApplication](Test-MgBetaSecurityInformationProtectionSensitivityLabelApplication.md)
 Compute the sensitivity label that should be applied and return the set of actions that must be taken to correctly label the information.
 This API is useful when a label should be set manually or explicitly by a user or service, rather than automatically based on file contents.
-Given contentInfo, which includes existing content metadata key-value pairs, and labelingOptions as an input, the API returns an informationProtectionAction object that contains one of more of the following:  This API is available in the following national cloud deployments.
+Given contentInfo, which includes existing content metadata key-value pairs, and labelingOptions as an input, the API returns an informationProtectionAction object that contains one of more of the following:
 
 ### [Test-MgBetaSecurityInformationProtectionSensitivityLabelClassificationResult](Test-MgBetaSecurityInformationProtectionSensitivityLabelClassificationResult.md)
 Use the classification results to compute the sensitivity label that should be applied and return the set of actions that must be taken to correctly label the information.
 This API is useful when a label should be set automatically based on classification of the file contents, rather than labeled directly by a user or service.
 To evaluate based on classification results, provide the contentInfo, which includes existing content metadata key-value pairs, and classification results.
-The API returns an informationProtectionAction that contains one of more of the following: This API is available in the following national cloud deployments.
+The API returns an informationProtectionAction that contains one of more of the following:
 
 ### [Test-MgBetaSecurityInformationProtectionSensitivityLabelRemoval](Test-MgBetaSecurityInformationProtectionSensitivityLabelRemoval.md)
 Indicate to the consuming application what actions it should take to remove the label information.
-Given contentInfo as an input, which includes existing content metadata key-value pairs, the API returns an informationProtectionAction that contains some combination of one or more of the following:  This API is available in the following national cloud deployments.
+Given contentInfo as an input, which includes existing content metadata key-value pairs, the API returns an informationProtectionAction that contains some combination of one or more of the following:
 
 ### [Update-MgBetaSecurityAction](Update-MgBetaSecurityAction.md)
 Update the navigation property securityActions in security
@@ -1555,15 +1444,12 @@ Update the navigation property securityActions in security
 ### [Update-MgBetaSecurityAlert](Update-MgBetaSecurityAlert.md)
 Update an editable alert property within any integrated solution to keep alert status and assignments in sync across solutions.
 This method updates any solution that has a record of the referenced alert ID.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaSecurityAlertMultiple](Update-MgBetaSecurityAlertMultiple.md)
 Update multiple alerts in one request instead of multiple requests.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaSecurityAlertV2](Update-MgBetaSecurityAlertV2.md)
 Update the properties of an alert object in an organization based on the specified alert id property.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaSecurityAttackSimulationAutomation](Update-MgBetaSecurityAttackSimulationAutomation.md)
 Update the navigation property simulationAutomations in security
@@ -1603,13 +1489,12 @@ Update the navigation property cases in security
 
 ### [Update-MgBetaSecurityCaseEdiscoveryCase](Update-MgBetaSecurityCaseEdiscoveryCase.md)
 Update the properties of an ediscoveryCase object.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaSecurityCaseEdiscoveryCaseCustodian](Update-MgBetaSecurityCaseEdiscoveryCaseCustodian.md)
 Update the navigation property custodians in security
 
 ### [Update-MgBetaSecurityCaseEdiscoveryCaseCustodianIndex](Update-MgBetaSecurityCaseEdiscoveryCaseCustodianIndex.md)
-Trigger an indexOperation This API is available in the following national cloud deployments.
+Trigger an indexOperation
 
 ### [Update-MgBetaSecurityCaseEdiscoveryCaseCustodianSiteSource](Update-MgBetaSecurityCaseEdiscoveryCaseCustodianSiteSource.md)
 Update the navigation property siteSources in security
@@ -1633,7 +1518,7 @@ Update the navigation property userSources in security
 Update the navigation property noncustodialDataSources in security
 
 ### [Update-MgBetaSecurityCaseEdiscoveryCaseNoncustodialDataSourceIndex](Update-MgBetaSecurityCaseEdiscoveryCaseNoncustodialDataSourceIndex.md)
-Trigger an indexOperation This API is available in the following national cloud deployments.
+Trigger an indexOperation
 
 ### [Update-MgBetaSecurityCaseEdiscoveryCaseOperation](Update-MgBetaSecurityCaseEdiscoveryCaseOperation.md)
 Update the navigation property operations in security
@@ -1646,22 +1531,18 @@ Update the navigation property files in security
 
 ### [Update-MgBetaSecurityCaseEdiscoveryCaseReviewSetQuery](Update-MgBetaSecurityCaseEdiscoveryCaseReviewSetQuery.md)
 Update the properties of an ediscoveryReviewSetQuery object.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaSecurityCaseEdiscoveryCaseSearch](Update-MgBetaSecurityCaseEdiscoveryCaseSearch.md)
 Update the properties of an ediscoverySearch object.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaSecurityCaseEdiscoveryCaseSearchAdditionalSource](Update-MgBetaSecurityCaseEdiscoveryCaseSearchAdditionalSource.md)
 Update the navigation property additionalSources in security
 
 ### [Update-MgBetaSecurityCaseEdiscoveryCaseSetting](Update-MgBetaSecurityCaseEdiscoveryCaseSetting.md)
 Update the properties of an ediscoveryCaseSettings object.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaSecurityCaseEdiscoveryCaseTag](Update-MgBetaSecurityCaseEdiscoveryCaseTag.md)
 Update the properties of an ediscoveryReviewTag object.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaSecurityCloudAppSecurityProfile](Update-MgBetaSecurityCloudAppSecurityProfile.md)
 Update the navigation property cloudAppSecurityProfiles in security
@@ -1677,7 +1558,6 @@ Update the navigation property hostSecurityProfiles in security
 
 ### [Update-MgBetaSecurityIncident](Update-MgBetaSecurityIncident.md)
 Update the properties of an incident object.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaSecurityInformationProtection](Update-MgBetaSecurityInformationProtection.md)
 Update the navigation property informationProtection in security
@@ -1718,7 +1598,6 @@ Update the navigation property filePlanReferences in security
 ### [Update-MgBetaSecurityLabelRetentionLabel](Update-MgBetaSecurityLabelRetentionLabel.md)
 Update the properties of a retentionLabel object.
 To update a disposition review stage, include the actionAfterRetentionPeriod property in the request body with one of the possible values specified.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaSecurityLabelRetentionLabelDescriptor](Update-MgBetaSecurityLabelRetentionLabelDescriptor.md)
 Update the navigation property descriptors in security
@@ -1734,7 +1613,6 @@ Update the navigation property secureScores in security
 
 ### [Update-MgBetaSecuritySecureScoreControlProfile](Update-MgBetaSecuritySecureScoreControlProfile.md)
 Update an editable secureScoreControlProfiles property within any integrated solution to change various properties, such as assignedTo or tenantNote.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaSecuritySubjectRightsRequest](Update-MgBetaSecuritySubjectRightsRequest.md)
 Update the navigation property subjectRightsRequests in security
@@ -1825,11 +1703,9 @@ Update the navigation property urlThreats in security
 
 ### [Update-MgBetaSecurityTiIndicator](Update-MgBetaSecurityTiIndicator.md)
 Update the properties of a tiIndicator object.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaSecurityTiIndicatorMultiple](Update-MgBetaSecurityTiIndicatorMultiple.md)
 Update multiple threat intelligence (TI) indicators in one request instead of multiple requests.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaSecurityTrigger](Update-MgBetaSecurityTrigger.md)
 Update the navigation property triggers in security

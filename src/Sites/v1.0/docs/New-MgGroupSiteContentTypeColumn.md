@@ -8,8 +8,7 @@ schema: 2.0.0
 # New-MgGroupSiteContentTypeColumn
 
 ## SYNOPSIS
-Add a column to a content type][contentType] in a site, or a list with a request that specifies a [columnDefinition][columnDefinition].
-This API is available in the following [national cloud deployments.
+Add a column to a [content type][contentType] in a site, or a list with a request that specifies a [columnDefinition][columnDefinition].
 
 ## SYNTAX
 
@@ -60,8 +59,7 @@ New-MgGroupSiteContentTypeColumn -InputObject <ISitesIdentity> [-AdditionalPrope
 ```
 
 ## DESCRIPTION
-Add a column to a content type][contentType] in a site, or a list with a request that specifies a [columnDefinition][columnDefinition].
-This API is available in the following [national cloud deployments.
+Add a column to a [content type][contentType] in a site, or a list with a request that specifies a [columnDefinition][columnDefinition].
 
 ## EXAMPLES
 

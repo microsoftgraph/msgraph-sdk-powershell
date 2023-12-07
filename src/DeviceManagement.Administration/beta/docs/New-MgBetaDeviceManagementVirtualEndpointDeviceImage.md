@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Create a new cloudPcDeviceImage object.
 Upload a custom OS image that you can later provision on Cloud PCs.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -18,8 +17,9 @@ This API is available in the following national cloud deployments.
 ```
 New-MgBetaDeviceManagementVirtualEndpointDeviceImage [-AdditionalProperties <Hashtable>]
  [-DisplayName <String>] [-ExpirationDate <DateTime>] [-Id <String>] [-LastModifiedDateTime <DateTime>]
- [-OperatingSystem <String>] [-OSBuildNumber <String>] [-OSStatus <String>] [-SourceImageResourceId <String>]
- [-Status <String>] [-StatusDetails <String>] [-Version <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-OperatingSystem <String>] [-OSBuildNumber <String>] [-OSStatus <String>] [-ScopeIds <String[]>]
+ [-SourceImageResourceId <String>] [-Status <String>] [-StatusDetails <String>] [-Version <String>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
@@ -31,7 +31,6 @@ New-MgBetaDeviceManagementVirtualEndpointDeviceImage -BodyParameter <IMicrosoftG
 ## DESCRIPTION
 Create a new cloudPcDeviceImage object.
 Upload a custom OS image that you can later provision on Cloud PCs.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -194,6 +193,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -ScopeIds
+.
+
+```yaml
+Type: System.String[]
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -SourceImageResourceId
 The ID of the source image resource on Azure.
 Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/images/{imageName}.
@@ -316,6 +330,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[OSBuildNumber <String>]`: The OS build version of the image. For example, 1909.
   - `[OSStatus <String>]`: cloudPcDeviceImageOsStatus
   - `[OperatingSystem <String>]`: The operating system of the image. For example, Windows 10 Enterprise.
+  - `[ScopeIds <String[]>]`: 
   - `[SourceImageResourceId <String>]`: The ID of the source image resource on Azure. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/images/{imageName}.
   - `[Status <String>]`: cloudPcDeviceImageStatus
   - `[StatusDetails <String>]`: cloudPcDeviceImageStatusDetails

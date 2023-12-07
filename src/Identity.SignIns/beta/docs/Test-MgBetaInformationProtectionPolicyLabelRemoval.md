@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Indicate to the consuming application what actions it should take to remove the label information.
-Given contentInfo as an input, which includes existing content metadata key/value pairs, the API returns an informationProtectionAction that contains some combination of one of more of the following:  This API is available in the following national cloud deployments.
+Given contentInfo as an input, which includes existing content metadata key/value pairs, the API returns an informationProtectionAction that contains some combination of one of more of the following:
 
 ## SYNTAX
 
@@ -29,7 +29,7 @@ Test-MgBetaInformationProtectionPolicyLabelRemoval
 
 ## DESCRIPTION
 Indicate to the consuming application what actions it should take to remove the label information.
-Given contentInfo as an input, which includes existing content metadata key/value pairs, the API returns an informationProtectionAction that contains some combination of one of more of the following:  This API is available in the following national cloud deployments.
+Given contentInfo as an input, which includes existing content metadata key/value pairs, the API returns an informationProtectionAction that contains some combination of one of more of the following:
 
 ## EXAMPLES
 

@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Run an estimate of the number of emails and documents in the eDiscovery search.
 To learn more about searches in eDiscovery, see Collect data for a case in eDiscovery (Premium).
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -29,7 +28,6 @@ Invoke-MgBetaEstimateSecurityCaseEdiscoveryCaseSearchStatistics -InputObject <IS
 ## DESCRIPTION
 Run an estimate of the number of emails and documents in the eDiscovery search.
 To learn more about searches in eDiscovery, see Collect data for a case in eDiscovery (Premium).
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

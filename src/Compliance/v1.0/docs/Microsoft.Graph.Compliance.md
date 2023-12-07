@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Compliance
-Module Guid: af19b0c6-e50d-4d47-b4c3-0cfc4f0f0f23
+Module Guid: 6e864fcb-7a75-4555-8045-e5828ccc020f
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.compliance
 Help Version: 1.0.0.0
 Locale: en-US
@@ -16,10 +16,10 @@ Get compliance
 
 ### [Get-MgPrivacySubjectRightsRequest](Get-MgPrivacySubjectRightsRequest.md)
 Read the properties and relationships of a subjectRightsRequest object.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgPrivacySubjectRightsRequestApprover](Get-MgPrivacySubjectRightsRequestApprover.md)
-Get approvers from privacy
+Collection of users who can approve the request.
+Currently only supported for requests of type delete.
 
 ### [Get-MgPrivacySubjectRightsRequestApproverCount](Get-MgPrivacySubjectRightsRequestApproverCount.md)
 Get the number of the resource
@@ -36,7 +36,7 @@ Get serviceProvisioningErrors property value
 Get the number of the resource
 
 ### [Get-MgPrivacySubjectRightsRequestCollaborator](Get-MgPrivacySubjectRightsRequestCollaborator.md)
-Get collaborators from privacy
+Collection of users who can collaborate on the request.
 
 ### [Get-MgPrivacySubjectRightsRequestCollaboratorCount](Get-MgPrivacySubjectRightsRequestCollaboratorCount.md)
 Get the number of the resource
@@ -66,11 +66,9 @@ Information about the Microsoft Teams team that was created for the request.
 
 ### [New-MgPrivacySubjectRightsRequest](New-MgPrivacySubjectRightsRequest.md)
 Create a new subjectRightsRequest object.
-This API is supported in the following national cloud deployments.
 
 ### [New-MgPrivacySubjectRightsRequestNote](New-MgPrivacySubjectRightsRequestNote.md)
 Create a new authoredNote object.
-This API is supported in the following national cloud deployments.
 
 ### [Remove-MgPrivacySubjectRightsRequest](Remove-MgPrivacySubjectRightsRequest.md)
 Delete navigation property subjectRightsRequests for privacy
@@ -83,7 +81,6 @@ Update compliance
 
 ### [Update-MgPrivacySubjectRightsRequest](Update-MgPrivacySubjectRightsRequest.md)
 Update the properties of a subjectRightsRequest object.
-This API is supported in the following national cloud deployments.
 
 ### [Update-MgPrivacySubjectRightsRequestApproverMailboxSetting](Update-MgPrivacySubjectRightsRequestApproverMailboxSetting.md)
 Update property mailboxSettings value.

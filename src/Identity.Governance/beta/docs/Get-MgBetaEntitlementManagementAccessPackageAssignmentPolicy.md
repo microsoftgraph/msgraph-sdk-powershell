@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 In Microsoft Entra entitlement management, retrieve the properties and relationships of an\n accessPackageAssignmentPolicy object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -54,7 +53,6 @@ Get-MgBetaEntitlementManagementAccessPackageAssignmentPolicy -DisplayNameEq <Str
 
 ## DESCRIPTION
 In Microsoft Entra entitlement management, retrieve the properties and relationships of an\n accessPackageAssignmentPolicy object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

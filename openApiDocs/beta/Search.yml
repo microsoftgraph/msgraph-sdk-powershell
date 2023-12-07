@@ -23,9 +23,9 @@ paths:
             type: array
             items:
               enum:
-                - industryData
                 - authorizationSystems
                 - connections
+                - industryData
               type: string
         - name: $expand
           in: query
@@ -38,9 +38,9 @@ paths:
             items:
               enum:
                 - '*'
-                - industryData
                 - authorizationSystems
                 - connections
+                - industryData
               type: string
       responses:
         2XX:
@@ -78,7 +78,11 @@ paths:
     get:
       tags:
         - external.authorizationSystem
-      summary: Get authorizationSystems from external
+      summary: List authorizationSystems
+      description: List the authorizationSystem objects onboarded to Permissions Management and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/externalconnectors-external-list-authorizationsystems?view=graph-rest-1.0
       operationId: external_ListAuthorizationSystem
       parameters:
         - $ref: '#/components/parameters/top'
@@ -170,6 +174,7 @@ paths:
       tags:
         - external.authorizationSystem
       summary: Get authorizationSystems from external
+      description: 'Represents an onboarded AWS account, Azure subscription, or GCP project that Microsoft Entra Permissions Management will collect and analyze permissions and actions on.'
       operationId: external_GetAuthorizationSystem
       parameters:
         - name: authorizationSystem-id
@@ -281,6 +286,7 @@ paths:
       tags:
         - external.authorizationSystem
       summary: Get dataCollectionInfo from external
+      description: 'Defines how and whether Permissions Management collects data from the onboarded authorization system. Supports $filter (eq) as follows:  $filter=dataCollectionInfo/entitlements/permissionsModificationCapability and $filter=dataCollectionInfo/entitlements/status.'
       operationId: external.authorizationSystem_GetDataCollectionInfo
       parameters:
         - name: authorizationSystem-id
@@ -402,7 +408,7 @@ paths:
       tags:
         - external.externalConnection
       summary: List connections
-      description: Retrieve a list of externalConnections. This API is available in the following national cloud deployments.
+      description: Retrieve a list of externalConnections.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-list?view=graph-rest-1.0
@@ -503,7 +509,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Create connection
-      description: Create a new externalConnection. This API is available in the following national cloud deployments.
+      description: Create a new externalConnection.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-external-post-connections?view=graph-rest-1.0
@@ -530,7 +536,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Get connection
-      description: Retrieve the properties and relationships of an externalConnection. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of an externalConnection.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-get?view=graph-rest-1.0
@@ -602,7 +608,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Update connection
-      description: Update the properties of an externalConnection. This API is available in the following national cloud deployments.
+      description: Update the properties of an externalConnection.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-update?view=graph-rest-1.0
@@ -637,7 +643,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Delete externalConnection
-      description: Delete an externalConnection. This API is available in the following national cloud deployments.
+      description: Delete an externalConnection.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-delete?view=graph-rest-1.0
@@ -741,7 +747,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Create externalGroup
-      description: Create a new externalGroup object. This API is available in the following national cloud deployments.
+      description: Create a new externalGroup object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-post-groups?view=graph-rest-1.0
@@ -876,7 +882,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Delete externalGroup
-      description: Delete an externalGroup object. This API is available in the following national cloud deployments.
+      description: Delete an externalGroup object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-externalgroup-delete?view=graph-rest-1.0
@@ -992,7 +998,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Create externalGroupMember
-      description: Create a new externalGroupMember object. This API is available in the following national cloud deployments.
+      description: Create a new externalGroupMember object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-externalgroup-post-members?view=graph-rest-1.0
@@ -1149,7 +1155,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Delete externalGroupMember
-      description: Delete an externalGroupMember object. This API is available in the following national cloud deployments.
+      description: Delete an externalGroupMember object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-externalgroupmember-delete?view=graph-rest-1.0
@@ -1248,7 +1254,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Get externalItem
-      description: Get the properties and relationships of an externalitem object. This API is provided for diagnostic purposes only. It isn't intended to be used for any other purpose. Repeated requests to this API might result in 429 HTTP errors. This API is available in the following national cloud deployments.
+      description: Get the properties and relationships of an externalitem object. This API is provided for diagnostic purposes only. It isn't intended to be used for any other purpose. Repeated requests to this API might result in 429 HTTP errors.
       operationId: external.connection_ListItem
       parameters:
         - name: externalConnection-id
@@ -1357,7 +1363,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Get externalItem
-      description: Get the properties and relationships of an externalitem object. This API is provided for diagnostic purposes only. It isn't intended to be used for any other purpose. Repeated requests to this API might result in 429 HTTP errors. This API is available in the following national cloud deployments.
+      description: Get the properties and relationships of an externalitem object. This API is provided for diagnostic purposes only. It isn't intended to be used for any other purpose. Repeated requests to this API might result in 429 HTTP errors.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-externalitem-get?view=graph-rest-1.0
@@ -1461,7 +1467,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Delete externalItem
-      description: Delete an externalitem. This API is available in the following national cloud deployments.
+      description: Delete an externalitem.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-externalitem-delete?view=graph-rest-1.0
@@ -2218,7 +2224,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Get connectionQuota
-      description: Retrieve the properties and relationships of a connectionQuota object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of a connectionQuota object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-connectionquota-get?view=graph-rest-1.0
@@ -2329,7 +2335,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Get schema
-      description: Retrieve the properties of a schema for an externalConnection. This API is available in the following national cloud deployments.
+      description: Retrieve the properties of a schema for an externalConnection.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-schema-get?view=graph-rest-1.0
@@ -2383,7 +2389,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Create schema
-      description: Create the schema for a Microsoft Search connection. This API is available in the following national cloud deployments.
+      description: Create the schema for a Microsoft Search connection.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-patch-schema?view=graph-rest-1.0
@@ -2490,7 +2496,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: List industryDataConnectors
-      description: Get the industryDataConnector resources from the dataConnector navigation property. This API is available in the following national cloud deployments.
+      description: Get the industryDataConnector resources from the dataConnector navigation property.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/industrydata-industrydataconnector-list?view=graph-rest-1.0
@@ -2556,7 +2562,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Create industryDataConnector
-      description: Create a new industryDataConnector object. This API is available in the following national cloud deployments.
+      description: Create a new industryDataConnector object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/industrydata-industrydataconnector-post?view=graph-rest-1.0
@@ -2582,11 +2588,11 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: Get azureDataLakeConnector
-      description: Read the properties and relationships of an azureDataLakeConnector object. This API is available in the following national cloud deployments.
+      summary: Get industryDataConnector
+      description: Read the properties and relationships of an industryDataConnector object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-azuredatalakeconnector-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/industrydata-industrydataconnector-get?view=graph-rest-1.0
       operationId: external.industryData_GetDataConnector
       parameters:
         - name: industryDataConnector-id
@@ -2637,11 +2643,11 @@ paths:
     patch:
       tags:
         - external.industryDataRoot
-      summary: Update azureDataLakeConnector
-      description: Update the properties of an azureDataLakeConnector object. This API is available in the following national cloud deployments.
+      summary: Update industryDataConnector
+      description: Update the properties of an industryDataConnector object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-azuredatalakeconnector-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/industrydata-industrydataconnector-update?view=graph-rest-1.0
       operationId: external.industryData_UpdateDataConnector
       parameters:
         - name: industryDataConnector-id
@@ -2672,11 +2678,11 @@ paths:
     delete:
       tags:
         - external.industryDataRoot
-      summary: Delete azureDataLakeConnector
-      description: Delete an azureDataLakeConnector object. This API is available in the following national cloud deployments.
+      summary: Delete industryDataConnector
+      description: Delete an industryDataConnector object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-azuredatalakeconnector-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/industrydata-industrydataconnector-delete?view=graph-rest-1.0
       operationId: external.industryData_DeleteDataConnector
       parameters:
         - name: industryDataConnector-id
@@ -2704,7 +2710,7 @@ paths:
       tags:
         - external.Actions
       summary: Invoke action validate
-      description: Perform validations applicable for the specific instance of the data connector. This API is available in the following national cloud deployments.
+      description: Perform validations applicable for the specific instance of the data connector.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/industrydata-industrydataconnector-validate?view=graph-rest-1.0
@@ -2796,7 +2802,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: List inboundFlows
-      description: Get a list of the inboundFlow objects and their properties. This API is available in the following national cloud deployments.
+      description: Get a list of the inboundFlow objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/industrydata-inboundflow-list?view=graph-rest-1.0
@@ -2876,7 +2882,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Create inboundFlow
-      description: 'Create a new inboundFlow object. The following prerequisite resources are required when you create an inboundFlow: This API is available in the following national cloud deployments.'
+      description: 'Create a new inboundFlow object. The following prerequisite resources are required when you create an inboundFlow:'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/industrydata-inboundflow-post?view=graph-rest-1.0
@@ -2902,11 +2908,11 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: Get inboundFileFlow
-      description: Read the properties and relationships of an inboundFileFlow object. This API is available in the following national cloud deployments.
+      summary: Get inboundFlow
+      description: Read the properties and relationships of an inboundFlow object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/industrydata-inboundflow-get?view=graph-rest-1.0
       operationId: external.industryData_GetInboundFlow
       parameters:
         - name: inboundFlow-id
@@ -2964,7 +2970,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Update inboundFileFlow
-      description: Update the properties of an inboundFileFlow object. This API is available in the following national cloud deployments.
+      description: Update the properties of an inboundFileFlow object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-update?view=graph-rest-1.0
@@ -2999,7 +3005,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Delete inboundFlow
-      description: Delete an inboundFlow object. This API is available in the following national cloud deployments.
+      description: Delete an inboundFlow object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/industrydata-inboundflow-delete?view=graph-rest-1.0
@@ -3151,7 +3157,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: List fileValidateOperations
-      description: Get a list of long-running file validation operations and their statuses. This API is available in the following national cloud deployments.
+      description: Get a list of long-running file validation operations and their statuses.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/industrydata-filevalidateoperation-list?view=graph-rest-1.0
@@ -3250,7 +3256,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Get fileValidateOperations
-      description: Read the properties and relationships of a fileValidateOperation object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a fileValidateOperation object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/industrydata-filevalidateoperation-get?view=graph-rest-1.0
@@ -3379,7 +3385,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: List referenceDefinitions
-      description: Get a list of the referenceDefinition objects and their properties. This API is available in the following national cloud deployments.
+      description: Get a list of the referenceDefinition objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/industrydata-referencedefinition-list?view=graph-rest-1.0
@@ -3484,7 +3490,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Get referenceDefinition
-      description: Read the properties and relationships of a referenceDefinition object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a referenceDefinition object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/industrydata-referencedefinition-get?view=graph-rest-1.0
@@ -3615,7 +3621,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: List roleGroups
-      description: Get a list of the roleGroup objects and their properties. This API is available in the following national cloud deployments.
+      description: Get a list of the roleGroup objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/industrydata-rolegroup-list?view=graph-rest-1.0
@@ -3705,7 +3711,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Get roleGroup
-      description: Read the properties and relationships of a roleGroup object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a roleGroup object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/industrydata-rolegroup-get?view=graph-rest-1.0
@@ -3831,7 +3837,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: List industryDataRuns
-      description: Get a list of the industryDataRun objects and their properties. This API is available in the following national cloud deployments.
+      description: Get a list of the industryDataRun objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/industrydata-industrydatarun-list?view=graph-rest-1.0
@@ -3910,7 +3916,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Get industryDataRun
-      description: Read the properties and relationships of an industryDataRun object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of an industryDataRun object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/industrydata-industrydatarun-get?view=graph-rest-1.0
@@ -4248,7 +4254,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: List sourceSystemDefinitions
-      description: Get a list of the sourceSystemDefinition objects and their properties. This API is available in the following national cloud deployments.
+      description: Get a list of the sourceSystemDefinition objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/industrydata-sourcesystemdefinition-list?view=graph-rest-1.0
@@ -4318,7 +4324,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Create sourceSystemDefinition
-      description: Create a new sourceSystemDefinition object. This API is available in the following national cloud deployments.
+      description: Create a new sourceSystemDefinition object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/industrydata-sourcesystemdefinition-post?view=graph-rest-1.0
@@ -4345,7 +4351,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Get sourceSystemDefinition
-      description: Read the properties and relationships of a sourceSystemDefinition object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a sourceSystemDefinition object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/industrydata-sourcesystemdefinition-get?view=graph-rest-1.0
@@ -4400,7 +4406,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Update sourceSystemDefinition
-      description: Update the properties of a sourceSystemDefinition object. This API is available in the following national cloud deployments.
+      description: Update the properties of a sourceSystemDefinition object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/industrydata-sourcesystemdefinition-update?view=graph-rest-1.0
@@ -4435,7 +4441,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Delete sourceSystemDefinition
-      description: Delete a sourceSystemDefinition object. This API is available in the following national cloud deployments.
+      description: Delete a sourceSystemDefinition object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/industrydata-sourcesystemdefinition-delete?view=graph-rest-1.0
@@ -4480,7 +4486,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: List yearTimePeriodDefinitions
-      description: Get a list of the yearTimePeriodDefinition objects and their properties. This API is available in the following national cloud deployments.
+      description: Get a list of the yearTimePeriodDefinition objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/industrydata-yeartimeperioddefinition-list?view=graph-rest-1.0
@@ -4553,7 +4559,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Create yearTimePeriodDefinition
-      description: Create a new yearTimePeriodDefinition object. This API is available in the following national cloud deployments.
+      description: Create a new yearTimePeriodDefinition object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/industrydata-yeartimeperioddefinition-post?view=graph-rest-1.0
@@ -4580,7 +4586,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Get yearTimePeriodDefinition
-      description: Read the properties and relationships of a yearTimePeriodDefinition object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a yearTimePeriodDefinition object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/industrydata-yeartimeperioddefinition-get?view=graph-rest-1.0
@@ -4636,7 +4642,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Update yearTimePeriodDefinition
-      description: Update the properties of a yearTimePeriodDefinition object. This API is available in the following national cloud deployments.
+      description: Update the properties of a yearTimePeriodDefinition object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/industrydata-yeartimeperioddefinition-update?view=graph-rest-1.0
@@ -4671,7 +4677,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Delete yearTimePeriodDefinition
-      description: Delete a yearTimePeriodDefinition object. This API is available in the following national cloud deployments.
+      description: Delete a yearTimePeriodDefinition object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/industrydata-yeartimeperioddefinition-delete?view=graph-rest-1.0
@@ -4785,7 +4791,7 @@ paths:
       tags:
         - search.acronym
       summary: List acronyms
-      description: Get a list of the acronym objects and their properties. This API is available in the following national cloud deployments.
+      description: Get a list of the acronym objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/search-searchentity-list-acronyms?view=graph-rest-1.0
@@ -4867,7 +4873,7 @@ paths:
       tags:
         - search.acronym
       summary: Create acronym
-      description: Create a new acronym object. This API is available in the following national cloud deployments.
+      description: Create a new acronym object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/search-searchentity-post-acronyms?view=graph-rest-1.0
@@ -4894,7 +4900,7 @@ paths:
       tags:
         - search.acronym
       summary: Get acronym
-      description: Read the properties and relationships of an acronym object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of an acronym object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/search-acronym-get?view=graph-rest-1.0
@@ -4953,7 +4959,7 @@ paths:
       tags:
         - search.acronym
       summary: Update acronym
-      description: Update the properties of an acronym object. This API is available in the following national cloud deployments.
+      description: Update the properties of an acronym object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/search-acronym-update?view=graph-rest-1.0
@@ -4988,7 +4994,7 @@ paths:
       tags:
         - search.acronym
       summary: Delete acronym
-      description: Deletes an acronym object. This API is available in the following national cloud deployments.
+      description: Deletes an acronym object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/search-acronym-delete?view=graph-rest-1.0
@@ -5033,7 +5039,7 @@ paths:
       tags:
         - search.bookmark
       summary: List bookmarks
-      description: Get a list of bookmark objects and their properties. This API is available in the following national cloud deployments.
+      description: Get a list of bookmark objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/search-searchentity-list-bookmarks?view=graph-rest-1.0
@@ -5142,7 +5148,7 @@ paths:
       tags:
         - search.bookmark
       summary: Create bookmark
-      description: Create a new bookmark object. This API is available in the following national cloud deployments.
+      description: Create a new bookmark object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/search-searchentity-post-bookmarks?view=graph-rest-1.0
@@ -5169,7 +5175,7 @@ paths:
       tags:
         - search.bookmark
       summary: Get bookmark
-      description: Read the properties and relationships of a bookmark object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a bookmark object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/search-bookmark-get?view=graph-rest-1.0
@@ -5237,7 +5243,7 @@ paths:
       tags:
         - search.bookmark
       summary: Update bookmark
-      description: Update the properties of a bookmark object. This API is available in the following national cloud deployments.
+      description: Update the properties of a bookmark object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/search-bookmark-update?view=graph-rest-1.0
@@ -5272,7 +5278,7 @@ paths:
       tags:
         - search.bookmark
       summary: Delete bookmark
-      description: Delete a bookmark object. This API is available in the following national cloud deployments.
+      description: Delete a bookmark object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/search-bookmark-delete?view=graph-rest-1.0
@@ -5317,7 +5323,7 @@ paths:
       tags:
         - search.Actions
       summary: Invoke action query
-      description: Run a specified search query. Search results are provided in the response. This API is available in the following national cloud deployments.
+      description: Run a specified search query. Search results are provided in the response.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/search-query?view=graph-rest-1.0
@@ -5364,7 +5370,7 @@ paths:
       tags:
         - search.qna
       summary: List qnas
-      description: Get a list of the qna objects and their properties. This API is available in the following national cloud deployments.
+      description: Get a list of the qna objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/search-searchentity-list-qnas?view=graph-rest-1.0
@@ -5467,7 +5473,7 @@ paths:
       tags:
         - search.qna
       summary: Create qna
-      description: Create a new qna object. This API is available in the following national cloud deployments.
+      description: Create a new qna object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/search-searchentity-post-qnas?view=graph-rest-1.0
@@ -5494,7 +5500,7 @@ paths:
       tags:
         - search.qna
       summary: Get qna
-      description: Read the properties and relationships of a qna object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a qna object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/search-qna-get?view=graph-rest-1.0
@@ -5560,7 +5566,7 @@ paths:
       tags:
         - search.qna
       summary: Update qna
-      description: Update the properties of a qna object. This API is available in the following national cloud deployments.
+      description: Update the properties of a qna object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/search-qna-update?view=graph-rest-1.0
@@ -5595,7 +5601,7 @@ paths:
       tags:
         - search.qna
       summary: Delete qna
-      description: Delete a qna object. This API is available in the following national cloud deployments.
+      description: Delete a qna object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/search-qna-delete?view=graph-rest-1.0
@@ -5641,18 +5647,19 @@ components:
       title: external
       type: object
       properties:
-        industryData:
-          $ref: '#/components/schemas/microsoft.graph.industryData.industryDataRoot'
         authorizationSystems:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.authorizationSystem'
+          description: 'Represents an onboarded AWS account, Azure subscription, or GCP project that Microsoft Entra Permissions Management will collect and analyze permissions and actions on.'
           x-ms-navigationProperty: true
         connections:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalConnection'
           x-ms-navigationProperty: true
+        industryData:
+          $ref: '#/components/schemas/microsoft.graph.industryData.industryDataRoot'
       additionalProperties:
         type: object
     microsoft.graph.authorizationSystem:
@@ -5663,10 +5670,13 @@ components:
           properties:
             authorizationSystemId:
               type: string
+              description: 'ID of the authorization system retrieved from the customer cloud environment. Supports $filter(eq, contains) and $orderBy.'
             authorizationSystemName:
               type: string
+              description: 'Name of the authorization system detected after onboarding. Supports $filter(eq,contains) and $orderBy.'
             authorizationSystemType:
               type: string
+              description: 'The type of authorization system. Can be gcp, azure, or aws. Supports $filter(eq).'
             dataCollectionInfo:
               $ref: '#/components/schemas/microsoft.graph.dataCollectionInfo'
           additionalProperties:

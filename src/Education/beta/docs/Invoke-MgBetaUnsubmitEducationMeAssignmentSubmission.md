@@ -14,7 +14,6 @@ This method changes the status of the submission from submitted to working.
 During the submit process, all the resources are copied from submittedResources to  workingResources.
 The teacher will be looking at the working resources list for grading.
 A teacher can also unsubmit a student's assignment on their behalf.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -37,7 +36,6 @@ This method changes the status of the submission from submitted to working.
 During the submit process, all the resources are copied from submittedResources to  workingResources.
 The teacher will be looking at the working resources list for grading.
 A teacher can also unsubmit a student's assignment on their behalf.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

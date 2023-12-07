@@ -16,7 +16,6 @@ This means that activities without historyItems won't be included in the respons
 The UserActivity.ReadWrite.CreatedByApp permission will also apply extra filtering to the response, so that only activities created by your application are returned.
 This server-side filtering might result in empty pages if the user is active and other applications have created more recent activities.
 To get your application's activities, use the nextLink property to paginate.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -42,7 +41,6 @@ This means that activities without historyItems won't be included in the respons
 The UserActivity.ReadWrite.CreatedByApp permission will also apply extra filtering to the response, so that only activities created by your application are returned.
 This server-side filtering might result in empty pages if the user is active and other applications have created more recent activities.
 To get your application's activities, use the nextLink property to paginate.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

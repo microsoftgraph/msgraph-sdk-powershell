@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Delete a partner-specific configuration in a cross-tenant access policy.
 If a configuration includes a user synchronization policy, you must first delete the user synchronization policy before you can delete the partner-specific configuration.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -30,7 +29,6 @@ Remove-MgBetaPolicyCrossTenantAccessPolicyPartner -InputObject <IIdentitySignIns
 ## DESCRIPTION
 Delete a partner-specific configuration in a cross-tenant access policy.
 If a configuration includes a user synchronization policy, you must first delete the user synchronization policy before you can delete the partner-specific configuration.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -159,6 +157,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[ActivityBasedTimeoutPolicyId <String>]`: The unique identifier of activityBasedTimeoutPolicy
   - `[AppManagementPolicyId <String>]`: The unique identifier of appManagementPolicy
   - `[AuthenticationCombinationConfigurationId <String>]`: The unique identifier of authenticationCombinationConfiguration
+  - `[AuthenticationConditionApplicationAppId <String>]`: The unique identifier of authenticationConditionApplication
   - `[AuthenticationContextClassReferenceId <String>]`: The unique identifier of authenticationContextClassReference
   - `[AuthenticationEventListenerId <String>]`: The unique identifier of authenticationEventListener
   - `[AuthenticationEventsFlowId <String>]`: The unique identifier of authenticationEventsFlow

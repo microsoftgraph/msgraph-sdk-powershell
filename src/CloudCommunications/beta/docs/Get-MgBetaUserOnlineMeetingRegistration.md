@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Get the externalMeetingRegistration details associated with an onlineMeeting.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Get-MgBetaUserOnlineMeetingRegistration -InputObject <ICloudCommunicationsIdenti
 
 ## DESCRIPTION
 Get the externalMeetingRegistration details associated with an onlineMeeting.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

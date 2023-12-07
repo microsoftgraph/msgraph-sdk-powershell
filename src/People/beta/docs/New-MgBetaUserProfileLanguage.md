@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Use this API to create a new languageProficiency object in a user's profile.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -47,7 +46,6 @@ New-MgBetaUserProfileLanguage -InputObject <IPeopleIdentity> [-AdditionalPropert
 
 ## DESCRIPTION
 Use this API to create a new languageProficiency object in a user's profile.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

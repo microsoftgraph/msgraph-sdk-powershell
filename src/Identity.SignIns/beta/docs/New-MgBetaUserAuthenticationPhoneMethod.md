@@ -14,7 +14,6 @@ This means, for example, adding a mobile phone to a user with a preexisting mobi
 Additionally, a user must always have a mobile phone before adding an alternateMobile phone.
 Adding a phone number makes it available for use in both Azure multifactor authentication (MFA) and self-service password reset (SSPR), if enabled.
 Additionally, if a user is enabled by policy to use SMS sign-in and a mobile number is added, the system attempts to register the number for use in that system.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -51,7 +50,6 @@ This means, for example, adding a mobile phone to a user with a preexisting mobi
 Additionally, a user must always have a mobile phone before adding an alternateMobile phone.
 Adding a phone number makes it available for use in both Azure multifactor authentication (MFA) and self-service password reset (SSPR), if enabled.
 Additionally, if a user is enabled by policy to use SMS sign-in and a mobile number is added, the system attempts to register the number for use in that system.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -259,6 +257,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[ActivityBasedTimeoutPolicyId <String>]`: The unique identifier of activityBasedTimeoutPolicy
   - `[AppManagementPolicyId <String>]`: The unique identifier of appManagementPolicy
   - `[AuthenticationCombinationConfigurationId <String>]`: The unique identifier of authenticationCombinationConfiguration
+  - `[AuthenticationConditionApplicationAppId <String>]`: The unique identifier of authenticationConditionApplication
   - `[AuthenticationContextClassReferenceId <String>]`: The unique identifier of authenticationContextClassReference
   - `[AuthenticationEventListenerId <String>]`: The unique identifier of authenticationEventListener
   - `[AuthenticationEventsFlowId <String>]`: The unique identifier of authenticationEventsFlow

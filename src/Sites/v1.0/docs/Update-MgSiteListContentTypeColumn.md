@@ -8,8 +8,7 @@ schema: 2.0.0
 # Update-MgSiteListContentTypeColumn
 
 ## SYNOPSIS
-Update a site][], a [list][], or a [content type][contentType] [column][columnDefinition].
-This API is available in the following [national cloud deployments.
+Update a [site][], a [list][], or a [content type][contentType] [column][columnDefinition].
 
 ## SYNTAX
 
@@ -60,8 +59,7 @@ Update-MgSiteListContentTypeColumn -InputObject <ISitesIdentity> [-AdditionalPro
 ```
 
 ## DESCRIPTION
-Update a site][], a [list][], or a [content type][contentType] [column][columnDefinition].
-This API is available in the following [national cloud deployments.
+Update a [site][], a [list][], or a [content type][contentType] [column][columnDefinition].
 
 ## EXAMPLES
 

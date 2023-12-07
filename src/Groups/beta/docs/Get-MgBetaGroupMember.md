@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaGroupMember
 
 ## SYNOPSIS
-Direct members of this group, who can be users, devices, other groups, or service principals.
+Direct group members, who can be users, devices, other groups, or service principals.
 Supports the List members, Add member, and Remove member operations.
 Nullable.
 Supports $expand including nested $select.
@@ -23,7 +23,7 @@ Get-MgBetaGroupMember -GroupId <String> [-ExpandProperty <String[]>] [-Filter <S
 ```
 
 ## DESCRIPTION
-Direct members of this group, who can be users, devices, other groups, or service principals.
+Direct group members, who can be users, devices, other groups, or service principals.
 Supports the List members, Add member, and Remove member operations.
 Nullable.
 Supports $expand including nested $select.

@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new workforceIntegration object.\nYou can set up which entities you want to receive Shifts synchronous change notifications on and set entities to configure filtering by WFM rules eligibility for, including swap requests.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -29,7 +28,6 @@ New-MgTeamworkWorkforceIntegration -BodyParameter <IMicrosoftGraphWorkforceInteg
 
 ## DESCRIPTION
 Create a new workforceIntegration object.\nYou can set up which entities you want to receive Shifts synchronous change notifications on and set entities to configure filtering by WFM rules eligibility for, including swap requests.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

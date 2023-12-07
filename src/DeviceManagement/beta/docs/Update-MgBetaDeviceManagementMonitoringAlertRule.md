@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update the properties of an alertRule object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -45,7 +44,6 @@ Update-MgBetaDeviceManagementMonitoringAlertRule -InputObject <IDeviceManagement
 
 ## DESCRIPTION
 Update the properties of an alertRule object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -206,8 +204,8 @@ Accept wildcard characters: False
 
 ### -IsSystemRule
 Indicates whether the rule is a system rule.
-If true, the rule is a system rule; otherwise, the rule is a custom defined rule and can be edited.
-System rules are built-in and only a few properties can be edited.
+If true, the rule is a system rule; otherwise, the rule is a custom-defined rule and can be edited.
+System rules are built in and only a few properties can be edited.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -328,7 +326,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[Description <String>]`: The rule description.
   - `[DisplayName <String>]`: The display name of the rule.
   - `[Enabled <Boolean?>]`: The status of the rule that indicates whether the rule is enabled or disabled. If true, the rule is enabled; otherwise, the rule is disabled.
-  - `[IsSystemRule <Boolean?>]`: Indicates whether the rule is a system rule. If true, the rule is a system rule; otherwise, the rule is a custom defined rule and can be edited. System rules are built-in and only a few properties can be edited.
+  - `[IsSystemRule <Boolean?>]`: Indicates whether the rule is a system rule. If true, the rule is a system rule; otherwise, the rule is a custom-defined rule and can be edited. System rules are built in and only a few properties can be edited.
   - `[NotificationChannels <IMicrosoftGraphDeviceManagementNotificationChannel[]>]`: The notification channels of the rule selected by the user.
     - `[NotificationChannelType <String>]`: notificationChannelType
     - `[NotificationReceivers <IMicrosoftGraphDeviceManagementNotificationReceiver[]>]`: Information about the notification receivers, such as locale and contact information. For example, en-us for locale and serena.davis@contoso.com for contact information.

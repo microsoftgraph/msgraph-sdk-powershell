@@ -11,7 +11,6 @@ schema: 2.0.0
 Upload a PKCS12 format key (PFX) to a trustFrameworkKeyset.
 The input is a base-64 encoded value of the Pfx certificate contents.
 This method returns trustFrameworkKey.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -47,7 +46,6 @@ Invoke-MgBetaUploadTrustFrameworkKeySetPkcs12 -InputObject <IIdentitySignInsIden
 Upload a PKCS12 format key (PFX) to a trustFrameworkKeyset.
 The input is a base-64 encoded value of the Pfx certificate contents.
 This method returns trustFrameworkKey.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -219,6 +217,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[ActivityBasedTimeoutPolicyId <String>]`: The unique identifier of activityBasedTimeoutPolicy
   - `[AppManagementPolicyId <String>]`: The unique identifier of appManagementPolicy
   - `[AuthenticationCombinationConfigurationId <String>]`: The unique identifier of authenticationCombinationConfiguration
+  - `[AuthenticationConditionApplicationAppId <String>]`: The unique identifier of authenticationConditionApplication
   - `[AuthenticationContextClassReferenceId <String>]`: The unique identifier of authenticationContextClassReference
   - `[AuthenticationEventListenerId <String>]`: The unique identifier of authenticationEventListener
   - `[AuthenticationEventsFlowId <String>]`: The unique identifier of authenticationEventsFlow

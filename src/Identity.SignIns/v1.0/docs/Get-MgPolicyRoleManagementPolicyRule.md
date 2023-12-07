@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve a rule or settings defined for a role management policy.
-The rule can be one of the following types that are derived from the unifiedRoleManagementPolicyRule object: This API is available in the following national cloud deployments.
+The rule can be one of the following types that are derived from the unifiedRoleManagementPolicyRule object:
 
 ## SYNTAX
 
@@ -35,7 +35,7 @@ Get-MgPolicyRoleManagementPolicyRule -InputObject <IIdentitySignInsIdentity> [-E
 
 ## DESCRIPTION
 Retrieve a rule or settings defined for a role management policy.
-The rule can be one of the following types that are derived from the unifiedRoleManagementPolicyRule object: This API is available in the following national cloud deployments.
+The rule can be one of the following types that are derived from the unifiedRoleManagementPolicyRule object:
 
 ## EXAMPLES
 

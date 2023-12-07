@@ -427,8 +427,8 @@ To create the parameters described below, construct a hash table containing the 
 `BODYPARAMETER <IMicrosoftGraphServiceHealthIssue>`: serviceHealthIssue
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Details <IMicrosoftGraphKeyValuePair[]>]`: Extra details about service event. This property doesn't support filters.
-    - `[Name <String>]`: Name for this key-value pair
-    - `[Value <String>]`: Value for this key-value pair
+    - `[Name <String>]`: Name for this key-value pair. For more information about possible names for each resource type that uses this configuration, see keyValuePair names and values.
+    - `[Value <String>]`: Value for this key-value pair. For more information about possible values for each resource type that uses this configuration, see keyValuePair names and values.
   - `[EndDateTime <DateTime?>]`: The end time of the service event.
   - `[LastModifiedDateTime <DateTime?>]`: The last modified time of the service event.
   - `[StartDateTime <DateTime?>]`: The start time of the service event.
@@ -451,8 +451,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[Status <String>]`: serviceHealthStatus
 
 `DETAILS <IMicrosoftGraphKeyValuePair[]>`: Extra details about service event. This property doesn't support filters.
-  - `[Name <String>]`: Name for this key-value pair
-  - `[Value <String>]`: Value for this key-value pair
+  - `[Name <String>]`: Name for this key-value pair. For more information about possible names for each resource type that uses this configuration, see keyValuePair names and values.
+  - `[Value <String>]`: Value for this key-value pair. For more information about possible values for each resource type that uses this configuration, see keyValuePair names and values.
 
 `INPUTOBJECT <IDevicesServiceAnnouncementIdentity>`: Identity Parameter
   - `[ServiceAnnouncementAttachmentId <String>]`: The unique identifier of serviceAnnouncementAttachment

@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgApplicationSynchronizationAccessToken
 
 ## SYNOPSIS
-Acquire an OAuth access token to authorize the Azure AD provisioning service to provision users into an application.
-This API is supported in the following national cloud deployments.
+Acquire an OAuth access token to authorize the Microsoft Entra provisioning service to provision users into an application.
 
 ## SYNTAX
 
@@ -42,8 +41,7 @@ Get-MgApplicationSynchronizationAccessToken -InputObject <IApplicationsIdentity>
 ```
 
 ## DESCRIPTION
-Acquire an OAuth access token to authorize the Azure AD provisioning service to provision users into an application.
-This API is supported in the following national cloud deployments.
+Acquire an OAuth access token to authorize the Microsoft Entra provisioning service to provision users into an application.
 
 ## EXAMPLES
 
@@ -238,6 +236,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[ServicePrincipalId <String>]`: The unique identifier of servicePrincipal
   - `[SynchronizationJobId <String>]`: The unique identifier of synchronizationJob
   - `[SynchronizationTemplateId <String>]`: The unique identifier of synchronizationTemplate
+  - `[TargetDeviceGroupId <String>]`: The unique identifier of targetDeviceGroup
   - `[TokenIssuancePolicyId <String>]`: The unique identifier of tokenIssuancePolicy
   - `[TokenLifetimePolicyId <String>]`: The unique identifier of tokenLifetimePolicy
   - `[UserId <String>]`: The unique identifier of user

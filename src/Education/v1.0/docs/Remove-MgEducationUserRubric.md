@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Delete an educationRubric object.
 Only teachers can perform this operation.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -29,7 +28,6 @@ Remove-MgEducationUserRubric -InputObject <IEducationIdentity> [-IfMatch <String
 ## DESCRIPTION
 Delete an educationRubric object.
 Only teachers can perform this operation.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

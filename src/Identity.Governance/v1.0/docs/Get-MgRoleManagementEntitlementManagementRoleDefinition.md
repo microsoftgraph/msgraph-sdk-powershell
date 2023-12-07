@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Read the properties and relationships of a unifiedRoleDefinition object.
-The following role-based access control (RBAC) providers are currently supported: This API is available in the following national cloud deployments.
+The following role-based access control (RBAC) providers are currently supported:
 
 ## SYNTAX
 
@@ -34,7 +34,7 @@ Get-MgRoleManagementEntitlementManagementRoleDefinition -InputObject <IIdentityG
 
 ## DESCRIPTION
 Read the properties and relationships of a unifiedRoleDefinition object.
-The following role-based access control (RBAC) providers are currently supported: This API is available in the following national cloud deployments.
+The following role-based access control (RBAC) providers are currently supported:
 
 ## EXAMPLES
 

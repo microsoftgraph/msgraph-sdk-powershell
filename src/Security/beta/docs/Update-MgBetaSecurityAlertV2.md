@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update the properties of an alert object in an organization based on the specified alert id property.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -58,7 +57,6 @@ Update-MgBetaSecurityAlertV2 -InputObject <ISecurityIdentity> [-ActorDisplayName
 
 ## DESCRIPTION
 Update the properties of an alert object in an organization based on the specified alert id property.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

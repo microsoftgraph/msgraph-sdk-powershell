@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Get the properties and relationships of a unifiedRoleDefinition object of an RBAC provider.
-The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)\n- directory (Microsoft Entra directory roles)\n- entitlement management (Microsoft Entra entitlement management)\n- Exchange Online This API is available in the following national cloud deployments.
+The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)\n- directory (Microsoft Entra directory roles)\n- entitlement management (Microsoft Entra entitlement management)\n- Exchange Online
 
 ## SYNTAX
 
@@ -34,7 +34,7 @@ Get-MgBetaRoleManagementEntitlementManagementRoleDefinition -InputObject <IIdent
 
 ## DESCRIPTION
 Get the properties and relationships of a unifiedRoleDefinition object of an RBAC provider.
-The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)\n- directory (Microsoft Entra directory roles)\n- entitlement management (Microsoft Entra entitlement management)\n- Exchange Online This API is available in the following national cloud deployments.
+The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)\n- directory (Microsoft Entra directory roles)\n- entitlement management (Microsoft Entra entitlement management)\n- Exchange Online
 
 ## EXAMPLES
 

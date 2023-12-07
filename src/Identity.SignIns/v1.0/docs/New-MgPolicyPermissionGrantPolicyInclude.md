@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Add conditions under which a permission grant event is *included* in a permission grant policy.
 You do this by adding a permissionGrantConditionSet to the includes collection of a  permissionGrantPolicy.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -48,7 +47,6 @@ New-MgPolicyPermissionGrantPolicyInclude -InputObject <IIdentitySignInsIdentity>
 ## DESCRIPTION
 Add conditions under which a permission grant event is *included* in a permission grant policy.
 You do this by adding a permissionGrantConditionSet to the includes collection of a  permissionGrantPolicy.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

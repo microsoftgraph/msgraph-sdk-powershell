@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Copy a page to a specific section.
 For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -45,7 +44,6 @@ Copy-MgBetaUserOnenotePageToSection -InputObject <IUsersActionsIdentity> [-Addit
 ## DESCRIPTION
 Copy a page to a specific section.
 For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -290,6 +288,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[NotebookId <String>]`: The unique identifier of notebook
   - `[OnenotePageId <String>]`: The unique identifier of onenotePage
   - `[OnenoteSectionId <String>]`: The unique identifier of onenoteSection
+  - `[OnlineMeetingId <String>]`: The unique identifier of onlineMeeting
   - `[OutlookTaskFolderId <String>]`: The unique identifier of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: The unique identifier of outlookTaskGroup
   - `[OutlookTaskId <String>]`: The unique identifier of outlookTask

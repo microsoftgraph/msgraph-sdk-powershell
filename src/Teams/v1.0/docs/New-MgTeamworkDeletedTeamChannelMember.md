@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Add a conversationMember to a channel.
-This API is available in the following national cloud deployments.
+This operation is allowed only for channels with a membershipType value of private or shared.
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ New-MgTeamworkDeletedTeamChannelMember -InputObject <ITeamsIdentity> [-Additiona
 
 ## DESCRIPTION
 Add a conversationMember to a channel.
-This API is available in the following national cloud deployments.
+This operation is allowed only for channels with a membershipType value of private or shared.
 
 ## EXAMPLES
 

@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Read the properties and relationships of a store object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -45,7 +44,6 @@ Get-MgSiteTermStore -SiteId <String> [-ExpandProperty <String[]>] [-Filter <Stri
 
 ## DESCRIPTION
 Read the properties and relationships of a store object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

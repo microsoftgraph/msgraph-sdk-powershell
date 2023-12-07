@@ -13,7 +13,6 @@ For example, an organization can have a Microsoft 365 Enterprise E3 subscription
 You can also enable and disable specific plans associated with a subscription.
 To learn more about subscriptions and licenses, see this Technet article.
 To get the subscriptions available in the directory, perform a GET subscribedSkus request.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -51,7 +50,6 @@ For example, an organization can have a Microsoft 365 Enterprise E3 subscription
 You can also enable and disable specific plans associated with a subscription.
 To learn more about subscriptions and licenses, see this Technet article.
 To get the subscriptions available in the directory, perform a GET subscribedSkus request.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -351,6 +349,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[NotebookId <String>]`: The unique identifier of notebook
   - `[OnenotePageId <String>]`: The unique identifier of onenotePage
   - `[OnenoteSectionId <String>]`: The unique identifier of onenoteSection
+  - `[OnlineMeetingId <String>]`: The unique identifier of onlineMeeting
   - `[OutlookTaskFolderId <String>]`: The unique identifier of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: The unique identifier of outlookTaskGroup
   - `[OutlookTaskId <String>]`: The unique identifier of outlookTask

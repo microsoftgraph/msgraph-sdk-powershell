@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Remove a retention label from a driveItem.
 For information about retention labels from an administrator's perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -29,7 +28,6 @@ Remove-MgBetaDriveItemRetentionLabel -InputObject <IFilesIdentity> [-IfMatch <St
 ## DESCRIPTION
 Remove a retention label from a driveItem.
 For information about retention labels from an administrator's perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 The user (or application) that created the group.
-Note: This is not set if the user is an administrator.
+Note: This isn't set if the user is an administrator.
 Read-only.
 
 ## SYNTAX
@@ -28,7 +28,7 @@ Get-MgBetaGroupCreatedOnBehalfOf -InputObject <IGroupsIdentity> [-ExpandProperty
 
 ## DESCRIPTION
 The user (or application) that created the group.
-Note: This is not set if the user is an administrator.
+Note: This isn't set if the user is an administrator.
 Read-only.
 
 ## EXAMPLES

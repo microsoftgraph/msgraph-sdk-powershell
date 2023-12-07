@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgBetaWindowsUpdatesUpdatableAsset
 
 ## SYNOPSIS
-Read the properties and relationships of an updatableAsset object.
-This API is available in the following national cloud deployments.
+Read the properties and relationships of an updatableAssetGroup object.
 
 ## SYNTAX
 
@@ -33,8 +32,7 @@ Get-MgBetaWindowsUpdatesUpdatableAsset -InputObject <IWindowsUpdatesIdentity> [-
 ```
 
 ## DESCRIPTION
-Read the properties and relationships of an updatableAsset object.
-This API is available in the following national cloud deployments.
+Read the properties and relationships of an updatableAssetGroup object.
 
 ## EXAMPLES
 

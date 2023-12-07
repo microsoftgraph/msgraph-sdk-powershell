@@ -13,7 +13,6 @@ When using JSON format, you can include a file attachment in the same sendMail a
 When using MIME format: This method saves the message in the Sent Items folder.
 Alternatively, create a draft message to send later.
 To learn more about the steps involved in the backend before a mail is delivered to recipients, see here.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -49,7 +48,6 @@ When using JSON format, you can include a file attachment in the same sendMail a
 When using MIME format: This method saves the message in the Sent Items folder.
 Alternatively, create a draft message to send later.
 To learn more about the steps involved in the backend before a mail is delivered to recipients, see here.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

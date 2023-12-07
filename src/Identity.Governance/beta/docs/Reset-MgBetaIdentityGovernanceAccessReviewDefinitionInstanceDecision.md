@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Resets decisions of all accessReviewInstanceDecisionItem objects on an accessReviewInstance to notReviewed.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Reset-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceDecision
 
 ## DESCRIPTION
 Resets decisions of all accessReviewInstanceDecisionItem objects on an accessReviewInstance to notReviewed.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

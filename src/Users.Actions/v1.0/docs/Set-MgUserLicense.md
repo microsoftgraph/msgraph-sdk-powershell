@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Add or remove subscriptions for the user.
 You can also enable and disable specific plans associated with a subscription.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -45,7 +44,6 @@ Set-MgUserLicense -InputObject <IUsersActionsIdentity> [-AdditionalProperties <H
 ## DESCRIPTION
 Add or remove subscriptions for the user.
 You can also enable and disable specific plans associated with a subscription.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

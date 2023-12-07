@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve a list of plannerplan objects shared with a user object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -21,7 +20,6 @@ Get-MgBetaUserPlannerPlan -UserId <String> [-ExpandProperty <String[]>] [-Filter
 
 ## DESCRIPTION
 Retrieve a list of plannerplan objects shared with a user object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

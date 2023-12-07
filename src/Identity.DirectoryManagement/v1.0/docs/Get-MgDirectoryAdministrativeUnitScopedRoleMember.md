@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Get a Microsoft Entra role assignment with administrative unit scope.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -34,7 +33,6 @@ Get-MgDirectoryAdministrativeUnitScopedRoleMember -InputObject <IIdentityDirecto
 
 ## DESCRIPTION
 Get a Microsoft Entra role assignment with administrative unit scope.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

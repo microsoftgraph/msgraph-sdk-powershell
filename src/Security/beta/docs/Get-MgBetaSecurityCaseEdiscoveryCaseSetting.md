@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Read the properties and relationships of an ediscoveryCaseSettings object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Get-MgBetaSecurityCaseEdiscoveryCaseSetting -InputObject <ISecurityIdentity> [-E
 
 ## DESCRIPTION
 Read the properties and relationships of an ediscoveryCaseSettings object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -8,8 +8,7 @@ schema: 2.0.0
 # Remove-MgBetaUserDriveItem
 
 ## SYNOPSIS
-Delete a DriveItem by using its ID or path.\nDeleting items using this method moves the items to the recycle bin instead of permanently deleting the item.
-This API is available in the following national cloud deployments.
+Delete a [bundle][] of driveItems by using its id.\nDeleting a bundle using this method permanently deletes the bundle and doesn't move it to the Recycle Bin.\nIt doesn't, however, remove the items that were referenced by the bundle.\nThey'll remain in their parent folders.
 
 ## SYNTAX
 
@@ -26,8 +25,7 @@ Remove-MgBetaUserDriveItem -InputObject <IFilesIdentity> [-IfMatch <String>] [-P
 ```
 
 ## DESCRIPTION
-Delete a DriveItem by using its ID or path.\nDeleting items using this method moves the items to the recycle bin instead of permanently deleting the item.
-This API is available in the following national cloud deployments.
+Delete a [bundle][] of driveItems by using its id.\nDeleting a bundle using this method permanently deletes the bundle and doesn't move it to the Recycle Bin.\nIt doesn't, however, remove the items that were referenced by the bundle.\nThey'll remain in their parent folders.
 
 ## EXAMPLES
 

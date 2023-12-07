@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update an editable secureScoreControlProfile object within any integrated solution to change various properties, such as assignedTo or tenantNote.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -51,7 +50,6 @@ Update-MgSecuritySecureScoreControlProfile -InputObject <ISecurityIdentity> [-Ac
 
 ## DESCRIPTION
 Update an editable secureScoreControlProfile object within any integrated solution to change various properties, such as assignedTo or tenantNote.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create an attack simulation campaign for a tenant.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -37,7 +36,6 @@ New-MgBetaSecurityAttackSimulation -BodyParameter <IMicrosoftGraphSimulation> [-
 
 ## DESCRIPTION
 Create an attack simulation campaign for a tenant.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

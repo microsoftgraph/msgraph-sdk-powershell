@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgBetaExternalIndustryDataInboundFlow
 
 ## SYNOPSIS
-Read the properties and relationships of an inboundFileFlow object.
-This API is available in the following national cloud deployments.
+Read the properties and relationships of an inboundFlow object.
 
 ## SYNTAX
 
@@ -33,8 +32,7 @@ Get-MgBetaExternalIndustryDataInboundFlow -InputObject <ISearchIdentity> [-Expan
 ```
 
 ## DESCRIPTION
-Read the properties and relationships of an inboundFileFlow object.
-This API is available in the following national cloud deployments.
+Read the properties and relationships of an inboundFlow object.
 
 ## EXAMPLES
 

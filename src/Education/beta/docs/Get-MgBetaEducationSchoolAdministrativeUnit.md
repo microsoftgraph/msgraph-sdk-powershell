@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve the directory administrativeUnit that corresponds to this educationSchool.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Get-MgBetaEducationSchoolAdministrativeUnit -InputObject <IEducationIdentity> [-
 
 ## DESCRIPTION
 Retrieve the directory administrativeUnit that corresponds to this educationSchool.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

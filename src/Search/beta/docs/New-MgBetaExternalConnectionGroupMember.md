@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new externalGroupMember object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -39,7 +38,6 @@ New-MgBetaExternalConnectionGroupMember -InputObject <ISearchIdentity> [-Additio
 
 ## DESCRIPTION
 Create a new externalGroupMember object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

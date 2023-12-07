@@ -8,8 +8,7 @@ schema: 2.0.0
 # New-MgShareListColumn
 
 ## SYNOPSIS
-Create a column for a list][list] with a request that specifies a [columnDefinition][columnDefinition].
-This API is available in the following [national cloud deployments.
+Create a column for a [list][list] with a request that specifies a [columnDefinition][columnDefinition].
 
 ## SYNTAX
 
@@ -58,8 +57,7 @@ New-MgShareListColumn -InputObject <IFilesIdentity> [-AdditionalProperties <Hash
 ```
 
 ## DESCRIPTION
-Create a column for a list][list] with a request that specifies a [columnDefinition][columnDefinition].
-This API is available in the following [national cloud deployments.
+Create a column for a [list][list] with a request that specifies a [columnDefinition][columnDefinition].
 
 ## EXAMPLES
 

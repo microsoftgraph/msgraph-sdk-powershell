@@ -63,7 +63,7 @@ Accept wildcard characters: False
 ```
 
 ### -AuthorizationSystems
-.
+Represents an onboarded AWS account, Azure subscription, or GCP project that Microsoft Entra Permissions Management will collect and analyze permissions and actions on.
 To construct, see NOTES section for AUTHORIZATIONSYSTEMS properties and create a hash table.
 
 ```yaml
@@ -177,11 +177,11 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-`AUTHORIZATIONSYSTEMS <IMicrosoftGraphAuthorizationSystem[]>`: .
+`AUTHORIZATIONSYSTEMS <IMicrosoftGraphAuthorizationSystem[]>`: Represents an onboarded AWS account, Azure subscription, or GCP project that Microsoft Entra Permissions Management will collect and analyze permissions and actions on.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[AuthorizationSystemId <String>]`: 
-  - `[AuthorizationSystemName <String>]`: 
-  - `[AuthorizationSystemType <String>]`: 
+  - `[AuthorizationSystemId <String>]`: ID of the authorization system retrieved from the customer cloud environment. Supports $filter(eq, contains) and $orderBy.
+  - `[AuthorizationSystemName <String>]`: Name of the authorization system detected after onboarding. Supports $filter(eq,contains) and $orderBy.
+  - `[AuthorizationSystemType <String>]`: The type of authorization system. Can be gcp, azure, or aws. Supports $filter(eq).
   - `[DataCollectionInfo <IMicrosoftGraphDataCollectionInfo>]`: dataCollectionInfo
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -190,11 +190,11 @@ To create the parameters described below, construct a hash table containing the 
 
 `BODYPARAMETER <IMicrosoftGraphExternalConnectorsExternal>`: external
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[AuthorizationSystems <IMicrosoftGraphAuthorizationSystem[]>]`: 
+  - `[AuthorizationSystems <IMicrosoftGraphAuthorizationSystem[]>]`: Represents an onboarded AWS account, Azure subscription, or GCP project that Microsoft Entra Permissions Management will collect and analyze permissions and actions on.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[AuthorizationSystemId <String>]`: 
-    - `[AuthorizationSystemName <String>]`: 
-    - `[AuthorizationSystemType <String>]`: 
+    - `[AuthorizationSystemId <String>]`: ID of the authorization system retrieved from the customer cloud environment. Supports $filter(eq, contains) and $orderBy.
+    - `[AuthorizationSystemName <String>]`: Name of the authorization system detected after onboarding. Supports $filter(eq,contains) and $orderBy.
+    - `[AuthorizationSystemType <String>]`: The type of authorization system. Can be gcp, azure, or aws. Supports $filter(eq).
     - `[DataCollectionInfo <IMicrosoftGraphDataCollectionInfo>]`: dataCollectionInfo
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.

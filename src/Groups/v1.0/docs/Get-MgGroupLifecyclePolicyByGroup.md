@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieves a list of groupLifecyclePolicy objects to which a group belongs.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -21,7 +20,6 @@ Get-MgGroupLifecyclePolicyByGroup -GroupId <String> [-ExpandProperty <String[]>]
 
 ## DESCRIPTION
 Retrieves a list of groupLifecyclePolicy objects to which a group belongs.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -11,7 +11,6 @@ schema: 2.0.0
 Create a SharePoint folder to upload files for a given educationAssignment.
 Only teachers can perform this operation.
 The teacher determines the resources to upload in the assignment's folder.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -31,7 +30,6 @@ Set-MgBetaEducationUserAssignmentUpResourceFolder -InputObject <IEducationIdenti
 Create a SharePoint folder to upload files for a given educationAssignment.
 Only teachers can perform this operation.
 The teacher determines the resources to upload in the assignment's folder.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

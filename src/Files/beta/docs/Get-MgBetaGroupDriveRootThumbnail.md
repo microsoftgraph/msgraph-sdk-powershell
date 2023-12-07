@@ -8,8 +8,8 @@ schema: 2.0.0
 # Get-MgBetaGroupDriveRootThumbnail
 
 ## SYNOPSIS
-Collection containing [ThumbnailSet][] objects associated with the item.
-For more info, see [getting thumbnails][].
+Collection of [thumbnailSet][] objects associated with the item.
+For more information, see [getting thumbnails][].
 Read-only.
 Nullable.
 
@@ -35,8 +35,8 @@ Get-MgBetaGroupDriveRootThumbnail -InputObject <IFilesIdentity> [-ExpandProperty
 ```
 
 ## DESCRIPTION
-Collection containing [ThumbnailSet][] objects associated with the item.
-For more info, see [getting thumbnails][].
+Collection of [thumbnailSet][] objects associated with the item.
+For more information, see [getting thumbnails][].
 Read-only.
 Nullable.
 

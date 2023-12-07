@@ -13,7 +13,6 @@ These objects represent a language available in a user flow.
 Note: To retrieve a language supported for customization, you must first enable language customization on your Azure AD B2C user flow.
 For more information, see Update b2cIdentityUserFlow.
 Language customization is enabled by default in Microsoft Entra user flows.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -43,7 +42,6 @@ These objects represent a language available in a user flow.
 Note: To retrieve a language supported for customization, you must first enable language customization on your Azure AD B2C user flow.
 For more information, see Update b2cIdentityUserFlow.
 Language customization is enabled by default in Microsoft Entra user flows.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -294,6 +292,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[ActivityBasedTimeoutPolicyId <String>]`: The unique identifier of activityBasedTimeoutPolicy
   - `[AppManagementPolicyId <String>]`: The unique identifier of appManagementPolicy
   - `[AuthenticationCombinationConfigurationId <String>]`: The unique identifier of authenticationCombinationConfiguration
+  - `[AuthenticationConditionApplicationAppId <String>]`: The unique identifier of authenticationConditionApplication
   - `[AuthenticationContextClassReferenceId <String>]`: The unique identifier of authenticationContextClassReference
   - `[AuthenticationEventListenerId <String>]`: The unique identifier of authenticationEventListener
   - `[AuthenticationEventsFlowId <String>]`: The unique identifier of authenticationEventsFlow

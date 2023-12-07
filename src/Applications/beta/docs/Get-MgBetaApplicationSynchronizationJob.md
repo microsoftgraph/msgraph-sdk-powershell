@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve the existing synchronization job and its properties.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -34,7 +33,6 @@ Get-MgBetaApplicationSynchronizationJob -InputObject <IApplicationsIdentity> [-E
 
 ## DESCRIPTION
 Retrieve the existing synchronization job and its properties.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

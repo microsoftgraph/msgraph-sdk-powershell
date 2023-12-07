@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update a connectedOrganization object to change one or more of its properties.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -45,7 +44,6 @@ Update-MgEntitlementManagementConnectedOrganization -InputObject <IIdentityGover
 
 ## DESCRIPTION
 Update a connectedOrganization object to change one or more of its properties.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -191,7 +189,7 @@ Accept wildcard characters: False
 ```
 
 ### -IdentitySources
-The identity sources in this connected organization, one of azureActiveDirectoryTenant, domainIdentitySource, externalDomainFederation or crossCloudAzureActiveDirectoryTenant.
+The identity sources in this connected organization, one of azureActiveDirectoryTenant, crossCloudAzureActiveDirectoryTenant, domainIdentitySource, externalDomainFederation, or socialIdentitySource.
 Nullable.
 
 ```yaml
@@ -332,7 +330,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[ExternalSponsors <IMicrosoftGraphDirectoryObject[]>]`: 
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
-  - `[IdentitySources <IMicrosoftGraphIdentitySource[]>]`: The identity sources in this connected organization, one of azureActiveDirectoryTenant, domainIdentitySource, externalDomainFederation or crossCloudAzureActiveDirectoryTenant. Nullable.
+  - `[IdentitySources <IMicrosoftGraphIdentitySource[]>]`: The identity sources in this connected organization, one of azureActiveDirectoryTenant, crossCloudAzureActiveDirectoryTenant, domainIdentitySource, externalDomainFederation, or socialIdentitySource. Nullable.
   - `[InternalSponsors <IMicrosoftGraphDirectoryObject[]>]`: 
   - `[ModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
   - `[State <String>]`: connectedOrganizationState

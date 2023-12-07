@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new contentApproval object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -42,7 +41,6 @@ New-MgBetaWindowsUpdatesPolicyComplianceChange -InputObject <IWindowsUpdatesIden
 
 ## DESCRIPTION
 Create a new contentApproval object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -300,6 +298,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[Expedite <IMicrosoftGraphWindowsUpdatesExpediteSettings>]`: expediteSettings
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[IsExpedited <Boolean?>]`: True indicates that the deployment of the content is expedited.
+        - `[IsReadinessTest <Boolean?>]`: 
       - `[Monitoring <IMicrosoftGraphWindowsUpdatesMonitoringSettings>]`: monitoringSettings
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[MonitoringRules <IMicrosoftGraphWindowsUpdatesMonitoringRule[]>]`: Specifies the rules through which monitoring signals can trigger actions on the deployment. Rules are combined using 'or.'
@@ -366,6 +365,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[Expedite <IMicrosoftGraphWindowsUpdatesExpediteSettings>]`: expediteSettings
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[IsExpedited <Boolean?>]`: True indicates that the deployment of the content is expedited.
+      - `[IsReadinessTest <Boolean?>]`: 
     - `[Monitoring <IMicrosoftGraphWindowsUpdatesMonitoringSettings>]`: monitoringSettings
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[MonitoringRules <IMicrosoftGraphWindowsUpdatesMonitoringRule[]>]`: Specifies the rules through which monitoring signals can trigger actions on the deployment. Rules are combined using 'or.'

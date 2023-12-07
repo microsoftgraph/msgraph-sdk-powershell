@@ -1,53 +1,49 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Applications
-online version: https://learn.microsoft.com/powershell/module/microsoft.graph.applications/get-mgserviceprincipalmemberof
+Module Name: Microsoft.Graph.Users
+online version: https://learn.microsoft.com/powershell/module/microsoft.graph.users/get-mgusertransitivememberof
 schema: 2.0.0
 ---
 
-# Get-MgServicePrincipalMemberOf
+# Get-MgUserTransitiveMemberOf
 
 ## SYNOPSIS
-Roles that this service principal is a member of.
-HTTP Methods: GET Read-only.
+The groups, including nested groups, and directory roles that a user is a member of.
 Nullable.
-Supports $expand.
 
 ## SYNTAX
 
 ### List (Default)
 ```
-Get-MgServicePrincipalMemberOf -ServicePrincipalId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgUserTransitiveMemberOf -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
  [-ConsistencyLevel <String>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgServicePrincipalMemberOf -DirectoryObjectId <String> -ServicePrincipalId <String>
- [-ExpandProperty <String[]>] [-Property <String[]>] [-ConsistencyLevel <String>] [<CommonParameters>]
+Get-MgUserTransitiveMemberOf -DirectoryObjectId <String> -UserId <String> [-ExpandProperty <String[]>]
+ [-Property <String[]>] [-ConsistencyLevel <String>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgServicePrincipalMemberOf -InputObject <IApplicationsIdentity> [-ExpandProperty <String[]>]
- [-Property <String[]>] [-ConsistencyLevel <String>] [<CommonParameters>]
+Get-MgUserTransitiveMemberOf -InputObject <IUsersIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+ [-ConsistencyLevel <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Roles that this service principal is a member of.
-HTTP Methods: GET Read-only.
+The groups, including nested groups, and directory roles that a user is a member of.
 Nullable.
-Supports $expand.
 
 ## EXAMPLES
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Applications
+Import-Module Microsoft.Graph.Users
 ```
 
-Get-MgServicePrincipalMemberOf -ServicePrincipalId $servicePrincipalId
+Get-MgUserTransitiveMemberOf -UserId $userId
 
 ## PARAMETERS
 
@@ -148,7 +144,7 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -204,21 +200,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ServicePrincipalId
-The unique identifier of servicePrincipal
-
-```yaml
-Type: System.String
-Parameter Sets: Get, List
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Skip
 Skip the first n items
 
@@ -264,12 +245,27 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -UserId
+The unique identifier of user
+
+```yaml
+Type: System.String
+Parameter Sets: Get, List
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.PowerShell.Models.IUsersIdentity
 
 ## OUTPUTS
 
@@ -284,27 +280,19 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-`INPUTOBJECT <IApplicationsIdentity>`: Identity Parameter
-  - `[AppId <String>]`: Alternate key of application
-  - `[AppManagementPolicyId <String>]`: The unique identifier of appManagementPolicy
-  - `[AppRoleAssignmentId <String>]`: The unique identifier of appRoleAssignment
-  - `[ApplicationId <String>]`: The unique identifier of application
-  - `[ApplicationTemplateId <String>]`: The unique identifier of applicationTemplate
-  - `[ClaimsMappingPolicyId <String>]`: The unique identifier of claimsMappingPolicy
-  - `[DelegatedPermissionClassificationId <String>]`: The unique identifier of delegatedPermissionClassification
-  - `[DirectoryDefinitionId <String>]`: The unique identifier of directoryDefinition
+`INPUTOBJECT <IUsersIdentity>`: Identity Parameter
+  - `[AttachmentBaseId <String>]`: The unique identifier of attachmentBase
+  - `[AttachmentSessionId <String>]`: The unique identifier of attachmentSession
+  - `[ChecklistItemId <String>]`: The unique identifier of checklistItem
   - `[DirectoryObjectId <String>]`: The unique identifier of directoryObject
-  - `[EndpointId <String>]`: The unique identifier of endpoint
-  - `[ExtensionPropertyId <String>]`: The unique identifier of extensionProperty
-  - `[FederatedIdentityCredentialId <String>]`: The unique identifier of federatedIdentityCredential
-  - `[GroupId <String>]`: The unique identifier of group
-  - `[HomeRealmDiscoveryPolicyId <String>]`: The unique identifier of homeRealmDiscoveryPolicy
+  - `[ExtensionId <String>]`: The unique identifier of extension
+  - `[LicenseDetailsId <String>]`: The unique identifier of licenseDetails
+  - `[LinkedResourceId <String>]`: The unique identifier of linkedResource
   - `[OAuth2PermissionGrantId <String>]`: The unique identifier of oAuth2PermissionGrant
-  - `[ServicePrincipalId <String>]`: The unique identifier of servicePrincipal
-  - `[SynchronizationJobId <String>]`: The unique identifier of synchronizationJob
-  - `[SynchronizationTemplateId <String>]`: The unique identifier of synchronizationTemplate
-  - `[TokenIssuancePolicyId <String>]`: The unique identifier of tokenIssuancePolicy
-  - `[TokenLifetimePolicyId <String>]`: The unique identifier of tokenLifetimePolicy
+  - `[OutlookCategoryId <String>]`: The unique identifier of outlookCategory
+  - `[ProfilePhotoId <String>]`: The unique identifier of profilePhoto
+  - `[TodoTaskId <String>]`: The unique identifier of todoTask
+  - `[TodoTaskListId <String>]`: The unique identifier of todoTaskList
   - `[UserId <String>]`: The unique identifier of user
 
 ## RELATED LINKS

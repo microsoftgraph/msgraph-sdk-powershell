@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceAppManagementManagedEBookAssignment
 
 ## SYNOPSIS
-Create a new managedEBookAssignment object.
+Create a new iosVppEBookAssignment object.
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ New-MgDeviceAppManagementManagedEBookAssignment -InputObject <IDevicesCorporateM
 ```
 
 ## DESCRIPTION
-Create a new managedEBookAssignment object.
+Create a new iosVppEBookAssignment object.
 
 ## EXAMPLES
 
@@ -253,7 +253,10 @@ To create the parameters described below, construct a hash table containing the 
   - `[MdmWindowsInformationProtectionPolicyId <String>]`: The unique identifier of mdmWindowsInformationProtectionPolicy
   - `[MobileAppAssignmentId <String>]`: The unique identifier of mobileAppAssignment
   - `[MobileAppCategoryId <String>]`: The unique identifier of mobileAppCategory
+  - `[MobileAppContentFileId <String>]`: The unique identifier of mobileAppContentFile
+  - `[MobileAppContentId <String>]`: The unique identifier of mobileAppContent
   - `[MobileAppId <String>]`: The unique identifier of mobileApp
+  - `[MobileContainedAppId <String>]`: The unique identifier of mobileContainedApp
   - `[TargetedManagedAppConfigurationId <String>]`: The unique identifier of targetedManagedAppConfiguration
   - `[TargetedManagedAppPolicyAssignmentId <String>]`: The unique identifier of targetedManagedAppPolicyAssignment
   - `[UserId <String>]`: The unique identifier of user

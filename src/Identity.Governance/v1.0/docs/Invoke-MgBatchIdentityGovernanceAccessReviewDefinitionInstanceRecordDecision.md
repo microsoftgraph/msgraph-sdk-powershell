@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Enables reviewers to review all accessReviewInstanceDecisionItem objects in batches by using principalId, resourceId, or neither.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -47,7 +46,6 @@ Invoke-MgBatchIdentityGovernanceAccessReviewDefinitionInstanceRecordDecision
 
 ## DESCRIPTION
 Enables reviewers to review all accessReviewInstanceDecisionItem objects in batches by using principalId, resourceId, or neither.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

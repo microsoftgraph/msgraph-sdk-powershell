@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update the properties of an onPremisesDirectorySynchronization object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -45,7 +44,6 @@ Update-MgBetaDirectoryOnPremiseSynchronization -InputObject <IIdentityDirectoryM
 
 ## DESCRIPTION
 Update the properties of an onPremisesDirectorySynchronization object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

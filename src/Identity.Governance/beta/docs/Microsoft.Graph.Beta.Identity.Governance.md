@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Identity.Governance
-Module Guid: 14645b51-fcb4-4226-abb2-aa666669a1ed
+Module Guid: 5951c395-1ffc-4bcf-87dc-35282068e3c7
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.identity.governance
 Help Version: 1.0.0.0
 Locale: en-US
@@ -22,7 +22,6 @@ After an access review is finished, and auto-apply was configured, then the stat
 You should expect to see denied users, if any, being removed from the resource group membership or app assignment in a few minutes.
 A configured auto applying review, or selecting Apply doesn't have an effect on a group that originates in an on-premises directory or a dynamic group.
 If you want to change a group that originates on-premises, download the results and apply those changes to the representation of the group in that directory.
-This API is available in the following national cloud deployments.
 
 ### [Add-MgBetaAccessReviewInstanceDecision](Add-MgBetaAccessReviewInstanceDecision.md)
 In the Microsoft Entra access reviews feature, apply the decisions of a completed accessReview.
@@ -35,17 +34,14 @@ After an access review is finished, and auto-apply was configured, then the stat
 You should expect to see denied users, if any, being removed from the resource group membership or app assignment in a few minutes.
 A configured auto applying review, or selecting Apply doesn't have an effect on a group that originates in an on-premises directory or a dynamic group.
 If you want to change a group that originates on-premises, download the results and apply those changes to the representation of the group in that directory.
-This API is available in the following national cloud deployments.
 
 ### [Add-MgBetaIdentityGovernanceAccessReviewDecisionInstanceDecision](Add-MgBetaIdentityGovernanceAccessReviewDecisionInstanceDecision.md)
 Apply review decisions on an accessReviewInstance if the decisions were not applied automatically because the autoApplyDecisionsEnabled property is false in the review's accessReviewScheduleSettings.
 The status of the accessReviewInstance must be Completed to call this method.
-This API is available in the following national cloud deployments.
 
 ### [Add-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceDecision](Add-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceDecision.md)
 Apply review decisions on an accessReviewInstance if the decisions were not applied automatically because the autoApplyDecisionsEnabled property is false in the review's accessReviewScheduleSettings.
 The status of the accessReviewInstance must be Completed to call this method.
-This API is available in the following national cloud deployments.
 
 ### [Export-MgBetaPrivilegedAccessResourceRoleAssignment](Export-MgBetaPrivilegedAccessResourceRoleAssignment.md)
 Invoke function export
@@ -60,7 +56,6 @@ To retrieve the decisions of the access review, use the list accessReview decisi
 If this is a recurring access review, no decisions will be associated with the recurring access review series.
 Instead, use the instances relationship of that series to retrieve an accessReview collection of the past, current, and future instances of the access review.
 Each past and current instance will have decisions.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaAccessReviewCount](Get-MgBetaAccessReviewCount.md)
 Get the number of the resource
@@ -120,7 +115,6 @@ Get the number of the resource
 ### [Get-MgBetaAgreementFile](Get-MgBetaAgreementFile.md)
 Retrieve the details of an agreement file, including the language and version information.
 The default file can have multiple versions, each with its own language, that can be retrieved by specifying the Accept-Language header.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaAgreementFileCount](Get-MgBetaAgreementFileCount.md)
 Get the number of the resource
@@ -152,15 +146,11 @@ Get entity from businessFlowTemplates by key
 Get the number of the resource
 
 ### [Get-MgBetaEntitlementManagementAccessPackage](Get-MgBetaEntitlementManagementAccessPackage.md)
-Retrieve an access package with a list of accessPackageResourceRoleScope objects.
-These objects represent the resource roles that an access package assigns to each subject.
-Each object links to an accessPackageResourceRole and an accessPackageResourceScope.
-This API is available in the following national cloud deployments.
+Retrieve the properties and relationships of an accessPackage object.
 
 ### [Get-MgBetaEntitlementManagementAccessPackageApplicablePolicyRequirement](Get-MgBetaEntitlementManagementAccessPackageApplicablePolicyRequirement.md)
 In Microsoft Entra entitlement management, this action retrieves a list of accessPackageAssignmentRequestRequirements objects that the currently signed-in user can use to create an accessPackageAssignmentRequest.
 Each requirement object corresponds to an access package assignment policy that the currently signed-in user is allowed to request an assignment for.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaEntitlementManagementAccessPackageAssignment](Get-MgBetaEntitlementManagementAccessPackageAssignment.md)
 The assignment of an access package to a subject for a period of time.
@@ -179,7 +169,6 @@ Get the number of the resource
 
 ### [Get-MgBetaEntitlementManagementAccessPackageAssignmentPolicy](Get-MgBetaEntitlementManagementAccessPackageAssignmentPolicy.md)
 In Microsoft Entra entitlement management, retrieve the properties and relationships of an\n accessPackageAssignmentPolicy object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaEntitlementManagementAccessPackageAssignmentPolicyCount](Get-MgBetaEntitlementManagementAccessPackageAssignmentPolicyCount.md)
 Get the number of the resource
@@ -194,36 +183,30 @@ Supports $expand.
 
 ### [Get-MgBetaEntitlementManagementAccessPackageAssignmentRequest](Get-MgBetaEntitlementManagementAccessPackageAssignmentRequest.md)
 In Microsoft Entra entitlement management, retrieve the properties and relationships of an  accessPackageAssignmentRequest object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaEntitlementManagementAccessPackageAssignmentRequestCount](Get-MgBetaEntitlementManagementAccessPackageAssignmentRequestCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaEntitlementManagementAccessPackageAssignmentResourceRole](Get-MgBetaEntitlementManagementAccessPackageAssignmentResourceRole.md)
 Retrieve the properties and relationships of an accessPackageAssignmentResourceRole object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaEntitlementManagementAccessPackageAssignmentResourceRoleCount](Get-MgBetaEntitlementManagementAccessPackageAssignmentResourceRoleCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaEntitlementManagementAccessPackageCatalog](Get-MgBetaEntitlementManagementAccessPackageCatalog.md)
 Retrieve the properties and relationships of an accessPackageCatalog object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageCustomWorkflowExtension](Get-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageCustomWorkflowExtension.md)
 Read the properties and relationships of an accessPackageAssignmentWorkflowExtension object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageResource](Get-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageResource.md)
 Retrieve a list of accessPackageResource objects in an accessPackageCatalog.
 To request to add or remove an accessPackageResource, use create accessPackageResourceRequest.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageResourceRole](Get-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageResourceRole.md)
 Retrieve a list of accessPackageResourceRole objects of an accessPackageResource in an accessPackageCatalog.
 The resource should have been added to the catalog by creating an accessPackageResourceRequest.
 This list of roles can then be used by the caller to select a role, which is needed when subsequently creating an accessPackageResourceRoleScope.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageResourceScope](Get-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageResourceScope.md)
 Get accessPackageResourceScopes from identityGovernance
@@ -233,26 +216,21 @@ Get the number of the resource
 
 ### [Get-MgBetaEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension](Get-MgBetaEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension.md)
 Read the properties and relationships of a customAccessPackageWorkflowExtension object for an accessPackageCatalog object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaEntitlementManagementAccessPackageCount](Get-MgBetaEntitlementManagementAccessPackageCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaEntitlementManagementAccessPackageIncompatibleAccessPackage](Get-MgBetaEntitlementManagementAccessPackageIncompatibleAccessPackage.md)
 Retrieve a list of the accessPackage objects that have been marked as incompatible on an accessPackage.
- This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaEntitlementManagementAccessPackageIncompatibleAccessPackageByRef](Get-MgBetaEntitlementManagementAccessPackageIncompatibleAccessPackageByRef.md)
 Retrieve a list of the accessPackage objects that have been marked as incompatible on an accessPackage.
- This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaEntitlementManagementAccessPackageIncompatibleGroup](Get-MgBetaEntitlementManagementAccessPackageIncompatibleGroup.md)
 Retrieve a list of the group objects that have been marked as incompatible on an accessPackage.
- This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaEntitlementManagementAccessPackageIncompatibleGroupByRef](Get-MgBetaEntitlementManagementAccessPackageIncompatibleGroupByRef.md)
 Retrieve a list of the group objects that have been marked as incompatible on an accessPackage.
- This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaEntitlementManagementAccessPackageIncompatibleWith](Get-MgBetaEntitlementManagementAccessPackageIncompatibleWith.md)
 The access packages that are incompatible with this package.
@@ -266,7 +244,6 @@ Get the number of the resource
 
 ### [Get-MgBetaEntitlementManagementAccessPackageResourceEnvironment](Get-MgBetaEntitlementManagementAccessPackageResourceEnvironment.md)
 Read the properties and relationships of an accessPackageResourceEnvironment object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaEntitlementManagementAccessPackageResourceEnvironmentAccessPackageResourceCount](Get-MgBetaEntitlementManagementAccessPackageResourceEnvironmentAccessPackageResourceCount.md)
 Get the number of the resource
@@ -282,7 +259,6 @@ Get the number of the resource
 
 ### [Get-MgBetaEntitlementManagementConnectedOrganization](Get-MgBetaEntitlementManagementConnectedOrganization.md)
 Retrieve the properties and relationships of a connectedOrganization object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaEntitlementManagementConnectedOrganizationCount](Get-MgBetaEntitlementManagementConnectedOrganizationCount.md)
 Get the number of the resource
@@ -290,12 +266,10 @@ Get the number of the resource
 ### [Get-MgBetaEntitlementManagementConnectedOrganizationExternalSponsor](Get-MgBetaEntitlementManagementConnectedOrganizationExternalSponsor.md)
 Retrieve a list of a connectedOrganization's external sponsors.
 The external sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaEntitlementManagementConnectedOrganizationExternalSponsorByRef](Get-MgBetaEntitlementManagementConnectedOrganizationExternalSponsorByRef.md)
 Retrieve a list of a connectedOrganization's external sponsors.
 The external sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaEntitlementManagementConnectedOrganizationExternalSponsorCount](Get-MgBetaEntitlementManagementConnectedOrganizationExternalSponsorCount.md)
 Get the number of the resource
@@ -303,19 +277,16 @@ Get the number of the resource
 ### [Get-MgBetaEntitlementManagementConnectedOrganizationInternalSponsor](Get-MgBetaEntitlementManagementConnectedOrganizationInternalSponsor.md)
 Retrieve a list of a connectedOrganization's internal sponsors.
 The internal sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaEntitlementManagementConnectedOrganizationInternalSponsorByRef](Get-MgBetaEntitlementManagementConnectedOrganizationInternalSponsorByRef.md)
 Retrieve a list of a connectedOrganization's internal sponsors.
 The internal sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaEntitlementManagementConnectedOrganizationInternalSponsorCount](Get-MgBetaEntitlementManagementConnectedOrganizationInternalSponsorCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaEntitlementManagementSetting](Get-MgBetaEntitlementManagementSetting.md)
 Retrieve the properties of an entitlementManagementSettings object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaEntitlementManagementSubject](Get-MgBetaEntitlementManagementSubject.md)
 Represents the subjects within entitlement management.
@@ -356,7 +327,6 @@ Get the number of the resource
 
 ### [Get-MgBetaIdentityGovernanceAccessReviewDecisionInstanceDecision](Get-MgBetaIdentityGovernanceAccessReviewDecisionInstanceDecision.md)
 Read the properties and relationships of an accessReviewInstanceDecisionItem object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaIdentityGovernanceAccessReviewDecisionInstanceDecisionCount](Get-MgBetaIdentityGovernanceAccessReviewDecisionInstanceDecisionCount.md)
 Get the number of the resource
@@ -374,14 +344,12 @@ It's the parent schedule for the instance, where instances are created for each 
 
 ### [Get-MgBetaIdentityGovernanceAccessReviewDecisionInstanceStage](Get-MgBetaIdentityGovernanceAccessReviewDecisionInstanceStage.md)
 Retrieve the properties and relationships of an accessReviewStage object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaIdentityGovernanceAccessReviewDecisionInstanceStageCount](Get-MgBetaIdentityGovernanceAccessReviewDecisionInstanceStageCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaIdentityGovernanceAccessReviewDecisionInstanceStageDecision](Get-MgBetaIdentityGovernanceAccessReviewDecisionInstanceStageDecision.md)
 Read the properties and relationships of an accessReviewInstanceDecisionItem object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaIdentityGovernanceAccessReviewDecisionInstanceStageDecisionCount](Get-MgBetaIdentityGovernanceAccessReviewDecisionInstanceStageDecisionCount.md)
 Get the number of the resource
@@ -399,7 +367,6 @@ This returns all properties of the scheduled access review series except for the
 Each accessReviewScheduleDefinition has at least one instance.
 An instance represents a review for a specific resource (such as a particular group's members), during one occurrence (for example, March 2021) of a recurring review.
 To retrieve the instances of the access review series, use the list accessReviewInstance API.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaIdentityGovernanceAccessReviewDefinitionCount](Get-MgBetaIdentityGovernanceAccessReviewDefinitionCount.md)
 Get the number of the resource
@@ -408,7 +375,6 @@ Get the number of the resource
 Retrieve an accessReviewInstance object using the identifier of an accessReviewInstance and its parent accessReviewScheduleDefinition.
 This returns all properties of the instance except for the associated accessReviewInstanceDecisionItems.
 To retrieve the decisions on the instance, use List accessReviewInstanceDecisionItem.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceContactedReviewer](Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceContactedReviewer.md)
 Returns the collection of reviewers who were contacted to complete this review.
@@ -424,7 +390,6 @@ Get the number of the resource
 
 ### [Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceDecision](Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceDecision.md)
 Read the properties and relationships of an accessReviewInstanceDecisionItem object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceDecisionCount](Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceDecisionCount.md)
 Get the number of the resource
@@ -446,14 +411,12 @@ It's the parent schedule for the instance, where instances are created for each 
 
 ### [Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStage](Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStage.md)
 Retrieve the properties and relationships of an accessReviewStage object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStageCount](Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStageCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStageDecision](Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStageDecision.md)
 Read the properties and relationships of an accessReviewInstanceDecisionItem object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStageDecisionCount](Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStageDecisionCount.md)
 Get the number of the resource
@@ -470,7 +433,6 @@ The instance is the parent of the decision item, representing the recurrence of 
 Retrieve an accessReviewHistoryDefinition object by its identifier.
 All of the properties of the access review history definition object are returned.
 If the definition is 30 days or older, a 404 Not Found error is returned.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaIdentityGovernanceAccessReviewHistoryDefinitionCount](Get-MgBetaIdentityGovernanceAccessReviewHistoryDefinitionCount.md)
 Get the number of the resource
@@ -484,25 +446,21 @@ Get the number of the resource
 
 ### [Get-MgBetaIdentityGovernanceAccessReviewPolicy](Get-MgBetaIdentityGovernanceAccessReviewPolicy.md)
 Read the properties and relationships of an accessReviewPolicy object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaIdentityGovernanceAppConsentRequest](Get-MgBetaIdentityGovernanceAppConsentRequest.md)
 Read the properties and relationships of an appConsentRequest object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaIdentityGovernanceAppConsentRequestCount](Get-MgBetaIdentityGovernanceAppConsentRequestCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaIdentityGovernanceAppConsentRequestUserConsentRequest](Get-MgBetaIdentityGovernanceAppConsentRequestUserConsentRequest.md)
 Read the properties and relationships of a userConsentRequest object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaIdentityGovernanceAppConsentRequestUserConsentRequestApproval](Get-MgBetaIdentityGovernanceAppConsentRequestUserConsentRequestApproval.md)
 Approval decisions associated with a request.
 
 ### [Get-MgBetaIdentityGovernanceAppConsentRequestUserConsentRequestApprovalStep](Get-MgBetaIdentityGovernanceAppConsentRequestUserConsentRequestApprovalStep.md)
 Retrieve the properties of an approvalStep object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaIdentityGovernanceAppConsentRequestUserConsentRequestApprovalStepCount](Get-MgBetaIdentityGovernanceAppConsentRequestUserConsentRequestApprovalStepCount.md)
 Get the number of the resource
@@ -512,7 +470,6 @@ Get the number of the resource
 
 ### [Get-MgBetaIdentityGovernanceLifecycleWorkflow](Get-MgBetaIdentityGovernanceLifecycleWorkflow.md)
 Read the properties and relationships of a workflow object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaIdentityGovernanceLifecycleWorkflowCount](Get-MgBetaIdentityGovernanceLifecycleWorkflowCount.md)
 Get the number of the resource
@@ -528,14 +485,12 @@ Returned only on $select.
 
 ### [Get-MgBetaIdentityGovernanceLifecycleWorkflowCreatedByServiceProvisioningError](Get-MgBetaIdentityGovernanceLifecycleWorkflowCreatedByServiceProvisioningError.md)
 Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
-Supports $filter (eq, not, for isResolved and serviceInstance).
 
 ### [Get-MgBetaIdentityGovernanceLifecycleWorkflowCreatedByServiceProvisioningErrorCount](Get-MgBetaIdentityGovernanceLifecycleWorkflowCreatedByServiceProvisioningErrorCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaIdentityGovernanceLifecycleWorkflowCustomTaskExtension](Get-MgBetaIdentityGovernanceLifecycleWorkflowCustomTaskExtension.md)
 Read the properties and relationships of a customTaskExtension object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaIdentityGovernanceLifecycleWorkflowCustomTaskExtensionCount](Get-MgBetaIdentityGovernanceLifecycleWorkflowCustomTaskExtensionCount.md)
 Get the number of the resource
@@ -551,7 +506,6 @@ Returned only on $select.
 
 ### [Get-MgBetaIdentityGovernanceLifecycleWorkflowCustomTaskExtensionCreatedByServiceProvisioningError](Get-MgBetaIdentityGovernanceLifecycleWorkflowCustomTaskExtensionCreatedByServiceProvisioningError.md)
 Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
-Supports $filter (eq, not, for isResolved and serviceInstance).
 
 ### [Get-MgBetaIdentityGovernanceLifecycleWorkflowCustomTaskExtensionCreatedByServiceProvisioningErrorCount](Get-MgBetaIdentityGovernanceLifecycleWorkflowCustomTaskExtensionCreatedByServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -567,7 +521,6 @@ Returned only on $select.
 
 ### [Get-MgBetaIdentityGovernanceLifecycleWorkflowCustomTaskExtensionLastModifiedByServiceProvisioningError](Get-MgBetaIdentityGovernanceLifecycleWorkflowCustomTaskExtensionLastModifiedByServiceProvisioningError.md)
 Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
-Supports $filter (eq, not, for isResolved and serviceInstance).
 
 ### [Get-MgBetaIdentityGovernanceLifecycleWorkflowCustomTaskExtensionLastModifiedByServiceProvisioningErrorCount](Get-MgBetaIdentityGovernanceLifecycleWorkflowCustomTaskExtensionLastModifiedByServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -577,7 +530,6 @@ Deleted workflows in your lifecycle workflows instance.
 
 ### [Get-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow](Get-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow.md)
 Retrieve a deleted workflow object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowCount](Get-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowCount.md)
 Get the number of the resource
@@ -593,7 +545,6 @@ The user who last modified the workflow.
 
 ### [Get-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowRun](Get-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowRun.md)
 Read the properties and relationships of a run object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowTask](Get-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowTask.md)
 The tasks in the workflow.
@@ -606,7 +557,6 @@ Per-user workflow execution results.
 
 ### [Get-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowVersion](Get-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowVersion.md)
 Read the properties and relationships of a workflowVersion object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaIdentityGovernanceLifecycleWorkflowExecutionScope](Get-MgBetaIdentityGovernanceLifecycleWorkflowExecutionScope.md)
 The unique identifier of the Microsoft Entra identity that last modified the workflow object.
@@ -625,14 +575,12 @@ Returned only on $select.
 
 ### [Get-MgBetaIdentityGovernanceLifecycleWorkflowLastModifiedByServiceProvisioningError](Get-MgBetaIdentityGovernanceLifecycleWorkflowLastModifiedByServiceProvisioningError.md)
 Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
-Supports $filter (eq, not, for isResolved and serviceInstance).
 
 ### [Get-MgBetaIdentityGovernanceLifecycleWorkflowLastModifiedByServiceProvisioningErrorCount](Get-MgBetaIdentityGovernanceLifecycleWorkflowLastModifiedByServiceProvisioningErrorCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaIdentityGovernanceLifecycleWorkflowRun](Get-MgBetaIdentityGovernanceLifecycleWorkflowRun.md)
 Read the properties and relationships of a run object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaIdentityGovernanceLifecycleWorkflowRunCount](Get-MgBetaIdentityGovernanceLifecycleWorkflowRunCount.md)
 Get the number of the resource
@@ -654,7 +602,6 @@ Returned only on $select.
 
 ### [Get-MgBetaIdentityGovernanceLifecycleWorkflowRunTaskProcessingResultSubjectServiceProvisioningError](Get-MgBetaIdentityGovernanceLifecycleWorkflowRunTaskProcessingResultSubjectServiceProvisioningError.md)
 Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
-Supports $filter (eq, not, for isResolved and serviceInstance).
 
 ### [Get-MgBetaIdentityGovernanceLifecycleWorkflowRunTaskProcessingResultSubjectServiceProvisioningErrorCount](Get-MgBetaIdentityGovernanceLifecycleWorkflowRunTaskProcessingResultSubjectServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -664,7 +611,6 @@ The related workflow task
 
 ### [Get-MgBetaIdentityGovernanceLifecycleWorkflowRunUserProcessingResult](Get-MgBetaIdentityGovernanceLifecycleWorkflowRunUserProcessingResult.md)
 Get the user processing result of a user processing result of a run.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaIdentityGovernanceLifecycleWorkflowRunUserProcessingResultCount](Get-MgBetaIdentityGovernanceLifecycleWorkflowRunUserProcessingResultCount.md)
 Get the number of the resource
@@ -680,7 +626,6 @@ Returned only on $select.
 
 ### [Get-MgBetaIdentityGovernanceLifecycleWorkflowRunUserProcessingResultSubjectServiceProvisioningError](Get-MgBetaIdentityGovernanceLifecycleWorkflowRunUserProcessingResultSubjectServiceProvisioningError.md)
 Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
-Supports $filter (eq, not, for isResolved and serviceInstance).
 
 ### [Get-MgBetaIdentityGovernanceLifecycleWorkflowRunUserProcessingResultSubjectServiceProvisioningErrorCount](Get-MgBetaIdentityGovernanceLifecycleWorkflowRunUserProcessingResultSubjectServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -690,7 +635,6 @@ The associated individual task execution.
 
 ### [Get-MgBetaIdentityGovernanceLifecycleWorkflowSetting](Get-MgBetaIdentityGovernanceLifecycleWorkflowSetting.md)
 Read the properties and relationships of a lifecycleManagementSettings object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaIdentityGovernanceLifecycleWorkflowTask](Get-MgBetaIdentityGovernanceLifecycleWorkflowTask.md)
 The tasks in the workflow.
@@ -700,7 +644,6 @@ Get the number of the resource
 
 ### [Get-MgBetaIdentityGovernanceLifecycleWorkflowTaskDefinition](Get-MgBetaIdentityGovernanceLifecycleWorkflowTaskDefinition.md)
 Read the details of a built-in workflow task.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaIdentityGovernanceLifecycleWorkflowTaskDefinitionCount](Get-MgBetaIdentityGovernanceLifecycleWorkflowTaskDefinitionCount.md)
 Get the number of the resource
@@ -722,7 +665,6 @@ Returned only on $select.
 
 ### [Get-MgBetaIdentityGovernanceLifecycleWorkflowTaskProcessingResultSubjectServiceProvisioningError](Get-MgBetaIdentityGovernanceLifecycleWorkflowTaskProcessingResultSubjectServiceProvisioningError.md)
 Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
-Supports $filter (eq, not, for isResolved and serviceInstance).
 
 ### [Get-MgBetaIdentityGovernanceLifecycleWorkflowTaskProcessingResultSubjectServiceProvisioningErrorCount](Get-MgBetaIdentityGovernanceLifecycleWorkflowTaskProcessingResultSubjectServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -759,7 +701,6 @@ Returned only on $select.
 
 ### [Get-MgBetaIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResultSubjectServiceProvisioningError](Get-MgBetaIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResultSubjectServiceProvisioningError.md)
 Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
-Supports $filter (eq, not, for isResolved and serviceInstance).
 
 ### [Get-MgBetaIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResultSubjectServiceProvisioningErrorCount](Get-MgBetaIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResultSubjectServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -769,7 +710,6 @@ The related workflow task
 
 ### [Get-MgBetaIdentityGovernanceLifecycleWorkflowTemplate](Get-MgBetaIdentityGovernanceLifecycleWorkflowTemplate.md)
 Read the properties and relationships of a workflowTemplate object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaIdentityGovernanceLifecycleWorkflowTemplateCount](Get-MgBetaIdentityGovernanceLifecycleWorkflowTemplateCount.md)
 Get the number of the resource
@@ -798,7 +738,6 @@ Returned only on $select.
 
 ### [Get-MgBetaIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResultSubjectServiceProvisioningError](Get-MgBetaIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResultSubjectServiceProvisioningError.md)
 Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
-Supports $filter (eq, not, for isResolved and serviceInstance).
 
 ### [Get-MgBetaIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResultSubjectServiceProvisioningErrorCount](Get-MgBetaIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResultSubjectServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -823,7 +762,6 @@ Returned only on $select.
 
 ### [Get-MgBetaIdentityGovernanceLifecycleWorkflowUserProcessingResultSubjectServiceProvisioningError](Get-MgBetaIdentityGovernanceLifecycleWorkflowUserProcessingResultSubjectServiceProvisioningError.md)
 Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
-Supports $filter (eq, not, for isResolved and serviceInstance).
 
 ### [Get-MgBetaIdentityGovernanceLifecycleWorkflowUserProcessingResultSubjectServiceProvisioningErrorCount](Get-MgBetaIdentityGovernanceLifecycleWorkflowUserProcessingResultSubjectServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -833,7 +771,6 @@ The associated individual task execution.
 
 ### [Get-MgBetaIdentityGovernanceLifecycleWorkflowVersion](Get-MgBetaIdentityGovernanceLifecycleWorkflowVersion.md)
 Read the properties and relationships of a workflowVersion object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaIdentityGovernanceLifecycleWorkflowVersionCount](Get-MgBetaIdentityGovernanceLifecycleWorkflowVersionCount.md)
 Get the number of the resource
@@ -849,7 +786,6 @@ Returned only on $select.
 
 ### [Get-MgBetaIdentityGovernanceLifecycleWorkflowVersionCreatedByServiceProvisioningError](Get-MgBetaIdentityGovernanceLifecycleWorkflowVersionCreatedByServiceProvisioningError.md)
 Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
-Supports $filter (eq, not, for isResolved and serviceInstance).
 
 ### [Get-MgBetaIdentityGovernanceLifecycleWorkflowVersionCreatedByServiceProvisioningErrorCount](Get-MgBetaIdentityGovernanceLifecycleWorkflowVersionCreatedByServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -865,7 +801,6 @@ Returned only on $select.
 
 ### [Get-MgBetaIdentityGovernanceLifecycleWorkflowVersionLastModifiedByServiceProvisioningError](Get-MgBetaIdentityGovernanceLifecycleWorkflowVersionLastModifiedByServiceProvisioningError.md)
 Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
-Supports $filter (eq, not, for isResolved and serviceInstance).
 
 ### [Get-MgBetaIdentityGovernanceLifecycleWorkflowVersionLastModifiedByServiceProvisioningErrorCount](Get-MgBetaIdentityGovernanceLifecycleWorkflowVersionLastModifiedByServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -893,7 +828,6 @@ Returned only on $select.
 
 ### [Get-MgBetaIdentityGovernanceLifecycleWorkflowVersionTaskProcessingResultSubjectServiceProvisioningError](Get-MgBetaIdentityGovernanceLifecycleWorkflowVersionTaskProcessingResultSubjectServiceProvisioningError.md)
 Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
-Supports $filter (eq, not, for isResolved and serviceInstance).
 
 ### [Get-MgBetaIdentityGovernanceLifecycleWorkflowVersionTaskProcessingResultSubjectServiceProvisioningErrorCount](Get-MgBetaIdentityGovernanceLifecycleWorkflowVersionTaskProcessingResultSubjectServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -905,55 +839,58 @@ The related workflow task
 Get permissionsAnalytics from identityGovernance
 
 ### [Get-MgBetaIdentityGovernancePermissionAnalyticAw](Get-MgBetaIdentityGovernancePermissionAnalyticAw.md)
-Get aws from identityGovernance
+AWS permissions analytics findings.
 
 ### [Get-MgBetaIdentityGovernancePermissionAnalyticAwFinding](Get-MgBetaIdentityGovernancePermissionAnalyticAwFinding.md)
-Get findings from identityGovernance
+The output of the permissions usage data analysis performed by Permissions Management to assess risk with identities and resources.
 
 ### [Get-MgBetaIdentityGovernancePermissionAnalyticAwFindingCount](Get-MgBetaIdentityGovernancePermissionAnalyticAwFindingCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaIdentityGovernancePermissionAnalyticAwPermissionCreepIndexDistribution](Get-MgBetaIdentityGovernancePermissionAnalyticAwPermissionCreepIndexDistribution.md)
-Get permissionsCreepIndexDistributions from identityGovernance
+Represents the Permissions Creep Index (PCI) for the authorization system.
+PCI distribution chart shows the classification of human and nonhuman identities based on the PCI score in three buckets (low, medium, high).
 
 ### [Get-MgBetaIdentityGovernancePermissionAnalyticAwPermissionCreepIndexDistributionAuthorizationSystem](Get-MgBetaIdentityGovernancePermissionAnalyticAwPermissionCreepIndexDistributionAuthorizationSystem.md)
-Get authorizationSystem from identityGovernance
+Represents an authorization system onboarded to Permissions Management.
 
 ### [Get-MgBetaIdentityGovernancePermissionAnalyticAwPermissionCreepIndexDistributionCount](Get-MgBetaIdentityGovernancePermissionAnalyticAwPermissionCreepIndexDistributionCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaIdentityGovernancePermissionAnalyticAzure](Get-MgBetaIdentityGovernancePermissionAnalyticAzure.md)
-Get azure from identityGovernance
+Azure permissions analytics findings.
 
 ### [Get-MgBetaIdentityGovernancePermissionAnalyticAzureFinding](Get-MgBetaIdentityGovernancePermissionAnalyticAzureFinding.md)
-Get findings from identityGovernance
+The output of the permissions usage data analysis performed by Permissions Management to assess risk with identities and resources.
 
 ### [Get-MgBetaIdentityGovernancePermissionAnalyticAzureFindingCount](Get-MgBetaIdentityGovernancePermissionAnalyticAzureFindingCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaIdentityGovernancePermissionAnalyticAzurePermissionCreepIndexDistribution](Get-MgBetaIdentityGovernancePermissionAnalyticAzurePermissionCreepIndexDistribution.md)
-Get permissionsCreepIndexDistributions from identityGovernance
+Represents the Permissions Creep Index (PCI) for the authorization system.
+PCI distribution chart shows the classification of human and nonhuman identities based on the PCI score in three buckets (low, medium, high).
 
 ### [Get-MgBetaIdentityGovernancePermissionAnalyticAzurePermissionCreepIndexDistributionAuthorizationSystem](Get-MgBetaIdentityGovernancePermissionAnalyticAzurePermissionCreepIndexDistributionAuthorizationSystem.md)
-Get authorizationSystem from identityGovernance
+Represents an authorization system onboarded to Permissions Management.
 
 ### [Get-MgBetaIdentityGovernancePermissionAnalyticAzurePermissionCreepIndexDistributionCount](Get-MgBetaIdentityGovernancePermissionAnalyticAzurePermissionCreepIndexDistributionCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaIdentityGovernancePermissionAnalyticGcp](Get-MgBetaIdentityGovernancePermissionAnalyticGcp.md)
-Get gcp from identityGovernance
+GCP permissions analytics findings.
 
 ### [Get-MgBetaIdentityGovernancePermissionAnalyticGcpFinding](Get-MgBetaIdentityGovernancePermissionAnalyticGcpFinding.md)
-Get findings from identityGovernance
+The output of the permissions usage data analysis performed by Permissions Management to assess risk with identities and resources.
 
 ### [Get-MgBetaIdentityGovernancePermissionAnalyticGcpFindingCount](Get-MgBetaIdentityGovernancePermissionAnalyticGcpFindingCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaIdentityGovernancePermissionAnalyticGcpPermissionCreepIndexDistribution](Get-MgBetaIdentityGovernancePermissionAnalyticGcpPermissionCreepIndexDistribution.md)
-Get permissionsCreepIndexDistributions from identityGovernance
+Represents the Permissions Creep Index (PCI) for the authorization system.
+PCI distribution chart shows the classification of human and nonhuman identities based on the PCI score in three buckets (low, medium, high).
 
 ### [Get-MgBetaIdentityGovernancePermissionAnalyticGcpPermissionCreepIndexDistributionAuthorizationSystem](Get-MgBetaIdentityGovernancePermissionAnalyticGcpPermissionCreepIndexDistributionAuthorizationSystem.md)
-Get authorizationSystem from identityGovernance
+Represents an authorization system onboarded to Permissions Management.
 
 ### [Get-MgBetaIdentityGovernancePermissionAnalyticGcpPermissionCreepIndexDistributionCount](Get-MgBetaIdentityGovernancePermissionAnalyticGcpPermissionCreepIndexDistributionCount.md)
 Get the number of the resource
@@ -962,7 +899,7 @@ Get the number of the resource
 Get permissionsManagement from identityGovernance
 
 ### [Get-MgBetaIdentityGovernancePermissionManagementPermissionRequestChange](Get-MgBetaIdentityGovernancePermissionManagementPermissionRequestChange.md)
-Get permissionsRequestChanges from identityGovernance
+Read the properties and relationships of a permissionsRequestChange object.
 
 ### [Get-MgBetaIdentityGovernancePermissionManagementPermissionRequestChangeCount](Get-MgBetaIdentityGovernancePermissionManagementPermissionRequestChangeCount.md)
 Get the number of the resource
@@ -981,14 +918,12 @@ Get the number of the resource
 
 ### [Get-MgBetaIdentityGovernancePrivilegedAccessGroupAssignmentApprovalStep](Get-MgBetaIdentityGovernancePrivilegedAccessGroupAssignmentApprovalStep.md)
 Retrieve the properties of an approvalStep object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaIdentityGovernancePrivilegedAccessGroupAssignmentApprovalStepCount](Get-MgBetaIdentityGovernancePrivilegedAccessGroupAssignmentApprovalStepCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaIdentityGovernancePrivilegedAccessGroupAssignmentSchedule](Get-MgBetaIdentityGovernancePrivilegedAccessGroupAssignmentSchedule.md)
 Read the properties and relationships of a privilegedAccessGroupAssignmentSchedule object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaIdentityGovernancePrivilegedAccessGroupAssignmentScheduleActivatedUsing](Get-MgBetaIdentityGovernancePrivilegedAccessGroupAssignmentScheduleActivatedUsing.md)
 When the request activates an ownership or membership assignment in PIM for groups, this object represents the eligibility relationship.
@@ -1004,14 +939,12 @@ Supports $expand.
 
 ### [Get-MgBetaIdentityGovernancePrivilegedAccessGroupAssignmentScheduleGroupServiceProvisioningError](Get-MgBetaIdentityGovernancePrivilegedAccessGroupAssignmentScheduleGroupServiceProvisioningError.md)
 Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a group object.
-Supports $filter (eq, not, for isResolved and serviceInstance).
 
 ### [Get-MgBetaIdentityGovernancePrivilegedAccessGroupAssignmentScheduleGroupServiceProvisioningErrorCount](Get-MgBetaIdentityGovernancePrivilegedAccessGroupAssignmentScheduleGroupServiceProvisioningErrorCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaIdentityGovernancePrivilegedAccessGroupAssignmentScheduleInstance](Get-MgBetaIdentityGovernancePrivilegedAccessGroupAssignmentScheduleInstance.md)
 Read the properties and relationships of a privilegedAccessGroupAssignmentScheduleInstance object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaIdentityGovernancePrivilegedAccessGroupAssignmentScheduleInstanceActivatedUsing](Get-MgBetaIdentityGovernancePrivilegedAccessGroupAssignmentScheduleInstanceActivatedUsing.md)
 When the request activates a membership or ownership in PIM for groups, this object represents the eligibility request for the group.
@@ -1026,7 +959,6 @@ Supports $expand.
 
 ### [Get-MgBetaIdentityGovernancePrivilegedAccessGroupAssignmentScheduleInstanceGroupServiceProvisioningError](Get-MgBetaIdentityGovernancePrivilegedAccessGroupAssignmentScheduleInstanceGroupServiceProvisioningError.md)
 Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a group object.
-Supports $filter (eq, not, for isResolved and serviceInstance).
 
 ### [Get-MgBetaIdentityGovernancePrivilegedAccessGroupAssignmentScheduleInstanceGroupServiceProvisioningErrorCount](Get-MgBetaIdentityGovernancePrivilegedAccessGroupAssignmentScheduleInstanceGroupServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -1041,7 +973,6 @@ Supports $expand.
 
 ### [Get-MgBetaIdentityGovernancePrivilegedAccessGroupAssignmentScheduleRequest](Get-MgBetaIdentityGovernancePrivilegedAccessGroupAssignmentScheduleRequest.md)
 Read the properties and relationships of a privilegedAccessGroupAssignmentScheduleRequest object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaIdentityGovernancePrivilegedAccessGroupAssignmentScheduleRequestActivatedUsing](Get-MgBetaIdentityGovernancePrivilegedAccessGroupAssignmentScheduleRequestActivatedUsing.md)
 When the request activates a membership or ownership assignment in PIM for groups, this object represents the eligibility policy for the group.
@@ -1057,7 +988,6 @@ Supports $expand.
 
 ### [Get-MgBetaIdentityGovernancePrivilegedAccessGroupAssignmentScheduleRequestGroupServiceProvisioningError](Get-MgBetaIdentityGovernancePrivilegedAccessGroupAssignmentScheduleRequestGroupServiceProvisioningError.md)
 Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a group object.
-Supports $filter (eq, not, for isResolved and serviceInstance).
 
 ### [Get-MgBetaIdentityGovernancePrivilegedAccessGroupAssignmentScheduleRequestGroupServiceProvisioningErrorCount](Get-MgBetaIdentityGovernancePrivilegedAccessGroupAssignmentScheduleRequestGroupServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -1072,7 +1002,6 @@ Supports $expand.
 
 ### [Get-MgBetaIdentityGovernancePrivilegedAccessGroupEligibilitySchedule](Get-MgBetaIdentityGovernancePrivilegedAccessGroupEligibilitySchedule.md)
 Read the properties and relationships of a privilegedAccessGroupEligibilitySchedule object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaIdentityGovernancePrivilegedAccessGroupEligibilityScheduleCount](Get-MgBetaIdentityGovernancePrivilegedAccessGroupEligibilityScheduleCount.md)
 Get the number of the resource
@@ -1083,14 +1012,12 @@ Supports $expand.
 
 ### [Get-MgBetaIdentityGovernancePrivilegedAccessGroupEligibilityScheduleGroupServiceProvisioningError](Get-MgBetaIdentityGovernancePrivilegedAccessGroupEligibilityScheduleGroupServiceProvisioningError.md)
 Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a group object.
-Supports $filter (eq, not, for isResolved and serviceInstance).
 
 ### [Get-MgBetaIdentityGovernancePrivilegedAccessGroupEligibilityScheduleGroupServiceProvisioningErrorCount](Get-MgBetaIdentityGovernancePrivilegedAccessGroupEligibilityScheduleGroupServiceProvisioningErrorCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaIdentityGovernancePrivilegedAccessGroupEligibilityScheduleInstance](Get-MgBetaIdentityGovernancePrivilegedAccessGroupEligibilityScheduleInstance.md)
 Read the properties and relationships of a privilegedAccessGroupEligibilityScheduleInstance object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaIdentityGovernancePrivilegedAccessGroupEligibilityScheduleInstanceCount](Get-MgBetaIdentityGovernancePrivilegedAccessGroupEligibilityScheduleInstanceCount.md)
 Get the number of the resource
@@ -1101,7 +1028,6 @@ Supports $expand.
 
 ### [Get-MgBetaIdentityGovernancePrivilegedAccessGroupEligibilityScheduleInstanceGroupServiceProvisioningError](Get-MgBetaIdentityGovernancePrivilegedAccessGroupEligibilityScheduleInstanceGroupServiceProvisioningError.md)
 Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a group object.
-Supports $filter (eq, not, for isResolved and serviceInstance).
 
 ### [Get-MgBetaIdentityGovernancePrivilegedAccessGroupEligibilityScheduleInstanceGroupServiceProvisioningErrorCount](Get-MgBetaIdentityGovernancePrivilegedAccessGroupEligibilityScheduleInstanceGroupServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -1116,7 +1042,6 @@ Supports $expand.
 
 ### [Get-MgBetaIdentityGovernancePrivilegedAccessGroupEligibilityScheduleRequest](Get-MgBetaIdentityGovernancePrivilegedAccessGroupEligibilityScheduleRequest.md)
 Read the properties and relationships of a privilegedAccessGroupEligibilityScheduleRequest object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaIdentityGovernancePrivilegedAccessGroupEligibilityScheduleRequestCount](Get-MgBetaIdentityGovernancePrivilegedAccessGroupEligibilityScheduleRequestCount.md)
 Get the number of the resource
@@ -1127,7 +1052,6 @@ Supports $expand.
 
 ### [Get-MgBetaIdentityGovernancePrivilegedAccessGroupEligibilityScheduleRequestGroupServiceProvisioningError](Get-MgBetaIdentityGovernancePrivilegedAccessGroupEligibilityScheduleRequestGroupServiceProvisioningError.md)
 Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a group object.
-Supports $filter (eq, not, for isResolved and serviceInstance).
 
 ### [Get-MgBetaIdentityGovernancePrivilegedAccessGroupEligibilityScheduleRequestGroupServiceProvisioningErrorCount](Get-MgBetaIdentityGovernancePrivilegedAccessGroupEligibilityScheduleRequestGroupServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -1164,7 +1088,7 @@ Get the number of the resource
 
 ### [Get-MgBetaIdentityGovernanceRoleManagementAlertIncident](Get-MgBetaIdentityGovernanceRoleManagementAlertIncident.md)
 Read the properties and relationships of an alert incident.
-The alert incident can be one of the following types that are derived from the unifiedRoleManagementAlertIncident object: This API is available in the following national cloud deployments.
+The alert incident can be one of the following types that are derived from the unifiedRoleManagementAlertIncident object:
 
 ### [Get-MgBetaIdentityGovernanceRoleManagementAlertIncidentCount](Get-MgBetaIdentityGovernanceRoleManagementAlertIncidentCount.md)
 Get the number of the resource
@@ -1176,8 +1100,8 @@ Represents operations on resources that take a long time to complete and can run
 Get the number of the resource
 
 ### [Get-MgBetaIdentityGovernanceTermsOfUseAgreement](Get-MgBetaIdentityGovernanceTermsOfUseAgreement.md)
-Retrieve the properties and relationships of an agreement object.
-This API is available in the following national cloud deployments.
+Retrieve all files related to an agreement.
+This includes the default file and all localized files.
 
 ### [Get-MgBetaIdentityGovernanceTermsOfUseAgreementAcceptance](Get-MgBetaIdentityGovernanceTermsOfUseAgreementAcceptance.md)
 Represents the current status of a user's response to a company's customizable terms of use agreement.
@@ -1191,7 +1115,6 @@ Get the number of the resource
 ### [Get-MgBetaIdentityGovernanceTermsOfUseAgreementFile](Get-MgBetaIdentityGovernanceTermsOfUseAgreementFile.md)
 Retrieve the details of an agreement file, including the language and version information.
 The default file can have multiple versions, each with its own language, that can be retrieved by specifying the Accept-Language header.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaIdentityGovernanceTermsOfUseAgreementFileCount](Get-MgBetaIdentityGovernanceTermsOfUseAgreementFileCount.md)
 Get the number of the resource
@@ -1376,7 +1299,6 @@ The associated role setting for the role definition.
 
 ### [Get-MgBetaPrivilegedAccessRoleSetting](Get-MgBetaPrivilegedAccessRoleSetting.md)
 Retrieve the properties and relationships of a governanceRoleSetting.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaPrivilegedAccessRoleSettingCount](Get-MgBetaPrivilegedAccessRoleSettingCount.md)
 Get the number of the resource
@@ -1499,14 +1421,12 @@ Get directory from roleManagement
 
 ### [Get-MgBetaRoleManagementDirectoryResourceNamespace](Get-MgBetaRoleManagementDirectoryResourceNamespace.md)
 Read the properties and relationships of an unifiedRbacResourceNamespace object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaRoleManagementDirectoryResourceNamespaceCount](Get-MgBetaRoleManagementDirectoryResourceNamespaceCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaRoleManagementDirectoryResourceNamespaceResourceAction](Get-MgBetaRoleManagementDirectoryResourceNamespaceResourceAction.md)
 Read the properties and relationships of an unifiedRbacResourceAction object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaRoleManagementDirectoryResourceNamespaceResourceActionAuthenticationContext](Get-MgBetaRoleManagementDirectoryResourceNamespaceResourceActionAuthenticationContext.md)
 Get authenticationContext from roleManagement
@@ -1519,7 +1439,6 @@ Get resourceScope from roleManagement
 
 ### [Get-MgBetaRoleManagementDirectoryRoleAssignment](Get-MgBetaRoleManagementDirectoryRoleAssignment.md)
 Retrieve the properties and relationships of a unifiedRoleAssignment object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaRoleManagementDirectoryRoleAssignmentApproval](Get-MgBetaRoleManagementDirectoryRoleAssignmentApproval.md)
 Get roleAssignmentApprovals from roleManagement
@@ -1529,7 +1448,6 @@ Get the number of the resource
 
 ### [Get-MgBetaRoleManagementDirectoryRoleAssignmentApprovalStep](Get-MgBetaRoleManagementDirectoryRoleAssignmentApprovalStep.md)
 Retrieve the properties of an approvalStep object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaRoleManagementDirectoryRoleAssignmentApprovalStepCount](Get-MgBetaRoleManagementDirectoryRoleAssignmentApprovalStepCount.md)
 Get the number of the resource
@@ -1561,7 +1479,6 @@ Supports $expand.
 
 ### [Get-MgBetaRoleManagementDirectoryRoleAssignmentSchedule](Get-MgBetaRoleManagementDirectoryRoleAssignmentSchedule.md)
 Retrieve the schedule for an active role assignment operation.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaRoleManagementDirectoryRoleAssignmentScheduleActivatedUsing](Get-MgBetaRoleManagementDirectoryRoleAssignmentScheduleActivatedUsing.md)
 If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation.
@@ -1581,7 +1498,6 @@ Read-only.
 
 ### [Get-MgBetaRoleManagementDirectoryRoleAssignmentScheduleInstance](Get-MgBetaRoleManagementDirectoryRoleAssignmentScheduleInstance.md)
 Get the instance of an active role assignment.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaRoleManagementDirectoryRoleAssignmentScheduleInstanceActivatedUsing](Get-MgBetaRoleManagementDirectoryRoleAssignmentScheduleInstanceActivatedUsing.md)
 If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation.
@@ -1610,7 +1526,6 @@ The principal that's getting a role assignment or that's eligible for a role thr
 
 ### [Get-MgBetaRoleManagementDirectoryRoleAssignmentScheduleRequest](Get-MgBetaRoleManagementDirectoryRoleAssignmentScheduleRequest.md)
 In PIM, read the details of a request for an active and persistent role assignment made through the unifiedRoleAssignmentScheduleRequest object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaRoleManagementDirectoryRoleAssignmentScheduleRequestActivatedUsing](Get-MgBetaRoleManagementDirectoryRoleAssignmentScheduleRequestActivatedUsing.md)
 If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation.
@@ -1647,7 +1562,7 @@ Detailed information for the roleDefinition object that is referenced through th
 
 ### [Get-MgBetaRoleManagementDirectoryRoleDefinition](Get-MgBetaRoleManagementDirectoryRoleDefinition.md)
 Get the properties and relationships of a unifiedRoleDefinition object of an RBAC provider.
-The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)\n- directory (Microsoft Entra directory roles)\n- entitlement management (Microsoft Entra entitlement management)\n- Exchange Online This API is available in the following national cloud deployments.
+The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)\n- directory (Microsoft Entra directory roles)\n- entitlement management (Microsoft Entra entitlement management)\n- Exchange Online
 
 ### [Get-MgBetaRoleManagementDirectoryRoleDefinitionCount](Get-MgBetaRoleManagementDirectoryRoleDefinitionCount.md)
 Get the number of the resource
@@ -1661,7 +1576,6 @@ Get the number of the resource
 
 ### [Get-MgBetaRoleManagementDirectoryRoleEligibilitySchedule](Get-MgBetaRoleManagementDirectoryRoleEligibilitySchedule.md)
 Read the properties and relationships of an unifiedRoleEligibilitySchedule object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaRoleManagementDirectoryRoleEligibilityScheduleAppScope](Get-MgBetaRoleManagementDirectoryRoleEligibilityScheduleAppScope.md)
 Read-only property with details of the app-specific scope when the role eligibility or assignment is scoped to an app.
@@ -1676,7 +1590,6 @@ Read-only.
 
 ### [Get-MgBetaRoleManagementDirectoryRoleEligibilityScheduleInstance](Get-MgBetaRoleManagementDirectoryRoleEligibilityScheduleInstance.md)
 Read the properties and relationships of an unifiedRoleEligibilityScheduleInstance object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaRoleManagementDirectoryRoleEligibilityScheduleInstanceAppScope](Get-MgBetaRoleManagementDirectoryRoleEligibilityScheduleInstanceAppScope.md)
 Read-only property with details of the app-specific scope when the assignment or role eligibility is scoped to an app.
@@ -1700,7 +1613,6 @@ The principal that's getting a role assignment or that's eligible for a role thr
 
 ### [Get-MgBetaRoleManagementDirectoryRoleEligibilityScheduleRequest](Get-MgBetaRoleManagementDirectoryRoleEligibilityScheduleRequest.md)
 Read the properties and relationships of an unifiedRoleEligibilityScheduleRequest object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaRoleManagementDirectoryRoleEligibilityScheduleRequestAppScope](Get-MgBetaRoleManagementDirectoryRoleEligibilityScheduleRequestAppScope.md)
 Read-only property with details of the app-specific scope when the role eligibility is scoped to an app.
@@ -1766,14 +1678,12 @@ Get the number of the resource
 
 ### [Get-MgBetaRoleManagementEnterpriseAppResourceNamespace](Get-MgBetaRoleManagementEnterpriseAppResourceNamespace.md)
 Read the properties and relationships of an unifiedRbacResourceNamespace object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaRoleManagementEnterpriseAppResourceNamespaceCount](Get-MgBetaRoleManagementEnterpriseAppResourceNamespaceCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaRoleManagementEnterpriseAppResourceNamespaceResourceAction](Get-MgBetaRoleManagementEnterpriseAppResourceNamespaceResourceAction.md)
 Read the properties and relationships of an unifiedRbacResourceAction object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaRoleManagementEnterpriseAppResourceNamespaceResourceActionAuthenticationContext](Get-MgBetaRoleManagementEnterpriseAppResourceNamespaceResourceActionAuthenticationContext.md)
 Get authenticationContext from roleManagement
@@ -1786,7 +1696,6 @@ Get resourceScope from roleManagement
 
 ### [Get-MgBetaRoleManagementEnterpriseAppRoleAssignment](Get-MgBetaRoleManagementEnterpriseAppRoleAssignment.md)
 Retrieve the properties and relationships of a unifiedRoleAssignment object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaRoleManagementEnterpriseAppRoleAssignmentApproval](Get-MgBetaRoleManagementEnterpriseAppRoleAssignmentApproval.md)
 Get roleAssignmentApprovals from roleManagement
@@ -1796,7 +1705,6 @@ Get the number of the resource
 
 ### [Get-MgBetaRoleManagementEnterpriseAppRoleAssignmentApprovalStep](Get-MgBetaRoleManagementEnterpriseAppRoleAssignmentApprovalStep.md)
 Retrieve the properties of an approvalStep object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaRoleManagementEnterpriseAppRoleAssignmentApprovalStepCount](Get-MgBetaRoleManagementEnterpriseAppRoleAssignmentApprovalStepCount.md)
 Get the number of the resource
@@ -1828,7 +1736,6 @@ Supports $expand.
 
 ### [Get-MgBetaRoleManagementEnterpriseAppRoleAssignmentSchedule](Get-MgBetaRoleManagementEnterpriseAppRoleAssignmentSchedule.md)
 Retrieve the schedule for an active role assignment operation.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaRoleManagementEnterpriseAppRoleAssignmentScheduleActivatedUsing](Get-MgBetaRoleManagementEnterpriseAppRoleAssignmentScheduleActivatedUsing.md)
 If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation.
@@ -1848,7 +1755,6 @@ Read-only.
 
 ### [Get-MgBetaRoleManagementEnterpriseAppRoleAssignmentScheduleInstance](Get-MgBetaRoleManagementEnterpriseAppRoleAssignmentScheduleInstance.md)
 Get the instance of an active role assignment.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaRoleManagementEnterpriseAppRoleAssignmentScheduleInstanceActivatedUsing](Get-MgBetaRoleManagementEnterpriseAppRoleAssignmentScheduleInstanceActivatedUsing.md)
 If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation.
@@ -1877,7 +1783,6 @@ The principal that's getting a role assignment or that's eligible for a role thr
 
 ### [Get-MgBetaRoleManagementEnterpriseAppRoleAssignmentScheduleRequest](Get-MgBetaRoleManagementEnterpriseAppRoleAssignmentScheduleRequest.md)
 In PIM, read the details of a request for an active and persistent role assignment made through the unifiedRoleAssignmentScheduleRequest object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaRoleManagementEnterpriseAppRoleAssignmentScheduleRequestActivatedUsing](Get-MgBetaRoleManagementEnterpriseAppRoleAssignmentScheduleRequestActivatedUsing.md)
 If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation.
@@ -1914,7 +1819,7 @@ Detailed information for the roleDefinition object that is referenced through th
 
 ### [Get-MgBetaRoleManagementEnterpriseAppRoleDefinition](Get-MgBetaRoleManagementEnterpriseAppRoleDefinition.md)
 Get the properties and relationships of a unifiedRoleDefinition object of an RBAC provider.
-The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)\n- directory (Microsoft Entra directory roles)\n- entitlement management (Microsoft Entra entitlement management)\n- Exchange Online This API is available in the following national cloud deployments.
+The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)\n- directory (Microsoft Entra directory roles)\n- entitlement management (Microsoft Entra entitlement management)\n- Exchange Online
 
 ### [Get-MgBetaRoleManagementEnterpriseAppRoleDefinitionCount](Get-MgBetaRoleManagementEnterpriseAppRoleDefinitionCount.md)
 Get the number of the resource
@@ -1928,7 +1833,6 @@ Get the number of the resource
 
 ### [Get-MgBetaRoleManagementEnterpriseAppRoleEligibilitySchedule](Get-MgBetaRoleManagementEnterpriseAppRoleEligibilitySchedule.md)
 Read the properties and relationships of an unifiedRoleEligibilitySchedule object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaRoleManagementEnterpriseAppRoleEligibilityScheduleAppScope](Get-MgBetaRoleManagementEnterpriseAppRoleEligibilityScheduleAppScope.md)
 Read-only property with details of the app-specific scope when the role eligibility or assignment is scoped to an app.
@@ -1943,7 +1847,6 @@ Read-only.
 
 ### [Get-MgBetaRoleManagementEnterpriseAppRoleEligibilityScheduleInstance](Get-MgBetaRoleManagementEnterpriseAppRoleEligibilityScheduleInstance.md)
 Read the properties and relationships of an unifiedRoleEligibilityScheduleInstance object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaRoleManagementEnterpriseAppRoleEligibilityScheduleInstanceAppScope](Get-MgBetaRoleManagementEnterpriseAppRoleEligibilityScheduleInstanceAppScope.md)
 Read-only property with details of the app-specific scope when the assignment or role eligibility is scoped to an app.
@@ -1967,7 +1870,6 @@ The principal that's getting a role assignment or that's eligible for a role thr
 
 ### [Get-MgBetaRoleManagementEnterpriseAppRoleEligibilityScheduleRequest](Get-MgBetaRoleManagementEnterpriseAppRoleEligibilityScheduleRequest.md)
 Read the properties and relationships of an unifiedRoleEligibilityScheduleRequest object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaRoleManagementEnterpriseAppRoleEligibilityScheduleRequestAppScope](Get-MgBetaRoleManagementEnterpriseAppRoleEligibilityScheduleRequestAppScope.md)
 Read-only property with details of the app-specific scope when the role eligibility is scoped to an app.
@@ -2030,14 +1932,12 @@ The RbacApplication for Entitlement Management
 
 ### [Get-MgBetaRoleManagementEntitlementManagementResourceNamespace](Get-MgBetaRoleManagementEntitlementManagementResourceNamespace.md)
 Read the properties and relationships of an unifiedRbacResourceNamespace object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaRoleManagementEntitlementManagementResourceNamespaceCount](Get-MgBetaRoleManagementEntitlementManagementResourceNamespaceCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaRoleManagementEntitlementManagementResourceNamespaceResourceAction](Get-MgBetaRoleManagementEntitlementManagementResourceNamespaceResourceAction.md)
 Read the properties and relationships of an unifiedRbacResourceAction object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaRoleManagementEntitlementManagementResourceNamespaceResourceActionAuthenticationContext](Get-MgBetaRoleManagementEntitlementManagementResourceNamespaceResourceActionAuthenticationContext.md)
 Get authenticationContext from roleManagement
@@ -2050,7 +1950,6 @@ Get resourceScope from roleManagement
 
 ### [Get-MgBetaRoleManagementEntitlementManagementRoleAssignment](Get-MgBetaRoleManagementEntitlementManagementRoleAssignment.md)
 Retrieve the properties and relationships of a unifiedRoleAssignment object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaRoleManagementEntitlementManagementRoleAssignmentApproval](Get-MgBetaRoleManagementEntitlementManagementRoleAssignmentApproval.md)
 Get roleAssignmentApprovals from roleManagement
@@ -2060,7 +1959,6 @@ Get the number of the resource
 
 ### [Get-MgBetaRoleManagementEntitlementManagementRoleAssignmentApprovalStep](Get-MgBetaRoleManagementEntitlementManagementRoleAssignmentApprovalStep.md)
 Retrieve the properties of an approvalStep object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaRoleManagementEntitlementManagementRoleAssignmentApprovalStepCount](Get-MgBetaRoleManagementEntitlementManagementRoleAssignmentApprovalStepCount.md)
 Get the number of the resource
@@ -2092,7 +1990,6 @@ Supports $expand.
 
 ### [Get-MgBetaRoleManagementEntitlementManagementRoleAssignmentSchedule](Get-MgBetaRoleManagementEntitlementManagementRoleAssignmentSchedule.md)
 Retrieve the schedule for an active role assignment operation.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaRoleManagementEntitlementManagementRoleAssignmentScheduleActivatedUsing](Get-MgBetaRoleManagementEntitlementManagementRoleAssignmentScheduleActivatedUsing.md)
 If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation.
@@ -2112,7 +2009,6 @@ Read-only.
 
 ### [Get-MgBetaRoleManagementEntitlementManagementRoleAssignmentScheduleInstance](Get-MgBetaRoleManagementEntitlementManagementRoleAssignmentScheduleInstance.md)
 Get the instance of an active role assignment.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaRoleManagementEntitlementManagementRoleAssignmentScheduleInstanceActivatedUsing](Get-MgBetaRoleManagementEntitlementManagementRoleAssignmentScheduleInstanceActivatedUsing.md)
 If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation.
@@ -2141,7 +2037,6 @@ The principal that's getting a role assignment or that's eligible for a role thr
 
 ### [Get-MgBetaRoleManagementEntitlementManagementRoleAssignmentScheduleRequest](Get-MgBetaRoleManagementEntitlementManagementRoleAssignmentScheduleRequest.md)
 In PIM, read the details of a request for an active and persistent role assignment made through the unifiedRoleAssignmentScheduleRequest object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaRoleManagementEntitlementManagementRoleAssignmentScheduleRequestActivatedUsing](Get-MgBetaRoleManagementEntitlementManagementRoleAssignmentScheduleRequestActivatedUsing.md)
 If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation.
@@ -2178,7 +2073,7 @@ Detailed information for the roleDefinition object that is referenced through th
 
 ### [Get-MgBetaRoleManagementEntitlementManagementRoleDefinition](Get-MgBetaRoleManagementEntitlementManagementRoleDefinition.md)
 Get the properties and relationships of a unifiedRoleDefinition object of an RBAC provider.
-The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)\n- directory (Microsoft Entra directory roles)\n- entitlement management (Microsoft Entra entitlement management)\n- Exchange Online This API is available in the following national cloud deployments.
+The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)\n- directory (Microsoft Entra directory roles)\n- entitlement management (Microsoft Entra entitlement management)\n- Exchange Online
 
 ### [Get-MgBetaRoleManagementEntitlementManagementRoleDefinitionCount](Get-MgBetaRoleManagementEntitlementManagementRoleDefinitionCount.md)
 Get the number of the resource
@@ -2192,7 +2087,6 @@ Get the number of the resource
 
 ### [Get-MgBetaRoleManagementEntitlementManagementRoleEligibilitySchedule](Get-MgBetaRoleManagementEntitlementManagementRoleEligibilitySchedule.md)
 Read the properties and relationships of an unifiedRoleEligibilitySchedule object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaRoleManagementEntitlementManagementRoleEligibilityScheduleAppScope](Get-MgBetaRoleManagementEntitlementManagementRoleEligibilityScheduleAppScope.md)
 Read-only property with details of the app-specific scope when the role eligibility or assignment is scoped to an app.
@@ -2207,7 +2101,6 @@ Read-only.
 
 ### [Get-MgBetaRoleManagementEntitlementManagementRoleEligibilityScheduleInstance](Get-MgBetaRoleManagementEntitlementManagementRoleEligibilityScheduleInstance.md)
 Read the properties and relationships of an unifiedRoleEligibilityScheduleInstance object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaRoleManagementEntitlementManagementRoleEligibilityScheduleInstanceAppScope](Get-MgBetaRoleManagementEntitlementManagementRoleEligibilityScheduleInstanceAppScope.md)
 Read-only property with details of the app-specific scope when the assignment or role eligibility is scoped to an app.
@@ -2231,7 +2124,6 @@ The principal that's getting a role assignment or that's eligible for a role thr
 
 ### [Get-MgBetaRoleManagementEntitlementManagementRoleEligibilityScheduleRequest](Get-MgBetaRoleManagementEntitlementManagementRoleEligibilityScheduleRequest.md)
 Read the properties and relationships of an unifiedRoleEligibilityScheduleRequest object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaRoleManagementEntitlementManagementRoleEligibilityScheduleRequestAppScope](Get-MgBetaRoleManagementEntitlementManagementRoleEligibilityScheduleRequestAppScope.md)
 Read-only property with details of the app-specific scope when the role eligibility is scoped to an app.
@@ -2320,26 +2212,22 @@ Run a workflow object on-demand.
 You can run any workflow on-demand, including scheduled workflows.
 Workflows created from the 'Real-time employee termination' template are run on-demand only.
 When you run a workflow on demand, the tasks are executed regardless of whether the user state matches the scope and trigger execution conditions.
-This API is available in the following national cloud deployments.
 
 ### [Initialize-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow](Initialize-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow.md)
 Run a workflow object on-demand.
 You can run any workflow on-demand, including scheduled workflows.
 Workflows created from the 'Real-time employee termination' template are run on-demand only.
 When you run a workflow on demand, the tasks are executed regardless of whether the user state matches the scope and trigger execution conditions.
-This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaAcceptIdentityGovernanceAccessReviewDecisionInstanceRecommendation](Invoke-MgBetaAcceptIdentityGovernanceAccessReviewDecisionInstanceRecommendation.md)
 Allows the acceptance of recommendations on all accessReviewInstanceDecisionItem objects that haven't been reviewed for an accessReviewInstance object for which the calling user is a reviewer.
 Recommendations are generated if recommendationsEnabled is true on the accessReviewScheduleDefinition object.
 If there isn't a recommendation on an accessReviewInstanceDecisionItem object no decision will be recorded.
-This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaAcceptIdentityGovernanceAccessReviewDefinitionInstanceRecommendation](Invoke-MgBetaAcceptIdentityGovernanceAccessReviewDefinitionInstanceRecommendation.md)
 Allows the acceptance of recommendations on all accessReviewInstanceDecisionItem objects that haven't been reviewed for an accessReviewInstance object for which the calling user is a reviewer.
 Recommendations are generated if recommendationsEnabled is true on the accessReviewScheduleDefinition object.
 If there isn't a recommendation on an accessReviewInstanceDecisionItem object no decision will be recorded.
-This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaAssignedRoleManagementCloudPcRoleDefinitionInheritPermissionFromPrincipal](Invoke-MgBetaAssignedRoleManagementCloudPcRoleDefinitionInheritPermissionFromPrincipal.md)
 Invoke function assignedPrincipals
@@ -2379,11 +2267,9 @@ Invoke function assignedPrincipals
 
 ### [Invoke-MgBetaBatchIdentityGovernanceAccessReviewDecisionInstanceRecordDecision](Invoke-MgBetaBatchIdentityGovernanceAccessReviewDecisionInstanceRecordDecision.md)
 Enables reviewers to review all accessReviewInstanceDecisionItem objects in batches by using principalId, resourceId, or neither.
-This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaBatchIdentityGovernanceAccessReviewDefinitionInstanceRecordDecision](Invoke-MgBetaBatchIdentityGovernanceAccessReviewDefinitionInstanceRecordDecision.md)
 Enables reviewers to review all accessReviewInstanceDecisionItem objects in batches by using principalId, resourceId, or neither.
-This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaFilterEntitlementManagementAccessPackageAssignmentApprovalByCurrentUser](Invoke-MgBetaFilterEntitlementManagementAccessPackageAssignmentApprovalByCurrentUser.md)
 Invoke function filterByCurrentUser
@@ -2523,27 +2409,22 @@ Invoke function my
 ### [Invoke-MgBetaRecordIdentityGovernanceAccessReviewDecision](Invoke-MgBetaRecordIdentityGovernanceAccessReviewDecision.md)
 As a reviewer of an access review, record a decision for an accessReviewInstanceDecisionItem that is assigned to you and that matches the principal or resource IDs specified.
 If no IDs are specified, the decisions will apply to every accessReviewInstanceDecisionItem for which you are the reviewer.
-This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaRecordIdentityGovernanceAccessReviewDecisionInstanceDecision](Invoke-MgBetaRecordIdentityGovernanceAccessReviewDecisionInstanceDecision.md)
 As a reviewer of an access review, record a decision for an accessReviewInstanceDecisionItem that is assigned to you and that matches the principal or resource IDs specified.
 If no IDs are specified, the decisions will apply to every accessReviewInstanceDecisionItem for which you are the reviewer.
-This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaRecordIdentityGovernanceAccessReviewDecisionInstanceStageDecision](Invoke-MgBetaRecordIdentityGovernanceAccessReviewDecisionInstanceStageDecision.md)
 As a reviewer of an access review, record a decision for an accessReviewInstanceDecisionItem that is assigned to you and that matches the principal or resource IDs specified.
 If no IDs are specified, the decisions will apply to every accessReviewInstanceDecisionItem for which you are the reviewer.
-This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaRecordIdentityGovernanceAccessReviewDefinitionInstanceDecision](Invoke-MgBetaRecordIdentityGovernanceAccessReviewDefinitionInstanceDecision.md)
 As a reviewer of an access review, record a decision for an accessReviewInstanceDecisionItem that is assigned to you and that matches the principal or resource IDs specified.
 If no IDs are specified, the decisions will apply to every accessReviewInstanceDecisionItem for which you are the reviewer.
-This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaRecordIdentityGovernanceAccessReviewDefinitionInstanceStageDecision](Invoke-MgBetaRecordIdentityGovernanceAccessReviewDefinitionInstanceStageDecision.md)
 As a reviewer of an access review, record a decision for an accessReviewInstanceDecisionItem that is assigned to you and that matches the principal or resource IDs specified.
 If no IDs are specified, the decisions will apply to every accessReviewInstanceDecisionItem for which you are the reviewer.
-This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaRemediateIdentityGovernanceRoleManagementAlertIncident](Invoke-MgBetaRemediateIdentityGovernanceRoleManagementAlertIncident.md)
 Invoke action remediate
@@ -2605,13 +2486,11 @@ Invoke function summary
 ### [Move-MgBetaEntitlementManagementAccessPackageToCatalog](Move-MgBetaEntitlementManagementAccessPackageToCatalog.md)
 In Microsoft Entra entitlement management, this action moves the accessPackage to a specified target accessPackageCatalog.
 The resources in the access package must be present in the target catalog.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaAccessReview](New-MgBetaAccessReview.md)
 In the Microsoft Entra access reviews feature, create a new accessReview object.
 Before making this request, the caller must have previously retrieved the list of business flow templates, to have the value of businessFlowTemplateId to include in the request.
 After making this request, the caller should create a programControl, to link the access review to a program.
- This API is available in the following national cloud deployments.
 
 ### [New-MgBetaAccessReviewDecision](New-MgBetaAccessReviewDecision.md)
 Create new navigation property to decisions for accessReviews
@@ -2629,7 +2508,6 @@ Create new navigation property to myDecisions for accessReviews
 In the Microsoft Entra access reviews feature, update an existing accessReview object to add another user as a reviewer.
 This operation is only permitted for an access review that isn't yet completed, and only for an access review where the reviewers are explicitly specified.
 This operation isn't permitted for an access review in which users review their own access, and not intended for an access review in which the group owners are assigned as the reviewers.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaAccessReviewMyDecision](New-MgBetaAccessReviewMyDecision.md)
 Create new navigation property to myDecisions for accessReviews
@@ -2638,7 +2516,6 @@ Create new navigation property to myDecisions for accessReviews
 In the Microsoft Entra access reviews feature, update an existing accessReview object to add another user as a reviewer.
 This operation is only permitted for an access review that isn't yet completed, and only for an access review where the reviewers are explicitly specified.
 This operation isn't permitted for an access review in which users review their own access, and not intended for an access review in which the group owners are assigned as the reviewers.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaAgreement](New-MgBetaAgreement.md)
 Add new entity to agreements
@@ -2648,7 +2525,6 @@ Create new navigation property to acceptances for agreements
 
 ### [New-MgBetaAgreementFile](New-MgBetaAgreementFile.md)
 Create a new localized agreement file.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaAgreementFileLocalization](New-MgBetaAgreementFileLocalization.md)
 Create new navigation property to localizations for agreements
@@ -2666,14 +2542,12 @@ Add new entity to businessFlowTemplates
 Create a new accessPackage object.
 The access package will be added to an existing accessPackageCatalog.
 After the access package is created, you can then create accessPackageAssignmentPolicies which specify how users are assigned to the access package.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaEntitlementManagementAccessPackageAssignment](New-MgBetaEntitlementManagementAccessPackageAssignment.md)
 Create a new entitlement management accessPackageAssignment
 
 ### [New-MgBetaEntitlementManagementAccessPackageAssignmentPolicy](New-MgBetaEntitlementManagementAccessPackageAssignmentPolicy.md)
 In Microsoft Entra entitlement management, create a new accessPackageAssignmentPolicy object.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaEntitlementManagementAccessPackageAssignmentPolicyCustomExtensionHandler](New-MgBetaEntitlementManagementAccessPackageAssignmentPolicyCustomExtensionHandler.md)
 Create new navigation property to customExtensionHandlers for identityGovernance
@@ -2684,51 +2558,41 @@ Create new navigation property to customExtensionStageSettings for identityGover
 ### [New-MgBetaEntitlementManagementAccessPackageAssignmentRequest](New-MgBetaEntitlementManagementAccessPackageAssignmentRequest.md)
 In Microsoft Entra Entitlement Management, create a new accessPackageAssignmentRequest object.
 This operation is used to assign a user to an access package, or to remove an access package assignment.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaEntitlementManagementAccessPackageCatalog](New-MgBetaEntitlementManagementAccessPackageCatalog.md)
 Create a new accessPackageCatalog object.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageCustomWorkflowExtension](New-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageCustomWorkflowExtension.md)
 Create new navigation property to accessPackageCustomWorkflowExtensions for identityGovernance
 
 ### [New-MgBetaEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension](New-MgBetaEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension.md)
 Create a new customAccessPackageWorkflowExtension object and add it to an existing accessPackageCatalog object.
- This API is available in the following national cloud deployments.
 
 ### [New-MgBetaEntitlementManagementAccessPackageIncompatibleAccessPackageByRef](New-MgBetaEntitlementManagementAccessPackageIncompatibleAccessPackageByRef.md)
 Add an accessPackage to the list of access packages that have been marked as incompatible on an accessPackage.
- This API is available in the following national cloud deployments.
 
 ### [New-MgBetaEntitlementManagementAccessPackageIncompatibleGroupByRef](New-MgBetaEntitlementManagementAccessPackageIncompatibleGroupByRef.md)
 Add a group to the list of groups that have been marked as incompatible on an accessPackage.
- This API is available in the following national cloud deployments.
 
 ### [New-MgBetaEntitlementManagementAccessPackageResourceRequest](New-MgBetaEntitlementManagementAccessPackageResourceRequest.md)
 Create a new accessPackageResourceRequest object to request the addition of a resource to an access package catalog, update of a resource, or the removal of a resource from a catalog.
 A resource must be included in an access package catalog before a role of that resource can be added to an access package.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaEntitlementManagementAccessPackageResourceRoleScope](New-MgBetaEntitlementManagementAccessPackageResourceRoleScope.md)
 Create a new accessPackageResourceRoleScope for adding a resource role to an access package.
 The access package resource, for a group, an app, or a SharePoint Online site, must already exist in the access package catalog, and the originId for the resource role retrieved from the list of the resource roles.
 Once you add the resource role scope to the access package, the user will receive this resource role through any current and future access package assignments.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaEntitlementManagementConnectedOrganization](New-MgBetaEntitlementManagementConnectedOrganization.md)
 Create a new connectedOrganization object.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaEntitlementManagementConnectedOrganizationExternalSponsorByRef](New-MgBetaEntitlementManagementConnectedOrganizationExternalSponsorByRef.md)
 Add a user or a group to the connected organization's external sponsors.
 The external sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaEntitlementManagementConnectedOrganizationInternalSponsorByRef](New-MgBetaEntitlementManagementConnectedOrganizationInternalSponsorByRef.md)
 Add a user or a group to the connected organization's internal sponsors.
 The internal sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaEntitlementManagementSubject](New-MgBetaEntitlementManagementSubject.md)
 Create new navigation property to subjects for identityGovernance
@@ -2759,7 +2623,6 @@ Create new navigation property to insights for identityGovernance
 
 ### [New-MgBetaIdentityGovernanceAccessReviewDefinition](New-MgBetaIdentityGovernanceAccessReviewDefinition.md)
 Create a new accessReviewScheduleDefinition object.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaIdentityGovernanceAccessReviewDefinitionInstance](New-MgBetaIdentityGovernanceAccessReviewDefinitionInstance.md)
 Create new navigation property to instances for identityGovernance
@@ -2784,7 +2647,6 @@ Create new navigation property to insights for identityGovernance
 
 ### [New-MgBetaIdentityGovernanceAccessReviewHistoryDefinition](New-MgBetaIdentityGovernanceAccessReviewHistoryDefinition.md)
 Create a new accessReviewHistoryDefinition object.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaIdentityGovernanceAccessReviewHistoryDefinitionInstance](New-MgBetaIdentityGovernanceAccessReviewHistoryDefinitionInstance.md)
 Create new navigation property to instances for identityGovernance
@@ -2793,7 +2655,6 @@ Create new navigation property to instances for identityGovernance
 Generates a URI for an accessReviewHistoryInstance object the status for which is done.
 Each URI can be used to retrieve the instance's review history data.
 Each URI is valid for 24 hours and can be retrieved by fetching the downloadUri property from the accessReviewHistoryInstance object.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaIdentityGovernanceAppConsentRequest](New-MgBetaIdentityGovernanceAppConsentRequest.md)
 Create new navigation property to appConsentRequests for identityGovernance
@@ -2807,22 +2668,18 @@ Create new navigation property to steps for identityGovernance
 ### [New-MgBetaIdentityGovernanceLifecycleWorkflow](New-MgBetaIdentityGovernanceLifecycleWorkflow.md)
 Create a new workflow object.
 You can create up to 50 workflows in a tenant.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaIdentityGovernanceLifecycleWorkflowCustomTaskExtension](New-MgBetaIdentityGovernanceLifecycleWorkflowCustomTaskExtension.md)
 Create a new customTaskExtension object.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowNewVersion](New-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowNewVersion.md)
 Create a new version of the workflow object.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowTask](New-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowTask.md)
 Create new navigation property to tasks for identityGovernance
 
 ### [New-MgBetaIdentityGovernanceLifecycleWorkflowNewVersion](New-MgBetaIdentityGovernanceLifecycleWorkflowNewVersion.md)
 Create a new version of the workflow object.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaIdentityGovernanceLifecycleWorkflowTask](New-MgBetaIdentityGovernanceLifecycleWorkflowTask.md)
 Create new navigation property to tasks for identityGovernance
@@ -2852,7 +2709,7 @@ Create new navigation property to permissionsCreepIndexDistributions for identit
 Create new navigation property to permissionsRequestChanges for identityGovernance
 
 ### [New-MgBetaIdentityGovernancePermissionManagementScheduledPermissionRequest](New-MgBetaIdentityGovernancePermissionManagementScheduledPermissionRequest.md)
-Create new navigation property to scheduledPermissionsRequests for identityGovernance
+Create a new scheduledPermissionsRequest object.
 
 ### [New-MgBetaIdentityGovernancePrivilegedAccessGroupAssignmentApproval](New-MgBetaIdentityGovernancePrivilegedAccessGroupAssignmentApproval.md)
 Create new navigation property to assignmentApprovals for identityGovernance
@@ -2868,7 +2725,6 @@ Create new navigation property to assignmentScheduleInstances for identityGovern
 
 ### [New-MgBetaIdentityGovernancePrivilegedAccessGroupAssignmentScheduleRequest](New-MgBetaIdentityGovernancePrivilegedAccessGroupAssignmentScheduleRequest.md)
 Create a new privilegedAccessGroupAssignmentScheduleRequest object.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaIdentityGovernancePrivilegedAccessGroupEligibilitySchedule](New-MgBetaIdentityGovernancePrivilegedAccessGroupEligibilitySchedule.md)
 Create new navigation property to eligibilitySchedules for identityGovernance
@@ -2878,7 +2734,6 @@ Create new navigation property to eligibilityScheduleInstances for identityGover
 
 ### [New-MgBetaIdentityGovernancePrivilegedAccessGroupEligibilityScheduleRequest](New-MgBetaIdentityGovernancePrivilegedAccessGroupEligibilityScheduleRequest.md)
 Create a new privilegedAccessGroupEligibilityScheduleRequest object.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaIdentityGovernanceRoleManagementAlert](New-MgBetaIdentityGovernanceRoleManagementAlert.md)
 Create new navigation property to alerts for identityGovernance
@@ -2897,14 +2752,12 @@ Create new navigation property to operations for identityGovernance
 
 ### [New-MgBetaIdentityGovernanceTermsOfUseAgreement](New-MgBetaIdentityGovernanceTermsOfUseAgreement.md)
 Create a new agreement object.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaIdentityGovernanceTermsOfUseAgreementAcceptance](New-MgBetaIdentityGovernanceTermsOfUseAgreementAcceptance.md)
 Create new navigation property to agreementAcceptances for identityGovernance
 
 ### [New-MgBetaIdentityGovernanceTermsOfUseAgreementFile](New-MgBetaIdentityGovernanceTermsOfUseAgreementFile.md)
 Create a new localized agreement file.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaIdentityGovernanceTermsOfUseAgreementFileLocalization](New-MgBetaIdentityGovernanceTermsOfUseAgreementFileLocalization.md)
 Create new navigation property to localizations for identityGovernance
@@ -2939,7 +2792,6 @@ Create new navigation property to roleAssignments for privilegedAccess
 ### [New-MgBetaPrivilegedAccessRoleAssignmentRequest](New-MgBetaPrivilegedAccessRoleAssignmentRequest.md)
 Create a role assignment request to represent the operation you want on a role assignment.
 The following table lists the operations.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaPrivilegedAccessRoleDefinition](New-MgBetaPrivilegedAccessRoleDefinition.md)
 Create new navigation property to roleDefinitions for privilegedAccess
@@ -2970,12 +2822,11 @@ Add new entity to privilegedRoleAssignmentRequests
 
 ### [New-MgBetaProgram](New-MgBetaProgram.md)
 In the Microsoft Entra access reviews feature, create a new program object.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaProgramControl](New-MgBetaProgramControl.md)
 In the Microsoft Entra access reviews feature, create a new programControl object.
 This links an access review to a program.
-Prior to making this request, the caller must have previously This API is available in the following national cloud deployments.
+Prior to making this request, the caller must have previously
 
 ### [New-MgBetaProgramControlType](New-MgBetaProgramControlType.md)
 Add new entity to programControlTypes
@@ -2988,7 +2839,6 @@ Create new navigation property to resourceActions for roleManagement
 
 ### [New-MgBetaRoleManagementDirectoryRoleAssignment](New-MgBetaRoleManagementDirectoryRoleAssignment.md)
 Create a new unifiedRoleAssignment object.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaRoleManagementDirectoryRoleAssignmentApproval](New-MgBetaRoleManagementDirectoryRoleAssignmentApproval.md)
 Create new navigation property to roleAssignmentApprovals for roleManagement
@@ -3007,12 +2857,11 @@ Create a new unifiedRoleAssignmentScheduleRequest object.
 This operation allows both admins and users to add, remove, extend, or renew assignments.
 To run this request, the calling user must have multifactor authentication (MFA) enforced, and running the query in a session in which they were challenged for MFA.
 See Enable per-user Microsoft Entra multifactor authentication to secure sign-in events.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaRoleManagementDirectoryRoleDefinition](New-MgBetaRoleManagementDirectoryRoleDefinition.md)
 Create a new unifiedRoleDefinition object for an RBAC provider.
 This feature requires a Microsoft Entra ID P1 or P2 license.
-The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Microsoft Entra ID) This API is available in the following national cloud deployments.
+The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Microsoft Entra ID)
 
 ### [New-MgBetaRoleManagementDirectoryRoleDefinitionInheritPermissionFrom](New-MgBetaRoleManagementDirectoryRoleDefinitionInheritPermissionFrom.md)
 Create new navigation property to inheritsPermissionsFrom for roleManagement
@@ -3026,7 +2875,6 @@ Create new navigation property to roleEligibilityScheduleInstances for roleManag
 ### [New-MgBetaRoleManagementDirectoryRoleEligibilityScheduleRequest](New-MgBetaRoleManagementDirectoryRoleEligibilityScheduleRequest.md)
 Create a new unifiedRoleEligibilityScheduleRequest object.
 This operation allows both admins and eligible users to add, revoke, or extend eligible assignments.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaRoleManagementDirectoryTransitiveRoleAssignment](New-MgBetaRoleManagementDirectoryTransitiveRoleAssignment.md)
 Create new navigation property to transitiveRoleAssignments for roleManagement
@@ -3042,7 +2890,6 @@ Create new navigation property to resourceActions for roleManagement
 
 ### [New-MgBetaRoleManagementEnterpriseAppRoleAssignment](New-MgBetaRoleManagementEnterpriseAppRoleAssignment.md)
 Create a new unifiedRoleAssignment object.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaRoleManagementEnterpriseAppRoleAssignmentApproval](New-MgBetaRoleManagementEnterpriseAppRoleAssignmentApproval.md)
 Create new navigation property to roleAssignmentApprovals for roleManagement
@@ -3061,12 +2908,11 @@ Create a new unifiedRoleAssignmentScheduleRequest object.
 This operation allows both admins and users to add, remove, extend, or renew assignments.
 To run this request, the calling user must have multifactor authentication (MFA) enforced, and running the query in a session in which they were challenged for MFA.
 See Enable per-user Microsoft Entra multifactor authentication to secure sign-in events.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaRoleManagementEnterpriseAppRoleDefinition](New-MgBetaRoleManagementEnterpriseAppRoleDefinition.md)
 Create a new unifiedRoleDefinition object for an RBAC provider.
 This feature requires a Microsoft Entra ID P1 or P2 license.
-The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Microsoft Entra ID) This API is available in the following national cloud deployments.
+The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Microsoft Entra ID)
 
 ### [New-MgBetaRoleManagementEnterpriseAppRoleDefinitionInheritPermissionFrom](New-MgBetaRoleManagementEnterpriseAppRoleDefinitionInheritPermissionFrom.md)
 Create new navigation property to inheritsPermissionsFrom for roleManagement
@@ -3080,7 +2926,6 @@ Create new navigation property to roleEligibilityScheduleInstances for roleManag
 ### [New-MgBetaRoleManagementEnterpriseAppRoleEligibilityScheduleRequest](New-MgBetaRoleManagementEnterpriseAppRoleEligibilityScheduleRequest.md)
 Create a new unifiedRoleEligibilityScheduleRequest object.
 This operation allows both admins and eligible users to add, revoke, or extend eligible assignments.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaRoleManagementEnterpriseAppTransitiveRoleAssignment](New-MgBetaRoleManagementEnterpriseAppTransitiveRoleAssignment.md)
 Create new navigation property to transitiveRoleAssignments for roleManagement
@@ -3093,7 +2938,6 @@ Create new navigation property to resourceActions for roleManagement
 
 ### [New-MgBetaRoleManagementEntitlementManagementRoleAssignment](New-MgBetaRoleManagementEntitlementManagementRoleAssignment.md)
 Create a new unifiedRoleAssignment object.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaRoleManagementEntitlementManagementRoleAssignmentApproval](New-MgBetaRoleManagementEntitlementManagementRoleAssignmentApproval.md)
 Create new navigation property to roleAssignmentApprovals for roleManagement
@@ -3112,12 +2956,11 @@ Create a new unifiedRoleAssignmentScheduleRequest object.
 This operation allows both admins and users to add, remove, extend, or renew assignments.
 To run this request, the calling user must have multifactor authentication (MFA) enforced, and running the query in a session in which they were challenged for MFA.
 See Enable per-user Microsoft Entra multifactor authentication to secure sign-in events.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaRoleManagementEntitlementManagementRoleDefinition](New-MgBetaRoleManagementEntitlementManagementRoleDefinition.md)
 Create a new unifiedRoleDefinition object for an RBAC provider.
 This feature requires a Microsoft Entra ID P1 or P2 license.
-The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Microsoft Entra ID) This API is available in the following national cloud deployments.
+The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Microsoft Entra ID)
 
 ### [New-MgBetaRoleManagementEntitlementManagementRoleDefinitionInheritPermissionFrom](New-MgBetaRoleManagementEntitlementManagementRoleDefinitionInheritPermissionFrom.md)
 Create new navigation property to inheritsPermissionsFrom for roleManagement
@@ -3131,7 +2974,6 @@ Create new navigation property to roleEligibilityScheduleInstances for roleManag
 ### [New-MgBetaRoleManagementEntitlementManagementRoleEligibilityScheduleRequest](New-MgBetaRoleManagementEntitlementManagementRoleEligibilityScheduleRequest.md)
 Create a new unifiedRoleEligibilityScheduleRequest object.
 This operation allows both admins and eligible users to add, revoke, or extend eligible assignments.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaRoleManagementEntitlementManagementTransitiveRoleAssignment](New-MgBetaRoleManagementEntitlementManagementTransitiveRoleAssignment.md)
 Create new navigation property to transitiveRoleAssignments for roleManagement
@@ -3141,7 +2983,6 @@ Invoke action register
 
 ### [Remove-MgBetaAccessReview](Remove-MgBetaAccessReview.md)
 In the Microsoft Entra access reviews feature, delete an accessReview object.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaAccessReviewDecision](Remove-MgBetaAccessReviewDecision.md)
 Delete navigation property decisions for accessReviews
@@ -3159,7 +3000,6 @@ Delete navigation property myDecisions for accessReviews
 In the Microsoft Entra access reviews feature, update an existing accessReview object to remove a user as a reviewer.
 This operation is only permitted for an access review that isn't yet completed, and only for an access review where the reviewers are explicitly specified.
 This operation isn't permitted for an access review in which users review their own access, and not intended for an access review in which the group owners are assigned as the reviewers.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaAccessReviewMyDecision](Remove-MgBetaAccessReviewMyDecision.md)
 Delete navigation property myDecisions for accessReviews
@@ -3168,7 +3008,6 @@ Delete navigation property myDecisions for accessReviews
 In the Microsoft Entra access reviews feature, update an existing accessReview object to remove a user as a reviewer.
 This operation is only permitted for an access review that isn't yet completed, and only for an access review where the reviewers are explicitly specified.
 This operation isn't permitted for an access review in which users review their own access, and not intended for an access review in which the group owners are assigned as the reviewers.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaAgreement](Remove-MgBetaAgreement.md)
 Delete entity from agreements
@@ -3196,7 +3035,6 @@ Delete an accessPackage object.
 You can't delete an access package if it has any accessPackageAssignment.
 To delete the access package, first query if there are any assignments with a filter to indicate the specific access package, such as: $filter=accessPackage/id eq 'a914b616-e04e-476b-aa37-91038f0b165b'.
 For more information on how to remove assignments that are still in the delivered state, see Remove an assignment.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaEntitlementManagementAccessPackageAssignment](Remove-MgBetaEntitlementManagementAccessPackageAssignment.md)
 Delete navigation property accessPackageAssignments for identityGovernance
@@ -3209,7 +3047,6 @@ Delete navigation property steps for identityGovernance
 
 ### [Remove-MgBetaEntitlementManagementAccessPackageAssignmentPolicy](Remove-MgBetaEntitlementManagementAccessPackageAssignmentPolicy.md)
 In Microsoft Entra entitlement management, delete an accessPackageAssignmentPolicy.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaEntitlementManagementAccessPackageAssignmentPolicyCustomExtensionHandler](Remove-MgBetaEntitlementManagementAccessPackageAssignmentPolicyCustomExtensionHandler.md)
 Delete navigation property customExtensionHandlers for identityGovernance
@@ -3221,33 +3058,28 @@ Delete navigation property customExtensionStageSettings for identityGovernance
 Delete an accessPackageAssignmentRequest object.
 This request can be made to remove a denied or completed request.
 You can't delete an access package assignment request if it has any accessPackageAssignment objects.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaEntitlementManagementAccessPackageCatalog](Remove-MgBetaEntitlementManagementAccessPackageCatalog.md)
 Delete an accessPackageCatalog.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageCustomWorkflowExtension](Remove-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageCustomWorkflowExtension.md)
 Delete navigation property accessPackageCustomWorkflowExtensions for identityGovernance
 
 ### [Remove-MgBetaEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension](Remove-MgBetaEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension.md)
-Delete a customAccessPackageWorkflowExtension object.
+Delete an accessPackageAssignmentWorkflowExtension object.
 The custom workflow extension must first be removed from any associated policies before it can be deleted.
 Follow these steps to remove the custom workflow extension from any associated policies:\n1.
 First retrieve the accessPackageCatalogId by calling the Get accessPackageAssignmentPolicies operation and appending ?$expand=accessPackage($expand=accessPackageCatalog) to the query.
 For example, https://graph.microsoft.com/beta/identityGovernance/entitlementManagement/accessPackageAssignmentPolicies?$expand=accessPackage($expand=accessPackageCatalog).\n2.
-Use the access package catalog ID and retrieve the ID of the customAccessPackageWorkflowExtension object that you want to delete by running the LIST customAccessPackageWorkflowExtensions operation.\n3.
+Use the access package catalog ID and retrieve the ID of the accessPackageCustomWorkflowExtension object that you want to delete by running the List accessPackageCustomWorkflowExtensions operation.\n3.
 Call the Update accessPackageAssignmentPolicy operation to remove the custom workflow extension object from the policy.
-For an example, see Example 2: Remove the customExtensionHandlers and verifiableCredentialSettings from a policy.
-This API is available in the following national cloud deployments.
+For an example, see Example 3: Remove the customExtensionStageSettings from a policy.
 
 ### [Remove-MgBetaEntitlementManagementAccessPackageIncompatibleAccessPackageByRef](Remove-MgBetaEntitlementManagementAccessPackageIncompatibleAccessPackageByRef.md)
 Remove an access package from the list of access packages that have been marked as incompatible on an accessPackage.
- This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaEntitlementManagementAccessPackageIncompatibleGroupByRef](Remove-MgBetaEntitlementManagementAccessPackageIncompatibleGroupByRef.md)
 Remove a group from the list of groups that have been marked as incompatible on an accessPackage.
- This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaEntitlementManagementAccessPackageResourceRequest](Remove-MgBetaEntitlementManagementAccessPackageResourceRequest.md)
 Delete navigation property accessPackageResourceRequests for identityGovernance
@@ -3257,17 +3089,14 @@ Delete navigation property accessPackageResourceRoleScopes for identityGovernanc
 
 ### [Remove-MgBetaEntitlementManagementConnectedOrganization](Remove-MgBetaEntitlementManagementConnectedOrganization.md)
 Delete a connectedOrganization object.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaEntitlementManagementConnectedOrganizationExternalSponsorByRef](Remove-MgBetaEntitlementManagementConnectedOrganizationExternalSponsorByRef.md)
 Remove a user or a group from the connected organization's external sponsors.
 The external sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaEntitlementManagementConnectedOrganizationInternalSponsorByRef](Remove-MgBetaEntitlementManagementConnectedOrganizationInternalSponsorByRef.md)
 Remove a user or a group from the connected organization's internal sponsors.
 The internal sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaEntitlementManagementSubject](Remove-MgBetaEntitlementManagementSubject.md)
 Delete navigation property subjects for identityGovernance
@@ -3301,7 +3130,6 @@ Delete navigation property insights for identityGovernance
 
 ### [Remove-MgBetaIdentityGovernanceAccessReviewDefinition](Remove-MgBetaIdentityGovernanceAccessReviewDefinition.md)
 Delete an accessReviewScheduleDefinition object.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaIdentityGovernanceAccessReviewDefinitionInstance](Remove-MgBetaIdentityGovernanceAccessReviewDefinitionInstance.md)
 Delete navigation property instances for identityGovernance
@@ -3354,19 +3182,16 @@ Delete navigation property steps for identityGovernance
 ### [Remove-MgBetaIdentityGovernanceLifecycleWorkflow](Remove-MgBetaIdentityGovernanceLifecycleWorkflow.md)
 Delete a workflow object and its associated tasks, taskProcessingResults and versions.
 You can restore a deleted workflow and its associated objects within 30 days of deletion.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaIdentityGovernanceLifecycleWorkflowCustomTaskExtension](Remove-MgBetaIdentityGovernanceLifecycleWorkflowCustomTaskExtension.md)
 Delete a customTaskExtension object.
 A custom task extension  can only be deleted if it is not referenced in any task objects in a lifecycle workflow.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItem](Remove-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItem.md)
 Delete navigation property deletedItems for identityGovernance
 
 ### [Remove-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow](Remove-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow.md)
 Delete a workflow object.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowTask](Remove-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowTask.md)
 Delete navigation property tasks for identityGovernance
@@ -3460,7 +3285,6 @@ Delete navigation property operations for identityGovernance
 
 ### [Remove-MgBetaIdentityGovernanceTermsOfUseAgreement](Remove-MgBetaIdentityGovernanceTermsOfUseAgreement.md)
 Delete an agreement object.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaIdentityGovernanceTermsOfUseAgreementAcceptance](Remove-MgBetaIdentityGovernanceTermsOfUseAgreementAcceptance.md)
 Delete navigation property agreementAcceptances for identityGovernance
@@ -3589,12 +3413,10 @@ Delete navigation property summary for privilegedRoles
 In the Microsoft Entra access reviews feature, delete a program object.
 Do not delete a program which still has programControl linked to it, those access reviews should first be deleted or unlinked from the program and linked to a different program.
 Also, please note that the built-in default program cannot be deleted.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaProgramControl](Remove-MgBetaProgramControl.md)
 In the Microsoft Entra access reviews feature, delete a programControl object.
 This unlinks an access review from a program.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaProgramControlProgram](Remove-MgBetaProgramControlProgram.md)
 Delete navigation property program for programControls
@@ -3616,7 +3438,6 @@ Delete navigation property resourceScope for roleManagement
 
 ### [Remove-MgBetaRoleManagementDirectoryRoleAssignment](Remove-MgBetaRoleManagementDirectoryRoleAssignment.md)
 Delete a unifiedRoleAssignment object.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaRoleManagementDirectoryRoleAssignmentApproval](Remove-MgBetaRoleManagementDirectoryRoleAssignmentApproval.md)
 Delete navigation property roleAssignmentApprovals for roleManagement
@@ -3640,7 +3461,7 @@ Delete navigation property roleAssignmentScheduleRequests for roleManagement
 Delete a unifiedRoleDefinition object for an RBAC provider.
 You cannot delete built-in roles.
 This feature requires a Microsoft Entra ID P1 or P2 license.
-The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Microsoft Entra ID)  This API is available in the following national cloud deployments.
+The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Microsoft Entra ID)
 
 ### [Remove-MgBetaRoleManagementDirectoryRoleDefinitionInheritPermissionFrom](Remove-MgBetaRoleManagementDirectoryRoleDefinitionInheritPermissionFrom.md)
 Delete navigation property inheritsPermissionsFrom for roleManagement
@@ -3674,7 +3495,6 @@ Delete navigation property resourceScope for roleManagement
 
 ### [Remove-MgBetaRoleManagementEnterpriseAppRoleAssignment](Remove-MgBetaRoleManagementEnterpriseAppRoleAssignment.md)
 Delete a unifiedRoleAssignment object.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaRoleManagementEnterpriseAppRoleAssignmentApproval](Remove-MgBetaRoleManagementEnterpriseAppRoleAssignmentApproval.md)
 Delete navigation property roleAssignmentApprovals for roleManagement
@@ -3698,7 +3518,7 @@ Delete navigation property roleAssignmentScheduleRequests for roleManagement
 Delete a unifiedRoleDefinition object for an RBAC provider.
 You cannot delete built-in roles.
 This feature requires a Microsoft Entra ID P1 or P2 license.
-The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Microsoft Entra ID)  This API is available in the following national cloud deployments.
+The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Microsoft Entra ID)
 
 ### [Remove-MgBetaRoleManagementEnterpriseAppRoleDefinitionInheritPermissionFrom](Remove-MgBetaRoleManagementEnterpriseAppRoleDefinitionInheritPermissionFrom.md)
 Delete navigation property inheritsPermissionsFrom for roleManagement
@@ -3732,7 +3552,6 @@ Delete navigation property resourceScope for roleManagement
 
 ### [Remove-MgBetaRoleManagementEntitlementManagementRoleAssignment](Remove-MgBetaRoleManagementEntitlementManagementRoleAssignment.md)
 Delete a unifiedRoleAssignment object.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaRoleManagementEntitlementManagementRoleAssignmentApproval](Remove-MgBetaRoleManagementEntitlementManagementRoleAssignmentApproval.md)
 Delete navigation property roleAssignmentApprovals for roleManagement
@@ -3756,7 +3575,7 @@ Delete navigation property roleAssignmentScheduleRequests for roleManagement
 Delete a unifiedRoleDefinition object for an RBAC provider.
 You cannot delete built-in roles.
 This feature requires a Microsoft Entra ID P1 or P2 license.
-The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Microsoft Entra ID)  This API is available in the following national cloud deployments.
+The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Microsoft Entra ID)
 
 ### [Remove-MgBetaRoleManagementEntitlementManagementRoleDefinitionInheritPermissionFrom](Remove-MgBetaRoleManagementEntitlementManagementRoleDefinitionInheritPermissionFrom.md)
 Delete navigation property inheritsPermissionsFrom for roleManagement
@@ -3783,66 +3602,54 @@ Invoke function myRequests
 In the Microsoft Entra access reviews feature, reset the decisions of a currently active accessReview.
 The target object can be either a one-time access review, or an instance of a recurring access review.
 Previous decisions are no longer recorded, but reviewers can continue to update decisions.
-This API is available in the following national cloud deployments.
 
 ### [Reset-MgBetaAccessReviewInstanceDecision](Reset-MgBetaAccessReviewInstanceDecision.md)
 In the Microsoft Entra access reviews feature, reset the decisions of a currently active accessReview.
 The target object can be either a one-time access review, or an instance of a recurring access review.
 Previous decisions are no longer recorded, but reviewers can continue to update decisions.
-This API is available in the following national cloud deployments.
 
 ### [Reset-MgBetaIdentityGovernanceAccessReviewDecisionInstanceDecision](Reset-MgBetaIdentityGovernanceAccessReviewDecisionInstanceDecision.md)
 Resets decisions of all accessReviewInstanceDecisionItem objects on an accessReviewInstance to notReviewed.
-This API is available in the following national cloud deployments.
 
 ### [Reset-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceDecision](Reset-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceDecision.md)
 Resets decisions of all accessReviewInstanceDecisionItem objects on an accessReviewInstance to notReviewed.
-This API is available in the following national cloud deployments.
 
 ### [Restore-MgBetaIdentityGovernanceLifecycleWorkflow](Restore-MgBetaIdentityGovernanceLifecycleWorkflow.md)
 Restore a workflow that has been deleted.
 You can only restore a workflow that was deleted within the last 30 days before Microsoft Entra ID automatically permanently deletes it.
-This API is available in the following national cloud deployments.
 
 ### [Restore-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow](Restore-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow.md)
 Restore a workflow that has been deleted.
 You can only restore a workflow that was deleted within the last 30 days before Microsoft Entra ID automatically permanently deletes it.
-This API is available in the following national cloud deployments.
 
 ### [Resume-MgBetaEntitlementManagementAccessPackageAssignmentRequest](Resume-MgBetaEntitlementManagementAccessPackageAssignmentRequest.md)
 In Microsoft Entra entitlement management, when an access package policy has been enabled to call out a custom extension and the request processing is waiting for the callback from the customer, the customer can initiate a resume action.
 It is performed on an accessPackageAssignmentRequest object whose requestStatus is in a WaitingForCallback state.
-This API is available in the following national cloud deployments.
 
 ### [Resume-MgBetaIdentityGovernanceLifecycleWorkflowRunTaskProcessingResult](Resume-MgBetaIdentityGovernanceLifecycleWorkflowRunTaskProcessingResult.md)
 Resume a task processing result that's inProgress.
 In the default case an Azure Logic Apps system-assigned managed identity calls this API.
 For more information, see: Lifecycle Workflows extensibility approach.
-This API is available in the following national cloud deployments.
 
 ### [Resume-MgBetaIdentityGovernanceLifecycleWorkflowTaskProcessingResult](Resume-MgBetaIdentityGovernanceLifecycleWorkflowTaskProcessingResult.md)
 Resume a task processing result that's inProgress.
 In the default case an Azure Logic Apps system-assigned managed identity calls this API.
 For more information, see: Lifecycle Workflows extensibility approach.
-This API is available in the following national cloud deployments.
 
 ### [Resume-MgBetaIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResult](Resume-MgBetaIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResult.md)
 Resume a task processing result that's inProgress.
 In the default case an Azure Logic Apps system-assigned managed identity calls this API.
 For more information, see: Lifecycle Workflows extensibility approach.
-This API is available in the following national cloud deployments.
 
 ### [Resume-MgBetaIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResult](Resume-MgBetaIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResult.md)
 Resume a task processing result that's inProgress.
 In the default case an Azure Logic Apps system-assigned managed identity calls this API.
 For more information, see: Lifecycle Workflows extensibility approach.
-This API is available in the following national cloud deployments.
 
 ### [Resume-MgBetaIdentityGovernanceLifecycleWorkflowVersionTaskProcessingResult](Resume-MgBetaIdentityGovernanceLifecycleWorkflowVersionTaskProcessingResult.md)
 Resume a task processing result that's inProgress.
 In the default case an Azure Logic Apps system-assigned managed identity calls this API.
 For more information, see: Lifecycle Workflows extensibility approach.
-This API is available in the following national cloud deployments.
 
 ### [Select-MgBetaEntitlementManagementAccessPackage](Select-MgBetaEntitlementManagementAccessPackage.md)
 Select matching entitlement management accessPackage
@@ -3853,20 +3660,16 @@ Select matching entitlement management accessPackageAssignmentPolicy
 ### [Send-MgBetaAccessReviewInstanceReminder](Send-MgBetaAccessReviewInstanceReminder.md)
 In the Microsoft Entra access reviews feature, send a reminder to the reviewers of a currently active accessReview.
 The target object can be either a one-time access review, or an instance of a recurring access review.
-This API is available in the following national cloud deployments.
 
 ### [Send-MgBetaAccessReviewReminder](Send-MgBetaAccessReviewReminder.md)
 In the Microsoft Entra access reviews feature, send a reminder to the reviewers of a currently active accessReview.
 The target object can be either a one-time access review, or an instance of a recurring access review.
-This API is available in the following national cloud deployments.
 
 ### [Send-MgBetaIdentityGovernanceAccessReviewDecisionInstanceReminder](Send-MgBetaIdentityGovernanceAccessReviewDecisionInstanceReminder.md)
 Send a reminder to the reviewers of a currently active accessReviewInstance.
-This API is available in the following national cloud deployments.
 
 ### [Send-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceReminder](Send-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceReminder.md)
 Send a reminder to the reviewers of a currently active accessReviewInstance.
-This API is available in the following national cloud deployments.
 
 ### [Set-MgBetaEntitlementManagementAccessPackageAssignmentPolicy](Set-MgBetaEntitlementManagementAccessPackageAssignmentPolicy.md)
 Update the navigation property accessPackageAssignmentPolicies in identityGovernance
@@ -3879,25 +3682,21 @@ In the Microsoft Entra access reviews feature, stop a currently active accessRev
 The target object can be either a one-time access review, or an instance of a recurring access review.
 (To prevent a recurring access review from starting future instances, update it to change its scheduled end date).
 After the access review stops, reviewers can no longer give input, and the access review decisions can be applied.
-This API is available in the following national cloud deployments.
 
 ### [Stop-MgBetaAccessReviewInstance](Stop-MgBetaAccessReviewInstance.md)
 In the Microsoft Entra access reviews feature, stop a currently active accessReview.
 The target object can be either a one-time access review, or an instance of a recurring access review.
 (To prevent a recurring access review from starting future instances, update it to change its scheduled end date).
 After the access review stops, reviewers can no longer give input, and the access review decisions can be applied.
-This API is available in the following national cloud deployments.
 
 ### [Stop-MgBetaEntitlementManagementAccessPackageAssignmentRequest](Stop-MgBetaEntitlementManagementAccessPackageAssignmentRequest.md)
 In Microsoft Entra Entitlement Management, cancel accessPackageAssignmentRequest objects that are in a cancelable state: accepted, pendingApproval, pendingNotBefore, pendingApprovalEscalated.
-This API is available in the following national cloud deployments.
 
 ### [Stop-MgBetaIdentityGovernanceAccessReviewDecisionInstance](Stop-MgBetaIdentityGovernanceAccessReviewDecisionInstance.md)
 Stop a currently active accessReviewInstance.
 After the access review instance stops, the instance status will be Completed, the reviewers can no longer give input, and the access review decisions can be applied.
 Stopping an instance will not effect future instances.
 To prevent a recurring access review from starting future instances, update the schedule definition to change its scheduled end date.
-This API is available in the following national cloud deployments.
 
 ### [Stop-MgBetaIdentityGovernanceAccessReviewDecisionInstanceApplyDecision](Stop-MgBetaIdentityGovernanceAccessReviewDecisionInstanceApplyDecision.md)
 Invoke action stopApplyDecisions
@@ -3907,7 +3706,6 @@ Stop an access review stage that is inProgress.
 After the access review stage stops, the stage status will be Completed and the reviewers can no longer give input.
 If there are subsequent stages that depend on the completed stage, the next stage will be created.
 The accessReviewInstanceDecisionItem objects will always reflect the last decisions recorded across all stages at that given time, regardless of the status of the stages.
-This API is available in the following national cloud deployments.
 
 ### [Stop-MgBetaIdentityGovernanceAccessReviewDefinition](Stop-MgBetaIdentityGovernanceAccessReviewDefinition.md)
 Invoke action stop
@@ -3917,7 +3715,6 @@ Stop a currently active accessReviewInstance.
 After the access review instance stops, the instance status will be Completed, the reviewers can no longer give input, and the access review decisions can be applied.
 Stopping an instance will not effect future instances.
 To prevent a recurring access review from starting future instances, update the schedule definition to change its scheduled end date.
-This API is available in the following national cloud deployments.
 
 ### [Stop-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceApplyDecision](Stop-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceApplyDecision.md)
 Invoke action stopApplyDecisions
@@ -3927,15 +3724,12 @@ Stop an access review stage that is inProgress.
 After the access review stage stops, the stage status will be Completed and the reviewers can no longer give input.
 If there are subsequent stages that depend on the completed stage, the next stage will be created.
 The accessReviewInstanceDecisionItem objects will always reflect the last decisions recorded across all stages at that given time, regardless of the status of the stages.
-This API is available in the following national cloud deployments.
 
 ### [Stop-MgBetaIdentityGovernancePrivilegedAccessGroupAssignmentScheduleRequest](Stop-MgBetaIdentityGovernancePrivilegedAccessGroupAssignmentScheduleRequest.md)
 Cancel an access assignment request to a group whose membership and ownership are governed by PIM.
-This API is available in the following national cloud deployments.
 
 ### [Stop-MgBetaIdentityGovernancePrivilegedAccessGroupEligibilityScheduleRequest](Stop-MgBetaIdentityGovernancePrivilegedAccessGroupEligibilityScheduleRequest.md)
 Cancel an eligibility assignment request to a group whose membership and ownership are governed by PIM.
-This API is available in the following national cloud deployments.
 
 ### [Stop-MgBetaPrivilegedAccessResourceRoleAssignmentRequest](Stop-MgBetaPrivilegedAccessResourceRoleAssignmentRequest.md)
 Invoke action cancel
@@ -3949,32 +3743,26 @@ Invoke action cancel
 ### [Stop-MgBetaRoleManagementDirectoryRoleAssignmentScheduleRequest](Stop-MgBetaRoleManagementDirectoryRoleAssignmentScheduleRequest.md)
 Immediately cancel a unifiedRoleAssignmentScheduleRequest object that is in a Granted status, and have the system automatically delete the canceled request after 30 days.
 After calling this action, the status of the canceled unifiedRoleAssignmentScheduleRequest changes to Canceled.
-This API is available in the following national cloud deployments.
 
 ### [Stop-MgBetaRoleManagementDirectoryRoleEligibilityScheduleRequest](Stop-MgBetaRoleManagementDirectoryRoleEligibilityScheduleRequest.md)
 Immediately cancel a unifiedRoleEligibilityScheduleRequest that is in a Granted status, and have the system automatically delete the cancelled request after 30 days.
 After calling this action, the status of the cancelled unifiedRoleEligibilityScheduleRequest changes to Revoked.
-This API is available in the following national cloud deployments.
 
 ### [Stop-MgBetaRoleManagementEnterpriseAppRoleAssignmentScheduleRequest](Stop-MgBetaRoleManagementEnterpriseAppRoleAssignmentScheduleRequest.md)
 Immediately cancel a unifiedRoleAssignmentScheduleRequest object that is in a Granted status, and have the system automatically delete the canceled request after 30 days.
 After calling this action, the status of the canceled unifiedRoleAssignmentScheduleRequest changes to Canceled.
-This API is available in the following national cloud deployments.
 
 ### [Stop-MgBetaRoleManagementEnterpriseAppRoleEligibilityScheduleRequest](Stop-MgBetaRoleManagementEnterpriseAppRoleEligibilityScheduleRequest.md)
 Immediately cancel a unifiedRoleEligibilityScheduleRequest that is in a Granted status, and have the system automatically delete the cancelled request after 30 days.
 After calling this action, the status of the cancelled unifiedRoleEligibilityScheduleRequest changes to Revoked.
-This API is available in the following national cloud deployments.
 
 ### [Stop-MgBetaRoleManagementEntitlementManagementRoleAssignmentScheduleRequest](Stop-MgBetaRoleManagementEntitlementManagementRoleAssignmentScheduleRequest.md)
 Immediately cancel a unifiedRoleAssignmentScheduleRequest object that is in a Granted status, and have the system automatically delete the canceled request after 30 days.
 After calling this action, the status of the canceled unifiedRoleAssignmentScheduleRequest changes to Canceled.
-This API is available in the following national cloud deployments.
 
 ### [Stop-MgBetaRoleManagementEntitlementManagementRoleEligibilityScheduleRequest](Stop-MgBetaRoleManagementEntitlementManagementRoleEligibilityScheduleRequest.md)
 Immediately cancel a unifiedRoleEligibilityScheduleRequest that is in a Granted status, and have the system automatically delete the cancelled request after 30 days.
 After calling this action, the status of the cancelled unifiedRoleEligibilityScheduleRequest changes to Revoked.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaAccessReview](Update-MgBetaAccessReview.md)
 In the Microsoft Entra access reviews feature, update an existing accessReview object to change one or more of its properties.
@@ -3982,7 +3770,6 @@ This API is not intended to change the reviewers or decisions of a review.
 To change the reviewers, use the addReviewer or removeReviewer APIs.
 To stop an already-started one-time review, or an already-started instance of a recurring review, early, use the stop API.
 To apply the decisions to the target group or app access rights, use the apply API.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaAccessReviewDecision](Update-MgBetaAccessReviewDecision.md)
 Update the navigation property decisions in accessReviews
@@ -4028,7 +3815,6 @@ Update entity in businessFlowTemplates
 
 ### [Update-MgBetaEntitlementManagementAccessPackage](Update-MgBetaEntitlementManagementAccessPackage.md)
 Update an existing accessPackage object to change one or more of its properties, such as the display name or description.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaEntitlementManagementAccessPackageAssignment](Update-MgBetaEntitlementManagementAccessPackageAssignment.md)
 Invoke action reprocess
@@ -4038,7 +3824,6 @@ Update the navigation property accessPackageAssignmentApprovals in identityGover
 
 ### [Update-MgBetaEntitlementManagementAccessPackageAssignmentApprovalStep](Update-MgBetaEntitlementManagementAccessPackageAssignmentApprovalStep.md)
 Apply approve or deny decision on an approvalStep object.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaEntitlementManagementAccessPackageAssignmentPolicy](Update-MgBetaEntitlementManagementAccessPackageAssignmentPolicy.md)
 Update the navigation property accessPackageAssignmentPolicies in identityGovernance
@@ -4054,7 +3839,6 @@ Invoke action reprocess
 
 ### [Update-MgBetaEntitlementManagementAccessPackageCatalog](Update-MgBetaEntitlementManagementAccessPackageCatalog.md)
 Update an existing accessPackageCatalog object to change one or more of its properties, such as the display name or description.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageCustomWorkflowExtension](Update-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageCustomWorkflowExtension.md)
 Update the properties of an accessPackageAssignmentRequestWorkflowExtension object.
@@ -4070,11 +3854,9 @@ Update the navigation property accessPackageResourceRoleScopes in identityGovern
 
 ### [Update-MgBetaEntitlementManagementConnectedOrganization](Update-MgBetaEntitlementManagementConnectedOrganization.md)
 Update a connectedOrganization object to change one or more of its properties.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaEntitlementManagementSetting](Update-MgBetaEntitlementManagementSetting.md)
 Update an existing entitlementManagementSettings object to change one or more of its properties.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaEntitlementManagementSubject](Update-MgBetaEntitlementManagementSubject.md)
 Update the navigation property subjects in identityGovernance
@@ -4102,11 +3884,9 @@ Update the properties of an accessReviewStage object.
 Only the reviewers and fallbackReviewers properties can be updated.
 You can only add reviewers to the fallbackReviewers property but can't remove existing fallbackReviewers.
 To update an accessReviewStage, its status must be NotStarted, Initializing, or InProgress.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaIdentityGovernanceAccessReviewDecisionInstanceStageDecision](Update-MgBetaIdentityGovernanceAccessReviewDecisionInstanceStageDecision.md)
 Update access decisions, known as accessReviewInstanceDecisionItems, for which the user is the reviewer.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaIdentityGovernanceAccessReviewDecisionInstanceStageDecisionInsight](Update-MgBetaIdentityGovernanceAccessReviewDecisionInstanceStageDecisionInsight.md)
 Update the navigation property insights in identityGovernance
@@ -4137,11 +3917,9 @@ Update the properties of an accessReviewStage object.
 Only the reviewers and fallbackReviewers properties can be updated.
 You can only add reviewers to the fallbackReviewers property but can't remove existing fallbackReviewers.
 To update an accessReviewStage, its status must be NotStarted, Initializing, or InProgress.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStageDecision](Update-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStageDecision.md)
 Update access decisions, known as accessReviewInstanceDecisionItems, for which the user is the reviewer.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStageDecisionInsight](Update-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStageDecisionInsight.md)
 Update the navigation property insights in identityGovernance
@@ -4157,7 +3935,6 @@ Update the navigation property instances in identityGovernance
 
 ### [Update-MgBetaIdentityGovernanceAccessReviewPolicy](Update-MgBetaIdentityGovernanceAccessReviewPolicy.md)
 Update the properties of an accessReviewPolicy object.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaIdentityGovernanceAppConsentRequest](Update-MgBetaIdentityGovernanceAppConsentRequest.md)
 Update the navigation property appConsentRequests in identityGovernance
@@ -4170,20 +3947,17 @@ Update the navigation property approval in identityGovernance
 
 ### [Update-MgBetaIdentityGovernanceAppConsentRequestUserConsentRequestApprovalStep](Update-MgBetaIdentityGovernanceAppConsentRequestUserConsentRequestApprovalStep.md)
 Apply approve or deny decision on an approvalStep object.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaIdentityGovernanceLifecycleWorkflow](Update-MgBetaIdentityGovernanceLifecycleWorkflow.md)
 Update the properties of a workflow object.
 Only the properties listed in the request body table can be updated.
 To update any other workflow properties, see workflow: createNewVersion.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaIdentityGovernanceLifecycleWorkflowCreatedByMailboxSetting](Update-MgBetaIdentityGovernanceLifecycleWorkflowCreatedByMailboxSetting.md)
 Update property mailboxSettings value.
 
 ### [Update-MgBetaIdentityGovernanceLifecycleWorkflowCustomTaskExtension](Update-MgBetaIdentityGovernanceLifecycleWorkflowCustomTaskExtension.md)
 Update the properties of a customTaskExtension object.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaIdentityGovernanceLifecycleWorkflowCustomTaskExtensionCreatedByMailboxSetting](Update-MgBetaIdentityGovernanceLifecycleWorkflowCustomTaskExtensionCreatedByMailboxSetting.md)
 Update property mailboxSettings value.
@@ -4205,7 +3979,6 @@ Update property mailboxSettings value.
 
 ### [Update-MgBetaIdentityGovernanceLifecycleWorkflowSetting](Update-MgBetaIdentityGovernanceLifecycleWorkflowSetting.md)
 Update the properties of a lifecycleManagementSettings object.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaIdentityGovernanceLifecycleWorkflowTask](Update-MgBetaIdentityGovernanceLifecycleWorkflowTask.md)
 Update the navigation property tasks in identityGovernance
@@ -4281,7 +4054,6 @@ Update the navigation property assignmentApprovals in identityGovernance
 
 ### [Update-MgBetaIdentityGovernancePrivilegedAccessGroupAssignmentApprovalStep](Update-MgBetaIdentityGovernancePrivilegedAccessGroupAssignmentApprovalStep.md)
 Apply approve or deny decision on an approvalStep object.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaIdentityGovernancePrivilegedAccessGroupAssignmentSchedule](Update-MgBetaIdentityGovernancePrivilegedAccessGroupAssignmentSchedule.md)
 Update the navigation property assignmentSchedules in identityGovernance
@@ -4318,7 +4090,6 @@ Update the navigation property operations in identityGovernance
 
 ### [Update-MgBetaIdentityGovernanceTermsOfUseAgreement](Update-MgBetaIdentityGovernanceTermsOfUseAgreement.md)
 Update the properties of an agreement object.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaIdentityGovernanceTermsOfUseAgreementAcceptance](Update-MgBetaIdentityGovernanceTermsOfUseAgreementAcceptance.md)
 Update the navigation property agreementAcceptances in identityGovernance
@@ -4391,7 +4162,6 @@ Update the navigation property roleDefinitions in privilegedAccess
 
 ### [Update-MgBetaPrivilegedAccessRoleSetting](Update-MgBetaPrivilegedAccessRoleSetting.md)
 Update the properties of governanceRoleSetting.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaPrivilegedAccessRoleSettingRoleDefinition](Update-MgBetaPrivilegedAccessRoleSettingRoleDefinition.md)
 Update the navigation property roleDefinition in privilegedAccess
@@ -4446,7 +4216,6 @@ Update the navigation property summary in privilegedRoles
 
 ### [Update-MgBetaProgram](Update-MgBetaProgram.md)
 In the Microsoft Entra access reviews feature, update an existing program object.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaProgramControl](Update-MgBetaProgramControl.md)
 Update entity in programControls
@@ -4477,7 +4246,6 @@ Update the navigation property roleAssignmentApprovals in roleManagement
 
 ### [Update-MgBetaRoleManagementDirectoryRoleAssignmentApprovalStep](Update-MgBetaRoleManagementDirectoryRoleAssignmentApprovalStep.md)
 Apply approve or deny decision on an approvalStep object.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaRoleManagementDirectoryRoleAssignmentAppScope](Update-MgBetaRoleManagementDirectoryRoleAssignmentAppScope.md)
 Update the navigation property appScope in roleManagement
@@ -4495,7 +4263,7 @@ Update the navigation property roleAssignmentScheduleRequests in roleManagement
 Update the properties of a unifiedRoleDefinition object for an RBAC provider.
 You cannot update built-in roles.
 This feature requires a Microsoft Entra ID P1 or P2 license.
-The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Microsoft Entra ID)  This API is available in the following national cloud deployments.
+The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Microsoft Entra ID)
 
 ### [Update-MgBetaRoleManagementDirectoryRoleDefinitionInheritPermissionFrom](Update-MgBetaRoleManagementDirectoryRoleDefinitionInheritPermissionFrom.md)
 Update the navigation property inheritsPermissionsFrom in roleManagement
@@ -4535,7 +4303,6 @@ Update the navigation property roleAssignmentApprovals in roleManagement
 
 ### [Update-MgBetaRoleManagementEnterpriseAppRoleAssignmentApprovalStep](Update-MgBetaRoleManagementEnterpriseAppRoleAssignmentApprovalStep.md)
 Apply approve or deny decision on an approvalStep object.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaRoleManagementEnterpriseAppRoleAssignmentAppScope](Update-MgBetaRoleManagementEnterpriseAppRoleAssignmentAppScope.md)
 Update the navigation property appScope in roleManagement
@@ -4553,7 +4320,7 @@ Update the navigation property roleAssignmentScheduleRequests in roleManagement
 Update the properties of a unifiedRoleDefinition object for an RBAC provider.
 You cannot update built-in roles.
 This feature requires a Microsoft Entra ID P1 or P2 license.
-The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Microsoft Entra ID)  This API is available in the following national cloud deployments.
+The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Microsoft Entra ID)
 
 ### [Update-MgBetaRoleManagementEnterpriseAppRoleDefinitionInheritPermissionFrom](Update-MgBetaRoleManagementEnterpriseAppRoleDefinitionInheritPermissionFrom.md)
 Update the navigation property inheritsPermissionsFrom in roleManagement
@@ -4593,7 +4360,6 @@ Update the navigation property roleAssignmentApprovals in roleManagement
 
 ### [Update-MgBetaRoleManagementEntitlementManagementRoleAssignmentApprovalStep](Update-MgBetaRoleManagementEntitlementManagementRoleAssignmentApprovalStep.md)
 Apply approve or deny decision on an approvalStep object.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaRoleManagementEntitlementManagementRoleAssignmentAppScope](Update-MgBetaRoleManagementEntitlementManagementRoleAssignmentAppScope.md)
 Update the navigation property appScope in roleManagement
@@ -4611,7 +4377,7 @@ Update the navigation property roleAssignmentScheduleRequests in roleManagement
 Update the properties of a unifiedRoleDefinition object for an RBAC provider.
 You cannot update built-in roles.
 This feature requires a Microsoft Entra ID P1 or P2 license.
-The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Microsoft Entra ID)  This API is available in the following national cloud deployments.
+The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Microsoft Entra ID)
 
 ### [Update-MgBetaRoleManagementEntitlementManagementRoleDefinitionInheritPermissionFrom](Update-MgBetaRoleManagementEntitlementManagementRoleDefinitionInheritPermissionFrom.md)
 Update the navigation property inheritsPermissionsFrom in roleManagement

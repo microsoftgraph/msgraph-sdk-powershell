@@ -400,8 +400,8 @@ To create the parameters described below, construct a hash table containing the 
 `BODYPARAMETER <IMicrosoftGraphTargetedManagedAppConfiguration>`: Configuration used to deliver a set of custom settings as-is to all users in the targeted security group
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[CustomSettings <IMicrosoftGraphKeyValuePair[]>]`: A set of string key and string value pairs to be sent to apps for users to whom the configuration is scoped, unalterned by this service
-    - `[Name <String>]`: Name for this key-value pair
-    - `[Value <String>]`: Value for this key-value pair
+    - `[Name <String>]`: Name for this key-value pair. For more information about possible names for each resource type that uses this configuration, see keyValuePair names and values.
+    - `[Value <String>]`: Value for this key-value pair. For more information about possible values for each resource type that uses this configuration, see keyValuePair names and values.
   - `[Settings <IMicrosoftGraphDeviceManagementConfigurationSetting[]>]`: List of settings contained in this App Configuration policy
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[SettingDefinitions <IMicrosoftGraphDeviceManagementConfigurationSettingDefinition[]>]`: List of related Setting Definitions. This property is read-only.
@@ -475,8 +475,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[TargetedAppManagementLevels <AppManagementLevel?>]`: Management levels for apps
 
 `CUSTOMSETTINGS <IMicrosoftGraphKeyValuePair[]>`: A set of string key and string value pairs to be sent to apps for users to whom the configuration is scoped, unalterned by this service
-  - `[Name <String>]`: Name for this key-value pair
-  - `[Value <String>]`: Value for this key-value pair
+  - `[Name <String>]`: Name for this key-value pair. For more information about possible names for each resource type that uses this configuration, see keyValuePair names and values.
+  - `[Value <String>]`: Value for this key-value pair. For more information about possible values for each resource type that uses this configuration, see keyValuePair names and values.
 
 `DEPLOYMENTSUMMARY <IMicrosoftGraphManagedAppPolicyDeploymentSummary>`: The ManagedAppEntity is the base entity type for all other entity types under app management workflow.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.

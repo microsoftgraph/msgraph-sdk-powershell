@@ -11,7 +11,6 @@ schema: 2.0.0
 Copies a notebook to the Notebooks folder in the destination Documents library.
 The folder is created if it doesn't exist.
 For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -47,7 +46,6 @@ Copy-MgBetaUserOnenoteNotebook -InputObject <IUsersActionsIdentity> [-Additional
 Copies a notebook to the Notebooks folder in the destination Documents library.
 The folder is created if it doesn't exist.
 For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -308,6 +306,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[NotebookId <String>]`: The unique identifier of notebook
   - `[OnenotePageId <String>]`: The unique identifier of onenotePage
   - `[OnenoteSectionId <String>]`: The unique identifier of onenoteSection
+  - `[OnlineMeetingId <String>]`: The unique identifier of onlineMeeting
   - `[OutlookTaskFolderId <String>]`: The unique identifier of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: The unique identifier of outlookTaskGroup
   - `[OutlookTaskId <String>]`: The unique identifier of outlookTask

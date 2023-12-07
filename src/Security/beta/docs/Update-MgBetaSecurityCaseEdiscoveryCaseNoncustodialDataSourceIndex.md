@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgBetaSecurityCaseEdiscoveryCaseNoncustodialDataSourceIndex
 
 ## SYNOPSIS
-Trigger an indexOperation This API is available in the following national cloud deployments.
+Trigger an indexOperation
 
 ## SYNTAX
 
@@ -51,7 +51,7 @@ Update-MgBetaSecurityCaseEdiscoveryCaseNoncustodialDataSourceIndex -InputObject 
 ```
 
 ## DESCRIPTION
-Trigger an indexOperation This API is available in the following national cloud deployments.
+Trigger an indexOperation
 
 ## EXAMPLES
 

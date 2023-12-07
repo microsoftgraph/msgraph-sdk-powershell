@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update an existing accessPackageCatalog object to change one or more of its properties, such as the display name or description.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -53,7 +52,6 @@ Update-MgEntitlementManagementCatalog -InputObject <IIdentityGovernanceIdentity>
 
 ## DESCRIPTION
 Update an existing accessPackageCatalog object to change one or more of its properties, such as the display name or description.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -11,7 +11,6 @@ schema: 2.0.0
 Delete a unifiedRoleDefinition object.
 You can't delete built-in roles.
 This feature requires a Microsoft Entra ID P1 or P2 license.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -31,7 +30,6 @@ Remove-MgRoleManagementEntitlementManagementRoleDefinition -InputObject <IIdenti
 Delete a unifiedRoleDefinition object.
 You can't delete built-in roles.
 This feature requires a Microsoft Entra ID P1 or P2 license.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

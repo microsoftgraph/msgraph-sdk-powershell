@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Deletes a federatedIdentityCredential object from an application.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -28,7 +27,6 @@ Remove-MgBetaApplicationFederatedIdentityCredential -InputObject <IApplicationsI
 
 ## DESCRIPTION
 Deletes a federatedIdentityCredential object from an application.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

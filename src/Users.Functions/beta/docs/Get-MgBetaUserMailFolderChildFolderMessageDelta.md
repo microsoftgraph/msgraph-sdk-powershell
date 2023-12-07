@@ -11,21 +11,21 @@ schema: 2.0.0
 Get a set of messages that have been added, deleted, or updated in a specified folder.
 A delta function call for messages in a folder is similar to a GET request, except that by appropriately\napplying state tokens in one or more of these calls, you can [query for incremental changes in the messages in\nthat folder](/graph/delta-query-messages).
 This allows you to maintain and synchronize a local store of a user's messages without\nhaving to fetch the entire set of messages from the server every time.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
 ### Delta (Default)
 ```
 Get-MgBetaUserMailFolderChildFolderMessageDelta -MailFolderId <String> -MailFolderId1 <String>
- -UserId <String> [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
- [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
+ -UserId <String> [-ChangeType <String>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
+ [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>]
+ [<CommonParameters>]
 ```
 
 ### DeltaViaIdentity
 ```
-Get-MgBetaUserMailFolderChildFolderMessageDelta -InputObject <IUsersFunctionsIdentity> [-Count]
- [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
+Get-MgBetaUserMailFolderChildFolderMessageDelta -InputObject <IUsersFunctionsIdentity> [-ChangeType <String>]
+ [-Count] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [<CommonParameters>]
 ```
 
@@ -33,7 +33,6 @@ Get-MgBetaUserMailFolderChildFolderMessageDelta -InputObject <IUsersFunctionsIde
 Get a set of messages that have been added, deleted, or updated in a specified folder.
 A delta function call for messages in a folder is similar to a GET request, except that by appropriately\napplying state tokens in one or more of these calls, you can [query for incremental changes in the messages in\nthat folder](/graph/delta-query-messages).
 This allows you to maintain and synchronize a local store of a user's messages without\nhaving to fetch the entire set of messages from the server every time.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -59,6 +58,22 @@ List all pages.
 ```yaml
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: Delta
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ChangeType
+A custom query option to filter the delta response based on the type of change.
+Supported values are created, updated or deleted.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
 Aliases:
 
 Required: False

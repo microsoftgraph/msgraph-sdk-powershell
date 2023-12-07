@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update the role of a conversationMember in a team or channel.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -42,7 +41,6 @@ Update-MgTeamworkDeletedTeamChannelMember -InputObject <ITeamsIdentity> [-Additi
 
 ## DESCRIPTION
 Update the role of a conversationMember in a team or channel.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

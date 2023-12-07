@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 In Microsoft Entra entitlement management, delete an accessPackageAssignmentPolicy.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Remove-MgEntitlementManagementAssignmentPolicy -InputObject <IIdentityGovernance
 
 ## DESCRIPTION
 In Microsoft Entra entitlement management, delete an accessPackageAssignmentPolicy.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

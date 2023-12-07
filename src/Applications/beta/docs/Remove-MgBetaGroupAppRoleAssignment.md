@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Deletes an appRoleAssignment that a group has been granted.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Remove-MgBetaGroupAppRoleAssignment -InputObject <IApplicationsIdentity> [-IfMat
 
 ## DESCRIPTION
 Deletes an appRoleAssignment that a group has been granted.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

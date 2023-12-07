@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new tiIndicator object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -42,7 +41,6 @@ New-MgBetaSecurityTiIndicator -BodyParameter <IMicrosoftGraphTiIndicator> [-Conf
 
 ## DESCRIPTION
 Create a new tiIndicator object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

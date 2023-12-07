@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create an instance of a swapShiftsChangeRequest object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -46,7 +45,6 @@ New-MgGroupTeamScheduleSwapShiftChangeRequest -InputObject <ITeamsIdentity>
 
 ## DESCRIPTION
 Create an instance of a swapShiftsChangeRequest object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

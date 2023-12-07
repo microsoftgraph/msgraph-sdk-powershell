@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Remove the group from the list of the current user's favorite groups.
 Supported for Microsoft 365 groups only.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Remove-MgGroupFavorite -InputObject <IGroupsIdentity> [-PassThru] [-Confirm] [-W
 ## DESCRIPTION
 Remove the group from the list of the current user's favorite groups.
 Supported for Microsoft 365 groups only.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

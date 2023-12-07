@@ -8,7 +8,8 @@ schema: 2.0.0
 # Remove-MgServicePrincipalRemoteDesktopSecurityConfiguration
 
 ## SYNOPSIS
-Delete navigation property remoteDesktopSecurityConfiguration for servicePrincipals
+Delete a remoteDesktopSecurityConfiguration object on a servicePrincipal.
+Removing remoteDesktopSecurityConfiguration object on the servicePrincipal disables the Microsoft Entra ID Remote Desktop Services (RDS) authentication protocol to authenticate a user to Microsoft Entra joined or Microsoft Entra hybrid joined devices, and removes any target device groups that you configured for SSO.
 
 ## SYNTAX
 
@@ -25,7 +26,8 @@ Remove-MgServicePrincipalRemoteDesktopSecurityConfiguration -InputObject <IAppli
 ```
 
 ## DESCRIPTION
-Delete navigation property remoteDesktopSecurityConfiguration for servicePrincipals
+Delete a remoteDesktopSecurityConfiguration object on a servicePrincipal.
+Removing remoteDesktopSecurityConfiguration object on the servicePrincipal disables the Microsoft Entra ID Remote Desktop Services (RDS) authentication protocol to authenticate a user to Microsoft Entra joined or Microsoft Entra hybrid joined devices, and removes any target device groups that you configured for SSO.
 
 ## EXAMPLES
 

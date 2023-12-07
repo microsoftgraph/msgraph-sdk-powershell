@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete a school data synchronization profile in the tenant based on the identifier.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Remove-MgBetaEducationSynchronizationProfile -InputObject <IEducationIdentity> [
 
 ## DESCRIPTION
 Delete a school data synchronization profile in the tenant based on the identifier.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

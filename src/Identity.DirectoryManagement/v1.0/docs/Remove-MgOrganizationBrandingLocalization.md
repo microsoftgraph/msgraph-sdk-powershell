@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Delete a localized branding object.
 To delete the organizationalBrandingLocalization object, all images (Stream types) must first be removed from the object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -29,7 +28,6 @@ Remove-MgOrganizationBrandingLocalization -InputObject <IIdentityDirectoryManage
 ## DESCRIPTION
 Delete a localized branding object.
 To delete the organizationalBrandingLocalization object, all images (Stream types) must first be removed from the object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

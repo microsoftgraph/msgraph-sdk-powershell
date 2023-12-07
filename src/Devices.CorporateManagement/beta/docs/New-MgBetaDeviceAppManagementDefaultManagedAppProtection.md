@@ -53,7 +53,8 @@ New-MgBetaDeviceAppManagementDefaultManagedAppProtection [-AdditionalProperties 
  [-ManagedBrowser <ManagedBrowserType>] [-ManagedBrowserToOpenLinksRequired]
  [-MaximumAllowedDeviceThreatLevel <ManagedAppDeviceThreatLevel>] [-MaximumPinRetries <Int32>]
  [-MaximumRequiredOSVersion <String>] [-MaximumWarningOSVersion <String>] [-MaximumWipeOSVersion <String>]
- [-MinimumPinLength <Int32>] [-MinimumRequiredAppVersion <String>]
+ [-MessagingRedirectAppDisplayName <String>] [-MessagingRedirectAppPackageId <String>]
+ [-MessagingRedirectAppUrlScheme <String>] [-MinimumPinLength <Int32>] [-MinimumRequiredAppVersion <String>]
  [-MinimumRequiredCompanyPortalVersion <String>] [-MinimumRequiredOSVersion <String>]
  [-MinimumRequiredPatchVersion <String>] [-MinimumRequiredSdkVersion <String>]
  [-MinimumWarningAppVersion <String>] [-MinimumWarningCompanyPortalVersion <String>]
@@ -68,7 +69,8 @@ New-MgBetaDeviceAppManagementDefaultManagedAppProtection [-AdditionalProperties 
  [-PeriodOfflineBeforeWipeIsEnforced <TimeSpan>] [-PeriodOnlineBeforeAccessCheck <TimeSpan>]
  [-PinCharacterSet <ManagedAppPinCharacterSet>] [-PinRequired]
  [-PinRequiredInsteadOfBiometricTimeout <TimeSpan>] [-PreviousPinBlockCount <Int32>] [-PrintBlocked]
- [-ProtectInboundDataFromUnknownSources] [-RequireClass3Biometrics]
+ [-ProtectedMessagingRedirectAppType <MessagingRedirectAppType>] [-ProtectInboundDataFromUnknownSources]
+ [-RequireClass3Biometrics]
  [-RequiredAndroidSafetyNetAppsVerificationType <AndroidManagedAppSafetyNetAppsVerificationType>]
  [-RequiredAndroidSafetyNetDeviceAttestationType <AndroidManagedAppSafetyNetDeviceAttestationType>]
  [-RequiredAndroidSafetyNetEvaluationType <AndroidManagedAppSafetyNetEvaluationType>]
@@ -1136,6 +1138,51 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -MessagingRedirectAppDisplayName
+When a specific app redirection is enforced by protectedMessagingRedirectAppType in an App Protection Policy, this value defines the app name which are allowed to be used.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -MessagingRedirectAppPackageId
+When a specific app redirection is enforced by protectedMessagingRedirectAppType in an App Protection Policy, this value defines the app package ids which are allowed to be used.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -MessagingRedirectAppUrlScheme
+When a specific app redirection is enforced by protectedMessagingRedirectAppType in an App Protection Policy, this value defines the app url redirect schemes which are allowed to be used.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -MinimumPinLength
 Minimum pin length required for an app-level pin if PinRequired is set to True
 
@@ -1576,6 +1623,22 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -ProtectedMessagingRedirectAppType
+Defines how app messaging redirection is protected by an App Protection Policy.
+Default is anyApp.
+
+```yaml
+Type: Microsoft.Graph.Beta.PowerShell.Support.MessagingRedirectAppType
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -ProtectInboundDataFromUnknownSources
 Protect incoming data from unknown source.
 This setting is only allowed to be True when AllowedInboundDataTransferSources is set to AllApps.
@@ -1895,6 +1958,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[PinRequiredInsteadOfBiometricTimeout <TimeSpan?>]`: Timeout in minutes for an app pin instead of non biometrics passcode
   - `[PreviousPinBlockCount <Int32?>]`: Requires a pin to be unique from the number specified in this property.
   - `[PrintBlocked <Boolean?>]`: Indicates whether printing is allowed from managed apps.
+  - `[ProtectedMessagingRedirectAppType <MessagingRedirectAppType?>]`: Defines how app messaging redirection is protected by an App Protection Policy. Default is anyApp.
   - `[SaveAsBlocked <Boolean?>]`: Indicates whether users may use the 'Save As' menu item to save a copy of protected files.
   - `[SimplePinBlocked <Boolean?>]`: Indicates whether simplePin is blocked.
   - `[CreatedDateTime <DateTime?>]`: The date and time the policy was created.
@@ -1933,8 +1997,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[CustomDialerAppPackageId <String>]`: PackageId of a custom dialer app to click-to-open a phone number on Android.
   - `[CustomDialerAppProtocol <String>]`: Protocol of a custom dialer app to click-to-open a phone number on iOS, for example, skype:.
   - `[CustomSettings <IMicrosoftGraphKeyValuePair[]>]`: A set of string key and string value pairs to be sent to the affected users, unalterned by this service
-    - `[Name <String>]`: Name for this key-value pair
-    - `[Value <String>]`: Value for this key-value pair
+    - `[Name <String>]`: Name for this key-value pair. For more information about possible names for each resource type that uses this configuration, see keyValuePair names and values.
+    - `[Value <String>]`: Value for this key-value pair. For more information about possible values for each resource type that uses this configuration, see keyValuePair names and values.
   - `[DeployedAppCount <Int32?>]`: Count of apps to which the current policy is deployed.
   - `[DeploymentSummary <IMicrosoftGraphManagedAppPolicyDeploymentSummary>]`: The ManagedAppEntity is the base entity type for all other entity types under app management workflow.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -1955,6 +2019,9 @@ To create the parameters described below, construct a hash table containing the 
   - `[FaceIdBlocked <Boolean?>]`: Indicates whether use of the FaceID is allowed in place of a pin if PinRequired is set to True. (iOS Only)
   - `[FilterOpenInToOnlyManagedApps <Boolean?>]`: Defines if open-in operation is supported from the managed app to the filesharing locations selected. This setting only applies when AllowedOutboundDataTransferDestinations is set to ManagedApps and DisableProtectionOfManagedOutboundOpenInData is set to False. (iOS Only)
   - `[FingerprintAndBiometricEnabled <Boolean?>]`: Indicate to the client to enable both biometrics and fingerprints for the app.
+  - `[MessagingRedirectAppDisplayName <String>]`: When a specific app redirection is enforced by protectedMessagingRedirectAppType in an App Protection Policy, this value defines the app name which are allowed to be used.
+  - `[MessagingRedirectAppPackageId <String>]`: When a specific app redirection is enforced by protectedMessagingRedirectAppType in an App Protection Policy, this value defines the app package ids which are allowed to be used.
+  - `[MessagingRedirectAppUrlScheme <String>]`: When a specific app redirection is enforced by protectedMessagingRedirectAppType in an App Protection Policy, this value defines the app url redirect schemes which are allowed to be used.
   - `[MinimumRequiredCompanyPortalVersion <String>]`: Minimum version of the Company portal that must be installed on the device or app access will be blocked
   - `[MinimumRequiredPatchVersion <String>]`: Define the oldest required Android security patch level a user can have to gain secure access to the app. (Android only)
   - `[MinimumRequiredSdkVersion <String>]`: Versions less than the specified version will block the managed app from accessing company data. (iOS Only)
@@ -1976,8 +2043,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[WipeAfterCompanyPortalUpdateDeferralInDays <Int32?>]`: Maximum number of days Company Portal update can be deferred on the device or the company data on the app will be wiped
 
 `CUSTOMSETTINGS <IMicrosoftGraphKeyValuePair[]>`: A set of string key and string value pairs to be sent to the affected users, unalterned by this service
-  - `[Name <String>]`: Name for this key-value pair
-  - `[Value <String>]`: Value for this key-value pair
+  - `[Name <String>]`: Name for this key-value pair. For more information about possible names for each resource type that uses this configuration, see keyValuePair names and values.
+  - `[Value <String>]`: Value for this key-value pair. For more information about possible values for each resource type that uses this configuration, see keyValuePair names and values.
 
 `DEPLOYMENTSUMMARY <IMicrosoftGraphManagedAppPolicyDeploymentSummary>`: The ManagedAppEntity is the base entity type for all other entity types under app management workflow.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -1992,12 +2059,12 @@ To create the parameters described below, construct a hash table containing the 
   - `[Version <String>]`: Version of the entity.
 
 `EXEMPTEDAPPPACKAGES <IMicrosoftGraphKeyValuePair[]>`: Android App packages in this list will be exempt from the policy and will be able to receive data from managed apps. (Android only)
-  - `[Name <String>]`: Name for this key-value pair
-  - `[Value <String>]`: Value for this key-value pair
+  - `[Name <String>]`: Name for this key-value pair. For more information about possible names for each resource type that uses this configuration, see keyValuePair names and values.
+  - `[Value <String>]`: Value for this key-value pair. For more information about possible values for each resource type that uses this configuration, see keyValuePair names and values.
 
 `EXEMPTEDAPPPROTOCOLS <IMicrosoftGraphKeyValuePair[]>`: iOS Apps in this list will be exempt from the policy and will be able to receive data from managed apps. (iOS Only)
-  - `[Name <String>]`: Name for this key-value pair
-  - `[Value <String>]`: Value for this key-value pair
+  - `[Name <String>]`: Name for this key-value pair. For more information about possible names for each resource type that uses this configuration, see keyValuePair names and values.
+  - `[Value <String>]`: Value for this key-value pair. For more information about possible values for each resource type that uses this configuration, see keyValuePair names and values.
 
 ## RELATED LINKS
 

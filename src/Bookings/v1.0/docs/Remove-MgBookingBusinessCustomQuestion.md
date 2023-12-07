@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete a bookingCustomQuestion object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Remove-MgBookingBusinessCustomQuestion -InputObject <IBookingsIdentity> [-IfMatc
 
 ## DESCRIPTION
 Delete a bookingCustomQuestion object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -168,6 +166,7 @@ To create the parameters described below, construct a hash table containing the 
 
 
 `INPUTOBJECT <IBookingsIdentity>`: Identity Parameter
+  - `[AttendanceRecordId <String>]`: The unique identifier of attendanceRecord
   - `[BookingAppointmentId <String>]`: The unique identifier of bookingAppointment
   - `[BookingBusinessId <String>]`: The unique identifier of bookingBusiness
   - `[BookingCurrencyId <String>]`: The unique identifier of bookingCurrency
@@ -175,6 +174,13 @@ To create the parameters described below, construct a hash table containing the 
   - `[BookingCustomerBaseId <String>]`: The unique identifier of bookingCustomerBase
   - `[BookingServiceId <String>]`: The unique identifier of bookingService
   - `[BookingStaffMemberBaseId <String>]`: The unique identifier of bookingStaffMemberBase
+  - `[MeetingAttendanceReportId <String>]`: The unique identifier of meetingAttendanceReport
+  - `[Role <String>]`: Usage: role='{role}'
+  - `[UserId <String>]`: Usage: userId='{userId}'
+  - `[VirtualEventId <String>]`: The unique identifier of virtualEvent
+  - `[VirtualEventRegistrationId <String>]`: The unique identifier of virtualEventRegistration
+  - `[VirtualEventSessionId <String>]`: The unique identifier of virtualEventSession
+  - `[VirtualEventWebinarId <String>]`: The unique identifier of virtualEventWebinar
 
 ## RELATED LINKS
 

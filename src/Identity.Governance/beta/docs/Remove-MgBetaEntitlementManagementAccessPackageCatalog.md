@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete an accessPackageCatalog.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Remove-MgBetaEntitlementManagementAccessPackageCatalog -InputObject <IIdentityGo
 
 ## DESCRIPTION
 Delete an accessPackageCatalog.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

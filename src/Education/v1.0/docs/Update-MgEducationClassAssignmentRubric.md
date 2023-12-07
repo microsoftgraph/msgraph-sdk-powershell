@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Attach an existing educationRubric object to an educationAssignment.
 Only teachers can perform this operation.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -47,7 +46,6 @@ Update-MgEducationClassAssignmentRubric -InputObject <IEducationIdentity> [-Addi
 ## DESCRIPTION
 Attach an existing educationRubric object to an educationAssignment.
 Only teachers can perform this operation.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

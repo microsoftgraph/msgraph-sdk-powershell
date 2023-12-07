@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update the properties of an ediscoveryCaseSettings object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -43,7 +42,6 @@ Update-MgSecurityCaseEdiscoveryCaseSetting -InputObject <ISecurityIdentity>
 
 ## DESCRIPTION
 Update the properties of an ediscoveryCaseSettings object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

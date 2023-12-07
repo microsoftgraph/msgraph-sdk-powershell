@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Read the properties and relationships of a userRegistrationDetails object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -34,7 +33,6 @@ Get-MgBetaReportAuthenticationMethodUserRegistrationDetail -InputObject <IReport
 
 ## DESCRIPTION
 Read the properties and relationships of a userRegistrationDetails object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -264,10 +262,12 @@ To create the parameters described below, construct a hash table containing the 
   - `[DeviceManagementExportJobId <String>]`: The unique identifier of deviceManagementExportJob
   - `[DirectoryAuditId <String>]`: The unique identifier of directoryAudit
   - `[EndDateTime <DateTime?>]`: Usage: endDateTime={endDateTime}
+  - `[ExclusiveIntervalEndDateTime <DateTime?>]`: Usage: exclusiveIntervalEndDateTime={exclusiveIntervalEndDateTime}
   - `[Filter <String>]`: Usage: filter='{filter}'
   - `[GroupId <String>]`: Usage: groupId='{groupId}'
   - `[IncludedUserRoles <String>]`: Usage: includedUserRoles='{includedUserRoles}'
   - `[IncludedUserTypes <String>]`: Usage: includedUserTypes='{includedUserTypes}'
+  - `[InclusiveIntervalStartDateTime <DateTime?>]`: Usage: inclusiveIntervalStartDateTime={inclusiveIntervalStartDateTime}
   - `[InsightSummaryId <String>]`: The unique identifier of insightSummary
   - `[MfaCompletionMetricId <String>]`: The unique identifier of mfaCompletionMetric
   - `[MonthlyInactiveUsersByApplicationMetricId <String>]`: The unique identifier of monthlyInactiveUsersByApplicationMetric

@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete calendarPermission.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Remove-MgGroupCalendarPermission -InputObject <ICalendarIdentity> [-IfMatch <Str
 
 ## DESCRIPTION
 Delete calendarPermission.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -184,6 +182,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[ExtensionId <String>]`: The unique identifier of extension
   - `[GroupId <String>]`: The unique identifier of group
   - `[PlaceId <String>]`: The unique identifier of place
+  - `[RoomId <String>]`: The unique identifier of room
   - `[UserId <String>]`: The unique identifier of user
 
 ## RELATED LINKS

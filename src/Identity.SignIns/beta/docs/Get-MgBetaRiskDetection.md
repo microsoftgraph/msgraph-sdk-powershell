@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgBetaRiskDetection
 
 ## SYNOPSIS
-Retrieve the properties of a riskDetection object.
-This API is available in the following national cloud deployments.
+Retrieve the properties of a collection of riskDetection objects.
 
 ## SYNTAX
 
@@ -33,8 +32,7 @@ Get-MgBetaRiskDetection -InputObject <IIdentitySignInsIdentity> [-ExpandProperty
 ```
 
 ## DESCRIPTION
-Retrieve the properties of a riskDetection object.
-This API is available in the following national cloud deployments.
+Retrieve the properties of a collection of riskDetection objects.
 
 ## EXAMPLES
 
@@ -301,6 +299,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[ActivityBasedTimeoutPolicyId <String>]`: The unique identifier of activityBasedTimeoutPolicy
   - `[AppManagementPolicyId <String>]`: The unique identifier of appManagementPolicy
   - `[AuthenticationCombinationConfigurationId <String>]`: The unique identifier of authenticationCombinationConfiguration
+  - `[AuthenticationConditionApplicationAppId <String>]`: The unique identifier of authenticationConditionApplication
   - `[AuthenticationContextClassReferenceId <String>]`: The unique identifier of authenticationContextClassReference
   - `[AuthenticationEventListenerId <String>]`: The unique identifier of authenticationEventListener
   - `[AuthenticationEventsFlowId <String>]`: The unique identifier of authenticationEventsFlow

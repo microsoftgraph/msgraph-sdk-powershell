@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve the properties of an approvalStep object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -35,7 +34,6 @@ Get-MgBetaIdentityGovernancePrivilegedAccessGroupAssignmentApprovalStep
 
 ## DESCRIPTION
 Retrieve the properties of an approvalStep object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -8,18 +8,19 @@ schema: 2.0.0
 # Get-MgBetaVirtualEventWebinarSessionRegistration
 
 ## SYNOPSIS
-Get the externalMeetingRegistration details associated with an onlineMeeting.
-This API is available in the following national cloud deployments.
+Get registrations from solutions
 
 ## SYNTAX
 
-### Get (Default)
+### List (Default)
 ```
 Get-MgBetaVirtualEventWebinarSessionRegistration -VirtualEventSessionId <String>
- -VirtualEventWebinarId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
+ -VirtualEventWebinarId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+ [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
+ [-PageSize <Int32>] [<CommonParameters>]
 ```
 
-### Get1
+### Get
 ```
 Get-MgBetaVirtualEventWebinarSessionRegistration -VirtualEventRegistrationId <String>
  -VirtualEventSessionId <String> -VirtualEventWebinarId <String> [-ExpandProperty <String[]>]
@@ -32,23 +33,8 @@ Get-MgBetaVirtualEventWebinarSessionRegistration -InputObject <IBookingsIdentity
  [-Property <String[]>] [<CommonParameters>]
 ```
 
-### GetViaIdentity1
-```
-Get-MgBetaVirtualEventWebinarSessionRegistration -InputObject <IBookingsIdentity> [-ExpandProperty <String[]>]
- [-Property <String[]>] [<CommonParameters>]
-```
-
-### List
-```
-Get-MgBetaVirtualEventWebinarSessionRegistration -VirtualEventSessionId <String>
- -VirtualEventWebinarId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
- [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
- [-PageSize <Int32>] [<CommonParameters>]
-```
-
 ## DESCRIPTION
-Get the externalMeetingRegistration details associated with an onlineMeeting.
-This API is available in the following national cloud deployments.
+Get registrations from solutions
 
 ## EXAMPLES
 
@@ -135,7 +121,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Microsoft.Graph.Beta.PowerShell.Models.IBookingsIdentity
-Parameter Sets: GetViaIdentity, GetViaIdentity1
+Parameter Sets: GetViaIdentity
 Aliases:
 
 Required: True
@@ -240,7 +226,7 @@ The unique identifier of virtualEventRegistration
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1
+Parameter Sets: Get
 Aliases:
 
 Required: True
@@ -255,7 +241,7 @@ The unique identifier of virtualEventSession
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, Get1, List
+Parameter Sets: Get, List
 Aliases:
 
 Required: True
@@ -270,7 +256,7 @@ The unique identifier of virtualEventWebinar
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, Get1, List
+Parameter Sets: Get, List
 Aliases:
 
 Required: True
@@ -288,8 +274,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IBookingsIdentity
 
 ## OUTPUTS
-
-### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMeetingRegistration
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphVirtualEventRegistration
 
@@ -313,16 +297,15 @@ To create the parameters described below, construct a hash table containing the 
   - `[BookingStaffMemberId <String>]`: The unique identifier of bookingStaffMember
   - `[BusinessScenarioId <String>]`: The unique identifier of businessScenario
   - `[BusinessScenarioTaskId <String>]`: The unique identifier of businessScenarioTask
-  - `[CallRecordingId <String>]`: The unique identifier of callRecording
-  - `[CallTranscriptId <String>]`: The unique identifier of callTranscript
   - `[MeetingAttendanceReportId <String>]`: The unique identifier of meetingAttendanceReport
-  - `[MeetingRegistrantBaseId <String>]`: The unique identifier of meetingRegistrantBase
-  - `[MeetingRegistrationQuestionId <String>]`: The unique identifier of meetingRegistrationQuestion
   - `[PlannerPlanConfigurationLocalizationId <String>]`: The unique identifier of plannerPlanConfigurationLocalization
+  - `[Role <String>]`: Usage: role='{role}'
+  - `[UserId <String>]`: Usage: userId='{userId}'
   - `[VirtualEventId <String>]`: The unique identifier of virtualEvent
   - `[VirtualEventPresenterId <String>]`: The unique identifier of virtualEventPresenter
   - `[VirtualEventRegistrationId <String>]`: The unique identifier of virtualEventRegistration
   - `[VirtualEventSessionId <String>]`: The unique identifier of virtualEventSession
+  - `[VirtualEventTownhallId <String>]`: The unique identifier of virtualEventTownhall
   - `[VirtualEventWebinarId <String>]`: The unique identifier of virtualEventWebinar
 
 ## RELATED LINKS

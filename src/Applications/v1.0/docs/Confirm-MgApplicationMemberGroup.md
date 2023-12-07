@@ -11,9 +11,8 @@ schema: 2.0.0
 Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
 This function is transitive.
 You can check up to a maximum of 20 groups per request.
-This function supports all groups provisioned in Azure AD.
+This function supports all groups provisioned in Microsoft Entra ID.
 Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -47,9 +46,8 @@ Confirm-MgApplicationMemberGroup -InputObject <IApplicationsIdentity> [-Addition
 Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
 This function is transitive.
 You can check up to a maximum of 20 groups per request.
-This function supports all groups provisioned in Azure AD.
+This function supports all groups provisioned in Microsoft Entra ID.
 Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -222,6 +220,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[ServicePrincipalId <String>]`: The unique identifier of servicePrincipal
   - `[SynchronizationJobId <String>]`: The unique identifier of synchronizationJob
   - `[SynchronizationTemplateId <String>]`: The unique identifier of synchronizationTemplate
+  - `[TargetDeviceGroupId <String>]`: The unique identifier of targetDeviceGroup
   - `[TokenIssuancePolicyId <String>]`: The unique identifier of tokenIssuancePolicy
   - `[TokenLifetimePolicyId <String>]`: The unique identifier of tokenLifetimePolicy
   - `[UserId <String>]`: The unique identifier of user

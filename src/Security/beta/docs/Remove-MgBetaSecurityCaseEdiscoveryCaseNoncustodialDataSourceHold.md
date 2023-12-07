@@ -11,7 +11,6 @@ schema: 2.0.0
 Start the process of removing hold from eDiscovery non-custodial data sources.
 After the operation is created, you can get the status by retrieving the Location parameter from the response headers.
 The location provides a URL that returns an eDiscoveryHoldOperation object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -57,7 +56,6 @@ Remove-MgBetaSecurityCaseEdiscoveryCaseNoncustodialDataSourceHold -InputObject <
 Start the process of removing hold from eDiscovery non-custodial data sources.
 After the operation is created, you can get the status by retrieving the Location parameter from the response headers.
 The location provides a URL that returns an eDiscoveryHoldOperation object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

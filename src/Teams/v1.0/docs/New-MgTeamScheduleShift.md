@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Create a new shift instance in a schedule.
 The duration of a shift cannot be less than 1 minute or longer than 24 hours.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -45,7 +44,6 @@ New-MgTeamScheduleShift -InputObject <ITeamsIdentity> [-AdditionalProperties <Ha
 ## DESCRIPTION
 Create a new shift instance in a schedule.
 The duration of a shift cannot be less than 1 minute or longer than 24 hours.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

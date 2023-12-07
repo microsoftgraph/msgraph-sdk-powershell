@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgAdminPeopleProfileCardProperty
 
 ## SYNOPSIS
-Get profileCardProperties from admin
+Retrieve the properties of a profileCardProperty entity.
+The profileCardProperty is identified by its directoryPropertyName property.
 
 ## SYNTAX
 
@@ -32,7 +33,8 @@ Get-MgAdminPeopleProfileCardProperty -InputObject <IIdentityDirectoryManagementI
 ```
 
 ## DESCRIPTION
-Get profileCardProperties from admin
+Retrieve the properties of a profileCardProperty entity.
+The profileCardProperty is identified by its directoryPropertyName property.
 
 ## EXAMPLES
 

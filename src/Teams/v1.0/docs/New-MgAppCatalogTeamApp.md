@@ -11,7 +11,6 @@ schema: 2.0.0
 Publish an app to the Microsoft Teams app catalog.\nSpecifically, this API publishes the app to your organization's catalog (the tenant app catalog);\nthe created resource has a distributionMethod property value of organization.
 The requiresReview property allows any user to submit an app for review by an administrator.
 Admins can approve or reject these apps via this API or the Microsoft Teams admin center.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -32,7 +31,6 @@ New-MgAppCatalogTeamApp -BodyParameter <IMicrosoftGraphTeamsApp> [-Confirm] [-Wh
 Publish an app to the Microsoft Teams app catalog.\nSpecifically, this API publishes the app to your organization's catalog (the tenant app catalog);\nthe created resource has a distributionMethod property value of organization.
 The requiresReview property allows any user to submit an app for review by an administrator.
 Admins can approve or reject these apps via this API or the Microsoft Teams admin center.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

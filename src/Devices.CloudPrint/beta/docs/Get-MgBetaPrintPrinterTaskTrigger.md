@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Get a task trigger from a printer.
 For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -36,7 +35,6 @@ Get-MgBetaPrintPrinterTaskTrigger -InputObject <IDevicesCloudPrintIdentity> [-Ex
 ## DESCRIPTION
 Get a task trigger from a printer.
 For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

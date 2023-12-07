@@ -9,14 +9,13 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new directory extension definition, represented by an extensionProperty object.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
 ### CreateExpanded (Default)
 ```
 New-MgApplicationExtensionProperty -ApplicationId <String> [-AdditionalProperties <Hashtable>]
- [-AppDisplayName <String>] [-DataType <String>] [-DeletedDateTime <DateTime>] [-Id <String>]
+ [-AppDisplayName <String>] [-DataType <String>] [-DeletedDateTime <DateTime>] [-Id <String>] [-IsMultiValued]
  [-IsSyncedFromOnPremises] [-Name <String>] [-TargetObjects <String[]>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -36,14 +35,13 @@ New-MgApplicationExtensionProperty -InputObject <IApplicationsIdentity>
 ### CreateViaIdentityExpanded
 ```
 New-MgApplicationExtensionProperty -InputObject <IApplicationsIdentity> [-AdditionalProperties <Hashtable>]
- [-AppDisplayName <String>] [-DataType <String>] [-DeletedDateTime <DateTime>] [-Id <String>]
+ [-AppDisplayName <String>] [-DataType <String>] [-DeletedDateTime <DateTime>] [-Id <String>] [-IsMultiValued]
  [-IsSyncedFromOnPremises] [-Name <String>] [-TargetObjects <String[]>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Create a new directory extension definition, represented by an extensionProperty object.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -55,6 +53,7 @@ Import-Module Microsoft.Graph.Applications
 $params = @{
 	name = "jobGroup"
 	dataType = "String"
+	isMultiValued = $true
 	targetObjects = @(
 		"User"
 	)
@@ -193,8 +192,26 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
+### -IsMultiValued
+Defines the directory extension as a multi-valued property.
+When true, the directory extension property can store a collection of objects of the dataType; for example, a collection of integers.
+The default value is false.
+Supports $filter (eq).
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -IsSyncedFromOnPremises
-Indicates if this extension property was synced from on-premises active directory using Azure AD Connect.
+Indicates if this extension property was synced from on-premises active directory using Microsoft Entra Connect.
 Read-only.
 
 ```yaml
@@ -302,7 +319,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[AppDisplayName <String>]`: Display name of the application object on which this extension property is defined. Read-only.
   - `[DataType <String>]`: Specifies the data type of the value the extension property can hold. Following values are supported. Not nullable. Binary - 256 bytes maximumBooleanDateTime - Must be specified in ISO 8601 format. Will be stored in UTC.Integer - 32-bit value.LargeInteger - 64-bit value.String - 256 characters maximum
-  - `[IsSyncedFromOnPremises <Boolean?>]`: Indicates if this extension property was synced from on-premises active directory using Azure AD Connect. Read-only.
+  - `[IsMultiValued <Boolean?>]`: Defines the directory extension as a multi-valued property. When true, the directory extension property can store a collection of objects of the dataType; for example, a collection of integers. The default value is false. Supports $filter (eq).
+  - `[IsSyncedFromOnPremises <Boolean?>]`: Indicates if this extension property was synced from on-premises active directory using Microsoft Entra Connect. Read-only.
   - `[Name <String>]`: Name of the extension property. Not nullable. Supports $filter (eq).
   - `[TargetObjects <String[]>]`: Following values are supported. Not nullable. UserGroupAdministrativeUnitApplicationDeviceOrganization
 
@@ -325,6 +343,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[ServicePrincipalId <String>]`: The unique identifier of servicePrincipal
   - `[SynchronizationJobId <String>]`: The unique identifier of synchronizationJob
   - `[SynchronizationTemplateId <String>]`: The unique identifier of synchronizationTemplate
+  - `[TargetDeviceGroupId <String>]`: The unique identifier of targetDeviceGroup
   - `[TokenIssuancePolicyId <String>]`: The unique identifier of tokenIssuancePolicy
   - `[TokenLifetimePolicyId <String>]`: The unique identifier of tokenLifetimePolicy
   - `[UserId <String>]`: The unique identifier of user

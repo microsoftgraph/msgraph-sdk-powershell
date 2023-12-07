@@ -11,7 +11,6 @@ schema: 2.0.0
 Allows the acceptance of recommendations on all accessReviewInstanceDecisionItem objects that haven't been reviewed for an accessReviewInstance object for which the calling user is a reviewer.
 Recommendations are generated if recommendationsEnabled is true on the accessReviewScheduleDefinition object.
 If there isn't a recommendation on an accessReviewInstanceDecisionItem object no decision will be recorded.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -32,7 +31,6 @@ Invoke-MgBetaAcceptIdentityGovernanceAccessReviewDefinitionInstanceRecommendatio
 Allows the acceptance of recommendations on all accessReviewInstanceDecisionItem objects that haven't been reviewed for an accessReviewInstance object for which the calling user is a reviewer.
 Recommendations are generated if recommendationsEnabled is true on the accessReviewScheduleDefinition object.
 If there isn't a recommendation on an accessReviewInstanceDecisionItem object no decision will be recorded.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

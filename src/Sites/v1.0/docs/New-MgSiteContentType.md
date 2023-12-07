@@ -8,8 +8,7 @@ schema: 2.0.0
 # New-MgSiteContentType
 
 ## SYNOPSIS
-Create a new contentType][] in a [site][].
-This API is available in the following [national cloud deployments.
+Create a new [contentType][] in a [site][].
 
 ## SYNTAX
 
@@ -51,8 +50,7 @@ New-MgSiteContentType -InputObject <ISitesIdentity> [-AdditionalProperties <Hash
 ```
 
 ## DESCRIPTION
-Create a new contentType][] in a [site][].
-This API is available in the following [national cloud deployments.
+Create a new [contentType][] in a [site][].
 
 ## EXAMPLES
 

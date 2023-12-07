@@ -10,8 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Lock or unlock a retention label on a driveItem that classifies content as records.
 For information about retention labels from an administrator's perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
-For information about how you can lock and unlock retention labels, see Use record versioning to update records stored in SharePoint or OneDrive.
-This API is available in the following national cloud deployments.
+For more information about how you can lock and unlock retention labels, see Use record versioning to update records stored in SharePoint or OneDrive.
 
 ## SYNTAX
 
@@ -46,8 +45,7 @@ Update-MgBetaGroupDriveItemRetentionLabel -InputObject <IFilesIdentity> [-Additi
 ## DESCRIPTION
 Lock or unlock a retention label on a driveItem that classifies content as records.
 For information about retention labels from an administrator's perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
-For information about how you can lock and unlock retention labels, see Use record versioning to update records stored in SharePoint or OneDrive.
-This API is available in the following national cloud deployments.
+For more information about how you can lock and unlock retention labels, see Use record versioning to update records stored in SharePoint or OneDrive.
 
 ## EXAMPLES
 
@@ -210,7 +208,7 @@ Accept wildcard characters: False
 
 ### -LabelAppliedDateTime
 The date and time when the label was applied on the item.
-The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time.
+The timestamp type represents date and time information using ISO 8601 format and is always in UTC.
 For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 Read-only.
 
@@ -323,7 +321,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[Id <String>]`: The identifier of the identity. This property is read-only.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
-  - `[LabelAppliedDateTime <DateTime?>]`: The date and time when the label was applied on the item. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+  - `[LabelAppliedDateTime <DateTime?>]`: The date and time when the label was applied on the item. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
   - `[Name <String>]`: The retention label on the document. Read-write.
   - `[RetentionSettings <IMicrosoftGraphRetentionLabelSettings>]`: retentionLabelSettings
     - `[(Any) <Object>]`: This indicates any property can be added to this object.

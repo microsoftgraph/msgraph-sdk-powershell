@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Play a prompt in the call.
-For more information about how to handle operations, see commsOperation This API is available in the following national cloud deployments.
+For more information about how to handle operations, see commsOperation
 
 ## SYNTAX
 
@@ -42,7 +42,7 @@ Invoke-MgPlayCommunicationCallPrompt -InputObject <ICloudCommunicationsIdentity>
 
 ## DESCRIPTION
 Play a prompt in the call.
-For more information about how to handle operations, see commsOperation This API is available in the following national cloud deployments.
+For more information about how to handle operations, see commsOperation
 
 ## EXAMPLES
 
@@ -224,6 +224,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[AudioRoutingGroupId <String>]`: The unique identifier of audioRoutingGroup
   - `[CallId <String>]`: The unique identifier of call
   - `[CallRecordId <String>]`: The unique identifier of callRecord
+  - `[CallRecordingId <String>]`: The unique identifier of callRecording
   - `[CallTranscriptId <String>]`: The unique identifier of callTranscript
   - `[CommsOperationId <String>]`: The unique identifier of commsOperation
   - `[ContentSharingSessionId <String>]`: The unique identifier of contentSharingSession

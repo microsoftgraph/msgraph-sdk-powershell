@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update one or more tenant-level settings for SharePoint and OneDrive.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -38,7 +37,6 @@ Update-MgBetaAdminSharepointSetting -BodyParameter <IMicrosoftGraphSharepointSet
 
 ## DESCRIPTION
 Update one or more tenant-level settings for SharePoint and OneDrive.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

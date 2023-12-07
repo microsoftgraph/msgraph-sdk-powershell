@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new ediscoverySearch object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -55,7 +54,6 @@ New-MgSecurityCaseEdiscoveryCaseSearch -InputObject <ISecurityIdentity> [-Additi
 
 ## DESCRIPTION
 Create a new ediscoverySearch object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 In Microsoft Entra entitlement management, this action moves the accessPackage to a specified target accessPackageCatalog.
 The resources in the access package must be present in the target catalog.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -45,7 +44,6 @@ Move-MgBetaEntitlementManagementAccessPackageToCatalog -InputObject <IIdentityGo
 ## DESCRIPTION
 In Microsoft Entra entitlement management, this action moves the accessPackage to a specified target accessPackageCatalog.
 The resources in the access package must be present in the target catalog.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

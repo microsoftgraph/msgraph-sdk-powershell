@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Assign a tokenIssuancePolicy to an application.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -39,7 +38,6 @@ New-MgBetaApplicationTokenIssuancePolicyByRef -InputObject <IApplicationsIdentit
 
 ## DESCRIPTION
 Assign a tokenIssuancePolicy to an application.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

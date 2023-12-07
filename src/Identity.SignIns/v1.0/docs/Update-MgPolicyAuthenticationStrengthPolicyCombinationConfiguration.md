@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Update the properties of an authenticationCombinationConfiguration object.
 In use, only fido2combinationConfigurations may be updated as they're the only type of authenticationCombinationConfiguration that may be created.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -47,7 +46,6 @@ Update-MgPolicyAuthenticationStrengthPolicyCombinationConfiguration -InputObject
 ## DESCRIPTION
 Update the properties of an authenticationCombinationConfiguration object.
 In use, only fido2combinationConfigurations may be updated as they're the only type of authenticationCombinationConfiguration that may be created.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

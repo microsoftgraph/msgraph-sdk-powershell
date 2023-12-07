@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Create a new retentionLabel object.
 To create a disposition review stage, include the actionAfterRetentionPeriod property in the request body with one of the possible values specified.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -37,7 +36,6 @@ New-MgBetaSecurityLabelRetentionLabel -BodyParameter <IMicrosoftGraphSecurityRet
 ## DESCRIPTION
 Create a new retentionLabel object.
 To create a disposition review stage, include the actionAfterRetentionPeriod property in the request body with one of the possible values specified.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

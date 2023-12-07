@@ -11,7 +11,6 @@ schema: 2.0.0
 Carries out the appropriate procedures to remove a managed tenant from the multitenant management platform.
 No relationships, such as commerce and delegate administrative privileges, will be impacted.
 The only change made by invoking this action is the tenant will be deprovisioned from the multitenant management platform.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -31,7 +30,6 @@ Invoke-MgBetaTenantRelationshipManagedTenantOffboard -InputObject <IIdentityDire
 Carries out the appropriate procedures to remove a managed tenant from the multitenant management platform.
 No relationships, such as commerce and delegate administrative privileges, will be impacted.
 The only change made by invoking this action is the tenant will be deprovisioned from the multitenant management platform.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Retry installation for the partner agents that failed to install on the Cloud PC.
 Service side checks which agent installation failed firstly and retry.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -29,7 +28,6 @@ Invoke-MgBetaRetryDeviceManagementVirtualEndpointCloudPcPartnerAgentInstallation
 ## DESCRIPTION
 Retry installation for the partner agents that failed to install on the Cloud PC.
 Service side checks which agent installation failed firstly and retry.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -190,6 +188,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[MicrosoftTunnelSiteId <String>]`: The unique identifier of microsoftTunnelSite
   - `[MobileAppTroubleshootingEventId <String>]`: The unique identifier of mobileAppTroubleshootingEvent
   - `[NotificationMessageTemplateId <String>]`: The unique identifier of notificationMessageTemplate
+  - `[PrivilegeManagementElevationRequestId <String>]`: The unique identifier of privilegeManagementElevationRequest
   - `[RemoteAssistancePartnerId <String>]`: The unique identifier of remoteAssistancePartner
   - `[RoleScopeTagId <String>]`: The unique identifier of roleScopeTag
   - `[WindowsAutopilotDeploymentProfileId <String>]`: The unique identifier of windowsAutopilotDeploymentProfile

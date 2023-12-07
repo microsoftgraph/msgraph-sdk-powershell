@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaIdentityGovernancePermissionAnalyticGcp
 
 ## SYNOPSIS
-Get gcp from identityGovernance
+GCP permissions analytics findings.
 
 ## SYNTAX
 
@@ -18,7 +18,7 @@ Get-MgBetaIdentityGovernancePermissionAnalyticGcp [-ExpandProperty <String[]>] [
 ```
 
 ## DESCRIPTION
-Get gcp from identityGovernance
+GCP permissions analytics findings.
 
 ## EXAMPLES
 

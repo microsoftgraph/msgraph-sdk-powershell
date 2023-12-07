@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Reset the sync of a specific school data synchronization profile in the tenant.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Reset-MgBetaEducationSynchronizationProfile -InputObject <IEducationIdentity> [-
 
 ## DESCRIPTION
 Reset the sync of a specific school data synchronization profile in the tenant.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

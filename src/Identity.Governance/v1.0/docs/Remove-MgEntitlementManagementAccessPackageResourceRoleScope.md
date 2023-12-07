@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Remove a accessPackageResourceRoleScope from an accessPackage list of resource role scopes.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -28,7 +27,6 @@ Remove-MgEntitlementManagementAccessPackageResourceRoleScope -InputObject <IIden
 
 ## DESCRIPTION
 Remove a accessPackageResourceRoleScope from an accessPackage list of resource role scopes.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

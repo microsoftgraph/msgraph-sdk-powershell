@@ -12,7 +12,6 @@ Add members to an updatableAssetGroup.
 You can add azureADDevice resources as members, but may not add updatableAssetGroup resources as members.
 Adding a Microsoft Entra device as a member of an updatable asset group automatically creates an azureADDevice object, if it does not already exist.
 You can also use the method addMembersById to add members.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -49,7 +48,6 @@ Add members to an updatableAssetGroup.
 You can add azureADDevice resources as members, but may not add updatableAssetGroup resources as members.
 Adding a Microsoft Entra device as a member of an updatable asset group automatically creates an azureADDevice object, if it does not already exist.
 You can also use the method addMembersById to add members.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

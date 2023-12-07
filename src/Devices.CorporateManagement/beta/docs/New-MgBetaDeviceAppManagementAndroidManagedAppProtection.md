@@ -51,7 +51,8 @@ New-MgBetaDeviceAppManagementAndroidManagedAppProtection [-AdditionalProperties 
  [-KeyboardsRestricted] [-LastModifiedDateTime <DateTime>] [-ManagedBrowser <ManagedBrowserType>]
  [-ManagedBrowserToOpenLinksRequired] [-MaximumAllowedDeviceThreatLevel <ManagedAppDeviceThreatLevel>]
  [-MaximumPinRetries <Int32>] [-MaximumRequiredOSVersion <String>] [-MaximumWarningOSVersion <String>]
- [-MaximumWipeOSVersion <String>] [-MinimumPinLength <Int32>] [-MinimumRequiredAppVersion <String>]
+ [-MaximumWipeOSVersion <String>] [-MessagingRedirectAppDisplayName <String>]
+ [-MessagingRedirectAppPackageId <String>] [-MinimumPinLength <Int32>] [-MinimumRequiredAppVersion <String>]
  [-MinimumRequiredCompanyPortalVersion <String>] [-MinimumRequiredOSVersion <String>]
  [-MinimumRequiredPatchVersion <String>] [-MinimumWarningAppVersion <String>]
  [-MinimumWarningCompanyPortalVersion <String>] [-MinimumWarningOSVersion <String>]
@@ -65,7 +66,7 @@ New-MgBetaDeviceAppManagementAndroidManagedAppProtection [-AdditionalProperties 
  [-PeriodOfflineBeforeWipeIsEnforced <TimeSpan>] [-PeriodOnlineBeforeAccessCheck <TimeSpan>]
  [-PinCharacterSet <ManagedAppPinCharacterSet>] [-PinRequired]
  [-PinRequiredInsteadOfBiometricTimeout <TimeSpan>] [-PreviousPinBlockCount <Int32>] [-PrintBlocked]
- [-RequireClass3Biometrics]
+ [-ProtectedMessagingRedirectAppType <MessagingRedirectAppType>] [-RequireClass3Biometrics]
  [-RequiredAndroidSafetyNetAppsVerificationType <AndroidManagedAppSafetyNetAppsVerificationType>]
  [-RequiredAndroidSafetyNetDeviceAttestationType <AndroidManagedAppSafetyNetDeviceAttestationType>]
  [-RequiredAndroidSafetyNetEvaluationType <AndroidManagedAppSafetyNetEvaluationType>]
@@ -1060,6 +1061,36 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -MessagingRedirectAppDisplayName
+When a specific app redirection is enforced by protectedMessagingRedirectAppType in an App Protection Policy, this value defines the app name which is allowed to be used.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -MessagingRedirectAppPackageId
+When a specific app redirection is enforced by protectedMessagingRedirectAppType in an App Protection Policy, this value defines the app package id which is allowed to be used.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -MinimumPinLength
 Minimum pin length required for an app-level pin if PinRequired is set to True
 
@@ -1450,6 +1481,22 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -ProtectedMessagingRedirectAppType
+Defines how app messaging redirection is protected by an App Protection Policy.
+Default is anyApp.
+
+```yaml
+Type: Microsoft.Graph.Beta.PowerShell.Support.MessagingRedirectAppType
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -RequireClass3Biometrics
 Require user to apply Class 3 Biometrics on their Android device.
 
@@ -1699,8 +1746,8 @@ To create the parameters described below, construct a hash table containing the 
 
 
 `APPROVEDKEYBOARDS <IMicrosoftGraphKeyValuePair[]>`: If Keyboard Restriction is enabled, only keyboards in this approved list will be allowed. A key should be Android package id for a keyboard and value should be a friendly name
-  - `[Name <String>]`: Name for this key-value pair
-  - `[Value <String>]`: Value for this key-value pair
+  - `[Name <String>]`: Name for this key-value pair. For more information about possible names for each resource type that uses this configuration, see keyValuePair names and values.
+  - `[Value <String>]`: Value for this key-value pair. For more information about possible values for each resource type that uses this configuration, see keyValuePair names and values.
 
 `APPS <IMicrosoftGraphManagedMobileApp[]>`: List of apps to which the policy is deployed.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -1774,6 +1821,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[PinRequiredInsteadOfBiometricTimeout <TimeSpan?>]`: Timeout in minutes for an app pin instead of non biometrics passcode
   - `[PreviousPinBlockCount <Int32?>]`: Requires a pin to be unique from the number specified in this property.
   - `[PrintBlocked <Boolean?>]`: Indicates whether printing is allowed from managed apps.
+  - `[ProtectedMessagingRedirectAppType <MessagingRedirectAppType?>]`: Defines how app messaging redirection is protected by an App Protection Policy. Default is anyApp.
   - `[SaveAsBlocked <Boolean?>]`: Indicates whether users may use the 'Save As' menu item to save a copy of protected files.
   - `[SimplePinBlocked <Boolean?>]`: Indicates whether simplePin is blocked.
   - `[CreatedDateTime <DateTime?>]`: The date and time the policy was created.
@@ -1796,8 +1844,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[AppActionIfDevicePasscodeComplexityLessThanMedium <ManagedAppRemediationAction?>]`: An admin initiated action to be applied on a managed app.
   - `[AppActionIfSamsungKnoxAttestationRequired <ManagedAppRemediationAction?>]`: An admin initiated action to be applied on a managed app.
   - `[ApprovedKeyboards <IMicrosoftGraphKeyValuePair[]>]`: If Keyboard Restriction is enabled, only keyboards in this approved list will be allowed. A key should be Android package id for a keyboard and value should be a friendly name
-    - `[Name <String>]`: Name for this key-value pair
-    - `[Value <String>]`: Value for this key-value pair
+    - `[Name <String>]`: Name for this key-value pair. For more information about possible names for each resource type that uses this configuration, see keyValuePair names and values.
+    - `[Value <String>]`: Value for this key-value pair. For more information about possible values for each resource type that uses this configuration, see keyValuePair names and values.
   - `[Apps <IMicrosoftGraphManagedMobileApp[]>]`: List of apps to which the policy is deployed.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[MobileAppIdentifier <IMicrosoftGraphMobileAppIdentifier>]`: The identifier for a mobile app.
@@ -1827,6 +1875,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[ExemptedAppPackages <IMicrosoftGraphKeyValuePair[]>]`: App packages in this list will be exempt from the policy and will be able to receive data from managed apps.
   - `[FingerprintAndBiometricEnabled <Boolean?>]`: If null, this setting will be ignored. If false both fingerprints and biometrics will not be enabled. If true, both fingerprints and biometrics will be enabled.
   - `[KeyboardsRestricted <Boolean?>]`: Indicates if keyboard restriction is enabled. If enabled list of approved keyboards must be provided as well.
+  - `[MessagingRedirectAppDisplayName <String>]`: When a specific app redirection is enforced by protectedMessagingRedirectAppType in an App Protection Policy, this value defines the app name which is allowed to be used.
+  - `[MessagingRedirectAppPackageId <String>]`: When a specific app redirection is enforced by protectedMessagingRedirectAppType in an App Protection Policy, this value defines the app package id which is allowed to be used.
   - `[MinimumRequiredCompanyPortalVersion <String>]`: Minimum version of the Company portal that must be installed on the device or app access will be blocked
   - `[MinimumRequiredPatchVersion <String>]`: Define the oldest required Android security patch level a user can have to gain secure access to the app.
   - `[MinimumWarningCompanyPortalVersion <String>]`: Minimum version of the Company portal that must be installed on the device or the user will receive a warning
@@ -1855,8 +1905,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[Version <String>]`: Version of the entity.
 
 `EXEMPTEDAPPPACKAGES <IMicrosoftGraphKeyValuePair[]>`: App packages in this list will be exempt from the policy and will be able to receive data from managed apps.
-  - `[Name <String>]`: Name for this key-value pair
-  - `[Value <String>]`: Value for this key-value pair
+  - `[Name <String>]`: Name for this key-value pair. For more information about possible names for each resource type that uses this configuration, see keyValuePair names and values.
+  - `[Value <String>]`: Value for this key-value pair. For more information about possible values for each resource type that uses this configuration, see keyValuePair names and values.
 
 ## RELATED LINKS
 

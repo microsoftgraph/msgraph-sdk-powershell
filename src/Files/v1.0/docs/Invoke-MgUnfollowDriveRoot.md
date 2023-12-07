@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Unfollow a driveItem.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -25,7 +24,6 @@ Invoke-MgUnfollowDriveRoot -InputObject <IFilesIdentity> [-PassThru] [-Confirm] 
 
 ## DESCRIPTION
 Unfollow a driveItem.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

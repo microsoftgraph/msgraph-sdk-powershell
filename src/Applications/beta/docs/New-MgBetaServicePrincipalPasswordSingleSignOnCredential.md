@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create single sign-on credentials using a password for a user or group.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -43,7 +42,6 @@ New-MgBetaServicePrincipalPasswordSingleSignOnCredential -InputObject <IApplicat
 
 ## DESCRIPTION
 Create single sign-on credentials using a password for a user or group.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 In the Microsoft Entra access reviews feature, create a new program object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -26,7 +25,6 @@ New-MgBetaProgram -BodyParameter <IMicrosoftGraphProgram> [-Confirm] [-WhatIf] [
 
 ## DESCRIPTION
 In the Microsoft Entra access reviews feature, create a new program object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

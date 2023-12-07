@@ -12,7 +12,6 @@ In Microsoft Entra entitlement management, callers can automatically retry a use
 It's performed on an accessPackageAssignmentRequest object whose requestState is in a DeliveryFailed or PartiallyDelivered state.
 You can only reprocess a request within 14 days from the time the original request was completed.
 For requests completed more than 14 days, you will need to ask the users to cancel the request(s) and make a new request in the MyAccess portal.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -69,7 +68,6 @@ In Microsoft Entra entitlement management, callers can automatically retry a use
 It's performed on an accessPackageAssignmentRequest object whose requestState is in a DeliveryFailed or PartiallyDelivered state.
 You can only reprocess a request within 14 days from the time the original request was completed.
 For requests completed more than 14 days, you will need to ask the users to cancel the request(s) and make a new request in the MyAccess portal.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -6541,7 +6539,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[Description <String>]`: The description of the connected organization.
       - `[DisplayName <String>]`: The display name of the connected organization. Supports $filter (eq).
       - `[ExternalSponsors <IMicrosoftGraphDirectoryObject[]>]`: 
-      - `[IdentitySources <IMicrosoftGraphIdentitySource[]>]`: The identity sources in this connected organization, one of azureActiveDirectoryTenant, domainIdentitySource, externalDomainFederation or crossCloudAzureActiveDirectoryTenant. Nullable.
+      - `[IdentitySources <IMicrosoftGraphIdentitySource[]>]`: The identity sources in this connected organization, one of azureActiveDirectoryTenant, crossCloudAzureActiveDirectoryTenant, domainIdentitySource, externalDomainFederation, or socialIdentitySource. Nullable.
       - `[InternalSponsors <IMicrosoftGraphDirectoryObject[]>]`: 
       - `[ModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
       - `[State <String>]`: connectedOrganizationState
@@ -9627,7 +9625,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[Description <String>]`: The description of the connected organization.
         - `[DisplayName <String>]`: The display name of the connected organization. Supports $filter (eq).
         - `[ExternalSponsors <IMicrosoftGraphDirectoryObject[]>]`: 
-        - `[IdentitySources <IMicrosoftGraphIdentitySource[]>]`: The identity sources in this connected organization, one of azureActiveDirectoryTenant, domainIdentitySource, externalDomainFederation or crossCloudAzureActiveDirectoryTenant. Nullable.
+        - `[IdentitySources <IMicrosoftGraphIdentitySource[]>]`: The identity sources in this connected organization, one of azureActiveDirectoryTenant, crossCloudAzureActiveDirectoryTenant, domainIdentitySource, externalDomainFederation, or socialIdentitySource. Nullable.
         - `[InternalSponsors <IMicrosoftGraphDirectoryObject[]>]`: 
         - `[ModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
         - `[State <String>]`: connectedOrganizationState
@@ -9735,7 +9733,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[ExternalSponsors <IMicrosoftGraphDirectoryObject[]>]`: 
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
-    - `[IdentitySources <IMicrosoftGraphIdentitySource[]>]`: The identity sources in this connected organization, one of azureActiveDirectoryTenant, domainIdentitySource, externalDomainFederation or crossCloudAzureActiveDirectoryTenant. Nullable.
+    - `[IdentitySources <IMicrosoftGraphIdentitySource[]>]`: The identity sources in this connected organization, one of azureActiveDirectoryTenant, crossCloudAzureActiveDirectoryTenant, domainIdentitySource, externalDomainFederation, or socialIdentitySource. Nullable.
     - `[InternalSponsors <IMicrosoftGraphDirectoryObject[]>]`: 
     - `[ModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
     - `[State <String>]`: connectedOrganizationState

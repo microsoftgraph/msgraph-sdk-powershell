@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create an instance of an openShift object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -43,7 +42,6 @@ New-MgGroupTeamScheduleOpenShift -InputObject <ITeamsIdentity> [-AdditionalPrope
 
 ## DESCRIPTION
 Create an instance of an openShift object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

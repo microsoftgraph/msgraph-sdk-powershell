@@ -10,7 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Read the properties and relationships of a host object.
 The host resource is the abstract base type that returns an implementation.
-A host can be of one of the following types: This API is available in the following national cloud deployments.
+A host can be of one of the following types:
 
 ## SYNTAX
 
@@ -36,7 +36,7 @@ Get-MgBetaSecurityThreatIntelligenceHost -InputObject <ISecurityIdentity> [-Expa
 ## DESCRIPTION
 Read the properties and relationships of a host object.
 The host resource is the abstract base type that returns an implementation.
-A host can be of one of the following types: This API is available in the following national cloud deployments.
+A host can be of one of the following types:
 
 ## EXAMPLES
 

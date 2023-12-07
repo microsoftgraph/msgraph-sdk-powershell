@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Change writable properties on a messageRule object and save the changes.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -46,7 +45,6 @@ Update-MgBetaUserMailFolderChildFolderMessageRule -InputObject <IMailIdentity>
 
 ## DESCRIPTION
 Change writable properties on a messageRule object and save the changes.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

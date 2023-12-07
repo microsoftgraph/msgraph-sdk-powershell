@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve the properties of a deviceLocalCredentialInfo for a specified device object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -33,7 +32,6 @@ Get-MgBetaDirectoryDeviceLocalCredential -InputObject <IIdentityDirectoryManagem
 
 ## DESCRIPTION
 Retrieve the properties of a deviceLocalCredentialInfo for a specified device object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

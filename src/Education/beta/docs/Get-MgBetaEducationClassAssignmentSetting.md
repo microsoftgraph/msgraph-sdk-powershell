@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Read the properties and relationships of an educationAssignmentSettings object.
 Only teachers can perform this operation.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -29,7 +28,6 @@ Get-MgBetaEducationClassAssignmentSetting -InputObject <IEducationIdentity> [-Ex
 ## DESCRIPTION
 Read the properties and relationships of an educationAssignmentSettings object.
 Only teachers can perform this operation.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

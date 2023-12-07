@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaDeviceManagementVirtualEndpointFrontLineServicePlan
 
 ## SYNOPSIS
-Get frontLineServicePlans from deviceManagement
+Get the properties and relationships of a cloudPcFrontLineServicePlan object.
 
 ## SYNTAX
 
@@ -33,7 +33,7 @@ Get-MgBetaDeviceManagementVirtualEndpointFrontLineServicePlan
 ```
 
 ## DESCRIPTION
-Get frontLineServicePlans from deviceManagement
+Get the properties and relationships of a cloudPcFrontLineServicePlan object.
 
 ## EXAMPLES
 

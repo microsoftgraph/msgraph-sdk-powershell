@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Update the Boolean selfServiceSignUp property of an authenticationFlowsPolicy object.
 The properties id, type, and description cannot be modified.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -31,7 +30,6 @@ Update-MgBetaPolicyAuthenticationFlowPolicy -BodyParameter <IMicrosoftGraphAuthe
 ## DESCRIPTION
 Update the Boolean selfServiceSignUp property of an authenticationFlowsPolicy object.
 The properties id, type, and description cannot be modified.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

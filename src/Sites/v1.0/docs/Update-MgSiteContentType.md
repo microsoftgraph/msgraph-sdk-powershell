@@ -8,8 +8,7 @@ schema: 2.0.0
 # Update-MgSiteContentType
 
 ## SYNOPSIS
-Update a content type][contentType].
-This API is available in the following [national cloud deployments.
+Update a [content type][contentType].
 
 ## SYNTAX
 
@@ -52,8 +51,7 @@ Update-MgSiteContentType -InputObject <ISitesIdentity> [-AdditionalProperties <H
 ```
 
 ## DESCRIPTION
-Update a content type][contentType].
-This API is available in the following [national cloud deployments.
+Update a [content type][contentType].
 
 ## EXAMPLES
 

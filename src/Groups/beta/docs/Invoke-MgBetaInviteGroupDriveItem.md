@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Sends a sharing invitation for a DriveItem.\nA sharing invitation provides permissions to the recipients and optionally sends an email to the recipients to notify them the item was shared.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -45,7 +44,6 @@ Invoke-MgBetaInviteGroupDriveItem -InputObject <IGroupsIdentity> [-AdditionalPro
 
 ## DESCRIPTION
 Sends a sharing invitation for a DriveItem.\nA sharing invitation provides permissions to the recipients and optionally sends an email to the recipients to notify them the item was shared.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

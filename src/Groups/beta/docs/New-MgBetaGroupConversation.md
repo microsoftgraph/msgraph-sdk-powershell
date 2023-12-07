@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Create a new conversation by including a thread and a post.
 Use reply thread or reply post to further post to that conversation.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -45,7 +44,6 @@ New-MgBetaGroupConversation -InputObject <IGroupsIdentity> [-AdditionalPropertie
 ## DESCRIPTION
 Create a new conversation by including a thread and a post.
 Use reply thread or reply post to further post to that conversation.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

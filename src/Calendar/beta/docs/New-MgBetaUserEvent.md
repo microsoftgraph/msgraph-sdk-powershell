@@ -19,7 +19,7 @@ Users can then invite the resource as an attendee to a meeting.
 On behalf of the resource, the server accepts or rejects\nthe meeting request based on the free/busy schedule of the resource.\nIf the server accepts a meeting for the resource, it creates an event for the meeting in the resource's calendar.
 If the meeting is rescheduled,\nthe server automatically updates the event in the resource's calendar.
 Another advantage of setting up a mailbox for a resource is to control scheduling of the resource, for example, only executives\nor their delegates can book a private meeting room.
-If you're organizing an event that involves a meeting location: Additionally, if the meeting location has been set up as a resource, or if the event involves some equipment that has been set up as a resource: This API is available in the following national cloud deployments.
+If you're organizing an event that involves a meeting location: Additionally, if the meeting location has been set up as a resource, or if the event involves some equipment that has been set up as a resource:
 
 ## SYNTAX
 
@@ -93,7 +93,7 @@ Users can then invite the resource as an attendee to a meeting.
 On behalf of the resource, the server accepts or rejects\nthe meeting request based on the free/busy schedule of the resource.\nIf the server accepts a meeting for the resource, it creates an event for the meeting in the resource's calendar.
 If the meeting is rescheduled,\nthe server automatically updates the event in the resource's calendar.
 Another advantage of setting up a mailbox for a resource is to control scheduling of the resource, for example, only executives\nor their delegates can book a private meeting room.
-If you're organizing an event that involves a meeting location: Additionally, if the meeting location has been set up as a resource, or if the event involves some equipment that has been set up as a resource: This API is available in the following national cloud deployments.
+If you're organizing an event that involves a meeting location: Additionally, if the meeting location has been set up as a resource, or if the event involves some equipment that has been set up as a resource:
 
 ## EXAMPLES
 
@@ -1712,7 +1712,9 @@ To create the parameters described below, construct a hash table containing the 
   - `[ExtensionId <String>]`: The unique identifier of extension
   - `[GroupId <String>]`: The unique identifier of group
   - `[PlaceId <String>]`: The unique identifier of place
+  - `[RoomId <String>]`: The unique identifier of room
   - `[UserId <String>]`: The unique identifier of user
+  - `[WorkspaceId <String>]`: The unique identifier of workspace
 
 `INSTANCES <IMicrosoftGraphEvent[]>`: The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
   - `[Categories <String[]>]`: 

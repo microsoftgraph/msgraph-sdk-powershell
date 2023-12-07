@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update the properties of an userAccountInformation object in a user's profile.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -49,7 +48,6 @@ Update-MgBetaUserProfileAccount -InputObject <IPeopleIdentity> [-AdditionalPrope
 
 ## DESCRIPTION
 Update the properties of an userAccountInformation object in a user's profile.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

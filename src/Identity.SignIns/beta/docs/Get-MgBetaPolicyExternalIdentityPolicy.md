@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Read the properties and relationships of the tenant-wide externalIdentitiesPolicy object that controls whether external users can leave a Microsoft Entra tenant via self-service controls.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -20,7 +19,6 @@ Get-MgBetaPolicyExternalIdentityPolicy [-ExpandProperty <String[]>] [-Property <
 
 ## DESCRIPTION
 Read the properties and relationships of the tenant-wide externalIdentitiesPolicy object that controls whether external users can leave a Microsoft Entra tenant via self-service controls.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

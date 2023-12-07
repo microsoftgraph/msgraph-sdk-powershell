@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Move a mail folder and its contents to another mail folder.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -41,7 +40,6 @@ Move-MgBetaUserMailFolder -InputObject <IUsersActionsIdentity> [-AdditionalPrope
 
 ## DESCRIPTION
 Move a mail folder and its contents to another mail folder.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -237,6 +235,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[NotebookId <String>]`: The unique identifier of notebook
   - `[OnenotePageId <String>]`: The unique identifier of onenotePage
   - `[OnenoteSectionId <String>]`: The unique identifier of onenoteSection
+  - `[OnlineMeetingId <String>]`: The unique identifier of onlineMeeting
   - `[OutlookTaskFolderId <String>]`: The unique identifier of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: The unique identifier of outlookTaskGroup
   - `[OutlookTaskId <String>]`: The unique identifier of outlookTask

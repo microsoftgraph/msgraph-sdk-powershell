@@ -11,7 +11,6 @@ schema: 2.0.0
 Get the specified whoisRecord resource.
 Specify the desired whoisRecord in one of the following two ways:\n- Identify a host and get its current whoisRecord.
 \n- Specify an id value to get the corresponding whoisRecord.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -31,7 +30,6 @@ Get-MgBetaSecurityThreatIntelligenceHostWhoi -InputObject <ISecurityIdentity> [-
 Get the specified whoisRecord resource.
 Specify the desired whoisRecord in one of the following two ways:\n- Identify a host and get its current whoisRecord.
 \n- Specify an id value to get the corresponding whoisRecord.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new b2cIdentityUserFlow object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -32,7 +31,6 @@ New-MgBetaIdentityB2CUserFlow -BodyParameter <IMicrosoftGraphB2CIdentityUserFlow
 
 ## DESCRIPTION
 Create a new b2cIdentityUserFlow object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

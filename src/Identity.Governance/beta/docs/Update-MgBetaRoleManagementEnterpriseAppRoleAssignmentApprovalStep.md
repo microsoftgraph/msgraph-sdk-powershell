@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Apply approve or deny decision on an approvalStep object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -45,7 +44,6 @@ Update-MgBetaRoleManagementEnterpriseAppRoleAssignmentApprovalStep -InputObject 
 
 ## DESCRIPTION
 Apply approve or deny decision on an approvalStep object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Create call enables your bot to create a new outgoing peer-to-peer or group call, or join an existing meeting.
 You will need to register the calling bot and go through the list of permissions needed as mentioned below.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -38,7 +37,6 @@ New-MgCommunicationCall -BodyParameter <IMicrosoftGraphCall> [-Confirm] [-WhatIf
 ## DESCRIPTION
 Create call enables your bot to create a new outgoing peer-to-peer or group call, or join an existing meeting.
 You will need to register the calling bot and go through the list of permissions needed as mentioned below.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -1020,10 +1018,14 @@ To create the parameters described below, construct a hash table containing the 
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Initiator <IMicrosoftGraphIdentitySet>]`: identitySet
       - `[RecordingStatus <String>]`: recordingStatus
+    - `[RemovedState <IMicrosoftGraphRemovedState>]`: removedState
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[Reason <String>]`: 
     - `[RestrictedExperience <IMicrosoftGraphOnlineMeetingRestricted>]`: onlineMeetingRestricted
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[ContentSharingDisabled <String>]`: onlineMeetingContentSharingDisabledReason
       - `[VideoDisabled <String>]`: onlineMeetingVideoDisabledReason
+    - `[RosterSequenceNumber <Int64?>]`: 
   - `[RequestedModalities <String[]>]`: The list of requested modalities. Possible values are: unknown, audio, video, videoBasedScreenSharing, data.
   - `[ResultInfo <IMicrosoftGraphResultInfo>]`: resultInfo
   - `[Source <IMicrosoftGraphParticipantInfo>]`: participantInfo
@@ -1129,10 +1131,14 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Initiator <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[RecordingStatus <String>]`: recordingStatus
+  - `[RemovedState <IMicrosoftGraphRemovedState>]`: removedState
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[Reason <String>]`: 
   - `[RestrictedExperience <IMicrosoftGraphOnlineMeetingRestricted>]`: onlineMeetingRestricted
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[ContentSharingDisabled <String>]`: onlineMeetingContentSharingDisabledReason
     - `[VideoDisabled <String>]`: onlineMeetingVideoDisabledReason
+  - `[RosterSequenceNumber <Int64?>]`: 
 
 `RESULTINFO <IMicrosoftGraphResultInfo>`: resultInfo
   - `[(Any) <Object>]`: This indicates any property can be added to this object.

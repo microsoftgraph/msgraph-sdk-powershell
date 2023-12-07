@@ -8,9 +8,9 @@ schema: 2.0.0
 # Invoke-MgReplyGroupThread
 
 ## SYNOPSIS
-Reply to a thread in a group conversation and add a new post to it.
-You can specify the parent conversation \nin the request, or, you can specify just the thread without the parent conversation.
-This API is available in the following national cloud deployments.
+Add an attachment when creating a group post.
+This operation limits the size of the attachment you can add to under 3 MB.
+An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
 
 ## SYNTAX
 
@@ -41,9 +41,9 @@ Invoke-MgReplyGroupThread -InputObject <IGroupsIdentity> [-AdditionalProperties 
 ```
 
 ## DESCRIPTION
-Reply to a thread in a group conversation and add a new post to it.
-You can specify the parent conversation \nin the request, or, you can specify just the thread without the parent conversation.
-This API is available in the following national cloud deployments.
+Add an attachment when creating a group post.
+This operation limits the size of the attachment you can add to under 3 MB.
+An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
 
 ## EXAMPLES
 

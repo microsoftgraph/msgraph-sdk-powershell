@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update the properties of governanceRoleSetting.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -49,7 +48,6 @@ Update-MgBetaPrivilegedAccessRoleSetting -InputObject <IIdentityGovernanceIdenti
 
 ## DESCRIPTION
 Update the properties of governanceRoleSetting.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

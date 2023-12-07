@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Restore a specific Cloud PC.
 Use this API to trigger a remote action that restores a Cloud PC device to a previous state.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -43,7 +42,6 @@ Restore-MgBetaUserCloudPc -InputObject <IUsersActionsIdentity> [-AdditionalPrope
 ## DESCRIPTION
 Restore a specific Cloud PC.
 Use this API to trigger a remote action that restores a Cloud PC device to a previous state.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -256,6 +254,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[NotebookId <String>]`: The unique identifier of notebook
   - `[OnenotePageId <String>]`: The unique identifier of onenotePage
   - `[OnenoteSectionId <String>]`: The unique identifier of onenoteSection
+  - `[OnlineMeetingId <String>]`: The unique identifier of onlineMeeting
   - `[OutlookTaskFolderId <String>]`: The unique identifier of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: The unique identifier of outlookTaskGroup
   - `[OutlookTaskId <String>]`: The unique identifier of outlookTask

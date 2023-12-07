@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Get a signIn object that contains a specific user sign-in event for your tenant that includes sign-ins where a user is asked to enter a username or password, and session tokens.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -34,7 +33,6 @@ Get-MgBetaAuditLogSignIn -InputObject <IReportsIdentity> [-ExpandProperty <Strin
 
 ## DESCRIPTION
 Get a signIn object that contains a specific user sign-in event for your tenant that includes sign-ins where a user is asked to enter a username or password, and session tokens.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -278,10 +276,12 @@ To create the parameters described below, construct a hash table containing the 
   - `[DeviceManagementExportJobId <String>]`: The unique identifier of deviceManagementExportJob
   - `[DirectoryAuditId <String>]`: The unique identifier of directoryAudit
   - `[EndDateTime <DateTime?>]`: Usage: endDateTime={endDateTime}
+  - `[ExclusiveIntervalEndDateTime <DateTime?>]`: Usage: exclusiveIntervalEndDateTime={exclusiveIntervalEndDateTime}
   - `[Filter <String>]`: Usage: filter='{filter}'
   - `[GroupId <String>]`: Usage: groupId='{groupId}'
   - `[IncludedUserRoles <String>]`: Usage: includedUserRoles='{includedUserRoles}'
   - `[IncludedUserTypes <String>]`: Usage: includedUserTypes='{includedUserTypes}'
+  - `[InclusiveIntervalStartDateTime <DateTime?>]`: Usage: inclusiveIntervalStartDateTime={inclusiveIntervalStartDateTime}
   - `[InsightSummaryId <String>]`: The unique identifier of insightSummary
   - `[MfaCompletionMetricId <String>]`: The unique identifier of mfaCompletionMetric
   - `[MonthlyInactiveUsersByApplicationMetricId <String>]`: The unique identifier of monthlyInactiveUsersByApplicationMetric

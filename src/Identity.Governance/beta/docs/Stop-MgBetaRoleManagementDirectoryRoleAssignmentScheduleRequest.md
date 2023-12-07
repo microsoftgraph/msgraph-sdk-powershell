@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Immediately cancel a unifiedRoleAssignmentScheduleRequest object that is in a Granted status, and have the system automatically delete the canceled request after 30 days.
 After calling this action, the status of the canceled unifiedRoleAssignmentScheduleRequest changes to Canceled.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -29,7 +28,6 @@ Stop-MgBetaRoleManagementDirectoryRoleAssignmentScheduleRequest -InputObject <II
 ## DESCRIPTION
 Immediately cancel a unifiedRoleAssignmentScheduleRequest object that is in a Granted status, and have the system automatically delete the canceled request after 30 days.
 After calling this action, the status of the canceled unifiedRoleAssignmentScheduleRequest changes to Canceled.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

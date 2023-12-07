@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Get the Windows 365 Frontline reports, such as real-time or historical data reports.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -30,7 +29,6 @@ Get-MgBetaDeviceManagementVirtualEndpointReportFrontlineReport
 
 ## DESCRIPTION
 Get the Windows 365 Frontline reports, such as real-time or historical data reports.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

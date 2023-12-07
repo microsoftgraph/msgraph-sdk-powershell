@@ -195,54 +195,54 @@ To create the parameters described below, construct a hash table containing the 
 `AWS <IMicrosoftGraphPermissionsAnalytics>`: permissionsAnalytics
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[Findings <IMicrosoftGraphFinding[]>]`: 
+  - `[Findings <IMicrosoftGraphFinding[]>]`: The output of the permissions usage data analysis performed by Permissions Management to assess risk with identities and resources.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[CreatedDateTime <DateTime?>]`: 
-  - `[PermissionsCreepIndexDistributions <IMicrosoftGraphPermissionsCreepIndexDistribution[]>]`: 
+    - `[CreatedDateTime <DateTime?>]`: Defines when the finding was created.
+  - `[PermissionsCreepIndexDistributions <IMicrosoftGraphPermissionsCreepIndexDistribution[]>]`: Represents the Permissions Creep Index (PCI) for the authorization system. PCI distribution chart shows the classification of human and nonhuman identities based on the PCI score in three buckets (low, medium, high).
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[AuthorizationSystem <IMicrosoftGraphAuthorizationSystem>]`: authorizationSystem
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
-      - `[AuthorizationSystemId <String>]`: 
-      - `[AuthorizationSystemName <String>]`: 
-      - `[AuthorizationSystemType <String>]`: 
+      - `[AuthorizationSystemId <String>]`: ID of the authorization system retrieved from the customer cloud environment. Supports $filter(eq, contains) and $orderBy.
+      - `[AuthorizationSystemName <String>]`: Name of the authorization system detected after onboarding. Supports $filter(eq,contains) and $orderBy.
+      - `[AuthorizationSystemType <String>]`: The type of authorization system. Can be gcp, azure, or aws. Supports $filter(eq).
       - `[DataCollectionInfo <IMicrosoftGraphDataCollectionInfo>]`: dataCollectionInfo
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
         - `[Entitlements <IMicrosoftGraphEntitlementsDataCollectionInfo>]`: entitlementsDataCollectionInfo
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[CreatedDateTime <DateTime?>]`: 
+    - `[CreatedDateTime <DateTime?>]`: Defines when the PCI distribution was created.
     - `[HighRiskProfile <IMicrosoftGraphRiskProfile>]`: riskProfile
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[HumanCount <Int32?>]`: 
-      - `[NonHumanCount <Int32?>]`: 
+      - `[HumanCount <Int32?>]`: This is the count of human identities that have been assigned to this riskScoreBracket,
+      - `[NonHumanCount <Int32?>]`: This is the count of nonhuman identities that have been assigned to this riskScoreBracket
     - `[LowRiskProfile <IMicrosoftGraphRiskProfile>]`: riskProfile
     - `[MediumRiskProfile <IMicrosoftGraphRiskProfile>]`: riskProfile
 
 `AZURE <IMicrosoftGraphPermissionsAnalytics>`: permissionsAnalytics
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[Findings <IMicrosoftGraphFinding[]>]`: 
+  - `[Findings <IMicrosoftGraphFinding[]>]`: The output of the permissions usage data analysis performed by Permissions Management to assess risk with identities and resources.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[CreatedDateTime <DateTime?>]`: 
-  - `[PermissionsCreepIndexDistributions <IMicrosoftGraphPermissionsCreepIndexDistribution[]>]`: 
+    - `[CreatedDateTime <DateTime?>]`: Defines when the finding was created.
+  - `[PermissionsCreepIndexDistributions <IMicrosoftGraphPermissionsCreepIndexDistribution[]>]`: Represents the Permissions Creep Index (PCI) for the authorization system. PCI distribution chart shows the classification of human and nonhuman identities based on the PCI score in three buckets (low, medium, high).
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[AuthorizationSystem <IMicrosoftGraphAuthorizationSystem>]`: authorizationSystem
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
-      - `[AuthorizationSystemId <String>]`: 
-      - `[AuthorizationSystemName <String>]`: 
-      - `[AuthorizationSystemType <String>]`: 
+      - `[AuthorizationSystemId <String>]`: ID of the authorization system retrieved from the customer cloud environment. Supports $filter(eq, contains) and $orderBy.
+      - `[AuthorizationSystemName <String>]`: Name of the authorization system detected after onboarding. Supports $filter(eq,contains) and $orderBy.
+      - `[AuthorizationSystemType <String>]`: The type of authorization system. Can be gcp, azure, or aws. Supports $filter(eq).
       - `[DataCollectionInfo <IMicrosoftGraphDataCollectionInfo>]`: dataCollectionInfo
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
         - `[Entitlements <IMicrosoftGraphEntitlementsDataCollectionInfo>]`: entitlementsDataCollectionInfo
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[CreatedDateTime <DateTime?>]`: 
+    - `[CreatedDateTime <DateTime?>]`: Defines when the PCI distribution was created.
     - `[HighRiskProfile <IMicrosoftGraphRiskProfile>]`: riskProfile
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[HumanCount <Int32?>]`: 
-      - `[NonHumanCount <Int32?>]`: 
+      - `[HumanCount <Int32?>]`: This is the count of human identities that have been assigned to this riskScoreBracket,
+      - `[NonHumanCount <Int32?>]`: This is the count of nonhuman identities that have been assigned to this riskScoreBracket
     - `[LowRiskProfile <IMicrosoftGraphRiskProfile>]`: riskProfile
     - `[MediumRiskProfile <IMicrosoftGraphRiskProfile>]`: riskProfile
 
@@ -252,27 +252,27 @@ To create the parameters described below, construct a hash table containing the 
   - `[Aws <IMicrosoftGraphPermissionsAnalytics>]`: permissionsAnalytics
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[Findings <IMicrosoftGraphFinding[]>]`: 
+    - `[Findings <IMicrosoftGraphFinding[]>]`: The output of the permissions usage data analysis performed by Permissions Management to assess risk with identities and resources.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
-      - `[CreatedDateTime <DateTime?>]`: 
-    - `[PermissionsCreepIndexDistributions <IMicrosoftGraphPermissionsCreepIndexDistribution[]>]`: 
+      - `[CreatedDateTime <DateTime?>]`: Defines when the finding was created.
+    - `[PermissionsCreepIndexDistributions <IMicrosoftGraphPermissionsCreepIndexDistribution[]>]`: Represents the Permissions Creep Index (PCI) for the authorization system. PCI distribution chart shows the classification of human and nonhuman identities based on the PCI score in three buckets (low, medium, high).
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[AuthorizationSystem <IMicrosoftGraphAuthorizationSystem>]`: authorizationSystem
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
-        - `[AuthorizationSystemId <String>]`: 
-        - `[AuthorizationSystemName <String>]`: 
-        - `[AuthorizationSystemType <String>]`: 
+        - `[AuthorizationSystemId <String>]`: ID of the authorization system retrieved from the customer cloud environment. Supports $filter(eq, contains) and $orderBy.
+        - `[AuthorizationSystemName <String>]`: Name of the authorization system detected after onboarding. Supports $filter(eq,contains) and $orderBy.
+        - `[AuthorizationSystemType <String>]`: The type of authorization system. Can be gcp, azure, or aws. Supports $filter(eq).
         - `[DataCollectionInfo <IMicrosoftGraphDataCollectionInfo>]`: dataCollectionInfo
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Id <String>]`: The unique identifier for an entity. Read-only.
           - `[Entitlements <IMicrosoftGraphEntitlementsDataCollectionInfo>]`: entitlementsDataCollectionInfo
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[CreatedDateTime <DateTime?>]`: 
+      - `[CreatedDateTime <DateTime?>]`: Defines when the PCI distribution was created.
       - `[HighRiskProfile <IMicrosoftGraphRiskProfile>]`: riskProfile
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[HumanCount <Int32?>]`: 
-        - `[NonHumanCount <Int32?>]`: 
+        - `[HumanCount <Int32?>]`: This is the count of human identities that have been assigned to this riskScoreBracket,
+        - `[NonHumanCount <Int32?>]`: This is the count of nonhuman identities that have been assigned to this riskScoreBracket
       - `[LowRiskProfile <IMicrosoftGraphRiskProfile>]`: riskProfile
       - `[MediumRiskProfile <IMicrosoftGraphRiskProfile>]`: riskProfile
   - `[Azure <IMicrosoftGraphPermissionsAnalytics>]`: permissionsAnalytics
@@ -281,27 +281,27 @@ To create the parameters described below, construct a hash table containing the 
 `GCP <IMicrosoftGraphPermissionsAnalytics>`: permissionsAnalytics
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[Findings <IMicrosoftGraphFinding[]>]`: 
+  - `[Findings <IMicrosoftGraphFinding[]>]`: The output of the permissions usage data analysis performed by Permissions Management to assess risk with identities and resources.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[CreatedDateTime <DateTime?>]`: 
-  - `[PermissionsCreepIndexDistributions <IMicrosoftGraphPermissionsCreepIndexDistribution[]>]`: 
+    - `[CreatedDateTime <DateTime?>]`: Defines when the finding was created.
+  - `[PermissionsCreepIndexDistributions <IMicrosoftGraphPermissionsCreepIndexDistribution[]>]`: Represents the Permissions Creep Index (PCI) for the authorization system. PCI distribution chart shows the classification of human and nonhuman identities based on the PCI score in three buckets (low, medium, high).
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[AuthorizationSystem <IMicrosoftGraphAuthorizationSystem>]`: authorizationSystem
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
-      - `[AuthorizationSystemId <String>]`: 
-      - `[AuthorizationSystemName <String>]`: 
-      - `[AuthorizationSystemType <String>]`: 
+      - `[AuthorizationSystemId <String>]`: ID of the authorization system retrieved from the customer cloud environment. Supports $filter(eq, contains) and $orderBy.
+      - `[AuthorizationSystemName <String>]`: Name of the authorization system detected after onboarding. Supports $filter(eq,contains) and $orderBy.
+      - `[AuthorizationSystemType <String>]`: The type of authorization system. Can be gcp, azure, or aws. Supports $filter(eq).
       - `[DataCollectionInfo <IMicrosoftGraphDataCollectionInfo>]`: dataCollectionInfo
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
         - `[Entitlements <IMicrosoftGraphEntitlementsDataCollectionInfo>]`: entitlementsDataCollectionInfo
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[CreatedDateTime <DateTime?>]`: 
+    - `[CreatedDateTime <DateTime?>]`: Defines when the PCI distribution was created.
     - `[HighRiskProfile <IMicrosoftGraphRiskProfile>]`: riskProfile
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[HumanCount <Int32?>]`: 
-      - `[NonHumanCount <Int32?>]`: 
+      - `[HumanCount <Int32?>]`: This is the count of human identities that have been assigned to this riskScoreBracket,
+      - `[NonHumanCount <Int32?>]`: This is the count of nonhuman identities that have been assigned to this riskScoreBracket
     - `[LowRiskProfile <IMicrosoftGraphRiskProfile>]`: riskProfile
     - `[MediumRiskProfile <IMicrosoftGraphRiskProfile>]`: riskProfile
 

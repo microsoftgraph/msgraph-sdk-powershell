@@ -16,11 +16,12 @@ Update the navigation property userExperienceAnalyticsBatteryHealthDevicePerform
 ```
 Update-MgBetaDeviceManagementUserExperienceAnalyticBatteryHealthDevicePerformance
  -UserExperienceAnalyticsBatteryHealthDevicePerformanceId <String> [-AdditionalProperties <Hashtable>]
- [-BatteryAgeInDays <Int32>] [-DeviceBatteryCount <Int32>] [-DeviceBatteryHealthScore <Int32>]
- [-DeviceId <String>] [-DeviceName <String>] [-EstimatedRuntimeInMinutes <Int32>]
- [-FullBatteryDrainCount <Int32>] [-HealthStatus <UserExperienceAnalyticsHealthState>] [-Id <String>]
- [-Manufacturer <String>] [-MaxCapacityPercentage <Int32>] [-Model <String>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-BatteryAgeInDays <Int32>]
+ [-DeviceBatteriesDetails <IMicrosoftGraphUserExperienceAnalyticsDeviceBatteryDetail[]>]
+ [-DeviceBatteryCount <Int32>] [-DeviceBatteryHealthScore <Int32>] [-DeviceId <String>] [-DeviceName <String>]
+ [-EstimatedRuntimeInMinutes <Int32>] [-FullBatteryDrainCount <Int32>]
+ [-HealthStatus <UserExperienceAnalyticsHealthState>] [-Id <String>] [-Manufacturer <String>]
+ [-MaxCapacityPercentage <Int32>] [-Model <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
@@ -43,6 +44,7 @@ Update-MgBetaDeviceManagementUserExperienceAnalyticBatteryHealthDevicePerformanc
 ```
 Update-MgBetaDeviceManagementUserExperienceAnalyticBatteryHealthDevicePerformance
  -InputObject <IDeviceManagementIdentity> [-AdditionalProperties <Hashtable>] [-BatteryAgeInDays <Int32>]
+ [-DeviceBatteriesDetails <IMicrosoftGraphUserExperienceAnalyticsDeviceBatteryDetail[]>]
  [-DeviceBatteryCount <Int32>] [-DeviceBatteryHealthScore <Int32>] [-DeviceId <String>] [-DeviceName <String>]
  [-EstimatedRuntimeInMinutes <Int32>] [-FullBatteryDrainCount <Int32>]
  [-HealthStatus <UserExperienceAnalyticsHealthState>] [-Id <String>] [-Manufacturer <String>]
@@ -115,6 +117,22 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -DeviceBatteriesDetails
+Properties (maxCapacity and cycleCount) related to all batteries of the device.
+To construct, see NOTES section for DEVICEBATTERIESDETAILS properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsDeviceBatteryDetail[]
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -380,6 +398,10 @@ To create the parameters described below, construct a hash table containing the 
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[BatteryAgeInDays <Int32?>]`: Estimated battery age. Unit in days. Valid values 0 to 2147483647
+  - `[DeviceBatteriesDetails <IMicrosoftGraphUserExperienceAnalyticsDeviceBatteryDetail[]>]`: Properties (maxCapacity and cycleCount) related to all batteries of the device.
+    - `[BatteryId <String>]`: Uniquely identifies the batteries in a single device.
+    - `[FullBatteryDrainCount <Int32?>]`: Number of times the battery has been discharged an amount that equals 100% of its capacity, but not necessarily by discharging it from 100% to 0%. Valid values 0 to 2147483647
+    - `[MaxCapacityPercentage <Int32?>]`: Ratio of current capacity and design capacity of the battery. Unit in percentage and values range from 0-100. Valid values 0 to 2147483647
   - `[DeviceBatteryCount <Int32?>]`: Number of batteries in a user device. Valid values 1 to 2147483647
   - `[DeviceBatteryHealthScore <Int32?>]`: A weighted average of a device’s maximum capacity score and runtime estimate score. Values range from 0-100. Valid values 0 to 2147483647
   - `[DeviceId <String>]`: The unique identifier of the device, Intune DeviceID.
@@ -390,6 +412,11 @@ To create the parameters described below, construct a hash table containing the 
   - `[Manufacturer <String>]`: The manufacturer name of the device.
   - `[MaxCapacityPercentage <Int32?>]`: Ratio of current capacity and design capacity of the battery with the lowest capacity. Unit in percentage and values range from 0-100. Valid values 0 to 2147483647
   - `[Model <String>]`: The model name of the device.
+
+`DEVICEBATTERIESDETAILS <IMicrosoftGraphUserExperienceAnalyticsDeviceBatteryDetail[]>`: Properties (maxCapacity and cycleCount) related to all batteries of the device.
+  - `[BatteryId <String>]`: Uniquely identifies the batteries in a single device.
+  - `[FullBatteryDrainCount <Int32?>]`: Number of times the battery has been discharged an amount that equals 100% of its capacity, but not necessarily by discharging it from 100% to 0%. Valid values 0 to 2147483647
+  - `[MaxCapacityPercentage <Int32?>]`: Ratio of current capacity and design capacity of the battery. Unit in percentage and values range from 0-100. Valid values 0 to 2147483647
 
 `INPUTOBJECT <IDeviceManagementIdentity>`: Identity Parameter
   - `[AdvancedThreatProtectionOnboardingDeviceSettingStateId <String>]`: The unique identifier of advancedThreatProtectionOnboardingDeviceSettingState

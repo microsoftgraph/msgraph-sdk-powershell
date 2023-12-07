@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete a browserSharedCookie from a browserSiteList.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Remove-MgAdminEdgeInternetExplorerModeSiteListSharedCookie -InputObject <IDevice
 
 ## DESCRIPTION
 Delete a browserSharedCookie from a browserSiteList.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

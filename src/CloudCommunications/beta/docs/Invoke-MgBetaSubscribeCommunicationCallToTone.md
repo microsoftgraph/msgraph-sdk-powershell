@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Subscribe to DTMF (dual-tone multi-frequency signaling) to allow you to be notified when the user presses keys on a 'Dialpad'.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -41,7 +40,6 @@ Invoke-MgBetaSubscribeCommunicationCallToTone -InputObject <ICloudCommunications
 
 ## DESCRIPTION
 Subscribe to DTMF (dual-tone multi-frequency signaling) to allow you to be notified when the user presses keys on a 'Dialpad'.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

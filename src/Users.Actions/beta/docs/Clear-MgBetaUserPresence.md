@@ -11,7 +11,6 @@ schema: 2.0.0
 Clear a presence session of an application for a user.
 If it is the user's only presence session, a successful clearPresence changes the user's presence to Offline/Offline.
 Read more about presence sessions and their time-out and expiration.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -45,7 +44,6 @@ Clear-MgBetaUserPresence -InputObject <IUsersActionsIdentity> [-AdditionalProper
 Clear a presence session of an application for a user.
 If it is the user's only presence session, a successful clearPresence changes the user's presence to Offline/Offline.
 Read more about presence sessions and their time-out and expiration.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -240,6 +238,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[NotebookId <String>]`: The unique identifier of notebook
   - `[OnenotePageId <String>]`: The unique identifier of onenotePage
   - `[OnenoteSectionId <String>]`: The unique identifier of onenoteSection
+  - `[OnlineMeetingId <String>]`: The unique identifier of onlineMeeting
   - `[OutlookTaskFolderId <String>]`: The unique identifier of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: The unique identifier of outlookTaskGroup
   - `[OutlookTaskId <String>]`: The unique identifier of outlookTask

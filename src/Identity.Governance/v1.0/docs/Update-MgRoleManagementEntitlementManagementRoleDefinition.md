@@ -11,7 +11,6 @@ schema: 2.0.0
 Update the properties of a unifiedRoleDefinition object.
 You cannot update built-in roles.
 This feature requires a Microsoft Entra ID P1 or P2 license.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -49,7 +48,6 @@ Update-MgRoleManagementEntitlementManagementRoleDefinition -InputObject <IIdenti
 Update the properties of a unifiedRoleDefinition object.
 You cannot update built-in roles.
 This feature requires a Microsoft Entra ID P1 or P2 license.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

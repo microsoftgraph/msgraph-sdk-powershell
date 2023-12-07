@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Remove a Microsoft Entra role assignment with administrative unit scope.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Remove-MgDirectoryAdministrativeUnitScopedRoleMember -InputObject <IIdentityDire
 
 ## DESCRIPTION
 Remove a Microsoft Entra role assignment with administrative unit scope.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

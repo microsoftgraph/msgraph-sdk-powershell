@@ -242,11 +242,6 @@
 
                     WriteVerbose($"Fetched permission grant policies for tenant.");
 
-                    // Get Group consent settings
-                    MGTeamsInternalTenantConsentSettingsCollection tenantConsentSettingCollection = await this.Client.GetTenantConsentSettings(this, Pipeline);
-
-                    WriteVerbose($"Fetched Tenant App Settings for tenant.");
-
                     if (((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
 
                     // Get authorization policy
@@ -259,7 +254,6 @@
                     RscConfigurationSynthesizer rscConfigurationConverter = new RscConfigurationSynthesizer();
                     Models.IMicrosoftGraphRscConfiguration microsoftGraphRscConfiguration = rscConfigurationConverter.ConvertToTeamRscConfiguration(
                         permissionGrantPolicyCollection,
-                        tenantConsentSettingCollection,
                         authorizationPolicy,
                         this);
 

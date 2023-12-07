@@ -8,8 +8,7 @@ schema: 2.0.0
 # Join-MgBetaUserDriveListContentTypeWithHubSite
 
 ## SYNOPSIS
-Associate a content type][contentType] with a list of hub sites.
-This API is available in the following [national cloud deployments.
+Associate a [content type][contentType] with a list of hub sites.
 
 ## SYNTAX
 
@@ -42,8 +41,7 @@ Join-MgBetaUserDriveListContentTypeWithHubSite -InputObject <IUsersActionsIdenti
 ```
 
 ## DESCRIPTION
-Associate a content type][contentType] with a list of hub sites.
-This API is available in the following [national cloud deployments.
+Associate a [content type][contentType] with a list of hub sites.
 
 ## EXAMPLES
 
@@ -287,6 +285,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[NotebookId <String>]`: The unique identifier of notebook
   - `[OnenotePageId <String>]`: The unique identifier of onenotePage
   - `[OnenoteSectionId <String>]`: The unique identifier of onenoteSection
+  - `[OnlineMeetingId <String>]`: The unique identifier of onlineMeeting
   - `[OutlookTaskFolderId <String>]`: The unique identifier of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: The unique identifier of outlookTaskGroup
   - `[OutlookTaskId <String>]`: The unique identifier of outlookTask

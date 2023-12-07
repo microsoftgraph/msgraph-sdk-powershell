@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Add an educationUser member to an educationClass.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -39,7 +38,6 @@ New-MgBetaEducationClassMemberByRef -InputObject <IEducationIdentity> -OdataId <
 
 ## DESCRIPTION
 Add an educationUser member to an educationClass.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

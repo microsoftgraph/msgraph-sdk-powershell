@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Install an app to the specified team.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -43,7 +42,6 @@ New-MgGroupTeamInstalledApp -InputObject <ITeamsIdentity> [-AdditionalProperties
 
 ## DESCRIPTION
 Install an app to the specified team.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

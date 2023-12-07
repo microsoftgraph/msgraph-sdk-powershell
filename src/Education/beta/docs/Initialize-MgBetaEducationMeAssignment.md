@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Activate an inactive educationAssignment to signal that the assignment has further action items for teachers and students.
 This action can only be performed by a teacher on currently inactive assignments.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -29,7 +28,6 @@ Initialize-MgBetaEducationMeAssignment -InputObject <IEducationIdentity> [-Confi
 ## DESCRIPTION
 Activate an inactive educationAssignment to signal that the assignment has further action items for teachers and students.
 This action can only be performed by a teacher on currently inactive assignments.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

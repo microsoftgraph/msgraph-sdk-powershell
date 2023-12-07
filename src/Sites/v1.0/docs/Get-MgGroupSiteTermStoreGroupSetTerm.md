@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Read the properties and relationships of a term object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -54,7 +53,6 @@ Get-MgGroupSiteTermStoreGroupSetTerm -GroupId <String> -GroupId1 <String> -SetId
 
 ## DESCRIPTION
 Read the properties and relationships of a term object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

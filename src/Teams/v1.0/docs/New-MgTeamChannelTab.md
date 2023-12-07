@@ -8,9 +8,8 @@ schema: 2.0.0
 # New-MgTeamChannelTab
 
 ## SYNOPSIS
-Adds (pins) a tab to the specified channel within a team.
-\nThe corresponding app must already be installed in the team.
-This API is available in the following national cloud deployments.
+Add (pin) a tab to the specified channel within a team.
+The app must be preinstalled in the team and have the configurableTabs property defined in the app manifest.
 
 ## SYNTAX
 
@@ -41,9 +40,8 @@ New-MgTeamChannelTab -InputObject <ITeamsIdentity> [-AdditionalProperties <Hasht
 ```
 
 ## DESCRIPTION
-Adds (pins) a tab to the specified channel within a team.
-\nThe corresponding app must already be installed in the team.
-This API is available in the following national cloud deployments.
+Add (pin) a tab to the specified channel within a team.
+The app must be preinstalled in the team and have the configurableTabs property defined in the app manifest.
 
 ## EXAMPLES
 

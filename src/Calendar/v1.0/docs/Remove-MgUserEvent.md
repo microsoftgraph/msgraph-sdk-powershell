@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Removes the specified event from the containing calendar.
 If the event is a meeting, deleting the event on the organizer's calendar sends a cancellation message to the meeting attendees.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -29,7 +28,6 @@ Remove-MgUserEvent -InputObject <ICalendarIdentity> [-IfMatch <String>] [-PassTh
 ## DESCRIPTION
 Removes the specified event from the containing calendar.
 If the event is a meeting, deleting the event on the organizer's calendar sends a cancellation message to the meeting attendees.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -180,6 +178,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[ExtensionId <String>]`: The unique identifier of extension
   - `[GroupId <String>]`: The unique identifier of group
   - `[PlaceId <String>]`: The unique identifier of place
+  - `[RoomId <String>]`: The unique identifier of room
   - `[UserId <String>]`: The unique identifier of user
 
 ## RELATED LINKS

@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Trigger an indexOperation to make a custodian and associated sources searchable.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Update-MgSecurityCaseEdiscoveryCaseCustodianIndex -InputObject <ISecurityIdentit
 
 ## DESCRIPTION
 Trigger an indexOperation to make a custodian and associated sources searchable.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

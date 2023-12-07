@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve the properties of a schema for an externalConnection.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Get-MgBetaExternalConnectionSchema -InputObject <ISearchIdentity> [-ExpandProper
 
 ## DESCRIPTION
 Retrieve the properties of a schema for an externalConnection.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

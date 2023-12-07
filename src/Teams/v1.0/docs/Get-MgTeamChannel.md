@@ -11,7 +11,6 @@ schema: 2.0.0
 Retrieve the properties and relationships of a channel.
 This method supports federation.
 Only a user who is a member of the shared channel can retrieve channel information.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -38,7 +37,6 @@ Get-MgTeamChannel -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>] [-P
 Retrieve the properties and relationships of a channel.
 This method supports federation.
 Only a user who is a member of the shared channel can retrieve channel information.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

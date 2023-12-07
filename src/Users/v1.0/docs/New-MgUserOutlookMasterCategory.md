@@ -1,47 +1,43 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Education
-online version: https://learn.microsoft.com/powershell/module/microsoft.graph.education/new-mgeducationmeassignmentcategory
+Module Name: Microsoft.Graph.Users
+online version: https://learn.microsoft.com/powershell/module/microsoft.graph.users/new-mguseroutlookmastercategory
 schema: 2.0.0
 ---
 
-# New-MgEducationMeAssignmentCategory
+# New-MgUserOutlookMasterCategory
 
 ## SYNOPSIS
-Add one or more existing educationCategory objects to the specified  educationAssignment.
-Only teachers can perform this operation.
-This API is supported in the following national cloud deployments.
+Create an outlookCategory object in the user's master list of categories.
 
 ## SYNTAX
 
 ### CreateExpanded (Default)
 ```
-New-MgEducationMeAssignmentCategory -EducationAssignmentId <String> [-AdditionalProperties <Hashtable>]
+New-MgUserOutlookMasterCategory -UserId <String> [-AdditionalProperties <Hashtable>] [-Color <String>]
  [-DisplayName <String>] [-Id <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgEducationMeAssignmentCategory -EducationAssignmentId <String>
- -BodyParameter <IMicrosoftGraphEducationCategory> [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgUserOutlookMasterCategory -UserId <String> -BodyParameter <IMicrosoftGraphOutlookCategory> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgEducationMeAssignmentCategory -InputObject <IEducationIdentity>
- -BodyParameter <IMicrosoftGraphEducationCategory> [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgUserOutlookMasterCategory -InputObject <IUsersIdentity> -BodyParameter <IMicrosoftGraphOutlookCategory>
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgEducationMeAssignmentCategory -InputObject <IEducationIdentity> [-AdditionalProperties <Hashtable>]
- [-DisplayName <String>] [-Id <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgUserOutlookMasterCategory -InputObject <IUsersIdentity> [-AdditionalProperties <Hashtable>]
+ [-Color <String>] [-DisplayName <String>] [-Id <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Add one or more existing educationCategory objects to the specified  educationAssignment.
-Only teachers can perform this operation.
-This API is supported in the following national cloud deployments.
+Create an outlookCategory object in the user's master list of categories.
 
 ## EXAMPLES
 
@@ -76,11 +72,11 @@ Accept wildcard characters: False
 ```
 
 ### -BodyParameter
-educationCategory
+outlookCategory
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationCategory
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOutlookCategory
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -91,8 +87,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -DisplayName
-Unique identifier for the category.
+### -Color
+categoryColor
 
 ```yaml
 Type: System.String
@@ -106,15 +102,17 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -EducationAssignmentId
-The unique identifier of educationAssignment
+### -DisplayName
+A unique name that identifies a category in the user's mailbox.
+After a category is created, the name cannot be changed.
+Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: Create, CreateExpanded
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -142,7 +140,7 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
+Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -150,6 +148,21 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -UserId
+The unique identifier of user
+
+```yaml
+Type: System.String
+Parameter Sets: Create, CreateExpanded
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -189,13 +202,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IEducationIdentity
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOutlookCategory
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationCategory
+### Microsoft.Graph.PowerShell.Models.IUsersIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationCategory
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOutlookCategory
 
 ## NOTES
 
@@ -206,22 +219,26 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-`BODYPARAMETER <IMicrosoftGraphEducationCategory>`: educationCategory
+`BODYPARAMETER <IMicrosoftGraphOutlookCategory>`: outlookCategory
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[DisplayName <String>]`: Unique identifier for the category.
+  - `[Color <String>]`: categoryColor
+  - `[DisplayName <String>]`: A unique name that identifies a category in the user's mailbox. After a category is created, the name cannot be changed. Read-only.
 
-`INPUTOBJECT <IEducationIdentity>`: Identity Parameter
-  - `[EducationAssignmentId <String>]`: The unique identifier of educationAssignment
-  - `[EducationAssignmentResourceId <String>]`: The unique identifier of educationAssignmentResource
-  - `[EducationCategoryId <String>]`: The unique identifier of educationCategory
-  - `[EducationClassId <String>]`: The unique identifier of educationClass
-  - `[EducationOutcomeId <String>]`: The unique identifier of educationOutcome
-  - `[EducationRubricId <String>]`: The unique identifier of educationRubric
-  - `[EducationSchoolId <String>]`: The unique identifier of educationSchool
-  - `[EducationSubmissionId <String>]`: The unique identifier of educationSubmission
-  - `[EducationSubmissionResourceId <String>]`: The unique identifier of educationSubmissionResource
-  - `[EducationUserId <String>]`: The unique identifier of educationUser
+`INPUTOBJECT <IUsersIdentity>`: Identity Parameter
+  - `[AttachmentBaseId <String>]`: The unique identifier of attachmentBase
+  - `[AttachmentSessionId <String>]`: The unique identifier of attachmentSession
+  - `[ChecklistItemId <String>]`: The unique identifier of checklistItem
+  - `[DirectoryObjectId <String>]`: The unique identifier of directoryObject
+  - `[ExtensionId <String>]`: The unique identifier of extension
+  - `[LicenseDetailsId <String>]`: The unique identifier of licenseDetails
+  - `[LinkedResourceId <String>]`: The unique identifier of linkedResource
+  - `[OAuth2PermissionGrantId <String>]`: The unique identifier of oAuth2PermissionGrant
+  - `[OutlookCategoryId <String>]`: The unique identifier of outlookCategory
+  - `[ProfilePhotoId <String>]`: The unique identifier of profilePhoto
+  - `[TodoTaskId <String>]`: The unique identifier of todoTask
+  - `[TodoTaskListId <String>]`: The unique identifier of todoTaskList
+  - `[UserId <String>]`: The unique identifier of user
 
 ## RELATED LINKS
 

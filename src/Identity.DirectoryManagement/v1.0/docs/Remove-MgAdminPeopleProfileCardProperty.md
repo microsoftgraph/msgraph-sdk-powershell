@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgAdminPeopleProfileCardProperty
 
 ## SYNOPSIS
-Delete navigation property profileCardProperties for admin
+Delete the profileCardProperty object specified by its directoryPropertyName from the organization's profile card, and remove any localized customizations for that property.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgAdminPeopleProfileCardProperty -InputObject <IIdentityDirectoryManageme
 ```
 
 ## DESCRIPTION
-Delete navigation property profileCardProperties for admin
+Delete the profileCardProperty object specified by its directoryPropertyName from the organization's profile card, and remove any localized customizations for that property.
 
 ## EXAMPLES
 

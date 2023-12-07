@@ -294,6 +294,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[IosLobAppProvisioningConfigurationAssignmentId <String>]`: The unique identifier of iosLobAppProvisioningConfigurationAssignment
   - `[IosLobAppProvisioningConfigurationId <String>]`: The unique identifier of iosLobAppProvisioningConfiguration
   - `[IosManagedAppProtectionId <String>]`: The unique identifier of iosManagedAppProtection
+  - `[IosVppAppAssignedLicenseId <String>]`: The unique identifier of iosVppAppAssignedLicense
   - `[ManagedAppOperationId <String>]`: The unique identifier of managedAppOperation
   - `[ManagedAppPolicyId <String>]`: The unique identifier of managedAppPolicy
   - `[ManagedAppRegistrationId <String>]`: The unique identifier of managedAppRegistration
@@ -311,11 +312,14 @@ To create the parameters described below, construct a hash table containing the 
   - `[MdmWindowsInformationProtectionPolicyId <String>]`: The unique identifier of mdmWindowsInformationProtectionPolicy
   - `[MobileAppAssignmentId <String>]`: The unique identifier of mobileAppAssignment
   - `[MobileAppCategoryId <String>]`: The unique identifier of mobileAppCategory
+  - `[MobileAppContentFileId <String>]`: The unique identifier of mobileAppContentFile
+  - `[MobileAppContentId <String>]`: The unique identifier of mobileAppContent
   - `[MobileAppId <String>]`: The unique identifier of mobileApp
   - `[MobileAppIntentAndStateId <String>]`: The unique identifier of mobileAppIntentAndState
   - `[MobileAppProvisioningConfigGroupAssignmentId <String>]`: The unique identifier of mobileAppProvisioningConfigGroupAssignment
   - `[MobileAppRelationshipId <String>]`: The unique identifier of mobileAppRelationship
   - `[MobileAppTroubleshootingEventId <String>]`: The unique identifier of mobileAppTroubleshootingEvent
+  - `[MobileContainedAppId <String>]`: The unique identifier of mobileContainedApp
   - `[PolicyId <String>]`: Property in multi-part unique identifier of deviceHealthScriptPolicyState
   - `[PolicySetAssignmentId <String>]`: The unique identifier of policySetAssignment
   - `[PolicySetId <String>]`: The unique identifier of policySet

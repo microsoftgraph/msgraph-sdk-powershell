@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgBetaServicePrincipalSynchronizationAccessToken
 
 ## SYNOPSIS
-Acquire an OAuth Access token to authorize the Azure AD provisioning service to provision users into an application.
-This API is available in the following national cloud deployments.
+Acquire an OAuth Access token to authorize the Microsoft Entra provisioning service to provision users into an application.
 
 ## SYNTAX
 
@@ -42,8 +41,7 @@ Get-MgBetaServicePrincipalSynchronizationAccessToken -InputObject <IApplications
 ```
 
 ## DESCRIPTION
-Acquire an OAuth Access token to authorize the Azure AD provisioning service to provision users into an application.
-This API is available in the following national cloud deployments.
+Acquire an OAuth Access token to authorize the Microsoft Entra provisioning service to provision users into an application.
 
 ## EXAMPLES
 

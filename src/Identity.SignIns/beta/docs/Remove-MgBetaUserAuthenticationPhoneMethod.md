@@ -13,7 +13,6 @@ Remember that a user may not have an alternateMobile number without a mobile num
 If you want to remove a mobile number from a user that also has an alternateMobile number, first update the mobile number to the new number, then delete the alternateMobile number.
 If the phone number is the user's default Azure multifactor authentication (MFA) authentication method, it cannot be deleted.
 Have the user change their default authentication method, and then delete the number.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -35,7 +34,6 @@ Remember that a user may not have an alternateMobile number without a mobile num
 If you want to remove a mobile number from a user that also has an alternateMobile number, first update the mobile number to the new number, then delete the alternateMobile number.
 If the phone number is the user's default Azure multifactor authentication (MFA) authentication method, it cannot be deleted.
 Have the user change their default authentication method, and then delete the number.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -180,6 +178,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[ActivityBasedTimeoutPolicyId <String>]`: The unique identifier of activityBasedTimeoutPolicy
   - `[AppManagementPolicyId <String>]`: The unique identifier of appManagementPolicy
   - `[AuthenticationCombinationConfigurationId <String>]`: The unique identifier of authenticationCombinationConfiguration
+  - `[AuthenticationConditionApplicationAppId <String>]`: The unique identifier of authenticationConditionApplication
   - `[AuthenticationContextClassReferenceId <String>]`: The unique identifier of authenticationContextClassReference
   - `[AuthenticationEventListenerId <String>]`: The unique identifier of authenticationEventListener
   - `[AuthenticationEventsFlowId <String>]`: The unique identifier of authenticationEventsFlow

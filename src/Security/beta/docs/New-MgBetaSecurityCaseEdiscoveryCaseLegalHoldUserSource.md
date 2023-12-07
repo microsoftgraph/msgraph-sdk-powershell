@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new userSource object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -45,7 +44,6 @@ New-MgBetaSecurityCaseEdiscoveryCaseLegalHoldUserSource -InputObject <ISecurityI
 
 ## DESCRIPTION
 Create a new userSource object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

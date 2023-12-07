@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Trigger an indexOperation to make a non-custodial data source and its associated data source searchable.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Update-MgSecurityCaseEdiscoveryCaseNoncustodialDataSourceIndex -InputObject <ISe
 
 ## DESCRIPTION
 Trigger an indexOperation to make a non-custodial data source and its associated data source searchable.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

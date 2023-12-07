@@ -14,7 +14,6 @@ This means, for example, adding a mobile phone to a user with a pre-existing mob
 Additionally, a user must always have a mobile phone before adding an alternateMobile phone.
 Adding a phone number makes it available for use in both Azure multi-factor authentication (MFA) and self-service password reset (SSPR), if enabled.
 Additionally, if a user is enabled by policy to use SMS sign-in and a mobile number is added, the system attempts to register the number for use in that system.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -51,7 +50,6 @@ This means, for example, adding a mobile phone to a user with a pre-existing mob
 Additionally, a user must always have a mobile phone before adding an alternateMobile phone.
 Adding a phone number makes it available for use in both Azure multi-factor authentication (MFA) and self-service password reset (SSPR), if enabled.
 Additionally, if a user is enabled by policy to use SMS sign-in and a mobile number is added, the system attempts to register the number for use in that system.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaApplicationSynchronization
 
 ## SYNOPSIS
-Represents the capability for Azure Active Directory (Azure AD) identity synchronization through the Microsoft Graph API.
+Represents the capability for Microsoft Entra identity synchronization through the Microsoft Graph API.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgBetaApplicationSynchronization -InputObject <IApplicationsIdentity> [-Expa
 ```
 
 ## DESCRIPTION
-Represents the capability for Azure Active Directory (Azure AD) identity synchronization through the Microsoft Graph API.
+Represents the capability for Microsoft Entra identity synchronization through the Microsoft Graph API.
 
 ## EXAMPLES
 

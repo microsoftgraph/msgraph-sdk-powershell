@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaIdentityGovernancePermissionAnalyticGcpPermissionCreepIndexDistributionAuthorizationSystem
 
 ## SYNOPSIS
-Get authorizationSystem from identityGovernance
+Represents an authorization system onboarded to Permissions Management.
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ Get-MgBetaIdentityGovernancePermissionAnalyticGcpPermissionCreepIndexDistributio
 ```
 
 ## DESCRIPTION
-Get authorizationSystem from identityGovernance
+Represents an authorization system onboarded to Permissions Management.
 
 ## EXAMPLES
 

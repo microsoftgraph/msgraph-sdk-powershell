@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Unfollow a driveItem.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Invoke-MgBetaUnfollowGroupDriveRoot -InputObject <IGroupsIdentity> [-PassThru] [
 
 ## DESCRIPTION
 Unfollow a driveItem.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

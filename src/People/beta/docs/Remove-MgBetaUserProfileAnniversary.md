@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete a personAnniversary object from the user's profile.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Remove-MgBetaUserProfileAnniversary -InputObject <IPeopleIdentity> [-IfMatch <St
 
 ## DESCRIPTION
 Delete a personAnniversary object from the user's profile.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Create call enables your bot to create a new outgoing peer-to-peer or group call, or join an existing meeting.
 You will need to register the calling bot and go through the list of permissions needed.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -40,7 +39,6 @@ New-MgBetaCommunicationCall -BodyParameter <IMicrosoftGraphCall> [-Confirm] [-Wh
 ## DESCRIPTION
 Create call enables your bot to create a new outgoing peer-to-peer or group call, or join an existing meeting.
 You will need to register the calling bot and go through the list of permissions needed.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

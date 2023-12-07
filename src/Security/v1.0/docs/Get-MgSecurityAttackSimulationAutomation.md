@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Get an attack simulation automation for a tenant.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -34,7 +33,6 @@ Get-MgSecurityAttackSimulationAutomation -InputObject <ISecurityIdentity> [-Expa
 
 ## DESCRIPTION
 Get an attack simulation automation for a tenant.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

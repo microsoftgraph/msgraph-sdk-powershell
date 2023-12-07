@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Deletes an acronym object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Remove-MgBetaSearchAcronym -InputObject <ISearchIdentity> [-IfMatch <String>] [-
 
 ## DESCRIPTION
 Deletes an acronym object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

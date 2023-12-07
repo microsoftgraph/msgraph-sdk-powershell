@@ -96,7 +96,7 @@ paths:
       tags:
         - security.alert
       summary: List alerts
-      description: Retrieve a list of alert objects. This API is available in the following national cloud deployments.
+      description: Retrieve a list of alert objects.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/alert-list?view=graph-rest-1.0
@@ -297,7 +297,7 @@ paths:
       tags:
         - security.alert
       summary: List alerts_v2
-      description: 'Get a list of alert resources that have been created to track suspicious activities in an organization. This operation lets you filter and sort through alerts to create an informed cyber security response. It exposes a collection of alerts that were flagged in your network, within the time range you specified in your environment retention policy. The most recent alerts are displayed at the top of the list. This API is available in the following national cloud deployments.'
+      description: 'Get a list of alert resources that have been created to track suspicious activities in an organization. This operation lets you filter and sort through alerts to create an informed cyber security response. It exposes a collection of alerts that were flagged in your network, within the time range you specified in your environment retention policy. The most recent alerts are displayed at the top of the list.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-list-alerts_v2?view=graph-rest-1.0
@@ -474,7 +474,7 @@ paths:
       tags:
         - security.alert
       summary: Get alert
-      description: Get the properties and relationships of an alert in an organization based on the specified alert id property. This API is available in the following national cloud deployments.
+      description: Get the properties and relationships of an alert in an organization based on the specified alert id property.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-alert-get?view=graph-rest-1.0
@@ -557,7 +557,7 @@ paths:
       tags:
         - security.alert
       summary: Update alert
-      description: Update the properties of an alert object in an organization based on the specified alert id property. This API is available in the following national cloud deployments.
+      description: Update the properties of an alert object in an organization based on the specified alert id property.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-alert-update?view=graph-rest-1.0
@@ -696,7 +696,7 @@ paths:
       tags:
         - security.alert
       summary: Get alert
-      description: Retrieve the properties and relationships of an alert object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of an alert object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/alert-get?view=graph-rest-1.0
@@ -787,7 +787,7 @@ paths:
       tags:
         - security.alert
       summary: Update alert
-      description: Update an editable alert property within any integrated solution to keep alert status and assignments in sync across solutions. This method updates any solution that has a record of the referenced alert ID. This API is available in the following national cloud deployments.
+      description: Update an editable alert property within any integrated solution to keep alert status and assignments in sync across solutions. This method updates any solution that has a record of the referenced alert ID.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/alert-update?view=graph-rest-1.0
@@ -2743,7 +2743,7 @@ paths:
       tags:
         - security.attackSimulationRoot
       summary: List simulationAutomations
-      description: Get a list of attack simulation automations for a tenant. This API is available in the following national cloud deployments.
+      description: Get a list of attack simulation automations for a tenant.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attacksimulationroot-list-simulationautomations?view=graph-rest-1.0
@@ -2856,7 +2856,7 @@ paths:
       tags:
         - security.attackSimulationRoot
       summary: Get simulationAutomation
-      description: Get an attack simulation automation for a tenant. This API is available in the following national cloud deployments.
+      description: Get an attack simulation automation for a tenant.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/simulationautomation-get?view=graph-rest-1.0
@@ -2977,7 +2977,7 @@ paths:
       tags:
         - security.attackSimulationRoot
       summary: List runs
-      description: Get a list of the attack simulation automation runs for a tenant. This API is available in the following national cloud deployments.
+      description: Get a list of the attack simulation automation runs for a tenant.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/simulationautomation-list-runs?view=graph-rest-1.0
@@ -3261,7 +3261,7 @@ paths:
       tags:
         - security.attackSimulationRoot
       summary: List simulations
-      description: Get a list of attack simulation campaigns for a tenant. This API is available in the following national cloud deployments.
+      description: Get a list of attack simulation campaigns for a tenant.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attacksimulationroot-list-simulations?view=graph-rest-1.0
@@ -3418,7 +3418,7 @@ paths:
       tags:
         - security.attackSimulationRoot
       summary: Get simulation
-      description: Get an attack simulation campaign for a tenant. This API is available in the following national cloud deployments.
+      description: Get an attack simulation campaign for a tenant.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/simulation-get?view=graph-rest-1.0
@@ -4402,7 +4402,7 @@ paths:
       tags:
         - security.casesRoot
       summary: List ediscoveryCases
-      description: Get a list of the ediscoveryCase objects and their properties. This API is available in the following national cloud deployments.
+      description: Get a list of the ediscoveryCase objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-casesroot-list-ediscoverycases?view=graph-rest-1.0
@@ -4504,7 +4504,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Create ediscoveryCase
-      description: Create a new ediscoveryCase object. This API is available in the following national cloud deployments.
+      description: Create a new ediscoveryCase object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-casesroot-post-ediscoverycases?view=graph-rest-1.0
@@ -4531,7 +4531,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Get ediscoveryCase
-      description: Read the properties and relationships of an ediscoveryCase object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of an ediscoveryCase object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-ediscoverycase-get?view=graph-rest-1.0
@@ -4606,7 +4606,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Update ediscoveryCase
-      description: Update the properties of an ediscoveryCase object. This API is available in the following national cloud deployments.
+      description: Update the properties of an ediscoveryCase object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-ediscoverycase-update?view=graph-rest-1.0
@@ -4641,7 +4641,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Delete ediscoveryCase
-      description: Delete an ediscoveryCase object. This API is available in the following national cloud deployments.
+      description: Delete an ediscoveryCase object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-casesroot-delete-ediscoverycases?view=graph-rest-1.0
@@ -4672,7 +4672,7 @@ paths:
       tags:
         - security.casesRoot
       summary: List ediscoveryCustodian
-      description: Get a list of the custodian objects and their properties. This API is available in the following national cloud deployments.
+      description: Get a list of the custodian objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-ediscoverycase-list-custodians?view=graph-rest-1.0
@@ -4773,7 +4773,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Create custodians
-      description: "Create a new ediscoveryCustodian object.\nAfter the custodian object is created, you will need to create the custodian's userSource to reference their mailbox and OneDrive for Business site. This API is available in the following national cloud deployments."
+      description: "Create a new ediscoveryCustodian object.\nAfter the custodian object is created, you will need to create the custodian's userSource to reference their mailbox and OneDrive for Business site."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-ediscoverycase-post-custodians?view=graph-rest-1.0
@@ -4809,7 +4809,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Get ediscoveryCustodian
-      description: Read the properties and relationships of an ediscoveryCustodian object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of an ediscoveryCustodian object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-ediscoverycustodian-get?view=graph-rest-1.0
@@ -4959,7 +4959,7 @@ paths:
       tags:
         - security.casesRoot
       summary: List lastIndexOperation
-      description: Get a list of the ediscoveryIndexOperations associated with an ediscoveryCustodian. This API is available in the following national cloud deployments.
+      description: Get a list of the ediscoveryIndexOperations associated with an ediscoveryCustodian.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-ediscoverycustodian-list-lastindexoperation?view=graph-rest-1.0
@@ -5027,7 +5027,7 @@ paths:
       tags:
         - security.Actions
       summary: Invoke action activate
-      description: 'Activate a custodian that has been released from a case to make them part of the case again. For details, see Manage custodians in an eDiscovery (Premium) case. This API is available in the following national cloud deployments.'
+      description: 'Activate a custodian that has been released from a case to make them part of the case again. For details, see Manage custodians in an eDiscovery (Premium) case.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-ediscoverycustodian-activate?view=graph-rest-1.0
@@ -5060,7 +5060,7 @@ paths:
       tags:
         - security.Actions
       summary: Invoke action applyHold
-      description: 'Start the process of applying hold on eDiscovery custodians. After the operation is created, you can get the status by retrieving the Location parameter from the response headers. The location provides a URL that will return an eDiscoveryHoldOperation object. This API is available in the following national cloud deployments.'
+      description: 'Start the process of applying hold on eDiscovery custodians. After the operation is created, you can get the status by retrieving the Location parameter from the response headers. The location provides a URL that will return an eDiscoveryHoldOperation object.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-ediscoverycustodian-applyhold?view=graph-rest-1.0
@@ -5093,7 +5093,7 @@ paths:
       tags:
         - security.Actions
       summary: Invoke action release
-      description: 'Release a custodian from a case. For details, see Release a custodian from a case. This API is available in the following national cloud deployments.'
+      description: 'Release a custodian from a case. For details, see Release a custodian from a case.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-ediscoverycustodian-release?view=graph-rest-1.0
@@ -5126,7 +5126,7 @@ paths:
       tags:
         - security.Actions
       summary: Invoke action removeHold
-      description: 'Start the process of removing hold from eDiscovery custodians. After the operation is created, you can get the status by retrieving the Location parameter from the response headers. The location provides a URL that will return an eDiscoveryHoldOperation object. This API is available in the following national cloud deployments.'
+      description: 'Start the process of removing hold from eDiscovery custodians. After the operation is created, you can get the status by retrieving the Location parameter from the response headers. The location provides a URL that will return an eDiscoveryHoldOperation object.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-ediscoverycustodian-removehold?view=graph-rest-1.0
@@ -5159,7 +5159,7 @@ paths:
       tags:
         - security.Actions
       summary: Invoke action updateIndex
-      description: Trigger an indexOperation to make a custodian and associated sources searchable. This API is available in the following national cloud deployments.
+      description: Trigger an indexOperation to make a custodian and associated sources searchable.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-ediscoverycustodian-updateindex?view=graph-rest-1.0
@@ -5192,7 +5192,7 @@ paths:
       tags:
         - security.casesRoot
       summary: List siteSources
-      description: Get a list of the siteSource objects associated with an ediscoveryCustodian. This API is available in the following national cloud deployments.
+      description: Get a list of the siteSource objects associated with an ediscoveryCustodian.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-ediscoverycustodian-list-sitesources?view=graph-rest-1.0
@@ -5283,7 +5283,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Create siteSource
-      description: Create a new siteSource object associated with an eDiscovery custodian. This API is available in the following national cloud deployments.
+      description: Create a new siteSource object associated with an eDiscovery custodian.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-ediscoverycustodian-post-sitesources?view=graph-rest-1.0
@@ -5631,7 +5631,7 @@ paths:
       tags:
         - security.casesRoot
       summary: List unifiedGroupSources
-      description: Get a list of the unifiedGroupSource objects associated with an ediscoveryCustodian. This API is available in the following national cloud deployments.
+      description: Get a list of the unifiedGroupSource objects associated with an ediscoveryCustodian.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-ediscoverycustodian-list-unifiedgroupsources?view=graph-rest-1.0
@@ -5725,7 +5725,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Create custodian unifiedGroupSource
-      description: Create a new unifiedGroupSource object associated with an eDiscovery custodian. This API is available in the following national cloud deployments.
+      description: Create a new unifiedGroupSource object associated with an eDiscovery custodian.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-ediscoverycustodian-post-unifiedgroupsources?view=graph-rest-1.0
@@ -6246,7 +6246,7 @@ paths:
       tags:
         - security.casesRoot
       summary: List userSources
-      description: Get a list of the userSource objects associated with an ediscoveryCustodian. This API is available in the following national cloud deployments.
+      description: Get a list of the userSource objects associated with an ediscoveryCustodian.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-ediscoverycustodian-list-usersources?view=graph-rest-1.0
@@ -6344,7 +6344,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Create custodian userSource
-      description: Create a new userSource object associated with an eDiscovery custodian. This API is available in the following national cloud deployments.
+      description: Create a new userSource object associated with an eDiscovery custodian.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-ediscoverycustodian-post-usersources?view=graph-rest-1.0
@@ -6674,7 +6674,7 @@ paths:
       tags:
         - security.Actions
       summary: Invoke action close
-      description: 'Close an eDiscovery case. For details, see Close a case. This API is available in the following national cloud deployments.'
+      description: 'Close an eDiscovery case. For details, see Close a case.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-ediscoverycase-close?view=graph-rest-1.0
@@ -6699,7 +6699,7 @@ paths:
       tags:
         - security.Actions
       summary: Invoke action reopen
-      description: 'Reopen an eDiscovery case that was closed. For details, see Reopen a closed case. This API is available in the following national cloud deployments.'
+      description: 'Reopen an eDiscovery case that was closed. For details, see Reopen a closed case.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-ediscoverycase-reopen?view=graph-rest-1.0
@@ -6812,7 +6812,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Create nonCustodialDataSources
-      description: Create a new ediscoveryNoncustodialDataSource object. This API is available in the following national cloud deployments.
+      description: Create a new ediscoveryNoncustodialDataSource object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-ediscoverycase-post-noncustodialdatasources?view=graph-rest-1.0
@@ -7189,7 +7189,7 @@ paths:
       tags:
         - security.Actions
       summary: Invoke action applyHold
-      description: 'Start the process of applying hold on eDiscovery non-custodial data sources. After the operation is created, you can get the status by retrieving the Location parameter from the response headers. The location provides a URL that returns an eDiscoveryHoldOperation object. This API is available in the following national cloud deployments.'
+      description: 'Start the process of applying hold on eDiscovery non-custodial data sources. After the operation is created, you can get the status by retrieving the Location parameter from the response headers. The location provides a URL that returns an eDiscoveryHoldOperation object.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-ediscoverynoncustodialdatasource-applyhold?view=graph-rest-1.0
@@ -7222,7 +7222,7 @@ paths:
       tags:
         - security.Actions
       summary: Invoke action release
-      description: Release the non-custodial data source from the case. This API is available in the following national cloud deployments.
+      description: Release the non-custodial data source from the case.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-ediscoverynoncustodialdatasource-release?view=graph-rest-1.0
@@ -7255,7 +7255,7 @@ paths:
       tags:
         - security.Actions
       summary: Invoke action removeHold
-      description: 'Start the process of removing hold from eDiscovery non-custodial data sources. After the operation is created, you can get the status by retrieving the Location parameter from the response headers. The location provides a URL that returns an eDiscoveryHoldOperation object. This API is available in the following national cloud deployments.'
+      description: 'Start the process of removing hold from eDiscovery non-custodial data sources. After the operation is created, you can get the status by retrieving the Location parameter from the response headers. The location provides a URL that returns an eDiscoveryHoldOperation object.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-ediscoverynoncustodialdatasource-removehold?view=graph-rest-1.0
@@ -7288,7 +7288,7 @@ paths:
       tags:
         - security.Actions
       summary: Invoke action updateIndex
-      description: Trigger an indexOperation to make a non-custodial data source and its associated data source searchable. This API is available in the following national cloud deployments.
+      description: Trigger an indexOperation to make a non-custodial data source and its associated data source searchable.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-ediscoverynoncustodialdatasource-updateindex?view=graph-rest-1.0
@@ -7415,7 +7415,7 @@ paths:
       tags:
         - security.casesRoot
       summary: List caseOperations
-      description: Get a list of the caseOperation objects and their properties. This API is available in the following national cloud deployments.
+      description: Get a list of the caseOperation objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-ediscoverycase-list-operations?view=graph-rest-1.0
@@ -7537,7 +7537,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Get caseOperation
-      description: Read the properties and relationships of a caseOperation object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a caseOperation object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-caseoperation-get?view=graph-rest-1.0
@@ -7700,7 +7700,7 @@ paths:
       tags:
         - security.casesRoot
       summary: List reviewSets
-      description: Get a list of ediscoveryReviewSet objects associated with an eDiscovery case. This API is available in the following national cloud deployments.
+      description: Get a list of ediscoveryReviewSet objects associated with an eDiscovery case.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-ediscoverycase-list-reviewsets?view=graph-rest-1.0
@@ -7780,7 +7780,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Create reviewSets
-      description: Create a new ediscoveryReviewSet object. This API is available in the following national cloud deployments.
+      description: Create a new ediscoveryReviewSet object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-ediscoverycase-post-reviewsets?view=graph-rest-1.0
@@ -7816,7 +7816,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Get ediscoveryReviewSet
-      description: Read the properties and relationships of an ediscoveryReviewSet object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of an ediscoveryReviewSet object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-ediscoveryreviewset-get?view=graph-rest-1.0
@@ -7955,7 +7955,7 @@ paths:
       tags:
         - security.Actions
       summary: Invoke action addToReviewSet
-      description: 'Start the process of adding a collection from Microsoft 365 services to a review set. After the operation is created, you can get the status of the operation by retrieving the Location parameter from the response headers. The location provides a URL that will return a Add to review set operation. This API is available in the following national cloud deployments.'
+      description: 'Start the process of adding a collection from Microsoft 365 services to a review set. After the operation is created, you can get the status of the operation by retrieving the Location parameter from the response headers. The location provides a URL that will return a Add to review set operation.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-ediscoveryreviewset-addtoreviewset?view=graph-rest-1.0
@@ -8002,7 +8002,7 @@ paths:
       tags:
         - security.Actions
       summary: Invoke action export
-      description: 'Initiate an export from a ediscoveryReviewSet. For details, see Export documents from a review set in eDiscovery (Premium). This API is available in the following national cloud deployments.'
+      description: 'Initiate an export from a ediscoveryReviewSet. For details, see Export documents from a review set in eDiscovery (Premium).'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-ediscoveryreviewset-export?view=graph-rest-1.0
@@ -8055,7 +8055,7 @@ paths:
       tags:
         - security.casesRoot
       summary: List queries
-      description: Get the list of queries associated with an eDiscovery review set. This API is available in the following national cloud deployments.
+      description: Get the list of queries associated with an eDiscovery review set.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-ediscoveryreviewset-list-queries?view=graph-rest-1.0
@@ -8153,7 +8153,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Create ediscoveryReviewSetQuery
-      description: Create a new ediscoveryReviewSetQuery object. This API is available in the following national cloud deployments.
+      description: Create a new ediscoveryReviewSetQuery object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-ediscoveryreviewset-post-queries?view=graph-rest-1.0
@@ -8197,7 +8197,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Get ediscoveryReviewSetQuery
-      description: Read the properties and relationships of an ediscoveryReviewSetQuery object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of an ediscoveryReviewSetQuery object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-ediscoveryreviewsetquery-get?view=graph-rest-1.0
@@ -8272,7 +8272,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Update ediscoveryReviewSetQuery
-      description: Update the properties of an ediscoveryReviewSetQuery object. This API is available in the following national cloud deployments.
+      description: Update the properties of an ediscoveryReviewSetQuery object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-ediscoveryreviewsetquery-update?view=graph-rest-1.0
@@ -8323,7 +8323,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Delete ediscoveryReviewSetQuery
-      description: Delete an ediscoveryReviewSetQuery object. This API is available in the following national cloud deployments.
+      description: Delete an ediscoveryReviewSetQuery object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-ediscoveryreviewset-delete-queries?view=graph-rest-1.0
@@ -8370,7 +8370,7 @@ paths:
       tags:
         - security.Actions
       summary: Invoke action applyTags
-      description: 'Apply tags to files in an eDiscovery review set. For details, see Tag documents in a review set in eDiscovery. This API is available in the following national cloud deployments.'
+      description: 'Apply tags to files in an eDiscovery review set. For details, see Tag documents in a review set in eDiscovery.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-ediscoveryreviewsetquery-applytags?view=graph-rest-1.0
@@ -8429,7 +8429,7 @@ paths:
       tags:
         - security.Actions
       summary: Invoke action export
-      description: 'Initiate an export from a ediscoveryReviewSetQuery. For details, see Export documents from a review set in eDiscovery (Premium). This API is available in the following national cloud deployments.'
+      description: 'Initiate an export from a ediscoveryReviewSetQuery. For details, see Export documents from a review set in eDiscovery (Premium).'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-ediscoveryreviewsetquery-export?view=graph-rest-1.0
@@ -8542,7 +8542,7 @@ paths:
       tags:
         - security.casesRoot
       summary: List searches
-      description: Get the list of ediscoverySearch resources from an eDiscoveryCase object. This API is available in the following national cloud deployments.
+      description: Get the list of ediscoverySearch resources from an eDiscoveryCase object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-ediscoverycase-list-searches?view=graph-rest-1.0
@@ -8645,7 +8645,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Create searches
-      description: Create a new ediscoverySearch object. This API is available in the following national cloud deployments.
+      description: Create a new ediscoverySearch object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-ediscoverycase-post-searches?view=graph-rest-1.0
@@ -8681,7 +8681,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Get ediscoverySearch
-      description: Read the properties and relationships of an ediscoverySearch object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of an ediscoverySearch object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-ediscoverysearch-get?view=graph-rest-1.0
@@ -8759,7 +8759,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Update ediscoverySearch
-      description: Update the properties of an ediscoverySearch object. This API is available in the following national cloud deployments.
+      description: Update the properties of an ediscoverySearch object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-ediscoverysearch-update?view=graph-rest-1.0
@@ -8802,7 +8802,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Delete ediscoverySearch
-      description: Delete an ediscoverySearch object. This API is available in the following national cloud deployments.
+      description: Delete an ediscoverySearch object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-ediscoverycase-delete-searches?view=graph-rest-1.0
@@ -8841,7 +8841,7 @@ paths:
       tags:
         - security.casesRoot
       summary: List additionalSources
-      description: Get the list of additional sources associated with an eDiscovery search. This API is available in the following national cloud deployments.
+      description: Get the list of additional sources associated with an eDiscovery search.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-ediscoverysearch-list-additionalsources?view=graph-rest-1.0
@@ -8930,7 +8930,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Add additional sources
-      description: Create a new additional source associated with an eDiscovery search. This API is available in the following national cloud deployments.
+      description: Create a new additional source associated with an eDiscovery search.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-ediscoverysearch-post-additionalsources?view=graph-rest-1.0
@@ -9232,7 +9232,7 @@ paths:
       tags:
         - security.casesRoot
       summary: List custodianSources
-      description: Get the list of custodial data sources associated with an eDiscovery search. This API is available in the following national cloud deployments.
+      description: Get the list of custodial data sources associated with an eDiscovery search.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-ediscoverysearch-list-custodiansources?view=graph-rest-1.0
@@ -9468,7 +9468,7 @@ paths:
       tags:
         - security.casesRoot
       summary: List lastEstimateStatisticsOperation
-      description: Get the last  ediscoveryEstimateOperation objects and their properties. This API is available in the following national cloud deployments.
+      description: Get the last  ediscoveryEstimateOperation objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-ediscoverysearch-list-lastestimatestatisticsoperation?view=graph-rest-1.0
@@ -9544,7 +9544,7 @@ paths:
       tags:
         - security.Actions
       summary: Invoke action estimateStatistics
-      description: 'Run an estimate of the number of emails and documents in the eDiscovery search. To learn more about searches in eDiscovery, see Collect data for a case in eDiscovery (Premium). This API is available in the following national cloud deployments.'
+      description: 'Run an estimate of the number of emails and documents in the eDiscovery search. To learn more about searches in eDiscovery, see Collect data for a case in eDiscovery (Premium).'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-ediscoverysearch-estimatestatistics?view=graph-rest-1.0
@@ -9577,7 +9577,7 @@ paths:
       tags:
         - security.Actions
       summary: Invoke action purgeData
-      description: "Delete Microsoft Teams messages contained in an eDiscovery search. You can collect and purge the following categories of Teams content:\n- Teams 1:1 chats - Chat messages, posts, and attachments shared in a Teams conversation between two people. Teams 1:1 chats are also called *conversations*.\n- Teams group chats - Chat messages, posts, and attachments shared in a Teams conversation between three or more people. Also called *1:N* chats or *group conversations*.\n- Teams channels - Chat messages, posts, replies, and attachments shared in a standard Teams channel.\n- Private channels - Message posts, replies, and attachments shared in a private Teams channel.\n- Shared channels - Message posts, replies, and attachments shared in a shared Teams channel. For more information about purging Teams messages, see:\n- eDiscovery solution series: Data spillage scenario - Search and purge\n- eDiscovery (Premium) workflow for content in Microsoft Teams  This API is available in the following national cloud deployments."
+      description: "Delete Microsoft Teams messages contained in an eDiscovery search. You can collect and purge the following categories of Teams content:\n- Teams 1:1 chats - Chat messages, posts, and attachments shared in a Teams conversation between two people. Teams 1:1 chats are also called *conversations*.\n- Teams group chats - Chat messages, posts, and attachments shared in a Teams conversation between three or more people. Also called *1:N* chats or *group conversations*.\n- Teams channels - Chat messages, posts, replies, and attachments shared in a standard Teams channel.\n- Private channels - Message posts, replies, and attachments shared in a private Teams channel.\n- Shared channels - Message posts, replies, and attachments shared in a shared Teams channel. For more information about purging Teams messages, see:\n- eDiscovery solution series: Data spillage scenario - Search and purge\n- eDiscovery (Premium) workflow for content in Microsoft Teams "
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-ediscoverysearch-purgedata?view=graph-rest-1.0
@@ -9895,7 +9895,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Get ediscoveryCaseSettings
-      description: Read the properties and relationships of an ediscoveryCaseSettings object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of an ediscoveryCaseSettings object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-ediscoverycasesettings-get?view=graph-rest-1.0
@@ -9950,7 +9950,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Update ediscoveryCaseSettings
-      description: Update the properties of an ediscoveryCaseSettings object. This API is available in the following national cloud deployments.
+      description: Update the properties of an ediscoveryCaseSettings object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-ediscoverycasesettings-update?view=graph-rest-1.0
@@ -10012,7 +10012,7 @@ paths:
       tags:
         - security.Actions
       summary: Invoke action resetToDefault
-      description: Reset a caseSettings object to the default values. This API is available in the following national cloud deployments.
+      description: Reset a caseSettings object to the default values.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-ediscoverycasesettings-resettodefault?view=graph-rest-1.0
@@ -10037,7 +10037,7 @@ paths:
       tags:
         - security.casesRoot
       summary: List tags
-      description: Get a list of eDiscoveryReviewTag objects and their properties. This API is available in the following national cloud deployments.
+      description: Get a list of eDiscoveryReviewTag objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-ediscoverycase-list-tags?view=graph-rest-1.0
@@ -10125,7 +10125,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Create tags
-      description: Create a new ediscoveryReviewTag object. This API is available in the following national cloud deployments.
+      description: Create a new ediscoveryReviewTag object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-ediscoverycase-post-tags?view=graph-rest-1.0
@@ -10161,7 +10161,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Get ediscoveryReviewTag
-      description: Read the properties and relationships of an ediscoveryReviewTag object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of an ediscoveryReviewTag object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-ediscoveryreviewtag-get?view=graph-rest-1.0
@@ -10230,7 +10230,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Update ediscoveryReviewTag
-      description: Update the properties of an ediscoveryReviewTag object. This API is available in the following national cloud deployments.
+      description: Update the properties of an ediscoveryReviewTag object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-ediscoveryreviewtag-update?view=graph-rest-1.0
@@ -10273,7 +10273,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Remove ediscoveryReviewTag
-      description: Remove an ediscoveryReviewTag object. This API is available in the following national cloud deployments.
+      description: Remove an ediscoveryReviewTag object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-ediscoverycase-delete-tags?view=graph-rest-1.0
@@ -10700,7 +10700,7 @@ paths:
       tags:
         - security.incident
       summary: List incidents
-      description: 'Get a list of incident objects that Microsoft 365 Defender has created to track attacks in an organization. Attacks are typically inflicted on different types of entities, such as devices, users, and mailboxes, resulting in multiple alert objects. Microsoft 365 Defender correlates alerts with the same attack techniques or the same attacker into an incident.  This operation allows you to filter and sort through incidents to create an informed cyber security response. It exposes a collection of incidents that were flagged in your network, within the time range you specified in your environment retention policy. The most recent incidents are displayed at the top of the list. This API is available in the following national cloud deployments.'
+      description: 'Get a list of incident objects that Microsoft 365 Defender has created to track attacks in an organization. Attacks are typically inflicted on different types of entities, such as devices, users, and mailboxes, resulting in multiple alert objects. Microsoft 365 Defender correlates alerts with the same attack techniques or the same attacker into an incident.  This operation allows you to filter and sort through incidents to create an informed cyber security response. It exposes a collection of incidents that were flagged in your network, within the time range you specified in your environment retention policy. The most recent incidents are displayed at the top of the list.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-list-incidents?view=graph-rest-1.0
@@ -10834,7 +10834,7 @@ paths:
       tags:
         - security.incident
       summary: Get incident
-      description: 'Retrieve the properties and relationships of an incident object. Attacks are typically inflicted on different types of entities, such as devices, users, and mailboxes, resulting in multiple alert objects. Microsoft 365 Defender correlates alerts with the same attack techniques or the same attacker into an incident.  This API is available in the following national cloud deployments.'
+      description: 'Retrieve the properties and relationships of an incident object. Attacks are typically inflicted on different types of entities, such as devices, users, and mailboxes, resulting in multiple alert objects. Microsoft 365 Defender correlates alerts with the same attack techniques or the same attacker into an incident. '
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-incident-get?view=graph-rest-1.0
@@ -10904,7 +10904,7 @@ paths:
       tags:
         - security.incident
       summary: Update incident
-      description: Update the properties of an incident object. This API is available in the following national cloud deployments.
+      description: Update the properties of an incident object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-incident-update?view=graph-rest-1.0
@@ -11359,7 +11359,7 @@ paths:
       tags:
         - security.secureScoreControlProfile
       summary: List secureScoreControlProfiles
-      description: Retrieve the properties and relationships of a secureScoreControlProfiles object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of a secureScoreControlProfiles object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-list-securescorecontrolprofiles?view=graph-rest-1.0
@@ -11500,7 +11500,7 @@ paths:
       tags:
         - security.secureScoreControlProfile
       summary: Get secureScoreControlProfile
-      description: Retrieve the properties and relationships of an securescorecontrolprofile object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of an securescorecontrolprofile object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/securescorecontrolprofile-get?view=graph-rest-1.0
@@ -11571,7 +11571,7 @@ paths:
       tags:
         - security.secureScoreControlProfile
       summary: Update secureScoreControlProfile
-      description: 'Update an editable secureScoreControlProfile object within any integrated solution to change various properties, such as assignedTo or tenantNote. This API is available in the following national cloud deployments.'
+      description: 'Update an editable secureScoreControlProfile object within any integrated solution to change various properties, such as assignedTo or tenantNote.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/securescorecontrolprofile-update?view=graph-rest-1.0
@@ -11647,7 +11647,7 @@ paths:
       tags:
         - security.secureScore
       summary: List secureScores
-      description: Retrieve a list of secureScore objects. This API is available in the following national cloud deployments.
+      description: Retrieve a list of secureScore objects.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-list-securescores?view=graph-rest-1.0
@@ -11761,7 +11761,7 @@ paths:
       tags:
         - security.secureScore
       summary: Get secureScore
-      description: Retrieve the properties and relationships of a secureScore object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of a secureScore object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/securescore-get?view=graph-rest-1.0
@@ -13975,7 +13975,7 @@ paths:
       tags:
         - security.subjectRightsRequest
       summary: List authoredNotes
-      description: Get the list of authored notes assoicated with a subject rights request.  This API is available in the following national cloud deployments.
+      description: 'Get the list of authored notes assoicated with a subject rights request. '
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/subjectrightsrequest-list-notes?view=graph-rest-1.0
@@ -14053,7 +14053,7 @@ paths:
       tags:
         - security.subjectRightsRequest
       summary: Create authoredNote
-      description: Create a new authoredNote object. This API is available in the following national cloud deployments.
+      description: Create a new authoredNote object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/subjectrightsrequest-post-notes?view=graph-rest-1.0
@@ -14465,7 +14465,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Get articleIndicator
-      description: Read the properties and relationships of an articleIndicator object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of an articleIndicator object.
       operationId: security.threatIntelligence_ListArticleIndicator
       parameters:
         - $ref: '#/components/parameters/top'
@@ -14551,7 +14551,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Get articleIndicator
-      description: Read the properties and relationships of an articleIndicator object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of an articleIndicator object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-articleindicator-get?view=graph-rest-1.0
@@ -14728,7 +14728,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: List articles
-      description: 'Get a list of article objects, including their properties and relationships. This API is available in the following national cloud deployments.'
+      description: 'Get a list of article objects, including their properties and relationships.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-threatintelligence-list-articles?view=graph-rest-1.0
@@ -14838,7 +14838,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Get article
-      description: Read the properties and relationships of an article object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of an article object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-article-get?view=graph-rest-1.0
@@ -14958,7 +14958,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: List indicators
-      description: Get a list of articleIndicator objects that represent indicators of threat or compromise related to the contents of an article. This API is available in the following national cloud deployments.
+      description: Get a list of articleIndicator objects that represent indicators of threat or compromise related to the contents of an article.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-article-list-indicators?view=graph-rest-1.0
@@ -15130,7 +15130,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Get hostComponent
-      description: Read the properties and relationships of a hostComponent object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a hostComponent object.
       operationId: security.threatIntelligence_ListHostComponent
       parameters:
         - $ref: '#/components/parameters/top'
@@ -15228,7 +15228,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Get hostComponent
-      description: Read the properties and relationships of a hostComponent object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a hostComponent object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-hostcomponent-get?view=graph-rest-1.0
@@ -15437,7 +15437,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Get hostCookie
-      description: Read the properties and relationships of a hostCookie object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a hostCookie object.
       operationId: security.threatIntelligence_ListHostCookie
       parameters:
         - $ref: '#/components/parameters/top'
@@ -15532,7 +15532,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Get hostCookie
-      description: Read the properties and relationships of a hostCookie object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a hostCookie object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-hostcookie-get?view=graph-rest-1.0
@@ -15740,7 +15740,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Get hostPair
-      description: Read the properties and relationships of a hostPair object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a hostPair object.
       operationId: security.threatIntelligence_ListHostPair
       parameters:
         - $ref: '#/components/parameters/top'
@@ -15834,7 +15834,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Get hostPair
-      description: Read the properties and relationships of a hostPair object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a hostPair object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-hostpair-get?view=graph-rest-1.0
@@ -16509,7 +16509,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Get host
-      description: 'Read the properties and relationships of a host object. The host resource is the abstract base type that returns an implementation. A host can be of one of the following types: This API is available in the following national cloud deployments.'
+      description: 'Read the properties and relationships of a host object. The host resource is the abstract base type that returns an implementation. A host can be of one of the following types:'
       operationId: security.threatIntelligence_ListHost
       parameters:
         - $ref: '#/components/parameters/top'
@@ -16622,7 +16622,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Get host
-      description: 'Read the properties and relationships of a host object. The host resource is the abstract base type that returns an implementation. A host can be of one of the following types: This API is available in the following national cloud deployments.'
+      description: 'Read the properties and relationships of a host object. The host resource is the abstract base type that returns an implementation. A host can be of one of the following types:'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-host-get?view=graph-rest-1.0
@@ -16760,7 +16760,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: List childHostPairs
-      description: 'Get the list of hostPair resources associated with a host, where that host is the *parent* and has an outgoing pairing to a *child*.  This API is available in the following national cloud deployments.'
+      description: 'Get the list of hostPair resources associated with a host, where that host is the *parent* and has an outgoing pairing to a *child*. '
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-host-list-childhostpairs?view=graph-rest-1.0
@@ -16930,7 +16930,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: List components
-      description: Get a list of hostComponent resources. This API is available in the following national cloud deployments.
+      description: Get a list of hostComponent resources.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-host-list-components?view=graph-rest-1.0
@@ -17104,7 +17104,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: List cookies
-      description: Get a list of hostCookie resources. This API is available in the following national cloud deployments.
+      description: Get a list of hostCookie resources.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-host-list-cookies?view=graph-rest-1.0
@@ -17274,7 +17274,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: List hostPairs
-      description: 'Get the list of hostPair resources associated with a host, where that host is *either* the *parent* or the *child*. This API is available in the following national cloud deployments.'
+      description: 'Get the list of hostPair resources associated with a host, where that host is *either* the *parent* or the *child*.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-host-list-hostpairs?view=graph-rest-1.0
@@ -17444,7 +17444,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: List parentHostPairs
-      description: 'Get the list of hostPair resources associated with a host, where that host is the *child* and has an incoming pairing with a *parent*. This API is available in the following national cloud deployments.'
+      description: 'Get the list of hostPair resources associated with a host, where that host is the *child* and has an incoming pairing with a *parent*.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-host-list-parenthostpairs?view=graph-rest-1.0
@@ -17614,7 +17614,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: List passiveDns
-      description: Get a list of passiveDnsRecord resources associated with a host. This is a forward DNS lookup which queries the IP address of the specified host using its hostname.  This API is available in the following national cloud deployments.
+      description: 'Get a list of passiveDnsRecord resources associated with a host. This is a forward DNS lookup which queries the IP address of the specified host using its hostname. '
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-host-list-passivedns?view=graph-rest-1.0
@@ -17788,7 +17788,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: List passiveDnsReverse
-      description: Get a collection of passiveDnsRecord resources from a reverse passive DNS retrieval.  A reverse DNS lookup queries the hostname of a host using an IP address. This API is available in the following national cloud deployments.
+      description: Get a collection of passiveDnsRecord resources from a reverse passive DNS retrieval.  A reverse DNS lookup queries the hostname of a host using an IP address.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-host-list-passivednsreverse?view=graph-rest-1.0
@@ -18156,7 +18156,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Get hostReputation
-      description: Get the properties and relationships of a hostReputation object. This API is available in the following national cloud deployments.
+      description: Get the properties and relationships of a hostReputation object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-host-get-reputation?view=graph-rest-1.0
@@ -18269,7 +18269,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: List hostSslCertificates
-      description: Get a list of hostSslCertificate objects from the host navigation property. This API is available in the following national cloud deployments.
+      description: Get a list of hostSslCertificate objects from the host navigation property.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-host-list-sslcertificates?view=graph-rest-1.0
@@ -18439,7 +18439,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: List subdomains
-      description: Get the list of subdomain resources associated with a host. This API is available in the following national cloud deployments.
+      description: Get the list of subdomain resources associated with a host.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-host-list-subdomains?view=graph-rest-1.0
@@ -18597,7 +18597,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: List trackers
-      description: Get a list of hostTracker resources. This API is available in the following national cloud deployments.
+      description: Get a list of hostTracker resources.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-host-list-trackers?view=graph-rest-1.0
@@ -18767,7 +18767,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Get whoisRecord
-      description: "Get the specified whoisRecord resource.  Specify the desired whoisRecord in one of the following two ways:\n- Identify a host and get its current whoisRecord. \n- Specify an id value to get the corresponding whoisRecord. This API is available in the following national cloud deployments."
+      description: "Get the specified whoisRecord resource.  Specify the desired whoisRecord in one of the following two ways:\n- Identify a host and get its current whoisRecord. \n- Specify an id value to get the corresponding whoisRecord."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-whoisrecord-get?view=graph-rest-1.0
@@ -18855,7 +18855,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Get hostSslCertificate
-      description: Get the properties and relationships of a hostSslCertificate object. This API is available in the following national cloud deployments.
+      description: Get the properties and relationships of a hostSslCertificate object.
       operationId: security.threatIntelligence_ListHostSslCertificate
       parameters:
         - $ref: '#/components/parameters/top'
@@ -18949,7 +18949,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Get hostSslCertificate
-      description: Get the properties and relationships of a hostSslCertificate object. This API is available in the following national cloud deployments.
+      description: Get the properties and relationships of a hostSslCertificate object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-hostsslcertificate-get?view=graph-rest-1.0
@@ -19219,7 +19219,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Get hostTracker
-      description: Read the properties and relationships of a hostTracker object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a hostTracker object.
       operationId: security.threatIntelligence_ListHostTracker
       parameters:
         - $ref: '#/components/parameters/top'
@@ -19314,7 +19314,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Get hostTracker
-      description: Read the properties and relationships of a hostTracker object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a hostTracker object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-hosttracker-get?view=graph-rest-1.0
@@ -19522,7 +19522,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Get intelligenceProfileIndicator
-      description: Read the properties and relationships of a intelligenceProfileIndicator object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a intelligenceProfileIndicator object.
       operationId: security.threatIntelligence_ListIntelligenceProfileIndicator
       parameters:
         - $ref: '#/components/parameters/top'
@@ -19614,7 +19614,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Get intelligenceProfileIndicator
-      description: Read the properties and relationships of a intelligenceProfileIndicator object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a intelligenceProfileIndicator object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-intelligenceprofileindicator-get?view=graph-rest-1.0
@@ -19793,7 +19793,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: List intelProfiles
-      description: Get a list of the intelligenceProfile objects and their properties. This API is available in the following national cloud deployments.
+      description: Get a list of the intelligenceProfile objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-threatintelligence-list-intelprofiles?view=graph-rest-1.0
@@ -19906,7 +19906,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Get intelligenceProfile
-      description: Read the properties and relationships of a intelligenceProfile object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a intelligenceProfile object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-intelligenceprofile-get?view=graph-rest-1.0
@@ -20027,7 +20027,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: List indicators
-      description: Get the intelligenceProfileIndicator resources from the indicators navigation property of an intelligenceProfile. This API is available in the following national cloud deployments.
+      description: Get the intelligenceProfileIndicator resources from the indicators navigation property of an intelligenceProfile.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-intelligenceprofile-list-indicators?view=graph-rest-1.0
@@ -20207,7 +20207,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Get passiveDnsRecord
-      description: Read the properties and relationships of a passiveDnsRecord object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a passiveDnsRecord object.
       operationId: security.threatIntelligence_ListPassiveDnsRecord
       parameters:
         - $ref: '#/components/parameters/top'
@@ -20304,7 +20304,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Get passiveDnsRecord
-      description: Read the properties and relationships of a passiveDnsRecord object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a passiveDnsRecord object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-passivednsrecord-get?view=graph-rest-1.0
@@ -20564,7 +20564,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: List sslCertificates
-      description: Get a list of sslCertificate objects and their properties. This API is available in the following national cloud deployments.
+      description: Get a list of sslCertificate objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-threatintelligence-list-sslcertificates?view=graph-rest-1.0
@@ -20677,7 +20677,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Get sslCertificate
-      description: Get the properties and relationships of an sslCertificate object. This API is available in the following national cloud deployments.
+      description: Get the properties and relationships of an sslCertificate object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-sslcertificate-get?view=graph-rest-1.0
@@ -21019,7 +21019,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Get subdomain
-      description: Read the properties and relationships of a subdomain object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a subdomain object.
       operationId: security.threatIntelligence_ListSubdomain
       parameters:
         - $ref: '#/components/parameters/top'
@@ -21105,7 +21105,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Get subdomain
-      description: Read the properties and relationships of a subdomain object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a subdomain object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-subdomain-get?view=graph-rest-1.0
@@ -21310,7 +21310,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Get vulnerability
-      description: Read the properties and relationships of a vulnerability object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a vulnerability object.
       operationId: security.threatIntelligence_ListVulnerability
       parameters:
         - $ref: '#/components/parameters/top'
@@ -21440,7 +21440,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Get vulnerability
-      description: Read the properties and relationships of a vulnerability object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a vulnerability object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-vulnerability-get?view=graph-rest-1.0
@@ -21752,7 +21752,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: List components
-      description: Get a list of vulnerabilityComponent objects related to a known vulnerability. This API is available in the following national cloud deployments.
+      description: Get a list of vulnerabilityComponent objects related to a known vulnerability.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-vulnerability-list-components?view=graph-rest-1.0
@@ -21856,7 +21856,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Get vulnerabilityComponent
-      description: Read the properties and relationships of a vulnerabilityComponent object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a vulnerabilityComponent object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-vulnerabilitycomponent-get?view=graph-rest-1.0
@@ -22379,7 +22379,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: List whoisRecords
-      description: Get a list of whoisRecord objects. This API is available in the following national cloud deployments.
+      description: Get a list of whoisRecord objects.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-threatintelligence-list-whoisrecords?view=graph-rest-1.0
@@ -22518,7 +22518,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Get whoisRecord
-      description: "Get the specified whoisRecord resource.  Specify the desired whoisRecord in one of the following two ways:\n- Identify a host and get its current whoisRecord. \n- Specify an id value to get the corresponding whoisRecord. This API is available in the following national cloud deployments."
+      description: "Get the specified whoisRecord resource.  Specify the desired whoisRecord in one of the following two ways:\n- Identify a host and get its current whoisRecord. \n- Specify an id value to get the corresponding whoisRecord."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-whoisrecord-get?view=graph-rest-1.0
@@ -22649,7 +22649,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: List history
-      description: 'Get the history for a whoisRecord, as represented by a collection of whoisHistoryRecord resources. This API is available in the following national cloud deployments.'
+      description: 'Get the history for a whoisRecord, as represented by a collection of whoisHistoryRecord resources.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-whoisrecord-list-history?view=graph-rest-1.0
@@ -23046,7 +23046,7 @@ paths:
       tags:
         - security.triggersRoot
       summary: List retentionEvents
-      description: Get a list of the retentionEvent objects and their properties. This API is available in the following national cloud deployments.
+      description: Get a list of the retentionEvent objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-retentionevent-list?view=graph-rest-1.0
@@ -23142,7 +23142,7 @@ paths:
       tags:
         - security.triggersRoot
       summary: Create retentionEvent
-      description: Create a new retentionEvent object. This API is available in the following national cloud deployments.
+      description: Create a new retentionEvent object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-retentionevent-post?view=graph-rest-1.0
@@ -23169,7 +23169,7 @@ paths:
       tags:
         - security.triggersRoot
       summary: Get retentionEvent
-      description: Read the properties and relationships of a retentionEvent object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a retentionEvent object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-retentionevent-get?view=graph-rest-1.0
@@ -23265,7 +23265,7 @@ paths:
       tags:
         - security.triggersRoot
       summary: Delete retentionEvent
-      description: Delete a retentionEvent object. This API is available in the following national cloud deployments.
+      description: Delete a retentionEvent object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-retentionevent-delete?view=graph-rest-1.0
@@ -23449,7 +23449,7 @@ paths:
       tags:
         - security.triggerTypesRoot
       summary: List retentionEventTypes
-      description: Get a list of the retentionEventType objects and their properties. This API is available in the following national cloud deployments.
+      description: Get a list of the retentionEventType objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-retentioneventtype-list?view=graph-rest-1.0
@@ -23528,7 +23528,7 @@ paths:
       tags:
         - security.triggerTypesRoot
       summary: Create retentionEventType
-      description: Create a new retentionEventType object. This API is available in the following national cloud deployments.
+      description: Create a new retentionEventType object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-retentioneventtype-post?view=graph-rest-1.0
@@ -23555,7 +23555,7 @@ paths:
       tags:
         - security.triggerTypesRoot
       summary: Get retentionEventType
-      description: Read the properties and relationships of a retentionEventType object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a retentionEventType object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-retentioneventtype-get?view=graph-rest-1.0
@@ -24956,21 +24956,21 @@ components:
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Timestamp of when the group is set to expire. Is null for security groups but for Microsoft 365 groups, it represents when the group is set to expire as defined in the groupLifecyclePolicy. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.'
+              description: 'Timestamp of when the group is set to expire. It is null for security groups, but for Microsoft 365 groups, it represents when the group is set to expire as defined in the groupLifecyclePolicy. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.'
               format: date-time
               nullable: true
             groupTypes:
               type: array
               items:
                 type: string
-              description: 'Specifies the group type and its membership. If the collection contains Unified, the group is a Microsoft 365 group; otherwise, it''s either a security group or distribution group. For details, see groups overview.If the collection includes DynamicMembership, the group has dynamic membership; otherwise, membership is static. Returned by default. Supports $filter (eq, not).'
+              description: 'Specifies the group type and its membership. If the collection contains Unified, the group is a Microsoft 365 group; otherwise, it''s either a security group or a distribution group. For details, see groups overview.If the collection includes DynamicMembership, the group has dynamic membership; otherwise, membership is static. Returned by default. Supports $filter (eq, not).'
             hasMembersWithLicenseErrors:
               type: boolean
               description: 'Indicates whether there are members in this group that have license errors from its group-based license assignment. This property is never returned on a GET operation. You can use it as a $filter argument to get groups that have members with license errors (that is, filter for this property being true). See an example. Supports $filter (eq).'
               nullable: true
             isAssignableToRole:
               type: boolean
-              description: 'Indicates whether this group can be assigned to a Microsoft Entra role or not. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true, visibility must be Hidden, and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Microsoft Entra role assignmentsUsing this feature requires a Microsoft Entra ID P1 license. Returned by default. Supports $filter (eq, ne, not).'
+              description: 'Indicates whether this group can be assigned to a Microsoft Entra role. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true, visibility must be Hidden, and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Microsoft Entra role assignmentsUsing this feature requires a Microsoft Entra ID P1 license. Returned by default. Supports $filter (eq, ne, not).'
               nullable: true
             licenseProcessingState:
               $ref: '#/components/schemas/microsoft.graph.licenseProcessingState'
@@ -25013,11 +25013,11 @@ components:
               description: 'Errors when using Microsoft synchronization product during provisioning. Returned by default. Supports $filter (eq, not).'
             onPremisesSamAccountName:
               type: string
-              description: 'Contains the on-premises SAM account name synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect.Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith). Read-only.'
+              description: 'Contains the on-premises SAM account name synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect.Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith). Read-only.'
               nullable: true
             onPremisesSecurityIdentifier:
               type: string
-              description: Contains the on-premises security identifier (SID) for the group that was synchronized from on-premises to the cloud. Returned by default. Supports $filter (eq including on null values). Read-only.
+              description: Contains the on-premises security identifier (SID) for the group synchronized from on-premises to the cloud. Returned by default. Supports $filter (eq including on null values). Read-only.
               nullable: true
             onPremisesSyncEnabled:
               type: boolean
@@ -25029,7 +25029,7 @@ components:
               nullable: true
             preferredLanguage:
               type: string
-              description: 'The preferred language for a Microsoft 365 group. Should follow ISO 639-1 Code; for example en-US. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'The preferred language for a Microsoft 365 group. Should follow ISO 639-1 Code; for example, en-US. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             proxyAddresses:
               type: array
@@ -25039,7 +25039,7 @@ components:
             renewedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Timestamp of when the group was last renewed. This cannot be modified directly and is only updated via the renew service action. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.'
+              description: 'Timestamp of when the group was last renewed. This cannot be modified directly and is only updated via the renew service action. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.'
               format: date-time
               nullable: true
             securityEnabled:
@@ -25060,11 +25060,11 @@ components:
               nullable: true
             visibility:
               type: string
-              description: 'Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups, when the groups are created. It can''t be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. To learn more, see group visibility options. Returned by default. Nullable.'
+              description: 'Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups when the groups are created. It can''t be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default, and the Microsoft 365 group is Public. Groups assignable to roles are always Private. To learn more, see group visibility options. Returned by default. Nullable.'
               nullable: true
             allowExternalSenders:
               type: boolean
-              description: 'Indicates if people external to the organization can send messages to the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
+              description: 'Indicates if people external to the organization can send messages to the group. The default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
               nullable: true
             autoSubscribeNewMembers:
               type: boolean
@@ -25076,11 +25076,11 @@ components:
               nullable: true
             hideFromOutlookClients:
               type: boolean
-              description: 'True if the group is not displayed in Outlook clients, such as Outlook for Windows and Outlook on the web; otherwise, false. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
+              description: 'True if the group is not displayed in Outlook clients, such as Outlook for Windows and Outlook on the web; otherwise, false. The default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
               nullable: true
             isSubscribedByMail:
               type: boolean
-              description: 'Indicates whether the signed-in user is subscribed to receive email conversations. Default value is true. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
+              description: 'Indicates whether the signed-in user is subscribed to receive email conversations. The default value is true. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
               nullable: true
             unseenCount:
               maximum: 2147483647
@@ -25091,7 +25091,7 @@ components:
               nullable: true
             isArchived:
               type: boolean
-              description: 'When a group is associated with a team this property determines whether the team is in read-only mode.To read this property, use the /group/{groupId}/team endpoint or the Get team API. To update this property, use the archiveTeam and unarchiveTeam APIs.'
+              description: 'When a group is associated with a team, this property determines whether the team is in read-only mode.To read this property, use the /group/{groupId}/team endpoint or the Get team API. To update this property, use the archiveTeam and unarchiveTeam APIs.'
               nullable: true
             appRoleAssignments:
               type: array
@@ -25140,7 +25140,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'The groups that a group is a member of, either directly and through nested membership. Nullable.'
+              description: 'The groups that a group is a member of, either directly or through nested membership. Nullable.'
               x-ms-navigationProperty: true
             transitiveMembers:
               type: array
@@ -25152,7 +25152,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: The list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.
+              description: 'The list of users or groups allowed to create posts or calendar events in this group. If this list is non-empty, then only users or groups listed here are allowed to post.'
               x-ms-navigationProperty: true
             calendar:
               $ref: '#/components/schemas/microsoft.graph.calendar'
@@ -25178,7 +25178,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: The list of users or groups that are not allowed to create posts or calendar events in this group. Nullable
+              description: The list of users or groups not allowed to create posts or calendar events in this group. Nullable
               x-ms-navigationProperty: true
             threads:
               type: array
@@ -26372,6 +26372,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.profilePhoto'
+              description: The collection of the user's profile photos in different sizes. Read-only.
               x-ms-navigationProperty: true
             activities:
               type: array
@@ -31568,40 +31569,16 @@ components:
             type: object
     microsoft.graph.onlineMeeting:
       allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - $ref: '#/components/schemas/microsoft.graph.onlineMeetingBase'
         - title: onlineMeeting
           type: object
           properties:
-            allowAttendeeToEnableCamera:
-              type: boolean
-              description: Indicates whether attendees can turn on their camera.
-              nullable: true
-            allowAttendeeToEnableMic:
-              type: boolean
-              description: Indicates whether attendees can turn on their microphone.
-              nullable: true
-            allowedPresenters:
-              $ref: '#/components/schemas/microsoft.graph.onlineMeetingPresenters'
-            allowMeetingChat:
-              $ref: '#/components/schemas/microsoft.graph.meetingChatMode'
-            allowParticipantsToChangeName:
-              type: boolean
-              description: Specifies if participants are allowed to rename themselves in an instance of the meeting.
-              nullable: true
-            allowTeamworkReactions:
-              type: boolean
-              description: Indicates whether Teams reactions are enabled for the meeting.
-              nullable: true
             attendeeReport:
               type: string
               format: base64url
               nullable: true
-            audioConferencing:
-              $ref: '#/components/schemas/microsoft.graph.audioConferencing'
             broadcastSettings:
               $ref: '#/components/schemas/microsoft.graph.broadcastMeetingSettings'
-            chatInfo:
-              $ref: '#/components/schemas/microsoft.graph.chatInfo'
             creationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -31620,49 +31597,19 @@ components:
             isBroadcast:
               type: boolean
               nullable: true
-            isEntryExitAnnounced:
-              type: boolean
-              description: Indicates whether to announce when callers join or leave.
-              nullable: true
-            joinInformation:
-              $ref: '#/components/schemas/microsoft.graph.itemBody'
-            joinMeetingIdSettings:
-              $ref: '#/components/schemas/microsoft.graph.joinMeetingIdSettings'
-            joinWebUrl:
-              type: string
-              description: The join URL of the online meeting. Read-only.
-              nullable: true
-            lobbyBypassSettings:
-              $ref: '#/components/schemas/microsoft.graph.lobbyBypassSettings'
             participants:
               $ref: '#/components/schemas/microsoft.graph.meetingParticipants'
-            recordAutomatically:
-              type: boolean
-              description: Indicates whether to record the meeting automatically.
-              nullable: true
-            shareMeetingChatHistoryDefault:
-              $ref: '#/components/schemas/microsoft.graph.meetingChatHistoryDefaultMode'
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
               description: The meeting start time in UTC.
               format: date-time
               nullable: true
-            subject:
-              type: string
-              description: The subject of the online meeting.
-              nullable: true
-            videoTeleconferenceId:
-              type: string
-              description: The video teleconferencing ID. Read-only.
-              nullable: true
-            watermarkProtection:
-              $ref: '#/components/schemas/microsoft.graph.watermarkProtectionValues'
-            attendanceReports:
+            recordings:
               type: array
               items:
-                $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReport'
-              description: The attendance reports of an online meeting. Read-only.
+                $ref: '#/components/schemas/microsoft.graph.callRecording'
+              description: The recordings of an online meeting. Read-only.
               x-ms-navigationProperty: true
             transcripts:
               type: array
@@ -34365,7 +34312,7 @@ components:
               nullable: true
             cTag:
               type: string
-              description: An eTag for the content of the item. This eTag is not changed if only the metadata is changed. Note This property is not returned if the item is a folder. Read-only.
+              description: An eTag for the content of the item. This eTag isn't changed if only the metadata is changed. Note This property isn't returned if the item is a folder. Read-only.
               nullable: true
             deleted:
               $ref: '#/components/schemas/microsoft.graph.deleted'
@@ -34430,6 +34377,8 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.permission'
               description: The set of permissions for the item. Read-only. Nullable.
               x-ms-navigationProperty: true
+            retentionLabel:
+              $ref: '#/components/schemas/microsoft.graph.itemRetentionLabel'
             subscriptions:
               type: array
               items:
@@ -34440,7 +34389,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.thumbnailSet'
-              description: 'Collection containing [ThumbnailSet][] objects associated with the item. For more info, see [getting thumbnails][]. Read-only. Nullable.'
+              description: 'Collection of [thumbnailSet][] objects associated with the item. For more information, see [getting thumbnails][]. Read-only. Nullable.'
               x-ms-navigationProperty: true
             versions:
               type: array
@@ -35403,7 +35352,7 @@ components:
           nullable: true
         provisioningStatus:
           type: string
-          description: 'The provisioning status of the service plan. The possible values are:Success - Service is fully provisioned.Disabled - Service has been disabled.ErrorStatus - The service plan has not been provisioned and is in an error state.PendingInput - Service is not yet provisioned; awaiting service confirmation.PendingActivation - Service is provisioned but requires explicit activation by administrator (for example, Intune_O365 service plan)PendingProvisioning - Microsoft has added a new service to the product SKU and it has not been activated in the tenant, yet.'
+          description: 'The provisioning status of the service plan. The possible values are:Success - Service is fully provisioned.Disabled - Service is disabled.Error - The service plan isn''t provisioned and is in an error state.PendingInput - The service isn''t provisioned and is awaiting service confirmation.PendingActivation - The service is provisioned but requires explicit activation by an administrator (for example, Intune_O365 service plan)PendingProvisioning - Microsoft has added a new service to the product SKU and it isn''t activated in the tenant.'
           nullable: true
         servicePlanId:
           pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
@@ -36744,55 +36693,64 @@ components:
               $ref: '#/components/schemas/microsoft.graph.userActivity'
           additionalProperties:
             type: object
-    microsoft.graph.onlineMeetingPresenters:
-      title: onlineMeetingPresenters
-      enum:
-        - everyone
-        - organization
-        - roleIsPresenter
-        - organizer
-        - unknownFutureValue
-      type: string
-    microsoft.graph.meetingChatMode:
-      title: meetingChatMode
-      enum:
-        - enabled
-        - disabled
-        - limited
-        - unknownFutureValue
-      type: string
-    microsoft.graph.audioConferencing:
-      title: audioConferencing
-      type: object
-      properties:
-        conferenceId:
-          type: string
-          description: The conference id of the online meeting.
-          nullable: true
-        dialinUrl:
-          type: string
-          description: A URL to the externally-accessible web page that contains dial-in information.
-          nullable: true
-        tollFreeNumber:
-          type: string
-          nullable: true
-        tollFreeNumbers:
-          type: array
-          items:
-            type: string
-            nullable: true
-          description: List of toll-free numbers that are displayed in the meeting invite.
-        tollNumber:
-          type: string
-          nullable: true
-        tollNumbers:
-          type: array
-          items:
-            type: string
-            nullable: true
-          description: List of toll numbers that are displayed in the meeting invite.
-      additionalProperties:
-        type: object
+    microsoft.graph.onlineMeetingBase:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: onlineMeetingBase
+          type: object
+          properties:
+            allowAttendeeToEnableCamera:
+              type: boolean
+              nullable: true
+            allowAttendeeToEnableMic:
+              type: boolean
+              nullable: true
+            allowedPresenters:
+              $ref: '#/components/schemas/microsoft.graph.onlineMeetingPresenters'
+            allowMeetingChat:
+              $ref: '#/components/schemas/microsoft.graph.meetingChatMode'
+            allowParticipantsToChangeName:
+              type: boolean
+              nullable: true
+            allowTeamworkReactions:
+              type: boolean
+              nullable: true
+            audioConferencing:
+              $ref: '#/components/schemas/microsoft.graph.audioConferencing'
+            chatInfo:
+              $ref: '#/components/schemas/microsoft.graph.chatInfo'
+            isEntryExitAnnounced:
+              type: boolean
+              nullable: true
+            joinInformation:
+              $ref: '#/components/schemas/microsoft.graph.itemBody'
+            joinMeetingIdSettings:
+              $ref: '#/components/schemas/microsoft.graph.joinMeetingIdSettings'
+            joinWebUrl:
+              type: string
+              nullable: true
+            lobbyBypassSettings:
+              $ref: '#/components/schemas/microsoft.graph.lobbyBypassSettings'
+            recordAutomatically:
+              type: boolean
+              nullable: true
+            shareMeetingChatHistoryDefault:
+              $ref: '#/components/schemas/microsoft.graph.meetingChatHistoryDefaultMode'
+            subject:
+              type: string
+              nullable: true
+            videoTeleconferenceId:
+              type: string
+              nullable: true
+            watermarkProtection:
+              $ref: '#/components/schemas/microsoft.graph.watermarkProtectionValues'
+            attendanceReports:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReport'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.broadcastMeetingSettings:
       title: broadcastMeetingSettings
       type: object
@@ -36819,54 +36777,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.chatInfo:
-      title: chatInfo
-      type: object
-      properties:
-        messageId:
-          type: string
-          description: The unique identifier of a message in a Microsoft Teams channel.
-          nullable: true
-        replyChainMessageId:
-          type: string
-          description: The ID of the reply message.
-          nullable: true
-        threadId:
-          type: string
-          description: The unique identifier for a thread in Microsoft Teams.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.joinMeetingIdSettings:
-      title: joinMeetingIdSettings
-      type: object
-      properties:
-        isPasscodeRequired:
-          type: boolean
-          description: Indicates whether a passcode is required to join a meeting when using joinMeetingId. Optional.
-          nullable: true
-        joinMeetingId:
-          type: string
-          description: The meeting ID to be used to join a meeting. Optional. Read-only.
-          nullable: true
-        passcode:
-          type: string
-          description: The passcode to join a meeting.  Optional. Read-only.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.lobbyBypassSettings:
-      title: lobbyBypassSettings
-      type: object
-      properties:
-        isDialInBypassEnabled:
-          type: boolean
-          description: Specifies whether or not to always let dial-in callers bypass the lobby. Optional.
-          nullable: true
-        scope:
-          $ref: '#/components/schemas/microsoft.graph.lobbyBypassScope'
-      additionalProperties:
-        type: object
     microsoft.graph.meetingParticipants:
       title: meetingParticipants
       type: object
@@ -36879,58 +36789,33 @@ components:
           $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
       additionalProperties:
         type: object
-    microsoft.graph.meetingChatHistoryDefaultMode:
-      title: meetingChatHistoryDefaultMode
-      enum:
-        - none
-        - all
-        - unknownFutureValue
-      type: string
-    microsoft.graph.watermarkProtectionValues:
-      title: watermarkProtectionValues
-      type: object
-      properties:
-        isEnabledForContentSharing:
-          type: boolean
-          description: Indicates whether to apply a watermark to any shared content.
-          nullable: true
-        isEnabledForVideo:
-          type: boolean
-          description: Indicates whether to apply a watermark to everyone's video feed.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.meetingAttendanceReport:
+    microsoft.graph.callRecording:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: meetingAttendanceReport
+        - title: callRecording
           type: object
           properties:
-            meetingEndDateTime:
+            content:
+              type: string
+              description: The content of the recording. Read-only.
+              format: base64url
+              nullable: true
+            createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: UTC time when the meeting ended. Read-only.
+              description: 'Date and time at which the recording was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
-            meetingStartDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+            meetingId:
               type: string
-              description: UTC time when the meeting started. Read-only.
-              format: date-time
+              description: The unique identifier of the onlineMeeting related to this recording. Read-only.
               nullable: true
-            totalParticipantCount:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              description: Total number of participants. Read-only.
-              format: int32
+            meetingOrganizer:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            recordingContentUrl:
+              type: string
+              description: The URL that can be used to access the content of the recording. Read-only.
               nullable: true
-            attendanceRecords:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.attendanceRecord'
-              description: List of attendance records of an attendance report. Read-only.
-              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.callTranscript:
@@ -38817,6 +38702,32 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.itemRetentionLabel:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: itemRetentionLabel
+          type: object
+          properties:
+            isLabelAppliedExplicitly:
+              type: boolean
+              description: 'Specifies whether the label is applied explicitly on the item. True indicates that the label is applied explicitly; otherwise, the label is inherited from its parent. Read-only.'
+              nullable: true
+            labelAppliedBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            labelAppliedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when the label was applied on the item. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+              format: date-time
+              nullable: true
+            name:
+              type: string
+              description: The retention label on the document. Read-write.
+              nullable: true
+            retentionSettings:
+              $ref: '#/components/schemas/microsoft.graph.retentionLabelSettings'
+          additionalProperties:
+            type: object
     microsoft.graph.thumbnailSet:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -40296,6 +40207,157 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.onlineMeetingPresenters:
+      title: onlineMeetingPresenters
+      enum:
+        - everyone
+        - organization
+        - roleIsPresenter
+        - organizer
+        - unknownFutureValue
+      type: string
+    microsoft.graph.meetingChatMode:
+      title: meetingChatMode
+      enum:
+        - enabled
+        - disabled
+        - limited
+        - unknownFutureValue
+      type: string
+    microsoft.graph.audioConferencing:
+      title: audioConferencing
+      type: object
+      properties:
+        conferenceId:
+          type: string
+          description: The conference id of the online meeting.
+          nullable: true
+        dialinUrl:
+          type: string
+          description: A URL to the externally-accessible web page that contains dial-in information.
+          nullable: true
+        tollFreeNumber:
+          type: string
+          nullable: true
+        tollFreeNumbers:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: List of toll-free numbers that are displayed in the meeting invite.
+        tollNumber:
+          type: string
+          nullable: true
+        tollNumbers:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: List of toll numbers that are displayed in the meeting invite.
+      additionalProperties:
+        type: object
+    microsoft.graph.chatInfo:
+      title: chatInfo
+      type: object
+      properties:
+        messageId:
+          type: string
+          description: The unique identifier of a message in a Microsoft Teams channel.
+          nullable: true
+        replyChainMessageId:
+          type: string
+          description: The ID of the reply message.
+          nullable: true
+        threadId:
+          type: string
+          description: The unique identifier for a thread in Microsoft Teams.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.joinMeetingIdSettings:
+      title: joinMeetingIdSettings
+      type: object
+      properties:
+        isPasscodeRequired:
+          type: boolean
+          description: Indicates whether a passcode is required to join a meeting when using joinMeetingId. Optional.
+          nullable: true
+        joinMeetingId:
+          type: string
+          description: The meeting ID to be used to join a meeting. Optional. Read-only.
+          nullable: true
+        passcode:
+          type: string
+          description: The passcode to join a meeting.  Optional. Read-only.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.lobbyBypassSettings:
+      title: lobbyBypassSettings
+      type: object
+      properties:
+        isDialInBypassEnabled:
+          type: boolean
+          description: Specifies whether or not to always let dial-in callers bypass the lobby. Optional.
+          nullable: true
+        scope:
+          $ref: '#/components/schemas/microsoft.graph.lobbyBypassScope'
+      additionalProperties:
+        type: object
+    microsoft.graph.meetingChatHistoryDefaultMode:
+      title: meetingChatHistoryDefaultMode
+      enum:
+        - none
+        - all
+        - unknownFutureValue
+      type: string
+    microsoft.graph.watermarkProtectionValues:
+      title: watermarkProtectionValues
+      type: object
+      properties:
+        isEnabledForContentSharing:
+          type: boolean
+          description: Indicates whether to apply a watermark to any shared content.
+          nullable: true
+        isEnabledForVideo:
+          type: boolean
+          description: Indicates whether to apply a watermark to everyone's video feed.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.meetingAttendanceReport:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: meetingAttendanceReport
+          type: object
+          properties:
+            meetingEndDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: UTC time when the meeting ended. Read-only.
+              format: date-time
+              nullable: true
+            meetingStartDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: UTC time when the meeting started. Read-only.
+              format: date-time
+              nullable: true
+            totalParticipantCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: Total number of participants. Read-only.
+              format: int32
+              nullable: true
+            attendanceRecords:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.attendanceRecord'
+              description: List of attendance records of an attendance report. Read-only.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.broadcastMeetingAudience:
       title: broadcastMeetingAudience
       enum:
@@ -40324,17 +40386,6 @@ components:
           description: The translation languages (choose up to 6).
       additionalProperties:
         type: object
-    microsoft.graph.lobbyBypassScope:
-      title: lobbyBypassScope
-      enum:
-        - organizer
-        - organization
-        - organizationAndFederated
-        - everyone
-        - unknownFutureValue
-        - invited
-        - organizationExcludingGuests
-      type: string
     microsoft.graph.meetingParticipantInfo:
       title: meetingParticipantInfo
       type: object
@@ -40349,36 +40400,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.attendanceRecord:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: attendanceRecord
-          type: object
-          properties:
-            attendanceIntervals:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.attendanceInterval'
-              description: List of time periods between joining and leaving a meeting.
-            emailAddress:
-              type: string
-              description: Email address of the user associated with this attendance record.
-              nullable: true
-            identity:
-              $ref: '#/components/schemas/microsoft.graph.identity'
-            role:
-              type: string
-              description: 'Role of the attendee. Possible values are: None, Attendee, Presenter, and Organizer.'
-              nullable: true
-            totalAttendanceInSeconds:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              description: Total duration of the attendances in seconds.
-              format: int32
-              nullable: true
-          additionalProperties:
-            type: object
     microsoft.graph.attestationLevel:
       title: attestationLevel
       enum:
@@ -41411,6 +41432,34 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.retentionLabelSettings:
+      title: retentionLabelSettings
+      type: object
+      properties:
+        behaviorDuringRetentionPeriod:
+          $ref: '#/components/schemas/microsoft.graph.security.behaviorDuringRetentionPeriod'
+        isContentUpdateAllowed:
+          type: boolean
+          description: Specifies whether updates to document content are allowed. Read-only.
+          nullable: true
+        isDeleteAllowed:
+          type: boolean
+          description: Specifies whether the document deletion is allowed. Read-only.
+          nullable: true
+        isLabelUpdateAllowed:
+          type: boolean
+          description: Specifies whether you're allowed to change the retention label on the document. Read-only.
+          nullable: true
+        isMetadataUpdateAllowed:
+          type: boolean
+          description: 'Specifies whether updates to the item metadata (for example, the Title field) are blocked. Read-only.'
+          nullable: true
+        isRecordLocked:
+          type: boolean
+          description: Specifies whether the item is locked. Read-write.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.thumbnail:
       title: thumbnail
       type: object
@@ -42537,6 +42586,47 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.lobbyBypassScope:
+      title: lobbyBypassScope
+      enum:
+        - organizer
+        - organization
+        - organizationAndFederated
+        - everyone
+        - unknownFutureValue
+        - invited
+        - organizationExcludingGuests
+      type: string
+    microsoft.graph.attendanceRecord:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: attendanceRecord
+          type: object
+          properties:
+            attendanceIntervals:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.attendanceInterval'
+              description: List of time periods between joining and leaving a meeting.
+            emailAddress:
+              type: string
+              description: Email address of the user associated with this attendance record.
+              nullable: true
+            identity:
+              $ref: '#/components/schemas/microsoft.graph.identity'
+            role:
+              type: string
+              description: 'Role of the attendee. Possible values are: None, Attendee, Presenter, and Organizer.'
+              nullable: true
+            totalAttendanceInSeconds:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: Total duration of the attendances in seconds.
+              format: int32
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.onlineMeetingRole:
       title: onlineMeetingRole
       enum:
@@ -42546,31 +42636,6 @@ components:
         - producer
         - coorganizer
       type: string
-    microsoft.graph.attendanceInterval:
-      title: attendanceInterval
-      type: object
-      properties:
-        durationInSeconds:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          description: 'Duration of the meeting interval in seconds; that is, the difference between joinDateTime and leaveDateTime.'
-          format: int32
-          nullable: true
-        joinDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          description: The time the attendee joined in UTC.
-          format: date-time
-          nullable: true
-        leaveDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          description: The time the attendee left in UTC.
-          format: date-time
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.alternativeSecurityId:
       title: alternativeSecurityId
       type: object
@@ -43055,6 +43120,15 @@ components:
               description: Indicates if the worksheet is protected.  Read-only.
           additionalProperties:
             type: object
+    microsoft.graph.security.behaviorDuringRetentionPeriod:
+      title: behaviorDuringRetentionPeriod
+      enum:
+        - doNotRetain
+        - retain
+        - retainAsRecord
+        - retainAsRegulatoryRecord
+        - unknownFutureValue
+      type: string
     microsoft.graph.printColorMode:
       title: printColorMode
       enum:
@@ -44173,6 +44247,31 @@ components:
         - deviceConfiguration
         - deviceIntent
       type: string
+    microsoft.graph.attendanceInterval:
+      title: attendanceInterval
+      type: object
+      properties:
+        durationInSeconds:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: 'Duration of the meeting interval in seconds; that is, the difference between joinDateTime and leaveDateTime.'
+          format: int32
+          nullable: true
+        joinDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The time the attendee joined in UTC.
+          format: date-time
+          nullable: true
+        leaveDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The time the attendee left in UTC.
+          format: date-time
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.teamworkConversationIdentity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identity'

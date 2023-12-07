@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new servicePrincipal object.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -34,7 +33,9 @@ New-MgServicePrincipal [-AccountEnabled] [-AddIns <IMicrosoftGraphAddIn[]>]
  [-Oauth2PermissionScopes <IMicrosoftGraphPermissionScope[]>]
  [-OwnedObjects <IMicrosoftGraphDirectoryObject[]>] [-Owners <IMicrosoftGraphDirectoryObject[]>]
  [-PasswordCredentials <IMicrosoftGraphPasswordCredential[]>] [-PreferredSingleSignOnMode <String>]
- [-PreferredTokenSigningKeyThumbprint <String>] [-ReplyUrls <String[]>]
+ [-PreferredTokenSigningKeyThumbprint <String>]
+ [-RemoteDesktopSecurityConfiguration <IMicrosoftGraphRemoteDesktopSecurityConfiguration>]
+ [-ReplyUrls <String[]>]
  [-ResourceSpecificApplicationPermissions <IMicrosoftGraphResourceSpecificPermission[]>]
  [-SamlSingleSignOnSettings <IMicrosoftGraphSamlSingleSignOnSettings>] [-ServicePrincipalNames <String[]>]
  [-ServicePrincipalType <String>] [-SignInAudience <String>]
@@ -53,7 +54,6 @@ New-MgServicePrincipal -BodyParameter <IMicrosoftGraphServicePrincipal> [-Confir
 
 ## DESCRIPTION
 Create a new servicePrincipal object.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -171,6 +171,7 @@ Accept wildcard characters: False
 
 ### -AppId
 The unique identifier for the associated application (its appId property).
+Alternate key.
 Supports $filter (eq, ne, not, in, startsWith).
 
 ```yaml
@@ -570,10 +571,10 @@ Accept wildcard characters: False
 ```
 
 ### -LoginUrl
-Specifies the URL where the service provider redirects the user to Azure AD to authenticate.
-Azure AD uses the URL to launch the application from Microsoft 365 or the Azure AD My Apps.
-When blank, Azure AD performs IdP-initiated sign-on for applications configured with SAML-based single sign-on.
-The user launches the application from Microsoft 365, the Azure AD My Apps, or the Azure AD SSO URL.
+Specifies the URL where the service provider redirects the user to Microsoft Entra ID to authenticate.
+Microsoft Entra ID uses the URL to launch the application from Microsoft 365 or the Microsoft Entra My Apps.
+When blank, Microsoft Entra ID performs IdP-initiated sign-on for applications configured with SAML-based single sign-on.
+The user launches the application from Microsoft 365, the Microsoft Entra My Apps, or the Microsoft Entra SSO URL.
 
 ```yaml
 Type: System.String
@@ -638,8 +639,8 @@ Accept wildcard characters: False
 ```
 
 ### -NotificationEmailAddresses
-Specifies the list of email addresses where Azure AD sends a notification when the active certificate is near the expiration date.
-This is only for the certificates used to sign the SAML token issued for Azure AD Gallery applications.
+Specifies the list of email addresses where Microsoft Entra ID sends a notification when the active certificate is near the expiration date.
+This is only for the certificates used to sign the SAML token issued for Microsoft Entra Gallery applications.
 
 ```yaml
 Type: System.String[]
@@ -747,7 +748,7 @@ Accept wildcard characters: False
 
 ### -PreferredSingleSignOnMode
 Specifies the single sign-on mode configured for this application.
-Azure AD uses the preferred single sign-on mode to launch the application from Microsoft 365 or the Azure AD My Apps.
+Microsoft Entra ID uses the preferred single sign-on mode to launch the application from Microsoft 365 or the My Apps portal.
 The supported values are password, saml, notSupported, and oidc.
 
 ```yaml
@@ -768,6 +769,22 @@ For applications that are not SAML, do not write or otherwise rely on this prope
 
 ```yaml
 Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RemoteDesktopSecurityConfiguration
+remoteDesktopSecurityConfiguration
+To construct, see NOTES section for REMOTEDESKTOPSECURITYCONFIGURATION properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRemoteDesktopSecurityConfiguration
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -831,7 +848,7 @@ Accept wildcard characters: False
 ### -ServicePrincipalNames
 Contains the list of identifiersUris, copied over from the associated application.
 Additional values can be added to hybrid applications.
-These values can be used to identify the permissions exposed by this app within Azure AD.
+These values can be used to identify the permissions exposed by this app within Microsoft Entra ID.
 For example,Client apps can specify a resource URI which is based on the values of this property to acquire an access token, which is the URI returned in the 'aud' claim.The any operator is required for filter expressions on multi-valued properties.
 Not nullable.
 Supports $filter (eq, not, ge, le, startsWith).
@@ -850,7 +867,7 @@ Accept wildcard characters: False
 
 ### -ServicePrincipalType
 Identifies whether the service principal represents an application, a managed identity, or a legacy application.
-This is set by Azure AD internally.
+This is set by Microsoft Entra ID internally.
 The servicePrincipalType property can be set to three different values: Application - A service principal that represents an application or service.
 The appId property identifies the associated app registration, and matches the appId of an application, possibly from a different tenant.
 If the associated app registration is missing, tokens are not issued for the service principal.ManagedIdentity - A service principal that represents a managed identity.
@@ -874,7 +891,7 @@ Accept wildcard characters: False
 ### -SignInAudience
 Specifies the Microsoft accounts that are supported for the current application.
 Read-only.
-Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization's Azure AD tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization's Azure AD tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization's Azure AD tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.
+Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization's Microsoft Entra tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization's Microsoft Entra tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization's Microsoft Entra tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.
 
 ```yaml
 Type: System.String
@@ -923,7 +940,7 @@ Accept wildcard characters: False
 
 ### -TokenEncryptionKeyId
 Specifies the keyId of a public key from the keyCredentials collection.
-When configured, Azure AD issues tokens for this application encrypted using the key specified by this property.
+When configured, Microsoft Entra ID issues tokens for this application encrypted using the key specified by this property.
 The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.
 
 ```yaml
@@ -1125,7 +1142,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[AlternativeNames <String[]>]`: Used to retrieve service principals by subscription, identify resource group and full resource ids for managed identities. Supports $filter (eq, not, ge, le, startsWith).
   - `[AppDescription <String>]`: The description exposed by the associated application.
   - `[AppDisplayName <String>]`: The display name exposed by the associated application.
-  - `[AppId <String>]`: The unique identifier for the associated application (its appId property). Supports $filter (eq, ne, not, in, startsWith).
+  - `[AppId <String>]`: The unique identifier for the associated application (its appId property). Alternate key. Supports $filter (eq, ne, not, in, startsWith).
   - `[AppManagementPolicies <IMicrosoftGraphAppManagementPolicy[]>]`: The appManagementPolicy applied to this application.
     - `[Description <String>]`: Description for this policy. Required.
     - `[DisplayName <String>]`: Display name for this policy. Required.
@@ -1196,11 +1213,11 @@ To create the parameters described below, construct a hash table containing the 
     - `[Uri <String>]`: 
   - `[FederatedIdentityCredentials <IMicrosoftGraphFederatedIdentityCredential[]>]`: Federated identities for a specific type of service principal - managed identity. Supports $expand and $filter (/$count eq 0, /$count ne 0).
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[Audiences <String[]>]`: The audience that can appear in the external token. This field is mandatory and should be set to api://AzureADTokenExchange for Azure AD. It says what Microsoft identity platform should accept in the aud claim in the incoming token. This value represents Azure AD in your external identity provider and has no fixed value across identity providers - you may need to create a new application registration in your identity provider to serve as the audience of this token. This field can only accept a single value and has a limit of 600 characters. Required.
-    - `[Description <String>]`: The un-validated, user-provided description of the federated identity credential. It has a limit of 600 characters. Optional.
-    - `[Issuer <String>]`: The URL of the external identity provider and must match the issuer claim of the external token being exchanged. The combination of the values of issuer and subject must be unique on the app. It has a limit of 600 characters. Required.
-    - `[Name <String>]`: is the unique identifier for the federated identity credential, which has a limit of 120 characters and must be URL friendly. It is immutable once created. Required. Not nullable. Supports $filter (eq).
-    - `[Subject <String>]`: Required. The identifier of the external software workload within the external identity provider. Like the audience value, it has no fixed format, as each identity provider uses their own - sometimes a GUID, sometimes a colon delimited identifier, sometimes arbitrary strings. The value here must match the sub claim within the token presented to Azure AD. The combination of issuer and subject must be unique on the app. It has a limit of 600 characters. Supports $filter (eq).
+    - `[Audiences <String[]>]`: The audience that can appear in the external token. This field is mandatory and should be set to api://AzureADTokenExchange for Microsoft Entra ID. It says what Microsoft identity platform should accept in the aud claim in the incoming token. This value represents Microsoft Entra ID in your external identity provider and has no fixed value across identity providers - you might need to create a new application registration in your identity provider to serve as the audience of this token. This field can only accept a single value and has a limit of 600 characters. Required.
+    - `[Description <String>]`: The unvalidated description of the federated identity credential, provided by the user. It has a limit of 600 characters. Optional.
+    - `[Issuer <String>]`: The URL of the external identity provider, which must match the issuer claim of the external token being exchanged. The combination of the values of issuer and subject must be unique within the app. It has a limit of 600 characters. Required.
+    - `[Name <String>]`: The unique identifier for the federated identity credential, which has a limit of 120 characters and must be URL friendly. The string is immutable after it's created. Required. Not nullable. Supports $filter (eq).
+    - `[Subject <String>]`: Required. The identifier of the external software workload within the external identity provider. Like the audience value, it has no fixed format; each identity provider uses their own - sometimes a GUID, sometimes a colon delimited identifier, sometimes arbitrary strings. The value here must match the sub claim within the token presented to Microsoft Entra ID. The combination of issuer and subject must be unique within the app. It has a limit of 600 characters. Supports $filter (eq).
   - `[HomeRealmDiscoveryPolicies <IMicrosoftGraphHomeRealmDiscoveryPolicy[]>]`: The homeRealmDiscoveryPolicies assigned to this service principal. Supports $expand.
     - `[AppliesTo <IMicrosoftGraphDirectoryObject[]>]`: 
     - `[Definition <String[]>]`: A string collection containing a JSON string that defines the rules and settings for a policy. The syntax for the definition differs for each derived policy type. Required.
@@ -1226,11 +1243,11 @@ To create the parameters described below, construct a hash table containing the 
     - `[StartDateTime <DateTime?>]`: The date and time at which the credential becomes valid.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     - `[Type <String>]`: The type of key credential; for example, Symmetric, AsymmetricX509Cert.
     - `[Usage <String>]`: A string that describes the purpose for which the key can be used; for example, Verify.
-  - `[LoginUrl <String>]`: Specifies the URL where the service provider redirects the user to Azure AD to authenticate. Azure AD uses the URL to launch the application from Microsoft 365 or the Azure AD My Apps. When blank, Azure AD performs IdP-initiated sign-on for applications configured with SAML-based single sign-on. The user launches the application from Microsoft 365, the Azure AD My Apps, or the Azure AD SSO URL.
+  - `[LoginUrl <String>]`: Specifies the URL where the service provider redirects the user to Microsoft Entra ID to authenticate. Microsoft Entra ID uses the URL to launch the application from Microsoft 365 or the Microsoft Entra My Apps. When blank, Microsoft Entra ID performs IdP-initiated sign-on for applications configured with SAML-based single sign-on. The user launches the application from Microsoft 365, the Microsoft Entra My Apps, or the Microsoft Entra SSO URL.
   - `[LogoutUrl <String>]`: Specifies the URL that will be used by Microsoft's authorization service to logout an user using OpenId Connect front-channel, back-channel or SAML logout protocols.
   - `[MemberOf <IMicrosoftGraphDirectoryObject[]>]`: Roles that this service principal is a member of. HTTP Methods: GET Read-only. Nullable. Supports $expand.
   - `[Notes <String>]`: Free text field to capture information about the service principal, typically used for operational purposes. Maximum allowed size is 1024 characters.
-  - `[NotificationEmailAddresses <String[]>]`: Specifies the list of email addresses where Azure AD sends a notification when the active certificate is near the expiration date. This is only for the certificates used to sign the SAML token issued for Azure AD Gallery applications.
+  - `[NotificationEmailAddresses <String[]>]`: Specifies the list of email addresses where Microsoft Entra ID sends a notification when the active certificate is near the expiration date. This is only for the certificates used to sign the SAML token issued for Microsoft Entra Gallery applications.
   - `[Oauth2PermissionGrants <IMicrosoftGraphOAuth2PermissionGrant[]>]`: Delegated permission grants authorizing this service principal to access an API on behalf of a signed-in user. Read-only. Nullable.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[ClientId <String>]`: The object id (not appId) of the client service principal for the application which is authorized to act on behalf of a signed-in user when accessing an API. Required. Supports $filter (eq only).
@@ -1256,10 +1273,17 @@ To create the parameters described below, construct a hash table containing the 
     - `[EndDateTime <DateTime?>]`: The date and time at which the password expires represented using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Optional.
     - `[Hint <String>]`: Contains the first three characters of the password. Read-only.
     - `[KeyId <String>]`: The unique identifier for the password.
-    - `[SecretText <String>]`: Read-only; Contains the strong passwords generated by Azure AD that are 16-64 characters in length. The generated password value is only returned during the initial POST request to addPassword. There is no way to retrieve this password in the future.
+    - `[SecretText <String>]`: Read-only; Contains the strong passwords generated by Microsoft Entra ID that are 16-64 characters in length. The generated password value is only returned during the initial POST request to addPassword. There is no way to retrieve this password in the future.
     - `[StartDateTime <DateTime?>]`: The date and time at which the password becomes valid. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Optional.
-  - `[PreferredSingleSignOnMode <String>]`: Specifies the single sign-on mode configured for this application. Azure AD uses the preferred single sign-on mode to launch the application from Microsoft 365 or the Azure AD My Apps. The supported values are password, saml, notSupported, and oidc.
+  - `[PreferredSingleSignOnMode <String>]`: Specifies the single sign-on mode configured for this application. Microsoft Entra ID uses the preferred single sign-on mode to launch the application from Microsoft 365 or the My Apps portal. The supported values are password, saml, notSupported, and oidc.
   - `[PreferredTokenSigningKeyThumbprint <String>]`: This property can be used on SAML applications (apps that have preferredSingleSignOnMode set to saml) to control which certificate is used to sign the SAML responses. For applications that are not SAML, do not write or otherwise rely on this property.
+  - `[RemoteDesktopSecurityConfiguration <IMicrosoftGraphRemoteDesktopSecurityConfiguration>]`: remoteDesktopSecurityConfiguration
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
+    - `[IsRemoteDesktopProtocolEnabled <Boolean?>]`: Determines if Microsoft Entra ID RDS authentication protocol for RDP is enabled.
+    - `[TargetDeviceGroups <IMicrosoftGraphTargetDeviceGroup[]>]`: The collection of target device groups that are associated with the RDS security configuration that will be enabled for SSO when a client connects to the target device over RDP using the new Microsoft Entra ID RDS authentication protocol.
+      - `[Id <String>]`: The unique identifier for an entity. Read-only.
+      - `[DisplayName <String>]`: Display name for the target device group.
   - `[ReplyUrls <String[]>]`: The URLs that user tokens are sent to for sign in with the associated application, or the redirect URIs that OAuth 2.0 authorization codes and access tokens are sent to for the associated application. Not nullable.
   - `[ResourceSpecificApplicationPermissions <IMicrosoftGraphResourceSpecificPermission[]>]`: The resource-specific application permissions exposed by this application. Currently, resource-specific permissions are only supported for Teams apps accessing to specific chats and teams using Microsoft Graph. Read-only.
     - `[Description <String>]`: Describes the level of access that the resource-specific permission represents.
@@ -1270,9 +1294,9 @@ To create the parameters described below, construct a hash table containing the 
   - `[SamlSingleSignOnSettings <IMicrosoftGraphSamlSingleSignOnSettings>]`: samlSingleSignOnSettings
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[RelayState <String>]`: The relative URI the service provider would redirect to after completion of the single sign-on flow.
-  - `[ServicePrincipalNames <String[]>]`: Contains the list of identifiersUris, copied over from the associated application. Additional values can be added to hybrid applications. These values can be used to identify the permissions exposed by this app within Azure AD. For example,Client apps can specify a resource URI which is based on the values of this property to acquire an access token, which is the URI returned in the 'aud' claim.The any operator is required for filter expressions on multi-valued properties. Not nullable.  Supports $filter (eq, not, ge, le, startsWith).
-  - `[ServicePrincipalType <String>]`: Identifies whether the service principal represents an application, a managed identity, or a legacy application. This is set by Azure AD internally. The servicePrincipalType property can be set to three different values: Application - A service principal that represents an application or service. The appId property identifies the associated app registration, and matches the appId of an application, possibly from a different tenant. If the associated app registration is missing, tokens are not issued for the service principal.ManagedIdentity - A service principal that represents a managed identity. Service principals representing managed identities can be granted access and permissions, but cannot be updated or modified directly.Legacy - A service principal that represents an app created before app registrations, or through legacy experiences. Legacy service principal can have credentials, service principal names, reply URLs, and other properties which are editable by an authorized user, but does not have an associated app registration. The appId value does not associate the service principal with an app registration. The service principal can only be used in the tenant where it was created.SocialIdp - For internal use.
-  - `[SignInAudience <String>]`: Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization's Azure AD tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization's Azure AD tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization's Azure AD tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.
+  - `[ServicePrincipalNames <String[]>]`: Contains the list of identifiersUris, copied over from the associated application. Additional values can be added to hybrid applications. These values can be used to identify the permissions exposed by this app within Microsoft Entra ID. For example,Client apps can specify a resource URI which is based on the values of this property to acquire an access token, which is the URI returned in the 'aud' claim.The any operator is required for filter expressions on multi-valued properties. Not nullable.  Supports $filter (eq, not, ge, le, startsWith).
+  - `[ServicePrincipalType <String>]`: Identifies whether the service principal represents an application, a managed identity, or a legacy application. This is set by Microsoft Entra ID internally. The servicePrincipalType property can be set to three different values: Application - A service principal that represents an application or service. The appId property identifies the associated app registration, and matches the appId of an application, possibly from a different tenant. If the associated app registration is missing, tokens are not issued for the service principal.ManagedIdentity - A service principal that represents a managed identity. Service principals representing managed identities can be granted access and permissions, but cannot be updated or modified directly.Legacy - A service principal that represents an app created before app registrations, or through legacy experiences. Legacy service principal can have credentials, service principal names, reply URLs, and other properties which are editable by an authorized user, but does not have an associated app registration. The appId value does not associate the service principal with an app registration. The service principal can only be used in the tenant where it was created.SocialIdp - For internal use.
+  - `[SignInAudience <String>]`: Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization's Microsoft Entra tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization's Microsoft Entra tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization's Microsoft Entra tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.
   - `[Synchronization <IMicrosoftGraphSynchronization>]`: synchronization
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -1412,7 +1436,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[SteadyStateFirstAchievedTime <DateTime?>]`: The time when steady state (no more changes to the process) was first achieved. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         - `[SteadyStateLastAchievedTime <DateTime?>]`: The time when steady state (no more changes to the process) was last achieved. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         - `[SynchronizedEntryCountByType <IMicrosoftGraphStringKeyLongValuePair[]>]`: Count of synchronized objects, listed by object type.
-          - `[Key <String>]`: The mapping of the user type from the source system to the target system. For example:User to User - For Azure AD to Azure AD synchronization worker to user - For Workday to Azure AD synchronization.
+          - `[Key <String>]`: The mapping of the user type from the source system to the target system. For example:User to User - For Microsoft Entra ID to Microsoft Entra ID synchronization worker to user - For Workday to Microsoft Entra synchronization.
           - `[Value <Int64?>]`: Total number of synchronized objects.
         - `[TroubleshootingUrl <String>]`: In the event of an error, the URL with the troubleshooting steps for the issue.
       - `[SynchronizationJobSettings <IMicrosoftGraphKeyValuePair[]>]`: Settings associated with the job. Some settings are inherited from the template.
@@ -1434,7 +1458,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[Value <String>]`: Value of the metadata property.
       - `[Schema <IMicrosoftGraphSynchronizationSchema>]`: synchronizationSchema
   - `[Tags <String[]>]`: Custom strings that can be used to categorize and identify the service principal. Not nullable. The value is the union of strings set here and on the associated application entity's tags property.Supports $filter (eq, not, ge, le, startsWith).
-  - `[TokenEncryptionKeyId <String>]`: Specifies the keyId of a public key from the keyCredentials collection. When configured, Azure AD issues tokens for this application encrypted using the key specified by this property. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.
+  - `[TokenEncryptionKeyId <String>]`: Specifies the keyId of a public key from the keyCredentials collection. When configured, Microsoft Entra ID issues tokens for this application encrypted using the key specified by this property. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.
   - `[TokenIssuancePolicies <IMicrosoftGraphTokenIssuancePolicy[]>]`: The tokenIssuancePolicies assigned to this service principal.
     - `[AppliesTo <IMicrosoftGraphDirectoryObject[]>]`: 
     - `[Definition <String[]>]`: A string collection containing a JSON string that defines the rules and settings for a policy. The syntax for the definition differs for each derived policy type. Required.
@@ -1490,11 +1514,11 @@ To create the parameters described below, construct a hash table containing the 
 
 `FEDERATEDIDENTITYCREDENTIALS <IMicrosoftGraphFederatedIdentityCredential[]>`: Federated identities for a specific type of service principal - managed identity. Supports $expand and $filter (/$count eq 0, /$count ne 0).
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[Audiences <String[]>]`: The audience that can appear in the external token. This field is mandatory and should be set to api://AzureADTokenExchange for Azure AD. It says what Microsoft identity platform should accept in the aud claim in the incoming token. This value represents Azure AD in your external identity provider and has no fixed value across identity providers - you may need to create a new application registration in your identity provider to serve as the audience of this token. This field can only accept a single value and has a limit of 600 characters. Required.
-  - `[Description <String>]`: The un-validated, user-provided description of the federated identity credential. It has a limit of 600 characters. Optional.
-  - `[Issuer <String>]`: The URL of the external identity provider and must match the issuer claim of the external token being exchanged. The combination of the values of issuer and subject must be unique on the app. It has a limit of 600 characters. Required.
-  - `[Name <String>]`: is the unique identifier for the federated identity credential, which has a limit of 120 characters and must be URL friendly. It is immutable once created. Required. Not nullable. Supports $filter (eq).
-  - `[Subject <String>]`: Required. The identifier of the external software workload within the external identity provider. Like the audience value, it has no fixed format, as each identity provider uses their own - sometimes a GUID, sometimes a colon delimited identifier, sometimes arbitrary strings. The value here must match the sub claim within the token presented to Azure AD. The combination of issuer and subject must be unique on the app. It has a limit of 600 characters. Supports $filter (eq).
+  - `[Audiences <String[]>]`: The audience that can appear in the external token. This field is mandatory and should be set to api://AzureADTokenExchange for Microsoft Entra ID. It says what Microsoft identity platform should accept in the aud claim in the incoming token. This value represents Microsoft Entra ID in your external identity provider and has no fixed value across identity providers - you might need to create a new application registration in your identity provider to serve as the audience of this token. This field can only accept a single value and has a limit of 600 characters. Required.
+  - `[Description <String>]`: The unvalidated description of the federated identity credential, provided by the user. It has a limit of 600 characters. Optional.
+  - `[Issuer <String>]`: The URL of the external identity provider, which must match the issuer claim of the external token being exchanged. The combination of the values of issuer and subject must be unique within the app. It has a limit of 600 characters. Required.
+  - `[Name <String>]`: The unique identifier for the federated identity credential, which has a limit of 120 characters and must be URL friendly. The string is immutable after it's created. Required. Not nullable. Supports $filter (eq).
+  - `[Subject <String>]`: Required. The identifier of the external software workload within the external identity provider. Like the audience value, it has no fixed format; each identity provider uses their own - sometimes a GUID, sometimes a colon delimited identifier, sometimes arbitrary strings. The value here must match the sub claim within the token presented to Microsoft Entra ID. The combination of issuer and subject must be unique within the app. It has a limit of 600 characters. Supports $filter (eq).
 
 `HOMEREALMDISCOVERYPOLICIES <IMicrosoftGraphHomeRealmDiscoveryPolicy[]>`: The homeRealmDiscoveryPolicies assigned to this service principal. Supports $expand.
   - `[AppliesTo <IMicrosoftGraphDirectoryObject[]>]`: 
@@ -1562,8 +1586,16 @@ To create the parameters described below, construct a hash table containing the 
   - `[EndDateTime <DateTime?>]`: The date and time at which the password expires represented using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Optional.
   - `[Hint <String>]`: Contains the first three characters of the password. Read-only.
   - `[KeyId <String>]`: The unique identifier for the password.
-  - `[SecretText <String>]`: Read-only; Contains the strong passwords generated by Azure AD that are 16-64 characters in length. The generated password value is only returned during the initial POST request to addPassword. There is no way to retrieve this password in the future.
+  - `[SecretText <String>]`: Read-only; Contains the strong passwords generated by Microsoft Entra ID that are 16-64 characters in length. The generated password value is only returned during the initial POST request to addPassword. There is no way to retrieve this password in the future.
   - `[StartDateTime <DateTime?>]`: The date and time at which the password becomes valid. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Optional.
+
+`REMOTEDESKTOPSECURITYCONFIGURATION <IMicrosoftGraphRemoteDesktopSecurityConfiguration>`: remoteDesktopSecurityConfiguration
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
+  - `[IsRemoteDesktopProtocolEnabled <Boolean?>]`: Determines if Microsoft Entra ID RDS authentication protocol for RDP is enabled.
+  - `[TargetDeviceGroups <IMicrosoftGraphTargetDeviceGroup[]>]`: The collection of target device groups that are associated with the RDS security configuration that will be enabled for SSO when a client connects to the target device over RDP using the new Microsoft Entra ID RDS authentication protocol.
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
+    - `[DisplayName <String>]`: Display name for the target device group.
 
 `RESOURCESPECIFICAPPLICATIONPERMISSIONS <IMicrosoftGraphResourceSpecificPermission[]>`: The resource-specific application permissions exposed by this application. Currently, resource-specific permissions are only supported for Teams apps accessing to specific chats and teams using Microsoft Graph. Read-only.
   - `[Description <String>]`: Describes the level of access that the resource-specific permission represents.
@@ -1715,7 +1747,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[SteadyStateFirstAchievedTime <DateTime?>]`: The time when steady state (no more changes to the process) was first achieved. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
       - `[SteadyStateLastAchievedTime <DateTime?>]`: The time when steady state (no more changes to the process) was last achieved. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
       - `[SynchronizedEntryCountByType <IMicrosoftGraphStringKeyLongValuePair[]>]`: Count of synchronized objects, listed by object type.
-        - `[Key <String>]`: The mapping of the user type from the source system to the target system. For example:User to User - For Azure AD to Azure AD synchronization worker to user - For Workday to Azure AD synchronization.
+        - `[Key <String>]`: The mapping of the user type from the source system to the target system. For example:User to User - For Microsoft Entra ID to Microsoft Entra ID synchronization worker to user - For Workday to Microsoft Entra synchronization.
         - `[Value <Int64?>]`: Total number of synchronized objects.
       - `[TroubleshootingUrl <String>]`: In the event of an error, the URL with the troubleshooting steps for the issue.
     - `[SynchronizationJobSettings <IMicrosoftGraphKeyValuePair[]>]`: Settings associated with the job. Some settings are inherited from the template.

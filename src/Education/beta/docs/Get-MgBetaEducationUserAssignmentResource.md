@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Get the properties of an education assignment resource associated with an assignment.
 Only teachers, students, and applications with application permissions can perform this operation.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -37,7 +36,6 @@ Get-MgBetaEducationUserAssignmentResource -InputObject <IEducationIdentity> [-Ex
 ## DESCRIPTION
 Get the properties of an education assignment resource associated with an assignment.
 Only teachers, students, and applications with application permissions can perform this operation.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

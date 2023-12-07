@@ -11,7 +11,6 @@ schema: 2.0.0
 Reprocess all group-based license assignments for the user.
 To learn more about group-based licensing, see What is group-based licensing in Microsoft Entra ID.
 Also see Identify and resolve license assignment problems for a group in Microsoft Entra ID for more details.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -29,7 +28,6 @@ Invoke-MgBetaLicenseUser -InputObject <IUsersActionsIdentity> [-Confirm] [-WhatI
 Reprocess all group-based license assignments for the user.
 To learn more about group-based licensing, see What is group-based licensing in Microsoft Entra ID.
 Also see Identify and resolve license assignment problems for a group in Microsoft Entra ID for more details.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -154,6 +152,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[NotebookId <String>]`: The unique identifier of notebook
   - `[OnenotePageId <String>]`: The unique identifier of onenotePage
   - `[OnenoteSectionId <String>]`: The unique identifier of onenoteSection
+  - `[OnlineMeetingId <String>]`: The unique identifier of onlineMeeting
   - `[OutlookTaskFolderId <String>]`: The unique identifier of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: The unique identifier of outlookTaskGroup
   - `[OutlookTaskId <String>]`: The unique identifier of outlookTask

@@ -11,7 +11,6 @@ schema: 2.0.0
 Retrieve the properties and relationships of an onlineMeeting object.
 For example, you can: Teams live event attendee report (deprecated) is an online meeting artifact.
 For details, see Online meeting artifacts and permissions.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -38,7 +37,6 @@ Get-MgUserOnlineMeeting -InputObject <ICloudCommunicationsIdentity> [-ExpandProp
 Retrieve the properties and relationships of an onlineMeeting object.
 For example, you can: Teams live event attendee report (deprecated) is an online meeting artifact.
 For details, see Online meeting artifacts and permissions.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -290,6 +288,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[AudioRoutingGroupId <String>]`: The unique identifier of audioRoutingGroup
   - `[CallId <String>]`: The unique identifier of call
   - `[CallRecordId <String>]`: The unique identifier of callRecord
+  - `[CallRecordingId <String>]`: The unique identifier of callRecording
   - `[CallTranscriptId <String>]`: The unique identifier of callTranscript
   - `[CommsOperationId <String>]`: The unique identifier of commsOperation
   - `[ContentSharingSessionId <String>]`: The unique identifier of contentSharingSession

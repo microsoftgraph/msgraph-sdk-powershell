@@ -8,7 +8,8 @@ schema: 2.0.0
 # Update-MgBetaServicePrincipalRemoteDesktopSecurityConfiguration
 
 ## SYNOPSIS
-Update the navigation property remoteDesktopSecurityConfiguration in servicePrincipals
+Update the properties of a remoteDesktopSecurityConfiguration object on the servicePrincipal.
+Use this configuration to enable or disable the Microsoft Entra ID Remote Desktop Services (RDS) authentication protocol to authenticate a user to Microsoft Entra joined or Microsoft Entra hybrid joined devices.
 
 ## SYNTAX
 
@@ -39,7 +40,8 @@ Update-MgBetaServicePrincipalRemoteDesktopSecurityConfiguration -InputObject <IA
 ```
 
 ## DESCRIPTION
-Update the navigation property remoteDesktopSecurityConfiguration in servicePrincipals
+Update the properties of a remoteDesktopSecurityConfiguration object on the servicePrincipal.
+Use this configuration to enable or disable the Microsoft Entra ID Remote Desktop Services (RDS) authentication protocol to authenticate a user to Microsoft Entra joined or Microsoft Entra hybrid joined devices.
 
 ## EXAMPLES
 
@@ -123,7 +125,7 @@ Accept wildcard characters: False
 ```
 
 ### -IsRemoteDesktopProtocolEnabled
-.
+Determines if Microsoft Entra ID RDS authentication protocol for RDP is enabled.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -153,7 +155,7 @@ Accept wildcard characters: False
 ```
 
 ### -TargetDeviceGroups
-.
+The collection of target device groups that are associated with the RDS security configuration that will be enabled for SSO when a client connects to the target device over RDP using the new Microsoft Entra ID RDS authentication protocol.
 To construct, see NOTES section for TARGETDEVICEGROUPS properties and create a hash table.
 
 ```yaml
@@ -224,10 +226,10 @@ To create the parameters described below, construct a hash table containing the 
 `BODYPARAMETER <IMicrosoftGraphRemoteDesktopSecurityConfiguration>`: remoteDesktopSecurityConfiguration
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[IsRemoteDesktopProtocolEnabled <Boolean?>]`: 
-  - `[TargetDeviceGroups <IMicrosoftGraphTargetDeviceGroup[]>]`: 
+  - `[IsRemoteDesktopProtocolEnabled <Boolean?>]`: Determines if Microsoft Entra ID RDS authentication protocol for RDP is enabled.
+  - `[TargetDeviceGroups <IMicrosoftGraphTargetDeviceGroup[]>]`: The collection of target device groups that are associated with the RDS security configuration that will be enabled for SSO when a client connects to the target device over RDP using the new Microsoft Entra ID RDS authentication protocol.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[DisplayName <String>]`: 
+    - `[DisplayName <String>]`: Display name for the target device group.
 
 `INPUTOBJECT <IApplicationsIdentity>`: Identity Parameter
   - `[AppId <String>]`: Alternate key of application
@@ -262,9 +264,9 @@ To create the parameters described below, construct a hash table containing the 
   - `[UniqueName <String>]`: Alternate key of application
   - `[UserId <String>]`: The unique identifier of user
 
-`TARGETDEVICEGROUPS <IMicrosoftGraphTargetDeviceGroup[]>`: .
+`TARGETDEVICEGROUPS <IMicrosoftGraphTargetDeviceGroup[]>`: The collection of target device groups that are associated with the RDS security configuration that will be enabled for SSO when a client connects to the target device over RDP using the new Microsoft Entra ID RDS authentication protocol.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[DisplayName <String>]`: 
+  - `[DisplayName <String>]`: Display name for the target device group.
 
 ## RELATED LINKS
 

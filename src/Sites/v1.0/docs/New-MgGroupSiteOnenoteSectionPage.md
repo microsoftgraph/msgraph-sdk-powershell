@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new page in the specified section.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -46,7 +45,6 @@ New-MgGroupSiteOnenoteSectionPage -InputObject <ISitesIdentity> [-AdditionalProp
 
 ## DESCRIPTION
 Create a new page in the specified section.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Get this organizational contact's manager.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Get-MgContactManager -InputObject <IIdentityDirectoryManagementIdentity> [-Expan
 
 ## DESCRIPTION
 Get this organizational contact's manager.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

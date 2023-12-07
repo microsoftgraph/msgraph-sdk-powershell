@@ -8,8 +8,7 @@ schema: 2.0.0
 # Add-MgShareListContentTypeCopy
 
 ## SYNOPSIS
-Add a copy of a content type][contentType] from a [site][site] to a [list][list].
-This API is available in the following [national cloud deployments.
+Add a copy of a [content type][contentType] from a [site][site] to a [list][list].
 
 ## SYNTAX
 
@@ -40,8 +39,7 @@ Add-MgShareListContentTypeCopy -InputObject <IFilesIdentity> [-AdditionalPropert
 ```
 
 ## DESCRIPTION
-Add a copy of a content type][contentType] from a [site][site] to a [list][list].
-This API is available in the following [national cloud deployments.
+Add a copy of a [content type][contentType] from a [site][site] to a [list][list].
 
 ## EXAMPLES
 

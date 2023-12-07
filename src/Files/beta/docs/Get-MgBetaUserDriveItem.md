@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgBetaUserDriveItem
 
 ## SYNOPSIS
-Retrieve the metadata for a bundle][] based on the unique ID of the bundle.
-This API is available in the following [national cloud deployments.
+Retrieve the metadata for a [bundle][] based on the unique ID of the bundle.
 
 ## SYNTAX
 
@@ -33,8 +32,7 @@ Get-MgBetaUserDriveItem -InputObject <IFilesIdentity> [-ExpandProperty <String[]
 ```
 
 ## DESCRIPTION
-Retrieve the metadata for a bundle][] based on the unique ID of the bundle.
-This API is available in the following [national cloud deployments.
+Retrieve the metadata for a [bundle][] based on the unique ID of the bundle.
 
 ## EXAMPLES
 

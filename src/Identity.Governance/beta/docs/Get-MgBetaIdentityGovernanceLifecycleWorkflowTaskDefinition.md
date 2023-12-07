@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Read the details of a built-in workflow task.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -34,7 +33,6 @@ Get-MgBetaIdentityGovernanceLifecycleWorkflowTaskDefinition -InputObject <IIdent
 
 ## DESCRIPTION
 Read the details of a built-in workflow task.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

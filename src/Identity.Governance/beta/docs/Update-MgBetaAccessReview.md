@@ -13,7 +13,6 @@ This API is not intended to change the reviewers or decisions of a review.
 To change the reviewers, use the addReviewer or removeReviewer APIs.
 To stop an already-started one-time review, or an already-started instance of a recurring review, early, use the stop API.
 To apply the decisions to the target group or app access rights, use the apply API.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -59,7 +58,6 @@ This API is not intended to change the reviewers or decisions of a review.
 To change the reviewers, use the addReviewer or removeReviewer APIs.
 To stop an already-started one-time review, or an already-started instance of a recurring review, early, use the stop API.
 To apply the decisions to the target group or app access rights, use the apply API.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Hide a chat for a user.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -41,7 +40,6 @@ Hide-MgChatForUser -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtab
 
 ## DESCRIPTION
 Hide a chat for a user.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

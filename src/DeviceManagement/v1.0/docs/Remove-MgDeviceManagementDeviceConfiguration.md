@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDeviceManagementDeviceConfiguration
 
 ## SYNOPSIS
-Deletes a windows10EndpointProtectionConfiguration.
+Deletes a windowsDefenderAdvancedThreatProtectionConfiguration.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgDeviceManagementDeviceConfiguration -InputObject <IDeviceManagementIden
 ```
 
 ## DESCRIPTION
-Deletes a windows10EndpointProtectionConfiguration.
+Deletes a windowsDefenderAdvancedThreatProtectionConfiguration.
 
 ## EXAMPLES
 

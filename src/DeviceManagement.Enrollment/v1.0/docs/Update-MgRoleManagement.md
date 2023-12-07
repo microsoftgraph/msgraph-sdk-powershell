@@ -324,14 +324,14 @@ To create the parameters described below, construct a hash table containing the 
     - `[RoleAssignments <IMicrosoftGraphUnifiedRoleAssignment[]>]`: Resource to grant access to users or groups.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[AppScope <IMicrosoftGraphAppScope>]`: appScope
-      - `[AppScopeId <String>]`: Identifier of the app-specific scope when the assignment scope is app-specific.  Either this property or directoryScopeId is required. App scopes are scopes that are defined and understood by this application only. Use / for tenant-wide app scopes. Use directoryScopeId to limit the scope to particular directory objects, for example, administrative units. Supports $filter (eq, in).
+      - `[AppScopeId <String>]`: Identifier of the app specific scope when the assignment scope is app specific. The scope of an assignment determines the set of resources for which the principal has been granted access. App scopes are scopes that are defined and understood by a resource application only. For the entitlement management provider, use this property to specify a catalog, for example /AccessPackageCatalog/beedadfe-01d5-4025-910b-84abb9369997. Supports $filter (eq, in). For example /roleManagement/entitlementManagement/roleAssignments?$filter=appScopeId eq '/AccessPackageCatalog/{catalog id}'.
       - `[Condition <String>]`: 
       - `[DirectoryScope <IMicrosoftGraphDirectoryObject>]`: directoryObject
-      - `[DirectoryScopeId <String>]`: Identifier of the directory object representing the scope of the assignment.  Either this property or appScopeId is required. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use / for tenant-wide scope. Use appScopeId to limit the scope to an application only. Supports $filter (eq, in).
+      - `[DirectoryScopeId <String>]`: Identifier of the directory object representing the scope of the assignment. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications, unlike app scopes that are defined and understood by a resource application only. Supports $filter (eq, in).
       - `[Principal <IMicrosoftGraphDirectoryObject>]`: directoryObject
-      - `[PrincipalId <String>]`: Identifier of the principal to which the assignment is granted. Supports $filter (eq, in).
+      - `[PrincipalId <String>]`: Identifier of the principal to which the assignment is granted. Supported principals are users, role-assignable groups, and service principals. Supports $filter (eq, in).
       - `[RoleDefinition <IMicrosoftGraphUnifiedRoleDefinition>]`: unifiedRoleDefinition
-      - `[RoleDefinitionId <String>]`: Identifier of the role definition the assignment is for. Read only. Supports $filter (eq, in).
+      - `[RoleDefinitionId <String>]`: Identifier of the unifiedRoleDefinition the assignment is for. Read-only. Supports $filter (eq, in).
     - `[RoleDefinitions <IMicrosoftGraphUnifiedRoleDefinition[]>]`: Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
     - `[RoleEligibilityScheduleInstances <IMicrosoftGraphUnifiedRoleEligibilityScheduleInstance[]>]`: Instances for role eligibility requests.
     - `[RoleEligibilityScheduleRequests <IMicrosoftGraphUnifiedRoleEligibilityScheduleRequest[]>]`: Requests for role eligibilities for principals through PIM.
@@ -523,14 +523,14 @@ To create the parameters described below, construct a hash table containing the 
   - `[RoleAssignments <IMicrosoftGraphUnifiedRoleAssignment[]>]`: Resource to grant access to users or groups.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[AppScope <IMicrosoftGraphAppScope>]`: appScope
-    - `[AppScopeId <String>]`: Identifier of the app-specific scope when the assignment scope is app-specific.  Either this property or directoryScopeId is required. App scopes are scopes that are defined and understood by this application only. Use / for tenant-wide app scopes. Use directoryScopeId to limit the scope to particular directory objects, for example, administrative units. Supports $filter (eq, in).
+    - `[AppScopeId <String>]`: Identifier of the app specific scope when the assignment scope is app specific. The scope of an assignment determines the set of resources for which the principal has been granted access. App scopes are scopes that are defined and understood by a resource application only. For the entitlement management provider, use this property to specify a catalog, for example /AccessPackageCatalog/beedadfe-01d5-4025-910b-84abb9369997. Supports $filter (eq, in). For example /roleManagement/entitlementManagement/roleAssignments?$filter=appScopeId eq '/AccessPackageCatalog/{catalog id}'.
     - `[Condition <String>]`: 
     - `[DirectoryScope <IMicrosoftGraphDirectoryObject>]`: directoryObject
-    - `[DirectoryScopeId <String>]`: Identifier of the directory object representing the scope of the assignment.  Either this property or appScopeId is required. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use / for tenant-wide scope. Use appScopeId to limit the scope to an application only. Supports $filter (eq, in).
+    - `[DirectoryScopeId <String>]`: Identifier of the directory object representing the scope of the assignment. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications, unlike app scopes that are defined and understood by a resource application only. Supports $filter (eq, in).
     - `[Principal <IMicrosoftGraphDirectoryObject>]`: directoryObject
-    - `[PrincipalId <String>]`: Identifier of the principal to which the assignment is granted. Supports $filter (eq, in).
+    - `[PrincipalId <String>]`: Identifier of the principal to which the assignment is granted. Supported principals are users, role-assignable groups, and service principals. Supports $filter (eq, in).
     - `[RoleDefinition <IMicrosoftGraphUnifiedRoleDefinition>]`: unifiedRoleDefinition
-    - `[RoleDefinitionId <String>]`: Identifier of the role definition the assignment is for. Read only. Supports $filter (eq, in).
+    - `[RoleDefinitionId <String>]`: Identifier of the unifiedRoleDefinition the assignment is for. Read-only. Supports $filter (eq, in).
   - `[RoleDefinitions <IMicrosoftGraphUnifiedRoleDefinition[]>]`: Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
   - `[RoleEligibilityScheduleInstances <IMicrosoftGraphUnifiedRoleEligibilityScheduleInstance[]>]`: Instances for role eligibility requests.
   - `[RoleEligibilityScheduleRequests <IMicrosoftGraphUnifiedRoleEligibilityScheduleRequest[]>]`: Requests for role eligibilities for principals through PIM.
@@ -721,14 +721,14 @@ To create the parameters described below, construct a hash table containing the 
   - `[RoleAssignments <IMicrosoftGraphUnifiedRoleAssignment[]>]`: Resource to grant access to users or groups.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[AppScope <IMicrosoftGraphAppScope>]`: appScope
-    - `[AppScopeId <String>]`: Identifier of the app-specific scope when the assignment scope is app-specific.  Either this property or directoryScopeId is required. App scopes are scopes that are defined and understood by this application only. Use / for tenant-wide app scopes. Use directoryScopeId to limit the scope to particular directory objects, for example, administrative units. Supports $filter (eq, in).
+    - `[AppScopeId <String>]`: Identifier of the app specific scope when the assignment scope is app specific. The scope of an assignment determines the set of resources for which the principal has been granted access. App scopes are scopes that are defined and understood by a resource application only. For the entitlement management provider, use this property to specify a catalog, for example /AccessPackageCatalog/beedadfe-01d5-4025-910b-84abb9369997. Supports $filter (eq, in). For example /roleManagement/entitlementManagement/roleAssignments?$filter=appScopeId eq '/AccessPackageCatalog/{catalog id}'.
     - `[Condition <String>]`: 
     - `[DirectoryScope <IMicrosoftGraphDirectoryObject>]`: directoryObject
-    - `[DirectoryScopeId <String>]`: Identifier of the directory object representing the scope of the assignment.  Either this property or appScopeId is required. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use / for tenant-wide scope. Use appScopeId to limit the scope to an application only. Supports $filter (eq, in).
+    - `[DirectoryScopeId <String>]`: Identifier of the directory object representing the scope of the assignment. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications, unlike app scopes that are defined and understood by a resource application only. Supports $filter (eq, in).
     - `[Principal <IMicrosoftGraphDirectoryObject>]`: directoryObject
-    - `[PrincipalId <String>]`: Identifier of the principal to which the assignment is granted. Supports $filter (eq, in).
+    - `[PrincipalId <String>]`: Identifier of the principal to which the assignment is granted. Supported principals are users, role-assignable groups, and service principals. Supports $filter (eq, in).
     - `[RoleDefinition <IMicrosoftGraphUnifiedRoleDefinition>]`: unifiedRoleDefinition
-    - `[RoleDefinitionId <String>]`: Identifier of the role definition the assignment is for. Read only. Supports $filter (eq, in).
+    - `[RoleDefinitionId <String>]`: Identifier of the unifiedRoleDefinition the assignment is for. Read-only. Supports $filter (eq, in).
   - `[RoleDefinitions <IMicrosoftGraphUnifiedRoleDefinition[]>]`: Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
   - `[RoleEligibilityScheduleInstances <IMicrosoftGraphUnifiedRoleEligibilityScheduleInstance[]>]`: Instances for role eligibility requests.
   - `[RoleEligibilityScheduleRequests <IMicrosoftGraphUnifiedRoleEligibilityScheduleRequest[]>]`: Requests for role eligibilities for principals through PIM.

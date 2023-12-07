@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgBetaSiteContentType
 
 ## SYNOPSIS
-Retrieve the metadata for a content type][contentType] in a [site][] or a [list][].
-This API is available in the following [national cloud deployments.
+Retrieve the metadata for a [content type][contentType] in a [site][] or a [list][].
 
 ## SYNTAX
 
@@ -33,8 +32,7 @@ Get-MgBetaSiteContentType -InputObject <ISitesIdentity> [-ExpandProperty <String
 ```
 
 ## DESCRIPTION
-Retrieve the metadata for a content type][contentType] in a [site][] or a [list][].
-This API is available in the following [national cloud deployments.
+Retrieve the metadata for a [content type][contentType] in a [site][] or a [list][].
 
 ## EXAMPLES
 

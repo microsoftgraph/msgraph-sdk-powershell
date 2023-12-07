@@ -11,7 +11,6 @@ schema: 2.0.0
 Delete an accessPackageAssignmentRequest object.
 This request can be made to remove a denied or completed request.
 You cannot delete an access package assignment request if it has any accessPackageAssignment objects.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -31,7 +30,6 @@ Remove-MgEntitlementManagementAssignmentRequest -InputObject <IIdentityGovernanc
 Delete an accessPackageAssignmentRequest object.
 This request can be made to remove a denied or completed request.
 You cannot delete an access package assignment request if it has any accessPackageAssignment objects.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

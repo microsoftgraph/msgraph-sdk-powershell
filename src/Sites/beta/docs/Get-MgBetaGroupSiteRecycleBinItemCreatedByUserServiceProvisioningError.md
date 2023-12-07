@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
-Supports $filter (eq, not, for isResolved and serviceInstance).
 
 ## SYNTAX
 
@@ -22,7 +21,6 @@ Get-MgBetaGroupSiteRecycleBinItemCreatedByUserServiceProvisioningError -GroupId 
 
 ## DESCRIPTION
 Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
-Supports $filter (eq, not, for isResolved and serviceInstance).
 
 ## EXAMPLES
 

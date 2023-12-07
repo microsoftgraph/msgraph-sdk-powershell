@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaUserTransitiveMemberOf
 
 ## SYNOPSIS
-The groups, including nested groups, and directory roles that a user is a member of.
+The groups, including nested groups and directory roles that a user is a member of.
 Nullable.
 
 ## SYNTAX
@@ -33,7 +33,7 @@ Get-MgBetaUserTransitiveMemberOf -InputObject <IUsersIdentity> [-ExpandProperty 
 ```
 
 ## DESCRIPTION
-The groups, including nested groups, and directory roles that a user is a member of.
+The groups, including nested groups and directory roles that a user is a member of.
 Nullable.
 
 ## EXAMPLES

@@ -11,7 +11,6 @@ schema: 2.0.0
 Update the properties of a workflow object.
 Only the properties listed in the request body table can be updated.
 To update any other workflow properties, see workflow: createNewVersion.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -61,7 +60,6 @@ Update-MgIdentityGovernanceLifecycleWorkflow -InputObject <IIdentityGovernanceId
 Update the properties of a workflow object.
 Only the properties listed in the request body table can be updated.
 To update any other workflow properties, see workflow: createNewVersion.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 The roleDefinition the assignment is for.
 Supports $expand.
-roleDefinition.Id will be auto expanded.
 
 ## SYNTAX
 
@@ -29,7 +28,6 @@ Get-MgRoleManagementDirectoryRoleAssignmentRoleDefinition -InputObject <IIdentit
 ## DESCRIPTION
 The roleDefinition the assignment is for.
 Supports $expand.
-roleDefinition.Id will be auto expanded.
 
 ## EXAMPLES
 

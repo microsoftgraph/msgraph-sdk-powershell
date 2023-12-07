@@ -41,10 +41,10 @@ New-MgBetaDeviceAppManagementiOSManagedAppProtection [-AdditionalProperties <Has
  [-ManagedBrowserToOpenLinksRequired] [-ManagedUniversalLinks <String[]>]
  [-MaximumAllowedDeviceThreatLevel <ManagedAppDeviceThreatLevel>] [-MaximumPinRetries <Int32>]
  [-MaximumRequiredOSVersion <String>] [-MaximumWarningOSVersion <String>] [-MaximumWipeOSVersion <String>]
- [-MinimumPinLength <Int32>] [-MinimumRequiredAppVersion <String>] [-MinimumRequiredOSVersion <String>]
- [-MinimumRequiredSdkVersion <String>] [-MinimumWarningAppVersion <String>]
- [-MinimumWarningOSVersion <String>] [-MinimumWarningSdkVersion <String>] [-MinimumWipeAppVersion <String>]
- [-MinimumWipeOSVersion <String>] [-MinimumWipeSdkVersion <String>]
+ [-MessagingRedirectAppUrlScheme <String>] [-MinimumPinLength <Int32>] [-MinimumRequiredAppVersion <String>]
+ [-MinimumRequiredOSVersion <String>] [-MinimumRequiredSdkVersion <String>]
+ [-MinimumWarningAppVersion <String>] [-MinimumWarningOSVersion <String>] [-MinimumWarningSdkVersion <String>]
+ [-MinimumWipeAppVersion <String>] [-MinimumWipeOSVersion <String>] [-MinimumWipeSdkVersion <String>]
  [-MobileThreatDefensePartnerPriority <MobileThreatDefensePartnerPriority>]
  [-MobileThreatDefenseRemediationAction <ManagedAppRemediationAction>]
  [-NotificationRestriction <ManagedAppNotificationRestriction>] [-OrganizationalCredentialsRequired]
@@ -52,7 +52,8 @@ New-MgBetaDeviceAppManagementiOSManagedAppProtection [-AdditionalProperties <Has
  [-PeriodOfflineBeforeWipeIsEnforced <TimeSpan>] [-PeriodOnlineBeforeAccessCheck <TimeSpan>]
  [-PinCharacterSet <ManagedAppPinCharacterSet>] [-PinRequired]
  [-PinRequiredInsteadOfBiometricTimeout <TimeSpan>] [-PreviousPinBlockCount <Int32>] [-PrintBlocked]
- [-ProtectInboundDataFromUnknownSources] [-RoleScopeTagIds <String[]>] [-SaveAsBlocked] [-SimplePinBlocked]
+ [-ProtectedMessagingRedirectAppType <MessagingRedirectAppType>] [-ProtectInboundDataFromUnknownSources]
+ [-RoleScopeTagIds <String[]>] [-SaveAsBlocked] [-SimplePinBlocked]
  [-TargetedAppManagementLevels <AppManagementLevel>] [-ThirdPartyKeyboardsBlocked] [-Version <String>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -814,6 +815,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -MessagingRedirectAppUrlScheme
+When a specific app redirection is enforced by protectedMessagingRedirectAppType in an App Protection Policy, this value defines the app url redirect schemes which are allowed to be used.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -MinimumPinLength
 Minimum pin length required for an app-level pin if PinRequired is set to True
 
@@ -1159,6 +1175,22 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -ProtectedMessagingRedirectAppType
+Defines how app messaging redirection is protected by an App Protection Policy.
+Default is anyApp.
+
+```yaml
+Type: Microsoft.Graph.Beta.PowerShell.Support.MessagingRedirectAppType
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -ProtectInboundDataFromUnknownSources
 Protect incoming data from unknown source.
 This setting is only allowed to be True when AllowedInboundDataTransferSources is set to AllApps.
@@ -1390,6 +1422,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[PinRequiredInsteadOfBiometricTimeout <TimeSpan?>]`: Timeout in minutes for an app pin instead of non biometrics passcode
   - `[PreviousPinBlockCount <Int32?>]`: Requires a pin to be unique from the number specified in this property.
   - `[PrintBlocked <Boolean?>]`: Indicates whether printing is allowed from managed apps.
+  - `[ProtectedMessagingRedirectAppType <MessagingRedirectAppType?>]`: Defines how app messaging redirection is protected by an App Protection Policy. Default is anyApp.
   - `[SaveAsBlocked <Boolean?>]`: Indicates whether users may use the 'Save As' menu item to save a copy of protected files.
   - `[SimplePinBlocked <Boolean?>]`: Indicates whether simplePin is blocked.
   - `[CreatedDateTime <DateTime?>]`: The date and time the policy was created.
@@ -1422,12 +1455,13 @@ To create the parameters described below, construct a hash table containing the 
     - `[Version <String>]`: Version of the entity.
   - `[DisableProtectionOfManagedOutboundOpenInData <Boolean?>]`: Disable protection of data transferred to other apps through IOS OpenIn option. This setting is only allowed to be True when AllowedOutboundDataTransferDestinations is set to ManagedApps.
   - `[ExemptedAppProtocols <IMicrosoftGraphKeyValuePair[]>]`: Apps in this list will be exempt from the policy and will be able to receive data from managed apps.
-    - `[Name <String>]`: Name for this key-value pair
-    - `[Value <String>]`: Value for this key-value pair
+    - `[Name <String>]`: Name for this key-value pair. For more information about possible names for each resource type that uses this configuration, see keyValuePair names and values.
+    - `[Value <String>]`: Value for this key-value pair. For more information about possible values for each resource type that uses this configuration, see keyValuePair names and values.
   - `[ExemptedUniversalLinks <String[]>]`: A list of custom urls that are allowed to invocate an unmanaged app
   - `[FaceIdBlocked <Boolean?>]`: Indicates whether use of the FaceID is allowed in place of a pin if PinRequired is set to True.
   - `[FilterOpenInToOnlyManagedApps <Boolean?>]`: Defines if open-in operation is supported from the managed app to the filesharing locations selected. This setting only applies when AllowedOutboundDataTransferDestinations is set to ManagedApps and DisableProtectionOfManagedOutboundOpenInData is set to False.
   - `[ManagedUniversalLinks <String[]>]`: A list of custom urls that are allowed to invocate a managed app
+  - `[MessagingRedirectAppUrlScheme <String>]`: When a specific app redirection is enforced by protectedMessagingRedirectAppType in an App Protection Policy, this value defines the app url redirect schemes which are allowed to be used.
   - `[MinimumRequiredSdkVersion <String>]`: Versions less than the specified version will block the managed app from accessing company data.
   - `[MinimumWarningSdkVersion <String>]`: Versions less than the specified version will result in warning message on the managed app from accessing company data.
   - `[MinimumWipeSdkVersion <String>]`: Versions less than the specified version will block the managed app from accessing company data.
@@ -1447,8 +1481,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[Version <String>]`: Version of the entity.
 
 `EXEMPTEDAPPPROTOCOLS <IMicrosoftGraphKeyValuePair[]>`: Apps in this list will be exempt from the policy and will be able to receive data from managed apps.
-  - `[Name <String>]`: Name for this key-value pair
-  - `[Value <String>]`: Value for this key-value pair
+  - `[Name <String>]`: Name for this key-value pair. For more information about possible names for each resource type that uses this configuration, see keyValuePair names and values.
+  - `[Value <String>]`: Value for this key-value pair. For more information about possible values for each resource type that uses this configuration, see keyValuePair names and values.
 
 ## RELATED LINKS
 

@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Get the properties and relationships of an alert in an organization based on the specified alert id property.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -34,7 +33,6 @@ Get-MgSecurityAlertV2 -InputObject <ISecurityIdentity> [-ExpandProperty <String[
 
 ## DESCRIPTION
 Get the properties and relationships of an alert in an organization based on the specified alert id property.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

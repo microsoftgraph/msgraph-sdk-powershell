@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgAdminPeople
 
 ## SYNOPSIS
-Get people from admin
+Retrieve the properties and relationships of a peopleAdminSettings object.
 
 ## SYNTAX
 
@@ -17,7 +17,7 @@ Get-MgAdminPeople [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonPa
 ```
 
 ## DESCRIPTION
-Get people from admin
+Retrieve the properties and relationships of a peopleAdminSettings object.
 
 ## EXAMPLES
 

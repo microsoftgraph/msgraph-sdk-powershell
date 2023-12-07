@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Retrieve the properties and relationships of a notebook object by using its URL path.
 The location can be user notebooks on Microsoft 365, group notebooks, or SharePoint site-hosted team notebooks on Microsoft 365.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -43,7 +42,6 @@ Get-MgGroupOnenoteNotebookFromWebUrl -InputObject <IGroupsIdentity> [-Additional
 ## DESCRIPTION
 Retrieve the properties and relationships of a notebook object by using its URL path.
 The location can be user notebooks on Microsoft 365, group notebooks, or SharePoint site-hosted team notebooks on Microsoft 365.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

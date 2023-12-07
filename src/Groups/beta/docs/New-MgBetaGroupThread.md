@@ -12,7 +12,6 @@ Start a new group conversation by first creating a thread.
 A new conversation, conversation thread, and post are created in the group.
 Use reply thread or reply post to further post to that thread.
 Note: You can also start a new thread in an existing conversation.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -51,7 +50,6 @@ Start a new group conversation by first creating a thread.
 A new conversation, conversation thread, and post are created in the group.
 Use reply thread or reply post to further post to that thread.
 Note: You can also start a new thread in an existing conversation.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

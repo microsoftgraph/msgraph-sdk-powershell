@@ -11,7 +11,6 @@ schema: 2.0.0
 Remove a key credential from a servicePrincipal.
 This method along with addKey can be used by a servicePrincipal to automate rolling its expiring keys.
 As part of the request validation for this method, a proof of possession of an existing key is verified before the action can be performed.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -45,7 +44,6 @@ Remove-MgServicePrincipalKey -InputObject <IApplicationsIdentity> [-AdditionalPr
 Remove a key credential from a servicePrincipal.
 This method along with addKey can be used by a servicePrincipal to automate rolling its expiring keys.
 As part of the request validation for this method, a proof of possession of an existing key is verified before the action can be performed.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -247,6 +245,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[ServicePrincipalId <String>]`: The unique identifier of servicePrincipal
   - `[SynchronizationJobId <String>]`: The unique identifier of synchronizationJob
   - `[SynchronizationTemplateId <String>]`: The unique identifier of synchronizationTemplate
+  - `[TargetDeviceGroupId <String>]`: The unique identifier of targetDeviceGroup
   - `[TokenIssuancePolicyId <String>]`: The unique identifier of tokenIssuancePolicy
   - `[TokenLifetimePolicyId <String>]`: The unique identifier of tokenLifetimePolicy
   - `[UserId <String>]`: The unique identifier of user

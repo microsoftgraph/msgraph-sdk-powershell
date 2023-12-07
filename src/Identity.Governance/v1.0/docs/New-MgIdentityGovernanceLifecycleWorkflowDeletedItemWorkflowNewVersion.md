@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new version of the workflow object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -44,7 +43,6 @@ New-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowNewVersion
 
 ## DESCRIPTION
 Create a new version of the workflow object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

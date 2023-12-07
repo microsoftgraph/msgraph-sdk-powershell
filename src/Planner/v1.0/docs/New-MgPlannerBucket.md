@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new plannerBucket object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -26,7 +25,6 @@ New-MgPlannerBucket -BodyParameter <IMicrosoftGraphPlannerBucket> [-Confirm] [-W
 
 ## DESCRIPTION
 Create a new plannerBucket object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -19,7 +19,6 @@ Only teachers or applications with application permissions can add or change gra
 Students will not see the grade or feedback until the assignment has been released.
 Provide the header Prefer: include-unknown-enum-members to properly list submissions with the reassigned status.
 For details, see the examples section.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -54,7 +53,6 @@ Only teachers or applications with application permissions can add or change gra
 Students will not see the grade or feedback until the assignment has been released.
 Provide the header Prefer: include-unknown-enum-members to properly list submissions with the reassigned status.
 For details, see the examples section.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

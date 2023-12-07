@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaServicePrincipalRemoteDesktopSecurityConfigurationTargetDeviceGroup
 
 ## SYNOPSIS
-Get targetDeviceGroups from servicePrincipals
+Read the properties and relationships of a targetDeviceGroup object for the remoteDesktopSecurityConfiguration object on the servicePrincipal.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgBetaServicePrincipalRemoteDesktopSecurityConfigurationTargetDeviceGroup
 ```
 
 ## DESCRIPTION
-Get targetDeviceGroups from servicePrincipals
+Read the properties and relationships of a targetDeviceGroup object for the remoteDesktopSecurityConfiguration object on the servicePrincipal.
 
 ## EXAMPLES
 

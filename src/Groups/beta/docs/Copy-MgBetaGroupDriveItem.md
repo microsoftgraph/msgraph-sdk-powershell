@@ -8,8 +8,7 @@ schema: 2.0.0
 # Copy-MgBetaGroupDriveItem
 
 ## SYNOPSIS
-Asynchronously creates a copy of an driveItem][item-resource] (including any children), under a new parent item or with a new name.
-This API is available in the following [national cloud deployments.
+Asynchronously creates a copy of an [driveItem][item-resource] (including any children), under a new parent item or with a new name.
 
 ## SYNTAX
 
@@ -41,8 +40,7 @@ Copy-MgBetaGroupDriveItem -InputObject <IGroupsIdentity> [-AdditionalProperties 
 ```
 
 ## DESCRIPTION
-Asynchronously creates a copy of an driveItem][item-resource] (including any children), under a new parent item or with a new name.
-This API is available in the following [national cloud deployments.
+Asynchronously creates a copy of an [driveItem][item-resource] (including any children), under a new parent item or with a new name.
 
 ## EXAMPLES
 

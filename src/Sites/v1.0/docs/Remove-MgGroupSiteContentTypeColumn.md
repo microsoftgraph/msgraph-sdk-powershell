@@ -8,8 +8,7 @@ schema: 2.0.0
 # Remove-MgGroupSiteContentTypeColumn
 
 ## SYNOPSIS
-Remove a column][columndefinition] from a [site][], a [list][], or a [content type][contentType].
-This API is available in the following [national cloud deployments.
+Remove a [column][columndefinition] from a [site][], a [list][], or a [content type][contentType].
 
 ## SYNTAX
 
@@ -26,8 +25,7 @@ Remove-MgGroupSiteContentTypeColumn -InputObject <ISitesIdentity> [-IfMatch <Str
 ```
 
 ## DESCRIPTION
-Remove a column][columndefinition] from a [site][], a [list][], or a [content type][contentType].
-This API is available in the following [national cloud deployments.
+Remove a [column][columndefinition] from a [site][], a [list][], or a [content type][contentType].
 
 ## EXAMPLES
 

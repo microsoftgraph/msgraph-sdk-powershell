@@ -11,7 +11,6 @@ schema: 2.0.0
 Add a new taskFileAttachment object to a todoTask.
 This operation limits the size of the attachment you can add to under 3 MB.
 If the size of the file attachments is more than 3 MB, create an upload session to upload the attachments.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -45,7 +44,6 @@ New-MgBetaUserTodoListTaskAttachment -InputObject <IUsersIdentity> [-AdditionalP
 Add a new taskFileAttachment object to a todoTask.
 This operation limits the size of the attachment you can add to under 3 MB.
 If the size of the file attachments is more than 3 MB, create an upload session to upload the attachments.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

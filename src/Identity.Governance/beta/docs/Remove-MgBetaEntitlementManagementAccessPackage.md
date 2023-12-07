@@ -12,7 +12,6 @@ Delete an accessPackage object.
 You can't delete an access package if it has any accessPackageAssignment.
 To delete the access package, first query if there are any assignments with a filter to indicate the specific access package, such as: $filter=accessPackage/id eq 'a914b616-e04e-476b-aa37-91038f0b165b'.
 For more information on how to remove assignments that are still in the delivered state, see Remove an assignment.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -33,7 +32,6 @@ Delete an accessPackage object.
 You can't delete an access package if it has any accessPackageAssignment.
 To delete the access package, first query if there are any assignments with a filter to indicate the specific access package, such as: $filter=accessPackage/id eq 'a914b616-e04e-476b-aa37-91038f0b165b'.
 For more information on how to remove assignments that are still in the delivered state, see Remove an assignment.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

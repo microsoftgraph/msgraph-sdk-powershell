@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Get a custom registration question associated with a meetingRegistration object on behalf of the organizer.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -35,7 +34,6 @@ Get-MgBetaUserOnlineMeetingRegistrationCustomQuestion -InputObject <ICloudCommun
 
 ## DESCRIPTION
 Get a custom registration question associated with a meetingRegistration object on behalf of the organizer.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

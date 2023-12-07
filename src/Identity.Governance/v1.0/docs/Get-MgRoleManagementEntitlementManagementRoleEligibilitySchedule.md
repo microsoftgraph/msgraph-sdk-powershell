@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve the schedule for a role eligibility operation.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -34,7 +33,6 @@ Get-MgRoleManagementEntitlementManagementRoleEligibilitySchedule -InputObject <I
 
 ## DESCRIPTION
 Retrieve the schedule for a role eligibility operation.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

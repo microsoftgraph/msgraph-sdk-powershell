@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete a calendar group other than the default calendar group.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Remove-MgUserCalendarGroup -InputObject <ICalendarIdentity> [-IfMatch <String>] 
 
 ## DESCRIPTION
 Delete a calendar group other than the default calendar group.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -178,6 +176,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[ExtensionId <String>]`: The unique identifier of extension
   - `[GroupId <String>]`: The unique identifier of group
   - `[PlaceId <String>]`: The unique identifier of place
+  - `[RoomId <String>]`: The unique identifier of room
   - `[UserId <String>]`: The unique identifier of user
 
 ## RELATED LINKS

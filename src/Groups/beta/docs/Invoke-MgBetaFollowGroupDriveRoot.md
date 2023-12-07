@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Follow a driveItem.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -26,7 +25,6 @@ Invoke-MgBetaFollowGroupDriveRoot -InputObject <IGroupsIdentity> [-Confirm] [-Wh
 
 ## DESCRIPTION
 Follow a driveItem.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

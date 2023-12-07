@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Remove an ediscoveryReviewTag object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Remove-MgSecurityCaseEdiscoveryCaseTag -InputObject <ISecurityIdentity> [-IfMatc
 
 ## DESCRIPTION
 Remove an ediscoveryReviewTag object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

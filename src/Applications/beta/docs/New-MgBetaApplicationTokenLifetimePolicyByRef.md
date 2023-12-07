@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Assign a tokenLifetimePolicy to an application or servicePrincipal.
 You can have multiple tokenLifetimePolicy policies in a tenant but can assign only one tokenLifetimePolicy per application.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -41,7 +40,6 @@ New-MgBetaApplicationTokenLifetimePolicyByRef -InputObject <IApplicationsIdentit
 ## DESCRIPTION
 Assign a tokenLifetimePolicy to an application or servicePrincipal.
 You can have multiple tokenLifetimePolicy policies in a tenant but can assign only one tokenLifetimePolicy per application.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

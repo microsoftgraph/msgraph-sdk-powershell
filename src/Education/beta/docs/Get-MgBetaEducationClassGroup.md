@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve the Microsoft 365 group that corresponds to this educationClass.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Get-MgBetaEducationClassGroup -InputObject <IEducationIdentity> [-ExpandProperty
 
 ## DESCRIPTION
 Retrieve the Microsoft 365 group that corresponds to this educationClass.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

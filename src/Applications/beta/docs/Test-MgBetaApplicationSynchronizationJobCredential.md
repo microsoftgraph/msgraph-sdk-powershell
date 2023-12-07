@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Validate that the credentials are valid in the tenant.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -45,7 +44,6 @@ Test-MgBetaApplicationSynchronizationJobCredential -InputObject <IApplicationsId
 
 ## DESCRIPTION
 Validate that the credentials are valid in the tenant.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

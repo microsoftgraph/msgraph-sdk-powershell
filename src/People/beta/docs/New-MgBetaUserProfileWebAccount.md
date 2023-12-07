@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new webAccount object in a user's profile.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -49,7 +48,6 @@ New-MgBetaUserProfileWebAccount -InputObject <IPeopleIdentity> [-UserId <String>
 
 ## DESCRIPTION
 Create a new webAccount object in a user's profile.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

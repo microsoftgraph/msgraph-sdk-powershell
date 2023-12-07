@@ -11,7 +11,6 @@ schema: 2.0.0
 Update the properties of a delegatedAdminRelationship object.
 You can only update a relationship when it's in the created status.
 However, you can update the autoExtendDuration property when the relationship is in either the created or active status.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -57,7 +56,6 @@ Update-MgTenantRelationshipDelegatedAdminRelationship -InputObject <IIdentityPar
 Update the properties of a delegatedAdminRelationship object.
 You can only update a relationship when it's in the created status.
 However, you can update the autoExtendDuration property when the relationship is in either the created or active status.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve a list of onenoteSection objects from the specified notebook.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -21,7 +20,6 @@ Get-MgGroupOnenoteNotebookSection -GroupId <String> -NotebookId <String> [-Expan
 
 ## DESCRIPTION
 Retrieve a list of onenoteSection objects from the specified notebook.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

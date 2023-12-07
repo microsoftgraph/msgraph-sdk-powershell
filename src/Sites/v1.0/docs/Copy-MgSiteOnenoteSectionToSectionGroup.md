@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -43,7 +42,6 @@ Copy-MgSiteOnenoteSectionToSectionGroup -InputObject <ISitesIdentity> [-SiteId <
 
 ## DESCRIPTION
 For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

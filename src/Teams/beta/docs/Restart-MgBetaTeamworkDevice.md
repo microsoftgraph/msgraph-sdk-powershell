@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Restart the specified Microsoft Teams-enabled device asynchronously.
 A device is restarted after the async operation completes successfully, which might occur subsequent to a response from this API.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -28,7 +27,6 @@ Restart-MgBetaTeamworkDevice -InputObject <ITeamsIdentity> [-PassThru] [-Confirm
 ## DESCRIPTION
 Restart the specified Microsoft Teams-enabled device asynchronously.
 A device is restarted after the async operation completes successfully, which might occur subsequent to a response from this API.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -147,6 +145,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[ChatMessageId <String>]`: The unique identifier of chatMessage
   - `[ChatMessageId1 <String>]`: The unique identifier of chatMessage
   - `[ConversationMemberId <String>]`: The unique identifier of conversationMember
+  - `[DayNoteId <String>]`: The unique identifier of dayNote
   - `[DeletedChatId <String>]`: The unique identifier of deletedChat
   - `[DeletedTeamId <String>]`: The unique identifier of deletedTeam
   - `[GroupId <String>]`: The unique identifier of group

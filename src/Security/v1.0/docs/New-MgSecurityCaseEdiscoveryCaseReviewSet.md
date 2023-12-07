@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new ediscoveryReviewSet object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -43,7 +42,6 @@ New-MgSecurityCaseEdiscoveryCaseReviewSet -InputObject <ISecurityIdentity> [-Add
 
 ## DESCRIPTION
 Create a new ediscoveryReviewSet object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

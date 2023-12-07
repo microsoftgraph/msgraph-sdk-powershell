@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Update the properties of place object, which can be a room or roomList.
 You can identify the room or roomList by specifying the id or emailAddress property.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -45,7 +44,6 @@ Update-MgPlace -InputObject <ICalendarIdentity> [-AdditionalProperties <Hashtabl
 ## DESCRIPTION
 Update the properties of place object, which can be a room or roomList.
 You can identify the room or roomList by specifying the id or emailAddress property.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -306,6 +304,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[ExtensionId <String>]`: The unique identifier of extension
   - `[GroupId <String>]`: The unique identifier of group
   - `[PlaceId <String>]`: The unique identifier of place
+  - `[RoomId <String>]`: The unique identifier of room
   - `[UserId <String>]`: The unique identifier of user
 
 ## RELATED LINKS

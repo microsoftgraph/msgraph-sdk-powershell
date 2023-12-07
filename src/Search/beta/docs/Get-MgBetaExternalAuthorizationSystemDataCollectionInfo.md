@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgBetaExternalAuthorizationSystemDataCollectionInfo
 
 ## SYNOPSIS
-Get dataCollectionInfo from external
+Defines how and whether Permissions Management collects data from the onboarded authorization system.
+Supports $filter (eq) as follows:  $filter=dataCollectionInfo/entitlements/permissionsModificationCapability and $filter=dataCollectionInfo/entitlements/status.
 
 ## SYNTAX
 
@@ -25,7 +26,8 @@ Get-MgBetaExternalAuthorizationSystemDataCollectionInfo -InputObject <ISearchIde
 ```
 
 ## DESCRIPTION
-Get dataCollectionInfo from external
+Defines how and whether Permissions Management collects data from the onboarded authorization system.
+Supports $filter (eq) as follows:  $filter=dataCollectionInfo/entitlements/permissionsModificationCapability and $filter=dataCollectionInfo/entitlements/status.
 
 ## EXAMPLES
 

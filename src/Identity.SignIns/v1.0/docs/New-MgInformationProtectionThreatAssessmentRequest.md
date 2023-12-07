@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new threat assessment request.
-A threat assessment request can be one of the following types: This API is available in the following national cloud deployments.
+A threat assessment request can be one of the following types:
 
 ## SYNTAX
 
@@ -30,7 +30,7 @@ New-MgInformationProtectionThreatAssessmentRequest -BodyParameter <IMicrosoftGra
 
 ## DESCRIPTION
 Create a new threat assessment request.
-A threat assessment request can be one of the following types: This API is available in the following national cloud deployments.
+A threat assessment request can be one of the following types:
 
 ## EXAMPLES
 

@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 In Microsoft Entra entitlement management, this action retrieves a list of accessPackageAssignmentRequestRequirements objects that the currently signed-in user can use to create an accessPackageAssignmentRequest.
 Each requirement object corresponds to an access package assignment policy that the currently signed-in user is allowed to request an assignment for.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -29,7 +28,6 @@ Get-MgBetaEntitlementManagementAccessPackageApplicablePolicyRequirement
 ## DESCRIPTION
 In Microsoft Entra entitlement management, this action retrieves a list of accessPackageAssignmentRequestRequirements objects that the currently signed-in user can use to create an accessPackageAssignmentRequest.
 Each requirement object corresponds to an access package assignment policy that the currently signed-in user is allowed to request an assignment for.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

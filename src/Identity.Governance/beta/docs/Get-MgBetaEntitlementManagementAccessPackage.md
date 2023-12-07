@@ -8,10 +8,7 @@ schema: 2.0.0
 # Get-MgBetaEntitlementManagementAccessPackage
 
 ## SYNOPSIS
-Retrieve an access package with a list of accessPackageResourceRoleScope objects.
-These objects represent the resource roles that an access package assigns to each subject.
-Each object links to an accessPackageResourceRole and an accessPackageResourceScope.
-This API is available in the following national cloud deployments.
+Retrieve the properties and relationships of an accessPackage object.
 
 ## SYNTAX
 
@@ -59,10 +56,7 @@ Get-MgBetaEntitlementManagementAccessPackage -DisplayNameEq <String> [-ExpandPro
 ```
 
 ## DESCRIPTION
-Retrieve an access package with a list of accessPackageResourceRoleScope objects.
-These objects represent the resource roles that an access package assigns to each subject.
-Each object links to an accessPackageResourceRole and an accessPackageResourceScope.
-This API is available in the following national cloud deployments.
+Retrieve the properties and relationships of an accessPackage object.
 
 ## EXAMPLES
 

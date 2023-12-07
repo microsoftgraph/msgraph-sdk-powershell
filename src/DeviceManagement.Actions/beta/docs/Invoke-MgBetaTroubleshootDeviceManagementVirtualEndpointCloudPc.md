@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Troubleshoot a specific Cloud PC.
 Use this API to check the health status of the Cloud PC and the session host.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -29,7 +28,6 @@ Invoke-MgBetaTroubleshootDeviceManagementVirtualEndpointCloudPc
 ## DESCRIPTION
 Troubleshoot a specific Cloud PC.
 Use this API to check the health status of the Cloud PC and the session host.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -184,6 +182,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[MicrosoftTunnelSiteId <String>]`: The unique identifier of microsoftTunnelSite
   - `[MobileAppTroubleshootingEventId <String>]`: The unique identifier of mobileAppTroubleshootingEvent
   - `[NotificationMessageTemplateId <String>]`: The unique identifier of notificationMessageTemplate
+  - `[PrivilegeManagementElevationRequestId <String>]`: The unique identifier of privilegeManagementElevationRequest
   - `[RemoteAssistancePartnerId <String>]`: The unique identifier of remoteAssistancePartner
   - `[RoleScopeTagId <String>]`: The unique identifier of roleScopeTag
   - `[WindowsAutopilotDeploymentProfileId <String>]`: The unique identifier of windowsAutopilotDeploymentProfile

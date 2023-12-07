@@ -8,8 +8,7 @@ schema: 2.0.0
 # Remove-MgBetaGroupSiteListContentTypeColumn
 
 ## SYNOPSIS
-Remove a column][columndefinition] from a [site][], [list][] or [content type][contentType].
-This API is available in the following [national cloud deployments.
+Remove a [column][columndefinition] from a [site][], [list][] or [content type][contentType].
 
 ## SYNTAX
 
@@ -27,8 +26,7 @@ Remove-MgBetaGroupSiteListContentTypeColumn -InputObject <ISitesIdentity> [-IfMa
 ```
 
 ## DESCRIPTION
-Remove a column][columndefinition] from a [site][], [list][] or [content type][contentType].
-This API is available in the following [national cloud deployments.
+Remove a [column][columndefinition] from a [site][], [list][] or [content type][contentType].
 
 ## EXAMPLES
 

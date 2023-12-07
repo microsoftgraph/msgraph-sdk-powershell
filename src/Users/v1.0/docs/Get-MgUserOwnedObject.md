@@ -1,39 +1,44 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Beta.CrossDeviceExperiences
-online version: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.crossdeviceexperiences/get-mgbetauserdeviceregistereduserasuser
+Module Name: Microsoft.Graph.Users
+online version: https://learn.microsoft.com/powershell/module/microsoft.graph.users/get-mguserownedobject
 schema: 2.0.0
 ---
 
-# Get-MgBetaUserDeviceRegisteredUserAsUser
+# Get-MgUserOwnedObject
 
 ## SYNOPSIS
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
+Directory objects that are owned by the user.
+Read-only.
+Nullable.
+Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
 
 ## SYNTAX
 
 ### List (Default)
 ```
-Get-MgBetaUserDeviceRegisteredUserAsUser -DeviceId <String> -UserId <String> [-ExpandProperty <String[]>]
- [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
- [-Top <Int32>] [-ConsistencyLevel <String>] [-All] [-CountVariable <String>] [-PageSize <Int32>]
- [<CommonParameters>]
+Get-MgUserOwnedObject -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+ [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-ConsistencyLevel <String>] [-All]
+ [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgBetaUserDeviceRegisteredUserAsUser -DeviceId <String> -DirectoryObjectId <String> -UserId <String>
- [-ExpandProperty <String[]>] [-Property <String[]>] [-ConsistencyLevel <String>] [<CommonParameters>]
+Get-MgUserOwnedObject -DirectoryObjectId <String> -UserId <String> [-ExpandProperty <String[]>]
+ [-Property <String[]>] [-ConsistencyLevel <String>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgBetaUserDeviceRegisteredUserAsUser -InputObject <ICrossDeviceExperiencesIdentity>
- [-ExpandProperty <String[]>] [-Property <String[]>] [-ConsistencyLevel <String>] [<CommonParameters>]
+Get-MgUserOwnedObject -InputObject <IUsersIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+ [-ConsistencyLevel <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
+Directory objects that are owned by the user.
+Read-only.
+Nullable.
+Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
 
 ## EXAMPLES
 
@@ -94,21 +99,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -DeviceId
-The unique identifier of device
-
-```yaml
-Type: System.String
-Parameter Sets: Get, List
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -DirectoryObjectId
 The unique identifier of directoryObject
 
@@ -159,7 +149,7 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.Beta.PowerShell.Models.ICrossDeviceExperiencesIdentity
+Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -280,11 +270,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.Beta.PowerShell.Models.ICrossDeviceExperiencesIdentity
+### Microsoft.Graph.PowerShell.Models.IUsersIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUser
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject
 
 ## NOTES
 
@@ -295,14 +285,19 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-`INPUTOBJECT <ICrossDeviceExperiencesIdentity>`: Identity Parameter
-  - `[ActivityHistoryItemId <String>]`: The unique identifier of activityHistoryItem
-  - `[CommandId <String>]`: The unique identifier of command
-  - `[DeviceId <String>]`: The unique identifier of device
+`INPUTOBJECT <IUsersIdentity>`: Identity Parameter
+  - `[AttachmentBaseId <String>]`: The unique identifier of attachmentBase
+  - `[AttachmentSessionId <String>]`: The unique identifier of attachmentSession
+  - `[ChecklistItemId <String>]`: The unique identifier of checklistItem
   - `[DirectoryObjectId <String>]`: The unique identifier of directoryObject
   - `[ExtensionId <String>]`: The unique identifier of extension
-  - `[UsageRightId <String>]`: The unique identifier of usageRight
-  - `[UserActivityId <String>]`: The unique identifier of userActivity
+  - `[LicenseDetailsId <String>]`: The unique identifier of licenseDetails
+  - `[LinkedResourceId <String>]`: The unique identifier of linkedResource
+  - `[OAuth2PermissionGrantId <String>]`: The unique identifier of oAuth2PermissionGrant
+  - `[OutlookCategoryId <String>]`: The unique identifier of outlookCategory
+  - `[ProfilePhotoId <String>]`: The unique identifier of profilePhoto
+  - `[TodoTaskId <String>]`: The unique identifier of todoTask
+  - `[TodoTaskListId <String>]`: The unique identifier of todoTaskList
   - `[UserId <String>]`: The unique identifier of user
 
 ## RELATED LINKS

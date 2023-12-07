@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Classify a delegated permission by adding a delegatedPermissionClassification to the servicePrincipal representing the API.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -41,7 +40,6 @@ New-MgBetaServicePrincipalDelegatedPermissionClassification -InputObject <IAppli
 
 ## DESCRIPTION
 Classify a delegated permission by adding a delegatedPermissionClassification to the servicePrincipal representing the API.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

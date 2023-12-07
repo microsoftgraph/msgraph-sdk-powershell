@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Remove an access package from the list of access packages that have been marked as incompatible on an accessPackage.
- This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -29,7 +28,6 @@ Remove-MgBetaEntitlementManagementAccessPackageIncompatibleAccessPackageByRef
 
 ## DESCRIPTION
 Remove an access package from the list of access packages that have been marked as incompatible on an accessPackage.
- This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

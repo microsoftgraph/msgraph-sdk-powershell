@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new educationalActivity in a user's profile.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -49,7 +48,6 @@ New-MgBetaUserProfileEducationalActivity -InputObject <IPeopleIdentity> [-Additi
 
 ## DESCRIPTION
 Create a new educationalActivity in a user's profile.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

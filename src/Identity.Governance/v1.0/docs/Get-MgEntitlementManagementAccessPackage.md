@@ -8,8 +8,9 @@ schema: 2.0.0
 # Get-MgEntitlementManagementAccessPackage
 
 ## SYNOPSIS
-Retrieve the properties and relationships of an accessPackage object.
-This API is available in the following national cloud deployments.
+Retrieve an access package with a list of accessPackageResourceRoleScope objects.
+These objects represent the resource roles that an access package assigns to each subject.
+Each object links to an accessPackageResourceRole and an accessPackageResourceScope.
 
 ## SYNTAX
 
@@ -33,8 +34,9 @@ Get-MgEntitlementManagementAccessPackage -InputObject <IIdentityGovernanceIdenti
 ```
 
 ## DESCRIPTION
-Retrieve the properties and relationships of an accessPackage object.
-This API is available in the following national cloud deployments.
+Retrieve an access package with a list of accessPackageResourceRoleScope objects.
+These objects represent the resource roles that an access package assigns to each subject.
+Each object links to an accessPackageResourceRole and an accessPackageResourceScope.
 
 ## EXAMPLES
 

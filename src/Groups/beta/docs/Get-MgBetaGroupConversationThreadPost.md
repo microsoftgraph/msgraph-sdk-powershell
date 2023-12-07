@@ -11,7 +11,6 @@ schema: 2.0.0
 Get the properties and relationships of a post in a specified thread.
 You can specify both the parent \nconversation and the thread, or, you can specify the thread without referencing the parent conversation.
 Since the post resource supports extensions, you can also use the GET operation to get custom properties and extension data in a post instance.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -50,7 +49,6 @@ Get-MgBetaGroupConversationThreadPost -InputObject <IGroupsIdentity> [-ExpandPro
 Get the properties and relationships of a post in a specified thread.
 You can specify both the parent \nconversation and the thread, or, you can specify the thread without referencing the parent conversation.
 Since the post resource supports extensions, you can also use the GET operation to get custom properties and extension data in a post instance.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

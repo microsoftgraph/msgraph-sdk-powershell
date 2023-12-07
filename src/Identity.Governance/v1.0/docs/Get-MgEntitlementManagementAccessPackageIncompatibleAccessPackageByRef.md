@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve a list of the accessPackage objects that have been marked as incompatible on an accessPackage.
- This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -21,7 +20,6 @@ Get-MgEntitlementManagementAccessPackageIncompatibleAccessPackageByRef -AccessPa
 
 ## DESCRIPTION
 Retrieve a list of the accessPackage objects that have been marked as incompatible on an accessPackage.
- This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

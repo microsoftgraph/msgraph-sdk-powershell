@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a request to export the personal data for an inboundSharedUserProfile.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -43,7 +42,6 @@ Export-MgBetaDirectoryInboundSharedUserProfilePersonalData -InputObject <IIdenti
 
 ## DESCRIPTION
 Create a request to export the personal data for an inboundSharedUserProfile.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Get an attack simulation operation to track a long-running operation request for a tenant.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -34,7 +33,6 @@ Get-MgBetaSecurityAttackSimulationOperation -InputObject <ISecurityIdentity> [-E
 
 ## DESCRIPTION
 Get an attack simulation operation to track a long-running operation request for a tenant.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Restore multiple Cloud PC devices with a single request that includes the IDs of Intune managed devices and a restore point date and time.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -43,7 +42,6 @@ Invoke-MgBetaBulkRestoreUserManagedDeviceCloudPc -InputObject <IUsersActionsIden
 
 ## DESCRIPTION
 Restore multiple Cloud PC devices with a single request that includes the IDs of Intune managed devices and a restore point date and time.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -258,6 +256,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[NotebookId <String>]`: The unique identifier of notebook
   - `[OnenotePageId <String>]`: The unique identifier of onenotePage
   - `[OnenoteSectionId <String>]`: The unique identifier of onenoteSection
+  - `[OnlineMeetingId <String>]`: The unique identifier of onlineMeeting
   - `[OutlookTaskFolderId <String>]`: The unique identifier of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: The unique identifier of outlookTaskGroup
   - `[OutlookTaskId <String>]`: The unique identifier of outlookTask

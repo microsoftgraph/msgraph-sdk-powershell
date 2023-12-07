@@ -8,8 +8,7 @@ schema: 2.0.0
 # Copy-MgBetaUserDriveItem
 
 ## SYNOPSIS
-Asynchronously creates a copy of an driveItem][item-resource] (including any children), under a new parent item or with a new name.
-This API is available in the following [national cloud deployments.
+Asynchronously creates a copy of an [driveItem][item-resource] (including any children), under a new parent item or with a new name.
 
 ## SYNTAX
 
@@ -41,8 +40,7 @@ Copy-MgBetaUserDriveItem -InputObject <IUsersActionsIdentity> [-AdditionalProper
 ```
 
 ## DESCRIPTION
-Asynchronously creates a copy of an driveItem][item-resource] (including any children), under a new parent item or with a new name.
-This API is available in the following [national cloud deployments.
+Asynchronously creates a copy of an [driveItem][item-resource] (including any children), under a new parent item or with a new name.
 
 ## EXAMPLES
 
@@ -289,6 +287,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[NotebookId <String>]`: The unique identifier of notebook
   - `[OnenotePageId <String>]`: The unique identifier of onenotePage
   - `[OnenoteSectionId <String>]`: The unique identifier of onenoteSection
+  - `[OnlineMeetingId <String>]`: The unique identifier of onlineMeeting
   - `[OutlookTaskFolderId <String>]`: The unique identifier of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: The unique identifier of outlookTaskGroup
   - `[OutlookTaskId <String>]`: The unique identifier of outlookTask

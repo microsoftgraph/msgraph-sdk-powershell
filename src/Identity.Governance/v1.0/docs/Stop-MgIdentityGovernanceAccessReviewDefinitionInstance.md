@@ -12,7 +12,6 @@ Stop a currently active accessReviewInstance.
 After the access review instance stops, the instance status is marked as Completed, the reviewers can no longer give input, and the access review decisions are applied.
 Stopping an instance will not stop future instances.
 To prevent a recurring access review from starting future instances, update the schedule definition to change its scheduled end date.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -33,7 +32,6 @@ Stop a currently active accessReviewInstance.
 After the access review instance stops, the instance status is marked as Completed, the reviewers can no longer give input, and the access review decisions are applied.
 Stopping an instance will not stop future instances.
 To prevent a recurring access review from starting future instances, update the schedule definition to change its scheduled end date.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

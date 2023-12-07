@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new customAccessPackageWorkflowExtension object and add it to an existing accessPackageCatalog object.
- This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -50,7 +49,6 @@ New-MgBetaEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowEx
 
 ## DESCRIPTION
 Create a new customAccessPackageWorkflowExtension object and add it to an existing accessPackageCatalog object.
- This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

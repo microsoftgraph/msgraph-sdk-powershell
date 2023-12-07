@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Initiate an export from a ediscoveryReviewSetQuery.
 For details, see Export documents from a review set in eDiscovery (Premium).
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -48,7 +47,6 @@ Export-MgBetaSecurityCaseEdiscoveryCaseReviewSetQuery -InputObject <ISecurityIde
 ## DESCRIPTION
 Initiate an export from a ediscoveryReviewSetQuery.
 For details, see Export documents from a review set in eDiscovery (Premium).
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

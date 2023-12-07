@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceManagementRoleDefinition
 
 ## SYNOPSIS
-Update the properties of a roleDefinition object.
+Update the properties of a deviceAndAppManagementRoleDefinition object.
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ Update-MgDeviceManagementRoleDefinition -InputObject <IDeviceManagementAdministr
 ```
 
 ## DESCRIPTION
-Update the properties of a roleDefinition object.
+Update the properties of a deviceAndAppManagementRoleDefinition object.
 
 ## EXAMPLES
 

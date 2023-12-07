@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new browserSiteList object to support Internet Explorer mode.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -31,7 +30,6 @@ New-MgAdminEdgeInternetExplorerModeSiteList -BodyParameter <IMicrosoftGraphBrows
 
 ## DESCRIPTION
 Create a new browserSiteList object to support Internet Explorer mode.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

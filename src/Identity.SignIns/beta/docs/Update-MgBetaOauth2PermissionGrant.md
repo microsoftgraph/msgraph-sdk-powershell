@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Update the properties of oAuth2PermissionGrant object, representing a delegated permission grant.
 An oAuth2PermissionGrant can be updated to change which delegated permissions are granted, by adding or removing items from the list in scopes.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -43,7 +42,6 @@ Update-MgBetaOauth2PermissionGrant -InputObject <IIdentitySignInsIdentity> [-Add
 ## DESCRIPTION
 Update the properties of oAuth2PermissionGrant object, representing a delegated permission grant.
 An oAuth2PermissionGrant can be updated to change which delegated permissions are granted, by adding or removing items from the list in scopes.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -329,6 +327,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[ActivityBasedTimeoutPolicyId <String>]`: The unique identifier of activityBasedTimeoutPolicy
   - `[AppManagementPolicyId <String>]`: The unique identifier of appManagementPolicy
   - `[AuthenticationCombinationConfigurationId <String>]`: The unique identifier of authenticationCombinationConfiguration
+  - `[AuthenticationConditionApplicationAppId <String>]`: The unique identifier of authenticationConditionApplication
   - `[AuthenticationContextClassReferenceId <String>]`: The unique identifier of authenticationContextClassReference
   - `[AuthenticationEventListenerId <String>]`: The unique identifier of authenticationEventListener
   - `[AuthenticationEventsFlowId <String>]`: The unique identifier of authenticationEventsFlow

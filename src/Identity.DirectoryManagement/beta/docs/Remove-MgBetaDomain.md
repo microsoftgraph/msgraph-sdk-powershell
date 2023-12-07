@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Deletes a domain from a tenant.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Remove-MgBetaDomain -InputObject <IIdentityDirectoryManagementIdentity> [-IfMatc
 
 ## DESCRIPTION
 Deletes a domain from a tenant.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

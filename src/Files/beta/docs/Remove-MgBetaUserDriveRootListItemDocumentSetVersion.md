@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete a version of a document set in a list.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Remove-MgBetaUserDriveRootListItemDocumentSetVersion -InputObject <IFilesIdentit
 
 ## DESCRIPTION
 Delete a version of a document set in a list.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

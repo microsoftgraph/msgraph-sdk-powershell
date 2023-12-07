@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Add a group to the list of groups that have been marked as incompatible on an accessPackage.
- This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -39,7 +38,6 @@ New-MgEntitlementManagementAccessPackageIncompatibleGroupByRef -InputObject <IId
 
 ## DESCRIPTION
 Add a group to the list of groups that have been marked as incompatible on an accessPackage.
- This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

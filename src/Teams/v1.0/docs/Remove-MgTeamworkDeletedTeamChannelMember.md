@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete a conversationMember from a channel.
-This API is available in the following national cloud deployments.
+This operation is allowed only for channels with a membershipType value of private or shared.
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ Remove-MgTeamworkDeletedTeamChannelMember -InputObject <ITeamsIdentity> [-IfMatc
 
 ## DESCRIPTION
 Delete a conversationMember from a channel.
-This API is available in the following national cloud deployments.
+This operation is allowed only for channels with a membershipType value of private or shared.
 
 ## EXAMPLES
 

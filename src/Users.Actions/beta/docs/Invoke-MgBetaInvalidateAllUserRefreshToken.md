@@ -14,7 +14,6 @@ This operation would prevent access to any of the organization's data accessed t
 In fact, this operation would force the user to sign in again for all applications that they have previously consented to, independent of device.
 For developers, if the application attempts to redeem a delegated access token for this user by using an invalidated refresh token, the application will get an error.
 If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint, which will force the user to sign in.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -36,7 +35,6 @@ This operation would prevent access to any of the organization's data accessed t
 In fact, this operation would force the user to sign in again for all applications that they have previously consented to, independent of device.
 For developers, if the application attempts to redeem a delegated access token for this user by using an invalidated refresh token, the application will get an error.
 If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint, which will force the user to sign in.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -169,6 +167,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[NotebookId <String>]`: The unique identifier of notebook
   - `[OnenotePageId <String>]`: The unique identifier of onenotePage
   - `[OnenoteSectionId <String>]`: The unique identifier of onenoteSection
+  - `[OnlineMeetingId <String>]`: The unique identifier of onlineMeeting
   - `[OutlookTaskFolderId <String>]`: The unique identifier of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: The unique identifier of outlookTaskGroup
   - `[OutlookTaskId <String>]`: The unique identifier of outlookTask

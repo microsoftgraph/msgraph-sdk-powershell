@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Read the properties, relationships, or raw contents of an attachment that is attached to a user event, message, Outlook task, or group post.
 An attachment can be one of the following types: All these types of attachments are derived from the attachment resource.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -36,7 +35,6 @@ Get-MgBetaGroupEventExceptionOccurrenceAttachment -InputObject <ICalendarIdentit
 ## DESCRIPTION
 Read the properties, relationships, or raw contents of an attachment that is attached to a user event, message, Outlook task, or group post.
 An attachment can be one of the following types: All these types of attachments are derived from the attachment resource.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -299,7 +297,9 @@ To create the parameters described below, construct a hash table containing the 
   - `[ExtensionId <String>]`: The unique identifier of extension
   - `[GroupId <String>]`: The unique identifier of group
   - `[PlaceId <String>]`: The unique identifier of place
+  - `[RoomId <String>]`: The unique identifier of room
   - `[UserId <String>]`: The unique identifier of user
+  - `[WorkspaceId <String>]`: The unique identifier of workspace
 
 ## RELATED LINKS
 

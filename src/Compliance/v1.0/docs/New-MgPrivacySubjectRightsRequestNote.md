@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new authoredNote object.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -41,7 +40,6 @@ New-MgPrivacySubjectRightsRequestNote -InputObject <IComplianceIdentity> [-Addit
 
 ## DESCRIPTION
 Create a new authoredNote object.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

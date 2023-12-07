@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Update the properties of an educationOutcome object.
 Only teachers can perform this operation.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -45,7 +44,6 @@ Update-MgEducationUserAssignmentSubmissionOutcome -InputObject <IEducationIdenti
 ## DESCRIPTION
 Update the properties of an educationOutcome object.
 Only teachers can perform this operation.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

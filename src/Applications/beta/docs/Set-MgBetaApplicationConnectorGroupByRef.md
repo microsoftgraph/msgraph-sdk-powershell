@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Assign a connectorGroup to an application.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -41,7 +40,6 @@ Set-MgBetaApplicationConnectorGroupByRef -InputObject <IApplicationsIdentity> -O
 
 ## DESCRIPTION
 Assign a connectorGroup to an application.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

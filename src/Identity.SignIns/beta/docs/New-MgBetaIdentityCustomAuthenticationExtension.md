@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Create a new customAuthenticationExtension object.
 Only the onTokenIssuanceStartCustomExtension object type is supported.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -32,7 +31,6 @@ New-MgBetaIdentityCustomAuthenticationExtension -BodyParameter <Hashtable> [-Con
 ## DESCRIPTION
 Create a new customAuthenticationExtension object.
 Only the onTokenIssuanceStartCustomExtension object type is supported.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

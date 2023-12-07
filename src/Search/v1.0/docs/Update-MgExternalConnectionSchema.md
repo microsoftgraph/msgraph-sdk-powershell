@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new schema object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -41,7 +40,6 @@ Update-MgExternalConnectionSchema -InputObject <ISearchIdentity> [-AdditionalPro
 
 ## DESCRIPTION
 Create a new schema object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

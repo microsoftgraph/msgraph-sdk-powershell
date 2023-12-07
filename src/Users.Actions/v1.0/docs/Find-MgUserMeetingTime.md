@@ -13,7 +13,6 @@ If findMeetingTimes cannot return any meeting suggestions, the response would in
 \nBased on this value, you can better adjust the parameters and call findMeetingTimes again.
 The algorithm used to suggest meeting times and locations undergoes fine-tuning from time to time.
 In scenarios like test environments where the input parameters and calendar data remain static, expect that the suggested results may differ over time.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -55,7 +54,6 @@ If findMeetingTimes cannot return any meeting suggestions, the response would in
 \nBased on this value, you can better adjust the parameters and call findMeetingTimes again.
 The algorithm used to suggest meeting times and locations undergoes fine-tuning from time to time.
 In scenarios like test environments where the input parameters and calendar data remain static, expect that the suggested results may differ over time.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

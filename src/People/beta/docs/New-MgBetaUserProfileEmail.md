@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new itemEmail object in a user's profile.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -46,7 +45,6 @@ New-MgBetaUserProfileEmail -InputObject <IPeopleIdentity> [-AdditionalProperties
 
 ## DESCRIPTION
 Create a new itemEmail object in a user's profile.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

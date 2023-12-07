@@ -14,7 +14,6 @@ Preferred presence takes effect only when there is at least one presence session
 Otherwise, the user's presence stays as Offline.
 A presence session can be created as a result of a successful setPresence operation, or if the user is signed in on a Teams client.
 Read more about presence sessions and their time-out and expiration.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -53,7 +52,6 @@ Preferred presence takes effect only when there is at least one presence session
 Otherwise, the user's presence stays as Offline.
 A presence session can be created as a result of a successful setPresence operation, or if the user is signed in on a Teams client.
 Read more about presence sessions and their time-out and expiration.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -282,6 +280,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[NotebookId <String>]`: The unique identifier of notebook
   - `[OnenotePageId <String>]`: The unique identifier of onenotePage
   - `[OnenoteSectionId <String>]`: The unique identifier of onenoteSection
+  - `[OnlineMeetingId <String>]`: The unique identifier of onlineMeeting
   - `[OutlookTaskFolderId <String>]`: The unique identifier of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: The unique identifier of outlookTaskGroup
   - `[OutlookTaskId <String>]`: The unique identifier of outlookTask

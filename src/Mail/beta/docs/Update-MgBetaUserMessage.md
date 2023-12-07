@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update the properties of a message object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -71,7 +70,6 @@ Update-MgBetaUserMessage -InputObject <IMailIdentity> [-AdditionalProperties <Ha
 
 ## DESCRIPTION
 Update the properties of a message object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

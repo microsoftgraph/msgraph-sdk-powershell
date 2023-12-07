@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Create an onlineMeeting object with a custom specified external ID.
 If the external ID already exists, this API will return the onlineMeeting object with that external ID.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -47,7 +46,6 @@ Invoke-MgCreateOrGetUserOnlineMeeting -InputObject <IUsersActionsIdentity> [-Add
 ## DESCRIPTION
 Create an onlineMeeting object with a custom specified external ID.
 If the external ID already exists, this API will return the onlineMeeting object with that external ID.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -8,8 +8,7 @@ schema: 2.0.0
 # Grant-MgBetaUserDriveRootPermission
 
 ## SYNOPSIS
-Grant users access to a link represented by a permission][].
-This API is available in the following [national cloud deployments.
+Grant users access to a link represented by a [permission][].
 
 ## SYNTAX
 
@@ -41,8 +40,7 @@ Grant-MgBetaUserDriveRootPermission -InputObject <IUsersActionsIdentity> [-Addit
 ```
 
 ## DESCRIPTION
-Grant users access to a link represented by a permission][].
-This API is available in the following [national cloud deployments.
+Grant users access to a link represented by a [permission][].
 
 ## EXAMPLES
 
@@ -282,6 +280,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[NotebookId <String>]`: The unique identifier of notebook
   - `[OnenotePageId <String>]`: The unique identifier of onenotePage
   - `[OnenoteSectionId <String>]`: The unique identifier of onenoteSection
+  - `[OnlineMeetingId <String>]`: The unique identifier of onlineMeeting
   - `[OutlookTaskFolderId <String>]`: The unique identifier of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: The unique identifier of outlookTaskGroup
   - `[OutlookTaskId <String>]`: The unique identifier of outlookTask

@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Remove a user or a group from the connected organization's internal sponsors.
 The internal sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -31,7 +30,6 @@ Remove-MgBetaEntitlementManagementConnectedOrganizationInternalSponsorByRef
 ## DESCRIPTION
 Remove a user or a group from the connected organization's internal sponsors.
 The internal sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

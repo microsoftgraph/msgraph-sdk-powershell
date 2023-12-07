@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Dismiss a recommendation object that you consider to be inapplicable to your tenant and update its status to dismissed .
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -41,7 +40,6 @@ Invoke-MgBetaDismissDirectoryRecommendation -InputObject <IIdentityDirectoryMana
 
 ## DESCRIPTION
 Dismiss a recommendation object that you consider to be inapplicable to your tenant and update its status to dismissed .
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

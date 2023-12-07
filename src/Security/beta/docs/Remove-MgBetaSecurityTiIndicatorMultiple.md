@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete multiple threat intelligence (TI) indicators in one request instead of multiple requests.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -28,7 +27,6 @@ Remove-MgBetaSecurityTiIndicatorMultiple
 
 ## DESCRIPTION
 Delete multiple threat intelligence (TI) indicators in one request instead of multiple requests.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

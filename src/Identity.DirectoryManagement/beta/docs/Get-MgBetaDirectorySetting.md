@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve the properties of a specific directory setting object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -34,7 +33,6 @@ Get-MgBetaDirectorySetting -InputObject <IIdentityDirectoryManagementIdentity> [
 
 ## DESCRIPTION
 Retrieve the properties of a specific directory setting object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

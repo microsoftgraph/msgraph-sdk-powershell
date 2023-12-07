@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Get the instance of an active role assignment.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -34,7 +33,6 @@ Get-MgRoleManagementDirectoryRoleAssignmentScheduleInstance -InputObject <IIdent
 
 ## DESCRIPTION
 Get the instance of an active role assignment.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

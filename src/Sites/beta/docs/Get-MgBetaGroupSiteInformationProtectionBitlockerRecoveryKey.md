@@ -13,7 +13,6 @@ By default, this operation does not return the key property that represents the 
 To include the key property in the response, use the $select OData query parameter.
 Including the $select query parameter triggers a Microsoft Entra audit of the operation and generates an audit log.
 You can find the log in Microsoft Entra audit logs under the KeyManagement category.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -42,7 +41,6 @@ By default, this operation does not return the key property that represents the 
 To include the key property in the response, use the $select OData query parameter.
 Including the $select query parameter triggers a Microsoft Entra audit of the operation and generates an audit log.
 You can find the log in Microsoft Entra audit logs under the KeyManagement category.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new itemPatent object within a user's profile.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -47,7 +46,6 @@ New-MgBetaUserProfilePatent -InputObject <IPeopleIdentity> [-AdditionalPropertie
 
 ## DESCRIPTION
 Create a new itemPatent object within a user's profile.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

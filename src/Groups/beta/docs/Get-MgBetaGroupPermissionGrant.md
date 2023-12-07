@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaGroupPermissionGrant
 
 ## SYNOPSIS
-The permissions that have been granted for a group to a specific application.
+The permissions granted for a group to a specific application.
 Supports $expand.
 
 ## SYNTAX
@@ -33,7 +33,7 @@ Get-MgBetaGroupPermissionGrant -InputObject <IGroupsIdentity> [-ExpandProperty <
 ```
 
 ## DESCRIPTION
-The permissions that have been granted for a group to a specific application.
+The permissions granted for a group to a specific application.
 Supports $expand.
 
 ## EXAMPLES

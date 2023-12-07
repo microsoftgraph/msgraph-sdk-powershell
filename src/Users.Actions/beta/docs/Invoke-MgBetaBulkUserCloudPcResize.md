@@ -11,7 +11,6 @@ schema: 2.0.0
 Perform a bulk resize action to resize a group of cloudPCs that have successfully passed validation.
 If any devices can't be resized, those devices indicate 'resize failed'.
 The remaining devices are provisioned for the resize process.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -45,7 +44,6 @@ Invoke-MgBetaBulkUserCloudPcResize -InputObject <IUsersActionsIdentity> [-Additi
 Perform a bulk resize action to resize a group of cloudPCs that have successfully passed validation.
 If any devices can't be resized, those devices indicate 'resize failed'.
 The remaining devices are provisioned for the resize process.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -244,6 +242,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[NotebookId <String>]`: The unique identifier of notebook
   - `[OnenotePageId <String>]`: The unique identifier of onenotePage
   - `[OnenoteSectionId <String>]`: The unique identifier of onenoteSection
+  - `[OnlineMeetingId <String>]`: The unique identifier of onlineMeeting
   - `[OutlookTaskFolderId <String>]`: The unique identifier of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: The unique identifier of outlookTaskGroup
   - `[OutlookTaskId <String>]`: The unique identifier of outlookTask

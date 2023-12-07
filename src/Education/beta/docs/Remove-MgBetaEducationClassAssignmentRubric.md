@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Delete an educationRubric from an educationAssignment.
 This method doesn't delete the rubric itself and can only be performed by teachers.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -29,7 +28,6 @@ Remove-MgBetaEducationClassAssignmentRubric -InputObject <IEducationIdentity> [-
 ## DESCRIPTION
 Delete an educationRubric from an educationAssignment.
 This method doesn't delete the rubric itself and can only be performed by teachers.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

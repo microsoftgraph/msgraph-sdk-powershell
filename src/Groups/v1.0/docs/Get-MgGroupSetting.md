@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Retrieve the properties of a specific group setting object.
 The setting can be a tenant-level or group-specific setting.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -55,7 +54,6 @@ Get-MgGroupSetting -GroupId <String> [-ExpandProperty <String[]>] [-Filter <Stri
 ## DESCRIPTION
 Retrieve the properties of a specific group setting object.
 The setting can be a tenant-level or group-specific setting.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete single sign-on credentials using a password for a user or group.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -41,7 +40,6 @@ Remove-MgBetaServicePrincipalPasswordSingleSignOnCredential -InputObject <IAppli
 
 ## DESCRIPTION
 Delete single sign-on credentials using a password for a user or group.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

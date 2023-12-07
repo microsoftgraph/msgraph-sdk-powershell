@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 In Microsoft Entra entitlement management, retrieve the properties and relationships of an  accessPackageAssignmentRequest object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -46,7 +45,6 @@ Get-MgEntitlementManagementAssignmentRequest -AccessPackageId <String> [-ExpandP
 
 ## DESCRIPTION
 In Microsoft Entra entitlement management, retrieve the properties and relationships of an  accessPackageAssignmentRequest object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

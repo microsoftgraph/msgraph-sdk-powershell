@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.DeviceManagement
-Module Guid: 4b14f8a8-2ee7-4588-bfa5-908baf9acd4c
+Module Guid: 68419ffc-a5f2-4bbe-80e9-c6262118cb58
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devicemanagement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -20,21 +20,18 @@ A container for Internet Explorer mode resources.
 
 ### [Get-MgBetaAdminEdgeInternetExplorerModeSiteList](Get-MgBetaAdminEdgeInternetExplorerModeSiteList.md)
 Get a browserSiteList that contains browserSite and browserSharedCookie resources.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaAdminEdgeInternetExplorerModeSiteListCount](Get-MgBetaAdminEdgeInternetExplorerModeSiteListCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaAdminEdgeInternetExplorerModeSiteListSharedCookie](Get-MgBetaAdminEdgeInternetExplorerModeSiteListSharedCookie.md)
 Get a session cookie that can be shared between a Microsoft Edge process and an Internet Explorer process, while using Internet Explorer mode.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaAdminEdgeInternetExplorerModeSiteListSharedCookieCount](Get-MgBetaAdminEdgeInternetExplorerModeSiteListSharedCookieCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaAdminEdgeInternetExplorerModeSiteListSite](Get-MgBetaAdminEdgeInternetExplorerModeSiteListSite.md)
 Get a browserSite that resides on a browserSiteList.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaAdminEdgeInternetExplorerModeSiteListSiteCount](Get-MgBetaAdminEdgeInternetExplorerModeSiteListSiteCount.md)
 Get the number of the resource
@@ -729,14 +726,12 @@ Get monitoring from deviceManagement
 
 ### [Get-MgBetaDeviceManagementMonitoringAlertRecord](Get-MgBetaDeviceManagementMonitoringAlertRecord.md)
 Read the properties and relationships of an alertRecord object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaDeviceManagementMonitoringAlertRecordCount](Get-MgBetaDeviceManagementMonitoringAlertRecordCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaDeviceManagementMonitoringAlertRule](Get-MgBetaDeviceManagementMonitoringAlertRule.md)
 Read the properties and relationships of an alertRule object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaDeviceManagementMonitoringAlertRuleCount](Get-MgBetaDeviceManagementMonitoringAlertRuleCount.md)
 Get the number of the resource
@@ -1214,15 +1209,12 @@ Get the number of the resource
 
 ### [New-MgBetaAdminEdgeInternetExplorerModeSiteList](New-MgBetaAdminEdgeInternetExplorerModeSiteList.md)
 Create a new browserSiteList object to support Internet Explorer mode.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaAdminEdgeInternetExplorerModeSiteListSharedCookie](New-MgBetaAdminEdgeInternetExplorerModeSiteListSharedCookie.md)
 Create a new browserSharedCookie object in a browserSiteList.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaAdminEdgeInternetExplorerModeSiteListSite](New-MgBetaAdminEdgeInternetExplorerModeSiteListSite.md)
 Create a new browserSite object in a browserSiteList.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaDeviceManagementAdvancedThreatProtectionOnboardingStateSummaryAdvancedThreatProtectionOnboardingDeviceSettingState](New-MgBetaDeviceManagementAdvancedThreatProtectionOnboardingStateSummaryAdvancedThreatProtectionOnboardingDeviceSettingState.md)
 Create new navigation property to advancedThreatProtectionOnboardingDeviceSettingStates for deviceManagement
@@ -1508,7 +1500,6 @@ Create new navigation property to alertRecords for deviceManagement
 
 ### [New-MgBetaDeviceManagementMonitoringAlertRule](New-MgBetaDeviceManagementMonitoringAlertRule.md)
 Create an alertRule object.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaDeviceManagementNotificationMessageTemplate](New-MgBetaDeviceManagementNotificationMessageTemplate.md)
 Create new navigation property to notificationMessageTemplates for deviceManagement
@@ -1731,15 +1722,12 @@ Delete navigation property internetExplorerMode for admin
 
 ### [Remove-MgBetaAdminEdgeInternetExplorerModeSiteList](Remove-MgBetaAdminEdgeInternetExplorerModeSiteList.md)
 Delete a browserSiteList object.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaAdminEdgeInternetExplorerModeSiteListSharedCookie](Remove-MgBetaAdminEdgeInternetExplorerModeSiteListSharedCookie.md)
 Delete a browserSharedCookie from a browserSiteList.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaAdminEdgeInternetExplorerModeSiteListSite](Remove-MgBetaAdminEdgeInternetExplorerModeSiteListSite.md)
 Delete a browserSite from a browserSiteList.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaDeviceManagementAdvancedThreatProtectionOnboardingStateSummary](Remove-MgBetaDeviceManagementAdvancedThreatProtectionOnboardingStateSummary.md)
 Delete navigation property advancedThreatProtectionOnboardingStateSummary for deviceManagement
@@ -2325,15 +2313,12 @@ Update the navigation property internetExplorerMode in admin
 
 ### [Update-MgBetaAdminEdgeInternetExplorerModeSiteList](Update-MgBetaAdminEdgeInternetExplorerModeSiteList.md)
 Update the properties of a browserSiteList object.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaAdminEdgeInternetExplorerModeSiteListSharedCookie](Update-MgBetaAdminEdgeInternetExplorerModeSiteListSharedCookie.md)
 Update the properties of a browserSharedCookie object.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaAdminEdgeInternetExplorerModeSiteListSite](Update-MgBetaAdminEdgeInternetExplorerModeSiteListSite.md)
 Update the properties of a browserSite object.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaDeviceManagement](Update-MgBetaDeviceManagement.md)
 Update deviceManagement
@@ -2682,7 +2667,6 @@ Update the navigation property alertRecords in deviceManagement
 
 ### [Update-MgBetaDeviceManagementMonitoringAlertRule](Update-MgBetaDeviceManagementMonitoringAlertRule.md)
 Update the properties of an alertRule object.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaDeviceManagementNotificationMessageTemplate](Update-MgBetaDeviceManagementNotificationMessageTemplate.md)
 Update the navigation property notificationMessageTemplates in deviceManagement

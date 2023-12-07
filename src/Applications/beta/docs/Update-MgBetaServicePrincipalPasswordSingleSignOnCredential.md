@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update single sign-on credentials using a password for a user or group.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -43,7 +42,6 @@ Update-MgBetaServicePrincipalPasswordSingleSignOnCredential -InputObject <IAppli
 
 ## DESCRIPTION
 Update single sign-on credentials using a password for a user or group.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

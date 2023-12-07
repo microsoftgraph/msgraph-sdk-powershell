@@ -1,43 +1,43 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Calendar
-online version: https://learn.microsoft.com/powershell/module/microsoft.graph.calendar/update-mggroupeventextension
+Module Name: Microsoft.Graph.Users
+online version: https://learn.microsoft.com/powershell/module/microsoft.graph.users/update-mguserextension
 schema: 2.0.0
 ---
 
-# Update-MgGroupEventExtension
+# Update-MgUserExtension
 
 ## SYNOPSIS
-Update the navigation property extensions in groups
+Update the navigation property extensions in users
 
 ## SYNTAX
 
 ### UpdateExpanded (Default)
 ```
-Update-MgGroupEventExtension -EventId <String> -ExtensionId <String> -GroupId <String>
- [-AdditionalProperties <Hashtable>] [-Id <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgUserExtension -ExtensionId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
+ [-Id <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgGroupEventExtension -EventId <String> -ExtensionId <String> -GroupId <String>
- -BodyParameter <Hashtable> [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgUserExtension -ExtensionId <String> -UserId <String> -BodyParameter <Hashtable> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgGroupEventExtension -InputObject <ICalendarIdentity> -BodyParameter <Hashtable> [-Confirm] [-WhatIf]
+Update-MgUserExtension -InputObject <IUsersIdentity> -BodyParameter <Hashtable> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgGroupEventExtension -InputObject <ICalendarIdentity> [-AdditionalProperties <Hashtable>]
- [-Id <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgUserExtension -InputObject <IUsersIdentity> [-AdditionalProperties <Hashtable>] [-Id <String>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Update the navigation property extensions in groups
+Update the navigation property extensions in users
 
 ## EXAMPLES
 
@@ -87,38 +87,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -EventId
-The unique identifier of event
-
-```yaml
-Type: System.String
-Parameter Sets: Update, UpdateExpanded
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -ExtensionId
 The unique identifier of extension
-
-```yaml
-Type: System.String
-Parameter Sets: Update, UpdateExpanded
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -GroupId
-The unique identifier of group
 
 ```yaml
 Type: System.String
@@ -153,7 +123,7 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -161,6 +131,21 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -UserId
+The unique identifier of user
+
+```yaml
+Type: System.String
+Parameter Sets: Update, UpdateExpanded
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -200,7 +185,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICalendarIdentity
+### Microsoft.Graph.PowerShell.Models.IUsersIdentity
 
 ### System.Collections.Hashtable
 
@@ -217,16 +202,19 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-`INPUTOBJECT <ICalendarIdentity>`: Identity Parameter
-  - `[AttachmentId <String>]`: The unique identifier of attachment
-  - `[CalendarGroupId <String>]`: The unique identifier of calendarGroup
-  - `[CalendarId <String>]`: The unique identifier of calendar
-  - `[CalendarPermissionId <String>]`: The unique identifier of calendarPermission
-  - `[EventId <String>]`: The unique identifier of event
-  - `[EventId1 <String>]`: The unique identifier of event
+`INPUTOBJECT <IUsersIdentity>`: Identity Parameter
+  - `[AttachmentBaseId <String>]`: The unique identifier of attachmentBase
+  - `[AttachmentSessionId <String>]`: The unique identifier of attachmentSession
+  - `[ChecklistItemId <String>]`: The unique identifier of checklistItem
+  - `[DirectoryObjectId <String>]`: The unique identifier of directoryObject
   - `[ExtensionId <String>]`: The unique identifier of extension
-  - `[GroupId <String>]`: The unique identifier of group
-  - `[PlaceId <String>]`: The unique identifier of place
+  - `[LicenseDetailsId <String>]`: The unique identifier of licenseDetails
+  - `[LinkedResourceId <String>]`: The unique identifier of linkedResource
+  - `[OAuth2PermissionGrantId <String>]`: The unique identifier of oAuth2PermissionGrant
+  - `[OutlookCategoryId <String>]`: The unique identifier of outlookCategory
+  - `[ProfilePhotoId <String>]`: The unique identifier of profilePhoto
+  - `[TodoTaskId <String>]`: The unique identifier of todoTask
+  - `[TodoTaskListId <String>]`: The unique identifier of todoTaskList
   - `[UserId <String>]`: The unique identifier of user
 
 ## RELATED LINKS

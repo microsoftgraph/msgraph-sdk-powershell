@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete a connectedOrganization object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Remove-MgBetaEntitlementManagementConnectedOrganization -InputObject <IIdentityG
 
 ## DESCRIPTION
 Delete a connectedOrganization object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

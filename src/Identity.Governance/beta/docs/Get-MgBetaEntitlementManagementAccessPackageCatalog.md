@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve the properties and relationships of an accessPackageCatalog object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -52,7 +51,6 @@ Get-MgBetaEntitlementManagementAccessPackageCatalog -DisplayNameEq <String> [-Ex
 
 ## DESCRIPTION
 Retrieve the properties and relationships of an accessPackageCatalog object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

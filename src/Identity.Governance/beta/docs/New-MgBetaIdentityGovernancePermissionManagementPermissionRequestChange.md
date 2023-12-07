@@ -110,7 +110,7 @@ Accept wildcard characters: False
 ```
 
 ### -ModificationDateTime
-.
+Time when the change occurred.
 
 ```yaml
 Type: System.DateTime
@@ -125,7 +125,7 @@ Accept wildcard characters: False
 ```
 
 ### -PermissionsRequestId
-.
+The ID of the scheduledPermissionsRequest object.
 
 ```yaml
 Type: System.String
@@ -155,7 +155,7 @@ Accept wildcard characters: False
 ```
 
 ### -TicketId
-.
+Represents the ticketing system identifier.
 
 ```yaml
 Type: System.String
@@ -224,10 +224,10 @@ To create the parameters described below, construct a hash table containing the 
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[ActiveOccurrenceStatus <String>]`: permissionsRequestOccurrenceStatus
-  - `[ModificationDateTime <DateTime?>]`: 
-  - `[PermissionsRequestId <String>]`: 
+  - `[ModificationDateTime <DateTime?>]`: Time when the change occurred.
+  - `[PermissionsRequestId <String>]`: The ID of the scheduledPermissionsRequest object.
   - `[StatusDetail <String>]`: statusDetail
-  - `[TicketId <String>]`: 
+  - `[TicketId <String>]`: Represents the ticketing system identifier.
 
 ## RELATED LINKS
 

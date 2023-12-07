@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete an inboundFlow object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Remove-MgBetaExternalIndustryDataInboundFlow -InputObject <ISearchIdentity> [-If
 
 ## DESCRIPTION
 Delete an inboundFlow object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

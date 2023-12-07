@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgBetaSiteList
 
 ## SYNOPSIS
-Get the list of richLongRunningOperations associated with a list.
-This API is available in the following national cloud deployments.
+Return the metadata for a [list][].
 
 ## SYNTAX
 
@@ -33,8 +32,7 @@ Get-MgBetaSiteList -InputObject <ISitesIdentity> [-ExpandProperty <String[]>] [-
 ```
 
 ## DESCRIPTION
-Get the list of richLongRunningOperations associated with a list.
-This API is available in the following national cloud deployments.
+Return the metadata for a [list][].
 
 ## EXAMPLES
 

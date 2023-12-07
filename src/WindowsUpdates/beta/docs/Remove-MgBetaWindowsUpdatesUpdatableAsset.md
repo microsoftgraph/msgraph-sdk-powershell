@@ -8,8 +8,8 @@ schema: 2.0.0
 # Remove-MgBetaWindowsUpdatesUpdatableAsset
 
 ## SYNOPSIS
-Delete an updatableAsset object.
-This API is available in the following national cloud deployments.
+Delete an azureADDevice object.
+When a Microsoft Entra device is deleted, it is unregistered from the deployment service and automatically unenrolled from management by the service for all update categories, as well as removed from every deploymentAudience and updatableAssetGroup.
 
 ## SYNTAX
 
@@ -26,8 +26,8 @@ Remove-MgBetaWindowsUpdatesUpdatableAsset -InputObject <IWindowsUpdatesIdentity>
 ```
 
 ## DESCRIPTION
-Delete an updatableAsset object.
-This API is available in the following national cloud deployments.
+Delete an azureADDevice object.
+When a Microsoft Entra device is deleted, it is unregistered from the deployment service and automatically unenrolled from management by the service for all update categories, as well as removed from every deploymentAudience and updatableAssetGroup.
 
 ## EXAMPLES
 

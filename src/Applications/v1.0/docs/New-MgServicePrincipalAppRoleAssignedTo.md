@@ -11,7 +11,7 @@ schema: 2.0.0
 Assign an app role for a resource service principal, to a user, group, or client service principal.
 App roles that are assigned to service principals are also known as application permissions.
 Application permissions can be granted directly with app role assignments, or through a consent experience.
-To grant an app role assignment, you need three identifiers: This API is supported in the following national cloud deployments.
+To grant an app role assignment, you need three identifiers:
 
 ## SYNTAX
 
@@ -48,7 +48,7 @@ New-MgServicePrincipalAppRoleAssignedTo -InputObject <IApplicationsIdentity>
 Assign an app role for a resource service principal, to a user, group, or client service principal.
 App roles that are assigned to service principals are also known as application permissions.
 Application permissions can be granted directly with app role assignments, or through a consent experience.
-To grant an app role assignment, you need three identifiers: This API is supported in the following national cloud deployments.
+To grant an app role assignment, you need three identifiers:
 
 ## EXAMPLES
 
@@ -364,6 +364,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[ServicePrincipalId <String>]`: The unique identifier of servicePrincipal
   - `[SynchronizationJobId <String>]`: The unique identifier of synchronizationJob
   - `[SynchronizationTemplateId <String>]`: The unique identifier of synchronizationTemplate
+  - `[TargetDeviceGroupId <String>]`: The unique identifier of targetDeviceGroup
   - `[TokenIssuancePolicyId <String>]`: The unique identifier of tokenIssuancePolicy
   - `[TokenLifetimePolicyId <String>]`: The unique identifier of tokenLifetimePolicy
   - `[UserId <String>]`: The unique identifier of user

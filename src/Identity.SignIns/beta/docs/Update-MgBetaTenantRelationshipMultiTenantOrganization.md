@@ -8,11 +8,7 @@ schema: 2.0.0
 # Update-MgBetaTenantRelationshipMultiTenantOrganization
 
 ## SYNOPSIS
-Create a new multi-tenant organization.
-By default, the creator tenant becomes an owner tenant upon successful creation.
-Only owner tenants can manage a multi-tenant organization.
-To allow for asynchronous processing, you must wait a minimum of 2 hours between creation and joining a multi-tenant organization.
-This API is available in the following national cloud deployments.
+Update the properties of a multi-tenant organization.
 
 ## SYNTAX
 
@@ -31,11 +27,7 @@ Update-MgBetaTenantRelationshipMultiTenantOrganization -BodyParameter <IMicrosof
 ```
 
 ## DESCRIPTION
-Create a new multi-tenant organization.
-By default, the creator tenant becomes an owner tenant upon successful creation.
-Only owner tenants can manage a multi-tenant organization.
-To allow for asynchronous processing, you must wait a minimum of 2 hours between creation and joining a multi-tenant organization.
-This API is available in the following national cloud deployments.
+Update the properties of a multi-tenant organization.
 
 ## EXAMPLES
 

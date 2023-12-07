@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Add (pin) a tab to the specified chat.
 \nThe corresponding app must already be installed in the chat.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -43,7 +42,6 @@ New-MgUserChatTab -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtabl
 ## DESCRIPTION
 Add (pin) a tab to the specified chat.
 \nThe corresponding app must already be installed in the chat.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

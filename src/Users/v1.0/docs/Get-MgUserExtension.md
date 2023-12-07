@@ -1,41 +1,43 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Beta.CrossDeviceExperiences
-online version: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.crossdeviceexperiences/get-mgbetauseractivity
+Module Name: Microsoft.Graph.Users
+online version: https://learn.microsoft.com/powershell/module/microsoft.graph.users/get-mguserextension
 schema: 2.0.0
 ---
 
-# Get-MgBetaUserActivity
+# Get-MgUserExtension
 
 ## SYNOPSIS
-The user's activities across devices.
+The collection of open extensions defined for the user.
 Read-only.
+Supports $expand.
 Nullable.
 
 ## SYNTAX
 
 ### List (Default)
 ```
-Get-MgBetaUserActivity -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+Get-MgUserExtension -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgBetaUserActivity -UserActivityId <String> -UserId <String> [-ExpandProperty <String[]>]
- [-Property <String[]>] [<CommonParameters>]
+Get-MgUserExtension -ExtensionId <String> -UserId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
+ [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgBetaUserActivity -InputObject <ICrossDeviceExperiencesIdentity> [-ExpandProperty <String[]>]
- [-Property <String[]>] [<CommonParameters>]
+Get-MgUserExtension -InputObject <IUsersIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The user's activities across devices.
+The collection of open extensions defined for the user.
 Read-only.
+Supports $expand.
 Nullable.
 
 ## EXAMPLES
@@ -102,6 +104,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -ExtensionId
+The unique identifier of extension
+
+```yaml
+Type: System.String
+Parameter Sets: Get
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Filter
 Filter items by property values
 
@@ -122,7 +139,7 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.Beta.PowerShell.Models.ICrossDeviceExperiencesIdentity
+Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -223,21 +240,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -UserActivityId
-The unique identifier of userActivity
-
-```yaml
-Type: System.String
-Parameter Sets: Get
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -UserId
 The unique identifier of user
 
@@ -258,11 +260,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.Beta.PowerShell.Models.ICrossDeviceExperiencesIdentity
+### Microsoft.Graph.PowerShell.Models.IUsersIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserActivity
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExtension
+
+### System.String
 
 ## NOTES
 
@@ -273,14 +277,19 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-`INPUTOBJECT <ICrossDeviceExperiencesIdentity>`: Identity Parameter
-  - `[ActivityHistoryItemId <String>]`: The unique identifier of activityHistoryItem
-  - `[CommandId <String>]`: The unique identifier of command
-  - `[DeviceId <String>]`: The unique identifier of device
+`INPUTOBJECT <IUsersIdentity>`: Identity Parameter
+  - `[AttachmentBaseId <String>]`: The unique identifier of attachmentBase
+  - `[AttachmentSessionId <String>]`: The unique identifier of attachmentSession
+  - `[ChecklistItemId <String>]`: The unique identifier of checklistItem
   - `[DirectoryObjectId <String>]`: The unique identifier of directoryObject
   - `[ExtensionId <String>]`: The unique identifier of extension
-  - `[UsageRightId <String>]`: The unique identifier of usageRight
-  - `[UserActivityId <String>]`: The unique identifier of userActivity
+  - `[LicenseDetailsId <String>]`: The unique identifier of licenseDetails
+  - `[LinkedResourceId <String>]`: The unique identifier of linkedResource
+  - `[OAuth2PermissionGrantId <String>]`: The unique identifier of oAuth2PermissionGrant
+  - `[OutlookCategoryId <String>]`: The unique identifier of outlookCategory
+  - `[ProfilePhotoId <String>]`: The unique identifier of profilePhoto
+  - `[TodoTaskId <String>]`: The unique identifier of todoTask
+  - `[TodoTaskListId <String>]`: The unique identifier of todoTaskList
   - `[UserId <String>]`: The unique identifier of user
 
 ## RELATED LINKS

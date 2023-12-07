@@ -8,8 +8,7 @@ schema: 2.0.0
 # Remove-MgBetaSiteListItem
 
 ## SYNOPSIS
-Removes an item from a list][].
-This API is available in the following [national cloud deployments.
+Removes an item from a [list][].
 
 ## SYNTAX
 
@@ -26,8 +25,7 @@ Remove-MgBetaSiteListItem -InputObject <ISitesIdentity> [-IfMatch <String>] [-Pa
 ```
 
 ## DESCRIPTION
-Removes an item from a list][].
-This API is available in the following [national cloud deployments.
+Removes an item from a [list][].
 
 ## EXAMPLES
 

@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update (override) the synchronization template associated with a given application.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -46,7 +45,6 @@ Update-MgBetaServicePrincipalSynchronizationTemplate -InputObject <IApplications
 
 ## DESCRIPTION
 Update (override) the synchronization template associated with a given application.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

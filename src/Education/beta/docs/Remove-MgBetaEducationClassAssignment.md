@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Delete an existing assignment.
 Only teachers within a class can delete assignments.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -29,7 +28,6 @@ Remove-MgBetaEducationClassAssignment -InputObject <IEducationIdentity> [-IfMatc
 ## DESCRIPTION
 Delete an existing assignment.
 Only teachers within a class can delete assignments.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

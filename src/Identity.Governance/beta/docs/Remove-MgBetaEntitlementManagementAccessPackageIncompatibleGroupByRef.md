@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Remove a group from the list of groups that have been marked as incompatible on an accessPackage.
- This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -28,7 +27,6 @@ Remove-MgBetaEntitlementManagementAccessPackageIncompatibleGroupByRef
 
 ## DESCRIPTION
 Remove a group from the list of groups that have been marked as incompatible on an accessPackage.
- This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Assign a claimsMappingPolicy to a servicePrincipal.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -39,7 +38,6 @@ New-MgBetaServicePrincipalClaimMappingPolicyByRef -InputObject <IApplicationsIde
 
 ## DESCRIPTION
 Assign a claimsMappingPolicy to a servicePrincipal.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

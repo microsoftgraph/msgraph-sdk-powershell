@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update the properties of the specified team.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -61,7 +60,6 @@ Update-MgTeam -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
 
 ## DESCRIPTION
 Update the properties of the specified team.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

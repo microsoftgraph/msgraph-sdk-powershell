@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create and register a new device in the organization.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -37,7 +36,6 @@ New-MgDevice -BodyParameter <IMicrosoftGraphDevice> [-Confirm] [-WhatIf] [<Commo
 
 ## DESCRIPTION
 Create and register a new device in the organization.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

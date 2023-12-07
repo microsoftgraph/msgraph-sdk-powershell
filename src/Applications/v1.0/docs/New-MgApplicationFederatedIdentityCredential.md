@@ -9,9 +9,8 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new federatedIdentityCredential object for an application.
-By configuring a trust relationship between your Azure AD application registration and the identity provider for your compute platform, you can use tokens issued by that platform to authenticate with Microsoft identity platform and call APIs in the Microsoft ecosystem.
+By configuring a trust relationship between your Microsoft Entra application registration and the identity provider for your compute platform, you can use tokens issued by that platform to authenticate with Microsoft identity platform and call APIs in the Microsoft ecosystem.
 Maximum of 20 objects can be added to an application.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -43,9 +42,8 @@ New-MgApplicationFederatedIdentityCredential -InputObject <IApplicationsIdentity
 
 ## DESCRIPTION
 Create a new federatedIdentityCredential object for an application.
-By configuring a trust relationship between your Azure AD application registration and the identity provider for your compute platform, you can use tokens issued by that platform to authenticate with Microsoft identity platform and call APIs in the Microsoft ecosystem.
+By configuring a trust relationship between your Microsoft Entra application registration and the identity provider for your compute platform, you can use tokens issued by that platform to authenticate with Microsoft identity platform and call APIs in the Microsoft ecosystem.
 Maximum of 20 objects can be added to an application.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -99,9 +97,9 @@ Accept wildcard characters: False
 
 ### -Audiences
 The audience that can appear in the external token.
-This field is mandatory and should be set to api://AzureADTokenExchange for Azure AD.
+This field is mandatory and should be set to api://AzureADTokenExchange for Microsoft Entra ID.
 It says what Microsoft identity platform should accept in the aud claim in the incoming token.
-This value represents Azure AD in your external identity provider and has no fixed value across identity providers - you may need to create a new application registration in your identity provider to serve as the audience of this token.
+This value represents Microsoft Entra ID in your external identity provider and has no fixed value across identity providers - you might need to create a new application registration in your identity provider to serve as the audience of this token.
 This field can only accept a single value and has a limit of 600 characters.
 Required.
 
@@ -134,7 +132,7 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-The un-validated, user-provided description of the federated identity credential.
+The unvalidated description of the federated identity credential, provided by the user.
 It has a limit of 600 characters.
 Optional.
 
@@ -183,8 +181,8 @@ Accept wildcard characters: False
 ```
 
 ### -Issuer
-The URL of the external identity provider and must match the issuer claim of the external token being exchanged.
-The combination of the values of issuer and subject must be unique on the app.
+The URL of the external identity provider, which must match the issuer claim of the external token being exchanged.
+The combination of the values of issuer and subject must be unique within the app.
 It has a limit of 600 characters.
 Required.
 
@@ -201,8 +199,8 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-is the unique identifier for the federated identity credential, which has a limit of 120 characters and must be URL friendly.
-It is immutable once created.
+The unique identifier for the federated identity credential, which has a limit of 120 characters and must be URL friendly.
+The string is immutable after it's created.
 Required.
 Not nullable.
 Supports $filter (eq).
@@ -222,9 +220,9 @@ Accept wildcard characters: False
 ### -Subject
 Required.
 The identifier of the external software workload within the external identity provider.
-Like the audience value, it has no fixed format, as each identity provider uses their own - sometimes a GUID, sometimes a colon delimited identifier, sometimes arbitrary strings.
-The value here must match the sub claim within the token presented to Azure AD.
-The combination of issuer and subject must be unique on the app.
+Like the audience value, it has no fixed format; each identity provider uses their own - sometimes a GUID, sometimes a colon delimited identifier, sometimes arbitrary strings.
+The value here must match the sub claim within the token presented to Microsoft Entra ID.
+The combination of issuer and subject must be unique within the app.
 It has a limit of 600 characters.
 Supports $filter (eq).
 
@@ -296,11 +294,11 @@ To create the parameters described below, construct a hash table containing the 
 `BODYPARAMETER <IMicrosoftGraphFederatedIdentityCredential>`: federatedIdentityCredential
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[Audiences <String[]>]`: The audience that can appear in the external token. This field is mandatory and should be set to api://AzureADTokenExchange for Azure AD. It says what Microsoft identity platform should accept in the aud claim in the incoming token. This value represents Azure AD in your external identity provider and has no fixed value across identity providers - you may need to create a new application registration in your identity provider to serve as the audience of this token. This field can only accept a single value and has a limit of 600 characters. Required.
-  - `[Description <String>]`: The un-validated, user-provided description of the federated identity credential. It has a limit of 600 characters. Optional.
-  - `[Issuer <String>]`: The URL of the external identity provider and must match the issuer claim of the external token being exchanged. The combination of the values of issuer and subject must be unique on the app. It has a limit of 600 characters. Required.
-  - `[Name <String>]`: is the unique identifier for the federated identity credential, which has a limit of 120 characters and must be URL friendly. It is immutable once created. Required. Not nullable. Supports $filter (eq).
-  - `[Subject <String>]`: Required. The identifier of the external software workload within the external identity provider. Like the audience value, it has no fixed format, as each identity provider uses their own - sometimes a GUID, sometimes a colon delimited identifier, sometimes arbitrary strings. The value here must match the sub claim within the token presented to Azure AD. The combination of issuer and subject must be unique on the app. It has a limit of 600 characters. Supports $filter (eq).
+  - `[Audiences <String[]>]`: The audience that can appear in the external token. This field is mandatory and should be set to api://AzureADTokenExchange for Microsoft Entra ID. It says what Microsoft identity platform should accept in the aud claim in the incoming token. This value represents Microsoft Entra ID in your external identity provider and has no fixed value across identity providers - you might need to create a new application registration in your identity provider to serve as the audience of this token. This field can only accept a single value and has a limit of 600 characters. Required.
+  - `[Description <String>]`: The unvalidated description of the federated identity credential, provided by the user. It has a limit of 600 characters. Optional.
+  - `[Issuer <String>]`: The URL of the external identity provider, which must match the issuer claim of the external token being exchanged. The combination of the values of issuer and subject must be unique within the app. It has a limit of 600 characters. Required.
+  - `[Name <String>]`: The unique identifier for the federated identity credential, which has a limit of 120 characters and must be URL friendly. The string is immutable after it's created. Required. Not nullable. Supports $filter (eq).
+  - `[Subject <String>]`: Required. The identifier of the external software workload within the external identity provider. Like the audience value, it has no fixed format; each identity provider uses their own - sometimes a GUID, sometimes a colon delimited identifier, sometimes arbitrary strings. The value here must match the sub claim within the token presented to Microsoft Entra ID. The combination of issuer and subject must be unique within the app. It has a limit of 600 characters. Supports $filter (eq).
 
 `INPUTOBJECT <IApplicationsIdentity>`: Identity Parameter
   - `[AppId <String>]`: Alternate key of application
@@ -321,6 +319,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[ServicePrincipalId <String>]`: The unique identifier of servicePrincipal
   - `[SynchronizationJobId <String>]`: The unique identifier of synchronizationJob
   - `[SynchronizationTemplateId <String>]`: The unique identifier of synchronizationTemplate
+  - `[TargetDeviceGroupId <String>]`: The unique identifier of targetDeviceGroup
   - `[TokenIssuancePolicyId <String>]`: The unique identifier of tokenIssuancePolicy
   - `[TokenLifetimePolicyId <String>]`: The unique identifier of tokenLifetimePolicy
   - `[UserId <String>]`: The unique identifier of user

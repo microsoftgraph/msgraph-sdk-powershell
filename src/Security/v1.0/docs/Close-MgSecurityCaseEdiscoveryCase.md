@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Close an eDiscovery case.
 For details, see Close a case.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -29,7 +28,6 @@ Close-MgSecurityCaseEdiscoveryCase -InputObject <ISecurityIdentity> [-PassThru] 
 ## DESCRIPTION
 Close an eDiscovery case.
 For details, see Close a case.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

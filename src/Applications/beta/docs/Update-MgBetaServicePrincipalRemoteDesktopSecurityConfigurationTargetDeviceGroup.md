@@ -8,7 +8,8 @@ schema: 2.0.0
 # Update-MgBetaServicePrincipalRemoteDesktopSecurityConfigurationTargetDeviceGroup
 
 ## SYNOPSIS
-Update the navigation property targetDeviceGroups in servicePrincipals
+Update the properties of a targetDeviceGroup object for remoteDesktopSecurityConfiguration object on the servicePrincipal.
+You can configure a maximum of 10 target device groups for the remoteDesktopSecurityConfiguraiton object on the servicePrincipal.
 
 ## SYNTAX
 
@@ -41,7 +42,8 @@ Update-MgBetaServicePrincipalRemoteDesktopSecurityConfigurationTargetDeviceGroup
 ```
 
 ## DESCRIPTION
-Update the navigation property targetDeviceGroups in servicePrincipals
+Update the properties of a targetDeviceGroup object for remoteDesktopSecurityConfiguration object on the servicePrincipal.
+You can configure a maximum of 10 target device groups for the remoteDesktopSecurityConfiguraiton object on the servicePrincipal.
 
 ## EXAMPLES
 
@@ -93,7 +95,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-.
+Display name for the target device group.
 
 ```yaml
 Type: System.String
@@ -225,7 +227,7 @@ To create the parameters described below, construct a hash table containing the 
 `BODYPARAMETER <IMicrosoftGraphTargetDeviceGroup>`: targetDeviceGroup
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[DisplayName <String>]`: 
+  - `[DisplayName <String>]`: Display name for the target device group.
 
 `INPUTOBJECT <IApplicationsIdentity>`: Identity Parameter
   - `[AppId <String>]`: Alternate key of application

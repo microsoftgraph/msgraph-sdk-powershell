@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update the properties of a tag object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -42,7 +41,6 @@ Update-MgTeamTag -InputObject <ITeamsIdentity> [-TeamId <String>] [-AdditionalPr
 
 ## DESCRIPTION
 Update the properties of a tag object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

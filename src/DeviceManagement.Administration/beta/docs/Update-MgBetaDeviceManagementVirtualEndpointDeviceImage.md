@@ -17,8 +17,8 @@ Update the navigation property deviceImages in deviceManagement
 Update-MgBetaDeviceManagementVirtualEndpointDeviceImage -CloudPcDeviceImageId <String>
  [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-ExpirationDate <DateTime>] [-Id <String>]
  [-LastModifiedDateTime <DateTime>] [-OperatingSystem <String>] [-OSBuildNumber <String>] [-OSStatus <String>]
- [-SourceImageResourceId <String>] [-Status <String>] [-StatusDetails <String>] [-Version <String>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-ScopeIds <String[]>] [-SourceImageResourceId <String>] [-Status <String>] [-StatusDetails <String>]
+ [-Version <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
@@ -38,8 +38,8 @@ Update-MgBetaDeviceManagementVirtualEndpointDeviceImage -InputObject <IDeviceMan
 Update-MgBetaDeviceManagementVirtualEndpointDeviceImage -InputObject <IDeviceManagementAdministrationIdentity>
  [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-ExpirationDate <DateTime>] [-Id <String>]
  [-LastModifiedDateTime <DateTime>] [-OperatingSystem <String>] [-OSBuildNumber <String>] [-OSStatus <String>]
- [-SourceImageResourceId <String>] [-Status <String>] [-StatusDetails <String>] [-Version <String>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-ScopeIds <String[]>] [-SourceImageResourceId <String>] [-Status <String>] [-StatusDetails <String>]
+ [-Version <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -235,6 +235,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -ScopeIds
+.
+
+```yaml
+Type: System.String[]
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -SourceImageResourceId
 The ID of the source image resource on Azure.
 Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/images/{imageName}.
@@ -359,6 +374,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[OSBuildNumber <String>]`: The OS build version of the image. For example, 1909.
   - `[OSStatus <String>]`: cloudPcDeviceImageOsStatus
   - `[OperatingSystem <String>]`: The operating system of the image. For example, Windows 10 Enterprise.
+  - `[ScopeIds <String[]>]`: 
   - `[SourceImageResourceId <String>]`: The ID of the source image resource on Azure. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/images/{imageName}.
   - `[Status <String>]`: cloudPcDeviceImageStatus
   - `[StatusDetails <String>]`: cloudPcDeviceImageStatusDetails

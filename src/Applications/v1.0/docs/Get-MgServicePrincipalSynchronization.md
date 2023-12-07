@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgServicePrincipalSynchronization
 
 ## SYNOPSIS
-Represents the capability for Azure Active Directory (Azure AD) identity synchronization through the Microsoft Graph API.
+Represents the capability for Microsoft Entra identity synchronization through the Microsoft Graph API.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgServicePrincipalSynchronization -InputObject <IApplicationsIdentity> [-Exp
 ```
 
 ## DESCRIPTION
-Represents the capability for Azure Active Directory (Azure AD) identity synchronization through the Microsoft Graph API.
+Represents the capability for Microsoft Entra identity synchronization through the Microsoft Graph API.
 
 ## EXAMPLES
 
@@ -145,6 +145,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[ServicePrincipalId <String>]`: The unique identifier of servicePrincipal
   - `[SynchronizationJobId <String>]`: The unique identifier of synchronizationJob
   - `[SynchronizationTemplateId <String>]`: The unique identifier of synchronizationTemplate
+  - `[TargetDeviceGroupId <String>]`: The unique identifier of targetDeviceGroup
   - `[TokenIssuancePolicyId <String>]`: The unique identifier of tokenIssuancePolicy
   - `[TokenLifetimePolicyId <String>]`: The unique identifier of tokenLifetimePolicy
   - `[UserId <String>]`: The unique identifier of user

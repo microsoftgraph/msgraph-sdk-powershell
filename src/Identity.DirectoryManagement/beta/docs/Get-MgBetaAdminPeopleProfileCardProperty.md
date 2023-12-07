@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Retrieve the properties of a profileCardProperty entity.
 The profileCardProperty is identified by its directoryPropertyName property.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -36,7 +35,6 @@ Get-MgBetaAdminPeopleProfileCardProperty -InputObject <IIdentityDirectoryManagem
 ## DESCRIPTION
 Retrieve the properties of a profileCardProperty entity.
 The profileCardProperty is identified by its directoryPropertyName property.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

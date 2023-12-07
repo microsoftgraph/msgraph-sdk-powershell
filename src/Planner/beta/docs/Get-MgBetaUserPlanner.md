@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Retrieve the properties and relationships of a plannerUser object.
 The returned properties include the user's favorite plans and recently viewed plans.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -48,7 +47,6 @@ Get-MgBetaUserPlanner -UserId <String> [-ExpandProperty <String[]>] [-Filter <St
 ## DESCRIPTION
 Retrieve the properties and relationships of a plannerUser object.
 The returned properties include the user's favorite plans and recently viewed plans.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

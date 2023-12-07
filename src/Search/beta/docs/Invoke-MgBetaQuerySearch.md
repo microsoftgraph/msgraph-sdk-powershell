@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Run a specified search query.
 Search results are provided in the response.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -30,7 +29,6 @@ Invoke-MgBetaQuerySearch
 ## DESCRIPTION
 Run a specified search query.
 Search results are provided in the response.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

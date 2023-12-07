@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update the settings of the tenant-wide externalIdentitiesPolicy object that controls whether external users can leave a Microsoft Entra tenant via self-service controls.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -28,7 +27,6 @@ Update-MgBetaPolicyExternalIdentityPolicy -BodyParameter <IMicrosoftGraphExterna
 
 ## DESCRIPTION
 Update the settings of the tenant-wide externalIdentitiesPolicy object that controls whether external users can leave a Microsoft Entra tenant via self-service controls.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

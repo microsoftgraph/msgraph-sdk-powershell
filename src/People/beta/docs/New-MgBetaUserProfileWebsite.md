@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new personWebsite object in a user's profile.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -47,7 +46,6 @@ New-MgBetaUserProfileWebsite -InputObject <IPeopleIdentity> [-AdditionalProperti
 
 ## DESCRIPTION
 Create a new personWebsite object in a user's profile.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

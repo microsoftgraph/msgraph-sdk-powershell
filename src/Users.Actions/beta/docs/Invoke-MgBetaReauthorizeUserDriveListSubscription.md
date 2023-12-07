@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Reauthorize a subscription when you receive a reauthorizationRequired challenge.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Invoke-MgBetaReauthorizeUserDriveListSubscription -InputObject <IUsersActionsIde
 
 ## DESCRIPTION
 Reauthorize a subscription when you receive a reauthorizationRequired challenge.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -203,6 +201,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[NotebookId <String>]`: The unique identifier of notebook
   - `[OnenotePageId <String>]`: The unique identifier of onenotePage
   - `[OnenoteSectionId <String>]`: The unique identifier of onenoteSection
+  - `[OnlineMeetingId <String>]`: The unique identifier of onlineMeeting
   - `[OutlookTaskFolderId <String>]`: The unique identifier of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: The unique identifier of outlookTaskGroup
   - `[OutlookTaskId <String>]`: The unique identifier of outlookTask

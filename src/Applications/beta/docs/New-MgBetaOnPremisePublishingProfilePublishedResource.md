@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new publishedResource object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -43,7 +42,6 @@ New-MgBetaOnPremisePublishingProfilePublishedResource -InputObject <IApplication
 
 ## DESCRIPTION
 Create a new publishedResource object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

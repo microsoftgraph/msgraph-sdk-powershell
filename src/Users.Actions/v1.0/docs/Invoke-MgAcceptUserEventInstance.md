@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Accept the specified event in a user calendar.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -42,7 +41,6 @@ Invoke-MgAcceptUserEventInstance -InputObject <IUsersActionsIdentity> [-Addition
 
 ## DESCRIPTION
 Accept the specified event in a user calendar.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

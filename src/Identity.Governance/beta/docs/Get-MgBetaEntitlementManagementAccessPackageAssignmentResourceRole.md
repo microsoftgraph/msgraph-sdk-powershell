@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve the properties and relationships of an accessPackageAssignmentResourceRole object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -35,7 +34,6 @@ Get-MgBetaEntitlementManagementAccessPackageAssignmentResourceRole -InputObject 
 
 ## DESCRIPTION
 Retrieve the properties and relationships of an accessPackageAssignmentResourceRole object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

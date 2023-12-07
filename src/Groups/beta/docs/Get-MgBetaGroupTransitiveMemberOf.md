@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaGroupTransitiveMemberOf
 
 ## SYNOPSIS
-The groups that a group is a member of, either directly and through nested membership.
+The groups a group is a member of, either directly or through nested membership.
 Nullable.
 
 ## SYNTAX
@@ -33,7 +33,7 @@ Get-MgBetaGroupTransitiveMemberOf -InputObject <IGroupsIdentity> [-ExpandPropert
 ```
 
 ## DESCRIPTION
-The groups that a group is a member of, either directly and through nested membership.
+The groups a group is a member of, either directly or through nested membership.
 Nullable.
 
 ## EXAMPLES

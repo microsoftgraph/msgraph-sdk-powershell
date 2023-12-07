@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update the tenant-wide teamsAppSettings for all Teams apps in the tenant.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Update-MgTeamworkTeamAppSetting -BodyParameter <IMicrosoftGraphTeamsAppSettings>
 
 ## DESCRIPTION
 Update the tenant-wide teamsAppSettings for all Teams apps in the tenant.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

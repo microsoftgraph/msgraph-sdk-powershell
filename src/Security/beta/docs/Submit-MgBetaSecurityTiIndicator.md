@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Upload multiple threat intelligence (TI) indicators in one request instead of multiple requests.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -28,7 +27,6 @@ Submit-MgBetaSecurityTiIndicator
 
 ## DESCRIPTION
 Upload multiple threat intelligence (TI) indicators in one request instead of multiple requests.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

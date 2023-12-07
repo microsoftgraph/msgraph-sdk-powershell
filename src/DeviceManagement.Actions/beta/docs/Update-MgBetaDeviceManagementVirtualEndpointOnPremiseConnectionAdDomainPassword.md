@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Update the Active Directory domain password for a cloudPcOnPremisesConnection object.
 This API is supported when the type of the cloudPcOnPremisesConnection object is hybridAzureADJoin.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -47,7 +46,6 @@ Update-MgBetaDeviceManagementVirtualEndpointOnPremiseConnectionAdDomainPassword
 ## DESCRIPTION
 Update the Active Directory domain password for a cloudPcOnPremisesConnection object.
 This API is supported when the type of the cloudPcOnPremisesConnection object is hybridAzureADJoin.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -260,6 +258,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[MicrosoftTunnelSiteId <String>]`: The unique identifier of microsoftTunnelSite
   - `[MobileAppTroubleshootingEventId <String>]`: The unique identifier of mobileAppTroubleshootingEvent
   - `[NotificationMessageTemplateId <String>]`: The unique identifier of notificationMessageTemplate
+  - `[PrivilegeManagementElevationRequestId <String>]`: The unique identifier of privilegeManagementElevationRequest
   - `[RemoteAssistancePartnerId <String>]`: The unique identifier of remoteAssistancePartner
   - `[RoleScopeTagId <String>]`: The unique identifier of roleScopeTag
   - `[WindowsAutopilotDeploymentProfileId <String>]`: The unique identifier of windowsAutopilotDeploymentProfile

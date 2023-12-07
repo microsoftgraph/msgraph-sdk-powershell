@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgGroupThread
 
 ## SYNOPSIS
-This API is available in the following national cloud deployments.
+Update conversation thread
 
 ## SYNTAX
 
@@ -43,7 +43,7 @@ Update-MgGroupThread -InputObject <IGroupsIdentity> [-AdditionalProperties <Hash
 ```
 
 ## DESCRIPTION
-This API is available in the following national cloud deployments.
+Update conversation thread
 
 ## EXAMPLES
 

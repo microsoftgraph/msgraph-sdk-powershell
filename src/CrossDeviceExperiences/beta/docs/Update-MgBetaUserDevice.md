@@ -333,7 +333,7 @@ Accept wildcard characters: False
 ```
 
 ### -DomainName
-The on-premises domain name of Hybrid Azure AD joined devices.
+The on-premises domain name of Microsoft Entra hybrid joined devices.
 This property is set by Intune.
 
 ```yaml
@@ -897,8 +897,8 @@ Accept wildcard characters: False
 ### -TrustType
 Type of trust for the joined device.
 Read-only.
-Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD).
-For more details, see Introduction to device management in Azure Active Directory.
+Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Microsoft Entra ID).
+For more details, see Introduction to device management in Microsoft Entra ID.
 
 ```yaml
 Type: System.String
@@ -1032,7 +1032,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[DeviceOwnership <String>]`: Ownership of the device. This property is set by Intune. Possible values are: unknown, company, personal.
   - `[DeviceVersion <Int32?>]`: For internal use only.
   - `[DisplayName <String>]`: The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.
-  - `[DomainName <String>]`: The on-premises domain name of Hybrid Azure AD joined devices. This property is set by Intune.
+  - `[DomainName <String>]`: The on-premises domain name of Microsoft Entra hybrid joined devices. This property is set by Intune.
   - `[EnrollmentProfileName <String>]`: Enrollment profile applied to the device. For example, Apple Device Enrollment Profile, Device enrollment - Corporate device identifiers, or Windows Autopilot profile name. This property is set by Intune.
   - `[EnrollmentType <String>]`: Enrollment type of the device. This property is set by Intune. Possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement.
   - `[ExtensionAttributes <IMicrosoftGraphOnPremisesExtensionAttributes>]`: onPremisesExtensionAttributes
@@ -1082,7 +1082,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[Status <String>]`: Device is online or offline. Only returned if user signs in with a Microsoft account as part of Project Rome.
   - `[SystemLabels <String[]>]`: List of labels applied to the device by the system. Supports $filter (/$count eq 0, /$count ne 0).
   - `[TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>]`: Groups and administrative units that this device is a member of. This operation is transitive. Supports $expand.
-  - `[TrustType <String>]`: Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory.
+  - `[TrustType <String>]`: Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Microsoft Entra ID). For more details, see Introduction to device management in Microsoft Entra ID.
   - `[UsageRights <IMicrosoftGraphUsageRight[]>]`: Represents the usage rights a device has been granted.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[CatalogId <String>]`: Product id corresponding to the usage right.

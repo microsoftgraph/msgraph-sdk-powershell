@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgBetaExternalIndustryDataConnector
 
 ## SYNOPSIS
-Read the properties and relationships of an azureDataLakeConnector object.
-This API is available in the following national cloud deployments.
+Read the properties and relationships of an industryDataConnector object.
 
 ## SYNTAX
 
@@ -33,8 +32,7 @@ Get-MgBetaExternalIndustryDataConnector -InputObject <ISearchIdentity> [-ExpandP
 ```
 
 ## DESCRIPTION
-Read the properties and relationships of an azureDataLakeConnector object.
-This API is available in the following national cloud deployments.
+Read the properties and relationships of an industryDataConnector object.
 
 ## EXAMPLES
 

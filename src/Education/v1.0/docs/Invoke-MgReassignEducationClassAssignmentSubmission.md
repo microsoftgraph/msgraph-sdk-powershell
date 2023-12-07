@@ -14,7 +14,6 @@ Include the Prefer: include-unknown-enum-members header when you call this metho
 This means that the reassigned status will be mapped to the returned status, and reassignedDateTime and reassignedBy properties will be mapped to returnedDateTime and returnedBy respectively.
 If the header Prefer: include-unknown-enum-members is provided, a reassigned submission retains the reassigned status.
 For details, see the examples section.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -37,7 +36,6 @@ Include the Prefer: include-unknown-enum-members header when you call this metho
 This means that the reassigned status will be mapped to the returned status, and reassignedDateTime and reassignedBy properties will be mapped to returnedDateTime and returnedBy respectively.
 If the header Prefer: include-unknown-enum-members is provided, a reassigned submission retains the reassigned status.
 For details, see the examples section.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

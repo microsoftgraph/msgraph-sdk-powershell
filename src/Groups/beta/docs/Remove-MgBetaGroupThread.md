@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete conversationThread.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Remove-MgBetaGroupThread -InputObject <IGroupsIdentity> [-IfMatch <String>] [-Pa
 
 ## DESCRIPTION
 Delete conversationThread.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

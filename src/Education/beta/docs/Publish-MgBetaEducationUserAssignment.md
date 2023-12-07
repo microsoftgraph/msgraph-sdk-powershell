@@ -16,7 +16,6 @@ When you call this API, educationSubmission objects are created and the assignme
 The state of the assignment goes back to draft if there is any backend failure during publish process.
 To update the properties of a published assignment, see update an assignment.
 To update the properties of a published assignment, see update an assignment.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -41,7 +40,6 @@ When you call this API, educationSubmission objects are created and the assignme
 The state of the assignment goes back to draft if there is any backend failure during publish process.
 To update the properties of a published assignment, see update an assignment.
 To update the properties of a published assignment, see update an assignment.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

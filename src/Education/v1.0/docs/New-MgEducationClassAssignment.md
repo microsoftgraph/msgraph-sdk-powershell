@@ -11,7 +11,6 @@ schema: 2.0.0
 Create a new assignment.
 Only teachers in a class can create an assignment.
 Assignments start in the Draft state, which means that students will not see the assignment until publication.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -59,7 +58,6 @@ New-MgEducationClassAssignment -InputObject <IEducationIdentity> [-AddedStudentA
 Create a new assignment.
 Only teachers in a class can create an assignment.
 Assignments start in the Draft state, which means that students will not see the assignment until publication.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

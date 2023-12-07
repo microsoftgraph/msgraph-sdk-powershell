@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update the properties of the specified tab.\nThis can be used to configure the content of the tab.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -42,7 +41,6 @@ Update-MgTeamChannelTab -InputObject <ITeamsIdentity> [-AdditionalProperties <Ha
 
 ## DESCRIPTION
 Update the properties of the specified tab.\nThis can be used to configure the content of the tab.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

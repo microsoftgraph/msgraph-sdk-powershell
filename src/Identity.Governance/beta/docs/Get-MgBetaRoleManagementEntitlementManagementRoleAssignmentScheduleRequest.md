@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 In PIM, read the details of a request for an active and persistent role assignment made through the unifiedRoleAssignmentScheduleRequest object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -36,7 +35,6 @@ Get-MgBetaRoleManagementEntitlementManagementRoleAssignmentScheduleRequest
 
 ## DESCRIPTION
 In PIM, read the details of a request for an active and persistent role assignment made through the unifiedRoleAssignmentScheduleRequest object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

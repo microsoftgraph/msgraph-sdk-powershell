@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 The users and contacts that report to the user.
-(The users and contacts that have their manager property set to this user.) Read-only.
+(The users and contacts with their manager property set to this user.) Read-only.
 Nullable.
 Supports $expand.
 
@@ -36,7 +36,7 @@ Get-MgBetaUserDirectReport -InputObject <IUsersIdentity> [-ExpandProperty <Strin
 
 ## DESCRIPTION
 The users and contacts that report to the user.
-(The users and contacts that have their manager property set to this user.) Read-only.
+(The users and contacts with their manager property set to this user.) Read-only.
 Nullable.
 Supports $expand.
 

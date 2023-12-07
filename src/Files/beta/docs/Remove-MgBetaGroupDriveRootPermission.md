@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Remove access to a DriveItem.
 Only sharing permissions that are not inherited can be deleted.\nThe inheritedFrom property must be null.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -29,7 +28,6 @@ Remove-MgBetaGroupDriveRootPermission -InputObject <IFilesIdentity> [-IfMatch <S
 ## DESCRIPTION
 Remove access to a DriveItem.
 Only sharing permissions that are not inherited can be deleted.\nThe inheritedFrom property must be null.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

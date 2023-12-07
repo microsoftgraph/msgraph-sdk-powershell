@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaReportUserInsight
 
 ## SYNOPSIS
-Get userInsights from reports
+Represents a collection of user activities on applications in a tenant that is configured for Microsoft Entra External ID for customers.
 
 ## SYNTAX
 
@@ -17,7 +17,7 @@ Get-MgBetaReportUserInsight [-ExpandProperty <String[]>] [-Property <String[]>] 
 ```
 
 ## DESCRIPTION
-Get userInsights from reports
+Represents a collection of user activities on applications in a tenant that is configured for Microsoft Entra External ID for customers.
 
 ## EXAMPLES
 

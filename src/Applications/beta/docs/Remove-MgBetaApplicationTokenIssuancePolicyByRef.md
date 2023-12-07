@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Remove a tokenIssuancePolicy from an application.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Remove-MgBetaApplicationTokenIssuancePolicyByRef -InputObject <IApplicationsIden
 
 ## DESCRIPTION
 Remove a tokenIssuancePolicy from an application.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

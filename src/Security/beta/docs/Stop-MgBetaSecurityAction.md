@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Cancel a security operation.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -26,7 +25,6 @@ Stop-MgBetaSecurityAction -InputObject <ISecurityIdentity> [-PassThru] [-Confirm
 
 ## DESCRIPTION
 Cancel a security operation.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

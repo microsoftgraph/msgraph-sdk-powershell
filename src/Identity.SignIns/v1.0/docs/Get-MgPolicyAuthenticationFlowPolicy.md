@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Read the properties and relationships of an authenticationFlowsPolicy object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -19,7 +18,6 @@ Get-MgPolicyAuthenticationFlowPolicy [-ExpandProperty <String[]>] [-Property <St
 
 ## DESCRIPTION
 Read the properties and relationships of an authenticationFlowsPolicy object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

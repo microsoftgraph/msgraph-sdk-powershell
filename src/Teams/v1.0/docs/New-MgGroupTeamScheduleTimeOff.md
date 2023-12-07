@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new timeOff instance in a schedule.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -41,7 +40,6 @@ New-MgGroupTeamScheduleTimeOff -InputObject <ITeamsIdentity> [-AdditionalPropert
 
 ## DESCRIPTION
 Create a new timeOff instance in a schedule.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

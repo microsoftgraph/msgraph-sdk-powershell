@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete an appRoleAssignment that has been granted to a user.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Remove-MgBetaUserAppRoleAssignment -InputObject <IApplicationsIdentity> [-IfMatc
 
 ## DESCRIPTION
 Delete an appRoleAssignment that has been granted to a user.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

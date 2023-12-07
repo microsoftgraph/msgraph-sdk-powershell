@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update an application permission object on a site.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -51,7 +50,6 @@ Update-MgSitePermission -InputObject <ISitesIdentity> [-AdditionalProperties <Ha
 
 ## DESCRIPTION
 Update an application permission object on a site.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

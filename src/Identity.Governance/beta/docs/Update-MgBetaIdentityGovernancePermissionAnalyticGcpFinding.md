@@ -91,7 +91,7 @@ Accept wildcard characters: False
 ```
 
 ### -CreatedDateTime
-.
+Defines when the finding was created.
 
 ```yaml
 Type: System.DateTime
@@ -208,7 +208,7 @@ To create the parameters described below, construct a hash table containing the 
 `BODYPARAMETER <IMicrosoftGraphFinding>`: finding
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[CreatedDateTime <DateTime?>]`: 
+  - `[CreatedDateTime <DateTime?>]`: Defines when the finding was created.
 
 `INPUTOBJECT <IIdentityGovernanceIdentity>`: Identity Parameter
   - `[AccessPackageAssignmentId <String>]`: The unique identifier of accessPackageAssignment

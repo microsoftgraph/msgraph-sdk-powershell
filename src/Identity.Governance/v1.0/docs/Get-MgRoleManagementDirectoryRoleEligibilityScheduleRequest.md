@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 In PIM, read the details of a request for for a role eligibility request made through the unifiedRoleEligibilityScheduleRequest object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -34,7 +33,6 @@ Get-MgRoleManagementDirectoryRoleEligibilityScheduleRequest -InputObject <IIdent
 
 ## DESCRIPTION
 In PIM, read the details of a request for for a role eligibility request made through the unifiedRoleEligibilityScheduleRequest object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

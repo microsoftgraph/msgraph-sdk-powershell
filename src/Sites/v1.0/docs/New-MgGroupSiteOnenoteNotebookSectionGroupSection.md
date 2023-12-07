@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new onenoteSection in the specified section group.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -50,7 +49,6 @@ New-MgGroupSiteOnenoteNotebookSectionGroupSection -InputObject <ISitesIdentity>
 
 ## DESCRIPTION
 Create a new onenoteSection in the specified section group.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Move a mailfolder and its contents to another mailfolder.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -41,7 +40,6 @@ Move-MgUserMailFolderChildFolder -InputObject <IUsersActionsIdentity> [-Addition
 
 ## DESCRIPTION
 Move a mailfolder and its contents to another mailfolder.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

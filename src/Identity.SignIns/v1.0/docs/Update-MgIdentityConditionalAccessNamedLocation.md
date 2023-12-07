@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update the properties of a countryNamedLocation object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -41,7 +40,6 @@ Update-MgIdentityConditionalAccessNamedLocation -InputObject <IIdentitySignInsId
 
 ## DESCRIPTION
 Update the properties of a countryNamedLocation object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

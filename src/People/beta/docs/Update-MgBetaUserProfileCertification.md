@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update the properties of a personCertification object from a user's profile.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -50,7 +49,6 @@ Update-MgBetaUserProfileCertification -InputObject <IPeopleIdentity> [-Additiona
 
 ## DESCRIPTION
 Update the properties of a personCertification object from a user's profile.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

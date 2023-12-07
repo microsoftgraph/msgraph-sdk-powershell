@@ -8,8 +8,7 @@ schema: 2.0.0
 # Join-MgGroupDriveListContentTypeWithHubSite
 
 ## SYNOPSIS
-Associate a published content type][contentType] present in a content type hub with a list of hub sites.
-This API is available in the following [national cloud deployments.
+Associate a published [content type][contentType] present in a content type hub with a list of hub sites.
 
 ## SYNTAX
 
@@ -41,8 +40,7 @@ Join-MgGroupDriveListContentTypeWithHubSite -InputObject <IGroupsIdentity> [-Add
 ```
 
 ## DESCRIPTION
-Associate a published content type][contentType] present in a content type hub with a list of hub sites.
-This API is available in the following [national cloud deployments.
+Associate a published [content type][contentType] present in a content type hub with a list of hub sites.
 
 ## EXAMPLES
 

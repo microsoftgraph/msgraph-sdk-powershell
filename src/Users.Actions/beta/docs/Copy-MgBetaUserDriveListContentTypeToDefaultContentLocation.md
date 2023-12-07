@@ -8,9 +8,8 @@ schema: 2.0.0
 # Copy-MgBetaUserDriveListContentTypeToDefaultContentLocation
 
 ## SYNOPSIS
-Copy a file to a default content location in a content type][contentType].
+Copy a file to a default content location in a [content type][contentType].
 The file can then be added as a default file or template via a POST operation.
-This API is available in the following [national cloud deployments.
 
 ## SYNTAX
 
@@ -44,9 +43,8 @@ Copy-MgBetaUserDriveListContentTypeToDefaultContentLocation -InputObject <IUsers
 ```
 
 ## DESCRIPTION
-Copy a file to a default content location in a content type][contentType].
+Copy a file to a default content location in a [content type][contentType].
 The file can then be added as a default file or template via a POST operation.
-This API is available in the following [national cloud deployments.
 
 ## EXAMPLES
 
@@ -311,6 +309,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[NotebookId <String>]`: The unique identifier of notebook
   - `[OnenotePageId <String>]`: The unique identifier of onenotePage
   - `[OnenoteSectionId <String>]`: The unique identifier of onenoteSection
+  - `[OnlineMeetingId <String>]`: The unique identifier of onlineMeeting
   - `[OutlookTaskFolderId <String>]`: The unique identifier of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: The unique identifier of outlookTaskGroup
   - `[OutlookTaskId <String>]`: The unique identifier of outlookTask

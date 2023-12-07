@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 In Microsoft Entra entitlement management, create a new accessPackageAssignmentPolicy object.
 The request will include a reference to the accessPackage that will contain this policy, which must already exist.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -38,7 +37,6 @@ New-MgEntitlementManagementAssignmentPolicy -BodyParameter <IMicrosoftGraphAcces
 ## DESCRIPTION
 In Microsoft Entra entitlement management, create a new accessPackageAssignmentPolicy object.
 The request will include a reference to the accessPackage that will contain this policy, which must already exist.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

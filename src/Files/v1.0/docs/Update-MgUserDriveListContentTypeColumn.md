@@ -8,8 +8,7 @@ schema: 2.0.0
 # Update-MgUserDriveListContentTypeColumn
 
 ## SYNOPSIS
-Update a site][], a [list][], or a [content type][contentType] [column][columnDefinition].
-This API is available in the following [national cloud deployments.
+Update a [site][], a [list][], or a [content type][contentType] [column][columnDefinition].
 
 ## SYNTAX
 
@@ -60,8 +59,7 @@ Update-MgUserDriveListContentTypeColumn -InputObject <IFilesIdentity> [-Addition
 ```
 
 ## DESCRIPTION
-Update a site][], a [list][], or a [content type][contentType] [column][columnDefinition].
-This API is available in the following [national cloud deployments.
+Update a [site][], a [list][], or a [content type][contentType] [column][columnDefinition].
 
 ## EXAMPLES
 

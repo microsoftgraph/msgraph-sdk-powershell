@@ -12,7 +12,6 @@ Update the properties of an accessReviewStage object.
 Only the reviewers and fallbackReviewers properties can be updated.
 You can only add reviewers to the fallbackReviewers property but can't remove existing fallbackReviewers.
 To update an accessReviewStage, its status must be NotStarted, Initializing, or InProgress.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -53,7 +52,6 @@ Update the properties of an accessReviewStage object.
 Only the reviewers and fallbackReviewers properties can be updated.
 You can only add reviewers to the fallbackReviewers property but can't remove existing fallbackReviewers.
 To update an accessReviewStage, its status must be NotStarted, Initializing, or InProgress.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

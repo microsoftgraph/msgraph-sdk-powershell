@@ -13,7 +13,6 @@ By default, this operation does not return the key property that represents the 
 To include the key property in the response, use the $select OData query parameter.
 Including the $select query parameter triggers a Microsoft Entra audit of the operation and generates an audit log.
 You can find the log in Microsoft Entra audit logs under the KeyManagement category.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -42,7 +41,6 @@ By default, this operation does not return the key property that represents the 
 To include the key property in the response, use the $select OData query parameter.
 Including the $select query parameter triggers a Microsoft Entra audit of the operation and generates an audit log.
 You can find the log in Microsoft Entra audit logs under the KeyManagement category.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -283,6 +281,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[ActivityBasedTimeoutPolicyId <String>]`: The unique identifier of activityBasedTimeoutPolicy
   - `[AppManagementPolicyId <String>]`: The unique identifier of appManagementPolicy
   - `[AuthenticationCombinationConfigurationId <String>]`: The unique identifier of authenticationCombinationConfiguration
+  - `[AuthenticationConditionApplicationAppId <String>]`: The unique identifier of authenticationConditionApplication
   - `[AuthenticationContextClassReferenceId <String>]`: The unique identifier of authenticationContextClassReference
   - `[AuthenticationEventListenerId <String>]`: The unique identifier of authenticationEventListener
   - `[AuthenticationEventsFlowId <String>]`: The unique identifier of authenticationEventsFlow

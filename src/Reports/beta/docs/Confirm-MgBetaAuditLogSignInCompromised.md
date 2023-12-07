@@ -12,7 +12,6 @@ Allow admins to mark an event in the Microsoft Entra sign-in logs as risky.
 Events marked as risky by an admin are immediately flagged as high risk in Microsoft Entra ID Protection, overriding previous risk states.
 Admins can confirm that events flagged as risky by Microsoft Entra ID Protection are in fact risky.
 For details about investigating Identity Protection risks, see How to investigate risk.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -34,7 +33,6 @@ Allow admins to mark an event in the Microsoft Entra sign-in logs as risky.
 Events marked as risky by an admin are immediately flagged as high risk in Microsoft Entra ID Protection, overriding previous risk states.
 Admins can confirm that events flagged as risky by Microsoft Entra ID Protection are in fact risky.
 For details about investigating Identity Protection risks, see How to investigate risk.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

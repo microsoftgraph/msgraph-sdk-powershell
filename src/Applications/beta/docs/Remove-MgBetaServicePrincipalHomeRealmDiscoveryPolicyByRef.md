@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Remove a homeRealmDiscoveryPolicy from a servicePrincipal.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -28,7 +27,6 @@ Remove-MgBetaServicePrincipalHomeRealmDiscoveryPolicyByRef -InputObject <IApplic
 
 ## DESCRIPTION
 Remove a homeRealmDiscoveryPolicy from a servicePrincipal.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

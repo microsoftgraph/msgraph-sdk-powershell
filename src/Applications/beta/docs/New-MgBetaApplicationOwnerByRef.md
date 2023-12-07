@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Use this API to add an owner to an application by posting to the owners collection.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -39,7 +38,6 @@ New-MgBetaApplicationOwnerByRef -InputObject <IApplicationsIdentity> -OdataId <S
 
 ## DESCRIPTION
 Use this API to add an owner to an application by posting to the owners collection.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

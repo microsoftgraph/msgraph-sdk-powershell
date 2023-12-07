@@ -17,8 +17,9 @@ Create new navigation property to participants for communications
 New-MgCommunicationCallParticipant -CallId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-Info <IMicrosoftGraphParticipantInfo>] [-IsInLobby] [-IsMuted]
  [-MediaStreams <IMicrosoftGraphMediaStream[]>] [-Metadata <String>]
- [-RecordingInfo <IMicrosoftGraphRecordingInfo>]
- [-RestrictedExperience <IMicrosoftGraphOnlineMeetingRestricted>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-RecordingInfo <IMicrosoftGraphRecordingInfo>] [-RemovedState <IMicrosoftGraphRemovedState>]
+ [-RestrictedExperience <IMicrosoftGraphOnlineMeetingRestricted>] [-RosterSequenceNumber <Int64>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
@@ -38,8 +39,9 @@ New-MgCommunicationCallParticipant -InputObject <ICloudCommunicationsIdentity>
 New-MgCommunicationCallParticipant -InputObject <ICloudCommunicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Info <IMicrosoftGraphParticipantInfo>] [-IsInLobby]
  [-IsMuted] [-MediaStreams <IMicrosoftGraphMediaStream[]>] [-Metadata <String>]
- [-RecordingInfo <IMicrosoftGraphRecordingInfo>]
- [-RestrictedExperience <IMicrosoftGraphOnlineMeetingRestricted>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-RecordingInfo <IMicrosoftGraphRecordingInfo>] [-RemovedState <IMicrosoftGraphRemovedState>]
+ [-RestrictedExperience <IMicrosoftGraphOnlineMeetingRestricted>] [-RosterSequenceNumber <Int64>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -227,12 +229,43 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -RemovedState
+removedState
+To construct, see NOTES section for REMOVEDSTATE properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRemovedState
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -RestrictedExperience
 onlineMeetingRestricted
 To construct, see NOTES section for RESTRICTEDEXPERIENCE properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnlineMeetingRestricted
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RosterSequenceNumber
+.
+
+```yaml
+Type: System.Int64
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -327,10 +360,14 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Initiator <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[RecordingStatus <String>]`: recordingStatus
+  - `[RemovedState <IMicrosoftGraphRemovedState>]`: removedState
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[Reason <String>]`: 
   - `[RestrictedExperience <IMicrosoftGraphOnlineMeetingRestricted>]`: onlineMeetingRestricted
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[ContentSharingDisabled <String>]`: onlineMeetingContentSharingDisabledReason
     - `[VideoDisabled <String>]`: onlineMeetingVideoDisabledReason
+  - `[RosterSequenceNumber <Int64?>]`: 
 
 `INFO <IMicrosoftGraphParticipantInfo>`: participantInfo
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -353,6 +390,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[AudioRoutingGroupId <String>]`: The unique identifier of audioRoutingGroup
   - `[CallId <String>]`: The unique identifier of call
   - `[CallRecordId <String>]`: The unique identifier of callRecord
+  - `[CallRecordingId <String>]`: The unique identifier of callRecording
   - `[CallTranscriptId <String>]`: The unique identifier of callTranscript
   - `[CommsOperationId <String>]`: The unique identifier of commsOperation
   - `[ContentSharingSessionId <String>]`: The unique identifier of contentSharingSession
@@ -381,6 +419,10 @@ To create the parameters described below, construct a hash table containing the 
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[RecordingStatus <String>]`: recordingStatus
+
+`REMOVEDSTATE <IMicrosoftGraphRemovedState>`: removedState
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[Reason <String>]`: 
 
 `RESTRICTEDEXPERIENCE <IMicrosoftGraphOnlineMeetingRestricted>`: onlineMeetingRestricted
   - `[(Any) <Object>]`: This indicates any property can be added to this object.

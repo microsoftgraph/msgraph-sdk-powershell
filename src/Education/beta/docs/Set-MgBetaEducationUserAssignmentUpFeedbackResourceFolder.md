@@ -11,7 +11,6 @@ schema: 2.0.0
 Create a SharePoint folder to upload feedback files for a given educationSubmission.
 Only teachers can perform this operation.
 The teacher determines the resources to upload in the feedback resources folder of a submission.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -31,7 +30,6 @@ Set-MgBetaEducationUserAssignmentUpFeedbackResourceFolder -InputObject <IEducati
 Create a SharePoint folder to upload feedback files for a given educationSubmission.
 Only teachers can perform this operation.
 The teacher determines the resources to upload in the feedback resources folder of a submission.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

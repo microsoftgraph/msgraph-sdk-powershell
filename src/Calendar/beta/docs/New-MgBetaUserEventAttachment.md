@@ -8,9 +8,9 @@ schema: 2.0.0
 # New-MgBetaUserEventAttachment
 
 ## SYNOPSIS
-Use this API to create a new Attachment.
-An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
-This API is available in the following national cloud deployments.
+Use this API to add an attachment to an existing event.
+This operation limits the size of the attachment you can add to under 3 MB.
+If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.
 
 ## SYNTAX
 
@@ -41,9 +41,9 @@ New-MgBetaUserEventAttachment -InputObject <ICalendarIdentity> [-AdditionalPrope
 ```
 
 ## DESCRIPTION
-Use this API to create a new Attachment.
-An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
-This API is available in the following national cloud deployments.
+Use this API to add an attachment to an existing event.
+This operation limits the size of the attachment you can add to under 3 MB.
+If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.
 
 ## EXAMPLES
 
@@ -340,7 +340,9 @@ To create the parameters described below, construct a hash table containing the 
   - `[ExtensionId <String>]`: The unique identifier of extension
   - `[GroupId <String>]`: The unique identifier of group
   - `[PlaceId <String>]`: The unique identifier of place
+  - `[RoomId <String>]`: The unique identifier of room
   - `[UserId <String>]`: The unique identifier of user
+  - `[WorkspaceId <String>]`: The unique identifier of workspace
 
 ## RELATED LINKS
 

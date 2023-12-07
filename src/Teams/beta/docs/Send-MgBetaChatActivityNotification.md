@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Send an activity feed notification in the scope of a chat.
 For more information, see sending Teams activity notifications.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -47,7 +46,6 @@ Send-MgBetaChatActivityNotification -InputObject <ITeamsIdentity> [-ActivityType
 ## DESCRIPTION
 Send an activity feed notification in the scope of a chat.
 For more information, see sending Teams activity notifications.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -428,8 +426,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[Recipient <IMicrosoftGraphTeamworkNotificationRecipient>]`: teamworkNotificationRecipient
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[TemplateParameters <IMicrosoftGraphKeyValuePair[]>]`: 
-    - `[Name <String>]`: Name for this key-value pair
-    - `[Value <String>]`: Value for this key-value pair
+    - `[Name <String>]`: Name for this key-value pair. For more information about possible names for each resource type that uses this configuration, see keyValuePair names and values.
+    - `[Value <String>]`: Value for this key-value pair. For more information about possible values for each resource type that uses this configuration, see keyValuePair names and values.
   - `[Topic <IMicrosoftGraphTeamworkActivityTopic>]`: teamworkActivityTopic
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Source <String>]`: teamworkActivityTopicSource
@@ -444,6 +442,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[ChatMessageId <String>]`: The unique identifier of chatMessage
   - `[ChatMessageId1 <String>]`: The unique identifier of chatMessage
   - `[ConversationMemberId <String>]`: The unique identifier of conversationMember
+  - `[DayNoteId <String>]`: The unique identifier of dayNote
   - `[DeletedChatId <String>]`: The unique identifier of deletedChat
   - `[DeletedTeamId <String>]`: The unique identifier of deletedTeam
   - `[GroupId <String>]`: The unique identifier of group
@@ -482,8 +481,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[ContentType <String>]`: bodyType
 
 `TEMPLATEPARAMETERS <IMicrosoftGraphKeyValuePair[]>`: .
-  - `[Name <String>]`: Name for this key-value pair
-  - `[Value <String>]`: Value for this key-value pair
+  - `[Name <String>]`: Name for this key-value pair. For more information about possible names for each resource type that uses this configuration, see keyValuePair names and values.
+  - `[Value <String>]`: Value for this key-value pair. For more information about possible values for each resource type that uses this configuration, see keyValuePair names and values.
 
 `TOPIC <IMicrosoftGraphTeamworkActivityTopic>`: teamworkActivityTopic
   - `[(Any) <Object>]`: This indicates any property can be added to this object.

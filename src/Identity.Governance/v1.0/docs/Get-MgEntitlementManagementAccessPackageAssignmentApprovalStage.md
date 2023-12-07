@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Retrieve the properties of an approvalStage object.
 An approval stage is contained within an approval object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -36,7 +35,6 @@ Get-MgEntitlementManagementAccessPackageAssignmentApprovalStage -InputObject <II
 ## DESCRIPTION
 Retrieve the properties of an approvalStage object.
 An approval stage is contained within an approval object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

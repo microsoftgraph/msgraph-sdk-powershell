@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update the properties of an agreement object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -47,7 +46,6 @@ Update-MgBetaIdentityGovernanceTermsOfUseAgreement -InputObject <IIdentityGovern
 
 ## DESCRIPTION
 Update the properties of an agreement object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

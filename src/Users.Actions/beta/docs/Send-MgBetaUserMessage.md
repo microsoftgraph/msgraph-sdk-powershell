@@ -12,7 +12,6 @@ Send an existing draft message.
 The draft message can be a new message draft, reply draft, reply-all draft, or a forward draft.
 This method saves the message in the Sent Items folder.
 Alternatively, send a new message in a single operation.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -33,7 +32,6 @@ Send an existing draft message.
 The draft message can be a new message draft, reply draft, reply-all draft, or a forward draft.
 This method saves the message in the Sent Items folder.
 Alternatively, send a new message in a single operation.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -189,6 +187,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[NotebookId <String>]`: The unique identifier of notebook
   - `[OnenotePageId <String>]`: The unique identifier of onenotePage
   - `[OnenoteSectionId <String>]`: The unique identifier of onenoteSection
+  - `[OnlineMeetingId <String>]`: The unique identifier of onlineMeeting
   - `[OutlookTaskFolderId <String>]`: The unique identifier of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: The unique identifier of outlookTaskGroup
   - `[OutlookTaskId <String>]`: The unique identifier of outlookTask

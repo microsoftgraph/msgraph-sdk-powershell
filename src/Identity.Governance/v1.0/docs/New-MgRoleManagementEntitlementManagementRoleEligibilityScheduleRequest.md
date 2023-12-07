@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 In PIM, request for a role eligibility for a principal through the unifiedRoleEligibilityScheduleRequest object.
 This operation allows both admins and eligible users to add, revoke, or extend eligible assignments.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -38,7 +37,6 @@ New-MgRoleManagementEntitlementManagementRoleEligibilityScheduleRequest
 ## DESCRIPTION
 In PIM, request for a role eligibility for a principal through the unifiedRoleEligibilityScheduleRequest object.
 This operation allows both admins and eligible users to add, revoke, or extend eligible assignments.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

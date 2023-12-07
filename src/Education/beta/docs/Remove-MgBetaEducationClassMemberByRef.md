@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Remove an educationUser from an educationClass.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Remove-MgBetaEducationClassMemberByRef -InputObject <IEducationIdentity> [-Id <S
 
 ## DESCRIPTION
 Remove an educationUser from an educationClass.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

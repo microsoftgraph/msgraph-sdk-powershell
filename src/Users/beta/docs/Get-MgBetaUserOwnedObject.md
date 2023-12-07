@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaUserOwnedObject
 
 ## SYNOPSIS
-Directory objects that are owned by the user.
+Directory objects owned by the user.
 Read-only.
 Nullable.
 Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
@@ -35,7 +35,7 @@ Get-MgBetaUserOwnedObject -InputObject <IUsersIdentity> [-ExpandProperty <String
 ```
 
 ## DESCRIPTION
-Directory objects that are owned by the user.
+Directory objects owned by the user.
 Read-only.
 Nullable.
 Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).

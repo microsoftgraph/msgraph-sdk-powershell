@@ -97,12 +97,12 @@ Accept wildcard characters: False
 ```
 
 ### -AppScopeId
-Identifier of the app-specific scope when the assignment scope is app-specific.
-Either this property or directoryScopeId is required.
-App scopes are scopes that are defined and understood by this application only.
-Use / for tenant-wide app scopes.
-Use directoryScopeId to limit the scope to particular directory objects, for example, administrative units.
+Identifier of the app specific scope when the assignment scope is app specific.
+The scope of an assignment determines the set of resources for which the principal has been granted access.
+App scopes are scopes that are defined and understood by a resource application only.
+For the entitlement management provider, use this property to specify a catalog, for example /AccessPackageCatalog/beedadfe-01d5-4025-910b-84abb9369997.
 Supports $filter (eq, in).
+For example /roleManagement/entitlementManagement/roleAssignments$filter=appScopeId eq '/AccessPackageCatalog/{catalog id}'.
 
 ```yaml
 Type: System.String
@@ -165,11 +165,8 @@ Accept wildcard characters: False
 
 ### -DirectoryScopeId
 Identifier of the directory object representing the scope of the assignment.
-Either this property or appScopeId is required.
 The scope of an assignment determines the set of resources for which the principal has been granted access.
-Directory scopes are shared scopes stored in the directory that are understood by multiple applications.
-Use / for tenant-wide scope.
-Use appScopeId to limit the scope to an application only.
+Directory scopes are shared scopes stored in the directory that are understood by multiple applications, unlike app scopes that are defined and understood by a resource application only.
 Supports $filter (eq, in).
 
 ```yaml
@@ -234,6 +231,7 @@ Accept wildcard characters: False
 
 ### -PrincipalId
 Identifier of the principal to which the assignment is granted.
+Supported principals are users, role-assignable groups, and service principals.
 Supports $filter (eq, in).
 
 ```yaml
@@ -265,8 +263,8 @@ Accept wildcard characters: False
 ```
 
 ### -RoleDefinitionId
-Identifier of the role definition the assignment is for.
-Read only.
+Identifier of the unifiedRoleDefinition the assignment is for.
+Read-only.
 Supports $filter (eq, in).
 
 ```yaml
@@ -363,15 +361,15 @@ To create the parameters described below, construct a hash table containing the 
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[DisplayName <String>]`: Provides the display name of the app-specific resource represented by the app scope. Provided for display purposes since appScopeId is often an immutable, non-human-readable id. Read-only.
     - `[Type <String>]`: Describes the type of app-specific resource represented by the app scope and is provided for display purposes, so a user interface can convey to the user the kind of app specific resource represented by the app scope. Read-only.
-  - `[AppScopeId <String>]`: Identifier of the app-specific scope when the assignment scope is app-specific.  Either this property or directoryScopeId is required. App scopes are scopes that are defined and understood by this application only. Use / for tenant-wide app scopes. Use directoryScopeId to limit the scope to particular directory objects, for example, administrative units. Supports $filter (eq, in).
+  - `[AppScopeId <String>]`: Identifier of the app specific scope when the assignment scope is app specific. The scope of an assignment determines the set of resources for which the principal has been granted access. App scopes are scopes that are defined and understood by a resource application only. For the entitlement management provider, use this property to specify a catalog, for example /AccessPackageCatalog/beedadfe-01d5-4025-910b-84abb9369997. Supports $filter (eq, in). For example /roleManagement/entitlementManagement/roleAssignments?$filter=appScopeId eq '/AccessPackageCatalog/{catalog id}'.
   - `[Condition <String>]`: 
   - `[DirectoryScope <IMicrosoftGraphDirectoryObject>]`: directoryObject
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
-  - `[DirectoryScopeId <String>]`: Identifier of the directory object representing the scope of the assignment.  Either this property or appScopeId is required. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use / for tenant-wide scope. Use appScopeId to limit the scope to an application only. Supports $filter (eq, in).
+  - `[DirectoryScopeId <String>]`: Identifier of the directory object representing the scope of the assignment. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications, unlike app scopes that are defined and understood by a resource application only. Supports $filter (eq, in).
   - `[Principal <IMicrosoftGraphDirectoryObject>]`: directoryObject
-  - `[PrincipalId <String>]`: Identifier of the principal to which the assignment is granted. Supports $filter (eq, in).
+  - `[PrincipalId <String>]`: Identifier of the principal to which the assignment is granted. Supported principals are users, role-assignable groups, and service principals. Supports $filter (eq, in).
   - `[RoleDefinition <IMicrosoftGraphUnifiedRoleDefinition>]`: unifiedRoleDefinition
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -387,7 +385,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[ExcludedResourceActions <String[]>]`: Set of tasks that may not be performed on a resource. Not yet supported.
     - `[TemplateId <String>]`: Custom template identifier that can be set when isBuiltIn is false but is read-only when isBuiltIn is true. This identifier is typically used if one needs an identifier to be the same across different directories.
     - `[Version <String>]`: Indicates version of the role definition. Read-only when isBuiltIn is true.
-  - `[RoleDefinitionId <String>]`: Identifier of the role definition the assignment is for. Read only. Supports $filter (eq, in).
+  - `[RoleDefinitionId <String>]`: Identifier of the unifiedRoleDefinition the assignment is for. Read-only. Supports $filter (eq, in).
 
 `DIRECTORYSCOPE <IMicrosoftGraphDirectoryObject>`: directoryObject
   - `[(Any) <Object>]`: This indicates any property can be added to this object.

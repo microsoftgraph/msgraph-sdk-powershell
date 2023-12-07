@@ -95,7 +95,7 @@ Accept wildcard characters: False
 ```
 
 ### -PermissionsRequestChanges
-.
+Represents a change event of the scheduledPermissionsRequest entity.
 To construct, see NOTES section for PERMISSIONSREQUESTCHANGES properties and create a hash table.
 
 ```yaml
@@ -111,7 +111,8 @@ Accept wildcard characters: False
 ```
 
 ### -ScheduledPermissionsRequests
-.
+Represents a permissions request that Permissions Management uses to manage permissions for an identity on resources in the authorization system.
+This request can be granted, rejected or canceled by identities in Permissions Management.
 To construct, see NOTES section for SCHEDULEDPERMISSIONSREQUESTS properties and create a hash table.
 
 ```yaml
@@ -180,27 +181,27 @@ To create the parameters described below, construct a hash table containing the 
 `BODYPARAMETER <IMicrosoftGraphPermissionsManagement>`: permissionsManagement
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[PermissionsRequestChanges <IMicrosoftGraphPermissionsRequestChange[]>]`: 
+  - `[PermissionsRequestChanges <IMicrosoftGraphPermissionsRequestChange[]>]`: Represents a change event of the scheduledPermissionsRequest entity.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[ActiveOccurrenceStatus <String>]`: permissionsRequestOccurrenceStatus
-    - `[ModificationDateTime <DateTime?>]`: 
-    - `[PermissionsRequestId <String>]`: 
+    - `[ModificationDateTime <DateTime?>]`: Time when the change occurred.
+    - `[PermissionsRequestId <String>]`: The ID of the scheduledPermissionsRequest object.
     - `[StatusDetail <String>]`: statusDetail
-    - `[TicketId <String>]`: 
-  - `[ScheduledPermissionsRequests <IMicrosoftGraphScheduledPermissionsRequest[]>]`: 
+    - `[TicketId <String>]`: Represents the ticketing system identifier.
+  - `[ScheduledPermissionsRequests <IMicrosoftGraphScheduledPermissionsRequest[]>]`: Represents a permissions request that Permissions Management uses to manage permissions for an identity on resources in the authorization system. This request can be granted, rejected or canceled by identities in Permissions Management.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[CreatedDateTime <DateTime?>]`: 
-    - `[Justification <String>]`: 
-    - `[Notes <String>]`: 
+    - `[CreatedDateTime <DateTime?>]`: Defines when the identity created the request.
+    - `[Justification <String>]`: The identity's justification for the request.
+    - `[Notes <String>]`: Additional context for the permissions request.
     - `[RequestedPermissions <IMicrosoftGraphPermissionsDefinition>]`: permissionsDefinition
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[AuthorizationSystemInfo <IMicrosoftGraphPermissionsDefinitionAuthorizationSystem>]`: permissionsDefinitionAuthorizationSystem
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[AuthorizationSystemId <String>]`: 
-        - `[AuthorizationSystemType <String>]`: 
+        - `[AuthorizationSystemId <String>]`: ID of the authorization system retrieved from the customer cloud environment.
+        - `[AuthorizationSystemType <String>]`: The type of authorization system.
       - `[IdentityInfo <IMicrosoftGraphPermissionsDefinitionAuthorizationSystemIdentity>]`: permissionsDefinitionAuthorizationSystemIdentity
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[ExternalId <String>]`: 
+        - `[ExternalId <String>]`: Unique ID of the identity within the external system. Prefixed with rsn: if this is a SAML or ED user in AWS. Alternate key.
         - `[IdentityType <String>]`: permissionsDefinitionIdentityType
         - `[Source <IMicrosoftGraphPermissionsDefinitionIdentitySource>]`: permissionsDefinitionIdentitySource
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -233,33 +234,33 @@ To create the parameters described below, construct a hash table containing the 
     - `[StatusDetail <String>]`: statusDetail
     - `[TicketInfo <IMicrosoftGraphTicketInfo>]`: ticketInfo
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[TicketApproverIdentityId <String>]`: 
+      - `[TicketApproverIdentityId <String>]`: ID for the request approver.
       - `[TicketNumber <String>]`: The ticket number.
-      - `[TicketSubmitterIdentityId <String>]`: 
+      - `[TicketSubmitterIdentityId <String>]`: ID for the request submitter.
       - `[TicketSystem <String>]`: The description of the ticket system.
 
-`PERMISSIONSREQUESTCHANGES <IMicrosoftGraphPermissionsRequestChange[]>`: .
+`PERMISSIONSREQUESTCHANGES <IMicrosoftGraphPermissionsRequestChange[]>`: Represents a change event of the scheduledPermissionsRequest entity.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[ActiveOccurrenceStatus <String>]`: permissionsRequestOccurrenceStatus
-  - `[ModificationDateTime <DateTime?>]`: 
-  - `[PermissionsRequestId <String>]`: 
+  - `[ModificationDateTime <DateTime?>]`: Time when the change occurred.
+  - `[PermissionsRequestId <String>]`: The ID of the scheduledPermissionsRequest object.
   - `[StatusDetail <String>]`: statusDetail
-  - `[TicketId <String>]`: 
+  - `[TicketId <String>]`: Represents the ticketing system identifier.
 
-`SCHEDULEDPERMISSIONSREQUESTS <IMicrosoftGraphScheduledPermissionsRequest[]>`: .
+`SCHEDULEDPERMISSIONSREQUESTS <IMicrosoftGraphScheduledPermissionsRequest[]>`: Represents a permissions request that Permissions Management uses to manage permissions for an identity on resources in the authorization system. This request can be granted, rejected or canceled by identities in Permissions Management.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[CreatedDateTime <DateTime?>]`: 
-  - `[Justification <String>]`: 
-  - `[Notes <String>]`: 
+  - `[CreatedDateTime <DateTime?>]`: Defines when the identity created the request.
+  - `[Justification <String>]`: The identity's justification for the request.
+  - `[Notes <String>]`: Additional context for the permissions request.
   - `[RequestedPermissions <IMicrosoftGraphPermissionsDefinition>]`: permissionsDefinition
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[AuthorizationSystemInfo <IMicrosoftGraphPermissionsDefinitionAuthorizationSystem>]`: permissionsDefinitionAuthorizationSystem
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[AuthorizationSystemId <String>]`: 
-      - `[AuthorizationSystemType <String>]`: 
+      - `[AuthorizationSystemId <String>]`: ID of the authorization system retrieved from the customer cloud environment.
+      - `[AuthorizationSystemType <String>]`: The type of authorization system.
     - `[IdentityInfo <IMicrosoftGraphPermissionsDefinitionAuthorizationSystemIdentity>]`: permissionsDefinitionAuthorizationSystemIdentity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[ExternalId <String>]`: 
+      - `[ExternalId <String>]`: Unique ID of the identity within the external system. Prefixed with rsn: if this is a SAML or ED user in AWS. Alternate key.
       - `[IdentityType <String>]`: permissionsDefinitionIdentityType
       - `[Source <IMicrosoftGraphPermissionsDefinitionIdentitySource>]`: permissionsDefinitionIdentitySource
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -292,9 +293,9 @@ To create the parameters described below, construct a hash table containing the 
   - `[StatusDetail <String>]`: statusDetail
   - `[TicketInfo <IMicrosoftGraphTicketInfo>]`: ticketInfo
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[TicketApproverIdentityId <String>]`: 
+    - `[TicketApproverIdentityId <String>]`: ID for the request approver.
     - `[TicketNumber <String>]`: The ticket number.
-    - `[TicketSubmitterIdentityId <String>]`: 
+    - `[TicketSubmitterIdentityId <String>]`: ID for the request submitter.
     - `[TicketSystem <String>]`: The description of the ticket system.
 
 ## RELATED LINKS

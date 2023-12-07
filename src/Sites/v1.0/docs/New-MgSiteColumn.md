@@ -8,8 +8,7 @@ schema: 2.0.0
 # New-MgSiteColumn
 
 ## SYNOPSIS
-Create a column for a site][site] with a request that specifies a [columnDefinition][columnDefinition].
-This API is available in the following [national cloud deployments.
+Create a column for a [site][site] with a request that specifies a [columnDefinition][columnDefinition].
 
 ## SYNTAX
 
@@ -58,8 +57,7 @@ New-MgSiteColumn -InputObject <ISitesIdentity> [-AdditionalProperties <Hashtable
 ```
 
 ## DESCRIPTION
-Create a column for a site][site] with a request that specifies a [columnDefinition][columnDefinition].
-This API is available in the following [national cloud deployments.
+Create a column for a [site][site] with a request that specifies a [columnDefinition][columnDefinition].
 
 ## EXAMPLES
 

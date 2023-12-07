@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Postpone action on an impactedResource object to a specified future date and time by marking its status as postponed.
 On the specified date and time, Microsoft Entra ID will automatically mark the status of the impactedResource object to active.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -47,7 +46,6 @@ Invoke-MgBetaPostponeDirectoryRecommendationImpactedResource
 ## DESCRIPTION
 Postpone action on an impactedResource object to a specified future date and time by marking its status as postponed.
 On the specified date and time, Microsoft Entra ID will automatically mark the status of the impactedResource object to active.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

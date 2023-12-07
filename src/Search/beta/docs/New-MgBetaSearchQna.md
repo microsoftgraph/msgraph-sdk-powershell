@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new qna object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -31,7 +30,6 @@ New-MgBetaSearchQna -BodyParameter <IMicrosoftGraphSearchQna> [-Confirm] [-WhatI
 
 ## DESCRIPTION
 Create a new qna object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

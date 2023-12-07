@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve the schedule for an active role assignment operation.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -34,7 +33,6 @@ Get-MgRoleManagementDirectoryRoleAssignmentSchedule -InputObject <IIdentityGover
 
 ## DESCRIPTION
 Retrieve the schedule for an active role assignment operation.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

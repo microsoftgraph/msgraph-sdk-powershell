@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaReportUserInsightDaily
 
 ## SYNOPSIS
-Get daily from reports
+Summaries of daily user activities on apps registered in your tenant that is configured for Microsoft Entra External ID for customers.
 
 ## SYNTAX
 
@@ -17,7 +17,7 @@ Get-MgBetaReportUserInsightDaily [-ExpandProperty <String[]>] [-Property <String
 ```
 
 ## DESCRIPTION
-Get daily from reports
+Summaries of daily user activities on apps registered in your tenant that is configured for Microsoft Entra External ID for customers.
 
 ## EXAMPLES
 

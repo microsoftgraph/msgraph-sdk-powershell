@@ -11,7 +11,6 @@ schema: 2.0.0
 Transfer an active peer-to-peer call or group call.
 A consultative transfer means that the transferor can inform the person they want to transfer the call to (the transferee), before the transfer is made.
 This is opposed to transfering the call directly.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -47,7 +46,6 @@ Move-MgBetaCommunicationCall -InputObject <ICloudCommunicationsIdentity> [-Addit
 Transfer an active peer-to-peer call or group call.
 A consultative transfer means that the transferor can inform the person they want to transfer the call to (the transferee), before the transfer is made.
 This is opposed to transfering the call directly.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Runs the query specified in the request body.
 Search results are provided in the response.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -29,7 +28,6 @@ Invoke-MgQuerySearch -Body <IPaths1Kd2XrlSearchMicrosoftGraphQueryPostRequestbod
 ## DESCRIPTION
 Runs the query specified in the request body.
 Search results are provided in the response.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

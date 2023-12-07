@@ -8,9 +8,8 @@ schema: 2.0.0
 # Copy-MgGroupDriveListContentTypeToDefaultContentLocation
 
 ## SYNOPSIS
-Copy a file to a default content location in a content type][contentType].
+Copy a file to a default content location in a [content type][contentType].
 The file can then be added as a default file or template via a POST operation.
-This API is available in the following [national cloud deployments.
 
 ## SYNTAX
 
@@ -44,9 +43,8 @@ Copy-MgGroupDriveListContentTypeToDefaultContentLocation -InputObject <IGroupsId
 ```
 
 ## DESCRIPTION
-Copy a file to a default content location in a content type][contentType].
+Copy a file to a default content location in a [content type][contentType].
 The file can then be added as a default file or template via a POST operation.
-This API is available in the following [national cloud deployments.
 
 ## EXAMPLES
 

@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update the properties of a linkedResource object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -43,7 +42,6 @@ Update-MgUserTodoListTaskLinkedResource -InputObject <IUsersIdentity> [-Addition
 
 ## DESCRIPTION
 Update the properties of a linkedResource object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Add a user to a school.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -39,7 +38,6 @@ New-MgBetaEducationSchoolUserByRef -InputObject <IEducationIdentity> -OdataId <S
 
 ## DESCRIPTION
 Add a user to a school.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

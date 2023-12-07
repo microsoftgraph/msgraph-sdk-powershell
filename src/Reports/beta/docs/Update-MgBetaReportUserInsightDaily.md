@@ -52,7 +52,7 @@ Update the navigation property daily in reports
 ## PARAMETERS
 
 ### -ActiveUsers
-.
+Insights for active users on apps registered in the tenant for a specified period.
 To construct, see NOTES section for ACTIVEUSERS properties and create a hash table.
 
 ```yaml
@@ -68,7 +68,7 @@ Accept wildcard characters: False
 ```
 
 ### -ActiveUsersBreakdown
-.
+Insights for the breakdown of users who were active on apps registered in the tenant for a specified period.
 To construct, see NOTES section for ACTIVEUSERSBREAKDOWN properties and create a hash table.
 
 ```yaml
@@ -99,7 +99,7 @@ Accept wildcard characters: False
 ```
 
 ### -Authentications
-.
+Insights for authentications on apps registered in the tenant for a specified period.
 To construct, see NOTES section for AUTHENTICATIONS properties and create a hash table.
 
 ```yaml
@@ -179,7 +179,7 @@ Accept wildcard characters: False
 ```
 
 ### -MfaCompletions
-.
+Insights for MFA usage on apps registered in the tenant for a specified period.
 To construct, see NOTES section for MFACOMPLETIONS properties and create a hash table.
 
 ```yaml
@@ -195,7 +195,7 @@ Accept wildcard characters: False
 ```
 
 ### -SignUps
-.
+Total sign-ups on apps registered in the tenant for a specified period.
 To construct, see NOTES section for SIGNUPS properties and create a hash table.
 
 ```yaml
@@ -211,7 +211,7 @@ Accept wildcard characters: False
 ```
 
 ### -Summary
-.
+Summary of all usage insights on apps registered in the tenant for a specified period.
 To construct, see NOTES section for SUMMARY properties and create a hash table.
 
 ```yaml
@@ -227,7 +227,7 @@ Accept wildcard characters: False
 ```
 
 ### -UserCount
-.
+Insights for total users on apps registered in the tenant for a specified period.
 To construct, see NOTES section for USERCOUNT properties and create a hash table.
 
 ```yaml
@@ -293,50 +293,50 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-`ACTIVEUSERS <IMicrosoftGraphActiveUsersMetric[]>`: .
+`ACTIVEUSERS <IMicrosoftGraphActiveUsersMetric[]>`: Insights for active users on apps registered in the tenant for a specified period.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[Count <Int64?>]`: 
-  - `[FactDate <DateTime?>]`: 
+  - `[Count <Int64?>]`: The total number of users who made at least one authentication request within the specified time period.
+  - `[FactDate <DateTime?>]`: Date of the insight.
 
-`ACTIVEUSERSBREAKDOWN <IMicrosoftGraphActiveUsersBreakdownMetric[]>`: .
+`ACTIVEUSERSBREAKDOWN <IMicrosoftGraphActiveUsersBreakdownMetric[]>`: Insights for the breakdown of users who were active on apps registered in the tenant for a specified period.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[AppId <String>]`: 
-  - `[AppName <String>]`: 
-  - `[Count <Int64?>]`: 
-  - `[FactDate <DateTime?>]`: 
-  - `[OS <String>]`: 
+  - `[AppId <String>]`: The ID of the Microsoft Entra application.
+  - `[AppName <String>]`: Name of the application users authenticated to.
+  - `[Count <Int64?>]`: The total number of users who made at least one authentication request within the specified time period.
+  - `[FactDate <DateTime?>]`: The date of the insight.
+  - `[OS <String>]`: The platform for the device that the customers used. Supports $filter (eq).
 
-`AUTHENTICATIONS <IMicrosoftGraphAuthenticationsMetric[]>`: .
+`AUTHENTICATIONS <IMicrosoftGraphAuthenticationsMetric[]>`: Insights for authentications on apps registered in the tenant for a specified period.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[Appid <String>]`: 
-  - `[AttemptsCount <Int64?>]`: 
-  - `[Country <String>]`: 
-  - `[FactDate <DateTime?>]`: 
-  - `[OS <String>]`: 
-  - `[SuccessCount <Int64?>]`: 
+  - `[Appid <String>]`: The ID of the Microsoft Entra application. Supports $filter (eq).
+  - `[AttemptsCount <Int64?>]`: The number of authentication requests made in the specified period. Supports $filter (eq).
+  - `[Country <String>]`: The location where the customers authenticated from. Supports $filter (eq).
+  - `[FactDate <DateTime?>]`: The date of the user insight.
+  - `[OS <String>]`: The platform for the device that the customers used. Supports $filter (eq).
+  - `[SuccessCount <Int64?>]`: Number of successful authentication requests. Supports $filter (eq).
 
 `BODYPARAMETER <IMicrosoftGraphDailyUserInsightMetricsRoot>`: dailyUserInsightMetricsRoot
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[ActiveUsers <IMicrosoftGraphActiveUsersMetric[]>]`: 
+  - `[ActiveUsers <IMicrosoftGraphActiveUsersMetric[]>]`: Insights for active users on apps registered in the tenant for a specified period.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[Count <Int64?>]`: 
-    - `[FactDate <DateTime?>]`: 
-  - `[ActiveUsersBreakdown <IMicrosoftGraphActiveUsersBreakdownMetric[]>]`: 
+    - `[Count <Int64?>]`: The total number of users who made at least one authentication request within the specified time period.
+    - `[FactDate <DateTime?>]`: Date of the insight.
+  - `[ActiveUsersBreakdown <IMicrosoftGraphActiveUsersBreakdownMetric[]>]`: Insights for the breakdown of users who were active on apps registered in the tenant for a specified period.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[AppId <String>]`: 
-    - `[AppName <String>]`: 
-    - `[Count <Int64?>]`: 
-    - `[FactDate <DateTime?>]`: 
-    - `[OS <String>]`: 
-  - `[Authentications <IMicrosoftGraphAuthenticationsMetric[]>]`: 
+    - `[AppId <String>]`: The ID of the Microsoft Entra application.
+    - `[AppName <String>]`: Name of the application users authenticated to.
+    - `[Count <Int64?>]`: The total number of users who made at least one authentication request within the specified time period.
+    - `[FactDate <DateTime?>]`: The date of the insight.
+    - `[OS <String>]`: The platform for the device that the customers used. Supports $filter (eq).
+  - `[Authentications <IMicrosoftGraphAuthenticationsMetric[]>]`: Insights for authentications on apps registered in the tenant for a specified period.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[Appid <String>]`: 
-    - `[AttemptsCount <Int64?>]`: 
-    - `[Country <String>]`: 
-    - `[FactDate <DateTime?>]`: 
-    - `[OS <String>]`: 
-    - `[SuccessCount <Int64?>]`: 
+    - `[Appid <String>]`: The ID of the Microsoft Entra application. Supports $filter (eq).
+    - `[AttemptsCount <Int64?>]`: The number of authentication requests made in the specified period. Supports $filter (eq).
+    - `[Country <String>]`: The location where the customers authenticated from. Supports $filter (eq).
+    - `[FactDate <DateTime?>]`: The date of the user insight.
+    - `[OS <String>]`: The platform for the device that the customers used. Supports $filter (eq).
+    - `[SuccessCount <Int64?>]`: Number of successful authentication requests. Supports $filter (eq).
   - `[InactiveUsers <IMicrosoftGraphDailyInactiveUsersMetric[]>]`: 
     - `[FactDate <DateTime?>]`: 
     - `[Inactive30DayCount <Int64?>]`: 
@@ -352,35 +352,35 @@ To create the parameters described below, construct a hash table containing the 
     - `[Inactive90DayCount <Int64?>]`: 
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Inactive1DayCount <Int64?>]`: 
-  - `[MfaCompletions <IMicrosoftGraphMfaCompletionMetric[]>]`: 
+  - `[MfaCompletions <IMicrosoftGraphMfaCompletionMetric[]>]`: Insights for MFA usage on apps registered in the tenant for a specified period.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[AppId <String>]`: 
-    - `[AttemptsCount <Int64?>]`: 
-    - `[FactDate <DateTime?>]`: 
-    - `[MfaMethod <String>]`: 
-    - `[OS <String>]`: 
-    - `[SuccessCount <Int64?>]`: 
-  - `[SignUps <IMicrosoftGraphUserSignUpMetric[]>]`: 
+    - `[AppId <String>]`: The ID of the Microsoft Entra application. Supports $filter (eq).
+    - `[AttemptsCount <Int64?>]`: Number of users who attempted to sign up. Supports $filter (eq).
+    - `[FactDate <DateTime?>]`: The date of the user insight.
+    - `[MfaMethod <String>]`: The MFA authentication method used by the customers. Supports $filter (eq).
+    - `[OS <String>]`: The platform of the device that the customers used. Supports $filter (eq).
+    - `[SuccessCount <Int64?>]`: Number of users who signed up successfully. Supports $filter (eq).
+  - `[SignUps <IMicrosoftGraphUserSignUpMetric[]>]`: Total sign-ups on apps registered in the tenant for a specified period.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[Count <Int64?>]`: 
-    - `[FactDate <DateTime?>]`: 
-    - `[OS <String>]`: 
-  - `[Summary <IMicrosoftGraphInsightSummary[]>]`: 
+    - `[Count <Int64?>]`: The total number of users who signed up in the specified period. Supports $filter (eq).
+    - `[FactDate <DateTime?>]`: The date of the user insight.
+    - `[OS <String>]`: The device plaform that the customers used. Supports $filter (eq).
+  - `[Summary <IMicrosoftGraphInsightSummary[]>]`: Summary of all usage insights on apps registered in the tenant for a specified period.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[ActiveUsers <Int64?>]`: 
-    - `[AppId <String>]`: 
-    - `[AuthenticationCompletions <Int64?>]`: 
-    - `[AuthenticationRequests <Int64?>]`: 
-    - `[FactDate <DateTime?>]`: 
-    - `[OS <String>]`: 
-    - `[SecurityTextCompletions <Int64?>]`: 
-    - `[SecurityTextRequests <Int64?>]`: 
-    - `[SecurityVoiceCompletions <Int64?>]`: 
-    - `[SecurityVoiceRequests <Int64?>]`: 
-  - `[UserCount <IMicrosoftGraphUserCountMetric[]>]`: 
+    - `[ActiveUsers <Int64?>]`: Daily active users.
+    - `[AppId <String>]`: The ID of the Microsoft Entra application.
+    - `[AuthenticationCompletions <Int64?>]`: Daily authentication completions.
+    - `[AuthenticationRequests <Int64?>]`: Daily authentication requests.
+    - `[FactDate <DateTime?>]`: The date of the insight.
+    - `[OS <String>]`: The platform for the device that the customers used. Supports $filter (eq).
+    - `[SecurityTextCompletions <Int64?>]`: Daily MFA SMS completions.
+    - `[SecurityTextRequests <Int64?>]`: Daily MFA SMS requests.
+    - `[SecurityVoiceCompletions <Int64?>]`: Daily MFA Voice completions.
+    - `[SecurityVoiceRequests <Int64?>]`: Daily MFA Voice requests.
+  - `[UserCount <IMicrosoftGraphUserCountMetric[]>]`: Insights for total users on apps registered in the tenant for a specified period.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[Count <Int64?>]`: 
-    - `[FactDate <DateTime?>]`: 
+    - `[Count <Int64?>]`: The total number of users in the tenant over time.
+    - `[FactDate <DateTime?>]`: The date of the insight.
 
 `INACTIVEUSERS <IMicrosoftGraphDailyInactiveUsersMetric[]>`: .
   - `[FactDate <DateTime?>]`: 
@@ -399,38 +399,38 @@ To create the parameters described below, construct a hash table containing the 
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Inactive1DayCount <Int64?>]`: 
 
-`MFACOMPLETIONS <IMicrosoftGraphMfaCompletionMetric[]>`: .
+`MFACOMPLETIONS <IMicrosoftGraphMfaCompletionMetric[]>`: Insights for MFA usage on apps registered in the tenant for a specified period.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[AppId <String>]`: 
-  - `[AttemptsCount <Int64?>]`: 
-  - `[FactDate <DateTime?>]`: 
-  - `[MfaMethod <String>]`: 
-  - `[OS <String>]`: 
-  - `[SuccessCount <Int64?>]`: 
+  - `[AppId <String>]`: The ID of the Microsoft Entra application. Supports $filter (eq).
+  - `[AttemptsCount <Int64?>]`: Number of users who attempted to sign up. Supports $filter (eq).
+  - `[FactDate <DateTime?>]`: The date of the user insight.
+  - `[MfaMethod <String>]`: The MFA authentication method used by the customers. Supports $filter (eq).
+  - `[OS <String>]`: The platform of the device that the customers used. Supports $filter (eq).
+  - `[SuccessCount <Int64?>]`: Number of users who signed up successfully. Supports $filter (eq).
 
-`SIGNUPS <IMicrosoftGraphUserSignUpMetric[]>`: .
+`SIGNUPS <IMicrosoftGraphUserSignUpMetric[]>`: Total sign-ups on apps registered in the tenant for a specified period.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[Count <Int64?>]`: 
-  - `[FactDate <DateTime?>]`: 
-  - `[OS <String>]`: 
+  - `[Count <Int64?>]`: The total number of users who signed up in the specified period. Supports $filter (eq).
+  - `[FactDate <DateTime?>]`: The date of the user insight.
+  - `[OS <String>]`: The device plaform that the customers used. Supports $filter (eq).
 
-`SUMMARY <IMicrosoftGraphInsightSummary[]>`: .
+`SUMMARY <IMicrosoftGraphInsightSummary[]>`: Summary of all usage insights on apps registered in the tenant for a specified period.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[ActiveUsers <Int64?>]`: 
-  - `[AppId <String>]`: 
-  - `[AuthenticationCompletions <Int64?>]`: 
-  - `[AuthenticationRequests <Int64?>]`: 
-  - `[FactDate <DateTime?>]`: 
-  - `[OS <String>]`: 
-  - `[SecurityTextCompletions <Int64?>]`: 
-  - `[SecurityTextRequests <Int64?>]`: 
-  - `[SecurityVoiceCompletions <Int64?>]`: 
-  - `[SecurityVoiceRequests <Int64?>]`: 
+  - `[ActiveUsers <Int64?>]`: Daily active users.
+  - `[AppId <String>]`: The ID of the Microsoft Entra application.
+  - `[AuthenticationCompletions <Int64?>]`: Daily authentication completions.
+  - `[AuthenticationRequests <Int64?>]`: Daily authentication requests.
+  - `[FactDate <DateTime?>]`: The date of the insight.
+  - `[OS <String>]`: The platform for the device that the customers used. Supports $filter (eq).
+  - `[SecurityTextCompletions <Int64?>]`: Daily MFA SMS completions.
+  - `[SecurityTextRequests <Int64?>]`: Daily MFA SMS requests.
+  - `[SecurityVoiceCompletions <Int64?>]`: Daily MFA Voice completions.
+  - `[SecurityVoiceRequests <Int64?>]`: Daily MFA Voice requests.
 
-`USERCOUNT <IMicrosoftGraphUserCountMetric[]>`: .
+`USERCOUNT <IMicrosoftGraphUserCountMetric[]>`: Insights for total users on apps registered in the tenant for a specified period.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[Count <Int64?>]`: 
-  - `[FactDate <DateTime?>]`: 
+  - `[Count <Int64?>]`: The total number of users in the tenant over time.
+  - `[FactDate <DateTime?>]`: The date of the insight.
 
 ## RELATED LINKS
 

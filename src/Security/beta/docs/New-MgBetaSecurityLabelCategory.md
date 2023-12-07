@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new categoryTemplate object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -28,7 +27,6 @@ New-MgBetaSecurityLabelCategory -BodyParameter <IMicrosoftGraphSecurityCategoryT
 
 ## DESCRIPTION
 Create a new categoryTemplate object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -1,64 +1,58 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Bookings
-online version: https://learn.microsoft.com/powershell/module/microsoft.graph.bookings/new-mgbookingbusinesscustomer
+Module Name: Microsoft.Graph.Users
+online version: https://learn.microsoft.com/powershell/module/microsoft.graph.users/new-mguserextension
 schema: 2.0.0
 ---
 
-# New-MgBookingBusinessCustomer
+# New-MgUserExtension
 
 ## SYNOPSIS
-Create a new bookingCustomer object.
-This API is available in the following national cloud deployments.
+Create new navigation property to extensions for users
 
 ## SYNTAX
 
 ### CreateExpanded (Default)
 ```
-New-MgBookingBusinessCustomer -BookingBusinessId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgUserExtension -UserId <String> [-AdditionalProperties <Hashtable>] [-Id <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgBookingBusinessCustomer -BookingBusinessId <String> -BodyParameter <Hashtable> [-Confirm] [-WhatIf]
- [<CommonParameters>]
+New-MgUserExtension -UserId <String> -BodyParameter <Hashtable> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgBookingBusinessCustomer -InputObject <IBookingsIdentity> -BodyParameter <Hashtable> [-Confirm] [-WhatIf]
+New-MgUserExtension -InputObject <IUsersIdentity> -BodyParameter <Hashtable> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-MgBookingBusinessCustomer -InputObject <IBookingsIdentity> [-AdditionalProperties <Hashtable>]
- [-Id <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgUserExtension -InputObject <IUsersIdentity> [-AdditionalProperties <Hashtable>] [-Id <String>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Create a new bookingCustomer object.
-This API is available in the following national cloud deployments.
+Create new navigation property to extensions for users
 
 ## EXAMPLES
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Bookings
+{{ Add code here }}
 ```
 
-$params = @{
-	"@odata.type" = "#microsoft.graph.bookingCustomer"
-	displayName = "Joni Sherman"
-	emailAddress = "jonis@relecloud.com"
-	addresses = @(
-	)
-	phones = @(
-	)
-}
+{{ Add output here }}
 
-New-MgBookingBusinessCustomer -BookingBusinessId $bookingBusinessId -BodyParameter $params
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+{{ Add code here }}
+```
+
+{{ Add output here }}
 
 ## PARAMETERS
 
@@ -78,7 +72,7 @@ Accept wildcard characters: False
 ```
 
 ### -BodyParameter
-Booking entities that provide a display name.
+extension
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -89,21 +83,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -BookingBusinessId
-The unique identifier of bookingBusiness
-
-```yaml
-Type: System.String
-Parameter Sets: Create, CreateExpanded
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -128,7 +107,7 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IBookingsIdentity
+Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
 Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
@@ -136,6 +115,21 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -UserId
+The unique identifier of user
+
+```yaml
+Type: System.String
+Parameter Sets: Create, CreateExpanded
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -175,7 +169,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IBookingsIdentity
+### Microsoft.Graph.PowerShell.Models.IUsersIdentity
 
 ### System.Collections.Hashtable
 
@@ -192,14 +186,20 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-`INPUTOBJECT <IBookingsIdentity>`: Identity Parameter
-  - `[BookingAppointmentId <String>]`: The unique identifier of bookingAppointment
-  - `[BookingBusinessId <String>]`: The unique identifier of bookingBusiness
-  - `[BookingCurrencyId <String>]`: The unique identifier of bookingCurrency
-  - `[BookingCustomQuestionId <String>]`: The unique identifier of bookingCustomQuestion
-  - `[BookingCustomerBaseId <String>]`: The unique identifier of bookingCustomerBase
-  - `[BookingServiceId <String>]`: The unique identifier of bookingService
-  - `[BookingStaffMemberBaseId <String>]`: The unique identifier of bookingStaffMemberBase
+`INPUTOBJECT <IUsersIdentity>`: Identity Parameter
+  - `[AttachmentBaseId <String>]`: The unique identifier of attachmentBase
+  - `[AttachmentSessionId <String>]`: The unique identifier of attachmentSession
+  - `[ChecklistItemId <String>]`: The unique identifier of checklistItem
+  - `[DirectoryObjectId <String>]`: The unique identifier of directoryObject
+  - `[ExtensionId <String>]`: The unique identifier of extension
+  - `[LicenseDetailsId <String>]`: The unique identifier of licenseDetails
+  - `[LinkedResourceId <String>]`: The unique identifier of linkedResource
+  - `[OAuth2PermissionGrantId <String>]`: The unique identifier of oAuth2PermissionGrant
+  - `[OutlookCategoryId <String>]`: The unique identifier of outlookCategory
+  - `[ProfilePhotoId <String>]`: The unique identifier of profilePhoto
+  - `[TodoTaskId <String>]`: The unique identifier of todoTask
+  - `[TodoTaskListId <String>]`: The unique identifier of todoTaskList
+  - `[UserId <String>]`: The unique identifier of user
 
 ## RELATED LINKS
 

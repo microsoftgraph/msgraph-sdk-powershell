@@ -11,7 +11,6 @@ schema: 2.0.0
 Delete a printer share (unshare the associated printer).
 This action can't be undone.
 If the printer is shared again in the future, any Windows users who had previously installed the printer needs to discover and reinstall it.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -31,7 +30,6 @@ Remove-MgPrintShare -InputObject <IDevicesCloudPrintIdentity> [-IfMatch <String>
 Delete a printer share (unshare the associated printer).
 This action can't be undone.
 If the printer is shared again in the future, any Windows users who had previously installed the printer needs to discover and reinstall it.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

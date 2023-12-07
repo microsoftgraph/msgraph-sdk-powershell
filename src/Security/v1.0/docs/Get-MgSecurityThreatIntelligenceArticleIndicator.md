@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Read the properties and relationships of an articleIndicator object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -53,7 +52,6 @@ Get-MgSecurityThreatIntelligenceArticleIndicator -ArticleId <String> [-ExpandPro
 
 ## DESCRIPTION
 Read the properties and relationships of an articleIndicator object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

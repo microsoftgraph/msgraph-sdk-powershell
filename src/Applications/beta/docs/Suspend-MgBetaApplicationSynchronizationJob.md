@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Temporarily stop a running synchronization job.
 All the progress, including job state, is persisted, and the job continues from where it left off when a start call is made.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -29,7 +28,6 @@ Suspend-MgBetaApplicationSynchronizationJob -InputObject <IApplicationsIdentity>
 ## DESCRIPTION
 Temporarily stop a running synchronization job.
 All the progress, including job state, is persisted, and the job continues from where it left off when a start call is made.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

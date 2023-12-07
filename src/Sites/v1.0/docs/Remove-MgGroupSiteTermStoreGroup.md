@@ -8,8 +8,7 @@ schema: 2.0.0
 # Remove-MgGroupSiteTermStoreGroup
 
 ## SYNOPSIS
-Delete a group object in a term store].
-This API is available in the following [national cloud deployments.
+Delete a group object in a term [store].
 
 ## SYNTAX
 
@@ -38,8 +37,7 @@ Remove-MgGroupSiteTermStoreGroup -InputObject <ISitesIdentity> [-IfMatch <String
 ```
 
 ## DESCRIPTION
-Delete a group object in a term store].
-This API is available in the following [national cloud deployments.
+Delete a group object in a term [store].
 
 ## EXAMPLES
 

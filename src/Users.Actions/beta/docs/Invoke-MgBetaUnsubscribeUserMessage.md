@@ -17,7 +17,6 @@ Setting that header would also set the unsubscribeEnabled property of the messag
 If the unsubscribeEnabled property of a message is true, you can use the unsubscribe action to unsubscribe the user from similar future messages as managed by the message sender.
 A successful unsubscribe action moves the message to the Deleted Items folder.
 The actual exclusion of the user from future mail distribution is managed by the sender.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -43,7 +42,6 @@ Setting that header would also set the unsubscribeEnabled property of the messag
 If the unsubscribeEnabled property of a message is true, you can use the unsubscribe action to unsubscribe the user from similar future messages as managed by the message sender.
 A successful unsubscribe action moves the message to the Deleted Items folder.
 The actual exclusion of the user from future mail distribution is managed by the sender.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -199,6 +197,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[NotebookId <String>]`: The unique identifier of notebook
   - `[OnenotePageId <String>]`: The unique identifier of onenotePage
   - `[OnenoteSectionId <String>]`: The unique identifier of onenoteSection
+  - `[OnlineMeetingId <String>]`: The unique identifier of onlineMeeting
   - `[OutlookTaskFolderId <String>]`: The unique identifier of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: The unique identifier of outlookTaskGroup
   - `[OutlookTaskId <String>]`: The unique identifier of outlookTask

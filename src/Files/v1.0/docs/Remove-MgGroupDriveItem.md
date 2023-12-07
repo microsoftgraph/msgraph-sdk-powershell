@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete a DriveItem by using its ID or path.\nDeleting items using this method moves the items to the recycle bin instead of permanently deleting the item.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Remove-MgGroupDriveItem -InputObject <IFilesIdentity> [-IfMatch <String>] [-Pass
 
 ## DESCRIPTION
 Delete a DriveItem by using its ID or path.\nDeleting items using this method moves the items to the recycle bin instead of permanently deleting the item.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

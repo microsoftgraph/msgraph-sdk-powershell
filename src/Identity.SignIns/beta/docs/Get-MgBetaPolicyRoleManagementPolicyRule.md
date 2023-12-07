@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve a rule defined for a role management policy.
-The rule can be one of the following types that are derived from the unifiedRoleManagementPolicyRule object: This API is available in the following national cloud deployments.
+The rule can be one of the following types that are derived from the unifiedRoleManagementPolicyRule object:
 
 ## SYNTAX
 
@@ -35,7 +35,7 @@ Get-MgBetaPolicyRoleManagementPolicyRule -InputObject <IIdentitySignInsIdentity>
 
 ## DESCRIPTION
 Retrieve a rule defined for a role management policy.
-The rule can be one of the following types that are derived from the unifiedRoleManagementPolicyRule object: This API is available in the following national cloud deployments.
+The rule can be one of the following types that are derived from the unifiedRoleManagementPolicyRule object:
 
 ## EXAMPLES
 
@@ -276,6 +276,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[ActivityBasedTimeoutPolicyId <String>]`: The unique identifier of activityBasedTimeoutPolicy
   - `[AppManagementPolicyId <String>]`: The unique identifier of appManagementPolicy
   - `[AuthenticationCombinationConfigurationId <String>]`: The unique identifier of authenticationCombinationConfiguration
+  - `[AuthenticationConditionApplicationAppId <String>]`: The unique identifier of authenticationConditionApplication
   - `[AuthenticationContextClassReferenceId <String>]`: The unique identifier of authenticationContextClassReference
   - `[AuthenticationEventListenerId <String>]`: The unique identifier of authenticationEventListener
   - `[AuthenticationEventsFlowId <String>]`: The unique identifier of authenticationEventsFlow

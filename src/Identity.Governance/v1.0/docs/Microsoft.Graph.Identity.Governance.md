@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.Governance
-Module Guid: 24064c4c-f52c-4af6-a24c-88b1269a1726
+Module Guid: 439e545b-dfb7-4bdb-9962-094c25217641
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.identity.governance
 Help Version: 1.0.0.0
 Locale: en-US
@@ -14,7 +14,6 @@ Microsoft Graph PowerShell Cmdlets
 ### [Add-MgIdentityGovernanceAccessReviewDefinitionInstanceDecision](Add-MgIdentityGovernanceAccessReviewDefinitionInstanceDecision.md)
 Apply review decisions on an accessReviewInstance if the decisions were not applied automatically because the autoApplyDecisionsEnabled property is false in the review's accessReviewScheduleSettings.
 The status of the accessReviewInstance must be Completed to call this method.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgAgreement](Get-MgAgreement.md)
 Get entity from agreements by key
@@ -29,7 +28,6 @@ Get the number of the resource
 ### [Get-MgAgreementFile](Get-MgAgreementFile.md)
 Retrieve the details of an agreement file, including the language and version information.
 The default file can have multiple versions, each with its own language, that can be retrieved by specifying the Accept-Language header.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgAgreementFileCount](Get-MgAgreementFileCount.md)
 Get the number of the resource
@@ -55,13 +53,13 @@ Customized versions of the terms of use agreement in the Microsoft Entra tenant.
 Get the number of the resource
 
 ### [Get-MgEntitlementManagementAccessPackage](Get-MgEntitlementManagementAccessPackage.md)
-Retrieve the properties and relationships of an accessPackage object.
-This API is available in the following national cloud deployments.
+Retrieve an access package with a list of accessPackageResourceRoleScope objects.
+These objects represent the resource roles that an access package assigns to each subject.
+Each object links to an accessPackageResourceRole and an accessPackageResourceScope.
 
 ### [Get-MgEntitlementManagementAccessPackageApplicablePolicyRequirement](Get-MgEntitlementManagementAccessPackageApplicablePolicyRequirement.md)
 In Microsoft Entra entitlement management, this action retrieves a list of accessPackageAssignmentRequestRequirements objects that the currently signed-in user can use to create an accessPackageAssignmentRequest.
 Each requirement object corresponds to an access package assignment policy that the currently signed-in user is allowed to request an assignment for.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgEntitlementManagementAccessPackageAssignmentApprovalCount](Get-MgEntitlementManagementAccessPackageAssignmentApprovalCount.md)
 Get the number of the resource
@@ -69,7 +67,6 @@ Get the number of the resource
 ### [Get-MgEntitlementManagementAccessPackageAssignmentApprovalStage](Get-MgEntitlementManagementAccessPackageAssignmentApprovalStage.md)
 Retrieve the properties of an approvalStage object.
 An approval stage is contained within an approval object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgEntitlementManagementAccessPackageAssignmentApprovalStageCount](Get-MgEntitlementManagementAccessPackageAssignmentApprovalStageCount.md)
 Get the number of the resource
@@ -89,19 +86,15 @@ Get the number of the resource
 
 ### [Get-MgEntitlementManagementAccessPackageIncompatibleAccessPackage](Get-MgEntitlementManagementAccessPackageIncompatibleAccessPackage.md)
 Retrieve a list of the accessPackage objects that have been marked as incompatible on an accessPackage.
- This API is available in the following national cloud deployments.
 
 ### [Get-MgEntitlementManagementAccessPackageIncompatibleAccessPackageByRef](Get-MgEntitlementManagementAccessPackageIncompatibleAccessPackageByRef.md)
 Retrieve a list of the accessPackage objects that have been marked as incompatible on an accessPackage.
- This API is available in the following national cloud deployments.
 
 ### [Get-MgEntitlementManagementAccessPackageIncompatibleGroup](Get-MgEntitlementManagementAccessPackageIncompatibleGroup.md)
 Retrieve a list of the group objects that have been marked as incompatible on an accessPackage.
- This API is available in the following national cloud deployments.
 
 ### [Get-MgEntitlementManagementAccessPackageIncompatibleGroupByRef](Get-MgEntitlementManagementAccessPackageIncompatibleGroupByRef.md)
 Retrieve a list of the group objects that have been marked as incompatible on an accessPackage.
- This API is available in the following national cloud deployments.
 
 ### [Get-MgEntitlementManagementAccessPackageIncompatibleWith](Get-MgEntitlementManagementAccessPackageIncompatibleWith.md)
 The access packages that are incompatible with this package.
@@ -109,7 +102,6 @@ Read-only.
 
 ### [Get-MgEntitlementManagementAssignment](Get-MgEntitlementManagementAssignment.md)
 In Microsoft Entra entitlement management, retrieve the properties and relationships of an accessPackageAssignment object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgEntitlementManagementAssignmentAdditional](Get-MgEntitlementManagementAssignmentAdditional.md)
 Invoke function additionalAccess
@@ -119,7 +111,6 @@ Get the number of the resource
 
 ### [Get-MgEntitlementManagementAssignmentPolicy](Get-MgEntitlementManagementAssignmentPolicy.md)
 In Microsoft Entra entitlement management, retrieve the properties and relationships of an\n accessPackageAssignmentPolicy object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgEntitlementManagementAssignmentPolicyAccessPackage](Get-MgEntitlementManagementAssignmentPolicyAccessPackage.md)
 Access package containing this policy.
@@ -153,14 +144,12 @@ Get the number of the resource
 
 ### [Get-MgEntitlementManagementAssignmentRequest](Get-MgEntitlementManagementAssignmentRequest.md)
 In Microsoft Entra entitlement management, retrieve the properties and relationships of an  accessPackageAssignmentRequest object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgEntitlementManagementAssignmentRequestCount](Get-MgEntitlementManagementAssignmentRequestCount.md)
 Get the number of the resource
 
 ### [Get-MgEntitlementManagementCatalog](Get-MgEntitlementManagementCatalog.md)
 Retrieve the properties and relationships of an accessPackageCatalog object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgEntitlementManagementCatalogAccessPackageCount](Get-MgEntitlementManagementCatalogAccessPackageCount.md)
 Get the number of the resource
@@ -170,7 +159,6 @@ Get the number of the resource
 
 ### [Get-MgEntitlementManagementCatalogCustomWorkflowExtension](Get-MgEntitlementManagementCatalogCustomWorkflowExtension.md)
 Read the properties and relationships of an accessPackageAssignmentRequestWorkflowExtension object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgEntitlementManagementCatalogCustomWorkflowExtensionCount](Get-MgEntitlementManagementCatalogCustomWorkflowExtensionCount.md)
 Get the number of the resource
@@ -259,7 +247,6 @@ Get the number of the resource
 
 ### [Get-MgEntitlementManagementConnectedOrganization](Get-MgEntitlementManagementConnectedOrganization.md)
 Retrieve the properties and relationships of a connectedOrganization object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgEntitlementManagementConnectedOrganizationCount](Get-MgEntitlementManagementConnectedOrganizationCount.md)
 Get the number of the resource
@@ -267,12 +254,10 @@ Get the number of the resource
 ### [Get-MgEntitlementManagementConnectedOrganizationExternalSponsor](Get-MgEntitlementManagementConnectedOrganizationExternalSponsor.md)
 Retrieve a list of a connectedOrganization's external sponsors.
 The external sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgEntitlementManagementConnectedOrganizationExternalSponsorByRef](Get-MgEntitlementManagementConnectedOrganizationExternalSponsorByRef.md)
 Retrieve a list of a connectedOrganization's external sponsors.
 The external sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgEntitlementManagementConnectedOrganizationExternalSponsorCount](Get-MgEntitlementManagementConnectedOrganizationExternalSponsorCount.md)
 Get the number of the resource
@@ -280,12 +265,10 @@ Get the number of the resource
 ### [Get-MgEntitlementManagementConnectedOrganizationInternalSponsor](Get-MgEntitlementManagementConnectedOrganizationInternalSponsor.md)
 Retrieve a list of a connectedOrganization's internal sponsors.
 The internal sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgEntitlementManagementConnectedOrganizationInternalSponsorByRef](Get-MgEntitlementManagementConnectedOrganizationInternalSponsorByRef.md)
 Retrieve a list of a connectedOrganization's internal sponsors.
 The internal sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgEntitlementManagementConnectedOrganizationInternalSponsorCount](Get-MgEntitlementManagementConnectedOrganizationInternalSponsorCount.md)
 Get the number of the resource
@@ -385,7 +368,6 @@ Get the number of the resource
 
 ### [Get-MgEntitlementManagementResourceRequestCatalogCustomWorkflowExtension](Get-MgEntitlementManagementResourceRequestCatalogCustomWorkflowExtension.md)
 Read the properties and relationships of an accessPackageAssignmentRequestWorkflowExtension object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgEntitlementManagementResourceRequestCatalogCustomWorkflowExtensionCount](Get-MgEntitlementManagementResourceRequestCatalogCustomWorkflowExtensionCount.md)
 Get the number of the resource
@@ -689,19 +671,16 @@ This can be set using either the @odata.bind annotation or the environment's ori
 
 ### [Get-MgEntitlementManagementSetting](Get-MgEntitlementManagementSetting.md)
 Retrieve the properties of an entitlementManagementSettings object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgIdentityGovernanceAccessReviewDefinition](Get-MgIdentityGovernanceAccessReviewDefinition.md)
 Read the properties and relationships of an accessReviewScheduleDefinition object.
 To retrieve the instances of the access review series, use the list accessReviewInstance API.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgIdentityGovernanceAccessReviewDefinitionCount](Get-MgIdentityGovernanceAccessReviewDefinitionCount.md)
 Get the number of the resource
 
 ### [Get-MgIdentityGovernanceAccessReviewDefinitionInstance](Get-MgIdentityGovernanceAccessReviewDefinitionInstance.md)
 Read the properties and relationships of an accessReviewInstance object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgIdentityGovernanceAccessReviewDefinitionInstanceContactedReviewer](Get-MgIdentityGovernanceAccessReviewDefinitionInstanceContactedReviewer.md)
 Returns the collection of reviewers who were contacted to complete this review.
@@ -717,7 +696,6 @@ Get the number of the resource
 
 ### [Get-MgIdentityGovernanceAccessReviewDefinitionInstanceDecision](Get-MgIdentityGovernanceAccessReviewDefinitionInstanceDecision.md)
 Read the properties and relationships of an accessReviewInstanceDecisionItem object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgIdentityGovernanceAccessReviewDefinitionInstanceDecisionCount](Get-MgIdentityGovernanceAccessReviewDefinitionInstanceDecisionCount.md)
 Get the number of the resource
@@ -731,14 +709,12 @@ Get the number of the resource
 
 ### [Get-MgIdentityGovernanceAccessReviewDefinitionInstanceStage](Get-MgIdentityGovernanceAccessReviewDefinitionInstanceStage.md)
 Retrieve the properties and relationships of an accessReviewStage object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgIdentityGovernanceAccessReviewDefinitionInstanceStageCount](Get-MgIdentityGovernanceAccessReviewDefinitionInstanceStageCount.md)
 Get the number of the resource
 
 ### [Get-MgIdentityGovernanceAccessReviewDefinitionInstanceStageDecision](Get-MgIdentityGovernanceAccessReviewDefinitionInstanceStageDecision.md)
 Read the properties and relationships of an accessReviewInstanceDecisionItem object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgIdentityGovernanceAccessReviewDefinitionInstanceStageDecisionCount](Get-MgIdentityGovernanceAccessReviewDefinitionInstanceStageDecisionCount.md)
 Get the number of the resource
@@ -751,7 +727,6 @@ There can be multiple insights associated with an accessReviewInstanceDecisionIt
 Retrieve an accessReviewHistoryDefinition object by its identifier.
 All the properties of the access review history definition object are returned.
 If the definition is 30 days or older, a 404 Not Found error is returned.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgIdentityGovernanceAccessReviewHistoryDefinitionCount](Get-MgIdentityGovernanceAccessReviewHistoryDefinitionCount.md)
 Get the number of the resource
@@ -765,14 +740,12 @@ Get the number of the resource
 
 ### [Get-MgIdentityGovernanceAppConsentRequest](Get-MgIdentityGovernanceAppConsentRequest.md)
 Read the properties and relationships of an appConsentRequest object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgIdentityGovernanceAppConsentRequestCount](Get-MgIdentityGovernanceAppConsentRequestCount.md)
 Get the number of the resource
 
 ### [Get-MgIdentityGovernanceAppConsentRequestUserConsentRequest](Get-MgIdentityGovernanceAppConsentRequestUserConsentRequest.md)
 Read the properties and relationships of a userConsentRequest object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgIdentityGovernanceAppConsentRequestUserConsentRequestApproval](Get-MgIdentityGovernanceAppConsentRequestUserConsentRequestApproval.md)
 Approval decisions associated with a request.
@@ -780,7 +753,6 @@ Approval decisions associated with a request.
 ### [Get-MgIdentityGovernanceAppConsentRequestUserConsentRequestApprovalStage](Get-MgIdentityGovernanceAppConsentRequestUserConsentRequestApprovalStage.md)
 Retrieve the properties of an approvalStage object.
 An approval stage is contained within an approval object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgIdentityGovernanceAppConsentRequestUserConsentRequestApprovalStageCount](Get-MgIdentityGovernanceAppConsentRequestUserConsentRequestApprovalStageCount.md)
 Get the number of the resource
@@ -790,7 +762,6 @@ Get the number of the resource
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflow](Get-MgIdentityGovernanceLifecycleWorkflow.md)
 Read the properties and relationships of a workflow object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowCount](Get-MgIdentityGovernanceLifecycleWorkflowCount.md)
 Get the number of the resource
@@ -811,7 +782,6 @@ Get the number of the resource
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtension](Get-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtension.md)
 Read the properties and relationships of a customTaskExtension object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtensionCount](Get-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtensionCount.md)
 Get the number of the resource
@@ -849,7 +819,6 @@ Deleted workflows in your lifecycle workflows instance.
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow](Get-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow.md)
 Retrieve a deleted workflow object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowCount](Get-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowCount.md)
 Get the number of the resource
@@ -865,7 +834,6 @@ The unique identifier of the Microsoft Entra identity that last modified the wor
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowRun](Get-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowRun.md)
 Read the properties and relationships of a run object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowTask](Get-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowTask.md)
 The tasks in the workflow.
@@ -878,7 +846,6 @@ Per-user workflow execution results.
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowVersion](Get-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowVersion.md)
 Read the properties and relationships of a workflowVersion object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowExecutionScope](Get-MgIdentityGovernanceLifecycleWorkflowExecutionScope.md)
 The unique identifier of the Microsoft Entra identity that last modified the workflow object.
@@ -902,7 +869,6 @@ Get the number of the resource
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowRun](Get-MgIdentityGovernanceLifecycleWorkflowRun.md)
 Read the properties and relationships of a run object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowRunCount](Get-MgIdentityGovernanceLifecycleWorkflowRunCount.md)
 Get the number of the resource
@@ -932,7 +898,6 @@ The related workflow task
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowRunUserProcessingResult](Get-MgIdentityGovernanceLifecycleWorkflowRunUserProcessingResult.md)
 Get the user processing result of a user processing result of a run.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowRunUserProcessingResultCount](Get-MgIdentityGovernanceLifecycleWorkflowRunUserProcessingResultCount.md)
 Get the number of the resource
@@ -956,7 +921,6 @@ The associated individual task execution.
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowSetting](Get-MgIdentityGovernanceLifecycleWorkflowSetting.md)
 Read the properties and relationships of a lifecycleManagementSettings object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowTask](Get-MgIdentityGovernanceLifecycleWorkflowTask.md)
 The tasks in the workflow.
@@ -966,7 +930,6 @@ Get the number of the resource
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowTaskDefinition](Get-MgIdentityGovernanceLifecycleWorkflowTaskDefinition.md)
 Read the details of a built-in workflow task.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowTaskDefinitionCount](Get-MgIdentityGovernanceLifecycleWorkflowTaskDefinitionCount.md)
 Get the number of the resource
@@ -1031,7 +994,6 @@ The related workflow task
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowTemplate](Get-MgIdentityGovernanceLifecycleWorkflowTemplate.md)
 Read the properties and relationships of a workflowTemplate object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowTemplateCount](Get-MgIdentityGovernanceLifecycleWorkflowTemplateCount.md)
 Get the number of the resource
@@ -1091,7 +1053,6 @@ The associated individual task execution.
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowVersion](Get-MgIdentityGovernanceLifecycleWorkflowVersion.md)
 Read the properties and relationships of a workflowVersion object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowVersionCount](Get-MgIdentityGovernanceLifecycleWorkflowVersionCount.md)
 Get the number of the resource
@@ -1168,14 +1129,12 @@ Get the number of the resource
 ### [Get-MgIdentityGovernancePrivilegedAccessGroupAssignmentApprovalStage](Get-MgIdentityGovernancePrivilegedAccessGroupAssignmentApprovalStage.md)
 Retrieve the properties of an approvalStage object.
 An approval stage is contained within an approval object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgIdentityGovernancePrivilegedAccessGroupAssignmentApprovalStageCount](Get-MgIdentityGovernancePrivilegedAccessGroupAssignmentApprovalStageCount.md)
 Get the number of the resource
 
 ### [Get-MgIdentityGovernancePrivilegedAccessGroupAssignmentSchedule](Get-MgIdentityGovernancePrivilegedAccessGroupAssignmentSchedule.md)
 Read the properties and relationships of a privilegedAccessGroupAssignmentSchedule object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleActivatedUsing](Get-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleActivatedUsing.md)
 When the request activates an ownership or membership assignment in PIM for groups, this object represents the eligibility relationship.
@@ -1197,7 +1156,6 @@ Get the number of the resource
 
 ### [Get-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleInstance](Get-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleInstance.md)
 Read the properties and relationships of a privilegedAccessGroupAssignmentScheduleInstance object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleInstanceActivatedUsing](Get-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleInstanceActivatedUsing.md)
 When the request activates a membership or ownership in PIM for groups, this object represents the eligibility request for the group.
@@ -1226,7 +1184,6 @@ Supports $expand.
 
 ### [Get-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleRequest](Get-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleRequest.md)
 Read the properties and relationships of a privilegedAccessGroupAssignmentScheduleRequest object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleRequestActivatedUsing](Get-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleRequestActivatedUsing.md)
 When the request activates a membership or ownership assignment in PIM for groups, this object represents the eligibility policy for the group.
@@ -1256,7 +1213,6 @@ Supports $expand.
 
 ### [Get-MgIdentityGovernancePrivilegedAccessGroupEligibilitySchedule](Get-MgIdentityGovernancePrivilegedAccessGroupEligibilitySchedule.md)
 Read the properties and relationships of a privilegedAccessGroupEligibilitySchedule object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgIdentityGovernancePrivilegedAccessGroupEligibilityScheduleCount](Get-MgIdentityGovernancePrivilegedAccessGroupEligibilityScheduleCount.md)
 Get the number of the resource
@@ -1273,7 +1229,6 @@ Get the number of the resource
 
 ### [Get-MgIdentityGovernancePrivilegedAccessGroupEligibilityScheduleInstance](Get-MgIdentityGovernancePrivilegedAccessGroupEligibilityScheduleInstance.md)
 Read the properties and relationships of a privilegedAccessGroupEligibilityScheduleInstance object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgIdentityGovernancePrivilegedAccessGroupEligibilityScheduleInstanceCount](Get-MgIdentityGovernancePrivilegedAccessGroupEligibilityScheduleInstanceCount.md)
 Get the number of the resource
@@ -1298,7 +1253,6 @@ Supports $expand.
 
 ### [Get-MgIdentityGovernancePrivilegedAccessGroupEligibilityScheduleRequest](Get-MgIdentityGovernancePrivilegedAccessGroupEligibilityScheduleRequest.md)
 Read the properties and relationships of a privilegedAccessGroupEligibilityScheduleRequest object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgIdentityGovernancePrivilegedAccessGroupEligibilityScheduleRequestCount](Get-MgIdentityGovernancePrivilegedAccessGroupEligibilityScheduleRequestCount.md)
 Get the number of the resource
@@ -1321,8 +1275,8 @@ Supports $expand.
 Schedule created by this request.
 
 ### [Get-MgIdentityGovernanceTermsOfUseAgreement](Get-MgIdentityGovernanceTermsOfUseAgreement.md)
-Retrieve the properties and relationships of an agreement object.
-This API is available in the following national cloud deployments.
+Retrieve all files related to an agreement.
+This includes the default file and all localized files.
 
 ### [Get-MgIdentityGovernanceTermsOfUseAgreementAcceptance](Get-MgIdentityGovernanceTermsOfUseAgreementAcceptance.md)
 Represents the current status of a user's response to a company's customizable terms of use agreement.
@@ -1336,7 +1290,6 @@ Get the number of the resource
 ### [Get-MgIdentityGovernanceTermsOfUseAgreementFile](Get-MgIdentityGovernanceTermsOfUseAgreementFile.md)
 Retrieve the details of an agreement file, including the language and version information.
 The default file can have multiple versions, each with its own language, that can be retrieved by specifying the Accept-Language header.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgIdentityGovernanceTermsOfUseAgreementFileCount](Get-MgIdentityGovernanceTermsOfUseAgreementFileCount.md)
 Get the number of the resource
@@ -1378,7 +1331,6 @@ Get the number of the resource
 
 ### [Get-MgRoleManagementDirectoryRoleAssignment](Get-MgRoleManagementDirectoryRoleAssignment.md)
 Retrieve the properties and relationships of a unifiedRoleAssignment object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgRoleManagementDirectoryRoleAssignmentAppScope](Get-MgRoleManagementDirectoryRoleAssignmentAppScope.md)
 Read-only property with details of the app specific scope when the assignment scope is app specific.
@@ -1401,11 +1353,9 @@ Supports $expand.
 ### [Get-MgRoleManagementDirectoryRoleAssignmentRoleDefinition](Get-MgRoleManagementDirectoryRoleAssignmentRoleDefinition.md)
 The roleDefinition the assignment is for.
 Supports $expand.
-roleDefinition.Id will be auto expanded.
 
 ### [Get-MgRoleManagementDirectoryRoleAssignmentSchedule](Get-MgRoleManagementDirectoryRoleAssignmentSchedule.md)
 Retrieve the schedule for an active role assignment operation.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgRoleManagementDirectoryRoleAssignmentScheduleActivatedUsing](Get-MgRoleManagementDirectoryRoleAssignmentScheduleActivatedUsing.md)
 If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation.
@@ -1425,7 +1375,6 @@ Read-only.
 
 ### [Get-MgRoleManagementDirectoryRoleAssignmentScheduleInstance](Get-MgRoleManagementDirectoryRoleAssignmentScheduleInstance.md)
 Get the instance of an active role assignment.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgRoleManagementDirectoryRoleAssignmentScheduleInstanceActivatedUsing](Get-MgRoleManagementDirectoryRoleAssignmentScheduleInstanceActivatedUsing.md)
 If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation.
@@ -1454,7 +1403,6 @@ The principal that's getting a role assignment or that's eligible for a role thr
 
 ### [Get-MgRoleManagementDirectoryRoleAssignmentScheduleRequest](Get-MgRoleManagementDirectoryRoleAssignmentScheduleRequest.md)
 In PIM, read the details of a request for an active and persistent role assignment made through the unifiedRoleAssignmentScheduleRequest object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgRoleManagementDirectoryRoleAssignmentScheduleRequestActivatedUsing](Get-MgRoleManagementDirectoryRoleAssignmentScheduleRequestActivatedUsing.md)
 If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation.
@@ -1491,7 +1439,7 @@ Detailed information for the roleDefinition object that is referenced through th
 
 ### [Get-MgRoleManagementDirectoryRoleDefinition](Get-MgRoleManagementDirectoryRoleDefinition.md)
 Read the properties and relationships of a unifiedRoleDefinition object.
-The following role-based access control (RBAC) providers are currently supported: This API is available in the following national cloud deployments.
+The following role-based access control (RBAC) providers are currently supported:
 
 ### [Get-MgRoleManagementDirectoryRoleDefinitionCount](Get-MgRoleManagementDirectoryRoleDefinitionCount.md)
 Get the number of the resource
@@ -1506,7 +1454,6 @@ Get the number of the resource
 
 ### [Get-MgRoleManagementDirectoryRoleEligibilitySchedule](Get-MgRoleManagementDirectoryRoleEligibilitySchedule.md)
 Retrieve the schedule for a role eligibility operation.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgRoleManagementDirectoryRoleEligibilityScheduleAppScope](Get-MgRoleManagementDirectoryRoleEligibilityScheduleAppScope.md)
 Read-only property with details of the app-specific scope when the role eligibility or assignment is scoped to an app.
@@ -1521,7 +1468,6 @@ Read-only.
 
 ### [Get-MgRoleManagementDirectoryRoleEligibilityScheduleInstance](Get-MgRoleManagementDirectoryRoleEligibilityScheduleInstance.md)
 Get the instance of a role eligibility.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgRoleManagementDirectoryRoleEligibilityScheduleInstanceAppScope](Get-MgRoleManagementDirectoryRoleEligibilityScheduleInstanceAppScope.md)
 Read-only property with details of the app-specific scope when the assignment or role eligibility is scoped to an app.
@@ -1545,7 +1491,6 @@ The principal that's getting a role assignment or that's eligible for a role thr
 
 ### [Get-MgRoleManagementDirectoryRoleEligibilityScheduleRequest](Get-MgRoleManagementDirectoryRoleEligibilityScheduleRequest.md)
 In PIM, read the details of a request for for a role eligibility request made through the unifiedRoleEligibilityScheduleRequest object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgRoleManagementDirectoryRoleEligibilityScheduleRequestAppScope](Get-MgRoleManagementDirectoryRoleEligibilityScheduleRequestAppScope.md)
 Read-only property with details of the app-specific scope when the role eligibility is scoped to an app.
@@ -1592,7 +1537,6 @@ Get the number of the resource
 
 ### [Get-MgRoleManagementEntitlementManagementRoleAssignment](Get-MgRoleManagementEntitlementManagementRoleAssignment.md)
 Retrieve the properties and relationships of a unifiedRoleAssignment object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgRoleManagementEntitlementManagementRoleAssignmentAppScope](Get-MgRoleManagementEntitlementManagementRoleAssignmentAppScope.md)
 Read-only property with details of the app specific scope when the assignment scope is app specific.
@@ -1615,11 +1559,9 @@ Supports $expand.
 ### [Get-MgRoleManagementEntitlementManagementRoleAssignmentRoleDefinition](Get-MgRoleManagementEntitlementManagementRoleAssignmentRoleDefinition.md)
 The roleDefinition the assignment is for.
 Supports $expand.
-roleDefinition.Id will be auto expanded.
 
 ### [Get-MgRoleManagementEntitlementManagementRoleAssignmentSchedule](Get-MgRoleManagementEntitlementManagementRoleAssignmentSchedule.md)
 Retrieve the schedule for an active role assignment operation.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgRoleManagementEntitlementManagementRoleAssignmentScheduleActivatedUsing](Get-MgRoleManagementEntitlementManagementRoleAssignmentScheduleActivatedUsing.md)
 If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation.
@@ -1639,7 +1581,6 @@ Read-only.
 
 ### [Get-MgRoleManagementEntitlementManagementRoleAssignmentScheduleInstance](Get-MgRoleManagementEntitlementManagementRoleAssignmentScheduleInstance.md)
 Get the instance of an active role assignment.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgRoleManagementEntitlementManagementRoleAssignmentScheduleInstanceActivatedUsing](Get-MgRoleManagementEntitlementManagementRoleAssignmentScheduleInstanceActivatedUsing.md)
 If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation.
@@ -1668,7 +1609,6 @@ The principal that's getting a role assignment or that's eligible for a role thr
 
 ### [Get-MgRoleManagementEntitlementManagementRoleAssignmentScheduleRequest](Get-MgRoleManagementEntitlementManagementRoleAssignmentScheduleRequest.md)
 In PIM, read the details of a request for an active and persistent role assignment made through the unifiedRoleAssignmentScheduleRequest object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgRoleManagementEntitlementManagementRoleAssignmentScheduleRequestActivatedUsing](Get-MgRoleManagementEntitlementManagementRoleAssignmentScheduleRequestActivatedUsing.md)
 If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation.
@@ -1705,7 +1645,7 @@ Detailed information for the roleDefinition object that is referenced through th
 
 ### [Get-MgRoleManagementEntitlementManagementRoleDefinition](Get-MgRoleManagementEntitlementManagementRoleDefinition.md)
 Read the properties and relationships of a unifiedRoleDefinition object.
-The following role-based access control (RBAC) providers are currently supported: This API is available in the following national cloud deployments.
+The following role-based access control (RBAC) providers are currently supported:
 
 ### [Get-MgRoleManagementEntitlementManagementRoleDefinitionCount](Get-MgRoleManagementEntitlementManagementRoleDefinitionCount.md)
 Get the number of the resource
@@ -1720,7 +1660,6 @@ Get the number of the resource
 
 ### [Get-MgRoleManagementEntitlementManagementRoleEligibilitySchedule](Get-MgRoleManagementEntitlementManagementRoleEligibilitySchedule.md)
 Retrieve the schedule for a role eligibility operation.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgRoleManagementEntitlementManagementRoleEligibilityScheduleAppScope](Get-MgRoleManagementEntitlementManagementRoleEligibilityScheduleAppScope.md)
 Read-only property with details of the app-specific scope when the role eligibility or assignment is scoped to an app.
@@ -1735,7 +1674,6 @@ Read-only.
 
 ### [Get-MgRoleManagementEntitlementManagementRoleEligibilityScheduleInstance](Get-MgRoleManagementEntitlementManagementRoleEligibilityScheduleInstance.md)
 Get the instance of a role eligibility.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgRoleManagementEntitlementManagementRoleEligibilityScheduleInstanceAppScope](Get-MgRoleManagementEntitlementManagementRoleEligibilityScheduleInstanceAppScope.md)
 Read-only property with details of the app-specific scope when the assignment or role eligibility is scoped to an app.
@@ -1759,7 +1697,6 @@ The principal that's getting a role assignment or that's eligible for a role thr
 
 ### [Get-MgRoleManagementEntitlementManagementRoleEligibilityScheduleRequest](Get-MgRoleManagementEntitlementManagementRoleEligibilityScheduleRequest.md)
 In PIM, read the details of a request for for a role eligibility request made through the unifiedRoleEligibilityScheduleRequest object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgRoleManagementEntitlementManagementRoleEligibilityScheduleRequestAppScope](Get-MgRoleManagementEntitlementManagementRoleEligibilityScheduleRequestAppScope.md)
 Read-only property with details of the app-specific scope when the role eligibility is scoped to an app.
@@ -1802,22 +1739,18 @@ Run a workflow object on-demand.
 You can run any workflow on-demand, including scheduled workflows.
 Workflows created from the 'Real-time employee termination' template are run on-demand only.
 When you run a workflow on demand, the tasks are executed regardless of whether the user state matches the scope and trigger execution conditions.
-This API is available in the following national cloud deployments.
 
 ### [Initialize-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow](Initialize-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow.md)
 Run a workflow object on-demand.
 You can run any workflow on-demand, including scheduled workflows.
 Workflows created from the 'Real-time employee termination' template are run on-demand only.
 When you run a workflow on demand, the tasks are executed regardless of whether the user state matches the scope and trigger execution conditions.
-This API is available in the following national cloud deployments.
 
 ### [Invoke-MgAcceptIdentityGovernanceAccessReviewDefinitionInstanceRecommendation](Invoke-MgAcceptIdentityGovernanceAccessReviewDefinitionInstanceRecommendation.md)
 Allows the acceptance of recommendations on all accessReviewInstanceDecisionItem objects that haven't been reviewed on an accessReviewInstance object for which the calling user is a reviewer.
-This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBatchIdentityGovernanceAccessReviewDefinitionInstanceRecordDecision](Invoke-MgBatchIdentityGovernanceAccessReviewDefinitionInstanceRecordDecision.md)
 Enables reviewers to review all accessReviewInstanceDecisionItem objects in batches by using principalId, resourceId, or neither.
-This API is available in the following national cloud deployments.
 
 ### [Invoke-MgFilterEntitlementManagementAccessPackageAssignmentApprovalByCurrentUser](Invoke-MgFilterEntitlementManagementAccessPackageAssignmentApprovalByCurrentUser.md)
 Invoke function filterByCurrentUser
@@ -1929,7 +1862,6 @@ Create new navigation property to acceptances for agreements
 
 ### [New-MgAgreementFile](New-MgAgreementFile.md)
 Create a new localized agreement file.
-This API is available in the following national cloud deployments.
 
 ### [New-MgAgreementFileLocalization](New-MgAgreementFileLocalization.md)
 Create new navigation property to localizations for agreements
@@ -1943,7 +1875,6 @@ Create new navigation property to versions for agreements
 ### [New-MgEntitlementManagementAccessPackage](New-MgEntitlementManagementAccessPackage.md)
 Create a new accessPackage object.
 The access package will be added to an existing accessPackageCatalog.
-This API is available in the following national cloud deployments.
 
 ### [New-MgEntitlementManagementAccessPackageAssignmentApprovalStage](New-MgEntitlementManagementAccessPackageAssignmentApprovalStage.md)
 Create new navigation property to stages for identityGovernance
@@ -1953,17 +1884,14 @@ Create new navigation property to assignmentPolicies for identityGovernance
 
 ### [New-MgEntitlementManagementAccessPackageIncompatibleAccessPackageByRef](New-MgEntitlementManagementAccessPackageIncompatibleAccessPackageByRef.md)
 Add an accessPackage to the list of access packages that have been marked as incompatible on an accessPackage.
- This API is available in the following national cloud deployments.
 
 ### [New-MgEntitlementManagementAccessPackageIncompatibleGroupByRef](New-MgEntitlementManagementAccessPackageIncompatibleGroupByRef.md)
 Add a group to the list of groups that have been marked as incompatible on an accessPackage.
- This API is available in the following national cloud deployments.
 
 ### [New-MgEntitlementManagementAccessPackageResourceRoleScope](New-MgEntitlementManagementAccessPackageResourceRoleScope.md)
 Create a new accessPackageResourceRoleScope for adding a resource role to an access package.
 The access package resource, for a group, an app, or a SharePoint Online site, must already exist in the access package catalog, and the originId for the resource role retrieved from the list of the resource roles.
 Once you add the resource role scope to the access package, the user will receive this resource role through any current and future access package assignments.
-This API is available in the following national cloud deployments.
 
 ### [New-MgEntitlementManagementAssignment](New-MgEntitlementManagementAssignment.md)
 Create new navigation property to assignments for identityGovernance
@@ -1971,7 +1899,6 @@ Create new navigation property to assignments for identityGovernance
 ### [New-MgEntitlementManagementAssignmentPolicy](New-MgEntitlementManagementAssignmentPolicy.md)
 In Microsoft Entra entitlement management, create a new accessPackageAssignmentPolicy object.
 The request will include a reference to the accessPackage that will contain this policy, which must already exist.
-This API is available in the following national cloud deployments.
 
 ### [New-MgEntitlementManagementAssignmentPolicyCustomExtensionStageSetting](New-MgEntitlementManagementAssignmentPolicyCustomExtensionStageSetting.md)
 Create new navigation property to customExtensionStageSettings for identityGovernance
@@ -1982,16 +1909,13 @@ Create new navigation property to questions for identityGovernance
 ### [New-MgEntitlementManagementAssignmentRequest](New-MgEntitlementManagementAssignmentRequest.md)
 In Microsoft Entra Entitlement Management, create a new accessPackageAssignmentRequest object.
 This operation is used to assign a user to an access package, update the assignment, or to remove an access package assignment.
-This API is available in the following national cloud deployments.
 
 ### [New-MgEntitlementManagementCatalog](New-MgEntitlementManagementCatalog.md)
 Create a new accessPackageCatalog object.
-This API is available in the following national cloud deployments.
 
 ### [New-MgEntitlementManagementCatalogCustomWorkflowExtension](New-MgEntitlementManagementCatalogCustomWorkflowExtension.md)
 Create a new accessPackageAssignmentRequestWorkflowExtension or accessPackageAssignmentWorkflowExtension object and add it to an existing accessPackageCatalog object.
 You must explicitly provide an @odata.type property that indicates whether the object is an  accessPackageAssignmentRequestWorkflowExtension or an accessPackageAssignmentWorkflowExtension.
-This API is available in the following national cloud deployments.
 
 ### [New-MgEntitlementManagementCatalogResource](New-MgEntitlementManagementCatalogResource.md)
 Create new navigation property to resources for identityGovernance
@@ -2016,17 +1940,14 @@ Create new navigation property to scopes for identityGovernance
 
 ### [New-MgEntitlementManagementConnectedOrganization](New-MgEntitlementManagementConnectedOrganization.md)
 Create a new connectedOrganization object.
-This API is available in the following national cloud deployments.
 
 ### [New-MgEntitlementManagementConnectedOrganizationExternalSponsorByRef](New-MgEntitlementManagementConnectedOrganizationExternalSponsorByRef.md)
 Add a user or a group to the connected organization's external sponsors.
 The external sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
-This API is available in the following national cloud deployments.
 
 ### [New-MgEntitlementManagementConnectedOrganizationInternalSponsorByRef](New-MgEntitlementManagementConnectedOrganizationInternalSponsorByRef.md)
 Add a user or a group to the connected organization's internal sponsors.
 The internal sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
-This API is available in the following national cloud deployments.
 
 ### [New-MgEntitlementManagementResource](New-MgEntitlementManagementResource.md)
 Create new navigation property to resources for identityGovernance
@@ -2052,12 +1973,10 @@ Create new navigation property to roles for identityGovernance
 ### [New-MgEntitlementManagementResourceRequest](New-MgEntitlementManagementResourceRequest.md)
 Create a new accessPackageResourceRequest object to request the addition of a resource to an access package catalog, update of a resource, or the removal of a resource from a catalog.
 A resource must be included in an access package catalog before a role of that resource can be added to an access package.
-This API is available in the following national cloud deployments.
 
 ### [New-MgEntitlementManagementResourceRequestCatalogCustomWorkflowExtension](New-MgEntitlementManagementResourceRequestCatalogCustomWorkflowExtension.md)
 Create a new accessPackageAssignmentRequestWorkflowExtension or accessPackageAssignmentWorkflowExtension object and add it to an existing accessPackageCatalog object.
 You must explicitly provide an @odata.type property that indicates whether the object is an  accessPackageAssignmentRequestWorkflowExtension or an accessPackageAssignmentWorkflowExtension.
-This API is available in the following national cloud deployments.
 
 ### [New-MgEntitlementManagementResourceRequestCatalogResource](New-MgEntitlementManagementResourceRequestCatalogResource.md)
 Create new navigation property to resources for identityGovernance
@@ -2127,7 +2046,6 @@ Create new navigation property to roles for identityGovernance
 
 ### [New-MgIdentityGovernanceAccessReviewDefinition](New-MgIdentityGovernanceAccessReviewDefinition.md)
 Create a new accessReviewScheduleDefinition object.
-This API is available in the following national cloud deployments.
 
 ### [New-MgIdentityGovernanceAccessReviewDefinitionInstance](New-MgIdentityGovernanceAccessReviewDefinitionInstance.md)
 Create new navigation property to instances for identityGovernance
@@ -2152,7 +2070,6 @@ Create new navigation property to insights for identityGovernance
 
 ### [New-MgIdentityGovernanceAccessReviewHistoryDefinition](New-MgIdentityGovernanceAccessReviewHistoryDefinition.md)
 Create a new accessReviewHistoryDefinition object.
-This API is available in the following national cloud deployments.
 
 ### [New-MgIdentityGovernanceAccessReviewHistoryDefinitionInstance](New-MgIdentityGovernanceAccessReviewHistoryDefinitionInstance.md)
 Create new navigation property to instances for identityGovernance
@@ -2161,7 +2078,6 @@ Create new navigation property to instances for identityGovernance
 Generates a URI for an accessReviewHistoryInstance object the status for which is done.
 Each URI can be used to retrieve the instance's review history data.
 Each URI is valid for 24 hours and can be retrieved by fetching the downloadUri property from the accessReviewHistoryInstance object.
-This API is available in the following national cloud deployments.
 
 ### [New-MgIdentityGovernanceAppConsentRequest](New-MgIdentityGovernanceAppConsentRequest.md)
 Create new navigation property to appConsentRequests for identityGovernance
@@ -2175,22 +2091,18 @@ Create new navigation property to stages for identityGovernance
 ### [New-MgIdentityGovernanceLifecycleWorkflow](New-MgIdentityGovernanceLifecycleWorkflow.md)
 Create a new workflow object.
 You can create up to 50 workflows in a tenant.
-This API is available in the following national cloud deployments.
 
 ### [New-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtension](New-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtension.md)
 Create a new customTaskExtension object.
-This API is available in the following national cloud deployments.
 
 ### [New-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowNewVersion](New-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowNewVersion.md)
 Create a new version of the workflow object.
-This API is available in the following national cloud deployments.
 
 ### [New-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowTask](New-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowTask.md)
 Create new navigation property to tasks for identityGovernance
 
 ### [New-MgIdentityGovernanceLifecycleWorkflowNewVersion](New-MgIdentityGovernanceLifecycleWorkflowNewVersion.md)
 Create a new version of the workflow object.
-This API is available in the following national cloud deployments.
 
 ### [New-MgIdentityGovernanceLifecycleWorkflowTask](New-MgIdentityGovernanceLifecycleWorkflowTask.md)
 Create new navigation property to tasks for identityGovernance
@@ -2212,7 +2124,6 @@ Create new navigation property to assignmentScheduleInstances for identityGovern
 
 ### [New-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleRequest](New-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleRequest.md)
 Create a new privilegedAccessGroupAssignmentScheduleRequest object.
-This API is available in the following national cloud deployments.
 
 ### [New-MgIdentityGovernancePrivilegedAccessGroupEligibilitySchedule](New-MgIdentityGovernancePrivilegedAccessGroupEligibilitySchedule.md)
 Create new navigation property to eligibilitySchedules for identityGovernance
@@ -2222,18 +2133,15 @@ Create new navigation property to eligibilityScheduleInstances for identityGover
 
 ### [New-MgIdentityGovernancePrivilegedAccessGroupEligibilityScheduleRequest](New-MgIdentityGovernancePrivilegedAccessGroupEligibilityScheduleRequest.md)
 Create a new privilegedAccessGroupEligibilityScheduleRequest object.
-This API is available in the following national cloud deployments.
 
 ### [New-MgIdentityGovernanceTermsOfUseAgreement](New-MgIdentityGovernanceTermsOfUseAgreement.md)
 Create a new agreement object.
-This API is available in the following national cloud deployments.
 
 ### [New-MgIdentityGovernanceTermsOfUseAgreementAcceptance](New-MgIdentityGovernanceTermsOfUseAgreementAcceptance.md)
 Create new navigation property to agreementAcceptances for identityGovernance
 
 ### [New-MgIdentityGovernanceTermsOfUseAgreementFile](New-MgIdentityGovernanceTermsOfUseAgreementFile.md)
 Create a new localized agreement file.
-This API is available in the following national cloud deployments.
 
 ### [New-MgIdentityGovernanceTermsOfUseAgreementFileLocalization](New-MgIdentityGovernanceTermsOfUseAgreementFileLocalization.md)
 Create new navigation property to localizations for identityGovernance
@@ -2252,7 +2160,6 @@ Create new navigation property to resourceActions for roleManagement
 
 ### [New-MgRoleManagementDirectoryRoleAssignment](New-MgRoleManagementDirectoryRoleAssignment.md)
 Create a new unifiedRoleAssignment object.
-This API is available in the following national cloud deployments.
 
 ### [New-MgRoleManagementDirectoryRoleAssignmentSchedule](New-MgRoleManagementDirectoryRoleAssignmentSchedule.md)
 Create new navigation property to roleAssignmentSchedules for roleManagement
@@ -2263,12 +2170,10 @@ Create new navigation property to roleAssignmentScheduleInstances for roleManage
 ### [New-MgRoleManagementDirectoryRoleAssignmentScheduleRequest](New-MgRoleManagementDirectoryRoleAssignmentScheduleRequest.md)
 In PIM, carry out the following operations through the unifiedRoleAssignmentScheduleRequest object: To call this API to update, renew, and extend assignments for yourself, you must have multifactor authentication (MFA) enforced, and running the query in a session in which they were challenged for MFA.
 See Enable per-user Microsoft Entra multifactor authentication to secure sign-in events.
-This API is available in the following national cloud deployments.
 
 ### [New-MgRoleManagementDirectoryRoleDefinition](New-MgRoleManagementDirectoryRoleDefinition.md)
 Create a new custom unifiedRoleDefinition object.
 This feature requires a Microsoft Entra ID P1 or P2 license.
-This API is available in the following national cloud deployments.
 
 ### [New-MgRoleManagementDirectoryRoleDefinitionInheritPermissionFrom](New-MgRoleManagementDirectoryRoleDefinitionInheritPermissionFrom.md)
 Create new navigation property to inheritsPermissionsFrom for roleManagement
@@ -2282,7 +2187,6 @@ Create new navigation property to roleEligibilityScheduleInstances for roleManag
 ### [New-MgRoleManagementDirectoryRoleEligibilityScheduleRequest](New-MgRoleManagementDirectoryRoleEligibilityScheduleRequest.md)
 In PIM, request for a role eligibility for a principal through the unifiedRoleEligibilityScheduleRequest object.
 This operation allows both admins and eligible users to add, revoke, or extend eligible assignments.
-This API is available in the following national cloud deployments.
 
 ### [New-MgRoleManagementEntitlementManagementResourceNamespace](New-MgRoleManagementEntitlementManagementResourceNamespace.md)
 Create new navigation property to resourceNamespaces for roleManagement
@@ -2292,7 +2196,6 @@ Create new navigation property to resourceActions for roleManagement
 
 ### [New-MgRoleManagementEntitlementManagementRoleAssignment](New-MgRoleManagementEntitlementManagementRoleAssignment.md)
 Create a new unifiedRoleAssignment object.
-This API is available in the following national cloud deployments.
 
 ### [New-MgRoleManagementEntitlementManagementRoleAssignmentSchedule](New-MgRoleManagementEntitlementManagementRoleAssignmentSchedule.md)
 Create new navigation property to roleAssignmentSchedules for roleManagement
@@ -2303,12 +2206,10 @@ Create new navigation property to roleAssignmentScheduleInstances for roleManage
 ### [New-MgRoleManagementEntitlementManagementRoleAssignmentScheduleRequest](New-MgRoleManagementEntitlementManagementRoleAssignmentScheduleRequest.md)
 In PIM, carry out the following operations through the unifiedRoleAssignmentScheduleRequest object: To call this API to update, renew, and extend assignments for yourself, you must have multifactor authentication (MFA) enforced, and running the query in a session in which they were challenged for MFA.
 See Enable per-user Microsoft Entra multifactor authentication to secure sign-in events.
-This API is available in the following national cloud deployments.
 
 ### [New-MgRoleManagementEntitlementManagementRoleDefinition](New-MgRoleManagementEntitlementManagementRoleDefinition.md)
 Create a new custom unifiedRoleDefinition object.
 This feature requires a Microsoft Entra ID P1 or P2 license.
-This API is available in the following national cloud deployments.
 
 ### [New-MgRoleManagementEntitlementManagementRoleDefinitionInheritPermissionFrom](New-MgRoleManagementEntitlementManagementRoleDefinitionInheritPermissionFrom.md)
 Create new navigation property to inheritsPermissionsFrom for roleManagement
@@ -2322,7 +2223,6 @@ Create new navigation property to roleEligibilityScheduleInstances for roleManag
 ### [New-MgRoleManagementEntitlementManagementRoleEligibilityScheduleRequest](New-MgRoleManagementEntitlementManagementRoleEligibilityScheduleRequest.md)
 In PIM, request for a role eligibility for a principal through the unifiedRoleEligibilityScheduleRequest object.
 This operation allows both admins and eligible users to add, revoke, or extend eligible assignments.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgAgreement](Remove-MgAgreement.md)
 Delete entity from agreements
@@ -2345,7 +2245,6 @@ Delete navigation property versions for agreements
 ### [Remove-MgEntitlementManagementAccessPackage](Remove-MgEntitlementManagementAccessPackage.md)
 Delete an accessPackage object.
 You cannot delete an access package if it has any accessPackageAssignment.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgEntitlementManagementAccessPackageAssignmentApproval](Remove-MgEntitlementManagementAccessPackageAssignmentApproval.md)
 Delete navigation property accessPackageAssignmentApprovals for identityGovernance
@@ -2358,22 +2257,18 @@ Delete navigation property assignmentPolicies for identityGovernance
 
 ### [Remove-MgEntitlementManagementAccessPackageIncompatibleAccessPackageByRef](Remove-MgEntitlementManagementAccessPackageIncompatibleAccessPackageByRef.md)
 Remove an access package from the list of access packages that have been marked as incompatible on an accessPackage.
- This API is available in the following national cloud deployments.
 
 ### [Remove-MgEntitlementManagementAccessPackageIncompatibleGroupByRef](Remove-MgEntitlementManagementAccessPackageIncompatibleGroupByRef.md)
 Remove a group from the list of groups that have been marked as incompatible on an accessPackage.
- This API is available in the following national cloud deployments.
 
 ### [Remove-MgEntitlementManagementAccessPackageResourceRoleScope](Remove-MgEntitlementManagementAccessPackageResourceRoleScope.md)
 Remove a accessPackageResourceRoleScope from an accessPackage list of resource role scopes.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgEntitlementManagementAssignment](Remove-MgEntitlementManagementAssignment.md)
 Delete navigation property assignments for identityGovernance
 
 ### [Remove-MgEntitlementManagementAssignmentPolicy](Remove-MgEntitlementManagementAssignmentPolicy.md)
 In Microsoft Entra entitlement management, delete an accessPackageAssignmentPolicy.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgEntitlementManagementAssignmentPolicyCustomExtensionStageSetting](Remove-MgEntitlementManagementAssignmentPolicyCustomExtensionStageSetting.md)
 Delete navigation property customExtensionStageSettings for identityGovernance
@@ -2385,16 +2280,14 @@ Delete navigation property questions for identityGovernance
 Delete an accessPackageAssignmentRequest object.
 This request can be made to remove a denied or completed request.
 You cannot delete an access package assignment request if it has any accessPackageAssignment objects.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgEntitlementManagementCatalog](Remove-MgEntitlementManagementCatalog.md)
 Delete an accessPackageCatalog.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgEntitlementManagementCatalogCustomWorkflowExtension](Remove-MgEntitlementManagementCatalogCustomWorkflowExtension.md)
-Delete an accessPackageAssignmentWorkflowExtension object.
+Delete an accessPackageAssignmentRequestWorkflowExtension object.
 The custom workflow extension must first be removed from any associated policies before it can be deleted.
-Follow these steps to remove the custom workflow extension from any associated policies: This API is available in the following national cloud deployments.
+Follow these steps to remove the custom workflow extension from any associated policies:
 
 ### [Remove-MgEntitlementManagementCatalogResource](Remove-MgEntitlementManagementCatalogResource.md)
 Delete navigation property resources for identityGovernance
@@ -2431,17 +2324,14 @@ Delete navigation property scopes for identityGovernance
 
 ### [Remove-MgEntitlementManagementConnectedOrganization](Remove-MgEntitlementManagementConnectedOrganization.md)
 Delete a connectedOrganization object.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgEntitlementManagementConnectedOrganizationExternalSponsorByRef](Remove-MgEntitlementManagementConnectedOrganizationExternalSponsorByRef.md)
 Remove a user or a group from the connected organization's external sponsors.
 The external sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgEntitlementManagementConnectedOrganizationInternalSponsorByRef](Remove-MgEntitlementManagementConnectedOrganizationInternalSponsorByRef.md)
 Remove a user or a group from the connected organization's internal sponsors.
 The internal sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgEntitlementManagementResource](Remove-MgEntitlementManagementResource.md)
 Delete navigation property resources for identityGovernance
@@ -2483,9 +2373,9 @@ Delete navigation property resourceRequests for identityGovernance
 Delete navigation property catalog for identityGovernance
 
 ### [Remove-MgEntitlementManagementResourceRequestCatalogCustomWorkflowExtension](Remove-MgEntitlementManagementResourceRequestCatalogCustomWorkflowExtension.md)
-Delete an accessPackageAssignmentWorkflowExtension object.
+Delete an accessPackageAssignmentRequestWorkflowExtension object.
 The custom workflow extension must first be removed from any associated policies before it can be deleted.
-Follow these steps to remove the custom workflow extension from any associated policies: This API is available in the following national cloud deployments.
+Follow these steps to remove the custom workflow extension from any associated policies:
 
 ### [Remove-MgEntitlementManagementResourceRequestCatalogResource](Remove-MgEntitlementManagementResourceRequestCatalogResource.md)
 Delete navigation property resources for identityGovernance
@@ -2609,7 +2499,6 @@ Delete navigation property resource for identityGovernance
 
 ### [Remove-MgIdentityGovernanceAccessReviewDefinition](Remove-MgIdentityGovernanceAccessReviewDefinition.md)
 Deletes an accessReviewScheduleDefinition object.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgIdentityGovernanceAccessReviewDefinitionInstance](Remove-MgIdentityGovernanceAccessReviewDefinitionInstance.md)
 Delete navigation property instances for identityGovernance
@@ -2653,19 +2542,16 @@ Delete navigation property stages for identityGovernance
 ### [Remove-MgIdentityGovernanceLifecycleWorkflow](Remove-MgIdentityGovernanceLifecycleWorkflow.md)
 Delete a workflow object and its associated tasks, taskProcessingResults and versions.
 You can restore a deleted workflow and its associated objects within 30 days of deletion.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtension](Remove-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtension.md)
 Delete a customTaskExtension object.
 A custom task extension  can only be deleted if it is not referenced in any task objects in a lifecycle workflow.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgIdentityGovernanceLifecycleWorkflowDeletedItem](Remove-MgIdentityGovernanceLifecycleWorkflowDeletedItem.md)
 Delete navigation property deletedItems for identityGovernance
 
 ### [Remove-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow](Remove-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow.md)
 Delete a workflow object.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowTask](Remove-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowTask.md)
 Delete navigation property tasks for identityGovernance
@@ -2708,7 +2594,6 @@ Delete navigation property eligibilityScheduleRequests for identityGovernance
 
 ### [Remove-MgIdentityGovernanceTermsOfUseAgreement](Remove-MgIdentityGovernanceTermsOfUseAgreement.md)
 Delete an agreement object.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgIdentityGovernanceTermsOfUseAgreementAcceptance](Remove-MgIdentityGovernanceTermsOfUseAgreementAcceptance.md)
 Delete navigation property agreementAcceptances for identityGovernance
@@ -2736,7 +2621,6 @@ Delete navigation property resourceActions for roleManagement
 
 ### [Remove-MgRoleManagementDirectoryRoleAssignment](Remove-MgRoleManagementDirectoryRoleAssignment.md)
 Delete a unifiedRoleAssignment object.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgRoleManagementDirectoryRoleAssignmentAppScope](Remove-MgRoleManagementDirectoryRoleAssignmentAppScope.md)
 Delete navigation property appScope for roleManagement
@@ -2754,7 +2638,6 @@ Delete navigation property roleAssignmentScheduleRequests for roleManagement
 Delete a unifiedRoleDefinition object.
 You can't delete built-in roles.
 This feature requires a Microsoft Entra ID P1 or P2 license.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgRoleManagementDirectoryRoleDefinitionInheritPermissionFrom](Remove-MgRoleManagementDirectoryRoleDefinitionInheritPermissionFrom.md)
 Delete navigation property inheritsPermissionsFrom for roleManagement
@@ -2779,7 +2662,6 @@ Delete navigation property resourceActions for roleManagement
 
 ### [Remove-MgRoleManagementEntitlementManagementRoleAssignment](Remove-MgRoleManagementEntitlementManagementRoleAssignment.md)
 Delete a unifiedRoleAssignment object.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgRoleManagementEntitlementManagementRoleAssignmentAppScope](Remove-MgRoleManagementEntitlementManagementRoleAssignmentAppScope.md)
 Delete navigation property appScope for roleManagement
@@ -2797,7 +2679,6 @@ Delete navigation property roleAssignmentScheduleRequests for roleManagement
 Delete a unifiedRoleDefinition object.
 You can't delete built-in roles.
 This feature requires a Microsoft Entra ID P1 or P2 license.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgRoleManagementEntitlementManagementRoleDefinitionInheritPermissionFrom](Remove-MgRoleManagementEntitlementManagementRoleDefinitionInheritPermissionFrom.md)
 Delete navigation property inheritsPermissionsFrom for roleManagement
@@ -2813,63 +2694,52 @@ Delete navigation property roleEligibilityScheduleRequests for roleManagement
 
 ### [Reset-MgIdentityGovernanceAccessReviewDefinitionInstanceDecision](Reset-MgIdentityGovernanceAccessReviewDefinitionInstanceDecision.md)
 Resets all accessReviewInstanceDecisionItem objects on an accessReviewInstance to notReviewed.
-This API is available in the following national cloud deployments.
 
 ### [Restore-MgIdentityGovernanceLifecycleWorkflow](Restore-MgIdentityGovernanceLifecycleWorkflow.md)
 Restore a workflow that has been deleted.
 You can only restore a workflow that was deleted within the last 30 days before Microsoft Entra ID automatically permanently deletes it.
-This API is available in the following national cloud deployments.
 
 ### [Restore-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow](Restore-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow.md)
 Restore a workflow that has been deleted.
 You can only restore a workflow that was deleted within the last 30 days before Microsoft Entra ID automatically permanently deletes it.
-This API is available in the following national cloud deployments.
 
 ### [Resume-MgEntitlementManagementAssignmentRequest](Resume-MgEntitlementManagementAssignmentRequest.md)
 In Microsoft Entra entitlement management, when an access package policy has been enabled to call out a custom extension and the request processing is waiting for the callback from the customer, the customer can initiate a resume action.
 It is performed on an accessPackageAssignmentRequest object whose requestStatus is in a WaitingForCallback state.
-This API is available in the following national cloud deployments.
 
 ### [Resume-MgIdentityGovernanceLifecycleWorkflowRunTaskProcessingResult](Resume-MgIdentityGovernanceLifecycleWorkflowRunTaskProcessingResult.md)
 Resume a task processing result that's inProgress.
 In the default case an Azure Logic Apps system-assigned managed identity calls this API.
 For more information, see: Lifecycle Workflows extensibility approach.
-This API is available in the following national cloud deployments.
 
 ### [Resume-MgIdentityGovernanceLifecycleWorkflowTaskProcessingResult](Resume-MgIdentityGovernanceLifecycleWorkflowTaskProcessingResult.md)
 Resume a task processing result that's inProgress.
 In the default case an Azure Logic Apps system-assigned managed identity calls this API.
 For more information, see: Lifecycle Workflows extensibility approach.
-This API is available in the following national cloud deployments.
 
 ### [Resume-MgIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResult](Resume-MgIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResult.md)
 Resume a task processing result that's inProgress.
 In the default case an Azure Logic Apps system-assigned managed identity calls this API.
 For more information, see: Lifecycle Workflows extensibility approach.
-This API is available in the following national cloud deployments.
 
 ### [Resume-MgIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResult](Resume-MgIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResult.md)
 Resume a task processing result that's inProgress.
 In the default case an Azure Logic Apps system-assigned managed identity calls this API.
 For more information, see: Lifecycle Workflows extensibility approach.
-This API is available in the following national cloud deployments.
 
 ### [Resume-MgIdentityGovernanceLifecycleWorkflowVersionTaskProcessingResult](Resume-MgIdentityGovernanceLifecycleWorkflowVersionTaskProcessingResult.md)
 Resume a task processing result that's inProgress.
 In the default case an Azure Logic Apps system-assigned managed identity calls this API.
 For more information, see: Lifecycle Workflows extensibility approach.
-This API is available in the following national cloud deployments.
 
 ### [Send-MgIdentityGovernanceAccessReviewDefinitionInstanceReminder](Send-MgIdentityGovernanceAccessReviewDefinitionInstanceReminder.md)
 Send a reminder to the reviewers of an active accessReviewInstance.
-This API is available in the following national cloud deployments.
 
 ### [Set-MgEntitlementManagementAssignmentPolicy](Set-MgEntitlementManagementAssignmentPolicy.md)
 Update the navigation property assignmentPolicies in identityGovernance
 
 ### [Stop-MgEntitlementManagementAssignmentRequest](Stop-MgEntitlementManagementAssignmentRequest.md)
 In Microsoft Entra Entitlement Management, cancel accessPackageAssignmentRequest objects that are in a cancellable state: accepted, pendingApproval, pendingNotBefore, pendingApprovalEscalated.
-This API is available in the following national cloud deployments.
 
 ### [Stop-MgIdentityGovernanceAccessReviewDefinition](Stop-MgIdentityGovernanceAccessReviewDefinition.md)
 Invoke action stop
@@ -2879,42 +2749,34 @@ Stop a currently active accessReviewInstance.
 After the access review instance stops, the instance status is marked as Completed, the reviewers can no longer give input, and the access review decisions are applied.
 Stopping an instance will not stop future instances.
 To prevent a recurring access review from starting future instances, update the schedule definition to change its scheduled end date.
-This API is available in the following national cloud deployments.
 
 ### [Stop-MgIdentityGovernanceAccessReviewDefinitionInstanceStage](Stop-MgIdentityGovernanceAccessReviewDefinitionInstanceStage.md)
 Stop an access review stage that is inProgress.
 After the access review stage stops, the stage status will be Completed and the reviewers can no longer give input.
 If there are subsequent stages that depend on the completed stage, the next stage will be created.
 The accessReviewInstanceDecisionItem objects will always reflect the last decisions recorded across all stages at that given time, regardless of the status of the stages.
-This API is available in the following national cloud deployments.
 
 ### [Stop-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleRequest](Stop-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleRequest.md)
 Cancel an access assignment request to a group whose membership and ownership are governed by PIM.
-This API is available in the following national cloud deployments.
 
 ### [Stop-MgIdentityGovernancePrivilegedAccessGroupEligibilityScheduleRequest](Stop-MgIdentityGovernancePrivilegedAccessGroupEligibilityScheduleRequest.md)
 Cancel an eligibility assignment request to a group whose membership and ownership are governed by PIM.
-This API is available in the following national cloud deployments.
 
 ### [Stop-MgRoleManagementDirectoryRoleAssignmentScheduleRequest](Stop-MgRoleManagementDirectoryRoleAssignmentScheduleRequest.md)
 Immediately cancel a unifiedRoleAssignmentScheduleRequest object that is in a Granted status, and have the system automatically delete the canceled request after 30 days.
 After calling this action, the status of the canceled unifiedRoleAssignmentScheduleRequest changes to Canceled.
-This API is available in the following national cloud deployments.
 
 ### [Stop-MgRoleManagementDirectoryRoleEligibilityScheduleRequest](Stop-MgRoleManagementDirectoryRoleEligibilityScheduleRequest.md)
 Immediately cancel a unifiedRoleEligibilityScheduleRequest object whose status is Granted and have the system automatically delete the cancelled request after 30 days.
 After calling this action, the status of the cancelled unifiedRoleEligibilityScheduleRequest changes to Revoked.
-This API is available in the following national cloud deployments.
 
 ### [Stop-MgRoleManagementEntitlementManagementRoleAssignmentScheduleRequest](Stop-MgRoleManagementEntitlementManagementRoleAssignmentScheduleRequest.md)
 Immediately cancel a unifiedRoleAssignmentScheduleRequest object that is in a Granted status, and have the system automatically delete the canceled request after 30 days.
 After calling this action, the status of the canceled unifiedRoleAssignmentScheduleRequest changes to Canceled.
-This API is available in the following national cloud deployments.
 
 ### [Stop-MgRoleManagementEntitlementManagementRoleEligibilityScheduleRequest](Stop-MgRoleManagementEntitlementManagementRoleEligibilityScheduleRequest.md)
 Immediately cancel a unifiedRoleEligibilityScheduleRequest object whose status is Granted and have the system automatically delete the cancelled request after 30 days.
 After calling this action, the status of the cancelled unifiedRoleEligibilityScheduleRequest changes to Revoked.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgAgreement](Update-MgAgreement.md)
 Update entity in agreements
@@ -2936,14 +2798,12 @@ Update the navigation property versions in agreements
 
 ### [Update-MgEntitlementManagementAccessPackage](Update-MgEntitlementManagementAccessPackage.md)
 Update an existing accessPackage object to change one or more of its properties, such as the display name or description.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgEntitlementManagementAccessPackageAssignmentApproval](Update-MgEntitlementManagementAccessPackageAssignmentApproval.md)
 Update the navigation property accessPackageAssignmentApprovals in identityGovernance
 
 ### [Update-MgEntitlementManagementAccessPackageAssignmentApprovalStage](Update-MgEntitlementManagementAccessPackageAssignmentApprovalStage.md)
 Approve or deny an approvalStage object in an approval.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgEntitlementManagementAccessPackageAssignmentPolicy](Update-MgEntitlementManagementAccessPackageAssignmentPolicy.md)
 Update the navigation property assignmentPolicies in identityGovernance
@@ -2955,7 +2815,6 @@ Update the navigation property resourceRoleScopes in identityGovernance
 In Microsoft Entra entitlement management, callers can automatically reevaluate and enforce an accessPackageAssignment object of a user’s assignments for a specific access package.
 The state of the access package assignment must be Delivered for the administrator to reprocess the user's assignment.
 Only admins with the Access Package Assignment Manager role, or higher, in Microsoft Entra entitlement management can perform this action.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgEntitlementManagementAssignmentPolicyCustomExtensionStageSetting](Update-MgEntitlementManagementAssignmentPolicyCustomExtensionStageSetting.md)
 Update the navigation property customExtensionStageSettings in identityGovernance
@@ -2968,11 +2827,9 @@ In Microsoft Entra entitlement management, callers can automatically retry a use
 It's performed on an accessPackageAssignmentRequest object whose requestState is in a DeliveryFailed or PartiallyDelivered state.
 You can only reprocess a request within 14 days from the time the original request was completed.
 For requests completed more than 14 days, you will need to ask the users to cancel the request(s) and make a new request in the MyAccess portal.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgEntitlementManagementCatalog](Update-MgEntitlementManagementCatalog.md)
 Update an existing accessPackageCatalog object to change one or more of its properties, such as the display name or description.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgEntitlementManagementCatalogCustomWorkflowExtension](Update-MgEntitlementManagementCatalogCustomWorkflowExtension.md)
 Update the properties of an accessPackageAssignmentWorkflowExtension object.
@@ -3012,7 +2869,6 @@ Update the navigation property scopes in identityGovernance
 
 ### [Update-MgEntitlementManagementConnectedOrganization](Update-MgEntitlementManagementConnectedOrganization.md)
 Update a connectedOrganization object to change one or more of its properties.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgEntitlementManagementResource](Update-MgEntitlementManagementResource.md)
 Update the navigation property resources in identityGovernance
@@ -3178,7 +3034,6 @@ Update the navigation property resource in identityGovernance
 
 ### [Update-MgEntitlementManagementSetting](Update-MgEntitlementManagementSetting.md)
 Update an existing entitlementManagementSettings object to change one or more of its properties.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgIdentityGovernanceAccessReviewDefinition](Update-MgIdentityGovernanceAccessReviewDefinition.md)
 Update an existing accessReviewScheduleDefinition object to change one or more of its properties.
@@ -3203,11 +3058,9 @@ Update the properties of an accessReviewStage object.
 Only the reviewers and fallbackReviewers properties can be updated.
 You can only add reviewers to the fallbackReviewers property but can't remove existing fallbackReviewers.
 To update an accessReviewStage, its status must be NotStarted, Initializing, or InProgress.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgIdentityGovernanceAccessReviewDefinitionInstanceStageDecision](Update-MgIdentityGovernanceAccessReviewDefinitionInstanceStageDecision.md)
 Update access decisions, known as accessReviewInstanceDecisionItems, for which the user is the reviewer.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgIdentityGovernanceAccessReviewDefinitionInstanceStageDecisionInsight](Update-MgIdentityGovernanceAccessReviewDefinitionInstanceStageDecisionInsight.md)
 Update the navigation property insights in identityGovernance
@@ -3229,20 +3082,17 @@ Update the navigation property approval in identityGovernance
 
 ### [Update-MgIdentityGovernanceAppConsentRequestUserConsentRequestApprovalStage](Update-MgIdentityGovernanceAppConsentRequestUserConsentRequestApprovalStage.md)
 Approve or deny an approvalStage object in an approval.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgIdentityGovernanceLifecycleWorkflow](Update-MgIdentityGovernanceLifecycleWorkflow.md)
 Update the properties of a workflow object.
 Only the properties listed in the request body table can be updated.
 To update any other workflow properties, see workflow: createNewVersion.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgIdentityGovernanceLifecycleWorkflowCreatedByMailboxSetting](Update-MgIdentityGovernanceLifecycleWorkflowCreatedByMailboxSetting.md)
 Update property mailboxSettings value.
 
 ### [Update-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtension](Update-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtension.md)
 Update the properties of a customTaskExtension object.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtensionCreatedByMailboxSetting](Update-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtensionCreatedByMailboxSetting.md)
 Update property mailboxSettings value.
@@ -3264,7 +3114,6 @@ Update property mailboxSettings value.
 
 ### [Update-MgIdentityGovernanceLifecycleWorkflowSetting](Update-MgIdentityGovernanceLifecycleWorkflowSetting.md)
 Update the properties of a lifecycleManagementSettings object.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgIdentityGovernanceLifecycleWorkflowTask](Update-MgIdentityGovernanceLifecycleWorkflowTask.md)
 Update the navigation property tasks in identityGovernance
@@ -3304,7 +3153,6 @@ Update the navigation property assignmentApprovals in identityGovernance
 
 ### [Update-MgIdentityGovernancePrivilegedAccessGroupAssignmentApprovalStage](Update-MgIdentityGovernancePrivilegedAccessGroupAssignmentApprovalStage.md)
 Approve or deny an approvalStage object in an approval.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgIdentityGovernancePrivilegedAccessGroupAssignmentSchedule](Update-MgIdentityGovernancePrivilegedAccessGroupAssignmentSchedule.md)
 Update the navigation property assignmentSchedules in identityGovernance
@@ -3326,7 +3174,6 @@ Update the navigation property eligibilityScheduleRequests in identityGovernance
 
 ### [Update-MgIdentityGovernanceTermsOfUseAgreement](Update-MgIdentityGovernanceTermsOfUseAgreement.md)
 Update the properties of an agreement object.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgIdentityGovernanceTermsOfUseAgreementAcceptance](Update-MgIdentityGovernanceTermsOfUseAgreementAcceptance.md)
 Update the navigation property agreementAcceptances in identityGovernance
@@ -3371,7 +3218,6 @@ Update the navigation property roleAssignmentScheduleRequests in roleManagement
 Update the properties of a unifiedRoleDefinition object.
 You cannot update built-in roles.
 This feature requires a Microsoft Entra ID P1 or P2 license.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgRoleManagementDirectoryRoleDefinitionInheritPermissionFrom](Update-MgRoleManagementDirectoryRoleDefinitionInheritPermissionFrom.md)
 Update the navigation property inheritsPermissionsFrom in roleManagement
@@ -3413,7 +3259,6 @@ Update the navigation property roleAssignmentScheduleRequests in roleManagement
 Update the properties of a unifiedRoleDefinition object.
 You cannot update built-in roles.
 This feature requires a Microsoft Entra ID P1 or P2 license.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgRoleManagementEntitlementManagementRoleDefinitionInheritPermissionFrom](Update-MgRoleManagementEntitlementManagementRoleDefinitionInheritPermissionFrom.md)
 Update the navigation property inheritsPermissionsFrom in roleManagement

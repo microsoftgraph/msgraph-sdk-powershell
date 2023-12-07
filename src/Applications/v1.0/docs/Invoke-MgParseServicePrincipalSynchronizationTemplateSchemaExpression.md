@@ -9,8 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Parse a given string expression into an attributeMappingSource object.
-For more information about expressions, see Writing Expressions for Attribute Mappings in Azure Active Directory.
-This API is supported in the following national cloud deployments.
+For more information about expressions, see Writing Expressions for Attribute Mappings in Microsoft Entra ID.
 
 ## SYNTAX
 
@@ -47,8 +46,7 @@ Invoke-MgParseServicePrincipalSynchronizationTemplateSchemaExpression -InputObje
 
 ## DESCRIPTION
 Parse a given string expression into an attributeMappingSource object.
-For more information about expressions, see Writing Expressions for Attribute Mappings in Azure Active Directory.
-This API is supported in the following national cloud deployments.
+For more information about expressions, see Writing Expressions for Attribute Mappings in Microsoft Entra ID.
 
 ## EXAMPLES
 
@@ -300,6 +298,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[ServicePrincipalId <String>]`: The unique identifier of servicePrincipal
   - `[SynchronizationJobId <String>]`: The unique identifier of synchronizationJob
   - `[SynchronizationTemplateId <String>]`: The unique identifier of synchronizationTemplate
+  - `[TargetDeviceGroupId <String>]`: The unique identifier of targetDeviceGroup
   - `[TokenIssuancePolicyId <String>]`: The unique identifier of tokenIssuancePolicy
   - `[TokenLifetimePolicyId <String>]`: The unique identifier of tokenLifetimePolicy
   - `[UserId <String>]`: The unique identifier of user

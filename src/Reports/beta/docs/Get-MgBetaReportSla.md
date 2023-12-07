@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaReportSla
 
 ## SYNOPSIS
-A placeholder to allow for the desired URL path for SLA.
+Reports that relate to tenant-level Microsoft Entra SLA attainment.
 
 ## SYNTAX
 
@@ -17,7 +17,7 @@ Get-MgBetaReportSla [-ExpandProperty <String[]>] [-Property <String[]>] [<Common
 ```
 
 ## DESCRIPTION
-A placeholder to allow for the desired URL path for SLA.
+Reports that relate to tenant-level Microsoft Entra SLA attainment.
 
 ## EXAMPLES
 

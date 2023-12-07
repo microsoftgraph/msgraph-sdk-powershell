@@ -11,7 +11,6 @@ schema: 2.0.0
 In the Microsoft Entra access reviews feature, create a new accessReview object.
 Before making this request, the caller must have previously retrieved the list of business flow templates, to have the value of businessFlowTemplateId to include in the request.
 After making this request, the caller should create a programControl, to link the access review to a program.
- This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -35,7 +34,6 @@ New-MgBetaAccessReview -BodyParameter <IMicrosoftGraphAccessReview> [-Confirm] [
 In the Microsoft Entra access reviews feature, create a new accessReview object.
 Before making this request, the caller must have previously retrieved the list of business flow templates, to have the value of businessFlowTemplateId to include in the request.
 After making this request, the caller should create a programControl, to link the access review to a program.
- This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

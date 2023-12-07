@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Update an editable alert property within any integrated solution to keep alert status and assignments in sync across solutions.
 This method updates any solution that has a record of the referenced alert ID.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -75,7 +74,6 @@ Update-MgSecurityAlert -InputObject <ISecurityIdentity> [-ActivityGroupName <Str
 ## DESCRIPTION
 Update an editable alert property within any integrated solution to keep alert status and assignments in sync across solutions.
 This method updates any solution that has a record of the referenced alert ID.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

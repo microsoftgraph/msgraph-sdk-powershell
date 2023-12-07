@@ -11,7 +11,6 @@ schema: 2.0.0
 Create a new Microsoft Bookings business in a tenant.
 This is the first step in setting up a Bookings business where you must specify the business display name.
 You can include other information such as business address, web site address, and scheduling policy, or set that information later by updating the bookingBusiness.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -38,7 +37,6 @@ New-MgBookingBusiness -BodyParameter <IMicrosoftGraphBookingBusiness> [-Confirm]
 Create a new Microsoft Bookings business in a tenant.
 This is the first step in setting up a Bookings business where you must specify the business display name.
 You can include other information such as business address, web site address, and scheduling policy, or set that information later by updating the bookingBusiness.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -118,7 +116,7 @@ Accept wildcard characters: False
 ```
 
 ### -BodyParameter
-Represents a Microsot Bookings Business.
+Represents a Microsoft Bookings Business.
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
@@ -490,7 +488,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[StaffMemberIds <String[]>]`: The ID of each bookingStaffMember who is scheduled in this appointment.
   - `[StartDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
 
-`BODYPARAMETER <IMicrosoftGraphBookingBusiness>`: Represents a Microsot Bookings Business.
+`BODYPARAMETER <IMicrosoftGraphBookingBusiness>`: Represents a Microsoft Bookings Business.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Address <IMicrosoftGraphPhysicalAddress>]`: physicalAddress

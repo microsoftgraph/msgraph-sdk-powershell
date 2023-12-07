@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Deletes an internalDomainFederation object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Remove-MgBetaDomainFederationConfiguration -InputObject <IIdentityDirectoryManag
 
 ## DESCRIPTION
 Deletes an internalDomainFederation object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

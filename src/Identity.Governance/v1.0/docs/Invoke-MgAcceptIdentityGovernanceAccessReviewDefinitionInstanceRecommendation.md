@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Allows the acceptance of recommendations on all accessReviewInstanceDecisionItem objects that haven't been reviewed on an accessReviewInstance object for which the calling user is a reviewer.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Invoke-MgAcceptIdentityGovernanceAccessReviewDefinitionInstanceRecommendation
 
 ## DESCRIPTION
 Allows the acceptance of recommendations on all accessReviewInstanceDecisionItem objects that haven't been reviewed on an accessReviewInstance object for which the calling user is a reviewer.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

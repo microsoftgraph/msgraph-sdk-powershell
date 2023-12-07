@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Get a list of administrativeUnits associated with an educationSchool object.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Get-MgEducationSchoolAdministrativeUnit -InputObject <IEducationIdentity> [-Expa
 
 ## DESCRIPTION
 Get a list of administrativeUnits associated with an educationSchool object.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

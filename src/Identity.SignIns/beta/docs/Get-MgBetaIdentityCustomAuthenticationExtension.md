@@ -8,9 +8,7 @@ schema: 2.0.0
 # Get-MgBetaIdentityCustomAuthenticationExtension
 
 ## SYNOPSIS
-Read the properties and relationships of an authenticationEventListener object.
-The @odata.type property in the response object indicates the type of the authenticationEventListener object.
-This API is available in the following national cloud deployments.
+Read the properties and relationships of a customAuthenticationExtension object.
 
 ## SYNTAX
 
@@ -34,9 +32,7 @@ Get-MgBetaIdentityCustomAuthenticationExtension -InputObject <IIdentitySignInsId
 ```
 
 ## DESCRIPTION
-Read the properties and relationships of an authenticationEventListener object.
-The @odata.type property in the response object indicates the type of the authenticationEventListener object.
-This API is available in the following national cloud deployments.
+Read the properties and relationships of a customAuthenticationExtension object.
 
 ## EXAMPLES
 
@@ -262,6 +258,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[ActivityBasedTimeoutPolicyId <String>]`: The unique identifier of activityBasedTimeoutPolicy
   - `[AppManagementPolicyId <String>]`: The unique identifier of appManagementPolicy
   - `[AuthenticationCombinationConfigurationId <String>]`: The unique identifier of authenticationCombinationConfiguration
+  - `[AuthenticationConditionApplicationAppId <String>]`: The unique identifier of authenticationConditionApplication
   - `[AuthenticationContextClassReferenceId <String>]`: The unique identifier of authenticationContextClassReference
   - `[AuthenticationEventListenerId <String>]`: The unique identifier of authenticationEventListener
   - `[AuthenticationEventsFlowId <String>]`: The unique identifier of authenticationEventsFlow

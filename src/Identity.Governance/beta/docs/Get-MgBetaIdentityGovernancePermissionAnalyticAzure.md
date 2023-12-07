@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaIdentityGovernancePermissionAnalyticAzure
 
 ## SYNOPSIS
-Get azure from identityGovernance
+Azure permissions analytics findings.
 
 ## SYNTAX
 
@@ -18,7 +18,7 @@ Get-MgBetaIdentityGovernancePermissionAnalyticAzure [-ExpandProperty <String[]>]
 ```
 
 ## DESCRIPTION
-Get azure from identityGovernance
+Azure permissions analytics findings.
 
 ## EXAMPLES
 

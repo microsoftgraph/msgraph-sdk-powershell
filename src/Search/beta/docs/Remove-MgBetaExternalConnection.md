@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete an externalConnection.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Remove-MgBetaExternalConnection -InputObject <ISearchIdentity> [-IfMatch <String
 
 ## DESCRIPTION
 Delete an externalConnection.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

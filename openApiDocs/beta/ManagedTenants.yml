@@ -167,7 +167,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: List aggregatedPolicyCompliances
-      description: Get a list of the aggregatedPolicyCompliance objects and their properties. This API is available in the following national cloud deployments.
+      description: Get a list of the aggregatedPolicyCompliance objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-aggregatedpolicycompliances?view=graph-rest-1.0
@@ -656,7 +656,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: List auditEvents
-      description: Get a list of the auditEvent objects and their properties. This API is available in the following national cloud deployments.
+      description: Get a list of the auditEvent objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-auditevents?view=graph-rest-1.0
@@ -779,7 +779,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Get auditEvent
-      description: Read the properties and relationships of an auditEvent object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of an auditEvent object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/managedtenants-auditevent-get?view=graph-rest-1.0
@@ -916,7 +916,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: List cloudPcConnections
-      description: Get a list of the cloudPcConnection objects and their properties. This API is available in the following national cloud deployments.
+      description: Get a list of the cloudPcConnection objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-cloudpcconnections?view=graph-rest-1.0
@@ -1015,7 +1015,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Get cloudPcConnection
-      description: Read the properties and relationships of a cloudPcConnection object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a cloudPcConnection object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/managedtenants-cloudpcconnection-get?view=graph-rest-1.0
@@ -1144,7 +1144,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: List cloudPcDevices
-      description: Get a list of the cloudPcDevice objects and their properties. This API is available in the following national cloud deployments.
+      description: Get a list of the cloudPcDevice objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-cloudpcdevices?view=graph-rest-1.0
@@ -1264,7 +1264,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Get cloudPcDevice
-      description: Read the properties and relationships of a cloudPcDevice object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a cloudPcDevice object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/managedtenants-cloudpcdevice-get?view=graph-rest-1.0
@@ -1400,7 +1400,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: List cloudPcOverviews
-      description: Get a list of the cloudPcOverview objects and their properties. This API is available in the following national cloud deployments.
+      description: Get a list of the cloudPcOverview objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-cloudpcsoverview?view=graph-rest-1.0
@@ -1544,7 +1544,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Get cloudPcOverview
-      description: Read the properties and relationships of a cloudPcOverview object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a cloudPcOverview object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/managedtenants-cloudpcoverview-get?view=graph-rest-1.0
@@ -1688,7 +1688,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: List conditionalAccessPolicyCoverages
-      description: Get a list of the conditionalAccessPolicyCoverage objects and their properties. Use this operation to list Microsoft Entra Conditional Access policy coverage for all tenants that are being managed by the multi-tenant management platform. This API is available in the following national cloud deployments.
+      description: Get a list of the conditionalAccessPolicyCoverage objects and their properties. Use this operation to list Microsoft Entra Conditional Access policy coverage for all tenants that are being managed by the multi-tenant management platform.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-conditionalaccesspolicycoverages?view=graph-rest-1.0
@@ -1784,7 +1784,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Get conditionalAccessPolicyCoverage
-      description: Read the properties and relationships of a conditionalAccessPolicyCoverage object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a conditionalAccessPolicyCoverage object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/managedtenants-conditionalaccesspolicycoverage-get?view=graph-rest-1.0
@@ -1912,7 +1912,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: List credentialUserRegistrationsSummaries
-      description: Get a list of the credentialUserRegistrationsSummary objects and their properties. This API is available in the following national cloud deployments.
+      description: Get a list of the credentialUserRegistrationsSummary objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-credentialuserregistrationssummaries?view=graph-rest-1.0
@@ -2032,7 +2032,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Get credentialUserRegistrationsSummary
-      description: Read the properties and relationships of a credentialUserRegistrationsSummary object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a credentialUserRegistrationsSummary object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/managedtenants-credentialuserregistrationssummary-get?view=graph-rest-1.0
@@ -2432,7 +2432,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: List deviceCompliancePolicySettingStateSummary
-      description: Get a list of the deviceCompliancePolicySettingStateSummary objects and their properties. This API is available in the following national cloud deployments.
+      description: Get a list of the deviceCompliancePolicySettingStateSummary objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-devicecompliancepolicysettingstatesummary?view=graph-rest-1.0
@@ -2555,7 +2555,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Get deviceCompliancePolicySettingStateSummary
-      description: Read the properties and relationships of a deviceCompliancePolicySettingStateSummary object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a deviceCompliancePolicySettingStateSummary object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/managedtenants-devicecompliancepolicysettingstatesummary-get?view=graph-rest-1.0
@@ -2952,7 +2952,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: List managedDeviceCompliances
-      description: Get a list of the managedDeviceCompliance objects and their properties. This API is available in the following national cloud deployments.
+      description: Get a list of the managedDeviceCompliance objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-manageddevicecompliances?view=graph-rest-1.0
@@ -3078,7 +3078,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Get managedDeviceCompliance
-      description: Read the properties and relationships of a managedDeviceCompliance object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a managedDeviceCompliance object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/managedtenants-manageddevicecompliance-get?view=graph-rest-1.0
@@ -3216,7 +3216,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: List managedDeviceComplianceTrends
-      description: Get a list of the managedDeviceComplianceTrend objects and their properties. This API is available in the following national cloud deployments.
+      description: Get a list of the managedDeviceComplianceTrend objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-manageddevicecompliancetrends?view=graph-rest-1.0
@@ -3327,7 +3327,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Get managedDeviceComplianceTrend
-      description: Read the properties and relationships of a managedDeviceComplianceTrend object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a managedDeviceComplianceTrend object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/managedtenants-manageddevicecompliancetrend-get?view=graph-rest-1.0
@@ -6436,7 +6436,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: List managementActions
-      description: Get a list of the managementAction objects and their properties. This API is available in the following national cloud deployments.
+      description: Get a list of the managementAction objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-managementactions?view=graph-rest-1.0
@@ -6538,7 +6538,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Get managementAction
-      description: Read the properties and relationships of a managementAction object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a managementAction object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/managedtenants-managementaction-get?view=graph-rest-1.0
@@ -6668,7 +6668,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: List managementActionTenantDeploymentStatus
-      description: Get a list of the managementActionTenantDeploymentStatus objects and their properties. This API is available in the following national cloud deployments.
+      description: Get a list of the managementActionTenantDeploymentStatus objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-managementactiontenantdeploymentstatuses?view=graph-rest-1.0
@@ -6761,7 +6761,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Get managementActionTenantDeploymentStatus
-      description: Read the properties and relationships of a managementActionTenantDeploymentStatus object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a managementActionTenantDeploymentStatus object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/managedtenants-managementactiontenantdeploymentstatus-get?view=graph-rest-1.0
@@ -6888,7 +6888,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: List managementIntents
-      description: Get a list of the managementIntent objects and their properties. This API is available in the following national cloud deployments.
+      description: Get a list of the managementIntent objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-managementintents?view=graph-rest-1.0
@@ -6981,7 +6981,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Get managementIntent
-      description: Read the properties and relationships of a managementIntent object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a managementIntent object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/managedtenants-managementintent-get?view=graph-rest-1.0
@@ -7821,7 +7821,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: List managementTemplates
-      description: Get a list of the managementTemplate objects and their properties. This API is available in the following national cloud deployments.
+      description: Get a list of the managementTemplate objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-managementtemplates?view=graph-rest-1.0
@@ -7951,7 +7951,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Get managementTemplate
-      description: Read the properties and relationships of a managementTemplate object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a managementTemplate object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/managedtenants-managementtemplate-get?view=graph-rest-1.0
@@ -10010,7 +10010,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: List myRoles
-      description: "Get the roles that a signed-in user has through a delegated relationship across managed tenants. For information on the types of delegated relationships between a Managed Service Provider (MSP) who uses Microsoft 365 Lighthouse, and their business customers with Microsoft 365 Business Premium tenants, see the following articles on the Partner Center:\n- Delegated administration privileges (DAP)\n- Granular delegated admin privileges (GDAP) This API is available in the following national cloud deployments."
+      description: "Get the roles that a signed-in user has through a delegated relationship across managed tenants. For information on the types of delegated relationships between a Managed Service Provider (MSP) who uses Microsoft 365 Lighthouse, and their business customers with Microsoft 365 Business Premium tenants, see the following articles on the Partner Center:\n- Delegated administration privileges (DAP)\n- Granular delegated admin privileges (GDAP)"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-myroles?view=graph-rest-1.0
@@ -10219,7 +10219,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: List tenantGroups
-      description: Get a list of the tenantGroup objects and their properties. This API is available in the following national cloud deployments.
+      description: Get a list of the tenantGroup objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-tenantgroups?view=graph-rest-1.0
@@ -10318,7 +10318,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Get tenantGroup
-      description: Read the properties and relationships of a tenantGroup object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a tenantGroup object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/managedtenants-tenantgroup-get?view=graph-rest-1.0
@@ -10447,7 +10447,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: List tenants
-      description: Get a list of the tenant objects and their properties. This API is available in the following national cloud deployments.
+      description: Get a list of the tenant objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-tenants?view=graph-rest-1.0
@@ -10549,7 +10549,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Get tenant
-      description: Read the properties and relationships of a tenant object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a tenant object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/managedtenants-tenant-get?view=graph-rest-1.0
@@ -10679,7 +10679,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: List tenantCustomizedInformation
-      description: Get a list of the tenantCustomizedInformation objects and their properties. This API is available in the following national cloud deployments.
+      description: Get a list of the tenantCustomizedInformation objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-tenantscustomizedinformation?view=graph-rest-1.0
@@ -10775,7 +10775,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Get tenantCustomizedInformation
-      description: Read the properties and relationships of a tenantCustomizedInformation object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a tenantCustomizedInformation object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/managedtenants-tenantcustomizedinformation-get?view=graph-rest-1.0
@@ -10831,7 +10831,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Update tenantCustomizedInformation
-      description: Update the properties of a tenantCustomizedInformation object. This API is available in the following national cloud deployments.
+      description: Update the properties of a tenantCustomizedInformation object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/managedtenants-tenantcustomizedinformation-update?view=graph-rest-1.0
@@ -10907,7 +10907,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: List tenantDetailedInformation
-      description: Get a list of the tenantDetailedInformation objects and their properties. This API is available in the following national cloud deployments.
+      description: Get a list of the tenantDetailedInformation objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-tenantsdetailedinformation?view=graph-rest-1.0
@@ -11021,7 +11021,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Get tenantDetailedInformation
-      description: Read the properties and relationships of a tenantDetailedInformation object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a tenantDetailedInformation object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/managedtenants-tenantdetailedinformation-get?view=graph-rest-1.0
@@ -11155,7 +11155,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: List tenantTags
-      description: Get a list of the tenantTag objects and their properties. This API is available in the following national cloud deployments.
+      description: Get a list of the tenantTag objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-tenanttags?view=graph-rest-1.0
@@ -11240,7 +11240,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Create tenantTag
-      description: Create a new tenantTag object. This API is available in the following national cloud deployments.
+      description: Create a new tenantTag object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/managedtenants-managedtenant-post-tenanttags?view=graph-rest-1.0
@@ -11267,7 +11267,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Get tenantTag
-      description: Read the properties and relationships of a tenantTag object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a tenantTag object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/managedtenants-tenanttag-get?view=graph-rest-1.0
@@ -11327,7 +11327,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Update tenantTag
-      description: Update the properties of a tenantTag object. This API is available in the following national cloud deployments.
+      description: Update the properties of a tenantTag object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/managedtenants-tenanttag-update?view=graph-rest-1.0
@@ -11362,7 +11362,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Delete tenantTag
-      description: Delete a tenantTag object. This API is available in the following national cloud deployments.
+      description: Delete a tenantTag object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/managedtenants-tenanttag-delete?view=graph-rest-1.0
@@ -11407,7 +11407,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: List windowsDeviceMalwareStates
-      description: Get a list of the windowsDeviceMalwareState objects and their properties. This API is available in the following national cloud deployments.
+      description: Get a list of the windowsDeviceMalwareState objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-windowsdevicemalwarestates?view=graph-rest-1.0
@@ -11539,7 +11539,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Get windowsDeviceMalwareState
-      description: Read the properties and relationships of a windowsDeviceMalwareState object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a windowsDeviceMalwareState object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/managedtenants-windowsdevicemalwarestate-get?view=graph-rest-1.0
@@ -11679,7 +11679,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: List windowsProtectionStates
-      description: Get a list of the windowsProtectionState objects and their properties. This API is available in the following national cloud deployments.
+      description: Get a list of the windowsProtectionState objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-windowsprotectionstates?view=graph-rest-1.0
@@ -11838,7 +11838,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: Get windowsProtectionState
-      description: Read the properties and relationships of a windowsProtectionState object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a windowsProtectionState object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/managedtenants-windowsprotectionstate-get?view=graph-rest-1.0

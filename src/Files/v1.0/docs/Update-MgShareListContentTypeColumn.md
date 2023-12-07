@@ -8,8 +8,7 @@ schema: 2.0.0
 # Update-MgShareListContentTypeColumn
 
 ## SYNOPSIS
-Update a site][], a [list][], or a [content type][contentType] [column][columnDefinition].
-This API is available in the following [national cloud deployments.
+Update a [site][], a [list][], or a [content type][contentType] [column][columnDefinition].
 
 ## SYNTAX
 
@@ -61,8 +60,7 @@ Update-MgShareListContentTypeColumn -InputObject <IFilesIdentity> [-AdditionalPr
 ```
 
 ## DESCRIPTION
-Update a site][], a [list][], or a [content type][contentType] [column][columnDefinition].
-This API is available in the following [national cloud deployments.
+Update a [site][], a [list][], or a [content type][contentType] [column][columnDefinition].
 
 ## EXAMPLES
 

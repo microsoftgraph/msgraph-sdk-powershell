@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Get an app installed in a chat.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -34,7 +33,6 @@ Get-MgBetaChatInstalledApp -InputObject <ITeamsIdentity> [-ExpandProperty <Strin
 
 ## DESCRIPTION
 Get an app installed in a chat.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -293,6 +291,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[ChatMessageId <String>]`: The unique identifier of chatMessage
   - `[ChatMessageId1 <String>]`: The unique identifier of chatMessage
   - `[ConversationMemberId <String>]`: The unique identifier of conversationMember
+  - `[DayNoteId <String>]`: The unique identifier of dayNote
   - `[DeletedChatId <String>]`: The unique identifier of deletedChat
   - `[DeletedTeamId <String>]`: The unique identifier of deletedTeam
   - `[GroupId <String>]`: The unique identifier of group

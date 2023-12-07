@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Create a new educationCategory on an educationClass.
 Only teachers can perform this operation.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -68,7 +67,6 @@ New-MgBetaEducationClassAssignmentCategory -InputObject <IEducationIdentity>
 ## DESCRIPTION
 Create a new educationCategory on an educationClass.
 Only teachers can perform this operation.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

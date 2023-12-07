@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new privilegedAccessGroupEligibilityScheduleRequest object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -34,7 +33,6 @@ New-MgIdentityGovernancePrivilegedAccessGroupEligibilityScheduleRequest
 
 ## DESCRIPTION
 Create a new privilegedAccessGroupEligibilityScheduleRequest object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -10,7 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Update privacy settings to display or return the specified type of insights in an organization.
 The type of settings can be contact insights, item insights, or people insights.
-To learn more about customizing insights privacy for your organization, see:\n-  Customize item insights privacy \n-  Customize people insights privacy This API is available in the following national cloud deployments.
+To learn more about customizing insights privacy for your organization, see:\n-  Customize item insights privacy \n-  Customize people insights privacy
 
 ## SYNTAX
 
@@ -43,7 +43,7 @@ Update-MgBetaOrganizationSettingContactInsight -InputObject <IIdentityDirectoryM
 ## DESCRIPTION
 Update privacy settings to display or return the specified type of insights in an organization.
 The type of settings can be contact insights, item insights, or people insights.
-To learn more about customizing insights privacy for your organization, see:\n-  Customize item insights privacy \n-  Customize people insights privacy This API is available in the following national cloud deployments.
+To learn more about customizing insights privacy for your organization, see:\n-  Customize item insights privacy \n-  Customize people insights privacy
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDeviceAppManagementMobileApp
 
 ## SYNOPSIS
-Deletes a windowsMobileMSI.
+Deletes a win32LobApp.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgDeviceAppManagementMobileApp -InputObject <IDevicesCorporateManagementI
 ```
 
 ## DESCRIPTION
-Deletes a windowsMobileMSI.
+Deletes a win32LobApp.
 
 ## EXAMPLES
 
@@ -183,7 +183,10 @@ To create the parameters described below, construct a hash table containing the 
   - `[MdmWindowsInformationProtectionPolicyId <String>]`: The unique identifier of mdmWindowsInformationProtectionPolicy
   - `[MobileAppAssignmentId <String>]`: The unique identifier of mobileAppAssignment
   - `[MobileAppCategoryId <String>]`: The unique identifier of mobileAppCategory
+  - `[MobileAppContentFileId <String>]`: The unique identifier of mobileAppContentFile
+  - `[MobileAppContentId <String>]`: The unique identifier of mobileAppContent
   - `[MobileAppId <String>]`: The unique identifier of mobileApp
+  - `[MobileContainedAppId <String>]`: The unique identifier of mobileContainedApp
   - `[TargetedManagedAppConfigurationId <String>]`: The unique identifier of targetedManagedAppConfiguration
   - `[TargetedManagedAppPolicyAssignmentId <String>]`: The unique identifier of targetedManagedAppPolicyAssignment
   - `[UserId <String>]`: The unique identifier of user

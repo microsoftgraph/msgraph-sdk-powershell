@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaUserMemberOf
 
 ## SYNOPSIS
-The groups, directory roles and administrative units that the user is a member of.
+The groups, directory roles, and administrative units that the user is a member of.
 Read-only.
 Nullable.
 Supports $expand.
@@ -35,7 +35,7 @@ Get-MgBetaUserMemberOf -InputObject <IUsersIdentity> [-ExpandProperty <String[]>
 ```
 
 ## DESCRIPTION
-The groups, directory roles and administrative units that the user is a member of.
+The groups, directory roles, and administrative units that the user is a member of.
 Read-only.
 Nullable.
 Supports $expand.

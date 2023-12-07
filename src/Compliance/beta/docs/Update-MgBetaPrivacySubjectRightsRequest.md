@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update the properties of a subjectRightsRequest object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -60,7 +59,6 @@ Update-MgBetaPrivacySubjectRightsRequest -InputObject <IComplianceIdentity>
 
 ## DESCRIPTION
 Update the properties of a subjectRightsRequest object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -662,7 +660,7 @@ To create the parameters described below, construct a hash table containing the 
 `APPROVERS <IMicrosoftGraphUser[]>`: .
   - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[AboutMe <String>]`: A freeform text entry field for the user to describe themselves. Returned only on $select.
+  - `[AboutMe <String>]`: A freeform text entry field for users to describe themselves. Returned only on $select.
   - `[AccountEnabled <Boolean?>]`: true if the account is enabled; otherwise, false. This property is required when a user is created. Supports $filter (eq, ne, not, and in).
   - `[Activities <IMicrosoftGraphUserActivity[]>]`: The user's activities across devices. Read-only. Nullable.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -702,7 +700,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[Content <IMicrosoftGraphJson>]`: Json
       - `[Description <String>]`: Optional. Longer text description of the user's unique activity (example: document name, first sentence, and/or metadata)
       - `[DisplayText <String>]`: Required. Short text description of the user's unique activity (for example, document name in cases where an activity refers to document creation)
-  - `[AgeGroup <String>]`: Sets the age group of the user. Allowed values: null, Minor, NotAdult and Adult. For more information, see legal age group property definitions. Supports $filter (eq, ne, not, and in).
+  - `[AgeGroup <String>]`: Sets the age group of the user. Allowed values: null, Minor, NotAdult, and Adult. For more information, see legal age group property definitions. Supports $filter (eq, ne, not, and in).
   - `[AgreementAcceptances <IMicrosoftGraphAgreementAcceptance[]>]`: The user's terms of use acceptance statuses. Read-only. Nullable.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[AgreementFileId <String>]`: ID of the agreement file accepted by the user.
@@ -747,8 +745,8 @@ To create the parameters described below, construct a hash table containing the 
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Application <IMicrosoftGraphIdentity>]`: identity
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-          - `[Id <String>]`: Unique identifier for the identity.
+          - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+          - `[Id <String>]`: The identifier of the identity. This property is read-only.
         - `[Device <IMicrosoftGraphIdentity>]`: identity
         - `[User <IMicrosoftGraphIdentity>]`: identity
       - `[CreatedDateTime <DateTime?>]`: The request creation date time.
@@ -781,7 +779,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[AlternativeNames <String[]>]`: Used to retrieve service principals by subscription, identify resource group and full resource ids for managed identities. Supports $filter (eq, not, ge, le, startsWith).
     - `[AppDescription <String>]`: The description exposed by the associated application.
     - `[AppDisplayName <String>]`: The display name exposed by the associated application.
-    - `[AppId <String>]`: The unique identifier for the associated application (its appId property). Supports $filter (eq, ne, not, in, startsWith).
+    - `[AppId <String>]`: The unique identifier for the associated application (its appId property). Alternate key. Supports $filter (eq, ne, not, in, startsWith).
     - `[AppManagementPolicies <IMicrosoftGraphAppManagementPolicy[]>]`: The appManagementPolicy applied to this service principal.
       - `[Description <String>]`: Description for this policy. Required.
       - `[DisplayName <String>]`: Display name for this policy. Required.
@@ -802,7 +800,7 @@ To create the parameters described below, construct a hash table containing the 
           - `[MaxLifetime <TimeSpan?>]`: 
           - `[RestrictForAppsCreatedAfterDateTime <DateTime?>]`: Enforces the policy for an app created on or after the enforcement date. For existing applications, the enforcement date would be backdated. To apply to all applications, this date would be null.
           - `[RestrictionType <String>]`: appCredentialRestrictionType
-    - `[AppOwnerOrganizationId <String>]`: Contains the tenant id where the application is registered. This is applicable only to service principals backed by applications.Supports $filter (eq, ne, NOT, ge, le).
+    - `[AppOwnerOrganizationId <String>]`: Contains the tenant id where the application is registered. This is applicable only to service principals backed by applications. Supports $filter (eq, ne, NOT, ge, le).
     - `[AppRoleAssignedTo <IMicrosoftGraphAppRoleAssignment[]>]`: App role assignments for this app or service, granted to users, groups, and other service principals.Supports $expand.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[AppRoleId <String>]`: The identifier (id) for the app role which is assigned to the principal. This app role must be exposed in the appRoles property on the resource application's service principal (resourceId). If the resource application has not declared any app roles, a default app role ID of 00000000-0000-0000-0000-000000000000 can be specified to signal that the principal is assigned to the resource app without any specific app roles. Required on create.
@@ -814,7 +812,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[ResourceId <String>]`: The unique identifier (id) for the resource service principal for which the assignment is made. Required on create. Supports $filter (eq only).
     - `[AppRoleAssignmentRequired <Boolean?>]`: Specifies whether users or other service principals need to be granted an app role assignment for this service principal before users can sign in or apps can get tokens. The default value is false. Not nullable. Supports $filter (eq, ne, NOT).
     - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment[]>]`: App role assignment for another app or service, granted to this service principal. Supports $expand.
-    - `[AppRoles <IMicrosoftGraphAppRole[]>]`: The roles exposed by the application which this service principal represents. For more information see the appRoles property definition on the application entity. Not nullable.
+    - `[AppRoles <IMicrosoftGraphAppRole[]>]`: The roles exposed by the application, which this service principal represents. For more information see the appRoles property definition on the application entity. Not nullable.
       - `[AllowedMemberTypes <String[]>]`: Specifies whether this app role can be assigned to users and groups (by setting to ['User']), to other application's (by setting to ['Application'], or both (by setting to ['User', 'Application']). App roles supporting assignment to other applications' service principals are also known as application permissions. The 'Application' value is only supported for app roles defined on application entities.
       - `[Description <String>]`: The description for the app role. This is displayed when the app role is being assigned and, if the app role functions as an application permission, during  consent experiences.
       - `[DisplayName <String>]`: Display name for the permission that appears in the app role assignment and consent experiences.
@@ -853,11 +851,11 @@ To create the parameters described below, construct a hash table containing the 
     - `[ErrorUrl <String>]`: Deprecated. Don't use.
     - `[FederatedIdentityCredentials <IMicrosoftGraphFederatedIdentityCredential[]>]`: 
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
-      - `[Audiences <String[]>]`: The audience that can appear in the external token. This field is mandatory and should be set to api://AzureADTokenExchange for Azure AD. It says what Microsoft identity platform should accept in the aud claim in the incoming token. This value represents Azure AD in your external identity provider and has no fixed value across identity providers - you may need to create a new application registration in your identity provider to serve as the audience of this token. This field can only accept a single value and has a limit of 600 characters. Required.
+      - `[Audiences <String[]>]`: The audience that can appear in the external token. This field is mandatory and should be set to api://AzureADTokenExchange for Microsoft Entra ID. It says what Microsoft identity platform should accept in the aud claim in the incoming token. This value represents Microsoft Entra ID in your external identity provider and has no fixed value across identity providers - you may need to create a new application registration in your identity provider to serve as the audience of this token. This field can only accept a single value and has a limit of 600 characters. Required.
       - `[Description <String>]`: The un-validated, user-provided description of the federated identity credential. It has a limit of 600 characters. Optional.
       - `[Issuer <String>]`: The URL of the external identity provider and must match the issuer claim of the external token being exchanged. The combination of the values of issuer and subject must be unique on the app. It has a limit of 600 characters. Required.
       - `[Name <String>]`: is the unique identifier for the federated identity credential, which has a limit of 120 characters and must be URL friendly. It is immutable once created. Required. Not nullable. Supports $filter (eq).
-      - `[Subject <String>]`: Required. The identifier of the external software workload within the external identity provider. Like the audience value, it has no fixed format, as each identity provider uses their own - sometimes a GUID, sometimes a colon delimited identifier, sometimes arbitrary strings. The value here must match the sub claim within the token presented to Azure AD. The combination of issuer and subject must be unique on the app. It has a limit of 600 characters. Supports $filter (eq).
+      - `[Subject <String>]`: Required. The identifier of the external software workload within the external identity provider. Like the audience value, it has no fixed format, as each identity provider uses their own - sometimes a GUID, sometimes a colon delimited identifier, sometimes arbitrary strings. The value here must match the sub claim within the token presented to Microsoft Entra ID. The combination of issuer and subject must be unique on the app. It has a limit of 600 characters. Supports $filter (eq).
     - `[HomeRealmDiscoveryPolicies <IMicrosoftGraphHomeRealmDiscoveryPolicy[]>]`: The homeRealmDiscoveryPolicies assigned to this service principal. Supports $expand.
       - `[AppliesTo <IMicrosoftGraphDirectoryObject[]>]`: 
       - `[Definition <String[]>]`: A string collection containing a JSON string that defines the rules and settings for a policy. The syntax for the definition differs for each derived policy type. Required.
@@ -886,17 +884,17 @@ To create the parameters described below, construct a hash table containing the 
     - `[LicenseDetails <IMicrosoftGraphLicenseDetails[]>]`: 
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[ServicePlans <IMicrosoftGraphServicePlanInfo[]>]`: Information about the service plans assigned with the license. Read-only, Not nullable
-        - `[AppliesTo <String>]`: The object the service plan can be assigned to. The possible values are:User - service plan can be assigned to individual users.Company - service plan can be assigned to the entire tenant.
-        - `[ProvisioningStatus <String>]`: The provisioning status of the service plan. The possible values are:Success - Service is fully provisioned.Disabled - Service has been disabled.ErrorStatus - The service plan has not been provisioned and is in an error state.PendingInput - Service is not yet provisioned; awaiting service confirmation.PendingActivation - Service is provisioned but requires explicit activation by administrator (for example, Intune_O365 service plan)PendingProvisioning - Microsoft has added a new service to the product SKU and it has not been activated in the tenant, yet.
+        - `[AppliesTo <String>]`: The object the service plan can be assigned to. The possible values are: User - service plan can be assigned to individual users.Company - service plan can be assigned to the entire tenant.
+        - `[ProvisioningStatus <String>]`: The provisioning status of the service plan. The possible values are:Success - Service is fully provisioned.Disabled - Service is disabled.Error - The service plan isn't provisioned and is in an error state.PendingInput - The service isn't provisioned and is awaiting service confirmation.PendingActivation - The service is provisioned but requires explicit activation by an administrator (for example, Intune_O365 service plan)PendingProvisioning - Microsoft has added a new service to the product SKU and it isn't activated in the tenant.
         - `[ServicePlanId <String>]`: The unique identifier of the service plan.
         - `[ServicePlanName <String>]`: The name of the service plan.
       - `[SkuId <String>]`: Unique identifier (GUID) for the service SKU. Equal to the skuId property on the related SubscribedSku object. Read-only
       - `[SkuPartNumber <String>]`: Unique SKU display name. Equal to the skuPartNumber on the related SubscribedSku object; for example: 'AAD_Premium'. Read-only
-    - `[LoginUrl <String>]`: Specifies the URL where the service provider redirects the user to Azure AD to authenticate. Azure AD uses the URL to launch the application from Microsoft 365 or the Azure AD My Apps. When blank, Azure AD performs IdP-initiated sign-on for applications configured with SAML-based single sign-on. The user launches the application from Microsoft 365, the Azure AD My Apps, or the Azure AD SSO URL.
+    - `[LoginUrl <String>]`: Specifies the URL where the service provider redirects the user to Microsoft Entra ID to authenticate. Microsoft Entra ID uses the URL to launch the application from Microsoft 365 or the Microsoft Entra My Apps. When blank, Microsoft Entra ID performs IdP-initiated sign-on for applications configured with SAML-based single sign-on. The user launches the application from Microsoft 365, the Microsoft Entra My Apps, or the Microsoft Entra SSO URL.
     - `[LogoutUrl <String>]`: Specifies the URL that will be used by Microsoft's authorization service to logout an user using OpenId Connect front-channel, back-channel or SAML logout protocols.
     - `[MemberOf <IMicrosoftGraphDirectoryObject[]>]`: Roles that this service principal is a member of. HTTP Methods: GET Read-only. Nullable. Supports $expand.
     - `[Notes <String>]`: Free text field to capture information about the service principal, typically used for operational purposes. Maximum allowed size is 1024 characters.
-    - `[NotificationEmailAddresses <String[]>]`: Specifies the list of email addresses where Azure AD sends a notification when the active certificate is near the expiration date. This is only for the certificates used to sign the SAML token issued for Azure AD Gallery applications.
+    - `[NotificationEmailAddresses <String[]>]`: Specifies the list of email addresses where Microsoft Entra ID sends a notification when the active certificate is near the expiration date. This is only for the certificates used to sign the SAML token issued for Microsoft Entra Gallery applications.
     - `[Oauth2PermissionGrants <IMicrosoftGraphOAuth2PermissionGrant[]>]`: Delegated permission grants authorizing this service principal to access an API on behalf of a signed-in user. Read-only. Nullable.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[ClientId <String>]`: The object id (not appId) of the client service principal for the application that is authorized to act on behalf of a signed-in user when accessing an API. Required. Supports $filter (eq only).
@@ -906,15 +904,15 @@ To create the parameters described below, construct a hash table containing the 
       - `[ResourceId <String>]`: The id of the resource service principal to which access is authorized. This identifies the API that the client is authorized to attempt to call on behalf of a signed-in user. Supports $filter (eq only).
       - `[Scope <String>]`: A space-separated list of the claim values for delegated permissions that should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the publishedPermissionScopes property of the resource service principal. Must not exceed 3850 characters in length.
       - `[StartTime <DateTime?>]`: Currently, the start time value is ignored, but a value is required when creating an oAuth2PermissionGrant. Required.
-    - `[OwnedObjects <IMicrosoftGraphDirectoryObject[]>]`: Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
-    - `[Owners <IMicrosoftGraphDirectoryObject[]>]`: Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable. Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1), and $select nested in $expand.
+    - `[OwnedObjects <IMicrosoftGraphDirectoryObject[]>]`: Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
+    - `[Owners <IMicrosoftGraphDirectoryObject[]>]`: Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.  Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
     - `[PasswordCredentials <IMicrosoftGraphPasswordCredential[]>]`: The collection of password credentials associated with the service principal. Not nullable.
       - `[CustomKeyIdentifier <Byte[]>]`: Do not use.
       - `[DisplayName <String>]`: Friendly name for the password. Optional.
       - `[EndDateTime <DateTime?>]`: The date and time at which the password expires represented using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Optional.
       - `[Hint <String>]`: Contains the first three characters of the password. Read-only.
       - `[KeyId <String>]`: The unique identifier for the password.
-      - `[SecretText <String>]`: Read-only; Contains the strong passwords generated by Azure AD that are 16-64 characters in length. The generated password value is only returned during the initial POST request to addPassword. There is no way to retrieve this password in the future.
+      - `[SecretText <String>]`: Read-only; Contains the strong passwords generated by Microsoft Entra ID that are 16-64 characters in length. The generated password value is only returned during the initial POST request to addPassword. There is no way to retrieve this password in the future.
       - `[StartDateTime <DateTime?>]`: The date and time at which the password becomes valid. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Optional.
     - `[PasswordSingleSignOnSettings <IMicrosoftGraphPasswordSingleSignOnSettings>]`: passwordSingleSignOnSettings
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -923,7 +921,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[DefaultLabel <String>]`: Label that would be used if no customizedLabel is provided. Read only.
         - `[FieldId <String>]`: Id used to identity the field type. This is an internal ID and possible values are param1, param2, paramuserName, parampassword.
         - `[Type <String>]`: Type of the credential. The values can be text, password.
-    - `[PreferredSingleSignOnMode <String>]`: Specifies the single sign-on mode configured for this application. Azure AD uses the preferred single sign-on mode to launch the application from Microsoft 365 or the Azure AD My Apps. The supported values are password, saml, notSupported, and oidc.
+    - `[PreferredSingleSignOnMode <String>]`: Specifies the single sign-on mode configured for this application. Microsoft Entra ID uses the preferred single sign-on mode to launch the application from Microsoft 365 or the Microsoft Entra My Apps. The supported values are password, saml, notSupported, and oidc.
     - `[PreferredTokenSigningKeyEndDateTime <DateTime?>]`: Specifies the expiration date of the keyCredential used for token signing, marked by preferredTokenSigningKeyThumbprint. Updating this attribute is not currentlysupported. For details, see ServicePrincipal property differences.
     - `[PreferredTokenSigningKeyThumbprint <String>]`: This property can be used on SAML applications (apps that have preferredSingleSignOnMode set to saml) to control which certificate is used to sign the SAML responses. For applications that are not SAML, do not write or otherwise rely on this property.
     - `[PublishedPermissionScopes <IMicrosoftGraphPermissionScope[]>]`: The delegated permissions exposed by the application. For more information see the oauth2PermissionScopes property on the application entity's api property. Not nullable. Note: This property is named oauth2PermissionScopes in v1.0.
@@ -936,22 +934,22 @@ To create the parameters described below, construct a hash table containing the 
       - `[UserConsentDescription <String>]`: A description of the delegated permissions, intended to be read by a user granting the permission on their own behalf. This text appears in consent experiences where the user is consenting only on behalf of themselves.
       - `[UserConsentDisplayName <String>]`: A title for the permission, intended to be read by a user granting the permission on their own behalf. This text appears in consent experiences where the user is consenting only on behalf of themselves.
       - `[Value <String>]`: Specifies the value to include in the scp (scope) claim in access tokens. Must not exceed 120 characters in length. Allowed characters are : ! # $ % & ' ( ) * + , - . / : ;  =  ? @ [ ] ^ + _  {  } ~, and characters in the ranges 0-9, A-Z and a-z. Any other character, including the space character, aren't allowed. May not begin with ..
-    - `[PublisherName <String>]`: The name of the Azure AD tenant that published the application.
+    - `[PublisherName <String>]`: The name of the Microsoft Entra tenant that published the application.
     - `[RemoteDesktopSecurityConfiguration <IMicrosoftGraphRemoteDesktopSecurityConfiguration>]`: remoteDesktopSecurityConfiguration
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
-      - `[IsRemoteDesktopProtocolEnabled <Boolean?>]`: 
-      - `[TargetDeviceGroups <IMicrosoftGraphTargetDeviceGroup[]>]`: 
+      - `[IsRemoteDesktopProtocolEnabled <Boolean?>]`: Determines if Microsoft Entra ID RDS authentication protocol for RDP is enabled.
+      - `[TargetDeviceGroups <IMicrosoftGraphTargetDeviceGroup[]>]`: The collection of target device groups that are associated with the RDS security configuration that will be enabled for SSO when a client connects to the target device over RDP using the new Microsoft Entra ID RDS authentication protocol.
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
-        - `[DisplayName <String>]`: 
+        - `[DisplayName <String>]`: Display name for the target device group.
     - `[ReplyUrls <String[]>]`: The URLs that user tokens are sent to for sign in with the associated application, or the redirect URIs that OAuth 2.0 authorization codes and access tokens are sent to for the associated application. Not nullable.
     - `[SamlMetadataUrl <String>]`: The url where the service exposes SAML metadata for federation.
     - `[SamlSingleSignOnSettings <IMicrosoftGraphSamlSingleSignOnSettings>]`: samlSingleSignOnSettings
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[RelayState <String>]`: The relative URI the service provider would redirect to after completion of the single sign-on flow.
-    - `[ServicePrincipalNames <String[]>]`: Contains the list of identifiersUris, copied over from the associated application. Additional values can be added to hybrid applications. These values can be used to identify the permissions exposed by this app within Azure AD. For example,Client apps can specify a resource URI which is based on the values of this property to acquire an access token, which is the URI returned in the 'aud' claim.The any operator is required for filter expressions on multi-valued properties. Not nullable.  Supports $filter (eq, not, ge, le, startsWith).
-    - `[ServicePrincipalType <String>]`: Identifies if the service principal represents an application or a managed identity. This is set by Azure AD internally. For a service principal that represents an application this is set as Application. For a service principal that represent a managed identity this is set as ManagedIdentity. The SocialIdp type is for internal use.
-    - `[SignInAudience <String>]`: Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization's Azure AD tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization's Azure AD tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization's Azure AD tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.
+    - `[ServicePrincipalNames <String[]>]`: Contains the list of identifiersUris, copied over from the associated application. Additional values can be added to hybrid applications. These values can be used to identify the permissions exposed by this app within Microsoft Entra ID. For example,Client apps can specify a resource URI which is based on the values of this property to acquire an access token, which is the URI returned in the 'aud' claim.The any operator is required for filter expressions on multi-valued properties. Not nullable.  Supports $filter (eq, not, ge, le, startsWith).
+    - `[ServicePrincipalType <String>]`: Identifies if the service principal represents an application or a managed identity. This is set by Microsoft Entra ID internally. For a service principal that represents an application this is set as Application. For a service principal that represent a managed identity this is set as ManagedIdentity. The SocialIdp type is for internal use.
+    - `[SignInAudience <String>]`: Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization's Microsoft Entra tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization's Microsoft Entra tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization's Microsoft Entra tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.
     - `[Synchronization <IMicrosoftGraphSynchronization>]`: synchronization
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -1094,7 +1092,7 @@ To create the parameters described below, construct a hash table containing the 
           - `[SteadyStateFirstAchievedTime <DateTime?>]`: The time when steady state (no more changes to the process) was first achieved. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
           - `[SteadyStateLastAchievedTime <DateTime?>]`: The time when steady state (no more changes to the process) was last achieved. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
           - `[SynchronizedEntryCountByType <IMicrosoftGraphStringKeyLongValuePair[]>]`: Count of synchronized objects, listed by object type.
-            - `[Key <String>]`: The mapping of the user type from the source system to the target system. For example:User to User - For Azure AD to Azure AD synchronization worker to user - For Workday to Azure AD synchronization.
+            - `[Key <String>]`: The mapping of the user type from the source system to the target system. For example:User to User - For Microsoft Entra ID to Microsoft Entra synchronization worker to user - For Workday to Microsoft Entra synchronization.
             - `[Value <Int64?>]`: Total number of synchronized objects.
           - `[TroubleshootingUrl <String>]`: In the event of an error, the URL with the troubleshooting steps for the issue.
         - `[SynchronizationJobSettings <IMicrosoftGraphKeyValuePair[]>]`: Settings associated with the job. Some settings are inherited from the template.
@@ -1116,7 +1114,7 @@ To create the parameters described below, construct a hash table containing the 
           - `[Value <String>]`: Value of the metadata property.
         - `[Schema <IMicrosoftGraphSynchronizationSchema>]`: synchronizationSchema
     - `[Tags <String[]>]`: Custom strings that can be used to categorize and identify the service principal. Not nullable. The value is the union of strings set here and on the associated application entity's tags property.Supports $filter (eq, not, ge, le, startsWith).
-    - `[TokenEncryptionKeyId <String>]`: Specifies the keyId of a public key from the keyCredentials collection. When configured, Azure AD issues tokens for this application encrypted using the key specified by this property. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.
+    - `[TokenEncryptionKeyId <String>]`: Specifies the keyId of a public key from the keyCredentials collection. When configured, Microsoft Entra ID issues tokens for this application encrypted using the key specified by this property. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.
     - `[TokenIssuancePolicies <IMicrosoftGraphTokenIssuancePolicy[]>]`: The tokenIssuancePolicies assigned to this service principal. Supports $expand.
       - `[AppliesTo <IMicrosoftGraphDirectoryObject[]>]`: 
       - `[Definition <String[]>]`: A string collection containing a JSON string that defines the rules and settings for a policy. The syntax for the definition differs for each derived policy type. Required.
@@ -1141,7 +1139,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[VerifiedPublisherId <String>]`: The ID of the verified publisher from the app publisher's Partner Center account.
   - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment[]>]`: Represents the app roles a user has been granted for an application. Supports $expand.
   - `[Approvals <IMicrosoftGraphApproval[]>]`: 
-  - `[AssignedLicenses <IMicrosoftGraphAssignedLicense[]>]`: The licenses that are assigned to the user, including inherited (group-based) licenses. This property doesn't differentiate directly assigned and inherited licenses. Use the licenseAssignmentStates property to identify the directly assigned and inherited licenses. Not nullable. Supports $filter (eq, not, /$count eq 0, /$count ne 0).
+  - `[AssignedLicenses <IMicrosoftGraphAssignedLicense[]>]`: The licenses that are assigned to the user, including inherited (group-based) licenses. This property doesn't differentiate between directly assigned and inherited licenses. Use the licenseAssignmentStates property to identify the directly assigned and inherited licenses. Not nullable. Supports $filter (eq, not, /$count eq 0, /$count ne 0).
     - `[DisabledPlans <String[]>]`: A collection of the unique identifiers for plans that have been disabled.
     - `[SkuId <String>]`: The unique identifier for the SKU.
   - `[AssignedPlans <IMicrosoftGraphAssignedPlan[]>]`: The plans that are assigned to the user. Read-only. Not nullable.Supports $filter (eq and not).
@@ -1200,7 +1198,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[DeviceOwnership <String>]`: Ownership of the device. This property is set by Intune. Possible values are: unknown, company, personal.
         - `[DeviceVersion <Int32?>]`: For internal use only.
         - `[DisplayName <String>]`: The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.
-        - `[DomainName <String>]`: The on-premises domain name of Hybrid Azure AD joined devices. This property is set by Intune.
+        - `[DomainName <String>]`: The on-premises domain name of Microsoft Entra hybrid joined devices. This property is set by Intune.
         - `[EnrollmentProfileName <String>]`: Enrollment profile applied to the device. For example, Apple Device Enrollment Profile, Device enrollment - Corporate device identifiers, or Windows Autopilot profile name. This property is set by Intune.
         - `[EnrollmentType <String>]`: Enrollment type of the device. This property is set by Intune. Possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement.
         - `[ExtensionAttributes <IMicrosoftGraphOnPremisesExtensionAttributes>]`: onPremisesExtensionAttributes
@@ -1222,25 +1220,25 @@ To create the parameters described below, construct a hash table containing the 
           - `[ExtensionAttribute9 <String>]`: Ninth customizable extension attribute.
         - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the device. Read-only. Nullable.
           - `[Id <String>]`: The unique identifier for an entity. Read-only.
-        - `[Hostnames <String[]>]`: List of hostNames for the device.
+        - `[Hostnames <String[]>]`: List of host names for the device.
         - `[IsCompliant <Boolean?>]`: true if the device complies with Mobile Device Management (MDM) policies; otherwise, false. Read-only. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).
         - `[IsManaged <Boolean?>]`: true if the device is managed by a Mobile Device Management (MDM) app; otherwise, false. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).
-        - `[IsManagementRestricted <Boolean?>]`: true if the device is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.  To manage a device that's a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.
+        - `[IsManagementRestricted <Boolean?>]`: Indicates whether the device is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. The default value is false. Read-only.  To manage a device that's a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.
         - `[IsRooted <Boolean?>]`: true if device is rooted; false if device is jail-broken. This can only be updated by Intune.
-        - `[Kind <String>]`: Form factor of device. Only returned if user signs in with a Microsoft account as part of Project Rome.
+        - `[Kind <String>]`: Form factor of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
         - `[ManagementType <String>]`: Management channel of the device.  This property is set by Intune. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.
-        - `[Manufacturer <String>]`: Manufacturer of device. Only returned if user signs in with a Microsoft account as part of Project Rome.
+        - `[Manufacturer <String>]`: Manufacturer of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
         - `[MdmAppId <String>]`: Application identifier used to register device into MDM. Read-only. Supports $filter (eq, ne, not, startsWith).
         - `[MemberOf <IMicrosoftGraphDirectoryObject[]>]`: Groups and administrative units that this device is a member of. Read-only. Nullable. Supports $expand.
-        - `[Model <String>]`: Model of device. Only returned if user signs in with a Microsoft account as part of Project Rome.
-        - `[Name <String>]`: Friendly name of a device. Only returned if user signs in with a Microsoft account as part of Project Rome.
+        - `[Model <String>]`: Model of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
+        - `[Name <String>]`: Friendly name of the device. Only returned if user signs in with a Microsoft account as part of Project Rome.
         - `[OnPremisesLastSyncDateTime <DateTime?>]`: The last time at which the object was synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Read-only. Supports $filter (eq, ne, not, ge, le, in).
-        - `[OnPremisesSecurityIdentifier <String>]`: 
+        - `[OnPremisesSecurityIdentifier <String>]`: The on-premises security identifier (SID) for the user who was synchronized from on-premises to the cloud. Read-only. Returned only on $select. Supports $filter (eq).
         - `[OnPremisesSyncEnabled <Boolean?>]`: true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
         - `[OperatingSystem <String>]`: The type of operating system on the device. Required. Supports $filter (eq, ne, not, ge, le, startsWith, and eq on null values).
         - `[OperatingSystemVersion <String>]`: Operating system version of the device. Required. Supports $filter (eq, ne, not, ge, le, startsWith, and eq on null values).
         - `[PhysicalIds <String[]>]`: For internal use only. Not nullable. Supports $filter (eq, not, ge, le, startsWith, /$count eq 0, /$count ne 0.
-        - `[Platform <String>]`: Platform of device. Only returned if user signs in with a Microsoft account as part of Project Rome. Only returned if user signs in with a Microsoft account as part of Project Rome.
+        - `[Platform <String>]`: Platform of device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
         - `[ProfileType <String>]`: The profile type of the device. Possible values: RegisteredDevice (default), SecureVM, Printer, Shared, IoT.
         - `[RegisteredOwners <IMicrosoftGraphDirectoryObject[]>]`: The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Read-only. Nullable. Supports $expand.
         - `[RegisteredUsers <IMicrosoftGraphDirectoryObject[]>]`: Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.
@@ -1248,7 +1246,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[Status <String>]`: Device is online or offline. Only returned if user signs in with a Microsoft account as part of Project Rome.
         - `[SystemLabels <String[]>]`: List of labels applied to the device by the system. Supports $filter (/$count eq 0, /$count ne 0).
         - `[TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>]`: Groups and administrative units that this device is a member of. This operation is transitive. Supports $expand.
-        - `[TrustType <String>]`: Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory
+        - `[TrustType <String>]`: Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Microsoft Entra ID). For more details, see Introduction to device management in Microsoft Entra ID.
         - `[UsageRights <IMicrosoftGraphUsageRight[]>]`: Represents the usage rights a device has been granted.
           - `[Id <String>]`: The unique identifier for an entity. Read-only.
           - `[CatalogId <String>]`: Product id corresponding to the usage right.
@@ -1279,6 +1277,13 @@ To create the parameters described below, construct a hash table containing the 
       - `[PhoneNumber <String>]`: The phone number to text or call for authentication. Phone numbers use the format '+<country code> <number>x<extension>', with extension optional. For example, +1 5555551234 or +1 5555551234x123 are valid. Numbers are rejected when creating/updating if they don't match the required format.
       - `[PhoneType <String>]`: authenticationPhoneType
       - `[SmsSignInState <String>]`: authenticationMethodSignInState
+    - `[PlatformCredentialMethods <IMicrosoftGraphPlatformCredentialAuthenticationMethod[]>]`: 
+      - `[Id <String>]`: The unique identifier for an entity. Read-only.
+      - `[CreatedDateTime <DateTime?>]`: The date and time that this Platform Credential Key was registered.
+      - `[Device <IMicrosoftGraphDevice>]`: device
+      - `[DisplayName <String>]`: The name of the device on which Platform Credential is registered.
+      - `[KeyStrength <String>]`: authenticationMethodKeyStrength
+      - `[Platform <String>]`: authenticationMethodPlatform
     - `[SignInPreferences <IMicrosoftGraphSignInPreferences>]`: signInPreferences
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[IsSystemPreferredAuthenticationMethodEnabled <Boolean?>]`: Indicates whether the credential preferences of the system are enabled.
@@ -1301,8 +1306,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[KeyStrength <String>]`: authenticationMethodKeyStrength
   - `[AuthorizationInfo <IMicrosoftGraphAuthorizationInfo>]`: authorizationInfo
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[CertificateUserIds <String[]>]`: The collection of unique identifiers that can be associated with a user and can be used to bind the Azure AD user to a certificate for authentication and authorization into non-Azure AD environments. The identifiers must be unique in the tenant.
-  - `[Birthday <DateTime?>]`: The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select.
+    - `[CertificateUserIds <String[]>]`: The collection of unique identifiers that can be associated with a user and can be used to bind the Microsoft Entra user to a certificate for authentication and authorization into non-Azure AD environments. The identifiers must be unique in the tenant.
+  - `[Birthday <DateTime?>]`: The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select.
   - `[BusinessPhones <String[]>]`: The telephone numbers for the user. Only one number can be set for this property. Read-only for users synced from on-premises directory. Supports $filter (eq, not, ge, le, startsWith).
   - `[Calendar <IMicrosoftGraphCalendar>]`: calendar
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -1577,13 +1582,13 @@ To create the parameters described below, construct a hash table containing the 
           - `[User <IMicrosoftGraphIdentity>]`: identity
           - `[Conversation <IMicrosoftGraphTeamworkConversationIdentity>]`: teamworkConversationIdentity
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-            - `[Id <String>]`: Unique identifier for the identity.
+            - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+            - `[Id <String>]`: The identifier of the identity. This property is read-only.
             - `[ConversationIdentityType <String>]`: teamworkConversationIdentityType
           - `[Tag <IMicrosoftGraphTeamworkTagIdentity>]`: teamworkTagIdentity
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-            - `[Id <String>]`: Unique identifier for the identity.
+            - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+            - `[Id <String>]`: The identifier of the identity. This property is read-only.
       - `[MessageHistory <IMicrosoftGraphChatMessageHistoryItem[]>]`: List of activity history of a message item, including modification time and actions, such as reactionAdded, reactionRemoved, or reaction changes, on the message.
         - `[Actions <String>]`: chatMessageActions
         - `[ModifiedDateTime <DateTime?>]`: The date and time when the message was modified.
@@ -1621,8 +1626,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[JoinWebUrl <String>]`: The URL which can be clicked on to join or uniquely identify the meeting.
       - `[Organizer <IMicrosoftGraphTeamworkUserIdentity>]`: teamworkUserIdentity
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-        - `[Id <String>]`: Unique identifier for the identity.
+        - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+        - `[Id <String>]`: The identifier of the identity. This property is read-only.
         - `[UserIdentityType <String>]`: teamworkUserIdentityType
     - `[Operations <IMicrosoftGraphTeamsAsyncOperation[]>]`: A collection of all the Teams async operations that ran or are running on the chat. Nullable.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -1640,11 +1645,11 @@ To create the parameters described below, construct a hash table containing the 
     - `[PermissionGrants <IMicrosoftGraphResourceSpecificPermissionGrant[]>]`: A collection of permissions granted to apps for the chat.
       - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
-      - `[ClientAppId <String>]`: ID of the service principal of the Azure AD app that has been granted access. Read-only.
-      - `[ClientId <String>]`: ID of the Azure AD app that has been granted access. Read-only.
+      - `[ClientAppId <String>]`: ID of the service principal of the Microsoft Entra app that has been granted access. Read-only.
+      - `[ClientId <String>]`: ID of the Microsoft Entra app that has been granted access. Read-only.
       - `[Permission <String>]`: The name of the resource-specific permission. Read-only.
       - `[PermissionType <String>]`: The type of permission. Possible values are: Application, Delegated. Read-only.
-      - `[ResourceAppId <String>]`: ID of the Azure AD app that is hosting the resource. Read-only.
+      - `[ResourceAppId <String>]`: ID of the Microsoft Entra app that is hosting the resource. Read-only.
     - `[PinnedMessages <IMicrosoftGraphPinnedChatMessageInfo[]>]`: A collection of all the pinned messages in the chat. Nullable.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[Message <IMicrosoftGraphChatMessage>]`: chatMessage
@@ -1672,7 +1677,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[City <String>]`: The city where the user is located. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
   - `[CloudPCs <IMicrosoftGraphCloudPc[]>]`: 
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[AadDeviceId <String>]`: The Azure Active Directory (Azure AD) device ID of the Cloud PC.
+    - `[AadDeviceId <String>]`: The Microsoft Entra device ID of the Cloud PC.
     - `[ConnectionSettings <IMicrosoftGraphCloudPcConnectionSettings>]`: cloudPcConnectionSettings
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[EnableSingleSignOn <Boolean?>]`: 
@@ -1720,6 +1725,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[ProvisioningPolicyId <String>]`: The provisioning policy ID of the Cloud PC.
     - `[ProvisioningPolicyName <String>]`: The provisioning policy that is applied during the provisioning of Cloud PCs.
     - `[ProvisioningType <String>]`: cloudPcProvisioningType
+    - `[ScopeIds <String[]>]`: 
     - `[ServicePlanId <String>]`: The service plan ID of the Cloud PC.
     - `[ServicePlanName <String>]`: The service plan name of the Cloud PC.
     - `[ServicePlanType <String>]`: cloudPcServicePlanType
@@ -1730,7 +1736,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[CloudRealtimeCommunicationInfo <IMicrosoftGraphCloudRealtimeCommunicationInfo>]`: cloudRealtimeCommunicationInfo
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[IsSipEnabled <Boolean?>]`: Indicates whether the user has a SIP-enabled client registered for them. Read-only.
-  - `[CompanyName <String>]`: The name of the company that the user is associated with. This property can be useful for describing the company that an external user comes from. The maximum length is 64 characters.Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+  - `[CompanyName <String>]`: The name of the company the user is associated with. This property can be useful for describing the company that an external user comes from. The maximum length is 64 characters.Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
   - `[ConsentProvidedForMinor <String>]`: Sets whether consent has been obtained for minors. Allowed values: null, Granted, Denied and NotRequired. Refer to the legal age group property definitions for further information. Supports $filter (eq, ne, not, and in).
   - `[ContactFolders <IMicrosoftGraphContactFolder[]>]`: The user's contacts folders. Read-only. Nullable.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -1801,11 +1807,11 @@ To create the parameters described below, construct a hash table containing the 
     - `[WellKnownName <String>]`: The name of the folder if the folder is a recognized folder. Currently contacts is the only recognized contacts folder.
   - `[Contacts <IMicrosoftGraphContact[]>]`: The user's contacts. Read-only. Nullable.
   - `[Country <String>]`: The country or region where the user is located; for example, US or UK. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-  - `[CreatedDateTime <DateTime?>]`: The date and time the user was created, in ISO 8601 format and in UTC time. The value cannot be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Azure AD. Property is null for some users created before June 2018 and on-premises users that were synced to Azure AD before June 2018. Read-only. Supports $filter (eq, ne, not , ge, le, in).
+  - `[CreatedDateTime <DateTime?>]`: The date and time the user was created in ISO 8601 format and UTC. The value cannot be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Microsoft Entra ID. Property is null for some users created before June 2018 and on-premises users synced to Microsoft Entra ID before June 2018. Read-only. Supports $filter (eq, ne, not , ge, le, in).
   - `[CreatedObjects <IMicrosoftGraphDirectoryObject[]>]`: Directory objects that the user created. Read-only. Nullable.
   - `[CreationType <String>]`: Indicates whether the user account was created through one of the following methods:  As a regular school or work account (null). As an external account (Invitation). As a local account for an Azure Active Directory B2C tenant (LocalAccount). Through self-service sign-up by an internal user using email verification (EmailVerified). Through self-service sign-up by an external user signing up through a link that is part of a user flow (SelfServiceSignUp).  Read-only.Supports $filter (eq, ne, not, and in).
   - `[CustomSecurityAttributes <IMicrosoftGraphCustomSecurityAttributeValue>]`: customSecurityAttributeValue
-  - `[Department <String>]`: The name for the department in which the user works. Maximum length is 64 characters.Supports $filter (eq, ne, not , ge, le, in, and eq on null values).
+  - `[Department <String>]`: The name of the department where the user works. Maximum length is 64 characters.Supports $filter (eq, ne, not , ge, le, in, and eq on null values).
   - `[DeviceEnrollmentConfigurations <IMicrosoftGraphDeviceEnrollmentConfiguration[]>]`: Get enrollment configurations targeted to the user
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Assignments <IMicrosoftGraphEnrollmentConfigurationAssignment[]>]`: The list of group assignments for the device configuration profile
@@ -1845,8 +1851,8 @@ To create the parameters described below, construct a hash table containing the 
         - `[Link <String>]`: The link to the web resource. Can contain any of the following formatters: {{UPN}}, {{DeviceGUID}}, {{UserGUID}}
         - `[Text <String>]`: Not yet documented
   - `[Devices <IMicrosoftGraphDevice[]>]`: 
-  - `[DirectReports <IMicrosoftGraphDirectoryObject[]>]`: The users and contacts that report to the user. (The users and contacts that have their manager property set to this user.) Read-only. Nullable. Supports $expand.
-  - `[DisplayName <String>]`: The name displayed in the address book for the user. This value is usually the combination of the user's first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates. Maximum length is 256 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values), $orderby, and $search.
+  - `[DirectReports <IMicrosoftGraphDirectoryObject[]>]`: The users and contacts that report to the user. (The users and contacts with their manager property set to this user.) Read-only. Nullable. Supports $expand.
+  - `[DisplayName <String>]`: The name displayed in the address book for the user. This value is usually the combination of the user's first name, middle initial, and last name. This property is required when a user is created, and it cannot be cleared during updates. Maximum length is 256 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values), $orderby, and $search.
   - `[Drive <IMicrosoftGraphDrive>]`: drive
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -2101,8 +2107,8 @@ To create the parameters described below, construct a hash table containing the 
             - `[Group <IMicrosoftGraphIdentity>]`: identity
             - `[SiteGroup <IMicrosoftGraphSharePointIdentity>]`: sharePointIdentity
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-              - `[Id <String>]`: Unique identifier for the identity.
+              - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+              - `[Id <String>]`: The identifier of the identity. This property is read-only.
               - `[LoginName <String>]`: The sign in name of the SharePoint identity.
             - `[SiteUser <IMicrosoftGraphSharePointIdentity>]`: sharePointIdentity
           - `[GrantedToV2 <IMicrosoftGraphSharePointIdentitySet>]`: sharePointIdentitySet
@@ -2181,7 +2187,7 @@ To create the parameters described below, construct a hash table containing the 
           - `[Id <String>]`: The unique identifier for an entity. Read-only.
           - `[IsLabelAppliedExplicitly <Boolean?>]`: Specifies whether the label is applied explicitly on the item. True indicates that the label is applied explicitly; otherwise, the label is inherited from its parent. Read-only.
           - `[LabelAppliedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-          - `[LabelAppliedDateTime <DateTime?>]`: The date and time when the label was applied on the item. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+          - `[LabelAppliedDateTime <DateTime?>]`: The date and time when the label was applied on the item. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
           - `[Name <String>]`: The retention label on the document. Read-write.
           - `[RetentionSettings <IMicrosoftGraphRetentionLabelSettings>]`: retentionLabelSettings
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -2221,7 +2227,7 @@ To create the parameters described below, construct a hash table containing the 
           - `[NotificationUrl <String>]`: Required. The URL of the endpoint that receives the change notifications. This URL must make use of the HTTPS protocol. Any query string parameter included in the notificationUrl property will be included in the HTTP POST request when Microsoft Graph sends the change notifications.
           - `[NotificationUrlAppId <String>]`: Optional. The app ID that the subscription service can use to generate the validation token. This allows the client to validate the authenticity of the notification received.
           - `[Resource <String>]`: Required. Specifies the resource that will be monitored for changes. Do not include the base URL (https://graph.microsoft.com/beta/). See the possible resource path values for each supported resource.
-        - `[Thumbnails <IMicrosoftGraphThumbnailSet[]>]`: Collection containing [ThumbnailSet][] objects associated with the item. For more info, see [getting thumbnails][]. Read-only. Nullable.
+        - `[Thumbnails <IMicrosoftGraphThumbnailSet[]>]`: Collection of [thumbnailSet][] objects associated with the item. For more information, see [getting thumbnails][]. Read-only. Nullable.
           - `[Id <String>]`: The unique identifier for an entity. Read-only.
           - `[Large <IMicrosoftGraphThumbnail>]`: thumbnail
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -2760,15 +2766,15 @@ To create the parameters described below, construct a hash table containing the 
       - `[LearningContentId <String>]`: The ID of the learning content created in Viva Learning. Required.
       - `[LearningProviderId <String>]`: The registration ID of the provider. Required.
       - `[Status <String>]`: courseStatus
-  - `[EmployeeHireDate <DateTime?>]`: The date and time when the user was hired or will start work in case of a future hire. Supports $filter (eq, ne, not , ge, le, in).
+  - `[EmployeeHireDate <DateTime?>]`: The date and time when the user was hired or will start work if there is a future hire. Supports $filter (eq, ne, not , ge, le, in).
   - `[EmployeeId <String>]`: The employee identifier assigned to the user by the organization. The maximum length is 16 characters.Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
-  - `[EmployeeLeaveDateTime <DateTime?>]`: The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs one of the following Azure AD roles: Lifecycle Workflows Administrator, Global Reader, or Global Administrator. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.
+  - `[EmployeeLeaveDateTime <DateTime?>]`: The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs one of the following Microsoft Entra roles: Lifecycle Workflows Administrator, Global Reader, or Global Administrator. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.
   - `[EmployeeOrgData <IMicrosoftGraphEmployeeOrgData>]`: employeeOrgData
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[CostCenter <String>]`: The cost center associated with the user. Returned only on $select. Supports $filter.
     - `[Division <String>]`: The name of the division in which the user works. Returned only on $select. Supports $filter.
   - `[EmployeeType <String>]`: Captures enterprise worker type. For example, Employee, Contractor, Consultant, or Vendor. Supports $filter (eq, ne, not , ge, le, in, startsWith).
-  - `[Events <IMicrosoftGraphEvent[]>]`: The user's events. Default is to show events under the Default Calendar. Read-only. Nullable.
+  - `[Events <IMicrosoftGraphEvent[]>]`: The user's events. The default is to show events under the Default Calendar. Read-only. Nullable.
   - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the user. Supports $expand. Nullable.
   - `[ExternalUserState <String>]`: For an external user invited to the tenant using the invitation API, this property represents the invited user's invitation status. For invited users, the state can be PendingAcceptance or Accepted, or null for all other users. Supports $filter (eq, ne, not , in).
   - `[ExternalUserStateChangeDateTime <String>]`: Shows the timestamp for the latest change to the externalUserState property. Supports $filter (eq, ne, not , in).
@@ -2802,7 +2808,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
         - `[RecoveryKeys <IMicrosoftGraphBitlockerRecoveryKey[]>]`: The recovery keys associated with the bitlocker entity.
           - `[Id <String>]`: The unique identifier for an entity. Read-only.
-          - `[CreatedDateTime <DateTime?>]`: The date and time when the key was originally backed up to Azure Active Directory.
+          - `[CreatedDateTime <DateTime?>]`: The date and time when the key was originally backed up to Microsoft Entra ID.
           - `[DeviceId <String>]`: ID of the device the BitLocker key is originally backed up from.
           - `[Key <String>]`: The BitLocker recovery key.
           - `[VolumeType <String>]`: volumeType
@@ -3045,12 +3051,12 @@ To create the parameters described below, construct a hash table containing the 
       - `[LanguageTags <String[]>]`: List of languages for the term store.
       - `[Sets <IMicrosoftGraphTermStoreSet[]>]`: Collection of all sets available in the term store.
   - `[GivenName <String>]`: The given name (first name) of the user. Maximum length is 64 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
-  - `[HireDate <DateTime?>]`: The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.
-  - `[Identities <IMicrosoftGraphObjectIdentity[]>]`: Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft, and tied to a user account. May contain multiple items with the same signInType value. Supports $filter (eq) including on null values, only where the signInType is not userPrincipalName.
-    - `[Issuer <String>]`: Specifies the issuer of the identity, for example facebook.com.For local accounts (where signInType isn't federated), this property is the local B2C tenant default domain name, for example contoso.onmicrosoft.com.For guests from other Azure AD organization, this is the domain of the federated organization, for example contoso.com.Supports $filter. 512 character limit.
+  - `[HireDate <DateTime?>]`: The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.
+  - `[Identities <IMicrosoftGraphObjectIdentity[]>]`: Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft and tied to a user account. It may contain multiple items with the same signInType value. Supports $filter (eq) including on null values, only where the signInType is not userPrincipalName.
+    - `[Issuer <String>]`: Specifies the issuer of the identity, for example facebook.com.For local accounts (where signInType isn't federated), this property is the local B2C tenant default domain name, for example contoso.onmicrosoft.com.For guests from other Microsoft Entra organization, this is the domain of the federated organization, for example contoso.com.Supports $filter. 512 character limit.
     - `[IssuerAssignedId <String>]`: Specifies the unique identifier assigned to the user by the issuer. The combination of issuer and issuerAssignedId must be unique within the organization. Represents the sign-in name for the user, when signInType is set to emailAddress or userName (also known as local accounts).When signInType is set to: emailAddress, (or a custom string that starts with emailAddress like emailAddress1) issuerAssignedId must be a valid email addressuserName, issuerAssignedId must begin with an alphabetical character or number, and can only contain alphanumeric characters and the following symbols: - or Supports $filter. 64 character limit.
     - `[SignInType <String>]`: Specifies the user sign-in types in your directory, such as emailAddress, userName, federated, or userPrincipalName. federated represents a unique identifier for a user from an issuer, that can be in any format chosen by the issuer. Setting or updating a userPrincipalName identity will update the value of the userPrincipalName property on the user object. The validations performed on the userPrincipalName property on the user object, for example, verified domains and acceptable characters, will be performed when setting or updating a userPrincipalName identity. Extra validation is enforced on issuerAssignedId when the sign-in type is set to emailAddress or userName. This property can also be set to any custom string.
-  - `[ImAddresses <String[]>]`: The instant message voice over IP (VOIP) session initiation protocol (SIP) addresses for the user. Read-only. Supports $filter (eq, not, ge, le, startsWith).
+  - `[ImAddresses <String[]>]`: The instant message voice-over IP (VOIP) session initiation protocol (SIP) addresses for the user. Read-only. Supports $filter (eq, not, ge, le, startsWith).
   - `[InferenceClassification <IMicrosoftGraphInferenceClassification>]`: inferenceClassification
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -3112,23 +3118,23 @@ To create the parameters described below, construct a hash table containing the 
       - `[ResourceReference <IMicrosoftGraphResourceReference>]`: resourceReference
       - `[ResourceVisualization <IMicrosoftGraphResourceVisualization>]`: resourceVisualization
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[Interests <String[]>]`: A list for the user to describe their interests. Returned only on $select.
+  - `[Interests <String[]>]`: A list for users to describe their interests. Returned only on $select.
   - `[IsLicenseReconciliationNeeded <Boolean?>]`: Indicates whether the user is pending an exchange mailbox license assignment.  Read-only.  Supports $filter (eq where true only).
-  - `[IsManagementRestricted <Boolean?>]`: true if the user is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.  To manage a user who is a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.
+  - `[IsManagementRestricted <Boolean?>]`: true if the user is a member of a restricted management administrative unit, which requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.  To manage a user who is a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.
   - `[IsResourceAccount <Boolean?>]`: Do not use – reserved for future use.
   - `[JobTitle <String>]`: The user's job title. Maximum length is 128 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
   - `[JoinedGroups <IMicrosoftGraphGroup[]>]`: 
     - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[AcceptedSenders <IMicrosoftGraphDirectoryObject[]>]`: The list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.
+    - `[AcceptedSenders <IMicrosoftGraphDirectoryObject[]>]`: The list of users or groups allowed to create posts or calendar events in this group. If this list is non-empty, then only users or groups listed here can post.
     - `[AccessType <String>]`: groupAccessType
-    - `[AllowExternalSenders <Boolean?>]`: Indicates if people external to the organization can send messages to the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
+    - `[AllowExternalSenders <Boolean?>]`: Indicates if people external to the organization can send messages to the group. The default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
     - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment[]>]`: Represents the app roles a group has been granted for an application. Supports $expand.
     - `[AssignedLabels <IMicrosoftGraphAssignedLabel[]>]`: The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select.
       - `[DisplayName <String>]`: The display name of the label. Read-only.
       - `[LabelId <String>]`: The unique identifier of the label.
     - `[AssignedLicenses <IMicrosoftGraphAssignedLicense[]>]`: The licenses that are assigned to the group. Returned only on $select. Supports $filter (eq). Read-only.
-    - `[AutoSubscribeNewMembers <Boolean?>]`: Indicates if new members added to the group will be auto-subscribed to receive email notifications. You can set this property in a PATCH request for the group; do not set it in the initial POST request that creates the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
+    - `[AutoSubscribeNewMembers <Boolean?>]`: Indicates if new members added to the group are auto-subscribed to receive email notifications. You can set this property in a PATCH request for the group; don't set it in the initial POST request that creates the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
     - `[Calendar <IMicrosoftGraphCalendar>]`: calendar
     - `[CalendarView <IMicrosoftGraphEvent[]>]`: The calendar view for the calendar. Read-only.
     - `[Classification <String>]`: Describes a classification for the group (such as low, medium or high business impact). Valid values for this property are defined by creating a ClassificationList setting value, based on the template definition.Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith).
@@ -3180,7 +3186,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[Topic <String>]`: The topic of the conversation. This property can be set when the conversation is created, but it cannot be updated.
       - `[UniqueSenders <String[]>]`: All the users that sent a message to this Conversation.
     - `[CreatedByAppId <String>]`: App ID of the app used to create the group. Can be null for some groups. Returned by default. Read-only. Supports $filter (eq, ne, not, in, startsWith).
-    - `[CreatedDateTime <DateTime?>]`: Timestamp of when the group was created. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only.
+    - `[CreatedDateTime <DateTime?>]`: Timestamp of when the group was created. The value can't be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only.
     - `[CreatedOnBehalfOf <IMicrosoftGraphDirectoryObject>]`: directoryObject
     - `[Description <String>]`: An optional description for the group. Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
     - `[DisplayName <String>]`: The display name for the group. Required. Maximum length is 256 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.
@@ -3188,23 +3194,23 @@ To create the parameters described below, construct a hash table containing the 
     - `[Drives <IMicrosoftGraphDrive[]>]`: The group's drives. Read-only.
     - `[Endpoints <IMicrosoftGraphEndpoint[]>]`: Endpoints for the group. Read-only. Nullable.
     - `[Events <IMicrosoftGraphEvent[]>]`: The group's events.
-    - `[ExpirationDateTime <DateTime?>]`: Timestamp of when the group is set to expire. Is null for security groups but for Microsoft 365 groups, it represents when the group is set to expire as defined in the groupLifecyclePolicy. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
+    - `[ExpirationDateTime <DateTime?>]`: Timestamp of when the group is set to expire. It is null for security groups, but for Microsoft 365 groups, it represents when the group is set to expire as defined in the groupLifecyclePolicy. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
     - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the group. Read-only. Nullable.
     - `[GroupLifecyclePolicies <IMicrosoftGraphGroupLifecyclePolicy[]>]`: The collection of lifecycle policies for this group. Read-only. Nullable.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[AlternateNotificationEmails <String>]`: List of email address to send notifications for groups without owners. Multiple email address can be defined by separating email address with a semicolon.
       - `[GroupLifetimeInDays <Int32?>]`: Number of days before a group expires and needs to be renewed. Once renewed, the group expiration is extended by the number of days defined.
       - `[ManagedGroupTypes <String>]`: The group type for which the expiration policy applies. Possible values are All, Selected or None.
-    - `[GroupTypes <String[]>]`: Specifies the group type and its membership. If the collection contains Unified, the group is a Microsoft 365 group; otherwise, it's either a security group or distribution group. For details, see groups overview.If the collection includes DynamicMembership, the group has dynamic membership; otherwise, membership is static. Returned by default. Supports $filter (eq, not).
+    - `[GroupTypes <String[]>]`: Specifies the group type and its membership. If the collection contains Unified, the group is a Microsoft 365 group; otherwise, it's either a security group or a distribution group. For details, see groups overview.If the collection includes DynamicMembership, the group has dynamic membership; otherwise, membership is static. Returned by default. Supports $filter (eq, not).
     - `[HasMembersWithLicenseErrors <Boolean?>]`: Indicates whether there are members in this group that have license errors from its group-based license assignment. This property is never returned on a GET operation. You can use it as a $filter argument to get groups that have members with license errors (that is, filter for this property being true).  Supports $filter (eq).
-    - `[HideFromAddressLists <Boolean?>]`: true if the group is not displayed in certain parts of the Outlook user interface: in the Address Book, in address lists for selecting message recipients, and in the Browse Groups dialog for searching groups; false otherwise. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
-    - `[HideFromOutlookClients <Boolean?>]`: true if the group is not displayed in Outlook clients, such as Outlook for Windows and Outlook on the web, false otherwise. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
+    - `[HideFromAddressLists <Boolean?>]`: true if the group isn't displayed in certain parts of the Outlook user interface: in the Address Book, in address lists for selecting message recipients, and in the Browse Groups dialog for searching groups; false otherwise. The default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
+    - `[HideFromOutlookClients <Boolean?>]`: true if the group isn't displayed in Outlook clients, such as Outlook for Windows and Outlook on the web, false otherwise. The default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
     - `[InfoCatalogs <String[]>]`: Identifies the info segments assigned to the group. Returned by default. Supports $filter (eq, not, ge, le, startsWith).
     - `[IsArchived <Boolean?>]`: When a group is associated with a team, this property determines whether the team is in read-only mode. To read this property, use the /group/{groupId}/team endpoint or the Get team API. To update this property, use the archiveTeam and unarchiveTeam APIs.
-    - `[IsAssignableToRole <Boolean?>]`: Indicates whether this group can be assigned to an Azure Active Directory role. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true,  visibility must be Hidden, and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Azure AD role assignmentsUsing this feature requires a Azure AD Premium P1 license. Returned by default. Supports $filter (eq, ne, not).
+    - `[IsAssignableToRole <Boolean?>]`: Indicates whether this group can be assigned to a Microsoft Entra role. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true,  visibility must be Hidden, and the group cannot be a dynamic group (that is, groupTypes can't contain DynamicMembership). Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Microsoft Entra role assignmentsUsing this feature requires a Microsoft Entra ID P1 license. Returned by default. Supports $filter (eq, ne, not).
     - `[IsFavorite <Boolean?>]`: 
-    - `[IsManagementRestricted <Boolean?>]`: Indicates whether the group is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.  To manage a group that's a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.
-    - `[IsSubscribedByMail <Boolean?>]`: Indicates whether the signed-in user is subscribed to receive email conversations. Default value is true. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
+    - `[IsManagementRestricted <Boolean?>]`: Indicates whether the group is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. The default value is false. Read-only.  To manage a group member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.
+    - `[IsSubscribedByMail <Boolean?>]`: Indicates whether the signed-in user is subscribed to receive email conversations. The default value is true. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
     - `[LicenseProcessingState <IMicrosoftGraphLicenseProcessingState>]`: licenseProcessingState
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[State <String>]`: 
@@ -3212,7 +3218,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[MailEnabled <Boolean?>]`: Specifies whether the group is mail-enabled. Required. Returned by default. Supports $filter (eq, ne, not, and eq on null values).
     - `[MailNickname <String>]`: The mail alias for the group, unique for Microsoft 365 groups in the organization. Maximum length is 64 characters. This property can contain only characters in the ASCII character set 0 - 127 except the following: @ () / [] ' ; : <> , SPACE. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith).
     - `[MemberOf <IMicrosoftGraphDirectoryObject[]>]`: Groups and administrative units that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.
-    - `[Members <IMicrosoftGraphDirectoryObject[]>]`: Direct members of this group, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).
+    - `[Members <IMicrosoftGraphDirectoryObject[]>]`: Direct group members, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).
     - `[MembersWithLicenseErrors <IMicrosoftGraphDirectoryObject[]>]`: A list of group members with license errors from this group-based license assignment. Read-only.
     - `[MembershipRule <String>]`: The rule that determines members for this group if the group is a dynamic group (groupTypes contains DynamicMembership). For more information about the syntax of the membership rule, see Membership Rules syntax. Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith).
     - `[MembershipRuleProcessingState <String>]`: Indicates whether the dynamic membership processing is on or paused. Possible values are On or Paused. Returned by default. Supports $filter (eq, ne, not, in).
@@ -3221,21 +3227,21 @@ To create the parameters described below, construct a hash table containing the 
       - `[ErrorMessage <String>]`: Detailed error message if dynamic group processing ran into an error.  Optional. Read-only.
       - `[LastMembershipUpdated <DateTime?>]`: Most recent date and time when membership of a dynamic group was updated.  Optional. Read-only.
       - `[Status <String>]`: MembershipRuleProcessingStatusDetails
-    - `[OnPremisesDomainName <String>]`: Contains the on-premises domain FQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect.Returned by default. Read-only.
-    - `[OnPremisesLastSyncDateTime <DateTime?>]`: Indicates the last time at which the group was synced with the on-premises directory.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in).
-    - `[OnPremisesNetBiosName <String>]`: Contains the on-premises netBios name synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect.Returned by default. Read-only.
+    - `[OnPremisesDomainName <String>]`: Contains the on-premises domain FQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect.Returned by default. Read-only.
+    - `[OnPremisesLastSyncDateTime <DateTime?>]`: Indicates the last time at which the group was synced with the on-premises directory.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in).
+    - `[OnPremisesNetBiosName <String>]`: Contains the on-premises netBios name synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect.Returned by default. Read-only.
     - `[OnPremisesProvisioningErrors <IMicrosoftGraphOnPremisesProvisioningError[]>]`: Errors when using Microsoft synchronization product during provisioning. Returned by default. Supports $filter (eq, not).
       - `[Category <String>]`: Category of the provisioning error. Note: Currently, there is only one possible value. Possible value: PropertyConflict - indicates a property value is not unique. Other objects contain the same value for the property.
       - `[OccurredDateTime <DateTime?>]`: The date and time at which the error occurred.
       - `[PropertyCausingError <String>]`: Name of the directory property causing the error. Current possible values: UserPrincipalName or ProxyAddress
       - `[Value <String>]`: Value of the property causing the error.
-    - `[OnPremisesSamAccountName <String>]`: Contains the on-premises SAM account name synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect.Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith). Read-only.
-    - `[OnPremisesSecurityIdentifier <String>]`: Contains the on-premises security identifier (SID) for the group that was synchronized from on-premises to the cloud. Returned by default. Supports $filter (eq including on null values). Read-only.
+    - `[OnPremisesSamAccountName <String>]`: Contains the on-premises SAM account name synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect.Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith). Read-only.
+    - `[OnPremisesSecurityIdentifier <String>]`: Contains the on-premises security identifier (SID) for the group synchronized from on-premises to the cloud. Returned by default. Supports $filter (eq including on null values). Read-only.
     - `[OnPremisesSyncEnabled <Boolean?>]`: true if this group is synced from an on-premises directory; false if this group was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Returned by default. Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
     - `[Onenote <IMicrosoftGraphOnenote>]`: onenote
     - `[OrganizationId <String>]`: 
-    - `[Owners <IMicrosoftGraphDirectoryObject[]>]`: The owners of the group who can be users or service principals. Nullable. If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner.  Supports $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1); Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).
-    - `[PermissionGrants <IMicrosoftGraphResourceSpecificPermissionGrant[]>]`: The permissions that have been granted for a group to a specific application. Supports $expand.
+    - `[Owners <IMicrosoftGraphDirectoryObject[]>]`: The owners of the group who can be users or service principals. Nullable. If this property isn't specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner.  Supports $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1); Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).
+    - `[PermissionGrants <IMicrosoftGraphResourceSpecificPermissionGrant[]>]`: The permissions granted for a group to a specific application. Supports $expand.
     - `[Photo <IMicrosoftGraphProfilePhoto>]`: profilePhoto
     - `[Photos <IMicrosoftGraphProfilePhoto[]>]`: The profile photos owned by the group. Read-only. Nullable.
     - `[Planner <IMicrosoftGraphPlannerGroup>]`: plannerGroup
@@ -3384,16 +3390,16 @@ To create the parameters described below, construct a hash table containing the 
           - `[AccessLevel <String>]`: plannerPlanAccessLevel
         - `[Tasks <IMicrosoftGraphPlannerTask[]>]`: Collection of tasks in the plan. Read-only. Nullable.
         - `[Title <String>]`: Required. Title of the plan.
-    - `[PreferredDataLocation <String>]`: The preferred data location for the Microsoft 365 group. By default, the group inherits the group creator's preferred data location. To set this property, the calling user must be assigned one of the following Azure AD roles:  Global Administrator  User Account Administrator Directory Writer  Exchange Administrator  SharePoint Administrator  For more information about this property, see OneDrive Online Multi-Geo. Nullable. Returned by default.
-    - `[PreferredLanguage <String>]`: The preferred language for a Microsoft 365 group. Should follow ISO 639-1 Code; for example en-US. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+    - `[PreferredDataLocation <String>]`: The preferred data location for the Microsoft 365 group. By default, the group inherits the group creator's preferred data location. To set this property, the calling app must be granted the Directory.ReadWrite.All permission and the user be assigned one of the following Microsoft Entra roles:  Global Administrator  User Account Administrator Directory Writer  Exchange Administrator  SharePoint Administrator  For more information about this property, see OneDrive Online Multi-Geo and Create a Microsoft 365 group with a specific PDL. Nullable. Returned by default.
+    - `[PreferredLanguage <String>]`: The preferred language for a Microsoft 365 group. Should follow ISO 639-1 Code; for example, en-US. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
     - `[ProxyAddresses <String[]>]`: Email addresses for the group that direct to the same group mailbox. For example: ['SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com']. The any operator is required for filter expressions on multi-valued properties. Returned by default. Read-only. Not nullable. Supports $filter (eq, not, ge, le, startsWith, endsWith, /$count eq 0, /$count ne 0).
-    - `[RejectedSenders <IMicrosoftGraphDirectoryObject[]>]`: The list of users or groups that are not allowed to create posts or calendar events in this group. Nullable
-    - `[RenewedDateTime <DateTime?>]`: Timestamp of when the group was last renewed. This cannot be modified directly and is only updated via the renew service action. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
+    - `[RejectedSenders <IMicrosoftGraphDirectoryObject[]>]`: The list of users or groups not allowed to create posts or calendar events in this group. Nullable
+    - `[RenewedDateTime <DateTime?>]`: Timestamp of when the group was last renewed. This cannot be modified directly and is only updated via the renew service action. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
     - `[ResourceBehaviorOptions <String[]>]`: Specifies the group behaviors that can be set for a Microsoft 365 group during creation. This can be set only as part of creation (POST). Possible values are AllowOnlyMembersToPost, HideGroupInOutlook, SubscribeNewGroupMembers, WelcomeEmailDisabled. For more information, see Set Microsoft 365 group behaviors and provisioning options.
-    - `[ResourceProvisioningOptions <String[]>]`: Specifies the group resources that are provisioned as part of Microsoft 365 group creation, that are not normally part of default group creation. Possible value is Team. For more information, see Set Microsoft 365 group behaviors and provisioning options. Returned by default. Supports $filter (eq, not, startsWith.
+    - `[ResourceProvisioningOptions <String[]>]`: Specifies the group resources that are provisioned as part of Microsoft 365 group creation that isn't normally part of default group creation. The possible value is Team. For more information, see Set Microsoft 365 group behaviors and provisioning options. Returned by default. Supports $filter (eq, not, startsWith.
     - `[SecurityEnabled <Boolean?>]`: Specifies whether the group is a security group. Required.Returned by default. Supports $filter (eq, ne, not, in).
     - `[SecurityIdentifier <String>]`: Security identifier of the group, used in Windows scenarios. Returned by default.
-    - `[ServiceProvisioningErrors <IMicrosoftGraphServiceProvisioningError[]>]`: Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a group object .  Supports $filter (eq, not, for isResolved and serviceInstance).
+    - `[ServiceProvisioningErrors <IMicrosoftGraphServiceProvisioningError[]>]`: Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a group object.
       - `[CreatedDateTime <DateTime?>]`: The date and time at which the error occurred.
       - `[IsResolved <Boolean?>]`: Indicates whether the Error has been attended to.
       - `[ServiceInstance <String>]`: Qualified service instance (for example, 'SharePoint/Dublin') that published the service error information.
@@ -3428,7 +3434,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[SharedWithTeams <IMicrosoftGraphSharedWithChannelTeamInfo[]>]`: A collection of teams with which a channel is shared.
           - `[DisplayName <String>]`: The name of the team.
           - `[Team <IMicrosoftGraphTeam>]`: team
-          - `[TenantId <String>]`: The ID of the Azure Active Directory tenant.
+          - `[TenantId <String>]`: The ID of the Microsoft Entra tenant.
           - `[Id <String>]`: The unique identifier for an entity. Read-only.
           - `[AllowedMembers <IMicrosoftGraphConversationMember[]>]`: A collection of team members who have access to the shared channel.
           - `[IsHostTeam <Boolean?>]`: Indicates whether the team is the host of the channel.
@@ -3439,7 +3445,7 @@ To create the parameters described below, construct a hash table containing the 
           - `[MembersCount <Int32?>]`: Count of members in a channel.
           - `[OwnersCount <Int32?>]`: Count of owners in a channel.
         - `[Tabs <IMicrosoftGraphTeamsTab[]>]`: A collection of all the tabs in the channel. A navigation property.
-        - `[TenantId <String>]`: The ID of the Azure Active Directory tenant.
+        - `[TenantId <String>]`: The ID of the Microsoft Entra tenant.
         - `[WebUrl <String>]`: A hyperlink that will go to the channel in Microsoft Teams. This is the URL that you get when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.
       - `[Channels <IMicrosoftGraphChannel[]>]`: The collection of channels and messages associated with the team.
       - `[Classification <String>]`: An optional label. Typically describes the data or business sensitivity of the team. Must match one of a pre-configured set in the tenant's directory.
@@ -3489,6 +3495,13 @@ To create the parameters described below, construct a hash table containing the 
       - `[Schedule <IMicrosoftGraphSchedule>]`: schedule
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
+        - `[DayNotes <IMicrosoftGraphDayNote[]>]`: 
+          - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
+          - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
+          - `[Id <String>]`: The unique identifier for an entity. Read-only.
+          - `[DayNoteDate <DateTime?>]`: 
+          - `[DraftDayNote <IMicrosoftGraphItemBody>]`: itemBody
+          - `[SharedDayNote <IMicrosoftGraphItemBody>]`: itemBody
         - `[Enabled <Boolean?>]`: Indicates whether the schedule is enabled for the team. Required.
         - `[OfferShiftRequests <IMicrosoftGraphOfferShiftRequest[]>]`: The offer requests for shifts in the schedule.
           - `[AssignedTo <String>]`: scheduleChangeRequestActor
@@ -3631,7 +3644,7 @@ To create the parameters described below, construct a hash table containing the 
           - `[IsStagedForDeletion <Boolean?>]`: 
           - `[SharedTimeOff <IMicrosoftGraphTimeOffItem>]`: timeOffItem
           - `[UserId <String>]`: ID of the user assigned to the timeOff. Required.
-        - `[WorkforceIntegrationIds <String[]>]`: 
+        - `[WorkforceIntegrationIds <String[]>]`: The Ids for the workforce integrations associated with this schedule.
       - `[Specialization <String>]`: teamSpecialization
       - `[Summary <IMicrosoftGraphTeamSummary>]`: teamSummary
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -3668,26 +3681,26 @@ To create the parameters described below, construct a hash table containing the 
         - `[PublisherName <String>]`: The organization which published the team template.
         - `[ShortDescription <String>]`: A short-description of the team template as it will appear to the users in Microsoft Teams.
         - `[TeamDefinition <IMicrosoftGraphTeam>]`: team
-      - `[TenantId <String>]`: The ID of the Azure Active Directory tenant.
+      - `[TenantId <String>]`: The ID of the Microsoft Entra tenant.
       - `[Visibility <String>]`: teamVisibilityType
       - `[WebUrl <String>]`: A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.
     - `[Theme <String>]`: Specifies a Microsoft 365 group's color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.
     - `[Threads <IMicrosoftGraphConversationThread[]>]`: The group's conversation threads. Nullable.
-    - `[TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>]`: The groups that a group is a member of, either directly and through nested membership. Nullable.
+    - `[TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>]`: The groups a group is a member of, either directly or through nested membership. Nullable.
     - `[TransitiveMembers <IMicrosoftGraphDirectoryObject[]>]`: The direct and transitive members of a group. Nullable.
     - `[UniqueName <String>]`: 
-    - `[UnseenConversationsCount <Int32?>]`: Count of conversations that have been delivered one or more new posts since the signed-in user's last visit to the group. This property is the same as unseenCount. Returned only on $select.
+    - `[UnseenConversationsCount <Int32?>]`: Count of conversations delivered one or more new posts since the signed-in user's last visit to the group. This property is the same as unseenCount. Returned only on $select.
     - `[UnseenCount <Int32?>]`: Count of conversations that have received new posts since the signed-in user last visited the group. This property is the same as unseenConversationsCount.Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
     - `[UnseenMessagesCount <Int32?>]`: Count of new posts that have been delivered to the group's conversations since the signed-in user's last visit to the group. Returned only on $select.
-    - `[Visibility <String>]`: Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups, when the groups are created. It can't be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. To learn more, see group visibility options. Returned by default. Nullable.
+    - `[Visibility <String>]`: Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups when the groups are created. It can't be updated later. Other values of visibility can be updated after group creation. If visibility value isn't specified during group creation on Microsoft Graph, a security group is created as Private by default, and Microsoft 365 group is Public. Groups assignable to roles are always Private. To learn more, see group visibility options. Returned by default. Nullable.
     - `[WritebackConfiguration <IMicrosoftGraphGroupWritebackConfiguration>]`: groupWritebackConfiguration
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[IsEnabled <Boolean?>]`: Indicates whether writeback of cloud groups to on-premise Active Directory is enabled. Default value is true for Microsoft 365 groups and false for security groups.
-      - `[OnPremisesGroupType <String>]`: Indicates the target on-premises group type the cloud object is written back as. Nullable. The possible values are: universalDistributionGroup, universalSecurityGroup, universalMailEnabledSecurityGroup.If the cloud group is a unified (Microsoft 365) group, this property can be one of the following: universalDistributionGroup, universalSecurityGroup, universalMailEnabledSecurityGroup. Azure AD security groups can be written back as universalSecurityGroup. If isEnabled or the NewUnifiedGroupWritebackDefault group setting is true but this property isn't explicitly configured: Microsoft 365 groups are written back as universalDistributionGroup by defaultSecurity groups are written back as universalSecurityGroup by default
-  - `[JoinedTeams <IMicrosoftGraphTeam[]>]`: The Microsoft Teams teams that the user is a member of. Read-only. Nullable.
-  - `[LastPasswordChangeDateTime <DateTime?>]`: The time when this Azure AD user last changed their password or when their password was created, whichever date the latest action was performed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Returned only on $select.
-  - `[LegalAgeGroupClassification <String>]`: Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, MinorWithOutParentalConsent, MinorWithParentalConsent, MinorNoParentalConsentRequired, NotAdult and Adult. For more information, see legal age group property definitions. Returned only on $select.
-  - `[LicenseAssignmentStates <IMicrosoftGraphLicenseAssignmentState[]>]`: State of license assignments for this user. Also indicates licenses that are directly assigned and those that the user has inherited through group memberships. Read-only. Returned only on $select.
+      - `[OnPremisesGroupType <String>]`: Indicates the target on-premises group type the cloud object is written back as. Nullable. The possible values are: universalDistributionGroup, universalSecurityGroup, universalMailEnabledSecurityGroup.If the cloud group is a unified (Microsoft 365) group, this property can be one of the following: universalDistributionGroup, universalSecurityGroup, universalMailEnabledSecurityGroup. Microsoft Entra security groups can be written back as universalSecurityGroup. If isEnabled or the NewUnifiedGroupWritebackDefault group setting is true but this property isn't explicitly configured: Microsoft 365 groups are written back as universalDistributionGroup by defaultSecurity groups are written back as universalSecurityGroup by default
+  - `[JoinedTeams <IMicrosoftGraphTeam[]>]`: The Microsoft Teams teams the user is a member of. Read-only. Nullable.
+  - `[LastPasswordChangeDateTime <DateTime?>]`: When this Microsoft Entra user last changed their password or when their password was created, whichever date the latest action was performed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Returned only on $select.
+  - `[LegalAgeGroupClassification <String>]`: Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, MinorWithOutParentalConsent, MinorWithParentalConsent, MinorNoParentalConsentRequired, NotAdult, and Adult. For more information, see legal age group property definitions. Returned only on $select.
+  - `[LicenseAssignmentStates <IMicrosoftGraphLicenseAssignmentState[]>]`: State of license assignments for this user. It also indicates licenses that are directly assigned and the ones the user inherited through group memberships. Read-only. Returned only on $select.
     - `[AssignedByGroup <String>]`: Indicates whether the license is directly-assigned or inherited from a group. If directly-assigned, this field is null; if inherited through a group membership, this field contains the ID of the group. Read-Only.
     - `[DisabledPlans <String[]>]`: The service plans that are disabled in this assignment. Read-Only.
     - `[Error <String>]`: License assignment failure error. If the license is assigned successfully, this field will be Null. Read-Only. The possible values are CountViolation, MutuallyExclusiveViolation, DependencyViolation, ProhibitedInUsageLocationViolation, UniquenessViolation, and Other. For more information on how to identify and resolve license assignment errors, see here.
@@ -3695,7 +3708,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[SkuId <String>]`: The unique identifier for the SKU. Read-Only.
     - `[State <String>]`: Indicate the current state of this assignment. Read-Only. The possible values are Active, ActiveWithError, Disabled, and Error.
   - `[LicenseDetails <IMicrosoftGraphLicenseDetails[]>]`: 
-  - `[Mail <String>]`: The SMTP address for the user, for example, admin@contoso.com. Changes to this property also updates the user's proxyAddresses collection to include the value as an SMTP address. This property can't contain accent characters.  NOTE: We don't recommend updating this property for Azure AD B2C user profiles. Use the otherMails property instead.  Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith, and eq on null values).
+  - `[Mail <String>]`: The SMTP address for the user, for example, admin@contoso.com. Changes to this property also update the user's proxyAddresses collection to include the value as an SMTP address. This property can't contain accent characters.  NOTE: We don't recommend updating this property for Azure AD B2C user profiles. Use the otherMails property instead.  Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith, and eq on null values).
   - `[MailFolders <IMicrosoftGraphMailFolder[]>]`: The user's mail folders. Read-only. Nullable.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[ChildFolderCount <Int32?>]`: The number of immediate child mailFolders in the current mailFolder.
@@ -4033,6 +4046,9 @@ To create the parameters described below, construct a hash table containing the 
       - `[RemediationScriptError <String>]`: Error output of the remediation script
       - `[RemediationState <RemediationState?>]`: Indicates the type of execution status of the device management script.
       - `[UserName <String>]`: Name of the user whom ran the device health script
+    - `[DeviceIdentityAttestationDetail <IMicrosoftGraphDeviceIdentityAttestationDetail>]`: Indicates the attestation status of the managed device
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[DeviceIdentityAttestationStatus <DeviceIdentityAttestationStatus?>]`: Indicates the state of the anomaly. Eg: anomaly severity can be new, active, disabled, removed or other.
     - `[DeviceRegistrationState <DeviceRegistrationState?>]`: Device registration status.
     - `[DeviceType <DeviceType?>]`: Device type.
     - `[ExchangeAccessState <DeviceManagementExchangeAccessState?>]`: Device Exchange Access State.
@@ -4187,7 +4203,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[SignatureVersion <String>]`: Current malware definitions version
       - `[TamperProtectionEnabled <Boolean?>]`: When TRUE indicates the Windows Defender tamper protection feature is enabled, when FALSE indicates the Windows Defender tamper protection feature is not enabled. Defaults to setting on client device.
   - `[Manager <IMicrosoftGraphDirectoryObject>]`: directoryObject
-  - `[MemberOf <IMicrosoftGraphDirectoryObject[]>]`: The groups, directory roles and administrative units that the user is a member of. Read-only. Nullable. Supports $expand.
+  - `[MemberOf <IMicrosoftGraphDirectoryObject[]>]`: The groups, directory roles, and administrative units that the user is a member of. Read-only. Nullable. Supports $expand.
   - `[Messages <IMicrosoftGraphMessage[]>]`: The messages in a mailbox or folder. Read-only. Nullable.
   - `[MobileAppIntentAndStates <IMicrosoftGraphMobileAppIntentAndState[]>]`: The list of troubleshooting events for this user.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -4223,8 +4239,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[TroubleshootingErrorDetails <IMicrosoftGraphDeviceManagementTroubleshootingErrorDetails>]`: Object containing detailed information about the error and its remediation.
     - `[ManagedDeviceIdentifier <String>]`: Device identifier created or collected by Intune.
     - `[UserId <String>]`: Identifier for the user that tried to enroll the device.
-  - `[MobilePhone <String>]`: The primary cellular telephone number for the user. Read-only for users synced from on-premises directory.  Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values) and $search.
-  - `[MySite <String>]`: The URL for the user's personal site. Returned only on $select.
+  - `[MobilePhone <String>]`: The primary cellular telephone number for the user. Read-only for users synced from the on-premises directory.  Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values) and $search.
+  - `[MySite <String>]`: The URL for the user's site. Returned only on $select.
   - `[Notifications <IMicrosoftGraphNotification[]>]`: 
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[DisplayTimeToLive <Int32?>]`: Sets how long (in seconds) this notification content stays in each platform's notification viewer. For example, when the notification is delivered to a Windows device, the value of this property is passed on to ToastNotification.ExpirationTime, which determines how long the toast notification stays in the user's Windows Action Center.
@@ -4244,24 +4260,23 @@ To create the parameters described below, construct a hash table containing the 
       - `[PlatformTypes <String[]>]`: Use to filter the notification distribution to a specific platform or platforms. Valid values are Windows, iOS, Android and WebPush. By default, all push endpoint types (Windows, iOS, Android and WebPush) are enabled.
   - `[Oauth2PermissionGrants <IMicrosoftGraphOAuth2PermissionGrant[]>]`: 
   - `[OfficeLocation <String>]`: The office location in the user's place of business. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-  - `[OnPremisesDistinguishedName <String>]`: Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only.
-  - `[OnPremisesDomainName <String>]`: Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only.
+  - `[OnPremisesDistinguishedName <String>]`: Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only.
+  - `[OnPremisesDomainName <String>]`: Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only.
   - `[OnPremisesExtensionAttributes <IMicrosoftGraphOnPremisesExtensionAttributes>]`: onPremisesExtensionAttributes
-  - `[OnPremisesImmutableId <String>]`: This property is used to associate an on-premises Active Directory user account to their Azure AD user object. This property must be specified when creating a new user account in the Graph if you're using a federated domain for the user's userPrincipalName (UPN) property. Note: The $ and _ characters can't be used when specifying this property. Supports $filter (eq, ne, not, ge, le, in).
-  - `[OnPremisesLastSyncDateTime <DateTime?>]`: Indicates the last time at which the object was synced with the on-premises directory; for example: '2013-02-16T03:04:54Z'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, in).
+  - `[OnPremisesImmutableId <String>]`: This property associates an on-premises Active Directory user account to their Microsoft Entra user object. This property must be specified when creating a new user account in the Graph if you're using a federated domain for the user's userPrincipalName (UPN) property. Note: The $ and _ characters can't be used when specifying this property. Supports $filter (eq, ne, not, ge, le, in).
+  - `[OnPremisesLastSyncDateTime <DateTime?>]`: Indicates the last time at which the object was synced with the on-premises directory; for example: '2013-02-16T03:04:54Z'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, in).
   - `[OnPremisesProvisioningErrors <IMicrosoftGraphOnPremisesProvisioningError[]>]`: Errors when using Microsoft synchronization product during provisioning.  Supports $filter (eq, not, ge, le).
-  - `[OnPremisesSamAccountName <String>]`: Contains the on-premises sAMAccountName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith).
-  - `[OnPremisesSecurityIdentifier <String>]`: Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Read-only. Supports $filter (eq including on null values).
+  - `[OnPremisesSamAccountName <String>]`: Contains the on-premises sAMAccountName synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith).
+  - `[OnPremisesSecurityIdentifier <String>]`: Contains the on-premises security identifier (SID) for the user synchronized from on-premises to the cloud. Read-only. Supports $filter (eq including on null values).
   - `[OnPremisesSipInfo <IMicrosoftGraphOnPremisesSipInfo>]`: onPremisesSipInfo
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[IsSipEnabled <Boolean?>]`: Indicates whether the user is currently enabled for on-premises Skype for Business.
     - `[SipDeploymentLocation <String>]`: Indicates a fully qualified DNS name of the Microsoft Online Communications Server deployment.
     - `[SipPrimaryAddress <String>]`: Serves as a unique identifier for each user on the on-premises Skype for Business.
-  - `[OnPremisesSyncEnabled <Boolean?>]`: true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise the user isn't being synced and can be managed in Azure Active Directory (Azure AD). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
-  - `[OnPremisesUserPrincipalName <String>]`: Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith).
+  - `[OnPremisesSyncEnabled <Boolean?>]`: true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise, the user isn't being synced and can be managed in Microsoft Entra ID. Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
+  - `[OnPremisesUserPrincipalName <String>]`: Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith).
   - `[Onenote <IMicrosoftGraphOnenote>]`: onenote
-  - `[OnlineMeetings <IMicrosoftGraphOnlineMeeting[]>]`: Information about a meeting, including the URL used to join a meeting, the attendees' list, and the description.
-    - `[Id <String>]`: The unique identifier for an entity. Read-only.
+  - `[OnlineMeetings <IMicrosoftGraphOnlineMeeting[]>]`: Information about a meeting, including the URL used to join a meeting, the attendees list, and the description.
     - `[AllowAttendeeToEnableCamera <Boolean?>]`: Indicates whether attendees can turn on their camera.
     - `[AllowAttendeeToEnableMic <Boolean?>]`: Indicates whether attendees can turn on their microphone.
     - `[AllowMeetingChat <String>]`: meetingChatMode
@@ -4270,8 +4285,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[AllowTeamworkReactions <Boolean?>]`: Indicates if Teams reactions are enabled for the meeting.
     - `[AllowTranscription <Boolean?>]`: Indicates whether transcription is enabled for the meeting.
     - `[AllowedPresenters <String>]`: onlineMeetingPresenters
-    - `[AlternativeRecording <Byte[]>]`: 
-    - `[AnonymizeIdentityForRoles <String[]>]`: Specifies whose identity will be anonymized in the meeting. Possible values are: attendee. The attendee value cannot be removed through a PATCH operation once added.
+    - `[AnonymizeIdentityForRoles <String[]>]`: Specifies whose identity is anonymized in the meeting. Possible values are: attendee. The attendee value can't be removed through a PATCH operation once added.
     - `[AttendanceReports <IMicrosoftGraphMeetingAttendanceReport[]>]`: The attendance reports of an online meeting. Read-only.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[AttendanceRecords <IMicrosoftGraphAttendanceRecord[]>]`: List of attendance records of an attendance report. Read-only.
@@ -4288,7 +4302,6 @@ To create the parameters described below, construct a hash table containing the 
       - `[MeetingEndDateTime <DateTime?>]`: UTC time when the meeting ended. Read-only.
       - `[MeetingStartDateTime <DateTime?>]`: UTC time when the meeting started. Read-only.
       - `[TotalParticipantCount <Int32?>]`: Total number of participants. Read-only.
-    - `[AttendeeReport <Byte[]>]`: 
     - `[AudioConferencing <IMicrosoftGraphAudioConferencing>]`: audioConferencing
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[ConferenceId <String>]`: The conference id of the online meeting.
@@ -4297,6 +4310,38 @@ To create the parameters described below, construct a hash table containing the 
       - `[TollFreeNumbers <String[]>]`: List of toll-free numbers that are displayed in the meeting invite.
       - `[TollNumber <String>]`: 
       - `[TollNumbers <String[]>]`: List of toll numbers that are displayed in the meeting invite.
+    - `[ChatInfo <IMicrosoftGraphChatInfo>]`: chatInfo
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[MessageId <String>]`: The unique identifier for a message in a Microsoft Teams channel.
+      - `[ReplyChainMessageId <String>]`: The ID of the reply message.
+      - `[ThreadId <String>]`: The unique identifier for a thread in Microsoft Teams.
+    - `[ChatRestrictions <IMicrosoftGraphChatRestrictions>]`: chatRestrictions
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[AllowTextOnly <Boolean?>]`: 
+    - `[IsEndToEndEncryptionEnabled <Boolean?>]`: 
+    - `[IsEntryExitAnnounced <Boolean?>]`: Indicates whether to announce when callers join or leave.
+    - `[JoinInformation <IMicrosoftGraphItemBody>]`: itemBody
+    - `[JoinMeetingIdSettings <IMicrosoftGraphJoinMeetingIdSettings>]`: joinMeetingIdSettings
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[IsPasscodeRequired <Boolean?>]`: Indicates whether a passcode is required to join a meeting when using joinMeetingId. Optional.
+      - `[JoinMeetingId <String>]`: The meeting ID to be used to join a meeting. Optional. Read-only.
+      - `[Passcode <String>]`: The passcode to join a meeting.  Optional. Read-only.
+    - `[JoinWebUrl <String>]`: The join URL of the online meeting. Read-only.
+    - `[LobbyBypassSettings <IMicrosoftGraphLobbyBypassSettings>]`: lobbyBypassSettings
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[IsDialInBypassEnabled <Boolean?>]`: Specifies whether or not to always let dial-in callers bypass the lobby. Optional.
+      - `[Scope <String>]`: lobbyBypassScope
+    - `[RecordAutomatically <Boolean?>]`: Indicates whether to record the meeting automatically.
+    - `[ShareMeetingChatHistoryDefault <String>]`: meetingChatHistoryDefaultMode
+    - `[Subject <String>]`: The subject of the online meeting.
+    - `[VideoTeleconferenceId <String>]`: The video teleconferencing ID. Read-only.
+    - `[WatermarkProtection <IMicrosoftGraphWatermarkProtectionValues>]`: watermarkProtectionValues
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[IsEnabledForContentSharing <Boolean?>]`: Indicates whether to apply a watermark to any shared content.
+      - `[IsEnabledForVideo <Boolean?>]`: Indicates whether to apply a watermark to everyone's video feed.
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
+    - `[AlternativeRecording <Byte[]>]`: 
+    - `[AttendeeReport <Byte[]>]`: 
     - `[BroadcastRecording <Byte[]>]`: 
     - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings>]`: broadcastMeetingSettings
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -4311,32 +4356,11 @@ To create the parameters described below, construct a hash table containing the 
       - `[IsRecordingEnabled <Boolean?>]`: Indicates whether recording is enabled for this Teams live event. Default value is false.
       - `[IsVideoOnDemandEnabled <Boolean?>]`: Indicates whether video on demand is enabled for this Teams live event. Default value is false.
     - `[Capabilities <String[]>]`: 
-    - `[ChatInfo <IMicrosoftGraphChatInfo>]`: chatInfo
-      - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[MessageId <String>]`: The unique identifier for a message in a Microsoft Teams channel.
-      - `[ReplyChainMessageId <String>]`: The ID of the reply message.
-      - `[ThreadId <String>]`: The unique identifier for a thread in Microsoft Teams.
-    - `[ChatRestrictions <IMicrosoftGraphChatRestrictions>]`: chatRestrictions
-      - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[AllowTextOnly <Boolean?>]`: 
     - `[CreationDateTime <DateTime?>]`: The meeting creation time in UTC. Read-only.
     - `[EndDateTime <DateTime?>]`: The meeting end time in UTC.
     - `[ExternalId <String>]`: The external ID. A custom ID. Optional.
     - `[IsBroadcast <Boolean?>]`: 
-    - `[IsEndToEndEncryptionEnabled <Boolean?>]`: 
-    - `[IsEntryExitAnnounced <Boolean?>]`: Indicates whether to announce when callers join or leave.
-    - `[JoinInformation <IMicrosoftGraphItemBody>]`: itemBody
-    - `[JoinMeetingIdSettings <IMicrosoftGraphJoinMeetingIdSettings>]`: joinMeetingIdSettings
-      - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[IsPasscodeRequired <Boolean?>]`: Indicates whether a passcode is required to join a meeting when using joinMeetingId. Optional.
-      - `[JoinMeetingId <String>]`: The meeting ID to be used to join a meeting. Optional. Read-only.
-      - `[Passcode <String>]`: The passcode to join a meeting.  Optional. Read-only.
     - `[JoinUrl <String>]`: 
-    - `[JoinWebUrl <String>]`: The join URL of the online meeting. Read-only.
-    - `[LobbyBypassSettings <IMicrosoftGraphLobbyBypassSettings>]`: lobbyBypassSettings
-      - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[IsDialInBypassEnabled <Boolean?>]`: Specifies whether or not to always let dial-in callers bypass the lobby. Optional.
-      - `[Scope <String>]`: lobbyBypassScope
     - `[MeetingAttendanceReport <IMicrosoftGraphMeetingAttendanceReport>]`: meetingAttendanceReport
     - `[Participants <IMicrosoftGraphMeetingParticipants>]`: meetingParticipants
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -4347,12 +4371,11 @@ To create the parameters described below, construct a hash table containing the 
       - `[Contributors <IMicrosoftGraphMeetingParticipantInfo[]>]`: 
       - `[Organizer <IMicrosoftGraphMeetingParticipantInfo>]`: meetingParticipantInfo
       - `[Producers <IMicrosoftGraphMeetingParticipantInfo[]>]`: 
-    - `[RecordAutomatically <Boolean?>]`: Indicates whether to record the meeting automatically.
     - `[Recording <Byte[]>]`: 
     - `[Recordings <IMicrosoftGraphCallRecording[]>]`: The recordings of an online meeting. Read-only.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[Content <Byte[]>]`: The content of the recording. Read-only.
-      - `[CreatedDateTime <DateTime?>]`: Date and time at which the recording was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+      - `[CreatedDateTime <DateTime?>]`: Date and time at which the recording was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
       - `[MeetingId <String>]`: The unique identifier of the onlineMeeting related to this recording. Read-only.
       - `[MeetingOrganizer <IMicrosoftGraphIdentitySet>]`: identitySet
       - `[MeetingOrganizerId <String>]`: The unique identifier of the organizer of the onlineMeeting related to this recording. Read-only.
@@ -4379,9 +4402,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[DisplayName <String>]`: Display name of the speaker.
       - `[StartDateTime <DateTime?>]`: The meeting start time in UTC.
       - `[Subject <String>]`: The subject of the meeting.
-    - `[ShareMeetingChatHistoryDefault <String>]`: meetingChatHistoryDefaultMode
     - `[StartDateTime <DateTime?>]`: The meeting start time in UTC.
-    - `[Subject <String>]`: The subject of the online meeting.
     - `[Transcripts <IMicrosoftGraphCallTranscript[]>]`: The transcripts of an online meeting. Read-only.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[Content <Byte[]>]`: The content of the transcript. Read-only.
@@ -4391,11 +4412,6 @@ To create the parameters described below, construct a hash table containing the 
       - `[MeetingOrganizerId <String>]`: The unique identifier of the organizer of the onlineMeeting related to this transcript. Read-only.
       - `[MetadataContent <Byte[]>]`: The time-aligned metadata of the utterances in the transcript. Read-only.
       - `[TranscriptContentUrl <String>]`: The URL which can be used to access the content of the transcript. Read-only.
-    - `[VideoTeleconferenceId <String>]`: The video teleconferencing ID. Read-only.
-    - `[WatermarkProtection <IMicrosoftGraphWatermarkProtectionValues>]`: watermarkProtectionValues
-      - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[IsEnabledForContentSharing <Boolean?>]`: Indicates whether to apply a watermark to any shared content.
-      - `[IsEnabledForVideo <Boolean?>]`: Indicates whether to apply a watermark to everyone's video feed.
   - `[OtherMails <String[]>]`: A list of additional email addresses for the user; for example: ['bob@contoso.com', 'Robert@fabrikam.com'].NOTE: This property can't contain accent characters.Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).
   - `[Outlook <IMicrosoftGraphOutlookUser>]`: outlookUser
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -4444,16 +4460,16 @@ To create the parameters described below, construct a hash table containing the 
       - `[Name <String>]`: The name of the task group.
       - `[TaskFolders <IMicrosoftGraphOutlookTaskFolder[]>]`: The collection of task folders in the task group. Read-only. Nullable.
     - `[Tasks <IMicrosoftGraphOutlookTask[]>]`: 
-  - `[OwnedDevices <IMicrosoftGraphDirectoryObject[]>]`: Devices that are owned by the user. Read-only. Nullable. Supports $expand.
-  - `[OwnedObjects <IMicrosoftGraphDirectoryObject[]>]`: Directory objects that are owned by the user. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
-  - `[PasswordPolicies <String>]`: Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two may be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. For more information on the default password policies, see Azure AD password policies. Supports $filter (ne, not, and eq on null values).
+  - `[OwnedDevices <IMicrosoftGraphDirectoryObject[]>]`: Devices owned by the user. Read-only. Nullable. Supports $expand.
+  - `[OwnedObjects <IMicrosoftGraphDirectoryObject[]>]`: Directory objects owned by the user. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
+  - `[PasswordPolicies <String>]`: Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two may be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. For more information on the default password policies, see Microsoft Entra password policies. Supports $filter (ne, not, and eq on null values).
   - `[PasswordProfile <IMicrosoftGraphPasswordProfile>]`: passwordProfile
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[ForceChangePasswordNextSignIn <Boolean?>]`: true if the user must change her password on the next login; otherwise false. If not set, default is false.
     - `[ForceChangePasswordNextSignInWithMfa <Boolean?>]`: If true, at next sign-in, the user must perform a multi-factor authentication (MFA) before being forced to change their password. The behavior is identical to forceChangePasswordNextSignIn except that the user is required to first perform a multi-factor authentication before password change. After a password change, this property will be automatically reset to false. If not set, default is false.
     - `[Password <String>]`: The password for the user. This property is required when a user is created. It can be updated, but the user will be required to change the password on the next login. The password must satisfy minimum requirements as specified by the user's passwordPolicies property. By default, a strong password is required.
-  - `[PastProjects <String[]>]`: A list for the user to enumerate their past projects. Returned only on $select.
-  - `[PendingAccessReviewInstances <IMicrosoftGraphAccessReviewInstance[]>]`: Navigation property to get list of access reviews pending approval by reviewer.
+  - `[PastProjects <String[]>]`: A list for users to enumerate their past projects. Returned only on $select.
+  - `[PendingAccessReviewInstances <IMicrosoftGraphAccessReviewInstance[]>]`: Navigation property to get a list of access reviews pending approval by the reviewer.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[ContactedReviewers <IMicrosoftGraphAccessReviewReviewer[]>]`: Returns the collection of reviewers who were contacted to complete this review. While the reviewers and fallbackReviewers properties of the accessReviewScheduleDefinition might specify group owners or managers as reviewers, contactedReviewers returns their individual identities. Supports $select. Read-only.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -4465,8 +4481,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[AccessReviewId <String>]`: The identifier of the accessReviewInstance parent. Supports $select. Read-only.
       - `[AppliedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-        - `[Id <String>]`: Unique identifier for the identity.
+        - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+        - `[Id <String>]`: The identifier of the identity. This property is read-only.
         - `[IPAddress <String>]`: Indicates the client IP address used by user performing the activity (audit log only).
         - `[UserPrincipalName <String>]`: The userPrincipalName attribute of the user.
       - `[AppliedDateTime <DateTime?>]`: The timestamp when the approval decision was applied. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Supports $select. Read-only.
@@ -4527,7 +4543,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[JustificationRequiredOnApproval <Boolean?>]`: Indicates whether reviewers are required to provide justification with their decision. Default value is false.
         - `[MailNotificationsEnabled <Boolean?>]`: Indicates whether emails are enabled or disabled. Default value is false.
         - `[RecommendationInsightSettings <IMicrosoftGraphAccessReviewRecommendationInsightSetting[]>]`: Optional. Describes the types of insights that aid reviewers to make access review decisions. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its recommendationInsightSettings setting will be used instead of the value of this property.
-        - `[RecommendationLookBackDuration <TimeSpan?>]`: Optional field. Indicates the period of inactivity (with respect to the start date of the review instance) that recommendations will be configured from. The recommendation will be to deny if the user is inactive during the look-back duration. For reviews of groups and Azure AD roles, any duration is accepted. For reviews of applications, 30 days is the maximum duration. If not specified, the duration is 30 days. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its recommendationLookBackDuration setting will be used instead of the value of this property.
+        - `[RecommendationLookBackDuration <TimeSpan?>]`: Optional field. Indicates the period of inactivity (with respect to the start date of the review instance) that recommendations will be configured from. The recommendation will be to deny if the user is inactive during the look-back duration. For reviews of groups and Microsoft Entra roles, any duration is accepted. For reviews of applications, 30 days is the maximum duration. If not specified, the duration is 30 days. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its recommendationLookBackDuration setting will be used instead of the value of this property.
         - `[RecommendationsEnabled <Boolean?>]`: Indicates whether decision recommendations are enabled or disabled. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its recommendationsEnabled setting will be used instead of the value of this property.
         - `[Recurrence <IMicrosoftGraphPatternedRecurrence>]`: patternedRecurrence
         - `[ReminderNotificationsEnabled <Boolean?>]`: Indicates whether reminders are enabled or disabled. Default value is false.
@@ -4535,9 +4551,9 @@ To create the parameters described below, construct a hash table containing the 
         - `[DecisionsThatWillMoveToNextStage <String[]>]`: Indicate which decisions will go to the next stage. Can be a subset of Approve, Deny, Recommendation, or NotReviewed. If not provided, all decisions will go to the next stage. Optional.
         - `[DependsOn <String[]>]`: Defines the sequential or parallel order of the stages and depends on the stageId. Only sequential stages are currently supported. For example, if stageId is 2, then dependsOn must be 1. If stageId is 1, don't specify dependsOn. Required if stageId isn't 1.
         - `[DurationInDays <Int32?>]`: The duration of the stage. Required.  NOTE: The cumulative value of this property across all stages  1. Will override the instanceDurationInDays setting on the accessReviewScheduleDefinition object. 2. Can't exceed the length of one recurrence. That is, if the review recurs weekly, the cumulative durationInDays can't exceed 7.
-        - `[FallbackReviewers <IMicrosoftGraphAccessReviewReviewerScope[]>]`: If provided, the fallback reviewers are asked to complete a review if the primary reviewers don't exist. For example, if managers are selected as reviewers and a principal under review doesn't have a manager in Azure AD, the fallback reviewers are asked to review that principal. NOTE: The value of this property overrides the corresponding setting on the accessReviewScheduleDefinition object.
+        - `[FallbackReviewers <IMicrosoftGraphAccessReviewReviewerScope[]>]`: If provided, the fallback reviewers are asked to complete a review if the primary reviewers don't exist. For example, if managers are selected as reviewers and a principal under review doesn't have a manager in Microsoft Entra ID, the fallback reviewers are asked to review that principal. NOTE: The value of this property overrides the corresponding setting on the accessReviewScheduleDefinition object.
         - `[RecommendationInsightSettings <IMicrosoftGraphAccessReviewRecommendationInsightSetting[]>]`: 
-        - `[RecommendationLookBackDuration <TimeSpan?>]`: Optional field. Indicates the time period of inactivity (with respect to the start date of the review instance) from which that recommendations will be configured. The recommendation is to deny if the user is inactive during the look back duration. For reviews of groups and Azure AD roles, any duration is accepted. For reviews of applications, 30 days is the maximum duration. If not specified, the duration is 30 days. NOTE: The value of this property overrides the corresponding setting on the accessReviewScheduleDefinition object.
+        - `[RecommendationLookBackDuration <TimeSpan?>]`: Optional field. Indicates the time period of inactivity (with respect to the start date of the review instance) from which that recommendations will be configured. The recommendation is to deny if the user is inactive during the look back duration. For reviews of groups and Microsoft Entra roles, any duration is accepted. For reviews of applications, 30 days is the maximum duration. If not specified, the duration is 30 days. NOTE: The value of this property overrides the corresponding setting on the accessReviewScheduleDefinition object.
         - `[RecommendationsEnabled <Boolean?>]`: Indicates whether showing recommendations to reviewers is enabled. Required. NOTE: The value of this property overrides the corresponding setting on the accessReviewScheduleDefinition object.
         - `[Reviewers <IMicrosoftGraphAccessReviewReviewerScope[]>]`: Defines who the reviewers are. If none is specified, the review is a self-review (users review their own access).  For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API. NOTE: The value of this property overrides the corresponding setting on the accessReviewScheduleDefinition.
         - `[StageId <String>]`: Unique identifier of the accessReviewStageSettings. The stageId is used in dependsOn property to indicate the stage relationship. Required.
@@ -4553,13 +4569,13 @@ To create the parameters described below, construct a hash table containing the 
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[Decisions <IMicrosoftGraphAccessReviewInstanceDecisionItem[]>]`: Each user reviewed in an accessReviewStage has a decision item representing if they were approved, denied, or not yet reviewed.
       - `[EndDateTime <DateTime?>]`: DateTime when review stage is scheduled to end. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. This property is the cumulative total of the durationInDays for all stages. Read-only.
-      - `[FallbackReviewers <IMicrosoftGraphAccessReviewReviewerScope[]>]`: This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user's manager does not exist.
+      - `[FallbackReviewers <IMicrosoftGraphAccessReviewReviewerScope[]>]`: This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers are notified to take action if no users are found from the list of reviewers specified. This can occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user's manager does not exist.
       - `[Reviewers <IMicrosoftGraphAccessReviewReviewerScope[]>]`: This collection of access review scopes is used to define who the reviewers are. For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API.
       - `[StartDateTime <DateTime?>]`: DateTime when review stage is scheduled to start. May be in the future. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
       - `[Status <String>]`: Specifies the status of an accessReviewStage. Possible values: Initializing, NotStarted, Starting, InProgress, Completing, Completed, AutoReviewing, and AutoReviewed. Supports $orderby, and $filter (eq only). Read-only.
     - `[StartDateTime <DateTime?>]`: DateTime when review instance is scheduled to start. May be in the future. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $select. Read-only.
     - `[Status <String>]`: Specifies the status of an accessReview. Possible values: Initializing, NotStarted, Starting, InProgress, Completing, Completed, AutoReviewing, and AutoReviewed. Supports $select, $orderby, and $filter (eq only). Read-only.
-  - `[People <IMicrosoftGraphPerson[]>]`: Read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user's communication, collaboration and business relationships. A person is an aggregation of information from across mail, contacts and social networks.
+  - `[People <IMicrosoftGraphPerson[]>]`: Read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user's communication, collaboration, and business relationships. A person aggregates information from mail, contacts, and social networks.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Birthday <String>]`: The person's birthday.
     - `[CompanyName <String>]`: The name of the person's company.
@@ -4586,7 +4602,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[YomiCompany <String>]`: The phonetic Japanese name of the person's company.
   - `[PermissionGrants <IMicrosoftGraphResourceSpecificPermissionGrant[]>]`: List all resource-specific permission grants of a user.
   - `[Photo <IMicrosoftGraphProfilePhoto>]`: profilePhoto
-  - `[Photos <IMicrosoftGraphProfilePhoto[]>]`: 
+  - `[Photos <IMicrosoftGraphProfilePhoto[]>]`: The collection of the user's profile photos in different sizes. Read-only.
   - `[Planner <IMicrosoftGraphPlannerUser>]`: plannerUser
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -4603,7 +4619,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[Tasks <IMicrosoftGraphPlannerTask[]>]`: Read-only. Nullable. Returns the plannerTasks assigned to the user.
   - `[PostalCode <String>]`: The postal code for the user's postal address. The postal code is specific to the user's country/region. In the United States of America, this attribute contains the ZIP code. Maximum length is 40 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
   - `[PreferredDataLocation <String>]`: The preferred data location for the user. For more information, see OneDrive Online Multi-Geo.
-  - `[PreferredLanguage <String>]`: The preferred language for the user. The preferred language format is based on RFC 4646. The name is a combination of an ISO 639 two-letter lowercase culture code associated with the language, and an ISO 3166 two-letter uppercase subculture code associated with the country or region. Example: 'en-US', or 'es-ES'. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+  - `[PreferredLanguage <String>]`: The preferred language for the user. The preferred language format is based on RFC 4646. The name combines an ISO 639 two-letter lowercase culture code associated with the language and an ISO 3166 two-letter uppercase subculture code associated with the country or region. Example: 'en-US', or 'es-ES'. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
   - `[PreferredName <String>]`: The preferred name for the user. Not Supported. This attribute returns an empty string.Returned only on $select.
   - `[Presence <IMicrosoftGraphPresence>]`: presence
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -4777,9 +4793,9 @@ To create the parameters described below, construct a hash table containing the 
             - `[Id <String>]`: The unique identifier for an entity. Read-only.
             - `[CreatedBy <IMicrosoftGraphAppIdentity>]`: appIdentity
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[AppId <String>]`: Refers to the unique identifier representing Application Id in the Azure Active Directory.
+              - `[AppId <String>]`: Refers to the unique identifier representing Application Id in the Microsoft Entra ID.
               - `[DisplayName <String>]`: Refers to the application name displayed in the Microsoft Entra admin center.
-              - `[ServicePrincipalId <String>]`: Refers to the unique identifier indicating Service Principal Id in Azure Active Directory for the corresponding App.
+              - `[ServicePrincipalId <String>]`: Refers to the unique identifier indicating Service Principal Id in Microsoft Entra ID for the corresponding App.
               - `[ServicePrincipalName <String>]`: Refers to the Service Principal Name is the Application name in the tenant.
             - `[DisplayName <String>]`: The name of the printTaskDefinition.
             - `[Tasks <IMicrosoftGraphPrintTask[]>]`: A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
@@ -5110,7 +5126,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[Colleagues <IMicrosoftGraphRelatedPerson[]>]`: Colleagues that are associated with this position.
         - `[DisplayName <String>]`: Name of the person.
         - `[Relationship <String>]`: personRelationship
-        - `[UserPrincipalName <String>]`: Email address or reference to person within organization.
+        - `[UserId <String>]`: The user's directory object ID (Microsoft Entra ID or CID).
+        - `[UserPrincipalName <String>]`: Email address or reference to person within the organization.
       - `[Detail <IMicrosoftGraphPositionDetail>]`: positionDetail
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Company <IMicrosoftGraphCompanyDetail>]`: companyDetail
@@ -5124,9 +5141,11 @@ To create the parameters described below, construct a hash table containing the 
         - `[Description <String>]`: Description of the position in question.
         - `[EndMonthYear <DateTime?>]`: When the position ended.
         - `[JobTitle <String>]`: The title held when in that position.
+        - `[Layer <Int32?>]`: The place where the employee is within the organizational hierarchy.
+        - `[Level <String>]`: The employee’s experience or management level.
         - `[Role <String>]`: The role the position entailed.
         - `[StartMonthYear <DateTime?>]`: The start month and year of the position.
-        - `[Summary <String>]`: Short summary of the position.
+        - `[Summary <String>]`: summary of the position.
       - `[IsCurrent <Boolean?>]`: Denotes whether or not the position is current.
       - `[Manager <IMicrosoftGraphRelatedPerson>]`: relatedPerson
     - `[Projects <IMicrosoftGraphProjectParticipation[]>]`: Represents detailed information about projects associated with a user.
@@ -5217,8 +5236,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[CapabilityStatus <String>]`: For example, 'Enabled'.
     - `[ProvisioningStatus <String>]`: For example, 'Success'.
     - `[Service <String>]`: The name of the service; for example, 'AccessControlS2S'
-  - `[ProxyAddresses <String[]>]`: For example: ['SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com']. Changes to the mail property will also update this collection to include the value as an SMTP address. For more information, see mail and proxyAddresses properties. The proxy address prefixed with SMTP (capitalized) is the primary proxy address while those prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of 10 unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Supports $filter (eq, not, ge, le, startsWith, endsWith, /$count eq 0, /$count ne 0).
-  - `[RefreshTokensValidFromDateTime <DateTime?>]`: Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application needs to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use invalidateAllRefreshTokens to reset.
+  - `[ProxyAddresses <String[]>]`: For example: ['SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com']. Changes to the mail property also update this collection to include the value as an SMTP address. For more information, see mail and proxyAddresses properties. The proxy address prefixed with SMTP (capitalized) is the primary proxy address, while the ones prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of 10 unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Supports $filter (eq, not, ge, le, startsWith, endsWith, /$count eq 0, /$count ne 0).
+  - `[RefreshTokensValidFromDateTime <DateTime?>]`: Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If it happens, the application must acquire a new refresh token by requesting the authorized endpoint. Read-only. Use invalidateAllRefreshTokens to reset.
   - `[RegisteredDevices <IMicrosoftGraphDirectoryObject[]>]`: Devices that are registered for the user. Read-only. Nullable. Supports $expand and returns up to 100 objects.
   - `[Responsibilities <String[]>]`: A list for the user to enumerate their responsibilities. Returned only on $select.
   - `[Schools <String[]>]`: A list for the user to enumerate the schools they have attended. Returned only on $select.
@@ -5253,7 +5272,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[Sensitivity <Int32?>]`: The sensitivity value of the label, where lower is less sensitive.
         - `[Tooltip <String>]`: The tooltip that should be displayed for the label in a UI.
   - `[SecurityIdentifier <String>]`: Security identifier (SID) of the user, used in Windows scenarios. Read-only. Returned by default. Supports $select and $filter (eq, not, ge, le, startsWith).
-  - `[ServiceProvisioningErrors <IMicrosoftGraphServiceProvisioningError[]>]`: Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.  Supports $filter (eq, not, for isResolved and serviceInstance).
+  - `[ServiceProvisioningErrors <IMicrosoftGraphServiceProvisioningError[]>]`: Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
   - `[Settings <IMicrosoftGraphUserSettings>]`: userSettings
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -5305,13 +5324,13 @@ To create the parameters described below, construct a hash table containing the 
   - `[ShowInAddressList <Boolean?>]`: Do not use in Microsoft Graph. Manage this property through the Microsoft 365 admin center instead. Represents whether the user should be included in the Outlook global address list. See Known issue.
   - `[SignInActivity <IMicrosoftGraphSignInActivity>]`: signInActivity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[LastNonInteractiveSignInDateTime <DateTime?>]`: The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client attempted to sign into the directory the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: '2014-01-01T00:00:00Z'. Azure AD maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.
+    - `[LastNonInteractiveSignInDateTime <DateTime?>]`: The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client attempted to sign into the directory the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: '2014-01-01T00:00:00Z'. Microsoft Entra ID maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.
     - `[LastNonInteractiveSignInRequestId <String>]`: Request identifier of the last non-interactive sign-in performed by this user.
-    - `[LastSignInDateTime <DateTime?>]`: The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user attempted to sign into the directory the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: '2014-01-01T00:00:00Z'. Azure AD maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.
+    - `[LastSignInDateTime <DateTime?>]`: The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user attempted to sign into the directory the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: '2014-01-01T00:00:00Z'. Microsoft Entra ID maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.
     - `[LastSignInRequestId <String>]`: Request identifier of the last interactive sign-in performed by this user.
-  - `[SignInSessionsValidFromDateTime <DateTime?>]`: Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application needs to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use revokeSignInSessions to reset.
+  - `[SignInSessionsValidFromDateTime <DateTime?>]`: Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application must acquire a new refresh token by requesting the authorized endpoint. Read-only. Use revokeSignInSessions to reset.
   - `[Skills <String[]>]`: A list for the user to enumerate their skills. Returned only on $select.
-  - `[Sponsors <IMicrosoftGraphDirectoryObject[]>]`: The users and groups that are responsible for this guest user's privileges in the tenant and keep the guest user's information and access updated. (HTTP Methods: GET, POST, DELETE.). Supports $expand.
+  - `[Sponsors <IMicrosoftGraphDirectoryObject[]>]`: The users and groups responsible for this guest user's privileges in the tenant and keep the guest user's information and access updated. (HTTP Methods: GET, POST, DELETE.). Supports $expand.
   - `[State <String>]`: The state or province in the user's address. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
   - `[StreetAddress <String>]`: The street address of the user's place of business. Maximum length is 1024 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
   - `[Surname <String>]`: The user's surname (family name or last name). Maximum length is 64 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
@@ -5321,7 +5340,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[AssociatedTeams <IMicrosoftGraphAssociatedTeamInfo[]>]`: The list of associatedTeamInfo objects that a user is associated with.
       - `[DisplayName <String>]`: The name of the team.
       - `[Team <IMicrosoftGraphTeam>]`: team
-      - `[TenantId <String>]`: The ID of the Azure Active Directory tenant.
+      - `[TenantId <String>]`: The ID of the Microsoft Entra tenant.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[InstalledApps <IMicrosoftGraphUserScopeTeamsAppInstallation[]>]`: The apps installed in the personal scope of this user.
       - `[ConsentedPermissionSet <IMicrosoftGraphTeamsAppPermissionSet>]`: teamsAppPermissionSet
@@ -5380,12 +5399,12 @@ To create the parameters described below, construct a hash table containing the 
         - `[Status <String>]`: taskStatus
         - `[Title <String>]`: A brief description of the task.
       - `[WellknownListName <String>]`: wellknownListName
-  - `[TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>]`: The groups, including nested groups, and directory roles that a user is a member of. Nullable.
+  - `[TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>]`: The groups, including nested groups and directory roles that a user is a member of. Nullable.
   - `[TransitiveReports <IMicrosoftGraphDirectoryObject[]>]`: The transitive reports for a user. Read-only.
-  - `[UsageLocation <String>]`: A two letter country code (ISO standard 3166). Required for users that are assigned licenses due to legal requirement to check for availability of services in countries.  Examples include: US, JP, and GB. Not nullable. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+  - `[UsageLocation <String>]`: A two-letter country code (ISO standard 3166). Required for users that are assigned licenses due to legal requirements to check for availability of services in countries.  Examples include: US, JP, and GB. Not nullable. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
   - `[UsageRights <IMicrosoftGraphUsageRight[]>]`: Represents the usage rights a user has been granted.
-  - `[UserPrincipalName <String>]`: The user principal name (UPN) of the user. The UPN is an Internet-style sign-in name for the user based on the Internet standard RFC 822. By convention, this should map to the user's email name. The general format is alias@domain, where domain must be present in the tenant's collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property can't contain accent characters. Only the following characters are allowed A - Z, a - z, 0 - 9, ' . - _ ! # ^ ~. For the complete list of allowed characters, see username policies. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith) and $orderby.
-  - `[UserType <String>]`: A String value that can be used to classify user types in your directory, such as Member and Guest. Supports $filter (eq, ne, not, in, and eq on null values). NOTE: For more information about the permissions for member and guest users, see What are the default user permissions in Azure Active Directory?
+  - `[UserPrincipalName <String>]`: The user principal name (UPN) of the user. The UPN is an Internet-style sign-in name for the user based on the Internet standard RFC 822. By convention, this should map to the user's email name. The general format is alias@domain, where the domain must be present in the tenant's verified domain collection. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property can't contain accent characters. Only the following characters are allowed A - Z, a - z, 0 - 9, ' . - _ ! # ^ ~. For the complete list of allowed characters, see username policies. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith) and $orderby.
+  - `[UserType <String>]`: A String value that can be used to classify user types in your directory, such as Member and Guest. Supports $filter (eq, ne, not, in, and eq on null values). NOTE: For more information about the permissions for member and guest users, see What are the default user permissions in Microsoft Entra ID?
   - `[VirtualEvents <IMicrosoftGraphUserVirtualEventsRoot>]`: userVirtualEventsRoot
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -5403,7 +5422,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[Guest <IMicrosoftGraphIdentity>]`: identity
         - `[OnPremises <IMicrosoftGraphIdentity>]`: identity
         - `[Phone <IMicrosoftGraphIdentity>]`: identity
-      - `[Description <String>]`: Description of the virtual event.
+      - `[Description <IMicrosoftGraphItemBody>]`: itemBody
       - `[DisplayName <String>]`: Display name of the virtual event
       - `[EndDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
       - `[Presenters <IMicrosoftGraphVirtualEventPresenter[]>]`: Presenters' information of the virtual event.
@@ -5411,8 +5430,8 @@ To create the parameters described below, construct a hash table containing the 
         - `[Email <String>]`: Email address of the presenter.
         - `[Identity <IMicrosoftGraphCommunicationsUserIdentity>]`: communicationsUserIdentity
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-          - `[Id <String>]`: Unique identifier for the identity.
+          - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+          - `[Id <String>]`: The identifier of the identity. This property is read-only.
           - `[TenantId <String>]`: The user's tenant ID.
         - `[PresenterDetails <IMicrosoftGraphVirtualEventPresenterDetails>]`: virtualEventPresenterDetails
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -5422,81 +5441,69 @@ To create the parameters described below, construct a hash table containing the 
           - `[LinkedInProfileWebUrl <String>]`: The presenter's LinkedIn profile URL.
           - `[PersonalSiteWebUrl <String>]`: The presenter's personal website URL.
           - `[TwitterProfileWebUrl <String>]`: The presenter's Twitter profile URL.
-      - `[Sessions <IMicrosoftGraphVirtualEventSession[]>]`: Sessions of the virtual event.
-        - `[AllowAttendeeToEnableCamera <Boolean?>]`: Indicates whether attendees can turn on their camera.
-        - `[AllowAttendeeToEnableMic <Boolean?>]`: Indicates whether attendees can turn on their microphone.
-        - `[AllowMeetingChat <String>]`: meetingChatMode
-        - `[AllowParticipantsToChangeName <Boolean?>]`: Specifies if participants are allowed to rename themselves in an instance of the meeting.
-        - `[AllowRecording <Boolean?>]`: Indicates whether recording is enabled for the meeting.
-        - `[AllowTeamworkReactions <Boolean?>]`: Indicates if Teams reactions are enabled for the meeting.
-        - `[AllowTranscription <Boolean?>]`: Indicates whether transcription is enabled for the meeting.
-        - `[AllowedPresenters <String>]`: onlineMeetingPresenters
-        - `[AlternativeRecording <Byte[]>]`: 
-        - `[AnonymizeIdentityForRoles <String[]>]`: Specifies whose identity will be anonymized in the meeting. Possible values are: attendee. The attendee value cannot be removed through a PATCH operation once added.
-        - `[AttendanceReports <IMicrosoftGraphMeetingAttendanceReport[]>]`: The attendance reports of an online meeting. Read-only.
-        - `[AttendeeReport <Byte[]>]`: 
-        - `[AudioConferencing <IMicrosoftGraphAudioConferencing>]`: audioConferencing
-        - `[BroadcastRecording <Byte[]>]`: 
-        - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings>]`: broadcastMeetingSettings
-        - `[Capabilities <String[]>]`: 
-        - `[ChatInfo <IMicrosoftGraphChatInfo>]`: chatInfo
-        - `[ChatRestrictions <IMicrosoftGraphChatRestrictions>]`: chatRestrictions
-        - `[CreationDateTime <DateTime?>]`: The meeting creation time in UTC. Read-only.
-        - `[EndDateTime <DateTime?>]`: The meeting end time in UTC.
-        - `[ExternalId <String>]`: The external ID. A custom ID. Optional.
-        - `[IsBroadcast <Boolean?>]`: 
-        - `[IsEndToEndEncryptionEnabled <Boolean?>]`: 
-        - `[IsEntryExitAnnounced <Boolean?>]`: Indicates whether to announce when callers join or leave.
-        - `[JoinInformation <IMicrosoftGraphItemBody>]`: itemBody
-        - `[JoinMeetingIdSettings <IMicrosoftGraphJoinMeetingIdSettings>]`: joinMeetingIdSettings
-        - `[JoinUrl <String>]`: 
-        - `[JoinWebUrl <String>]`: The join URL of the online meeting. Read-only.
-        - `[LobbyBypassSettings <IMicrosoftGraphLobbyBypassSettings>]`: lobbyBypassSettings
-        - `[MeetingAttendanceReport <IMicrosoftGraphMeetingAttendanceReport>]`: meetingAttendanceReport
-        - `[Participants <IMicrosoftGraphMeetingParticipants>]`: meetingParticipants
-        - `[RecordAutomatically <Boolean?>]`: Indicates whether to record the meeting automatically.
-        - `[Recording <Byte[]>]`: 
-        - `[Recordings <IMicrosoftGraphCallRecording[]>]`: The recordings of an online meeting. Read-only.
-        - `[Registration <IMicrosoftGraphMeetingRegistration>]`: meetingRegistration
-        - `[ShareMeetingChatHistoryDefault <String>]`: meetingChatHistoryDefaultMode
-        - `[StartDateTime <DateTime?>]`: The meeting start time in UTC.
-        - `[Subject <String>]`: The subject of the online meeting.
-        - `[Transcripts <IMicrosoftGraphCallTranscript[]>]`: The transcripts of an online meeting. Read-only.
-        - `[VideoTeleconferenceId <String>]`: The video teleconferencing ID. Read-only.
-        - `[WatermarkProtection <IMicrosoftGraphWatermarkProtectionValues>]`: watermarkProtectionValues
-        - `[Id <String>]`: The unique identifier for an entity. Read-only.
-        - `[Registrations <IMicrosoftGraphVirtualEventRegistration[]>]`: Registration records of this virtual event session.
+        - `[ProfilePhoto <Byte[]>]`: 
+        - `[Sessions <IMicrosoftGraphVirtualEventSession[]>]`: 
+          - `[AllowAttendeeToEnableCamera <Boolean?>]`: Indicates whether attendees can turn on their camera.
+          - `[AllowAttendeeToEnableMic <Boolean?>]`: Indicates whether attendees can turn on their microphone.
+          - `[AllowMeetingChat <String>]`: meetingChatMode
+          - `[AllowParticipantsToChangeName <Boolean?>]`: Specifies if participants are allowed to rename themselves in an instance of the meeting.
+          - `[AllowRecording <Boolean?>]`: Indicates whether recording is enabled for the meeting.
+          - `[AllowTeamworkReactions <Boolean?>]`: Indicates if Teams reactions are enabled for the meeting.
+          - `[AllowTranscription <Boolean?>]`: Indicates whether transcription is enabled for the meeting.
+          - `[AllowedPresenters <String>]`: onlineMeetingPresenters
+          - `[AnonymizeIdentityForRoles <String[]>]`: Specifies whose identity is anonymized in the meeting. Possible values are: attendee. The attendee value can't be removed through a PATCH operation once added.
+          - `[AttendanceReports <IMicrosoftGraphMeetingAttendanceReport[]>]`: The attendance reports of an online meeting. Read-only.
+          - `[AudioConferencing <IMicrosoftGraphAudioConferencing>]`: audioConferencing
+          - `[ChatInfo <IMicrosoftGraphChatInfo>]`: chatInfo
+          - `[ChatRestrictions <IMicrosoftGraphChatRestrictions>]`: chatRestrictions
+          - `[IsEndToEndEncryptionEnabled <Boolean?>]`: 
+          - `[IsEntryExitAnnounced <Boolean?>]`: Indicates whether to announce when callers join or leave.
+          - `[JoinInformation <IMicrosoftGraphItemBody>]`: itemBody
+          - `[JoinMeetingIdSettings <IMicrosoftGraphJoinMeetingIdSettings>]`: joinMeetingIdSettings
+          - `[JoinWebUrl <String>]`: The join URL of the online meeting. Read-only.
+          - `[LobbyBypassSettings <IMicrosoftGraphLobbyBypassSettings>]`: lobbyBypassSettings
+          - `[RecordAutomatically <Boolean?>]`: Indicates whether to record the meeting automatically.
+          - `[ShareMeetingChatHistoryDefault <String>]`: meetingChatHistoryDefaultMode
+          - `[Subject <String>]`: The subject of the online meeting.
+          - `[VideoTeleconferenceId <String>]`: The video teleconferencing ID. Read-only.
+          - `[WatermarkProtection <IMicrosoftGraphWatermarkProtectionValues>]`: watermarkProtectionValues
           - `[Id <String>]`: The unique identifier for an entity. Read-only.
-          - `[CancelationDateTime <DateTime?>]`: Date and time when the registrant cancels their registration for the virtual event. Only appears when applicable. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-          - `[Email <String>]`: Email address of the registrant.
-          - `[FirstName <String>]`: First name of the registrant.
-          - `[LastName <String>]`: Last name of the registrant.
-          - `[RegistrationDateTime <DateTime?>]`: Date and time when the registrant registers for the virtual event. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-          - `[RegistrationQuestionAnswers <IMicrosoftGraphVirtualEventRegistrationQuestionAnswer[]>]`: The registrant's answer to the registration questions.
-            - `[BooleanValue <Boolean?>]`: Boolean answer of the virtualEventRegistrationQuestion. Only appears when answerInputType is boolean.
-            - `[DisplayName <String>]`: Display name of the registration question.
-            - `[MultiChoiceValues <String[]>]`: Collection of text answer of the virtualEventRegistrationQuestion. Only appears when answerInputType is multiChoice.
-            - `[QuestionId <String>]`: id of the virtualEventRegistrationQuestion.
-            - `[Value <String>]`: Text answer of the virtualEventRegistrationQuestion. Appears when answerInputType is text, multilineText or singleChoice.
-          - `[Sessions <IMicrosoftGraphVirtualEventSession[]>]`: Sessions of the webinar.
-          - `[Status <String>]`: virtualEventAttendeeRegistrationStatus
-          - `[UserId <String>]`: The registrant's ID in Azure Active Directory (Azure AD). Only appears when the registrant is registered in Azure AD.
+          - `[EndDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
+          - `[Presenters <IMicrosoftGraphVirtualEventPresenter[]>]`: 
+          - `[Registrations <IMicrosoftGraphVirtualEventRegistration[]>]`: 
+            - `[Id <String>]`: The unique identifier for an entity. Read-only.
+            - `[CancelationDateTime <DateTime?>]`: Date and time when the registrant cancels their registration for the virtual event. Only appears when applicable. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+            - `[Email <String>]`: Email address of the registrant.
+            - `[FirstName <String>]`: First name of the registrant.
+            - `[LastName <String>]`: Last name of the registrant.
+            - `[RegistrationDateTime <DateTime?>]`: Date and time when the registrant registers for the virtual event. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+            - `[RegistrationQuestionAnswers <IMicrosoftGraphVirtualEventRegistrationQuestionAnswer[]>]`: The registrant's answer to the registration questions.
+              - `[BooleanValue <Boolean?>]`: Boolean answer of the virtualEventRegistrationQuestion. Only appears when answerInputType is boolean.
+              - `[DisplayName <String>]`: Display name of the registration question.
+              - `[MultiChoiceValues <String[]>]`: Collection of text answer of the virtualEventRegistrationQuestion. Only appears when answerInputType is multiChoice.
+              - `[QuestionId <String>]`: id of the virtualEventRegistrationQuestion.
+              - `[Value <String>]`: Text answer of the virtualEventRegistrationQuestion. Appears when answerInputType is text, multilineText or singleChoice.
+            - `[Sessions <IMicrosoftGraphVirtualEventSession[]>]`: 
+            - `[Status <String>]`: virtualEventAttendeeRegistrationStatus
+            - `[UserId <String>]`: The registrant's ID in Microsoft Entra ID. Only appears when the registrant is registered in Microsoft Entra ID.
+          - `[StartDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
+      - `[Sessions <IMicrosoftGraphVirtualEventSession[]>]`: Sessions of the virtual event.
       - `[StartDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
       - `[Status <String>]`: virtualEventStatus
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[Audience <String>]`: meetingAudience
       - `[CoOrganizers <IMicrosoftGraphCommunicationsUserIdentity[]>]`: Identity information of coorganizers of the webinar.
-      - `[RegistrationConfiguration <IMicrosoftGraphVirtualEventRegistrationConfiguration>]`: virtualEventRegistrationConfiguration
+      - `[RegistrationConfiguration <IMicrosoftGraphVirtualEventWebinarRegistrationConfiguration>]`: virtualEventWebinarRegistrationConfiguration
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[Id <String>]`: The unique identifier for an entity. Read-only.
         - `[Capacity <Int32?>]`: Total capacity of the virtual event.
-        - `[Questions <IMicrosoftGraphVirtualEventRegistrationQuestion[]>]`: Registration questions.
+        - `[Questions <IMicrosoftGraphVirtualEventRegistrationQuestionBase[]>]`: Registration questions.
           - `[Id <String>]`: The unique identifier for an entity. Read-only.
-          - `[AnswerChoices <String[]>]`: Answer choices when answerInputType is singleChoice or multiChoice.
-          - `[AnswerInputType <String>]`: virtualEventRegistrationQuestionAnswerInputType
-          - `[DisplayName <String>]`: Display name of the registration question.
-          - `[IsRequired <Boolean?>]`: Indicates whether the question is required to answer. Default value is false.
+          - `[DisplayName <String>]`: 
+          - `[IsRequired <Boolean?>]`: 
         - `[RegistrationWebUrl <String>]`: Registration URL of the virtual event.
+        - `[Id <String>]`: The unique identifier for an entity. Read-only.
+        - `[IsManualApprovalEnabled <Boolean?>]`: 
+        - `[IsWaitlistEnabled <Boolean?>]`: 
       - `[Registrations <IMicrosoftGraphVirtualEventRegistration[]>]`: Registration records of the webinar.
   - `[WindowsInformationProtectionDeviceRegistrations <IMicrosoftGraphWindowsInformationProtectionDeviceRegistration[]>]`: Zero or more WIP device registrations that belong to the user.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -5509,8 +5516,8 @@ To create the parameters described below, construct a hash table containing the 
 
 `ASSIGNEDTO <IMicrosoftGraphIdentity>`: identity
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-  - `[Id <String>]`: Unique identifier for the identity.
+  - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+  - `[Id <String>]`: The identifier of the identity. This property is read-only.
 
 `BODYPARAMETER <IMicrosoftGraphSubjectRightsRequest>`: subjectRightsRequest
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -5518,7 +5525,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[Approvers <IMicrosoftGraphUser[]>]`: 
     - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[AboutMe <String>]`: A freeform text entry field for the user to describe themselves. Returned only on $select.
+    - `[AboutMe <String>]`: A freeform text entry field for users to describe themselves. Returned only on $select.
     - `[AccountEnabled <Boolean?>]`: true if the account is enabled; otherwise, false. This property is required when a user is created. Supports $filter (eq, ne, not, and in).
     - `[Activities <IMicrosoftGraphUserActivity[]>]`: The user's activities across devices. Read-only. Nullable.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -5558,7 +5565,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[Content <IMicrosoftGraphJson>]`: Json
         - `[Description <String>]`: Optional. Longer text description of the user's unique activity (example: document name, first sentence, and/or metadata)
         - `[DisplayText <String>]`: Required. Short text description of the user's unique activity (for example, document name in cases where an activity refers to document creation)
-    - `[AgeGroup <String>]`: Sets the age group of the user. Allowed values: null, Minor, NotAdult and Adult. For more information, see legal age group property definitions. Supports $filter (eq, ne, not, and in).
+    - `[AgeGroup <String>]`: Sets the age group of the user. Allowed values: null, Minor, NotAdult, and Adult. For more information, see legal age group property definitions. Supports $filter (eq, ne, not, and in).
     - `[AgreementAcceptances <IMicrosoftGraphAgreementAcceptance[]>]`: The user's terms of use acceptance statuses. Read-only. Nullable.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[AgreementFileId <String>]`: ID of the agreement file accepted by the user.
@@ -5603,8 +5610,8 @@ To create the parameters described below, construct a hash table containing the 
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Application <IMicrosoftGraphIdentity>]`: identity
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-            - `[Id <String>]`: Unique identifier for the identity.
+            - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+            - `[Id <String>]`: The identifier of the identity. This property is read-only.
           - `[Device <IMicrosoftGraphIdentity>]`: identity
           - `[User <IMicrosoftGraphIdentity>]`: identity
         - `[CreatedDateTime <DateTime?>]`: The request creation date time.
@@ -5637,7 +5644,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[AlternativeNames <String[]>]`: Used to retrieve service principals by subscription, identify resource group and full resource ids for managed identities. Supports $filter (eq, not, ge, le, startsWith).
       - `[AppDescription <String>]`: The description exposed by the associated application.
       - `[AppDisplayName <String>]`: The display name exposed by the associated application.
-      - `[AppId <String>]`: The unique identifier for the associated application (its appId property). Supports $filter (eq, ne, not, in, startsWith).
+      - `[AppId <String>]`: The unique identifier for the associated application (its appId property). Alternate key. Supports $filter (eq, ne, not, in, startsWith).
       - `[AppManagementPolicies <IMicrosoftGraphAppManagementPolicy[]>]`: The appManagementPolicy applied to this service principal.
         - `[Description <String>]`: Description for this policy. Required.
         - `[DisplayName <String>]`: Display name for this policy. Required.
@@ -5658,7 +5665,7 @@ To create the parameters described below, construct a hash table containing the 
             - `[MaxLifetime <TimeSpan?>]`: 
             - `[RestrictForAppsCreatedAfterDateTime <DateTime?>]`: Enforces the policy for an app created on or after the enforcement date. For existing applications, the enforcement date would be backdated. To apply to all applications, this date would be null.
             - `[RestrictionType <String>]`: appCredentialRestrictionType
-      - `[AppOwnerOrganizationId <String>]`: Contains the tenant id where the application is registered. This is applicable only to service principals backed by applications.Supports $filter (eq, ne, NOT, ge, le).
+      - `[AppOwnerOrganizationId <String>]`: Contains the tenant id where the application is registered. This is applicable only to service principals backed by applications. Supports $filter (eq, ne, NOT, ge, le).
       - `[AppRoleAssignedTo <IMicrosoftGraphAppRoleAssignment[]>]`: App role assignments for this app or service, granted to users, groups, and other service principals.Supports $expand.
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
         - `[AppRoleId <String>]`: The identifier (id) for the app role which is assigned to the principal. This app role must be exposed in the appRoles property on the resource application's service principal (resourceId). If the resource application has not declared any app roles, a default app role ID of 00000000-0000-0000-0000-000000000000 can be specified to signal that the principal is assigned to the resource app without any specific app roles. Required on create.
@@ -5670,7 +5677,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[ResourceId <String>]`: The unique identifier (id) for the resource service principal for which the assignment is made. Required on create. Supports $filter (eq only).
       - `[AppRoleAssignmentRequired <Boolean?>]`: Specifies whether users or other service principals need to be granted an app role assignment for this service principal before users can sign in or apps can get tokens. The default value is false. Not nullable. Supports $filter (eq, ne, NOT).
       - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment[]>]`: App role assignment for another app or service, granted to this service principal. Supports $expand.
-      - `[AppRoles <IMicrosoftGraphAppRole[]>]`: The roles exposed by the application which this service principal represents. For more information see the appRoles property definition on the application entity. Not nullable.
+      - `[AppRoles <IMicrosoftGraphAppRole[]>]`: The roles exposed by the application, which this service principal represents. For more information see the appRoles property definition on the application entity. Not nullable.
         - `[AllowedMemberTypes <String[]>]`: Specifies whether this app role can be assigned to users and groups (by setting to ['User']), to other application's (by setting to ['Application'], or both (by setting to ['User', 'Application']). App roles supporting assignment to other applications' service principals are also known as application permissions. The 'Application' value is only supported for app roles defined on application entities.
         - `[Description <String>]`: The description for the app role. This is displayed when the app role is being assigned and, if the app role functions as an application permission, during  consent experiences.
         - `[DisplayName <String>]`: Display name for the permission that appears in the app role assignment and consent experiences.
@@ -5709,11 +5716,11 @@ To create the parameters described below, construct a hash table containing the 
       - `[ErrorUrl <String>]`: Deprecated. Don't use.
       - `[FederatedIdentityCredentials <IMicrosoftGraphFederatedIdentityCredential[]>]`: 
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
-        - `[Audiences <String[]>]`: The audience that can appear in the external token. This field is mandatory and should be set to api://AzureADTokenExchange for Azure AD. It says what Microsoft identity platform should accept in the aud claim in the incoming token. This value represents Azure AD in your external identity provider and has no fixed value across identity providers - you may need to create a new application registration in your identity provider to serve as the audience of this token. This field can only accept a single value and has a limit of 600 characters. Required.
+        - `[Audiences <String[]>]`: The audience that can appear in the external token. This field is mandatory and should be set to api://AzureADTokenExchange for Microsoft Entra ID. It says what Microsoft identity platform should accept in the aud claim in the incoming token. This value represents Microsoft Entra ID in your external identity provider and has no fixed value across identity providers - you may need to create a new application registration in your identity provider to serve as the audience of this token. This field can only accept a single value and has a limit of 600 characters. Required.
         - `[Description <String>]`: The un-validated, user-provided description of the federated identity credential. It has a limit of 600 characters. Optional.
         - `[Issuer <String>]`: The URL of the external identity provider and must match the issuer claim of the external token being exchanged. The combination of the values of issuer and subject must be unique on the app. It has a limit of 600 characters. Required.
         - `[Name <String>]`: is the unique identifier for the federated identity credential, which has a limit of 120 characters and must be URL friendly. It is immutable once created. Required. Not nullable. Supports $filter (eq).
-        - `[Subject <String>]`: Required. The identifier of the external software workload within the external identity provider. Like the audience value, it has no fixed format, as each identity provider uses their own - sometimes a GUID, sometimes a colon delimited identifier, sometimes arbitrary strings. The value here must match the sub claim within the token presented to Azure AD. The combination of issuer and subject must be unique on the app. It has a limit of 600 characters. Supports $filter (eq).
+        - `[Subject <String>]`: Required. The identifier of the external software workload within the external identity provider. Like the audience value, it has no fixed format, as each identity provider uses their own - sometimes a GUID, sometimes a colon delimited identifier, sometimes arbitrary strings. The value here must match the sub claim within the token presented to Microsoft Entra ID. The combination of issuer and subject must be unique on the app. It has a limit of 600 characters. Supports $filter (eq).
       - `[HomeRealmDiscoveryPolicies <IMicrosoftGraphHomeRealmDiscoveryPolicy[]>]`: The homeRealmDiscoveryPolicies assigned to this service principal. Supports $expand.
         - `[AppliesTo <IMicrosoftGraphDirectoryObject[]>]`: 
         - `[Definition <String[]>]`: A string collection containing a JSON string that defines the rules and settings for a policy. The syntax for the definition differs for each derived policy type. Required.
@@ -5742,17 +5749,17 @@ To create the parameters described below, construct a hash table containing the 
       - `[LicenseDetails <IMicrosoftGraphLicenseDetails[]>]`: 
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
         - `[ServicePlans <IMicrosoftGraphServicePlanInfo[]>]`: Information about the service plans assigned with the license. Read-only, Not nullable
-          - `[AppliesTo <String>]`: The object the service plan can be assigned to. The possible values are:User - service plan can be assigned to individual users.Company - service plan can be assigned to the entire tenant.
-          - `[ProvisioningStatus <String>]`: The provisioning status of the service plan. The possible values are:Success - Service is fully provisioned.Disabled - Service has been disabled.ErrorStatus - The service plan has not been provisioned and is in an error state.PendingInput - Service is not yet provisioned; awaiting service confirmation.PendingActivation - Service is provisioned but requires explicit activation by administrator (for example, Intune_O365 service plan)PendingProvisioning - Microsoft has added a new service to the product SKU and it has not been activated in the tenant, yet.
+          - `[AppliesTo <String>]`: The object the service plan can be assigned to. The possible values are: User - service plan can be assigned to individual users.Company - service plan can be assigned to the entire tenant.
+          - `[ProvisioningStatus <String>]`: The provisioning status of the service plan. The possible values are:Success - Service is fully provisioned.Disabled - Service is disabled.Error - The service plan isn't provisioned and is in an error state.PendingInput - The service isn't provisioned and is awaiting service confirmation.PendingActivation - The service is provisioned but requires explicit activation by an administrator (for example, Intune_O365 service plan)PendingProvisioning - Microsoft has added a new service to the product SKU and it isn't activated in the tenant.
           - `[ServicePlanId <String>]`: The unique identifier of the service plan.
           - `[ServicePlanName <String>]`: The name of the service plan.
         - `[SkuId <String>]`: Unique identifier (GUID) for the service SKU. Equal to the skuId property on the related SubscribedSku object. Read-only
         - `[SkuPartNumber <String>]`: Unique SKU display name. Equal to the skuPartNumber on the related SubscribedSku object; for example: 'AAD_Premium'. Read-only
-      - `[LoginUrl <String>]`: Specifies the URL where the service provider redirects the user to Azure AD to authenticate. Azure AD uses the URL to launch the application from Microsoft 365 or the Azure AD My Apps. When blank, Azure AD performs IdP-initiated sign-on for applications configured with SAML-based single sign-on. The user launches the application from Microsoft 365, the Azure AD My Apps, or the Azure AD SSO URL.
+      - `[LoginUrl <String>]`: Specifies the URL where the service provider redirects the user to Microsoft Entra ID to authenticate. Microsoft Entra ID uses the URL to launch the application from Microsoft 365 or the Microsoft Entra My Apps. When blank, Microsoft Entra ID performs IdP-initiated sign-on for applications configured with SAML-based single sign-on. The user launches the application from Microsoft 365, the Microsoft Entra My Apps, or the Microsoft Entra SSO URL.
       - `[LogoutUrl <String>]`: Specifies the URL that will be used by Microsoft's authorization service to logout an user using OpenId Connect front-channel, back-channel or SAML logout protocols.
       - `[MemberOf <IMicrosoftGraphDirectoryObject[]>]`: Roles that this service principal is a member of. HTTP Methods: GET Read-only. Nullable. Supports $expand.
       - `[Notes <String>]`: Free text field to capture information about the service principal, typically used for operational purposes. Maximum allowed size is 1024 characters.
-      - `[NotificationEmailAddresses <String[]>]`: Specifies the list of email addresses where Azure AD sends a notification when the active certificate is near the expiration date. This is only for the certificates used to sign the SAML token issued for Azure AD Gallery applications.
+      - `[NotificationEmailAddresses <String[]>]`: Specifies the list of email addresses where Microsoft Entra ID sends a notification when the active certificate is near the expiration date. This is only for the certificates used to sign the SAML token issued for Microsoft Entra Gallery applications.
       - `[Oauth2PermissionGrants <IMicrosoftGraphOAuth2PermissionGrant[]>]`: Delegated permission grants authorizing this service principal to access an API on behalf of a signed-in user. Read-only. Nullable.
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
         - `[ClientId <String>]`: The object id (not appId) of the client service principal for the application that is authorized to act on behalf of a signed-in user when accessing an API. Required. Supports $filter (eq only).
@@ -5762,15 +5769,15 @@ To create the parameters described below, construct a hash table containing the 
         - `[ResourceId <String>]`: The id of the resource service principal to which access is authorized. This identifies the API that the client is authorized to attempt to call on behalf of a signed-in user. Supports $filter (eq only).
         - `[Scope <String>]`: A space-separated list of the claim values for delegated permissions that should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the publishedPermissionScopes property of the resource service principal. Must not exceed 3850 characters in length.
         - `[StartTime <DateTime?>]`: Currently, the start time value is ignored, but a value is required when creating an oAuth2PermissionGrant. Required.
-      - `[OwnedObjects <IMicrosoftGraphDirectoryObject[]>]`: Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
-      - `[Owners <IMicrosoftGraphDirectoryObject[]>]`: Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable. Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1), and $select nested in $expand.
+      - `[OwnedObjects <IMicrosoftGraphDirectoryObject[]>]`: Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
+      - `[Owners <IMicrosoftGraphDirectoryObject[]>]`: Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.  Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
       - `[PasswordCredentials <IMicrosoftGraphPasswordCredential[]>]`: The collection of password credentials associated with the service principal. Not nullable.
         - `[CustomKeyIdentifier <Byte[]>]`: Do not use.
         - `[DisplayName <String>]`: Friendly name for the password. Optional.
         - `[EndDateTime <DateTime?>]`: The date and time at which the password expires represented using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Optional.
         - `[Hint <String>]`: Contains the first three characters of the password. Read-only.
         - `[KeyId <String>]`: The unique identifier for the password.
-        - `[SecretText <String>]`: Read-only; Contains the strong passwords generated by Azure AD that are 16-64 characters in length. The generated password value is only returned during the initial POST request to addPassword. There is no way to retrieve this password in the future.
+        - `[SecretText <String>]`: Read-only; Contains the strong passwords generated by Microsoft Entra ID that are 16-64 characters in length. The generated password value is only returned during the initial POST request to addPassword. There is no way to retrieve this password in the future.
         - `[StartDateTime <DateTime?>]`: The date and time at which the password becomes valid. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Optional.
       - `[PasswordSingleSignOnSettings <IMicrosoftGraphPasswordSingleSignOnSettings>]`: passwordSingleSignOnSettings
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -5779,7 +5786,7 @@ To create the parameters described below, construct a hash table containing the 
           - `[DefaultLabel <String>]`: Label that would be used if no customizedLabel is provided. Read only.
           - `[FieldId <String>]`: Id used to identity the field type. This is an internal ID and possible values are param1, param2, paramuserName, parampassword.
           - `[Type <String>]`: Type of the credential. The values can be text, password.
-      - `[PreferredSingleSignOnMode <String>]`: Specifies the single sign-on mode configured for this application. Azure AD uses the preferred single sign-on mode to launch the application from Microsoft 365 or the Azure AD My Apps. The supported values are password, saml, notSupported, and oidc.
+      - `[PreferredSingleSignOnMode <String>]`: Specifies the single sign-on mode configured for this application. Microsoft Entra ID uses the preferred single sign-on mode to launch the application from Microsoft 365 or the Microsoft Entra My Apps. The supported values are password, saml, notSupported, and oidc.
       - `[PreferredTokenSigningKeyEndDateTime <DateTime?>]`: Specifies the expiration date of the keyCredential used for token signing, marked by preferredTokenSigningKeyThumbprint. Updating this attribute is not currentlysupported. For details, see ServicePrincipal property differences.
       - `[PreferredTokenSigningKeyThumbprint <String>]`: This property can be used on SAML applications (apps that have preferredSingleSignOnMode set to saml) to control which certificate is used to sign the SAML responses. For applications that are not SAML, do not write or otherwise rely on this property.
       - `[PublishedPermissionScopes <IMicrosoftGraphPermissionScope[]>]`: The delegated permissions exposed by the application. For more information see the oauth2PermissionScopes property on the application entity's api property. Not nullable. Note: This property is named oauth2PermissionScopes in v1.0.
@@ -5792,22 +5799,22 @@ To create the parameters described below, construct a hash table containing the 
         - `[UserConsentDescription <String>]`: A description of the delegated permissions, intended to be read by a user granting the permission on their own behalf. This text appears in consent experiences where the user is consenting only on behalf of themselves.
         - `[UserConsentDisplayName <String>]`: A title for the permission, intended to be read by a user granting the permission on their own behalf. This text appears in consent experiences where the user is consenting only on behalf of themselves.
         - `[Value <String>]`: Specifies the value to include in the scp (scope) claim in access tokens. Must not exceed 120 characters in length. Allowed characters are : ! # $ % & ' ( ) * + , - . / : ;  =  ? @ [ ] ^ + _  {  } ~, and characters in the ranges 0-9, A-Z and a-z. Any other character, including the space character, aren't allowed. May not begin with ..
-      - `[PublisherName <String>]`: The name of the Azure AD tenant that published the application.
+      - `[PublisherName <String>]`: The name of the Microsoft Entra tenant that published the application.
       - `[RemoteDesktopSecurityConfiguration <IMicrosoftGraphRemoteDesktopSecurityConfiguration>]`: remoteDesktopSecurityConfiguration
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
-        - `[IsRemoteDesktopProtocolEnabled <Boolean?>]`: 
-        - `[TargetDeviceGroups <IMicrosoftGraphTargetDeviceGroup[]>]`: 
+        - `[IsRemoteDesktopProtocolEnabled <Boolean?>]`: Determines if Microsoft Entra ID RDS authentication protocol for RDP is enabled.
+        - `[TargetDeviceGroups <IMicrosoftGraphTargetDeviceGroup[]>]`: The collection of target device groups that are associated with the RDS security configuration that will be enabled for SSO when a client connects to the target device over RDP using the new Microsoft Entra ID RDS authentication protocol.
           - `[Id <String>]`: The unique identifier for an entity. Read-only.
-          - `[DisplayName <String>]`: 
+          - `[DisplayName <String>]`: Display name for the target device group.
       - `[ReplyUrls <String[]>]`: The URLs that user tokens are sent to for sign in with the associated application, or the redirect URIs that OAuth 2.0 authorization codes and access tokens are sent to for the associated application. Not nullable.
       - `[SamlMetadataUrl <String>]`: The url where the service exposes SAML metadata for federation.
       - `[SamlSingleSignOnSettings <IMicrosoftGraphSamlSingleSignOnSettings>]`: samlSingleSignOnSettings
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[RelayState <String>]`: The relative URI the service provider would redirect to after completion of the single sign-on flow.
-      - `[ServicePrincipalNames <String[]>]`: Contains the list of identifiersUris, copied over from the associated application. Additional values can be added to hybrid applications. These values can be used to identify the permissions exposed by this app within Azure AD. For example,Client apps can specify a resource URI which is based on the values of this property to acquire an access token, which is the URI returned in the 'aud' claim.The any operator is required for filter expressions on multi-valued properties. Not nullable.  Supports $filter (eq, not, ge, le, startsWith).
-      - `[ServicePrincipalType <String>]`: Identifies if the service principal represents an application or a managed identity. This is set by Azure AD internally. For a service principal that represents an application this is set as Application. For a service principal that represent a managed identity this is set as ManagedIdentity. The SocialIdp type is for internal use.
-      - `[SignInAudience <String>]`: Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization's Azure AD tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization's Azure AD tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization's Azure AD tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.
+      - `[ServicePrincipalNames <String[]>]`: Contains the list of identifiersUris, copied over from the associated application. Additional values can be added to hybrid applications. These values can be used to identify the permissions exposed by this app within Microsoft Entra ID. For example,Client apps can specify a resource URI which is based on the values of this property to acquire an access token, which is the URI returned in the 'aud' claim.The any operator is required for filter expressions on multi-valued properties. Not nullable.  Supports $filter (eq, not, ge, le, startsWith).
+      - `[ServicePrincipalType <String>]`: Identifies if the service principal represents an application or a managed identity. This is set by Microsoft Entra ID internally. For a service principal that represents an application this is set as Application. For a service principal that represent a managed identity this is set as ManagedIdentity. The SocialIdp type is for internal use.
+      - `[SignInAudience <String>]`: Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization's Microsoft Entra tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization's Microsoft Entra tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization's Microsoft Entra tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.
       - `[Synchronization <IMicrosoftGraphSynchronization>]`: synchronization
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -5950,7 +5957,7 @@ To create the parameters described below, construct a hash table containing the 
             - `[SteadyStateFirstAchievedTime <DateTime?>]`: The time when steady state (no more changes to the process) was first achieved. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             - `[SteadyStateLastAchievedTime <DateTime?>]`: The time when steady state (no more changes to the process) was last achieved. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             - `[SynchronizedEntryCountByType <IMicrosoftGraphStringKeyLongValuePair[]>]`: Count of synchronized objects, listed by object type.
-              - `[Key <String>]`: The mapping of the user type from the source system to the target system. For example:User to User - For Azure AD to Azure AD synchronization worker to user - For Workday to Azure AD synchronization.
+              - `[Key <String>]`: The mapping of the user type from the source system to the target system. For example:User to User - For Microsoft Entra ID to Microsoft Entra synchronization worker to user - For Workday to Microsoft Entra synchronization.
               - `[Value <Int64?>]`: Total number of synchronized objects.
             - `[TroubleshootingUrl <String>]`: In the event of an error, the URL with the troubleshooting steps for the issue.
           - `[SynchronizationJobSettings <IMicrosoftGraphKeyValuePair[]>]`: Settings associated with the job. Some settings are inherited from the template.
@@ -5972,7 +5979,7 @@ To create the parameters described below, construct a hash table containing the 
             - `[Value <String>]`: Value of the metadata property.
           - `[Schema <IMicrosoftGraphSynchronizationSchema>]`: synchronizationSchema
       - `[Tags <String[]>]`: Custom strings that can be used to categorize and identify the service principal. Not nullable. The value is the union of strings set here and on the associated application entity's tags property.Supports $filter (eq, not, ge, le, startsWith).
-      - `[TokenEncryptionKeyId <String>]`: Specifies the keyId of a public key from the keyCredentials collection. When configured, Azure AD issues tokens for this application encrypted using the key specified by this property. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.
+      - `[TokenEncryptionKeyId <String>]`: Specifies the keyId of a public key from the keyCredentials collection. When configured, Microsoft Entra ID issues tokens for this application encrypted using the key specified by this property. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.
       - `[TokenIssuancePolicies <IMicrosoftGraphTokenIssuancePolicy[]>]`: The tokenIssuancePolicies assigned to this service principal. Supports $expand.
         - `[AppliesTo <IMicrosoftGraphDirectoryObject[]>]`: 
         - `[Definition <String[]>]`: A string collection containing a JSON string that defines the rules and settings for a policy. The syntax for the definition differs for each derived policy type. Required.
@@ -5997,7 +6004,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[VerifiedPublisherId <String>]`: The ID of the verified publisher from the app publisher's Partner Center account.
     - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment[]>]`: Represents the app roles a user has been granted for an application. Supports $expand.
     - `[Approvals <IMicrosoftGraphApproval[]>]`: 
-    - `[AssignedLicenses <IMicrosoftGraphAssignedLicense[]>]`: The licenses that are assigned to the user, including inherited (group-based) licenses. This property doesn't differentiate directly assigned and inherited licenses. Use the licenseAssignmentStates property to identify the directly assigned and inherited licenses. Not nullable. Supports $filter (eq, not, /$count eq 0, /$count ne 0).
+    - `[AssignedLicenses <IMicrosoftGraphAssignedLicense[]>]`: The licenses that are assigned to the user, including inherited (group-based) licenses. This property doesn't differentiate between directly assigned and inherited licenses. Use the licenseAssignmentStates property to identify the directly assigned and inherited licenses. Not nullable. Supports $filter (eq, not, /$count eq 0, /$count ne 0).
       - `[DisabledPlans <String[]>]`: A collection of the unique identifiers for plans that have been disabled.
       - `[SkuId <String>]`: The unique identifier for the SKU.
     - `[AssignedPlans <IMicrosoftGraphAssignedPlan[]>]`: The plans that are assigned to the user. Read-only. Not nullable.Supports $filter (eq and not).
@@ -6056,7 +6063,7 @@ To create the parameters described below, construct a hash table containing the 
           - `[DeviceOwnership <String>]`: Ownership of the device. This property is set by Intune. Possible values are: unknown, company, personal.
           - `[DeviceVersion <Int32?>]`: For internal use only.
           - `[DisplayName <String>]`: The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.
-          - `[DomainName <String>]`: The on-premises domain name of Hybrid Azure AD joined devices. This property is set by Intune.
+          - `[DomainName <String>]`: The on-premises domain name of Microsoft Entra hybrid joined devices. This property is set by Intune.
           - `[EnrollmentProfileName <String>]`: Enrollment profile applied to the device. For example, Apple Device Enrollment Profile, Device enrollment - Corporate device identifiers, or Windows Autopilot profile name. This property is set by Intune.
           - `[EnrollmentType <String>]`: Enrollment type of the device. This property is set by Intune. Possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement.
           - `[ExtensionAttributes <IMicrosoftGraphOnPremisesExtensionAttributes>]`: onPremisesExtensionAttributes
@@ -6078,25 +6085,25 @@ To create the parameters described below, construct a hash table containing the 
             - `[ExtensionAttribute9 <String>]`: Ninth customizable extension attribute.
           - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the device. Read-only. Nullable.
             - `[Id <String>]`: The unique identifier for an entity. Read-only.
-          - `[Hostnames <String[]>]`: List of hostNames for the device.
+          - `[Hostnames <String[]>]`: List of host names for the device.
           - `[IsCompliant <Boolean?>]`: true if the device complies with Mobile Device Management (MDM) policies; otherwise, false. Read-only. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).
           - `[IsManaged <Boolean?>]`: true if the device is managed by a Mobile Device Management (MDM) app; otherwise, false. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).
-          - `[IsManagementRestricted <Boolean?>]`: true if the device is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.  To manage a device that's a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.
+          - `[IsManagementRestricted <Boolean?>]`: Indicates whether the device is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. The default value is false. Read-only.  To manage a device that's a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.
           - `[IsRooted <Boolean?>]`: true if device is rooted; false if device is jail-broken. This can only be updated by Intune.
-          - `[Kind <String>]`: Form factor of device. Only returned if user signs in with a Microsoft account as part of Project Rome.
+          - `[Kind <String>]`: Form factor of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
           - `[ManagementType <String>]`: Management channel of the device.  This property is set by Intune. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.
-          - `[Manufacturer <String>]`: Manufacturer of device. Only returned if user signs in with a Microsoft account as part of Project Rome.
+          - `[Manufacturer <String>]`: Manufacturer of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
           - `[MdmAppId <String>]`: Application identifier used to register device into MDM. Read-only. Supports $filter (eq, ne, not, startsWith).
           - `[MemberOf <IMicrosoftGraphDirectoryObject[]>]`: Groups and administrative units that this device is a member of. Read-only. Nullable. Supports $expand.
-          - `[Model <String>]`: Model of device. Only returned if user signs in with a Microsoft account as part of Project Rome.
-          - `[Name <String>]`: Friendly name of a device. Only returned if user signs in with a Microsoft account as part of Project Rome.
+          - `[Model <String>]`: Model of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
+          - `[Name <String>]`: Friendly name of the device. Only returned if user signs in with a Microsoft account as part of Project Rome.
           - `[OnPremisesLastSyncDateTime <DateTime?>]`: The last time at which the object was synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Read-only. Supports $filter (eq, ne, not, ge, le, in).
-          - `[OnPremisesSecurityIdentifier <String>]`: 
+          - `[OnPremisesSecurityIdentifier <String>]`: The on-premises security identifier (SID) for the user who was synchronized from on-premises to the cloud. Read-only. Returned only on $select. Supports $filter (eq).
           - `[OnPremisesSyncEnabled <Boolean?>]`: true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
           - `[OperatingSystem <String>]`: The type of operating system on the device. Required. Supports $filter (eq, ne, not, ge, le, startsWith, and eq on null values).
           - `[OperatingSystemVersion <String>]`: Operating system version of the device. Required. Supports $filter (eq, ne, not, ge, le, startsWith, and eq on null values).
           - `[PhysicalIds <String[]>]`: For internal use only. Not nullable. Supports $filter (eq, not, ge, le, startsWith, /$count eq 0, /$count ne 0.
-          - `[Platform <String>]`: Platform of device. Only returned if user signs in with a Microsoft account as part of Project Rome. Only returned if user signs in with a Microsoft account as part of Project Rome.
+          - `[Platform <String>]`: Platform of device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
           - `[ProfileType <String>]`: The profile type of the device. Possible values: RegisteredDevice (default), SecureVM, Printer, Shared, IoT.
           - `[RegisteredOwners <IMicrosoftGraphDirectoryObject[]>]`: The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Read-only. Nullable. Supports $expand.
           - `[RegisteredUsers <IMicrosoftGraphDirectoryObject[]>]`: Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.
@@ -6104,7 +6111,7 @@ To create the parameters described below, construct a hash table containing the 
           - `[Status <String>]`: Device is online or offline. Only returned if user signs in with a Microsoft account as part of Project Rome.
           - `[SystemLabels <String[]>]`: List of labels applied to the device by the system. Supports $filter (/$count eq 0, /$count ne 0).
           - `[TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>]`: Groups and administrative units that this device is a member of. This operation is transitive. Supports $expand.
-          - `[TrustType <String>]`: Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory
+          - `[TrustType <String>]`: Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Microsoft Entra ID). For more details, see Introduction to device management in Microsoft Entra ID.
           - `[UsageRights <IMicrosoftGraphUsageRight[]>]`: Represents the usage rights a device has been granted.
             - `[Id <String>]`: The unique identifier for an entity. Read-only.
             - `[CatalogId <String>]`: Product id corresponding to the usage right.
@@ -6135,6 +6142,13 @@ To create the parameters described below, construct a hash table containing the 
         - `[PhoneNumber <String>]`: The phone number to text or call for authentication. Phone numbers use the format '+<country code> <number>x<extension>', with extension optional. For example, +1 5555551234 or +1 5555551234x123 are valid. Numbers are rejected when creating/updating if they don't match the required format.
         - `[PhoneType <String>]`: authenticationPhoneType
         - `[SmsSignInState <String>]`: authenticationMethodSignInState
+      - `[PlatformCredentialMethods <IMicrosoftGraphPlatformCredentialAuthenticationMethod[]>]`: 
+        - `[Id <String>]`: The unique identifier for an entity. Read-only.
+        - `[CreatedDateTime <DateTime?>]`: The date and time that this Platform Credential Key was registered.
+        - `[Device <IMicrosoftGraphDevice>]`: device
+        - `[DisplayName <String>]`: The name of the device on which Platform Credential is registered.
+        - `[KeyStrength <String>]`: authenticationMethodKeyStrength
+        - `[Platform <String>]`: authenticationMethodPlatform
       - `[SignInPreferences <IMicrosoftGraphSignInPreferences>]`: signInPreferences
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[IsSystemPreferredAuthenticationMethodEnabled <Boolean?>]`: Indicates whether the credential preferences of the system are enabled.
@@ -6157,8 +6171,8 @@ To create the parameters described below, construct a hash table containing the 
         - `[KeyStrength <String>]`: authenticationMethodKeyStrength
     - `[AuthorizationInfo <IMicrosoftGraphAuthorizationInfo>]`: authorizationInfo
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[CertificateUserIds <String[]>]`: The collection of unique identifiers that can be associated with a user and can be used to bind the Azure AD user to a certificate for authentication and authorization into non-Azure AD environments. The identifiers must be unique in the tenant.
-    - `[Birthday <DateTime?>]`: The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select.
+      - `[CertificateUserIds <String[]>]`: The collection of unique identifiers that can be associated with a user and can be used to bind the Microsoft Entra user to a certificate for authentication and authorization into non-Azure AD environments. The identifiers must be unique in the tenant.
+    - `[Birthday <DateTime?>]`: The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select.
     - `[BusinessPhones <String[]>]`: The telephone numbers for the user. Only one number can be set for this property. Read-only for users synced from on-premises directory. Supports $filter (eq, not, ge, le, startsWith).
     - `[Calendar <IMicrosoftGraphCalendar>]`: calendar
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -6433,13 +6447,13 @@ To create the parameters described below, construct a hash table containing the 
             - `[User <IMicrosoftGraphIdentity>]`: identity
             - `[Conversation <IMicrosoftGraphTeamworkConversationIdentity>]`: teamworkConversationIdentity
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-              - `[Id <String>]`: Unique identifier for the identity.
+              - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+              - `[Id <String>]`: The identifier of the identity. This property is read-only.
               - `[ConversationIdentityType <String>]`: teamworkConversationIdentityType
             - `[Tag <IMicrosoftGraphTeamworkTagIdentity>]`: teamworkTagIdentity
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-              - `[Id <String>]`: Unique identifier for the identity.
+              - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+              - `[Id <String>]`: The identifier of the identity. This property is read-only.
         - `[MessageHistory <IMicrosoftGraphChatMessageHistoryItem[]>]`: List of activity history of a message item, including modification time and actions, such as reactionAdded, reactionRemoved, or reaction changes, on the message.
           - `[Actions <String>]`: chatMessageActions
           - `[ModifiedDateTime <DateTime?>]`: The date and time when the message was modified.
@@ -6477,8 +6491,8 @@ To create the parameters described below, construct a hash table containing the 
         - `[JoinWebUrl <String>]`: The URL which can be clicked on to join or uniquely identify the meeting.
         - `[Organizer <IMicrosoftGraphTeamworkUserIdentity>]`: teamworkUserIdentity
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-          - `[Id <String>]`: Unique identifier for the identity.
+          - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+          - `[Id <String>]`: The identifier of the identity. This property is read-only.
           - `[UserIdentityType <String>]`: teamworkUserIdentityType
       - `[Operations <IMicrosoftGraphTeamsAsyncOperation[]>]`: A collection of all the Teams async operations that ran or are running on the chat. Nullable.
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -6496,11 +6510,11 @@ To create the parameters described below, construct a hash table containing the 
       - `[PermissionGrants <IMicrosoftGraphResourceSpecificPermissionGrant[]>]`: A collection of permissions granted to apps for the chat.
         - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
-        - `[ClientAppId <String>]`: ID of the service principal of the Azure AD app that has been granted access. Read-only.
-        - `[ClientId <String>]`: ID of the Azure AD app that has been granted access. Read-only.
+        - `[ClientAppId <String>]`: ID of the service principal of the Microsoft Entra app that has been granted access. Read-only.
+        - `[ClientId <String>]`: ID of the Microsoft Entra app that has been granted access. Read-only.
         - `[Permission <String>]`: The name of the resource-specific permission. Read-only.
         - `[PermissionType <String>]`: The type of permission. Possible values are: Application, Delegated. Read-only.
-        - `[ResourceAppId <String>]`: ID of the Azure AD app that is hosting the resource. Read-only.
+        - `[ResourceAppId <String>]`: ID of the Microsoft Entra app that is hosting the resource. Read-only.
       - `[PinnedMessages <IMicrosoftGraphPinnedChatMessageInfo[]>]`: A collection of all the pinned messages in the chat. Nullable.
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
         - `[Message <IMicrosoftGraphChatMessage>]`: chatMessage
@@ -6528,7 +6542,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[City <String>]`: The city where the user is located. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
     - `[CloudPCs <IMicrosoftGraphCloudPc[]>]`: 
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
-      - `[AadDeviceId <String>]`: The Azure Active Directory (Azure AD) device ID of the Cloud PC.
+      - `[AadDeviceId <String>]`: The Microsoft Entra device ID of the Cloud PC.
       - `[ConnectionSettings <IMicrosoftGraphCloudPcConnectionSettings>]`: cloudPcConnectionSettings
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[EnableSingleSignOn <Boolean?>]`: 
@@ -6576,6 +6590,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[ProvisioningPolicyId <String>]`: The provisioning policy ID of the Cloud PC.
       - `[ProvisioningPolicyName <String>]`: The provisioning policy that is applied during the provisioning of Cloud PCs.
       - `[ProvisioningType <String>]`: cloudPcProvisioningType
+      - `[ScopeIds <String[]>]`: 
       - `[ServicePlanId <String>]`: The service plan ID of the Cloud PC.
       - `[ServicePlanName <String>]`: The service plan name of the Cloud PC.
       - `[ServicePlanType <String>]`: cloudPcServicePlanType
@@ -6586,7 +6601,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[CloudRealtimeCommunicationInfo <IMicrosoftGraphCloudRealtimeCommunicationInfo>]`: cloudRealtimeCommunicationInfo
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[IsSipEnabled <Boolean?>]`: Indicates whether the user has a SIP-enabled client registered for them. Read-only.
-    - `[CompanyName <String>]`: The name of the company that the user is associated with. This property can be useful for describing the company that an external user comes from. The maximum length is 64 characters.Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+    - `[CompanyName <String>]`: The name of the company the user is associated with. This property can be useful for describing the company that an external user comes from. The maximum length is 64 characters.Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
     - `[ConsentProvidedForMinor <String>]`: Sets whether consent has been obtained for minors. Allowed values: null, Granted, Denied and NotRequired. Refer to the legal age group property definitions for further information. Supports $filter (eq, ne, not, and in).
     - `[ContactFolders <IMicrosoftGraphContactFolder[]>]`: The user's contacts folders. Read-only. Nullable.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -6657,11 +6672,11 @@ To create the parameters described below, construct a hash table containing the 
       - `[WellKnownName <String>]`: The name of the folder if the folder is a recognized folder. Currently contacts is the only recognized contacts folder.
     - `[Contacts <IMicrosoftGraphContact[]>]`: The user's contacts. Read-only. Nullable.
     - `[Country <String>]`: The country or region where the user is located; for example, US or UK. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-    - `[CreatedDateTime <DateTime?>]`: The date and time the user was created, in ISO 8601 format and in UTC time. The value cannot be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Azure AD. Property is null for some users created before June 2018 and on-premises users that were synced to Azure AD before June 2018. Read-only. Supports $filter (eq, ne, not , ge, le, in).
+    - `[CreatedDateTime <DateTime?>]`: The date and time the user was created in ISO 8601 format and UTC. The value cannot be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Microsoft Entra ID. Property is null for some users created before June 2018 and on-premises users synced to Microsoft Entra ID before June 2018. Read-only. Supports $filter (eq, ne, not , ge, le, in).
     - `[CreatedObjects <IMicrosoftGraphDirectoryObject[]>]`: Directory objects that the user created. Read-only. Nullable.
     - `[CreationType <String>]`: Indicates whether the user account was created through one of the following methods:  As a regular school or work account (null). As an external account (Invitation). As a local account for an Azure Active Directory B2C tenant (LocalAccount). Through self-service sign-up by an internal user using email verification (EmailVerified). Through self-service sign-up by an external user signing up through a link that is part of a user flow (SelfServiceSignUp).  Read-only.Supports $filter (eq, ne, not, and in).
     - `[CustomSecurityAttributes <IMicrosoftGraphCustomSecurityAttributeValue>]`: customSecurityAttributeValue
-    - `[Department <String>]`: The name for the department in which the user works. Maximum length is 64 characters.Supports $filter (eq, ne, not , ge, le, in, and eq on null values).
+    - `[Department <String>]`: The name of the department where the user works. Maximum length is 64 characters.Supports $filter (eq, ne, not , ge, le, in, and eq on null values).
     - `[DeviceEnrollmentConfigurations <IMicrosoftGraphDeviceEnrollmentConfiguration[]>]`: Get enrollment configurations targeted to the user
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[Assignments <IMicrosoftGraphEnrollmentConfigurationAssignment[]>]`: The list of group assignments for the device configuration profile
@@ -6701,8 +6716,8 @@ To create the parameters described below, construct a hash table containing the 
           - `[Link <String>]`: The link to the web resource. Can contain any of the following formatters: {{UPN}}, {{DeviceGUID}}, {{UserGUID}}
           - `[Text <String>]`: Not yet documented
     - `[Devices <IMicrosoftGraphDevice[]>]`: 
-    - `[DirectReports <IMicrosoftGraphDirectoryObject[]>]`: The users and contacts that report to the user. (The users and contacts that have their manager property set to this user.) Read-only. Nullable. Supports $expand.
-    - `[DisplayName <String>]`: The name displayed in the address book for the user. This value is usually the combination of the user's first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates. Maximum length is 256 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values), $orderby, and $search.
+    - `[DirectReports <IMicrosoftGraphDirectoryObject[]>]`: The users and contacts that report to the user. (The users and contacts with their manager property set to this user.) Read-only. Nullable. Supports $expand.
+    - `[DisplayName <String>]`: The name displayed in the address book for the user. This value is usually the combination of the user's first name, middle initial, and last name. This property is required when a user is created, and it cannot be cleared during updates. Maximum length is 256 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values), $orderby, and $search.
     - `[Drive <IMicrosoftGraphDrive>]`: drive
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -6957,8 +6972,8 @@ To create the parameters described below, construct a hash table containing the 
               - `[Group <IMicrosoftGraphIdentity>]`: identity
               - `[SiteGroup <IMicrosoftGraphSharePointIdentity>]`: sharePointIdentity
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-                - `[Id <String>]`: Unique identifier for the identity.
+                - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+                - `[Id <String>]`: The identifier of the identity. This property is read-only.
                 - `[LoginName <String>]`: The sign in name of the SharePoint identity.
               - `[SiteUser <IMicrosoftGraphSharePointIdentity>]`: sharePointIdentity
             - `[GrantedToV2 <IMicrosoftGraphSharePointIdentitySet>]`: sharePointIdentitySet
@@ -7037,7 +7052,7 @@ To create the parameters described below, construct a hash table containing the 
             - `[Id <String>]`: The unique identifier for an entity. Read-only.
             - `[IsLabelAppliedExplicitly <Boolean?>]`: Specifies whether the label is applied explicitly on the item. True indicates that the label is applied explicitly; otherwise, the label is inherited from its parent. Read-only.
             - `[LabelAppliedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-            - `[LabelAppliedDateTime <DateTime?>]`: The date and time when the label was applied on the item. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+            - `[LabelAppliedDateTime <DateTime?>]`: The date and time when the label was applied on the item. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
             - `[Name <String>]`: The retention label on the document. Read-write.
             - `[RetentionSettings <IMicrosoftGraphRetentionLabelSettings>]`: retentionLabelSettings
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -7077,7 +7092,7 @@ To create the parameters described below, construct a hash table containing the 
             - `[NotificationUrl <String>]`: Required. The URL of the endpoint that receives the change notifications. This URL must make use of the HTTPS protocol. Any query string parameter included in the notificationUrl property will be included in the HTTP POST request when Microsoft Graph sends the change notifications.
             - `[NotificationUrlAppId <String>]`: Optional. The app ID that the subscription service can use to generate the validation token. This allows the client to validate the authenticity of the notification received.
             - `[Resource <String>]`: Required. Specifies the resource that will be monitored for changes. Do not include the base URL (https://graph.microsoft.com/beta/). See the possible resource path values for each supported resource.
-          - `[Thumbnails <IMicrosoftGraphThumbnailSet[]>]`: Collection containing [ThumbnailSet][] objects associated with the item. For more info, see [getting thumbnails][]. Read-only. Nullable.
+          - `[Thumbnails <IMicrosoftGraphThumbnailSet[]>]`: Collection of [thumbnailSet][] objects associated with the item. For more information, see [getting thumbnails][]. Read-only. Nullable.
             - `[Id <String>]`: The unique identifier for an entity. Read-only.
             - `[Large <IMicrosoftGraphThumbnail>]`: thumbnail
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -7616,15 +7631,15 @@ To create the parameters described below, construct a hash table containing the 
         - `[LearningContentId <String>]`: The ID of the learning content created in Viva Learning. Required.
         - `[LearningProviderId <String>]`: The registration ID of the provider. Required.
         - `[Status <String>]`: courseStatus
-    - `[EmployeeHireDate <DateTime?>]`: The date and time when the user was hired or will start work in case of a future hire. Supports $filter (eq, ne, not , ge, le, in).
+    - `[EmployeeHireDate <DateTime?>]`: The date and time when the user was hired or will start work if there is a future hire. Supports $filter (eq, ne, not , ge, le, in).
     - `[EmployeeId <String>]`: The employee identifier assigned to the user by the organization. The maximum length is 16 characters.Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
-    - `[EmployeeLeaveDateTime <DateTime?>]`: The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs one of the following Azure AD roles: Lifecycle Workflows Administrator, Global Reader, or Global Administrator. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.
+    - `[EmployeeLeaveDateTime <DateTime?>]`: The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs one of the following Microsoft Entra roles: Lifecycle Workflows Administrator, Global Reader, or Global Administrator. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.
     - `[EmployeeOrgData <IMicrosoftGraphEmployeeOrgData>]`: employeeOrgData
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[CostCenter <String>]`: The cost center associated with the user. Returned only on $select. Supports $filter.
       - `[Division <String>]`: The name of the division in which the user works. Returned only on $select. Supports $filter.
     - `[EmployeeType <String>]`: Captures enterprise worker type. For example, Employee, Contractor, Consultant, or Vendor. Supports $filter (eq, ne, not , ge, le, in, startsWith).
-    - `[Events <IMicrosoftGraphEvent[]>]`: The user's events. Default is to show events under the Default Calendar. Read-only. Nullable.
+    - `[Events <IMicrosoftGraphEvent[]>]`: The user's events. The default is to show events under the Default Calendar. Read-only. Nullable.
     - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the user. Supports $expand. Nullable.
     - `[ExternalUserState <String>]`: For an external user invited to the tenant using the invitation API, this property represents the invited user's invitation status. For invited users, the state can be PendingAcceptance or Accepted, or null for all other users. Supports $filter (eq, ne, not , in).
     - `[ExternalUserStateChangeDateTime <String>]`: Shows the timestamp for the latest change to the externalUserState property. Supports $filter (eq, ne, not , in).
@@ -7658,7 +7673,7 @@ To create the parameters described below, construct a hash table containing the 
           - `[Id <String>]`: The unique identifier for an entity. Read-only.
           - `[RecoveryKeys <IMicrosoftGraphBitlockerRecoveryKey[]>]`: The recovery keys associated with the bitlocker entity.
             - `[Id <String>]`: The unique identifier for an entity. Read-only.
-            - `[CreatedDateTime <DateTime?>]`: The date and time when the key was originally backed up to Azure Active Directory.
+            - `[CreatedDateTime <DateTime?>]`: The date and time when the key was originally backed up to Microsoft Entra ID.
             - `[DeviceId <String>]`: ID of the device the BitLocker key is originally backed up from.
             - `[Key <String>]`: The BitLocker recovery key.
             - `[VolumeType <String>]`: volumeType
@@ -7901,12 +7916,12 @@ To create the parameters described below, construct a hash table containing the 
         - `[LanguageTags <String[]>]`: List of languages for the term store.
         - `[Sets <IMicrosoftGraphTermStoreSet[]>]`: Collection of all sets available in the term store.
     - `[GivenName <String>]`: The given name (first name) of the user. Maximum length is 64 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
-    - `[HireDate <DateTime?>]`: The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.
-    - `[Identities <IMicrosoftGraphObjectIdentity[]>]`: Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft, and tied to a user account. May contain multiple items with the same signInType value. Supports $filter (eq) including on null values, only where the signInType is not userPrincipalName.
-      - `[Issuer <String>]`: Specifies the issuer of the identity, for example facebook.com.For local accounts (where signInType isn't federated), this property is the local B2C tenant default domain name, for example contoso.onmicrosoft.com.For guests from other Azure AD organization, this is the domain of the federated organization, for example contoso.com.Supports $filter. 512 character limit.
+    - `[HireDate <DateTime?>]`: The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.
+    - `[Identities <IMicrosoftGraphObjectIdentity[]>]`: Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft and tied to a user account. It may contain multiple items with the same signInType value. Supports $filter (eq) including on null values, only where the signInType is not userPrincipalName.
+      - `[Issuer <String>]`: Specifies the issuer of the identity, for example facebook.com.For local accounts (where signInType isn't federated), this property is the local B2C tenant default domain name, for example contoso.onmicrosoft.com.For guests from other Microsoft Entra organization, this is the domain of the federated organization, for example contoso.com.Supports $filter. 512 character limit.
       - `[IssuerAssignedId <String>]`: Specifies the unique identifier assigned to the user by the issuer. The combination of issuer and issuerAssignedId must be unique within the organization. Represents the sign-in name for the user, when signInType is set to emailAddress or userName (also known as local accounts).When signInType is set to: emailAddress, (or a custom string that starts with emailAddress like emailAddress1) issuerAssignedId must be a valid email addressuserName, issuerAssignedId must begin with an alphabetical character or number, and can only contain alphanumeric characters and the following symbols: - or Supports $filter. 64 character limit.
       - `[SignInType <String>]`: Specifies the user sign-in types in your directory, such as emailAddress, userName, federated, or userPrincipalName. federated represents a unique identifier for a user from an issuer, that can be in any format chosen by the issuer. Setting or updating a userPrincipalName identity will update the value of the userPrincipalName property on the user object. The validations performed on the userPrincipalName property on the user object, for example, verified domains and acceptable characters, will be performed when setting or updating a userPrincipalName identity. Extra validation is enforced on issuerAssignedId when the sign-in type is set to emailAddress or userName. This property can also be set to any custom string.
-    - `[ImAddresses <String[]>]`: The instant message voice over IP (VOIP) session initiation protocol (SIP) addresses for the user. Read-only. Supports $filter (eq, not, ge, le, startsWith).
+    - `[ImAddresses <String[]>]`: The instant message voice-over IP (VOIP) session initiation protocol (SIP) addresses for the user. Read-only. Supports $filter (eq, not, ge, le, startsWith).
     - `[InferenceClassification <IMicrosoftGraphInferenceClassification>]`: inferenceClassification
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -7968,23 +7983,23 @@ To create the parameters described below, construct a hash table containing the 
         - `[ResourceReference <IMicrosoftGraphResourceReference>]`: resourceReference
         - `[ResourceVisualization <IMicrosoftGraphResourceVisualization>]`: resourceVisualization
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[Interests <String[]>]`: A list for the user to describe their interests. Returned only on $select.
+    - `[Interests <String[]>]`: A list for users to describe their interests. Returned only on $select.
     - `[IsLicenseReconciliationNeeded <Boolean?>]`: Indicates whether the user is pending an exchange mailbox license assignment.  Read-only.  Supports $filter (eq where true only).
-    - `[IsManagementRestricted <Boolean?>]`: true if the user is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.  To manage a user who is a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.
+    - `[IsManagementRestricted <Boolean?>]`: true if the user is a member of a restricted management administrative unit, which requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.  To manage a user who is a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.
     - `[IsResourceAccount <Boolean?>]`: Do not use – reserved for future use.
     - `[JobTitle <String>]`: The user's job title. Maximum length is 128 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
     - `[JoinedGroups <IMicrosoftGraphGroup[]>]`: 
       - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
-      - `[AcceptedSenders <IMicrosoftGraphDirectoryObject[]>]`: The list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.
+      - `[AcceptedSenders <IMicrosoftGraphDirectoryObject[]>]`: The list of users or groups allowed to create posts or calendar events in this group. If this list is non-empty, then only users or groups listed here can post.
       - `[AccessType <String>]`: groupAccessType
-      - `[AllowExternalSenders <Boolean?>]`: Indicates if people external to the organization can send messages to the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
+      - `[AllowExternalSenders <Boolean?>]`: Indicates if people external to the organization can send messages to the group. The default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
       - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment[]>]`: Represents the app roles a group has been granted for an application. Supports $expand.
       - `[AssignedLabels <IMicrosoftGraphAssignedLabel[]>]`: The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select.
         - `[DisplayName <String>]`: The display name of the label. Read-only.
         - `[LabelId <String>]`: The unique identifier of the label.
       - `[AssignedLicenses <IMicrosoftGraphAssignedLicense[]>]`: The licenses that are assigned to the group. Returned only on $select. Supports $filter (eq). Read-only.
-      - `[AutoSubscribeNewMembers <Boolean?>]`: Indicates if new members added to the group will be auto-subscribed to receive email notifications. You can set this property in a PATCH request for the group; do not set it in the initial POST request that creates the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
+      - `[AutoSubscribeNewMembers <Boolean?>]`: Indicates if new members added to the group are auto-subscribed to receive email notifications. You can set this property in a PATCH request for the group; don't set it in the initial POST request that creates the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
       - `[Calendar <IMicrosoftGraphCalendar>]`: calendar
       - `[CalendarView <IMicrosoftGraphEvent[]>]`: The calendar view for the calendar. Read-only.
       - `[Classification <String>]`: Describes a classification for the group (such as low, medium or high business impact). Valid values for this property are defined by creating a ClassificationList setting value, based on the template definition.Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith).
@@ -8036,7 +8051,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[Topic <String>]`: The topic of the conversation. This property can be set when the conversation is created, but it cannot be updated.
         - `[UniqueSenders <String[]>]`: All the users that sent a message to this Conversation.
       - `[CreatedByAppId <String>]`: App ID of the app used to create the group. Can be null for some groups. Returned by default. Read-only. Supports $filter (eq, ne, not, in, startsWith).
-      - `[CreatedDateTime <DateTime?>]`: Timestamp of when the group was created. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only.
+      - `[CreatedDateTime <DateTime?>]`: Timestamp of when the group was created. The value can't be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only.
       - `[CreatedOnBehalfOf <IMicrosoftGraphDirectoryObject>]`: directoryObject
       - `[Description <String>]`: An optional description for the group. Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
       - `[DisplayName <String>]`: The display name for the group. Required. Maximum length is 256 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.
@@ -8044,23 +8059,23 @@ To create the parameters described below, construct a hash table containing the 
       - `[Drives <IMicrosoftGraphDrive[]>]`: The group's drives. Read-only.
       - `[Endpoints <IMicrosoftGraphEndpoint[]>]`: Endpoints for the group. Read-only. Nullable.
       - `[Events <IMicrosoftGraphEvent[]>]`: The group's events.
-      - `[ExpirationDateTime <DateTime?>]`: Timestamp of when the group is set to expire. Is null for security groups but for Microsoft 365 groups, it represents when the group is set to expire as defined in the groupLifecyclePolicy. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
+      - `[ExpirationDateTime <DateTime?>]`: Timestamp of when the group is set to expire. It is null for security groups, but for Microsoft 365 groups, it represents when the group is set to expire as defined in the groupLifecyclePolicy. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
       - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the group. Read-only. Nullable.
       - `[GroupLifecyclePolicies <IMicrosoftGraphGroupLifecyclePolicy[]>]`: The collection of lifecycle policies for this group. Read-only. Nullable.
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
         - `[AlternateNotificationEmails <String>]`: List of email address to send notifications for groups without owners. Multiple email address can be defined by separating email address with a semicolon.
         - `[GroupLifetimeInDays <Int32?>]`: Number of days before a group expires and needs to be renewed. Once renewed, the group expiration is extended by the number of days defined.
         - `[ManagedGroupTypes <String>]`: The group type for which the expiration policy applies. Possible values are All, Selected or None.
-      - `[GroupTypes <String[]>]`: Specifies the group type and its membership. If the collection contains Unified, the group is a Microsoft 365 group; otherwise, it's either a security group or distribution group. For details, see groups overview.If the collection includes DynamicMembership, the group has dynamic membership; otherwise, membership is static. Returned by default. Supports $filter (eq, not).
+      - `[GroupTypes <String[]>]`: Specifies the group type and its membership. If the collection contains Unified, the group is a Microsoft 365 group; otherwise, it's either a security group or a distribution group. For details, see groups overview.If the collection includes DynamicMembership, the group has dynamic membership; otherwise, membership is static. Returned by default. Supports $filter (eq, not).
       - `[HasMembersWithLicenseErrors <Boolean?>]`: Indicates whether there are members in this group that have license errors from its group-based license assignment. This property is never returned on a GET operation. You can use it as a $filter argument to get groups that have members with license errors (that is, filter for this property being true).  Supports $filter (eq).
-      - `[HideFromAddressLists <Boolean?>]`: true if the group is not displayed in certain parts of the Outlook user interface: in the Address Book, in address lists for selecting message recipients, and in the Browse Groups dialog for searching groups; false otherwise. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
-      - `[HideFromOutlookClients <Boolean?>]`: true if the group is not displayed in Outlook clients, such as Outlook for Windows and Outlook on the web, false otherwise. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
+      - `[HideFromAddressLists <Boolean?>]`: true if the group isn't displayed in certain parts of the Outlook user interface: in the Address Book, in address lists for selecting message recipients, and in the Browse Groups dialog for searching groups; false otherwise. The default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
+      - `[HideFromOutlookClients <Boolean?>]`: true if the group isn't displayed in Outlook clients, such as Outlook for Windows and Outlook on the web, false otherwise. The default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
       - `[InfoCatalogs <String[]>]`: Identifies the info segments assigned to the group. Returned by default. Supports $filter (eq, not, ge, le, startsWith).
       - `[IsArchived <Boolean?>]`: When a group is associated with a team, this property determines whether the team is in read-only mode. To read this property, use the /group/{groupId}/team endpoint or the Get team API. To update this property, use the archiveTeam and unarchiveTeam APIs.
-      - `[IsAssignableToRole <Boolean?>]`: Indicates whether this group can be assigned to an Azure Active Directory role. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true,  visibility must be Hidden, and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Azure AD role assignmentsUsing this feature requires a Azure AD Premium P1 license. Returned by default. Supports $filter (eq, ne, not).
+      - `[IsAssignableToRole <Boolean?>]`: Indicates whether this group can be assigned to a Microsoft Entra role. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true,  visibility must be Hidden, and the group cannot be a dynamic group (that is, groupTypes can't contain DynamicMembership). Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Microsoft Entra role assignmentsUsing this feature requires a Microsoft Entra ID P1 license. Returned by default. Supports $filter (eq, ne, not).
       - `[IsFavorite <Boolean?>]`: 
-      - `[IsManagementRestricted <Boolean?>]`: Indicates whether the group is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.  To manage a group that's a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.
-      - `[IsSubscribedByMail <Boolean?>]`: Indicates whether the signed-in user is subscribed to receive email conversations. Default value is true. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
+      - `[IsManagementRestricted <Boolean?>]`: Indicates whether the group is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. The default value is false. Read-only.  To manage a group member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.
+      - `[IsSubscribedByMail <Boolean?>]`: Indicates whether the signed-in user is subscribed to receive email conversations. The default value is true. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
       - `[LicenseProcessingState <IMicrosoftGraphLicenseProcessingState>]`: licenseProcessingState
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[State <String>]`: 
@@ -8068,7 +8083,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[MailEnabled <Boolean?>]`: Specifies whether the group is mail-enabled. Required. Returned by default. Supports $filter (eq, ne, not, and eq on null values).
       - `[MailNickname <String>]`: The mail alias for the group, unique for Microsoft 365 groups in the organization. Maximum length is 64 characters. This property can contain only characters in the ASCII character set 0 - 127 except the following: @ () / [] ' ; : <> , SPACE. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith).
       - `[MemberOf <IMicrosoftGraphDirectoryObject[]>]`: Groups and administrative units that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.
-      - `[Members <IMicrosoftGraphDirectoryObject[]>]`: Direct members of this group, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).
+      - `[Members <IMicrosoftGraphDirectoryObject[]>]`: Direct group members, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).
       - `[MembersWithLicenseErrors <IMicrosoftGraphDirectoryObject[]>]`: A list of group members with license errors from this group-based license assignment. Read-only.
       - `[MembershipRule <String>]`: The rule that determines members for this group if the group is a dynamic group (groupTypes contains DynamicMembership). For more information about the syntax of the membership rule, see Membership Rules syntax. Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith).
       - `[MembershipRuleProcessingState <String>]`: Indicates whether the dynamic membership processing is on or paused. Possible values are On or Paused. Returned by default. Supports $filter (eq, ne, not, in).
@@ -8077,21 +8092,21 @@ To create the parameters described below, construct a hash table containing the 
         - `[ErrorMessage <String>]`: Detailed error message if dynamic group processing ran into an error.  Optional. Read-only.
         - `[LastMembershipUpdated <DateTime?>]`: Most recent date and time when membership of a dynamic group was updated.  Optional. Read-only.
         - `[Status <String>]`: MembershipRuleProcessingStatusDetails
-      - `[OnPremisesDomainName <String>]`: Contains the on-premises domain FQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect.Returned by default. Read-only.
-      - `[OnPremisesLastSyncDateTime <DateTime?>]`: Indicates the last time at which the group was synced with the on-premises directory.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in).
-      - `[OnPremisesNetBiosName <String>]`: Contains the on-premises netBios name synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect.Returned by default. Read-only.
+      - `[OnPremisesDomainName <String>]`: Contains the on-premises domain FQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect.Returned by default. Read-only.
+      - `[OnPremisesLastSyncDateTime <DateTime?>]`: Indicates the last time at which the group was synced with the on-premises directory.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in).
+      - `[OnPremisesNetBiosName <String>]`: Contains the on-premises netBios name synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect.Returned by default. Read-only.
       - `[OnPremisesProvisioningErrors <IMicrosoftGraphOnPremisesProvisioningError[]>]`: Errors when using Microsoft synchronization product during provisioning. Returned by default. Supports $filter (eq, not).
         - `[Category <String>]`: Category of the provisioning error. Note: Currently, there is only one possible value. Possible value: PropertyConflict - indicates a property value is not unique. Other objects contain the same value for the property.
         - `[OccurredDateTime <DateTime?>]`: The date and time at which the error occurred.
         - `[PropertyCausingError <String>]`: Name of the directory property causing the error. Current possible values: UserPrincipalName or ProxyAddress
         - `[Value <String>]`: Value of the property causing the error.
-      - `[OnPremisesSamAccountName <String>]`: Contains the on-premises SAM account name synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect.Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith). Read-only.
-      - `[OnPremisesSecurityIdentifier <String>]`: Contains the on-premises security identifier (SID) for the group that was synchronized from on-premises to the cloud. Returned by default. Supports $filter (eq including on null values). Read-only.
+      - `[OnPremisesSamAccountName <String>]`: Contains the on-premises SAM account name synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect.Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith). Read-only.
+      - `[OnPremisesSecurityIdentifier <String>]`: Contains the on-premises security identifier (SID) for the group synchronized from on-premises to the cloud. Returned by default. Supports $filter (eq including on null values). Read-only.
       - `[OnPremisesSyncEnabled <Boolean?>]`: true if this group is synced from an on-premises directory; false if this group was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Returned by default. Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
       - `[Onenote <IMicrosoftGraphOnenote>]`: onenote
       - `[OrganizationId <String>]`: 
-      - `[Owners <IMicrosoftGraphDirectoryObject[]>]`: The owners of the group who can be users or service principals. Nullable. If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner.  Supports $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1); Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).
-      - `[PermissionGrants <IMicrosoftGraphResourceSpecificPermissionGrant[]>]`: The permissions that have been granted for a group to a specific application. Supports $expand.
+      - `[Owners <IMicrosoftGraphDirectoryObject[]>]`: The owners of the group who can be users or service principals. Nullable. If this property isn't specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner.  Supports $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1); Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).
+      - `[PermissionGrants <IMicrosoftGraphResourceSpecificPermissionGrant[]>]`: The permissions granted for a group to a specific application. Supports $expand.
       - `[Photo <IMicrosoftGraphProfilePhoto>]`: profilePhoto
       - `[Photos <IMicrosoftGraphProfilePhoto[]>]`: The profile photos owned by the group. Read-only. Nullable.
       - `[Planner <IMicrosoftGraphPlannerGroup>]`: plannerGroup
@@ -8240,16 +8255,16 @@ To create the parameters described below, construct a hash table containing the 
             - `[AccessLevel <String>]`: plannerPlanAccessLevel
           - `[Tasks <IMicrosoftGraphPlannerTask[]>]`: Collection of tasks in the plan. Read-only. Nullable.
           - `[Title <String>]`: Required. Title of the plan.
-      - `[PreferredDataLocation <String>]`: The preferred data location for the Microsoft 365 group. By default, the group inherits the group creator's preferred data location. To set this property, the calling user must be assigned one of the following Azure AD roles:  Global Administrator  User Account Administrator Directory Writer  Exchange Administrator  SharePoint Administrator  For more information about this property, see OneDrive Online Multi-Geo. Nullable. Returned by default.
-      - `[PreferredLanguage <String>]`: The preferred language for a Microsoft 365 group. Should follow ISO 639-1 Code; for example en-US. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+      - `[PreferredDataLocation <String>]`: The preferred data location for the Microsoft 365 group. By default, the group inherits the group creator's preferred data location. To set this property, the calling app must be granted the Directory.ReadWrite.All permission and the user be assigned one of the following Microsoft Entra roles:  Global Administrator  User Account Administrator Directory Writer  Exchange Administrator  SharePoint Administrator  For more information about this property, see OneDrive Online Multi-Geo and Create a Microsoft 365 group with a specific PDL. Nullable. Returned by default.
+      - `[PreferredLanguage <String>]`: The preferred language for a Microsoft 365 group. Should follow ISO 639-1 Code; for example, en-US. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
       - `[ProxyAddresses <String[]>]`: Email addresses for the group that direct to the same group mailbox. For example: ['SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com']. The any operator is required for filter expressions on multi-valued properties. Returned by default. Read-only. Not nullable. Supports $filter (eq, not, ge, le, startsWith, endsWith, /$count eq 0, /$count ne 0).
-      - `[RejectedSenders <IMicrosoftGraphDirectoryObject[]>]`: The list of users or groups that are not allowed to create posts or calendar events in this group. Nullable
-      - `[RenewedDateTime <DateTime?>]`: Timestamp of when the group was last renewed. This cannot be modified directly and is only updated via the renew service action. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
+      - `[RejectedSenders <IMicrosoftGraphDirectoryObject[]>]`: The list of users or groups not allowed to create posts or calendar events in this group. Nullable
+      - `[RenewedDateTime <DateTime?>]`: Timestamp of when the group was last renewed. This cannot be modified directly and is only updated via the renew service action. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
       - `[ResourceBehaviorOptions <String[]>]`: Specifies the group behaviors that can be set for a Microsoft 365 group during creation. This can be set only as part of creation (POST). Possible values are AllowOnlyMembersToPost, HideGroupInOutlook, SubscribeNewGroupMembers, WelcomeEmailDisabled. For more information, see Set Microsoft 365 group behaviors and provisioning options.
-      - `[ResourceProvisioningOptions <String[]>]`: Specifies the group resources that are provisioned as part of Microsoft 365 group creation, that are not normally part of default group creation. Possible value is Team. For more information, see Set Microsoft 365 group behaviors and provisioning options. Returned by default. Supports $filter (eq, not, startsWith.
+      - `[ResourceProvisioningOptions <String[]>]`: Specifies the group resources that are provisioned as part of Microsoft 365 group creation that isn't normally part of default group creation. The possible value is Team. For more information, see Set Microsoft 365 group behaviors and provisioning options. Returned by default. Supports $filter (eq, not, startsWith.
       - `[SecurityEnabled <Boolean?>]`: Specifies whether the group is a security group. Required.Returned by default. Supports $filter (eq, ne, not, in).
       - `[SecurityIdentifier <String>]`: Security identifier of the group, used in Windows scenarios. Returned by default.
-      - `[ServiceProvisioningErrors <IMicrosoftGraphServiceProvisioningError[]>]`: Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a group object .  Supports $filter (eq, not, for isResolved and serviceInstance).
+      - `[ServiceProvisioningErrors <IMicrosoftGraphServiceProvisioningError[]>]`: Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a group object.
         - `[CreatedDateTime <DateTime?>]`: The date and time at which the error occurred.
         - `[IsResolved <Boolean?>]`: Indicates whether the Error has been attended to.
         - `[ServiceInstance <String>]`: Qualified service instance (for example, 'SharePoint/Dublin') that published the service error information.
@@ -8284,7 +8299,7 @@ To create the parameters described below, construct a hash table containing the 
           - `[SharedWithTeams <IMicrosoftGraphSharedWithChannelTeamInfo[]>]`: A collection of teams with which a channel is shared.
             - `[DisplayName <String>]`: The name of the team.
             - `[Team <IMicrosoftGraphTeam>]`: team
-            - `[TenantId <String>]`: The ID of the Azure Active Directory tenant.
+            - `[TenantId <String>]`: The ID of the Microsoft Entra tenant.
             - `[Id <String>]`: The unique identifier for an entity. Read-only.
             - `[AllowedMembers <IMicrosoftGraphConversationMember[]>]`: A collection of team members who have access to the shared channel.
             - `[IsHostTeam <Boolean?>]`: Indicates whether the team is the host of the channel.
@@ -8295,7 +8310,7 @@ To create the parameters described below, construct a hash table containing the 
             - `[MembersCount <Int32?>]`: Count of members in a channel.
             - `[OwnersCount <Int32?>]`: Count of owners in a channel.
           - `[Tabs <IMicrosoftGraphTeamsTab[]>]`: A collection of all the tabs in the channel. A navigation property.
-          - `[TenantId <String>]`: The ID of the Azure Active Directory tenant.
+          - `[TenantId <String>]`: The ID of the Microsoft Entra tenant.
           - `[WebUrl <String>]`: A hyperlink that will go to the channel in Microsoft Teams. This is the URL that you get when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.
         - `[Channels <IMicrosoftGraphChannel[]>]`: The collection of channels and messages associated with the team.
         - `[Classification <String>]`: An optional label. Typically describes the data or business sensitivity of the team. Must match one of a pre-configured set in the tenant's directory.
@@ -8345,6 +8360,13 @@ To create the parameters described below, construct a hash table containing the 
         - `[Schedule <IMicrosoftGraphSchedule>]`: schedule
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Id <String>]`: The unique identifier for an entity. Read-only.
+          - `[DayNotes <IMicrosoftGraphDayNote[]>]`: 
+            - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
+            - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
+            - `[Id <String>]`: The unique identifier for an entity. Read-only.
+            - `[DayNoteDate <DateTime?>]`: 
+            - `[DraftDayNote <IMicrosoftGraphItemBody>]`: itemBody
+            - `[SharedDayNote <IMicrosoftGraphItemBody>]`: itemBody
           - `[Enabled <Boolean?>]`: Indicates whether the schedule is enabled for the team. Required.
           - `[OfferShiftRequests <IMicrosoftGraphOfferShiftRequest[]>]`: The offer requests for shifts in the schedule.
             - `[AssignedTo <String>]`: scheduleChangeRequestActor
@@ -8487,7 +8509,7 @@ To create the parameters described below, construct a hash table containing the 
             - `[IsStagedForDeletion <Boolean?>]`: 
             - `[SharedTimeOff <IMicrosoftGraphTimeOffItem>]`: timeOffItem
             - `[UserId <String>]`: ID of the user assigned to the timeOff. Required.
-          - `[WorkforceIntegrationIds <String[]>]`: 
+          - `[WorkforceIntegrationIds <String[]>]`: The Ids for the workforce integrations associated with this schedule.
         - `[Specialization <String>]`: teamSpecialization
         - `[Summary <IMicrosoftGraphTeamSummary>]`: teamSummary
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -8524,26 +8546,26 @@ To create the parameters described below, construct a hash table containing the 
           - `[PublisherName <String>]`: The organization which published the team template.
           - `[ShortDescription <String>]`: A short-description of the team template as it will appear to the users in Microsoft Teams.
           - `[TeamDefinition <IMicrosoftGraphTeam>]`: team
-        - `[TenantId <String>]`: The ID of the Azure Active Directory tenant.
+        - `[TenantId <String>]`: The ID of the Microsoft Entra tenant.
         - `[Visibility <String>]`: teamVisibilityType
         - `[WebUrl <String>]`: A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.
       - `[Theme <String>]`: Specifies a Microsoft 365 group's color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.
       - `[Threads <IMicrosoftGraphConversationThread[]>]`: The group's conversation threads. Nullable.
-      - `[TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>]`: The groups that a group is a member of, either directly and through nested membership. Nullable.
+      - `[TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>]`: The groups a group is a member of, either directly or through nested membership. Nullable.
       - `[TransitiveMembers <IMicrosoftGraphDirectoryObject[]>]`: The direct and transitive members of a group. Nullable.
       - `[UniqueName <String>]`: 
-      - `[UnseenConversationsCount <Int32?>]`: Count of conversations that have been delivered one or more new posts since the signed-in user's last visit to the group. This property is the same as unseenCount. Returned only on $select.
+      - `[UnseenConversationsCount <Int32?>]`: Count of conversations delivered one or more new posts since the signed-in user's last visit to the group. This property is the same as unseenCount. Returned only on $select.
       - `[UnseenCount <Int32?>]`: Count of conversations that have received new posts since the signed-in user last visited the group. This property is the same as unseenConversationsCount.Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
       - `[UnseenMessagesCount <Int32?>]`: Count of new posts that have been delivered to the group's conversations since the signed-in user's last visit to the group. Returned only on $select.
-      - `[Visibility <String>]`: Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups, when the groups are created. It can't be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. To learn more, see group visibility options. Returned by default. Nullable.
+      - `[Visibility <String>]`: Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups when the groups are created. It can't be updated later. Other values of visibility can be updated after group creation. If visibility value isn't specified during group creation on Microsoft Graph, a security group is created as Private by default, and Microsoft 365 group is Public. Groups assignable to roles are always Private. To learn more, see group visibility options. Returned by default. Nullable.
       - `[WritebackConfiguration <IMicrosoftGraphGroupWritebackConfiguration>]`: groupWritebackConfiguration
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[IsEnabled <Boolean?>]`: Indicates whether writeback of cloud groups to on-premise Active Directory is enabled. Default value is true for Microsoft 365 groups and false for security groups.
-        - `[OnPremisesGroupType <String>]`: Indicates the target on-premises group type the cloud object is written back as. Nullable. The possible values are: universalDistributionGroup, universalSecurityGroup, universalMailEnabledSecurityGroup.If the cloud group is a unified (Microsoft 365) group, this property can be one of the following: universalDistributionGroup, universalSecurityGroup, universalMailEnabledSecurityGroup. Azure AD security groups can be written back as universalSecurityGroup. If isEnabled or the NewUnifiedGroupWritebackDefault group setting is true but this property isn't explicitly configured: Microsoft 365 groups are written back as universalDistributionGroup by defaultSecurity groups are written back as universalSecurityGroup by default
-    - `[JoinedTeams <IMicrosoftGraphTeam[]>]`: The Microsoft Teams teams that the user is a member of. Read-only. Nullable.
-    - `[LastPasswordChangeDateTime <DateTime?>]`: The time when this Azure AD user last changed their password or when their password was created, whichever date the latest action was performed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Returned only on $select.
-    - `[LegalAgeGroupClassification <String>]`: Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, MinorWithOutParentalConsent, MinorWithParentalConsent, MinorNoParentalConsentRequired, NotAdult and Adult. For more information, see legal age group property definitions. Returned only on $select.
-    - `[LicenseAssignmentStates <IMicrosoftGraphLicenseAssignmentState[]>]`: State of license assignments for this user. Also indicates licenses that are directly assigned and those that the user has inherited through group memberships. Read-only. Returned only on $select.
+        - `[OnPremisesGroupType <String>]`: Indicates the target on-premises group type the cloud object is written back as. Nullable. The possible values are: universalDistributionGroup, universalSecurityGroup, universalMailEnabledSecurityGroup.If the cloud group is a unified (Microsoft 365) group, this property can be one of the following: universalDistributionGroup, universalSecurityGroup, universalMailEnabledSecurityGroup. Microsoft Entra security groups can be written back as universalSecurityGroup. If isEnabled or the NewUnifiedGroupWritebackDefault group setting is true but this property isn't explicitly configured: Microsoft 365 groups are written back as universalDistributionGroup by defaultSecurity groups are written back as universalSecurityGroup by default
+    - `[JoinedTeams <IMicrosoftGraphTeam[]>]`: The Microsoft Teams teams the user is a member of. Read-only. Nullable.
+    - `[LastPasswordChangeDateTime <DateTime?>]`: When this Microsoft Entra user last changed their password or when their password was created, whichever date the latest action was performed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Returned only on $select.
+    - `[LegalAgeGroupClassification <String>]`: Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, MinorWithOutParentalConsent, MinorWithParentalConsent, MinorNoParentalConsentRequired, NotAdult, and Adult. For more information, see legal age group property definitions. Returned only on $select.
+    - `[LicenseAssignmentStates <IMicrosoftGraphLicenseAssignmentState[]>]`: State of license assignments for this user. It also indicates licenses that are directly assigned and the ones the user inherited through group memberships. Read-only. Returned only on $select.
       - `[AssignedByGroup <String>]`: Indicates whether the license is directly-assigned or inherited from a group. If directly-assigned, this field is null; if inherited through a group membership, this field contains the ID of the group. Read-Only.
       - `[DisabledPlans <String[]>]`: The service plans that are disabled in this assignment. Read-Only.
       - `[Error <String>]`: License assignment failure error. If the license is assigned successfully, this field will be Null. Read-Only. The possible values are CountViolation, MutuallyExclusiveViolation, DependencyViolation, ProhibitedInUsageLocationViolation, UniquenessViolation, and Other. For more information on how to identify and resolve license assignment errors, see here.
@@ -8551,7 +8573,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[SkuId <String>]`: The unique identifier for the SKU. Read-Only.
       - `[State <String>]`: Indicate the current state of this assignment. Read-Only. The possible values are Active, ActiveWithError, Disabled, and Error.
     - `[LicenseDetails <IMicrosoftGraphLicenseDetails[]>]`: 
-    - `[Mail <String>]`: The SMTP address for the user, for example, admin@contoso.com. Changes to this property also updates the user's proxyAddresses collection to include the value as an SMTP address. This property can't contain accent characters.  NOTE: We don't recommend updating this property for Azure AD B2C user profiles. Use the otherMails property instead.  Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith, and eq on null values).
+    - `[Mail <String>]`: The SMTP address for the user, for example, admin@contoso.com. Changes to this property also update the user's proxyAddresses collection to include the value as an SMTP address. This property can't contain accent characters.  NOTE: We don't recommend updating this property for Azure AD B2C user profiles. Use the otherMails property instead.  Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith, and eq on null values).
     - `[MailFolders <IMicrosoftGraphMailFolder[]>]`: The user's mail folders. Read-only. Nullable.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[ChildFolderCount <Int32?>]`: The number of immediate child mailFolders in the current mailFolder.
@@ -8889,6 +8911,9 @@ To create the parameters described below, construct a hash table containing the 
         - `[RemediationScriptError <String>]`: Error output of the remediation script
         - `[RemediationState <RemediationState?>]`: Indicates the type of execution status of the device management script.
         - `[UserName <String>]`: Name of the user whom ran the device health script
+      - `[DeviceIdentityAttestationDetail <IMicrosoftGraphDeviceIdentityAttestationDetail>]`: Indicates the attestation status of the managed device
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+        - `[DeviceIdentityAttestationStatus <DeviceIdentityAttestationStatus?>]`: Indicates the state of the anomaly. Eg: anomaly severity can be new, active, disabled, removed or other.
       - `[DeviceRegistrationState <DeviceRegistrationState?>]`: Device registration status.
       - `[DeviceType <DeviceType?>]`: Device type.
       - `[ExchangeAccessState <DeviceManagementExchangeAccessState?>]`: Device Exchange Access State.
@@ -9043,7 +9068,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[SignatureVersion <String>]`: Current malware definitions version
         - `[TamperProtectionEnabled <Boolean?>]`: When TRUE indicates the Windows Defender tamper protection feature is enabled, when FALSE indicates the Windows Defender tamper protection feature is not enabled. Defaults to setting on client device.
     - `[Manager <IMicrosoftGraphDirectoryObject>]`: directoryObject
-    - `[MemberOf <IMicrosoftGraphDirectoryObject[]>]`: The groups, directory roles and administrative units that the user is a member of. Read-only. Nullable. Supports $expand.
+    - `[MemberOf <IMicrosoftGraphDirectoryObject[]>]`: The groups, directory roles, and administrative units that the user is a member of. Read-only. Nullable. Supports $expand.
     - `[Messages <IMicrosoftGraphMessage[]>]`: The messages in a mailbox or folder. Read-only. Nullable.
     - `[MobileAppIntentAndStates <IMicrosoftGraphMobileAppIntentAndState[]>]`: The list of troubleshooting events for this user.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -9079,8 +9104,8 @@ To create the parameters described below, construct a hash table containing the 
         - `[TroubleshootingErrorDetails <IMicrosoftGraphDeviceManagementTroubleshootingErrorDetails>]`: Object containing detailed information about the error and its remediation.
       - `[ManagedDeviceIdentifier <String>]`: Device identifier created or collected by Intune.
       - `[UserId <String>]`: Identifier for the user that tried to enroll the device.
-    - `[MobilePhone <String>]`: The primary cellular telephone number for the user. Read-only for users synced from on-premises directory.  Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values) and $search.
-    - `[MySite <String>]`: The URL for the user's personal site. Returned only on $select.
+    - `[MobilePhone <String>]`: The primary cellular telephone number for the user. Read-only for users synced from the on-premises directory.  Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values) and $search.
+    - `[MySite <String>]`: The URL for the user's site. Returned only on $select.
     - `[Notifications <IMicrosoftGraphNotification[]>]`: 
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[DisplayTimeToLive <Int32?>]`: Sets how long (in seconds) this notification content stays in each platform's notification viewer. For example, when the notification is delivered to a Windows device, the value of this property is passed on to ToastNotification.ExpirationTime, which determines how long the toast notification stays in the user's Windows Action Center.
@@ -9100,24 +9125,23 @@ To create the parameters described below, construct a hash table containing the 
         - `[PlatformTypes <String[]>]`: Use to filter the notification distribution to a specific platform or platforms. Valid values are Windows, iOS, Android and WebPush. By default, all push endpoint types (Windows, iOS, Android and WebPush) are enabled.
     - `[Oauth2PermissionGrants <IMicrosoftGraphOAuth2PermissionGrant[]>]`: 
     - `[OfficeLocation <String>]`: The office location in the user's place of business. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-    - `[OnPremisesDistinguishedName <String>]`: Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only.
-    - `[OnPremisesDomainName <String>]`: Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only.
+    - `[OnPremisesDistinguishedName <String>]`: Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only.
+    - `[OnPremisesDomainName <String>]`: Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only.
     - `[OnPremisesExtensionAttributes <IMicrosoftGraphOnPremisesExtensionAttributes>]`: onPremisesExtensionAttributes
-    - `[OnPremisesImmutableId <String>]`: This property is used to associate an on-premises Active Directory user account to their Azure AD user object. This property must be specified when creating a new user account in the Graph if you're using a federated domain for the user's userPrincipalName (UPN) property. Note: The $ and _ characters can't be used when specifying this property. Supports $filter (eq, ne, not, ge, le, in).
-    - `[OnPremisesLastSyncDateTime <DateTime?>]`: Indicates the last time at which the object was synced with the on-premises directory; for example: '2013-02-16T03:04:54Z'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, in).
+    - `[OnPremisesImmutableId <String>]`: This property associates an on-premises Active Directory user account to their Microsoft Entra user object. This property must be specified when creating a new user account in the Graph if you're using a federated domain for the user's userPrincipalName (UPN) property. Note: The $ and _ characters can't be used when specifying this property. Supports $filter (eq, ne, not, ge, le, in).
+    - `[OnPremisesLastSyncDateTime <DateTime?>]`: Indicates the last time at which the object was synced with the on-premises directory; for example: '2013-02-16T03:04:54Z'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, in).
     - `[OnPremisesProvisioningErrors <IMicrosoftGraphOnPremisesProvisioningError[]>]`: Errors when using Microsoft synchronization product during provisioning.  Supports $filter (eq, not, ge, le).
-    - `[OnPremisesSamAccountName <String>]`: Contains the on-premises sAMAccountName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith).
-    - `[OnPremisesSecurityIdentifier <String>]`: Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Read-only. Supports $filter (eq including on null values).
+    - `[OnPremisesSamAccountName <String>]`: Contains the on-premises sAMAccountName synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith).
+    - `[OnPremisesSecurityIdentifier <String>]`: Contains the on-premises security identifier (SID) for the user synchronized from on-premises to the cloud. Read-only. Supports $filter (eq including on null values).
     - `[OnPremisesSipInfo <IMicrosoftGraphOnPremisesSipInfo>]`: onPremisesSipInfo
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[IsSipEnabled <Boolean?>]`: Indicates whether the user is currently enabled for on-premises Skype for Business.
       - `[SipDeploymentLocation <String>]`: Indicates a fully qualified DNS name of the Microsoft Online Communications Server deployment.
       - `[SipPrimaryAddress <String>]`: Serves as a unique identifier for each user on the on-premises Skype for Business.
-    - `[OnPremisesSyncEnabled <Boolean?>]`: true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise the user isn't being synced and can be managed in Azure Active Directory (Azure AD). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
-    - `[OnPremisesUserPrincipalName <String>]`: Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith).
+    - `[OnPremisesSyncEnabled <Boolean?>]`: true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise, the user isn't being synced and can be managed in Microsoft Entra ID. Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
+    - `[OnPremisesUserPrincipalName <String>]`: Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith).
     - `[Onenote <IMicrosoftGraphOnenote>]`: onenote
-    - `[OnlineMeetings <IMicrosoftGraphOnlineMeeting[]>]`: Information about a meeting, including the URL used to join a meeting, the attendees' list, and the description.
-      - `[Id <String>]`: The unique identifier for an entity. Read-only.
+    - `[OnlineMeetings <IMicrosoftGraphOnlineMeeting[]>]`: Information about a meeting, including the URL used to join a meeting, the attendees list, and the description.
       - `[AllowAttendeeToEnableCamera <Boolean?>]`: Indicates whether attendees can turn on their camera.
       - `[AllowAttendeeToEnableMic <Boolean?>]`: Indicates whether attendees can turn on their microphone.
       - `[AllowMeetingChat <String>]`: meetingChatMode
@@ -9126,8 +9150,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[AllowTeamworkReactions <Boolean?>]`: Indicates if Teams reactions are enabled for the meeting.
       - `[AllowTranscription <Boolean?>]`: Indicates whether transcription is enabled for the meeting.
       - `[AllowedPresenters <String>]`: onlineMeetingPresenters
-      - `[AlternativeRecording <Byte[]>]`: 
-      - `[AnonymizeIdentityForRoles <String[]>]`: Specifies whose identity will be anonymized in the meeting. Possible values are: attendee. The attendee value cannot be removed through a PATCH operation once added.
+      - `[AnonymizeIdentityForRoles <String[]>]`: Specifies whose identity is anonymized in the meeting. Possible values are: attendee. The attendee value can't be removed through a PATCH operation once added.
       - `[AttendanceReports <IMicrosoftGraphMeetingAttendanceReport[]>]`: The attendance reports of an online meeting. Read-only.
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
         - `[AttendanceRecords <IMicrosoftGraphAttendanceRecord[]>]`: List of attendance records of an attendance report. Read-only.
@@ -9144,7 +9167,6 @@ To create the parameters described below, construct a hash table containing the 
         - `[MeetingEndDateTime <DateTime?>]`: UTC time when the meeting ended. Read-only.
         - `[MeetingStartDateTime <DateTime?>]`: UTC time when the meeting started. Read-only.
         - `[TotalParticipantCount <Int32?>]`: Total number of participants. Read-only.
-      - `[AttendeeReport <Byte[]>]`: 
       - `[AudioConferencing <IMicrosoftGraphAudioConferencing>]`: audioConferencing
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[ConferenceId <String>]`: The conference id of the online meeting.
@@ -9153,6 +9175,38 @@ To create the parameters described below, construct a hash table containing the 
         - `[TollFreeNumbers <String[]>]`: List of toll-free numbers that are displayed in the meeting invite.
         - `[TollNumber <String>]`: 
         - `[TollNumbers <String[]>]`: List of toll numbers that are displayed in the meeting invite.
+      - `[ChatInfo <IMicrosoftGraphChatInfo>]`: chatInfo
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+        - `[MessageId <String>]`: The unique identifier for a message in a Microsoft Teams channel.
+        - `[ReplyChainMessageId <String>]`: The ID of the reply message.
+        - `[ThreadId <String>]`: The unique identifier for a thread in Microsoft Teams.
+      - `[ChatRestrictions <IMicrosoftGraphChatRestrictions>]`: chatRestrictions
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+        - `[AllowTextOnly <Boolean?>]`: 
+      - `[IsEndToEndEncryptionEnabled <Boolean?>]`: 
+      - `[IsEntryExitAnnounced <Boolean?>]`: Indicates whether to announce when callers join or leave.
+      - `[JoinInformation <IMicrosoftGraphItemBody>]`: itemBody
+      - `[JoinMeetingIdSettings <IMicrosoftGraphJoinMeetingIdSettings>]`: joinMeetingIdSettings
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+        - `[IsPasscodeRequired <Boolean?>]`: Indicates whether a passcode is required to join a meeting when using joinMeetingId. Optional.
+        - `[JoinMeetingId <String>]`: The meeting ID to be used to join a meeting. Optional. Read-only.
+        - `[Passcode <String>]`: The passcode to join a meeting.  Optional. Read-only.
+      - `[JoinWebUrl <String>]`: The join URL of the online meeting. Read-only.
+      - `[LobbyBypassSettings <IMicrosoftGraphLobbyBypassSettings>]`: lobbyBypassSettings
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+        - `[IsDialInBypassEnabled <Boolean?>]`: Specifies whether or not to always let dial-in callers bypass the lobby. Optional.
+        - `[Scope <String>]`: lobbyBypassScope
+      - `[RecordAutomatically <Boolean?>]`: Indicates whether to record the meeting automatically.
+      - `[ShareMeetingChatHistoryDefault <String>]`: meetingChatHistoryDefaultMode
+      - `[Subject <String>]`: The subject of the online meeting.
+      - `[VideoTeleconferenceId <String>]`: The video teleconferencing ID. Read-only.
+      - `[WatermarkProtection <IMicrosoftGraphWatermarkProtectionValues>]`: watermarkProtectionValues
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+        - `[IsEnabledForContentSharing <Boolean?>]`: Indicates whether to apply a watermark to any shared content.
+        - `[IsEnabledForVideo <Boolean?>]`: Indicates whether to apply a watermark to everyone's video feed.
+      - `[Id <String>]`: The unique identifier for an entity. Read-only.
+      - `[AlternativeRecording <Byte[]>]`: 
+      - `[AttendeeReport <Byte[]>]`: 
       - `[BroadcastRecording <Byte[]>]`: 
       - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings>]`: broadcastMeetingSettings
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -9167,32 +9221,11 @@ To create the parameters described below, construct a hash table containing the 
         - `[IsRecordingEnabled <Boolean?>]`: Indicates whether recording is enabled for this Teams live event. Default value is false.
         - `[IsVideoOnDemandEnabled <Boolean?>]`: Indicates whether video on demand is enabled for this Teams live event. Default value is false.
       - `[Capabilities <String[]>]`: 
-      - `[ChatInfo <IMicrosoftGraphChatInfo>]`: chatInfo
-        - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[MessageId <String>]`: The unique identifier for a message in a Microsoft Teams channel.
-        - `[ReplyChainMessageId <String>]`: The ID of the reply message.
-        - `[ThreadId <String>]`: The unique identifier for a thread in Microsoft Teams.
-      - `[ChatRestrictions <IMicrosoftGraphChatRestrictions>]`: chatRestrictions
-        - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[AllowTextOnly <Boolean?>]`: 
       - `[CreationDateTime <DateTime?>]`: The meeting creation time in UTC. Read-only.
       - `[EndDateTime <DateTime?>]`: The meeting end time in UTC.
       - `[ExternalId <String>]`: The external ID. A custom ID. Optional.
       - `[IsBroadcast <Boolean?>]`: 
-      - `[IsEndToEndEncryptionEnabled <Boolean?>]`: 
-      - `[IsEntryExitAnnounced <Boolean?>]`: Indicates whether to announce when callers join or leave.
-      - `[JoinInformation <IMicrosoftGraphItemBody>]`: itemBody
-      - `[JoinMeetingIdSettings <IMicrosoftGraphJoinMeetingIdSettings>]`: joinMeetingIdSettings
-        - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[IsPasscodeRequired <Boolean?>]`: Indicates whether a passcode is required to join a meeting when using joinMeetingId. Optional.
-        - `[JoinMeetingId <String>]`: The meeting ID to be used to join a meeting. Optional. Read-only.
-        - `[Passcode <String>]`: The passcode to join a meeting.  Optional. Read-only.
       - `[JoinUrl <String>]`: 
-      - `[JoinWebUrl <String>]`: The join URL of the online meeting. Read-only.
-      - `[LobbyBypassSettings <IMicrosoftGraphLobbyBypassSettings>]`: lobbyBypassSettings
-        - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[IsDialInBypassEnabled <Boolean?>]`: Specifies whether or not to always let dial-in callers bypass the lobby. Optional.
-        - `[Scope <String>]`: lobbyBypassScope
       - `[MeetingAttendanceReport <IMicrosoftGraphMeetingAttendanceReport>]`: meetingAttendanceReport
       - `[Participants <IMicrosoftGraphMeetingParticipants>]`: meetingParticipants
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -9203,12 +9236,11 @@ To create the parameters described below, construct a hash table containing the 
         - `[Contributors <IMicrosoftGraphMeetingParticipantInfo[]>]`: 
         - `[Organizer <IMicrosoftGraphMeetingParticipantInfo>]`: meetingParticipantInfo
         - `[Producers <IMicrosoftGraphMeetingParticipantInfo[]>]`: 
-      - `[RecordAutomatically <Boolean?>]`: Indicates whether to record the meeting automatically.
       - `[Recording <Byte[]>]`: 
       - `[Recordings <IMicrosoftGraphCallRecording[]>]`: The recordings of an online meeting. Read-only.
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
         - `[Content <Byte[]>]`: The content of the recording. Read-only.
-        - `[CreatedDateTime <DateTime?>]`: Date and time at which the recording was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+        - `[CreatedDateTime <DateTime?>]`: Date and time at which the recording was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
         - `[MeetingId <String>]`: The unique identifier of the onlineMeeting related to this recording. Read-only.
         - `[MeetingOrganizer <IMicrosoftGraphIdentitySet>]`: identitySet
         - `[MeetingOrganizerId <String>]`: The unique identifier of the organizer of the onlineMeeting related to this recording. Read-only.
@@ -9235,9 +9267,7 @@ To create the parameters described below, construct a hash table containing the 
           - `[DisplayName <String>]`: Display name of the speaker.
         - `[StartDateTime <DateTime?>]`: The meeting start time in UTC.
         - `[Subject <String>]`: The subject of the meeting.
-      - `[ShareMeetingChatHistoryDefault <String>]`: meetingChatHistoryDefaultMode
       - `[StartDateTime <DateTime?>]`: The meeting start time in UTC.
-      - `[Subject <String>]`: The subject of the online meeting.
       - `[Transcripts <IMicrosoftGraphCallTranscript[]>]`: The transcripts of an online meeting. Read-only.
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
         - `[Content <Byte[]>]`: The content of the transcript. Read-only.
@@ -9247,11 +9277,6 @@ To create the parameters described below, construct a hash table containing the 
         - `[MeetingOrganizerId <String>]`: The unique identifier of the organizer of the onlineMeeting related to this transcript. Read-only.
         - `[MetadataContent <Byte[]>]`: The time-aligned metadata of the utterances in the transcript. Read-only.
         - `[TranscriptContentUrl <String>]`: The URL which can be used to access the content of the transcript. Read-only.
-      - `[VideoTeleconferenceId <String>]`: The video teleconferencing ID. Read-only.
-      - `[WatermarkProtection <IMicrosoftGraphWatermarkProtectionValues>]`: watermarkProtectionValues
-        - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[IsEnabledForContentSharing <Boolean?>]`: Indicates whether to apply a watermark to any shared content.
-        - `[IsEnabledForVideo <Boolean?>]`: Indicates whether to apply a watermark to everyone's video feed.
     - `[OtherMails <String[]>]`: A list of additional email addresses for the user; for example: ['bob@contoso.com', 'Robert@fabrikam.com'].NOTE: This property can't contain accent characters.Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).
     - `[Outlook <IMicrosoftGraphOutlookUser>]`: outlookUser
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -9300,16 +9325,16 @@ To create the parameters described below, construct a hash table containing the 
         - `[Name <String>]`: The name of the task group.
         - `[TaskFolders <IMicrosoftGraphOutlookTaskFolder[]>]`: The collection of task folders in the task group. Read-only. Nullable.
       - `[Tasks <IMicrosoftGraphOutlookTask[]>]`: 
-    - `[OwnedDevices <IMicrosoftGraphDirectoryObject[]>]`: Devices that are owned by the user. Read-only. Nullable. Supports $expand.
-    - `[OwnedObjects <IMicrosoftGraphDirectoryObject[]>]`: Directory objects that are owned by the user. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
-    - `[PasswordPolicies <String>]`: Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two may be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. For more information on the default password policies, see Azure AD password policies. Supports $filter (ne, not, and eq on null values).
+    - `[OwnedDevices <IMicrosoftGraphDirectoryObject[]>]`: Devices owned by the user. Read-only. Nullable. Supports $expand.
+    - `[OwnedObjects <IMicrosoftGraphDirectoryObject[]>]`: Directory objects owned by the user. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
+    - `[PasswordPolicies <String>]`: Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two may be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. For more information on the default password policies, see Microsoft Entra password policies. Supports $filter (ne, not, and eq on null values).
     - `[PasswordProfile <IMicrosoftGraphPasswordProfile>]`: passwordProfile
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[ForceChangePasswordNextSignIn <Boolean?>]`: true if the user must change her password on the next login; otherwise false. If not set, default is false.
       - `[ForceChangePasswordNextSignInWithMfa <Boolean?>]`: If true, at next sign-in, the user must perform a multi-factor authentication (MFA) before being forced to change their password. The behavior is identical to forceChangePasswordNextSignIn except that the user is required to first perform a multi-factor authentication before password change. After a password change, this property will be automatically reset to false. If not set, default is false.
       - `[Password <String>]`: The password for the user. This property is required when a user is created. It can be updated, but the user will be required to change the password on the next login. The password must satisfy minimum requirements as specified by the user's passwordPolicies property. By default, a strong password is required.
-    - `[PastProjects <String[]>]`: A list for the user to enumerate their past projects. Returned only on $select.
-    - `[PendingAccessReviewInstances <IMicrosoftGraphAccessReviewInstance[]>]`: Navigation property to get list of access reviews pending approval by reviewer.
+    - `[PastProjects <String[]>]`: A list for users to enumerate their past projects. Returned only on $select.
+    - `[PendingAccessReviewInstances <IMicrosoftGraphAccessReviewInstance[]>]`: Navigation property to get a list of access reviews pending approval by the reviewer.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[ContactedReviewers <IMicrosoftGraphAccessReviewReviewer[]>]`: Returns the collection of reviewers who were contacted to complete this review. While the reviewers and fallbackReviewers properties of the accessReviewScheduleDefinition might specify group owners or managers as reviewers, contactedReviewers returns their individual identities. Supports $select. Read-only.
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -9321,8 +9346,8 @@ To create the parameters described below, construct a hash table containing the 
         - `[AccessReviewId <String>]`: The identifier of the accessReviewInstance parent. Supports $select. Read-only.
         - `[AppliedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-          - `[Id <String>]`: Unique identifier for the identity.
+          - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+          - `[Id <String>]`: The identifier of the identity. This property is read-only.
           - `[IPAddress <String>]`: Indicates the client IP address used by user performing the activity (audit log only).
           - `[UserPrincipalName <String>]`: The userPrincipalName attribute of the user.
         - `[AppliedDateTime <DateTime?>]`: The timestamp when the approval decision was applied. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Supports $select. Read-only.
@@ -9383,7 +9408,7 @@ To create the parameters described below, construct a hash table containing the 
           - `[JustificationRequiredOnApproval <Boolean?>]`: Indicates whether reviewers are required to provide justification with their decision. Default value is false.
           - `[MailNotificationsEnabled <Boolean?>]`: Indicates whether emails are enabled or disabled. Default value is false.
           - `[RecommendationInsightSettings <IMicrosoftGraphAccessReviewRecommendationInsightSetting[]>]`: Optional. Describes the types of insights that aid reviewers to make access review decisions. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its recommendationInsightSettings setting will be used instead of the value of this property.
-          - `[RecommendationLookBackDuration <TimeSpan?>]`: Optional field. Indicates the period of inactivity (with respect to the start date of the review instance) that recommendations will be configured from. The recommendation will be to deny if the user is inactive during the look-back duration. For reviews of groups and Azure AD roles, any duration is accepted. For reviews of applications, 30 days is the maximum duration. If not specified, the duration is 30 days. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its recommendationLookBackDuration setting will be used instead of the value of this property.
+          - `[RecommendationLookBackDuration <TimeSpan?>]`: Optional field. Indicates the period of inactivity (with respect to the start date of the review instance) that recommendations will be configured from. The recommendation will be to deny if the user is inactive during the look-back duration. For reviews of groups and Microsoft Entra roles, any duration is accepted. For reviews of applications, 30 days is the maximum duration. If not specified, the duration is 30 days. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its recommendationLookBackDuration setting will be used instead of the value of this property.
           - `[RecommendationsEnabled <Boolean?>]`: Indicates whether decision recommendations are enabled or disabled. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its recommendationsEnabled setting will be used instead of the value of this property.
           - `[Recurrence <IMicrosoftGraphPatternedRecurrence>]`: patternedRecurrence
           - `[ReminderNotificationsEnabled <Boolean?>]`: Indicates whether reminders are enabled or disabled. Default value is false.
@@ -9391,9 +9416,9 @@ To create the parameters described below, construct a hash table containing the 
           - `[DecisionsThatWillMoveToNextStage <String[]>]`: Indicate which decisions will go to the next stage. Can be a subset of Approve, Deny, Recommendation, or NotReviewed. If not provided, all decisions will go to the next stage. Optional.
           - `[DependsOn <String[]>]`: Defines the sequential or parallel order of the stages and depends on the stageId. Only sequential stages are currently supported. For example, if stageId is 2, then dependsOn must be 1. If stageId is 1, don't specify dependsOn. Required if stageId isn't 1.
           - `[DurationInDays <Int32?>]`: The duration of the stage. Required.  NOTE: The cumulative value of this property across all stages  1. Will override the instanceDurationInDays setting on the accessReviewScheduleDefinition object. 2. Can't exceed the length of one recurrence. That is, if the review recurs weekly, the cumulative durationInDays can't exceed 7.
-          - `[FallbackReviewers <IMicrosoftGraphAccessReviewReviewerScope[]>]`: If provided, the fallback reviewers are asked to complete a review if the primary reviewers don't exist. For example, if managers are selected as reviewers and a principal under review doesn't have a manager in Azure AD, the fallback reviewers are asked to review that principal. NOTE: The value of this property overrides the corresponding setting on the accessReviewScheduleDefinition object.
+          - `[FallbackReviewers <IMicrosoftGraphAccessReviewReviewerScope[]>]`: If provided, the fallback reviewers are asked to complete a review if the primary reviewers don't exist. For example, if managers are selected as reviewers and a principal under review doesn't have a manager in Microsoft Entra ID, the fallback reviewers are asked to review that principal. NOTE: The value of this property overrides the corresponding setting on the accessReviewScheduleDefinition object.
           - `[RecommendationInsightSettings <IMicrosoftGraphAccessReviewRecommendationInsightSetting[]>]`: 
-          - `[RecommendationLookBackDuration <TimeSpan?>]`: Optional field. Indicates the time period of inactivity (with respect to the start date of the review instance) from which that recommendations will be configured. The recommendation is to deny if the user is inactive during the look back duration. For reviews of groups and Azure AD roles, any duration is accepted. For reviews of applications, 30 days is the maximum duration. If not specified, the duration is 30 days. NOTE: The value of this property overrides the corresponding setting on the accessReviewScheduleDefinition object.
+          - `[RecommendationLookBackDuration <TimeSpan?>]`: Optional field. Indicates the time period of inactivity (with respect to the start date of the review instance) from which that recommendations will be configured. The recommendation is to deny if the user is inactive during the look back duration. For reviews of groups and Microsoft Entra roles, any duration is accepted. For reviews of applications, 30 days is the maximum duration. If not specified, the duration is 30 days. NOTE: The value of this property overrides the corresponding setting on the accessReviewScheduleDefinition object.
           - `[RecommendationsEnabled <Boolean?>]`: Indicates whether showing recommendations to reviewers is enabled. Required. NOTE: The value of this property overrides the corresponding setting on the accessReviewScheduleDefinition object.
           - `[Reviewers <IMicrosoftGraphAccessReviewReviewerScope[]>]`: Defines who the reviewers are. If none is specified, the review is a self-review (users review their own access).  For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API. NOTE: The value of this property overrides the corresponding setting on the accessReviewScheduleDefinition.
           - `[StageId <String>]`: Unique identifier of the accessReviewStageSettings. The stageId is used in dependsOn property to indicate the stage relationship. Required.
@@ -9409,13 +9434,13 @@ To create the parameters described below, construct a hash table containing the 
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
         - `[Decisions <IMicrosoftGraphAccessReviewInstanceDecisionItem[]>]`: Each user reviewed in an accessReviewStage has a decision item representing if they were approved, denied, or not yet reviewed.
         - `[EndDateTime <DateTime?>]`: DateTime when review stage is scheduled to end. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. This property is the cumulative total of the durationInDays for all stages. Read-only.
-        - `[FallbackReviewers <IMicrosoftGraphAccessReviewReviewerScope[]>]`: This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user's manager does not exist.
+        - `[FallbackReviewers <IMicrosoftGraphAccessReviewReviewerScope[]>]`: This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers are notified to take action if no users are found from the list of reviewers specified. This can occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user's manager does not exist.
         - `[Reviewers <IMicrosoftGraphAccessReviewReviewerScope[]>]`: This collection of access review scopes is used to define who the reviewers are. For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API.
         - `[StartDateTime <DateTime?>]`: DateTime when review stage is scheduled to start. May be in the future. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
         - `[Status <String>]`: Specifies the status of an accessReviewStage. Possible values: Initializing, NotStarted, Starting, InProgress, Completing, Completed, AutoReviewing, and AutoReviewed. Supports $orderby, and $filter (eq only). Read-only.
       - `[StartDateTime <DateTime?>]`: DateTime when review instance is scheduled to start. May be in the future. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $select. Read-only.
       - `[Status <String>]`: Specifies the status of an accessReview. Possible values: Initializing, NotStarted, Starting, InProgress, Completing, Completed, AutoReviewing, and AutoReviewed. Supports $select, $orderby, and $filter (eq only). Read-only.
-    - `[People <IMicrosoftGraphPerson[]>]`: Read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user's communication, collaboration and business relationships. A person is an aggregation of information from across mail, contacts and social networks.
+    - `[People <IMicrosoftGraphPerson[]>]`: Read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user's communication, collaboration, and business relationships. A person aggregates information from mail, contacts, and social networks.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[Birthday <String>]`: The person's birthday.
       - `[CompanyName <String>]`: The name of the person's company.
@@ -9442,7 +9467,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[YomiCompany <String>]`: The phonetic Japanese name of the person's company.
     - `[PermissionGrants <IMicrosoftGraphResourceSpecificPermissionGrant[]>]`: List all resource-specific permission grants of a user.
     - `[Photo <IMicrosoftGraphProfilePhoto>]`: profilePhoto
-    - `[Photos <IMicrosoftGraphProfilePhoto[]>]`: 
+    - `[Photos <IMicrosoftGraphProfilePhoto[]>]`: The collection of the user's profile photos in different sizes. Read-only.
     - `[Planner <IMicrosoftGraphPlannerUser>]`: plannerUser
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -9459,7 +9484,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[Tasks <IMicrosoftGraphPlannerTask[]>]`: Read-only. Nullable. Returns the plannerTasks assigned to the user.
     - `[PostalCode <String>]`: The postal code for the user's postal address. The postal code is specific to the user's country/region. In the United States of America, this attribute contains the ZIP code. Maximum length is 40 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
     - `[PreferredDataLocation <String>]`: The preferred data location for the user. For more information, see OneDrive Online Multi-Geo.
-    - `[PreferredLanguage <String>]`: The preferred language for the user. The preferred language format is based on RFC 4646. The name is a combination of an ISO 639 two-letter lowercase culture code associated with the language, and an ISO 3166 two-letter uppercase subculture code associated with the country or region. Example: 'en-US', or 'es-ES'. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+    - `[PreferredLanguage <String>]`: The preferred language for the user. The preferred language format is based on RFC 4646. The name combines an ISO 639 two-letter lowercase culture code associated with the language and an ISO 3166 two-letter uppercase subculture code associated with the country or region. Example: 'en-US', or 'es-ES'. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
     - `[PreferredName <String>]`: The preferred name for the user. Not Supported. This attribute returns an empty string.Returned only on $select.
     - `[Presence <IMicrosoftGraphPresence>]`: presence
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -9633,9 +9658,9 @@ To create the parameters described below, construct a hash table containing the 
               - `[Id <String>]`: The unique identifier for an entity. Read-only.
               - `[CreatedBy <IMicrosoftGraphAppIdentity>]`: appIdentity
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                - `[AppId <String>]`: Refers to the unique identifier representing Application Id in the Azure Active Directory.
+                - `[AppId <String>]`: Refers to the unique identifier representing Application Id in the Microsoft Entra ID.
                 - `[DisplayName <String>]`: Refers to the application name displayed in the Microsoft Entra admin center.
-                - `[ServicePrincipalId <String>]`: Refers to the unique identifier indicating Service Principal Id in Azure Active Directory for the corresponding App.
+                - `[ServicePrincipalId <String>]`: Refers to the unique identifier indicating Service Principal Id in Microsoft Entra ID for the corresponding App.
                 - `[ServicePrincipalName <String>]`: Refers to the Service Principal Name is the Application name in the tenant.
               - `[DisplayName <String>]`: The name of the printTaskDefinition.
               - `[Tasks <IMicrosoftGraphPrintTask[]>]`: A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
@@ -9966,7 +9991,8 @@ To create the parameters described below, construct a hash table containing the 
         - `[Colleagues <IMicrosoftGraphRelatedPerson[]>]`: Colleagues that are associated with this position.
           - `[DisplayName <String>]`: Name of the person.
           - `[Relationship <String>]`: personRelationship
-          - `[UserPrincipalName <String>]`: Email address or reference to person within organization.
+          - `[UserId <String>]`: The user's directory object ID (Microsoft Entra ID or CID).
+          - `[UserPrincipalName <String>]`: Email address or reference to person within the organization.
         - `[Detail <IMicrosoftGraphPositionDetail>]`: positionDetail
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Company <IMicrosoftGraphCompanyDetail>]`: companyDetail
@@ -9980,9 +10006,11 @@ To create the parameters described below, construct a hash table containing the 
           - `[Description <String>]`: Description of the position in question.
           - `[EndMonthYear <DateTime?>]`: When the position ended.
           - `[JobTitle <String>]`: The title held when in that position.
+          - `[Layer <Int32?>]`: The place where the employee is within the organizational hierarchy.
+          - `[Level <String>]`: The employee’s experience or management level.
           - `[Role <String>]`: The role the position entailed.
           - `[StartMonthYear <DateTime?>]`: The start month and year of the position.
-          - `[Summary <String>]`: Short summary of the position.
+          - `[Summary <String>]`: summary of the position.
         - `[IsCurrent <Boolean?>]`: Denotes whether or not the position is current.
         - `[Manager <IMicrosoftGraphRelatedPerson>]`: relatedPerson
       - `[Projects <IMicrosoftGraphProjectParticipation[]>]`: Represents detailed information about projects associated with a user.
@@ -10073,8 +10101,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[CapabilityStatus <String>]`: For example, 'Enabled'.
       - `[ProvisioningStatus <String>]`: For example, 'Success'.
       - `[Service <String>]`: The name of the service; for example, 'AccessControlS2S'
-    - `[ProxyAddresses <String[]>]`: For example: ['SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com']. Changes to the mail property will also update this collection to include the value as an SMTP address. For more information, see mail and proxyAddresses properties. The proxy address prefixed with SMTP (capitalized) is the primary proxy address while those prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of 10 unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Supports $filter (eq, not, ge, le, startsWith, endsWith, /$count eq 0, /$count ne 0).
-    - `[RefreshTokensValidFromDateTime <DateTime?>]`: Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application needs to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use invalidateAllRefreshTokens to reset.
+    - `[ProxyAddresses <String[]>]`: For example: ['SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com']. Changes to the mail property also update this collection to include the value as an SMTP address. For more information, see mail and proxyAddresses properties. The proxy address prefixed with SMTP (capitalized) is the primary proxy address, while the ones prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of 10 unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Supports $filter (eq, not, ge, le, startsWith, endsWith, /$count eq 0, /$count ne 0).
+    - `[RefreshTokensValidFromDateTime <DateTime?>]`: Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If it happens, the application must acquire a new refresh token by requesting the authorized endpoint. Read-only. Use invalidateAllRefreshTokens to reset.
     - `[RegisteredDevices <IMicrosoftGraphDirectoryObject[]>]`: Devices that are registered for the user. Read-only. Nullable. Supports $expand and returns up to 100 objects.
     - `[Responsibilities <String[]>]`: A list for the user to enumerate their responsibilities. Returned only on $select.
     - `[Schools <String[]>]`: A list for the user to enumerate the schools they have attended. Returned only on $select.
@@ -10109,7 +10137,7 @@ To create the parameters described below, construct a hash table containing the 
           - `[Sensitivity <Int32?>]`: The sensitivity value of the label, where lower is less sensitive.
           - `[Tooltip <String>]`: The tooltip that should be displayed for the label in a UI.
     - `[SecurityIdentifier <String>]`: Security identifier (SID) of the user, used in Windows scenarios. Read-only. Returned by default. Supports $select and $filter (eq, not, ge, le, startsWith).
-    - `[ServiceProvisioningErrors <IMicrosoftGraphServiceProvisioningError[]>]`: Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.  Supports $filter (eq, not, for isResolved and serviceInstance).
+    - `[ServiceProvisioningErrors <IMicrosoftGraphServiceProvisioningError[]>]`: Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
     - `[Settings <IMicrosoftGraphUserSettings>]`: userSettings
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -10161,13 +10189,13 @@ To create the parameters described below, construct a hash table containing the 
     - `[ShowInAddressList <Boolean?>]`: Do not use in Microsoft Graph. Manage this property through the Microsoft 365 admin center instead. Represents whether the user should be included in the Outlook global address list. See Known issue.
     - `[SignInActivity <IMicrosoftGraphSignInActivity>]`: signInActivity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[LastNonInteractiveSignInDateTime <DateTime?>]`: The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client attempted to sign into the directory the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: '2014-01-01T00:00:00Z'. Azure AD maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.
+      - `[LastNonInteractiveSignInDateTime <DateTime?>]`: The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client attempted to sign into the directory the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: '2014-01-01T00:00:00Z'. Microsoft Entra ID maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.
       - `[LastNonInteractiveSignInRequestId <String>]`: Request identifier of the last non-interactive sign-in performed by this user.
-      - `[LastSignInDateTime <DateTime?>]`: The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user attempted to sign into the directory the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: '2014-01-01T00:00:00Z'. Azure AD maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.
+      - `[LastSignInDateTime <DateTime?>]`: The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user attempted to sign into the directory the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: '2014-01-01T00:00:00Z'. Microsoft Entra ID maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.
       - `[LastSignInRequestId <String>]`: Request identifier of the last interactive sign-in performed by this user.
-    - `[SignInSessionsValidFromDateTime <DateTime?>]`: Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application needs to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use revokeSignInSessions to reset.
+    - `[SignInSessionsValidFromDateTime <DateTime?>]`: Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application must acquire a new refresh token by requesting the authorized endpoint. Read-only. Use revokeSignInSessions to reset.
     - `[Skills <String[]>]`: A list for the user to enumerate their skills. Returned only on $select.
-    - `[Sponsors <IMicrosoftGraphDirectoryObject[]>]`: The users and groups that are responsible for this guest user's privileges in the tenant and keep the guest user's information and access updated. (HTTP Methods: GET, POST, DELETE.). Supports $expand.
+    - `[Sponsors <IMicrosoftGraphDirectoryObject[]>]`: The users and groups responsible for this guest user's privileges in the tenant and keep the guest user's information and access updated. (HTTP Methods: GET, POST, DELETE.). Supports $expand.
     - `[State <String>]`: The state or province in the user's address. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
     - `[StreetAddress <String>]`: The street address of the user's place of business. Maximum length is 1024 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
     - `[Surname <String>]`: The user's surname (family name or last name). Maximum length is 64 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
@@ -10177,7 +10205,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[AssociatedTeams <IMicrosoftGraphAssociatedTeamInfo[]>]`: The list of associatedTeamInfo objects that a user is associated with.
         - `[DisplayName <String>]`: The name of the team.
         - `[Team <IMicrosoftGraphTeam>]`: team
-        - `[TenantId <String>]`: The ID of the Azure Active Directory tenant.
+        - `[TenantId <String>]`: The ID of the Microsoft Entra tenant.
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[InstalledApps <IMicrosoftGraphUserScopeTeamsAppInstallation[]>]`: The apps installed in the personal scope of this user.
         - `[ConsentedPermissionSet <IMicrosoftGraphTeamsAppPermissionSet>]`: teamsAppPermissionSet
@@ -10236,12 +10264,12 @@ To create the parameters described below, construct a hash table containing the 
           - `[Status <String>]`: taskStatus
           - `[Title <String>]`: A brief description of the task.
         - `[WellknownListName <String>]`: wellknownListName
-    - `[TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>]`: The groups, including nested groups, and directory roles that a user is a member of. Nullable.
+    - `[TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>]`: The groups, including nested groups and directory roles that a user is a member of. Nullable.
     - `[TransitiveReports <IMicrosoftGraphDirectoryObject[]>]`: The transitive reports for a user. Read-only.
-    - `[UsageLocation <String>]`: A two letter country code (ISO standard 3166). Required for users that are assigned licenses due to legal requirement to check for availability of services in countries.  Examples include: US, JP, and GB. Not nullable. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+    - `[UsageLocation <String>]`: A two-letter country code (ISO standard 3166). Required for users that are assigned licenses due to legal requirements to check for availability of services in countries.  Examples include: US, JP, and GB. Not nullable. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
     - `[UsageRights <IMicrosoftGraphUsageRight[]>]`: Represents the usage rights a user has been granted.
-    - `[UserPrincipalName <String>]`: The user principal name (UPN) of the user. The UPN is an Internet-style sign-in name for the user based on the Internet standard RFC 822. By convention, this should map to the user's email name. The general format is alias@domain, where domain must be present in the tenant's collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property can't contain accent characters. Only the following characters are allowed A - Z, a - z, 0 - 9, ' . - _ ! # ^ ~. For the complete list of allowed characters, see username policies. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith) and $orderby.
-    - `[UserType <String>]`: A String value that can be used to classify user types in your directory, such as Member and Guest. Supports $filter (eq, ne, not, in, and eq on null values). NOTE: For more information about the permissions for member and guest users, see What are the default user permissions in Azure Active Directory?
+    - `[UserPrincipalName <String>]`: The user principal name (UPN) of the user. The UPN is an Internet-style sign-in name for the user based on the Internet standard RFC 822. By convention, this should map to the user's email name. The general format is alias@domain, where the domain must be present in the tenant's verified domain collection. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property can't contain accent characters. Only the following characters are allowed A - Z, a - z, 0 - 9, ' . - _ ! # ^ ~. For the complete list of allowed characters, see username policies. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith) and $orderby.
+    - `[UserType <String>]`: A String value that can be used to classify user types in your directory, such as Member and Guest. Supports $filter (eq, ne, not, in, and eq on null values). NOTE: For more information about the permissions for member and guest users, see What are the default user permissions in Microsoft Entra ID?
     - `[VirtualEvents <IMicrosoftGraphUserVirtualEventsRoot>]`: userVirtualEventsRoot
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -10259,7 +10287,7 @@ To create the parameters described below, construct a hash table containing the 
           - `[Guest <IMicrosoftGraphIdentity>]`: identity
           - `[OnPremises <IMicrosoftGraphIdentity>]`: identity
           - `[Phone <IMicrosoftGraphIdentity>]`: identity
-        - `[Description <String>]`: Description of the virtual event.
+        - `[Description <IMicrosoftGraphItemBody>]`: itemBody
         - `[DisplayName <String>]`: Display name of the virtual event
         - `[EndDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
         - `[Presenters <IMicrosoftGraphVirtualEventPresenter[]>]`: Presenters' information of the virtual event.
@@ -10267,8 +10295,8 @@ To create the parameters described below, construct a hash table containing the 
           - `[Email <String>]`: Email address of the presenter.
           - `[Identity <IMicrosoftGraphCommunicationsUserIdentity>]`: communicationsUserIdentity
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-            - `[Id <String>]`: Unique identifier for the identity.
+            - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+            - `[Id <String>]`: The identifier of the identity. This property is read-only.
             - `[TenantId <String>]`: The user's tenant ID.
           - `[PresenterDetails <IMicrosoftGraphVirtualEventPresenterDetails>]`: virtualEventPresenterDetails
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -10278,81 +10306,69 @@ To create the parameters described below, construct a hash table containing the 
             - `[LinkedInProfileWebUrl <String>]`: The presenter's LinkedIn profile URL.
             - `[PersonalSiteWebUrl <String>]`: The presenter's personal website URL.
             - `[TwitterProfileWebUrl <String>]`: The presenter's Twitter profile URL.
-        - `[Sessions <IMicrosoftGraphVirtualEventSession[]>]`: Sessions of the virtual event.
-          - `[AllowAttendeeToEnableCamera <Boolean?>]`: Indicates whether attendees can turn on their camera.
-          - `[AllowAttendeeToEnableMic <Boolean?>]`: Indicates whether attendees can turn on their microphone.
-          - `[AllowMeetingChat <String>]`: meetingChatMode
-          - `[AllowParticipantsToChangeName <Boolean?>]`: Specifies if participants are allowed to rename themselves in an instance of the meeting.
-          - `[AllowRecording <Boolean?>]`: Indicates whether recording is enabled for the meeting.
-          - `[AllowTeamworkReactions <Boolean?>]`: Indicates if Teams reactions are enabled for the meeting.
-          - `[AllowTranscription <Boolean?>]`: Indicates whether transcription is enabled for the meeting.
-          - `[AllowedPresenters <String>]`: onlineMeetingPresenters
-          - `[AlternativeRecording <Byte[]>]`: 
-          - `[AnonymizeIdentityForRoles <String[]>]`: Specifies whose identity will be anonymized in the meeting. Possible values are: attendee. The attendee value cannot be removed through a PATCH operation once added.
-          - `[AttendanceReports <IMicrosoftGraphMeetingAttendanceReport[]>]`: The attendance reports of an online meeting. Read-only.
-          - `[AttendeeReport <Byte[]>]`: 
-          - `[AudioConferencing <IMicrosoftGraphAudioConferencing>]`: audioConferencing
-          - `[BroadcastRecording <Byte[]>]`: 
-          - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings>]`: broadcastMeetingSettings
-          - `[Capabilities <String[]>]`: 
-          - `[ChatInfo <IMicrosoftGraphChatInfo>]`: chatInfo
-          - `[ChatRestrictions <IMicrosoftGraphChatRestrictions>]`: chatRestrictions
-          - `[CreationDateTime <DateTime?>]`: The meeting creation time in UTC. Read-only.
-          - `[EndDateTime <DateTime?>]`: The meeting end time in UTC.
-          - `[ExternalId <String>]`: The external ID. A custom ID. Optional.
-          - `[IsBroadcast <Boolean?>]`: 
-          - `[IsEndToEndEncryptionEnabled <Boolean?>]`: 
-          - `[IsEntryExitAnnounced <Boolean?>]`: Indicates whether to announce when callers join or leave.
-          - `[JoinInformation <IMicrosoftGraphItemBody>]`: itemBody
-          - `[JoinMeetingIdSettings <IMicrosoftGraphJoinMeetingIdSettings>]`: joinMeetingIdSettings
-          - `[JoinUrl <String>]`: 
-          - `[JoinWebUrl <String>]`: The join URL of the online meeting. Read-only.
-          - `[LobbyBypassSettings <IMicrosoftGraphLobbyBypassSettings>]`: lobbyBypassSettings
-          - `[MeetingAttendanceReport <IMicrosoftGraphMeetingAttendanceReport>]`: meetingAttendanceReport
-          - `[Participants <IMicrosoftGraphMeetingParticipants>]`: meetingParticipants
-          - `[RecordAutomatically <Boolean?>]`: Indicates whether to record the meeting automatically.
-          - `[Recording <Byte[]>]`: 
-          - `[Recordings <IMicrosoftGraphCallRecording[]>]`: The recordings of an online meeting. Read-only.
-          - `[Registration <IMicrosoftGraphMeetingRegistration>]`: meetingRegistration
-          - `[ShareMeetingChatHistoryDefault <String>]`: meetingChatHistoryDefaultMode
-          - `[StartDateTime <DateTime?>]`: The meeting start time in UTC.
-          - `[Subject <String>]`: The subject of the online meeting.
-          - `[Transcripts <IMicrosoftGraphCallTranscript[]>]`: The transcripts of an online meeting. Read-only.
-          - `[VideoTeleconferenceId <String>]`: The video teleconferencing ID. Read-only.
-          - `[WatermarkProtection <IMicrosoftGraphWatermarkProtectionValues>]`: watermarkProtectionValues
-          - `[Id <String>]`: The unique identifier for an entity. Read-only.
-          - `[Registrations <IMicrosoftGraphVirtualEventRegistration[]>]`: Registration records of this virtual event session.
+          - `[ProfilePhoto <Byte[]>]`: 
+          - `[Sessions <IMicrosoftGraphVirtualEventSession[]>]`: 
+            - `[AllowAttendeeToEnableCamera <Boolean?>]`: Indicates whether attendees can turn on their camera.
+            - `[AllowAttendeeToEnableMic <Boolean?>]`: Indicates whether attendees can turn on their microphone.
+            - `[AllowMeetingChat <String>]`: meetingChatMode
+            - `[AllowParticipantsToChangeName <Boolean?>]`: Specifies if participants are allowed to rename themselves in an instance of the meeting.
+            - `[AllowRecording <Boolean?>]`: Indicates whether recording is enabled for the meeting.
+            - `[AllowTeamworkReactions <Boolean?>]`: Indicates if Teams reactions are enabled for the meeting.
+            - `[AllowTranscription <Boolean?>]`: Indicates whether transcription is enabled for the meeting.
+            - `[AllowedPresenters <String>]`: onlineMeetingPresenters
+            - `[AnonymizeIdentityForRoles <String[]>]`: Specifies whose identity is anonymized in the meeting. Possible values are: attendee. The attendee value can't be removed through a PATCH operation once added.
+            - `[AttendanceReports <IMicrosoftGraphMeetingAttendanceReport[]>]`: The attendance reports of an online meeting. Read-only.
+            - `[AudioConferencing <IMicrosoftGraphAudioConferencing>]`: audioConferencing
+            - `[ChatInfo <IMicrosoftGraphChatInfo>]`: chatInfo
+            - `[ChatRestrictions <IMicrosoftGraphChatRestrictions>]`: chatRestrictions
+            - `[IsEndToEndEncryptionEnabled <Boolean?>]`: 
+            - `[IsEntryExitAnnounced <Boolean?>]`: Indicates whether to announce when callers join or leave.
+            - `[JoinInformation <IMicrosoftGraphItemBody>]`: itemBody
+            - `[JoinMeetingIdSettings <IMicrosoftGraphJoinMeetingIdSettings>]`: joinMeetingIdSettings
+            - `[JoinWebUrl <String>]`: The join URL of the online meeting. Read-only.
+            - `[LobbyBypassSettings <IMicrosoftGraphLobbyBypassSettings>]`: lobbyBypassSettings
+            - `[RecordAutomatically <Boolean?>]`: Indicates whether to record the meeting automatically.
+            - `[ShareMeetingChatHistoryDefault <String>]`: meetingChatHistoryDefaultMode
+            - `[Subject <String>]`: The subject of the online meeting.
+            - `[VideoTeleconferenceId <String>]`: The video teleconferencing ID. Read-only.
+            - `[WatermarkProtection <IMicrosoftGraphWatermarkProtectionValues>]`: watermarkProtectionValues
             - `[Id <String>]`: The unique identifier for an entity. Read-only.
-            - `[CancelationDateTime <DateTime?>]`: Date and time when the registrant cancels their registration for the virtual event. Only appears when applicable. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-            - `[Email <String>]`: Email address of the registrant.
-            - `[FirstName <String>]`: First name of the registrant.
-            - `[LastName <String>]`: Last name of the registrant.
-            - `[RegistrationDateTime <DateTime?>]`: Date and time when the registrant registers for the virtual event. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-            - `[RegistrationQuestionAnswers <IMicrosoftGraphVirtualEventRegistrationQuestionAnswer[]>]`: The registrant's answer to the registration questions.
-              - `[BooleanValue <Boolean?>]`: Boolean answer of the virtualEventRegistrationQuestion. Only appears when answerInputType is boolean.
-              - `[DisplayName <String>]`: Display name of the registration question.
-              - `[MultiChoiceValues <String[]>]`: Collection of text answer of the virtualEventRegistrationQuestion. Only appears when answerInputType is multiChoice.
-              - `[QuestionId <String>]`: id of the virtualEventRegistrationQuestion.
-              - `[Value <String>]`: Text answer of the virtualEventRegistrationQuestion. Appears when answerInputType is text, multilineText or singleChoice.
-            - `[Sessions <IMicrosoftGraphVirtualEventSession[]>]`: Sessions of the webinar.
-            - `[Status <String>]`: virtualEventAttendeeRegistrationStatus
-            - `[UserId <String>]`: The registrant's ID in Azure Active Directory (Azure AD). Only appears when the registrant is registered in Azure AD.
+            - `[EndDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
+            - `[Presenters <IMicrosoftGraphVirtualEventPresenter[]>]`: 
+            - `[Registrations <IMicrosoftGraphVirtualEventRegistration[]>]`: 
+              - `[Id <String>]`: The unique identifier for an entity. Read-only.
+              - `[CancelationDateTime <DateTime?>]`: Date and time when the registrant cancels their registration for the virtual event. Only appears when applicable. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+              - `[Email <String>]`: Email address of the registrant.
+              - `[FirstName <String>]`: First name of the registrant.
+              - `[LastName <String>]`: Last name of the registrant.
+              - `[RegistrationDateTime <DateTime?>]`: Date and time when the registrant registers for the virtual event. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+              - `[RegistrationQuestionAnswers <IMicrosoftGraphVirtualEventRegistrationQuestionAnswer[]>]`: The registrant's answer to the registration questions.
+                - `[BooleanValue <Boolean?>]`: Boolean answer of the virtualEventRegistrationQuestion. Only appears when answerInputType is boolean.
+                - `[DisplayName <String>]`: Display name of the registration question.
+                - `[MultiChoiceValues <String[]>]`: Collection of text answer of the virtualEventRegistrationQuestion. Only appears when answerInputType is multiChoice.
+                - `[QuestionId <String>]`: id of the virtualEventRegistrationQuestion.
+                - `[Value <String>]`: Text answer of the virtualEventRegistrationQuestion. Appears when answerInputType is text, multilineText or singleChoice.
+              - `[Sessions <IMicrosoftGraphVirtualEventSession[]>]`: 
+              - `[Status <String>]`: virtualEventAttendeeRegistrationStatus
+              - `[UserId <String>]`: The registrant's ID in Microsoft Entra ID. Only appears when the registrant is registered in Microsoft Entra ID.
+            - `[StartDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
+        - `[Sessions <IMicrosoftGraphVirtualEventSession[]>]`: Sessions of the virtual event.
         - `[StartDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
         - `[Status <String>]`: virtualEventStatus
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
         - `[Audience <String>]`: meetingAudience
         - `[CoOrganizers <IMicrosoftGraphCommunicationsUserIdentity[]>]`: Identity information of coorganizers of the webinar.
-        - `[RegistrationConfiguration <IMicrosoftGraphVirtualEventRegistrationConfiguration>]`: virtualEventRegistrationConfiguration
+        - `[RegistrationConfiguration <IMicrosoftGraphVirtualEventWebinarRegistrationConfiguration>]`: virtualEventWebinarRegistrationConfiguration
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[Id <String>]`: The unique identifier for an entity. Read-only.
           - `[Capacity <Int32?>]`: Total capacity of the virtual event.
-          - `[Questions <IMicrosoftGraphVirtualEventRegistrationQuestion[]>]`: Registration questions.
+          - `[Questions <IMicrosoftGraphVirtualEventRegistrationQuestionBase[]>]`: Registration questions.
             - `[Id <String>]`: The unique identifier for an entity. Read-only.
-            - `[AnswerChoices <String[]>]`: Answer choices when answerInputType is singleChoice or multiChoice.
-            - `[AnswerInputType <String>]`: virtualEventRegistrationQuestionAnswerInputType
-            - `[DisplayName <String>]`: Display name of the registration question.
-            - `[IsRequired <Boolean?>]`: Indicates whether the question is required to answer. Default value is false.
+            - `[DisplayName <String>]`: 
+            - `[IsRequired <Boolean?>]`: 
           - `[RegistrationWebUrl <String>]`: Registration URL of the virtual event.
+          - `[Id <String>]`: The unique identifier for an entity. Read-only.
+          - `[IsManualApprovalEnabled <Boolean?>]`: 
+          - `[IsWaitlistEnabled <Boolean?>]`: 
         - `[Registrations <IMicrosoftGraphVirtualEventRegistration[]>]`: Registration records of the webinar.
     - `[WindowsInformationProtectionDeviceRegistrations <IMicrosoftGraphWindowsInformationProtectionDeviceRegistration[]>]`: Zero or more WIP device registrations that belong to the user.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -10420,7 +10436,7 @@ To create the parameters described below, construct a hash table containing the 
 `COLLABORATORS <IMicrosoftGraphUser[]>`: .
   - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[AboutMe <String>]`: A freeform text entry field for the user to describe themselves. Returned only on $select.
+  - `[AboutMe <String>]`: A freeform text entry field for users to describe themselves. Returned only on $select.
   - `[AccountEnabled <Boolean?>]`: true if the account is enabled; otherwise, false. This property is required when a user is created. Supports $filter (eq, ne, not, and in).
   - `[Activities <IMicrosoftGraphUserActivity[]>]`: The user's activities across devices. Read-only. Nullable.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -10460,7 +10476,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[Content <IMicrosoftGraphJson>]`: Json
       - `[Description <String>]`: Optional. Longer text description of the user's unique activity (example: document name, first sentence, and/or metadata)
       - `[DisplayText <String>]`: Required. Short text description of the user's unique activity (for example, document name in cases where an activity refers to document creation)
-  - `[AgeGroup <String>]`: Sets the age group of the user. Allowed values: null, Minor, NotAdult and Adult. For more information, see legal age group property definitions. Supports $filter (eq, ne, not, and in).
+  - `[AgeGroup <String>]`: Sets the age group of the user. Allowed values: null, Minor, NotAdult, and Adult. For more information, see legal age group property definitions. Supports $filter (eq, ne, not, and in).
   - `[AgreementAcceptances <IMicrosoftGraphAgreementAcceptance[]>]`: The user's terms of use acceptance statuses. Read-only. Nullable.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[AgreementFileId <String>]`: ID of the agreement file accepted by the user.
@@ -10505,8 +10521,8 @@ To create the parameters described below, construct a hash table containing the 
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Application <IMicrosoftGraphIdentity>]`: identity
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-          - `[Id <String>]`: Unique identifier for the identity.
+          - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+          - `[Id <String>]`: The identifier of the identity. This property is read-only.
         - `[Device <IMicrosoftGraphIdentity>]`: identity
         - `[User <IMicrosoftGraphIdentity>]`: identity
       - `[CreatedDateTime <DateTime?>]`: The request creation date time.
@@ -10539,7 +10555,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[AlternativeNames <String[]>]`: Used to retrieve service principals by subscription, identify resource group and full resource ids for managed identities. Supports $filter (eq, not, ge, le, startsWith).
     - `[AppDescription <String>]`: The description exposed by the associated application.
     - `[AppDisplayName <String>]`: The display name exposed by the associated application.
-    - `[AppId <String>]`: The unique identifier for the associated application (its appId property). Supports $filter (eq, ne, not, in, startsWith).
+    - `[AppId <String>]`: The unique identifier for the associated application (its appId property). Alternate key. Supports $filter (eq, ne, not, in, startsWith).
     - `[AppManagementPolicies <IMicrosoftGraphAppManagementPolicy[]>]`: The appManagementPolicy applied to this service principal.
       - `[Description <String>]`: Description for this policy. Required.
       - `[DisplayName <String>]`: Display name for this policy. Required.
@@ -10560,7 +10576,7 @@ To create the parameters described below, construct a hash table containing the 
           - `[MaxLifetime <TimeSpan?>]`: 
           - `[RestrictForAppsCreatedAfterDateTime <DateTime?>]`: Enforces the policy for an app created on or after the enforcement date. For existing applications, the enforcement date would be backdated. To apply to all applications, this date would be null.
           - `[RestrictionType <String>]`: appCredentialRestrictionType
-    - `[AppOwnerOrganizationId <String>]`: Contains the tenant id where the application is registered. This is applicable only to service principals backed by applications.Supports $filter (eq, ne, NOT, ge, le).
+    - `[AppOwnerOrganizationId <String>]`: Contains the tenant id where the application is registered. This is applicable only to service principals backed by applications. Supports $filter (eq, ne, NOT, ge, le).
     - `[AppRoleAssignedTo <IMicrosoftGraphAppRoleAssignment[]>]`: App role assignments for this app or service, granted to users, groups, and other service principals.Supports $expand.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[AppRoleId <String>]`: The identifier (id) for the app role which is assigned to the principal. This app role must be exposed in the appRoles property on the resource application's service principal (resourceId). If the resource application has not declared any app roles, a default app role ID of 00000000-0000-0000-0000-000000000000 can be specified to signal that the principal is assigned to the resource app without any specific app roles. Required on create.
@@ -10572,7 +10588,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[ResourceId <String>]`: The unique identifier (id) for the resource service principal for which the assignment is made. Required on create. Supports $filter (eq only).
     - `[AppRoleAssignmentRequired <Boolean?>]`: Specifies whether users or other service principals need to be granted an app role assignment for this service principal before users can sign in or apps can get tokens. The default value is false. Not nullable. Supports $filter (eq, ne, NOT).
     - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment[]>]`: App role assignment for another app or service, granted to this service principal. Supports $expand.
-    - `[AppRoles <IMicrosoftGraphAppRole[]>]`: The roles exposed by the application which this service principal represents. For more information see the appRoles property definition on the application entity. Not nullable.
+    - `[AppRoles <IMicrosoftGraphAppRole[]>]`: The roles exposed by the application, which this service principal represents. For more information see the appRoles property definition on the application entity. Not nullable.
       - `[AllowedMemberTypes <String[]>]`: Specifies whether this app role can be assigned to users and groups (by setting to ['User']), to other application's (by setting to ['Application'], or both (by setting to ['User', 'Application']). App roles supporting assignment to other applications' service principals are also known as application permissions. The 'Application' value is only supported for app roles defined on application entities.
       - `[Description <String>]`: The description for the app role. This is displayed when the app role is being assigned and, if the app role functions as an application permission, during  consent experiences.
       - `[DisplayName <String>]`: Display name for the permission that appears in the app role assignment and consent experiences.
@@ -10611,11 +10627,11 @@ To create the parameters described below, construct a hash table containing the 
     - `[ErrorUrl <String>]`: Deprecated. Don't use.
     - `[FederatedIdentityCredentials <IMicrosoftGraphFederatedIdentityCredential[]>]`: 
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
-      - `[Audiences <String[]>]`: The audience that can appear in the external token. This field is mandatory and should be set to api://AzureADTokenExchange for Azure AD. It says what Microsoft identity platform should accept in the aud claim in the incoming token. This value represents Azure AD in your external identity provider and has no fixed value across identity providers - you may need to create a new application registration in your identity provider to serve as the audience of this token. This field can only accept a single value and has a limit of 600 characters. Required.
+      - `[Audiences <String[]>]`: The audience that can appear in the external token. This field is mandatory and should be set to api://AzureADTokenExchange for Microsoft Entra ID. It says what Microsoft identity platform should accept in the aud claim in the incoming token. This value represents Microsoft Entra ID in your external identity provider and has no fixed value across identity providers - you may need to create a new application registration in your identity provider to serve as the audience of this token. This field can only accept a single value and has a limit of 600 characters. Required.
       - `[Description <String>]`: The un-validated, user-provided description of the federated identity credential. It has a limit of 600 characters. Optional.
       - `[Issuer <String>]`: The URL of the external identity provider and must match the issuer claim of the external token being exchanged. The combination of the values of issuer and subject must be unique on the app. It has a limit of 600 characters. Required.
       - `[Name <String>]`: is the unique identifier for the federated identity credential, which has a limit of 120 characters and must be URL friendly. It is immutable once created. Required. Not nullable. Supports $filter (eq).
-      - `[Subject <String>]`: Required. The identifier of the external software workload within the external identity provider. Like the audience value, it has no fixed format, as each identity provider uses their own - sometimes a GUID, sometimes a colon delimited identifier, sometimes arbitrary strings. The value here must match the sub claim within the token presented to Azure AD. The combination of issuer and subject must be unique on the app. It has a limit of 600 characters. Supports $filter (eq).
+      - `[Subject <String>]`: Required. The identifier of the external software workload within the external identity provider. Like the audience value, it has no fixed format, as each identity provider uses their own - sometimes a GUID, sometimes a colon delimited identifier, sometimes arbitrary strings. The value here must match the sub claim within the token presented to Microsoft Entra ID. The combination of issuer and subject must be unique on the app. It has a limit of 600 characters. Supports $filter (eq).
     - `[HomeRealmDiscoveryPolicies <IMicrosoftGraphHomeRealmDiscoveryPolicy[]>]`: The homeRealmDiscoveryPolicies assigned to this service principal. Supports $expand.
       - `[AppliesTo <IMicrosoftGraphDirectoryObject[]>]`: 
       - `[Definition <String[]>]`: A string collection containing a JSON string that defines the rules and settings for a policy. The syntax for the definition differs for each derived policy type. Required.
@@ -10644,17 +10660,17 @@ To create the parameters described below, construct a hash table containing the 
     - `[LicenseDetails <IMicrosoftGraphLicenseDetails[]>]`: 
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[ServicePlans <IMicrosoftGraphServicePlanInfo[]>]`: Information about the service plans assigned with the license. Read-only, Not nullable
-        - `[AppliesTo <String>]`: The object the service plan can be assigned to. The possible values are:User - service plan can be assigned to individual users.Company - service plan can be assigned to the entire tenant.
-        - `[ProvisioningStatus <String>]`: The provisioning status of the service plan. The possible values are:Success - Service is fully provisioned.Disabled - Service has been disabled.ErrorStatus - The service plan has not been provisioned and is in an error state.PendingInput - Service is not yet provisioned; awaiting service confirmation.PendingActivation - Service is provisioned but requires explicit activation by administrator (for example, Intune_O365 service plan)PendingProvisioning - Microsoft has added a new service to the product SKU and it has not been activated in the tenant, yet.
+        - `[AppliesTo <String>]`: The object the service plan can be assigned to. The possible values are: User - service plan can be assigned to individual users.Company - service plan can be assigned to the entire tenant.
+        - `[ProvisioningStatus <String>]`: The provisioning status of the service plan. The possible values are:Success - Service is fully provisioned.Disabled - Service is disabled.Error - The service plan isn't provisioned and is in an error state.PendingInput - The service isn't provisioned and is awaiting service confirmation.PendingActivation - The service is provisioned but requires explicit activation by an administrator (for example, Intune_O365 service plan)PendingProvisioning - Microsoft has added a new service to the product SKU and it isn't activated in the tenant.
         - `[ServicePlanId <String>]`: The unique identifier of the service plan.
         - `[ServicePlanName <String>]`: The name of the service plan.
       - `[SkuId <String>]`: Unique identifier (GUID) for the service SKU. Equal to the skuId property on the related SubscribedSku object. Read-only
       - `[SkuPartNumber <String>]`: Unique SKU display name. Equal to the skuPartNumber on the related SubscribedSku object; for example: 'AAD_Premium'. Read-only
-    - `[LoginUrl <String>]`: Specifies the URL where the service provider redirects the user to Azure AD to authenticate. Azure AD uses the URL to launch the application from Microsoft 365 or the Azure AD My Apps. When blank, Azure AD performs IdP-initiated sign-on for applications configured with SAML-based single sign-on. The user launches the application from Microsoft 365, the Azure AD My Apps, or the Azure AD SSO URL.
+    - `[LoginUrl <String>]`: Specifies the URL where the service provider redirects the user to Microsoft Entra ID to authenticate. Microsoft Entra ID uses the URL to launch the application from Microsoft 365 or the Microsoft Entra My Apps. When blank, Microsoft Entra ID performs IdP-initiated sign-on for applications configured with SAML-based single sign-on. The user launches the application from Microsoft 365, the Microsoft Entra My Apps, or the Microsoft Entra SSO URL.
     - `[LogoutUrl <String>]`: Specifies the URL that will be used by Microsoft's authorization service to logout an user using OpenId Connect front-channel, back-channel or SAML logout protocols.
     - `[MemberOf <IMicrosoftGraphDirectoryObject[]>]`: Roles that this service principal is a member of. HTTP Methods: GET Read-only. Nullable. Supports $expand.
     - `[Notes <String>]`: Free text field to capture information about the service principal, typically used for operational purposes. Maximum allowed size is 1024 characters.
-    - `[NotificationEmailAddresses <String[]>]`: Specifies the list of email addresses where Azure AD sends a notification when the active certificate is near the expiration date. This is only for the certificates used to sign the SAML token issued for Azure AD Gallery applications.
+    - `[NotificationEmailAddresses <String[]>]`: Specifies the list of email addresses where Microsoft Entra ID sends a notification when the active certificate is near the expiration date. This is only for the certificates used to sign the SAML token issued for Microsoft Entra Gallery applications.
     - `[Oauth2PermissionGrants <IMicrosoftGraphOAuth2PermissionGrant[]>]`: Delegated permission grants authorizing this service principal to access an API on behalf of a signed-in user. Read-only. Nullable.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[ClientId <String>]`: The object id (not appId) of the client service principal for the application that is authorized to act on behalf of a signed-in user when accessing an API. Required. Supports $filter (eq only).
@@ -10664,15 +10680,15 @@ To create the parameters described below, construct a hash table containing the 
       - `[ResourceId <String>]`: The id of the resource service principal to which access is authorized. This identifies the API that the client is authorized to attempt to call on behalf of a signed-in user. Supports $filter (eq only).
       - `[Scope <String>]`: A space-separated list of the claim values for delegated permissions that should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the publishedPermissionScopes property of the resource service principal. Must not exceed 3850 characters in length.
       - `[StartTime <DateTime?>]`: Currently, the start time value is ignored, but a value is required when creating an oAuth2PermissionGrant. Required.
-    - `[OwnedObjects <IMicrosoftGraphDirectoryObject[]>]`: Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
-    - `[Owners <IMicrosoftGraphDirectoryObject[]>]`: Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable. Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1), and $select nested in $expand.
+    - `[OwnedObjects <IMicrosoftGraphDirectoryObject[]>]`: Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
+    - `[Owners <IMicrosoftGraphDirectoryObject[]>]`: Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.  Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
     - `[PasswordCredentials <IMicrosoftGraphPasswordCredential[]>]`: The collection of password credentials associated with the service principal. Not nullable.
       - `[CustomKeyIdentifier <Byte[]>]`: Do not use.
       - `[DisplayName <String>]`: Friendly name for the password. Optional.
       - `[EndDateTime <DateTime?>]`: The date and time at which the password expires represented using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Optional.
       - `[Hint <String>]`: Contains the first three characters of the password. Read-only.
       - `[KeyId <String>]`: The unique identifier for the password.
-      - `[SecretText <String>]`: Read-only; Contains the strong passwords generated by Azure AD that are 16-64 characters in length. The generated password value is only returned during the initial POST request to addPassword. There is no way to retrieve this password in the future.
+      - `[SecretText <String>]`: Read-only; Contains the strong passwords generated by Microsoft Entra ID that are 16-64 characters in length. The generated password value is only returned during the initial POST request to addPassword. There is no way to retrieve this password in the future.
       - `[StartDateTime <DateTime?>]`: The date and time at which the password becomes valid. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Optional.
     - `[PasswordSingleSignOnSettings <IMicrosoftGraphPasswordSingleSignOnSettings>]`: passwordSingleSignOnSettings
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -10681,7 +10697,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[DefaultLabel <String>]`: Label that would be used if no customizedLabel is provided. Read only.
         - `[FieldId <String>]`: Id used to identity the field type. This is an internal ID and possible values are param1, param2, paramuserName, parampassword.
         - `[Type <String>]`: Type of the credential. The values can be text, password.
-    - `[PreferredSingleSignOnMode <String>]`: Specifies the single sign-on mode configured for this application. Azure AD uses the preferred single sign-on mode to launch the application from Microsoft 365 or the Azure AD My Apps. The supported values are password, saml, notSupported, and oidc.
+    - `[PreferredSingleSignOnMode <String>]`: Specifies the single sign-on mode configured for this application. Microsoft Entra ID uses the preferred single sign-on mode to launch the application from Microsoft 365 or the Microsoft Entra My Apps. The supported values are password, saml, notSupported, and oidc.
     - `[PreferredTokenSigningKeyEndDateTime <DateTime?>]`: Specifies the expiration date of the keyCredential used for token signing, marked by preferredTokenSigningKeyThumbprint. Updating this attribute is not currentlysupported. For details, see ServicePrincipal property differences.
     - `[PreferredTokenSigningKeyThumbprint <String>]`: This property can be used on SAML applications (apps that have preferredSingleSignOnMode set to saml) to control which certificate is used to sign the SAML responses. For applications that are not SAML, do not write or otherwise rely on this property.
     - `[PublishedPermissionScopes <IMicrosoftGraphPermissionScope[]>]`: The delegated permissions exposed by the application. For more information see the oauth2PermissionScopes property on the application entity's api property. Not nullable. Note: This property is named oauth2PermissionScopes in v1.0.
@@ -10694,22 +10710,22 @@ To create the parameters described below, construct a hash table containing the 
       - `[UserConsentDescription <String>]`: A description of the delegated permissions, intended to be read by a user granting the permission on their own behalf. This text appears in consent experiences where the user is consenting only on behalf of themselves.
       - `[UserConsentDisplayName <String>]`: A title for the permission, intended to be read by a user granting the permission on their own behalf. This text appears in consent experiences where the user is consenting only on behalf of themselves.
       - `[Value <String>]`: Specifies the value to include in the scp (scope) claim in access tokens. Must not exceed 120 characters in length. Allowed characters are : ! # $ % & ' ( ) * + , - . / : ;  =  ? @ [ ] ^ + _  {  } ~, and characters in the ranges 0-9, A-Z and a-z. Any other character, including the space character, aren't allowed. May not begin with ..
-    - `[PublisherName <String>]`: The name of the Azure AD tenant that published the application.
+    - `[PublisherName <String>]`: The name of the Microsoft Entra tenant that published the application.
     - `[RemoteDesktopSecurityConfiguration <IMicrosoftGraphRemoteDesktopSecurityConfiguration>]`: remoteDesktopSecurityConfiguration
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
-      - `[IsRemoteDesktopProtocolEnabled <Boolean?>]`: 
-      - `[TargetDeviceGroups <IMicrosoftGraphTargetDeviceGroup[]>]`: 
+      - `[IsRemoteDesktopProtocolEnabled <Boolean?>]`: Determines if Microsoft Entra ID RDS authentication protocol for RDP is enabled.
+      - `[TargetDeviceGroups <IMicrosoftGraphTargetDeviceGroup[]>]`: The collection of target device groups that are associated with the RDS security configuration that will be enabled for SSO when a client connects to the target device over RDP using the new Microsoft Entra ID RDS authentication protocol.
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
-        - `[DisplayName <String>]`: 
+        - `[DisplayName <String>]`: Display name for the target device group.
     - `[ReplyUrls <String[]>]`: The URLs that user tokens are sent to for sign in with the associated application, or the redirect URIs that OAuth 2.0 authorization codes and access tokens are sent to for the associated application. Not nullable.
     - `[SamlMetadataUrl <String>]`: The url where the service exposes SAML metadata for federation.
     - `[SamlSingleSignOnSettings <IMicrosoftGraphSamlSingleSignOnSettings>]`: samlSingleSignOnSettings
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[RelayState <String>]`: The relative URI the service provider would redirect to after completion of the single sign-on flow.
-    - `[ServicePrincipalNames <String[]>]`: Contains the list of identifiersUris, copied over from the associated application. Additional values can be added to hybrid applications. These values can be used to identify the permissions exposed by this app within Azure AD. For example,Client apps can specify a resource URI which is based on the values of this property to acquire an access token, which is the URI returned in the 'aud' claim.The any operator is required for filter expressions on multi-valued properties. Not nullable.  Supports $filter (eq, not, ge, le, startsWith).
-    - `[ServicePrincipalType <String>]`: Identifies if the service principal represents an application or a managed identity. This is set by Azure AD internally. For a service principal that represents an application this is set as Application. For a service principal that represent a managed identity this is set as ManagedIdentity. The SocialIdp type is for internal use.
-    - `[SignInAudience <String>]`: Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization's Azure AD tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization's Azure AD tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization's Azure AD tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.
+    - `[ServicePrincipalNames <String[]>]`: Contains the list of identifiersUris, copied over from the associated application. Additional values can be added to hybrid applications. These values can be used to identify the permissions exposed by this app within Microsoft Entra ID. For example,Client apps can specify a resource URI which is based on the values of this property to acquire an access token, which is the URI returned in the 'aud' claim.The any operator is required for filter expressions on multi-valued properties. Not nullable.  Supports $filter (eq, not, ge, le, startsWith).
+    - `[ServicePrincipalType <String>]`: Identifies if the service principal represents an application or a managed identity. This is set by Microsoft Entra ID internally. For a service principal that represents an application this is set as Application. For a service principal that represent a managed identity this is set as ManagedIdentity. The SocialIdp type is for internal use.
+    - `[SignInAudience <String>]`: Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization's Microsoft Entra tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization's Microsoft Entra tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization's Microsoft Entra tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.
     - `[Synchronization <IMicrosoftGraphSynchronization>]`: synchronization
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -10852,7 +10868,7 @@ To create the parameters described below, construct a hash table containing the 
           - `[SteadyStateFirstAchievedTime <DateTime?>]`: The time when steady state (no more changes to the process) was first achieved. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
           - `[SteadyStateLastAchievedTime <DateTime?>]`: The time when steady state (no more changes to the process) was last achieved. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
           - `[SynchronizedEntryCountByType <IMicrosoftGraphStringKeyLongValuePair[]>]`: Count of synchronized objects, listed by object type.
-            - `[Key <String>]`: The mapping of the user type from the source system to the target system. For example:User to User - For Azure AD to Azure AD synchronization worker to user - For Workday to Azure AD synchronization.
+            - `[Key <String>]`: The mapping of the user type from the source system to the target system. For example:User to User - For Microsoft Entra ID to Microsoft Entra synchronization worker to user - For Workday to Microsoft Entra synchronization.
             - `[Value <Int64?>]`: Total number of synchronized objects.
           - `[TroubleshootingUrl <String>]`: In the event of an error, the URL with the troubleshooting steps for the issue.
         - `[SynchronizationJobSettings <IMicrosoftGraphKeyValuePair[]>]`: Settings associated with the job. Some settings are inherited from the template.
@@ -10874,7 +10890,7 @@ To create the parameters described below, construct a hash table containing the 
           - `[Value <String>]`: Value of the metadata property.
         - `[Schema <IMicrosoftGraphSynchronizationSchema>]`: synchronizationSchema
     - `[Tags <String[]>]`: Custom strings that can be used to categorize and identify the service principal. Not nullable. The value is the union of strings set here and on the associated application entity's tags property.Supports $filter (eq, not, ge, le, startsWith).
-    - `[TokenEncryptionKeyId <String>]`: Specifies the keyId of a public key from the keyCredentials collection. When configured, Azure AD issues tokens for this application encrypted using the key specified by this property. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.
+    - `[TokenEncryptionKeyId <String>]`: Specifies the keyId of a public key from the keyCredentials collection. When configured, Microsoft Entra ID issues tokens for this application encrypted using the key specified by this property. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.
     - `[TokenIssuancePolicies <IMicrosoftGraphTokenIssuancePolicy[]>]`: The tokenIssuancePolicies assigned to this service principal. Supports $expand.
       - `[AppliesTo <IMicrosoftGraphDirectoryObject[]>]`: 
       - `[Definition <String[]>]`: A string collection containing a JSON string that defines the rules and settings for a policy. The syntax for the definition differs for each derived policy type. Required.
@@ -10899,7 +10915,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[VerifiedPublisherId <String>]`: The ID of the verified publisher from the app publisher's Partner Center account.
   - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment[]>]`: Represents the app roles a user has been granted for an application. Supports $expand.
   - `[Approvals <IMicrosoftGraphApproval[]>]`: 
-  - `[AssignedLicenses <IMicrosoftGraphAssignedLicense[]>]`: The licenses that are assigned to the user, including inherited (group-based) licenses. This property doesn't differentiate directly assigned and inherited licenses. Use the licenseAssignmentStates property to identify the directly assigned and inherited licenses. Not nullable. Supports $filter (eq, not, /$count eq 0, /$count ne 0).
+  - `[AssignedLicenses <IMicrosoftGraphAssignedLicense[]>]`: The licenses that are assigned to the user, including inherited (group-based) licenses. This property doesn't differentiate between directly assigned and inherited licenses. Use the licenseAssignmentStates property to identify the directly assigned and inherited licenses. Not nullable. Supports $filter (eq, not, /$count eq 0, /$count ne 0).
     - `[DisabledPlans <String[]>]`: A collection of the unique identifiers for plans that have been disabled.
     - `[SkuId <String>]`: The unique identifier for the SKU.
   - `[AssignedPlans <IMicrosoftGraphAssignedPlan[]>]`: The plans that are assigned to the user. Read-only. Not nullable.Supports $filter (eq and not).
@@ -10958,7 +10974,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[DeviceOwnership <String>]`: Ownership of the device. This property is set by Intune. Possible values are: unknown, company, personal.
         - `[DeviceVersion <Int32?>]`: For internal use only.
         - `[DisplayName <String>]`: The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.
-        - `[DomainName <String>]`: The on-premises domain name of Hybrid Azure AD joined devices. This property is set by Intune.
+        - `[DomainName <String>]`: The on-premises domain name of Microsoft Entra hybrid joined devices. This property is set by Intune.
         - `[EnrollmentProfileName <String>]`: Enrollment profile applied to the device. For example, Apple Device Enrollment Profile, Device enrollment - Corporate device identifiers, or Windows Autopilot profile name. This property is set by Intune.
         - `[EnrollmentType <String>]`: Enrollment type of the device. This property is set by Intune. Possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement.
         - `[ExtensionAttributes <IMicrosoftGraphOnPremisesExtensionAttributes>]`: onPremisesExtensionAttributes
@@ -10980,25 +10996,25 @@ To create the parameters described below, construct a hash table containing the 
           - `[ExtensionAttribute9 <String>]`: Ninth customizable extension attribute.
         - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the device. Read-only. Nullable.
           - `[Id <String>]`: The unique identifier for an entity. Read-only.
-        - `[Hostnames <String[]>]`: List of hostNames for the device.
+        - `[Hostnames <String[]>]`: List of host names for the device.
         - `[IsCompliant <Boolean?>]`: true if the device complies with Mobile Device Management (MDM) policies; otherwise, false. Read-only. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).
         - `[IsManaged <Boolean?>]`: true if the device is managed by a Mobile Device Management (MDM) app; otherwise, false. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).
-        - `[IsManagementRestricted <Boolean?>]`: true if the device is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.  To manage a device that's a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.
+        - `[IsManagementRestricted <Boolean?>]`: Indicates whether the device is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. The default value is false. Read-only.  To manage a device that's a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.
         - `[IsRooted <Boolean?>]`: true if device is rooted; false if device is jail-broken. This can only be updated by Intune.
-        - `[Kind <String>]`: Form factor of device. Only returned if user signs in with a Microsoft account as part of Project Rome.
+        - `[Kind <String>]`: Form factor of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
         - `[ManagementType <String>]`: Management channel of the device.  This property is set by Intune. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.
-        - `[Manufacturer <String>]`: Manufacturer of device. Only returned if user signs in with a Microsoft account as part of Project Rome.
+        - `[Manufacturer <String>]`: Manufacturer of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
         - `[MdmAppId <String>]`: Application identifier used to register device into MDM. Read-only. Supports $filter (eq, ne, not, startsWith).
         - `[MemberOf <IMicrosoftGraphDirectoryObject[]>]`: Groups and administrative units that this device is a member of. Read-only. Nullable. Supports $expand.
-        - `[Model <String>]`: Model of device. Only returned if user signs in with a Microsoft account as part of Project Rome.
-        - `[Name <String>]`: Friendly name of a device. Only returned if user signs in with a Microsoft account as part of Project Rome.
+        - `[Model <String>]`: Model of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
+        - `[Name <String>]`: Friendly name of the device. Only returned if user signs in with a Microsoft account as part of Project Rome.
         - `[OnPremisesLastSyncDateTime <DateTime?>]`: The last time at which the object was synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Read-only. Supports $filter (eq, ne, not, ge, le, in).
-        - `[OnPremisesSecurityIdentifier <String>]`: 
+        - `[OnPremisesSecurityIdentifier <String>]`: The on-premises security identifier (SID) for the user who was synchronized from on-premises to the cloud. Read-only. Returned only on $select. Supports $filter (eq).
         - `[OnPremisesSyncEnabled <Boolean?>]`: true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
         - `[OperatingSystem <String>]`: The type of operating system on the device. Required. Supports $filter (eq, ne, not, ge, le, startsWith, and eq on null values).
         - `[OperatingSystemVersion <String>]`: Operating system version of the device. Required. Supports $filter (eq, ne, not, ge, le, startsWith, and eq on null values).
         - `[PhysicalIds <String[]>]`: For internal use only. Not nullable. Supports $filter (eq, not, ge, le, startsWith, /$count eq 0, /$count ne 0.
-        - `[Platform <String>]`: Platform of device. Only returned if user signs in with a Microsoft account as part of Project Rome. Only returned if user signs in with a Microsoft account as part of Project Rome.
+        - `[Platform <String>]`: Platform of device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
         - `[ProfileType <String>]`: The profile type of the device. Possible values: RegisteredDevice (default), SecureVM, Printer, Shared, IoT.
         - `[RegisteredOwners <IMicrosoftGraphDirectoryObject[]>]`: The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Read-only. Nullable. Supports $expand.
         - `[RegisteredUsers <IMicrosoftGraphDirectoryObject[]>]`: Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.
@@ -11006,7 +11022,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[Status <String>]`: Device is online or offline. Only returned if user signs in with a Microsoft account as part of Project Rome.
         - `[SystemLabels <String[]>]`: List of labels applied to the device by the system. Supports $filter (/$count eq 0, /$count ne 0).
         - `[TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>]`: Groups and administrative units that this device is a member of. This operation is transitive. Supports $expand.
-        - `[TrustType <String>]`: Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory
+        - `[TrustType <String>]`: Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Microsoft Entra ID). For more details, see Introduction to device management in Microsoft Entra ID.
         - `[UsageRights <IMicrosoftGraphUsageRight[]>]`: Represents the usage rights a device has been granted.
           - `[Id <String>]`: The unique identifier for an entity. Read-only.
           - `[CatalogId <String>]`: Product id corresponding to the usage right.
@@ -11037,6 +11053,13 @@ To create the parameters described below, construct a hash table containing the 
       - `[PhoneNumber <String>]`: The phone number to text or call for authentication. Phone numbers use the format '+<country code> <number>x<extension>', with extension optional. For example, +1 5555551234 or +1 5555551234x123 are valid. Numbers are rejected when creating/updating if they don't match the required format.
       - `[PhoneType <String>]`: authenticationPhoneType
       - `[SmsSignInState <String>]`: authenticationMethodSignInState
+    - `[PlatformCredentialMethods <IMicrosoftGraphPlatformCredentialAuthenticationMethod[]>]`: 
+      - `[Id <String>]`: The unique identifier for an entity. Read-only.
+      - `[CreatedDateTime <DateTime?>]`: The date and time that this Platform Credential Key was registered.
+      - `[Device <IMicrosoftGraphDevice>]`: device
+      - `[DisplayName <String>]`: The name of the device on which Platform Credential is registered.
+      - `[KeyStrength <String>]`: authenticationMethodKeyStrength
+      - `[Platform <String>]`: authenticationMethodPlatform
     - `[SignInPreferences <IMicrosoftGraphSignInPreferences>]`: signInPreferences
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[IsSystemPreferredAuthenticationMethodEnabled <Boolean?>]`: Indicates whether the credential preferences of the system are enabled.
@@ -11059,8 +11082,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[KeyStrength <String>]`: authenticationMethodKeyStrength
   - `[AuthorizationInfo <IMicrosoftGraphAuthorizationInfo>]`: authorizationInfo
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[CertificateUserIds <String[]>]`: The collection of unique identifiers that can be associated with a user and can be used to bind the Azure AD user to a certificate for authentication and authorization into non-Azure AD environments. The identifiers must be unique in the tenant.
-  - `[Birthday <DateTime?>]`: The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select.
+    - `[CertificateUserIds <String[]>]`: The collection of unique identifiers that can be associated with a user and can be used to bind the Microsoft Entra user to a certificate for authentication and authorization into non-Azure AD environments. The identifiers must be unique in the tenant.
+  - `[Birthday <DateTime?>]`: The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select.
   - `[BusinessPhones <String[]>]`: The telephone numbers for the user. Only one number can be set for this property. Read-only for users synced from on-premises directory. Supports $filter (eq, not, ge, le, startsWith).
   - `[Calendar <IMicrosoftGraphCalendar>]`: calendar
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -11335,13 +11358,13 @@ To create the parameters described below, construct a hash table containing the 
           - `[User <IMicrosoftGraphIdentity>]`: identity
           - `[Conversation <IMicrosoftGraphTeamworkConversationIdentity>]`: teamworkConversationIdentity
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-            - `[Id <String>]`: Unique identifier for the identity.
+            - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+            - `[Id <String>]`: The identifier of the identity. This property is read-only.
             - `[ConversationIdentityType <String>]`: teamworkConversationIdentityType
           - `[Tag <IMicrosoftGraphTeamworkTagIdentity>]`: teamworkTagIdentity
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-            - `[Id <String>]`: Unique identifier for the identity.
+            - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+            - `[Id <String>]`: The identifier of the identity. This property is read-only.
       - `[MessageHistory <IMicrosoftGraphChatMessageHistoryItem[]>]`: List of activity history of a message item, including modification time and actions, such as reactionAdded, reactionRemoved, or reaction changes, on the message.
         - `[Actions <String>]`: chatMessageActions
         - `[ModifiedDateTime <DateTime?>]`: The date and time when the message was modified.
@@ -11379,8 +11402,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[JoinWebUrl <String>]`: The URL which can be clicked on to join or uniquely identify the meeting.
       - `[Organizer <IMicrosoftGraphTeamworkUserIdentity>]`: teamworkUserIdentity
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-        - `[Id <String>]`: Unique identifier for the identity.
+        - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+        - `[Id <String>]`: The identifier of the identity. This property is read-only.
         - `[UserIdentityType <String>]`: teamworkUserIdentityType
     - `[Operations <IMicrosoftGraphTeamsAsyncOperation[]>]`: A collection of all the Teams async operations that ran or are running on the chat. Nullable.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -11398,11 +11421,11 @@ To create the parameters described below, construct a hash table containing the 
     - `[PermissionGrants <IMicrosoftGraphResourceSpecificPermissionGrant[]>]`: A collection of permissions granted to apps for the chat.
       - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
-      - `[ClientAppId <String>]`: ID of the service principal of the Azure AD app that has been granted access. Read-only.
-      - `[ClientId <String>]`: ID of the Azure AD app that has been granted access. Read-only.
+      - `[ClientAppId <String>]`: ID of the service principal of the Microsoft Entra app that has been granted access. Read-only.
+      - `[ClientId <String>]`: ID of the Microsoft Entra app that has been granted access. Read-only.
       - `[Permission <String>]`: The name of the resource-specific permission. Read-only.
       - `[PermissionType <String>]`: The type of permission. Possible values are: Application, Delegated. Read-only.
-      - `[ResourceAppId <String>]`: ID of the Azure AD app that is hosting the resource. Read-only.
+      - `[ResourceAppId <String>]`: ID of the Microsoft Entra app that is hosting the resource. Read-only.
     - `[PinnedMessages <IMicrosoftGraphPinnedChatMessageInfo[]>]`: A collection of all the pinned messages in the chat. Nullable.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[Message <IMicrosoftGraphChatMessage>]`: chatMessage
@@ -11430,7 +11453,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[City <String>]`: The city where the user is located. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
   - `[CloudPCs <IMicrosoftGraphCloudPc[]>]`: 
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[AadDeviceId <String>]`: The Azure Active Directory (Azure AD) device ID of the Cloud PC.
+    - `[AadDeviceId <String>]`: The Microsoft Entra device ID of the Cloud PC.
     - `[ConnectionSettings <IMicrosoftGraphCloudPcConnectionSettings>]`: cloudPcConnectionSettings
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[EnableSingleSignOn <Boolean?>]`: 
@@ -11478,6 +11501,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[ProvisioningPolicyId <String>]`: The provisioning policy ID of the Cloud PC.
     - `[ProvisioningPolicyName <String>]`: The provisioning policy that is applied during the provisioning of Cloud PCs.
     - `[ProvisioningType <String>]`: cloudPcProvisioningType
+    - `[ScopeIds <String[]>]`: 
     - `[ServicePlanId <String>]`: The service plan ID of the Cloud PC.
     - `[ServicePlanName <String>]`: The service plan name of the Cloud PC.
     - `[ServicePlanType <String>]`: cloudPcServicePlanType
@@ -11488,7 +11512,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[CloudRealtimeCommunicationInfo <IMicrosoftGraphCloudRealtimeCommunicationInfo>]`: cloudRealtimeCommunicationInfo
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[IsSipEnabled <Boolean?>]`: Indicates whether the user has a SIP-enabled client registered for them. Read-only.
-  - `[CompanyName <String>]`: The name of the company that the user is associated with. This property can be useful for describing the company that an external user comes from. The maximum length is 64 characters.Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+  - `[CompanyName <String>]`: The name of the company the user is associated with. This property can be useful for describing the company that an external user comes from. The maximum length is 64 characters.Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
   - `[ConsentProvidedForMinor <String>]`: Sets whether consent has been obtained for minors. Allowed values: null, Granted, Denied and NotRequired. Refer to the legal age group property definitions for further information. Supports $filter (eq, ne, not, and in).
   - `[ContactFolders <IMicrosoftGraphContactFolder[]>]`: The user's contacts folders. Read-only. Nullable.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -11559,11 +11583,11 @@ To create the parameters described below, construct a hash table containing the 
     - `[WellKnownName <String>]`: The name of the folder if the folder is a recognized folder. Currently contacts is the only recognized contacts folder.
   - `[Contacts <IMicrosoftGraphContact[]>]`: The user's contacts. Read-only. Nullable.
   - `[Country <String>]`: The country or region where the user is located; for example, US or UK. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-  - `[CreatedDateTime <DateTime?>]`: The date and time the user was created, in ISO 8601 format and in UTC time. The value cannot be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Azure AD. Property is null for some users created before June 2018 and on-premises users that were synced to Azure AD before June 2018. Read-only. Supports $filter (eq, ne, not , ge, le, in).
+  - `[CreatedDateTime <DateTime?>]`: The date and time the user was created in ISO 8601 format and UTC. The value cannot be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Microsoft Entra ID. Property is null for some users created before June 2018 and on-premises users synced to Microsoft Entra ID before June 2018. Read-only. Supports $filter (eq, ne, not , ge, le, in).
   - `[CreatedObjects <IMicrosoftGraphDirectoryObject[]>]`: Directory objects that the user created. Read-only. Nullable.
   - `[CreationType <String>]`: Indicates whether the user account was created through one of the following methods:  As a regular school or work account (null). As an external account (Invitation). As a local account for an Azure Active Directory B2C tenant (LocalAccount). Through self-service sign-up by an internal user using email verification (EmailVerified). Through self-service sign-up by an external user signing up through a link that is part of a user flow (SelfServiceSignUp).  Read-only.Supports $filter (eq, ne, not, and in).
   - `[CustomSecurityAttributes <IMicrosoftGraphCustomSecurityAttributeValue>]`: customSecurityAttributeValue
-  - `[Department <String>]`: The name for the department in which the user works. Maximum length is 64 characters.Supports $filter (eq, ne, not , ge, le, in, and eq on null values).
+  - `[Department <String>]`: The name of the department where the user works. Maximum length is 64 characters.Supports $filter (eq, ne, not , ge, le, in, and eq on null values).
   - `[DeviceEnrollmentConfigurations <IMicrosoftGraphDeviceEnrollmentConfiguration[]>]`: Get enrollment configurations targeted to the user
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Assignments <IMicrosoftGraphEnrollmentConfigurationAssignment[]>]`: The list of group assignments for the device configuration profile
@@ -11603,8 +11627,8 @@ To create the parameters described below, construct a hash table containing the 
         - `[Link <String>]`: The link to the web resource. Can contain any of the following formatters: {{UPN}}, {{DeviceGUID}}, {{UserGUID}}
         - `[Text <String>]`: Not yet documented
   - `[Devices <IMicrosoftGraphDevice[]>]`: 
-  - `[DirectReports <IMicrosoftGraphDirectoryObject[]>]`: The users and contacts that report to the user. (The users and contacts that have their manager property set to this user.) Read-only. Nullable. Supports $expand.
-  - `[DisplayName <String>]`: The name displayed in the address book for the user. This value is usually the combination of the user's first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates. Maximum length is 256 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values), $orderby, and $search.
+  - `[DirectReports <IMicrosoftGraphDirectoryObject[]>]`: The users and contacts that report to the user. (The users and contacts with their manager property set to this user.) Read-only. Nullable. Supports $expand.
+  - `[DisplayName <String>]`: The name displayed in the address book for the user. This value is usually the combination of the user's first name, middle initial, and last name. This property is required when a user is created, and it cannot be cleared during updates. Maximum length is 256 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values), $orderby, and $search.
   - `[Drive <IMicrosoftGraphDrive>]`: drive
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -11859,8 +11883,8 @@ To create the parameters described below, construct a hash table containing the 
             - `[Group <IMicrosoftGraphIdentity>]`: identity
             - `[SiteGroup <IMicrosoftGraphSharePointIdentity>]`: sharePointIdentity
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-              - `[Id <String>]`: Unique identifier for the identity.
+              - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+              - `[Id <String>]`: The identifier of the identity. This property is read-only.
               - `[LoginName <String>]`: The sign in name of the SharePoint identity.
             - `[SiteUser <IMicrosoftGraphSharePointIdentity>]`: sharePointIdentity
           - `[GrantedToV2 <IMicrosoftGraphSharePointIdentitySet>]`: sharePointIdentitySet
@@ -11939,7 +11963,7 @@ To create the parameters described below, construct a hash table containing the 
           - `[Id <String>]`: The unique identifier for an entity. Read-only.
           - `[IsLabelAppliedExplicitly <Boolean?>]`: Specifies whether the label is applied explicitly on the item. True indicates that the label is applied explicitly; otherwise, the label is inherited from its parent. Read-only.
           - `[LabelAppliedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-          - `[LabelAppliedDateTime <DateTime?>]`: The date and time when the label was applied on the item. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+          - `[LabelAppliedDateTime <DateTime?>]`: The date and time when the label was applied on the item. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
           - `[Name <String>]`: The retention label on the document. Read-write.
           - `[RetentionSettings <IMicrosoftGraphRetentionLabelSettings>]`: retentionLabelSettings
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -11979,7 +12003,7 @@ To create the parameters described below, construct a hash table containing the 
           - `[NotificationUrl <String>]`: Required. The URL of the endpoint that receives the change notifications. This URL must make use of the HTTPS protocol. Any query string parameter included in the notificationUrl property will be included in the HTTP POST request when Microsoft Graph sends the change notifications.
           - `[NotificationUrlAppId <String>]`: Optional. The app ID that the subscription service can use to generate the validation token. This allows the client to validate the authenticity of the notification received.
           - `[Resource <String>]`: Required. Specifies the resource that will be monitored for changes. Do not include the base URL (https://graph.microsoft.com/beta/). See the possible resource path values for each supported resource.
-        - `[Thumbnails <IMicrosoftGraphThumbnailSet[]>]`: Collection containing [ThumbnailSet][] objects associated with the item. For more info, see [getting thumbnails][]. Read-only. Nullable.
+        - `[Thumbnails <IMicrosoftGraphThumbnailSet[]>]`: Collection of [thumbnailSet][] objects associated with the item. For more information, see [getting thumbnails][]. Read-only. Nullable.
           - `[Id <String>]`: The unique identifier for an entity. Read-only.
           - `[Large <IMicrosoftGraphThumbnail>]`: thumbnail
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -12518,15 +12542,15 @@ To create the parameters described below, construct a hash table containing the 
       - `[LearningContentId <String>]`: The ID of the learning content created in Viva Learning. Required.
       - `[LearningProviderId <String>]`: The registration ID of the provider. Required.
       - `[Status <String>]`: courseStatus
-  - `[EmployeeHireDate <DateTime?>]`: The date and time when the user was hired or will start work in case of a future hire. Supports $filter (eq, ne, not , ge, le, in).
+  - `[EmployeeHireDate <DateTime?>]`: The date and time when the user was hired or will start work if there is a future hire. Supports $filter (eq, ne, not , ge, le, in).
   - `[EmployeeId <String>]`: The employee identifier assigned to the user by the organization. The maximum length is 16 characters.Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
-  - `[EmployeeLeaveDateTime <DateTime?>]`: The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs one of the following Azure AD roles: Lifecycle Workflows Administrator, Global Reader, or Global Administrator. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.
+  - `[EmployeeLeaveDateTime <DateTime?>]`: The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs one of the following Microsoft Entra roles: Lifecycle Workflows Administrator, Global Reader, or Global Administrator. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.
   - `[EmployeeOrgData <IMicrosoftGraphEmployeeOrgData>]`: employeeOrgData
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[CostCenter <String>]`: The cost center associated with the user. Returned only on $select. Supports $filter.
     - `[Division <String>]`: The name of the division in which the user works. Returned only on $select. Supports $filter.
   - `[EmployeeType <String>]`: Captures enterprise worker type. For example, Employee, Contractor, Consultant, or Vendor. Supports $filter (eq, ne, not , ge, le, in, startsWith).
-  - `[Events <IMicrosoftGraphEvent[]>]`: The user's events. Default is to show events under the Default Calendar. Read-only. Nullable.
+  - `[Events <IMicrosoftGraphEvent[]>]`: The user's events. The default is to show events under the Default Calendar. Read-only. Nullable.
   - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the user. Supports $expand. Nullable.
   - `[ExternalUserState <String>]`: For an external user invited to the tenant using the invitation API, this property represents the invited user's invitation status. For invited users, the state can be PendingAcceptance or Accepted, or null for all other users. Supports $filter (eq, ne, not , in).
   - `[ExternalUserStateChangeDateTime <String>]`: Shows the timestamp for the latest change to the externalUserState property. Supports $filter (eq, ne, not , in).
@@ -12560,7 +12584,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
         - `[RecoveryKeys <IMicrosoftGraphBitlockerRecoveryKey[]>]`: The recovery keys associated with the bitlocker entity.
           - `[Id <String>]`: The unique identifier for an entity. Read-only.
-          - `[CreatedDateTime <DateTime?>]`: The date and time when the key was originally backed up to Azure Active Directory.
+          - `[CreatedDateTime <DateTime?>]`: The date and time when the key was originally backed up to Microsoft Entra ID.
           - `[DeviceId <String>]`: ID of the device the BitLocker key is originally backed up from.
           - `[Key <String>]`: The BitLocker recovery key.
           - `[VolumeType <String>]`: volumeType
@@ -12803,12 +12827,12 @@ To create the parameters described below, construct a hash table containing the 
       - `[LanguageTags <String[]>]`: List of languages for the term store.
       - `[Sets <IMicrosoftGraphTermStoreSet[]>]`: Collection of all sets available in the term store.
   - `[GivenName <String>]`: The given name (first name) of the user. Maximum length is 64 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
-  - `[HireDate <DateTime?>]`: The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.
-  - `[Identities <IMicrosoftGraphObjectIdentity[]>]`: Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft, and tied to a user account. May contain multiple items with the same signInType value. Supports $filter (eq) including on null values, only where the signInType is not userPrincipalName.
-    - `[Issuer <String>]`: Specifies the issuer of the identity, for example facebook.com.For local accounts (where signInType isn't federated), this property is the local B2C tenant default domain name, for example contoso.onmicrosoft.com.For guests from other Azure AD organization, this is the domain of the federated organization, for example contoso.com.Supports $filter. 512 character limit.
+  - `[HireDate <DateTime?>]`: The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.
+  - `[Identities <IMicrosoftGraphObjectIdentity[]>]`: Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft and tied to a user account. It may contain multiple items with the same signInType value. Supports $filter (eq) including on null values, only where the signInType is not userPrincipalName.
+    - `[Issuer <String>]`: Specifies the issuer of the identity, for example facebook.com.For local accounts (where signInType isn't federated), this property is the local B2C tenant default domain name, for example contoso.onmicrosoft.com.For guests from other Microsoft Entra organization, this is the domain of the federated organization, for example contoso.com.Supports $filter. 512 character limit.
     - `[IssuerAssignedId <String>]`: Specifies the unique identifier assigned to the user by the issuer. The combination of issuer and issuerAssignedId must be unique within the organization. Represents the sign-in name for the user, when signInType is set to emailAddress or userName (also known as local accounts).When signInType is set to: emailAddress, (or a custom string that starts with emailAddress like emailAddress1) issuerAssignedId must be a valid email addressuserName, issuerAssignedId must begin with an alphabetical character or number, and can only contain alphanumeric characters and the following symbols: - or Supports $filter. 64 character limit.
     - `[SignInType <String>]`: Specifies the user sign-in types in your directory, such as emailAddress, userName, federated, or userPrincipalName. federated represents a unique identifier for a user from an issuer, that can be in any format chosen by the issuer. Setting or updating a userPrincipalName identity will update the value of the userPrincipalName property on the user object. The validations performed on the userPrincipalName property on the user object, for example, verified domains and acceptable characters, will be performed when setting or updating a userPrincipalName identity. Extra validation is enforced on issuerAssignedId when the sign-in type is set to emailAddress or userName. This property can also be set to any custom string.
-  - `[ImAddresses <String[]>]`: The instant message voice over IP (VOIP) session initiation protocol (SIP) addresses for the user. Read-only. Supports $filter (eq, not, ge, le, startsWith).
+  - `[ImAddresses <String[]>]`: The instant message voice-over IP (VOIP) session initiation protocol (SIP) addresses for the user. Read-only. Supports $filter (eq, not, ge, le, startsWith).
   - `[InferenceClassification <IMicrosoftGraphInferenceClassification>]`: inferenceClassification
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -12870,23 +12894,23 @@ To create the parameters described below, construct a hash table containing the 
       - `[ResourceReference <IMicrosoftGraphResourceReference>]`: resourceReference
       - `[ResourceVisualization <IMicrosoftGraphResourceVisualization>]`: resourceVisualization
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[Interests <String[]>]`: A list for the user to describe their interests. Returned only on $select.
+  - `[Interests <String[]>]`: A list for users to describe their interests. Returned only on $select.
   - `[IsLicenseReconciliationNeeded <Boolean?>]`: Indicates whether the user is pending an exchange mailbox license assignment.  Read-only.  Supports $filter (eq where true only).
-  - `[IsManagementRestricted <Boolean?>]`: true if the user is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.  To manage a user who is a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.
+  - `[IsManagementRestricted <Boolean?>]`: true if the user is a member of a restricted management administrative unit, which requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.  To manage a user who is a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.
   - `[IsResourceAccount <Boolean?>]`: Do not use – reserved for future use.
   - `[JobTitle <String>]`: The user's job title. Maximum length is 128 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
   - `[JoinedGroups <IMicrosoftGraphGroup[]>]`: 
     - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[AcceptedSenders <IMicrosoftGraphDirectoryObject[]>]`: The list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.
+    - `[AcceptedSenders <IMicrosoftGraphDirectoryObject[]>]`: The list of users or groups allowed to create posts or calendar events in this group. If this list is non-empty, then only users or groups listed here can post.
     - `[AccessType <String>]`: groupAccessType
-    - `[AllowExternalSenders <Boolean?>]`: Indicates if people external to the organization can send messages to the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
+    - `[AllowExternalSenders <Boolean?>]`: Indicates if people external to the organization can send messages to the group. The default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
     - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment[]>]`: Represents the app roles a group has been granted for an application. Supports $expand.
     - `[AssignedLabels <IMicrosoftGraphAssignedLabel[]>]`: The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select.
       - `[DisplayName <String>]`: The display name of the label. Read-only.
       - `[LabelId <String>]`: The unique identifier of the label.
     - `[AssignedLicenses <IMicrosoftGraphAssignedLicense[]>]`: The licenses that are assigned to the group. Returned only on $select. Supports $filter (eq). Read-only.
-    - `[AutoSubscribeNewMembers <Boolean?>]`: Indicates if new members added to the group will be auto-subscribed to receive email notifications. You can set this property in a PATCH request for the group; do not set it in the initial POST request that creates the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
+    - `[AutoSubscribeNewMembers <Boolean?>]`: Indicates if new members added to the group are auto-subscribed to receive email notifications. You can set this property in a PATCH request for the group; don't set it in the initial POST request that creates the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
     - `[Calendar <IMicrosoftGraphCalendar>]`: calendar
     - `[CalendarView <IMicrosoftGraphEvent[]>]`: The calendar view for the calendar. Read-only.
     - `[Classification <String>]`: Describes a classification for the group (such as low, medium or high business impact). Valid values for this property are defined by creating a ClassificationList setting value, based on the template definition.Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith).
@@ -12938,7 +12962,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[Topic <String>]`: The topic of the conversation. This property can be set when the conversation is created, but it cannot be updated.
       - `[UniqueSenders <String[]>]`: All the users that sent a message to this Conversation.
     - `[CreatedByAppId <String>]`: App ID of the app used to create the group. Can be null for some groups. Returned by default. Read-only. Supports $filter (eq, ne, not, in, startsWith).
-    - `[CreatedDateTime <DateTime?>]`: Timestamp of when the group was created. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only.
+    - `[CreatedDateTime <DateTime?>]`: Timestamp of when the group was created. The value can't be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only.
     - `[CreatedOnBehalfOf <IMicrosoftGraphDirectoryObject>]`: directoryObject
     - `[Description <String>]`: An optional description for the group. Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
     - `[DisplayName <String>]`: The display name for the group. Required. Maximum length is 256 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.
@@ -12946,23 +12970,23 @@ To create the parameters described below, construct a hash table containing the 
     - `[Drives <IMicrosoftGraphDrive[]>]`: The group's drives. Read-only.
     - `[Endpoints <IMicrosoftGraphEndpoint[]>]`: Endpoints for the group. Read-only. Nullable.
     - `[Events <IMicrosoftGraphEvent[]>]`: The group's events.
-    - `[ExpirationDateTime <DateTime?>]`: Timestamp of when the group is set to expire. Is null for security groups but for Microsoft 365 groups, it represents when the group is set to expire as defined in the groupLifecyclePolicy. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
+    - `[ExpirationDateTime <DateTime?>]`: Timestamp of when the group is set to expire. It is null for security groups, but for Microsoft 365 groups, it represents when the group is set to expire as defined in the groupLifecyclePolicy. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
     - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the group. Read-only. Nullable.
     - `[GroupLifecyclePolicies <IMicrosoftGraphGroupLifecyclePolicy[]>]`: The collection of lifecycle policies for this group. Read-only. Nullable.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[AlternateNotificationEmails <String>]`: List of email address to send notifications for groups without owners. Multiple email address can be defined by separating email address with a semicolon.
       - `[GroupLifetimeInDays <Int32?>]`: Number of days before a group expires and needs to be renewed. Once renewed, the group expiration is extended by the number of days defined.
       - `[ManagedGroupTypes <String>]`: The group type for which the expiration policy applies. Possible values are All, Selected or None.
-    - `[GroupTypes <String[]>]`: Specifies the group type and its membership. If the collection contains Unified, the group is a Microsoft 365 group; otherwise, it's either a security group or distribution group. For details, see groups overview.If the collection includes DynamicMembership, the group has dynamic membership; otherwise, membership is static. Returned by default. Supports $filter (eq, not).
+    - `[GroupTypes <String[]>]`: Specifies the group type and its membership. If the collection contains Unified, the group is a Microsoft 365 group; otherwise, it's either a security group or a distribution group. For details, see groups overview.If the collection includes DynamicMembership, the group has dynamic membership; otherwise, membership is static. Returned by default. Supports $filter (eq, not).
     - `[HasMembersWithLicenseErrors <Boolean?>]`: Indicates whether there are members in this group that have license errors from its group-based license assignment. This property is never returned on a GET operation. You can use it as a $filter argument to get groups that have members with license errors (that is, filter for this property being true).  Supports $filter (eq).
-    - `[HideFromAddressLists <Boolean?>]`: true if the group is not displayed in certain parts of the Outlook user interface: in the Address Book, in address lists for selecting message recipients, and in the Browse Groups dialog for searching groups; false otherwise. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
-    - `[HideFromOutlookClients <Boolean?>]`: true if the group is not displayed in Outlook clients, such as Outlook for Windows and Outlook on the web, false otherwise. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
+    - `[HideFromAddressLists <Boolean?>]`: true if the group isn't displayed in certain parts of the Outlook user interface: in the Address Book, in address lists for selecting message recipients, and in the Browse Groups dialog for searching groups; false otherwise. The default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
+    - `[HideFromOutlookClients <Boolean?>]`: true if the group isn't displayed in Outlook clients, such as Outlook for Windows and Outlook on the web, false otherwise. The default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
     - `[InfoCatalogs <String[]>]`: Identifies the info segments assigned to the group. Returned by default. Supports $filter (eq, not, ge, le, startsWith).
     - `[IsArchived <Boolean?>]`: When a group is associated with a team, this property determines whether the team is in read-only mode. To read this property, use the /group/{groupId}/team endpoint or the Get team API. To update this property, use the archiveTeam and unarchiveTeam APIs.
-    - `[IsAssignableToRole <Boolean?>]`: Indicates whether this group can be assigned to an Azure Active Directory role. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true,  visibility must be Hidden, and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Azure AD role assignmentsUsing this feature requires a Azure AD Premium P1 license. Returned by default. Supports $filter (eq, ne, not).
+    - `[IsAssignableToRole <Boolean?>]`: Indicates whether this group can be assigned to a Microsoft Entra role. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true,  visibility must be Hidden, and the group cannot be a dynamic group (that is, groupTypes can't contain DynamicMembership). Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Microsoft Entra role assignmentsUsing this feature requires a Microsoft Entra ID P1 license. Returned by default. Supports $filter (eq, ne, not).
     - `[IsFavorite <Boolean?>]`: 
-    - `[IsManagementRestricted <Boolean?>]`: Indicates whether the group is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.  To manage a group that's a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.
-    - `[IsSubscribedByMail <Boolean?>]`: Indicates whether the signed-in user is subscribed to receive email conversations. Default value is true. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
+    - `[IsManagementRestricted <Boolean?>]`: Indicates whether the group is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. The default value is false. Read-only.  To manage a group member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.
+    - `[IsSubscribedByMail <Boolean?>]`: Indicates whether the signed-in user is subscribed to receive email conversations. The default value is true. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
     - `[LicenseProcessingState <IMicrosoftGraphLicenseProcessingState>]`: licenseProcessingState
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[State <String>]`: 
@@ -12970,7 +12994,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[MailEnabled <Boolean?>]`: Specifies whether the group is mail-enabled. Required. Returned by default. Supports $filter (eq, ne, not, and eq on null values).
     - `[MailNickname <String>]`: The mail alias for the group, unique for Microsoft 365 groups in the organization. Maximum length is 64 characters. This property can contain only characters in the ASCII character set 0 - 127 except the following: @ () / [] ' ; : <> , SPACE. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith).
     - `[MemberOf <IMicrosoftGraphDirectoryObject[]>]`: Groups and administrative units that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.
-    - `[Members <IMicrosoftGraphDirectoryObject[]>]`: Direct members of this group, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).
+    - `[Members <IMicrosoftGraphDirectoryObject[]>]`: Direct group members, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).
     - `[MembersWithLicenseErrors <IMicrosoftGraphDirectoryObject[]>]`: A list of group members with license errors from this group-based license assignment. Read-only.
     - `[MembershipRule <String>]`: The rule that determines members for this group if the group is a dynamic group (groupTypes contains DynamicMembership). For more information about the syntax of the membership rule, see Membership Rules syntax. Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith).
     - `[MembershipRuleProcessingState <String>]`: Indicates whether the dynamic membership processing is on or paused. Possible values are On or Paused. Returned by default. Supports $filter (eq, ne, not, in).
@@ -12979,21 +13003,21 @@ To create the parameters described below, construct a hash table containing the 
       - `[ErrorMessage <String>]`: Detailed error message if dynamic group processing ran into an error.  Optional. Read-only.
       - `[LastMembershipUpdated <DateTime?>]`: Most recent date and time when membership of a dynamic group was updated.  Optional. Read-only.
       - `[Status <String>]`: MembershipRuleProcessingStatusDetails
-    - `[OnPremisesDomainName <String>]`: Contains the on-premises domain FQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect.Returned by default. Read-only.
-    - `[OnPremisesLastSyncDateTime <DateTime?>]`: Indicates the last time at which the group was synced with the on-premises directory.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in).
-    - `[OnPremisesNetBiosName <String>]`: Contains the on-premises netBios name synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect.Returned by default. Read-only.
+    - `[OnPremisesDomainName <String>]`: Contains the on-premises domain FQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect.Returned by default. Read-only.
+    - `[OnPremisesLastSyncDateTime <DateTime?>]`: Indicates the last time at which the group was synced with the on-premises directory.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in).
+    - `[OnPremisesNetBiosName <String>]`: Contains the on-premises netBios name synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect.Returned by default. Read-only.
     - `[OnPremisesProvisioningErrors <IMicrosoftGraphOnPremisesProvisioningError[]>]`: Errors when using Microsoft synchronization product during provisioning. Returned by default. Supports $filter (eq, not).
       - `[Category <String>]`: Category of the provisioning error. Note: Currently, there is only one possible value. Possible value: PropertyConflict - indicates a property value is not unique. Other objects contain the same value for the property.
       - `[OccurredDateTime <DateTime?>]`: The date and time at which the error occurred.
       - `[PropertyCausingError <String>]`: Name of the directory property causing the error. Current possible values: UserPrincipalName or ProxyAddress
       - `[Value <String>]`: Value of the property causing the error.
-    - `[OnPremisesSamAccountName <String>]`: Contains the on-premises SAM account name synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect.Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith). Read-only.
-    - `[OnPremisesSecurityIdentifier <String>]`: Contains the on-premises security identifier (SID) for the group that was synchronized from on-premises to the cloud. Returned by default. Supports $filter (eq including on null values). Read-only.
+    - `[OnPremisesSamAccountName <String>]`: Contains the on-premises SAM account name synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect.Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith). Read-only.
+    - `[OnPremisesSecurityIdentifier <String>]`: Contains the on-premises security identifier (SID) for the group synchronized from on-premises to the cloud. Returned by default. Supports $filter (eq including on null values). Read-only.
     - `[OnPremisesSyncEnabled <Boolean?>]`: true if this group is synced from an on-premises directory; false if this group was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Returned by default. Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
     - `[Onenote <IMicrosoftGraphOnenote>]`: onenote
     - `[OrganizationId <String>]`: 
-    - `[Owners <IMicrosoftGraphDirectoryObject[]>]`: The owners of the group who can be users or service principals. Nullable. If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner.  Supports $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1); Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).
-    - `[PermissionGrants <IMicrosoftGraphResourceSpecificPermissionGrant[]>]`: The permissions that have been granted for a group to a specific application. Supports $expand.
+    - `[Owners <IMicrosoftGraphDirectoryObject[]>]`: The owners of the group who can be users or service principals. Nullable. If this property isn't specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner.  Supports $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1); Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).
+    - `[PermissionGrants <IMicrosoftGraphResourceSpecificPermissionGrant[]>]`: The permissions granted for a group to a specific application. Supports $expand.
     - `[Photo <IMicrosoftGraphProfilePhoto>]`: profilePhoto
     - `[Photos <IMicrosoftGraphProfilePhoto[]>]`: The profile photos owned by the group. Read-only. Nullable.
     - `[Planner <IMicrosoftGraphPlannerGroup>]`: plannerGroup
@@ -13142,16 +13166,16 @@ To create the parameters described below, construct a hash table containing the 
           - `[AccessLevel <String>]`: plannerPlanAccessLevel
         - `[Tasks <IMicrosoftGraphPlannerTask[]>]`: Collection of tasks in the plan. Read-only. Nullable.
         - `[Title <String>]`: Required. Title of the plan.
-    - `[PreferredDataLocation <String>]`: The preferred data location for the Microsoft 365 group. By default, the group inherits the group creator's preferred data location. To set this property, the calling user must be assigned one of the following Azure AD roles:  Global Administrator  User Account Administrator Directory Writer  Exchange Administrator  SharePoint Administrator  For more information about this property, see OneDrive Online Multi-Geo. Nullable. Returned by default.
-    - `[PreferredLanguage <String>]`: The preferred language for a Microsoft 365 group. Should follow ISO 639-1 Code; for example en-US. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+    - `[PreferredDataLocation <String>]`: The preferred data location for the Microsoft 365 group. By default, the group inherits the group creator's preferred data location. To set this property, the calling app must be granted the Directory.ReadWrite.All permission and the user be assigned one of the following Microsoft Entra roles:  Global Administrator  User Account Administrator Directory Writer  Exchange Administrator  SharePoint Administrator  For more information about this property, see OneDrive Online Multi-Geo and Create a Microsoft 365 group with a specific PDL. Nullable. Returned by default.
+    - `[PreferredLanguage <String>]`: The preferred language for a Microsoft 365 group. Should follow ISO 639-1 Code; for example, en-US. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
     - `[ProxyAddresses <String[]>]`: Email addresses for the group that direct to the same group mailbox. For example: ['SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com']. The any operator is required for filter expressions on multi-valued properties. Returned by default. Read-only. Not nullable. Supports $filter (eq, not, ge, le, startsWith, endsWith, /$count eq 0, /$count ne 0).
-    - `[RejectedSenders <IMicrosoftGraphDirectoryObject[]>]`: The list of users or groups that are not allowed to create posts or calendar events in this group. Nullable
-    - `[RenewedDateTime <DateTime?>]`: Timestamp of when the group was last renewed. This cannot be modified directly and is only updated via the renew service action. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
+    - `[RejectedSenders <IMicrosoftGraphDirectoryObject[]>]`: The list of users or groups not allowed to create posts or calendar events in this group. Nullable
+    - `[RenewedDateTime <DateTime?>]`: Timestamp of when the group was last renewed. This cannot be modified directly and is only updated via the renew service action. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
     - `[ResourceBehaviorOptions <String[]>]`: Specifies the group behaviors that can be set for a Microsoft 365 group during creation. This can be set only as part of creation (POST). Possible values are AllowOnlyMembersToPost, HideGroupInOutlook, SubscribeNewGroupMembers, WelcomeEmailDisabled. For more information, see Set Microsoft 365 group behaviors and provisioning options.
-    - `[ResourceProvisioningOptions <String[]>]`: Specifies the group resources that are provisioned as part of Microsoft 365 group creation, that are not normally part of default group creation. Possible value is Team. For more information, see Set Microsoft 365 group behaviors and provisioning options. Returned by default. Supports $filter (eq, not, startsWith.
+    - `[ResourceProvisioningOptions <String[]>]`: Specifies the group resources that are provisioned as part of Microsoft 365 group creation that isn't normally part of default group creation. The possible value is Team. For more information, see Set Microsoft 365 group behaviors and provisioning options. Returned by default. Supports $filter (eq, not, startsWith.
     - `[SecurityEnabled <Boolean?>]`: Specifies whether the group is a security group. Required.Returned by default. Supports $filter (eq, ne, not, in).
     - `[SecurityIdentifier <String>]`: Security identifier of the group, used in Windows scenarios. Returned by default.
-    - `[ServiceProvisioningErrors <IMicrosoftGraphServiceProvisioningError[]>]`: Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a group object .  Supports $filter (eq, not, for isResolved and serviceInstance).
+    - `[ServiceProvisioningErrors <IMicrosoftGraphServiceProvisioningError[]>]`: Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a group object.
       - `[CreatedDateTime <DateTime?>]`: The date and time at which the error occurred.
       - `[IsResolved <Boolean?>]`: Indicates whether the Error has been attended to.
       - `[ServiceInstance <String>]`: Qualified service instance (for example, 'SharePoint/Dublin') that published the service error information.
@@ -13186,7 +13210,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[SharedWithTeams <IMicrosoftGraphSharedWithChannelTeamInfo[]>]`: A collection of teams with which a channel is shared.
           - `[DisplayName <String>]`: The name of the team.
           - `[Team <IMicrosoftGraphTeam>]`: team
-          - `[TenantId <String>]`: The ID of the Azure Active Directory tenant.
+          - `[TenantId <String>]`: The ID of the Microsoft Entra tenant.
           - `[Id <String>]`: The unique identifier for an entity. Read-only.
           - `[AllowedMembers <IMicrosoftGraphConversationMember[]>]`: A collection of team members who have access to the shared channel.
           - `[IsHostTeam <Boolean?>]`: Indicates whether the team is the host of the channel.
@@ -13197,7 +13221,7 @@ To create the parameters described below, construct a hash table containing the 
           - `[MembersCount <Int32?>]`: Count of members in a channel.
           - `[OwnersCount <Int32?>]`: Count of owners in a channel.
         - `[Tabs <IMicrosoftGraphTeamsTab[]>]`: A collection of all the tabs in the channel. A navigation property.
-        - `[TenantId <String>]`: The ID of the Azure Active Directory tenant.
+        - `[TenantId <String>]`: The ID of the Microsoft Entra tenant.
         - `[WebUrl <String>]`: A hyperlink that will go to the channel in Microsoft Teams. This is the URL that you get when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.
       - `[Channels <IMicrosoftGraphChannel[]>]`: The collection of channels and messages associated with the team.
       - `[Classification <String>]`: An optional label. Typically describes the data or business sensitivity of the team. Must match one of a pre-configured set in the tenant's directory.
@@ -13247,6 +13271,13 @@ To create the parameters described below, construct a hash table containing the 
       - `[Schedule <IMicrosoftGraphSchedule>]`: schedule
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
+        - `[DayNotes <IMicrosoftGraphDayNote[]>]`: 
+          - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
+          - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
+          - `[Id <String>]`: The unique identifier for an entity. Read-only.
+          - `[DayNoteDate <DateTime?>]`: 
+          - `[DraftDayNote <IMicrosoftGraphItemBody>]`: itemBody
+          - `[SharedDayNote <IMicrosoftGraphItemBody>]`: itemBody
         - `[Enabled <Boolean?>]`: Indicates whether the schedule is enabled for the team. Required.
         - `[OfferShiftRequests <IMicrosoftGraphOfferShiftRequest[]>]`: The offer requests for shifts in the schedule.
           - `[AssignedTo <String>]`: scheduleChangeRequestActor
@@ -13389,7 +13420,7 @@ To create the parameters described below, construct a hash table containing the 
           - `[IsStagedForDeletion <Boolean?>]`: 
           - `[SharedTimeOff <IMicrosoftGraphTimeOffItem>]`: timeOffItem
           - `[UserId <String>]`: ID of the user assigned to the timeOff. Required.
-        - `[WorkforceIntegrationIds <String[]>]`: 
+        - `[WorkforceIntegrationIds <String[]>]`: The Ids for the workforce integrations associated with this schedule.
       - `[Specialization <String>]`: teamSpecialization
       - `[Summary <IMicrosoftGraphTeamSummary>]`: teamSummary
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -13426,26 +13457,26 @@ To create the parameters described below, construct a hash table containing the 
         - `[PublisherName <String>]`: The organization which published the team template.
         - `[ShortDescription <String>]`: A short-description of the team template as it will appear to the users in Microsoft Teams.
         - `[TeamDefinition <IMicrosoftGraphTeam>]`: team
-      - `[TenantId <String>]`: The ID of the Azure Active Directory tenant.
+      - `[TenantId <String>]`: The ID of the Microsoft Entra tenant.
       - `[Visibility <String>]`: teamVisibilityType
       - `[WebUrl <String>]`: A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.
     - `[Theme <String>]`: Specifies a Microsoft 365 group's color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.
     - `[Threads <IMicrosoftGraphConversationThread[]>]`: The group's conversation threads. Nullable.
-    - `[TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>]`: The groups that a group is a member of, either directly and through nested membership. Nullable.
+    - `[TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>]`: The groups a group is a member of, either directly or through nested membership. Nullable.
     - `[TransitiveMembers <IMicrosoftGraphDirectoryObject[]>]`: The direct and transitive members of a group. Nullable.
     - `[UniqueName <String>]`: 
-    - `[UnseenConversationsCount <Int32?>]`: Count of conversations that have been delivered one or more new posts since the signed-in user's last visit to the group. This property is the same as unseenCount. Returned only on $select.
+    - `[UnseenConversationsCount <Int32?>]`: Count of conversations delivered one or more new posts since the signed-in user's last visit to the group. This property is the same as unseenCount. Returned only on $select.
     - `[UnseenCount <Int32?>]`: Count of conversations that have received new posts since the signed-in user last visited the group. This property is the same as unseenConversationsCount.Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
     - `[UnseenMessagesCount <Int32?>]`: Count of new posts that have been delivered to the group's conversations since the signed-in user's last visit to the group. Returned only on $select.
-    - `[Visibility <String>]`: Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups, when the groups are created. It can't be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. To learn more, see group visibility options. Returned by default. Nullable.
+    - `[Visibility <String>]`: Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups when the groups are created. It can't be updated later. Other values of visibility can be updated after group creation. If visibility value isn't specified during group creation on Microsoft Graph, a security group is created as Private by default, and Microsoft 365 group is Public. Groups assignable to roles are always Private. To learn more, see group visibility options. Returned by default. Nullable.
     - `[WritebackConfiguration <IMicrosoftGraphGroupWritebackConfiguration>]`: groupWritebackConfiguration
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[IsEnabled <Boolean?>]`: Indicates whether writeback of cloud groups to on-premise Active Directory is enabled. Default value is true for Microsoft 365 groups and false for security groups.
-      - `[OnPremisesGroupType <String>]`: Indicates the target on-premises group type the cloud object is written back as. Nullable. The possible values are: universalDistributionGroup, universalSecurityGroup, universalMailEnabledSecurityGroup.If the cloud group is a unified (Microsoft 365) group, this property can be one of the following: universalDistributionGroup, universalSecurityGroup, universalMailEnabledSecurityGroup. Azure AD security groups can be written back as universalSecurityGroup. If isEnabled or the NewUnifiedGroupWritebackDefault group setting is true but this property isn't explicitly configured: Microsoft 365 groups are written back as universalDistributionGroup by defaultSecurity groups are written back as universalSecurityGroup by default
-  - `[JoinedTeams <IMicrosoftGraphTeam[]>]`: The Microsoft Teams teams that the user is a member of. Read-only. Nullable.
-  - `[LastPasswordChangeDateTime <DateTime?>]`: The time when this Azure AD user last changed their password or when their password was created, whichever date the latest action was performed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Returned only on $select.
-  - `[LegalAgeGroupClassification <String>]`: Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, MinorWithOutParentalConsent, MinorWithParentalConsent, MinorNoParentalConsentRequired, NotAdult and Adult. For more information, see legal age group property definitions. Returned only on $select.
-  - `[LicenseAssignmentStates <IMicrosoftGraphLicenseAssignmentState[]>]`: State of license assignments for this user. Also indicates licenses that are directly assigned and those that the user has inherited through group memberships. Read-only. Returned only on $select.
+      - `[OnPremisesGroupType <String>]`: Indicates the target on-premises group type the cloud object is written back as. Nullable. The possible values are: universalDistributionGroup, universalSecurityGroup, universalMailEnabledSecurityGroup.If the cloud group is a unified (Microsoft 365) group, this property can be one of the following: universalDistributionGroup, universalSecurityGroup, universalMailEnabledSecurityGroup. Microsoft Entra security groups can be written back as universalSecurityGroup. If isEnabled or the NewUnifiedGroupWritebackDefault group setting is true but this property isn't explicitly configured: Microsoft 365 groups are written back as universalDistributionGroup by defaultSecurity groups are written back as universalSecurityGroup by default
+  - `[JoinedTeams <IMicrosoftGraphTeam[]>]`: The Microsoft Teams teams the user is a member of. Read-only. Nullable.
+  - `[LastPasswordChangeDateTime <DateTime?>]`: When this Microsoft Entra user last changed their password or when their password was created, whichever date the latest action was performed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Returned only on $select.
+  - `[LegalAgeGroupClassification <String>]`: Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, MinorWithOutParentalConsent, MinorWithParentalConsent, MinorNoParentalConsentRequired, NotAdult, and Adult. For more information, see legal age group property definitions. Returned only on $select.
+  - `[LicenseAssignmentStates <IMicrosoftGraphLicenseAssignmentState[]>]`: State of license assignments for this user. It also indicates licenses that are directly assigned and the ones the user inherited through group memberships. Read-only. Returned only on $select.
     - `[AssignedByGroup <String>]`: Indicates whether the license is directly-assigned or inherited from a group. If directly-assigned, this field is null; if inherited through a group membership, this field contains the ID of the group. Read-Only.
     - `[DisabledPlans <String[]>]`: The service plans that are disabled in this assignment. Read-Only.
     - `[Error <String>]`: License assignment failure error. If the license is assigned successfully, this field will be Null. Read-Only. The possible values are CountViolation, MutuallyExclusiveViolation, DependencyViolation, ProhibitedInUsageLocationViolation, UniquenessViolation, and Other. For more information on how to identify and resolve license assignment errors, see here.
@@ -13453,7 +13484,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[SkuId <String>]`: The unique identifier for the SKU. Read-Only.
     - `[State <String>]`: Indicate the current state of this assignment. Read-Only. The possible values are Active, ActiveWithError, Disabled, and Error.
   - `[LicenseDetails <IMicrosoftGraphLicenseDetails[]>]`: 
-  - `[Mail <String>]`: The SMTP address for the user, for example, admin@contoso.com. Changes to this property also updates the user's proxyAddresses collection to include the value as an SMTP address. This property can't contain accent characters.  NOTE: We don't recommend updating this property for Azure AD B2C user profiles. Use the otherMails property instead.  Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith, and eq on null values).
+  - `[Mail <String>]`: The SMTP address for the user, for example, admin@contoso.com. Changes to this property also update the user's proxyAddresses collection to include the value as an SMTP address. This property can't contain accent characters.  NOTE: We don't recommend updating this property for Azure AD B2C user profiles. Use the otherMails property instead.  Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith, and eq on null values).
   - `[MailFolders <IMicrosoftGraphMailFolder[]>]`: The user's mail folders. Read-only. Nullable.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[ChildFolderCount <Int32?>]`: The number of immediate child mailFolders in the current mailFolder.
@@ -13791,6 +13822,9 @@ To create the parameters described below, construct a hash table containing the 
       - `[RemediationScriptError <String>]`: Error output of the remediation script
       - `[RemediationState <RemediationState?>]`: Indicates the type of execution status of the device management script.
       - `[UserName <String>]`: Name of the user whom ran the device health script
+    - `[DeviceIdentityAttestationDetail <IMicrosoftGraphDeviceIdentityAttestationDetail>]`: Indicates the attestation status of the managed device
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[DeviceIdentityAttestationStatus <DeviceIdentityAttestationStatus?>]`: Indicates the state of the anomaly. Eg: anomaly severity can be new, active, disabled, removed or other.
     - `[DeviceRegistrationState <DeviceRegistrationState?>]`: Device registration status.
     - `[DeviceType <DeviceType?>]`: Device type.
     - `[ExchangeAccessState <DeviceManagementExchangeAccessState?>]`: Device Exchange Access State.
@@ -13945,7 +13979,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[SignatureVersion <String>]`: Current malware definitions version
       - `[TamperProtectionEnabled <Boolean?>]`: When TRUE indicates the Windows Defender tamper protection feature is enabled, when FALSE indicates the Windows Defender tamper protection feature is not enabled. Defaults to setting on client device.
   - `[Manager <IMicrosoftGraphDirectoryObject>]`: directoryObject
-  - `[MemberOf <IMicrosoftGraphDirectoryObject[]>]`: The groups, directory roles and administrative units that the user is a member of. Read-only. Nullable. Supports $expand.
+  - `[MemberOf <IMicrosoftGraphDirectoryObject[]>]`: The groups, directory roles, and administrative units that the user is a member of. Read-only. Nullable. Supports $expand.
   - `[Messages <IMicrosoftGraphMessage[]>]`: The messages in a mailbox or folder. Read-only. Nullable.
   - `[MobileAppIntentAndStates <IMicrosoftGraphMobileAppIntentAndState[]>]`: The list of troubleshooting events for this user.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -13981,8 +14015,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[TroubleshootingErrorDetails <IMicrosoftGraphDeviceManagementTroubleshootingErrorDetails>]`: Object containing detailed information about the error and its remediation.
     - `[ManagedDeviceIdentifier <String>]`: Device identifier created or collected by Intune.
     - `[UserId <String>]`: Identifier for the user that tried to enroll the device.
-  - `[MobilePhone <String>]`: The primary cellular telephone number for the user. Read-only for users synced from on-premises directory.  Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values) and $search.
-  - `[MySite <String>]`: The URL for the user's personal site. Returned only on $select.
+  - `[MobilePhone <String>]`: The primary cellular telephone number for the user. Read-only for users synced from the on-premises directory.  Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values) and $search.
+  - `[MySite <String>]`: The URL for the user's site. Returned only on $select.
   - `[Notifications <IMicrosoftGraphNotification[]>]`: 
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[DisplayTimeToLive <Int32?>]`: Sets how long (in seconds) this notification content stays in each platform's notification viewer. For example, when the notification is delivered to a Windows device, the value of this property is passed on to ToastNotification.ExpirationTime, which determines how long the toast notification stays in the user's Windows Action Center.
@@ -14002,24 +14036,23 @@ To create the parameters described below, construct a hash table containing the 
       - `[PlatformTypes <String[]>]`: Use to filter the notification distribution to a specific platform or platforms. Valid values are Windows, iOS, Android and WebPush. By default, all push endpoint types (Windows, iOS, Android and WebPush) are enabled.
   - `[Oauth2PermissionGrants <IMicrosoftGraphOAuth2PermissionGrant[]>]`: 
   - `[OfficeLocation <String>]`: The office location in the user's place of business. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-  - `[OnPremisesDistinguishedName <String>]`: Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only.
-  - `[OnPremisesDomainName <String>]`: Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only.
+  - `[OnPremisesDistinguishedName <String>]`: Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only.
+  - `[OnPremisesDomainName <String>]`: Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only.
   - `[OnPremisesExtensionAttributes <IMicrosoftGraphOnPremisesExtensionAttributes>]`: onPremisesExtensionAttributes
-  - `[OnPremisesImmutableId <String>]`: This property is used to associate an on-premises Active Directory user account to their Azure AD user object. This property must be specified when creating a new user account in the Graph if you're using a federated domain for the user's userPrincipalName (UPN) property. Note: The $ and _ characters can't be used when specifying this property. Supports $filter (eq, ne, not, ge, le, in).
-  - `[OnPremisesLastSyncDateTime <DateTime?>]`: Indicates the last time at which the object was synced with the on-premises directory; for example: '2013-02-16T03:04:54Z'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, in).
+  - `[OnPremisesImmutableId <String>]`: This property associates an on-premises Active Directory user account to their Microsoft Entra user object. This property must be specified when creating a new user account in the Graph if you're using a federated domain for the user's userPrincipalName (UPN) property. Note: The $ and _ characters can't be used when specifying this property. Supports $filter (eq, ne, not, ge, le, in).
+  - `[OnPremisesLastSyncDateTime <DateTime?>]`: Indicates the last time at which the object was synced with the on-premises directory; for example: '2013-02-16T03:04:54Z'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, in).
   - `[OnPremisesProvisioningErrors <IMicrosoftGraphOnPremisesProvisioningError[]>]`: Errors when using Microsoft synchronization product during provisioning.  Supports $filter (eq, not, ge, le).
-  - `[OnPremisesSamAccountName <String>]`: Contains the on-premises sAMAccountName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith).
-  - `[OnPremisesSecurityIdentifier <String>]`: Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Read-only. Supports $filter (eq including on null values).
+  - `[OnPremisesSamAccountName <String>]`: Contains the on-premises sAMAccountName synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith).
+  - `[OnPremisesSecurityIdentifier <String>]`: Contains the on-premises security identifier (SID) for the user synchronized from on-premises to the cloud. Read-only. Supports $filter (eq including on null values).
   - `[OnPremisesSipInfo <IMicrosoftGraphOnPremisesSipInfo>]`: onPremisesSipInfo
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[IsSipEnabled <Boolean?>]`: Indicates whether the user is currently enabled for on-premises Skype for Business.
     - `[SipDeploymentLocation <String>]`: Indicates a fully qualified DNS name of the Microsoft Online Communications Server deployment.
     - `[SipPrimaryAddress <String>]`: Serves as a unique identifier for each user on the on-premises Skype for Business.
-  - `[OnPremisesSyncEnabled <Boolean?>]`: true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise the user isn't being synced and can be managed in Azure Active Directory (Azure AD). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
-  - `[OnPremisesUserPrincipalName <String>]`: Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith).
+  - `[OnPremisesSyncEnabled <Boolean?>]`: true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise, the user isn't being synced and can be managed in Microsoft Entra ID. Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
+  - `[OnPremisesUserPrincipalName <String>]`: Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith).
   - `[Onenote <IMicrosoftGraphOnenote>]`: onenote
-  - `[OnlineMeetings <IMicrosoftGraphOnlineMeeting[]>]`: Information about a meeting, including the URL used to join a meeting, the attendees' list, and the description.
-    - `[Id <String>]`: The unique identifier for an entity. Read-only.
+  - `[OnlineMeetings <IMicrosoftGraphOnlineMeeting[]>]`: Information about a meeting, including the URL used to join a meeting, the attendees list, and the description.
     - `[AllowAttendeeToEnableCamera <Boolean?>]`: Indicates whether attendees can turn on their camera.
     - `[AllowAttendeeToEnableMic <Boolean?>]`: Indicates whether attendees can turn on their microphone.
     - `[AllowMeetingChat <String>]`: meetingChatMode
@@ -14028,8 +14061,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[AllowTeamworkReactions <Boolean?>]`: Indicates if Teams reactions are enabled for the meeting.
     - `[AllowTranscription <Boolean?>]`: Indicates whether transcription is enabled for the meeting.
     - `[AllowedPresenters <String>]`: onlineMeetingPresenters
-    - `[AlternativeRecording <Byte[]>]`: 
-    - `[AnonymizeIdentityForRoles <String[]>]`: Specifies whose identity will be anonymized in the meeting. Possible values are: attendee. The attendee value cannot be removed through a PATCH operation once added.
+    - `[AnonymizeIdentityForRoles <String[]>]`: Specifies whose identity is anonymized in the meeting. Possible values are: attendee. The attendee value can't be removed through a PATCH operation once added.
     - `[AttendanceReports <IMicrosoftGraphMeetingAttendanceReport[]>]`: The attendance reports of an online meeting. Read-only.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[AttendanceRecords <IMicrosoftGraphAttendanceRecord[]>]`: List of attendance records of an attendance report. Read-only.
@@ -14046,7 +14078,6 @@ To create the parameters described below, construct a hash table containing the 
       - `[MeetingEndDateTime <DateTime?>]`: UTC time when the meeting ended. Read-only.
       - `[MeetingStartDateTime <DateTime?>]`: UTC time when the meeting started. Read-only.
       - `[TotalParticipantCount <Int32?>]`: Total number of participants. Read-only.
-    - `[AttendeeReport <Byte[]>]`: 
     - `[AudioConferencing <IMicrosoftGraphAudioConferencing>]`: audioConferencing
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[ConferenceId <String>]`: The conference id of the online meeting.
@@ -14055,6 +14086,38 @@ To create the parameters described below, construct a hash table containing the 
       - `[TollFreeNumbers <String[]>]`: List of toll-free numbers that are displayed in the meeting invite.
       - `[TollNumber <String>]`: 
       - `[TollNumbers <String[]>]`: List of toll numbers that are displayed in the meeting invite.
+    - `[ChatInfo <IMicrosoftGraphChatInfo>]`: chatInfo
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[MessageId <String>]`: The unique identifier for a message in a Microsoft Teams channel.
+      - `[ReplyChainMessageId <String>]`: The ID of the reply message.
+      - `[ThreadId <String>]`: The unique identifier for a thread in Microsoft Teams.
+    - `[ChatRestrictions <IMicrosoftGraphChatRestrictions>]`: chatRestrictions
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[AllowTextOnly <Boolean?>]`: 
+    - `[IsEndToEndEncryptionEnabled <Boolean?>]`: 
+    - `[IsEntryExitAnnounced <Boolean?>]`: Indicates whether to announce when callers join or leave.
+    - `[JoinInformation <IMicrosoftGraphItemBody>]`: itemBody
+    - `[JoinMeetingIdSettings <IMicrosoftGraphJoinMeetingIdSettings>]`: joinMeetingIdSettings
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[IsPasscodeRequired <Boolean?>]`: Indicates whether a passcode is required to join a meeting when using joinMeetingId. Optional.
+      - `[JoinMeetingId <String>]`: The meeting ID to be used to join a meeting. Optional. Read-only.
+      - `[Passcode <String>]`: The passcode to join a meeting.  Optional. Read-only.
+    - `[JoinWebUrl <String>]`: The join URL of the online meeting. Read-only.
+    - `[LobbyBypassSettings <IMicrosoftGraphLobbyBypassSettings>]`: lobbyBypassSettings
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[IsDialInBypassEnabled <Boolean?>]`: Specifies whether or not to always let dial-in callers bypass the lobby. Optional.
+      - `[Scope <String>]`: lobbyBypassScope
+    - `[RecordAutomatically <Boolean?>]`: Indicates whether to record the meeting automatically.
+    - `[ShareMeetingChatHistoryDefault <String>]`: meetingChatHistoryDefaultMode
+    - `[Subject <String>]`: The subject of the online meeting.
+    - `[VideoTeleconferenceId <String>]`: The video teleconferencing ID. Read-only.
+    - `[WatermarkProtection <IMicrosoftGraphWatermarkProtectionValues>]`: watermarkProtectionValues
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[IsEnabledForContentSharing <Boolean?>]`: Indicates whether to apply a watermark to any shared content.
+      - `[IsEnabledForVideo <Boolean?>]`: Indicates whether to apply a watermark to everyone's video feed.
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
+    - `[AlternativeRecording <Byte[]>]`: 
+    - `[AttendeeReport <Byte[]>]`: 
     - `[BroadcastRecording <Byte[]>]`: 
     - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings>]`: broadcastMeetingSettings
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -14069,32 +14132,11 @@ To create the parameters described below, construct a hash table containing the 
       - `[IsRecordingEnabled <Boolean?>]`: Indicates whether recording is enabled for this Teams live event. Default value is false.
       - `[IsVideoOnDemandEnabled <Boolean?>]`: Indicates whether video on demand is enabled for this Teams live event. Default value is false.
     - `[Capabilities <String[]>]`: 
-    - `[ChatInfo <IMicrosoftGraphChatInfo>]`: chatInfo
-      - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[MessageId <String>]`: The unique identifier for a message in a Microsoft Teams channel.
-      - `[ReplyChainMessageId <String>]`: The ID of the reply message.
-      - `[ThreadId <String>]`: The unique identifier for a thread in Microsoft Teams.
-    - `[ChatRestrictions <IMicrosoftGraphChatRestrictions>]`: chatRestrictions
-      - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[AllowTextOnly <Boolean?>]`: 
     - `[CreationDateTime <DateTime?>]`: The meeting creation time in UTC. Read-only.
     - `[EndDateTime <DateTime?>]`: The meeting end time in UTC.
     - `[ExternalId <String>]`: The external ID. A custom ID. Optional.
     - `[IsBroadcast <Boolean?>]`: 
-    - `[IsEndToEndEncryptionEnabled <Boolean?>]`: 
-    - `[IsEntryExitAnnounced <Boolean?>]`: Indicates whether to announce when callers join or leave.
-    - `[JoinInformation <IMicrosoftGraphItemBody>]`: itemBody
-    - `[JoinMeetingIdSettings <IMicrosoftGraphJoinMeetingIdSettings>]`: joinMeetingIdSettings
-      - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[IsPasscodeRequired <Boolean?>]`: Indicates whether a passcode is required to join a meeting when using joinMeetingId. Optional.
-      - `[JoinMeetingId <String>]`: The meeting ID to be used to join a meeting. Optional. Read-only.
-      - `[Passcode <String>]`: The passcode to join a meeting.  Optional. Read-only.
     - `[JoinUrl <String>]`: 
-    - `[JoinWebUrl <String>]`: The join URL of the online meeting. Read-only.
-    - `[LobbyBypassSettings <IMicrosoftGraphLobbyBypassSettings>]`: lobbyBypassSettings
-      - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[IsDialInBypassEnabled <Boolean?>]`: Specifies whether or not to always let dial-in callers bypass the lobby. Optional.
-      - `[Scope <String>]`: lobbyBypassScope
     - `[MeetingAttendanceReport <IMicrosoftGraphMeetingAttendanceReport>]`: meetingAttendanceReport
     - `[Participants <IMicrosoftGraphMeetingParticipants>]`: meetingParticipants
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -14105,12 +14147,11 @@ To create the parameters described below, construct a hash table containing the 
       - `[Contributors <IMicrosoftGraphMeetingParticipantInfo[]>]`: 
       - `[Organizer <IMicrosoftGraphMeetingParticipantInfo>]`: meetingParticipantInfo
       - `[Producers <IMicrosoftGraphMeetingParticipantInfo[]>]`: 
-    - `[RecordAutomatically <Boolean?>]`: Indicates whether to record the meeting automatically.
     - `[Recording <Byte[]>]`: 
     - `[Recordings <IMicrosoftGraphCallRecording[]>]`: The recordings of an online meeting. Read-only.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[Content <Byte[]>]`: The content of the recording. Read-only.
-      - `[CreatedDateTime <DateTime?>]`: Date and time at which the recording was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+      - `[CreatedDateTime <DateTime?>]`: Date and time at which the recording was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
       - `[MeetingId <String>]`: The unique identifier of the onlineMeeting related to this recording. Read-only.
       - `[MeetingOrganizer <IMicrosoftGraphIdentitySet>]`: identitySet
       - `[MeetingOrganizerId <String>]`: The unique identifier of the organizer of the onlineMeeting related to this recording. Read-only.
@@ -14137,9 +14178,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[DisplayName <String>]`: Display name of the speaker.
       - `[StartDateTime <DateTime?>]`: The meeting start time in UTC.
       - `[Subject <String>]`: The subject of the meeting.
-    - `[ShareMeetingChatHistoryDefault <String>]`: meetingChatHistoryDefaultMode
     - `[StartDateTime <DateTime?>]`: The meeting start time in UTC.
-    - `[Subject <String>]`: The subject of the online meeting.
     - `[Transcripts <IMicrosoftGraphCallTranscript[]>]`: The transcripts of an online meeting. Read-only.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[Content <Byte[]>]`: The content of the transcript. Read-only.
@@ -14149,11 +14188,6 @@ To create the parameters described below, construct a hash table containing the 
       - `[MeetingOrganizerId <String>]`: The unique identifier of the organizer of the onlineMeeting related to this transcript. Read-only.
       - `[MetadataContent <Byte[]>]`: The time-aligned metadata of the utterances in the transcript. Read-only.
       - `[TranscriptContentUrl <String>]`: The URL which can be used to access the content of the transcript. Read-only.
-    - `[VideoTeleconferenceId <String>]`: The video teleconferencing ID. Read-only.
-    - `[WatermarkProtection <IMicrosoftGraphWatermarkProtectionValues>]`: watermarkProtectionValues
-      - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[IsEnabledForContentSharing <Boolean?>]`: Indicates whether to apply a watermark to any shared content.
-      - `[IsEnabledForVideo <Boolean?>]`: Indicates whether to apply a watermark to everyone's video feed.
   - `[OtherMails <String[]>]`: A list of additional email addresses for the user; for example: ['bob@contoso.com', 'Robert@fabrikam.com'].NOTE: This property can't contain accent characters.Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).
   - `[Outlook <IMicrosoftGraphOutlookUser>]`: outlookUser
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -14202,16 +14236,16 @@ To create the parameters described below, construct a hash table containing the 
       - `[Name <String>]`: The name of the task group.
       - `[TaskFolders <IMicrosoftGraphOutlookTaskFolder[]>]`: The collection of task folders in the task group. Read-only. Nullable.
     - `[Tasks <IMicrosoftGraphOutlookTask[]>]`: 
-  - `[OwnedDevices <IMicrosoftGraphDirectoryObject[]>]`: Devices that are owned by the user. Read-only. Nullable. Supports $expand.
-  - `[OwnedObjects <IMicrosoftGraphDirectoryObject[]>]`: Directory objects that are owned by the user. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
-  - `[PasswordPolicies <String>]`: Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two may be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. For more information on the default password policies, see Azure AD password policies. Supports $filter (ne, not, and eq on null values).
+  - `[OwnedDevices <IMicrosoftGraphDirectoryObject[]>]`: Devices owned by the user. Read-only. Nullable. Supports $expand.
+  - `[OwnedObjects <IMicrosoftGraphDirectoryObject[]>]`: Directory objects owned by the user. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
+  - `[PasswordPolicies <String>]`: Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two may be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. For more information on the default password policies, see Microsoft Entra password policies. Supports $filter (ne, not, and eq on null values).
   - `[PasswordProfile <IMicrosoftGraphPasswordProfile>]`: passwordProfile
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[ForceChangePasswordNextSignIn <Boolean?>]`: true if the user must change her password on the next login; otherwise false. If not set, default is false.
     - `[ForceChangePasswordNextSignInWithMfa <Boolean?>]`: If true, at next sign-in, the user must perform a multi-factor authentication (MFA) before being forced to change their password. The behavior is identical to forceChangePasswordNextSignIn except that the user is required to first perform a multi-factor authentication before password change. After a password change, this property will be automatically reset to false. If not set, default is false.
     - `[Password <String>]`: The password for the user. This property is required when a user is created. It can be updated, but the user will be required to change the password on the next login. The password must satisfy minimum requirements as specified by the user's passwordPolicies property. By default, a strong password is required.
-  - `[PastProjects <String[]>]`: A list for the user to enumerate their past projects. Returned only on $select.
-  - `[PendingAccessReviewInstances <IMicrosoftGraphAccessReviewInstance[]>]`: Navigation property to get list of access reviews pending approval by reviewer.
+  - `[PastProjects <String[]>]`: A list for users to enumerate their past projects. Returned only on $select.
+  - `[PendingAccessReviewInstances <IMicrosoftGraphAccessReviewInstance[]>]`: Navigation property to get a list of access reviews pending approval by the reviewer.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[ContactedReviewers <IMicrosoftGraphAccessReviewReviewer[]>]`: Returns the collection of reviewers who were contacted to complete this review. While the reviewers and fallbackReviewers properties of the accessReviewScheduleDefinition might specify group owners or managers as reviewers, contactedReviewers returns their individual identities. Supports $select. Read-only.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -14223,8 +14257,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[AccessReviewId <String>]`: The identifier of the accessReviewInstance parent. Supports $select. Read-only.
       - `[AppliedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-        - `[Id <String>]`: Unique identifier for the identity.
+        - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+        - `[Id <String>]`: The identifier of the identity. This property is read-only.
         - `[IPAddress <String>]`: Indicates the client IP address used by user performing the activity (audit log only).
         - `[UserPrincipalName <String>]`: The userPrincipalName attribute of the user.
       - `[AppliedDateTime <DateTime?>]`: The timestamp when the approval decision was applied. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Supports $select. Read-only.
@@ -14285,7 +14319,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[JustificationRequiredOnApproval <Boolean?>]`: Indicates whether reviewers are required to provide justification with their decision. Default value is false.
         - `[MailNotificationsEnabled <Boolean?>]`: Indicates whether emails are enabled or disabled. Default value is false.
         - `[RecommendationInsightSettings <IMicrosoftGraphAccessReviewRecommendationInsightSetting[]>]`: Optional. Describes the types of insights that aid reviewers to make access review decisions. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its recommendationInsightSettings setting will be used instead of the value of this property.
-        - `[RecommendationLookBackDuration <TimeSpan?>]`: Optional field. Indicates the period of inactivity (with respect to the start date of the review instance) that recommendations will be configured from. The recommendation will be to deny if the user is inactive during the look-back duration. For reviews of groups and Azure AD roles, any duration is accepted. For reviews of applications, 30 days is the maximum duration. If not specified, the duration is 30 days. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its recommendationLookBackDuration setting will be used instead of the value of this property.
+        - `[RecommendationLookBackDuration <TimeSpan?>]`: Optional field. Indicates the period of inactivity (with respect to the start date of the review instance) that recommendations will be configured from. The recommendation will be to deny if the user is inactive during the look-back duration. For reviews of groups and Microsoft Entra roles, any duration is accepted. For reviews of applications, 30 days is the maximum duration. If not specified, the duration is 30 days. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its recommendationLookBackDuration setting will be used instead of the value of this property.
         - `[RecommendationsEnabled <Boolean?>]`: Indicates whether decision recommendations are enabled or disabled. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its recommendationsEnabled setting will be used instead of the value of this property.
         - `[Recurrence <IMicrosoftGraphPatternedRecurrence>]`: patternedRecurrence
         - `[ReminderNotificationsEnabled <Boolean?>]`: Indicates whether reminders are enabled or disabled. Default value is false.
@@ -14293,9 +14327,9 @@ To create the parameters described below, construct a hash table containing the 
         - `[DecisionsThatWillMoveToNextStage <String[]>]`: Indicate which decisions will go to the next stage. Can be a subset of Approve, Deny, Recommendation, or NotReviewed. If not provided, all decisions will go to the next stage. Optional.
         - `[DependsOn <String[]>]`: Defines the sequential or parallel order of the stages and depends on the stageId. Only sequential stages are currently supported. For example, if stageId is 2, then dependsOn must be 1. If stageId is 1, don't specify dependsOn. Required if stageId isn't 1.
         - `[DurationInDays <Int32?>]`: The duration of the stage. Required.  NOTE: The cumulative value of this property across all stages  1. Will override the instanceDurationInDays setting on the accessReviewScheduleDefinition object. 2. Can't exceed the length of one recurrence. That is, if the review recurs weekly, the cumulative durationInDays can't exceed 7.
-        - `[FallbackReviewers <IMicrosoftGraphAccessReviewReviewerScope[]>]`: If provided, the fallback reviewers are asked to complete a review if the primary reviewers don't exist. For example, if managers are selected as reviewers and a principal under review doesn't have a manager in Azure AD, the fallback reviewers are asked to review that principal. NOTE: The value of this property overrides the corresponding setting on the accessReviewScheduleDefinition object.
+        - `[FallbackReviewers <IMicrosoftGraphAccessReviewReviewerScope[]>]`: If provided, the fallback reviewers are asked to complete a review if the primary reviewers don't exist. For example, if managers are selected as reviewers and a principal under review doesn't have a manager in Microsoft Entra ID, the fallback reviewers are asked to review that principal. NOTE: The value of this property overrides the corresponding setting on the accessReviewScheduleDefinition object.
         - `[RecommendationInsightSettings <IMicrosoftGraphAccessReviewRecommendationInsightSetting[]>]`: 
-        - `[RecommendationLookBackDuration <TimeSpan?>]`: Optional field. Indicates the time period of inactivity (with respect to the start date of the review instance) from which that recommendations will be configured. The recommendation is to deny if the user is inactive during the look back duration. For reviews of groups and Azure AD roles, any duration is accepted. For reviews of applications, 30 days is the maximum duration. If not specified, the duration is 30 days. NOTE: The value of this property overrides the corresponding setting on the accessReviewScheduleDefinition object.
+        - `[RecommendationLookBackDuration <TimeSpan?>]`: Optional field. Indicates the time period of inactivity (with respect to the start date of the review instance) from which that recommendations will be configured. The recommendation is to deny if the user is inactive during the look back duration. For reviews of groups and Microsoft Entra roles, any duration is accepted. For reviews of applications, 30 days is the maximum duration. If not specified, the duration is 30 days. NOTE: The value of this property overrides the corresponding setting on the accessReviewScheduleDefinition object.
         - `[RecommendationsEnabled <Boolean?>]`: Indicates whether showing recommendations to reviewers is enabled. Required. NOTE: The value of this property overrides the corresponding setting on the accessReviewScheduleDefinition object.
         - `[Reviewers <IMicrosoftGraphAccessReviewReviewerScope[]>]`: Defines who the reviewers are. If none is specified, the review is a self-review (users review their own access).  For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API. NOTE: The value of this property overrides the corresponding setting on the accessReviewScheduleDefinition.
         - `[StageId <String>]`: Unique identifier of the accessReviewStageSettings. The stageId is used in dependsOn property to indicate the stage relationship. Required.
@@ -14311,13 +14345,13 @@ To create the parameters described below, construct a hash table containing the 
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[Decisions <IMicrosoftGraphAccessReviewInstanceDecisionItem[]>]`: Each user reviewed in an accessReviewStage has a decision item representing if they were approved, denied, or not yet reviewed.
       - `[EndDateTime <DateTime?>]`: DateTime when review stage is scheduled to end. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. This property is the cumulative total of the durationInDays for all stages. Read-only.
-      - `[FallbackReviewers <IMicrosoftGraphAccessReviewReviewerScope[]>]`: This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user's manager does not exist.
+      - `[FallbackReviewers <IMicrosoftGraphAccessReviewReviewerScope[]>]`: This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers are notified to take action if no users are found from the list of reviewers specified. This can occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user's manager does not exist.
       - `[Reviewers <IMicrosoftGraphAccessReviewReviewerScope[]>]`: This collection of access review scopes is used to define who the reviewers are. For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API.
       - `[StartDateTime <DateTime?>]`: DateTime when review stage is scheduled to start. May be in the future. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
       - `[Status <String>]`: Specifies the status of an accessReviewStage. Possible values: Initializing, NotStarted, Starting, InProgress, Completing, Completed, AutoReviewing, and AutoReviewed. Supports $orderby, and $filter (eq only). Read-only.
     - `[StartDateTime <DateTime?>]`: DateTime when review instance is scheduled to start. May be in the future. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $select. Read-only.
     - `[Status <String>]`: Specifies the status of an accessReview. Possible values: Initializing, NotStarted, Starting, InProgress, Completing, Completed, AutoReviewing, and AutoReviewed. Supports $select, $orderby, and $filter (eq only). Read-only.
-  - `[People <IMicrosoftGraphPerson[]>]`: Read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user's communication, collaboration and business relationships. A person is an aggregation of information from across mail, contacts and social networks.
+  - `[People <IMicrosoftGraphPerson[]>]`: Read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user's communication, collaboration, and business relationships. A person aggregates information from mail, contacts, and social networks.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Birthday <String>]`: The person's birthday.
     - `[CompanyName <String>]`: The name of the person's company.
@@ -14344,7 +14378,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[YomiCompany <String>]`: The phonetic Japanese name of the person's company.
   - `[PermissionGrants <IMicrosoftGraphResourceSpecificPermissionGrant[]>]`: List all resource-specific permission grants of a user.
   - `[Photo <IMicrosoftGraphProfilePhoto>]`: profilePhoto
-  - `[Photos <IMicrosoftGraphProfilePhoto[]>]`: 
+  - `[Photos <IMicrosoftGraphProfilePhoto[]>]`: The collection of the user's profile photos in different sizes. Read-only.
   - `[Planner <IMicrosoftGraphPlannerUser>]`: plannerUser
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -14361,7 +14395,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[Tasks <IMicrosoftGraphPlannerTask[]>]`: Read-only. Nullable. Returns the plannerTasks assigned to the user.
   - `[PostalCode <String>]`: The postal code for the user's postal address. The postal code is specific to the user's country/region. In the United States of America, this attribute contains the ZIP code. Maximum length is 40 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
   - `[PreferredDataLocation <String>]`: The preferred data location for the user. For more information, see OneDrive Online Multi-Geo.
-  - `[PreferredLanguage <String>]`: The preferred language for the user. The preferred language format is based on RFC 4646. The name is a combination of an ISO 639 two-letter lowercase culture code associated with the language, and an ISO 3166 two-letter uppercase subculture code associated with the country or region. Example: 'en-US', or 'es-ES'. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+  - `[PreferredLanguage <String>]`: The preferred language for the user. The preferred language format is based on RFC 4646. The name combines an ISO 639 two-letter lowercase culture code associated with the language and an ISO 3166 two-letter uppercase subculture code associated with the country or region. Example: 'en-US', or 'es-ES'. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
   - `[PreferredName <String>]`: The preferred name for the user. Not Supported. This attribute returns an empty string.Returned only on $select.
   - `[Presence <IMicrosoftGraphPresence>]`: presence
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -14535,9 +14569,9 @@ To create the parameters described below, construct a hash table containing the 
             - `[Id <String>]`: The unique identifier for an entity. Read-only.
             - `[CreatedBy <IMicrosoftGraphAppIdentity>]`: appIdentity
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[AppId <String>]`: Refers to the unique identifier representing Application Id in the Azure Active Directory.
+              - `[AppId <String>]`: Refers to the unique identifier representing Application Id in the Microsoft Entra ID.
               - `[DisplayName <String>]`: Refers to the application name displayed in the Microsoft Entra admin center.
-              - `[ServicePrincipalId <String>]`: Refers to the unique identifier indicating Service Principal Id in Azure Active Directory for the corresponding App.
+              - `[ServicePrincipalId <String>]`: Refers to the unique identifier indicating Service Principal Id in Microsoft Entra ID for the corresponding App.
               - `[ServicePrincipalName <String>]`: Refers to the Service Principal Name is the Application name in the tenant.
             - `[DisplayName <String>]`: The name of the printTaskDefinition.
             - `[Tasks <IMicrosoftGraphPrintTask[]>]`: A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
@@ -14868,7 +14902,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[Colleagues <IMicrosoftGraphRelatedPerson[]>]`: Colleagues that are associated with this position.
         - `[DisplayName <String>]`: Name of the person.
         - `[Relationship <String>]`: personRelationship
-        - `[UserPrincipalName <String>]`: Email address or reference to person within organization.
+        - `[UserId <String>]`: The user's directory object ID (Microsoft Entra ID or CID).
+        - `[UserPrincipalName <String>]`: Email address or reference to person within the organization.
       - `[Detail <IMicrosoftGraphPositionDetail>]`: positionDetail
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Company <IMicrosoftGraphCompanyDetail>]`: companyDetail
@@ -14882,9 +14917,11 @@ To create the parameters described below, construct a hash table containing the 
         - `[Description <String>]`: Description of the position in question.
         - `[EndMonthYear <DateTime?>]`: When the position ended.
         - `[JobTitle <String>]`: The title held when in that position.
+        - `[Layer <Int32?>]`: The place where the employee is within the organizational hierarchy.
+        - `[Level <String>]`: The employee’s experience or management level.
         - `[Role <String>]`: The role the position entailed.
         - `[StartMonthYear <DateTime?>]`: The start month and year of the position.
-        - `[Summary <String>]`: Short summary of the position.
+        - `[Summary <String>]`: summary of the position.
       - `[IsCurrent <Boolean?>]`: Denotes whether or not the position is current.
       - `[Manager <IMicrosoftGraphRelatedPerson>]`: relatedPerson
     - `[Projects <IMicrosoftGraphProjectParticipation[]>]`: Represents detailed information about projects associated with a user.
@@ -14975,8 +15012,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[CapabilityStatus <String>]`: For example, 'Enabled'.
     - `[ProvisioningStatus <String>]`: For example, 'Success'.
     - `[Service <String>]`: The name of the service; for example, 'AccessControlS2S'
-  - `[ProxyAddresses <String[]>]`: For example: ['SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com']. Changes to the mail property will also update this collection to include the value as an SMTP address. For more information, see mail and proxyAddresses properties. The proxy address prefixed with SMTP (capitalized) is the primary proxy address while those prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of 10 unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Supports $filter (eq, not, ge, le, startsWith, endsWith, /$count eq 0, /$count ne 0).
-  - `[RefreshTokensValidFromDateTime <DateTime?>]`: Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application needs to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use invalidateAllRefreshTokens to reset.
+  - `[ProxyAddresses <String[]>]`: For example: ['SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com']. Changes to the mail property also update this collection to include the value as an SMTP address. For more information, see mail and proxyAddresses properties. The proxy address prefixed with SMTP (capitalized) is the primary proxy address, while the ones prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of 10 unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Supports $filter (eq, not, ge, le, startsWith, endsWith, /$count eq 0, /$count ne 0).
+  - `[RefreshTokensValidFromDateTime <DateTime?>]`: Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If it happens, the application must acquire a new refresh token by requesting the authorized endpoint. Read-only. Use invalidateAllRefreshTokens to reset.
   - `[RegisteredDevices <IMicrosoftGraphDirectoryObject[]>]`: Devices that are registered for the user. Read-only. Nullable. Supports $expand and returns up to 100 objects.
   - `[Responsibilities <String[]>]`: A list for the user to enumerate their responsibilities. Returned only on $select.
   - `[Schools <String[]>]`: A list for the user to enumerate the schools they have attended. Returned only on $select.
@@ -15011,7 +15048,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[Sensitivity <Int32?>]`: The sensitivity value of the label, where lower is less sensitive.
         - `[Tooltip <String>]`: The tooltip that should be displayed for the label in a UI.
   - `[SecurityIdentifier <String>]`: Security identifier (SID) of the user, used in Windows scenarios. Read-only. Returned by default. Supports $select and $filter (eq, not, ge, le, startsWith).
-  - `[ServiceProvisioningErrors <IMicrosoftGraphServiceProvisioningError[]>]`: Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.  Supports $filter (eq, not, for isResolved and serviceInstance).
+  - `[ServiceProvisioningErrors <IMicrosoftGraphServiceProvisioningError[]>]`: Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
   - `[Settings <IMicrosoftGraphUserSettings>]`: userSettings
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -15063,13 +15100,13 @@ To create the parameters described below, construct a hash table containing the 
   - `[ShowInAddressList <Boolean?>]`: Do not use in Microsoft Graph. Manage this property through the Microsoft 365 admin center instead. Represents whether the user should be included in the Outlook global address list. See Known issue.
   - `[SignInActivity <IMicrosoftGraphSignInActivity>]`: signInActivity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[LastNonInteractiveSignInDateTime <DateTime?>]`: The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client attempted to sign into the directory the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: '2014-01-01T00:00:00Z'. Azure AD maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.
+    - `[LastNonInteractiveSignInDateTime <DateTime?>]`: The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client attempted to sign into the directory the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: '2014-01-01T00:00:00Z'. Microsoft Entra ID maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.
     - `[LastNonInteractiveSignInRequestId <String>]`: Request identifier of the last non-interactive sign-in performed by this user.
-    - `[LastSignInDateTime <DateTime?>]`: The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user attempted to sign into the directory the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: '2014-01-01T00:00:00Z'. Azure AD maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.
+    - `[LastSignInDateTime <DateTime?>]`: The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user attempted to sign into the directory the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: '2014-01-01T00:00:00Z'. Microsoft Entra ID maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.
     - `[LastSignInRequestId <String>]`: Request identifier of the last interactive sign-in performed by this user.
-  - `[SignInSessionsValidFromDateTime <DateTime?>]`: Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application needs to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use revokeSignInSessions to reset.
+  - `[SignInSessionsValidFromDateTime <DateTime?>]`: Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application must acquire a new refresh token by requesting the authorized endpoint. Read-only. Use revokeSignInSessions to reset.
   - `[Skills <String[]>]`: A list for the user to enumerate their skills. Returned only on $select.
-  - `[Sponsors <IMicrosoftGraphDirectoryObject[]>]`: The users and groups that are responsible for this guest user's privileges in the tenant and keep the guest user's information and access updated. (HTTP Methods: GET, POST, DELETE.). Supports $expand.
+  - `[Sponsors <IMicrosoftGraphDirectoryObject[]>]`: The users and groups responsible for this guest user's privileges in the tenant and keep the guest user's information and access updated. (HTTP Methods: GET, POST, DELETE.). Supports $expand.
   - `[State <String>]`: The state or province in the user's address. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
   - `[StreetAddress <String>]`: The street address of the user's place of business. Maximum length is 1024 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
   - `[Surname <String>]`: The user's surname (family name or last name). Maximum length is 64 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
@@ -15079,7 +15116,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[AssociatedTeams <IMicrosoftGraphAssociatedTeamInfo[]>]`: The list of associatedTeamInfo objects that a user is associated with.
       - `[DisplayName <String>]`: The name of the team.
       - `[Team <IMicrosoftGraphTeam>]`: team
-      - `[TenantId <String>]`: The ID of the Azure Active Directory tenant.
+      - `[TenantId <String>]`: The ID of the Microsoft Entra tenant.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[InstalledApps <IMicrosoftGraphUserScopeTeamsAppInstallation[]>]`: The apps installed in the personal scope of this user.
       - `[ConsentedPermissionSet <IMicrosoftGraphTeamsAppPermissionSet>]`: teamsAppPermissionSet
@@ -15138,12 +15175,12 @@ To create the parameters described below, construct a hash table containing the 
         - `[Status <String>]`: taskStatus
         - `[Title <String>]`: A brief description of the task.
       - `[WellknownListName <String>]`: wellknownListName
-  - `[TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>]`: The groups, including nested groups, and directory roles that a user is a member of. Nullable.
+  - `[TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>]`: The groups, including nested groups and directory roles that a user is a member of. Nullable.
   - `[TransitiveReports <IMicrosoftGraphDirectoryObject[]>]`: The transitive reports for a user. Read-only.
-  - `[UsageLocation <String>]`: A two letter country code (ISO standard 3166). Required for users that are assigned licenses due to legal requirement to check for availability of services in countries.  Examples include: US, JP, and GB. Not nullable. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+  - `[UsageLocation <String>]`: A two-letter country code (ISO standard 3166). Required for users that are assigned licenses due to legal requirements to check for availability of services in countries.  Examples include: US, JP, and GB. Not nullable. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
   - `[UsageRights <IMicrosoftGraphUsageRight[]>]`: Represents the usage rights a user has been granted.
-  - `[UserPrincipalName <String>]`: The user principal name (UPN) of the user. The UPN is an Internet-style sign-in name for the user based on the Internet standard RFC 822. By convention, this should map to the user's email name. The general format is alias@domain, where domain must be present in the tenant's collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property can't contain accent characters. Only the following characters are allowed A - Z, a - z, 0 - 9, ' . - _ ! # ^ ~. For the complete list of allowed characters, see username policies. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith) and $orderby.
-  - `[UserType <String>]`: A String value that can be used to classify user types in your directory, such as Member and Guest. Supports $filter (eq, ne, not, in, and eq on null values). NOTE: For more information about the permissions for member and guest users, see What are the default user permissions in Azure Active Directory?
+  - `[UserPrincipalName <String>]`: The user principal name (UPN) of the user. The UPN is an Internet-style sign-in name for the user based on the Internet standard RFC 822. By convention, this should map to the user's email name. The general format is alias@domain, where the domain must be present in the tenant's verified domain collection. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property can't contain accent characters. Only the following characters are allowed A - Z, a - z, 0 - 9, ' . - _ ! # ^ ~. For the complete list of allowed characters, see username policies. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith) and $orderby.
+  - `[UserType <String>]`: A String value that can be used to classify user types in your directory, such as Member and Guest. Supports $filter (eq, ne, not, in, and eq on null values). NOTE: For more information about the permissions for member and guest users, see What are the default user permissions in Microsoft Entra ID?
   - `[VirtualEvents <IMicrosoftGraphUserVirtualEventsRoot>]`: userVirtualEventsRoot
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -15161,7 +15198,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[Guest <IMicrosoftGraphIdentity>]`: identity
         - `[OnPremises <IMicrosoftGraphIdentity>]`: identity
         - `[Phone <IMicrosoftGraphIdentity>]`: identity
-      - `[Description <String>]`: Description of the virtual event.
+      - `[Description <IMicrosoftGraphItemBody>]`: itemBody
       - `[DisplayName <String>]`: Display name of the virtual event
       - `[EndDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
       - `[Presenters <IMicrosoftGraphVirtualEventPresenter[]>]`: Presenters' information of the virtual event.
@@ -15169,8 +15206,8 @@ To create the parameters described below, construct a hash table containing the 
         - `[Email <String>]`: Email address of the presenter.
         - `[Identity <IMicrosoftGraphCommunicationsUserIdentity>]`: communicationsUserIdentity
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-          - `[Id <String>]`: Unique identifier for the identity.
+          - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+          - `[Id <String>]`: The identifier of the identity. This property is read-only.
           - `[TenantId <String>]`: The user's tenant ID.
         - `[PresenterDetails <IMicrosoftGraphVirtualEventPresenterDetails>]`: virtualEventPresenterDetails
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -15180,81 +15217,69 @@ To create the parameters described below, construct a hash table containing the 
           - `[LinkedInProfileWebUrl <String>]`: The presenter's LinkedIn profile URL.
           - `[PersonalSiteWebUrl <String>]`: The presenter's personal website URL.
           - `[TwitterProfileWebUrl <String>]`: The presenter's Twitter profile URL.
-      - `[Sessions <IMicrosoftGraphVirtualEventSession[]>]`: Sessions of the virtual event.
-        - `[AllowAttendeeToEnableCamera <Boolean?>]`: Indicates whether attendees can turn on their camera.
-        - `[AllowAttendeeToEnableMic <Boolean?>]`: Indicates whether attendees can turn on their microphone.
-        - `[AllowMeetingChat <String>]`: meetingChatMode
-        - `[AllowParticipantsToChangeName <Boolean?>]`: Specifies if participants are allowed to rename themselves in an instance of the meeting.
-        - `[AllowRecording <Boolean?>]`: Indicates whether recording is enabled for the meeting.
-        - `[AllowTeamworkReactions <Boolean?>]`: Indicates if Teams reactions are enabled for the meeting.
-        - `[AllowTranscription <Boolean?>]`: Indicates whether transcription is enabled for the meeting.
-        - `[AllowedPresenters <String>]`: onlineMeetingPresenters
-        - `[AlternativeRecording <Byte[]>]`: 
-        - `[AnonymizeIdentityForRoles <String[]>]`: Specifies whose identity will be anonymized in the meeting. Possible values are: attendee. The attendee value cannot be removed through a PATCH operation once added.
-        - `[AttendanceReports <IMicrosoftGraphMeetingAttendanceReport[]>]`: The attendance reports of an online meeting. Read-only.
-        - `[AttendeeReport <Byte[]>]`: 
-        - `[AudioConferencing <IMicrosoftGraphAudioConferencing>]`: audioConferencing
-        - `[BroadcastRecording <Byte[]>]`: 
-        - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings>]`: broadcastMeetingSettings
-        - `[Capabilities <String[]>]`: 
-        - `[ChatInfo <IMicrosoftGraphChatInfo>]`: chatInfo
-        - `[ChatRestrictions <IMicrosoftGraphChatRestrictions>]`: chatRestrictions
-        - `[CreationDateTime <DateTime?>]`: The meeting creation time in UTC. Read-only.
-        - `[EndDateTime <DateTime?>]`: The meeting end time in UTC.
-        - `[ExternalId <String>]`: The external ID. A custom ID. Optional.
-        - `[IsBroadcast <Boolean?>]`: 
-        - `[IsEndToEndEncryptionEnabled <Boolean?>]`: 
-        - `[IsEntryExitAnnounced <Boolean?>]`: Indicates whether to announce when callers join or leave.
-        - `[JoinInformation <IMicrosoftGraphItemBody>]`: itemBody
-        - `[JoinMeetingIdSettings <IMicrosoftGraphJoinMeetingIdSettings>]`: joinMeetingIdSettings
-        - `[JoinUrl <String>]`: 
-        - `[JoinWebUrl <String>]`: The join URL of the online meeting. Read-only.
-        - `[LobbyBypassSettings <IMicrosoftGraphLobbyBypassSettings>]`: lobbyBypassSettings
-        - `[MeetingAttendanceReport <IMicrosoftGraphMeetingAttendanceReport>]`: meetingAttendanceReport
-        - `[Participants <IMicrosoftGraphMeetingParticipants>]`: meetingParticipants
-        - `[RecordAutomatically <Boolean?>]`: Indicates whether to record the meeting automatically.
-        - `[Recording <Byte[]>]`: 
-        - `[Recordings <IMicrosoftGraphCallRecording[]>]`: The recordings of an online meeting. Read-only.
-        - `[Registration <IMicrosoftGraphMeetingRegistration>]`: meetingRegistration
-        - `[ShareMeetingChatHistoryDefault <String>]`: meetingChatHistoryDefaultMode
-        - `[StartDateTime <DateTime?>]`: The meeting start time in UTC.
-        - `[Subject <String>]`: The subject of the online meeting.
-        - `[Transcripts <IMicrosoftGraphCallTranscript[]>]`: The transcripts of an online meeting. Read-only.
-        - `[VideoTeleconferenceId <String>]`: The video teleconferencing ID. Read-only.
-        - `[WatermarkProtection <IMicrosoftGraphWatermarkProtectionValues>]`: watermarkProtectionValues
-        - `[Id <String>]`: The unique identifier for an entity. Read-only.
-        - `[Registrations <IMicrosoftGraphVirtualEventRegistration[]>]`: Registration records of this virtual event session.
+        - `[ProfilePhoto <Byte[]>]`: 
+        - `[Sessions <IMicrosoftGraphVirtualEventSession[]>]`: 
+          - `[AllowAttendeeToEnableCamera <Boolean?>]`: Indicates whether attendees can turn on their camera.
+          - `[AllowAttendeeToEnableMic <Boolean?>]`: Indicates whether attendees can turn on their microphone.
+          - `[AllowMeetingChat <String>]`: meetingChatMode
+          - `[AllowParticipantsToChangeName <Boolean?>]`: Specifies if participants are allowed to rename themselves in an instance of the meeting.
+          - `[AllowRecording <Boolean?>]`: Indicates whether recording is enabled for the meeting.
+          - `[AllowTeamworkReactions <Boolean?>]`: Indicates if Teams reactions are enabled for the meeting.
+          - `[AllowTranscription <Boolean?>]`: Indicates whether transcription is enabled for the meeting.
+          - `[AllowedPresenters <String>]`: onlineMeetingPresenters
+          - `[AnonymizeIdentityForRoles <String[]>]`: Specifies whose identity is anonymized in the meeting. Possible values are: attendee. The attendee value can't be removed through a PATCH operation once added.
+          - `[AttendanceReports <IMicrosoftGraphMeetingAttendanceReport[]>]`: The attendance reports of an online meeting. Read-only.
+          - `[AudioConferencing <IMicrosoftGraphAudioConferencing>]`: audioConferencing
+          - `[ChatInfo <IMicrosoftGraphChatInfo>]`: chatInfo
+          - `[ChatRestrictions <IMicrosoftGraphChatRestrictions>]`: chatRestrictions
+          - `[IsEndToEndEncryptionEnabled <Boolean?>]`: 
+          - `[IsEntryExitAnnounced <Boolean?>]`: Indicates whether to announce when callers join or leave.
+          - `[JoinInformation <IMicrosoftGraphItemBody>]`: itemBody
+          - `[JoinMeetingIdSettings <IMicrosoftGraphJoinMeetingIdSettings>]`: joinMeetingIdSettings
+          - `[JoinWebUrl <String>]`: The join URL of the online meeting. Read-only.
+          - `[LobbyBypassSettings <IMicrosoftGraphLobbyBypassSettings>]`: lobbyBypassSettings
+          - `[RecordAutomatically <Boolean?>]`: Indicates whether to record the meeting automatically.
+          - `[ShareMeetingChatHistoryDefault <String>]`: meetingChatHistoryDefaultMode
+          - `[Subject <String>]`: The subject of the online meeting.
+          - `[VideoTeleconferenceId <String>]`: The video teleconferencing ID. Read-only.
+          - `[WatermarkProtection <IMicrosoftGraphWatermarkProtectionValues>]`: watermarkProtectionValues
           - `[Id <String>]`: The unique identifier for an entity. Read-only.
-          - `[CancelationDateTime <DateTime?>]`: Date and time when the registrant cancels their registration for the virtual event. Only appears when applicable. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-          - `[Email <String>]`: Email address of the registrant.
-          - `[FirstName <String>]`: First name of the registrant.
-          - `[LastName <String>]`: Last name of the registrant.
-          - `[RegistrationDateTime <DateTime?>]`: Date and time when the registrant registers for the virtual event. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-          - `[RegistrationQuestionAnswers <IMicrosoftGraphVirtualEventRegistrationQuestionAnswer[]>]`: The registrant's answer to the registration questions.
-            - `[BooleanValue <Boolean?>]`: Boolean answer of the virtualEventRegistrationQuestion. Only appears when answerInputType is boolean.
-            - `[DisplayName <String>]`: Display name of the registration question.
-            - `[MultiChoiceValues <String[]>]`: Collection of text answer of the virtualEventRegistrationQuestion. Only appears when answerInputType is multiChoice.
-            - `[QuestionId <String>]`: id of the virtualEventRegistrationQuestion.
-            - `[Value <String>]`: Text answer of the virtualEventRegistrationQuestion. Appears when answerInputType is text, multilineText or singleChoice.
-          - `[Sessions <IMicrosoftGraphVirtualEventSession[]>]`: Sessions of the webinar.
-          - `[Status <String>]`: virtualEventAttendeeRegistrationStatus
-          - `[UserId <String>]`: The registrant's ID in Azure Active Directory (Azure AD). Only appears when the registrant is registered in Azure AD.
+          - `[EndDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
+          - `[Presenters <IMicrosoftGraphVirtualEventPresenter[]>]`: 
+          - `[Registrations <IMicrosoftGraphVirtualEventRegistration[]>]`: 
+            - `[Id <String>]`: The unique identifier for an entity. Read-only.
+            - `[CancelationDateTime <DateTime?>]`: Date and time when the registrant cancels their registration for the virtual event. Only appears when applicable. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+            - `[Email <String>]`: Email address of the registrant.
+            - `[FirstName <String>]`: First name of the registrant.
+            - `[LastName <String>]`: Last name of the registrant.
+            - `[RegistrationDateTime <DateTime?>]`: Date and time when the registrant registers for the virtual event. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+            - `[RegistrationQuestionAnswers <IMicrosoftGraphVirtualEventRegistrationQuestionAnswer[]>]`: The registrant's answer to the registration questions.
+              - `[BooleanValue <Boolean?>]`: Boolean answer of the virtualEventRegistrationQuestion. Only appears when answerInputType is boolean.
+              - `[DisplayName <String>]`: Display name of the registration question.
+              - `[MultiChoiceValues <String[]>]`: Collection of text answer of the virtualEventRegistrationQuestion. Only appears when answerInputType is multiChoice.
+              - `[QuestionId <String>]`: id of the virtualEventRegistrationQuestion.
+              - `[Value <String>]`: Text answer of the virtualEventRegistrationQuestion. Appears when answerInputType is text, multilineText or singleChoice.
+            - `[Sessions <IMicrosoftGraphVirtualEventSession[]>]`: 
+            - `[Status <String>]`: virtualEventAttendeeRegistrationStatus
+            - `[UserId <String>]`: The registrant's ID in Microsoft Entra ID. Only appears when the registrant is registered in Microsoft Entra ID.
+          - `[StartDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
+      - `[Sessions <IMicrosoftGraphVirtualEventSession[]>]`: Sessions of the virtual event.
       - `[StartDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
       - `[Status <String>]`: virtualEventStatus
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[Audience <String>]`: meetingAudience
       - `[CoOrganizers <IMicrosoftGraphCommunicationsUserIdentity[]>]`: Identity information of coorganizers of the webinar.
-      - `[RegistrationConfiguration <IMicrosoftGraphVirtualEventRegistrationConfiguration>]`: virtualEventRegistrationConfiguration
+      - `[RegistrationConfiguration <IMicrosoftGraphVirtualEventWebinarRegistrationConfiguration>]`: virtualEventWebinarRegistrationConfiguration
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[Id <String>]`: The unique identifier for an entity. Read-only.
         - `[Capacity <Int32?>]`: Total capacity of the virtual event.
-        - `[Questions <IMicrosoftGraphVirtualEventRegistrationQuestion[]>]`: Registration questions.
+        - `[Questions <IMicrosoftGraphVirtualEventRegistrationQuestionBase[]>]`: Registration questions.
           - `[Id <String>]`: The unique identifier for an entity. Read-only.
-          - `[AnswerChoices <String[]>]`: Answer choices when answerInputType is singleChoice or multiChoice.
-          - `[AnswerInputType <String>]`: virtualEventRegistrationQuestionAnswerInputType
-          - `[DisplayName <String>]`: Display name of the registration question.
-          - `[IsRequired <Boolean?>]`: Indicates whether the question is required to answer. Default value is false.
+          - `[DisplayName <String>]`: 
+          - `[IsRequired <Boolean?>]`: 
         - `[RegistrationWebUrl <String>]`: Registration URL of the virtual event.
+        - `[Id <String>]`: The unique identifier for an entity. Read-only.
+        - `[IsManualApprovalEnabled <Boolean?>]`: 
+        - `[IsWaitlistEnabled <Boolean?>]`: 
       - `[Registrations <IMicrosoftGraphVirtualEventRegistration[]>]`: Registration records of the webinar.
   - `[WindowsInformationProtectionDeviceRegistrations <IMicrosoftGraphWindowsInformationProtectionDeviceRegistration[]>]`: Zero or more WIP device registrations that belong to the user.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -15269,8 +15294,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Application <IMicrosoftGraphIdentity>]`: identity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-    - `[Id <String>]`: Unique identifier for the identity.
+    - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+    - `[Id <String>]`: The identifier of the identity. This property is read-only.
   - `[Device <IMicrosoftGraphIdentity>]`: identity
   - `[User <IMicrosoftGraphIdentity>]`: identity
 
@@ -15286,8 +15311,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-      - `[Id <String>]`: Unique identifier for the identity.
+      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+      - `[Id <String>]`: The identifier of the identity. This property is read-only.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[EventDateTime <DateTime?>]`: Data and time when the entity was changed.
@@ -15330,8 +15355,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Application <IMicrosoftGraphIdentity>]`: identity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-    - `[Id <String>]`: Unique identifier for the identity.
+    - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+    - `[Id <String>]`: The identifier of the identity. This property is read-only.
   - `[Device <IMicrosoftGraphIdentity>]`: identity
   - `[User <IMicrosoftGraphIdentity>]`: identity
 
@@ -15339,8 +15364,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Author <IMicrosoftGraphIdentity>]`: identity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-    - `[Id <String>]`: Unique identifier for the identity.
+    - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+    - `[Id <String>]`: The identifier of the identity. This property is read-only.
   - `[Content <IMicrosoftGraphItemBody>]`: itemBody
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Content <String>]`: The content of the item.
@@ -15381,15 +15406,15 @@ To create the parameters described below, construct a hash table containing the 
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Application <IMicrosoftGraphIdentity>]`: identity
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-          - `[Id <String>]`: Unique identifier for the identity.
+          - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+          - `[Id <String>]`: The identifier of the identity. This property is read-only.
         - `[Device <IMicrosoftGraphIdentity>]`: identity
         - `[User <IMicrosoftGraphIdentity>]`: identity
       - `[CreatedByUser <IMicrosoftGraphUser>]`: user
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
-        - `[AboutMe <String>]`: A freeform text entry field for the user to describe themselves. Returned only on $select.
+        - `[AboutMe <String>]`: A freeform text entry field for users to describe themselves. Returned only on $select.
         - `[AccountEnabled <Boolean?>]`: true if the account is enabled; otherwise, false. This property is required when a user is created. Supports $filter (eq, ne, not, and in).
         - `[Activities <IMicrosoftGraphUserActivity[]>]`: The user's activities across devices. Read-only. Nullable.
           - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -15429,7 +15454,7 @@ To create the parameters described below, construct a hash table containing the 
             - `[Content <IMicrosoftGraphJson>]`: Json
             - `[Description <String>]`: Optional. Longer text description of the user's unique activity (example: document name, first sentence, and/or metadata)
             - `[DisplayText <String>]`: Required. Short text description of the user's unique activity (for example, document name in cases where an activity refers to document creation)
-        - `[AgeGroup <String>]`: Sets the age group of the user. Allowed values: null, Minor, NotAdult and Adult. For more information, see legal age group property definitions. Supports $filter (eq, ne, not, and in).
+        - `[AgeGroup <String>]`: Sets the age group of the user. Allowed values: null, Minor, NotAdult, and Adult. For more information, see legal age group property definitions. Supports $filter (eq, ne, not, and in).
         - `[AgreementAcceptances <IMicrosoftGraphAgreementAcceptance[]>]`: The user's terms of use acceptance statuses. Read-only. Nullable.
           - `[Id <String>]`: The unique identifier for an entity. Read-only.
           - `[AgreementFileId <String>]`: ID of the agreement file accepted by the user.
@@ -15501,7 +15526,7 @@ To create the parameters described below, construct a hash table containing the 
           - `[AlternativeNames <String[]>]`: Used to retrieve service principals by subscription, identify resource group and full resource ids for managed identities. Supports $filter (eq, not, ge, le, startsWith).
           - `[AppDescription <String>]`: The description exposed by the associated application.
           - `[AppDisplayName <String>]`: The display name exposed by the associated application.
-          - `[AppId <String>]`: The unique identifier for the associated application (its appId property). Supports $filter (eq, ne, not, in, startsWith).
+          - `[AppId <String>]`: The unique identifier for the associated application (its appId property). Alternate key. Supports $filter (eq, ne, not, in, startsWith).
           - `[AppManagementPolicies <IMicrosoftGraphAppManagementPolicy[]>]`: The appManagementPolicy applied to this service principal.
             - `[Description <String>]`: Description for this policy. Required.
             - `[DisplayName <String>]`: Display name for this policy. Required.
@@ -15522,7 +15547,7 @@ To create the parameters described below, construct a hash table containing the 
                 - `[MaxLifetime <TimeSpan?>]`: 
                 - `[RestrictForAppsCreatedAfterDateTime <DateTime?>]`: Enforces the policy for an app created on or after the enforcement date. For existing applications, the enforcement date would be backdated. To apply to all applications, this date would be null.
                 - `[RestrictionType <String>]`: appCredentialRestrictionType
-          - `[AppOwnerOrganizationId <String>]`: Contains the tenant id where the application is registered. This is applicable only to service principals backed by applications.Supports $filter (eq, ne, NOT, ge, le).
+          - `[AppOwnerOrganizationId <String>]`: Contains the tenant id where the application is registered. This is applicable only to service principals backed by applications. Supports $filter (eq, ne, NOT, ge, le).
           - `[AppRoleAssignedTo <IMicrosoftGraphAppRoleAssignment[]>]`: App role assignments for this app or service, granted to users, groups, and other service principals.Supports $expand.
             - `[Id <String>]`: The unique identifier for an entity. Read-only.
             - `[AppRoleId <String>]`: The identifier (id) for the app role which is assigned to the principal. This app role must be exposed in the appRoles property on the resource application's service principal (resourceId). If the resource application has not declared any app roles, a default app role ID of 00000000-0000-0000-0000-000000000000 can be specified to signal that the principal is assigned to the resource app without any specific app roles. Required on create.
@@ -15534,7 +15559,7 @@ To create the parameters described below, construct a hash table containing the 
             - `[ResourceId <String>]`: The unique identifier (id) for the resource service principal for which the assignment is made. Required on create. Supports $filter (eq only).
           - `[AppRoleAssignmentRequired <Boolean?>]`: Specifies whether users or other service principals need to be granted an app role assignment for this service principal before users can sign in or apps can get tokens. The default value is false. Not nullable. Supports $filter (eq, ne, NOT).
           - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment[]>]`: App role assignment for another app or service, granted to this service principal. Supports $expand.
-          - `[AppRoles <IMicrosoftGraphAppRole[]>]`: The roles exposed by the application which this service principal represents. For more information see the appRoles property definition on the application entity. Not nullable.
+          - `[AppRoles <IMicrosoftGraphAppRole[]>]`: The roles exposed by the application, which this service principal represents. For more information see the appRoles property definition on the application entity. Not nullable.
             - `[AllowedMemberTypes <String[]>]`: Specifies whether this app role can be assigned to users and groups (by setting to ['User']), to other application's (by setting to ['Application'], or both (by setting to ['User', 'Application']). App roles supporting assignment to other applications' service principals are also known as application permissions. The 'Application' value is only supported for app roles defined on application entities.
             - `[Description <String>]`: The description for the app role. This is displayed when the app role is being assigned and, if the app role functions as an application permission, during  consent experiences.
             - `[DisplayName <String>]`: Display name for the permission that appears in the app role assignment and consent experiences.
@@ -15573,11 +15598,11 @@ To create the parameters described below, construct a hash table containing the 
           - `[ErrorUrl <String>]`: Deprecated. Don't use.
           - `[FederatedIdentityCredentials <IMicrosoftGraphFederatedIdentityCredential[]>]`: 
             - `[Id <String>]`: The unique identifier for an entity. Read-only.
-            - `[Audiences <String[]>]`: The audience that can appear in the external token. This field is mandatory and should be set to api://AzureADTokenExchange for Azure AD. It says what Microsoft identity platform should accept in the aud claim in the incoming token. This value represents Azure AD in your external identity provider and has no fixed value across identity providers - you may need to create a new application registration in your identity provider to serve as the audience of this token. This field can only accept a single value and has a limit of 600 characters. Required.
+            - `[Audiences <String[]>]`: The audience that can appear in the external token. This field is mandatory and should be set to api://AzureADTokenExchange for Microsoft Entra ID. It says what Microsoft identity platform should accept in the aud claim in the incoming token. This value represents Microsoft Entra ID in your external identity provider and has no fixed value across identity providers - you may need to create a new application registration in your identity provider to serve as the audience of this token. This field can only accept a single value and has a limit of 600 characters. Required.
             - `[Description <String>]`: The un-validated, user-provided description of the federated identity credential. It has a limit of 600 characters. Optional.
             - `[Issuer <String>]`: The URL of the external identity provider and must match the issuer claim of the external token being exchanged. The combination of the values of issuer and subject must be unique on the app. It has a limit of 600 characters. Required.
             - `[Name <String>]`: is the unique identifier for the federated identity credential, which has a limit of 120 characters and must be URL friendly. It is immutable once created. Required. Not nullable. Supports $filter (eq).
-            - `[Subject <String>]`: Required. The identifier of the external software workload within the external identity provider. Like the audience value, it has no fixed format, as each identity provider uses their own - sometimes a GUID, sometimes a colon delimited identifier, sometimes arbitrary strings. The value here must match the sub claim within the token presented to Azure AD. The combination of issuer and subject must be unique on the app. It has a limit of 600 characters. Supports $filter (eq).
+            - `[Subject <String>]`: Required. The identifier of the external software workload within the external identity provider. Like the audience value, it has no fixed format, as each identity provider uses their own - sometimes a GUID, sometimes a colon delimited identifier, sometimes arbitrary strings. The value here must match the sub claim within the token presented to Microsoft Entra ID. The combination of issuer and subject must be unique on the app. It has a limit of 600 characters. Supports $filter (eq).
           - `[HomeRealmDiscoveryPolicies <IMicrosoftGraphHomeRealmDiscoveryPolicy[]>]`: The homeRealmDiscoveryPolicies assigned to this service principal. Supports $expand.
             - `[AppliesTo <IMicrosoftGraphDirectoryObject[]>]`: 
             - `[Definition <String[]>]`: A string collection containing a JSON string that defines the rules and settings for a policy. The syntax for the definition differs for each derived policy type. Required.
@@ -15606,17 +15631,17 @@ To create the parameters described below, construct a hash table containing the 
           - `[LicenseDetails <IMicrosoftGraphLicenseDetails[]>]`: 
             - `[Id <String>]`: The unique identifier for an entity. Read-only.
             - `[ServicePlans <IMicrosoftGraphServicePlanInfo[]>]`: Information about the service plans assigned with the license. Read-only, Not nullable
-              - `[AppliesTo <String>]`: The object the service plan can be assigned to. The possible values are:User - service plan can be assigned to individual users.Company - service plan can be assigned to the entire tenant.
-              - `[ProvisioningStatus <String>]`: The provisioning status of the service plan. The possible values are:Success - Service is fully provisioned.Disabled - Service has been disabled.ErrorStatus - The service plan has not been provisioned and is in an error state.PendingInput - Service is not yet provisioned; awaiting service confirmation.PendingActivation - Service is provisioned but requires explicit activation by administrator (for example, Intune_O365 service plan)PendingProvisioning - Microsoft has added a new service to the product SKU and it has not been activated in the tenant, yet.
+              - `[AppliesTo <String>]`: The object the service plan can be assigned to. The possible values are: User - service plan can be assigned to individual users.Company - service plan can be assigned to the entire tenant.
+              - `[ProvisioningStatus <String>]`: The provisioning status of the service plan. The possible values are:Success - Service is fully provisioned.Disabled - Service is disabled.Error - The service plan isn't provisioned and is in an error state.PendingInput - The service isn't provisioned and is awaiting service confirmation.PendingActivation - The service is provisioned but requires explicit activation by an administrator (for example, Intune_O365 service plan)PendingProvisioning - Microsoft has added a new service to the product SKU and it isn't activated in the tenant.
               - `[ServicePlanId <String>]`: The unique identifier of the service plan.
               - `[ServicePlanName <String>]`: The name of the service plan.
             - `[SkuId <String>]`: Unique identifier (GUID) for the service SKU. Equal to the skuId property on the related SubscribedSku object. Read-only
             - `[SkuPartNumber <String>]`: Unique SKU display name. Equal to the skuPartNumber on the related SubscribedSku object; for example: 'AAD_Premium'. Read-only
-          - `[LoginUrl <String>]`: Specifies the URL where the service provider redirects the user to Azure AD to authenticate. Azure AD uses the URL to launch the application from Microsoft 365 or the Azure AD My Apps. When blank, Azure AD performs IdP-initiated sign-on for applications configured with SAML-based single sign-on. The user launches the application from Microsoft 365, the Azure AD My Apps, or the Azure AD SSO URL.
+          - `[LoginUrl <String>]`: Specifies the URL where the service provider redirects the user to Microsoft Entra ID to authenticate. Microsoft Entra ID uses the URL to launch the application from Microsoft 365 or the Microsoft Entra My Apps. When blank, Microsoft Entra ID performs IdP-initiated sign-on for applications configured with SAML-based single sign-on. The user launches the application from Microsoft 365, the Microsoft Entra My Apps, or the Microsoft Entra SSO URL.
           - `[LogoutUrl <String>]`: Specifies the URL that will be used by Microsoft's authorization service to logout an user using OpenId Connect front-channel, back-channel or SAML logout protocols.
           - `[MemberOf <IMicrosoftGraphDirectoryObject[]>]`: Roles that this service principal is a member of. HTTP Methods: GET Read-only. Nullable. Supports $expand.
           - `[Notes <String>]`: Free text field to capture information about the service principal, typically used for operational purposes. Maximum allowed size is 1024 characters.
-          - `[NotificationEmailAddresses <String[]>]`: Specifies the list of email addresses where Azure AD sends a notification when the active certificate is near the expiration date. This is only for the certificates used to sign the SAML token issued for Azure AD Gallery applications.
+          - `[NotificationEmailAddresses <String[]>]`: Specifies the list of email addresses where Microsoft Entra ID sends a notification when the active certificate is near the expiration date. This is only for the certificates used to sign the SAML token issued for Microsoft Entra Gallery applications.
           - `[Oauth2PermissionGrants <IMicrosoftGraphOAuth2PermissionGrant[]>]`: Delegated permission grants authorizing this service principal to access an API on behalf of a signed-in user. Read-only. Nullable.
             - `[Id <String>]`: The unique identifier for an entity. Read-only.
             - `[ClientId <String>]`: The object id (not appId) of the client service principal for the application that is authorized to act on behalf of a signed-in user when accessing an API. Required. Supports $filter (eq only).
@@ -15626,15 +15651,15 @@ To create the parameters described below, construct a hash table containing the 
             - `[ResourceId <String>]`: The id of the resource service principal to which access is authorized. This identifies the API that the client is authorized to attempt to call on behalf of a signed-in user. Supports $filter (eq only).
             - `[Scope <String>]`: A space-separated list of the claim values for delegated permissions that should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the publishedPermissionScopes property of the resource service principal. Must not exceed 3850 characters in length.
             - `[StartTime <DateTime?>]`: Currently, the start time value is ignored, but a value is required when creating an oAuth2PermissionGrant. Required.
-          - `[OwnedObjects <IMicrosoftGraphDirectoryObject[]>]`: Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
-          - `[Owners <IMicrosoftGraphDirectoryObject[]>]`: Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable. Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1), and $select nested in $expand.
+          - `[OwnedObjects <IMicrosoftGraphDirectoryObject[]>]`: Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
+          - `[Owners <IMicrosoftGraphDirectoryObject[]>]`: Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.  Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
           - `[PasswordCredentials <IMicrosoftGraphPasswordCredential[]>]`: The collection of password credentials associated with the service principal. Not nullable.
             - `[CustomKeyIdentifier <Byte[]>]`: Do not use.
             - `[DisplayName <String>]`: Friendly name for the password. Optional.
             - `[EndDateTime <DateTime?>]`: The date and time at which the password expires represented using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Optional.
             - `[Hint <String>]`: Contains the first three characters of the password. Read-only.
             - `[KeyId <String>]`: The unique identifier for the password.
-            - `[SecretText <String>]`: Read-only; Contains the strong passwords generated by Azure AD that are 16-64 characters in length. The generated password value is only returned during the initial POST request to addPassword. There is no way to retrieve this password in the future.
+            - `[SecretText <String>]`: Read-only; Contains the strong passwords generated by Microsoft Entra ID that are 16-64 characters in length. The generated password value is only returned during the initial POST request to addPassword. There is no way to retrieve this password in the future.
             - `[StartDateTime <DateTime?>]`: The date and time at which the password becomes valid. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Optional.
           - `[PasswordSingleSignOnSettings <IMicrosoftGraphPasswordSingleSignOnSettings>]`: passwordSingleSignOnSettings
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -15643,7 +15668,7 @@ To create the parameters described below, construct a hash table containing the 
               - `[DefaultLabel <String>]`: Label that would be used if no customizedLabel is provided. Read only.
               - `[FieldId <String>]`: Id used to identity the field type. This is an internal ID and possible values are param1, param2, paramuserName, parampassword.
               - `[Type <String>]`: Type of the credential. The values can be text, password.
-          - `[PreferredSingleSignOnMode <String>]`: Specifies the single sign-on mode configured for this application. Azure AD uses the preferred single sign-on mode to launch the application from Microsoft 365 or the Azure AD My Apps. The supported values are password, saml, notSupported, and oidc.
+          - `[PreferredSingleSignOnMode <String>]`: Specifies the single sign-on mode configured for this application. Microsoft Entra ID uses the preferred single sign-on mode to launch the application from Microsoft 365 or the Microsoft Entra My Apps. The supported values are password, saml, notSupported, and oidc.
           - `[PreferredTokenSigningKeyEndDateTime <DateTime?>]`: Specifies the expiration date of the keyCredential used for token signing, marked by preferredTokenSigningKeyThumbprint. Updating this attribute is not currentlysupported. For details, see ServicePrincipal property differences.
           - `[PreferredTokenSigningKeyThumbprint <String>]`: This property can be used on SAML applications (apps that have preferredSingleSignOnMode set to saml) to control which certificate is used to sign the SAML responses. For applications that are not SAML, do not write or otherwise rely on this property.
           - `[PublishedPermissionScopes <IMicrosoftGraphPermissionScope[]>]`: The delegated permissions exposed by the application. For more information see the oauth2PermissionScopes property on the application entity's api property. Not nullable. Note: This property is named oauth2PermissionScopes in v1.0.
@@ -15656,22 +15681,22 @@ To create the parameters described below, construct a hash table containing the 
             - `[UserConsentDescription <String>]`: A description of the delegated permissions, intended to be read by a user granting the permission on their own behalf. This text appears in consent experiences where the user is consenting only on behalf of themselves.
             - `[UserConsentDisplayName <String>]`: A title for the permission, intended to be read by a user granting the permission on their own behalf. This text appears in consent experiences where the user is consenting only on behalf of themselves.
             - `[Value <String>]`: Specifies the value to include in the scp (scope) claim in access tokens. Must not exceed 120 characters in length. Allowed characters are : ! # $ % & ' ( ) * + , - . / : ;  =  ? @ [ ] ^ + _  {  } ~, and characters in the ranges 0-9, A-Z and a-z. Any other character, including the space character, aren't allowed. May not begin with ..
-          - `[PublisherName <String>]`: The name of the Azure AD tenant that published the application.
+          - `[PublisherName <String>]`: The name of the Microsoft Entra tenant that published the application.
           - `[RemoteDesktopSecurityConfiguration <IMicrosoftGraphRemoteDesktopSecurityConfiguration>]`: remoteDesktopSecurityConfiguration
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Id <String>]`: The unique identifier for an entity. Read-only.
-            - `[IsRemoteDesktopProtocolEnabled <Boolean?>]`: 
-            - `[TargetDeviceGroups <IMicrosoftGraphTargetDeviceGroup[]>]`: 
+            - `[IsRemoteDesktopProtocolEnabled <Boolean?>]`: Determines if Microsoft Entra ID RDS authentication protocol for RDP is enabled.
+            - `[TargetDeviceGroups <IMicrosoftGraphTargetDeviceGroup[]>]`: The collection of target device groups that are associated with the RDS security configuration that will be enabled for SSO when a client connects to the target device over RDP using the new Microsoft Entra ID RDS authentication protocol.
               - `[Id <String>]`: The unique identifier for an entity. Read-only.
-              - `[DisplayName <String>]`: 
+              - `[DisplayName <String>]`: Display name for the target device group.
           - `[ReplyUrls <String[]>]`: The URLs that user tokens are sent to for sign in with the associated application, or the redirect URIs that OAuth 2.0 authorization codes and access tokens are sent to for the associated application. Not nullable.
           - `[SamlMetadataUrl <String>]`: The url where the service exposes SAML metadata for federation.
           - `[SamlSingleSignOnSettings <IMicrosoftGraphSamlSingleSignOnSettings>]`: samlSingleSignOnSettings
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[RelayState <String>]`: The relative URI the service provider would redirect to after completion of the single sign-on flow.
-          - `[ServicePrincipalNames <String[]>]`: Contains the list of identifiersUris, copied over from the associated application. Additional values can be added to hybrid applications. These values can be used to identify the permissions exposed by this app within Azure AD. For example,Client apps can specify a resource URI which is based on the values of this property to acquire an access token, which is the URI returned in the 'aud' claim.The any operator is required for filter expressions on multi-valued properties. Not nullable.  Supports $filter (eq, not, ge, le, startsWith).
-          - `[ServicePrincipalType <String>]`: Identifies if the service principal represents an application or a managed identity. This is set by Azure AD internally. For a service principal that represents an application this is set as Application. For a service principal that represent a managed identity this is set as ManagedIdentity. The SocialIdp type is for internal use.
-          - `[SignInAudience <String>]`: Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization's Azure AD tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization's Azure AD tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization's Azure AD tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.
+          - `[ServicePrincipalNames <String[]>]`: Contains the list of identifiersUris, copied over from the associated application. Additional values can be added to hybrid applications. These values can be used to identify the permissions exposed by this app within Microsoft Entra ID. For example,Client apps can specify a resource URI which is based on the values of this property to acquire an access token, which is the URI returned in the 'aud' claim.The any operator is required for filter expressions on multi-valued properties. Not nullable.  Supports $filter (eq, not, ge, le, startsWith).
+          - `[ServicePrincipalType <String>]`: Identifies if the service principal represents an application or a managed identity. This is set by Microsoft Entra ID internally. For a service principal that represents an application this is set as Application. For a service principal that represent a managed identity this is set as ManagedIdentity. The SocialIdp type is for internal use.
+          - `[SignInAudience <String>]`: Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization's Microsoft Entra tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization's Microsoft Entra tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization's Microsoft Entra tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.
           - `[Synchronization <IMicrosoftGraphSynchronization>]`: synchronization
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -15814,7 +15839,7 @@ To create the parameters described below, construct a hash table containing the 
                 - `[SteadyStateFirstAchievedTime <DateTime?>]`: The time when steady state (no more changes to the process) was first achieved. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
                 - `[SteadyStateLastAchievedTime <DateTime?>]`: The time when steady state (no more changes to the process) was last achieved. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
                 - `[SynchronizedEntryCountByType <IMicrosoftGraphStringKeyLongValuePair[]>]`: Count of synchronized objects, listed by object type.
-                  - `[Key <String>]`: The mapping of the user type from the source system to the target system. For example:User to User - For Azure AD to Azure AD synchronization worker to user - For Workday to Azure AD synchronization.
+                  - `[Key <String>]`: The mapping of the user type from the source system to the target system. For example:User to User - For Microsoft Entra ID to Microsoft Entra synchronization worker to user - For Workday to Microsoft Entra synchronization.
                   - `[Value <Int64?>]`: Total number of synchronized objects.
                 - `[TroubleshootingUrl <String>]`: In the event of an error, the URL with the troubleshooting steps for the issue.
               - `[SynchronizationJobSettings <IMicrosoftGraphKeyValuePair[]>]`: Settings associated with the job. Some settings are inherited from the template.
@@ -15836,7 +15861,7 @@ To create the parameters described below, construct a hash table containing the 
                 - `[Value <String>]`: Value of the metadata property.
               - `[Schema <IMicrosoftGraphSynchronizationSchema>]`: synchronizationSchema
           - `[Tags <String[]>]`: Custom strings that can be used to categorize and identify the service principal. Not nullable. The value is the union of strings set here and on the associated application entity's tags property.Supports $filter (eq, not, ge, le, startsWith).
-          - `[TokenEncryptionKeyId <String>]`: Specifies the keyId of a public key from the keyCredentials collection. When configured, Azure AD issues tokens for this application encrypted using the key specified by this property. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.
+          - `[TokenEncryptionKeyId <String>]`: Specifies the keyId of a public key from the keyCredentials collection. When configured, Microsoft Entra ID issues tokens for this application encrypted using the key specified by this property. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.
           - `[TokenIssuancePolicies <IMicrosoftGraphTokenIssuancePolicy[]>]`: The tokenIssuancePolicies assigned to this service principal. Supports $expand.
             - `[AppliesTo <IMicrosoftGraphDirectoryObject[]>]`: 
             - `[Definition <String[]>]`: A string collection containing a JSON string that defines the rules and settings for a policy. The syntax for the definition differs for each derived policy type. Required.
@@ -15861,7 +15886,7 @@ To create the parameters described below, construct a hash table containing the 
             - `[VerifiedPublisherId <String>]`: The ID of the verified publisher from the app publisher's Partner Center account.
         - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment[]>]`: Represents the app roles a user has been granted for an application. Supports $expand.
         - `[Approvals <IMicrosoftGraphApproval[]>]`: 
-        - `[AssignedLicenses <IMicrosoftGraphAssignedLicense[]>]`: The licenses that are assigned to the user, including inherited (group-based) licenses. This property doesn't differentiate directly assigned and inherited licenses. Use the licenseAssignmentStates property to identify the directly assigned and inherited licenses. Not nullable. Supports $filter (eq, not, /$count eq 0, /$count ne 0).
+        - `[AssignedLicenses <IMicrosoftGraphAssignedLicense[]>]`: The licenses that are assigned to the user, including inherited (group-based) licenses. This property doesn't differentiate between directly assigned and inherited licenses. Use the licenseAssignmentStates property to identify the directly assigned and inherited licenses. Not nullable. Supports $filter (eq, not, /$count eq 0, /$count ne 0).
           - `[DisabledPlans <String[]>]`: A collection of the unique identifiers for plans that have been disabled.
           - `[SkuId <String>]`: The unique identifier for the SKU.
         - `[AssignedPlans <IMicrosoftGraphAssignedPlan[]>]`: The plans that are assigned to the user. Read-only. Not nullable.Supports $filter (eq and not).
@@ -15920,7 +15945,7 @@ To create the parameters described below, construct a hash table containing the 
               - `[DeviceOwnership <String>]`: Ownership of the device. This property is set by Intune. Possible values are: unknown, company, personal.
               - `[DeviceVersion <Int32?>]`: For internal use only.
               - `[DisplayName <String>]`: The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.
-              - `[DomainName <String>]`: The on-premises domain name of Hybrid Azure AD joined devices. This property is set by Intune.
+              - `[DomainName <String>]`: The on-premises domain name of Microsoft Entra hybrid joined devices. This property is set by Intune.
               - `[EnrollmentProfileName <String>]`: Enrollment profile applied to the device. For example, Apple Device Enrollment Profile, Device enrollment - Corporate device identifiers, or Windows Autopilot profile name. This property is set by Intune.
               - `[EnrollmentType <String>]`: Enrollment type of the device. This property is set by Intune. Possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement.
               - `[ExtensionAttributes <IMicrosoftGraphOnPremisesExtensionAttributes>]`: onPremisesExtensionAttributes
@@ -15942,25 +15967,25 @@ To create the parameters described below, construct a hash table containing the 
                 - `[ExtensionAttribute9 <String>]`: Ninth customizable extension attribute.
               - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the device. Read-only. Nullable.
                 - `[Id <String>]`: The unique identifier for an entity. Read-only.
-              - `[Hostnames <String[]>]`: List of hostNames for the device.
+              - `[Hostnames <String[]>]`: List of host names for the device.
               - `[IsCompliant <Boolean?>]`: true if the device complies with Mobile Device Management (MDM) policies; otherwise, false. Read-only. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).
               - `[IsManaged <Boolean?>]`: true if the device is managed by a Mobile Device Management (MDM) app; otherwise, false. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).
-              - `[IsManagementRestricted <Boolean?>]`: true if the device is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.  To manage a device that's a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.
+              - `[IsManagementRestricted <Boolean?>]`: Indicates whether the device is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. The default value is false. Read-only.  To manage a device that's a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.
               - `[IsRooted <Boolean?>]`: true if device is rooted; false if device is jail-broken. This can only be updated by Intune.
-              - `[Kind <String>]`: Form factor of device. Only returned if user signs in with a Microsoft account as part of Project Rome.
+              - `[Kind <String>]`: Form factor of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
               - `[ManagementType <String>]`: Management channel of the device.  This property is set by Intune. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.
-              - `[Manufacturer <String>]`: Manufacturer of device. Only returned if user signs in with a Microsoft account as part of Project Rome.
+              - `[Manufacturer <String>]`: Manufacturer of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
               - `[MdmAppId <String>]`: Application identifier used to register device into MDM. Read-only. Supports $filter (eq, ne, not, startsWith).
               - `[MemberOf <IMicrosoftGraphDirectoryObject[]>]`: Groups and administrative units that this device is a member of. Read-only. Nullable. Supports $expand.
-              - `[Model <String>]`: Model of device. Only returned if user signs in with a Microsoft account as part of Project Rome.
-              - `[Name <String>]`: Friendly name of a device. Only returned if user signs in with a Microsoft account as part of Project Rome.
+              - `[Model <String>]`: Model of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
+              - `[Name <String>]`: Friendly name of the device. Only returned if user signs in with a Microsoft account as part of Project Rome.
               - `[OnPremisesLastSyncDateTime <DateTime?>]`: The last time at which the object was synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Read-only. Supports $filter (eq, ne, not, ge, le, in).
-              - `[OnPremisesSecurityIdentifier <String>]`: 
+              - `[OnPremisesSecurityIdentifier <String>]`: The on-premises security identifier (SID) for the user who was synchronized from on-premises to the cloud. Read-only. Returned only on $select. Supports $filter (eq).
               - `[OnPremisesSyncEnabled <Boolean?>]`: true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
               - `[OperatingSystem <String>]`: The type of operating system on the device. Required. Supports $filter (eq, ne, not, ge, le, startsWith, and eq on null values).
               - `[OperatingSystemVersion <String>]`: Operating system version of the device. Required. Supports $filter (eq, ne, not, ge, le, startsWith, and eq on null values).
               - `[PhysicalIds <String[]>]`: For internal use only. Not nullable. Supports $filter (eq, not, ge, le, startsWith, /$count eq 0, /$count ne 0.
-              - `[Platform <String>]`: Platform of device. Only returned if user signs in with a Microsoft account as part of Project Rome. Only returned if user signs in with a Microsoft account as part of Project Rome.
+              - `[Platform <String>]`: Platform of device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
               - `[ProfileType <String>]`: The profile type of the device. Possible values: RegisteredDevice (default), SecureVM, Printer, Shared, IoT.
               - `[RegisteredOwners <IMicrosoftGraphDirectoryObject[]>]`: The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Read-only. Nullable. Supports $expand.
               - `[RegisteredUsers <IMicrosoftGraphDirectoryObject[]>]`: Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.
@@ -15968,7 +15993,7 @@ To create the parameters described below, construct a hash table containing the 
               - `[Status <String>]`: Device is online or offline. Only returned if user signs in with a Microsoft account as part of Project Rome.
               - `[SystemLabels <String[]>]`: List of labels applied to the device by the system. Supports $filter (/$count eq 0, /$count ne 0).
               - `[TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>]`: Groups and administrative units that this device is a member of. This operation is transitive. Supports $expand.
-              - `[TrustType <String>]`: Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory
+              - `[TrustType <String>]`: Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Microsoft Entra ID). For more details, see Introduction to device management in Microsoft Entra ID.
               - `[UsageRights <IMicrosoftGraphUsageRight[]>]`: Represents the usage rights a device has been granted.
                 - `[Id <String>]`: The unique identifier for an entity. Read-only.
                 - `[CatalogId <String>]`: Product id corresponding to the usage right.
@@ -15999,6 +16024,13 @@ To create the parameters described below, construct a hash table containing the 
             - `[PhoneNumber <String>]`: The phone number to text or call for authentication. Phone numbers use the format '+<country code> <number>x<extension>', with extension optional. For example, +1 5555551234 or +1 5555551234x123 are valid. Numbers are rejected when creating/updating if they don't match the required format.
             - `[PhoneType <String>]`: authenticationPhoneType
             - `[SmsSignInState <String>]`: authenticationMethodSignInState
+          - `[PlatformCredentialMethods <IMicrosoftGraphPlatformCredentialAuthenticationMethod[]>]`: 
+            - `[Id <String>]`: The unique identifier for an entity. Read-only.
+            - `[CreatedDateTime <DateTime?>]`: The date and time that this Platform Credential Key was registered.
+            - `[Device <IMicrosoftGraphDevice>]`: device
+            - `[DisplayName <String>]`: The name of the device on which Platform Credential is registered.
+            - `[KeyStrength <String>]`: authenticationMethodKeyStrength
+            - `[Platform <String>]`: authenticationMethodPlatform
           - `[SignInPreferences <IMicrosoftGraphSignInPreferences>]`: signInPreferences
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[IsSystemPreferredAuthenticationMethodEnabled <Boolean?>]`: Indicates whether the credential preferences of the system are enabled.
@@ -16021,8 +16053,8 @@ To create the parameters described below, construct a hash table containing the 
             - `[KeyStrength <String>]`: authenticationMethodKeyStrength
         - `[AuthorizationInfo <IMicrosoftGraphAuthorizationInfo>]`: authorizationInfo
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[CertificateUserIds <String[]>]`: The collection of unique identifiers that can be associated with a user and can be used to bind the Azure AD user to a certificate for authentication and authorization into non-Azure AD environments. The identifiers must be unique in the tenant.
-        - `[Birthday <DateTime?>]`: The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select.
+          - `[CertificateUserIds <String[]>]`: The collection of unique identifiers that can be associated with a user and can be used to bind the Microsoft Entra user to a certificate for authentication and authorization into non-Azure AD environments. The identifiers must be unique in the tenant.
+        - `[Birthday <DateTime?>]`: The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select.
         - `[BusinessPhones <String[]>]`: The telephone numbers for the user. Only one number can be set for this property. Read-only for users synced from on-premises directory. Supports $filter (eq, not, ge, le, startsWith).
         - `[Calendar <IMicrosoftGraphCalendar>]`: calendar
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -16297,13 +16329,13 @@ To create the parameters described below, construct a hash table containing the 
                 - `[User <IMicrosoftGraphIdentity>]`: identity
                 - `[Conversation <IMicrosoftGraphTeamworkConversationIdentity>]`: teamworkConversationIdentity
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                  - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-                  - `[Id <String>]`: Unique identifier for the identity.
+                  - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+                  - `[Id <String>]`: The identifier of the identity. This property is read-only.
                   - `[ConversationIdentityType <String>]`: teamworkConversationIdentityType
                 - `[Tag <IMicrosoftGraphTeamworkTagIdentity>]`: teamworkTagIdentity
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                  - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-                  - `[Id <String>]`: Unique identifier for the identity.
+                  - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+                  - `[Id <String>]`: The identifier of the identity. This property is read-only.
             - `[MessageHistory <IMicrosoftGraphChatMessageHistoryItem[]>]`: List of activity history of a message item, including modification time and actions, such as reactionAdded, reactionRemoved, or reaction changes, on the message.
               - `[Actions <String>]`: chatMessageActions
               - `[ModifiedDateTime <DateTime?>]`: The date and time when the message was modified.
@@ -16341,8 +16373,8 @@ To create the parameters described below, construct a hash table containing the 
             - `[JoinWebUrl <String>]`: The URL which can be clicked on to join or uniquely identify the meeting.
             - `[Organizer <IMicrosoftGraphTeamworkUserIdentity>]`: teamworkUserIdentity
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-              - `[Id <String>]`: Unique identifier for the identity.
+              - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+              - `[Id <String>]`: The identifier of the identity. This property is read-only.
               - `[UserIdentityType <String>]`: teamworkUserIdentityType
           - `[Operations <IMicrosoftGraphTeamsAsyncOperation[]>]`: A collection of all the Teams async operations that ran or are running on the chat. Nullable.
             - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -16360,11 +16392,11 @@ To create the parameters described below, construct a hash table containing the 
           - `[PermissionGrants <IMicrosoftGraphResourceSpecificPermissionGrant[]>]`: A collection of permissions granted to apps for the chat.
             - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
             - `[Id <String>]`: The unique identifier for an entity. Read-only.
-            - `[ClientAppId <String>]`: ID of the service principal of the Azure AD app that has been granted access. Read-only.
-            - `[ClientId <String>]`: ID of the Azure AD app that has been granted access. Read-only.
+            - `[ClientAppId <String>]`: ID of the service principal of the Microsoft Entra app that has been granted access. Read-only.
+            - `[ClientId <String>]`: ID of the Microsoft Entra app that has been granted access. Read-only.
             - `[Permission <String>]`: The name of the resource-specific permission. Read-only.
             - `[PermissionType <String>]`: The type of permission. Possible values are: Application, Delegated. Read-only.
-            - `[ResourceAppId <String>]`: ID of the Azure AD app that is hosting the resource. Read-only.
+            - `[ResourceAppId <String>]`: ID of the Microsoft Entra app that is hosting the resource. Read-only.
           - `[PinnedMessages <IMicrosoftGraphPinnedChatMessageInfo[]>]`: A collection of all the pinned messages in the chat. Nullable.
             - `[Id <String>]`: The unique identifier for an entity. Read-only.
             - `[Message <IMicrosoftGraphChatMessage>]`: chatMessage
@@ -16392,7 +16424,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[City <String>]`: The city where the user is located. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
         - `[CloudPCs <IMicrosoftGraphCloudPc[]>]`: 
           - `[Id <String>]`: The unique identifier for an entity. Read-only.
-          - `[AadDeviceId <String>]`: The Azure Active Directory (Azure AD) device ID of the Cloud PC.
+          - `[AadDeviceId <String>]`: The Microsoft Entra device ID of the Cloud PC.
           - `[ConnectionSettings <IMicrosoftGraphCloudPcConnectionSettings>]`: cloudPcConnectionSettings
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[EnableSingleSignOn <Boolean?>]`: 
@@ -16440,6 +16472,7 @@ To create the parameters described below, construct a hash table containing the 
           - `[ProvisioningPolicyId <String>]`: The provisioning policy ID of the Cloud PC.
           - `[ProvisioningPolicyName <String>]`: The provisioning policy that is applied during the provisioning of Cloud PCs.
           - `[ProvisioningType <String>]`: cloudPcProvisioningType
+          - `[ScopeIds <String[]>]`: 
           - `[ServicePlanId <String>]`: The service plan ID of the Cloud PC.
           - `[ServicePlanName <String>]`: The service plan name of the Cloud PC.
           - `[ServicePlanType <String>]`: cloudPcServicePlanType
@@ -16450,7 +16483,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[CloudRealtimeCommunicationInfo <IMicrosoftGraphCloudRealtimeCommunicationInfo>]`: cloudRealtimeCommunicationInfo
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[IsSipEnabled <Boolean?>]`: Indicates whether the user has a SIP-enabled client registered for them. Read-only.
-        - `[CompanyName <String>]`: The name of the company that the user is associated with. This property can be useful for describing the company that an external user comes from. The maximum length is 64 characters.Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+        - `[CompanyName <String>]`: The name of the company the user is associated with. This property can be useful for describing the company that an external user comes from. The maximum length is 64 characters.Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
         - `[ConsentProvidedForMinor <String>]`: Sets whether consent has been obtained for minors. Allowed values: null, Granted, Denied and NotRequired. Refer to the legal age group property definitions for further information. Supports $filter (eq, ne, not, and in).
         - `[ContactFolders <IMicrosoftGraphContactFolder[]>]`: The user's contacts folders. Read-only. Nullable.
           - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -16521,11 +16554,11 @@ To create the parameters described below, construct a hash table containing the 
           - `[WellKnownName <String>]`: The name of the folder if the folder is a recognized folder. Currently contacts is the only recognized contacts folder.
         - `[Contacts <IMicrosoftGraphContact[]>]`: The user's contacts. Read-only. Nullable.
         - `[Country <String>]`: The country or region where the user is located; for example, US or UK. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-        - `[CreatedDateTime <DateTime?>]`: The date and time the user was created, in ISO 8601 format and in UTC time. The value cannot be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Azure AD. Property is null for some users created before June 2018 and on-premises users that were synced to Azure AD before June 2018. Read-only. Supports $filter (eq, ne, not , ge, le, in).
+        - `[CreatedDateTime <DateTime?>]`: The date and time the user was created in ISO 8601 format and UTC. The value cannot be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Microsoft Entra ID. Property is null for some users created before June 2018 and on-premises users synced to Microsoft Entra ID before June 2018. Read-only. Supports $filter (eq, ne, not , ge, le, in).
         - `[CreatedObjects <IMicrosoftGraphDirectoryObject[]>]`: Directory objects that the user created. Read-only. Nullable.
         - `[CreationType <String>]`: Indicates whether the user account was created through one of the following methods:  As a regular school or work account (null). As an external account (Invitation). As a local account for an Azure Active Directory B2C tenant (LocalAccount). Through self-service sign-up by an internal user using email verification (EmailVerified). Through self-service sign-up by an external user signing up through a link that is part of a user flow (SelfServiceSignUp).  Read-only.Supports $filter (eq, ne, not, and in).
         - `[CustomSecurityAttributes <IMicrosoftGraphCustomSecurityAttributeValue>]`: customSecurityAttributeValue
-        - `[Department <String>]`: The name for the department in which the user works. Maximum length is 64 characters.Supports $filter (eq, ne, not , ge, le, in, and eq on null values).
+        - `[Department <String>]`: The name of the department where the user works. Maximum length is 64 characters.Supports $filter (eq, ne, not , ge, le, in, and eq on null values).
         - `[DeviceEnrollmentConfigurations <IMicrosoftGraphDeviceEnrollmentConfiguration[]>]`: Get enrollment configurations targeted to the user
           - `[Id <String>]`: The unique identifier for an entity. Read-only.
           - `[Assignments <IMicrosoftGraphEnrollmentConfigurationAssignment[]>]`: The list of group assignments for the device configuration profile
@@ -16565,8 +16598,8 @@ To create the parameters described below, construct a hash table containing the 
               - `[Link <String>]`: The link to the web resource. Can contain any of the following formatters: {{UPN}}, {{DeviceGUID}}, {{UserGUID}}
               - `[Text <String>]`: Not yet documented
         - `[Devices <IMicrosoftGraphDevice[]>]`: 
-        - `[DirectReports <IMicrosoftGraphDirectoryObject[]>]`: The users and contacts that report to the user. (The users and contacts that have their manager property set to this user.) Read-only. Nullable. Supports $expand.
-        - `[DisplayName <String>]`: The name displayed in the address book for the user. This value is usually the combination of the user's first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates. Maximum length is 256 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values), $orderby, and $search.
+        - `[DirectReports <IMicrosoftGraphDirectoryObject[]>]`: The users and contacts that report to the user. (The users and contacts with their manager property set to this user.) Read-only. Nullable. Supports $expand.
+        - `[DisplayName <String>]`: The name displayed in the address book for the user. This value is usually the combination of the user's first name, middle initial, and last name. This property is required when a user is created, and it cannot be cleared during updates. Maximum length is 256 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values), $orderby, and $search.
         - `[Drive <IMicrosoftGraphDrive>]`: drive
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -16987,15 +17020,15 @@ To create the parameters described below, construct a hash table containing the 
             - `[LearningContentId <String>]`: The ID of the learning content created in Viva Learning. Required.
             - `[LearningProviderId <String>]`: The registration ID of the provider. Required.
             - `[Status <String>]`: courseStatus
-        - `[EmployeeHireDate <DateTime?>]`: The date and time when the user was hired or will start work in case of a future hire. Supports $filter (eq, ne, not , ge, le, in).
+        - `[EmployeeHireDate <DateTime?>]`: The date and time when the user was hired or will start work if there is a future hire. Supports $filter (eq, ne, not , ge, le, in).
         - `[EmployeeId <String>]`: The employee identifier assigned to the user by the organization. The maximum length is 16 characters.Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
-        - `[EmployeeLeaveDateTime <DateTime?>]`: The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs one of the following Azure AD roles: Lifecycle Workflows Administrator, Global Reader, or Global Administrator. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.
+        - `[EmployeeLeaveDateTime <DateTime?>]`: The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs one of the following Microsoft Entra roles: Lifecycle Workflows Administrator, Global Reader, or Global Administrator. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.
         - `[EmployeeOrgData <IMicrosoftGraphEmployeeOrgData>]`: employeeOrgData
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[CostCenter <String>]`: The cost center associated with the user. Returned only on $select. Supports $filter.
           - `[Division <String>]`: The name of the division in which the user works. Returned only on $select. Supports $filter.
         - `[EmployeeType <String>]`: Captures enterprise worker type. For example, Employee, Contractor, Consultant, or Vendor. Supports $filter (eq, ne, not , ge, le, in, startsWith).
-        - `[Events <IMicrosoftGraphEvent[]>]`: The user's events. Default is to show events under the Default Calendar. Read-only. Nullable.
+        - `[Events <IMicrosoftGraphEvent[]>]`: The user's events. The default is to show events under the Default Calendar. Read-only. Nullable.
         - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the user. Supports $expand. Nullable.
         - `[ExternalUserState <String>]`: For an external user invited to the tenant using the invitation API, this property represents the invited user's invitation status. For invited users, the state can be PendingAcceptance or Accepted, or null for all other users. Supports $filter (eq, ne, not , in).
         - `[ExternalUserStateChangeDateTime <String>]`: Shows the timestamp for the latest change to the externalUserState property. Supports $filter (eq, ne, not , in).
@@ -17029,7 +17062,7 @@ To create the parameters described below, construct a hash table containing the 
               - `[Id <String>]`: The unique identifier for an entity. Read-only.
               - `[RecoveryKeys <IMicrosoftGraphBitlockerRecoveryKey[]>]`: The recovery keys associated with the bitlocker entity.
                 - `[Id <String>]`: The unique identifier for an entity. Read-only.
-                - `[CreatedDateTime <DateTime?>]`: The date and time when the key was originally backed up to Azure Active Directory.
+                - `[CreatedDateTime <DateTime?>]`: The date and time when the key was originally backed up to Microsoft Entra ID.
                 - `[DeviceId <String>]`: ID of the device the BitLocker key is originally backed up from.
                 - `[Key <String>]`: The BitLocker recovery key.
                 - `[VolumeType <String>]`: volumeType
@@ -17233,8 +17266,8 @@ To create the parameters described below, construct a hash table containing the 
               - `[Group <IMicrosoftGraphIdentity>]`: identity
               - `[SiteGroup <IMicrosoftGraphSharePointIdentity>]`: sharePointIdentity
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-                - `[Id <String>]`: Unique identifier for the identity.
+                - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+                - `[Id <String>]`: The identifier of the identity. This property is read-only.
                 - `[LoginName <String>]`: The sign in name of the SharePoint identity.
               - `[SiteUser <IMicrosoftGraphSharePointIdentity>]`: sharePointIdentity
             - `[GrantedToV2 <IMicrosoftGraphSharePointIdentitySet>]`: sharePointIdentitySet
@@ -17308,12 +17341,12 @@ To create the parameters described below, construct a hash table containing the 
             - `[LanguageTags <String[]>]`: List of languages for the term store.
             - `[Sets <IMicrosoftGraphTermStoreSet[]>]`: Collection of all sets available in the term store.
         - `[GivenName <String>]`: The given name (first name) of the user. Maximum length is 64 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
-        - `[HireDate <DateTime?>]`: The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.
-        - `[Identities <IMicrosoftGraphObjectIdentity[]>]`: Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft, and tied to a user account. May contain multiple items with the same signInType value. Supports $filter (eq) including on null values, only where the signInType is not userPrincipalName.
-          - `[Issuer <String>]`: Specifies the issuer of the identity, for example facebook.com.For local accounts (where signInType isn't federated), this property is the local B2C tenant default domain name, for example contoso.onmicrosoft.com.For guests from other Azure AD organization, this is the domain of the federated organization, for example contoso.com.Supports $filter. 512 character limit.
+        - `[HireDate <DateTime?>]`: The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.
+        - `[Identities <IMicrosoftGraphObjectIdentity[]>]`: Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft and tied to a user account. It may contain multiple items with the same signInType value. Supports $filter (eq) including on null values, only where the signInType is not userPrincipalName.
+          - `[Issuer <String>]`: Specifies the issuer of the identity, for example facebook.com.For local accounts (where signInType isn't federated), this property is the local B2C tenant default domain name, for example contoso.onmicrosoft.com.For guests from other Microsoft Entra organization, this is the domain of the federated organization, for example contoso.com.Supports $filter. 512 character limit.
           - `[IssuerAssignedId <String>]`: Specifies the unique identifier assigned to the user by the issuer. The combination of issuer and issuerAssignedId must be unique within the organization. Represents the sign-in name for the user, when signInType is set to emailAddress or userName (also known as local accounts).When signInType is set to: emailAddress, (or a custom string that starts with emailAddress like emailAddress1) issuerAssignedId must be a valid email addressuserName, issuerAssignedId must begin with an alphabetical character or number, and can only contain alphanumeric characters and the following symbols: - or Supports $filter. 64 character limit.
           - `[SignInType <String>]`: Specifies the user sign-in types in your directory, such as emailAddress, userName, federated, or userPrincipalName. federated represents a unique identifier for a user from an issuer, that can be in any format chosen by the issuer. Setting or updating a userPrincipalName identity will update the value of the userPrincipalName property on the user object. The validations performed on the userPrincipalName property on the user object, for example, verified domains and acceptable characters, will be performed when setting or updating a userPrincipalName identity. Extra validation is enforced on issuerAssignedId when the sign-in type is set to emailAddress or userName. This property can also be set to any custom string.
-        - `[ImAddresses <String[]>]`: The instant message voice over IP (VOIP) session initiation protocol (SIP) addresses for the user. Read-only. Supports $filter (eq, not, ge, le, startsWith).
+        - `[ImAddresses <String[]>]`: The instant message voice-over IP (VOIP) session initiation protocol (SIP) addresses for the user. Read-only. Supports $filter (eq, not, ge, le, startsWith).
         - `[InferenceClassification <IMicrosoftGraphInferenceClassification>]`: inferenceClassification
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -17375,23 +17408,23 @@ To create the parameters described below, construct a hash table containing the 
             - `[ResourceReference <IMicrosoftGraphResourceReference>]`: resourceReference
             - `[ResourceVisualization <IMicrosoftGraphResourceVisualization>]`: resourceVisualization
           - `[Id <String>]`: The unique identifier for an entity. Read-only.
-        - `[Interests <String[]>]`: A list for the user to describe their interests. Returned only on $select.
+        - `[Interests <String[]>]`: A list for users to describe their interests. Returned only on $select.
         - `[IsLicenseReconciliationNeeded <Boolean?>]`: Indicates whether the user is pending an exchange mailbox license assignment.  Read-only.  Supports $filter (eq where true only).
-        - `[IsManagementRestricted <Boolean?>]`: true if the user is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.  To manage a user who is a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.
+        - `[IsManagementRestricted <Boolean?>]`: true if the user is a member of a restricted management administrative unit, which requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.  To manage a user who is a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.
         - `[IsResourceAccount <Boolean?>]`: Do not use – reserved for future use.
         - `[JobTitle <String>]`: The user's job title. Maximum length is 128 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
         - `[JoinedGroups <IMicrosoftGraphGroup[]>]`: 
           - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
           - `[Id <String>]`: The unique identifier for an entity. Read-only.
-          - `[AcceptedSenders <IMicrosoftGraphDirectoryObject[]>]`: The list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.
+          - `[AcceptedSenders <IMicrosoftGraphDirectoryObject[]>]`: The list of users or groups allowed to create posts or calendar events in this group. If this list is non-empty, then only users or groups listed here can post.
           - `[AccessType <String>]`: groupAccessType
-          - `[AllowExternalSenders <Boolean?>]`: Indicates if people external to the organization can send messages to the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
+          - `[AllowExternalSenders <Boolean?>]`: Indicates if people external to the organization can send messages to the group. The default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
           - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment[]>]`: Represents the app roles a group has been granted for an application. Supports $expand.
           - `[AssignedLabels <IMicrosoftGraphAssignedLabel[]>]`: The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select.
             - `[DisplayName <String>]`: The display name of the label. Read-only.
             - `[LabelId <String>]`: The unique identifier of the label.
           - `[AssignedLicenses <IMicrosoftGraphAssignedLicense[]>]`: The licenses that are assigned to the group. Returned only on $select. Supports $filter (eq). Read-only.
-          - `[AutoSubscribeNewMembers <Boolean?>]`: Indicates if new members added to the group will be auto-subscribed to receive email notifications. You can set this property in a PATCH request for the group; do not set it in the initial POST request that creates the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
+          - `[AutoSubscribeNewMembers <Boolean?>]`: Indicates if new members added to the group are auto-subscribed to receive email notifications. You can set this property in a PATCH request for the group; don't set it in the initial POST request that creates the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
           - `[Calendar <IMicrosoftGraphCalendar>]`: calendar
           - `[CalendarView <IMicrosoftGraphEvent[]>]`: The calendar view for the calendar. Read-only.
           - `[Classification <String>]`: Describes a classification for the group (such as low, medium or high business impact). Valid values for this property are defined by creating a ClassificationList setting value, based on the template definition.Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith).
@@ -17443,7 +17476,7 @@ To create the parameters described below, construct a hash table containing the 
             - `[Topic <String>]`: The topic of the conversation. This property can be set when the conversation is created, but it cannot be updated.
             - `[UniqueSenders <String[]>]`: All the users that sent a message to this Conversation.
           - `[CreatedByAppId <String>]`: App ID of the app used to create the group. Can be null for some groups. Returned by default. Read-only. Supports $filter (eq, ne, not, in, startsWith).
-          - `[CreatedDateTime <DateTime?>]`: Timestamp of when the group was created. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only.
+          - `[CreatedDateTime <DateTime?>]`: Timestamp of when the group was created. The value can't be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only.
           - `[CreatedOnBehalfOf <IMicrosoftGraphDirectoryObject>]`: directoryObject
           - `[Description <String>]`: An optional description for the group. Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
           - `[DisplayName <String>]`: The display name for the group. Required. Maximum length is 256 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.
@@ -17451,23 +17484,23 @@ To create the parameters described below, construct a hash table containing the 
           - `[Drives <IMicrosoftGraphDrive[]>]`: The group's drives. Read-only.
           - `[Endpoints <IMicrosoftGraphEndpoint[]>]`: Endpoints for the group. Read-only. Nullable.
           - `[Events <IMicrosoftGraphEvent[]>]`: The group's events.
-          - `[ExpirationDateTime <DateTime?>]`: Timestamp of when the group is set to expire. Is null for security groups but for Microsoft 365 groups, it represents when the group is set to expire as defined in the groupLifecyclePolicy. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
+          - `[ExpirationDateTime <DateTime?>]`: Timestamp of when the group is set to expire. It is null for security groups, but for Microsoft 365 groups, it represents when the group is set to expire as defined in the groupLifecyclePolicy. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
           - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the group. Read-only. Nullable.
           - `[GroupLifecyclePolicies <IMicrosoftGraphGroupLifecyclePolicy[]>]`: The collection of lifecycle policies for this group. Read-only. Nullable.
             - `[Id <String>]`: The unique identifier for an entity. Read-only.
             - `[AlternateNotificationEmails <String>]`: List of email address to send notifications for groups without owners. Multiple email address can be defined by separating email address with a semicolon.
             - `[GroupLifetimeInDays <Int32?>]`: Number of days before a group expires and needs to be renewed. Once renewed, the group expiration is extended by the number of days defined.
             - `[ManagedGroupTypes <String>]`: The group type for which the expiration policy applies. Possible values are All, Selected or None.
-          - `[GroupTypes <String[]>]`: Specifies the group type and its membership. If the collection contains Unified, the group is a Microsoft 365 group; otherwise, it's either a security group or distribution group. For details, see groups overview.If the collection includes DynamicMembership, the group has dynamic membership; otherwise, membership is static. Returned by default. Supports $filter (eq, not).
+          - `[GroupTypes <String[]>]`: Specifies the group type and its membership. If the collection contains Unified, the group is a Microsoft 365 group; otherwise, it's either a security group or a distribution group. For details, see groups overview.If the collection includes DynamicMembership, the group has dynamic membership; otherwise, membership is static. Returned by default. Supports $filter (eq, not).
           - `[HasMembersWithLicenseErrors <Boolean?>]`: Indicates whether there are members in this group that have license errors from its group-based license assignment. This property is never returned on a GET operation. You can use it as a $filter argument to get groups that have members with license errors (that is, filter for this property being true).  Supports $filter (eq).
-          - `[HideFromAddressLists <Boolean?>]`: true if the group is not displayed in certain parts of the Outlook user interface: in the Address Book, in address lists for selecting message recipients, and in the Browse Groups dialog for searching groups; false otherwise. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
-          - `[HideFromOutlookClients <Boolean?>]`: true if the group is not displayed in Outlook clients, such as Outlook for Windows and Outlook on the web, false otherwise. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
+          - `[HideFromAddressLists <Boolean?>]`: true if the group isn't displayed in certain parts of the Outlook user interface: in the Address Book, in address lists for selecting message recipients, and in the Browse Groups dialog for searching groups; false otherwise. The default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
+          - `[HideFromOutlookClients <Boolean?>]`: true if the group isn't displayed in Outlook clients, such as Outlook for Windows and Outlook on the web, false otherwise. The default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
           - `[InfoCatalogs <String[]>]`: Identifies the info segments assigned to the group. Returned by default. Supports $filter (eq, not, ge, le, startsWith).
           - `[IsArchived <Boolean?>]`: When a group is associated with a team, this property determines whether the team is in read-only mode. To read this property, use the /group/{groupId}/team endpoint or the Get team API. To update this property, use the archiveTeam and unarchiveTeam APIs.
-          - `[IsAssignableToRole <Boolean?>]`: Indicates whether this group can be assigned to an Azure Active Directory role. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true,  visibility must be Hidden, and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Azure AD role assignmentsUsing this feature requires a Azure AD Premium P1 license. Returned by default. Supports $filter (eq, ne, not).
+          - `[IsAssignableToRole <Boolean?>]`: Indicates whether this group can be assigned to a Microsoft Entra role. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true,  visibility must be Hidden, and the group cannot be a dynamic group (that is, groupTypes can't contain DynamicMembership). Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Microsoft Entra role assignmentsUsing this feature requires a Microsoft Entra ID P1 license. Returned by default. Supports $filter (eq, ne, not).
           - `[IsFavorite <Boolean?>]`: 
-          - `[IsManagementRestricted <Boolean?>]`: Indicates whether the group is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.  To manage a group that's a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.
-          - `[IsSubscribedByMail <Boolean?>]`: Indicates whether the signed-in user is subscribed to receive email conversations. Default value is true. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
+          - `[IsManagementRestricted <Boolean?>]`: Indicates whether the group is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. The default value is false. Read-only.  To manage a group member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.
+          - `[IsSubscribedByMail <Boolean?>]`: Indicates whether the signed-in user is subscribed to receive email conversations. The default value is true. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
           - `[LicenseProcessingState <IMicrosoftGraphLicenseProcessingState>]`: licenseProcessingState
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[State <String>]`: 
@@ -17475,7 +17508,7 @@ To create the parameters described below, construct a hash table containing the 
           - `[MailEnabled <Boolean?>]`: Specifies whether the group is mail-enabled. Required. Returned by default. Supports $filter (eq, ne, not, and eq on null values).
           - `[MailNickname <String>]`: The mail alias for the group, unique for Microsoft 365 groups in the organization. Maximum length is 64 characters. This property can contain only characters in the ASCII character set 0 - 127 except the following: @ () / [] ' ; : <> , SPACE. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith).
           - `[MemberOf <IMicrosoftGraphDirectoryObject[]>]`: Groups and administrative units that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.
-          - `[Members <IMicrosoftGraphDirectoryObject[]>]`: Direct members of this group, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).
+          - `[Members <IMicrosoftGraphDirectoryObject[]>]`: Direct group members, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).
           - `[MembersWithLicenseErrors <IMicrosoftGraphDirectoryObject[]>]`: A list of group members with license errors from this group-based license assignment. Read-only.
           - `[MembershipRule <String>]`: The rule that determines members for this group if the group is a dynamic group (groupTypes contains DynamicMembership). For more information about the syntax of the membership rule, see Membership Rules syntax. Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith).
           - `[MembershipRuleProcessingState <String>]`: Indicates whether the dynamic membership processing is on or paused. Possible values are On or Paused. Returned by default. Supports $filter (eq, ne, not, in).
@@ -17484,21 +17517,21 @@ To create the parameters described below, construct a hash table containing the 
             - `[ErrorMessage <String>]`: Detailed error message if dynamic group processing ran into an error.  Optional. Read-only.
             - `[LastMembershipUpdated <DateTime?>]`: Most recent date and time when membership of a dynamic group was updated.  Optional. Read-only.
             - `[Status <String>]`: MembershipRuleProcessingStatusDetails
-          - `[OnPremisesDomainName <String>]`: Contains the on-premises domain FQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect.Returned by default. Read-only.
-          - `[OnPremisesLastSyncDateTime <DateTime?>]`: Indicates the last time at which the group was synced with the on-premises directory.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in).
-          - `[OnPremisesNetBiosName <String>]`: Contains the on-premises netBios name synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect.Returned by default. Read-only.
+          - `[OnPremisesDomainName <String>]`: Contains the on-premises domain FQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect.Returned by default. Read-only.
+          - `[OnPremisesLastSyncDateTime <DateTime?>]`: Indicates the last time at which the group was synced with the on-premises directory.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in).
+          - `[OnPremisesNetBiosName <String>]`: Contains the on-premises netBios name synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect.Returned by default. Read-only.
           - `[OnPremisesProvisioningErrors <IMicrosoftGraphOnPremisesProvisioningError[]>]`: Errors when using Microsoft synchronization product during provisioning. Returned by default. Supports $filter (eq, not).
             - `[Category <String>]`: Category of the provisioning error. Note: Currently, there is only one possible value. Possible value: PropertyConflict - indicates a property value is not unique. Other objects contain the same value for the property.
             - `[OccurredDateTime <DateTime?>]`: The date and time at which the error occurred.
             - `[PropertyCausingError <String>]`: Name of the directory property causing the error. Current possible values: UserPrincipalName or ProxyAddress
             - `[Value <String>]`: Value of the property causing the error.
-          - `[OnPremisesSamAccountName <String>]`: Contains the on-premises SAM account name synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect.Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith). Read-only.
-          - `[OnPremisesSecurityIdentifier <String>]`: Contains the on-premises security identifier (SID) for the group that was synchronized from on-premises to the cloud. Returned by default. Supports $filter (eq including on null values). Read-only.
+          - `[OnPremisesSamAccountName <String>]`: Contains the on-premises SAM account name synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect.Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith). Read-only.
+          - `[OnPremisesSecurityIdentifier <String>]`: Contains the on-premises security identifier (SID) for the group synchronized from on-premises to the cloud. Returned by default. Supports $filter (eq including on null values). Read-only.
           - `[OnPremisesSyncEnabled <Boolean?>]`: true if this group is synced from an on-premises directory; false if this group was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Returned by default. Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
           - `[Onenote <IMicrosoftGraphOnenote>]`: onenote
           - `[OrganizationId <String>]`: 
-          - `[Owners <IMicrosoftGraphDirectoryObject[]>]`: The owners of the group who can be users or service principals. Nullable. If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner.  Supports $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1); Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).
-          - `[PermissionGrants <IMicrosoftGraphResourceSpecificPermissionGrant[]>]`: The permissions that have been granted for a group to a specific application. Supports $expand.
+          - `[Owners <IMicrosoftGraphDirectoryObject[]>]`: The owners of the group who can be users or service principals. Nullable. If this property isn't specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner.  Supports $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1); Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).
+          - `[PermissionGrants <IMicrosoftGraphResourceSpecificPermissionGrant[]>]`: The permissions granted for a group to a specific application. Supports $expand.
           - `[Photo <IMicrosoftGraphProfilePhoto>]`: profilePhoto
           - `[Photos <IMicrosoftGraphProfilePhoto[]>]`: The profile photos owned by the group. Read-only. Nullable.
           - `[Planner <IMicrosoftGraphPlannerGroup>]`: plannerGroup
@@ -17647,16 +17680,16 @@ To create the parameters described below, construct a hash table containing the 
                 - `[AccessLevel <String>]`: plannerPlanAccessLevel
               - `[Tasks <IMicrosoftGraphPlannerTask[]>]`: Collection of tasks in the plan. Read-only. Nullable.
               - `[Title <String>]`: Required. Title of the plan.
-          - `[PreferredDataLocation <String>]`: The preferred data location for the Microsoft 365 group. By default, the group inherits the group creator's preferred data location. To set this property, the calling user must be assigned one of the following Azure AD roles:  Global Administrator  User Account Administrator Directory Writer  Exchange Administrator  SharePoint Administrator  For more information about this property, see OneDrive Online Multi-Geo. Nullable. Returned by default.
-          - `[PreferredLanguage <String>]`: The preferred language for a Microsoft 365 group. Should follow ISO 639-1 Code; for example en-US. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+          - `[PreferredDataLocation <String>]`: The preferred data location for the Microsoft 365 group. By default, the group inherits the group creator's preferred data location. To set this property, the calling app must be granted the Directory.ReadWrite.All permission and the user be assigned one of the following Microsoft Entra roles:  Global Administrator  User Account Administrator Directory Writer  Exchange Administrator  SharePoint Administrator  For more information about this property, see OneDrive Online Multi-Geo and Create a Microsoft 365 group with a specific PDL. Nullable. Returned by default.
+          - `[PreferredLanguage <String>]`: The preferred language for a Microsoft 365 group. Should follow ISO 639-1 Code; for example, en-US. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
           - `[ProxyAddresses <String[]>]`: Email addresses for the group that direct to the same group mailbox. For example: ['SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com']. The any operator is required for filter expressions on multi-valued properties. Returned by default. Read-only. Not nullable. Supports $filter (eq, not, ge, le, startsWith, endsWith, /$count eq 0, /$count ne 0).
-          - `[RejectedSenders <IMicrosoftGraphDirectoryObject[]>]`: The list of users or groups that are not allowed to create posts or calendar events in this group. Nullable
-          - `[RenewedDateTime <DateTime?>]`: Timestamp of when the group was last renewed. This cannot be modified directly and is only updated via the renew service action. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
+          - `[RejectedSenders <IMicrosoftGraphDirectoryObject[]>]`: The list of users or groups not allowed to create posts or calendar events in this group. Nullable
+          - `[RenewedDateTime <DateTime?>]`: Timestamp of when the group was last renewed. This cannot be modified directly and is only updated via the renew service action. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
           - `[ResourceBehaviorOptions <String[]>]`: Specifies the group behaviors that can be set for a Microsoft 365 group during creation. This can be set only as part of creation (POST). Possible values are AllowOnlyMembersToPost, HideGroupInOutlook, SubscribeNewGroupMembers, WelcomeEmailDisabled. For more information, see Set Microsoft 365 group behaviors and provisioning options.
-          - `[ResourceProvisioningOptions <String[]>]`: Specifies the group resources that are provisioned as part of Microsoft 365 group creation, that are not normally part of default group creation. Possible value is Team. For more information, see Set Microsoft 365 group behaviors and provisioning options. Returned by default. Supports $filter (eq, not, startsWith.
+          - `[ResourceProvisioningOptions <String[]>]`: Specifies the group resources that are provisioned as part of Microsoft 365 group creation that isn't normally part of default group creation. The possible value is Team. For more information, see Set Microsoft 365 group behaviors and provisioning options. Returned by default. Supports $filter (eq, not, startsWith.
           - `[SecurityEnabled <Boolean?>]`: Specifies whether the group is a security group. Required.Returned by default. Supports $filter (eq, ne, not, in).
           - `[SecurityIdentifier <String>]`: Security identifier of the group, used in Windows scenarios. Returned by default.
-          - `[ServiceProvisioningErrors <IMicrosoftGraphServiceProvisioningError[]>]`: Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a group object .  Supports $filter (eq, not, for isResolved and serviceInstance).
+          - `[ServiceProvisioningErrors <IMicrosoftGraphServiceProvisioningError[]>]`: Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a group object.
             - `[CreatedDateTime <DateTime?>]`: The date and time at which the error occurred.
             - `[IsResolved <Boolean?>]`: Indicates whether the Error has been attended to.
             - `[ServiceInstance <String>]`: Qualified service instance (for example, 'SharePoint/Dublin') that published the service error information.
@@ -17671,21 +17704,21 @@ To create the parameters described below, construct a hash table containing the 
           - `[Team <IMicrosoftGraphTeam>]`: team
           - `[Theme <String>]`: Specifies a Microsoft 365 group's color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.
           - `[Threads <IMicrosoftGraphConversationThread[]>]`: The group's conversation threads. Nullable.
-          - `[TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>]`: The groups that a group is a member of, either directly and through nested membership. Nullable.
+          - `[TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>]`: The groups a group is a member of, either directly or through nested membership. Nullable.
           - `[TransitiveMembers <IMicrosoftGraphDirectoryObject[]>]`: The direct and transitive members of a group. Nullable.
           - `[UniqueName <String>]`: 
-          - `[UnseenConversationsCount <Int32?>]`: Count of conversations that have been delivered one or more new posts since the signed-in user's last visit to the group. This property is the same as unseenCount. Returned only on $select.
+          - `[UnseenConversationsCount <Int32?>]`: Count of conversations delivered one or more new posts since the signed-in user's last visit to the group. This property is the same as unseenCount. Returned only on $select.
           - `[UnseenCount <Int32?>]`: Count of conversations that have received new posts since the signed-in user last visited the group. This property is the same as unseenConversationsCount.Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
           - `[UnseenMessagesCount <Int32?>]`: Count of new posts that have been delivered to the group's conversations since the signed-in user's last visit to the group. Returned only on $select.
-          - `[Visibility <String>]`: Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups, when the groups are created. It can't be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. To learn more, see group visibility options. Returned by default. Nullable.
+          - `[Visibility <String>]`: Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups when the groups are created. It can't be updated later. Other values of visibility can be updated after group creation. If visibility value isn't specified during group creation on Microsoft Graph, a security group is created as Private by default, and Microsoft 365 group is Public. Groups assignable to roles are always Private. To learn more, see group visibility options. Returned by default. Nullable.
           - `[WritebackConfiguration <IMicrosoftGraphGroupWritebackConfiguration>]`: groupWritebackConfiguration
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[IsEnabled <Boolean?>]`: Indicates whether writeback of cloud groups to on-premise Active Directory is enabled. Default value is true for Microsoft 365 groups and false for security groups.
-            - `[OnPremisesGroupType <String>]`: Indicates the target on-premises group type the cloud object is written back as. Nullable. The possible values are: universalDistributionGroup, universalSecurityGroup, universalMailEnabledSecurityGroup.If the cloud group is a unified (Microsoft 365) group, this property can be one of the following: universalDistributionGroup, universalSecurityGroup, universalMailEnabledSecurityGroup. Azure AD security groups can be written back as universalSecurityGroup. If isEnabled or the NewUnifiedGroupWritebackDefault group setting is true but this property isn't explicitly configured: Microsoft 365 groups are written back as universalDistributionGroup by defaultSecurity groups are written back as universalSecurityGroup by default
-        - `[JoinedTeams <IMicrosoftGraphTeam[]>]`: The Microsoft Teams teams that the user is a member of. Read-only. Nullable.
-        - `[LastPasswordChangeDateTime <DateTime?>]`: The time when this Azure AD user last changed their password or when their password was created, whichever date the latest action was performed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Returned only on $select.
-        - `[LegalAgeGroupClassification <String>]`: Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, MinorWithOutParentalConsent, MinorWithParentalConsent, MinorNoParentalConsentRequired, NotAdult and Adult. For more information, see legal age group property definitions. Returned only on $select.
-        - `[LicenseAssignmentStates <IMicrosoftGraphLicenseAssignmentState[]>]`: State of license assignments for this user. Also indicates licenses that are directly assigned and those that the user has inherited through group memberships. Read-only. Returned only on $select.
+            - `[OnPremisesGroupType <String>]`: Indicates the target on-premises group type the cloud object is written back as. Nullable. The possible values are: universalDistributionGroup, universalSecurityGroup, universalMailEnabledSecurityGroup.If the cloud group is a unified (Microsoft 365) group, this property can be one of the following: universalDistributionGroup, universalSecurityGroup, universalMailEnabledSecurityGroup. Microsoft Entra security groups can be written back as universalSecurityGroup. If isEnabled or the NewUnifiedGroupWritebackDefault group setting is true but this property isn't explicitly configured: Microsoft 365 groups are written back as universalDistributionGroup by defaultSecurity groups are written back as universalSecurityGroup by default
+        - `[JoinedTeams <IMicrosoftGraphTeam[]>]`: The Microsoft Teams teams the user is a member of. Read-only. Nullable.
+        - `[LastPasswordChangeDateTime <DateTime?>]`: When this Microsoft Entra user last changed their password or when their password was created, whichever date the latest action was performed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Returned only on $select.
+        - `[LegalAgeGroupClassification <String>]`: Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, MinorWithOutParentalConsent, MinorWithParentalConsent, MinorNoParentalConsentRequired, NotAdult, and Adult. For more information, see legal age group property definitions. Returned only on $select.
+        - `[LicenseAssignmentStates <IMicrosoftGraphLicenseAssignmentState[]>]`: State of license assignments for this user. It also indicates licenses that are directly assigned and the ones the user inherited through group memberships. Read-only. Returned only on $select.
           - `[AssignedByGroup <String>]`: Indicates whether the license is directly-assigned or inherited from a group. If directly-assigned, this field is null; if inherited through a group membership, this field contains the ID of the group. Read-Only.
           - `[DisabledPlans <String[]>]`: The service plans that are disabled in this assignment. Read-Only.
           - `[Error <String>]`: License assignment failure error. If the license is assigned successfully, this field will be Null. Read-Only. The possible values are CountViolation, MutuallyExclusiveViolation, DependencyViolation, ProhibitedInUsageLocationViolation, UniquenessViolation, and Other. For more information on how to identify and resolve license assignment errors, see here.
@@ -17693,7 +17726,7 @@ To create the parameters described below, construct a hash table containing the 
           - `[SkuId <String>]`: The unique identifier for the SKU. Read-Only.
           - `[State <String>]`: Indicate the current state of this assignment. Read-Only. The possible values are Active, ActiveWithError, Disabled, and Error.
         - `[LicenseDetails <IMicrosoftGraphLicenseDetails[]>]`: 
-        - `[Mail <String>]`: The SMTP address for the user, for example, admin@contoso.com. Changes to this property also updates the user's proxyAddresses collection to include the value as an SMTP address. This property can't contain accent characters.  NOTE: We don't recommend updating this property for Azure AD B2C user profiles. Use the otherMails property instead.  Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith, and eq on null values).
+        - `[Mail <String>]`: The SMTP address for the user, for example, admin@contoso.com. Changes to this property also update the user's proxyAddresses collection to include the value as an SMTP address. This property can't contain accent characters.  NOTE: We don't recommend updating this property for Azure AD B2C user profiles. Use the otherMails property instead.  Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith, and eq on null values).
         - `[MailFolders <IMicrosoftGraphMailFolder[]>]`: The user's mail folders. Read-only. Nullable.
           - `[Id <String>]`: The unique identifier for an entity. Read-only.
           - `[ChildFolderCount <Int32?>]`: The number of immediate child mailFolders in the current mailFolder.
@@ -18031,6 +18064,9 @@ To create the parameters described below, construct a hash table containing the 
             - `[RemediationScriptError <String>]`: Error output of the remediation script
             - `[RemediationState <RemediationState?>]`: Indicates the type of execution status of the device management script.
             - `[UserName <String>]`: Name of the user whom ran the device health script
+          - `[DeviceIdentityAttestationDetail <IMicrosoftGraphDeviceIdentityAttestationDetail>]`: Indicates the attestation status of the managed device
+            - `[(Any) <Object>]`: This indicates any property can be added to this object.
+            - `[DeviceIdentityAttestationStatus <DeviceIdentityAttestationStatus?>]`: Indicates the state of the anomaly. Eg: anomaly severity can be new, active, disabled, removed or other.
           - `[DeviceRegistrationState <DeviceRegistrationState?>]`: Device registration status.
           - `[DeviceType <DeviceType?>]`: Device type.
           - `[ExchangeAccessState <DeviceManagementExchangeAccessState?>]`: Device Exchange Access State.
@@ -18185,7 +18221,7 @@ To create the parameters described below, construct a hash table containing the 
             - `[SignatureVersion <String>]`: Current malware definitions version
             - `[TamperProtectionEnabled <Boolean?>]`: When TRUE indicates the Windows Defender tamper protection feature is enabled, when FALSE indicates the Windows Defender tamper protection feature is not enabled. Defaults to setting on client device.
         - `[Manager <IMicrosoftGraphDirectoryObject>]`: directoryObject
-        - `[MemberOf <IMicrosoftGraphDirectoryObject[]>]`: The groups, directory roles and administrative units that the user is a member of. Read-only. Nullable. Supports $expand.
+        - `[MemberOf <IMicrosoftGraphDirectoryObject[]>]`: The groups, directory roles, and administrative units that the user is a member of. Read-only. Nullable. Supports $expand.
         - `[Messages <IMicrosoftGraphMessage[]>]`: The messages in a mailbox or folder. Read-only. Nullable.
         - `[MobileAppIntentAndStates <IMicrosoftGraphMobileAppIntentAndState[]>]`: The list of troubleshooting events for this user.
           - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -18221,8 +18257,8 @@ To create the parameters described below, construct a hash table containing the 
             - `[TroubleshootingErrorDetails <IMicrosoftGraphDeviceManagementTroubleshootingErrorDetails>]`: Object containing detailed information about the error and its remediation.
           - `[ManagedDeviceIdentifier <String>]`: Device identifier created or collected by Intune.
           - `[UserId <String>]`: Identifier for the user that tried to enroll the device.
-        - `[MobilePhone <String>]`: The primary cellular telephone number for the user. Read-only for users synced from on-premises directory.  Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values) and $search.
-        - `[MySite <String>]`: The URL for the user's personal site. Returned only on $select.
+        - `[MobilePhone <String>]`: The primary cellular telephone number for the user. Read-only for users synced from the on-premises directory.  Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values) and $search.
+        - `[MySite <String>]`: The URL for the user's site. Returned only on $select.
         - `[Notifications <IMicrosoftGraphNotification[]>]`: 
           - `[Id <String>]`: The unique identifier for an entity. Read-only.
           - `[DisplayTimeToLive <Int32?>]`: Sets how long (in seconds) this notification content stays in each platform's notification viewer. For example, when the notification is delivered to a Windows device, the value of this property is passed on to ToastNotification.ExpirationTime, which determines how long the toast notification stays in the user's Windows Action Center.
@@ -18242,24 +18278,23 @@ To create the parameters described below, construct a hash table containing the 
             - `[PlatformTypes <String[]>]`: Use to filter the notification distribution to a specific platform or platforms. Valid values are Windows, iOS, Android and WebPush. By default, all push endpoint types (Windows, iOS, Android and WebPush) are enabled.
         - `[Oauth2PermissionGrants <IMicrosoftGraphOAuth2PermissionGrant[]>]`: 
         - `[OfficeLocation <String>]`: The office location in the user's place of business. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-        - `[OnPremisesDistinguishedName <String>]`: Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only.
-        - `[OnPremisesDomainName <String>]`: Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only.
+        - `[OnPremisesDistinguishedName <String>]`: Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only.
+        - `[OnPremisesDomainName <String>]`: Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only.
         - `[OnPremisesExtensionAttributes <IMicrosoftGraphOnPremisesExtensionAttributes>]`: onPremisesExtensionAttributes
-        - `[OnPremisesImmutableId <String>]`: This property is used to associate an on-premises Active Directory user account to their Azure AD user object. This property must be specified when creating a new user account in the Graph if you're using a federated domain for the user's userPrincipalName (UPN) property. Note: The $ and _ characters can't be used when specifying this property. Supports $filter (eq, ne, not, ge, le, in).
-        - `[OnPremisesLastSyncDateTime <DateTime?>]`: Indicates the last time at which the object was synced with the on-premises directory; for example: '2013-02-16T03:04:54Z'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, in).
+        - `[OnPremisesImmutableId <String>]`: This property associates an on-premises Active Directory user account to their Microsoft Entra user object. This property must be specified when creating a new user account in the Graph if you're using a federated domain for the user's userPrincipalName (UPN) property. Note: The $ and _ characters can't be used when specifying this property. Supports $filter (eq, ne, not, ge, le, in).
+        - `[OnPremisesLastSyncDateTime <DateTime?>]`: Indicates the last time at which the object was synced with the on-premises directory; for example: '2013-02-16T03:04:54Z'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, in).
         - `[OnPremisesProvisioningErrors <IMicrosoftGraphOnPremisesProvisioningError[]>]`: Errors when using Microsoft synchronization product during provisioning.  Supports $filter (eq, not, ge, le).
-        - `[OnPremisesSamAccountName <String>]`: Contains the on-premises sAMAccountName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith).
-        - `[OnPremisesSecurityIdentifier <String>]`: Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Read-only. Supports $filter (eq including on null values).
+        - `[OnPremisesSamAccountName <String>]`: Contains the on-premises sAMAccountName synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith).
+        - `[OnPremisesSecurityIdentifier <String>]`: Contains the on-premises security identifier (SID) for the user synchronized from on-premises to the cloud. Read-only. Supports $filter (eq including on null values).
         - `[OnPremisesSipInfo <IMicrosoftGraphOnPremisesSipInfo>]`: onPremisesSipInfo
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[IsSipEnabled <Boolean?>]`: Indicates whether the user is currently enabled for on-premises Skype for Business.
           - `[SipDeploymentLocation <String>]`: Indicates a fully qualified DNS name of the Microsoft Online Communications Server deployment.
           - `[SipPrimaryAddress <String>]`: Serves as a unique identifier for each user on the on-premises Skype for Business.
-        - `[OnPremisesSyncEnabled <Boolean?>]`: true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise the user isn't being synced and can be managed in Azure Active Directory (Azure AD). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
-        - `[OnPremisesUserPrincipalName <String>]`: Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith).
+        - `[OnPremisesSyncEnabled <Boolean?>]`: true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise, the user isn't being synced and can be managed in Microsoft Entra ID. Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
+        - `[OnPremisesUserPrincipalName <String>]`: Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith).
         - `[Onenote <IMicrosoftGraphOnenote>]`: onenote
-        - `[OnlineMeetings <IMicrosoftGraphOnlineMeeting[]>]`: Information about a meeting, including the URL used to join a meeting, the attendees' list, and the description.
-          - `[Id <String>]`: The unique identifier for an entity. Read-only.
+        - `[OnlineMeetings <IMicrosoftGraphOnlineMeeting[]>]`: Information about a meeting, including the URL used to join a meeting, the attendees list, and the description.
           - `[AllowAttendeeToEnableCamera <Boolean?>]`: Indicates whether attendees can turn on their camera.
           - `[AllowAttendeeToEnableMic <Boolean?>]`: Indicates whether attendees can turn on their microphone.
           - `[AllowMeetingChat <String>]`: meetingChatMode
@@ -18268,8 +18303,7 @@ To create the parameters described below, construct a hash table containing the 
           - `[AllowTeamworkReactions <Boolean?>]`: Indicates if Teams reactions are enabled for the meeting.
           - `[AllowTranscription <Boolean?>]`: Indicates whether transcription is enabled for the meeting.
           - `[AllowedPresenters <String>]`: onlineMeetingPresenters
-          - `[AlternativeRecording <Byte[]>]`: 
-          - `[AnonymizeIdentityForRoles <String[]>]`: Specifies whose identity will be anonymized in the meeting. Possible values are: attendee. The attendee value cannot be removed through a PATCH operation once added.
+          - `[AnonymizeIdentityForRoles <String[]>]`: Specifies whose identity is anonymized in the meeting. Possible values are: attendee. The attendee value can't be removed through a PATCH operation once added.
           - `[AttendanceReports <IMicrosoftGraphMeetingAttendanceReport[]>]`: The attendance reports of an online meeting. Read-only.
             - `[Id <String>]`: The unique identifier for an entity. Read-only.
             - `[AttendanceRecords <IMicrosoftGraphAttendanceRecord[]>]`: List of attendance records of an attendance report. Read-only.
@@ -18286,7 +18320,6 @@ To create the parameters described below, construct a hash table containing the 
             - `[MeetingEndDateTime <DateTime?>]`: UTC time when the meeting ended. Read-only.
             - `[MeetingStartDateTime <DateTime?>]`: UTC time when the meeting started. Read-only.
             - `[TotalParticipantCount <Int32?>]`: Total number of participants. Read-only.
-          - `[AttendeeReport <Byte[]>]`: 
           - `[AudioConferencing <IMicrosoftGraphAudioConferencing>]`: audioConferencing
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[ConferenceId <String>]`: The conference id of the online meeting.
@@ -18295,6 +18328,38 @@ To create the parameters described below, construct a hash table containing the 
             - `[TollFreeNumbers <String[]>]`: List of toll-free numbers that are displayed in the meeting invite.
             - `[TollNumber <String>]`: 
             - `[TollNumbers <String[]>]`: List of toll numbers that are displayed in the meeting invite.
+          - `[ChatInfo <IMicrosoftGraphChatInfo>]`: chatInfo
+            - `[(Any) <Object>]`: This indicates any property can be added to this object.
+            - `[MessageId <String>]`: The unique identifier for a message in a Microsoft Teams channel.
+            - `[ReplyChainMessageId <String>]`: The ID of the reply message.
+            - `[ThreadId <String>]`: The unique identifier for a thread in Microsoft Teams.
+          - `[ChatRestrictions <IMicrosoftGraphChatRestrictions>]`: chatRestrictions
+            - `[(Any) <Object>]`: This indicates any property can be added to this object.
+            - `[AllowTextOnly <Boolean?>]`: 
+          - `[IsEndToEndEncryptionEnabled <Boolean?>]`: 
+          - `[IsEntryExitAnnounced <Boolean?>]`: Indicates whether to announce when callers join or leave.
+          - `[JoinInformation <IMicrosoftGraphItemBody>]`: itemBody
+          - `[JoinMeetingIdSettings <IMicrosoftGraphJoinMeetingIdSettings>]`: joinMeetingIdSettings
+            - `[(Any) <Object>]`: This indicates any property can be added to this object.
+            - `[IsPasscodeRequired <Boolean?>]`: Indicates whether a passcode is required to join a meeting when using joinMeetingId. Optional.
+            - `[JoinMeetingId <String>]`: The meeting ID to be used to join a meeting. Optional. Read-only.
+            - `[Passcode <String>]`: The passcode to join a meeting.  Optional. Read-only.
+          - `[JoinWebUrl <String>]`: The join URL of the online meeting. Read-only.
+          - `[LobbyBypassSettings <IMicrosoftGraphLobbyBypassSettings>]`: lobbyBypassSettings
+            - `[(Any) <Object>]`: This indicates any property can be added to this object.
+            - `[IsDialInBypassEnabled <Boolean?>]`: Specifies whether or not to always let dial-in callers bypass the lobby. Optional.
+            - `[Scope <String>]`: lobbyBypassScope
+          - `[RecordAutomatically <Boolean?>]`: Indicates whether to record the meeting automatically.
+          - `[ShareMeetingChatHistoryDefault <String>]`: meetingChatHistoryDefaultMode
+          - `[Subject <String>]`: The subject of the online meeting.
+          - `[VideoTeleconferenceId <String>]`: The video teleconferencing ID. Read-only.
+          - `[WatermarkProtection <IMicrosoftGraphWatermarkProtectionValues>]`: watermarkProtectionValues
+            - `[(Any) <Object>]`: This indicates any property can be added to this object.
+            - `[IsEnabledForContentSharing <Boolean?>]`: Indicates whether to apply a watermark to any shared content.
+            - `[IsEnabledForVideo <Boolean?>]`: Indicates whether to apply a watermark to everyone's video feed.
+          - `[Id <String>]`: The unique identifier for an entity. Read-only.
+          - `[AlternativeRecording <Byte[]>]`: 
+          - `[AttendeeReport <Byte[]>]`: 
           - `[BroadcastRecording <Byte[]>]`: 
           - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings>]`: broadcastMeetingSettings
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -18309,32 +18374,11 @@ To create the parameters described below, construct a hash table containing the 
             - `[IsRecordingEnabled <Boolean?>]`: Indicates whether recording is enabled for this Teams live event. Default value is false.
             - `[IsVideoOnDemandEnabled <Boolean?>]`: Indicates whether video on demand is enabled for this Teams live event. Default value is false.
           - `[Capabilities <String[]>]`: 
-          - `[ChatInfo <IMicrosoftGraphChatInfo>]`: chatInfo
-            - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[MessageId <String>]`: The unique identifier for a message in a Microsoft Teams channel.
-            - `[ReplyChainMessageId <String>]`: The ID of the reply message.
-            - `[ThreadId <String>]`: The unique identifier for a thread in Microsoft Teams.
-          - `[ChatRestrictions <IMicrosoftGraphChatRestrictions>]`: chatRestrictions
-            - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[AllowTextOnly <Boolean?>]`: 
           - `[CreationDateTime <DateTime?>]`: The meeting creation time in UTC. Read-only.
           - `[EndDateTime <DateTime?>]`: The meeting end time in UTC.
           - `[ExternalId <String>]`: The external ID. A custom ID. Optional.
           - `[IsBroadcast <Boolean?>]`: 
-          - `[IsEndToEndEncryptionEnabled <Boolean?>]`: 
-          - `[IsEntryExitAnnounced <Boolean?>]`: Indicates whether to announce when callers join or leave.
-          - `[JoinInformation <IMicrosoftGraphItemBody>]`: itemBody
-          - `[JoinMeetingIdSettings <IMicrosoftGraphJoinMeetingIdSettings>]`: joinMeetingIdSettings
-            - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[IsPasscodeRequired <Boolean?>]`: Indicates whether a passcode is required to join a meeting when using joinMeetingId. Optional.
-            - `[JoinMeetingId <String>]`: The meeting ID to be used to join a meeting. Optional. Read-only.
-            - `[Passcode <String>]`: The passcode to join a meeting.  Optional. Read-only.
           - `[JoinUrl <String>]`: 
-          - `[JoinWebUrl <String>]`: The join URL of the online meeting. Read-only.
-          - `[LobbyBypassSettings <IMicrosoftGraphLobbyBypassSettings>]`: lobbyBypassSettings
-            - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[IsDialInBypassEnabled <Boolean?>]`: Specifies whether or not to always let dial-in callers bypass the lobby. Optional.
-            - `[Scope <String>]`: lobbyBypassScope
           - `[MeetingAttendanceReport <IMicrosoftGraphMeetingAttendanceReport>]`: meetingAttendanceReport
           - `[Participants <IMicrosoftGraphMeetingParticipants>]`: meetingParticipants
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -18345,12 +18389,11 @@ To create the parameters described below, construct a hash table containing the 
             - `[Contributors <IMicrosoftGraphMeetingParticipantInfo[]>]`: 
             - `[Organizer <IMicrosoftGraphMeetingParticipantInfo>]`: meetingParticipantInfo
             - `[Producers <IMicrosoftGraphMeetingParticipantInfo[]>]`: 
-          - `[RecordAutomatically <Boolean?>]`: Indicates whether to record the meeting automatically.
           - `[Recording <Byte[]>]`: 
           - `[Recordings <IMicrosoftGraphCallRecording[]>]`: The recordings of an online meeting. Read-only.
             - `[Id <String>]`: The unique identifier for an entity. Read-only.
             - `[Content <Byte[]>]`: The content of the recording. Read-only.
-            - `[CreatedDateTime <DateTime?>]`: Date and time at which the recording was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+            - `[CreatedDateTime <DateTime?>]`: Date and time at which the recording was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
             - `[MeetingId <String>]`: The unique identifier of the onlineMeeting related to this recording. Read-only.
             - `[MeetingOrganizer <IMicrosoftGraphIdentitySet>]`: identitySet
             - `[MeetingOrganizerId <String>]`: The unique identifier of the organizer of the onlineMeeting related to this recording. Read-only.
@@ -18377,9 +18420,7 @@ To create the parameters described below, construct a hash table containing the 
               - `[DisplayName <String>]`: Display name of the speaker.
             - `[StartDateTime <DateTime?>]`: The meeting start time in UTC.
             - `[Subject <String>]`: The subject of the meeting.
-          - `[ShareMeetingChatHistoryDefault <String>]`: meetingChatHistoryDefaultMode
           - `[StartDateTime <DateTime?>]`: The meeting start time in UTC.
-          - `[Subject <String>]`: The subject of the online meeting.
           - `[Transcripts <IMicrosoftGraphCallTranscript[]>]`: The transcripts of an online meeting. Read-only.
             - `[Id <String>]`: The unique identifier for an entity. Read-only.
             - `[Content <Byte[]>]`: The content of the transcript. Read-only.
@@ -18389,11 +18430,6 @@ To create the parameters described below, construct a hash table containing the 
             - `[MeetingOrganizerId <String>]`: The unique identifier of the organizer of the onlineMeeting related to this transcript. Read-only.
             - `[MetadataContent <Byte[]>]`: The time-aligned metadata of the utterances in the transcript. Read-only.
             - `[TranscriptContentUrl <String>]`: The URL which can be used to access the content of the transcript. Read-only.
-          - `[VideoTeleconferenceId <String>]`: The video teleconferencing ID. Read-only.
-          - `[WatermarkProtection <IMicrosoftGraphWatermarkProtectionValues>]`: watermarkProtectionValues
-            - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[IsEnabledForContentSharing <Boolean?>]`: Indicates whether to apply a watermark to any shared content.
-            - `[IsEnabledForVideo <Boolean?>]`: Indicates whether to apply a watermark to everyone's video feed.
         - `[OtherMails <String[]>]`: A list of additional email addresses for the user; for example: ['bob@contoso.com', 'Robert@fabrikam.com'].NOTE: This property can't contain accent characters.Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).
         - `[Outlook <IMicrosoftGraphOutlookUser>]`: outlookUser
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -18442,16 +18478,16 @@ To create the parameters described below, construct a hash table containing the 
             - `[Name <String>]`: The name of the task group.
             - `[TaskFolders <IMicrosoftGraphOutlookTaskFolder[]>]`: The collection of task folders in the task group. Read-only. Nullable.
           - `[Tasks <IMicrosoftGraphOutlookTask[]>]`: 
-        - `[OwnedDevices <IMicrosoftGraphDirectoryObject[]>]`: Devices that are owned by the user. Read-only. Nullable. Supports $expand.
-        - `[OwnedObjects <IMicrosoftGraphDirectoryObject[]>]`: Directory objects that are owned by the user. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
-        - `[PasswordPolicies <String>]`: Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two may be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. For more information on the default password policies, see Azure AD password policies. Supports $filter (ne, not, and eq on null values).
+        - `[OwnedDevices <IMicrosoftGraphDirectoryObject[]>]`: Devices owned by the user. Read-only. Nullable. Supports $expand.
+        - `[OwnedObjects <IMicrosoftGraphDirectoryObject[]>]`: Directory objects owned by the user. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
+        - `[PasswordPolicies <String>]`: Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two may be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. For more information on the default password policies, see Microsoft Entra password policies. Supports $filter (ne, not, and eq on null values).
         - `[PasswordProfile <IMicrosoftGraphPasswordProfile>]`: passwordProfile
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[ForceChangePasswordNextSignIn <Boolean?>]`: true if the user must change her password on the next login; otherwise false. If not set, default is false.
           - `[ForceChangePasswordNextSignInWithMfa <Boolean?>]`: If true, at next sign-in, the user must perform a multi-factor authentication (MFA) before being forced to change their password. The behavior is identical to forceChangePasswordNextSignIn except that the user is required to first perform a multi-factor authentication before password change. After a password change, this property will be automatically reset to false. If not set, default is false.
           - `[Password <String>]`: The password for the user. This property is required when a user is created. It can be updated, but the user will be required to change the password on the next login. The password must satisfy minimum requirements as specified by the user's passwordPolicies property. By default, a strong password is required.
-        - `[PastProjects <String[]>]`: A list for the user to enumerate their past projects. Returned only on $select.
-        - `[PendingAccessReviewInstances <IMicrosoftGraphAccessReviewInstance[]>]`: Navigation property to get list of access reviews pending approval by reviewer.
+        - `[PastProjects <String[]>]`: A list for users to enumerate their past projects. Returned only on $select.
+        - `[PendingAccessReviewInstances <IMicrosoftGraphAccessReviewInstance[]>]`: Navigation property to get a list of access reviews pending approval by the reviewer.
           - `[Id <String>]`: The unique identifier for an entity. Read-only.
           - `[ContactedReviewers <IMicrosoftGraphAccessReviewReviewer[]>]`: Returns the collection of reviewers who were contacted to complete this review. While the reviewers and fallbackReviewers properties of the accessReviewScheduleDefinition might specify group owners or managers as reviewers, contactedReviewers returns their individual identities. Supports $select. Read-only.
             - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -18463,8 +18499,8 @@ To create the parameters described below, construct a hash table containing the 
             - `[AccessReviewId <String>]`: The identifier of the accessReviewInstance parent. Supports $select. Read-only.
             - `[AppliedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-              - `[Id <String>]`: Unique identifier for the identity.
+              - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+              - `[Id <String>]`: The identifier of the identity. This property is read-only.
               - `[IPAddress <String>]`: Indicates the client IP address used by user performing the activity (audit log only).
               - `[UserPrincipalName <String>]`: The userPrincipalName attribute of the user.
             - `[AppliedDateTime <DateTime?>]`: The timestamp when the approval decision was applied. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Supports $select. Read-only.
@@ -18525,7 +18561,7 @@ To create the parameters described below, construct a hash table containing the 
               - `[JustificationRequiredOnApproval <Boolean?>]`: Indicates whether reviewers are required to provide justification with their decision. Default value is false.
               - `[MailNotificationsEnabled <Boolean?>]`: Indicates whether emails are enabled or disabled. Default value is false.
               - `[RecommendationInsightSettings <IMicrosoftGraphAccessReviewRecommendationInsightSetting[]>]`: Optional. Describes the types of insights that aid reviewers to make access review decisions. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its recommendationInsightSettings setting will be used instead of the value of this property.
-              - `[RecommendationLookBackDuration <TimeSpan?>]`: Optional field. Indicates the period of inactivity (with respect to the start date of the review instance) that recommendations will be configured from. The recommendation will be to deny if the user is inactive during the look-back duration. For reviews of groups and Azure AD roles, any duration is accepted. For reviews of applications, 30 days is the maximum duration. If not specified, the duration is 30 days. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its recommendationLookBackDuration setting will be used instead of the value of this property.
+              - `[RecommendationLookBackDuration <TimeSpan?>]`: Optional field. Indicates the period of inactivity (with respect to the start date of the review instance) that recommendations will be configured from. The recommendation will be to deny if the user is inactive during the look-back duration. For reviews of groups and Microsoft Entra roles, any duration is accepted. For reviews of applications, 30 days is the maximum duration. If not specified, the duration is 30 days. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its recommendationLookBackDuration setting will be used instead of the value of this property.
               - `[RecommendationsEnabled <Boolean?>]`: Indicates whether decision recommendations are enabled or disabled. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its recommendationsEnabled setting will be used instead of the value of this property.
               - `[Recurrence <IMicrosoftGraphPatternedRecurrence>]`: patternedRecurrence
               - `[ReminderNotificationsEnabled <Boolean?>]`: Indicates whether reminders are enabled or disabled. Default value is false.
@@ -18533,9 +18569,9 @@ To create the parameters described below, construct a hash table containing the 
               - `[DecisionsThatWillMoveToNextStage <String[]>]`: Indicate which decisions will go to the next stage. Can be a subset of Approve, Deny, Recommendation, or NotReviewed. If not provided, all decisions will go to the next stage. Optional.
               - `[DependsOn <String[]>]`: Defines the sequential or parallel order of the stages and depends on the stageId. Only sequential stages are currently supported. For example, if stageId is 2, then dependsOn must be 1. If stageId is 1, don't specify dependsOn. Required if stageId isn't 1.
               - `[DurationInDays <Int32?>]`: The duration of the stage. Required.  NOTE: The cumulative value of this property across all stages  1. Will override the instanceDurationInDays setting on the accessReviewScheduleDefinition object. 2. Can't exceed the length of one recurrence. That is, if the review recurs weekly, the cumulative durationInDays can't exceed 7.
-              - `[FallbackReviewers <IMicrosoftGraphAccessReviewReviewerScope[]>]`: If provided, the fallback reviewers are asked to complete a review if the primary reviewers don't exist. For example, if managers are selected as reviewers and a principal under review doesn't have a manager in Azure AD, the fallback reviewers are asked to review that principal. NOTE: The value of this property overrides the corresponding setting on the accessReviewScheduleDefinition object.
+              - `[FallbackReviewers <IMicrosoftGraphAccessReviewReviewerScope[]>]`: If provided, the fallback reviewers are asked to complete a review if the primary reviewers don't exist. For example, if managers are selected as reviewers and a principal under review doesn't have a manager in Microsoft Entra ID, the fallback reviewers are asked to review that principal. NOTE: The value of this property overrides the corresponding setting on the accessReviewScheduleDefinition object.
               - `[RecommendationInsightSettings <IMicrosoftGraphAccessReviewRecommendationInsightSetting[]>]`: 
-              - `[RecommendationLookBackDuration <TimeSpan?>]`: Optional field. Indicates the time period of inactivity (with respect to the start date of the review instance) from which that recommendations will be configured. The recommendation is to deny if the user is inactive during the look back duration. For reviews of groups and Azure AD roles, any duration is accepted. For reviews of applications, 30 days is the maximum duration. If not specified, the duration is 30 days. NOTE: The value of this property overrides the corresponding setting on the accessReviewScheduleDefinition object.
+              - `[RecommendationLookBackDuration <TimeSpan?>]`: Optional field. Indicates the time period of inactivity (with respect to the start date of the review instance) from which that recommendations will be configured. The recommendation is to deny if the user is inactive during the look back duration. For reviews of groups and Microsoft Entra roles, any duration is accepted. For reviews of applications, 30 days is the maximum duration. If not specified, the duration is 30 days. NOTE: The value of this property overrides the corresponding setting on the accessReviewScheduleDefinition object.
               - `[RecommendationsEnabled <Boolean?>]`: Indicates whether showing recommendations to reviewers is enabled. Required. NOTE: The value of this property overrides the corresponding setting on the accessReviewScheduleDefinition object.
               - `[Reviewers <IMicrosoftGraphAccessReviewReviewerScope[]>]`: Defines who the reviewers are. If none is specified, the review is a self-review (users review their own access).  For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API. NOTE: The value of this property overrides the corresponding setting on the accessReviewScheduleDefinition.
               - `[StageId <String>]`: Unique identifier of the accessReviewStageSettings. The stageId is used in dependsOn property to indicate the stage relationship. Required.
@@ -18551,13 +18587,13 @@ To create the parameters described below, construct a hash table containing the 
             - `[Id <String>]`: The unique identifier for an entity. Read-only.
             - `[Decisions <IMicrosoftGraphAccessReviewInstanceDecisionItem[]>]`: Each user reviewed in an accessReviewStage has a decision item representing if they were approved, denied, or not yet reviewed.
             - `[EndDateTime <DateTime?>]`: DateTime when review stage is scheduled to end. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. This property is the cumulative total of the durationInDays for all stages. Read-only.
-            - `[FallbackReviewers <IMicrosoftGraphAccessReviewReviewerScope[]>]`: This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user's manager does not exist.
+            - `[FallbackReviewers <IMicrosoftGraphAccessReviewReviewerScope[]>]`: This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers are notified to take action if no users are found from the list of reviewers specified. This can occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user's manager does not exist.
             - `[Reviewers <IMicrosoftGraphAccessReviewReviewerScope[]>]`: This collection of access review scopes is used to define who the reviewers are. For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API.
             - `[StartDateTime <DateTime?>]`: DateTime when review stage is scheduled to start. May be in the future. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
             - `[Status <String>]`: Specifies the status of an accessReviewStage. Possible values: Initializing, NotStarted, Starting, InProgress, Completing, Completed, AutoReviewing, and AutoReviewed. Supports $orderby, and $filter (eq only). Read-only.
           - `[StartDateTime <DateTime?>]`: DateTime when review instance is scheduled to start. May be in the future. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $select. Read-only.
           - `[Status <String>]`: Specifies the status of an accessReview. Possible values: Initializing, NotStarted, Starting, InProgress, Completing, Completed, AutoReviewing, and AutoReviewed. Supports $select, $orderby, and $filter (eq only). Read-only.
-        - `[People <IMicrosoftGraphPerson[]>]`: Read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user's communication, collaboration and business relationships. A person is an aggregation of information from across mail, contacts and social networks.
+        - `[People <IMicrosoftGraphPerson[]>]`: Read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user's communication, collaboration, and business relationships. A person aggregates information from mail, contacts, and social networks.
           - `[Id <String>]`: The unique identifier for an entity. Read-only.
           - `[Birthday <String>]`: The person's birthday.
           - `[CompanyName <String>]`: The name of the person's company.
@@ -18584,7 +18620,7 @@ To create the parameters described below, construct a hash table containing the 
           - `[YomiCompany <String>]`: The phonetic Japanese name of the person's company.
         - `[PermissionGrants <IMicrosoftGraphResourceSpecificPermissionGrant[]>]`: List all resource-specific permission grants of a user.
         - `[Photo <IMicrosoftGraphProfilePhoto>]`: profilePhoto
-        - `[Photos <IMicrosoftGraphProfilePhoto[]>]`: 
+        - `[Photos <IMicrosoftGraphProfilePhoto[]>]`: The collection of the user's profile photos in different sizes. Read-only.
         - `[Planner <IMicrosoftGraphPlannerUser>]`: plannerUser
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -18601,7 +18637,7 @@ To create the parameters described below, construct a hash table containing the 
           - `[Tasks <IMicrosoftGraphPlannerTask[]>]`: Read-only. Nullable. Returns the plannerTasks assigned to the user.
         - `[PostalCode <String>]`: The postal code for the user's postal address. The postal code is specific to the user's country/region. In the United States of America, this attribute contains the ZIP code. Maximum length is 40 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
         - `[PreferredDataLocation <String>]`: The preferred data location for the user. For more information, see OneDrive Online Multi-Geo.
-        - `[PreferredLanguage <String>]`: The preferred language for the user. The preferred language format is based on RFC 4646. The name is a combination of an ISO 639 two-letter lowercase culture code associated with the language, and an ISO 3166 two-letter uppercase subculture code associated with the country or region. Example: 'en-US', or 'es-ES'. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+        - `[PreferredLanguage <String>]`: The preferred language for the user. The preferred language format is based on RFC 4646. The name combines an ISO 639 two-letter lowercase culture code associated with the language and an ISO 3166 two-letter uppercase subculture code associated with the country or region. Example: 'en-US', or 'es-ES'. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
         - `[PreferredName <String>]`: The preferred name for the user. Not Supported. This attribute returns an empty string.Returned only on $select.
         - `[Presence <IMicrosoftGraphPresence>]`: presence
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -18775,9 +18811,9 @@ To create the parameters described below, construct a hash table containing the 
                   - `[Id <String>]`: The unique identifier for an entity. Read-only.
                   - `[CreatedBy <IMicrosoftGraphAppIdentity>]`: appIdentity
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                    - `[AppId <String>]`: Refers to the unique identifier representing Application Id in the Azure Active Directory.
+                    - `[AppId <String>]`: Refers to the unique identifier representing Application Id in the Microsoft Entra ID.
                     - `[DisplayName <String>]`: Refers to the application name displayed in the Microsoft Entra admin center.
-                    - `[ServicePrincipalId <String>]`: Refers to the unique identifier indicating Service Principal Id in Azure Active Directory for the corresponding App.
+                    - `[ServicePrincipalId <String>]`: Refers to the unique identifier indicating Service Principal Id in Microsoft Entra ID for the corresponding App.
                     - `[ServicePrincipalName <String>]`: Refers to the Service Principal Name is the Application name in the tenant.
                   - `[DisplayName <String>]`: The name of the printTaskDefinition.
                   - `[Tasks <IMicrosoftGraphPrintTask[]>]`: A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
@@ -19112,7 +19148,8 @@ To create the parameters described below, construct a hash table containing the 
             - `[Colleagues <IMicrosoftGraphRelatedPerson[]>]`: Colleagues that are associated with this position.
               - `[DisplayName <String>]`: Name of the person.
               - `[Relationship <String>]`: personRelationship
-              - `[UserPrincipalName <String>]`: Email address or reference to person within organization.
+              - `[UserId <String>]`: The user's directory object ID (Microsoft Entra ID or CID).
+              - `[UserPrincipalName <String>]`: Email address or reference to person within the organization.
             - `[Detail <IMicrosoftGraphPositionDetail>]`: positionDetail
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[Company <IMicrosoftGraphCompanyDetail>]`: companyDetail
@@ -19126,9 +19163,11 @@ To create the parameters described below, construct a hash table containing the 
               - `[Description <String>]`: Description of the position in question.
               - `[EndMonthYear <DateTime?>]`: When the position ended.
               - `[JobTitle <String>]`: The title held when in that position.
+              - `[Layer <Int32?>]`: The place where the employee is within the organizational hierarchy.
+              - `[Level <String>]`: The employee’s experience or management level.
               - `[Role <String>]`: The role the position entailed.
               - `[StartMonthYear <DateTime?>]`: The start month and year of the position.
-              - `[Summary <String>]`: Short summary of the position.
+              - `[Summary <String>]`: summary of the position.
             - `[IsCurrent <Boolean?>]`: Denotes whether or not the position is current.
             - `[Manager <IMicrosoftGraphRelatedPerson>]`: relatedPerson
           - `[Projects <IMicrosoftGraphProjectParticipation[]>]`: Represents detailed information about projects associated with a user.
@@ -19219,8 +19258,8 @@ To create the parameters described below, construct a hash table containing the 
           - `[CapabilityStatus <String>]`: For example, 'Enabled'.
           - `[ProvisioningStatus <String>]`: For example, 'Success'.
           - `[Service <String>]`: The name of the service; for example, 'AccessControlS2S'
-        - `[ProxyAddresses <String[]>]`: For example: ['SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com']. Changes to the mail property will also update this collection to include the value as an SMTP address. For more information, see mail and proxyAddresses properties. The proxy address prefixed with SMTP (capitalized) is the primary proxy address while those prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of 10 unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Supports $filter (eq, not, ge, le, startsWith, endsWith, /$count eq 0, /$count ne 0).
-        - `[RefreshTokensValidFromDateTime <DateTime?>]`: Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application needs to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use invalidateAllRefreshTokens to reset.
+        - `[ProxyAddresses <String[]>]`: For example: ['SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com']. Changes to the mail property also update this collection to include the value as an SMTP address. For more information, see mail and proxyAddresses properties. The proxy address prefixed with SMTP (capitalized) is the primary proxy address, while the ones prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of 10 unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Supports $filter (eq, not, ge, le, startsWith, endsWith, /$count eq 0, /$count ne 0).
+        - `[RefreshTokensValidFromDateTime <DateTime?>]`: Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If it happens, the application must acquire a new refresh token by requesting the authorized endpoint. Read-only. Use invalidateAllRefreshTokens to reset.
         - `[RegisteredDevices <IMicrosoftGraphDirectoryObject[]>]`: Devices that are registered for the user. Read-only. Nullable. Supports $expand and returns up to 100 objects.
         - `[Responsibilities <String[]>]`: A list for the user to enumerate their responsibilities. Returned only on $select.
         - `[Schools <String[]>]`: A list for the user to enumerate the schools they have attended. Returned only on $select.
@@ -19255,7 +19294,7 @@ To create the parameters described below, construct a hash table containing the 
               - `[Sensitivity <Int32?>]`: The sensitivity value of the label, where lower is less sensitive.
               - `[Tooltip <String>]`: The tooltip that should be displayed for the label in a UI.
         - `[SecurityIdentifier <String>]`: Security identifier (SID) of the user, used in Windows scenarios. Read-only. Returned by default. Supports $select and $filter (eq, not, ge, le, startsWith).
-        - `[ServiceProvisioningErrors <IMicrosoftGraphServiceProvisioningError[]>]`: Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.  Supports $filter (eq, not, for isResolved and serviceInstance).
+        - `[ServiceProvisioningErrors <IMicrosoftGraphServiceProvisioningError[]>]`: Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
         - `[Settings <IMicrosoftGraphUserSettings>]`: userSettings
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -19307,13 +19346,13 @@ To create the parameters described below, construct a hash table containing the 
         - `[ShowInAddressList <Boolean?>]`: Do not use in Microsoft Graph. Manage this property through the Microsoft 365 admin center instead. Represents whether the user should be included in the Outlook global address list. See Known issue.
         - `[SignInActivity <IMicrosoftGraphSignInActivity>]`: signInActivity
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[LastNonInteractiveSignInDateTime <DateTime?>]`: The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client attempted to sign into the directory the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: '2014-01-01T00:00:00Z'. Azure AD maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.
+          - `[LastNonInteractiveSignInDateTime <DateTime?>]`: The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client attempted to sign into the directory the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: '2014-01-01T00:00:00Z'. Microsoft Entra ID maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.
           - `[LastNonInteractiveSignInRequestId <String>]`: Request identifier of the last non-interactive sign-in performed by this user.
-          - `[LastSignInDateTime <DateTime?>]`: The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user attempted to sign into the directory the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: '2014-01-01T00:00:00Z'. Azure AD maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.
+          - `[LastSignInDateTime <DateTime?>]`: The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user attempted to sign into the directory the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: '2014-01-01T00:00:00Z'. Microsoft Entra ID maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.
           - `[LastSignInRequestId <String>]`: Request identifier of the last interactive sign-in performed by this user.
-        - `[SignInSessionsValidFromDateTime <DateTime?>]`: Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application needs to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use revokeSignInSessions to reset.
+        - `[SignInSessionsValidFromDateTime <DateTime?>]`: Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application must acquire a new refresh token by requesting the authorized endpoint. Read-only. Use revokeSignInSessions to reset.
         - `[Skills <String[]>]`: A list for the user to enumerate their skills. Returned only on $select.
-        - `[Sponsors <IMicrosoftGraphDirectoryObject[]>]`: The users and groups that are responsible for this guest user's privileges in the tenant and keep the guest user's information and access updated. (HTTP Methods: GET, POST, DELETE.). Supports $expand.
+        - `[Sponsors <IMicrosoftGraphDirectoryObject[]>]`: The users and groups responsible for this guest user's privileges in the tenant and keep the guest user's information and access updated. (HTTP Methods: GET, POST, DELETE.). Supports $expand.
         - `[State <String>]`: The state or province in the user's address. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
         - `[StreetAddress <String>]`: The street address of the user's place of business. Maximum length is 1024 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
         - `[Surname <String>]`: The user's surname (family name or last name). Maximum length is 64 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
@@ -19323,7 +19362,7 @@ To create the parameters described below, construct a hash table containing the 
           - `[AssociatedTeams <IMicrosoftGraphAssociatedTeamInfo[]>]`: The list of associatedTeamInfo objects that a user is associated with.
             - `[DisplayName <String>]`: The name of the team.
             - `[Team <IMicrosoftGraphTeam>]`: team
-            - `[TenantId <String>]`: The ID of the Azure Active Directory tenant.
+            - `[TenantId <String>]`: The ID of the Microsoft Entra tenant.
             - `[Id <String>]`: The unique identifier for an entity. Read-only.
           - `[InstalledApps <IMicrosoftGraphUserScopeTeamsAppInstallation[]>]`: The apps installed in the personal scope of this user.
             - `[ConsentedPermissionSet <IMicrosoftGraphTeamsAppPermissionSet>]`: teamsAppPermissionSet
@@ -19382,12 +19421,12 @@ To create the parameters described below, construct a hash table containing the 
               - `[Status <String>]`: taskStatus
               - `[Title <String>]`: A brief description of the task.
             - `[WellknownListName <String>]`: wellknownListName
-        - `[TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>]`: The groups, including nested groups, and directory roles that a user is a member of. Nullable.
+        - `[TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>]`: The groups, including nested groups and directory roles that a user is a member of. Nullable.
         - `[TransitiveReports <IMicrosoftGraphDirectoryObject[]>]`: The transitive reports for a user. Read-only.
-        - `[UsageLocation <String>]`: A two letter country code (ISO standard 3166). Required for users that are assigned licenses due to legal requirement to check for availability of services in countries.  Examples include: US, JP, and GB. Not nullable. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+        - `[UsageLocation <String>]`: A two-letter country code (ISO standard 3166). Required for users that are assigned licenses due to legal requirements to check for availability of services in countries.  Examples include: US, JP, and GB. Not nullable. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
         - `[UsageRights <IMicrosoftGraphUsageRight[]>]`: Represents the usage rights a user has been granted.
-        - `[UserPrincipalName <String>]`: The user principal name (UPN) of the user. The UPN is an Internet-style sign-in name for the user based on the Internet standard RFC 822. By convention, this should map to the user's email name. The general format is alias@domain, where domain must be present in the tenant's collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property can't contain accent characters. Only the following characters are allowed A - Z, a - z, 0 - 9, ' . - _ ! # ^ ~. For the complete list of allowed characters, see username policies. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith) and $orderby.
-        - `[UserType <String>]`: A String value that can be used to classify user types in your directory, such as Member and Guest. Supports $filter (eq, ne, not, in, and eq on null values). NOTE: For more information about the permissions for member and guest users, see What are the default user permissions in Azure Active Directory?
+        - `[UserPrincipalName <String>]`: The user principal name (UPN) of the user. The UPN is an Internet-style sign-in name for the user based on the Internet standard RFC 822. By convention, this should map to the user's email name. The general format is alias@domain, where the domain must be present in the tenant's verified domain collection. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property can't contain accent characters. Only the following characters are allowed A - Z, a - z, 0 - 9, ' . - _ ! # ^ ~. For the complete list of allowed characters, see username policies. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith) and $orderby.
+        - `[UserType <String>]`: A String value that can be used to classify user types in your directory, such as Member and Guest. Supports $filter (eq, ne, not, in, and eq on null values). NOTE: For more information about the permissions for member and guest users, see What are the default user permissions in Microsoft Entra ID?
         - `[VirtualEvents <IMicrosoftGraphUserVirtualEventsRoot>]`: userVirtualEventsRoot
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -19405,7 +19444,7 @@ To create the parameters described below, construct a hash table containing the 
               - `[Guest <IMicrosoftGraphIdentity>]`: identity
               - `[OnPremises <IMicrosoftGraphIdentity>]`: identity
               - `[Phone <IMicrosoftGraphIdentity>]`: identity
-            - `[Description <String>]`: Description of the virtual event.
+            - `[Description <IMicrosoftGraphItemBody>]`: itemBody
             - `[DisplayName <String>]`: Display name of the virtual event
             - `[EndDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
             - `[Presenters <IMicrosoftGraphVirtualEventPresenter[]>]`: Presenters' information of the virtual event.
@@ -19413,8 +19452,8 @@ To create the parameters described below, construct a hash table containing the 
               - `[Email <String>]`: Email address of the presenter.
               - `[Identity <IMicrosoftGraphCommunicationsUserIdentity>]`: communicationsUserIdentity
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-                - `[Id <String>]`: Unique identifier for the identity.
+                - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+                - `[Id <String>]`: The identifier of the identity. This property is read-only.
                 - `[TenantId <String>]`: The user's tenant ID.
               - `[PresenterDetails <IMicrosoftGraphVirtualEventPresenterDetails>]`: virtualEventPresenterDetails
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -19424,81 +19463,69 @@ To create the parameters described below, construct a hash table containing the 
                 - `[LinkedInProfileWebUrl <String>]`: The presenter's LinkedIn profile URL.
                 - `[PersonalSiteWebUrl <String>]`: The presenter's personal website URL.
                 - `[TwitterProfileWebUrl <String>]`: The presenter's Twitter profile URL.
-            - `[Sessions <IMicrosoftGraphVirtualEventSession[]>]`: Sessions of the virtual event.
-              - `[AllowAttendeeToEnableCamera <Boolean?>]`: Indicates whether attendees can turn on their camera.
-              - `[AllowAttendeeToEnableMic <Boolean?>]`: Indicates whether attendees can turn on their microphone.
-              - `[AllowMeetingChat <String>]`: meetingChatMode
-              - `[AllowParticipantsToChangeName <Boolean?>]`: Specifies if participants are allowed to rename themselves in an instance of the meeting.
-              - `[AllowRecording <Boolean?>]`: Indicates whether recording is enabled for the meeting.
-              - `[AllowTeamworkReactions <Boolean?>]`: Indicates if Teams reactions are enabled for the meeting.
-              - `[AllowTranscription <Boolean?>]`: Indicates whether transcription is enabled for the meeting.
-              - `[AllowedPresenters <String>]`: onlineMeetingPresenters
-              - `[AlternativeRecording <Byte[]>]`: 
-              - `[AnonymizeIdentityForRoles <String[]>]`: Specifies whose identity will be anonymized in the meeting. Possible values are: attendee. The attendee value cannot be removed through a PATCH operation once added.
-              - `[AttendanceReports <IMicrosoftGraphMeetingAttendanceReport[]>]`: The attendance reports of an online meeting. Read-only.
-              - `[AttendeeReport <Byte[]>]`: 
-              - `[AudioConferencing <IMicrosoftGraphAudioConferencing>]`: audioConferencing
-              - `[BroadcastRecording <Byte[]>]`: 
-              - `[BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings>]`: broadcastMeetingSettings
-              - `[Capabilities <String[]>]`: 
-              - `[ChatInfo <IMicrosoftGraphChatInfo>]`: chatInfo
-              - `[ChatRestrictions <IMicrosoftGraphChatRestrictions>]`: chatRestrictions
-              - `[CreationDateTime <DateTime?>]`: The meeting creation time in UTC. Read-only.
-              - `[EndDateTime <DateTime?>]`: The meeting end time in UTC.
-              - `[ExternalId <String>]`: The external ID. A custom ID. Optional.
-              - `[IsBroadcast <Boolean?>]`: 
-              - `[IsEndToEndEncryptionEnabled <Boolean?>]`: 
-              - `[IsEntryExitAnnounced <Boolean?>]`: Indicates whether to announce when callers join or leave.
-              - `[JoinInformation <IMicrosoftGraphItemBody>]`: itemBody
-              - `[JoinMeetingIdSettings <IMicrosoftGraphJoinMeetingIdSettings>]`: joinMeetingIdSettings
-              - `[JoinUrl <String>]`: 
-              - `[JoinWebUrl <String>]`: The join URL of the online meeting. Read-only.
-              - `[LobbyBypassSettings <IMicrosoftGraphLobbyBypassSettings>]`: lobbyBypassSettings
-              - `[MeetingAttendanceReport <IMicrosoftGraphMeetingAttendanceReport>]`: meetingAttendanceReport
-              - `[Participants <IMicrosoftGraphMeetingParticipants>]`: meetingParticipants
-              - `[RecordAutomatically <Boolean?>]`: Indicates whether to record the meeting automatically.
-              - `[Recording <Byte[]>]`: 
-              - `[Recordings <IMicrosoftGraphCallRecording[]>]`: The recordings of an online meeting. Read-only.
-              - `[Registration <IMicrosoftGraphMeetingRegistration>]`: meetingRegistration
-              - `[ShareMeetingChatHistoryDefault <String>]`: meetingChatHistoryDefaultMode
-              - `[StartDateTime <DateTime?>]`: The meeting start time in UTC.
-              - `[Subject <String>]`: The subject of the online meeting.
-              - `[Transcripts <IMicrosoftGraphCallTranscript[]>]`: The transcripts of an online meeting. Read-only.
-              - `[VideoTeleconferenceId <String>]`: The video teleconferencing ID. Read-only.
-              - `[WatermarkProtection <IMicrosoftGraphWatermarkProtectionValues>]`: watermarkProtectionValues
-              - `[Id <String>]`: The unique identifier for an entity. Read-only.
-              - `[Registrations <IMicrosoftGraphVirtualEventRegistration[]>]`: Registration records of this virtual event session.
+              - `[ProfilePhoto <Byte[]>]`: 
+              - `[Sessions <IMicrosoftGraphVirtualEventSession[]>]`: 
+                - `[AllowAttendeeToEnableCamera <Boolean?>]`: Indicates whether attendees can turn on their camera.
+                - `[AllowAttendeeToEnableMic <Boolean?>]`: Indicates whether attendees can turn on their microphone.
+                - `[AllowMeetingChat <String>]`: meetingChatMode
+                - `[AllowParticipantsToChangeName <Boolean?>]`: Specifies if participants are allowed to rename themselves in an instance of the meeting.
+                - `[AllowRecording <Boolean?>]`: Indicates whether recording is enabled for the meeting.
+                - `[AllowTeamworkReactions <Boolean?>]`: Indicates if Teams reactions are enabled for the meeting.
+                - `[AllowTranscription <Boolean?>]`: Indicates whether transcription is enabled for the meeting.
+                - `[AllowedPresenters <String>]`: onlineMeetingPresenters
+                - `[AnonymizeIdentityForRoles <String[]>]`: Specifies whose identity is anonymized in the meeting. Possible values are: attendee. The attendee value can't be removed through a PATCH operation once added.
+                - `[AttendanceReports <IMicrosoftGraphMeetingAttendanceReport[]>]`: The attendance reports of an online meeting. Read-only.
+                - `[AudioConferencing <IMicrosoftGraphAudioConferencing>]`: audioConferencing
+                - `[ChatInfo <IMicrosoftGraphChatInfo>]`: chatInfo
+                - `[ChatRestrictions <IMicrosoftGraphChatRestrictions>]`: chatRestrictions
+                - `[IsEndToEndEncryptionEnabled <Boolean?>]`: 
+                - `[IsEntryExitAnnounced <Boolean?>]`: Indicates whether to announce when callers join or leave.
+                - `[JoinInformation <IMicrosoftGraphItemBody>]`: itemBody
+                - `[JoinMeetingIdSettings <IMicrosoftGraphJoinMeetingIdSettings>]`: joinMeetingIdSettings
+                - `[JoinWebUrl <String>]`: The join URL of the online meeting. Read-only.
+                - `[LobbyBypassSettings <IMicrosoftGraphLobbyBypassSettings>]`: lobbyBypassSettings
+                - `[RecordAutomatically <Boolean?>]`: Indicates whether to record the meeting automatically.
+                - `[ShareMeetingChatHistoryDefault <String>]`: meetingChatHistoryDefaultMode
+                - `[Subject <String>]`: The subject of the online meeting.
+                - `[VideoTeleconferenceId <String>]`: The video teleconferencing ID. Read-only.
+                - `[WatermarkProtection <IMicrosoftGraphWatermarkProtectionValues>]`: watermarkProtectionValues
                 - `[Id <String>]`: The unique identifier for an entity. Read-only.
-                - `[CancelationDateTime <DateTime?>]`: Date and time when the registrant cancels their registration for the virtual event. Only appears when applicable. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-                - `[Email <String>]`: Email address of the registrant.
-                - `[FirstName <String>]`: First name of the registrant.
-                - `[LastName <String>]`: Last name of the registrant.
-                - `[RegistrationDateTime <DateTime?>]`: Date and time when the registrant registers for the virtual event. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-                - `[RegistrationQuestionAnswers <IMicrosoftGraphVirtualEventRegistrationQuestionAnswer[]>]`: The registrant's answer to the registration questions.
-                  - `[BooleanValue <Boolean?>]`: Boolean answer of the virtualEventRegistrationQuestion. Only appears when answerInputType is boolean.
-                  - `[DisplayName <String>]`: Display name of the registration question.
-                  - `[MultiChoiceValues <String[]>]`: Collection of text answer of the virtualEventRegistrationQuestion. Only appears when answerInputType is multiChoice.
-                  - `[QuestionId <String>]`: id of the virtualEventRegistrationQuestion.
-                  - `[Value <String>]`: Text answer of the virtualEventRegistrationQuestion. Appears when answerInputType is text, multilineText or singleChoice.
-                - `[Sessions <IMicrosoftGraphVirtualEventSession[]>]`: Sessions of the webinar.
-                - `[Status <String>]`: virtualEventAttendeeRegistrationStatus
-                - `[UserId <String>]`: The registrant's ID in Azure Active Directory (Azure AD). Only appears when the registrant is registered in Azure AD.
+                - `[EndDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
+                - `[Presenters <IMicrosoftGraphVirtualEventPresenter[]>]`: 
+                - `[Registrations <IMicrosoftGraphVirtualEventRegistration[]>]`: 
+                  - `[Id <String>]`: The unique identifier for an entity. Read-only.
+                  - `[CancelationDateTime <DateTime?>]`: Date and time when the registrant cancels their registration for the virtual event. Only appears when applicable. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+                  - `[Email <String>]`: Email address of the registrant.
+                  - `[FirstName <String>]`: First name of the registrant.
+                  - `[LastName <String>]`: Last name of the registrant.
+                  - `[RegistrationDateTime <DateTime?>]`: Date and time when the registrant registers for the virtual event. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+                  - `[RegistrationQuestionAnswers <IMicrosoftGraphVirtualEventRegistrationQuestionAnswer[]>]`: The registrant's answer to the registration questions.
+                    - `[BooleanValue <Boolean?>]`: Boolean answer of the virtualEventRegistrationQuestion. Only appears when answerInputType is boolean.
+                    - `[DisplayName <String>]`: Display name of the registration question.
+                    - `[MultiChoiceValues <String[]>]`: Collection of text answer of the virtualEventRegistrationQuestion. Only appears when answerInputType is multiChoice.
+                    - `[QuestionId <String>]`: id of the virtualEventRegistrationQuestion.
+                    - `[Value <String>]`: Text answer of the virtualEventRegistrationQuestion. Appears when answerInputType is text, multilineText or singleChoice.
+                  - `[Sessions <IMicrosoftGraphVirtualEventSession[]>]`: 
+                  - `[Status <String>]`: virtualEventAttendeeRegistrationStatus
+                  - `[UserId <String>]`: The registrant's ID in Microsoft Entra ID. Only appears when the registrant is registered in Microsoft Entra ID.
+                - `[StartDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
+            - `[Sessions <IMicrosoftGraphVirtualEventSession[]>]`: Sessions of the virtual event.
             - `[StartDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
             - `[Status <String>]`: virtualEventStatus
             - `[Id <String>]`: The unique identifier for an entity. Read-only.
             - `[Audience <String>]`: meetingAudience
             - `[CoOrganizers <IMicrosoftGraphCommunicationsUserIdentity[]>]`: Identity information of coorganizers of the webinar.
-            - `[RegistrationConfiguration <IMicrosoftGraphVirtualEventRegistrationConfiguration>]`: virtualEventRegistrationConfiguration
+            - `[RegistrationConfiguration <IMicrosoftGraphVirtualEventWebinarRegistrationConfiguration>]`: virtualEventWebinarRegistrationConfiguration
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[Id <String>]`: The unique identifier for an entity. Read-only.
               - `[Capacity <Int32?>]`: Total capacity of the virtual event.
-              - `[Questions <IMicrosoftGraphVirtualEventRegistrationQuestion[]>]`: Registration questions.
+              - `[Questions <IMicrosoftGraphVirtualEventRegistrationQuestionBase[]>]`: Registration questions.
                 - `[Id <String>]`: The unique identifier for an entity. Read-only.
-                - `[AnswerChoices <String[]>]`: Answer choices when answerInputType is singleChoice or multiChoice.
-                - `[AnswerInputType <String>]`: virtualEventRegistrationQuestionAnswerInputType
-                - `[DisplayName <String>]`: Display name of the registration question.
-                - `[IsRequired <Boolean?>]`: Indicates whether the question is required to answer. Default value is false.
+                - `[DisplayName <String>]`: 
+                - `[IsRequired <Boolean?>]`: 
               - `[RegistrationWebUrl <String>]`: Registration URL of the virtual event.
+              - `[Id <String>]`: The unique identifier for an entity. Read-only.
+              - `[IsManualApprovalEnabled <Boolean?>]`: 
+              - `[IsWaitlistEnabled <Boolean?>]`: 
             - `[Registrations <IMicrosoftGraphVirtualEventRegistration[]>]`: Registration records of the webinar.
         - `[WindowsInformationProtectionDeviceRegistrations <IMicrosoftGraphWindowsInformationProtectionDeviceRegistration[]>]`: Zero or more WIP device registrations that belong to the user.
           - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -19651,7 +19678,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
         - `[IsLabelAppliedExplicitly <Boolean?>]`: Specifies whether the label is applied explicitly on the item. True indicates that the label is applied explicitly; otherwise, the label is inherited from its parent. Read-only.
         - `[LabelAppliedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-        - `[LabelAppliedDateTime <DateTime?>]`: The date and time when the label was applied on the item. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+        - `[LabelAppliedDateTime <DateTime?>]`: The date and time when the label was applied on the item. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
         - `[Name <String>]`: The retention label on the document. Read-write.
         - `[RetentionSettings <IMicrosoftGraphRetentionLabelSettings>]`: retentionLabelSettings
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -19674,7 +19701,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[ExternalId <String>]`: The external identifier for the drive item from the source.
       - `[SpecialFolder <IMicrosoftGraphSpecialFolder>]`: specialFolder
       - `[Subscriptions <IMicrosoftGraphSubscription[]>]`: The set of subscriptions on the item. Only supported on the root of a drive.
-      - `[Thumbnails <IMicrosoftGraphThumbnailSet[]>]`: Collection containing [ThumbnailSet][] objects associated with the item. For more info, see [getting thumbnails][]. Read-only. Nullable.
+      - `[Thumbnails <IMicrosoftGraphThumbnailSet[]>]`: Collection of [thumbnailSet][] objects associated with the item. For more information, see [getting thumbnails][]. Read-only. Nullable.
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
         - `[Large <IMicrosoftGraphThumbnail>]`: thumbnail
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -19971,7 +19998,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[SharedWithTeams <IMicrosoftGraphSharedWithChannelTeamInfo[]>]`: A collection of teams with which a channel is shared.
       - `[DisplayName <String>]`: The name of the team.
       - `[Team <IMicrosoftGraphTeam>]`: team
-      - `[TenantId <String>]`: The ID of the Azure Active Directory tenant.
+      - `[TenantId <String>]`: The ID of the Microsoft Entra tenant.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[AllowedMembers <IMicrosoftGraphConversationMember[]>]`: A collection of team members who have access to the shared channel.
       - `[IsHostTeam <Boolean?>]`: Indicates whether the team is the host of the channel.
@@ -19982,7 +20009,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[MembersCount <Int32?>]`: Count of members in a channel.
       - `[OwnersCount <Int32?>]`: Count of owners in a channel.
     - `[Tabs <IMicrosoftGraphTeamsTab[]>]`: A collection of all the tabs in the channel. A navigation property.
-    - `[TenantId <String>]`: The ID of the Azure Active Directory tenant.
+    - `[TenantId <String>]`: The ID of the Microsoft Entra tenant.
     - `[WebUrl <String>]`: A hyperlink that will go to the channel in Microsoft Teams. This is the URL that you get when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.
   - `[Channels <IMicrosoftGraphChannel[]>]`: The collection of channels and messages associated with the team.
   - `[Classification <String>]`: An optional label. Typically describes the data or business sensitivity of the team. Must match one of a pre-configured set in the tenant's directory.
@@ -20032,6 +20059,13 @@ To create the parameters described below, construct a hash table containing the 
   - `[Schedule <IMicrosoftGraphSchedule>]`: schedule
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
+    - `[DayNotes <IMicrosoftGraphDayNote[]>]`: 
+      - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
+      - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
+      - `[Id <String>]`: The unique identifier for an entity. Read-only.
+      - `[DayNoteDate <DateTime?>]`: 
+      - `[DraftDayNote <IMicrosoftGraphItemBody>]`: itemBody
+      - `[SharedDayNote <IMicrosoftGraphItemBody>]`: itemBody
     - `[Enabled <Boolean?>]`: Indicates whether the schedule is enabled for the team. Required.
     - `[OfferShiftRequests <IMicrosoftGraphOfferShiftRequest[]>]`: The offer requests for shifts in the schedule.
       - `[AssignedTo <String>]`: scheduleChangeRequestActor
@@ -20174,7 +20208,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[IsStagedForDeletion <Boolean?>]`: 
       - `[SharedTimeOff <IMicrosoftGraphTimeOffItem>]`: timeOffItem
       - `[UserId <String>]`: ID of the user assigned to the timeOff. Required.
-    - `[WorkforceIntegrationIds <String[]>]`: 
+    - `[WorkforceIntegrationIds <String[]>]`: The Ids for the workforce integrations associated with this schedule.
   - `[Specialization <String>]`: teamSpecialization
   - `[Summary <IMicrosoftGraphTeamSummary>]`: teamSummary
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -20211,7 +20245,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[PublisherName <String>]`: The organization which published the team template.
     - `[ShortDescription <String>]`: A short-description of the team template as it will appear to the users in Microsoft Teams.
     - `[TeamDefinition <IMicrosoftGraphTeam>]`: team
-  - `[TenantId <String>]`: The ID of the Azure Active Directory tenant.
+  - `[TenantId <String>]`: The ID of the Microsoft Entra tenant.
   - `[Visibility <String>]`: teamVisibilityType
   - `[WebUrl <String>]`: A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.
 

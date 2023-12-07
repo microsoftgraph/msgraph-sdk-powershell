@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.ManagedTenants
-Module Guid: 1a1631e6-926f-4290-b638-0e8408d40059
+Module Guid: ca44600c-cd99-4067-8577-33c976304a8a
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.managedtenants
 Help Version: 1.0.0.0
 Locale: en-US
@@ -13,7 +13,6 @@ Microsoft Graph PowerShell Cmdlets
 ## Microsoft.Graph.Beta.ManagedTenants Cmdlets
 ### [Get-MgBetaTenantRelationshipManagedTenant](Get-MgBetaTenantRelationshipManagedTenant.md)
 Read the properties and relationships of a tenant object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaTenantRelationshipManagedTenantAggregatedPolicyCompliance](Get-MgBetaTenantRelationshipManagedTenantAggregatedPolicyCompliance.md)
 Aggregate view of device compliance policies across managed tenants.
@@ -89,35 +88,30 @@ Get the number of the resource
 
 ### [Get-MgBetaTenantRelationshipManagedTenantAuditEvent](Get-MgBetaTenantRelationshipManagedTenantAuditEvent.md)
 Read the properties and relationships of an auditEvent object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaTenantRelationshipManagedTenantAuditEventCount](Get-MgBetaTenantRelationshipManagedTenantAuditEventCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaTenantRelationshipManagedTenantCloudPcConnection](Get-MgBetaTenantRelationshipManagedTenantCloudPcConnection.md)
 Read the properties and relationships of a cloudPcConnection object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaTenantRelationshipManagedTenantCloudPcConnectionCount](Get-MgBetaTenantRelationshipManagedTenantCloudPcConnectionCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaTenantRelationshipManagedTenantCloudPcDevice](Get-MgBetaTenantRelationshipManagedTenantCloudPcDevice.md)
 Read the properties and relationships of a cloudPcDevice object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaTenantRelationshipManagedTenantCloudPcDeviceCount](Get-MgBetaTenantRelationshipManagedTenantCloudPcDeviceCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaTenantRelationshipManagedTenantCloudPcOverview](Get-MgBetaTenantRelationshipManagedTenantCloudPcOverview.md)
 Read the properties and relationships of a cloudPcOverview object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaTenantRelationshipManagedTenantCloudPcOverviewCount](Get-MgBetaTenantRelationshipManagedTenantCloudPcOverviewCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaTenantRelationshipManagedTenantConditionalAccessPolicyCoverage](Get-MgBetaTenantRelationshipManagedTenantConditionalAccessPolicyCoverage.md)
 Read the properties and relationships of a conditionalAccessPolicyCoverage object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaTenantRelationshipManagedTenantConditionalAccessPolicyCoverageCount](Get-MgBetaTenantRelationshipManagedTenantConditionalAccessPolicyCoverageCount.md)
 Get the number of the resource
@@ -127,21 +121,18 @@ Get the number of the resource
 
 ### [Get-MgBetaTenantRelationshipManagedTenantCredentialUserRegistrationSummary](Get-MgBetaTenantRelationshipManagedTenantCredentialUserRegistrationSummary.md)
 Read the properties and relationships of a credentialUserRegistrationsSummary object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaTenantRelationshipManagedTenantCredentialUserRegistrationSummaryCount](Get-MgBetaTenantRelationshipManagedTenantCredentialUserRegistrationSummaryCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaTenantRelationshipManagedTenantCustomizedInformation](Get-MgBetaTenantRelationshipManagedTenantCustomizedInformation.md)
 Read the properties and relationships of a tenantCustomizedInformation object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaTenantRelationshipManagedTenantCustomizedInformationCount](Get-MgBetaTenantRelationshipManagedTenantCustomizedInformationCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaTenantRelationshipManagedTenantDetailedInformation](Get-MgBetaTenantRelationshipManagedTenantDetailedInformation.md)
 Read the properties and relationships of a tenantDetailedInformation object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaTenantRelationshipManagedTenantDetailedInformationCount](Get-MgBetaTenantRelationshipManagedTenantDetailedInformationCount.md)
 Get the number of the resource
@@ -154,7 +145,6 @@ Get the number of the resource
 
 ### [Get-MgBetaTenantRelationshipManagedTenantDeviceCompliancePolicySettingStateSummary](Get-MgBetaTenantRelationshipManagedTenantDeviceCompliancePolicySettingStateSummary.md)
 Read the properties and relationships of a deviceCompliancePolicySettingStateSummary object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaTenantRelationshipManagedTenantDeviceCompliancePolicySettingStateSummaryCount](Get-MgBetaTenantRelationshipManagedTenantDeviceCompliancePolicySettingStateSummaryCount.md)
 Get the number of the resource
@@ -176,49 +166,42 @@ Get the number of the resource
 
 ### [Get-MgBetaTenantRelationshipManagedTenantGroup](Get-MgBetaTenantRelationshipManagedTenantGroup.md)
 Read the properties and relationships of a tenantGroup object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaTenantRelationshipManagedTenantGroupCount](Get-MgBetaTenantRelationshipManagedTenantGroupCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaTenantRelationshipManagedTenantManagedDeviceCompliance](Get-MgBetaTenantRelationshipManagedTenantManagedDeviceCompliance.md)
 Read the properties and relationships of a managedDeviceCompliance object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaTenantRelationshipManagedTenantManagedDeviceComplianceCount](Get-MgBetaTenantRelationshipManagedTenantManagedDeviceComplianceCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaTenantRelationshipManagedTenantManagedDeviceComplianceTrend](Get-MgBetaTenantRelationshipManagedTenantManagedDeviceComplianceTrend.md)
 Read the properties and relationships of a managedDeviceComplianceTrend object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaTenantRelationshipManagedTenantManagedDeviceComplianceTrendCount](Get-MgBetaTenantRelationshipManagedTenantManagedDeviceComplianceTrendCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaTenantRelationshipManagedTenantManagementAction](Get-MgBetaTenantRelationshipManagedTenantManagementAction.md)
 Read the properties and relationships of a managementAction object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaTenantRelationshipManagedTenantManagementActionCount](Get-MgBetaTenantRelationshipManagedTenantManagementActionCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaTenantRelationshipManagedTenantManagementActionTenantDeploymentStatus](Get-MgBetaTenantRelationshipManagedTenantManagementActionTenantDeploymentStatus.md)
 Read the properties and relationships of a managementActionTenantDeploymentStatus object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaTenantRelationshipManagedTenantManagementActionTenantDeploymentStatusCount](Get-MgBetaTenantRelationshipManagedTenantManagementActionTenantDeploymentStatusCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaTenantRelationshipManagedTenantManagementIntent](Get-MgBetaTenantRelationshipManagedTenantManagementIntent.md)
 Read the properties and relationships of a managementIntent object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaTenantRelationshipManagedTenantManagementIntentCount](Get-MgBetaTenantRelationshipManagedTenantManagementIntentCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaTenantRelationshipManagedTenantManagementTemplate](Get-MgBetaTenantRelationshipManagedTenantManagementTemplate.md)
 Read the properties and relationships of a managementTemplate object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaTenantRelationshipManagedTenantManagementTemplateCollection](Get-MgBetaTenantRelationshipManagedTenantManagementTemplateCollection.md)
 Get managementTemplateCollections from tenantRelationships
@@ -288,7 +271,6 @@ Get the number of the resource
 
 ### [Get-MgBetaTenantRelationshipManagedTenantTag](Get-MgBetaTenantRelationshipManagedTenantTag.md)
 Read the properties and relationships of a tenantTag object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaTenantRelationshipManagedTenantTagCount](Get-MgBetaTenantRelationshipManagedTenantTagCount.md)
 Get the number of the resource
@@ -301,14 +283,12 @@ Get the number of the resource
 
 ### [Get-MgBetaTenantRelationshipManagedTenantWindowsDeviceMalwareState](Get-MgBetaTenantRelationshipManagedTenantWindowsDeviceMalwareState.md)
 Read the properties and relationships of a windowsDeviceMalwareState object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaTenantRelationshipManagedTenantWindowsDeviceMalwareStateCount](Get-MgBetaTenantRelationshipManagedTenantWindowsDeviceMalwareStateCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaTenantRelationshipManagedTenantWindowsProtectionState](Get-MgBetaTenantRelationshipManagedTenantWindowsProtectionState.md)
 Read the properties and relationships of a windowsProtectionState object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaTenantRelationshipManagedTenantWindowsProtectionStateCount](Get-MgBetaTenantRelationshipManagedTenantWindowsProtectionStateCount.md)
 Get the number of the resource
@@ -417,7 +397,6 @@ Create new navigation property to myRoles for tenantRelationships
 
 ### [New-MgBetaTenantRelationshipManagedTenantTag](New-MgBetaTenantRelationshipManagedTenantTag.md)
 Create a new tenantTag object.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaTenantRelationshipManagedTenantTicketingEndpoint](New-MgBetaTenantRelationshipManagedTenantTicketingEndpoint.md)
 Create new navigation property to managedTenantTicketingEndpoints for tenantRelationships
@@ -532,7 +511,6 @@ Delete navigation property myRoles for tenantRelationships
 
 ### [Remove-MgBetaTenantRelationshipManagedTenantTag](Remove-MgBetaTenantRelationshipManagedTenantTag.md)
 Delete a tenantTag object.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaTenantRelationshipManagedTenantTicketingEndpoint](Remove-MgBetaTenantRelationshipManagedTenantTicketingEndpoint.md)
 Delete navigation property managedTenantTicketingEndpoints for tenantRelationships
@@ -587,7 +565,6 @@ Update the navigation property credentialUserRegistrationsSummaries in tenantRel
 
 ### [Update-MgBetaTenantRelationshipManagedTenantCustomizedInformation](Update-MgBetaTenantRelationshipManagedTenantCustomizedInformation.md)
 Update the properties of a tenantCustomizedInformation object.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaTenantRelationshipManagedTenantDetailedInformation](Update-MgBetaTenantRelationshipManagedTenantDetailedInformation.md)
 Update the navigation property tenantsDetailedInformation in tenantRelationships
@@ -648,7 +625,6 @@ Update the navigation property myRoles in tenantRelationships
 
 ### [Update-MgBetaTenantRelationshipManagedTenantTag](Update-MgBetaTenantRelationshipManagedTenantTag.md)
 Update the properties of a tenantTag object.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaTenantRelationshipManagedTenantTicketingEndpoint](Update-MgBetaTenantRelationshipManagedTenantTicketingEndpoint.md)
 Update the navigation property managedTenantTicketingEndpoints in tenantRelationships

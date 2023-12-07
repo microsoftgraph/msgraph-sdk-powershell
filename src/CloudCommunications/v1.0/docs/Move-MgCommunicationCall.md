@@ -11,7 +11,6 @@ schema: 2.0.0
 Transfer an active peer-to-peer call or group call.
 A consultative transfer means that the transferor can inform the person they want to transfer the call to (the transferee), before the transfer is made.
 This is opposed to transfering the call directly.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -47,7 +46,6 @@ Move-MgCommunicationCall -InputObject <ICloudCommunicationsIdentity> [-Additiona
 Transfer an active peer-to-peer call or group call.
 A consultative transfer means that the transferor can inform the person they want to transfer the call to (the transferee), before the transfer is made.
 This is opposed to transfering the call directly.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -362,6 +360,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[AudioRoutingGroupId <String>]`: The unique identifier of audioRoutingGroup
   - `[CallId <String>]`: The unique identifier of call
   - `[CallRecordId <String>]`: The unique identifier of callRecord
+  - `[CallRecordingId <String>]`: The unique identifier of callRecording
   - `[CallTranscriptId <String>]`: The unique identifier of callTranscript
   - `[CommsOperationId <String>]`: The unique identifier of commsOperation
   - `[ContentSharingSessionId <String>]`: The unique identifier of contentSharingSession

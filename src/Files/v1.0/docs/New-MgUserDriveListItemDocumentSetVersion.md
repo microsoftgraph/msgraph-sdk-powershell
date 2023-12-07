@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new version of a document set item in a list.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -47,7 +46,6 @@ New-MgUserDriveListItemDocumentSetVersion -InputObject <IFilesIdentity> [-Additi
 
 ## DESCRIPTION
 Create a new version of a document set item in a list.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

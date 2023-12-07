@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaReportUserInsightDailyActiveUser
 
 ## SYNOPSIS
-Get activeUsers from reports
+Insights for active users on apps registered in the tenant for a specified period.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgBetaReportUserInsightDailyActiveUser -InputObject <IReportsIdentity> [-Exp
 ```
 
 ## DESCRIPTION
-Get activeUsers from reports
+Insights for active users on apps registered in the tenant for a specified period.
 
 ## EXAMPLES
 
@@ -269,10 +269,12 @@ To create the parameters described below, construct a hash table containing the 
   - `[DeviceManagementExportJobId <String>]`: The unique identifier of deviceManagementExportJob
   - `[DirectoryAuditId <String>]`: The unique identifier of directoryAudit
   - `[EndDateTime <DateTime?>]`: Usage: endDateTime={endDateTime}
+  - `[ExclusiveIntervalEndDateTime <DateTime?>]`: Usage: exclusiveIntervalEndDateTime={exclusiveIntervalEndDateTime}
   - `[Filter <String>]`: Usage: filter='{filter}'
   - `[GroupId <String>]`: Usage: groupId='{groupId}'
   - `[IncludedUserRoles <String>]`: Usage: includedUserRoles='{includedUserRoles}'
   - `[IncludedUserTypes <String>]`: Usage: includedUserTypes='{includedUserTypes}'
+  - `[InclusiveIntervalStartDateTime <DateTime?>]`: Usage: inclusiveIntervalStartDateTime={inclusiveIntervalStartDateTime}
   - `[InsightSummaryId <String>]`: The unique identifier of insightSummary
   - `[MfaCompletionMetricId <String>]`: The unique identifier of mfaCompletionMetric
   - `[MonthlyInactiveUsersByApplicationMetricId <String>]`: The unique identifier of monthlyInactiveUsersByApplicationMetric

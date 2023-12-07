@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Applications
-Module Guid: c849fa5b-433c-4d78-8c52-1c2d26d21c1e
+Module Guid: 13f96026-fe93-4680-a2a6-b0bb198d9e7d
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.applications
 Help Version: 1.0.0.0
 Locale: en-US
@@ -17,11 +17,9 @@ This method, along with removeKey can be used by an application to automate roll
 As part of the request validation for this method, a proof of possession of an existing key is verified before the action can be performed.
 Applications that don’t have any existing valid certificates (no certificates have been added yet, or all certificates have expired), won’t be able to use this service action.
 You can use the Update application operation to perform an update instead.
-This API is supported in the following national cloud deployments.
 
 ### [Add-MgApplicationPassword](Add-MgApplicationPassword.md)
 Adds a strong password or secret to an application.
-This API is supported in the following national cloud deployments.
 
 ### [Add-MgServicePrincipalKey](Add-MgServicePrincipalKey.md)
 Adds a key credential to a servicePrincipal.
@@ -29,11 +27,9 @@ This method along with removeKey can be used by a servicePrincipal to automate r
 As part of the request validation for this method, a proof of possession of an existing key is verified before the action can be performed.
 ServicePrincipals that don’t have any existing valid certificates (i.e.: no certificates have been added yet, or all certificates have expired), won’t be able to use this service action.
 Update servicePrincipal can be used to perform an update instead.
-This API is supported in the following national cloud deployments.
 
 ### [Add-MgServicePrincipalPassword](Add-MgServicePrincipalPassword.md)
 Add a strong password or secret to a servicePrincipal object.
-This API is supported in the following national cloud deployments.
 
 ### [Add-MgServicePrincipalTokenSigningCertificate](Add-MgServicePrincipalTokenSigningCertificate.md)
 Create a self-signed signing certificate and return a selfSignedCertificate object, which is the public part of the generated certificate.
@@ -44,20 +40,17 @@ It and the associated private key object have the same value of keyId.
 When set during creation through the displayName property, the subject of the certificate cannot be updated.
 The startDateTime is set to the same time the certificate is created using the action.
 The endDateTime can be up to three years after the certificate is created.
-This API is supported in the following national cloud deployments.
 
 ### [Clear-MgApplicationVerifiedPublisher](Clear-MgApplicationVerifiedPublisher.md)
 Unset the verifiedPublisher previously set on an application, removing all verified publisher properties.
 For more information, see Publisher verification.
-This API is supported in the following national cloud deployments.
 
 ### [Confirm-MgApplicationMemberGroup](Confirm-MgApplicationMemberGroup.md)
 Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
 This function is transitive.
 You can check up to a maximum of 20 groups per request.
-This function supports all groups provisioned in Azure AD.
+This function supports all groups provisioned in Microsoft Entra ID.
 Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
-This API is supported in the following national cloud deployments.
 
 ### [Confirm-MgApplicationMemberObject](Confirm-MgApplicationMemberObject.md)
 Invoke action checkMemberObjects
@@ -66,32 +59,26 @@ Invoke action checkMemberObjects
 Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
 This function is transitive.
 You can check up to a maximum of 20 groups per request.
-This function supports all groups provisioned in Azure AD.
+This function supports all groups provisioned in Microsoft Entra ID.
 Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
-This API is supported in the following national cloud deployments.
 
 ### [Confirm-MgServicePrincipalMemberObject](Confirm-MgServicePrincipalMemberObject.md)
 Invoke action checkMemberObjects
 
 ### [Find-MgApplicationSynchronizationJobSchemaDirectory](Find-MgApplicationSynchronizationJobSchemaDirectory.md)
 Discover the latest schema definition for provisioning to an application.
-This API is supported in the following national cloud deployments.
 
 ### [Find-MgApplicationSynchronizationTemplateSchemaDirectory](Find-MgApplicationSynchronizationTemplateSchemaDirectory.md)
 Discover the latest schema definition for provisioning to an application.
-This API is supported in the following national cloud deployments.
 
 ### [Find-MgServicePrincipalSynchronizationJobSchemaDirectory](Find-MgServicePrincipalSynchronizationJobSchemaDirectory.md)
 Discover the latest schema definition for provisioning to an application.
-This API is supported in the following national cloud deployments.
 
 ### [Find-MgServicePrincipalSynchronizationTemplateSchemaDirectory](Find-MgServicePrincipalSynchronizationTemplateSchemaDirectory.md)
 Discover the latest schema definition for provisioning to an application.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgApplication](Get-MgApplication.md)
 Get the properties and relationships of an application object.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgApplicationAppManagementPolicy](Get-MgApplicationAppManagementPolicy.md)
 The appManagementPolicy applied to this application.
@@ -104,12 +91,11 @@ Get the number of the resource
 
 ### [Get-MgApplicationByAppId](Get-MgApplicationByAppId.md)
 Get the properties and relationships of an application object.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgApplicationById](Get-MgApplicationById.md)
 Return the directory objects specified in a list of IDs.
 Only a subset of user properties are returned by default in v1.0.
-Some common uses for this function are to: This API is supported in the following national cloud deployments.
+Some common uses for this function are to:
 
 ### [Get-MgApplicationCount](Get-MgApplicationCount.md)
 Get the number of the resource
@@ -123,14 +109,12 @@ Invoke function delta
 
 ### [Get-MgApplicationExtensionProperty](Get-MgApplicationExtensionProperty.md)
 Read a directory extension definition represented by an extensionProperty object.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgApplicationExtensionPropertyCount](Get-MgApplicationExtensionPropertyCount.md)
 Get the number of the resource
 
 ### [Get-MgApplicationFederatedIdentityCredential](Get-MgApplicationFederatedIdentityCredential.md)
 Read the properties and relationships of a federatedIdentityCredential object.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgApplicationFederatedIdentityCredentialCount](Get-MgApplicationFederatedIdentityCredentialCount.md)
 Get the number of the resource
@@ -151,13 +135,11 @@ This function is transitive.
 This API returns up to 11,000 group IDs.
 If more than 11,000 results are available, it returns a 400 Bad Request error with the Directory_ResultSizeLimitExceeded error code.
 As a workaround, use the List group transitive memberOf API.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgApplicationMemberObject](Get-MgApplicationMemberObject.md)
 Return all IDs for the groups, administrative units, and directory roles that a user, group, service principal, organizational contact, device, or directory object is a member of.
 This function is transitive.
 Note: Only users and role-enabled groups can be members of directory roles.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgApplicationOwner](Get-MgApplicationOwner.md)
 Directory objects that are owners of the application.
@@ -199,22 +181,19 @@ Get the number of the resource
 Get the number of the resource
 
 ### [Get-MgApplicationSynchronization](Get-MgApplicationSynchronization.md)
-Represents the capability for Azure Active Directory (Azure AD) identity synchronization through the Microsoft Graph API.
+Represents the capability for Microsoft Entra identity synchronization through the Microsoft Graph API.
 
 ### [Get-MgApplicationSynchronizationAccessToken](Get-MgApplicationSynchronizationAccessToken.md)
-Acquire an OAuth access token to authorize the Azure AD provisioning service to provision users into an application.
-This API is supported in the following national cloud deployments.
+Acquire an OAuth access token to authorize the Microsoft Entra provisioning service to provision users into an application.
 
 ### [Get-MgApplicationSynchronizationJob](Get-MgApplicationSynchronizationJob.md)
 Retrieve the existing synchronization job and its properties.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgApplicationSynchronizationJobCount](Get-MgApplicationSynchronizationJobCount.md)
 Get the number of the resource
 
 ### [Get-MgApplicationSynchronizationJobSchema](Get-MgApplicationSynchronizationJobSchema.md)
 Retrieve the schema for a given synchronization job or template.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgApplicationSynchronizationJobSchemaDirectory](Get-MgApplicationSynchronizationJobSchemaDirectory.md)
 Contains the collection of directories and all of their objects.
@@ -242,18 +221,15 @@ Get the number of the resource
 
 ### [Get-MgApplicationTemplate](Get-MgApplicationTemplate.md)
 Retrieve the properties of an applicationTemplate object.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgApplicationTemplateCount](Get-MgApplicationTemplateCount.md)
 Get the number of the resource
 
 ### [Get-MgApplicationTokenIssuancePolicy](Get-MgApplicationTokenIssuancePolicy.md)
 List the tokenIssuancePolicy objects that are assigned to an application.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgApplicationTokenIssuancePolicyByRef](Get-MgApplicationTokenIssuancePolicyByRef.md)
 List the tokenIssuancePolicy objects that are assigned to an application.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgApplicationTokenIssuancePolicyCount](Get-MgApplicationTokenIssuancePolicyCount.md)
 Get the number of the resource
@@ -261,12 +237,10 @@ Get the number of the resource
 ### [Get-MgApplicationTokenLifetimePolicy](Get-MgApplicationTokenLifetimePolicy.md)
 List the tokenLifetimePolicy objects that are assigned to an application.
 Only one object is returned in the collection because only one tokenLifetimePolicy can be assigned to an application.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgApplicationTokenLifetimePolicyByRef](Get-MgApplicationTokenLifetimePolicyByRef.md)
 List the tokenLifetimePolicy objects that are assigned to an application.
 Only one object is returned in the collection because only one tokenLifetimePolicy can be assigned to an application.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgApplicationTokenLifetimePolicyCount](Get-MgApplicationTokenLifetimePolicyCount.md)
 Get the number of the resource
@@ -280,7 +254,6 @@ Get the number of the resource
 
 ### [Get-MgServicePrincipal](Get-MgServicePrincipal.md)
 Retrieve the properties and relationships of a servicePrincipal object.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgServicePrincipalAppManagementPolicy](Get-MgServicePrincipalAppManagementPolicy.md)
 The appManagementPolicy applied to this application.
@@ -304,20 +277,17 @@ Get the number of the resource
 
 ### [Get-MgServicePrincipalByAppId](Get-MgServicePrincipalByAppId.md)
 Retrieve the properties and relationships of a servicePrincipal object.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgServicePrincipalById](Get-MgServicePrincipalById.md)
 Return the directory objects specified in a list of IDs.
 Only a subset of user properties are returned by default in v1.0.
-Some common uses for this function are to: This API is supported in the following national cloud deployments.
+Some common uses for this function are to:
 
 ### [Get-MgServicePrincipalClaimMappingPolicy](Get-MgServicePrincipalClaimMappingPolicy.md)
 List the claimsMappingPolicy objects that are assigned to a servicePrincipal.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgServicePrincipalClaimMappingPolicyByRef](Get-MgServicePrincipalClaimMappingPolicyByRef.md)
 List the claimsMappingPolicy objects that are assigned to a servicePrincipal.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgServicePrincipalClaimMappingPolicyCount](Get-MgServicePrincipalClaimMappingPolicyCount.md)
 Get the number of the resource
@@ -356,11 +326,9 @@ Get the number of the resource
 
 ### [Get-MgServicePrincipalHomeRealmDiscoveryPolicy](Get-MgServicePrincipalHomeRealmDiscoveryPolicy.md)
 List the homeRealmDiscoveryPolicy objects that are assigned to a servicePrincipal.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgServicePrincipalHomeRealmDiscoveryPolicyByRef](Get-MgServicePrincipalHomeRealmDiscoveryPolicyByRef.md)
 List the homeRealmDiscoveryPolicy objects that are assigned to a servicePrincipal.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgServicePrincipalHomeRealmDiscoveryPolicyCount](Get-MgServicePrincipalHomeRealmDiscoveryPolicyCount.md)
 Get the number of the resource
@@ -371,13 +339,11 @@ This function is transitive.
 This API returns up to 11,000 group IDs.
 If more than 11,000 results are available, it returns a 400 Bad Request error with the Directory_ResultSizeLimitExceeded error code.
 As a workaround, use the List group transitive memberOf API.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgServicePrincipalMemberObject](Get-MgServicePrincipalMemberObject.md)
 Return all IDs for the groups, administrative units, and directory roles that a user, group, service principal, organizational contact, device, or directory object is a member of.
 This function is transitive.
 Note: Only users and role-enabled groups can be members of directory roles.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgServicePrincipalMemberOf](Get-MgServicePrincipalMemberOf.md)
 Roles that this service principal is a member of.
@@ -494,23 +460,31 @@ Get the number of the resource
 ### [Get-MgServicePrincipalOwnerCountAsUser](Get-MgServicePrincipalOwnerCountAsUser.md)
 Get the number of the resource
 
+### [Get-MgServicePrincipalRemoteDesktopSecurityConfiguration](Get-MgServicePrincipalRemoteDesktopSecurityConfiguration.md)
+Read the properties and relationships of a remoteDesktopSecurityConfiguration object on a servicePrincipal.
+Use this configuration to view the Microsoft Entra ID Remote Desktop Services (RDS) authentication protocol to authenticate a user to Microsoft Entra joined or Microsoft Entra hybrid joined devices.
+Additionally you can view any targetDeviceGroups that have been configured for SSO.
+
+### [Get-MgServicePrincipalRemoteDesktopSecurityConfigurationTargetDeviceGroup](Get-MgServicePrincipalRemoteDesktopSecurityConfigurationTargetDeviceGroup.md)
+Read the properties and relationships of a targetDeviceGroup object for the remoteDesktopSecurityConfiguration object on the servicePrincipal.
+
+### [Get-MgServicePrincipalRemoteDesktopSecurityConfigurationTargetDeviceGroupCount](Get-MgServicePrincipalRemoteDesktopSecurityConfigurationTargetDeviceGroupCount.md)
+Get the number of the resource
+
 ### [Get-MgServicePrincipalSynchronization](Get-MgServicePrincipalSynchronization.md)
-Represents the capability for Azure Active Directory (Azure AD) identity synchronization through the Microsoft Graph API.
+Represents the capability for Microsoft Entra identity synchronization through the Microsoft Graph API.
 
 ### [Get-MgServicePrincipalSynchronizationAccessToken](Get-MgServicePrincipalSynchronizationAccessToken.md)
-Acquire an OAuth access token to authorize the Azure AD provisioning service to provision users into an application.
-This API is supported in the following national cloud deployments.
+Acquire an OAuth access token to authorize the Microsoft Entra provisioning service to provision users into an application.
 
 ### [Get-MgServicePrincipalSynchronizationJob](Get-MgServicePrincipalSynchronizationJob.md)
 Retrieve the existing synchronization job and its properties.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgServicePrincipalSynchronizationJobCount](Get-MgServicePrincipalSynchronizationJobCount.md)
 Get the number of the resource
 
 ### [Get-MgServicePrincipalSynchronizationJobSchema](Get-MgServicePrincipalSynchronizationJobSchema.md)
 Retrieve the schema for a given synchronization job or template.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgServicePrincipalSynchronizationJobSchemaDirectory](Get-MgServicePrincipalSynchronizationJobSchemaDirectory.md)
 Contains the collection of directories and all of their objects.
@@ -604,65 +578,53 @@ Invoke function functions
 Invoke function functions
 
 ### [Invoke-MgInstantiateApplicationTemplate](Invoke-MgInstantiateApplicationTemplate.md)
-Add an instance of an application from the Azure AD application gallery into your directory.
+Add an instance of an application from the Microsoft Entra application gallery into your directory.
 You can also use this API to instantiate non-gallery apps.
 Use the following ID for the applicationTemplate object: 8adf8e6e-67b2-4cf2-a259-e3dc5476c621.
-This API is supported in the following national cloud deployments.
 
 ### [Invoke-MgParseApplicationSynchronizationJobSchemaExpression](Invoke-MgParseApplicationSynchronizationJobSchemaExpression.md)
 Parse a given string expression into an attributeMappingSource object.
-For more information about expressions, see Writing Expressions for Attribute Mappings in Azure Active Directory.
-This API is supported in the following national cloud deployments.
+For more information about expressions, see Writing Expressions for Attribute Mappings in Microsoft Entra ID.
 
 ### [Invoke-MgParseApplicationSynchronizationTemplateSchemaExpression](Invoke-MgParseApplicationSynchronizationTemplateSchemaExpression.md)
 Parse a given string expression into an attributeMappingSource object.
-For more information about expressions, see Writing Expressions for Attribute Mappings in Azure Active Directory.
-This API is supported in the following national cloud deployments.
+For more information about expressions, see Writing Expressions for Attribute Mappings in Microsoft Entra ID.
 
 ### [Invoke-MgParseServicePrincipalSynchronizationJobSchemaExpression](Invoke-MgParseServicePrincipalSynchronizationJobSchemaExpression.md)
 Parse a given string expression into an attributeMappingSource object.
-For more information about expressions, see Writing Expressions for Attribute Mappings in Azure Active Directory.
-This API is supported in the following national cloud deployments.
+For more information about expressions, see Writing Expressions for Attribute Mappings in Microsoft Entra ID.
 
 ### [Invoke-MgParseServicePrincipalSynchronizationTemplateSchemaExpression](Invoke-MgParseServicePrincipalSynchronizationTemplateSchemaExpression.md)
 Parse a given string expression into an attributeMappingSource object.
-For more information about expressions, see Writing Expressions for Attribute Mappings in Azure Active Directory.
-This API is supported in the following national cloud deployments.
+For more information about expressions, see Writing Expressions for Attribute Mappings in Microsoft Entra ID.
 
 ### [New-MgApplication](New-MgApplication.md)
 Create a new application object.
-This API is supported in the following national cloud deployments.
 
 ### [New-MgApplicationAppManagementPolicyByRef](New-MgApplicationAppManagementPolicyByRef.md)
 Assign an appManagementPolicy policy object to an application or service principal object.
 The application or service principal adopts this policy over the tenant-wide tenantAppManagementPolicy setting.
 Only one policy object can be assigned to an application or service principal.
-This API is supported in the following national cloud deployments.
 
 ### [New-MgApplicationExtensionProperty](New-MgApplicationExtensionProperty.md)
 Create a new directory extension definition, represented by an extensionProperty object.
-This API is supported in the following national cloud deployments.
 
 ### [New-MgApplicationFederatedIdentityCredential](New-MgApplicationFederatedIdentityCredential.md)
 Create a new federatedIdentityCredential object for an application.
-By configuring a trust relationship between your Azure AD application registration and the identity provider for your compute platform, you can use tokens issued by that platform to authenticate with Microsoft identity platform and call APIs in the Microsoft ecosystem.
+By configuring a trust relationship between your Microsoft Entra application registration and the identity provider for your compute platform, you can use tokens issued by that platform to authenticate with Microsoft identity platform and call APIs in the Microsoft ecosystem.
 Maximum of 20 objects can be added to an application.
-This API is supported in the following national cloud deployments.
 
 ### [New-MgApplicationOwnerByRef](New-MgApplicationOwnerByRef.md)
 Add an owner to an application by posting to the owners collection.
-This API is supported in the following national cloud deployments.
 
 ### [New-MgApplicationSynchronizationJob](New-MgApplicationSynchronizationJob.md)
 Create new synchronization job with a default synchronization schema.
 The job is created in a disabled state.
 Call Start job to start synchronization.
-This API is supported in the following national cloud deployments.
 
 ### [New-MgApplicationSynchronizationJobOnDemand](New-MgApplicationSynchronizationJobOnDemand.md)
 Select a user and provision the account on-demand.
 The rate limit for this API is 5 requests per 10 seconds.
-This API is supported in the following national cloud deployments.
 
 ### [New-MgApplicationSynchronizationJobSchemaDirectory](New-MgApplicationSynchronizationJobSchemaDirectory.md)
 Create new navigation property to directories for applications
@@ -675,66 +637,60 @@ Create new navigation property to directories for applications
 
 ### [New-MgApplicationTokenIssuancePolicyByRef](New-MgApplicationTokenIssuancePolicyByRef.md)
 Assign a tokenIssuancePolicy to an application.
-This API is supported in the following national cloud deployments.
 
 ### [New-MgApplicationTokenLifetimePolicyByRef](New-MgApplicationTokenLifetimePolicyByRef.md)
 Assign a tokenLifetimePolicy to an application.
 You can have multiple tokenLifetimePolicy policies in a tenant but can assign only one tokenLifetimePolicy per application.
-This API is supported in the following national cloud deployments.
 
 ### [New-MgGroupAppRoleAssignment](New-MgGroupAppRoleAssignment.md)
 Use this API to assign an app role to a security group.
 All direct members of the group will be considered assigned.
 Security groups with dynamic memberships are supported.
 To grant an app role assignment to a group, you need three identifiers: Additional licenses might be required to use a group to manage access to applications.
-This API is supported in the following national cloud deployments.
 
 ### [New-MgServicePrincipal](New-MgServicePrincipal.md)
 Create a new servicePrincipal object.
-This API is supported in the following national cloud deployments.
 
 ### [New-MgServicePrincipalAppRoleAssignedTo](New-MgServicePrincipalAppRoleAssignedTo.md)
 Assign an app role for a resource service principal, to a user, group, or client service principal.
 App roles that are assigned to service principals are also known as application permissions.
 Application permissions can be granted directly with app role assignments, or through a consent experience.
-To grant an app role assignment, you need three identifiers: This API is supported in the following national cloud deployments.
+To grant an app role assignment, you need three identifiers:
 
 ### [New-MgServicePrincipalAppRoleAssignment](New-MgServicePrincipalAppRoleAssignment.md)
 Assign an app role to a client service principal.
 App roles that are assigned to service principals are also known as application permissions.
 Application permissions can be granted directly with app role assignments, or through a consent experience.
-To grant an app role assignment to a client service principal, you need three identifiers: This API is supported in the following national cloud deployments.
+To grant an app role assignment to a client service principal, you need three identifiers:
 
 ### [New-MgServicePrincipalClaimMappingPolicyByRef](New-MgServicePrincipalClaimMappingPolicyByRef.md)
 Assign a claimsMappingPolicy to a servicePrincipal.
-This API is supported in the following national cloud deployments.
 
 ### [New-MgServicePrincipalDelegatedPermissionClassification](New-MgServicePrincipalDelegatedPermissionClassification.md)
 Classify a delegated permission by adding a delegatedPermissionClassification to the servicePrincipal representing the API.
-This API is supported in the following national cloud deployments.
 
 ### [New-MgServicePrincipalEndpoint](New-MgServicePrincipalEndpoint.md)
 Create new navigation property to endpoints for servicePrincipals
 
 ### [New-MgServicePrincipalHomeRealmDiscoveryPolicyByRef](New-MgServicePrincipalHomeRealmDiscoveryPolicyByRef.md)
 Assign a homeRealmDiscoveryPolicy to a servicePrincipal.
-This API is supported in the following national cloud deployments.
 
 ### [New-MgServicePrincipalOwnerByRef](New-MgServicePrincipalOwnerByRef.md)
 Use this API to add an owner for the servicePrincipal.
 Service principal owners can be users, the service principal itself, or other service principals.
-This API is supported in the following national cloud deployments.
+
+### [New-MgServicePrincipalRemoteDesktopSecurityConfigurationTargetDeviceGroup](New-MgServicePrincipalRemoteDesktopSecurityConfigurationTargetDeviceGroup.md)
+Create a new targetDeviceGroup object for the remoteDesktopSecurityConfiguration object on the servicePrincipal.
+You can configure a maximum of 10 target device groups for the remoteDesktopSecurityConfiguraiton object on the servicePrincipal.
 
 ### [New-MgServicePrincipalSynchronizationJob](New-MgServicePrincipalSynchronizationJob.md)
 Create new synchronization job with a default synchronization schema.
 The job is created in a disabled state.
 Call Start job to start synchronization.
-This API is supported in the following national cloud deployments.
 
 ### [New-MgServicePrincipalSynchronizationJobOnDemand](New-MgServicePrincipalSynchronizationJobOnDemand.md)
 Select a user and provision the account on-demand.
 The rate limit for this API is 5 requests per 10 seconds.
-This API is supported in the following national cloud deployments.
 
 ### [New-MgServicePrincipalSynchronizationJobSchemaDirectory](New-MgServicePrincipalSynchronizationJobSchemaDirectory.md)
 Create new navigation property to directories for servicePrincipals
@@ -747,48 +703,40 @@ Create new navigation property to directories for servicePrincipals
 
 ### [New-MgUserAppRoleAssignment](New-MgUserAppRoleAssignment.md)
 Use this API to assign an app role to a user.
-To grant an app role assignment to a user, you need three identifiers: This API is supported in the following national cloud deployments.
+To grant an app role assignment to a user, you need three identifiers:
 
 ### [Remove-MgApplication](Remove-MgApplication.md)
 Delete an application object.
 When deleted, apps are moved to a temporary container and can be restored within 30 days.
 After that time, they are permanently deleted.
-This API is supported in the following national cloud deployments.
 
 ### [Remove-MgApplicationAppManagementPolicyByRef](Remove-MgApplicationAppManagementPolicyByRef.md)
 Remove an appManagementPolicy policy object from an application or service principal object.
 When you remove the appManagementPolicy, the application or service principal adopts the tenant-wide tenantAppManagementPolicy setting.
-This API is supported in the following national cloud deployments.
 
 ### [Remove-MgApplicationByAppId](Remove-MgApplicationByAppId.md)
 Delete an application object.
 When deleted, apps are moved to a temporary container and can be restored within 30 days.
 After that time, they are permanently deleted.
-This API is supported in the following national cloud deployments.
 
 ### [Remove-MgApplicationExtensionProperty](Remove-MgApplicationExtensionProperty.md)
 Delete a directory extension definition represented by an extensionProperty object.
 You can delete only directory extensions that aren't synced from on-premises active directory (AD).
-This API is supported in the following national cloud deployments.
 
 ### [Remove-MgApplicationFederatedIdentityCredential](Remove-MgApplicationFederatedIdentityCredential.md)
 Delete a federatedIdentityCredential object from an application.
-This API is supported in the following national cloud deployments.
 
 ### [Remove-MgApplicationKey](Remove-MgApplicationKey.md)
 Remove a key credential from an application.
 This method along with addKey can be used by an application to automate rolling its expiring keys.
 As part of the request validation for this method, a proof of possession of an existing key is verified before the action can be performed.
-This API is supported in the following national cloud deployments.
 
 ### [Remove-MgApplicationOwnerByRef](Remove-MgApplicationOwnerByRef.md)
 Remove an owner from an application.
 As a recommended best practice, apps should have at least two owners.
-This API is supported in the following national cloud deployments.
 
 ### [Remove-MgApplicationPassword](Remove-MgApplicationPassword.md)
 Remove a password from an application.
-This API is supported in the following national cloud deployments.
 
 ### [Remove-MgApplicationSynchronization](Remove-MgApplicationSynchronization.md)
 Delete navigation property synchronization for applications
@@ -796,7 +744,6 @@ Delete navigation property synchronization for applications
 ### [Remove-MgApplicationSynchronizationJob](Remove-MgApplicationSynchronizationJob.md)
 Stop the synchronization job, and permanently delete all the state associated with it.
 Synchronized accounts are left as-is.
-This API is supported in the following national cloud deployments.
 
 ### [Remove-MgApplicationSynchronizationJobSchema](Remove-MgApplicationSynchronizationJobSchema.md)
 Delete navigation property schema for applications
@@ -815,68 +762,62 @@ Delete navigation property directories for applications
 
 ### [Remove-MgApplicationTokenIssuancePolicyByRef](Remove-MgApplicationTokenIssuancePolicyByRef.md)
 Remove a tokenIssuancePolicy from an application.
-This API is supported in the following national cloud deployments.
 
 ### [Remove-MgApplicationTokenLifetimePolicyByRef](Remove-MgApplicationTokenLifetimePolicyByRef.md)
 Remove a tokenLifetimePolicy from an application.
-This API is supported in the following national cloud deployments.
 
 ### [Remove-MgGroupAppRoleAssignment](Remove-MgGroupAppRoleAssignment.md)
 Deletes an appRoleAssignment that a group has been granted.
-This API is supported in the following national cloud deployments.
 
 ### [Remove-MgServicePrincipal](Remove-MgServicePrincipal.md)
 Delete a servicePrincipal object.
-This API is supported in the following national cloud deployments.
 
 ### [Remove-MgServicePrincipalAppManagementPolicy](Remove-MgServicePrincipalAppManagementPolicy.md)
 Remove an appManagementPolicy policy object from an application or service principal object.
 When you remove the appManagementPolicy, the application or service principal adopts the tenant-wide tenantAppManagementPolicy setting.
-This API is supported in the following national cloud deployments.
 
 ### [Remove-MgServicePrincipalAppRoleAssignedTo](Remove-MgServicePrincipalAppRoleAssignedTo.md)
 Deletes an appRoleAssignment that a user, group, or client service principal has been granted for a resource service principal.
-This API is supported in the following national cloud deployments.
 
 ### [Remove-MgServicePrincipalAppRoleAssignment](Remove-MgServicePrincipalAppRoleAssignment.md)
 Deletes an appRoleAssignment that a service principal has been granted.
 App roles which are assigned to service principals are also known as application permissions.
 Deleting an app role assignment for a service principal is equivalent to revoking the app-only permission grant.
-This API is supported in the following national cloud deployments.
 
 ### [Remove-MgServicePrincipalByAppId](Remove-MgServicePrincipalByAppId.md)
 Delete a servicePrincipal object.
-This API is supported in the following national cloud deployments.
 
 ### [Remove-MgServicePrincipalClaimMappingPolicyByRef](Remove-MgServicePrincipalClaimMappingPolicyByRef.md)
 Remove a claimsMappingPolicy from a servicePrincipal.
-This API is supported in the following national cloud deployments.
 
 ### [Remove-MgServicePrincipalDelegatedPermissionClassification](Remove-MgServicePrincipalDelegatedPermissionClassification.md)
 Deletes a delegatedPermissionClassification which had previously been set for a delegated permission.
-This API is supported in the following national cloud deployments.
 
 ### [Remove-MgServicePrincipalEndpoint](Remove-MgServicePrincipalEndpoint.md)
 Delete navigation property endpoints for servicePrincipals
 
 ### [Remove-MgServicePrincipalHomeRealmDiscoveryPolicyByRef](Remove-MgServicePrincipalHomeRealmDiscoveryPolicyByRef.md)
 Remove a homeRealmDiscoveryPolicy from a servicePrincipal.
-This API is supported in the following national cloud deployments.
 
 ### [Remove-MgServicePrincipalKey](Remove-MgServicePrincipalKey.md)
 Remove a key credential from a servicePrincipal.
 This method along with addKey can be used by a servicePrincipal to automate rolling its expiring keys.
 As part of the request validation for this method, a proof of possession of an existing key is verified before the action can be performed.
-This API is supported in the following national cloud deployments.
 
 ### [Remove-MgServicePrincipalOwnerByRef](Remove-MgServicePrincipalOwnerByRef.md)
 Remove an owner from a servicePrincipal object.
 As a recommended best practice, service principals should have at least two owners.
-This API is supported in the following national cloud deployments.
 
 ### [Remove-MgServicePrincipalPassword](Remove-MgServicePrincipalPassword.md)
 Remove a password from a servicePrincipal object.
-This API is supported in the following national cloud deployments.
+
+### [Remove-MgServicePrincipalRemoteDesktopSecurityConfiguration](Remove-MgServicePrincipalRemoteDesktopSecurityConfiguration.md)
+Delete a remoteDesktopSecurityConfiguration object on a servicePrincipal.
+Removing remoteDesktopSecurityConfiguration object on the servicePrincipal disables the Microsoft Entra ID Remote Desktop Services (RDS) authentication protocol to authenticate a user to Microsoft Entra joined or Microsoft Entra hybrid joined devices, and removes any target device groups that you configured for SSO.
+
+### [Remove-MgServicePrincipalRemoteDesktopSecurityConfigurationTargetDeviceGroup](Remove-MgServicePrincipalRemoteDesktopSecurityConfigurationTargetDeviceGroup.md)
+Delete a targetDeviceGroup object for the remoteDesktopSecurityConfiguration object on the servicePrincipal.
+Any user authenticating using the Microsoft Entra ID Remote Desktop Services (RDS) authentication protocol to a Microsoft Entra joined or Microsoft Entra hybrid joined device that's in the removed targetDeviceGroup doesn't get SSO prompts.
 
 ### [Remove-MgServicePrincipalSynchronization](Remove-MgServicePrincipalSynchronization.md)
 Delete navigation property synchronization for servicePrincipals
@@ -884,7 +825,6 @@ Delete navigation property synchronization for servicePrincipals
 ### [Remove-MgServicePrincipalSynchronizationJob](Remove-MgServicePrincipalSynchronizationJob.md)
 Stop the synchronization job, and permanently delete all the state associated with it.
 Synchronized accounts are left as-is.
-This API is supported in the following national cloud deployments.
 
 ### [Remove-MgServicePrincipalSynchronizationJobSchema](Remove-MgServicePrincipalSynchronizationJobSchema.md)
 Delete navigation property schema for servicePrincipals
@@ -903,17 +843,14 @@ Delete navigation property directories for servicePrincipals
 
 ### [Remove-MgUserAppRoleAssignment](Remove-MgUserAppRoleAssignment.md)
 Delete an appRoleAssignment that has been granted to a user.
-This API is supported in the following national cloud deployments.
 
 ### [Restart-MgApplicationSynchronizationJob](Restart-MgApplicationSynchronizationJob.md)
 Restart a stopped synchronization job, forcing it to reprocess all the objects in the directory.
 Optionally clears existing the synchronization state and previous errors.
-This API is supported in the following national cloud deployments.
 
 ### [Restart-MgServicePrincipalSynchronizationJob](Restart-MgServicePrincipalSynchronizationJob.md)
 Restart a stopped synchronization job, forcing it to reprocess all the objects in the directory.
 Optionally clears existing the synchronization state and previous errors.
-This API is supported in the following national cloud deployments.
 
 ### [Set-MgApplicationLogo](Set-MgApplicationLogo.md)
 The main logo for the application.
@@ -928,7 +865,6 @@ Update property secrets value.
 ### [Set-MgApplicationVerifiedPublisher](Set-MgApplicationVerifiedPublisher.md)
 Set the verifiedPublisher on an application.
 For more information, including prerequisites to setting a verified publisher, see Publisher verification.
-This API is supported in the following national cloud deployments.
 
 ### [Set-MgServicePrincipalSynchronization](Set-MgServicePrincipalSynchronization.md)
 Update the navigation property synchronization in servicePrincipals
@@ -942,7 +878,6 @@ If the job is in a paused state, it continues processing changes from the point 
 If the job is in quarantine, the quarantine status is cleared.
 Don't create scripts to call the start job continuously while it's running because that can cause the service to stop running.
 Use the start job only when the job is currently paused or in quarantine.
-This API is supported in the following national cloud deployments.
 
 ### [Start-MgServicePrincipalSynchronizationJob](Start-MgServicePrincipalSynchronizationJob.md)
 Start an existing synchronization job.
@@ -950,17 +885,14 @@ If the job is in a paused state, it continues processing changes from the point 
 If the job is in quarantine, the quarantine status is cleared.
 Don't create scripts to call the start job continuously while it's running because that can cause the service to stop running.
 Use the start job only when the job is currently paused or in quarantine.
-This API is supported in the following national cloud deployments.
 
 ### [Suspend-MgApplicationSynchronizationJob](Suspend-MgApplicationSynchronizationJob.md)
 Temporarily stop a running synchronization job.
 All the progress, including job state, is persisted, and the job will continue from where it left off when a start call is made.
-This API is supported in the following national cloud deployments.
 
 ### [Suspend-MgServicePrincipalSynchronizationJob](Suspend-MgServicePrincipalSynchronizationJob.md)
 Temporarily stop a running synchronization job.
 All the progress, including job state, is persisted, and the job will continue from where it left off when a start call is made.
-This API is supported in the following national cloud deployments.
 
 ### [Test-MgApplicationProperty](Test-MgApplicationProperty.md)
 Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
@@ -973,11 +905,9 @@ Validate that the mail nickname is unique This API only returns the first valida
 If the properties fail multiple validations, only the first validation failure is returned.
 However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
 To learn more about configuring naming policies, see Configure naming policy.
-This API is supported in the following national cloud deployments.
 
 ### [Test-MgApplicationSynchronizationJobCredential](Test-MgApplicationSynchronizationJobCredential.md)
 Validate that the credentials are valid in the tenant.
-This API is supported in the following national cloud deployments.
 
 ### [Test-MgServicePrincipalProperty](Test-MgServicePrincipalProperty.md)
 Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
@@ -990,26 +920,21 @@ Validate that the mail nickname is unique This API only returns the first valida
 If the properties fail multiple validations, only the first validation failure is returned.
 However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
 To learn more about configuring naming policies, see Configure naming policy.
-This API is supported in the following national cloud deployments.
 
 ### [Test-MgServicePrincipalSynchronizationJobCredential](Test-MgServicePrincipalSynchronizationJobCredential.md)
 Validate that the credentials are valid in the tenant.
-This API is supported in the following national cloud deployments.
 
 ### [Update-MgApplication](Update-MgApplication.md)
 Update the properties of an application object.
-This API is supported in the following national cloud deployments.
 
 ### [Update-MgApplicationByAppId](Update-MgApplicationByAppId.md)
 Update the properties of an application object.
-This API is supported in the following national cloud deployments.
 
 ### [Update-MgApplicationExtensionProperty](Update-MgApplicationExtensionProperty.md)
 Update the navigation property extensionProperties in applications
 
 ### [Update-MgApplicationFederatedIdentityCredential](Update-MgApplicationFederatedIdentityCredential.md)
 Update the properties of a federatedIdentityCredential object.
-This API is supported in the following national cloud deployments.
 
 ### [Update-MgApplicationSynchronizationJob](Update-MgApplicationSynchronizationJob.md)
 Update the navigation property jobs in applications
@@ -1025,7 +950,6 @@ Update the navigation property directories in applications
 
 ### [Update-MgApplicationSynchronizationTemplate](Update-MgApplicationSynchronizationTemplate.md)
 Update (override) the synchronization template associated with a given application.
-This API is supported in the following national cloud deployments.
 
 ### [Update-MgApplicationSynchronizationTemplateSchema](Update-MgApplicationSynchronizationTemplateSchema.md)
 Update the navigation property schema in applications
@@ -1054,6 +978,14 @@ Update the navigation property delegatedPermissionClassifications in servicePrin
 ### [Update-MgServicePrincipalEndpoint](Update-MgServicePrincipalEndpoint.md)
 Update the navigation property endpoints in servicePrincipals
 
+### [Update-MgServicePrincipalRemoteDesktopSecurityConfiguration](Update-MgServicePrincipalRemoteDesktopSecurityConfiguration.md)
+Update the properties of a remoteDesktopSecurityConfiguration object on the servicePrincipal.
+Use this configuration to enable or disable the Microsoft Entra ID Remote Desktop Services (RDS) authentication protocol to authenticate a user to Microsoft Entra joined or Microsoft Entra hybrid joined devices.
+
+### [Update-MgServicePrincipalRemoteDesktopSecurityConfigurationTargetDeviceGroup](Update-MgServicePrincipalRemoteDesktopSecurityConfigurationTargetDeviceGroup.md)
+Update the properties of a targetDeviceGroup object for remoteDesktopSecurityConfiguration object on the servicePrincipal.
+You can configure a maximum of 10 target device groups for the remoteDesktopSecurityConfiguraiton object on the servicePrincipal.
+
 ### [Update-MgServicePrincipalSynchronizationJob](Update-MgServicePrincipalSynchronizationJob.md)
 Update the navigation property jobs in servicePrincipals
 
@@ -1068,7 +1000,6 @@ Update the navigation property directories in servicePrincipals
 
 ### [Update-MgServicePrincipalSynchronizationTemplate](Update-MgServicePrincipalSynchronizationTemplate.md)
 Update (override) the synchronization template associated with a given application.
-This API is supported in the following national cloud deployments.
 
 ### [Update-MgServicePrincipalSynchronizationTemplateSchema](Update-MgServicePrincipalSynchronizationTemplateSchema.md)
 Update the navigation property schema in servicePrincipals

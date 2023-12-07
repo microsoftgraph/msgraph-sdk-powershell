@@ -11,7 +11,6 @@ schema: 2.0.0
 Deletes an appRoleAssignment that a service principal has been granted.
 App roles that are assigned to service principals are also known as application permissions.
 Deleting an app role assignment for a service principal is equivalent to revoking the app-only permission grant.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -31,7 +30,6 @@ Remove-MgBetaServicePrincipalAppRoleAssignment -InputObject <IApplicationsIdenti
 Deletes an appRoleAssignment that a service principal has been granted.
 App roles that are assigned to service principals are also known as application permissions.
 Deleting an app role assignment for a service principal is equivalent to revoking the app-only permission grant.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

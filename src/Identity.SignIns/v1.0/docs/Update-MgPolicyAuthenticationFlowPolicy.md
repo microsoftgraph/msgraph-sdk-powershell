@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Update the selfServiceSignUp property of an authenticationFlowsPolicy object.
 The properties id, type, and description cannot be modified.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -31,7 +30,6 @@ Update-MgPolicyAuthenticationFlowPolicy -BodyParameter <IMicrosoftGraphAuthentic
 ## DESCRIPTION
 Update the selfServiceSignUp property of an authenticationFlowsPolicy object.
 The properties id, type, and description cannot be modified.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

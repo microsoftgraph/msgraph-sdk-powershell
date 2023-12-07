@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Delete a workflow object and its associated tasks, taskProcessingResults and versions.
 You can restore a deleted workflow and its associated objects within 30 days of deletion.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -29,7 +28,6 @@ Remove-MgIdentityGovernanceLifecycleWorkflow -InputObject <IIdentityGovernanceId
 ## DESCRIPTION
 Delete a workflow object and its associated tasks, taskProcessingResults and versions.
 You can restore a deleted workflow and its associated objects within 30 days of deletion.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

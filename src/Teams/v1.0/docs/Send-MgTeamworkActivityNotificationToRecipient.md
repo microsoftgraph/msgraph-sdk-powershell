@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Send activity feed notifications to multiple users, in bulk.
 For more details about sending notifications and the requirements for doing so, see\nsending Teams activity notifications.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -33,7 +32,6 @@ Send-MgTeamworkActivityNotificationToRecipient
 ## DESCRIPTION
 Send activity feed notifications to multiple users, in bulk.
 For more details about sending notifications and the requirements for doing so, see\nsending Teams activity notifications.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

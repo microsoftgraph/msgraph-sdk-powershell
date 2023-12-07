@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a calendarPermission resource to specify the identity and role of the user with whom the specified calendar is being shared or delegated.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -67,7 +66,6 @@ New-MgBetaUserCalendarPermission -InputObject <ICalendarIdentity> [-AdditionalPr
 
 ## DESCRIPTION
 Create a calendarPermission resource to specify the identity and role of the user with whom the specified calendar is being shared or delegated.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -340,7 +338,9 @@ To create the parameters described below, construct a hash table containing the 
   - `[ExtensionId <String>]`: The unique identifier of extension
   - `[GroupId <String>]`: The unique identifier of group
   - `[PlaceId <String>]`: The unique identifier of place
+  - `[RoomId <String>]`: The unique identifier of room
   - `[UserId <String>]`: The unique identifier of user
+  - `[WorkspaceId <String>]`: The unique identifier of workspace
 
 ## RELATED LINKS
 

@@ -11,7 +11,6 @@ schema: 2.0.0
 Mute a specific participant in the call.
 This is a server mute, meaning that the server will drop all audio packets for this participant, even if the participant continues to stream audio.
 For more information about how to handle mute operations, see muteParticipantOperation.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -45,7 +44,6 @@ Invoke-MgBetaMuteCommunicationCallParticipant -InputObject <ICloudCommunications
 Mute a specific participant in the call.
 This is a server mute, meaning that the server will drop all audio packets for this participant, even if the participant continues to stream audio.
 For more information about how to handle mute operations, see muteParticipantOperation.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

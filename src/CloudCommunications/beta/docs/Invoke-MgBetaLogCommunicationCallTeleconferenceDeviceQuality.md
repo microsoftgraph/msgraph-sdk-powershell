@@ -15,7 +15,6 @@ One media leg is between the CVI bot and Teams infrastructure, such as Teams con
 The other media leg is between the CVI bot and the VTC device.
 The third-party partners own the VTC media leg and the Teams infrastructure cannot access the quality data of the third-party call leg.
 This method is only for the CVI partners to provide their media quality data.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -40,7 +39,6 @@ One media leg is between the CVI bot and Teams infrastructure, such as Teams con
 The other media leg is between the CVI bot and the VTC device.
 The third-party partners own the VTC media leg and the Teams infrastructure cannot access the quality data of the third-party call leg.
 This method is only for the CVI partners to provide their media quality data.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

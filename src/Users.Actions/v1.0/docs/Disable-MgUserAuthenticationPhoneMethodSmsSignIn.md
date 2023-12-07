@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Disable SMS sign-in for an existing mobile phone number registered to a user.
 The number will no longer be available for SMS sign-in, which can prevent your user from signing in.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -29,7 +28,6 @@ Disable-MgUserAuthenticationPhoneMethodSmsSignIn -InputObject <IUsersActionsIden
 ## DESCRIPTION
 Disable SMS sign-in for an existing mobile phone number registered to a user.
 The number will no longer be available for SMS sign-in, which can prevent your user from signing in.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

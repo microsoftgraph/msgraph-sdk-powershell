@@ -11,7 +11,6 @@ schema: 2.0.0
 Submit a data policy operation request from a company administrator or an application to export an organizational user's data.
 This data includes the user's data stored in OneDrive and their activity reports.
 For more guidance about exporting data while complying with regulations, see Data Subject Requests and the GDPR and CCPA.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -45,7 +44,6 @@ Export-MgBetaUserPersonalData -InputObject <IUsersActionsIdentity> [-AdditionalP
 Submit a data policy operation request from a company administrator or an application to export an organizational user's data.
 This data includes the user's data stored in OneDrive and their activity reports.
 For more guidance about exporting data while complying with regulations, see Data Subject Requests and the GDPR and CCPA.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -240,6 +238,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[NotebookId <String>]`: The unique identifier of notebook
   - `[OnenotePageId <String>]`: The unique identifier of onenotePage
   - `[OnenoteSectionId <String>]`: The unique identifier of onenoteSection
+  - `[OnlineMeetingId <String>]`: The unique identifier of onlineMeeting
   - `[OutlookTaskFolderId <String>]`: The unique identifier of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: The unique identifier of outlookTaskGroup
   - `[OutlookTaskId <String>]`: The unique identifier of outlookTask

@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Get the properties of an insightsSettings object for displaying or returning contact insights in an organization.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Get-MgBetaOrganizationSettingContactInsight -InputObject <IIdentityDirectoryMana
 
 ## DESCRIPTION
 Get the properties of an insightsSettings object for displaying or returning contact insights in an organization.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

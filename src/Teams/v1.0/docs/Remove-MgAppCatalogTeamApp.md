@@ -11,7 +11,6 @@ schema: 2.0.0
 Delete an app from an organization's app catalog (the tenant app catalog).
 To delete an app, the distributionMethod property for the app must be set to organization.
 You can also use this API to remove a submitted app from the review process.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -31,7 +30,6 @@ Remove-MgAppCatalogTeamApp -InputObject <ITeamsIdentity> [-IfMatch <String>] [-P
 Delete an app from an organization's app catalog (the tenant app catalog).
 To delete an app, the distributionMethod property for the app must be set to organization.
 You can also use this API to remove a submitted app from the review process.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

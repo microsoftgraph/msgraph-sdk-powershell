@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgBetaGroupSiteListContentTypeColumn
 
 ## SYNOPSIS
-Retrieve the metadata for a site][], [list][] or [contentType][] [column][columnDefinition].
-This API is available in the following [national cloud deployments.
+Retrieve the metadata for a [site][], [list][] or [contentType][] [column][columnDefinition].
 
 ## SYNTAX
 
@@ -35,8 +34,7 @@ Get-MgBetaGroupSiteListContentTypeColumn -InputObject <ISitesIdentity> [-ExpandP
 ```
 
 ## DESCRIPTION
-Retrieve the metadata for a site][], [list][] or [contentType][] [column][columnDefinition].
-This API is available in the following [national cloud deployments.
+Retrieve the metadata for a [site][], [list][] or [contentType][] [column][columnDefinition].
 
 ## EXAMPLES
 

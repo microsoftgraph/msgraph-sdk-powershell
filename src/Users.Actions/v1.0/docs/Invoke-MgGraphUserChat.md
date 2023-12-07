@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Unhide a chat for a user.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -41,7 +40,6 @@ Invoke-MgGraphUserChat -InputObject <IUsersActionsIdentity> [-AdditionalProperti
 
 ## DESCRIPTION
 Unhide a chat for a user.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

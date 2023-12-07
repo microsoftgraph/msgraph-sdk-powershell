@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Apply tags to files in an eDiscovery review set.
 For details, see Tag documents in a review set in eDiscovery.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -49,7 +48,6 @@ Add-MgSecurityCaseEdiscoveryCaseReviewSetQueryTag -InputObject <ISecurityIdentit
 ## DESCRIPTION
 Apply tags to files in an eDiscovery review set.
 For details, see Tag documents in a review set in eDiscovery.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

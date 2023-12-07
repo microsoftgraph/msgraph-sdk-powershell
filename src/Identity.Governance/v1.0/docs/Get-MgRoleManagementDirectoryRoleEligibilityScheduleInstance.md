@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Get the instance of a role eligibility.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -35,7 +34,6 @@ Get-MgRoleManagementDirectoryRoleEligibilityScheduleInstance -InputObject <IIden
 
 ## DESCRIPTION
 Get the instance of a role eligibility.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

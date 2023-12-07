@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementDeviceConfiguration
 
 ## SYNOPSIS
-Read properties and relationships of the iosGeneralDeviceConfiguration object.
+Read properties and relationships of the iosCertificateProfile object.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceManagementDeviceConfiguration -InputObject <IDeviceManagementIdentit
 ```
 
 ## DESCRIPTION
-Read properties and relationships of the iosGeneralDeviceConfiguration object.
+Read properties and relationships of the iosCertificateProfile object.
 
 ## EXAMPLES
 

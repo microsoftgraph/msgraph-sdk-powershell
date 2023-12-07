@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new personInterest.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -49,7 +48,6 @@ New-MgBetaUserProfileInterest -InputObject <IPeopleIdentity> [-AdditionalPropert
 
 ## DESCRIPTION
 Create a new personInterest.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

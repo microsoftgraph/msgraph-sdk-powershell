@@ -18,7 +18,6 @@ After an access review is finished, and auto-apply was configured, then the stat
 You should expect to see denied users, if any, being removed from the resource group membership or app assignment in a few minutes.
 A configured auto applying review, or selecting Apply doesn't have an effect on a group that originates in an on-premises directory or a dynamic group.
 If you want to change a group that originates on-premises, download the results and apply those changes to the representation of the group in that directory.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -44,7 +43,6 @@ After an access review is finished, and auto-apply was configured, then the stat
 You should expect to see denied users, if any, being removed from the resource group membership or app assignment in a few minutes.
 A configured auto applying review, or selecting Apply doesn't have an effect on a group that originates in an on-premises directory or a dynamic group.
 If you want to change a group that originates on-premises, download the results and apply those changes to the representation of the group in that directory.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

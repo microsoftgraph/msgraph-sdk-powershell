@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Confirm one or more riskyServicePrincipal objects as compromised.
 This action sets the targeted service principal account's risk level to high.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -30,7 +29,6 @@ Confirm-MgRiskyServicePrincipalCompromised
 ## DESCRIPTION
 Confirm one or more riskyServicePrincipal objects as compromised.
 This action sets the targeted service principal account's risk level to high.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

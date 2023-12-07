@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaIdentityGovernancePermissionAnalyticAw
 
 ## SYNOPSIS
-Get aws from identityGovernance
+AWS permissions analytics findings.
 
 ## SYNTAX
 
@@ -18,7 +18,7 @@ Get-MgBetaIdentityGovernancePermissionAnalyticAw [-ExpandProperty <String[]>] [-
 ```
 
 ## DESCRIPTION
-Get aws from identityGovernance
+AWS permissions analytics findings.
 
 ## EXAMPLES
 

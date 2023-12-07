@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update multiple alerts in one request instead of multiple requests.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -28,7 +27,6 @@ Update-MgBetaSecurityAlertMultiple
 
 ## DESCRIPTION
 Update multiple alerts in one request instead of multiple requests.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

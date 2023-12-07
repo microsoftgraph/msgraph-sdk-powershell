@@ -8,8 +8,7 @@ schema: 2.0.0
 # Update-MgBetaWindowsUpdatesPolicyComplianceChange
 
 ## SYNOPSIS
-Update the properties of a contentApproval object.
-This API is available in the following national cloud deployments.
+Update the properties of a complianceChange object.
 
 ## SYNTAX
 
@@ -42,8 +41,7 @@ Update-MgBetaWindowsUpdatesPolicyComplianceChange -InputObject <IWindowsUpdatesI
 ```
 
 ## DESCRIPTION
-Update the properties of a contentApproval object.
-This API is available in the following national cloud deployments.
+Update the properties of a complianceChange object.
 
 ## EXAMPLES
 
@@ -316,6 +314,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[Expedite <IMicrosoftGraphWindowsUpdatesExpediteSettings>]`: expediteSettings
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[IsExpedited <Boolean?>]`: True indicates that the deployment of the content is expedited.
+        - `[IsReadinessTest <Boolean?>]`: 
       - `[Monitoring <IMicrosoftGraphWindowsUpdatesMonitoringSettings>]`: monitoringSettings
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[MonitoringRules <IMicrosoftGraphWindowsUpdatesMonitoringRule[]>]`: Specifies the rules through which monitoring signals can trigger actions on the deployment. Rules are combined using 'or.'
@@ -382,6 +381,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[Expedite <IMicrosoftGraphWindowsUpdatesExpediteSettings>]`: expediteSettings
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[IsExpedited <Boolean?>]`: True indicates that the deployment of the content is expedited.
+      - `[IsReadinessTest <Boolean?>]`: 
     - `[Monitoring <IMicrosoftGraphWindowsUpdatesMonitoringSettings>]`: monitoringSettings
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[MonitoringRules <IMicrosoftGraphWindowsUpdatesMonitoringRule[]>]`: Specifies the rules through which monitoring signals can trigger actions on the deployment. Rules are combined using 'or.'

@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete a deployment object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Remove-MgBetaWindowsUpdatesDeployment -InputObject <IWindowsUpdatesIdentity> [-I
 
 ## DESCRIPTION
 Delete a deployment object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

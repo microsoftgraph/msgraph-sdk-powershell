@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Create a new accessPackage object.
 The access package will be added to an existing accessPackageCatalog.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -34,7 +33,6 @@ New-MgEntitlementManagementAccessPackage -BodyParameter <IMicrosoftGraphAccessPa
 ## DESCRIPTION
 Create a new accessPackage object.
 The access package will be added to an existing accessPackageCatalog.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

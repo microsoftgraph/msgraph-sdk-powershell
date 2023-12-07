@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update the properties of a bookingBusiness object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -53,7 +52,6 @@ Update-MgBetaBookingBusiness -InputObject <IBookingsIdentity> [-AdditionalProper
 
 ## DESCRIPTION
 Update the properties of a bookingBusiness object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -127,7 +125,7 @@ Accept wildcard characters: False
 ```
 
 ### -BodyParameter
-Represents a Microsot Bookings Business.
+Represents a Microsoft Bookings Business.
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
@@ -547,7 +545,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[StaffMemberIds <String[]>]`: The ID of each bookingStaffMember who is scheduled in this appointment.
   - `[Start <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
 
-`BODYPARAMETER <IMicrosoftGraphBookingBusiness>`: Represents a Microsot Bookings Business.
+`BODYPARAMETER <IMicrosoftGraphBookingBusiness>`: Represents a Microsoft Bookings Business.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[DisplayName <String>]`: A name for the derived entity, which interfaces with customers.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -791,16 +789,15 @@ To create the parameters described below, construct a hash table containing the 
   - `[BookingStaffMemberId <String>]`: The unique identifier of bookingStaffMember
   - `[BusinessScenarioId <String>]`: The unique identifier of businessScenario
   - `[BusinessScenarioTaskId <String>]`: The unique identifier of businessScenarioTask
-  - `[CallRecordingId <String>]`: The unique identifier of callRecording
-  - `[CallTranscriptId <String>]`: The unique identifier of callTranscript
   - `[MeetingAttendanceReportId <String>]`: The unique identifier of meetingAttendanceReport
-  - `[MeetingRegistrantBaseId <String>]`: The unique identifier of meetingRegistrantBase
-  - `[MeetingRegistrationQuestionId <String>]`: The unique identifier of meetingRegistrationQuestion
   - `[PlannerPlanConfigurationLocalizationId <String>]`: The unique identifier of plannerPlanConfigurationLocalization
+  - `[Role <String>]`: Usage: role='{role}'
+  - `[UserId <String>]`: Usage: userId='{userId}'
   - `[VirtualEventId <String>]`: The unique identifier of virtualEvent
   - `[VirtualEventPresenterId <String>]`: The unique identifier of virtualEventPresenter
   - `[VirtualEventRegistrationId <String>]`: The unique identifier of virtualEventRegistration
   - `[VirtualEventSessionId <String>]`: The unique identifier of virtualEventSession
+  - `[VirtualEventTownhallId <String>]`: The unique identifier of virtualEventTownhall
   - `[VirtualEventWebinarId <String>]`: The unique identifier of virtualEventWebinar
 
 `SCHEDULINGPOLICY <IMicrosoftGraphBookingSchedulingPolicy>`: This type represents the set of policies that dictate how bookings can be created in a Booking Calendar.

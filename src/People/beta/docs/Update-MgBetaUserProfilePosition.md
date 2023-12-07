@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update the properties of a workPosition object in a user's profile.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -49,7 +48,6 @@ Update-MgBetaUserProfilePosition -InputObject <IPeopleIdentity> [-AdditionalProp
 
 ## DESCRIPTION
 Update the properties of a workPosition object in a user's profile.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -442,8 +440,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[Colleagues <IMicrosoftGraphRelatedPerson[]>]`: Colleagues that are associated with this position.
     - `[DisplayName <String>]`: Name of the person.
     - `[Relationship <String>]`: personRelationship
-    - `[UserId <String>]`: 
-    - `[UserPrincipalName <String>]`: Email address or reference to person within organization.
+    - `[UserId <String>]`: The user's directory object ID (Microsoft Entra ID or CID).
+    - `[UserPrincipalName <String>]`: Email address or reference to person within the organization.
   - `[Detail <IMicrosoftGraphPositionDetail>]`: positionDetail
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Company <IMicrosoftGraphCompanyDetail>]`: companyDetail
@@ -465,19 +463,19 @@ To create the parameters described below, construct a hash table containing the 
     - `[Description <String>]`: Description of the position in question.
     - `[EndMonthYear <DateTime?>]`: When the position ended.
     - `[JobTitle <String>]`: The title held when in that position.
-    - `[Layer <Int32?>]`: 
-    - `[Level <String>]`: 
+    - `[Layer <Int32?>]`: The place where the employee is within the organizational hierarchy.
+    - `[Level <String>]`: The employee’s experience or management level.
     - `[Role <String>]`: The role the position entailed.
     - `[StartMonthYear <DateTime?>]`: The start month and year of the position.
-    - `[Summary <String>]`: Short summary of the position.
+    - `[Summary <String>]`: summary of the position.
   - `[IsCurrent <Boolean?>]`: Denotes whether or not the position is current.
   - `[Manager <IMicrosoftGraphRelatedPerson>]`: relatedPerson
 
 `COLLEAGUES <IMicrosoftGraphRelatedPerson[]>`: Colleagues that are associated with this position.
   - `[DisplayName <String>]`: Name of the person.
   - `[Relationship <String>]`: personRelationship
-  - `[UserId <String>]`: 
-  - `[UserPrincipalName <String>]`: Email address or reference to person within organization.
+  - `[UserId <String>]`: The user's directory object ID (Microsoft Entra ID or CID).
+  - `[UserPrincipalName <String>]`: Email address or reference to person within the organization.
 
 `CREATEDBY <IMicrosoftGraphIdentitySet>`: identitySet
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -509,11 +507,11 @@ To create the parameters described below, construct a hash table containing the 
   - `[Description <String>]`: Description of the position in question.
   - `[EndMonthYear <DateTime?>]`: When the position ended.
   - `[JobTitle <String>]`: The title held when in that position.
-  - `[Layer <Int32?>]`: 
-  - `[Level <String>]`: 
+  - `[Layer <Int32?>]`: The place where the employee is within the organizational hierarchy.
+  - `[Level <String>]`: The employee’s experience or management level.
   - `[Role <String>]`: The role the position entailed.
   - `[StartMonthYear <DateTime?>]`: The start month and year of the position.
-  - `[Summary <String>]`: Short summary of the position.
+  - `[Summary <String>]`: summary of the position.
 
 `INFERENCE <IMicrosoftGraphInferenceData>`: inferenceData
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -557,8 +555,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[DisplayName <String>]`: Name of the person.
   - `[Relationship <String>]`: personRelationship
-  - `[UserId <String>]`: 
-  - `[UserPrincipalName <String>]`: Email address or reference to person within organization.
+  - `[UserId <String>]`: The user's directory object ID (Microsoft Entra ID or CID).
+  - `[UserPrincipalName <String>]`: Email address or reference to person within the organization.
 
 `SOURCE <IMicrosoftGraphPersonDataSources>`: personDataSources
   - `[(Any) <Object>]`: This indicates any property can be added to this object.

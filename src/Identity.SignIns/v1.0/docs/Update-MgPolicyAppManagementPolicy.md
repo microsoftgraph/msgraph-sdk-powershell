@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update an appManagementPolicy object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -43,7 +42,6 @@ Update-MgPolicyAppManagementPolicy -InputObject <IIdentitySignInsIdentity> [-Add
 
 ## DESCRIPTION
 Update an appManagementPolicy object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

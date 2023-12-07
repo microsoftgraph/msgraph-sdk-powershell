@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new custom identityUserFlowAttribute object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -28,7 +27,6 @@ New-MgBetaIdentityUserFlowAttribute -BodyParameter <IMicrosoftGraphIdentityUserF
 
 ## DESCRIPTION
 Create a new custom identityUserFlowAttribute object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

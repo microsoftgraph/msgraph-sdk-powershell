@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete an educationalActivity object from a user's profile.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Remove-MgBetaUserProfileEducationalActivity -InputObject <IPeopleIdentity> [-IfM
 
 ## DESCRIPTION
 Delete an educationalActivity object from a user's profile.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

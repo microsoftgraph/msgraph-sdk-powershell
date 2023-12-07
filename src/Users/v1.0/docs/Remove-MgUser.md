@@ -8,11 +8,7 @@ schema: 2.0.0
 # Remove-MgUser
 
 ## SYNOPSIS
-Delete user.
- When deleted, user resources are moved to a temporary container and can be restored within 30 days.
-After that time, they are permanently deleted.
-To learn more, see deletedItems.
-This API is available in the following national cloud deployments.
+Deletes a user.
 
 ## SYNTAX
 
@@ -28,11 +24,7 @@ Remove-MgUser -InputObject <IUsersIdentity> [-IfMatch <String>] [-PassThru] [-Co
 ```
 
 ## DESCRIPTION
-Delete user.
- When deleted, user resources are moved to a temporary container and can be restored within 30 days.
-After that time, they are permanently deleted.
-To learn more, see deletedItems.
-This API is available in the following national cloud deployments.
+Deletes a user.
 
 ## EXAMPLES
 

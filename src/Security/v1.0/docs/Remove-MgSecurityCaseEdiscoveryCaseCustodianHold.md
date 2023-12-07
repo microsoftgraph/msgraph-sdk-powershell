@@ -11,7 +11,6 @@ schema: 2.0.0
 Start the process of removing hold from eDiscovery custodians.
 After the operation is created, you can get the status by retrieving the Location parameter from the response headers.
 The location provides a URL that will return an eDiscoveryHoldOperation object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -57,7 +56,6 @@ Remove-MgSecurityCaseEdiscoveryCaseCustodianHold -InputObject <ISecurityIdentity
 Start the process of removing hold from eDiscovery custodians.
 After the operation is created, you can get the status by retrieving the Location parameter from the response headers.
 The location provides a URL that will return an eDiscoveryHoldOperation object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

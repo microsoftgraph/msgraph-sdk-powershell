@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgSchemaExtension
 
 ## SYNOPSIS
-This API is available in the following national cloud deployments.
+Get schemaExtension
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgSchemaExtension -InputObject <ISchemaExtensionsIdentity> [-ExpandProperty 
 ```
 
 ## DESCRIPTION
-This API is available in the following national cloud deployments.
+Get schemaExtension
 
 ## EXAMPLES
 

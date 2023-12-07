@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve the properties and relationships of a user.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -46,7 +45,6 @@ Get-MgBetaEducationUser -InputObject <IEducationIdentity> [-ExpandProperty <Stri
 
 ## DESCRIPTION
 Retrieve the properties and relationships of a user.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

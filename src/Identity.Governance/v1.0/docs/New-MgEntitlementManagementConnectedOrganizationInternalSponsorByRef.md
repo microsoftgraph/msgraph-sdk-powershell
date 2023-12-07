@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Add a user or a group to the connected organization's internal sponsors.
 The internal sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -43,7 +42,6 @@ New-MgEntitlementManagementConnectedOrganizationInternalSponsorByRef
 ## DESCRIPTION
 Add a user or a group to the connected organization's internal sponsors.
 The internal sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

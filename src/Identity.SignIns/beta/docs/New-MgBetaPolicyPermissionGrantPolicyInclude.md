@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Add conditions under which a permission grant event is *included* in a permission grant policy.
 You do this by adding a permissionGrantConditionSet to the includes collection of a  permissionGrantPolicy.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -49,7 +48,6 @@ New-MgBetaPolicyPermissionGrantPolicyInclude -InputObject <IIdentitySignInsIdent
 ## DESCRIPTION
 Add conditions under which a permission grant event is *included* in a permission grant policy.
 You do this by adding a permissionGrantConditionSet to the includes collection of a  permissionGrantPolicy.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -369,6 +367,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[ActivityBasedTimeoutPolicyId <String>]`: The unique identifier of activityBasedTimeoutPolicy
   - `[AppManagementPolicyId <String>]`: The unique identifier of appManagementPolicy
   - `[AuthenticationCombinationConfigurationId <String>]`: The unique identifier of authenticationCombinationConfiguration
+  - `[AuthenticationConditionApplicationAppId <String>]`: The unique identifier of authenticationConditionApplication
   - `[AuthenticationContextClassReferenceId <String>]`: The unique identifier of authenticationContextClassReference
   - `[AuthenticationEventListenerId <String>]`: The unique identifier of authenticationEventListener
   - `[AuthenticationEventsFlowId <String>]`: The unique identifier of authenticationEventsFlow

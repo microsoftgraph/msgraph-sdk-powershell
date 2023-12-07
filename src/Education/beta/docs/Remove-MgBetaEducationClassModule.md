@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Delete an existing module in a class.
 Only teachers within a class can delete modules.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -29,7 +28,6 @@ Remove-MgBetaEducationClassModule -InputObject <IEducationIdentity> [-IfMatch <S
 ## DESCRIPTION
 Delete an existing module in a class.
 Only teachers within a class can delete modules.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

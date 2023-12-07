@@ -8,8 +8,8 @@ schema: 2.0.0
 # Get-MgBetaIdentityGovernanceTermsOfUseAgreement
 
 ## SYNOPSIS
-Retrieve the properties and relationships of an agreement object.
-This API is available in the following national cloud deployments.
+Retrieve all files related to an agreement.
+This includes the default file and all localized files.
 
 ## SYNTAX
 
@@ -33,8 +33,8 @@ Get-MgBetaIdentityGovernanceTermsOfUseAgreement -InputObject <IIdentityGovernanc
 ```
 
 ## DESCRIPTION
-Retrieve the properties and relationships of an agreement object.
-This API is available in the following national cloud deployments.
+Retrieve all files related to an agreement.
+This includes the default file and all localized files.
 
 ## EXAMPLES
 

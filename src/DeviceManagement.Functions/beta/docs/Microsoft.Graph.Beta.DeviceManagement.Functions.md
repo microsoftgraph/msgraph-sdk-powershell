@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.DeviceManagement.Functions
-Module Guid: 6e76a072-a2b3-4f63-b701-187a8cc85c6d
+Module Guid: 16fe545d-3a93-4c55-8c4d-8e274a2c0bd1
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devicemanagement.functions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -65,6 +65,9 @@ Invoke function getComanagementEligibleDevicesSummary
 ### [Get-MgBetaDeviceManagementConfigManagerCollectionPolicySummary](Get-MgBetaDeviceManagementConfigManagerCollectionPolicySummary.md)
 Invoke function getPolicySummary
 
+### [Get-MgBetaDeviceManagementConfigurationPolicyLatestUpgradeDefaultBaselinePolicy](Get-MgBetaDeviceManagementConfigurationPolicyLatestUpgradeDefaultBaselinePolicy.md)
+Invoke function retrieveLatestUpgradeDefaultBaselinePolicy
+
 ### [Get-MgBetaDeviceManagementDepOnboardingSettingEncryptionPublicKey](Get-MgBetaDeviceManagementDepOnboardingSettingEncryptionPublicKey.md)
 Get a public key to use to encrypt the Apple device enrollment program token
 
@@ -109,6 +112,9 @@ Invoke function getPortalNotifications
 
 ### [Get-MgBetaDeviceManagementResourceOperationScopeForUser](Get-MgBetaDeviceManagementResourceOperationScopeForUser.md)
 Invoke function getScopesForUser
+
+### [Get-MgBetaDeviceManagementReusablePolicySettingReferencingConfigurationPolicyLatestUpgradeDefaultBaselinePolicy](Get-MgBetaDeviceManagementReusablePolicySettingReferencingConfigurationPolicyLatestUpgradeDefaultBaselinePolicy.md)
+Invoke function retrieveLatestUpgradeDefaultBaselinePolicy
 
 ### [Get-MgBetaDeviceManagementRoleScopeTagById](Get-MgBetaDeviceManagementRoleScopeTagById.md)
 Invoke function getRoleScopeTagsByIds
@@ -155,11 +161,17 @@ Invoke function getRealTimeRemoteConnectionLatency
 ### [Get-MgBetaDeviceManagementVirtualEndpointReportRealTimeRemoteConnectionStatus](Get-MgBetaDeviceManagementVirtualEndpointReportRealTimeRemoteConnectionStatus.md)
 Invoke function getRealTimeRemoteConnectionStatus
 
+### [Get-MgBetaDeviceManagementVirtualEndpointScopedPermission](Get-MgBetaDeviceManagementVirtualEndpointScopedPermission.md)
+Invoke function retrieveScopedPermissions
+
 ### [Get-MgBetaDeviceManagementVirtualEndpointSnapshotStorageAccount](Get-MgBetaDeviceManagementVirtualEndpointSnapshotStorageAccount.md)
 Invoke function getStorageAccounts
 
 ### [Get-MgBetaDeviceManagementVirtualEndpointSnapshotSubscription](Get-MgBetaDeviceManagementVirtualEndpointSnapshotSubscription.md)
 Invoke function getSubscriptions
+
+### [Get-MgBetaDeviceManagementVirtualEndpointTenantEncryptionSetting](Get-MgBetaDeviceManagementVirtualEndpointTenantEncryptionSetting.md)
+Invoke function retrieveTenantEncryptionSetting
 
 ### [Invoke-MgBetaAppDeviceManagementComanagedDeviceDiagnostic](Invoke-MgBetaAppDeviceManagementComanagedDeviceDiagnostic.md)
 Invoke function appDiagnostics

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaUserOwnedDevice
 
 ## SYNOPSIS
-Devices that are owned by the user.
+Devices owned by the user.
 Read-only.
 Nullable.
 Supports $expand.
@@ -35,7 +35,7 @@ Get-MgBetaUserOwnedDevice -InputObject <IUsersIdentity> [-ExpandProperty <String
 ```
 
 ## DESCRIPTION
-Devices that are owned by the user.
+Devices owned by the user.
 Read-only.
 Nullable.
 Supports $expand.

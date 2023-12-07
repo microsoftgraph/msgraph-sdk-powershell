@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Read the properties and relationships of an alert incident.
-The alert incident can be one of the following types that are derived from the unifiedRoleManagementAlertIncident object: This API is available in the following national cloud deployments.
+The alert incident can be one of the following types that are derived from the unifiedRoleManagementAlertIncident object:
 
 ## SYNTAX
 
@@ -35,7 +35,7 @@ Get-MgBetaIdentityGovernanceRoleManagementAlertIncident -InputObject <IIdentityG
 
 ## DESCRIPTION
 Read the properties and relationships of an alert incident.
-The alert incident can be one of the following types that are derived from the unifiedRoleManagementAlertIncident object: This API is available in the following national cloud deployments.
+The alert incident can be one of the following types that are derived from the unifiedRoleManagementAlertIncident object:
 
 ## EXAMPLES
 

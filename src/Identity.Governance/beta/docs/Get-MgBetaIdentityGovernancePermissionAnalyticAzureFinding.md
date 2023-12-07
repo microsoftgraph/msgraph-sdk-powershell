@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaIdentityGovernancePermissionAnalyticAzureFinding
 
 ## SYNOPSIS
-Get findings from identityGovernance
+The output of the permissions usage data analysis performed by Permissions Management to assess risk with identities and resources.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgBetaIdentityGovernancePermissionAnalyticAzureFinding -InputObject <IIdenti
 ```
 
 ## DESCRIPTION
-Get findings from identityGovernance
+The output of the permissions usage data analysis performed by Permissions Management to assess risk with identities and resources.
 
 ## EXAMPLES
 

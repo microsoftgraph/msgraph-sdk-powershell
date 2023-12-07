@@ -12,7 +12,6 @@ Redirect an incoming call that hasn't been answered or rejected yet.
 The terms 'redirecting' and 'forwarding' a call are used interchangeably.
 The bot is expected to redirect the call before the call times out.
 The current timeout value is 15 seconds.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -50,7 +49,6 @@ Redirect an incoming call that hasn't been answered or rejected yet.
 The terms 'redirecting' and 'forwarding' a call are used interchangeably.
 The bot is expected to redirect the call before the call times out.
 The current timeout value is 15 seconds.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -278,6 +276,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[AudioRoutingGroupId <String>]`: The unique identifier of audioRoutingGroup
   - `[CallId <String>]`: The unique identifier of call
   - `[CallRecordId <String>]`: The unique identifier of callRecord
+  - `[CallRecordingId <String>]`: The unique identifier of callRecording
   - `[CallTranscriptId <String>]`: The unique identifier of callTranscript
   - `[CommsOperationId <String>]`: The unique identifier of commsOperation
   - `[ContentSharingSessionId <String>]`: The unique identifier of contentSharingSession

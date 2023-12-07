@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 In the Microsoft Entra access reviews feature, delete an accessReview object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Remove-MgBetaAccessReview -InputObject <IIdentityGovernanceIdentity> [-IfMatch <
 
 ## DESCRIPTION
 In the Microsoft Entra access reviews feature, delete an accessReview object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

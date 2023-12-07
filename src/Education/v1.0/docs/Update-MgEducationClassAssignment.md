@@ -12,7 +12,6 @@ Update an educationAssignment object.
 Only teachers can perform this action.
 Alternatively, request to change the status of an assignment with publish action.
 Don't use a PATCH operation for this purpose.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -61,7 +60,6 @@ Update an educationAssignment object.
 Only teachers can perform this action.
 Alternatively, request to change the status of an assignment with publish action.
 Don't use a PATCH operation for this purpose.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

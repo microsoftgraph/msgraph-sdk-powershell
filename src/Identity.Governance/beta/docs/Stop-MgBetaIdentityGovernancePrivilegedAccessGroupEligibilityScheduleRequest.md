@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Cancel an eligibility assignment request to a group whose membership and ownership are governed by PIM.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -28,7 +27,6 @@ Stop-MgBetaIdentityGovernancePrivilegedAccessGroupEligibilityScheduleRequest
 
 ## DESCRIPTION
 Cancel an eligibility assignment request to a group whose membership and ownership are governed by PIM.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

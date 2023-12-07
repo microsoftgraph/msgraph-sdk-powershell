@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Activate a custodian that has been released from a case to make them part of the case again.
 For details, see Manage custodians in an Advanced eDiscovery case.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -29,7 +28,6 @@ Initialize-MgBetaComplianceEdiscoveryCaseCustodian -InputObject <IComplianceIden
 ## DESCRIPTION
 Activate a custodian that has been released from a case to make them part of the case again.
 For details, see Manage custodians in an Advanced eDiscovery case.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

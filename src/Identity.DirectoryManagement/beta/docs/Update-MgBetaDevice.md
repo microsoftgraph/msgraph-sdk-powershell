@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Update the properties of a device.
 Only certain properties of a device can be updated through approved Mobile Device Management (MDM) apps.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -69,7 +68,6 @@ Update-MgBetaDevice -InputObject <IIdentityDirectoryManagementIdentity> [-Device
 ## DESCRIPTION
 Update the properties of a device.
 Only certain properties of a device can be updated through approved Mobile Device Management (MDM) apps.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

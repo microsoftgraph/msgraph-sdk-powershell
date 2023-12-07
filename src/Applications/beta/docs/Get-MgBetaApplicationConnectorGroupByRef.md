@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaApplicationConnectorGroupByRef
 
 ## SYNOPSIS
-The connectorGroup the application is using with Azure AD Application Proxy.
+The connectorGroup the application is using with Microsoft Entra application proxy.
 Nullable.
 
 ## SYNTAX
@@ -24,7 +24,7 @@ Get-MgBetaApplicationConnectorGroupByRef -InputObject <IApplicationsIdentity> [<
 ```
 
 ## DESCRIPTION
-The connectorGroup the application is using with Azure AD Application Proxy.
+The connectorGroup the application is using with Microsoft Entra application proxy.
 Nullable.
 
 ## EXAMPLES

@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete an externalGroupMember object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Remove-MgBetaExternalConnectionGroupMember -InputObject <ISearchIdentity> [-IfMa
 
 ## DESCRIPTION
 Delete an externalGroupMember object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

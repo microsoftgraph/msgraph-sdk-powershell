@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Install an app in the personal scope of the specified user.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -43,7 +42,6 @@ New-MgUserTeamworkInstalledApp -InputObject <ITeamsIdentity> [-AdditionalPropert
 
 ## DESCRIPTION
 Install an app in the personal scope of the specified user.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

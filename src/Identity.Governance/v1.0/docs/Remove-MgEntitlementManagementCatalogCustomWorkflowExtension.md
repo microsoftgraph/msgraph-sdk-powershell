@@ -8,9 +8,9 @@ schema: 2.0.0
 # Remove-MgEntitlementManagementCatalogCustomWorkflowExtension
 
 ## SYNOPSIS
-Delete an accessPackageAssignmentWorkflowExtension object.
+Delete an accessPackageAssignmentRequestWorkflowExtension object.
 The custom workflow extension must first be removed from any associated policies before it can be deleted.
-Follow these steps to remove the custom workflow extension from any associated policies: This API is available in the following national cloud deployments.
+Follow these steps to remove the custom workflow extension from any associated policies:
 
 ## SYNTAX
 
@@ -27,9 +27,9 @@ Remove-MgEntitlementManagementCatalogCustomWorkflowExtension -InputObject <IIden
 ```
 
 ## DESCRIPTION
-Delete an accessPackageAssignmentWorkflowExtension object.
+Delete an accessPackageAssignmentRequestWorkflowExtension object.
 The custom workflow extension must first be removed from any associated policies before it can be deleted.
-Follow these steps to remove the custom workflow extension from any associated policies: This API is available in the following national cloud deployments.
+Follow these steps to remove the custom workflow extension from any associated policies:
 
 ## EXAMPLES
 

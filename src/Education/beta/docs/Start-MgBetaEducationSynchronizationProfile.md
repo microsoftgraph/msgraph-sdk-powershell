@@ -13,7 +13,6 @@ If the verification is successful, synchronization starts on the profile.
 Otherwise, the response contains errors and warnings.
 If the response contains errors, the synchronization won't start.
 If the response contains only warnings, synchronization starts.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -35,7 +34,6 @@ If the verification is successful, synchronization starts on the profile.
 Otherwise, the response contains errors and warnings.
 If the response contains errors, the synchronization won't start.
 If the response contains only warnings, synchronization starts.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -11,7 +11,6 @@ schema: 2.0.0
 Update the properties of the userSettings object.
 \nUsers in the same organization can have different settings based on their preference or on the organization policies.
 \nTo get the user current settings, see current user settings.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -47,7 +46,6 @@ Update-MgUserSetting -InputObject <IUsersIdentity> [-AdditionalProperties <Hasht
 Update the properties of the userSettings object.
 \nUsers in the same organization can have different settings based on their preference or on the organization policies.
 \nTo get the user current settings, see current user settings.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

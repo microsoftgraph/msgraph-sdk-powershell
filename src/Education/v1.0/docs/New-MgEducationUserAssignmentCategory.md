@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Add one or more existing educationCategory objects to the specified  educationAssignment.
 Only teachers can perform this operation.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -42,7 +41,6 @@ New-MgEducationUserAssignmentCategory -InputObject <IEducationIdentity> [-Additi
 ## DESCRIPTION
 Add one or more existing educationCategory objects to the specified  educationAssignment.
 Only teachers can perform this operation.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

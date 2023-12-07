@@ -13,7 +13,6 @@ As part of the response, this action returns an upload URL that you can use in s
 The request headers for each PUT operation let you specify the exact range of bytes to be uploaded.
 This allows the transfer to be resumed, in case the network connection is dropped during the upload.
 The following are the steps to attach a file to a Microsoft To Do task using an upload session: For an example that describes the end-to-end attachment process, see attach files to a To Do task.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -52,7 +51,6 @@ As part of the response, this action returns an upload URL that you can use in s
 The request headers for each PUT operation let you specify the exact range of bytes to be uploaded.
 This allows the transfer to be resumed, in case the network connection is dropped during the upload.
 The following are the steps to attach a file to a Microsoft To Do task using an upload session: For an example that describes the end-to-end attachment process, see attach files to a To Do task.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -280,6 +278,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[NotebookId <String>]`: The unique identifier of notebook
   - `[OnenotePageId <String>]`: The unique identifier of onenotePage
   - `[OnenoteSectionId <String>]`: The unique identifier of onenoteSection
+  - `[OnlineMeetingId <String>]`: The unique identifier of onlineMeeting
   - `[OutlookTaskFolderId <String>]`: The unique identifier of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: The unique identifier of outlookTaskGroup
   - `[OutlookTaskId <String>]`: The unique identifier of outlookTask

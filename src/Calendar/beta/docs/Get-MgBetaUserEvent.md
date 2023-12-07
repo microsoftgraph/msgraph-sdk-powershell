@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Get the properties and relationships of the specified event object.
 An app can get an event in another user's calendar if: Because the event resource supports extensions, you can also use the GET operation to get custom properties and extension data in an event instance.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -36,7 +35,6 @@ Get-MgBetaUserEvent -InputObject <ICalendarIdentity> [-ExpandProperty <String[]>
 ## DESCRIPTION
 Get the properties and relationships of the specified event object.
 An app can get an event in another user's calendar if: Because the event resource supports extensions, you can also use the GET operation to get custom properties and extension data in an event instance.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -287,7 +285,9 @@ To create the parameters described below, construct a hash table containing the 
   - `[ExtensionId <String>]`: The unique identifier of extension
   - `[GroupId <String>]`: The unique identifier of group
   - `[PlaceId <String>]`: The unique identifier of place
+  - `[RoomId <String>]`: The unique identifier of room
   - `[UserId <String>]`: The unique identifier of user
+  - `[WorkspaceId <String>]`: The unique identifier of workspace
 
 ## RELATED LINKS
 

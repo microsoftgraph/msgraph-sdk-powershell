@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve the properties and relationships of an accessReviewStage object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -34,7 +33,6 @@ Get-MgBetaIdentityGovernanceAccessReviewDecisionInstanceStage -InputObject <IIde
 
 ## DESCRIPTION
 Retrieve the properties and relationships of an accessReviewStage object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

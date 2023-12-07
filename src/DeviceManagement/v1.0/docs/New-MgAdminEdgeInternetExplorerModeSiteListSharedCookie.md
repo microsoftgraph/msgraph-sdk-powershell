@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new browserSharedCookie object in a browserSiteList.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -49,7 +48,6 @@ New-MgAdminEdgeInternetExplorerModeSiteListSharedCookie -InputObject <IDeviceMan
 
 ## DESCRIPTION
 Create a new browserSharedCookie object in a browserSiteList.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

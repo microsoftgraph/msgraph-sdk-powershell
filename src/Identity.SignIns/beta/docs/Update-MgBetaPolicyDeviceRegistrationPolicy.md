@@ -66,7 +66,7 @@ Accept wildcard characters: False
 ```
 
 ### -AzureAdJoin
-azureAdJoinPolicy
+azureADJoinPolicy
 To construct, see NOTES section for AZUREADJOIN properties and create a hash table.
 
 ```yaml
@@ -262,7 +262,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-`AZUREADJOIN <IMicrosoftGraphAzureAdJoinPolicy>`: azureAdJoinPolicy
+`AZUREADJOIN <IMicrosoftGraphAzureAdJoinPolicy>`: azureADJoinPolicy
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[AllowedGroups <String[]>]`: The identifiers of the groups that are in the scope of the policy. Required when the appliesTo property is set to selected.
   - `[AllowedUsers <String[]>]`: The identifiers of users that are in the scope of the policy. Required when the appliesTo property is set to selected.
@@ -279,7 +279,7 @@ To create the parameters described below, construct a hash table containing the 
 `BODYPARAMETER <IMicrosoftGraphDeviceRegistrationPolicy>`: deviceRegistrationPolicy
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[AzureAdJoin <IMicrosoftGraphAzureAdJoinPolicy>]`: azureAdJoinPolicy
+  - `[AzureAdJoin <IMicrosoftGraphAzureAdJoinPolicy>]`: azureADJoinPolicy
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[AllowedGroups <String[]>]`: The identifiers of the groups that are in the scope of the policy. Required when the appliesTo property is set to selected.
     - `[AllowedUsers <String[]>]`: The identifiers of users that are in the scope of the policy. Required when the appliesTo property is set to selected.

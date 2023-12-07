@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Send a reminder to the reviewers of a currently active accessReviewInstance.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Send-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceReminder -InputObject
 
 ## DESCRIPTION
 Send a reminder to the reviewers of a currently active accessReviewInstance.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

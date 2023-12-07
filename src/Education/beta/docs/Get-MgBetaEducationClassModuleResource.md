@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Get the properties of a resource associated with a module.
 Only teachers, students, and applications with application permissions can perform this operation.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -36,7 +35,6 @@ Get-MgBetaEducationClassModuleResource -InputObject <IEducationIdentity> [-Expan
 ## DESCRIPTION
 Get the properties of a resource associated with a module.
 Only teachers, students, and applications with application permissions can perform this operation.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

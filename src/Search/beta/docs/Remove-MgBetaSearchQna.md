@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete a qna object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Remove-MgBetaSearchQna -InputObject <ISearchIdentity> [-IfMatch <String>] [-Pass
 
 ## DESCRIPTION
 Delete a qna object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

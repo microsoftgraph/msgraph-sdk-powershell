@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Get a list of the ediscoveryIndexOperations associated with an ediscoveryCustodian.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Get-MgSecurityCaseEdiscoveryCaseCustodianLastIndexOperation -InputObject <ISecur
 
 ## DESCRIPTION
 Get a list of the ediscoveryIndexOperations associated with an ediscoveryCustodian.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

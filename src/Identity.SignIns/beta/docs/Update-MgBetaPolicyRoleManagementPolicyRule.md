@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update a rule defined for a role management policy.
-The rule can be one of the following types that are derived from the unifiedRoleManagementPolicyRule object: For more information about rules for Microsoft Entra roles and examples of updating rules, see the following articles:\n+ Overview of rules for Microsoft Entra roles in PIM APIs in Microsoft Graph\n+ Use PIM APIs in Microsoft Graph to update Microsoft Entra ID rules This API is available in the following national cloud deployments.
+The rule can be one of the following types that are derived from the unifiedRoleManagementPolicyRule object: For more information about rules for Microsoft Entra roles and examples of updating rules, see the following articles:\n+ Overview of rules for Microsoft Entra roles in PIM APIs in Microsoft Graph\n+ Use PIM APIs in Microsoft Graph to update Microsoft Entra ID rules
 
 ## SYNTAX
 
@@ -42,7 +42,7 @@ Update-MgBetaPolicyRoleManagementPolicyRule -InputObject <IIdentitySignInsIdenti
 
 ## DESCRIPTION
 Update a rule defined for a role management policy.
-The rule can be one of the following types that are derived from the unifiedRoleManagementPolicyRule object: For more information about rules for Microsoft Entra roles and examples of updating rules, see the following articles:\n+ Overview of rules for Microsoft Entra roles in PIM APIs in Microsoft Graph\n+ Use PIM APIs in Microsoft Graph to update Microsoft Entra ID rules This API is available in the following national cloud deployments.
+The rule can be one of the following types that are derived from the unifiedRoleManagementPolicyRule object: For more information about rules for Microsoft Entra roles and examples of updating rules, see the following articles:\n+ Overview of rules for Microsoft Entra roles in PIM APIs in Microsoft Graph\n+ Use PIM APIs in Microsoft Graph to update Microsoft Entra ID rules
 
 ## EXAMPLES
 
@@ -279,6 +279,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[ActivityBasedTimeoutPolicyId <String>]`: The unique identifier of activityBasedTimeoutPolicy
   - `[AppManagementPolicyId <String>]`: The unique identifier of appManagementPolicy
   - `[AuthenticationCombinationConfigurationId <String>]`: The unique identifier of authenticationCombinationConfiguration
+  - `[AuthenticationConditionApplicationAppId <String>]`: The unique identifier of authenticationConditionApplication
   - `[AuthenticationContextClassReferenceId <String>]`: The unique identifier of authenticationContextClassReference
   - `[AuthenticationEventListenerId <String>]`: The unique identifier of authenticationEventListener
   - `[AuthenticationEventsFlowId <String>]`: The unique identifier of authenticationEventsFlow

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.DeviceManagement.Enrollment
-Module Guid: 0ec021fe-1026-466f-9e2f-441aa16ad52b
+Module Guid: 6211780e-df97-4645-804b-39b9cb7e7951
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.devicemanagement.enrollment
 Help Version: 1.0.0.0
 Locale: en-US
@@ -15,7 +15,7 @@ Microsoft Graph PowerShell Cmdlets
 Read properties and relationships of the onPremisesConditionalAccessSettings object.
 
 ### [Get-MgDeviceManagementDeviceEnrollmentConfiguration](Get-MgDeviceManagementDeviceEnrollmentConfiguration.md)
-Read properties and relationships of the deviceEnrollmentLimitConfiguration object.
+Read properties and relationships of the deviceEnrollmentPlatformRestrictionsConfiguration object.
 
 ### [Get-MgDeviceManagementDeviceEnrollmentConfigurationAssignment](Get-MgDeviceManagementDeviceEnrollmentConfigurationAssignment.md)
 Read properties and relationships of the enrollmentConfigurationAssignment object.
@@ -57,7 +57,7 @@ Create a new windowsAutopilotDeviceIdentity object.
 Delete navigation property conditionalAccessSettings for deviceManagement
 
 ### [Remove-MgDeviceManagementDeviceEnrollmentConfiguration](Remove-MgDeviceManagementDeviceEnrollmentConfiguration.md)
-Deletes a deviceEnrollmentWindowsHelloForBusinessConfiguration.
+Deletes a deviceEnrollmentLimitConfiguration.
 
 ### [Remove-MgDeviceManagementDeviceEnrollmentConfigurationAssignment](Remove-MgDeviceManagementDeviceEnrollmentConfigurationAssignment.md)
 Deletes a enrollmentConfigurationAssignment.

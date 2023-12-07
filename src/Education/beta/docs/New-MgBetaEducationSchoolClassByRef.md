@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Add a class to a school.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -39,7 +38,6 @@ New-MgBetaEducationSchoolClassByRef -InputObject <IEducationIdentity> -OdataId <
 
 ## DESCRIPTION
 Add a class to a school.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

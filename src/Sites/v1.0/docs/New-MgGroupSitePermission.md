@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new permission object on a site.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -51,7 +50,6 @@ New-MgGroupSitePermission -InputObject <ISitesIdentity> [-AdditionalProperties <
 
 ## DESCRIPTION
 Create a new permission object on a site.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

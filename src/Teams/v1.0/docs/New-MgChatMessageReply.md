@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Send a new reply to a chatMessage in a specified channel.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -57,7 +56,6 @@ New-MgChatMessageReply -InputObject <ITeamsIdentity> [-ChatId <String>] [-Additi
 
 ## DESCRIPTION
 Send a new reply to a chatMessage in a specified channel.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

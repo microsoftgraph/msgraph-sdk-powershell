@@ -11,7 +11,6 @@ schema: 2.0.0
 Get the list of locales and languages that are supported for the user, as configured on the user's mailbox server.
 When setting up an Outlook client, the user selects the preferred language from this supported list.
 You can subsequently get the preferred language by\ngetting the user's mailbox settings.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -31,7 +30,6 @@ Invoke-MgSupportedUserOutlookLanguage -InputObject <IUsersFunctionsIdentity> [-C
 Get the list of locales and languages that are supported for the user, as configured on the user's mailbox server.
 When setting up an Outlook client, the user selects the preferred language from this supported list.
 You can subsequently get the preferred language by\ngetting the user's mailbox settings.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

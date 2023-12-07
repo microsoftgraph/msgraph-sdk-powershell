@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Play a prompt in the call.
-For more information about how to handle operations, see commsOperation This API is available in the following national cloud deployments.
+For more information about how to handle operations, see commsOperation
 
 ## SYNTAX
 
@@ -43,7 +43,7 @@ Invoke-MgBetaPlayCommunicationCallPrompt -InputObject <ICloudCommunicationsIdent
 
 ## DESCRIPTION
 Play a prompt in the call.
-For more information about how to handle operations, see commsOperation This API is available in the following national cloud deployments.
+For more information about how to handle operations, see commsOperation
 
 ## EXAMPLES
 

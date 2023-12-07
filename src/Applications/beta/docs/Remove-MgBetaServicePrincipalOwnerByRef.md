@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Remove an owner from a servicePrincipal object.
 As a recommended best practice, service principals should have at least two owners.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -29,7 +28,6 @@ Remove-MgBetaServicePrincipalOwnerByRef -InputObject <IApplicationsIdentity> [-I
 ## DESCRIPTION
 Remove an owner from a servicePrincipal object.
 As a recommended best practice, service principals should have at least two owners.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

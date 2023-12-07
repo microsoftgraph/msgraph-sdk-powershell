@@ -11,7 +11,6 @@ schema: 2.0.0
 Clear the application's presence session for a user.
 If it is the user's only presence session, the user's presence will change to Offline/Offline.
 For details about presences sessions, see presence: setPresence.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -45,7 +44,6 @@ Clear-MgCommunicationPresence -InputObject <ICloudCommunicationsIdentity> [-Addi
 Clear the application's presence session for a user.
 If it is the user's only presence session, the user's presence will change to Offline/Offline.
 For details about presences sessions, see presence: setPresence.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -219,6 +217,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[AudioRoutingGroupId <String>]`: The unique identifier of audioRoutingGroup
   - `[CallId <String>]`: The unique identifier of call
   - `[CallRecordId <String>]`: The unique identifier of callRecord
+  - `[CallRecordingId <String>]`: The unique identifier of callRecording
   - `[CallTranscriptId <String>]`: The unique identifier of callTranscript
   - `[CommsOperationId <String>]`: The unique identifier of commsOperation
   - `[ContentSharingSessionId <String>]`: The unique identifier of contentSharingSession

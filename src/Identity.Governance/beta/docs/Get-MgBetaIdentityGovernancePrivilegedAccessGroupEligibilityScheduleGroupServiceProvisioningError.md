@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a group object.
-Supports $filter (eq, not, for isResolved and serviceInstance).
 
 ## SYNTAX
 
@@ -22,7 +21,6 @@ Get-MgBetaIdentityGovernancePrivilegedAccessGroupEligibilityScheduleGroupService
 
 ## DESCRIPTION
 Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a group object.
-Supports $filter (eq, not, for isResolved and serviceInstance).
 
 ## EXAMPLES
 

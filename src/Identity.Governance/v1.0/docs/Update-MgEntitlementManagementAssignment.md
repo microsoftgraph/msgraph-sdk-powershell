@@ -11,7 +11,6 @@ schema: 2.0.0
 In Microsoft Entra entitlement management, callers can automatically reevaluate and enforce an accessPackageAssignment object of a user’s assignments for a specific access package.
 The state of the access package assignment must be Delivered for the administrator to reprocess the user's assignment.
 Only admins with the Access Package Assignment Manager role, or higher, in Microsoft Entra entitlement management can perform this action.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -65,7 +64,6 @@ Update-MgEntitlementManagementAssignment -InputObject <IIdentityGovernanceIdenti
 In Microsoft Entra entitlement management, callers can automatically reevaluate and enforce an accessPackageAssignment object of a user’s assignments for a specific access package.
 The state of the access package assignment must be Delivered for the administrator to reprocess the user's assignment.
 Only admins with the Access Package Assignment Manager role, or higher, in Microsoft Entra entitlement management can perform this action.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -9521,7 +9519,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[Description <String>]`: The description of the connected organization.
       - `[DisplayName <String>]`: The display name of the connected organization. Supports $filter (eq).
       - `[ExternalSponsors <IMicrosoftGraphDirectoryObject[]>]`: 
-      - `[IdentitySources <IMicrosoftGraphIdentitySource[]>]`: The identity sources in this connected organization, one of azureActiveDirectoryTenant, domainIdentitySource, externalDomainFederation or crossCloudAzureActiveDirectoryTenant. Nullable.
+      - `[IdentitySources <IMicrosoftGraphIdentitySource[]>]`: The identity sources in this connected organization, one of azureActiveDirectoryTenant, crossCloudAzureActiveDirectoryTenant, domainIdentitySource, externalDomainFederation, or socialIdentitySource. Nullable.
       - `[InternalSponsors <IMicrosoftGraphDirectoryObject[]>]`: 
       - `[ModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
       - `[State <String>]`: connectedOrganizationState
@@ -9648,7 +9646,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[ExternalSponsors <IMicrosoftGraphDirectoryObject[]>]`: 
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
-    - `[IdentitySources <IMicrosoftGraphIdentitySource[]>]`: The identity sources in this connected organization, one of azureActiveDirectoryTenant, domainIdentitySource, externalDomainFederation or crossCloudAzureActiveDirectoryTenant. Nullable.
+    - `[IdentitySources <IMicrosoftGraphIdentitySource[]>]`: The identity sources in this connected organization, one of azureActiveDirectoryTenant, crossCloudAzureActiveDirectoryTenant, domainIdentitySource, externalDomainFederation, or socialIdentitySource. Nullable.
     - `[InternalSponsors <IMicrosoftGraphDirectoryObject[]>]`: 
     - `[ModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
     - `[State <String>]`: connectedOrganizationState

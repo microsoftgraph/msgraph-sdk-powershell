@@ -12,7 +12,6 @@ Use this API to assign an app role to a security group.
 All direct members of the group will be considered assigned.
 Security groups with dynamic memberships are supported.
 To grant an app role assignment to a group, you need three identifiers: Additional licenses might be required to use a group to manage access to applications.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -49,7 +48,6 @@ Use this API to assign an app role to a security group.
 All direct members of the group will be considered assigned.
 Security groups with dynamic memberships are supported.
 To grant an app role assignment to a group, you need three identifiers: Additional licenses might be required to use a group to manage access to applications.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -376,6 +374,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[ServicePrincipalId <String>]`: The unique identifier of servicePrincipal
   - `[SynchronizationJobId <String>]`: The unique identifier of synchronizationJob
   - `[SynchronizationTemplateId <String>]`: The unique identifier of synchronizationTemplate
+  - `[TargetDeviceGroupId <String>]`: The unique identifier of targetDeviceGroup
   - `[TokenIssuancePolicyId <String>]`: The unique identifier of tokenIssuancePolicy
   - `[TokenLifetimePolicyId <String>]`: The unique identifier of tokenLifetimePolicy
   - `[UserId <String>]`: The unique identifier of user

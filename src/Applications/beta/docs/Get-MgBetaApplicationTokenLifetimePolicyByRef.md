@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 List the tokenLifetimePolicy objects that are assigned to an application or servicePrincipal.
 Only one object is returned in the collection because only one tokenLifetimePolicy can be assigned to an application.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -23,7 +22,6 @@ Get-MgBetaApplicationTokenLifetimePolicyByRef -ApplicationId <String> [-Filter <
 ## DESCRIPTION
 List the tokenLifetimePolicy objects that are assigned to an application or servicePrincipal.
 Only one object is returned in the collection because only one tokenLifetimePolicy can be assigned to an application.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

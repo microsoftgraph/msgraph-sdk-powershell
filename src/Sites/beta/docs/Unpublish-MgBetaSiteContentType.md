@@ -8,8 +8,7 @@ schema: 2.0.0
 # Unpublish-MgBetaSiteContentType
 
 ## SYNOPSIS
-Unpublish a contentType][] from a content type hub site.
-This API is available in the following [national cloud deployments.
+Unpublish a [contentType][] from a content type hub site.
 
 ## SYNTAX
 
@@ -26,8 +25,7 @@ Unpublish-MgBetaSiteContentType -InputObject <ISitesIdentity> [-PassThru] [-Conf
 ```
 
 ## DESCRIPTION
-Unpublish a contentType][] from a content type hub site.
-This API is available in the following [national cloud deployments.
+Unpublish a [contentType][] from a content type hub site.
 
 ## EXAMPLES
 

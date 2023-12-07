@@ -8,8 +8,7 @@ schema: 2.0.0
 # Revoke-MgBetaUserDriveRootPermissionGrant
 
 ## SYNOPSIS
-Revoke access to a listItem][] or [driveItem][] granted via a sharing link by removing the specified [recipient][] from the link.
-This API is available in the following [national cloud deployments.
+Revoke access to a [listItem][] or [driveItem][] granted via a sharing link by removing the specified [recipient][] from the link.
 
 ## SYNTAX
 
@@ -42,8 +41,7 @@ Revoke-MgBetaUserDriveRootPermissionGrant -InputObject <IUsersActionsIdentity>
 ```
 
 ## DESCRIPTION
-Revoke access to a listItem][] or [driveItem][] granted via a sharing link by removing the specified [recipient][] from the link.
-This API is available in the following [national cloud deployments.
+Revoke access to a [listItem][] or [driveItem][] granted via a sharing link by removing the specified [recipient][] from the link.
 
 ## EXAMPLES
 
@@ -265,6 +263,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[NotebookId <String>]`: The unique identifier of notebook
   - `[OnenotePageId <String>]`: The unique identifier of onenotePage
   - `[OnenoteSectionId <String>]`: The unique identifier of onenoteSection
+  - `[OnlineMeetingId <String>]`: The unique identifier of onlineMeeting
   - `[OutlookTaskFolderId <String>]`: The unique identifier of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: The unique identifier of outlookTaskGroup
   - `[OutlookTaskId <String>]`: The unique identifier of outlookTask

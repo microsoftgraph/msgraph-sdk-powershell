@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Read the properties and relationships of a userConsentRequest object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -34,7 +33,6 @@ Get-MgIdentityGovernanceAppConsentRequestUserConsentRequest -InputObject <IIdent
 
 ## DESCRIPTION
 Read the properties and relationships of a userConsentRequest object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

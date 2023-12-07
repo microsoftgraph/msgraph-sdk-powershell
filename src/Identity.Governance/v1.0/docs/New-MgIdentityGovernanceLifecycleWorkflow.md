@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Create a new workflow object.
 You can create up to 50 workflows in a tenant.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -37,7 +36,6 @@ New-MgIdentityGovernanceLifecycleWorkflow -BodyParameter <IMicrosoftGraphIdentit
 ## DESCRIPTION
 Create a new workflow object.
 You can create up to 50 workflows in a tenant.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

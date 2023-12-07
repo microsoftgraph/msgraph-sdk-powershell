@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update the properties of a qna object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -51,7 +50,6 @@ Update-MgBetaSearchQna -InputObject <ISearchIdentity> [-AdditionalProperties <Ha
 
 ## DESCRIPTION
 Update the properties of a qna object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

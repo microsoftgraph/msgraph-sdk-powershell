@@ -11,7 +11,6 @@ schema: 2.0.0
 Reprocess all group-based license assignments for the user.
 To learn more about group-based licensing, see What is group-based licensing in Microsoft Entra ID.
 Also see Identify and resolve license assignment problems for a group in Microsoft Entra ID for more details.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -29,7 +28,6 @@ Invoke-MgLicenseUser -InputObject <IUsersActionsIdentity> [-Confirm] [-WhatIf] [
 Reprocess all group-based license assignments for the user.
 To learn more about group-based licensing, see What is group-based licensing in Microsoft Entra ID.
 Also see Identify and resolve license assignment problems for a group in Microsoft Entra ID for more details.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

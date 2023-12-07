@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaAuditLogProvisioning
 
 ## SYNOPSIS
-Get provisioning from auditLogs
+Represents an action performed by the Microsoft Entra provisioning service and its associated properties.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgBetaAuditLogProvisioning -InputObject <IReportsIdentity> [-ExpandProperty 
 ```
 
 ## DESCRIPTION
-Get provisioning from auditLogs
+Represents an action performed by the Microsoft Entra provisioning service and its associated properties.
 
 ## EXAMPLES
 
@@ -269,10 +269,12 @@ To create the parameters described below, construct a hash table containing the 
   - `[DeviceManagementExportJobId <String>]`: The unique identifier of deviceManagementExportJob
   - `[DirectoryAuditId <String>]`: The unique identifier of directoryAudit
   - `[EndDateTime <DateTime?>]`: Usage: endDateTime={endDateTime}
+  - `[ExclusiveIntervalEndDateTime <DateTime?>]`: Usage: exclusiveIntervalEndDateTime={exclusiveIntervalEndDateTime}
   - `[Filter <String>]`: Usage: filter='{filter}'
   - `[GroupId <String>]`: Usage: groupId='{groupId}'
   - `[IncludedUserRoles <String>]`: Usage: includedUserRoles='{includedUserRoles}'
   - `[IncludedUserTypes <String>]`: Usage: includedUserTypes='{includedUserTypes}'
+  - `[InclusiveIntervalStartDateTime <DateTime?>]`: Usage: inclusiveIntervalStartDateTime={inclusiveIntervalStartDateTime}
   - `[InsightSummaryId <String>]`: The unique identifier of insightSummary
   - `[MfaCompletionMetricId <String>]`: The unique identifier of mfaCompletionMetric
   - `[MonthlyInactiveUsersByApplicationMetricId <String>]`: The unique identifier of monthlyInactiveUsersByApplicationMetric

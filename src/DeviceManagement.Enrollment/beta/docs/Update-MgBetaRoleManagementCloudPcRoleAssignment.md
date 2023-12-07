@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Update an existing unifiedRoleAssignmentMultiple object of an RBAC provider.
 The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) In contrast, unifiedRoleAssignment does not support update.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -51,7 +50,6 @@ Update-MgBetaRoleManagementCloudPcRoleAssignment -InputObject <IDeviceManagement
 ## DESCRIPTION
 Update an existing unifiedRoleAssignmentMultiple object of an RBAC provider.
 The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) In contrast, unifiedRoleAssignment does not support update.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

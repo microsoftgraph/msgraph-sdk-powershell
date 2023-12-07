@@ -11,7 +11,6 @@ schema: 2.0.0
 Update an app previously published to the Microsoft Teams app catalog.
 To update an app, the distributionMethod property for the app must be set to organization.
 This API specifically updates an app published to your organization's app catalog (the tenant app catalog).
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -49,7 +48,6 @@ New-MgAppCatalogTeamAppDefinition -InputObject <ITeamsIdentity> [-TeamsAppId <St
 Update an app previously published to the Microsoft Teams app catalog.
 To update an app, the distributionMethod property for the app must be set to organization.
 This API specifically updates an app published to your organization's app catalog (the tenant app catalog).
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

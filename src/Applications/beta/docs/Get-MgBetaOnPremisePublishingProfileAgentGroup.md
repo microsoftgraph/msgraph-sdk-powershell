@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve the properties and relationships of an onPremisesAgentGroup object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -51,7 +50,6 @@ Get-MgBetaOnPremisePublishingProfileAgentGroup -OnPremisesAgentId <String>
 
 ## DESCRIPTION
 Retrieve the properties and relationships of an onPremisesAgentGroup object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

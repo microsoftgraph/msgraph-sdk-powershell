@@ -210,7 +210,9 @@ To create the parameters described below, construct a hash table containing the 
   - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The unique identifier of deviceAndAppManagementAssignmentFilter
   - `[DeviceConfigurationId <String>]`: The unique identifier of deviceConfiguration
   - `[DeviceHealthScriptId <String>]`: The unique identifier of deviceHealthScript
+  - `[DeviceManagementConfigurationPolicyId <String>]`: The unique identifier of deviceManagementConfigurationPolicy
   - `[DeviceManagementIntentId <String>]`: The unique identifier of deviceManagementIntent
+  - `[DeviceManagementReusablePolicySettingId <String>]`: The unique identifier of deviceManagementReusablePolicySetting
   - `[DeviceManagementTemplateId <String>]`: The unique identifier of deviceManagementTemplate
   - `[DeviceManagementTemplateId1 <String>]`: The unique identifier of deviceManagementTemplate
   - `[DomainName <String>]`: Usage: domainName='{domainName}'

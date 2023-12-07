@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Get the status of a rich long-running operation on a site or a list.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -34,7 +33,6 @@ Get-MgSiteOperation -InputObject <ISitesIdentity> [-ExpandProperty <String[]>] [
 
 ## DESCRIPTION
 Get the status of a rich long-running operation on a site or a list.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

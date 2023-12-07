@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.DirectoryManagement
-Module Guid: 1eb60721-aee1-4453-99f3-11327f308b06
+Module Guid: 0cbd5d90-0128-401e-af6f-6e3b18a2fffb
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.identity.directorymanagement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -17,7 +17,6 @@ This function is transitive.
 You can check up to a maximum of 20 groups per request.
 This function supports all groups provisioned in Microsoft Entra ID.
 Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
-This API is available in the following national cloud deployments.
 
 ### [Confirm-MgContactMemberObject](Confirm-MgContactMemberObject.md)
 Invoke action checkMemberObjects
@@ -28,7 +27,6 @@ This function is transitive.
 You can check up to a maximum of 20 groups per request.
 This function supports all groups provisioned in Microsoft Entra ID.
 Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
-This API is available in the following national cloud deployments.
 
 ### [Confirm-MgContractMemberObject](Confirm-MgContractMemberObject.md)
 Invoke action checkMemberObjects
@@ -39,7 +37,6 @@ This function is transitive.
 You can check up to a maximum of 20 groups per request.
 This function supports all groups provisioned in Microsoft Entra ID.
 Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
-This API is available in the following national cloud deployments.
 
 ### [Confirm-MgDeviceMemberObject](Confirm-MgDeviceMemberObject.md)
 Invoke action checkMemberObjects
@@ -50,7 +47,6 @@ This function is transitive.
 You can check up to a maximum of 20 groups per request.
 This function supports all groups provisioned in Microsoft Entra ID.
 Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
-This API is available in the following national cloud deployments.
 
 ### [Confirm-MgDirectoryDeletedItemMemberObject](Confirm-MgDirectoryDeletedItemMemberObject.md)
 Invoke action checkMemberObjects
@@ -61,7 +57,6 @@ This function is transitive.
 You can check up to a maximum of 20 groups per request.
 This function supports all groups provisioned in Microsoft Entra ID.
 Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
-This API is available in the following national cloud deployments.
 
 ### [Confirm-MgDirectoryRoleMemberObject](Confirm-MgDirectoryRoleMemberObject.md)
 Invoke action checkMemberObjects
@@ -72,14 +67,12 @@ This function is transitive.
 You can check up to a maximum of 20 groups per request.
 This function supports all groups provisioned in Microsoft Entra ID.
 Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
-This API is available in the following national cloud deployments.
 
 ### [Confirm-MgDirectoryRoleTemplateMemberObject](Confirm-MgDirectoryRoleTemplateMemberObject.md)
 Invoke action checkMemberObjects
 
 ### [Confirm-MgDomain](Confirm-MgDomain.md)
 Validates the ownership of the domain.
-This API is available in the following national cloud deployments.
 
 ### [Confirm-MgOrganizationMemberGroup](Confirm-MgOrganizationMemberGroup.md)
 Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
@@ -87,28 +80,27 @@ This function is transitive.
 You can check up to a maximum of 20 groups per request.
 This function supports all groups provisioned in Microsoft Entra ID.
 Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
-This API is available in the following national cloud deployments.
 
 ### [Confirm-MgOrganizationMemberObject](Confirm-MgOrganizationMemberObject.md)
 Invoke action checkMemberObjects
 
 ### [Get-MgAdminPeople](Get-MgAdminPeople.md)
-Get people from admin
+Retrieve the properties and relationships of a peopleAdminSettings object.
 
 ### [Get-MgAdminPeopleProfileCardProperty](Get-MgAdminPeopleProfileCardProperty.md)
-Get profileCardProperties from admin
+Retrieve the properties of a profileCardProperty entity.
+The profileCardProperty is identified by its directoryPropertyName property.
 
 ### [Get-MgAdminPeopleProfileCardPropertyCount](Get-MgAdminPeopleProfileCardPropertyCount.md)
 Get the number of the resource
 
 ### [Get-MgContact](Get-MgContact.md)
 Get the properties and relationships of an organizational contact.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgContactById](Get-MgContactById.md)
 Return the directory objects specified in a list of IDs.
 Only a subset of user properties are returned by default in v1.0.
-Some common uses for this function are to: This API is available in the following national cloud deployments.
+Some common uses for this function are to:
 
 ### [Get-MgContactCount](Get-MgContactCount.md)
 Get the number of the resource
@@ -139,7 +131,6 @@ Get the number of the resource
 
 ### [Get-MgContactManager](Get-MgContactManager.md)
 Get this organizational contact's manager.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgContactMemberGroup](Get-MgContactMemberGroup.md)
 Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of.
@@ -147,13 +138,11 @@ This function is transitive.
 This API returns up to 11,000 group IDs.
 If more than 11,000 results are available, it returns a 400 Bad Request error with the Directory_ResultSizeLimitExceeded error code.
 As a workaround, use the List group transitive memberOf API.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgContactMemberObject](Get-MgContactMemberObject.md)
 Return all IDs for the groups, administrative units, and directory roles that a user, group, service principal, organizational contact, device, or directory object is a member of.
 This function is transitive.
 Note: Only users and role-enabled groups can be members of directory roles.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgContactMemberOf](Get-MgContactMemberOf.md)
 Groups that this contact is a member of.
@@ -204,12 +193,11 @@ Get the number of the resource
 
 ### [Get-MgContract](Get-MgContract.md)
 Retrieve the properties and relationships of contract object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgContractById](Get-MgContractById.md)
 Return the directory objects specified in a list of IDs.
 Only a subset of user properties are returned by default in v1.0.
-Some common uses for this function are to: This API is available in the following national cloud deployments.
+Some common uses for this function are to:
 
 ### [Get-MgContractCount](Get-MgContractCount.md)
 Get the number of the resource
@@ -223,26 +211,22 @@ This function is transitive.
 This API returns up to 11,000 group IDs.
 If more than 11,000 results are available, it returns a 400 Bad Request error with the Directory_ResultSizeLimitExceeded error code.
 As a workaround, use the List group transitive memberOf API.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgContractMemberObject](Get-MgContractMemberObject.md)
 Return all IDs for the groups, administrative units, and directory roles that a user, group, service principal, organizational contact, device, or directory object is a member of.
 This function is transitive.
 Note: Only users and role-enabled groups can be members of directory roles.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgDevice](Get-MgDevice.md)
 Get the properties and relationships of a device object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgDeviceByDeviceId](Get-MgDeviceByDeviceId.md)
 Get the properties and relationships of a device object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgDeviceById](Get-MgDeviceById.md)
 Return the directory objects specified in a list of IDs.
 Only a subset of user properties are returned by default in v1.0.
-Some common uses for this function are to: This API is available in the following national cloud deployments.
+Some common uses for this function are to:
 
 ### [Get-MgDeviceCount](Get-MgDeviceCount.md)
 Get the number of the resource
@@ -264,13 +248,11 @@ This function is transitive.
 This API returns up to 11,000 group IDs.
 If more than 11,000 results are available, it returns a 400 Bad Request error with the Directory_ResultSizeLimitExceeded error code.
 As a workaround, use the List group transitive memberOf API.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgDeviceMemberObject](Get-MgDeviceMemberObject.md)
 Return all IDs for the groups, administrative units, and directory roles that a user, group, service principal, organizational contact, device, or directory object is a member of.
 This function is transitive.
 Note: Only users and role-enabled groups can be members of directory roles.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgDeviceMemberOf](Get-MgDeviceMemberOf.md)
 Groups and administrative units that this device is a member of.
@@ -400,7 +382,6 @@ Get directory
 
 ### [Get-MgDirectoryAdministrativeUnit](Get-MgDirectoryAdministrativeUnit.md)
 Retrieve the properties and relationships of an administrativeUnit object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgDirectoryAdministrativeUnitCount](Get-MgDirectoryAdministrativeUnitCount.md)
 Get the number of the resource
@@ -464,25 +445,21 @@ Get the number of the resource
 
 ### [Get-MgDirectoryAdministrativeUnitScopedRoleMember](Get-MgDirectoryAdministrativeUnitScopedRoleMember.md)
 Get a Microsoft Entra role assignment with administrative unit scope.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgDirectoryAdministrativeUnitScopedRoleMemberCount](Get-MgDirectoryAdministrativeUnitScopedRoleMemberCount.md)
 Get the number of the resource
 
 ### [Get-MgDirectoryAttributeSet](Get-MgDirectoryAttributeSet.md)
 Read the properties and relationships of an attributeSet object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgDirectoryAttributeSetCount](Get-MgDirectoryAttributeSetCount.md)
 Get the number of the resource
 
 ### [Get-MgDirectoryCustomSecurityAttributeDefinition](Get-MgDirectoryCustomSecurityAttributeDefinition.md)
 Read the properties and relationships of a customSecurityAttributeDefinition object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgDirectoryCustomSecurityAttributeDefinitionAllowedValue](Get-MgDirectoryCustomSecurityAttributeDefinitionAllowedValue.md)
 Read the properties and relationships of an allowedValue object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgDirectoryCustomSecurityAttributeDefinitionAllowedValueCount](Get-MgDirectoryCustomSecurityAttributeDefinitionAllowedValueCount.md)
 Get the number of the resource
@@ -492,7 +469,6 @@ Get the number of the resource
 
 ### [Get-MgDirectoryDeletedItem](Get-MgDirectoryDeletedItem.md)
 Retrieve the properties of a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgDirectoryDeletedItemAsAdministrativeUnit](Get-MgDirectoryDeletedItemAsAdministrativeUnit.md)
 Get the item of type microsoft.graph.directoryObject as microsoft.graph.administrativeUnit
@@ -515,7 +491,7 @@ Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
 ### [Get-MgDirectoryDeletedItemById](Get-MgDirectoryDeletedItemById.md)
 Return the directory objects specified in a list of IDs.
 Only a subset of user properties are returned by default in v1.0.
-Some common uses for this function are to: This API is available in the following national cloud deployments.
+Some common uses for this function are to:
 
 ### [Get-MgDirectoryDeletedItemCountAsAdministrativeUnit](Get-MgDirectoryDeletedItemCountAsAdministrativeUnit.md)
 Get the number of the resource
@@ -541,13 +517,11 @@ This function is transitive.
 This API returns up to 11,000 group IDs.
 If more than 11,000 results are available, it returns a 400 Bad Request error with the Directory_ResultSizeLimitExceeded error code.
 As a workaround, use the List group transitive memberOf API.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgDirectoryDeletedItemMemberObject](Get-MgDirectoryDeletedItemMemberObject.md)
 Return all IDs for the groups, administrative units, and directory roles that a user, group, service principal, organizational contact, device, or directory object is a member of.
 This function is transitive.
 Note: Only users and role-enabled groups can be members of directory roles.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgDirectoryDeviceLocalCredential](Get-MgDirectoryDeviceLocalCredential.md)
 Retrieve the properties of a deviceLocalCredentialInfo for a specified device object.
@@ -563,7 +537,6 @@ Get the number of the resource
 
 ### [Get-MgDirectoryOnPremiseSynchronization](Get-MgDirectoryOnPremiseSynchronization.md)
 Read the properties and relationships of an onPremisesDirectorySynchronization object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgDirectoryOnPremiseSynchronizationCount](Get-MgDirectoryOnPremiseSynchronizationCount.md)
 Get the number of the resource
@@ -574,12 +547,11 @@ The role must be activated in tenant for a successful response.
 You can use both the object ID and template ID of the directoryRole with this API.
 The template ID of a built-in role is immutable and can be seen in the role description on the Microsoft Entra admin center.
 For details, see Role template IDs.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgDirectoryRoleById](Get-MgDirectoryRoleById.md)
 Return the directory objects specified in a list of IDs.
 Only a subset of user properties are returned by default in v1.0.
-Some common uses for this function are to: This API is available in the following national cloud deployments.
+Some common uses for this function are to:
 
 ### [Get-MgDirectoryRoleByRoleTemplateId](Get-MgDirectoryRoleByRoleTemplateId.md)
 Retrieve the properties of a directoryRole object.
@@ -587,7 +559,6 @@ The role must be activated in tenant for a successful response.
 You can use both the object ID and template ID of the directoryRole with this API.
 The template ID of a built-in role is immutable and can be seen in the role description on the Microsoft Entra admin center.
 For details, see Role template IDs.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgDirectoryRoleCount](Get-MgDirectoryRoleCount.md)
 Get the number of the resource
@@ -654,13 +625,11 @@ This function is transitive.
 This API returns up to 11,000 group IDs.
 If more than 11,000 results are available, it returns a 400 Bad Request error with the Directory_ResultSizeLimitExceeded error code.
 As a workaround, use the List group transitive memberOf API.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgDirectoryRoleMemberObject](Get-MgDirectoryRoleMemberObject.md)
 Return all IDs for the groups, administrative units, and directory roles that a user, group, service principal, organizational contact, device, or directory object is a member of.
 This function is transitive.
 Note: Only users and role-enabled groups can be members of directory roles.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgDirectoryRoleScopedMember](Get-MgDirectoryRoleScopedMember.md)
 Members of this directory role that are scoped to administrative units.
@@ -672,12 +641,11 @@ Get the number of the resource
 
 ### [Get-MgDirectoryRoleTemplate](Get-MgDirectoryRoleTemplate.md)
 Retrieve the properties and relationships of a directoryroletemplate object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgDirectoryRoleTemplateById](Get-MgDirectoryRoleTemplateById.md)
 Return the directory objects specified in a list of IDs.
 Only a subset of user properties are returned by default in v1.0.
-Some common uses for this function are to: This API is available in the following national cloud deployments.
+Some common uses for this function are to:
 
 ### [Get-MgDirectoryRoleTemplateCount](Get-MgDirectoryRoleTemplateCount.md)
 Get the number of the resource
@@ -691,24 +659,20 @@ This function is transitive.
 This API returns up to 11,000 group IDs.
 If more than 11,000 results are available, it returns a 400 Bad Request error with the Directory_ResultSizeLimitExceeded error code.
 As a workaround, use the List group transitive memberOf API.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgDirectoryRoleTemplateMemberObject](Get-MgDirectoryRoleTemplateMemberObject.md)
 Return all IDs for the groups, administrative units, and directory roles that a user, group, service principal, organizational contact, device, or directory object is a member of.
 This function is transitive.
 Note: Only users and role-enabled groups can be members of directory roles.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgDomain](Get-MgDomain.md)
 Retrieve the properties and relationships of domain object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgDomainCount](Get-MgDomainCount.md)
 Get the number of the resource
 
 ### [Get-MgDomainFederationConfiguration](Get-MgDomainFederationConfiguration.md)
 Read the properties and relationships of an internalDomainFederation object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgDomainFederationConfigurationCount](Get-MgDomainFederationConfigurationCount.md)
 Get the number of the resource
@@ -747,7 +711,6 @@ If no default organizational branding object exists, this method returns a 404 N
 If the Accept-Language header is set to an existing locale identified by the value of its id, this method retrieves the branding for the specified locale.
 This method retrieves only non-Stream properties, for example, usernameHintText and signInPageText.
 To retrieve Stream types of the default branding, for example, bannerLogo and backgroundImage, use the GET organizationalBrandingLocalization method.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgOrganizationBrandingBackgroundImage](Get-MgOrganizationBrandingBackgroundImage.md)
 Image that appears as the background of the sign-in page.
@@ -774,7 +737,6 @@ We recommend using a transparent image with no padding around the logo.
 ### [Get-MgOrganizationBrandingLocalization](Get-MgOrganizationBrandingLocalization.md)
 Read the properties and relationships of an organizationalBrandingLocalization object.
 To retrieve a localization branding object, specify the value of id in the URL.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgOrganizationBrandingLocalizationBackgroundImage](Get-MgOrganizationBrandingLocalizationBackgroundImage.md)
 Image that appears as the background of the sign-in page.
@@ -824,7 +786,7 @@ We recommend using a transparent image with no padding around the logo.
 ### [Get-MgOrganizationById](Get-MgOrganizationById.md)
 Return the directory objects specified in a list of IDs.
 Only a subset of user properties are returned by default in v1.0.
-Some common uses for this function are to: This API is available in the following national cloud deployments.
+Some common uses for this function are to:
 
 ### [Get-MgOrganizationCount](Get-MgOrganizationCount.md)
 Get the number of the resource
@@ -843,17 +805,14 @@ This function is transitive.
 This API returns up to 11,000 group IDs.
 If more than 11,000 results are available, it returns a 400 Bad Request error with the Directory_ResultSizeLimitExceeded error code.
 As a workaround, use the List group transitive memberOf API.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgOrganizationMemberObject](Get-MgOrganizationMemberObject.md)
 Return all IDs for the groups, administrative units, and directory roles that a user, group, service principal, organizational contact, device, or directory object is a member of.
 This function is transitive.
 Note: Only users and role-enabled groups can be members of directory roles.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgSubscribedSku](Get-MgSubscribedSku.md)
 Get a specific commercial subscription that an organization has acquired.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgUserScopedRoleMemberOf](Get-MgUserScopedRoleMemberOf.md)
 Get scopedRoleMemberOf from users
@@ -869,18 +828,18 @@ Deletes a domain using an asynchronous long-running operation.
 Prior to calling forceDelete, you must update or remove any references to Exchange as the provisioning service.
 The following actions are performed as part of this operation: After the domain deletion completes, API operations for the deleted domain will return an HTTP 404 status code.
 To verify deletion of a domain, you can perform a get domain operation.
-This API is available in the following national cloud deployments.
 
 ### [Invoke-MgPromoteDomain](Invoke-MgPromoteDomain.md)
 Promote a verified subdomain to the root domain.
 A verified domain has its isVerified property set to true.
-This API is available in the following national cloud deployments.
 
 ### [Invoke-MgRetryContactServiceProvisioning](Invoke-MgRetryContactServiceProvisioning.md)
 Invoke action retryServiceProvisioning
 
 ### [New-MgAdminPeopleProfileCardProperty](New-MgAdminPeopleProfileCardProperty.md)
-Create new navigation property to profileCardProperties for admin
+Create a new profileCardProperty for an organization.
+The new property is identified by its directoryPropertyName property.
+For more information about how to add properties to the profile card for an organization, see Add or remove custom attributes on a profile card using the profile card API.
 
 ### [New-MgContact](New-MgContact.md)
 Add new entity to contacts
@@ -890,22 +849,18 @@ Add new entity to contracts
 
 ### [New-MgDevice](New-MgDevice.md)
 Create and register a new device in the organization.
-This API is available in the following national cloud deployments.
 
 ### [New-MgDeviceExtension](New-MgDeviceExtension.md)
 Create new navigation property to extensions for devices
 
 ### [New-MgDeviceRegisteredOwnerByRef](New-MgDeviceRegisteredOwnerByRef.md)
 Add a user as a registered owner of the device.
-This API is available in the following national cloud deployments.
 
 ### [New-MgDeviceRegisteredUserByRef](New-MgDeviceRegisteredUserByRef.md)
 Add a registered user for the device.
-This API is available in the following national cloud deployments.
 
 ### [New-MgDirectoryAdministrativeUnit](New-MgDirectoryAdministrativeUnit.md)
 Use this API to create a new administrativeUnit.
-This API is available in the following national cloud deployments.
 
 ### [New-MgDirectoryAdministrativeUnitExtension](New-MgDirectoryAdministrativeUnitExtension.md)
 Create new navigation property to extensions for directory
@@ -919,19 +874,15 @@ Create new navigation property ref to members for directory
 ### [New-MgDirectoryAdministrativeUnitScopedRoleMember](New-MgDirectoryAdministrativeUnitScopedRoleMember.md)
 Assign a Microsoft Entra role with administrative unit scope.
 For a list of roles that can be assigned with administrative unit scope, see Assign Microsoft Entra roles with administrative unit scope.
-This API is available in the following national cloud deployments.
 
 ### [New-MgDirectoryAttributeSet](New-MgDirectoryAttributeSet.md)
 Create a new attributeSet object.
-This API is available in the following national cloud deployments.
 
 ### [New-MgDirectoryCustomSecurityAttributeDefinition](New-MgDirectoryCustomSecurityAttributeDefinition.md)
 Create a new customSecurityAttributeDefinition object.
-This API is available in the following national cloud deployments.
 
 ### [New-MgDirectoryCustomSecurityAttributeDefinitionAllowedValue](New-MgDirectoryCustomSecurityAttributeDefinitionAllowedValue.md)
 Create a new allowedValue object.
-This API is available in the following national cloud deployments.
 
 ### [New-MgDirectoryDeviceLocalCredential](New-MgDirectoryDeviceLocalCredential.md)
 Create new navigation property to deviceLocalCredentials for directory
@@ -947,14 +898,12 @@ Activate a directory role.
 To read a directory role or update its members, it must first be activated in the tenant.
 The Company Administrators and the implicit user directory roles (User, Guest User, and Restricted Guest User roles) are activated by default.
 To access and assign members to other directory roles, you must first activate it with its corresponding directory role template ID.
-This API is available in the following national cloud deployments.
 
 ### [New-MgDirectoryRoleMemberByRef](New-MgDirectoryRoleMemberByRef.md)
 Create a new directory role member.
 You can use both the object ID and template ID of the directoryRole with this API.
 The template ID of a built-in role is immutable and can be seen in the role description on the Microsoft Entra admin center.
 For details, see Role template IDs.
-This API is available in the following national cloud deployments.
 
 ### [New-MgDirectoryRoleScopedMember](New-MgDirectoryRoleScopedMember.md)
 Create new navigation property to scopedMembers for directoryRoles
@@ -970,11 +919,9 @@ Root domains require verification.
 For example, contoso.com requires verification.
 If a root domain is verified, subdomains of the root domain are automatically verified.
 For example, subdomain.contoso.com is automatically be verified if contoso.com has been verified.
-This API is available in the following national cloud deployments.
 
 ### [New-MgDomainFederationConfiguration](New-MgDomainFederationConfiguration.md)
 Create a new internalDomainFederation object.
-This API is available in the following national cloud deployments.
 
 ### [New-MgDomainServiceConfigurationRecord](New-MgDomainServiceConfigurationRecord.md)
 Create new navigation property to serviceConfigurationRecords for domains
@@ -991,7 +938,6 @@ This creates a localized branding and at the same time, the default branding if 
 The default branding is created only once.
 It's loaded when a localized branding isn't configured for the user's browser language.
 To retrieve the default branding, see Get branding.
-This API is available in the following national cloud deployments.
 
 ### [New-MgOrganizationExtension](New-MgOrganizationExtension.md)
 Create new navigation property to extensions for organization
@@ -1003,7 +949,7 @@ Add new entity to subscribedSkus
 Create new navigation property to scopedRoleMemberOf for users
 
 ### [Remove-MgAdminPeopleProfileCardProperty](Remove-MgAdminPeopleProfileCardProperty.md)
-Delete navigation property profileCardProperties for admin
+Delete the profileCardProperty object specified by its directoryPropertyName from the organization's profile card, and remove any localized customizations for that property.
 
 ### [Remove-MgContact](Remove-MgContact.md)
 Delete entity from contacts
@@ -1013,37 +959,30 @@ Delete entity from contracts
 
 ### [Remove-MgDevice](Remove-MgDevice.md)
 Delete a registered device.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgDeviceByDeviceId](Remove-MgDeviceByDeviceId.md)
 Delete a registered device.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgDeviceExtension](Remove-MgDeviceExtension.md)
 Delete navigation property extensions for devices
 
 ### [Remove-MgDeviceRegisteredOwnerByRef](Remove-MgDeviceRegisteredOwnerByRef.md)
 Remove a user as a registered owner of the device.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgDeviceRegisteredUserByRef](Remove-MgDeviceRegisteredUserByRef.md)
 Remove a user as a registered user of the device.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgDirectoryAdministrativeUnit](Remove-MgDirectoryAdministrativeUnit.md)
 Delete an administrativeUnit.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgDirectoryAdministrativeUnitExtension](Remove-MgDirectoryAdministrativeUnitExtension.md)
 Delete navigation property extensions for directory
 
 ### [Remove-MgDirectoryAdministrativeUnitMemberByRef](Remove-MgDirectoryAdministrativeUnitMemberByRef.md)
 Use this API to remove a member (user, group, or device) from an administrative unit.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgDirectoryAdministrativeUnitScopedRoleMember](Remove-MgDirectoryAdministrativeUnitScopedRoleMember.md)
 Remove a Microsoft Entra role assignment with administrative unit scope.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgDirectoryAttributeSet](Remove-MgDirectoryAttributeSet.md)
 Delete navigation property attributeSets for directory
@@ -1059,14 +998,12 @@ Permanently delete a recently deleted application, group, servicePrincipal, or u
 After an item is permanently deleted, it cannot be restored.
 Administrative units cannot be permanently deleted by using the deletedItems API.
 Soft-deleted administrative units will be permanently deleted 30 days after initial deletion unless they are restored.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgDirectoryDeviceLocalCredential](Remove-MgDirectoryDeviceLocalCredential.md)
 Delete navigation property deviceLocalCredentials for directory
 
 ### [Remove-MgDirectoryFederationConfiguration](Remove-MgDirectoryFederationConfiguration.md)
 Delete a samlOrWsFedExternalDomainFederation object.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgDirectoryOnPremiseSynchronization](Remove-MgDirectoryOnPremiseSynchronization.md)
 Delete navigation property onPremisesSynchronization for directory
@@ -1082,7 +1019,6 @@ Remove a member from a directoryRole.
 You can use both the object ID and template ID of the directoryRole with this API.
 The template ID of a built-in role is immutable and can be seen in the role description on the Microsoft Entra admin center.
 For details, see Role template IDs.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgDirectoryRoleScopedMember](Remove-MgDirectoryRoleScopedMember.md)
 Delete navigation property scopedMembers for directoryRoles
@@ -1092,11 +1028,9 @@ Delete entity from directoryRoleTemplates
 
 ### [Remove-MgDomain](Remove-MgDomain.md)
 Deletes a domain from a tenant.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgDomainFederationConfiguration](Remove-MgDomainFederationConfiguration.md)
 Delete an internalDomainFederation object.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgDomainServiceConfigurationRecord](Remove-MgDomainServiceConfigurationRecord.md)
 Delete navigation property serviceConfigurationRecords for domains
@@ -1110,12 +1044,10 @@ Delete entity from organization
 ### [Remove-MgOrganizationBranding](Remove-MgOrganizationBranding.md)
 Delete the default organizational branding object.
 To delete the organizationalBranding object, all images (Stream types) must first be removed from the object.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgOrganizationBrandingLocalization](Remove-MgOrganizationBrandingLocalization.md)
 Delete a localized branding object.
 To delete the organizationalBrandingLocalization object, all images (Stream types) must first be removed from the object.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgOrganizationExtension](Remove-MgOrganizationExtension.md)
 Delete navigation property extensions for organization
@@ -1130,9 +1062,10 @@ Delete navigation property scopedRoleMemberOf for users
 Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.
 If an item was accidentally deleted, you can fully restore the item.
 However, security groups cannot be restored.
+Also, restoring an application doesn't restore the associated service principal automatically.
+You must call this API to explicitly restore the deleted service principal.
 A recently deleted item remains available for up to 30 days.
 After 30 days, the item is permanently deleted.
-This API is available in the following national cloud deployments.
 
 ### [Set-MgOrganizationBrandingBackgroundImage](Set-MgOrganizationBrandingBackgroundImage.md)
 Image that appears as the background of the sign-in page.
@@ -1212,7 +1145,6 @@ Validate that the mail nickname is unique This API only returns the first valida
 If the properties fail multiple validations, only the first validation failure is returned.
 However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
 To learn more about configuring naming policies, see Configure naming policy.
-This API is available in the following national cloud deployments.
 
 ### [Test-MgContractProperty](Test-MgContractProperty.md)
 Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
@@ -1225,7 +1157,6 @@ Validate that the mail nickname is unique This API only returns the first valida
 If the properties fail multiple validations, only the first validation failure is returned.
 However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
 To learn more about configuring naming policies, see Configure naming policy.
-This API is available in the following national cloud deployments.
 
 ### [Test-MgDeviceProperty](Test-MgDeviceProperty.md)
 Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
@@ -1238,7 +1169,6 @@ Validate that the mail nickname is unique This API only returns the first valida
 If the properties fail multiple validations, only the first validation failure is returned.
 However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
 To learn more about configuring naming policies, see Configure naming policy.
-This API is available in the following national cloud deployments.
 
 ### [Test-MgDirectoryDeletedItemProperty](Test-MgDirectoryDeletedItemProperty.md)
 Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
@@ -1251,7 +1181,6 @@ Validate that the mail nickname is unique This API only returns the first valida
 If the properties fail multiple validations, only the first validation failure is returned.
 However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
 To learn more about configuring naming policies, see Configure naming policy.
-This API is available in the following national cloud deployments.
 
 ### [Test-MgDirectoryRoleProperty](Test-MgDirectoryRoleProperty.md)
 Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
@@ -1264,7 +1193,6 @@ Validate that the mail nickname is unique This API only returns the first valida
 If the properties fail multiple validations, only the first validation failure is returned.
 However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
 To learn more about configuring naming policies, see Configure naming policy.
-This API is available in the following national cloud deployments.
 
 ### [Test-MgDirectoryRoleTemplateProperty](Test-MgDirectoryRoleTemplateProperty.md)
 Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
@@ -1277,7 +1205,6 @@ Validate that the mail nickname is unique This API only returns the first valida
 If the properties fail multiple validations, only the first validation failure is returned.
 However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
 To learn more about configuring naming policies, see Configure naming policy.
-This API is available in the following national cloud deployments.
 
 ### [Test-MgOrganizationProperty](Test-MgOrganizationProperty.md)
 Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
@@ -1290,13 +1217,12 @@ Validate that the mail nickname is unique This API only returns the first valida
 If the properties fail multiple validations, only the first validation failure is returned.
 However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
 To learn more about configuring naming policies, see Configure naming policy.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgAdminPeople](Update-MgAdminPeople.md)
 Update the navigation property people in admin
 
 ### [Update-MgAdminPeopleProfileCardProperty](Update-MgAdminPeopleProfileCardProperty.md)
-Update the navigation property profileCardProperties in admin
+Update the properties of a profileCardProperty object, identified by its directoryPropertyName property.
 
 ### [Update-MgContact](Update-MgContact.md)
 Update entity in contacts
@@ -1307,12 +1233,10 @@ Update entity in contracts
 ### [Update-MgDevice](Update-MgDevice.md)
 Update the properties of a registered device.
 Only certain properties of a device can be updated through approved Mobile Device Managment (MDM) apps.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgDeviceByDeviceId](Update-MgDeviceByDeviceId.md)
 Update the properties of a registered device.
 Only certain properties of a device can be updated through approved Mobile Device Managment (MDM) apps.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgDeviceExtension](Update-MgDeviceExtension.md)
 Update the navigation property extensions in devices
@@ -1322,7 +1246,6 @@ Update directory
 
 ### [Update-MgDirectoryAdministrativeUnit](Update-MgDirectoryAdministrativeUnit.md)
 Update the properties of an administrativeUnit object.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgDirectoryAdministrativeUnitExtension](Update-MgDirectoryAdministrativeUnitExtension.md)
 Update the navigation property extensions in directory
@@ -1332,15 +1255,12 @@ Update the navigation property scopedRoleMembers in directory
 
 ### [Update-MgDirectoryAttributeSet](Update-MgDirectoryAttributeSet.md)
 Update the properties of an attributeSet object.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgDirectoryCustomSecurityAttributeDefinition](Update-MgDirectoryCustomSecurityAttributeDefinition.md)
 Update the properties of a customSecurityAttributeDefinition object.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgDirectoryCustomSecurityAttributeDefinitionAllowedValue](Update-MgDirectoryCustomSecurityAttributeDefinitionAllowedValue.md)
 Update the properties of an allowedValue object.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgDirectoryDeviceLocalCredential](Update-MgDirectoryDeviceLocalCredential.md)
 Update the navigation property deviceLocalCredentials in directory
@@ -1350,7 +1270,6 @@ Update the navigation property federationConfigurations in directory
 
 ### [Update-MgDirectoryOnPremiseSynchronization](Update-MgDirectoryOnPremiseSynchronization.md)
 Update the properties of an onPremisesDirectorySynchronization object.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgDirectoryRole](Update-MgDirectoryRole.md)
 Update entity in directoryRoles
@@ -1366,11 +1285,9 @@ Update entity in directoryRoleTemplates
 
 ### [Update-MgDomain](Update-MgDomain.md)
 Update the properties of domain object.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgDomainFederationConfiguration](Update-MgDomainFederationConfiguration.md)
 Update the properties of an internalDomainFederation object.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgDomainServiceConfigurationRecord](Update-MgDomainServiceConfigurationRecord.md)
 Update the navigation property serviceConfigurationRecords in domains
@@ -1382,15 +1299,12 @@ Update the navigation property verificationDnsRecords in domains
 Update the properties of the currently authenticated organization.
 In this case, organization is defined as a collection of exactly one record, and so its ID must be specified in the request.
 The ID is also known as the tenantId of the organization.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgOrganizationBranding](Update-MgOrganizationBranding.md)
 Update the properties of the default branding object specified by the organizationalBranding resource.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgOrganizationBrandingLocalization](Update-MgOrganizationBrandingLocalization.md)
 Update the properties of an organizationalBrandingLocalization object for a specific localization.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgOrganizationExtension](Update-MgOrganizationExtension.md)
 Update the navigation property extensions in organization

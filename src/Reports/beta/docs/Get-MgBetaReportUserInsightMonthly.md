@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaReportUserInsightMonthly
 
 ## SYNOPSIS
-Get monthly from reports
+Summaries of monthly user activities on apps registered in your tenant that is configured for Microsoft Entra External ID for customers.
 
 ## SYNTAX
 
@@ -17,7 +17,7 @@ Get-MgBetaReportUserInsightMonthly [-ExpandProperty <String[]>] [-Property <Stri
 ```
 
 ## DESCRIPTION
-Get monthly from reports
+Summaries of monthly user activities on apps registered in your tenant that is configured for Microsoft Entra External ID for customers.
 
 ## EXAMPLES
 

@@ -11,7 +11,6 @@ schema: 2.0.0
 Get the MailTips of one or more recipients as available to the signed-in user.
 Note that by making a POST call to the getMailTips action, you can request specific types of MailTips to\nbe returned for more than one recipient at one time.
 The requested MailTips are returned in a mailTips collection.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -45,7 +44,6 @@ Get-MgBetaUserMailTip -InputObject <IUsersActionsIdentity> [-AdditionalPropertie
 Get the MailTips of one or more recipients as available to the signed-in user.
 Note that by making a POST call to the getMailTips action, you can request specific types of MailTips to\nbe returned for more than one recipient at one time.
 The requested MailTips are returned in a mailTips collection.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -246,6 +244,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[NotebookId <String>]`: The unique identifier of notebook
   - `[OnenotePageId <String>]`: The unique identifier of onenotePage
   - `[OnenoteSectionId <String>]`: The unique identifier of onenoteSection
+  - `[OnlineMeetingId <String>]`: The unique identifier of onlineMeeting
   - `[OutlookTaskFolderId <String>]`: The unique identifier of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: The unique identifier of outlookTaskGroup
   - `[OutlookTaskId <String>]`: The unique identifier of outlookTask

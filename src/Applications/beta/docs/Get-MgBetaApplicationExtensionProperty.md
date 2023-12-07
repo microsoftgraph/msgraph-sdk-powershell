@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Read a directory extension definition represented by an extensionProperty object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -34,7 +33,6 @@ Get-MgBetaApplicationExtensionProperty -InputObject <IApplicationsIdentity> [-Ex
 
 ## DESCRIPTION
 Read a directory extension definition represented by an extensionProperty object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

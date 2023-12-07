@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update the properties of an itemPublication object in a user's profile.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -48,7 +47,6 @@ Update-MgBetaUserProfilePublication -InputObject <IPeopleIdentity> [-AdditionalP
 
 ## DESCRIPTION
 Update the properties of an itemPublication object in a user's profile.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

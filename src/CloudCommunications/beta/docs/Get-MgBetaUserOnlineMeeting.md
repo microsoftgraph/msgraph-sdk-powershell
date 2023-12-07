@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaUserOnlineMeeting
 
 ## SYNOPSIS
-Information about a meeting, including the URL used to join a meeting, the attendees' list, and the description.
+Information about a meeting, including the URL used to join a meeting, the attendees list, and the description.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgBetaUserOnlineMeeting -InputObject <ICloudCommunicationsIdentity> [-Expand
 ```
 
 ## DESCRIPTION
-Information about a meeting, including the URL used to join a meeting, the attendees' list, and the description.
+Information about a meeting, including the URL used to join a meeting, the attendees list, and the description.
 
 ## EXAMPLES
 

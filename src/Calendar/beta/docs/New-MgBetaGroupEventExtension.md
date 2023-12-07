@@ -11,7 +11,6 @@ schema: 2.0.0
 Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
 You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
 The table in the Permissions section lists the resources that support open extensions.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -43,7 +42,6 @@ New-MgBetaGroupEventExtension -InputObject <ICalendarIdentity> [-AdditionalPrope
 Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
 You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
 The table in the Permissions section lists the resources that support open extensions.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -220,7 +218,9 @@ To create the parameters described below, construct a hash table containing the 
   - `[ExtensionId <String>]`: The unique identifier of extension
   - `[GroupId <String>]`: The unique identifier of group
   - `[PlaceId <String>]`: The unique identifier of place
+  - `[RoomId <String>]`: The unique identifier of room
   - `[UserId <String>]`: The unique identifier of user
+  - `[WorkspaceId <String>]`: The unique identifier of workspace
 
 ## RELATED LINKS
 

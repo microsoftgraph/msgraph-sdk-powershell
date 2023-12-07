@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete eventMessage.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Remove-MgBetaUserMessage -InputObject <IMailIdentity> [-IfMatch <String>] [-Pass
 
 ## DESCRIPTION
 Delete eventMessage.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

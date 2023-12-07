@@ -13,7 +13,6 @@ This restores users' ability to send messages and edit the team, abiding by tena
 A Team is archived using the archive API.
 Unarchiving is an async operation.
 A team is unarchived once the async operation completes successfully, which may occur subsequent to a response from this API.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -33,7 +32,6 @@ This restores users' ability to send messages and edit the team, abiding by tena
 A Team is archived using the archive API.
 Unarchiving is an async operation.
 A team is unarchived once the async operation completes successfully, which may occur subsequent to a response from this API.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Add an owner for the servicePrincipal.
 Service principal owners can be users, the service principal itself, or other service principals.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -41,7 +40,6 @@ New-MgBetaServicePrincipalOwnerByRef -InputObject <IApplicationsIdentity> -Odata
 ## DESCRIPTION
 Add an owner for the servicePrincipal.
 Service principal owners can be users, the service principal itself, or other service principals.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

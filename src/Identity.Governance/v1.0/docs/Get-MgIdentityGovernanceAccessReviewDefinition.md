@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Read the properties and relationships of an accessReviewScheduleDefinition object.
 To retrieve the instances of the access review series, use the list accessReviewInstance API.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -36,7 +35,6 @@ Get-MgIdentityGovernanceAccessReviewDefinition -InputObject <IIdentityGovernance
 ## DESCRIPTION
 Read the properties and relationships of an accessReviewScheduleDefinition object.
 To retrieve the instances of the access review series, use the list accessReviewInstance API.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

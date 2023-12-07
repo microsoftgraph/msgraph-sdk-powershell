@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve the app installed in the specified team.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -34,7 +33,6 @@ Get-MgTeamInstalledApp -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>
 
 ## DESCRIPTION
 Retrieve the app installed in the specified team.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

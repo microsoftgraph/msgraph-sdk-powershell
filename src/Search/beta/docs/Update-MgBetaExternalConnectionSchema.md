@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create the schema for a Microsoft Search connection.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -41,7 +40,6 @@ Update-MgBetaExternalConnectionSchema -InputObject <ISearchIdentity> [-Additiona
 
 ## DESCRIPTION
 Create the schema for a Microsoft Search connection.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

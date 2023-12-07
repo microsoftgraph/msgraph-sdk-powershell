@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Create a new custom unifiedRoleDefinition object.
 This feature requires a Microsoft Entra ID P1 or P2 license.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -32,7 +31,6 @@ New-MgRoleManagementDirectoryRoleDefinition -BodyParameter <IMicrosoftGraphUnifi
 ## DESCRIPTION
 Create a new custom unifiedRoleDefinition object.
 This feature requires a Microsoft Entra ID P1 or P2 license.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

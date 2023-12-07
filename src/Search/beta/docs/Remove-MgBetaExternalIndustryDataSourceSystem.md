@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete a sourceSystemDefinition object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Remove-MgBetaExternalIndustryDataSourceSystem -InputObject <ISearchIdentity> [-I
 
 ## DESCRIPTION
 Delete a sourceSystemDefinition object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

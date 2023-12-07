@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new lists object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -41,7 +40,6 @@ New-MgBetaUserTodoList -InputObject <IUsersIdentity> [-AdditionalProperties <Has
 
 ## DESCRIPTION
 Create a new lists object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

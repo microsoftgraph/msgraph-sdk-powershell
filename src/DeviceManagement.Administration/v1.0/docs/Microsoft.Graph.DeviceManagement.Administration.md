@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.DeviceManagement.Administration
-Module Guid: 6fb9302f-3197-42ec-bb6e-4a0be94581f1
+Module Guid: 282be958-3d32-4d49-a904-cdf28165cc1d
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.devicemanagement.administration
 Help Version: 1.0.0.0
 Locale: en-US
@@ -72,7 +72,7 @@ Get the number of the resource
 Role definition this assignment is part of.
 
 ### [Get-MgDeviceManagementRoleDefinition](Get-MgDeviceManagementRoleDefinition.md)
-Read properties and relationships of the deviceAndAppManagementRoleDefinition object.
+Read properties and relationships of the roleDefinition object.
 
 ### [Get-MgDeviceManagementRoleDefinitionCount](Get-MgDeviceManagementRoleDefinitionCount.md)
 Get the number of the resource
@@ -237,7 +237,7 @@ Update the properties of a resourceOperation object.
 Update the properties of a deviceAndAppManagementRoleAssignment object.
 
 ### [Update-MgDeviceManagementRoleDefinition](Update-MgDeviceManagementRoleDefinition.md)
-Update the properties of a roleDefinition object.
+Update the properties of a deviceAndAppManagementRoleDefinition object.
 
 ### [Update-MgDeviceManagementRoleDefinitionRoleAssignment](Update-MgDeviceManagementRoleDefinitionRoleAssignment.md)
 Update the properties of a roleAssignment object.

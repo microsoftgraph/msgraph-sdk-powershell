@@ -8,8 +8,7 @@ schema: 2.0.0
 # New-MgBetaSiteColumn
 
 ## SYNOPSIS
-Create a column for a site][site] by specifying a [columnDefinition][columnDefinition].
-This API is available in the following [national cloud deployments.
+Create a column for a [site][site] by specifying a [columnDefinition][columnDefinition].
 
 ## SYNTAX
 
@@ -58,8 +57,7 @@ New-MgBetaSiteColumn -InputObject <ISitesIdentity> [-AdditionalProperties <Hasht
 ```
 
 ## DESCRIPTION
-Create a column for a site][site] by specifying a [columnDefinition][columnDefinition].
-This API is available in the following [national cloud deployments.
+Create a column for a [site][site] by specifying a [columnDefinition][columnDefinition].
 
 ## EXAMPLES
 
@@ -800,8 +798,8 @@ To create the parameters described below, construct a hash table containing the 
         - `[Name <String>]`: The name of the label.
       - `[LastModifiedDateTime <DateTime?>]`: Last date and time of term modification. Read-only.
       - `[Properties <IMicrosoftGraphKeyValue[]>]`: Collection of properties on the term.
-        - `[Key <String>]`: Contains the name of the field that a value is associated with.
-        - `[Value <String>]`: Contains the corresponding value for the specified key.
+        - `[Key <String>]`: Key.
+        - `[Value <String>]`: Value.
       - `[Relations <IMicrosoftGraphTermStoreRelation[]>]`: To indicate which terms are related to the current term as either pinned or reused.
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
         - `[FromTerm <IMicrosoftGraphTermStoreTerm>]`: term
@@ -1036,8 +1034,8 @@ To create the parameters described below, construct a hash table containing the 
         - `[Name <String>]`: The name of the label.
       - `[LastModifiedDateTime <DateTime?>]`: Last date and time of term modification. Read-only.
       - `[Properties <IMicrosoftGraphKeyValue[]>]`: Collection of properties on the term.
-        - `[Key <String>]`: Contains the name of the field that a value is associated with.
-        - `[Value <String>]`: Contains the corresponding value for the specified key.
+        - `[Key <String>]`: Key.
+        - `[Value <String>]`: Value.
       - `[Relations <IMicrosoftGraphTermStoreRelation[]>]`: To indicate which terms are related to the current term as either pinned or reused.
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
         - `[FromTerm <IMicrosoftGraphTermStoreTerm>]`: term
@@ -1107,8 +1105,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[Name <String>]`: The name of the label.
     - `[LastModifiedDateTime <DateTime?>]`: Last date and time of term modification. Read-only.
     - `[Properties <IMicrosoftGraphKeyValue[]>]`: Collection of properties on the term.
-      - `[Key <String>]`: Contains the name of the field that a value is associated with.
-      - `[Value <String>]`: Contains the corresponding value for the specified key.
+      - `[Key <String>]`: Key.
+      - `[Value <String>]`: Value.
     - `[Relations <IMicrosoftGraphTermStoreRelation[]>]`: To indicate which terms are related to the current term as either pinned or reused.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[FromTerm <IMicrosoftGraphTermStoreTerm>]`: term

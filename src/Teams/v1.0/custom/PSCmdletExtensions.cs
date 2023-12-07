@@ -29,7 +29,7 @@ namespace Microsoft.Graph.PowerShell
             try
             {
                 var unescapedString = Uri.UnescapeDataString(value);
-                return unescapedString.Replace('+', ' ');
+                return value.EndsWith("'") ? unescapedString: unescapedString.Replace('+', ' ');
             }
             catch (UriFormatException ex)
             {

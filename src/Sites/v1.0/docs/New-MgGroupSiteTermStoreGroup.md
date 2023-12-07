@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new group object in a term store.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -71,7 +70,6 @@ New-MgGroupSiteTermStoreGroup -InputObject <ISitesIdentity> [-AdditionalProperti
 
 ## DESCRIPTION
 Create a new group object in a term store.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

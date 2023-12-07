@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Sites
-Module Guid: e8ba2587-4fa2-4f3a-8c90-78580c7eb051
+Module Guid: 69dc2b94-d0bb-4214-aa31-b6a96c5b34d8
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.sites
 Help Version: 1.0.0.0
 Locale: en-US
@@ -15,104 +15,83 @@ Microsoft Graph PowerShell Cmdlets
 Follow a user's site or multiple sites.
 
 ### [Add-MgSiteContentTypeCopy](Add-MgSiteContentTypeCopy.md)
-Add a copy of a content type][contentType] from a [site][site] to a [list][list].
-This API is available in the following [national cloud deployments.
+Add a copy of a [content type][contentType] from a [site][site] to a [list][list].
 
 ### [Add-MgSiteContentTypeCopyFromContentTypeHub](Add-MgSiteContentTypeCopyFromContentTypeHub.md)
 Add or sync a copy of a published content type from the content type hub to a target site or a list.
 This method is part of the content type publishing changes to optimize the syncing of published content types to sites and lists, effectively switching from a 'push everywhere' to 'pull as needed' approach.
 The method allows users to pull content types directly from the content type hub to a site or list.
 For more information, see contentType: getCompatibleHubContentTypes and the blog post Syntex Product Updates – August 2021.
-This API is available in the following national cloud deployments.
 
 ### [Add-MgSiteListContentTypeCopy](Add-MgSiteListContentTypeCopy.md)
-Add a copy of a content type][contentType] from a [site][site] to a [list][list].
-This API is available in the following [national cloud deployments.
+Add a copy of a [content type][contentType] from a [site][site] to a [list][list].
 
 ### [Add-MgSiteListContentTypeCopyFromContentTypeHub](Add-MgSiteListContentTypeCopyFromContentTypeHub.md)
 Add or sync a copy of a published content type from the content type hub to a target site or a list.
 This method is part of the content type publishing changes to optimize the syncing of published content types to sites and lists, effectively switching from a 'push everywhere' to 'pull as needed' approach.
 The method allows users to pull content types directly from the content type hub to a site or list.
 For more information, see contentType: getCompatibleHubContentTypes and the blog post Syntex Product Updates – August 2021.
-This API is available in the following national cloud deployments.
 
 ### [Copy-MgSiteContentTypeToDefaultContentLocation](Copy-MgSiteContentTypeToDefaultContentLocation.md)
-Copy a file to a default content location in a content type][contentType].
+Copy a file to a default content location in a [content type][contentType].
 The file can then be added as a default file or template via a POST operation.
-This API is available in the following [national cloud deployments.
 
 ### [Copy-MgSiteListContentTypeToDefaultContentLocation](Copy-MgSiteListContentTypeToDefaultContentLocation.md)
-Copy a file to a default content location in a content type][contentType].
+Copy a file to a default content location in a [content type][contentType].
 The file can then be added as a default file or template via a POST operation.
-This API is available in the following [national cloud deployments.
 
 ### [Copy-MgSiteOnenoteNotebook](Copy-MgSiteOnenoteNotebook.md)
 For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
-This API is available in the following national cloud deployments.
 
 ### [Copy-MgSiteOnenoteNotebookSectionGroupSectionPageToSection](Copy-MgSiteOnenoteNotebookSectionGroupSectionPageToSection.md)
 Copy a page to a specific section.
 For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
-This API is available in the following national cloud deployments.
 
 ### [Copy-MgSiteOnenoteNotebookSectionGroupSectionToNotebook](Copy-MgSiteOnenoteNotebookSectionGroupSectionToNotebook.md)
 For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
-This API is available in the following national cloud deployments.
 
 ### [Copy-MgSiteOnenoteNotebookSectionGroupSectionToSectionGroup](Copy-MgSiteOnenoteNotebookSectionGroupSectionToSectionGroup.md)
 For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
-This API is available in the following national cloud deployments.
 
 ### [Copy-MgSiteOnenoteNotebookSectionPageToSection](Copy-MgSiteOnenoteNotebookSectionPageToSection.md)
 Copy a page to a specific section.
 For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
-This API is available in the following national cloud deployments.
 
 ### [Copy-MgSiteOnenoteNotebookSectionToNotebook](Copy-MgSiteOnenoteNotebookSectionToNotebook.md)
 For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
-This API is available in the following national cloud deployments.
 
 ### [Copy-MgSiteOnenoteNotebookSectionToSectionGroup](Copy-MgSiteOnenoteNotebookSectionToSectionGroup.md)
 For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
-This API is available in the following national cloud deployments.
 
 ### [Copy-MgSiteOnenotePageToSection](Copy-MgSiteOnenotePageToSection.md)
 Copy a page to a specific section.
 For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
-This API is available in the following national cloud deployments.
 
 ### [Copy-MgSiteOnenoteSectionGroupSectionPageToSection](Copy-MgSiteOnenoteSectionGroupSectionPageToSection.md)
 Copy a page to a specific section.
 For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
-This API is available in the following national cloud deployments.
 
 ### [Copy-MgSiteOnenoteSectionGroupSectionToNotebook](Copy-MgSiteOnenoteSectionGroupSectionToNotebook.md)
 For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
-This API is available in the following national cloud deployments.
 
 ### [Copy-MgSiteOnenoteSectionGroupSectionToSectionGroup](Copy-MgSiteOnenoteSectionGroupSectionToSectionGroup.md)
 For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
-This API is available in the following national cloud deployments.
 
 ### [Copy-MgSiteOnenoteSectionPageToSection](Copy-MgSiteOnenoteSectionPageToSection.md)
 Copy a page to a specific section.
 For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
-This API is available in the following national cloud deployments.
 
 ### [Copy-MgSiteOnenoteSectionToNotebook](Copy-MgSiteOnenoteSectionToNotebook.md)
 For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
-This API is available in the following national cloud deployments.
 
 ### [Copy-MgSiteOnenoteSectionToSectionGroup](Copy-MgSiteOnenoteSectionToSectionGroup.md)
 For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgAdminSharepoint](Get-MgAdminSharepoint.md)
 Get sharepoint from admin
 
 ### [Get-MgAdminSharepointSetting](Get-MgAdminSharepointSetting.md)
 Get the tenant-level settings for SharePoint and OneDrive.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgAllSite](Get-MgAllSite.md)
 Invoke function getAllSites
@@ -146,8 +125,7 @@ Get the number of the resource
 Get lastSevenDays from groups
 
 ### [Get-MgGroupSiteAnalyticTime](Get-MgGroupSiteAnalyticTime.md)
-Get [itemAnalytics][] about the views that took place under this resource.\nThe itemAnalytics resource is a convenient way to get activity stats for allTime and the lastSevenDays.\nFor a custom time range or interval, use the getActivitiesByInterval][] API.
-This API is available in the following [national cloud deployments.
+Get [itemAnalytics][] about the views that took place under this resource.\nThe itemAnalytics resource is a convenient way to get activity stats for allTime and the lastSevenDays.\nFor a custom time range or interval, use the [getActivitiesByInterval][] API.
 
 ### [Get-MgGroupSiteColumn](Get-MgGroupSiteColumn.md)
 The collection of column definitions reusable across lists under this site.
@@ -159,8 +137,7 @@ Get the number of the resource
 The source column for the content type column.
 
 ### [Get-MgGroupSiteContentType](Get-MgGroupSiteContentType.md)
-Retrieve the metadata for a content type][contentType] in a [site][] or a [list][].
-This API is available in the following [national cloud deployments.
+Retrieve the metadata for a [content type][contentType] in a [site][] or a [list][].
 
 ### [Get-MgGroupSiteContentTypeBase](Get-MgGroupSiteContentTypeBase.md)
 Parent contentType from which this content type is derived.
@@ -172,8 +149,7 @@ The collection of content types that are ancestors of this content type.
 Get the number of the resource
 
 ### [Get-MgGroupSiteContentTypeColumn](Get-MgGroupSiteContentTypeColumn.md)
-Retrieve the metadata for a site][], a [list][], or a [contentType][] [column][columnDefinition].
-This API is available in the following [national cloud deployments.
+Retrieve the metadata for a [site][], a [list][], or a [contentType][] [column][columnDefinition].
 
 ### [Get-MgGroupSiteContentTypeColumnCount](Get-MgGroupSiteContentTypeColumnCount.md)
 Get the number of the resource
@@ -267,8 +243,7 @@ Get serviceProvisioningErrors property value
 Get the number of the resource
 
 ### [Get-MgGroupSiteList](Get-MgGroupSiteList.md)
-Returns the metadata for a list][].
-This API is available in the following [national cloud deployments.
+Get a list of rich long-running operations associated with a list.
 
 ### [Get-MgGroupSiteListColumn](Get-MgGroupSiteListColumn.md)
 The collection of field definitions for this list.
@@ -283,8 +258,7 @@ The source column for the content type column.
 The collection of content types present in this list.
 
 ### [Get-MgGroupSiteListContentTypeColumn](Get-MgGroupSiteListContentTypeColumn.md)
-Retrieve the metadata for a site][], a [list][], or a [contentType][] [column][columnDefinition].
-This API is available in the following [national cloud deployments.
+Retrieve the metadata for a [site][], a [list][], or a [contentType][] [column][columnDefinition].
 
 ### [Get-MgGroupSiteListContentTypeColumnCount](Get-MgGroupSiteListContentTypeColumnCount.md)
 Get the number of the resource
@@ -330,8 +304,7 @@ Allows access to the list as a drive resource with driveItems.
 Only present on document libraries.
 
 ### [Get-MgGroupSiteListItem](Get-MgGroupSiteListItem.md)
-Returns the metadata for an item][] in a [list][].
-This API is available in the following [national cloud deployments.
+Returns the metadata for an [item][] in a [list][].
 
 ### [Get-MgGroupSiteListItemAnalytic](Get-MgGroupSiteListItemAnalytic.md)
 Analytics about the view activities that took place on this item.
@@ -353,7 +326,6 @@ Get the number of the resource
 
 ### [Get-MgGroupSiteListItemDocumentSetVersion](Get-MgGroupSiteListItemDocumentSetVersion.md)
 Read the properties and relationships of a documentSetVersion object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgGroupSiteListItemDocumentSetVersionCount](Get-MgGroupSiteListItemDocumentSetVersionCount.md)
 Get the number of the resource
@@ -372,7 +344,6 @@ The values of the columns set on this list item.
 
 ### [Get-MgGroupSiteListItemVersion](Get-MgGroupSiteListItemVersion.md)
 Retrieve the metadata for a specific version of a ListItem.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgGroupSiteListItemVersionCount](Get-MgGroupSiteListItemVersionCount.md)
 Get the number of the resource
@@ -397,7 +368,6 @@ Calls the OneNote service for notebook related operations.
 
 ### [Get-MgGroupSiteOnenoteNotebook](Get-MgGroupSiteOnenoteNotebook.md)
 Retrieve the properties and relationships of a notebook object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgGroupSiteOnenoteNotebookCount](Get-MgGroupSiteOnenoteNotebookCount.md)
 Get the number of the resource
@@ -494,7 +464,6 @@ This applies to operations that return the Operation-Location header in the resp
   You can poll the Operation-Location endpoint until the status property returns completed or failed.
 If the status is completed, the resourceLocation property contains the resource endpoint URI.
 If the status is failed, the error and @api.diagnostics properties provide error information.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgGroupSiteOnenoteOperationCount](Get-MgGroupSiteOnenoteOperationCount.md)
 Get the number of the resource
@@ -502,7 +471,6 @@ Get the number of the resource
 ### [Get-MgGroupSiteOnenotePage](Get-MgGroupSiteOnenotePage.md)
 Retrieve the properties and relationships of a page object.
 Getting page information Access a page's metadata by page identifier: Getting page content You can use the page's content endpoint to get the HTML content of a page: The includeIDs=true query option is used to update pages.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgGroupSiteOnenotePageContent](Get-MgGroupSiteOnenotePageContent.md)
 The page's HTML content.
@@ -532,14 +500,12 @@ Get the number of the resource
 
 ### [Get-MgGroupSiteOnenoteSection](Get-MgGroupSiteOnenoteSection.md)
 Retrieve the properties and relationships of a onenoteSection object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgGroupSiteOnenoteSectionCount](Get-MgGroupSiteOnenoteSectionCount.md)
 Get the number of the resource
 
 ### [Get-MgGroupSiteOnenoteSectionGroup](Get-MgGroupSiteOnenoteSectionGroup.md)
 Retrieve the properties and relationships of a sectionGroup object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgGroupSiteOnenoteSectionGroupCount](Get-MgGroupSiteOnenoteSectionGroupCount.md)
 Get the number of the resource
@@ -616,28 +582,24 @@ Read-only.
 
 ### [Get-MgGroupSiteOperation](Get-MgGroupSiteOperation.md)
 Get the status of a rich long-running operation on a site or a list.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgGroupSiteOperationCount](Get-MgGroupSiteOperationCount.md)
 Get the number of the resource
 
 ### [Get-MgGroupSitePermission](Get-MgGroupSitePermission.md)
 Retrieve the properties and relationships of a permission object on a site.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgGroupSitePermissionCount](Get-MgGroupSitePermissionCount.md)
 Get the number of the resource
 
 ### [Get-MgGroupSiteTermStore](Get-MgGroupSiteTermStore.md)
 Read the properties and relationships of a store object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgGroupSiteTermStoreCount](Get-MgGroupSiteTermStoreCount.md)
 Get the number of the resource
 
 ### [Get-MgGroupSiteTermStoreGroup](Get-MgGroupSiteTermStoreGroup.md)
 Read the properties and relationships of a term store group object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgGroupSiteTermStoreGroupCount](Get-MgGroupSiteTermStoreGroupCount.md)
 Get the number of the resource
@@ -698,7 +660,6 @@ The term to which the relationship is defined.
 
 ### [Get-MgGroupSiteTermStoreGroupSetTerm](Get-MgGroupSiteTermStoreGroupSetTerm.md)
 Read the properties and relationships of a term object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgGroupSiteTermStoreGroupSetTermChild](Get-MgGroupSiteTermStoreGroupSetTermChild.md)
 Children of current term.
@@ -753,7 +714,6 @@ The [set] in which the term is created.
 
 ### [Get-MgGroupSiteTermStoreSet](Get-MgGroupSiteTermStoreSet.md)
 Read the properties and relationships of a set object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgGroupSiteTermStoreSetChild](Get-MgGroupSiteTermStoreSetChild.md)
 Children terms of set in term [store].
@@ -841,7 +801,6 @@ The term to which the relationship is defined.
 
 ### [Get-MgGroupSiteTermStoreSetParentGroupSetTerm](Get-MgGroupSiteTermStoreSetParentGroupSetTerm.md)
 Read the properties and relationships of a term object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgGroupSiteTermStoreSetParentGroupSetTermChild](Get-MgGroupSiteTermStoreSetParentGroupSetTermChild.md)
 Children of current term.
@@ -914,7 +873,6 @@ The term to which the relationship is defined.
 
 ### [Get-MgGroupSiteTermStoreSetTerm](Get-MgGroupSiteTermStoreSetTerm.md)
 Read the properties and relationships of a term object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgGroupSiteTermStoreSetTermChild](Get-MgGroupSiteTermStoreSetTermChild.md)
 Children of current term.
@@ -1004,8 +962,7 @@ Get the number of the resource
 Get lastSevenDays from sites
 
 ### [Get-MgSiteAnalyticTime](Get-MgSiteAnalyticTime.md)
-Get [itemAnalytics][] about the views that took place under this resource.\nThe itemAnalytics resource is a convenient way to get activity stats for allTime and the lastSevenDays.\nFor a custom time range or interval, use the getActivitiesByInterval][] API.
-This API is available in the following [national cloud deployments.
+Get [itemAnalytics][] about the views that took place under this resource.\nThe itemAnalytics resource is a convenient way to get activity stats for allTime and the lastSevenDays.\nFor a custom time range or interval, use the [getActivitiesByInterval][] API.
 
 ### [Get-MgSiteApplicableContentTypeForList](Get-MgSiteApplicableContentTypeForList.md)
 Invoke function getApplicableContentTypesForList
@@ -1023,8 +980,7 @@ Get the number of the resource
 The source column for the content type column.
 
 ### [Get-MgSiteContentType](Get-MgSiteContentType.md)
-Retrieve the metadata for a content type][contentType] in a [site][] or a [list][].
-This API is available in the following [national cloud deployments.
+Retrieve the metadata for a [content type][contentType] in a [site][] or a [list][].
 
 ### [Get-MgSiteContentTypeBase](Get-MgSiteContentTypeBase.md)
 Parent contentType from which this content type is derived.
@@ -1036,8 +992,7 @@ The collection of content types that are ancestors of this content type.
 Get the number of the resource
 
 ### [Get-MgSiteContentTypeColumn](Get-MgSiteContentTypeColumn.md)
-Retrieve the metadata for a site][], a [list][], or a [contentType][] [column][columnDefinition].
-This API is available in the following [national cloud deployments.
+Retrieve the metadata for a [site][], a [list][], or a [contentType][] [column][columnDefinition].
 
 ### [Get-MgSiteContentTypeColumnCount](Get-MgSiteContentTypeColumnCount.md)
 Get the number of the resource
@@ -1115,8 +1070,7 @@ Get serviceProvisioningErrors property value
 Get the number of the resource
 
 ### [Get-MgSiteList](Get-MgSiteList.md)
-Returns the metadata for a list][].
-This API is available in the following [national cloud deployments.
+Get a list of rich long-running operations associated with a list.
 
 ### [Get-MgSiteListColumn](Get-MgSiteListColumn.md)
 The collection of field definitions for this list.
@@ -1131,8 +1085,7 @@ The source column for the content type column.
 The collection of content types present in this list.
 
 ### [Get-MgSiteListContentTypeColumn](Get-MgSiteListContentTypeColumn.md)
-Retrieve the metadata for a site][], a [list][], or a [contentType][] [column][columnDefinition].
-This API is available in the following [national cloud deployments.
+Retrieve the metadata for a [site][], a [list][], or a [contentType][] [column][columnDefinition].
 
 ### [Get-MgSiteListContentTypeColumnCount](Get-MgSiteListContentTypeColumnCount.md)
 Get the number of the resource
@@ -1181,8 +1134,7 @@ Allows access to the list as a drive resource with driveItems.
 Only present on document libraries.
 
 ### [Get-MgSiteListItem](Get-MgSiteListItem.md)
-Returns the metadata for an item][] in a [list][].
-This API is available in the following [national cloud deployments.
+Returns the metadata for an [item][] in a [list][].
 
 ### [Get-MgSiteListItemActivityByInterval](Get-MgSiteListItemActivityByInterval.md)
 Invoke function getActivitiesByInterval
@@ -1207,7 +1159,6 @@ Get the number of the resource
 
 ### [Get-MgSiteListItemDocumentSetVersion](Get-MgSiteListItemDocumentSetVersion.md)
 Read the properties and relationships of a documentSetVersion object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgSiteListItemDocumentSetVersionCount](Get-MgSiteListItemDocumentSetVersionCount.md)
 Get the number of the resource
@@ -1226,7 +1177,6 @@ The values of the columns set on this list item.
 
 ### [Get-MgSiteListItemVersion](Get-MgSiteListItemVersion.md)
 Retrieve the metadata for a specific version of a ListItem.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgSiteListItemVersionCount](Get-MgSiteListItemVersionCount.md)
 Get the number of the resource
@@ -1249,18 +1199,15 @@ Get the number of the resource
 ### [Get-MgSiteOnenoteNotebookFromWebUrl](Get-MgSiteOnenoteNotebookFromWebUrl.md)
 Retrieve the properties and relationships of a notebook object by using its URL path.
 The location can be user notebooks on Microsoft 365, group notebooks, or SharePoint site-hosted team notebooks on Microsoft 365.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgSiteOperation](Get-MgSiteOperation.md)
 Get the status of a rich long-running operation on a site or a list.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgSiteOperationCount](Get-MgSiteOperationCount.md)
 Get the number of the resource
 
 ### [Get-MgSitePermission](Get-MgSitePermission.md)
 Retrieve the properties and relationships of a permission object on a site.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgSitePermissionCount](Get-MgSitePermissionCount.md)
 Get the number of the resource
@@ -1270,14 +1217,12 @@ Invoke function getRecentNotebooks
 
 ### [Get-MgSiteTermStore](Get-MgSiteTermStore.md)
 Read the properties and relationships of a store object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgSiteTermStoreCount](Get-MgSiteTermStoreCount.md)
 Get the number of the resource
 
 ### [Get-MgSiteTermStoreGroup](Get-MgSiteTermStoreGroup.md)
 Read the properties and relationships of a term store group object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgSiteTermStoreGroupCount](Get-MgSiteTermStoreGroupCount.md)
 Get the number of the resource
@@ -1338,7 +1283,6 @@ The term to which the relationship is defined.
 
 ### [Get-MgSiteTermStoreGroupSetTerm](Get-MgSiteTermStoreGroupSetTerm.md)
 Read the properties and relationships of a term object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgSiteTermStoreGroupSetTermChild](Get-MgSiteTermStoreGroupSetTermChild.md)
 Children of current term.
@@ -1393,7 +1337,6 @@ The [set] in which the term is created.
 
 ### [Get-MgSiteTermStoreSet](Get-MgSiteTermStoreSet.md)
 Read the properties and relationships of a set object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgSiteTermStoreSetChild](Get-MgSiteTermStoreSetChild.md)
 Children terms of set in term [store].
@@ -1481,7 +1424,6 @@ The term to which the relationship is defined.
 
 ### [Get-MgSiteTermStoreSetParentGroupSetTerm](Get-MgSiteTermStoreSetParentGroupSetTerm.md)
 Read the properties and relationships of a term object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgSiteTermStoreSetParentGroupSetTermChild](Get-MgSiteTermStoreSetParentGroupSetTermChild.md)
 Children of current term.
@@ -1554,7 +1496,6 @@ The term to which the relationship is defined.
 
 ### [Get-MgSiteTermStoreSetTerm](Get-MgSiteTermStoreSetTerm.md)
 Read the properties and relationships of a term object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgSiteTermStoreSetTermChild](Get-MgSiteTermStoreSetTermChild.md)
 Children of current term.
@@ -1620,8 +1561,7 @@ Get followedSites from users
 Get the number of the resource
 
 ### [Grant-MgSitePermission](Grant-MgSitePermission.md)
-Grant users access to a link represented by a permission][].
-This API is available in the following [national cloud deployments.
+Grant users access to a link represented by a [permission][].
 
 ### [Invoke-MgPreviewSiteOnenoteNotebookSectionGroupSectionPage](Invoke-MgPreviewSiteOnenoteNotebookSectionGroupSectionPage.md)
 Invoke function preview
@@ -1640,15 +1580,12 @@ Invoke function preview
 
 ### [Invoke-MgReauthorizeSiteListSubscription](Invoke-MgReauthorizeSiteListSubscription.md)
 Reauthorize a subscription when you receive a reauthorizationRequired challenge.
-This API is available in the following national cloud deployments.
 
 ### [Join-MgSiteContentTypeWithHubSite](Join-MgSiteContentTypeWithHubSite.md)
-Associate a published content type][contentType] present in a content type hub with a list of hub sites.
-This API is available in the following [national cloud deployments.
+Associate a published [content type][contentType] present in a content type hub with a list of hub sites.
 
 ### [Join-MgSiteListContentTypeWithHubSite](Join-MgSiteListContentTypeWithHubSite.md)
-Associate a published content type][contentType] present in a content type hub with a list of hub sites.
-This API is available in the following [national cloud deployments.
+Associate a published [content type][contentType] present in a content type hub with a list of hub sites.
 
 ### [New-MgGroupSiteAnalyticItemActivityStat](New-MgGroupSiteAnalyticItemActivityStat.md)
 Create new navigation property to itemActivityStats for groups
@@ -1657,45 +1594,37 @@ Create new navigation property to itemActivityStats for groups
 Create new navigation property to activities for groups
 
 ### [New-MgGroupSiteColumn](New-MgGroupSiteColumn.md)
-Create a column for a site][site] with a request that specifies a [columnDefinition][columnDefinition].
-This API is available in the following [national cloud deployments.
+Create a column for a [site][site] with a request that specifies a [columnDefinition][columnDefinition].
 
 ### [New-MgGroupSiteContentType](New-MgGroupSiteContentType.md)
-Create a new contentType][] in a [site][].
-This API is available in the following [national cloud deployments.
+Create a new [contentType][] in a [site][].
 
 ### [New-MgGroupSiteContentTypeColumn](New-MgGroupSiteContentTypeColumn.md)
-Add a column to a content type][contentType] in a site, or a list with a request that specifies a [columnDefinition][columnDefinition].
-This API is available in the following [national cloud deployments.
+Add a column to a [content type][contentType] in a site, or a list with a request that specifies a [columnDefinition][columnDefinition].
 
 ### [New-MgGroupSiteContentTypeColumnLink](New-MgGroupSiteContentTypeColumnLink.md)
 Create new navigation property to columnLinks for groups
 
 ### [New-MgGroupSiteList](New-MgGroupSiteList.md)
-Create a new list][] in a [site][].
-This API is available in the following [national cloud deployments.
+Create a new [list][] in a [site][].
 
 ### [New-MgGroupSiteListColumn](New-MgGroupSiteListColumn.md)
-Create a column for a list][list] with a request that specifies a [columnDefinition][columnDefinition].
-This API is available in the following [national cloud deployments.
+Create a column for a [list][list] with a request that specifies a [columnDefinition][columnDefinition].
 
 ### [New-MgGroupSiteListContentType](New-MgGroupSiteListContentType.md)
 Create new navigation property to contentTypes for groups
 
 ### [New-MgGroupSiteListContentTypeColumn](New-MgGroupSiteListContentTypeColumn.md)
-Add a column to a content type][contentType] in a site, or a list with a request that specifies a [columnDefinition][columnDefinition].
-This API is available in the following [national cloud deployments.
+Add a column to a [content type][contentType] in a site, or a list with a request that specifies a [columnDefinition][columnDefinition].
 
 ### [New-MgGroupSiteListContentTypeColumnLink](New-MgGroupSiteListContentTypeColumnLink.md)
 Create new navigation property to columnLinks for groups
 
 ### [New-MgGroupSiteListItem](New-MgGroupSiteListItem.md)
-Create a new listItem][] in a [list][].
-This API is available in the following [national cloud deployments.
+Create a new [listItem][] in a [list][].
 
 ### [New-MgGroupSiteListItemDocumentSetVersion](New-MgGroupSiteListItemDocumentSetVersion.md)
 Create a new version of a document set item in a list.
-This API is available in the following national cloud deployments.
 
 ### [New-MgGroupSiteListItemVersion](New-MgGroupSiteListItemVersion.md)
 Create new navigation property to versions for groups
@@ -1708,27 +1637,21 @@ Create new navigation property to subscriptions for groups
 
 ### [New-MgGroupSiteOnenoteNotebook](New-MgGroupSiteOnenoteNotebook.md)
 Create a new OneNote notebook.
-This API is available in the following national cloud deployments.
 
 ### [New-MgGroupSiteOnenoteNotebookSection](New-MgGroupSiteOnenoteNotebookSection.md)
 Create a new onenoteSection in the specified notebook.
-This API is available in the following national cloud deployments.
 
 ### [New-MgGroupSiteOnenoteNotebookSectionGroup](New-MgGroupSiteOnenoteNotebookSectionGroup.md)
 Create a new section group in the specified notebook.
-This API is available in the following national cloud deployments.
 
 ### [New-MgGroupSiteOnenoteNotebookSectionGroupSection](New-MgGroupSiteOnenoteNotebookSectionGroupSection.md)
 Create a new onenoteSection in the specified section group.
-This API is available in the following national cloud deployments.
 
 ### [New-MgGroupSiteOnenoteNotebookSectionGroupSectionPage](New-MgGroupSiteOnenoteNotebookSectionGroupSectionPage.md)
 Create a new page in the specified section.
-This API is available in the following national cloud deployments.
 
 ### [New-MgGroupSiteOnenoteNotebookSectionPage](New-MgGroupSiteOnenoteNotebookSectionPage.md)
 Create a new page in the specified section.
-This API is available in the following national cloud deployments.
 
 ### [New-MgGroupSiteOnenoteOperation](New-MgGroupSiteOnenoteOperation.md)
 Create new navigation property to operations for groups
@@ -1738,7 +1661,6 @@ Create a new OneNote page in the default section of the default notebook.
 To create a page in a different section in the default notebook, you can use the sectionName query parameter.
 Example: ../onenote/pages?sectionName=My%20section The POST /onenote/pages operation is used only to create pages in the current user's default notebook.
 If you're targeting other notebooks, you can create pages in a specified section.
- This API is available in the following national cloud deployments.
 
 ### [New-MgGroupSiteOnenoteResource](New-MgGroupSiteOnenoteResource.md)
 Create new navigation property to resources for groups
@@ -1751,36 +1673,30 @@ Create new navigation property to sectionGroups for groups
 
 ### [New-MgGroupSiteOnenoteSectionGroupSection](New-MgGroupSiteOnenoteSectionGroupSection.md)
 Create a new onenoteSection in the specified section group.
-This API is available in the following national cloud deployments.
 
 ### [New-MgGroupSiteOnenoteSectionGroupSectionPage](New-MgGroupSiteOnenoteSectionGroupSectionPage.md)
 Create a new page in the specified section.
-This API is available in the following national cloud deployments.
 
 ### [New-MgGroupSiteOnenoteSectionPage](New-MgGroupSiteOnenoteSectionPage.md)
 Create a new page in the specified section.
-This API is available in the following national cloud deployments.
 
 ### [New-MgGroupSiteOperation](New-MgGroupSiteOperation.md)
 Create new navigation property to operations for groups
 
 ### [New-MgGroupSitePermission](New-MgGroupSitePermission.md)
 Create a new permission object on a site.
-This API is available in the following national cloud deployments.
 
 ### [New-MgGroupSiteTermStore](New-MgGroupSiteTermStore.md)
 Create new navigation property to termStores for groups
 
 ### [New-MgGroupSiteTermStoreGroup](New-MgGroupSiteTermStoreGroup.md)
 Create a new group object in a term store.
-This API is available in the following national cloud deployments.
 
 ### [New-MgGroupSiteTermStoreGroupSet](New-MgGroupSiteTermStoreGroupSet.md)
 Create new navigation property to sets for groups
 
 ### [New-MgGroupSiteTermStoreGroupSetChild](New-MgGroupSiteTermStoreGroupSetChild.md)
 Create a new term object.
-This API is available in the following national cloud deployments.
 
 ### [New-MgGroupSiteTermStoreGroupSetChildRelation](New-MgGroupSiteTermStoreGroupSetChildRelation.md)
 Create new navigation property to relations for groups
@@ -1802,11 +1718,9 @@ Create new navigation property to relations for groups
 
 ### [New-MgGroupSiteTermStoreSet](New-MgGroupSiteTermStoreSet.md)
 Create a new set object.
-This API is available in the following national cloud deployments.
 
 ### [New-MgGroupSiteTermStoreSetChild](New-MgGroupSiteTermStoreSetChild.md)
 Create a new term object.
-This API is available in the following national cloud deployments.
 
 ### [New-MgGroupSiteTermStoreSetChildRelation](New-MgGroupSiteTermStoreSetChildRelation.md)
 Create new navigation property to relations for groups
@@ -1816,7 +1730,6 @@ Create new navigation property to sets for groups
 
 ### [New-MgGroupSiteTermStoreSetParentGroupSetChild](New-MgGroupSiteTermStoreSetParentGroupSetChild.md)
 Create a new term object.
-This API is available in the following national cloud deployments.
 
 ### [New-MgGroupSiteTermStoreSetParentGroupSetChildRelation](New-MgGroupSiteTermStoreSetParentGroupSetChildRelation.md)
 Create new navigation property to relations for groups
@@ -1858,45 +1771,37 @@ Create new navigation property to itemActivityStats for sites
 Create new navigation property to activities for sites
 
 ### [New-MgSiteColumn](New-MgSiteColumn.md)
-Create a column for a site][site] with a request that specifies a [columnDefinition][columnDefinition].
-This API is available in the following [national cloud deployments.
+Create a column for a [site][site] with a request that specifies a [columnDefinition][columnDefinition].
 
 ### [New-MgSiteContentType](New-MgSiteContentType.md)
-Create a new contentType][] in a [site][].
-This API is available in the following [national cloud deployments.
+Create a new [contentType][] in a [site][].
 
 ### [New-MgSiteContentTypeColumn](New-MgSiteContentTypeColumn.md)
-Add a column to a content type][contentType] in a site, or a list with a request that specifies a [columnDefinition][columnDefinition].
-This API is available in the following [national cloud deployments.
+Add a column to a [content type][contentType] in a site, or a list with a request that specifies a [columnDefinition][columnDefinition].
 
 ### [New-MgSiteContentTypeColumnLink](New-MgSiteContentTypeColumnLink.md)
 Create new navigation property to columnLinks for sites
 
 ### [New-MgSiteList](New-MgSiteList.md)
-Create a new list][] in a [site][].
-This API is available in the following [national cloud deployments.
+Create a new [list][] in a [site][].
 
 ### [New-MgSiteListColumn](New-MgSiteListColumn.md)
-Create a column for a list][list] with a request that specifies a [columnDefinition][columnDefinition].
-This API is available in the following [national cloud deployments.
+Create a column for a [list][list] with a request that specifies a [columnDefinition][columnDefinition].
 
 ### [New-MgSiteListContentType](New-MgSiteListContentType.md)
 Create new navigation property to contentTypes for sites
 
 ### [New-MgSiteListContentTypeColumn](New-MgSiteListContentTypeColumn.md)
-Add a column to a content type][contentType] in a site, or a list with a request that specifies a [columnDefinition][columnDefinition].
-This API is available in the following [national cloud deployments.
+Add a column to a [content type][contentType] in a site, or a list with a request that specifies a [columnDefinition][columnDefinition].
 
 ### [New-MgSiteListContentTypeColumnLink](New-MgSiteListContentTypeColumnLink.md)
 Create new navigation property to columnLinks for sites
 
 ### [New-MgSiteListItem](New-MgSiteListItem.md)
-Create a new listItem][] in a [list][].
-This API is available in the following [national cloud deployments.
+Create a new [listItem][] in a [list][].
 
 ### [New-MgSiteListItemDocumentSetVersion](New-MgSiteListItemDocumentSetVersion.md)
 Create a new version of a document set item in a list.
-This API is available in the following national cloud deployments.
 
 ### [New-MgSiteListItemVersion](New-MgSiteListItemVersion.md)
 Create new navigation property to versions for sites
@@ -1912,21 +1817,18 @@ Create new navigation property to operations for sites
 
 ### [New-MgSitePermission](New-MgSitePermission.md)
 Create a new permission object on a site.
-This API is available in the following national cloud deployments.
 
 ### [New-MgSiteTermStore](New-MgSiteTermStore.md)
 Create new navigation property to termStores for sites
 
 ### [New-MgSiteTermStoreGroup](New-MgSiteTermStoreGroup.md)
 Create a new group object in a term store.
-This API is available in the following national cloud deployments.
 
 ### [New-MgSiteTermStoreGroupSet](New-MgSiteTermStoreGroupSet.md)
 Create new navigation property to sets for sites
 
 ### [New-MgSiteTermStoreGroupSetChild](New-MgSiteTermStoreGroupSetChild.md)
 Create a new term object.
-This API is available in the following national cloud deployments.
 
 ### [New-MgSiteTermStoreGroupSetChildRelation](New-MgSiteTermStoreGroupSetChildRelation.md)
 Create new navigation property to relations for sites
@@ -1948,11 +1850,9 @@ Create new navigation property to relations for sites
 
 ### [New-MgSiteTermStoreSet](New-MgSiteTermStoreSet.md)
 Create a new set object.
-This API is available in the following national cloud deployments.
 
 ### [New-MgSiteTermStoreSetChild](New-MgSiteTermStoreSetChild.md)
 Create a new term object.
-This API is available in the following national cloud deployments.
 
 ### [New-MgSiteTermStoreSetChildRelation](New-MgSiteTermStoreSetChildRelation.md)
 Create new navigation property to relations for sites
@@ -1962,7 +1862,6 @@ Create new navigation property to sets for sites
 
 ### [New-MgSiteTermStoreSetParentGroupSetChild](New-MgSiteTermStoreSetParentGroupSetChild.md)
 Create a new term object.
-This API is available in the following national cloud deployments.
 
 ### [New-MgSiteTermStoreSetParentGroupSetChildRelation](New-MgSiteTermStoreSetParentGroupSetChildRelation.md)
 Create new navigation property to relations for sites
@@ -1998,12 +1897,10 @@ Create new navigation property to relations for sites
 Create new navigation property to relations for sites
 
 ### [Publish-MgSiteContentType](Publish-MgSiteContentType.md)
-Publishes a contentType][] present in the content type hub site.
-This API is available in the following [national cloud deployments.
+Publishes a [contentType][] present in the content type hub site.
 
 ### [Publish-MgSiteListContentType](Publish-MgSiteListContentType.md)
-Publishes a contentType][] present in the content type hub site.
-This API is available in the following [national cloud deployments.
+Publishes a [contentType][] present in the content type hub site.
 
 ### [Remove-MgAdminSharepoint](Remove-MgAdminSharepoint.md)
 Delete navigation property sharepoint for admin
@@ -2024,12 +1921,10 @@ Delete navigation property activities for groups
 Delete navigation property columns for groups
 
 ### [Remove-MgGroupSiteContentType](Remove-MgGroupSiteContentType.md)
-Remove a content type][contentType] from a [list][] or a [site][].
-This API is available in the following [national cloud deployments.
+Remove a [content type][contentType] from a [list][] or a [site][].
 
 ### [Remove-MgGroupSiteContentTypeColumn](Remove-MgGroupSiteContentTypeColumn.md)
-Remove a column][columndefinition] from a [site][], a [list][], or a [content type][contentType].
-This API is available in the following [national cloud deployments.
+Remove a [column][columndefinition] from a [site][], a [list][], or a [content type][contentType].
 
 ### [Remove-MgGroupSiteContentTypeColumnLink](Remove-MgGroupSiteContentTypeColumnLink.md)
 Delete navigation property columnLinks for groups
@@ -2044,19 +1939,16 @@ Delete navigation property columns for groups
 Delete navigation property contentTypes for groups
 
 ### [Remove-MgGroupSiteListContentTypeColumn](Remove-MgGroupSiteListContentTypeColumn.md)
-Remove a column][columndefinition] from a [site][], a [list][], or a [content type][contentType].
-This API is available in the following [national cloud deployments.
+Remove a [column][columndefinition] from a [site][], a [list][], or a [content type][contentType].
 
 ### [Remove-MgGroupSiteListContentTypeColumnLink](Remove-MgGroupSiteListContentTypeColumnLink.md)
 Delete navigation property columnLinks for groups
 
 ### [Remove-MgGroupSiteListItem](Remove-MgGroupSiteListItem.md)
-Removes an item from a list][].
-This API is available in the following [national cloud deployments.
+Removes an item from a [list][].
 
 ### [Remove-MgGroupSiteListItemDocumentSetVersion](Remove-MgGroupSiteListItemDocumentSetVersion.md)
 Delete a version of a document set in a list.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgGroupSiteListItemDocumentSetVersionField](Remove-MgGroupSiteListItemDocumentSetVersionField.md)
 Delete navigation property fields for groups
@@ -2102,7 +1994,6 @@ Delete navigation property operations for groups
 
 ### [Remove-MgGroupSiteOnenotePage](Remove-MgGroupSiteOnenotePage.md)
 Delete a OneNote page.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgGroupSiteOnenoteResource](Remove-MgGroupSiteOnenoteResource.md)
 Delete navigation property resources for groups
@@ -2127,14 +2018,12 @@ Delete navigation property operations for groups
 
 ### [Remove-MgGroupSitePermission](Remove-MgGroupSitePermission.md)
 Delete a permission object on a site.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgGroupSiteTermStore](Remove-MgGroupSiteTermStore.md)
 Delete navigation property termStore for groups
 
 ### [Remove-MgGroupSiteTermStoreGroup](Remove-MgGroupSiteTermStoreGroup.md)
-Delete a group object in a term store].
-This API is available in the following [national cloud deployments.
+Delete a group object in a term [store].
 
 ### [Remove-MgGroupSiteTermStoreGroupSet](Remove-MgGroupSiteTermStoreGroupSet.md)
 Delete navigation property sets for groups
@@ -2153,7 +2042,6 @@ Delete navigation property relations for groups
 
 ### [Remove-MgGroupSiteTermStoreGroupSetTerm](Remove-MgGroupSiteTermStoreGroupSetTerm.md)
 Delete a term object.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgGroupSiteTermStoreGroupSetTermChild](Remove-MgGroupSiteTermStoreGroupSetTermChild.md)
 Delete navigation property children for groups
@@ -2166,7 +2054,6 @@ Delete navigation property relations for groups
 
 ### [Remove-MgGroupSiteTermStoreSet](Remove-MgGroupSiteTermStoreSet.md)
 Delete a set object.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgGroupSiteTermStoreSetChild](Remove-MgGroupSiteTermStoreSetChild.md)
 Delete navigation property children for groups
@@ -2191,7 +2078,6 @@ Delete navigation property relations for groups
 
 ### [Remove-MgGroupSiteTermStoreSetParentGroupSetTerm](Remove-MgGroupSiteTermStoreSetParentGroupSetTerm.md)
 Delete a term object.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgGroupSiteTermStoreSetParentGroupSetTermChild](Remove-MgGroupSiteTermStoreSetParentGroupSetTermChild.md)
 Delete navigation property children for groups
@@ -2207,7 +2093,6 @@ Delete navigation property relations for groups
 
 ### [Remove-MgGroupSiteTermStoreSetTerm](Remove-MgGroupSiteTermStoreSetTerm.md)
 Delete a term object.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgGroupSiteTermStoreSetTermChild](Remove-MgGroupSiteTermStoreSetTermChild.md)
 Delete navigation property children for groups
@@ -2231,12 +2116,10 @@ Delete navigation property activities for sites
 Delete navigation property columns for sites
 
 ### [Remove-MgSiteContentType](Remove-MgSiteContentType.md)
-Remove a content type][contentType] from a [list][] or a [site][].
-This API is available in the following [national cloud deployments.
+Remove a [content type][contentType] from a [list][] or a [site][].
 
 ### [Remove-MgSiteContentTypeColumn](Remove-MgSiteContentTypeColumn.md)
-Remove a column][columndefinition] from a [site][], a [list][], or a [content type][contentType].
-This API is available in the following [national cloud deployments.
+Remove a [column][columndefinition] from a [site][], a [list][], or a [content type][contentType].
 
 ### [Remove-MgSiteContentTypeColumnLink](Remove-MgSiteContentTypeColumnLink.md)
 Delete navigation property columnLinks for sites
@@ -2251,19 +2134,16 @@ Delete navigation property columns for sites
 Delete navigation property contentTypes for sites
 
 ### [Remove-MgSiteListContentTypeColumn](Remove-MgSiteListContentTypeColumn.md)
-Remove a column][columndefinition] from a [site][], a [list][], or a [content type][contentType].
-This API is available in the following [national cloud deployments.
+Remove a [column][columndefinition] from a [site][], a [list][], or a [content type][contentType].
 
 ### [Remove-MgSiteListContentTypeColumnLink](Remove-MgSiteListContentTypeColumnLink.md)
 Delete navigation property columnLinks for sites
 
 ### [Remove-MgSiteListItem](Remove-MgSiteListItem.md)
-Removes an item from a list][].
-This API is available in the following [national cloud deployments.
+Removes an item from a [list][].
 
 ### [Remove-MgSiteListItemDocumentSetVersion](Remove-MgSiteListItemDocumentSetVersion.md)
 Delete a version of a document set in a list.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgSiteListItemDocumentSetVersionField](Remove-MgSiteListItemDocumentSetVersionField.md)
 Delete navigation property fields for sites
@@ -2288,14 +2168,12 @@ Delete navigation property operations for sites
 
 ### [Remove-MgSitePermission](Remove-MgSitePermission.md)
 Delete a permission object on a site.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgSiteTermStore](Remove-MgSiteTermStore.md)
 Delete navigation property termStore for sites
 
 ### [Remove-MgSiteTermStoreGroup](Remove-MgSiteTermStoreGroup.md)
-Delete a group object in a term store].
-This API is available in the following [national cloud deployments.
+Delete a group object in a term [store].
 
 ### [Remove-MgSiteTermStoreGroupSet](Remove-MgSiteTermStoreGroupSet.md)
 Delete navigation property sets for sites
@@ -2314,7 +2192,6 @@ Delete navigation property relations for sites
 
 ### [Remove-MgSiteTermStoreGroupSetTerm](Remove-MgSiteTermStoreGroupSetTerm.md)
 Delete a term object.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgSiteTermStoreGroupSetTermChild](Remove-MgSiteTermStoreGroupSetTermChild.md)
 Delete navigation property children for sites
@@ -2327,7 +2204,6 @@ Delete navigation property relations for sites
 
 ### [Remove-MgSiteTermStoreSet](Remove-MgSiteTermStoreSet.md)
 Delete a set object.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgSiteTermStoreSetChild](Remove-MgSiteTermStoreSetChild.md)
 Delete navigation property children for sites
@@ -2352,7 +2228,6 @@ Delete navigation property relations for sites
 
 ### [Remove-MgSiteTermStoreSetParentGroupSetTerm](Remove-MgSiteTermStoreSetParentGroupSetTerm.md)
 Delete a term object.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgSiteTermStoreSetParentGroupSetTermChild](Remove-MgSiteTermStoreSetParentGroupSetTermChild.md)
 Delete navigation property children for sites
@@ -2368,7 +2243,6 @@ Delete navigation property relations for sites
 
 ### [Remove-MgSiteTermStoreSetTerm](Remove-MgSiteTermStoreSetTerm.md)
 Delete a term object.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgSiteTermStoreSetTermChild](Remove-MgSiteTermStoreSetTermChild.md)
 Delete navigation property children for sites
@@ -2381,12 +2255,10 @@ Delete navigation property relations for sites
 
 ### [Restore-MgSiteListItemDocumentSetVersion](Restore-MgSiteListItemDocumentSetVersion.md)
 Restore a document set version.
-This API is available in the following national cloud deployments.
 
 ### [Restore-MgSiteListItemVersion](Restore-MgSiteListItemVersion.md)
 Restore a previous version of a ListItem to be the current version.
 This will create a new version with the contents of the previous version, but preserves all existing versions of the item.
-This API is available in the following national cloud deployments.
 
 ### [Set-MgGroupSiteAnalyticItemActivityStatActivityDriveItemContent](Set-MgGroupSiteAnalyticItemActivityStatActivityDriveItemContent.md)
 The content stream, if the item represents a file.
@@ -2425,19 +2297,16 @@ Invoke function isPublished
 Invoke function isPublished
 
 ### [Unpublish-MgSiteContentType](Unpublish-MgSiteContentType.md)
-Unpublish a contentType][] from a content type hub site.
-This API is available in the following [national cloud deployments.
+Unpublish a [contentType][] from a content type hub site.
 
 ### [Unpublish-MgSiteListContentType](Unpublish-MgSiteListContentType.md)
-Unpublish a contentType][] from a content type hub site.
-This API is available in the following [national cloud deployments.
+Unpublish a [contentType][] from a content type hub site.
 
 ### [Update-MgAdminSharepoint](Update-MgAdminSharepoint.md)
 Update the navigation property sharepoint in admin
 
 ### [Update-MgAdminSharepointSetting](Update-MgAdminSharepointSetting.md)
 Update one or more tenant-level settings for SharePoint and OneDrive.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgGroupSite](Update-MgGroupSite.md)
 Update the navigation property sites in groups
@@ -2455,12 +2324,10 @@ Update the navigation property activities in groups
 Update the navigation property columns in groups
 
 ### [Update-MgGroupSiteContentType](Update-MgGroupSiteContentType.md)
-Update a content type][contentType].
-This API is available in the following [national cloud deployments.
+Update a [content type][contentType].
 
 ### [Update-MgGroupSiteContentTypeColumn](Update-MgGroupSiteContentTypeColumn.md)
-Update a site][], a [list][], or a [content type][contentType] [column][columnDefinition].
-This API is available in the following [national cloud deployments.
+Update a [site][], a [list][], or a [content type][contentType] [column][columnDefinition].
 
 ### [Update-MgGroupSiteContentTypeColumnLink](Update-MgGroupSiteContentTypeColumnLink.md)
 Update the navigation property columnLinks in groups
@@ -2481,8 +2348,7 @@ Update the navigation property columns in groups
 Update the navigation property contentTypes in groups
 
 ### [Update-MgGroupSiteListContentTypeColumn](Update-MgGroupSiteListContentTypeColumn.md)
-Update a site][], a [list][], or a [content type][contentType] [column][columnDefinition].
-This API is available in the following [national cloud deployments.
+Update a [site][], a [list][], or a [content type][contentType] [column][columnDefinition].
 
 ### [Update-MgGroupSiteListContentTypeColumnLink](Update-MgGroupSiteListContentTypeColumnLink.md)
 Update the navigation property columnLinks in groups
@@ -2503,8 +2369,7 @@ Update the navigation property documentSetVersions in groups
 Update the navigation property fields in groups
 
 ### [Update-MgGroupSiteListItemField](Update-MgGroupSiteListItemField.md)
-Update the properties on a listItem][].
-This API is available in the following [national cloud deployments.
+Update the properties on a [listItem][].
 
 ### [Update-MgGroupSiteListItemLastModifiedByUserMailboxSetting](Update-MgGroupSiteListItemLastModifiedByUserMailboxSetting.md)
 Update property mailboxSettings value.
@@ -2574,11 +2439,9 @@ Update the navigation property operations in groups
 
 ### [Update-MgGroupSitePermission](Update-MgGroupSitePermission.md)
 Update an application permission object on a site.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgGroupSiteTermStore](Update-MgGroupSiteTermStore.md)
 Update the properties of a store object.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgGroupSiteTermStoreGroup](Update-MgGroupSiteTermStoreGroup.md)
 Update the navigation property groups in groups
@@ -2600,7 +2463,6 @@ Update the navigation property relations in groups
 
 ### [Update-MgGroupSiteTermStoreGroupSetTerm](Update-MgGroupSiteTermStoreGroupSetTerm.md)
 Update the properties of a term object.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgGroupSiteTermStoreGroupSetTermChild](Update-MgGroupSiteTermStoreGroupSetTermChild.md)
 Update the navigation property children in groups
@@ -2613,7 +2475,6 @@ Update the navigation property relations in groups
 
 ### [Update-MgGroupSiteTermStoreSet](Update-MgGroupSiteTermStoreSet.md)
 Update the properties of a set object.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgGroupSiteTermStoreSetChild](Update-MgGroupSiteTermStoreSetChild.md)
 Update the navigation property children in groups
@@ -2638,7 +2499,6 @@ Update the navigation property relations in groups
 
 ### [Update-MgGroupSiteTermStoreSetParentGroupSetTerm](Update-MgGroupSiteTermStoreSetParentGroupSetTerm.md)
 Update the properties of a term object.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgGroupSiteTermStoreSetParentGroupSetTermChild](Update-MgGroupSiteTermStoreSetParentGroupSetTermChild.md)
 Update the navigation property children in groups
@@ -2654,7 +2514,6 @@ Update the navigation property relations in groups
 
 ### [Update-MgGroupSiteTermStoreSetTerm](Update-MgGroupSiteTermStoreSetTerm.md)
 Update the properties of a term object.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgGroupSiteTermStoreSetTermChild](Update-MgGroupSiteTermStoreSetTermChild.md)
 Update the navigation property children in groups
@@ -2681,12 +2540,10 @@ Update the navigation property activities in sites
 Update the navigation property columns in sites
 
 ### [Update-MgSiteContentType](Update-MgSiteContentType.md)
-Update a content type][contentType].
-This API is available in the following [national cloud deployments.
+Update a [content type][contentType].
 
 ### [Update-MgSiteContentTypeColumn](Update-MgSiteContentTypeColumn.md)
-Update a site][], a [list][], or a [content type][contentType] [column][columnDefinition].
-This API is available in the following [national cloud deployments.
+Update a [site][], a [list][], or a [content type][contentType] [column][columnDefinition].
 
 ### [Update-MgSiteContentTypeColumnLink](Update-MgSiteContentTypeColumnLink.md)
 Update the navigation property columnLinks in sites
@@ -2701,8 +2558,7 @@ Update the navigation property columns in sites
 Update the navigation property contentTypes in sites
 
 ### [Update-MgSiteListContentTypeColumn](Update-MgSiteListContentTypeColumn.md)
-Update a site][], a [list][], or a [content type][contentType] [column][columnDefinition].
-This API is available in the following [national cloud deployments.
+Update a [site][], a [list][], or a [content type][contentType] [column][columnDefinition].
 
 ### [Update-MgSiteListContentTypeColumnLink](Update-MgSiteListContentTypeColumnLink.md)
 Update the navigation property columnLinks in sites
@@ -2723,8 +2579,7 @@ Update the navigation property documentSetVersions in sites
 Update the navigation property fields in sites
 
 ### [Update-MgSiteListItemField](Update-MgSiteListItemField.md)
-Update the properties on a listItem][].
-This API is available in the following [national cloud deployments.
+Update the properties on a [listItem][].
 
 ### [Update-MgSiteListItemLastModifiedByUserMailboxSetting](Update-MgSiteListItemLastModifiedByUserMailboxSetting.md)
 Update property mailboxSettings value.
@@ -2764,11 +2619,9 @@ Update the navigation property operations in sites
 
 ### [Update-MgSitePermission](Update-MgSitePermission.md)
 Update an application permission object on a site.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgSiteTermStore](Update-MgSiteTermStore.md)
 Update the properties of a store object.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgSiteTermStoreGroup](Update-MgSiteTermStoreGroup.md)
 Update the navigation property groups in sites
@@ -2790,7 +2643,6 @@ Update the navigation property relations in sites
 
 ### [Update-MgSiteTermStoreGroupSetTerm](Update-MgSiteTermStoreGroupSetTerm.md)
 Update the properties of a term object.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgSiteTermStoreGroupSetTermChild](Update-MgSiteTermStoreGroupSetTermChild.md)
 Update the navigation property children in sites
@@ -2803,7 +2655,6 @@ Update the navigation property relations in sites
 
 ### [Update-MgSiteTermStoreSet](Update-MgSiteTermStoreSet.md)
 Update the properties of a set object.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgSiteTermStoreSetChild](Update-MgSiteTermStoreSetChild.md)
 Update the navigation property children in sites
@@ -2828,7 +2679,6 @@ Update the navigation property relations in sites
 
 ### [Update-MgSiteTermStoreSetParentGroupSetTerm](Update-MgSiteTermStoreSetParentGroupSetTerm.md)
 Update the properties of a term object.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgSiteTermStoreSetParentGroupSetTermChild](Update-MgSiteTermStoreSetParentGroupSetTermChild.md)
 Update the navigation property children in sites
@@ -2844,7 +2694,6 @@ Update the navigation property relations in sites
 
 ### [Update-MgSiteTermStoreSetTerm](Update-MgSiteTermStoreSetTerm.md)
 Update the properties of a term object.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgSiteTermStoreSetTermChild](Update-MgSiteTermStoreSetTermChild.md)
 Update the navigation property children in sites

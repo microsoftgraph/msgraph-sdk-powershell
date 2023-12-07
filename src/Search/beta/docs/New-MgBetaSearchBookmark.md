@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new bookmark object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -33,7 +32,6 @@ New-MgBetaSearchBookmark -BodyParameter <IMicrosoftGraphSearchBookmark> [-Confir
 
 ## DESCRIPTION
 Create a new bookmark object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
