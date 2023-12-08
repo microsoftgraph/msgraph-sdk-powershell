@@ -11,7 +11,7 @@ paths:
       tags:
         - tenantRelationships.delegatedAdminCustomer
       summary: List delegatedAdminCustomers
-      description: Get a list of the delegatedAdminCustomer objects and their properties. This API is available in the following national cloud deployments.
+      description: Get a list of the delegatedAdminCustomer objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/tenantrelationship-list-delegatedadmincustomers?view=graph-rest-1.0
@@ -103,7 +103,7 @@ paths:
       tags:
         - tenantRelationships.delegatedAdminCustomer
       summary: Get delegatedAdminCustomer
-      description: Read the properties of a delegatedAdminCustomer object. This API is available in the following national cloud deployments.
+      description: Read the properties of a delegatedAdminCustomer object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/delegatedadmincustomer-get?view=graph-rest-1.0
@@ -217,7 +217,7 @@ paths:
       tags:
         - tenantRelationships.delegatedAdminCustomer
       summary: List serviceManagementDetails
-      description: Get a list of the delegatedAdminServiceManagementDetail objects and their properties. This API is available in the following national cloud deployments.
+      description: Get a list of the delegatedAdminServiceManagementDetail objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/delegatedadmincustomer-list-servicemanagementdetails?view=graph-rest-1.0
@@ -493,7 +493,7 @@ paths:
       tags:
         - tenantRelationships.delegatedAdminRelationship
       summary: List delegatedAdminRelationships
-      description: Get a list of the delegatedAdminRelationship objects and their properties. This API is available in the following national cloud deployments.
+      description: Get a list of the delegatedAdminRelationship objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/tenantrelationship-list-delegatedadminrelationships?view=graph-rest-1.0
@@ -590,7 +590,7 @@ paths:
       tags:
         - tenantRelationships.delegatedAdminRelationship
       summary: Create delegatedAdminRelationship
-      description: Create a new delegatedAdminRelationship object. This API is available in the following national cloud deployments.
+      description: Create a new delegatedAdminRelationship object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/tenantrelationship-post-delegatedadminrelationships?view=graph-rest-1.0
@@ -617,7 +617,7 @@ paths:
       tags:
         - tenantRelationships.delegatedAdminRelationship
       summary: Get delegatedAdminRelationship
-      description: Read the properties of a delegatedAdminRelationship object. This API is available in the following national cloud deployments.
+      description: Read the properties of a delegatedAdminRelationship object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/delegatedadminrelationship-get?view=graph-rest-1.0
@@ -685,7 +685,7 @@ paths:
       tags:
         - tenantRelationships.delegatedAdminRelationship
       summary: Update delegatedAdminRelationship
-      description: 'Update the properties of a delegatedAdminRelationship object. You can only update a relationship when it''s in the created status. However, you can update the autoExtendDuration property when the relationship is in either the created or active status. This API is available in the following national cloud deployments.'
+      description: 'Update the properties of a delegatedAdminRelationship object. You can only update a relationship when it''s in the created status. However, you can update the autoExtendDuration property when the relationship is in either the created or active status.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/delegatedadminrelationship-update?view=graph-rest-1.0
@@ -720,7 +720,7 @@ paths:
       tags:
         - tenantRelationships.delegatedAdminRelationship
       summary: Delete delegatedAdminRelationship
-      description: Delete a delegatedAdminRelationship object. A relationship can only be deleted if it's in the 'created' status.  This API is available in the following national cloud deployments.
+      description: 'Delete a delegatedAdminRelationship object. A relationship can only be deleted if it''s in the ''created'' status. '
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/delegatedadminrelationship-delete?view=graph-rest-1.0
@@ -751,7 +751,7 @@ paths:
       tags:
         - tenantRelationships.delegatedAdminRelationship
       summary: List accessAssignments
-      description: Get a list of the delegatedAdminAccessAssignment objects and their properties. This API is available in the following national cloud deployments.
+      description: Get a list of the delegatedAdminAccessAssignment objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/delegatedadminrelationship-list-accessassignments?view=graph-rest-1.0
@@ -835,7 +835,7 @@ paths:
       tags:
         - tenantRelationships.delegatedAdminRelationship
       summary: Create accessAssignments
-      description: Create a new delegatedAdminAccessAssignment object. This API is available in the following national cloud deployments.
+      description: Create a new delegatedAdminAccessAssignment object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/delegatedadminrelationship-post-accessassignments?view=graph-rest-1.0
@@ -871,7 +871,7 @@ paths:
       tags:
         - tenantRelationships.delegatedAdminRelationship
       summary: Get delegatedAdminAccessAssignment
-      description: Read the properties of a delegatedAdminAccessAssignment object. This API is available in the following national cloud deployments.
+      description: Read the properties of a delegatedAdminAccessAssignment object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/delegatedadminaccessassignment-get?view=graph-rest-1.0
@@ -936,7 +936,7 @@ paths:
       tags:
         - tenantRelationships.delegatedAdminRelationship
       summary: Update delegatedAdminAccessAssignment
-      description: Update the properties of a delegatedAdminAccessAssignment object. This API is available in the following national cloud deployments.
+      description: Update the properties of a delegatedAdminAccessAssignment object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/delegatedadminaccessassignment-update?view=graph-rest-1.0
@@ -979,7 +979,7 @@ paths:
       tags:
         - tenantRelationships.delegatedAdminRelationship
       summary: Delete delegatedAdminAccessAssignment
-      description: Delete a delegatedAdminAccessAssignment object. This API is available in the following national cloud deployments.
+      description: Delete a delegatedAdminAccessAssignment object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/delegatedadminaccessassignment-delete?view=graph-rest-1.0
@@ -1040,7 +1040,7 @@ paths:
       tags:
         - tenantRelationships.delegatedAdminRelationship
       summary: List operations
-      description: Get a list of the delegatedAdminRelationshipOperation objects and their properties. This API is available in the following national cloud deployments.
+      description: Get a list of the delegatedAdminRelationshipOperation objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/delegatedadminrelationship-list-operations?view=graph-rest-1.0
@@ -1156,7 +1156,7 @@ paths:
       tags:
         - tenantRelationships.delegatedAdminRelationship
       summary: Get delegatedAdminRelationshipOperation
-      description: Read the properties of a delegatedAdminRelationshipOperation object. This API is available in the following national cloud deployments.
+      description: Read the properties of a delegatedAdminRelationshipOperation object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/delegatedadminrelationshipoperation-get?view=graph-rest-1.0
@@ -1317,7 +1317,7 @@ paths:
       tags:
         - tenantRelationships.delegatedAdminRelationship
       summary: List requests
-      description: Get a list of the delegatedAdminRelationshipRequest objects and their properties. This API is available in the following national cloud deployments.
+      description: Get a list of the delegatedAdminRelationshipRequest objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/delegatedadminrelationship-list-requests?view=graph-rest-1.0
@@ -1398,7 +1398,7 @@ paths:
       tags:
         - tenantRelationships.delegatedAdminRelationship
       summary: Create requests
-      description: Create a new delegatedAdminRelationshipRequest object. This API is available in the following national cloud deployments.
+      description: Create a new delegatedAdminRelationshipRequest object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/delegatedadminrelationship-post-requests?view=graph-rest-1.0
@@ -1434,7 +1434,7 @@ paths:
       tags:
         - tenantRelationships.delegatedAdminRelationship
       summary: Get delegatedAdminRelationshipRequest
-      description: Read the properties and relationships of a delegatedAdminRelationshipRequest object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a delegatedAdminRelationshipRequest object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/delegatedadminrelationshiprequest-get?view=graph-rest-1.0

@@ -172,7 +172,7 @@ paths:
       tags:
         - agreements.agreementAcceptance
       summary: List acceptances
-      description: Get the details about the acceptance records for a specific agreement. This API is available in the following national cloud deployments.
+      description: Get the details about the acceptance records for a specific agreement.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/agreement-list-acceptances?view=graph-rest-1.0
@@ -478,7 +478,7 @@ paths:
       tags:
         - agreements.agreementFile
       summary: Get agreementFile
-      description: 'Retrieve the details of an agreement file, including the language and version information. The default file can have multiple versions, each with its own language, that can be retrieved by specifying the Accept-Language header. This API is available in the following national cloud deployments.'
+      description: 'Retrieve the details of an agreement file, including the language and version information. The default file can have multiple versions, each with its own language, that can be retrieved by specifying the Accept-Language header.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/agreementfile-get?view=graph-rest-1.0
@@ -597,7 +597,7 @@ paths:
       tags:
         - agreements.agreementFile
       summary: List agreementFileLocalizations
-      description: Get a list of the default and localized agreement files. This API is available in the following national cloud deployments.
+      description: Get a list of the default and localized agreement files.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/agreementfile-list-localizations?view=graph-rest-1.0
@@ -1299,7 +1299,7 @@ paths:
       tags:
         - agreements.agreementFileLocalization
       summary: Create agreementFileLocalization
-      description: Create a new localized agreement file. This API is available in the following national cloud deployments.
+      description: Create a new localized agreement file.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/agreement-post-files?view=graph-rest-1.0
@@ -1983,7 +1983,7 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: List definitions
-      description: Get a list of the accessReviewScheduleDefinition objects and their properties. This API is available in the following national cloud deployments.
+      description: Get a list of the accessReviewScheduleDefinition objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accessreviewset-list-definitions?view=graph-rest-1.0
@@ -2088,7 +2088,7 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Create definitions
-      description: Create a new accessReviewScheduleDefinition object. This API is available in the following national cloud deployments.
+      description: Create a new accessReviewScheduleDefinition object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accessreviewset-post-definitions?view=graph-rest-1.0
@@ -2115,7 +2115,7 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Get accessReviewScheduleDefinition
-      description: 'Read the properties and relationships of an accessReviewScheduleDefinition object. To retrieve the instances of the access review series, use the list accessReviewInstance API. This API is available in the following national cloud deployments.'
+      description: 'Read the properties and relationships of an accessReviewScheduleDefinition object. To retrieve the instances of the access review series, use the list accessReviewInstance API.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accessreviewscheduledefinition-get?view=graph-rest-1.0
@@ -2179,15 +2179,11 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    patch:
+    put:
       tags:
         - identityGovernance.accessReviewSet
-      summary: Update accessReviewScheduleDefinition
-      description: Update an existing accessReviewScheduleDefinition object to change one or more of its properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accessreviewscheduledefinition-update?view=graph-rest-1.0
-      operationId: identityGovernance.accessReview_UpdateDefinition
+      summary: Update the navigation property definitions in identityGovernance
+      operationId: identityGovernance.accessReview_SetDefinition
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
@@ -2218,7 +2214,7 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Delete accessReviewScheduleDefinition
-      description: Deletes an accessReviewScheduleDefinition object. This API is available in the following national cloud deployments.
+      description: Deletes an accessReviewScheduleDefinition object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accessreviewscheduledefinition-delete?view=graph-rest-1.0
@@ -2249,7 +2245,7 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: List instances
-      description: Get a list of the accessReviewInstance objects and their properties. This API is available in the following national cloud deployments.
+      description: Get a list of the accessReviewInstance objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accessreviewscheduledefinition-list-instances?view=graph-rest-1.0
@@ -2374,7 +2370,7 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Get accessReviewInstance
-      description: Read the properties and relationships of an accessReviewInstance object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of an accessReviewInstance object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accessreviewinstance-get?view=graph-rest-1.0
@@ -2524,7 +2520,7 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: List contactedReviewers
-      description: 'Get the reviewers for an access review instance, irrespective of whether or not they have received a notification. The reviewers are represented by an accessReviewReviewer object. A list of zero or more objects are returned, including all of their nested properties. This API is available in the following national cloud deployments.'
+      description: 'Get the reviewers for an access review instance, irrespective of whether or not they have received a notification. The reviewers are represented by an accessReviewReviewer object. A list of zero or more objects are returned, including all of their nested properties.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accessreviewinstance-list-contactedreviewers?view=graph-rest-1.0
@@ -2838,7 +2834,7 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: List decisions
-      description: 'Retrieve the accessReviewInstanceDecisionItem objects for a specific accessReviewInstance. A list of zero or more accessReviewInstanceDecisionItem objects are returned, including all of their nested properties. This API is available in the following national cloud deployments.'
+      description: 'Retrieve the accessReviewInstanceDecisionItem objects for a specific accessReviewInstance. A list of zero or more accessReviewInstanceDecisionItem objects are returned, including all of their nested properties.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accessreviewinstance-list-decisions?view=graph-rest-1.0
@@ -2996,7 +2992,7 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Get accessReviewInstanceDecisionItem
-      description: Read the properties and relationships of an accessReviewInstanceDecisionItem object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of an accessReviewInstanceDecisionItem object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accessreviewinstancedecisionitem-get?view=graph-rest-1.0
@@ -3674,7 +3670,7 @@ paths:
       tags:
         - identityGovernance.Actions
       summary: Invoke action acceptRecommendations
-      description: Allows the acceptance of recommendations on all accessReviewInstanceDecisionItem objects that haven't been reviewed on an accessReviewInstance object for which the calling user is a reviewer. This API is available in the following national cloud deployments.
+      description: Allows the acceptance of recommendations on all accessReviewInstanceDecisionItem objects that haven't been reviewed on an accessReviewInstance object for which the calling user is a reviewer.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accessreviewinstance-acceptrecommendations?view=graph-rest-1.0
@@ -3707,7 +3703,7 @@ paths:
       tags:
         - identityGovernance.Actions
       summary: Invoke action applyDecisions
-      description: Apply review decisions on an accessReviewInstance if the decisions were not applied automatically because the autoApplyDecisionsEnabled property is false in the review's accessReviewScheduleSettings. The status of the accessReviewInstance must be Completed to call this method. This API is available in the following national cloud deployments.
+      description: Apply review decisions on an accessReviewInstance if the decisions were not applied automatically because the autoApplyDecisionsEnabled property is false in the review's accessReviewScheduleSettings. The status of the accessReviewInstance must be Completed to call this method.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accessreviewinstance-applydecisions?view=graph-rest-1.0
@@ -3740,7 +3736,7 @@ paths:
       tags:
         - identityGovernance.Actions
       summary: Invoke action batchRecordDecisions
-      description: 'Enables reviewers to review all accessReviewInstanceDecisionItem objects in batches by using principalId, resourceId, or neither. This API is available in the following national cloud deployments.'
+      description: 'Enables reviewers to review all accessReviewInstanceDecisionItem objects in batches by using principalId, resourceId, or neither.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accessreviewinstance-batchrecorddecisions?view=graph-rest-1.0
@@ -3795,7 +3791,7 @@ paths:
       tags:
         - identityGovernance.Actions
       summary: Invoke action resetDecisions
-      description: Resets all accessReviewInstanceDecisionItem objects on an accessReviewInstance to notReviewed. This API is available in the following national cloud deployments.
+      description: Resets all accessReviewInstanceDecisionItem objects on an accessReviewInstance to notReviewed.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accessreviewinstance-resetdecisions?view=graph-rest-1.0
@@ -3828,7 +3824,7 @@ paths:
       tags:
         - identityGovernance.Actions
       summary: Invoke action sendReminder
-      description: Send a reminder to the reviewers of an active accessReviewInstance. This API is available in the following national cloud deployments.
+      description: Send a reminder to the reviewers of an active accessReviewInstance.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accessreviewinstance-sendreminder?view=graph-rest-1.0
@@ -3861,7 +3857,7 @@ paths:
       tags:
         - identityGovernance.Actions
       summary: Invoke action stop
-      description: 'Stop a currently active accessReviewInstance. After the access review instance stops, the instance status is marked as Completed, the reviewers can no longer give input, and the access review decisions are applied. Stopping an instance will not stop future instances. To prevent a recurring access review from starting future instances, update the schedule definition to change its scheduled end date. This API is available in the following national cloud deployments.'
+      description: 'Stop a currently active accessReviewInstance. After the access review instance stops, the instance status is marked as Completed, the reviewers can no longer give input, and the access review decisions are applied. Stopping an instance will not stop future instances. To prevent a recurring access review from starting future instances, update the schedule definition to change its scheduled end date.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accessreviewinstance-stop?view=graph-rest-1.0
@@ -3894,7 +3890,7 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: List stages (of an access review)
-      description: Retrieve the stages in a multi-stage access review instance. This API is available in the following national cloud deployments.
+      description: Retrieve the stages in a multi-stage access review instance.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accessreviewinstance-list-stages?view=graph-rest-1.0
@@ -4028,7 +4024,7 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Get accessReviewStage
-      description: Retrieve the properties and relationships of an accessReviewStage object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of an accessReviewStage object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accessreviewstage-get?view=graph-rest-1.0
@@ -4103,7 +4099,7 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Update accessReviewStage
-      description: 'Update the properties of an accessReviewStage object. Only the reviewers and fallbackReviewers properties can be updated. You can only add reviewers to the fallbackReviewers property but can''t remove existing fallbackReviewers. To update an accessReviewStage, its status must be NotStarted, Initializing, or InProgress. This API is available in the following national cloud deployments.'
+      description: 'Update the properties of an accessReviewStage object. Only the reviewers and fallbackReviewers properties can be updated. You can only add reviewers to the fallbackReviewers property but can''t remove existing fallbackReviewers. To update an accessReviewStage, its status must be NotStarted, Initializing, or InProgress.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accessreviewstage-update?view=graph-rest-1.0
@@ -4197,7 +4193,7 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: List decisions (from a multi-stage access review)
-      description: Get the decisions from a stage in a multi-stage access review. The decisions in an accessReviewStage object are represented by an accessReviewInstanceDecisionItem object. This API is available in the following national cloud deployments.
+      description: Get the decisions from a stage in a multi-stage access review. The decisions in an accessReviewStage object are represented by an accessReviewInstanceDecisionItem object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accessreviewstage-list-decisions?view=graph-rest-1.0
@@ -4371,7 +4367,7 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Get accessReviewInstanceDecisionItem
-      description: Read the properties and relationships of an accessReviewInstanceDecisionItem object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of an accessReviewInstanceDecisionItem object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accessreviewinstancedecisionitem-get?view=graph-rest-1.0
@@ -4462,7 +4458,7 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Update accessReviewInstanceDecisionItem
-      description: 'Update access decisions, known as accessReviewInstanceDecisionItems, for which the user is the reviewer. This API is available in the following national cloud deployments.'
+      description: 'Update access decisions, known as accessReviewInstanceDecisionItems, for which the user is the reviewer.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accessreviewinstancedecisionitem-update?view=graph-rest-1.0
@@ -5141,7 +5137,7 @@ paths:
       tags:
         - identityGovernance.Actions
       summary: Invoke action stop
-      description: 'Stop an access review stage that is inProgress. After the access review stage stops, the stage status will be Completed and the reviewers can no longer give input. If there are subsequent stages that depend on the completed stage, the next stage will be created.  The accessReviewInstanceDecisionItem objects will always reflect the last decisions recorded across all stages at that given time, regardless of the status of the stages. This API is available in the following national cloud deployments.'
+      description: 'Stop an access review stage that is inProgress. After the access review stage stops, the stage status will be Completed and the reviewers can no longer give input. If there are subsequent stages that depend on the completed stage, the next stage will be created.  The accessReviewInstanceDecisionItem objects will always reflect the last decisions recorded across all stages at that given time, regardless of the status of the stages.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accessreviewstage-stop?view=graph-rest-1.0
@@ -5577,7 +5573,7 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: List historyDefinitions
-      description: 'Retrieve the accessReviewHistoryDefinition objects created in the last 30 days, including all nested properties. This API is available in the following national cloud deployments.'
+      description: 'Retrieve the accessReviewHistoryDefinition objects created in the last 30 days, including all nested properties.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accessreviewset-list-historydefinitions?view=graph-rest-1.0
@@ -5667,7 +5663,7 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Create historyDefinitions
-      description: Create a new accessReviewHistoryDefinition object. This API is available in the following national cloud deployments.
+      description: Create a new accessReviewHistoryDefinition object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accessreviewset-post-historydefinitions?view=graph-rest-1.0
@@ -5694,7 +5690,7 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Get accessReviewHistoryDefinition
-      description: 'Retrieve an accessReviewHistoryDefinition object by its identifier. All the properties of the access review history definition object are returned. If the definition is 30 days or older, a 404 Not Found error is returned. This API is available in the following national cloud deployments.'
+      description: 'Retrieve an accessReviewHistoryDefinition object by its identifier. All the properties of the access review history definition object are returned. If the definition is 30 days or older, a 404 Not Found error is returned.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accessreviewhistorydefinition-get?view=graph-rest-1.0
@@ -5815,7 +5811,7 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: List instances (of an accessReviewHistoryDefinition)
-      description: Retrieve the instances of an access review history definition created in the last 30 days. This API is available in the following national cloud deployments.
+      description: Retrieve the instances of an access review history definition created in the last 30 days.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accessreviewhistorydefinition-list-instances?view=graph-rest-1.0
@@ -6075,7 +6071,7 @@ paths:
       tags:
         - identityGovernance.Actions
       summary: Invoke action generateDownloadUri
-      description: Generates a URI for an accessReviewHistoryInstance object the status for which is done. Each URI can be used to retrieve the instance's review history data. Each URI is valid for 24 hours and can be retrieved by fetching the downloadUri property from the accessReviewHistoryInstance object. This API is available in the following national cloud deployments.
+      description: Generates a URI for an accessReviewHistoryInstance object the status for which is done. Each URI can be used to retrieve the instance's review history data. Each URI is valid for 24 hours and can be retrieved by fetching the downloadUri property from the accessReviewHistoryInstance object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accessreviewhistoryinstance-generatedownloaduri?view=graph-rest-1.0
@@ -6231,7 +6227,7 @@ paths:
       tags:
         - identityGovernance.appConsentApprovalRoute
       summary: List appConsentRequests
-      description: Retrieve appConsentRequest objects and their properties. This API is available in the following national cloud deployments.
+      description: Retrieve appConsentRequest objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/appconsentapprovalroute-list-appconsentrequests?view=graph-rest-1.0
@@ -6326,7 +6322,7 @@ paths:
       tags:
         - identityGovernance.appConsentApprovalRoute
       summary: Get appConsentRequest
-      description: Read the properties and relationships of an appConsentRequest object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of an appConsentRequest object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/appconsentrequest-get?view=graph-rest-1.0
@@ -6441,7 +6437,7 @@ paths:
       tags:
         - identityGovernance.appConsentApprovalRoute
       summary: List userConsentRequests
-      description: Retrieve a collection of userConsentRequest objects and their properties. This API is available in the following national cloud deployments.
+      description: Retrieve a collection of userConsentRequest objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/appconsentrequest-list-userconsentrequests?view=graph-rest-1.0
@@ -6565,7 +6561,7 @@ paths:
       tags:
         - identityGovernance.appConsentApprovalRoute
       summary: Get userConsentRequest
-      description: Read the properties and relationships of a userConsentRequest object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a userConsentRequest object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/userconsentrequest-get?view=graph-rest-1.0
@@ -6841,7 +6837,7 @@ paths:
       tags:
         - identityGovernance.appConsentApprovalRoute
       summary: List approval stages
-      description: "List the approvalStage objects associated with an approval. This API request is made by an approver in the following scenarios: In Microsoft Entra entitlement management, providing the identifier of the access package assignment request.\nIn PIM for groups, providing the identifier of the assignment schedule request. This API is available in the following national cloud deployments."
+      description: "List the approvalStage objects associated with an approval. This API request is made by an approver in the following scenarios: In Microsoft Entra entitlement management, providing the identifier of the access package assignment request.\nIn PIM for groups, providing the identifier of the assignment schedule request."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/approval-list-stages?view=graph-rest-1.0
@@ -6979,7 +6975,7 @@ paths:
       tags:
         - identityGovernance.appConsentApprovalRoute
       summary: Get approvalStage
-      description: Retrieve the properties of an approvalStage object. An approval stage is contained within an approval object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties of an approvalStage object. An approval stage is contained within an approval object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/approvalstage-get?view=graph-rest-1.0
@@ -7054,7 +7050,7 @@ paths:
       tags:
         - identityGovernance.appConsentApprovalRoute
       summary: Update approvalStage
-      description: Approve or deny an approvalStage object in an approval. This API is available in the following national cloud deployments.
+      description: Approve or deny an approvalStage object in an approval.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/approvalstage-update?view=graph-rest-1.0
@@ -7495,7 +7491,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get approval
-      description: "Retrieve the properties of an approval object. This API request is made by an approver in the following scenarios: In Microsoft Entra entitlement management, providing the identifier of the access package assignment request.\nIn PIM for groups, providing the identifier of the assignment schedule request. This API is available in the following national cloud deployments."
+      description: "Retrieve the properties of an approval object. This API request is made by an approver in the following scenarios: In Microsoft Entra entitlement management, providing the identifier of the access package assignment request.\nIn PIM for groups, providing the identifier of the assignment schedule request."
       operationId: identityGovernance.entitlementManagement_ListAccessPackageAssignmentApproval
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7578,7 +7574,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get approval
-      description: "Retrieve the properties of an approval object. This API request is made by an approver in the following scenarios: In Microsoft Entra entitlement management, providing the identifier of the access package assignment request.\nIn PIM for groups, providing the identifier of the assignment schedule request. This API is available in the following national cloud deployments."
+      description: "Retrieve the properties of an approval object. This API request is made by an approver in the following scenarios: In Microsoft Entra entitlement management, providing the identifier of the access package assignment request.\nIn PIM for groups, providing the identifier of the assignment schedule request."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/approval-get?view=graph-rest-1.0
@@ -7690,7 +7686,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: List approval stages
-      description: "List the approvalStage objects associated with an approval. This API request is made by an approver in the following scenarios: In Microsoft Entra entitlement management, providing the identifier of the access package assignment request.\nIn PIM for groups, providing the identifier of the assignment schedule request. This API is available in the following national cloud deployments."
+      description: "List the approvalStage objects associated with an approval. This API request is made by an approver in the following scenarios: In Microsoft Entra entitlement management, providing the identifier of the access package assignment request.\nIn PIM for groups, providing the identifier of the assignment schedule request."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/approval-list-stages?view=graph-rest-1.0
@@ -7812,7 +7808,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get approvalStage
-      description: Retrieve the properties of an approvalStage object. An approval stage is contained within an approval object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties of an approvalStage object. An approval stage is contained within an approval object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/approvalstage-get?view=graph-rest-1.0
@@ -7879,7 +7875,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update approvalStage
-      description: Approve or deny an approvalStage object in an approval. This API is available in the following national cloud deployments.
+      description: Approve or deny an approvalStage object in an approval.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/approvalstage-update?view=graph-rest-1.0
@@ -8062,7 +8058,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: List accessPackages
-      description: 'Retrieve a list of accessPackage objects.  The resulting list includes all the access packages that the caller has access to read, across all catalogs. This API is available in the following national cloud deployments.'
+      description: 'Retrieve a list of accessPackage objects.  The resulting list includes all the access packages that the caller has access to read, across all catalogs.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/entitlementmanagement-list-accesspackages?view=graph-rest-1.0
@@ -8150,7 +8146,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Create accessPackage
-      description: Create a new accessPackage object. The access package will be added to an existing accessPackageCatalog. This API is available in the following national cloud deployments.
+      description: Create a new accessPackage object. The access package will be added to an existing accessPackageCatalog.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/entitlementmanagement-post-accesspackages?view=graph-rest-1.0
@@ -8177,7 +8173,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get accessPackage
-      description: Retrieve the properties and relationships of an accessPackage object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of an accessPackage object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accesspackage-get?view=graph-rest-1.0
@@ -8246,7 +8242,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update accessPackage
-      description: 'Update an existing accessPackage object to change one or more of its properties, such as the display name or description. This API is available in the following national cloud deployments.'
+      description: 'Update an existing accessPackage object to change one or more of its properties, such as the display name or description.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accesspackage-update?view=graph-rest-1.0
@@ -8281,7 +8277,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Delete accessPackage
-      description: Delete an accessPackage object. You cannot delete an access package if it has any accessPackageAssignment. This API is available in the following national cloud deployments.
+      description: Delete an accessPackage object. You cannot delete an access package if it has any accessPackageAssignment.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accesspackage-delete?view=graph-rest-1.0
@@ -8312,7 +8308,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: List accessPackagesIncompatibleWith
-      description: Retrieve a list of the accessPackage objects that have marked a specified accessPackage as incompatible. This API is available in the following national cloud deployments.
+      description: Retrieve a list of the accessPackage objects that have marked a specified accessPackage as incompatible.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accesspackage-list-accesspackagesincompatiblewith?view=graph-rest-1.0
@@ -9731,7 +9727,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: List incompatibleAccessPackages
-      description: Retrieve a list of the accessPackage objects that have been marked as incompatible on an accessPackage.   This API is available in the following national cloud deployments.
+      description: 'Retrieve a list of the accessPackage objects that have been marked as incompatible on an accessPackage.  '
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accesspackage-list-incompatibleaccesspackages?view=graph-rest-1.0
@@ -9828,7 +9824,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Remove accessPackage from incompatibleAccessPackages
-      description: Remove an access package from the list of access packages that have been marked as incompatible on an accessPackage.   This API is available in the following national cloud deployments.
+      description: 'Remove an access package from the list of access packages that have been marked as incompatible on an accessPackage.  '
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accesspackage-delete-incompatibleaccesspackage?view=graph-rest-1.0
@@ -9896,7 +9892,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: List incompatibleAccessPackages
-      description: Retrieve a list of the accessPackage objects that have been marked as incompatible on an accessPackage.   This API is available in the following national cloud deployments.
+      description: 'Retrieve a list of the accessPackage objects that have been marked as incompatible on an accessPackage.  '
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accesspackage-list-incompatibleaccesspackages?view=graph-rest-1.0
@@ -9951,7 +9947,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Add accessPackage to incompatibleAccessPackages
-      description: Add an accessPackage to the list of access packages that have been marked as incompatible on an accessPackage.   This API is available in the following national cloud deployments.
+      description: 'Add an accessPackage to the list of access packages that have been marked as incompatible on an accessPackage.  '
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accesspackage-post-incompatibleaccesspackage?view=graph-rest-1.0
@@ -9978,7 +9974,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: List incompatibleGroups
-      description: Retrieve a list of the group objects that have been marked as incompatible on an accessPackage.   This API is available in the following national cloud deployments.
+      description: 'Retrieve a list of the group objects that have been marked as incompatible on an accessPackage.  '
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accesspackage-list-incompatiblegroups?view=graph-rest-1.0
@@ -10222,7 +10218,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Remove group from incompatibleGroups
-      description: Remove a group from the list of groups that have been marked as incompatible on an accessPackage.   This API is available in the following national cloud deployments.
+      description: 'Remove a group from the list of groups that have been marked as incompatible on an accessPackage.  '
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accesspackage-delete-incompatiblegroup?view=graph-rest-1.0
@@ -10399,7 +10395,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: List incompatibleGroups
-      description: Retrieve a list of the group objects that have been marked as incompatible on an accessPackage.   This API is available in the following national cloud deployments.
+      description: 'Retrieve a list of the group objects that have been marked as incompatible on an accessPackage.  '
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accesspackage-list-incompatiblegroups?view=graph-rest-1.0
@@ -10524,7 +10520,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Add group to incompatibleGroups
-      description: Add a group to the list of groups that have been marked as incompatible on an accessPackage.   This API is available in the following national cloud deployments.
+      description: 'Add a group to the list of groups that have been marked as incompatible on an accessPackage.  '
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accesspackage-post-incompatiblegroup?view=graph-rest-1.0
@@ -10551,7 +10547,7 @@ paths:
       tags:
         - identityGovernance.Actions
       summary: Invoke action getApplicablePolicyRequirements
-      description: 'In Microsoft Entra entitlement management, this action retrieves a list of accessPackageAssignmentRequestRequirements objects that the currently signed-in user can use to create an accessPackageAssignmentRequest.  Each requirement object corresponds to an access package assignment policy that the currently signed-in user is allowed to request an assignment for. This API is available in the following national cloud deployments.'
+      description: 'In Microsoft Entra entitlement management, this action retrieves a list of accessPackageAssignmentRequestRequirements objects that the currently signed-in user can use to create an accessPackageAssignmentRequest.  Each requirement object corresponds to an access package assignment policy that the currently signed-in user is allowed to request an assignment for.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accesspackage-getapplicablepolicyrequirements?view=graph-rest-1.0
@@ -10666,7 +10662,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Create resourceRoleScope
-      description: 'Create a new accessPackageResourceRoleScope for adding a resource role to an access package. The access package resource, for a group, an app, or a SharePoint Online site, must already exist in the access package catalog, and the originId for the resource role retrieved from the list of the resource roles. Once you add the resource role scope to the access package, the user will receive this resource role through any current and future access package assignments. This API is available in the following national cloud deployments.'
+      description: 'Create a new accessPackageResourceRoleScope for adding a resource role to an access package. The access package resource, for a group, an app, or a SharePoint Online site, must already exist in the access package catalog, and the originId for the resource role retrieved from the list of the resource roles. Once you add the resource role scope to the access package, the user will receive this resource role through any current and future access package assignments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accesspackage-post-resourcerolescopes?view=graph-rest-1.0
@@ -10803,7 +10799,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Remove resourceRoleScope from an accessPackage
-      description: Remove a accessPackageResourceRoleScope from an accessPackage list of resource role scopes. This API is available in the following national cloud deployments.
+      description: Remove a accessPackageResourceRoleScope from an accessPackage list of resource role scopes.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accesspackage-delete-resourcerolescopes?view=graph-rest-1.0
@@ -14162,7 +14158,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: List assignmentPolicies
-      description: 'In Microsoft Entra entitlement management, retrieve a list of accessPackageAssignmentPolicy objects. If the delegated user is in a directory role, the resulting list includes all the assignment policies that the caller has access to read, across all catalogs and access packages. If the delegated user is an access package manager or catalog owner, they should instead retrieve the policies for the access packages they can read with list accessPackages by including $expand=accessPackageAssignmentPolicies as a query parameter. This API is available in the following national cloud deployments.'
+      description: 'In Microsoft Entra entitlement management, retrieve a list of accessPackageAssignmentPolicy objects. If the delegated user is in a directory role, the resulting list includes all the assignment policies that the caller has access to read, across all catalogs and access packages. If the delegated user is an access package manager or catalog owner, they should instead retrieve the policies for the access packages they can read with list accessPackages by including $expand=accessPackageAssignmentPolicies as a query parameter.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/entitlementmanagement-list-assignmentpolicies?view=graph-rest-1.0
@@ -14264,7 +14260,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Create assignmentPolicies
-      description: 'In Microsoft Entra entitlement management, create a new accessPackageAssignmentPolicy object.  The request will include a reference to the accessPackage that will contain this policy, which must already exist. This API is available in the following national cloud deployments.'
+      description: 'In Microsoft Entra entitlement management, create a new accessPackageAssignmentPolicy object.  The request will include a reference to the accessPackage that will contain this policy, which must already exist.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/entitlementmanagement-post-assignmentpolicies?view=graph-rest-1.0
@@ -14291,7 +14287,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get accessPackageAssignmentPolicy
-      description: "In Microsoft Entra entitlement management, retrieve the properties and relationships of an\n accessPackageAssignmentPolicy object. This API is available in the following national cloud deployments."
+      description: "In Microsoft Entra entitlement management, retrieve the properties and relationships of an\n accessPackageAssignmentPolicy object."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accesspackageassignmentpolicy-get?view=graph-rest-1.0
@@ -14393,7 +14389,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Delete accessPackageAssignmentPolicy
-      description: 'In Microsoft Entra entitlement management, delete an accessPackageAssignmentPolicy. This API is available in the following national cloud deployments.'
+      description: 'In Microsoft Entra entitlement management, delete an accessPackageAssignmentPolicy.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accesspackageassignmentpolicy-delete?view=graph-rest-1.0
@@ -15165,7 +15161,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: List assignmentRequests
-      description: 'In Microsoft Entra entitlement management, retrieve a list of accessPackageAssignmentRequest objects.  The resulting list includes all the assignment requests, current and well as expired, that the caller has access to read, across all catalogs and access packages. This API is available in the following national cloud deployments.'
+      description: 'In Microsoft Entra entitlement management, retrieve a list of accessPackageAssignmentRequest objects.  The resulting list includes all the assignment requests, current and well as expired, that the caller has access to read, across all catalogs and access packages.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/entitlementmanagement-list-assignmentrequests?view=graph-rest-1.0
@@ -15256,7 +15252,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Create accessPackageAssignmentRequest
-      description: 'In Microsoft Entra Entitlement Management, create a new accessPackageAssignmentRequest object.  This operation is used to assign a user to an access package, update the assignment, or to remove an access package assignment. This API is available in the following national cloud deployments.'
+      description: 'In Microsoft Entra Entitlement Management, create a new accessPackageAssignmentRequest object.  This operation is used to assign a user to an access package, update the assignment, or to remove an access package assignment.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/entitlementmanagement-post-assignmentrequests?view=graph-rest-1.0
@@ -15283,7 +15279,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get accessPackageAssignmentRequest
-      description: 'In Microsoft Entra entitlement management, retrieve the properties and relationships of an  accessPackageAssignmentRequest object. This API is available in the following national cloud deployments.'
+      description: 'In Microsoft Entra entitlement management, retrieve the properties and relationships of an  accessPackageAssignmentRequest object.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accesspackageassignmentrequest-get?view=graph-rest-1.0
@@ -15380,7 +15376,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Delete accessPackageAssignmentRequest
-      description: Delete an accessPackageAssignmentRequest object. This request can be made to remove a denied or completed request.  You cannot delete an access package assignment request if it has any accessPackageAssignment objects. This API is available in the following national cloud deployments.
+      description: Delete an accessPackageAssignmentRequest object. This request can be made to remove a denied or completed request.  You cannot delete an access package assignment request if it has any accessPackageAssignment objects.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accesspackageassignmentrequest-delete?view=graph-rest-1.0
@@ -15539,7 +15535,7 @@ paths:
       tags:
         - identityGovernance.Actions
       summary: Invoke action cancel
-      description: 'In Microsoft Entra Entitlement Management, cancel accessPackageAssignmentRequest objects that are in a cancellable state: accepted, pendingApproval, pendingNotBefore, pendingApprovalEscalated. This API is available in the following national cloud deployments.'
+      description: 'In Microsoft Entra Entitlement Management, cancel accessPackageAssignmentRequest objects that are in a cancellable state: accepted, pendingApproval, pendingNotBefore, pendingApprovalEscalated.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accesspackageassignmentrequest-cancel?view=graph-rest-1.0
@@ -15564,7 +15560,7 @@ paths:
       tags:
         - identityGovernance.Actions
       summary: Invoke action reprocess
-      description: 'In Microsoft Entra entitlement management, callers can automatically retry a user''s request for access to an access package. It''s performed on an accessPackageAssignmentRequest object whose requestState is in a DeliveryFailed or PartiallyDelivered state.  You can only reprocess a request within 14 days from the time the original request was completed. For requests completed more than 14 days, you will need to ask the users to cancel the request(s) and make a new request in the MyAccess portal. This API is available in the following national cloud deployments.'
+      description: 'In Microsoft Entra entitlement management, callers can automatically retry a user''s request for access to an access package. It''s performed on an accessPackageAssignmentRequest object whose requestState is in a DeliveryFailed or PartiallyDelivered state.  You can only reprocess a request within 14 days from the time the original request was completed. For requests completed more than 14 days, you will need to ask the users to cancel the request(s) and make a new request in the MyAccess portal.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accesspackageassignmentrequest-reprocess?view=graph-rest-1.0
@@ -15589,7 +15585,7 @@ paths:
       tags:
         - identityGovernance.Actions
       summary: Invoke action resume
-      description: 'In Microsoft Entra entitlement management, when an access package policy has been enabled to call out a custom extension and the request processing is waiting for the callback from the customer, the customer can initiate a resume action. It is performed on an accessPackageAssignmentRequest object whose requestStatus is in a WaitingForCallback state. This API is available in the following national cloud deployments.'
+      description: 'In Microsoft Entra entitlement management, when an access package policy has been enabled to call out a custom extension and the request processing is waiting for the callback from the customer, the customer can initiate a resume action. It is performed on an accessPackageAssignmentRequest object whose requestStatus is in a WaitingForCallback state.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accesspackageassignmentrequest-resume?view=graph-rest-1.0
@@ -15799,7 +15795,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: List assignments
-      description: 'In Microsoft Entra entitlement management, retrieve a list of accessPackageAssignment objects. For directory-wide administrators, the resulting list includes all the assignments, current and well as expired, that the caller has access to read, across all catalogs and access packages.  If the caller is on behalf of a delegated user who is assigned only to catalog-specific delegated administrative roles, the request must supply a filter to indicate a specific access package, such as: $filter=accessPackage/id eq ''a914b616-e04e-476b-aa37-91038f0b165b''. This API is available in the following national cloud deployments.'
+      description: 'In Microsoft Entra entitlement management, retrieve a list of accessPackageAssignment objects. For directory-wide administrators, the resulting list includes all the assignments, current and well as expired, that the caller has access to read, across all catalogs and access packages.  If the caller is on behalf of a delegated user who is assigned only to catalog-specific delegated administrative roles, the request must supply a filter to indicate a specific access package, such as: $filter=accessPackage/id eq ''a914b616-e04e-476b-aa37-91038f0b165b''.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/entitlementmanagement-list-assignments?view=graph-rest-1.0
@@ -15904,7 +15900,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get accessPackageAssignment
-      description: 'In Microsoft Entra entitlement management, retrieve the properties and relationships of an accessPackageAssignment object. This API is available in the following national cloud deployments.'
+      description: 'In Microsoft Entra entitlement management, retrieve the properties and relationships of an accessPackageAssignment object.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accesspackageassignment-get?view=graph-rest-1.0
@@ -16161,7 +16157,7 @@ paths:
       tags:
         - identityGovernance.Actions
       summary: Invoke action reprocess
-      description: 'In Microsoft Entra entitlement management, callers can automatically reevaluate and enforce an accessPackageAssignment object of a user’s assignments for a specific access package. The state of the access package assignment must be Delivered for the administrator to reprocess the user''s assignment. Only admins with the Access Package Assignment Manager role, or higher, in Microsoft Entra entitlement management can perform this action. This API is available in the following national cloud deployments.'
+      description: 'In Microsoft Entra entitlement management, callers can automatically reevaluate and enforce an accessPackageAssignment object of a user’s assignments for a specific access package. The state of the access package assignment must be Delivered for the administrator to reprocess the user''s assignment. Only admins with the Access Package Assignment Manager role, or higher, in Microsoft Entra entitlement management can perform this action.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accesspackageassignment-reprocess?view=graph-rest-1.0
@@ -16518,7 +16514,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: List catalogs
-      description: Retrieve a list of accessPackageCatalog objects. This API is available in the following national cloud deployments.
+      description: Retrieve a list of accessPackageCatalog objects.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/entitlementmanagement-list-catalogs?view=graph-rest-1.0
@@ -16610,7 +16606,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Create accessPackageCatalog
-      description: Create a new accessPackageCatalog object. This API is available in the following national cloud deployments.
+      description: Create a new accessPackageCatalog object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/entitlementmanagement-post-catalogs?view=graph-rest-1.0
@@ -16637,7 +16633,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get accessPackageCatalog
-      description: Retrieve the properties and relationships of an accessPackageCatalog object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of an accessPackageCatalog object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accesspackagecatalog-get?view=graph-rest-1.0
@@ -16706,7 +16702,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update accessPackageCatalog
-      description: 'Update an existing accessPackageCatalog object to change one or more of its properties, such as the display name or description. This API is available in the following national cloud deployments.'
+      description: 'Update an existing accessPackageCatalog object to change one or more of its properties, such as the display name or description.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accesspackagecatalog-update?view=graph-rest-1.0
@@ -16741,7 +16737,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Delete accessPackageCatalog
-      description: Delete an accessPackageCatalog. This API is available in the following national cloud deployments.
+      description: Delete an accessPackageCatalog.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accesspackagecatalog-delete?view=graph-rest-1.0
@@ -16963,7 +16959,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: List accessPackageCustomWorkflowExtensions
-      description: Get a list of the accessPackageAssignmentRequestWorkflowExtension and accessPackageAssignmentWorkflowExtension objects and their properties. The resulting list includes all the customAccessPackageWorkflowExtension objects for the catalog that the caller has access to read. Each object includes an @odata.type property that indicates whether the object is an  accessPackageAssignmentRequestWorkflowExtension or an accessPackageAssignmentWorkflowExtension. This API is available in the following national cloud deployments.
+      description: Get a list of the accessPackageAssignmentRequestWorkflowExtension and accessPackageAssignmentWorkflowExtension objects and their properties. The resulting list includes all the customAccessPackageWorkflowExtension objects for the catalog that the caller has access to read. Each object includes an @odata.type property that indicates whether the object is an  accessPackageAssignmentRequestWorkflowExtension or an accessPackageAssignmentWorkflowExtension.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accesspackagecatalog-list-accesspackagecustomworkflowextensions?view=graph-rest-1.0
@@ -17047,7 +17043,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Create accessPackageCustomWorkflowExtension
-      description: Create a new accessPackageAssignmentRequestWorkflowExtension or accessPackageAssignmentWorkflowExtension object and add it to an existing accessPackageCatalog object. You must explicitly provide an @odata.type property that indicates whether the object is an  accessPackageAssignmentRequestWorkflowExtension or an accessPackageAssignmentWorkflowExtension. This API is available in the following national cloud deployments.
+      description: Create a new accessPackageAssignmentRequestWorkflowExtension or accessPackageAssignmentWorkflowExtension object and add it to an existing accessPackageCatalog object. You must explicitly provide an @odata.type property that indicates whether the object is an  accessPackageAssignmentRequestWorkflowExtension or an accessPackageAssignmentWorkflowExtension.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accesspackagecatalog-post-accesspackagecustomworkflowextensions?view=graph-rest-1.0
@@ -17082,11 +17078,11 @@ paths:
     get:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Get accessPackageAssignmentRequestWorkflowExtension
-      description: Read the properties and relationships of an accessPackageAssignmentRequestWorkflowExtension object. This API is available in the following national cloud deployments.
+      summary: Get accessPackageAssignmentWorkflowExtension
+      description: Read the properties and relationships of an accessPackageAssignmentWorkflowExtension object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackageassignmentrequestworkflowextension-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/accesspackageassignmentworkflowextension-get?view=graph-rest-1.0
       operationId: identityGovernance.entitlementManagement.catalog_GetCustomWorkflowExtension
       parameters:
         - name: accessPackageCatalog-id
@@ -17191,7 +17187,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Delete accessPackageAssignmentWorkflowExtension
-      description: 'Delete an accessPackageAssignmentWorkflowExtension object. The custom workflow extension must first be removed from any associated policies before it can be deleted. Follow these steps to remove the custom workflow extension from any associated policies: This API is available in the following national cloud deployments.'
+      description: 'Delete an accessPackageAssignmentWorkflowExtension object. The custom workflow extension must first be removed from any associated policies before it can be deleted. Follow these steps to remove the custom workflow extension from any associated policies:'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accesspackageassignmentworkflowextension-delete?view=graph-rest-1.0
@@ -17252,7 +17248,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: List resourceRoles
-      description: 'Retrieve a list of accessPackageResourceRole objects of an accessPackageResource in an accessPackageCatalog. The resource should have been added to the catalog by creating an accessPackageResourceRequest. This list of roles can then be used by the caller to select a role, which is needed when subsequently creating an accessPackageResourceRoleScope. This API is available in the following national cloud deployments.'
+      description: 'Retrieve a list of accessPackageResourceRole objects of an accessPackageResource in an accessPackageCatalog. The resource should have been added to the catalog by creating an accessPackageResourceRequest. This list of roles can then be used by the caller to select a role, which is needed when subsequently creating an accessPackageResourceRoleScope.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accesspackagecatalog-list-resourceroles?view=graph-rest-1.0
@@ -18984,7 +18980,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: List resources
-      description: Retrieve a list of accessPackageResource objects in an accessPackageCatalog. This API is available in the following national cloud deployments.
+      description: Retrieve a list of accessPackageResource objects in an accessPackageCatalog.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accesspackagecatalog-list-resources?view=graph-rest-1.0
@@ -23499,7 +23495,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: List connectedOrganizations
-      description: Retrieve a list of connectedOrganization objects. This API is available in the following national cloud deployments.
+      description: Retrieve a list of connectedOrganization objects.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/entitlementmanagement-list-connectedorganizations?view=graph-rest-1.0
@@ -23582,7 +23578,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Create connectedOrganization
-      description: Create a new connectedOrganization object. This API is available in the following national cloud deployments.
+      description: Create a new connectedOrganization object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/entitlementmanagement-post-connectedorganizations?view=graph-rest-1.0
@@ -23609,7 +23605,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get connectedOrganization
-      description: Retrieve the properties and relationships of a connectedOrganization object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of a connectedOrganization object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/connectedorganization-get?view=graph-rest-1.0
@@ -23671,7 +23667,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update connectedOrganization
-      description: Update a connectedOrganization object to change one or more of its properties. This API is available in the following national cloud deployments.
+      description: Update a connectedOrganization object to change one or more of its properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/connectedorganization-update?view=graph-rest-1.0
@@ -23706,7 +23702,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Delete connectedOrganization
-      description: Delete a connectedOrganization object. This API is available in the following national cloud deployments.
+      description: Delete a connectedOrganization object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/connectedorganization-delete?view=graph-rest-1.0
@@ -23737,7 +23733,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: List externalSponsors
-      description: Retrieve a list of a connectedOrganization's external sponsors.  The external sponsors are a set of users who can approve requests on behalf of other users from that connected organization. This API is available in the following national cloud deployments.
+      description: Retrieve a list of a connectedOrganization's external sponsors.  The external sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/connectedorganization-list-externalsponsors?view=graph-rest-1.0
@@ -23810,7 +23806,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Remove externalSponsors
-      description: Remove a user or a group from the connected organization's external sponsors. The external sponsors are a set of users who can approve requests on behalf of other users from that connected organization. This API is available in the following national cloud deployments.
+      description: Remove a user or a group from the connected organization's external sponsors. The external sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/connectedorganization-delete-externalsponsors?view=graph-rest-1.0
@@ -23878,7 +23874,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: List externalSponsors
-      description: Retrieve a list of a connectedOrganization's external sponsors.  The external sponsors are a set of users who can approve requests on behalf of other users from that connected organization. This API is available in the following national cloud deployments.
+      description: Retrieve a list of a connectedOrganization's external sponsors.  The external sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/connectedorganization-list-externalsponsors?view=graph-rest-1.0
@@ -23925,7 +23921,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Add externalSponsors
-      description: Add a user or a group to the connected organization's external sponsors. The external sponsors are a set of users who can approve requests on behalf of other users from that connected organization. This API is available in the following national cloud deployments.
+      description: Add a user or a group to the connected organization's external sponsors. The external sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/connectedorganization-post-externalsponsors?view=graph-rest-1.0
@@ -23952,7 +23948,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: List internalSponsors
-      description: Retrieve a list of a connectedOrganization's internal sponsors.  The internal sponsors are a set of users who can approve requests on behalf of other users from that connected organization. This API is available in the following national cloud deployments.
+      description: Retrieve a list of a connectedOrganization's internal sponsors.  The internal sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/connectedorganization-list-internalsponsors?view=graph-rest-1.0
@@ -24025,7 +24021,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Remove internalSponsors
-      description: Remove a user or a group from the connected organization's internal sponsors. The internal sponsors are a set of users who can approve requests on behalf of other users from that connected organization. This API is available in the following national cloud deployments.
+      description: Remove a user or a group from the connected organization's internal sponsors. The internal sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/connectedorganization-delete-internalsponsors?view=graph-rest-1.0
@@ -24093,7 +24089,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: List internalSponsors
-      description: Retrieve a list of a connectedOrganization's internal sponsors.  The internal sponsors are a set of users who can approve requests on behalf of other users from that connected organization. This API is available in the following national cloud deployments.
+      description: Retrieve a list of a connectedOrganization's internal sponsors.  The internal sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/connectedorganization-list-internalsponsors?view=graph-rest-1.0
@@ -24140,7 +24136,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Add internalSponsors
-      description: Add a user or a group to the connected organization's internal sponsors. The internal sponsors are a set of users who can approve requests on behalf of other users from that connected organization. This API is available in the following national cloud deployments.
+      description: Add a user or a group to the connected organization's internal sponsors. The internal sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/connectedorganization-post-internalsponsors?view=graph-rest-1.0
@@ -24181,7 +24177,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: List accessPackageResourceEnvironments
-      description: Retrieve a list of accessPackageResourceEnvironment objects and their properties. This API is available in the following national cloud deployments.
+      description: Retrieve a list of accessPackageResourceEnvironment objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/entitlementmanagement-list-resourceenvironments?view=graph-rest-1.0
@@ -27180,7 +27176,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: List accessPackageResourceRequests
-      description: Retrieve a list of accessPackageResourceRequest objects. This API is available in the following national cloud deployments.
+      description: Retrieve a list of accessPackageResourceRequest objects.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/entitlementmanagement-list-resourcerequests?view=graph-rest-1.0
@@ -27254,7 +27250,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Create accessPackageResourceRequest
-      description: 'Create a new accessPackageResourceRequest object to request the addition of a resource to an access package catalog, update of a resource, or the removal of a resource from a catalog.  A resource must be included in an access package catalog before a role of that resource can be added to an access package. This API is available in the following national cloud deployments.'
+      description: 'Create a new accessPackageResourceRequest object to request the addition of a resource to an access package catalog, update of a resource, or the removal of a resource from a catalog.  A resource must be included in an access package catalog before a role of that resource can be added to an access package.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/entitlementmanagement-post-resourcerequests?view=graph-rest-1.0
@@ -27709,7 +27705,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: List accessPackageCustomWorkflowExtensions
-      description: Get a list of the accessPackageAssignmentRequestWorkflowExtension and accessPackageAssignmentWorkflowExtension objects and their properties. The resulting list includes all the customAccessPackageWorkflowExtension objects for the catalog that the caller has access to read. Each object includes an @odata.type property that indicates whether the object is an  accessPackageAssignmentRequestWorkflowExtension or an accessPackageAssignmentWorkflowExtension. This API is available in the following national cloud deployments.
+      description: Get a list of the accessPackageAssignmentRequestWorkflowExtension and accessPackageAssignmentWorkflowExtension objects and their properties. The resulting list includes all the customAccessPackageWorkflowExtension objects for the catalog that the caller has access to read. Each object includes an @odata.type property that indicates whether the object is an  accessPackageAssignmentRequestWorkflowExtension or an accessPackageAssignmentWorkflowExtension.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accesspackagecatalog-list-accesspackagecustomworkflowextensions?view=graph-rest-1.0
@@ -27793,7 +27789,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Create accessPackageCustomWorkflowExtension
-      description: Create a new accessPackageAssignmentRequestWorkflowExtension or accessPackageAssignmentWorkflowExtension object and add it to an existing accessPackageCatalog object. You must explicitly provide an @odata.type property that indicates whether the object is an  accessPackageAssignmentRequestWorkflowExtension or an accessPackageAssignmentWorkflowExtension. This API is available in the following national cloud deployments.
+      description: Create a new accessPackageAssignmentRequestWorkflowExtension or accessPackageAssignmentWorkflowExtension object and add it to an existing accessPackageCatalog object. You must explicitly provide an @odata.type property that indicates whether the object is an  accessPackageAssignmentRequestWorkflowExtension or an accessPackageAssignmentWorkflowExtension.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accesspackagecatalog-post-accesspackagecustomworkflowextensions?view=graph-rest-1.0
@@ -27828,11 +27824,11 @@ paths:
     get:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Get accessPackageAssignmentRequestWorkflowExtension
-      description: Read the properties and relationships of an accessPackageAssignmentRequestWorkflowExtension object. This API is available in the following national cloud deployments.
+      summary: Get accessPackageAssignmentWorkflowExtension
+      description: Read the properties and relationships of an accessPackageAssignmentWorkflowExtension object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackageassignmentrequestworkflowextension-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/accesspackageassignmentworkflowextension-get?view=graph-rest-1.0
       operationId: identityGovernance.entitlementManagement.resourceRequest.catalog_GetCustomWorkflowExtension
       parameters:
         - name: accessPackageResourceRequest-id
@@ -27937,7 +27933,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Delete accessPackageAssignmentWorkflowExtension
-      description: 'Delete an accessPackageAssignmentWorkflowExtension object. The custom workflow extension must first be removed from any associated policies before it can be deleted. Follow these steps to remove the custom workflow extension from any associated policies: This API is available in the following national cloud deployments.'
+      description: 'Delete an accessPackageAssignmentWorkflowExtension object. The custom workflow extension must first be removed from any associated policies before it can be deleted. Follow these steps to remove the custom workflow extension from any associated policies:'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accesspackageassignmentworkflowextension-delete?view=graph-rest-1.0
@@ -27998,7 +27994,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: List resourceRoles
-      description: 'Retrieve a list of accessPackageResourceRole objects of an accessPackageResource in an accessPackageCatalog. The resource should have been added to the catalog by creating an accessPackageResourceRequest. This list of roles can then be used by the caller to select a role, which is needed when subsequently creating an accessPackageResourceRoleScope. This API is available in the following national cloud deployments.'
+      description: 'Retrieve a list of accessPackageResourceRole objects of an accessPackageResource in an accessPackageCatalog. The resource should have been added to the catalog by creating an accessPackageResourceRequest. This list of roles can then be used by the caller to select a role, which is needed when subsequently creating an accessPackageResourceRoleScope.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accesspackagecatalog-list-resourceroles?view=graph-rest-1.0
@@ -29730,7 +29726,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: List resources
-      description: Retrieve a list of accessPackageResource objects in an accessPackageCatalog. This API is available in the following national cloud deployments.
+      description: Retrieve a list of accessPackageResource objects in an accessPackageCatalog.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accesspackagecatalog-list-resources?view=graph-rest-1.0
@@ -41838,7 +41834,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get entitlementManagementSettings
-      description: Retrieve the properties of an entitlementManagementSettings object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties of an entitlementManagementSettings object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/entitlementmanagementsettings-get?view=graph-rest-1.0
@@ -41884,7 +41880,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update entitlementManagementSettings
-      description: Update an existing entitlementManagementSettings object to change one or more of its properties. This API is available in the following national cloud deployments.
+      description: Update an existing entitlementManagementSettings object to change one or more of its properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/entitlementmanagementsettings-update?view=graph-rest-1.0
@@ -42022,7 +42018,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: List customTaskExtensions
-      description: Get a list of the customTaskExtension objects and their properties. This API is available in the following national cloud deployments.
+      description: Get a list of the customTaskExtension objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-lifecycleworkflowscontainer-list-customtaskextensions?view=graph-rest-1.0
@@ -42111,7 +42107,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Create customTaskExtensions
-      description: Create a new customTaskExtension object. This API is available in the following national cloud deployments.
+      description: Create a new customTaskExtension object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-lifecycleworkflowscontainer-post-customtaskextensions?view=graph-rest-1.0
@@ -42138,7 +42134,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Get customTaskExtension
-      description: Read the properties and relationships of a customTaskExtension object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a customTaskExtension object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-customtaskextension-get?view=graph-rest-1.0
@@ -42202,7 +42198,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Update customTaskExtension
-      description: Update the properties of a customTaskExtension object. This API is available in the following national cloud deployments.
+      description: Update the properties of a customTaskExtension object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-customtaskextension-update?view=graph-rest-1.0
@@ -42237,7 +42233,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Delete customTaskExtension
-      description: Delete a customTaskExtension object. A custom task extension  can only be deleted if it is not referenced in any task objects in a lifecycle workflow. This API is available in the following national cloud deployments.
+      description: Delete a customTaskExtension object. A custom task extension  can only be deleted if it is not referenced in any task objects in a lifecycle workflow.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-customtaskextension-delete?view=graph-rest-1.0
@@ -43148,7 +43144,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: List deletedItems (deleted lifecycle workflows)
-      description: Get a list of the deleted workflow objects and their properties. This API is available in the following national cloud deployments.
+      description: Get a list of the deleted workflow objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-lifecycleworkflowscontainer-list-deleteditems?view=graph-rest-1.0
@@ -43259,7 +43255,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Get deletedItemContainer (a deleted lifecycle workflow)
-      description: Retrieve a deleted workflow object. This API is available in the following national cloud deployments.
+      description: Retrieve a deleted workflow object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-deleteditemcontainer-get?view=graph-rest-1.0
@@ -43338,7 +43334,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Delete deletedItemContainer (permanently delete a deleted lifecycle workflow)
-      description: Delete a workflow object. This API is available in the following national cloud deployments.
+      description: Delete a workflow object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-deletedItemcontainer-delete?view=graph-rest-1.0
@@ -44364,7 +44360,7 @@ paths:
       tags:
         - identityGovernance.Actions
       summary: Invoke action activate
-      description: 'Run a workflow object on-demand. You can run any workflow on-demand, including scheduled workflows. Workflows created from the ''Real-time employee termination'' template are run on-demand only. When you run a workflow on demand, the tasks are executed regardless of whether the user state matches the scope and trigger execution conditions. This API is available in the following national cloud deployments.'
+      description: 'Run a workflow object on-demand. You can run any workflow on-demand, including scheduled workflows. Workflows created from the ''Real-time employee termination'' template are run on-demand only. When you run a workflow on demand, the tasks are executed regardless of whether the user state matches the scope and trigger execution conditions.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-workflow-activate?view=graph-rest-1.0
@@ -44403,7 +44399,7 @@ paths:
       tags:
         - identityGovernance.Actions
       summary: Invoke action createNewVersion
-      description: Create a new version of the workflow object. This API is available in the following national cloud deployments.
+      description: Create a new version of the workflow object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-workflow-createnewversion?view=graph-rest-1.0
@@ -44444,7 +44440,7 @@ paths:
       tags:
         - identityGovernance.Actions
       summary: Invoke action restore
-      description: Restore a workflow that has been deleted. You can only restore a workflow that was deleted within the last 30 days before Microsoft Entra ID automatically permanently deletes it. This API is available in the following national cloud deployments.
+      description: Restore a workflow that has been deleted. You can only restore a workflow that was deleted within the last 30 days before Microsoft Entra ID automatically permanently deletes it.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-workflow-restore?view=graph-rest-1.0
@@ -44473,7 +44469,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: List runs
-      description: Get a list of the run objects and their properties for a lifecycle workflow. This API is available in the following national cloud deployments.
+      description: Get a list of the run objects and their properties for a lifecycle workflow.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-workflow-list-runs?view=graph-rest-1.0
@@ -44583,7 +44579,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Get run
-      description: Read the properties and relationships of a run object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a run object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-run-get?view=graph-rest-1.0
@@ -44660,7 +44656,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: List taskProcessingResults
-      description: Get the taskProcessingResult resources for a run. This API is available in the following national cloud deployments.
+      description: Get the taskProcessingResult resources for a run.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-run-list-taskprocessingresults?view=graph-rest-1.0
@@ -44832,7 +44828,7 @@ paths:
       tags:
         - identityGovernance.Actions
       summary: Invoke action resume
-      description: 'Resume a task processing result that''s inProgress. In the default case an Azure Logic Apps system-assigned managed identity calls this API. For more information, see: Lifecycle Workflows extensibility approach. This API is available in the following national cloud deployments.'
+      description: 'Resume a task processing result that''s inProgress. In the default case an Azure Logic Apps system-assigned managed identity calls this API. For more information, see: Lifecycle Workflows extensibility approach.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-taskprocessingresult-resume?view=graph-rest-1.0
@@ -45479,7 +45475,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: List userProcessingResults
-      description: Get user processing results of a workflow run object. This API is available in the following national cloud deployments.
+      description: Get user processing results of a workflow run object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-run-list-userprocessingresults?view=graph-rest-1.0
@@ -45588,7 +45584,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Get userProcessingResult
-      description: Get the user processing result of a user processing result of a run. This API is available in the following national cloud deployments.
+      description: Get the user processing result of a user processing result of a run.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-userprocessingresult-get?view=graph-rest-1.0
@@ -46152,7 +46148,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: List taskProcessingResults
-      description: Get the task processing result from a userProcessingResult either directly or through a run. This API is available in the following national cloud deployments.
+      description: Get the task processing result from a userProcessingResult either directly or through a run.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-userprocessingresult-list-taskprocessingresults?view=graph-rest-1.0
@@ -46340,7 +46336,7 @@ paths:
       tags:
         - identityGovernance.Actions
       summary: Invoke action resume
-      description: 'Resume a task processing result that''s inProgress. In the default case an Azure Logic Apps system-assigned managed identity calls this API. For more information, see: Lifecycle Workflows extensibility approach. This API is available in the following national cloud deployments.'
+      description: 'Resume a task processing result that''s inProgress. In the default case an Azure Logic Apps system-assigned managed identity calls this API. For more information, see: Lifecycle Workflows extensibility approach.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-taskprocessingresult-resume?view=graph-rest-1.0
@@ -47197,7 +47193,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: List taskReports
-      description: Get a list of the taskReport objects and their properties. This API is available in the following national cloud deployments.
+      description: Get a list of the taskReport objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-workflow-list-taskreports?view=graph-rest-1.0
@@ -47505,7 +47501,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: List taskProcessingResult (for a taskReport)
-      description: Get the task processing result resources from the taskReport. This API is available in the following national cloud deployments.
+      description: Get the task processing result resources from the taskReport.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-taskreport-list-taskprocessingresults?view=graph-rest-1.0
@@ -47677,7 +47673,7 @@ paths:
       tags:
         - identityGovernance.Actions
       summary: Invoke action resume
-      description: 'Resume a task processing result that''s inProgress. In the default case an Azure Logic Apps system-assigned managed identity calls this API. For more information, see: Lifecycle Workflows extensibility approach. This API is available in the following national cloud deployments.'
+      description: 'Resume a task processing result that''s inProgress. In the default case an Azure Logic Apps system-assigned managed identity calls this API. For more information, see: Lifecycle Workflows extensibility approach.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-taskprocessingresult-resume?view=graph-rest-1.0
@@ -48823,7 +48819,7 @@ paths:
       tags:
         - identityGovernance.Actions
       summary: Invoke action resume
-      description: 'Resume a task processing result that''s inProgress. In the default case an Azure Logic Apps system-assigned managed identity calls this API. For more information, see: Lifecycle Workflows extensibility approach. This API is available in the following national cloud deployments.'
+      description: 'Resume a task processing result that''s inProgress. In the default case an Azure Logic Apps system-assigned managed identity calls this API. For more information, see: Lifecycle Workflows extensibility approach.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-taskprocessingresult-resume?view=graph-rest-1.0
@@ -49492,7 +49488,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: List userProcessingResults
-      description: Get the userProcessingResult resources for a workflow. This API is available in the following national cloud deployments.
+      description: Get the userProcessingResult resources for a workflow.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-workflow-list-userprocessingresults?view=graph-rest-1.0
@@ -50106,7 +50102,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: List taskProcessingResults
-      description: Get the task processing result from a userProcessingResult either directly or through a run. This API is available in the following national cloud deployments.
+      description: Get the task processing result from a userProcessingResult either directly or through a run.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-userprocessingresult-list-taskprocessingresults?view=graph-rest-1.0
@@ -50278,7 +50274,7 @@ paths:
       tags:
         - identityGovernance.Actions
       summary: Invoke action resume
-      description: 'Resume a task processing result that''s inProgress. In the default case an Azure Logic Apps system-assigned managed identity calls this API. For more information, see: Lifecycle Workflows extensibility approach. This API is available in the following national cloud deployments.'
+      description: 'Resume a task processing result that''s inProgress. In the default case an Azure Logic Apps system-assigned managed identity calls this API. For more information, see: Lifecycle Workflows extensibility approach.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-taskprocessingresult-resume?view=graph-rest-1.0
@@ -50990,7 +50986,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: List workflowVersions
-      description: Get a list of the workflowVersion objects and their properties. This API is available in the following national cloud deployments.
+      description: Get a list of the workflowVersion objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-workflow-list-versions?view=graph-rest-1.0
@@ -51090,7 +51086,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Get workflowVersion
-      description: Read the properties and relationships of a workflowVersion object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a workflowVersion object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-workflowversion-get?view=graph-rest-1.0
@@ -52593,7 +52589,7 @@ paths:
       tags:
         - identityGovernance.Actions
       summary: Invoke action resume
-      description: 'Resume a task processing result that''s inProgress. In the default case an Azure Logic Apps system-assigned managed identity calls this API. For more information, see: Lifecycle Workflows extensibility approach. This API is available in the following national cloud deployments.'
+      description: 'Resume a task processing result that''s inProgress. In the default case an Azure Logic Apps system-assigned managed identity calls this API. For more information, see: Lifecycle Workflows extensibility approach.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-taskprocessingresult-resume?view=graph-rest-1.0
@@ -53397,7 +53393,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Get lifecycleManagementSettings
-      description: Read the properties and relationships of a lifecycleManagementSettings object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a lifecycleManagementSettings object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-lifecyclemanagementsettings-get?view=graph-rest-1.0
@@ -53443,7 +53439,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Update lifecycleManagementSettings
-      description: Update the properties of a lifecycleManagementSettings object. This API is available in the following national cloud deployments.
+      description: Update the properties of a lifecycleManagementSettings object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-lifecyclemanagementsettings-update?view=graph-rest-1.0
@@ -53470,7 +53466,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: List taskDefinitions
-      description: Get a list of the taskDefinition objects and their properties. This API is available in the following national cloud deployments.
+      description: Get a list of the taskDefinition objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-lifecycleworkflowscontainer-list-taskdefinitions?view=graph-rest-1.0
@@ -53550,7 +53546,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Get taskDefinition
-      description: Read the details of a built-in workflow task. This API is available in the following national cloud deployments.
+      description: Read the details of a built-in workflow task.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-taskdefinition-get?view=graph-rest-1.0
@@ -53623,7 +53619,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: List workflows
-      description: Get a list of workflow resources that are associated with lifecycle workflows. This API is available in the following national cloud deployments.
+      description: Get a list of workflow resources that are associated with lifecycle workflows.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-lifecycleworkflowscontainer-list-workflows?view=graph-rest-1.0
@@ -53733,7 +53729,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Create workflow
-      description: Create a new workflow object. You can create up to 50 workflows in a tenant. This API is available in the following national cloud deployments.
+      description: Create a new workflow object. You can create up to 50 workflows in a tenant.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-lifecycleworkflowscontainer-post-workflows?view=graph-rest-1.0
@@ -53760,7 +53756,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Get workflow
-      description: Read the properties and relationships of a workflow object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a workflow object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-workflow-get?view=graph-rest-1.0
@@ -53839,7 +53835,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Update workflow
-      description: 'Update the properties of a workflow object. Only the properties listed in the request body table can be updated. To update any other workflow properties, see workflow: createNewVersion. This API is available in the following national cloud deployments.'
+      description: 'Update the properties of a workflow object. Only the properties listed in the request body table can be updated. To update any other workflow properties, see workflow: createNewVersion.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-workflow-update?view=graph-rest-1.0
@@ -53874,7 +53870,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Delete workflow
-      description: 'Delete a workflow object and its associated tasks, taskProcessingResults and versions. You can restore a deleted workflow and its associated objects within 30 days of deletion. This API is available in the following national cloud deployments.'
+      description: 'Delete a workflow object and its associated tasks, taskProcessingResults and versions. You can restore a deleted workflow and its associated objects within 30 days of deletion.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-workflow-delete?view=graph-rest-1.0
@@ -54900,7 +54896,7 @@ paths:
       tags:
         - identityGovernance.Actions
       summary: Invoke action activate
-      description: 'Run a workflow object on-demand. You can run any workflow on-demand, including scheduled workflows. Workflows created from the ''Real-time employee termination'' template are run on-demand only. When you run a workflow on demand, the tasks are executed regardless of whether the user state matches the scope and trigger execution conditions. This API is available in the following national cloud deployments.'
+      description: 'Run a workflow object on-demand. You can run any workflow on-demand, including scheduled workflows. Workflows created from the ''Real-time employee termination'' template are run on-demand only. When you run a workflow on demand, the tasks are executed regardless of whether the user state matches the scope and trigger execution conditions.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-workflow-activate?view=graph-rest-1.0
@@ -54939,7 +54935,7 @@ paths:
       tags:
         - identityGovernance.Actions
       summary: Invoke action createNewVersion
-      description: Create a new version of the workflow object. This API is available in the following national cloud deployments.
+      description: Create a new version of the workflow object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-workflow-createnewversion?view=graph-rest-1.0
@@ -54980,7 +54976,7 @@ paths:
       tags:
         - identityGovernance.Actions
       summary: Invoke action restore
-      description: Restore a workflow that has been deleted. You can only restore a workflow that was deleted within the last 30 days before Microsoft Entra ID automatically permanently deletes it. This API is available in the following national cloud deployments.
+      description: Restore a workflow that has been deleted. You can only restore a workflow that was deleted within the last 30 days before Microsoft Entra ID automatically permanently deletes it.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-workflow-restore?view=graph-rest-1.0
@@ -55009,7 +55005,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: List runs
-      description: Get a list of the run objects and their properties for a lifecycle workflow. This API is available in the following national cloud deployments.
+      description: Get a list of the run objects and their properties for a lifecycle workflow.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-workflow-list-runs?view=graph-rest-1.0
@@ -55119,7 +55115,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Get run
-      description: Read the properties and relationships of a run object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a run object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-run-get?view=graph-rest-1.0
@@ -55196,7 +55192,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: List taskProcessingResults
-      description: Get the taskProcessingResult resources for a run. This API is available in the following national cloud deployments.
+      description: Get the taskProcessingResult resources for a run.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-run-list-taskprocessingresults?view=graph-rest-1.0
@@ -55368,7 +55364,7 @@ paths:
       tags:
         - identityGovernance.Actions
       summary: Invoke action resume
-      description: 'Resume a task processing result that''s inProgress. In the default case an Azure Logic Apps system-assigned managed identity calls this API. For more information, see: Lifecycle Workflows extensibility approach. This API is available in the following national cloud deployments.'
+      description: 'Resume a task processing result that''s inProgress. In the default case an Azure Logic Apps system-assigned managed identity calls this API. For more information, see: Lifecycle Workflows extensibility approach.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-taskprocessingresult-resume?view=graph-rest-1.0
@@ -56015,7 +56011,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: List userProcessingResults
-      description: Get user processing results of a workflow run object. This API is available in the following national cloud deployments.
+      description: Get user processing results of a workflow run object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-run-list-userprocessingresults?view=graph-rest-1.0
@@ -56124,7 +56120,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Get userProcessingResult
-      description: Get the user processing result of a user processing result of a run. This API is available in the following national cloud deployments.
+      description: Get the user processing result of a user processing result of a run.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-userprocessingresult-get?view=graph-rest-1.0
@@ -56688,7 +56684,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: List taskProcessingResults
-      description: Get the task processing result from a userProcessingResult either directly or through a run. This API is available in the following national cloud deployments.
+      description: Get the task processing result from a userProcessingResult either directly or through a run.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-userprocessingresult-list-taskprocessingresults?view=graph-rest-1.0
@@ -56876,7 +56872,7 @@ paths:
       tags:
         - identityGovernance.Actions
       summary: Invoke action resume
-      description: 'Resume a task processing result that''s inProgress. In the default case an Azure Logic Apps system-assigned managed identity calls this API. For more information, see: Lifecycle Workflows extensibility approach. This API is available in the following national cloud deployments.'
+      description: 'Resume a task processing result that''s inProgress. In the default case an Azure Logic Apps system-assigned managed identity calls this API. For more information, see: Lifecycle Workflows extensibility approach.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-taskprocessingresult-resume?view=graph-rest-1.0
@@ -57733,7 +57729,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: List taskReports
-      description: Get a list of the taskReport objects and their properties. This API is available in the following national cloud deployments.
+      description: Get a list of the taskReport objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-workflow-list-taskreports?view=graph-rest-1.0
@@ -58041,7 +58037,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: List taskProcessingResult (for a taskReport)
-      description: Get the task processing result resources from the taskReport. This API is available in the following national cloud deployments.
+      description: Get the task processing result resources from the taskReport.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-taskreport-list-taskprocessingresults?view=graph-rest-1.0
@@ -58213,7 +58209,7 @@ paths:
       tags:
         - identityGovernance.Actions
       summary: Invoke action resume
-      description: 'Resume a task processing result that''s inProgress. In the default case an Azure Logic Apps system-assigned managed identity calls this API. For more information, see: Lifecycle Workflows extensibility approach. This API is available in the following national cloud deployments.'
+      description: 'Resume a task processing result that''s inProgress. In the default case an Azure Logic Apps system-assigned managed identity calls this API. For more information, see: Lifecycle Workflows extensibility approach.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-taskprocessingresult-resume?view=graph-rest-1.0
@@ -59359,7 +59355,7 @@ paths:
       tags:
         - identityGovernance.Actions
       summary: Invoke action resume
-      description: 'Resume a task processing result that''s inProgress. In the default case an Azure Logic Apps system-assigned managed identity calls this API. For more information, see: Lifecycle Workflows extensibility approach. This API is available in the following national cloud deployments.'
+      description: 'Resume a task processing result that''s inProgress. In the default case an Azure Logic Apps system-assigned managed identity calls this API. For more information, see: Lifecycle Workflows extensibility approach.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-taskprocessingresult-resume?view=graph-rest-1.0
@@ -60028,7 +60024,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: List userProcessingResults
-      description: Get the userProcessingResult resources for a workflow. This API is available in the following national cloud deployments.
+      description: Get the userProcessingResult resources for a workflow.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-workflow-list-userprocessingresults?view=graph-rest-1.0
@@ -60642,7 +60638,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: List taskProcessingResults
-      description: Get the task processing result from a userProcessingResult either directly or through a run. This API is available in the following national cloud deployments.
+      description: Get the task processing result from a userProcessingResult either directly or through a run.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-userprocessingresult-list-taskprocessingresults?view=graph-rest-1.0
@@ -60814,7 +60810,7 @@ paths:
       tags:
         - identityGovernance.Actions
       summary: Invoke action resume
-      description: 'Resume a task processing result that''s inProgress. In the default case an Azure Logic Apps system-assigned managed identity calls this API. For more information, see: Lifecycle Workflows extensibility approach. This API is available in the following national cloud deployments.'
+      description: 'Resume a task processing result that''s inProgress. In the default case an Azure Logic Apps system-assigned managed identity calls this API. For more information, see: Lifecycle Workflows extensibility approach.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-taskprocessingresult-resume?view=graph-rest-1.0
@@ -61526,7 +61522,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: List workflowVersions
-      description: Get a list of the workflowVersion objects and their properties. This API is available in the following national cloud deployments.
+      description: Get a list of the workflowVersion objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-workflow-list-versions?view=graph-rest-1.0
@@ -61626,7 +61622,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Get workflowVersion
-      description: Read the properties and relationships of a workflowVersion object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a workflowVersion object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-workflowversion-get?view=graph-rest-1.0
@@ -63129,7 +63125,7 @@ paths:
       tags:
         - identityGovernance.Actions
       summary: Invoke action resume
-      description: 'Resume a task processing result that''s inProgress. In the default case an Azure Logic Apps system-assigned managed identity calls this API. For more information, see: Lifecycle Workflows extensibility approach. This API is available in the following national cloud deployments.'
+      description: 'Resume a task processing result that''s inProgress. In the default case an Azure Logic Apps system-assigned managed identity calls this API. For more information, see: Lifecycle Workflows extensibility approach.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-taskprocessingresult-resume?view=graph-rest-1.0
@@ -63933,7 +63929,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: List workflowTemplates
-      description: Get a list of the workflowTemplate objects and their properties. This API is available in the following national cloud deployments.
+      description: Get a list of the workflowTemplate objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-lifecycleworkflowscontainer-list-workflowtemplates?view=graph-rest-1.0
@@ -64009,7 +64005,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Get workflowTemplate
-      description: Read the properties and relationships of a workflowTemplate object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a workflowTemplate object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-workflowtemplate-get?view=graph-rest-1.0
@@ -64398,7 +64394,7 @@ paths:
       tags:
         - identityGovernance.Actions
       summary: Invoke action resume
-      description: 'Resume a task processing result that''s inProgress. In the default case an Azure Logic Apps system-assigned managed identity calls this API. For more information, see: Lifecycle Workflows extensibility approach. This API is available in the following national cloud deployments.'
+      description: 'Resume a task processing result that''s inProgress. In the default case an Azure Logic Apps system-assigned managed identity calls this API. For more information, see: Lifecycle Workflows extensibility approach.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-taskprocessingresult-resume?view=graph-rest-1.0
@@ -65450,7 +65446,7 @@ paths:
       tags:
         - identityGovernance.privilegedAccessRoot
       summary: List approval stages
-      description: "List the approvalStage objects associated with an approval. This API request is made by an approver in the following scenarios: In Microsoft Entra entitlement management, providing the identifier of the access package assignment request.\nIn PIM for groups, providing the identifier of the assignment schedule request. This API is available in the following national cloud deployments."
+      description: "List the approvalStage objects associated with an approval. This API request is made by an approver in the following scenarios: In Microsoft Entra entitlement management, providing the identifier of the access package assignment request.\nIn PIM for groups, providing the identifier of the assignment schedule request."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/approval-list-stages?view=graph-rest-1.0
@@ -65572,7 +65568,7 @@ paths:
       tags:
         - identityGovernance.privilegedAccessRoot
       summary: Get approvalStage
-      description: Retrieve the properties of an approvalStage object. An approval stage is contained within an approval object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties of an approvalStage object. An approval stage is contained within an approval object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/approvalstage-get?view=graph-rest-1.0
@@ -65639,7 +65635,7 @@ paths:
       tags:
         - identityGovernance.privilegedAccessRoot
       summary: Update approvalStage
-      description: Approve or deny an approvalStage object in an approval. This API is available in the following national cloud deployments.
+      description: Approve or deny an approvalStage object in an approval.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/approvalstage-update?view=graph-rest-1.0
@@ -65822,7 +65818,7 @@ paths:
       tags:
         - identityGovernance.privilegedAccessRoot
       summary: List assignmentScheduleInstances
-      description: Get a list of the privilegedAccessGroupAssignmentScheduleInstance objects and their properties. This API is available in the following national cloud deployments.
+      description: Get a list of the privilegedAccessGroupAssignmentScheduleInstance objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/privilegedaccessgroup-list-assignmentscheduleinstances?view=graph-rest-1.0
@@ -65936,7 +65932,7 @@ paths:
       tags:
         - identityGovernance.privilegedAccessRoot
       summary: Get privilegedAccessGroupAssignmentScheduleInstance
-      description: Read the properties and relationships of a privilegedAccessGroupAssignmentScheduleInstance object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a privilegedAccessGroupAssignmentScheduleInstance object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/privilegedaccessgroupassignmentscheduleinstance-get?view=graph-rest-1.0
@@ -66518,7 +66514,7 @@ paths:
       tags:
         - identityGovernance.privilegedAccessRoot
       summary: List assignmentScheduleRequests
-      description: Get a list of the privilegedAccessGroupAssignmentScheduleRequest objects and their properties. This API is available in the following national cloud deployments.
+      description: Get a list of the privilegedAccessGroupAssignmentScheduleRequest objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/privilegedaccessgroup-list-assignmentschedulerequests?view=graph-rest-1.0
@@ -66632,7 +66628,7 @@ paths:
       tags:
         - identityGovernance.privilegedAccessRoot
       summary: Create assignmentScheduleRequest
-      description: Create a new privilegedAccessGroupAssignmentScheduleRequest object. This API is available in the following national cloud deployments.
+      description: Create a new privilegedAccessGroupAssignmentScheduleRequest object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/privilegedaccessgroup-post-assignmentschedulerequests?view=graph-rest-1.0
@@ -66659,7 +66655,7 @@ paths:
       tags:
         - identityGovernance.privilegedAccessRoot
       summary: Get privilegedAccessGroupAssignmentScheduleRequest
-      description: Read the properties and relationships of a privilegedAccessGroupAssignmentScheduleRequest object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a privilegedAccessGroupAssignmentScheduleRequest object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/privilegedaccessgroupassignmentschedulerequest-get?view=graph-rest-1.0
@@ -67092,7 +67088,7 @@ paths:
       tags:
         - identityGovernance.Actions
       summary: Invoke action cancel
-      description: Cancel an access assignment request to a group whose membership and ownership are governed by PIM. This API is available in the following national cloud deployments.
+      description: Cancel an access assignment request to a group whose membership and ownership are governed by PIM.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/privilegedaccessgroupassignmentschedulerequest-cancel?view=graph-rest-1.0
@@ -67362,7 +67358,7 @@ paths:
       tags:
         - identityGovernance.privilegedAccessRoot
       summary: List assignmentSchedules
-      description: Get a list of the privilegedAccessGroupAssignmentSchedule objects and their properties. This API is available in the following national cloud deployments.
+      description: Get a list of the privilegedAccessGroupAssignmentSchedule objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/privilegedaccessgroup-list-assignmentschedules?view=graph-rest-1.0
@@ -67482,7 +67478,7 @@ paths:
       tags:
         - identityGovernance.privilegedAccessRoot
       summary: Get privilegedAccessGroupAssignmentSchedule
-      description: Read the properties and relationships of a privilegedAccessGroupAssignmentSchedule object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a privilegedAccessGroupAssignmentSchedule object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/privilegedaccessgroupassignmentschedule-get?view=graph-rest-1.0
@@ -68074,7 +68070,7 @@ paths:
       tags:
         - identityGovernance.privilegedAccessRoot
       summary: List eligibilityScheduleInstances
-      description: Get a list of the privilegedAccessGroupEligibilityScheduleInstance objects and their properties. This API is available in the following national cloud deployments.
+      description: Get a list of the privilegedAccessGroupEligibilityScheduleInstance objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/privilegedaccessgroup-list-eligibilityscheduleinstances?view=graph-rest-1.0
@@ -68183,7 +68179,7 @@ paths:
       tags:
         - identityGovernance.privilegedAccessRoot
       summary: Get privilegedAccessGroupEligibilityScheduleInstance
-      description: Read the properties and relationships of a privilegedAccessGroupEligibilityScheduleInstance object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a privilegedAccessGroupEligibilityScheduleInstance object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/privilegedaccessgroupeligibilityscheduleinstance-get?view=graph-rest-1.0
@@ -68697,7 +68693,7 @@ paths:
       tags:
         - identityGovernance.privilegedAccessRoot
       summary: List eligibilityScheduleRequests
-      description: Get a list of the privilegedAccessGroupEligibilityScheduleRequest objects and their properties. This API is available in the following national cloud deployments.
+      description: Get a list of the privilegedAccessGroupEligibilityScheduleRequest objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/privilegedaccessgroup-list-eligibilityschedulerequests?view=graph-rest-1.0
@@ -68809,7 +68805,7 @@ paths:
       tags:
         - identityGovernance.privilegedAccessRoot
       summary: Create eligibilityScheduleRequest
-      description: Create a new privilegedAccessGroupEligibilityScheduleRequest object. This API is available in the following national cloud deployments.
+      description: Create a new privilegedAccessGroupEligibilityScheduleRequest object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/privilegedaccessgroup-post-eligibilityschedulerequests?view=graph-rest-1.0
@@ -68836,7 +68832,7 @@ paths:
       tags:
         - identityGovernance.privilegedAccessRoot
       summary: Get privilegedAccessGroupEligibilityScheduleRequest
-      description: Read the properties and relationships of a privilegedAccessGroupEligibilityScheduleRequest object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a privilegedAccessGroupEligibilityScheduleRequest object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/privilegedaccessgroupeligibilityschedulerequest-get?view=graph-rest-1.0
@@ -69204,7 +69200,7 @@ paths:
       tags:
         - identityGovernance.Actions
       summary: Invoke action cancel
-      description: Cancel an eligibility assignment request to a group whose membership and ownership are governed by PIM. This API is available in the following national cloud deployments.
+      description: Cancel an eligibility assignment request to a group whose membership and ownership are governed by PIM.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/privilegedaccessgroupeligibilityschedulerequest-cancel?view=graph-rest-1.0
@@ -69473,7 +69469,7 @@ paths:
       tags:
         - identityGovernance.privilegedAccessRoot
       summary: List eligibilitySchedules
-      description: Get a list of the privilegedAccessGroupEligibilitySchedule objects and their properties. This API is available in the following national cloud deployments.
+      description: Get a list of the privilegedAccessGroupEligibilitySchedule objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/privilegedaccessgroup-list-eligibilityschedules?view=graph-rest-1.0
@@ -69588,7 +69584,7 @@ paths:
       tags:
         - identityGovernance.privilegedAccessRoot
       summary: Get privilegedAccessGroupEligibilitySchedule
-      description: Read the properties and relationships of a privilegedAccessGroupEligibilitySchedule object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a privilegedAccessGroupEligibilitySchedule object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/privilegedaccessgroupeligibilityschedule-get?view=graph-rest-1.0
@@ -70449,7 +70445,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: List agreements
-      description: Retrieve a list of agreement objects. This API is available in the following national cloud deployments.
+      description: Retrieve a list of agreement objects.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/termsofusecontainer-list-agreements?view=graph-rest-1.0
@@ -70531,7 +70527,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Create agreement
-      description: Create a new agreement object. This API is available in the following national cloud deployments.
+      description: Create a new agreement object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/termsofusecontainer-post-agreements?view=graph-rest-1.0
@@ -70558,7 +70554,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Get agreement
-      description: Retrieve the properties and relationships of an agreement object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of an agreement object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/agreement-get?view=graph-rest-1.0
@@ -70621,7 +70617,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Update agreement
-      description: Update the properties of an agreement object. This API is available in the following national cloud deployments.
+      description: Update the properties of an agreement object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/agreement-update?view=graph-rest-1.0
@@ -70656,7 +70652,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Delete agreement
-      description: Delete an agreement object. This API is available in the following national cloud deployments.
+      description: Delete an agreement object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/agreement-delete?view=graph-rest-1.0
@@ -70687,7 +70683,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: List acceptances
-      description: Get the details about the acceptance records for a specific agreement. This API is available in the following national cloud deployments.
+      description: Get the details about the acceptance records for a specific agreement.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/agreement-list-acceptances?view=graph-rest-1.0
@@ -70993,7 +70989,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Get agreementFile
-      description: 'Retrieve the details of an agreement file, including the language and version information. The default file can have multiple versions, each with its own language, that can be retrieved by specifying the Accept-Language header. This API is available in the following national cloud deployments.'
+      description: 'Retrieve the details of an agreement file, including the language and version information. The default file can have multiple versions, each with its own language, that can be retrieved by specifying the Accept-Language header.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/agreementfile-get?view=graph-rest-1.0
@@ -71112,7 +71108,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: List agreementFileLocalizations
-      description: Get a list of the default and localized agreement files. This API is available in the following national cloud deployments.
+      description: Get a list of the default and localized agreement files.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/agreementfile-list-localizations?view=graph-rest-1.0
@@ -71814,7 +71810,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Create agreementFileLocalization
-      description: Create a new localized agreement file. This API is available in the following national cloud deployments.
+      description: Create a new localized agreement file.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/agreement-post-files?view=graph-rest-1.0
@@ -72933,7 +72929,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: List unifiedRoleAssignments
-      description: "Get a list of unifiedRoleAssignment objects for the RBAC provider. The following RBAC providers are currently supported:\n- directory (Microsoft Entra ID)\n- entitlement management (Microsoft Entra Entitlement Management) This API is available in the following national cloud deployments."
+      description: "Get a list of unifiedRoleAssignment objects for the RBAC provider. The following RBAC providers are currently supported:\n- directory (Microsoft Entra ID)\n- entitlement management (Microsoft Entra entitlement management)"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/rbacapplication-list-roleassignments?view=graph-rest-1.0
@@ -73017,7 +73013,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Create unifiedRoleAssignment
-      description: Create a new unifiedRoleAssignment object. This API is available in the following national cloud deployments.
+      description: Create a new unifiedRoleAssignment object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/rbacapplication-post-roleassignments?view=graph-rest-1.0
@@ -73044,7 +73040,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get unifiedRoleAssignment
-      description: Retrieve the properties and relationships of a unifiedRoleAssignment object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of a unifiedRoleAssignment object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroleassignment-get?view=graph-rest-1.0
@@ -73140,7 +73136,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Delete unifiedRoleAssignment
-      description: Delete a unifiedRoleAssignment object. This API is available in the following national cloud deployments.
+      description: Delete a unifiedRoleAssignment object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroleassignment-delete?view=graph-rest-1.0
@@ -73382,7 +73378,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleDefinition from roleManagement
-      description: The roleDefinition the assignment is for.  Supports $expand. roleDefinition.Id will be auto expanded.
+      description: The roleDefinition the assignment is for.  Supports $expand.
       operationId: roleManagement.directory.roleAssignment_GetRoleDefinition
       parameters:
         - name: unifiedRoleAssignment-id
@@ -73456,7 +73452,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: List roleAssignmentScheduleInstances
-      description: 'Get the instances of active role assignments in your tenant. The active assignments include those made through assignments and activation requests, and directly through the role assignments API. This API is available in the following national cloud deployments.'
+      description: 'Get the instances of active role assignments in your tenant. The active assignments include those made through assignments and activation requests, and directly through the role assignments API.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/rbacapplication-list-roleassignmentscheduleinstances?view=graph-rest-1.0
@@ -73580,7 +73576,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get unifiedRoleAssignmentScheduleInstance
-      description: Get the instance of an active role assignment. This API is available in the following national cloud deployments.
+      description: Get the instance of an active role assignment.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroleassignmentscheduleinstance-get?view=graph-rest-1.0
@@ -74107,7 +74103,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: List roleAssignmentScheduleRequests
-      description: 'Retrieve the requests for active role assignments to principals. The active assignments include those made through assignments and activation requests, and directly through the role assignments API. The role assignments can be permanently active with or without an expiry date, or temporarily active after user activation of eligible assignments. This API is available in the following national cloud deployments.'
+      description: 'Retrieve the requests for active role assignments to principals. The active assignments include those made through assignments and activation requests, and directly through the role assignments API. The role assignments can be permanently active with or without an expiry date, or temporarily active after user activation of eligible assignments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/rbacapplication-list-roleassignmentschedulerequests?view=graph-rest-1.0
@@ -74228,7 +74224,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Create roleAssignmentScheduleRequests
-      description: 'In PIM, carry out the following operations through the unifiedRoleAssignmentScheduleRequest object: To call this API to update, renew, and extend assignments for yourself, you must have multifactor authentication (MFA) enforced, and running the query in a session in which they were challenged for MFA. See Enable per-user Microsoft Entra multifactor authentication to secure sign-in events. This API is available in the following national cloud deployments.'
+      description: 'In PIM, carry out the following operations through the unifiedRoleAssignmentScheduleRequest object: To call this API to update, renew, and extend assignments for yourself, you must have multifactor authentication (MFA) enforced, and running the query in a session in which they were challenged for MFA. See Enable per-user Microsoft Entra multifactor authentication to secure sign-in events.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/rbacapplication-post-roleassignmentschedulerequests?view=graph-rest-1.0
@@ -74255,7 +74251,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get unifiedRoleAssignmentScheduleRequest
-      description: 'In PIM, read the details of a request for an active and persistent role assignment made through the unifiedRoleAssignmentScheduleRequest object. This API is available in the following national cloud deployments.'
+      description: 'In PIM, read the details of a request for an active and persistent role assignment made through the unifiedRoleAssignmentScheduleRequest object.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroleassignmentschedulerequest-get?view=graph-rest-1.0
@@ -74564,7 +74560,7 @@ paths:
       tags:
         - roleManagement.Actions
       summary: Invoke action cancel
-      description: 'Immediately cancel a unifiedRoleAssignmentScheduleRequest object that is in a Granted status, and have the system automatically delete the canceled request after 30 days. After calling this action, the status of the canceled unifiedRoleAssignmentScheduleRequest changes to Canceled. This API is available in the following national cloud deployments.'
+      description: 'Immediately cancel a unifiedRoleAssignmentScheduleRequest object that is in a Granted status, and have the system automatically delete the canceled request after 30 days. After calling this action, the status of the canceled unifiedRoleAssignmentScheduleRequest changes to Canceled.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroleassignmentschedulerequest-cancel?view=graph-rest-1.0
@@ -74907,7 +74903,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: List roleAssignmentSchedules
-      description: Get the schedules for active role assignment operations. This API is available in the following national cloud deployments.
+      description: Get the schedules for active role assignment operations.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/rbacapplication-list-roleassignmentschedules?view=graph-rest-1.0
@@ -75034,7 +75030,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get unifiedRoleAssignmentSchedule
-      description: Retrieve the schedule for an active role assignment operation. This API is available in the following national cloud deployments.
+      description: Retrieve the schedule for an active role assignment operation.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroleassignmentschedule-get?view=graph-rest-1.0
@@ -75567,7 +75563,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: List roleDefinitions
-      description: "Get a list of unifiedRoleDefinition objects for the provider. The following RBAC providers are currently supported:\n- directory (Microsoft Entra ID)\n- entitlement management (Microsoft Entra Entitlement Management) This API is available in the following national cloud deployments."
+      description: "Get a list of unifiedRoleDefinition objects for the provider. The following RBAC providers are currently supported:\n- directory (Microsoft Entra ID)\n- entitlement management (Microsoft Entra Entitlement Management)"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/rbacapplication-list-roledefinitions?view=graph-rest-1.0
@@ -75654,7 +75650,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Create roleDefinitions
-      description: Create a new custom unifiedRoleDefinition object. This feature requires a Microsoft Entra ID P1 or P2 license. This API is available in the following national cloud deployments.
+      description: Create a new custom unifiedRoleDefinition object. This feature requires a Microsoft Entra ID P1 or P2 license.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/rbacapplication-post-roledefinitions?view=graph-rest-1.0
@@ -75681,7 +75677,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get unifiedRoleDefinition
-      description: 'Read the properties and relationships of a unifiedRoleDefinition object. The following role-based access control (RBAC) providers are currently supported: This API is available in the following national cloud deployments.'
+      description: 'Read the properties and relationships of a unifiedRoleDefinition object. The following role-based access control (RBAC) providers are currently supported:'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroledefinition-get?view=graph-rest-1.0
@@ -75743,7 +75739,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Update unifiedRoleDefinition
-      description: Update the properties of a unifiedRoleDefinition object. You cannot update built-in roles. This feature requires a Microsoft Entra ID P1 or P2 license. This API is available in the following national cloud deployments.
+      description: Update the properties of a unifiedRoleDefinition object. You cannot update built-in roles. This feature requires a Microsoft Entra ID P1 or P2 license.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroledefinition-update?view=graph-rest-1.0
@@ -75778,7 +75774,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Delete unifiedRoleDefinition
-      description: Delete a unifiedRoleDefinition object. You can't delete built-in roles. This feature requires a Microsoft Entra ID P1 or P2 license. This API is available in the following national cloud deployments.
+      description: Delete a unifiedRoleDefinition object. You can't delete built-in roles. This feature requires a Microsoft Entra ID P1 or P2 license.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroledefinition-delete?view=graph-rest-1.0
@@ -76110,7 +76106,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: List roleEligibilityScheduleInstances
-      description: Get the instances of role eligibilities. This API is available in the following national cloud deployments.
+      description: Get the instances of role eligibilities.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/rbacapplication-list-roleeligibilityscheduleinstances?view=graph-rest-1.0
@@ -76226,7 +76222,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get unifiedRoleEligibilityScheduleInstance
-      description: Get the instance of a role eligibility. This API is available in the following national cloud deployments.
+      description: Get the instance of a role eligibility.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroleeligibilityscheduleinstance-get?view=graph-rest-1.0
@@ -76676,7 +76672,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: List roleEligibilityScheduleRequests
-      description: 'In PIM, retrieve the requests for role eligibilities for principals made through the unifiedRoleEligibilityScheduleRequest object. This API is available in the following national cloud deployments.'
+      description: 'In PIM, retrieve the requests for role eligibilities for principals made through the unifiedRoleEligibilityScheduleRequest object.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/rbacapplication-list-roleeligibilityschedulerequests?view=graph-rest-1.0
@@ -76795,7 +76791,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Create roleEligibilityScheduleRequest
-      description: 'In PIM, request for a role eligibility for a principal through the unifiedRoleEligibilityScheduleRequest object. This operation allows both admins and eligible users to add, revoke, or extend eligible assignments. This API is available in the following national cloud deployments.'
+      description: 'In PIM, request for a role eligibility for a principal through the unifiedRoleEligibilityScheduleRequest object. This operation allows both admins and eligible users to add, revoke, or extend eligible assignments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/rbacapplication-post-roleeligibilityschedulerequests?view=graph-rest-1.0
@@ -76822,7 +76818,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get unifiedRoleEligibilityScheduleRequest
-      description: 'In PIM, read the details of a request for for a role eligibility request made through the unifiedRoleEligibilityScheduleRequest object. This API is available in the following national cloud deployments.'
+      description: 'In PIM, read the details of a request for for a role eligibility request made through the unifiedRoleEligibilityScheduleRequest object.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroleeligibilityschedulerequest-get?view=graph-rest-1.0
@@ -77061,7 +77057,7 @@ paths:
       tags:
         - roleManagement.Actions
       summary: Invoke action cancel
-      description: 'Immediately cancel a unifiedRoleEligibilityScheduleRequest object whose status is Granted and have the system automatically delete the cancelled request after 30 days. After calling this action, the status of the cancelled unifiedRoleEligibilityScheduleRequest changes to Revoked. This API is available in the following national cloud deployments.'
+      description: 'Immediately cancel a unifiedRoleEligibilityScheduleRequest object whose status is Granted and have the system automatically delete the cancelled request after 30 days. After calling this action, the status of the cancelled unifiedRoleEligibilityScheduleRequest changes to Revoked.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroleeligibilityschedulerequest-cancel?view=graph-rest-1.0
@@ -77400,7 +77396,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: List roleEligibilitySchedules
-      description: Get the unifiedRoleEligibilitySchedule resources from the roleEligibilitySchedules navigation property. This API is available in the following national cloud deployments.
+      description: Get the unifiedRoleEligibilitySchedule resources from the roleEligibilitySchedules navigation property.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/rbacapplication-list-roleeligibilityschedules?view=graph-rest-1.0
@@ -77522,7 +77518,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get unifiedRoleEligibilitySchedule
-      description: Retrieve the schedule for a role eligibility operation. This API is available in the following national cloud deployments.
+      description: Retrieve the schedule for a role eligibility operation.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroleeligibilityschedule-get?view=graph-rest-1.0
@@ -78561,7 +78557,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: List unifiedRoleAssignments
-      description: "Get a list of unifiedRoleAssignment objects for the RBAC provider. The following RBAC providers are currently supported:\n- directory (Microsoft Entra ID)\n- entitlement management (Microsoft Entra Entitlement Management) This API is available in the following national cloud deployments."
+      description: "Get a list of unifiedRoleAssignment objects for the RBAC provider. The following RBAC providers are currently supported:\n- directory (Microsoft Entra ID)\n- entitlement management (Microsoft Entra entitlement management)"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/rbacapplication-list-roleassignments?view=graph-rest-1.0
@@ -78645,7 +78641,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Create unifiedRoleAssignment
-      description: Create a new unifiedRoleAssignment object. This API is available in the following national cloud deployments.
+      description: Create a new unifiedRoleAssignment object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/rbacapplication-post-roleassignments?view=graph-rest-1.0
@@ -78672,7 +78668,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get unifiedRoleAssignment
-      description: Retrieve the properties and relationships of a unifiedRoleAssignment object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of a unifiedRoleAssignment object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroleassignment-get?view=graph-rest-1.0
@@ -78768,7 +78764,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Delete unifiedRoleAssignment
-      description: Delete a unifiedRoleAssignment object. This API is available in the following national cloud deployments.
+      description: Delete a unifiedRoleAssignment object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroleassignment-delete?view=graph-rest-1.0
@@ -79010,7 +79006,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleDefinition from roleManagement
-      description: The roleDefinition the assignment is for.  Supports $expand. roleDefinition.Id will be auto expanded.
+      description: The roleDefinition the assignment is for.  Supports $expand.
       operationId: roleManagement.entitlementManagement.roleAssignment_GetRoleDefinition
       parameters:
         - name: unifiedRoleAssignment-id
@@ -79084,7 +79080,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: List roleAssignmentScheduleInstances
-      description: 'Get the instances of active role assignments in your tenant. The active assignments include those made through assignments and activation requests, and directly through the role assignments API. This API is available in the following national cloud deployments.'
+      description: 'Get the instances of active role assignments in your tenant. The active assignments include those made through assignments and activation requests, and directly through the role assignments API.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/rbacapplication-list-roleassignmentscheduleinstances?view=graph-rest-1.0
@@ -79208,7 +79204,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get unifiedRoleAssignmentScheduleInstance
-      description: Get the instance of an active role assignment. This API is available in the following national cloud deployments.
+      description: Get the instance of an active role assignment.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroleassignmentscheduleinstance-get?view=graph-rest-1.0
@@ -79735,7 +79731,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: List roleAssignmentScheduleRequests
-      description: 'Retrieve the requests for active role assignments to principals. The active assignments include those made through assignments and activation requests, and directly through the role assignments API. The role assignments can be permanently active with or without an expiry date, or temporarily active after user activation of eligible assignments. This API is available in the following national cloud deployments.'
+      description: 'Retrieve the requests for active role assignments to principals. The active assignments include those made through assignments and activation requests, and directly through the role assignments API. The role assignments can be permanently active with or without an expiry date, or temporarily active after user activation of eligible assignments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/rbacapplication-list-roleassignmentschedulerequests?view=graph-rest-1.0
@@ -79856,7 +79852,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Create roleAssignmentScheduleRequests
-      description: 'In PIM, carry out the following operations through the unifiedRoleAssignmentScheduleRequest object: To call this API to update, renew, and extend assignments for yourself, you must have multifactor authentication (MFA) enforced, and running the query in a session in which they were challenged for MFA. See Enable per-user Microsoft Entra multifactor authentication to secure sign-in events. This API is available in the following national cloud deployments.'
+      description: 'In PIM, carry out the following operations through the unifiedRoleAssignmentScheduleRequest object: To call this API to update, renew, and extend assignments for yourself, you must have multifactor authentication (MFA) enforced, and running the query in a session in which they were challenged for MFA. See Enable per-user Microsoft Entra multifactor authentication to secure sign-in events.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/rbacapplication-post-roleassignmentschedulerequests?view=graph-rest-1.0
@@ -79883,7 +79879,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get unifiedRoleAssignmentScheduleRequest
-      description: 'In PIM, read the details of a request for an active and persistent role assignment made through the unifiedRoleAssignmentScheduleRequest object. This API is available in the following national cloud deployments.'
+      description: 'In PIM, read the details of a request for an active and persistent role assignment made through the unifiedRoleAssignmentScheduleRequest object.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroleassignmentschedulerequest-get?view=graph-rest-1.0
@@ -80192,7 +80188,7 @@ paths:
       tags:
         - roleManagement.Actions
       summary: Invoke action cancel
-      description: 'Immediately cancel a unifiedRoleAssignmentScheduleRequest object that is in a Granted status, and have the system automatically delete the canceled request after 30 days. After calling this action, the status of the canceled unifiedRoleAssignmentScheduleRequest changes to Canceled. This API is available in the following national cloud deployments.'
+      description: 'Immediately cancel a unifiedRoleAssignmentScheduleRequest object that is in a Granted status, and have the system automatically delete the canceled request after 30 days. After calling this action, the status of the canceled unifiedRoleAssignmentScheduleRequest changes to Canceled.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroleassignmentschedulerequest-cancel?view=graph-rest-1.0
@@ -80535,7 +80531,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: List roleAssignmentSchedules
-      description: Get the schedules for active role assignment operations. This API is available in the following national cloud deployments.
+      description: Get the schedules for active role assignment operations.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/rbacapplication-list-roleassignmentschedules?view=graph-rest-1.0
@@ -80662,7 +80658,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get unifiedRoleAssignmentSchedule
-      description: Retrieve the schedule for an active role assignment operation. This API is available in the following national cloud deployments.
+      description: Retrieve the schedule for an active role assignment operation.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroleassignmentschedule-get?view=graph-rest-1.0
@@ -81195,7 +81191,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: List roleDefinitions
-      description: "Get a list of unifiedRoleDefinition objects for the provider. The following RBAC providers are currently supported:\n- directory (Microsoft Entra ID)\n- entitlement management (Microsoft Entra Entitlement Management) This API is available in the following national cloud deployments."
+      description: "Get a list of unifiedRoleDefinition objects for the provider. The following RBAC providers are currently supported:\n- directory (Microsoft Entra ID)\n- entitlement management (Microsoft Entra Entitlement Management)"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/rbacapplication-list-roledefinitions?view=graph-rest-1.0
@@ -81282,7 +81278,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Create roleDefinitions
-      description: Create a new custom unifiedRoleDefinition object. This feature requires a Microsoft Entra ID P1 or P2 license. This API is available in the following national cloud deployments.
+      description: Create a new custom unifiedRoleDefinition object. This feature requires a Microsoft Entra ID P1 or P2 license.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/rbacapplication-post-roledefinitions?view=graph-rest-1.0
@@ -81309,7 +81305,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get unifiedRoleDefinition
-      description: 'Read the properties and relationships of a unifiedRoleDefinition object. The following role-based access control (RBAC) providers are currently supported: This API is available in the following national cloud deployments.'
+      description: 'Read the properties and relationships of a unifiedRoleDefinition object. The following role-based access control (RBAC) providers are currently supported:'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroledefinition-get?view=graph-rest-1.0
@@ -81371,7 +81367,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Update unifiedRoleDefinition
-      description: Update the properties of a unifiedRoleDefinition object. You cannot update built-in roles. This feature requires a Microsoft Entra ID P1 or P2 license. This API is available in the following national cloud deployments.
+      description: Update the properties of a unifiedRoleDefinition object. You cannot update built-in roles. This feature requires a Microsoft Entra ID P1 or P2 license.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroledefinition-update?view=graph-rest-1.0
@@ -81406,7 +81402,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Delete unifiedRoleDefinition
-      description: Delete a unifiedRoleDefinition object. You can't delete built-in roles. This feature requires a Microsoft Entra ID P1 or P2 license. This API is available in the following national cloud deployments.
+      description: Delete a unifiedRoleDefinition object. You can't delete built-in roles. This feature requires a Microsoft Entra ID P1 or P2 license.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroledefinition-delete?view=graph-rest-1.0
@@ -81738,7 +81734,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: List roleEligibilityScheduleInstances
-      description: Get the instances of role eligibilities. This API is available in the following national cloud deployments.
+      description: Get the instances of role eligibilities.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/rbacapplication-list-roleeligibilityscheduleinstances?view=graph-rest-1.0
@@ -81854,7 +81850,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get unifiedRoleEligibilityScheduleInstance
-      description: Get the instance of a role eligibility. This API is available in the following national cloud deployments.
+      description: Get the instance of a role eligibility.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroleeligibilityscheduleinstance-get?view=graph-rest-1.0
@@ -82304,7 +82300,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: List roleEligibilityScheduleRequests
-      description: 'In PIM, retrieve the requests for role eligibilities for principals made through the unifiedRoleEligibilityScheduleRequest object. This API is available in the following national cloud deployments.'
+      description: 'In PIM, retrieve the requests for role eligibilities for principals made through the unifiedRoleEligibilityScheduleRequest object.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/rbacapplication-list-roleeligibilityschedulerequests?view=graph-rest-1.0
@@ -82423,7 +82419,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Create roleEligibilityScheduleRequest
-      description: 'In PIM, request for a role eligibility for a principal through the unifiedRoleEligibilityScheduleRequest object. This operation allows both admins and eligible users to add, revoke, or extend eligible assignments. This API is available in the following national cloud deployments.'
+      description: 'In PIM, request for a role eligibility for a principal through the unifiedRoleEligibilityScheduleRequest object. This operation allows both admins and eligible users to add, revoke, or extend eligible assignments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/rbacapplication-post-roleeligibilityschedulerequests?view=graph-rest-1.0
@@ -82450,7 +82446,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get unifiedRoleEligibilityScheduleRequest
-      description: 'In PIM, read the details of a request for for a role eligibility request made through the unifiedRoleEligibilityScheduleRequest object. This API is available in the following national cloud deployments.'
+      description: 'In PIM, read the details of a request for for a role eligibility request made through the unifiedRoleEligibilityScheduleRequest object.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroleeligibilityschedulerequest-get?view=graph-rest-1.0
@@ -82689,7 +82685,7 @@ paths:
       tags:
         - roleManagement.Actions
       summary: Invoke action cancel
-      description: 'Immediately cancel a unifiedRoleEligibilityScheduleRequest object whose status is Granted and have the system automatically delete the cancelled request after 30 days. After calling this action, the status of the cancelled unifiedRoleEligibilityScheduleRequest changes to Revoked. This API is available in the following national cloud deployments.'
+      description: 'Immediately cancel a unifiedRoleEligibilityScheduleRequest object whose status is Granted and have the system automatically delete the cancelled request after 30 days. After calling this action, the status of the cancelled unifiedRoleEligibilityScheduleRequest changes to Revoked.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroleeligibilityschedulerequest-cancel?view=graph-rest-1.0
@@ -83028,7 +83024,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: List roleEligibilitySchedules
-      description: Get the unifiedRoleEligibilitySchedule resources from the roleEligibilitySchedules navigation property. This API is available in the following national cloud deployments.
+      description: Get the unifiedRoleEligibilitySchedule resources from the roleEligibilitySchedules navigation property.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/rbacapplication-list-roleeligibilityschedules?view=graph-rest-1.0
@@ -83150,7 +83146,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get unifiedRoleEligibilitySchedule
-      description: Retrieve the schedule for a role eligibility operation. This API is available in the following national cloud deployments.
+      description: Retrieve the schedule for a role eligibility operation.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroleeligibilityschedule-get?view=graph-rest-1.0
@@ -83608,7 +83604,7 @@ paths:
       tags:
         - users.agreementAcceptance
       summary: List agreementAcceptances
-      description: Retrieve the signed-in user's agreementAcceptance objects. This API is available in the following national cloud deployments.
+      description: Retrieve the signed-in user's agreementAcceptance objects.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-list-agreementacceptances?view=graph-rest-1.0
@@ -85174,7 +85170,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.identitySource'
-              description: 'The identity sources in this connected organization, one of azureActiveDirectoryTenant, domainIdentitySource, externalDomainFederation or crossCloudAzureActiveDirectoryTenant. Nullable.'
+              description: 'The identity sources in this connected organization, one of azureActiveDirectoryTenant, crossCloudAzureActiveDirectoryTenant, domainIdentitySource, externalDomainFederation, or socialIdentitySource. Nullable.'
             modifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -87167,22 +87163,22 @@ components:
           properties:
             appScopeId:
               type: string
-              description: 'Identifier of the app-specific scope when the assignment scope is app-specific.  Either this property or directoryScopeId is required. App scopes are scopes that are defined and understood by this application only. Use / for tenant-wide app scopes. Use directoryScopeId to limit the scope to particular directory objects, for example, administrative units. Supports $filter (eq, in).'
+              description: 'Identifier of the app specific scope when the assignment scope is app specific. The scope of an assignment determines the set of resources for which the principal has been granted access. App scopes are scopes that are defined and understood by a resource application only. For the entitlement management provider, use this property to specify a catalog, for example /AccessPackageCatalog/beedadfe-01d5-4025-910b-84abb9369997. Supports $filter (eq, in). For example /roleManagement/entitlementManagement/roleAssignments?$filter=appScopeId eq ''/AccessPackageCatalog/{catalog id}''.'
               nullable: true
             condition:
               type: string
               nullable: true
             directoryScopeId:
               type: string
-              description: 'Identifier of the directory object representing the scope of the assignment.  Either this property or appScopeId is required. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use / for tenant-wide scope. Use appScopeId to limit the scope to an application only. Supports $filter (eq, in).'
+              description: 'Identifier of the directory object representing the scope of the assignment. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications, unlike app scopes that are defined and understood by a resource application only. Supports $filter (eq, in).'
               nullable: true
             principalId:
               type: string
-              description: 'Identifier of the principal to which the assignment is granted. Supports $filter (eq, in).'
+              description: 'Identifier of the principal to which the assignment is granted. Supported principals are users, role-assignable groups, and service principals. Supports $filter (eq, in).'
               nullable: true
             roleDefinitionId:
               type: string
-              description: 'Identifier of the role definition the assignment is for. Read only. Supports $filter (eq, in).'
+              description: 'Identifier of the unifiedRoleDefinition the assignment is for. Read-only. Supports $filter (eq, in).'
               nullable: true
             appScope:
               $ref: '#/components/schemas/microsoft.graph.appScope'

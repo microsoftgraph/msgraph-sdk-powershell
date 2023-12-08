@@ -11,7 +11,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action publish
-      description: Publish the specified browserSiteList for devices to download. This API is available in the following national cloud deployments.
+      description: Publish the specified browserSiteList for devices to download.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/browsersitelist-publish?view=graph-rest-1.0
@@ -148,7 +148,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: List healthOverviews
-      description: Retrieve the serviceHealth resources from the healthOverviews navigation property. This operation provides the health report of all subscribed services for a tenant. This API is available in the following national cloud deployments.
+      description: Retrieve the serviceHealth resources from the healthOverviews navigation property. This operation provides the health report of all subscribed services for a tenant.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceannouncement-list-healthoverviews?view=graph-rest-1.0
@@ -240,7 +240,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get serviceHealth
-      description: Retrieve the properties and relationships of a serviceHealth object. This operation provides the health information of a specified service for a tenant. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of a serviceHealth object. This operation provides the health information of a specified service for a tenant.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/servicehealth-get?view=graph-rest-1.0
@@ -715,7 +715,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: List issues
-      description: Retrieve serviceHealthIssue resources from the issues navigation property. This operation retrieves information about all service health issues that exist for the tenant. This API is available in the following national cloud deployments.
+      description: Retrieve serviceHealthIssue resources from the issues navigation property. This operation retrieves information about all service health issues that exist for the tenant.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceannouncement-list-issues?view=graph-rest-1.0
@@ -841,7 +841,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get serviceHealthIssue
-      description: Retrieve the properties and relationships of a serviceHealthIssue object. This operation retrieves a specified service health issue for tenant. The operation returns an error if the issue does not exist for the tenant. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of a serviceHealthIssue object. This operation retrieves a specified service health issue for tenant. The operation returns an error if the issue does not exist for the tenant.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/servicehealthissue-get?view=graph-rest-1.0
@@ -1011,7 +1011,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: List messages
-      description: Retrieve the serviceUpdateMessage resources from the messages navigation property. This operation retrieves all service update messages that exist for the tenant. This API is available in the following national cloud deployments.
+      description: Retrieve the serviceUpdateMessage resources from the messages navigation property. This operation retrieves all service update messages that exist for the tenant.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceannouncement-list-messages?view=graph-rest-1.0
@@ -1142,7 +1142,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get serviceUpdateMessage
-      description: Retrieve the properties and relationships of a serviceUpdateMessage object. This operation retrieves a specified service update message for the tenant. The operation returns an error if the message does not exist for the tenant. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of a serviceUpdateMessage object. This operation retrieves a specified service update message for the tenant. The operation returns an error if the message does not exist for the tenant.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceupdatemessage-get?view=graph-rest-1.0
@@ -1269,7 +1269,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: List attachments
-      description: Get a list of attachments associated with a service message. This API is available in the following national cloud deployments.
+      description: Get a list of attachments associated with a service message.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceupdatemessage-list-attachments?view=graph-rest-1.0
@@ -1385,7 +1385,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get serviceAnnouncementAttachment
-      description: Read the properties and relationships of a serviceAnnouncementAttachment object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a serviceAnnouncementAttachment object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceannouncementattachment-get?view=graph-rest-1.0
@@ -1698,7 +1698,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action archive
-      description: Archive a list of serviceUpdateMessages for the signed in user. This API is available in the following national cloud deployments.
+      description: Archive a list of serviceUpdateMessages for the signed in user.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceupdatemessage-archive?view=graph-rest-1.0
@@ -1740,7 +1740,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action favorite
-      description: Change the status of a list of serviceUpdateMessages to favorite for the signed in user. This API is available in the following national cloud deployments.
+      description: Change the status of a list of serviceUpdateMessages to favorite for the signed in user.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceupdatemessage-favorite?view=graph-rest-1.0
@@ -1782,7 +1782,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action markRead
-      description: Mark a list of serviceUpdateMessages as read for the signed in user. This API is available in the following national cloud deployments.
+      description: Mark a list of serviceUpdateMessages as read for the signed in user.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceupdatemessage-markread?view=graph-rest-1.0
@@ -1824,7 +1824,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action markUnread
-      description: Mark a list of serviceUpdateMessages as unread for the signed in user. This API is available in the following national cloud deployments.
+      description: Mark a list of serviceUpdateMessages as unread for the signed in user.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceupdatemessage-markunread?view=graph-rest-1.0
@@ -1866,7 +1866,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action unarchive
-      description: Unarchive a list of serviceUpdateMessages for the signed in user. This API is available in the following national cloud deployments.
+      description: Unarchive a list of serviceUpdateMessages for the signed in user.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceupdatemessage-unarchive?view=graph-rest-1.0
@@ -1908,7 +1908,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action unfavorite
-      description: Remove the favorite status of serviceUpdateMessages for the signed in user. This API is available in the following national cloud deployments.
+      description: Remove the favorite status of serviceUpdateMessages for the signed in user.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceupdatemessage-unfavorite?view=graph-rest-1.0
@@ -1950,7 +1950,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action addMembers
-      description: 'Add members to an updatableAssetGroup. You can add azureADDevice resources as members, but may not add updatableAssetGroup resources as members. Adding a Microsoft Entra device as a member of an updatable asset group automatically creates an azureADDevice object, if it does not already exist. You can also use the method addMembersById to add members. This API is available in the following national cloud deployments.'
+      description: 'Add members to an updatableAssetGroup. You can add azureADDevice resources as members, but may not add updatableAssetGroup resources as members. Adding a Microsoft Entra device as a member of an updatable asset group automatically creates an azureADDevice object, if it does not already exist. You can also use the method addMembersById to add members.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembers?view=graph-rest-1.0
@@ -1997,7 +1997,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action addMembersById
-      description: Add members of the same type to an updatableAssetGroup. You can also use the method addMembers to add members. This API is available in the following national cloud deployments.
+      description: Add members of the same type to an updatableAssetGroup. You can also use the method addMembers to add members.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembersbyid?view=graph-rest-1.0
@@ -2048,7 +2048,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action removeMembers
-      description: Remove members from an updatableAssetGroup. You can also use the method removeMembersById to remove members. This API is available in the following national cloud deployments.
+      description: Remove members from an updatableAssetGroup. You can also use the method removeMembersById to remove members.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-removemembers?view=graph-rest-1.0
@@ -2095,7 +2095,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action removeMembersById
-      description: Remove members of the same type from an updatableAssetGroup. You can also use the method removeMembers to remove members. This API is available in the following national cloud deployments.
+      description: Remove members of the same type from an updatableAssetGroup. You can also use the method removeMembers to remove members.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-removemembersbyid?view=graph-rest-1.0
@@ -2302,7 +2302,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action addMembers
-      description: 'Add members to an updatableAssetGroup. You can add azureADDevice resources as members, but may not add updatableAssetGroup resources as members. Adding a Microsoft Entra device as a member of an updatable asset group automatically creates an azureADDevice object, if it does not already exist. You can also use the method addMembersById to add members. This API is available in the following national cloud deployments.'
+      description: 'Add members to an updatableAssetGroup. You can add azureADDevice resources as members, but may not add updatableAssetGroup resources as members. Adding a Microsoft Entra device as a member of an updatable asset group automatically creates an azureADDevice object, if it does not already exist. You can also use the method addMembersById to add members.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembers?view=graph-rest-1.0
@@ -2349,7 +2349,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action addMembersById
-      description: Add members of the same type to an updatableAssetGroup. You can also use the method addMembers to add members. This API is available in the following national cloud deployments.
+      description: Add members of the same type to an updatableAssetGroup. You can also use the method addMembers to add members.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembersbyid?view=graph-rest-1.0
@@ -2400,7 +2400,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action removeMembers
-      description: Remove members from an updatableAssetGroup. You can also use the method removeMembersById to remove members. This API is available in the following national cloud deployments.
+      description: Remove members from an updatableAssetGroup. You can also use the method removeMembersById to remove members.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-removemembers?view=graph-rest-1.0
@@ -2447,7 +2447,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action removeMembersById
-      description: Remove members of the same type from an updatableAssetGroup. You can also use the method removeMembers to remove members. This API is available in the following national cloud deployments.
+      description: Remove members of the same type from an updatableAssetGroup. You can also use the method removeMembers to remove members.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-removemembersbyid?view=graph-rest-1.0
@@ -2654,7 +2654,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action updateAudience
-      description: 'Update the members and exclusions collections of a deploymentAudience. Adding an azureADDevice to the members or exclusions collections of a deployment audience automatically creates a Microsoft Entra device object, if it does not already exist. If the same updatableAsset gets included in the exclusions and members collections of a deploymentAudience, deployment will not apply to that asset. If all updatableAsset objects are the same type, you can also use the method updateAudienceById to update the deploymentAudience. This API is available in the following national cloud deployments.'
+      description: 'Update the members and exclusions collections of a deploymentAudience. Adding an azureADDevice to the members or exclusions collections of a deployment audience automatically creates a Microsoft Entra device object, if it does not already exist. If the same updatableAsset gets included in the exclusions and members collections of a deploymentAudience, deployment will not apply to that asset. If all updatableAsset objects are the same type, you can also use the method updateAudienceById to update the deploymentAudience.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowsupdates-deploymentaudience-updateaudience?view=graph-rest-1.0
@@ -2705,7 +2705,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action updateAudienceById
-      description: 'Update the members and exclusions collections of a deploymentAudience with updatableAsset resources of the same type. Adding an azureADDevice to the members or exclusions collections of a deployment audience automatically creates a Microsoft Entra device object if it does not already exist. If the same updatableAsset gets included in the exclusions and members collections of a deploymentAudience, deployment will not apply to that asset. You can also use the method updateAudience to update the deploymentAudience. This API is available in the following national cloud deployments.'
+      description: 'Update the members and exclusions collections of a deploymentAudience with updatableAsset resources of the same type. Adding an azureADDevice to the members or exclusions collections of a deployment audience automatically creates a Microsoft Entra device object if it does not already exist. If the same updatableAsset gets included in the exclusions and members collections of a deploymentAudience, deployment will not apply to that asset. You can also use the method updateAudience to update the deploymentAudience.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowsupdates-deploymentaudience-updateaudiencebyid?view=graph-rest-1.0
@@ -2763,7 +2763,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action addMembers
-      description: 'Add members to an updatableAssetGroup. You can add azureADDevice resources as members, but may not add updatableAssetGroup resources as members. Adding a Microsoft Entra device as a member of an updatable asset group automatically creates an azureADDevice object, if it does not already exist. You can also use the method addMembersById to add members. This API is available in the following national cloud deployments.'
+      description: 'Add members to an updatableAssetGroup. You can add azureADDevice resources as members, but may not add updatableAssetGroup resources as members. Adding a Microsoft Entra device as a member of an updatable asset group automatically creates an azureADDevice object, if it does not already exist. You can also use the method addMembersById to add members.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembers?view=graph-rest-1.0
@@ -2810,7 +2810,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action addMembersById
-      description: Add members of the same type to an updatableAssetGroup. You can also use the method addMembers to add members. This API is available in the following national cloud deployments.
+      description: Add members of the same type to an updatableAssetGroup. You can also use the method addMembers to add members.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembersbyid?view=graph-rest-1.0
@@ -2861,7 +2861,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action removeMembers
-      description: Remove members from an updatableAssetGroup. You can also use the method removeMembersById to remove members. This API is available in the following national cloud deployments.
+      description: Remove members from an updatableAssetGroup. You can also use the method removeMembersById to remove members.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-removemembers?view=graph-rest-1.0
@@ -2908,7 +2908,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action removeMembersById
-      description: Remove members of the same type from an updatableAssetGroup. You can also use the method removeMembers to remove members. This API is available in the following national cloud deployments.
+      description: Remove members of the same type from an updatableAssetGroup. You can also use the method removeMembers to remove members.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-removemembersbyid?view=graph-rest-1.0
@@ -3115,7 +3115,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action addMembers
-      description: 'Add members to an updatableAssetGroup. You can add azureADDevice resources as members, but may not add updatableAssetGroup resources as members. Adding a Microsoft Entra device as a member of an updatable asset group automatically creates an azureADDevice object, if it does not already exist. You can also use the method addMembersById to add members. This API is available in the following national cloud deployments.'
+      description: 'Add members to an updatableAssetGroup. You can add azureADDevice resources as members, but may not add updatableAssetGroup resources as members. Adding a Microsoft Entra device as a member of an updatable asset group automatically creates an azureADDevice object, if it does not already exist. You can also use the method addMembersById to add members.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembers?view=graph-rest-1.0
@@ -3162,7 +3162,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action addMembersById
-      description: Add members of the same type to an updatableAssetGroup. You can also use the method addMembers to add members. This API is available in the following national cloud deployments.
+      description: Add members of the same type to an updatableAssetGroup. You can also use the method addMembers to add members.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembersbyid?view=graph-rest-1.0
@@ -3213,7 +3213,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action removeMembers
-      description: Remove members from an updatableAssetGroup. You can also use the method removeMembersById to remove members. This API is available in the following national cloud deployments.
+      description: Remove members from an updatableAssetGroup. You can also use the method removeMembersById to remove members.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-removemembers?view=graph-rest-1.0
@@ -3260,7 +3260,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action removeMembersById
-      description: Remove members of the same type from an updatableAssetGroup. You can also use the method removeMembers to remove members. This API is available in the following national cloud deployments.
+      description: Remove members of the same type from an updatableAssetGroup. You can also use the method removeMembers to remove members.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-removemembersbyid?view=graph-rest-1.0
@@ -3467,7 +3467,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action updateAudience
-      description: 'Update the members and exclusions collections of a deploymentAudience. Adding an azureADDevice to the members or exclusions collections of a deployment audience automatically creates a Microsoft Entra device object, if it does not already exist. If the same updatableAsset gets included in the exclusions and members collections of a deploymentAudience, deployment will not apply to that asset. If all updatableAsset objects are the same type, you can also use the method updateAudienceById to update the deploymentAudience. This API is available in the following national cloud deployments.'
+      description: 'Update the members and exclusions collections of a deploymentAudience. Adding an azureADDevice to the members or exclusions collections of a deployment audience automatically creates a Microsoft Entra device object, if it does not already exist. If the same updatableAsset gets included in the exclusions and members collections of a deploymentAudience, deployment will not apply to that asset. If all updatableAsset objects are the same type, you can also use the method updateAudienceById to update the deploymentAudience.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowsupdates-deploymentaudience-updateaudience?view=graph-rest-1.0
@@ -3518,7 +3518,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action updateAudienceById
-      description: 'Update the members and exclusions collections of a deploymentAudience with updatableAsset resources of the same type. Adding an azureADDevice to the members or exclusions collections of a deployment audience automatically creates a Microsoft Entra device object if it does not already exist. If the same updatableAsset gets included in the exclusions and members collections of a deploymentAudience, deployment will not apply to that asset. You can also use the method updateAudience to update the deploymentAudience. This API is available in the following national cloud deployments.'
+      description: 'Update the members and exclusions collections of a deploymentAudience with updatableAsset resources of the same type. Adding an azureADDevice to the members or exclusions collections of a deployment audience automatically creates a Microsoft Entra device object if it does not already exist. If the same updatableAsset gets included in the exclusions and members collections of a deploymentAudience, deployment will not apply to that asset. You can also use the method updateAudience to update the deploymentAudience.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowsupdates-deploymentaudience-updateaudiencebyid?view=graph-rest-1.0
@@ -3576,7 +3576,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action addMembers
-      description: 'Add members to an updatableAssetGroup. You can add azureADDevice resources as members, but may not add updatableAssetGroup resources as members. Adding a Microsoft Entra device as a member of an updatable asset group automatically creates an azureADDevice object, if it does not already exist. You can also use the method addMembersById to add members. This API is available in the following national cloud deployments.'
+      description: 'Add members to an updatableAssetGroup. You can add azureADDevice resources as members, but may not add updatableAssetGroup resources as members. Adding a Microsoft Entra device as a member of an updatable asset group automatically creates an azureADDevice object, if it does not already exist. You can also use the method addMembersById to add members.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembers?view=graph-rest-1.0
@@ -3615,7 +3615,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action addMembersById
-      description: Add members of the same type to an updatableAssetGroup. You can also use the method addMembers to add members. This API is available in the following national cloud deployments.
+      description: Add members of the same type to an updatableAssetGroup. You can also use the method addMembers to add members.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembersbyid?view=graph-rest-1.0
@@ -3658,7 +3658,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action removeMembers
-      description: Remove members from an updatableAssetGroup. You can also use the method removeMembersById to remove members. This API is available in the following national cloud deployments.
+      description: Remove members from an updatableAssetGroup. You can also use the method removeMembersById to remove members.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-removemembers?view=graph-rest-1.0
@@ -3697,7 +3697,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action removeMembersById
-      description: Remove members of the same type from an updatableAssetGroup. You can also use the method removeMembers to remove members. This API is available in the following national cloud deployments.
+      description: Remove members of the same type from an updatableAssetGroup. You can also use the method removeMembers to remove members.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-removemembersbyid?view=graph-rest-1.0
@@ -3860,7 +3860,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action addMembers
-      description: 'Add members to an updatableAssetGroup. You can add azureADDevice resources as members, but may not add updatableAssetGroup resources as members. Adding a Microsoft Entra device as a member of an updatable asset group automatically creates an azureADDevice object, if it does not already exist. You can also use the method addMembersById to add members. This API is available in the following national cloud deployments.'
+      description: 'Add members to an updatableAssetGroup. You can add azureADDevice resources as members, but may not add updatableAssetGroup resources as members. Adding a Microsoft Entra device as a member of an updatable asset group automatically creates an azureADDevice object, if it does not already exist. You can also use the method addMembersById to add members.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembers?view=graph-rest-1.0
@@ -3907,7 +3907,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action addMembersById
-      description: Add members of the same type to an updatableAssetGroup. You can also use the method addMembers to add members. This API is available in the following national cloud deployments.
+      description: Add members of the same type to an updatableAssetGroup. You can also use the method addMembers to add members.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembersbyid?view=graph-rest-1.0
@@ -3958,7 +3958,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action removeMembers
-      description: Remove members from an updatableAssetGroup. You can also use the method removeMembersById to remove members. This API is available in the following national cloud deployments.
+      description: Remove members from an updatableAssetGroup. You can also use the method removeMembersById to remove members.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-removemembers?view=graph-rest-1.0
@@ -4005,7 +4005,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action removeMembersById
-      description: Remove members of the same type from an updatableAssetGroup. You can also use the method removeMembers to remove members. This API is available in the following national cloud deployments.
+      description: Remove members of the same type from an updatableAssetGroup. You can also use the method removeMembers to remove members.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-removemembersbyid?view=graph-rest-1.0
@@ -4212,7 +4212,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action addMembers
-      description: 'Add members to an updatableAssetGroup. You can add azureADDevice resources as members, but may not add updatableAssetGroup resources as members. Adding a Microsoft Entra device as a member of an updatable asset group automatically creates an azureADDevice object, if it does not already exist. You can also use the method addMembersById to add members. This API is available in the following national cloud deployments.'
+      description: 'Add members to an updatableAssetGroup. You can add azureADDevice resources as members, but may not add updatableAssetGroup resources as members. Adding a Microsoft Entra device as a member of an updatable asset group automatically creates an azureADDevice object, if it does not already exist. You can also use the method addMembersById to add members.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembers?view=graph-rest-1.0
@@ -4259,7 +4259,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action addMembersById
-      description: Add members of the same type to an updatableAssetGroup. You can also use the method addMembers to add members. This API is available in the following national cloud deployments.
+      description: Add members of the same type to an updatableAssetGroup. You can also use the method addMembers to add members.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembersbyid?view=graph-rest-1.0
@@ -4310,7 +4310,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action removeMembers
-      description: Remove members from an updatableAssetGroup. You can also use the method removeMembersById to remove members. This API is available in the following national cloud deployments.
+      description: Remove members from an updatableAssetGroup. You can also use the method removeMembersById to remove members.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-removemembers?view=graph-rest-1.0
@@ -4357,7 +4357,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action removeMembersById
-      description: Remove members of the same type from an updatableAssetGroup. You can also use the method removeMembers to remove members. This API is available in the following national cloud deployments.
+      description: Remove members of the same type from an updatableAssetGroup. You can also use the method removeMembers to remove members.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-removemembersbyid?view=graph-rest-1.0
@@ -4564,7 +4564,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action updateAudience
-      description: 'Update the members and exclusions collections of a deploymentAudience. Adding an azureADDevice to the members or exclusions collections of a deployment audience automatically creates a Microsoft Entra device object, if it does not already exist. If the same updatableAsset gets included in the exclusions and members collections of a deploymentAudience, deployment will not apply to that asset. If all updatableAsset objects are the same type, you can also use the method updateAudienceById to update the deploymentAudience. This API is available in the following national cloud deployments.'
+      description: 'Update the members and exclusions collections of a deploymentAudience. Adding an azureADDevice to the members or exclusions collections of a deployment audience automatically creates a Microsoft Entra device object, if it does not already exist. If the same updatableAsset gets included in the exclusions and members collections of a deploymentAudience, deployment will not apply to that asset. If all updatableAsset objects are the same type, you can also use the method updateAudienceById to update the deploymentAudience.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowsupdates-deploymentaudience-updateaudience?view=graph-rest-1.0
@@ -4615,7 +4615,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action updateAudienceById
-      description: 'Update the members and exclusions collections of a deploymentAudience with updatableAsset resources of the same type. Adding an azureADDevice to the members or exclusions collections of a deployment audience automatically creates a Microsoft Entra device object if it does not already exist. If the same updatableAsset gets included in the exclusions and members collections of a deploymentAudience, deployment will not apply to that asset. You can also use the method updateAudience to update the deploymentAudience. This API is available in the following national cloud deployments.'
+      description: 'Update the members and exclusions collections of a deploymentAudience with updatableAsset resources of the same type. Adding an azureADDevice to the members or exclusions collections of a deployment audience automatically creates a Microsoft Entra device object if it does not already exist. If the same updatableAsset gets included in the exclusions and members collections of a deploymentAudience, deployment will not apply to that asset. You can also use the method updateAudience to update the deploymentAudience.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowsupdates-deploymentaudience-updateaudiencebyid?view=graph-rest-1.0
