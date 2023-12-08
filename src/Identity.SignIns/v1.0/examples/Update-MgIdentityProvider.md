@@ -1,4 +1,4 @@
-### Example 1: Update a specific <strong>social identity provider</strong> (Azure AD or Azure AD B2C)
+### Example 1: Update a specific <strong>social identity provider</strong> (Microsoft Entra ID or Azure AD B2C)
 
 ```powershellImport-Module Microsoft.Graph.Identity.SignIns
 

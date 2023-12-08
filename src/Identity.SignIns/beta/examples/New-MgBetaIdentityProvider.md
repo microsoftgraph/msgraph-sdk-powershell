@@ -1,4 +1,4 @@
-### Example 1: Create a specific social identity provider (Azure AD and Azure AD B2C)
+### Example 1: Create a specific social identity provider (Microsoft Entra ID and Azure AD B2C)
 
 ```powershellImport-Module Microsoft.Graph.Beta.Identity.SignIns
 

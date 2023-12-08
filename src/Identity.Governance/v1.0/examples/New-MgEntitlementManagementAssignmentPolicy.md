@@ -180,6 +180,8 @@ $params = @{
 	)
 	automaticRequestSettings = @{
 		requestAccessForAllowedTargets = $true
+		removeAccessWhenTargetLeavesAllowedTargets = $true
+		gracePeriodBeforeAccessRemoval = "P7D"
 	}
 	accessPackage = @{
 		id = "8a36831e-1527-4b2b-aff2-81259a8d8e76"
