@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete a conversationMember from a channel.
-This operation is allowed only for channels with a membershipType value of private or shared.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Remove-MgTeamChannelMember -InputObject <ITeamsIdentity> [-IfMatch <String>] [-P
 
 ## DESCRIPTION
 Delete a conversationMember from a channel.
-This operation is allowed only for channels with a membershipType value of private or shared.
 
 ## EXAMPLES
 

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Security
-Module Guid: 0edd9e91-c732-47d9-b6d7-5ce4e0c36b6e
+Module Guid: eb53e463-3871-46e0-874b-60d9c20ebceb
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.security
 Help Version: 1.0.0.0
 Locale: en-US
@@ -143,6 +143,21 @@ Get the number of the resource
 Language specific details on a training.
 
 ### [Get-MgBetaSecurityAttackSimulationTrainingLanguageDetailCount](Get-MgBetaSecurityAttackSimulationTrainingLanguageDetailCount.md)
+Get the number of the resource
+
+### [Get-MgBetaSecurityAuditLog](Get-MgBetaSecurityAuditLog.md)
+Get auditLog from security
+
+### [Get-MgBetaSecurityAuditLogQuery](Get-MgBetaSecurityAuditLogQuery.md)
+Get queries from security
+
+### [Get-MgBetaSecurityAuditLogQueryCount](Get-MgBetaSecurityAuditLogQueryCount.md)
+Get the number of the resource
+
+### [Get-MgBetaSecurityAuditLogQueryRecord](Get-MgBetaSecurityAuditLogQueryRecord.md)
+Get records from security
+
+### [Get-MgBetaSecurityAuditLogQueryRecordCount](Get-MgBetaSecurityAuditLogQueryRecordCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaSecurityCase](Get-MgBetaSecurityCase.md)
@@ -898,6 +913,12 @@ Create new navigation property to trainings for security
 ### [New-MgBetaSecurityAttackSimulationTrainingLanguageDetail](New-MgBetaSecurityAttackSimulationTrainingLanguageDetail.md)
 Create new navigation property to languageDetails for security
 
+### [New-MgBetaSecurityAuditLogQuery](New-MgBetaSecurityAuditLogQuery.md)
+Create new navigation property to queries for security
+
+### [New-MgBetaSecurityAuditLogQueryRecord](New-MgBetaSecurityAuditLogQueryRecord.md)
+Create new navigation property to records for security
+
 ### [New-MgBetaSecurityCaseEdiscoveryCase](New-MgBetaSecurityCaseEdiscoveryCase.md)
 Create a new ediscoveryCase object.
 
@@ -1136,6 +1157,15 @@ Delete navigation property trainings for security
 
 ### [Remove-MgBetaSecurityAttackSimulationTrainingLanguageDetail](Remove-MgBetaSecurityAttackSimulationTrainingLanguageDetail.md)
 Delete navigation property languageDetails for security
+
+### [Remove-MgBetaSecurityAuditLog](Remove-MgBetaSecurityAuditLog.md)
+Delete navigation property auditLog for security
+
+### [Remove-MgBetaSecurityAuditLogQuery](Remove-MgBetaSecurityAuditLogQuery.md)
+Delete navigation property queries for security
+
+### [Remove-MgBetaSecurityAuditLogQueryRecord](Remove-MgBetaSecurityAuditLogQueryRecord.md)
+Delete navigation property records for security
 
 ### [Remove-MgBetaSecurityCase](Remove-MgBetaSecurityCase.md)
 Delete navigation property cases for security
@@ -1483,6 +1513,15 @@ Update the navigation property trainings in security
 
 ### [Update-MgBetaSecurityAttackSimulationTrainingLanguageDetail](Update-MgBetaSecurityAttackSimulationTrainingLanguageDetail.md)
 Update the navigation property languageDetails in security
+
+### [Update-MgBetaSecurityAuditLog](Update-MgBetaSecurityAuditLog.md)
+Update the navigation property auditLog in security
+
+### [Update-MgBetaSecurityAuditLogQuery](Update-MgBetaSecurityAuditLogQuery.md)
+Update the navigation property queries in security
+
+### [Update-MgBetaSecurityAuditLogQueryRecord](Update-MgBetaSecurityAuditLogQueryRecord.md)
+Update the navigation property records in security
 
 ### [Update-MgBetaSecurityCase](Update-MgBetaSecurityCase.md)
 Update the navigation property cases in security

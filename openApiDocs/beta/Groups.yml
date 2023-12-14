@@ -11659,10 +11659,10 @@ paths:
       tags:
         - groups.conversation
       summary: Get conversation
-      description: Retrieve the properties and relationships of conversation object.
+      description: Get a conversation object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversation-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/group-get-conversation?view=graph-rest-1.0
       operationId: group_GetConversation
       parameters:
         - name: group-id
@@ -11713,10 +11713,10 @@ paths:
       tags:
         - groups.conversation
       summary: Delete conversation
-      description: Delete a conversation object.
+      description: Delete conversation.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/group-delete-conversation?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/conversation-delete?view=graph-rest-1.0
       operationId: group_DeleteConversation
       parameters:
         - name: group-id
@@ -39614,6 +39614,146 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/groups/{group-id}/team/channels/microsoft.graph.getAllRetainedMessages()':
+    get:
+      tags:
+        - groups.Functions
+      summary: Invoke function getAllRetainedMessages
+      operationId: group.team.channel_getAllRetainedMessage
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - attachments
+                - body
+                - channelIdentity
+                - chatId
+                - createdDateTime
+                - deletedDateTime
+                - etag
+                - eventDetail
+                - from
+                - importance
+                - lastEditedDateTime
+                - lastModifiedDateTime
+                - locale
+                - mentions
+                - messageHistory
+                - messageType
+                - onBehalfOf
+                - policyViolation
+                - reactions
+                - replyToId
+                - subject
+                - summary
+                - webUrl
+                - hostedContents
+                - replies
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - attachments
+                - attachments desc
+                - body
+                - body desc
+                - channelIdentity
+                - channelIdentity desc
+                - chatId
+                - chatId desc
+                - createdDateTime
+                - createdDateTime desc
+                - deletedDateTime
+                - deletedDateTime desc
+                - etag
+                - etag desc
+                - eventDetail
+                - eventDetail desc
+                - from
+                - from desc
+                - importance
+                - importance desc
+                - lastEditedDateTime
+                - lastEditedDateTime desc
+                - lastModifiedDateTime
+                - lastModifiedDateTime desc
+                - locale
+                - locale desc
+                - mentions
+                - mentions desc
+                - messageHistory
+                - messageHistory desc
+                - messageType
+                - messageType desc
+                - onBehalfOf
+                - onBehalfOf desc
+                - policyViolation
+                - policyViolation desc
+                - reactions
+                - reactions desc
+                - replyToId
+                - replyToId desc
+                - subject
+                - subject desc
+                - summary
+                - summary desc
+                - webUrl
+                - webUrl desc
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of chatMessage
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/groups/{group-id}/team/installedApps/{teamsAppInstallation-id}/microsoft.graph.upgrade':
     post:
       tags:
@@ -41137,11 +41277,11 @@ paths:
     get:
       tags:
         - groups.conversationThread
-      summary: Get conversationThread
-      description: "Get a specific thread that belongs to a group. You can specify both the parent conversation and the thread, or, \nyou can specify the thread without referencing the parent conversation. "
+      summary: Get conversation thread
+      description: Get a thread object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationthread-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/group-get-thread?view=graph-rest-1.0
       operationId: group_GetThread
       parameters:
         - name: group-id
@@ -41237,11 +41377,11 @@ paths:
     delete:
       tags:
         - groups.conversationThread
-      summary: Delete conversationThread
-      description: Delete conversationThread.
+      summary: Delete conversation thread
+      description: Delete a thread object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationthread-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/group-delete-thread?view=graph-rest-1.0
       operationId: group_DeleteThread
       parameters:
         - name: group-id
@@ -52606,6 +52746,9 @@ components:
       title: authenticationBehaviors
       type: object
       properties:
+        blockAzureADGraphAccess:
+          type: boolean
+          nullable: true
         removeUnverifiedEmailClaim:
           type: boolean
           description: Removes the email claim from tokens sent to an application when the email address's domain can't be verified.
@@ -53788,6 +53931,16 @@ components:
         lastSignInRequestId:
           type: string
           description: Request identifier of the last interactive sign-in performed by this user.
+          nullable: true
+        lastSuccessfulSignInDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The datetime of the user's most recent successful sign in activity.
+          format: date-time
+          nullable: true
+        lastSuccessfulSignInRequestId:
+          type: string
+          description: The requestID of the last successful signIn.
           nullable: true
       additionalProperties:
         type: object
@@ -57689,6 +57842,10 @@ components:
         - title: schedule
           type: object
           properties:
+            activitiesIncludedWhenCopyingShiftsEnabled:
+              type: boolean
+              description: Indicates whether copied shifts should include the activities.
+              nullable: true
             enabled:
               type: boolean
               description: Indicates whether the schedule is enabled for the team. Required.
@@ -57708,6 +57865,8 @@ components:
               description: Additional information about why schedule provisioning failed.
               nullable: true
               readOnly: true
+            startDayOfWeek:
+              $ref: '#/components/schemas/microsoft.graph.dayOfWeek'
             swapShiftsRequestsEnabled:
               type: boolean
               description: Indicates whether swap shifts requests are enabled for the schedule.
@@ -58092,11 +58251,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: 'Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn''t included in the response.'
           nullable: true
       additionalProperties:
         type: object
@@ -64786,8 +64945,20 @@ components:
               type: string
               description: ID for the scheduling group that the open shift belongs to.
               nullable: true
+            schedulingGroupName:
+              type: string
+              nullable: true
+              readOnly: true
             sharedOpenShift:
               $ref: '#/components/schemas/microsoft.graph.openShiftItem'
+            teamId:
+              type: string
+              nullable: true
+              readOnly: true
+            teamName:
+              type: string
+              nullable: true
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.schedulingGroup:
@@ -64796,6 +64967,10 @@ components:
         - title: schedulingGroup
           type: object
           properties:
+            code:
+              type: string
+              description: The code for the schedulingGroup to represent an external identifier.
+              nullable: true
             displayName:
               type: string
               description: The display name for the schedulingGroup. Required.
@@ -64854,6 +65029,10 @@ components:
         - title: timeOffReason
           type: object
           properties:
+            code:
+              type: string
+              description: The code of the timeOffReason to represent an external identifier.
+              nullable: true
             displayName:
               type: string
               description: The name of the timeOffReason. Required.

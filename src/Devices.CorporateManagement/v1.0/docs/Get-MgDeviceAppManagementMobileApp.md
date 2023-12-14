@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceAppManagementMobileApp
 
 ## SYNOPSIS
-Read properties and relationships of the macOSOfficeSuiteApp object.
+Read properties and relationships of the mobileLobApp object.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceAppManagementMobileApp -InputObject <IDevicesCorporateManagementIden
 ```
 
 ## DESCRIPTION
-Read properties and relationships of the macOSOfficeSuiteApp object.
+Read properties and relationships of the mobileLobApp object.
 
 ## EXAMPLES
 

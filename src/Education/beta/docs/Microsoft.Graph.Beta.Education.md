@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Education
-Module Guid: e5557746-dfc4-4d35-aeec-2e6ed9af8a61
+Module Guid: 8987c102-832f-4c96-ad6e-e2d6583a1f9d
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.education
 Help Version: 1.0.0.0
 Locale: en-US
@@ -550,6 +550,33 @@ This action can only be performed by a teacher on assigned assignments.
 ### [Invoke-MgBetaDeactivateEducationUserAssignment](Invoke-MgBetaDeactivateEducationUserAssignment.md)
 Mark an assigned educationAssignment as inactive to signal that the assignment has no further action items for teachers and students.
 This action can only be performed by a teacher on assigned assignments.
+
+### [Invoke-MgBetaExcuseEducationClassAssignmentSubmission](Invoke-MgBetaExcuseEducationClassAssignmentSubmission.md)
+Excuse a submission.
+Excused submissions aren't included in average grade calculations.
+Grading rubrics and feedback are deleted.
+Only teachers can perform this action.
+If the Prefer: include-unknown-enum-members request header is provided, the excused submission retains the excused status.
+Otherwise, the submission status changes to returned.
+For more information about how to use this header, see the Examples section.
+
+### [Invoke-MgBetaExcuseEducationMeAssignmentSubmission](Invoke-MgBetaExcuseEducationMeAssignmentSubmission.md)
+Excuse a submission.
+Excused submissions aren't included in average grade calculations.
+Grading rubrics and feedback are deleted.
+Only teachers can perform this action.
+If the Prefer: include-unknown-enum-members request header is provided, the excused submission retains the excused status.
+Otherwise, the submission status changes to returned.
+For more information about how to use this header, see the Examples section.
+
+### [Invoke-MgBetaExcuseEducationUserAssignmentSubmission](Invoke-MgBetaExcuseEducationUserAssignmentSubmission.md)
+Excuse a submission.
+Excused submissions aren't included in average grade calculations.
+Grading rubrics and feedback are deleted.
+Only teachers can perform this action.
+If the Prefer: include-unknown-enum-members request header is provided, the excused submission retains the excused status.
+Otherwise, the submission status changes to returned.
+For more information about how to use this header, see the Examples section.
 
 ### [Invoke-MgBetaPinEducationClassModule](Invoke-MgBetaPinEducationClassModule.md)
 Pin an educationModule in the class work list.

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgBetaExternalIndustryDataConnector
 
 ## SYNOPSIS
-Delete an industryDataConnector object.
+Delete an azureDataLakeConnector object.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgBetaExternalIndustryDataConnector -InputObject <ISearchIdentity> [-IfMa
 ```
 
 ## DESCRIPTION
-Delete an industryDataConnector object.
+Delete an azureDataLakeConnector object.
 
 ## EXAMPLES
 

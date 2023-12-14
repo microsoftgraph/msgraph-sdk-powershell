@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgBetaGroupThread
 
 ## SYNOPSIS
-Delete conversationThread.
+Delete a thread object.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgBetaGroupThread -InputObject <IGroupsIdentity> [-IfMatch <String>] [-Pa
 ```
 
 ## DESCRIPTION
-Delete conversationThread.
+Delete a thread object.
 
 ## EXAMPLES
 

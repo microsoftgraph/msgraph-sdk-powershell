@@ -28,6 +28,7 @@ paths:
                 - alerts
                 - alerts_v2
                 - attackSimulation
+                - auditLog
                 - cases
                 - cloudAppSecurityProfiles
                 - domainSecurityProfiles
@@ -63,6 +64,7 @@ paths:
                 - alerts
                 - alerts_v2
                 - attackSimulation
+                - auditLog
                 - cases
                 - cloudAppSecurityProfiles
                 - domainSecurityProfiles
@@ -4384,6 +4386,638 @@ paths:
         - security.attackSimulationRoot
       summary: Get the number of the resource
       operationId: security.attackSimulation.training_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /security/auditLog:
+    get:
+      tags:
+        - security.auditCoreRoot
+      summary: Get auditLog from security
+      operationId: security_GetAuditLog
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - queries
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - queries
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.auditCoreRoot'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - security.auditCoreRoot
+      summary: Update the navigation property auditLog in security
+      operationId: security_UpdateAuditLog
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.security.auditCoreRoot'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.auditCoreRoot'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - security.auditCoreRoot
+      summary: Delete navigation property auditLog for security
+      operationId: security_DeleteAuditLog
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /security/auditLog/queries:
+    get:
+      tags:
+        - security.auditCoreRoot
+      summary: Get queries from security
+      operationId: security.auditLog_ListQuery
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - administrativeUnitIdFilters
+                - administrativeUnitIdFilters desc
+                - displayName
+                - displayName desc
+                - filterEndDateTime
+                - filterEndDateTime desc
+                - filterStartDateTime
+                - filterStartDateTime desc
+                - ipAddressFilters
+                - ipAddressFilters desc
+                - keywordFilter
+                - keywordFilter desc
+                - objectIdFilters
+                - objectIdFilters desc
+                - operationFilters
+                - operationFilters desc
+                - recordTypeFilters
+                - recordTypeFilters desc
+                - serviceFilters
+                - serviceFilters desc
+                - status
+                - status desc
+                - userPrincipalNameFilters
+                - userPrincipalNameFilters desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - administrativeUnitIdFilters
+                - displayName
+                - filterEndDateTime
+                - filterStartDateTime
+                - ipAddressFilters
+                - keywordFilter
+                - objectIdFilters
+                - operationFilters
+                - recordTypeFilters
+                - serviceFilters
+                - status
+                - userPrincipalNameFilters
+                - records
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - records
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.security.auditLogQueryCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - security.auditCoreRoot
+      summary: Create new navigation property to queries for security
+      operationId: security.auditLog_CreateQuery
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.security.auditLogQuery'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.auditLogQuery'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/security/auditLog/queries/{auditLogQuery-id}':
+    get:
+      tags:
+        - security.auditCoreRoot
+      summary: Get queries from security
+      operationId: security.auditLog_GetQuery
+      parameters:
+        - name: auditLogQuery-id
+          in: path
+          description: The unique identifier of auditLogQuery
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: auditLogQuery
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - administrativeUnitIdFilters
+                - displayName
+                - filterEndDateTime
+                - filterStartDateTime
+                - ipAddressFilters
+                - keywordFilter
+                - objectIdFilters
+                - operationFilters
+                - recordTypeFilters
+                - serviceFilters
+                - status
+                - userPrincipalNameFilters
+                - records
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - records
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.auditLogQuery'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - security.auditCoreRoot
+      summary: Update the navigation property queries in security
+      operationId: security.auditLog_UpdateQuery
+      parameters:
+        - name: auditLogQuery-id
+          in: path
+          description: The unique identifier of auditLogQuery
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: auditLogQuery
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.security.auditLogQuery'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.auditLogQuery'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - security.auditCoreRoot
+      summary: Delete navigation property queries for security
+      operationId: security.auditLog_DeleteQuery
+      parameters:
+        - name: auditLogQuery-id
+          in: path
+          description: The unique identifier of auditLogQuery
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: auditLogQuery
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/security/auditLog/queries/{auditLogQuery-id}/records':
+    get:
+      tags:
+        - security.auditCoreRoot
+      summary: Get records from security
+      operationId: security.auditLog.query_ListRecord
+      parameters:
+        - name: auditLogQuery-id
+          in: path
+          description: The unique identifier of auditLogQuery
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: auditLogQuery
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - administrativeUnits
+                - administrativeUnits desc
+                - auditData
+                - auditData desc
+                - auditLogRecordType
+                - auditLogRecordType desc
+                - clientIp
+                - clientIp desc
+                - createdDateTime
+                - createdDateTime desc
+                - objectId
+                - objectId desc
+                - operation
+                - operation desc
+                - organizationId
+                - organizationId desc
+                - service
+                - service desc
+                - userId
+                - userId desc
+                - userPrincipalName
+                - userPrincipalName desc
+                - userType
+                - userType desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - administrativeUnits
+                - auditData
+                - auditLogRecordType
+                - clientIp
+                - createdDateTime
+                - objectId
+                - operation
+                - organizationId
+                - service
+                - userId
+                - userPrincipalName
+                - userType
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.security.auditLogRecordCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - security.auditCoreRoot
+      summary: Create new navigation property to records for security
+      operationId: security.auditLog.query_CreateRecord
+      parameters:
+        - name: auditLogQuery-id
+          in: path
+          description: The unique identifier of auditLogQuery
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: auditLogQuery
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.security.auditLogRecord'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.auditLogRecord'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/security/auditLog/queries/{auditLogQuery-id}/records/{auditLogRecord-id}':
+    get:
+      tags:
+        - security.auditCoreRoot
+      summary: Get records from security
+      operationId: security.auditLog.query_GetRecord
+      parameters:
+        - name: auditLogQuery-id
+          in: path
+          description: The unique identifier of auditLogQuery
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: auditLogQuery
+        - name: auditLogRecord-id
+          in: path
+          description: The unique identifier of auditLogRecord
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: auditLogRecord
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - administrativeUnits
+                - auditData
+                - auditLogRecordType
+                - clientIp
+                - createdDateTime
+                - objectId
+                - operation
+                - organizationId
+                - service
+                - userId
+                - userPrincipalName
+                - userType
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.auditLogRecord'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - security.auditCoreRoot
+      summary: Update the navigation property records in security
+      operationId: security.auditLog.query_UpdateRecord
+      parameters:
+        - name: auditLogQuery-id
+          in: path
+          description: The unique identifier of auditLogQuery
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: auditLogQuery
+        - name: auditLogRecord-id
+          in: path
+          description: The unique identifier of auditLogRecord
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: auditLogRecord
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.security.auditLogRecord'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.auditLogRecord'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - security.auditCoreRoot
+      summary: Delete navigation property records for security
+      operationId: security.auditLog.query_DeleteRecord
+      parameters:
+        - name: auditLogQuery-id
+          in: path
+          description: The unique identifier of auditLogQuery
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: auditLogQuery
+        - name: auditLogRecord-id
+          in: path
+          description: The unique identifier of auditLogRecord
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: auditLogRecord
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/security/auditLog/queries/{auditLogQuery-id}/records/$count':
+    get:
+      tags:
+        - security.auditCoreRoot
+      summary: Get the number of the resource
+      operationId: security.auditLog.query.record_GetCount
+      parameters:
+        - name: auditLogQuery-id
+          in: path
+          description: The unique identifier of auditLogQuery
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: auditLogQuery
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /security/auditLog/queries/$count:
+    get:
+      tags:
+        - security.auditCoreRoot
+      summary: Get the number of the resource
+      operationId: security.auditLog.query_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -34161,6 +34795,8 @@ components:
               x-ms-navigationProperty: true
             attackSimulation:
               $ref: '#/components/schemas/microsoft.graph.attackSimulationRoot'
+            auditLog:
+              $ref: '#/components/schemas/microsoft.graph.security.auditCoreRoot'
             cases:
               $ref: '#/components/schemas/microsoft.graph.security.casesRoot'
             cloudAppSecurityProfiles:
@@ -35211,6 +35847,129 @@ components:
               type: string
               description: Content locale for the training detail.
               nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.security.auditCoreRoot:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: auditCoreRoot
+          type: object
+          properties:
+            queries:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.security.auditLogQuery'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.security.auditLogQuery:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: auditLogQuery
+          type: object
+          properties:
+            administrativeUnitIdFilters:
+              type: array
+              items:
+                type: string
+                nullable: true
+            displayName:
+              type: string
+              nullable: true
+            filterEndDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            filterStartDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            ipAddressFilters:
+              type: array
+              items:
+                type: string
+                nullable: true
+            keywordFilter:
+              type: string
+              nullable: true
+            objectIdFilters:
+              type: array
+              items:
+                type: string
+                nullable: true
+            operationFilters:
+              type: array
+              items:
+                type: string
+                nullable: true
+            recordTypeFilters:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.security.auditLogRecordType'
+            serviceFilters:
+              type: array
+              items:
+                type: string
+                nullable: true
+            status:
+              $ref: '#/components/schemas/microsoft.graph.security.auditLogQueryStatus'
+            userPrincipalNameFilters:
+              type: array
+              items:
+                type: string
+                nullable: true
+            records:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.security.auditLogRecord'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.security.auditLogRecord:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: auditLogRecord
+          type: object
+          properties:
+            administrativeUnits:
+              type: array
+              items:
+                type: string
+                nullable: true
+            auditData:
+              $ref: '#/components/schemas/microsoft.graph.security.auditData'
+            auditLogRecordType:
+              $ref: '#/components/schemas/microsoft.graph.security.auditLogRecordType'
+            clientIp:
+              type: string
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            objectId:
+              type: string
+              nullable: true
+            operation:
+              type: string
+              nullable: true
+            organizationId:
+              type: string
+              nullable: true
+            service:
+              type: string
+              nullable: true
+            userId:
+              type: string
+              nullable: true
+            userPrincipalName:
+              type: string
+              nullable: true
+            userType:
+              $ref: '#/components/schemas/microsoft.graph.security.auditLogUserType'
           additionalProperties:
             type: object
     microsoft.graph.security.casesRoot:
@@ -40612,6 +41371,294 @@ components:
         - phishing
         - unknownFutureValue
       type: string
+    microsoft.graph.security.auditLogRecordType:
+      title: auditLogRecordType
+      enum:
+        - ExchangeAdmin
+        - ExchangeItem
+        - ExchangeItemGroup
+        - SharePoint
+        - SyntheticProbe
+        - SharePointFileOperation
+        - OneDrive
+        - AzureActiveDirectory
+        - AzureActiveDirectoryAccountLogon
+        - DataCenterSecurityCmdlet
+        - ComplianceDLPSharePoint
+        - Sway
+        - ComplianceDLPExchange
+        - SharePointSharingOperation
+        - AzureActiveDirectoryStsLogon
+        - SkypeForBusinessPSTNUsage
+        - SkypeForBusinessUsersBlocked
+        - SecurityComplianceCenterEOPCmdlet
+        - ExchangeAggregatedOperation
+        - PowerBIAudit
+        - CRM
+        - Yammer
+        - SkypeForBusinessCmdlets
+        - Discovery
+        - MicrosoftTeams
+        - ThreatIntelligence
+        - MailSubmission
+        - MicrosoftFlow
+        - AeD
+        - MicrosoftStream
+        - ComplianceDLPSharePointClassification
+        - ThreatFinder
+        - Project
+        - SharePointListOperation
+        - SharePointCommentOperation
+        - DataGovernance
+        - Kaizala
+        - SecurityComplianceAlerts
+        - ThreatIntelligenceUrl
+        - SecurityComplianceInsights
+        - MIPLabel
+        - WorkplaceAnalytics
+        - PowerAppsApp
+        - PowerAppsPlan
+        - ThreatIntelligenceAtpContent
+        - LabelContentExplorer
+        - TeamsHealthcare
+        - ExchangeItemAggregated
+        - HygieneEvent
+        - DataInsightsRestApiAudit
+        - InformationBarrierPolicyApplication
+        - SharePointListItemOperation
+        - SharePointContentTypeOperation
+        - SharePointFieldOperation
+        - MicrosoftTeamsAdmin
+        - HRSignal
+        - MicrosoftTeamsDevice
+        - MicrosoftTeamsAnalytics
+        - InformationWorkerProtection
+        - Campaign
+        - DLPEndpoint
+        - AirInvestigation
+        - Quarantine
+        - MicrosoftForms
+        - ApplicationAudit
+        - ComplianceSupervisionExchange
+        - CustomerKeyServiceEncryption
+        - OfficeNative
+        - MipAutoLabelSharePointItem
+        - MipAutoLabelSharePointPolicyLocation
+        - MicrosoftTeamsShifts
+        - SecureScore
+        - MipAutoLabelExchangeItem
+        - CortanaBriefing
+        - Search
+        - WDATPAlerts
+        - PowerPlatformAdminDlp
+        - PowerPlatformAdminEnvironment
+        - MDATPAudit
+        - SensitivityLabelPolicyMatch
+        - SensitivityLabelAction
+        - SensitivityLabeledFileAction
+        - AttackSim
+        - AirManualInvestigation
+        - SecurityComplianceRBAC
+        - UserTraining
+        - AirAdminActionInvestigation
+        - MSTIC
+        - PhysicalBadgingSignal
+        - TeamsEasyApprovals
+        - AipDiscover
+        - AipSensitivityLabelAction
+        - AipProtectionAction
+        - AipFileDeleted
+        - AipHeartBeat
+        - MCASAlerts
+        - OnPremisesFileShareScannerDlp
+        - OnPremisesSharePointScannerDlp
+        - ExchangeSearch
+        - SharePointSearch
+        - PrivacyDataMinimization
+        - LabelAnalyticsAggregate
+        - MyAnalyticsSettings
+        - SecurityComplianceUserChange
+        - ComplianceDLPExchangeClassification
+        - ComplianceDLPEndpoint
+        - MipExactDataMatch
+        - MSDEResponseActions
+        - MSDEGeneralSettings
+        - MSDEIndicatorsSettings
+        - MS365DCustomDetection
+        - MSDERolesSettings
+        - MAPGAlerts
+        - MAPGPolicy
+        - MAPGRemediation
+        - PrivacyRemediationAction
+        - PrivacyDigestEmail
+        - MipAutoLabelSimulationProgress
+        - MipAutoLabelSimulationCompletion
+        - MipAutoLabelProgressFeedback
+        - DlpSensitiveInformationType
+        - MipAutoLabelSimulationStatistics
+        - LargeContentMetadata
+        - Microsoft365Group
+        - CDPMlInferencingResult
+        - FilteringMailMetadata
+        - CDPClassificationMailItem
+        - CDPClassificationDocument
+        - OfficeScriptsRunAction
+        - FilteringPostMailDeliveryAction
+        - CDPUnifiedFeedback
+        - TenantAllowBlockList
+        - ConsumptionResource
+        - HealthcareSignal
+        - DlpImportResult
+        - CDPCompliancePolicyExecution
+        - MultiStageDisposition
+        - PrivacyDataMatch
+        - FilteringDocMetadata
+        - FilteringEmailFeatures
+        - PowerBIDlp
+        - FilteringUrlInfo
+        - FilteringAttachmentInfo
+        - CoreReportingSettings
+        - ComplianceConnector
+        - PowerPlatformLockboxResourceAccessRequest
+        - PowerPlatformLockboxResourceCommand
+        - CDPPredictiveCodingLabel
+        - CDPCompliancePolicyUserFeedback
+        - WebpageActivityEndpoint
+        - OMEPortal
+        - CMImprovementActionChange
+        - FilteringUrlClick
+        - MipLabelAnalyticsAuditRecord
+        - FilteringEntityEvent
+        - FilteringRuleHits
+        - FilteringMailSubmission
+        - LabelExplorer
+        - MicrosoftManagedServicePlatform
+        - PowerPlatformServiceActivity
+        - ScorePlatformGenericAuditRecord
+        - FilteringTimeTravelDocMetadata
+        - Alert
+        - AlertStatus
+        - AlertIncident
+        - IncidentStatus
+        - Case
+        - CaseInvestigation
+        - RecordsManagement
+        - PrivacyRemediation
+        - DataShareOperation
+        - CdpDlpSensitive
+        - EHRConnector
+        - FilteringMailGradingResult
+        - PublicFolder
+        - PrivacyTenantAuditHistoryRecord
+        - AipScannerDiscoverEvent
+        - EduDataLakeDownloadOperation
+        - M365ComplianceConnector
+        - MicrosoftGraphDataConnectOperation
+        - MicrosoftPurview
+        - FilteringEmailContentFeatures
+        - PowerPagesSite
+        - PowerAppsResource
+        - PlannerPlan
+        - PlannerCopyPlan
+        - PlannerTask
+        - PlannerRoster
+        - PlannerPlanList
+        - PlannerTaskList
+        - PlannerTenantSettings
+        - ProjectForTheWebProject
+        - ProjectForTheWebTask
+        - ProjectForTheWebRoadmap
+        - ProjectForTheWebRoadmapItem
+        - ProjectForTheWebProjectSettings
+        - ProjectForTheWebRoadmapSettings
+        - QuarantineMetadata
+        - MicrosoftTodoAudit
+        - TimeTravelFilteringDocMetadata
+        - TeamsQuarantineMetadata
+        - SharePointAppPermissionOperation
+        - MicrosoftTeamsSensitivityLabelAction
+        - FilteringTeamsMetadata
+        - FilteringTeamsUrlInfo
+        - FilteringTeamsPostDeliveryAction
+        - MDCAssessments
+        - MDCRegulatoryComplianceStandards
+        - MDCRegulatoryComplianceControls
+        - MDCRegulatoryComplianceAssessments
+        - MDCSecurityConnectors
+        - MDADataSecuritySignal
+        - VivaGoals
+        - FilteringRuntimeInfo
+        - AttackSimAdmin
+        - MicrosoftGraphDataConnectConsent
+        - FilteringAtpDetonationInfo
+        - PrivacyPortal
+        - ManagedTenants
+        - UnifiedSimulationMatchedItem
+        - UnifiedSimulationSummary
+        - UpdateQuarantineMetadata
+        - MS365DSuppressionRule
+        - PurviewDataMapOperation
+        - FilteringUrlPostClickAction
+        - IrmUserDefinedDetectionSignal
+        - TeamsUpdates
+        - PlannerRosterSensitivityLabel
+        - MS365DIncident
+        - FilteringDelistingMetadata
+        - ComplianceDLPSharePointClassificationExtended
+        - MicrosoftDefenderForIdentityAudit
+        - SupervisoryReviewDayXInsight
+        - DefenderExpertsforXDRAdmin
+        - CDPEdgeBlockedMessage
+        - HostedRpa
+        - CdpContentExplorerAggregateRecord
+        - CDPHygieneAttachmentInfo
+        - CDPHygieneSummary
+        - CDPPostMailDeliveryAction
+        - CDPEmailFeatures
+        - CDPHygieneUrlInfo
+        - CDPUrlClick
+        - CDPPackageManagerHygieneEvent
+        - FilteringDocScan
+        - TimeTravelFilteringDocScan
+        - MAPGOnboard
+        - VfamCreatePolicy
+        - VfamUpdatePolicy
+        - VfamDeletePolicy
+        - M365DAAD
+        - CdpColdCrawlStatus
+        - unknownFutureValue
+      type: string
+    microsoft.graph.security.auditLogQueryStatus:
+      title: auditLogQueryStatus
+      enum:
+        - notStarted
+        - running
+        - succeeded
+        - failed
+        - cancelled
+        - unknownFutureValue
+      type: string
+    microsoft.graph.security.auditData:
+      title: auditData
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.security.auditLogUserType:
+      title: auditLogUserType
+      enum:
+        - Regular
+        - Reserved
+        - Admin
+        - DcAdmin
+        - System
+        - Application
+        - ServicePrincipal
+        - CustomPolicy
+        - SystemPolicy
+        - PartnerTechnician
+        - Guest
+        - unknownFutureValue
+      type: string
     microsoft.graph.security.case:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -42718,11 +43765,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: 'Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn''t included in the response.'
           nullable: true
       additionalProperties:
         type: object
@@ -43156,6 +44203,16 @@ components:
         lastSignInRequestId:
           type: string
           description: Request identifier of the last interactive sign-in performed by this user.
+          nullable: true
+        lastSuccessfulSignInDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The datetime of the user's most recent successful sign in activity.
+          format: date-time
+          nullable: true
+        lastSuccessfulSignInRequestId:
+          type: string
+          description: The requestID of the last successful signIn.
           nullable: true
       additionalProperties:
         type: object
@@ -46283,6 +47340,10 @@ components:
         - title: schedule
           type: object
           properties:
+            activitiesIncludedWhenCopyingShiftsEnabled:
+              type: boolean
+              description: Indicates whether copied shifts should include the activities.
+              nullable: true
             enabled:
               type: boolean
               description: Indicates whether the schedule is enabled for the team. Required.
@@ -46302,6 +47363,8 @@ components:
               description: Additional information about why schedule provisioning failed.
               nullable: true
               readOnly: true
+            startDayOfWeek:
+              $ref: '#/components/schemas/microsoft.graph.dayOfWeek'
             swapShiftsRequestsEnabled:
               type: boolean
               description: Indicates whether swap shifts requests are enabled for the schedule.
@@ -47196,6 +48259,32 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.trainingLanguageDetail'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.security.auditLogQueryCollectionResponse:
+      title: Collection of auditLogQuery
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.security.auditLogQuery'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.security.auditLogRecordCollectionResponse:
+      title: Collection of auditLogRecord
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.security.auditLogRecord'
         '@odata.nextLink':
           type: string
           nullable: true
@@ -55618,8 +56707,20 @@ components:
               type: string
               description: ID for the scheduling group that the open shift belongs to.
               nullable: true
+            schedulingGroupName:
+              type: string
+              nullable: true
+              readOnly: true
             sharedOpenShift:
               $ref: '#/components/schemas/microsoft.graph.openShiftItem'
+            teamId:
+              type: string
+              nullable: true
+              readOnly: true
+            teamName:
+              type: string
+              nullable: true
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.schedulingGroup:
@@ -55628,6 +56729,10 @@ components:
         - title: schedulingGroup
           type: object
           properties:
+            code:
+              type: string
+              description: The code for the schedulingGroup to represent an external identifier.
+              nullable: true
             displayName:
               type: string
               description: The display name for the schedulingGroup. Required.
@@ -55715,6 +56820,10 @@ components:
         - title: timeOffReason
           type: object
           properties:
+            code:
+              type: string
+              description: The code of the timeOffReason to represent an external identifier.
+              nullable: true
             displayName:
               type: string
               description: The name of the timeOffReason. Required.
@@ -67274,6 +68383,18 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.trainingLanguageDetailCollectionResponse'
+    microsoft.graph.security.auditLogQueryCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.security.auditLogQueryCollectionResponse'
+    microsoft.graph.security.auditLogRecordCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.security.auditLogRecordCollectionResponse'
     microsoft.graph.security.ediscoveryCaseCollectionResponse:
       description: Retrieved collection
       content:

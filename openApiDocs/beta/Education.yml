@@ -2826,6 +2826,10 @@ paths:
               enum:
                 - id
                 - id desc
+                - excusedBy
+                - excusedBy desc
+                - excusedDateTime
+                - excusedDateTime desc
                 - reassignedBy
                 - reassignedBy desc
                 - reassignedDateTime
@@ -2862,6 +2866,8 @@ paths:
             items:
               enum:
                 - id
+                - excusedBy
+                - excusedDateTime
                 - reassignedBy
                 - reassignedDateTime
                 - recipient
@@ -2987,6 +2993,8 @@ paths:
             items:
               enum:
                 - id
+                - excusedBy
+                - excusedDateTime
                 - reassignedBy
                 - reassignedDateTime
                 - recipient
@@ -3117,6 +3125,51 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/microsoft.graph.excuse':
+    post:
+      tags:
+        - education.Actions
+      summary: Invoke action excuse
+      description: 'Excuse a submission. Excused submissions aren''t included in average grade calculations. Grading rubrics and feedback are deleted. Only teachers can perform this action.  If the Prefer: include-unknown-enum-members request header is provided, the excused submission retains the excused status. Otherwise, the submission status changes to returned. For more information about how to use this header, see the Examples section.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/educationsubmission-excuse?view=graph-rest-1.0
+      operationId: education.class.assignment.submission_excuse
+      parameters:
+        - name: educationClass-id
+          in: path
+          description: The unique identifier of educationClass
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationClass
+        - name: educationAssignment-id
+          in: path
+          description: The unique identifier of educationAssignment
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationAssignment
+        - name: educationSubmission-id
+          in: path
+          description: The unique identifier of educationSubmission
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationSubmission
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationSubmission'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/microsoft.graph.reassign':
     post:
       tags:
@@ -9771,6 +9824,10 @@ paths:
               enum:
                 - id
                 - id desc
+                - excusedBy
+                - excusedBy desc
+                - excusedDateTime
+                - excusedDateTime desc
                 - reassignedBy
                 - reassignedBy desc
                 - reassignedDateTime
@@ -9807,6 +9864,8 @@ paths:
             items:
               enum:
                 - id
+                - excusedBy
+                - excusedDateTime
                 - reassignedBy
                 - reassignedDateTime
                 - recipient
@@ -9916,6 +9975,8 @@ paths:
             items:
               enum:
                 - id
+                - excusedBy
+                - excusedDateTime
                 - reassignedBy
                 - reassignedDateTime
                 - recipient
@@ -10030,6 +10091,43 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/education/me/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/microsoft.graph.excuse':
+    post:
+      tags:
+        - education.Actions
+      summary: Invoke action excuse
+      description: 'Excuse a submission. Excused submissions aren''t included in average grade calculations. Grading rubrics and feedback are deleted. Only teachers can perform this action.  If the Prefer: include-unknown-enum-members request header is provided, the excused submission retains the excused status. Otherwise, the submission status changes to returned. For more information about how to use this header, see the Examples section.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/educationsubmission-excuse?view=graph-rest-1.0
+      operationId: education.me.assignment.submission_excuse
+      parameters:
+        - name: educationAssignment-id
+          in: path
+          description: The unique identifier of educationAssignment
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationAssignment
+        - name: educationSubmission-id
+          in: path
+          description: The unique identifier of educationSubmission
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationSubmission
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationSubmission'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/education/me/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/microsoft.graph.reassign':
     post:
       tags:
@@ -17641,6 +17739,10 @@ paths:
               enum:
                 - id
                 - id desc
+                - excusedBy
+                - excusedBy desc
+                - excusedDateTime
+                - excusedDateTime desc
                 - reassignedBy
                 - reassignedBy desc
                 - reassignedDateTime
@@ -17677,6 +17779,8 @@ paths:
             items:
               enum:
                 - id
+                - excusedBy
+                - excusedDateTime
                 - reassignedBy
                 - reassignedDateTime
                 - recipient
@@ -17802,6 +17906,8 @@ paths:
             items:
               enum:
                 - id
+                - excusedBy
+                - excusedDateTime
                 - reassignedBy
                 - reassignedDateTime
                 - recipient
@@ -17932,6 +18038,51 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/education/users/{educationUser-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/microsoft.graph.excuse':
+    post:
+      tags:
+        - education.Actions
+      summary: Invoke action excuse
+      description: 'Excuse a submission. Excused submissions aren''t included in average grade calculations. Grading rubrics and feedback are deleted. Only teachers can perform this action.  If the Prefer: include-unknown-enum-members request header is provided, the excused submission retains the excused status. Otherwise, the submission status changes to returned. For more information about how to use this header, see the Examples section.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/educationsubmission-excuse?view=graph-rest-1.0
+      operationId: education.user.assignment.submission_excuse
+      parameters:
+        - name: educationUser-id
+          in: path
+          description: The unique identifier of educationUser
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationUser
+        - name: educationAssignment-id
+          in: path
+          description: The unique identifier of educationAssignment
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationAssignment
+        - name: educationSubmission-id
+          in: path
+          description: The unique identifier of educationSubmission
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationSubmission
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationSubmission'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/education/users/{educationUser-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/microsoft.graph.reassign':
     post:
       tags:
@@ -22255,6 +22406,14 @@ components:
         - title: educationSubmission
           type: object
           properties:
+            excusedBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            excusedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+              readOnly: true
             reassignedBy:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
             reassignedDateTime:
@@ -24112,6 +24271,7 @@ components:
         - returned
         - unknownFutureValue
         - reassigned
+        - excused
       type: string
     microsoft.graph.directoryObject:
       allOf:
@@ -25536,6 +25696,16 @@ components:
         lastSignInRequestId:
           type: string
           description: Request identifier of the last interactive sign-in performed by this user.
+          nullable: true
+        lastSuccessfulSignInDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The datetime of the user's most recent successful sign in activity.
+          format: date-time
+          nullable: true
+        lastSuccessfulSignInRequestId:
+          type: string
+          description: The requestID of the last successful signIn.
           nullable: true
       additionalProperties:
         type: object
@@ -28695,11 +28865,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: 'Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn''t included in the response.'
           nullable: true
       additionalProperties:
         type: object
@@ -30281,6 +30451,10 @@ components:
         - title: schedule
           type: object
           properties:
+            activitiesIncludedWhenCopyingShiftsEnabled:
+              type: boolean
+              description: Indicates whether copied shifts should include the activities.
+              nullable: true
             enabled:
               type: boolean
               description: Indicates whether the schedule is enabled for the team. Required.
@@ -30300,6 +30474,8 @@ components:
               description: Additional information about why schedule provisioning failed.
               nullable: true
               readOnly: true
+            startDayOfWeek:
+              $ref: '#/components/schemas/microsoft.graph.dayOfWeek'
             swapShiftsRequestsEnabled:
               type: boolean
               description: Indicates whether swap shifts requests are enabled for the schedule.
@@ -31988,10 +32164,10 @@ components:
       properties:
         name:
           type: string
-          description: 'Name for this key-value pair. For more information about possible names for each resource type that uses this configuration, see keyValuePair names and values.'
+          description: Name for this key-value pair
         value:
           type: string
-          description: 'Value for this key-value pair. For more information about possible values for each resource type that uses this configuration, see keyValuePair names and values.'
+          description: Value for this key-value pair
           nullable: true
       additionalProperties:
         type: object
@@ -37959,8 +38135,20 @@ components:
               type: string
               description: ID for the scheduling group that the open shift belongs to.
               nullable: true
+            schedulingGroupName:
+              type: string
+              nullable: true
+              readOnly: true
             sharedOpenShift:
               $ref: '#/components/schemas/microsoft.graph.openShiftItem'
+            teamId:
+              type: string
+              nullable: true
+              readOnly: true
+            teamName:
+              type: string
+              nullable: true
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.schedulingGroup:
@@ -37969,6 +38157,10 @@ components:
         - title: schedulingGroup
           type: object
           properties:
+            code:
+              type: string
+              description: The code for the schedulingGroup to represent an external identifier.
+              nullable: true
             displayName:
               type: string
               description: The display name for the schedulingGroup. Required.
@@ -38056,6 +38248,10 @@ components:
         - title: timeOffReason
           type: object
           properties:
+            code:
+              type: string
+              description: The code of the timeOffReason to represent an external identifier.
+              nullable: true
             displayName:
               type: string
               description: The name of the timeOffReason. Required.
@@ -38309,11 +38505,11 @@ components:
       properties:
         key:
           type: string
-          description: Contains the name of the field that a value is associated with.
+          description: Key.
           nullable: true
         value:
           type: string
-          description: Contains the corresponding value for the specified key.
+          description: Value.
           nullable: true
       additionalProperties:
         type: object

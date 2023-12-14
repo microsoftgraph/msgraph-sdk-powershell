@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgBetaTeamChannelMessage
 
 ## SYNOPSIS
-Send a new chatMessage in the specified channel.
+Send a new chatMessage in the specified channel or a chat.
 
 ## SYNTAX
 
@@ -57,7 +57,7 @@ New-MgBetaTeamChannelMessage -InputObject <ITeamsIdentity> [-AdditionalPropertie
 ```
 
 ## DESCRIPTION
-Send a new chatMessage in the specified channel.
+Send a new chatMessage in the specified channel or a chat.
 
 ## EXAMPLES
 

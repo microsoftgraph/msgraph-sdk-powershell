@@ -293,6 +293,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[ArticleId <String>]`: The unique identifier of article
   - `[ArticleIndicatorId <String>]`: The unique identifier of articleIndicator
   - `[AttackSimulationOperationId <String>]`: The unique identifier of attackSimulationOperation
+  - `[AuditLogQueryId <String>]`: The unique identifier of auditLogQuery
+  - `[AuditLogRecordId <String>]`: The unique identifier of auditLogRecord
   - `[AuthoredNoteId <String>]`: The unique identifier of authoredNote
   - `[AuthorityTemplateId <String>]`: The unique identifier of authorityTemplate
   - `[CaseOperationId <String>]`: The unique identifier of caseOperation
