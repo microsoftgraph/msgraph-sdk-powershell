@@ -61,13 +61,16 @@ $ApiVersion | ForEach-Object {
             # Remove FQN in action/function names.
             if ($Uri -match $ActionFunctionFQNPattern) {
                 $MatchedUriSegment = $Matches.0
+                $SegmentBuilder = ""
                 # Trim nested namespace segments.
-                $NestedNamespaceSegments = $Matches.1 -split "\."
-                # Remove trailing '()' from functions.
-                $LastSegment = $NestedNamespaceSegments[-1] -replace "\(\)", ""
-                $Uri = $Uri -replace [Regex]::Escape($MatchedUriSegment), "/$LastSegment"
+                $NestedNamespaceSegments = $Matches.1 -split "/"
+                # Remove microsoft.graph prefix and remove trailing '()' from functions.
+                foreach($segment in $NestedNamespaceSegments){
+                    $segment = $segment.Replace("microsoft.graph.","").Replace("()", "")
+                    $SegmentBuilder += "/$segment"
+                }
+                $Uri = $Uri -replace [Regex]::Escape($MatchedUriSegment), $SegmentBuilder
             }
-
             $MappingValue = @{
                 Command     = $CommandName
                 Variants    = [System.Collections.ArrayList]@($VariantName)
