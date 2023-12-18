@@ -58,7 +58,7 @@ $ApiVersion | ForEach-Object {
             $Method = $Matches.2
             $Uri = $Matches.3
 
-            # Remove FQN in action/function names.
+            # Remove FQN in paths.
             if ($Uri -match $ActionFunctionFQNPattern) {
                 $MatchedUriSegment = $Matches.0
                 $SegmentBuilder = ""
