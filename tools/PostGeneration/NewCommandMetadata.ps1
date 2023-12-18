@@ -64,10 +64,13 @@ $ApiVersion | ForEach-Object {
                 $SegmentBuilder = ""
                 # Trim nested namespace segments.
                 $NestedNamespaceSegments = $Matches.1 -split "/"
-                # Remove microsoft.graph prefix and remove trailing '()' from functions.
-                foreach($segment in $NestedNamespaceSegments){
-                    $segment = $segment.Replace("microsoft.graph.","").Replace("()", "")
-                    $SegmentBuilder += "/$segment"
+                foreach($Segment in $NestedNamespaceSegments){
+                    # Remove microsoft.graph prefix and trailing '()' from functions.
+                    $Segment = $segment.Replace("microsoft.graph.","").Replace("()", "")
+                    # Get resource object name from segment if it exists. e.g get 'updateAudience' from windowsUpdates.updateAudience
+                    $ResourceObj = $Segment.Split(".")
+                    $Segment = $ResourceObj.Count -gt 1 ? $ResourceObj[$ResourceObj.Count-1] : $Segment       
+                    $SegmentBuilder += "/$Segment"
                 }
                 $Uri = $Uri -replace [Regex]::Escape($MatchedUriSegment), $SegmentBuilder
             }
