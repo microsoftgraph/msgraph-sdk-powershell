@@ -114,7 +114,7 @@ function GraphUri_RemoveNamespaceFromActionFunction {
             $Segment = $segment.Replace("microsoft.graph.","").Replace("()", "")
             # Get resource object name from segment if it exists. e.g get 'updateAudience' from windowsUpdates.updateAudience
             $ResourceObj = $Segment.Split(".")
-            $Segment = $ResourceObj.Count -gt 1 ? $ResourceObj[$ResourceObj.Count-1] : $Segment       
+            $Segment = $ResourceObj[$ResourceObj.Count-1]
             $SegmentBuilder += "/$Segment"
         }
         $NewUri = $Uri -replace [Regex]::Escape($MatchedUriSegment), $SegmentBuilder
