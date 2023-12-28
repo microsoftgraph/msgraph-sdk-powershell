@@ -1,19 +1,21 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <Import Project="$(MSBuildThisFileDirectory)..\..\..\Repo.props" />
   <PropertyGroup>
     <LangVersion>9.0</LangVersion>
     <TargetFrameworks>netstandard2.0;net6.0;net472</TargetFrameworks>
     <RootNamespace>Microsoft.Graph.PowerShell.Authentication.Core</RootNamespace>
-    <Version>2.18.0</Version>
+    <Version>2.12.0</Version>
   </PropertyGroup>
   <PropertyGroup>
     <EnableNETAnalyzers>true</EnableNETAnalyzers>
     <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Azure.Identity" Version="1.11.4" />
-    <PackageReference Include="Azure.Identity.Broker" Version="1.1.0" />
-    <PackageReference Include="Microsoft.Graph.Core" Version="3.1.13" />
+    <PackageReference Include="Azure.Identity" Version="1.12.0-beta.3" />
+    <PackageReference Include="Azure.Identity.Broker" Version="1.2.0-beta.1" />
+    <PackageReference Include="Microsoft.Graph.Core" Version="3.1.12" />
+    <PackageReference Include="Microsoft.Identity.Client" Version="4.61.3" />
+    <PackageReference Include="Microsoft.Identity.Client.Broker" Version="4.61.3" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
   <Target Name="CopyFiles" AfterTargets="Build">
