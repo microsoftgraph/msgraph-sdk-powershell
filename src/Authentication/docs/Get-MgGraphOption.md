@@ -1,7 +1,7 @@
 ﻿---
 external help file: Microsoft.Graph.Authentication.dll-Help.xml
 Module Name: Microsoft.Graph.Authentication
-online version: https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.authentication/get-mgenvironment
+online version: https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.authentication/get-mggraphoption
 schema: 2.0.0
 ---
 
