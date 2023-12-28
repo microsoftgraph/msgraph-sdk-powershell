@@ -112,6 +112,24 @@ When using `-AccessToken`, we won't have access to the refresh token and the cli
 
 Before using the provided `-AccessToken` to get Microsoft Graph resources, customers should ensure that the access token has the necessary scopes/ permissions needed to access/modify a resource.
 
+### Access Token Proof of Possession (AT PoP)
+
+AT PoP is a security mechanism that binds an access token to a cryptographic key that only the intended recipient has. This prevents unauthorized use of the token by malicious actors. AT PoP enhances data protection, reduces token replay attacks, and enables fine-grained authorization policies.
+
+Microsoft Graph PowerShell module supports AT PoP in the following scenario:
+
+- To enable AT PoP on supported devices
+
+```PowerShell
+Set-MgGraphOption -EnableATPoP $true
+```
+
+- To disable AT PoP on supported devices
+
+```PowerShell
+Set-MgGraphOption -EnableATPoP $false
+```
+
 ## Web Account Manager (WAM)
 
 WAM is a Windows 10+ component that acts as an authentication broker allowing the users of an app benefit from integration with accounts known to Windows, such as the account already signed into an active Windows session.
