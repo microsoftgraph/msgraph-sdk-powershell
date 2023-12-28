@@ -9,14 +9,14 @@ Describe "Set-MgGraphOption" {
         Import-Module $ModulePath -Force -ErrorAction SilentlyContinue
     }
     Context "When executing the command" {
-        it 'Should have one ParameterSets' {
+        it 'Should have two ParameterSets' {
             $SetMgGraphOptionCommand = Get-Command Set-MgGraphOption
             $SetMgGraphOptionCommand | Should -Not -BeNullOrEmpty
             $SetMgGraphOptionCommand.ParameterSets | Should -HaveCount 1
             $SetMgGraphOptionCommand.ParameterSets.Parameters | Should -HaveCount 13 # PS common parameters.
         }
     
-        It 'Executes successfully whren toggling WAM on' {
+        It 'Executes successfully when toggling WAM on' {
             { Set-MgGraphOption -EnableLoginByWAM $true -Debug | Out-Null } | Should -Not -Be $null
             { Set-MgGraphOption -EnableLoginByWAM $true -ErrorAction SilentlyContinue } | Should -Not -Throw
         }
@@ -24,6 +24,16 @@ Describe "Set-MgGraphOption" {
         It 'Executes successfully when toggling WAM off' {
             { Set-MgGraphOption -EnableLoginByWAM $false -Debug | Out-Null } | Should -Not -Be $null
             { Set-MgGraphOption -EnableLoginByWAM $false -ErrorAction SilentlyContinue } | Should -Not -Throw
+        }
+
+        It 'Executes successfully when toggling AT PoP on' {
+            { Set-MgGraphOption -EnableATPoP $true -Debug | Out-Null } | Should -Not -Be $null
+            { Set-MgGraphOption -EnableATPoP $true -ErrorAction SilentlyContinue } | Should -Not -Throw
+        }
+
+        It 'Executes successfully when toggling AT PoP off' {
+            { Set-MgGraphOption -EnableATPoP $false -Debug | Out-Null } | Should -Not -Be $null
+            { Set-MgGraphOption -EnableATPoP $false -ErrorAction SilentlyContinue } | Should -Not -Throw
         }
     }
 }
