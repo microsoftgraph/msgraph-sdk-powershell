@@ -9,6 +9,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
     internal class GraphOption : IGraphOption
     {
         public bool EnableWAMForMSGraph { get; set; }
+        public bool EnableATPoPForMSGraph { get; set; }
     }
 
 }
