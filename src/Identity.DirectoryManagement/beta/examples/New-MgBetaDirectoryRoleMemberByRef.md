@@ -1,4 +1,4 @@
-### Example 1: Add a member to a diretory role
+### Example 1: Add a member to a directory role
 
 ```powershell
 $DirObject = @{
