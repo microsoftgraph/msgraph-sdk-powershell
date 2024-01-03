@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+    <assembly>
+        <name>Azure.Identity.Broker</name>
+    </assembly>
+    <members>
+        <member name="T:Azure.Identity.Broker.InteractiveBrowserCredentialBrokerOptions">
+            <summary>
+            Options to configure the <see cref="T:Azure.Identity.InteractiveBrowserCredential" /> to use the system authentication broker in lieu of an embedded web view or the system browser.
+            </summary>
+        </member>
+        <member name="P:Azure.Identity.Broker.InteractiveBrowserCredentialBrokerOptions.IsLegacyMsaPassthroughEnabled">
+            <summary>
+            Gets or sets whether Microsoft Account (MSA) passthrough is enabled.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Azure.Identity.Broker.InteractiveBrowserCredentialBrokerOptions.IsProofOfPossessionRequired">
+            <summary>
+            Gets or sets whether proof of possession is required.
+            </summary>
+        </member>
+        <member name="P:Azure.Identity.Broker.InteractiveBrowserCredentialBrokerOptions.UseOperatingSystemAccount">
+            <summary>
+            Authenticate with the currently signed in user instead of prompting the user with a login dialog.
+            </summary>
+        </member>
+        <member name="M:Azure.Identity.Broker.InteractiveBrowserCredentialBrokerOptions.#ctor(System.IntPtr)">
+            <summary>
+            Creates a new instance of <see cref="T:Azure.Identity.Broker.InteractiveBrowserCredentialBrokerOptions" /> to configure a <see cref="T:Azure.Identity.InteractiveBrowserCredential" />.
+            </summary>
+            <param name="parentWindowHandle">Handle of the parent window the system authentication broker should be docked to.</param>
+        </member>
+        <member name="T:Azure.Identity.Broker.SharedTokenCacheCredentialBrokerOptions">
+            <summary>
+            Options to configure the <see cref="T:Azure.Identity.SharedTokenCacheCredential" /> to use the system authentication broker for silent authentication if available.
+            </summary>
+        </member>
+        <member name="P:Azure.Identity.Broker.SharedTokenCacheCredentialBrokerOptions.IsLegacyMsaPassthroughEnabled">
+            <summary>
+            Gets or sets whether Microsoft Account (MSA) passthrough is enabled.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Azure.Identity.Broker.SharedTokenCacheCredentialBrokerOptions.IsProofOfPossessionRequired">
+            <summary>
+            Gets or sets whether proof of possession is required.
+            </summary>
+        </member>
+        <member name="P:Azure.Identity.Broker.SharedTokenCacheCredentialBrokerOptions.UseOperatingSystemAccount">
+            <summary>
+            Authenticate with the currently signed in user instead of prompting the user with a login dialog.
+            </summary>
+        </member>
+        <member name="M:Azure.Identity.Broker.SharedTokenCacheCredentialBrokerOptions.#ctor">
+            <summary>
+            Initializes a new instance of <see cref="T:Azure.Identity.Broker.SharedTokenCacheCredentialBrokerOptions" />.
+            </summary>
+        </member>
+        <member name="M:Azure.Identity.Broker.SharedTokenCacheCredentialBrokerOptions.#ctor(Azure.Identity.TokenCachePersistenceOptions)">
+            <summary>
+            Initializes a new instance of <see cref="T:Azure.Identity.Broker.SharedTokenCacheCredentialBrokerOptions" />.
+            </summary>
+            <param name="tokenCacheOptions">The <see cref="T:Azure.Identity.TokenCachePersistenceOptions" /> that will apply to the token cache used by this credential.</param>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,2314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+    <assembly>
+        <name>Azure.Core.Experimental</name>
+    </assembly>
+    <members>
+        <member name="T:Azure.CloudMachine">
+            <summary>
+            Stores configuration of a CloudMachine.
+            </summary>
+        </member>
+        <member name="P:Azure.CloudMachine.Id">
+            <summary>
+            Unique identifier of a CloudMachine. It's the name of the resource group of all the CloudMachine resources.
+            </summary>
+        </member>
+        <member name="P:Azure.CloudMachine.DisplayName">
+            <summary>
+            Friendly name of CloudMachine. It's stored as a Tag of all Azure resources associated with the machine.
+            </summary>
+        </member>
+        <member name="P:Azure.CloudMachine.SubscriptionId">
+            <summary>
+            Azure subscription ID.
+            </summary>
+        </member>
+        <member name="P:Azure.CloudMachine.Region">
+            <summary>
+            Azure region, e.g. westus2
+            </summary>
+        </member>
+        <member name="M:Azure.CloudMachine.Create(System.String,System.String)">
+            <summary>
+            Creates a new CloudMachine
+            </summary>
+            <param name="subscriptionId"></param>
+            <param name="region"></param>
+            <returns></returns>
+            <remarks>DisplayName is initialized to id. It can be changed by setting the DisplayName property.</remarks>
+        </member>
+        <member name="M:Azure.CloudMachine.#ctor(System.String)">
+            <summary>
+            Loads CloudMachine settings from configurationFile
+            </summary>
+            <param name="configurationFile">Default value is .azure\cloudmachine.json</param>
+            <exception cref="T:Azure.CloudMachine.InvalidCloudMachineConfigurationException"></exception>
+        </member>
+        <member name="M:Azure.CloudMachine.#ctor(System.IO.Stream)">
+            <summary>
+            Loads CloudMachine settings from stream.
+            </summary>
+            <param name="configurationContent"></param>
+            <exception cref="T:Azure.CloudMachine.InvalidCloudMachineConfigurationException"></exception>
+        </member>
+        <member name="M:Azure.CloudMachine.Save(System.IO.Stream)">
+            <summary>
+            Save CloudMachine configuration to a stream.
+            </summary>
+            <param name="stream"></param>
+        </member>
+        <member name="M:Azure.CloudMachine.Save(System.String)">
+            <summary>
+            Save CloudMachine configuration to a file.
+            </summary>
+            <param name="filepath"></param>
+        </member>
+        <member name="T:Azure.Core.ISupportsProofOfPossession">
+            <summary>
+            An interface used to decorate a <see cref="T:Azure.Core.TokenCredential" /> that supports <see href="https://learn.microsoft.com/entra/msal/dotnet/advanced/proof-of-possession-tokens">Proof of Possession tokens</see> for authenticating to Microsoft Entra ID.
+            </summary>
+        </member>
+        <member name="M:Azure.Core.ISupportsProofOfPossession.GetTokenAsync(Azure.Core.PopTokenRequestContext,System.Threading.CancellationToken)">
+            <summary>
+            Gets an <see cref="T:Azure.Core.AccessToken" /> for the specified set of scopes.
+            </summary>
+            <param name="requestContext">The <see cref="T:Azure.Core.PopTokenRequestContext" /> with authentication information.</param>
+            <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken" /> to use.</param>
+            <returns>A valid <see cref="T:Azure.Core.AccessToken" />.</returns>
+            <remarks>Caching and management of the lifespan for the <see cref="T:Azure.Core.AccessToken" /> is considered the responsibility of the caller. Each call should request a fresh token.</remarks>
+        </member>
+        <member name="M:Azure.Core.ISupportsProofOfPossession.GetToken(Azure.Core.PopTokenRequestContext,System.Threading.CancellationToken)">
+            <summary>
+            Gets an <see cref="T:Azure.Core.AccessToken" /> for the specified set of scopes.
+            </summary>
+            <param name="requestContext">The <see cref="T:Azure.Core.PopTokenRequestContext" /> with authentication information.</param>
+            <param name="cancellationToken">The <see cref="T:System.Threading.CancellationToken" /> to use.</param>
+            <returns>A valid <see cref="T:Azure.Core.AccessToken" />.</returns>
+            <remarks>Caching and management of the lifespan for the <see cref="T:Azure.Core.AccessToken" /> is considered the responsibility of the caller. Each call should request a fresh token.</remarks>
+        </member>
+        <member name="T:Azure.Core.Pipeline.PopTokenAuthenticationPolicy">
+            <summary>
+            A policy that supports <see href="https://learn.microsoft.com/entra/msal/dotnet/advanced/proof-of-possession-tokens">Proof of Possession (PoP) tokens</see>.
+            </summary>
+        </member>
+        <member name="M:Azure.Core.Pipeline.PopTokenAuthenticationPolicy.#ctor(Azure.Core.ISupportsProofOfPossession,System.String)">
+            <summary>
+            Creates a new instance of <see cref="T:Azure.Core.Pipeline.PopTokenAuthenticationPolicy" />.
+            </summary>
+            <param name="credential">The <see cref="T:Azure.Core.TokenCredential" /> to be used for authorization.</param>
+            <param name="scope">The scope to be included in acquired tokens.</param>
+        </member>
+        <member name="M:Azure.Core.Pipeline.PopTokenAuthenticationPolicy.ProcessAsync(Azure.Core.HttpMessage,System.ReadOnlyMemory{Azure.Core.Pipeline.HttpPipelinePolicy})">
+            <summary>
+            Applies the policy to the <paramref name="message" />. Implementers are expected to mutate <see cref="P:Azure.Core.HttpMessage.Request" /> before calling <see cref="M:Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNextAsync(Azure.Core.HttpMessage,System.ReadOnlyMemory{Azure.Core.Pipeline.HttpPipelinePolicy})" /> and observe the <see cref="P:Azure.Core.HttpMessage.Response" /> changes after.
+            </summary><param name="message">The <see cref="T:Azure.Core.HttpMessage" /> this policy would be applied to.</param><param name="pipeline">The set of <see cref="T:Azure.Core.Pipeline.HttpPipelinePolicy" /> to execute after current one.</param><returns>The <see cref="T:System.Threading.Tasks.ValueTask" /> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Azure.Core.Pipeline.PopTokenAuthenticationPolicy.Process(Azure.Core.HttpMessage,System.ReadOnlyMemory{Azure.Core.Pipeline.HttpPipelinePolicy})">
+            <summary>
+            Applies the policy to the <paramref name="message" />. Implementers are expected to mutate <see cref="P:Azure.Core.HttpMessage.Request" /> before calling <see cref="M:Azure.Core.Pipeline.HttpPipelinePolicy.ProcessNextAsync(Azure.Core.HttpMessage,System.ReadOnlyMemory{Azure.Core.Pipeline.HttpPipelinePolicy})" /> and observe the <see cref="P:Azure.Core.HttpMessage.Response" /> changes after.
+            </summary><param name="message">The <see cref="T:Azure.Core.HttpMessage" /> this policy would be applied to.</param><param name="pipeline">The set of <see cref="T:Azure.Core.Pipeline.HttpPipelinePolicy" /> to execute after current one.</param>
+        </member>
+        <member name="M:Azure.Core.Pipeline.PopTokenAuthenticationPolicy.AuthorizeRequestAsync(Azure.Core.HttpMessage)">
+            <summary>
+            Executes before <see cref="M:Azure.Core.Pipeline.HttpPipelinePolicy.Process(Azure.Core.HttpMessage,System.ReadOnlyMemory{Azure.Core.Pipeline.HttpPipelinePolicy})" /> <see cref="M:Azure.Core.Pipeline.HttpPipelinePolicy.ProcessAsync(Azure.Core.HttpMessage,System.ReadOnlyMemory{Azure.Core.Pipeline.HttpPipelinePolicy})" /> or
+            <see cref="M:Azure.Core.Pipeline.HttpPipelinePolicy.Process(Azure.Core.HttpMessage,System.ReadOnlyMemory{Azure.Core.Pipeline.HttpPipelinePolicy})" /> is called.
+            Implementers of this method are expected to call <see cref="M:Azure.Core.Pipeline.PopTokenAuthenticationPolicy.AuthenticateAndAuthorizeRequest(Azure.Core.HttpMessage,Azure.Core.PopTokenRequestContext)" /> or <see cref="M:Azure.Core.Pipeline.PopTokenAuthenticationPolicy.AuthenticateAndAuthorizeRequestAsync(Azure.Core.HttpMessage,Azure.Core.PopTokenRequestContext)" />
+            if authorization is required for requests not related to handling a challenge response.
+            </summary>
+            <param name="message">The <see cref="T:Azure.Core.HttpMessage" /> this policy would be applied to.</param>
+            <returns>The <see cref="T:System.Threading.Tasks.ValueTask" /> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Azure.Core.Pipeline.PopTokenAuthenticationPolicy.AuthorizeRequest(Azure.Core.HttpMessage)">
+            <summary>
+            Executes before <see cref="M:Azure.Core.Pipeline.BearerTokenAuthenticationPolicy.ProcessAsync(Azure.Core.HttpMessage,System.ReadOnlyMemory{Azure.Core.Pipeline.HttpPipelinePolicy})" /> or
+            <see cref="M:Azure.Core.Pipeline.BearerTokenAuthenticationPolicy.Process(Azure.Core.HttpMessage,System.ReadOnlyMemory{Azure.Core.Pipeline.HttpPipelinePolicy})" /> is called.
+            Implementers of this method are expected to call <see cref="M:Azure.Core.Pipeline.BearerTokenAuthenticationPolicy.AuthenticateAndAuthorizeRequest(Azure.Core.HttpMessage,Azure.Core.TokenRequestContext)" /> or <see cref="M:Azure.Core.Pipeline.BearerTokenAuthenticationPolicy.AuthenticateAndAuthorizeRequestAsync(Azure.Core.HttpMessage,Azure.Core.TokenRequestContext)" />
+            if authorization is required for requests not related to handling a challenge response.
+            </summary><param name="message">The <see cref="T:Azure.Core.HttpMessage" /> this policy would be applied to.</param>
+        </member>
+        <member name="M:Azure.Core.Pipeline.PopTokenAuthenticationPolicy.AuthenticateAndAuthorizeRequestAsync(Azure.Core.HttpMessage,Azure.Core.PopTokenRequestContext)">
+            <summary>
+            Sets the Authorization header on the <see cref="T:Azure.Core.Request" /> by calling GetToken, or from cache, if possible.
+            </summary>
+            <param name="message">The <see cref="T:Azure.Core.HttpMessage" /> with the <see cref="T:Azure.Core.Request" /> to be authorized.</param>
+            <param name="context">The <see cref="T:Azure.Core.TokenRequestContext" /> used to authorize the <see cref="T:Azure.Core.Request" />.</param>
+        </member>
+        <member name="M:Azure.Core.Pipeline.PopTokenAuthenticationPolicy.AuthenticateAndAuthorizeRequest(Azure.Core.HttpMessage,Azure.Core.PopTokenRequestContext)">
+            <summary>
+            Sets the Authorization header on the <see cref="T:Azure.Core.Request" /> by calling GetToken, or from cache, if possible.
+            </summary>
+            <param name="message">The <see cref="T:Azure.Core.HttpMessage" /> with the <see cref="T:Azure.Core.Request" /> to be authorized.</param>
+            <param name="context">The <see cref="T:Azure.Core.TokenRequestContext" /> used to authorize the <see cref="T:Azure.Core.Request" />.</param>
+        </member>
+        <member name="M:Azure.Core.Pipeline.PopTokenAuthenticationPolicy.AuthorizeRequestOnChallengeAsync(Azure.Core.HttpMessage)">
+            <summary>
+            Executed in the event a 401 response with a WWW-Authenticate authentication challenge header is received after the initial request.
+            </summary>
+            <remarks>Service client libraries may override this to handle service specific authentication challenges.</remarks>
+            <param name="message">The <see cref="T:Azure.Core.HttpMessage" /> to be authenticated.</param>
+            <returns>A boolean indicating whether the request was successfully authenticated and should be sent to the transport.</returns>
+        </member>
+        <member name="M:Azure.Core.Pipeline.PopTokenAuthenticationPolicy.AuthorizeRequestOnChallenge(Azure.Core.HttpMessage)">
+            <summary>
+            Executed in the event a 401 response with a WWW-Authenticate authentication challenge header is received after the initial request.
+            </summary>
+            <remarks>Service client libraries may override this to handle service specific authentication challenges.</remarks>
+            <param name="message">The <see cref="T:Azure.Core.HttpMessage" /> to be authenticated.</param>
+            <returns>A boolean indicating whether the request was successfully authenticated and should be sent to the transport.</returns>
+        </member>
+        <member name="M:Azure.Core.Pipeline.ClientDiagnostics.#ctor(Azure.Core.ClientOptions,System.Nullable{System.Boolean})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Azure.Core.Pipeline.ClientDiagnostics" /> class.
+            </summary>
+            <param name="options">The customer provided client options object.</param>
+            <param name="suppressNestedClientActivities">Flag controlling if <see cref="T:System.Diagnostics.Activity" />
+             created by this <see cref="T:Azure.Core.Pipeline.ClientDiagnostics" /> for client method calls should be suppressed when called
+             by other Azure SDK client methods.  It's recommended to set it to true for new clients; use default (null)
+             for backward compatibility reasons, or set it to false to explicitly disable suppression for specific cases.
+             The default value could change in the future, the flag should be only set to false if suppression for the client
+             should never be enabled.</param>
+        </member>
+        <member name="M:Azure.Core.Pipeline.ClientDiagnostics.#ctor(System.String,System.String,Azure.Core.DiagnosticsOptions,System.Nullable{System.Boolean})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Azure.Core.Pipeline.ClientDiagnostics" /> class.
+            </summary>
+            <param name="optionsNamespace">Namespace of the client class, such as Azure.Storage or Azure.AppConfiguration.</param>
+            <param name="providerNamespace">Azure Resource Provider namespace of the Azure service SDK is primarily used for.</param>
+            <param name="diagnosticsOptions">The customer provided client diagnostics options.</param>
+            <param name="suppressNestedClientActivities">Flag controlling if <see cref="T:System.Diagnostics.Activity" />
+             created by this <see cref="T:Azure.Core.Pipeline.ClientDiagnostics" /> for client method calls should be suppressed when called
+             by other Azure SDK client methods.  It's recommended to set it to true for new clients, use default (null) for old clients
+             for backward compatibility reasons, or set it to false to explicitly disable suppression for specific cases.
+             The default value could change in the future, the flag should be only set to false if suppression for the client
+             should never be enabled.</param>
+        </member>
+        <member name="M:Azure.Core.Pipeline.DiagnosticScope.AddLink(System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            Adds a link to the scope. This must be called before <see cref="M:Azure.Core.Pipeline.DiagnosticScope.Start" /> has been called for the DiagnosticScope.
+            </summary>
+            <param name="traceparent">The traceparent for the link.</param>
+            <param name="tracestate">The tracestate for the link.</param>
+            <param name="attributes">Optional attributes to associate with the link.</param>
+        </member>
+        <member name="M:Azure.Core.Pipeline.DiagnosticScope.SetTraceContext(System.String,System.String)">
+            <summary>
+            Sets the trace context for the current scope.
+            </summary>
+            <param name="traceparent">The trace parent to set for the current scope.</param>
+            <param name="tracestate">The trace state to set for the current scope.</param>
+        </member>
+        <member name="M:Azure.Core.Pipeline.DiagnosticScope.Failed(System.Exception)">
+            <summary>
+            Marks the scope as failed.
+            </summary>
+            <param name="exception">The exception to associate with the failed scope.</param>
+        </member>
+        <member name="M:Azure.Core.Pipeline.DiagnosticScope.Failed(System.String)">
+            <summary>
+            Marks the scope as failed with low-cardinality error.type attribute.
+            </summary>
+            <param name="errorCode">Error code to associate with the failed scope.</param>
+        </member>
+        <member name="T:Azure.Core.Pipeline.ActivityExtensions">
+            <summary>
+            Until Activity Source is no longer considered experimental.
+            </summary>
+        </member>
+        <member name="M:Azure.Core.Pipeline.DiagnosticScopeFactory.#ctor(System.String,System.String,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Creates diagnostic scope factory.
+            </summary>
+            <param name="clientNamespace">The namespace which is used as a prefix for all ActivitySources created by the factory and the name of DiagnosticSource (when used).</param>
+            <param name="resourceProviderNamespace">Azure resource provider namespace.</param>
+            <param name="isActivityEnabled">Flag indicating if distributed tracing is enabled.</param>
+            <param name="suppressNestedClientActivities">Flag indicating if nested Azure SDK activities describing public API calls should be suppressed.</param>
+            <param name="isStable">Whether instrumentation is considered stable. When false, experimental feature flag controls if tracing is enabled.</param>
+        </member>
+        <member name="T:Azure.Core.Pipeline.TaskExtensions.Enumerable`1">
+            <summary>
+            Both <see cref="T:Azure.Core.Pipeline.TaskExtensions.Enumerable`1" /> and <see cref="T:Azure.Core.Pipeline.TaskExtensions.Enumerator`1" /> are defined as public structs so that foreach can use duck typing
+            to call <see cref="M:Azure.Core.Pipeline.TaskExtensions.Enumerable`1.GetEnumerator" /> and avoid heap memory allocation.
+            Please don't delete this method and don't make these types private.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="T:Azure.Core.PopTokenRequestContext">
+            <summary>
+            Contains the details of an authentication token request.
+            </summary>
+        </member>
+        <member name="M:Azure.Core.PopTokenRequestContext.#ctor(System.String[],System.String,System.String,System.String,System.Boolean,System.String,Azure.Core.Request)">
+            <summary>
+            Creates a new TokenRequest with the specified scopes.
+            </summary>
+            <param name="scopes">The scopes required for the token.</param>
+            <param name="parentRequestId">The <see cref="P:Azure.Core.Request.ClientRequestId" /> of the request requiring a token for authentication, if applicable.</param>
+            <param name="claims">Additional claims to be included in the token.</param>
+            <param name="tenantId">The tenant ID to be included in the token request.</param>
+            <param name="isCaeEnabled">Indicates whether to enable Continuous Access Evaluation (CAE) for the requested token.</param>
+            <param name="proofOfPossessionNonce">The nonce value required for PoP token requests.</param>
+            <param name="request">The request to be authorized with a PoP token.</param>
+        </member>
+        <member name="M:Azure.Core.PopTokenRequestContext.ToTokenRequestContext">
+            <summary>
+            Creates a new TokenRequestContext from this instance.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Azure.Core.PopTokenRequestContext.FromTokenRequestContext(Azure.Core.TokenRequestContext,Azure.Core.Request)">
+            <summary>
+            Creates a new PopTokenRequestContext from a TokenRequestContext.
+            </summary>
+            <param name="context"></param>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Azure.Core.PopTokenRequestContext.op_Implicit(Azure.Core.PopTokenRequestContext)~Azure.Core.TokenRequestContext">
+            <summary>
+            Creates a new TokenRequestContext from this instance.
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="P:Azure.Core.PopTokenRequestContext.Scopes">
+            <summary>
+            The scopes required for the token.
+            </summary>
+        </member>
+        <member name="P:Azure.Core.PopTokenRequestContext.ParentRequestId">
+            <summary>
+            The <see cref="P:Azure.Core.Request.ClientRequestId" /> of the request requiring a token for authentication, if applicable.
+            </summary>
+        </member>
+        <member name="P:Azure.Core.PopTokenRequestContext.Claims">
+            <summary>
+            Additional claims to be included in the token. See <see href="https://openid.net/specs/openid-connect-core-1_0-final.html#ClaimsParameter">https://openid.net/specs/openid-connect-core-1_0-final.html#ClaimsParameter</see> for more information on format and content.
+            </summary>
+        </member>
+        <member name="P:Azure.Core.PopTokenRequestContext.TenantId">
+            <summary>
+            The tenant ID to be included in the token request.
+            </summary>
+        </member>
+        <member name="P:Azure.Core.PopTokenRequestContext.IsCaeEnabled">
+            <summary>
+            Indicates whether to enable Continuous Access Evaluation (CAE) for the requested token.
+            </summary>
+            <remarks>
+            If a resource API implements CAE and your application declares it can handle CAE, your app receives CAE tokens for that resource.
+            For this reason, if you declare your app CAE-ready, your app must handle the CAE claim challenge for all resource APIs that accept Microsoft Identity access tokens.
+            If you don't handle CAE responses in these API calls, your app could end up in a loop retrying an API call with a token that is still in the returned lifespan of the token but has been revoked due to CAE.
+            </remarks>
+        </member>
+        <member name="P:Azure.Core.PopTokenRequestContext.ProofOfPossessionNonce">
+            <summary>
+            The nonce value required for PoP token requests. This is typically retrieved from teh WWW-Authenticate header of a 401 challenge response.
+            This is used in combination with <see cref="P:Azure.Core.PopTokenRequestContext.Uri" /> and <see cref="P:Azure.Core.PopTokenRequestContext.HttpMethod" /> to generate the PoP token.
+            </summary>
+        </member>
+        <member name="P:Azure.Core.PopTokenRequestContext.HttpMethod">
+            <summary>
+            The HTTP method of the request. This is used in combination with <see cref="P:Azure.Core.PopTokenRequestContext.Uri" /> and <see cref="P:Azure.Core.PopTokenRequestContext.ProofOfPossessionNonce" /> to generate the PoP token.
+            </summary>
+        </member>
+        <member name="P:Azure.Core.PopTokenRequestContext.Uri">
+            <summary>
+            The URI of the request. This is used in combination with <see cref="P:Azure.Core.PopTokenRequestContext.HttpMethod" /> and <see cref="P:Azure.Core.PopTokenRequestContext.ProofOfPossessionNonce" /> to generate the PoP token.
+            </summary>
+        </member>
+        <member name="T:Azure.Core.ProvisionableTemplateAttribute">
+            <summary>
+            Attribute used to describe a deployment template.
+            </summary>
+        </member>
+        <member name="M:Azure.Core.ProvisionableTemplateAttribute.#ctor(System.String)">
+            <summary>
+            Deployment teplate stored in resources.
+            </summary>
+            <param name="resourceName"></param>
+        </member>
+        <member name="P:Azure.Core.ProvisionableTemplateAttribute.ResourceName">
+            <summary>
+            Name of assembly resource file containing a deployment template.
+            </summary>
+        </member>
+        <member name="T:Azure.Core.LruCache`2">
+            <summary>
+            A simple LRU cache implementation using a doubly linked list and dictionary.
+            </summary>
+            <typeparam name="TKey">The type of key.</typeparam>
+            <typeparam name="TValue">The type of value.</typeparam>
+        </member>
+        <member name="P:Azure.Core.LruCache`2.Count">
+            <summary>
+            Gets the number of key/value pairs contained in the <see cref="T:Azure.Core.LruCache`2" />.
+            </summary>
+        </member>
+        <member name="P:Azure.Core.LruCache`2.TotalLength">
+            <summary>
+            Gets the total length of all values currently stored in the <see cref="T:Azure.Core.LruCache`2" />.
+            </summary>
+        </member>
+        <member name="M:Azure.Core.LruCache`2.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Azure.Core.LruCache`2" /> class.
+            </summary>
+            <param name="capacity"></param>
+        </member>
+        <member name="M:Azure.Core.LruCache`2.TryGet(`0,`1@)">
+            <summary>
+            Gets the value associated with the specified key.
+            </summary>
+            <param name="key">The key of the value to get.</param>
+            <param name="value">When this method returns, contains the value associated with
+            the specified key, if the key is found; otherwise, the default value for the type of
+            the type of the <paramref name="value" /> parameter.</param>
+            <returns><c>true</c> if the <see cref="T:Azure.Core.LruCache`2" /> contains an element
+            with the specified key; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:Azure.Core.LruCache`2.AddOrUpdate(`0,`1,System.Int32)">
+            <summary>
+            Adds a key/value pair to the <see cref="T:Azure.Core.LruCache`2" /> if the key doesn't already exist, or updates a key/value
+            pair in the <see cref="T:Azure.Core.LruCache`2" /> if the key does already exist.
+            </summary>
+            <param name="key"></param>
+            <param name="val"></param>
+            <param name="length"></param>
+        </member>
+        <member name="M:Azure.Core.LruCache`2.GetEnumerator">
+            <summary>
+            Returns an enumerator that iterates through the <see cref="T:Azure.Core.LruCache`2" />.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Azure.Core.SchemaValidator">
+            <summary>
+            This abstract class allows any available library to be used to generate schemas from .NET types and validate
+            objects against schemas.
+            </summary>
+            <remarks>
+            Defining both <see cref="M:Azure.Core.SchemaValidator.GenerateSchema(System.Type)" /> and <see cref="M:Azure.Core.SchemaValidator.TryValidate(System.Object,System.Type,System.String,System.Collections.Generic.IEnumerable{System.Exception}@)" /> is required. If you
+            do not wish to validate, then evaluate all schemas as valid.
+            </remarks>
+        </member>
+        <member name="M:Azure.Core.SchemaValidator.TryValidate(System.Object,System.Type,System.String,System.Collections.Generic.IEnumerable{System.Exception}@)">
+            <summary>
+            Validates that <paramref name="data" /> is valid according to <paramref name="schemaDefinition" />.
+            </summary>
+            <param name="data">The data to validate.</param>
+            <param name="dataType">The type of data to validate.</param>
+            <param name="schemaDefinition">The schema definition to validate against.</param>
+            <param name="validationErrors">When this method returns, contains the validation errors if <paramref name="data" /> was invalid according to
+            the <paramref name="schemaDefinition" />.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Azure.Core.SchemaValidator.Validate(System.Object,System.Type,System.String)">
+            <summary>
+            Validates that <paramref name="data" /> is valid according to <paramref name="schemaDefinition" />. If the object is not valid,
+            this method throws an <see cref="T:System.AggregateException" /> containing all of the validation errors.
+            </summary>
+            <param name="data">The data to validate.</param>
+            <param name="dataType">The type of data to validate.</param>
+            <param name="schemaDefinition">The schema definition to validate against.</param>
+            <exception cref="T:System.AggregateException"> <paramref name="data" /> is not valid according to the <paramref name="schemaDefinition" />.</exception>
+        </member>
+        <member name="M:Azure.Core.SchemaValidator.GenerateSchema(System.Type)">
+            <summary>
+            Generates a schema from <paramref name="dataType" /> and returns it as a string.
+            </summary>
+            <param name="dataType">The type of the data to use when generating the schema.</param>
+            <returns>The generated schema in string format.</returns>
+        </member>
+        <member name="T:Azure.Core.AuthorizationChallengeParser">
+            <summary>
+            A helper class for parsing Authorization challenge headers.
+            </summary>
+        </member>
+        <member name="M:Azure.Core.AuthorizationChallengeParser.GetChallengeParameterFromResponse(Azure.Response,System.String,System.String)">
+            <summary>
+            Parses the specified parameter from a challenge hearder found in the specified <see cref="T:Azure.Response" />.
+            </summary>
+            <param name="response">The <see cref="T:Azure.Response" /> to parse.</param>
+            <param name="challengeScheme">The challenge scheme containing the <paramref name="challengeParameter" />. For example: "Bearer"</param>
+            <param name="challengeParameter">The parameter key name containing the value to return.</param>
+            <returns>The value of the parameter name specified in <paramref name="challengeParameter" /> if it is found in the specified <paramref name="challengeScheme" />.</returns>
+        </member>
+        <member name="M:Azure.Core.AuthorizationChallengeParser.TryGetNextChallenge(System.ReadOnlySpan{System.Char}@,System.ReadOnlySpan{System.Char}@)">
+            <summary>
+            Iterates through the challenge schemes present in a challenge header.
+            </summary>
+            <param name="headerValue">
+            The header value which will be sliced to remove the first parsed <paramref name="challengeKey" />.
+            </param>
+            <param name="challengeKey">The parsed challenge scheme.</param>
+            <returns>
+            <c>true</c> if a challenge scheme was successfully parsed.
+            The value of <paramref name="headerValue" /> should be passed to <see cref="M:Azure.Core.AuthorizationChallengeParser.TryGetNextParameter(System.ReadOnlySpan{System.Char}@,System.ReadOnlySpan{System.Char}@,System.ReadOnlySpan{System.Char}@,System.Char)" /> to parse the challenge parameters if <c>true</c>.
+            </returns>
+        </member>
+        <member name="M:Azure.Core.AuthorizationChallengeParser.TryGetNextParameter(System.ReadOnlySpan{System.Char}@,System.ReadOnlySpan{System.Char}@,System.ReadOnlySpan{System.Char}@,System.Char)">
+            <summary>
+            Iterates through a challenge header value after being parsed by <see cref="M:Azure.Core.AuthorizationChallengeParser.TryGetNextChallenge(System.ReadOnlySpan{System.Char}@,System.ReadOnlySpan{System.Char}@)" />.
+            </summary>
+            <param name="headerValue">The header value after being parsed by <see cref="M:Azure.Core.AuthorizationChallengeParser.TryGetNextChallenge(System.ReadOnlySpan{System.Char}@,System.ReadOnlySpan{System.Char}@)" />.</param>
+            <param name="paramKey">The parsed challenge parameter key.</param>
+            <param name="paramValue">The parsed challenge parameter value.</param>
+            <param name="separator">The challenge parameter key / value pair separator. The default is '='.</param>
+            <returns>
+            <c>true</c> if the next available challenge parameter was successfully parsed.
+            <c>false</c> if there are no more parameters for the current challenge scheme or an additional challenge scheme was encountered in the <paramref name="headerValue" />.
+            The value of <paramref name="headerValue" /> should be passed again to <see cref="M:Azure.Core.AuthorizationChallengeParser.TryGetNextChallenge(System.ReadOnlySpan{System.Char}@,System.ReadOnlySpan{System.Char}@)" /> to attempt to parse any additional challenge schemes if <c>false</c>.
+            </returns>
+        </member>
+        <member name="T:Azure.Core.HashCodeBuilder">
+            <summary>
+            Copied from https://github.com/dotnet/corefx/blob/master/src/Common/src/CoreLib/System/HashCode.cs.
+            </summary>
+        </member>
+        <member name="T:Azure.Core.AppContextSwitchHelper">
+            <summary>
+            Helper for interacting with AppConfig settings and their related Environment variable settings.
+            </summary>
+        </member>
+        <member name="M:Azure.Core.AppContextSwitchHelper.GetConfigValue(System.String,System.String)">
+            <summary>
+            Determines if either an AppContext switch or its corresponding Environment Variable is set
+            </summary>
+            <param name="appContexSwitchName">Name of the AppContext switch.</param>
+            <param name="environmentVariableName">Name of the Environment variable.</param>
+            <returns>If the AppContext switch has been set, returns the value of the switch.
+            If the AppContext switch has not been set, returns the value of the environment variable.
+            False if neither is set.
+            </returns>
+        </member>
+        <member name="T:Azure.Core.Argument">
+            <summary>
+            Argument validation.
+            </summary>
+            <remarks>
+              <para>This class should be shared via source using Azure.Core.props and contain only common argument validation.
+                It is declared partial so that you can use the same familiar class name but extend it with project-specific validation.
+                To extend the functionality of this class, just declare your own partial <see cref="T:Azure.Core.Argument" /> class with project-specific methods.
+              </para>
+              <para>
+                Be sure to document exceptions thrown by these methods on your public methods.
+              </para>
+            </remarks>
+        </member>
+        <member name="M:Azure.Core.Argument.AssertNotNull``1(``0,System.String)">
+            <summary>
+            Throws if <paramref name="value" /> is null.
+            </summary>
+            <param name="value">The value to validate.</param>
+            <param name="name">The name of the parameter.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="value" /> is null.</exception>
+        </member>
+        <member name="M:Azure.Core.Argument.AssertNotNull``1(System.Nullable{``0},System.String)">
+            <summary>
+            Throws if <paramref name="value" /> has not been initialized.
+            </summary>
+            <param name="value">The value to validate.</param>
+            <param name="name">The name of the parameter.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="value" /> has not been initialized.</exception>
+        </member>
+        <member name="M:Azure.Core.Argument.AssertNotNullOrEmpty``1(System.Collections.Generic.IEnumerable{``0},System.String)">
+            <summary>
+            Throws if <paramref name="value" /> is null or an empty collection.
+            </summary>
+            <param name="value">The value to validate.</param>
+            <param name="name">The name of the parameter.</param>
+            <exception cref="T:System.ArgumentException"><paramref name="value" /> is an empty collection.</exception>
+            <exception cref="T:System.ArgumentNullException"><paramref name="value" /> is null.</exception>
+        </member>
+        <member name="M:Azure.Core.Argument.AssertNotNullOrEmpty(System.String,System.String)">
+            <summary>
+            Throws if <paramref name="value" /> is null or an empty string.
+            </summary>
+            <param name="value">The value to validate.</param>
+            <param name="name">The name of the parameter.</param>
+            <exception cref="T:System.ArgumentException"><paramref name="value" /> is an empty string.</exception>
+            <exception cref="T:System.ArgumentNullException"><paramref name="value" /> is null.</exception>
+        </member>
+        <member name="M:Azure.Core.Argument.AssertNotNullOrWhiteSpace(System.String,System.String)">
+            <summary>
+            Throws if <paramref name="value" /> is null, an empty string, or consists only of white-space characters.
+            </summary>
+            <param name="value">The value to validate.</param>
+            <param name="name">The name of the parameter.</param>
+            <exception cref="T:System.ArgumentException"><paramref name="value" /> is an empty string or consists only of white-space characters.</exception>
+            <exception cref="T:System.ArgumentNullException"><paramref name="value" /> is null.</exception>
+        </member>
+        <member name="M:Azure.Core.Argument.AssertNotDefault``1(``0@,System.String)">
+            <summary>
+            Throws if <paramref name="value" /> is the default value for type <typeparamref name="T" />.
+            </summary>
+            <typeparam name="T">The type of structure to validate which implements <see cref="T:System.IEquatable`1" />.</typeparam>
+            <param name="value">The value to validate.</param>
+            <param name="name">The name of the parameter.</param>
+            <exception cref="T:System.ArgumentException"><paramref name="value" /> is the default value for type <typeparamref name="T" />.</exception>
+        </member>
+        <member name="M:Azure.Core.Argument.AssertInRange``1(``0,``0,``0,System.String)">
+            <summary>
+            Throws if <paramref name="value" /> is less than the <paramref name="minimum" /> or greater than the <paramref name="maximum" />.
+            </summary>
+            <typeparam name="T">The type of to validate which implements <see cref="T:System.IComparable`1" />.</typeparam>
+            <param name="value">The value to validate.</param>
+            <param name="minimum">The minimum value to compare.</param>
+            <param name="maximum">The maximum value to compare.</param>
+            <param name="name">The name of the parameter.</param>
+        </member>
+        <member name="M:Azure.Core.Argument.AssertEnumDefined(System.Type,System.Object,System.String)">
+            <summary>
+            Throws if <paramref name="value" /> is not defined for <paramref name="enumType" />.
+            </summary>
+            <param name="enumType">The type to validate against.</param>
+            <param name="value">The value to validate.</param>
+            <param name="name">The name of the parameter.</param>
+            <exception cref="T:System.ArgumentException"><paramref name="value" /> is not defined for <paramref name="enumType" />.</exception>
+        </member>
+        <member name="M:Azure.Core.Argument.CheckNotNull``1(``0,System.String)">
+            <summary>
+            Throws if <paramref name="value" /> has not been initialized; otherwise, returns <paramref name="value" />.
+            </summary>
+            <param name="value">The value to validate.</param>
+            <param name="name">The name of the parameter.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="value" /> has not been initialized.</exception>
+        </member>
+        <member name="M:Azure.Core.Argument.CheckNotNullOrEmpty(System.String,System.String)">
+            <summary>
+            Throws if <paramref name="value" /> is null or an empty string; otherwise, returns <paramref name="value" />.
+            </summary>
+            <param name="value">The value to validate.</param>
+            <param name="name">The name of the parameter.</param>
+            <exception cref="T:System.ArgumentException"><paramref name="value" /> is an empty string.</exception>
+            <exception cref="T:System.ArgumentNullException"><paramref name="value" /> is null.</exception>
+        </member>
+        <member name="M:Azure.Core.Argument.AssertNull``1(``0,System.String,System.String)">
+            <summary>
+            Throws if <paramref name="value" /> is not null.
+            </summary>
+            <param name="value">The value to validate.</param>
+            <param name="name">The name of the parameter.</param>
+            <param name="message">The error message.</param>
+            <exception cref="T:System.ArgumentException"><paramref name="value" /> is not null.</exception>
+        </member>
+        <member name="T:Azure.Core.AsyncLockWithValue`1">
+            <summary>
+            Primitive that combines async lock and value cache
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Azure.Core.AsyncLockWithValue`1.GetLockOrValueAsync(System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Method that either returns cached value or acquire a lock.
+            If one caller has acquired a lock, other callers will be waiting for the lock to be released.
+            If value is set, lock is released and all waiters get that value.
+            If value isn't set, the next waiter in the queue will get the lock.
+            </summary>
+            <param name="async"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Azure.Core.AsyncLockWithValue`1.LockOrValue.HasValue">
+            <summary>
+            Returns true if lock contains the cached value. Otherwise false.
+            </summary>
+        </member>
+        <member name="P:Azure.Core.AsyncLockWithValue`1.LockOrValue.Value">
+            <summary>
+            Returns cached value if it was set when lock has been created. Throws exception otherwise.
+            </summary>
+            <exception cref="T:System.InvalidOperationException">Value isn't set.</exception>
+        </member>
+        <member name="M:Azure.Core.AsyncLockWithValue`1.LockOrValue.SetValue(`0)">
+            <summary>
+            Set value to the cache and to all the waiters.
+            </summary>
+            <param name="value"></param>
+            <exception cref="T:System.InvalidOperationException">Value is set already.</exception>
+        </member>
+        <member name="T:Azure.Core.FixedDelayWithNoJitterStrategy">
+            <summary>
+            A delay strategy that uses a fixed delay with no jitter applied. This is used by data plane LROs.
+            </summary>
+        </member>
+        <member name="T:Azure.Core.OperationInternal">
+            <summary>
+            A helper class used to build long-running operation instances. In order to use this helper:
+            <list type="number">
+              <item>Make sure your LRO implements the <see cref="T:Azure.Core.IOperation" /> interface.</item>
+              <item>Add a private <see cref="T:Azure.Core.OperationInternal" /> field to your LRO, and instantiate it during construction.</item>
+              <item>Delegate method calls to the <see cref="T:Azure.Core.OperationInternal" /> implementations.</item>
+            </list>
+            Supported members:
+            <list type="bullet">
+              <item>
+                <description><see cref="P:Azure.Core.OperationInternalBase.HasCompleted" /></description>
+              </item>
+              <item>
+                <description><see cref="P:Azure.Core.OperationInternalBase.RawResponse" />, used for <see cref="M:Azure.Operation.GetRawResponse" /></description>
+              </item>
+              <item>
+                <description><see cref="M:Azure.Core.OperationInternalBase.UpdateStatus(System.Threading.CancellationToken)" /></description>
+              </item>
+              <item>
+                <description><see cref="M:Azure.Core.OperationInternalBase.UpdateStatusAsync(System.Threading.CancellationToken)" /></description>
+              </item>
+              <item>
+                <description><see cref="M:Azure.Core.OperationInternalBase.WaitForCompletionResponseAsync(System.Threading.CancellationToken)" /></description>
+              </item>
+              <item>
+                <description><see cref="M:Azure.Core.OperationInternalBase.WaitForCompletionResponseAsync(System.TimeSpan,System.Threading.CancellationToken)" /></description>
+              </item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:Azure.Core.OperationInternal.Succeeded(Azure.Response)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Azure.Core.OperationInternal" /> class in a final successful state.
+            </summary>
+            <param name="rawResponse">The final value of <see cref="P:Azure.Core.OperationInternalBase.RawResponse" />.</param>
+        </member>
+        <member name="M:Azure.Core.OperationInternal.Failed(Azure.Response,Azure.RequestFailedException)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Azure.Core.OperationInternal" /> class in a final failed state.
+            </summary>
+            <param name="rawResponse">The final value of <see cref="P:Azure.Core.OperationInternalBase.RawResponse" />.</param>
+            <param name="operationFailedException">The exception that will be thrown by <c>UpdateStatusAsync</c>.</param>
+        </member>
+        <member name="M:Azure.Core.OperationInternal.#ctor(Azure.Core.IOperation,Azure.Core.Pipeline.ClientDiagnostics,Azure.Response,System.String,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}},Azure.Core.DelayStrategy)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Azure.Core.OperationInternal" /> class.
+            </summary>
+            <param name="operation">The long-running operation making use of this class. Passing "<c>this</c>" is expected.</param>
+            <param name="clientDiagnostics">Used for diagnostic scope and exception creation. This is expected to be the instance created during the construction of your main client.</param>
+            <param name="rawResponse">
+                The initial value of <see cref="P:Azure.Core.OperationInternalBase.RawResponse" />. Usually, long-running operation objects can be instantiated in two ways:
+                <list type="bullet">
+                    <item>
+                        When calling a client's "<c>Start&lt;OperationName&gt;</c>" method, a service call is made to start the operation, and an <see cref="T:Azure.Operation" /> instance is returned.
+                        In this case, the response received from this service call can be passed here.
+                    </item>
+                    <item>
+                        When a user instantiates an <see cref="T:Azure.Operation" /> directly using a public constructor, there's no previous service call. In this case, passing <c>null</c> is expected.
+                    </item>
+                </list>
+            </param>
+            <param name="operationTypeName">
+                The type name of the long-running operation making use of this class. Used when creating diagnostic scopes. If left <c>null</c>, the type name will be inferred based on the
+                parameter <paramref name="operation" />.
+            </param>
+            <param name="scopeAttributes">The attributes to use during diagnostic scope creation.</param>
+            <param name="fallbackStrategy"> The delay strategy to use. Default is <see cref="T:Azure.Core.FixedDelayWithNoJitterStrategy" />.</param>
+        </member>
+        <member name="T:Azure.Core.IOperation">
+            <summary>
+            An interface used by <see cref="T:Azure.Core.OperationInternal" /> for making service calls and updating state. It's expected that
+            your long-running operation classes implement this interface.
+            </summary>
+        </member>
+        <member name="M:Azure.Core.IOperation.UpdateStateAsync(System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Calls the service and updates the state of the long-running operation. Properties directly handled by the
+            <see cref="T:Azure.Core.OperationInternal" /> class, such as <see cref="P:Azure.Core.OperationInternalBase.RawResponse" />
+            don't need to be updated. Operation-specific properties, such as "<c>CreateOn</c>" or "<c>LastModified</c>",
+            must be manually updated by the operation implementing this method.
+            <example>Usage example:
+            <code>
+              async ValueTask&lt;OperationState&gt; IOperation.UpdateStateAsync(bool async, CancellationToken cancellationToken)<br />
+              {<br />
+                Response&lt;R&gt; response = async ? &lt;async service call&gt; : &lt;sync service call&gt;;<br />
+                if (&lt;operation succeeded&gt;) return OperationState.Success(response.GetRawResponse(), &lt;parse response&gt;);<br />
+                if (&lt;operation failed&gt;) return OperationState.Failure(response.GetRawResponse());<br />
+                return OperationState.Pending(response.GetRawResponse());<br />
+              }
+            </code>
+            </example>
+            </summary>
+            <param name="async"><c>true</c> if the call should be executed asynchronously. Otherwise, <c>false</c>.</param>
+            <param name="cancellationToken">A <see cref="T:System.Threading.CancellationToken" /> controlling the request lifetime.</param>
+            <returns>
+            A structure indicating the current operation state. The <see cref="T:Azure.Core.OperationState" /> structure must be instantiated by one of
+            its static methods:
+            <list type="bullet">
+              <item>Use <see cref="M:Azure.Core.OperationState.Success(Azure.Response)" /> when the operation has completed successfully.</item>
+              <item>Use <see cref="M:Azure.Core.OperationState.Failure(Azure.Response,Azure.RequestFailedException)" /> when the operation has completed with failures.</item>
+              <item>Use <see cref="M:Azure.Core.OperationState.Pending(Azure.Response)" /> when the operation has not completed yet.</item>
+            </list>
+            </returns>
+        </member>
+        <member name="T:Azure.Core.OperationState">
+            <summary>
+            A helper structure passed to <see cref="T:Azure.Core.OperationInternal" /> to indicate the current operation state. This structure must be
+            instantiated by one of its static methods, depending on the operation state:
+            <list type="bullet">
+              <item>Use <see cref="M:Azure.Core.OperationState.Success(Azure.Response)" /> when the operation has completed successfully.</item>
+              <item>Use <see cref="M:Azure.Core.OperationState.Failure(Azure.Response,Azure.RequestFailedException)" /> when the operation has completed with failures.</item>
+              <item>Use <see cref="M:Azure.Core.OperationState.Pending(Azure.Response)" /> when the operation has not completed yet.</item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:Azure.Core.OperationState.Success(Azure.Response)">
+            <summary>
+            Instantiates an <see cref="T:Azure.Core.OperationState" /> indicating the operation has completed successfully.
+            </summary>
+            <param name="rawResponse">The HTTP response obtained during the status update.</param>
+            <returns>A new <see cref="T:Azure.Core.OperationState" /> instance.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="rawResponse" /> is <c>null</c>.</exception>
+        </member>
+        <member name="M:Azure.Core.OperationState.Failure(Azure.Response,Azure.RequestFailedException)">
+            <summary>
+            Instantiates an <see cref="T:Azure.Core.OperationState" /> indicating the operation has completed with failures.
+            </summary>
+            <param name="rawResponse">The HTTP response obtained during the status update.</param>
+            <param name="operationFailedException">
+            The exception to throw from <c>UpdateStatus</c> because of the operation failure. If left <c>null</c>,
+            a default exception is created based on the <paramref name="rawResponse" /> parameter.
+            </param>
+            <returns>A new <see cref="T:Azure.Core.OperationState" /> instance.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="rawResponse" /> is <c>null</c>.</exception>
+        </member>
+        <member name="M:Azure.Core.OperationState.Pending(Azure.Response)">
+            <summary>
+            Instantiates an <see cref="T:Azure.Core.OperationState" /> indicating the operation has not completed yet.
+            </summary>
+            <param name="rawResponse">The HTTP response obtained during the status update.</param>
+            <returns>A new <see cref="T:Azure.Core.OperationState" /> instance.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="rawResponse" /> is <c>null</c>.</exception>
+        </member>
+        <member name="P:Azure.Core.OperationInternalBase.RawResponse">
+            <summary>
+            The last HTTP response received from the server. Its update already handled in calls to "<c>UpdateStatus</c>" and
+            "<c>WaitForCompletionAsync</c>", but custom methods not supported by this class, such as "<c>CancelOperation</c>",
+            must update it as well.
+            <example>Usage example:
+            <code>
+              public Response GetRawResponse() =&gt; _operationInternal.RawResponse;
+            </code>
+            </example>
+            </summary>
+        </member>
+        <member name="P:Azure.Core.OperationInternalBase.HasCompleted">
+            <summary>
+            Returns <c>true</c> if the long-running operation has completed.
+            <example>Usage example:
+            <code>
+              public bool HasCompleted =&gt; _operationInternal.HasCompleted;
+            </code>
+            </example>
+            </summary>
+        </member>
+        <member name="M:Azure.Core.OperationInternalBase.UpdateStatusAsync(System.Threading.CancellationToken)">
+            <summary>
+            Calls the server to get the latest status of the long-running operation, handling diagnostic scope creation for distributed
+            tracing. The default scope name can be changed with the "<c>operationTypeName</c>" parameter passed to the constructor.
+            <example>Usage example:
+            <code>
+              public async ValueTask&lt;Response&gt; UpdateStatusAsync(CancellationToken cancellationToken) =&gt;
+                await _operationInternal.UpdateStatusAsync(cancellationToken).ConfigureAwait(false);
+            </code>
+            </example>
+            </summary>
+            <param name="cancellationToken">A <see cref="T:System.Threading.CancellationToken" /> controlling the request lifetime.</param>
+            <returns>The HTTP response received from the server.</returns>
+            <remarks>
+            After a successful run, this method will update <see cref="P:Azure.Core.OperationInternalBase.RawResponse" /> and might update <see cref="P:Azure.Core.OperationInternalBase.HasCompleted" />.
+            </remarks>
+            <exception cref="T:Azure.RequestFailedException">Thrown if there's been any issues during the connection, or if the operation has completed with failures.</exception>
+        </member>
+        <member name="M:Azure.Core.OperationInternalBase.UpdateStatus(System.Threading.CancellationToken)">
+            <summary>
+            Calls the server to get the latest status of the long-running operation, handling diagnostic scope creation for distributed
+            tracing. The default scope name can be changed with the "<c>operationTypeName</c>" parameter passed to the constructor.
+            <example>Usage example:
+            <code>
+              public Response UpdateStatus(CancellationToken cancellationToken) =&gt; _operationInternal.UpdateStatus(cancellationToken);
+            </code>
+            </example>
+            </summary>
+            <param name="cancellationToken">A <see cref="T:System.Threading.CancellationToken" /> controlling the request lifetime.</param>
+            <returns>The HTTP response received from the server.</returns>
+            <remarks>
+            After a successful run, this method will update <see cref="P:Azure.Core.OperationInternalBase.RawResponse" /> and might update <see cref="P:Azure.Core.OperationInternalBase.HasCompleted" />.
+            </remarks>
+            <exception cref="T:Azure.RequestFailedException">Thrown if there's been any issues during the connection, or if the operation has completed with failures.</exception>
+        </member>
+        <member name="M:Azure.Core.OperationInternalBase.WaitForCompletionResponseAsync(System.Threading.CancellationToken)">
+            <summary>
+            Periodically calls <see cref="M:Azure.Core.OperationInternalBase.UpdateStatusAsync(System.Threading.CancellationToken)" /> until the long-running operation completes.
+            After each service call, a retry-after header may be returned to communicate that there is no reason to poll
+            for status change until the specified time has passed.  The maximum of the retry after value and the fallback strategy
+            is then used as the wait interval.
+            Headers supported are: "Retry-After", "retry-after-ms", and "x-ms-retry-after-ms",
+            <example>Usage example:
+            <code>
+              public async ValueTask&lt;Response&lt;T&gt;&gt; WaitForCompletionAsync(CancellationToken cancellationToken) =&gt;
+                await _operationInternal.WaitForCompletionAsync(cancellationToken).ConfigureAwait(false);
+            </code>
+            </example>
+            </summary>
+            <param name="cancellationToken">A <see cref="T:System.Threading.CancellationToken" /> controlling the request lifetime.</param>
+            <returns>The last HTTP response received from the server, including the final result of the long-running operation.</returns>
+            <exception cref="T:Azure.RequestFailedException">Thrown if there's been any issues during the connection, or if the operation has completed with failures.</exception>
+        </member>
+        <member name="M:Azure.Core.OperationInternalBase.WaitForCompletionResponseAsync(System.TimeSpan,System.Threading.CancellationToken)">
+            <summary>
+            Periodically calls <see cref="M:Azure.Core.OperationInternalBase.UpdateStatusAsync(System.Threading.CancellationToken)" /> until the long-running operation completes. The interval
+            between calls is defined by the parameter <paramref name="pollingInterval" />, but it can change based on information returned
+            from the server. After each service call, a retry-after header may be returned to communicate that there is no reason to poll
+            for status change until the specified time has passed. In this case, the maximum value between the <paramref name="pollingInterval" />
+            parameter and the retry-after header is chosen as the wait interval. Headers supported are: "Retry-After", "retry-after-ms",
+            and "x-ms-retry-after-ms".
+            <example>Usage example:
+            <code>
+              public async ValueTask&lt;Response&lt;T&gt;&gt; WaitForCompletionAsync(TimeSpan pollingInterval, CancellationToken cancellationToken) =&gt;
+                await _operationInternal.WaitForCompletionAsync(pollingInterval, cancellationToken).ConfigureAwait(false);
+            </code>
+            </example>
+            </summary>
+            <param name="pollingInterval">The interval between status requests to the server. <strong></strong></param>
+            <param name="cancellationToken">A <see cref="T:System.Threading.CancellationToken" /> controlling the request lifetime.</param>
+            <returns>The last HTTP response received from the server, including the final result of the long-running operation.</returns>
+            <exception cref="T:Azure.RequestFailedException">Thrown if there's been any issues during the connection, or if the operation has completed with failures.</exception>
+        </member>
+        <member name="M:Azure.Core.OperationInternalBase.WaitForCompletionResponse(System.Threading.CancellationToken)">
+            <summary>
+            Periodically calls <see cref="M:Azure.Core.OperationInternalBase.UpdateStatus(System.Threading.CancellationToken)" /> until the long-running operation completes.
+            After each service call, a retry-after header may be returned to communicate that there is no reason to poll
+            for status change until the specified time has passed.  The maximum of the retry after value and the fallback strategy
+            is then used as the wait interval.
+            Headers supported are: "Retry-After", "retry-after-ms", and "x-ms-retry-after-ms",
+            and "x-ms-retry-after-ms".
+            <example>Usage example:
+            <code>
+              public async ValueTask&lt;Response&lt;T&gt;&gt; WaitForCompletionAsync(TimeSpan pollingInterval, CancellationToken cancellationToken) =&gt;
+                await _operationInternal.WaitForCompletionAsync(pollingInterval, cancellationToken).ConfigureAwait(false);
+            </code>
+            </example>
+            </summary>
+            <param name="cancellationToken">A <see cref="T:System.Threading.CancellationToken" /> controlling the request lifetime.</param>
+            <returns>The last HTTP response received from the server, including the final result of the long-running operation.</returns>
+            <exception cref="T:Azure.RequestFailedException">Thrown if there's been any issues during the connection, or if the operation has completed with failures.</exception>
+        </member>
+        <member name="M:Azure.Core.OperationInternalBase.WaitForCompletionResponse(System.TimeSpan,System.Threading.CancellationToken)">
+            <summary>
+            Periodically calls <see cref="M:Azure.Core.OperationInternalBase.UpdateStatus(System.Threading.CancellationToken)" /> until the long-running operation completes. The interval
+            between calls is defined by the parameter <paramref name="pollingInterval" />, but it can change based on information returned
+            from the server. After each service call, a retry-after header may be returned to communicate that there is no reason to poll
+            for status change until the specified time has passed. In this case, the maximum value between the <paramref name="pollingInterval" />
+            parameter and the retry-after header is chosen as the wait interval. Headers supported are: "Retry-After", "retry-after-ms",
+            and "x-ms-retry-after-ms".
+            <example>Usage example:
+            <code>
+              public async ValueTask&lt;Response&lt;T&gt;&gt; WaitForCompletionAsync(TimeSpan pollingInterval, CancellationToken cancellationToken) =&gt;
+                await _operationInternal.WaitForCompletionAsync(pollingInterval, cancellationToken).ConfigureAwait(false);
+            </code>
+            </example>
+            </summary>
+            <param name="pollingInterval">The interval between status requests to the server.</param>
+            <param name="cancellationToken">A <see cref="T:System.Threading.CancellationToken" /> controlling the request lifetime.</param>
+            <returns>The last HTTP response received from the server, including the final result of the long-running operation.</returns>
+            <exception cref="T:Azure.RequestFailedException">Thrown if there's been any issues during the connection, or if the operation has completed with failures.</exception>
+        </member>
+        <member name="T:Azure.Core.OperationInternal`1">
+            <summary>
+            A helper class used to build long-running operation instances. In order to use this helper:
+            <list type="number">
+              <item>Make sure your LRO implements the <see cref="T:Azure.Core.IOperation`1" /> interface.</item>
+              <item>Add a private <see cref="T:Azure.Core.OperationInternal`1" /> field to your LRO, and instantiate it during construction.</item>
+              <item>Delegate method calls to the <see cref="T:Azure.Core.OperationInternal`1" /> implementations.</item>
+            </list>
+            Supported members:
+            <list type="bullet">
+              <item>
+                <description><see cref="P:Azure.Core.OperationInternal`1.HasValue" /></description>
+              </item>
+              <item>
+                <description><see cref="P:Azure.Core.OperationInternalBase.HasCompleted" /></description>
+              </item>
+              <item>
+                <description><see cref="P:Azure.Core.OperationInternal`1.Value" /></description>
+              </item>
+              <item>
+                <description><see cref="P:Azure.Core.OperationInternalBase.RawResponse" />, used for <see cref="M:Azure.Operation.GetRawResponse" /></description>
+              </item>
+              <item>
+                <description><see cref="M:Azure.Core.OperationInternalBase.UpdateStatus(System.Threading.CancellationToken)" /></description>
+              </item>
+              <item>
+                <description><see cref="M:Azure.Core.OperationInternalBase.UpdateStatusAsync(System.Threading.CancellationToken)" /></description>
+              </item>
+              <item>
+                <description><see cref="M:Azure.Core.OperationInternal`1.WaitForCompletionAsync(System.Threading.CancellationToken)" /></description>
+              </item>
+              <item>
+                <description><see cref="M:Azure.Core.OperationInternal`1.WaitForCompletionAsync(System.TimeSpan,System.Threading.CancellationToken)" /></description>
+              </item>
+            </list>
+            </summary>
+            <typeparam name="T">The final result of the long-running operation. Must match the type used in <see cref="T:Azure.Operation`1" />.</typeparam>
+        </member>
+        <member name="M:Azure.Core.OperationInternal`1.Succeeded(Azure.Response,`0)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Azure.Core.OperationInternal" /> class in a final successful state.
+            </summary>
+            <param name="rawResponse">The final value of <see cref="P:Azure.Core.OperationInternalBase.RawResponse" />.</param>
+            <param name="value">The final result of the long-running operation.</param>
+        </member>
+        <member name="M:Azure.Core.OperationInternal`1.Failed(Azure.Response,Azure.RequestFailedException)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Azure.Core.OperationInternal" /> class in a final failed state.
+            </summary>
+            <param name="rawResponse">The final value of <see cref="P:Azure.Core.OperationInternalBase.RawResponse" />.</param>
+            <param name="operationFailedException">The exception that will be thrown by <c>UpdateStatusAsync</c>.</param>
+        </member>
+        <member name="M:Azure.Core.OperationInternal`1.#ctor(Azure.Core.IOperation{`0},Azure.Core.Pipeline.ClientDiagnostics,Azure.Response,System.String,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}},Azure.Core.DelayStrategy)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Azure.Core.OperationInternal`1" /> class.
+            </summary>
+            <param name="operation">The long-running operation making use of this class. Passing "<c>this</c>" is expected.</param>
+            <param name="clientDiagnostics">Used for diagnostic scope and exception creation. This is expected to be the instance created during the construction of your main client.</param>
+            <param name="rawResponse">
+                The initial value of <see cref="P:Azure.Core.OperationInternalBase.RawResponse" />. Usually, long-running operation objects can be instantiated in two ways:
+                <list type="bullet">
+                    <item>
+                        When calling a client's "<c>Start&lt;OperationName&gt;</c>" method, a service call is made to start the operation, and an <see cref="T:Azure.Operation`1" /> instance is returned.
+                        In this case, the response received from this service call can be passed here.
+                    </item>
+                    <item>
+                        When a user instantiates an <see cref="T:Azure.Operation`1" /> directly using a public constructor, there's no previous service call. In this case, passing <c>null</c> is expected.
+                    </item>
+                </list>
+            </param>
+            <param name="operationTypeName">
+                The type name of the long-running operation making use of this class. Used when creating diagnostic scopes. If left <c>null</c>, the type name will be inferred based on the
+                parameter <paramref name="operation" />.
+            </param>
+            <param name="scopeAttributes">The attributes to use during diagnostic scope creation.</param>
+            <param name="fallbackStrategy">The delay strategy when Retry-After header is not present.  When it is present, the longer of the two delays will be used.
+                Default is <see cref="T:Azure.Core.FixedDelayWithNoJitterStrategy" />.</param>
+        </member>
+        <member name="P:Azure.Core.OperationInternal`1.HasValue">
+            <summary>
+            Returns <c>true</c> if the long-running operation completed successfully and has produced a final result.
+            <example>Usage example:
+            <code>
+              public bool HasValue =&gt; _operationInternal.HasValue;
+            </code>
+            </example>
+            </summary>
+        </member>
+        <member name="P:Azure.Core.OperationInternal`1.Value">
+            <summary>
+            The final result of the long-running operation.
+            <example>Usage example:
+            <code>
+              public T Value =&gt; _operationInternal.Value;
+            </code>
+            </example>
+            </summary>
+            <exception cref="T:System.InvalidOperationException">Thrown when the operation has not completed yet.</exception>
+            <exception cref="T:Azure.RequestFailedException">Thrown when the operation has completed with failures.</exception>
+        </member>
+        <member name="M:Azure.Core.OperationInternal`1.WaitForCompletionAsync(System.Threading.CancellationToken)">
+            <summary>
+            Periodically calls <see cref="M:Azure.Core.OperationInternalBase.UpdateStatusAsync(System.Threading.CancellationToken)" /> until the long-running operation completes.
+            After each service call, a retry-after header may be returned to communicate that there is no reason to poll
+            for status change until the specified time has passed.
+            Headers supported are: "Retry-After", "retry-after-ms", and "x-ms-retry-after-ms",
+            <example>Usage example:
+            <code>
+              public async ValueTask&lt;Response&lt;T&gt;&gt; WaitForCompletionAsync(CancellationToken cancellationToken) =&gt;
+                await _operationInternal.WaitForCompletionAsync(cancellationToken).ConfigureAwait(false);
+            </code>
+            </example>
+            </summary>
+            <param name="cancellationToken">A <see cref="T:System.Threading.CancellationToken" /> controlling the request lifetime.</param>
+            <returns>The last HTTP response received from the server, including the final result of the long-running operation.</returns>
+            <exception cref="T:Azure.RequestFailedException">Thrown if there's been any issues during the connection, or if the operation has completed with failures.</exception>
+        </member>
+        <member name="M:Azure.Core.OperationInternal`1.WaitForCompletionAsync(System.TimeSpan,System.Threading.CancellationToken)">
+            <summary>
+            Periodically calls <see cref="M:Azure.Core.OperationInternalBase.UpdateStatusAsync(System.Threading.CancellationToken)" /> until the long-running operation completes. The interval
+            between calls is defined by the parameter <paramref name="pollingInterval" />, but it can change based on information returned
+            from the server. After each service call, a retry-after header may be returned to communicate that there is no reason to poll
+            for status change until the specified time has passed. In this case, the maximum value between the <paramref name="pollingInterval" />
+            parameter and the retry-after header is chosen as the wait interval. Headers supported are: "Retry-After", "retry-after-ms",
+            and "x-ms-retry-after-ms".
+            <example>Usage example:
+            <code>
+              public async ValueTask&lt;Response&lt;T&gt;&gt; WaitForCompletionAsync(TimeSpan pollingInterval, CancellationToken cancellationToken) =&gt;
+                await _operationInternal.WaitForCompletionAsync(pollingInterval, cancellationToken).ConfigureAwait(false);
+            </code>
+            </example>
+            </summary>
+            <param name="pollingInterval">The interval between status requests to the server.</param>
+            <param name="cancellationToken">A <see cref="T:System.Threading.CancellationToken" /> controlling the request lifetime.</param>
+            <returns>The last HTTP response received from the server, including the final result of the long-running operation.</returns>
+            <exception cref="T:Azure.RequestFailedException">Thrown if there's been any issues during the connection, or if the operation has completed with failures.</exception>
+        </member>
+        <member name="M:Azure.Core.OperationInternal`1.WaitForCompletion(System.Threading.CancellationToken)">
+            <summary>
+            Periodically calls <see cref="M:Azure.Core.OperationInternalBase.UpdateStatus(System.Threading.CancellationToken)" /> until the long-running operation completes.
+            After each service call, a retry-after header may be returned to communicate that there is no reason to poll
+            for status change until the specified time has passed.
+            Headers supported are: "Retry-After", "retry-after-ms", and "x-ms-retry-after-ms",
+            <example>Usage example:
+            <code>
+              public async ValueTask&lt;Response&lt;T&gt;&gt; WaitForCompletionAsync(CancellationToken cancellationToken) =&gt;
+                await _operationInternal.WaitForCompletionAsync(cancellationToken).ConfigureAwait(false);
+            </code>
+            </example>
+            </summary>
+            <param name="cancellationToken">A <see cref="T:System.Threading.CancellationToken" /> controlling the request lifetime.</param>
+            <returns>The last HTTP response received from the server, including the final result of the long-running operation.</returns>
+            <exception cref="T:Azure.RequestFailedException">Thrown if there's been any issues during the connection, or if the operation has completed with failures.</exception>
+        </member>
+        <member name="M:Azure.Core.OperationInternal`1.WaitForCompletion(System.TimeSpan,System.Threading.CancellationToken)">
+            <summary>
+            Periodically calls <see cref="M:Azure.Core.OperationInternalBase.UpdateStatus(System.Threading.CancellationToken)" /> until the long-running operation completes. The interval
+            between calls is defined by the <see cref="T:Azure.Core.FixedDelayWithNoJitterStrategy" />, which takes into account any retry-after header that is returned
+            from the server.
+            <example>Usage example:
+            <code>
+              public async ValueTask&lt;Response&lt;T&gt;&gt; WaitForCompletionAsync(CancellationToken cancellationToken) =&gt;
+                await _operationInternal.WaitForCompletionAsync(cancellationToken).ConfigureAwait(false);
+            </code>
+            </example>
+            </summary>
+            <param name="pollingInterval">The interval between status requests to the server.</param>
+            <param name="cancellationToken">A <see cref="T:System.Threading.CancellationToken" /> controlling the request lifetime.</param>
+            <returns>The last HTTP response received from the server, including the final result of the long-running operation.</returns>
+            <exception cref="T:Azure.RequestFailedException">Thrown if there's been any issues during the connection, or if the operation has completed with failures.</exception>
+        </member>
+        <member name="T:Azure.Core.IOperation`1">
+            <summary>
+            An interface used by <see cref="T:Azure.Core.OperationInternal`1" /> for making service calls and updating state. It's expected that
+            your long-running operation classes implement this interface.
+            </summary>
+            <typeparam name="T">The final result of the long-running operation. Must match the type used in <see cref="T:Azure.Operation`1" />.</typeparam>
+        </member>
+        <member name="M:Azure.Core.IOperation`1.UpdateStateAsync(System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Calls the service and updates the state of the long-running operation. Properties directly handled by the
+            <see cref="T:Azure.Core.OperationInternal`1" /> class, such as <see cref="P:Azure.Core.OperationInternalBase.RawResponse" /> or
+            <see cref="P:Azure.Core.OperationInternal`1.Value" />, don't need to be updated. Operation-specific properties, such
+            as "<c>CreateOn</c>" or "<c>LastModified</c>", must be manually updated by the operation implementing this
+            method.
+            <example>Usage example:
+            <code>
+              async ValueTask&lt;OperationState&lt;T&gt;&gt; IOperation&lt;T&gt;.UpdateStateAsync(bool async, CancellationToken cancellationToken)<br />
+              {<br />
+                Response&lt;R&gt; response = async ? &lt;async service call&gt; : &lt;sync service call&gt;;<br />
+                if (&lt;operation succeeded&gt;) return OperationState&lt;T&gt;.Success(response.GetRawResponse(), &lt;parse response&gt;);<br />
+                if (&lt;operation failed&gt;) return OperationState&lt;T&gt;.Failure(response.GetRawResponse());<br />
+                return OperationState&lt;T&gt;.Pending(response.GetRawResponse());<br />
+              }
+            </code>
+            </example>
+            </summary>
+            <param name="async"><c>true</c> if the call should be executed asynchronously. Otherwise, <c>false</c>.</param>
+            <param name="cancellationToken">A <see cref="T:System.Threading.CancellationToken" /> controlling the request lifetime.</param>
+            <returns>
+            A structure indicating the current operation state. The <see cref="T:Azure.Core.OperationState`1" /> structure must be instantiated by one of
+            its static methods:
+            <list type="bullet">
+              <item>Use <see cref="M:Azure.Core.OperationState`1.Success(Azure.Response,`0)" /> when the operation has completed successfully.</item>
+              <item>Use <see cref="M:Azure.Core.OperationState`1.Failure(Azure.Response,Azure.RequestFailedException)" /> when the operation has completed with failures.</item>
+              <item>Use <see cref="M:Azure.Core.OperationState`1.Pending(Azure.Response)" /> when the operation has not completed yet.</item>
+            </list>
+            </returns>
+        </member>
+        <member name="T:Azure.Core.OperationState`1">
+            <summary>
+            A helper structure passed to <see cref="T:Azure.Core.OperationInternal`1" /> to indicate the current operation state. This structure must be
+            instantiated by one of its static methods, depending on the operation state:
+            <list type="bullet">
+              <item>Use <see cref="M:Azure.Core.OperationState`1.Success(Azure.Response,`0)" /> when the operation has completed successfully.</item>
+              <item>Use <see cref="M:Azure.Core.OperationState`1.Failure(Azure.Response,Azure.RequestFailedException)" /> when the operation has completed with failures.</item>
+              <item>Use <see cref="M:Azure.Core.OperationState`1.Pending(Azure.Response)" /> when the operation has not completed yet.</item>
+            </list>
+            </summary>
+            <typeparam name="T">The final result of the long-running operation. Must match the type used in <see cref="T:Azure.Operation`1" />.</typeparam>
+        </member>
+        <member name="M:Azure.Core.OperationState`1.Success(Azure.Response,`0)">
+            <summary>
+            Instantiates an <see cref="T:Azure.Core.OperationState`1" /> indicating the operation has completed successfully.
+            </summary>
+            <param name="rawResponse">The HTTP response obtained during the status update.</param>
+            <param name="value">The final result of the long-running operation.</param>
+            <returns>A new <see cref="T:Azure.Core.OperationState`1" /> instance.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="rawResponse" /> or <paramref name="value" /> is <c>null</c>.</exception>
+        </member>
+        <member name="M:Azure.Core.OperationState`1.Failure(Azure.Response,Azure.RequestFailedException)">
+            <summary>
+            Instantiates an <see cref="T:Azure.Core.OperationState`1" /> indicating the operation has completed with failures.
+            </summary>
+            <param name="rawResponse">The HTTP response obtained during the status update.</param>
+            <param name="operationFailedException">
+            The exception to throw from <c>UpdateStatus</c> because of the operation failure. The same exception will be thrown when
+            <see cref="P:Azure.Core.OperationInternal`1.Value" /> is called. If left <c>null</c>, a default exception is created based on the
+            <paramref name="rawResponse" /> parameter.
+            </param>
+            <returns>A new <see cref="T:Azure.Core.OperationState`1" /> instance.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="rawResponse" /> is <c>null</c>.</exception>
+        </member>
+        <member name="M:Azure.Core.OperationState`1.Pending(Azure.Response)">
+            <summary>
+            Instantiates an <see cref="T:Azure.Core.OperationState`1" /> indicating the operation has not completed yet.
+            </summary>
+            <param name="rawResponse">The HTTP response obtained during the status update.</param>
+            <returns>A new <see cref="T:Azure.Core.OperationState`1" /> instance.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="rawResponse" /> is <c>null</c>.</exception>
+        </member>
+        <member name="T:Azure.Core.OperationPoller">
+            <summary>
+            Implementation of LRO polling logic.
+            </summary>
+        </member>
+        <member name="P:Azure.Core.ProtocolOperation`1.Id">
+            <summary>
+            Gets an ID representing the operation that can be used to poll for
+            the status of the long-running operation.
+            </summary>
+        </member>
+        <member name="P:Azure.Core.ProtocolOperation`1.Value">
+            <summary>
+            Final result of the long-running operation.
+            </summary><remarks>
+            This property can be accessed only after the operation completes successfully (HasValue is true).
+            </remarks>
+        </member>
+        <member name="P:Azure.Core.ProtocolOperation`1.HasCompleted">
+            <summary>
+            Returns true if the long-running operation completed.
+            </summary>
+        </member>
+        <member name="P:Azure.Core.ProtocolOperation`1.HasValue">
+            <summary>
+            Returns true if the long-running operation completed successfully and has produced final result (accessible by Value property).
+            </summary>
+        </member>
+        <member name="M:Azure.Core.ProtocolOperation`1.GetRawResponse">
+            <summary>
+            The last HTTP response received from the server.
+            </summary><remarks>
+            The last response returned from the server during the lifecycle of this instance.
+            An instance of <see cref="T:Azure.Operation`1" /> sends requests to a server in UpdateStatusAsync, UpdateStatus, and other methods.
+            Responses from these requests can be accessed using GetRawResponse.
+            </remarks>
+        </member>
+        <member name="M:Azure.Core.ProtocolOperation`1.UpdateStatus(System.Threading.CancellationToken)">
+            <summary>
+            Calls the server to get updated status of the long-running operation.
+            </summary><param name="cancellationToken">A <see cref="T:System.Threading.CancellationToken" /> used for the service call.</param><returns>The HTTP response received from the server.</returns><remarks>
+            This operation will update the value returned from GetRawResponse and might update HasCompleted.
+            </remarks>
+        </member>
+        <member name="M:Azure.Core.ProtocolOperation`1.UpdateStatusAsync(System.Threading.CancellationToken)">
+            <summary>
+            Calls the server to get updated status of the long-running operation.
+            </summary><param name="cancellationToken">A <see cref="T:System.Threading.CancellationToken" /> used for the service call.</param><returns>The HTTP response received from the server.</returns><remarks>
+            This operation will update the value returned from GetRawResponse and might update HasCompleted.
+            </remarks>
+        </member>
+        <member name="M:Azure.Core.ProtocolOperation`1.WaitForCompletionAsync(System.Threading.CancellationToken)">
+            <summary>
+            Periodically calls the server till the long-running operation completes.
+            </summary><param name="cancellationToken">A <see cref="T:System.Threading.CancellationToken" /> used for the periodical service calls.</param><returns>The last HTTP response received from the server.</returns><remarks>
+            This method will periodically call UpdateStatusAsync till HasCompleted is true, then return the final result of the operation.
+            </remarks>
+        </member>
+        <member name="M:Azure.Core.ProtocolOperation`1.WaitForCompletionAsync(System.TimeSpan,System.Threading.CancellationToken)">
+            <summary>
+            Periodically calls the server till the long-running operation completes.
+            </summary><param name="pollingInterval">
+            The interval between status requests to the server.
+            The interval can change based on information returned from the server.
+            For example, the server might communicate to the client that there is not reason to poll for status change sooner than some time.
+            </param><param name="cancellationToken">A <see cref="T:System.Threading.CancellationToken" /> used for the periodical service calls.</param><returns>The last HTTP response received from the server.</returns><remarks>
+            This method will periodically call UpdateStatusAsync till HasCompleted is true, then return the final result of the operation.
+            </remarks>
+        </member>
+        <member name="T:Azure.Core.SequentialDelayStrategy">
+            <summary>
+            A delay strategy that uses a fixed sequence of delays with no jitter applied. This is used by management LROs.
+            </summary>
+        </member>
+        <member name="T:Azure.Variant">
+            <summary>
+            Used to store primitive values without boxing, and other instances.
+            </summary>
+        </member>
+        <member name="M:Azure.Variant.#ctor(System.Object)">
+            <summary>
+            Creates instance.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="P:Azure.Variant.Type">
+            <summary>
+            Type of the instance stored in this value.
+            </summary>
+        </member>
+        <member name="M:Azure.Variant.#ctor(System.Byte)">
+            <summary>
+            Stores byte in this value.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.#ctor(System.Nullable{System.Byte})">
+            <summary>
+            Stores nullable byte in this value.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.op_Implicit(System.Byte)~Azure.Variant">
+            <summary>
+            Casts byte to value.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.op_Explicit(Azure.Variant@)~System.Byte">
+            <summary>
+            Casts value to byte, if possible.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.op_Implicit(System.Nullable{System.Byte})~Azure.Variant">
+            <summary>
+            Casts nullable byte to value.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.op_Explicit(Azure.Variant@)~System.Nullable{System.Byte}">
+            <summary>
+            Casts value to nullable byte, if possible.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.#ctor(System.SByte)">
+            <summary>
+            Stores sbyte in this value.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.#ctor(System.Nullable{System.SByte})">
+            <summary>
+            Stores nullable sbyte in this value.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.op_Implicit(System.SByte)~Azure.Variant">
+            <summary>
+            Casts sbyte to value.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.op_Explicit(Azure.Variant@)~System.SByte">
+            <summary>
+            Casts value to sbyte, if possible.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.op_Implicit(System.Nullable{System.SByte})~Azure.Variant">
+            <summary>
+            Casts nullable sbyte to value.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.op_Explicit(Azure.Variant@)~System.Nullable{System.SByte}">
+            <summary>
+            Casts value to nullable sbyte, if possible.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.#ctor(System.Boolean)">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.#ctor(System.Nullable{System.Boolean})">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.op_Implicit(System.Boolean)~Azure.Variant">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.op_Explicit(Azure.Variant@)~System.Boolean">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.op_Implicit(System.Nullable{System.Boolean})~Azure.Variant">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.op_Explicit(Azure.Variant@)~System.Nullable{System.Boolean}">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.#ctor(System.Char)">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.#ctor(System.Nullable{System.Char})">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.op_Implicit(System.Char)~Azure.Variant">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.op_Explicit(Azure.Variant@)~System.Char">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.op_Implicit(System.Nullable{System.Char})~Azure.Variant">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.op_Explicit(Azure.Variant@)~System.Nullable{System.Char}">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.#ctor(System.Int16)">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.#ctor(System.Nullable{System.Int16})">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.op_Implicit(System.Int16)~Azure.Variant">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.op_Explicit(Azure.Variant@)~System.Int16">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.op_Implicit(System.Nullable{System.Int16})~Azure.Variant">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.op_Explicit(Azure.Variant@)~System.Nullable{System.Int16}">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.#ctor(System.Int32)">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.#ctor(System.Nullable{System.Int32})">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.op_Implicit(System.Int32)~Azure.Variant">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.op_Explicit(Azure.Variant@)~System.Int32">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.op_Implicit(System.Nullable{System.Int32})~Azure.Variant">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.op_Explicit(Azure.Variant@)~System.Nullable{System.Int32}">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.#ctor(System.Int64)">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.#ctor(System.Nullable{System.Int64})">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.op_Implicit(System.Int64)~Azure.Variant">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.op_Explicit(Azure.Variant@)~System.Int64">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.op_Implicit(System.Nullable{System.Int64})~Azure.Variant">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.op_Explicit(Azure.Variant@)~System.Nullable{System.Int64}">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.#ctor(System.UInt16)">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.#ctor(System.Nullable{System.UInt16})">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.op_Implicit(System.UInt16)~Azure.Variant">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.op_Explicit(Azure.Variant@)~System.UInt16">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.op_Implicit(System.Nullable{System.UInt16})~Azure.Variant">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.op_Explicit(Azure.Variant@)~System.Nullable{System.UInt16}">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.#ctor(System.UInt32)">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.#ctor(System.Nullable{System.UInt32})">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.op_Implicit(System.UInt32)~Azure.Variant">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.op_Explicit(Azure.Variant@)~System.UInt32">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.op_Implicit(System.Nullable{System.UInt32})~Azure.Variant">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.op_Explicit(Azure.Variant@)~System.Nullable{System.UInt32}">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.#ctor(System.UInt64)">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.#ctor(System.Nullable{System.UInt64})">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.op_Implicit(System.UInt64)~Azure.Variant">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.op_Explicit(Azure.Variant@)~System.UInt64">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.op_Implicit(System.Nullable{System.UInt64})~Azure.Variant">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.op_Explicit(Azure.Variant@)~System.Nullable{System.UInt64}">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.#ctor(System.Single)">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.#ctor(System.Nullable{System.Single})">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.op_Implicit(System.Single)~Azure.Variant">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.op_Explicit(Azure.Variant@)~System.Single">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.op_Implicit(System.Nullable{System.Single})~Azure.Variant">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.op_Explicit(Azure.Variant@)~System.Nullable{System.Single}">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.#ctor(System.Double)">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.#ctor(System.Nullable{System.Double})">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.op_Implicit(System.Double)~Azure.Variant">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.op_Explicit(Azure.Variant@)~System.Double">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.op_Implicit(System.Nullable{System.Double})~Azure.Variant">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.op_Explicit(Azure.Variant@)~System.Nullable{System.Double}">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.#ctor(System.DateTimeOffset)">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.#ctor(System.Nullable{System.DateTimeOffset})">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.op_Implicit(System.DateTimeOffset)~Azure.Variant">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.op_Explicit(Azure.Variant@)~System.DateTimeOffset">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.op_Implicit(System.Nullable{System.DateTimeOffset})~Azure.Variant">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.op_Explicit(Azure.Variant@)~System.Nullable{System.DateTimeOffset}">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.#ctor(System.DateTime)">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.#ctor(System.Nullable{System.DateTime})">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.op_Implicit(System.DateTime)~Azure.Variant">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.op_Explicit(Azure.Variant@)~System.DateTime">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.op_Implicit(System.Nullable{System.DateTime})~Azure.Variant">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.op_Explicit(Azure.Variant@)~System.Nullable{System.DateTime}">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.#ctor(System.ArraySegment{System.Byte})">
+            <summary>
+            TBD.
+            </summary>
+            <param name="segment"></param>
+        </member>
+        <member name="M:Azure.Variant.op_Implicit(System.ArraySegment{System.Byte})~Azure.Variant">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.op_Explicit(Azure.Variant@)~System.ArraySegment{System.Byte}">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.#ctor(System.ArraySegment{System.Char})">
+            <summary>
+            TBD.
+            </summary>
+            <param name="segment"></param>
+        </member>
+        <member name="M:Azure.Variant.op_Implicit(System.ArraySegment{System.Char})~Azure.Variant">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.op_Explicit(Azure.Variant@)~System.ArraySegment{System.Char}">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.op_Implicit(System.Decimal)~Azure.Variant">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.op_Explicit(Azure.Variant@)~System.Decimal">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.op_Implicit(System.Nullable{System.Decimal})~Azure.Variant">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.op_Explicit(Azure.Variant@)~System.Nullable{System.Decimal}">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.op_Implicit(System.String)~Azure.Variant">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.op_Explicit(Azure.Variant@)~System.String">
+            <summary>
+            TBD.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Azure.Variant.Create``1(``0)">
+            <summary>
+            TBD.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Azure.Variant.TryGetValue``1(``0@)">
+            <summary>
+            TBD.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Azure.Variant.As``1">
+            <summary>
+            TBD.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Azure.Variant.ToString">
+            <summary>Returns the fully qualified type name of this instance.</summary><returns>The fully qualified type name.</returns>
+        </member>
+        <member name="F:Azure.Variant.Null">
+            <summary>
+            Null Variant.
+            </summary>
+        </member>
+        <member name="P:Azure.Variant.IsNull">
+            <summary>
+            Indicates whether the Variant is null or has a value.
+            </summary>
+            <returns><code>true</code> if the Variant is <code>null</code>; <code>false</code> otherwise.</returns>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.AllowNullAttribute">
+            <summary>Specifies that null is allowed as an input even if the corresponding type disallows it.</summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.DisallowNullAttribute">
+            <summary>Specifies that null is disallowed as an input even if the corresponding type allows it.</summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.MaybeNullAttribute">
+            <summary>Specifies that an output may be null even if the corresponding type disallows it.</summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.NotNullAttribute">
+            <summary>Specifies that an output will not be null even if the corresponding type allows it.</summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.MaybeNullWhenAttribute">
+            <summary>Specifies that when a method returns <see cref="P:System.Diagnostics.CodeAnalysis.MaybeNullWhenAttribute.ReturnValue" />, the parameter may be null even if the corresponding type disallows it.</summary>
+        </member>
+        <member name="M:System.Diagnostics.CodeAnalysis.MaybeNullWhenAttribute.#ctor(System.Boolean)">
+            <summary>Initializes the attribute with the specified return value condition.</summary>
+            <param name="returnValue">
+            The return value condition. If the method returns this value, the associated parameter may be null.
+            </param>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.MaybeNullWhenAttribute.ReturnValue">
+            <summary>Gets the return value condition.</summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.NotNullWhenAttribute">
+            <summary>Specifies that when a method returns <see cref="P:System.Diagnostics.CodeAnalysis.NotNullWhenAttribute.ReturnValue" />, the parameter will not be null even if the corresponding type allows it.</summary>
+        </member>
+        <member name="M:System.Diagnostics.CodeAnalysis.NotNullWhenAttribute.#ctor(System.Boolean)">
+            <summary>Initializes the attribute with the specified return value condition.</summary>
+            <param name="returnValue">
+            The return value condition. If the method returns this value, the associated parameter will not be null.
+            </param>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.NotNullWhenAttribute.ReturnValue">
+            <summary>Gets the return value condition.</summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.NotNullIfNotNullAttribute">
+            <summary>Specifies that the output will be non-null if the named parameter is non-null.</summary>
+        </member>
+        <member name="M:System.Diagnostics.CodeAnalysis.NotNullIfNotNullAttribute.#ctor(System.String)">
+            <summary>Initializes the attribute with the associated parameter name.</summary>
+            <param name="parameterName">
+            The associated parameter name.  The output will be non-null if the argument to the parameter specified is non-null.
+            </param>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.NotNullIfNotNullAttribute.ParameterName">
+            <summary>Gets the associated parameter name.</summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.DoesNotReturnAttribute">
+            <summary>Applied to a method that will never return under any circumstance.</summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.DoesNotReturnIfAttribute">
+            <summary>Specifies that the method will not return if the associated Boolean parameter is passed the specified value.</summary>
+        </member>
+        <member name="M:System.Diagnostics.CodeAnalysis.DoesNotReturnIfAttribute.#ctor(System.Boolean)">
+            <summary>Initializes the attribute with the specified parameter value.</summary>
+            <param name="parameterValue">
+            The condition parameter value. Code after the method will be considered unreachable by diagnostics if the argument to
+            the associated parameter matches this value.
+            </param>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.DoesNotReturnIfAttribute.ParameterValue">
+            <summary>Gets the condition parameter value.</summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.RequiresDynamicCodeAttribute">
+            <summary>
+            Indicates that the specified method requires the ability to generate new code at runtime,
+            for example through <see cref="N:System.Reflection" />.
+            </summary>
+            <remarks>
+            This allows tools to understand which methods are unsafe to call when compiling ahead of time.
+            </remarks>
+        </member>
+        <member name="M:System.Diagnostics.CodeAnalysis.RequiresDynamicCodeAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Diagnostics.CodeAnalysis.RequiresDynamicCodeAttribute" /> class
+            with the specified message.
+            </summary>
+            <param name="message">
+            A message that contains information about the usage of dynamic code.
+            </param>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.RequiresDynamicCodeAttribute.Message">
+            <summary>
+            Gets a message that contains information about the usage of dynamic code.
+            </summary>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.RequiresDynamicCodeAttribute.Url">
+            <summary>
+            Gets or sets an optional URL that contains more information about the method,
+            why it requires dynamic code, and what options a consumer has to deal with it.
+            </summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.RequiresUnreferencedCodeAttribute">
+            <summary>
+            Indicates that the specified method requires dynamic access to code that is not referenced
+            statically, for example through <see cref="N:System.Reflection" />.
+            </summary>
+            <remarks>
+            This allows tools to understand which methods are unsafe to call when removing unreferenced
+            code from an application.
+            </remarks>
+        </member>
+        <member name="M:System.Diagnostics.CodeAnalysis.RequiresUnreferencedCodeAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Diagnostics.CodeAnalysis.RequiresUnreferencedCodeAttribute" /> class
+            with the specified message.
+            </summary>
+            <param name="message">
+            A message that contains information about the usage of unreferenced code.
+            </param>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.RequiresUnreferencedCodeAttribute.Message">
+            <summary>
+            Gets a message that contains information about the usage of unreferenced code.
+            </summary>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.RequiresUnreferencedCodeAttribute.Url">
+            <summary>
+            Gets or sets an optional URL that contains more information about the method,
+            why it requires unreferenced code, and what options a consumer has to deal with it.
+            </summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessageAttribute">
+            <summary>
+            Suppresses reporting of a specific rule violation, allowing multiple suppressions on a
+            single code artifact.
+            </summary>
+            <remarks>
+            <see cref="T:System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessageAttribute" /> is different than
+            <see cref="T:System.Diagnostics.CodeAnalysis.SuppressMessageAttribute" /> in that it doesn't have a
+            <see cref="T:System.Diagnostics.ConditionalAttribute" />. So it is always preserved in the compiled assembly.
+            </remarks>
+        </member>
+        <member name="M:System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessageAttribute.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessageAttribute" />
+            class, specifying the category of the tool and the identifier for an analysis rule.
+            </summary>
+            <param name="category">The category for the attribute.</param>
+            <param name="checkId">The identifier of the analysis rule the attribute applies to.</param>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessageAttribute.Category">
+            <summary>
+            Gets the category identifying the classification of the attribute.
+            </summary>
+            <remarks>
+            The <see cref="P:System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessageAttribute.Category" /> property describes the tool or tool analysis category
+            for which a message suppression attribute applies.
+            </remarks>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessageAttribute.CheckId">
+            <summary>
+            Gets the identifier of the analysis tool rule to be suppressed.
+            </summary>
+            <remarks>
+            Concatenated together, the <see cref="P:System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessageAttribute.Category" /> and <see cref="P:System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessageAttribute.CheckId" />
+            properties form a unique check identifier.
+            </remarks>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessageAttribute.Scope">
+            <summary>
+            Gets or sets the scope of the code that is relevant for the attribute.
+            </summary>
+            <remarks>
+            The Scope property is an optional argument that specifies the metadata scope for which
+            the attribute is relevant.
+            </remarks>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessageAttribute.Target">
+            <summary>
+            Gets or sets a fully qualified path that represents the target of the attribute.
+            </summary>
+            <remarks>
+            The <see cref="P:System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessageAttribute.Target" /> property is an optional argument identifying the analysis target
+            of the attribute. An example value is "System.IO.Stream.ctor():System.Void".
+            Because it is fully qualified, it can be long, particularly for targets such as parameters.
+            The analysis tool user interface should be capable of automatically formatting the parameter.
+            </remarks>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessageAttribute.MessageId">
+            <summary>
+            Gets or sets an optional argument expanding on exclusion criteria.
+            </summary>
+            <remarks>
+            The <see cref="P:System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessageAttribute.MessageId" /> property is an optional argument that specifies additional
+            exclusion where the literal metadata target is not sufficiently precise. For example,
+            the <see cref="T:System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessageAttribute" /> cannot be applied within a method,
+            and it may be desirable to suppress a violation against a statement in the method that will
+            give a rule violation, but not against all statements in the method.
+            </remarks>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessageAttribute.Justification">
+            <summary>
+            Gets or sets the justification for suppressing the code analysis message.
+            </summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.DynamicDependencyAttribute">
+            <summary>
+            States a dependency that one member has on another.
+            </summary>
+            <remarks>
+            This can be used to inform tooling of a dependency that is otherwise not evident purely from
+            metadata and IL, for example a member relied on via reflection.
+            </remarks>
+        </member>
+        <member name="M:System.Diagnostics.CodeAnalysis.DynamicDependencyAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Diagnostics.CodeAnalysis.DynamicDependencyAttribute" /> class
+            with the specified signature of a member on the same type as the consumer.
+            </summary>
+            <param name="memberSignature">The signature of the member depended on.</param>
+        </member>
+        <member name="M:System.Diagnostics.CodeAnalysis.DynamicDependencyAttribute.#ctor(System.String,System.Type)">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Diagnostics.CodeAnalysis.DynamicDependencyAttribute" /> class
+            with the specified signature of a member on a <see cref="T:System.Type" />.
+            </summary>
+            <param name="memberSignature">The signature of the member depended on.</param>
+            <param name="type">The <see cref="T:System.Type" /> containing <paramref name="memberSignature" />.</param>
+        </member>
+        <member name="M:System.Diagnostics.CodeAnalysis.DynamicDependencyAttribute.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Diagnostics.CodeAnalysis.DynamicDependencyAttribute" /> class
+            with the specified signature of a member on a type in an assembly.
+            </summary>
+            <param name="memberSignature">The signature of the member depended on.</param>
+            <param name="typeName">The full name of the type containing the specified member.</param>
+            <param name="assemblyName">The assembly name of the type containing the specified member.</param>
+        </member>
+        <member name="M:System.Diagnostics.CodeAnalysis.DynamicDependencyAttribute.#ctor(System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes,System.Type)">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Diagnostics.CodeAnalysis.DynamicDependencyAttribute" /> class
+            with the specified types of members on a <see cref="T:System.Type" />.
+            </summary>
+            <param name="memberTypes">The types of members depended on.</param>
+            <param name="type">The <see cref="T:System.Type" /> containing the specified members.</param>
+        </member>
+        <member name="M:System.Diagnostics.CodeAnalysis.DynamicDependencyAttribute.#ctor(System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Diagnostics.CodeAnalysis.DynamicDependencyAttribute" /> class
+            with the specified types of members on a type in an assembly.
+            </summary>
+            <param name="memberTypes">The types of members depended on.</param>
+            <param name="typeName">The full name of the type containing the specified members.</param>
+            <param name="assemblyName">The assembly name of the type containing the specified members.</param>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.DynamicDependencyAttribute.MemberSignature">
+            <summary>
+            Gets the signature of the member depended on.
+            </summary>
+            <remarks>
+            Either <see cref="P:System.Diagnostics.CodeAnalysis.DynamicDependencyAttribute.MemberSignature" /> must be a valid string or <see cref="P:System.Diagnostics.CodeAnalysis.DynamicDependencyAttribute.MemberTypes" />
+            must not equal <see cref="F:System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.None" />, but not both.
+            </remarks>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.DynamicDependencyAttribute.MemberTypes">
+            <summary>
+            Gets the <see cref="T:System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes" /> which specifies the type
+            of members depended on.
+            </summary>
+            <remarks>
+            Either <see cref="P:System.Diagnostics.CodeAnalysis.DynamicDependencyAttribute.MemberSignature" /> must be a valid string or <see cref="P:System.Diagnostics.CodeAnalysis.DynamicDependencyAttribute.MemberTypes" />
+            must not equal <see cref="F:System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.None" />, but not both.
+            </remarks>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.DynamicDependencyAttribute.Type">
+            <summary>
+            Gets the <see cref="T:System.Type" /> containing the specified member.
+            </summary>
+            <remarks>
+            If neither <see cref="P:System.Diagnostics.CodeAnalysis.DynamicDependencyAttribute.Type" /> nor <see cref="P:System.Diagnostics.CodeAnalysis.DynamicDependencyAttribute.TypeName" /> are specified,
+            the type of the consumer is assumed.
+            </remarks>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.DynamicDependencyAttribute.TypeName">
+            <summary>
+            Gets the full name of the type containing the specified member.
+            </summary>
+            <remarks>
+            If neither <see cref="P:System.Diagnostics.CodeAnalysis.DynamicDependencyAttribute.Type" /> nor <see cref="P:System.Diagnostics.CodeAnalysis.DynamicDependencyAttribute.TypeName" /> are specified,
+            the type of the consumer is assumed.
+            </remarks>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.DynamicDependencyAttribute.AssemblyName">
+            <summary>
+            Gets the assembly name of the specified type.
+            </summary>
+            <remarks>
+            <see cref="P:System.Diagnostics.CodeAnalysis.DynamicDependencyAttribute.AssemblyName" /> is only valid when <see cref="P:System.Diagnostics.CodeAnalysis.DynamicDependencyAttribute.TypeName" /> is specified.
+            </remarks>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.DynamicDependencyAttribute.Condition">
+            <summary>
+            Gets or sets the condition in which the dependency is applicable, e.g. "DEBUG".
+            </summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.DynamicallyAccessedMembersAttribute">
+             <summary>
+             Indicates that certain members on a specified <see cref="T:System.Type" /> are accessed dynamically,
+             for example through <see cref="N:System.Reflection" />.
+             </summary>
+             <remarks>
+             This allows tools to understand which members are being accessed during the execution
+             of a program.
+            
+             This attribute is valid on members whose type is <see cref="T:System.Type" /> or <see cref="T:System.String" />.
+            
+             When this attribute is applied to a location of type <see cref="T:System.String" />, the assumption is
+             that the string represents a fully qualified type name.
+            
+             When this attribute is applied to a class, interface, or struct, the members specified
+             can be accessed dynamically on <see cref="T:System.Type" /> instances returned from calling
+             <see cref="M:System.Object.GetType" /> on instances of that class, interface, or struct.
+            
+             If the attribute is applied to a method it's treated as a special case and it implies
+             the attribute should be applied to the "this" parameter of the method. As such the attribute
+             should only be used on instance methods of types assignable to System.Type (or string, but no methods
+             will use it there).
+             </remarks>
+        </member>
+        <member name="M:System.Diagnostics.CodeAnalysis.DynamicallyAccessedMembersAttribute.#ctor(System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes)">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Diagnostics.CodeAnalysis.DynamicallyAccessedMembersAttribute" /> class
+            with the specified member types.
+            </summary>
+            <param name="memberTypes">The types of members dynamically accessed.</param>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.DynamicallyAccessedMembersAttribute.MemberTypes">
+            <summary>
+            Gets the <see cref="T:System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes" /> which specifies the type
+            of members dynamically accessed.
+            </summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes">
+             <summary>
+             Specifies the types of members that are dynamically accessed.
+            
+             This enumeration has a <see cref="T:System.FlagsAttribute" /> attribute that allows a
+             bitwise combination of its member values.
+             </summary>
+        </member>
+        <member name="F:System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.None">
+            <summary>
+            Specifies no members.
+            </summary>
+        </member>
+        <member name="F:System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicParameterlessConstructor">
+            <summary>
+            Specifies the default, parameterless public constructor.
+            </summary>
+        </member>
+        <member name="F:System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicConstructors">
+            <summary>
+            Specifies all public constructors.
+            </summary>
+        </member>
+        <member name="F:System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.NonPublicConstructors">
+            <summary>
+            Specifies all non-public constructors.
+            </summary>
+        </member>
+        <member name="F:System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicMethods">
+            <summary>
+            Specifies all public methods.
+            </summary>
+        </member>
+        <member name="F:System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.NonPublicMethods">
+            <summary>
+            Specifies all non-public methods.
+            </summary>
+        </member>
+        <member name="F:System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicFields">
+            <summary>
+            Specifies all public fields.
+            </summary>
+        </member>
+        <member name="F:System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.NonPublicFields">
+            <summary>
+            Specifies all non-public fields.
+            </summary>
+        </member>
+        <member name="F:System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicNestedTypes">
+            <summary>
+            Specifies all public nested types.
+            </summary>
+        </member>
+        <member name="F:System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.NonPublicNestedTypes">
+            <summary>
+            Specifies all non-public nested types.
+            </summary>
+        </member>
+        <member name="F:System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicProperties">
+            <summary>
+            Specifies all public properties.
+            </summary>
+        </member>
+        <member name="F:System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.NonPublicProperties">
+            <summary>
+            Specifies all non-public properties.
+            </summary>
+        </member>
+        <member name="F:System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicEvents">
+            <summary>
+            Specifies all public events.
+            </summary>
+        </member>
+        <member name="F:System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.NonPublicEvents">
+            <summary>
+            Specifies all non-public events.
+            </summary>
+        </member>
+        <member name="F:System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.Interfaces">
+            <summary>
+            Specifies all interfaces implemented by the type.
+            </summary>
+        </member>
+        <member name="F:System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.All">
+            <summary>
+            Specifies all members.
+            </summary>
+        </member>
+        <member name="M:Azure.Core.LruCache`2.System#Collections#IEnumerable#GetEnumerator">
+            <summary>Returns an enumerator that iterates through a collection.</summary><returns>An <see cref="T:System.Collections.IEnumerator" /> object that can be used to iterate through the collection.</returns>
+        </member>
+        <member name="M:Azure.Core.ChangeTrackingDictionary`2.System#Collections#IEnumerable#GetEnumerator">
+            <summary>Returns an enumerator that iterates through a collection.</summary><returns>An <see cref="T:System.Collections.IEnumerator" /> object that can be used to iterate through the collection.</returns>
+        </member>
+        <member name="P:Azure.Core.ChangeTrackingDictionary`2.System#Collections#Generic#IReadOnlyDictionary{TKey@TValue}#Keys">
+            <summary>Gets an enumerable collection that contains the keys in the read-only dictionary.</summary><returns>An enumerable collection that contains the keys in the read-only dictionary.</returns>
+        </member>
+        <member name="P:Azure.Core.ChangeTrackingDictionary`2.System#Collections#Generic#IReadOnlyDictionary{TKey@TValue}#Values">
+            <summary>Gets an enumerable collection that contains the values in the read-only dictionary.</summary><returns>An enumerable collection that contains the values in the read-only dictionary.</returns>
+        </member>
+        <member name="M:Azure.Core.ChangeTrackingList`1.System#Collections#IEnumerable#GetEnumerator">
+            <summary>Returns an enumerator that iterates through a collection.</summary><returns>An <see cref="T:System.Collections.IEnumerator" /> object that can be used to iterate through the collection.</returns>
+        </member>
+        <member name="M:Azure.Core.Pipeline.TaskExtensions.Enumerable`1.System#Collections#Generic#IEnumerable{T}#GetEnumerator">
+            <summary>Returns an enumerator that iterates through the collection.</summary><returns>An enumerator that can be used to iterate through the collection.</returns>
+        </member>
+        <member name="M:Azure.Core.Pipeline.TaskExtensions.Enumerable`1.System#Collections#IEnumerable#GetEnumerator">
+            <summary>Returns an enumerator that iterates through a collection.</summary><returns>An <see cref="T:System.Collections.IEnumerator" /> object that can be used to iterate through the collection.</returns>
+        </member>
+        <member name="P:Azure.Core.Pipeline.TaskExtensions.Enumerator`1.System#Collections#IEnumerator#Current">
+            <summary>Gets the element in the collection at the current position of the enumerator.</summary><returns>The element in the collection at the current position of the enumerator.</returns>
+        </member>
+    </members>
+</doc>
