@@ -138,7 +138,7 @@ Describe "Find-MgGraphCommand Command" {
                 $MgCommand.Command | Should -Be @("Get-MgReportSharePointActivityUserCount", "Get-MgBetaReportSharePointActivityUserCount")
             } | Should -Not -Throw    
         }
-        It 'Should find commands for uri woth /me segments' {
+        It 'Should find commands for uri with /me segments' {
             {
                 $MgCommand = Find-MgGraphCommand -Uri "/me/events/"
                 $MgCommand | Should -HaveCount 4
@@ -150,7 +150,7 @@ Describe "Find-MgGraphCommand Command" {
                 $MgCommand.Command | Select-Object -Unique | Should -BeIn @("New-MgUserEvent", "Get-MgUserEvent", "New-MgBetaUserEvent", "Get-MgBetaUserEvent")
             } | Should -Not -Throw
         }
-        It 'Should find commands for uri woth /me segments' {
+        It 'Should find commands for uri with /me segments' {
             {
                 $MgCommand = Find-MgGraphCommand -Uri "https://graph.microsoft.com/v1.0/me/events/"
                 $MgCommand | Should -HaveCount 4
@@ -160,6 +160,18 @@ Describe "Find-MgGraphCommand Command" {
                 $MgCommand.Variants | Select-Object -Unique | should -HaveCount 5
                 $MgCommand.URI | Select-Object -Unique | Should -Be "/users/{user-id}/events"
                 $MgCommand.Command | Select-Object -Unique | Should -BeIn @("New-MgUserEvent", "Get-MgUserEvent", "New-MgBetaUserEvent", "Get-MgBetaUserEvent")
+            } | Should -Not -Throw
+        }
+        It 'Should find commands for uri with Microsoft.Graph prefix in nested segments' {
+            {
+                $MgCommand = Find-MgGraphCommand -Uri "/identity/authenticationEventsFlows/{authenticationEventsFlow-id}/microsoft.graph.externalUsersSelfServiceSignUpEventsFlow/onAuthenticationMethodLoadStart/microsoft.graph.onAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp/identityProviders"
+                $MgCommand | Should -HaveCount 1
+                $MgCommand.Command | Select-Object -Unique | should -HaveCount 1
+                $MgCommand.Method | Select-Object -Unique | should -HaveCount 1
+                $MgCommand.APIVersion | Select-Object -Unique | should -HaveCount 1
+                $MgCommand.Variants | Select-Object -Unique | should -HaveCount 1
+                $MgCommand.URI | Select-Object -Unique | Should -Be "/identity/authenticationEventsFlows/{authenticationEventsFlow-id}/externalUsersSelfServiceSignUpEventsFlow/onAuthenticationMethodLoadStart/onAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp/identityProviders"
+                $MgCommand.Command | Select-Object -Unique | Should -BeIn @("Get-MgBetaIdentityAuthenticationEventFlowAsOnAuthenticationMethodLoadStartExternalUserSelfServiceSignUpIdentityProvider")
             } | Should -Not -Throw
         }
     }

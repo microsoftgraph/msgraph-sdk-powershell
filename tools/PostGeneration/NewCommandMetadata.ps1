@@ -58,16 +58,22 @@ $ApiVersion | ForEach-Object {
             $Method = $Matches.2
             $Uri = $Matches.3
 
-            # Remove FQN in action/function names.
+            # Remove FQN in paths.
             if ($Uri -match $ActionFunctionFQNPattern) {
                 $MatchedUriSegment = $Matches.0
+                $SegmentBuilder = ""
                 # Trim nested namespace segments.
-                $NestedNamespaceSegments = $Matches.1 -split "\."
-                # Remove trailing '()' from functions.
-                $LastSegment = $NestedNamespaceSegments[-1] -replace "\(\)", ""
-                $Uri = $Uri -replace [Regex]::Escape($MatchedUriSegment), "/$LastSegment"
+                $NestedNamespaceSegments = $Matches.1 -split "/"
+                foreach($Segment in $NestedNamespaceSegments){
+                    # Remove microsoft.graph prefix and trailing '()' from functions.
+                    $Segment = $segment.Replace("microsoft.graph.","").Replace("()", "")
+                    # Get resource object name from segment if it exists. e.g get 'updateAudience' from windowsUpdates.updateAudience
+                    $ResourceObj = $Segment.Split(".")
+                    $Segment = $ResourceObj[$ResourceObj.Count-1]       
+                    $SegmentBuilder += "/$Segment"
+                }
+                $Uri = $Uri -replace [Regex]::Escape($MatchedUriSegment), $SegmentBuilder
             }
-
             $MappingValue = @{
                 Command     = $CommandName
                 Variants    = [System.Collections.ArrayList]@($VariantName)

@@ -103,14 +103,21 @@ function GraphUri_RemoveNamespaceFromActionFunction {
     $ActionFunctionFQNPattern = "\/Microsoft.Graph.(.*)$"
 
     $NewUri = $Uri
-    # Remove FQN in action/function names.
+    # Remove FQN in paths.
     if ($Uri -match $ActionFunctionFQNPattern) {
         $MatchedUriSegment = $Matches.0
+        $SegmentBuilder = ""
         # Trim nested namespace segments.
-        $NestedNamespaceSegments = $Matches.1 -split "\."
-        # Remove trailing '()' from functions.
-        $LastSegment = $NestedNamespaceSegments[-1] -replace "\(\)", ""
-        $NewUri = $Uri -replace [Regex]::Escape($MatchedUriSegment), "/$LastSegment"
+        $NestedNamespaceSegments = $Matches.1 -split "/"
+        foreach($Segment in $NestedNamespaceSegments){
+            # Remove microsoft.graph prefix and trailing '()' from functions.
+            $Segment = $segment.Replace("microsoft.graph.","").Replace("()", "")
+            # Get resource object name from segment if it exists. e.g get 'updateAudience' from windowsUpdates.updateAudience
+            $ResourceObj = $Segment.Split(".")
+            $Segment = $ResourceObj[$ResourceObj.Count-1]
+            $SegmentBuilder += "/$Segment"
+        }
+        $NewUri = $Uri -replace [Regex]::Escape($MatchedUriSegment), $SegmentBuilder
     }
 
     return $NewUri
