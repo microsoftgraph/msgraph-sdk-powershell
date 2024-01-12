@@ -30,4 +30,8 @@ require:
 title: $(service-name)
 subject-prefix: ''
 namespace: Microsoft.Graph.PowerShell
+
+directive:
+# Remove path causing module conflict by operationId.
+  remove-path-by-operation: solution.bookingBusiness_getStaffAvailability|solution.bookingBusiness.*._cancel
 ```

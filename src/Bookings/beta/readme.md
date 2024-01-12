@@ -33,5 +33,5 @@ namespace: Microsoft.Graph.Beta.PowerShell
 
 directive:
 # Remove path causing module conflict by operationId.
-  remove-path-by-operation: solutions.bookingBusinesses_getStaffAvailability
+  remove-path-by-operation: solution.bookingBusiness_getStaffAvailability|solution.bookingBusiness.*._cancel
 ```
