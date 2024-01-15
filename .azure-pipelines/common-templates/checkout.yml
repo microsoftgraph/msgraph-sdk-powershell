@@ -42,7 +42,6 @@ steps:
     inputs:
       targetType: inline
       script: |
-        git pull --recurse-submodules
         git submodule update --init --recursive --remote
 
   - template: ./security-pre-checks.yml
