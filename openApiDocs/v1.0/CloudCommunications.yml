@@ -2213,6 +2213,54 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/communications/calls/{call-id}/microsoft.graph.sendDtmfTones':
+    post:
+      tags:
+        - communications.Actions
+      summary: Invoke action sendDtmfTones
+      operationId: communication.call_sendDtmfTone
+      parameters:
+        - name: call-id
+          in: path
+          description: The unique identifier of call
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: call
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                tones:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.tone'
+                delayBetweenTonesMs:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                clientContext:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.sendDtmfTonesOperation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/communications/calls/{call-id}/microsoft.graph.subscribeToTone':
     post:
       tags:
@@ -3542,6 +3590,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get attendanceReports from communications
+      description: The attendance reports of an online meeting. Read-only.
       operationId: communication.onlineMeeting_ListAttendanceReport
       parameters:
         - name: onlineMeeting-id
@@ -3650,6 +3699,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get attendanceReports from communications
+      description: The attendance reports of an online meeting. Read-only.
       operationId: communication.onlineMeeting_GetAttendanceReport
       parameters:
         - name: onlineMeeting-id
@@ -5836,6 +5886,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get attendanceReports from users
+      description: The attendance reports of an online meeting. Read-only.
       operationId: user.onlineMeeting_ListAttendanceReport
       parameters:
         - name: user-id
@@ -5960,6 +6011,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get attendanceReports from users
+      description: The attendance reports of an online meeting. Read-only.
       operationId: user.onlineMeeting_GetAttendanceReport
       parameters:
         - name: user-id
@@ -7806,10 +7858,10 @@ components:
           properties:
             callbackUri:
               type: string
-              description: The callback URL on which callbacks will be delivered. Must be https.
+              description: The callback URL on which callbacks are delivered. Must be an HTTPS URL.
             callChainId:
               type: string
-              description: A unique identifier for all the participant calls in a conference or a unique identifier for two participant calls in a P2P call.  This needs to be copied over from Microsoft.Graph.Call.CallChainId.
+              description: A unique identifier for all the participant calls in a conference or a unique identifier for two participant calls in a P2P call.  This identifier must be copied over from Microsoft.Graph.Call.CallChainId.
               nullable: true
             callOptions:
               $ref: '#/components/schemas/microsoft.graph.callOptions'
@@ -8019,6 +8071,37 @@ components:
         - forbidden
         - unknownFutureValue
       type: string
+    microsoft.graph.tone:
+      title: tone
+      enum:
+        - tone0
+        - tone1
+        - tone2
+        - tone3
+        - tone4
+        - tone5
+        - tone6
+        - tone7
+        - tone8
+        - tone9
+        - star
+        - pound
+        - a
+        - b
+        - c
+        - d
+        - flash
+      type: string
+    microsoft.graph.sendDtmfTonesOperation:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.commsOperation'
+        - title: sendDtmfTonesOperation
+          type: object
+          properties:
+            completionReason:
+              $ref: '#/components/schemas/microsoft.graph.sendDtmfCompletionReason'
+          additionalProperties:
+            type: object
     microsoft.graph.subscribeToToneOperation:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.commsOperation'
@@ -8657,6 +8740,14 @@ components:
         - multicast
         - unknownFutureValue
       type: string
+    microsoft.graph.sendDtmfCompletionReason:
+      title: sendDtmfCompletionReason
+      enum:
+        - unknown
+        - completedSuccessfully
+        - mediaOperationCanceled
+        - unknownFutureValue
+      type: string
     microsoft.graph.endpointType:
       title: endpointType
       enum:
@@ -8854,9 +8945,11 @@ components:
           properties:
             allowAttendeeToEnableCamera:
               type: boolean
+              description: Indicates whether attendees can turn on their camera.
               nullable: true
             allowAttendeeToEnableMic:
               type: boolean
+              description: Indicates whether attendees can turn on their microphone.
               nullable: true
             allowedPresenters:
               $ref: '#/components/schemas/microsoft.graph.onlineMeetingPresenters'
@@ -8864,9 +8957,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.meetingChatMode'
             allowParticipantsToChangeName:
               type: boolean
+              description: Specifies if participants are allowed to rename themselves in an instance of the meeting.
               nullable: true
             allowTeamworkReactions:
               type: boolean
+              description: Indicates if Teams reactions are enabled for the meeting.
               nullable: true
             audioConferencing:
               $ref: '#/components/schemas/microsoft.graph.audioConferencing'
@@ -8874,6 +8969,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.chatInfo'
             isEntryExitAnnounced:
               type: boolean
+              description: Indicates whether to announce when callers join or leave.
               nullable: true
             joinInformation:
               $ref: '#/components/schemas/microsoft.graph.itemBody'
@@ -8881,19 +8977,23 @@ components:
               $ref: '#/components/schemas/microsoft.graph.joinMeetingIdSettings'
             joinWebUrl:
               type: string
+              description: The join URL of the online meeting. Read-only.
               nullable: true
             lobbyBypassSettings:
               $ref: '#/components/schemas/microsoft.graph.lobbyBypassSettings'
             recordAutomatically:
               type: boolean
+              description: Indicates whether to record the meeting automatically.
               nullable: true
             shareMeetingChatHistoryDefault:
               $ref: '#/components/schemas/microsoft.graph.meetingChatHistoryDefaultMode'
             subject:
               type: string
+              description: The subject of the online meeting.
               nullable: true
             videoTeleconferenceId:
               type: string
+              description: The video teleconferencing ID. Read-only.
               nullable: true
             watermarkProtection:
               $ref: '#/components/schemas/microsoft.graph.watermarkProtectionValues'
@@ -8901,6 +9001,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReport'
+              description: The attendance reports of an online meeting. Read-only.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -9632,27 +9733,6 @@ components:
         - active
         - inactive
         - unknownFutureValue
-      type: string
-    microsoft.graph.tone:
-      title: tone
-      enum:
-        - tone0
-        - tone1
-        - tone2
-        - tone3
-        - tone4
-        - tone5
-        - tone6
-        - tone7
-        - tone8
-        - tone9
-        - star
-        - pound
-        - a
-        - b
-        - c
-        - d
-        - flash
       type: string
     microsoft.graph.callTranscriptionState:
       title: callTranscriptionState

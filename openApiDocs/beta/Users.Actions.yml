@@ -19878,6 +19878,9 @@ paths:
                 password:
                   type: string
                   nullable: true
+                message:
+                  type: string
+                  nullable: true
                 recipients:
                   type: array
                   items:
@@ -21393,6 +21396,9 @@ paths:
                 password:
                   type: string
                   nullable: true
+                message:
+                  type: string
+                  nullable: true
                 recipients:
                   type: array
                   items:
@@ -21591,6 +21597,9 @@ paths:
                   format: date-time
                   nullable: true
                 password:
+                  type: string
+                  nullable: true
+                message:
                   type: string
                   nullable: true
                 recipients:
@@ -31793,6 +31802,10 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action sendVirtualAppointmentReminderSms
+      description: Send an SMS reminder to external attendees for a Teams Virtual Appointment. This feature requires Teams Premium and attendees must have a valid United States phone number to receive SMS notifications.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualappointment-sendvirtualappointmentremindersms?view=graph-rest-1.0
       operationId: user.onlineMeeting_sendVirtualAppointmentReminderSm
       parameters:
         - name: user-id
@@ -31818,13 +31831,12 @@ paths:
             schema:
               type: object
               properties:
-                phoneNumbers:
-                  type: array
-                  items:
-                    type: string
-                    nullable: true
                 remindBeforeTimeInMinutesType:
                   $ref: '#/components/schemas/microsoft.graph.remindBeforeTimeInMinutesType'
+                attendees:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.attendeeNotificationInfo'
               additionalProperties:
                 type: object
         required: true
@@ -31839,6 +31851,10 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action sendVirtualAppointmentSms
+      description: 'Send an SMS notification to external attendees when a Teams Virtual Appointment is confirmed, rescheduled, or canceled. This feature requires Teams Premium. Attendees must have a valid United States phone number to receive these SMS notifications.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualappointment-sendvirtualappointmentsms?view=graph-rest-1.0
       operationId: user.onlineMeeting_sendVirtualAppointmentSm
       parameters:
         - name: user-id
@@ -31864,13 +31880,12 @@ paths:
             schema:
               type: object
               properties:
-                phoneNumbers:
+                messageType:
+                  $ref: '#/components/schemas/microsoft.graph.virtualAppointmentMessageType'
+                attendees:
                   type: array
                   items:
-                    type: string
-                    nullable: true
-                smsType:
-                  $ref: '#/components/schemas/microsoft.graph.virtualAppointmentSmsType'
+                    $ref: '#/components/schemas/microsoft.graph.attendeeNotificationInfo'
               additionalProperties:
                 type: object
         required: true
@@ -33587,11 +33602,57 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/users/{user-id}/planner/plans/{plannerPlan-id}/microsoft.graph.archive':
+    post:
+      tags:
+        - users.Actions
+      summary: Invoke action archive
+      operationId: user.planner.plan_archive
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: plannerPlan-id
+          in: path
+          description: The unique identifier of plannerPlan
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlan
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                justification:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/users/{user-id}/planner/plans/{plannerPlan-id}/microsoft.graph.moveToContainer':
     post:
       tags:
         - users.Actions
       summary: Invoke action moveToContainer
+      description: Move a planner plan object from one planner plan container to another. Planner plans can only be moved from a user container to a group container.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/plannerplan-movetocontainer?view=graph-rest-1.0
       operationId: user.planner.plan_moveToContainer
       parameters:
         - name: user-id
@@ -33629,6 +33690,48 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.plannerPlan'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/planner/plans/{plannerPlan-id}/microsoft.graph.unarchive':
+    post:
+      tags:
+        - users.Actions
+      summary: Invoke action unarchive
+      operationId: user.planner.plan_unarchive
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: plannerPlan-id
+          in: path
+          description: The unique identifier of plannerPlan
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlan
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                justification:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -35963,8 +36066,20 @@ components:
         - mins15
         - unknownFutureValue
       type: string
-    microsoft.graph.virtualAppointmentSmsType:
-      title: virtualAppointmentSmsType
+    microsoft.graph.attendeeNotificationInfo:
+      title: attendeeNotificationInfo
+      type: object
+      properties:
+        phoneNumber:
+          type: string
+          nullable: true
+        timeZone:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.virtualAppointmentMessageType:
+      title: virtualAppointmentMessageType
       enum:
         - confirmation
         - reschedule
@@ -36172,6 +36287,8 @@ components:
         - title: plannerPlan
           type: object
           properties:
+            archivalInfo:
+              $ref: '#/components/schemas/microsoft.graph.plannerArchivalInfo'
             container:
               $ref: '#/components/schemas/microsoft.graph.plannerPlanContainer'
             contexts:
@@ -36186,6 +36303,9 @@ components:
               nullable: true
             creationSource:
               $ref: '#/components/schemas/microsoft.graph.plannerPlanCreation'
+            isArchived:
+              type: boolean
+              nullable: true
             owner:
               type: string
               nullable: true
@@ -36495,11 +36615,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: 'Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn''t included in the response.'
           nullable: true
       additionalProperties:
         type: object
@@ -38629,6 +38749,22 @@ components:
           type: object
           additionalProperties:
             type: object
+    microsoft.graph.plannerArchivalInfo:
+      title: plannerArchivalInfo
+      type: object
+      properties:
+        justification:
+          type: string
+          nullable: true
+        statusChangedBy:
+          $ref: '#/components/schemas/microsoft.graph.identitySet'
+        statusChangedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.plannerPlanContextCollection:
       title: plannerPlanContextCollection
       type: object
@@ -38658,8 +38794,13 @@ components:
         - title: plannerBucket
           type: object
           properties:
+            archivalInfo:
+              $ref: '#/components/schemas/microsoft.graph.plannerArchivalInfo'
             creationSource:
               $ref: '#/components/schemas/microsoft.graph.plannerBucketCreation'
+            isArchived:
+              type: boolean
+              nullable: true
             name:
               type: string
               description: Name of the bucket.
@@ -38708,6 +38849,8 @@ components:
               nullable: true
             appliedCategories:
               $ref: '#/components/schemas/microsoft.graph.plannerAppliedCategories'
+            archivalInfo:
+              $ref: '#/components/schemas/microsoft.graph.plannerArchivalInfo'
             assigneePriority:
               type: string
               description: Hint used to order items of this type in a list view. The format is defined as outlined here.
@@ -38756,6 +38899,17 @@ components:
             hasDescription:
               type: boolean
               description: Read-only. Value is true if the details object of the task has a nonempty description and false otherwise.
+              nullable: true
+            isArchived:
+              type: boolean
+              nullable: true
+            isOnMyDay:
+              type: boolean
+              nullable: true
+            isOnMyDayLastModifiedDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
               nullable: true
             orderHint:
               type: string
@@ -41445,6 +41599,8 @@ components:
         - none
         - checklistCompletion
         - unknownFutureValue
+        - formCompletion
+        - approvalCompletion
       type: string
       x-ms-enum-flags:
         isFlags: true
@@ -41480,6 +41636,8 @@ components:
         - title: plannerTaskDetails
           type: object
           properties:
+            approvalAttachment:
+              $ref: '#/components/schemas/microsoft.graph.plannerBaseApprovalAttachment'
             checklist:
               $ref: '#/components/schemas/microsoft.graph.plannerChecklistItems'
             completionRequirements:
@@ -41488,6 +41646,8 @@ components:
               type: string
               description: Description of the task.
               nullable: true
+            forms:
+              $ref: '#/components/schemas/microsoft.graph.plannerFormsDictionary'
             notes:
               $ref: '#/components/schemas/microsoft.graph.itemBody'
             previewType:
@@ -41929,6 +42089,16 @@ components:
         lastSignInRequestId:
           type: string
           description: Request identifier of the last interactive sign-in performed by this user.
+          nullable: true
+        lastSuccessfulSignInDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The datetime of the user's most recent successful sign in activity.
+          format: date-time
+          nullable: true
+        lastSuccessfulSignInRequestId:
+          type: string
+          description: The requestID of the last successful signIn.
           nullable: true
       additionalProperties:
         type: object
@@ -42889,6 +43059,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.cloudPcConnectionSettings'
             connectivityResult:
               $ref: '#/components/schemas/microsoft.graph.cloudPcConnectivityResult'
+            disasterRecoveryCapability:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcDisasterRecoveryCapability'
             diskEncryptionState:
               $ref: '#/components/schemas/microsoft.graph.cloudPcDiskEncryptionState'
             displayName:
@@ -45304,6 +45476,14 @@ components:
         - title: userTeamwork
           type: object
           properties:
+            locale:
+              type: string
+              description: Represents the chosen locale of a user in Microsoft Teams.
+              nullable: true
+            region:
+              type: string
+              description: Represents the region of the user in Microsoft Teams.
+              nullable: true
             associatedTeams:
               type: array
               items:
@@ -46328,6 +46508,14 @@ components:
       type: object
       additionalProperties:
         type: object
+    microsoft.graph.plannerBaseApprovalAttachment:
+      title: plannerBaseApprovalAttachment
+      type: object
+      properties:
+        status:
+          $ref: '#/components/schemas/microsoft.graph.plannerApprovalStatus'
+      additionalProperties:
+        type: object
     microsoft.graph.plannerChecklistItems:
       title: plannerChecklistItems
       type: object
@@ -46337,10 +46525,21 @@ components:
       title: plannerTaskCompletionRequirementDetails
       type: object
       properties:
+        approvalRequirement:
+          $ref: '#/components/schemas/microsoft.graph.plannerApprovalRequirement'
         checklistRequirement:
           $ref: '#/components/schemas/microsoft.graph.plannerChecklistRequirement'
+        formsRequirement:
+          $ref: '#/components/schemas/microsoft.graph.plannerFormsRequirement'
       additionalProperties:
         type: object
+    microsoft.graph.plannerFormsDictionary:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.Dictionary'
+        - title: plannerFormsDictionary
+          type: object
+          additionalProperties:
+            type: object
     microsoft.graph.plannerExternalReferences:
       title: plannerExternalReferences
       type: object
@@ -47189,13 +47388,13 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The start time of the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              description: 'The start time of the operation. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             lastActionDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The time of the last action in the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              description: 'The time of the last action in the operation. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             resourceLocation:
@@ -47766,6 +47965,20 @@ components:
           type: string
           description: 'Datetime when the status was updated. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.'
           format: date-time
+      additionalProperties:
+        type: object
+    microsoft.graph.cloudPcDisasterRecoveryCapability:
+      title: cloudPcDisasterRecoveryCapability
+      type: object
+      properties:
+        capabilityType:
+          $ref: '#/components/schemas/microsoft.graph.cloudPcDisasterRecoveryCapabilityType'
+        primaryRegion:
+          type: string
+          nullable: true
+        secondaryRegion:
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.cloudPcDiskEncryptionState:
@@ -48794,6 +49007,9 @@ components:
               type: string
               description: The email address for sending messages to the channel. Read-only.
               nullable: true
+            isArchived:
+              type: boolean
+              nullable: true
             isFavoriteByDefault:
               type: boolean
               description: 'Indicates whether the channel should automatically be marked ''favorite'' for all members of the team. Can only be set programmatically with Create team. Default: false.'
@@ -48846,6 +49062,10 @@ components:
         - title: schedule
           type: object
           properties:
+            activitiesIncludedWhenCopyingShiftsEnabled:
+              type: boolean
+              description: Indicates whether copied shifts should include the activities.
+              nullable: true
             enabled:
               type: boolean
               description: Indicates whether the schedule is enabled for the team. Required.
@@ -48865,6 +49085,8 @@ components:
               description: Additional information about why schedule provisioning failed.
               nullable: true
               readOnly: true
+            startDayOfWeek:
+              $ref: '#/components/schemas/microsoft.graph.dayOfWeek'
             swapShiftsRequestsEnabled:
               type: boolean
               description: Indicates whether swap shifts requests are enabled for the schedule.
@@ -48893,6 +49115,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.dayNote'
+              description: The day notes in the schedule.
               x-ms-navigationProperty: true
             offerShiftRequests:
               type: array
@@ -48934,6 +49157,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.timeCard'
+              description: The time cards in the schedule.
               x-ms-navigationProperty: true
             timeOffReasons:
               type: array
@@ -52556,6 +52780,24 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.plannerApprovalStatus:
+      title: plannerApprovalStatus
+      enum:
+        - requested
+        - approved
+        - rejected
+        - cancelled
+        - unknownFutureValue
+      type: string
+    microsoft.graph.plannerApprovalRequirement:
+      title: plannerApprovalRequirement
+      type: object
+      properties:
+        isApprovalRequired:
+          type: boolean
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.plannerChecklistRequirement:
       title: plannerChecklistRequirement
       type: object
@@ -52566,6 +52808,22 @@ components:
             type: string
             nullable: true
           description: A collection of required plannerChecklistItems identifiers to complete the plannerTask.
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerFormsRequirement:
+      title: plannerFormsRequirement
+      type: object
+      properties:
+        requiredForms:
+          type: array
+          items:
+            type: string
+            nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.Dictionary:
+      title: Dictionary
+      type: object
       additionalProperties:
         type: object
     microsoft.graph.outlookGeoCoordinates:
@@ -53302,6 +53560,8 @@ components:
         - teamifyGroup
         - createChannel
         - createChat
+        - archiveChannel
+        - unarchiveChannel
       type: string
     microsoft.graph.teamsAsyncOperationStatus:
       title: teamsAsyncOperationStatus
@@ -53363,6 +53623,14 @@ components:
         - available
         - availableWithWarning
         - unavailable
+        - unknownFutureValue
+      type: string
+    microsoft.graph.cloudPcDisasterRecoveryCapabilityType:
+      title: cloudPcDisasterRecoveryCapabilityType
+      enum:
+        - none
+        - failover
+        - failback
         - unknownFutureValue
       type: string
     microsoft.graph.cloudPcPartnerAgentInstallStatus:
@@ -53927,6 +54195,7 @@ components:
             dayNoteDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
+              description: The date of the day note.
               format: date
               nullable: true
             draftDayNote:
@@ -53984,13 +54253,29 @@ components:
               $ref: '#/components/schemas/microsoft.graph.openShiftItem'
             isStagedForDeletion:
               type: boolean
+              description: 'The openShift is marked for deletion, a process that is finalized when the schedule is shared.'
               nullable: true
             schedulingGroupId:
               type: string
-              description: ID for the scheduling group that the open shift belongs to.
+              description: The ID of the schedulingGroup that contains the openShift.
               nullable: true
+            schedulingGroupName:
+              type: string
+              description: The name of the schedulingGroup that contains the openShift.
+              nullable: true
+              readOnly: true
             sharedOpenShift:
               $ref: '#/components/schemas/microsoft.graph.openShiftItem'
+            teamId:
+              type: string
+              description: The ID of the team in which the openShift is located.
+              nullable: true
+              readOnly: true
+            teamName:
+              type: string
+              description: The name of the team in which the openShift is located.
+              nullable: true
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.schedulingGroup:
@@ -53999,6 +54284,10 @@ components:
         - title: schedulingGroup
           type: object
           properties:
+            code:
+              type: string
+              description: The code for the schedulingGroup to represent an external identifier.
+              nullable: true
             displayName:
               type: string
               description: The display name for the schedulingGroup. Required.
@@ -54026,6 +54315,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.shiftItem'
             isStagedForDeletion:
               type: boolean
+              description: 'The shift is marked for deletion, a process that is finalized when the schedule is shared.'
               nullable: true
             schedulingGroupId:
               type: string
@@ -54086,6 +54376,10 @@ components:
         - title: timeOffReason
           type: object
           properties:
+            code:
+              type: string
+              description: The code of the timeOffReason to represent an external identifier.
+              nullable: true
             displayName:
               type: string
               description: The name of the timeOffReason. Required.
@@ -54132,6 +54426,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.timeOffItem'
             isStagedForDeletion:
               type: boolean
+              description: 'The timeOff is marked for deletion, a process that is finalized when the schedule is shared.'
               nullable: true
             sharedTimeOff:
               $ref: '#/components/schemas/microsoft.graph.timeOffItem'
@@ -55905,7 +56200,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              description: 'The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
               readOnly: true
@@ -55914,7 +56209,7 @@ components:
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              description: 'The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
               readOnly: true
@@ -56060,7 +56355,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.itemBody'
             displayName:
               type: string
-              description: Display name of the virtual event
+              description: Display name of the virtual event.
               nullable: true
             endDateTime:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
@@ -56072,13 +56367,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventPresenter'
-              description: Presenters' information of the virtual event.
+              description: The virtual event presenters.
               x-ms-navigationProperty: true
             sessions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventSession'
-              description: Sessions of the virtual event.
+              description: Sessions for the virtual event.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -60231,6 +60526,7 @@ components:
           items:
             type: string
             nullable: true
+          description: 'The identifiers of containers, such as organizational units, that are in scope for a synchronization rule. For Active Directory organizational units, use the distinguished names. An empty list means no container filtering is configured.'
       additionalProperties:
         type: object
     microsoft.graph.groupFilter:
@@ -60242,6 +60538,7 @@ components:
           items:
             type: string
             nullable: true
+          description: 'Identifiers of groups that are in scope for a synchronization rule. For Active Directory groups, use the distinguished names. An empty list means no group filtering is configured.'
       additionalProperties:
         type: object
     microsoft.graph.stringKeyStringValuePair:

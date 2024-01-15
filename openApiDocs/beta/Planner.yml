@@ -158,6 +158,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - archivalInfo
+                - archivalInfo desc
                 - container
                 - container desc
                 - contexts
@@ -168,6 +170,8 @@ paths:
                 - createdDateTime desc
                 - creationSource
                 - creationSource desc
+                - isArchived
+                - isArchived desc
                 - owner
                 - owner desc
                 - sharedWithContainers
@@ -186,11 +190,13 @@ paths:
             items:
               enum:
                 - id
+                - archivalInfo
                 - container
                 - contexts
                 - createdBy
                 - createdDateTime
                 - creationSource
+                - isArchived
                 - owner
                 - sharedWithContainers
                 - title
@@ -288,11 +294,13 @@ paths:
             items:
               enum:
                 - id
+                - archivalInfo
                 - container
                 - contexts
                 - createdBy
                 - createdDateTime
                 - creationSource
+                - isArchived
                 - owner
                 - sharedWithContainers
                 - title
@@ -442,8 +450,12 @@ paths:
               enum:
                 - id
                 - id desc
+                - archivalInfo
+                - archivalInfo desc
                 - creationSource
                 - creationSource desc
+                - isArchived
+                - isArchived desc
                 - name
                 - name desc
                 - orderHint
@@ -462,7 +474,9 @@ paths:
             items:
               enum:
                 - id
+                - archivalInfo
                 - creationSource
+                - isArchived
                 - name
                 - orderHint
                 - planId
@@ -572,7 +586,9 @@ paths:
             items:
               enum:
                 - id
+                - archivalInfo
                 - creationSource
+                - isArchived
                 - name
                 - orderHint
                 - planId
@@ -746,6 +762,8 @@ paths:
                 - activeChecklistItemCount desc
                 - appliedCategories
                 - appliedCategories desc
+                - archivalInfo
+                - archivalInfo desc
                 - assigneePriority
                 - assigneePriority desc
                 - assignments
@@ -770,6 +788,12 @@ paths:
                 - dueDateTime desc
                 - hasDescription
                 - hasDescription desc
+                - isArchived
+                - isArchived desc
+                - isOnMyDay
+                - isOnMyDay desc
+                - isOnMyDayLastModifiedDate
+                - isOnMyDayLastModifiedDate desc
                 - orderHint
                 - orderHint desc
                 - percentComplete
@@ -804,6 +828,7 @@ paths:
                 - id
                 - activeChecklistItemCount
                 - appliedCategories
+                - archivalInfo
                 - assigneePriority
                 - assignments
                 - bucketId
@@ -816,6 +841,9 @@ paths:
                 - creationSource
                 - dueDateTime
                 - hasDescription
+                - isArchived
+                - isOnMyDay
+                - isOnMyDayLastModifiedDate
                 - orderHint
                 - percentComplete
                 - planId
@@ -956,6 +984,7 @@ paths:
                 - id
                 - activeChecklistItemCount
                 - appliedCategories
+                - archivalInfo
                 - assigneePriority
                 - assignments
                 - bucketId
@@ -968,6 +997,9 @@ paths:
                 - creationSource
                 - dueDateTime
                 - hasDescription
+                - isArchived
+                - isOnMyDay
+                - isOnMyDayLastModifiedDate
                 - orderHint
                 - percentComplete
                 - planId
@@ -1555,9 +1587,11 @@ paths:
             items:
               enum:
                 - id
+                - approvalAttachment
                 - checklist
                 - completionRequirements
                 - description
+                - forms
                 - notes
                 - previewType
                 - references
@@ -2155,6 +2189,8 @@ paths:
                 - activeChecklistItemCount desc
                 - appliedCategories
                 - appliedCategories desc
+                - archivalInfo
+                - archivalInfo desc
                 - assigneePriority
                 - assigneePriority desc
                 - assignments
@@ -2179,6 +2215,12 @@ paths:
                 - dueDateTime desc
                 - hasDescription
                 - hasDescription desc
+                - isArchived
+                - isArchived desc
+                - isOnMyDay
+                - isOnMyDay desc
+                - isOnMyDayLastModifiedDate
+                - isOnMyDayLastModifiedDate desc
                 - orderHint
                 - orderHint desc
                 - percentComplete
@@ -2213,6 +2255,7 @@ paths:
                 - id
                 - activeChecklistItemCount
                 - appliedCategories
+                - archivalInfo
                 - assigneePriority
                 - assignments
                 - bucketId
@@ -2225,6 +2268,9 @@ paths:
                 - creationSource
                 - dueDateTime
                 - hasDescription
+                - isArchived
+                - isOnMyDay
+                - isOnMyDayLastModifiedDate
                 - orderHint
                 - percentComplete
                 - planId
@@ -2349,6 +2395,7 @@ paths:
                 - id
                 - activeChecklistItemCount
                 - appliedCategories
+                - archivalInfo
                 - assigneePriority
                 - assignments
                 - bucketId
@@ -2361,6 +2408,9 @@ paths:
                 - creationSource
                 - dueDateTime
                 - hasDescription
+                - isArchived
+                - isOnMyDay
+                - isOnMyDayLastModifiedDate
                 - orderHint
                 - percentComplete
                 - planId
@@ -2876,9 +2926,11 @@ paths:
             items:
               enum:
                 - id
+                - approvalAttachment
                 - checklist
                 - completionRequirements
                 - description
+                - forms
                 - notes
                 - previewType
                 - references
@@ -3324,8 +3376,12 @@ paths:
               enum:
                 - id
                 - id desc
+                - archivalInfo
+                - archivalInfo desc
                 - creationSource
                 - creationSource desc
+                - isArchived
+                - isArchived desc
                 - name
                 - name desc
                 - orderHint
@@ -3344,7 +3400,9 @@ paths:
             items:
               enum:
                 - id
+                - archivalInfo
                 - creationSource
+                - isArchived
                 - name
                 - orderHint
                 - planId
@@ -3428,7 +3486,9 @@ paths:
             items:
               enum:
                 - id
+                - archivalInfo
                 - creationSource
+                - isArchived
                 - name
                 - orderHint
                 - planId
@@ -3568,6 +3628,8 @@ paths:
                 - activeChecklistItemCount desc
                 - appliedCategories
                 - appliedCategories desc
+                - archivalInfo
+                - archivalInfo desc
                 - assigneePriority
                 - assigneePriority desc
                 - assignments
@@ -3592,6 +3654,12 @@ paths:
                 - dueDateTime desc
                 - hasDescription
                 - hasDescription desc
+                - isArchived
+                - isArchived desc
+                - isOnMyDay
+                - isOnMyDay desc
+                - isOnMyDayLastModifiedDate
+                - isOnMyDayLastModifiedDate desc
                 - orderHint
                 - orderHint desc
                 - percentComplete
@@ -3626,6 +3694,7 @@ paths:
                 - id
                 - activeChecklistItemCount
                 - appliedCategories
+                - archivalInfo
                 - assigneePriority
                 - assignments
                 - bucketId
@@ -3638,6 +3707,9 @@ paths:
                 - creationSource
                 - dueDateTime
                 - hasDescription
+                - isArchived
+                - isOnMyDay
+                - isOnMyDayLastModifiedDate
                 - orderHint
                 - percentComplete
                 - planId
@@ -3746,6 +3818,7 @@ paths:
                 - id
                 - activeChecklistItemCount
                 - appliedCategories
+                - archivalInfo
                 - assigneePriority
                 - assignments
                 - bucketId
@@ -3758,6 +3831,9 @@ paths:
                 - creationSource
                 - dueDateTime
                 - hasDescription
+                - isArchived
+                - isOnMyDay
+                - isOnMyDayLastModifiedDate
                 - orderHint
                 - percentComplete
                 - planId
@@ -4201,9 +4277,11 @@ paths:
             items:
               enum:
                 - id
+                - approvalAttachment
                 - checklist
                 - completionRequirements
                 - description
+                - forms
                 - notes
                 - previewType
                 - references
@@ -4513,6 +4591,7 @@ paths:
                 - id
                 - activeChecklistItemCount
                 - appliedCategories
+                - archivalInfo
                 - assigneePriority
                 - assignments
                 - bucketId
@@ -4525,6 +4604,9 @@ paths:
                 - creationSource
                 - dueDateTime
                 - hasDescription
+                - isArchived
+                - isOnMyDay
+                - isOnMyDayLastModifiedDate
                 - orderHint
                 - percentComplete
                 - planId
@@ -4556,6 +4638,8 @@ paths:
                 - activeChecklistItemCount desc
                 - appliedCategories
                 - appliedCategories desc
+                - archivalInfo
+                - archivalInfo desc
                 - assigneePriority
                 - assigneePriority desc
                 - assignments
@@ -4580,6 +4664,12 @@ paths:
                 - dueDateTime desc
                 - hasDescription
                 - hasDescription desc
+                - isArchived
+                - isArchived desc
+                - isOnMyDay
+                - isOnMyDay desc
+                - isOnMyDayLastModifiedDate
+                - isOnMyDayLastModifiedDate desc
                 - orderHint
                 - orderHint desc
                 - percentComplete
@@ -4665,7 +4755,9 @@ paths:
             items:
               enum:
                 - id
+                - archivalInfo
                 - creationSource
+                - isArchived
                 - name
                 - orderHint
                 - planId
@@ -4683,8 +4775,12 @@ paths:
               enum:
                 - id
                 - id desc
+                - archivalInfo
+                - archivalInfo desc
                 - creationSource
                 - creationSource desc
+                - isArchived
+                - isArchived desc
                 - name
                 - name desc
                 - orderHint
@@ -4747,6 +4843,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - archivalInfo
+                - archivalInfo desc
                 - container
                 - container desc
                 - contexts
@@ -4757,6 +4855,8 @@ paths:
                 - createdDateTime desc
                 - creationSource
                 - creationSource desc
+                - isArchived
+                - isArchived desc
                 - owner
                 - owner desc
                 - sharedWithContainers
@@ -4775,11 +4875,13 @@ paths:
             items:
               enum:
                 - id
+                - archivalInfo
                 - container
                 - contexts
                 - createdBy
                 - createdDateTime
                 - creationSource
+                - isArchived
                 - owner
                 - sharedWithContainers
                 - title
@@ -4867,11 +4969,13 @@ paths:
             items:
               enum:
                 - id
+                - archivalInfo
                 - container
                 - contexts
                 - createdBy
                 - createdDateTime
                 - creationSource
+                - isArchived
                 - owner
                 - sharedWithContainers
                 - title
@@ -5005,8 +5109,12 @@ paths:
               enum:
                 - id
                 - id desc
+                - archivalInfo
+                - archivalInfo desc
                 - creationSource
                 - creationSource desc
+                - isArchived
+                - isArchived desc
                 - name
                 - name desc
                 - orderHint
@@ -5025,7 +5133,9 @@ paths:
             items:
               enum:
                 - id
+                - archivalInfo
                 - creationSource
+                - isArchived
                 - name
                 - orderHint
                 - planId
@@ -5119,7 +5229,9 @@ paths:
             items:
               enum:
                 - id
+                - archivalInfo
                 - creationSource
+                - isArchived
                 - name
                 - orderHint
                 - planId
@@ -5269,6 +5381,8 @@ paths:
                 - activeChecklistItemCount desc
                 - appliedCategories
                 - appliedCategories desc
+                - archivalInfo
+                - archivalInfo desc
                 - assigneePriority
                 - assigneePriority desc
                 - assignments
@@ -5293,6 +5407,12 @@ paths:
                 - dueDateTime desc
                 - hasDescription
                 - hasDescription desc
+                - isArchived
+                - isArchived desc
+                - isOnMyDay
+                - isOnMyDay desc
+                - isOnMyDayLastModifiedDate
+                - isOnMyDayLastModifiedDate desc
                 - orderHint
                 - orderHint desc
                 - percentComplete
@@ -5327,6 +5447,7 @@ paths:
                 - id
                 - activeChecklistItemCount
                 - appliedCategories
+                - archivalInfo
                 - assigneePriority
                 - assignments
                 - bucketId
@@ -5339,6 +5460,9 @@ paths:
                 - creationSource
                 - dueDateTime
                 - hasDescription
+                - isArchived
+                - isOnMyDay
+                - isOnMyDayLastModifiedDate
                 - orderHint
                 - percentComplete
                 - planId
@@ -5463,6 +5587,7 @@ paths:
                 - id
                 - activeChecklistItemCount
                 - appliedCategories
+                - archivalInfo
                 - assigneePriority
                 - assignments
                 - bucketId
@@ -5475,6 +5600,9 @@ paths:
                 - creationSource
                 - dueDateTime
                 - hasDescription
+                - isArchived
+                - isOnMyDay
+                - isOnMyDayLastModifiedDate
                 - orderHint
                 - percentComplete
                 - planId
@@ -5990,9 +6118,11 @@ paths:
             items:
               enum:
                 - id
+                - approvalAttachment
                 - checklist
                 - completionRequirements
                 - description
+                - forms
                 - notes
                 - previewType
                 - references
@@ -6358,6 +6488,7 @@ paths:
                 - id
                 - activeChecklistItemCount
                 - appliedCategories
+                - archivalInfo
                 - assigneePriority
                 - assignments
                 - bucketId
@@ -6370,6 +6501,9 @@ paths:
                 - creationSource
                 - dueDateTime
                 - hasDescription
+                - isArchived
+                - isOnMyDay
+                - isOnMyDayLastModifiedDate
                 - orderHint
                 - percentComplete
                 - planId
@@ -6401,6 +6535,8 @@ paths:
                 - activeChecklistItemCount desc
                 - appliedCategories
                 - appliedCategories desc
+                - archivalInfo
+                - archivalInfo desc
                 - assigneePriority
                 - assigneePriority desc
                 - assignments
@@ -6425,6 +6561,12 @@ paths:
                 - dueDateTime desc
                 - hasDescription
                 - hasDescription desc
+                - isArchived
+                - isArchived desc
+                - isOnMyDay
+                - isOnMyDay desc
+                - isOnMyDayLastModifiedDate
+                - isOnMyDayLastModifiedDate desc
                 - orderHint
                 - orderHint desc
                 - percentComplete
@@ -6526,7 +6668,9 @@ paths:
             items:
               enum:
                 - id
+                - archivalInfo
                 - creationSource
+                - isArchived
                 - name
                 - orderHint
                 - planId
@@ -6544,8 +6688,12 @@ paths:
               enum:
                 - id
                 - id desc
+                - archivalInfo
+                - archivalInfo desc
                 - creationSource
                 - creationSource desc
+                - isArchived
+                - isArchived desc
                 - name
                 - name desc
                 - orderHint
@@ -6703,11 +6851,49 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/planner/plans/{plannerPlan-id}/microsoft.graph.archive':
+    post:
+      tags:
+        - planner.Actions
+      summary: Invoke action archive
+      operationId: planner.plan_archive
+      parameters:
+        - name: plannerPlan-id
+          in: path
+          description: The unique identifier of plannerPlan
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlan
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                justification:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/planner/plans/{plannerPlan-id}/microsoft.graph.moveToContainer':
     post:
       tags:
         - planner.Actions
       summary: Invoke action moveToContainer
+      description: Move a planner plan object from one planner plan container to another. Planner plans can only be moved from a user container to a group container.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/plannerplan-movetocontainer?view=graph-rest-1.0
       operationId: planner.plan_moveToContainer
       parameters:
         - name: plannerPlan-id
@@ -6737,6 +6923,40 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.plannerPlan'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/planner/plans/{plannerPlan-id}/microsoft.graph.unarchive':
+    post:
+      tags:
+        - planner.Actions
+      summary: Invoke action unarchive
+      operationId: planner.plan_unarchive
+      parameters:
+        - name: plannerPlan-id
+          in: path
+          description: The unique identifier of plannerPlan
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlan
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                justification:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -6780,6 +7000,8 @@ paths:
                 - activeChecklistItemCount desc
                 - appliedCategories
                 - appliedCategories desc
+                - archivalInfo
+                - archivalInfo desc
                 - assigneePriority
                 - assigneePriority desc
                 - assignments
@@ -6804,6 +7026,12 @@ paths:
                 - dueDateTime desc
                 - hasDescription
                 - hasDescription desc
+                - isArchived
+                - isArchived desc
+                - isOnMyDay
+                - isOnMyDay desc
+                - isOnMyDayLastModifiedDate
+                - isOnMyDayLastModifiedDate desc
                 - orderHint
                 - orderHint desc
                 - percentComplete
@@ -6838,6 +7066,7 @@ paths:
                 - id
                 - activeChecklistItemCount
                 - appliedCategories
+                - archivalInfo
                 - assigneePriority
                 - assignments
                 - bucketId
@@ -6850,6 +7079,9 @@ paths:
                 - creationSource
                 - dueDateTime
                 - hasDescription
+                - isArchived
+                - isOnMyDay
+                - isOnMyDayLastModifiedDate
                 - orderHint
                 - percentComplete
                 - planId
@@ -6958,6 +7190,7 @@ paths:
                 - id
                 - activeChecklistItemCount
                 - appliedCategories
+                - archivalInfo
                 - assigneePriority
                 - assignments
                 - bucketId
@@ -6970,6 +7203,9 @@ paths:
                 - creationSource
                 - dueDateTime
                 - hasDescription
+                - isArchived
+                - isOnMyDay
+                - isOnMyDayLastModifiedDate
                 - orderHint
                 - percentComplete
                 - planId
@@ -7413,9 +7649,11 @@ paths:
             items:
               enum:
                 - id
+                - approvalAttachment
                 - checklist
                 - completionRequirements
                 - description
+                - forms
                 - notes
                 - previewType
                 - references
@@ -7725,6 +7963,7 @@ paths:
                 - id
                 - activeChecklistItemCount
                 - appliedCategories
+                - archivalInfo
                 - assigneePriority
                 - assignments
                 - bucketId
@@ -7737,6 +7976,9 @@ paths:
                 - creationSource
                 - dueDateTime
                 - hasDescription
+                - isArchived
+                - isOnMyDay
+                - isOnMyDayLastModifiedDate
                 - orderHint
                 - percentComplete
                 - planId
@@ -7768,6 +8010,8 @@ paths:
                 - activeChecklistItemCount desc
                 - appliedCategories
                 - appliedCategories desc
+                - archivalInfo
+                - archivalInfo desc
                 - assigneePriority
                 - assigneePriority desc
                 - assignments
@@ -7792,6 +8036,12 @@ paths:
                 - dueDateTime desc
                 - hasDescription
                 - hasDescription desc
+                - isArchived
+                - isArchived desc
+                - isOnMyDay
+                - isOnMyDay desc
+                - isOnMyDayLastModifiedDate
+                - isOnMyDayLastModifiedDate desc
                 - orderHint
                 - orderHint desc
                 - percentComplete
@@ -7877,11 +8127,13 @@ paths:
             items:
               enum:
                 - id
+                - archivalInfo
                 - container
                 - contexts
                 - createdBy
                 - createdDateTime
                 - creationSource
+                - isArchived
                 - owner
                 - sharedWithContainers
                 - title
@@ -7901,6 +8153,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - archivalInfo
+                - archivalInfo desc
                 - container
                 - container desc
                 - contexts
@@ -7911,6 +8165,8 @@ paths:
                 - createdDateTime desc
                 - creationSource
                 - creationSource desc
+                - isArchived
+                - isArchived desc
                 - owner
                 - owner desc
                 - sharedWithContainers
@@ -8465,6 +8721,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - archivalInfo
+                - archivalInfo desc
                 - container
                 - container desc
                 - contexts
@@ -8475,6 +8733,8 @@ paths:
                 - createdDateTime desc
                 - creationSource
                 - creationSource desc
+                - isArchived
+                - isArchived desc
                 - owner
                 - owner desc
                 - sharedWithContainers
@@ -8493,11 +8753,13 @@ paths:
             items:
               enum:
                 - id
+                - archivalInfo
                 - container
                 - contexts
                 - createdBy
                 - createdDateTime
                 - creationSource
+                - isArchived
                 - owner
                 - sharedWithContainers
                 - title
@@ -8564,11 +8826,13 @@ paths:
             items:
               enum:
                 - id
+                - archivalInfo
                 - container
                 - contexts
                 - createdBy
                 - createdDateTime
                 - creationSource
+                - isArchived
                 - owner
                 - sharedWithContainers
                 - title
@@ -8669,6 +8933,8 @@ paths:
                 - activeChecklistItemCount desc
                 - appliedCategories
                 - appliedCategories desc
+                - archivalInfo
+                - archivalInfo desc
                 - assigneePriority
                 - assigneePriority desc
                 - assignments
@@ -8693,6 +8959,12 @@ paths:
                 - dueDateTime desc
                 - hasDescription
                 - hasDescription desc
+                - isArchived
+                - isArchived desc
+                - isOnMyDay
+                - isOnMyDay desc
+                - isOnMyDayLastModifiedDate
+                - isOnMyDayLastModifiedDate desc
                 - orderHint
                 - orderHint desc
                 - percentComplete
@@ -8727,6 +8999,7 @@ paths:
                 - id
                 - activeChecklistItemCount
                 - appliedCategories
+                - archivalInfo
                 - assigneePriority
                 - assignments
                 - bucketId
@@ -8739,6 +9012,9 @@ paths:
                 - creationSource
                 - dueDateTime
                 - hasDescription
+                - isArchived
+                - isOnMyDay
+                - isOnMyDayLastModifiedDate
                 - orderHint
                 - percentComplete
                 - planId
@@ -8837,6 +9113,7 @@ paths:
                 - id
                 - activeChecklistItemCount
                 - appliedCategories
+                - archivalInfo
                 - assigneePriority
                 - assignments
                 - bucketId
@@ -8849,6 +9126,9 @@ paths:
                 - creationSource
                 - dueDateTime
                 - hasDescription
+                - isArchived
+                - isOnMyDay
+                - isOnMyDayLastModifiedDate
                 - orderHint
                 - percentComplete
                 - planId
@@ -9234,9 +9514,11 @@ paths:
             items:
               enum:
                 - id
+                - approvalAttachment
                 - checklist
                 - completionRequirements
                 - description
+                - forms
                 - notes
                 - previewType
                 - references
@@ -9490,6 +9772,7 @@ paths:
                 - id
                 - activeChecklistItemCount
                 - appliedCategories
+                - archivalInfo
                 - assigneePriority
                 - assignments
                 - bucketId
@@ -9502,6 +9785,9 @@ paths:
                 - creationSource
                 - dueDateTime
                 - hasDescription
+                - isArchived
+                - isOnMyDay
+                - isOnMyDayLastModifiedDate
                 - orderHint
                 - percentComplete
                 - planId
@@ -9533,6 +9819,8 @@ paths:
                 - activeChecklistItemCount desc
                 - appliedCategories
                 - appliedCategories desc
+                - archivalInfo
+                - archivalInfo desc
                 - assigneePriority
                 - assigneePriority desc
                 - assignments
@@ -9557,6 +9845,12 @@ paths:
                 - dueDateTime desc
                 - hasDescription
                 - hasDescription desc
+                - isArchived
+                - isArchived desc
+                - isOnMyDay
+                - isOnMyDay desc
+                - isOnMyDayLastModifiedDate
+                - isOnMyDayLastModifiedDate desc
                 - orderHint
                 - orderHint desc
                 - percentComplete
@@ -10024,6 +10318,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - archivalInfo
+                - archivalInfo desc
                 - container
                 - container desc
                 - contexts
@@ -10034,6 +10330,8 @@ paths:
                 - createdDateTime desc
                 - creationSource
                 - creationSource desc
+                - isArchived
+                - isArchived desc
                 - owner
                 - owner desc
                 - sharedWithContainers
@@ -10052,11 +10350,13 @@ paths:
             items:
               enum:
                 - id
+                - archivalInfo
                 - container
                 - contexts
                 - createdBy
                 - createdDateTime
                 - creationSource
+                - isArchived
                 - owner
                 - sharedWithContainers
                 - title
@@ -10123,11 +10423,13 @@ paths:
             items:
               enum:
                 - id
+                - archivalInfo
                 - container
                 - contexts
                 - createdBy
                 - createdDateTime
                 - creationSource
+                - isArchived
                 - owner
                 - sharedWithContainers
                 - title
@@ -10218,6 +10520,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - archivalInfo
+                - archivalInfo desc
                 - container
                 - container desc
                 - contexts
@@ -10228,6 +10532,8 @@ paths:
                 - createdDateTime desc
                 - creationSource
                 - creationSource desc
+                - isArchived
+                - isArchived desc
                 - owner
                 - owner desc
                 - sharedWithContainers
@@ -10246,11 +10552,13 @@ paths:
             items:
               enum:
                 - id
+                - archivalInfo
                 - container
                 - contexts
                 - createdBy
                 - createdDateTime
                 - creationSource
+                - isArchived
                 - owner
                 - sharedWithContainers
                 - title
@@ -10347,11 +10655,13 @@ paths:
             items:
               enum:
                 - id
+                - archivalInfo
                 - container
                 - contexts
                 - createdBy
                 - createdDateTime
                 - creationSource
+                - isArchived
                 - owner
                 - sharedWithContainers
                 - title
@@ -10501,8 +10811,12 @@ paths:
               enum:
                 - id
                 - id desc
+                - archivalInfo
+                - archivalInfo desc
                 - creationSource
                 - creationSource desc
+                - isArchived
+                - isArchived desc
                 - name
                 - name desc
                 - orderHint
@@ -10521,7 +10835,9 @@ paths:
             items:
               enum:
                 - id
+                - archivalInfo
                 - creationSource
+                - isArchived
                 - name
                 - orderHint
                 - planId
@@ -10631,7 +10947,9 @@ paths:
             items:
               enum:
                 - id
+                - archivalInfo
                 - creationSource
+                - isArchived
                 - name
                 - orderHint
                 - planId
@@ -10805,6 +11123,8 @@ paths:
                 - activeChecklistItemCount desc
                 - appliedCategories
                 - appliedCategories desc
+                - archivalInfo
+                - archivalInfo desc
                 - assigneePriority
                 - assigneePriority desc
                 - assignments
@@ -10829,6 +11149,12 @@ paths:
                 - dueDateTime desc
                 - hasDescription
                 - hasDescription desc
+                - isArchived
+                - isArchived desc
+                - isOnMyDay
+                - isOnMyDay desc
+                - isOnMyDayLastModifiedDate
+                - isOnMyDayLastModifiedDate desc
                 - orderHint
                 - orderHint desc
                 - percentComplete
@@ -10863,6 +11189,7 @@ paths:
                 - id
                 - activeChecklistItemCount
                 - appliedCategories
+                - archivalInfo
                 - assigneePriority
                 - assignments
                 - bucketId
@@ -10875,6 +11202,9 @@ paths:
                 - creationSource
                 - dueDateTime
                 - hasDescription
+                - isArchived
+                - isOnMyDay
+                - isOnMyDayLastModifiedDate
                 - orderHint
                 - percentComplete
                 - planId
@@ -11015,6 +11345,7 @@ paths:
                 - id
                 - activeChecklistItemCount
                 - appliedCategories
+                - archivalInfo
                 - assigneePriority
                 - assignments
                 - bucketId
@@ -11027,6 +11358,9 @@ paths:
                 - creationSource
                 - dueDateTime
                 - hasDescription
+                - isArchived
+                - isOnMyDay
+                - isOnMyDayLastModifiedDate
                 - orderHint
                 - percentComplete
                 - planId
@@ -11614,9 +11948,11 @@ paths:
             items:
               enum:
                 - id
+                - approvalAttachment
                 - checklist
                 - completionRequirements
                 - description
+                - forms
                 - notes
                 - previewType
                 - references
@@ -12214,6 +12550,8 @@ paths:
                 - activeChecklistItemCount desc
                 - appliedCategories
                 - appliedCategories desc
+                - archivalInfo
+                - archivalInfo desc
                 - assigneePriority
                 - assigneePriority desc
                 - assignments
@@ -12238,6 +12576,12 @@ paths:
                 - dueDateTime desc
                 - hasDescription
                 - hasDescription desc
+                - isArchived
+                - isArchived desc
+                - isOnMyDay
+                - isOnMyDay desc
+                - isOnMyDayLastModifiedDate
+                - isOnMyDayLastModifiedDate desc
                 - orderHint
                 - orderHint desc
                 - percentComplete
@@ -12272,6 +12616,7 @@ paths:
                 - id
                 - activeChecklistItemCount
                 - appliedCategories
+                - archivalInfo
                 - assigneePriority
                 - assignments
                 - bucketId
@@ -12284,6 +12629,9 @@ paths:
                 - creationSource
                 - dueDateTime
                 - hasDescription
+                - isArchived
+                - isOnMyDay
+                - isOnMyDayLastModifiedDate
                 - orderHint
                 - percentComplete
                 - planId
@@ -12408,6 +12756,7 @@ paths:
                 - id
                 - activeChecklistItemCount
                 - appliedCategories
+                - archivalInfo
                 - assigneePriority
                 - assignments
                 - bucketId
@@ -12420,6 +12769,9 @@ paths:
                 - creationSource
                 - dueDateTime
                 - hasDescription
+                - isArchived
+                - isOnMyDay
+                - isOnMyDayLastModifiedDate
                 - orderHint
                 - percentComplete
                 - planId
@@ -12935,9 +13287,11 @@ paths:
             items:
               enum:
                 - id
+                - approvalAttachment
                 - checklist
                 - completionRequirements
                 - description
+                - forms
                 - notes
                 - previewType
                 - references
@@ -13320,6 +13674,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - archivalInfo
+                - archivalInfo desc
                 - container
                 - container desc
                 - contexts
@@ -13330,6 +13686,8 @@ paths:
                 - createdDateTime desc
                 - creationSource
                 - creationSource desc
+                - isArchived
+                - isArchived desc
                 - owner
                 - owner desc
                 - sharedWithContainers
@@ -13348,11 +13706,13 @@ paths:
             items:
               enum:
                 - id
+                - archivalInfo
                 - container
                 - contexts
                 - createdBy
                 - createdDateTime
                 - creationSource
+                - isArchived
                 - owner
                 - sharedWithContainers
                 - title
@@ -13419,11 +13779,13 @@ paths:
             items:
               enum:
                 - id
+                - archivalInfo
                 - container
                 - contexts
                 - createdBy
                 - createdDateTime
                 - creationSource
+                - isArchived
                 - owner
                 - sharedWithContainers
                 - title
@@ -13514,6 +13876,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - archivalInfo
+                - archivalInfo desc
                 - container
                 - container desc
                 - contexts
@@ -13524,6 +13888,8 @@ paths:
                 - createdDateTime desc
                 - creationSource
                 - creationSource desc
+                - isArchived
+                - isArchived desc
                 - owner
                 - owner desc
                 - sharedWithContainers
@@ -13542,11 +13908,13 @@ paths:
             items:
               enum:
                 - id
+                - archivalInfo
                 - container
                 - contexts
                 - createdBy
                 - createdDateTime
                 - creationSource
+                - isArchived
                 - owner
                 - sharedWithContainers
                 - title
@@ -13613,11 +13981,13 @@ paths:
             items:
               enum:
                 - id
+                - archivalInfo
                 - container
                 - contexts
                 - createdBy
                 - createdDateTime
                 - creationSource
+                - isArchived
                 - owner
                 - sharedWithContainers
                 - title
@@ -13712,6 +14082,8 @@ paths:
                 - activeChecklistItemCount desc
                 - appliedCategories
                 - appliedCategories desc
+                - archivalInfo
+                - archivalInfo desc
                 - assigneePriority
                 - assigneePriority desc
                 - assignments
@@ -13736,6 +14108,12 @@ paths:
                 - dueDateTime desc
                 - hasDescription
                 - hasDescription desc
+                - isArchived
+                - isArchived desc
+                - isOnMyDay
+                - isOnMyDay desc
+                - isOnMyDayLastModifiedDate
+                - isOnMyDayLastModifiedDate desc
                 - orderHint
                 - orderHint desc
                 - percentComplete
@@ -13770,6 +14148,7 @@ paths:
                 - id
                 - activeChecklistItemCount
                 - appliedCategories
+                - archivalInfo
                 - assigneePriority
                 - assignments
                 - bucketId
@@ -13782,6 +14161,9 @@ paths:
                 - creationSource
                 - dueDateTime
                 - hasDescription
+                - isArchived
+                - isOnMyDay
+                - isOnMyDayLastModifiedDate
                 - orderHint
                 - percentComplete
                 - planId
@@ -13890,6 +14272,7 @@ paths:
                 - id
                 - activeChecklistItemCount
                 - appliedCategories
+                - archivalInfo
                 - assigneePriority
                 - assignments
                 - bucketId
@@ -13902,6 +14285,9 @@ paths:
                 - creationSource
                 - dueDateTime
                 - hasDescription
+                - isArchived
+                - isOnMyDay
+                - isOnMyDayLastModifiedDate
                 - orderHint
                 - percentComplete
                 - planId
@@ -14345,9 +14731,11 @@ paths:
             items:
               enum:
                 - id
+                - approvalAttachment
                 - checklist
                 - completionRequirements
                 - description
+                - forms
                 - notes
                 - previewType
                 - references
@@ -14646,6 +15034,8 @@ components:
         - title: plannerPlan
           type: object
           properties:
+            archivalInfo:
+              $ref: '#/components/schemas/microsoft.graph.plannerArchivalInfo'
             container:
               $ref: '#/components/schemas/microsoft.graph.plannerPlanContainer'
             contexts:
@@ -14660,6 +15050,9 @@ components:
               nullable: true
             creationSource:
               $ref: '#/components/schemas/microsoft.graph.plannerPlanCreation'
+            isArchived:
+              type: boolean
+              nullable: true
             owner:
               type: string
               nullable: true
@@ -14693,8 +15086,13 @@ components:
         - title: plannerBucket
           type: object
           properties:
+            archivalInfo:
+              $ref: '#/components/schemas/microsoft.graph.plannerArchivalInfo'
             creationSource:
               $ref: '#/components/schemas/microsoft.graph.plannerBucketCreation'
+            isArchived:
+              type: boolean
+              nullable: true
             name:
               type: string
               description: Name of the bucket.
@@ -14729,6 +15127,8 @@ components:
               nullable: true
             appliedCategories:
               $ref: '#/components/schemas/microsoft.graph.plannerAppliedCategories'
+            archivalInfo:
+              $ref: '#/components/schemas/microsoft.graph.plannerArchivalInfo'
             assigneePriority:
               type: string
               description: Hint used to order items of this type in a list view. The format is defined as outlined here.
@@ -14777,6 +15177,17 @@ components:
             hasDescription:
               type: boolean
               description: Read-only. Value is true if the details object of the task has a nonempty description and false otherwise.
+              nullable: true
+            isArchived:
+              type: boolean
+              nullable: true
+            isOnMyDay:
+              type: boolean
+              nullable: true
+            isOnMyDayLastModifiedDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
               nullable: true
             orderHint:
               type: string
@@ -14864,6 +15275,8 @@ components:
         - title: plannerTaskDetails
           type: object
           properties:
+            approvalAttachment:
+              $ref: '#/components/schemas/microsoft.graph.plannerBaseApprovalAttachment'
             checklist:
               $ref: '#/components/schemas/microsoft.graph.plannerChecklistItems'
             completionRequirements:
@@ -14872,6 +15285,8 @@ components:
               type: string
               description: Description of the task.
               nullable: true
+            forms:
+              $ref: '#/components/schemas/microsoft.graph.plannerFormsDictionary'
             notes:
               $ref: '#/components/schemas/microsoft.graph.itemBody'
             previewType:
@@ -15058,6 +15473,22 @@ components:
           description: The unique identifier for an entity. Read-only.
       additionalProperties:
         type: object
+    microsoft.graph.plannerArchivalInfo:
+      title: plannerArchivalInfo
+      type: object
+      properties:
+        justification:
+          type: string
+          nullable: true
+        statusChangedBy:
+          $ref: '#/components/schemas/microsoft.graph.identitySet'
+        statusChangedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.plannerPlanContextCollection:
       title: plannerPlanContextCollection
       type: object
@@ -15166,12 +15597,22 @@ components:
         - none
         - checklistCompletion
         - unknownFutureValue
+        - formCompletion
+        - approvalCompletion
       type: string
       x-ms-enum-flags:
         isFlags: true
     microsoft.graph.plannerOrderHintsByAssignee:
       title: plannerOrderHintsByAssignee
       type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerBaseApprovalAttachment:
+      title: plannerBaseApprovalAttachment
+      type: object
+      properties:
+        status:
+          $ref: '#/components/schemas/microsoft.graph.plannerApprovalStatus'
       additionalProperties:
         type: object
     microsoft.graph.plannerChecklistItems:
@@ -15183,10 +15624,21 @@ components:
       title: plannerTaskCompletionRequirementDetails
       type: object
       properties:
+        approvalRequirement:
+          $ref: '#/components/schemas/microsoft.graph.plannerApprovalRequirement'
         checklistRequirement:
           $ref: '#/components/schemas/microsoft.graph.plannerChecklistRequirement'
+        formsRequirement:
+          $ref: '#/components/schemas/microsoft.graph.plannerFormsRequirement'
       additionalProperties:
         type: object
+    microsoft.graph.plannerFormsDictionary:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.Dictionary'
+        - title: plannerFormsDictionary
+          type: object
+          additionalProperties:
+            type: object
     microsoft.graph.itemBody:
       title: itemBody
       type: object
@@ -15510,6 +15962,24 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.plannerApprovalStatus:
+      title: plannerApprovalStatus
+      enum:
+        - requested
+        - approved
+        - rejected
+        - cancelled
+        - unknownFutureValue
+      type: string
+    microsoft.graph.plannerApprovalRequirement:
+      title: plannerApprovalRequirement
+      type: object
+      properties:
+        isApprovalRequired:
+          type: boolean
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.plannerChecklistRequirement:
       title: plannerChecklistRequirement
       type: object
@@ -15520,6 +15990,22 @@ components:
             type: string
             nullable: true
           description: A collection of required plannerChecklistItems identifiers to complete the plannerTask.
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerFormsRequirement:
+      title: plannerFormsRequirement
+      type: object
+      properties:
+        requiredForms:
+          type: array
+          items:
+            type: string
+            nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.Dictionary:
+      title: Dictionary
+      type: object
       additionalProperties:
         type: object
     microsoft.graph.bodyType:

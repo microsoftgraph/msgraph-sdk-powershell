@@ -6632,6 +6632,138 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  /chats/microsoft.graph.getAllRetainedMessages():
+    get:
+      tags:
+        - chats.Functions
+      summary: Invoke function getAllRetainedMessages
+      operationId: chat_getAllRetainedMessage
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - attachments
+                - body
+                - channelIdentity
+                - chatId
+                - createdDateTime
+                - deletedDateTime
+                - etag
+                - eventDetail
+                - from
+                - importance
+                - lastEditedDateTime
+                - lastModifiedDateTime
+                - locale
+                - mentions
+                - messageHistory
+                - messageType
+                - onBehalfOf
+                - policyViolation
+                - reactions
+                - replyToId
+                - subject
+                - summary
+                - webUrl
+                - hostedContents
+                - replies
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - attachments
+                - attachments desc
+                - body
+                - body desc
+                - channelIdentity
+                - channelIdentity desc
+                - chatId
+                - chatId desc
+                - createdDateTime
+                - createdDateTime desc
+                - deletedDateTime
+                - deletedDateTime desc
+                - etag
+                - etag desc
+                - eventDetail
+                - eventDetail desc
+                - from
+                - from desc
+                - importance
+                - importance desc
+                - lastEditedDateTime
+                - lastEditedDateTime desc
+                - lastModifiedDateTime
+                - lastModifiedDateTime desc
+                - locale
+                - locale desc
+                - mentions
+                - mentions desc
+                - messageHistory
+                - messageHistory desc
+                - messageType
+                - messageType desc
+                - onBehalfOf
+                - onBehalfOf desc
+                - policyViolation
+                - policyViolation desc
+                - reactions
+                - reactions desc
+                - replyToId
+                - replyToId desc
+                - subject
+                - subject desc
+                - summary
+                - summary desc
+                - webUrl
+                - webUrl desc
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of chatMessage
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/groups/{group-id}/team':
     get:
       tags:
@@ -6830,6 +6962,8 @@ paths:
                 - displayName desc
                 - email
                 - email desc
+                - isArchived
+                - isArchived desc
                 - isFavoriteByDefault
                 - isFavoriteByDefault desc
                 - membershipType
@@ -6858,6 +6992,7 @@ paths:
                 - description
                 - displayName
                 - email
+                - isArchived
                 - isFavoriteByDefault
                 - membershipType
                 - moderationSettings
@@ -6935,6 +7070,7 @@ paths:
                 - description
                 - displayName
                 - email
+                - isArchived
                 - isFavoriteByDefault
                 - membershipType
                 - moderationSettings
@@ -7040,6 +7176,8 @@ paths:
                 - displayName desc
                 - email
                 - email desc
+                - isArchived
+                - isArchived desc
                 - isFavoriteByDefault
                 - isFavoriteByDefault desc
                 - membershipType
@@ -7068,6 +7206,7 @@ paths:
                 - description
                 - displayName
                 - email
+                - isArchived
                 - isFavoriteByDefault
                 - membershipType
                 - moderationSettings
@@ -7183,6 +7322,7 @@ paths:
                 - description
                 - displayName
                 - email
+                - isArchived
                 - isFavoriteByDefault
                 - membershipType
                 - moderationSettings
@@ -11067,6 +11207,8 @@ paths:
                 - displayName desc
                 - email
                 - email desc
+                - isArchived
+                - isArchived desc
                 - isFavoriteByDefault
                 - isFavoriteByDefault desc
                 - membershipType
@@ -11095,6 +11237,7 @@ paths:
                 - description
                 - displayName
                 - email
+                - isArchived
                 - isFavoriteByDefault
                 - membershipType
                 - moderationSettings
@@ -11172,6 +11315,7 @@ paths:
                 - description
                 - displayName
                 - email
+                - isArchived
                 - isFavoriteByDefault
                 - membershipType
                 - moderationSettings
@@ -13672,6 +13816,7 @@ paths:
                 - description
                 - displayName
                 - email
+                - isArchived
                 - isFavoriteByDefault
                 - membershipType
                 - moderationSettings
@@ -16812,11 +16957,13 @@ paths:
             items:
               enum:
                 - id
+                - activitiesIncludedWhenCopyingShiftsEnabled
                 - enabled
                 - offerShiftRequestsEnabled
                 - openShiftsEnabled
                 - provisionStatus
                 - provisionStatusCode
+                - startDayOfWeek
                 - swapShiftsRequestsEnabled
                 - timeClockEnabled
                 - timeClockSettings
@@ -16930,6 +17077,7 @@ paths:
       tags:
         - groups.team
       summary: Get dayNotes from groups
+      description: The day notes in the schedule.
       operationId: group.team.schedule_ListDayNote
       parameters:
         - name: group-id
@@ -17048,6 +17196,7 @@ paths:
       tags:
         - groups.team
       summary: Get dayNotes from groups
+      description: The day notes in the schedule.
       operationId: group.team.schedule_GetDayNote
       parameters:
         - name: group-id
@@ -17110,7 +17259,11 @@ paths:
     patch:
       tags:
         - groups.team
-      summary: Update the navigation property dayNotes in groups
+      summary: Update dayNote
+      description: Update the properties of a day note.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/daynote-update?view=graph-rest-1.0
       operationId: group.team.schedule_UpdateDayNote
       parameters:
         - name: group-id
@@ -17890,8 +18043,14 @@ paths:
                 - isStagedForDeletion desc
                 - schedulingGroupId
                 - schedulingGroupId desc
+                - schedulingGroupName
+                - schedulingGroupName desc
                 - sharedOpenShift
                 - sharedOpenShift desc
+                - teamId
+                - teamId desc
+                - teamName
+                - teamName desc
               type: string
         - name: $select
           in: query
@@ -17911,7 +18070,10 @@ paths:
                 - draftOpenShift
                 - isStagedForDeletion
                 - schedulingGroupId
+                - schedulingGroupName
                 - sharedOpenShift
+                - teamId
+                - teamName
               type: string
         - name: $expand
           in: query
@@ -18014,7 +18176,10 @@ paths:
                 - draftOpenShift
                 - isStagedForDeletion
                 - schedulingGroupId
+                - schedulingGroupName
                 - sharedOpenShift
+                - teamId
+                - teamName
               type: string
         - name: $expand
           in: query
@@ -18185,6 +18350,8 @@ paths:
                 - lastModifiedBy desc
                 - lastModifiedDateTime
                 - lastModifiedDateTime desc
+                - code
+                - code desc
                 - displayName
                 - displayName desc
                 - isActive
@@ -18207,6 +18374,7 @@ paths:
                 - createdDateTime
                 - lastModifiedBy
                 - lastModifiedDateTime
+                - code
                 - displayName
                 - isActive
                 - userIds
@@ -18297,6 +18465,7 @@ paths:
                 - createdDateTime
                 - lastModifiedBy
                 - lastModifiedDateTime
+                - code
                 - displayName
                 - isActive
                 - userIds
@@ -19385,6 +19554,8 @@ paths:
                 - lastModifiedBy desc
                 - lastModifiedDateTime
                 - lastModifiedDateTime desc
+                - code
+                - code desc
                 - displayName
                 - displayName desc
                 - iconType
@@ -19407,6 +19578,7 @@ paths:
                 - createdDateTime
                 - lastModifiedBy
                 - lastModifiedDateTime
+                - code
                 - displayName
                 - iconType
                 - isActive
@@ -19497,6 +19669,7 @@ paths:
                 - createdDateTime
                 - lastModifiedBy
                 - lastModifiedDateTime
+                - code
                 - displayName
                 - iconType
                 - isActive
@@ -21293,6 +21466,8 @@ paths:
                 - displayName desc
                 - email
                 - email desc
+                - isArchived
+                - isArchived desc
                 - isFavoriteByDefault
                 - isFavoriteByDefault desc
                 - membershipType
@@ -21321,6 +21496,7 @@ paths:
                 - description
                 - displayName
                 - email
+                - isArchived
                 - isFavoriteByDefault
                 - membershipType
                 - moderationSettings
@@ -21398,6 +21574,7 @@ paths:
                 - description
                 - displayName
                 - email
+                - isArchived
                 - isFavoriteByDefault
                 - membershipType
                 - moderationSettings
@@ -21503,6 +21680,8 @@ paths:
                 - displayName desc
                 - email
                 - email desc
+                - isArchived
+                - isArchived desc
                 - isFavoriteByDefault
                 - isFavoriteByDefault desc
                 - membershipType
@@ -21531,6 +21710,7 @@ paths:
                 - description
                 - displayName
                 - email
+                - isArchived
                 - isFavoriteByDefault
                 - membershipType
                 - moderationSettings
@@ -21646,6 +21826,7 @@ paths:
                 - description
                 - displayName
                 - email
+                - isArchived
                 - isFavoriteByDefault
                 - membershipType
                 - moderationSettings
@@ -24930,6 +25111,49 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/teams/{team-id}/channels/{channel-id}/microsoft.graph.archive':
+    post:
+      tags:
+        - teams.Actions
+      summary: Invoke action archive
+      operationId: team.channel_archive
+      parameters:
+        - name: team-id
+          in: path
+          description: The unique identifier of team
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: channel-id
+          in: path
+          description: The unique identifier of channel
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                shouldSetSpoSiteReadOnlyForMembers:
+                  type: boolean
+                  default: false
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/teams/{team-id}/channels/{channel-id}/microsoft.graph.completeMigration':
     post:
       tags:
@@ -25073,6 +25297,35 @@ paths:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/channel-removeemail?view=graph-rest-1.0
       operationId: team.channel_removeEmail
+      parameters:
+        - name: team-id
+          in: path
+          description: The unique identifier of team
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: channel-id
+          in: path
+          description: The unique identifier of channel
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/teams/{team-id}/channels/{channel-id}/microsoft.graph.unarchive':
+    post:
+      tags:
+        - teams.Actions
+      summary: Invoke action unarchive
+      operationId: team.channel_unarchive
       parameters:
         - name: team-id
           in: path
@@ -26457,6 +26710,146 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/teams/{team-id}/channels/microsoft.graph.getAllRetainedMessages()':
+    get:
+      tags:
+        - teams.Functions
+      summary: Invoke function getAllRetainedMessages
+      operationId: team.channel_getAllRetainedMessage
+      parameters:
+        - name: team-id
+          in: path
+          description: The unique identifier of team
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - attachments
+                - body
+                - channelIdentity
+                - chatId
+                - createdDateTime
+                - deletedDateTime
+                - etag
+                - eventDetail
+                - from
+                - importance
+                - lastEditedDateTime
+                - lastModifiedDateTime
+                - locale
+                - mentions
+                - messageHistory
+                - messageType
+                - onBehalfOf
+                - policyViolation
+                - reactions
+                - replyToId
+                - subject
+                - summary
+                - webUrl
+                - hostedContents
+                - replies
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - attachments
+                - attachments desc
+                - body
+                - body desc
+                - channelIdentity
+                - channelIdentity desc
+                - chatId
+                - chatId desc
+                - createdDateTime
+                - createdDateTime desc
+                - deletedDateTime
+                - deletedDateTime desc
+                - etag
+                - etag desc
+                - eventDetail
+                - eventDetail desc
+                - from
+                - from desc
+                - importance
+                - importance desc
+                - lastEditedDateTime
+                - lastEditedDateTime desc
+                - lastModifiedDateTime
+                - lastModifiedDateTime desc
+                - locale
+                - locale desc
+                - mentions
+                - mentions desc
+                - messageHistory
+                - messageHistory desc
+                - messageType
+                - messageType desc
+                - onBehalfOf
+                - onBehalfOf desc
+                - policyViolation
+                - policyViolation desc
+                - reactions
+                - reactions desc
+                - replyToId
+                - replyToId desc
+                - subject
+                - subject desc
+                - summary
+                - summary desc
+                - webUrl
+                - webUrl desc
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of chatMessage
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/teams/{team-id}/group':
     get:
       tags:
@@ -26753,6 +27146,8 @@ paths:
                 - displayName desc
                 - email
                 - email desc
+                - isArchived
+                - isArchived desc
                 - isFavoriteByDefault
                 - isFavoriteByDefault desc
                 - membershipType
@@ -26781,6 +27176,7 @@ paths:
                 - description
                 - displayName
                 - email
+                - isArchived
                 - isFavoriteByDefault
                 - membershipType
                 - moderationSettings
@@ -26858,6 +27254,7 @@ paths:
                 - description
                 - displayName
                 - email
+                - isArchived
                 - isFavoriteByDefault
                 - membershipType
                 - moderationSettings
@@ -29651,6 +30048,7 @@ paths:
                 - description
                 - displayName
                 - email
+                - isArchived
                 - isFavoriteByDefault
                 - membershipType
                 - moderationSettings
@@ -32527,6 +32925,41 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/teams/{team-id}/primaryChannel/microsoft.graph.archive':
+    post:
+      tags:
+        - teams.Actions
+      summary: Invoke action archive
+      operationId: team.primaryChannel_archive
+      parameters:
+        - name: team-id
+          in: path
+          description: The unique identifier of team
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                shouldSetSpoSiteReadOnlyForMembers:
+                  type: boolean
+                  default: false
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/teams/{team-id}/primaryChannel/microsoft.graph.completeMigration':
     post:
       tags:
@@ -32646,6 +33079,27 @@ paths:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/channel-removeemail?view=graph-rest-1.0
       operationId: team.primaryChannel_removeEmail
+      parameters:
+        - name: team-id
+          in: path
+          description: The unique identifier of team
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/teams/{team-id}/primaryChannel/microsoft.graph.unarchive':
+    post:
+      tags:
+        - teams.Actions
+      summary: Invoke action unarchive
+      operationId: team.primaryChannel_unarchive
       parameters:
         - name: team-id
           in: path
@@ -33607,11 +34061,13 @@ paths:
             items:
               enum:
                 - id
+                - activitiesIncludedWhenCopyingShiftsEnabled
                 - enabled
                 - offerShiftRequestsEnabled
                 - openShiftsEnabled
                 - provisionStatus
                 - provisionStatusCode
+                - startDayOfWeek
                 - swapShiftsRequestsEnabled
                 - timeClockEnabled
                 - timeClockSettings
@@ -33725,6 +34181,7 @@ paths:
       tags:
         - teams.schedule
       summary: Get dayNotes from teams
+      description: The day notes in the schedule.
       operationId: team.schedule_ListDayNote
       parameters:
         - name: team-id
@@ -33843,6 +34300,7 @@ paths:
       tags:
         - teams.schedule
       summary: Get dayNotes from teams
+      description: The day notes in the schedule.
       operationId: team.schedule_GetDayNote
       parameters:
         - name: team-id
@@ -33905,7 +34363,11 @@ paths:
     patch:
       tags:
         - teams.schedule
-      summary: Update the navigation property dayNotes in teams
+      summary: Update dayNote
+      description: Update the properties of a day note.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/daynote-update?view=graph-rest-1.0
       operationId: team.schedule_UpdateDayNote
       parameters:
         - name: team-id
@@ -34734,8 +35196,14 @@ paths:
                 - isStagedForDeletion desc
                 - schedulingGroupId
                 - schedulingGroupId desc
+                - schedulingGroupName
+                - schedulingGroupName desc
                 - sharedOpenShift
                 - sharedOpenShift desc
+                - teamId
+                - teamId desc
+                - teamName
+                - teamName desc
               type: string
         - name: $select
           in: query
@@ -34755,7 +35223,10 @@ paths:
                 - draftOpenShift
                 - isStagedForDeletion
                 - schedulingGroupId
+                - schedulingGroupName
                 - sharedOpenShift
+                - teamId
+                - teamName
               type: string
         - name: $expand
           in: query
@@ -34858,7 +35329,10 @@ paths:
                 - draftOpenShift
                 - isStagedForDeletion
                 - schedulingGroupId
+                - schedulingGroupName
                 - sharedOpenShift
+                - teamId
+                - teamName
               type: string
         - name: $expand
           in: query
@@ -35029,6 +35503,8 @@ paths:
                 - lastModifiedBy desc
                 - lastModifiedDateTime
                 - lastModifiedDateTime desc
+                - code
+                - code desc
                 - displayName
                 - displayName desc
                 - isActive
@@ -35051,6 +35527,7 @@ paths:
                 - createdDateTime
                 - lastModifiedBy
                 - lastModifiedDateTime
+                - code
                 - displayName
                 - isActive
                 - userIds
@@ -35141,6 +35618,7 @@ paths:
                 - createdDateTime
                 - lastModifiedBy
                 - lastModifiedDateTime
+                - code
                 - displayName
                 - isActive
                 - userIds
@@ -36473,6 +36951,8 @@ paths:
                 - lastModifiedBy desc
                 - lastModifiedDateTime
                 - lastModifiedDateTime desc
+                - code
+                - code desc
                 - displayName
                 - displayName desc
                 - iconType
@@ -36495,6 +36975,7 @@ paths:
                 - createdDateTime
                 - lastModifiedBy
                 - lastModifiedDateTime
+                - code
                 - displayName
                 - iconType
                 - isActive
@@ -36585,6 +37066,7 @@ paths:
                 - createdDateTime
                 - lastModifiedBy
                 - lastModifiedDateTime
+                - code
                 - displayName
                 - iconType
                 - isActive
@@ -38292,11 +38774,109 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  /teams/microsoft.graph.getOpenShifts():
+    get:
+      tags:
+        - teams.Functions
+      summary: Invoke function getOpenShifts
+      operationId: team_getOpenShift
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdBy
+                - createdDateTime
+                - lastModifiedBy
+                - lastModifiedDateTime
+                - draftOpenShift
+                - isStagedForDeletion
+                - schedulingGroupId
+                - schedulingGroupName
+                - sharedOpenShift
+                - teamId
+                - teamName
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - createdBy
+                - createdBy desc
+                - createdDateTime
+                - createdDateTime desc
+                - lastModifiedBy
+                - lastModifiedBy desc
+                - lastModifiedDateTime
+                - lastModifiedDateTime desc
+                - draftOpenShift
+                - draftOpenShift desc
+                - isStagedForDeletion
+                - isStagedForDeletion desc
+                - schedulingGroupId
+                - schedulingGroupId desc
+                - schedulingGroupName
+                - schedulingGroupName desc
+                - sharedOpenShift
+                - sharedOpenShift desc
+                - teamId
+                - teamId desc
+                - teamName
+                - teamName desc
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of openShift
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.openShift'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   /teamwork:
     get:
       tags:
         - teamwork.teamwork
       summary: Get teamwork
+      description: 'Get the properties and relationships of a teamwork object, such as the region of the organization and whether Microsoft Teams is enabled.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/teamwork-get?view=graph-rest-1.0
       operationId: teamwork_GetTeamwork
       parameters:
         - name: $select
@@ -38310,6 +38890,8 @@ paths:
             items:
               enum:
                 - id
+                - isTeamsEnabled
+                - region
                 - deletedChats
                 - deletedTeams
                 - devices
@@ -38833,6 +39415,8 @@ paths:
                 - displayName desc
                 - email
                 - email desc
+                - isArchived
+                - isArchived desc
                 - isFavoriteByDefault
                 - isFavoriteByDefault desc
                 - membershipType
@@ -38861,6 +39445,7 @@ paths:
                 - description
                 - displayName
                 - email
+                - isArchived
                 - isFavoriteByDefault
                 - membershipType
                 - moderationSettings
@@ -38969,6 +39554,7 @@ paths:
                 - description
                 - displayName
                 - email
+                - isArchived
                 - isFavoriteByDefault
                 - membershipType
                 - moderationSettings
@@ -42245,6 +42831,49 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/teamwork/deletedTeams/{deletedTeam-id}/channels/{channel-id}/microsoft.graph.archive':
+    post:
+      tags:
+        - teamwork.Actions
+      summary: Invoke action archive
+      operationId: teamwork.deletedTeam.channel_archive
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: The unique identifier of deletedTeam
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+        - name: channel-id
+          in: path
+          description: The unique identifier of channel
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                shouldSetSpoSiteReadOnlyForMembers:
+                  type: boolean
+                  default: false
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/teamwork/deletedTeams/{deletedTeam-id}/channels/{channel-id}/microsoft.graph.completeMigration':
     post:
       tags:
@@ -42388,6 +43017,35 @@ paths:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/channel-removeemail?view=graph-rest-1.0
       operationId: teamwork.deletedTeam.channel_removeEmail
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: The unique identifier of deletedTeam
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+        - name: channel-id
+          in: path
+          description: The unique identifier of channel
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/teamwork/deletedTeams/{deletedTeam-id}/channels/{channel-id}/microsoft.graph.unarchive':
+    post:
+      tags:
+        - teamwork.Actions
+      summary: Invoke action unarchive
+      operationId: teamwork.deletedTeam.channel_unarchive
       parameters:
         - name: deletedTeam-id
           in: path
@@ -43647,6 +44305,146 @@ paths:
           explode: false
           schema:
             type: string
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - attachments
+                - body
+                - channelIdentity
+                - chatId
+                - createdDateTime
+                - deletedDateTime
+                - etag
+                - eventDetail
+                - from
+                - importance
+                - lastEditedDateTime
+                - lastModifiedDateTime
+                - locale
+                - mentions
+                - messageHistory
+                - messageType
+                - onBehalfOf
+                - policyViolation
+                - reactions
+                - replyToId
+                - subject
+                - summary
+                - webUrl
+                - hostedContents
+                - replies
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - attachments
+                - attachments desc
+                - body
+                - body desc
+                - channelIdentity
+                - channelIdentity desc
+                - chatId
+                - chatId desc
+                - createdDateTime
+                - createdDateTime desc
+                - deletedDateTime
+                - deletedDateTime desc
+                - etag
+                - etag desc
+                - eventDetail
+                - eventDetail desc
+                - from
+                - from desc
+                - importance
+                - importance desc
+                - lastEditedDateTime
+                - lastEditedDateTime desc
+                - lastModifiedDateTime
+                - lastModifiedDateTime desc
+                - locale
+                - locale desc
+                - mentions
+                - mentions desc
+                - messageHistory
+                - messageHistory desc
+                - messageType
+                - messageType desc
+                - onBehalfOf
+                - onBehalfOf desc
+                - policyViolation
+                - policyViolation desc
+                - reactions
+                - reactions desc
+                - replyToId
+                - replyToId desc
+                - subject
+                - subject desc
+                - summary
+                - summary desc
+                - webUrl
+                - webUrl desc
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of chatMessage
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/teamwork/deletedTeams/{deletedTeam-id}/channels/microsoft.graph.getAllRetainedMessages()':
+    get:
+      tags:
+        - teamwork.Functions
+      summary: Invoke function getAllRetainedMessages
+      operationId: teamwork.deletedTeam.channel_getAllRetainedMessage
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: The unique identifier of deletedTeam
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -45780,6 +46578,8 @@ paths:
                 - displayName desc
                 - email
                 - email desc
+                - isArchived
+                - isArchived desc
                 - isFavoriteByDefault
                 - isFavoriteByDefault desc
                 - membershipType
@@ -45808,6 +46608,7 @@ paths:
                 - description
                 - displayName
                 - email
+                - isArchived
                 - isFavoriteByDefault
                 - membershipType
                 - moderationSettings
@@ -45893,6 +46694,7 @@ paths:
                 - description
                 - displayName
                 - email
+                - isArchived
                 - isFavoriteByDefault
                 - membershipType
                 - moderationSettings
@@ -46014,6 +46816,8 @@ paths:
                 - displayName desc
                 - email
                 - email desc
+                - isArchived
+                - isArchived desc
                 - isFavoriteByDefault
                 - isFavoriteByDefault desc
                 - membershipType
@@ -46042,6 +46846,7 @@ paths:
                 - description
                 - displayName
                 - email
+                - isArchived
                 - isFavoriteByDefault
                 - membershipType
                 - moderationSettings
@@ -46173,6 +46978,7 @@ paths:
                 - description
                 - displayName
                 - email
+                - isArchived
                 - isFavoriteByDefault
                 - membershipType
                 - moderationSettings
@@ -49857,6 +50663,57 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/teamwork/teamTemplates/{teamTemplate-id}/definitions/{teamTemplateDefinition-id}/teamDefinition/channels/{channel-id}/microsoft.graph.archive':
+    post:
+      tags:
+        - teamwork.Actions
+      summary: Invoke action archive
+      operationId: teamwork.teamTemplate.definition.teamDefinition.channel_archive
+      parameters:
+        - name: teamTemplate-id
+          in: path
+          description: The unique identifier of teamTemplate
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamTemplate
+        - name: teamTemplateDefinition-id
+          in: path
+          description: The unique identifier of teamTemplateDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamTemplateDefinition
+        - name: channel-id
+          in: path
+          description: The unique identifier of channel
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                shouldSetSpoSiteReadOnlyForMembers:
+                  type: boolean
+                  default: false
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/teamwork/teamTemplates/{teamTemplate-id}/definitions/{teamTemplateDefinition-id}/teamDefinition/channels/{channel-id}/microsoft.graph.completeMigration':
     post:
       tags:
@@ -50024,6 +50881,43 @@ paths:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/channel-removeemail?view=graph-rest-1.0
       operationId: teamwork.teamTemplate.definition.teamDefinition.channel_removeEmail
+      parameters:
+        - name: teamTemplate-id
+          in: path
+          description: The unique identifier of teamTemplate
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamTemplate
+        - name: teamTemplateDefinition-id
+          in: path
+          description: The unique identifier of teamTemplateDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamTemplateDefinition
+        - name: channel-id
+          in: path
+          description: The unique identifier of channel
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/teamwork/teamTemplates/{teamTemplate-id}/definitions/{teamTemplateDefinition-id}/teamDefinition/channels/{channel-id}/microsoft.graph.unarchive':
+    post:
+      tags:
+        - teamwork.Actions
+      summary: Invoke action unarchive
+      operationId: teamwork.teamTemplate.definition.teamDefinition.channel_unarchive
       parameters:
         - name: teamTemplate-id
           in: path
@@ -51576,6 +52470,154 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/teamwork/teamTemplates/{teamTemplate-id}/definitions/{teamTemplateDefinition-id}/teamDefinition/channels/microsoft.graph.getAllRetainedMessages()':
+    get:
+      tags:
+        - teamwork.Functions
+      summary: Invoke function getAllRetainedMessages
+      operationId: teamwork.teamTemplate.definition.teamDefinition.channel_getAllRetainedMessage
+      parameters:
+        - name: teamTemplate-id
+          in: path
+          description: The unique identifier of teamTemplate
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamTemplate
+        - name: teamTemplateDefinition-id
+          in: path
+          description: The unique identifier of teamTemplateDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamTemplateDefinition
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - attachments
+                - body
+                - channelIdentity
+                - chatId
+                - createdDateTime
+                - deletedDateTime
+                - etag
+                - eventDetail
+                - from
+                - importance
+                - lastEditedDateTime
+                - lastModifiedDateTime
+                - locale
+                - mentions
+                - messageHistory
+                - messageType
+                - onBehalfOf
+                - policyViolation
+                - reactions
+                - replyToId
+                - subject
+                - summary
+                - webUrl
+                - hostedContents
+                - replies
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - attachments
+                - attachments desc
+                - body
+                - body desc
+                - channelIdentity
+                - channelIdentity desc
+                - chatId
+                - chatId desc
+                - createdDateTime
+                - createdDateTime desc
+                - deletedDateTime
+                - deletedDateTime desc
+                - etag
+                - etag desc
+                - eventDetail
+                - eventDetail desc
+                - from
+                - from desc
+                - importance
+                - importance desc
+                - lastEditedDateTime
+                - lastEditedDateTime desc
+                - lastModifiedDateTime
+                - lastModifiedDateTime desc
+                - locale
+                - locale desc
+                - mentions
+                - mentions desc
+                - messageHistory
+                - messageHistory desc
+                - messageType
+                - messageType desc
+                - onBehalfOf
+                - onBehalfOf desc
+                - policyViolation
+                - policyViolation desc
+                - reactions
+                - reactions desc
+                - replyToId
+                - replyToId desc
+                - subject
+                - subject desc
+                - summary
+                - summary desc
+                - webUrl
+                - webUrl desc
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of chatMessage
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/teamwork/teamTemplates/{teamTemplate-id}/definitions/{teamTemplateDefinition-id}/teamDefinition/group':
     get:
       tags:
@@ -51904,6 +52946,8 @@ paths:
                 - displayName desc
                 - email
                 - email desc
+                - isArchived
+                - isArchived desc
                 - isFavoriteByDefault
                 - isFavoriteByDefault desc
                 - membershipType
@@ -51932,6 +52976,7 @@ paths:
                 - description
                 - displayName
                 - email
+                - isArchived
                 - isFavoriteByDefault
                 - membershipType
                 - moderationSettings
@@ -52017,6 +53062,7 @@ paths:
                 - description
                 - displayName
                 - email
+                - isArchived
                 - isFavoriteByDefault
                 - membershipType
                 - moderationSettings
@@ -55186,6 +56232,7 @@ paths:
                 - description
                 - displayName
                 - email
+                - isArchived
                 - isFavoriteByDefault
                 - membershipType
                 - moderationSettings
@@ -58462,6 +59509,49 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/teamwork/teamTemplates/{teamTemplate-id}/definitions/{teamTemplateDefinition-id}/teamDefinition/primaryChannel/microsoft.graph.archive':
+    post:
+      tags:
+        - teamwork.Actions
+      summary: Invoke action archive
+      operationId: teamwork.teamTemplate.definition.teamDefinition.primaryChannel_archive
+      parameters:
+        - name: teamTemplate-id
+          in: path
+          description: The unique identifier of teamTemplate
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamTemplate
+        - name: teamTemplateDefinition-id
+          in: path
+          description: The unique identifier of teamTemplateDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamTemplateDefinition
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                shouldSetSpoSiteReadOnlyForMembers:
+                  type: boolean
+                  default: false
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/teamwork/teamTemplates/{teamTemplate-id}/definitions/{teamTemplateDefinition-id}/teamDefinition/primaryChannel/microsoft.graph.completeMigration':
     post:
       tags:
@@ -58605,6 +59695,35 @@ paths:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/channel-removeemail?view=graph-rest-1.0
       operationId: teamwork.teamTemplate.definition.teamDefinition.primaryChannel_removeEmail
+      parameters:
+        - name: teamTemplate-id
+          in: path
+          description: The unique identifier of teamTemplate
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamTemplate
+        - name: teamTemplateDefinition-id
+          in: path
+          description: The unique identifier of teamTemplateDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamTemplateDefinition
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/teamwork/teamTemplates/{teamTemplate-id}/definitions/{teamTemplateDefinition-id}/teamDefinition/primaryChannel/microsoft.graph.unarchive':
+    post:
+      tags:
+        - teamwork.Actions
+      summary: Invoke action unarchive
+      operationId: teamwork.teamTemplate.definition.teamDefinition.primaryChannel_unarchive
       parameters:
         - name: teamTemplate-id
           in: path
@@ -59718,11 +60837,13 @@ paths:
             items:
               enum:
                 - id
+                - activitiesIncludedWhenCopyingShiftsEnabled
                 - enabled
                 - offerShiftRequestsEnabled
                 - openShiftsEnabled
                 - provisionStatus
                 - provisionStatusCode
+                - startDayOfWeek
                 - swapShiftsRequestsEnabled
                 - timeClockEnabled
                 - timeClockSettings
@@ -59852,6 +60973,7 @@ paths:
       tags:
         - teamwork.teamTemplate
       summary: Get dayNotes from teamwork
+      description: The day notes in the schedule.
       operationId: teamwork.teamTemplate.definition.teamDefinition.schedule_ListDayNote
       parameters:
         - name: teamTemplate-id
@@ -59986,6 +61108,7 @@ paths:
       tags:
         - teamwork.teamTemplate
       summary: Get dayNotes from teamwork
+      description: The day notes in the schedule.
       operationId: teamwork.teamTemplate.definition.teamDefinition.schedule_GetDayNote
       parameters:
         - name: teamTemplate-id
@@ -60056,7 +61179,11 @@ paths:
     patch:
       tags:
         - teamwork.teamTemplate
-      summary: Update the navigation property dayNotes in teamwork
+      summary: Update dayNote
+      description: Update the properties of a day note.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/daynote-update?view=graph-rest-1.0
       operationId: teamwork.teamTemplate.definition.teamDefinition.schedule_UpdateDayNote
       parameters:
         - name: teamTemplate-id
@@ -61021,8 +62148,14 @@ paths:
                 - isStagedForDeletion desc
                 - schedulingGroupId
                 - schedulingGroupId desc
+                - schedulingGroupName
+                - schedulingGroupName desc
                 - sharedOpenShift
                 - sharedOpenShift desc
+                - teamId
+                - teamId desc
+                - teamName
+                - teamName desc
               type: string
         - name: $select
           in: query
@@ -61042,7 +62175,10 @@ paths:
                 - draftOpenShift
                 - isStagedForDeletion
                 - schedulingGroupId
+                - schedulingGroupName
                 - sharedOpenShift
+                - teamId
+                - teamName
               type: string
         - name: $expand
           in: query
@@ -61161,7 +62297,10 @@ paths:
                 - draftOpenShift
                 - isStagedForDeletion
                 - schedulingGroupId
+                - schedulingGroupName
                 - sharedOpenShift
+                - teamId
+                - teamName
               type: string
         - name: $expand
           in: query
@@ -61364,6 +62503,8 @@ paths:
                 - lastModifiedBy desc
                 - lastModifiedDateTime
                 - lastModifiedDateTime desc
+                - code
+                - code desc
                 - displayName
                 - displayName desc
                 - isActive
@@ -61386,6 +62527,7 @@ paths:
                 - createdDateTime
                 - lastModifiedBy
                 - lastModifiedDateTime
+                - code
                 - displayName
                 - isActive
                 - userIds
@@ -61492,6 +62634,7 @@ paths:
                 - createdDateTime
                 - lastModifiedBy
                 - lastModifiedDateTime
+                - code
                 - displayName
                 - isActive
                 - userIds
@@ -63040,6 +64183,8 @@ paths:
                 - lastModifiedBy desc
                 - lastModifiedDateTime
                 - lastModifiedDateTime desc
+                - code
+                - code desc
                 - displayName
                 - displayName desc
                 - iconType
@@ -63062,6 +64207,7 @@ paths:
                 - createdDateTime
                 - lastModifiedBy
                 - lastModifiedDateTime
+                - code
                 - displayName
                 - iconType
                 - isActive
@@ -63168,6 +64314,7 @@ paths:
                 - createdDateTime
                 - lastModifiedBy
                 - lastModifiedDateTime
+                - code
                 - displayName
                 - iconType
                 - isActive
@@ -70018,8 +71165,11 @@ paths:
     get:
       tags:
         - users.userTeamwork
-      summary: Get teamwork from users
-      description: A container for Microsoft Teams features available for the user. Read-only. Nullable.
+      summary: Get userTeamwork
+      description: 'Get the userTeamwork settings for a specified user, which includes the Microsoft Teams region and the locale chosen by the user.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/userteamwork-get?view=graph-rest-1.0
       operationId: user_GetTeamwork
       parameters:
         - name: user-id
@@ -70041,6 +71191,8 @@ paths:
             items:
               enum:
                 - id
+                - locale
+                - region
                 - associatedTeams
                 - installedApps
               type: string
@@ -71703,6 +72855,9 @@ components:
               type: string
               description: The email address for sending messages to the channel. Read-only.
               nullable: true
+            isArchived:
+              type: boolean
+              nullable: true
             isFavoriteByDefault:
               type: boolean
               description: 'Indicates whether the channel should automatically be marked ''favorite'' for all members of the team. Can only be set programmatically with Create team. Default: false.'
@@ -72996,6 +74151,10 @@ components:
         - title: schedule
           type: object
           properties:
+            activitiesIncludedWhenCopyingShiftsEnabled:
+              type: boolean
+              description: Indicates whether copied shifts should include the activities.
+              nullable: true
             enabled:
               type: boolean
               description: Indicates whether the schedule is enabled for the team. Required.
@@ -73015,6 +74174,8 @@ components:
               description: Additional information about why schedule provisioning failed.
               nullable: true
               readOnly: true
+            startDayOfWeek:
+              $ref: '#/components/schemas/microsoft.graph.dayOfWeek'
             swapShiftsRequestsEnabled:
               type: boolean
               description: Indicates whether swap shifts requests are enabled for the schedule.
@@ -73043,6 +74204,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.dayNote'
+              description: The day notes in the schedule.
               x-ms-navigationProperty: true
             offerShiftRequests:
               type: array
@@ -73084,6 +74246,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.timeCard'
+              description: The time cards in the schedule.
               x-ms-navigationProperty: true
             timeOffReasons:
               type: array
@@ -73114,6 +74277,7 @@ components:
             dayNoteDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
+              description: The date of the day note.
               format: date
               nullable: true
             draftDayNote:
@@ -73171,13 +74335,29 @@ components:
               $ref: '#/components/schemas/microsoft.graph.openShiftItem'
             isStagedForDeletion:
               type: boolean
+              description: 'The openShift is marked for deletion, a process that is finalized when the schedule is shared.'
               nullable: true
             schedulingGroupId:
               type: string
-              description: ID for the scheduling group that the open shift belongs to.
+              description: The ID of the schedulingGroup that contains the openShift.
               nullable: true
+            schedulingGroupName:
+              type: string
+              description: The name of the schedulingGroup that contains the openShift.
+              nullable: true
+              readOnly: true
             sharedOpenShift:
               $ref: '#/components/schemas/microsoft.graph.openShiftItem'
+            teamId:
+              type: string
+              description: The ID of the team in which the openShift is located.
+              nullable: true
+              readOnly: true
+            teamName:
+              type: string
+              description: The name of the team in which the openShift is located.
+              nullable: true
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.schedulingGroup:
@@ -73186,6 +74366,10 @@ components:
         - title: schedulingGroup
           type: object
           properties:
+            code:
+              type: string
+              description: The code for the schedulingGroup to represent an external identifier.
+              nullable: true
             displayName:
               type: string
               description: The display name for the schedulingGroup. Required.
@@ -73213,6 +74397,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.shiftItem'
             isStagedForDeletion:
               type: boolean
+              description: 'The shift is marked for deletion, a process that is finalized when the schedule is shared.'
               nullable: true
             schedulingGroupId:
               type: string
@@ -73273,6 +74458,10 @@ components:
         - title: timeOffReason
           type: object
           properties:
+            code:
+              type: string
+              description: The code of the timeOffReason to represent an external identifier.
+              nullable: true
             displayName:
               type: string
               description: The name of the timeOffReason. Required.
@@ -73319,6 +74508,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.timeOffItem'
             isStagedForDeletion:
               type: boolean
+              description: 'The timeOff is marked for deletion, a process that is finalized when the schedule is shared.'
               nullable: true
             sharedTimeOff:
               $ref: '#/components/schemas/microsoft.graph.timeOffItem'
@@ -73479,6 +74669,13 @@ components:
         - title: teamwork
           type: object
           properties:
+            isTeamsEnabled:
+              type: boolean
+              description: Indicates whether Microsoft Teams is enabled for the organization.
+            region:
+              type: string
+              description: Represents the region of the organization.
+              nullable: true
             deletedChats:
               type: array
               items:
@@ -73817,6 +75014,14 @@ components:
         - title: userTeamwork
           type: object
           properties:
+            locale:
+              type: string
+              description: Represents the chosen locale of a user in Microsoft Teams.
+              nullable: true
+            region:
+              type: string
+              description: Represents the region of the user in Microsoft Teams.
+              nullable: true
             associatedTeams:
               type: array
               items:
@@ -74130,11 +75335,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: 'Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn''t included in the response.'
           nullable: true
       additionalProperties:
         type: object
@@ -74190,6 +75395,8 @@ components:
         - teamifyGroup
         - createChannel
         - createChat
+        - archiveChannel
+        - unarchiveChannel
       type: string
     microsoft.graph.teamsAsyncOperationStatus:
       title: teamsAsyncOperationStatus
@@ -76399,6 +77606,16 @@ components:
           type: string
           description: Request identifier of the last interactive sign-in performed by this user.
           nullable: true
+        lastSuccessfulSignInDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The datetime of the user's most recent successful sign in activity.
+          format: date-time
+          nullable: true
+        lastSuccessfulSignInRequestId:
+          type: string
+          description: The requestID of the last successful signIn.
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.userActivity:
@@ -76975,6 +78192,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.cloudPcConnectionSettings'
             connectivityResult:
               $ref: '#/components/schemas/microsoft.graph.cloudPcConnectivityResult'
+            disasterRecoveryCapability:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcDisasterRecoveryCapability'
             diskEncryptionState:
               $ref: '#/components/schemas/microsoft.graph.cloudPcDiskEncryptionState'
             displayName:
@@ -79160,6 +80379,17 @@ components:
         - Completed
         - Failed
       type: string
+    microsoft.graph.dayOfWeek:
+      title: dayOfWeek
+      enum:
+        - sunday
+        - monday
+        - tuesday
+        - wednesday
+        - thursday
+        - friday
+        - saturday
+      type: string
     microsoft.graph.timeClockSettings:
       title: timeClockSettings
       type: object
@@ -79179,7 +80409,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              description: 'The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
               readOnly: true
@@ -79188,7 +80418,7 @@ components:
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              description: 'The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
               readOnly: true
@@ -81654,6 +82884,8 @@ components:
         - title: plannerPlan
           type: object
           properties:
+            archivalInfo:
+              $ref: '#/components/schemas/microsoft.graph.plannerArchivalInfo'
             container:
               $ref: '#/components/schemas/microsoft.graph.plannerPlanContainer'
             contexts:
@@ -81668,6 +82900,9 @@ components:
               nullable: true
             creationSource:
               $ref: '#/components/schemas/microsoft.graph.plannerPlanCreation'
+            isArchived:
+              type: boolean
+              nullable: true
             owner:
               type: string
               nullable: true
@@ -82778,13 +84013,13 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The start time of the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              description: 'The start time of the operation. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             lastActionDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The time of the last action in the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              description: 'The time of the last action in the operation. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             resourceLocation:
@@ -82975,6 +84210,20 @@ components:
           type: string
           description: 'Datetime when the status was updated. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.'
           format: date-time
+      additionalProperties:
+        type: object
+    microsoft.graph.cloudPcDisasterRecoveryCapability:
+      title: cloudPcDisasterRecoveryCapability
+      type: object
+      properties:
+        capabilityType:
+          $ref: '#/components/schemas/microsoft.graph.cloudPcDisasterRecoveryCapabilityType'
+        primaryRegion:
+          type: string
+          nullable: true
+        secondaryRegion:
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.cloudPcDiskEncryptionState:
@@ -86293,6 +87542,8 @@ components:
               nullable: true
             appliedCategories:
               $ref: '#/components/schemas/microsoft.graph.plannerAppliedCategories'
+            archivalInfo:
+              $ref: '#/components/schemas/microsoft.graph.plannerArchivalInfo'
             assigneePriority:
               type: string
               description: Hint used to order items of this type in a list view. The format is defined as outlined here.
@@ -86341,6 +87592,17 @@ components:
             hasDescription:
               type: boolean
               description: Read-only. Value is true if the details object of the task has a nonempty description and false otherwise.
+              nullable: true
+            isArchived:
+              type: boolean
+              nullable: true
+            isOnMyDay:
+              type: boolean
+              nullable: true
+            isOnMyDayLastModifiedDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
               nullable: true
             orderHint:
               type: string
@@ -87135,17 +88397,6 @@ components:
         - disabled
         - alwaysEnabled
         - scheduled
-      type: string
-    microsoft.graph.dayOfWeek:
-      title: dayOfWeek
-      enum:
-        - sunday
-        - monday
-        - tuesday
-        - wednesday
-        - thursday
-        - friday
-        - saturday
       type: string
     microsoft.graph.timeZoneBase:
       title: timeZoneBase
@@ -88241,6 +89492,22 @@ components:
           $ref: '#/components/schemas/microsoft.graph.externalLink'
       additionalProperties:
         type: object
+    microsoft.graph.plannerArchivalInfo:
+      title: plannerArchivalInfo
+      type: object
+      properties:
+        justification:
+          type: string
+          nullable: true
+        statusChangedBy:
+          $ref: '#/components/schemas/microsoft.graph.identitySet'
+        statusChangedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.plannerPlanContainer:
       title: plannerPlanContainer
       type: object
@@ -88286,8 +89553,13 @@ components:
         - title: plannerBucket
           type: object
           properties:
+            archivalInfo:
+              $ref: '#/components/schemas/microsoft.graph.plannerArchivalInfo'
             creationSource:
               $ref: '#/components/schemas/microsoft.graph.plannerBucketCreation'
+            isArchived:
+              type: boolean
+              nullable: true
             name:
               type: string
               description: Name of the bucket.
@@ -89219,6 +90491,14 @@ components:
         - available
         - availableWithWarning
         - unavailable
+        - unknownFutureValue
+      type: string
+    microsoft.graph.cloudPcDisasterRecoveryCapabilityType:
+      title: cloudPcDisasterRecoveryCapabilityType
+      enum:
+        - none
+        - failover
+        - failback
         - unknownFutureValue
       type: string
     microsoft.graph.actionState:
@@ -91434,6 +92714,8 @@ components:
         - none
         - checklistCompletion
         - unknownFutureValue
+        - formCompletion
+        - approvalCompletion
       type: string
       x-ms-enum-flags:
         isFlags: true
@@ -91469,6 +92751,8 @@ components:
         - title: plannerTaskDetails
           type: object
           properties:
+            approvalAttachment:
+              $ref: '#/components/schemas/microsoft.graph.plannerBaseApprovalAttachment'
             checklist:
               $ref: '#/components/schemas/microsoft.graph.plannerChecklistItems'
             completionRequirements:
@@ -91477,6 +92761,8 @@ components:
               type: string
               description: Description of the task.
               nullable: true
+            forms:
+              $ref: '#/components/schemas/microsoft.graph.plannerFormsDictionary'
             notes:
               $ref: '#/components/schemas/microsoft.graph.itemBody'
             previewType:
@@ -91994,7 +93280,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.itemBody'
             displayName:
               type: string
-              description: Display name of the virtual event
+              description: Display name of the virtual event.
               nullable: true
             endDateTime:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
@@ -92006,13 +93292,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventPresenter'
-              description: Presenters' information of the virtual event.
+              description: The virtual event presenters.
               x-ms-navigationProperty: true
             sessions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventSession'
-              description: Sessions of the virtual event.
+              description: Sessions for the virtual event.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -94263,6 +95549,14 @@ components:
       type: object
       additionalProperties:
         type: object
+    microsoft.graph.plannerBaseApprovalAttachment:
+      title: plannerBaseApprovalAttachment
+      type: object
+      properties:
+        status:
+          $ref: '#/components/schemas/microsoft.graph.plannerApprovalStatus'
+      additionalProperties:
+        type: object
     microsoft.graph.plannerChecklistItems:
       title: plannerChecklistItems
       type: object
@@ -94272,10 +95566,21 @@ components:
       title: plannerTaskCompletionRequirementDetails
       type: object
       properties:
+        approvalRequirement:
+          $ref: '#/components/schemas/microsoft.graph.plannerApprovalRequirement'
         checklistRequirement:
           $ref: '#/components/schemas/microsoft.graph.plannerChecklistRequirement'
+        formsRequirement:
+          $ref: '#/components/schemas/microsoft.graph.plannerFormsRequirement'
       additionalProperties:
         type: object
+    microsoft.graph.plannerFormsDictionary:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.Dictionary'
+        - title: plannerFormsDictionary
+          type: object
+          additionalProperties:
+            type: object
     microsoft.graph.plannerExternalReferences:
       title: plannerExternalReferences
       type: object
@@ -96332,6 +97637,24 @@ components:
         - deviceIntent
       type: string
       description: Authoring source of a policy
+    microsoft.graph.plannerApprovalStatus:
+      title: plannerApprovalStatus
+      enum:
+        - requested
+        - approved
+        - rejected
+        - cancelled
+        - unknownFutureValue
+      type: string
+    microsoft.graph.plannerApprovalRequirement:
+      title: plannerApprovalRequirement
+      type: object
+      properties:
+        isApprovalRequired:
+          type: boolean
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.plannerChecklistRequirement:
       title: plannerChecklistRequirement
       type: object
@@ -96342,6 +97665,22 @@ components:
             type: string
             nullable: true
           description: A collection of required plannerChecklistItems identifiers to complete the plannerTask.
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerFormsRequirement:
+      title: plannerFormsRequirement
+      type: object
+      properties:
+        requiredForms:
+          type: array
+          items:
+            type: string
+            nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.Dictionary:
+      title: Dictionary
+      type: object
       additionalProperties:
         type: object
     microsoft.graph.endpointType:
@@ -96664,6 +98003,7 @@ components:
           items:
             type: string
             nullable: true
+          description: 'The identifiers of containers, such as organizational units, that are in scope for a synchronization rule. For Active Directory organizational units, use the distinguished names. An empty list means no container filtering is configured.'
       additionalProperties:
         type: object
     microsoft.graph.groupFilter:
@@ -96675,6 +98015,7 @@ components:
           items:
             type: string
             nullable: true
+          description: 'Identifiers of groups that are in scope for a synchronization rule. For Active Directory groups, use the distinguished names. An empty list means no group filtering is configured.'
       additionalProperties:
         type: object
     microsoft.graph.stringKeyStringValuePair:
