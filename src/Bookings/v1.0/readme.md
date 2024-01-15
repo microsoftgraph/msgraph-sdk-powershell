@@ -32,6 +32,16 @@ subject-prefix: ''
 namespace: Microsoft.Graph.PowerShell
 
 directive:
-# Remove path causing module conflict by operationId.
-  remove-path-by-operation: solution.bookingBusiness_getStaffAvailability|solution.bookingBusiness.*._cancel
+  - where:
+      verb: Get
+      subject: ^(BookingBusinessStaffAvailability)$
+    remove: true
+  - where:
+      verb: Stop
+      subject: ^(BookingBusinessAppointment)$
+    remove: true
+  - where:
+      verb: Stop
+      subject: ^(BookingBusinessCalendarView)$
+    remove: true
 ```
