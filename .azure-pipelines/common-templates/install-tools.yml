@@ -32,8 +32,8 @@ steps:
       versionSpec: 16.x
 
   - task: Npm@1
-    displayName: Install AutoRest
+    displayName: Install Rush
     inputs:
       command: custom
-      customCommand: install -g autorest@latest
+      customCommand: install -g @microsoft/rush
 
