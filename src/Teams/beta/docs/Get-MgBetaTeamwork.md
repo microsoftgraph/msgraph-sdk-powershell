@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaTeamwork
 
 ## SYNOPSIS
-Get the properties and relationships of a teamwork object, such as the region of the organization and whether Microsoft Teams is enabled.
+Get teamwork
 
 ## SYNTAX
 
@@ -17,7 +17,7 @@ Get-MgBetaTeamwork [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonP
 ```
 
 ## DESCRIPTION
-Get the properties and relationships of a teamwork object, such as the region of the organization and whether Microsoft Teams is enabled.
+Get teamwork
 
 ## EXAMPLES
 

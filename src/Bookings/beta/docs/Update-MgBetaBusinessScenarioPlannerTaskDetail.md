@@ -15,11 +15,10 @@ Update the navigation property details in solutions
 ### UpdateExpanded (Default)
 ```
 Update-MgBetaBusinessScenarioPlannerTaskDetail -BusinessScenarioId <String> -BusinessScenarioTaskId <String>
- -IfMatch <String> [-AdditionalProperties <Hashtable>]
- [-ApprovalAttachment <IMicrosoftGraphPlannerBaseApprovalAttachment>] [-Checklist <Hashtable>]
+ -IfMatch <String> [-AdditionalProperties <Hashtable>] [-Checklist <Hashtable>]
  [-CompletionRequirements <IMicrosoftGraphPlannerTaskCompletionRequirementDetails>] [-Description <String>]
- [-Forms <Hashtable>] [-Id <String>] [-Notes <IMicrosoftGraphItemBody>] [-PreviewType <String>]
- [-References <Hashtable>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-Notes <IMicrosoftGraphItemBody>] [-PreviewType <String>] [-References <Hashtable>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
@@ -38,10 +37,10 @@ Update-MgBetaBusinessScenarioPlannerTaskDetail -InputObject <IBookingsIdentity> 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgBetaBusinessScenarioPlannerTaskDetail -InputObject <IBookingsIdentity> -IfMatch <String>
- [-AdditionalProperties <Hashtable>] [-ApprovalAttachment <IMicrosoftGraphPlannerBaseApprovalAttachment>]
- [-Checklist <Hashtable>] [-CompletionRequirements <IMicrosoftGraphPlannerTaskCompletionRequirementDetails>]
- [-Description <String>] [-Forms <Hashtable>] [-Id <String>] [-Notes <IMicrosoftGraphItemBody>]
- [-PreviewType <String>] [-References <Hashtable>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-Checklist <Hashtable>]
+ [-CompletionRequirements <IMicrosoftGraphPlannerTaskCompletionRequirementDetails>] [-Description <String>]
+ [-Id <String>] [-Notes <IMicrosoftGraphItemBody>] [-PreviewType <String>] [-References <Hashtable>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -70,22 +69,6 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ApprovalAttachment
-plannerBaseApprovalAttachment
-To construct, see NOTES section for APPROVALATTACHMENT properties and create a hash table.
-
-```yaml
-Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerBaseApprovalAttachment
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -178,21 +161,6 @@ Description of the task.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Forms
-plannerFormsDictionary
-
-```yaml
-Type: System.Collections.Hashtable
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -349,32 +317,17 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-`APPROVALATTACHMENT <IMicrosoftGraphPlannerBaseApprovalAttachment>`: plannerBaseApprovalAttachment
-  - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Status <String>]`: plannerApprovalStatus
-
 `BODYPARAMETER <IMicrosoftGraphPlannerTaskDetails>`: plannerTaskDetails
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[ApprovalAttachment <IMicrosoftGraphPlannerBaseApprovalAttachment>]`: plannerBaseApprovalAttachment
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Status <String>]`: plannerApprovalStatus
   - `[Checklist <IMicrosoftGraphPlannerChecklistItems>]`: plannerChecklistItems
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[CompletionRequirements <IMicrosoftGraphPlannerTaskCompletionRequirementDetails>]`: plannerTaskCompletionRequirementDetails
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[ApprovalRequirement <IMicrosoftGraphPlannerApprovalRequirement>]`: plannerApprovalRequirement
-      - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[IsApprovalRequired <Boolean?>]`: 
     - `[ChecklistRequirement <IMicrosoftGraphPlannerChecklistRequirement>]`: plannerChecklistRequirement
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[RequiredChecklistItemIds <String[]>]`: A collection of required plannerChecklistItems identifiers to complete the plannerTask.
-    - `[FormsRequirement <IMicrosoftGraphPlannerFormsRequirement>]`: plannerFormsRequirement
-      - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[RequiredForms <String[]>]`: 
   - `[Description <String>]`: Description of the task.
-  - `[Forms <IMicrosoftGraphPlannerFormsDictionary>]`: plannerFormsDictionary
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Notes <IMicrosoftGraphItemBody>]`: itemBody
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Content <String>]`: The content of the item.
@@ -385,15 +338,9 @@ To create the parameters described below, construct a hash table containing the 
 
 `COMPLETIONREQUIREMENTS <IMicrosoftGraphPlannerTaskCompletionRequirementDetails>`: plannerTaskCompletionRequirementDetails
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[ApprovalRequirement <IMicrosoftGraphPlannerApprovalRequirement>]`: plannerApprovalRequirement
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[IsApprovalRequired <Boolean?>]`: 
   - `[ChecklistRequirement <IMicrosoftGraphPlannerChecklistRequirement>]`: plannerChecklistRequirement
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[RequiredChecklistItemIds <String[]>]`: A collection of required plannerChecklistItems identifiers to complete the plannerTask.
-  - `[FormsRequirement <IMicrosoftGraphPlannerFormsRequirement>]`: plannerFormsRequirement
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[RequiredForms <String[]>]`: 
 
 `INPUTOBJECT <IBookingsIdentity>`: Identity Parameter
   - `[AttendanceRecordId <String>]`: The unique identifier of attendanceRecord

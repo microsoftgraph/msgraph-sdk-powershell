@@ -16,10 +16,10 @@ Upload a custom OS image that you can later provision on Cloud PCs.
 ### CreateExpanded (Default)
 ```
 New-MgBetaDeviceManagementVirtualEndpointDeviceImage [-AdditionalProperties <Hashtable>]
- [-DisplayName <String>] [-ErrorCode <String>] [-ExpirationDate <DateTime>] [-Id <String>]
- [-LastModifiedDateTime <DateTime>] [-OperatingSystem <String>] [-OSBuildNumber <String>] [-OSStatus <String>]
- [-ScopeIds <String[]>] [-SourceImageResourceId <String>] [-Status <String>] [-StatusDetails <String>]
- [-Version <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-DisplayName <String>] [-ExpirationDate <DateTime>] [-Id <String>] [-LastModifiedDateTime <DateTime>]
+ [-OperatingSystem <String>] [-OSBuildNumber <String>] [-OSStatus <String>] [-ScopeIds <String[]>]
+ [-SourceImageResourceId <String>] [-Status <String>] [-StatusDetails <String>] [-Version <String>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
@@ -85,21 +85,6 @@ Accept wildcard characters: False
 
 ### -DisplayName
 The display name of the image.
-
-```yaml
-Type: System.String
-Parameter Sets: CreateExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ErrorCode
-cloudPcDeviceImageErrorCode
 
 ```yaml
 Type: System.String
@@ -340,7 +325,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[DisplayName <String>]`: The display name of the image.
-  - `[ErrorCode <String>]`: cloudPcDeviceImageErrorCode
   - `[ExpirationDate <DateTime?>]`: The date the image became unavailable.
   - `[LastModifiedDateTime <DateTime?>]`: The data and time that the image was last modified. The time is shown in ISO 8601 format and  Coordinated Universal Time (UTC) time. For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.
   - `[OSBuildNumber <String>]`: The OS build version of the image. For example, 1909.

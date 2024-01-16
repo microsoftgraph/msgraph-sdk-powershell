@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.SignIns
-Module Guid: e5feee42-9c08-47d9-9494-0a2ef29858e5
+Module Guid: f463eb00-8282-460e-95a0-19f415d6c8b6
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.identity.signins
 Help Version: 1.0.0.0
 Locale: en-US
@@ -112,7 +112,7 @@ Retrieve the properties and relationships of a authenticationContextClassReferen
 Get the number of the resource
 
 ### [Get-MgIdentityConditionalAccessNamedLocation](Get-MgIdentityConditionalAccessNamedLocation.md)
-Retrieve the properties and relationships of an ipNamedLocation object.
+Retrieve the properties and relationships of a countryNamedLocation object.
 
 ### [Get-MgIdentityConditionalAccessNamedLocationCount](Get-MgIdentityConditionalAccessNamedLocationCount.md)
 Get the number of the resource
@@ -182,12 +182,11 @@ Get the number of the resource
 
 ### [Get-MgInvitationInvitedUserMailboxSetting](Get-MgInvitationInvitedUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgInvitationInvitedUserServiceProvisioningError](Get-MgInvitationInvitedUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgInvitationInvitedUserServiceProvisioningErrorCount](Get-MgInvitationInvitedUserServiceProvisioningErrorCount.md)
 Get the number of the resource

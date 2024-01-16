@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Applications
-Module Guid: c51d95b3-e029-4d5e-b994-58e90686a79d
+Module Guid: 7a3d0fac-b855-4263-a24f-8515b799599a
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.applications
 Help Version: 1.0.0.0
 Locale: en-US
@@ -453,9 +453,6 @@ Get licenseDetails from servicePrincipals
 
 ### [Get-MgBetaServicePrincipalLicenseDetailCount](Get-MgBetaServicePrincipalLicenseDetailCount.md)
 Get the number of the resource
-
-### [Get-MgBetaServicePrincipalLicenseDetailTeamLicensingDetail](Get-MgBetaServicePrincipalLicenseDetailTeamLicensingDetail.md)
-Invoke function getTeamsLicensingDetails
 
 ### [Get-MgBetaServicePrincipalMemberGroup](Get-MgBetaServicePrincipalMemberGroup.md)
 Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of.

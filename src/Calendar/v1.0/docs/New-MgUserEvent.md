@@ -8,8 +8,8 @@ schema: 2.0.0
 # New-MgUserEvent
 
 ## SYNOPSIS
-Create one or more single-value extended properties in a new or existing instance of a resource.
-The following user resources are supported: The following group resources: See Extended properties overview for more information about when to use\nopen extensions or extended properties, and how to specify extended properties.
+Create one or more multi-value extended properties in a new or existing instance of a resource.
+The following user resources are supported: The following group resources are supported: See Extended properties overview for more information about when to use\nopen extensions or extended properties, and how to specify extended properties.
 
 ## SYNTAX
 
@@ -70,8 +70,8 @@ New-MgUserEvent -InputObject <ICalendarIdentity> [-AdditionalProperties <Hashtab
 ```
 
 ## DESCRIPTION
-Create one or more single-value extended properties in a new or existing instance of a resource.
-The following user resources are supported: The following group resources: See Extended properties overview for more information about when to use\nopen extensions or extended properties, and how to specify extended properties.
+Create one or more multi-value extended properties in a new or existing instance of a resource.
+The following user resources are supported: The following group resources are supported: See Extended properties overview for more information about when to use\nopen extensions or extended properties, and how to specify extended properties.
 
 ## EXAMPLES
 

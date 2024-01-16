@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Users.Functions
-Module Guid: f0fcc4dd-f8d0-4133-bca8-141c29974829
+Module Guid: 7764d3a1-0cf8-4457-8dde-e9fa7e7d4652
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.users.functions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -46,9 +46,6 @@ Invoke function delta
 
 ### [Get-MgBetaUserChatMessageReplyDelta](Get-MgBetaUserChatMessageReplyDelta.md)
 Invoke function delta
-
-### [Get-MgBetaUserChatRetainedMessage](Get-MgBetaUserChatRetainedMessage.md)
-Invoke function getAllRetainedMessages
 
 ### [Get-MgBetaUserCloudPcConnectivityHistory](Get-MgBetaUserCloudPcConnectivityHistory.md)
 Invoke function getCloudPcConnectivityHistory
@@ -148,9 +145,6 @@ Typically, synchronizing events in a calendar or calendarView in a local store e
 The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates).
 This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time.
 The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.
-
-### [Get-MgBetaUserLicenseDetailTeamLicensingDetail](Get-MgBetaUserLicenseDetailTeamLicensingDetail.md)
-Invoke function getTeamsLicensingDetails
 
 ### [Get-MgBetaUserLoggedOnManagedDevice](Get-MgBetaUserLoggedOnManagedDevice.md)
 Invoke function getLoggedOnManagedDevices

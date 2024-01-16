@@ -190,7 +190,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[Pronouns <IMicrosoftGraphPronounsSettings>]`: pronounsSettings
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[IsEnabledInOrganization <Boolean?>]`: true to enable pronouns in the organization; otherwise, false. The default value is false, and pronouns are disabled.
+    - `[IsEnabledInOrganization <Boolean?>]`: true to enable pronouns in the organization, false otherwise. The default is false, and pronouns are disabled.
 
 `PROFILECARDPROPERTIES <IMicrosoftGraphProfileCardProperty[]>`: Contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -204,7 +204,7 @@ To create the parameters described below, construct a hash table containing the 
 `PRONOUNS <IMicrosoftGraphPronounsSettings>`: pronounsSettings
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[IsEnabledInOrganization <Boolean?>]`: true to enable pronouns in the organization; otherwise, false. The default value is false, and pronouns are disabled.
+  - `[IsEnabledInOrganization <Boolean?>]`: true to enable pronouns in the organization, false otherwise. The default is false, and pronouns are disabled.
 
 ## RELATED LINKS
 

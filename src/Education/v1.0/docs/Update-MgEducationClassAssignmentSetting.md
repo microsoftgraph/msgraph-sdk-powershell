@@ -16,8 +16,7 @@ Only teachers can update these settings.
 ### UpdateExpanded (Default)
 ```
 Update-MgEducationClassAssignmentSetting -EducationClassId <String> [-AdditionalProperties <Hashtable>]
- [-GradingCategories <IMicrosoftGraphEducationGradingCategory[]>] [-Id <String>]
- [-SubmissionAnimationDisabled] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-SubmissionAnimationDisabled] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
@@ -35,8 +34,7 @@ Update-MgEducationClassAssignmentSetting -InputObject <IEducationIdentity>
 ### UpdateViaIdentityExpanded
 ```
 Update-MgEducationClassAssignmentSetting -InputObject <IEducationIdentity> [-AdditionalProperties <Hashtable>]
- [-GradingCategories <IMicrosoftGraphEducationGradingCategory[]>] [-Id <String>]
- [-SubmissionAnimationDisabled] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-SubmissionAnimationDisabled] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -98,22 +96,6 @@ Parameter Sets: Update, UpdateExpanded
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -GradingCategories
-.
-To construct, see NOTES section for GRADINGCATEGORIES properties and create a hash table.
-
-```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationGradingCategory[]
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -225,23 +207,13 @@ To create the parameters described below, construct a hash table containing the 
 `BODYPARAMETER <IMicrosoftGraphEducationAssignmentSettings>`: educationAssignmentSettings
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[GradingCategories <IMicrosoftGraphEducationGradingCategory[]>]`: 
-    - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[DisplayName <String>]`: 
-    - `[PercentageWeight <Int32?>]`: 
   - `[SubmissionAnimationDisabled <Boolean?>]`: Indicates whether turn-in celebration animation is shown. A value of true indicates that the animation isn't shown. Default value is false.
-
-`GRADINGCATEGORIES <IMicrosoftGraphEducationGradingCategory[]>`: .
-  - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[DisplayName <String>]`: 
-  - `[PercentageWeight <Int32?>]`: 
 
 `INPUTOBJECT <IEducationIdentity>`: Identity Parameter
   - `[EducationAssignmentId <String>]`: The unique identifier of educationAssignment
   - `[EducationAssignmentResourceId <String>]`: The unique identifier of educationAssignmentResource
   - `[EducationCategoryId <String>]`: The unique identifier of educationCategory
   - `[EducationClassId <String>]`: The unique identifier of educationClass
-  - `[EducationGradingCategoryId <String>]`: The unique identifier of educationGradingCategory
   - `[EducationOutcomeId <String>]`: The unique identifier of educationOutcome
   - `[EducationRubricId <String>]`: The unique identifier of educationRubric
   - `[EducationSchoolId <String>]`: The unique identifier of educationSchool

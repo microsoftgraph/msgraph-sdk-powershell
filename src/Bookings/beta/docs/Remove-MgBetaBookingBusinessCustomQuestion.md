@@ -18,19 +18,7 @@ Remove-MgBetaBookingBusinessCustomQuestion -BookingBusinessId <String> -BookingC
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Delete1
-```
-Remove-MgBetaBookingBusinessCustomQuestion -BookingBusinessId <String> -BookingCustomQuestionId <String>
- [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
 ### DeleteViaIdentity
-```
-Remove-MgBetaBookingBusinessCustomQuestion -InputObject <IBookingsIdentity> [-IfMatch <String>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### DeleteViaIdentity1
 ```
 Remove-MgBetaBookingBusinessCustomQuestion -InputObject <IBookingsIdentity> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -56,7 +44,7 @@ The unique identifier of bookingBusiness
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete, Delete1
+Parameter Sets: Delete
 Aliases:
 
 Required: True
@@ -71,7 +59,7 @@ The unique identifier of bookingCustomQuestion
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete, Delete1
+Parameter Sets: Delete
 Aliases:
 
 Required: True
@@ -102,7 +90,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Microsoft.Graph.Beta.PowerShell.Models.IBookingsIdentity
-Parameter Sets: DeleteViaIdentity, DeleteViaIdentity1
+Parameter Sets: DeleteViaIdentity
 Aliases:
 
 Required: True

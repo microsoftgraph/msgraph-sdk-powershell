@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.CloudCommunications
-Module Guid: e75e9386-352d-44c2-91c3-e7c55bc6adcd
+Module Guid: b748c3c5-d1c6-49af-8d37-3d1c2efbfdca
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.cloudcommunications
 Help Version: 1.0.0.0
 Locale: en-US
@@ -77,8 +77,7 @@ Get the number of the resource
 Get onlineMeetings from communications
 
 ### [Get-MgCommunicationOnlineMeetingAttendanceReport](Get-MgCommunicationOnlineMeetingAttendanceReport.md)
-The attendance reports of an online meeting.
-Read-only.
+Get attendanceReports from communications
 
 ### [Get-MgCommunicationOnlineMeetingAttendanceReportAttendanceRecord](Get-MgCommunicationOnlineMeetingAttendanceReportAttendanceRecord.md)
 List of attendance records of an attendance report.
@@ -144,8 +143,7 @@ For example, you can: Teams live event attendee report (deprecated) is an online
 For details, see Online meeting artifacts and permissions.
 
 ### [Get-MgUserOnlineMeetingAttendanceReport](Get-MgUserOnlineMeetingAttendanceReport.md)
-The attendance reports of an online meeting.
-Read-only.
+Get attendanceReports from users
 
 ### [Get-MgUserOnlineMeetingAttendanceReportAttendanceRecord](Get-MgUserOnlineMeetingAttendanceReportAttendanceRecord.md)
 List of attendance records of an attendance report.
@@ -395,9 +393,6 @@ Delete navigation property presence for users
 
 ### [Rename-MgCommunicationCallScreenSharingRole](Rename-MgCommunicationCallScreenSharingRole.md)
 Allow applications to share screen content with the participants of a group call.
-
-### [Send-MgCommunicationCallDtmfTone](Send-MgCommunicationCallDtmfTone.md)
-Invoke action sendDtmfTones
 
 ### [Set-MgCommunicationOnlineMeetingAttendeeReport](Set-MgCommunicationOnlineMeetingAttendeeReport.md)
 Update attendeeReport for the navigation property onlineMeetings in communications

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Identity.SignIns
-Module Guid: beebe1a6-ba00-43aa-a592-005b800564ba
+Module Guid: 42c2db96-12d3-4e1b-bd13-1094e8d10350
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.identity.signins
 Help Version: 1.0.0.0
 Locale: en-US
@@ -286,8 +286,7 @@ Get the number of the resource
 Read the properties and relationships of a continuousAccessEvaluationPolicy object.
 
 ### [Get-MgBetaIdentityCustomAuthenticationExtension](Get-MgBetaIdentityCustomAuthenticationExtension.md)
-Read the properties and relationships of an authenticationEventListener object.
-The @odata.type property in the response object indicates the type of the authenticationEventListener object.
+Read the properties and relationships of a customAuthenticationExtension object.
 
 ### [Get-MgBetaIdentityCustomAuthenticationExtensionCount](Get-MgBetaIdentityCustomAuthenticationExtensionCount.md)
 Get the number of the resource
@@ -1077,7 +1076,7 @@ Create a new conditionalAccessPolicy.
 
 ### [New-MgBetaIdentityCustomAuthenticationExtension](New-MgBetaIdentityCustomAuthenticationExtension.md)
 Create a new customAuthenticationExtension object.
-The following derived types are currently supported.
+Only the onTokenIssuanceStartCustomExtension object type is supported.
 
 ### [New-MgBetaIdentityProvider](New-MgBetaIdentityProvider.md)
 Create an identity provider object that is of the type specified in the request body.
@@ -1387,7 +1386,7 @@ Delete navigation property policies for identity
 Delete an authenticationCombinationConfiguration  for a custom authenticationStrengthPolicy object.
 
 ### [Remove-MgBetaIdentityConditionalAccessNamedLocation](Remove-MgBetaIdentityConditionalAccessNamedLocation.md)
-Delete a namedLocation object.
+Delete a countryNamedLocation object.
 
 ### [Remove-MgBetaIdentityConditionalAccessPolicy](Remove-MgBetaIdentityConditionalAccessPolicy.md)
 Delete a conditionalAccessPolicy object.

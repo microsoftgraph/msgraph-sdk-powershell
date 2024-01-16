@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Send an activity feed notification to a user.
-For more information, see sending Teams activity notifications.
+For more details about sending notifications and the requirements for doing so, see sending Teams activity notifications.
 
 ## SYNTAX
 
@@ -45,7 +45,7 @@ Send-MgUserTeamworkActivityNotification -InputObject <IUsersActionsIdentity> [-A
 
 ## DESCRIPTION
 Send an activity feed notification to a user.
-For more information, see sending Teams activity notifications.
+For more details about sending notifications and the requirements for doing so, see sending Teams activity notifications.
 
 ## EXAMPLES
 

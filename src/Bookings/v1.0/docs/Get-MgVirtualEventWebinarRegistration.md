@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgVirtualEventWebinarRegistration
 
 ## SYNOPSIS
-Get the properties and relationships of a virtualEventRegistration object.
+Get registrations from solutions
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgVirtualEventWebinarRegistration -InputObject <IBookingsIdentity> [-ExpandP
 ```
 
 ## DESCRIPTION
-Get the properties and relationships of a virtualEventRegistration object.
+Get registrations from solutions
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceAppManagementManagedEBookAssignment
 
 ## SYNOPSIS
-Create a new iosVppEBookAssignment object.
+Create a new managedEBookAssignment object.
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ New-MgDeviceAppManagementManagedEBookAssignment -InputObject <IDevicesCorporateM
 ```
 
 ## DESCRIPTION
-Create a new iosVppEBookAssignment object.
+Create a new managedEBookAssignment object.
 
 ## EXAMPLES
 

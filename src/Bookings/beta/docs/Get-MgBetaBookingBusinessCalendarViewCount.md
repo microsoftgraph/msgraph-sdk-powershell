@@ -18,19 +18,7 @@ Get-MgBetaBookingBusinessCalendarViewCount -BookingBusinessId <String> [-Filter 
  [<CommonParameters>]
 ```
 
-### Get1
-```
-Get-MgBetaBookingBusinessCalendarViewCount -BookingBusinessId <String> [-Filter <String>] [-Search <String>]
- [<CommonParameters>]
-```
-
 ### GetViaIdentity
-```
-Get-MgBetaBookingBusinessCalendarViewCount -InputObject <IBookingsIdentity> [-Filter <String>]
- [-Search <String>] [<CommonParameters>]
-```
-
-### GetViaIdentity1
 ```
 Get-MgBetaBookingBusinessCalendarViewCount -InputObject <IBookingsIdentity> [-Filter <String>]
  [-Search <String>] [<CommonParameters>]
@@ -62,7 +50,7 @@ The unique identifier of bookingBusiness
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, Get1
+Parameter Sets: Get
 Aliases:
 
 Required: True
@@ -93,7 +81,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Microsoft.Graph.Beta.PowerShell.Models.IBookingsIdentity
-Parameter Sets: GetViaIdentity, GetViaIdentity1
+Parameter Sets: GetViaIdentity
 Aliases:
 
 Required: True

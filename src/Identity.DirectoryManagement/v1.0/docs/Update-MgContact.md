@@ -430,8 +430,7 @@ Accept wildcard characters: False
 ```
 
 ### -ServiceProvisioningErrors
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from an organizational contact object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+.
 To construct, see NOTES section for SERVICEPROVISIONINGERRORS properties and create a hash table.
 
 ```yaml
@@ -577,10 +576,10 @@ To create the parameters described below, construct a hash table containing the 
     - `[Region <String>]`: 
     - `[Type <String>]`: phoneType
   - `[ProxyAddresses <String[]>]`: For example: 'SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com'. The any operator is required for filter expressions on multi-valued properties. Supports $filter (eq, not, ge, le, startsWith, /$count eq 0, /$count ne 0).
-  - `[ServiceProvisioningErrors <IMicrosoftGraphServiceProvisioningError[]>]`: Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from an organizational contact object .  Supports $filter (eq, not, for isResolved and serviceInstance).
-    - `[CreatedDateTime <DateTime?>]`: The date and time at which the error occurred.
-    - `[IsResolved <Boolean?>]`: Indicates whether the error has been attended to.
-    - `[ServiceInstance <String>]`: Qualified service instance (for example, 'SharePoint/Dublin') that published the service error information.
+  - `[ServiceProvisioningErrors <IMicrosoftGraphServiceProvisioningError[]>]`: 
+    - `[CreatedDateTime <DateTime?>]`: 
+    - `[IsResolved <Boolean?>]`: 
+    - `[ServiceInstance <String>]`: 
   - `[Surname <String>]`: Last name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values).
   - `[TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>]`: Groups that this contact is a member of, including groups that the contact is nested under. Read-only. Nullable.
 
@@ -635,10 +634,10 @@ To create the parameters described below, construct a hash table containing the 
   - `[Region <String>]`: 
   - `[Type <String>]`: phoneType
 
-`SERVICEPROVISIONINGERRORS <IMicrosoftGraphServiceProvisioningError[]>`: Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from an organizational contact object . Supports $filter (eq, not, for isResolved and serviceInstance).
-  - `[CreatedDateTime <DateTime?>]`: The date and time at which the error occurred.
-  - `[IsResolved <Boolean?>]`: Indicates whether the error has been attended to.
-  - `[ServiceInstance <String>]`: Qualified service instance (for example, 'SharePoint/Dublin') that published the service error information.
+`SERVICEPROVISIONINGERRORS <IMicrosoftGraphServiceProvisioningError[]>`: .
+  - `[CreatedDateTime <DateTime?>]`: 
+  - `[IsResolved <Boolean?>]`: 
+  - `[ServiceInstance <String>]`: 
 
 `TRANSITIVEMEMBEROF <IMicrosoftGraphDirectoryObject[]>`: Groups that this contact is a member of, including groups that the contact is nested under. Read-only. Nullable.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.

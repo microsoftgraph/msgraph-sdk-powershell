@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgBetaAdminPeoplePronoun
 
 ## SYNOPSIS
-Update the properties of a pronounsSettings object in an organization.
+Update the properties of a pronounsSettings in an organization.
 For more information on settings to manage pronouns support, see Manage pronouns settings for an organization using the Microsoft Graph API.
 
 ## SYNTAX
@@ -26,7 +26,7 @@ Update-MgBetaAdminPeoplePronoun -BodyParameter <IMicrosoftGraphPronounsSettings>
 ```
 
 ## DESCRIPTION
-Update the properties of a pronounsSettings object in an organization.
+Update the properties of a pronounsSettings in an organization.
 For more information on settings to manage pronouns support, see Manage pronouns settings for an organization using the Microsoft Graph API.
 
 ## EXAMPLES
@@ -95,8 +95,8 @@ Accept wildcard characters: False
 ```
 
 ### -IsEnabledInOrganization
-true to enable pronouns in the organization; otherwise, false.
-The default value is false, and pronouns are disabled.
+true to enable pronouns in the organization, false otherwise.
+The default is false, and pronouns are disabled.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -164,7 +164,7 @@ To create the parameters described below, construct a hash table containing the 
 `BODYPARAMETER <IMicrosoftGraphPronounsSettings>`: pronounsSettings
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[IsEnabledInOrganization <Boolean?>]`: true to enable pronouns in the organization; otherwise, false. The default value is false, and pronouns are disabled.
+  - `[IsEnabledInOrganization <Boolean?>]`: true to enable pronouns in the organization, false otherwise. The default is false, and pronouns are disabled.
 
 ## RELATED LINKS
 

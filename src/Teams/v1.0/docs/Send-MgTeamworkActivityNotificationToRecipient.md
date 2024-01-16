@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Send activity feed notifications to multiple users, in bulk.
-For more information, see sending Teams activity notifications.
+For more details about sending notifications and the requirements for doing so, see\nsending Teams activity notifications.
 
 ## SYNTAX
 
@@ -31,7 +31,7 @@ Send-MgTeamworkActivityNotificationToRecipient
 
 ## DESCRIPTION
 Send activity feed notifications to multiple users, in bulk.
-For more information, see sending Teams activity notifications.
+For more details about sending notifications and the requirements for doing so, see\nsending Teams activity notifications.
 
 ## EXAMPLES
 

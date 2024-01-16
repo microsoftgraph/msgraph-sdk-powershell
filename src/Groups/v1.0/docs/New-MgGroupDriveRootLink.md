@@ -17,9 +17,8 @@ DriveItem resources inherit sharing permissions from their ancestors.
 ### CreateExpanded (Default)
 ```
 New-MgGroupDriveRootLink -DriveId <String> -GroupId <String> [-AdditionalProperties <Hashtable>]
- [-ExpirationDateTime <DateTime>] [-Message <String>] [-Password <String>]
- [-Recipients <IMicrosoftGraphDriveRecipient[]>] [-RetainInheritedPermissions] [-Scope <String>]
- [-SendNotification] [-Type <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ExpirationDateTime <DateTime>] [-Message <String>] [-Password <String>] [-RetainInheritedPermissions]
+ [-Scope <String>] [-Type <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
@@ -39,9 +38,8 @@ New-MgGroupDriveRootLink -InputObject <IGroupsIdentity>
 ### CreateViaIdentityExpanded
 ```
 New-MgGroupDriveRootLink -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>]
- [-ExpirationDateTime <DateTime>] [-Message <String>] [-Password <String>]
- [-Recipients <IMicrosoftGraphDriveRecipient[]>] [-RetainInheritedPermissions] [-Scope <String>]
- [-SendNotification] [-Type <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ExpirationDateTime <DateTime>] [-Message <String>] [-Password <String>] [-RetainInheritedPermissions]
+ [-Scope <String>] [-Type <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -189,22 +187,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Recipients
-.
-To construct, see NOTES section for RECIPIENTS properties and create a hash table.
-
-```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDriveRecipient[]
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -RetainInheritedPermissions
 .
 
@@ -225,21 +207,6 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SendNotification
-.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -323,13 +290,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[ExpirationDateTime <DateTime?>]`: 
   - `[Message <String>]`: 
   - `[Password <String>]`: 
-  - `[Recipients <IMicrosoftGraphDriveRecipient[]>]`: 
-    - `[Alias <String>]`: The alias of the domain object, for cases where an email address is unavailable (e.g. security groups).
-    - `[Email <String>]`: The email address for the recipient, if the recipient has an associated email address.
-    - `[ObjectId <String>]`: The unique identifier for the recipient in the directory.
   - `[RetainInheritedPermissions <Boolean?>]`: 
   - `[Scope <String>]`: 
-  - `[SendNotification <Boolean?>]`: 
   - `[Type <String>]`: 
 
 `INPUTOBJECT <IGroupsIdentity>`: Identity Parameter
@@ -368,11 +330,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[SubscriptionId <String>]`: The unique identifier of subscription
   - `[Token <String>]`: Usage: token='{token}'
   - `[User <String>]`: Usage: User='{User}'
-
-`RECIPIENTS <IMicrosoftGraphDriveRecipient[]>`: .
-  - `[Alias <String>]`: The alias of the domain object, for cases where an email address is unavailable (e.g. security groups).
-  - `[Email <String>]`: The email address for the recipient, if the recipient has an associated email address.
-  - `[ObjectId <String>]`: The unique identifier for the recipient in the directory.
 
 ## RELATED LINKS
 

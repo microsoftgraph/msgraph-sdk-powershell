@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDeviceAppManagementMobileApp
 
 ## SYNOPSIS
-Deletes a macOSLobApp.
+Deletes a iosVppApp.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgDeviceAppManagementMobileApp -InputObject <IDevicesCorporateManagementI
 ```
 
 ## DESCRIPTION
-Deletes a macOSLobApp.
+Deletes a iosVppApp.
 
 ## EXAMPLES
 

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Bookings
-Module Guid: baf697fb-2024-4509-b1ec-911c8bc9a265
+Module Guid: 9676258a-f511-444c-b12e-1fe33c73e640
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.bookings
 Help Version: 1.0.0.0
 Locale: en-US
@@ -116,7 +116,7 @@ Get events from solutions
 Get the number of the resource
 
 ### [Get-MgBetaVirtualEventPresenter](Get-MgBetaVirtualEventPresenter.md)
-The virtual event presenters.
+Presenters' information of the virtual event.
 
 ### [Get-MgBetaVirtualEventPresenterCount](Get-MgBetaVirtualEventPresenterCount.md)
 Get the number of the resource
@@ -131,7 +131,7 @@ Get sessions from solutions
 Get the number of the resource
 
 ### [Get-MgBetaVirtualEventSession](Get-MgBetaVirtualEventSession.md)
-Sessions for the virtual event.
+Sessions of the virtual event.
 
 ### [Get-MgBetaVirtualEventSessionAttendanceReport](Get-MgBetaVirtualEventSessionAttendanceReport.md)
 The attendance reports of an online meeting.
@@ -178,7 +178,7 @@ Invoke function getByUserRole
 Get the number of the resource
 
 ### [Get-MgBetaVirtualEventTownhallPresenter](Get-MgBetaVirtualEventTownhallPresenter.md)
-The virtual event presenters.
+Presenters' information of the virtual event.
 
 ### [Get-MgBetaVirtualEventTownhallPresenterCount](Get-MgBetaVirtualEventTownhallPresenterCount.md)
 Get the number of the resource
@@ -193,7 +193,7 @@ Get sessions from solutions
 Get the number of the resource
 
 ### [Get-MgBetaVirtualEventTownhallSession](Get-MgBetaVirtualEventTownhallSession.md)
-Sessions for the virtual event.
+Sessions of the virtual event.
 
 ### [Get-MgBetaVirtualEventTownhallSessionAttendanceReport](Get-MgBetaVirtualEventTownhallSessionAttendanceReport.md)
 The attendance reports of an online meeting.
@@ -240,7 +240,7 @@ Invoke function getByUserRole
 Get the number of the resource
 
 ### [Get-MgBetaVirtualEventWebinarPresenter](Get-MgBetaVirtualEventWebinarPresenter.md)
-The virtual event presenters.
+Presenters' information of the virtual event.
 
 ### [Get-MgBetaVirtualEventWebinarPresenterCount](Get-MgBetaVirtualEventWebinarPresenterCount.md)
 Get the number of the resource
@@ -270,7 +270,7 @@ Get sessions from solutions
 Get the number of the resource
 
 ### [Get-MgBetaVirtualEventWebinarSession](Get-MgBetaVirtualEventWebinarSession.md)
-Sessions for the virtual event.
+Sessions of the virtual event.
 
 ### [Get-MgBetaVirtualEventWebinarSessionAttendanceReport](Get-MgBetaVirtualEventWebinarSessionAttendanceReport.md)
 The attendance reports of an online meeting.

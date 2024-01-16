@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Planner
-Module Guid: 152d6209-9e44-4b96-a2ef-e09325348cd7
+Module Guid: 267c0ba4-d2b0-4fc9-b473-da609a35d694
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.planner
 Help Version: 1.0.0.0
 Locale: en-US
@@ -142,15 +142,8 @@ Get the number of the resource
 ### [Get-MgBetaUserPlannerTask](Get-MgBetaUserPlannerTask.md)
 Retrieve a list of plannertask objects assigned to a User.
 
-### [Invoke-MgBetaArchivePlannerPlan](Invoke-MgBetaArchivePlannerPlan.md)
-Invoke action archive
-
-### [Invoke-MgBetaUnarchivePlannerPlan](Invoke-MgBetaUnarchivePlannerPlan.md)
-Invoke action unarchive
-
 ### [Move-MgBetaPlannerPlanToContainer](Move-MgBetaPlannerPlanToContainer.md)
-Move a planner plan object from one planner plan container to another.
-Planner plans can only be moved from a user container to a group container.
+Invoke action moveToContainer
 
 ### [New-MgBetaPlannerBucket](New-MgBetaPlannerBucket.md)
 Create a new plannerBucket object.

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Security
-Module Guid: 0320d542-c2d7-460e-b03e-2d6a2939f8b7
+Module Guid: cde6fe2b-c25f-4c48-b2cf-a921ee734682
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.security
 Help Version: 1.0.0.0
 Locale: en-US
@@ -170,8 +170,7 @@ Get the number of the resource
 Represents a group.
 
 ### [Get-MgSecurityCaseEdiscoveryCaseCustodianUnifiedGroupSourceGroupServiceProvisioningError](Get-MgSecurityCaseEdiscoveryCaseCustodianUnifiedGroupSourceGroupServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a group object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgSecurityCaseEdiscoveryCaseCustodianUnifiedGroupSourceGroupServiceProvisioningErrorCount](Get-MgSecurityCaseEdiscoveryCaseCustodianUnifiedGroupSourceGroupServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -300,12 +299,11 @@ Get the number of the resource
 
 ### [Get-MgSecuritySubjectRightsRequestApproverMailboxSetting](Get-MgSecuritySubjectRightsRequestApproverMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgSecuritySubjectRightsRequestApproverServiceProvisioningError](Get-MgSecuritySubjectRightsRequestApproverServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgSecuritySubjectRightsRequestApproverServiceProvisioningErrorCount](Get-MgSecuritySubjectRightsRequestApproverServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -318,12 +316,11 @@ Get the number of the resource
 
 ### [Get-MgSecuritySubjectRightsRequestCollaboratorMailboxSetting](Get-MgSecuritySubjectRightsRequestCollaboratorMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgSecuritySubjectRightsRequestCollaboratorServiceProvisioningError](Get-MgSecuritySubjectRightsRequestCollaboratorServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgSecuritySubjectRightsRequestCollaboratorServiceProvisioningErrorCount](Get-MgSecuritySubjectRightsRequestCollaboratorServiceProvisioningErrorCount.md)
 Get the number of the resource

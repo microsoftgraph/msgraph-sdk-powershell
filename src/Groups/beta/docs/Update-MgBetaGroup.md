@@ -2281,11 +2281,11 @@ To create the parameters described below, construct a hash table containing the 
               - `[SynchronizationRules <IMicrosoftGraphSynchronizationRule[]>]`: A collection of synchronization rules configured for the synchronizationJob or synchronizationTemplate.
                 - `[ContainerFilter <IMicrosoftGraphContainerFilter>]`: containerFilter
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                  - `[IncludedContainers <String[]>]`: The identifiers of containers, such as organizational units, that are in scope for a synchronization rule. For Active Directory organizational units, use the distinguished names. An empty list means no container filtering is configured.
+                  - `[IncludedContainers <String[]>]`: 
                 - `[Editable <Boolean?>]`: true if the synchronization rule can be customized; false if this rule is read-only and shouldn't be changed.
                 - `[GroupFilter <IMicrosoftGraphGroupFilter>]`: groupFilter
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                  - `[IncludedGroups <String[]>]`: Identifiers of groups that are in scope for a synchronization rule. For Active Directory groups, use the distinguished names. An empty list means no group filtering is configured.
+                  - `[IncludedGroups <String[]>]`: 
                 - `[Id <String>]`: Synchronization rule identifier. Must be one of the identifiers recognized by the synchronization engine. Supported rule identifiers can be found in the synchronization template returned by the API.
                 - `[Metadata <IMicrosoftGraphStringKeyStringValuePair[]>]`: Additional extension properties. Unless instructed explicitly by the support team, metadata values shouldn't be changed.
                 - `[Name <String>]`: Human-readable name of the synchronization rule. Not nullable.
@@ -2534,8 +2534,8 @@ To create the parameters described below, construct a hash table containing the 
           - `[PhoneAppVersion <String>]`: Numerical version of this instance of the Authenticator app.
         - `[Operations <IMicrosoftGraphLongRunningOperation[]>]`: 
           - `[Id <String>]`: The unique identifier for an entity. Read-only.
-          - `[CreatedDateTime <DateTime?>]`: The start time of the operation. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-          - `[LastActionDateTime <DateTime?>]`: The time of the last action in the operation. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+          - `[CreatedDateTime <DateTime?>]`: The start time of the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+          - `[LastActionDateTime <DateTime?>]`: The time of the last action in the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
           - `[ResourceLocation <String>]`: URI of the resource that the operation is performed on.
           - `[Status <String>]`: longRunningOperationStatus
           - `[StatusDetail <String>]`: Details about the status of the operation.
@@ -2808,11 +2808,6 @@ To create the parameters described below, construct a hash table containing the 
             - `[Result <String>]`: cloudPcConnectivityEventResult
           - `[Status <String>]`: cloudPcConnectivityStatus
           - `[UpdatedDateTime <DateTime?>]`: Datetime when the status was updated. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.
-        - `[DisasterRecoveryCapability <IMicrosoftGraphCloudPcDisasterRecoveryCapability>]`: cloudPcDisasterRecoveryCapability
-          - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[CapabilityType <String>]`: cloudPcDisasterRecoveryCapabilityType
-          - `[PrimaryRegion <String>]`: 
-          - `[SecondaryRegion <String>]`: 
         - `[DiskEncryptionState <String>]`: cloudPcDiskEncryptionState
         - `[DisplayName <String>]`: The display name of the Cloud PC.
         - `[GracePeriodEndDateTime <DateTime?>]`: The date and time when the grace period ends and reprovisioning or deprovisioning happen. Required only if the status is inGracePeriod. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
@@ -3953,8 +3948,8 @@ To create the parameters described below, construct a hash table containing the 
             - `[Hidden <Boolean?>]`: If true, indicates that the list isn't normally visible in the SharePoint user experience.
             - `[Template <String>]`: An enumerated value that represents the base list template used in creating the list. Possible values include documentLibrary, genericList, task, survey, announcements, contacts, and more.
           - `[Operations <IMicrosoftGraphRichLongRunningOperation[]>]`: The collection of long-running operations on the list.
-            - `[CreatedDateTime <DateTime?>]`: The start time of the operation. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-            - `[LastActionDateTime <DateTime?>]`: The time of the last action in the operation. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+            - `[CreatedDateTime <DateTime?>]`: The start time of the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+            - `[LastActionDateTime <DateTime?>]`: The time of the last action in the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             - `[ResourceLocation <String>]`: URI of the resource that the operation is performed on.
             - `[Status <String>]`: longRunningOperationStatus
             - `[StatusDetail <String>]`: Details about the status of the operation.
@@ -4221,7 +4216,6 @@ To create the parameters described below, construct a hash table containing the 
           - `[DisplayName <String>]`: Channel name as it will appear to the user in Microsoft Teams. The maximum length is 50 characters.
           - `[Email <String>]`: The email address for sending messages to the channel. Read-only.
           - `[FilesFolder <IMicrosoftGraphDriveItem>]`: driveItem
-          - `[IsArchived <Boolean?>]`: 
           - `[IsFavoriteByDefault <Boolean?>]`: Indicates whether the channel should automatically be marked 'favorite' for all members of the team. Can only be set programmatically with Create team. Default: false.
           - `[Members <IMicrosoftGraphConversationMember[]>]`: A collection of membership records associated with the channel.
           - `[MembershipType <String>]`: channelMembershipType
@@ -4297,11 +4291,11 @@ To create the parameters described below, construct a hash table containing the 
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Id <String>]`: The unique identifier for an entity. Read-only.
           - `[ActivitiesIncludedWhenCopyingShiftsEnabled <Boolean?>]`: Indicates whether copied shifts should include the activities.
-          - `[DayNotes <IMicrosoftGraphDayNote[]>]`: The day notes in the schedule.
+          - `[DayNotes <IMicrosoftGraphDayNote[]>]`: 
             - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
             - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
             - `[Id <String>]`: The unique identifier for an entity. Read-only.
-            - `[DayNoteDate <DateTime?>]`: The date of the day note.
+            - `[DayNoteDate <DateTime?>]`: 
             - `[DraftDayNote <IMicrosoftGraphItemBody>]`: itemBody
             - `[SharedDayNote <IMicrosoftGraphItemBody>]`: itemBody
           - `[Enabled <Boolean?>]`: Indicates whether the schedule is enabled for the team. Required.
@@ -4345,8 +4339,8 @@ To create the parameters described below, construct a hash table containing the 
               - `[StartDateTime <DateTime?>]`: 
               - `[Theme <String>]`: scheduleEntityTheme
               - `[OpenSlotCount <Int32?>]`: Count of the number of slots for the given open shift.
-            - `[IsStagedForDeletion <Boolean?>]`: The openShift is marked for deletion, a process that is finalized when the schedule is shared.
-            - `[SchedulingGroupId <String>]`: The ID of the schedulingGroup that contains the openShift.
+            - `[IsStagedForDeletion <Boolean?>]`: 
+            - `[SchedulingGroupId <String>]`: ID for the scheduling group that the open shift belongs to.
             - `[SharedOpenShift <IMicrosoftGraphOpenShiftItem>]`: openShiftItem
           - `[OpenShiftsEnabled <Boolean?>]`: Indicates whether open shifts are enabled for the schedule.
           - `[ProvisionStatus <String>]`: operationStatus
@@ -4369,7 +4363,7 @@ To create the parameters described below, construct a hash table containing the 
               - `[Activities <IMicrosoftGraphShiftActivity[]>]`: An incremental part of a shift which can cover details of when and where an employee is during their shift. For example, an assignment or a scheduled break or lunch. Required.
               - `[DisplayName <String>]`: The shift label of the shiftItem.
               - `[Notes <String>]`: The shift notes for the shiftItem.
-            - `[IsStagedForDeletion <Boolean?>]`: The shift is marked for deletion, a process that is finalized when the schedule is shared.
+            - `[IsStagedForDeletion <Boolean?>]`: 
             - `[SchedulingGroupId <String>]`: ID of the scheduling group the shift is part of. Required.
             - `[SharedShift <IMicrosoftGraphShiftItem>]`: shiftItem
             - `[UserId <String>]`: ID of the user assigned to the shift. Required.
@@ -4387,7 +4381,7 @@ To create the parameters described below, construct a hash table containing the 
             - `[Id <String>]`: The unique identifier for an entity. Read-only.
             - `[RecipientShiftId <String>]`: Shift ID for the recipient user with whom the request is to swap.
           - `[SwapShiftsRequestsEnabled <Boolean?>]`: Indicates whether swap shifts requests are enabled for the schedule.
-          - `[TimeCards <IMicrosoftGraphTimeCard[]>]`: The time cards in the schedule.
+          - `[TimeCards <IMicrosoftGraphTimeCard[]>]`: 
             - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
             - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
             - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -4446,7 +4440,7 @@ To create the parameters described below, construct a hash table containing the 
               - `[StartDateTime <DateTime?>]`: 
               - `[Theme <String>]`: scheduleEntityTheme
               - `[TimeOffReasonId <String>]`: ID of the timeOffReason for this timeOffItem. Required.
-            - `[IsStagedForDeletion <Boolean?>]`: The timeOff is marked for deletion, a process that is finalized when the schedule is shared.
+            - `[IsStagedForDeletion <Boolean?>]`: 
             - `[SharedTimeOff <IMicrosoftGraphTimeOffItem>]`: timeOffItem
             - `[UserId <String>]`: ID of the user assigned to the timeOff. Required.
           - `[WorkforceIntegrationIds <String[]>]`: The Ids for the workforce integrations associated with this schedule.
@@ -5407,18 +5401,11 @@ To create the parameters described below, construct a hash table containing the 
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[FavoritePlans <IMicrosoftGraphPlannerPlan[]>]`: Read-only. Nullable. Returns the plannerPlans that the user marked as favorites.
           - `[Id <String>]`: The unique identifier for an entity. Read-only.
-          - `[ArchivalInfo <IMicrosoftGraphPlannerArchivalInfo>]`: plannerArchivalInfo
-            - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[Justification <String>]`: 
-            - `[StatusChangedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-            - `[StatusChangedDateTime <DateTime?>]`: 
           - `[Buckets <IMicrosoftGraphPlannerBucket[]>]`: Collection of buckets in the plan. Read-only. Nullable.
             - `[Id <String>]`: The unique identifier for an entity. Read-only.
-            - `[ArchivalInfo <IMicrosoftGraphPlannerArchivalInfo>]`: plannerArchivalInfo
             - `[CreationSource <IMicrosoftGraphPlannerBucketCreation>]`: plannerBucketCreation
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[CreationSourceKind <String>]`: plannerCreationSourceKind
-            - `[IsArchived <Boolean?>]`: 
             - `[Name <String>]`: Name of the bucket.
             - `[OrderHint <String>]`: Hint used to order items of this type in a list view. For details about the supported format, see Using order hints in Planner.
             - `[PlanId <String>]`: Plan ID to which the bucket belongs.
@@ -5427,7 +5414,6 @@ To create the parameters described below, construct a hash table containing the 
               - `[ActiveChecklistItemCount <Int32?>]`: Number of checklist items with value set to false, representing incomplete items.
               - `[AppliedCategories <IMicrosoftGraphPlannerAppliedCategories>]`: plannerAppliedCategories
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[ArchivalInfo <IMicrosoftGraphPlannerArchivalInfo>]`: plannerArchivalInfo
               - `[AssignedToTaskBoardFormat <IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat>]`: plannerAssignedToTaskBoardTaskFormat
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -5463,34 +5449,20 @@ To create the parameters described below, construct a hash table containing the 
               - `[Details <IMicrosoftGraphPlannerTaskDetails>]`: plannerTaskDetails
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[Id <String>]`: The unique identifier for an entity. Read-only.
-                - `[ApprovalAttachment <IMicrosoftGraphPlannerBaseApprovalAttachment>]`: plannerBaseApprovalAttachment
-                  - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                  - `[Status <String>]`: plannerApprovalStatus
                 - `[Checklist <IMicrosoftGraphPlannerChecklistItems>]`: plannerChecklistItems
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[CompletionRequirements <IMicrosoftGraphPlannerTaskCompletionRequirementDetails>]`: plannerTaskCompletionRequirementDetails
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                  - `[ApprovalRequirement <IMicrosoftGraphPlannerApprovalRequirement>]`: plannerApprovalRequirement
-                    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                    - `[IsApprovalRequired <Boolean?>]`: 
                   - `[ChecklistRequirement <IMicrosoftGraphPlannerChecklistRequirement>]`: plannerChecklistRequirement
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
                     - `[RequiredChecklistItemIds <String[]>]`: A collection of required plannerChecklistItems identifiers to complete the plannerTask.
-                  - `[FormsRequirement <IMicrosoftGraphPlannerFormsRequirement>]`: plannerFormsRequirement
-                    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                    - `[RequiredForms <String[]>]`: 
                 - `[Description <String>]`: Description of the task.
-                - `[Forms <IMicrosoftGraphPlannerFormsDictionary>]`: plannerFormsDictionary
-                  - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[Notes <IMicrosoftGraphItemBody>]`: itemBody
                 - `[PreviewType <String>]`: plannerPreviewType
                 - `[References <IMicrosoftGraphPlannerExternalReferences>]`: plannerExternalReferences
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[DueDateTime <DateTime?>]`: Date and time at which the task is due. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
               - `[HasDescription <Boolean?>]`: Read-only. Value is true if the details object of the task has a nonempty description and false otherwise.
-              - `[IsArchived <Boolean?>]`: 
-              - `[IsOnMyDay <Boolean?>]`: 
-              - `[IsOnMyDayLastModifiedDate <DateTime?>]`: 
               - `[OrderHint <String>]`: Hint used to order items of this type in a list view. The format is defined as outlined here.
               - `[PercentComplete <Int32?>]`: Percentage of task completion. When set to 100, the task is considered completed.
               - `[PlanId <String>]`: Plan ID to which the task belongs.
@@ -5562,7 +5534,6 @@ To create the parameters described below, construct a hash table containing the 
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[SharedWith <IMicrosoftGraphPlannerUserIds>]`: plannerUserIds
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[IsArchived <Boolean?>]`: 
           - `[Owner <String>]`: 
           - `[SharedWithContainers <IMicrosoftGraphPlannerSharedWithContainer[]>]`: List of containers the plan is shared with.
             - `[ContainerId <String>]`: The identifier of the resource that contains the plan. Optional.
@@ -6313,8 +6284,6 @@ To create the parameters described below, construct a hash table containing the 
           - `[TeamsAppDefinition <IMicrosoftGraphTeamsAppDefinition>]`: teamsAppDefinition
           - `[Id <String>]`: The unique identifier for an entity. Read-only.
           - `[Chat <IMicrosoftGraphChat>]`: chat
-        - `[Locale <String>]`: Represents the chosen locale of a user in Microsoft Teams.
-        - `[Region <String>]`: Represents the region of the user in Microsoft Teams.
       - `[Todo <IMicrosoftGraphTodo>]`: todo
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -6390,9 +6359,9 @@ To create the parameters described below, construct a hash table containing the 
             - `[OnPremises <IMicrosoftGraphIdentity>]`: identity
             - `[Phone <IMicrosoftGraphIdentity>]`: identity
           - `[Description <IMicrosoftGraphItemBody>]`: itemBody
-          - `[DisplayName <String>]`: Display name of the virtual event.
+          - `[DisplayName <String>]`: Display name of the virtual event
           - `[EndDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
-          - `[Presenters <IMicrosoftGraphVirtualEventPresenter[]>]`: The virtual event presenters.
+          - `[Presenters <IMicrosoftGraphVirtualEventPresenter[]>]`: Presenters' information of the virtual event.
             - `[Id <String>]`: The unique identifier for an entity. Read-only.
             - `[Email <String>]`: Email address of the presenter.
             - `[Identity <IMicrosoftGraphCommunicationsUserIdentity>]`: communicationsUserIdentity
@@ -6454,7 +6423,7 @@ To create the parameters described below, construct a hash table containing the 
                 - `[Status <String>]`: virtualEventAttendeeRegistrationStatus
                 - `[UserId <String>]`: The registrant's ID in Microsoft Entra ID. Only appears when the registrant is registered in Microsoft Entra ID.
               - `[StartDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
-          - `[Sessions <IMicrosoftGraphVirtualEventSession[]>]`: Sessions for the virtual event.
+          - `[Sessions <IMicrosoftGraphVirtualEventSession[]>]`: Sessions of the virtual event.
           - `[StartDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
           - `[Status <String>]`: virtualEventStatus
           - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -7340,11 +7309,11 @@ To create the parameters described below, construct a hash table containing the 
             - `[SynchronizationRules <IMicrosoftGraphSynchronizationRule[]>]`: A collection of synchronization rules configured for the synchronizationJob or synchronizationTemplate.
               - `[ContainerFilter <IMicrosoftGraphContainerFilter>]`: containerFilter
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                - `[IncludedContainers <String[]>]`: The identifiers of containers, such as organizational units, that are in scope for a synchronization rule. For Active Directory organizational units, use the distinguished names. An empty list means no container filtering is configured.
+                - `[IncludedContainers <String[]>]`: 
               - `[Editable <Boolean?>]`: true if the synchronization rule can be customized; false if this rule is read-only and shouldn't be changed.
               - `[GroupFilter <IMicrosoftGraphGroupFilter>]`: groupFilter
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                - `[IncludedGroups <String[]>]`: Identifiers of groups that are in scope for a synchronization rule. For Active Directory groups, use the distinguished names. An empty list means no group filtering is configured.
+                - `[IncludedGroups <String[]>]`: 
               - `[Id <String>]`: Synchronization rule identifier. Must be one of the identifiers recognized by the synchronization engine. Supported rule identifiers can be found in the synchronization template returned by the API.
               - `[Metadata <IMicrosoftGraphStringKeyStringValuePair[]>]`: Additional extension properties. Unless instructed explicitly by the support team, metadata values shouldn't be changed.
               - `[Name <String>]`: Human-readable name of the synchronization rule. Not nullable.
@@ -7596,8 +7565,8 @@ To create the parameters described below, construct a hash table containing the 
         - `[PhoneAppVersion <String>]`: Numerical version of this instance of the Authenticator app.
       - `[Operations <IMicrosoftGraphLongRunningOperation[]>]`: 
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
-        - `[CreatedDateTime <DateTime?>]`: The start time of the operation. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-        - `[LastActionDateTime <DateTime?>]`: The time of the last action in the operation. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+        - `[CreatedDateTime <DateTime?>]`: The start time of the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+        - `[LastActionDateTime <DateTime?>]`: The time of the last action in the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         - `[ResourceLocation <String>]`: URI of the resource that the operation is performed on.
         - `[Status <String>]`: longRunningOperationStatus
         - `[StatusDetail <String>]`: Details about the status of the operation.
@@ -8029,11 +7998,6 @@ To create the parameters described below, construct a hash table containing the 
           - `[Result <String>]`: cloudPcConnectivityEventResult
         - `[Status <String>]`: cloudPcConnectivityStatus
         - `[UpdatedDateTime <DateTime?>]`: Datetime when the status was updated. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.
-      - `[DisasterRecoveryCapability <IMicrosoftGraphCloudPcDisasterRecoveryCapability>]`: cloudPcDisasterRecoveryCapability
-        - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[CapabilityType <String>]`: cloudPcDisasterRecoveryCapabilityType
-        - `[PrimaryRegion <String>]`: 
-        - `[SecondaryRegion <String>]`: 
       - `[DiskEncryptionState <String>]`: cloudPcDiskEncryptionState
       - `[DisplayName <String>]`: The display name of the Cloud PC.
       - `[GracePeriodEndDateTime <DateTime?>]`: The date and time when the grace period ends and reprovisioning or deprovisioning happen. Required only if the status is inGracePeriod. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
@@ -9174,8 +9138,8 @@ To create the parameters described below, construct a hash table containing the 
           - `[Hidden <Boolean?>]`: If true, indicates that the list isn't normally visible in the SharePoint user experience.
           - `[Template <String>]`: An enumerated value that represents the base list template used in creating the list. Possible values include documentLibrary, genericList, task, survey, announcements, contacts, and more.
         - `[Operations <IMicrosoftGraphRichLongRunningOperation[]>]`: The collection of long-running operations on the list.
-          - `[CreatedDateTime <DateTime?>]`: The start time of the operation. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-          - `[LastActionDateTime <DateTime?>]`: The time of the last action in the operation. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+          - `[CreatedDateTime <DateTime?>]`: The start time of the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+          - `[LastActionDateTime <DateTime?>]`: The time of the last action in the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
           - `[ResourceLocation <String>]`: URI of the resource that the operation is performed on.
           - `[Status <String>]`: longRunningOperationStatus
           - `[StatusDetail <String>]`: Details about the status of the operation.
@@ -9558,18 +9522,11 @@ To create the parameters described below, construct a hash table containing the 
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
         - `[Plans <IMicrosoftGraphPlannerPlan[]>]`: Read-only. Nullable. Returns the plannerPlans owned by the group.
           - `[Id <String>]`: The unique identifier for an entity. Read-only.
-          - `[ArchivalInfo <IMicrosoftGraphPlannerArchivalInfo>]`: plannerArchivalInfo
-            - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[Justification <String>]`: 
-            - `[StatusChangedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-            - `[StatusChangedDateTime <DateTime?>]`: 
           - `[Buckets <IMicrosoftGraphPlannerBucket[]>]`: Collection of buckets in the plan. Read-only. Nullable.
             - `[Id <String>]`: The unique identifier for an entity. Read-only.
-            - `[ArchivalInfo <IMicrosoftGraphPlannerArchivalInfo>]`: plannerArchivalInfo
             - `[CreationSource <IMicrosoftGraphPlannerBucketCreation>]`: plannerBucketCreation
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[CreationSourceKind <String>]`: plannerCreationSourceKind
-            - `[IsArchived <Boolean?>]`: 
             - `[Name <String>]`: Name of the bucket.
             - `[OrderHint <String>]`: Hint used to order items of this type in a list view. For details about the supported format, see Using order hints in Planner.
             - `[PlanId <String>]`: Plan ID to which the bucket belongs.
@@ -9578,7 +9535,6 @@ To create the parameters described below, construct a hash table containing the 
               - `[ActiveChecklistItemCount <Int32?>]`: Number of checklist items with value set to false, representing incomplete items.
               - `[AppliedCategories <IMicrosoftGraphPlannerAppliedCategories>]`: plannerAppliedCategories
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[ArchivalInfo <IMicrosoftGraphPlannerArchivalInfo>]`: plannerArchivalInfo
               - `[AssignedToTaskBoardFormat <IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat>]`: plannerAssignedToTaskBoardTaskFormat
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -9614,34 +9570,20 @@ To create the parameters described below, construct a hash table containing the 
               - `[Details <IMicrosoftGraphPlannerTaskDetails>]`: plannerTaskDetails
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[Id <String>]`: The unique identifier for an entity. Read-only.
-                - `[ApprovalAttachment <IMicrosoftGraphPlannerBaseApprovalAttachment>]`: plannerBaseApprovalAttachment
-                  - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                  - `[Status <String>]`: plannerApprovalStatus
                 - `[Checklist <IMicrosoftGraphPlannerChecklistItems>]`: plannerChecklistItems
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[CompletionRequirements <IMicrosoftGraphPlannerTaskCompletionRequirementDetails>]`: plannerTaskCompletionRequirementDetails
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                  - `[ApprovalRequirement <IMicrosoftGraphPlannerApprovalRequirement>]`: plannerApprovalRequirement
-                    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                    - `[IsApprovalRequired <Boolean?>]`: 
                   - `[ChecklistRequirement <IMicrosoftGraphPlannerChecklistRequirement>]`: plannerChecklistRequirement
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
                     - `[RequiredChecklistItemIds <String[]>]`: A collection of required plannerChecklistItems identifiers to complete the plannerTask.
-                  - `[FormsRequirement <IMicrosoftGraphPlannerFormsRequirement>]`: plannerFormsRequirement
-                    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                    - `[RequiredForms <String[]>]`: 
                 - `[Description <String>]`: Description of the task.
-                - `[Forms <IMicrosoftGraphPlannerFormsDictionary>]`: plannerFormsDictionary
-                  - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[Notes <IMicrosoftGraphItemBody>]`: itemBody
                 - `[PreviewType <String>]`: plannerPreviewType
                 - `[References <IMicrosoftGraphPlannerExternalReferences>]`: plannerExternalReferences
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[DueDateTime <DateTime?>]`: Date and time at which the task is due. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
               - `[HasDescription <Boolean?>]`: Read-only. Value is true if the details object of the task has a nonempty description and false otherwise.
-              - `[IsArchived <Boolean?>]`: 
-              - `[IsOnMyDay <Boolean?>]`: 
-              - `[IsOnMyDayLastModifiedDate <DateTime?>]`: 
               - `[OrderHint <String>]`: Hint used to order items of this type in a list view. The format is defined as outlined here.
               - `[PercentComplete <Int32?>]`: Percentage of task completion. When set to 100, the task is considered completed.
               - `[PlanId <String>]`: Plan ID to which the task belongs.
@@ -9713,7 +9655,6 @@ To create the parameters described below, construct a hash table containing the 
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[SharedWith <IMicrosoftGraphPlannerUserIds>]`: plannerUserIds
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[IsArchived <Boolean?>]`: 
           - `[Owner <String>]`: 
           - `[SharedWithContainers <IMicrosoftGraphPlannerSharedWithContainer[]>]`: List of containers the plan is shared with.
             - `[ContainerId <String>]`: The identifier of the resource that contains the plan. Optional.
@@ -9753,7 +9694,6 @@ To create the parameters described below, construct a hash table containing the 
           - `[DisplayName <String>]`: Channel name as it will appear to the user in Microsoft Teams. The maximum length is 50 characters.
           - `[Email <String>]`: The email address for sending messages to the channel. Read-only.
           - `[FilesFolder <IMicrosoftGraphDriveItem>]`: driveItem
-          - `[IsArchived <Boolean?>]`: 
           - `[IsFavoriteByDefault <Boolean?>]`: Indicates whether the channel should automatically be marked 'favorite' for all members of the team. Can only be set programmatically with Create team. Default: false.
           - `[Members <IMicrosoftGraphConversationMember[]>]`: A collection of membership records associated with the channel.
           - `[MembershipType <String>]`: channelMembershipType
@@ -9829,11 +9769,11 @@ To create the parameters described below, construct a hash table containing the 
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Id <String>]`: The unique identifier for an entity. Read-only.
           - `[ActivitiesIncludedWhenCopyingShiftsEnabled <Boolean?>]`: Indicates whether copied shifts should include the activities.
-          - `[DayNotes <IMicrosoftGraphDayNote[]>]`: The day notes in the schedule.
+          - `[DayNotes <IMicrosoftGraphDayNote[]>]`: 
             - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
             - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
             - `[Id <String>]`: The unique identifier for an entity. Read-only.
-            - `[DayNoteDate <DateTime?>]`: The date of the day note.
+            - `[DayNoteDate <DateTime?>]`: 
             - `[DraftDayNote <IMicrosoftGraphItemBody>]`: itemBody
             - `[SharedDayNote <IMicrosoftGraphItemBody>]`: itemBody
           - `[Enabled <Boolean?>]`: Indicates whether the schedule is enabled for the team. Required.
@@ -9877,8 +9817,8 @@ To create the parameters described below, construct a hash table containing the 
               - `[StartDateTime <DateTime?>]`: 
               - `[Theme <String>]`: scheduleEntityTheme
               - `[OpenSlotCount <Int32?>]`: Count of the number of slots for the given open shift.
-            - `[IsStagedForDeletion <Boolean?>]`: The openShift is marked for deletion, a process that is finalized when the schedule is shared.
-            - `[SchedulingGroupId <String>]`: The ID of the schedulingGroup that contains the openShift.
+            - `[IsStagedForDeletion <Boolean?>]`: 
+            - `[SchedulingGroupId <String>]`: ID for the scheduling group that the open shift belongs to.
             - `[SharedOpenShift <IMicrosoftGraphOpenShiftItem>]`: openShiftItem
           - `[OpenShiftsEnabled <Boolean?>]`: Indicates whether open shifts are enabled for the schedule.
           - `[ProvisionStatus <String>]`: operationStatus
@@ -9901,7 +9841,7 @@ To create the parameters described below, construct a hash table containing the 
               - `[Activities <IMicrosoftGraphShiftActivity[]>]`: An incremental part of a shift which can cover details of when and where an employee is during their shift. For example, an assignment or a scheduled break or lunch. Required.
               - `[DisplayName <String>]`: The shift label of the shiftItem.
               - `[Notes <String>]`: The shift notes for the shiftItem.
-            - `[IsStagedForDeletion <Boolean?>]`: The shift is marked for deletion, a process that is finalized when the schedule is shared.
+            - `[IsStagedForDeletion <Boolean?>]`: 
             - `[SchedulingGroupId <String>]`: ID of the scheduling group the shift is part of. Required.
             - `[SharedShift <IMicrosoftGraphShiftItem>]`: shiftItem
             - `[UserId <String>]`: ID of the user assigned to the shift. Required.
@@ -9919,7 +9859,7 @@ To create the parameters described below, construct a hash table containing the 
             - `[Id <String>]`: The unique identifier for an entity. Read-only.
             - `[RecipientShiftId <String>]`: Shift ID for the recipient user with whom the request is to swap.
           - `[SwapShiftsRequestsEnabled <Boolean?>]`: Indicates whether swap shifts requests are enabled for the schedule.
-          - `[TimeCards <IMicrosoftGraphTimeCard[]>]`: The time cards in the schedule.
+          - `[TimeCards <IMicrosoftGraphTimeCard[]>]`: 
             - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
             - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
             - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -9978,7 +9918,7 @@ To create the parameters described below, construct a hash table containing the 
               - `[StartDateTime <DateTime?>]`: 
               - `[Theme <String>]`: scheduleEntityTheme
               - `[TimeOffReasonId <String>]`: ID of the timeOffReason for this timeOffItem. Required.
-            - `[IsStagedForDeletion <Boolean?>]`: The timeOff is marked for deletion, a process that is finalized when the schedule is shared.
+            - `[IsStagedForDeletion <Boolean?>]`: 
             - `[SharedTimeOff <IMicrosoftGraphTimeOffItem>]`: timeOffItem
             - `[UserId <String>]`: ID of the user assigned to the timeOff. Required.
           - `[WorkforceIntegrationIds <String[]>]`: The Ids for the workforce integrations associated with this schedule.
@@ -11687,8 +11627,6 @@ To create the parameters described below, construct a hash table containing the 
         - `[TeamsAppDefinition <IMicrosoftGraphTeamsAppDefinition>]`: teamsAppDefinition
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
         - `[Chat <IMicrosoftGraphChat>]`: chat
-      - `[Locale <String>]`: Represents the chosen locale of a user in Microsoft Teams.
-      - `[Region <String>]`: Represents the region of the user in Microsoft Teams.
     - `[Todo <IMicrosoftGraphTodo>]`: todo
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -11764,9 +11702,9 @@ To create the parameters described below, construct a hash table containing the 
           - `[OnPremises <IMicrosoftGraphIdentity>]`: identity
           - `[Phone <IMicrosoftGraphIdentity>]`: identity
         - `[Description <IMicrosoftGraphItemBody>]`: itemBody
-        - `[DisplayName <String>]`: Display name of the virtual event.
+        - `[DisplayName <String>]`: Display name of the virtual event
         - `[EndDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
-        - `[Presenters <IMicrosoftGraphVirtualEventPresenter[]>]`: The virtual event presenters.
+        - `[Presenters <IMicrosoftGraphVirtualEventPresenter[]>]`: Presenters' information of the virtual event.
           - `[Id <String>]`: The unique identifier for an entity. Read-only.
           - `[Email <String>]`: Email address of the presenter.
           - `[Identity <IMicrosoftGraphCommunicationsUserIdentity>]`: communicationsUserIdentity
@@ -11828,7 +11766,7 @@ To create the parameters described below, construct a hash table containing the 
               - `[Status <String>]`: virtualEventAttendeeRegistrationStatus
               - `[UserId <String>]`: The registrant's ID in Microsoft Entra ID. Only appears when the registrant is registered in Microsoft Entra ID.
             - `[StartDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
-        - `[Sessions <IMicrosoftGraphVirtualEventSession[]>]`: Sessions for the virtual event.
+        - `[Sessions <IMicrosoftGraphVirtualEventSession[]>]`: Sessions of the virtual event.
         - `[StartDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
         - `[Status <String>]`: virtualEventStatus
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -12233,11 +12171,11 @@ To create the parameters described below, construct a hash table containing the 
             - `[SynchronizationRules <IMicrosoftGraphSynchronizationRule[]>]`: A collection of synchronization rules configured for the synchronizationJob or synchronizationTemplate.
               - `[ContainerFilter <IMicrosoftGraphContainerFilter>]`: containerFilter
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                - `[IncludedContainers <String[]>]`: The identifiers of containers, such as organizational units, that are in scope for a synchronization rule. For Active Directory organizational units, use the distinguished names. An empty list means no container filtering is configured.
+                - `[IncludedContainers <String[]>]`: 
               - `[Editable <Boolean?>]`: true if the synchronization rule can be customized; false if this rule is read-only and shouldn't be changed.
               - `[GroupFilter <IMicrosoftGraphGroupFilter>]`: groupFilter
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                - `[IncludedGroups <String[]>]`: Identifiers of groups that are in scope for a synchronization rule. For Active Directory groups, use the distinguished names. An empty list means no group filtering is configured.
+                - `[IncludedGroups <String[]>]`: 
               - `[Id <String>]`: Synchronization rule identifier. Must be one of the identifiers recognized by the synchronization engine. Supported rule identifiers can be found in the synchronization template returned by the API.
               - `[Metadata <IMicrosoftGraphStringKeyStringValuePair[]>]`: Additional extension properties. Unless instructed explicitly by the support team, metadata values shouldn't be changed.
               - `[Name <String>]`: Human-readable name of the synchronization rule. Not nullable.
@@ -12489,8 +12427,8 @@ To create the parameters described below, construct a hash table containing the 
         - `[PhoneAppVersion <String>]`: Numerical version of this instance of the Authenticator app.
       - `[Operations <IMicrosoftGraphLongRunningOperation[]>]`: 
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
-        - `[CreatedDateTime <DateTime?>]`: The start time of the operation. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-        - `[LastActionDateTime <DateTime?>]`: The time of the last action in the operation. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+        - `[CreatedDateTime <DateTime?>]`: The start time of the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+        - `[LastActionDateTime <DateTime?>]`: The time of the last action in the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         - `[ResourceLocation <String>]`: URI of the resource that the operation is performed on.
         - `[Status <String>]`: longRunningOperationStatus
         - `[StatusDetail <String>]`: Details about the status of the operation.
@@ -12922,11 +12860,6 @@ To create the parameters described below, construct a hash table containing the 
           - `[Result <String>]`: cloudPcConnectivityEventResult
         - `[Status <String>]`: cloudPcConnectivityStatus
         - `[UpdatedDateTime <DateTime?>]`: Datetime when the status was updated. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.
-      - `[DisasterRecoveryCapability <IMicrosoftGraphCloudPcDisasterRecoveryCapability>]`: cloudPcDisasterRecoveryCapability
-        - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[CapabilityType <String>]`: cloudPcDisasterRecoveryCapabilityType
-        - `[PrimaryRegion <String>]`: 
-        - `[SecondaryRegion <String>]`: 
       - `[DiskEncryptionState <String>]`: cloudPcDiskEncryptionState
       - `[DisplayName <String>]`: The display name of the Cloud PC.
       - `[GracePeriodEndDateTime <DateTime?>]`: The date and time when the grace period ends and reprovisioning or deprovisioning happen. Required only if the status is inGracePeriod. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
@@ -14067,8 +14000,8 @@ To create the parameters described below, construct a hash table containing the 
           - `[Hidden <Boolean?>]`: If true, indicates that the list isn't normally visible in the SharePoint user experience.
           - `[Template <String>]`: An enumerated value that represents the base list template used in creating the list. Possible values include documentLibrary, genericList, task, survey, announcements, contacts, and more.
         - `[Operations <IMicrosoftGraphRichLongRunningOperation[]>]`: The collection of long-running operations on the list.
-          - `[CreatedDateTime <DateTime?>]`: The start time of the operation. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-          - `[LastActionDateTime <DateTime?>]`: The time of the last action in the operation. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+          - `[CreatedDateTime <DateTime?>]`: The start time of the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+          - `[LastActionDateTime <DateTime?>]`: The time of the last action in the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
           - `[ResourceLocation <String>]`: URI of the resource that the operation is performed on.
           - `[Status <String>]`: longRunningOperationStatus
           - `[StatusDetail <String>]`: Details about the status of the operation.
@@ -14451,18 +14384,11 @@ To create the parameters described below, construct a hash table containing the 
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
         - `[Plans <IMicrosoftGraphPlannerPlan[]>]`: Read-only. Nullable. Returns the plannerPlans owned by the group.
           - `[Id <String>]`: The unique identifier for an entity. Read-only.
-          - `[ArchivalInfo <IMicrosoftGraphPlannerArchivalInfo>]`: plannerArchivalInfo
-            - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[Justification <String>]`: 
-            - `[StatusChangedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-            - `[StatusChangedDateTime <DateTime?>]`: 
           - `[Buckets <IMicrosoftGraphPlannerBucket[]>]`: Collection of buckets in the plan. Read-only. Nullable.
             - `[Id <String>]`: The unique identifier for an entity. Read-only.
-            - `[ArchivalInfo <IMicrosoftGraphPlannerArchivalInfo>]`: plannerArchivalInfo
             - `[CreationSource <IMicrosoftGraphPlannerBucketCreation>]`: plannerBucketCreation
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[CreationSourceKind <String>]`: plannerCreationSourceKind
-            - `[IsArchived <Boolean?>]`: 
             - `[Name <String>]`: Name of the bucket.
             - `[OrderHint <String>]`: Hint used to order items of this type in a list view. For details about the supported format, see Using order hints in Planner.
             - `[PlanId <String>]`: Plan ID to which the bucket belongs.
@@ -14471,7 +14397,6 @@ To create the parameters described below, construct a hash table containing the 
               - `[ActiveChecklistItemCount <Int32?>]`: Number of checklist items with value set to false, representing incomplete items.
               - `[AppliedCategories <IMicrosoftGraphPlannerAppliedCategories>]`: plannerAppliedCategories
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[ArchivalInfo <IMicrosoftGraphPlannerArchivalInfo>]`: plannerArchivalInfo
               - `[AssignedToTaskBoardFormat <IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat>]`: plannerAssignedToTaskBoardTaskFormat
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -14507,34 +14432,20 @@ To create the parameters described below, construct a hash table containing the 
               - `[Details <IMicrosoftGraphPlannerTaskDetails>]`: plannerTaskDetails
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[Id <String>]`: The unique identifier for an entity. Read-only.
-                - `[ApprovalAttachment <IMicrosoftGraphPlannerBaseApprovalAttachment>]`: plannerBaseApprovalAttachment
-                  - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                  - `[Status <String>]`: plannerApprovalStatus
                 - `[Checklist <IMicrosoftGraphPlannerChecklistItems>]`: plannerChecklistItems
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[CompletionRequirements <IMicrosoftGraphPlannerTaskCompletionRequirementDetails>]`: plannerTaskCompletionRequirementDetails
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                  - `[ApprovalRequirement <IMicrosoftGraphPlannerApprovalRequirement>]`: plannerApprovalRequirement
-                    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                    - `[IsApprovalRequired <Boolean?>]`: 
                   - `[ChecklistRequirement <IMicrosoftGraphPlannerChecklistRequirement>]`: plannerChecklistRequirement
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
                     - `[RequiredChecklistItemIds <String[]>]`: A collection of required plannerChecklistItems identifiers to complete the plannerTask.
-                  - `[FormsRequirement <IMicrosoftGraphPlannerFormsRequirement>]`: plannerFormsRequirement
-                    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                    - `[RequiredForms <String[]>]`: 
                 - `[Description <String>]`: Description of the task.
-                - `[Forms <IMicrosoftGraphPlannerFormsDictionary>]`: plannerFormsDictionary
-                  - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[Notes <IMicrosoftGraphItemBody>]`: itemBody
                 - `[PreviewType <String>]`: plannerPreviewType
                 - `[References <IMicrosoftGraphPlannerExternalReferences>]`: plannerExternalReferences
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[DueDateTime <DateTime?>]`: Date and time at which the task is due. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
               - `[HasDescription <Boolean?>]`: Read-only. Value is true if the details object of the task has a nonempty description and false otherwise.
-              - `[IsArchived <Boolean?>]`: 
-              - `[IsOnMyDay <Boolean?>]`: 
-              - `[IsOnMyDayLastModifiedDate <DateTime?>]`: 
               - `[OrderHint <String>]`: Hint used to order items of this type in a list view. The format is defined as outlined here.
               - `[PercentComplete <Int32?>]`: Percentage of task completion. When set to 100, the task is considered completed.
               - `[PlanId <String>]`: Plan ID to which the task belongs.
@@ -14606,7 +14517,6 @@ To create the parameters described below, construct a hash table containing the 
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[SharedWith <IMicrosoftGraphPlannerUserIds>]`: plannerUserIds
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[IsArchived <Boolean?>]`: 
           - `[Owner <String>]`: 
           - `[SharedWithContainers <IMicrosoftGraphPlannerSharedWithContainer[]>]`: List of containers the plan is shared with.
             - `[ContainerId <String>]`: The identifier of the resource that contains the plan. Optional.
@@ -14646,7 +14556,6 @@ To create the parameters described below, construct a hash table containing the 
           - `[DisplayName <String>]`: Channel name as it will appear to the user in Microsoft Teams. The maximum length is 50 characters.
           - `[Email <String>]`: The email address for sending messages to the channel. Read-only.
           - `[FilesFolder <IMicrosoftGraphDriveItem>]`: driveItem
-          - `[IsArchived <Boolean?>]`: 
           - `[IsFavoriteByDefault <Boolean?>]`: Indicates whether the channel should automatically be marked 'favorite' for all members of the team. Can only be set programmatically with Create team. Default: false.
           - `[Members <IMicrosoftGraphConversationMember[]>]`: A collection of membership records associated with the channel.
           - `[MembershipType <String>]`: channelMembershipType
@@ -14722,11 +14631,11 @@ To create the parameters described below, construct a hash table containing the 
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Id <String>]`: The unique identifier for an entity. Read-only.
           - `[ActivitiesIncludedWhenCopyingShiftsEnabled <Boolean?>]`: Indicates whether copied shifts should include the activities.
-          - `[DayNotes <IMicrosoftGraphDayNote[]>]`: The day notes in the schedule.
+          - `[DayNotes <IMicrosoftGraphDayNote[]>]`: 
             - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
             - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
             - `[Id <String>]`: The unique identifier for an entity. Read-only.
-            - `[DayNoteDate <DateTime?>]`: The date of the day note.
+            - `[DayNoteDate <DateTime?>]`: 
             - `[DraftDayNote <IMicrosoftGraphItemBody>]`: itemBody
             - `[SharedDayNote <IMicrosoftGraphItemBody>]`: itemBody
           - `[Enabled <Boolean?>]`: Indicates whether the schedule is enabled for the team. Required.
@@ -14770,8 +14679,8 @@ To create the parameters described below, construct a hash table containing the 
               - `[StartDateTime <DateTime?>]`: 
               - `[Theme <String>]`: scheduleEntityTheme
               - `[OpenSlotCount <Int32?>]`: Count of the number of slots for the given open shift.
-            - `[IsStagedForDeletion <Boolean?>]`: The openShift is marked for deletion, a process that is finalized when the schedule is shared.
-            - `[SchedulingGroupId <String>]`: The ID of the schedulingGroup that contains the openShift.
+            - `[IsStagedForDeletion <Boolean?>]`: 
+            - `[SchedulingGroupId <String>]`: ID for the scheduling group that the open shift belongs to.
             - `[SharedOpenShift <IMicrosoftGraphOpenShiftItem>]`: openShiftItem
           - `[OpenShiftsEnabled <Boolean?>]`: Indicates whether open shifts are enabled for the schedule.
           - `[ProvisionStatus <String>]`: operationStatus
@@ -14794,7 +14703,7 @@ To create the parameters described below, construct a hash table containing the 
               - `[Activities <IMicrosoftGraphShiftActivity[]>]`: An incremental part of a shift which can cover details of when and where an employee is during their shift. For example, an assignment or a scheduled break or lunch. Required.
               - `[DisplayName <String>]`: The shift label of the shiftItem.
               - `[Notes <String>]`: The shift notes for the shiftItem.
-            - `[IsStagedForDeletion <Boolean?>]`: The shift is marked for deletion, a process that is finalized when the schedule is shared.
+            - `[IsStagedForDeletion <Boolean?>]`: 
             - `[SchedulingGroupId <String>]`: ID of the scheduling group the shift is part of. Required.
             - `[SharedShift <IMicrosoftGraphShiftItem>]`: shiftItem
             - `[UserId <String>]`: ID of the user assigned to the shift. Required.
@@ -14812,7 +14721,7 @@ To create the parameters described below, construct a hash table containing the 
             - `[Id <String>]`: The unique identifier for an entity. Read-only.
             - `[RecipientShiftId <String>]`: Shift ID for the recipient user with whom the request is to swap.
           - `[SwapShiftsRequestsEnabled <Boolean?>]`: Indicates whether swap shifts requests are enabled for the schedule.
-          - `[TimeCards <IMicrosoftGraphTimeCard[]>]`: The time cards in the schedule.
+          - `[TimeCards <IMicrosoftGraphTimeCard[]>]`: 
             - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
             - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
             - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -14871,7 +14780,7 @@ To create the parameters described below, construct a hash table containing the 
               - `[StartDateTime <DateTime?>]`: 
               - `[Theme <String>]`: scheduleEntityTheme
               - `[TimeOffReasonId <String>]`: ID of the timeOffReason for this timeOffItem. Required.
-            - `[IsStagedForDeletion <Boolean?>]`: The timeOff is marked for deletion, a process that is finalized when the schedule is shared.
+            - `[IsStagedForDeletion <Boolean?>]`: 
             - `[SharedTimeOff <IMicrosoftGraphTimeOffItem>]`: timeOffItem
             - `[UserId <String>]`: ID of the user assigned to the timeOff. Required.
           - `[WorkforceIntegrationIds <String[]>]`: The Ids for the workforce integrations associated with this schedule.
@@ -16580,8 +16489,6 @@ To create the parameters described below, construct a hash table containing the 
         - `[TeamsAppDefinition <IMicrosoftGraphTeamsAppDefinition>]`: teamsAppDefinition
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
         - `[Chat <IMicrosoftGraphChat>]`: chat
-      - `[Locale <String>]`: Represents the chosen locale of a user in Microsoft Teams.
-      - `[Region <String>]`: Represents the region of the user in Microsoft Teams.
     - `[Todo <IMicrosoftGraphTodo>]`: todo
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -16657,9 +16564,9 @@ To create the parameters described below, construct a hash table containing the 
           - `[OnPremises <IMicrosoftGraphIdentity>]`: identity
           - `[Phone <IMicrosoftGraphIdentity>]`: identity
         - `[Description <IMicrosoftGraphItemBody>]`: itemBody
-        - `[DisplayName <String>]`: Display name of the virtual event.
+        - `[DisplayName <String>]`: Display name of the virtual event
         - `[EndDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
-        - `[Presenters <IMicrosoftGraphVirtualEventPresenter[]>]`: The virtual event presenters.
+        - `[Presenters <IMicrosoftGraphVirtualEventPresenter[]>]`: Presenters' information of the virtual event.
           - `[Id <String>]`: The unique identifier for an entity. Read-only.
           - `[Email <String>]`: Email address of the presenter.
           - `[Identity <IMicrosoftGraphCommunicationsUserIdentity>]`: communicationsUserIdentity
@@ -16721,7 +16628,7 @@ To create the parameters described below, construct a hash table containing the 
               - `[Status <String>]`: virtualEventAttendeeRegistrationStatus
               - `[UserId <String>]`: The registrant's ID in Microsoft Entra ID. Only appears when the registrant is registered in Microsoft Entra ID.
             - `[StartDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
-        - `[Sessions <IMicrosoftGraphVirtualEventSession[]>]`: Sessions for the virtual event.
+        - `[Sessions <IMicrosoftGraphVirtualEventSession[]>]`: Sessions of the virtual event.
         - `[StartDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
         - `[Status <String>]`: virtualEventStatus
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -16961,7 +16868,6 @@ To create the parameters described below, construct a hash table containing the 
 
 `INPUTOBJECT <IGroupsIdentity>`: Identity Parameter
   - `[AttachmentId <String>]`: The unique identifier of attachment
-  - `[BaseSitePageId <String>]`: The unique identifier of baseSitePage
   - `[ContentTypeId <String>]`: The unique identifier of contentType
   - `[ConversationId <String>]`: The unique identifier of conversation
   - `[ConversationThreadId <String>]`: The unique identifier of conversationThread
@@ -16977,8 +16883,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[ExtensionId <String>]`: The unique identifier of extension
   - `[GroupId <String>]`: The unique identifier of group
   - `[GroupLifecyclePolicyId <String>]`: The unique identifier of groupLifecyclePolicy
-  - `[HorizontalSectionColumnId <String>]`: The unique identifier of horizontalSectionColumn
-  - `[HorizontalSectionId <String>]`: The unique identifier of horizontalSection
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}
   - `[Interval <String>]`: Usage: interval='{interval}'
   - `[ListId <String>]`: The unique identifier of list
@@ -17004,7 +16908,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[UniqueName <String>]`: Alternate key of group
   - `[User <String>]`: Usage: User='{User}'
   - `[UserId <String>]`: The unique identifier of user
-  - `[WebPartId <String>]`: The unique identifier of webPart
 
 `LICENSEPROCESSINGSTATE <IMicrosoftGraphLicenseProcessingState>`: licenseProcessingState
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -17161,25 +17064,11 @@ To create the parameters described below, construct a hash table containing the 
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Plans <IMicrosoftGraphPlannerPlan[]>]`: Read-only. Nullable. Returns the plannerPlans owned by the group.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[ArchivalInfo <IMicrosoftGraphPlannerArchivalInfo>]`: plannerArchivalInfo
-      - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Justification <String>]`: 
-      - `[StatusChangedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-        - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[Application <IMicrosoftGraphIdentity>]`: identity
-          - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-          - `[Id <String>]`: Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn't included in the response.
-        - `[Device <IMicrosoftGraphIdentity>]`: identity
-        - `[User <IMicrosoftGraphIdentity>]`: identity
-      - `[StatusChangedDateTime <DateTime?>]`: 
     - `[Buckets <IMicrosoftGraphPlannerBucket[]>]`: Collection of buckets in the plan. Read-only. Nullable.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
-      - `[ArchivalInfo <IMicrosoftGraphPlannerArchivalInfo>]`: plannerArchivalInfo
       - `[CreationSource <IMicrosoftGraphPlannerBucketCreation>]`: plannerBucketCreation
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[CreationSourceKind <String>]`: plannerCreationSourceKind
-      - `[IsArchived <Boolean?>]`: 
       - `[Name <String>]`: Name of the bucket.
       - `[OrderHint <String>]`: Hint used to order items of this type in a list view. For details about the supported format, see Using order hints in Planner.
       - `[PlanId <String>]`: Plan ID to which the bucket belongs.
@@ -17188,7 +17077,6 @@ To create the parameters described below, construct a hash table containing the 
         - `[ActiveChecklistItemCount <Int32?>]`: Number of checklist items with value set to false, representing incomplete items.
         - `[AppliedCategories <IMicrosoftGraphPlannerAppliedCategories>]`: plannerAppliedCategories
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[ArchivalInfo <IMicrosoftGraphPlannerArchivalInfo>]`: plannerArchivalInfo
         - `[AssignedToTaskBoardFormat <IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat>]`: plannerAssignedToTaskBoardTaskFormat
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -17205,6 +17093,13 @@ To create the parameters described below, construct a hash table containing the 
           - `[OrderHint <String>]`: Hint used to order tasks in the bucket view of the task board. For details about the supported format, see Using order hints in Planner.
         - `[ChecklistItemCount <Int32?>]`: Number of checklist items that are present on the task.
         - `[CompletedBy <IMicrosoftGraphIdentitySet>]`: identitySet
+          - `[(Any) <Object>]`: This indicates any property can be added to this object.
+          - `[Application <IMicrosoftGraphIdentity>]`: identity
+            - `[(Any) <Object>]`: This indicates any property can be added to this object.
+            - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+            - `[Id <String>]`: Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn't included in the response.
+          - `[Device <IMicrosoftGraphIdentity>]`: identity
+          - `[User <IMicrosoftGraphIdentity>]`: identity
         - `[CompletedDateTime <DateTime?>]`: Read-only. Date and time at which the 'percentComplete' of the task is set to '100'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
         - `[ConversationThreadId <String>]`: Thread ID of the conversation on the task. This is the ID of the conversation thread object created in the group.
         - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -17224,25 +17119,14 @@ To create the parameters described below, construct a hash table containing the 
         - `[Details <IMicrosoftGraphPlannerTaskDetails>]`: plannerTaskDetails
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Id <String>]`: The unique identifier for an entity. Read-only.
-          - `[ApprovalAttachment <IMicrosoftGraphPlannerBaseApprovalAttachment>]`: plannerBaseApprovalAttachment
-            - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[Status <String>]`: plannerApprovalStatus
           - `[Checklist <IMicrosoftGraphPlannerChecklistItems>]`: plannerChecklistItems
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[CompletionRequirements <IMicrosoftGraphPlannerTaskCompletionRequirementDetails>]`: plannerTaskCompletionRequirementDetails
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[ApprovalRequirement <IMicrosoftGraphPlannerApprovalRequirement>]`: plannerApprovalRequirement
-              - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[IsApprovalRequired <Boolean?>]`: 
             - `[ChecklistRequirement <IMicrosoftGraphPlannerChecklistRequirement>]`: plannerChecklistRequirement
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[RequiredChecklistItemIds <String[]>]`: A collection of required plannerChecklistItems identifiers to complete the plannerTask.
-            - `[FormsRequirement <IMicrosoftGraphPlannerFormsRequirement>]`: plannerFormsRequirement
-              - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[RequiredForms <String[]>]`: 
           - `[Description <String>]`: Description of the task.
-          - `[Forms <IMicrosoftGraphPlannerFormsDictionary>]`: plannerFormsDictionary
-            - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Notes <IMicrosoftGraphItemBody>]`: itemBody
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Content <String>]`: The content of the item.
@@ -17252,9 +17136,6 @@ To create the parameters described below, construct a hash table containing the 
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[DueDateTime <DateTime?>]`: Date and time at which the task is due. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
         - `[HasDescription <Boolean?>]`: Read-only. Value is true if the details object of the task has a nonempty description and false otherwise.
-        - `[IsArchived <Boolean?>]`: 
-        - `[IsOnMyDay <Boolean?>]`: 
-        - `[IsOnMyDayLastModifiedDate <DateTime?>]`: 
         - `[OrderHint <String>]`: Hint used to order items of this type in a list view. The format is defined as outlined here.
         - `[PercentComplete <Int32?>]`: Percentage of task completion. When set to 100, the task is considered completed.
         - `[PlanId <String>]`: Plan ID to which the task belongs.
@@ -17334,7 +17215,6 @@ To create the parameters described below, construct a hash table containing the 
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[SharedWith <IMicrosoftGraphPlannerUserIds>]`: plannerUserIds
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[IsArchived <Boolean?>]`: 
     - `[Owner <String>]`: 
     - `[SharedWithContainers <IMicrosoftGraphPlannerSharedWithContainer[]>]`: List of containers the plan is shared with.
       - `[ContainerId <String>]`: The identifier of the resource that contains the plan. Optional.
@@ -17708,11 +17588,11 @@ To create the parameters described below, construct a hash table containing the 
             - `[SynchronizationRules <IMicrosoftGraphSynchronizationRule[]>]`: A collection of synchronization rules configured for the synchronizationJob or synchronizationTemplate.
               - `[ContainerFilter <IMicrosoftGraphContainerFilter>]`: containerFilter
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                - `[IncludedContainers <String[]>]`: The identifiers of containers, such as organizational units, that are in scope for a synchronization rule. For Active Directory organizational units, use the distinguished names. An empty list means no container filtering is configured.
+                - `[IncludedContainers <String[]>]`: 
               - `[Editable <Boolean?>]`: true if the synchronization rule can be customized; false if this rule is read-only and shouldn't be changed.
               - `[GroupFilter <IMicrosoftGraphGroupFilter>]`: groupFilter
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                - `[IncludedGroups <String[]>]`: Identifiers of groups that are in scope for a synchronization rule. For Active Directory groups, use the distinguished names. An empty list means no group filtering is configured.
+                - `[IncludedGroups <String[]>]`: 
               - `[Id <String>]`: Synchronization rule identifier. Must be one of the identifiers recognized by the synchronization engine. Supported rule identifiers can be found in the synchronization template returned by the API.
               - `[Metadata <IMicrosoftGraphStringKeyStringValuePair[]>]`: Additional extension properties. Unless instructed explicitly by the support team, metadata values shouldn't be changed.
               - `[Name <String>]`: Human-readable name of the synchronization rule. Not nullable.
@@ -17964,8 +17844,8 @@ To create the parameters described below, construct a hash table containing the 
         - `[PhoneAppVersion <String>]`: Numerical version of this instance of the Authenticator app.
       - `[Operations <IMicrosoftGraphLongRunningOperation[]>]`: 
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
-        - `[CreatedDateTime <DateTime?>]`: The start time of the operation. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-        - `[LastActionDateTime <DateTime?>]`: The time of the last action in the operation. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+        - `[CreatedDateTime <DateTime?>]`: The start time of the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+        - `[LastActionDateTime <DateTime?>]`: The time of the last action in the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         - `[ResourceLocation <String>]`: URI of the resource that the operation is performed on.
         - `[Status <String>]`: longRunningOperationStatus
         - `[StatusDetail <String>]`: Details about the status of the operation.
@@ -18397,11 +18277,6 @@ To create the parameters described below, construct a hash table containing the 
           - `[Result <String>]`: cloudPcConnectivityEventResult
         - `[Status <String>]`: cloudPcConnectivityStatus
         - `[UpdatedDateTime <DateTime?>]`: Datetime when the status was updated. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.
-      - `[DisasterRecoveryCapability <IMicrosoftGraphCloudPcDisasterRecoveryCapability>]`: cloudPcDisasterRecoveryCapability
-        - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[CapabilityType <String>]`: cloudPcDisasterRecoveryCapabilityType
-        - `[PrimaryRegion <String>]`: 
-        - `[SecondaryRegion <String>]`: 
       - `[DiskEncryptionState <String>]`: cloudPcDiskEncryptionState
       - `[DisplayName <String>]`: The display name of the Cloud PC.
       - `[GracePeriodEndDateTime <DateTime?>]`: The date and time when the grace period ends and reprovisioning or deprovisioning happen. Required only if the status is inGracePeriod. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
@@ -19422,8 +19297,8 @@ To create the parameters described below, construct a hash table containing the 
           - `[Hidden <Boolean?>]`: If true, indicates that the list isn't normally visible in the SharePoint user experience.
           - `[Template <String>]`: An enumerated value that represents the base list template used in creating the list. Possible values include documentLibrary, genericList, task, survey, announcements, contacts, and more.
         - `[Operations <IMicrosoftGraphRichLongRunningOperation[]>]`: The collection of long-running operations on the list.
-          - `[CreatedDateTime <DateTime?>]`: The start time of the operation. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-          - `[LastActionDateTime <DateTime?>]`: The time of the last action in the operation. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+          - `[CreatedDateTime <DateTime?>]`: The start time of the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+          - `[LastActionDateTime <DateTime?>]`: The time of the last action in the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
           - `[ResourceLocation <String>]`: URI of the resource that the operation is performed on.
           - `[Status <String>]`: longRunningOperationStatus
           - `[StatusDetail <String>]`: Details about the status of the operation.
@@ -19857,18 +19732,11 @@ To create the parameters described below, construct a hash table containing the 
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
         - `[Plans <IMicrosoftGraphPlannerPlan[]>]`: Read-only. Nullable. Returns the plannerPlans owned by the group.
           - `[Id <String>]`: The unique identifier for an entity. Read-only.
-          - `[ArchivalInfo <IMicrosoftGraphPlannerArchivalInfo>]`: plannerArchivalInfo
-            - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[Justification <String>]`: 
-            - `[StatusChangedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-            - `[StatusChangedDateTime <DateTime?>]`: 
           - `[Buckets <IMicrosoftGraphPlannerBucket[]>]`: Collection of buckets in the plan. Read-only. Nullable.
             - `[Id <String>]`: The unique identifier for an entity. Read-only.
-            - `[ArchivalInfo <IMicrosoftGraphPlannerArchivalInfo>]`: plannerArchivalInfo
             - `[CreationSource <IMicrosoftGraphPlannerBucketCreation>]`: plannerBucketCreation
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[CreationSourceKind <String>]`: plannerCreationSourceKind
-            - `[IsArchived <Boolean?>]`: 
             - `[Name <String>]`: Name of the bucket.
             - `[OrderHint <String>]`: Hint used to order items of this type in a list view. For details about the supported format, see Using order hints in Planner.
             - `[PlanId <String>]`: Plan ID to which the bucket belongs.
@@ -19877,7 +19745,6 @@ To create the parameters described below, construct a hash table containing the 
               - `[ActiveChecklistItemCount <Int32?>]`: Number of checklist items with value set to false, representing incomplete items.
               - `[AppliedCategories <IMicrosoftGraphPlannerAppliedCategories>]`: plannerAppliedCategories
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[ArchivalInfo <IMicrosoftGraphPlannerArchivalInfo>]`: plannerArchivalInfo
               - `[AssignedToTaskBoardFormat <IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat>]`: plannerAssignedToTaskBoardTaskFormat
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -19913,34 +19780,20 @@ To create the parameters described below, construct a hash table containing the 
               - `[Details <IMicrosoftGraphPlannerTaskDetails>]`: plannerTaskDetails
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[Id <String>]`: The unique identifier for an entity. Read-only.
-                - `[ApprovalAttachment <IMicrosoftGraphPlannerBaseApprovalAttachment>]`: plannerBaseApprovalAttachment
-                  - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                  - `[Status <String>]`: plannerApprovalStatus
                 - `[Checklist <IMicrosoftGraphPlannerChecklistItems>]`: plannerChecklistItems
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[CompletionRequirements <IMicrosoftGraphPlannerTaskCompletionRequirementDetails>]`: plannerTaskCompletionRequirementDetails
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                  - `[ApprovalRequirement <IMicrosoftGraphPlannerApprovalRequirement>]`: plannerApprovalRequirement
-                    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                    - `[IsApprovalRequired <Boolean?>]`: 
                   - `[ChecklistRequirement <IMicrosoftGraphPlannerChecklistRequirement>]`: plannerChecklistRequirement
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
                     - `[RequiredChecklistItemIds <String[]>]`: A collection of required plannerChecklistItems identifiers to complete the plannerTask.
-                  - `[FormsRequirement <IMicrosoftGraphPlannerFormsRequirement>]`: plannerFormsRequirement
-                    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                    - `[RequiredForms <String[]>]`: 
                 - `[Description <String>]`: Description of the task.
-                - `[Forms <IMicrosoftGraphPlannerFormsDictionary>]`: plannerFormsDictionary
-                  - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[Notes <IMicrosoftGraphItemBody>]`: itemBody
                 - `[PreviewType <String>]`: plannerPreviewType
                 - `[References <IMicrosoftGraphPlannerExternalReferences>]`: plannerExternalReferences
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[DueDateTime <DateTime?>]`: Date and time at which the task is due. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
               - `[HasDescription <Boolean?>]`: Read-only. Value is true if the details object of the task has a nonempty description and false otherwise.
-              - `[IsArchived <Boolean?>]`: 
-              - `[IsOnMyDay <Boolean?>]`: 
-              - `[IsOnMyDayLastModifiedDate <DateTime?>]`: 
               - `[OrderHint <String>]`: Hint used to order items of this type in a list view. The format is defined as outlined here.
               - `[PercentComplete <Int32?>]`: Percentage of task completion. When set to 100, the task is considered completed.
               - `[PlanId <String>]`: Plan ID to which the task belongs.
@@ -20012,7 +19865,6 @@ To create the parameters described below, construct a hash table containing the 
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[SharedWith <IMicrosoftGraphPlannerUserIds>]`: plannerUserIds
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[IsArchived <Boolean?>]`: 
           - `[Owner <String>]`: 
           - `[SharedWithContainers <IMicrosoftGraphPlannerSharedWithContainer[]>]`: List of containers the plan is shared with.
             - `[ContainerId <String>]`: The identifier of the resource that contains the plan. Optional.
@@ -20052,7 +19904,6 @@ To create the parameters described below, construct a hash table containing the 
           - `[DisplayName <String>]`: Channel name as it will appear to the user in Microsoft Teams. The maximum length is 50 characters.
           - `[Email <String>]`: The email address for sending messages to the channel. Read-only.
           - `[FilesFolder <IMicrosoftGraphDriveItem>]`: driveItem
-          - `[IsArchived <Boolean?>]`: 
           - `[IsFavoriteByDefault <Boolean?>]`: Indicates whether the channel should automatically be marked 'favorite' for all members of the team. Can only be set programmatically with Create team. Default: false.
           - `[Members <IMicrosoftGraphConversationMember[]>]`: A collection of membership records associated with the channel.
           - `[MembershipType <String>]`: channelMembershipType
@@ -20128,11 +19979,11 @@ To create the parameters described below, construct a hash table containing the 
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Id <String>]`: The unique identifier for an entity. Read-only.
           - `[ActivitiesIncludedWhenCopyingShiftsEnabled <Boolean?>]`: Indicates whether copied shifts should include the activities.
-          - `[DayNotes <IMicrosoftGraphDayNote[]>]`: The day notes in the schedule.
+          - `[DayNotes <IMicrosoftGraphDayNote[]>]`: 
             - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
             - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
             - `[Id <String>]`: The unique identifier for an entity. Read-only.
-            - `[DayNoteDate <DateTime?>]`: The date of the day note.
+            - `[DayNoteDate <DateTime?>]`: 
             - `[DraftDayNote <IMicrosoftGraphItemBody>]`: itemBody
             - `[SharedDayNote <IMicrosoftGraphItemBody>]`: itemBody
           - `[Enabled <Boolean?>]`: Indicates whether the schedule is enabled for the team. Required.
@@ -20176,8 +20027,8 @@ To create the parameters described below, construct a hash table containing the 
               - `[StartDateTime <DateTime?>]`: 
               - `[Theme <String>]`: scheduleEntityTheme
               - `[OpenSlotCount <Int32?>]`: Count of the number of slots for the given open shift.
-            - `[IsStagedForDeletion <Boolean?>]`: The openShift is marked for deletion, a process that is finalized when the schedule is shared.
-            - `[SchedulingGroupId <String>]`: The ID of the schedulingGroup that contains the openShift.
+            - `[IsStagedForDeletion <Boolean?>]`: 
+            - `[SchedulingGroupId <String>]`: ID for the scheduling group that the open shift belongs to.
             - `[SharedOpenShift <IMicrosoftGraphOpenShiftItem>]`: openShiftItem
           - `[OpenShiftsEnabled <Boolean?>]`: Indicates whether open shifts are enabled for the schedule.
           - `[ProvisionStatus <String>]`: operationStatus
@@ -20200,7 +20051,7 @@ To create the parameters described below, construct a hash table containing the 
               - `[Activities <IMicrosoftGraphShiftActivity[]>]`: An incremental part of a shift which can cover details of when and where an employee is during their shift. For example, an assignment or a scheduled break or lunch. Required.
               - `[DisplayName <String>]`: The shift label of the shiftItem.
               - `[Notes <String>]`: The shift notes for the shiftItem.
-            - `[IsStagedForDeletion <Boolean?>]`: The shift is marked for deletion, a process that is finalized when the schedule is shared.
+            - `[IsStagedForDeletion <Boolean?>]`: 
             - `[SchedulingGroupId <String>]`: ID of the scheduling group the shift is part of. Required.
             - `[SharedShift <IMicrosoftGraphShiftItem>]`: shiftItem
             - `[UserId <String>]`: ID of the user assigned to the shift. Required.
@@ -20218,7 +20069,7 @@ To create the parameters described below, construct a hash table containing the 
             - `[Id <String>]`: The unique identifier for an entity. Read-only.
             - `[RecipientShiftId <String>]`: Shift ID for the recipient user with whom the request is to swap.
           - `[SwapShiftsRequestsEnabled <Boolean?>]`: Indicates whether swap shifts requests are enabled for the schedule.
-          - `[TimeCards <IMicrosoftGraphTimeCard[]>]`: The time cards in the schedule.
+          - `[TimeCards <IMicrosoftGraphTimeCard[]>]`: 
             - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
             - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
             - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -20277,7 +20128,7 @@ To create the parameters described below, construct a hash table containing the 
               - `[StartDateTime <DateTime?>]`: 
               - `[Theme <String>]`: scheduleEntityTheme
               - `[TimeOffReasonId <String>]`: ID of the timeOffReason for this timeOffItem. Required.
-            - `[IsStagedForDeletion <Boolean?>]`: The timeOff is marked for deletion, a process that is finalized when the schedule is shared.
+            - `[IsStagedForDeletion <Boolean?>]`: 
             - `[SharedTimeOff <IMicrosoftGraphTimeOffItem>]`: timeOffItem
             - `[UserId <String>]`: ID of the user assigned to the timeOff. Required.
           - `[WorkforceIntegrationIds <String[]>]`: The Ids for the workforce integrations associated with this schedule.
@@ -21986,8 +21837,6 @@ To create the parameters described below, construct a hash table containing the 
         - `[TeamsAppDefinition <IMicrosoftGraphTeamsAppDefinition>]`: teamsAppDefinition
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
         - `[Chat <IMicrosoftGraphChat>]`: chat
-      - `[Locale <String>]`: Represents the chosen locale of a user in Microsoft Teams.
-      - `[Region <String>]`: Represents the region of the user in Microsoft Teams.
     - `[Todo <IMicrosoftGraphTodo>]`: todo
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -22063,9 +21912,9 @@ To create the parameters described below, construct a hash table containing the 
           - `[OnPremises <IMicrosoftGraphIdentity>]`: identity
           - `[Phone <IMicrosoftGraphIdentity>]`: identity
         - `[Description <IMicrosoftGraphItemBody>]`: itemBody
-        - `[DisplayName <String>]`: Display name of the virtual event.
+        - `[DisplayName <String>]`: Display name of the virtual event
         - `[EndDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
-        - `[Presenters <IMicrosoftGraphVirtualEventPresenter[]>]`: The virtual event presenters.
+        - `[Presenters <IMicrosoftGraphVirtualEventPresenter[]>]`: Presenters' information of the virtual event.
           - `[Id <String>]`: The unique identifier for an entity. Read-only.
           - `[Email <String>]`: Email address of the presenter.
           - `[Identity <IMicrosoftGraphCommunicationsUserIdentity>]`: communicationsUserIdentity
@@ -22127,7 +21976,7 @@ To create the parameters described below, construct a hash table containing the 
               - `[Status <String>]`: virtualEventAttendeeRegistrationStatus
               - `[UserId <String>]`: The registrant's ID in Microsoft Entra ID. Only appears when the registrant is registered in Microsoft Entra ID.
             - `[StartDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
-        - `[Sessions <IMicrosoftGraphVirtualEventSession[]>]`: Sessions for the virtual event.
+        - `[Sessions <IMicrosoftGraphVirtualEventSession[]>]`: Sessions of the virtual event.
         - `[StartDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
         - `[Status <String>]`: virtualEventStatus
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -22613,11 +22462,11 @@ To create the parameters described below, construct a hash table containing the 
                 - `[SynchronizationRules <IMicrosoftGraphSynchronizationRule[]>]`: A collection of synchronization rules configured for the synchronizationJob or synchronizationTemplate.
                   - `[ContainerFilter <IMicrosoftGraphContainerFilter>]`: containerFilter
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                    - `[IncludedContainers <String[]>]`: The identifiers of containers, such as organizational units, that are in scope for a synchronization rule. For Active Directory organizational units, use the distinguished names. An empty list means no container filtering is configured.
+                    - `[IncludedContainers <String[]>]`: 
                   - `[Editable <Boolean?>]`: true if the synchronization rule can be customized; false if this rule is read-only and shouldn't be changed.
                   - `[GroupFilter <IMicrosoftGraphGroupFilter>]`: groupFilter
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                    - `[IncludedGroups <String[]>]`: Identifiers of groups that are in scope for a synchronization rule. For Active Directory groups, use the distinguished names. An empty list means no group filtering is configured.
+                    - `[IncludedGroups <String[]>]`: 
                   - `[Id <String>]`: Synchronization rule identifier. Must be one of the identifiers recognized by the synchronization engine. Supported rule identifiers can be found in the synchronization template returned by the API.
                   - `[Metadata <IMicrosoftGraphStringKeyStringValuePair[]>]`: Additional extension properties. Unless instructed explicitly by the support team, metadata values shouldn't be changed.
                   - `[Name <String>]`: Human-readable name of the synchronization rule. Not nullable.
@@ -22869,8 +22718,8 @@ To create the parameters described below, construct a hash table containing the 
             - `[PhoneAppVersion <String>]`: Numerical version of this instance of the Authenticator app.
           - `[Operations <IMicrosoftGraphLongRunningOperation[]>]`: 
             - `[Id <String>]`: The unique identifier for an entity. Read-only.
-            - `[CreatedDateTime <DateTime?>]`: The start time of the operation. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-            - `[LastActionDateTime <DateTime?>]`: The time of the last action in the operation. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+            - `[CreatedDateTime <DateTime?>]`: The start time of the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+            - `[LastActionDateTime <DateTime?>]`: The time of the last action in the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             - `[ResourceLocation <String>]`: URI of the resource that the operation is performed on.
             - `[Status <String>]`: longRunningOperationStatus
             - `[StatusDetail <String>]`: Details about the status of the operation.
@@ -23302,11 +23151,6 @@ To create the parameters described below, construct a hash table containing the 
               - `[Result <String>]`: cloudPcConnectivityEventResult
             - `[Status <String>]`: cloudPcConnectivityStatus
             - `[UpdatedDateTime <DateTime?>]`: Datetime when the status was updated. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.
-          - `[DisasterRecoveryCapability <IMicrosoftGraphCloudPcDisasterRecoveryCapability>]`: cloudPcDisasterRecoveryCapability
-            - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[CapabilityType <String>]`: cloudPcDisasterRecoveryCapabilityType
-            - `[PrimaryRegion <String>]`: 
-            - `[SecondaryRegion <String>]`: 
           - `[DiskEncryptionState <String>]`: cloudPcDiskEncryptionState
           - `[DisplayName <String>]`: The display name of the Cloud PC.
           - `[GracePeriodEndDateTime <DateTime?>]`: The date and time when the grace period ends and reprovisioning or deprovisioning happen. Required only if the status is inGracePeriod. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
@@ -23818,8 +23662,8 @@ To create the parameters described below, construct a hash table containing the 
               - `[Hidden <Boolean?>]`: If true, indicates that the list isn't normally visible in the SharePoint user experience.
               - `[Template <String>]`: An enumerated value that represents the base list template used in creating the list. Possible values include documentLibrary, genericList, task, survey, announcements, contacts, and more.
             - `[Operations <IMicrosoftGraphRichLongRunningOperation[]>]`: The collection of long-running operations on the list.
-              - `[CreatedDateTime <DateTime?>]`: The start time of the operation. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-              - `[LastActionDateTime <DateTime?>]`: The time of the last action in the operation. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+              - `[CreatedDateTime <DateTime?>]`: The start time of the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+              - `[LastActionDateTime <DateTime?>]`: The time of the last action in the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
               - `[ResourceLocation <String>]`: URI of the resource that the operation is performed on.
               - `[Status <String>]`: longRunningOperationStatus
               - `[StatusDetail <String>]`: Details about the status of the operation.
@@ -24409,18 +24253,11 @@ To create the parameters described below, construct a hash table containing the 
             - `[Id <String>]`: The unique identifier for an entity. Read-only.
             - `[Plans <IMicrosoftGraphPlannerPlan[]>]`: Read-only. Nullable. Returns the plannerPlans owned by the group.
               - `[Id <String>]`: The unique identifier for an entity. Read-only.
-              - `[ArchivalInfo <IMicrosoftGraphPlannerArchivalInfo>]`: plannerArchivalInfo
-                - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                - `[Justification <String>]`: 
-                - `[StatusChangedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-                - `[StatusChangedDateTime <DateTime?>]`: 
               - `[Buckets <IMicrosoftGraphPlannerBucket[]>]`: Collection of buckets in the plan. Read-only. Nullable.
                 - `[Id <String>]`: The unique identifier for an entity. Read-only.
-                - `[ArchivalInfo <IMicrosoftGraphPlannerArchivalInfo>]`: plannerArchivalInfo
                 - `[CreationSource <IMicrosoftGraphPlannerBucketCreation>]`: plannerBucketCreation
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
                   - `[CreationSourceKind <String>]`: plannerCreationSourceKind
-                - `[IsArchived <Boolean?>]`: 
                 - `[Name <String>]`: Name of the bucket.
                 - `[OrderHint <String>]`: Hint used to order items of this type in a list view. For details about the supported format, see Using order hints in Planner.
                 - `[PlanId <String>]`: Plan ID to which the bucket belongs.
@@ -24429,7 +24266,6 @@ To create the parameters described below, construct a hash table containing the 
                   - `[ActiveChecklistItemCount <Int32?>]`: Number of checklist items with value set to false, representing incomplete items.
                   - `[AppliedCategories <IMicrosoftGraphPlannerAppliedCategories>]`: plannerAppliedCategories
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                  - `[ArchivalInfo <IMicrosoftGraphPlannerArchivalInfo>]`: plannerArchivalInfo
                   - `[AssignedToTaskBoardFormat <IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat>]`: plannerAssignedToTaskBoardTaskFormat
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
                     - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -24465,34 +24301,20 @@ To create the parameters described below, construct a hash table containing the 
                   - `[Details <IMicrosoftGraphPlannerTaskDetails>]`: plannerTaskDetails
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
                     - `[Id <String>]`: The unique identifier for an entity. Read-only.
-                    - `[ApprovalAttachment <IMicrosoftGraphPlannerBaseApprovalAttachment>]`: plannerBaseApprovalAttachment
-                      - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                      - `[Status <String>]`: plannerApprovalStatus
                     - `[Checklist <IMicrosoftGraphPlannerChecklistItems>]`: plannerChecklistItems
                       - `[(Any) <Object>]`: This indicates any property can be added to this object.
                     - `[CompletionRequirements <IMicrosoftGraphPlannerTaskCompletionRequirementDetails>]`: plannerTaskCompletionRequirementDetails
                       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                      - `[ApprovalRequirement <IMicrosoftGraphPlannerApprovalRequirement>]`: plannerApprovalRequirement
-                        - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                        - `[IsApprovalRequired <Boolean?>]`: 
                       - `[ChecklistRequirement <IMicrosoftGraphPlannerChecklistRequirement>]`: plannerChecklistRequirement
                         - `[(Any) <Object>]`: This indicates any property can be added to this object.
                         - `[RequiredChecklistItemIds <String[]>]`: A collection of required plannerChecklistItems identifiers to complete the plannerTask.
-                      - `[FormsRequirement <IMicrosoftGraphPlannerFormsRequirement>]`: plannerFormsRequirement
-                        - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                        - `[RequiredForms <String[]>]`: 
                     - `[Description <String>]`: Description of the task.
-                    - `[Forms <IMicrosoftGraphPlannerFormsDictionary>]`: plannerFormsDictionary
-                      - `[(Any) <Object>]`: This indicates any property can be added to this object.
                     - `[Notes <IMicrosoftGraphItemBody>]`: itemBody
                     - `[PreviewType <String>]`: plannerPreviewType
                     - `[References <IMicrosoftGraphPlannerExternalReferences>]`: plannerExternalReferences
                       - `[(Any) <Object>]`: This indicates any property can be added to this object.
                   - `[DueDateTime <DateTime?>]`: Date and time at which the task is due. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
                   - `[HasDescription <Boolean?>]`: Read-only. Value is true if the details object of the task has a nonempty description and false otherwise.
-                  - `[IsArchived <Boolean?>]`: 
-                  - `[IsOnMyDay <Boolean?>]`: 
-                  - `[IsOnMyDayLastModifiedDate <DateTime?>]`: 
                   - `[OrderHint <String>]`: Hint used to order items of this type in a list view. The format is defined as outlined here.
                   - `[PercentComplete <Int32?>]`: Percentage of task completion. When set to 100, the task is considered completed.
                   - `[PlanId <String>]`: Plan ID to which the task belongs.
@@ -24564,7 +24386,6 @@ To create the parameters described below, construct a hash table containing the 
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[SharedWith <IMicrosoftGraphPlannerUserIds>]`: plannerUserIds
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[IsArchived <Boolean?>]`: 
               - `[Owner <String>]`: 
               - `[SharedWithContainers <IMicrosoftGraphPlannerSharedWithContainer[]>]`: List of containers the plan is shared with.
                 - `[ContainerId <String>]`: The identifier of the resource that contains the plan. Optional.
@@ -26265,8 +26086,6 @@ To create the parameters described below, construct a hash table containing the 
             - `[TeamsAppDefinition <IMicrosoftGraphTeamsAppDefinition>]`: teamsAppDefinition
             - `[Id <String>]`: The unique identifier for an entity. Read-only.
             - `[Chat <IMicrosoftGraphChat>]`: chat
-          - `[Locale <String>]`: Represents the chosen locale of a user in Microsoft Teams.
-          - `[Region <String>]`: Represents the region of the user in Microsoft Teams.
         - `[Todo <IMicrosoftGraphTodo>]`: todo
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -26342,9 +26161,9 @@ To create the parameters described below, construct a hash table containing the 
               - `[OnPremises <IMicrosoftGraphIdentity>]`: identity
               - `[Phone <IMicrosoftGraphIdentity>]`: identity
             - `[Description <IMicrosoftGraphItemBody>]`: itemBody
-            - `[DisplayName <String>]`: Display name of the virtual event.
+            - `[DisplayName <String>]`: Display name of the virtual event
             - `[EndDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
-            - `[Presenters <IMicrosoftGraphVirtualEventPresenter[]>]`: The virtual event presenters.
+            - `[Presenters <IMicrosoftGraphVirtualEventPresenter[]>]`: Presenters' information of the virtual event.
               - `[Id <String>]`: The unique identifier for an entity. Read-only.
               - `[Email <String>]`: Email address of the presenter.
               - `[Identity <IMicrosoftGraphCommunicationsUserIdentity>]`: communicationsUserIdentity
@@ -26406,7 +26225,7 @@ To create the parameters described below, construct a hash table containing the 
                   - `[Status <String>]`: virtualEventAttendeeRegistrationStatus
                   - `[UserId <String>]`: The registrant's ID in Microsoft Entra ID. Only appears when the registrant is registered in Microsoft Entra ID.
                 - `[StartDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
-            - `[Sessions <IMicrosoftGraphVirtualEventSession[]>]`: Sessions for the virtual event.
+            - `[Sessions <IMicrosoftGraphVirtualEventSession[]>]`: Sessions of the virtual event.
             - `[StartDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
             - `[Status <String>]`: virtualEventStatus
             - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -26882,7 +26701,6 @@ To create the parameters described below, construct a hash table containing the 
           - `[Status <String>]`: workbookOperationStatus
         - `[Tables <IMicrosoftGraphWorkbookTable[]>]`: Represents a collection of tables associated with the workbook. Read-only.
         - `[Worksheets <IMicrosoftGraphWorkbookWorksheet[]>]`: Represents a collection of worksheets associated with the workbook. Read-only.
-    - `[IsArchived <Boolean?>]`: 
     - `[IsFavoriteByDefault <Boolean?>]`: Indicates whether the channel should automatically be marked 'favorite' for all members of the team. Can only be set programmatically with Create team. Default: false.
     - `[Members <IMicrosoftGraphConversationMember[]>]`: A collection of membership records associated with the channel.
     - `[MembershipType <String>]`: channelMembershipType
@@ -26958,11 +26776,11 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[ActivitiesIncludedWhenCopyingShiftsEnabled <Boolean?>]`: Indicates whether copied shifts should include the activities.
-    - `[DayNotes <IMicrosoftGraphDayNote[]>]`: The day notes in the schedule.
+    - `[DayNotes <IMicrosoftGraphDayNote[]>]`: 
       - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
       - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
-      - `[DayNoteDate <DateTime?>]`: The date of the day note.
+      - `[DayNoteDate <DateTime?>]`: 
       - `[DraftDayNote <IMicrosoftGraphItemBody>]`: itemBody
       - `[SharedDayNote <IMicrosoftGraphItemBody>]`: itemBody
     - `[Enabled <Boolean?>]`: Indicates whether the schedule is enabled for the team. Required.
@@ -27006,8 +26824,8 @@ To create the parameters described below, construct a hash table containing the 
         - `[StartDateTime <DateTime?>]`: 
         - `[Theme <String>]`: scheduleEntityTheme
         - `[OpenSlotCount <Int32?>]`: Count of the number of slots for the given open shift.
-      - `[IsStagedForDeletion <Boolean?>]`: The openShift is marked for deletion, a process that is finalized when the schedule is shared.
-      - `[SchedulingGroupId <String>]`: The ID of the schedulingGroup that contains the openShift.
+      - `[IsStagedForDeletion <Boolean?>]`: 
+      - `[SchedulingGroupId <String>]`: ID for the scheduling group that the open shift belongs to.
       - `[SharedOpenShift <IMicrosoftGraphOpenShiftItem>]`: openShiftItem
     - `[OpenShiftsEnabled <Boolean?>]`: Indicates whether open shifts are enabled for the schedule.
     - `[ProvisionStatus <String>]`: operationStatus
@@ -27030,7 +26848,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[Activities <IMicrosoftGraphShiftActivity[]>]`: An incremental part of a shift which can cover details of when and where an employee is during their shift. For example, an assignment or a scheduled break or lunch. Required.
         - `[DisplayName <String>]`: The shift label of the shiftItem.
         - `[Notes <String>]`: The shift notes for the shiftItem.
-      - `[IsStagedForDeletion <Boolean?>]`: The shift is marked for deletion, a process that is finalized when the schedule is shared.
+      - `[IsStagedForDeletion <Boolean?>]`: 
       - `[SchedulingGroupId <String>]`: ID of the scheduling group the shift is part of. Required.
       - `[SharedShift <IMicrosoftGraphShiftItem>]`: shiftItem
       - `[UserId <String>]`: ID of the user assigned to the shift. Required.
@@ -27048,7 +26866,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[RecipientShiftId <String>]`: Shift ID for the recipient user with whom the request is to swap.
     - `[SwapShiftsRequestsEnabled <Boolean?>]`: Indicates whether swap shifts requests are enabled for the schedule.
-    - `[TimeCards <IMicrosoftGraphTimeCard[]>]`: The time cards in the schedule.
+    - `[TimeCards <IMicrosoftGraphTimeCard[]>]`: 
       - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
       - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -27107,7 +26925,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[StartDateTime <DateTime?>]`: 
         - `[Theme <String>]`: scheduleEntityTheme
         - `[TimeOffReasonId <String>]`: ID of the timeOffReason for this timeOffItem. Required.
-      - `[IsStagedForDeletion <Boolean?>]`: The timeOff is marked for deletion, a process that is finalized when the schedule is shared.
+      - `[IsStagedForDeletion <Boolean?>]`: 
       - `[SharedTimeOff <IMicrosoftGraphTimeOffItem>]`: timeOffItem
       - `[UserId <String>]`: ID of the user assigned to the timeOff. Required.
     - `[WorkforceIntegrationIds <String[]>]`: The Ids for the workforce integrations associated with this schedule.

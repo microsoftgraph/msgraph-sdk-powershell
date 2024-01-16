@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgVirtualEventWebinarSessionAttendanceReport
 
 ## SYNOPSIS
-The attendance reports of an online meeting.
-Read-only.
+Get attendanceReports from solutions
 
 ## SYNTAX
 
@@ -35,8 +34,7 @@ Get-MgVirtualEventWebinarSessionAttendanceReport -InputObject <IBookingsIdentity
 ```
 
 ## DESCRIPTION
-The attendance reports of an online meeting.
-Read-only.
+Get attendanceReports from solutions
 
 ## EXAMPLES
 

@@ -8,8 +8,7 @@ schema: 2.0.0
 # Move-MgBetaPlannerPlanToContainer
 
 ## SYNOPSIS
-Move a planner plan object from one planner plan container to another.
-Planner plans can only be moved from a user container to a group container.
+Invoke action moveToContainer
 
 ## SYNTAX
 
@@ -40,8 +39,7 @@ Move-MgBetaPlannerPlanToContainer -InputObject <IPlannerIdentity> [-AdditionalPr
 ```
 
 ## DESCRIPTION
-Move a planner plan object from one planner plan container to another.
-Planner plans can only be moved from a user container to a group container.
+Invoke action moveToContainer
 
 ## EXAMPLES
 

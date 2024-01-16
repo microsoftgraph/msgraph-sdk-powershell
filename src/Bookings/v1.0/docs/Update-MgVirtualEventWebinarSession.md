@@ -91,7 +91,7 @@ Accept wildcard characters: False
 ```
 
 ### -AllowAttendeeToEnableCamera
-Indicates whether attendees can turn on their camera.
+.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -106,7 +106,7 @@ Accept wildcard characters: False
 ```
 
 ### -AllowAttendeeToEnableMic
-Indicates whether attendees can turn on their microphone.
+.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -151,7 +151,7 @@ Accept wildcard characters: False
 ```
 
 ### -AllowParticipantsToChangeName
-Specifies if participants are allowed to rename themselves in an instance of the meeting.
+.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -166,7 +166,7 @@ Accept wildcard characters: False
 ```
 
 ### -AllowTeamworkReactions
-Indicates if Teams reactions are enabled for the meeting.
+.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -181,8 +181,7 @@ Accept wildcard characters: False
 ```
 
 ### -AttendanceReports
-The attendance reports of an online meeting.
-Read-only.
+.
 To construct, see NOTES section for ATTENDANCEREPORTS properties and create a hash table.
 
 ```yaml
@@ -294,7 +293,7 @@ Accept wildcard characters: False
 ```
 
 ### -IsEntryExitAnnounced
-Indicates whether to announce when callers join or leave.
+.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -341,8 +340,7 @@ Accept wildcard characters: False
 ```
 
 ### -JoinWebUrl
-The join URL of the online meeting.
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -373,7 +371,7 @@ Accept wildcard characters: False
 ```
 
 ### -RecordAutomatically
-Indicates whether to record the meeting automatically.
+.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -419,7 +417,7 @@ Accept wildcard characters: False
 ```
 
 ### -Subject
-The subject of the online meeting.
+.
 
 ```yaml
 Type: System.String
@@ -434,8 +432,7 @@ Accept wildcard characters: False
 ```
 
 ### -VideoTeleconferenceId
-The video teleconferencing ID.
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -548,7 +545,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-`ATTENDANCEREPORTS <IMicrosoftGraphMeetingAttendanceReport[]>`: The attendance reports of an online meeting. Read-only.
+`ATTENDANCEREPORTS <IMicrosoftGraphMeetingAttendanceReport[]>`: .
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[AttendanceRecords <IMicrosoftGraphAttendanceRecord[]>]`: List of attendance records of an attendance report. Read-only.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -578,13 +575,13 @@ To create the parameters described below, construct a hash table containing the 
 
 `BODYPARAMETER <IMicrosoftGraphVirtualEventSession>`: virtualEventSession
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[AllowAttendeeToEnableCamera <Boolean?>]`: Indicates whether attendees can turn on their camera.
-  - `[AllowAttendeeToEnableMic <Boolean?>]`: Indicates whether attendees can turn on their microphone.
+  - `[AllowAttendeeToEnableCamera <Boolean?>]`: 
+  - `[AllowAttendeeToEnableMic <Boolean?>]`: 
   - `[AllowMeetingChat <String>]`: meetingChatMode
-  - `[AllowParticipantsToChangeName <Boolean?>]`: Specifies if participants are allowed to rename themselves in an instance of the meeting.
-  - `[AllowTeamworkReactions <Boolean?>]`: Indicates if Teams reactions are enabled for the meeting.
+  - `[AllowParticipantsToChangeName <Boolean?>]`: 
+  - `[AllowTeamworkReactions <Boolean?>]`: 
   - `[AllowedPresenters <String>]`: onlineMeetingPresenters
-  - `[AttendanceReports <IMicrosoftGraphMeetingAttendanceReport[]>]`: The attendance reports of an online meeting. Read-only.
+  - `[AttendanceReports <IMicrosoftGraphMeetingAttendanceReport[]>]`: 
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[AttendanceRecords <IMicrosoftGraphAttendanceRecord[]>]`: List of attendance records of an attendance report. Read-only.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -615,7 +612,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[MessageId <String>]`: The unique identifier of a message in a Microsoft Teams channel.
     - `[ReplyChainMessageId <String>]`: The ID of the reply message.
     - `[ThreadId <String>]`: The unique identifier for a thread in Microsoft Teams.
-  - `[IsEntryExitAnnounced <Boolean?>]`: Indicates whether to announce when callers join or leave.
+  - `[IsEntryExitAnnounced <Boolean?>]`: 
   - `[JoinInformation <IMicrosoftGraphItemBody>]`: itemBody
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Content <String>]`: The content of the item.
@@ -625,15 +622,15 @@ To create the parameters described below, construct a hash table containing the 
     - `[IsPasscodeRequired <Boolean?>]`: Indicates whether a passcode is required to join a meeting when using joinMeetingId. Optional.
     - `[JoinMeetingId <String>]`: The meeting ID to be used to join a meeting. Optional. Read-only.
     - `[Passcode <String>]`: The passcode to join a meeting.  Optional. Read-only.
-  - `[JoinWebUrl <String>]`: The join URL of the online meeting. Read-only.
+  - `[JoinWebUrl <String>]`: 
   - `[LobbyBypassSettings <IMicrosoftGraphLobbyBypassSettings>]`: lobbyBypassSettings
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[IsDialInBypassEnabled <Boolean?>]`: Specifies whether or not to always let dial-in callers bypass the lobby. Optional.
     - `[Scope <String>]`: lobbyBypassScope
-  - `[RecordAutomatically <Boolean?>]`: Indicates whether to record the meeting automatically.
+  - `[RecordAutomatically <Boolean?>]`: 
   - `[ShareMeetingChatHistoryDefault <String>]`: meetingChatHistoryDefaultMode
-  - `[Subject <String>]`: The subject of the online meeting.
-  - `[VideoTeleconferenceId <String>]`: The video teleconferencing ID. Read-only.
+  - `[Subject <String>]`: 
+  - `[VideoTeleconferenceId <String>]`: 
   - `[WatermarkProtection <IMicrosoftGraphWatermarkProtectionValues>]`: watermarkProtectionValues
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[IsEnabledForContentSharing <Boolean?>]`: Indicates whether to apply a watermark to any shared content.

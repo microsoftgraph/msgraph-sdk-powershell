@@ -24,18 +24,6 @@ New-MgBetaBookingCurrency -BodyParameter <IMicrosoftGraphBookingCurrency> [-Conf
  [<CommonParameters>]
 ```
 
-### Create1
-```
-New-MgBetaBookingCurrency -BodyParameter <IMicrosoftGraphBookingCurrency> [-Confirm] [-WhatIf]
- [<CommonParameters>]
-```
-
-### CreateExpanded1
-```
-New-MgBetaBookingCurrency [-AdditionalProperties <Hashtable>] [-Id <String>] [-Symbol <String>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
-```
-
 ## DESCRIPTION
 Add new entity to bookingCurrencies
 
@@ -62,7 +50,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: CreateExpanded, CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -78,7 +66,7 @@ To construct, see NOTES section for BODYPARAMETER properties and create a hash t
 
 ```yaml
 Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBookingCurrency
-Parameter Sets: Create, Create1
+Parameter Sets: Create
 Aliases:
 
 Required: True
@@ -94,7 +82,7 @@ Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -110,7 +98,7 @@ For example, the currency symbol for the US dollar and for the Australian dollar
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False

@@ -19,23 +19,11 @@ Describe 'Get-MgBetaBookingCurrency' {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
-    It 'Get1' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
-    }
-
     It 'Get' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
-    It 'GetViaIdentity1' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
-    }
-
     It 'GetViaIdentity' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
-    }
-
-    It 'List1' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 }

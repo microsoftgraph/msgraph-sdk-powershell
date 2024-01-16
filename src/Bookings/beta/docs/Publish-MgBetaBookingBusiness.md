@@ -19,19 +19,7 @@ Publish-MgBetaBookingBusiness -BookingBusinessId <String> [-PassThru] [-Confirm]
  [<CommonParameters>]
 ```
 
-### Publish1
-```
-Publish-MgBetaBookingBusiness -BookingBusinessId <String> [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
-```
-
 ### PublishViaIdentity
-```
-Publish-MgBetaBookingBusiness -InputObject <IBookingsIdentity> [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
-```
-
-### PublishViaIdentity1
 ```
 Publish-MgBetaBookingBusiness -InputObject <IBookingsIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -58,7 +46,7 @@ The unique identifier of bookingBusiness
 
 ```yaml
 Type: System.String
-Parameter Sets: Publish, Publish1
+Parameter Sets: Publish
 Aliases:
 
 Required: True
@@ -74,7 +62,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Microsoft.Graph.Beta.PowerShell.Models.IBookingsIdentity
-Parameter Sets: PublishViaIdentity, PublishViaIdentity1
+Parameter Sets: PublishViaIdentity
 Aliases:
 
 Required: True

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.CloudCommunications
-Module Guid: c751e5eb-716d-4cdb-8032-f2774300d8ca
+Module Guid: aa037956-7e4c-4da1-a250-cd8bf4c486f6
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.cloudcommunications
 Help Version: 1.0.0.0
 Locale: en-US
@@ -134,7 +134,7 @@ Get the number of the resource
 Invoke function delta
 
 ### [Get-MgBetaCommunicationOnlineMeetingRegistration](Get-MgBetaCommunicationOnlineMeetingRegistration.md)
-Get the externalMeetingRegistration details associated with an onlineMeeting.
+Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
 
 ### [Get-MgBetaCommunicationOnlineMeetingRegistrationCustomQuestion](Get-MgBetaCommunicationOnlineMeetingRegistrationCustomQuestion.md)
 Get a custom registration question associated with a meetingRegistration object on behalf of the organizer.
@@ -220,7 +220,7 @@ Read-only.
 Get the number of the resource
 
 ### [Get-MgBetaUserOnlineMeetingRegistration](Get-MgBetaUserOnlineMeetingRegistration.md)
-Get the externalMeetingRegistration details associated with an onlineMeeting.
+Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
 
 ### [Get-MgBetaUserOnlineMeetingRegistrationCustomQuestion](Get-MgBetaUserOnlineMeetingRegistrationCustomQuestion.md)
 Get a custom registration question associated with a meetingRegistration object on behalf of the organizer.
@@ -453,7 +453,7 @@ Delete navigation property attendanceRecords for communications
 Delete navigation property recordings for communications
 
 ### [Remove-MgBetaCommunicationOnlineMeetingRegistration](Remove-MgBetaCommunicationOnlineMeetingRegistration.md)
-Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
+Disable and delete the externalMeetingRegistration of an onlineMeeting.
 
 ### [Remove-MgBetaCommunicationOnlineMeetingRegistrationCustomQuestion](Remove-MgBetaCommunicationOnlineMeetingRegistrationCustomQuestion.md)
 Delete a custom registration question from a meetingRegistration object on behalf of the organizer.
@@ -480,7 +480,7 @@ Delete navigation property attendanceRecords for users
 Delete navigation property recordings for users
 
 ### [Remove-MgBetaUserOnlineMeetingRegistration](Remove-MgBetaUserOnlineMeetingRegistration.md)
-Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
+Disable and delete the externalMeetingRegistration of an onlineMeeting.
 
 ### [Remove-MgBetaUserOnlineMeetingRegistrationCustomQuestion](Remove-MgBetaUserOnlineMeetingRegistrationCustomQuestion.md)
 Delete a custom registration question from a meetingRegistration object on behalf of the organizer.
@@ -501,13 +501,10 @@ Allow applications to share screen content with the participants of a group call
 Invoke action sendDtmfTones
 
 ### [Send-MgBetaCommunicationOnlineMeetingVirtualAppointmentReminderSm](Send-MgBetaCommunicationOnlineMeetingVirtualAppointmentReminderSm.md)
-Send an SMS reminder to external attendees for a Teams Virtual Appointment.
-This feature requires Teams Premium and attendees must have a valid United States phone number to receive SMS notifications.
+Invoke action sendVirtualAppointmentReminderSms
 
 ### [Send-MgBetaCommunicationOnlineMeetingVirtualAppointmentSm](Send-MgBetaCommunicationOnlineMeetingVirtualAppointmentSm.md)
-Send an SMS notification to external attendees when a Teams Virtual Appointment is confirmed, rescheduled, or canceled.
-This feature requires Teams Premium.
-Attendees must have a valid United States phone number to receive these SMS notifications.
+Invoke action sendVirtualAppointmentSms
 
 ### [Set-MgBetaCommunicationOnlineMeetingAlternativeRecording](Set-MgBetaCommunicationOnlineMeetingAlternativeRecording.md)
 Update alternativeRecording for the navigation property onlineMeetings in communications

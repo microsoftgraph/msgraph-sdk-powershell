@@ -15,8 +15,8 @@ Create a new bookingCustomQuestion object.
 ### CreateExpanded (Default)
 ```
 New-MgBetaBookingBusinessCustomQuestion -BookingBusinessId <String> [-AdditionalProperties <Hashtable>]
- [-AnswerInputType <String>] [-AnswerOptions <String[]>] [-CreatedDateTime <DateTime>] [-DisplayName <String>]
- [-Id <String>] [-LastUpdatedDateTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AnswerInputType <String>] [-AnswerOptions <String[]>] [-DisplayName <String>] [-Id <String>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
@@ -25,26 +25,7 @@ New-MgBetaBookingBusinessCustomQuestion -BookingBusinessId <String>
  -BodyParameter <IMicrosoftGraphBookingCustomQuestion> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Create1
-```
-New-MgBetaBookingBusinessCustomQuestion -BookingBusinessId <String>
- -BodyParameter <IMicrosoftGraphBookingCustomQuestion> [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### CreateExpanded1
-```
-New-MgBetaBookingBusinessCustomQuestion -BookingBusinessId <String> [-AdditionalProperties <Hashtable>]
- [-AnswerInputType <String>] [-AnswerOptions <String[]>] [-CreatedDateTime <DateTime>] [-DisplayName <String>]
- [-Id <String>] [-LastUpdatedDateTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
 ### CreateViaIdentity
-```
-New-MgBetaBookingBusinessCustomQuestion -InputObject <IBookingsIdentity>
- -BodyParameter <IMicrosoftGraphBookingCustomQuestion> [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### CreateViaIdentity1
 ```
 New-MgBetaBookingBusinessCustomQuestion -InputObject <IBookingsIdentity>
  -BodyParameter <IMicrosoftGraphBookingCustomQuestion> [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -53,15 +34,8 @@ New-MgBetaBookingBusinessCustomQuestion -InputObject <IBookingsIdentity>
 ### CreateViaIdentityExpanded
 ```
 New-MgBetaBookingBusinessCustomQuestion -InputObject <IBookingsIdentity> [-AdditionalProperties <Hashtable>]
- [-AnswerInputType <String>] [-AnswerOptions <String[]>] [-CreatedDateTime <DateTime>] [-DisplayName <String>]
- [-Id <String>] [-LastUpdatedDateTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### CreateViaIdentityExpanded1
-```
-New-MgBetaBookingBusinessCustomQuestion -InputObject <IBookingsIdentity> [-AdditionalProperties <Hashtable>]
- [-AnswerInputType <String>] [-AnswerOptions <String[]>] [-CreatedDateTime <DateTime>] [-DisplayName <String>]
- [-Id <String>] [-LastUpdatedDateTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AnswerInputType <String>] [-AnswerOptions <String[]>] [-DisplayName <String>] [-Id <String>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -90,7 +64,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -105,7 +79,7 @@ answerInputType
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -120,7 +94,7 @@ List of possible answer values.
 
 ```yaml
 Type: System.String[]
-Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -136,7 +110,7 @@ To construct, see NOTES section for BODYPARAMETER properties and create a hash t
 
 ```yaml
 Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBookingCustomQuestion
-Parameter Sets: Create, Create1, CreateViaIdentity, CreateViaIdentity1
+Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
 Required: True
@@ -151,25 +125,10 @@ The unique identifier of bookingBusiness
 
 ```yaml
 Type: System.String
-Parameter Sets: Create, Create1, CreateExpanded, CreateExpanded1
+Parameter Sets: Create, CreateExpanded
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -CreatedDateTime
-.
-
-```yaml
-Type: System.DateTime
-Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -181,7 +140,7 @@ Display name of this entity.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -197,7 +156,7 @@ Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -213,28 +172,13 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Microsoft.Graph.Beta.PowerShell.Models.IBookingsIdentity
-Parameter Sets: CreateViaIdentity, CreateViaIdentity1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -LastUpdatedDateTime
-.
-
-```yaml
-Type: System.DateTime
-Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -296,9 +240,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[AnswerInputType <String>]`: answerInputType
   - `[AnswerOptions <String[]>]`: List of possible answer values.
-  - `[CreatedDateTime <DateTime?>]`: 
   - `[DisplayName <String>]`: Display name of this entity.
-  - `[LastUpdatedDateTime <DateTime?>]`: 
 
 `INPUTOBJECT <IBookingsIdentity>`: Identity Parameter
   - `[AttendanceRecordId <String>]`: The unique identifier of attendanceRecord

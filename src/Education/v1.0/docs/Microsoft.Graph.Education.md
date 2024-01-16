@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Education
-Module Guid: c878db92-7d8f-4309-b2c6-26183fdf7e28
+Module Guid: 13fd4f40-2956-4b61-a490-e3e1c02adb3f
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.education
 Help Version: 1.0.0.0
 Locale: en-US
@@ -48,9 +48,6 @@ Only teachers can perform this operation.
 ### [Get-MgEducationClassAssignmentDelta](Get-MgEducationClassAssignmentDelta.md)
 Invoke function delta
 
-### [Get-MgEducationClassAssignmentGradingCategory](Get-MgEducationClassAssignmentGradingCategory.md)
-Get gradingCategory from education
-
 ### [Get-MgEducationClassAssignmentResource](Get-MgEducationClassAssignmentResource.md)
 Get the properties of an education assignment resource associated with an assignment.
 Only teachers, students, and applications with application permissions can perform this operation.
@@ -68,12 +65,6 @@ Only teachers, students, and applications with application permissions can perfo
 
 ### [Get-MgEducationClassAssignmentSetting](Get-MgEducationClassAssignmentSetting.md)
 Specifies class-level assignments settings.
-
-### [Get-MgEducationClassAssignmentSettingGradingCategory](Get-MgEducationClassAssignmentSettingGradingCategory.md)
-Get gradingCategories from education
-
-### [Get-MgEducationClassAssignmentSettingGradingCategoryCount](Get-MgEducationClassAssignmentSettingGradingCategoryCount.md)
-Get the number of the resource
 
 ### [Get-MgEducationClassAssignmentSubmission](Get-MgEducationClassAssignmentSubmission.md)
 Retrieve a particular submission.
@@ -123,8 +114,7 @@ Invoke function delta
 The underlying Microsoft 365 group object.
 
 ### [Get-MgEducationClassGroupServiceProvisioningError](Get-MgEducationClassGroupServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a group object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgEducationClassGroupServiceProvisioningErrorCount](Get-MgEducationClassGroupServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -181,9 +171,6 @@ Get the number of the resource
 
 ### [Get-MgEducationMeAssignmentDelta](Get-MgEducationMeAssignmentDelta.md)
 Invoke function delta
-
-### [Get-MgEducationMeAssignmentGradingCategory](Get-MgEducationMeAssignmentGradingCategory.md)
-Get gradingCategory from education
 
 ### [Get-MgEducationMeAssignmentResource](Get-MgEducationMeAssignmentResource.md)
 Get the properties of an education assignment resource associated with an assignment.
@@ -270,12 +257,11 @@ Retrieve the simple directory user that corresponds to this educationUser.
 
 ### [Get-MgEducationMeUserMailboxSetting](Get-MgEducationMeUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgEducationMeUserServiceProvisioningError](Get-MgEducationMeUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgEducationMeUserServiceProvisioningErrorCount](Get-MgEducationMeUserServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -338,9 +324,6 @@ Get the number of the resource
 
 ### [Get-MgEducationUserAssignmentDelta](Get-MgEducationUserAssignmentDelta.md)
 Invoke function delta
-
-### [Get-MgEducationUserAssignmentGradingCategory](Get-MgEducationUserAssignmentGradingCategory.md)
-Get gradingCategory from education
 
 ### [Get-MgEducationUserAssignmentResource](Get-MgEducationUserAssignmentResource.md)
 Get the properties of an education assignment resource associated with an assignment.
@@ -410,7 +393,7 @@ Invoke function delta
 
 ### [Get-MgEducationUserMailboxSetting](Get-MgEducationUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgEducationUserRubric](Get-MgEducationUserRubric.md)
@@ -428,8 +411,7 @@ Nullable.
 Get the number of the resource
 
 ### [Get-MgEducationUserServiceProvisioningError](Get-MgEducationUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgEducationUserServiceProvisioningErrorCount](Get-MgEducationUserServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -523,9 +505,6 @@ Only teachers can perform this operation.
 Create an assignment resource.
 Only teachers can perform this operation.
 You can create the following types of assignment resources: Every resource has an @odata.type property to indicate which type of resource is being created.
-
-### [New-MgEducationClassAssignmentSettingGradingCategory](New-MgEducationClassAssignmentSettingGradingCategory.md)
-Create new navigation property to gradingCategories for education
 
 ### [New-MgEducationClassAssignmentSubmission](New-MgEducationClassAssignmentSubmission.md)
 Create new navigation property to submissions for education
@@ -704,9 +683,6 @@ This method doesn't delete the rubric itself and can only be performed by teache
 
 ### [Remove-MgEducationClassAssignmentSetting](Remove-MgEducationClassAssignmentSetting.md)
 Delete navigation property assignmentSettings for education
-
-### [Remove-MgEducationClassAssignmentSettingGradingCategory](Remove-MgEducationClassAssignmentSettingGradingCategory.md)
-Delete navigation property gradingCategories for education
 
 ### [Remove-MgEducationClassAssignmentSubmission](Remove-MgEducationClassAssignmentSubmission.md)
 Delete navigation property submissions for education
@@ -938,9 +914,6 @@ Only teachers can perform this operation.
 ### [Update-MgEducationClassAssignmentSetting](Update-MgEducationClassAssignmentSetting.md)
 Update the properties of an educationAssignmentSettings object.
 Only teachers can update these settings.
-
-### [Update-MgEducationClassAssignmentSettingGradingCategory](Update-MgEducationClassAssignmentSettingGradingCategory.md)
-Update the navigation property gradingCategories in education
 
 ### [Update-MgEducationClassAssignmentSubmission](Update-MgEducationClassAssignmentSubmission.md)
 Update the navigation property submissions in education

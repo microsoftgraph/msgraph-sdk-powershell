@@ -8,16 +8,15 @@ schema: 2.0.0
 # Send-MgBetaUserOnlineMeetingVirtualAppointmentReminderSm
 
 ## SYNOPSIS
-Send an SMS reminder to external attendees for a Teams Virtual Appointment.
-This feature requires Teams Premium and attendees must have a valid United States phone number to receive SMS notifications.
+Invoke action sendVirtualAppointmentReminderSms
 
 ## SYNTAX
 
 ### SendExpanded (Default)
 ```
 Send-MgBetaUserOnlineMeetingVirtualAppointmentReminderSm -OnlineMeetingId <String> -UserId <String>
- [-AdditionalProperties <Hashtable>] [-Attendees <IMicrosoftGraphAttendeeNotificationInfo[]>]
- [-RemindBeforeTimeInMinutesType <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-PhoneNumbers <String[]>] [-RemindBeforeTimeInMinutesType <String>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Send
@@ -37,13 +36,12 @@ Send-MgBetaUserOnlineMeetingVirtualAppointmentReminderSm -InputObject <IUsersAct
 ### SendViaIdentityExpanded
 ```
 Send-MgBetaUserOnlineMeetingVirtualAppointmentReminderSm -InputObject <IUsersActionsIdentity>
- [-AdditionalProperties <Hashtable>] [-Attendees <IMicrosoftGraphAttendeeNotificationInfo[]>]
- [-RemindBeforeTimeInMinutesType <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-PhoneNumbers <String[]>] [-RemindBeforeTimeInMinutesType <String>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Send an SMS reminder to external attendees for a Teams Virtual Appointment.
-This feature requires Teams Premium and attendees must have a valid United States phone number to receive SMS notifications.
+Invoke action sendVirtualAppointmentReminderSms
 
 ## EXAMPLES
 
@@ -68,22 +66,6 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: SendExpanded, SendViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Attendees
-.
-To construct, see NOTES section for ATTENDEES properties and create a hash table.
-
-```yaml
-Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAttendeeNotificationInfo[]
 Parameter Sets: SendExpanded, SendViaIdentityExpanded
 Aliases:
 
@@ -147,6 +129,21 @@ Returns true when the command succeeds
 ```yaml
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PhoneNumbers
+.
+
+```yaml
+Type: System.String[]
+Parameter Sets: SendExpanded, SendViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -239,15 +236,9 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-`ATTENDEES <IMicrosoftGraphAttendeeNotificationInfo[]>`: .
-  - `[PhoneNumber <String>]`: 
-  - `[TimeZone <String>]`: 
-
 `BODYPARAMETER <IPaths1Mid4FyUsersUserIdOnlinemeetingsOnlinemeetingIdMicrosoftGraphSendvirtualappointmentremindersmsPostRequestbodyContentApplicationJsonSchema>`: .
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Attendees <IMicrosoftGraphAttendeeNotificationInfo[]>]`: 
-    - `[PhoneNumber <String>]`: 
-    - `[TimeZone <String>]`: 
+  - `[PhoneNumbers <String[]>]`: 
   - `[RemindBeforeTimeInMinutesType <String>]`: remindBeforeTimeInMinutesType
 
 `INPUTOBJECT <IUsersActionsIdentity>`: Identity Parameter

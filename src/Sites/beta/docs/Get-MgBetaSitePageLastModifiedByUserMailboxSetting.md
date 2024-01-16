@@ -21,19 +21,7 @@ Get-MgBetaSitePageLastModifiedByUserMailboxSetting -BaseSitePageId <String> -Sit
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
-### Get1
-```
-Get-MgBetaSitePageLastModifiedByUserMailboxSetting -BaseSitePageId <String> -SiteId <String>
- [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
-```
-
 ### GetViaIdentity
-```
-Get-MgBetaSitePageLastModifiedByUserMailboxSetting -InputObject <ISitesIdentity> [-ExpandProperty <String[]>]
- [-Property <String[]>] [<CommonParameters>]
-```
-
-### GetViaIdentity1
 ```
 Get-MgBetaSitePageLastModifiedByUserMailboxSetting -InputObject <ISitesIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
@@ -68,7 +56,7 @@ The unique identifier of baseSitePage
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, Get1
+Parameter Sets: Get
 Aliases:
 
 Required: True
@@ -99,7 +87,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
-Parameter Sets: GetViaIdentity, GetViaIdentity1
+Parameter Sets: GetViaIdentity
 Aliases:
 
 Required: True
@@ -129,7 +117,7 @@ The unique identifier of site
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, Get1
+Parameter Sets: Get
 Aliases:
 
 Required: True
@@ -173,8 +161,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[EndDateTime <String>]`: Usage: endDateTime='{endDateTime}'
   - `[GroupId <String>]`: The unique identifier of group
   - `[GroupId1 <String>]`: The unique identifier of group
-  - `[HorizontalSectionColumnId <String>]`: The unique identifier of horizontalSectionColumn
-  - `[HorizontalSectionId <String>]`: The unique identifier of horizontalSection
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}
   - `[InformationProtectionLabelId <String>]`: The unique identifier of informationProtectionLabel
   - `[Interval <String>]`: Usage: interval='{interval}'
@@ -210,7 +196,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[ThreatAssessmentResultId <String>]`: The unique identifier of threatAssessmentResult
   - `[Token <String>]`: Usage: token='{token}'
   - `[UserId <String>]`: The unique identifier of user
-  - `[WebPartId <String>]`: The unique identifier of webPart
 
 ## RELATED LINKS
 

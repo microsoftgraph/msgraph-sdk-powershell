@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ## SYNTAX
@@ -30,7 +30,7 @@ Get-MgIdentityGovernanceLifecycleWorkflowVersionTaskProcessingResultSubjectMailb
 
 ## DESCRIPTION
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ## EXAMPLES

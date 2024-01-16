@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Groups
-Module Guid: bb1a85c2-9d9d-4e21-b874-eefc38cac755
+Module Guid: 33ce9f67-4ae2-472f-a0dd-04af338de932
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.groups
 Help Version: 1.0.0.0
 Locale: en-US
@@ -543,15 +543,6 @@ Invoke function getActivitiesByInterval
 ### [Get-MgBetaGroupSiteListItemDelta](Get-MgBetaGroupSiteListItemDelta.md)
 Invoke function delta
 
-### [Get-MgBetaGroupSitePageMicrosoftGraphSitePageCanvaLayoutHorizontalSectionColumnWebpartPositionOfWebPart](Get-MgBetaGroupSitePageMicrosoftGraphSitePageCanvaLayoutHorizontalSectionColumnWebpartPositionOfWebPart.md)
-Invoke action getPositionOfWebPart
-
-### [Get-MgBetaGroupSitePageMicrosoftGraphSitePageCanvaLayoutVerticalSectionWebpartPositionOfWebPart](Get-MgBetaGroupSitePageMicrosoftGraphSitePageCanvaLayoutVerticalSectionWebpartPositionOfWebPart.md)
-Invoke action getPositionOfWebPart
-
-### [Get-MgBetaGroupSitePageMicrosoftGraphSitePageWebPartPositionOfWebPart](Get-MgBetaGroupSitePageMicrosoftGraphSitePageWebPartPositionOfWebPart.md)
-Invoke action getPositionOfWebPart
-
 ### [Get-MgBetaGroupThread](Get-MgBetaGroupThread.md)
 Get a thread object.
 
@@ -705,9 +696,6 @@ Accept the specified event in a user calendar.
 Tentatively accept the specified event in a user calendar.
 If the event allows proposals for new times, on responding tentative to the event, an invitee can choose to suggest an alternative time by including the proposedNewTime parameter.
 For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.
-
-### [Invoke-MgBetaArchiveGroupPlannerPlan](Invoke-MgBetaArchiveGroupPlannerPlan.md)
-Invoke action archive
 
 ### [Invoke-MgBetaBufferGroupSiteInformationProtectionDecrypt](Invoke-MgBetaBufferGroupSiteInformationProtectionDecrypt.md)
 Invoke action decryptBuffer
@@ -869,9 +857,6 @@ Postpone a reminder for an event in a user calendar until a new time.
 Calling this method will enable the current user to receive email notifications for this group, about new posts, events, and files in that group.
 Supported for Microsoft 365 groups only.
 
-### [Invoke-MgBetaUnarchiveGroupPlannerPlan](Invoke-MgBetaUnarchiveGroupPlannerPlan.md)
-Invoke action unarchive
-
 ### [Invoke-MgBetaUnfollowGroupDriveItem](Invoke-MgBetaUnfollowGroupDriveItem.md)
 Unfollow a driveItem.
 
@@ -888,8 +873,7 @@ Associate a [content type][contentType] with a list of hub sites.
 Associate a [content type][contentType] with a list of hub sites.
 
 ### [Move-MgBetaGroupPlannerPlanToContainer](Move-MgBetaGroupPlannerPlanToContainer.md)
-Move a planner plan object from one planner plan container to another.
-Planner plans can only be moved from a user container to a group container.
+Invoke action moveToContainer
 
 ### [New-MgBetaGroup](New-MgBetaGroup.md)
 Create a new group as specified in the request body.
@@ -1164,7 +1148,7 @@ Delete navigation property settings for groups
 Unfollow a user's site or multiple sites.
 
 ### [Remove-MgBetaGroupThread](Remove-MgBetaGroupThread.md)
-Delete conversationThread.
+Delete a thread object.
 
 ### [Remove-MgBetaGroupThreadPostAttachment](Remove-MgBetaGroupThreadPostAttachment.md)
 Delete navigation property attachments for groups

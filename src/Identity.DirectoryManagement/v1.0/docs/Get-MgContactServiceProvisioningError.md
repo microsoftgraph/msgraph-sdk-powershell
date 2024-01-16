@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgContactServiceProvisioningError
 
 ## SYNOPSIS
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from an organizational contact object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ## SYNTAX
 
@@ -20,8 +19,7 @@ Get-MgContactServiceProvisioningError -OrgContactId <String> [-ExpandProperty <S
 ```
 
 ## DESCRIPTION
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from an organizational contact object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ## EXAMPLES
 

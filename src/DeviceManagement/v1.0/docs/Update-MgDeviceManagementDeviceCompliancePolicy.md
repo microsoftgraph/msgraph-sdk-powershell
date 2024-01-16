@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceManagementDeviceCompliancePolicy
 
 ## SYNOPSIS
-Update the properties of a windows81CompliancePolicy object.
+Update the properties of a windowsPhone81CompliancePolicy object.
 
 ## SYNTAX
 
@@ -55,7 +55,7 @@ Update-MgDeviceManagementDeviceCompliancePolicy -InputObject <IDeviceManagementI
 ```
 
 ## DESCRIPTION
-Update the properties of a windows81CompliancePolicy object.
+Update the properties of a windowsPhone81CompliancePolicy object.
 
 ## EXAMPLES
 

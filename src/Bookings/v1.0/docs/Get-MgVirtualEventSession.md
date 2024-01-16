@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgVirtualEventSession
 
 ## SYNOPSIS
-Sessions for the virtual event.
+Get sessions from solutions
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgVirtualEventSession -InputObject <IBookingsIdentity> [-ExpandProperty <Str
 ```
 
 ## DESCRIPTION
-Sessions for the virtual event.
+Get sessions from solutions
 
 ## EXAMPLES
 

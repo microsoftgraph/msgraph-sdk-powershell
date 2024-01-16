@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Identity.Governance
-Module Guid: 7dfaf074-9a54-4200-a398-1d8db04119c7
+Module Guid: 2b48e72e-f783-401a-be39-bbdad7af8927
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.identity.governance
 Help Version: 1.0.0.0
 Locale: en-US
@@ -146,9 +146,7 @@ Get entity from businessFlowTemplates by key
 Get the number of the resource
 
 ### [Get-MgBetaEntitlementManagementAccessPackage](Get-MgBetaEntitlementManagementAccessPackage.md)
-Retrieve an access package with a list of accessPackageResourceRoleScope objects.
-These objects represent the resource roles that an access package assigns to each subject.
-Each object links to an accessPackageResourceRole and an accessPackageResourceScope.
+Retrieve the properties and relationships of an accessPackage object.
 
 ### [Get-MgBetaEntitlementManagementAccessPackageApplicablePolicyRequirement](Get-MgBetaEntitlementManagementAccessPackageApplicablePolicyRequirement.md)
 In Microsoft Entra entitlement management, this action retrieves a list of accessPackageAssignmentRequestRequirements objects that the currently signed-in user can use to create an accessPackageAssignmentRequest.
@@ -199,7 +197,7 @@ Get the number of the resource
 Retrieve the properties and relationships of an accessPackageCatalog object.
 
 ### [Get-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageCustomWorkflowExtension](Get-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageCustomWorkflowExtension.md)
-Read the properties and relationships of an accessPackageAssignmentRequestWorkflowExtension object.
+Read the properties and relationships of an accessPackageAssignmentWorkflowExtension object.
 
 ### [Get-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageResource](Get-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageResource.md)
 Retrieve a list of accessPackageResource objects in an accessPackageCatalog.
@@ -1102,7 +1100,8 @@ Represents operations on resources that take a long time to complete and can run
 Get the number of the resource
 
 ### [Get-MgBetaIdentityGovernanceTermsOfUseAgreement](Get-MgBetaIdentityGovernanceTermsOfUseAgreement.md)
-Retrieve the properties and relationships of an agreement object.
+Retrieve all files related to an agreement.
+This includes the default file and all localized files.
 
 ### [Get-MgBetaIdentityGovernanceTermsOfUseAgreementAcceptance](Get-MgBetaIdentityGovernanceTermsOfUseAgreementAcceptance.md)
 Represents the current status of a user's response to a company's customizable terms of use agreement.
@@ -3067,14 +3066,14 @@ Delete an accessPackageCatalog.
 Delete navigation property accessPackageCustomWorkflowExtensions for identityGovernance
 
 ### [Remove-MgBetaEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension](Remove-MgBetaEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension.md)
-Delete a customAccessPackageWorkflowExtension object.
+Delete an accessPackageAssignmentWorkflowExtension object.
 The custom workflow extension must first be removed from any associated policies before it can be deleted.
 Follow these steps to remove the custom workflow extension from any associated policies:\n1.
 First retrieve the accessPackageCatalogId by calling the Get accessPackageAssignmentPolicies operation and appending ?$expand=accessPackage($expand=accessPackageCatalog) to the query.
 For example, https://graph.microsoft.com/beta/identityGovernance/entitlementManagement/accessPackageAssignmentPolicies?$expand=accessPackage($expand=accessPackageCatalog).\n2.
-Use the access package catalog ID and retrieve the ID of the customAccessPackageWorkflowExtension object that you want to delete by running the LIST customAccessPackageWorkflowExtensions operation.\n3.
+Use the access package catalog ID and retrieve the ID of the accessPackageCustomWorkflowExtension object that you want to delete by running the List accessPackageCustomWorkflowExtensions operation.\n3.
 Call the Update accessPackageAssignmentPolicy operation to remove the custom workflow extension object from the policy.
-For an example, see Example 2: Remove the customExtensionHandlers and verifiableCredentialSettings from a policy.
+For an example, see Example 3: Remove the customExtensionStageSettings from a policy.
 
 ### [Remove-MgBetaEntitlementManagementAccessPackageIncompatibleAccessPackageByRef](Remove-MgBetaEntitlementManagementAccessPackageIncompatibleAccessPackageByRef.md)
 Remove an access package from the list of access packages that have been marked as incompatible on an accessPackage.
@@ -3675,9 +3674,6 @@ Send a reminder to the reviewers of a currently active accessReviewInstance.
 ### [Set-MgBetaEntitlementManagementAccessPackageAssignmentPolicy](Set-MgBetaEntitlementManagementAccessPackageAssignmentPolicy.md)
 Update the navigation property accessPackageAssignmentPolicies in identityGovernance
 
-### [Set-MgBetaIdentityGovernanceAccessReviewDefinition](Set-MgBetaIdentityGovernanceAccessReviewDefinition.md)
-Update the navigation property definitions in identityGovernance
-
 ### [Split-MgBetaEntitlementManagementConnectedOrganization](Split-MgBetaEntitlementManagementConnectedOrganization.md)
 Split elements of a connectedOrganization
 
@@ -3845,7 +3841,7 @@ Invoke action reprocess
 Update an existing accessPackageCatalog object to change one or more of its properties, such as the display name or description.
 
 ### [Update-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageCustomWorkflowExtension](Update-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageCustomWorkflowExtension.md)
-Update the properties of an accessPackageAssignmentWorkflowExtension object.
+Update the properties of an accessPackageAssignmentRequestWorkflowExtension object.
 
 ### [Update-MgBetaEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension](Update-MgBetaEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension.md)
 Update the properties of an existing customAccessPackageWorkflowExtension object.
@@ -3894,6 +3890,9 @@ Update access decisions, known as accessReviewInstanceDecisionItems, for which t
 
 ### [Update-MgBetaIdentityGovernanceAccessReviewDecisionInstanceStageDecisionInsight](Update-MgBetaIdentityGovernanceAccessReviewDecisionInstanceStageDecisionInsight.md)
 Update the navigation property insights in identityGovernance
+
+### [Update-MgBetaIdentityGovernanceAccessReviewDefinition](Update-MgBetaIdentityGovernanceAccessReviewDefinition.md)
+Update an existing accessReviewScheduleDefinition object to change one or more of its properties.
 
 ### [Update-MgBetaIdentityGovernanceAccessReviewDefinitionInstance](Update-MgBetaIdentityGovernanceAccessReviewDefinitionInstance.md)
 Update the properties of an accessReviewInstance object.

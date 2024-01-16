@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Mail
-Module Guid: 1abf48a6-e830-45c1-848e-54d87a9e9ab2
+Module Guid: 75424c0c-e979-4cd3-9903-809ea06fa6f3
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.mail
 Help Version: 1.0.0.0
 Locale: en-US
@@ -249,7 +249,7 @@ If an override exists for a sender and the sender changes his/her display name, 
 If an override exists for a sender and the sender changes his/her SMTP address, deleting the existing override and creating a new one with\nthe new SMTP address is the only way to 'update' the override for this sender.
 
 ### [Update-MgUserMailFolder](Update-MgUserMailFolder.md)
-Update the writable properties of a mailSearchFolder object.
+Update the properties of mailfolder object.
 
 ### [Update-MgUserMailFolderChildFolder](Update-MgUserMailFolderChildFolder.md)
 Update the navigation property childFolders in users

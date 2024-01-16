@@ -26,29 +26,10 @@ Get-MgBetaBookingCurrency -BookingCurrencyId <String> [-ExpandProperty <String[]
  [<CommonParameters>]
 ```
 
-### Get1
-```
-Get-MgBetaBookingCurrency -BookingCurrencyId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
- [<CommonParameters>]
-```
-
 ### GetViaIdentity
 ```
 Get-MgBetaBookingCurrency -InputObject <IBookingsIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
-```
-
-### GetViaIdentity1
-```
-Get-MgBetaBookingCurrency -InputObject <IBookingsIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
- [<CommonParameters>]
-```
-
-### List1
-```
-Get-MgBetaBookingCurrency [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
- [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
- [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -80,7 +61,7 @@ List all pages.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List, List1
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -95,7 +76,7 @@ The unique identifier of bookingCurrency
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, Get1
+Parameter Sets: Get
 Aliases:
 
 Required: True
@@ -111,7 +92,7 @@ By default, this variable will be set in the global scope.
 
 ```yaml
 Type: System.String
-Parameter Sets: List, List1
+Parameter Sets: List
 Aliases: CV
 
 Required: False
@@ -141,7 +122,7 @@ Filter items by property values
 
 ```yaml
 Type: System.String
-Parameter Sets: List, List1
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -157,7 +138,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Microsoft.Graph.Beta.PowerShell.Models.IBookingsIdentity
-Parameter Sets: GetViaIdentity, GetViaIdentity1
+Parameter Sets: GetViaIdentity
 Aliases:
 
 Required: True
@@ -172,7 +153,7 @@ Sets the page size of results.
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List, List1
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -202,7 +183,7 @@ Search items by search phrases
 
 ```yaml
 Type: System.String
-Parameter Sets: List, List1
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -217,7 +198,7 @@ Skip the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List, List1
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -232,7 +213,7 @@ Order items by property values
 
 ```yaml
 Type: System.String[]
-Parameter Sets: List, List1
+Parameter Sets: List
 Aliases: OrderBy
 
 Required: False
@@ -247,7 +228,7 @@ Show only the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List, List1
+Parameter Sets: List
 Aliases: Limit
 
 Required: False

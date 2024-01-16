@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementDeviceConfiguration
 
 ## SYNOPSIS
-Create a new iosDeviceFeaturesConfiguration object.
+Create a new androidWorkProfileGeneralDeviceConfiguration object.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ New-MgDeviceManagementDeviceConfiguration -BodyParameter <IMicrosoftGraphDeviceC
 ```
 
 ## DESCRIPTION
-Create a new iosDeviceFeaturesConfiguration object.
+Create a new androidWorkProfileGeneralDeviceConfiguration object.
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaGroupTeamScheduleDayNote
 
 ## SYNOPSIS
-The day notes in the schedule.
+Get dayNotes from groups
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgBetaGroupTeamScheduleDayNote -InputObject <ITeamsIdentity> [-ExpandPropert
 ```
 
 ## DESCRIPTION
-The day notes in the schedule.
+Get dayNotes from groups
 
 ## EXAMPLES
 

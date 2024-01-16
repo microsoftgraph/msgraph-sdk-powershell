@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgIdentityGovernanceLifecycleWorkflowCreatedByServiceProvisioningError
 
 ## SYNOPSIS
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ## SYNTAX
 
@@ -20,8 +19,7 @@ Get-MgIdentityGovernanceLifecycleWorkflowCreatedByServiceProvisioningError -Work
 ```
 
 ## DESCRIPTION
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ## EXAMPLES
 

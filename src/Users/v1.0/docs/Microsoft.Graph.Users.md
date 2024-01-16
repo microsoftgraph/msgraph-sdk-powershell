@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users
-Module Guid: ba1b1415-e5e2-472b-8788-b2b97424603b
+Module Guid: 615d8a13-5d8d-48e7-a153-3417042e0cd2
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.users
 Help Version: 1.0.0.0
 Locale: en-US
@@ -70,7 +70,7 @@ Get the number of the resource
 
 ### [Get-MgUserMailboxSetting](Get-MgUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgUserManager](Get-MgUserManager.md)
@@ -298,7 +298,9 @@ Get the number of the resource
 Get the number of the resource
 
 ### [New-MgUser](New-MgUser.md)
-Create a new user object.
+Create a new user.\nThe request body contains the user to create.
+At a minimum, you must specify the required properties for the user.
+You can optionally specify any other writable properties.
 
 ### [New-MgUserExtension](New-MgUserExtension.md)
 Create new navigation property to extensions for users

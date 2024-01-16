@@ -25,29 +25,10 @@ Get-MgBetaBookingBusinessCustomQuestion -BookingBusinessId <String> -BookingCust
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
-### Get1
-```
-Get-MgBetaBookingBusinessCustomQuestion -BookingBusinessId <String> -BookingCustomQuestionId <String>
- [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
-```
-
 ### GetViaIdentity
 ```
 Get-MgBetaBookingBusinessCustomQuestion -InputObject <IBookingsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
-```
-
-### GetViaIdentity1
-```
-Get-MgBetaBookingBusinessCustomQuestion -InputObject <IBookingsIdentity> [-ExpandProperty <String[]>]
- [-Property <String[]>] [<CommonParameters>]
-```
-
-### List1
-```
-Get-MgBetaBookingBusinessCustomQuestion -BookingBusinessId <String> [-ExpandProperty <String[]>]
- [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
- [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -78,7 +59,7 @@ List all pages.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List, List1
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -93,7 +74,7 @@ The unique identifier of bookingBusiness
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, Get1, List, List1
+Parameter Sets: Get, List
 Aliases:
 
 Required: True
@@ -108,7 +89,7 @@ The unique identifier of bookingCustomQuestion
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, Get1
+Parameter Sets: Get
 Aliases:
 
 Required: True
@@ -124,7 +105,7 @@ By default, this variable will be set in the global scope.
 
 ```yaml
 Type: System.String
-Parameter Sets: List, List1
+Parameter Sets: List
 Aliases: CV
 
 Required: False
@@ -154,7 +135,7 @@ Filter items by property values
 
 ```yaml
 Type: System.String
-Parameter Sets: List, List1
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -170,7 +151,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Microsoft.Graph.Beta.PowerShell.Models.IBookingsIdentity
-Parameter Sets: GetViaIdentity, GetViaIdentity1
+Parameter Sets: GetViaIdentity
 Aliases:
 
 Required: True
@@ -185,7 +166,7 @@ Sets the page size of results.
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List, List1
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -215,7 +196,7 @@ Search items by search phrases
 
 ```yaml
 Type: System.String
-Parameter Sets: List, List1
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -230,7 +211,7 @@ Skip the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List, List1
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -245,7 +226,7 @@ Order items by property values
 
 ```yaml
 Type: System.String[]
-Parameter Sets: List, List1
+Parameter Sets: List
 Aliases: OrderBy
 
 Required: False
@@ -260,7 +241,7 @@ Show only the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List, List1
+Parameter Sets: List
 Aliases: Limit
 
 Required: False

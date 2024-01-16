@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgUserMailFolder
 
 ## SYNOPSIS
-Update the writable properties of a mailSearchFolder object.
+Update the properties of mailfolder object.
 
 ## SYNTAX
 
@@ -49,7 +49,7 @@ Update-MgUserMailFolder -InputObject <IMailIdentity> [-AdditionalProperties <Has
 ```
 
 ## DESCRIPTION
-Update the writable properties of a mailSearchFolder object.
+Update the properties of mailfolder object.
 
 ## EXAMPLES
 

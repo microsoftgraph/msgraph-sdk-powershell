@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Groups
-Module Guid: b1601ee5-e5d3-4b14-86f5-1cd3a0ea7f99
+Module Guid: 52b8634d-aa56-4fcf-a8f1-132fd2096425
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.groups
 Help Version: 1.0.0.0
 Locale: en-US
@@ -761,8 +761,9 @@ Renews a group's expiration.
 When a group is renewed, the group expiration is extended by the number of days defined in the policy.
 
 ### [Invoke-MgReplyGroupConversationThread](Invoke-MgReplyGroupConversationThread.md)
-Reply to a thread in a group conversation and add a new post to it.
-You can specify the parent conversation \nin the request, or, you can specify just the thread without the parent conversation.
+Add an attachment when creating a group post.
+This operation limits the size of the attachment you can add to under 3 MB.
+An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
 
 ### [Invoke-MgReplyGroupConversationThreadPost](Invoke-MgReplyGroupConversationThreadPost.md)
 Reply to a post and add a new post to the specified thread in a group conversation.
@@ -773,8 +774,9 @@ Reply to a post and add a new post to the specified thread in a group conversati
 You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.
 
 ### [Invoke-MgReplyGroupThread](Invoke-MgReplyGroupThread.md)
-Reply to a thread in a group conversation and add a new post to it.
-You can specify the parent conversation \nin the request, or, you can specify just the thread without the parent conversation.
+Add an attachment when creating a group post.
+This operation limits the size of the attachment you can add to under 3 MB.
+An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
 
 ### [Invoke-MgReplyGroupThreadPost](Invoke-MgReplyGroupThreadPost.md)
 Reply to a post and add a new post to the specified thread in a group conversation.
@@ -785,7 +787,7 @@ Reply to a post and add a new post to the specified thread in a group conversati
 You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.
 
 ### [Invoke-MgRetryGroupServiceProvisioning](Invoke-MgRetryGroupServiceProvisioning.md)
-Retry the group service provisioning.
+Invoke action retryServiceProvisioning
 
 ### [Invoke-MgSnoozeGroupCalendarEventReminder](Invoke-MgSnoozeGroupCalendarEventReminder.md)
 Postpone a reminder for an event in a user calendar until a new time.
@@ -824,9 +826,7 @@ Users in the accepted senders list can post to conversations of the group.
 Make sure you don't specify the same user or group in the accepted senders and rejected senders lists, otherwise you'll get an error.
 
 ### [New-MgGroupConversation](New-MgGroupConversation.md)
-Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
-You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
-The table in the Permissions section lists the resources that support open extensions.
+Use reply thread or reply post to further post to that conversation.
 
 ### [New-MgGroupConversationThread](New-MgGroupConversationThread.md)
 Create a new thread in the specified conversation.
@@ -872,22 +872,13 @@ You can use createLink action to share a DriveItem via a sharing link.
 The createLink action will create a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, the existing sharing link will be returned.
 DriveItem resources inherit sharing permissions from their ancestors.
 
-### [New-MgGroupDriveItemListItemLink](New-MgGroupDriveItemListItemLink.md)
-Invoke action createLink
-
 ### [New-MgGroupDriveItemUploadSession](New-MgGroupDriveItemUploadSession.md)
 Invoke action createUploadSession
-
-### [New-MgGroupDriveListItemLink](New-MgGroupDriveListItemLink.md)
-Invoke action createLink
 
 ### [New-MgGroupDriveRootLink](New-MgGroupDriveRootLink.md)
 You can use createLink action to share a DriveItem via a sharing link.
 The createLink action will create a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, the existing sharing link will be returned.
 DriveItem resources inherit sharing permissions from their ancestors.
-
-### [New-MgGroupDriveRootListItemLink](New-MgGroupDriveRootListItemLink.md)
-Invoke action createLink
 
 ### [New-MgGroupDriveRootUploadSession](New-MgGroupDriveRootUploadSession.md)
 Invoke action createUploadSession
@@ -928,9 +919,6 @@ The template named Group.Unified can be used to configure tenant-wide Microsoft 
 
 ### [New-MgGroupSettingTemplateGroupSettingTemplate](New-MgGroupSettingTemplateGroupSettingTemplate.md)
 Add new entity to groupSettingTemplates
-
-### [New-MgGroupSiteListItemLink](New-MgGroupSiteListItemLink.md)
-Invoke action createLink
 
 ### [New-MgGroupThread](New-MgGroupThread.md)
 Start a new group conversation by first creating a thread.

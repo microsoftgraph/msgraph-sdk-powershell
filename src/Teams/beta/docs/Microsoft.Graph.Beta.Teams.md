@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Teams
-Module Guid: 0688751d-7e47-44e6-9759-d18f396e4e5c
+Module Guid: 42a9df00-49d5-4271-9bbc-9c40a1327ca9
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.teams
 Help Version: 1.0.0.0
 Locale: en-US
@@ -216,9 +216,6 @@ Nullable.
 
 ### [Get-MgBetaChatPinnedMessageCount](Get-MgBetaChatPinnedMessageCount.md)
 Get the number of the resource
-
-### [Get-MgBetaChatRetainedMessage](Get-MgBetaChatRetainedMessage.md)
-Invoke function getAllRetainedMessages
 
 ### [Get-MgBetaChatRscConfiguration](Get-MgBetaChatRscConfiguration.md)
 Get chat RSC configuration for tenant.
@@ -444,7 +441,7 @@ If the provisioning failed, clients can get additional information from the prov
 Clients can also inspect the configuration of the schedule.
 
 ### [Get-MgBetaGroupTeamScheduleDayNote](Get-MgBetaGroupTeamScheduleDayNote.md)
-The day notes in the schedule.
+Get dayNotes from groups
 
 ### [Get-MgBetaGroupTeamScheduleDayNoteCount](Get-MgBetaGroupTeamScheduleDayNoteCount.md)
 Get the number of the resource
@@ -584,9 +581,6 @@ Retrieve the properties and relationships of chatMessageHostedContent object.
 ### [Get-MgBetaTeamChannelMessageReplyHostedContentCount](Get-MgBetaTeamChannelMessageReplyHostedContentCount.md)
 Get the number of the resource
 
-### [Get-MgBetaTeamChannelRetainedMessage](Get-MgBetaTeamChannelRetainedMessage.md)
-Invoke function getAllRetainedMessages
-
 ### [Get-MgBetaTeamChannelSharedWithTeam](Get-MgBetaTeamChannelSharedWithTeam.md)
 Get a team that has been shared with a specified channel.
 This operation is allowed only for channels with a membershipType value of shared.
@@ -642,9 +636,6 @@ Get a conversationMember from a team.
 
 ### [Get-MgBetaTeamMemberCount](Get-MgBetaTeamMemberCount.md)
 Get the number of the resource
-
-### [Get-MgBetaTeamOpenShift](Get-MgBetaTeamOpenShift.md)
-Invoke function getOpenShifts
 
 ### [Get-MgBetaTeamOperation](Get-MgBetaTeamOperation.md)
 The async operations that ran or are running on this team.
@@ -764,7 +755,7 @@ If the provisioning failed, clients can get additional information from the prov
 Clients can also inspect the configuration of the schedule.
 
 ### [Get-MgBetaTeamScheduleDayNote](Get-MgBetaTeamScheduleDayNote.md)
-The day notes in the schedule.
+Get dayNotes from teams
 
 ### [Get-MgBetaTeamScheduleDayNoteCount](Get-MgBetaTeamScheduleDayNoteCount.md)
 Get the number of the resource
@@ -849,7 +840,7 @@ See available templates.
 Generic representation of a team template definition for a team with a specific structure and configuration.
 
 ### [Get-MgBetaTeamwork](Get-MgBetaTeamwork.md)
-Get the properties and relationships of a teamwork object, such as the region of the organization and whether Microsoft Teams is enabled.
+Get teamwork
 
 ### [Get-MgBetaTeamworkDeletedChat](Get-MgBetaTeamworkDeletedChat.md)
 Read the properties and relationships of a deletedChat object.
@@ -907,9 +898,6 @@ Retrieve the properties and relationships of chatMessageHostedContent object.
 
 ### [Get-MgBetaTeamworkDeletedTeamChannelMessageReplyHostedContentCount](Get-MgBetaTeamworkDeletedTeamChannelMessageReplyHostedContentCount.md)
 Get the number of the resource
-
-### [Get-MgBetaTeamworkDeletedTeamChannelRetainedMessage](Get-MgBetaTeamworkDeletedTeamChannelRetainedMessage.md)
-Invoke function getAllRetainedMessages
 
 ### [Get-MgBetaTeamworkDeletedTeamChannelSharedWithTeam](Get-MgBetaTeamworkDeletedTeamChannelSharedWithTeam.md)
 Get a team that has been shared with a specified channel.
@@ -1068,7 +1056,9 @@ The application that is linked to the tab.
 Get the teams in Microsoft Teams that the user is a direct member of.
 
 ### [Get-MgBetaUserTeamwork](Get-MgBetaUserTeamwork.md)
-Get the userTeamwork settings for a specified user, which includes the Microsoft Teams region and the locale chosen by the user.
+A container for Microsoft Teams features available for the user.
+Read-only.
+Nullable.
 
 ### [Get-MgBetaUserTeamworkAssociatedTeam](Get-MgBetaUserTeamworkAssociatedTeam.md)
 The list of associatedTeamInfo objects that a user is associated with.
@@ -1101,15 +1091,6 @@ Archiving is an async operation.
 A team is archived once the async operation completes successfully, which may occur subsequent to a response from this API.
 To archive a team, the team and group must have an owner.
 To restore a team from its archived state, use the API to unarchive.
-
-### [Invoke-MgBetaArchiveTeamChannel](Invoke-MgBetaArchiveTeamChannel.md)
-Invoke action archive
-
-### [Invoke-MgBetaArchiveTeamPrimaryChannel](Invoke-MgBetaArchiveTeamPrimaryChannel.md)
-Invoke action archive
-
-### [Invoke-MgBetaArchiveTeamworkDeletedTeamChannel](Invoke-MgBetaArchiveTeamworkDeletedTeamChannel.md)
-Invoke action archive
 
 ### [Invoke-MgBetaClockTeamScheduleTimeCardIn](Invoke-MgBetaClockTeamScheduleTimeCardIn.md)
 Clock in to start a timeCard.
@@ -1182,15 +1163,6 @@ Restore an archived team and restores users' ability to send messages and edit t
 Teams are archived using the archive API.
 Unarchiving is an async operation.
 A team is unarchived once the async operation completes successfully, which may occur subsequent to a response from this API.
-
-### [Invoke-MgBetaUnarchiveTeamChannel](Invoke-MgBetaUnarchiveTeamChannel.md)
-Invoke action unarchive
-
-### [Invoke-MgBetaUnarchiveTeamPrimaryChannel](Invoke-MgBetaUnarchiveTeamPrimaryChannel.md)
-Invoke action unarchive
-
-### [Invoke-MgBetaUnarchiveTeamworkDeletedTeamChannel](Invoke-MgBetaUnarchiveTeamworkDeletedTeamChannel.md)
-Invoke action unarchive
 
 ### [New-MgBetaAppCatalogTeamApp](New-MgBetaAppCatalogTeamApp.md)
 Publish an app to the Microsoft Teams app catalog.\nSpecifically, this API publishes the app to your organization's catalog (the tenant app catalog);\nthe created resource has a distributionMethod property value of organization.
@@ -2237,7 +2209,7 @@ Update the navigation property sharedWithTeams in groups
 Update the navigation property tabs in groups
 
 ### [Update-MgBetaGroupTeamScheduleDayNote](Update-MgBetaGroupTeamScheduleDayNote.md)
-Update the properties of a day note.
+Update the navigation property dayNotes in groups
 
 ### [Update-MgBetaGroupTeamScheduleOfferShiftRequest](Update-MgBetaGroupTeamScheduleOfferShiftRequest.md)
 Update the navigation property offerShiftRequests in groups
@@ -2361,7 +2333,7 @@ Update the navigation property sharedWithTeams in teams
 Update the navigation property tabs in teams
 
 ### [Update-MgBetaTeamScheduleDayNote](Update-MgBetaTeamScheduleDayNote.md)
-Update the properties of a day note.
+Update the navigation property dayNotes in teams
 
 ### [Update-MgBetaTeamScheduleOfferShiftRequest](Update-MgBetaTeamScheduleOfferShiftRequest.md)
 Update the navigation property offerShiftRequests in teams

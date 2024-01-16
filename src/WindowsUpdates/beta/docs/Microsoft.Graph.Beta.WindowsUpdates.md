@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.WindowsUpdates
-Module Guid: 41803cd2-6cc3-4712-b0b8-879298c7ca8a
+Module Guid: f58b877b-277e-498d-b5ab-87c127639182
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.windowsupdates
 Help Version: 1.0.0.0
 Locale: en-US
@@ -117,7 +117,7 @@ Read the properties and relationships of a resourceConnection object.
 Get the number of the resource
 
 ### [Get-MgBetaWindowsUpdatesUpdatableAsset](Get-MgBetaWindowsUpdatesUpdatableAsset.md)
-Read the properties of an azureADDevice object.
+Read the properties and relationships of an updatableAsset object.
 
 ### [Get-MgBetaWindowsUpdatesUpdatableAssetCount](Get-MgBetaWindowsUpdatesUpdatableAssetCount.md)
 Get the number of the resource
@@ -234,7 +234,8 @@ Delete a complianceChange object.
 Delete an operationalInsightsConnection object.
 
 ### [Remove-MgBetaWindowsUpdatesUpdatableAsset](Remove-MgBetaWindowsUpdatesUpdatableAsset.md)
-Delete an updatableAsset object.
+Delete an updatableAssetGroup object.
+When an updatableAssetGroup object, its member updatableAsset objects are not deleted.
 
 ### [Remove-MgBetaWindowsUpdatesUpdatableAssetMember](Remove-MgBetaWindowsUpdatesUpdatableAssetMember.md)
 Remove members from an updatableAssetGroup.

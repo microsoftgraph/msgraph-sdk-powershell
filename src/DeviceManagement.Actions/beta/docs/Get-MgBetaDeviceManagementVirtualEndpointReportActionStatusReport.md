@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaDeviceManagementVirtualEndpointReportActionStatusReport
 
 ## SYNOPSIS
-Get the remote action status reports, including data such as the Cloud PC ID, Cloud PC device display name, initiating user's principal name, device owner's user principal name, action taken, and action state.
+Invoke action getActionStatusReports
 
 ## SYNTAX
 
@@ -28,7 +28,7 @@ Get-MgBetaDeviceManagementVirtualEndpointReportActionStatusReport
 ```
 
 ## DESCRIPTION
-Get the remote action status reports, including data such as the Cloud PC ID, Cloud PC device display name, initiating user's principal name, device owner's user principal name, action taken, and action state.
+Invoke action getActionStatusReports
 
 ## EXAMPLES
 

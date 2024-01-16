@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
-Module Guid: c56720b7-e37c-4c89-816f-adfc5b0e9c43
+Module Guid: 86c2ff3a-a15d-46de-a225-329a7adf8d23
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.identity.directorymanagement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -1761,7 +1761,7 @@ Update the navigation property people in admin
 Update the properties of a profileCardProperty object, identified by its directoryPropertyName property.
 
 ### [Update-MgBetaAdminPeoplePronoun](Update-MgBetaAdminPeoplePronoun.md)
-Update the properties of a pronounsSettings object in an organization.
+Update the properties of a pronounsSettings in an organization.
 For more information on settings to manage pronouns support, see Manage pronouns settings for an organization using the Microsoft Graph API.
 
 ### [Update-MgBetaContact](Update-MgBetaContact.md)

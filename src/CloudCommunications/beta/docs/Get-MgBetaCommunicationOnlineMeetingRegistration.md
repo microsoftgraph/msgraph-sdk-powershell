@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaCommunicationOnlineMeetingRegistration
 
 ## SYNOPSIS
-Get the externalMeetingRegistration details associated with an onlineMeeting.
+Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgBetaCommunicationOnlineMeetingRegistration -InputObject <ICloudCommunicati
 ```
 
 ## DESCRIPTION
-Get the externalMeetingRegistration details associated with an onlineMeeting.
+Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
 
 ## EXAMPLES
 

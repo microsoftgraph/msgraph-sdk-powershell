@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
-Module Guid: 512d63b7-de2a-41dd-8b7f-947caea1b378
+Module Guid: e64f73fb-4f82-4a92-89b3-7f3b431fbab1
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devicemanagement.actions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -344,10 +344,7 @@ Invoke action getZebraFotaDeploymentReport
 Invoke action getRoleScopeTagsById
 
 ### [Get-MgBetaDeviceManagementVirtualEndpointReportActionStatusReport](Get-MgBetaDeviceManagementVirtualEndpointReportActionStatusReport.md)
-Get the remote action status reports, including data such as the Cloud PC ID, Cloud PC device display name, initiating user's principal name, device owner's user principal name, action taken, and action state.
-
-### [Get-MgBetaDeviceManagementVirtualEndpointReportCloudPcPerformanceReport](Get-MgBetaDeviceManagementVirtualEndpointReportCloudPcPerformanceReport.md)
-Invoke action getCloudPcPerformanceReport
+Invoke action getActionStatusReports
 
 ### [Get-MgBetaDeviceManagementVirtualEndpointReportCloudPcRecommendationReport](Get-MgBetaDeviceManagementVirtualEndpointReportCloudPcRecommendationReport.md)
 Invoke action getCloudPcRecommendationReports
@@ -355,9 +352,6 @@ Invoke action getCloudPcRecommendationReports
 ### [Get-MgBetaDeviceManagementVirtualEndpointReportConnectionQualityReport](Get-MgBetaDeviceManagementVirtualEndpointReportConnectionQualityReport.md)
 Get the overall connection quality reports for all devices within a current tenant during a given time period, including metrics like the average round trip time (P50), average available bandwidth, and UDP connection percentage.
 Get also other real-time metrics such as last connection round trip time, last connection client IP, last connection gateway, and last connection protocol.
-
-### [Get-MgBetaDeviceManagementVirtualEndpointReportCrossRegionDisasterRecoveryReport](Get-MgBetaDeviceManagementVirtualEndpointReportCrossRegionDisasterRecoveryReport.md)
-Invoke action retrieveCrossRegionDisasterRecoveryReport
 
 ### [Get-MgBetaDeviceManagementVirtualEndpointReportDailyAggregatedRemoteConnectionReport](Get-MgBetaDeviceManagementVirtualEndpointReportDailyAggregatedRemoteConnectionReport.md)
 Get the daily aggregated remote connection reports, such as round trip time, available bandwidth, and so on, in a given period.

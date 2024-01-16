@@ -15,11 +15,10 @@ Create a new staff member in the specified bookingBusiness.
 ### CreateExpanded (Default)
 ```
 New-MgBetaBookingBusinessStaffMember -BookingBusinessId <String> [-AdditionalProperties <Hashtable>]
- [-AvailabilityIsAffectedByPersonalCalendar] [-ColorIndex <Int32>] [-CreatedDateTime <DateTime>]
- [-DisplayName <String>] [-EmailAddress <String>] [-Id <String>] [-IsEmailNotificationEnabled]
- [-LastUpdatedDateTime <DateTime>] [-MembershipStatus <String>] [-Role <String>] [-TimeZone <String>]
- [-UseBusinessHours] [-WorkingHours <IMicrosoftGraphBookingWorkHours[]>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-AvailabilityIsAffectedByPersonalCalendar] [-ColorIndex <Int32>] [-DisplayName <String>]
+ [-EmailAddress <String>] [-Id <String>] [-IsEmailNotificationEnabled] [-MembershipStatus <String>]
+ [-Role <String>] [-TimeZone <String>] [-UseBusinessHours] [-WorkingHours <IMicrosoftGraphBookingWorkHours[]>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
@@ -28,29 +27,7 @@ New-MgBetaBookingBusinessStaffMember -BookingBusinessId <String>
  -BodyParameter <IMicrosoftGraphBookingStaffMember> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Create1
-```
-New-MgBetaBookingBusinessStaffMember -BookingBusinessId <String>
- -BodyParameter <IMicrosoftGraphBookingStaffMember> [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### CreateExpanded1
-```
-New-MgBetaBookingBusinessStaffMember -BookingBusinessId <String> [-AdditionalProperties <Hashtable>]
- [-AvailabilityIsAffectedByPersonalCalendar] [-ColorIndex <Int32>] [-CreatedDateTime <DateTime>]
- [-DisplayName <String>] [-EmailAddress <String>] [-Id <String>] [-IsEmailNotificationEnabled]
- [-LastUpdatedDateTime <DateTime>] [-MembershipStatus <String>] [-Role <String>] [-TimeZone <String>]
- [-UseBusinessHours] [-WorkingHours <IMicrosoftGraphBookingWorkHours[]>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
-```
-
 ### CreateViaIdentity
-```
-New-MgBetaBookingBusinessStaffMember -InputObject <IBookingsIdentity>
- -BodyParameter <IMicrosoftGraphBookingStaffMember> [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### CreateViaIdentity1
 ```
 New-MgBetaBookingBusinessStaffMember -InputObject <IBookingsIdentity>
  -BodyParameter <IMicrosoftGraphBookingStaffMember> [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -59,21 +36,10 @@ New-MgBetaBookingBusinessStaffMember -InputObject <IBookingsIdentity>
 ### CreateViaIdentityExpanded
 ```
 New-MgBetaBookingBusinessStaffMember -InputObject <IBookingsIdentity> [-AdditionalProperties <Hashtable>]
- [-AvailabilityIsAffectedByPersonalCalendar] [-ColorIndex <Int32>] [-CreatedDateTime <DateTime>]
- [-DisplayName <String>] [-EmailAddress <String>] [-Id <String>] [-IsEmailNotificationEnabled]
- [-LastUpdatedDateTime <DateTime>] [-MembershipStatus <String>] [-Role <String>] [-TimeZone <String>]
- [-UseBusinessHours] [-WorkingHours <IMicrosoftGraphBookingWorkHours[]>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
-```
-
-### CreateViaIdentityExpanded1
-```
-New-MgBetaBookingBusinessStaffMember -InputObject <IBookingsIdentity> [-AdditionalProperties <Hashtable>]
- [-AvailabilityIsAffectedByPersonalCalendar] [-ColorIndex <Int32>] [-CreatedDateTime <DateTime>]
- [-DisplayName <String>] [-EmailAddress <String>] [-Id <String>] [-IsEmailNotificationEnabled]
- [-LastUpdatedDateTime <DateTime>] [-MembershipStatus <String>] [-Role <String>] [-TimeZone <String>]
- [-UseBusinessHours] [-WorkingHours <IMicrosoftGraphBookingWorkHours[]>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-AvailabilityIsAffectedByPersonalCalendar] [-ColorIndex <Int32>] [-DisplayName <String>]
+ [-EmailAddress <String>] [-Id <String>] [-IsEmailNotificationEnabled] [-MembershipStatus <String>]
+ [-Role <String>] [-TimeZone <String>] [-UseBusinessHours] [-WorkingHours <IMicrosoftGraphBookingWorkHours[]>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -175,7 +141,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -190,7 +156,7 @@ True means that if the staff member is a Microsoft 365 user, the Bookings API wo
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -206,7 +172,7 @@ To construct, see NOTES section for BODYPARAMETER properties and create a hash t
 
 ```yaml
 Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBookingStaffMember
-Parameter Sets: Create, Create1, CreateViaIdentity, CreateViaIdentity1
+Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
 Required: True
@@ -221,7 +187,7 @@ The unique identifier of bookingBusiness
 
 ```yaml
 Type: System.String
-Parameter Sets: Create, Create1, CreateExpanded, CreateExpanded1
+Parameter Sets: Create, CreateExpanded
 Aliases:
 
 Required: True
@@ -237,22 +203,7 @@ The color corresponds to the color palette in the Staff details page in the Book
 
 ```yaml
 Type: System.Int32
-Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -CreatedDateTime
-.
-
-```yaml
-Type: System.DateTime
-Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -267,7 +218,7 @@ A name for the derived entity, which interfaces with customers.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -282,7 +233,7 @@ The email address of the person.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -298,7 +249,7 @@ Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -314,7 +265,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Microsoft.Graph.Beta.PowerShell.Models.IBookingsIdentity
-Parameter Sets: CreateViaIdentity, CreateViaIdentity1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -329,22 +280,7 @@ True indicates that a staff member will be notified via email when a booking ass
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -LastUpdatedDateTime
-.
-
-```yaml
-Type: System.DateTime
-Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -359,7 +295,7 @@ bookingStaffMembershipStatus
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -374,7 +310,7 @@ bookingStaffRole
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -390,7 +326,7 @@ For a list of possible values, see dateTimeTimeZone.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -406,7 +342,7 @@ False means the availability is determined by the staff member's workingHours pr
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -423,7 +359,7 @@ To construct, see NOTES section for WORKINGHOURS properties and create a hash ta
 
 ```yaml
 Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBookingWorkHours[]
-Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -493,9 +429,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[AvailabilityIsAffectedByPersonalCalendar <Boolean?>]`: True means that if the staff member is a Microsoft 365 user, the Bookings API would verify the staff member's availability in their personal calendar in Microsoft 365, before making a booking.
   - `[ColorIndex <Int32?>]`: Identifies a color to represent the staff member. The color corresponds to the color palette in the Staff details page in the Bookings app.
-  - `[CreatedDateTime <DateTime?>]`: 
   - `[IsEmailNotificationEnabled <Boolean?>]`: True indicates that a staff member will be notified via email when a booking assigned to them is created or changed.
-  - `[LastUpdatedDateTime <DateTime?>]`: 
   - `[MembershipStatus <String>]`: bookingStaffMembershipStatus
   - `[Role <String>]`: bookingStaffRole
   - `[TimeZone <String>]`: The time zone of the staff member. For a list of possible values, see dateTimeTimeZone.

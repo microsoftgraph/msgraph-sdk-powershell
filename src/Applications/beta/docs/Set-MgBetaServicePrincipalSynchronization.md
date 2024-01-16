@@ -291,11 +291,11 @@ To create the parameters described below, construct a hash table containing the 
       - `[SynchronizationRules <IMicrosoftGraphSynchronizationRule[]>]`: A collection of synchronization rules configured for the synchronizationJob or synchronizationTemplate.
         - `[ContainerFilter <IMicrosoftGraphContainerFilter>]`: containerFilter
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[IncludedContainers <String[]>]`: The identifiers of containers, such as organizational units, that are in scope for a synchronization rule. For Active Directory organizational units, use the distinguished names. An empty list means no container filtering is configured.
+          - `[IncludedContainers <String[]>]`: 
         - `[Editable <Boolean?>]`: true if the synchronization rule can be customized; false if this rule is read-only and shouldn't be changed.
         - `[GroupFilter <IMicrosoftGraphGroupFilter>]`: groupFilter
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[IncludedGroups <String[]>]`: Identifiers of groups that are in scope for a synchronization rule. For Active Directory groups, use the distinguished names. An empty list means no group filtering is configured.
+          - `[IncludedGroups <String[]>]`: 
         - `[Id <String>]`: Synchronization rule identifier. Must be one of the identifiers recognized by the synchronization engine. Supported rule identifiers can be found in the synchronization template returned by the API.
         - `[Metadata <IMicrosoftGraphStringKeyStringValuePair[]>]`: Additional extension properties. Unless instructed explicitly by the support team, metadata values shouldn't be changed.
         - `[Name <String>]`: Human-readable name of the synchronization rule. Not nullable.
@@ -485,11 +485,11 @@ To create the parameters described below, construct a hash table containing the 
     - `[SynchronizationRules <IMicrosoftGraphSynchronizationRule[]>]`: A collection of synchronization rules configured for the synchronizationJob or synchronizationTemplate.
       - `[ContainerFilter <IMicrosoftGraphContainerFilter>]`: containerFilter
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[IncludedContainers <String[]>]`: The identifiers of containers, such as organizational units, that are in scope for a synchronization rule. For Active Directory organizational units, use the distinguished names. An empty list means no container filtering is configured.
+        - `[IncludedContainers <String[]>]`: 
       - `[Editable <Boolean?>]`: true if the synchronization rule can be customized; false if this rule is read-only and shouldn't be changed.
       - `[GroupFilter <IMicrosoftGraphGroupFilter>]`: groupFilter
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[IncludedGroups <String[]>]`: Identifiers of groups that are in scope for a synchronization rule. For Active Directory groups, use the distinguished names. An empty list means no group filtering is configured.
+        - `[IncludedGroups <String[]>]`: 
       - `[Id <String>]`: Synchronization rule identifier. Must be one of the identifiers recognized by the synchronization engine. Supported rule identifiers can be found in the synchronization template returned by the API.
       - `[Metadata <IMicrosoftGraphStringKeyStringValuePair[]>]`: Additional extension properties. Unless instructed explicitly by the support team, metadata values shouldn't be changed.
       - `[Name <String>]`: Human-readable name of the synchronization rule. Not nullable.
@@ -636,11 +636,11 @@ To create the parameters described below, construct a hash table containing the 
     - `[SynchronizationRules <IMicrosoftGraphSynchronizationRule[]>]`: A collection of synchronization rules configured for the synchronizationJob or synchronizationTemplate.
       - `[ContainerFilter <IMicrosoftGraphContainerFilter>]`: containerFilter
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[IncludedContainers <String[]>]`: The identifiers of containers, such as organizational units, that are in scope for a synchronization rule. For Active Directory organizational units, use the distinguished names. An empty list means no container filtering is configured.
+        - `[IncludedContainers <String[]>]`: 
       - `[Editable <Boolean?>]`: true if the synchronization rule can be customized; false if this rule is read-only and shouldn't be changed.
       - `[GroupFilter <IMicrosoftGraphGroupFilter>]`: groupFilter
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[IncludedGroups <String[]>]`: Identifiers of groups that are in scope for a synchronization rule. For Active Directory groups, use the distinguished names. An empty list means no group filtering is configured.
+        - `[IncludedGroups <String[]>]`: 
       - `[Id <String>]`: Synchronization rule identifier. Must be one of the identifiers recognized by the synchronization engine. Supported rule identifiers can be found in the synchronization template returned by the API.
       - `[Metadata <IMicrosoftGraphStringKeyStringValuePair[]>]`: Additional extension properties. Unless instructed explicitly by the support team, metadata values shouldn't be changed.
       - `[Name <String>]`: Human-readable name of the synchronization rule. Not nullable.

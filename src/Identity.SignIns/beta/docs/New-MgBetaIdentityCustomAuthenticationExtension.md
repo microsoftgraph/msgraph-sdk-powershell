@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new customAuthenticationExtension object.
-The following derived types are currently supported.
+Only the onTokenIssuanceStartCustomExtension object type is supported.
 
 ## SYNTAX
 
@@ -30,7 +30,7 @@ New-MgBetaIdentityCustomAuthenticationExtension -BodyParameter <Hashtable> [-Con
 
 ## DESCRIPTION
 Create a new customAuthenticationExtension object.
-The following derived types are currently supported.
+Only the onTokenIssuanceStartCustomExtension object type is supported.
 
 ## EXAMPLES
 

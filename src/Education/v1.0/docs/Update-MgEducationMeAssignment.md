@@ -19,11 +19,11 @@ Update-MgEducationMeAssignment -EducationAssignmentId <String> [-AddedStudentAct
  [-AllowStudentsToAddResourcesToSubmission] [-AssignTo <Hashtable>]
  [-Categories <IMicrosoftGraphEducationCategory[]>] [-ClassId <String>] [-CloseDateTime <DateTime>]
  [-CreatedBy <IMicrosoftGraphIdentitySet>] [-DisplayName <String>] [-DueDateTime <DateTime>]
- [-Grading <Hashtable>] [-GradingCategory <IMicrosoftGraphEducationGradingCategory>] [-Id <String>]
- [-Instructions <IMicrosoftGraphEducationItemBody>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
- [-NotificationChannelUrl <String>] [-Resources <IMicrosoftGraphEducationAssignmentResource[]>]
- [-Rubric <IMicrosoftGraphEducationRubric>] [-Status <String>]
- [-Submissions <IMicrosoftGraphEducationSubmission[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Grading <Hashtable>] [-Id <String>] [-Instructions <IMicrosoftGraphEducationItemBody>]
+ [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-NotificationChannelUrl <String>]
+ [-Resources <IMicrosoftGraphEducationAssignmentResource[]>] [-Rubric <IMicrosoftGraphEducationRubric>]
+ [-Status <String>] [-Submissions <IMicrosoftGraphEducationSubmission[]>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
@@ -45,11 +45,11 @@ Update-MgEducationMeAssignment -InputObject <IEducationIdentity> [-AddedStudentA
  [-AllowStudentsToAddResourcesToSubmission] [-AssignTo <Hashtable>]
  [-Categories <IMicrosoftGraphEducationCategory[]>] [-ClassId <String>] [-CloseDateTime <DateTime>]
  [-CreatedBy <IMicrosoftGraphIdentitySet>] [-DisplayName <String>] [-DueDateTime <DateTime>]
- [-Grading <Hashtable>] [-GradingCategory <IMicrosoftGraphEducationGradingCategory>] [-Id <String>]
- [-Instructions <IMicrosoftGraphEducationItemBody>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
- [-NotificationChannelUrl <String>] [-Resources <IMicrosoftGraphEducationAssignmentResource[]>]
- [-Rubric <IMicrosoftGraphEducationRubric>] [-Status <String>]
- [-Submissions <IMicrosoftGraphEducationSubmission[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Grading <Hashtable>] [-Id <String>] [-Instructions <IMicrosoftGraphEducationItemBody>]
+ [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-NotificationChannelUrl <String>]
+ [-Resources <IMicrosoftGraphEducationAssignmentResource[]>] [-Rubric <IMicrosoftGraphEducationRubric>]
+ [-Status <String>] [-Submissions <IMicrosoftGraphEducationSubmission[]>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -310,22 +310,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -GradingCategory
-educationGradingCategory
-To construct, see NOTES section for GRADINGCATEGORY properties and create a hash table.
-
-```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationGradingCategory
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -554,11 +538,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[DueDateTime <DateTime?>]`: Date when the students assignment is due.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[Grading <IMicrosoftGraphEducationAssignmentGradeType>]`: educationAssignmentGradeType
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[GradingCategory <IMicrosoftGraphEducationGradingCategory>]`: educationGradingCategory
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[DisplayName <String>]`: 
-    - `[PercentageWeight <Int32?>]`: 
   - `[Instructions <IMicrosoftGraphEducationItemBody>]`: educationItemBody
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Content <String>]`: 
@@ -626,18 +605,11 @@ To create the parameters described below, construct a hash table containing the 
   - `[Device <IMicrosoftGraphIdentity>]`: identity
   - `[User <IMicrosoftGraphIdentity>]`: identity
 
-`GRADINGCATEGORY <IMicrosoftGraphEducationGradingCategory>`: educationGradingCategory
-  - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[DisplayName <String>]`: 
-  - `[PercentageWeight <Int32?>]`: 
-
 `INPUTOBJECT <IEducationIdentity>`: Identity Parameter
   - `[EducationAssignmentId <String>]`: The unique identifier of educationAssignment
   - `[EducationAssignmentResourceId <String>]`: The unique identifier of educationAssignmentResource
   - `[EducationCategoryId <String>]`: The unique identifier of educationCategory
   - `[EducationClassId <String>]`: The unique identifier of educationClass
-  - `[EducationGradingCategoryId <String>]`: The unique identifier of educationGradingCategory
   - `[EducationOutcomeId <String>]`: The unique identifier of educationOutcome
   - `[EducationRubricId <String>]`: The unique identifier of educationRubric
   - `[EducationSchoolId <String>]`: The unique identifier of educationSchool

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Sites
-Module Guid: 474de735-0d7a-4a34-b5e7-b686031bc50c
+Module Guid: 813cb519-6641-42bc-8379-b311c67d9a16
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.sites
 Help Version: 1.0.0.0
 Locale: en-US
@@ -181,12 +181,11 @@ Read-only.
 
 ### [Get-MgGroupSiteCreatedByUserMailboxSetting](Get-MgGroupSiteCreatedByUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgGroupSiteCreatedByUserServiceProvisioningError](Get-MgGroupSiteCreatedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgGroupSiteCreatedByUserServiceProvisioningErrorCount](Get-MgGroupSiteCreatedByUserServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -219,12 +218,11 @@ Read-only.
 
 ### [Get-MgGroupSiteItemLastModifiedByUserMailboxSetting](Get-MgGroupSiteItemLastModifiedByUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgGroupSiteItemLastModifiedByUserServiceProvisioningError](Get-MgGroupSiteItemLastModifiedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgGroupSiteItemLastModifiedByUserServiceProvisioningErrorCount](Get-MgGroupSiteItemLastModifiedByUserServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -235,12 +233,11 @@ Read-only.
 
 ### [Get-MgGroupSiteLastModifiedByUserMailboxSetting](Get-MgGroupSiteLastModifiedByUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgGroupSiteLastModifiedByUserServiceProvisioningError](Get-MgGroupSiteLastModifiedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgGroupSiteLastModifiedByUserServiceProvisioningErrorCount](Get-MgGroupSiteLastModifiedByUserServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -293,12 +290,11 @@ Read-only.
 
 ### [Get-MgGroupSiteListCreatedByUserMailboxSetting](Get-MgGroupSiteListCreatedByUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgGroupSiteListCreatedByUserServiceProvisioningError](Get-MgGroupSiteListCreatedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgGroupSiteListCreatedByUserServiceProvisioningErrorCount](Get-MgGroupSiteListCreatedByUserServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -319,12 +315,11 @@ Read-only.
 
 ### [Get-MgGroupSiteListItemCreatedByUserMailboxSetting](Get-MgGroupSiteListItemCreatedByUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgGroupSiteListItemCreatedByUserServiceProvisioningError](Get-MgGroupSiteListItemCreatedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgGroupSiteListItemCreatedByUserServiceProvisioningErrorCount](Get-MgGroupSiteListItemCreatedByUserServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -1050,12 +1045,11 @@ Read-only.
 
 ### [Get-MgSiteItemLastModifiedByUserMailboxSetting](Get-MgSiteItemLastModifiedByUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgSiteItemLastModifiedByUserServiceProvisioningError](Get-MgSiteItemLastModifiedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgSiteItemLastModifiedByUserServiceProvisioningErrorCount](Get-MgSiteItemLastModifiedByUserServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -1066,12 +1060,11 @@ Read-only.
 
 ### [Get-MgSiteLastModifiedByUserMailboxSetting](Get-MgSiteLastModifiedByUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgSiteLastModifiedByUserServiceProvisioningError](Get-MgSiteLastModifiedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgSiteLastModifiedByUserServiceProvisioningErrorCount](Get-MgSiteLastModifiedByUserServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -1127,12 +1120,11 @@ Read-only.
 
 ### [Get-MgSiteListCreatedByUserMailboxSetting](Get-MgSiteListCreatedByUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgSiteListCreatedByUserServiceProvisioningError](Get-MgSiteListCreatedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgSiteListCreatedByUserServiceProvisioningErrorCount](Get-MgSiteListCreatedByUserServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -1156,12 +1148,11 @@ Read-only.
 
 ### [Get-MgSiteListItemCreatedByUserMailboxSetting](Get-MgSiteListItemCreatedByUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgSiteListItemCreatedByUserServiceProvisioningError](Get-MgSiteListItemCreatedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgSiteListItemCreatedByUserServiceProvisioningErrorCount](Get-MgSiteListItemCreatedByUserServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -1811,9 +1802,6 @@ Create a new [listItem][] in a [list][].
 
 ### [New-MgSiteListItemDocumentSetVersion](New-MgSiteListItemDocumentSetVersion.md)
 Create a new version of a document set item in a list.
-
-### [New-MgSiteListItemLink](New-MgSiteListItemLink.md)
-Invoke action createLink
 
 ### [New-MgSiteListItemVersion](New-MgSiteListItemVersion.md)
 Create new navigation property to versions for sites

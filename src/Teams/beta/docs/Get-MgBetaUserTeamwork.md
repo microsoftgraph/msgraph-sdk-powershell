@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgBetaUserTeamwork
 
 ## SYNOPSIS
-Get the userTeamwork settings for a specified user, which includes the Microsoft Teams region and the locale chosen by the user.
+A container for Microsoft Teams features available for the user.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -25,7 +27,9 @@ Get-MgBetaUserTeamwork -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>
 ```
 
 ## DESCRIPTION
-Get the userTeamwork settings for a specified user, which includes the Microsoft Teams region and the locale chosen by the user.
+A container for Microsoft Teams features available for the user.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

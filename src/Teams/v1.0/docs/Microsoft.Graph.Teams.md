@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Teams
-Module Guid: 725a6ad5-f4b9-4a65-84cf-d165da4086f8
+Module Guid: 88f81a66-95ab-4e1d-bb45-ff2f46ea8f47
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.teams
 Help Version: 1.0.0.0
 Locale: en-US
@@ -280,8 +280,7 @@ This can't be changed after tab creation.
 Get group from groups
 
 ### [Get-MgGroupTeamGroupServiceProvisioningError](Get-MgGroupTeamGroupServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a group object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgGroupTeamGroupServiceProvisioningErrorCount](Get-MgGroupTeamGroupServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -550,8 +549,7 @@ This can't be changed after tab creation.
 Get the number of the resource
 
 ### [Get-MgTeamGroupServiceProvisioningError](Get-MgTeamGroupServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a group object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgTeamGroupServiceProvisioningErrorCount](Get-MgTeamGroupServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -1062,7 +1060,7 @@ Add a conversationMember to a channel.
 This operation is allowed only for channels with a membershipType value of private or shared.
 
 ### [New-MgGroupTeamChannelMessage](New-MgGroupTeamChannelMessage.md)
-Send a new chatMessage in the specified channel.
+Send a new chatMessage in the specified channel or a chat.
 
 ### [New-MgGroupTeamChannelMessageHostedContent](New-MgGroupTeamChannelMessageHostedContent.md)
 Create new navigation property to hostedContents for groups
@@ -1097,7 +1095,7 @@ Add a conversationMember to a channel.
 This operation is allowed only for channels with a membershipType value of private or shared.
 
 ### [New-MgGroupTeamPrimaryChannelMessage](New-MgGroupTeamPrimaryChannelMessage.md)
-Send a new chatMessage in the specified channel.
+Send a new chatMessage in the specified channel or a chat.
 
 ### [New-MgGroupTeamPrimaryChannelMessageHostedContent](New-MgGroupTeamPrimaryChannelMessageHostedContent.md)
 Create new navigation property to hostedContents for groups
@@ -1169,7 +1167,7 @@ Add a conversationMember to a channel.
 This operation is allowed only for channels with a membershipType value of private or shared.
 
 ### [New-MgTeamChannelMessage](New-MgTeamChannelMessage.md)
-Send a new chatMessage in the specified channel.
+Send a new chatMessage in the specified channel or a chat.
 
 ### [New-MgTeamChannelMessageHostedContent](New-MgTeamChannelMessageHostedContent.md)
 Create new navigation property to hostedContents for teams
@@ -1210,7 +1208,7 @@ Add a conversationMember to a channel.
 This operation is allowed only for channels with a membershipType value of private or shared.
 
 ### [New-MgTeamPrimaryChannelMessage](New-MgTeamPrimaryChannelMessage.md)
-Send a new chatMessage in the specified channel.
+Send a new chatMessage in the specified channel or a chat.
 
 ### [New-MgTeamPrimaryChannelMessageHostedContent](New-MgTeamPrimaryChannelMessageHostedContent.md)
 Create new navigation property to hostedContents for teams
@@ -1279,7 +1277,7 @@ Add a conversationMember to a channel.
 This operation is allowed only for channels with a membershipType value of private or shared.
 
 ### [New-MgTeamworkDeletedTeamChannelMessage](New-MgTeamworkDeletedTeamChannelMessage.md)
-Send a new chatMessage in the specified channel.
+Send a new chatMessage in the specified channel or a chat.
 
 ### [New-MgTeamworkDeletedTeamChannelMessageHostedContent](New-MgTeamworkDeletedTeamChannelMessageHostedContent.md)
 Create new navigation property to hostedContents for teamwork
@@ -1670,7 +1668,7 @@ For more details about sending notifications and the requirements for doing so, 
 
 ### [Send-MgTeamworkActivityNotificationToRecipient](Send-MgTeamworkActivityNotificationToRecipient.md)
 Send activity feed notifications to multiple users, in bulk.
-For more information, see sending Teams activity notifications.
+For more details about sending notifications and the requirements for doing so, see\nsending Teams activity notifications.
 
 ### [Set-MgChatMessageHostedContent](Set-MgChatMessageHostedContent.md)
 Update media content for the navigation property hostedContents in chats
@@ -1838,7 +1836,8 @@ Update the properties of the specified tab in a chat.
 Update the properties of the specified channel.
 
 ### [Update-MgGroupTeamChannelMember](Update-MgGroupTeamChannelMember.md)
-Update the role of a conversationMember in a team or channel.
+Update the role of a conversationMember in a channel.
+This operation is allowed only for channels with a membershipType value of private or shared.
 
 ### [Update-MgGroupTeamChannelMessage](Update-MgGroupTeamChannelMessage.md)
 Update a chatMessage object.
@@ -1879,7 +1878,8 @@ Update the navigation property photo in groups
 Update the navigation property primaryChannel in groups
 
 ### [Update-MgGroupTeamPrimaryChannelMember](Update-MgGroupTeamPrimaryChannelMember.md)
-Update the role of a conversationMember in a team or channel.
+Update the role of a conversationMember in a channel.
+This operation is allowed only for channels with a membershipType value of private or shared.
 
 ### [Update-MgGroupTeamPrimaryChannelMessage](Update-MgGroupTeamPrimaryChannelMessage.md)
 Update a chatMessage object.
@@ -1949,7 +1949,8 @@ Update the properties of the specified team.
 Update the properties of the specified channel.
 
 ### [Update-MgTeamChannelMember](Update-MgTeamChannelMember.md)
-Update the role of a conversationMember in a team or channel.
+Update the role of a conversationMember in a channel.
+This operation is allowed only for channels with a membershipType value of private or shared.
 
 ### [Update-MgTeamChannelMessage](Update-MgTeamChannelMessage.md)
 Update a chatMessage object.
@@ -1990,7 +1991,8 @@ Update the navigation property photo in teams
 Update the navigation property primaryChannel in teams
 
 ### [Update-MgTeamPrimaryChannelMember](Update-MgTeamPrimaryChannelMember.md)
-Update the role of a conversationMember in a team or channel.
+Update the role of a conversationMember in a channel.
+This operation is allowed only for channels with a membershipType value of private or shared.
 
 ### [Update-MgTeamPrimaryChannelMessage](Update-MgTeamPrimaryChannelMessage.md)
 Update a chatMessage object.
@@ -2060,7 +2062,8 @@ Update the navigation property deletedTeams in teamwork
 Update the navigation property channels in teamwork
 
 ### [Update-MgTeamworkDeletedTeamChannelMember](Update-MgTeamworkDeletedTeamChannelMember.md)
-Update the role of a conversationMember in a team or channel.
+Update the role of a conversationMember in a channel.
+This operation is allowed only for channels with a membershipType value of private or shared.
 
 ### [Update-MgTeamworkDeletedTeamChannelMessage](Update-MgTeamworkDeletedTeamChannelMessage.md)
 Update a chatMessage object.

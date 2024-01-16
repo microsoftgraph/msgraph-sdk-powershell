@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceManagementDeviceConfiguration
 
 ## SYNOPSIS
-Update the properties of a windows10SecureAssessmentConfiguration object.
+Update the properties of a sharedPCConfiguration object.
 
 ## SYNTAX
 
@@ -53,7 +53,7 @@ Update-MgDeviceManagementDeviceConfiguration -InputObject <IDeviceManagementIden
 ```
 
 ## DESCRIPTION
-Update the properties of a windows10SecureAssessmentConfiguration object.
+Update the properties of a sharedPCConfiguration object.
 
 ## EXAMPLES
 

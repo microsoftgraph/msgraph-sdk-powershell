@@ -198,12 +198,6 @@ To create the parameters described below, construct a hash table containing the 
 `ALERTRULES <IMicrosoftGraphDeviceManagementAlertRule[]>`: The collection of alert rules.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[AlertRuleTemplate <String>]`: alertRuleTemplate
-  - `[Conditions <IMicrosoftGraphDeviceManagementRuleCondition[]>]`: The conditions that determine when to send alerts. For example, you can configure a condition to send an alert when provisioning fails for six or more Cloud PCs.
-    - `[Aggregation <String>]`: aggregationType
-    - `[ConditionCategory <String>]`: conditionCategory
-    - `[Operator <String>]`: operatorType
-    - `[RelationshipType <String>]`: relationshipType
-    - `[ThresholdValue <String>]`: The threshold value of the alert condition. The threshold value can be a number in string form or string like 'WestUS'.
   - `[Description <String>]`: The rule description.
   - `[DisplayName <String>]`: The display name of the rule.
   - `[Enabled <Boolean?>]`: The status of the rule that indicates whether the rule is enabled or disabled. If true, the rule is enabled; otherwise, the rule is disabled.
@@ -243,12 +237,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[AlertRules <IMicrosoftGraphDeviceManagementAlertRule[]>]`: The collection of alert rules.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[AlertRuleTemplate <String>]`: alertRuleTemplate
-    - `[Conditions <IMicrosoftGraphDeviceManagementRuleCondition[]>]`: The conditions that determine when to send alerts. For example, you can configure a condition to send an alert when provisioning fails for six or more Cloud PCs.
-      - `[Aggregation <String>]`: aggregationType
-      - `[ConditionCategory <String>]`: conditionCategory
-      - `[Operator <String>]`: operatorType
-      - `[RelationshipType <String>]`: relationshipType
-      - `[ThresholdValue <String>]`: The threshold value of the alert condition. The threshold value can be a number in string form or string like 'WestUS'.
     - `[Description <String>]`: The rule description.
     - `[DisplayName <String>]`: The display name of the rule.
     - `[Enabled <Boolean?>]`: The status of the rule that indicates whether the rule is enabled or disabled. If true, the rule is enabled; otherwise, the rule is disabled.

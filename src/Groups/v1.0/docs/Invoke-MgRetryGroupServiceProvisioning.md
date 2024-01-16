@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-MgRetryGroupServiceProvisioning
 
 ## SYNOPSIS
-Retry the group service provisioning.
+Invoke action retryServiceProvisioning
 
 ## SYNTAX
 
@@ -24,7 +24,7 @@ Invoke-MgRetryGroupServiceProvisioning -InputObject <IGroupsIdentity> [-PassThru
 ```
 
 ## DESCRIPTION
-Retry the group service provisioning.
+Invoke action retryServiceProvisioning
 
 ## EXAMPLES
 

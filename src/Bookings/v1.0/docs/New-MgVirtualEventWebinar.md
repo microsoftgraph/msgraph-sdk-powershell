@@ -97,7 +97,7 @@ Accept wildcard characters: False
 ```
 
 ### -CoOrganizers
-Identity information of coorganizers of the webinar.
+.
 To construct, see NOTES section for COORGANIZERS properties and create a hash table.
 
 ```yaml
@@ -145,7 +145,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-Display name of the virtual event.
+.
 
 ```yaml
 Type: System.String
@@ -192,7 +192,7 @@ Accept wildcard characters: False
 ```
 
 ### -Registrations
-Registration records of the webinar.
+.
 To construct, see NOTES section for REGISTRATIONS properties and create a hash table.
 
 ```yaml
@@ -208,7 +208,7 @@ Accept wildcard characters: False
 ```
 
 ### -Sessions
-Sessions for the virtual event.
+.
 To construct, see NOTES section for SESSIONS properties and create a hash table.
 
 ```yaml
@@ -327,19 +327,19 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Content <String>]`: The content of the item.
     - `[ContentType <String>]`: bodyType
-  - `[DisplayName <String>]`: Display name of the virtual event.
+  - `[DisplayName <String>]`: 
   - `[EndDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
     - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
-  - `[Sessions <IMicrosoftGraphVirtualEventSession[]>]`: Sessions for the virtual event.
-    - `[AllowAttendeeToEnableCamera <Boolean?>]`: Indicates whether attendees can turn on their camera.
-    - `[AllowAttendeeToEnableMic <Boolean?>]`: Indicates whether attendees can turn on their microphone.
+  - `[Sessions <IMicrosoftGraphVirtualEventSession[]>]`: 
+    - `[AllowAttendeeToEnableCamera <Boolean?>]`: 
+    - `[AllowAttendeeToEnableMic <Boolean?>]`: 
     - `[AllowMeetingChat <String>]`: meetingChatMode
-    - `[AllowParticipantsToChangeName <Boolean?>]`: Specifies if participants are allowed to rename themselves in an instance of the meeting.
-    - `[AllowTeamworkReactions <Boolean?>]`: Indicates if Teams reactions are enabled for the meeting.
+    - `[AllowParticipantsToChangeName <Boolean?>]`: 
+    - `[AllowTeamworkReactions <Boolean?>]`: 
     - `[AllowedPresenters <String>]`: onlineMeetingPresenters
-    - `[AttendanceReports <IMicrosoftGraphMeetingAttendanceReport[]>]`: The attendance reports of an online meeting. Read-only.
+    - `[AttendanceReports <IMicrosoftGraphMeetingAttendanceReport[]>]`: 
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[AttendanceRecords <IMicrosoftGraphAttendanceRecord[]>]`: List of attendance records of an attendance report. Read-only.
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -367,22 +367,22 @@ To create the parameters described below, construct a hash table containing the 
       - `[MessageId <String>]`: The unique identifier of a message in a Microsoft Teams channel.
       - `[ReplyChainMessageId <String>]`: The ID of the reply message.
       - `[ThreadId <String>]`: The unique identifier for a thread in Microsoft Teams.
-    - `[IsEntryExitAnnounced <Boolean?>]`: Indicates whether to announce when callers join or leave.
+    - `[IsEntryExitAnnounced <Boolean?>]`: 
     - `[JoinInformation <IMicrosoftGraphItemBody>]`: itemBody
     - `[JoinMeetingIdSettings <IMicrosoftGraphJoinMeetingIdSettings>]`: joinMeetingIdSettings
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[IsPasscodeRequired <Boolean?>]`: Indicates whether a passcode is required to join a meeting when using joinMeetingId. Optional.
       - `[JoinMeetingId <String>]`: The meeting ID to be used to join a meeting. Optional. Read-only.
       - `[Passcode <String>]`: The passcode to join a meeting.  Optional. Read-only.
-    - `[JoinWebUrl <String>]`: The join URL of the online meeting. Read-only.
+    - `[JoinWebUrl <String>]`: 
     - `[LobbyBypassSettings <IMicrosoftGraphLobbyBypassSettings>]`: lobbyBypassSettings
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[IsDialInBypassEnabled <Boolean?>]`: Specifies whether or not to always let dial-in callers bypass the lobby. Optional.
       - `[Scope <String>]`: lobbyBypassScope
-    - `[RecordAutomatically <Boolean?>]`: Indicates whether to record the meeting automatically.
+    - `[RecordAutomatically <Boolean?>]`: 
     - `[ShareMeetingChatHistoryDefault <String>]`: meetingChatHistoryDefaultMode
-    - `[Subject <String>]`: The subject of the online meeting.
-    - `[VideoTeleconferenceId <String>]`: The video teleconferencing ID. Read-only.
+    - `[Subject <String>]`: 
+    - `[VideoTeleconferenceId <String>]`: 
     - `[WatermarkProtection <IMicrosoftGraphWatermarkProtectionValues>]`: watermarkProtectionValues
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[IsEnabledForContentSharing <Boolean?>]`: Indicates whether to apply a watermark to any shared content.
@@ -394,27 +394,27 @@ To create the parameters described below, construct a hash table containing the 
   - `[Status <String>]`: virtualEventStatus
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Audience <String>]`: meetingAudience
-  - `[CoOrganizers <IMicrosoftGraphCommunicationsUserIdentity[]>]`: Identity information of coorganizers of the webinar.
+  - `[CoOrganizers <IMicrosoftGraphCommunicationsUserIdentity[]>]`: 
     - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
     - `[Id <String>]`: Unique identifier for the identity.
     - `[TenantId <String>]`: The user's tenant ID.
-  - `[Registrations <IMicrosoftGraphVirtualEventRegistration[]>]`: Registration records of the webinar.
+  - `[Registrations <IMicrosoftGraphVirtualEventRegistration[]>]`: 
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[CancelationDateTime <DateTime?>]`: Date and time when the registrant cancels their registration for the virtual event. Only appears when applicable. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-    - `[Email <String>]`: Email address of the registrant.
-    - `[FirstName <String>]`: First name of the registrant.
-    - `[LastName <String>]`: Last name of the registrant.
-    - `[RegistrationDateTime <DateTime?>]`: Date and time when the registrant registers for the virtual event. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-    - `[RegistrationQuestionAnswers <IMicrosoftGraphVirtualEventRegistrationQuestionAnswer[]>]`: The registrant's answer to the registration questions.
-      - `[BooleanValue <Boolean?>]`: Boolean answer of the virtual event registration question. Only appears when answerInputType is boolean.
-      - `[DisplayName <String>]`: Display name of the registration question.
-      - `[MultiChoiceValues <String[]>]`: Collection of text answer of the virtual event registration question. Only appears when answerInputType is multiChoice.
-      - `[QuestionId <String>]`: id of the virtual event registration question.
-      - `[Value <String>]`: Text answer of the virtual event registration question. Appears when answerInputType is text, multilineText or singleChoice.
+    - `[CancelationDateTime <DateTime?>]`: 
+    - `[Email <String>]`: 
+    - `[FirstName <String>]`: 
+    - `[LastName <String>]`: 
+    - `[RegistrationDateTime <DateTime?>]`: 
+    - `[RegistrationQuestionAnswers <IMicrosoftGraphVirtualEventRegistrationQuestionAnswer[]>]`: 
+      - `[BooleanValue <Boolean?>]`: 
+      - `[DisplayName <String>]`: 
+      - `[MultiChoiceValues <String[]>]`: 
+      - `[QuestionId <String>]`: 
+      - `[Value <String>]`: 
     - `[Status <String>]`: virtualEventAttendeeRegistrationStatus
-    - `[UserId <String>]`: The registrant's ID in Microsoft Entra ID. Only appears when the registrant is registered in Microsoft Entra ID.
+    - `[UserId <String>]`: 
 
-`COORGANIZERS <IMicrosoftGraphCommunicationsUserIdentity[]>`: Identity information of coorganizers of the webinar.
+`COORGANIZERS <IMicrosoftGraphCommunicationsUserIdentity[]>`: .
   - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
   - `[Id <String>]`: Unique identifier for the identity.
   - `[TenantId <String>]`: The user's tenant ID.
@@ -446,30 +446,30 @@ To create the parameters described below, construct a hash table containing the 
   - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
   - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
 
-`REGISTRATIONS <IMicrosoftGraphVirtualEventRegistration[]>`: Registration records of the webinar.
+`REGISTRATIONS <IMicrosoftGraphVirtualEventRegistration[]>`: .
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[CancelationDateTime <DateTime?>]`: Date and time when the registrant cancels their registration for the virtual event. Only appears when applicable. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-  - `[Email <String>]`: Email address of the registrant.
-  - `[FirstName <String>]`: First name of the registrant.
-  - `[LastName <String>]`: Last name of the registrant.
-  - `[RegistrationDateTime <DateTime?>]`: Date and time when the registrant registers for the virtual event. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-  - `[RegistrationQuestionAnswers <IMicrosoftGraphVirtualEventRegistrationQuestionAnswer[]>]`: The registrant's answer to the registration questions.
-    - `[BooleanValue <Boolean?>]`: Boolean answer of the virtual event registration question. Only appears when answerInputType is boolean.
-    - `[DisplayName <String>]`: Display name of the registration question.
-    - `[MultiChoiceValues <String[]>]`: Collection of text answer of the virtual event registration question. Only appears when answerInputType is multiChoice.
-    - `[QuestionId <String>]`: id of the virtual event registration question.
-    - `[Value <String>]`: Text answer of the virtual event registration question. Appears when answerInputType is text, multilineText or singleChoice.
+  - `[CancelationDateTime <DateTime?>]`: 
+  - `[Email <String>]`: 
+  - `[FirstName <String>]`: 
+  - `[LastName <String>]`: 
+  - `[RegistrationDateTime <DateTime?>]`: 
+  - `[RegistrationQuestionAnswers <IMicrosoftGraphVirtualEventRegistrationQuestionAnswer[]>]`: 
+    - `[BooleanValue <Boolean?>]`: 
+    - `[DisplayName <String>]`: 
+    - `[MultiChoiceValues <String[]>]`: 
+    - `[QuestionId <String>]`: 
+    - `[Value <String>]`: 
   - `[Status <String>]`: virtualEventAttendeeRegistrationStatus
-  - `[UserId <String>]`: The registrant's ID in Microsoft Entra ID. Only appears when the registrant is registered in Microsoft Entra ID.
+  - `[UserId <String>]`: 
 
-`SESSIONS <IMicrosoftGraphVirtualEventSession[]>`: Sessions for the virtual event.
-  - `[AllowAttendeeToEnableCamera <Boolean?>]`: Indicates whether attendees can turn on their camera.
-  - `[AllowAttendeeToEnableMic <Boolean?>]`: Indicates whether attendees can turn on their microphone.
+`SESSIONS <IMicrosoftGraphVirtualEventSession[]>`: .
+  - `[AllowAttendeeToEnableCamera <Boolean?>]`: 
+  - `[AllowAttendeeToEnableMic <Boolean?>]`: 
   - `[AllowMeetingChat <String>]`: meetingChatMode
-  - `[AllowParticipantsToChangeName <Boolean?>]`: Specifies if participants are allowed to rename themselves in an instance of the meeting.
-  - `[AllowTeamworkReactions <Boolean?>]`: Indicates if Teams reactions are enabled for the meeting.
+  - `[AllowParticipantsToChangeName <Boolean?>]`: 
+  - `[AllowTeamworkReactions <Boolean?>]`: 
   - `[AllowedPresenters <String>]`: onlineMeetingPresenters
-  - `[AttendanceReports <IMicrosoftGraphMeetingAttendanceReport[]>]`: The attendance reports of an online meeting. Read-only.
+  - `[AttendanceReports <IMicrosoftGraphMeetingAttendanceReport[]>]`: 
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[AttendanceRecords <IMicrosoftGraphAttendanceRecord[]>]`: List of attendance records of an attendance report. Read-only.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -500,7 +500,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[MessageId <String>]`: The unique identifier of a message in a Microsoft Teams channel.
     - `[ReplyChainMessageId <String>]`: The ID of the reply message.
     - `[ThreadId <String>]`: The unique identifier for a thread in Microsoft Teams.
-  - `[IsEntryExitAnnounced <Boolean?>]`: Indicates whether to announce when callers join or leave.
+  - `[IsEntryExitAnnounced <Boolean?>]`: 
   - `[JoinInformation <IMicrosoftGraphItemBody>]`: itemBody
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Content <String>]`: The content of the item.
@@ -510,15 +510,15 @@ To create the parameters described below, construct a hash table containing the 
     - `[IsPasscodeRequired <Boolean?>]`: Indicates whether a passcode is required to join a meeting when using joinMeetingId. Optional.
     - `[JoinMeetingId <String>]`: The meeting ID to be used to join a meeting. Optional. Read-only.
     - `[Passcode <String>]`: The passcode to join a meeting.  Optional. Read-only.
-  - `[JoinWebUrl <String>]`: The join URL of the online meeting. Read-only.
+  - `[JoinWebUrl <String>]`: 
   - `[LobbyBypassSettings <IMicrosoftGraphLobbyBypassSettings>]`: lobbyBypassSettings
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[IsDialInBypassEnabled <Boolean?>]`: Specifies whether or not to always let dial-in callers bypass the lobby. Optional.
     - `[Scope <String>]`: lobbyBypassScope
-  - `[RecordAutomatically <Boolean?>]`: Indicates whether to record the meeting automatically.
+  - `[RecordAutomatically <Boolean?>]`: 
   - `[ShareMeetingChatHistoryDefault <String>]`: meetingChatHistoryDefaultMode
-  - `[Subject <String>]`: The subject of the online meeting.
-  - `[VideoTeleconferenceId <String>]`: The video teleconferencing ID. Read-only.
+  - `[Subject <String>]`: 
+  - `[VideoTeleconferenceId <String>]`: 
   - `[WatermarkProtection <IMicrosoftGraphWatermarkProtectionValues>]`: watermarkProtectionValues
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[IsEnabledForContentSharing <Boolean?>]`: Indicates whether to apply a watermark to any shared content.

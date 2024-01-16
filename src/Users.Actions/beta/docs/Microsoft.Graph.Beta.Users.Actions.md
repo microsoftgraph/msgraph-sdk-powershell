@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Users.Actions
-Module Guid: e0b6a234-63ef-4112-844f-0cd3fa54d2e1
+Module Guid: 62fb0f4f-929e-435d-bfbe-7147b58d5a9b
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.users.actions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -231,9 +231,6 @@ For more information on how to propose a time, and how to receive and accept a n
 Allows the acceptance of recommendations on all accessReviewInstanceDecisionItem objects that haven't been reviewed for an accessReviewInstance object for which the calling user is a reviewer.
 Recommendations are generated if recommendationsEnabled is true on the accessReviewScheduleDefinition object.
 If there isn't a recommendation on an accessReviewInstanceDecisionItem object no decision will be recorded.
-
-### [Invoke-MgBetaArchiveUserPlannerPlan](Invoke-MgBetaArchiveUserPlannerPlan.md)
-Invoke action archive
 
 ### [Invoke-MgBetaBatchUserPendingAccessReviewInstanceRecordDecision](Invoke-MgBetaBatchUserPendingAccessReviewInstanceRecordDecision.md)
 Enables reviewers to review all accessReviewInstanceDecisionItem objects in batches by using principalId, resourceId, or neither.
@@ -555,9 +552,6 @@ Translate identifiers of Outlook-related resources between formats.
 Troubleshoot a specific Cloud PC.
 Use this API to check the health status of the Cloud PC and the session host.
 
-### [Invoke-MgBetaUnarchiveUserPlannerPlan](Invoke-MgBetaUnarchiveUserPlannerPlan.md)
-Invoke action unarchive
-
 ### [Invoke-MgBetaUnfollowUserDriveItem](Invoke-MgBetaUnfollowUserDriveItem.md)
 Unfollow a driveItem.
 
@@ -625,8 +619,7 @@ Move a message to another folder within the specified user's mailbox.
 This creates a new copy of the message in the destination folder and removes the original message.
 
 ### [Move-MgBetaUserPlannerPlanToContainer](Move-MgBetaUserPlannerPlanToContainer.md)
-Move a planner plan object from one planner plan container to another.
-Planner plans can only be moved from a user container to a group container.
+Invoke action moveToContainer
 
 ### [New-MgBetaUserCloudPcSnapshot](New-MgBetaUserCloudPcSnapshot.md)
 Invoke action createSnapshot
@@ -985,13 +978,10 @@ This method saves the message in the Sent Items folder.
 Alternatively, send a new message in a single operation.
 
 ### [Send-MgBetaUserOnlineMeetingVirtualAppointmentReminderSm](Send-MgBetaUserOnlineMeetingVirtualAppointmentReminderSm.md)
-Send an SMS reminder to external attendees for a Teams Virtual Appointment.
-This feature requires Teams Premium and attendees must have a valid United States phone number to receive SMS notifications.
+Invoke action sendVirtualAppointmentReminderSms
 
 ### [Send-MgBetaUserOnlineMeetingVirtualAppointmentSm](Send-MgBetaUserOnlineMeetingVirtualAppointmentSm.md)
-Send an SMS notification to external attendees when a Teams Virtual Appointment is confirmed, rescheduled, or canceled.
-This feature requires Teams Premium.
-Attendees must have a valid United States phone number to receive these SMS notifications.
+Invoke action sendVirtualAppointmentSms
 
 ### [Send-MgBetaUserPendingAccessReviewInstanceReminder](Send-MgBetaUserPendingAccessReviewInstanceReminder.md)
 Send a reminder to the reviewers of a currently active accessReviewInstance.
