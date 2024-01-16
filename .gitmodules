@@ -2,4 +2,3 @@
 	path = autorest.powershell
 	url = https://github.com/microsoftgraph/autorest.powershell
 	branch = powershell-v2
-	fetch = refs/remotes/origin/powershell-v2
