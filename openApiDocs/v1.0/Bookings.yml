@@ -3003,6 +3003,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get sessions from solutions
+      description: Sessions for the virtual event.
       operationId: solution.virtualEvent.event_ListSession
       parameters:
         - name: virtualEvent-id
@@ -3162,6 +3163,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get sessions from solutions
+      description: Sessions for the virtual event.
       operationId: solution.virtualEvent.event_GetSession
       parameters:
         - name: virtualEvent-id
@@ -3314,6 +3316,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get attendanceReports from solutions
+      description: The attendance reports of an online meeting. Read-only.
       operationId: solution.virtualEvent.event.session_ListAttendanceReport
       parameters:
         - name: virtualEvent-id
@@ -3438,6 +3441,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get attendanceReports from solutions
+      description: The attendance reports of an online meeting. Read-only.
       operationId: solution.virtualEvent.event.session_GetAttendanceReport
       parameters:
         - name: virtualEvent-id
@@ -4032,7 +4036,11 @@ paths:
     get:
       tags:
         - solutions.virtualEventsRoot
-      summary: Get webinars from solutions
+      summary: List webinars
+      description: Get the list of all virtualEventWebinar objects created in the tenant.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualeventsroot-list-webinars?view=graph-rest-1.0
       operationId: solution.virtualEvent_ListWebinar
       parameters:
         - $ref: '#/components/parameters/top'
@@ -4258,7 +4266,11 @@ paths:
     get:
       tags:
         - solutions.virtualEventsRoot
-      summary: Get registrations from solutions
+      summary: List virtualEventRegistrations
+      description: Get a list of all registration records of a webinar.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualeventwebinar-list-registrations?view=graph-rest-1.0
       operationId: solution.virtualEvent.webinar_ListRegistration
       parameters:
         - name: virtualEventWebinar-id
@@ -4379,7 +4391,11 @@ paths:
     get:
       tags:
         - solutions.virtualEventsRoot
-      summary: Get registrations from solutions
+      summary: Get virtualEventRegistration
+      description: Get the properties and relationships of a virtualEventRegistration object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualeventregistration-get?view=graph-rest-1.0
       operationId: solution.virtualEvent.webinar_GetRegistration
       parameters:
         - name: virtualEventWebinar-id
@@ -4540,6 +4556,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get sessions from solutions
+      description: Sessions for the virtual event.
       operationId: solution.virtualEvent.webinar_ListSession
       parameters:
         - name: virtualEventWebinar-id
@@ -4699,6 +4716,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get sessions from solutions
+      description: Sessions for the virtual event.
       operationId: solution.virtualEvent.webinar_GetSession
       parameters:
         - name: virtualEventWebinar-id
@@ -4851,6 +4869,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get attendanceReports from solutions
+      description: The attendance reports of an online meeting. Read-only.
       operationId: solution.virtualEvent.webinar.session_ListAttendanceReport
       parameters:
         - name: virtualEventWebinar-id
@@ -4975,6 +4994,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get attendanceReports from solutions
+      description: The attendance reports of an online meeting. Read-only.
       operationId: solution.virtualEvent.webinar.session_GetAttendanceReport
       parameters:
         - name: virtualEventWebinar-id
@@ -6173,6 +6193,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.itemBody'
             displayName:
               type: string
+              description: Display name of the virtual event.
               nullable: true
             endDateTime:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
@@ -6184,6 +6205,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventSession'
+              description: Sessions for the virtual event.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -6274,10 +6296,12 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.communicationsUserIdentity'
+              description: Identity information of coorganizers of the webinar.
             registrations:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventRegistration'
+              description: Registration records of the webinar.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -6290,30 +6314,37 @@ components:
             cancelationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Date and time when the registrant cancels their registration for the virtual event. Only appears when applicable. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             email:
               type: string
+              description: Email address of the registrant.
               nullable: true
             firstName:
               type: string
+              description: First name of the registrant.
               nullable: true
             lastName:
               type: string
+              description: Last name of the registrant.
               nullable: true
             registrationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Date and time when the registrant registers for the virtual event. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             registrationQuestionAnswers:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventRegistrationQuestionAnswer'
+              description: The registrant's answer to the registration questions.
             status:
               $ref: '#/components/schemas/microsoft.graph.virtualEventAttendeeRegistrationStatus'
             userId:
               type: string
+              description: The registrant's ID in Microsoft Entra ID. Only appears when the registrant is registered in Microsoft Entra ID.
               nullable: true
           additionalProperties:
             type: object
@@ -6580,9 +6611,11 @@ components:
           properties:
             allowAttendeeToEnableCamera:
               type: boolean
+              description: Indicates whether attendees can turn on their camera.
               nullable: true
             allowAttendeeToEnableMic:
               type: boolean
+              description: Indicates whether attendees can turn on their microphone.
               nullable: true
             allowedPresenters:
               $ref: '#/components/schemas/microsoft.graph.onlineMeetingPresenters'
@@ -6590,9 +6623,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.meetingChatMode'
             allowParticipantsToChangeName:
               type: boolean
+              description: Specifies if participants are allowed to rename themselves in an instance of the meeting.
               nullable: true
             allowTeamworkReactions:
               type: boolean
+              description: Indicates if Teams reactions are enabled for the meeting.
               nullable: true
             audioConferencing:
               $ref: '#/components/schemas/microsoft.graph.audioConferencing'
@@ -6600,6 +6635,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.chatInfo'
             isEntryExitAnnounced:
               type: boolean
+              description: Indicates whether to announce when callers join or leave.
               nullable: true
             joinInformation:
               $ref: '#/components/schemas/microsoft.graph.itemBody'
@@ -6607,19 +6643,23 @@ components:
               $ref: '#/components/schemas/microsoft.graph.joinMeetingIdSettings'
             joinWebUrl:
               type: string
+              description: The join URL of the online meeting. Read-only.
               nullable: true
             lobbyBypassSettings:
               $ref: '#/components/schemas/microsoft.graph.lobbyBypassSettings'
             recordAutomatically:
               type: boolean
+              description: Indicates whether to record the meeting automatically.
               nullable: true
             shareMeetingChatHistoryDefault:
               $ref: '#/components/schemas/microsoft.graph.meetingChatHistoryDefaultMode'
             subject:
               type: string
+              description: The subject of the online meeting.
               nullable: true
             videoTeleconferenceId:
               type: string
+              description: The video teleconferencing ID. Read-only.
               nullable: true
             watermarkProtection:
               $ref: '#/components/schemas/microsoft.graph.watermarkProtectionValues'
@@ -6627,6 +6667,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReport'
+              description: The attendance reports of an online meeting. Read-only.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -6694,20 +6735,25 @@ components:
       properties:
         booleanValue:
           type: boolean
+          description: Boolean answer of the virtual event registration question. Only appears when answerInputType is boolean.
           nullable: true
         displayName:
           type: string
+          description: Display name of the registration question.
           nullable: true
         multiChoiceValues:
           type: array
           items:
             type: string
             nullable: true
+          description: Collection of text answer of the virtual event registration question. Only appears when answerInputType is multiChoice.
         questionId:
           type: string
+          description: id of the virtual event registration question.
           nullable: true
         value:
           type: string
+          description: 'Text answer of the virtual event registration question. Appears when answerInputType is text, multilineText or singleChoice.'
           nullable: true
       additionalProperties:
         type: object

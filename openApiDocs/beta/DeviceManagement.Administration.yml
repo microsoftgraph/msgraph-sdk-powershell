@@ -14507,6 +14507,8 @@ paths:
                 - connectionSettings desc
                 - connectivityResult
                 - connectivityResult desc
+                - disasterRecoveryCapability
+                - disasterRecoveryCapability desc
                 - diskEncryptionState
                 - diskEncryptionState desc
                 - displayName
@@ -14570,6 +14572,7 @@ paths:
                 - aadDeviceId
                 - connectionSettings
                 - connectivityResult
+                - disasterRecoveryCapability
                 - diskEncryptionState
                 - displayName
                 - gracePeriodEndDateTime
@@ -14671,6 +14674,7 @@ paths:
                 - aadDeviceId
                 - connectionSettings
                 - connectivityResult
+                - disasterRecoveryCapability
                 - diskEncryptionState
                 - displayName
                 - gracePeriodEndDateTime
@@ -14905,6 +14909,8 @@ paths:
                 - id desc
                 - displayName
                 - displayName desc
+                - errorCode
+                - errorCode desc
                 - expirationDate
                 - expirationDate desc
                 - lastModifiedDateTime
@@ -14938,6 +14944,7 @@ paths:
               enum:
                 - id
                 - displayName
+                - errorCode
                 - expirationDate
                 - lastModifiedDateTime
                 - operatingSystem
@@ -15027,6 +15034,7 @@ paths:
               enum:
                 - id
                 - displayName
+                - errorCode
                 - expirationDate
                 - lastModifiedDateTime
                 - operatingSystem
@@ -15629,8 +15637,12 @@ paths:
                 - offer desc
                 - offerDisplayName
                 - offerDisplayName desc
+                - offerName
+                - offerName desc
                 - publisher
                 - publisher desc
+                - publisherName
+                - publisherName desc
                 - recommendedSku
                 - recommendedSku desc
                 - sizeInGB
@@ -15639,6 +15651,8 @@ paths:
                 - sku desc
                 - skuDisplayName
                 - skuDisplayName desc
+                - skuName
+                - skuName desc
                 - startDate
                 - startDate desc
                 - status
@@ -15660,11 +15674,14 @@ paths:
                 - expirationDate
                 - offer
                 - offerDisplayName
+                - offerName
                 - publisher
+                - publisherName
                 - recommendedSku
                 - sizeInGB
                 - sku
                 - skuDisplayName
+                - skuName
                 - startDate
                 - status
               type: string
@@ -15746,11 +15763,14 @@ paths:
                 - expirationDate
                 - offer
                 - offerDisplayName
+                - offerName
                 - publisher
+                - publisherName
                 - recommendedSku
                 - sizeInGB
                 - sku
                 - skuDisplayName
+                - skuName
                 - startDate
                 - status
               type: string
@@ -15883,10 +15903,14 @@ paths:
                 - adDomainUsername desc
                 - alternateResourceUrl
                 - alternateResourceUrl desc
+                - connectionType
+                - connectionType desc
                 - displayName
                 - displayName desc
                 - healthCheckStatus
                 - healthCheckStatus desc
+                - healthCheckStatusDetail
+                - healthCheckStatusDetail desc
                 - healthCheckStatusDetails
                 - healthCheckStatusDetails desc
                 - inUse
@@ -15927,8 +15951,10 @@ paths:
                 - adDomainPassword
                 - adDomainUsername
                 - alternateResourceUrl
+                - connectionType
                 - displayName
                 - healthCheckStatus
+                - healthCheckStatusDetail
                 - healthCheckStatusDetails
                 - inUse
                 - managedBy
@@ -16023,8 +16049,10 @@ paths:
                 - adDomainPassword
                 - adDomainUsername
                 - alternateResourceUrl
+                - connectionType
                 - displayName
                 - healthCheckStatus
+                - healthCheckStatusDetail
                 - healthCheckStatusDetails
                 - inUse
                 - managedBy
@@ -16297,6 +16325,8 @@ paths:
                 - provisioningType desc
                 - scopeIds
                 - scopeIds desc
+                - windowsSetting
+                - windowsSetting desc
                 - windowsSettings
                 - windowsSettings desc
               type: string
@@ -16329,6 +16359,7 @@ paths:
                 - onPremisesConnectionId
                 - provisioningType
                 - scopeIds
+                - windowsSetting
                 - windowsSettings
                 - assignments
               type: string
@@ -16440,6 +16471,7 @@ paths:
                 - onPremisesConnectionId
                 - provisioningType
                 - scopeIds
+                - windowsSetting
                 - windowsSettings
                 - assignments
               type: string
@@ -19236,6 +19268,8 @@ paths:
                 - id desc
                 - createdDateTime
                 - createdDateTime desc
+                - crossRegionDisasterRecoverySetting
+                - crossRegionDisasterRecoverySetting desc
                 - displayName
                 - displayName desc
                 - lastModifiedDateTime
@@ -19261,6 +19295,7 @@ paths:
               enum:
                 - id
                 - createdDateTime
+                - crossRegionDisasterRecoverySetting
                 - displayName
                 - lastModifiedDateTime
                 - localAdminEnabled
@@ -19348,6 +19383,7 @@ paths:
               enum:
                 - id
                 - createdDateTime
+                - crossRegionDisasterRecoverySetting
                 - displayName
                 - lastModifiedDateTime
                 - localAdminEnabled
@@ -21603,6 +21639,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.cloudPcConnectionSettings'
             connectivityResult:
               $ref: '#/components/schemas/microsoft.graph.cloudPcConnectivityResult'
+            disasterRecoveryCapability:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcDisasterRecoveryCapability'
             diskEncryptionState:
               $ref: '#/components/schemas/microsoft.graph.cloudPcDiskEncryptionState'
             displayName:
@@ -21710,6 +21748,8 @@ components:
               type: string
               description: The display name of the image.
               nullable: true
+            errorCode:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcDeviceImageErrorCode'
             expirationDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
@@ -21833,9 +21873,15 @@ components:
               type: string
               description: 'The official display offer name of the gallery image. For example, Windows 10 Enterprise + OS Optimizations. Read-only.'
               nullable: true
+            offerName:
+              type: string
+              nullable: true
             publisher:
               type: string
               description: The publisher name of the gallery image. This value is passed to Azure to get the image resource. Read-only.
+              nullable: true
+            publisherName:
+              type: string
               nullable: true
             recommendedSku:
               type: string
@@ -21855,6 +21901,9 @@ components:
             skuDisplayName:
               type: string
               description: 'The official display stock keeping unit (SKU) name of this gallery image. For example, 2004. Read-only.'
+              nullable: true
+            skuName:
+              type: string
               nullable: true
             startDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
@@ -21888,11 +21937,15 @@ components:
               type: string
               description: The interface URL of the partner service's resource that links to this Azure network connection. Returned only on $select.
               nullable: true
+            connectionType:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcOnPremisesConnectionType'
             displayName:
               type: string
               description: The display name for the Azure network connection.
             healthCheckStatus:
               $ref: '#/components/schemas/microsoft.graph.cloudPcOnPremisesConnectionStatus'
+            healthCheckStatusDetail:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcOnPremisesConnectionStatusDetail'
             healthCheckStatusDetails:
               $ref: '#/components/schemas/microsoft.graph.cloudPcOnPremisesConnectionStatusDetails'
             inUse:
@@ -21981,7 +22034,6 @@ components:
             displayName:
               type: string
               description: The display name for the provisioning policy.
-              nullable: true
             domainJoinConfiguration:
               $ref: '#/components/schemas/microsoft.graph.cloudPcDomainJoinConfiguration'
             domainJoinConfigurations:
@@ -22002,11 +22054,9 @@ components:
             imageDisplayName:
               type: string
               description: The display name for the OS image you’re provisioning.
-              nullable: true
             imageId:
               type: string
               description: 'The ID of the OS image you want to provision on Cloud PCs. The format for a gallery type image is: {publisheroffersku}. Supported values for each of the parameters are as follows:publisher: Microsoftwindowsdesktop. offer: windows-ent-cpc. sku: 21h1-ent-cpc-m365, 21h1-ent-cpc-os, 20h2-ent-cpc-m365, 20h2-ent-cpc-os, 20h1-ent-cpc-m365, 20h1-ent-cpc-os, 19h2-ent-cpc-m365 and 19h2-ent-cpc-os.'
-              nullable: true
             imageType:
               $ref: '#/components/schemas/microsoft.graph.cloudPcProvisioningPolicyImageType'
             localAdminEnabled:
@@ -22028,6 +22078,8 @@ components:
               items:
                 type: string
                 nullable: true
+            windowsSetting:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcWindowsSetting'
             windowsSettings:
               $ref: '#/components/schemas/microsoft.graph.cloudPcWindowsSettings'
             assignments:
@@ -22952,9 +23004,11 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time the setting was created. The Timestamp type represents the date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 looks like this: ''2014-01-01T00:00:00Z''.'
+              description: 'The date and time the setting was created. The timestamp type represents the date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 looks like this: ''2014-01-01T00:00:00Z''.'
               format: date-time
               nullable: true
+            crossRegionDisasterRecoverySetting:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcCrossRegionDisasterRecoverySetting'
             displayName:
               type: string
               description: The setting name displayed in the user interface.
@@ -22962,7 +23016,7 @@ components:
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The last date and time the setting was modified. The Timestamp type represents the date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 looks like this: ''2014-01-01T00:00:00Z''.'
+              description: 'The last date and time the setting was modified. The timestamp type represents the date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 looks like this: ''2014-01-01T00:00:00Z''.'
               format: date-time
               nullable: true
             localAdminEnabled:
@@ -22977,7 +23031,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.cloudPcRestorePointSetting'
             selfServiceEnabled:
               type: boolean
-              description: 'Indicates whether the self-service option is enabled. Default value is false. To enable the self-service option, change the setting to true. If the self-service option is enabled, the end user is allowed to perform some self-service operations, such as upgrading the Cloud PC through the end user portal.'
               nullable: true
             assignments:
               type: array
@@ -24420,7 +24473,7 @@ components:
         - create
         - delete
         - patch
-        - other
+        - unknownFutureValue
       type: string
     microsoft.graph.cloudPcAuditActivityResult:
       title: cloudPcAuditActivityResult
@@ -24429,7 +24482,7 @@ components:
         - clientError
         - failure
         - timeout
-        - other
+        - unknownFutureValue
       type: string
     microsoft.graph.cloudPcAuditActor:
       title: cloudPcAuditActor
@@ -24485,7 +24538,7 @@ components:
       title: cloudPcAuditCategory
       enum:
         - cloudPC
-        - other
+        - unknownFutureValue
       type: string
     microsoft.graph.cloudPcAuditResource:
       title: cloudPcAuditResource
@@ -24563,6 +24616,20 @@ components:
           type: string
           description: 'Datetime when the status was updated. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.'
           format: date-time
+      additionalProperties:
+        type: object
+    microsoft.graph.cloudPcDisasterRecoveryCapability:
+      title: cloudPcDisasterRecoveryCapability
+      type: object
+      properties:
+        capabilityType:
+          $ref: '#/components/schemas/microsoft.graph.cloudPcDisasterRecoveryCapabilityType'
+        primaryRegion:
+          type: string
+          nullable: true
+        secondaryRegion:
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.cloudPcDiskEncryptionState:
@@ -24713,11 +24780,26 @@ components:
         - administrator
         - unknownFutureValue
       type: string
+    microsoft.graph.cloudPcDeviceImageErrorCode:
+      title: cloudPcDeviceImageErrorCode
+      enum:
+        - internalServerError
+        - sourceImageNotFound
+        - osVersionNotSupported
+        - sourceImageInvalid
+        - sourceImageNotGeneralized
+        - unknownFutureValue
+        - vmAlreadyAzureAdjoined
+        - paidSourceImageNotSupport
+        - sourceImageNotSupportCustomizeVMName
+        - sourceImageSizeExceedsLimitation
+      type: string
     microsoft.graph.cloudPcDeviceImageOsStatus:
       title: cloudPcDeviceImageOsStatus
       enum:
         - supported
         - supportedWithWarning
+        - unknown
         - unknownFutureValue
       type: string
     microsoft.graph.cloudPcDeviceImageStatus:
@@ -24726,6 +24808,7 @@ components:
         - pending
         - ready
         - failed
+        - unknownFutureValue
       type: string
     microsoft.graph.cloudPcDeviceImageStatusDetails:
       title: cloudPcDeviceImageStatusDetails
@@ -24758,6 +24841,13 @@ components:
         - notSupported
         - unknownFutureValue
       type: string
+    microsoft.graph.cloudPcOnPremisesConnectionType:
+      title: cloudPcOnPremisesConnectionType
+      enum:
+        - hybridAzureADJoin
+        - azureADJoin
+        - unknownFutureValue
+      type: string
     microsoft.graph.cloudPcOnPremisesConnectionStatus:
       title: cloudPcOnPremisesConnectionStatus
       enum:
@@ -24769,6 +24859,24 @@ components:
         - informational
         - unknownFutureValue
       type: string
+    microsoft.graph.cloudPcOnPremisesConnectionStatusDetail:
+      title: cloudPcOnPremisesConnectionStatusDetail
+      type: object
+      properties:
+        endDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+        healthChecks:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.cloudPcOnPremisesConnectionHealthCheck'
+        startDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+      additionalProperties:
+        type: object
     microsoft.graph.cloudPcOnPremisesConnectionStatusDetails:
       title: cloudPcOnPremisesConnectionStatusDetails
       type: object
@@ -24800,13 +24908,6 @@ components:
       type: string
       x-ms-enum-flags:
         isFlags: true
-    microsoft.graph.cloudPcOnPremisesConnectionType:
-      title: cloudPcOnPremisesConnectionType
-      enum:
-        - hybridAzureADJoin
-        - azureADJoin
-        - unknownFutureValue
-      type: string
     microsoft.graph.cloudPcWindowsSettings:
       title: cloudPcWindowsSettings
       type: object
@@ -24821,6 +24922,8 @@ components:
       title: cloudPcDomainJoinConfiguration
       type: object
       properties:
+        domainJoinType:
+          $ref: '#/components/schemas/microsoft.graph.cloudPcDomainJoinType'
         onPremisesConnectionId:
           type: string
           description: 'The Azure network connection ID that matches the virtual network IT admins want the provisioning policy to use when they create Cloud PCs. You can use this property in both domain join types: Azure AD joined or Hybrid Microsoft Entra joined. If you enter an onPremisesConnectionId, leave regionName as empty.'
@@ -24840,17 +24943,29 @@ components:
       enum:
         - gallery
         - custom
+        - unknownFutureValue
       type: string
     microsoft.graph.microsoftManagedDesktop:
       title: microsoftManagedDesktop
       type: object
       properties:
+        managedType:
+          $ref: '#/components/schemas/microsoft.graph.microsoftManagedDesktopType'
         profile:
           type: string
           description: The name of the Microsoft Managed Desktop profile that the Windows 365 Cloud PC is associated with.
           nullable: true
         type:
           $ref: '#/components/schemas/microsoft.graph.microsoftManagedDesktopType'
+      additionalProperties:
+        type: object
+    microsoft.graph.cloudPcWindowsSetting:
+      title: cloudPcWindowsSetting
+      type: object
+      properties:
+        locale:
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.cloudPcManagementAssignmentTarget:
@@ -25229,6 +25344,16 @@ components:
         lastSignInRequestId:
           type: string
           description: Request identifier of the last interactive sign-in performed by this user.
+          nullable: true
+        lastSuccessfulSignInDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The datetime of the user's most recent successful sign in activity.
+          format: date-time
+          nullable: true
+        lastSuccessfulSignInRequestId:
+          type: string
+          description: The requestID of the last successful signIn.
           nullable: true
       additionalProperties:
         type: object
@@ -28858,6 +28983,14 @@ components:
         - title: userTeamwork
           type: object
           properties:
+            locale:
+              type: string
+              description: Represents the chosen locale of a user in Microsoft Teams.
+              nullable: true
+            region:
+              type: string
+              description: Represents the region of the user in Microsoft Teams.
+              nullable: true
             associatedTeams:
               type: array
               items:
@@ -29065,6 +29198,9 @@ components:
         - inaccessibleCloudPcReports
         - rawRemoteConnectionReports
         - cloudPcUsageCategoryReports
+        - crossRegionDisasterRecoveryReport
+        - performanceTrendReport
+        - inaccessibleCloudPcTrendReport
       type: string
     microsoft.graph.cloudPcSnapshotType:
       title: cloudPcSnapshotType
@@ -29112,6 +29248,19 @@ components:
         - unavailable
         - unknownFutureValue
       type: string
+    microsoft.graph.cloudPcCrossRegionDisasterRecoverySetting:
+      title: cloudPcCrossRegionDisasterRecoverySetting
+      type: object
+      properties:
+        crossRegionDisasterRecoveryEnabled:
+          type: boolean
+        disasterRecoveryNetworkSetting:
+          $ref: '#/components/schemas/microsoft.graph.cloudPcDisasterRecoveryNetworkSetting'
+        maintainCrossRegionRestorePointEnabled:
+          type: boolean
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.cloudPcRestorePointSetting:
       title: cloudPcRestorePointSetting
       type: object
@@ -29123,6 +29272,8 @@ components:
           description: 'The time interval in hours to take snapshots (restore points) of a Cloud PC automatically. Possible values are 4, 6, 12, 16, and 24. The default frequency is 12 hours.'
           format: int32
           nullable: true
+        frequencyType:
+          $ref: '#/components/schemas/microsoft.graph.cloudPcRestorePointFrequencyType'
         userRestoreEnabled:
           type: boolean
           description: 'If true, the user has the ability to use snapshots to restore Cloud PCs. If false, non-admin users can''t use snapshots to restore the Cloud PC.'
@@ -30061,7 +30212,7 @@ components:
         - itPro
         - application
         - partner
-        - unknown
+        - unknownFutureValue
       type: string
     microsoft.graph.cloudPcUserRoleScopeTagInfo:
       title: cloudPcUserRoleScopeTagInfo
@@ -30121,6 +30272,14 @@ components:
         - unavailable
         - unknownFutureValue
       type: string
+    microsoft.graph.cloudPcDisasterRecoveryCapabilityType:
+      title: cloudPcDisasterRecoveryCapabilityType
+      enum:
+        - none
+        - failover
+        - failback
+        - unknownFutureValue
+      type: string
     microsoft.graph.actionState:
       title: actionState
       enum:
@@ -30168,6 +30327,9 @@ components:
       title: cloudPcOnPremisesConnectionHealthCheck
       type: object
       properties:
+        additionalDetail:
+          type: string
+          nullable: true
         additionalDetails:
           type: string
           description: More details about the health check or the recommended action.
@@ -30948,13 +31110,13 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The start time of the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              description: 'The start time of the operation. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             lastActionDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The time of the last action in the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              description: 'The time of the last action in the operation. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             resourceLocation:
@@ -33241,6 +33403,9 @@ components:
               type: string
               description: The email address for sending messages to the channel. Read-only.
               nullable: true
+            isArchived:
+              type: boolean
+              nullable: true
             isFavoriteByDefault:
               type: boolean
               description: 'Indicates whether the channel should automatically be marked ''favorite'' for all members of the team. Can only be set programmatically with Create team. Default: false.'
@@ -33293,6 +33458,10 @@ components:
         - title: schedule
           type: object
           properties:
+            activitiesIncludedWhenCopyingShiftsEnabled:
+              type: boolean
+              description: Indicates whether copied shifts should include the activities.
+              nullable: true
             enabled:
               type: boolean
               description: Indicates whether the schedule is enabled for the team. Required.
@@ -33312,6 +33481,8 @@ components:
               description: Additional information about why schedule provisioning failed.
               nullable: true
               readOnly: true
+            startDayOfWeek:
+              $ref: '#/components/schemas/microsoft.graph.dayOfWeek'
             swapShiftsRequestsEnabled:
               type: boolean
               description: Indicates whether swap shifts requests are enabled for the schedule.
@@ -33340,6 +33511,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.dayNote'
+              description: The day notes in the schedule.
               x-ms-navigationProperty: true
             offerShiftRequests:
               type: array
@@ -33381,6 +33553,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.timeCard'
+              description: The time cards in the schedule.
               x-ms-navigationProperty: true
             timeOffReasons:
               type: array
@@ -36088,6 +36261,8 @@ components:
         - title: plannerPlan
           type: object
           properties:
+            archivalInfo:
+              $ref: '#/components/schemas/microsoft.graph.plannerArchivalInfo'
             container:
               $ref: '#/components/schemas/microsoft.graph.plannerPlanContainer'
             contexts:
@@ -36102,6 +36277,9 @@ components:
               nullable: true
             creationSource:
               $ref: '#/components/schemas/microsoft.graph.plannerPlanCreation'
+            isArchived:
+              type: boolean
+              nullable: true
             owner:
               type: string
               nullable: true
@@ -36144,6 +36322,8 @@ components:
               nullable: true
             appliedCategories:
               $ref: '#/components/schemas/microsoft.graph.plannerAppliedCategories'
+            archivalInfo:
+              $ref: '#/components/schemas/microsoft.graph.plannerArchivalInfo'
             assigneePriority:
               type: string
               description: Hint used to order items of this type in a list view. The format is defined as outlined here.
@@ -36192,6 +36372,17 @@ components:
             hasDescription:
               type: boolean
               description: Read-only. Value is true if the details object of the task has a nonempty description and false otherwise.
+              nullable: true
+            isArchived:
+              type: boolean
+              nullable: true
+            isOnMyDay:
+              type: boolean
+              nullable: true
+            isOnMyDayLastModifiedDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
               nullable: true
             orderHint:
               type: string
@@ -36838,11 +37029,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: 'Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn''t included in the response.'
           nullable: true
       additionalProperties:
         type: object
@@ -37039,6 +37230,22 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.cloudPcDisasterRecoveryNetworkSetting:
+      title: cloudPcDisasterRecoveryNetworkSetting
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.cloudPcRestorePointFrequencyType:
+      title: cloudPcRestorePointFrequencyType
+      enum:
+        - default
+        - fourHours
+        - sixHours
+        - twelveHours
+        - sixteenHours
+        - twentyFourHours
+        - unknownFutureValue
+      type: string
     microsoft.graph.ODataErrors.MainError:
       required:
         - code
@@ -37987,6 +38194,8 @@ components:
         - teamifyGroup
         - createChannel
         - createChat
+        - archiveChannel
+        - unarchiveChannel
       type: string
     microsoft.graph.teamsAsyncOperationStatus:
       title: teamsAsyncOperationStatus
@@ -39962,6 +40171,7 @@ components:
             dayNoteDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
+              description: The date of the day note.
               format: date
               nullable: true
             draftDayNote:
@@ -40019,13 +40229,29 @@ components:
               $ref: '#/components/schemas/microsoft.graph.openShiftItem'
             isStagedForDeletion:
               type: boolean
+              description: 'The openShift is marked for deletion, a process that is finalized when the schedule is shared.'
               nullable: true
             schedulingGroupId:
               type: string
-              description: ID for the scheduling group that the open shift belongs to.
+              description: The ID of the schedulingGroup that contains the openShift.
               nullable: true
+            schedulingGroupName:
+              type: string
+              description: The name of the schedulingGroup that contains the openShift.
+              nullable: true
+              readOnly: true
             sharedOpenShift:
               $ref: '#/components/schemas/microsoft.graph.openShiftItem'
+            teamId:
+              type: string
+              description: The ID of the team in which the openShift is located.
+              nullable: true
+              readOnly: true
+            teamName:
+              type: string
+              description: The name of the team in which the openShift is located.
+              nullable: true
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.schedulingGroup:
@@ -40034,6 +40260,10 @@ components:
         - title: schedulingGroup
           type: object
           properties:
+            code:
+              type: string
+              description: The code for the schedulingGroup to represent an external identifier.
+              nullable: true
             displayName:
               type: string
               description: The display name for the schedulingGroup. Required.
@@ -40061,6 +40291,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.shiftItem'
             isStagedForDeletion:
               type: boolean
+              description: 'The shift is marked for deletion, a process that is finalized when the schedule is shared.'
               nullable: true
             schedulingGroupId:
               type: string
@@ -40121,6 +40352,10 @@ components:
         - title: timeOffReason
           type: object
           properties:
+            code:
+              type: string
+              description: The code of the timeOffReason to represent an external identifier.
+              nullable: true
             displayName:
               type: string
               description: The name of the timeOffReason. Required.
@@ -40167,6 +40402,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.timeOffItem'
             isStagedForDeletion:
               type: boolean
+              description: 'The timeOff is marked for deletion, a process that is finalized when the schedule is shared.'
               nullable: true
             sharedTimeOff:
               $ref: '#/components/schemas/microsoft.graph.timeOffItem'
@@ -42049,6 +42285,22 @@ components:
           description: Unique identifier of the accessReviewStageSettings. The stageId is used in dependsOn property to indicate the stage relationship. Required.
       additionalProperties:
         type: object
+    microsoft.graph.plannerArchivalInfo:
+      title: plannerArchivalInfo
+      type: object
+      properties:
+        justification:
+          type: string
+          nullable: true
+        statusChangedBy:
+          $ref: '#/components/schemas/microsoft.graph.identitySet'
+        statusChangedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.plannerPlanContainer:
       title: plannerPlanContainer
       type: object
@@ -42094,8 +42346,13 @@ components:
         - title: plannerBucket
           type: object
           properties:
+            archivalInfo:
+              $ref: '#/components/schemas/microsoft.graph.plannerArchivalInfo'
             creationSource:
               $ref: '#/components/schemas/microsoft.graph.plannerBucketCreation'
+            isArchived:
+              type: boolean
+              nullable: true
             name:
               type: string
               description: Name of the bucket.
@@ -42194,6 +42451,8 @@ components:
         - none
         - checklistCompletion
         - unknownFutureValue
+        - formCompletion
+        - approvalCompletion
       type: string
       x-ms-enum-flags:
         isFlags: true
@@ -42229,6 +42488,8 @@ components:
         - title: plannerTaskDetails
           type: object
           properties:
+            approvalAttachment:
+              $ref: '#/components/schemas/microsoft.graph.plannerBaseApprovalAttachment'
             checklist:
               $ref: '#/components/schemas/microsoft.graph.plannerChecklistItems'
             completionRequirements:
@@ -42237,6 +42498,8 @@ components:
               type: string
               description: Description of the task.
               nullable: true
+            forms:
+              $ref: '#/components/schemas/microsoft.graph.plannerFormsDictionary'
             notes:
               $ref: '#/components/schemas/microsoft.graph.itemBody'
             previewType:
@@ -42643,7 +42906,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              description: 'The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
               readOnly: true
@@ -42652,7 +42915,7 @@ components:
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              description: 'The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
               readOnly: true
@@ -42798,7 +43061,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.itemBody'
             displayName:
               type: string
-              description: Display name of the virtual event
+              description: Display name of the virtual event.
               nullable: true
             endDateTime:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
@@ -42810,13 +43073,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventPresenter'
-              description: Presenters' information of the virtual event.
+              description: The virtual event presenters.
               x-ms-navigationProperty: true
             sessions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventSession'
-              description: Sessions of the virtual event.
+              description: Sessions for the virtual event.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -45656,6 +45919,14 @@ components:
       type: object
       additionalProperties:
         type: object
+    microsoft.graph.plannerBaseApprovalAttachment:
+      title: plannerBaseApprovalAttachment
+      type: object
+      properties:
+        status:
+          $ref: '#/components/schemas/microsoft.graph.plannerApprovalStatus'
+      additionalProperties:
+        type: object
     microsoft.graph.plannerChecklistItems:
       title: plannerChecklistItems
       type: object
@@ -45665,10 +45936,21 @@ components:
       title: plannerTaskCompletionRequirementDetails
       type: object
       properties:
+        approvalRequirement:
+          $ref: '#/components/schemas/microsoft.graph.plannerApprovalRequirement'
         checklistRequirement:
           $ref: '#/components/schemas/microsoft.graph.plannerChecklistRequirement'
+        formsRequirement:
+          $ref: '#/components/schemas/microsoft.graph.plannerFormsRequirement'
       additionalProperties:
         type: object
+    microsoft.graph.plannerFormsDictionary:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.Dictionary'
+        - title: plannerFormsDictionary
+          type: object
+          additionalProperties:
+            type: object
     microsoft.graph.plannerExternalReferences:
       title: plannerExternalReferences
       type: object
@@ -47920,6 +48202,24 @@ components:
         - deviceIntent
       type: string
       description: Authoring source of a policy
+    microsoft.graph.plannerApprovalStatus:
+      title: plannerApprovalStatus
+      enum:
+        - requested
+        - approved
+        - rejected
+        - cancelled
+        - unknownFutureValue
+      type: string
+    microsoft.graph.plannerApprovalRequirement:
+      title: plannerApprovalRequirement
+      type: object
+      properties:
+        isApprovalRequired:
+          type: boolean
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.plannerChecklistRequirement:
       title: plannerChecklistRequirement
       type: object
@@ -47930,6 +48230,22 @@ components:
             type: string
             nullable: true
           description: A collection of required plannerChecklistItems identifiers to complete the plannerTask.
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerFormsRequirement:
+      title: plannerFormsRequirement
+      type: object
+      properties:
+        requiredForms:
+          type: array
+          items:
+            type: string
+            nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.Dictionary:
+      title: Dictionary
+      type: object
       additionalProperties:
         type: object
     microsoft.graph.endpointType:
@@ -48188,6 +48504,7 @@ components:
           items:
             type: string
             nullable: true
+          description: 'The identifiers of containers, such as organizational units, that are in scope for a synchronization rule. For Active Directory organizational units, use the distinguished names. An empty list means no container filtering is configured.'
       additionalProperties:
         type: object
     microsoft.graph.groupFilter:
@@ -48199,6 +48516,7 @@ components:
           items:
             type: string
             nullable: true
+          description: 'Identifiers of groups that are in scope for a synchronization rule. For Active Directory groups, use the distinguished names. An empty list means no group filtering is configured.'
       additionalProperties:
         type: object
     microsoft.graph.stringKeyStringValuePair:
