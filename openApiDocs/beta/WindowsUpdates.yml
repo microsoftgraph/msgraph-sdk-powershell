@@ -4396,11 +4396,11 @@ paths:
     get:
       tags:
         - admin.adminWindows
-      summary: Get updatableAsset
-      description: Read the properties and relationships of an updatableAsset object.
+      summary: Get azureADDevice
+      description: Read the properties of an azureADDevice object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-updatableasset-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/windowsupdates-azureaddevice-get?view=graph-rest-1.0
       operationId: admin.window.update_GetUpdatableAsset
       parameters:
         - name: updatableAsset-id
@@ -4479,11 +4479,11 @@ paths:
     delete:
       tags:
         - admin.adminWindows
-      summary: Delete updatableAssetGroup
-      description: 'Delete an updatableAssetGroup object. When an updatableAssetGroup object, its member updatableAsset objects are not deleted.'
+      summary: Delete updatableAsset
+      description: Delete an updatableAsset object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/windowsupdates-updatableasset-delete?view=graph-rest-1.0
       operationId: admin.window.update_DeleteUpdatableAsset
       parameters:
         - name: updatableAsset-id

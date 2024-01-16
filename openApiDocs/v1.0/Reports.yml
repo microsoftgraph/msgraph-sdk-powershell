@@ -7479,6 +7479,10 @@ components:
         - notEnabled
         - unknown
         - unknownFutureValue
+        - reportOnlySuccess
+        - reportOnlyFailure
+        - reportOnlyNotApplied
+        - reportOnlyInterrupted
       type: string
     microsoft.graph.geoCoordinates:
       title: geoCoordinates

@@ -2257,6 +2257,7 @@ paths:
                 - aadDeviceId
                 - connectionSettings
                 - connectivityResult
+                - disasterRecoveryCapability
                 - diskEncryptionState
                 - displayName
                 - gracePeriodEndDateTime
@@ -2300,6 +2301,8 @@ paths:
                 - connectionSettings desc
                 - connectivityResult
                 - connectivityResult desc
+                - disasterRecoveryCapability
+                - disasterRecoveryCapability desc
                 - diskEncryptionState
                 - diskEncryptionState desc
                 - displayName
@@ -3914,6 +3917,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.cloudPcConnectionSettings'
             connectivityResult:
               $ref: '#/components/schemas/microsoft.graph.cloudPcConnectivityResult'
+            disasterRecoveryCapability:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcDisasterRecoveryCapability'
             diskEncryptionState:
               $ref: '#/components/schemas/microsoft.graph.cloudPcDiskEncryptionState'
             displayName:
@@ -4009,6 +4014,8 @@ components:
           type: string
           description: The ID of the source image.
           nullable: true
+        resourceId:
+          type: string
         subscriptionDisplayName:
           type: string
           description: The display name of subscription that hosts the source image.
@@ -4025,12 +4032,14 @@ components:
       properties:
         permission:
           type: string
+          description: The operations allowed on scoped resources for the authenticated user. Example permission is Microsoft.CloudPC/ProvisioningPolicies/Create.
           nullable: true
         scopeIds:
           type: array
           items:
             type: string
             nullable: true
+          description: 'The scope IDs of corresponding permission. Currently, it''s Intune scope tag ID.'
       additionalProperties:
         type: object
     microsoft.graph.cloudPcTenantEncryptionSetting:
@@ -4771,6 +4780,7 @@ components:
         - unknownFutureValue
         - cloudPcInGracePeriodScenario
         - cloudPcFrontlineInsufficientLicensesScenario
+        - cloudPcInaccessibleScenario
       type: string
     microsoft.graph.deviceManagement.ruleSeverityType:
       title: ruleSeverityType
@@ -4904,6 +4914,20 @@ components:
           type: string
           description: 'Datetime when the status was updated. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.'
           format: date-time
+      additionalProperties:
+        type: object
+    microsoft.graph.cloudPcDisasterRecoveryCapability:
+      title: cloudPcDisasterRecoveryCapability
+      type: object
+      properties:
+        capabilityType:
+          $ref: '#/components/schemas/microsoft.graph.cloudPcDisasterRecoveryCapabilityType'
+        primaryRegion:
+          type: string
+          nullable: true
+        secondaryRegion:
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.cloudPcDiskEncryptionState:
@@ -5263,6 +5287,14 @@ components:
         - unavailable
         - unknownFutureValue
       type: string
+    microsoft.graph.cloudPcDisasterRecoveryCapabilityType:
+      title: cloudPcDisasterRecoveryCapabilityType
+      enum:
+        - none
+        - failover
+        - failback
+        - unknownFutureValue
+      type: string
     microsoft.graph.cloudPcPartnerAgentInstallStatus:
       title: cloudPcPartnerAgentInstallStatus
       enum:
@@ -5390,7 +5422,7 @@ components:
       properties:
         settingDefinitionId:
           type: string
-          description: Setting definition id that is being referred to a setting. Applicable for reusable setting.
+          description: Setting definition id that is being referred to a setting. Applicable for reusable setting
           nullable: true
       additionalProperties:
         type: object
