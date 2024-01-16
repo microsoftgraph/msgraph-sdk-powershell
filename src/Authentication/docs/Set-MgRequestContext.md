@@ -163,11 +163,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### System.Int32
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Authentication.Core.Interfaces.IRequestContext
-
 ## NOTES
 
 ## RELATED LINKS
