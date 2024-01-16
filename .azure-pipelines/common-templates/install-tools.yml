@@ -29,7 +29,7 @@ steps:
   - task: NodeTool@0
     displayName: Install NodeJs
     inputs:
-      versionSpec: '14.15.5'
+      versionSpec: 16.x
       
   - task: Npm@1
     displayName: Install AutoRest
