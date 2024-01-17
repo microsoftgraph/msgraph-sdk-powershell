@@ -17528,15 +17528,9 @@ components:
         authenticationStrength:
           $ref: '#/components/schemas/microsoft.graph.authenticationStrength'
         conditionsNotSatisfied:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.conditionalAccessConditions'
-          description: 'Refers to the conditional access policy conditions that aren''t satisfied. The possible values are: none, application, users, devicePlatform, location, clientType, signInRisk, userRisk, time, deviceState, client,ipAddressSeenByAzureAD,ipAddressSeenByResourceProvider,unknownFutureValue,servicePrincipals,servicePrincipalRisk, authenticationFlows, insiderRisk . You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: servicePrincipals,servicePrincipalRisk, authenticationFlows, insiderRisk. conditionalAccessConditions is a multi-valued enumeration and the property can contain multiple values in a comma-separated list.'
+          $ref: '#/components/schemas/microsoft.graph.conditionalAccessConditions'
         conditionsSatisfied:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.conditionalAccessConditions'
-          description: 'Refers to the conditional access policy conditions that are satisfied. The possible values are: none, application, users, devicePlatform, location, clientType, signInRisk, userRisk, time, deviceState, client,ipAddressSeenByAzureAD,ipAddressSeenByResourceProvider,unknownFutureValue,servicePrincipals,servicePrincipalRisk, authenticationFlows, insiderRisk. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: servicePrincipals,servicePrincipalRisk, authenticationFlows, insiderRisk. conditionalAccessConditions is a multi-valued enumeration and the property can contain multiple values in a comma-separated list.'
+          $ref: '#/components/schemas/microsoft.graph.conditionalAccessConditions'
         displayName:
           type: string
           description: Name of the conditional access policy.
@@ -18101,6 +18095,16 @@ components:
         lastSignInRequestId:
           type: string
           description: Request identifier of the last interactive sign-in performed by this user.
+          nullable: true
+        lastSuccessfulSignInDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The datetime of the user's most recent successful sign in activity.
+          format: date-time
+          nullable: true
+        lastSuccessfulSignInRequestId:
+          type: string
+          description: The requestID of the last successful signIn.
           nullable: true
       additionalProperties:
         type: object
@@ -18789,11 +18793,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: 'Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn''t included in the response.'
           nullable: true
       additionalProperties:
         type: object
