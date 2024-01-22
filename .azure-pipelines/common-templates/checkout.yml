@@ -37,11 +37,4 @@ steps:
         git pull
         git status
 
-  - task: PowerShell@2
-    displayName: "Update Git Submodules"
-    inputs:
-      targetType: inline
-      script: |
-        git submodule update --remote
-
   - template: ./security-pre-checks.yml
