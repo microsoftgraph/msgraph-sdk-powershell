@@ -10,7 +10,7 @@ steps:
   - checkout: self
     clean: true
     fetchDepth: 1
-    submodules: true
+    submodules: recursive
     persistCredentials: true
 
   - task: PowerShell@2
@@ -36,13 +36,5 @@ steps:
         git checkout ${{ parameters.TargetBranch }}
         git pull
         git status
-
-  - task: PowerShell@2
-    displayName: "Update Git Submodules"
-    inputs:
-      targetType: inline
-      script: |
-        git pull --recurse-submodules
-        git submodule sync
-
+        
   - template: ./security-pre-checks.yml
