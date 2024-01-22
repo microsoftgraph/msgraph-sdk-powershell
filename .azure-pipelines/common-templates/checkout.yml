@@ -36,5 +36,12 @@ steps:
         git checkout ${{ parameters.TargetBranch }}
         git pull
         git status
-        
+
+  - task: PowerShell@2
+    displayName: "Update Git Submodules"
+    inputs:
+      targetType: inline
+      script: |
+        git submodule update --recursive --remote
+
   - template: ./security-pre-checks.yml
