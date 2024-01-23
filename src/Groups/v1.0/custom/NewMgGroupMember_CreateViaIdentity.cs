@@ -50,8 +50,8 @@
         /// <summary>
         /// CustomHeader Parameter. This should have a key:value and comma separated for multiple key:value pairs
         /// </summary>
-        [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = "CustomHeader Parameter. This should have a key:value and comma separated for multiple key:value pairs", ValueFromPipeline = true)]
-        [global::Sample.API.Category(global::Sample.API.ParameterCategory.Runtime)]
+        [System.Management.Automation.Parameter(Mandatory = false, HelpMessage = "CustomHeader Parameter. This should have a key:value and comma separated for multiple key:value pairs", ValueFromPipeline = true)]
+        [Category(ParameterCategory.Runtime)]
         public string CustomHeader { get => this._customHeader; set => this._customHeader = value; }
         /// <summary>SendAsync Pipeline Steps to be appended to the front of the pipeline</summary>
         [System.Management.Automation.Parameter(Mandatory = false, DontShow = true, HelpMessage = "SendAsync Pipeline Steps to be appended to the front of the pipeline")]

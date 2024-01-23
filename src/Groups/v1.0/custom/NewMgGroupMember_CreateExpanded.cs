@@ -32,15 +32,15 @@
 
         /// <summary>The reference to the client API class.</summary>
         public Groups Client => Module.Instance.ClientAPI;
-        
+
         /// <summary>Backing field for <see cref="CustomHeader" /> property.</summary>
         private string _customHeader;
 
         /// <summary>
         /// CustomHeader Parameter. This should have a key:value and comma separated for multiple key:value pairs
         /// </summary>
-        [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = "CustomHeader Parameter. This should have a key:value and comma separated for multiple key:value pairs", ValueFromPipeline = true)]
-        [global::Sample.API.Category(global::Sample.API.ParameterCategory.Runtime)]
+        [System.Management.Automation.Parameter(Mandatory = false, HelpMessage = "CustomHeader Parameter. This should have a key:value and comma separated for multiple key:value pairs", ValueFromPipeline = true)]
+        [Category(ParameterCategory.Runtime)]
         public string CustomHeader { get => this._customHeader; set => this._customHeader = value; }
 
 
