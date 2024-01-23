@@ -43,7 +43,15 @@
 
         /// <summary>The reference to the client API class.</summary>
         public Groups Client => Module.Instance.ClientAPI;
+        /// <summary>Backing field for <see cref="CustomHeader" /> property.</summary>
+        private string _customHeader;
 
+        /// <summary>
+        /// CustomHeader Parameter. This should have a key:value and comma separated for multiple key:value pairs
+        /// </summary>
+        [System.Management.Automation.Parameter(Mandatory = false, HelpMessage = "CustomHeader Parameter. This should have a key:value and comma separated for multiple key:value pairs", ValueFromPipeline = true)]
+        [Category(ParameterCategory.Runtime)]
+        public string CustomHeader { get => this._customHeader; set => this._customHeader = value; }
         /// <summary>Backing field for <see cref="GroupId" /> property.</summary>
         private string _groupId;
 
@@ -262,12 +270,12 @@
                 try
                 {
                     await ((Runtime.IEventListener)this).Signal(Runtime.Events.CmdletBeforeAPICall); if (((Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
-                    await this.Client.GroupCreateMemberGraphBPreRef(GroupId, BodyParameter, onNoContent, onDefault, this, Pipeline);
+                    await this.Client.GroupCreateMemberGraphBPreRef(GroupId, CustomHeader, BodyParameter, onNoContent, onDefault, this, Pipeline);
                     await ((Runtime.IEventListener)this).Signal(Runtime.Events.CmdletAfterAPICall); if (((Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
                 }
                 catch (Microsoft.Graph.Beta.PowerShell.Runtime.UndeclaredResponseException urexception)
                 {
-                    WriteError(new global::System.Management.Automation.ErrorRecord(urexception, urexception.StatusCode.ToString(), global::System.Management.Automation.ErrorCategory.InvalidOperation, new { GroupId = GroupId, body = BodyParameter })
+                    WriteError(new global::System.Management.Automation.ErrorRecord(urexception, urexception.StatusCode.ToString(), global::System.Management.Automation.ErrorCategory.InvalidOperation, new { GroupId = GroupId, CustomHeader = CustomHeader, body = BodyParameter })
                     {
                         ErrorDetails = new global::System.Management.Automation.ErrorDetails(urexception.Message) { RecommendedAction = urexception.Action }
                     });
