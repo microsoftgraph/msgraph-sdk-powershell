@@ -1076,7 +1076,7 @@ paths:
       description: Read properties and relationships of the deviceManagement object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-policyset-devicemanagement-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-reporting-devicemanagement-get?view=graph-rest-1.0
       operationId: deviceManagement_GetDeviceManagement
       parameters:
         - name: $select
@@ -1097,8 +1097,9 @@ paths:
                 - subscriptionState
                 - userExperienceAnalyticsSettings
                 - windowsMalwareOverview
-                - termsAndConditions
                 - auditEvents
+                - virtualEndpoint
+                - termsAndConditions
                 - deviceCompliancePolicies
                 - deviceCompliancePolicyDeviceStateSummary
                 - deviceCompliancePolicySettingStateSummaries
@@ -1166,8 +1167,9 @@ paths:
             items:
               enum:
                 - '*'
-                - termsAndConditions
                 - auditEvents
+                - virtualEndpoint
+                - termsAndConditions
                 - deviceCompliancePolicies
                 - deviceCompliancePolicyDeviceStateSummary
                 - deviceCompliancePolicySettingStateSummaries
@@ -2123,11 +2125,11 @@ paths:
     get:
       tags:
         - deviceManagement.deviceCompliancePolicy
-      summary: List windows10MobileCompliancePolicies
-      description: List properties and relationships of the windows10MobileCompliancePolicy objects.
+      summary: List windows10CompliancePolicies
+      description: List properties and relationships of the windows10CompliancePolicy objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-windows10mobilecompliancepolicy-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-windows10compliancepolicy-list?view=graph-rest-1.0
       operationId: deviceManagement_ListDeviceCompliancePolicy
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2213,11 +2215,11 @@ paths:
     post:
       tags:
         - deviceManagement.deviceCompliancePolicy
-      summary: Create androidCompliancePolicy
-      description: Create a new androidCompliancePolicy object.
+      summary: Create windows81CompliancePolicy
+      description: Create a new windows81CompliancePolicy object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-androidcompliancepolicy-create?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-windows81compliancepolicy-create?view=graph-rest-1.0
       operationId: deviceManagement_CreateDeviceCompliancePolicy
       requestBody:
         description: New navigation property
@@ -2240,11 +2242,11 @@ paths:
     get:
       tags:
         - deviceManagement.deviceCompliancePolicy
-      summary: Get macOSCompliancePolicy
-      description: Read properties and relationships of the macOSCompliancePolicy object.
+      summary: Get windowsPhone81CompliancePolicy
+      description: Read properties and relationships of the windowsPhone81CompliancePolicy object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-macoscompliancepolicy-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-windowsphone81compliancepolicy-get?view=graph-rest-1.0
       operationId: deviceManagement_GetDeviceCompliancePolicy
       parameters:
         - name: deviceCompliancePolicy-id
@@ -2311,11 +2313,11 @@ paths:
     patch:
       tags:
         - deviceManagement.deviceCompliancePolicy
-      summary: Update windowsPhone81CompliancePolicy
-      description: Update the properties of a windowsPhone81CompliancePolicy object.
+      summary: Update windows81CompliancePolicy
+      description: Update the properties of a windows81CompliancePolicy object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-windowsphone81compliancepolicy-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-windows81compliancepolicy-update?view=graph-rest-1.0
       operationId: deviceManagement_UpdateDeviceCompliancePolicy
       parameters:
         - name: deviceCompliancePolicy-id
@@ -5160,11 +5162,11 @@ paths:
     get:
       tags:
         - deviceManagement.deviceConfiguration
-      summary: List windowsPhone81GeneralConfigurations
-      description: List properties and relationships of the windowsPhone81GeneralConfiguration objects.
+      summary: List windows10TeamGeneralConfigurations
+      description: List properties and relationships of the windows10TeamGeneralConfiguration objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-windowsphone81generalconfiguration-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-windows10teamgeneralconfiguration-list?view=graph-rest-1.0
       operationId: deviceManagement_ListDeviceConfiguration
       parameters:
         - $ref: '#/components/parameters/top'
@@ -5248,11 +5250,11 @@ paths:
     post:
       tags:
         - deviceManagement.deviceConfiguration
-      summary: Create androidWorkProfileGeneralDeviceConfiguration
-      description: Create a new androidWorkProfileGeneralDeviceConfiguration object.
+      summary: Create iosDeviceFeaturesConfiguration
+      description: Create a new iosDeviceFeaturesConfiguration object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-androidworkprofilegeneraldeviceconfiguration-create?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-iosdevicefeaturesconfiguration-create?view=graph-rest-1.0
       operationId: deviceManagement_CreateDeviceConfiguration
       requestBody:
         description: New navigation property
@@ -5275,11 +5277,11 @@ paths:
     get:
       tags:
         - deviceManagement.deviceConfiguration
-      summary: Get iosCertificateProfile
-      description: Read properties and relationships of the iosCertificateProfile object.
+      summary: Get windowsPhone81CustomConfiguration
+      description: Read properties and relationships of the windowsPhone81CustomConfiguration object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-ioscertificateprofile-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-windowsphone81customconfiguration-get?view=graph-rest-1.0
       operationId: deviceManagement_GetDeviceConfiguration
       parameters:
         - name: deviceConfiguration-id
@@ -5344,11 +5346,11 @@ paths:
     patch:
       tags:
         - deviceManagement.deviceConfiguration
-      summary: Update sharedPCConfiguration
-      description: Update the properties of a sharedPCConfiguration object.
+      summary: Update windows10SecureAssessmentConfiguration
+      description: Update the properties of a windows10SecureAssessmentConfiguration object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-sharedpcconfiguration-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-windows10secureassessmentconfiguration-update?view=graph-rest-1.0
       operationId: deviceManagement_UpdateDeviceConfiguration
       parameters:
         - name: deviceConfiguration-id
@@ -5379,11 +5381,11 @@ paths:
     delete:
       tags:
         - deviceManagement.deviceConfiguration
-      summary: Delete windowsDefenderAdvancedThreatProtectionConfiguration
-      description: Deletes a windowsDefenderAdvancedThreatProtectionConfiguration.
+      summary: Delete windows10SecureAssessmentConfiguration
+      description: Deletes a windows10SecureAssessmentConfiguration.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-windowsdefenderadvancedthreatprotectionconfiguration-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-windows10secureassessmentconfiguration-delete?view=graph-rest-1.0
       operationId: deviceManagement_DeleteDeviceConfiguration
       parameters:
         - name: deviceConfiguration-id
@@ -8593,6 +8595,7 @@ paths:
                 - authentication
                 - chats
                 - joinedTeams
+                - permissionGrants
                 - teamwork
                 - todo
                 - employeeExperience
@@ -8652,6 +8655,7 @@ paths:
                 - authentication
                 - chats
                 - joinedTeams
+                - permissionGrants
                 - teamwork
                 - todo
                 - employeeExperience
@@ -17772,17 +17776,19 @@ components:
               $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsSettings'
             windowsMalwareOverview:
               $ref: '#/components/schemas/microsoft.graph.windowsMalwareOverview'
-            termsAndConditions:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.termsAndConditions'
-              description: The terms and conditions associated with device management of the company.
-              x-ms-navigationProperty: true
             auditEvents:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.auditEvent'
               description: The Audit Events
+              x-ms-navigationProperty: true
+            virtualEndpoint:
+              $ref: '#/components/schemas/microsoft.graph.virtualEndpoint'
+            termsAndConditions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.termsAndConditions'
+              description: The terms and conditions associated with device management of the company.
               x-ms-navigationProperty: true
             deviceCompliancePolicies:
               type: array
@@ -21445,6 +21451,67 @@ components:
       additionalProperties:
         type: object
       description: Windows device malware overview.
+    microsoft.graph.auditEvent:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: auditEvent
+          type: object
+          properties:
+            activity:
+              type: string
+              description: Friendly name of the activity.
+              nullable: true
+            activityDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date time in UTC when the activity was performed.
+              format: date-time
+            activityOperationType:
+              type: string
+              description: The HTTP operation type of the activity.
+              nullable: true
+            activityResult:
+              type: string
+              description: The result of the activity.
+              nullable: true
+            activityType:
+              type: string
+              description: The type of activity that was being performed.
+              nullable: true
+            actor:
+              $ref: '#/components/schemas/microsoft.graph.auditActor'
+            category:
+              type: string
+              description: Audit category.
+              nullable: true
+            componentName:
+              type: string
+              description: Component name.
+              nullable: true
+            correlationId:
+              pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+              type: string
+              description: The client request Id that is used to correlate activity within the system.
+              format: uuid
+            displayName:
+              type: string
+              description: Event display name.
+              nullable: true
+            resources:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.auditResource'
+              description: Resources being modified.
+          additionalProperties:
+            type: object
+          description: A class containing the properties for Audit Event.
+    microsoft.graph.virtualEndpoint:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: virtualEndpoint
+          type: object
+          additionalProperties:
+            type: object
     microsoft.graph.termsAndConditions:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -21501,60 +21568,6 @@ components:
           additionalProperties:
             type: object
           description: A termsAndConditions entity represents the metadata and contents of a given Terms and Conditions (T&C) policy. T&C policies’ contents are presented to users upon their first attempt to enroll into Intune and subsequently upon edits where an administrator has required re-acceptance. They enable administrators to communicate the provisions to which a user must agree in order to have devices enrolled into Intune.
-    microsoft.graph.auditEvent:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: auditEvent
-          type: object
-          properties:
-            activity:
-              type: string
-              description: Friendly name of the activity.
-              nullable: true
-            activityDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: The date time in UTC when the activity was performed.
-              format: date-time
-            activityOperationType:
-              type: string
-              description: The HTTP operation type of the activity.
-              nullable: true
-            activityResult:
-              type: string
-              description: The result of the activity.
-              nullable: true
-            activityType:
-              type: string
-              description: The type of activity that was being performed.
-              nullable: true
-            actor:
-              $ref: '#/components/schemas/microsoft.graph.auditActor'
-            category:
-              type: string
-              description: Audit category.
-              nullable: true
-            componentName:
-              type: string
-              description: Component name.
-              nullable: true
-            correlationId:
-              pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
-              type: string
-              description: The client request Id that is used to correlate activity within the system.
-              format: uuid
-            displayName:
-              type: string
-              description: Event display name.
-              nullable: true
-            resources:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.auditResource'
-              description: Resources being modified.
-          additionalProperties:
-            type: object
-          description: A class containing the properties for Audit Event.
     microsoft.graph.iosUpdateDeviceStatus:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -22777,13 +22790,13 @@ components:
               nullable: true
             ageGroup:
               type: string
-              description: 'Sets the age group of the user. Allowed values: null, Minor, NotAdult and Adult. For more information, see legal age group property definitions. Returned only on $select. Supports $filter (eq, ne, not, and in).'
+              description: 'Sets the age group of the user. Allowed values: null, Minor, NotAdult, and Adult. For more information, see legal age group property definitions. Returned only on $select. Supports $filter (eq, ne, not, and in).'
               nullable: true
             assignedLicenses:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedLicense'
-              description: 'The licenses that are assigned to the user, including inherited (group-based) licenses. This property doesn''t differentiate directly assigned and inherited licenses. Use the licenseAssignmentStates property to identify the directly assigned and inherited licenses.  Not nullable. Returned only on $select. Supports $filter (eq, not, /$count eq 0, /$count ne 0).'
+              description: 'The licenses that are assigned to the user, including inherited (group-based) licenses. This property doesn''t differentiate between directly assigned and inherited licenses. Use the licenseAssignmentStates property to identify the directly assigned and inherited licenses.  Not nullable. Returned only on $select. Supports $filter (eq, not, /$count eq 0, /$count ne 0).'
             assignedPlans:
               type: array
               items:
@@ -22795,7 +22808,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'The telephone numbers for the user. NOTE: Although this is a string collection, only one number can be set for this property. Read-only for users synced from on-premises directory. Returned by default. Supports $filter (eq, not, ge, le, startsWith).'
+              description: 'The telephone numbers for the user. NOTE: Although it is a string collection, only one number can be set for this property. Read-only for users synced from the on-premises directory. Returned by default. Supports $filter (eq, not, ge, le, startsWith).'
             city:
               type: string
               description: 'The city where the user is located. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
@@ -22806,7 +22819,7 @@ components:
               nullable: true
             consentProvidedForMinor:
               type: string
-              description: 'Sets whether consent has been obtained for minors. Allowed values: null, Granted, Denied and NotRequired. Refer to the legal age group property definitions for further information. Returned only on $select. Supports $filter (eq, ne, not, and in).'
+              description: 'Sets whether consent was obtained for minors. Allowed values: null, Granted, Denied and NotRequired. Refer to the legal age group property definitions for further information. Returned only on $select. Supports $filter (eq, ne, not, and in).'
               nullable: true
             country:
               type: string
@@ -22815,7 +22828,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time the user was created, in ISO 8601 format and in UTC time. The value cannot be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Microsoft Entra ID. Property is null for some users created before June 2018 and on-premises users that were synced to Microsoft Entra ID before June 2018. Read-only. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).'
+              description: 'The date and time the user was created, in ISO 8601 format and UTC. The value cannot be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Microsoft Entra ID. Property is null for some users created before June 2018 and on-premises users that were synced to Microsoft Entra ID before June 2018. Read-only. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).'
               format: date-time
               nullable: true
             creationType:
@@ -22826,16 +22839,16 @@ components:
               $ref: '#/components/schemas/microsoft.graph.customSecurityAttributeValue'
             department:
               type: string
-              description: 'The name for the department in which the user works. Maximum length is 64 characters. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, and eq on null values).'
+              description: 'The name of the department in which the user works. Maximum length is 64 characters. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, and eq on null values).'
               nullable: true
             displayName:
               type: string
-              description: 'The name displayed in the address book for the user. This is usually the combination of the user''s first name, middle initial and last name. This property is required when a user is created and it cannot be cleared during updates. Maximum length is 256 characters. Returned by default. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values), $orderby, and $search.'
+              description: 'The name displayed in the address book for the user. This is usually the combination of the user''s first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates. Maximum length is 256 characters. Returned by default. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values), $orderby, and $search.'
               nullable: true
             employeeHireDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when the user was hired or will start work in case of a future hire. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).'
+              description: 'The date and time when the user was hired or will start work in a future hire. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).'
               format: date-time
               nullable: true
             employeeId:
@@ -22876,13 +22889,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.objectIdentity'
-              description: 'Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft, and tied to a user account. May contain multiple items with the same signInType value. Returned only on $select. Supports $filter (eq) including on null values, only where the signInType is not userPrincipalName.'
+              description: 'Represents the identities that can be used to sign in to this user account. Microsoft (also known as a local account), organizations, or social identity providers such as Facebook, Google, and Microsoft can provide identity and tie it to a user account. It may contain multiple items with the same signInType value. Returned only on $select. Supports $filter (eq) including on null values, only where the signInType is not userPrincipalName.'
             imAddresses:
               type: array
               items:
                 type: string
                 nullable: true
-              description: 'The instant message voice over IP (VOIP) session initiation protocol (SIP) addresses for the user. Read-only. Returned only on $select. Supports $filter (eq, not, ge, le, startsWith).'
+              description: 'The instant message voice-over IP (VOIP) session initiation protocol (SIP) addresses for the user. Read-only. Returned only on $select. Supports $filter (eq, not, ge, le, startsWith).'
             isResourceAccount:
               type: boolean
               description: Do not use – reserved for future use.
@@ -22894,12 +22907,12 @@ components:
             lastPasswordChangeDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The time when this Microsoft Entra user last changed their password or when their password was created, whichever date the latest action was performed. The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned only on $select.'
+              description: 'The time when this Microsoft Entra user last changed their password or when their password was created, whichever date the latest action was performed. The date and time information uses ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned only on $select.'
               format: date-time
               nullable: true
             legalAgeGroupClassification:
               type: string
-              description: 'Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, MinorWithOutParentalConsent, MinorWithParentalConsent, MinorNoParentalConsentRequired, NotAdult and Adult. Refer to the legal age group property definitions for further information. Returned only on $select.'
+              description: 'Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, MinorWithOutParentalConsent, MinorWithParentalConsent, MinorNoParentalConsentRequired, NotAdult, and Adult. Refer to the legal age group property definitions for further information. Returned only on $select.'
               nullable: true
             licenseAssignmentStates:
               type: array
@@ -22908,7 +22921,7 @@ components:
               description: State of license assignments for this user. Also indicates licenses that are directly assigned or the user has inherited through group memberships. Read-only. Returned only on $select.
             mail:
               type: string
-              description: 'The SMTP address for the user, for example, jeff@contoso.onmicrosoft.com. Changes to this property will also update the user''s proxyAddresses collection to include the value as an SMTP address. This property can''t contain accent characters.  NOTE: We don''t recommend updating this property for Azure AD B2C user profiles. Use the otherMails property instead. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith, and eq on null values).'
+              description: 'The SMTP address for the user, for example, jeff@contoso.onmicrosoft.com. Changes to this property update the user''s proxyAddresses collection to include the value as an SMTP address. This property can''t contain accent characters.  NOTE: We don''t recommend updating this property for Azure AD B2C user profiles. Use the otherMails property instead. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith, and eq on null values).'
               nullable: true
             mailNickname:
               type: string
@@ -22916,7 +22929,7 @@ components:
               nullable: true
             mobilePhone:
               type: string
-              description: 'The primary cellular telephone number for the user. Read-only for users synced from on-premises directory. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values) and $search.'
+              description: 'The primary cellular telephone number for the user. Read-only for users synced from the on-premises directory. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values) and $search.'
               nullable: true
             officeLocation:
               type: string
@@ -22939,7 +22952,7 @@ components:
             onPremisesLastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Indicates the last time at which the object was synced with the on-premises directory; for example: 2013-02-16T03:04:54Z. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in).'
+              description: 'Indicates the last time at which the object was synced with the on-premises directory; for example: 2013-02-16T03:04:54Z. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in).'
               format: date-time
               nullable: true
             onPremisesProvisioningErrors:
@@ -22984,7 +22997,7 @@ components:
               nullable: true
             preferredLanguage:
               type: string
-              description: 'The preferred language for the user. The preferred language format is based on RFC 4646. The name is a combination of an ISO 639 two-letter lowercase culture code associated with the language, and an ISO 3166 two-letter uppercase subculture code associated with the country or region. Example: ''en-US'', or ''es-ES''. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values)'
+              description: 'The preferred language for the user. The preferred language format is based on RFC 4646. The name is a combination of an ISO 639 two-letter lowercase culture code associated with the language and an ISO 3166 two-letter uppercase subculture code associated with the country or region. Example: ''en-US'', or ''es-ES''. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values)'
               nullable: true
             provisionedPlans:
               type: array
@@ -23004,6 +23017,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.serviceProvisioningError'
+              description: 'Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .  Supports $filter (eq, not, for isResolved and serviceInstance).'
             showInAddressList:
               type: boolean
               description: Do not use in Microsoft Graph. Manage this property through the Microsoft 365 admin center instead. Represents whether the user should be included in the Outlook global address list. See Known issue.
@@ -23011,7 +23025,7 @@ components:
             signInSessionsValidFromDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application needs to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use revokeSignInSessions to reset. Returned only on $select.'
+              description: 'Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application needs to acquire a new refresh token by requesting the authorized endpoint. Read-only. Use revokeSignInSessions to reset. Returned only on $select.'
               format: date-time
               nullable: true
             state:
@@ -23028,11 +23042,11 @@ components:
               nullable: true
             usageLocation:
               type: string
-              description: 'A two letter country code (ISO standard 3166). Required for users that are assigned licenses due to legal requirement to check for availability of services in countries.  Examples include: US, JP, and GB. Not nullable. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'A two-letter country code (ISO standard 3166). Required for users that are assigned licenses due to legal requirements to check for availability of services in countries.  Examples include: US, JP, and GB. Not nullable. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             userPrincipalName:
               type: string
-              description: 'The user principal name (UPN) of the user. The UPN is an Internet-style sign-in name for the user based on the Internet standard RFC 822. By convention, this should map to the user''s email name. The general format is alias@domain, where domain must be present in the tenant''s collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property can''t contain accent characters. Only the following characters are allowed A - Z, a - z, 0 - 9, '' . - _ ! # ^ ~. For the complete list of allowed characters, see username policies. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith) and $orderby.'
+              description: 'The user principal name (UPN) of the user. The UPN is an Internet-style sign-in name for the user based on the Internet standard RFC 822. By convention, this should map to the user''s email name. The general format is alias@domain, where the domain must be present in the tenant''s collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property can''t contain accent characters. Only the following characters are allowed A - Z, a - z, 0 - 9, '' . - _ ! # ^ ~. For the complete list of allowed characters, see username policies. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith) and $orderby.'
               nullable: true
             userType:
               type: string
@@ -23055,12 +23069,12 @@ components:
             birthday:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned only on $select.'
+              description: 'The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z. Returned only on $select.'
               format: date-time
             hireDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.'
+              description: 'The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z. Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.'
               format: date-time
             interests:
               type: array
@@ -23070,7 +23084,7 @@ components:
               description: A list for the user to describe their interests. Returned only on $select.
             mySite:
               type: string
-              description: The URL for the user's personal site. Returned only on $select.
+              description: The URL for the user's site. Returned only on $select.
               nullable: true
             pastProjects:
               type: array
@@ -23295,7 +23309,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
-              description: 'Information about a meeting, including the URL used to join a meeting, the attendees'' list, and the description.'
+              description: 'Information about a meeting, including the URL used to join a meeting, the attendees list, and the description.'
               x-ms-navigationProperty: true
             presence:
               $ref: '#/components/schemas/microsoft.graph.presence'
@@ -23310,6 +23324,12 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.team'
+              x-ms-navigationProperty: true
+            permissionGrants:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
+              description: List all resource-specific permission grants of a user.
               x-ms-navigationProperty: true
             teamwork:
               $ref: '#/components/schemas/microsoft.graph.userTeamwork'
@@ -25342,47 +25362,6 @@ components:
       additionalProperties:
         type: object
       description: Count of devices with malware for each OS version
-    microsoft.graph.termsAndConditionsAcceptanceStatus:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: termsAndConditionsAcceptanceStatus
-          type: object
-          properties:
-            acceptedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: DateTime when the terms were last accepted by the user.
-              format: date-time
-            acceptedVersion:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              description: Most recent version number of the T&C accepted by the user.
-              format: int32
-            userDisplayName:
-              type: string
-              description: Display name of the user whose acceptance the entity represents.
-              nullable: true
-            userPrincipalName:
-              type: string
-              description: The userPrincipalName of the User that accepted the term.
-              nullable: true
-            termsAndConditions:
-              $ref: '#/components/schemas/microsoft.graph.termsAndConditions'
-          additionalProperties:
-            type: object
-          description: A termsAndConditionsAcceptanceStatus entity represents the acceptance status of a given Terms and Conditions (T&C) policy by a given user. Users must accept the most up-to-date version of the terms in order to retain access to the Company Portal.
-    microsoft.graph.termsAndConditionsAssignment:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: termsAndConditionsAssignment
-          type: object
-          properties:
-            target:
-              $ref: '#/components/schemas/microsoft.graph.deviceAndAppManagementAssignmentTarget'
-          additionalProperties:
-            type: object
-          description: A termsAndConditionsAssignment entity represents the assignment of a given Terms and Conditions (T&C) policy to a given group. Users in the group will be required to accept the terms in order to have devices enrolled into Intune.
     microsoft.graph.auditActor:
       title: auditActor
       type: object
@@ -25448,6 +25427,47 @@ components:
       additionalProperties:
         type: object
       description: A class containing the properties for Audit Resource.
+    microsoft.graph.termsAndConditionsAcceptanceStatus:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: termsAndConditionsAcceptanceStatus
+          type: object
+          properties:
+            acceptedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: DateTime when the terms were last accepted by the user.
+              format: date-time
+            acceptedVersion:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: Most recent version number of the T&C accepted by the user.
+              format: int32
+            userDisplayName:
+              type: string
+              description: Display name of the user whose acceptance the entity represents.
+              nullable: true
+            userPrincipalName:
+              type: string
+              description: The userPrincipalName of the User that accepted the term.
+              nullable: true
+            termsAndConditions:
+              $ref: '#/components/schemas/microsoft.graph.termsAndConditions'
+          additionalProperties:
+            type: object
+          description: A termsAndConditionsAcceptanceStatus entity represents the acceptance status of a given Terms and Conditions (T&C) policy by a given user. Users must accept the most up-to-date version of the terms in order to retain access to the Company Portal.
+    microsoft.graph.termsAndConditionsAssignment:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: termsAndConditionsAssignment
+          type: object
+          properties:
+            target:
+              $ref: '#/components/schemas/microsoft.graph.deviceAndAppManagementAssignmentTarget'
+          additionalProperties:
+            type: object
+          description: A termsAndConditionsAssignment entity represents the assignment of a given Terms and Conditions (T&C) policy to a given group. Users in the group will be required to accept the terms in order to have devices enrolled into Intune.
     microsoft.graph.iosUpdatesInstallStatus:
       title: iosUpdatesInstallStatus
       enum:
@@ -26125,13 +26145,16 @@ components:
         createdDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: The date and time at which the error occurred.
           format: date-time
           nullable: true
         isResolved:
           type: boolean
+          description: Indicates whether the error has been attended to.
           nullable: true
         serviceInstance:
           type: string
+          description: 'Qualified service instance (for example, ''SharePoint/Dublin'') that published the service error information.'
           nullable: true
       additionalProperties:
         type: object
@@ -27839,6 +27862,34 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamsTemplate'
             schedule:
               $ref: '#/components/schemas/microsoft.graph.schedule'
+          additionalProperties:
+            type: object
+    microsoft.graph.resourceSpecificPermissionGrant:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        - title: resourceSpecificPermissionGrant
+          type: object
+          properties:
+            clientAppId:
+              type: string
+              description: ID of the service principal of the Microsoft Entra app that has been granted access. Read-only.
+              nullable: true
+            clientId:
+              type: string
+              description: ID of the Microsoft Entra app that has been granted access. Read-only.
+              nullable: true
+            permission:
+              type: string
+              description: The name of the resource-specific permission. Read-only.
+              nullable: true
+            permissionType:
+              type: string
+              description: 'The type of permission. Possible values are: Application, Delegated. Read-only.'
+              nullable: true
+            resourceAppId:
+              type: string
+              description: ID of the Microsoft Entra app that is hosting the resource. Read-only.
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.userTeamwork:
@@ -29952,9 +30003,11 @@ components:
           properties:
             allowAttendeeToEnableCamera:
               type: boolean
+              description: Indicates whether attendees can turn on their camera.
               nullable: true
             allowAttendeeToEnableMic:
               type: boolean
+              description: Indicates whether attendees can turn on their microphone.
               nullable: true
             allowedPresenters:
               $ref: '#/components/schemas/microsoft.graph.onlineMeetingPresenters'
@@ -29962,9 +30015,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.meetingChatMode'
             allowParticipantsToChangeName:
               type: boolean
+              description: Specifies if participants are allowed to rename themselves in an instance of the meeting.
               nullable: true
             allowTeamworkReactions:
               type: boolean
+              description: Indicates if Teams reactions are enabled for the meeting.
               nullable: true
             audioConferencing:
               $ref: '#/components/schemas/microsoft.graph.audioConferencing'
@@ -29972,6 +30027,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.chatInfo'
             isEntryExitAnnounced:
               type: boolean
+              description: Indicates whether to announce when callers join or leave.
               nullable: true
             joinInformation:
               $ref: '#/components/schemas/microsoft.graph.itemBody'
@@ -29979,19 +30035,23 @@ components:
               $ref: '#/components/schemas/microsoft.graph.joinMeetingIdSettings'
             joinWebUrl:
               type: string
+              description: The join URL of the online meeting. Read-only.
               nullable: true
             lobbyBypassSettings:
               $ref: '#/components/schemas/microsoft.graph.lobbyBypassSettings'
             recordAutomatically:
               type: boolean
+              description: Indicates whether to record the meeting automatically.
               nullable: true
             shareMeetingChatHistoryDefault:
               $ref: '#/components/schemas/microsoft.graph.meetingChatHistoryDefaultMode'
             subject:
               type: string
+              description: The subject of the online meeting.
               nullable: true
             videoTeleconferenceId:
               type: string
+              description: The video teleconferencing ID. Read-only.
               nullable: true
             watermarkProtection:
               $ref: '#/components/schemas/microsoft.graph.watermarkProtectionValues'
@@ -29999,6 +30059,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReport'
+              description: The attendance reports of an online meeting. Read-only.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -30550,34 +30611,6 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
-    microsoft.graph.resourceSpecificPermissionGrant:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.directoryObject'
-        - title: resourceSpecificPermissionGrant
-          type: object
-          properties:
-            clientAppId:
-              type: string
-              description: ID of the service principal of the Microsoft Entra app that has been granted access. Read-only.
-              nullable: true
-            clientId:
-              type: string
-              description: ID of the Microsoft Entra app that has been granted access. Read-only.
-              nullable: true
-            permission:
-              type: string
-              description: The name of the resource-specific permission. Read-only.
-              nullable: true
-            permissionType:
-              type: string
-              description: 'The type of permission. Possible values are: Application, Delegated. Read-only.'
-              nullable: true
-            resourceAppId:
-              type: string
-              description: ID of the Microsoft Entra app that is hosting the resource. Read-only.
-              nullable: true
-          additionalProperties:
-            type: object
     microsoft.graph.pinnedChatMessageInfo:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -30947,6 +30980,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.serviceProvisioningError'
+              description: 'Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a group object .  Supports $filter (eq, not, for isResolved and serviceInstance).'
             theme:
               type: string
               description: 'Specifies a Microsoft 365 group''s color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.'

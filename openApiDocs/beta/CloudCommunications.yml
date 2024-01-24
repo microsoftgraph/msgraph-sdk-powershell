@@ -5118,7 +5118,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get meetingAttendanceReport
-      description: 'Get the meetingAttendanceReport for an onlineMeeting. Each time an online meeting ends, an attendance report will be generated for that session.'
+      description: 'Get the meetingAttendanceReport for an onlineMeeting. Each time an online meeting ends, an attendance report is generated for that session.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/meetingattendancereport-get?view=graph-rest-1.0
@@ -5542,6 +5542,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action sendVirtualAppointmentReminderSms
+      description: Send an SMS reminder to external attendees for a Teams Virtual Appointment. This feature requires Teams Premium and attendees must have a valid United States phone number to receive SMS notifications.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualappointment-sendvirtualappointmentremindersms?view=graph-rest-1.0
       operationId: communication.onlineMeeting_sendVirtualAppointmentReminderSm
       parameters:
         - name: onlineMeeting-id
@@ -5559,13 +5563,12 @@ paths:
             schema:
               type: object
               properties:
-                phoneNumbers:
-                  type: array
-                  items:
-                    type: string
-                    nullable: true
                 remindBeforeTimeInMinutesType:
                   $ref: '#/components/schemas/microsoft.graph.remindBeforeTimeInMinutesType'
+                attendees:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.attendeeNotificationInfo'
               additionalProperties:
                 type: object
         required: true
@@ -5580,6 +5583,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action sendVirtualAppointmentSms
+      description: 'Send an SMS notification to external attendees when a Teams Virtual Appointment is confirmed, rescheduled, or canceled. This feature requires Teams Premium. Attendees must have a valid United States phone number to receive these SMS notifications.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualappointment-sendvirtualappointmentsms?view=graph-rest-1.0
       operationId: communication.onlineMeeting_sendVirtualAppointmentSm
       parameters:
         - name: onlineMeeting-id
@@ -5597,13 +5604,12 @@ paths:
             schema:
               type: object
               properties:
-                phoneNumbers:
+                messageType:
+                  $ref: '#/components/schemas/microsoft.graph.virtualAppointmentMessageType'
+                attendees:
                   type: array
                   items:
-                    type: string
-                    nullable: true
-                smsType:
-                  $ref: '#/components/schemas/microsoft.graph.virtualAppointmentSmsType'
+                    $ref: '#/components/schemas/microsoft.graph.attendeeNotificationInfo'
               additionalProperties:
                 type: object
         required: true
@@ -6118,11 +6124,11 @@ paths:
     get:
       tags:
         - communications.onlineMeeting
-      summary: Get meetingRegistration
-      description: Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
+      summary: Get externalMeetingRegistration
+      description: Get the externalMeetingRegistration details associated with an onlineMeeting.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/meetingregistration-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/externalmeetingregistration-get?view=graph-rest-1.0
       operationId: communication.onlineMeeting_GetRegistration
       parameters:
         - name: onlineMeeting-id
@@ -6217,11 +6223,11 @@ paths:
     delete:
       tags:
         - communications.onlineMeeting
-      summary: Delete externalMeetingRegistration
-      description: Disable and delete the externalMeetingRegistration of an onlineMeeting.
+      summary: Delete meetingRegistration
+      description: Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/externalmeetingregistration-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/meetingregistration-delete?view=graph-rest-1.0
       operationId: communication.onlineMeeting_DeleteRegistration
       parameters:
         - name: onlineMeeting-id
@@ -9273,7 +9279,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get meetingAttendanceReport
-      description: 'Get the meetingAttendanceReport for an onlineMeeting. Each time an online meeting ends, an attendance report will be generated for that session.'
+      description: 'Get the meetingAttendanceReport for an onlineMeeting. Each time an online meeting ends, an attendance report is generated for that session.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/meetingattendancereport-get?view=graph-rest-1.0
@@ -10228,11 +10234,11 @@ paths:
     get:
       tags:
         - users.onlineMeeting
-      summary: Get meetingRegistration
-      description: Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
+      summary: Get externalMeetingRegistration
+      description: Get the externalMeetingRegistration details associated with an onlineMeeting.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/meetingregistration-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/externalmeetingregistration-get?view=graph-rest-1.0
       operationId: user.onlineMeeting_GetRegistration
       parameters:
         - name: user-id
@@ -10343,11 +10349,11 @@ paths:
     delete:
       tags:
         - users.onlineMeeting
-      summary: Delete externalMeetingRegistration
-      description: Disable and delete the externalMeetingRegistration of an onlineMeeting.
+      summary: Delete meetingRegistration
+      description: Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/externalmeetingregistration-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/meetingregistration-delete?view=graph-rest-1.0
       operationId: user.onlineMeeting_DeleteRegistration
       parameters:
         - name: user-id
@@ -12676,8 +12682,20 @@ components:
         - mins15
         - unknownFutureValue
       type: string
-    microsoft.graph.virtualAppointmentSmsType:
-      title: virtualAppointmentSmsType
+    microsoft.graph.attendeeNotificationInfo:
+      title: attendeeNotificationInfo
+      type: object
+      properties:
+        phoneNumber:
+          type: string
+          nullable: true
+        timeZone:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.virtualAppointmentMessageType:
+      title: virtualAppointmentMessageType
       enum:
         - confirmation
         - reschedule
