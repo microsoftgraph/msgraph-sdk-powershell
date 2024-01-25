@@ -38,6 +38,8 @@ jobs:
     displayName: Microsoft Graph PowerShell SDK CI Build
     timeoutInMinutes: 840
     steps:
+      - script: |
+          git submodule update --init --recursive
       - template: ./common-templates/install-tools.yml
       - template: ./common-templates/security-pre-checks.yml
 
