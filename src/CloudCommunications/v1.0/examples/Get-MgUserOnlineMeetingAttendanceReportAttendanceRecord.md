@@ -1,4 +1,4 @@
-### Example 1: Code snippet
+### Example 1: List attendance records
 
 ```powershell
 
@@ -8,5 +8,5 @@ Import-Module Microsoft.Graph.CloudCommunications
 Get-MgUserOnlineMeetingAttendanceReportAttendanceRecord -UserId $userId -OnlineMeetingId $onlineMeetingId -MeetingAttendanceReportId $meetingAttendanceReportId
 
 ```
-This example shows how to use the Get-MgUserOnlineMeetingAttendanceReportAttendanceRecord Cmdlet.
+This example will list attendance records
 
