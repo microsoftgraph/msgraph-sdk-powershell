@@ -5,6 +5,7 @@
 $params = @{
 	name = "jobGroup"
 	dataType = "String"
+	isMultiValued = $true
 	targetObjects = @(
 		"User"
 	)

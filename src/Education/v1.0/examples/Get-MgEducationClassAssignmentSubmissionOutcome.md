@@ -16,3 +16,12 @@ Get-MgEducationClassAssignmentSubmissionOutcome -EducationClassId $educationClas
 This example shows how to use the Get-MgEducationClassAssignmentSubmissionOutcome Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
+### Example 3: Using <code>$orderby</code> to get outcomes
+
+```powershellImport-Module Microsoft.Graph.Education
+
+Get-MgEducationClassAssignmentSubmissionOutcome -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -Sort "id"
+```
+This example shows how to use the Get-MgEducationClassAssignmentSubmissionOutcome Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
