@@ -44,13 +44,13 @@
         /// <summary>The reference to the client API class.</summary>
         public Groups Client => Module.Instance.ClientAPI;
 
-        /// <summary>Backing field for <see cref="CustomHeaders" /> property.</summary>
-        private System.Collections.IDictionary _customHeaders;
+        /// <summary>Backing field for <see cref="Headers" /> property.</summary>
+        private System.Collections.IDictionary _headers;
 
         /// <summary>Optional headers that will be added to the request.</summary>
         [System.Management.Automation.Parameter(Mandatory = false, HelpMessage = "Optional headers that will be added to the request.", ValueFromPipeline = true)]
         [Category(ParameterCategory.Runtime)]
-        public System.Collections.IDictionary CustomHeaders { get => this._customHeaders; set => this._customHeaders = value; }
+        public System.Collections.IDictionary Headers { get => this._headers; set => this._headers = value; }
 
         /// <summary>SendAsync Pipeline Steps to be appended to the front of the pipeline</summary>
         [System.Management.Automation.Parameter(Mandatory = false, DontShow = true, HelpMessage = "SendAsync Pipeline Steps to be appended to the front of the pipeline")]
@@ -269,12 +269,12 @@
                     {
                         ThrowTerminatingError(new System.Management.Automation.ErrorRecord(new System.Exception("InputObject has null value for InputObject.GroupId"), string.Empty, System.Management.Automation.ErrorCategory.InvalidArgument, InputObject));
                     }
-                    await this.Client.GroupCreateMemberGraphBPreRef(InputObject.GroupId, CustomHeaders, BodyParameter, onNoContent, onDefault, this, Pipeline);
+                    await this.Client.GroupCreateMemberGraphBPreRef(InputObject.GroupId, Headers, BodyParameter, onNoContent, onDefault, this, Pipeline);
                     await ((Runtime.IEventListener)this).Signal(Runtime.Events.CmdletAfterAPICall); if (((Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
                 }
                 catch (Runtime.UndeclaredResponseException urexception)
                 {
-                    WriteError(new System.Management.Automation.ErrorRecord(urexception, urexception.StatusCode.ToString(), System.Management.Automation.ErrorCategory.InvalidOperation, new { CustomHeaders = CustomHeaders, body = BodyParameter })
+                    WriteError(new System.Management.Automation.ErrorRecord(urexception, urexception.StatusCode.ToString(), System.Management.Automation.ErrorCategory.InvalidOperation, new { Headers = Headers, body = BodyParameter })
                     {
                         ErrorDetails = new System.Management.Automation.ErrorDetails(urexception.Message) { RecommendedAction = urexception.Action }
                     });
