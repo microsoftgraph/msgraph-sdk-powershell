@@ -33,15 +33,14 @@
         /// <summary>The reference to the client API class.</summary>
         public Groups Client => Module.Instance.ClientAPI;
 
-        /// <summary>Backing field for <see cref="CustomHeader" /> property.</summary>
-        private string _customHeader;
+        /// <summary>Backing field for <see cref="CustomHeaders" /> property.</summary>
+        private global::System.Collections.IDictionary _customHeaders;
 
-        /// <summary>
-        /// CustomHeader Parameter. This should have a key:value and comma separated for multiple key:value pairs
-        /// </summary>
-        [System.Management.Automation.Parameter(Mandatory = false, HelpMessage = "CustomHeader Parameter. This should have a key:value and comma separated for multiple key:value pairs", ValueFromPipeline = true)]
-        [Category(ParameterCategory.Runtime)]
-        public string CustomHeader { get => this._customHeader; set => this._customHeader = value; }
+        /// <summary>Optional headers that will be added to the request.</summary>
+        [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = "Optional headers that will be added to the request.", ValueFromPipeline = true)]
+        [global::Microsoft.Graph.PowerShell.Category(global::Microsoft.Graph.PowerShell.ParameterCategory.Runtime)]
+        public global::System.Collections.IDictionary CustomHeaders { get => this._customHeaders; set => this._customHeaders = value; }
+
         /// <summary>SendAsync Pipeline Steps to be appended to the front of the pipeline</summary>
         [System.Management.Automation.Parameter(Mandatory = false, DontShow = true, HelpMessage = "SendAsync Pipeline Steps to be appended to the front of the pipeline")]
         [System.Management.Automation.ValidateNotNull]
@@ -271,12 +270,12 @@
                         ThrowTerminatingError(new System.Management.Automation.ErrorRecord(new System.Exception("InputObject has null value for InputObject.GroupId"), string.Empty, System.Management.Automation.ErrorCategory.InvalidArgument, InputObject));
                     }
                     _bodyParameter.OdataId = $"https://graph.microsoft.com/v1.0/directoryObjects/{DirectoryObjectId}";
-                    await this.Client.GroupCreateMemberGraphBPreRef(InputObject.GroupId, CustomHeader, _bodyParameter, onNoContent, onDefault, this, Pipeline);
+                    await this.Client.GroupCreateMemberGraphBPreRef(InputObject.GroupId, CustomHeaders, _bodyParameter, onNoContent, onDefault, this, Pipeline);
                     await ((Runtime.IEventListener)this).Signal(Runtime.Events.CmdletAfterAPICall); if (((Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
                 }
                 catch (Runtime.UndeclaredResponseException urexception)
                 {
-                    WriteError(new System.Management.Automation.ErrorRecord(urexception, urexception.StatusCode.ToString(), System.Management.Automation.ErrorCategory.InvalidOperation, new { CustomHeader = CustomHeader, body = _bodyParameter })
+                    WriteError(new System.Management.Automation.ErrorRecord(urexception, urexception.StatusCode.ToString(), System.Management.Automation.ErrorCategory.InvalidOperation, new { CustomHeaders = CustomHeaders, body = _bodyParameter })
                     {
                         ErrorDetails = new System.Management.Automation.ErrorDetails(urexception.Message) { RecommendedAction = urexception.Action }
                     });
