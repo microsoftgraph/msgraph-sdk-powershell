@@ -43,14 +43,14 @@
 
         /// <summary>The reference to the client API class.</summary>
         public Groups Client => Module.Instance.ClientAPI;
-        /// <summary>Backing field for <see cref="CustomHeader" /> property.</summary>
         /// <summary>Backing field for <see cref="CustomHeaders" /> property.</summary>
-        private global::System.Collections.IDictionary _customHeaders;
+        private System.Collections.IDictionary _customHeaders;
 
         /// <summary>Optional headers that will be added to the request.</summary>
-        [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = "Optional headers that will be added to the request.", ValueFromPipeline = true)]
-        [global::Microsoft.Graph.PowerShell.Category(global::Microsoft.Graph.PowerShell.ParameterCategory.Runtime)]
-        public global::System.Collections.IDictionary CustomHeaders { get => this._customHeaders; set => this._customHeaders = value; }
+        [System.Management.Automation.Parameter(Mandatory = false, HelpMessage = "Optional headers that will be added to the request.", ValueFromPipeline = true)]
+        [Category(ParameterCategory.Runtime)]
+        public System.Collections.IDictionary CustomHeaders { get => this._customHeaders; set => this._customHeaders = value; }
+        
         /// <summary>Backing field for <see cref="GroupId" /> property.</summary>
         private string _groupId;
 
