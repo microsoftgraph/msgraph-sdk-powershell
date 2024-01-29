@@ -10,7 +10,7 @@ steps:
   - checkout: self
     clean: true
     fetchDepth: 1
-    submodules: true
+    submodules: recursive
     persistCredentials: true
 
   - task: PowerShell@2
