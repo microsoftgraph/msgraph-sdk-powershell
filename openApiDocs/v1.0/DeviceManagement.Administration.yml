@@ -2522,11 +2522,11 @@ paths:
     post:
       tags:
         - deviceManagement.roleDefinition
-      summary: Create deviceAndAppManagementRoleDefinition
-      description: Create a new deviceAndAppManagementRoleDefinition object.
+      summary: Create roleDefinition
+      description: Create a new roleDefinition object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-rbac-deviceandappmanagementroledefinition-create?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-rbac-roledefinition-create?view=graph-rest-1.0
       operationId: deviceManagement_CreateRoleDefinition
       requestBody:
         description: New navigation property
@@ -2549,11 +2549,11 @@ paths:
     get:
       tags:
         - deviceManagement.roleDefinition
-      summary: Get roleDefinition
-      description: Read properties and relationships of the roleDefinition object.
+      summary: Get deviceAndAppManagementRoleDefinition
+      description: Read properties and relationships of the deviceAndAppManagementRoleDefinition object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-rbac-roledefinition-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-rbac-deviceandappmanagementroledefinition-get?view=graph-rest-1.0
       operationId: deviceManagement_GetRoleDefinition
       parameters:
         - name: roleDefinition-id
@@ -2607,11 +2607,11 @@ paths:
     patch:
       tags:
         - deviceManagement.roleDefinition
-      summary: Update deviceAndAppManagementRoleDefinition
-      description: Update the properties of a deviceAndAppManagementRoleDefinition object.
+      summary: Update roleDefinition
+      description: Update the properties of a roleDefinition object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-rbac-deviceandappmanagementroledefinition-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-rbac-roledefinition-update?view=graph-rest-1.0
       operationId: deviceManagement_UpdateRoleDefinition
       parameters:
         - name: roleDefinition-id

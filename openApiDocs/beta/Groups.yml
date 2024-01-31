@@ -995,13 +995,6 @@ paths:
           style: simple
           schema:
             type: string
-        - name: '@id'
-          in: query
-          description: Delete Uri
-          style: form
-          explode: false
-          schema:
-            type: string
       responses:
         2XX:
           description: Success
@@ -1096,6 +1089,44 @@ paths:
           x-ms-docs-key-type: group
       requestBody:
         $ref: '#/components/requestBodies/refPostBody'
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groups.directoryObject
+      summary: Remove acceptedSender
+      description: Remove a user or group from the accepted-senders list of the specified group.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/group-delete-acceptedsenders?view=graph-rest-1.0
+      operationId: group_DeleteAcceptedSenderGraphBPreRef
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+        - name: '@id'
+          in: query
+          description: The delete Uri
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
       responses:
         2XX:
           description: Success
@@ -11713,10 +11744,10 @@ paths:
       tags:
         - groups.conversation
       summary: Delete conversation
-      description: Delete conversation.
+      description: Delete a conversation object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversation-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/group-delete-conversation?view=graph-rest-1.0
       operationId: group_DeleteConversation
       parameters:
         - name: group-id
@@ -25952,13 +25983,6 @@ paths:
           style: simple
           schema:
             type: string
-        - name: '@id'
-          in: query
-          description: Delete Uri
-          style: form
-          explode: false
-          schema:
-            type: string
       responses:
         2XX:
           description: Success
@@ -26477,6 +26501,44 @@ paths:
           x-ms-docs-key-type: group
       requestBody:
         $ref: '#/components/requestBodies/refPostBody'
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groups.directoryObject
+      summary: Remove member
+      description: Remove a member from a group via the members navigation property. You can't remove a member from groups with dynamic memberships.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/group-delete-members?view=graph-rest-1.0
+      operationId: group_DeleteMemberGraphBPreRef
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+        - name: '@id'
+          in: query
+          description: The delete Uri
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
       responses:
         2XX:
           description: Success
@@ -30680,13 +30742,6 @@ paths:
           style: simple
           schema:
             type: string
-        - name: '@id'
-          in: query
-          description: Delete Uri
-          style: form
-          explode: false
-          schema:
-            type: string
       responses:
         2XX:
           description: Success
@@ -31205,6 +31260,44 @@ paths:
           x-ms-docs-key-type: group
       requestBody:
         $ref: '#/components/requestBodies/refPostBody'
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groups.directoryObject
+      summary: Remove group owner
+      description: 'Use this API to remove an owner from a Microsoft 365 group or a security group through the owners navigation property. When owners are assigned to a group, the last owner (a user object) of the group cannot be removed.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/group-delete-owners?view=graph-rest-1.0
+      operationId: group_DeleteOwnerGraphBPreRef
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+        - name: '@id'
+          in: query
+          description: The delete Uri
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
       responses:
         2XX:
           description: Success
@@ -33231,13 +33324,6 @@ paths:
           style: simple
           schema:
             type: string
-        - name: '@id'
-          in: query
-          description: Delete Uri
-          style: form
-          explode: false
-          schema:
-            type: string
       responses:
         2XX:
           description: Success
@@ -33332,6 +33418,44 @@ paths:
           x-ms-docs-key-type: group
       requestBody:
         $ref: '#/components/requestBodies/refPostBody'
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groups.directoryObject
+      summary: Remove rejectedSender
+      description: Remove a user or group from the rejected-senders list of the specified group.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/group-delete-rejectedsenders?view=graph-rest-1.0
+      operationId: group_DeleteRejectedSenderGraphBPreRef
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+        - name: '@id'
+          in: query
+          description: The delete Uri
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
       responses:
         2XX:
           description: Success
@@ -36198,6 +36322,307 @@ paths:
         - name: path
           in: path
           description: 'Usage: path=''{path}'''
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.site'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/groups/{group-id}/sites/{site-id}/microsoft.graph.getByPath(path=''{path}'')/microsoft.graph.getActivitiesByInterval(startDateTime=''{startDateTime}'',endDateTime=''{endDateTime}'',interval=''{interval}'')':
+    get:
+      tags:
+        - groups.Functions
+      summary: Invoke function getActivitiesByInterval
+      operationId: group.site.getGraphBPrePath_getActivitiesGraphBPreInterval
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: startDateTime
+          in: path
+          description: 'Usage: startDateTime=''{startDateTime}'''
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+        - name: endDateTime
+          in: path
+          description: 'Usage: endDateTime=''{endDateTime}'''
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+        - name: interval
+          in: path
+          description: 'Usage: interval=''{interval}'''
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - access
+                - create
+                - delete
+                - edit
+                - endDateTime
+                - incompleteData
+                - isTrending
+                - move
+                - startDateTime
+                - activities
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - access
+                - access desc
+                - create
+                - create desc
+                - delete
+                - delete desc
+                - edit
+                - edit desc
+                - endDateTime
+                - endDateTime desc
+                - incompleteData
+                - incompleteData desc
+                - isTrending
+                - isTrending desc
+                - move
+                - move desc
+                - startDateTime
+                - startDateTime desc
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of itemActivityStat
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.itemActivityStat'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/groups/{group-id}/sites/{site-id}/microsoft.graph.getByPath(path=''{path}'')/microsoft.graph.getApplicableContentTypesForList(listId=''{listId}'')':
+    get:
+      tags:
+        - groups.Functions
+      summary: Invoke function getApplicableContentTypesForList
+      operationId: group.site.getGraphBPrePath_getApplicableContentTypesGraphFPreList
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: listId
+          in: path
+          description: 'Usage: listId=''{listId}'''
+          required: true
+          style: simple
+          schema:
+            type: string
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - associatedHubsUrls
+                - description
+                - documentSet
+                - documentTemplate
+                - group
+                - hidden
+                - inheritedFrom
+                - isBuiltIn
+                - name
+                - order
+                - parentId
+                - propagateChanges
+                - readOnly
+                - sealed
+                - base
+                - baseTypes
+                - columnLinks
+                - columnPositions
+                - columns
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - associatedHubsUrls
+                - associatedHubsUrls desc
+                - description
+                - description desc
+                - documentSet
+                - documentSet desc
+                - documentTemplate
+                - documentTemplate desc
+                - group
+                - group desc
+                - hidden
+                - hidden desc
+                - inheritedFrom
+                - inheritedFrom desc
+                - isBuiltIn
+                - isBuiltIn desc
+                - name
+                - name desc
+                - order
+                - order desc
+                - parentId
+                - parentId desc
+                - propagateChanges
+                - propagateChanges desc
+                - readOnly
+                - readOnly desc
+                - sealed
+                - sealed desc
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of contentType
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.contentType'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/groups/{group-id}/sites/{site-id}/microsoft.graph.getByPath(path=''{path}'')/microsoft.graph.getByPath(path=''{path1}'')':
+    get:
+      tags:
+        - groups.Functions
+      summary: Invoke function getByPath
+      operationId: group.site.getGraphBPrePath_getGraphBPrePath
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: path1
+          in: path
+          description: 'Usage: path=''{path1}'''
           required: true
           style: simple
           schema:
@@ -40378,6 +40803,9 @@ paths:
                   nullable: true
                 previewText:
                   $ref: '#/components/schemas/microsoft.graph.itemBody'
+                teamsAppId:
+                  type: string
+                  nullable: true
                 templateParameters:
                   type: array
                   items:
@@ -41295,7 +41723,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action share
-      description: "Share a schedule time range with schedule members.\nMake the collections of shift, openshift and timeOff items in the specified time range of the schedule viewable by the specified team members, including employees and managers.\nEach shift, openshift and timeOff instance in a schedule supports a draft version and a shared version of the item. The draft version is viewable by only managers, and the shared version is viewable by employees and managers. For each shift, openshift and timeOff instance in the specified time range, the share action updates the shared version from the draft version, so that in addition to managers, employees can also view the most current information about the item. The notifyTeam parameter further specifies which employees can view the item."
+      description: 'Share a schedule time range with schedule members. This action makes the collections of shift, openshift and timeOff items in the specified time range of the schedule viewable by the specified team members, including employees and managers. Each shift, openshift and timeOff instance in a schedule supports a draft version and a shared version of the item. The draft version is viewable only by managers, and the shared version is viewable by employees and managers. For each shift, openshift and timeOff instance in the specified time range, the share action updates the shared version from the draft version, so that in addition to managers, employees can also view the most current information about the item. The notifyTeam parameter further specifies which employees can view the item.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/schedule-share?view=graph-rest-1.0
@@ -41704,11 +42132,11 @@ paths:
     get:
       tags:
         - groups.conversationThread
-      summary: Get conversation thread
-      description: Get a thread object.
+      summary: Get conversationThread
+      description: "Get a specific thread that belongs to a group. You can specify both the parent conversation and the thread, or, \nyou can specify the thread without referencing the parent conversation. "
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/group-get-thread?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/conversationthread-get?view=graph-rest-1.0
       operationId: group_GetThread
       parameters:
         - name: group-id
@@ -41804,11 +42232,11 @@ paths:
     delete:
       tags:
         - groups.conversationThread
-      summary: Delete conversationThread
-      description: Delete conversationThread.
+      summary: Delete conversation thread
+      description: Delete a thread object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationthread-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/group-delete-thread?view=graph-rest-1.0
       operationId: group_DeleteThread
       parameters:
         - name: group-id
@@ -54390,7 +54818,7 @@ components:
         lastNonInteractiveSignInDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client attempted to sign into the directory the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Microsoft Entra ID maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.'
+          description: 'The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client attempted (either successfully or unsuccessfully) to sign in to the directory the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Microsoft Entra ID maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.'
           format: date-time
           nullable: true
         lastNonInteractiveSignInRequestId:
@@ -54400,7 +54828,7 @@ components:
         lastSignInDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user attempted to sign into the directory the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Microsoft Entra ID maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.'
+          description: 'The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user attempted (either successfully or unsuccessfully) to sign in to the directory the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Microsoft Entra ID maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.'
           format: date-time
           nullable: true
         lastSignInRequestId:
@@ -55489,8 +55917,6 @@ components:
               description: 'Indicates whether the device is DFCI managed. When TRUE the device is DFCI managed. When FALSE, the device is not DFCI managed. The default value is FALSE.'
             deviceHealthAttestationState:
               $ref: '#/components/schemas/microsoft.graph.deviceHealthAttestationState'
-            deviceIdentityAttestationDetail:
-              $ref: '#/components/schemas/microsoft.graph.deviceIdentityAttestationDetail'
             deviceName:
               type: string
               description: Name of the device. This property is read-only.
@@ -56330,6 +56756,11 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerPlan'
               description: Read-only. Nullable. Returns the plannerPlans that the user marked as favorites.
+              x-ms-navigationProperty: true
+            myDayTasks:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.plannerTask'
               x-ms-navigationProperty: true
             plans:
               type: array
@@ -60700,18 +61131,19 @@ components:
       properties:
         errorMessage:
           type: string
+          description: Contains a detailed error message when the partner agent installation failed.
           nullable: true
         installStatus:
           $ref: '#/components/schemas/microsoft.graph.cloudPcPartnerAgentInstallStatus'
         isThirdPartyPartner:
           type: boolean
-          description: Indicates if the partner agent is a third party. When 'TRUE' the agent is a third-party (non-Microsoft) agent and when 'FALSE' the agent is a Microsoft agent or isn't known.  The default value is 'FALSE'
+          description: 'Indicates whether the partner agent is a third party. When true, the agent is a third-party (non-Microsoft) agent and when false, the agent is a Microsoft agent or isn''t known.  The default value is false.'
           nullable: true
         partnerAgentName:
           $ref: '#/components/schemas/microsoft.graph.cloudPcPartnerAgentName'
         retriable:
           type: boolean
-          description: Indicates if the partner agent is a third party. When 'TRUE' the agent is a third-party (non-Microsoft) agent and when 'FALSE' the agent is a Microsoft agent or isn't known. The default value is 'FALSE'
+          description: Indicates whether the partner agent installation should be retried. The default value is false.
           nullable: true
       additionalProperties:
         type: object
@@ -60908,11 +61340,9 @@ components:
       properties:
         context:
           type: string
-          description: Not yet documented
           nullable: true
         failure:
           type: string
-          description: Not yet documented
           nullable: true
         failureDetails:
           type: string
@@ -61503,6 +61933,8 @@ components:
         - androidEnterpriseDedicatedDevice
         - androidEnterpriseFullyManaged
         - androidEnterpriseCorporateWorkProfile
+        - androidAOSPUserOwnedDeviceEnrollment
+        - androidAOSPUserlessDeviceEnrollment
       type: string
       description: Possible ways of adding a mobile device to management.
       x-ms-enum:
@@ -61560,6 +61992,12 @@ components:
           - value: androidEnterpriseCorporateWorkProfile
             description: Android Enterprise Corporate Work Profile
             name: androidEnterpriseCorporateWorkProfile
+          - value: androidAOSPUserOwnedDeviceEnrollment
+            description: Indicates the device enrollment is for android device owned by/associated with user using Android Open Source Project (AOSP) on a non-Google mobile services.
+            name: androidAOSPUserOwnedDeviceEnrollment
+          - value: androidAOSPUserlessDeviceEnrollment
+            description: Indicates the device enrollment is for user less android device using Android Open Source Project (AOSP) on a non-Google mobile services.
+            name: androidAOSPUserlessDeviceEnrollment
     microsoft.graph.deviceHealthAttestationState:
       title: deviceHealthAttestationState
       type: object
@@ -61699,7 +62137,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.azureAttestationSettingStatus'
         virtualSecureMode:
           type: string
-          description: VSM is a container that protects high value assets from a compromised kernel
+          description: 'Indicates whether the device has Virtual Secure Mode (VSM) enabled. Virtual Secure Mode (VSM) is a container that protects high value assets from a compromised kernel. This property will be deprecated in beta from August 2023. Support for this property will end in August 2025 for v1.0 API. A new property virtualizationBasedSecurity is added and used instead. The value used for virtualSecureMode will be passed by virtualizationBasedSecurity during the deprecation process. Possible values are ''enabled'', ''disabled'' and ''notApplicable''. ''enabled'' indicates Virtual Secure Mode (VSM) is enabled. ''disabled'' indicates Virtual Secure Mode (VSM) is disabled. ''notApplicable'' indicates the device is not a Windows 11 device. Default value is ''notApplicable''.'
           nullable: true
         windowsPE:
           type: string
@@ -61707,15 +62145,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.deviceIdentityAttestationDetail:
-      title: deviceIdentityAttestationDetail
-      type: object
-      properties:
-        deviceIdentityAttestationStatus:
-          $ref: '#/components/schemas/microsoft.graph.deviceIdentityAttestationStatus'
-      additionalProperties:
-        type: object
-      description: Indicates the attestation status of the managed device
     microsoft.graph.deviceRegistrationState:
       title: deviceRegistrationState
       enum:
@@ -62227,6 +62656,8 @@ components:
         - microsoft365ManagedMdm
         - msSense
         - intuneAosp
+        - google
+        - unknownFutureValue
       type: string
       description: Management agent type.
       x-ms-enum:
@@ -62272,6 +62703,12 @@ components:
           - value: intuneAosp
             description: This device is managed by Intune's MDM for AOSP (Android Open Source Project) devices
             name: intuneAosp
+          - value: google
+            description: Indicates the management agent to manage the device is Google.
+            name: google
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.managedDeviceManagementFeatures:
       title: managedDeviceManagementFeatures
       enum:
@@ -65370,6 +65807,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamworkBot'
             colorIcon:
               $ref: '#/components/schemas/microsoft.graph.teamsAppIcon'
+            dashboardCards:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.teamsAppDashboardCardDefinition'
+              x-ms-navigationProperty: true
             outlineIcon:
               $ref: '#/components/schemas/microsoft.graph.teamsAppIcon'
           additionalProperties:
@@ -66804,7 +67246,6 @@ components:
           nullable: true
         text:
           type: string
-          description: Not yet documented
           nullable: true
       additionalProperties:
         type: object
@@ -67335,39 +67776,6 @@ components:
           - value: level3
             description: 'Indicates that in addition to the System Management Mode (SMM) Level 2 protections, this level reduces System Management Mode (SMM) save state capabilities. The benefit is that by design System Management Mode (SMM) cannot exploit save state to modify security of or exfiltrate secrets from the OS (including Virtualization-based security).'
             name: level3
-          - value: unknownFutureValue
-            description: Evolvable enumeration sentinel value. Do not use.
-            name: unknownFutureValue
-    microsoft.graph.deviceIdentityAttestationStatus:
-      title: deviceIdentityAttestationStatus
-      enum:
-        - unknown
-        - trusted
-        - unTrusted
-        - notSupported
-        - incompleteData
-        - unknownFutureValue
-      type: string
-      description: 'Indicates the state of the anomaly. Eg: anomaly severity can be new, active, disabled, removed or other.'
-      x-ms-enum:
-        name: deviceIdentityAttestationStatus
-        modelAsString: false
-        values:
-          - value: unknown
-            description: Default. Set to unknown if attestation has not yet been calculated
-            name: unknown
-          - value: trusted
-            description: 'Indicates that the Device attestation is supported on the device, it was attempted on the device and the attestation has passed. The device is trusted.'
-            name: trusted
-          - value: unTrusted
-            description: 'Indicates that the Device attestation is supported on the device, it was attempted on the device and the attestation has failed. The device is untrusted'
-            name: unTrusted
-          - value: notSupported
-            description: Indicates that the device does not support Attestation. This could be because of missing hardware or software support.
-            name: notSupported
-          - value: incompleteData
-            description: Indicates that the device did not provide with the data that were required to perform attestation.
-            name: incompleteData
           - value: unknownFutureValue
             description: Evolvable enumeration sentinel value. Do not use.
             name: unknownFutureValue
@@ -69730,6 +70138,29 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamworkHostedContent'
           additionalProperties:
             type: object
+    microsoft.graph.teamsAppDashboardCardDefinition:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: teamsAppDashboardCardDefinition
+          type: object
+          properties:
+            contentSource:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppDashboardCardContentSource'
+            defaultSize:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppDashboardCardSize'
+            description:
+              type: string
+              nullable: true
+            displayName:
+              type: string
+              nullable: true
+            icon:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppDashboardCardIcon'
+            pickerGroupId:
+              type: string
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.scheduleChangeRequest:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.changeTrackedEntity'
@@ -71152,11 +71583,9 @@ components:
       properties:
         displayName:
           type: string
-          description: Not yet documented
           nullable: true
         id:
           type: string
-          description: Not yet documented
           nullable: true
         sourceType:
           $ref: '#/components/schemas/microsoft.graph.settingSourceType'
@@ -72015,6 +72444,35 @@ components:
         - chat
         - unknownFutureValue
       type: string
+    microsoft.graph.teamsAppDashboardCardContentSource:
+      title: teamsAppDashboardCardContentSource
+      type: object
+      properties:
+        botConfiguration:
+          $ref: '#/components/schemas/microsoft.graph.teamsAppDashboardCardBotConfiguration'
+        sourceType:
+          $ref: '#/components/schemas/microsoft.graph.teamsAppDashboardCardSourceType'
+      additionalProperties:
+        type: object
+    microsoft.graph.teamsAppDashboardCardSize:
+      title: teamsAppDashboardCardSize
+      enum:
+        - medium
+        - large
+        - unknownFutureValue
+      type: string
+    microsoft.graph.teamsAppDashboardCardIcon:
+      title: teamsAppDashboardCardIcon
+      type: object
+      properties:
+        iconUrl:
+          type: string
+          nullable: true
+        officeUIFabricIconName:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.scheduleChangeRequestActor:
       title: scheduleChangeRequestActor
       enum:
@@ -73702,6 +74160,21 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.teamsAppDashboardCardBotConfiguration:
+      title: teamsAppDashboardCardBotConfiguration
+      type: object
+      properties:
+        botId:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.teamsAppDashboardCardSourceType:
+      title: teamsAppDashboardCardSourceType
+      enum:
+        - bot
+        - unknownFutureValue
+      type: string
     microsoft.graph.scheduleEntityTheme:
       title: scheduleEntityTheme
       enum:

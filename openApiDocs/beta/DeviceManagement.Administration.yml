@@ -14289,6 +14289,8 @@ paths:
                 - createdDateTime desc
                 - displayName
                 - displayName desc
+                - scheduledDuringMaintenanceWindow
+                - scheduledDuringMaintenanceWindow desc
               type: string
         - name: $select
           in: query
@@ -14305,6 +14307,7 @@ paths:
                 - cloudPcIds
                 - createdDateTime
                 - displayName
+                - scheduledDuringMaintenanceWindow
               type: string
         - name: $expand
           in: query
@@ -14379,6 +14382,7 @@ paths:
                 - cloudPcIds
                 - createdDateTime
                 - displayName
+                - scheduledDuringMaintenanceWindow
               type: string
         - name: $expand
           in: query
@@ -19767,7 +19771,6 @@ components:
               nullable: true
             certificate:
               type: string
-              description: Not yet documented
               nullable: true
             certificateSerialNumber:
               type: string
@@ -21623,6 +21626,9 @@ components:
               nullable: true
             displayName:
               type: string
+            scheduledDuringMaintenanceWindow:
+              type: boolean
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.cloudPC:
@@ -21746,29 +21752,29 @@ components:
           properties:
             displayName:
               type: string
-              description: The display name of the image.
+              description: The display name of the associated device image. The device image display name and the version are used to uniquely identify the Cloud PC device image. Read-only.
               nullable: true
             errorCode:
               $ref: '#/components/schemas/microsoft.graph.cloudPcDeviceImageErrorCode'
             expirationDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
-              description: The date the image became unavailable.
+              description: The date when the image became unavailable. Read-only.
               format: date
               nullable: true
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The data and time that the image was last modified. The time is shown in ISO 8601 format and  Coordinated Universal Time (UTC) time. For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.'
+              description: 'The data and time when the image was last modified. The timestamp represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
             operatingSystem:
               type: string
-              description: 'The operating system of the image. For example, Windows 10 Enterprise.'
+              description: 'The operating system of the image. For example, Windows 10 Enterprise. Read-only.'
               nullable: true
             osBuildNumber:
               type: string
-              description: 'The OS build version of the image. For example, 1909.'
+              description: 'The OS build version of the image. For example, 1909. Read-only.'
               nullable: true
             osStatus:
               $ref: '#/components/schemas/microsoft.graph.cloudPcDeviceImageOsStatus'
@@ -21779,7 +21785,7 @@ components:
                 nullable: true
             sourceImageResourceId:
               type: string
-              description: 'The ID of the source image resource on Azure. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/images/{imageName}.'
+              description: 'The unique identifier (ID) of the source image resource on Azure. The required ID format is: ''/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/images/{imageName}''. Read-only.'
               nullable: true
             status:
               $ref: '#/components/schemas/microsoft.graph.cloudPcDeviceImageStatus'
@@ -21787,7 +21793,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.cloudPcDeviceImageStatusDetails'
             version:
               type: string
-              description: 'The image version. For example, 0.0.1 and 1.5.13.'
+              description: 'The image version. For example, 0.0.1 and 1.5.13. Read-only.'
               nullable: true
           additionalProperties:
             type: object
@@ -21851,64 +21857,61 @@ components:
           properties:
             displayName:
               type: string
-              description: The official display name of the gallery image. Read-only.
+              description: 'The display name of this gallery image. For example, Windows 11 Enterprise + Microsoft 365 Apps 22H2. Read-only.'
               nullable: true
             endDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
-              description: The date in which this image is no longer within long-term support. The Cloud PC continues to provide short-term support. Read-only.
+              description: 'The date when the status of image becomes supportedWithWarning. Users can still provision new Cloud PCs if the current time is later than endDate and earlier than expirationDate. For example, assume the endDate of a gallery image is 2023-9-14 and expirationDate is 2024-3-14, users are able to provision new Cloud PCs if today is 2023-10-01. Read-only.'
               format: date
               nullable: true
             expirationDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
-              description: The date when the image is no longer available. Read-only.
+              description: 'The date when the image is no longer available. Users are unable to provision new Cloud PCs if the current time is later than expirationDate. The value is usually endDate plus six months. For example, if the startDate is 2025-10-14, the expirationDate is usually 2026-04-14. Read-only.'
               format: date
               nullable: true
             offer:
               type: string
-              description: The offer name of the gallery image. This value is passed to Azure to get the image resource. Read-only.
               nullable: true
             offerDisplayName:
               type: string
-              description: 'The official display offer name of the gallery image. For example, Windows 10 Enterprise + OS Optimizations. Read-only.'
               nullable: true
             offerName:
               type: string
+              description: The offer name of this gallery image that is passed to ARM to retrieve the image resource. Read-only.
               nullable: true
             publisher:
               type: string
-              description: The publisher name of the gallery image. This value is passed to Azure to get the image resource. Read-only.
               nullable: true
             publisherName:
               type: string
+              description: The publisher name of this gallery image that is passed to ARM to retrieve the image resource. Read-only.
               nullable: true
             recommendedSku:
               type: string
-              description: Recommended Cloud PC SKU for this gallery image. Read-only.
               nullable: true
             sizeInGB:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: The size of this image in gigabytes. Read-only.
+              description: 'Indicates the size of this image in gigabytes. For example, 64. Read-only.'
               format: int32
               nullable: true
             sku:
               type: string
-              description: The SKU name of the gallery image. This value is passed to Azure to get the image resource. Read-only.
               nullable: true
             skuDisplayName:
               type: string
-              description: 'The official display stock keeping unit (SKU) name of this gallery image. For example, 2004. Read-only.'
               nullable: true
             skuName:
               type: string
+              description: The SKU name of this image that is passed to ARM to retrieve the image resource. Read-only.
               nullable: true
             startDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
-              description: The date when the image becomes available. Read-only.
+              description: 'The date when the Cloud PC image is available for provisioning new Cloud PCs. For example, 2022-09-20. Read-only.'
               format: date
               nullable: true
             status:
@@ -23326,6 +23329,8 @@ components:
         - microsoft365ManagedMdm
         - msSense
         - intuneAosp
+        - google
+        - unknownFutureValue
       type: string
       description: Management agent type.
       x-ms-enum:
@@ -23371,6 +23376,12 @@ components:
           - value: intuneAosp
             description: This device is managed by Intune's MDM for AOSP (Android Open Source Project) devices
             name: intuneAosp
+          - value: google
+            description: Indicates the management agent to manage the device is Google.
+            name: google
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.managementState:
       title: managementState
       enum:
@@ -24700,18 +24711,19 @@ components:
       properties:
         errorMessage:
           type: string
+          description: Contains a detailed error message when the partner agent installation failed.
           nullable: true
         installStatus:
           $ref: '#/components/schemas/microsoft.graph.cloudPcPartnerAgentInstallStatus'
         isThirdPartyPartner:
           type: boolean
-          description: Indicates if the partner agent is a third party. When 'TRUE' the agent is a third-party (non-Microsoft) agent and when 'FALSE' the agent is a Microsoft agent or isn't known.  The default value is 'FALSE'
+          description: 'Indicates whether the partner agent is a third party. When true, the agent is a third-party (non-Microsoft) agent and when false, the agent is a Microsoft agent or isn''t known.  The default value is false.'
           nullable: true
         partnerAgentName:
           $ref: '#/components/schemas/microsoft.graph.cloudPcPartnerAgentName'
         retriable:
           type: boolean
-          description: Indicates if the partner agent is a third party. When 'TRUE' the agent is a third-party (non-Microsoft) agent and when 'FALSE' the agent is a Microsoft agent or isn't known. The default value is 'FALSE'
+          description: Indicates whether the partner agent installation should be retried. The default value is false.
           nullable: true
       additionalProperties:
         type: object
@@ -25328,7 +25340,7 @@ components:
         lastNonInteractiveSignInDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client attempted to sign into the directory the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Microsoft Entra ID maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.'
+          description: 'The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client attempted (either successfully or unsuccessfully) to sign in to the directory the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Microsoft Entra ID maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.'
           format: date-time
           nullable: true
         lastNonInteractiveSignInRequestId:
@@ -25338,7 +25350,7 @@ components:
         lastSignInDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user attempted to sign into the directory the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Microsoft Entra ID maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.'
+          description: 'The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user attempted (either successfully or unsuccessfully) to sign in to the directory the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Microsoft Entra ID maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.'
           format: date-time
           nullable: true
         lastSignInRequestId:
@@ -27789,8 +27801,6 @@ components:
               description: 'Indicates whether the device is DFCI managed. When TRUE the device is DFCI managed. When FALSE, the device is not DFCI managed. The default value is FALSE.'
             deviceHealthAttestationState:
               $ref: '#/components/schemas/microsoft.graph.deviceHealthAttestationState'
-            deviceIdentityAttestationDetail:
-              $ref: '#/components/schemas/microsoft.graph.deviceIdentityAttestationDetail'
             deviceName:
               type: string
               description: Name of the device. This property is read-only.
@@ -28762,6 +28772,11 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerPlan'
               description: Read-only. Nullable. Returns the plannerPlans that the user marked as favorites.
+              x-ms-navigationProperty: true
+            myDayTasks:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.plannerTask'
               x-ms-navigationProperty: true
             plans:
               type: array
@@ -32056,11 +32071,9 @@ components:
       properties:
         context:
           type: string
-          description: Not yet documented
           nullable: true
         failure:
           type: string
-          description: Not yet documented
           nullable: true
         failureDetails:
           type: string
@@ -34053,6 +34066,8 @@ components:
         - androidEnterpriseDedicatedDevice
         - androidEnterpriseFullyManaged
         - androidEnterpriseCorporateWorkProfile
+        - androidAOSPUserOwnedDeviceEnrollment
+        - androidAOSPUserlessDeviceEnrollment
       type: string
       description: Possible ways of adding a mobile device to management.
       x-ms-enum:
@@ -34110,6 +34125,12 @@ components:
           - value: androidEnterpriseCorporateWorkProfile
             description: Android Enterprise Corporate Work Profile
             name: androidEnterpriseCorporateWorkProfile
+          - value: androidAOSPUserOwnedDeviceEnrollment
+            description: Indicates the device enrollment is for android device owned by/associated with user using Android Open Source Project (AOSP) on a non-Google mobile services.
+            name: androidAOSPUserOwnedDeviceEnrollment
+          - value: androidAOSPUserlessDeviceEnrollment
+            description: Indicates the device enrollment is for user less android device using Android Open Source Project (AOSP) on a non-Google mobile services.
+            name: androidAOSPUserlessDeviceEnrollment
     microsoft.graph.deviceHealthAttestationState:
       title: deviceHealthAttestationState
       type: object
@@ -34249,7 +34270,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.azureAttestationSettingStatus'
         virtualSecureMode:
           type: string
-          description: VSM is a container that protects high value assets from a compromised kernel
+          description: 'Indicates whether the device has Virtual Secure Mode (VSM) enabled. Virtual Secure Mode (VSM) is a container that protects high value assets from a compromised kernel. This property will be deprecated in beta from August 2023. Support for this property will end in August 2025 for v1.0 API. A new property virtualizationBasedSecurity is added and used instead. The value used for virtualSecureMode will be passed by virtualizationBasedSecurity during the deprecation process. Possible values are ''enabled'', ''disabled'' and ''notApplicable''. ''enabled'' indicates Virtual Secure Mode (VSM) is enabled. ''disabled'' indicates Virtual Secure Mode (VSM) is disabled. ''notApplicable'' indicates the device is not a Windows 11 device. Default value is ''notApplicable''.'
           nullable: true
         windowsPE:
           type: string
@@ -34257,15 +34278,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.deviceIdentityAttestationDetail:
-      title: deviceIdentityAttestationDetail
-      type: object
-      properties:
-        deviceIdentityAttestationStatus:
-          $ref: '#/components/schemas/microsoft.graph.deviceIdentityAttestationStatus'
-      additionalProperties:
-        type: object
-      description: Indicates the attestation status of the managed device
     microsoft.graph.deviceManagementExchangeAccessState:
       title: deviceManagementExchangeAccessState
       enum:
@@ -38013,6 +38025,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamworkBot'
             colorIcon:
               $ref: '#/components/schemas/microsoft.graph.teamsAppIcon'
+            dashboardCards:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.teamsAppDashboardCardDefinition'
+              x-ms-navigationProperty: true
             outlineIcon:
               $ref: '#/components/schemas/microsoft.graph.teamsAppIcon'
           additionalProperties:
@@ -38303,7 +38320,6 @@ components:
           nullable: true
         text:
           type: string
-          description: Not yet documented
           nullable: true
       additionalProperties:
         type: object
@@ -40746,39 +40762,6 @@ components:
           - value: level3
             description: 'Indicates that in addition to the System Management Mode (SMM) Level 2 protections, this level reduces System Management Mode (SMM) save state capabilities. The benefit is that by design System Management Mode (SMM) cannot exploit save state to modify security of or exfiltrate secrets from the OS (including Virtualization-based security).'
             name: level3
-          - value: unknownFutureValue
-            description: Evolvable enumeration sentinel value. Do not use.
-            name: unknownFutureValue
-    microsoft.graph.deviceIdentityAttestationStatus:
-      title: deviceIdentityAttestationStatus
-      enum:
-        - unknown
-        - trusted
-        - unTrusted
-        - notSupported
-        - incompleteData
-        - unknownFutureValue
-      type: string
-      description: 'Indicates the state of the anomaly. Eg: anomaly severity can be new, active, disabled, removed or other.'
-      x-ms-enum:
-        name: deviceIdentityAttestationStatus
-        modelAsString: false
-        values:
-          - value: unknown
-            description: Default. Set to unknown if attestation has not yet been calculated
-            name: unknown
-          - value: trusted
-            description: 'Indicates that the Device attestation is supported on the device, it was attempted on the device and the attestation has passed. The device is trusted.'
-            name: trusted
-          - value: unTrusted
-            description: 'Indicates that the Device attestation is supported on the device, it was attempted on the device and the attestation has failed. The device is untrusted'
-            name: unTrusted
-          - value: notSupported
-            description: Indicates that the device does not support Attestation. This could be because of missing hardware or software support.
-            name: notSupported
-          - value: incompleteData
-            description: Indicates that the device did not provide with the data that were required to perform attestation.
-            name: incompleteData
           - value: unknownFutureValue
             description: Evolvable enumeration sentinel value. Do not use.
             name: unknownFutureValue
@@ -44022,6 +44005,29 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamworkHostedContent'
           additionalProperties:
             type: object
+    microsoft.graph.teamsAppDashboardCardDefinition:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: teamsAppDashboardCardDefinition
+          type: object
+          properties:
+            contentSource:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppDashboardCardContentSource'
+            defaultSize:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppDashboardCardSize'
+            description:
+              type: string
+              nullable: true
+            displayName:
+              type: string
+              nullable: true
+            icon:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppDashboardCardIcon'
+            pickerGroupId:
+              type: string
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.chatMessageMentionedIdentitySet:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -45217,11 +45223,9 @@ components:
       properties:
         displayName:
           type: string
-          description: Not yet documented
           nullable: true
         id:
           type: string
-          description: Not yet documented
           nullable: true
         sourceType:
           $ref: '#/components/schemas/microsoft.graph.settingSourceType'
@@ -47781,6 +47785,35 @@ components:
         - application
         - unknownFutureValue
       type: string
+    microsoft.graph.teamsAppDashboardCardContentSource:
+      title: teamsAppDashboardCardContentSource
+      type: object
+      properties:
+        botConfiguration:
+          $ref: '#/components/schemas/microsoft.graph.teamsAppDashboardCardBotConfiguration'
+        sourceType:
+          $ref: '#/components/schemas/microsoft.graph.teamsAppDashboardCardSourceType'
+      additionalProperties:
+        type: object
+    microsoft.graph.teamsAppDashboardCardSize:
+      title: teamsAppDashboardCardSize
+      enum:
+        - medium
+        - large
+        - unknownFutureValue
+      type: string
+    microsoft.graph.teamsAppDashboardCardIcon:
+      title: teamsAppDashboardCardIcon
+      type: object
+      properties:
+        iconUrl:
+          type: string
+          nullable: true
+        officeUIFabricIconName:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.teamworkConversationIdentity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identity'
@@ -48606,6 +48639,21 @@ components:
           description: The API that the provisioning service queries to retrieve data for synchronization.
       additionalProperties:
         type: object
+    microsoft.graph.teamsAppDashboardCardBotConfiguration:
+      title: teamsAppDashboardCardBotConfiguration
+      type: object
+      properties:
+        botId:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.teamsAppDashboardCardSourceType:
+      title: teamsAppDashboardCardSourceType
+      enum:
+        - bot
+        - unknownFutureValue
+      type: string
     microsoft.graph.teamworkConversationIdentityType:
       title: teamworkConversationIdentityType
       enum:

@@ -31,6 +31,7 @@ paths:
                 - auditLog
                 - cases
                 - cloudAppSecurityProfiles
+                - collaboration
                 - domainSecurityProfiles
                 - fileSecurityProfiles
                 - hostSecurityProfiles
@@ -67,6 +68,7 @@ paths:
                 - auditLog
                 - cases
                 - cloudAppSecurityProfiles
+                - collaboration
                 - domainSecurityProfiles
                 - fileSecurityProfiles
                 - hostSecurityProfiles
@@ -4720,6 +4722,7 @@ paths:
       tags:
         - security.auditCoreRoot
       summary: Get records from security
+      description: An individual audit log record.
       operationId: security.auditLog.query_ListRecord
       parameters:
         - name: auditLogQuery-id
@@ -4853,6 +4856,7 @@ paths:
       tags:
         - security.auditCoreRoot
       summary: Get records from security
+      description: An individual audit log record.
       operationId: security.auditLog.query_GetRecord
       parameters:
         - name: auditLogQuery-id
@@ -13961,6 +13965,452 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  /security/collaboration:
+    get:
+      tags:
+        - security.collaborationRoot
+      summary: Get collaboration from security
+      operationId: security_GetCollaboration
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - analyzedEmails
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - analyzedEmails
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.collaborationRoot'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - security.collaborationRoot
+      summary: Update the navigation property collaboration in security
+      operationId: security_UpdateCollaboration
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.security.collaborationRoot'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.collaborationRoot'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - security.collaborationRoot
+      summary: Delete navigation property collaboration for security
+      operationId: security_DeleteCollaboration
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /security/collaboration/analyzedEmails:
+    get:
+      tags:
+        - security.collaborationRoot
+      summary: Get analyzedEmails from security
+      operationId: security.collaboration_ListAnalyzedEmail
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - alertIds
+                - alertIds desc
+                - attachments
+                - attachments desc
+                - attachmentsCount
+                - attachmentsCount desc
+                - authenticationDetails
+                - authenticationDetails desc
+                - bulkComplaintLevel
+                - bulkComplaintLevel desc
+                - contexts
+                - contexts desc
+                - detectionMethods
+                - detectionMethods desc
+                - directionality
+                - directionality desc
+                - distributionList
+                - distributionList desc
+                - emailClusterId
+                - emailClusterId desc
+                - exchangeTransportRules
+                - exchangeTransportRules desc
+                - internetMessageId
+                - internetMessageId desc
+                - language
+                - language desc
+                - latestDelivery
+                - latestDelivery desc
+                - loggedDateTime
+                - loggedDateTime desc
+                - networkMessageId
+                - networkMessageId desc
+                - originalDelivery
+                - originalDelivery desc
+                - overrideSources
+                - overrideSources desc
+                - phishConfidenceLevel
+                - phishConfidenceLevel desc
+                - policy
+                - policy desc
+                - policyAction
+                - policyAction desc
+                - recipientEmailAddresses
+                - recipientEmailAddresses desc
+                - returnPath
+                - returnPath desc
+                - senderDetail
+                - senderDetail desc
+                - sizeInBytes
+                - sizeInBytes desc
+                - spamConfidenceLevel
+                - spamConfidenceLevel desc
+                - subject
+                - subject desc
+                - threatType
+                - threatType desc
+                - urls
+                - urls desc
+                - urlsCount
+                - urlsCount desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - alertIds
+                - attachments
+                - attachmentsCount
+                - authenticationDetails
+                - bulkComplaintLevel
+                - contexts
+                - detectionMethods
+                - directionality
+                - distributionList
+                - emailClusterId
+                - exchangeTransportRules
+                - internetMessageId
+                - language
+                - latestDelivery
+                - loggedDateTime
+                - networkMessageId
+                - originalDelivery
+                - overrideSources
+                - phishConfidenceLevel
+                - policy
+                - policyAction
+                - recipientEmailAddresses
+                - returnPath
+                - senderDetail
+                - sizeInBytes
+                - spamConfidenceLevel
+                - subject
+                - threatType
+                - urls
+                - urlsCount
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.security.analyzedEmailCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - security.collaborationRoot
+      summary: Create new navigation property to analyzedEmails for security
+      operationId: security.collaboration_CreateAnalyzedEmail
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.security.analyzedEmail'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.analyzedEmail'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/security/collaboration/analyzedEmails/{analyzedEmail-id}':
+    get:
+      tags:
+        - security.collaborationRoot
+      summary: Get analyzedEmails from security
+      operationId: security.collaboration_GetAnalyzedEmail
+      parameters:
+        - name: analyzedEmail-id
+          in: path
+          description: The unique identifier of analyzedEmail
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: analyzedEmail
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - alertIds
+                - attachments
+                - attachmentsCount
+                - authenticationDetails
+                - bulkComplaintLevel
+                - contexts
+                - detectionMethods
+                - directionality
+                - distributionList
+                - emailClusterId
+                - exchangeTransportRules
+                - internetMessageId
+                - language
+                - latestDelivery
+                - loggedDateTime
+                - networkMessageId
+                - originalDelivery
+                - overrideSources
+                - phishConfidenceLevel
+                - policy
+                - policyAction
+                - recipientEmailAddresses
+                - returnPath
+                - senderDetail
+                - sizeInBytes
+                - spamConfidenceLevel
+                - subject
+                - threatType
+                - urls
+                - urlsCount
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.analyzedEmail'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - security.collaborationRoot
+      summary: Update the navigation property analyzedEmails in security
+      operationId: security.collaboration_UpdateAnalyzedEmail
+      parameters:
+        - name: analyzedEmail-id
+          in: path
+          description: The unique identifier of analyzedEmail
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: analyzedEmail
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.security.analyzedEmail'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.analyzedEmail'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - security.collaborationRoot
+      summary: Delete navigation property analyzedEmails for security
+      operationId: security.collaboration_DeleteAnalyzedEmail
+      parameters:
+        - name: analyzedEmail-id
+          in: path
+          description: The unique identifier of analyzedEmail
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: analyzedEmail
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /security/collaboration/analyzedEmails/$count:
+    get:
+      tags:
+        - security.collaborationRoot
+      summary: Get the number of the resource
+      operationId: security.collaboration.analyzedEmail_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /security/collaboration/analyzedEmails/microsoft.graph.security.remediate:
+    post:
+      tags:
+        - security.Actions
+      summary: Invoke action remediate
+      operationId: security.collaboration.analyzedEmail_remediate
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                displayName:
+                  type: string
+                  nullable: true
+                description:
+                  type: string
+                  nullable: true
+                severity:
+                  $ref: '#/components/schemas/microsoft.graph.security.remediationSeverity'
+                action:
+                  $ref: '#/components/schemas/microsoft.graph.security.remediationAction'
+                approverUpn:
+                  type: string
+                  nullable: true
+                remediateSendersCopy:
+                  type: boolean
+                  default: false
+                  nullable: true
+                analyzedEmails:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.security.analyzedEmail'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /security/domainSecurityProfiles:
     get:
       tags:
@@ -34804,6 +35254,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudAppSecurityProfile'
               x-ms-navigationProperty: true
+            collaboration:
+              $ref: '#/components/schemas/microsoft.graph.security.collaborationRoot'
             domainSecurityProfiles:
               type: array
               items:
@@ -35873,17 +36325,21 @@ components:
               items:
                 type: string
                 nullable: true
+              description: The administrative units tagged to an audit log record.
             displayName:
               type: string
+              description: The display name of the saved audit log query.
               nullable: true
             filterEndDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The end date of the date range in the query.
               format: date-time
               nullable: true
             filterStartDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The start date of the date range in the query.
               format: date-time
               nullable: true
             ipAddressFilters:
@@ -35891,19 +36347,23 @@ components:
               items:
                 type: string
                 nullable: true
+              description: The IP address of the device that was used when the activity was logged.
             keywordFilter:
               type: string
+              description: Free text field to search non-indexed properties of the audit log.
               nullable: true
             objectIdFilters:
               type: array
               items:
                 type: string
                 nullable: true
+              description: 'For SharePoint and OneDrive for Business activity, the full path name of the file or folder accessed by the user. For Exchange admin audit logging, the name of the object that was modified by the cmdlet.'
             operationFilters:
               type: array
               items:
                 type: string
                 nullable: true
+              description: 'The name of the user or admin activity. For a description of the most common operations/activities, see Search the audit log in the Office 365 Protection Center.'
             recordTypeFilters:
               type: array
               items:
@@ -35920,10 +36380,12 @@ components:
               items:
                 type: string
                 nullable: true
+              description: 'The UPN (user principal name) of the user who performed the action (specified in the operation property) that resulted in the record being logged; for example, myname@mydomain_name.'
             records:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.auditLogRecord'
+              description: An individual audit log record.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -35938,35 +36400,44 @@ components:
               items:
                 type: string
                 nullable: true
+              description: The administrative units tagged to an audit log record.
             auditData:
               $ref: '#/components/schemas/microsoft.graph.security.auditData'
             auditLogRecordType:
               $ref: '#/components/schemas/microsoft.graph.security.auditLogRecordType'
             clientIp:
               type: string
+              description: The IP address of the device used when the activity was logged. The IP address is displayed in either an IPv4 or IPv6 address format.
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The date and time in UTC when the user performed the activity.
               format: date-time
               nullable: true
             objectId:
               type: string
+              description: 'For Exchange admin audit logging, the name of the object modified by the cmdlet. For SharePoint activity, the full URL path name of the file or folder accessed by a user. For Microsoft Entra activity, the name of the user account that was modified.'
               nullable: true
             operation:
               type: string
+              description: The name of the user or admin activity.
               nullable: true
             organizationId:
               type: string
+              description: The GUID for your organization.
               nullable: true
             service:
               type: string
+              description: The Microsoft 365 service where the activity occurred.
               nullable: true
             userId:
               type: string
+              description: 'The user who performed the action (specified in the Operation property) that resulted in the record being logged. Audit records for activity performed by system accounts (such as SHAREPOINT/system or NT AUTHORITY/SYSTEM) are also included in the audit log. Another common value for the UserId property is app@sharepoint. It indicates that the ''user'' who performed the activity was an application with the necessary permissions in SharePoint to perform organization-wide actions (such as searching a SharePoint site or OneDrive account) on behalf of a user, admin, or service.'
               nullable: true
             userPrincipalName:
               type: string
+              description: UPN of the user who performed the action.
               nullable: true
             userType:
               $ref: '#/components/schemas/microsoft.graph.security.auditLogUserType'
@@ -37014,6 +37485,153 @@ components:
               $ref: '#/components/schemas/microsoft.graph.securityVendorInformation'
           additionalProperties:
             type: object
+    microsoft.graph.security.collaborationRoot:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: collaborationRoot
+          type: object
+          properties:
+            analyzedEmails:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.security.analyzedEmail'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.security.analyzedEmail:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: analyzedEmail
+          type: object
+          properties:
+            alertIds:
+              type: array
+              items:
+                type: string
+                nullable: true
+            attachments:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.security.analyzedEmailAttachment'
+            attachmentsCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            authenticationDetails:
+              $ref: '#/components/schemas/microsoft.graph.security.analyzedEmailAuthenticationDetail'
+            bulkComplaintLevel:
+              type: string
+              nullable: true
+            contexts:
+              type: array
+              items:
+                type: string
+                nullable: true
+            detectionMethods:
+              type: array
+              items:
+                type: string
+                nullable: true
+            directionality:
+              $ref: '#/components/schemas/microsoft.graph.security.antispamDirectionality'
+            distributionList:
+              type: string
+              nullable: true
+            emailClusterId:
+              type: string
+              nullable: true
+            exchangeTransportRules:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.security.analyzedEmailExchangeTransportRuleInfo'
+            internetMessageId:
+              type: string
+              nullable: true
+            language:
+              type: string
+              nullable: true
+            latestDelivery:
+              $ref: '#/components/schemas/microsoft.graph.security.analyzedEmailDeliveryDetail'
+            loggedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            networkMessageId:
+              type: string
+              nullable: true
+            originalDelivery:
+              $ref: '#/components/schemas/microsoft.graph.security.analyzedEmailDeliveryDetail'
+            overrideSources:
+              type: array
+              items:
+                type: string
+                nullable: true
+            phishConfidenceLevel:
+              type: string
+              nullable: true
+            policy:
+              type: string
+              nullable: true
+            policyAction:
+              type: string
+              nullable: true
+            recipientEmailAddresses:
+              type: array
+              items:
+                type: string
+                nullable: true
+            returnPath:
+              type: string
+              nullable: true
+            senderDetail:
+              $ref: '#/components/schemas/microsoft.graph.security.analyzedEmailSenderDetail'
+            sizeInBytes:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            spamConfidenceLevel:
+              type: string
+              nullable: true
+            subject:
+              type: string
+              nullable: true
+            threatType:
+              $ref: '#/components/schemas/microsoft.graph.security.threatType'
+            urls:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.security.analyzedEmailUrl'
+            urlsCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.security.remediationSeverity:
+      title: remediationSeverity
+      enum:
+        - low
+        - medium
+        - high
+        - unknownFutureValue
+      type: string
+    microsoft.graph.security.remediationAction:
+      title: remediationAction
+      enum:
+        - moveToJunk
+        - moveToInbox
+        - hardDelete
+        - softDelete
+        - moveToDeletedItems
+        - unknownFutureValue
+      type: string
     microsoft.graph.domainSecurityProfile:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -43327,6 +43945,118 @@ components:
         - system
         - unknownFutureValue
       type: string
+    microsoft.graph.security.analyzedEmailAttachment:
+      title: analyzedEmailAttachment
+      type: object
+      properties:
+        detonationDetails:
+          $ref: '#/components/schemas/microsoft.graph.security.detonationDetails'
+        fileName:
+          type: string
+          nullable: true
+        fileType:
+          type: string
+          nullable: true
+        sha256:
+          type: string
+          nullable: true
+        threatName:
+          type: string
+          nullable: true
+        threatType:
+          $ref: '#/components/schemas/microsoft.graph.security.threatType'
+      additionalProperties:
+        type: object
+    microsoft.graph.security.analyzedEmailAuthenticationDetail:
+      title: analyzedEmailAuthenticationDetail
+      type: object
+      properties:
+        compositeAuthentication:
+          type: string
+          nullable: true
+        dkim:
+          type: string
+          nullable: true
+        dmarc:
+          type: string
+          nullable: true
+        senderPolicyFramework:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.security.antispamDirectionality:
+      title: antispamDirectionality
+      enum:
+        - unknown
+        - inbound
+        - outbound
+        - intraOrg
+        - unknownFutureValue
+      type: string
+    microsoft.graph.security.analyzedEmailExchangeTransportRuleInfo:
+      title: analyzedEmailExchangeTransportRuleInfo
+      type: object
+      properties:
+        name:
+          type: string
+          nullable: true
+        ruleId:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.security.analyzedEmailDeliveryDetail:
+      title: analyzedEmailDeliveryDetail
+      type: object
+      properties:
+        action:
+          $ref: '#/components/schemas/microsoft.graph.security.deliveryAction'
+        location:
+          $ref: '#/components/schemas/microsoft.graph.security.deliveryLocation'
+      additionalProperties:
+        type: object
+    microsoft.graph.security.analyzedEmailSenderDetail:
+      title: analyzedEmailSenderDetail
+      type: object
+      properties:
+        fromAddress:
+          type: string
+          nullable: true
+        ipv4:
+          type: string
+          nullable: true
+        mailFromAddress:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.security.threatType:
+      title: threatType
+      enum:
+        - unknown
+        - spam
+        - malware
+        - phishing
+        - none
+        - unknownFutureValue
+      type: string
+    microsoft.graph.security.analyzedEmailUrl:
+      title: analyzedEmailUrl
+      type: object
+      properties:
+        detectionMethod:
+          type: string
+          nullable: true
+        detonationDetails:
+          $ref: '#/components/schemas/microsoft.graph.security.detonationDetails'
+        threatType:
+          $ref: '#/components/schemas/microsoft.graph.security.threatType'
+        url:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.reputationCategory:
       title: reputationCategory
       type: object
@@ -44187,7 +44917,7 @@ components:
         lastNonInteractiveSignInDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client attempted to sign into the directory the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Microsoft Entra ID maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.'
+          description: 'The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client attempted (either successfully or unsuccessfully) to sign in to the directory the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Microsoft Entra ID maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.'
           format: date-time
           nullable: true
         lastNonInteractiveSignInRequestId:
@@ -44197,7 +44927,7 @@ components:
         lastSignInDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user attempted to sign into the directory the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Microsoft Entra ID maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.'
+          description: 'The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user attempted (either successfully or unsuccessfully) to sign in to the directory the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Microsoft Entra ID maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.'
           format: date-time
           nullable: true
         lastSignInRequestId:
@@ -45760,8 +46490,6 @@ components:
               description: 'Indicates whether the device is DFCI managed. When TRUE the device is DFCI managed. When FALSE, the device is not DFCI managed. The default value is FALSE.'
             deviceHealthAttestationState:
               $ref: '#/components/schemas/microsoft.graph.deviceHealthAttestationState'
-            deviceIdentityAttestationDetail:
-              $ref: '#/components/schemas/microsoft.graph.deviceIdentityAttestationDetail'
             deviceName:
               type: string
               description: Name of the device. This property is read-only.
@@ -46639,6 +47367,11 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerPlan'
               description: Read-only. Nullable. Returns the plannerPlans that the user marked as favorites.
+              x-ms-navigationProperty: true
+            myDayTasks:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.plannerTask'
               x-ms-navigationProperty: true
             plans:
               type: array
@@ -48508,6 +49241,19 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.cloudAppSecurityProfile'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.security.analyzedEmailCollectionResponse:
+      title: Collection of analyzedEmail
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.security.analyzedEmail'
         '@odata.nextLink':
           type: string
           nullable: true
@@ -51260,6 +52006,51 @@ components:
         - ocrFileSizeExceedsLimit
         - unknownFutureValue
       type: string
+    microsoft.graph.security.detonationDetails:
+      title: detonationDetails
+      type: object
+      properties:
+        analysisDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        detonationChain:
+          $ref: '#/components/schemas/microsoft.graph.security.detonationChain'
+        detonationObservables:
+          $ref: '#/components/schemas/microsoft.graph.security.detonationObservables'
+        detonationVerdict:
+          type: string
+          nullable: true
+        detonationVerdictReason:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.security.deliveryAction:
+      title: deliveryAction
+      enum:
+        - unknown
+        - deliveredToJunk
+        - delivered
+        - blocked
+        - replaced
+        - unknownFutureValue
+      type: string
+    microsoft.graph.security.deliveryLocation:
+      title: deliveryLocation
+      enum:
+        - unknown
+        - inbox_folder
+        - junkFolder
+        - deletedFolder
+        - quarantine
+        - onprem_external
+        - failed
+        - dropped
+        - others
+        - unknownFutureValue
+      type: string
     microsoft.graph.security.filePlanDescriptorBase:
       title: filePlanDescriptorBase
       type: object
@@ -52480,18 +53271,19 @@ components:
       properties:
         errorMessage:
           type: string
+          description: Contains a detailed error message when the partner agent installation failed.
           nullable: true
         installStatus:
           $ref: '#/components/schemas/microsoft.graph.cloudPcPartnerAgentInstallStatus'
         isThirdPartyPartner:
           type: boolean
-          description: Indicates if the partner agent is a third party. When 'TRUE' the agent is a third-party (non-Microsoft) agent and when 'FALSE' the agent is a Microsoft agent or isn't known.  The default value is 'FALSE'
+          description: 'Indicates whether the partner agent is a third party. When true, the agent is a third-party (non-Microsoft) agent and when false, the agent is a Microsoft agent or isn''t known.  The default value is false.'
           nullable: true
         partnerAgentName:
           $ref: '#/components/schemas/microsoft.graph.cloudPcPartnerAgentName'
         retriable:
           type: boolean
-          description: Indicates if the partner agent is a third party. When 'TRUE' the agent is a third-party (non-Microsoft) agent and when 'FALSE' the agent is a Microsoft agent or isn't known. The default value is 'FALSE'
+          description: Indicates whether the partner agent installation should be retried. The default value is false.
           nullable: true
       additionalProperties:
         type: object
@@ -52732,11 +53524,9 @@ components:
       properties:
         context:
           type: string
-          description: Not yet documented
           nullable: true
         failure:
           type: string
-          description: Not yet documented
           nullable: true
         failureDetails:
           type: string
@@ -53266,6 +54056,8 @@ components:
         - androidEnterpriseDedicatedDevice
         - androidEnterpriseFullyManaged
         - androidEnterpriseCorporateWorkProfile
+        - androidAOSPUserOwnedDeviceEnrollment
+        - androidAOSPUserlessDeviceEnrollment
       type: string
       description: Possible ways of adding a mobile device to management.
       x-ms-enum:
@@ -53323,6 +54115,12 @@ components:
           - value: androidEnterpriseCorporateWorkProfile
             description: Android Enterprise Corporate Work Profile
             name: androidEnterpriseCorporateWorkProfile
+          - value: androidAOSPUserOwnedDeviceEnrollment
+            description: Indicates the device enrollment is for android device owned by/associated with user using Android Open Source Project (AOSP) on a non-Google mobile services.
+            name: androidAOSPUserOwnedDeviceEnrollment
+          - value: androidAOSPUserlessDeviceEnrollment
+            description: Indicates the device enrollment is for user less android device using Android Open Source Project (AOSP) on a non-Google mobile services.
+            name: androidAOSPUserlessDeviceEnrollment
     microsoft.graph.deviceHealthAttestationState:
       title: deviceHealthAttestationState
       type: object
@@ -53462,7 +54260,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.azureAttestationSettingStatus'
         virtualSecureMode:
           type: string
-          description: VSM is a container that protects high value assets from a compromised kernel
+          description: 'Indicates whether the device has Virtual Secure Mode (VSM) enabled. Virtual Secure Mode (VSM) is a container that protects high value assets from a compromised kernel. This property will be deprecated in beta from August 2023. Support for this property will end in August 2025 for v1.0 API. A new property virtualizationBasedSecurity is added and used instead. The value used for virtualSecureMode will be passed by virtualizationBasedSecurity during the deprecation process. Possible values are ''enabled'', ''disabled'' and ''notApplicable''. ''enabled'' indicates Virtual Secure Mode (VSM) is enabled. ''disabled'' indicates Virtual Secure Mode (VSM) is disabled. ''notApplicable'' indicates the device is not a Windows 11 device. Default value is ''notApplicable''.'
           nullable: true
         windowsPE:
           type: string
@@ -53470,15 +54268,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.deviceIdentityAttestationDetail:
-      title: deviceIdentityAttestationDetail
-      type: object
-      properties:
-        deviceIdentityAttestationStatus:
-          $ref: '#/components/schemas/microsoft.graph.deviceIdentityAttestationStatus'
-      additionalProperties:
-        type: object
-      description: Indicates the attestation status of the managed device
     microsoft.graph.deviceRegistrationState:
       title: deviceRegistrationState
       enum:
@@ -53990,6 +54779,8 @@ components:
         - microsoft365ManagedMdm
         - msSense
         - intuneAosp
+        - google
+        - unknownFutureValue
       type: string
       description: Management agent type.
       x-ms-enum:
@@ -54035,6 +54826,12 @@ components:
           - value: intuneAosp
             description: This device is managed by Intune's MDM for AOSP (Android Open Source Project) devices
             name: intuneAosp
+          - value: google
+            description: Indicates the management agent to manage the device is Google.
+            name: google
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.managedDeviceManagementFeatures:
       title: managedDeviceManagementFeatures
       enum:
@@ -56634,6 +57431,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamworkBot'
             colorIcon:
               $ref: '#/components/schemas/microsoft.graph.teamsAppIcon'
+            dashboardCards:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.teamsAppDashboardCardDefinition'
+              x-ms-navigationProperty: true
             outlineIcon:
               $ref: '#/components/schemas/microsoft.graph.teamsAppIcon'
           additionalProperties:
@@ -58823,6 +59625,40 @@ components:
               $ref: '#/components/schemas/microsoft.graph.plannerUserIds'
           additionalProperties:
             type: object
+    microsoft.graph.security.detonationChain:
+      title: detonationChain
+      type: object
+      properties:
+        childNodes:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.security.detonationChain'
+        value:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.security.detonationObservables:
+      title: detonationObservables
+      type: object
+      properties:
+        contactedIps:
+          type: array
+          items:
+            type: string
+            nullable: true
+        contactedUrls:
+          type: array
+          items:
+            type: string
+            nullable: true
+        droppedfiles:
+          type: array
+          items:
+            type: string
+            nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.printerBase:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -59546,7 +60382,6 @@ components:
           nullable: true
         text:
           type: string
-          description: Not yet documented
           nullable: true
       additionalProperties:
         type: object
@@ -59932,39 +60767,6 @@ components:
           - value: level3
             description: 'Indicates that in addition to the System Management Mode (SMM) Level 2 protections, this level reduces System Management Mode (SMM) save state capabilities. The benefit is that by design System Management Mode (SMM) cannot exploit save state to modify security of or exfiltrate secrets from the OS (including Virtualization-based security).'
             name: level3
-          - value: unknownFutureValue
-            description: Evolvable enumeration sentinel value. Do not use.
-            name: unknownFutureValue
-    microsoft.graph.deviceIdentityAttestationStatus:
-      title: deviceIdentityAttestationStatus
-      enum:
-        - unknown
-        - trusted
-        - unTrusted
-        - notSupported
-        - incompleteData
-        - unknownFutureValue
-      type: string
-      description: 'Indicates the state of the anomaly. Eg: anomaly severity can be new, active, disabled, removed or other.'
-      x-ms-enum:
-        name: deviceIdentityAttestationStatus
-        modelAsString: false
-        values:
-          - value: unknown
-            description: Default. Set to unknown if attestation has not yet been calculated
-            name: unknown
-          - value: trusted
-            description: 'Indicates that the Device attestation is supported on the device, it was attempted on the device and the attestation has passed. The device is trusted.'
-            name: trusted
-          - value: unTrusted
-            description: 'Indicates that the Device attestation is supported on the device, it was attempted on the device and the attestation has failed. The device is untrusted'
-            name: unTrusted
-          - value: notSupported
-            description: Indicates that the device does not support Attestation. This could be because of missing hardware or software support.
-            name: notSupported
-          - value: incompleteData
-            description: Indicates that the device did not provide with the data that were required to perform attestation.
-            name: incompleteData
           - value: unknownFutureValue
             description: Evolvable enumeration sentinel value. Do not use.
             name: unknownFutureValue
@@ -62205,6 +63007,29 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamworkHostedContent'
           additionalProperties:
             type: object
+    microsoft.graph.teamsAppDashboardCardDefinition:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: teamsAppDashboardCardDefinition
+          type: object
+          properties:
+            contentSource:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppDashboardCardContentSource'
+            defaultSize:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppDashboardCardSize'
+            description:
+              type: string
+              nullable: true
+            displayName:
+              type: string
+              nullable: true
+            icon:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppDashboardCardIcon'
+            pickerGroupId:
+              type: string
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.scheduleChangeRequest:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.changeTrackedEntity'
@@ -64383,11 +65208,9 @@ components:
       properties:
         displayName:
           type: string
-          description: Not yet documented
           nullable: true
         id:
           type: string
-          description: Not yet documented
           nullable: true
         sourceType:
           $ref: '#/components/schemas/microsoft.graph.settingSourceType'
@@ -65311,6 +66134,35 @@ components:
         - application
         - unknownFutureValue
       type: string
+    microsoft.graph.teamsAppDashboardCardContentSource:
+      title: teamsAppDashboardCardContentSource
+      type: object
+      properties:
+        botConfiguration:
+          $ref: '#/components/schemas/microsoft.graph.teamsAppDashboardCardBotConfiguration'
+        sourceType:
+          $ref: '#/components/schemas/microsoft.graph.teamsAppDashboardCardSourceType'
+      additionalProperties:
+        type: object
+    microsoft.graph.teamsAppDashboardCardSize:
+      title: teamsAppDashboardCardSize
+      enum:
+        - medium
+        - large
+        - unknownFutureValue
+      type: string
+    microsoft.graph.teamsAppDashboardCardIcon:
+      title: teamsAppDashboardCardIcon
+      type: object
+      properties:
+        iconUrl:
+          type: string
+          nullable: true
+        officeUIFabricIconName:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.scheduleChangeRequestActor:
       title: scheduleChangeRequestActor
       enum:
@@ -67235,6 +68087,21 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.teamsAppDashboardCardBotConfiguration:
+      title: teamsAppDashboardCardBotConfiguration
+      type: object
+      properties:
+        botId:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.teamsAppDashboardCardSourceType:
+      title: teamsAppDashboardCardSourceType
+      enum:
+        - bot
+        - unknownFutureValue
+      type: string
     microsoft.graph.scheduleEntityTheme:
       title: scheduleEntityTheme
       enum:
@@ -68637,6 +69504,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.cloudAppSecurityProfileCollectionResponse'
+    microsoft.graph.security.analyzedEmailCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.security.analyzedEmailCollectionResponse'
     microsoft.graph.domainSecurityProfileCollectionResponse:
       description: Retrieved collection
       content:

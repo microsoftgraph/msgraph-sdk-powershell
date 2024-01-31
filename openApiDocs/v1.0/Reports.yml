@@ -6884,7 +6884,7 @@ components:
           description: 'Refers to the session controls enforced by the conditional access policy (example: ''Require app enforced controls'').'
         id:
           type: string
-          description: An identifier of the conditional access policy.
+          description: An identifier of the conditional access policy. Supports $filter (eq).
           nullable: true
         result:
           $ref: '#/components/schemas/microsoft.graph.appliedConditionalAccessPolicyResult'
@@ -6967,9 +6967,9 @@ components:
         - hidden
         - adminConfirmedUserCompromised
         - unknownFutureValue
+        - m365DAdminDismissedDetection
         - adminConfirmedServicePrincipalCompromised
         - adminDismissedAllRiskForServicePrincipal
-        - m365DAdminDismissedDetection
       type: string
     microsoft.graph.riskEventType:
       title: riskEventType
