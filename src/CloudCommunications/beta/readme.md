@@ -31,8 +31,8 @@ title: $(service-name)
 subject-prefix: 'Beta'
 namespace: Microsoft.Graph.Beta.PowerShell
 directive:
-  - where:
-      verb: Set
+  - where
+      verb: Send
       subject: ^(CommunicationOnlineMeetingVirtualAppointmentSm)$
     remove: true
 ```
