@@ -14,4 +14,8 @@ directive:
       verb: Send
       subject: ^(UserOnlineMeetingVirtualAppointmentReminderSm)$
     remove: true
+  - where:
+      verb: Send
+      subject: ^(UserOnlineMeetingVirtualAppointmentSm)$
+    remove: true
 ```
