@@ -31,6 +31,8 @@ title: $(service-name)
 subject-prefix: 'Beta'
 namespace: Microsoft.Graph.Beta.PowerShell
 directive:
-# Remove invalid paths.
-  - remove-path-by-operation: communication.onlineMeeting_sendVirtualAppointmentReminderSm
+  - where:
+      verb: Set
+      subject: ^(CommunicationOnlineMeetingVirtualAppointmentSm)$
+    remove: true
 ```
