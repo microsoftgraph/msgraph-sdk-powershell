@@ -4179,11 +4179,11 @@ paths:
     get:
       tags:
         - admin.adminWindows
-      summary: Get resourceConnection
-      description: Read the properties and relationships of a resourceConnection object.
+      summary: Get operationalInsightsConnection
+      description: Read the properties and relationships of an operationalInsightsConnection object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-resourceconnection-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/windowsupdates-operationalinsightsconnection-get?view=graph-rest-1.0
       operationId: admin.window.update_GetResourceConnection
       parameters:
         - name: resourceConnection-id
@@ -4263,11 +4263,11 @@ paths:
     delete:
       tags:
         - admin.adminWindows
-      summary: Delete operationalInsightsConnection
-      description: Delete an operationalInsightsConnection object.
+      summary: Delete resourceConnection
+      description: Delete a resourceConnection object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-operationalinsightsconnection-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/windowsupdates-resourceconnection-delete?view=graph-rest-1.0
       operationId: admin.window.update_DeleteResourceConnection
       parameters:
         - name: resourceConnection-id
@@ -6691,11 +6691,11 @@ paths:
     delete:
       tags:
         - admin.adminWindows
-      summary: Delete complianceChange
-      description: Delete a complianceChange object.
+      summary: Delete contentApproval
+      description: Delete a contentApproval object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-compliancechange-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/windowsupdates-contentapproval-delete?view=graph-rest-1.0
       operationId: admin.window.update.updatePolicy_DeleteComplianceChange
       parameters:
         - name: updatePolicy-id
@@ -7713,6 +7713,7 @@ components:
           nullable: true
         isReadinessTest:
           type: boolean
+          description: True indicates that the deployment is an expedite readiness test.
           nullable: true
       additionalProperties:
         type: object
@@ -7751,6 +7752,10 @@ components:
           type: integer
           description: 'Specifies the number of days after an update is installed, during which the user of the device can control when the device restarts.'
           format: int32
+          nullable: true
+        offerAsOptional:
+          type: boolean
+          description: Specifies whether the update is offered as Optional rather than Required.
           nullable: true
       additionalProperties:
         type: object

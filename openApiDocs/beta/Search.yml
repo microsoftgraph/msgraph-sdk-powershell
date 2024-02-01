@@ -2495,11 +2495,11 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: List azureDataLakeConnectors
-      description: Get a list of the azureDataLakeConnector objects and their properties.
+      summary: List industryDataConnectors
+      description: Get the industryDataConnector resources from the dataConnector navigation property.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-azuredatalakeconnector-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/industrydata-industrydataconnector-list?view=graph-rest-1.0
       operationId: external.industryData_ListDataConnector
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2588,11 +2588,11 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: Get industryDataConnector
-      description: Read the properties and relationships of an industryDataConnector object.
+      summary: Get azureDataLakeConnector
+      description: Read the properties and relationships of an azureDataLakeConnector object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-industrydataconnector-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/industrydata-azuredatalakeconnector-get?view=graph-rest-1.0
       operationId: external.industryData_GetDataConnector
       parameters:
         - name: industryDataConnector-id
@@ -2678,11 +2678,11 @@ paths:
     delete:
       tags:
         - external.industryDataRoot
-      summary: Delete azureDataLakeConnector
-      description: Delete an azureDataLakeConnector object.
+      summary: Delete industryDataConnector
+      description: Delete an industryDataConnector object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-azuredatalakeconnector-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/industrydata-industrydataconnector-delete?view=graph-rest-1.0
       operationId: external.industryData_DeleteDataConnector
       parameters:
         - name: industryDataConnector-id
@@ -2908,11 +2908,11 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: Get inboundFlow
-      description: Read the properties and relationships of an inboundFlow object.
+      summary: Get inboundFileFlow
+      description: Read the properties and relationships of an inboundFileFlow object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-inboundflow-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-get?view=graph-rest-1.0
       operationId: external.industryData_GetInboundFlow
       parameters:
         - name: inboundFlow-id

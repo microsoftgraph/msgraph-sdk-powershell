@@ -3817,10 +3817,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action invite
-      description: 'Invite participants to the active call. For more information about how to handle operations, see commsOperation.'
+      description: 'Delete a specific participant in a call. In some situations, it is appropriate for an application to remove a participant from an active call. This action can be done before or after the participant answers the call. When an active caller is removed, they are immediately dropped from the call with no pre- or post-removal notification. When an invited participant is removed, any outstanding add participant request is canceled.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/participant-invite?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/participant-delete?view=graph-rest-1.0
       operationId: communication.call.participant_invite
       parameters:
         - name: call-id
@@ -6124,11 +6124,11 @@ paths:
     get:
       tags:
         - communications.onlineMeeting
-      summary: Get externalMeetingRegistration
-      description: Get the externalMeetingRegistration details associated with an onlineMeeting.
+      summary: Get meetingRegistration
+      description: Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/externalmeetingregistration-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/meetingregistration-get?view=graph-rest-1.0
       operationId: communication.onlineMeeting_GetRegistration
       parameters:
         - name: onlineMeeting-id
@@ -7322,6 +7322,271 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/communications/onlineMeetings(joinWebUrl=''{joinWebUrl}'')':
+    get:
+      tags:
+        - communications.onlineMeeting
+      summary: Get onlineMeetings from communications
+      operationId: communication_GetOnlineMeeting
+      parameters:
+        - name: joinWebUrl
+          in: path
+          description: Alternate key of onlineMeeting
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - allowAttendeeToEnableCamera
+                - allowAttendeeToEnableMic
+                - allowedPresenters
+                - allowMeetingChat
+                - allowParticipantsToChangeName
+                - allowRecording
+                - allowTeamworkReactions
+                - allowTranscription
+                - anonymizeIdentityForRoles
+                - audioConferencing
+                - chatInfo
+                - chatRestrictions
+                - isEndToEndEncryptionEnabled
+                - isEntryExitAnnounced
+                - joinInformation
+                - joinMeetingIdSettings
+                - joinWebUrl
+                - lobbyBypassSettings
+                - recordAutomatically
+                - shareMeetingChatHistoryDefault
+                - subject
+                - videoTeleconferenceId
+                - watermarkProtection
+                - alternativeRecording
+                - attendeeReport
+                - broadcastRecording
+                - broadcastSettings
+                - capabilities
+                - creationDateTime
+                - endDateTime
+                - externalId
+                - isBroadcast
+                - joinUrl
+                - participants
+                - recording
+                - startDateTime
+                - attendanceReports
+                - meetingAttendanceReport
+                - recordings
+                - registration
+                - transcripts
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - attendanceReports
+                - meetingAttendanceReport
+                - recordings
+                - registration
+                - transcripts
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - communications.onlineMeeting
+      summary: Update the navigation property onlineMeetings in communications
+      operationId: communication_UpdateOnlineMeeting
+      parameters:
+        - name: joinWebUrl
+          in: path
+          description: Alternate key of onlineMeeting
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - communications.onlineMeeting
+      summary: Delete navigation property onlineMeetings for communications
+      operationId: communication_DeleteOnlineMeeting
+      parameters:
+        - name: joinWebUrl
+          in: path
+          description: Alternate key of onlineMeeting
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/communications/onlineMeetings(joinWebUrl=''{joinWebUrl}'')/microsoft.graph.getVirtualAppointmentJoinWebUrl()':
+    get:
+      tags:
+        - communications.Functions
+      summary: Invoke function getVirtualAppointmentJoinWebUrl
+      operationId: communication.onlineMeeting_getVirtualAppointmentJoinWebUrl
+      parameters:
+        - name: joinWebUrl
+          in: path
+          description: Alternate key of onlineMeeting
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/communications/onlineMeetings(joinWebUrl=''{joinWebUrl}'')/microsoft.graph.sendVirtualAppointmentReminderSms':
+    post:
+      tags:
+        - communications.Actions
+      summary: Invoke action sendVirtualAppointmentReminderSms
+      description: Send an SMS reminder to external attendees for a Teams Virtual Appointment. This feature requires Teams Premium and attendees must have a valid United States phone number to receive SMS notifications.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualappointment-sendvirtualappointmentremindersms?view=graph-rest-1.0
+      operationId: communication.onlineMeeting_sendVirtualAppointmentReminderSm
+      parameters:
+        - name: joinWebUrl
+          in: path
+          description: Alternate key of onlineMeeting
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                remindBeforeTimeInMinutesType:
+                  $ref: '#/components/schemas/microsoft.graph.remindBeforeTimeInMinutesType'
+                attendees:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.attendeeNotificationInfo'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/communications/onlineMeetings(joinWebUrl=''{joinWebUrl}'')/microsoft.graph.sendVirtualAppointmentSms':
+    post:
+      tags:
+        - communications.Actions
+      summary: Invoke action sendVirtualAppointmentSms
+      description: 'Send an SMS notification to external attendees when a Teams Virtual Appointment is confirmed, rescheduled, or canceled. This feature requires Teams Premium. Attendees must have a valid United States phone number to receive these SMS notifications.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualappointment-sendvirtualappointmentsms?view=graph-rest-1.0
+      operationId: communication.onlineMeeting_sendVirtualAppointmentSm
+      parameters:
+        - name: joinWebUrl
+          in: path
+          description: Alternate key of onlineMeeting
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                messageType:
+                  $ref: '#/components/schemas/microsoft.graph.virtualAppointmentMessageType'
+                attendees:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.attendeeNotificationInfo'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /communications/onlineMeetings/$count:
     get:
       tags:
@@ -10234,11 +10499,11 @@ paths:
     get:
       tags:
         - users.onlineMeeting
-      summary: Get externalMeetingRegistration
-      description: Get the externalMeetingRegistration details associated with an onlineMeeting.
+      summary: Get meetingRegistration
+      description: Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/externalmeetingregistration-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/meetingregistration-get?view=graph-rest-1.0
       operationId: user.onlineMeeting_GetRegistration
       parameters:
         - name: user-id
@@ -11539,6 +11804,191 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/users/{user-id}/onlineMeetings(joinWebUrl=''{joinWebUrl}'')':
+    get:
+      tags:
+        - users.onlineMeeting
+      summary: Get onlineMeetings from users
+      description: 'Information about a meeting, including the URL used to join a meeting, the attendees list, and the description.'
+      operationId: user_GetOnlineMeeting
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: joinWebUrl
+          in: path
+          description: Alternate key of onlineMeeting
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - allowAttendeeToEnableCamera
+                - allowAttendeeToEnableMic
+                - allowedPresenters
+                - allowMeetingChat
+                - allowParticipantsToChangeName
+                - allowRecording
+                - allowTeamworkReactions
+                - allowTranscription
+                - anonymizeIdentityForRoles
+                - audioConferencing
+                - chatInfo
+                - chatRestrictions
+                - isEndToEndEncryptionEnabled
+                - isEntryExitAnnounced
+                - joinInformation
+                - joinMeetingIdSettings
+                - joinWebUrl
+                - lobbyBypassSettings
+                - recordAutomatically
+                - shareMeetingChatHistoryDefault
+                - subject
+                - videoTeleconferenceId
+                - watermarkProtection
+                - alternativeRecording
+                - attendeeReport
+                - broadcastRecording
+                - broadcastSettings
+                - capabilities
+                - creationDateTime
+                - endDateTime
+                - externalId
+                - isBroadcast
+                - joinUrl
+                - participants
+                - recording
+                - startDateTime
+                - attendanceReports
+                - meetingAttendanceReport
+                - recordings
+                - registration
+                - transcripts
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - attendanceReports
+                - meetingAttendanceReport
+                - recordings
+                - registration
+                - transcripts
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - users.onlineMeeting
+      summary: Update onlineMeeting
+      description: Update the properties of the specified onlineMeeting object. Please see Request body section for the list of properties that support updating.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/onlinemeeting-update?view=graph-rest-1.0
+      operationId: user_UpdateOnlineMeeting
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: joinWebUrl
+          in: path
+          description: Alternate key of onlineMeeting
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.onlineMeeting
+      summary: Delete onlineMeeting
+      description: Delete an onlineMeeting object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/onlinemeeting-delete?view=graph-rest-1.0
+      operationId: user_DeleteOnlineMeeting
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: joinWebUrl
+          in: path
+          description: Alternate key of onlineMeeting
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/onlineMeetings/$count':
     get:
       tags:
@@ -11565,11 +12015,11 @@ paths:
     get:
       tags:
         - users.presence
-      summary: Get presence
-      description: Get a user's presence information.
+      summary: 'presence: setStatusMessage'
+      description: Set a presence status message for a user. An optional expiration date and time can be supplied.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/presence-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/presence-setstatusmessage?view=graph-rest-1.0
       operationId: user_GetPresence
       parameters:
         - name: user-id
