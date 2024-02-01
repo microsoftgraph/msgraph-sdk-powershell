@@ -12,10 +12,7 @@ namespace: Microsoft.Graph.Beta.PowerShell
 directive:
   - where:
       verb: Send
-      subject: ^(UserOnlineMeetingVirtualAppointmentReminderSm)$
-    remove: true
-  - where:
-      verb: Send
-      subject: ^(UserOnlineMeetingVirtualAppointmentSm)$
+      subject: ^(UserOnlineMeetingVirtualAppointmentReminderSm|UserOnlineMeetingVirtualAppointmentSm)$
+      variant: ^Send1$|^SendExpanded1$|^SendViaIdentity1$|^SendViaIdentityExpanded1$
     remove: true
 ```
