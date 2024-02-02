@@ -250,13 +250,6 @@
 
                     if (((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
 
-                    MGTeamsInternalTenantConsentSettingsCollection tenantConsentSettingsCollection =
-                        await this.Client.GetTenantConsentSettings(eventListener: this, sender: Pipeline);
-
-                    WriteVerbose($"Fetched tenant consent settings.");
-
-                    if (((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
-
                     MGTeamsInternalPermissionGrantPolicyCollection permissionGrantPolicyCollection =
                         await this.Client.GetPermissionGrantPolicies(selectQuery: "id, resourceScopeType", eventListener: this, sender: this.Pipeline);
 
