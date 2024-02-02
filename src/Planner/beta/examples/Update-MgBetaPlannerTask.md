@@ -15,7 +15,7 @@ $params = @{
 	}
 }
 
-Update-MgBetaPlannerTask -PlannerTaskId $plannerTaskId -BodyParameter $params-If-Match W/"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAWCc="
+Update-MgBetaPlannerTask -PlannerTaskId $plannerTaskId -BodyParameter $params -IfMatch W/'"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAWCc="'
 ```
 This example shows how to use the Update-MgBetaPlannerTask Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

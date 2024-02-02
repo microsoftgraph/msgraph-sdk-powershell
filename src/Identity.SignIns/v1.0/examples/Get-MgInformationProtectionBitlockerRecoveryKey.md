@@ -1,17 +1,18 @@
-### Example 1: {{ Add title here }}
-```powershell
- PS C:\> {{ Add code here }}
+### Example 1: Get the BitLocker key by specifying the key id
 
-{{ Add output here }}
+```powershellImport-Module Microsoft.Graph.Identity.SignIns
+
+Get-MgInformationProtectionBitlockerRecoveryKey -BitlockerRecoveryKeyId $bitlockerRecoveryKeyId
 ```
+This example shows how to use the Get-MgInformationProtectionBitlockerRecoveryKey Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-{{ Add description here }}
+### Example 2: Get the BitLocker key with the <strong>key</strong> property
 
-### Example 2: {{ Add title here }}
-```powershell
- PS C:\> {{ Add code here }}
+```powershellImport-Module Microsoft.Graph.Identity.SignIns
 
-{{ Add output here }}
+Get-MgInformationProtectionBitlockerRecoveryKey -BitlockerRecoveryKeyId $bitlockerRecoveryKeyId -Property "key"
 ```
+This example shows how to use the Get-MgInformationProtectionBitlockerRecoveryKey Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-{{ Add description here }}

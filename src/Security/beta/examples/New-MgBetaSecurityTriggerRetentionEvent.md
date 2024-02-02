@@ -12,18 +12,7 @@ $params = @{
 		}
 	)
 	eventTriggerDateTime = [System.DateTime]::Parse("String (timestamp)")
-	createdBy = @{
-		"@odata.type" = "microsoft.graph.identitySet"
-	}
-	eventPropagationResults = @(
-		@{
-			"@odata.type" = "microsoft.graph.security.eventPropagationResult"
-		}
-	)
-	eventStatus = @{
-		"@odata.type" = "microsoft.graph.security.retentionEventStatus"
-	}
-	lastStatusUpdateDateTime = [System.DateTime]::Parse("String (timestamp)")
+	"retentionEventType@odata.bind" = "https://graph.microsoft.com/v1.0/security/triggerTypes/retentionEventType/9eecef97-fb3c-4c68-825b-4dd74530863a"
 }
 
 New-MgBetaSecurityTriggerRetentionEvent -BodyParameter $params

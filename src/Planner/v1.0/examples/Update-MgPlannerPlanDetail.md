@@ -13,7 +13,7 @@ $params = @{
 	}
 }
 
-Update-MgPlannerPlanDetail -PlannerPlanId $plannerPlanId -BodyParameter $params-If-Match W/"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAWCc="
+Update-MgPlannerPlanDetail -PlannerPlanId $plannerPlanId -BodyParameter $params -IfMatch W/'"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAWCc="'
 ```
 This example shows how to use the Update-MgPlannerPlanDetail Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
