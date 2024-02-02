@@ -32,7 +32,7 @@ These provide functionality to our HTTP pipeline and other useful features. In s
 ### Attributes
 For processing the cmdlets, we've created some additional attributes:
 - `Microsoft.Graph.Beta.PowerShell.DescriptionAttribute`
-  - Used in C# cmdlets to provide a high-level description of the cmdlet. This is propagated to reference documentation via [help comments](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comment_based_help) in the exported scripts.
+  - Used in C# cmdlets to provide a high-level description of the cmdlet. This is propagated to reference documentation via [help comments](https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comment_based_help) in the exported scripts.
 - `Microsoft.Graph.Beta.PowerShell.DoNotExportAttribute`
   - Used in C# and script cmdlets to suppress creating an exported cmdlet at build-time. These cmdlets will *not be exposed* by `Microsoft.Graph.Beta.Applications`.
 - `Microsoft.Graph.Beta.PowerShell.InternalExportAttribute`
