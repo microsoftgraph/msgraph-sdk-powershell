@@ -3,6 +3,7 @@
 // ------------------------------------------------------------------------------
 using Azure.Core;
 using Azure.Core.Diagnostics;
+using Azure.Core.Pipeline;
 using Azure.Identity;
 using Azure.Identity.Broker;
 using Microsoft.Graph.Authentication;
@@ -86,6 +87,12 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             return GraphSession.Instance.GraphOption.EnableWAMForMSGraph && SharedUtilities.IsWindowsPlatform();
         }
 
+        //Check to see if ATPoP is Supported
+        private static bool IsATPoPSupported()
+        {
+            return GraphSession.Instance.GraphOption.EnableATPoPForMSGraph;
+        }
+
         private static async Task<TokenCredential> GetClientSecretCredentialAsync(IAuthContext authContext)
         {
             if (authContext is null)
@@ -125,11 +132,45 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
                 var interactiveBrowserCredential = new InteractiveBrowserCredential(interactiveOptions);
                 if (IsWamSupported())
                 {
-                    authRecord = await Task.Run(() =>
+                    // Adding a scenario to account for Access Token Proof of Possession
+                    if (IsATPoPSupported())
                     {
-                        // Run the thread in MTA.
-                        return interactiveBrowserCredential.Authenticate(new TokenRequestContext(authContext.Scopes), cancellationToken);
-                    });
+                        // Logic to implement ATPoP Authentication
+                        authRecord = await Task.Run(() =>
+                        {
+                            var popTokenAuthenticationPolicy = new PopTokenAuthenticationPolicy(interactiveBrowserCredential as ISupportsProofOfPossession, $"https://graph.microsoft.com/.default");
+
+                            var pipelineOptions = new HttpPipelineOptions(new PopClientOptions()
+                            {
+                                Diagnostics = 
+                                {
+                                    IsLoggingContentEnabled = true,
+                                    LoggedHeaderNames = { "Authorization" }
+                                },
+                            });
+                            pipelineOptions.PerRetryPolicies.Add(popTokenAuthenticationPolicy);
+
+                            var _pipeline = HttpPipelineBuilder.Build(pipelineOptions, new HttpPipelineTransportOptions { ServerCertificateCustomValidationCallback = (_) => true });
+                            using var request = _pipeline.CreateRequest();
+                            request.Method = RequestMethod.Get;
+                            request.Uri.Reset(new Uri("https://20.190.132.47/beta/me"));
+                            var response = _pipeline.SendRequest(request, cancellationToken);
+                            var message = new HttpMessage(request, new ResponseClassifier());
+
+                            // Manually invoke the authentication policy's process method
+                            popTokenAuthenticationPolicy.ProcessAsync(message, ReadOnlyMemory<HttpPipelinePolicy>.Empty);
+                            // Run the thread in MTA.
+                            return interactiveBrowserCredential.Authenticate(new TokenRequestContext(authContext.Scopes), cancellationToken);
+                        });
+                    }
+                    else
+                    {
+                        authRecord = await Task.Run(() =>
+                        {
+                            // Run the thread in MTA.
+                            return interactiveBrowserCredential.Authenticate(new TokenRequestContext(authContext.Scopes), cancellationToken);
+                        });
+                    }
                 }
                 else
                 {
@@ -446,5 +487,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
                 File.Delete(Constants.AuthRecordPath);
             return Task.CompletedTask;
         }
+    }
+    internal class PopClientOptions : ClientOptions
+    {
     }
 }
