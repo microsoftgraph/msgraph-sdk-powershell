@@ -3,6 +3,7 @@
 // ------------------------------------------------------------------------------
 using Azure.Core;
 using Azure.Core.Diagnostics;
+using Azure.Core.Pipeline;
 using Azure.Identity;
 using Azure.Identity.Broker;
 using Microsoft.Graph.Authentication;
@@ -86,6 +87,12 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             return GraphSession.Instance.GraphOption.EnableWAMForMSGraph && SharedUtilities.IsWindowsPlatform();
         }
 
+        //Check to see if ATPoP is Supported
+        private static bool IsATPoPSupported()
+        {
+            return GraphSession.Instance.GraphOption.EnableATPoPForMSGraph;
+        }
+
         private static async Task<TokenCredential> GetClientSecretCredentialAsync(IAuthContext authContext)
         {
             if (authContext is null)
@@ -125,11 +132,29 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
                 var interactiveBrowserCredential = new InteractiveBrowserCredential(interactiveOptions);
                 if (IsWamSupported())
                 {
-                    authRecord = await Task.Run(() =>
+                    // Adding a scenario to account for Access Token Proof of Possession
+                    if (IsATPoPSupported())
                     {
-                        // Run the thread in MTA.
-                        return interactiveBrowserCredential.Authenticate(new TokenRequestContext(authContext.Scopes), cancellationToken);
-                    });
+                        // Logic to implement ATPoP Authentication
+                        var client = new PopClient(interactiveBrowserCredential, authContext, new PopClientOptions() 
+                        { 
+                            Diagnostics = 
+                            { 
+                                IsLoggingContentEnabled = true, 
+                                LoggedHeaderNames = { "Authorization" } 
+                            } 
+                        });
+                        //var response = client.Get(new Uri("https://20.190.132.47/beta/me"), CancellationToken.None);
+                        authRecord = client.GetAuthRecord();
+                    }
+                    else
+                    {
+                        authRecord = await Task.Run(() =>
+                        {
+                            // Run the thread in MTA.
+                            return interactiveBrowserCredential.Authenticate(new TokenRequestContext(authContext.Scopes), cancellationToken);
+                        });
+                    }
                 }
                 else
                 {
