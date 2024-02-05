@@ -16,6 +16,8 @@
     <PackageReference Include="Azure.Core.Experimental" Version="0.1.0-preview.32" />
     <PackageReference Include="Azure.Identity.Broker" Version="1.1.0-alpha.20240122.2" />
     <PackageReference Include="Microsoft.Graph.Core" Version="3.0.9" />
+    <PackageReference Include="Microsoft.Identity.Client" Version="4.56.0" />
+    <PackageReference Include="Microsoft.Identity.Client.Broker" Version="4.56.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
   <Target Name="CopyFiles" AfterTargets="Build">
