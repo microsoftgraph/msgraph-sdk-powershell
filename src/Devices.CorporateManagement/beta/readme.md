@@ -30,4 +30,10 @@ require:
 title: $(service-name)
 subject-prefix: 'Beta'
 namespace: Microsoft.Graph.Beta.PowerShell
+directive:
+  - where:
+      verb: Get
+      subject: ^(DeviceAppManagementMobileAppAssignmentCount|DeviceAppManagementMobileCategoryCount)$
+      variant: ^Get[1-17]$|^GetExpanded[1-17$|^GetViaIdentity[1-17]$|^GetViaIdentityExpanded[1-17]$
+    remove: true
 ```
