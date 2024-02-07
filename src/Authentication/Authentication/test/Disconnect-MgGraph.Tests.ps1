@@ -20,7 +20,7 @@ Describe 'Disconnect-MgGraph' {
         $DisconnectMgGraphCommand = Get-Command Disconnect-MgGraph
         $DisconnectMgGraphCommand | Should -Not -BeNullOrEmpty
         $DisconnectMgGraphCommand.ParameterSets | Should -HaveCount 1
-        $DisconnectMgGraphCommand.ParameterSets.Parameters | Should -HaveCount 11 # PS common parameters.
+        $DisconnectMgGraphCommand.ParameterSets.Parameters | Should -HaveCount 12 # PS common parameters.
     }
 
     It 'Should remove current AuthContext' {
