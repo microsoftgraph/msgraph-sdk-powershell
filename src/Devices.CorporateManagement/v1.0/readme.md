@@ -33,7 +33,7 @@ namespace: Microsoft.Graph.PowerShell
 directive:
   - where:
       verb: Get
-      subject: ^(DeviceAppManagementMobileAppAssignmentCount|DeviceAppManagementMobileAppCategoryCount)$
-      variant: ^Get[1-17]$|^GetExpanded[1-17$|^GetViaIdentity[1-17]$|^GetViaIdentityExpanded[1-17]$
+      subject: ^(DeviceAppManagementMobileAppAssignmentCount|DeviceAppManagementMobileAppCategoryCount|DeviceAppManagementMobileAppContentVersionFileCount|DeviceAppManagementMobileAppContentVersionCount|DeviceAppManagementMobileAppContentVersionContainedAppCount)$
+      variant: ^(Get|GetExpanded|GetViaIdentity|GetViaIdentityExpanded)([1-9]{1,2})$
     remove: true
 ```
