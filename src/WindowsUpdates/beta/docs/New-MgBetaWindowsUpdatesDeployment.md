@@ -18,14 +18,13 @@ New-MgBetaWindowsUpdatesDeployment [-AdditionalProperties <Hashtable>]
  [-Audience <IMicrosoftGraphWindowsUpdatesDeploymentAudience>] [-Content <Hashtable>]
  [-CreatedDateTime <DateTime>] [-Id <String>] [-LastModifiedDateTime <DateTime>]
  [-Settings <IMicrosoftGraphWindowsUpdatesDeploymentSettings>]
- [-State <IMicrosoftGraphWindowsUpdatesDeploymentState>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-State <IMicrosoftGraphWindowsUpdatesDeploymentState>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgBetaWindowsUpdatesDeployment -BodyParameter <IMicrosoftGraphWindowsUpdatesDeployment>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaWindowsUpdatesDeployment -BodyParameter <IMicrosoftGraphWindowsUpdatesDeployment> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -145,21 +144,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -263,8 +247,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsUpdatesDeployment
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsUpdatesDeployment
@@ -332,7 +314,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[Expedite <IMicrosoftGraphWindowsUpdatesExpediteSettings>]`: expediteSettings
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[IsExpedited <Boolean?>]`: True indicates that the deployment of the content is expedited.
-      - `[IsReadinessTest <Boolean?>]`: True indicates that the deployment is an expedite readiness test.
+      - `[IsReadinessTest <Boolean?>]`: 
     - `[Monitoring <IMicrosoftGraphWindowsUpdatesMonitoringSettings>]`: monitoringSettings
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[MonitoringRules <IMicrosoftGraphWindowsUpdatesMonitoringRule[]>]`: Specifies the rules through which monitoring signals can trigger actions on the deployment. Rules are combined using 'or.'
@@ -348,7 +330,6 @@ To create the parameters described below, construct a hash table containing the 
     - `[UserExperience <IMicrosoftGraphWindowsUpdatesUserExperienceSettings>]`: userExperienceSettings
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[DaysUntilForcedReboot <Int32?>]`: Specifies the number of days after an update is installed, during which the user of the device can control when the device restarts.
-      - `[OfferAsOptional <Boolean?>]`: Specifies whether the update is offered as Optional rather than Required.
   - `[State <IMicrosoftGraphWindowsUpdatesDeploymentState>]`: deploymentState
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[EffectiveValue <String>]`: deploymentStateValue
@@ -368,7 +349,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[Expedite <IMicrosoftGraphWindowsUpdatesExpediteSettings>]`: expediteSettings
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[IsExpedited <Boolean?>]`: True indicates that the deployment of the content is expedited.
-    - `[IsReadinessTest <Boolean?>]`: True indicates that the deployment is an expedite readiness test.
+    - `[IsReadinessTest <Boolean?>]`: 
   - `[Monitoring <IMicrosoftGraphWindowsUpdatesMonitoringSettings>]`: monitoringSettings
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[MonitoringRules <IMicrosoftGraphWindowsUpdatesMonitoringRule[]>]`: Specifies the rules through which monitoring signals can trigger actions on the deployment. Rules are combined using 'or.'
@@ -384,7 +365,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[UserExperience <IMicrosoftGraphWindowsUpdatesUserExperienceSettings>]`: userExperienceSettings
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DaysUntilForcedReboot <Int32?>]`: Specifies the number of days after an update is installed, during which the user of the device can control when the device restarts.
-    - `[OfferAsOptional <Boolean?>]`: Specifies whether the update is offered as Optional rather than Required.
 
 `STATE <IMicrosoftGraphWindowsUpdatesDeploymentState>`: deploymentState
   - `[(Any) <Object>]`: This indicates any property can be added to this object.

@@ -15,29 +15,26 @@ Update the navigation property pinnedMessages in users
 ### UpdateExpanded (Default)
 ```
 Update-MgUserChatPinnedMessage -ChatId <String> -PinnedChatMessageInfoId <String> -UserId <String>
- [-AdditionalProperties <Hashtable>] [-Id <String>] [-Message <IMicrosoftGraphChatMessage>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-Id <String>] [-Message <IMicrosoftGraphChatMessage>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgUserChatPinnedMessage -ChatId <String> -PinnedChatMessageInfoId <String> -UserId <String>
- -BodyParameter <IMicrosoftGraphPinnedChatMessageInfo> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphPinnedChatMessageInfo> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgUserChatPinnedMessage -InputObject <ITeamsIdentity>
- -BodyParameter <IMicrosoftGraphPinnedChatMessageInfo> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphPinnedChatMessageInfo> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgUserChatPinnedMessage -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
- [-Id <String>] [-Message <IMicrosoftGraphChatMessage>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Id <String>] [-Message <IMicrosoftGraphChatMessage>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -104,21 +101,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -239,8 +221,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPinnedChatMessageInfo
 
 ### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

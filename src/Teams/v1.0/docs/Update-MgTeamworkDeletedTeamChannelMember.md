@@ -17,29 +17,27 @@ This operation is allowed only for channels with a membershipType value of priva
 ```
 Update-MgTeamworkDeletedTeamChannelMember -ChannelId <String> -ConversationMemberId <String>
  -DeletedTeamId <String> [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>]
- [-Roles <String[]>] [-VisibleHistoryStartDateTime <DateTime>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Roles <String[]>] [-VisibleHistoryStartDateTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgTeamworkDeletedTeamChannelMember -ChannelId <String> -ConversationMemberId <String>
- -DeletedTeamId <String> -BodyParameter <IMicrosoftGraphConversationMember> [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -DeletedTeamId <String> -BodyParameter <IMicrosoftGraphConversationMember> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgTeamworkDeletedTeamChannelMember -InputObject <ITeamsIdentity>
- -BodyParameter <IMicrosoftGraphConversationMember> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphConversationMember> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgTeamworkDeletedTeamChannelMember -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
  [-DisplayName <String>] [-Id <String>] [-Roles <String[]>] [-VisibleHistoryStartDateTime <DateTime>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -155,21 +153,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -276,8 +259,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConversationMember
 
 ### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

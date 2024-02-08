@@ -16,29 +16,26 @@ You can't modify the displayName property\nonce you have created the category.
 ### UpdateExpanded (Default)
 ```
 Update-MgUserOutlookMasterCategory -OutlookCategoryId <String> -UserId <String>
- [-AdditionalProperties <Hashtable>] [-Color <String>] [-DisplayName <String>] [-Id <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-Color <String>] [-DisplayName <String>] [-Id <String>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgUserOutlookMasterCategory -OutlookCategoryId <String> -UserId <String>
- -BodyParameter <IMicrosoftGraphOutlookCategory> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphOutlookCategory> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgUserOutlookMasterCategory -InputObject <IUsersIdentity>
- -BodyParameter <IMicrosoftGraphOutlookCategory> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphOutlookCategory> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgUserOutlookMasterCategory -InputObject <IUsersIdentity> [-AdditionalProperties <Hashtable>]
- [-Color <String>] [-DisplayName <String>] [-Id <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Color <String>] [-DisplayName <String>] [-Id <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -121,21 +118,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -240,8 +222,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOutlookCategory
 
 ### Microsoft.Graph.PowerShell.Models.IUsersIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

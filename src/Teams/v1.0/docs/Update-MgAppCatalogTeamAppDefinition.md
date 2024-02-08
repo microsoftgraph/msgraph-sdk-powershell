@@ -20,22 +20,19 @@ Update-MgAppCatalogTeamAppDefinition -TeamsAppDefinitionId <String> -TeamsAppId 
  [-AdditionalProperties <Hashtable>] [-Authorization <IMicrosoftGraphTeamsAppAuthorization>]
  [-Bot <Hashtable>] [-CreatedBy <IMicrosoftGraphIdentitySet>] [-Description <String>] [-DisplayName <String>]
  [-Id <String>] [-LastModifiedDateTime <DateTime>] [-PublishingState <String>] [-ShortDescription <String>]
- [-TeamsAppId1 <String>] [-Version <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-TeamsAppId1 <String>] [-Version <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgAppCatalogTeamAppDefinition -TeamsAppDefinitionId <String> -TeamsAppId <String>
- -BodyParameter <IMicrosoftGraphTeamsAppDefinition> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphTeamsAppDefinition> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgAppCatalogTeamAppDefinition -InputObject <ITeamsIdentity>
- -BodyParameter <IMicrosoftGraphTeamsAppDefinition> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphTeamsAppDefinition> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -44,7 +41,7 @@ Update-MgAppCatalogTeamAppDefinition -InputObject <ITeamsIdentity> [-TeamsAppId 
  [-AdditionalProperties <Hashtable>] [-Authorization <IMicrosoftGraphTeamsAppAuthorization>]
  [-Bot <Hashtable>] [-CreatedBy <IMicrosoftGraphIdentitySet>] [-Description <String>] [-DisplayName <String>]
  [-Id <String>] [-LastModifiedDateTime <DateTime>] [-PublishingState <String>] [-ShortDescription <String>]
- [-Version <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Version <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -175,21 +172,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -369,8 +351,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamsAppDefinition
 
 ### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

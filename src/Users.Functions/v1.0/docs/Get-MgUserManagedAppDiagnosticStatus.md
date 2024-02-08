@@ -15,13 +15,13 @@ Gets diagnostics validation status for a given user.
 ### Get (Default)
 ```
 Get-MgUserManagedAppDiagnosticStatus -UserId <String> [-Count] [-Filter <String>] [-Search <String>]
- [-Skip <Int32>] [-Top <Int32>] [-Headers <IDictionary>] [<CommonParameters>]
+ [-Skip <Int32>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
 Get-MgUserManagedAppDiagnosticStatus -InputObject <IUsersFunctionsIdentity> [-Count] [-Filter <String>]
- [-Search <String>] [-Skip <Int32>] [-Top <Int32>] [-Headers <IDictionary>] [<CommonParameters>]
+ [-Search <String>] [-Skip <Int32>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -72,21 +72,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -172,8 +157,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

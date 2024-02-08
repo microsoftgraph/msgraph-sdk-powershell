@@ -17,32 +17,28 @@ You can get the metadata of the largest available photo or specify a size to get
 
 ### Get (Default)
 ```
-Get-MgUserPhoto -UserId <String> [-Property <String[]>] [-Headers <IDictionary>] [<CommonParameters>]
+Get-MgUserPhoto -UserId <String> [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgUserPhoto -ProfilePhotoId <String> -UserId <String> [-Property <String[]>] [-Headers <IDictionary>]
- [<CommonParameters>]
+Get-MgUserPhoto -ProfilePhotoId <String> -UserId <String> [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserPhoto -InputObject <IUsersIdentity> [-Property <String[]>] [-Headers <IDictionary>]
- [<CommonParameters>]
+Get-MgUserPhoto -InputObject <IUsersIdentity> [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgUserPhoto -InputObject <IUsersIdentity> [-Property <String[]>] [-Headers <IDictionary>]
- [<CommonParameters>]
+Get-MgUserPhoto -InputObject <IUsersIdentity> [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### List
 ```
 Get-MgUserPhoto -UserId <String> [-Filter <String>] [-Property <String[]>] [-Skip <Int32>] [-Sort <String[]>]
- [-Top <Int32>] [-All] [-CountVariable <String>] [-Headers <IDictionary>] [-PageSize <Int32>]
- [<CommonParameters>]
+ [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -107,21 +103,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -252,8 +233,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IUsersIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users
-Module Guid: ad642a63-2fce-4d27-aee0-d1269fb77d03
+Module Guid: 615d8a13-5d8d-48e7-a153-3417042e0cd2
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.users
 Help Version: 1.0.0.0
 Locale: en-US
@@ -12,7 +12,7 @@ Microsoft Graph PowerShell Cmdlets
 
 ## Microsoft.Graph.Users Cmdlets
 ### [Get-MgUser](Get-MgUser.md)
-Retrieve the properties and relationships of user object.
+Read properties and relationships of the user object.
 
 ### [Get-MgUserCount](Get-MgUserCount.md)
 Get the number of the resource
@@ -70,7 +70,7 @@ Get the number of the resource
 
 ### [Get-MgUserMailboxSetting](Get-MgUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgUserManager](Get-MgUserManager.md)
@@ -298,7 +298,9 @@ Get the number of the resource
 Get the number of the resource
 
 ### [New-MgUser](New-MgUser.md)
-Create a new user object.
+Create a new user.\nThe request body contains the user to create.
+At a minimum, you must specify the required properties for the user.
+You can optionally specify any other writable properties.
 
 ### [New-MgUserExtension](New-MgUserExtension.md)
 Create new navigation property to extensions for users
@@ -340,11 +342,17 @@ Delete navigation property extensions for users
 ### [Remove-MgUserLicenseDetail](Remove-MgUserLicenseDetail.md)
 Delete navigation property licenseDetails for users
 
+### [Remove-MgUserManager](Remove-MgUserManager.md)
+Remove a user's manager.
+
 ### [Remove-MgUserManagerByRef](Remove-MgUserManagerByRef.md)
 Remove a user's manager.
 
 ### [Remove-MgUserOutlookMasterCategory](Remove-MgUserOutlookMasterCategory.md)
 Delete the specified outlookCategory object.
+
+### [Remove-MgUserPhoto](Remove-MgUserPhoto.md)
+Delete navigation property photo for users
 
 ### [Remove-MgUserSetting](Remove-MgUserSetting.md)
 Delete navigation property settings for users

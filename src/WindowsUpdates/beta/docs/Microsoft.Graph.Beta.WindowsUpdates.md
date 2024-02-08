@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.WindowsUpdates
-Module Guid: 6ca0a8a2-1cd7-416c-a9eb-32c24dfb2cfb
+Module Guid: f58b877b-277e-498d-b5ab-87c127639182
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.windowsupdates
 Help Version: 1.0.0.0
 Locale: en-US
@@ -279,7 +279,7 @@ Update the navigation property exclusions in admin
 Update the navigation property members in admin
 
 ### [Update-MgBetaWindowsUpdatesPolicyComplianceChange](Update-MgBetaWindowsUpdatesPolicyComplianceChange.md)
-Update the properties of a complianceChange object.
+Update the properties of a contentApproval object.
 
 ### [Update-MgBetaWindowsUpdatesResourceConnection](Update-MgBetaWindowsUpdatesResourceConnection.md)
 Update the navigation property resourceConnections in admin

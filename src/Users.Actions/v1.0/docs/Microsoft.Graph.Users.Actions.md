@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users.Actions
-Module Guid: 5990c1e8-3407-425e-a7d4-d1f31f57892f
+Module Guid: ca56ca8e-5a65-4fe4-b033-1cee08f55f0e
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.users.actions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -349,7 +349,7 @@ Alternatively, create a draft to reply to an existing message and send it later.
 Retire a device
 
 ### [Invoke-MgRetryUserServiceProvisioning](Invoke-MgRetryUserServiceProvisioning.md)
-Retry the user service provisioning.
+Invoke action retryServiceProvisioning
 
 ### [Invoke-MgScanUserManagedDeviceWindowsDefender](Invoke-MgScanUserManagedDeviceWindowsDefender.md)
 Not yet documented
@@ -404,22 +404,13 @@ You can use createLink action to share a DriveItem via a sharing link.
 The createLink action will create a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, the existing sharing link will be returned.
 DriveItem resources inherit sharing permissions from their ancestors.
 
-### [New-MgUserDriveItemListItemLink](New-MgUserDriveItemListItemLink.md)
-Invoke action createLink
-
 ### [New-MgUserDriveItemUploadSession](New-MgUserDriveItemUploadSession.md)
 Invoke action createUploadSession
-
-### [New-MgUserDriveListItemLink](New-MgUserDriveListItemLink.md)
-Invoke action createLink
 
 ### [New-MgUserDriveRootLink](New-MgUserDriveRootLink.md)
 You can use createLink action to share a DriveItem via a sharing link.
 The createLink action will create a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, the existing sharing link will be returned.
 DriveItem resources inherit sharing permissions from their ancestors.
-
-### [New-MgUserDriveRootListItemLink](New-MgUserDriveRootListItemLink.md)
-Invoke action createLink
 
 ### [New-MgUserDriveRootUploadSession](New-MgUserDriveRootUploadSession.md)
 Invoke action createUploadSession
@@ -641,7 +632,7 @@ This operation prevents access to the organization's data through applications o
 
 ### [Send-MgUserChatActivityNotification](Send-MgUserChatActivityNotification.md)
 Send an activity feed notification in scope of a chat.
-For more information about sending notifications and the requirements for doing so, see sending Teams activity notifications.
+For more details about sending notifications and the requirements for doing so, see sending Teams activity notifications.
 
 ### [Send-MgUserMail](Send-MgUserMail.md)
 Send the message specified in the request body using either JSON or MIME format.
@@ -668,15 +659,9 @@ The draft message can be a new message draft, reply draft, reply-all draft, or a
 This method saves the message in the Sent Items folder.
 Alternatively, send a new message in a single operation.
 
-### [Send-MgUserOnlineMeetingVirtualAppointmentReminderSm](Send-MgUserOnlineMeetingVirtualAppointmentReminderSm.md)
-Invoke action sendVirtualAppointmentReminderSms
-
-### [Send-MgUserOnlineMeetingVirtualAppointmentSm](Send-MgUserOnlineMeetingVirtualAppointmentSm.md)
-Invoke action sendVirtualAppointmentSms
-
 ### [Send-MgUserTeamworkActivityNotification](Send-MgUserTeamworkActivityNotification.md)
 Send an activity feed notification to a user.
-For more information, see sending Teams activity notifications.
+For more details about sending notifications and the requirements for doing so, see sending Teams activity notifications.
 
 ### [Set-MgUserChatMessageReaction](Set-MgUserChatMessageReaction.md)
 Invoke action setReaction

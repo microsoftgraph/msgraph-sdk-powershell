@@ -8,42 +8,39 @@ schema: 2.0.0
 # Move-MgBetaUserPlannerPlanToContainer
 
 ## SYNOPSIS
-Move a planner plan object from one planner plan container to another.
-Planner plans can only be moved from a user container to a group container.
+Invoke action moveToContainer
 
 ## SYNTAX
 
 ### MoveExpanded (Default)
 ```
 Move-MgBetaUserPlannerPlanToContainer -PlannerPlanId <String> -UserId <String>
- [-AdditionalProperties <Hashtable>] [-Container <IMicrosoftGraphPlannerPlanContainer>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-Container <IMicrosoftGraphPlannerPlanContainer>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Move
 ```
 Move-MgBetaUserPlannerPlanToContainer -PlannerPlanId <String> -UserId <String>
  -BodyParameter <IPathsTla1L2UsersUserIdPlannerPlansPlannerplanIdMicrosoftGraphMovetocontainerPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### MoveViaIdentity
 ```
 Move-MgBetaUserPlannerPlanToContainer -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPathsTla1L2UsersUserIdPlannerPlansPlannerplanIdMicrosoftGraphMovetocontainerPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### MoveViaIdentityExpanded
 ```
 Move-MgBetaUserPlannerPlanToContainer -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
- [-Container <IMicrosoftGraphPlannerPlanContainer>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Container <IMicrosoftGraphPlannerPlanContainer>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Move a planner plan object from one planner plan container to another.
-Planner plans can only be moved from a user container to a group container.
+Invoke action moveToContainer
 
 ## EXAMPLES
 
@@ -107,21 +104,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -211,8 +193,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerPlan
@@ -259,7 +239,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[DriveItemVersionId <String>]`: The unique identifier of driveItemVersion
   - `[EventId <String>]`: The unique identifier of event
   - `[EventId1 <String>]`: The unique identifier of event
-  - `[JoinWebUrl <String>]`: Alternate key of onlineMeeting
   - `[ListItemId <String>]`: The unique identifier of listItem
   - `[ListItemVersionId <String>]`: The unique identifier of listItemVersion
   - `[MailFolderId <String>]`: The unique identifier of mailFolder

@@ -15,26 +15,25 @@ Create an outlookCategory object in the user's master list of categories.
 ### CreateExpanded (Default)
 ```
 New-MgUserOutlookMasterCategory -UserId <String> [-AdditionalProperties <Hashtable>] [-Color <String>]
- [-DisplayName <String>] [-Id <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-DisplayName <String>] [-Id <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgUserOutlookMasterCategory -UserId <String> -BodyParameter <IMicrosoftGraphOutlookCategory>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgUserOutlookMasterCategory -UserId <String> -BodyParameter <IMicrosoftGraphOutlookCategory> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgUserOutlookMasterCategory -InputObject <IUsersIdentity> -BodyParameter <IMicrosoftGraphOutlookCategory>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgUserOutlookMasterCategory -InputObject <IUsersIdentity> [-AdditionalProperties <Hashtable>]
- [-Color <String>] [-DisplayName <String>] [-Id <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Color <String>] [-DisplayName <String>] [-Id <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -117,21 +116,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -221,8 +205,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOutlookCategory
 
 ### Microsoft.Graph.PowerShell.Models.IUsersIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

@@ -17,7 +17,7 @@ You can also use the method removeMembers to remove members.
 ```
 Remove-MgBetaWindowsUpdatesPolicyAudienceExclusionMemberById -UpdatableAssetId <String>
  -UpdatePolicyId <String> [-AdditionalProperties <Hashtable>] [-Ids <String[]>] [-MemberEntityType <String>]
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Remove
@@ -25,21 +25,21 @@ Remove-MgBetaWindowsUpdatesPolicyAudienceExclusionMemberById -UpdatableAssetId <
 Remove-MgBetaWindowsUpdatesPolicyAudienceExclusionMemberById -UpdatableAssetId <String>
  -UpdatePolicyId <String>
  -BodyParameter <IPathsJzgwz3AdminWindowsUpdatesUpdatepoliciesUpdatepolicyIdAudienceExclusionsUpdatableassetIdMicrosoftGraphWindowsupdatesRemovemembersbyidPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RemoveViaIdentity
 ```
 Remove-MgBetaWindowsUpdatesPolicyAudienceExclusionMemberById -InputObject <IWindowsUpdatesIdentity>
  -BodyParameter <IPathsJzgwz3AdminWindowsUpdatesUpdatepoliciesUpdatepolicyIdAudienceExclusionsUpdatableassetIdMicrosoftGraphWindowsupdatesRemovemembersbyidPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RemoveViaIdentityExpanded
 ```
 Remove-MgBetaWindowsUpdatesPolicyAudienceExclusionMemberById -InputObject <IWindowsUpdatesIdentity>
- [-AdditionalProperties <Hashtable>] [-Ids <String[]>] [-MemberEntityType <String>] [-Headers <IDictionary>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-Ids <String[]>] [-MemberEntityType <String>] [-PassThru] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -89,21 +89,6 @@ Parameter Sets: Remove, RemoveViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -240,8 +225,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IPathsJzgwz3AdminWindowsUpdatesUpdatepoliciesUpdatepolicyIdAudienceExclusionsUpdatableassetIdMicrosoftGraphWindowsupdatesRemovemembersbyidPostRequestbodyContentApplicationJsonSchema
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IWindowsUpdatesIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

@@ -17,22 +17,19 @@ Update the navigation property audience in admin
 Update-MgBetaWindowsUpdatesPolicyAudience -UpdatePolicyId <String> [-AdditionalProperties <Hashtable>]
  [-ApplicableContent <IMicrosoftGraphWindowsUpdatesApplicableContent[]>]
  [-Exclusions <IMicrosoftGraphWindowsUpdatesUpdatableAsset[]>] [-Id <String>]
- [-Members <IMicrosoftGraphWindowsUpdatesUpdatableAsset[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Members <IMicrosoftGraphWindowsUpdatesUpdatableAsset[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaWindowsUpdatesPolicyAudience -UpdatePolicyId <String>
- -BodyParameter <IMicrosoftGraphWindowsUpdatesDeploymentAudience> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphWindowsUpdatesDeploymentAudience> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaWindowsUpdatesPolicyAudience -InputObject <IWindowsUpdatesIdentity>
- -BodyParameter <IMicrosoftGraphWindowsUpdatesDeploymentAudience> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphWindowsUpdatesDeploymentAudience> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -40,8 +37,7 @@ Update-MgBetaWindowsUpdatesPolicyAudience -InputObject <IWindowsUpdatesIdentity>
 Update-MgBetaWindowsUpdatesPolicyAudience -InputObject <IWindowsUpdatesIdentity>
  [-AdditionalProperties <Hashtable>] [-ApplicableContent <IMicrosoftGraphWindowsUpdatesApplicableContent[]>]
  [-Exclusions <IMicrosoftGraphWindowsUpdatesUpdatableAsset[]>] [-Id <String>]
- [-Members <IMicrosoftGraphWindowsUpdatesUpdatableAsset[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Members <IMicrosoftGraphWindowsUpdatesUpdatableAsset[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -127,21 +123,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -247,8 +228,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsUpdatesDeploymentAudience
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IWindowsUpdatesIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

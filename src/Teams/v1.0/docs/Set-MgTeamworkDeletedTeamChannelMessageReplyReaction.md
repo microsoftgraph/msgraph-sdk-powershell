@@ -16,7 +16,7 @@ Invoke action setReaction
 ```
 Set-MgTeamworkDeletedTeamChannelMessageReplyReaction -ChannelId <String> -ChatMessageId <String>
  -ChatMessageId1 <String> -DeletedTeamId <String> [-AdditionalProperties <Hashtable>] [-ReactionType <String>]
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Set
@@ -24,21 +24,21 @@ Set-MgTeamworkDeletedTeamChannelMessageReplyReaction -ChannelId <String> -ChatMe
 Set-MgTeamworkDeletedTeamChannelMessageReplyReaction -ChannelId <String> -ChatMessageId <String>
  -ChatMessageId1 <String> -DeletedTeamId <String>
  -BodyParameter <IPaths1Fyvf2WTeamworkDeletedteamsDeletedteamIdChannelsChannelIdMessagesChatmessageIdRepliesChatmessageId1MicrosoftGraphSetreactionPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentity
 ```
 Set-MgTeamworkDeletedTeamChannelMessageReplyReaction -InputObject <ITeamsIdentity>
  -BodyParameter <IPaths1Fyvf2WTeamworkDeletedteamsDeletedteamIdChannelsChannelIdMessagesChatmessageIdRepliesChatmessageId1MicrosoftGraphSetreactionPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentityExpanded
 ```
 Set-MgTeamworkDeletedTeamChannelMessageReplyReaction -InputObject <ITeamsIdentity>
- [-AdditionalProperties <Hashtable>] [-ReactionType <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-ReactionType <String>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -153,21 +153,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -253,8 +238,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IPaths1Fyvf2WTeamworkDeletedteamsDeletedteamIdChannelsChannelIdMessagesChatmessageIdRepliesChatmessageId1MicrosoftGraphSetreactionPostRequestbodyContentApplicationJsonSchema
 
 ### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

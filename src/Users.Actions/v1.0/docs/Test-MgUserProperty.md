@@ -24,15 +24,14 @@ To learn more about configuring naming policies, see Configure naming policy.
 ### ValidateExpanded (Default)
 ```
 Test-MgUserProperty [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-EntityType <String>]
- [-MailNickname <String>] [-OnBehalfOfUserId <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-MailNickname <String>] [-OnBehalfOfUserId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Validate
 ```
 Test-MgUserProperty
  -BodyParameter <IPaths1Tz6Rb9UsersMicrosoftGraphValidatepropertiesPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -126,21 +125,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -MailNickname
 .
 
@@ -223,8 +207,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IPaths1Tz6Rb9UsersMicrosoftGraphValidatepropertiesPostRequestbodyContentApplicationJsonSchema
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

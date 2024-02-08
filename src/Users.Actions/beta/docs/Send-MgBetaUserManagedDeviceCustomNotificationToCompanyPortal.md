@@ -15,29 +15,29 @@ Invoke action sendCustomNotificationToCompanyPortal
 ### SendExpanded (Default)
 ```
 Send-MgBetaUserManagedDeviceCustomNotificationToCompanyPortal -ManagedDeviceId <String> -UserId <String>
- [-AdditionalProperties <Hashtable>] [-NotificationBody <String>] [-NotificationTitle <String>]
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-NotificationBody <String>] [-NotificationTitle <String>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Send
 ```
 Send-MgBetaUserManagedDeviceCustomNotificationToCompanyPortal -ManagedDeviceId <String> -UserId <String>
  -BodyParameter <IPaths1Cnuhc3UsersUserIdManageddevicesManageddeviceIdMicrosoftGraphSendcustomnotificationtocompanyportalPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SendViaIdentity
 ```
 Send-MgBetaUserManagedDeviceCustomNotificationToCompanyPortal -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPaths1Cnuhc3UsersUserIdManageddevicesManageddeviceIdMicrosoftGraphSendcustomnotificationtocompanyportalPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SendViaIdentityExpanded
 ```
 Send-MgBetaUserManagedDeviceCustomNotificationToCompanyPortal -InputObject <IUsersActionsIdentity>
- [-AdditionalProperties <Hashtable>] [-NotificationBody <String>] [-NotificationTitle <String>]
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-NotificationBody <String>] [-NotificationTitle <String>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -86,21 +86,6 @@ Parameter Sets: Send, SendViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -238,8 +223,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
@@ -277,7 +260,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[DriveItemVersionId <String>]`: The unique identifier of driveItemVersion
   - `[EventId <String>]`: The unique identifier of event
   - `[EventId1 <String>]`: The unique identifier of event
-  - `[JoinWebUrl <String>]`: Alternate key of onlineMeeting
   - `[ListItemId <String>]`: The unique identifier of listItem
   - `[ListItemVersionId <String>]`: The unique identifier of listItemVersion
   - `[MailFolderId <String>]`: The unique identifier of mailFolder

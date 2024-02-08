@@ -14,26 +14,23 @@ Get media content for the navigation property photo from users
 
 ### Get (Default)
 ```
-Get-MgUserPhotoContent -UserId <String> -OutFile <String> [-Headers <IDictionary>] [-PassThru]
- [<CommonParameters>]
+Get-MgUserPhotoContent -UserId <String> -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgUserPhotoContent -ProfilePhotoId <String> -UserId <String> -OutFile <String> [-Headers <IDictionary>]
- [-PassThru] [<CommonParameters>]
+Get-MgUserPhotoContent -ProfilePhotoId <String> -UserId <String> -OutFile <String> [-PassThru]
+ [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserPhotoContent -InputObject <IUsersIdentity> -OutFile <String> [-Headers <IDictionary>] [-PassThru]
- [<CommonParameters>]
+Get-MgUserPhotoContent -InputObject <IUsersIdentity> -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgUserPhotoContent -InputObject <IUsersIdentity> -OutFile <String> [-Headers <IDictionary>] [-PassThru]
- [<CommonParameters>]
+Get-MgUserPhotoContent -InputObject <IUsersIdentity> -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -50,21 +47,6 @@ Import-Module Microsoft.Graph.Users
 Get-MgUserPhotoContent -UserId $userId -OutFile $outFileId
 
 ## PARAMETERS
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
 
 ### -InputObject
 Identity Parameter
@@ -148,8 +130,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IUsersIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

@@ -17,21 +17,19 @@ Update the navigation property operations in teams
 Update-MgTeamOperation -TeamId <String> -TeamsAsyncOperationId <String> [-AdditionalProperties <Hashtable>]
  [-AttemptsCount <Int32>] [-CreatedDateTime <DateTime>] [-Error <IMicrosoftGraphOperationError>]
  [-Id <String>] [-LastActionDateTime <DateTime>] [-OperationType <String>] [-Status <String>]
- [-TargetResourceId <String>] [-TargetResourceLocation <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-TargetResourceId <String>] [-TargetResourceLocation <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgTeamOperation -TeamId <String> -TeamsAsyncOperationId <String>
- -BodyParameter <IMicrosoftGraphTeamsAsyncOperation> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphTeamsAsyncOperation> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgTeamOperation -InputObject <ITeamsIdentity> -BodyParameter <IMicrosoftGraphTeamsAsyncOperation>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -39,8 +37,7 @@ Update-MgTeamOperation -InputObject <ITeamsIdentity> -BodyParameter <IMicrosoftG
 Update-MgTeamOperation -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
  [-AttemptsCount <Int32>] [-CreatedDateTime <DateTime>] [-Error <IMicrosoftGraphOperationError>]
  [-Id <String>] [-LastActionDateTime <DateTime>] [-OperationType <String>] [-Status <String>]
- [-TargetResourceId <String>] [-TargetResourceLocation <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-TargetResourceId <String>] [-TargetResourceLocation <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -138,21 +135,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -333,8 +315,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamsAsyncOperation
 
 ### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

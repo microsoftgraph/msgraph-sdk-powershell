@@ -18,28 +18,28 @@ Update the properties of the userSettings object.
 ```
 Update-MgUserSetting -UserId <String> [-AdditionalProperties <Hashtable>]
  [-ContributionToContentDiscoveryAsOrganizationDisabled] [-ContributionToContentDiscoveryDisabled]
- [-Id <String>] [-ShiftPreferences <IMicrosoftGraphShiftPreferences>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-ShiftPreferences <IMicrosoftGraphShiftPreferences>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgUserSetting -UserId <String> -BodyParameter <IMicrosoftGraphUserSettings> [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgUserSetting -UserId <String> -BodyParameter <IMicrosoftGraphUserSettings> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgUserSetting -InputObject <IUsersIdentity> -BodyParameter <IMicrosoftGraphUserSettings>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgUserSetting -InputObject <IUsersIdentity> -BodyParameter <IMicrosoftGraphUserSettings> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgUserSetting -InputObject <IUsersIdentity> [-AdditionalProperties <Hashtable>]
  [-ContributionToContentDiscoveryAsOrganizationDisabled] [-ContributionToContentDiscoveryDisabled]
- [-Id <String>] [-ShiftPreferences <IMicrosoftGraphShiftPreferences>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-ShiftPreferences <IMicrosoftGraphShiftPreferences>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -127,21 +127,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -247,8 +232,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserSettings
 
 ### Microsoft.Graph.PowerShell.Models.IUsersIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

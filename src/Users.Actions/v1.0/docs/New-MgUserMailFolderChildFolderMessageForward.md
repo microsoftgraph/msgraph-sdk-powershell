@@ -22,8 +22,8 @@ Alternatively, forward a message in a single operation.
 ```
 New-MgUserMailFolderChildFolderMessageForward -MailFolderId <String> -MailFolderId1 <String>
  -MessageId <String> -UserId <String> [-AdditionalProperties <Hashtable>] [-Comment <String>]
- [-Message <IMicrosoftGraphMessage>] [-ToRecipients <IMicrosoftGraphRecipient[]>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Message <IMicrosoftGraphMessage>] [-ToRecipients <IMicrosoftGraphRecipient[]>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
@@ -31,22 +31,21 @@ New-MgUserMailFolderChildFolderMessageForward -MailFolderId <String> -MailFolder
 New-MgUserMailFolderChildFolderMessageForward -MailFolderId <String> -MailFolderId1 <String>
  -MessageId <String> -UserId <String>
  -BodyParameter <IPaths1W6K9JhUsersUserIdMailfoldersMailfolderIdChildfoldersMailfolderId1MessagesMessageIdMicrosoftGraphCreateforwardPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgUserMailFolderChildFolderMessageForward -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPaths1W6K9JhUsersUserIdMailfoldersMailfolderIdChildfoldersMailfolderId1MessagesMessageIdMicrosoftGraphCreateforwardPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgUserMailFolderChildFolderMessageForward -InputObject <IUsersActionsIdentity>
  [-AdditionalProperties <Hashtable>] [-Comment <String>] [-Message <IMicrosoftGraphMessage>]
- [-ToRecipients <IMicrosoftGraphRecipient[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-ToRecipients <IMicrosoftGraphRecipient[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -113,21 +112,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -279,8 +263,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMessage
@@ -387,7 +369,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[NotebookId <String>]`: The unique identifier of notebook
   - `[OnenotePageId <String>]`: The unique identifier of onenotePage
   - `[OnenoteSectionId <String>]`: The unique identifier of onenoteSection
-  - `[OnlineMeetingId <String>]`: The unique identifier of onlineMeeting
   - `[PermissionId <String>]`: The unique identifier of permission
   - `[PhoneAuthenticationMethodId <String>]`: The unique identifier of phoneAuthenticationMethod
   - `[SubscriptionId <String>]`: The unique identifier of subscription
