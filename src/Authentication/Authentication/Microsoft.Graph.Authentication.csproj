@@ -10,7 +10,10 @@
     <WarningsAsErrors />
     <NuspecFile>Microsoft.Graph.Authentication.nuspec</NuspecFile>
     <Copyright>© Microsoft Corporation. All rights reserved.</Copyright>
-    <Version>2.6.1</Version>
+    <Version>2.13.0</Version>
+    <AssemblyOriginatorKeyFile>D:\a\_work\1\s\tools\35MSSharedLib1024.snk</AssemblyOriginatorKeyFile>
+    <DelaySign>true</DelaySign>
+    <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
     <EnableNETAnalyzers>true</EnableNETAnalyzers>

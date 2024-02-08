@@ -15,12 +15,13 @@ The Microsoft Graph PowerShell SDK application requires users to have domain kno
 ### Search
 ```
 Find-MgGraphPermission [-SearchString] <String> [-ExactMatch] [-PermissionType <String>] [-Online]
- [<CommonParameters>]
+ [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ### All
 ```
-Find-MgGraphPermission [-PermissionType <String>] [-Online] [-All] [<CommonParameters>]
+Find-MgGraphPermission [-PermissionType <String>] [-Online] [-All] [-ProgressAction <ActionPreference>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -130,6 +131,21 @@ Accept wildcard characters: False
 Type: String
 Parameter Sets: (All)
 Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProgressAction
+{{ Fill ProgressAction Description }}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
 
 Required: False
 Position: Named
