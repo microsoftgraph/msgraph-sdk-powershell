@@ -4396,11 +4396,11 @@ paths:
     get:
       tags:
         - admin.adminWindows
-      summary: Get azureADDevice
-      description: Read the properties of an azureADDevice object.
+      summary: Get updatableAsset
+      description: Read the properties and relationships of an updatableAsset object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-azureaddevice-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/windowsupdates-updatableasset-get?view=graph-rest-1.0
       operationId: admin.window.update_GetUpdatableAsset
       parameters:
         - name: updatableAsset-id
@@ -4479,11 +4479,11 @@ paths:
     delete:
       tags:
         - admin.adminWindows
-      summary: Delete updatableAsset
-      description: Delete an updatableAsset object.
+      summary: Delete updatableAssetGroup
+      description: 'Delete an updatableAssetGroup object. When an updatableAssetGroup object, its member updatableAsset objects are not deleted.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-updatableasset-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-delete?view=graph-rest-1.0
       operationId: admin.window.update_DeleteUpdatableAsset
       parameters:
         - name: updatableAsset-id
@@ -6648,11 +6648,11 @@ paths:
     patch:
       tags:
         - admin.adminWindows
-      summary: Update contentApproval
-      description: Update the properties of a contentApproval object.
+      summary: Update complianceChange
+      description: Update the properties of a complianceChange object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-contentapproval-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/windowsupdates-compliancechange-update?view=graph-rest-1.0
       operationId: admin.window.update.updatePolicy_UpdateComplianceChange
       parameters:
         - name: updatePolicy-id
@@ -7713,6 +7713,7 @@ components:
           nullable: true
         isReadinessTest:
           type: boolean
+          description: True indicates that the deployment is an expedite readiness test.
           nullable: true
       additionalProperties:
         type: object
@@ -7751,6 +7752,10 @@ components:
           type: integer
           description: 'Specifies the number of days after an update is installed, during which the user of the device can control when the device restarts.'
           format: int32
+          nullable: true
+        offerAsOptional:
+          type: boolean
+          description: Specifies whether the update is offered as Optional rather than Required.
           nullable: true
       additionalProperties:
         type: object

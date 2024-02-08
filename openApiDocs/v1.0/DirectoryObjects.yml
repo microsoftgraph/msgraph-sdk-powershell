@@ -527,6 +527,18 @@ paths:
                 - deletedDateTime
                 - deletedDateTime desc
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
       responses:
         2XX:
           description: Success
