@@ -18,22 +18,20 @@ Update-MgBetaPrivilegedOperationEvent -PrivilegedOperationEventId <String> [-Add
  [-AdditionalProperties <Hashtable>] [-CreationDateTime <DateTime>] [-ExpirationDateTime <DateTime>]
  [-Id <String>] [-ReferenceKey <String>] [-ReferenceSystem <String>] [-RequestorId <String>]
  [-RequestorName <String>] [-RequestType <String>] [-RoleId <String>] [-RoleName <String>]
- [-TenantId <String>] [-UserId <String>] [-UserMail <String>] [-UserName <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-TenantId <String>] [-UserId <String>] [-UserMail <String>] [-UserName <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaPrivilegedOperationEvent -PrivilegedOperationEventId <String>
- -BodyParameter <IMicrosoftGraphPrivilegedOperationEvent> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphPrivilegedOperationEvent> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaPrivilegedOperationEvent -InputObject <IIdentityGovernanceIdentity>
- -BodyParameter <IMicrosoftGraphPrivilegedOperationEvent> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphPrivilegedOperationEvent> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -43,7 +41,7 @@ Update-MgBetaPrivilegedOperationEvent -InputObject <IIdentityGovernanceIdentity>
  [-ExpirationDateTime <DateTime>] [-Id <String>] [-ReferenceKey <String>] [-ReferenceSystem <String>]
  [-RequestorId <String>] [-RequestorName <String>] [-RequestType <String>] [-RoleId <String>]
  [-RoleName <String>] [-TenantId <String>] [-UserId <String>] [-UserMail <String>] [-UserName <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -140,21 +138,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -410,8 +393,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrivilegedOperationEvent
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrivilegedOperationEvent
@@ -495,7 +476,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[GroupId <String>]`: The unique identifier of group
   - `[IncompatibleAccessPackageId <String>]`: Usage: incompatibleAccessPackageId='{incompatibleAccessPackageId}'
   - `[LongRunningOperationId <String>]`: The unique identifier of longRunningOperation
-  - `[ObjectId <String>]`: Alternate key of accessPackageSubject
   - `[On <String>]`: Usage: on='{on}'
   - `[PermissionsCreepIndexDistributionId <String>]`: The unique identifier of permissionsCreepIndexDistribution
   - `[PermissionsRequestChangeId <String>]`: The unique identifier of permissionsRequestChange

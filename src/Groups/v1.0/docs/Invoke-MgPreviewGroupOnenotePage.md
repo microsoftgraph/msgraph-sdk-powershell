@@ -14,13 +14,12 @@ Invoke function preview
 
 ### Preview (Default)
 ```
-Invoke-MgPreviewGroupOnenotePage -GroupId <String> -OnenotePageId <String> [-Headers <IDictionary>]
- [<CommonParameters>]
+Invoke-MgPreviewGroupOnenotePage -GroupId <String> -OnenotePageId <String> [<CommonParameters>]
 ```
 
 ### PreviewViaIdentity
 ```
-Invoke-MgPreviewGroupOnenotePage -InputObject <IGroupsIdentity> [-Headers <IDictionary>] [<CommonParameters>]
+Invoke-MgPreviewGroupOnenotePage -InputObject <IGroupsIdentity> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -56,21 +55,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -112,8 +96,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnenotePagePreview
@@ -153,7 +135,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[OnenotePageId <String>]`: The unique identifier of onenotePage
   - `[OnenoteSectionId <String>]`: The unique identifier of onenoteSection
   - `[Path <String>]`: Usage: path='{path}'
-  - `[Path1 <String>]`: Usage: path='{path1}'
   - `[PermissionId <String>]`: The unique identifier of permission
   - `[PostId <String>]`: The unique identifier of post
   - `[ProfilePhotoId <String>]`: The unique identifier of profilePhoto

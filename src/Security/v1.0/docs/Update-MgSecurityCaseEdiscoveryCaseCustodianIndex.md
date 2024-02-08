@@ -15,13 +15,13 @@ Trigger an indexOperation to make a custodian and associated sources searchable.
 ### Update (Default)
 ```
 Update-MgSecurityCaseEdiscoveryCaseCustodianIndex -EdiscoveryCaseId <String> -EdiscoveryCustodianId <String>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgSecurityCaseEdiscoveryCaseCustodianIndex -InputObject <ISecurityIdentity> [-Headers <IDictionary>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgSecurityCaseEdiscoveryCaseCustodianIndex -InputObject <ISecurityIdentity> [-PassThru] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -66,21 +66,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -152,8 +137,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

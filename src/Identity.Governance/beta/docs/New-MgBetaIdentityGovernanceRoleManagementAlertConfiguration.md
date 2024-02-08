@@ -16,15 +16,15 @@ Create new navigation property to alertConfigurations for identityGovernance
 ```
 New-MgBetaIdentityGovernanceRoleManagementAlertConfiguration [-AdditionalProperties <Hashtable>]
  [-AlertDefinition <IMicrosoftGraphUnifiedRoleManagementAlertDefinition>] [-AlertDefinitionId <String>]
- [-Id <String>] [-IsEnabled] [-ScopeId <String>] [-ScopeType <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-IsEnabled] [-ScopeId <String>] [-ScopeType <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaIdentityGovernanceRoleManagementAlertConfiguration
- -BodyParameter <IMicrosoftGraphUnifiedRoleManagementAlertConfiguration> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphUnifiedRoleManagementAlertConfiguration> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -105,21 +105,6 @@ Parameter Sets: Create
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -228,8 +213,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUnifiedRoleManagementAlertConfiguration
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

@@ -18,14 +18,13 @@ New-MgBetaDirectorySubscription [-AdditionalProperties <Hashtable>] [-CommerceSu
  [-CreatedDateTime <DateTime>] [-Id <String>] [-IsTrial] [-NextLifecycleDateTime <DateTime>]
  [-OcpSubscriptionId <String>] [-OwnerId <String>] [-OwnerTenantId <String>] [-OwnerType <String>]
  [-ServiceStatus <IMicrosoftGraphServicePlanInfo[]>] [-SkuId <String>] [-SkuPartNumber <String>]
- [-Status <String>] [-TotalLicenses <Int32>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Status <String>] [-TotalLicenses <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgBetaDirectorySubscription -BodyParameter <IMicrosoftGraphCompanySubscription> [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaDirectorySubscription -BodyParameter <IMicrosoftGraphCompanySubscription> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -110,21 +109,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -350,8 +334,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCompanySubscription
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

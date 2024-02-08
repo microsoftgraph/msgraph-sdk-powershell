@@ -17,23 +17,23 @@ Update the navigation property excludes in policies
 Update-MgBetaPolicyServicePrincipalCreationPolicyExclude -ServicePrincipalCreationConditionSetId <String>
  -ServicePrincipalCreationPolicyId <String> [-AdditionalProperties <Hashtable>] [-ApplicationIds <String[]>]
  [-ApplicationPublisherIds <String[]>] [-ApplicationsFromVerifiedPublisherOnly]
- [-ApplicationTenantIds <String[]>] [-CertifiedApplicationsOnly] [-Id <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ApplicationTenantIds <String[]>] [-CertifiedApplicationsOnly] [-Id <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaPolicyServicePrincipalCreationPolicyExclude -ServicePrincipalCreationConditionSetId <String>
  -ServicePrincipalCreationPolicyId <String>
- -BodyParameter <IMicrosoftGraphServicePrincipalCreationConditionSet> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphServicePrincipalCreationConditionSet> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaPolicyServicePrincipalCreationPolicyExclude -InputObject <IIdentitySignInsIdentity>
- -BodyParameter <IMicrosoftGraphServicePrincipalCreationConditionSet> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphServicePrincipalCreationConditionSet> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -41,7 +41,7 @@ Update-MgBetaPolicyServicePrincipalCreationPolicyExclude -InputObject <IIdentity
 Update-MgBetaPolicyServicePrincipalCreationPolicyExclude -InputObject <IIdentitySignInsIdentity>
  [-AdditionalProperties <Hashtable>] [-ApplicationIds <String[]>] [-ApplicationPublisherIds <String[]>]
  [-ApplicationsFromVerifiedPublisherOnly] [-ApplicationTenantIds <String[]>] [-CertifiedApplicationsOnly]
- [-Id <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -171,21 +171,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -287,8 +272,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphServicePrincipalCreationConditionSet
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

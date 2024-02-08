@@ -15,14 +15,13 @@ Get the number of the resource
 ### Get (Default)
 ```
 Get-MgGroupTeamChannelMessageReplyHostedContentCount -ChannelId <String> -ChatMessageId <String>
- -ChatMessageId1 <String> -GroupId <String> [-Filter <String>] [-Search <String>] [-Headers <IDictionary>]
- [<CommonParameters>]
+ -ChatMessageId1 <String> -GroupId <String> [-Filter <String>] [-Search <String>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
 Get-MgGroupTeamChannelMessageReplyHostedContentCount -InputObject <ITeamsIdentity> [-Filter <String>]
- [-Search <String>] [-Headers <IDictionary>] [<CommonParameters>]
+ [-Search <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -121,21 +120,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -173,8 +157,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

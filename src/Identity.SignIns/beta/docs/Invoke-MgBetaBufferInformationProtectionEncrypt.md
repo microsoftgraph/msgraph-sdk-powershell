@@ -15,15 +15,14 @@ Invoke action encryptBuffer
 ### BufferExpanded (Default)
 ```
 Invoke-MgBetaBufferInformationProtectionEncrypt [-AdditionalProperties <Hashtable>]
- [-BufferInputFile <String>] [-LabelId <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-BufferInputFile <String>] [-LabelId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Buffer
 ```
 Invoke-MgBetaBufferInformationProtectionEncrypt
  -Body <IPathsBetdbaInformationprotectionMicrosoftGraphEncryptbufferPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -93,21 +92,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -LabelId
 .
 
@@ -160,8 +144,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPathsBetdbaInformationprotectionMicrosoftGraphEncryptbufferPostRequestbodyContentApplicationJsonSchema
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

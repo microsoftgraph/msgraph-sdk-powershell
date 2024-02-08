@@ -18,13 +18,13 @@ New-MgBetaPrivilegedOperationEvent [-AdditionalInformation <String>] [-Additiona
  [-CreationDateTime <DateTime>] [-ExpirationDateTime <DateTime>] [-Id <String>] [-ReferenceKey <String>]
  [-ReferenceSystem <String>] [-RequestorId <String>] [-RequestorName <String>] [-RequestType <String>]
  [-RoleId <String>] [-RoleName <String>] [-TenantId <String>] [-UserId <String>] [-UserMail <String>]
- [-UserName <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-UserName <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgBetaPrivilegedOperationEvent -BodyParameter <IMicrosoftGraphPrivilegedOperationEvent>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaPrivilegedOperationEvent -BodyParameter <IMicrosoftGraphPrivilegedOperationEvent> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -121,21 +121,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -357,8 +342,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrivilegedOperationEvent
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

@@ -16,30 +16,26 @@ Update the navigation property activityStatistics in users
 ```
 Update-MgBetaUserActivityStatistics -ActivityStatisticsId <String> -UserId <String> [-Activity <String>]
  [-AdditionalProperties <Hashtable>] [-Duration <TimeSpan>] [-EndDate <DateTime>] [-Id <String>]
- [-StartDate <DateTime>] [-TimeZoneUsed <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-StartDate <DateTime>] [-TimeZoneUsed <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaUserActivityStatistics -ActivityStatisticsId <String> -UserId <String>
- -BodyParameter <IMicrosoftGraphActivityStatistics> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphActivityStatistics> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaUserActivityStatistics -InputObject <IPeopleIdentity>
- -BodyParameter <IMicrosoftGraphActivityStatistics> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphActivityStatistics> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgBetaUserActivityStatistics -InputObject <IPeopleIdentity> [-Activity <String>]
  [-AdditionalProperties <Hashtable>] [-Duration <TimeSpan>] [-EndDate <DateTime>] [-Id <String>]
- [-StartDate <DateTime>] [-TimeZoneUsed <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-StartDate <DateTime>] [-TimeZoneUsed <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -153,21 +149,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -289,8 +270,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphActivityStatistics
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPeopleIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

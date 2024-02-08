@@ -16,14 +16,14 @@ Deleting a schema extension definition does not affect accessing custom data tha
 
 ### Delete (Default)
 ```
-Remove-MgSchemaExtension -SchemaExtensionId <String> [-IfMatch <String>] [-Headers <IDictionary>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-MgSchemaExtension -SchemaExtensionId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgSchemaExtension -InputObject <ISchemaExtensionsIdentity> [-IfMatch <String>] [-Headers <IDictionary>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-MgSchemaExtension -InputObject <ISchemaExtensionsIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -41,21 +41,6 @@ Import-Module Microsoft.Graph.SchemaExtensions
 Remove-MgSchemaExtension -SchemaExtensionId $schemaExtensionId
 
 ## PARAMETERS
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
 
 ### -IfMatch
 ETag
@@ -155,8 +140,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.ISchemaExtensionsIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

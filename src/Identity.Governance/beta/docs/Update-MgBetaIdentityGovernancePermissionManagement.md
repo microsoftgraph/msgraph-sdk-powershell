@@ -16,14 +16,14 @@ Update the navigation property permissionsManagement in identityGovernance
 ```
 Update-MgBetaIdentityGovernancePermissionManagement [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-PermissionsRequestChanges <IMicrosoftGraphPermissionsRequestChange[]>]
- [-ScheduledPermissionsRequests <IMicrosoftGraphScheduledPermissionsRequest[]>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ScheduledPermissionsRequests <IMicrosoftGraphScheduledPermissionsRequest[]>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaIdentityGovernancePermissionManagement -BodyParameter <IMicrosoftGraphPermissionsManagement>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -72,21 +72,6 @@ Parameter Sets: Update
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -179,8 +164,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPermissionsManagement
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

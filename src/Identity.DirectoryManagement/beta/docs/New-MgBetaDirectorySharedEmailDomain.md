@@ -15,13 +15,13 @@ Create new navigation property to sharedEmailDomains for directory
 ### CreateExpanded (Default)
 ```
 New-MgBetaDirectorySharedEmailDomain [-AdditionalProperties <Hashtable>] [-Id <String>]
- [-ProvisioningStatus <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ProvisioningStatus <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgBetaDirectorySharedEmailDomain -BodyParameter <IMicrosoftGraphSharedEmailDomain>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaDirectorySharedEmailDomain -BodyParameter <IMicrosoftGraphSharedEmailDomain> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -70,21 +70,6 @@ Parameter Sets: Create
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -159,8 +144,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSharedEmailDomain
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

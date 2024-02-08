@@ -14,31 +14,29 @@ Invoke function usersRegisteredByFeature
 
 ### Graph (Default)
 ```
-Invoke-MgBetaGraphReportAuthenticationMethod [-Headers <IDictionary>] [<CommonParameters>]
+Invoke-MgBetaGraphReportAuthenticationMethod [<CommonParameters>]
 ```
 
 ### Graph1
 ```
 Invoke-MgBetaGraphReportAuthenticationMethod -IncludedUserRoles <String> -IncludedUserTypes <String>
- [-Headers <IDictionary>] [<CommonParameters>]
+ [<CommonParameters>]
 ```
 
 ### Graph3
 ```
 Invoke-MgBetaGraphReportAuthenticationMethod -IncludedUserRoles <String> -IncludedUserTypes <String>
- [-Headers <IDictionary>] [<CommonParameters>]
+ [<CommonParameters>]
 ```
 
 ### GraphViaIdentity
 ```
-Invoke-MgBetaGraphReportAuthenticationMethod -InputObject <IReportsIdentity> [-Headers <IDictionary>]
- [<CommonParameters>]
+Invoke-MgBetaGraphReportAuthenticationMethod -InputObject <IReportsIdentity> [<CommonParameters>]
 ```
 
 ### GraphViaIdentity1
 ```
-Invoke-MgBetaGraphReportAuthenticationMethod -InputObject <IReportsIdentity> [-Headers <IDictionary>]
- [<CommonParameters>]
+Invoke-MgBetaGraphReportAuthenticationMethod -InputObject <IReportsIdentity> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -61,21 +59,6 @@ Invoke function usersRegisteredByFeature
 {{ Add output here }}
 
 ## PARAMETERS
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
 
 ### -IncludedUserRoles
 Usage: includedUserRoles='{includedUserRoles}'
@@ -130,8 +113,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IReportsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserRegistrationFeatureSummary
@@ -169,11 +150,9 @@ To create the parameters described below, construct a hash table containing the 
   - `[IncludedUserTypes <String>]`: Usage: includedUserTypes='{includedUserTypes}'
   - `[InclusiveIntervalStartDateTime <DateTime?>]`: Usage: inclusiveIntervalStartDateTime={inclusiveIntervalStartDateTime}
   - `[InsightSummaryId <String>]`: The unique identifier of insightSummary
-  - `[ManifestId <String>]`: The unique identifier of manifest
   - `[MfaCompletionMetricId <String>]`: The unique identifier of mfaCompletionMetric
   - `[MonthlyInactiveUsersByApplicationMetricId <String>]`: The unique identifier of monthlyInactiveUsersByApplicationMetric
   - `[MonthlyInactiveUsersMetricId <String>]`: The unique identifier of monthlyInactiveUsersMetric
-  - `[OperationId <String>]`: The unique identifier of operation
   - `[Period <String>]`: Usage: period='{period}'
   - `[PrintUsageByPrinterId <String>]`: The unique identifier of printUsageByPrinter
   - `[PrintUsageByUserId <String>]`: The unique identifier of printUsageByUser

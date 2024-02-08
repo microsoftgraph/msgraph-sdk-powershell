@@ -15,15 +15,15 @@ Sets a new value for the collection of alertComment.
 ### SetViaIdentity (Default)
 ```
 Set-MgSecurityIncidentAlertComment -InputObject <ISecurityIdentity>
- -BodyParameter <IMicrosoftGraphSecurityAlertComment[]> [-IfMatch <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphSecurityAlertComment[]> [-IfMatch <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Set
 ```
 Set-MgSecurityIncidentAlertComment -AlertId <String> -IncidentId <String>
- -BodyParameter <IMicrosoftGraphSecurityAlertComment[]> [-IfMatch <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphSecurityAlertComment[]> [-IfMatch <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -72,21 +72,6 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -178,8 +163,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityAlertComment[]
 
 ### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

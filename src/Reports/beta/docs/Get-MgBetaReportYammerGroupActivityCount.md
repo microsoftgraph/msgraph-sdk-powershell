@@ -14,14 +14,13 @@ Invoke function getYammerGroupsActivityCounts
 
 ### Get (Default)
 ```
-Get-MgBetaReportYammerGroupActivityCount -Period <String> -OutFile <String> [-Headers <IDictionary>]
- [-PassThru] [<CommonParameters>]
+Get-MgBetaReportYammerGroupActivityCount -Period <String> -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgBetaReportYammerGroupActivityCount -InputObject <IReportsIdentity> -OutFile <String>
- [-Headers <IDictionary>] [-PassThru] [<CommonParameters>]
+Get-MgBetaReportYammerGroupActivityCount -InputObject <IReportsIdentity> -OutFile <String> [-PassThru]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -44,21 +43,6 @@ Invoke function getYammerGroupsActivityCounts
 {{ Add output here }}
 
 ## PARAMETERS
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
 
 ### -InputObject
 Identity Parameter
@@ -128,8 +112,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IReportsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
@@ -165,11 +147,9 @@ To create the parameters described below, construct a hash table containing the 
   - `[IncludedUserTypes <String>]`: Usage: includedUserTypes='{includedUserTypes}'
   - `[InclusiveIntervalStartDateTime <DateTime?>]`: Usage: inclusiveIntervalStartDateTime={inclusiveIntervalStartDateTime}
   - `[InsightSummaryId <String>]`: The unique identifier of insightSummary
-  - `[ManifestId <String>]`: The unique identifier of manifest
   - `[MfaCompletionMetricId <String>]`: The unique identifier of mfaCompletionMetric
   - `[MonthlyInactiveUsersByApplicationMetricId <String>]`: The unique identifier of monthlyInactiveUsersByApplicationMetric
   - `[MonthlyInactiveUsersMetricId <String>]`: The unique identifier of monthlyInactiveUsersMetric
-  - `[OperationId <String>]`: The unique identifier of operation
   - `[Period <String>]`: Usage: period='{period}'
   - `[PrintUsageByPrinterId <String>]`: The unique identifier of printUsageByPrinter
   - `[PrintUsageByUserId <String>]`: The unique identifier of printUsageByUser

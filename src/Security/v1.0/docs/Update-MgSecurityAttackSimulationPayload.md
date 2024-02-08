@@ -21,19 +21,19 @@ Update-MgSecurityAttackSimulationPayload -PayloadId <String> [-AdditionalPropert
  [-IsCurrentEvent] [-Language <String>] [-LastModifiedBy <IMicrosoftGraphEmailIdentity>]
  [-LastModifiedDateTime <DateTime>] [-PayloadTags <String[]>] [-Platform <String>]
  [-PredictedCompromiseRate <Double>] [-SimulationAttackType <String>] [-Source <String>] [-Status <String>]
- [-Technique <String>] [-Theme <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Technique <String>] [-Theme <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgSecurityAttackSimulationPayload -PayloadId <String> -BodyParameter <IMicrosoftGraphPayload>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgSecurityAttackSimulationPayload -InputObject <ISecurityIdentity>
- -BodyParameter <IMicrosoftGraphPayload> [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphPayload> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -45,7 +45,7 @@ Update-MgSecurityAttackSimulationPayload -InputObject <ISecurityIdentity> [-Addi
  [-IsCurrentEvent] [-Language <String>] [-LastModifiedBy <IMicrosoftGraphEmailIdentity>]
  [-LastModifiedDateTime <DateTime>] [-PayloadTags <String[]>] [-Platform <String>]
  [-PredictedCompromiseRate <Double>] [-SimulationAttackType <String>] [-Source <String>] [-Status <String>]
- [-Technique <String>] [-Theme <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Technique <String>] [-Theme <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -207,21 +207,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -540,8 +525,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPayload
 
 ### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

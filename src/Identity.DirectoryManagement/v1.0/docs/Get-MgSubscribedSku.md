@@ -15,19 +15,18 @@ Get a specific commercial subscription that an organization has acquired.
 ### List (Default)
 ```
 Get-MgSubscribedSku [-Property <String[]>] [-Search <String>] [-Sort <String[]>] [-All]
- [-CountVariable <String>] [-Headers <IDictionary>] [-PageSize <Int32>] [<CommonParameters>]
+ [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgSubscribedSku -SubscribedSkuId <String> [-Property <String[]>] [-Headers <IDictionary>]
- [<CommonParameters>]
+Get-MgSubscribedSku -SubscribedSkuId <String> [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
 Get-MgSubscribedSku -InputObject <IIdentityDirectoryManagementIdentity> [-Property <String[]>]
- [-Headers <IDictionary>] [<CommonParameters>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -82,21 +81,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -197,8 +181,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

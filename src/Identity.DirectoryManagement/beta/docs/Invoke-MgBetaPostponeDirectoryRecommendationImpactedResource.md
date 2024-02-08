@@ -16,8 +16,8 @@ On the specified date and time, Microsoft Entra ID will automatically mark the s
 ### PostponeExpanded (Default)
 ```
 Invoke-MgBetaPostponeDirectoryRecommendationImpactedResource -ImpactedResourceId <String>
- -RecommendationId <String> [-AdditionalProperties <Hashtable>] [-PostponeUntilDateTime <DateTime>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -RecommendationId <String> [-AdditionalProperties <Hashtable>] [-PostponeUntilDateTime <DateTime>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Postpone
@@ -25,7 +25,7 @@ Invoke-MgBetaPostponeDirectoryRecommendationImpactedResource -ImpactedResourceId
 Invoke-MgBetaPostponeDirectoryRecommendationImpactedResource -ImpactedResourceId <String>
  -RecommendationId <String>
  -BodyParameter <IPaths19T941XDirectoryRecommendationsRecommendationIdImpactedresourcesImpactedresourceIdMicrosoftGraphPostponePostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### PostponeViaIdentity
@@ -33,14 +33,14 @@ Invoke-MgBetaPostponeDirectoryRecommendationImpactedResource -ImpactedResourceId
 Invoke-MgBetaPostponeDirectoryRecommendationImpactedResource
  -InputObject <IIdentityDirectoryManagementIdentity>
  -BodyParameter <IPaths19T941XDirectoryRecommendationsRecommendationIdImpactedresourcesImpactedresourceIdMicrosoftGraphPostponePostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### PostponeViaIdentityExpanded
 ```
 Invoke-MgBetaPostponeDirectoryRecommendationImpactedResource
  -InputObject <IIdentityDirectoryManagementIdentity> [-AdditionalProperties <Hashtable>]
- [-PostponeUntilDateTime <DateTime>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PostponeUntilDateTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -90,21 +90,6 @@ Parameter Sets: Postpone, PostponeViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -212,8 +197,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPaths19T941XDirectoryRecommendationsRecommendationIdImpactedresourcesImpactedresourceIdMicrosoftGraphPostponePostRequestbodyContentApplicationJsonSchema
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphImpactedResource
@@ -238,7 +221,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[CertificateAuthorityAsEntityId <String>]`: The unique identifier of certificateAuthorityAsEntity
   - `[CertificateBasedApplicationConfigurationId <String>]`: The unique identifier of certificateBasedApplicationConfiguration
   - `[CommandId <String>]`: The unique identifier of command
-  - `[CommerceSubscriptionId <String>]`: Alternate key of companySubscription
   - `[CompanySubscriptionId <String>]`: The unique identifier of companySubscription
   - `[ContractId <String>]`: The unique identifier of contract
   - `[CustomSecurityAttributeDefinitionId <String>]`: The unique identifier of customSecurityAttributeDefinition
@@ -259,7 +241,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[InternalDomainFederationId <String>]`: The unique identifier of internalDomainFederation
   - `[ManagedTenantAlertId <String>]`: The unique identifier of managedTenantAlert
   - `[ManagementActionId <String>]`: The unique identifier of managementAction
-  - `[OcpSubscriptionId <String>]`: Alternate key of companySubscription
   - `[OnPremisesDirectorySynchronizationId <String>]`: The unique identifier of onPremisesDirectorySynchronization
   - `[OrgContactId <String>]`: The unique identifier of orgContact
   - `[OrganizationId <String>]`: The unique identifier of organization

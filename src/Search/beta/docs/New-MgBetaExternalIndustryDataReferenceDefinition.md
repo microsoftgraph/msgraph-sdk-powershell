@@ -15,15 +15,14 @@ Create new navigation property to referenceDefinitions for external
 ### CreateExpanded (Default)
 ```
 New-MgBetaExternalIndustryDataReferenceDefinition [-AdditionalProperties <Hashtable>] [-Code <String>]
- [-Id <String>] [-IsDisabled] [-ReferenceType <String>] [-SortIndex <Int32>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-IsDisabled] [-ReferenceType <String>] [-SortIndex <Int32>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaExternalIndustryDataReferenceDefinition
- -BodyParameter <IMicrosoftGraphIndustryDataReferenceDefinition> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphIndustryDataReferenceDefinition> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -90,21 +89,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -206,8 +190,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIndustryDataReferenceDefinition
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

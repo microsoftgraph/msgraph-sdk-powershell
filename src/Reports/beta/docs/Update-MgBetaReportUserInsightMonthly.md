@@ -20,14 +20,14 @@ Update-MgBetaReportUserInsightMonthly [-ActiveUsers <IMicrosoftGraphActiveUsersM
  [-InactiveUsers <IMicrosoftGraphMonthlyInactiveUsersMetric[]>]
  [-InactiveUsersByApplication <IMicrosoftGraphMonthlyInactiveUsersByApplicationMetric[]>]
  [-MfaCompletions <IMicrosoftGraphMfaCompletionMetric[]>] [-Requests <IMicrosoftGraphUserRequestsMetric[]>]
- [-SignUps <IMicrosoftGraphUserSignUpMetric[]>] [-Summary <IMicrosoftGraphInsightSummary[]>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-SignUps <IMicrosoftGraphUserSignUpMetric[]>] [-Summary <IMicrosoftGraphInsightSummary[]>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgBetaReportUserInsightMonthly -BodyParameter <IMicrosoftGraphMonthlyUserInsightMetricsRoot>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgBetaReportUserInsightMonthly -BodyParameter <IMicrosoftGraphMonthlyUserInsightMetricsRoot> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -124,21 +124,6 @@ Parameter Sets: Update
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -294,8 +279,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMonthlyUserInsightMetricsRoot
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

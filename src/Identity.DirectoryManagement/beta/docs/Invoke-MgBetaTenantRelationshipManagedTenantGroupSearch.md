@@ -15,14 +15,14 @@ Invoke action tenantSearch
 ### TenantExpanded (Default)
 ```
 Invoke-MgBetaTenantRelationshipManagedTenantGroupSearch [-AdditionalProperties <Hashtable>]
- [-TenantId <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-TenantId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Tenant
 ```
 Invoke-MgBetaTenantRelationshipManagedTenantGroupSearch
  -Body <IPathsF1Wwh1TenantrelationshipsManagedtenantsTenantgroupsMicrosoftGraphManagedtenantsTenantsearchPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -71,21 +71,6 @@ Parameter Sets: Tenant
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -144,8 +129,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPathsF1Wwh1TenantrelationshipsManagedtenantsTenantgroupsMicrosoftGraphManagedtenantsTenantsearchPostRequestbodyContentApplicationJsonSchema
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

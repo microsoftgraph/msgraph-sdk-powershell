@@ -17,14 +17,13 @@ Update external
 Update-MgBetaExternal [-AdditionalProperties <Hashtable>]
  [-AuthorizationSystems <IMicrosoftGraphAuthorizationSystem[]>]
  [-Connections <IMicrosoftGraphExternalConnectorsExternalConnection[]>]
- [-IndustryData <IMicrosoftGraphIndustryDataRoot>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-IndustryData <IMicrosoftGraphIndustryDataRoot>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgBetaExternal -BodyParameter <IMicrosoftGraphExternalConnectorsExternal> [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgBetaExternal -BodyParameter <IMicrosoftGraphExternalConnectorsExternal> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -111,21 +110,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -IndustryData
 industryDataRoot
 To construct, see NOTES section for INDUSTRYDATA properties and create a hash table.
@@ -179,8 +163,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphExternalConnectorsExternal
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 
@@ -366,8 +348,8 @@ To create the parameters described below, construct a hash table containing the 
           - `[Value <IMicrosoftGraphIndustryDataReferenceDefinition>]`: referenceDefinition
     - `[Operations <IMicrosoftGraphLongRunningOperation[]>]`: Set of ephemeral operations that the system runs currently. Read-only.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
-      - `[CreatedDateTime <DateTime?>]`: The start time of the operation. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-      - `[LastActionDateTime <DateTime?>]`: The time of the last action in the operation. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+      - `[CreatedDateTime <DateTime?>]`: The start time of the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+      - `[LastActionDateTime <DateTime?>]`: The time of the last action in the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
       - `[ResourceLocation <String>]`: URI of the resource that the operation is performed on.
       - `[Status <String>]`: longRunningOperationStatus
       - `[StatusDetail <String>]`: Details about the status of the operation.
@@ -538,8 +520,8 @@ To create the parameters described below, construct a hash table containing the 
         - `[Value <IMicrosoftGraphIndustryDataReferenceDefinition>]`: referenceDefinition
   - `[Operations <IMicrosoftGraphLongRunningOperation[]>]`: Set of ephemeral operations that the system runs currently. Read-only.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[CreatedDateTime <DateTime?>]`: The start time of the operation. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-    - `[LastActionDateTime <DateTime?>]`: The time of the last action in the operation. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+    - `[CreatedDateTime <DateTime?>]`: The start time of the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+    - `[LastActionDateTime <DateTime?>]`: The time of the last action in the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     - `[ResourceLocation <String>]`: URI of the resource that the operation is performed on.
     - `[Status <String>]`: longRunningOperationStatus
     - `[StatusDetail <String>]`: Details about the status of the operation.

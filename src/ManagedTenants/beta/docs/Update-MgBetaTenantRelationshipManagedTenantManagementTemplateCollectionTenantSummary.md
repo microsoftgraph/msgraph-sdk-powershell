@@ -22,24 +22,23 @@ Update-MgBetaTenantRelationshipManagedTenantManagementTemplateCollectionTenantSu
  [-IncompleteUsersCount <Int32>] [-IneligibleStepsCount <Int32>] [-IsComplete] [-LastActionByUserId <String>]
  [-LastActionDateTime <DateTime>] [-ManagementTemplateCollectionDisplayName <String>]
  [-ManagementTemplateCollectionId <String>] [-RegressedStepsCount <Int32>] [-RegressedUsersCount <Int32>]
- [-TenantId <String>] [-UnlicensedUsersCount <Int32>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-TenantId <String>] [-UnlicensedUsersCount <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaTenantRelationshipManagedTenantManagementTemplateCollectionTenantSummary
  -ManagementTemplateCollectionTenantSummaryId <String>
- -BodyParameter <IMicrosoftGraphManagedTenantsManagementTemplateCollectionTenantSummary>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphManagedTenantsManagementTemplateCollectionTenantSummary> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaTenantRelationshipManagedTenantManagementTemplateCollectionTenantSummary
  -InputObject <IManagedTenantsIdentity>
- -BodyParameter <IMicrosoftGraphManagedTenantsManagementTemplateCollectionTenantSummary>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphManagedTenantsManagementTemplateCollectionTenantSummary> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -52,7 +51,7 @@ Update-MgBetaTenantRelationshipManagedTenantManagementTemplateCollectionTenantSu
  [-IneligibleStepsCount <Int32>] [-IsComplete] [-LastActionByUserId <String>] [-LastActionDateTime <DateTime>]
  [-ManagementTemplateCollectionDisplayName <String>] [-ManagementTemplateCollectionId <String>]
  [-RegressedStepsCount <Int32>] [-RegressedUsersCount <Int32>] [-TenantId <String>]
- [-UnlicensedUsersCount <Int32>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-UnlicensedUsersCount <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -209,21 +208,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -493,8 +477,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementTemplateCollectionTenantSummary
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

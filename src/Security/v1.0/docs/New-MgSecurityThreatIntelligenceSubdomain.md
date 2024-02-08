@@ -15,14 +15,13 @@ Create new navigation property to subdomains for security
 ### CreateExpanded (Default)
 ```
 New-MgSecurityThreatIntelligenceSubdomain [-AdditionalProperties <Hashtable>] [-FirstSeenDateTime <DateTime>]
- [-Host1 <IMicrosoftGraphSecurityHost>] [-Id <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Host1 <IMicrosoftGraphSecurityHost>] [-Id <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgSecurityThreatIntelligenceSubdomain -BodyParameter <IMicrosoftGraphSecuritySubdomain>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgSecurityThreatIntelligenceSubdomain -BodyParameter <IMicrosoftGraphSecuritySubdomain> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -91,21 +90,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -178,8 +162,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecuritySubdomain
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

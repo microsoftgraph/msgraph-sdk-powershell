@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.SignIns
-Module Guid: bff8fdef-552d-4059-9833-e120ddbe1f09
+Module Guid: f463eb00-8282-460e-95a0-19f415d6c8b6
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.identity.signins
 Help Version: 1.0.0.0
 Locale: en-US
@@ -182,12 +182,11 @@ Get the number of the resource
 
 ### [Get-MgInvitationInvitedUserMailboxSetting](Get-MgInvitationInvitedUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgInvitationInvitedUserServiceProvisioningError](Get-MgInvitationInvitedUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgInvitationInvitedUserServiceProvisioningErrorCount](Get-MgInvitationInvitedUserServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -729,6 +728,10 @@ Delete an identityApiConnector object.
 ### [Remove-MgIdentityB2XUserFlow](Remove-MgIdentityB2XUserFlow.md)
 Delete a b2xIdentityUserFlow object.
 
+### [Remove-MgIdentityB2XUserFlowIdentityProvider](Remove-MgIdentityB2XUserFlowIdentityProvider.md)
+Delete an identity provider from a b2xIdentityUserFlow object.
+For self-service sign-up user flows, the values can be Google-OAUTH or Facebook-OAUTH.
+
 ### [Remove-MgIdentityB2XUserFlowIdentityProviderByRef](Remove-MgIdentityB2XUserFlowIdentityProviderByRef.md)
 Delete ref of navigation property userFlowIdentityProviders for identity
 
@@ -763,7 +766,7 @@ Delete navigation property conditionalAccess for identity
 Delete an authenticationContextClassReference object that's not published or used by a conditional access policy.
 
 ### [Remove-MgIdentityConditionalAccessNamedLocation](Remove-MgIdentityConditionalAccessNamedLocation.md)
-Delete a namedLocation object.
+Delete an ipNamedLocation object.
 
 ### [Remove-MgIdentityConditionalAccessPolicy](Remove-MgIdentityConditionalAccessPolicy.md)
 Delete a conditionalAccessPolicy object.

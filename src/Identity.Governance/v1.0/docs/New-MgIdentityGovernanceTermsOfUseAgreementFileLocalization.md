@@ -17,22 +17,20 @@ Create new navigation property to localizations for identityGovernance
 New-MgIdentityGovernanceTermsOfUseAgreementFileLocalization -AgreementId <String>
  [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>] [-DisplayName <String>]
  [-FileData <IMicrosoftGraphAgreementFileData>] [-FileName <String>] [-Id <String>] [-IsDefault]
- [-IsMajorVersion] [-Language <String>] [-Versions <IMicrosoftGraphAgreementFileVersion[]>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-IsMajorVersion] [-Language <String>] [-Versions <IMicrosoftGraphAgreementFileVersion[]>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgIdentityGovernanceTermsOfUseAgreementFileLocalization -AgreementId <String>
- -BodyParameter <IMicrosoftGraphAgreementFileLocalization> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphAgreementFileLocalization> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgIdentityGovernanceTermsOfUseAgreementFileLocalization -InputObject <IIdentityGovernanceIdentity>
- -BodyParameter <IMicrosoftGraphAgreementFileLocalization> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphAgreementFileLocalization> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -40,8 +38,8 @@ New-MgIdentityGovernanceTermsOfUseAgreementFileLocalization -InputObject <IIdent
 New-MgIdentityGovernanceTermsOfUseAgreementFileLocalization -InputObject <IIdentityGovernanceIdentity>
  [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>] [-DisplayName <String>]
  [-FileData <IMicrosoftGraphAgreementFileData>] [-FileName <String>] [-Id <String>] [-IsDefault]
- [-IsMajorVersion] [-Language <String>] [-Versions <IMicrosoftGraphAgreementFileVersion[]>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-IsMajorVersion] [-Language <String>] [-Versions <IMicrosoftGraphAgreementFileVersion[]>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -173,21 +171,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -331,8 +314,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAgreementFileLocalization
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

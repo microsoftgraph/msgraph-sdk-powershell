@@ -15,15 +15,14 @@ Create new navigation property to resourceNamespaces for roleManagement
 ### CreateExpanded (Default)
 ```
 New-MgBetaRoleManagementEntitlementManagementResourceNamespace [-AdditionalProperties <Hashtable>]
- [-Id <String>] [-Name <String>] [-ResourceActions <IMicrosoftGraphUnifiedRbacResourceAction[]>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-Name <String>] [-ResourceActions <IMicrosoftGraphUnifiedRbacResourceAction[]>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaRoleManagementEntitlementManagementResourceNamespace
- -BodyParameter <IMicrosoftGraphUnifiedRbacResourceNamespace> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphUnifiedRbacResourceNamespace> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -72,21 +71,6 @@ Parameter Sets: Create
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -180,8 +164,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUnifiedRbacResourceNamespace
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

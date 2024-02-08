@@ -14,19 +14,17 @@ Invoke function getStatistics
 
 ### Get1 (Default)
 ```
-Get-MgBetaExternalIndustryDataRunStatistics [-Headers <IDictionary>] [<CommonParameters>]
+Get-MgBetaExternalIndustryDataRunStatistics [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgBetaExternalIndustryDataRunStatistics -IndustryDataRunId <String> [-Headers <IDictionary>]
- [<CommonParameters>]
+Get-MgBetaExternalIndustryDataRunStatistics -IndustryDataRunId <String> [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgBetaExternalIndustryDataRunStatistics -InputObject <ISearchIdentity> [-Headers <IDictionary>]
- [<CommonParameters>]
+Get-MgBetaExternalIndustryDataRunStatistics -InputObject <ISearchIdentity> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -49,21 +47,6 @@ Invoke function getStatistics
 
 
 ## PARAMETERS
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
 
 ### -IndustryDataRunId
 The unique identifier of industryDataRun
@@ -102,8 +85,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.ISearchIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

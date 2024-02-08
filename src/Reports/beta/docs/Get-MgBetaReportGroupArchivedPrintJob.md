@@ -15,14 +15,13 @@ Invoke function getGroupArchivedPrintJobs
 ### Get (Default)
 ```
 Get-MgBetaReportGroupArchivedPrintJob -EndDateTime <DateTime> -GroupId <String> -StartDateTime <DateTime>
- [-Count] [-Filter <String>] [-Search <String>] [-Skip <Int32>] [-Top <Int32>] [-Headers <IDictionary>]
- [<CommonParameters>]
+ [-Count] [-Filter <String>] [-Search <String>] [-Skip <Int32>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
 Get-MgBetaReportGroupArchivedPrintJob -InputObject <IReportsIdentity> [-Count] [-Filter <String>]
- [-Search <String>] [-Skip <Int32>] [-Top <Int32>] [-Headers <IDictionary>] [<CommonParameters>]
+ [-Search <String>] [-Skip <Int32>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -103,21 +102,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -204,8 +188,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IReportsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphArchivedPrintJob
@@ -241,11 +223,9 @@ To create the parameters described below, construct a hash table containing the 
   - `[IncludedUserTypes <String>]`: Usage: includedUserTypes='{includedUserTypes}'
   - `[InclusiveIntervalStartDateTime <DateTime?>]`: Usage: inclusiveIntervalStartDateTime={inclusiveIntervalStartDateTime}
   - `[InsightSummaryId <String>]`: The unique identifier of insightSummary
-  - `[ManifestId <String>]`: The unique identifier of manifest
   - `[MfaCompletionMetricId <String>]`: The unique identifier of mfaCompletionMetric
   - `[MonthlyInactiveUsersByApplicationMetricId <String>]`: The unique identifier of monthlyInactiveUsersByApplicationMetric
   - `[MonthlyInactiveUsersMetricId <String>]`: The unique identifier of monthlyInactiveUsersMetric
-  - `[OperationId <String>]`: The unique identifier of operation
   - `[Period <String>]`: Usage: period='{period}'
   - `[PrintUsageByPrinterId <String>]`: The unique identifier of printUsageByPrinter
   - `[PrintUsageByUserId <String>]`: The unique identifier of printUsageByUser

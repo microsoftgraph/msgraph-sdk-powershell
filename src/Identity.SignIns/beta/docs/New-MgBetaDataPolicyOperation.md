@@ -16,14 +16,13 @@ Add new entity to dataPolicyOperations
 ```
 New-MgBetaDataPolicyOperation [-AdditionalProperties <Hashtable>] [-CompletedDateTime <DateTime>]
  [-Id <String>] [-Progress <Double>] [-Status <String>] [-StorageLocation <String>]
- [-SubmittedDateTime <DateTime>] [-UserId <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-SubmittedDateTime <DateTime>] [-UserId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgBetaDataPolicyOperation -BodyParameter <IMicrosoftGraphDataPolicyOperation> [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaDataPolicyOperation -BodyParameter <IMicrosoftGraphDataPolicyOperation> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -92,21 +91,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -239,8 +223,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDataPolicyOperation
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

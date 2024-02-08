@@ -18,20 +18,19 @@ Update-MgAgreement -AgreementId <String> [-Acceptances <IMicrosoftGraphAgreement
  [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-File <IMicrosoftGraphAgreementFile>]
  [-Files <IMicrosoftGraphAgreementFileLocalization[]>] [-Id <String>] [-IsPerDeviceAcceptanceRequired]
  [-IsViewingBeforeAcceptanceRequired] [-TermsExpiration <IMicrosoftGraphTermsExpiration>]
- [-UserReacceptRequiredFrequency <TimeSpan>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-UserReacceptRequiredFrequency <TimeSpan>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgAgreement -AgreementId <String> -BodyParameter <IMicrosoftGraphAgreement> [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgAgreement -AgreementId <String> -BodyParameter <IMicrosoftGraphAgreement> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgAgreement -InputObject <IIdentityGovernanceIdentity> -BodyParameter <IMicrosoftGraphAgreement>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -41,8 +40,7 @@ Update-MgAgreement -InputObject <IIdentityGovernanceIdentity>
  [-DisplayName <String>] [-File <IMicrosoftGraphAgreementFile>]
  [-Files <IMicrosoftGraphAgreementFileLocalization[]>] [-Id <String>] [-IsPerDeviceAcceptanceRequired]
  [-IsViewingBeforeAcceptanceRequired] [-TermsExpiration <IMicrosoftGraphTermsExpiration>]
- [-UserReacceptRequiredFrequency <TimeSpan>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-UserReacceptRequiredFrequency <TimeSpan>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -131,7 +129,7 @@ Accept wildcard characters: False
 
 ### -DisplayName
 Display name of the agreement.
-The display name is used for internal tracking of the agreement but isn't shown to end users who view the agreement.
+The display name is used for internal tracking of the agreement but is not shown to end users who view the agreement.
 Supports $filter (eq).
 
 ```yaml
@@ -178,21 +176,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -278,7 +261,7 @@ Accept wildcard characters: False
 ```
 
 ### -UserReacceptRequiredFrequency
-The duration after which the user must reaccept the terms of use.
+The duration after which the user must re-accept the terms of use.
 The value is represented in ISO 8601 format for durations.
 Supports $filter (eq).
 
@@ -334,8 +317,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAgreement
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAgreement
@@ -383,7 +364,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[UserEmail <String>]`: Email of the user when the acceptance was recorded.
     - `[UserId <String>]`: The identifier of the user who accepted the agreement. Supports $filter (eq).
     - `[UserPrincipalName <String>]`: UPN of the user when the acceptance was recorded.
-  - `[DisplayName <String>]`: Display name of the agreement. The display name is used for internal tracking of the agreement but isn't shown to end users who view the agreement. Supports $filter (eq).
+  - `[DisplayName <String>]`: Display name of the agreement. The display name is used for internal tracking of the agreement but is not shown to end users who view the agreement. Supports $filter (eq).
   - `[File <IMicrosoftGraphAgreementFile>]`: agreementFile
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[CreatedDateTime <DateTime?>]`: The date time representing when the file was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
@@ -421,7 +402,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Frequency <TimeSpan?>]`: Represents the frequency at which the terms will expire, after its first expiration as set in startDateTime. The value is represented in ISO 8601 format for durations. For example, PT1M represents a time period of one month.
     - `[StartDateTime <DateTime?>]`: The DateTime when the agreement is set to expire for all users. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-  - `[UserReacceptRequiredFrequency <TimeSpan?>]`: The duration after which the user must reaccept the terms of use. The value is represented in ISO 8601 format for durations. Supports $filter (eq).
+  - `[UserReacceptRequiredFrequency <TimeSpan?>]`: The duration after which the user must re-accept the terms of use. The value is represented in ISO 8601 format for durations. Supports $filter (eq).
 
 `FILE <IMicrosoftGraphAgreementFile>`: agreementFile
   - `[(Any) <Object>]`: This indicates any property can be added to this object.

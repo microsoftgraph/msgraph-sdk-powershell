@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Identity.SignIns
-Module Guid: 38909287-ec2c-4f62-8046-751051b19690
+Module Guid: 42c2db96-12d3-4e1b-bd13-1094e8d10350
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.identity.signins
 Help Version: 1.0.0.0
 Locale: en-US
@@ -234,6 +234,9 @@ Invoke function getOrder
 ### [Get-MgBetaIdentityB2XUserFlowUserAttributeAssignmentUserAttribute](Get-MgBetaIdentityB2XUserFlowUserAttributeAssignmentUserAttribute.md)
 The user attribute that you want to add to your user flow.
 
+### [Get-MgBetaIdentityConditionalAccess](Get-MgBetaIdentityConditionalAccess.md)
+the entry point for the Conditional Access (CA) object model.
+
 ### [Get-MgBetaIdentityConditionalAccessAuthenticationContextClassReference](Get-MgBetaIdentityConditionalAccessAuthenticationContextClassReference.md)
 Retrieve the properties and relationships of a authenticationContextClassReference object.
 
@@ -283,8 +286,7 @@ Get the number of the resource
 Read the properties and relationships of a continuousAccessEvaluationPolicy object.
 
 ### [Get-MgBetaIdentityCustomAuthenticationExtension](Get-MgBetaIdentityCustomAuthenticationExtension.md)
-Read the properties and relationships of an authenticationEventListener object.
-The @odata.type property in the response object indicates the type of the authenticationEventListener object.
+Read the properties and relationships of a customAuthenticationExtension object.
 
 ### [Get-MgBetaIdentityCustomAuthenticationExtensionCount](Get-MgBetaIdentityCustomAuthenticationExtensionCount.md)
 Get the number of the resource
@@ -699,7 +701,7 @@ Get the number of the resource
 Get the number of the resource
 
 ### [Get-MgBetaRiskDetection](Get-MgBetaRiskDetection.md)
-Retrieve the properties of a collection of riskDetection objects.
+Retrieve the properties of a riskDetection object.
 
 ### [Get-MgBetaRiskDetectionCount](Get-MgBetaRiskDetectionCount.md)
 Get the number of the resource
@@ -837,10 +839,6 @@ The registered device on which this Platform Credential resides.
 Supports $expand.
 When you get a user's Platform Credential registration information, this property is returned only on a single GET and when you specify ?$expand.
 For example, GET /users/admin@contoso.com/authentication/platformCredentialAuthenticationMethod/_jpuR-TGZtk6aQCLF3BQjA2?$expand=device.
-
-### [Get-MgBetaUserAuthenticationSignInPreference](Get-MgBetaUserAuthenticationSignInPreference.md)
-The settings and preferences for to the sign-in experience of a user.
-Use this property to configure the user's default multifactor authentication (MFA) method.
 
 ### [Get-MgBetaUserAuthenticationSoftwareOathMethod](Get-MgBetaUserAuthenticationSoftwareOathMethod.md)
 Retrieve a user's single Software OATH token authentication method object and its properties.
@@ -1066,7 +1064,8 @@ Create new navigation property to authenticationMethodModes for identity
 Create new navigation property to policies for identity
 
 ### [New-MgBetaIdentityConditionalAccessAuthenticationStrengthPolicyCombinationConfiguration](New-MgBetaIdentityConditionalAccessAuthenticationStrengthPolicyCombinationConfiguration.md)
-Create a new authenticationCombinationConfiguration object which can be of one of the following derived types:\n* fido2combinationConfigurations\n* x509certificatecombinationconfiguration
+Create a new authenticationCombinationConfiguration object.
+In use, only fido2combinationConfigurations might be created, and only for custom authentication strength policies.
 
 ### [New-MgBetaIdentityConditionalAccessNamedLocation](New-MgBetaIdentityConditionalAccessNamedLocation.md)
 Create a new namedLocation object.
@@ -1077,7 +1076,7 @@ Create a new conditionalAccessPolicy.
 
 ### [New-MgBetaIdentityCustomAuthenticationExtension](New-MgBetaIdentityCustomAuthenticationExtension.md)
 Create a new customAuthenticationExtension object.
-The following derived types are currently supported.
+Only the onTokenIssuanceStartCustomExtension object type is supported.
 
 ### [New-MgBetaIdentityProvider](New-MgBetaIdentityProvider.md)
 Create an identity provider object that is of the type specified in the request body.
@@ -1128,7 +1127,8 @@ Create new navigation property to authenticationMethodConfigurations for policie
 Create a new custom authenticationStrengthPolicy object.
 
 ### [New-MgBetaPolicyAuthenticationStrengthPolicyCombinationConfiguration](New-MgBetaPolicyAuthenticationStrengthPolicyCombinationConfiguration.md)
-Create a new authenticationCombinationConfiguration object which can be of one of the following derived types:\n* fido2combinationConfigurations\n* x509certificatecombinationconfiguration
+Create a new authenticationCombinationConfiguration object.
+In use, only fido2combinationConfigurations might be created, and only for custom authentication strength policies.
 
 ### [New-MgBetaPolicyAuthorizationPolicy](New-MgBetaPolicyAuthorizationPolicy.md)
 Create new navigation property to authorizationPolicy for policies
@@ -1333,6 +1333,10 @@ Delete an identityUserFlowAttributeAssignment object.
 ### [Remove-MgBetaIdentityB2XUserFlow](Remove-MgBetaIdentityB2XUserFlow.md)
 Delete a b2xIdentityUserFlow object.
 
+### [Remove-MgBetaIdentityB2XUserFlowIdentityProvider](Remove-MgBetaIdentityB2XUserFlowIdentityProvider.md)
+Delete an identity provider from a b2xIdentityUserFlow object.
+For self-service sign-up user flows, the values can be Google-OAUTH or Facebook-OAUTH.
+
 ### [Remove-MgBetaIdentityB2XUserFlowIdentityProviderByRef](Remove-MgBetaIdentityB2XUserFlowIdentityProviderByRef.md)
 Delete ref of navigation property userFlowIdentityProviders for identity
 
@@ -1363,6 +1367,9 @@ Delete navigation property preTokenIssuance for identity
 ### [Remove-MgBetaIdentityB2XUserFlowUserAttributeAssignment](Remove-MgBetaIdentityB2XUserFlowUserAttributeAssignment.md)
 Delete navigation property userAttributeAssignments for identity
 
+### [Remove-MgBetaIdentityConditionalAccess](Remove-MgBetaIdentityConditionalAccess.md)
+Delete navigation property conditionalAccess for identity
+
 ### [Remove-MgBetaIdentityConditionalAccessAuthenticationContextClassReference](Remove-MgBetaIdentityConditionalAccessAuthenticationContextClassReference.md)
 Delete an authenticationContextClassReference object that's not published or used by a conditional access policy.
 
@@ -1379,7 +1386,7 @@ Delete navigation property policies for identity
 Delete an authenticationCombinationConfiguration  for a custom authenticationStrengthPolicy object.
 
 ### [Remove-MgBetaIdentityConditionalAccessNamedLocation](Remove-MgBetaIdentityConditionalAccessNamedLocation.md)
-Delete a namedLocation object.
+Delete a countryNamedLocation object.
 
 ### [Remove-MgBetaIdentityConditionalAccessPolicy](Remove-MgBetaIdentityConditionalAccessPolicy.md)
 Delete a conditionalAccessPolicy object.
@@ -1775,6 +1782,9 @@ Update the navigation property preTokenIssuance in identity
 ### [Update-MgBetaIdentityB2XUserFlowUserAttributeAssignment](Update-MgBetaIdentityB2XUserFlowUserAttributeAssignment.md)
 Update the navigation property userAttributeAssignments in identity
 
+### [Update-MgBetaIdentityConditionalAccess](Update-MgBetaIdentityConditionalAccess.md)
+Update the navigation property conditionalAccess in identity
+
 ### [Update-MgBetaIdentityConditionalAccessAuthenticationContextClassReference](Update-MgBetaIdentityConditionalAccessAuthenticationContextClassReference.md)
 Update the properties of an authenticationContextClassReference object.
 
@@ -1793,7 +1803,7 @@ To update other properties of an authenticationStrengthPolicy object, use the Up
 
 ### [Update-MgBetaIdentityConditionalAccessAuthenticationStrengthPolicyCombinationConfiguration](Update-MgBetaIdentityConditionalAccessAuthenticationStrengthPolicyCombinationConfiguration.md)
 Update the properties of an authenticationCombinationConfiguration object.
-\nThe properties can be for one of the following derived types:\n* fido2combinationConfigurations\n* x509certificatecombinationconfiguration
+In use, only fido2combinationConfigurations may be updated as they're the only type of authenticationCombinationConfiguration that may be created.
 
 ### [Update-MgBetaIdentityConditionalAccessNamedLocation](Update-MgBetaIdentityConditionalAccessNamedLocation.md)
 Update the properties of an ipNamedLocation object.
@@ -1882,7 +1892,7 @@ To update other properties of an authenticationStrengthPolicy object, use the Up
 
 ### [Update-MgBetaPolicyAuthenticationStrengthPolicyCombinationConfiguration](Update-MgBetaPolicyAuthenticationStrengthPolicyCombinationConfiguration.md)
 Update the properties of an authenticationCombinationConfiguration object.
-\nThe properties can be for one of the following derived types:\n* fido2combinationConfigurations\n* x509certificatecombinationconfiguration
+In use, only fido2combinationConfigurations may be updated as they're the only type of authenticationCombinationConfiguration that may be created.
 
 ### [Update-MgBetaPolicyAuthorizationPolicy](Update-MgBetaPolicyAuthorizationPolicy.md)
 Update the navigation property authorizationPolicy in policies
@@ -2001,7 +2011,10 @@ Update the navigation property history in identityProtection
 Update the navigation property servicePrincipalRiskDetections in identityProtection
 
 ### [Update-MgBetaTenantRelationshipMultiTenantOrganization](Update-MgBetaTenantRelationshipMultiTenantOrganization.md)
-Update the properties of a multi-tenant organization.
+Create a new multi-tenant organization.
+By default, the creator tenant becomes an owner tenant upon successful creation.
+Only owner tenants can manage a multi-tenant organization.
+To allow for asynchronous processing, you must wait a minimum of 2 hours between creation and joining a multi-tenant organization.
 
 ### [Update-MgBetaTenantRelationshipMultiTenantOrganizationJoinRequest](Update-MgBetaTenantRelationshipMultiTenantOrganizationJoinRequest.md)
 Join a multi-tenant organization, after the owner of the multi-tenant organization has added your tenant to the multi-tenant organization as pending.
@@ -2037,9 +2050,6 @@ Update the phone number associated with a phone authentication method.
 You can't change a phone's type.
 To change a phone's type, add a new number of the desired type and then delete the object with the original type.
 If a user is enabled by policy to use SMS to sign in and the mobile number is changed, the system attempts to register the number for use in that system.
-
-### [Update-MgBetaUserAuthenticationSignInPreference](Update-MgBetaUserAuthenticationSignInPreference.md)
-Update property signInPreferences value.
 
 ### [Update-MgBetaUserInformationProtection](Update-MgBetaUserInformationProtection.md)
 Update the navigation property informationProtection in users

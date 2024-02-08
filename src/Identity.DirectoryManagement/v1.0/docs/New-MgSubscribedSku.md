@@ -17,14 +17,13 @@ Add new entity to subscribedSkus
 New-MgSubscribedSku [-AccountId <String>] [-AccountName <String>] [-AdditionalProperties <Hashtable>]
  [-AppliesTo <String>] [-CapabilityStatus <String>] [-ConsumedUnits <Int32>] [-Id <String>]
  [-PrepaidUnits <IMicrosoftGraphLicenseUnitsDetail>] [-ServicePlans <IMicrosoftGraphServicePlanInfo[]>]
- [-SkuId <String>] [-SkuPartNumber <String>] [-SubscriptionIds <String[]>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-SkuId <String>] [-SkuPartNumber <String>] [-SubscriptionIds <String[]>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgSubscribedSku -BodyParameter <IMicrosoftGraphSubscribedSku> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+New-MgSubscribedSku -BodyParameter <IMicrosoftGraphSubscribedSku> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -148,21 +147,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -298,8 +282,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSubscribedSku
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

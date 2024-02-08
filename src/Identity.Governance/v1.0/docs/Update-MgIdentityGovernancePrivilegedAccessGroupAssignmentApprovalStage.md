@@ -17,22 +17,22 @@ Approve or deny an approvalStage object in an approval.
 Update-MgIdentityGovernancePrivilegedAccessGroupAssignmentApprovalStage -ApprovalId <String>
  -ApprovalStageId <String> [-AdditionalProperties <Hashtable>] [-AssignedToMe] [-DisplayName <String>]
  [-Id <String>] [-Justification <String>] [-ReviewedBy <IMicrosoftGraphIdentity>]
- [-ReviewedDateTime <DateTime>] [-ReviewResult <String>] [-Status <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ReviewedDateTime <DateTime>] [-ReviewResult <String>] [-Status <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgIdentityGovernancePrivilegedAccessGroupAssignmentApprovalStage -ApprovalId <String>
- -ApprovalStageId <String> -BodyParameter <IMicrosoftGraphApprovalStage> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -ApprovalStageId <String> -BodyParameter <IMicrosoftGraphApprovalStage> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgIdentityGovernancePrivilegedAccessGroupAssignmentApprovalStage
- -InputObject <IIdentityGovernanceIdentity> -BodyParameter <IMicrosoftGraphApprovalStage>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -InputObject <IIdentityGovernanceIdentity> -BodyParameter <IMicrosoftGraphApprovalStage> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -40,8 +40,8 @@ Update-MgIdentityGovernancePrivilegedAccessGroupAssignmentApprovalStage
 Update-MgIdentityGovernancePrivilegedAccessGroupAssignmentApprovalStage
  -InputObject <IIdentityGovernanceIdentity> [-AdditionalProperties <Hashtable>] [-AssignedToMe]
  [-DisplayName <String>] [-Id <String>] [-Justification <String>] [-ReviewedBy <IMicrosoftGraphIdentity>]
- [-ReviewedDateTime <DateTime>] [-ReviewResult <String>] [-Status <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ReviewedDateTime <DateTime>] [-ReviewResult <String>] [-Status <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -155,21 +155,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -326,8 +311,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphApprovalStage
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

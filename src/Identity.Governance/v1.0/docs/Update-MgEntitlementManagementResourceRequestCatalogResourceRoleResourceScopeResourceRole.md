@@ -18,8 +18,8 @@ Update-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScopeRes
  -AccessPackageResourceRequestId <String> -AccessPackageResourceRoleId <String>
  -AccessPackageResourceRoleId1 <String> -AccessPackageResourceScopeId <String>
  [-AdditionalProperties <Hashtable>] [-Description <String>] [-DisplayName <String>] [-Id <String>]
- [-OriginId <String>] [-OriginSystem <String>] [-Resource <IMicrosoftGraphAccessPackageResource>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-OriginId <String>] [-OriginSystem <String>] [-Resource <IMicrosoftGraphAccessPackageResource>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
@@ -27,15 +27,14 @@ Update-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScopeRes
 Update-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScopeResourceRole
  -AccessPackageResourceRequestId <String> -AccessPackageResourceRoleId <String>
  -AccessPackageResourceRoleId1 <String> -AccessPackageResourceScopeId <String>
- -BodyParameter <IMicrosoftGraphAccessPackageResourceRole> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphAccessPackageResourceRole> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScopeResourceRole
  -InputObject <IIdentityGovernanceIdentity> -BodyParameter <IMicrosoftGraphAccessPackageResourceRole>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -43,8 +42,7 @@ Update-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScopeRes
 Update-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScopeResourceRole
  -InputObject <IIdentityGovernanceIdentity> [-AdditionalProperties <Hashtable>] [-Description <String>]
  [-DisplayName <String>] [-Id <String>] [-OriginId <String>] [-OriginSystem <String>]
- [-Resource <IMicrosoftGraphAccessPackageResource>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Resource <IMicrosoftGraphAccessPackageResource>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -189,21 +187,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -323,8 +306,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageResourceRole
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageResourceRole
@@ -348,12 +329,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[Resource <IMicrosoftGraphAccessPackageResource>]`: accessPackageResource
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[Attributes <IMicrosoftGraphAccessPackageResourceAttribute[]>]`: Contains information about the attributes to be collected from the requestor and sent to the resource application.
-      - `[Destination <IMicrosoftGraphAccessPackageResourceAttributeDestination>]`: accessPackageResourceAttributeDestination
-        - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Name <String>]`: The name of the attribute in the end system. If the destination is accessPackageUserDirectoryAttributeStore, then a user property such as jobTitle or a directory schema extension for the user object type, such as extension2b676109c7c74ae2b41549205f1947edpersonalTitle.
-      - `[Source <IMicrosoftGraphAccessPackageResourceAttributeSource>]`: accessPackageResourceAttributeSource
-        - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
     - `[Description <String>]`: A description for the resource.
     - `[DisplayName <String>]`: The display name of the resource, such as the application name, group name or site name.
@@ -454,12 +429,6 @@ To create the parameters described below, construct a hash table containing the 
 `RESOURCE <IMicrosoftGraphAccessPackageResource>`: accessPackageResource
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[Attributes <IMicrosoftGraphAccessPackageResourceAttribute[]>]`: Contains information about the attributes to be collected from the requestor and sent to the resource application.
-    - `[Destination <IMicrosoftGraphAccessPackageResourceAttributeDestination>]`: accessPackageResourceAttributeDestination
-      - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Name <String>]`: The name of the attribute in the end system. If the destination is accessPackageUserDirectoryAttributeStore, then a user property such as jobTitle or a directory schema extension for the user object type, such as extension2b676109c7c74ae2b41549205f1947edpersonalTitle.
-    - `[Source <IMicrosoftGraphAccessPackageResourceAttributeSource>]`: accessPackageResourceAttributeSource
-      - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
   - `[Description <String>]`: A description for the resource.
   - `[DisplayName <String>]`: The display name of the resource, such as the application name, group name or site name.

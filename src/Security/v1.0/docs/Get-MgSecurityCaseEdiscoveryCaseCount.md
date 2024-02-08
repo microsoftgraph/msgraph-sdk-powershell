@@ -13,8 +13,7 @@ Get the number of the resource
 ## SYNTAX
 
 ```
-Get-MgSecurityCaseEdiscoveryCaseCount [-Filter <String>] [-Search <String>] [-Headers <IDictionary>]
- [<CommonParameters>]
+Get-MgSecurityCaseEdiscoveryCaseCount [-Filter <String>] [-Search <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -53,21 +52,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Search
 Search items by search phrases
 
@@ -87,8 +71,6 @@ Accept wildcard characters: False
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

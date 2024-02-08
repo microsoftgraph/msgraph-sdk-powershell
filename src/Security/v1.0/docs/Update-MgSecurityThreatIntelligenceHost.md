@@ -24,21 +24,19 @@ Update-MgSecurityThreatIntelligenceHost -HostId <String> [-AdditionalProperties 
  [-Reputation <IMicrosoftGraphSecurityHostReputation>]
  [-SslCertificates <IMicrosoftGraphSecurityHostSslCertificate[]>]
  [-Subdomains <IMicrosoftGraphSecuritySubdomain[]>] [-Trackers <IMicrosoftGraphSecurityHostTracker[]>]
- [-Whois <IMicrosoftGraphSecurityWhoisRecord>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Whois <IMicrosoftGraphSecurityWhoisRecord>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgSecurityThreatIntelligenceHost -HostId <String> -BodyParameter <IMicrosoftGraphSecurityHost>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgSecurityThreatIntelligenceHost -InputObject <ISecurityIdentity>
- -BodyParameter <IMicrosoftGraphSecurityHost> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphSecurityHost> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -53,8 +51,7 @@ Update-MgSecurityThreatIntelligenceHost -InputObject <ISecurityIdentity> [-Addit
  [-Reputation <IMicrosoftGraphSecurityHostReputation>]
  [-SslCertificates <IMicrosoftGraphSecurityHostSslCertificate[]>]
  [-Subdomains <IMicrosoftGraphSecuritySubdomain[]>] [-Trackers <IMicrosoftGraphSecurityHostTracker[]>]
- [-Whois <IMicrosoftGraphSecurityWhoisRecord>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Whois <IMicrosoftGraphSecurityWhoisRecord>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -171,21 +168,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -452,8 +434,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityHost
 
 ### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

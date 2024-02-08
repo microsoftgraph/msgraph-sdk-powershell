@@ -15,15 +15,14 @@ Cancel an access assignment request to a group whose membership and ownership ar
 ### Cancel (Default)
 ```
 Stop-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleRequest
- -PrivilegedAccessGroupAssignmentScheduleRequestId <String> [-Headers <IDictionary>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -PrivilegedAccessGroupAssignmentScheduleRequestId <String> [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### CancelViaIdentity
 ```
 Stop-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleRequest
- -InputObject <IIdentityGovernanceIdentity> [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -InputObject <IIdentityGovernanceIdentity> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -46,21 +45,6 @@ Cancel an access assignment request to a group whose membership and ownership ar
 
 
 ## PARAMETERS
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
 
 ### -InputObject
 Identity Parameter
@@ -145,8 +129,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

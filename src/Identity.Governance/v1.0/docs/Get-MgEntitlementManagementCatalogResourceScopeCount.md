@@ -15,39 +15,37 @@ Get the number of the resource
 ### Get1 (Default)
 ```
 Get-MgEntitlementManagementCatalogResourceScopeCount -AccessPackageCatalogId <String> [-Filter <String>]
- [-Search <String>] [-Headers <IDictionary>] [<CommonParameters>]
+ [-Search <String>] [<CommonParameters>]
 ```
 
 ### Get
 ```
 Get-MgEntitlementManagementCatalogResourceScopeCount -AccessPackageCatalogId <String>
- -AccessPackageResourceId <String> [-Filter <String>] [-Search <String>] [-Headers <IDictionary>]
- [<CommonParameters>]
+ -AccessPackageResourceId <String> [-Filter <String>] [-Search <String>] [<CommonParameters>]
 ```
 
 ### Get2
 ```
 Get-MgEntitlementManagementCatalogResourceScopeCount -AccessPackageCatalogId <String>
- -AccessPackageResourceScopeId <String> [-Filter <String>] [-Search <String>] [-Headers <IDictionary>]
- [<CommonParameters>]
+ -AccessPackageResourceScopeId <String> [-Filter <String>] [-Search <String>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
 Get-MgEntitlementManagementCatalogResourceScopeCount -InputObject <IIdentityGovernanceIdentity>
- [-Filter <String>] [-Search <String>] [-Headers <IDictionary>] [<CommonParameters>]
+ [-Filter <String>] [-Search <String>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
 Get-MgEntitlementManagementCatalogResourceScopeCount -InputObject <IIdentityGovernanceIdentity>
- [-Filter <String>] [-Search <String>] [-Headers <IDictionary>] [<CommonParameters>]
+ [-Filter <String>] [-Search <String>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity2
 ```
 Get-MgEntitlementManagementCatalogResourceScopeCount -InputObject <IIdentityGovernanceIdentity>
- [-Filter <String>] [-Search <String>] [-Headers <IDictionary>] [<CommonParameters>]
+ [-Filter <String>] [-Search <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -131,21 +129,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -183,8 +166,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

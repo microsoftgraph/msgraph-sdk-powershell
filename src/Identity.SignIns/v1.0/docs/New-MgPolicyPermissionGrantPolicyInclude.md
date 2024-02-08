@@ -19,21 +19,19 @@ New-MgPolicyPermissionGrantPolicyInclude -PermissionGrantPolicyId <String> [-Add
  [-ClientApplicationIds <String[]>] [-ClientApplicationPublisherIds <String[]>]
  [-ClientApplicationsFromVerifiedPublisherOnly] [-ClientApplicationTenantIds <String[]>] [-Id <String>]
  [-PermissionClassification <String>] [-Permissions <String[]>] [-PermissionType <String>]
- [-ResourceApplication <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ResourceApplication <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgPolicyPermissionGrantPolicyInclude -PermissionGrantPolicyId <String>
- -BodyParameter <IMicrosoftGraphPermissionGrantConditionSet> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphPermissionGrantConditionSet> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgPolicyPermissionGrantPolicyInclude -InputObject <IIdentitySignInsIdentity>
- -BodyParameter <IMicrosoftGraphPermissionGrantConditionSet> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphPermissionGrantConditionSet> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -42,8 +40,8 @@ New-MgPolicyPermissionGrantPolicyInclude -InputObject <IIdentitySignInsIdentity>
  [-AdditionalProperties <Hashtable>] [-ClientApplicationIds <String[]>]
  [-ClientApplicationPublisherIds <String[]>] [-ClientApplicationsFromVerifiedPublisherOnly]
  [-ClientApplicationTenantIds <String[]>] [-Id <String>] [-PermissionClassification <String>]
- [-Permissions <String[]>] [-PermissionType <String>] [-ResourceApplication <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Permissions <String[]>] [-PermissionType <String>] [-ResourceApplication <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -164,21 +162,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -334,8 +317,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPermissionGrantConditionSet
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

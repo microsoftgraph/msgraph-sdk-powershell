@@ -33,20 +33,19 @@ Update-MgSecurityAlert -AlertId <String> [-ActivityGroupName <String>] [-Additio
  [-UriClickSecurityStates <IMicrosoftGraphUriClickSecurityState[]>]
  [-UserStates <IMicrosoftGraphUserSecurityState[]>]
  [-VendorInformation <IMicrosoftGraphSecurityVendorInformation>]
- [-VulnerabilityStates <IMicrosoftGraphVulnerabilityState[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-VulnerabilityStates <IMicrosoftGraphVulnerabilityState[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgSecurityAlert -AlertId <String> -BodyParameter <IMicrosoftGraphAlert> [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgSecurityAlert -AlertId <String> -BodyParameter <IMicrosoftGraphAlert> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgSecurityAlert -InputObject <ISecurityIdentity> -BodyParameter <IMicrosoftGraphAlert>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgSecurityAlert -InputObject <ISecurityIdentity> -BodyParameter <IMicrosoftGraphAlert> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -69,8 +68,7 @@ Update-MgSecurityAlert -InputObject <ISecurityIdentity> [-ActivityGroupName <Str
  [-UriClickSecurityStates <IMicrosoftGraphUriClickSecurityState[]>]
  [-UserStates <IMicrosoftGraphUserSecurityState[]>]
  [-VendorInformation <IMicrosoftGraphSecurityVendorInformation>]
- [-VulnerabilityStates <IMicrosoftGraphVulnerabilityState[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-VulnerabilityStates <IMicrosoftGraphVulnerabilityState[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -424,21 +422,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -878,8 +861,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAlert
 
 ### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

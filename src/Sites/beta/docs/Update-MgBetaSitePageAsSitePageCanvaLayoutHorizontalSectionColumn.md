@@ -17,29 +17,27 @@ Update the navigation property columns in sites
 Update-MgBetaSitePageAsSitePageCanvaLayoutHorizontalSectionColumn -BaseSitePageId <String>
  -HorizontalSectionColumnId <String> -HorizontalSectionId <String> -SiteId <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Webparts <IMicrosoftGraphWebPart[]>] [-Width <Int32>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaSitePageAsSitePageCanvaLayoutHorizontalSectionColumn -BaseSitePageId <String>
  -HorizontalSectionColumnId <String> -HorizontalSectionId <String> -SiteId <String>
- -BodyParameter <IMicrosoftGraphHorizontalSectionColumn> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphHorizontalSectionColumn> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaSitePageAsSitePageCanvaLayoutHorizontalSectionColumn -InputObject <ISitesIdentity>
- -BodyParameter <IMicrosoftGraphHorizontalSectionColumn> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphHorizontalSectionColumn> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgBetaSitePageAsSitePageCanvaLayoutHorizontalSectionColumn -InputObject <ISitesIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Webparts <IMicrosoftGraphWebPart[]>] [-Width <Int32>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -103,21 +101,6 @@ Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -275,8 +258,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphHorizontalSectionColumn
@@ -328,7 +309,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[OnenoteResourceId <String>]`: The unique identifier of onenoteResource
   - `[OnenoteSectionId <String>]`: The unique identifier of onenoteSection
   - `[Path <String>]`: Usage: path='{path}'
-  - `[Path1 <String>]`: Usage: path='{path1}'
   - `[PermissionId <String>]`: The unique identifier of permission
   - `[RecycleBinItemId <String>]`: The unique identifier of recycleBinItem
   - `[RelationId <String>]`: The unique identifier of relation

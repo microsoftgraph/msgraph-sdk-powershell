@@ -19,22 +19,20 @@ Update-MgBetaTenantRelationshipManagedTenantDeviceHealthStatus -DeviceHealthStat
  [-DeviceId <String>] [-DeviceMake <String>] [-DeviceModel <String>] [-DeviceName <String>]
  [-HealthStatus <String>] [-Id <String>] [-LastUpdatedDateTime <DateTime>] [-OSVersion <String>]
  [-PrimaryDiskType <String>] [-RestartCount <Int32>] [-StartupPerformanceScore <Double>]
- [-TenantDisplayName <String>] [-TenantId <String>] [-TopProcesses <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-TenantDisplayName <String>] [-TenantId <String>] [-TopProcesses <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaTenantRelationshipManagedTenantDeviceHealthStatus -DeviceHealthStatusId <String>
- -BodyParameter <IMicrosoftGraphManagedTenantsDeviceHealthStatus> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphManagedTenantsDeviceHealthStatus> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaTenantRelationshipManagedTenantDeviceHealthStatus -InputObject <IManagedTenantsIdentity>
- -BodyParameter <IMicrosoftGraphManagedTenantsDeviceHealthStatus> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphManagedTenantsDeviceHealthStatus> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -44,8 +42,8 @@ Update-MgBetaTenantRelationshipManagedTenantDeviceHealthStatus -InputObject <IMa
  [-DeviceId <String>] [-DeviceMake <String>] [-DeviceModel <String>] [-DeviceName <String>]
  [-HealthStatus <String>] [-Id <String>] [-LastUpdatedDateTime <DateTime>] [-OSVersion <String>]
  [-PrimaryDiskType <String>] [-RestartCount <Int32>] [-StartupPerformanceScore <Double>]
- [-TenantDisplayName <String>] [-TenantId <String>] [-TopProcesses <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-TenantDisplayName <String>] [-TenantId <String>] [-TopProcesses <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -202,21 +200,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -426,8 +409,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsDeviceHealthStatus
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

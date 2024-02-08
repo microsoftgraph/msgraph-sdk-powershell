@@ -17,30 +17,26 @@ An oAuth2PermissionGrant can be updated to change which delegated permissions ar
 ```
 Update-MgBetaOauth2PermissionGrant -OAuth2PermissionGrantId <String> [-AdditionalProperties <Hashtable>]
  [-ClientId <String>] [-ConsentType <String>] [-ExpiryTime <DateTime>] [-Id <String>] [-PrincipalId <String>]
- [-ResourceId <String>] [-Scope <String>] [-StartTime <DateTime>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-ResourceId <String>] [-Scope <String>] [-StartTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaOauth2PermissionGrant -OAuth2PermissionGrantId <String>
- -BodyParameter <IMicrosoftGraphOAuth2PermissionGrant> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphOAuth2PermissionGrant> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaOauth2PermissionGrant -InputObject <IIdentitySignInsIdentity>
- -BodyParameter <IMicrosoftGraphOAuth2PermissionGrant> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphOAuth2PermissionGrant> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgBetaOauth2PermissionGrant -InputObject <IIdentitySignInsIdentity> [-AdditionalProperties <Hashtable>]
  [-ClientId <String>] [-ConsentType <String>] [-ExpiryTime <DateTime>] [-Id <String>] [-PrincipalId <String>]
- [-ResourceId <String>] [-Scope <String>] [-StartTime <DateTime>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-ResourceId <String>] [-Scope <String>] [-StartTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -144,21 +140,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -317,8 +298,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOAuth2PermissionGrant
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Sites
-Module Guid: ea16169b-241e-4652-97f9-802e143c0cd7
+Module Guid: 813cb519-6641-42bc-8379-b311c67d9a16
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.sites
 Help Version: 1.0.0.0
 Locale: en-US
@@ -181,12 +181,11 @@ Read-only.
 
 ### [Get-MgGroupSiteCreatedByUserMailboxSetting](Get-MgGroupSiteCreatedByUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgGroupSiteCreatedByUserServiceProvisioningError](Get-MgGroupSiteCreatedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgGroupSiteCreatedByUserServiceProvisioningErrorCount](Get-MgGroupSiteCreatedByUserServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -206,52 +205,6 @@ Get externalColumns from groups
 ### [Get-MgGroupSiteExternalColumnCount](Get-MgGroupSiteExternalColumnCount.md)
 Get the number of the resource
 
-### [Get-MgGroupSiteGetByPath](Get-MgGroupSiteGetByPath.md)
-Get the collection of [lists][] for a [site][].
-Lists with the [system][] facet are hidden by default.\nTo list them, include system in your $select statement.
-
-### [Get-MgGroupSiteGetByPathAnalytic](Get-MgGroupSiteGetByPathAnalytic.md)
-Analytics about the view activities that took place in this site.
-
-### [Get-MgGroupSiteGetByPathColumn](Get-MgGroupSiteGetByPathColumn.md)
-Get the collection of columns represented as [columnDefinition][columnDefinition] resources in a [site][site].
-
-### [Get-MgGroupSiteGetByPathContentType](Get-MgGroupSiteGetByPathContentType.md)
-Get the collection of [contentType][contentType] resources in a [site][].
-
-### [Get-MgGroupSiteGetByPathDrive](Get-MgGroupSiteGetByPathDrive.md)
-The default drive (document library) for this site.
-
-### [Get-MgGroupSiteGetByPathExternalColumn](Get-MgGroupSiteGetByPathExternalColumn.md)
-Get externalColumns from groups
-
-### [Get-MgGroupSiteGetByPathItem](Get-MgGroupSiteGetByPathItem.md)
-Used to address any item contained in this site.
-This collection can't be enumerated.
-
-### [Get-MgGroupSiteGetByPathOnenote](Get-MgGroupSiteGetByPathOnenote.md)
-Calls the OneNote service for notebook related operations.
-
-### [Get-MgGroupSiteGetByPathOperation](Get-MgGroupSiteGetByPathOperation.md)
-Get a list of rich long-running operations associated with a site.
-
-### [Get-MgGroupSiteGetByPathPermission](Get-MgGroupSiteGetByPathPermission.md)
-Get the permission resources from the permissions navigation property on a site.
-
-### [Get-MgGroupSiteGetByPathSite](Get-MgGroupSiteGetByPathSite.md)
-Get a collection of subsites defined for a [site][].
-
-### [Get-MgGroupSiteGetByPathTermStore](Get-MgGroupSiteGetByPathTermStore.md)
-Read the properties and relationships of a store object.
-
-### [Get-MgGroupSiteGetGraphBPrePathCreatedByUser](Get-MgGroupSiteGetGraphBPrePathCreatedByUser.md)
-Identity of the user who created the item.
-Read-only.
-
-### [Get-MgGroupSiteGetGraphBPrePathLastModifiedByUser](Get-MgGroupSiteGetGraphBPrePathLastModifiedByUser.md)
-Identity of the user who last modified the item.
-Read-only.
-
 ### [Get-MgGroupSiteItem](Get-MgGroupSiteItem.md)
 Used to address any item contained in this site.
 This collection can't be enumerated.
@@ -265,12 +218,11 @@ Read-only.
 
 ### [Get-MgGroupSiteItemLastModifiedByUserMailboxSetting](Get-MgGroupSiteItemLastModifiedByUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgGroupSiteItemLastModifiedByUserServiceProvisioningError](Get-MgGroupSiteItemLastModifiedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgGroupSiteItemLastModifiedByUserServiceProvisioningErrorCount](Get-MgGroupSiteItemLastModifiedByUserServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -281,12 +233,11 @@ Read-only.
 
 ### [Get-MgGroupSiteLastModifiedByUserMailboxSetting](Get-MgGroupSiteLastModifiedByUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgGroupSiteLastModifiedByUserServiceProvisioningError](Get-MgGroupSiteLastModifiedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgGroupSiteLastModifiedByUserServiceProvisioningErrorCount](Get-MgGroupSiteLastModifiedByUserServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -339,12 +290,11 @@ Read-only.
 
 ### [Get-MgGroupSiteListCreatedByUserMailboxSetting](Get-MgGroupSiteListCreatedByUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgGroupSiteListCreatedByUserServiceProvisioningError](Get-MgGroupSiteListCreatedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgGroupSiteListCreatedByUserServiceProvisioningErrorCount](Get-MgGroupSiteListCreatedByUserServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -365,12 +315,11 @@ Read-only.
 
 ### [Get-MgGroupSiteListItemCreatedByUserMailboxSetting](Get-MgGroupSiteListItemCreatedByUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgGroupSiteListItemCreatedByUserServiceProvisioningError](Get-MgGroupSiteListItemCreatedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgGroupSiteListItemCreatedByUserServiceProvisioningErrorCount](Get-MgGroupSiteListItemCreatedByUserServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -1090,58 +1039,17 @@ Get externalColumns from sites
 ### [Get-MgSiteExternalColumnCount](Get-MgSiteExternalColumnCount.md)
 Get the number of the resource
 
-### [Get-MgSiteGetByPath](Get-MgSiteGetByPath.md)
-Get the collection of [lists][] for a [site][].
-Lists with the [system][] facet are hidden by default.\nTo list them, include system in your $select statement.
-
-### [Get-MgSiteGetByPathAnalytic](Get-MgSiteGetByPathAnalytic.md)
-Analytics about the view activities that took place in this site.
-
-### [Get-MgSiteGetByPathApplicableContentTypeForList](Get-MgSiteGetByPathApplicableContentTypeForList.md)
-Invoke function getApplicableContentTypesForList
-
-### [Get-MgSiteGetByPathColumn](Get-MgSiteGetByPathColumn.md)
-Get the collection of columns represented as [columnDefinition][columnDefinition] resources in a [site][site].
-
-### [Get-MgSiteGetByPathContentType](Get-MgSiteGetByPathContentType.md)
-Get the collection of [contentType][contentType] resources in a [site][].
-
-### [Get-MgSiteGetByPathDrive](Get-MgSiteGetByPathDrive.md)
-The default drive (document library) for this site.
-
-### [Get-MgSiteGetByPathExternalColumn](Get-MgSiteGetByPathExternalColumn.md)
-Get externalColumns from sites
-
-### [Get-MgSiteGetByPathOperation](Get-MgSiteGetByPathOperation.md)
-Get a list of rich long-running operations associated with a site.
-
-### [Get-MgSiteGetByPathPermission](Get-MgSiteGetByPathPermission.md)
-Get the permission resources from the permissions navigation property on a site.
-
-### [Get-MgSiteGetByPathSite](Get-MgSiteGetByPathSite.md)
-Get a collection of subsites defined for a [site][].
-
-### [Get-MgSiteGetByPathTermStore](Get-MgSiteGetByPathTermStore.md)
-Read the properties and relationships of a store object.
-
-### [Get-MgSiteGetGraphBPrePathActivityByInterval](Get-MgSiteGetGraphBPrePathActivityByInterval.md)
-Invoke function getActivitiesByInterval
-
-### [Get-MgSiteGetGraphBPrePathByPath](Get-MgSiteGetGraphBPrePathByPath.md)
-Invoke function getByPath
-
 ### [Get-MgSiteItemLastModifiedByUser](Get-MgSiteItemLastModifiedByUser.md)
 Identity of the user who last modified the item.
 Read-only.
 
 ### [Get-MgSiteItemLastModifiedByUserMailboxSetting](Get-MgSiteItemLastModifiedByUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgSiteItemLastModifiedByUserServiceProvisioningError](Get-MgSiteItemLastModifiedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgSiteItemLastModifiedByUserServiceProvisioningErrorCount](Get-MgSiteItemLastModifiedByUserServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -1152,12 +1060,11 @@ Read-only.
 
 ### [Get-MgSiteLastModifiedByUserMailboxSetting](Get-MgSiteLastModifiedByUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgSiteLastModifiedByUserServiceProvisioningError](Get-MgSiteLastModifiedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgSiteLastModifiedByUserServiceProvisioningErrorCount](Get-MgSiteLastModifiedByUserServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -1213,12 +1120,11 @@ Read-only.
 
 ### [Get-MgSiteListCreatedByUserMailboxSetting](Get-MgSiteListCreatedByUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgSiteListCreatedByUserServiceProvisioningError](Get-MgSiteListCreatedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgSiteListCreatedByUserServiceProvisioningErrorCount](Get-MgSiteListCreatedByUserServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -1242,12 +1148,11 @@ Read-only.
 
 ### [Get-MgSiteListItemCreatedByUserMailboxSetting](Get-MgSiteListItemCreatedByUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgSiteListItemCreatedByUserServiceProvisioningError](Get-MgSiteListItemCreatedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgSiteListItemCreatedByUserServiceProvisioningErrorCount](Get-MgSiteListItemCreatedByUserServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -1700,24 +1605,6 @@ Add a column to a [content type][contentType] in a site, or a list with a reques
 ### [New-MgGroupSiteContentTypeColumnLink](New-MgGroupSiteContentTypeColumnLink.md)
 Create new navigation property to columnLinks for groups
 
-### [New-MgGroupSiteGetByPathColumn](New-MgGroupSiteGetByPathColumn.md)
-Create a column for a [site][site] with a request that specifies a [columnDefinition][columnDefinition].
-
-### [New-MgGroupSiteGetByPathContentType](New-MgGroupSiteGetByPathContentType.md)
-Create a new [contentType][] in a [site][].
-
-### [New-MgGroupSiteGetByPathList](New-MgGroupSiteGetByPathList.md)
-Create a new [list][] in a [site][].
-
-### [New-MgGroupSiteGetByPathOperation](New-MgGroupSiteGetByPathOperation.md)
-Create new navigation property to operations for groups
-
-### [New-MgGroupSiteGetByPathPermission](New-MgGroupSiteGetByPathPermission.md)
-Create a new permission object on a site.
-
-### [New-MgGroupSiteGetByPathTermStore](New-MgGroupSiteGetByPathTermStore.md)
-Create new navigation property to termStores for groups
-
 ### [New-MgGroupSiteList](New-MgGroupSiteList.md)
 Create a new [list][] in a [site][].
 
@@ -1895,24 +1782,6 @@ Add a column to a [content type][contentType] in a site, or a list with a reques
 ### [New-MgSiteContentTypeColumnLink](New-MgSiteContentTypeColumnLink.md)
 Create new navigation property to columnLinks for sites
 
-### [New-MgSiteGetByPathColumn](New-MgSiteGetByPathColumn.md)
-Create a column for a [site][site] with a request that specifies a [columnDefinition][columnDefinition].
-
-### [New-MgSiteGetByPathContentType](New-MgSiteGetByPathContentType.md)
-Create a new [contentType][] in a [site][].
-
-### [New-MgSiteGetByPathList](New-MgSiteGetByPathList.md)
-Create a new [list][] in a [site][].
-
-### [New-MgSiteGetByPathOperation](New-MgSiteGetByPathOperation.md)
-Create new navigation property to operations for sites
-
-### [New-MgSiteGetByPathPermission](New-MgSiteGetByPathPermission.md)
-Create a new permission object on a site.
-
-### [New-MgSiteGetByPathTermStore](New-MgSiteGetByPathTermStore.md)
-Create new navigation property to termStores for sites
-
 ### [New-MgSiteList](New-MgSiteList.md)
 Create a new [list][] in a [site][].
 
@@ -1933,9 +1802,6 @@ Create a new [listItem][] in a [list][].
 
 ### [New-MgSiteListItemDocumentSetVersion](New-MgSiteListItemDocumentSetVersion.md)
 Create a new version of a document set item in a list.
-
-### [New-MgSiteListItemLink](New-MgSiteListItemLink.md)
-Invoke action createLink
 
 ### [New-MgSiteListItemVersion](New-MgSiteListItemVersion.md)
 Create new navigation property to versions for sites
@@ -2062,15 +1928,6 @@ Remove a [column][columndefinition] from a [site][], a [list][], or a [content t
 
 ### [Remove-MgGroupSiteContentTypeColumnLink](Remove-MgGroupSiteContentTypeColumnLink.md)
 Delete navigation property columnLinks for groups
-
-### [Remove-MgGroupSiteGetByPathAnalytic](Remove-MgGroupSiteGetByPathAnalytic.md)
-Delete navigation property analytics for groups
-
-### [Remove-MgGroupSiteGetByPathOnenote](Remove-MgGroupSiteGetByPathOnenote.md)
-Delete navigation property onenote for groups
-
-### [Remove-MgGroupSiteGetByPathTermStore](Remove-MgGroupSiteGetByPathTermStore.md)
-Delete navigation property termStore for groups
 
 ### [Remove-MgGroupSiteList](Remove-MgGroupSiteList.md)
 Delete navigation property lists for groups
@@ -2266,12 +2123,6 @@ Remove a [column][columndefinition] from a [site][], a [list][], or a [content t
 
 ### [Remove-MgSiteContentTypeColumnLink](Remove-MgSiteContentTypeColumnLink.md)
 Delete navigation property columnLinks for sites
-
-### [Remove-MgSiteGetByPathAnalytic](Remove-MgSiteGetByPathAnalytic.md)
-Delete navigation property analytics for sites
-
-### [Remove-MgSiteGetByPathTermStore](Remove-MgSiteGetByPathTermStore.md)
-Delete navigation property termStore for sites
 
 ### [Remove-MgSiteList](Remove-MgSiteList.md)
 Delete navigation property lists for sites
@@ -2483,15 +2334,6 @@ Update the navigation property columnLinks in groups
 
 ### [Update-MgGroupSiteCreatedByUserMailboxSetting](Update-MgGroupSiteCreatedByUserMailboxSetting.md)
 Update property mailboxSettings value.
-
-### [Update-MgGroupSiteGetByPathAnalytic](Update-MgGroupSiteGetByPathAnalytic.md)
-Update the navigation property analytics in groups
-
-### [Update-MgGroupSiteGetByPathOnenote](Update-MgGroupSiteGetByPathOnenote.md)
-Update the navigation property onenote in groups
-
-### [Update-MgGroupSiteGetByPathTermStore](Update-MgGroupSiteGetByPathTermStore.md)
-Update the properties of a store object.
 
 ### [Update-MgGroupSiteLastModifiedByUserMailboxSetting](Update-MgGroupSiteLastModifiedByUserMailboxSetting.md)
 Update property mailboxSettings value.
@@ -2705,12 +2547,6 @@ Update a [site][], a [list][], or a [content type][contentType] [column][columnD
 
 ### [Update-MgSiteContentTypeColumnLink](Update-MgSiteContentTypeColumnLink.md)
 Update the navigation property columnLinks in sites
-
-### [Update-MgSiteGetByPathAnalytic](Update-MgSiteGetByPathAnalytic.md)
-Update the navigation property analytics in sites
-
-### [Update-MgSiteGetByPathTermStore](Update-MgSiteGetByPathTermStore.md)
-Update the properties of a store object.
 
 ### [Update-MgSiteList](Update-MgSiteList.md)
 Update the navigation property lists in sites

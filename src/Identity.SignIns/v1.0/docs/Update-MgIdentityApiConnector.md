@@ -16,28 +16,26 @@ Update the properties of an identityApiConnector object.
 ```
 Update-MgIdentityApiConnector -IdentityApiConnectorId <String> [-AdditionalProperties <Hashtable>]
  [-AuthenticationConfiguration <Hashtable>] [-DisplayName <String>] [-Id <String>] [-TargetUrl <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgIdentityApiConnector -IdentityApiConnectorId <String>
- -BodyParameter <IMicrosoftGraphIdentityApiConnector> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphIdentityApiConnector> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgIdentityApiConnector -InputObject <IIdentitySignInsIdentity>
- -BodyParameter <IMicrosoftGraphIdentityApiConnector> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphIdentityApiConnector> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgIdentityApiConnector -InputObject <IIdentitySignInsIdentity> [-AdditionalProperties <Hashtable>]
  [-AuthenticationConfiguration <Hashtable>] [-DisplayName <String>] [-Id <String>] [-TargetUrl <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -137,21 +135,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -256,8 +239,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentityApiConnector
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

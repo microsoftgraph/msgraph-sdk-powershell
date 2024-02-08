@@ -8,40 +8,42 @@ schema: 2.0.0
 # New-MgBetaPolicyAuthenticationStrengthPolicyCombinationConfiguration
 
 ## SYNOPSIS
-Create a new authenticationCombinationConfiguration object which can be of one of the following derived types:\n* fido2combinationConfigurations\n* x509certificatecombinationconfiguration
+Create a new authenticationCombinationConfiguration object.
+In use, only fido2combinationConfigurations might be created, and only for custom authentication strength policies.
 
 ## SYNTAX
 
 ### CreateExpanded (Default)
 ```
 New-MgBetaPolicyAuthenticationStrengthPolicyCombinationConfiguration -AuthenticationStrengthPolicyId <String>
- [-AdditionalProperties <Hashtable>] [-AppliesToCombinations <String[]>] [-Id <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-AppliesToCombinations <String[]>] [-Id <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaPolicyAuthenticationStrengthPolicyCombinationConfiguration -AuthenticationStrengthPolicyId <String>
- -BodyParameter <IMicrosoftGraphAuthenticationCombinationConfiguration> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphAuthenticationCombinationConfiguration> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaPolicyAuthenticationStrengthPolicyCombinationConfiguration -InputObject <IIdentitySignInsIdentity>
- -BodyParameter <IMicrosoftGraphAuthenticationCombinationConfiguration> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphAuthenticationCombinationConfiguration> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgBetaPolicyAuthenticationStrengthPolicyCombinationConfiguration -InputObject <IIdentitySignInsIdentity>
- [-AdditionalProperties <Hashtable>] [-AppliesToCombinations <String[]>] [-Id <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-AppliesToCombinations <String[]>] [-Id <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Create a new authenticationCombinationConfiguration object which can be of one of the following derived types:\n* fido2combinationConfigurations\n* x509certificatecombinationconfiguration
+Create a new authenticationCombinationConfiguration object.
+In use, only fido2combinationConfigurations might be created, and only for custom authentication strength policies.
 
 ## EXAMPLES
 
@@ -78,8 +80,8 @@ Accept wildcard characters: False
 
 ### -AppliesToCombinations
 Which authentication method combinations this configuration applies to.
-Must be an allowedCombinations object defined for the authenticationStrengthPolicy.
-For fido2combinationConfigurations use 'fido2', for x509certificatecombinationconfiguration use 'x509CertificateSingleFactor' or 'x509CertificateMultiFactor'.
+Must be an allowedCombinations object that's defined for the authenticationStrengthPolicy.
+The only possible value for fido2combinationConfigurations is 'fido2'.
 
 ```yaml
 Type: System.String[]
@@ -118,21 +120,6 @@ Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -211,8 +198,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAuthenticationCombinationConfiguration
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAuthenticationCombinationConfiguration
@@ -229,7 +214,7 @@ To create the parameters described below, construct a hash table containing the 
 `BODYPARAMETER <IMicrosoftGraphAuthenticationCombinationConfiguration>`: authenticationCombinationConfiguration
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[AppliesToCombinations <String[]>]`: Which authentication method combinations this configuration applies to. Must be an allowedCombinations object defined for the authenticationStrengthPolicy. For fido2combinationConfigurations use 'fido2', for x509certificatecombinationconfiguration use 'x509CertificateSingleFactor' or 'x509CertificateMultiFactor'.
+  - `[AppliesToCombinations <String[]>]`: Which authentication method combinations this configuration applies to. Must be an allowedCombinations object that's defined for the authenticationStrengthPolicy. The only possible value for fido2combinationConfigurations is 'fido2'.
 
 `INPUTOBJECT <IIdentitySignInsIdentity>`: Identity Parameter
   - `[ActivityBasedTimeoutPolicyId <String>]`: The unique identifier of activityBasedTimeoutPolicy

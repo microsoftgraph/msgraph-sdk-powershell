@@ -16,30 +16,28 @@ Update the navigation property cloudPcConnections in tenantRelationships
 ```
 Update-MgBetaTenantRelationshipManagedTenantCloudPcConnection -CloudPcConnectionId <String>
  [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-HealthCheckStatus <String>] [-Id <String>]
- [-LastRefreshedDateTime <DateTime>] [-TenantDisplayName <String>] [-TenantId <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-LastRefreshedDateTime <DateTime>] [-TenantDisplayName <String>] [-TenantId <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaTenantRelationshipManagedTenantCloudPcConnection -CloudPcConnectionId <String>
- -BodyParameter <IMicrosoftGraphManagedTenantsCloudPcConnection> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphManagedTenantsCloudPcConnection> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaTenantRelationshipManagedTenantCloudPcConnection -InputObject <IManagedTenantsIdentity>
- -BodyParameter <IMicrosoftGraphManagedTenantsCloudPcConnection> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphManagedTenantsCloudPcConnection> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgBetaTenantRelationshipManagedTenantCloudPcConnection -InputObject <IManagedTenantsIdentity>
  [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-HealthCheckStatus <String>] [-Id <String>]
- [-LastRefreshedDateTime <DateTime>] [-TenantDisplayName <String>] [-TenantId <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-LastRefreshedDateTime <DateTime>] [-TenantDisplayName <String>] [-TenantId <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -123,21 +121,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -281,8 +264,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsCloudPcConnection
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

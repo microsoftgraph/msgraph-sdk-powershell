@@ -14,14 +14,12 @@ Get the number of the resource
 
 ### Get (Default)
 ```
-Get-MgGroupRejectedSenderCount -GroupId <String> [-Filter <String>] [-Headers <IDictionary>]
- [<CommonParameters>]
+Get-MgGroupRejectedSenderCount -GroupId <String> [-Filter <String>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgGroupRejectedSenderCount -InputObject <IGroupsIdentity> [-Filter <String>] [-Headers <IDictionary>]
- [<CommonParameters>]
+Get-MgGroupRejectedSenderCount -InputObject <IGroupsIdentity> [-Filter <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -75,21 +73,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -112,8 +95,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 
@@ -154,7 +135,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[OnenotePageId <String>]`: The unique identifier of onenotePage
   - `[OnenoteSectionId <String>]`: The unique identifier of onenoteSection
   - `[Path <String>]`: Usage: path='{path}'
-  - `[Path1 <String>]`: Usage: path='{path1}'
   - `[PermissionId <String>]`: The unique identifier of permission
   - `[PostId <String>]`: The unique identifier of post
   - `[ProfilePhotoId <String>]`: The unique identifier of profilePhoto

@@ -28,21 +28,20 @@ New-MgBetaUserContactFolderChildFolderContact -ContactFolderId <String> -Contact
  [-PostalAddresses <IMicrosoftGraphPhysicalAddress[]>] [-Profession <String>]
  [-SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>] [-SpouseName <String>]
  [-Surname <String>] [-Title <String>] [-Websites <IMicrosoftGraphWebsite[]>] [-WeddingAnniversary <DateTime>]
- [-YomiCompanyName <String>] [-YomiGivenName <String>] [-YomiSurname <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-YomiCompanyName <String>] [-YomiGivenName <String>] [-YomiSurname <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaUserContactFolderChildFolderContact -ContactFolderId <String> -ContactFolderId1 <String>
- -UserId <String> -BodyParameter <IMicrosoftGraphContact> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -UserId <String> -BodyParameter <IMicrosoftGraphContact> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaUserContactFolderChildFolderContact -InputObject <IPersonalContactsIdentity>
- -BodyParameter <IMicrosoftGraphContact> [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphContact> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -61,8 +60,8 @@ New-MgBetaUserContactFolderChildFolderContact -InputObject <IPersonalContactsIde
  [-PostalAddresses <IMicrosoftGraphPhysicalAddress[]>] [-Profession <String>]
  [-SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>] [-SpouseName <String>]
  [-Surname <String>] [-Title <String>] [-Websites <IMicrosoftGraphWebsite[]>] [-WeddingAnniversary <DateTime>]
- [-YomiCompanyName <String>] [-YomiGivenName <String>] [-YomiSurname <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-YomiCompanyName <String>] [-YomiGivenName <String>] [-YomiSurname <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -394,21 +393,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -884,8 +868,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphContact
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPersonalContactsIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

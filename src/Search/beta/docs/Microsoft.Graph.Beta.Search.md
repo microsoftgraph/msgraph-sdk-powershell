@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Search
-Module Guid: 49b82fb1-b57d-49d4-9e04-524ba83ff507
+Module Guid: 1c464169-139c-42b2-bac7-2e90034c0469
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.search
 Help Version: 1.0.0.0
 Locale: en-US
@@ -90,7 +90,7 @@ Get the number of the resource
 The sourceSystemDefinition this connector is connected to.
 
 ### [Get-MgBetaExternalIndustryDataInboundFlow](Get-MgBetaExternalIndustryDataInboundFlow.md)
-Read the properties and relationships of an inboundFileFlow object.
+Read the properties and relationships of an inboundFlow object.
 
 ### [Get-MgBetaExternalIndustryDataInboundFlowCount](Get-MgBetaExternalIndustryDataInboundFlowCount.md)
 Get the number of the resource
@@ -314,7 +314,7 @@ Update the navigation property operations in external
 Update the navigation property quota in external
 
 ### [Update-MgBetaExternalConnectionSchema](Update-MgBetaExternalConnectionSchema.md)
-Update the properties of a schema for an externalConnection.
+Create the schema for a Microsoft Search connection.
 
 ### [Update-MgBetaExternalIndustryDataConnector](Update-MgBetaExternalIndustryDataConnector.md)
 Update the properties of an azureDataLakeConnector object.

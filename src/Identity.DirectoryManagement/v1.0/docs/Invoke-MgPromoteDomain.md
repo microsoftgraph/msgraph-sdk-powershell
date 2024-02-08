@@ -15,13 +15,13 @@ A verified domain has its isVerified property set to true.
 
 ### Promote (Default)
 ```
-Invoke-MgPromoteDomain -DomainId <String> [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Invoke-MgPromoteDomain -DomainId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### PromoteViaIdentity
 ```
-Invoke-MgPromoteDomain -InputObject <IIdentityDirectoryManagementIdentity> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Invoke-MgPromoteDomain -InputObject <IIdentityDirectoryManagementIdentity> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -58,21 +58,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -129,8 +114,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

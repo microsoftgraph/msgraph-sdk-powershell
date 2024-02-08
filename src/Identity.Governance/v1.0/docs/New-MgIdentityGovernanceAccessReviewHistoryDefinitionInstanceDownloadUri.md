@@ -17,14 +17,14 @@ Each URI is valid for 24 hours and can be retrieved by fetching the downloadUri 
 ### Generate (Default)
 ```
 New-MgIdentityGovernanceAccessReviewHistoryDefinitionInstanceDownloadUri
- -AccessReviewHistoryDefinitionId <String> -AccessReviewHistoryInstanceId <String> [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -AccessReviewHistoryDefinitionId <String> -AccessReviewHistoryInstanceId <String> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### GenerateViaIdentity
 ```
 New-MgIdentityGovernanceAccessReviewHistoryDefinitionInstanceDownloadUri
- -InputObject <IIdentityGovernanceIdentity> [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -InputObject <IIdentityGovernanceIdentity> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -71,21 +71,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -142,8 +127,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

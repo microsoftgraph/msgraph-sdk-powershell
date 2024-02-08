@@ -16,13 +16,12 @@ Update planner
 ```
 Update-MgBetaPlanner [-AdditionalProperties <Hashtable>] [-Buckets <IMicrosoftGraphPlannerBucket[]>]
  [-Id <String>] [-Plans <IMicrosoftGraphPlannerPlan[]>] [-Rosters <IMicrosoftGraphPlannerRoster[]>]
- [-Tasks <IMicrosoftGraphPlannerTask[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Tasks <IMicrosoftGraphPlannerTask[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgBetaPlanner -BodyParameter <IMicrosoftGraphPlanner> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Update-MgBetaPlanner -BodyParameter <IMicrosoftGraphPlanner> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -92,21 +91,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -218,8 +202,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlanner
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlanner
@@ -238,22 +220,9 @@ To create the parameters described below, construct a hash table containing the 
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Buckets <IMicrosoftGraphPlannerBucket[]>]`: Read-only. Nullable. Returns a collection of the specified buckets
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[ArchivalInfo <IMicrosoftGraphPlannerArchivalInfo>]`: plannerArchivalInfo
-      - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Justification <String>]`: 
-      - `[StatusChangedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-        - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[Application <IMicrosoftGraphIdentity>]`: identity
-          - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-          - `[Id <String>]`: Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn't included in the response.
-        - `[Device <IMicrosoftGraphIdentity>]`: identity
-        - `[User <IMicrosoftGraphIdentity>]`: identity
-      - `[StatusChangedDateTime <DateTime?>]`: 
     - `[CreationSource <IMicrosoftGraphPlannerBucketCreation>]`: plannerBucketCreation
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[CreationSourceKind <String>]`: plannerCreationSourceKind
-    - `[IsArchived <Boolean?>]`: 
     - `[Name <String>]`: Name of the bucket.
     - `[OrderHint <String>]`: Hint used to order items of this type in a list view. For details about the supported format, see Using order hints in Planner.
     - `[PlanId <String>]`: Plan ID to which the bucket belongs.
@@ -262,7 +231,6 @@ To create the parameters described below, construct a hash table containing the 
       - `[ActiveChecklistItemCount <Int32?>]`: Number of checklist items with value set to false, representing incomplete items.
       - `[AppliedCategories <IMicrosoftGraphPlannerAppliedCategories>]`: plannerAppliedCategories
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[ArchivalInfo <IMicrosoftGraphPlannerArchivalInfo>]`: plannerArchivalInfo
       - `[AssignedToTaskBoardFormat <IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat>]`: plannerAssignedToTaskBoardTaskFormat
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -279,6 +247,13 @@ To create the parameters described below, construct a hash table containing the 
         - `[OrderHint <String>]`: Hint used to order tasks in the bucket view of the task board. For details about the supported format, see Using order hints in Planner.
       - `[ChecklistItemCount <Int32?>]`: Number of checklist items that are present on the task.
       - `[CompletedBy <IMicrosoftGraphIdentitySet>]`: identitySet
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+        - `[Application <IMicrosoftGraphIdentity>]`: identity
+          - `[(Any) <Object>]`: This indicates any property can be added to this object.
+          - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+          - `[Id <String>]`: Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn't included in the response.
+        - `[Device <IMicrosoftGraphIdentity>]`: identity
+        - `[User <IMicrosoftGraphIdentity>]`: identity
       - `[CompletedDateTime <DateTime?>]`: Read-only. Date and time at which the 'percentComplete' of the task is set to '100'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
       - `[ConversationThreadId <String>]`: Thread ID of the conversation on the task. This is the ID of the conversation thread object created in the group.
       - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -298,25 +273,14 @@ To create the parameters described below, construct a hash table containing the 
       - `[Details <IMicrosoftGraphPlannerTaskDetails>]`: plannerTaskDetails
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
-        - `[ApprovalAttachment <IMicrosoftGraphPlannerBaseApprovalAttachment>]`: plannerBaseApprovalAttachment
-          - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[Status <String>]`: plannerApprovalStatus
         - `[Checklist <IMicrosoftGraphPlannerChecklistItems>]`: plannerChecklistItems
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[CompletionRequirements <IMicrosoftGraphPlannerTaskCompletionRequirementDetails>]`: plannerTaskCompletionRequirementDetails
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[ApprovalRequirement <IMicrosoftGraphPlannerApprovalRequirement>]`: plannerApprovalRequirement
-            - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[IsApprovalRequired <Boolean?>]`: 
           - `[ChecklistRequirement <IMicrosoftGraphPlannerChecklistRequirement>]`: plannerChecklistRequirement
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[RequiredChecklistItemIds <String[]>]`: A collection of required plannerChecklistItems identifiers to complete the plannerTask.
-          - `[FormsRequirement <IMicrosoftGraphPlannerFormsRequirement>]`: plannerFormsRequirement
-            - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[RequiredForms <String[]>]`: 
         - `[Description <String>]`: Description of the task.
-        - `[Forms <IMicrosoftGraphPlannerFormsDictionary>]`: plannerFormsDictionary
-          - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Notes <IMicrosoftGraphItemBody>]`: itemBody
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Content <String>]`: The content of the item.
@@ -326,9 +290,6 @@ To create the parameters described below, construct a hash table containing the 
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[DueDateTime <DateTime?>]`: Date and time at which the task is due. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
       - `[HasDescription <Boolean?>]`: Read-only. Value is true if the details object of the task has a nonempty description and false otherwise.
-      - `[IsArchived <Boolean?>]`: 
-      - `[IsOnMyDay <Boolean?>]`: 
-      - `[IsOnMyDayLastModifiedDate <DateTime?>]`: 
       - `[OrderHint <String>]`: Hint used to order items of this type in a list view. The format is defined as outlined here.
       - `[PercentComplete <Int32?>]`: Percentage of task completion. When set to 100, the task is considered completed.
       - `[PlanId <String>]`: Plan ID to which the task belongs.
@@ -364,7 +325,6 @@ To create the parameters described below, construct a hash table containing the 
       - `[Title <String>]`: Title of the task.
   - `[Plans <IMicrosoftGraphPlannerPlan[]>]`: Read-only. Nullable. Returns a collection of the specified plans
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[ArchivalInfo <IMicrosoftGraphPlannerArchivalInfo>]`: plannerArchivalInfo
     - `[Buckets <IMicrosoftGraphPlannerBucket[]>]`: Collection of buckets in the plan. Read-only. Nullable.
     - `[Container <IMicrosoftGraphPlannerPlanContainer>]`: plannerPlanContainer
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -412,7 +372,6 @@ To create the parameters described below, construct a hash table containing the 
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[SharedWith <IMicrosoftGraphPlannerUserIds>]`: plannerUserIds
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[IsArchived <Boolean?>]`: 
     - `[Owner <String>]`: 
     - `[SharedWithContainers <IMicrosoftGraphPlannerSharedWithContainer[]>]`: List of containers the plan is shared with.
       - `[ContainerId <String>]`: The identifier of the resource that contains the plan. Optional.
@@ -433,22 +392,9 @@ To create the parameters described below, construct a hash table containing the 
 
 `BUCKETS <IMicrosoftGraphPlannerBucket[]>`: Read-only. Nullable. Returns a collection of the specified buckets
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[ArchivalInfo <IMicrosoftGraphPlannerArchivalInfo>]`: plannerArchivalInfo
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Justification <String>]`: 
-    - `[StatusChangedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-      - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Application <IMicrosoftGraphIdentity>]`: identity
-        - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-        - `[Id <String>]`: Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn't included in the response.
-      - `[Device <IMicrosoftGraphIdentity>]`: identity
-      - `[User <IMicrosoftGraphIdentity>]`: identity
-    - `[StatusChangedDateTime <DateTime?>]`: 
   - `[CreationSource <IMicrosoftGraphPlannerBucketCreation>]`: plannerBucketCreation
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[CreationSourceKind <String>]`: plannerCreationSourceKind
-  - `[IsArchived <Boolean?>]`: 
   - `[Name <String>]`: Name of the bucket.
   - `[OrderHint <String>]`: Hint used to order items of this type in a list view. For details about the supported format, see Using order hints in Planner.
   - `[PlanId <String>]`: Plan ID to which the bucket belongs.
@@ -457,7 +403,6 @@ To create the parameters described below, construct a hash table containing the 
     - `[ActiveChecklistItemCount <Int32?>]`: Number of checklist items with value set to false, representing incomplete items.
     - `[AppliedCategories <IMicrosoftGraphPlannerAppliedCategories>]`: plannerAppliedCategories
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[ArchivalInfo <IMicrosoftGraphPlannerArchivalInfo>]`: plannerArchivalInfo
     - `[AssignedToTaskBoardFormat <IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat>]`: plannerAssignedToTaskBoardTaskFormat
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -474,6 +419,13 @@ To create the parameters described below, construct a hash table containing the 
       - `[OrderHint <String>]`: Hint used to order tasks in the bucket view of the task board. For details about the supported format, see Using order hints in Planner.
     - `[ChecklistItemCount <Int32?>]`: Number of checklist items that are present on the task.
     - `[CompletedBy <IMicrosoftGraphIdentitySet>]`: identitySet
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[Application <IMicrosoftGraphIdentity>]`: identity
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+        - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+        - `[Id <String>]`: Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn't included in the response.
+      - `[Device <IMicrosoftGraphIdentity>]`: identity
+      - `[User <IMicrosoftGraphIdentity>]`: identity
     - `[CompletedDateTime <DateTime?>]`: Read-only. Date and time at which the 'percentComplete' of the task is set to '100'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     - `[ConversationThreadId <String>]`: Thread ID of the conversation on the task. This is the ID of the conversation thread object created in the group.
     - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -493,25 +445,14 @@ To create the parameters described below, construct a hash table containing the 
     - `[Details <IMicrosoftGraphPlannerTaskDetails>]`: plannerTaskDetails
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
-      - `[ApprovalAttachment <IMicrosoftGraphPlannerBaseApprovalAttachment>]`: plannerBaseApprovalAttachment
-        - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[Status <String>]`: plannerApprovalStatus
       - `[Checklist <IMicrosoftGraphPlannerChecklistItems>]`: plannerChecklistItems
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[CompletionRequirements <IMicrosoftGraphPlannerTaskCompletionRequirementDetails>]`: plannerTaskCompletionRequirementDetails
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[ApprovalRequirement <IMicrosoftGraphPlannerApprovalRequirement>]`: plannerApprovalRequirement
-          - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[IsApprovalRequired <Boolean?>]`: 
         - `[ChecklistRequirement <IMicrosoftGraphPlannerChecklistRequirement>]`: plannerChecklistRequirement
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[RequiredChecklistItemIds <String[]>]`: A collection of required plannerChecklistItems identifiers to complete the plannerTask.
-        - `[FormsRequirement <IMicrosoftGraphPlannerFormsRequirement>]`: plannerFormsRequirement
-          - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[RequiredForms <String[]>]`: 
       - `[Description <String>]`: Description of the task.
-      - `[Forms <IMicrosoftGraphPlannerFormsDictionary>]`: plannerFormsDictionary
-        - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Notes <IMicrosoftGraphItemBody>]`: itemBody
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Content <String>]`: The content of the item.
@@ -521,9 +462,6 @@ To create the parameters described below, construct a hash table containing the 
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DueDateTime <DateTime?>]`: Date and time at which the task is due. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     - `[HasDescription <Boolean?>]`: Read-only. Value is true if the details object of the task has a nonempty description and false otherwise.
-    - `[IsArchived <Boolean?>]`: 
-    - `[IsOnMyDay <Boolean?>]`: 
-    - `[IsOnMyDayLastModifiedDate <DateTime?>]`: 
     - `[OrderHint <String>]`: Hint used to order items of this type in a list view. The format is defined as outlined here.
     - `[PercentComplete <Int32?>]`: Percentage of task completion. When set to 100, the task is considered completed.
     - `[PlanId <String>]`: Plan ID to which the task belongs.
@@ -560,25 +498,11 @@ To create the parameters described below, construct a hash table containing the 
 
 `PLANS <IMicrosoftGraphPlannerPlan[]>`: Read-only. Nullable. Returns a collection of the specified plans
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[ArchivalInfo <IMicrosoftGraphPlannerArchivalInfo>]`: plannerArchivalInfo
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Justification <String>]`: 
-    - `[StatusChangedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-      - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Application <IMicrosoftGraphIdentity>]`: identity
-        - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-        - `[Id <String>]`: Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn't included in the response.
-      - `[Device <IMicrosoftGraphIdentity>]`: identity
-      - `[User <IMicrosoftGraphIdentity>]`: identity
-    - `[StatusChangedDateTime <DateTime?>]`: 
   - `[Buckets <IMicrosoftGraphPlannerBucket[]>]`: Collection of buckets in the plan. Read-only. Nullable.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[ArchivalInfo <IMicrosoftGraphPlannerArchivalInfo>]`: plannerArchivalInfo
     - `[CreationSource <IMicrosoftGraphPlannerBucketCreation>]`: plannerBucketCreation
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[CreationSourceKind <String>]`: plannerCreationSourceKind
-    - `[IsArchived <Boolean?>]`: 
     - `[Name <String>]`: Name of the bucket.
     - `[OrderHint <String>]`: Hint used to order items of this type in a list view. For details about the supported format, see Using order hints in Planner.
     - `[PlanId <String>]`: Plan ID to which the bucket belongs.
@@ -587,7 +511,6 @@ To create the parameters described below, construct a hash table containing the 
       - `[ActiveChecklistItemCount <Int32?>]`: Number of checklist items with value set to false, representing incomplete items.
       - `[AppliedCategories <IMicrosoftGraphPlannerAppliedCategories>]`: plannerAppliedCategories
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[ArchivalInfo <IMicrosoftGraphPlannerArchivalInfo>]`: plannerArchivalInfo
       - `[AssignedToTaskBoardFormat <IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat>]`: plannerAssignedToTaskBoardTaskFormat
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -604,6 +527,13 @@ To create the parameters described below, construct a hash table containing the 
         - `[OrderHint <String>]`: Hint used to order tasks in the bucket view of the task board. For details about the supported format, see Using order hints in Planner.
       - `[ChecklistItemCount <Int32?>]`: Number of checklist items that are present on the task.
       - `[CompletedBy <IMicrosoftGraphIdentitySet>]`: identitySet
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+        - `[Application <IMicrosoftGraphIdentity>]`: identity
+          - `[(Any) <Object>]`: This indicates any property can be added to this object.
+          - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+          - `[Id <String>]`: Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn't included in the response.
+        - `[Device <IMicrosoftGraphIdentity>]`: identity
+        - `[User <IMicrosoftGraphIdentity>]`: identity
       - `[CompletedDateTime <DateTime?>]`: Read-only. Date and time at which the 'percentComplete' of the task is set to '100'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
       - `[ConversationThreadId <String>]`: Thread ID of the conversation on the task. This is the ID of the conversation thread object created in the group.
       - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -623,25 +553,14 @@ To create the parameters described below, construct a hash table containing the 
       - `[Details <IMicrosoftGraphPlannerTaskDetails>]`: plannerTaskDetails
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
-        - `[ApprovalAttachment <IMicrosoftGraphPlannerBaseApprovalAttachment>]`: plannerBaseApprovalAttachment
-          - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[Status <String>]`: plannerApprovalStatus
         - `[Checklist <IMicrosoftGraphPlannerChecklistItems>]`: plannerChecklistItems
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[CompletionRequirements <IMicrosoftGraphPlannerTaskCompletionRequirementDetails>]`: plannerTaskCompletionRequirementDetails
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[ApprovalRequirement <IMicrosoftGraphPlannerApprovalRequirement>]`: plannerApprovalRequirement
-            - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[IsApprovalRequired <Boolean?>]`: 
           - `[ChecklistRequirement <IMicrosoftGraphPlannerChecklistRequirement>]`: plannerChecklistRequirement
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[RequiredChecklistItemIds <String[]>]`: A collection of required plannerChecklistItems identifiers to complete the plannerTask.
-          - `[FormsRequirement <IMicrosoftGraphPlannerFormsRequirement>]`: plannerFormsRequirement
-            - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[RequiredForms <String[]>]`: 
         - `[Description <String>]`: Description of the task.
-        - `[Forms <IMicrosoftGraphPlannerFormsDictionary>]`: plannerFormsDictionary
-          - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Notes <IMicrosoftGraphItemBody>]`: itemBody
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Content <String>]`: The content of the item.
@@ -651,9 +570,6 @@ To create the parameters described below, construct a hash table containing the 
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[DueDateTime <DateTime?>]`: Date and time at which the task is due. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
       - `[HasDescription <Boolean?>]`: Read-only. Value is true if the details object of the task has a nonempty description and false otherwise.
-      - `[IsArchived <Boolean?>]`: 
-      - `[IsOnMyDay <Boolean?>]`: 
-      - `[IsOnMyDayLastModifiedDate <DateTime?>]`: 
       - `[OrderHint <String>]`: Hint used to order items of this type in a list view. The format is defined as outlined here.
       - `[PercentComplete <Int32?>]`: Percentage of task completion. When set to 100, the task is considered completed.
       - `[PlanId <String>]`: Plan ID to which the task belongs.
@@ -733,7 +649,6 @@ To create the parameters described below, construct a hash table containing the 
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[SharedWith <IMicrosoftGraphPlannerUserIds>]`: plannerUserIds
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[IsArchived <Boolean?>]`: 
   - `[Owner <String>]`: 
   - `[SharedWithContainers <IMicrosoftGraphPlannerSharedWithContainer[]>]`: List of containers the plan is shared with.
     - `[ContainerId <String>]`: The identifier of the resource that contains the plan. Optional.
@@ -752,25 +667,11 @@ To create the parameters described below, construct a hash table containing the 
     - `[UserId <String>]`: Identifier of the user.
   - `[Plans <IMicrosoftGraphPlannerPlan[]>]`: Retrieves the plans contained by the plannerRoster.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[ArchivalInfo <IMicrosoftGraphPlannerArchivalInfo>]`: plannerArchivalInfo
-      - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Justification <String>]`: 
-      - `[StatusChangedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-        - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[Application <IMicrosoftGraphIdentity>]`: identity
-          - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-          - `[Id <String>]`: Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn't included in the response.
-        - `[Device <IMicrosoftGraphIdentity>]`: identity
-        - `[User <IMicrosoftGraphIdentity>]`: identity
-      - `[StatusChangedDateTime <DateTime?>]`: 
     - `[Buckets <IMicrosoftGraphPlannerBucket[]>]`: Collection of buckets in the plan. Read-only. Nullable.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
-      - `[ArchivalInfo <IMicrosoftGraphPlannerArchivalInfo>]`: plannerArchivalInfo
       - `[CreationSource <IMicrosoftGraphPlannerBucketCreation>]`: plannerBucketCreation
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[CreationSourceKind <String>]`: plannerCreationSourceKind
-      - `[IsArchived <Boolean?>]`: 
       - `[Name <String>]`: Name of the bucket.
       - `[OrderHint <String>]`: Hint used to order items of this type in a list view. For details about the supported format, see Using order hints in Planner.
       - `[PlanId <String>]`: Plan ID to which the bucket belongs.
@@ -779,7 +680,6 @@ To create the parameters described below, construct a hash table containing the 
         - `[ActiveChecklistItemCount <Int32?>]`: Number of checklist items with value set to false, representing incomplete items.
         - `[AppliedCategories <IMicrosoftGraphPlannerAppliedCategories>]`: plannerAppliedCategories
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[ArchivalInfo <IMicrosoftGraphPlannerArchivalInfo>]`: plannerArchivalInfo
         - `[AssignedToTaskBoardFormat <IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat>]`: plannerAssignedToTaskBoardTaskFormat
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -796,6 +696,13 @@ To create the parameters described below, construct a hash table containing the 
           - `[OrderHint <String>]`: Hint used to order tasks in the bucket view of the task board. For details about the supported format, see Using order hints in Planner.
         - `[ChecklistItemCount <Int32?>]`: Number of checklist items that are present on the task.
         - `[CompletedBy <IMicrosoftGraphIdentitySet>]`: identitySet
+          - `[(Any) <Object>]`: This indicates any property can be added to this object.
+          - `[Application <IMicrosoftGraphIdentity>]`: identity
+            - `[(Any) <Object>]`: This indicates any property can be added to this object.
+            - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+            - `[Id <String>]`: Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn't included in the response.
+          - `[Device <IMicrosoftGraphIdentity>]`: identity
+          - `[User <IMicrosoftGraphIdentity>]`: identity
         - `[CompletedDateTime <DateTime?>]`: Read-only. Date and time at which the 'percentComplete' of the task is set to '100'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
         - `[ConversationThreadId <String>]`: Thread ID of the conversation on the task. This is the ID of the conversation thread object created in the group.
         - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -815,25 +722,14 @@ To create the parameters described below, construct a hash table containing the 
         - `[Details <IMicrosoftGraphPlannerTaskDetails>]`: plannerTaskDetails
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Id <String>]`: The unique identifier for an entity. Read-only.
-          - `[ApprovalAttachment <IMicrosoftGraphPlannerBaseApprovalAttachment>]`: plannerBaseApprovalAttachment
-            - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[Status <String>]`: plannerApprovalStatus
           - `[Checklist <IMicrosoftGraphPlannerChecklistItems>]`: plannerChecklistItems
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[CompletionRequirements <IMicrosoftGraphPlannerTaskCompletionRequirementDetails>]`: plannerTaskCompletionRequirementDetails
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[ApprovalRequirement <IMicrosoftGraphPlannerApprovalRequirement>]`: plannerApprovalRequirement
-              - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[IsApprovalRequired <Boolean?>]`: 
             - `[ChecklistRequirement <IMicrosoftGraphPlannerChecklistRequirement>]`: plannerChecklistRequirement
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[RequiredChecklistItemIds <String[]>]`: A collection of required plannerChecklistItems identifiers to complete the plannerTask.
-            - `[FormsRequirement <IMicrosoftGraphPlannerFormsRequirement>]`: plannerFormsRequirement
-              - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[RequiredForms <String[]>]`: 
           - `[Description <String>]`: Description of the task.
-          - `[Forms <IMicrosoftGraphPlannerFormsDictionary>]`: plannerFormsDictionary
-            - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Notes <IMicrosoftGraphItemBody>]`: itemBody
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Content <String>]`: The content of the item.
@@ -843,9 +739,6 @@ To create the parameters described below, construct a hash table containing the 
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[DueDateTime <DateTime?>]`: Date and time at which the task is due. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
         - `[HasDescription <Boolean?>]`: Read-only. Value is true if the details object of the task has a nonempty description and false otherwise.
-        - `[IsArchived <Boolean?>]`: 
-        - `[IsOnMyDay <Boolean?>]`: 
-        - `[IsOnMyDayLastModifiedDate <DateTime?>]`: 
         - `[OrderHint <String>]`: Hint used to order items of this type in a list view. The format is defined as outlined here.
         - `[PercentComplete <Int32?>]`: Percentage of task completion. When set to 100, the task is considered completed.
         - `[PlanId <String>]`: Plan ID to which the task belongs.
@@ -925,7 +818,6 @@ To create the parameters described below, construct a hash table containing the 
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[SharedWith <IMicrosoftGraphPlannerUserIds>]`: plannerUserIds
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[IsArchived <Boolean?>]`: 
     - `[Owner <String>]`: 
     - `[SharedWithContainers <IMicrosoftGraphPlannerSharedWithContainer[]>]`: List of containers the plan is shared with.
       - `[ContainerId <String>]`: The identifier of the resource that contains the plan. Optional.
@@ -940,18 +832,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[ActiveChecklistItemCount <Int32?>]`: Number of checklist items with value set to false, representing incomplete items.
   - `[AppliedCategories <IMicrosoftGraphPlannerAppliedCategories>]`: plannerAppliedCategories
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[ArchivalInfo <IMicrosoftGraphPlannerArchivalInfo>]`: plannerArchivalInfo
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Justification <String>]`: 
-    - `[StatusChangedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-      - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Application <IMicrosoftGraphIdentity>]`: identity
-        - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-        - `[Id <String>]`: Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn't included in the response.
-      - `[Device <IMicrosoftGraphIdentity>]`: identity
-      - `[User <IMicrosoftGraphIdentity>]`: identity
-    - `[StatusChangedDateTime <DateTime?>]`: 
   - `[AssignedToTaskBoardFormat <IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat>]`: plannerAssignedToTaskBoardTaskFormat
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -968,6 +848,13 @@ To create the parameters described below, construct a hash table containing the 
     - `[OrderHint <String>]`: Hint used to order tasks in the bucket view of the task board. For details about the supported format, see Using order hints in Planner.
   - `[ChecklistItemCount <Int32?>]`: Number of checklist items that are present on the task.
   - `[CompletedBy <IMicrosoftGraphIdentitySet>]`: identitySet
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[Application <IMicrosoftGraphIdentity>]`: identity
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[Id <String>]`: Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn't included in the response.
+    - `[Device <IMicrosoftGraphIdentity>]`: identity
+    - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[CompletedDateTime <DateTime?>]`: Read-only. Date and time at which the 'percentComplete' of the task is set to '100'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[ConversationThreadId <String>]`: Thread ID of the conversation on the task. This is the ID of the conversation thread object created in the group.
   - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -987,25 +874,14 @@ To create the parameters described below, construct a hash table containing the 
   - `[Details <IMicrosoftGraphPlannerTaskDetails>]`: plannerTaskDetails
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[ApprovalAttachment <IMicrosoftGraphPlannerBaseApprovalAttachment>]`: plannerBaseApprovalAttachment
-      - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Status <String>]`: plannerApprovalStatus
     - `[Checklist <IMicrosoftGraphPlannerChecklistItems>]`: plannerChecklistItems
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[CompletionRequirements <IMicrosoftGraphPlannerTaskCompletionRequirementDetails>]`: plannerTaskCompletionRequirementDetails
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[ApprovalRequirement <IMicrosoftGraphPlannerApprovalRequirement>]`: plannerApprovalRequirement
-        - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[IsApprovalRequired <Boolean?>]`: 
       - `[ChecklistRequirement <IMicrosoftGraphPlannerChecklistRequirement>]`: plannerChecklistRequirement
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[RequiredChecklistItemIds <String[]>]`: A collection of required plannerChecklistItems identifiers to complete the plannerTask.
-      - `[FormsRequirement <IMicrosoftGraphPlannerFormsRequirement>]`: plannerFormsRequirement
-        - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[RequiredForms <String[]>]`: 
     - `[Description <String>]`: Description of the task.
-    - `[Forms <IMicrosoftGraphPlannerFormsDictionary>]`: plannerFormsDictionary
-      - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Notes <IMicrosoftGraphItemBody>]`: itemBody
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Content <String>]`: The content of the item.
@@ -1015,9 +891,6 @@ To create the parameters described below, construct a hash table containing the 
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[DueDateTime <DateTime?>]`: Date and time at which the task is due. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[HasDescription <Boolean?>]`: Read-only. Value is true if the details object of the task has a nonempty description and false otherwise.
-  - `[IsArchived <Boolean?>]`: 
-  - `[IsOnMyDay <Boolean?>]`: 
-  - `[IsOnMyDayLastModifiedDate <DateTime?>]`: 
   - `[OrderHint <String>]`: Hint used to order items of this type in a list view. The format is defined as outlined here.
   - `[PercentComplete <Int32?>]`: Percentage of task completion. When set to 100, the task is considered completed.
   - `[PlanId <String>]`: Plan ID to which the task belongs.

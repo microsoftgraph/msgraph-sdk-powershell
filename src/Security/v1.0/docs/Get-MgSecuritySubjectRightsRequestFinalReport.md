@@ -14,14 +14,14 @@ Invoke function getFinalReport
 
 ### Get (Default)
 ```
-Get-MgSecuritySubjectRightsRequestFinalReport -SubjectRightsRequestId <String> -OutFile <String>
- [-Headers <IDictionary>] [-PassThru] [<CommonParameters>]
+Get-MgSecuritySubjectRightsRequestFinalReport -SubjectRightsRequestId <String> -OutFile <String> [-PassThru]
+ [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgSecuritySubjectRightsRequestFinalReport -InputObject <ISecurityIdentity> -OutFile <String>
- [-Headers <IDictionary>] [-PassThru] [<CommonParameters>]
+Get-MgSecuritySubjectRightsRequestFinalReport -InputObject <ISecurityIdentity> -OutFile <String> [-PassThru]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -44,21 +44,6 @@ Invoke function getFinalReport
 
 
 ## PARAMETERS
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
 
 ### -InputObject
 Identity Parameter
@@ -127,8 +112,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Groups
-Module Guid: b8d77406-106e-4b86-9fb3-a19bc1b1c1bf
+Module Guid: 52b8634d-aa56-4fcf-a8f1-132fd2096425
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.groups
 Help Version: 1.0.0.0
 Locale: en-US
@@ -512,15 +512,6 @@ Invoke function getCompatibleHubContentTypes
 ### [Get-MgGroupSiteDelta](Get-MgGroupSiteDelta.md)
 Invoke function delta
 
-### [Get-MgGroupSiteGetByPathApplicableContentTypeForList](Get-MgGroupSiteGetByPathApplicableContentTypeForList.md)
-Invoke function getApplicableContentTypesForList
-
-### [Get-MgGroupSiteGetGraphBPrePathActivityByInterval](Get-MgGroupSiteGetGraphBPrePathActivityByInterval.md)
-Invoke function getActivitiesByInterval
-
-### [Get-MgGroupSiteGetGraphBPrePathByPath](Get-MgGroupSiteGetGraphBPrePathByPath.md)
-Invoke function getByPath
-
 ### [Get-MgGroupSiteListContentTypeCompatibleHubContentType](Get-MgGroupSiteListContentTypeCompatibleHubContentType.md)
 Invoke function getCompatibleHubContentTypes
 
@@ -528,7 +519,8 @@ Invoke function getCompatibleHubContentTypes
 Invoke function getActivitiesByInterval
 
 ### [Get-MgGroupThread](Get-MgGroupThread.md)
-Get a thread object.
+Get a specific thread that belongs to a group.
+You can specify both the parent conversation and the thread, or, \nyou can specify the thread without referencing the parent conversation.
 
 ### [Get-MgGroupThreadCount](Get-MgGroupThreadCount.md)
 Get the number of the resource
@@ -769,27 +761,33 @@ Renews a group's expiration.
 When a group is renewed, the group expiration is extended by the number of days defined in the policy.
 
 ### [Invoke-MgReplyGroupConversationThread](Invoke-MgReplyGroupConversationThread.md)
-Reply to a post and add a new post to the specified thread in a group conversation.
-You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.
+Add an attachment when creating a group post.
+This operation limits the size of the attachment you can add to under 3 MB.
+An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
 
 ### [Invoke-MgReplyGroupConversationThreadPost](Invoke-MgReplyGroupConversationThreadPost.md)
-Invoke action reply
-
-### [Invoke-MgReplyGroupConversationThreadPostInReplyTo](Invoke-MgReplyGroupConversationThreadPostInReplyTo.md)
-Invoke action reply
-
-### [Invoke-MgReplyGroupThread](Invoke-MgReplyGroupThread.md)
 Reply to a post and add a new post to the specified thread in a group conversation.
 You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.
 
+### [Invoke-MgReplyGroupConversationThreadPostInReplyTo](Invoke-MgReplyGroupConversationThreadPostInReplyTo.md)
+Reply to a post and add a new post to the specified thread in a group conversation.
+You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.
+
+### [Invoke-MgReplyGroupThread](Invoke-MgReplyGroupThread.md)
+Add an attachment when creating a group post.
+This operation limits the size of the attachment you can add to under 3 MB.
+An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
+
 ### [Invoke-MgReplyGroupThreadPost](Invoke-MgReplyGroupThreadPost.md)
-Invoke action reply
+Reply to a post and add a new post to the specified thread in a group conversation.
+You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.
 
 ### [Invoke-MgReplyGroupThreadPostInReplyTo](Invoke-MgReplyGroupThreadPostInReplyTo.md)
-Invoke action reply
+Reply to a post and add a new post to the specified thread in a group conversation.
+You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.
 
 ### [Invoke-MgRetryGroupServiceProvisioning](Invoke-MgRetryGroupServiceProvisioning.md)
-Retry the group service provisioning.
+Invoke action retryServiceProvisioning
 
 ### [Invoke-MgSnoozeGroupCalendarEventReminder](Invoke-MgSnoozeGroupCalendarEventReminder.md)
 Postpone a reminder for an event in a user calendar until a new time.
@@ -874,22 +872,13 @@ You can use createLink action to share a DriveItem via a sharing link.
 The createLink action will create a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, the existing sharing link will be returned.
 DriveItem resources inherit sharing permissions from their ancestors.
 
-### [New-MgGroupDriveItemListItemLink](New-MgGroupDriveItemListItemLink.md)
-Invoke action createLink
-
 ### [New-MgGroupDriveItemUploadSession](New-MgGroupDriveItemUploadSession.md)
 Invoke action createUploadSession
-
-### [New-MgGroupDriveListItemLink](New-MgGroupDriveListItemLink.md)
-Invoke action createLink
 
 ### [New-MgGroupDriveRootLink](New-MgGroupDriveRootLink.md)
 You can use createLink action to share a DriveItem via a sharing link.
 The createLink action will create a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, the existing sharing link will be returned.
 DriveItem resources inherit sharing permissions from their ancestors.
-
-### [New-MgGroupDriveRootListItemLink](New-MgGroupDriveRootListItemLink.md)
-Invoke action createLink
 
 ### [New-MgGroupDriveRootUploadSession](New-MgGroupDriveRootUploadSession.md)
 Invoke action createUploadSession
@@ -930,9 +919,6 @@ The template named Group.Unified can be used to configure tenant-wide Microsoft 
 
 ### [New-MgGroupSettingTemplateGroupSettingTemplate](New-MgGroupSettingTemplateGroupSettingTemplate.md)
 Add new entity to groupSettingTemplates
-
-### [New-MgGroupSiteListItemLink](New-MgGroupSiteListItemLink.md)
-Invoke action createLink
 
 ### [New-MgGroupThread](New-MgGroupThread.md)
 Start a new group conversation by first creating a thread.
@@ -1037,6 +1023,9 @@ Once owners are assigned to a group, the last owner (a user object) of the group
 
 ### [Remove-MgGroupPermissionGrant](Remove-MgGroupPermissionGrant.md)
 Delete navigation property permissionGrants for groups
+
+### [Remove-MgGroupPhoto](Remove-MgGroupPhoto.md)
+Delete navigation property photo for groups
 
 ### [Remove-MgGroupRejectedSenderByRef](Remove-MgGroupRejectedSenderByRef.md)
 Remove rejectedSender
@@ -1206,7 +1195,8 @@ Unpublish a [contentType][] from a content type hub site.
 Unpublish a [contentType][] from a content type hub site.
 
 ### [Update-MgGroup](Update-MgGroup.md)
-Update the properties of a group object.
+Add a member to a security or Microsoft 365 group through the members navigation property.
+The following table shows the types of members that can be added to either security groups or Microsoft 365 groups.
 
 ### [Update-MgGroupConversationThread](Update-MgGroupConversationThread.md)
 Update the navigation property threads in groups

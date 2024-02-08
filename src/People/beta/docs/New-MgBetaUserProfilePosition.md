@@ -20,20 +20,19 @@ New-MgBetaUserProfilePosition -UserId <String> [-AdditionalProperties <Hashtable
  [-Detail <IMicrosoftGraphPositionDetail>] [-Id <String>] [-Inference <IMicrosoftGraphInferenceData>]
  [-IsCurrent] [-IsSearchable] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
  [-LastModifiedDateTime <DateTime>] [-Manager <IMicrosoftGraphRelatedPerson>]
- [-Source <IMicrosoftGraphPersonDataSources>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Source <IMicrosoftGraphPersonDataSources>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgBetaUserProfilePosition -UserId <String> -BodyParameter <IMicrosoftGraphWorkPosition>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaUserProfilePosition -UserId <String> -BodyParameter <IMicrosoftGraphWorkPosition> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaUserProfilePosition -InputObject <IPeopleIdentity> -BodyParameter <IMicrosoftGraphWorkPosition>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -44,8 +43,7 @@ New-MgBetaUserProfilePosition -InputObject <IPeopleIdentity> [-AdditionalPropert
  [-Detail <IMicrosoftGraphPositionDetail>] [-Id <String>] [-Inference <IMicrosoftGraphInferenceData>]
  [-IsCurrent] [-IsSearchable] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
  [-LastModifiedDateTime <DateTime>] [-Manager <IMicrosoftGraphRelatedPerson>]
- [-Source <IMicrosoftGraphPersonDataSources>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Source <IMicrosoftGraphPersonDataSources>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -205,21 +203,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -418,8 +401,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWorkPosition
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPeopleIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

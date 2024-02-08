@@ -16,31 +16,30 @@ Update the navigation property authenticationMethodConfigurations in policies
 ```
 Update-MgBetaPolicyAuthenticationMethodPolicyAuthenticationMethodConfiguration
  -AuthenticationMethodConfigurationId <String> [-AdditionalProperties <Hashtable>]
- [-ExcludeTargets <IMicrosoftGraphExcludeTarget[]>] [-Id <String>] [-State <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ExcludeTargets <IMicrosoftGraphExcludeTarget[]>] [-Id <String>] [-State <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaPolicyAuthenticationMethodPolicyAuthenticationMethodConfiguration
  -AuthenticationMethodConfigurationId <String>
- -BodyParameter <IMicrosoftGraphAuthenticationMethodConfiguration> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphAuthenticationMethodConfiguration> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaPolicyAuthenticationMethodPolicyAuthenticationMethodConfiguration
  -InputObject <IIdentitySignInsIdentity> -BodyParameter <IMicrosoftGraphAuthenticationMethodConfiguration>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgBetaPolicyAuthenticationMethodPolicyAuthenticationMethodConfiguration
  -InputObject <IIdentitySignInsIdentity> [-AdditionalProperties <Hashtable>]
- [-ExcludeTargets <IMicrosoftGraphExcludeTarget[]>] [-Id <String>] [-State <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ExcludeTargets <IMicrosoftGraphExcludeTarget[]>] [-Id <String>] [-State <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -203,21 +202,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -304,8 +288,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAuthenticationMethodConfiguration
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

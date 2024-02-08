@@ -17,7 +17,7 @@ To update other properties of an authenticationStrengthPolicy object, use the Up
 ```
 Update-MgBetaIdentityConditionalAccessAuthenticationStrengthPolicyAllowedCombination
  -AuthenticationStrengthPolicyId <String> [-AdditionalProperties <Hashtable>]
- [-AllowedCombinations <String[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AllowedCombinations <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update1
@@ -25,7 +25,7 @@ Update-MgBetaIdentityConditionalAccessAuthenticationStrengthPolicyAllowedCombina
 Update-MgBetaIdentityConditionalAccessAuthenticationStrengthPolicyAllowedCombination
  -AuthenticationStrengthPolicyId <String>
  -BodyParameter <IPaths1Pedu11IdentityConditionalaccessAuthenticationstrengthsPoliciesAuthenticationstrengthpolicyIdMicrosoftGraphUpdateallowedcombinationsPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
@@ -33,14 +33,14 @@ Update-MgBetaIdentityConditionalAccessAuthenticationStrengthPolicyAllowedCombina
 Update-MgBetaIdentityConditionalAccessAuthenticationStrengthPolicyAllowedCombination
  -InputObject <IIdentitySignInsIdentity>
  -BodyParameter <IPaths1Pedu11IdentityConditionalaccessAuthenticationstrengthsPoliciesAuthenticationstrengthpolicyIdMicrosoftGraphUpdateallowedcombinationsPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
 ```
 Update-MgBetaIdentityConditionalAccessAuthenticationStrengthPolicyAllowedCombination
  -InputObject <IIdentitySignInsIdentity> [-AdditionalProperties <Hashtable>] [-AllowedCombinations <String[]>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -126,21 +126,6 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -196,8 +181,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPaths1Pedu11IdentityConditionalaccessAuthenticationstrengthsPoliciesAuthenticationstrengthpolicyIdMicrosoftGraphUpdateallowedcombinationsPostRequestbodyContentApplicationJsonSchema
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

@@ -19,15 +19,14 @@ New-MgBetaEntitlementManagementAccessPackageResourceRequest
  [-AccessPackageResource <IMicrosoftGraphAccessPackageResource>] [-AdditionalProperties <Hashtable>]
  [-CatalogId <String>] [-ExecuteImmediately] [-ExpirationDateTime <DateTime>] [-Id <String>]
  [-IsValidationOnly] [-Justification <String>] [-Requestor <IMicrosoftGraphAccessPackageSubject>]
- [-RequestState <String>] [-RequestStatus <String>] [-RequestType <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-RequestState <String>] [-RequestStatus <String>] [-RequestType <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaEntitlementManagementAccessPackageResourceRequest
- -BodyParameter <IMicrosoftGraphAccessPackageResourceRequest> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphAccessPackageResourceRequest> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -151,21 +150,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -316,8 +300,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessPackageResourceRequest
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessPackageResourceRequest
@@ -379,10 +361,10 @@ To create the parameters described below, construct a hash table containing the 
     - `[IsEditable <Boolean?>]`: Specifies whether or not an existing attribute value can be edited by the requester.
     - `[IsPersistedOnAssignmentRemoval <Boolean?>]`: Specifies whether the attribute will remain in the end system after an assignment ends.
   - `[Description <String>]`: A description for the resource.
-  - `[DisplayName <String>]`: The display name of the resource, such as the application name, group name, or site name.
+  - `[DisplayName <String>]`: The display name of the resource, such as the application name, group name or site name.
   - `[IsPendingOnboarding <Boolean?>]`: True if the resource is not yet available for assignment. Read-only.
-  - `[OriginId <String>]`: The unique identifier of the resource in the origin system. In the case of a Microsoft Entra group, originId is the identifier of the group.
-  - `[OriginSystem <String>]`: The type of the resource in the origin system, such as SharePointOnline, AadApplication, or AadGroup.
+  - `[OriginId <String>]`: The unique identifier of the resource in the origin system. In the case of a Microsoft Entra group, this is the identifier of the group.
+  - `[OriginSystem <String>]`: The type of the resource in the origin system, such as SharePointOnline, AadApplication or AadGroup.
   - `[ResourceType <String>]`: The type of the resource, such as Application if it is a Microsoft Entra connected application, or SharePoint Online Site for a SharePoint Online site.
   - `[Url <String>]`: A unique resource locator for the resource, such as the URL for signing a user into an application.
 
@@ -437,10 +419,10 @@ To create the parameters described below, construct a hash table containing the 
       - `[IsEditable <Boolean?>]`: Specifies whether or not an existing attribute value can be edited by the requester.
       - `[IsPersistedOnAssignmentRemoval <Boolean?>]`: Specifies whether the attribute will remain in the end system after an assignment ends.
     - `[Description <String>]`: A description for the resource.
-    - `[DisplayName <String>]`: The display name of the resource, such as the application name, group name, or site name.
+    - `[DisplayName <String>]`: The display name of the resource, such as the application name, group name or site name.
     - `[IsPendingOnboarding <Boolean?>]`: True if the resource is not yet available for assignment. Read-only.
-    - `[OriginId <String>]`: The unique identifier of the resource in the origin system. In the case of a Microsoft Entra group, originId is the identifier of the group.
-    - `[OriginSystem <String>]`: The type of the resource in the origin system, such as SharePointOnline, AadApplication, or AadGroup.
+    - `[OriginId <String>]`: The unique identifier of the resource in the origin system. In the case of a Microsoft Entra group, this is the identifier of the group.
+    - `[OriginSystem <String>]`: The type of the resource in the origin system, such as SharePointOnline, AadApplication or AadGroup.
     - `[ResourceType <String>]`: The type of the resource, such as Application if it is a Microsoft Entra connected application, or SharePoint Online Site for a SharePoint Online site.
     - `[Url <String>]`: A unique resource locator for the resource, such as the URL for signing a user into an application.
   - `[CatalogId <String>]`: The unique ID of the access package catalog.

@@ -14,26 +14,25 @@ Get the number of the resource
 
 ### Get1 (Default)
 ```
-Get-MgUserOnenoteSectionGroupCount -UserId <String> [-Filter <String>] [-Search <String>]
- [-Headers <IDictionary>] [<CommonParameters>]
+Get-MgUserOnenoteSectionGroupCount -UserId <String> [-Filter <String>] [-Search <String>] [<CommonParameters>]
 ```
 
 ### Get
 ```
 Get-MgUserOnenoteSectionGroupCount -SectionGroupId <String> -UserId <String> [-Filter <String>]
- [-Search <String>] [-Headers <IDictionary>] [<CommonParameters>]
+ [-Search <String>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
 Get-MgUserOnenoteSectionGroupCount -InputObject <INotesIdentity> [-Filter <String>] [-Search <String>]
- [-Headers <IDictionary>] [<CommonParameters>]
+ [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
 Get-MgUserOnenoteSectionGroupCount -InputObject <INotesIdentity> [-Filter <String>] [-Search <String>]
- [-Headers <IDictionary>] [<CommonParameters>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -69,21 +68,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -155,8 +139,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.INotesIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Int32
@@ -177,8 +159,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[OnenotePageId <String>]`: The unique identifier of onenotePage
   - `[OnenoteResourceId <String>]`: The unique identifier of onenoteResource
   - `[OnenoteSectionId <String>]`: The unique identifier of onenoteSection
-  - `[Path <String>]`: Usage: path='{path}'
-  - `[Path1 <String>]`: Usage: path='{path1}'
   - `[SectionGroupId <String>]`: The unique identifier of sectionGroup
   - `[SiteId <String>]`: The unique identifier of site
   - `[UserId <String>]`: The unique identifier of user

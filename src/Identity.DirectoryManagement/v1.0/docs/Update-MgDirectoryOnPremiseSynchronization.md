@@ -17,22 +17,20 @@ Update the properties of an onPremisesDirectorySynchronization object.
 Update-MgDirectoryOnPremiseSynchronization -OnPremisesDirectorySynchronizationId <String>
  [-AdditionalProperties <Hashtable>]
  [-Configuration <IMicrosoftGraphOnPremisesDirectorySynchronizationConfiguration>]
- [-Features <IMicrosoftGraphOnPremisesDirectorySynchronizationFeature>] [-Id <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Features <IMicrosoftGraphOnPremisesDirectorySynchronizationFeature>] [-Id <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgDirectoryOnPremiseSynchronization -OnPremisesDirectorySynchronizationId <String>
- -BodyParameter <IMicrosoftGraphOnPremisesDirectorySynchronization> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphOnPremisesDirectorySynchronization> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgDirectoryOnPremiseSynchronization -InputObject <IIdentityDirectoryManagementIdentity>
- -BodyParameter <IMicrosoftGraphOnPremisesDirectorySynchronization> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphOnPremisesDirectorySynchronization> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -40,8 +38,8 @@ Update-MgDirectoryOnPremiseSynchronization -InputObject <IIdentityDirectoryManag
 Update-MgDirectoryOnPremiseSynchronization -InputObject <IIdentityDirectoryManagementIdentity>
  [-AdditionalProperties <Hashtable>]
  [-Configuration <IMicrosoftGraphOnPremisesDirectorySynchronizationConfiguration>]
- [-Features <IMicrosoftGraphOnPremisesDirectorySynchronizationFeature>] [-Id <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Features <IMicrosoftGraphOnPremisesDirectorySynchronizationFeature>] [-Id <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -125,21 +123,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -229,8 +212,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnPremisesDirectorySynchronization
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

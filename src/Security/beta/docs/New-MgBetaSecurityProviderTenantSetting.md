@@ -16,13 +16,13 @@ Create new navigation property to providerTenantSettings for security
 ```
 New-MgBetaSecurityProviderTenantSetting [-AdditionalProperties <Hashtable>] [-AzureTenantId <String>]
  [-Enabled] [-Id <String>] [-LastModifiedDateTime <DateTime>] [-Provider <String>] [-Vendor <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgBetaSecurityProviderTenantSetting -BodyParameter <IMicrosoftGraphProviderTenantSetting>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaSecurityProviderTenantSetting -BodyParameter <IMicrosoftGraphProviderTenantSetting> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -104,21 +104,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -220,8 +205,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphProviderTenantSetting
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

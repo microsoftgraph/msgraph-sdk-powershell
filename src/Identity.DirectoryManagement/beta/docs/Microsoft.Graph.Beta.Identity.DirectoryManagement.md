@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
-Module Guid: 1593bb77-1e99-4f94-8542-4ba7f1a2a333
+Module Guid: 86c2ff3a-a15d-46de-a225-329a7adf8d23
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.identity.directorymanagement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -214,9 +214,6 @@ This API returns up to 1,000 deleted objects owned by the user, sorted by ID, an
 
 ### [Get-MgBetaAdminPeople](Get-MgBetaAdminPeople.md)
 Retrieve the properties and relationships of a peopleAdminSettings object.
-
-### [Get-MgBetaAdminPeopleItemInsight](Get-MgBetaAdminPeopleItemInsight.md)
-Get itemInsights from admin
 
 ### [Get-MgBetaAdminPeopleProfileCardProperty](Get-MgBetaAdminPeopleProfileCardProperty.md)
 Retrieve the properties of a profileCardProperty entity.
@@ -920,12 +917,6 @@ Get the number of the resource
 ### [Get-MgBetaDirectorySubscription](Get-MgBetaDirectorySubscription.md)
 Get a specific commercial subscription that an organization has acquired.
 
-### [Get-MgBetaDirectorySubscriptionByCommerceSubscriptionId](Get-MgBetaDirectorySubscriptionByCommerceSubscriptionId.md)
-Get a specific commercial subscription that an organization has acquired.
-
-### [Get-MgBetaDirectorySubscriptionByOcpSubscriptionId](Get-MgBetaDirectorySubscriptionByOcpSubscriptionId.md)
-Get a specific commercial subscription that an organization has acquired.
-
 ### [Get-MgBetaDirectorySubscriptionCount](Get-MgBetaDirectorySubscriptionCount.md)
 Get the number of the resource
 
@@ -1384,9 +1375,6 @@ Remove a Microsoft Entra role assignment with administrative unit scope.
 ### [Remove-MgBetaAdminPeople](Remove-MgBetaAdminPeople.md)
 Delete navigation property people for admin
 
-### [Remove-MgBetaAdminPeopleItemInsight](Remove-MgBetaAdminPeopleItemInsight.md)
-Delete navigation property itemInsights for admin
-
 ### [Remove-MgBetaAdminPeopleProfileCardProperty](Remove-MgBetaAdminPeopleProfileCardProperty.md)
 Delete the profileCardProperty object specified by its directoryPropertyName from the organization's profile card, and remove any localized customizations for that property.
 
@@ -1517,12 +1505,6 @@ Delete entity from directorySettingTemplates
 Delete navigation property sharedEmailDomains for directory
 
 ### [Remove-MgBetaDirectorySubscription](Remove-MgBetaDirectorySubscription.md)
-Delete navigation property subscriptions for directory
-
-### [Remove-MgBetaDirectorySubscriptionByCommerceSubscriptionId](Remove-MgBetaDirectorySubscriptionByCommerceSubscriptionId.md)
-Delete navigation property subscriptions for directory
-
-### [Remove-MgBetaDirectorySubscriptionByOcpSubscriptionId](Remove-MgBetaDirectorySubscriptionByOcpSubscriptionId.md)
 Delete navigation property subscriptions for directory
 
 ### [Remove-MgBetaDomain](Remove-MgBetaDomain.md)
@@ -1775,14 +1757,11 @@ Update the navigation property scopedRoleMembers in administrativeUnits
 ### [Update-MgBetaAdminPeople](Update-MgBetaAdminPeople.md)
 Update the navigation property people in admin
 
-### [Update-MgBetaAdminPeopleItemInsight](Update-MgBetaAdminPeopleItemInsight.md)
-Update the navigation property itemInsights in admin
-
 ### [Update-MgBetaAdminPeopleProfileCardProperty](Update-MgBetaAdminPeopleProfileCardProperty.md)
 Update the properties of a profileCardProperty object, identified by its directoryPropertyName property.
 
 ### [Update-MgBetaAdminPeoplePronoun](Update-MgBetaAdminPeoplePronoun.md)
-Update the properties of a pronounsSettings object in an organization.
+Update the properties of a pronounsSettings in an organization.
 For more information on settings to manage pronouns support, see Manage pronouns settings for an organization using the Microsoft Graph API.
 
 ### [Update-MgBetaContact](Update-MgBetaContact.md)
@@ -1891,12 +1870,6 @@ Update entity in directorySettingTemplates
 Update the navigation property sharedEmailDomains in directory
 
 ### [Update-MgBetaDirectorySubscription](Update-MgBetaDirectorySubscription.md)
-Update the navigation property subscriptions in directory
-
-### [Update-MgBetaDirectorySubscriptionByCommerceSubscriptionId](Update-MgBetaDirectorySubscriptionByCommerceSubscriptionId.md)
-Update the navigation property subscriptions in directory
-
-### [Update-MgBetaDirectorySubscriptionByOcpSubscriptionId](Update-MgBetaDirectorySubscriptionByOcpSubscriptionId.md)
 Update the navigation property subscriptions in directory
 
 ### [Update-MgBetaDomain](Update-MgBetaDomain.md)

@@ -19,14 +19,6 @@ Describe 'Remove-MgBetaAdministrativeUnitMemberByRef' {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
-    It 'Delete1' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
-    }
-
-    It 'DeleteViaIdentity1' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
-    }
-
     It 'DeleteViaIdentity' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }

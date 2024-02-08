@@ -17,15 +17,14 @@ Create new navigation property to tenantsDetailedInformation for tenantRelations
 New-MgBetaTenantRelationshipManagedTenantDetailedInformation [-AdditionalProperties <Hashtable>]
  [-City <String>] [-CountryCode <String>] [-CountryName <String>] [-DefaultDomainName <String>]
  [-DisplayName <String>] [-Id <String>] [-IndustryName <String>] [-Region <String>] [-SegmentName <String>]
- [-TenantId <String>] [-VerticalName <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-TenantId <String>] [-VerticalName <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaTenantRelationshipManagedTenantDetailedInformation
- -BodyParameter <IMicrosoftGraphManagedTenantsTenantDetailedInformation> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphManagedTenantsTenantDetailedInformation> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -160,21 +159,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -314,8 +298,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsTenantDetailedInformation
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

@@ -19,21 +19,21 @@ Update-MgBetaTenantRelationshipManagedTenantAggregatedPolicyCompliance -Aggregat
  [-CompliancePolicyPlatform <String>] [-CompliancePolicyType <String>] [-Id <String>]
  [-LastRefreshedDateTime <DateTime>] [-NumberOfCompliantDevices <Int64>] [-NumberOfErrorDevices <Int64>]
  [-NumberOfNonCompliantDevices <Int64>] [-PolicyModifiedDateTime <DateTime>] [-TenantDisplayName <String>]
- [-TenantId <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-TenantId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaTenantRelationshipManagedTenantAggregatedPolicyCompliance -AggregatedPolicyComplianceId <String>
- -BodyParameter <IMicrosoftGraphManagedTenantsAggregatedPolicyCompliance> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphManagedTenantsAggregatedPolicyCompliance> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaTenantRelationshipManagedTenantAggregatedPolicyCompliance -InputObject <IManagedTenantsIdentity>
- -BodyParameter <IMicrosoftGraphManagedTenantsAggregatedPolicyCompliance> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphManagedTenantsAggregatedPolicyCompliance> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -43,7 +43,7 @@ Update-MgBetaTenantRelationshipManagedTenantAggregatedPolicyCompliance -InputObj
  [-CompliancePolicyPlatform <String>] [-CompliancePolicyType <String>] [-Id <String>]
  [-LastRefreshedDateTime <DateTime>] [-NumberOfCompliantDevices <Int64>] [-NumberOfErrorDevices <Int64>]
  [-NumberOfNonCompliantDevices <Int64>] [-PolicyModifiedDateTime <DateTime>] [-TenantDisplayName <String>]
- [-TenantId <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-TenantId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -179,21 +179,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -387,8 +372,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsAggregatedPolicyCompliance
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

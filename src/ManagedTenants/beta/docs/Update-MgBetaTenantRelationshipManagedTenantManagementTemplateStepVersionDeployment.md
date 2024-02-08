@@ -20,23 +20,23 @@ Update-MgBetaTenantRelationshipManagedTenantManagementTemplateStepVersionDeploym
  [-Error <IMicrosoftGraphManagedTenantsGraphApiErrorDetails>] [-Id <String>] [-LastActionByUserId <String>]
  [-LastActionDateTime <DateTime>] [-Status <String>]
  [-TemplateStepVersion <IMicrosoftGraphManagedTenantsManagementTemplateStepVersion>] [-TenantId <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaTenantRelationshipManagedTenantManagementTemplateStepVersionDeployment
  -ManagementTemplateStepDeploymentId <String> -ManagementTemplateStepVersionId <String>
- -BodyParameter <IMicrosoftGraphManagedTenantsManagementTemplateStepDeployment> [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphManagedTenantsManagementTemplateStepDeployment> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaTenantRelationshipManagedTenantManagementTemplateStepVersionDeployment
  -InputObject <IManagedTenantsIdentity>
- -BodyParameter <IMicrosoftGraphManagedTenantsManagementTemplateStepDeployment> [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphManagedTenantsManagementTemplateStepDeployment> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -46,7 +46,7 @@ Update-MgBetaTenantRelationshipManagedTenantManagementTemplateStepVersionDeploym
  [-CreatedDateTime <DateTime>] [-Error <IMicrosoftGraphManagedTenantsGraphApiErrorDetails>] [-Id <String>]
  [-LastActionByUserId <String>] [-LastActionDateTime <DateTime>] [-Status <String>]
  [-TemplateStepVersion <IMicrosoftGraphManagedTenantsManagementTemplateStepVersion>] [-TenantId <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -144,21 +144,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -340,8 +325,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementTemplateStepDeployment
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementTemplateStepDeployment
@@ -379,9 +362,6 @@ To create the parameters described below, construct a hash table containing the 
       - `[CreatedDateTime <DateTime?>]`: 
       - `[Description <String>]`: 
       - `[DisplayName <String>]`: 
-      - `[InformationLinks <IMicrosoftGraphActionUrl[]>]`: 
-        - `[DisplayName <String>]`: Brief title for the page that the links directs to.
-        - `[Url <String>]`: The URL to the documentation or Microsoft Entra admin center page.
       - `[LastActionByUserId <String>]`: 
       - `[LastActionDateTime <DateTime?>]`: 
       - `[ManagementTemplate <IMicrosoftGraphManagedTenantsManagementTemplate>]`: managementTemplate
@@ -393,6 +373,8 @@ To create the parameters described below, construct a hash table containing the 
         - `[Description <String>]`: The description for the management template. Optional. Read-only.
         - `[DisplayName <String>]`: The display name for the management template. Required. Read-only.
         - `[InformationLinks <IMicrosoftGraphActionUrl[]>]`: 
+          - `[DisplayName <String>]`: Brief title for the page that the links directs to.
+          - `[Url <String>]`: The URL to the documentation or Microsoft Entra admin center page.
         - `[LastActionByUserId <String>]`: 
         - `[LastActionDateTime <DateTime?>]`: 
         - `[ManagementTemplateCollections <IMicrosoftGraphManagedTenantsManagementTemplateCollection[]>]`: 
@@ -430,7 +412,6 @@ To create the parameters described below, construct a hash table containing the 
             - `[ValueType <String>]`: managementParameterValueType
       - `[PortalLink <IMicrosoftGraphActionUrl>]`: actionUrl
       - `[Priority <Int32?>]`: 
-      - `[UserImpact <String>]`: 
       - `[Versions <IMicrosoftGraphManagedTenantsManagementTemplateStepVersion[]>]`: 
     - `[ContentMarkdown <String>]`: 
     - `[CreatedByUserId <String>]`: 
@@ -501,9 +482,6 @@ To create the parameters described below, construct a hash table containing the 
     - `[CreatedDateTime <DateTime?>]`: 
     - `[Description <String>]`: 
     - `[DisplayName <String>]`: 
-    - `[InformationLinks <IMicrosoftGraphActionUrl[]>]`: 
-      - `[DisplayName <String>]`: Brief title for the page that the links directs to.
-      - `[Url <String>]`: The URL to the documentation or Microsoft Entra admin center page.
     - `[LastActionByUserId <String>]`: 
     - `[LastActionDateTime <DateTime?>]`: 
     - `[ManagementTemplate <IMicrosoftGraphManagedTenantsManagementTemplate>]`: managementTemplate
@@ -515,6 +493,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[Description <String>]`: The description for the management template. Optional. Read-only.
       - `[DisplayName <String>]`: The display name for the management template. Required. Read-only.
       - `[InformationLinks <IMicrosoftGraphActionUrl[]>]`: 
+        - `[DisplayName <String>]`: Brief title for the page that the links directs to.
+        - `[Url <String>]`: The URL to the documentation or Microsoft Entra admin center page.
       - `[LastActionByUserId <String>]`: 
       - `[LastActionDateTime <DateTime?>]`: 
       - `[ManagementTemplateCollections <IMicrosoftGraphManagedTenantsManagementTemplateCollection[]>]`: 
@@ -552,7 +532,6 @@ To create the parameters described below, construct a hash table containing the 
           - `[ValueType <String>]`: managementParameterValueType
     - `[PortalLink <IMicrosoftGraphActionUrl>]`: actionUrl
     - `[Priority <Int32?>]`: 
-    - `[UserImpact <String>]`: 
     - `[Versions <IMicrosoftGraphManagedTenantsManagementTemplateStepVersion[]>]`: 
   - `[ContentMarkdown <String>]`: 
   - `[CreatedByUserId <String>]`: 

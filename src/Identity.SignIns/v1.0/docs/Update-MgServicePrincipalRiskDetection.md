@@ -20,22 +20,20 @@ Update-MgServicePrincipalRiskDetection -ServicePrincipalRiskDetectionId <String>
  [-Id <String>] [-IPAddress <String>] [-KeyIds <String[]>] [-LastUpdatedDateTime <DateTime>]
  [-Location <IMicrosoftGraphSignInLocation>] [-RequestId <String>] [-RiskDetail <String>]
  [-RiskEventType <String>] [-RiskLevel <String>] [-RiskState <String>] [-ServicePrincipalDisplayName <String>]
- [-ServicePrincipalId <String>] [-Source <String>] [-TokenIssuerType <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ServicePrincipalId <String>] [-Source <String>] [-TokenIssuerType <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgServicePrincipalRiskDetection -ServicePrincipalRiskDetectionId <String>
- -BodyParameter <IMicrosoftGraphServicePrincipalRiskDetection> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphServicePrincipalRiskDetection> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgServicePrincipalRiskDetection -InputObject <IIdentitySignInsIdentity>
- -BodyParameter <IMicrosoftGraphServicePrincipalRiskDetection> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphServicePrincipalRiskDetection> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -46,8 +44,8 @@ Update-MgServicePrincipalRiskDetection -InputObject <IIdentitySignInsIdentity> [
  [-Id <String>] [-IPAddress <String>] [-KeyIds <String[]>] [-LastUpdatedDateTime <DateTime>]
  [-Location <IMicrosoftGraphSignInLocation>] [-RequestId <String>] [-RiskDetail <String>]
  [-RiskEventType <String>] [-RiskLevel <String>] [-RiskState <String>] [-ServicePrincipalDisplayName <String>]
- [-ServicePrincipalId <String>] [-Source <String>] [-TokenIssuerType <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ServicePrincipalId <String>] [-Source <String>] [-TokenIssuerType <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -210,21 +208,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -515,8 +498,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphServicePrincipalRiskDetection
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

@@ -16,30 +16,26 @@ Create new navigation property to runs for security
 ```
 New-MgSecurityAttackSimulationAutomationRun -SimulationAutomationId <String>
  [-AdditionalProperties <Hashtable>] [-EndDateTime <DateTime>] [-Id <String>] [-SimulationId <String>]
- [-StartDateTime <DateTime>] [-Status <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-StartDateTime <DateTime>] [-Status <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgSecurityAttackSimulationAutomationRun -SimulationAutomationId <String>
- -BodyParameter <IMicrosoftGraphSimulationAutomationRun> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphSimulationAutomationRun> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgSecurityAttackSimulationAutomationRun -InputObject <ISecurityIdentity>
- -BodyParameter <IMicrosoftGraphSimulationAutomationRun> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphSimulationAutomationRun> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgSecurityAttackSimulationAutomationRun -InputObject <ISecurityIdentity>
  [-AdditionalProperties <Hashtable>] [-EndDateTime <DateTime>] [-Id <String>] [-SimulationId <String>]
- [-StartDateTime <DateTime>] [-Status <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-StartDateTime <DateTime>] [-Status <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -106,21 +102,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -255,8 +236,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSimulationAutomationRun
 
 ### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

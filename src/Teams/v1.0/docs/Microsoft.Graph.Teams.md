@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Teams
-Module Guid: f3541d0b-8fb8-41dc-a473-d821d1000770
+Module Guid: 88f81a66-95ab-4e1d-bb45-ff2f46ea8f47
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.teams
 Help Version: 1.0.0.0
 Locale: en-US
@@ -280,8 +280,7 @@ This can't be changed after tab creation.
 Get group from groups
 
 ### [Get-MgGroupTeamGroupServiceProvisioningError](Get-MgGroupTeamGroupServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a group object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgGroupTeamGroupServiceProvisioningErrorCount](Get-MgGroupTeamGroupServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -550,8 +549,7 @@ This can't be changed after tab creation.
 Get the number of the resource
 
 ### [Get-MgTeamGroupServiceProvisioningError](Get-MgTeamGroupServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a group object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgTeamGroupServiceProvisioningErrorCount](Get-MgTeamGroupServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -972,9 +970,7 @@ Mark a chat as read for a user.
 Mark a chat as unread for a user.
 
 ### [Invoke-MgShareTeamSchedule](Invoke-MgShareTeamSchedule.md)
-Share a schedule time range with schedule members.
-This action makes the collections of shift, openshift and timeOff items in the specified time range of the schedule viewable by the specified team members, including employees and managers.
-Each shift, openshift and timeOff instance in a schedule supports a draft version and a shared version of the item.
+Share a schedule time range with schedule members.\nMake the collections of shift, openshift and timeOff items in the specified time range of the schedule viewable by the specified team members, including employees and managers.\nEach shift, openshift and timeOff instance in a schedule supports a draft version and a shared version of the item.
 The draft version is viewable by only managers, and the shared version is viewable by employees and managers.
 For each shift, openshift and timeOff instance in the specified time range, the share action updates the shared version from the draft version, so that in addition to managers, employees can also view the most current information about the item.
 The notifyTeam parameter further specifies which employees can view the item.
@@ -1030,13 +1026,14 @@ Install a teamsApp to the specified chat.
 Add a conversationMember to a chat.
 
 ### [New-MgChatMessage](New-MgChatMessage.md)
-Send a new chatMessage in the specified channel or a chat.
+Send a new chatMessage in the specified chat.
+This API can't create a new chat; you must use the list chats method to retrieve the ID of an existing chat before you can create a chat message.
 
 ### [New-MgChatMessageHostedContent](New-MgChatMessageHostedContent.md)
 Create new navigation property to hostedContents for chats
 
 ### [New-MgChatMessageReply](New-MgChatMessageReply.md)
-Send a new reply to a chatMessage in a specified channel.
+Create a new reply to a chatMessage in a specified channel.
 
 ### [New-MgChatMessageReplyHostedContent](New-MgChatMessageReplyHostedContent.md)
 Create new navigation property to hostedContents for chats
@@ -1069,7 +1066,7 @@ Send a new chatMessage in the specified channel or a chat.
 Create new navigation property to hostedContents for groups
 
 ### [New-MgGroupTeamChannelMessageReply](New-MgGroupTeamChannelMessageReply.md)
-Send a new reply to a chatMessage in a specified channel.
+Create a new reply to a chatMessage in a specified channel.
 
 ### [New-MgGroupTeamChannelMessageReplyHostedContent](New-MgGroupTeamChannelMessageReplyHostedContent.md)
 Create new navigation property to hostedContents for groups
@@ -1104,7 +1101,7 @@ Send a new chatMessage in the specified channel or a chat.
 Create new navigation property to hostedContents for groups
 
 ### [New-MgGroupTeamPrimaryChannelMessageReply](New-MgGroupTeamPrimaryChannelMessageReply.md)
-Send a new reply to a chatMessage in a specified channel.
+Create a new reply to a chatMessage in a specified channel.
 
 ### [New-MgGroupTeamPrimaryChannelMessageReplyHostedContent](New-MgGroupTeamPrimaryChannelMessageReplyHostedContent.md)
 Create new navigation property to hostedContents for groups
@@ -1176,7 +1173,7 @@ Send a new chatMessage in the specified channel or a chat.
 Create new navigation property to hostedContents for teams
 
 ### [New-MgTeamChannelMessageReply](New-MgTeamChannelMessageReply.md)
-Send a new reply to a chatMessage in a specified channel.
+Create a new reply to a chatMessage in a specified channel.
 
 ### [New-MgTeamChannelMessageReplyHostedContent](New-MgTeamChannelMessageReplyHostedContent.md)
 Create new navigation property to hostedContents for teams
@@ -1217,7 +1214,7 @@ Send a new chatMessage in the specified channel or a chat.
 Create new navigation property to hostedContents for teams
 
 ### [New-MgTeamPrimaryChannelMessageReply](New-MgTeamPrimaryChannelMessageReply.md)
-Send a new reply to a chatMessage in a specified channel.
+Create a new reply to a chatMessage in a specified channel.
 
 ### [New-MgTeamPrimaryChannelMessageReplyHostedContent](New-MgTeamPrimaryChannelMessageReplyHostedContent.md)
 Create new navigation property to hostedContents for teams
@@ -1286,7 +1283,7 @@ Send a new chatMessage in the specified channel or a chat.
 Create new navigation property to hostedContents for teamwork
 
 ### [New-MgTeamworkDeletedTeamChannelMessageReply](New-MgTeamworkDeletedTeamChannelMessageReply.md)
-Send a new reply to a chatMessage in a specified channel.
+Create a new reply to a chatMessage in a specified channel.
 
 ### [New-MgTeamworkDeletedTeamChannelMessageReplyHostedContent](New-MgTeamworkDeletedTeamChannelMessageReplyHostedContent.md)
 Create new navigation property to hostedContents for teamwork
@@ -1311,13 +1308,14 @@ Install a teamsApp to the specified chat.
 Add a conversationMember to a chat.
 
 ### [New-MgUserChatMessage](New-MgUserChatMessage.md)
-Send a new chatMessage in the specified channel or a chat.
+Send a new chatMessage in the specified chat.
+This API can't create a new chat; you must use the list chats method to retrieve the ID of an existing chat before you can create a chat message.
 
 ### [New-MgUserChatMessageHostedContent](New-MgUserChatMessageHostedContent.md)
 Create new navigation property to hostedContents for users
 
 ### [New-MgUserChatMessageReply](New-MgUserChatMessageReply.md)
-Send a new reply to a chatMessage in a specified channel.
+Create a new reply to a chatMessage in a specified channel.
 
 ### [New-MgUserChatMessageReplyHostedContent](New-MgUserChatMessageReplyHostedContent.md)
 Create new navigation property to hostedContents for users
@@ -1382,7 +1380,6 @@ Delete the channel.
 
 ### [Remove-MgGroupTeamChannelMember](Remove-MgGroupTeamChannelMember.md)
 Delete a conversationMember from a channel.
-This operation is allowed only for channels with a membershipType value of private or shared.
 
 ### [Remove-MgGroupTeamChannelMessage](Remove-MgGroupTeamChannelMessage.md)
 Delete navigation property messages for groups
@@ -1403,6 +1400,9 @@ This operation is allowed only for channels with a membershipType value of share
 ### [Remove-MgGroupTeamChannelTab](Remove-MgGroupTeamChannelTab.md)
 Removes (unpins) a tab from the specified channel within a team.
 
+### [Remove-MgGroupTeamIncomingChannel](Remove-MgGroupTeamIncomingChannel.md)
+Remove an incoming channel (a channel shared with a team) from a team.
+
 ### [Remove-MgGroupTeamInstalledApp](Remove-MgGroupTeamInstalledApp.md)
 Uninstalls an app from the specified team.
 
@@ -1420,7 +1420,6 @@ Delete navigation property primaryChannel for groups
 
 ### [Remove-MgGroupTeamPrimaryChannelMember](Remove-MgGroupTeamPrimaryChannelMember.md)
 Delete a conversationMember from a channel.
-This operation is allowed only for channels with a membershipType value of private or shared.
 
 ### [Remove-MgGroupTeamPrimaryChannelMessage](Remove-MgGroupTeamPrimaryChannelMessage.md)
 Delete navigation property messages for groups
@@ -1493,7 +1492,6 @@ You can remove an email address only if it was provisioned using the provisionEm
 
 ### [Remove-MgTeamChannelMember](Remove-MgTeamChannelMember.md)
 Delete a conversationMember from a channel.
-This operation is allowed only for channels with a membershipType value of private or shared.
 
 ### [Remove-MgTeamChannelMessageReplyHostedContent](Remove-MgTeamChannelMessageReplyHostedContent.md)
 Delete navigation property hostedContents for teams
@@ -1504,6 +1502,9 @@ This operation is allowed only for channels with a membershipType value of share
 
 ### [Remove-MgTeamChannelTab](Remove-MgTeamChannelTab.md)
 Removes (unpins) a tab from the specified channel within a team.
+
+### [Remove-MgTeamIncomingChannel](Remove-MgTeamIncomingChannel.md)
+Remove an incoming channel (a channel shared with a team) from a team.
 
 ### [Remove-MgTeamInstalledApp](Remove-MgTeamInstalledApp.md)
 Uninstalls an app from the specified team.
@@ -1526,7 +1527,6 @@ You can remove an email address only if it was provisioned using the provisionEm
 
 ### [Remove-MgTeamPrimaryChannelMember](Remove-MgTeamPrimaryChannelMember.md)
 Delete a conversationMember from a channel.
-This operation is allowed only for channels with a membershipType value of private or shared.
 
 ### [Remove-MgTeamPrimaryChannelMessageReplyHostedContent](Remove-MgTeamPrimaryChannelMessageReplyHostedContent.md)
 Delete navigation property hostedContents for teams
@@ -1590,7 +1590,6 @@ You can remove an email address only if it was provisioned using the provisionEm
 
 ### [Remove-MgTeamworkDeletedTeamChannelMember](Remove-MgTeamworkDeletedTeamChannelMember.md)
 Delete a conversationMember from a channel.
-This operation is allowed only for channels with a membershipType value of private or shared.
 
 ### [Remove-MgTeamworkDeletedTeamChannelMessage](Remove-MgTeamworkDeletedTeamChannelMessage.md)
 Delete navigation property messages for teamwork
@@ -1661,15 +1660,15 @@ Uninstall an app from the personal scope of the specified user.
 
 ### [Send-MgChatActivityNotification](Send-MgChatActivityNotification.md)
 Send an activity feed notification in scope of a chat.
-For more information about sending notifications and the requirements for doing so, see sending Teams activity notifications.
+For more details about sending notifications and the requirements for doing so, see sending Teams activity notifications.
 
 ### [Send-MgTeamActivityNotification](Send-MgTeamActivityNotification.md)
 Send an activity feed notification in the scope of a team.
-For more information about sending notifications and the requirements for doing so, see\nsending Teams activity notifications.
+For more details about sending notifications and the requirements for doing so, see\nsending Teams activity notifications.
 
 ### [Send-MgTeamworkActivityNotificationToRecipient](Send-MgTeamworkActivityNotificationToRecipient.md)
 Send activity feed notifications to multiple users, in bulk.
-For more information, see sending Teams activity notifications.
+For more details about sending notifications and the requirements for doing so, see\nsending Teams activity notifications.
 
 ### [Set-MgChatMessageHostedContent](Set-MgChatMessageHostedContent.md)
 Update media content for the navigation property hostedContents in chats

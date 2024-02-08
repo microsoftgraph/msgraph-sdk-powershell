@@ -34,19 +34,19 @@ New-MgUserMessage -UserId <String> [-AdditionalProperties <Hashtable>]
  [-Sender <IMicrosoftGraphRecipient>] [-SentDateTime <DateTime>]
  [-SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>] [-Subject <String>]
  [-ToRecipients <IMicrosoftGraphRecipient[]>] [-UniqueBody <IMicrosoftGraphItemBody>] [-WebLink <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgUserMessage -UserId <String> -BodyParameter <IMicrosoftGraphMessage> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+New-MgUserMessage -UserId <String> -BodyParameter <IMicrosoftGraphMessage> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgUserMessage -InputObject <IMailIdentity> -BodyParameter <IMicrosoftGraphMessage>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgUserMessage -InputObject <IMailIdentity> -BodyParameter <IMicrosoftGraphMessage> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -66,7 +66,7 @@ New-MgUserMessage -InputObject <IMailIdentity> [-AdditionalProperties <Hashtable
  [-Sender <IMicrosoftGraphRecipient>] [-SentDateTime <DateTime>]
  [-SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>] [-Subject <String>]
  [-ToRecipients <IMicrosoftGraphRecipient[]>] [-UniqueBody <IMicrosoftGraphItemBody>] [-WebLink <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -391,21 +391,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -805,8 +790,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IMailIdentity
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMessage
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

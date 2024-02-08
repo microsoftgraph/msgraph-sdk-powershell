@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgEntitlementManagementResourceRequestCatalogCustomWorkflowExtension
 
 ## SYNOPSIS
-Update the properties of an accessPackageAssignmentRequestWorkflowExtension object.
+Update the properties of an accessPackageAssignmentWorkflowExtension object.
 
 ## SYNTAX
 
@@ -18,23 +18,22 @@ Update-MgEntitlementManagementResourceRequestCatalogCustomWorkflowExtension
  -AccessPackageResourceRequestId <String> -CustomCalloutExtensionId <String>
  [-AdditionalProperties <Hashtable>] [-AuthenticationConfiguration <Hashtable>]
  [-ClientConfiguration <IMicrosoftGraphCustomExtensionClientConfiguration>] [-Description <String>]
- [-DisplayName <String>] [-EndpointConfiguration <Hashtable>] [-Id <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-DisplayName <String>] [-EndpointConfiguration <Hashtable>] [-Id <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgEntitlementManagementResourceRequestCatalogCustomWorkflowExtension
  -AccessPackageResourceRequestId <String> -CustomCalloutExtensionId <String>
- -BodyParameter <IMicrosoftGraphCustomCalloutExtension> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphCustomCalloutExtension> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgEntitlementManagementResourceRequestCatalogCustomWorkflowExtension
- -InputObject <IIdentityGovernanceIdentity> -BodyParameter <IMicrosoftGraphCustomCalloutExtension>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -InputObject <IIdentityGovernanceIdentity> -BodyParameter <IMicrosoftGraphCustomCalloutExtension> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -43,12 +42,12 @@ Update-MgEntitlementManagementResourceRequestCatalogCustomWorkflowExtension
  -InputObject <IIdentityGovernanceIdentity> [-AdditionalProperties <Hashtable>]
  [-AuthenticationConfiguration <Hashtable>]
  [-ClientConfiguration <IMicrosoftGraphCustomExtensionClientConfiguration>] [-Description <String>]
- [-DisplayName <String>] [-EndpointConfiguration <Hashtable>] [-Id <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-DisplayName <String>] [-EndpointConfiguration <Hashtable>] [-Id <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Update the properties of an accessPackageAssignmentRequestWorkflowExtension object.
+Update the properties of an accessPackageAssignmentWorkflowExtension object.
 
 ## EXAMPLES
 
@@ -205,21 +204,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -291,8 +275,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCustomCalloutExtension
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

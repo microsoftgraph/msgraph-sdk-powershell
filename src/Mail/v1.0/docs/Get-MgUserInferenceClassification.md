@@ -14,14 +14,12 @@ Relevance classification of the user's messages based on explicit designations t
 
 ### Get (Default)
 ```
-Get-MgUserInferenceClassification -UserId <String> [-Property <String[]>] [-Headers <IDictionary>]
- [<CommonParameters>]
+Get-MgUserInferenceClassification -UserId <String> [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserInferenceClassification -InputObject <IMailIdentity> [-Property <String[]>] [-Headers <IDictionary>]
- [<CommonParameters>]
+Get-MgUserInferenceClassification -InputObject <IMailIdentity> [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -44,21 +42,6 @@ Relevance classification of the user's messages based on explicit designations t
 {{ Add output here }}
 
 ## PARAMETERS
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
 
 ### -InputObject
 Identity Parameter
@@ -112,8 +95,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMailIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

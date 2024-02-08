@@ -15,29 +15,27 @@ Invoke action archive
 ### ArchiveExpanded (Default)
 ```
 Invoke-MgBetaArchiveTeamChannel -ChannelId <String> -TeamId <String> [-AdditionalProperties <Hashtable>]
- [-ShouldSetSpoSiteReadOnlyForMembers] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-ShouldSetSpoSiteReadOnlyForMembers] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Archive
 ```
 Invoke-MgBetaArchiveTeamChannel -ChannelId <String> -TeamId <String>
  -BodyParameter <IPaths1R5Aj03TeamsTeamIdChannelsChannelIdMicrosoftGraphArchivePostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ArchiveViaIdentity
 ```
 Invoke-MgBetaArchiveTeamChannel -InputObject <ITeamsIdentity>
  -BodyParameter <IPaths1R5Aj03TeamsTeamIdChannelsChannelIdMicrosoftGraphArchivePostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ArchiveViaIdentityExpanded
 ```
 Invoke-MgBetaArchiveTeamChannel -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
- [-ShouldSetSpoSiteReadOnlyForMembers] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-ShouldSetSpoSiteReadOnlyForMembers] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -104,21 +102,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -223,8 +206,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
@@ -266,7 +247,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[TeamId <String>]`: The unique identifier of team
   - `[TeamTemplateDefinitionId <String>]`: The unique identifier of teamTemplateDefinition
   - `[TeamTemplateId <String>]`: The unique identifier of teamTemplate
-  - `[TeamsAppDashboardCardDefinitionId <String>]`: The unique identifier of teamsAppDashboardCardDefinition
   - `[TeamsAppDefinitionId <String>]`: The unique identifier of teamsAppDefinition
   - `[TeamsAppId <String>]`: The unique identifier of teamsApp
   - `[TeamsAppInstallationId <String>]`: The unique identifier of teamsAppInstallation

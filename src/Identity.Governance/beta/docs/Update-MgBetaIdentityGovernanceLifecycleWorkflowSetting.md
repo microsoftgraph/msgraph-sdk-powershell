@@ -16,14 +16,14 @@ Update the properties of a lifecycleManagementSettings object.
 ```
 Update-MgBetaIdentityGovernanceLifecycleWorkflowSetting [-AdditionalProperties <Hashtable>]
  [-EmailSettings <IMicrosoftGraphEmailSettings>] [-Id <String>] [-WorkflowScheduleIntervalInHours <Int32>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaIdentityGovernanceLifecycleWorkflowSetting
- -BodyParameter <IMicrosoftGraphIdentityGovernanceLifecycleManagementSettings> [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphIdentityGovernanceLifecycleManagementSettings> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -93,21 +93,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -181,8 +166,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentityGovernanceLifecycleManagementSettings
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

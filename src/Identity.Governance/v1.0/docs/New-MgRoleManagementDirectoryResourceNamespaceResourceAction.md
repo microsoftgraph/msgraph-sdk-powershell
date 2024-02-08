@@ -17,21 +17,19 @@ Create new navigation property to resourceActions for roleManagement
 New-MgRoleManagementDirectoryResourceNamespaceResourceAction -UnifiedRbacResourceNamespaceId <String>
  [-ActionVerb <String>] [-AdditionalProperties <Hashtable>] [-AuthenticationContextId <String>]
  [-Description <String>] [-Id <String>] [-IsAuthenticationContextSettable] [-Name <String>]
- [-ResourceScopeId <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ResourceScopeId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgRoleManagementDirectoryResourceNamespaceResourceAction -UnifiedRbacResourceNamespaceId <String>
- -BodyParameter <IMicrosoftGraphUnifiedRbacResourceAction> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphUnifiedRbacResourceAction> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgRoleManagementDirectoryResourceNamespaceResourceAction -InputObject <IIdentityGovernanceIdentity>
- -BodyParameter <IMicrosoftGraphUnifiedRbacResourceAction> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphUnifiedRbacResourceAction> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -39,7 +37,7 @@ New-MgRoleManagementDirectoryResourceNamespaceResourceAction -InputObject <IIden
 New-MgRoleManagementDirectoryResourceNamespaceResourceAction -InputObject <IIdentityGovernanceIdentity>
  [-ActionVerb <String>] [-AdditionalProperties <Hashtable>] [-AuthenticationContextId <String>]
  [-Description <String>] [-Id <String>] [-IsAuthenticationContextSettable] [-Name <String>]
- [-ResourceScopeId <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ResourceScopeId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -136,21 +134,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -285,8 +268,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUnifiedRbacResourceAction
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

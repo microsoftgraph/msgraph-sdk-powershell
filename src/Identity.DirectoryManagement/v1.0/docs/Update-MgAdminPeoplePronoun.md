@@ -16,13 +16,13 @@ For more information on settings to manage pronouns support, see Manage pronouns
 ### UpdateExpanded (Default)
 ```
 Update-MgAdminPeoplePronoun [-AdditionalProperties <Hashtable>] [-Id <String>] [-IsEnabledInOrganization]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgAdminPeoplePronoun -BodyParameter <IMicrosoftGraphPronounsSettings> [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgAdminPeoplePronoun -BodyParameter <IMicrosoftGraphPronounsSettings> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -72,21 +72,6 @@ Parameter Sets: Update
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -162,8 +147,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPronounsSettings
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

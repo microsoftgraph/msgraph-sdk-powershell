@@ -24,21 +24,19 @@ Update-MgBetaTenantRelationshipManagedTenantCloudPcOverview -CloudPcOverviewTena
  [-NumberOfCloudPcStatusProvisioning <Int32>] [-NumberOfCloudPcStatusUnknown <Int32>]
  [-NumberOfCloudPcStatusUpgrading <Int32>] [-TenantDisplayName <String>] [-TenantId <String>]
  [-TotalBusinessLicenses <Int32>] [-TotalCloudPcConnectionStatus <Int32>] [-TotalCloudPcStatus <Int32>]
- [-TotalEnterpriseLicenses <Int32>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-TotalEnterpriseLicenses <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaTenantRelationshipManagedTenantCloudPcOverview -CloudPcOverviewTenantId <String>
- -BodyParameter <IMicrosoftGraphManagedTenantsCloudPcOverview> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphManagedTenantsCloudPcOverview> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaTenantRelationshipManagedTenantCloudPcOverview -InputObject <IManagedTenantsIdentity>
- -BodyParameter <IMicrosoftGraphManagedTenantsCloudPcOverview> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphManagedTenantsCloudPcOverview> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -53,7 +51,7 @@ Update-MgBetaTenantRelationshipManagedTenantCloudPcOverview -InputObject <IManag
  [-NumberOfCloudPcStatusProvisioning <Int32>] [-NumberOfCloudPcStatusUnknown <Int32>]
  [-NumberOfCloudPcStatusUpgrading <Int32>] [-TenantDisplayName <String>] [-TenantId <String>]
  [-TotalBusinessLicenses <Int32>] [-TotalCloudPcConnectionStatus <Int32>] [-TotalCloudPcStatus <Int32>]
- [-TotalEnterpriseLicenses <Int32>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-TotalEnterpriseLicenses <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -120,21 +118,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -547,8 +530,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsCloudPcOverview
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

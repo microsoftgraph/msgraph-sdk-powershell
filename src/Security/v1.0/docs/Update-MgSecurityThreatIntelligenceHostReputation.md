@@ -16,29 +16,27 @@ Update the navigation property reputation in security
 ```
 Update-MgSecurityThreatIntelligenceHostReputation -HostId <String> [-AdditionalProperties <Hashtable>]
  [-Classification <String>] [-Id <String>] [-Rules <IMicrosoftGraphSecurityHostReputationRule[]>]
- [-Score <Int32>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Score <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgSecurityThreatIntelligenceHostReputation -HostId <String>
- -BodyParameter <IMicrosoftGraphSecurityHostReputation> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphSecurityHostReputation> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgSecurityThreatIntelligenceHostReputation -InputObject <ISecurityIdentity>
- -BodyParameter <IMicrosoftGraphSecurityHostReputation> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphSecurityHostReputation> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgSecurityThreatIntelligenceHostReputation -InputObject <ISecurityIdentity>
  [-AdditionalProperties <Hashtable>] [-Classification <String>] [-Id <String>]
- [-Rules <IMicrosoftGraphSecurityHostReputationRule[]>] [-Score <Int32>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-Rules <IMicrosoftGraphSecurityHostReputationRule[]>] [-Score <Int32>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -105,21 +103,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -241,8 +224,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityHostReputation
 
 ### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

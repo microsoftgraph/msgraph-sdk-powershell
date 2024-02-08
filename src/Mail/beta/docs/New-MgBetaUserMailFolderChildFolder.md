@@ -8,7 +8,8 @@ schema: 2.0.0
 # New-MgBetaUserMailFolderChildFolder
 
 ## SYNOPSIS
-Create a new mailSearchFolder in the specified user's mailbox.
+Use this API to create a new child mailFolder.
+If you intend a new folder to be hidden, you must set the isHidden property to true on creation.
 
 ## SYNTAX
 
@@ -22,20 +23,20 @@ New-MgBetaUserMailFolderChildFolder -MailFolderId <String> -UserId <String>
  [-ParentFolderId <String>]
  [-SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]
  [-TotalItemCount <Int32>] [-UnreadItemCount <Int32>]
- [-UserConfigurations <IMicrosoftGraphUserConfiguration[]>] [-WellKnownName <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-UserConfigurations <IMicrosoftGraphUserConfiguration[]>] [-WellKnownName <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaUserMailFolderChildFolder -MailFolderId <String> -UserId <String>
- -BodyParameter <IMicrosoftGraphMailFolder> [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphMailFolder> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaUserMailFolderChildFolder -InputObject <IMailIdentity> -BodyParameter <IMicrosoftGraphMailFolder>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -48,12 +49,13 @@ New-MgBetaUserMailFolderChildFolder -InputObject <IMailIdentity> [-AdditionalPro
  [-ParentFolderId <String>]
  [-SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]
  [-TotalItemCount <Int32>] [-UnreadItemCount <Int32>]
- [-UserConfigurations <IMicrosoftGraphUserConfiguration[]>] [-WellKnownName <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-UserConfigurations <IMicrosoftGraphUserConfiguration[]>] [-WellKnownName <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Create a new mailSearchFolder in the specified user's mailbox.
+Use this API to create a new child mailFolder.
+If you intend a new folder to be hidden, you must set the isHidden property to true on creation.
 
 ## EXAMPLES
 
@@ -146,21 +148,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -429,8 +416,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IMailIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMailFolder
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

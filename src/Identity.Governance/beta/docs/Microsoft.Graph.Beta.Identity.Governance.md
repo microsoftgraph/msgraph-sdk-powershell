@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Identity.Governance
-Module Guid: 6648a92e-ed1c-4c79-8002-4ac961cfadf0
+Module Guid: 2b48e72e-f783-401a-be39-bbdad7af8927
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.identity.governance
 Help Version: 1.0.0.0
 Locale: en-US
@@ -146,9 +146,7 @@ Get entity from businessFlowTemplates by key
 Get the number of the resource
 
 ### [Get-MgBetaEntitlementManagementAccessPackage](Get-MgBetaEntitlementManagementAccessPackage.md)
-Retrieve an access package with a list of accessPackageResourceRoleScope objects.
-These objects represent the resource roles that an access package assigns to each subject.
-Each object links to an accessPackageResourceRole and an accessPackageResourceScope.
+Retrieve the properties and relationships of an accessPackage object.
 
 ### [Get-MgBetaEntitlementManagementAccessPackageApplicablePolicyRequirement](Get-MgBetaEntitlementManagementAccessPackageApplicablePolicyRequirement.md)
 In Microsoft Entra entitlement management, this action retrieves a list of accessPackageAssignmentRequestRequirements objects that the currently signed-in user can use to create an accessPackageAssignmentRequest.
@@ -259,22 +257,6 @@ Represents a request to add or remove a resource to or from a catalog respective
 ### [Get-MgBetaEntitlementManagementAccessPackageResourceRequestCount](Get-MgBetaEntitlementManagementAccessPackageResourceRequestCount.md)
 Get the number of the resource
 
-### [Get-MgBetaEntitlementManagementAssignmentRequest](Get-MgBetaEntitlementManagementAssignmentRequest.md)
-Represents access package assignment requests created by or on behalf of a user.
-
-### [Get-MgBetaEntitlementManagementAssignmentRequestAccessPackageAssignment](Get-MgBetaEntitlementManagementAssignmentRequestAccessPackageAssignment.md)
-For a requestType of UserAdd or AdminAdd, this is an access package assignment requested to be created.
-For a requestType of UserRemove, AdminRemove or SystemRemove, this has the id property of an existing assignment to be removed.
-Supports $expand.
-
-### [Get-MgBetaEntitlementManagementAssignmentRequestCount](Get-MgBetaEntitlementManagementAssignmentRequestCount.md)
-Get the number of the resource
-
-### [Get-MgBetaEntitlementManagementAssignmentRequestRequestorConnectedOrganization](Get-MgBetaEntitlementManagementAssignmentRequestRequestorConnectedOrganization.md)
-The connected organization of the subject.
-Read-only.
-Nullable.
-
 ### [Get-MgBetaEntitlementManagementConnectedOrganization](Get-MgBetaEntitlementManagementConnectedOrganization.md)
 Retrieve the properties and relationships of a connectedOrganization object.
 
@@ -307,9 +289,6 @@ Get the number of the resource
 Retrieve the properties of an entitlementManagementSettings object.
 
 ### [Get-MgBetaEntitlementManagementSubject](Get-MgBetaEntitlementManagementSubject.md)
-Represents the subjects within entitlement management.
-
-### [Get-MgBetaEntitlementManagementSubjectByObjectId](Get-MgBetaEntitlementManagementSubjectByObjectId.md)
 Represents the subjects within entitlement management.
 
 ### [Get-MgBetaEntitlementManagementSubjectConnectedOrganization](Get-MgBetaEntitlementManagementSubjectConnectedOrganization.md)
@@ -1121,7 +1100,8 @@ Represents operations on resources that take a long time to complete and can run
 Get the number of the resource
 
 ### [Get-MgBetaIdentityGovernanceTermsOfUseAgreement](Get-MgBetaIdentityGovernanceTermsOfUseAgreement.md)
-Retrieve the properties and relationships of an agreement object.
+Retrieve all files related to an agreement.
+This includes the default file and all localized files.
 
 ### [Get-MgBetaIdentityGovernanceTermsOfUseAgreementAcceptance](Get-MgBetaIdentityGovernanceTermsOfUseAgreementAcceptance.md)
 Represents the current status of a user's response to a company's customizable terms of use agreement.
@@ -2303,9 +2283,6 @@ Invoke function filterByCurrentUser
 ### [Invoke-MgBetaFilterEntitlementManagementAccessPackageByCurrentUser](Invoke-MgBetaFilterEntitlementManagementAccessPackageByCurrentUser.md)
 Invoke function filterByCurrentUser
 
-### [Invoke-MgBetaFilterEntitlementManagementAssignmentRequestByCurrentUser](Invoke-MgBetaFilterEntitlementManagementAssignmentRequestByCurrentUser.md)
-Invoke function filterByCurrentUser
-
 ### [Invoke-MgBetaFilterIdentityGovernanceAccessReviewDecisionByCurrentUser](Invoke-MgBetaFilterIdentityGovernanceAccessReviewDecisionByCurrentUser.md)
 Invoke function filterByCurrentUser
 
@@ -2605,10 +2582,6 @@ A resource must be included in an access package catalog before a role of that r
 Create a new accessPackageResourceRoleScope for adding a resource role to an access package.
 The access package resource, for a group, an app, or a SharePoint Online site, must already exist in the access package catalog, and the originId for the resource role retrieved from the list of the resource roles.
 Once you add the resource role scope to the access package, the user will receive this resource role through any current and future access package assignments.
-
-### [New-MgBetaEntitlementManagementAssignmentRequest](New-MgBetaEntitlementManagementAssignmentRequest.md)
-In Microsoft Entra Entitlement Management, create a new accessPackageAssignmentRequest object.
-This operation is used to assign a user to an access package, update the assignment, or to remove an access package assignment.
 
 ### [New-MgBetaEntitlementManagementConnectedOrganization](New-MgBetaEntitlementManagementConnectedOrganization.md)
 Create a new connectedOrganization object.
@@ -3114,9 +3087,6 @@ Delete navigation property accessPackageResourceRequests for identityGovernance
 ### [Remove-MgBetaEntitlementManagementAccessPackageResourceRoleScope](Remove-MgBetaEntitlementManagementAccessPackageResourceRoleScope.md)
 Delete navigation property accessPackageResourceRoleScopes for identityGovernance
 
-### [Remove-MgBetaEntitlementManagementAssignmentRequest](Remove-MgBetaEntitlementManagementAssignmentRequest.md)
-Delete navigation property assignmentRequests for identityGovernance
-
 ### [Remove-MgBetaEntitlementManagementConnectedOrganization](Remove-MgBetaEntitlementManagementConnectedOrganization.md)
 Delete a connectedOrganization object.
 
@@ -3129,9 +3099,6 @@ Remove a user or a group from the connected organization's internal sponsors.
 The internal sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
 
 ### [Remove-MgBetaEntitlementManagementSubject](Remove-MgBetaEntitlementManagementSubject.md)
-Delete navigation property subjects for identityGovernance
-
-### [Remove-MgBetaEntitlementManagementSubjectByObjectId](Remove-MgBetaEntitlementManagementSubjectByObjectId.md)
 Delete navigation property subjects for identityGovernance
 
 ### [Remove-MgBetaIdentityGovernanceAccessReviewDecision](Remove-MgBetaIdentityGovernanceAccessReviewDecision.md)
@@ -3659,10 +3626,6 @@ You can only restore a workflow that was deleted within the last 30 days before 
 In Microsoft Entra entitlement management, when an access package policy has been enabled to call out a custom extension and the request processing is waiting for the callback from the customer, the customer can initiate a resume action.
 It is performed on an accessPackageAssignmentRequest object whose requestStatus is in a WaitingForCallback state.
 
-### [Resume-MgBetaEntitlementManagementAssignmentRequest](Resume-MgBetaEntitlementManagementAssignmentRequest.md)
-In Microsoft Entra entitlement management, when an access package policy has been enabled to call out a custom extension and the request processing is waiting for the callback from the customer, the customer can initiate a resume action.
-It is performed on an accessPackageAssignmentRequest object whose requestStatus is in a WaitingForCallback state.
-
 ### [Resume-MgBetaIdentityGovernanceLifecycleWorkflowRunTaskProcessingResult](Resume-MgBetaIdentityGovernanceLifecycleWorkflowRunTaskProcessingResult.md)
 Resume a task processing result that's inProgress.
 In the default case an Azure Logic Apps system-assigned managed identity calls this API.
@@ -3711,9 +3674,6 @@ Send a reminder to the reviewers of a currently active accessReviewInstance.
 ### [Set-MgBetaEntitlementManagementAccessPackageAssignmentPolicy](Set-MgBetaEntitlementManagementAccessPackageAssignmentPolicy.md)
 Update the navigation property accessPackageAssignmentPolicies in identityGovernance
 
-### [Set-MgBetaIdentityGovernanceAccessReviewDefinition](Set-MgBetaIdentityGovernanceAccessReviewDefinition.md)
-Update the navigation property definitions in identityGovernance
-
 ### [Split-MgBetaEntitlementManagementConnectedOrganization](Split-MgBetaEntitlementManagementConnectedOrganization.md)
 Split elements of a connectedOrganization
 
@@ -3730,9 +3690,6 @@ The target object can be either a one-time access review, or an instance of a re
 After the access review stops, reviewers can no longer give input, and the access review decisions can be applied.
 
 ### [Stop-MgBetaEntitlementManagementAccessPackageAssignmentRequest](Stop-MgBetaEntitlementManagementAccessPackageAssignmentRequest.md)
-In Microsoft Entra Entitlement Management, cancel accessPackageAssignmentRequest objects that are in a cancelable state: accepted, pendingApproval, pendingNotBefore, pendingApprovalEscalated.
-
-### [Stop-MgBetaEntitlementManagementAssignmentRequest](Stop-MgBetaEntitlementManagementAssignmentRequest.md)
 In Microsoft Entra Entitlement Management, cancel accessPackageAssignmentRequest objects that are in a cancelable state: accepted, pendingApproval, pendingNotBefore, pendingApprovalEscalated.
 
 ### [Stop-MgBetaIdentityGovernanceAccessReviewDecisionInstance](Stop-MgBetaIdentityGovernanceAccessReviewDecisionInstance.md)
@@ -3884,7 +3841,7 @@ Invoke action reprocess
 Update an existing accessPackageCatalog object to change one or more of its properties, such as the display name or description.
 
 ### [Update-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageCustomWorkflowExtension](Update-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageCustomWorkflowExtension.md)
-Update the properties of an accessPackageAssignmentWorkflowExtension object.
+Update the properties of an accessPackageAssignmentRequestWorkflowExtension object.
 
 ### [Update-MgBetaEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension](Update-MgBetaEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension.md)
 Update the properties of an existing customAccessPackageWorkflowExtension object.
@@ -3895,9 +3852,6 @@ Update the navigation property accessPackageResourceRequests in identityGovernan
 ### [Update-MgBetaEntitlementManagementAccessPackageResourceRoleScope](Update-MgBetaEntitlementManagementAccessPackageResourceRoleScope.md)
 Update the navigation property accessPackageResourceRoleScopes in identityGovernance
 
-### [Update-MgBetaEntitlementManagementAssignmentRequest](Update-MgBetaEntitlementManagementAssignmentRequest.md)
-Invoke action reprocess
-
 ### [Update-MgBetaEntitlementManagementConnectedOrganization](Update-MgBetaEntitlementManagementConnectedOrganization.md)
 Update a connectedOrganization object to change one or more of its properties.
 
@@ -3905,9 +3859,6 @@ Update a connectedOrganization object to change one or more of its properties.
 Update an existing entitlementManagementSettings object to change one or more of its properties.
 
 ### [Update-MgBetaEntitlementManagementSubject](Update-MgBetaEntitlementManagementSubject.md)
-Update the navigation property subjects in identityGovernance
-
-### [Update-MgBetaEntitlementManagementSubjectByObjectId](Update-MgBetaEntitlementManagementSubjectByObjectId.md)
 Update the navigation property subjects in identityGovernance
 
 ### [Update-MgBetaIdentityGovernanceAccessReviewDecision](Update-MgBetaIdentityGovernanceAccessReviewDecision.md)
@@ -3939,6 +3890,9 @@ Update access decisions, known as accessReviewInstanceDecisionItems, for which t
 
 ### [Update-MgBetaIdentityGovernanceAccessReviewDecisionInstanceStageDecisionInsight](Update-MgBetaIdentityGovernanceAccessReviewDecisionInstanceStageDecisionInsight.md)
 Update the navigation property insights in identityGovernance
+
+### [Update-MgBetaIdentityGovernanceAccessReviewDefinition](Update-MgBetaIdentityGovernanceAccessReviewDefinition.md)
+Update an existing accessReviewScheduleDefinition object to change one or more of its properties.
 
 ### [Update-MgBetaIdentityGovernanceAccessReviewDefinitionInstance](Update-MgBetaIdentityGovernanceAccessReviewDefinitionInstance.md)
 Update the properties of an accessReviewInstance object.

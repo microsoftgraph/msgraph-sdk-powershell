@@ -15,13 +15,13 @@ Get media content for the navigation property messages from users
 ### Get (Default)
 ```
 Get-MgBetaUserMailFolderMessageContent -MailFolderId <String> -MessageId <String> -UserId <String>
- -OutFile <String> [-Format <String>] [-Headers <IDictionary>] [-PassThru] [<CommonParameters>]
+ -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgBetaUserMailFolderMessageContent -InputObject <IMailIdentity> -OutFile <String> [-Format <String>]
- [-Headers <IDictionary>] [-PassThru] [<CommonParameters>]
+Get-MgBetaUserMailFolderMessageContent -InputObject <IMailIdentity> -OutFile <String> [-PassThru]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -44,36 +44,6 @@ Get media content for the navigation property messages from users
 {{ Add output here }}
 
 ## PARAMETERS
-
-### -Format
-Format of the content
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
 
 ### -InputObject
 Identity Parameter
@@ -172,8 +142,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMailIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

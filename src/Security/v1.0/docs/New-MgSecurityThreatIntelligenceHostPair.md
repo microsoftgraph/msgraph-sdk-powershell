@@ -16,14 +16,14 @@ Create new navigation property to hostPairs for security
 ```
 New-MgSecurityThreatIntelligenceHostPair [-AdditionalProperties <Hashtable>]
  [-ChildHost <IMicrosoftGraphSecurityHost>] [-FirstSeenDateTime <DateTime>] [-Id <String>]
- [-LastSeenDateTime <DateTime>] [-LinkKind <String>] [-ParentHost <IMicrosoftGraphSecurityHost>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-LastSeenDateTime <DateTime>] [-LinkKind <String>] [-ParentHost <IMicrosoftGraphSecurityHost>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgSecurityThreatIntelligenceHostPair -BodyParameter <IMicrosoftGraphSecurityHostPair>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgSecurityThreatIntelligenceHostPair -BodyParameter <IMicrosoftGraphSecurityHostPair> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -108,21 +108,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -227,8 +212,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityHostPair
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

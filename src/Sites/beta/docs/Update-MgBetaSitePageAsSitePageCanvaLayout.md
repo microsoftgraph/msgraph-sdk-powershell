@@ -16,30 +16,26 @@ Update the navigation property canvasLayout in sites
 ```
 Update-MgBetaSitePageAsSitePageCanvaLayout -BaseSitePageId <String> -SiteId <String>
  [-AdditionalProperties <Hashtable>] [-HorizontalSections <IMicrosoftGraphHorizontalSection[]>] [-Id <String>]
- [-VerticalSection <IMicrosoftGraphVerticalSection>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-VerticalSection <IMicrosoftGraphVerticalSection>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaSitePageAsSitePageCanvaLayout -BaseSitePageId <String> -SiteId <String>
- -BodyParameter <IMicrosoftGraphCanvasLayout> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphCanvasLayout> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaSitePageAsSitePageCanvaLayout -InputObject <ISitesIdentity>
- -BodyParameter <IMicrosoftGraphCanvasLayout> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphCanvasLayout> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgBetaSitePageAsSitePageCanvaLayout -InputObject <ISitesIdentity> [-AdditionalProperties <Hashtable>]
  [-HorizontalSections <IMicrosoftGraphHorizontalSection[]>] [-Id <String>]
- [-VerticalSection <IMicrosoftGraphVerticalSection>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-VerticalSection <IMicrosoftGraphVerticalSection>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -103,21 +99,6 @@ Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -243,8 +224,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCanvasLayout
@@ -317,7 +296,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[OnenoteResourceId <String>]`: The unique identifier of onenoteResource
   - `[OnenoteSectionId <String>]`: The unique identifier of onenoteSection
   - `[Path <String>]`: Usage: path='{path}'
-  - `[Path1 <String>]`: Usage: path='{path1}'
   - `[PermissionId <String>]`: The unique identifier of permission
   - `[RecycleBinItemId <String>]`: The unique identifier of recycleBinItem
   - `[RelationId <String>]`: The unique identifier of relation

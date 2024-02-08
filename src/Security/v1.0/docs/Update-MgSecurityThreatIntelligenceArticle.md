@@ -18,20 +18,19 @@ Update-MgSecurityThreatIntelligenceArticle -ArticleId <String> [-AdditionalPrope
  [-Body <IMicrosoftGraphSecurityFormattedContent>] [-CreatedDateTime <DateTime>] [-Id <String>]
  [-ImageUrl <String>] [-Indicators <IMicrosoftGraphSecurityArticleIndicator[]>] [-IsFeatured]
  [-LastUpdatedDateTime <DateTime>] [-Summary <IMicrosoftGraphSecurityFormattedContent>] [-Tags <String[]>]
- [-Title <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Title <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgSecurityThreatIntelligenceArticle -ArticleId <String> -BodyParameter <IMicrosoftGraphSecurityArticle>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgSecurityThreatIntelligenceArticle -InputObject <ISecurityIdentity>
- -BodyParameter <IMicrosoftGraphSecurityArticle> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphSecurityArticle> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -40,8 +39,8 @@ Update-MgSecurityThreatIntelligenceArticle -InputObject <ISecurityIdentity>
  [-AdditionalProperties <Hashtable>] [-Body <IMicrosoftGraphSecurityFormattedContent>]
  [-CreatedDateTime <DateTime>] [-Id <String>] [-ImageUrl <String>]
  [-Indicators <IMicrosoftGraphSecurityArticleIndicator[]>] [-IsFeatured] [-LastUpdatedDateTime <DateTime>]
- [-Summary <IMicrosoftGraphSecurityFormattedContent>] [-Tags <String[]>] [-Title <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Summary <IMicrosoftGraphSecurityFormattedContent>] [-Tags <String[]>] [-Title <String>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -141,21 +140,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -339,8 +323,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityArticle
 
 ### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

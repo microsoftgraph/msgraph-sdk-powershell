@@ -15,14 +15,14 @@ Update the navigation property triggerTypes in security
 ### UpdateExpanded (Default)
 ```
 Update-MgBetaSecurityTriggerType [-AdditionalProperties <Hashtable>] [-Id <String>]
- [-RetentionEventTypes <IMicrosoftGraphSecurityRetentionEventType[]>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-RetentionEventTypes <IMicrosoftGraphSecurityRetentionEventType[]>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgBetaSecurityTriggerType -BodyParameter <IMicrosoftGraphSecurityTriggerTypesRoot>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgBetaSecurityTriggerType -BodyParameter <IMicrosoftGraphSecurityTriggerTypesRoot> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -71,21 +71,6 @@ Parameter Sets: Update
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -161,8 +146,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityTriggerTypesRoot
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

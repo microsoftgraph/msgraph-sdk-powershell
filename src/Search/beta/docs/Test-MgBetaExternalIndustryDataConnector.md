@@ -14,14 +14,14 @@ Perform validations applicable for the specific instance of the data connector.
 
 ### Validate (Default)
 ```
-Test-MgBetaExternalIndustryDataConnector -IndustryDataConnectorId <String> [-Headers <IDictionary>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Test-MgBetaExternalIndustryDataConnector -IndustryDataConnectorId <String> [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### ValidateViaIdentity
 ```
-Test-MgBetaExternalIndustryDataConnector -InputObject <ISearchIdentity> [-Headers <IDictionary>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Test-MgBetaExternalIndustryDataConnector -InputObject <ISearchIdentity> [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -44,21 +44,6 @@ Perform validations applicable for the specific instance of the data connector.
 
 
 ## PARAMETERS
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
 
 ### -IndustryDataConnectorId
 The unique identifier of industryDataConnector
@@ -143,8 +128,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.ISearchIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

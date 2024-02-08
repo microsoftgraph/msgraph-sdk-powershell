@@ -19,7 +19,7 @@ For more information, see: Lifecycle Workflows extensibility approach.
 Resume-MgBetaIdentityGovernanceLifecycleWorkflowTaskProcessingResult -TaskId <String>
  -TaskProcessingResultId <String> -WorkflowId <String> [-AdditionalProperties <Hashtable>]
  [-Data <IMicrosoftGraphIdentityGovernanceCustomTaskExtensionCallbackData>] [-Source <String>]
- [-Type <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Type <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Resume
@@ -27,7 +27,7 @@ Resume-MgBetaIdentityGovernanceLifecycleWorkflowTaskProcessingResult -TaskId <St
 Resume-MgBetaIdentityGovernanceLifecycleWorkflowTaskProcessingResult -TaskId <String>
  -TaskProcessingResultId <String> -WorkflowId <String>
  -BodyParameter <IPathsO6Ec5IIdentitygovernanceLifecycleworkflowsWorkflowsWorkflowIdTasksTaskIdTaskprocessingresultsTaskprocessingresultIdMicrosoftGraphIdentitygovernanceResumePostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ResumeViaIdentity
@@ -35,7 +35,7 @@ Resume-MgBetaIdentityGovernanceLifecycleWorkflowTaskProcessingResult -TaskId <St
 Resume-MgBetaIdentityGovernanceLifecycleWorkflowTaskProcessingResult
  -InputObject <IIdentityGovernanceIdentity>
  -BodyParameter <IPathsO6Ec5IIdentitygovernanceLifecycleworkflowsWorkflowsWorkflowIdTasksTaskIdTaskprocessingresultsTaskprocessingresultIdMicrosoftGraphIdentitygovernanceResumePostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ResumeViaIdentityExpanded
@@ -43,7 +43,7 @@ Resume-MgBetaIdentityGovernanceLifecycleWorkflowTaskProcessingResult
 Resume-MgBetaIdentityGovernanceLifecycleWorkflowTaskProcessingResult
  -InputObject <IIdentityGovernanceIdentity> [-AdditionalProperties <Hashtable>]
  [-Data <IMicrosoftGraphIdentityGovernanceCustomTaskExtensionCallbackData>] [-Source <String>]
- [-Type <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Type <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -113,21 +113,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -277,8 +262,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPathsO6Ec5IIdentitygovernanceLifecycleworkflowsWorkflowsWorkflowIdTasksTaskIdTaskprocessingresultsTaskprocessingresultIdMicrosoftGraphIdentitygovernanceResumePostRequestbodyContentApplicationJsonSchema
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
@@ -356,7 +339,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[GroupId <String>]`: The unique identifier of group
   - `[IncompatibleAccessPackageId <String>]`: Usage: incompatibleAccessPackageId='{incompatibleAccessPackageId}'
   - `[LongRunningOperationId <String>]`: The unique identifier of longRunningOperation
-  - `[ObjectId <String>]`: Alternate key of accessPackageSubject
   - `[On <String>]`: Usage: on='{on}'
   - `[PermissionsCreepIndexDistributionId <String>]`: The unique identifier of permissionsCreepIndexDistribution
   - `[PermissionsRequestChangeId <String>]`: The unique identifier of permissionsRequestChange

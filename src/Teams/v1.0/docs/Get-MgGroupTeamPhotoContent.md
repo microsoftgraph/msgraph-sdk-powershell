@@ -14,14 +14,12 @@ Get media content for the navigation property photo from groups
 
 ### Get (Default)
 ```
-Get-MgGroupTeamPhotoContent -GroupId <String> -OutFile <String> [-Format <String>] [-Headers <IDictionary>]
- [-PassThru] [<CommonParameters>]
+Get-MgGroupTeamPhotoContent -GroupId <String> -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgGroupTeamPhotoContent -InputObject <ITeamsIdentity> -OutFile <String> [-Format <String>]
- [-Headers <IDictionary>] [-PassThru] [<CommonParameters>]
+Get-MgGroupTeamPhotoContent -InputObject <ITeamsIdentity> -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -45,21 +43,6 @@ Get media content for the navigation property photo from groups
 
 ## PARAMETERS
 
-### -Format
-Format of the content
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -GroupId
 The unique identifier of group
 
@@ -72,21 +55,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -142,8 +110,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

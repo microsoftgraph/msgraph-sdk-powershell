@@ -26,13 +26,13 @@ Update-MgBetaAdminSharepointSetting [-AdditionalProperties <Hashtable>]
  [-PersonalSiteDefaultStorageLimitInMb <Int64>] [-SharingAllowedDomainList <String[]>]
  [-SharingBlockedDomainList <String[]>] [-SharingCapability <String>] [-SharingDomainRestrictionMode <String>]
  [-SiteCreationDefaultManagedPath <String>] [-SiteCreationDefaultStorageLimitInMb <Int32>]
- [-TenantDefaultTimezone <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-TenantDefaultTimezone <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgBetaAdminSharepointSetting -BodyParameter <IMicrosoftGraphSharepointSettings>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgBetaAdminSharepointSetting -BodyParameter <IMicrosoftGraphSharepointSettings> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -145,21 +145,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -596,8 +581,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSharepointSettings
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

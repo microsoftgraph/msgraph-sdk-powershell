@@ -8,9 +8,8 @@ schema: 2.0.0
 # New-MgBetaUserMailFolderChildFolderMessageAttachment
 
 ## SYNOPSIS
-Use this API to add an attachment to a message.
+Use this API to create a new Attachment.
 An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
-You can add an attachment to an existing message by posting to its attachments collection, or to a new\nmessage that is being drafted, or created and sent on the fly.
 
 ## SYNTAX
 
@@ -18,35 +17,33 @@ You can add an attachment to an existing message by posting to its attachments c
 ```
 New-MgBetaUserMailFolderChildFolderMessageAttachment -MailFolderId <String> -MailFolderId1 <String>
  -MessageId <String> -UserId <String> [-AdditionalProperties <Hashtable>] [-ContentType <String>]
- [-Id <String>] [-IsInline] [-LastModifiedDateTime <DateTime>] [-Name <String>] [-Size <Int32>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-IsInline] [-LastModifiedDateTime <DateTime>] [-Name <String>] [-Size <Int32>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaUserMailFolderChildFolderMessageAttachment -MailFolderId <String> -MailFolderId1 <String>
- -MessageId <String> -UserId <String> -BodyParameter <IMicrosoftGraphAttachment> [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -MessageId <String> -UserId <String> -BodyParameter <IMicrosoftGraphAttachment> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaUserMailFolderChildFolderMessageAttachment -InputObject <IMailIdentity>
- -BodyParameter <IMicrosoftGraphAttachment> [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphAttachment> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgBetaUserMailFolderChildFolderMessageAttachment -InputObject <IMailIdentity>
  [-AdditionalProperties <Hashtable>] [-ContentType <String>] [-Id <String>] [-IsInline]
- [-LastModifiedDateTime <DateTime>] [-Name <String>] [-Size <Int32>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-LastModifiedDateTime <DateTime>] [-Name <String>] [-Size <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Use this API to add an attachment to a message.
+Use this API to create a new Attachment.
 An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
-You can add an attachment to an existing message by posting to its attachments collection, or to a new\nmessage that is being drafted, or created and sent on the fly.
 
 ## EXAMPLES
 
@@ -109,21 +106,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -320,8 +302,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IMailIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAttachment
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

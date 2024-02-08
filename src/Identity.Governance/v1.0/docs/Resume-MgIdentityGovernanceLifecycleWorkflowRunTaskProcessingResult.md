@@ -19,7 +19,7 @@ For more information, see: Lifecycle Workflows extensibility approach.
 Resume-MgIdentityGovernanceLifecycleWorkflowRunTaskProcessingResult -RunId <String>
  -TaskProcessingResultId <String> -WorkflowId <String> [-AdditionalProperties <Hashtable>]
  [-Data <IMicrosoftGraphIdentityGovernanceCustomTaskExtensionCallbackData>] [-Source <String>]
- [-Type <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Type <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Resume
@@ -27,14 +27,14 @@ Resume-MgIdentityGovernanceLifecycleWorkflowRunTaskProcessingResult -RunId <Stri
 Resume-MgIdentityGovernanceLifecycleWorkflowRunTaskProcessingResult -RunId <String>
  -TaskProcessingResultId <String> -WorkflowId <String>
  -BodyParameter <IPaths1M7T9WjIdentitygovernanceLifecycleworkflowsWorkflowsWorkflowIdRunsRunIdTaskprocessingresultsTaskprocessingresultIdMicrosoftGraphIdentitygovernanceResumePostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ResumeViaIdentity
 ```
 Resume-MgIdentityGovernanceLifecycleWorkflowRunTaskProcessingResult -InputObject <IIdentityGovernanceIdentity>
  -BodyParameter <IPaths1M7T9WjIdentitygovernanceLifecycleworkflowsWorkflowsWorkflowIdRunsRunIdTaskprocessingresultsTaskprocessingresultIdMicrosoftGraphIdentitygovernanceResumePostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ResumeViaIdentityExpanded
@@ -42,7 +42,7 @@ Resume-MgIdentityGovernanceLifecycleWorkflowRunTaskProcessingResult -InputObject
 Resume-MgIdentityGovernanceLifecycleWorkflowRunTaskProcessingResult -InputObject <IIdentityGovernanceIdentity>
  [-AdditionalProperties <Hashtable>]
  [-Data <IMicrosoftGraphIdentityGovernanceCustomTaskExtensionCallbackData>] [-Source <String>]
- [-Type <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Type <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -112,21 +112,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -275,8 +260,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
 
 ### Microsoft.Graph.PowerShell.Models.IPaths1M7T9WjIdentitygovernanceLifecycleworkflowsWorkflowsWorkflowIdRunsRunIdTaskprocessingresultsTaskprocessingresultIdMicrosoftGraphIdentitygovernanceResumePostRequestbodyContentApplicationJsonSchema
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

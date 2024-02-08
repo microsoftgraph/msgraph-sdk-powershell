@@ -18,20 +18,20 @@ New-MgBetaUserMailFolderChildFolderMessageMention -MailFolderId <String> -MailFo
  -MessageId <String> -UserId <String> [-AdditionalProperties <Hashtable>] [-Application <String>]
  [-ClientReference <String>] [-CreatedBy <IMicrosoftGraphEmailAddress>] [-CreatedDateTime <DateTime>]
  [-DeepLink <String>] [-Id <String>] [-Mentioned <IMicrosoftGraphEmailAddress>] [-MentionText <String>]
- [-ServerCreatedDateTime <DateTime>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ServerCreatedDateTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaUserMailFolderChildFolderMessageMention -MailFolderId <String> -MailFolderId1 <String>
- -MessageId <String> -UserId <String> -BodyParameter <IMicrosoftGraphMention> [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -MessageId <String> -UserId <String> -BodyParameter <IMicrosoftGraphMention> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaUserMailFolderChildFolderMessageMention -InputObject <IMailIdentity>
- -BodyParameter <IMicrosoftGraphMention> [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphMention> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -40,7 +40,7 @@ New-MgBetaUserMailFolderChildFolderMessageMention -InputObject <IMailIdentity>
  [-AdditionalProperties <Hashtable>] [-Application <String>] [-ClientReference <String>]
  [-CreatedBy <IMicrosoftGraphEmailAddress>] [-CreatedDateTime <DateTime>] [-DeepLink <String>] [-Id <String>]
  [-Mentioned <IMicrosoftGraphEmailAddress>] [-MentionText <String>] [-ServerCreatedDateTime <DateTime>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -174,21 +174,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -373,8 +358,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IMailIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMention
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

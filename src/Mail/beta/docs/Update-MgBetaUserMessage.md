@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgBetaUserMessage
 
 ## SYNOPSIS
-Update the properties of an eventMessage object.
+Update the properties of a message object.
 
 ## SYNTAX
 
@@ -30,20 +30,20 @@ Update-MgBetaUserMessage -MessageId <String> -UserId <String> [-AdditionalProper
  [-Sender <IMicrosoftGraphRecipient>] [-SentDateTime <DateTime>]
  [-SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>] [-Subject <String>]
  [-ToRecipients <IMicrosoftGraphRecipient[]>] [-UniqueBody <IMicrosoftGraphItemBody>]
- [-UnsubscribeData <String[]>] [-UnsubscribeEnabled] [-WebLink <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-UnsubscribeData <String[]>] [-UnsubscribeEnabled] [-WebLink <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaUserMessage -MessageId <String> -UserId <String> -BodyParameter <IMicrosoftGraphMessage>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgBetaUserMessage -InputObject <IMailIdentity> -BodyParameter <IMicrosoftGraphMessage>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgBetaUserMessage -InputObject <IMailIdentity> -BodyParameter <IMicrosoftGraphMessage> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -64,12 +64,12 @@ Update-MgBetaUserMessage -InputObject <IMailIdentity> [-AdditionalProperties <Ha
  [-Sender <IMicrosoftGraphRecipient>] [-SentDateTime <DateTime>]
  [-SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>] [-Subject <String>]
  [-ToRecipients <IMicrosoftGraphRecipient[]>] [-UniqueBody <IMicrosoftGraphItemBody>]
- [-UnsubscribeData <String[]>] [-UnsubscribeEnabled] [-WebLink <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-UnsubscribeData <String[]>] [-UnsubscribeEnabled] [-WebLink <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Update the properties of an eventMessage object.
+Update the properties of a message object.
 
 ## EXAMPLES
 
@@ -343,21 +343,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -835,8 +820,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IMailIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMessage
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 
