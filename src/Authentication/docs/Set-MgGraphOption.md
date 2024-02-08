@@ -13,7 +13,7 @@ Sets global configurations that apply to the SDK. For example, toggle Web Accoun
 ## SYNTAX
 
 ```
-Set-MgGraphOption [-EnableLoginByWAM <Boolean>] [<CommonParameters>]
+Set-MgGraphOption [-EnableLoginByWAM <Boolean>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -37,6 +37,21 @@ PS C:\> Set-MgGraphOption -EnableLoginByWAM $True
 Type: Boolean
 Parameter Sets: (All)
 Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProgressAction
+{{ Fill ProgressAction Description }}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
 
 Required: False
 Position: Named

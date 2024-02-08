@@ -1605,6 +1605,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: contact
+        - name: $format
+          in: query
+          description: Format of the content
+          style: form
+          explode: false
+          schema:
+            type: string
       responses:
         2XX:
           description: Retrieved media content
@@ -2652,6 +2659,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: contact
+        - name: $format
+          in: query
+          description: Format of the content
+          style: form
+          explode: false
+          schema:
+            type: string
       responses:
         2XX:
           description: Retrieved media content
@@ -3575,6 +3589,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: contact
+        - name: $format
+          in: query
+          description: Format of the content
+          style: form
+          explode: false
+          schema:
+            type: string
       responses:
         2XX:
           description: Retrieved media content

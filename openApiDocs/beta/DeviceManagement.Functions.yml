@@ -1180,6 +1180,19 @@ paths:
                 - isBuiltIn
                 - isBuiltIn desc
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - assignments
+              type: string
       responses:
         2XX:
           description: Success
@@ -1258,6 +1271,19 @@ paths:
                 - displayName desc
                 - isBuiltIn
                 - isBuiltIn desc
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - assignments
               type: string
       responses:
         2XX:
@@ -1426,6 +1452,274 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.deviceManagement.portalNotification'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  /deviceManagement/operationApprovalPolicies/microsoft.graph.getApprovableOperations():
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getApprovableOperations
+      operationId: deviceManagement.operationApprovalPolicy_getApprovableOperation
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.operationApprovalPolicySet'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  /deviceManagement/operationApprovalPolicies/microsoft.graph.getOperationsRequiringApproval():
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getOperationsRequiringApproval
+      operationId: deviceManagement.operationApprovalPolicy_getOperationsRequiringApproval
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.operationApprovalPolicySet'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  /deviceManagement/operationApprovalPolicies/microsoft.graph.retrieveApprovableOperations():
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function retrieveApprovableOperations
+      operationId: deviceManagement.operationApprovalPolicy_retrieveApprovableOperation
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.operationApprovalPolicySet'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  /deviceManagement/operationApprovalPolicies/microsoft.graph.retrieveOperationsRequiringApproval():
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function retrieveOperationsRequiringApproval
+      operationId: deviceManagement.operationApprovalPolicy_retrieveOperationsRequiringApproval
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.operationApprovalPolicySet'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/deviceManagement/operationApprovalRequests/microsoft.graph.retrieveMyRequestById(id=''{id}'')':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function retrieveMyRequestById
+      operationId: deviceManagement.operationApprovalRequest_retrieveMyRequestGraphBPreId
+      parameters:
+        - name: id
+          in: path
+          description: 'Usage: id=''{id}'''
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.operationApprovalRequest'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  /deviceManagement/operationApprovalRequests/microsoft.graph.retrieveMyRequests():
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function retrieveMyRequests
+      operationId: deviceManagement.operationApprovalRequest_retrieveMyRequest
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - approvalJustification
+                - approver
+                - expirationDateTime
+                - lastModifiedDateTime
+                - operationApprovalPolicies
+                - requestDateTime
+                - requestJustification
+                - requestor
+                - requiredOperationApprovalPolicyTypes
+                - status
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - approvalJustification
+                - approvalJustification desc
+                - approver
+                - approver desc
+                - expirationDateTime
+                - expirationDateTime desc
+                - lastModifiedDateTime
+                - lastModifiedDateTime desc
+                - operationApprovalPolicies
+                - operationApprovalPolicies desc
+                - requestDateTime
+                - requestDateTime desc
+                - requestJustification
+                - requestJustification desc
+                - requestor
+                - requestor desc
+                - requiredOperationApprovalPolicyTypes
+                - requiredOperationApprovalPolicyTypes desc
+                - status
+                - status desc
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of operationApprovalRequest
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.operationApprovalRequest'
                   '@odata.nextLink':
                     type: string
                     nullable: true
@@ -1774,6 +2068,18 @@ paths:
                 - startupPerformanceScore
                 - startupPerformanceScore desc
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
       responses:
         2XX:
           description: Success
@@ -1881,6 +2187,18 @@ paths:
                 - virtualNetwork
                 - virtualNetwork desc
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
       responses:
         2XX:
           description: Success
@@ -1936,6 +2254,8 @@ paths:
               enum:
                 - id
                 - averageSpikeTimeScore
+                - cpuClockSpeedInMHz
+                - cpuDisplayName
                 - cpuSpikeTimePercentage
                 - cpuSpikeTimePercentageThreshold
                 - cpuSpikeTimeScore
@@ -1943,11 +2263,16 @@ paths:
                 - deviceId
                 - deviceName
                 - deviceResourcePerformanceScore
+                - diskType
+                - healthStatus
+                - machineType
                 - manufacturer
                 - model
                 - ramSpikeTimePercentage
                 - ramSpikeTimePercentageThreshold
                 - ramSpikeTimeScore
+                - totalProcessorCoreCount
+                - totalRamInMB
               type: string
         - name: $orderby
           in: query
@@ -1963,6 +2288,10 @@ paths:
                 - id desc
                 - averageSpikeTimeScore
                 - averageSpikeTimeScore desc
+                - cpuClockSpeedInMHz
+                - cpuClockSpeedInMHz desc
+                - cpuDisplayName
+                - cpuDisplayName desc
                 - cpuSpikeTimePercentage
                 - cpuSpikeTimePercentage desc
                 - cpuSpikeTimePercentageThreshold
@@ -1977,6 +2306,12 @@ paths:
                 - deviceName desc
                 - deviceResourcePerformanceScore
                 - deviceResourcePerformanceScore desc
+                - diskType
+                - diskType desc
+                - healthStatus
+                - healthStatus desc
+                - machineType
+                - machineType desc
                 - manufacturer
                 - manufacturer desc
                 - model
@@ -1987,6 +2322,22 @@ paths:
                 - ramSpikeTimePercentageThreshold desc
                 - ramSpikeTimeScore
                 - ramSpikeTimeScore desc
+                - totalProcessorCoreCount
+                - totalProcessorCoreCount desc
+                - totalRamInMB
+                - totalRamInMB desc
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
               type: string
       responses:
         2XX:
@@ -2351,6 +2702,18 @@ paths:
                 - userAccountType desc
                 - userPrincipalName
                 - userPrincipalName desc
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
               type: string
       responses:
         2XX:
@@ -3544,6 +3907,71 @@ components:
           $ref: '#/components/schemas/microsoft.graph.deviceManagement.ruleSeverityType'
       additionalProperties:
         type: object
+    microsoft.graph.operationApprovalPolicySet:
+      title: operationApprovalPolicySet
+      type: object
+      properties:
+        policyPlatform:
+          $ref: '#/components/schemas/microsoft.graph.operationApprovalPolicyPlatform'
+        policyType:
+          $ref: '#/components/schemas/microsoft.graph.operationApprovalPolicyType'
+      additionalProperties:
+        type: object
+      description: Contains the pair of OperationApprovalPolicyType and OperationApprovalPolicyPlatform determining the set of applicable OperationApprovalPolicies for a user. The OperationApprovalPolicySet complex type is used to indicate to the UX which policies are enabled for the current logged in user in order to correctly show the expected experience.
+    microsoft.graph.operationApprovalRequest:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: operationApprovalRequest
+          type: object
+          properties:
+            approvalJustification:
+              type: string
+              description: 'Indicates the justification for approving or rejecting the request. Maximum length of justification is 1024 characters. For example: ''Approved per Change 23423 - needed for Feb 2023 application baseline updates.'' Read-only. This property is read-only.'
+              nullable: true
+              readOnly: true
+            approver:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            expirationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Indicates the DateTime when any action on the approval request is no longer permitted. The value cannot be modified and is automatically populated when the request is created using expiration offset values defined in the service controllers. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Returned by default. Read-only. This property is read-only.'
+              format: date-time
+              readOnly: true
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Indicates the last DateTime that the request was modified. The value cannot be modified and is automatically populated whenever values in the request are updated. For example, when the ''status'' property changes from needsApproval to approved. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Returned by default. Read-only. This property is read-only.'
+              format: date-time
+              readOnly: true
+            operationApprovalPolicies:
+              type: string
+              description: The operational approval policies used in the request. Indicates the policy and platform combinations that are required for this request to be approved or rejected. Read-only. This property is read-only.
+              nullable: true
+              readOnly: true
+            requestDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Indicates the DateTime that the request was made. The value cannot be modified and is automatically populated when the request is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Returned by default. Read-only. This property is read-only.'
+              format: date-time
+              readOnly: true
+            requestJustification:
+              type: string
+              description: 'Indicates the justification for creating the request. Maximum length of justification is 1024 characters. For example: ''Needed for Feb 2023 application baseline updates.'' Read-only. This property is read-only.'
+              nullable: true
+              readOnly: true
+            requestor:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            requiredOperationApprovalPolicyTypes:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.operationApprovalPolicyType'
+              description: Indicates the approval policy types required by the request in order for the request to be approved or rejected. Read-only. This property is read-only.
+              readOnly: true
+            status:
+              $ref: '#/components/schemas/microsoft.graph.operationApprovalRequestStatus'
+          additionalProperties:
+            type: object
+          description: 'The OperationApprovalRequest entity encompasses the operation an admin wishes to perform and is requesting approval to complete. It contains the detail of the operation one wishes to perform, user metadata of the requestor, and a justification for the change. It allows for several operations for both the requestor and the potential approver to either approve, deny, or cancel the request and a response justification to provide information for the decision.'
     microsoft.graph.tenantAttachRBACState:
       title: tenantAttachRBACState
       type: object
@@ -3769,6 +4197,14 @@ components:
               type: integer
               description: AverageSpikeTimeScore of a device or a model type. Valid values 0 to 100
               format: int32
+            cpuClockSpeedInMHz:
+              type: number
+              description: 'The clock speed of the processor, in MHz. Valid values 0 to 1000000'
+              format: double
+            cpuDisplayName:
+              type: string
+              description: 'The name of the processor on the device, For example, 11th Gen Intel(R) Core(TM) i7.'
+              nullable: true
             cpuSpikeTimePercentage:
               type: number
               description: CPU spike time in percentage. Valid values 0 to 100
@@ -3801,6 +4237,12 @@ components:
               type: integer
               description: Resource performance score of a specific device. Valid values 0 to 100
               format: int32
+            diskType:
+              $ref: '#/components/schemas/microsoft.graph.diskType'
+            healthStatus:
+              $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsHealthState'
+            machineType:
+              $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsMachineType'
             manufacturer:
               type: string
               description: The user experience analytics device manufacturer.
@@ -3823,6 +4265,16 @@ components:
               type: integer
               description: The user experience analytics device RAM spike time score. Valid values 0 to 100
               format: int32
+            totalProcessorCoreCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: The count of cores of the processor of device. Valid values 0 to 512
+              format: int32
+            totalRamInMB:
+              type: number
+              description: 'The total RAM of the device, in MB. Valid values 0 to 1000000'
+              format: double
           additionalProperties:
             type: object
           description: The user experience analytics resource performance entity.
@@ -4008,21 +4460,21 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name for the source image.
+          description: The display name for the source image. Read-only.
           nullable: true
         id:
           type: string
-          description: The ID of the source image.
           nullable: true
         resourceId:
           type: string
+          description: 'The fully qualified unique identifier (ID) of the source image resource in Azure. The ID format is: ''/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/images/{imageName}''. Read-only.'
         subscriptionDisplayName:
           type: string
-          description: The display name of subscription that hosts the source image.
+          description: The display name of the subscription that hosts the source image. Read-only.
           nullable: true
         subscriptionId:
           type: string
-          description: The ID of subscription that hosts the source image.
+          description: The unique identifier (ID) of the subscription that hosts the source image. Read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -4183,11 +4635,9 @@ components:
       properties:
         displayName:
           type: string
-          description: Not yet documented
           nullable: true
         id:
           type: string
-          description: Not yet documented
           nullable: true
         sourceType:
           $ref: '#/components/schemas/microsoft.graph.settingSourceType'
@@ -4520,6 +4970,8 @@ components:
         - microsoft365ManagedMdm
         - msSense
         - intuneAosp
+        - google
+        - unknownFutureValue
       type: string
       description: Management agent type.
       x-ms-enum:
@@ -4565,6 +5017,12 @@ components:
           - value: intuneAosp
             description: This device is managed by Intune's MDM for AOSP (Android Open Source Project) devices
             name: intuneAosp
+          - value: google
+            description: Indicates the management agent to manage the device is Google.
+            name: google
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.managedDeviceOwnerType:
       title: managedDeviceOwnerType
       enum:
@@ -4791,6 +5249,199 @@ components:
         - critical
         - unknownFutureValue
       type: string
+    microsoft.graph.operationApprovalPolicyPlatform:
+      title: operationApprovalPolicyPlatform
+      enum:
+        - notApplicable
+        - androidDeviceAdministrator
+        - androidEnterprise
+        - iOSiPadOS
+        - macOS
+        - windows10AndLater
+        - windows81AndLater
+        - windows10X
+        - unknownFutureValue
+      type: string
+      description: 'The set of available platforms for the OperationApprovalPolicy. Allows configuration of a policy to specific platform(s) for approval. If no specific platform is required or applicable, the platform is `notApplicable`.'
+      x-ms-enum-flags:
+        isFlags: true
+      x-ms-enum:
+        name: operationApprovalPolicyPlatform
+        modelAsString: false
+        values:
+          - value: notApplicable
+            description: Default. Indicates that a policy platform is not required for a chosen policy type.
+            name: notApplicable
+          - value: androidDeviceAdministrator
+            description: Indicates that the configured policy platform is for Android Device Administrator.
+            name: androidDeviceAdministrator
+          - value: androidEnterprise
+            description: Indicates that the configured policy platform is for Android Enterprise.
+            name: androidEnterprise
+          - value: iOSiPadOS
+            description: Indicates that the configured policy platform is for iOS/iPadOS.
+            name: iOSiPadOS
+          - value: macOS
+            description: Indicates that the configured policy platform is for macOS.
+            name: macOS
+          - value: windows10AndLater
+            description: Indicates that the configured policy platform is for Windows 10 and later.
+            name: windows10AndLater
+          - value: windows81AndLater
+            description: Indicates that the configured policy platform is for Windows 8.1 and later.
+            name: windows81AndLater
+          - value: windows10X
+            description: Indicates that the configured policy platform is for Windows 10X.
+            name: windows10X
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
+    microsoft.graph.operationApprovalPolicyType:
+      title: operationApprovalPolicyType
+      enum:
+        - deviceAction
+        - deviceWipe
+        - deviceRetire
+        - deviceRetireNonCompliant
+        - deviceDelete
+        - deviceLock
+        - deviceErase
+        - deviceDisableActivationLock
+        - windowsEnrollment
+        - compliancePolicy
+        - configurationPolicy
+        - appProtectionPolicy
+        - policySet
+        - filter
+        - endpointSecurityPolicy
+        - app
+        - scripts
+        - role
+        - deviceResetPasscode
+        - customOrganizationalMessage
+        - unknownFutureValue
+      type: string
+      description: 'The set of available policy types that can be configured for approval. There is no default value for this enum, indicating that the policy type must always be chosen.'
+      x-ms-enum:
+        name: operationApprovalPolicyType
+        modelAsString: false
+        values:
+          - value: deviceAction
+            description: Indicates that the configured policy type is for a Device Action.
+            name: deviceAction
+          - value: deviceWipe
+            description: Indicates that the configured policy type is for a Device Wipe Action.
+            name: deviceWipe
+          - value: deviceRetire
+            description: Indicates that the configured policy type is for a Device Retire Action.
+            name: deviceRetire
+          - value: deviceRetireNonCompliant
+            description: Indicates that the configured policy type is for a Retire Non-Compliant Devices Action.
+            name: deviceRetireNonCompliant
+          - value: deviceDelete
+            description: Indicates that the configured policy type is for a Device Delete Action.
+            name: deviceDelete
+          - value: deviceLock
+            description: Indicates that the configured policy type is for a Device Lock Action.
+            name: deviceLock
+          - value: deviceErase
+            description: Indicates that the configured policy type is for a Device Erase Action.
+            name: deviceErase
+          - value: deviceDisableActivationLock
+            description: Indicates that the configured policy type is for a Device Disable Activation Lock Action.
+            name: deviceDisableActivationLock
+          - value: windowsEnrollment
+            description: Indicates that the configured policy type is for a Windows Enrollment.
+            name: windowsEnrollment
+          - value: compliancePolicy
+            description: Indicates that the configured policy type is for a Compliance Policy.
+            name: compliancePolicy
+          - value: configurationPolicy
+            description: Indicates that the configured policy type is for a Configuration Policy.
+            name: configurationPolicy
+          - value: appProtectionPolicy
+            description: Indicates that the configured policy type is for an App Protection Policy.
+            name: appProtectionPolicy
+          - value: policySet
+            description: Indicates that the configured policy type is for a Policy Set.
+            name: policySet
+          - value: filter
+            description: Indicates that the configured policy type is for a Filter.
+            name: filter
+          - value: endpointSecurityPolicy
+            description: Indicates that the configured policy type is for an Endpoint Security Policy.
+            name: endpointSecurityPolicy
+          - value: app
+            description: 'Indicates that the configured policy type is an application type, such as mobile apps or built-in apps.'
+            name: app
+          - value: scripts
+            description: 'Indicates that the configured policy type is a script type, such as Powershell scripts or remediation scripts.'
+            name: scripts
+          - value: role
+            description: Indicates that the configured policy type is for a Role.
+            name: role
+          - value: deviceResetPasscode
+            description: Indicates that the configured policy type is for a Device Reset Passcode Action.
+            name: deviceResetPasscode
+          - value: customOrganizationalMessage
+            description: Indicates that the configured policy type is for a Custom Organizational Message.
+            name: customOrganizationalMessage
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
+    microsoft.graph.identitySet:
+      title: identitySet
+      type: object
+      properties:
+        application:
+          $ref: '#/components/schemas/microsoft.graph.identity'
+        device:
+          $ref: '#/components/schemas/microsoft.graph.identity'
+        user:
+          $ref: '#/components/schemas/microsoft.graph.identity'
+      additionalProperties:
+        type: object
+    microsoft.graph.operationApprovalRequestStatus:
+      title: operationApprovalRequestStatus
+      enum:
+        - unknown
+        - needsApproval
+        - approved
+        - rejected
+        - cancelled
+        - completed
+        - expired
+        - unknownFutureValue
+      type: string
+      description: 'Indicates the status of the Approval Request. The status of a request will change when an action is successfully performed on it, such as when it is `approved` or `rejected`, or when the request''s expiration DateTime passes and the result is `expired`.'
+      x-ms-enum:
+        name: operationApprovalRequestStatus
+        modelAsString: false
+        values:
+          - value: unknown
+            description: 'Default. Indicates that the request approval status is unknown, and that the status has not been assigned to the approval request.'
+            name: unknown
+          - value: needsApproval
+            description: Indicates that the approval request needs approval before the operation can be completed.
+            name: needsApproval
+          - value: approved
+            description: Indicates that the approval request has been approved. The operation can now be completed.
+            name: approved
+          - value: rejected
+            description: Indicates that the approval request has been rejected. No further action can be taken to complete the operation or to modify the request.
+            name: rejected
+          - value: cancelled
+            description: Indicates that the approval request has been cancelled by the request's requestor. No further action can be taken to complete the operation or to modify the request.
+            name: cancelled
+          - value: completed
+            description: Indicates that the approval request has been completed. This status is feature agnostic and does not indicate success or failure of the operation. No further action is necessary for the operation or to modify the request.
+            name: completed
+          - value: expired
+            description: Indicates that the approval request has expired. No further action can be taken to complete the operation or to modify the request. A new approval request must be made and approved in order to complete the operation.
+            name: expired
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     ReferenceNumeric:
       enum:
         - '-INF'
@@ -4845,6 +5496,31 @@ components:
           - value: meetingGoals
             description: Indicates that the health state is meeting goals.
             name: meetingGoals
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
+    microsoft.graph.userExperienceAnalyticsMachineType:
+      title: userExperienceAnalyticsMachineType
+      enum:
+        - unknown
+        - physical
+        - virtual
+        - unknownFutureValue
+      type: string
+      description: 'Indicates if machine is physical or virtual. Possible values are: physical or virtual'
+      x-ms-enum:
+        name: userExperienceAnalyticsMachineType
+        modelAsString: false
+        values:
+          - value: unknown
+            description: Indicates that the type is unknown.
+            name: unknown
+          - value: physical
+            description: Indicates that the Machine is physical.
+            name: physical
+          - value: virtual
+            description: Indicates that the machine is virtual.
+            name: virtual
           - value: unknownFutureValue
             description: Evolvable enumeration sentinel value. Do not use.
             name: unknownFutureValue
@@ -4964,18 +5640,19 @@ components:
       properties:
         errorMessage:
           type: string
+          description: Contains a detailed error message when the partner agent installation failed.
           nullable: true
         installStatus:
           $ref: '#/components/schemas/microsoft.graph.cloudPcPartnerAgentInstallStatus'
         isThirdPartyPartner:
           type: boolean
-          description: Indicates if the partner agent is a third party. When 'TRUE' the agent is a third-party (non-Microsoft) agent and when 'FALSE' the agent is a Microsoft agent or isn't known.  The default value is 'FALSE'
+          description: 'Indicates whether the partner agent is a third party. When true, the agent is a third-party (non-Microsoft) agent and when false, the agent is a Microsoft agent or isn''t known.  The default value is false.'
           nullable: true
         partnerAgentName:
           $ref: '#/components/schemas/microsoft.graph.cloudPcPartnerAgentName'
         retriable:
           type: boolean
-          description: Indicates if the partner agent is a third party. When 'TRUE' the agent is a third-party (non-Microsoft) agent and when 'FALSE' the agent is a Microsoft agent or isn't known. The default value is 'FALSE'
+          description: Indicates whether the partner agent installation should be retried. The default value is false.
           nullable: true
       additionalProperties:
         type: object
@@ -5257,6 +5934,20 @@ components:
         - affectedCloudPcPercentage
         - unknownFutureValue
       type: string
+    microsoft.graph.identity:
+      title: identity
+      type: object
+      properties:
+        displayName:
+          type: string
+          description: 'The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          nullable: true
+        id:
+          type: string
+          description: 'Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn''t included in the response.'
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.cloudPcHealthCheckItem:
       title: cloudPcHealthCheckItem
       type: object
@@ -5422,7 +6113,7 @@ components:
       properties:
         settingDefinitionId:
           type: string
-          description: Setting definition id that is being referred to a setting. Applicable for reusable setting
+          description: Setting definition id that is being referred to a setting. Applicable for reusable setting.
           nullable: true
       additionalProperties:
         type: object

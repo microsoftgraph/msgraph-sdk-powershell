@@ -3148,10 +3148,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action invite
-      description: 'Delete a specific participant in a call. In some situations, it is appropriate for an application to remove a participant from an active call. This action can be done before or after the participant answers the call. When an active caller is removed, they are immediately dropped from the call with no pre- or post-removal notification. When an invited participant is removed, any outstanding add participant request is canceled. '
+      description: 'Invite participants to the active call. For more information about how to handle operations, see commsOperation.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/participant-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/participant-invite?view=graph-rest-1.0
       operationId: communication.call.participant_invite
       parameters:
         - name: call-id
@@ -4262,6 +4262,80 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  '/communications/onlineMeetings/{onlineMeeting-id}/microsoft.graph.sendVirtualAppointmentReminderSms':
+    post:
+      tags:
+        - communications.Actions
+      summary: Invoke action sendVirtualAppointmentReminderSms
+      operationId: communication.onlineMeeting_sendVirtualAppointmentReminderSm
+      parameters:
+        - name: onlineMeeting-id
+          in: path
+          description: The unique identifier of onlineMeeting
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                remindBeforeTimeInMinutesType:
+                  $ref: '#/components/schemas/microsoft.graph.remindBeforeTimeInMinutesType'
+                attendees:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.attendeeNotificationInfo'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/communications/onlineMeetings/{onlineMeeting-id}/microsoft.graph.sendVirtualAppointmentSms':
+    post:
+      tags:
+        - communications.Actions
+      summary: Invoke action sendVirtualAppointmentSms
+      operationId: communication.onlineMeeting_sendVirtualAppointmentSm
+      parameters:
+        - name: onlineMeeting-id
+          in: path
+          description: The unique identifier of onlineMeeting
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                messageType:
+                  $ref: '#/components/schemas/microsoft.graph.virtualAppointmentMessageType'
+                attendees:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.attendeeNotificationInfo'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/communications/onlineMeetings/{onlineMeeting-id}/recordings':
     get:
       tags:
@@ -7594,11 +7668,11 @@ paths:
     get:
       tags:
         - users.presence
-      summary: 'presence: setStatusMessage'
-      description: Set a presence status message for a user. An optional expiration date and time can be supplied.
+      summary: Get presence
+      description: Get a user's presence information.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/presence-setstatusmessage?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/presence-get?view=graph-rest-1.0
       operationId: user_GetPresence
       parameters:
         - name: user-id
@@ -8205,6 +8279,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.onlineMeetingRestricted'
             rosterSequenceNumber:
               type: integer
+              description: Indicates the roster sequence number in which the participant was last updated.
               format: int64
               nullable: true
           additionalProperties:
@@ -8417,6 +8492,32 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.remindBeforeTimeInMinutesType:
+      title: remindBeforeTimeInMinutesType
+      enum:
+        - mins15
+        - unknownFutureValue
+      type: string
+    microsoft.graph.attendeeNotificationInfo:
+      title: attendeeNotificationInfo
+      type: object
+      properties:
+        phoneNumber:
+          type: string
+          nullable: true
+        timeZone:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.virtualAppointmentMessageType:
+      title: virtualAppointmentMessageType
+      enum:
+        - confirmation
+        - reschedule
+        - cancellation
+        - unknownFutureValue
+      type: string
     microsoft.graph.callRecording:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -8801,6 +8902,7 @@ components:
       properties:
         reason:
           type: string
+          description: The removal reason for the participant resource.
           nullable: true
       additionalProperties:
         type: object

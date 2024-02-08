@@ -7899,6 +7899,316 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/sites/{site-id}/microsoft.graph.getByPath(path=''{path}'')/microsoft.graph.getByPath(path=''{path1}'')/onenote':
+    get:
+      tags:
+        - sites.onenote
+      summary: Get onenote from sites
+      description: Calls the OneNote service for notebook related operations.
+      operationId: site.getGraphBPrePath_GetOnenote
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: path
+          in: path
+          description: 'Usage: path=''{path}'''
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+        - name: path1
+          in: path
+          description: 'Usage: path=''{path1}'''
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - notebooks
+                - operations
+                - pages
+                - resources
+                - sectionGroups
+                - sections
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - notebooks
+                - operations
+                - pages
+                - resources
+                - sectionGroups
+                - sections
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenote'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - sites.onenote
+      summary: Update the navigation property onenote in sites
+      operationId: site.getGraphBPrePath_UpdateOnenote
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: path
+          in: path
+          description: 'Usage: path=''{path}'''
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+        - name: path1
+          in: path
+          description: 'Usage: path=''{path1}'''
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.onenote'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenote'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - sites.onenote
+      summary: Delete navigation property onenote for sites
+      operationId: site.getGraphBPrePath_DeleteOnenote
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: path
+          in: path
+          description: 'Usage: path=''{path}'''
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+        - name: path1
+          in: path
+          description: 'Usage: path=''{path1}'''
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/sites/{site-id}/microsoft.graph.getByPath(path=''{path}'')/onenote':
+    get:
+      tags:
+        - sites.onenote
+      summary: Get onenote from sites
+      description: Calls the OneNote service for notebook related operations.
+      operationId: site.getGraphBPrePath_GetOnenote
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: path
+          in: path
+          description: 'Usage: path=''{path}'''
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - notebooks
+                - operations
+                - pages
+                - resources
+                - sectionGroups
+                - sections
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - notebooks
+                - operations
+                - pages
+                - resources
+                - sectionGroups
+                - sections
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenote'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - sites.onenote
+      summary: Update the navigation property onenote in sites
+      operationId: site.getGraphBPrePath_UpdateOnenote
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: path
+          in: path
+          description: 'Usage: path=''{path}'''
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.onenote'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenote'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - sites.onenote
+      summary: Delete navigation property onenote for sites
+      operationId: site.getGraphBPrePath_DeleteOnenote
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: path
+          in: path
+          description: 'Usage: path=''{path}'''
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/sites/{site-id}/onenote':
     get:
       tags:
