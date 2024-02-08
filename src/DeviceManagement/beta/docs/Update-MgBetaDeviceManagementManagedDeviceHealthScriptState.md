@@ -21,22 +21,21 @@ Update-MgBetaDeviceManagementManagedDeviceHealthScriptState -DeviceId <String> -
  [-LastSyncDateTime <DateTime>] [-OSVersion <String>] [-PolicyId1 <String>] [-PolicyName <String>]
  [-PostRemediationDetectionScriptError <String>] [-PostRemediationDetectionScriptOutput <String>]
  [-PreRemediationDetectionScriptError <String>] [-PreRemediationDetectionScriptOutput <String>]
- [-RemediationScriptError <String>] [-RemediationState <RemediationState>] [-UserName <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-RemediationScriptError <String>] [-RemediationState <RemediationState>] [-UserName <String>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaDeviceManagementManagedDeviceHealthScriptState -DeviceId <String> -Id <String>
  -ManagedDeviceId <String> -PolicyId <String> -BodyParameter <IMicrosoftGraphDeviceHealthScriptPolicyState>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaDeviceManagementManagedDeviceHealthScriptState -InputObject <IDeviceManagementIdentity>
- -BodyParameter <IMicrosoftGraphDeviceHealthScriptPolicyState> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphDeviceHealthScriptPolicyState> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -48,8 +47,8 @@ Update-MgBetaDeviceManagementManagedDeviceHealthScriptState -InputObject <IDevic
  [-LastSyncDateTime <DateTime>] [-OSVersion <String>] [-PolicyName <String>]
  [-PostRemediationDetectionScriptError <String>] [-PostRemediationDetectionScriptOutput <String>]
  [-PreRemediationDetectionScriptError <String>] [-PreRemediationDetectionScriptOutput <String>]
- [-RemediationScriptError <String>] [-RemediationState <RemediationState>] [-UserName <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-RemediationScriptError <String>] [-RemediationState <RemediationState>] [-UserName <String>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -191,21 +190,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -504,8 +488,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceHealthScriptPolicyState
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

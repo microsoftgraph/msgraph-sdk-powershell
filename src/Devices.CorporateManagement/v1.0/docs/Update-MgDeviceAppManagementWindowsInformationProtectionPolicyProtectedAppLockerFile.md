@@ -17,23 +17,23 @@ Update the navigation property protectedAppLockerFiles in deviceAppManagement
 Update-MgDeviceAppManagementWindowsInformationProtectionPolicyProtectedAppLockerFile
  -WindowsInformationProtectionAppLockerFileId <String> -WindowsInformationProtectionPolicyId <String>
  [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-FileHash <String>] [-FileInputFile <String>]
- [-Id <String>] [-Version <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-Version <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgDeviceAppManagementWindowsInformationProtectionPolicyProtectedAppLockerFile
  -WindowsInformationProtectionAppLockerFileId <String> -WindowsInformationProtectionPolicyId <String>
- -BodyParameter <IMicrosoftGraphWindowsInformationProtectionAppLockerFile> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphWindowsInformationProtectionAppLockerFile> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgDeviceAppManagementWindowsInformationProtectionPolicyProtectedAppLockerFile
  -InputObject <IDevicesCorporateManagementIdentity>
- -BodyParameter <IMicrosoftGraphWindowsInformationProtectionAppLockerFile> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphWindowsInformationProtectionAppLockerFile> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -41,7 +41,7 @@ Update-MgDeviceAppManagementWindowsInformationProtectionPolicyProtectedAppLocker
 Update-MgDeviceAppManagementWindowsInformationProtectionPolicyProtectedAppLockerFile
  -InputObject <IDevicesCorporateManagementIdentity> [-AdditionalProperties <Hashtable>]
  [-DisplayName <String>] [-FileHash <String>] [-FileInputFile <String>] [-Id <String>] [-Version <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -138,21 +138,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -272,8 +257,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionAppLockerFile
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

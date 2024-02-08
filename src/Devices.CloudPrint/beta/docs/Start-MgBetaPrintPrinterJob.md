@@ -14,14 +14,13 @@ Invoke action start
 
 ### Start (Default)
 ```
-Start-MgBetaPrintPrinterJob -PrinterId <String> -PrintJobId <String> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Start-MgBetaPrintPrinterJob -PrinterId <String> -PrintJobId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### StartViaIdentity
 ```
-Start-MgBetaPrintPrinterJob -InputObject <IDevicesCloudPrintIdentity> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Start-MgBetaPrintPrinterJob -InputObject <IDevicesCloudPrintIdentity> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -44,21 +43,6 @@ Invoke action start
 
 
 ## PARAMETERS
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
 
 ### -InputObject
 Identity Parameter
@@ -143,8 +127,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCloudPrintIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

@@ -15,29 +15,28 @@ Revoke licenses associated with a specific appleVolumePurchaseProgramToken
 ### RevokeExpanded (Default)
 ```
 Revoke-MgBetaDeviceAppManagementVppTokenLicense -VppTokenId <String> [-AdditionalProperties <Hashtable>]
- [-NotifyManagedDevices] [-RevokeUntrackedLicenses] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-NotifyManagedDevices] [-RevokeUntrackedLicenses] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Revoke
 ```
 Revoke-MgBetaDeviceAppManagementVppTokenLicense -VppTokenId <String>
  -BodyParameter <IPaths1C1UpkDeviceappmanagementVpptokensVpptokenIdMicrosoftGraphRevokelicensesPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RevokeViaIdentity
 ```
 Revoke-MgBetaDeviceAppManagementVppTokenLicense -InputObject <IDevicesCorporateManagementIdentity>
  -BodyParameter <IPaths1C1UpkDeviceappmanagementVpptokensVpptokenIdMicrosoftGraphRevokelicensesPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RevokeViaIdentityExpanded
 ```
 Revoke-MgBetaDeviceAppManagementVppTokenLicense -InputObject <IDevicesCorporateManagementIdentity>
- [-AdditionalProperties <Hashtable>] [-NotifyManagedDevices] [-RevokeUntrackedLicenses]
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-NotifyManagedDevices] [-RevokeUntrackedLicenses] [-PassThru] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -86,21 +85,6 @@ Parameter Sets: Revoke, RevokeViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -222,8 +206,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPaths1C1UpkDeviceappmanagementVpptokensVpptokenIdMicrosoftGraphRevokelicensesPostRequestbodyContentApplicationJsonSchema
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

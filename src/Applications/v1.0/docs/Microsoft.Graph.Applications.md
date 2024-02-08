@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Applications
-Module Guid: a0a7dcf8-47ae-40e6-b9df-1c6dc95454f6
+Module Guid: b99bf422-494c-4616-8374-474ca1974b9e
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.applications
 Help Version: 1.0.0.0
 Locale: en-US
@@ -771,6 +771,10 @@ Deletes an appRoleAssignment that a group has been granted.
 
 ### [Remove-MgServicePrincipal](Remove-MgServicePrincipal.md)
 Delete a servicePrincipal object.
+
+### [Remove-MgServicePrincipalAppManagementPolicy](Remove-MgServicePrincipalAppManagementPolicy.md)
+Remove an appManagementPolicy policy object from an application or service principal object.
+When you remove the appManagementPolicy, the application or service principal adopts the tenant-wide tenantAppManagementPolicy setting.
 
 ### [Remove-MgServicePrincipalAppRoleAssignedTo](Remove-MgServicePrincipalAppRoleAssignedTo.md)
 Deletes an appRoleAssignment that a user, group, or client service principal has been granted for a resource service principal.

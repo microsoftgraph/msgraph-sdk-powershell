@@ -15,27 +15,11 @@ if(($null -eq $TestName) -or ($TestName -contains 'Remove-MgBetaOnPremisePublish
 }
 
 Describe 'Remove-MgBetaOnPremisePublishingProfileAgentGroupByRef' {
-    It 'Delete2' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
-    }
-
     It 'Delete1' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
     It 'Delete' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
-    }
-
-    It 'Delete3' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
-    }
-
-    It 'DeleteViaIdentity3' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
-    }
-
-    It 'DeleteViaIdentity2' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 

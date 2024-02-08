@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.DeviceManagement.Enrollment
-Module Guid: 37a73a77-a3ff-42c0-83f3-d6e685788027
+Module Guid: e61677de-4140-4a08-b47c-4ebd80606eed
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devicemanagement.enrollment
 Help Version: 1.0.0.0
 Locale: en-US
@@ -293,101 +293,6 @@ Get the number of the resource
 Read-only collection of role definitions that the given role definition inherits from.
 Only Microsoft Entra built-in roles support this attribute.
 
-### [Get-MgBetaRoleManagementExchange](Get-MgBetaRoleManagementExchange.md)
-Get exchange from roleManagement
-
-### [Get-MgBetaRoleManagementExchangeCustomAppScope](Get-MgBetaRoleManagementExchangeCustomAppScope.md)
-Get the properties of a customAppScope object for an RBAC provider.
-Currently only the Exchange Online RBAC provider is supported.
-
-### [Get-MgBetaRoleManagementExchangeCustomAppScopeCount](Get-MgBetaRoleManagementExchangeCustomAppScopeCount.md)
-Get the number of the resource
-
-### [Get-MgBetaRoleManagementExchangeResourceNamespace](Get-MgBetaRoleManagementExchangeResourceNamespace.md)
-Resource that represents a collection of related actions.
-
-### [Get-MgBetaRoleManagementExchangeResourceNamespaceCount](Get-MgBetaRoleManagementExchangeResourceNamespaceCount.md)
-Get the number of the resource
-
-### [Get-MgBetaRoleManagementExchangeResourceNamespaceResourceAction](Get-MgBetaRoleManagementExchangeResourceNamespaceResourceAction.md)
-Read the properties and relationships of an unifiedRbacResourceAction object.
-
-### [Get-MgBetaRoleManagementExchangeResourceNamespaceResourceActionAuthenticationContext](Get-MgBetaRoleManagementExchangeResourceNamespaceResourceActionAuthenticationContext.md)
-Get authenticationContext from roleManagement
-
-### [Get-MgBetaRoleManagementExchangeResourceNamespaceResourceActionCount](Get-MgBetaRoleManagementExchangeResourceNamespaceResourceActionCount.md)
-Get the number of the resource
-
-### [Get-MgBetaRoleManagementExchangeResourceNamespaceResourceActionResourceScope](Get-MgBetaRoleManagementExchangeResourceNamespaceResourceActionResourceScope.md)
-Get resourceScope from roleManagement
-
-### [Get-MgBetaRoleManagementExchangeRoleAssignment](Get-MgBetaRoleManagementExchangeRoleAssignment.md)
-Retrieve the properties and relationships of a unifiedRoleAssignment object.
-
-### [Get-MgBetaRoleManagementExchangeRoleAssignmentAppScope](Get-MgBetaRoleManagementExchangeRoleAssignmentAppScope.md)
-Details of the app specific scope when the assignment scope is app specific.
-Containment entity.
-
-### [Get-MgBetaRoleManagementExchangeRoleAssignmentCount](Get-MgBetaRoleManagementExchangeRoleAssignmentCount.md)
-Get the number of the resource
-
-### [Get-MgBetaRoleManagementExchangeRoleAssignmentDirectoryScope](Get-MgBetaRoleManagementExchangeRoleAssignmentDirectoryScope.md)
-The directory object that is the scope of the assignment.
-Provided so that callers can get the directory object using $expand at the same time as getting the role assignment.
-Read-only.
-Supports $expand.
-
-### [Get-MgBetaRoleManagementExchangeRoleAssignmentPrincipal](Get-MgBetaRoleManagementExchangeRoleAssignmentPrincipal.md)
-The assigned principal.
-Provided so that callers can get the principal using $expand at the same time as getting the role assignment.
-Read-only.
-Supports $expand.
-
-### [Get-MgBetaRoleManagementExchangeRoleAssignmentRoleDefinition](Get-MgBetaRoleManagementExchangeRoleAssignmentRoleDefinition.md)
-The roleDefinition the assignment is for.
-Provided so that callers can get the role definition using $expand at the same time as getting the role assignment.
-roleDefinition.id will be auto expanded.
-Supports $expand.
-
-### [Get-MgBetaRoleManagementExchangeRoleDefinition](Get-MgBetaRoleManagementExchangeRoleDefinition.md)
-Get the properties and relationships of a unifiedRoleDefinition object of an RBAC provider.
-The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)\n- directory (Microsoft Entra directory roles)\n- entitlement management (Microsoft Entra entitlement management)\n- Exchange Online
-
-### [Get-MgBetaRoleManagementExchangeRoleDefinitionCount](Get-MgBetaRoleManagementExchangeRoleDefinitionCount.md)
-Get the number of the resource
-
-### [Get-MgBetaRoleManagementExchangeRoleDefinitionInheritPermissionFrom](Get-MgBetaRoleManagementExchangeRoleDefinitionInheritPermissionFrom.md)
-Read-only collection of role definitions that the given role definition inherits from.
-Only Microsoft Entra built-in roles support this attribute.
-
-### [Get-MgBetaRoleManagementExchangeTransitiveRoleAssignment](Get-MgBetaRoleManagementExchangeTransitiveRoleAssignment.md)
-Resource to grant access to users or groups that are transitive.
-
-### [Get-MgBetaRoleManagementExchangeTransitiveRoleAssignmentAppScope](Get-MgBetaRoleManagementExchangeTransitiveRoleAssignmentAppScope.md)
-Details of the app specific scope when the assignment scope is app specific.
-Containment entity.
-
-### [Get-MgBetaRoleManagementExchangeTransitiveRoleAssignmentCount](Get-MgBetaRoleManagementExchangeTransitiveRoleAssignmentCount.md)
-Get the number of the resource
-
-### [Get-MgBetaRoleManagementExchangeTransitiveRoleAssignmentDirectoryScope](Get-MgBetaRoleManagementExchangeTransitiveRoleAssignmentDirectoryScope.md)
-The directory object that is the scope of the assignment.
-Provided so that callers can get the directory object using $expand at the same time as getting the role assignment.
-Read-only.
-Supports $expand.
-
-### [Get-MgBetaRoleManagementExchangeTransitiveRoleAssignmentPrincipal](Get-MgBetaRoleManagementExchangeTransitiveRoleAssignmentPrincipal.md)
-The assigned principal.
-Provided so that callers can get the principal using $expand at the same time as getting the role assignment.
-Read-only.
-Supports $expand.
-
-### [Get-MgBetaRoleManagementExchangeTransitiveRoleAssignmentRoleDefinition](Get-MgBetaRoleManagementExchangeTransitiveRoleAssignmentRoleDefinition.md)
-The roleDefinition the assignment is for.
-Provided so that callers can get the role definition using $expand at the same time as getting the role assignment.
-roleDefinition.id will be auto expanded.
-Supports $expand.
-
 ### [New-MgBetaDeviceManagementAndroidDeviceOwnerEnrollmentProfile](New-MgBetaDeviceManagementAndroidDeviceOwnerEnrollmentProfile.md)
 Create new navigation property to androidDeviceOwnerEnrollmentProfiles for deviceManagement
 
@@ -486,28 +391,6 @@ The following RBAC providers are currently supported:\n- Cloud PC\n- device mana
 
 ### [New-MgBetaRoleManagementDeviceManagementRoleDefinitionInheritPermissionFrom](New-MgBetaRoleManagementDeviceManagementRoleDefinitionInheritPermissionFrom.md)
 Create new navigation property to inheritsPermissionsFrom for roleManagement
-
-### [New-MgBetaRoleManagementExchangeCustomAppScope](New-MgBetaRoleManagementExchangeCustomAppScope.md)
-Create a new customAppScope object for an RBAC provider.
-Currently only the Exchange Online RBAC provider is supported.
-
-### [New-MgBetaRoleManagementExchangeResourceNamespace](New-MgBetaRoleManagementExchangeResourceNamespace.md)
-Create new navigation property to resourceNamespaces for roleManagement
-
-### [New-MgBetaRoleManagementExchangeResourceNamespaceResourceAction](New-MgBetaRoleManagementExchangeResourceNamespaceResourceAction.md)
-Create new navigation property to resourceActions for roleManagement
-
-### [New-MgBetaRoleManagementExchangeRoleAssignment](New-MgBetaRoleManagementExchangeRoleAssignment.md)
-Create a new unifiedRoleAssignment object.
-
-### [New-MgBetaRoleManagementExchangeRoleDefinition](New-MgBetaRoleManagementExchangeRoleDefinition.md)
-Create new navigation property to roleDefinitions for roleManagement
-
-### [New-MgBetaRoleManagementExchangeRoleDefinitionInheritPermissionFrom](New-MgBetaRoleManagementExchangeRoleDefinitionInheritPermissionFrom.md)
-Create new navigation property to inheritsPermissionsFrom for roleManagement
-
-### [New-MgBetaRoleManagementExchangeTransitiveRoleAssignment](New-MgBetaRoleManagementExchangeTransitiveRoleAssignment.md)
-Create new navigation property to transitiveRoleAssignments for roleManagement
 
 ### [Remove-MgBetaDeviceManagementAndroidDeviceOwnerEnrollmentProfile](Remove-MgBetaDeviceManagementAndroidDeviceOwnerEnrollmentProfile.md)
 Delete navigation property androidDeviceOwnerEnrollmentProfiles for deviceManagement
@@ -630,40 +513,6 @@ The following RBAC providers are currently supported:\n- Cloud PC\n- device mana
 ### [Remove-MgBetaRoleManagementDeviceManagementRoleDefinitionInheritPermissionFrom](Remove-MgBetaRoleManagementDeviceManagementRoleDefinitionInheritPermissionFrom.md)
 Delete navigation property inheritsPermissionsFrom for roleManagement
 
-### [Remove-MgBetaRoleManagementExchange](Remove-MgBetaRoleManagementExchange.md)
-Delete navigation property exchange for roleManagement
-
-### [Remove-MgBetaRoleManagementExchangeCustomAppScope](Remove-MgBetaRoleManagementExchangeCustomAppScope.md)
-Delete a customAppScope object of an RBAC provider.
-Currently only the Exchange Online RBAC provider is supported.
-
-### [Remove-MgBetaRoleManagementExchangeResourceNamespace](Remove-MgBetaRoleManagementExchangeResourceNamespace.md)
-Delete navigation property resourceNamespaces for roleManagement
-
-### [Remove-MgBetaRoleManagementExchangeResourceNamespaceResourceAction](Remove-MgBetaRoleManagementExchangeResourceNamespaceResourceAction.md)
-Delete navigation property resourceActions for roleManagement
-
-### [Remove-MgBetaRoleManagementExchangeResourceNamespaceResourceActionResourceScope](Remove-MgBetaRoleManagementExchangeResourceNamespaceResourceActionResourceScope.md)
-Delete navigation property resourceScope for roleManagement
-
-### [Remove-MgBetaRoleManagementExchangeRoleAssignment](Remove-MgBetaRoleManagementExchangeRoleAssignment.md)
-Delete a unifiedRoleAssignment object.
-
-### [Remove-MgBetaRoleManagementExchangeRoleAssignmentAppScope](Remove-MgBetaRoleManagementExchangeRoleAssignmentAppScope.md)
-Delete navigation property appScope for roleManagement
-
-### [Remove-MgBetaRoleManagementExchangeRoleDefinition](Remove-MgBetaRoleManagementExchangeRoleDefinition.md)
-Delete navigation property roleDefinitions for roleManagement
-
-### [Remove-MgBetaRoleManagementExchangeRoleDefinitionInheritPermissionFrom](Remove-MgBetaRoleManagementExchangeRoleDefinitionInheritPermissionFrom.md)
-Delete navigation property inheritsPermissionsFrom for roleManagement
-
-### [Remove-MgBetaRoleManagementExchangeTransitiveRoleAssignment](Remove-MgBetaRoleManagementExchangeTransitiveRoleAssignment.md)
-Delete navigation property transitiveRoleAssignments for roleManagement
-
-### [Remove-MgBetaRoleManagementExchangeTransitiveRoleAssignmentAppScope](Remove-MgBetaRoleManagementExchangeTransitiveRoleAssignmentAppScope.md)
-Delete navigation property appScope for roleManagement
-
 ### [Update-MgBetaDeviceManagementAndroidDeviceOwnerEnrollmentProfile](Update-MgBetaDeviceManagementAndroidDeviceOwnerEnrollmentProfile.md)
 Update the navigation property androidDeviceOwnerEnrollmentProfiles in deviceManagement
 
@@ -782,38 +631,4 @@ The following RBAC providers are currently supported:\n- Cloud PC\n- device mana
 
 ### [Update-MgBetaRoleManagementDeviceManagementRoleDefinitionInheritPermissionFrom](Update-MgBetaRoleManagementDeviceManagementRoleDefinitionInheritPermissionFrom.md)
 Update the navigation property inheritsPermissionsFrom in roleManagement
-
-### [Update-MgBetaRoleManagementExchange](Update-MgBetaRoleManagementExchange.md)
-Update the navigation property exchange in roleManagement
-
-### [Update-MgBetaRoleManagementExchangeCustomAppScope](Update-MgBetaRoleManagementExchangeCustomAppScope.md)
-Update an existing customAppScope object of an RBAC provider.
-Currently only the Exchange Online RBAC provider is supported.
-
-### [Update-MgBetaRoleManagementExchangeResourceNamespace](Update-MgBetaRoleManagementExchangeResourceNamespace.md)
-Update the navigation property resourceNamespaces in roleManagement
-
-### [Update-MgBetaRoleManagementExchangeResourceNamespaceResourceAction](Update-MgBetaRoleManagementExchangeResourceNamespaceResourceAction.md)
-Update the navigation property resourceActions in roleManagement
-
-### [Update-MgBetaRoleManagementExchangeResourceNamespaceResourceActionResourceScope](Update-MgBetaRoleManagementExchangeResourceNamespaceResourceActionResourceScope.md)
-Update the navigation property resourceScope in roleManagement
-
-### [Update-MgBetaRoleManagementExchangeRoleAssignment](Update-MgBetaRoleManagementExchangeRoleAssignment.md)
-Update the navigation property roleAssignments in roleManagement
-
-### [Update-MgBetaRoleManagementExchangeRoleAssignmentAppScope](Update-MgBetaRoleManagementExchangeRoleAssignmentAppScope.md)
-Update the navigation property appScope in roleManagement
-
-### [Update-MgBetaRoleManagementExchangeRoleDefinition](Update-MgBetaRoleManagementExchangeRoleDefinition.md)
-Update the navigation property roleDefinitions in roleManagement
-
-### [Update-MgBetaRoleManagementExchangeRoleDefinitionInheritPermissionFrom](Update-MgBetaRoleManagementExchangeRoleDefinitionInheritPermissionFrom.md)
-Update the navigation property inheritsPermissionsFrom in roleManagement
-
-### [Update-MgBetaRoleManagementExchangeTransitiveRoleAssignment](Update-MgBetaRoleManagementExchangeTransitiveRoleAssignment.md)
-Update the navigation property transitiveRoleAssignments in roleManagement
-
-### [Update-MgBetaRoleManagementExchangeTransitiveRoleAssignmentAppScope](Update-MgBetaRoleManagementExchangeTransitiveRoleAssignmentAppScope.md)
-Update the navigation property appScope in roleManagement
 

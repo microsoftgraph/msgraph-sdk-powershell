@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Files
-Module Guid: 26048709-8f90-446e-a00c-2cd8f6c9a8ec
+Module Guid: e571bde0-4c9f-46d9-80bc-17b3f9782cc6
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.files
 Help Version: 1.0.0.0
 Locale: en-US
@@ -2380,6 +2380,9 @@ Delete navigation property analytics for drives
 ### [Remove-MgBetaDriveItemAnalyticItemActivityStat](Remove-MgBetaDriveItemAnalyticItemActivityStat.md)
 Delete navigation property itemActivityStats for drives
 
+### [Remove-MgBetaDriveItemChild](Remove-MgBetaDriveItemChild.md)
+Remove an item from a [bundle][].
+
 ### [Remove-MgBetaDriveItemListItem](Remove-MgBetaDriveItemListItem.md)
 Delete navigation property listItem for drives
 
@@ -2466,6 +2469,9 @@ Delete navigation property analytics for drives
 ### [Remove-MgBetaDriveRootAnalyticItemActivityStat](Remove-MgBetaDriveRootAnalyticItemActivityStat.md)
 Delete navigation property itemActivityStats for drives
 
+### [Remove-MgBetaDriveRootChild](Remove-MgBetaDriveRootChild.md)
+Remove an item from a [bundle][].
+
 ### [Remove-MgBetaDriveRootListItem](Remove-MgBetaDriveRootListItem.md)
 Delete navigation property listItem for drives
 
@@ -2515,6 +2521,9 @@ Delete navigation property analytics for groups
 
 ### [Remove-MgBetaGroupDriveItemAnalyticItemActivityStat](Remove-MgBetaGroupDriveItemAnalyticItemActivityStat.md)
 Delete navigation property itemActivityStats for groups
+
+### [Remove-MgBetaGroupDriveItemChild](Remove-MgBetaGroupDriveItemChild.md)
+Remove an item from a [bundle][].
 
 ### [Remove-MgBetaGroupDriveItemListItem](Remove-MgBetaGroupDriveItemListItem.md)
 Delete navigation property listItem for groups
@@ -2598,6 +2607,9 @@ Delete navigation property analytics for groups
 
 ### [Remove-MgBetaGroupDriveRootAnalyticItemActivityStat](Remove-MgBetaGroupDriveRootAnalyticItemActivityStat.md)
 Delete navigation property itemActivityStats for groups
+
+### [Remove-MgBetaGroupDriveRootChild](Remove-MgBetaGroupDriveRootChild.md)
+Remove an item from a [bundle][].
 
 ### [Remove-MgBetaGroupDriveRootListItem](Remove-MgBetaGroupDriveRootListItem.md)
 Delete navigation property listItem for groups
@@ -2691,6 +2703,9 @@ Delete navigation property analytics for users
 ### [Remove-MgBetaUserDriveItemAnalyticItemActivityStat](Remove-MgBetaUserDriveItemAnalyticItemActivityStat.md)
 Delete navigation property itemActivityStats for users
 
+### [Remove-MgBetaUserDriveItemChild](Remove-MgBetaUserDriveItemChild.md)
+Remove an item from a [bundle][].
+
 ### [Remove-MgBetaUserDriveItemListItem](Remove-MgBetaUserDriveItemListItem.md)
 Delete navigation property listItem for users
 
@@ -2773,6 +2788,9 @@ Delete navigation property analytics for users
 
 ### [Remove-MgBetaUserDriveRootAnalyticItemActivityStat](Remove-MgBetaUserDriveRootAnalyticItemActivityStat.md)
 Delete navigation property itemActivityStats for users
+
+### [Remove-MgBetaUserDriveRootChild](Remove-MgBetaUserDriveRootChild.md)
+Remove an item from a [bundle][].
 
 ### [Remove-MgBetaUserDriveRootListItem](Remove-MgBetaUserDriveRootListItem.md)
 Delete navigation property listItem for users
@@ -3059,11 +3077,9 @@ Update the properties of a sharing permission by patching the permission resourc
 Only the roles property can be modified this way.
 
 ### [Update-MgBetaDriveItemRetentionLabel](Update-MgBetaDriveItemRetentionLabel.md)
-Apply (set) a retention label on a driveItem (files and folders).
-Retention labels don't need to be published in a retention label policy to be applied using this method.
-When a retention label is applied to a folder, all the items in the folder are tagged with the same retention label.
-For information about conflict resolution for retention labels, see Will an existing label be overridden or removed.
+Lock or unlock a retention label on a driveItem that classifies content as records.
 For information about retention labels from an administrator's perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
+For more information about how you can lock and unlock retention labels, see Use record versioning to update records stored in SharePoint or OneDrive.
 
 ### [Update-MgBetaDriveItemSubscription](Update-MgBetaDriveItemSubscription.md)
 Update the navigation property subscriptions in drives
@@ -3172,11 +3188,9 @@ Update the properties of a sharing permission by patching the permission resourc
 Only the roles property can be modified this way.
 
 ### [Update-MgBetaDriveRootRetentionLabel](Update-MgBetaDriveRootRetentionLabel.md)
-Apply (set) a retention label on a driveItem (files and folders).
-Retention labels don't need to be published in a retention label policy to be applied using this method.
-When a retention label is applied to a folder, all the items in the folder are tagged with the same retention label.
-For information about conflict resolution for retention labels, see Will an existing label be overridden or removed.
+Lock or unlock a retention label on a driveItem that classifies content as records.
 For information about retention labels from an administrator's perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
+For more information about how you can lock and unlock retention labels, see Use record versioning to update records stored in SharePoint or OneDrive.
 
 ### [Update-MgBetaDriveRootSubscription](Update-MgBetaDriveRootSubscription.md)
 Update the navigation property subscriptions in drives
@@ -3237,11 +3251,9 @@ Update the properties of a sharing permission by patching the permission resourc
 Only the roles property can be modified this way.
 
 ### [Update-MgBetaGroupDriveItemRetentionLabel](Update-MgBetaGroupDriveItemRetentionLabel.md)
-Apply (set) a retention label on a driveItem (files and folders).
-Retention labels don't need to be published in a retention label policy to be applied using this method.
-When a retention label is applied to a folder, all the items in the folder are tagged with the same retention label.
-For information about conflict resolution for retention labels, see Will an existing label be overridden or removed.
+Lock or unlock a retention label on a driveItem that classifies content as records.
 For information about retention labels from an administrator's perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
+For more information about how you can lock and unlock retention labels, see Use record versioning to update records stored in SharePoint or OneDrive.
 
 ### [Update-MgBetaGroupDriveItemSubscription](Update-MgBetaGroupDriveItemSubscription.md)
 Update the navigation property subscriptions in groups
@@ -3350,11 +3362,9 @@ Update the properties of a sharing permission by patching the permission resourc
 Only the roles property can be modified this way.
 
 ### [Update-MgBetaGroupDriveRootRetentionLabel](Update-MgBetaGroupDriveRootRetentionLabel.md)
-Apply (set) a retention label on a driveItem (files and folders).
-Retention labels don't need to be published in a retention label policy to be applied using this method.
-When a retention label is applied to a folder, all the items in the folder are tagged with the same retention label.
-For information about conflict resolution for retention labels, see Will an existing label be overridden or removed.
+Lock or unlock a retention label on a driveItem that classifies content as records.
 For information about retention labels from an administrator's perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
+For more information about how you can lock and unlock retention labels, see Use record versioning to update records stored in SharePoint or OneDrive.
 
 ### [Update-MgBetaGroupDriveRootSubscription](Update-MgBetaGroupDriveRootSubscription.md)
 Update the navigation property subscriptions in groups
@@ -3478,11 +3488,9 @@ Update the properties of a sharing permission by patching the permission resourc
 Only the roles property can be modified this way.
 
 ### [Update-MgBetaUserDriveItemRetentionLabel](Update-MgBetaUserDriveItemRetentionLabel.md)
-Apply (set) a retention label on a driveItem (files and folders).
-Retention labels don't need to be published in a retention label policy to be applied using this method.
-When a retention label is applied to a folder, all the items in the folder are tagged with the same retention label.
-For information about conflict resolution for retention labels, see Will an existing label be overridden or removed.
+Lock or unlock a retention label on a driveItem that classifies content as records.
 For information about retention labels from an administrator's perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
+For more information about how you can lock and unlock retention labels, see Use record versioning to update records stored in SharePoint or OneDrive.
 
 ### [Update-MgBetaUserDriveItemSubscription](Update-MgBetaUserDriveItemSubscription.md)
 Update the navigation property subscriptions in users
@@ -3591,11 +3599,9 @@ Update the properties of a sharing permission by patching the permission resourc
 Only the roles property can be modified this way.
 
 ### [Update-MgBetaUserDriveRootRetentionLabel](Update-MgBetaUserDriveRootRetentionLabel.md)
-Apply (set) a retention label on a driveItem (files and folders).
-Retention labels don't need to be published in a retention label policy to be applied using this method.
-When a retention label is applied to a folder, all the items in the folder are tagged with the same retention label.
-For information about conflict resolution for retention labels, see Will an existing label be overridden or removed.
+Lock or unlock a retention label on a driveItem that classifies content as records.
 For information about retention labels from an administrator's perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
+For more information about how you can lock and unlock retention labels, see Use record versioning to update records stored in SharePoint or OneDrive.
 
 ### [Update-MgBetaUserDriveRootSubscription](Update-MgBetaUserDriveRootSubscription.md)
 Update the navigation property subscriptions in users

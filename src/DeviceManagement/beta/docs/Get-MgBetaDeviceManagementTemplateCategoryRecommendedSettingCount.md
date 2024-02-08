@@ -16,13 +16,13 @@ Get the number of the resource
 ```
 Get-MgBetaDeviceManagementTemplateCategoryRecommendedSettingCount -DeviceManagementTemplateId <String>
  -DeviceManagementTemplateSettingCategoryId <String> [-Filter <String>] [-Search <String>]
- [-Headers <IDictionary>] [<CommonParameters>]
+ [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
 Get-MgBetaDeviceManagementTemplateCategoryRecommendedSettingCount -InputObject <IDeviceManagementIdentity>
- [-Filter <String>] [-Search <String>] [-Headers <IDictionary>] [<CommonParameters>]
+ [-Filter <String>] [-Search <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -91,21 +91,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -143,8 +128,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

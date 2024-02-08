@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Education
-Module Guid: 66aea666-f4f5-4ee9-a050-4c945b014b0c
+Module Guid: 13fd4f40-2956-4b61-a490-e3e1c02adb3f
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.education
 Help Version: 1.0.0.0
 Locale: en-US
@@ -48,9 +48,6 @@ Only teachers can perform this operation.
 ### [Get-MgEducationClassAssignmentDelta](Get-MgEducationClassAssignmentDelta.md)
 Invoke function delta
 
-### [Get-MgEducationClassAssignmentGradingCategory](Get-MgEducationClassAssignmentGradingCategory.md)
-When set, enables users to weight assignments differently when computing a class average grade.
-
 ### [Get-MgEducationClassAssignmentResource](Get-MgEducationClassAssignmentResource.md)
 Get the properties of an education assignment resource associated with an assignment.
 Only teachers, students, and applications with application permissions can perform this operation.
@@ -68,12 +65,6 @@ Only teachers, students, and applications with application permissions can perfo
 
 ### [Get-MgEducationClassAssignmentSetting](Get-MgEducationClassAssignmentSetting.md)
 Specifies class-level assignments settings.
-
-### [Get-MgEducationClassAssignmentSettingGradingCategory](Get-MgEducationClassAssignmentSettingGradingCategory.md)
-When set, enables users to weight assignments differently when computing a class average grade.
-
-### [Get-MgEducationClassAssignmentSettingGradingCategoryCount](Get-MgEducationClassAssignmentSettingGradingCategoryCount.md)
-Get the number of the resource
 
 ### [Get-MgEducationClassAssignmentSubmission](Get-MgEducationClassAssignmentSubmission.md)
 Retrieve a particular submission.
@@ -123,8 +114,7 @@ Invoke function delta
 The underlying Microsoft 365 group object.
 
 ### [Get-MgEducationClassGroupServiceProvisioningError](Get-MgEducationClassGroupServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a group object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgEducationClassGroupServiceProvisioningErrorCount](Get-MgEducationClassGroupServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -136,18 +126,6 @@ Retrieves the educationUser members of an educationClass.
 Retrieves the educationUser members of an educationClass.
 
 ### [Get-MgEducationClassMemberCount](Get-MgEducationClassMemberCount.md)
-Get the number of the resource
-
-### [Get-MgEducationClassModule](Get-MgEducationClassModule.md)
-Get modules from education
-
-### [Get-MgEducationClassModuleCount](Get-MgEducationClassModuleCount.md)
-Get the number of the resource
-
-### [Get-MgEducationClassModuleResource](Get-MgEducationClassModuleResource.md)
-Get resources from education
-
-### [Get-MgEducationClassModuleResourceCount](Get-MgEducationClassModuleResourceCount.md)
 Get the number of the resource
 
 ### [Get-MgEducationClassSchool](Get-MgEducationClassSchool.md)
@@ -193,9 +171,6 @@ Get the number of the resource
 
 ### [Get-MgEducationMeAssignmentDelta](Get-MgEducationMeAssignmentDelta.md)
 Invoke function delta
-
-### [Get-MgEducationMeAssignmentGradingCategory](Get-MgEducationMeAssignmentGradingCategory.md)
-When set, enables users to weight assignments differently when computing a class average grade.
 
 ### [Get-MgEducationMeAssignmentResource](Get-MgEducationMeAssignmentResource.md)
 Get the properties of an education assignment resource associated with an assignment.
@@ -282,12 +257,11 @@ Retrieve the simple directory user that corresponds to this educationUser.
 
 ### [Get-MgEducationMeUserMailboxSetting](Get-MgEducationMeUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgEducationMeUserServiceProvisioningError](Get-MgEducationMeUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgEducationMeUserServiceProvisioningErrorCount](Get-MgEducationMeUserServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -350,9 +324,6 @@ Get the number of the resource
 
 ### [Get-MgEducationUserAssignmentDelta](Get-MgEducationUserAssignmentDelta.md)
 Invoke function delta
-
-### [Get-MgEducationUserAssignmentGradingCategory](Get-MgEducationUserAssignmentGradingCategory.md)
-When set, enables users to weight assignments differently when computing a class average grade.
 
 ### [Get-MgEducationUserAssignmentResource](Get-MgEducationUserAssignmentResource.md)
 Get the properties of an education assignment resource associated with an assignment.
@@ -422,7 +393,7 @@ Invoke function delta
 
 ### [Get-MgEducationUserMailboxSetting](Get-MgEducationUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgEducationUserRubric](Get-MgEducationUserRubric.md)
@@ -440,8 +411,7 @@ Nullable.
 Get the number of the resource
 
 ### [Get-MgEducationUserServiceProvisioningError](Get-MgEducationUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgEducationUserServiceProvisioningErrorCount](Get-MgEducationUserServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -452,30 +422,27 @@ Classes for which the user is a teacher.
 ### [Get-MgEducationUserTaughtClassCount](Get-MgEducationUserTaughtClassCount.md)
 Get the number of the resource
 
-### [Invoke-MgPinEducationClassModule](Invoke-MgPinEducationClassModule.md)
-Invoke action pin
-
 ### [Invoke-MgReassignEducationClassAssignmentSubmission](Invoke-MgReassignEducationClassAssignmentSubmission.md)
 Reassign the submission to the student with feedback for review.
 Only teachers can perform this action.
-Include the Prefer: include-unknown-enum-members header when you call this method; otherwise, a reassigned submission is treated as a returned submission.
-This means that the reassigned status is mapped to the returned status, and reassignedDateTime and reassignedBy properties are mapped to returnedDateTime and returnedBy respectively.
+Include the Prefer: include-unknown-enum-members header when you call this method; otherwise, a reassigned submission will be treated as a returned submission.
+This means that the reassigned status will be mapped to the returned status, and reassignedDateTime and reassignedBy properties will be mapped to returnedDateTime and returnedBy respectively.
 If the header Prefer: include-unknown-enum-members is provided, a reassigned submission retains the reassigned status.
 For details, see the examples section.
 
 ### [Invoke-MgReassignEducationMeAssignmentSubmission](Invoke-MgReassignEducationMeAssignmentSubmission.md)
 Reassign the submission to the student with feedback for review.
 Only teachers can perform this action.
-Include the Prefer: include-unknown-enum-members header when you call this method; otherwise, a reassigned submission is treated as a returned submission.
-This means that the reassigned status is mapped to the returned status, and reassignedDateTime and reassignedBy properties are mapped to returnedDateTime and returnedBy respectively.
+Include the Prefer: include-unknown-enum-members header when you call this method; otherwise, a reassigned submission will be treated as a returned submission.
+This means that the reassigned status will be mapped to the returned status, and reassignedDateTime and reassignedBy properties will be mapped to returnedDateTime and returnedBy respectively.
 If the header Prefer: include-unknown-enum-members is provided, a reassigned submission retains the reassigned status.
 For details, see the examples section.
 
 ### [Invoke-MgReassignEducationUserAssignmentSubmission](Invoke-MgReassignEducationUserAssignmentSubmission.md)
 Reassign the submission to the student with feedback for review.
 Only teachers can perform this action.
-Include the Prefer: include-unknown-enum-members header when you call this method; otherwise, a reassigned submission is treated as a returned submission.
-This means that the reassigned status is mapped to the returned status, and reassignedDateTime and reassignedBy properties are mapped to returnedDateTime and returnedBy respectively.
+Include the Prefer: include-unknown-enum-members header when you call this method; otherwise, a reassigned submission will be treated as a returned submission.
+This means that the reassigned status will be mapped to the returned status, and reassignedDateTime and reassignedBy properties will be mapped to returnedDateTime and returnedBy respectively.
 If the header Prefer: include-unknown-enum-members is provided, a reassigned submission retains the reassigned status.
 For details, see the examples section.
 
@@ -493,9 +460,6 @@ This action can only be done by the teacher.
 Make the grade and feedback associated with this submission available to the student.
 This action changes the status of the submission from 'submitted' to 'returned' and indicates that feedback is provided or grading is done.
 This action can only be done by the teacher.
-
-### [Invoke-MgUnpinEducationClassModule](Invoke-MgUnpinEducationClassModule.md)
-Invoke action unpin
 
 ### [Invoke-MgUnsubmitEducationClassAssignmentSubmission](Invoke-MgUnsubmitEducationClassAssignmentSubmission.md)
 Indicate that a student wants to work on the submission of the assignment after it was turned in.
@@ -542,9 +506,6 @@ Create an assignment resource.
 Only teachers can perform this operation.
 You can create the following types of assignment resources: Every resource has an @odata.type property to indicate which type of resource is being created.
 
-### [New-MgEducationClassAssignmentSettingGradingCategory](New-MgEducationClassAssignmentSettingGradingCategory.md)
-Create new navigation property to gradingCategories for education
-
 ### [New-MgEducationClassAssignmentSubmission](New-MgEducationClassAssignmentSubmission.md)
 Create new navigation property to submissions for education
 
@@ -566,12 +527,6 @@ Create new navigation property to submittedResources for education
 
 ### [New-MgEducationClassMemberByRef](New-MgEducationClassMemberByRef.md)
 Add an educationUser member to an educationClass.
-
-### [New-MgEducationClassModule](New-MgEducationClassModule.md)
-Create new navigation property to modules for education
-
-### [New-MgEducationClassModuleResource](New-MgEducationClassModuleResource.md)
-Create new navigation property to resources for education
 
 ### [New-MgEducationClassTeacherByRef](New-MgEducationClassTeacherByRef.md)
 Add a teacher to a class.
@@ -674,9 +629,6 @@ Calling this API creates educationSubmission objects and displays the assignment
 The state of the assignment goes back to draft if there is any backend failure during publish process.
 To update the properties of a published assignment, see update an assignment.
 
-### [Publish-MgEducationClassModule](Publish-MgEducationClassModule.md)
-Invoke action publish
-
 ### [Publish-MgEducationMeAssignment](Publish-MgEducationMeAssignment.md)
 Publish an education assignment.
 Change the state of an educationAssignment from its original draft status to the published status.
@@ -732,9 +684,6 @@ This method doesn't delete the rubric itself and can only be performed by teache
 ### [Remove-MgEducationClassAssignmentSetting](Remove-MgEducationClassAssignmentSetting.md)
 Delete navigation property assignmentSettings for education
 
-### [Remove-MgEducationClassAssignmentSettingGradingCategory](Remove-MgEducationClassAssignmentSettingGradingCategory.md)
-Delete navigation property gradingCategories for education
-
 ### [Remove-MgEducationClassAssignmentSubmission](Remove-MgEducationClassAssignmentSubmission.md)
 Delete navigation property submissions for education
 
@@ -754,12 +703,6 @@ Delete navigation property submittedResources for education
 
 ### [Remove-MgEducationClassMemberByRef](Remove-MgEducationClassMemberByRef.md)
 Remove an educationUser from an educationClass.
-
-### [Remove-MgEducationClassModule](Remove-MgEducationClassModule.md)
-Delete navigation property modules for education
-
-### [Remove-MgEducationClassModuleResource](Remove-MgEducationClassModuleResource.md)
-Delete navigation property resources for education
 
 ### [Remove-MgEducationClassTeacherByRef](Remove-MgEducationClassTeacherByRef.md)
 Remove a teacher from an educationClass.
@@ -881,9 +824,6 @@ Create a SharePoint folder to upload files for a given educationAssignment.
 Only teachers can perform this operation.
 The teacher determines the resources to upload in the assignment's folder.
 
-### [Set-MgEducationClassModuleUpResourceFolder](Set-MgEducationClassModuleUpResourceFolder.md)
-Invoke action setUpResourcesFolder
-
 ### [Set-MgEducationMeAssignmentRubricByRef](Set-MgEducationMeAssignmentRubricByRef.md)
 Attach an existing educationRubric object to an educationAssignment.
 Only teachers can perform this operation.
@@ -975,9 +915,6 @@ Only teachers can perform this operation.
 Update the properties of an educationAssignmentSettings object.
 Only teachers can update these settings.
 
-### [Update-MgEducationClassAssignmentSettingGradingCategory](Update-MgEducationClassAssignmentSettingGradingCategory.md)
-Update the navigation property gradingCategories in education
-
 ### [Update-MgEducationClassAssignmentSubmission](Update-MgEducationClassAssignmentSubmission.md)
 Update the navigation property submissions in education
 
@@ -990,12 +927,6 @@ Update the navigation property resources in education
 
 ### [Update-MgEducationClassAssignmentSubmissionSubmittedResource](Update-MgEducationClassAssignmentSubmissionSubmittedResource.md)
 Update the navigation property submittedResources in education
-
-### [Update-MgEducationClassModule](Update-MgEducationClassModule.md)
-Update the navigation property modules in education
-
-### [Update-MgEducationClassModuleResource](Update-MgEducationClassModuleResource.md)
-Update the navigation property resources in education
 
 ### [Update-MgEducationMe](Update-MgEducationMe.md)
 Update the navigation property me in education

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.CloudCommunications
-Module Guid: 5597b9ec-c1ec-4652-b925-a1120c857508
+Module Guid: b748c3c5-d1c6-49af-8d37-3d1c2efbfdca
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.cloudcommunications
 Help Version: 1.0.0.0
 Locale: en-US
@@ -77,8 +77,7 @@ Get the number of the resource
 Get onlineMeetings from communications
 
 ### [Get-MgCommunicationOnlineMeetingAttendanceReport](Get-MgCommunicationOnlineMeetingAttendanceReport.md)
-The attendance reports of an online meeting.
-Read-only.
+Get attendanceReports from communications
 
 ### [Get-MgCommunicationOnlineMeetingAttendanceReportAttendanceRecord](Get-MgCommunicationOnlineMeetingAttendanceReportAttendanceRecord.md)
 List of attendance records of an attendance report.
@@ -144,8 +143,7 @@ For example, you can: Teams live event attendee report (deprecated) is an online
 For details, see Online meeting artifacts and permissions.
 
 ### [Get-MgUserOnlineMeetingAttendanceReport](Get-MgUserOnlineMeetingAttendanceReport.md)
-The attendance reports of an online meeting.
-Read-only.
+Get attendanceReports from users
 
 ### [Get-MgUserOnlineMeetingAttendanceReportAttendanceRecord](Get-MgUserOnlineMeetingAttendanceReportAttendanceRecord.md)
 List of attendance records of an attendance report.
@@ -194,7 +192,8 @@ The time-aligned metadata of the utterances in the transcript.
 Read-only.
 
 ### [Get-MgUserPresence](Get-MgUserPresence.md)
-Get a user's presence information.
+Set a presence status message for a user.
+An optional expiration date and time can be supplied.
 
 ### [Invoke-MgAnswerCommunicationCall](Invoke-MgAnswerCommunicationCall.md)
 Enable a bot to answer an incoming call.
@@ -208,8 +207,11 @@ Create an onlineMeeting object with a custom specified external ID.
 If the external ID already exists, this API will return the onlineMeeting object with that external ID.
 
 ### [Invoke-MgInviteCommunicationCallParticipant](Invoke-MgInviteCommunicationCallParticipant.md)
-Invite participants to the active call.
-For more information about how to handle operations, see commsOperation.
+Delete a specific participant in a call.
+In some situations, it is appropriate for an application to remove a participant from an active call.
+This action can be done before or after the participant answers the call.
+When an active caller is removed, they are immediately dropped from the call with no pre- or post-removal notification.
+When an invited participant is removed, any outstanding add participant request is canceled.
 
 ### [Invoke-MgKeepCommunicationCallAlive](Invoke-MgKeepCommunicationCallAlive.md)
 Make a request to this API every 15 to 45 minutes to ensure that an ongoing call remains active.
@@ -391,15 +393,6 @@ Delete navigation property presence for users
 
 ### [Rename-MgCommunicationCallScreenSharingRole](Rename-MgCommunicationCallScreenSharingRole.md)
 Allow applications to share screen content with the participants of a group call.
-
-### [Send-MgCommunicationCallDtmfTone](Send-MgCommunicationCallDtmfTone.md)
-Invoke action sendDtmfTones
-
-### [Send-MgCommunicationOnlineMeetingVirtualAppointmentReminderSm](Send-MgCommunicationOnlineMeetingVirtualAppointmentReminderSm.md)
-Invoke action sendVirtualAppointmentReminderSms
-
-### [Send-MgCommunicationOnlineMeetingVirtualAppointmentSm](Send-MgCommunicationOnlineMeetingVirtualAppointmentSm.md)
-Invoke action sendVirtualAppointmentSms
 
 ### [Set-MgCommunicationOnlineMeetingAttendeeReport](Set-MgCommunicationOnlineMeetingAttendeeReport.md)
 Update attendeeReport for the navigation property onlineMeetings in communications

@@ -16,14 +16,13 @@ Get the number of the resource
 ```
 Get-MgBetaEducationUserAssignmentSubmissionSubmittedResourceDependentResourceCount
  -EducationAssignmentId <String> -EducationSubmissionId <String> -EducationSubmissionResourceId <String>
- -EducationUserId <String> [-Filter <String>] [-Search <String>] [-Headers <IDictionary>] [<CommonParameters>]
+ -EducationUserId <String> [-Filter <String>] [-Search <String>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
 Get-MgBetaEducationUserAssignmentSubmissionSubmittedResourceDependentResourceCount
- -InputObject <IEducationIdentity> [-Filter <String>] [-Search <String>] [-Headers <IDictionary>]
- [<CommonParameters>]
+ -InputObject <IEducationIdentity> [-Filter <String>] [-Search <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -122,21 +121,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -174,8 +158,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

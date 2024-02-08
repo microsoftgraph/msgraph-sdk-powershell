@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.CrossDeviceExperiences
-Module Guid: c1fda98e-919d-459b-99fc-1c22f0f786e9
+Module Guid: e2e2b0ff-dd65-4a69-989e-aba78dabbe57
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.crossdeviceexperiences
 Help Version: 1.0.0.0
 Locale: en-US
@@ -30,9 +30,6 @@ Get activity from users
 Get the number of the resource
 
 ### [Get-MgBetaUserDevice](Get-MgBetaUserDevice.md)
-Get devices from users
-
-### [Get-MgBetaUserDeviceByDeviceId](Get-MgBetaUserDeviceByDeviceId.md)
 Get devices from users
 
 ### [Get-MgBetaUserDeviceCommand](Get-MgBetaUserDeviceCommand.md)
@@ -205,9 +202,6 @@ Delete navigation property historyItems for users
 ### [Remove-MgBetaUserDevice](Remove-MgBetaUserDevice.md)
 Delete navigation property devices for users
 
-### [Remove-MgBetaUserDeviceByDeviceId](Remove-MgBetaUserDeviceByDeviceId.md)
-Delete navigation property devices for users
-
 ### [Remove-MgBetaUserDeviceCommand](Remove-MgBetaUserDeviceCommand.md)
 Delete navigation property commands for users
 
@@ -230,9 +224,6 @@ Update the navigation property activities in users
 Delete an existing history item for an existing user activity.
 
 ### [Update-MgBetaUserDevice](Update-MgBetaUserDevice.md)
-Update the navigation property devices in users
-
-### [Update-MgBetaUserDeviceByDeviceId](Update-MgBetaUserDeviceByDeviceId.md)
 Update the navigation property devices in users
 
 ### [Update-MgBetaUserDeviceCommand](Update-MgBetaUserDeviceCommand.md)

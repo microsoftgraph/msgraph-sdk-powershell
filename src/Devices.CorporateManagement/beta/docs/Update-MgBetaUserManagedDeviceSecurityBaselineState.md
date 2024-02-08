@@ -18,21 +18,20 @@ Update-MgBetaUserManagedDeviceSecurityBaselineState -ManagedDeviceId <String>
  -SecurityBaselineStateId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
  [-DisplayName <String>] [-Id <String>] [-SecurityBaselineTemplateId <String>]
  [-SettingStates <IMicrosoftGraphSecurityBaselineSettingState[]>] [-State <SecurityBaselineComplianceState>]
- [-UserPrincipalName <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-UserPrincipalName <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaUserManagedDeviceSecurityBaselineState -ManagedDeviceId <String>
  -SecurityBaselineStateId <String> -UserId <String> -BodyParameter <IMicrosoftGraphSecurityBaselineState>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaUserManagedDeviceSecurityBaselineState -InputObject <IDevicesCorporateManagementIdentity>
- -BodyParameter <IMicrosoftGraphSecurityBaselineState> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphSecurityBaselineState> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -40,8 +39,8 @@ Update-MgBetaUserManagedDeviceSecurityBaselineState -InputObject <IDevicesCorpor
 Update-MgBetaUserManagedDeviceSecurityBaselineState -InputObject <IDevicesCorporateManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>]
  [-SecurityBaselineTemplateId <String>] [-SettingStates <IMicrosoftGraphSecurityBaselineSettingState[]>]
- [-State <SecurityBaselineComplianceState>] [-UserPrincipalName <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-State <SecurityBaselineComplianceState>] [-UserPrincipalName <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -108,21 +107,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -304,8 +288,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityBaselineState
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityBaselineState
@@ -336,8 +318,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[SettingId <String>]`: The setting id guid
     - `[SettingName <String>]`: The setting name that is being reported
     - `[SourcePolicies <IMicrosoftGraphSettingSource[]>]`: The policies that contribute to this setting instance
-      - `[DisplayName <String>]`: 
-      - `[Id <String>]`: 
+      - `[DisplayName <String>]`: Not yet documented
+      - `[Id <String>]`: Not yet documented
       - `[SourceType <String>]`: settingSourceType
     - `[State <SecurityBaselineComplianceState?>]`: Security Baseline Compliance State
   - `[State <SecurityBaselineComplianceState?>]`: Security Baseline Compliance State
@@ -425,8 +407,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[SettingId <String>]`: The setting id guid
   - `[SettingName <String>]`: The setting name that is being reported
   - `[SourcePolicies <IMicrosoftGraphSettingSource[]>]`: The policies that contribute to this setting instance
-    - `[DisplayName <String>]`: 
-    - `[Id <String>]`: 
+    - `[DisplayName <String>]`: Not yet documented
+    - `[Id <String>]`: Not yet documented
     - `[SourceType <String>]`: settingSourceType
   - `[State <SecurityBaselineComplianceState?>]`: Security Baseline Compliance State
 

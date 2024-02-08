@@ -14,20 +14,19 @@ Get the number of the resource
 
 ### Get1 (Default)
 ```
-Get-MgBetaPrintPrinterShareCount [-Filter <String>] [-Search <String>] [-Headers <IDictionary>]
- [<CommonParameters>]
+Get-MgBetaPrintPrinterShareCount [-Filter <String>] [-Search <String>] [<CommonParameters>]
 ```
 
 ### Get
 ```
 Get-MgBetaPrintPrinterShareCount -PrinterId <String> [-Filter <String>] [-Search <String>]
- [-Headers <IDictionary>] [<CommonParameters>]
+ [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
 Get-MgBetaPrintPrinterShareCount -InputObject <IDevicesCloudPrintIdentity> [-Filter <String>]
- [-Search <String>] [-Headers <IDictionary>] [<CommonParameters>]
+ [-Search <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -63,21 +62,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -133,8 +117,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCloudPrintIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

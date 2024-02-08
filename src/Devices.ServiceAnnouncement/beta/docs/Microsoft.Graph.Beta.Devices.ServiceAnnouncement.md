@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Devices.ServiceAnnouncement
-Module Guid: c7d2075f-3942-4dd7-b6f6-9fb6e6a838f7
+Module Guid: fab122e3-c7d1-4e15-8860-232110512044
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devices.serviceannouncement
 Help Version: 1.0.0.0
 Locale: en-US

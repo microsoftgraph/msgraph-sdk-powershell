@@ -15,13 +15,13 @@ Exports the mobile configuration
 ### Export (Default)
 ```
 Export-MgBetaDeviceManagementDepOnboardingSettingEnrollmentProfileMobileConfig
- -DepOnboardingSettingId <String> -EnrollmentProfileId <String> [-Headers <IDictionary>] [<CommonParameters>]
+ -DepOnboardingSettingId <String> -EnrollmentProfileId <String> [<CommonParameters>]
 ```
 
 ### ExportViaIdentity
 ```
 Export-MgBetaDeviceManagementDepOnboardingSettingEnrollmentProfileMobileConfig
- -InputObject <IDeviceManagementFunctionsIdentity> [-Headers <IDictionary>] [<CommonParameters>]
+ -InputObject <IDeviceManagementFunctionsIdentity> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -75,21 +75,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -112,8 +97,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementFunctionsIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 
@@ -145,7 +128,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[EnrollmentType <String>]`: Usage: enrollmentType='{enrollmentType}'
   - `[ExpiringBeforeDateTime <String>]`: Usage: expiringBeforeDateTime='{expiringBeforeDateTime}'
   - `[GroupId <String>]`: Usage: groupId='{groupId}'
-  - `[Id <String>]`: Usage: id='{id}'
   - `[Ids <String[]>]`: Usage: ids={ids}
   - `[ManagedDeviceId <String>]`: The unique identifier of managedDevice
   - `[Platform <DevicePlatformType?>]`: Usage: platform='{platform}'

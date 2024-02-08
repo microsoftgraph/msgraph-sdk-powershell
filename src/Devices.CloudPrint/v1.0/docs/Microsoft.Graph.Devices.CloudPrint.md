@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Devices.CloudPrint
-Module Guid: e75b0c88-f23d-465d-9c26-7ef9aa7be4e3
+Module Guid: 31cce069-56f6-423f-b758-ed3d4682ca8f
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.devices.cloudprint
 Help Version: 1.0.0.0
 Locale: en-US
@@ -112,8 +112,7 @@ Retrieve a list of groups that have been granted access to submit print jobs to 
 Get the number of the resource
 
 ### [Get-MgPrintShareAllowedGroupServiceProvisioningError](Get-MgPrintShareAllowedGroupServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a group object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgPrintShareAllowedGroupServiceProvisioningErrorCount](Get-MgPrintShareAllowedGroupServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -129,12 +128,11 @@ Get the number of the resource
 
 ### [Get-MgPrintShareAllowedUserMailboxSetting](Get-MgPrintShareAllowedUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgPrintShareAllowedUserServiceProvisioningError](Get-MgPrintShareAllowedUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgPrintShareAllowedUserServiceProvisioningErrorCount](Get-MgPrintShareAllowedUserServiceProvisioningErrorCount.md)
 Get the number of the resource

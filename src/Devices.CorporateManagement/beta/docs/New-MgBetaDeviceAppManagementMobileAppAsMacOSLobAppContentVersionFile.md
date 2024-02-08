@@ -19,21 +19,21 @@ New-MgBetaDeviceAppManagementMobileAppAsMacOSLobAppContentVersionFile -MobileApp
  [-AzureStorageUriExpirationDateTime <DateTime>] [-CreatedDateTime <DateTime>] [-Id <String>] [-IsCommitted]
  [-IsDependency] [-IsFrameworkFile] [-ManifestInputFile <String>] [-Name <String>] [-Size <Int64>]
  [-SizeEncrypted <Int64>] [-SizeEncryptedInBytes <Int64>] [-SizeInBytes <Int64>] [-UploadState <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaDeviceAppManagementMobileAppAsMacOSLobAppContentVersionFile -MobileAppContentId <String>
- -MobileAppId <String> -BodyParameter <IMicrosoftGraphMobileAppContentFile> [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -MobileAppId <String> -BodyParameter <IMicrosoftGraphMobileAppContentFile> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaDeviceAppManagementMobileAppAsMacOSLobAppContentVersionFile
  -InputObject <IDevicesCorporateManagementIdentity> -BodyParameter <IMicrosoftGraphMobileAppContentFile>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -43,8 +43,7 @@ New-MgBetaDeviceAppManagementMobileAppAsMacOSLobAppContentVersionFile
  [-AzureStorageUri <String>] [-AzureStorageUriExpirationDateTime <DateTime>] [-CreatedDateTime <DateTime>]
  [-Id <String>] [-IsCommitted] [-IsDependency] [-IsFrameworkFile] [-ManifestInputFile <String>]
  [-Name <String>] [-Size <Int64>] [-SizeEncrypted <Int64>] [-SizeEncryptedInBytes <Int64>]
- [-SizeInBytes <Int64>] [-UploadState <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-SizeInBytes <Int64>] [-UploadState <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -84,9 +83,7 @@ Accept wildcard characters: False
 ```
 
 ### -AzureStorageUri
-Indicates the Azure Storage URI that the file is uploaded to.
-Created by the service upon receiving a valid mobileAppContentFile.
-Read-only.
+The Azure Storage URI.
 
 ```yaml
 Type: System.String
@@ -101,9 +98,7 @@ Accept wildcard characters: False
 ```
 
 ### -AzureStorageUriExpirationDateTime
-Indicates the date and time when the Azure storage URI expires, in ISO 8601 format.
-For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
-Read-only.
+The time the Azure storage Uri expires.
 
 ```yaml
 Type: System.DateTime
@@ -134,9 +129,7 @@ Accept wildcard characters: False
 ```
 
 ### -CreatedDateTime
-Indicates created date and time associated with app content file, in ISO 8601 format.
-For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
-Read-only.
+The time the file was created.
 
 ```yaml
 Type: System.DateTime
@@ -147,21 +140,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -199,10 +177,6 @@ Accept wildcard characters: False
 
 ### -IsCommitted
 A value indicating whether the file is committed.
-A committed app content file has been fully uploaded and validated by the Intune service.
-TRUE means that app content file is committed, FALSE means that app content file is not committed.
-Defaults to FALSE.
-Read-only.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -217,9 +191,7 @@ Accept wildcard characters: False
 ```
 
 ### -IsDependency
-Indicates whether this content file is a dependency for the main content file.
-TRUE means that the content file is a dependency, FALSE means that the content file is not a dependency and is the main content file.
-Defaults to FALSE.
+Whether the content file is a dependency for the main content file.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -235,7 +207,6 @@ Accept wildcard characters: False
 
 ### -IsFrameworkFile
 A value indicating whether the file is a framework file.
-To be deprecated.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -250,7 +221,7 @@ Accept wildcard characters: False
 ```
 
 ### -ManifestInputFile
-Input File for Manifest (Indicates the manifest information, containing file metadata.)
+Input File for Manifest (The manifest information.)
 
 ```yaml
 Type: System.String
@@ -295,7 +266,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Indicates the name of the file.
+the file name.
 
 ```yaml
 Type: System.String
@@ -311,7 +282,6 @@ Accept wildcard characters: False
 
 ### -Size
 The size of the file prior to encryption.
-To be deprecated, please use sizeInBytes property instead.
 
 ```yaml
 Type: System.Int64
@@ -327,7 +297,6 @@ Accept wildcard characters: False
 
 ### -SizeEncrypted
 The size of the file after encryption.
-To be deprecated, please use sizeEncryptedInBytes property instead.
 
 ```yaml
 Type: System.Int64
@@ -426,8 +395,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMobileAppContentFile
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMobileAppContentFile
@@ -446,16 +413,16 @@ To create the parameters described below, construct a hash table containing the 
 `BODYPARAMETER <IMicrosoftGraphMobileAppContentFile>`: Contains properties for a single installer file that is associated with a given mobileAppContent version.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[AzureStorageUri <String>]`: Indicates the Azure Storage URI that the file is uploaded to. Created by the service upon receiving a valid mobileAppContentFile. Read-only.
-  - `[AzureStorageUriExpirationDateTime <DateTime?>]`: Indicates the date and time when the Azure storage URI expires, in ISO 8601 format. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Read-only.
-  - `[CreatedDateTime <DateTime?>]`: Indicates created date and time associated with app content file, in ISO 8601 format. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Read-only.
-  - `[IsCommitted <Boolean?>]`: A value indicating whether the file is committed. A committed app content file has been fully uploaded and validated by the Intune service. TRUE means that app content file is committed, FALSE means that app content file is not committed. Defaults to FALSE. Read-only.
-  - `[IsDependency <Boolean?>]`: Indicates whether this content file is a dependency for the main content file. TRUE means that the content file is a dependency, FALSE means that the content file is not a dependency and is the main content file. Defaults to FALSE.
-  - `[IsFrameworkFile <Boolean?>]`: A value indicating whether the file is a framework file. To be deprecated.
-  - `[Manifest <Byte[]>]`: Indicates the manifest information, containing file metadata.
-  - `[Name <String>]`: Indicates the name of the file.
-  - `[Size <Int64?>]`: The size of the file prior to encryption. To be deprecated, please use sizeInBytes property instead.
-  - `[SizeEncrypted <Int64?>]`: The size of the file after encryption. To be deprecated, please use sizeEncryptedInBytes property instead.
+  - `[AzureStorageUri <String>]`: The Azure Storage URI.
+  - `[AzureStorageUriExpirationDateTime <DateTime?>]`: The time the Azure storage Uri expires.
+  - `[CreatedDateTime <DateTime?>]`: The time the file was created.
+  - `[IsCommitted <Boolean?>]`: A value indicating whether the file is committed.
+  - `[IsDependency <Boolean?>]`: Whether the content file is a dependency for the main content file.
+  - `[IsFrameworkFile <Boolean?>]`: A value indicating whether the file is a framework file.
+  - `[Manifest <Byte[]>]`: The manifest information.
+  - `[Name <String>]`: the file name.
+  - `[Size <Int64?>]`: The size of the file prior to encryption.
+  - `[SizeEncrypted <Int64?>]`: The size of the file after encryption.
   - `[SizeEncryptedInBytes <Int64?>]`: Indicates the size of the file after encryption, in bytes.
   - `[SizeInBytes <Int64?>]`: Indicates the original size of the file, in bytes.
   - `[UploadState <String>]`: Contains properties for upload request states.

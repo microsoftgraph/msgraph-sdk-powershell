@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Compliance
-Module Guid: cc682288-4ec0-400d-8e6f-16c1db9ffc69
+Module Guid: 4507ed26-d45b-432f-b7fe-11fe07e46356
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.compliance
 Help Version: 1.0.0.0
 Locale: en-US
@@ -26,12 +26,11 @@ Get the number of the resource
 
 ### [Get-MgPrivacySubjectRightsRequestApproverMailboxSetting](Get-MgPrivacySubjectRightsRequestApproverMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgPrivacySubjectRightsRequestApproverServiceProvisioningError](Get-MgPrivacySubjectRightsRequestApproverServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgPrivacySubjectRightsRequestApproverServiceProvisioningErrorCount](Get-MgPrivacySubjectRightsRequestApproverServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -44,12 +43,11 @@ Get the number of the resource
 
 ### [Get-MgPrivacySubjectRightsRequestCollaboratorMailboxSetting](Get-MgPrivacySubjectRightsRequestCollaboratorMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgPrivacySubjectRightsRequestCollaboratorServiceProvisioningError](Get-MgPrivacySubjectRightsRequestCollaboratorServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgPrivacySubjectRightsRequestCollaboratorServiceProvisioningErrorCount](Get-MgPrivacySubjectRightsRequestCollaboratorServiceProvisioningErrorCount.md)
 Get the number of the resource
