@@ -103,11 +103,11 @@ paths:
     get:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
-      summary: List deviceEnrollmentConfigurations
-      description: List properties and relationships of the deviceEnrollmentConfiguration objects.
+      summary: List deviceEnrollmentPlatformRestrictionsConfigurations
+      description: List properties and relationships of the deviceEnrollmentPlatformRestrictionsConfiguration objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-onboarding-deviceenrollmentconfiguration-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-onboarding-deviceenrollmentplatformrestrictionsconfiguration-list?view=graph-rest-1.0
       operationId: deviceManagement_ListDeviceEnrollmentConfiguration
       parameters:
         - $ref: '#/components/parameters/top'
@@ -211,11 +211,11 @@ paths:
     get:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
-      summary: Get deviceEnrollmentConfiguration
-      description: Read properties and relationships of the deviceEnrollmentConfiguration object.
+      summary: Get deviceEnrollmentLimitConfiguration
+      description: Read properties and relationships of the deviceEnrollmentLimitConfiguration object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-onboarding-deviceenrollmentconfiguration-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-onboarding-deviceenrollmentlimitconfiguration-get?view=graph-rest-1.0
       operationId: deviceManagement_GetDeviceEnrollmentConfiguration
       parameters:
         - name: deviceEnrollmentConfiguration-id
@@ -306,11 +306,11 @@ paths:
     delete:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
-      summary: Delete deviceEnrollmentWindowsHelloForBusinessConfiguration
-      description: Deletes a deviceEnrollmentWindowsHelloForBusinessConfiguration.
+      summary: Delete deviceEnrollmentLimitConfiguration
+      description: Deletes a deviceEnrollmentLimitConfiguration.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-onboarding-deviceenrollmentwindowshelloforbusinessconfiguration-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-onboarding-deviceenrollmentlimitconfiguration-delete?view=graph-rest-1.0
       operationId: deviceManagement_DeleteDeviceEnrollmentConfiguration
       parameters:
         - name: deviceEnrollmentConfiguration-id
@@ -1497,12 +1497,6 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignment'
               description: Resource to grant access to users or groups.
               x-ms-navigationProperty: true
-            roleDefinitions:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
-              description: Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
-              x-ms-navigationProperty: true
             roleAssignmentScheduleInstances:
               type: array
               items:
@@ -1520,6 +1514,12 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignmentSchedule'
               description: Schedules for active role assignment operations.
+              x-ms-navigationProperty: true
+            roleDefinitions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+              description: Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
               x-ms-navigationProperty: true
             roleEligibilityScheduleInstances:
               type: array
@@ -1683,54 +1683,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
           additionalProperties:
             type: object
-    microsoft.graph.unifiedRoleDefinition:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: unifiedRoleDefinition
-          type: object
-          properties:
-            description:
-              type: string
-              description: The description for the unifiedRoleDefinition. Read-only when isBuiltIn is true.
-              nullable: true
-            displayName:
-              type: string
-              description: 'The display name for the unifiedRoleDefinition. Read-only when isBuiltIn is true. Required.  Supports $filter (eq, in).'
-              nullable: true
-            isBuiltIn:
-              type: boolean
-              description: 'Flag indicating whether the role definition is part of the default set included in Microsoft Entra or a custom definition. Read-only. Supports $filter (eq, in).'
-              nullable: true
-            isEnabled:
-              type: boolean
-              description: Flag indicating whether the role is enabled for assignment. If false the role is not available for assignment. Read-only when isBuiltIn is true.
-              nullable: true
-            resourceScopes:
-              type: array
-              items:
-                type: string
-              description: List of the scopes or permissions the role definition applies to. Currently only / is supported. Read-only when isBuiltIn is true. DO NOT USE. This will be deprecated soon. Attach scope to role assignment.
-            rolePermissions:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.unifiedRolePermission'
-              description: List of permissions included in the role. Read-only when isBuiltIn is true. Required.
-            templateId:
-              type: string
-              description: Custom template identifier that can be set when isBuiltIn is false but is read-only when isBuiltIn is true. This identifier is typically used if one needs an identifier to be the same across different directories.
-              nullable: true
-            version:
-              type: string
-              description: Indicates version of the role definition. Read-only when isBuiltIn is true.
-              nullable: true
-            inheritsPermissionsFrom:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
-              description: Read-only collection of role definitions that the given role definition inherits from. Only Microsoft Entra built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
-              x-ms-navigationProperty: true
-          additionalProperties:
-            type: object
     microsoft.graph.unifiedRoleAssignmentScheduleInstance:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.unifiedRoleScheduleInstanceBase'
@@ -1841,6 +1793,54 @@ components:
               $ref: '#/components/schemas/microsoft.graph.requestSchedule'
             activatedUsing:
               $ref: '#/components/schemas/microsoft.graph.unifiedRoleEligibilitySchedule'
+          additionalProperties:
+            type: object
+    microsoft.graph.unifiedRoleDefinition:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: unifiedRoleDefinition
+          type: object
+          properties:
+            description:
+              type: string
+              description: The description for the unifiedRoleDefinition. Read-only when isBuiltIn is true.
+              nullable: true
+            displayName:
+              type: string
+              description: 'The display name for the unifiedRoleDefinition. Read-only when isBuiltIn is true. Required.  Supports $filter (eq, in).'
+              nullable: true
+            isBuiltIn:
+              type: boolean
+              description: 'Flag indicating whether the role definition is part of the default set included in Microsoft Entra or a custom definition. Read-only. Supports $filter (eq, in).'
+              nullable: true
+            isEnabled:
+              type: boolean
+              description: Flag indicating whether the role is enabled for assignment. If false the role is not available for assignment. Read-only when isBuiltIn is true.
+              nullable: true
+            resourceScopes:
+              type: array
+              items:
+                type: string
+              description: List of the scopes or permissions the role definition applies to. Currently only / is supported. Read-only when isBuiltIn is true. DO NOT USE. This will be deprecated soon. Attach scope to role assignment.
+            rolePermissions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRolePermission'
+              description: List of permissions included in the role. Read-only when isBuiltIn is true. Required.
+            templateId:
+              type: string
+              description: Custom template identifier that can be set when isBuiltIn is false but is read-only when isBuiltIn is true. This identifier is typically used if one needs an identifier to be the same across different directories.
+              nullable: true
+            version:
+              type: string
+              description: Indicates version of the role definition. Read-only when isBuiltIn is true.
+              nullable: true
+            inheritsPermissionsFrom:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+              description: Read-only collection of role definitions that the given role definition inherits from. Only Microsoft Entra built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.unifiedRoleEligibilityScheduleInstance:
@@ -2014,27 +2014,6 @@ components:
               nullable: true
           additionalProperties:
             type: object
-    microsoft.graph.unifiedRolePermission:
-      title: unifiedRolePermission
-      type: object
-      properties:
-        allowedResourceActions:
-          type: array
-          items:
-            type: string
-          description: Set of tasks that can be performed on a resource. Required.
-        condition:
-          type: string
-          description: Optional constraints that must be met for the permission to be effective. Not supported for custom roles.
-          nullable: true
-        excludedResourceActions:
-          type: array
-          items:
-            type: string
-            nullable: true
-          description: Set of tasks that may not be performed on a resource. Not yet supported.
-      additionalProperties:
-        type: object
     microsoft.graph.unifiedRoleScheduleInstanceBase:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -2196,6 +2175,27 @@ components:
               $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
           additionalProperties:
             type: object
+    microsoft.graph.unifiedRolePermission:
+      title: unifiedRolePermission
+      type: object
+      properties:
+        allowedResourceActions:
+          type: array
+          items:
+            type: string
+          description: Set of tasks that can be performed on a resource. Required.
+        condition:
+          type: string
+          description: Optional constraints that must be met for the permission to be effective. Not supported for custom roles.
+          nullable: true
+        excludedResourceActions:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: Set of tasks that may not be performed on a resource. Not yet supported.
+      additionalProperties:
+        type: object
     microsoft.graph.ODataErrors.ErrorDetails:
       required:
         - code

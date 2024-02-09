@@ -1186,6 +1186,8 @@ paths:
                 - monitoring
                 - ndesConnectors
                 - notificationMessageTemplates
+                - operationApprovalPolicies
+                - operationApprovalRequests
                 - privilegeManagementElevations
                 - remoteActionAudits
                 - remoteAssistancePartners
@@ -1360,6 +1362,8 @@ paths:
                 - monitoring
                 - ndesConnectors
                 - notificationMessageTemplates
+                - operationApprovalPolicies
+                - operationApprovalRequests
                 - privilegeManagementElevations
                 - remoteActionAudits
                 - remoteAssistancePartners
@@ -3237,8 +3241,6 @@ paths:
                 - deviceFirmwareConfigurationInterfaceManaged desc
                 - deviceHealthAttestationState
                 - deviceHealthAttestationState desc
-                - deviceIdentityAttestationDetail
-                - deviceIdentityAttestationDetail desc
                 - deviceName
                 - deviceName desc
                 - deviceRegistrationState
@@ -3394,7 +3396,6 @@ paths:
                 - deviceEnrollmentType
                 - deviceFirmwareConfigurationInterfaceManaged
                 - deviceHealthAttestationState
-                - deviceIdentityAttestationDetail
                 - deviceName
                 - deviceRegistrationState
                 - deviceType
@@ -3570,7 +3571,6 @@ paths:
                 - deviceEnrollmentType
                 - deviceFirmwareConfigurationInterfaceManaged
                 - deviceHealthAttestationState
-                - deviceIdentityAttestationDetail
                 - deviceName
                 - deviceRegistrationState
                 - deviceType
@@ -12058,8 +12058,6 @@ paths:
                 - deviceFirmwareConfigurationInterfaceManaged desc
                 - deviceHealthAttestationState
                 - deviceHealthAttestationState desc
-                - deviceIdentityAttestationDetail
-                - deviceIdentityAttestationDetail desc
                 - deviceName
                 - deviceName desc
                 - deviceRegistrationState
@@ -12215,7 +12213,6 @@ paths:
                 - deviceEnrollmentType
                 - deviceFirmwareConfigurationInterfaceManaged
                 - deviceHealthAttestationState
-                - deviceIdentityAttestationDetail
                 - deviceName
                 - deviceRegistrationState
                 - deviceType
@@ -12377,7 +12374,6 @@ paths:
                 - deviceEnrollmentType
                 - deviceFirmwareConfigurationInterfaceManaged
                 - deviceHealthAttestationState
-                - deviceIdentityAttestationDetail
                 - deviceName
                 - deviceRegistrationState
                 - deviceType
@@ -18741,7 +18737,6 @@ paths:
                 - deviceEnrollmentType
                 - deviceFirmwareConfigurationInterfaceManaged
                 - deviceHealthAttestationState
-                - deviceIdentityAttestationDetail
                 - deviceName
                 - deviceRegistrationState
                 - deviceType
@@ -19814,7 +19809,6 @@ paths:
                 - deviceEnrollmentType
                 - deviceFirmwareConfigurationInterfaceManaged
                 - deviceHealthAttestationState
-                - deviceIdentityAttestationDetail
                 - deviceName
                 - deviceRegistrationState
                 - deviceType
@@ -20854,7 +20848,6 @@ paths:
                 - deviceEnrollmentType
                 - deviceFirmwareConfigurationInterfaceManaged
                 - deviceHealthAttestationState
-                - deviceIdentityAttestationDetail
                 - deviceName
                 - deviceRegistrationState
                 - deviceType
@@ -21843,7 +21836,6 @@ paths:
                 - deviceEnrollmentType
                 - deviceFirmwareConfigurationInterfaceManaged
                 - deviceHealthAttestationState
-                - deviceIdentityAttestationDetail
                 - deviceName
                 - deviceRegistrationState
                 - deviceType
@@ -22883,7 +22875,6 @@ paths:
                 - deviceEnrollmentType
                 - deviceFirmwareConfigurationInterfaceManaged
                 - deviceHealthAttestationState
-                - deviceIdentityAttestationDetail
                 - deviceName
                 - deviceRegistrationState
                 - deviceType
@@ -29092,8 +29083,6 @@ paths:
                 - deviceFirmwareConfigurationInterfaceManaged desc
                 - deviceHealthAttestationState
                 - deviceHealthAttestationState desc
-                - deviceIdentityAttestationDetail
-                - deviceIdentityAttestationDetail desc
                 - deviceName
                 - deviceName desc
                 - deviceRegistrationState
@@ -29249,7 +29238,6 @@ paths:
                 - deviceEnrollmentType
                 - deviceFirmwareConfigurationInterfaceManaged
                 - deviceHealthAttestationState
-                - deviceIdentityAttestationDetail
                 - deviceName
                 - deviceRegistrationState
                 - deviceType
@@ -29425,7 +29413,6 @@ paths:
                 - deviceEnrollmentType
                 - deviceFirmwareConfigurationInterfaceManaged
                 - deviceHealthAttestationState
-                - deviceIdentityAttestationDetail
                 - deviceName
                 - deviceRegistrationState
                 - deviceType
@@ -45017,6 +45004,8 @@ paths:
                 - deviceBatteryCount desc
                 - deviceBatteryHealthScore
                 - deviceBatteryHealthScore desc
+                - deviceBatteryTags
+                - deviceBatteryTags desc
                 - deviceId
                 - deviceId desc
                 - deviceName
@@ -45049,6 +45038,7 @@ paths:
                 - deviceBatteriesDetails
                 - deviceBatteryCount
                 - deviceBatteryHealthScore
+                - deviceBatteryTags
                 - deviceId
                 - deviceName
                 - estimatedRuntimeInMinutes
@@ -45132,6 +45122,7 @@ paths:
                 - deviceBatteriesDetails
                 - deviceBatteryCount
                 - deviceBatteryHealthScore
+                - deviceBatteryTags
                 - deviceId
                 - deviceName
                 - estimatedRuntimeInMinutes
@@ -47376,6 +47367,8 @@ paths:
                 - healthStatus desc
                 - manufacturer
                 - manufacturer desc
+                - meanResourceSpikeTimeScore
+                - meanResourceSpikeTimeScore desc
                 - model
                 - model desc
                 - startupPerformanceScore
@@ -47400,6 +47393,7 @@ paths:
                 - endpointAnalyticsScore
                 - healthStatus
                 - manufacturer
+                - meanResourceSpikeTimeScore
                 - model
                 - startupPerformanceScore
                 - workFromAnywhereScore
@@ -47480,6 +47474,7 @@ paths:
                 - endpointAnalyticsScore
                 - healthStatus
                 - manufacturer
+                - meanResourceSpikeTimeScore
                 - model
                 - startupPerformanceScore
                 - workFromAnywhereScore
@@ -49202,6 +49197,8 @@ paths:
                 - healthStatus desc
                 - manufacturer
                 - manufacturer desc
+                - meanResourceSpikeTimeScore
+                - meanResourceSpikeTimeScore desc
                 - model
                 - model desc
                 - modelDeviceCount
@@ -49227,6 +49224,7 @@ paths:
                 - endpointAnalyticsScore
                 - healthStatus
                 - manufacturer
+                - meanResourceSpikeTimeScore
                 - model
                 - modelDeviceCount
                 - startupPerformanceScore
@@ -49307,6 +49305,7 @@ paths:
                 - endpointAnalyticsScore
                 - healthStatus
                 - manufacturer
+                - meanResourceSpikeTimeScore
                 - model
                 - modelDeviceCount
                 - startupPerformanceScore
@@ -50007,6 +50006,10 @@ paths:
                 - id desc
                 - averageSpikeTimeScore
                 - averageSpikeTimeScore desc
+                - cpuClockSpeedInMHz
+                - cpuClockSpeedInMHz desc
+                - cpuDisplayName
+                - cpuDisplayName desc
                 - cpuSpikeTimePercentage
                 - cpuSpikeTimePercentage desc
                 - cpuSpikeTimePercentageThreshold
@@ -50021,6 +50024,12 @@ paths:
                 - deviceName desc
                 - deviceResourcePerformanceScore
                 - deviceResourcePerformanceScore desc
+                - diskType
+                - diskType desc
+                - healthStatus
+                - healthStatus desc
+                - machineType
+                - machineType desc
                 - manufacturer
                 - manufacturer desc
                 - model
@@ -50031,6 +50040,10 @@ paths:
                 - ramSpikeTimePercentageThreshold desc
                 - ramSpikeTimeScore
                 - ramSpikeTimeScore desc
+                - totalProcessorCoreCount
+                - totalProcessorCoreCount desc
+                - totalRamInMB
+                - totalRamInMB desc
               type: string
         - name: $select
           in: query
@@ -50044,6 +50057,8 @@ paths:
               enum:
                 - id
                 - averageSpikeTimeScore
+                - cpuClockSpeedInMHz
+                - cpuDisplayName
                 - cpuSpikeTimePercentage
                 - cpuSpikeTimePercentageThreshold
                 - cpuSpikeTimeScore
@@ -50051,11 +50066,16 @@ paths:
                 - deviceId
                 - deviceName
                 - deviceResourcePerformanceScore
+                - diskType
+                - healthStatus
+                - machineType
                 - manufacturer
                 - model
                 - ramSpikeTimePercentage
                 - ramSpikeTimePercentageThreshold
                 - ramSpikeTimeScore
+                - totalProcessorCoreCount
+                - totalRamInMB
               type: string
         - name: $expand
           in: query
@@ -50128,6 +50148,8 @@ paths:
               enum:
                 - id
                 - averageSpikeTimeScore
+                - cpuClockSpeedInMHz
+                - cpuDisplayName
                 - cpuSpikeTimePercentage
                 - cpuSpikeTimePercentageThreshold
                 - cpuSpikeTimeScore
@@ -50135,11 +50157,16 @@ paths:
                 - deviceId
                 - deviceName
                 - deviceResourcePerformanceScore
+                - diskType
+                - healthStatus
+                - machineType
                 - manufacturer
                 - model
                 - ramSpikeTimePercentage
                 - ramSpikeTimePercentageThreshold
                 - ramSpikeTimeScore
+                - totalProcessorCoreCount
+                - totalRamInMB
               type: string
         - name: $expand
           in: query
@@ -53465,6 +53492,18 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.notificationMessageTemplate'
               description: The Notification Message Templates.
               x-ms-navigationProperty: true
+            operationApprovalPolicies:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.operationApprovalPolicy'
+              description: The Operation Approval Policies
+              x-ms-navigationProperty: true
+            operationApprovalRequests:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.operationApprovalRequest'
+              description: The Operation Approval Requests
+              x-ms-navigationProperty: true
             privilegeManagementElevations:
               type: array
               items:
@@ -54370,8 +54409,6 @@ components:
               description: 'Indicates whether the device is DFCI managed. When TRUE the device is DFCI managed. When FALSE, the device is not DFCI managed. The default value is FALSE.'
             deviceHealthAttestationState:
               $ref: '#/components/schemas/microsoft.graph.deviceHealthAttestationState'
-            deviceIdentityAttestationDetail:
-              $ref: '#/components/schemas/microsoft.graph.deviceIdentityAttestationDetail'
             deviceName:
               type: string
               description: Name of the device. This property is read-only.
@@ -59576,7 +59613,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: Number of batteries in a user device. Valid values 1 to 2147483647
+              description: Number of batteries in a user device. Valid values 0 to 2147483647
               format: int32
             deviceBatteryHealthScore:
               maximum: 2147483647
@@ -59584,6 +59621,12 @@ components:
               type: integer
               description: A weighted average of a device’s maximum capacity score and runtime estimate score. Values range from 0-100. Valid values 0 to 2147483647
               format: int32
+            deviceBatteryTags:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: 'Tags for computed information on how battery on the device is behaving. E.g. newbattery, batterycapacityred, designcapacityzero, etc.'
             deviceId:
               type: string
               description: 'The unique identifier of the device, Intune DeviceID.'
@@ -60030,6 +60073,10 @@ components:
               type: string
               description: 'The manufacturer name of the device. Examples: Microsoft Corporation, HP, Lenovo. Supports: $select, $OrderBy. Read-only.'
               nullable: true
+            meanResourceSpikeTimeScore:
+              type: number
+              description: Indicates a calulated score indicating the health of the device's resources CPU and RAM. Valid values range from 0-100. Value -1 means associated score is unavailable. A higher score indicates a healthier device. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+              format: double
             model:
               type: string
               description: 'The model name of the device. Supports: $select, $OrderBy. Read-only.'
@@ -60301,6 +60348,10 @@ components:
               type: string
               description: 'The manufacturer name of the device. Examples: Microsoft Corporation, HP, Lenovo. Supports: $select, $OrderBy. Read-only.'
               nullable: true
+            meanResourceSpikeTimeScore:
+              type: number
+              description: Indicates a calulated score indicating the health of the device's resource spike score . Valid values range from 0-100. Value -1 means associated score is unavailable. A higher score indicates a healthier device. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+              format: double
             model:
               type: string
               description: 'The model name of the device. Supports: $select, $OrderBy. Read-only.'
@@ -60452,6 +60503,14 @@ components:
               type: integer
               description: AverageSpikeTimeScore of a device or a model type. Valid values 0 to 100
               format: int32
+            cpuClockSpeedInMHz:
+              type: number
+              description: 'The clock speed of the processor, in MHz. Valid values 0 to 1000000'
+              format: double
+            cpuDisplayName:
+              type: string
+              description: 'The name of the processor on the device, For example, 11th Gen Intel(R) Core(TM) i7.'
+              nullable: true
             cpuSpikeTimePercentage:
               type: number
               description: CPU spike time in percentage. Valid values 0 to 100
@@ -60484,6 +60543,12 @@ components:
               type: integer
               description: Resource performance score of a specific device. Valid values 0 to 100
               format: int32
+            diskType:
+              $ref: '#/components/schemas/microsoft.graph.diskType'
+            healthStatus:
+              $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsHealthState'
+            machineType:
+              $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsMachineType'
             manufacturer:
               type: string
               description: The user experience analytics device manufacturer.
@@ -60506,6 +60571,16 @@ components:
               type: integer
               description: The user experience analytics device RAM spike time score. Valid values 0 to 100
               format: int32
+            totalProcessorCoreCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: The count of cores of the processor of device. Valid values 0 to 512
+              format: int32
+            totalRamInMB:
+              type: number
+              description: 'The total RAM of the device, in MB. Valid values 0 to 1000000'
+              format: double
           additionalProperties:
             type: object
           description: The user experience analytics resource performance entity.
@@ -61847,7 +61922,6 @@ components:
               nullable: true
             certificate:
               type: string
-              description: Not yet documented
               nullable: true
             certificateSerialNumber:
               type: string
@@ -63670,6 +63744,92 @@ components:
           additionalProperties:
             type: object
           description: Entity which represents an OnPrem Ndes connector.
+    microsoft.graph.operationApprovalPolicy:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: operationApprovalPolicy
+          type: object
+          properties:
+            approverGroupIds:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: 'The Microsoft Entra ID (Azure AD) security group IDs for the approvers for the policy. This property is required when the policy is created, and is defined by the user to define the possible approvers for the policy.'
+            description:
+              type: string
+              description: 'Indicates the description of the policy. Maximum length of the description is 1024 characters. This property is not required, but can be used by the user to describe the policy.'
+              nullable: true
+            displayName:
+              type: string
+              description: 'Indicates the display name of the policy. Maximum length of the display name is 128 characters. This property is required when the policy is created, and is defined by the user to identify the policy.'
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Indicates the last DateTime that the policy was modified. The value cannot be modified and is automatically populated whenever values in the request are updated. For example, when the ''policyType'' property changes from apps to scripts. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Returned by default. Read-only. This property is read-only.'
+              format: date-time
+              readOnly: true
+            policyPlatform:
+              $ref: '#/components/schemas/microsoft.graph.operationApprovalPolicyPlatform'
+            policyType:
+              $ref: '#/components/schemas/microsoft.graph.operationApprovalPolicyType'
+          additionalProperties:
+            type: object
+          description: The OperationApprovalPolicy entity allows an administrator to configure which operations require admin approval and the set of admins who can perform that approval. Creating a policy enables the multiple admin approval service to catch requests which are targeted by the specific policy type defined.
+    microsoft.graph.operationApprovalRequest:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: operationApprovalRequest
+          type: object
+          properties:
+            approvalJustification:
+              type: string
+              description: 'Indicates the justification for approving or rejecting the request. Maximum length of justification is 1024 characters. For example: ''Approved per Change 23423 - needed for Feb 2023 application baseline updates.'' Read-only. This property is read-only.'
+              nullable: true
+              readOnly: true
+            approver:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            expirationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Indicates the DateTime when any action on the approval request is no longer permitted. The value cannot be modified and is automatically populated when the request is created using expiration offset values defined in the service controllers. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Returned by default. Read-only. This property is read-only.'
+              format: date-time
+              readOnly: true
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Indicates the last DateTime that the request was modified. The value cannot be modified and is automatically populated whenever values in the request are updated. For example, when the ''status'' property changes from needsApproval to approved. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Returned by default. Read-only. This property is read-only.'
+              format: date-time
+              readOnly: true
+            operationApprovalPolicies:
+              type: string
+              description: The operational approval policies used in the request. Indicates the policy and platform combinations that are required for this request to be approved or rejected. Read-only. This property is read-only.
+              nullable: true
+              readOnly: true
+            requestDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Indicates the DateTime that the request was made. The value cannot be modified and is automatically populated when the request is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Returned by default. Read-only. This property is read-only.'
+              format: date-time
+              readOnly: true
+            requestJustification:
+              type: string
+              description: 'Indicates the justification for creating the request. Maximum length of justification is 1024 characters. For example: ''Needed for Feb 2023 application baseline updates.'' Read-only. This property is read-only.'
+              nullable: true
+              readOnly: true
+            requestor:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            requiredOperationApprovalPolicyTypes:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.operationApprovalPolicyType'
+              description: Indicates the approval policy types required by the request in order for the request to be approved or rejected. Read-only. This property is read-only.
+              readOnly: true
+            status:
+              $ref: '#/components/schemas/microsoft.graph.operationApprovalRequestStatus'
+          additionalProperties:
+            type: object
+          description: 'The OperationApprovalRequest entity encompasses the operation an admin wishes to perform and is requesting approval to complete. It contains the detail of the operation one wishes to perform, user metadata of the requestor, and a justification for the change. It allows for several operations for both the requestor and the potential approver to either approve, deny, or cancel the request and a response justification to provide information for the decision.'
     microsoft.graph.privilegeManagementElevation:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -63751,6 +63911,9 @@ components:
               type: string
               description: Unique identifier of the rule configured to run the application with elevated access
               nullable: true
+            systemInitiatedElevation:
+              type: boolean
+              description: To identify if the elevation is initiated by system or user interaction
             upn:
               type: string
               description: 'The User Principal Name of the user who performed the elevation. Example: `john@domain.com`'
@@ -63816,13 +63979,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementCachedReportConfiguration'
-              description: Entity representing the configuration of a cached report
+              description: Entity representing the configuration of a cached report.
               x-ms-navigationProperty: true
             exportJobs:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementExportJob'
-              description: Entity representing a job to export a report
+              description: Entity representing a job to export a report.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -64024,7 +64187,7 @@ components:
               nullable: true
             instanceUrl:
               type: string
-              description: Indicates the ServiceNow instance URL that Intune will connect to. Saved in the format of https://<instance>.service-now.com
+              description: Indicates the ServiceNow instance URL that Intune will connect to. Saved in the format of https://.service-now.com
               nullable: true
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -65465,6 +65628,8 @@ components:
         - androidEnterpriseDedicatedDevice
         - androidEnterpriseFullyManaged
         - androidEnterpriseCorporateWorkProfile
+        - androidAOSPUserOwnedDeviceEnrollment
+        - androidAOSPUserlessDeviceEnrollment
       type: string
       description: Possible ways of adding a mobile device to management.
       x-ms-enum:
@@ -65522,6 +65687,12 @@ components:
           - value: androidEnterpriseCorporateWorkProfile
             description: Android Enterprise Corporate Work Profile
             name: androidEnterpriseCorporateWorkProfile
+          - value: androidAOSPUserOwnedDeviceEnrollment
+            description: Indicates the device enrollment is for android device owned by/associated with user using Android Open Source Project (AOSP) on a non-Google mobile services.
+            name: androidAOSPUserOwnedDeviceEnrollment
+          - value: androidAOSPUserlessDeviceEnrollment
+            description: Indicates the device enrollment is for user less android device using Android Open Source Project (AOSP) on a non-Google mobile services.
+            name: androidAOSPUserlessDeviceEnrollment
     microsoft.graph.deviceHealthAttestationState:
       title: deviceHealthAttestationState
       type: object
@@ -65661,7 +65832,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.azureAttestationSettingStatus'
         virtualSecureMode:
           type: string
-          description: VSM is a container that protects high value assets from a compromised kernel
+          description: 'Indicates whether the device has Virtual Secure Mode (VSM) enabled. Virtual Secure Mode (VSM) is a container that protects high value assets from a compromised kernel. This property will be deprecated in beta from August 2023. Support for this property will end in August 2025 for v1.0 API. A new property virtualizationBasedSecurity is added and used instead. The value used for virtualSecureMode will be passed by virtualizationBasedSecurity during the deprecation process. Possible values are ''enabled'', ''disabled'' and ''notApplicable''. ''enabled'' indicates Virtual Secure Mode (VSM) is enabled. ''disabled'' indicates Virtual Secure Mode (VSM) is disabled. ''notApplicable'' indicates the device is not a Windows 11 device. Default value is ''notApplicable''.'
           nullable: true
         windowsPE:
           type: string
@@ -65669,15 +65840,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.deviceIdentityAttestationDetail:
-      title: deviceIdentityAttestationDetail
-      type: object
-      properties:
-        deviceIdentityAttestationStatus:
-          $ref: '#/components/schemas/microsoft.graph.deviceIdentityAttestationStatus'
-      additionalProperties:
-        type: object
-      description: Indicates the attestation status of the managed device
     microsoft.graph.deviceRegistrationState:
       title: deviceRegistrationState
       enum:
@@ -66072,6 +66234,8 @@ components:
         - microsoft365ManagedMdm
         - msSense
         - intuneAosp
+        - google
+        - unknownFutureValue
       type: string
       description: Management agent type.
       x-ms-enum:
@@ -66117,6 +66281,12 @@ components:
           - value: intuneAosp
             description: This device is managed by Intune's MDM for AOSP (Android Open Source Project) devices
             name: intuneAosp
+          - value: google
+            description: Indicates the management agent to manage the device is Google.
+            name: google
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.managedDeviceManagementFeatures:
       title: managedDeviceManagementFeatures
       enum:
@@ -67424,11 +67594,9 @@ components:
       properties:
         displayName:
           type: string
-          description: Not yet documented
           nullable: true
         id:
           type: string
-          description: Not yet documented
           nullable: true
         sourceType:
           $ref: '#/components/schemas/microsoft.graph.settingSourceType'
@@ -68205,7 +68373,7 @@ components:
       properties:
         settingDefinitionId:
           type: string
-          description: Setting definition id that is being referred to a setting. Applicable for reusable setting
+          description: Setting definition id that is being referred to a setting. Applicable for reusable setting.
           nullable: true
       additionalProperties:
         type: object
@@ -69596,6 +69764,7 @@ components:
         - revokeAppleVppLicenses
         - removeDeviceFirmwareConfigurationInterfaceManagement
         - pauseConfigurationRefresh
+        - initiateDeviceAttestation
       type: string
       description: Remote actions Intune supports.
       x-ms-enum:
@@ -69710,6 +69879,9 @@ components:
           - value: pauseConfigurationRefresh
             description: Indicates an action has been initiated to pause configuration refresh for the device.
             name: pauseConfigurationRefresh
+          - value: initiateDeviceAttestation
+            description: Indicates remote device action to intiate Mobile Device Management (MDM) attestation if device is capable for it.
+            name: initiateDeviceAttestation
     microsoft.graph.actionState:
       title: actionState
       enum:
@@ -69850,11 +70022,9 @@ components:
       properties:
         context:
           type: string
-          description: Not yet documented
           nullable: true
         failure:
           type: string
-          description: Not yet documented
           nullable: true
         failureDetails:
           type: string
@@ -70289,6 +70459,31 @@ components:
             name: critical
           - value: unknownFutureValue
             description: Placeholder value for future expansion.
+            name: unknownFutureValue
+    microsoft.graph.userExperienceAnalyticsMachineType:
+      title: userExperienceAnalyticsMachineType
+      enum:
+        - unknown
+        - physical
+        - virtual
+        - unknownFutureValue
+      type: string
+      description: 'Indicates if machine is physical or virtual. Possible values are: physical or virtual'
+      x-ms-enum:
+        name: userExperienceAnalyticsMachineType
+        modelAsString: false
+        values:
+          - value: unknown
+            description: Indicates that the type is unknown.
+            name: unknown
+          - value: physical
+            description: Indicates that the Machine is physical.
+            name: physical
+          - value: virtual
+            description: Indicates that the machine is virtual.
+            name: virtual
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
             name: unknownFutureValue
     microsoft.graph.operatingSystemUpgradeEligibility:
       title: operatingSystemUpgradeEligibility
@@ -72848,7 +73043,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementAutopilotPolicyType'
             trackedOnEnrollmentStatus:
               type: boolean
-              description: Indicates if this prolicy was tracked as part of the autopilot bootstrap enrollment sync session
+              description: Indicates if this policy was tracked as part of the autopilot bootstrap enrollment sync session
           additionalProperties:
             type: object
           description: Policy status detail item contained by an autopilot event.
@@ -73212,7 +73407,7 @@ components:
               nullable: true
             isSupervised:
               type: boolean
-              description: 'Indicates if the Apple device is supervised. More information is at: https://support.apple.com/en-us/HT202837'
+              description: Indicates if the Apple device is supervised.
             lastContactedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -74121,6 +74316,187 @@ components:
           - value: inactive
             description: No recent activity for the Ndes connector
             name: inactive
+    microsoft.graph.operationApprovalPolicyPlatform:
+      title: operationApprovalPolicyPlatform
+      enum:
+        - notApplicable
+        - androidDeviceAdministrator
+        - androidEnterprise
+        - iOSiPadOS
+        - macOS
+        - windows10AndLater
+        - windows81AndLater
+        - windows10X
+        - unknownFutureValue
+      type: string
+      description: 'The set of available platforms for the OperationApprovalPolicy. Allows configuration of a policy to specific platform(s) for approval. If no specific platform is required or applicable, the platform is `notApplicable`.'
+      x-ms-enum-flags:
+        isFlags: true
+      x-ms-enum:
+        name: operationApprovalPolicyPlatform
+        modelAsString: false
+        values:
+          - value: notApplicable
+            description: Default. Indicates that a policy platform is not required for a chosen policy type.
+            name: notApplicable
+          - value: androidDeviceAdministrator
+            description: Indicates that the configured policy platform is for Android Device Administrator.
+            name: androidDeviceAdministrator
+          - value: androidEnterprise
+            description: Indicates that the configured policy platform is for Android Enterprise.
+            name: androidEnterprise
+          - value: iOSiPadOS
+            description: Indicates that the configured policy platform is for iOS/iPadOS.
+            name: iOSiPadOS
+          - value: macOS
+            description: Indicates that the configured policy platform is for macOS.
+            name: macOS
+          - value: windows10AndLater
+            description: Indicates that the configured policy platform is for Windows 10 and later.
+            name: windows10AndLater
+          - value: windows81AndLater
+            description: Indicates that the configured policy platform is for Windows 8.1 and later.
+            name: windows81AndLater
+          - value: windows10X
+            description: Indicates that the configured policy platform is for Windows 10X.
+            name: windows10X
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
+    microsoft.graph.operationApprovalPolicyType:
+      title: operationApprovalPolicyType
+      enum:
+        - deviceAction
+        - deviceWipe
+        - deviceRetire
+        - deviceRetireNonCompliant
+        - deviceDelete
+        - deviceLock
+        - deviceErase
+        - deviceDisableActivationLock
+        - windowsEnrollment
+        - compliancePolicy
+        - configurationPolicy
+        - appProtectionPolicy
+        - policySet
+        - filter
+        - endpointSecurityPolicy
+        - app
+        - scripts
+        - role
+        - deviceResetPasscode
+        - customOrganizationalMessage
+        - unknownFutureValue
+      type: string
+      description: 'The set of available policy types that can be configured for approval. There is no default value for this enum, indicating that the policy type must always be chosen.'
+      x-ms-enum:
+        name: operationApprovalPolicyType
+        modelAsString: false
+        values:
+          - value: deviceAction
+            description: Indicates that the configured policy type is for a Device Action.
+            name: deviceAction
+          - value: deviceWipe
+            description: Indicates that the configured policy type is for a Device Wipe Action.
+            name: deviceWipe
+          - value: deviceRetire
+            description: Indicates that the configured policy type is for a Device Retire Action.
+            name: deviceRetire
+          - value: deviceRetireNonCompliant
+            description: Indicates that the configured policy type is for a Retire Non-Compliant Devices Action.
+            name: deviceRetireNonCompliant
+          - value: deviceDelete
+            description: Indicates that the configured policy type is for a Device Delete Action.
+            name: deviceDelete
+          - value: deviceLock
+            description: Indicates that the configured policy type is for a Device Lock Action.
+            name: deviceLock
+          - value: deviceErase
+            description: Indicates that the configured policy type is for a Device Erase Action.
+            name: deviceErase
+          - value: deviceDisableActivationLock
+            description: Indicates that the configured policy type is for a Device Disable Activation Lock Action.
+            name: deviceDisableActivationLock
+          - value: windowsEnrollment
+            description: Indicates that the configured policy type is for a Windows Enrollment.
+            name: windowsEnrollment
+          - value: compliancePolicy
+            description: Indicates that the configured policy type is for a Compliance Policy.
+            name: compliancePolicy
+          - value: configurationPolicy
+            description: Indicates that the configured policy type is for a Configuration Policy.
+            name: configurationPolicy
+          - value: appProtectionPolicy
+            description: Indicates that the configured policy type is for an App Protection Policy.
+            name: appProtectionPolicy
+          - value: policySet
+            description: Indicates that the configured policy type is for a Policy Set.
+            name: policySet
+          - value: filter
+            description: Indicates that the configured policy type is for a Filter.
+            name: filter
+          - value: endpointSecurityPolicy
+            description: Indicates that the configured policy type is for an Endpoint Security Policy.
+            name: endpointSecurityPolicy
+          - value: app
+            description: 'Indicates that the configured policy type is an application type, such as mobile apps or built-in apps.'
+            name: app
+          - value: scripts
+            description: 'Indicates that the configured policy type is a script type, such as Powershell scripts or remediation scripts.'
+            name: scripts
+          - value: role
+            description: Indicates that the configured policy type is for a Role.
+            name: role
+          - value: deviceResetPasscode
+            description: Indicates that the configured policy type is for a Device Reset Passcode Action.
+            name: deviceResetPasscode
+          - value: customOrganizationalMessage
+            description: Indicates that the configured policy type is for a Custom Organizational Message.
+            name: customOrganizationalMessage
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
+    microsoft.graph.operationApprovalRequestStatus:
+      title: operationApprovalRequestStatus
+      enum:
+        - unknown
+        - needsApproval
+        - approved
+        - rejected
+        - cancelled
+        - completed
+        - expired
+        - unknownFutureValue
+      type: string
+      description: 'Indicates the status of the Approval Request. The status of a request will change when an action is successfully performed on it, such as when it is `approved` or `rejected`, or when the request''s expiration DateTime passes and the result is `expired`.'
+      x-ms-enum:
+        name: operationApprovalRequestStatus
+        modelAsString: false
+        values:
+          - value: unknown
+            description: 'Default. Indicates that the request approval status is unknown, and that the status has not been assigned to the approval request.'
+            name: unknown
+          - value: needsApproval
+            description: Indicates that the approval request needs approval before the operation can be completed.
+            name: needsApproval
+          - value: approved
+            description: Indicates that the approval request has been approved. The operation can now be completed.
+            name: approved
+          - value: rejected
+            description: Indicates that the approval request has been rejected. No further action can be taken to complete the operation or to modify the request.
+            name: rejected
+          - value: cancelled
+            description: Indicates that the approval request has been cancelled by the request's requestor. No further action can be taken to complete the operation or to modify the request.
+            name: cancelled
+          - value: completed
+            description: Indicates that the approval request has been completed. This status is feature agnostic and does not indicate success or failure of the operation. No further action is necessary for the operation or to modify the request.
+            name: completed
+          - value: expired
+            description: Indicates that the approval request has expired. No further action can be taken to complete the operation or to modify the request. A new approval request must be made and approved in order to complete the operation.
+            name: expired
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.privilegeManagementElevationType:
       title: privilegeManagementElevationType
       enum:
@@ -74255,7 +74631,7 @@ components:
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Time that the cached report expires. This property is read-only.
+              description: Time that the cached report expires.
               format: date-time
             filter:
               type: string
@@ -74264,33 +74640,33 @@ components:
             lastRefreshDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Time that the cached report was last refreshed. This property is read-only.
+              description: Time that the cached report was last refreshed.
               format: date-time
             metadata:
               type: string
-              description: Caller-managed metadata associated with the report
+              description: Caller-managed metadata associated with the report.
               nullable: true
             orderBy:
               type: array
               items:
                 type: string
                 nullable: true
-              description: Ordering of columns in the report
+              description: Ordering of columns in the report.
             reportName:
               type: string
-              description: Name of the report. This property is read-only.
+              description: Name of the report.
               nullable: true
             select:
               type: array
               items:
                 type: string
                 nullable: true
-              description: Columns selected from the report
+              description: Columns selected from the report.
             status:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementReportStatus'
           additionalProperties:
             type: object
-          description: Entity representing the configuration of a cached report
+          description: Entity representing the configuration of a cached report.
     microsoft.graph.deviceManagementExportJob:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -74300,11 +74676,11 @@ components:
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Time that the exported report expires. This property is read-only.
+              description: Time that the exported report expires.
               format: date-time
             filter:
               type: string
-              description: Filters applied on the report
+              description: Filters applied on the report. The maximum length allowed for this property is 2000 characters.
               nullable: true
             format:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementReportFileFormat'
@@ -74312,31 +74688,35 @@ components:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementExportJobLocalizationType'
             reportName:
               type: string
-              description: Name of the report
+              description: Name of the report. The maximum length allowed for this property is 2000 characters.
             requestDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Time that the exported report was requested. This property is read-only.
+              description: Time that the exported report was requested.
               format: date-time
+            search:
+              type: string
+              description: Configures a search term to filter the data. The maximum length allowed for this property is 100 characters.
+              nullable: true
             select:
               type: array
               items:
                 type: string
                 nullable: true
-              description: Columns selected from the report
+              description: Columns selected from the report. The maximum number of allowed columns names is 256. The maximum length allowed for each column name in this property is 1000 characters.
             snapshotId:
               type: string
-              description: 'A snapshot is an identifiable subset of the dataset represented by the ReportName. A sessionId or CachedReportConfiguration id can be used here. If a sessionId is specified, Filter, Select, and OrderBy are applied to the data represented by the sessionId. Filter, Select, and OrderBy cannot be specified together with a CachedReportConfiguration id.'
+              description: 'A snapshot is an identifiable subset of the dataset represented by the ReportName. A sessionId or CachedReportConfiguration id can be used here. If a sessionId is specified, Filter, Select, and OrderBy are applied to the data represented by the sessionId. Filter, Select, and OrderBy cannot be specified together with a CachedReportConfiguration id. The maximum length allowed for this property is 128 characters.'
               nullable: true
             status:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementReportStatus'
             url:
               type: string
-              description: Temporary location of the exported report. This property is read-only.
+              description: Temporary location of the exported report.
               nullable: true
           additionalProperties:
             type: object
-          description: Entity representing a job to export a report
+          description: Entity representing a job to export a report.
     microsoft.graph.roleAssignment:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -74618,6 +74998,9 @@ components:
               nullable: true
             displayName:
               type: string
+            scheduledDuringMaintenanceWindow:
+              type: boolean
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.cloudPC:
@@ -74741,29 +75124,29 @@ components:
           properties:
             displayName:
               type: string
-              description: The display name of the image.
+              description: The display name of the associated device image. The device image display name and the version are used to uniquely identify the Cloud PC device image. Read-only.
               nullable: true
             errorCode:
               $ref: '#/components/schemas/microsoft.graph.cloudPcDeviceImageErrorCode'
             expirationDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
-              description: The date the image became unavailable.
+              description: The date when the image became unavailable. Read-only.
               format: date
               nullable: true
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The data and time that the image was last modified. The time is shown in ISO 8601 format and  Coordinated Universal Time (UTC) time. For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.'
+              description: 'The data and time when the image was last modified. The timestamp represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
             operatingSystem:
               type: string
-              description: 'The operating system of the image. For example, Windows 10 Enterprise.'
+              description: 'The operating system of the image. For example, Windows 10 Enterprise. Read-only.'
               nullable: true
             osBuildNumber:
               type: string
-              description: 'The OS build version of the image. For example, 1909.'
+              description: 'The OS build version of the image. For example, 1909. Read-only.'
               nullable: true
             osStatus:
               $ref: '#/components/schemas/microsoft.graph.cloudPcDeviceImageOsStatus'
@@ -74774,7 +75157,7 @@ components:
                 nullable: true
             sourceImageResourceId:
               type: string
-              description: 'The ID of the source image resource on Azure. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/images/{imageName}.'
+              description: 'The unique identifier (ID) of the source image resource on Azure. The required ID format is: ''/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/images/{imageName}''. Read-only.'
               nullable: true
             status:
               $ref: '#/components/schemas/microsoft.graph.cloudPcDeviceImageStatus'
@@ -74782,7 +75165,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.cloudPcDeviceImageStatusDetails'
             version:
               type: string
-              description: 'The image version. For example, 0.0.1 and 1.5.13.'
+              description: 'The image version. For example, 0.0.1 and 1.5.13. Read-only.'
               nullable: true
           additionalProperties:
             type: object
@@ -74846,64 +75229,61 @@ components:
           properties:
             displayName:
               type: string
-              description: The official display name of the gallery image. Read-only.
+              description: 'The display name of this gallery image. For example, Windows 11 Enterprise + Microsoft 365 Apps 22H2. Read-only.'
               nullable: true
             endDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
-              description: The date in which this image is no longer within long-term support. The Cloud PC continues to provide short-term support. Read-only.
+              description: 'The date when the status of image becomes supportedWithWarning. Users can still provision new Cloud PCs if the current time is later than endDate and earlier than expirationDate. For example, assume the endDate of a gallery image is 2023-9-14 and expirationDate is 2024-3-14, users are able to provision new Cloud PCs if today is 2023-10-01. Read-only.'
               format: date
               nullable: true
             expirationDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
-              description: The date when the image is no longer available. Read-only.
+              description: 'The date when the image is no longer available. Users are unable to provision new Cloud PCs if the current time is later than expirationDate. The value is usually endDate plus six months. For example, if the startDate is 2025-10-14, the expirationDate is usually 2026-04-14. Read-only.'
               format: date
               nullable: true
             offer:
               type: string
-              description: The offer name of the gallery image. This value is passed to Azure to get the image resource. Read-only.
               nullable: true
             offerDisplayName:
               type: string
-              description: 'The official display offer name of the gallery image. For example, Windows 10 Enterprise + OS Optimizations. Read-only.'
               nullable: true
             offerName:
               type: string
+              description: The offer name of this gallery image that is passed to ARM to retrieve the image resource. Read-only.
               nullable: true
             publisher:
               type: string
-              description: The publisher name of the gallery image. This value is passed to Azure to get the image resource. Read-only.
               nullable: true
             publisherName:
               type: string
+              description: The publisher name of this gallery image that is passed to ARM to retrieve the image resource. Read-only.
               nullable: true
             recommendedSku:
               type: string
-              description: Recommended Cloud PC SKU for this gallery image. Read-only.
               nullable: true
             sizeInGB:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: The size of this image in gigabytes. Read-only.
+              description: 'Indicates the size of this image in gigabytes. For example, 64. Read-only.'
               format: int32
               nullable: true
             sku:
               type: string
-              description: The SKU name of the gallery image. This value is passed to Azure to get the image resource. Read-only.
               nullable: true
             skuDisplayName:
               type: string
-              description: 'The official display stock keeping unit (SKU) name of this gallery image. For example, 2004. Read-only.'
               nullable: true
             skuName:
               type: string
+              description: The SKU name of this image that is passed to ARM to retrieve the image resource. Read-only.
               nullable: true
             startDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
-              description: The date when the image becomes available. Read-only.
+              description: 'The date when the Cloud PC image is available for provisioning new Cloud PCs. For example, 2022-09-20. Read-only.'
               format: date
               nullable: true
             status:
@@ -75020,11 +75400,11 @@ components:
               nullable: true
             cloudPcNamingTemplate:
               type: string
-              description: 'The template used to name Cloud PCs provisioned using this policy. This can contain custom text and replacement tokens, including %USERNAME:x% and %RAND:x%, which represent the user''s name and a randomly generated number, respectively. For example, ''CPC-%USERNAME:4%-%RAND:5%'' means that the Cloud PC''s name will start with ''CPC-'', have a four-character username in the middle followed by a ''-'' character, and end with five random characters. The total length of the text generated by the template can be no more than 15 characters. Supports $filter, $select, $orderby.'
+              description: 'The template used to name Cloud PCs provisioned using this policy. The template can contain custom text and replacement tokens, including %USERNAME:x% and %RAND:x%, which represent the user''s name and a randomly generated number, respectively. For example, CPC-%USERNAME:4%-%RAND:5% means that the name of the Cloud PC starts with CPC-, followed by a four-character username, a - character, and then five random characters. The total length of the text generated by the template can''t exceed 15 characters. Supports $filter, $select, and $orderby.'
               nullable: true
             description:
               type: string
-              description: The provisioning policy description.
+              description: 'The provisioning policy description. Supports $filter, $select, and $orderBy.'
               nullable: true
             displayName:
               type: string
@@ -75035,9 +75415,10 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcDomainJoinConfiguration'
+              description: Specifies a list ordered by priority on how Cloud PCs join Microsoft Entra ID (Azure AD). Supports $select.
             enableSingleSignOn:
               type: boolean
-              description: 'True if the provisioned Cloud PC can be accessed by single sign-on. False indicates that the provisioned Cloud PC doesn''t support this feature. Default value is false. Windows 365 users can use single sign-on to authenticate to Microsoft Entra ID with passwordless options (for example, FIDO keys) to access their Cloud PC. Optional.'
+              description: 'True if the provisioned Cloud PC can be accessed by single sign-on. False indicates that the provisioned Cloud PC doesn''t support this feature. The default value is false. Windows 365 users can use single sign-on to authenticate to Microsoft Entra ID with passwordless options (for example, FIDO keys) to access their Cloud PC. Optional.'
               nullable: true
             gracePeriodInHours:
               maximum: 2147483647
@@ -75048,15 +75429,15 @@ components:
               nullable: true
             imageDisplayName:
               type: string
-              description: The display name for the OS image you’re provisioning.
+              description: 'The display name of the operating system image that is used for provisioning. For example, Windows 11 Preview + Microsoft 365 Apps 23H2 23H2. Supports $filter, $select, and $orderBy.'
             imageId:
               type: string
-              description: 'The ID of the OS image you want to provision on Cloud PCs. The format for a gallery type image is: {publisheroffersku}. Supported values for each of the parameters are as follows:publisher: Microsoftwindowsdesktop. offer: windows-ent-cpc. sku: 21h1-ent-cpc-m365, 21h1-ent-cpc-os, 20h2-ent-cpc-m365, 20h2-ent-cpc-os, 20h1-ent-cpc-m365, 20h1-ent-cpc-os, 19h2-ent-cpc-m365 and 19h2-ent-cpc-os.'
+              description: 'The unique identifier that represents an operating system image that is used for provisioning new Cloud PCs. The format for a gallery type image is: {publisherNameofferNameskuName}. Supported values for each of the parameters are:publisher: Microsoftwindowsdesktop offer: windows-ent-cpc sku: 21h1-ent-cpc-m365, 21h1-ent-cpc-os, 20h2-ent-cpc-m365, 20h2-ent-cpc-os, 20h1-ent-cpc-m365, 20h1-ent-cpc-os, 19h2-ent-cpc-m365, and 19h2-ent-cpc-os Supports $filter, $select, and $orderBy.'
             imageType:
               $ref: '#/components/schemas/microsoft.graph.cloudPcProvisioningPolicyImageType'
             localAdminEnabled:
               type: boolean
-              description: 'Indicates whether the local admin option is enabled. If the local admin option is enabled, the end user can be an admin of the Cloud PC device. Read-only.'
+              description: 'When true, the local admin is enabled for Cloud PCs; false indicates that the local admin isn''t enabled for Cloud PCs. The default value is false. Supports $filter, $select, and $orderBy.'
               nullable: true
             managedBy:
               $ref: '#/components/schemas/microsoft.graph.cloudPcManagementService'
@@ -75064,7 +75445,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.microsoftManagedDesktop'
             onPremisesConnectionId:
               type: string
-              description: 'The ID of the cloudPcOnPremisesConnection. To ensure that Cloud PCs have network connectivity and that they domain join, choose a connection with a virtual network that’s validated by the Cloud PC service.'
               nullable: true
             provisioningType:
               $ref: '#/components/schemas/microsoft.graph.cloudPcProvisioningType'
@@ -76088,39 +76468,6 @@ components:
           - value: unknownFutureValue
             description: Evolvable enumeration sentinel value. Do not use.
             name: unknownFutureValue
-    microsoft.graph.deviceIdentityAttestationStatus:
-      title: deviceIdentityAttestationStatus
-      enum:
-        - unknown
-        - trusted
-        - unTrusted
-        - notSupported
-        - incompleteData
-        - unknownFutureValue
-      type: string
-      description: 'Indicates the state of the anomaly. Eg: anomaly severity can be new, active, disabled, removed or other.'
-      x-ms-enum:
-        name: deviceIdentityAttestationStatus
-        modelAsString: false
-        values:
-          - value: unknown
-            description: Default. Set to unknown if attestation has not yet been calculated
-            name: unknown
-          - value: trusted
-            description: 'Indicates that the Device attestation is supported on the device, it was attempted on the device and the attestation has passed. The device is trusted.'
-            name: trusted
-          - value: unTrusted
-            description: 'Indicates that the Device attestation is supported on the device, it was attempted on the device and the attestation has failed. The device is untrusted'
-            name: unTrusted
-          - value: notSupported
-            description: Indicates that the device does not support Attestation. This could be because of missing hardware or software support.
-            name: notSupported
-          - value: incompleteData
-            description: Indicates that the device did not provide with the data that were required to perform attestation.
-            name: incompleteData
-          - value: unknownFutureValue
-            description: Evolvable enumeration sentinel value. Do not use.
-            name: unknownFutureValue
     microsoft.graph.deviceGuardLocalSystemAuthorityCredentialGuardState:
       title: deviceGuardLocalSystemAuthorityCredentialGuardState
       enum:
@@ -76697,7 +77044,7 @@ components:
         lastNonInteractiveSignInDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client attempted to sign into the directory the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Microsoft Entra ID maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.'
+          description: 'The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client attempted (either successfully or unsuccessfully) to sign in to the directory the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Microsoft Entra ID maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.'
           format: date-time
           nullable: true
         lastNonInteractiveSignInRequestId:
@@ -76707,7 +77054,7 @@ components:
         lastSignInDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user attempted to sign into the directory the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Microsoft Entra ID maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.'
+          description: 'The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user attempted (either successfully or unsuccessfully) to sign in to the directory the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Microsoft Entra ID maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.'
           format: date-time
           nullable: true
         lastSignInRequestId:
@@ -79592,6 +79939,11 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.plannerPlan'
               description: Read-only. Nullable. Returns the plannerPlans that the user marked as favorites.
               x-ms-navigationProperty: true
+            myDayTasks:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.plannerTask'
+              x-ms-navigationProperty: true
             plans:
               type: array
               items:
@@ -80147,7 +80499,6 @@ components:
           nullable: true
         text:
           type: string
-          description: Not yet documented
           nullable: true
       additionalProperties:
         type: object
@@ -80737,25 +81088,25 @@ components:
         - completed
         - failed
       type: string
-      description: Possible statuses associated with a generated report
+      description: Possible statuses associated with a generated report.
       x-ms-enum:
         name: deviceManagementReportStatus
         modelAsString: false
         values:
           - value: unknown
-            description: Report generation status is unknown
+            description: Report generation status is unknown.
             name: unknown
           - value: notStarted
-            description: Report generation has not started
+            description: Report generation has not started.
             name: notStarted
           - value: inProgress
-            description: Report generation is in progress
+            description: Report generation is in progress.
             name: inProgress
           - value: completed
-            description: Report generation is completed
+            description: Report generation is completed.
             name: completed
           - value: failed
-            description: Report generation has failed
+            description: Report generation has failed.
             name: failed
     microsoft.graph.deviceManagementReportFileFormat:
       title: deviceManagementReportFileFormat
@@ -80765,19 +81116,19 @@ components:
         - json
         - unknownFutureValue
       type: string
-      description: Possible values for the file format of a report
+      description: Possible values for the file format of a report.
       x-ms-enum:
         name: deviceManagementReportFileFormat
         modelAsString: false
         values:
           - value: csv
-            description: CSV Format
+            description: CSV Format.
             name: csv
           - value: pdf
-            description: PDF Format (Deprecate later)
+            description: PDF Format (Deprecate later).
             name: pdf
           - value: json
-            description: JSON Format
+            description: JSON Format.
             name: json
           - value: unknownFutureValue
             description: Evolvable enumeration sentinel value. Do not use.
@@ -80788,16 +81139,16 @@ components:
         - localizedValuesAsAdditionalColumn
         - replaceLocalizableValues
       type: string
-      description: Configures how the requested export job is localized
+      description: Configures how the requested export job is localized.
       x-ms-enum:
         name: deviceManagementExportJobLocalizationType
         modelAsString: false
         values:
           - value: localizedValuesAsAdditionalColumn
-            description: Configures the export job to expose localized values as an additional column
+            description: Configures the export job to expose localized values as an additional column.
             name: localizedValuesAsAdditionalColumn
           - value: replaceLocalizableValues
-            description: Configures the export job to replace enumerable values with their localized values
+            description: Configures the export job to replace enumerable values with their localized values.
             name: replaceLocalizableValues
     microsoft.graph.roleAssignmentScopeType:
       title: roleAssignmentScopeType
@@ -81051,18 +81402,19 @@ components:
       properties:
         errorMessage:
           type: string
+          description: Contains a detailed error message when the partner agent installation failed.
           nullable: true
         installStatus:
           $ref: '#/components/schemas/microsoft.graph.cloudPcPartnerAgentInstallStatus'
         isThirdPartyPartner:
           type: boolean
-          description: Indicates if the partner agent is a third party. When 'TRUE' the agent is a third-party (non-Microsoft) agent and when 'FALSE' the agent is a Microsoft agent or isn't known.  The default value is 'FALSE'
+          description: 'Indicates whether the partner agent is a third party. When true, the agent is a third-party (non-Microsoft) agent and when false, the agent is a Microsoft agent or isn''t known.  The default value is false.'
           nullable: true
         partnerAgentName:
           $ref: '#/components/schemas/microsoft.graph.cloudPcPartnerAgentName'
         retriable:
           type: boolean
-          description: Indicates if the partner agent is a third party. When 'TRUE' the agent is a third-party (non-Microsoft) agent and when 'FALSE' the agent is a Microsoft agent or isn't known. The default value is 'FALSE'
+          description: Indicates whether the partner agent installation should be retried. The default value is false.
           nullable: true
       additionalProperties:
         type: object
@@ -81297,6 +81649,7 @@ components:
       properties:
         locale:
           type: string
+          description: 'The Windows language or region tag to use for language pack configuration and localization of the Cloud PC. The default value is en-US, which corresponds to English (United States).'
           nullable: true
       additionalProperties:
         type: object
@@ -81425,7 +81778,6 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: 'The time interval in hours to take snapshots (restore points) of a Cloud PC automatically. Possible values are 4, 6, 12, 16, and 24. The default frequency is 12 hours.'
           format: int32
           nullable: true
         frequencyType:
@@ -87544,11 +87896,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: Contains the name of the field that a value is associated with.
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key.
           nullable: true
       additionalProperties:
         type: object
@@ -88045,6 +88397,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamworkBot'
             colorIcon:
               $ref: '#/components/schemas/microsoft.graph.teamsAppIcon'
+            dashboardCards:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.teamsAppDashboardCardDefinition'
+              x-ms-navigationProperty: true
             outlineIcon:
               $ref: '#/components/schemas/microsoft.graph.teamsAppIcon'
           additionalProperties:
@@ -90235,23 +90592,12 @@ components:
               type: string
               description: The ID of the schedulingGroup that contains the openShift.
               nullable: true
-            schedulingGroupName:
-              type: string
-              description: The name of the schedulingGroup that contains the openShift.
-              nullable: true
-              readOnly: true
+            schedulingGroupInfo:
+              $ref: '#/components/schemas/microsoft.graph.schedulingGroupInfo'
             sharedOpenShift:
               $ref: '#/components/schemas/microsoft.graph.openShiftItem'
-            teamId:
-              type: string
-              description: The ID of the team in which the openShift is located.
-              nullable: true
-              readOnly: true
-            teamName:
-              type: string
-              description: The name of the team in which the openShift is located.
-              nullable: true
-              readOnly: true
+            teamInfo:
+              $ref: '#/components/schemas/microsoft.graph.shiftsTeamInfo'
           additionalProperties:
             type: object
     microsoft.graph.schedulingGroup:
@@ -90297,12 +90643,18 @@ components:
               type: string
               description: ID of the scheduling group the shift is part of. Required.
               nullable: true
+            schedulingGroupInfo:
+              $ref: '#/components/schemas/microsoft.graph.schedulingGroupInfo'
             sharedShift:
               $ref: '#/components/schemas/microsoft.graph.shiftItem'
+            teamInfo:
+              $ref: '#/components/schemas/microsoft.graph.shiftsTeamInfo'
             userId:
               type: string
               description: ID of the user assigned to the shift. Required.
               nullable: true
+            userInfo:
+              $ref: '#/components/schemas/microsoft.graph.shiftsUserInfo'
           additionalProperties:
             type: object
     microsoft.graph.swapShiftsChangeRequest:
@@ -90406,10 +90758,14 @@ components:
               nullable: true
             sharedTimeOff:
               $ref: '#/components/schemas/microsoft.graph.timeOffItem'
+            teamInfo:
+              $ref: '#/components/schemas/microsoft.graph.shiftsTeamInfo'
             userId:
               type: string
               description: ID of the user assigned to the timeOff. Required.
               nullable: true
+            userInfo:
+              $ref: '#/components/schemas/microsoft.graph.shiftsUserInfo'
           additionalProperties:
             type: object
     microsoft.graph.teamworkTagType:
@@ -93150,6 +93506,29 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamworkHostedContent'
           additionalProperties:
             type: object
+    microsoft.graph.teamsAppDashboardCardDefinition:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: teamsAppDashboardCardDefinition
+          type: object
+          properties:
+            contentSource:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppDashboardCardContentSource'
+            defaultSize:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppDashboardCardSize'
+            description:
+              type: string
+              nullable: true
+            displayName:
+              type: string
+              nullable: true
+            icon:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppDashboardCardIcon'
+            pickerGroupId:
+              type: string
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.chatMessageMentionedIdentitySet:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -94179,6 +94558,33 @@ components:
               format: int32
           additionalProperties:
             type: object
+    microsoft.graph.schedulingGroupInfo:
+      title: schedulingGroupInfo
+      type: object
+      properties:
+        code:
+          type: string
+          nullable: true
+        displayName:
+          type: string
+          nullable: true
+        schedulingGroupId:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.shiftsTeamInfo:
+      title: shiftsTeamInfo
+      type: object
+      properties:
+        displayName:
+          type: string
+          nullable: true
+        teamId:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.shiftItem:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.scheduleEntity'
@@ -94200,6 +94606,18 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.shiftsUserInfo:
+      title: shiftsUserInfo
+      type: object
+      properties:
+        displayName:
+          type: string
+          nullable: true
+        userId:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.timeCardBreak:
       title: timeCardBreak
       type: object
@@ -96495,6 +96913,35 @@ components:
         - application
         - unknownFutureValue
       type: string
+    microsoft.graph.teamsAppDashboardCardContentSource:
+      title: teamsAppDashboardCardContentSource
+      type: object
+      properties:
+        botConfiguration:
+          $ref: '#/components/schemas/microsoft.graph.teamsAppDashboardCardBotConfiguration'
+        sourceType:
+          $ref: '#/components/schemas/microsoft.graph.teamsAppDashboardCardSourceType'
+      additionalProperties:
+        type: object
+    microsoft.graph.teamsAppDashboardCardSize:
+      title: teamsAppDashboardCardSize
+      enum:
+        - medium
+        - large
+        - unknownFutureValue
+      type: string
+    microsoft.graph.teamsAppDashboardCardIcon:
+      title: teamsAppDashboardCardIcon
+      type: object
+      properties:
+        iconUrl:
+          type: string
+          nullable: true
+        officeUIFabricIconName:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.teamworkConversationIdentity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identity'
@@ -97307,6 +97754,21 @@ components:
           description: The API that the provisioning service queries to retrieve data for synchronization.
       additionalProperties:
         type: object
+    microsoft.graph.teamsAppDashboardCardBotConfiguration:
+      title: teamsAppDashboardCardBotConfiguration
+      type: object
+      properties:
+        botId:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.teamsAppDashboardCardSourceType:
+      title: teamsAppDashboardCardSourceType
+      enum:
+        - bot
+        - unknownFutureValue
+      type: string
     microsoft.graph.teamworkConversationIdentityType:
       title: teamworkConversationIdentityType
       enum:

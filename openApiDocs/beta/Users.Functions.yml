@@ -91,6 +91,19 @@ paths:
                 - visualElements
                 - visualElements desc
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - historyItems
+              type: string
       responses:
         2XX:
           description: Success
@@ -197,6 +210,19 @@ paths:
                 - reason
                 - reason desc
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - approval
+              type: string
       responses:
         2XX:
           description: Success
@@ -286,6 +312,19 @@ paths:
                 - pendingScopes
                 - pendingScopes desc
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - userConsentRequests
+              type: string
       responses:
         2XX:
           description: Success
@@ -362,6 +401,19 @@ paths:
               enum:
                 - id
                 - id desc
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - steps
               type: string
       responses:
         2XX:
@@ -601,6 +653,25 @@ paths:
                 - webLink
                 - webLink desc
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - attachments
+                - calendar
+                - exceptionOccurrences
+                - extensions
+                - instances
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
+              type: string
       responses:
         2XX:
           description: Success
@@ -833,6 +904,25 @@ paths:
                 - uid desc
                 - webLink
                 - webLink desc
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - attachments
+                - calendar
+                - exceptionOccurrences
+                - extensions
+                - instances
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
               type: string
       responses:
         2XX:
@@ -1075,6 +1165,25 @@ paths:
                 - webLink
                 - webLink desc
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - attachments
+                - calendar
+                - exceptionOccurrences
+                - extensions
+                - instances
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
+              type: string
       responses:
         2XX:
           description: Success
@@ -1308,6 +1417,25 @@ paths:
                 - webLink
                 - webLink desc
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - attachments
+                - calendar
+                - exceptionOccurrences
+                - extensions
+                - instances
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
+              type: string
       responses:
         2XX:
           description: Success
@@ -1532,6 +1660,25 @@ paths:
                 - uid desc
                 - webLink
                 - webLink desc
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - attachments
+                - calendar
+                - exceptionOccurrences
+                - extensions
+                - instances
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
               type: string
       responses:
         2XX:
@@ -1774,6 +1921,25 @@ paths:
                 - webLink
                 - webLink desc
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - attachments
+                - calendar
+                - exceptionOccurrences
+                - extensions
+                - instances
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
+              type: string
       responses:
         2XX:
           description: Success
@@ -2006,6 +2172,25 @@ paths:
                 - uid desc
                 - webLink
                 - webLink desc
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - attachments
+                - calendar
+                - exceptionOccurrences
+                - extensions
+                - instances
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
               type: string
       responses:
         2XX:
@@ -2248,6 +2433,25 @@ paths:
                 - webLink
                 - webLink desc
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - attachments
+                - calendar
+                - exceptionOccurrences
+                - extensions
+                - instances
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
+              type: string
       responses:
         2XX:
           description: Success
@@ -2481,6 +2685,25 @@ paths:
                 - webLink
                 - webLink desc
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - attachments
+                - calendar
+                - exceptionOccurrences
+                - extensions
+                - instances
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
+              type: string
       responses:
         2XX:
           description: Success
@@ -2705,6 +2928,25 @@ paths:
                 - uid desc
                 - webLink
                 - webLink desc
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - attachments
+                - calendar
+                - exceptionOccurrences
+                - extensions
+                - instances
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
               type: string
       responses:
         2XX:
@@ -3013,6 +3255,25 @@ paths:
                 - webLink
                 - webLink desc
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - attachments
+                - calendar
+                - exceptionOccurrences
+                - extensions
+                - instances
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
+              type: string
       responses:
         2XX:
           description: Success
@@ -3261,6 +3522,25 @@ paths:
                 - uid desc
                 - webLink
                 - webLink desc
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - attachments
+                - calendar
+                - exceptionOccurrences
+                - extensions
+                - instances
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
               type: string
       responses:
         2XX:
@@ -3519,6 +3799,25 @@ paths:
                 - webLink
                 - webLink desc
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - attachments
+                - calendar
+                - exceptionOccurrences
+                - extensions
+                - instances
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
+              type: string
       responses:
         2XX:
           description: Success
@@ -3768,6 +4067,25 @@ paths:
                 - webLink
                 - webLink desc
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - attachments
+                - calendar
+                - exceptionOccurrences
+                - extensions
+                - instances
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
+              type: string
       responses:
         2XX:
           description: Success
@@ -4008,6 +4326,25 @@ paths:
                 - uid desc
                 - webLink
                 - webLink desc
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - attachments
+                - calendar
+                - exceptionOccurrences
+                - extensions
+                - instances
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
               type: string
       responses:
         2XX:
@@ -4266,6 +4603,25 @@ paths:
                 - webLink
                 - webLink desc
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - attachments
+                - calendar
+                - exceptionOccurrences
+                - extensions
+                - instances
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
+              type: string
       responses:
         2XX:
           description: Success
@@ -4514,6 +4870,25 @@ paths:
                 - uid desc
                 - webLink
                 - webLink desc
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - attachments
+                - calendar
+                - exceptionOccurrences
+                - extensions
+                - instances
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
               type: string
       responses:
         2XX:
@@ -4772,6 +5147,25 @@ paths:
                 - webLink
                 - webLink desc
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - attachments
+                - calendar
+                - exceptionOccurrences
+                - extensions
+                - instances
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
+              type: string
       responses:
         2XX:
           description: Success
@@ -5021,6 +5415,25 @@ paths:
                 - webLink
                 - webLink desc
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - attachments
+                - calendar
+                - exceptionOccurrences
+                - extensions
+                - instances
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
+              type: string
       responses:
         2XX:
           description: Success
@@ -5261,6 +5674,25 @@ paths:
                 - uid desc
                 - webLink
                 - webLink desc
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - attachments
+                - calendar
+                - exceptionOccurrences
+                - extensions
+                - instances
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
               type: string
       responses:
         2XX:
@@ -5577,6 +6009,25 @@ paths:
                 - webLink
                 - webLink desc
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - attachments
+                - calendar
+                - exceptionOccurrences
+                - extensions
+                - instances
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
+              type: string
       responses:
         2XX:
           description: Success
@@ -5817,6 +6268,25 @@ paths:
                 - uid desc
                 - webLink
                 - webLink desc
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - attachments
+                - calendar
+                - exceptionOccurrences
+                - extensions
+                - instances
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
               type: string
       responses:
         2XX:
@@ -6067,6 +6537,25 @@ paths:
                 - webLink
                 - webLink desc
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - attachments
+                - calendar
+                - exceptionOccurrences
+                - extensions
+                - instances
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
+              type: string
       responses:
         2XX:
           description: Success
@@ -6308,6 +6797,25 @@ paths:
                 - webLink
                 - webLink desc
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - attachments
+                - calendar
+                - exceptionOccurrences
+                - extensions
+                - instances
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
+              type: string
       responses:
         2XX:
           description: Success
@@ -6540,6 +7048,25 @@ paths:
                 - uid desc
                 - webLink
                 - webLink desc
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - attachments
+                - calendar
+                - exceptionOccurrences
+                - extensions
+                - instances
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
               type: string
       responses:
         2XX:
@@ -6790,6 +7317,25 @@ paths:
                 - webLink
                 - webLink desc
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - attachments
+                - calendar
+                - exceptionOccurrences
+                - extensions
+                - instances
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
+              type: string
       responses:
         2XX:
           description: Success
@@ -7030,6 +7576,25 @@ paths:
                 - uid desc
                 - webLink
                 - webLink desc
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - attachments
+                - calendar
+                - exceptionOccurrences
+                - extensions
+                - instances
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
               type: string
       responses:
         2XX:
@@ -7280,6 +7845,25 @@ paths:
                 - webLink
                 - webLink desc
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - attachments
+                - calendar
+                - exceptionOccurrences
+                - extensions
+                - instances
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
+              type: string
       responses:
         2XX:
           description: Success
@@ -7521,6 +8105,25 @@ paths:
                 - webLink
                 - webLink desc
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - attachments
+                - calendar
+                - exceptionOccurrences
+                - extensions
+                - instances
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
+              type: string
       responses:
         2XX:
           description: Success
@@ -7753,6 +8356,25 @@ paths:
                 - uid desc
                 - webLink
                 - webLink desc
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - attachments
+                - calendar
+                - exceptionOccurrences
+                - extensions
+                - instances
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
               type: string
       responses:
         2XX:
@@ -8053,6 +8675,25 @@ paths:
                 - webLink
                 - webLink desc
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - attachments
+                - calendar
+                - exceptionOccurrences
+                - extensions
+                - instances
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
+              type: string
       responses:
         2XX:
           description: Success
@@ -8285,6 +8926,25 @@ paths:
                 - uid desc
                 - webLink
                 - webLink desc
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - attachments
+                - calendar
+                - exceptionOccurrences
+                - extensions
+                - instances
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
               type: string
       responses:
         2XX:
@@ -8527,6 +9187,25 @@ paths:
                 - webLink
                 - webLink desc
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - attachments
+                - calendar
+                - exceptionOccurrences
+                - extensions
+                - instances
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
+              type: string
       responses:
         2XX:
           description: Success
@@ -8760,6 +9439,25 @@ paths:
                 - webLink
                 - webLink desc
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - attachments
+                - calendar
+                - exceptionOccurrences
+                - extensions
+                - instances
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
+              type: string
       responses:
         2XX:
           description: Success
@@ -8985,6 +9683,25 @@ paths:
                 - webLink
                 - webLink desc
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - attachments
+                - calendar
+                - exceptionOccurrences
+                - extensions
+                - instances
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
+              type: string
       responses:
         2XX:
           description: Success
@@ -9144,6 +9861,20 @@ paths:
                 - webUrl
                 - webUrl desc
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - hostedContents
+                - replies
+              type: string
       responses:
         2XX:
           description: Success
@@ -9295,6 +10026,20 @@ paths:
                 - webUrl
                 - webUrl desc
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - hostedContents
+                - replies
+              type: string
       responses:
         2XX:
           description: Success
@@ -9437,6 +10182,20 @@ paths:
                 - summary desc
                 - webUrl
                 - webUrl desc
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - hostedContents
+                - replies
               type: string
       responses:
         2XX:
@@ -9585,6 +10344,20 @@ paths:
                 - webUrl
                 - webUrl desc
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - hostedContents
+                - replies
+              type: string
       responses:
         2XX:
           description: Success
@@ -9724,6 +10497,20 @@ paths:
                 - summary desc
                 - webUrl
                 - webUrl desc
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - hostedContents
+                - replies
               type: string
       responses:
         2XX:
@@ -10101,6 +10888,18 @@ paths:
                 - userPrincipalName
                 - userPrincipalName desc
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
       responses:
         2XX:
           description: Success
@@ -10305,6 +11104,22 @@ paths:
                 - yomiSurname
                 - yomiSurname desc
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - extensions
+                - multiValueExtendedProperties
+                - photo
+                - singleValueExtendedProperties
+              type: string
       responses:
         2XX:
           description: Success
@@ -10401,6 +11216,22 @@ paths:
                 - parentFolderId desc
                 - wellKnownName
                 - wellKnownName desc
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - childFolders
+                - contacts
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
               type: string
       responses:
         2XX:
@@ -10601,6 +11432,22 @@ paths:
                 - yomiSurname
                 - yomiSurname desc
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - extensions
+                - multiValueExtendedProperties
+                - photo
+                - singleValueExtendedProperties
+              type: string
       responses:
         2XX:
           description: Success
@@ -10689,6 +11536,22 @@ paths:
                 - parentFolderId desc
                 - wellKnownName
                 - wellKnownName desc
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - childFolders
+                - contacts
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
               type: string
       responses:
         2XX:
@@ -10880,6 +11743,22 @@ paths:
                 - yomiGivenName desc
                 - yomiSurname
                 - yomiSurname desc
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - extensions
+                - multiValueExtendedProperties
+                - photo
+                - singleValueExtendedProperties
               type: string
       responses:
         2XX:
@@ -11074,6 +11953,25 @@ paths:
                 - trustType
                 - trustType desc
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - commands
+                - extensions
+                - memberOf
+                - registeredOwners
+                - registeredUsers
+                - transitiveMemberOf
+                - usageRights
+              type: string
       responses:
         2XX:
           description: Success
@@ -11213,6 +12111,19 @@ paths:
                 - move desc
                 - startDateTime
                 - startDateTime desc
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - activities
               type: string
       responses:
         2XX:
@@ -11415,6 +12326,30 @@ paths:
                 - video desc
                 - webDavUrl
                 - webDavUrl desc
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - createdByUser
+                - lastModifiedByUser
+                - activities
+                - analytics
+                - children
+                - listItem
+                - permissions
+                - retentionLabel
+                - subscriptions
+                - thumbnails
+                - versions
+                - workbook
               type: string
       responses:
         2XX:
@@ -11629,6 +12564,30 @@ paths:
                 - webDavUrl
                 - webDavUrl desc
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - createdByUser
+                - lastModifiedByUser
+                - activities
+                - analytics
+                - children
+                - listItem
+                - permissions
+                - retentionLabel
+                - subscriptions
+                - thumbnails
+                - versions
+                - workbook
+              type: string
       responses:
         2XX:
           description: Success
@@ -11768,6 +12727,19 @@ paths:
                 - move desc
                 - startDateTime
                 - startDateTime desc
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - activities
               type: string
       responses:
         2XX:
@@ -11979,6 +12951,30 @@ paths:
                 - webDavUrl
                 - webDavUrl desc
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - createdByUser
+                - lastModifiedByUser
+                - activities
+                - analytics
+                - children
+                - listItem
+                - permissions
+                - retentionLabel
+                - subscriptions
+                - thumbnails
+                - versions
+                - workbook
+              type: string
       responses:
         2XX:
           description: Success
@@ -12150,6 +13146,23 @@ paths:
                 - sealed
                 - sealed desc
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - base
+                - baseTypes
+                - columnLinks
+                - columnPositions
+                - columns
+              type: string
       responses:
         2XX:
           description: Success
@@ -12287,6 +13300,19 @@ paths:
                 - startDateTime
                 - startDateTime desc
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - activities
+              type: string
       responses:
         2XX:
           description: Success
@@ -12407,6 +13433,26 @@ paths:
                 - deleted desc
                 - sharepointIds
                 - sharepointIds desc
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - createdByUser
+                - lastModifiedByUser
+                - activities
+                - analytics
+                - documentSetVersions
+                - driveItem
+                - fields
+                - versions
               type: string
       responses:
         2XX:
@@ -12539,6 +13585,26 @@ paths:
                 - deleted desc
                 - sharepointIds
                 - sharepointIds desc
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - createdByUser
+                - lastModifiedByUser
+                - activities
+                - analytics
+                - documentSetVersions
+                - driveItem
+                - fields
+                - versions
               type: string
       responses:
         2XX:
@@ -12737,6 +13803,30 @@ paths:
                 - webDavUrl
                 - webDavUrl desc
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - createdByUser
+                - lastModifiedByUser
+                - activities
+                - analytics
+                - children
+                - listItem
+                - permissions
+                - retentionLabel
+                - subscriptions
+                - thumbnails
+                - versions
+                - workbook
+              type: string
       responses:
         2XX:
           $ref: '#/components/responses/recentResponse'
@@ -12924,6 +14014,30 @@ paths:
                 - webDavUrl
                 - webDavUrl desc
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - createdByUser
+                - lastModifiedByUser
+                - activities
+                - analytics
+                - children
+                - listItem
+                - permissions
+                - retentionLabel
+                - subscriptions
+                - thumbnails
+                - versions
+                - workbook
+              type: string
       responses:
         2XX:
           $ref: '#/components/responses/searchResponse'
@@ -13103,6 +14217,30 @@ paths:
                 - webDavUrl
                 - webDavUrl desc
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - createdByUser
+                - lastModifiedByUser
+                - activities
+                - analytics
+                - children
+                - listItem
+                - permissions
+                - retentionLabel
+                - subscriptions
+                - thumbnails
+                - versions
+                - workbook
+              type: string
       responses:
         2XX:
           $ref: '#/components/responses/sharedWithMeResponse'
@@ -13216,6 +14354,19 @@ paths:
                 - move desc
                 - startDateTime
                 - startDateTime desc
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - activities
               type: string
       responses:
         2XX:
@@ -13410,6 +14561,30 @@ paths:
                 - video desc
                 - webDavUrl
                 - webDavUrl desc
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - createdByUser
+                - lastModifiedByUser
+                - activities
+                - analytics
+                - children
+                - listItem
+                - permissions
+                - retentionLabel
+                - subscriptions
+                - thumbnails
+                - versions
+                - workbook
               type: string
       responses:
         2XX:
@@ -13616,6 +14791,30 @@ paths:
                 - webDavUrl
                 - webDavUrl desc
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - createdByUser
+                - lastModifiedByUser
+                - activities
+                - analytics
+                - children
+                - listItem
+                - permissions
+                - retentionLabel
+                - subscriptions
+                - thumbnails
+                - versions
+                - workbook
+              type: string
       responses:
         2XX:
           description: Success
@@ -13747,6 +14946,19 @@ paths:
                 - move desc
                 - startDateTime
                 - startDateTime desc
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - activities
               type: string
       responses:
         2XX:
@@ -13949,6 +15161,30 @@ paths:
                 - video desc
                 - webDavUrl
                 - webDavUrl desc
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - createdByUser
+                - lastModifiedByUser
+                - activities
+                - analytics
+                - children
+                - listItem
+                - permissions
+                - retentionLabel
+                - subscriptions
+                - thumbnails
+                - versions
+                - workbook
               type: string
       responses:
         2XX:
@@ -14188,6 +15424,25 @@ paths:
                 - webLink
                 - webLink desc
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - attachments
+                - calendar
+                - exceptionOccurrences
+                - extensions
+                - instances
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
+              type: string
       responses:
         2XX:
           description: Success
@@ -14420,6 +15675,25 @@ paths:
                 - uid desc
                 - webLink
                 - webLink desc
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - attachments
+                - calendar
+                - exceptionOccurrences
+                - extensions
+                - instances
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
               type: string
       responses:
         2XX:
@@ -14662,6 +15936,25 @@ paths:
                 - webLink
                 - webLink desc
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - attachments
+                - calendar
+                - exceptionOccurrences
+                - extensions
+                - instances
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
+              type: string
       responses:
         2XX:
           description: Success
@@ -14895,6 +16188,25 @@ paths:
                 - webLink
                 - webLink desc
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - attachments
+                - calendar
+                - exceptionOccurrences
+                - extensions
+                - instances
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
+              type: string
       responses:
         2XX:
           description: Success
@@ -15119,6 +16431,25 @@ paths:
                 - uid desc
                 - webLink
                 - webLink desc
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - attachments
+                - calendar
+                - exceptionOccurrences
+                - extensions
+                - instances
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
               type: string
       responses:
         2XX:
@@ -15379,6 +16710,46 @@ paths:
                 - writebackConfiguration
                 - writebackConfiguration desc
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - acceptedSenders
+                - appRoleAssignments
+                - calendar
+                - calendarView
+                - conversations
+                - createdOnBehalfOf
+                - drive
+                - drives
+                - endpoints
+                - events
+                - extensions
+                - groupLifecyclePolicies
+                - memberOf
+                - members
+                - membersWithLicenseErrors
+                - onenote
+                - owners
+                - permissionGrants
+                - photo
+                - photos
+                - planner
+                - rejectedSenders
+                - settings
+                - sites
+                - team
+                - threads
+                - transitiveMemberOf
+                - transitiveMembers
+              type: string
       responses:
         2XX:
           description: Success
@@ -15607,6 +16978,23 @@ paths:
                 - webLink
                 - webLink desc
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - attachments
+                - extensions
+                - mentions
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
+              type: string
       responses:
         2XX:
           description: Success
@@ -15717,6 +17105,24 @@ paths:
                 - unreadItemCount desc
                 - wellKnownName
                 - wellKnownName desc
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - childFolders
+                - messageRules
+                - messages
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
+                - userConfigurations
               type: string
       responses:
         2XX:
@@ -15913,6 +17319,23 @@ paths:
                 - webLink
                 - webLink desc
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - attachments
+                - extensions
+                - mentions
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
+              type: string
       responses:
         2XX:
           description: Success
@@ -16015,6 +17438,24 @@ paths:
                 - unreadItemCount desc
                 - wellKnownName
                 - wellKnownName desc
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - childFolders
+                - messageRules
+                - messages
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
+                - userConfigurations
               type: string
       responses:
         2XX:
@@ -16428,6 +17869,23 @@ paths:
                 - webLink
                 - webLink desc
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - attachments
+                - extensions
+                - mentions
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
+              type: string
       responses:
         2XX:
           description: Success
@@ -16685,6 +18143,19 @@ paths:
                 - version
                 - version desc
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - assignments
+              type: string
       responses:
         2XX:
           $ref: '#/components/responses/getEffectiveDeviceEnrollmentConfigurationsResponse'
@@ -16746,7 +18217,6 @@ paths:
                 - deviceEnrollmentType
                 - deviceFirmwareConfigurationInterfaceManaged
                 - deviceHealthAttestationState
-                - deviceIdentityAttestationDetail
                 - deviceName
                 - deviceRegistrationState
                 - deviceType
@@ -16874,8 +18344,6 @@ paths:
                 - deviceFirmwareConfigurationInterfaceManaged desc
                 - deviceHealthAttestationState
                 - deviceHealthAttestationState desc
-                - deviceIdentityAttestationDetail
-                - deviceIdentityAttestationDetail desc
                 - deviceName
                 - deviceName desc
                 - deviceRegistrationState
@@ -16999,6 +18467,29 @@ paths:
                 - windowsRemediatedMalwareCount
                 - windowsRemediatedMalwareCount desc
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - assignmentFilterEvaluationStatusDetails
+                - detectedApps
+                - deviceCategory
+                - deviceCompliancePolicyStates
+                - deviceConfigurationStates
+                - deviceHealthScriptStates
+                - logCollectionRequests
+                - managedDeviceMobileAppConfigurationStates
+                - securityBaselineStates
+                - users
+                - windowsProtectionState
+              type: string
       responses:
         2XX:
           $ref: '#/components/responses/getLoggedOnManagedDevicesResponse'
@@ -17101,6 +18592,18 @@ paths:
                 - roleScopeTagIds desc
                 - version
                 - version desc
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
               type: string
       responses:
         2XX:
@@ -17627,6 +19130,18 @@ paths:
                 - recordingContentUrl
                 - recordingContentUrl desc
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
       responses:
         2XX:
           description: Success
@@ -17728,6 +19243,18 @@ paths:
                 - transcriptContentUrl
                 - transcriptContentUrl desc
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
       responses:
         2XX:
           description: Success
@@ -17755,6 +19282,45 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/users/{user-id}/onlineMeetings(joinWebUrl=''{joinWebUrl}'')/microsoft.graph.getVirtualAppointmentJoinWebUrl()':
+    get:
+      tags:
+        - users.Functions
+      summary: Invoke function getVirtualAppointmentJoinWebUrl
+      operationId: user.onlineMeeting.joinWebUrl_getVirtualAppointmentJoinWebUrl
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: joinWebUrl
+          in: path
+          description: Alternate key of onlineMeeting
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/users/{user-id}/onlineMeetings/microsoft.graph.getAllRecordings()':
     get:
       tags:
@@ -17817,6 +19383,18 @@ paths:
                 - meetingOrganizerId desc
                 - recordingContentUrl
                 - recordingContentUrl desc
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
               type: string
       responses:
         2XX:
@@ -17907,6 +19485,18 @@ paths:
                 - metadataContent desc
                 - transcriptContentUrl
                 - transcriptContentUrl desc
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
               type: string
       responses:
         2XX:
@@ -18195,6 +19785,20 @@ paths:
                 - target
                 - target desc
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - insights
+                - instance
+              type: string
       responses:
         2XX:
           description: Success
@@ -18302,6 +19906,19 @@ paths:
                 - startDateTime desc
                 - status
                 - status desc
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - decisions
               type: string
       responses:
         2XX:
@@ -18433,6 +20050,20 @@ paths:
                 - reviewedDateTime desc
                 - target
                 - target desc
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - insights
+                - instance
               type: string
       responses:
         2XX:
@@ -18581,6 +20212,20 @@ paths:
                 - target
                 - target desc
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - insights
+                - instance
+              type: string
       responses:
         2XX:
           description: Success
@@ -18720,6 +20365,20 @@ paths:
                 - target
                 - target desc
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - insights
+                - instance
+              type: string
       responses:
         2XX:
           description: Success
@@ -18819,6 +20478,19 @@ paths:
                 - startDateTime desc
                 - status
                 - status desc
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - decisions
               type: string
       responses:
         2XX:
@@ -18921,6 +20593,22 @@ paths:
                 - status
                 - status desc
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - contactedReviewers
+                - decisions
+                - definition
+                - stages
+              type: string
       responses:
         2XX:
           description: Success
@@ -18989,6 +20677,18 @@ paths:
               enum:
                 - id
                 - id desc
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
               type: string
       responses:
         2XX:
@@ -19166,6 +20866,22 @@ paths:
                 - title
                 - title desc
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - assignedToTaskBoardFormat
+                - bucketTaskBoardFormat
+                - details
+                - progressTaskBoardFormat
+              type: string
       responses:
         2XX:
           description: Success
@@ -19264,6 +20980,19 @@ paths:
                 - orderHint desc
                 - planId
                 - planId desc
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - tasks
               type: string
       responses:
         2XX:
@@ -19433,6 +21162,22 @@ paths:
                 - title
                 - title desc
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - assignedToTaskBoardFormat
+                - bucketTaskBoardFormat
+                - details
+                - progressTaskBoardFormat
+              type: string
       responses:
         2XX:
           description: Success
@@ -19537,6 +21282,21 @@ paths:
                 - sharedWithContainers desc
                 - title
                 - title desc
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - buckets
+                - details
+                - tasks
               type: string
       responses:
         2XX:
@@ -19698,6 +21458,22 @@ paths:
                 - title
                 - title desc
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - assignedToTaskBoardFormat
+                - bucketTaskBoardFormat
+                - details
+                - progressTaskBoardFormat
+              type: string
       responses:
         2XX:
           description: Success
@@ -19828,6 +21604,23 @@ paths:
                 - title
                 - title desc
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - attachments
+                - attachmentSessions
+                - checklistItems
+                - extensions
+                - linkedResources
+              type: string
       responses:
         2XX:
           description: Success
@@ -19913,6 +21706,20 @@ paths:
                 - isShared desc
                 - wellknownListName
                 - wellknownListName desc
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - extensions
+                - tasks
               type: string
       responses:
         2XX:
@@ -20300,6 +22107,86 @@ paths:
                 - userPrincipalName desc
                 - userType
                 - userType desc
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - activities
+                - agreementAcceptances
+                - analytics
+                - appConsentRequestsForApproval
+                - appRoleAssignedResources
+                - appRoleAssignments
+                - approvals
+                - authentication
+                - calendar
+                - calendarGroups
+                - calendars
+                - calendarView
+                - chats
+                - cloudPCs
+                - contactFolders
+                - contacts
+                - createdObjects
+                - deviceEnrollmentConfigurations
+                - deviceManagementTroubleshootingEvents
+                - devices
+                - directReports
+                - drive
+                - drives
+                - employeeExperience
+                - events
+                - extensions
+                - followedSites
+                - inferenceClassification
+                - informationProtection
+                - insights
+                - joinedGroups
+                - joinedTeams
+                - licenseDetails
+                - mailFolders
+                - managedAppRegistrations
+                - managedDevices
+                - manager
+                - memberOf
+                - messages
+                - mobileAppIntentAndStates
+                - mobileAppTroubleshootingEvents
+                - notifications
+                - oauth2PermissionGrants
+                - onenote
+                - onlineMeetings
+                - outlook
+                - ownedDevices
+                - ownedObjects
+                - pendingAccessReviewInstances
+                - people
+                - permissionGrants
+                - photo
+                - photos
+                - planner
+                - presence
+                - profile
+                - registeredDevices
+                - scopedRoleMemberOf
+                - security
+                - settings
+                - sponsors
+                - teamwork
+                - todo
+                - transitiveMemberOf
+                - transitiveReports
+                - usageRights
+                - virtualEvents
+                - windowsInformationProtectionDeviceRegistrations
               type: string
       responses:
         2XX:
@@ -24557,18 +26444,19 @@ components:
       properties:
         errorMessage:
           type: string
+          description: Contains a detailed error message when the partner agent installation failed.
           nullable: true
         installStatus:
           $ref: '#/components/schemas/microsoft.graph.cloudPcPartnerAgentInstallStatus'
         isThirdPartyPartner:
           type: boolean
-          description: Indicates if the partner agent is a third party. When 'TRUE' the agent is a third-party (non-Microsoft) agent and when 'FALSE' the agent is a Microsoft agent or isn't known.  The default value is 'FALSE'
+          description: 'Indicates whether the partner agent is a third party. When true, the agent is a third-party (non-Microsoft) agent and when false, the agent is a Microsoft agent or isn''t known.  The default value is false.'
           nullable: true
         partnerAgentName:
           $ref: '#/components/schemas/microsoft.graph.cloudPcPartnerAgentName'
         retriable:
           type: boolean
-          description: Indicates if the partner agent is a third party. When 'TRUE' the agent is a third-party (non-Microsoft) agent and when 'FALSE' the agent is a Microsoft agent or isn't known. The default value is 'FALSE'
+          description: Indicates whether the partner agent installation should be retried. The default value is false.
           nullable: true
       additionalProperties:
         type: object
@@ -26879,11 +28767,9 @@ components:
       properties:
         displayName:
           type: string
-          description: Not yet documented
           nullable: true
         id:
           type: string
-          description: Not yet documented
           nullable: true
         sourceType:
           $ref: '#/components/schemas/microsoft.graph.settingSourceType'
@@ -27720,7 +29606,7 @@ components:
         lastNonInteractiveSignInDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client attempted to sign into the directory the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Microsoft Entra ID maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.'
+          description: 'The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client attempted (either successfully or unsuccessfully) to sign in to the directory the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Microsoft Entra ID maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.'
           format: date-time
           nullable: true
         lastNonInteractiveSignInRequestId:
@@ -27730,7 +29616,7 @@ components:
         lastSignInDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user attempted to sign into the directory the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Microsoft Entra ID maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.'
+          description: 'The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user attempted (either successfully or unsuccessfully) to sign in to the directory the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Microsoft Entra ID maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.'
           format: date-time
           nullable: true
         lastSignInRequestId:
@@ -28631,8 +30517,6 @@ components:
               description: 'Indicates whether the device is DFCI managed. When TRUE the device is DFCI managed. When FALSE, the device is not DFCI managed. The default value is FALSE.'
             deviceHealthAttestationState:
               $ref: '#/components/schemas/microsoft.graph.deviceHealthAttestationState'
-            deviceIdentityAttestationDetail:
-              $ref: '#/components/schemas/microsoft.graph.deviceIdentityAttestationDetail'
             deviceName:
               type: string
               description: Name of the device. This property is read-only.
@@ -29315,6 +31199,11 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.plannerPlan'
               description: Read-only. Nullable. Returns the plannerPlans that the user marked as favorites.
               x-ms-navigationProperty: true
+            myDayTasks:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.plannerTask'
+              x-ms-navigationProperty: true
             plans:
               type: array
               items:
@@ -29633,7 +31522,6 @@ components:
       properties:
         content:
           type: string
-          description: Not yet documented
           format: base64url
           nullable: true
       additionalProperties:
@@ -33561,11 +35449,9 @@ components:
       properties:
         context:
           type: string
-          description: Not yet documented
           nullable: true
         failure:
           type: string
-          description: Not yet documented
           nullable: true
         failureDetails:
           type: string
@@ -34095,6 +35981,8 @@ components:
         - androidEnterpriseDedicatedDevice
         - androidEnterpriseFullyManaged
         - androidEnterpriseCorporateWorkProfile
+        - androidAOSPUserOwnedDeviceEnrollment
+        - androidAOSPUserlessDeviceEnrollment
       type: string
       description: Possible ways of adding a mobile device to management.
       x-ms-enum:
@@ -34152,6 +36040,12 @@ components:
           - value: androidEnterpriseCorporateWorkProfile
             description: Android Enterprise Corporate Work Profile
             name: androidEnterpriseCorporateWorkProfile
+          - value: androidAOSPUserOwnedDeviceEnrollment
+            description: Indicates the device enrollment is for android device owned by/associated with user using Android Open Source Project (AOSP) on a non-Google mobile services.
+            name: androidAOSPUserOwnedDeviceEnrollment
+          - value: androidAOSPUserlessDeviceEnrollment
+            description: Indicates the device enrollment is for user less android device using Android Open Source Project (AOSP) on a non-Google mobile services.
+            name: androidAOSPUserlessDeviceEnrollment
     microsoft.graph.deviceHealthAttestationState:
       title: deviceHealthAttestationState
       type: object
@@ -34291,7 +36185,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.azureAttestationSettingStatus'
         virtualSecureMode:
           type: string
-          description: VSM is a container that protects high value assets from a compromised kernel
+          description: 'Indicates whether the device has Virtual Secure Mode (VSM) enabled. Virtual Secure Mode (VSM) is a container that protects high value assets from a compromised kernel. This property will be deprecated in beta from August 2023. Support for this property will end in August 2025 for v1.0 API. A new property virtualizationBasedSecurity is added and used instead. The value used for virtualSecureMode will be passed by virtualizationBasedSecurity during the deprecation process. Possible values are ''enabled'', ''disabled'' and ''notApplicable''. ''enabled'' indicates Virtual Secure Mode (VSM) is enabled. ''disabled'' indicates Virtual Secure Mode (VSM) is disabled. ''notApplicable'' indicates the device is not a Windows 11 device. Default value is ''notApplicable''.'
           nullable: true
         windowsPE:
           type: string
@@ -34299,15 +36193,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.deviceIdentityAttestationDetail:
-      title: deviceIdentityAttestationDetail
-      type: object
-      properties:
-        deviceIdentityAttestationStatus:
-          $ref: '#/components/schemas/microsoft.graph.deviceIdentityAttestationStatus'
-      additionalProperties:
-        type: object
-      description: Indicates the attestation status of the managed device
     microsoft.graph.deviceRegistrationState:
       title: deviceRegistrationState
       enum:
@@ -34819,6 +36704,8 @@ components:
         - microsoft365ManagedMdm
         - msSense
         - intuneAosp
+        - google
+        - unknownFutureValue
       type: string
       description: Management agent type.
       x-ms-enum:
@@ -34864,6 +36751,12 @@ components:
           - value: intuneAosp
             description: This device is managed by Intune's MDM for AOSP (Android Open Source Project) devices
             name: intuneAosp
+          - value: google
+            description: Indicates the management agent to manage the device is Google.
+            name: google
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.managedDeviceManagementFeatures:
       title: managedDeviceManagementFeatures
       enum:
@@ -37709,6 +39602,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamworkBot'
             colorIcon:
               $ref: '#/components/schemas/microsoft.graph.teamsAppIcon'
+            dashboardCards:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.teamsAppDashboardCardDefinition'
+              x-ms-navigationProperty: true
             outlineIcon:
               $ref: '#/components/schemas/microsoft.graph.teamsAppIcon'
           additionalProperties:
@@ -37841,23 +39739,12 @@ components:
               type: string
               description: The ID of the schedulingGroup that contains the openShift.
               nullable: true
-            schedulingGroupName:
-              type: string
-              description: The name of the schedulingGroup that contains the openShift.
-              nullable: true
-              readOnly: true
+            schedulingGroupInfo:
+              $ref: '#/components/schemas/microsoft.graph.schedulingGroupInfo'
             sharedOpenShift:
               $ref: '#/components/schemas/microsoft.graph.openShiftItem'
-            teamId:
-              type: string
-              description: The ID of the team in which the openShift is located.
-              nullable: true
-              readOnly: true
-            teamName:
-              type: string
-              description: The name of the team in which the openShift is located.
-              nullable: true
-              readOnly: true
+            teamInfo:
+              $ref: '#/components/schemas/microsoft.graph.shiftsTeamInfo'
           additionalProperties:
             type: object
     microsoft.graph.schedulingGroup:
@@ -37903,12 +39790,18 @@ components:
               type: string
               description: ID of the scheduling group the shift is part of. Required.
               nullable: true
+            schedulingGroupInfo:
+              $ref: '#/components/schemas/microsoft.graph.schedulingGroupInfo'
             sharedShift:
               $ref: '#/components/schemas/microsoft.graph.shiftItem'
+            teamInfo:
+              $ref: '#/components/schemas/microsoft.graph.shiftsTeamInfo'
             userId:
               type: string
               description: ID of the user assigned to the shift. Required.
               nullable: true
+            userInfo:
+              $ref: '#/components/schemas/microsoft.graph.shiftsUserInfo'
           additionalProperties:
             type: object
     microsoft.graph.swapShiftsChangeRequest:
@@ -38012,10 +39905,14 @@ components:
               nullable: true
             sharedTimeOff:
               $ref: '#/components/schemas/microsoft.graph.timeOffItem'
+            teamInfo:
+              $ref: '#/components/schemas/microsoft.graph.shiftsTeamInfo'
             userId:
               type: string
               description: ID of the user assigned to the timeOff. Required.
               nullable: true
+            userInfo:
+              $ref: '#/components/schemas/microsoft.graph.shiftsUserInfo'
           additionalProperties:
             type: object
     microsoft.graph.teamworkTagType:
@@ -38282,11 +40179,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: Contains the name of the field that a value is associated with.
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key.
           nullable: true
       additionalProperties:
         type: object
@@ -38598,7 +40495,6 @@ components:
           nullable: true
         text:
           type: string
-          description: Not yet documented
           nullable: true
       additionalProperties:
         type: object
@@ -38949,39 +40845,6 @@ components:
           - value: level3
             description: 'Indicates that in addition to the System Management Mode (SMM) Level 2 protections, this level reduces System Management Mode (SMM) save state capabilities. The benefit is that by design System Management Mode (SMM) cannot exploit save state to modify security of or exfiltrate secrets from the OS (including Virtualization-based security).'
             name: level3
-          - value: unknownFutureValue
-            description: Evolvable enumeration sentinel value. Do not use.
-            name: unknownFutureValue
-    microsoft.graph.deviceIdentityAttestationStatus:
-      title: deviceIdentityAttestationStatus
-      enum:
-        - unknown
-        - trusted
-        - unTrusted
-        - notSupported
-        - incompleteData
-        - unknownFutureValue
-      type: string
-      description: 'Indicates the state of the anomaly. Eg: anomaly severity can be new, active, disabled, removed or other.'
-      x-ms-enum:
-        name: deviceIdentityAttestationStatus
-        modelAsString: false
-        values:
-          - value: unknown
-            description: Default. Set to unknown if attestation has not yet been calculated
-            name: unknown
-          - value: trusted
-            description: 'Indicates that the Device attestation is supported on the device, it was attempted on the device and the attestation has passed. The device is trusted.'
-            name: trusted
-          - value: unTrusted
-            description: 'Indicates that the Device attestation is supported on the device, it was attempted on the device and the attestation has failed. The device is untrusted'
-            name: unTrusted
-          - value: notSupported
-            description: Indicates that the device does not support Attestation. This could be because of missing hardware or software support.
-            name: notSupported
-          - value: incompleteData
-            description: Indicates that the device did not provide with the data that were required to perform attestation.
-            name: incompleteData
           - value: unknownFutureValue
             description: Evolvable enumeration sentinel value. Do not use.
             name: unknownFutureValue
@@ -41198,6 +43061,29 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamworkHostedContent'
           additionalProperties:
             type: object
+    microsoft.graph.teamsAppDashboardCardDefinition:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: teamsAppDashboardCardDefinition
+          type: object
+          properties:
+            contentSource:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppDashboardCardContentSource'
+            defaultSize:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppDashboardCardSize'
+            description:
+              type: string
+              nullable: true
+            displayName:
+              type: string
+              nullable: true
+            icon:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppDashboardCardIcon'
+            pickerGroupId:
+              type: string
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.scheduleChangeRequest:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.changeTrackedEntity'
@@ -41250,6 +43136,33 @@ components:
               format: int32
           additionalProperties:
             type: object
+    microsoft.graph.schedulingGroupInfo:
+      title: schedulingGroupInfo
+      type: object
+      properties:
+        code:
+          type: string
+          nullable: true
+        displayName:
+          type: string
+          nullable: true
+        schedulingGroupId:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.shiftsTeamInfo:
+      title: shiftsTeamInfo
+      type: object
+      properties:
+        displayName:
+          type: string
+          nullable: true
+        teamId:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.shiftItem:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.scheduleEntity'
@@ -41271,6 +43184,18 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.shiftsUserInfo:
+      title: shiftsUserInfo
+      type: object
+      properties:
+        displayName:
+          type: string
+          nullable: true
+        userId:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.timeCardBreak:
       title: timeCardBreak
       type: object
@@ -43152,6 +45077,35 @@ components:
         - application
         - unknownFutureValue
       type: string
+    microsoft.graph.teamsAppDashboardCardContentSource:
+      title: teamsAppDashboardCardContentSource
+      type: object
+      properties:
+        botConfiguration:
+          $ref: '#/components/schemas/microsoft.graph.teamsAppDashboardCardBotConfiguration'
+        sourceType:
+          $ref: '#/components/schemas/microsoft.graph.teamsAppDashboardCardSourceType'
+      additionalProperties:
+        type: object
+    microsoft.graph.teamsAppDashboardCardSize:
+      title: teamsAppDashboardCardSize
+      enum:
+        - medium
+        - large
+        - unknownFutureValue
+      type: string
+    microsoft.graph.teamsAppDashboardCardIcon:
+      title: teamsAppDashboardCardIcon
+      type: object
+      properties:
+        iconUrl:
+          type: string
+          nullable: true
+        officeUIFabricIconName:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.scheduleChangeRequestActor:
       title: scheduleChangeRequestActor
       enum:
@@ -44835,6 +46789,21 @@ components:
               $ref: '#/components/schemas/microsoft.graph.workbookChartFill'
           additionalProperties:
             type: object
+    microsoft.graph.teamsAppDashboardCardBotConfiguration:
+      title: teamsAppDashboardCardBotConfiguration
+      type: object
+      properties:
+        botId:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.teamsAppDashboardCardSourceType:
+      title: teamsAppDashboardCardSourceType
+      enum:
+        - bot
+        - unknownFutureValue
+      type: string
     microsoft.graph.scheduleEntityTheme:
       title: scheduleEntityTheme
       enum:

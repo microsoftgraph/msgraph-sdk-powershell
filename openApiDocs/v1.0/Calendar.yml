@@ -9577,6 +9577,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.calendar
+      summary: Delete calendar
+      description: Delete a calendar other than the default calendar.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/calendar-delete?view=graph-rest-1.0
+      operationId: user_DeleteCalendar
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/calendar/calendarPermissions':
     get:
       tags:
@@ -15016,8 +15046,8 @@ paths:
     get:
       tags:
         - users.calendarGroup
-      summary: List calendarView
-      description: "Get the occurrences, exceptions and single instances of events in a calendar view defined by a time range,\nfrom a user's default calendar (../me/calendarView) or some other calendar of the user's."
+      summary: Get calendarView from users
+      description: The calendar view for the calendar. Navigation property. Read-only.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/calendar-list-calendarview?view=graph-rest-1.0
@@ -15047,6 +15077,22 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: calendar
+        - name: startDateTime
+          in: query
+          description: 'The start date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T19:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
+        - name: endDateTime
+          in: query
+          description: 'The end date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/filter'
@@ -15251,6 +15297,22 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+        - name: startDateTime
+          in: query
+          description: 'The start date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T19:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
+        - name: endDateTime
+          in: query
+          description: 'The end date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
         - name: $select
           in: query
           description: Select properties to be returned
@@ -28023,11 +28085,11 @@ paths:
     post:
       tags:
         - users.event
-      summary: Create single-value extended property
-      description: "Create one or more single-value extended properties in a new or existing instance of a resource. The following user resources are supported: The following group resources: See Extended properties overview for more information about when to use\nopen extensions or extended properties, and how to specify extended properties."
+      summary: Create multi-value extended property
+      description: "Create one or more multi-value extended properties in a new or existing instance of a resource. The following user resources are supported: The following group resources are supported: See Extended properties overview for more information about when to use\nopen extensions or extended properties, and how to specify extended properties."
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/singlevaluelegacyextendedproperty-post-singlevalueextendedproperties?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/multivaluelegacyextendedproperty-post-multivalueextendedproperties?view=graph-rest-1.0
       operationId: user_CreateEvent
       parameters:
         - name: user-id
