@@ -1871,13 +1871,6 @@ paths:
           style: simple
           schema:
             type: string
-        - name: '@id'
-          in: query
-          description: Delete Uri
-          style: form
-          explode: false
-          schema:
-            type: string
       responses:
         2XX:
           description: Success
@@ -1972,6 +1965,40 @@ paths:
           x-ms-docs-key-type: authenticationEventsFlow
       requestBody:
         $ref: '#/components/requestBodies/refPostBody'
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - identity.authenticationEventsFlow
+      summary: Delete ref of navigation property attributes for identity
+      operationId: identity.authenticationEventsFlow_DeleteGraphAPretributeGraphBPreRef
+      parameters:
+        - name: authenticationEventsFlow-id
+          in: path
+          description: The unique identifier of authenticationEventsFlow
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: authenticationEventsFlow
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+        - name: '@id'
+          in: query
+          description: The delete Uri
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
       responses:
         2XX:
           description: Success
@@ -2146,13 +2173,6 @@ paths:
           style: simple
           schema:
             type: string
-        - name: '@id'
-          in: query
-          description: Delete Uri
-          style: form
-          explode: false
-          schema:
-            type: string
       responses:
         2XX:
           description: Success
@@ -2241,6 +2261,40 @@ paths:
           x-ms-docs-key-type: authenticationEventsFlow
       requestBody:
         $ref: '#/components/requestBodies/refPostBody'
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - identity.authenticationEventsFlow
+      summary: Delete ref of navigation property identityProviders for identity
+      operationId: identity.authenticationEventsFlow_DeleteIdentityProviderGraphBPreRef
+      parameters:
+        - name: authenticationEventsFlow-id
+          in: path
+          description: The unique identifier of authenticationEventsFlow
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: authenticationEventsFlow
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+        - name: '@id'
+          in: query
+          description: The delete Uri
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
       responses:
         2XX:
           description: Success
@@ -2707,13 +2761,6 @@ paths:
           style: simple
           schema:
             type: string
-        - name: '@id'
-          in: query
-          description: Delete Uri
-          style: form
-          explode: false
-          schema:
-            type: string
       responses:
         2XX:
           description: Success
@@ -2834,6 +2881,50 @@ paths:
           x-ms-docs-key-type: b2cIdentityUserFlow
       requestBody:
         $ref: '#/components/requestBodies/refPostBody'
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-15T00:00:00.0000000+00:00'
+        date: '2021-08-24T00:00:00.0000000+00:00'
+        version: 2021-05/identityProvider
+        description: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API.
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - identity.b2cIdentityUserFlow
+      summary: Delete an identityProvider from a b2cIdentityUserFlow (deprecated)
+      description: 'Delete an identity provider from a b2cIdentityUserFlow object. For more information about identity providers available for user flows, see the identityProviders API reference.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/b2cidentityuserflow-delete-identityproviders?view=graph-rest-1.0
+      operationId: identity.b2cUserFlow_DeleteIdentityProviderGraphBPreRef
+      parameters:
+        - name: b2cIdentityUserFlow-id
+          in: path
+          description: The unique identifier of b2cIdentityUserFlow
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: b2cIdentityUserFlow
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+        - name: '@id'
+          in: query
+          description: The delete Uri
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
       responses:
         2XX:
           description: Success
@@ -3411,6 +3502,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: userFlowLanguagePage
+        - name: $format
+          in: query
+          description: Format of the content
+          style: form
+          explode: false
+          schema:
+            type: string
       responses:
         2XX:
           description: Retrieved media content
@@ -3802,6 +3900,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: userFlowLanguagePage
+        - name: $format
+          in: query
+          description: Format of the content
+          style: form
+          explode: false
+          schema:
+            type: string
       responses:
         2XX:
           description: Retrieved media content
@@ -5536,50 +5641,6 @@ paths:
         version: 2021-05/identityProvider
         description: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API.
       x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - identity.b2xIdentityUserFlow
-      summary: Delete identityProvider from b2xIdentityUserFlow (deprecated)
-      description: 'Delete an identity provider from a b2xIdentityUserFlow object. For self-service sign-up user flows, the values can be Google-OAUTH or Facebook-OAUTH.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/b2xidentityuserflow-delete-identityproviders?view=graph-rest-1.0
-      operationId: identity.b2xUserFlow_DeleteIdentityProvider
-      parameters:
-        - name: b2xIdentityUserFlow-id
-          in: path
-          description: The unique identifier of b2xIdentityUserFlow
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: b2xIdentityUserFlow
-        - name: identityProvider-id
-          in: path
-          description: The unique identifier of identityProvider
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: identityProvider
-        - name: If-Match
-          in: header
-          description: ETag
-          style: simple
-          schema:
-            type: string
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-15T00:00:00.0000000+00:00'
-        date: '2021-08-24T00:00:00.0000000+00:00'
-        version: 2021-05/identityProvider
-        description: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API.
-      x-ms-docs-operation-type: operation
   '/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/identityProviders/$count':
     get:
       tags:
@@ -6162,6 +6223,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: userFlowLanguagePage
+        - name: $format
+          in: query
+          description: Format of the content
+          style: form
+          explode: false
+          schema:
+            type: string
       responses:
         2XX:
           description: Retrieved media content
@@ -6553,6 +6621,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: userFlowLanguagePage
+        - name: $format
+          in: query
+          description: Format of the content
+          style: form
+          explode: false
+          schema:
+            type: string
       responses:
         2XX:
           description: Retrieved media content
@@ -7164,13 +7239,6 @@ paths:
           style: simple
           schema:
             type: string
-        - name: '@id'
-          in: query
-          description: Delete Uri
-          style: form
-          explode: false
-          schema:
-            type: string
       responses:
         2XX:
           description: Success
@@ -7265,6 +7333,40 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - identity.b2xIdentityUserFlow
+      summary: Delete ref of navigation property userFlowIdentityProviders for identity
+      operationId: identity.b2xUserFlow_DeleteUserFlowIdentityProviderGraphBPreRef
+      parameters:
+        - name: b2xIdentityUserFlow-id
+          in: path
+          description: The unique identifier of b2xIdentityUserFlow
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: b2xIdentityUserFlow
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+        - name: '@id'
+          in: query
+          description: The delete Uri
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   /identity/b2xUserFlows/$count:
     get:
       tags:
@@ -7279,100 +7381,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-  /identity/conditionalAccess:
-    get:
-      tags:
-        - identity.conditionalAccessRoot
-      summary: Get conditionalAccess from identity
-      description: the entry point for the Conditional Access (CA) object model.
-      operationId: identity_GetConditionalAccess
-      parameters:
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - authenticationContextClassReferences
-                - authenticationStrength
-                - authenticationStrengths
-                - namedLocations
-                - policies
-                - templates
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - authenticationContextClassReferences
-                - authenticationStrength
-                - authenticationStrengths
-                - namedLocations
-                - policies
-                - templates
-              type: string
-      responses:
-        2XX:
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.conditionalAccessRoot'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - identity.conditionalAccessRoot
-      summary: Update the navigation property conditionalAccess in identity
-      operationId: identity_UpdateConditionalAccess
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.conditionalAccessRoot'
-        required: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.conditionalAccessRoot'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - identity.conditionalAccessRoot
-      summary: Delete navigation property conditionalAccess for identity
-      operationId: identity_DeleteConditionalAccess
-      parameters:
-        - name: If-Match
-          in: header
-          description: ETag
-          style: simple
-          schema:
-            type: string
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   /identity/conditionalAccess/authenticationContextClassReferences:
     get:
       tags:
@@ -8131,7 +8139,7 @@ paths:
       tags:
         - identity.conditionalAccessRoot
       summary: List combinationConfigurations
-      description: 'Get the authenticationCombinationConfiguration objects for an authentication strength policy. authenticationCombinationConfiguration represents requirements placed on specific authentication method combinations that require specified variants of those authentication methods to be used when authenticating. Currently, only fido2combinationConfigurations objects are supported. authenticationCombinationConfiguration objects are supported only for custom authentication strengths.'
+      description: "Get the authenticationCombinationConfiguration objects for an authentication strength policy. The objects can be of one or more of the following derived types:\n* fido2combinationConfigurations\n* x509certificatecombinationconfiguration authenticationCombinationConfiguration objects are supported only for custom authentication strengths."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/authenticationstrengthpolicy-list-combinationconfigurations?view=graph-rest-1.0
@@ -8203,7 +8211,7 @@ paths:
       tags:
         - identity.conditionalAccessRoot
       summary: Create combinationConfiguration
-      description: 'Create a new authenticationCombinationConfiguration object. In use, only fido2combinationConfigurations might be created, and only for custom authentication strength policies.'
+      description: "Create a new authenticationCombinationConfiguration object which can be of one of the following derived types:\n* fido2combinationConfigurations\n* x509certificatecombinationconfiguration"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/authenticationstrengthpolicy-post-combinationconfigurations?view=graph-rest-1.0
@@ -8300,7 +8308,7 @@ paths:
       tags:
         - identity.conditionalAccessRoot
       summary: Update authenticationCombinationConfiguration
-      description: 'Update the properties of an authenticationCombinationConfiguration object. In use, only fido2combinationConfigurations may be updated as they''re the only type of authenticationCombinationConfiguration that may be created.'
+      description: "Update the properties of an authenticationCombinationConfiguration object. \nThe properties can be for one of the following derived types:\n* fido2combinationConfigurations\n* x509certificatecombinationconfiguration"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/authenticationcombinationconfiguration-update?view=graph-rest-1.0
@@ -8548,6 +8556,19 @@ paths:
                 - policyType desc
                 - requirementsSatisfied
                 - requirementsSatisfied desc
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - combinationConfigurations
               type: string
       responses:
         2XX:
@@ -9188,7 +9209,7 @@ paths:
       tags:
         - identity.conditionalAccessRoot
       summary: List combinationConfigurations
-      description: 'Get the authenticationCombinationConfiguration objects for an authentication strength policy. authenticationCombinationConfiguration represents requirements placed on specific authentication method combinations that require specified variants of those authentication methods to be used when authenticating. Currently, only fido2combinationConfigurations objects are supported. authenticationCombinationConfiguration objects are supported only for custom authentication strengths.'
+      description: "Get the authenticationCombinationConfiguration objects for an authentication strength policy. The objects can be of one or more of the following derived types:\n* fido2combinationConfigurations\n* x509certificatecombinationconfiguration authenticationCombinationConfiguration objects are supported only for custom authentication strengths."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/authenticationstrengthpolicy-list-combinationconfigurations?view=graph-rest-1.0
@@ -9266,7 +9287,7 @@ paths:
       tags:
         - identity.conditionalAccessRoot
       summary: Create combinationConfiguration
-      description: 'Create a new authenticationCombinationConfiguration object. In use, only fido2combinationConfigurations might be created, and only for custom authentication strength policies.'
+      description: "Create a new authenticationCombinationConfiguration object which can be of one of the following derived types:\n* fido2combinationConfigurations\n* x509certificatecombinationconfiguration"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/authenticationstrengthpolicy-post-combinationconfigurations?view=graph-rest-1.0
@@ -9375,7 +9396,7 @@ paths:
       tags:
         - identity.conditionalAccessRoot
       summary: Update authenticationCombinationConfiguration
-      description: 'Update the properties of an authenticationCombinationConfiguration object. In use, only fido2combinationConfigurations may be updated as they''re the only type of authenticationCombinationConfiguration that may be created.'
+      description: "Update the properties of an authenticationCombinationConfiguration object. \nThe properties can be for one of the following derived types:\n* fido2combinationConfigurations\n* x509certificatecombinationconfiguration"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/authenticationcombinationconfiguration-update?view=graph-rest-1.0
@@ -9659,6 +9680,19 @@ paths:
                 - policyType desc
                 - requirementsSatisfied
                 - requirementsSatisfied desc
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - combinationConfigurations
               type: string
       responses:
         2XX:
@@ -11686,11 +11720,11 @@ paths:
     get:
       tags:
         - identityProtection.riskDetection
-      summary: Get riskDetection
-      description: Retrieve the properties of a riskDetection object.
+      summary: List riskDetection
+      description: Retrieve the properties of a collection of riskDetection objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/riskdetection-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/riskdetection-list?view=graph-rest-1.0
       operationId: identityProtection_GetRiskDetection
       parameters:
         - name: riskDetection-id
@@ -17265,6 +17299,18 @@ paths:
                 - startTime
                 - startTime desc
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
       responses:
         2XX:
           description: Success
@@ -19264,7 +19310,7 @@ paths:
       tags:
         - policies.authenticationStrengthPolicy
       summary: List combinationConfigurations
-      description: 'Get the authenticationCombinationConfiguration objects for an authentication strength policy. authenticationCombinationConfiguration represents requirements placed on specific authentication method combinations that require specified variants of those authentication methods to be used when authenticating. Currently, only fido2combinationConfigurations objects are supported. authenticationCombinationConfiguration objects are supported only for custom authentication strengths.'
+      description: "Get the authenticationCombinationConfiguration objects for an authentication strength policy. The objects can be of one or more of the following derived types:\n* fido2combinationConfigurations\n* x509certificatecombinationconfiguration authenticationCombinationConfiguration objects are supported only for custom authentication strengths."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/authenticationstrengthpolicy-list-combinationconfigurations?view=graph-rest-1.0
@@ -19336,7 +19382,7 @@ paths:
       tags:
         - policies.authenticationStrengthPolicy
       summary: Create combinationConfiguration
-      description: 'Create a new authenticationCombinationConfiguration object. In use, only fido2combinationConfigurations might be created, and only for custom authentication strength policies.'
+      description: "Create a new authenticationCombinationConfiguration object which can be of one of the following derived types:\n* fido2combinationConfigurations\n* x509certificatecombinationconfiguration"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/authenticationstrengthpolicy-post-combinationconfigurations?view=graph-rest-1.0
@@ -19433,7 +19479,7 @@ paths:
       tags:
         - policies.authenticationStrengthPolicy
       summary: Update authenticationCombinationConfiguration
-      description: 'Update the properties of an authenticationCombinationConfiguration object. In use, only fido2combinationConfigurations may be updated as they''re the only type of authenticationCombinationConfiguration that may be created.'
+      description: "Update the properties of an authenticationCombinationConfiguration object. \nThe properties can be for one of the following derived types:\n* fido2combinationConfigurations\n* x509certificatecombinationconfiguration"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/authenticationcombinationconfiguration-update?view=graph-rest-1.0
@@ -19681,6 +19727,19 @@ paths:
                 - policyType desc
                 - requirementsSatisfied
                 - requirementsSatisfied desc
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - combinationConfigurations
               type: string
       responses:
         2XX:
@@ -22549,13 +22608,6 @@ paths:
           style: simple
           schema:
             type: string
-        - name: '@id'
-          in: query
-          description: Delete Uri
-          style: form
-          explode: false
-          schema:
-            type: string
       responses:
         2XX:
           description: Success
@@ -22649,6 +22701,44 @@ paths:
           x-ms-docs-key-type: featureRolloutPolicy
       requestBody:
         $ref: '#/components/requestBodies/refPostBody'
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - policies.featureRolloutPolicy
+      summary: Remove appliesTo
+      description: Remove an appliesTo on a featureRolloutPolicy object to remove the directoryObject from feature rollout.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/featurerolloutpolicy-delete-appliesto?view=graph-rest-1.0
+      operationId: policy.featureRolloutPolicy_DeleteAppliesToGraphBPreRef
+      parameters:
+        - name: featureRolloutPolicy-id
+          in: path
+          description: The unique identifier of featureRolloutPolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: featureRolloutPolicy
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+        - name: '@id'
+          in: query
+          description: The delete Uri
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
       responses:
         2XX:
           description: Success
@@ -23790,13 +23880,6 @@ paths:
           style: simple
           schema:
             type: string
-        - name: '@id'
-          in: query
-          description: Delete Uri
-          style: form
-          explode: false
-          schema:
-            type: string
       responses:
         2XX:
           description: Success
@@ -24107,6 +24190,44 @@ paths:
           x-ms-docs-key-type: mobilityManagementPolicy
       requestBody:
         $ref: '#/components/requestBodies/refPostBody'
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - policies.mobilityManagementPolicy
+      summary: Delete includedGroup
+      description: Delete a group from the list of groups included in a mobile app management policy.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/mobileappmanagementpolicies-delete-includedgroups?view=graph-rest-1.0
+      operationId: policy.mobileAppManagementPolicy_DeleteIncludedGroupGraphBPreRef
+      parameters:
+        - name: mobilityManagementPolicy-id
+          in: path
+          description: The unique identifier of mobilityManagementPolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: mobilityManagementPolicy
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+        - name: '@id'
+          in: query
+          description: The delete Uri
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
       responses:
         2XX:
           description: Success
@@ -24679,13 +24800,6 @@ paths:
           style: simple
           schema:
             type: string
-        - name: '@id'
-          in: query
-          description: Delete Uri
-          style: form
-          explode: false
-          schema:
-            type: string
       responses:
         2XX:
           description: Success
@@ -24996,6 +25110,44 @@ paths:
           x-ms-docs-key-type: mobilityManagementPolicy
       requestBody:
         $ref: '#/components/requestBodies/refPostBody'
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - policies.mobilityManagementPolicy
+      summary: Delete includedGroup
+      description: Delete a group from the list of groups included in a mobile app management policy.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/mobileappmanagementpolicies-delete-includedgroups?view=graph-rest-1.0
+      operationId: policy.mobileDeviceManagementPolicy_DeleteIncludedGroupGraphBPreRef
+      parameters:
+        - name: mobilityManagementPolicy-id
+          in: path
+          description: The unique identifier of mobilityManagementPolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: mobilityManagementPolicy
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+        - name: '@id'
+          in: query
+          description: The delete Uri
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
       responses:
         2XX:
           description: Success
@@ -28506,11 +28658,11 @@ paths:
     patch:
       tags:
         - tenantRelationships.multiTenantOrganization
-      summary: Create multiTenantOrganization
-      description: 'Create a new multi-tenant organization. By default, the creator tenant becomes an owner tenant upon successful creation. Only owner tenants can manage a multi-tenant organization. To allow for asynchronous processing, you must wait a minimum of 2 hours between creation and joining a multi-tenant organization.'
+      summary: Update multiTenantOrganization
+      description: Update the properties of a multi-tenant organization.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/tenantrelationship-put-multitenantorganization?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/multitenantorganization-update?view=graph-rest-1.0
       operationId: tenantRelationship_UpdateMultiTenantOrganization
       requestBody:
         description: New navigation property values
@@ -29576,6 +29728,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: trustFrameworkPolicy
+        - name: $format
+          in: query
+          description: Format of the content
+          style: form
+          explode: false
+          schema:
+            type: string
       responses:
         2XX:
           description: Retrieved media content
@@ -32179,6 +32338,86 @@ paths:
       responses:
         2XX:
           $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/users/{user-id}/authentication/signInPreferences':
+    get:
+      tags:
+        - users.authentication
+      summary: Get signInPreferences property value
+      description: The settings and preferences for to the sign-in experience of a user. Use this property to configure the user's default multifactor authentication (MFA) method.
+      operationId: user.authentication_GetSignInPreference
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - isSystemPreferredAuthenticationMethodEnabled
+                - userPreferredMethodForSecondaryAuthentication
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          description: Result entities
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.signInPreferences'
+        default:
+          $ref: '#/components/responses/error'
+    patch:
+      tags:
+        - users.authentication
+      summary: Update property signInPreferences value.
+      operationId: user.authentication_UpdateSignInPreference
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      requestBody:
+        description: New property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.signInPreferences'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.signInPreferences'
         default:
           $ref: '#/components/responses/error'
   '/users/{user-id}/authentication/softwareOathMethods':
@@ -35756,42 +35995,6 @@ components:
               nullable: true
           additionalProperties:
             type: object
-    microsoft.graph.conditionalAccessRoot:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: conditionalAccessRoot
-          type: object
-          properties:
-            authenticationContextClassReferences:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.authenticationContextClassReference'
-              description: Read-only. Nullable. Returns a collection of the specified authentication context class references.
-              x-ms-navigationProperty: true
-            authenticationStrength:
-              $ref: '#/components/schemas/microsoft.graph.authenticationStrengthRoot'
-            authenticationStrengths:
-              $ref: '#/components/schemas/microsoft.graph.authenticationStrengthRoot'
-            namedLocations:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.namedLocation'
-              description: Read-only. Nullable. Returns a collection of the specified named locations.
-              x-ms-navigationProperty: true
-            policies:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.conditionalAccessPolicy'
-              description: Read-only. Nullable. Returns a collection of the specified Conditional Access policies.
-              x-ms-navigationProperty: true
-            templates:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.conditionalAccessTemplate'
-              description: Read-only. Nullable. Returns a collection of the specified Conditional Access templates.
-              x-ms-navigationProperty: true
-          additionalProperties:
-            type: object
     microsoft.graph.authenticationContextClassReference:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -35904,7 +36107,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.authenticationMethodModes'
-              description: Which authentication method combinations this configuration applies to. Must be an allowedCombinations object that's defined for the authenticationStrengthPolicy. The only possible value for fido2combinationConfigurations is 'fido2'.
+              description: 'Which authentication method combinations this configuration applies to. Must be an allowedCombinations object defined for the authenticationStrengthPolicy. For fido2combinationConfigurations use ''fido2'', for x509certificatecombinationconfiguration use ''x509CertificateSingleFactor'' or ''x509CertificateMultiFactor''.'
           additionalProperties:
             type: object
     microsoft.graph.authenticationMethodModes:
@@ -36207,7 +36410,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.riskDetail'
             riskEventType:
               type: string
-              description: 'The type of risk event detected. The possible values are unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence, generic,adminConfirmedUserCompromised, mcasImpossibleTravel, mcasSuspiciousInboxManipulationRules, investigationsThreatIntelligenceSigninLinked, maliciousIPAddressValidCredentialsBlockedIP, anomalousUserActivity, userReportedSuspiciousActivity.  For more information about each value, see riskEventType values.'
+              description: 'The type of risk event detected. The possible values are adminConfirmedUserCompromised, anomalousUserActivity, anonymizedIPAddress, generic, investigationsThreatIntelligence, investigationsThreatIntelligenceSigninLinked,leakedCredentials, maliciousIPAddress, maliciousIPAddressValidCredentialsBlockedIP, malwareInfectedIPAddress, mcasImpossibleTravel, mcasSuspiciousInboxManipulationRules, suspiciousAPITraffic, suspiciousIPAddress,   unfamiliarFeatures, unlikelyTravel, userReportedSuspiciousActivity.  For more information about each value, see riskEventType values.'
               nullable: true
             riskLevel:
               $ref: '#/components/schemas/microsoft.graph.riskLevel'
@@ -36314,14 +36517,14 @@ components:
               nullable: true
             isProcessing:
               type: boolean
-              description: Indicates whether a user's risky state is being processed by the backend.
+              description: Indicates whether a user's risky state is being processed by the backend. Supports $filter (eq).
               nullable: true
             riskDetail:
               $ref: '#/components/schemas/microsoft.graph.riskDetail'
             riskLastUpdatedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time that the risky user was last updated.  The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              description: 'The date and time that the risky user was last updated.  The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, gt, lt).'
               format: date-time
               nullable: true
             riskLevel:
@@ -39319,6 +39522,18 @@ components:
               $ref: '#/components/schemas/microsoft.graph.device'
           additionalProperties:
             type: object
+    microsoft.graph.signInPreferences:
+      title: signInPreferences
+      type: object
+      properties:
+        isSystemPreferredAuthenticationMethodEnabled:
+          type: boolean
+          description: Indicates whether the credential preferences of the system are enabled.
+          nullable: true
+        userPreferredMethodForSecondaryAuthentication:
+          $ref: '#/components/schemas/microsoft.graph.userDefaultAuthenticationMethodType'
+      additionalProperties:
+        type: object
     microsoft.graph.softwareOathAuthenticationMethod:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
@@ -39411,6 +39626,42 @@ components:
         - failed
         - unknownFutureValue
       type: string
+    microsoft.graph.conditionalAccessRoot:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: conditionalAccessRoot
+          type: object
+          properties:
+            authenticationContextClassReferences:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.authenticationContextClassReference'
+              description: Read-only. Nullable. Returns a collection of the specified authentication context class references.
+              x-ms-navigationProperty: true
+            authenticationStrength:
+              $ref: '#/components/schemas/microsoft.graph.authenticationStrengthRoot'
+            authenticationStrengths:
+              $ref: '#/components/schemas/microsoft.graph.authenticationStrengthRoot'
+            namedLocations:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.namedLocation'
+              description: Read-only. Nullable. Returns a collection of the specified named locations.
+              x-ms-navigationProperty: true
+            policies:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.conditionalAccessPolicy'
+              description: Read-only. Nullable. Returns a collection of the specified Conditional Access policies.
+              x-ms-navigationProperty: true
+            templates:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.conditionalAccessTemplate'
+              description: Read-only. Nullable. Returns a collection of the specified Conditional Access templates.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.apiAuthenticationConfigurationBase:
       title: apiAuthenticationConfigurationBase
       type: object
@@ -40466,7 +40717,7 @@ components:
         lastNonInteractiveSignInDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client attempted to sign into the directory the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Microsoft Entra ID maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.'
+          description: 'The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client attempted (either successfully or unsuccessfully) to sign in to the directory the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Microsoft Entra ID maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.'
           format: date-time
           nullable: true
         lastNonInteractiveSignInRequestId:
@@ -40476,7 +40727,7 @@ components:
         lastSignInDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user attempted to sign into the directory the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Microsoft Entra ID maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.'
+          description: 'The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user attempted (either successfully or unsuccessfully) to sign in to the directory the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Microsoft Entra ID maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.'
           format: date-time
           nullable: true
         lastSignInRequestId:
@@ -42706,8 +42957,6 @@ components:
               description: 'Indicates whether the device is DFCI managed. When TRUE the device is DFCI managed. When FALSE, the device is not DFCI managed. The default value is FALSE.'
             deviceHealthAttestationState:
               $ref: '#/components/schemas/microsoft.graph.deviceHealthAttestationState'
-            deviceIdentityAttestationDetail:
-              $ref: '#/components/schemas/microsoft.graph.deviceIdentityAttestationDetail'
             deviceName:
               type: string
               description: Name of the device. This property is read-only.
@@ -43641,6 +43890,11 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerPlan'
               description: Read-only. Nullable. Returns the plannerPlans that the user marked as favorites.
+              x-ms-navigationProperty: true
+            myDayTasks:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.plannerTask'
               x-ms-navigationProperty: true
             plans:
               type: array
@@ -44604,18 +44858,6 @@ components:
           $ref: '#/components/schemas/microsoft.graph.multiTenantOrganizationMemberProcessingStatus'
       additionalProperties:
         type: object
-    microsoft.graph.signInPreferences:
-      title: signInPreferences
-      type: object
-      properties:
-        isSystemPreferredAuthenticationMethodEnabled:
-          type: boolean
-          description: Indicates whether the credential preferences of the system are enabled.
-          nullable: true
-        userPreferredMethodForSecondaryAuthentication:
-          $ref: '#/components/schemas/microsoft.graph.userDefaultAuthenticationMethodType'
-      additionalProperties:
-        type: object
     microsoft.graph.attestationLevel:
       title: attestationLevel
       enum:
@@ -44729,6 +44971,17 @@ components:
         - iOS
         - android
         - linux
+        - unknownFutureValue
+      type: string
+    microsoft.graph.userDefaultAuthenticationMethodType:
+      title: userDefaultAuthenticationMethodType
+      enum:
+        - push
+        - oath
+        - voiceMobile
+        - voiceAlternateMobile
+        - voiceOffice
+        - sms
         - unknownFutureValue
       type: string
     ReferenceCreate:
@@ -47384,18 +47637,19 @@ components:
       properties:
         errorMessage:
           type: string
+          description: Contains a detailed error message when the partner agent installation failed.
           nullable: true
         installStatus:
           $ref: '#/components/schemas/microsoft.graph.cloudPcPartnerAgentInstallStatus'
         isThirdPartyPartner:
           type: boolean
-          description: Indicates if the partner agent is a third party. When 'TRUE' the agent is a third-party (non-Microsoft) agent and when 'FALSE' the agent is a Microsoft agent or isn't known.  The default value is 'FALSE'
+          description: 'Indicates whether the partner agent is a third party. When true, the agent is a third-party (non-Microsoft) agent and when false, the agent is a Microsoft agent or isn''t known.  The default value is false.'
           nullable: true
         partnerAgentName:
           $ref: '#/components/schemas/microsoft.graph.cloudPcPartnerAgentName'
         retriable:
           type: boolean
-          description: Indicates if the partner agent is a third party. When 'TRUE' the agent is a third-party (non-Microsoft) agent and when 'FALSE' the agent is a Microsoft agent or isn't known. The default value is 'FALSE'
+          description: Indicates whether the partner agent installation should be retried. The default value is false.
           nullable: true
       additionalProperties:
         type: object
@@ -47636,11 +47890,9 @@ components:
       properties:
         context:
           type: string
-          description: Not yet documented
           nullable: true
         failure:
           type: string
-          description: Not yet documented
           nullable: true
         failureDetails:
           type: string
@@ -49426,6 +49678,8 @@ components:
         - androidEnterpriseDedicatedDevice
         - androidEnterpriseFullyManaged
         - androidEnterpriseCorporateWorkProfile
+        - androidAOSPUserOwnedDeviceEnrollment
+        - androidAOSPUserlessDeviceEnrollment
       type: string
       description: Possible ways of adding a mobile device to management.
       x-ms-enum:
@@ -49483,6 +49737,12 @@ components:
           - value: androidEnterpriseCorporateWorkProfile
             description: Android Enterprise Corporate Work Profile
             name: androidEnterpriseCorporateWorkProfile
+          - value: androidAOSPUserOwnedDeviceEnrollment
+            description: Indicates the device enrollment is for android device owned by/associated with user using Android Open Source Project (AOSP) on a non-Google mobile services.
+            name: androidAOSPUserOwnedDeviceEnrollment
+          - value: androidAOSPUserlessDeviceEnrollment
+            description: Indicates the device enrollment is for user less android device using Android Open Source Project (AOSP) on a non-Google mobile services.
+            name: androidAOSPUserlessDeviceEnrollment
     microsoft.graph.deviceHealthAttestationState:
       title: deviceHealthAttestationState
       type: object
@@ -49622,7 +49882,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.azureAttestationSettingStatus'
         virtualSecureMode:
           type: string
-          description: VSM is a container that protects high value assets from a compromised kernel
+          description: 'Indicates whether the device has Virtual Secure Mode (VSM) enabled. Virtual Secure Mode (VSM) is a container that protects high value assets from a compromised kernel. This property will be deprecated in beta from August 2023. Support for this property will end in August 2025 for v1.0 API. A new property virtualizationBasedSecurity is added and used instead. The value used for virtualSecureMode will be passed by virtualizationBasedSecurity during the deprecation process. Possible values are ''enabled'', ''disabled'' and ''notApplicable''. ''enabled'' indicates Virtual Secure Mode (VSM) is enabled. ''disabled'' indicates Virtual Secure Mode (VSM) is disabled. ''notApplicable'' indicates the device is not a Windows 11 device. Default value is ''notApplicable''.'
           nullable: true
         windowsPE:
           type: string
@@ -49630,15 +49890,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.deviceIdentityAttestationDetail:
-      title: deviceIdentityAttestationDetail
-      type: object
-      properties:
-        deviceIdentityAttestationStatus:
-          $ref: '#/components/schemas/microsoft.graph.deviceIdentityAttestationStatus'
-      additionalProperties:
-        type: object
-      description: Indicates the attestation status of the managed device
     microsoft.graph.deviceRegistrationState:
       title: deviceRegistrationState
       enum:
@@ -50150,6 +50401,8 @@ components:
         - microsoft365ManagedMdm
         - msSense
         - intuneAosp
+        - google
+        - unknownFutureValue
       type: string
       description: Management agent type.
       x-ms-enum:
@@ -50195,6 +50448,12 @@ components:
           - value: intuneAosp
             description: This device is managed by Intune's MDM for AOSP (Android Open Source Project) devices
             name: intuneAosp
+          - value: google
+            description: Indicates the management agent to manage the device is Google.
+            name: google
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.managedDeviceManagementFeatures:
       title: managedDeviceManagementFeatures
       enum:
@@ -53038,17 +53297,6 @@ components:
         - failed
         - unknownFutureValue
       type: string
-    microsoft.graph.userDefaultAuthenticationMethodType:
-      title: userDefaultAuthenticationMethodType
-      enum:
-        - push
-        - oath
-        - voiceMobile
-        - voiceAlternateMobile
-        - voiceOffice
-        - sms
-        - unknownFutureValue
-      type: string
     microsoft.graph.payloadRequest:
       title: payloadRequest
       type: object
@@ -53438,11 +53686,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: Contains the name of the field that a value is associated with.
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key.
           nullable: true
       additionalProperties:
         type: object
@@ -53816,6 +54064,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamworkBot'
             colorIcon:
               $ref: '#/components/schemas/microsoft.graph.teamsAppIcon'
+            dashboardCards:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.teamsAppDashboardCardDefinition'
+              x-ms-navigationProperty: true
             outlineIcon:
               $ref: '#/components/schemas/microsoft.graph.teamsAppIcon'
           additionalProperties:
@@ -54187,7 +54440,6 @@ components:
           nullable: true
         text:
           type: string
-          description: Not yet documented
           nullable: true
       additionalProperties:
         type: object
@@ -55922,23 +56174,12 @@ components:
               type: string
               description: The ID of the schedulingGroup that contains the openShift.
               nullable: true
-            schedulingGroupName:
-              type: string
-              description: The name of the schedulingGroup that contains the openShift.
-              nullable: true
-              readOnly: true
+            schedulingGroupInfo:
+              $ref: '#/components/schemas/microsoft.graph.schedulingGroupInfo'
             sharedOpenShift:
               $ref: '#/components/schemas/microsoft.graph.openShiftItem'
-            teamId:
-              type: string
-              description: The ID of the team in which the openShift is located.
-              nullable: true
-              readOnly: true
-            teamName:
-              type: string
-              description: The name of the team in which the openShift is located.
-              nullable: true
-              readOnly: true
+            teamInfo:
+              $ref: '#/components/schemas/microsoft.graph.shiftsTeamInfo'
           additionalProperties:
             type: object
     microsoft.graph.schedulingGroup:
@@ -55984,12 +56225,18 @@ components:
               type: string
               description: ID of the scheduling group the shift is part of. Required.
               nullable: true
+            schedulingGroupInfo:
+              $ref: '#/components/schemas/microsoft.graph.schedulingGroupInfo'
             sharedShift:
               $ref: '#/components/schemas/microsoft.graph.shiftItem'
+            teamInfo:
+              $ref: '#/components/schemas/microsoft.graph.shiftsTeamInfo'
             userId:
               type: string
               description: ID of the user assigned to the shift. Required.
               nullable: true
+            userInfo:
+              $ref: '#/components/schemas/microsoft.graph.shiftsUserInfo'
           additionalProperties:
             type: object
     microsoft.graph.swapShiftsChangeRequest:
@@ -56093,10 +56340,14 @@ components:
               nullable: true
             sharedTimeOff:
               $ref: '#/components/schemas/microsoft.graph.timeOffItem'
+            teamInfo:
+              $ref: '#/components/schemas/microsoft.graph.shiftsTeamInfo'
             userId:
               type: string
               description: ID of the user assigned to the timeOff. Required.
               nullable: true
+            userInfo:
+              $ref: '#/components/schemas/microsoft.graph.shiftsUserInfo'
           additionalProperties:
             type: object
     microsoft.graph.teamworkTagType:
@@ -56433,39 +56684,6 @@ components:
           - value: level3
             description: 'Indicates that in addition to the System Management Mode (SMM) Level 2 protections, this level reduces System Management Mode (SMM) save state capabilities. The benefit is that by design System Management Mode (SMM) cannot exploit save state to modify security of or exfiltrate secrets from the OS (including Virtualization-based security).'
             name: level3
-          - value: unknownFutureValue
-            description: Evolvable enumeration sentinel value. Do not use.
-            name: unknownFutureValue
-    microsoft.graph.deviceIdentityAttestationStatus:
-      title: deviceIdentityAttestationStatus
-      enum:
-        - unknown
-        - trusted
-        - unTrusted
-        - notSupported
-        - incompleteData
-        - unknownFutureValue
-      type: string
-      description: 'Indicates the state of the anomaly. Eg: anomaly severity can be new, active, disabled, removed or other.'
-      x-ms-enum:
-        name: deviceIdentityAttestationStatus
-        modelAsString: false
-        values:
-          - value: unknown
-            description: Default. Set to unknown if attestation has not yet been calculated
-            name: unknown
-          - value: trusted
-            description: 'Indicates that the Device attestation is supported on the device, it was attempted on the device and the attestation has passed. The device is trusted.'
-            name: trusted
-          - value: unTrusted
-            description: 'Indicates that the Device attestation is supported on the device, it was attempted on the device and the attestation has failed. The device is untrusted'
-            name: unTrusted
-          - value: notSupported
-            description: Indicates that the device does not support Attestation. This could be because of missing hardware or software support.
-            name: notSupported
-          - value: incompleteData
-            description: Indicates that the device did not provide with the data that were required to perform attestation.
-            name: incompleteData
           - value: unknownFutureValue
             description: Evolvable enumeration sentinel value. Do not use.
             name: unknownFutureValue
@@ -59765,6 +59983,29 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamworkHostedContent'
           additionalProperties:
             type: object
+    microsoft.graph.teamsAppDashboardCardDefinition:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: teamsAppDashboardCardDefinition
+          type: object
+          properties:
+            contentSource:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppDashboardCardContentSource'
+            defaultSize:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppDashboardCardSize'
+            description:
+              type: string
+              nullable: true
+            displayName:
+              type: string
+              nullable: true
+            icon:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppDashboardCardIcon'
+            pickerGroupId:
+              type: string
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.chatMessageMentionedIdentitySet:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -60771,6 +61012,33 @@ components:
               format: int32
           additionalProperties:
             type: object
+    microsoft.graph.schedulingGroupInfo:
+      title: schedulingGroupInfo
+      type: object
+      properties:
+        code:
+          type: string
+          nullable: true
+        displayName:
+          type: string
+          nullable: true
+        schedulingGroupId:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.shiftsTeamInfo:
+      title: shiftsTeamInfo
+      type: object
+      properties:
+        displayName:
+          type: string
+          nullable: true
+        teamId:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.shiftItem:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.scheduleEntity'
@@ -60792,6 +61060,18 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.shiftsUserInfo:
+      title: shiftsUserInfo
+      type: object
+      properties:
+        displayName:
+          type: string
+          nullable: true
+        userId:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.timeCardBreak:
       title: timeCardBreak
       type: object
@@ -60937,11 +61217,9 @@ components:
       properties:
         displayName:
           type: string
-          description: Not yet documented
           nullable: true
         id:
           type: string
-          description: Not yet documented
           nullable: true
         sourceType:
           $ref: '#/components/schemas/microsoft.graph.settingSourceType'
@@ -63489,6 +63767,35 @@ components:
         - application
         - unknownFutureValue
       type: string
+    microsoft.graph.teamsAppDashboardCardContentSource:
+      title: teamsAppDashboardCardContentSource
+      type: object
+      properties:
+        botConfiguration:
+          $ref: '#/components/schemas/microsoft.graph.teamsAppDashboardCardBotConfiguration'
+        sourceType:
+          $ref: '#/components/schemas/microsoft.graph.teamsAppDashboardCardSourceType'
+      additionalProperties:
+        type: object
+    microsoft.graph.teamsAppDashboardCardSize:
+      title: teamsAppDashboardCardSize
+      enum:
+        - medium
+        - large
+        - unknownFutureValue
+      type: string
+    microsoft.graph.teamsAppDashboardCardIcon:
+      title: teamsAppDashboardCardIcon
+      type: object
+      properties:
+        iconUrl:
+          type: string
+          nullable: true
+        officeUIFabricIconName:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.teamworkConversationIdentity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identity'
@@ -64314,6 +64621,21 @@ components:
           description: The API that the provisioning service queries to retrieve data for synchronization.
       additionalProperties:
         type: object
+    microsoft.graph.teamsAppDashboardCardBotConfiguration:
+      title: teamsAppDashboardCardBotConfiguration
+      type: object
+      properties:
+        botId:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.teamsAppDashboardCardSourceType:
+      title: teamsAppDashboardCardSourceType
+      enum:
+        - bot
+        - unknownFutureValue
+      type: string
     microsoft.graph.teamworkConversationIdentityType:
       title: teamworkConversationIdentityType
       enum:

@@ -5662,6 +5662,20 @@ paths:
                 - coOrganizers
                 - coOrganizers desc
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - sessions
+                - registrations
+              type: string
       responses:
         2XX:
           description: Success
@@ -5755,6 +5769,20 @@ paths:
                 - audience desc
                 - coOrganizers
                 - coOrganizers desc
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - sessions
+                - registrations
               type: string
       responses:
         2XX:
