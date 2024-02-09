@@ -7644,6 +7644,133 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/solutions/businessScenarios(uniqueName=''{uniqueName}'')':
+    get:
+      tags:
+        - solutions.businessScenario
+      summary: Get businessScenario
+      description: Read the properties and relationships of a businessScenario object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/businessscenario-get?view=graph-rest-1.0
+      operationId: solution.businessScenario_GetGraphBPreUniqueName
+      parameters:
+        - name: uniqueName
+          in: path
+          description: Alternate key of businessScenario
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdBy
+                - createdDateTime
+                - displayName
+                - lastModifiedBy
+                - lastModifiedDateTime
+                - ownerAppIds
+                - uniqueName
+                - planner
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - planner
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.businessScenario'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - solutions.businessScenario
+      summary: Update businessScenario
+      description: Update the properties of a businessScenario object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/businessscenario-update?view=graph-rest-1.0
+      operationId: solution.businessScenario_UpdateGraphBPreUniqueName
+      parameters:
+        - name: uniqueName
+          in: path
+          description: Alternate key of businessScenario
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.businessScenario'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.businessScenario'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - solutions.businessScenario
+      summary: Delete businessScenario
+      description: Delete a businessScenario object. The deletion of a scenario causes all data associated with the scenario to be deleted.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/businessscenario-delete?view=graph-rest-1.0
+      operationId: solution.businessScenario_DeleteGraphBPreUniqueName
+      parameters:
+        - name: uniqueName
+          in: path
+          description: Alternate key of businessScenario
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   /solutions/businessScenarios/$count:
     get:
       tags:
@@ -7963,6 +8090,48 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/solutions/virtualEvents/events/{virtualEvent-id}/microsoft.graph.cancel':
+    post:
+      tags:
+        - solutions.Actions
+      summary: Invoke action cancel
+      operationId: solution.virtualEvent.event_cancel
+      parameters:
+        - name: virtualEvent-id
+          in: path
+          description: The unique identifier of virtualEvent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEvent
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/solutions/virtualEvents/events/{virtualEvent-id}/microsoft.graph.publish':
+    post:
+      tags:
+        - solutions.Actions
+      summary: Invoke action publish
+      operationId: solution.virtualEvent.event_publish
+      parameters:
+        - name: virtualEvent-id
+          in: path
+          description: The unique identifier of virtualEvent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEvent
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/solutions/virtualEvents/events/{virtualEvent-id}/presenters':
     get:
       tags:
@@ -8468,6 +8637,102 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: virtualEventSession
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - allowAttendeeToEnableCamera
+                - allowAttendeeToEnableMic
+                - allowedPresenters
+                - allowMeetingChat
+                - allowParticipantsToChangeName
+                - allowRecording
+                - allowTeamworkReactions
+                - allowTranscription
+                - anonymizeIdentityForRoles
+                - audioConferencing
+                - chatInfo
+                - chatRestrictions
+                - isEndToEndEncryptionEnabled
+                - isEntryExitAnnounced
+                - joinInformation
+                - joinMeetingIdSettings
+                - joinWebUrl
+                - lobbyBypassSettings
+                - recordAutomatically
+                - shareMeetingChatHistoryDefault
+                - subject
+                - videoTeleconferenceId
+                - watermarkProtection
+                - endDateTime
+                - startDateTime
+                - attendanceReports
+                - presenters
+                - registrations
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - attendanceReports
+                - presenters
+                - registrations
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.virtualEventSession'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/solutions/virtualEvents/events/{virtualEvent-id}/presenters/{virtualEventPresenter-id}/sessions(joinWebUrl=''{joinWebUrl}'')':
+    get:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Get sessions from solutions
+      operationId: solution.virtualEvent.event.presenter.session_GetGraphBPreJoinWebUrl
+      parameters:
+        - name: virtualEvent-id
+          in: path
+          description: The unique identifier of virtualEvent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEvent
+        - name: virtualEventPresenter-id
+          in: path
+          description: The unique identifier of virtualEventPresenter
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventPresenter
+        - name: joinWebUrl
+          in: path
+          description: Alternate key of virtualEventSession
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: $select
           in: query
           description: Select properties to be returned
@@ -10095,6 +10360,168 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/solutions/virtualEvents/events/{virtualEvent-id}/sessions(joinWebUrl=''{joinWebUrl}'')':
+    get:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Get sessions from solutions
+      description: Sessions for the virtual event.
+      operationId: solution.virtualEvent.event.session_GetGraphBPreJoinWebUrl
+      parameters:
+        - name: virtualEvent-id
+          in: path
+          description: The unique identifier of virtualEvent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEvent
+        - name: joinWebUrl
+          in: path
+          description: Alternate key of virtualEventSession
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - allowAttendeeToEnableCamera
+                - allowAttendeeToEnableMic
+                - allowedPresenters
+                - allowMeetingChat
+                - allowParticipantsToChangeName
+                - allowRecording
+                - allowTeamworkReactions
+                - allowTranscription
+                - anonymizeIdentityForRoles
+                - audioConferencing
+                - chatInfo
+                - chatRestrictions
+                - isEndToEndEncryptionEnabled
+                - isEntryExitAnnounced
+                - joinInformation
+                - joinMeetingIdSettings
+                - joinWebUrl
+                - lobbyBypassSettings
+                - recordAutomatically
+                - shareMeetingChatHistoryDefault
+                - subject
+                - videoTeleconferenceId
+                - watermarkProtection
+                - endDateTime
+                - startDateTime
+                - attendanceReports
+                - presenters
+                - registrations
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - attendanceReports
+                - presenters
+                - registrations
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.virtualEventSession'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Update the navigation property sessions in solutions
+      operationId: solution.virtualEvent.event.session_UpdateGraphBPreJoinWebUrl
+      parameters:
+        - name: virtualEvent-id
+          in: path
+          description: The unique identifier of virtualEvent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEvent
+        - name: joinWebUrl
+          in: path
+          description: Alternate key of virtualEventSession
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.virtualEventSession'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.virtualEventSession'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Delete navigation property sessions for solutions
+      operationId: solution.virtualEvent.event.session_DeleteGraphBPreJoinWebUrl
+      parameters:
+        - name: virtualEvent-id
+          in: path
+          description: The unique identifier of virtualEvent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEvent
+        - name: joinWebUrl
+          in: path
+          description: Alternate key of virtualEventSession
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/solutions/virtualEvents/events/{virtualEvent-id}/sessions/$count':
     get:
       tags:
@@ -10131,30 +10558,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-  /solutions/virtualEvents/events/microsoft.graph.cancel:
-    post:
-      tags:
-        - solutions.Actions
-      summary: Invoke action cancel
-      operationId: solution.virtualEvent.event_cancel
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  /solutions/virtualEvents/events/microsoft.graph.publish:
-    post:
-      tags:
-        - solutions.Actions
-      summary: Invoke action publish
-      operationId: solution.virtualEvent.event_publish
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
   /solutions/virtualEvents/townhalls:
     get:
       tags:
@@ -10894,6 +11297,102 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: virtualEventSession
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - allowAttendeeToEnableCamera
+                - allowAttendeeToEnableMic
+                - allowedPresenters
+                - allowMeetingChat
+                - allowParticipantsToChangeName
+                - allowRecording
+                - allowTeamworkReactions
+                - allowTranscription
+                - anonymizeIdentityForRoles
+                - audioConferencing
+                - chatInfo
+                - chatRestrictions
+                - isEndToEndEncryptionEnabled
+                - isEntryExitAnnounced
+                - joinInformation
+                - joinMeetingIdSettings
+                - joinWebUrl
+                - lobbyBypassSettings
+                - recordAutomatically
+                - shareMeetingChatHistoryDefault
+                - subject
+                - videoTeleconferenceId
+                - watermarkProtection
+                - endDateTime
+                - startDateTime
+                - attendanceReports
+                - presenters
+                - registrations
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - attendanceReports
+                - presenters
+                - registrations
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.virtualEventSession'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/presenters/{virtualEventPresenter-id}/sessions(joinWebUrl=''{joinWebUrl}'')':
+    get:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Get sessions from solutions
+      operationId: solution.virtualEvent.townhall.presenter.session_GetGraphBPreJoinWebUrl
+      parameters:
+        - name: virtualEventTownhall-id
+          in: path
+          description: The unique identifier of virtualEventTownhall
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventTownhall
+        - name: virtualEventPresenter-id
+          in: path
+          description: The unique identifier of virtualEventPresenter
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventPresenter
+        - name: joinWebUrl
+          in: path
+          description: Alternate key of virtualEventSession
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: $select
           in: query
           description: Select properties to be returned
@@ -12521,6 +13020,168 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/sessions(joinWebUrl=''{joinWebUrl}'')':
+    get:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Get sessions from solutions
+      description: Sessions for the virtual event.
+      operationId: solution.virtualEvent.townhall.session_GetGraphBPreJoinWebUrl
+      parameters:
+        - name: virtualEventTownhall-id
+          in: path
+          description: The unique identifier of virtualEventTownhall
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventTownhall
+        - name: joinWebUrl
+          in: path
+          description: Alternate key of virtualEventSession
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - allowAttendeeToEnableCamera
+                - allowAttendeeToEnableMic
+                - allowedPresenters
+                - allowMeetingChat
+                - allowParticipantsToChangeName
+                - allowRecording
+                - allowTeamworkReactions
+                - allowTranscription
+                - anonymizeIdentityForRoles
+                - audioConferencing
+                - chatInfo
+                - chatRestrictions
+                - isEndToEndEncryptionEnabled
+                - isEntryExitAnnounced
+                - joinInformation
+                - joinMeetingIdSettings
+                - joinWebUrl
+                - lobbyBypassSettings
+                - recordAutomatically
+                - shareMeetingChatHistoryDefault
+                - subject
+                - videoTeleconferenceId
+                - watermarkProtection
+                - endDateTime
+                - startDateTime
+                - attendanceReports
+                - presenters
+                - registrations
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - attendanceReports
+                - presenters
+                - registrations
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.virtualEventSession'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Update the navigation property sessions in solutions
+      operationId: solution.virtualEvent.townhall.session_UpdateGraphBPreJoinWebUrl
+      parameters:
+        - name: virtualEventTownhall-id
+          in: path
+          description: The unique identifier of virtualEventTownhall
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventTownhall
+        - name: joinWebUrl
+          in: path
+          description: Alternate key of virtualEventSession
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.virtualEventSession'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.virtualEventSession'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Delete navigation property sessions for solutions
+      operationId: solution.virtualEvent.townhall.session_DeleteGraphBPreJoinWebUrl
+      parameters:
+        - name: virtualEventTownhall-id
+          in: path
+          description: The unique identifier of virtualEventTownhall
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventTownhall
+        - name: joinWebUrl
+          in: path
+          description: Alternate key of virtualEventSession
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/sessions/$count':
     get:
       tags:
@@ -12640,6 +13301,20 @@ paths:
                 - isInviteOnly
                 - isInviteOnly desc
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - presenters
+                - sessions
+              type: string
       responses:
         2XX:
           description: Success
@@ -12739,6 +13414,20 @@ paths:
                 - invitedAttendees desc
                 - isInviteOnly
                 - isInviteOnly desc
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - presenters
+                - sessions
               type: string
       responses:
         2XX:
@@ -13576,6 +14265,102 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/presenters/{virtualEventPresenter-id}/sessions(joinWebUrl=''{joinWebUrl}'')':
+    get:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Get sessions from solutions
+      operationId: solution.virtualEvent.webinar.presenter.session_GetGraphBPreJoinWebUrl
+      parameters:
+        - name: virtualEventWebinar-id
+          in: path
+          description: The unique identifier of virtualEventWebinar
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventWebinar
+        - name: virtualEventPresenter-id
+          in: path
+          description: The unique identifier of virtualEventPresenter
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventPresenter
+        - name: joinWebUrl
+          in: path
+          description: Alternate key of virtualEventSession
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - allowAttendeeToEnableCamera
+                - allowAttendeeToEnableMic
+                - allowedPresenters
+                - allowMeetingChat
+                - allowParticipantsToChangeName
+                - allowRecording
+                - allowTeamworkReactions
+                - allowTranscription
+                - anonymizeIdentityForRoles
+                - audioConferencing
+                - chatInfo
+                - chatRestrictions
+                - isEndToEndEncryptionEnabled
+                - isEntryExitAnnounced
+                - joinInformation
+                - joinMeetingIdSettings
+                - joinWebUrl
+                - lobbyBypassSettings
+                - recordAutomatically
+                - shareMeetingChatHistoryDefault
+                - subject
+                - videoTeleconferenceId
+                - watermarkProtection
+                - endDateTime
+                - startDateTime
+                - attendanceReports
+                - presenters
+                - registrations
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - attendanceReports
+                - presenters
+                - registrations
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.virtualEventSession'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/presenters/{virtualEventPresenter-id}/sessions/$count':
     get:
       tags:
@@ -14140,6 +14925,102 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: virtualEventSession
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - allowAttendeeToEnableCamera
+                - allowAttendeeToEnableMic
+                - allowedPresenters
+                - allowMeetingChat
+                - allowParticipantsToChangeName
+                - allowRecording
+                - allowTeamworkReactions
+                - allowTranscription
+                - anonymizeIdentityForRoles
+                - audioConferencing
+                - chatInfo
+                - chatRestrictions
+                - isEndToEndEncryptionEnabled
+                - isEntryExitAnnounced
+                - joinInformation
+                - joinMeetingIdSettings
+                - joinWebUrl
+                - lobbyBypassSettings
+                - recordAutomatically
+                - shareMeetingChatHistoryDefault
+                - subject
+                - videoTeleconferenceId
+                - watermarkProtection
+                - endDateTime
+                - startDateTime
+                - attendanceReports
+                - presenters
+                - registrations
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - attendanceReports
+                - presenters
+                - registrations
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.virtualEventSession'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrations/{virtualEventRegistration-id}/sessions(joinWebUrl=''{joinWebUrl}'')':
+    get:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Get sessions from solutions
+      operationId: solution.virtualEvent.webinar.registration.session_GetGraphBPreJoinWebUrl
+      parameters:
+        - name: virtualEventWebinar-id
+          in: path
+          description: The unique identifier of virtualEventWebinar
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventWebinar
+        - name: virtualEventRegistration-id
+          in: path
+          description: The unique identifier of virtualEventRegistration
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventRegistration
+        - name: joinWebUrl
+          in: path
+          description: Alternate key of virtualEventSession
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: $select
           in: query
           description: Select properties to be returned
@@ -15767,6 +16648,168 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions(joinWebUrl=''{joinWebUrl}'')':
+    get:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Get sessions from solutions
+      description: Sessions for the virtual event.
+      operationId: solution.virtualEvent.webinar.session_GetGraphBPreJoinWebUrl
+      parameters:
+        - name: virtualEventWebinar-id
+          in: path
+          description: The unique identifier of virtualEventWebinar
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventWebinar
+        - name: joinWebUrl
+          in: path
+          description: Alternate key of virtualEventSession
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - allowAttendeeToEnableCamera
+                - allowAttendeeToEnableMic
+                - allowedPresenters
+                - allowMeetingChat
+                - allowParticipantsToChangeName
+                - allowRecording
+                - allowTeamworkReactions
+                - allowTranscription
+                - anonymizeIdentityForRoles
+                - audioConferencing
+                - chatInfo
+                - chatRestrictions
+                - isEndToEndEncryptionEnabled
+                - isEntryExitAnnounced
+                - joinInformation
+                - joinMeetingIdSettings
+                - joinWebUrl
+                - lobbyBypassSettings
+                - recordAutomatically
+                - shareMeetingChatHistoryDefault
+                - subject
+                - videoTeleconferenceId
+                - watermarkProtection
+                - endDateTime
+                - startDateTime
+                - attendanceReports
+                - presenters
+                - registrations
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - attendanceReports
+                - presenters
+                - registrations
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.virtualEventSession'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Update the navigation property sessions in solutions
+      operationId: solution.virtualEvent.webinar.session_UpdateGraphBPreJoinWebUrl
+      parameters:
+        - name: virtualEventWebinar-id
+          in: path
+          description: The unique identifier of virtualEventWebinar
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventWebinar
+        - name: joinWebUrl
+          in: path
+          description: Alternate key of virtualEventSession
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.virtualEventSession'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.virtualEventSession'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Delete navigation property sessions for solutions
+      operationId: solution.virtualEvent.webinar.session_DeleteGraphBPreJoinWebUrl
+      parameters:
+        - name: virtualEventWebinar-id
+          in: path
+          description: The unique identifier of virtualEventWebinar
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventWebinar
+        - name: joinWebUrl
+          in: path
+          description: Alternate key of virtualEventSession
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions/$count':
     get:
       tags:
@@ -15882,6 +16925,22 @@ paths:
                 - coOrganizers
                 - coOrganizers desc
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - presenters
+                - sessions
+                - registrationConfiguration
+                - registrations
+              type: string
       responses:
         2XX:
           description: Success
@@ -15977,6 +17036,22 @@ paths:
                 - audience desc
                 - coOrganizers
                 - coOrganizers desc
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - presenters
+                - sessions
+                - registrationConfiguration
+                - registrations
               type: string
       responses:
         2XX:

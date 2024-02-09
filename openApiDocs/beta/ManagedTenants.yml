@@ -8289,6 +8289,8 @@ paths:
                 - description desc
                 - displayName
                 - displayName desc
+                - informationLinks
+                - informationLinks desc
                 - lastActionByUserId
                 - lastActionByUserId desc
                 - lastActionDateTime
@@ -8297,6 +8299,8 @@ paths:
                 - portalLink desc
                 - priority
                 - priority desc
+                - userImpact
+                - userImpact desc
               type: string
         - name: $select
           in: query
@@ -8314,10 +8318,12 @@ paths:
                 - createdDateTime
                 - description
                 - displayName
+                - informationLinks
                 - lastActionByUserId
                 - lastActionDateTime
                 - portalLink
                 - priority
+                - userImpact
                 - acceptedVersion
                 - managementTemplate
                 - versions
@@ -8385,10 +8391,12 @@ paths:
                 - createdDateTime
                 - description
                 - displayName
+                - informationLinks
                 - lastActionByUserId
                 - lastActionDateTime
                 - portalLink
                 - priority
+                - userImpact
                 - acceptedVersion
                 - managementTemplate
                 - versions
@@ -8488,6 +8496,8 @@ paths:
                 - description desc
                 - displayName
                 - displayName desc
+                - informationLinks
+                - informationLinks desc
                 - lastActionByUserId
                 - lastActionByUserId desc
                 - lastActionDateTime
@@ -8496,6 +8506,8 @@ paths:
                 - portalLink desc
                 - priority
                 - priority desc
+                - userImpact
+                - userImpact desc
               type: string
         - name: $select
           in: query
@@ -8513,10 +8525,12 @@ paths:
                 - createdDateTime
                 - description
                 - displayName
+                - informationLinks
                 - lastActionByUserId
                 - lastActionDateTime
                 - portalLink
                 - priority
+                - userImpact
                 - acceptedVersion
                 - managementTemplate
                 - versions
@@ -8598,10 +8612,12 @@ paths:
                 - createdDateTime
                 - description
                 - displayName
+                - informationLinks
                 - lastActionByUserId
                 - lastActionDateTime
                 - portalLink
                 - priority
+                - userImpact
                 - acceptedVersion
                 - managementTemplate
                 - versions
@@ -9542,10 +9558,12 @@ paths:
                 - createdDateTime
                 - description
                 - displayName
+                - informationLinks
                 - lastActionByUserId
                 - lastActionDateTime
                 - portalLink
                 - priority
+                - userImpact
                 - acceptedVersion
                 - managementTemplate
                 - versions
@@ -9958,10 +9976,12 @@ paths:
                 - createdDateTime
                 - description
                 - displayName
+                - informationLinks
                 - lastActionByUserId
                 - lastActionDateTime
                 - portalLink
                 - priority
+                - userImpact
                 - acceptedVersion
                 - managementTemplate
                 - versions
@@ -13658,6 +13678,10 @@ components:
             displayName:
               type: string
               nullable: true
+            informationLinks:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.actionUrl'
             lastActionByUserId:
               type: string
               nullable: true
@@ -13673,6 +13697,9 @@ components:
               minimum: -2147483648
               type: integer
               format: int32
+              nullable: true
+            userImpact:
+              type: string
               nullable: true
             acceptedVersion:
               $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateStepVersion'

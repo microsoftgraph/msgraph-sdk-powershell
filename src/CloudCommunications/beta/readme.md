@@ -30,4 +30,10 @@ require:
 title: $(service-name)
 subject-prefix: 'Beta'
 namespace: Microsoft.Graph.Beta.PowerShell
+directive:
+  - where:
+      verb: Send
+      subject: ^(CommunicationOnlineMeetingVirtualAppointmentReminderSm|CommunicationOnlineMeetingVirtualAppointmentSm)$
+      variant: ^Send1$|^SendExpanded1$|^SendViaIdentity1$|^SendViaIdentityExpanded1$
+    remove: true
 ```

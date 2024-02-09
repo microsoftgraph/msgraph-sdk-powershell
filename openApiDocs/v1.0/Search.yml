@@ -2584,10 +2584,10 @@ components:
         - listItem
         - drive
         - unknownFutureValue
-        - acronym
-        - bookmark
         - chatMessage
         - person
+        - acronym
+        - bookmark
       type: string
     microsoft.graph.searchQuery:
       title: searchQuery

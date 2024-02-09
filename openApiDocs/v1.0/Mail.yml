@@ -743,11 +743,11 @@ paths:
     post:
       tags:
         - users.mailFolder
-      summary: Create mailSearchFolder
-      description: Create a new mailSearchFolder in the specified user's mailbox.
+      summary: Create child folder
+      description: 'Use this API to create a new child mailFolder. If you intend a new folder to be hidden, you must set the isHidden property to true on creation.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/mailsearchfolder-post?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/mailfolder-post-childfolders?view=graph-rest-1.0
       operationId: user.mailFolder_CreateChildFolder
       parameters:
         - name: user-id
@@ -1826,6 +1826,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: message
+        - name: $format
+          in: query
+          description: Format of the content
+          style: form
+          explode: false
+          schema:
+            type: string
       responses:
         2XX:
           description: Retrieved media content
@@ -1999,10 +2006,10 @@ paths:
       tags:
         - users.mailFolder
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource."
+      description: "Use this API to add an attachment to a message. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. You can add an attachment to an existing message by posting to its attachments collection, or you can\nadd an attachment to a message that is being created and sent on the fly. This operation limits the size of the attachment you can add to under 3 MB."
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/message-post-attachments?view=graph-rest-1.0
       operationId: user.mailFolder.childFolder.message_CreateAttachment
       parameters:
         - name: user-id
@@ -3487,6 +3494,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: message
+        - name: $format
+          in: query
+          description: Format of the content
+          style: form
+          explode: false
+          schema:
+            type: string
       responses:
         2XX:
           description: Retrieved media content
@@ -3644,10 +3658,10 @@ paths:
       tags:
         - users.mailFolder
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource."
+      description: "Use this API to add an attachment to a message. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. You can add an attachment to an existing message by posting to its attachments collection, or you can\nadd an attachment to a message that is being created and sent on the fly. This operation limits the size of the attachment you can add to under 3 MB."
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/message-post-attachments?view=graph-rest-1.0
       operationId: user.mailFolder.message_CreateAttachment
       parameters:
         - name: user-id
@@ -4485,7 +4499,7 @@ paths:
       description: The messages in a mailbox or folder. Read-only. Nullable.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/eventmessage-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0
       operationId: user_GetMessage
       parameters:
         - name: user-id
@@ -4629,11 +4643,11 @@ paths:
     delete:
       tags:
         - users.message
-      summary: Delete message
-      description: 'Delete a message in the specified user''s mailbox, or delete a relationship of the message.'
+      summary: Delete eventMessage
+      description: Delete eventMessage.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/message-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/eventmessage-delete?view=graph-rest-1.0
       operationId: user_DeleteMessage
       parameters:
         - name: user-id
@@ -4690,6 +4704,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: message
+        - name: $format
+          in: query
+          description: Format of the content
+          style: form
+          explode: false
+          schema:
+            type: string
       responses:
         2XX:
           description: Retrieved media content
@@ -4831,10 +4852,10 @@ paths:
       tags:
         - users.message
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource."
+      description: "Use this API to add an attachment to a message. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. You can add an attachment to an existing message by posting to its attachments collection, or you can\nadd an attachment to a message that is being created and sent on the fly. This operation limits the size of the attachment you can add to under 3 MB."
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/message-post-attachments?view=graph-rest-1.0
       operationId: user.message_CreateAttachment
       parameters:
         - name: user-id
