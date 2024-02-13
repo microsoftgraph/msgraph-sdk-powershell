@@ -13,6 +13,16 @@
     internal class TeamsAppPreApprovalPolicyConverter
     {
         /// <summary>
+        /// Team Scope Type.
+        /// </summary>
+        private const string TeamScopeType = "team";
+
+        /// <summary>
+        /// Chat scope type.
+        /// </summary>
+        private const string ChatScopeType = "chat";
+
+        /// <summary>
         /// Collection of RSC permissions.
         /// </summary>
         private IEnumerable<MGTeamsInternalResourceSpecificPermission> rscPermissionCollection;
@@ -109,7 +119,7 @@
                     await this.ValidateAndGetRscPermissionIds(resourceSpecificApplicationPermissionsAllowedForChats);
 
                 MGTeamsInternalPreapprovalDetail preapprovalDetail = new MGTeamsInternalPreapprovalDetail(
-                    scopeType: "chat",
+                    scopeType: TeamsAppPreApprovalPolicyConverter.ChatScopeType,
                     sensitivityLabels: new MGTeamsInternalAllScopeSensitivityLabels(),
                     permissions: new MGTeamsInternalEnumeratedPreApprovedPermissions(chatRscPermissionIds));
 
@@ -122,7 +132,7 @@
                     await this.ValidateAndGetRscPermissionIds(resourceSpecificApplicationPermissionsAllowedForTeams);
 
                 MGTeamsInternalPreapprovalDetail preapprovalDetail = new MGTeamsInternalPreapprovalDetail(
-                    scopeType: "group",
+                    scopeType: TeamsAppPreApprovalPolicyConverter.TeamScopeType,
                     sensitivityLabels: this.GetTeamSensitivityLabelsForPreApprovalDetail(
                         teamLevelSensitivityLabelSelectionMode,
                         specificSensitivityLabelIdsApplicableToTeams),
@@ -159,41 +169,41 @@
                     $"Unsupported scenario. Preapproval policy '{permissionGrantPreApprovalPolicy.Id}' has more than 2 conditions.");
             }
 
-            MGTeamsInternalPreapprovalDetail groupCondition =
-                permissionGrantPreApprovalPolicy.Conditions.FirstOrDefault(c => string.Equals(c.ScopeType, "group"));
+            MGTeamsInternalPreapprovalDetail teamCondition =
+                permissionGrantPreApprovalPolicy.Conditions.FirstOrDefault(c => string.Equals(c.ScopeType, TeamsAppPreApprovalPolicyConverter.TeamScopeType));
 
             MGTeamsInternalPreapprovalDetail chatCondition =
-                permissionGrantPreApprovalPolicy.Conditions.FirstOrDefault(c => string.Equals(c.ScopeType, "chat"));
+                permissionGrantPreApprovalPolicy.Conditions.FirstOrDefault(c => string.Equals(c.ScopeType, TeamsAppPreApprovalPolicyConverter.ChatScopeType));
 
-            if (permissionGrantPreApprovalPolicy.Conditions.Any(c => c != groupCondition && c != chatCondition))
+            if (permissionGrantPreApprovalPolicy.Conditions.Any(c => c != teamCondition && c != chatCondition))
             {
                 throw new MGTeamsInternalException(
                     MGTeamsInternalErrorType.UnsupportedScenario,
                     $"Unsupported scenario. Preapproval policy '{permissionGrantPreApprovalPolicy.Id}' has unsupported conditions.");
             }
 
-            if (groupCondition != null)
+            if (teamCondition != null)
             {
-                if (string.Equals(groupCondition.SensitivityLabels.OdataType, "#microsoft.graph.allScopeSensitivityLabels", System.StringComparison.OrdinalIgnoreCase))
+                if (string.Equals(teamCondition.SensitivityLabels.OdataType, "#microsoft.graph.allScopeSensitivityLabels", System.StringComparison.OrdinalIgnoreCase))
                 {
                     teamsAppPreApproval.TeamLevelSensitivityLabelCondition = MicrosoftGraphSensitivityLabelCondition.AnySensitivityLabel;
                 }
-                else if (string.Equals(groupCondition.SensitivityLabels.OdataType, "#microsoft.graph.enumeratedScopeSensitivityLabels", System.StringComparison.OrdinalIgnoreCase))
+                else if (string.Equals(teamCondition.SensitivityLabels.OdataType, "#microsoft.graph.enumeratedScopeSensitivityLabels", System.StringComparison.OrdinalIgnoreCase))
                 {
                     teamsAppPreApproval.TeamLevelSensitivityLabelCondition = MicrosoftGraphSensitivityLabelCondition.SpecificSensivityLabel;
                     MGTeamsInternalEnumeratedScopeSensitivityLabels mGTeamsInternalEnumeratedScopeSensitivityLabels =
-                        groupCondition.SensitivityLabels as MGTeamsInternalEnumeratedScopeSensitivityLabels;
+                        teamCondition.SensitivityLabels as MGTeamsInternalEnumeratedScopeSensitivityLabels;
                     teamsAppPreApproval.SpecificSensitivityLabelIdsApplicableToTeams = mGTeamsInternalEnumeratedScopeSensitivityLabels.SensitivityLabels.ToArray();
                 }
                 else
                 {
                     throw new MGTeamsInternalException(
                         MGTeamsInternalErrorType.UnsupportedScenario,
-                        $"Unsupported team scope sensitivity label type '{groupCondition.SensitivityLabels.OdataType}' in preapproval policy '{permissionGrantPreApprovalPolicy.Id}'.");
+                        $"Unsupported team scope sensitivity label type '{teamCondition.SensitivityLabels.OdataType}' in preapproval policy '{permissionGrantPreApprovalPolicy.Id}'.");
                 }
 
                 MGTeamsInternalEnumeratedPreApprovedPermissions mGTeamsInternalEnumeratedPreApprovedPermissions =
-                    groupCondition.Permissions as MGTeamsInternalEnumeratedPreApprovedPermissions;
+                    teamCondition.Permissions as MGTeamsInternalEnumeratedPreApprovedPermissions;
                 if (mGTeamsInternalEnumeratedPreApprovedPermissions != null)
                 {
                     teamsAppPreApproval.ResourceSpecificApplicationPermissionsAllowedForTeams =
@@ -203,7 +213,7 @@
                 {
                     throw new MGTeamsInternalException(
                         MGTeamsInternalErrorType.UnsupportedScenario,
-                        $"Unsupported permission type '{groupCondition.Permissions.OdataType}' in preapproval policy '{permissionGrantPreApprovalPolicy.Id}'.");
+                        $"Unsupported permission type '{teamCondition.Permissions.OdataType}' in preapproval policy '{permissionGrantPreApprovalPolicy.Id}'.");
                 }
             }
 
