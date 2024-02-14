@@ -1,18 +1,24 @@
-### Example 1: {{ Add title here }}
+### Example 1: Code snippet
+
 ```powershell
-PS C:\> {{ Add code here }}
 
-{{ Add output here }}
+Import-Module Microsoft.Graph.Sites
+
+$params = @{
+	"@odata.type" = "#microsoft.graph.termStore.set"
+	parentGroup = @{
+		id = "fc733b51-10f1-40fd-b784-dc6d1e42804b"
+	}
+	localizedNames = @(
+		@{
+			languageTag = "en-US"
+			name = "Department"
+		}
+	)
+}
+
+New-MgSiteTermStoreSet -SiteId $siteId -BodyParameter $params
+
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
+This example shows how to use the New-MgSiteTermStoreSet Cmdlet.
 
