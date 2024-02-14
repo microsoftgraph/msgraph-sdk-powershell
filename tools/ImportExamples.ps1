@@ -82,19 +82,20 @@ function Get-Files {
                
                 #Extract command over here
                 $Command = [System.IO.Path]::GetFileNameWithoutExtension($File)
-                #Extract URI path
-                $CommandDetails = Find-MgGraphCommand -Command $Command
-                if ($CommandDetails) {
-                    foreach ($CommandDetail in $CommandDetails) {
-                        $ApiPath = $CommandDetail.URI
-                        $Method = $CommandDetails.Method
-                        Get-ExternalDocsUrl -GraphProfile $GraphProfile -UriPath $ApiPath -Command $Command -OpenApiContent $OpenApiContent -GraphProfilePath $GraphProfilePath -Method $Method.Trim() -Module $Module
+                if ($Command -ine "README") {
+                    #Extract URI path
+                    $CommandDetails = Find-MgGraphCommand -Command $Command
+                    if ($CommandDetails) {
+                        foreach ($CommandDetail in $CommandDetails) {
+                            $ApiPath = $CommandDetail.URI
+                            $Method = $CommandDetails.Method
+                            Get-ExternalDocsUrl -GraphProfile $GraphProfile -UriPath $ApiPath -Command $Command -OpenApiContent $OpenApiContent -GraphProfilePath $GraphProfilePath -Method $Method.Trim() -Module $Module
+                        }
                     }
-                }
-                else {
-                    #Clear any content in that file as long as its not a readme file
-                    if ($Command -ine "README") {
+                    else {
+                        #Clear any content in that file as long as its not a readme file
                         Clear-Content $File -Force
+                    
                     }
                 }
             }
@@ -182,10 +183,12 @@ function Get-ExternalDocsUrl {
                     }
                     if (-not([string]::IsNullOrEmpty($ExternalDocUrl))) {
                         Start-WebScrapping -GraphProfile $GraphProfile -ExternalDocUrl $ExternalDocUrl -Command $Command -GraphProfilePath $GraphProfilePath -UriPath $UriPath -Module $Module
-                    }else{
+                    }
+                    else {
                         # This step will still correct the examples if the external docs url is not found
                         $ExampleFile = "$GraphProfilePath/$Command.md"
                         Retain-ExistingCorrectExamples -Content (Get-Content $ExampleFile) -File $ExampleFile -CommandPattern $Command
+                        
                     }
                 }
     
@@ -216,17 +219,17 @@ function Start-WebScrapping {
         [string] $Module = "Users",
         [string] $GraphProfilePath = (Join-Path $PSScriptRoot "..\src\Users\Users\examples\v1.0")
     )
-        $ExternalDocUrlPaths = $ExternalDocUrl.Split("://")[1].Split("/")
-        $LastExternalDocUrlPathSegmentWithQueryParam = $ExternalDocUrlPaths[$ExternalDocUrlPaths.Length - 1]
-        $LastExternalDocUrlPathSegmentWithoutQueryParam = $LastExternalDocUrlPathSegmentWithQueryParam.Split("?")[0]
+    $ExternalDocUrlPaths = $ExternalDocUrl.Split("://")[1].Split("/")
+    $LastExternalDocUrlPathSegmentWithQueryParam = $ExternalDocUrlPaths[$ExternalDocUrlPaths.Length - 1]
+    $LastExternalDocUrlPathSegmentWithoutQueryParam = $LastExternalDocUrlPathSegmentWithQueryParam.Split("?")[0]
 
-        $GraphDocsUrl = "https://raw.githubusercontent.com/microsoftgraph/microsoft-graph-docs-contrib/main/api-reference/$GraphProfile/api/$LastExternalDocUrlPathSegmentWithoutQueryParam.md"
-        $UrlPaths = $GraphDocsUrl.Split("://")[1].Split("/")
-        $LastPathSegment = $UrlPaths[$UrlPaths.Length - 1]
-        $HeaderList = New-Object -TypeName 'System.Collections.ArrayList';
-        $ExampleLinks = New-Object -TypeName 'System.Collections.ArrayList';
-        $Snippets = New-Object -TypeName 'System.Collections.ArrayList';
-    try{
+    $GraphDocsUrl = "https://raw.githubusercontent.com/microsoftgraph/microsoft-graph-docs-contrib/main/api-reference/$GraphProfile/api/$LastExternalDocUrlPathSegmentWithoutQueryParam.md"
+    $UrlPaths = $GraphDocsUrl.Split("://")[1].Split("/")
+    $LastPathSegment = $UrlPaths[$UrlPaths.Length - 1]
+    $HeaderList = New-Object -TypeName 'System.Collections.ArrayList';
+    $ExampleLinks = New-Object -TypeName 'System.Collections.ArrayList';
+    $Snippets = New-Object -TypeName 'System.Collections.ArrayList';
+    try {
         ($readStream, $HttpWebResponse) = FetchStream -GraphDocsUrl $GraphDocsUrl
 
         while (-not $readStream.EndOfStream) {
@@ -275,7 +278,8 @@ function Start-WebScrapping {
         $Description = "This example shows how to use the $DescriptionCommand Cmdlet."
     
         Update-ExampleFile -GraphProfile $GraphProfile -HeaderList $HeaderList -ExampleList $Snippets -ExampleFile $ExampleFile -Description $Description -Command $Command -ExternalDocUrl $url -UriPath $UriPath -Module $Module
-    }catch {
+    }
+    catch {
         Write-Host "`nError Message: " $_.Exception.Message
         Write-Host "`nError in Line: " $_.InvocationInfo.Line
         Write-Host "`nError in Line Number: "$_.InvocationInfo.ScriptLineNumber
