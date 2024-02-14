@@ -182,6 +182,10 @@ function Get-ExternalDocsUrl {
                     }
                     if (-not([string]::IsNullOrEmpty($ExternalDocUrl))) {
                         Start-WebScrapping -GraphProfile $GraphProfile -ExternalDocUrl $ExternalDocUrl -Command $Command -GraphProfilePath $GraphProfilePath -UriPath $UriPath -Module $Module
+                    }else{
+                        # This step will still correct the examples if the external docs url is not found
+                        $ExampleFile = "$GraphProfilePath/$Command.md"
+                        Retain-ExistingCorrectExamples -Content (Get-Content $ExampleFile) -File $ExampleFile -CommandPattern $Command
                     }
                 }
     
@@ -510,9 +514,9 @@ function Retain-ExistingCorrectExamples {
     $TitleCount = 1
     $RetainedContent = $null
     foreach ($Ex in $RetainedExamples) {
-        $ContentBody = $Ex.Split("|")[0]
-        $ContentTitle = $Ex.Split("|")[1]
-        $ContentDescription = $Ex.Split("|")[2]
+        $ContentBody = $Ex.Split("**##@**")[0]
+        $ContentTitle = $Ex.Split("**##@**")[1]
+        $ContentDescription = $Ex.Split("**##@**")[2]
         if ($ContentBody -match "\b$CommandPattern\b") {
             $Val = $ContentTitle.Split("### Example ")
             $ToBeReplaced = $Val[1].Substring(0, 1)
@@ -569,7 +573,7 @@ function Get-ExistingCorrectExamples {
         $DescVal = $Content[$j]
         $RetainedDescription += "$DescVal`n"
     }
-    $RetainedExamples.Add("$ContentBlock|$Title|$RetainedDescription")
+    $RetainedExamples.Add("$ContentBlock**##@**$Title**##@**$RetainedDescription")
     if ($NoOfExamples -gt 1) {
         $NoOfExamples--
         for ($k = $Start; $k -lt $End; $k++) {
