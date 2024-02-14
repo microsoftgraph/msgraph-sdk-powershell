@@ -1,19 +1,23 @@
 ### Example 1: Update a feedback outcome
 
-```powershellImport-Module Microsoft.Graph.Beta.Education
+```powershell
+
+Import-Module Microsoft.Graph.Beta.Education
 
 $params = @{
 	"@odata.type" = "#microsoft.graph.educationFeedbackOutcome"
 }
 
 Update-MgBetaEducationClassAssignmentSubmissionOutcome -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -EducationOutcomeId $educationOutcomeId -BodyParameter $params
+
 ```
-This example shows how to use the Update-MgBetaEducationClassAssignmentSubmissionOutcome Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example will update a feedback outcome
 
 ### Example 2: Update a points outcome
 
-```powershellImport-Module Microsoft.Graph.Beta.Education
+```powershell
+
+Import-Module Microsoft.Graph.Beta.Education
 
 $params = @{
 	"@odata.type" = "#microsoft.graph.educationPointsOutcome"
@@ -24,13 +28,15 @@ $params = @{
 }
 
 Update-MgBetaEducationClassAssignmentSubmissionOutcome -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -EducationOutcomeId $educationOutcomeId -BodyParameter $params
+
 ```
-This example shows how to use the Update-MgBetaEducationClassAssignmentSubmissionOutcome Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example will update a points outcome
 
 ### Example 3: Update a rubric outcome
 
-```powershellImport-Module Microsoft.Graph.Beta.Education
+```powershell
+
+Import-Module Microsoft.Graph.Beta.Education
 
 $params = @{
 	"@odata.type" = "#microsoft.graph.educationRubricOutcome"
@@ -41,7 +47,7 @@ $params = @{
 }
 
 Update-MgBetaEducationClassAssignmentSubmissionOutcome -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -EducationOutcomeId $educationOutcomeId -BodyParameter $params
+
 ```
-This example shows how to use the Update-MgBetaEducationClassAssignmentSubmissionOutcome Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example will update a rubric outcome
 
