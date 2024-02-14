@@ -185,10 +185,12 @@ function Get-ExternalDocsUrl {
                         Start-WebScrapping -GraphProfile $GraphProfile -ExternalDocUrl $ExternalDocUrl -Command $Command -GraphProfilePath $GraphProfilePath -UriPath $UriPath -Module $Module
                     }
                     else {
-                        # This step will still correct the examples if the external docs url is not found
+                        # This step will still correct the examples if the external docs url is not found.
                         $ExampleFile = "$GraphProfilePath/$Command.md"
-                        Retain-ExistingCorrectExamples -Content (Get-Content $ExampleFile) -File $ExampleFile -CommandPattern $Command
-                        
+                        $boilerPlateCode = Select-String -Path $File -Pattern "Add title here"
+                        if ($boilerPlateCode.Length -eq 0){
+                            Retain-ExistingCorrectExamples -Content (Get-Content $ExampleFile) -File $ExampleFile -CommandPattern $Command
+                        }  
                     }
                 }
     
