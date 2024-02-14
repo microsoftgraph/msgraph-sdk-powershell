@@ -1,6 +1,8 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Beta.Education
+```powershell
+
+Import-Module Microsoft.Graph.Beta.Education
 
 $params = @{
 	displayName = "Reading and review test 09.03 #5"
@@ -14,7 +16,7 @@ $params = @{
 }
 
 Update-MgBetaEducationClassAssignment -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -BodyParameter $params
+
 ```
 This example shows how to use the Update-MgBetaEducationClassAssignment Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

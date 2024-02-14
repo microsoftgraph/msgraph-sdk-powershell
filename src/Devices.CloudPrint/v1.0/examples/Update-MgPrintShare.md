@@ -1,6 +1,8 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Devices.CloudPrint
+```powershell
+
+Import-Module Microsoft.Graph.Devices.CloudPrint
 
 $params = @{
 	displayName = "PrinterShare Name"
@@ -9,7 +11,7 @@ $params = @{
 }
 
 Update-MgPrintShare -PrinterShareId $printerShareId -BodyParameter $params
+
 ```
 This example shows how to use the Update-MgPrintShare Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

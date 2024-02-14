@@ -1,6 +1,8 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Education
+```powershell
+
+Import-Module Microsoft.Graph.Education
 
 $params = @{
 	addedStudentAction = "assignIfOpen"
@@ -8,7 +10,7 @@ $params = @{
 }
 
 Update-MgEducationClassAssignmentDefault -EducationClassId $educationClassId -BodyParameter $params
+
 ```
 This example shows how to use the Update-MgEducationClassAssignmentDefault Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
