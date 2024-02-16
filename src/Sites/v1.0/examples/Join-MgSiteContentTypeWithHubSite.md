@@ -1,13 +1,18 @@
-### Example 1: Using the Join-MgSiteContentTypeWithHubSite Cmdlet
+### Example 1: Code snippet
+
 ```powershell
+
 Import-Module Microsoft.Graph.Sites
+
 $params = @{
-	HubSiteUrls = @(
+	hubSiteUrls = @(
 		"https://graph.microsoft.com/v1.0/sites/{site-id}"
 	)
-	PropagateToExistingLists = $false
+	propagateToExistingLists = $false
 }
+
 Join-MgSiteContentTypeWithHubSite -SiteId $siteId -ContentTypeId $contentTypeId -BodyParameter $params
+
 ```
 This example shows how to use the Join-MgSiteContentTypeWithHubSite Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

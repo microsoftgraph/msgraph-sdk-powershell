@@ -1,6 +1,8 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Sites
+```powershell
+
+Import-Module Microsoft.Graph.Sites
 
 $params = @{
 	labels = @(
@@ -13,7 +15,7 @@ $params = @{
 }
 
 Update-MgSiteTermStoreSetTerm -SiteId $siteId -SetId $setId -TermId $termId -BodyParameter $params
+
 ```
 This example shows how to use the Update-MgSiteTermStoreSetTerm Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

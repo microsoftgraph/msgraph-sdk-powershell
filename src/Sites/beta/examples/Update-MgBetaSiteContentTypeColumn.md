@@ -1,9 +1,17 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Beta.Sites
+```powershell
 
-Get-MgBetaSiteContentTypeColumn -SiteId $siteId -ContentTypeId $contentTypeId -ColumnDefinitionId $columnDefinitionId
+Import-Module Microsoft.Graph.Beta.Sites
+
+$params = @{
+	required = $true
+	hidden = $false
+	propagateChanges = $false
+}
+
+Update-MgBetaSiteContentTypeColumn -SiteId $siteId -ContentTypeId $contentTypeId -ColumnDefinitionId $columnDefinitionId -BodyParameter $params
+
 ```
-This example shows how to use the Update-MgBetaBetaSiteContentTypeColumn Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example shows how to use the Update-MgBetaSiteContentTypeColumn Cmdlet.
 

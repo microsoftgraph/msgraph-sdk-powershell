@@ -1,6 +1,8 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.CloudCommunications
+```powershell
+
+Import-Module Microsoft.Graph.CloudCommunications
 
 $params = @{
 	startDateTime = [System.DateTime]::Parse("2020-09-09T14:33:30.8546353-07:00")
@@ -10,13 +12,15 @@ $params = @{
 
 # A UPN can also be used as -UserId.
 Update-MgUserOnlineMeeting -UserId $userId -OnlineMeetingId $onlineMeetingId -BodyParameter $params
+
 ```
 This example shows how to use the Update-MgUserOnlineMeeting Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 2: Code snippet
 
-```powershellImport-Module Microsoft.Graph.CloudCommunications
+```powershell
+
+Import-Module Microsoft.Graph.CloudCommunications
 
 $params = @{
 	lobbyBypassSettings = @{
@@ -26,7 +30,7 @@ $params = @{
 
 # A UPN can also be used as -UserId.
 Update-MgUserOnlineMeeting -UserId $userId -OnlineMeetingId $onlineMeetingId -BodyParameter $params
+
 ```
 This example shows how to use the Update-MgUserOnlineMeeting Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

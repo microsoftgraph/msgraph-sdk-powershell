@@ -1,18 +1,23 @@
-### Example 1: {{ Add title here }}
+### Example 1: Code snippet
+
 ```powershell
-PS C:\> {{ Add code here }}
 
-{{ Add output here }}
+Import-Module Microsoft.Graph.CloudCommunications
+
+$params = @{
+	id = "oneToOne"
+	routingMode = "oneToOne"
+	sources = @(
+		"632899f8-2ea1-4604-8413-27bd2892079f"
+	)
+	receivers = @(
+		"550fae72-d251-43ec-868c-373732c2704f"
+		"72f988bf-86f1-41af-91ab-2d7cd011db47"
+	)
+}
+
+Update-MgCommunicationCallAudioRoutingGroup -CallId $callId -AudioRoutingGroupId $audioRoutingGroupId -BodyParameter $params
+
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
+This example shows how to use the Update-MgCommunicationCallAudioRoutingGroup Cmdlet.
 
