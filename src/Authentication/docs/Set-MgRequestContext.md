@@ -14,7 +14,7 @@ Sets request context for Microsoft Graph invocations
 
 ```
 Set-MgRequestContext [-RetryDelay <Int32>] [-MaxRetry <Int32>] [-RetriesTimeLimit <Int32>]
- [-ClientTimeout <Int32>] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-ClientTimeout <Int32>] [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -95,6 +95,21 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
+### -ProgressAction
+{{ Fill ProgressAction Description }}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -RetriesTimeLimit
 Sets the maximum time in seconds allowed for request retries.
 
@@ -163,11 +178,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### System.Int32
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Authentication.Core.Interfaces.IRequestContext
-
 ## NOTES
 
 ## RELATED LINKS
