@@ -2588,11 +2588,11 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: Get azureDataLakeConnector
-      description: Read the properties and relationships of an azureDataLakeConnector object.
+      summary: Get industryDataConnector
+      description: Read the properties and relationships of an industryDataConnector object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-azuredatalakeconnector-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/industrydata-industrydataconnector-get?view=graph-rest-1.0
       operationId: external.industryData_GetDataConnector
       parameters:
         - name: industryDataConnector-id
@@ -2643,11 +2643,11 @@ paths:
     patch:
       tags:
         - external.industryDataRoot
-      summary: Update azureDataLakeConnector
-      description: Update the properties of an azureDataLakeConnector object.
+      summary: Update industryDataConnector
+      description: Update the properties of an industryDataConnector object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-azuredatalakeconnector-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/industrydata-industrydataconnector-update?view=graph-rest-1.0
       operationId: external.industryData_UpdateDataConnector
       parameters:
         - name: industryDataConnector-id
@@ -2678,11 +2678,11 @@ paths:
     delete:
       tags:
         - external.industryDataRoot
-      summary: Delete azureDataLakeConnector
-      description: Delete an azureDataLakeConnector object.
+      summary: Delete industryDataConnector
+      description: Delete an industryDataConnector object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-azuredatalakeconnector-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/industrydata-industrydataconnector-delete?view=graph-rest-1.0
       operationId: external.industryData_DeleteDataConnector
       parameters:
         - name: industryDataConnector-id
@@ -2801,11 +2801,11 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: List inboundFileFlows
-      description: Get a list of the inboundFileFlow objects and their properties.
+      summary: List inboundFlows
+      description: Get a list of the inboundFlow objects and their properties.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/industrydata-inboundflow-list?view=graph-rest-1.0
       operationId: external.industryData_ListInboundFlow
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2908,11 +2908,11 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: Get inboundFileFlow
-      description: Read the properties and relationships of an inboundFileFlow object.
+      summary: Get inboundFlow
+      description: Read the properties and relationships of an inboundFlow object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/industrydata-inboundflow-get?view=graph-rest-1.0
       operationId: external.industryData_GetInboundFlow
       parameters:
         - name: inboundFlow-id
@@ -3004,11 +3004,11 @@ paths:
     delete:
       tags:
         - external.industryDataRoot
-      summary: Delete inboundFlow
-      description: Delete an inboundFlow object.
+      summary: Delete inboundFileFlow
+      description: Delete an inboundFileFlow object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-inboundflow-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-delete?view=graph-rest-1.0
       operationId: external.industryData_DeleteInboundFlow
       parameters:
         - name: inboundFlow-id
@@ -6868,6 +6868,7 @@ components:
         - androidMobileApplicationManagement
         - iOSMobileApplicationManagement
         - unknownFutureValue
+        - windowsMobileApplicationManagement
       type: string
       description: Supported platform types.
       x-ms-enum:
@@ -6913,6 +6914,9 @@ components:
           - value: unknownFutureValue
             description: Evolvable enumeration sentinel value. Do not use
             name: unknownFutureValue
+          - value: windowsMobileApplicationManagement
+            description: Indicates Mobile Application Management (MAM) for Windows devices.
+            name: windowsMobileApplicationManagement
     microsoft.graph.search.answerVariant:
       title: answerVariant
       type: object

@@ -4610,11 +4610,11 @@ paths:
     delete:
       tags:
         - identity.conditionalAccessRoot
-      summary: Delete namedLocation
-      description: Delete a namedLocation object.
+      summary: Delete countryNamedLocation
+      description: Delete a countryNamedLocation object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/namedlocation-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/countrynamedlocation-delete?view=graph-rest-1.0
       operationId: identity.conditionalAccess_DeleteNamedLocation
       parameters:
         - name: namedLocation-id
@@ -6748,11 +6748,11 @@ paths:
     get:
       tags:
         - identityProtection.riskyUser
-      summary: Get history
-      description: Read the properties and relationships of a riskyUserHistoryItem object.
+      summary: List history
+      description: Get the riskyUserHistoryItems from the history navigation property.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/riskyuser-get-riskyuserhistoryitem?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/riskyuser-list-history?view=graph-rest-1.0
       operationId: identityProtection.riskyUser_ListHistory
       parameters:
         - name: riskyUser-id
@@ -27926,6 +27926,9 @@ components:
             theme:
               type: string
               description: 'Specifies a Microsoft 365 group''s color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.'
+              nullable: true
+            uniqueName:
+              type: string
               nullable: true
             unseenCount:
               maximum: 2147483647

@@ -3054,6 +3054,7 @@ components:
         - androidMobileApplicationManagement
         - iOSMobileApplicationManagement
         - unknownFutureValue
+        - windowsMobileApplicationManagement
       type: string
       description: Supported platform types.
       x-ms-enum:
@@ -3099,6 +3100,9 @@ components:
           - value: unknownFutureValue
             description: Evolvable enumeration sentinel value. Do not use
             name: unknownFutureValue
+          - value: windowsMobileApplicationManagement
+            description: Indicates Mobile Application Management (MAM) for Windows devices.
+            name: windowsMobileApplicationManagement
     microsoft.graph.assignmentFilterState:
       title: assignmentFilterState
       type: object
@@ -4735,6 +4739,7 @@ components:
         - enrollment
         - endpointPrivilegeManagement
         - unknownFutureValue
+        - windowsOsRecovery
       type: string
       description: Describes which technology this setting can be deployed with
       x-ms-enum-flags:
@@ -4779,6 +4784,9 @@ components:
           - value: unknownFutureValue
             description: Evolvable enumeration sentinel value. Do not use.
             name: unknownFutureValue
+          - value: windowsOsRecovery
+            description: Setting can be deployed using the Operating System Recovery channel
+            name: windowsOsRecovery
     microsoft.graph.deviceManagementConfigurationPolicyTemplateReference:
       title: deviceManagementConfigurationPolicyTemplateReference
       type: object
@@ -5299,6 +5307,7 @@ components:
     microsoft.graph.operationApprovalPolicyType:
       title: operationApprovalPolicyType
       enum:
+        - unknown
         - deviceAction
         - deviceWipe
         - deviceRetire
@@ -5315,7 +5324,7 @@ components:
         - filter
         - endpointSecurityPolicy
         - app
-        - scripts
+        - script
         - role
         - deviceResetPasscode
         - customOrganizationalMessage
@@ -5326,6 +5335,9 @@ components:
         name: operationApprovalPolicyType
         modelAsString: false
         values:
+          - value: unknown
+            description: Default. Indicates that the configured policy type is unknown. This property is not allowed on an OperationApprovalRequest unless the PolicySet contains a different OperationApprovalPolicyType.
+            name: unknown
           - value: deviceAction
             description: Indicates that the configured policy type is for a Device Action.
             name: deviceAction
@@ -5374,9 +5386,9 @@ components:
           - value: app
             description: 'Indicates that the configured policy type is an application type, such as mobile apps or built-in apps.'
             name: app
-          - value: scripts
+          - value: script
             description: 'Indicates that the configured policy type is a script type, such as Powershell scripts or remediation scripts.'
-            name: scripts
+            name: script
           - value: role
             description: Indicates that the configured policy type is for a Role.
             name: role
@@ -5755,6 +5767,7 @@ components:
         - unknownFutureValue
         - deviceConfigurationScripts
         - deviceConfigurationPolicies
+        - windowsOsRecoveryPolicies
         - companyPortal
       type: string
       description: Describes the TemplateFamily for the Template entity
@@ -5807,6 +5820,9 @@ components:
           - value: deviceConfigurationPolicies
             description: Template Family for device configuration policies
             name: deviceConfigurationPolicies
+          - value: windowsOsRecoveryPolicies
+            description: Template Family for windowsOsRecovery that can be applied during a Windows operating system recovery
+            name: windowsOsRecoveryPolicies
           - value: companyPortal
             description: Template Family for Company Portal settings
             name: companyPortal
@@ -5868,26 +5884,26 @@ components:
               nullable: true
             categoryId:
               type: string
-              description: Specifies the area group under which the setting is configured in a specified configuration service provider (CSP)
+              description: Specify category in which the setting is under. Support $filters.
               nullable: true
             description:
               type: string
-              description: Description of the item
+              description: Description of the setting.
               nullable: true
             displayName:
               type: string
-              description: Display name of the item
+              description: 'Name of the setting. For example: Allow Toast.'
               nullable: true
             helpText:
               type: string
-              description: Help text of the item
+              description: Help text of the setting. Give more details of the setting.
               nullable: true
             infoUrls:
               type: array
               items:
                 type: string
                 nullable: true
-              description: List of links more info for the setting can be found at
+              description: List of links more info for the setting can be found at.
             keywords:
               type: array
               items:
@@ -5911,7 +5927,7 @@ components:
               description: List of referred setting information.
             rootDefinitionId:
               type: string
-              description: Root setting definition if the setting is a child setting.
+              description: Root setting definition id if the setting is a child setting.
               nullable: true
             settingUsage:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationSettingUsage'

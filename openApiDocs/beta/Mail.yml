@@ -756,11 +756,11 @@ paths:
     post:
       tags:
         - users.mailFolder
-      summary: Create mailSearchFolder
-      description: Create a new mailSearchFolder in the specified user's mailbox.
+      summary: Create child folder
+      description: 'Use this API to create a new child mailFolder. If you intend a new folder to be hidden, you must set the isHidden property to true on creation.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/mailsearchfolder-post?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/mailfolder-post-childfolders?view=graph-rest-1.0
       operationId: user.mailFolder_CreateChildFolder
       parameters:
         - name: user-id
@@ -1933,10 +1933,10 @@ paths:
       tags:
         - users.mailFolder
       summary: List attachments
-      description: Retrieve a list of attachment objects.
+      description: Retrieve a list of attachment objects attached to a message.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/eventmessage-list-attachments?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/message-list-attachments?view=graph-rest-1.0
       operationId: user.mailFolder.childFolder.message_ListAttachment
       parameters:
         - name: user-id
@@ -4146,10 +4146,10 @@ paths:
       tags:
         - users.mailFolder
       summary: List attachments
-      description: Retrieve a list of attachment objects.
+      description: Retrieve a list of attachment objects attached to a message.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/eventmessage-list-attachments?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/message-list-attachments?view=graph-rest-1.0
       operationId: user.mailFolder.message_ListAttachment
       parameters:
         - name: user-id
@@ -5717,11 +5717,11 @@ paths:
     delete:
       tags:
         - users.message
-      summary: Delete message
-      description: 'Delete a message in the specified user''s mailbox, or delete a relationship of the message. For example, you can delete a specific @-mention of the specified user in the message.'
+      summary: Delete eventMessage
+      description: Delete eventMessage.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/message-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/eventmessage-delete?view=graph-rest-1.0
       operationId: user_DeleteMessage
       parameters:
         - name: user-id
@@ -5837,10 +5837,10 @@ paths:
       tags:
         - users.message
       summary: List attachments
-      description: Retrieve a list of attachment objects.
+      description: Retrieve a list of attachment objects attached to a message.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/eventmessage-list-attachments?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/message-list-attachments?view=graph-rest-1.0
       operationId: user.message_ListAttachment
       parameters:
         - name: user-id

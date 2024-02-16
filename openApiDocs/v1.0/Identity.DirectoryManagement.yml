@@ -17564,10 +17564,10 @@ paths:
       tags:
         - organization.organization
       summary: List organizations
-      description: Retrieve a list of organization objects. There's only one organization object in the collection.
+      description: List properties and relationships of the organization objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/organization-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-onboarding-organization-list?view=graph-rest-1.0
       operationId: organization_ListOrganization
       parameters:
         - $ref: '#/components/parameters/top'
@@ -17729,10 +17729,10 @@ paths:
       tags:
         - organization.organization
       summary: Get organization
-      description: 'Get the properties and relationships of the currently authenticated organization. Since the organization resource supports extensions, you can also use the GET operation to get custom properties and extension data in an organization instance.'
+      description: Read properties and relationships of the organization object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/organization-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-onboarding-organization-get?view=graph-rest-1.0
       operationId: organization_GetOrganization
       parameters:
         - name: organization-id
@@ -17812,10 +17812,10 @@ paths:
       tags:
         - organization.organization
       summary: Update organization
-      description: Update the properties of a organization object.
+      description: 'Update the properties of the currently authenticated organization. In this case, organization is defined as a collection of exactly one record, and so its ID must be specified in the request.  The ID is also known as the tenantId of the organization.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-onboarding-organization-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/organization-update?view=graph-rest-1.0
       operationId: organization_UpdateOrganization
       parameters:
         - name: organization-id
@@ -22097,6 +22097,9 @@ components:
               type: string
               description: 'Specifies a Microsoft 365 group''s color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.'
               nullable: true
+            uniqueName:
+              type: string
+              nullable: true
             unseenCount:
               maximum: 2147483647
               minimum: -2147483648
@@ -22945,6 +22948,9 @@ components:
               type: string
               description: 'Specifies the keyId of a public key from the keyCredentials collection. When configured, Microsoft Entra ID encrypts all the tokens it emits by using the key this property points to. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.'
               format: uuid
+              nullable: true
+            uniqueName:
+              type: string
               nullable: true
             verifiedPublisher:
               $ref: '#/components/schemas/microsoft.graph.verifiedPublisher'
@@ -31497,6 +31503,8 @@ components:
               type: string
               description: Identifier of the synchronization template this job is based on.
               nullable: true
+            bulkUpload:
+              $ref: '#/components/schemas/microsoft.graph.bulkUpload'
             schema:
               $ref: '#/components/schemas/microsoft.graph.synchronizationSchema'
           additionalProperties:
@@ -35511,6 +35519,13 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.bulkUpload:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: bulkUpload
+          type: object
+          additionalProperties:
+            type: object
     microsoft.graph.synchronizationSchema:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'

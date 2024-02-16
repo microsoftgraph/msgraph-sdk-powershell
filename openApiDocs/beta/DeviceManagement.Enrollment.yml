@@ -6878,7 +6878,7 @@ paths:
       description: "Get the properties and relationships of a unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Microsoft Entra ID), use unifiedRoleAssignment."
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroleassignmentmultiple-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/rbacapplicationmultiple-list-roleassignments?view=graph-rest-1.0
       operationId: roleManagement.cloudPC_ListRoleAssignment
       parameters:
         - $ref: '#/components/parameters/top'
@@ -9106,7 +9106,7 @@ paths:
       description: "Get the properties and relationships of a unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Microsoft Entra ID), use unifiedRoleAssignment."
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroleassignmentmultiple-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/rbacapplicationmultiple-list-roleassignments?view=graph-rest-1.0
       operationId: roleManagement.deviceManagement_ListRoleAssignment
       parameters:
         - $ref: '#/components/parameters/top'
@@ -14883,6 +14883,7 @@ components:
         - androidMobileApplicationManagement
         - iOSMobileApplicationManagement
         - unknownFutureValue
+        - windowsMobileApplicationManagement
       type: string
       description: Supported platform types.
       x-ms-enum:
@@ -14928,6 +14929,9 @@ components:
           - value: unknownFutureValue
             description: Evolvable enumeration sentinel value. Do not use
             name: unknownFutureValue
+          - value: windowsMobileApplicationManagement
+            description: Indicates Mobile Application Management (MAM) for Windows devices.
+            name: windowsMobileApplicationManagement
     microsoft.graph.deviceAndAppManagementAssignmentTarget:
       title: deviceAndAppManagementAssignmentTarget
       type: object
