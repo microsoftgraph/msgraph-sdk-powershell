@@ -53,7 +53,7 @@ Get-MgAppCatalogTeamApp -ExpandProperty "appDefinitions(`$expand=bot)" -Filter "
 ```
 This example will list the details of only those apps in the catalog that contain a bot
 
-### Example 7: List applications with a given ID and return only the resource specific permissions required by the app
+### Example 6: List applications with a given ID and return only the resource specific permissions required by the app
 
 ```powershell
 

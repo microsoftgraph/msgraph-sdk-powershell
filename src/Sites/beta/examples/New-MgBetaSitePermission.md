@@ -1,6 +1,8 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Beta.Sites
+```powershell
+
+Import-Module Microsoft.Graph.Beta.Sites
 
 $params = @{
 	roles = @(
@@ -17,7 +19,7 @@ $params = @{
 }
 
 New-MgBetaSitePermission -SiteId $siteId -BodyParameter $params
+
 ```
 This example shows how to use the New-MgBetaSitePermission Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

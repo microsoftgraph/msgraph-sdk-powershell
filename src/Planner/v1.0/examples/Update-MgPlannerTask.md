@@ -1,6 +1,8 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Planner
+```powershell
+
+Import-Module Microsoft.Graph.Planner
 
 $params = @{
 	assignments = @{
@@ -15,8 +17,9 @@ $params = @{
 	}
 }
 
-Update-MgPlannerTask -PlannerTaskId $plannerTaskId -BodyParameter $params-If-Match W/"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAWCc="
+Update-MgPlannerTask -PlannerTaskId $plannerTaskId -BodyParameter $params -IfMatch W/'"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAWCc="' 
+
+
 ```
 This example shows how to use the Update-MgPlannerTask Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
