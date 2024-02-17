@@ -4396,11 +4396,11 @@ paths:
     get:
       tags:
         - admin.adminWindows
-      summary: Get updatableAsset
-      description: Read the properties and relationships of an updatableAsset object.
+      summary: Get azureADDevice
+      description: Read the properties of an azureADDevice object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-updatableasset-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/windowsupdates-azureaddevice-get?view=graph-rest-1.0
       operationId: admin.window.update_GetUpdatableAsset
       parameters:
         - name: updatableAsset-id
@@ -6583,11 +6583,11 @@ paths:
     get:
       tags:
         - admin.adminWindows
-      summary: Get complianceChange
-      description: Read the properties and relationships of a complianceChange object.
+      summary: Get contentApproval
+      description: Read the properties and relationships of a contentApproval object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-compliancechange-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/windowsupdates-contentapproval-get?view=graph-rest-1.0
       operationId: admin.window.update.updatePolicy_GetComplianceChange
       parameters:
         - name: updatePolicy-id

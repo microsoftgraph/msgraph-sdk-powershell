@@ -13458,7 +13458,7 @@ components:
           type: object
           properties:
             identity:
-              $ref: '#/components/schemas/microsoft.graph.callRecords.userIdentity'
+              $ref: '#/components/schemas/microsoft.graph.communicationsIdentitySet'
           additionalProperties:
             type: object
     microsoft.graph.callRecords.endpoint:
@@ -14372,15 +14372,28 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.callRecords.userIdentity:
+    microsoft.graph.communicationsIdentitySet:
       allOf:
-        - $ref: '#/components/schemas/microsoft.graph.identity'
-        - title: userIdentity
+        - $ref: '#/components/schemas/microsoft.graph.identitySet'
+        - title: communicationsIdentitySet
           type: object
           properties:
-            userPrincipalName:
-              type: string
-              nullable: true
+            applicationInstance:
+              $ref: '#/components/schemas/microsoft.graph.identity'
+            assertedIdentity:
+              $ref: '#/components/schemas/microsoft.graph.identity'
+            azureCommunicationServicesUser:
+              $ref: '#/components/schemas/microsoft.graph.identity'
+            encrypted:
+              $ref: '#/components/schemas/microsoft.graph.identity'
+            endpointType:
+              $ref: '#/components/schemas/microsoft.graph.endpointType'
+            guest:
+              $ref: '#/components/schemas/microsoft.graph.identity'
+            onPremises:
+              $ref: '#/components/schemas/microsoft.graph.identity'
+            phone:
+              $ref: '#/components/schemas/microsoft.graph.identity'
           additionalProperties:
             type: object
     microsoft.graph.callRecords.userAgent:

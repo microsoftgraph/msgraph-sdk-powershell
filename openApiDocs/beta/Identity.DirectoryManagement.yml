@@ -2575,7 +2575,7 @@ paths:
       tags:
         - administrativeUnits.Actions
       summary: Invoke action restore
-      description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This isn''t applicable to security groups, which are deleted permanently. Also, restoring an application doesn''t restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted.'
+      description: 'Restore a recently deleted application, externalUserProfile, group, pendingExternalUserProfile, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This isn''t applicable to security groups, which are deleted permanently. Also, restoring an application doesn''t restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
@@ -4765,7 +4765,7 @@ paths:
       tags:
         - contacts.Actions
       summary: Invoke action restore
-      description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This isn''t applicable to security groups, which are deleted permanently. Also, restoring an application doesn''t restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted.'
+      description: 'Restore a recently deleted application, externalUserProfile, group, pendingExternalUserProfile, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This isn''t applicable to security groups, which are deleted permanently. Also, restoring an application doesn''t restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
@@ -6324,7 +6324,7 @@ paths:
       tags:
         - contracts.Actions
       summary: Invoke action restore
-      description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This isn''t applicable to security groups, which are deleted permanently. Also, restoring an application doesn''t restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted.'
+      description: 'Restore a recently deleted application, externalUserProfile, group, pendingExternalUserProfile, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This isn''t applicable to security groups, which are deleted permanently. Also, restoring an application doesn''t restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
@@ -8320,7 +8320,7 @@ paths:
       tags:
         - devices.Actions
       summary: Invoke action restore
-      description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This isn''t applicable to security groups, which are deleted permanently. Also, restoring an application doesn''t restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted.'
+      description: 'Restore a recently deleted application, externalUserProfile, group, pendingExternalUserProfile, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This isn''t applicable to security groups, which are deleted permanently. Also, restoring an application doesn''t restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
@@ -14930,6 +14930,7 @@ paths:
       tags:
         - directory.directoryObject
       summary: Get deletedItems from directory
+      description: Recently deleted items. Read-only. Nullable.
       operationId: directory_ListDeletedItem
       parameters:
         - $ref: '#/components/parameters/top'
@@ -14991,6 +14992,7 @@ paths:
       tags:
         - directory.directoryObject
       summary: Get deletedItems from directory
+      description: Recently deleted items. Read-only. Nullable.
       operationId: directory_GetDeletedItem
       parameters:
         - name: directoryObject-id
@@ -15453,7 +15455,7 @@ paths:
       tags:
         - directory.Actions
       summary: Invoke action restore
-      description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This isn''t applicable to security groups, which are deleted permanently. Also, restoring an application doesn''t restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted.'
+      description: 'Restore a recently deleted application, externalUserProfile, group, pendingExternalUserProfile, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This isn''t applicable to security groups, which are deleted permanently. Also, restoring an application doesn''t restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
@@ -21953,7 +21955,7 @@ paths:
       tags:
         - directoryRoles.Actions
       summary: Invoke action restore
-      description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This isn''t applicable to security groups, which are deleted permanently. Also, restoring an application doesn''t restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted.'
+      description: 'Restore a recently deleted application, externalUserProfile, group, pendingExternalUserProfile, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This isn''t applicable to security groups, which are deleted permanently. Also, restoring an application doesn''t restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
@@ -23022,7 +23024,7 @@ paths:
       tags:
         - directoryRoleTemplates.Actions
       summary: Invoke action restore
-      description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This isn''t applicable to security groups, which are deleted permanently. Also, restoring an application doesn''t restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted.'
+      description: 'Restore a recently deleted application, externalUserProfile, group, pendingExternalUserProfile, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This isn''t applicable to security groups, which are deleted permanently. Also, restoring an application doesn''t restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
@@ -23699,7 +23701,7 @@ paths:
       tags:
         - directorySettingTemplates.Actions
       summary: Invoke action restore
-      description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This isn''t applicable to security groups, which are deleted permanently. Also, restoring an application doesn''t restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted.'
+      description: 'Restore a recently deleted application, externalUserProfile, group, pendingExternalUserProfile, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This isn''t applicable to security groups, which are deleted permanently. Also, restoring an application doesn''t restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
@@ -28594,7 +28596,7 @@ paths:
       tags:
         - organization.Actions
       summary: Invoke action restore
-      description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This isn''t applicable to security groups, which are deleted permanently. Also, restoring an application doesn''t restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted.'
+      description: 'Restore a recently deleted application, externalUserProfile, group, pendingExternalUserProfile, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This isn''t applicable to security groups, which are deleted permanently. Also, restoring an application doesn''t restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
@@ -31005,7 +31007,7 @@ components:
               nullable: true
             manufacturer:
               type: string
-              description: Manufacturer of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
+              description: Manufacturer of the device. Read-only.
               nullable: true
             mdmAppId:
               type: string
@@ -31013,7 +31015,7 @@ components:
               nullable: true
             model:
               type: string
-              description: Model of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
+              description: Model of the device. Read-only.
               nullable: true
             name:
               type: string
@@ -31071,7 +31073,7 @@ components:
               description: 'List of labels applied to the device by the system. Supports $filter (/$count eq 0, /$count ne 0).'
             trustType:
               type: string
-              description: 'Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Microsoft Entra ID). For more details, see Introduction to device management in Microsoft Entra ID.'
+              description: 'Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Microsoft Entra ID). For more information, see Introduction to device management in Microsoft Entra ID.'
               nullable: true
             commands:
               type: array
@@ -32692,6 +32694,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: Recently deleted items. Read-only. Nullable.
               x-ms-navigationProperty: true
             deviceLocalCredentials:
               type: array
@@ -32719,7 +32722,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.inboundSharedUserProfile'
-              description: A collection of external Azure AD users whose profile data has been shared with the Azure AD tenant. Nullable.
+              description: A collection of external users whose profile data is shared with the Microsoft Entra tenant. Nullable.
               x-ms-navigationProperty: true
             onPremisesSynchronization:
               type: array
@@ -32747,7 +32750,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.companySubscription'
-              description: List of commercial subscriptions that an organization has acquired.
+              description: List of commercial subscriptions that an organization has.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -35427,7 +35430,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamGuestSettings'
             internalId:
               type: string
-              description: A unique ID for the team that has been used in a few places such as the audit log/Office 365 Management Activity API.
+              description: A unique ID for the team used in a few places such as the audit log/Office 365 Management Activity API.
               nullable: true
             isArchived:
               type: boolean
@@ -35435,7 +35438,7 @@ components:
               nullable: true
             isMembershipLimitedToOwners:
               type: boolean
-              description: 'If set to true, the team is currently in the owner-only team membership state and not accessible by other team members, such as students.'
+              description: 'If set to true, the team is currently in the owner-only team membership state and inaccessible by other team members, such as students.'
               nullable: true
             memberSettings:
               $ref: '#/components/schemas/microsoft.graph.teamMemberSettings'
@@ -35453,7 +35456,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamVisibilityType'
             webUrl:
               type: string
-              description: 'A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.'
+              description: 'A hyperlink that goes to the team in the Microsoft Teams client. It is the URL you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.'
               nullable: true
             allChannels:
               type: array
@@ -35497,7 +35500,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.user'
-              description: 'The list of this team''s owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user delegated permissions, no owner can be specified (the current user is the owner). Owner must be specified as an object ID (GUID), not a UPN.'
+              description: 'The list of this team''s owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user-delegated permissions, no owner can be specified (the current user is the owner). The owner must be specified as an object ID (GUID), not a UPN.'
               x-ms-navigationProperty: true
             permissionGrants:
               type: array
@@ -42045,6 +42048,11 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.shift'
               description: The shifts in the schedule.
+              x-ms-navigationProperty: true
+            shiftsRoleDefinitions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.shiftsRoleDefinition'
               x-ms-navigationProperty: true
             swapShiftsChangeRequests:
               type: array
@@ -50184,6 +50192,22 @@ components:
               $ref: '#/components/schemas/microsoft.graph.shiftsUserInfo'
           additionalProperties:
             type: object
+    microsoft.graph.shiftsRoleDefinition:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: shiftsRoleDefinition
+          type: object
+          properties:
+            description:
+              type: string
+            displayName:
+              type: string
+            shiftsRolePermissions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.shiftsRolePermission'
+          additionalProperties:
+            type: object
     microsoft.graph.swapShiftsChangeRequest:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.offerShiftRequest'
@@ -55118,12 +55142,15 @@ components:
       properties:
         code:
           type: string
+          description: The code for the schedulingGroup.
           nullable: true
         displayName:
           type: string
+          description: The display name for the schedulingGroup. Required.
           nullable: true
         schedulingGroupId:
           type: string
+          description: ID of the schedulingGroup.
           nullable: true
       additionalProperties:
         type: object
@@ -55133,9 +55160,11 @@ components:
       properties:
         displayName:
           type: string
+          description: The display name for the team. Required.
           nullable: true
         teamId:
           type: string
+          description: ID of the team.
           nullable: true
       additionalProperties:
         type: object
@@ -55166,10 +55195,22 @@ components:
       properties:
         displayName:
           type: string
+          description: The display name for the user. Required.
           nullable: true
         userId:
           type: string
+          description: ID of the user.
           nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.shiftsRolePermission:
+      title: shiftsRolePermission
+      type: object
+      properties:
+        allowedResourceActions:
+          type: array
+          items:
+            type: string
       additionalProperties:
         type: object
     microsoft.graph.timeCardBreak:

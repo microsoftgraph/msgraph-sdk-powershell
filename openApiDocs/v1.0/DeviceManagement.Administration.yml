@@ -2447,11 +2447,11 @@ paths:
     get:
       tags:
         - deviceManagement.roleDefinition
-      summary: List deviceAndAppManagementRoleDefinitions
-      description: List properties and relationships of the deviceAndAppManagementRoleDefinition objects.
+      summary: List roleDefinitions
+      description: List properties and relationships of the roleDefinition objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-rbac-deviceandappmanagementroledefinition-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-rbac-roledefinition-list?view=graph-rest-1.0
       operationId: deviceManagement_ListRoleDefinition
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2522,11 +2522,11 @@ paths:
     post:
       tags:
         - deviceManagement.roleDefinition
-      summary: Create roleDefinition
-      description: Create a new roleDefinition object.
+      summary: Create deviceAndAppManagementRoleDefinition
+      description: Create a new deviceAndAppManagementRoleDefinition object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-rbac-roledefinition-create?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-rbac-deviceandappmanagementroledefinition-create?view=graph-rest-1.0
       operationId: deviceManagement_CreateRoleDefinition
       requestBody:
         description: New navigation property

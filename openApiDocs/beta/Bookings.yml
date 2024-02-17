@@ -10,11 +10,7 @@ paths:
     get:
       tags:
         - bookingBusinesses.bookingBusiness
-      summary: List bookingBusinesses
-      description: 'Get a collection of bookingBusiness objects that has been created for the tenant. This operation returns only the id and displayName of each Microsoft Bookings business in the collection. For performance considerations, it does not return other properties. You can get the other properties of a Bookings business by specifying its id in a GET operation. You can also query for Bookings businesses by specifying a string in a query parameter to do substring matching among the businesses of a tenant. For details, see Example 2.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingbusiness-list?view=graph-rest-1.0
+      summary: Get entities from bookingBusinesses
       operationId: bookingBusiness_ListBookingBusiness
       parameters:
         - $ref: '#/components/parameters/top'
@@ -128,11 +124,7 @@ paths:
     post:
       tags:
         - bookingBusinesses.bookingBusiness
-      summary: Create bookingBusiness
-      description: 'Create a new Microsoft Bookings business in a tenant. This is the first step in setting up a Bookings business where you must specify the business display name. You can include other information such as business address, web site address, and scheduling policy, or set that information later by updating the bookingBusiness.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingbusiness-post-bookingbusinesses?view=graph-rest-1.0
+      summary: Add new entity to bookingBusinesses
       operationId: bookingBusiness_CreateBookingBusiness
       requestBody:
         description: New entity
@@ -155,11 +147,8 @@ paths:
     get:
       tags:
         - bookingBusinesses.bookingBusiness
-      summary: Get bookingBusiness
-      description: Get the properties and relationships of a bookingBusiness object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingbusiness-get?view=graph-rest-1.0
+      summary: Get entity from bookingBusinesses by key
+      description: Represents a Microsoft Bookings Business.
       operationId: bookingBusiness_GetBookingBusiness
       parameters:
         - name: bookingBusiness-id
@@ -234,11 +223,7 @@ paths:
     patch:
       tags:
         - bookingBusinesses.bookingBusiness
-      summary: Update bookingbusiness
-      description: Update the properties of a bookingBusiness object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingbusiness-update?view=graph-rest-1.0
+      summary: Update entity in bookingBusinesses
       operationId: bookingBusiness_UpdateBookingBusiness
       parameters:
         - name: bookingBusiness-id
@@ -269,11 +254,7 @@ paths:
     delete:
       tags:
         - bookingBusinesses.bookingBusiness
-      summary: Delete bookingBusiness
-      description: Delete a bookingBusiness object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingbusiness-delete?view=graph-rest-1.0
+      summary: Delete entity from bookingBusinesses
       operationId: bookingBusiness_DeleteBookingBusiness
       parameters:
         - name: bookingBusiness-id
@@ -2643,11 +2624,7 @@ paths:
     get:
       tags:
         - bookingCurrencies.bookingCurrency
-      summary: List bookingCurrencies
-      description: Get a list of bookingCurrency objects available to a Microsoft Bookings business.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingcurrency-list?view=graph-rest-1.0
+      summary: Get entities from bookingCurrencies
       operationId: bookingCurrency_ListBookingCurrency
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2730,11 +2707,7 @@ paths:
     get:
       tags:
         - bookingCurrencies.bookingCurrency
-      summary: Get bookingCurrency
-      description: 'Get the properties of a bookingCurrency object that is available to a Microsoft Bookings business. Use the id property, which is the currency code, to specify the currency.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/bookingcurrency-get?view=graph-rest-1.0
+      summary: Get entity from bookingCurrencies by key
       operationId: bookingCurrency_GetBookingCurrency
       parameters:
         - name: bookingCurrency-id
@@ -3168,7 +3141,11 @@ paths:
     delete:
       tags:
         - solutions.bookingBusiness
-      summary: Delete navigation property bookingBusinesses for solutions
+      summary: Delete bookingBusiness
+      description: Delete a bookingBusiness object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/bookingbusiness-delete?view=graph-rest-1.0
       operationId: solution_DeleteBookingBusiness
       parameters:
         - name: bookingBusiness-id
@@ -5538,7 +5515,11 @@ paths:
     get:
       tags:
         - solutions.bookingCurrency
-      summary: Get bookingCurrencies from solutions
+      summary: List bookingCurrencies
+      description: Get a list of bookingCurrency objects available to a Microsoft Bookings business.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/bookingcurrency-list?view=graph-rest-1.0
       operationId: solution_ListBookingCurrency
       parameters:
         - $ref: '#/components/parameters/top'
@@ -5621,7 +5602,11 @@ paths:
     get:
       tags:
         - solutions.bookingCurrency
-      summary: Get bookingCurrencies from solutions
+      summary: Get bookingCurrency
+      description: 'Get the properties of a bookingCurrency object that is available to a Microsoft Bookings business. Use the id property, which is the currency code, to specify the currency.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/bookingcurrency-get?view=graph-rest-1.0
       operationId: solution_GetBookingCurrency
       parameters:
         - name: bookingCurrency-id
@@ -17101,6 +17086,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date, time and timezone when the booking business was created.'
               format: date-time
               nullable: true
             defaultCurrencyIso:
@@ -17123,6 +17109,7 @@ components:
             lastUpdatedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date, time and timezone when the booking business was last updated.'
               format: date-time
               nullable: true
             phone:
@@ -17162,7 +17149,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.bookingCustomQuestion'
-              description: All the custom questions of this business. Read-only. Nullable.
+              description: All custom questions of this business.
               x-ms-navigationProperty: true
             services:
               type: array
@@ -17195,11 +17182,12 @@ components:
               nullable: true
             appointmentLabel:
               type: string
-              description: Custom label that can be stamped on this appointment by users.
+              description: Custom label that can be stamped on this appointment by the user.
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date, time and timezone when the appointment was created.'
               format: date-time
               nullable: true
             customerEmailAddress:
@@ -17274,6 +17262,7 @@ components:
             lastUpdatedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date, time and timezone when the booking business was last updated.'
               format: date-time
               nullable: true
             maximumAttendeesCount:
@@ -17354,11 +17343,13 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date, time and timezone when the customer was created.'
               format: date-time
               nullable: true
             lastUpdatedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date, time and timezone when the customer was last updated.'
               format: date-time
               nullable: true
             phones:
@@ -17386,6 +17377,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date, time and timezone when the custom question was created.'
               format: date-time
               nullable: true
             displayName:
@@ -17394,6 +17386,7 @@ components:
             lastUpdatedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date, time and timezone when the custom question was last updated.'
               format: date-time
               nullable: true
           additionalProperties:
@@ -17440,6 +17433,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date, time and timezone when the Service was created.'
               format: date-time
               nullable: true
             customQuestions:
@@ -17471,19 +17465,20 @@ components:
               nullable: true
             isAnonymousJoinEnabled:
               type: boolean
-              description: True if an anonymousJoinWebUrl(webrtcUrl) will be generated for the appointment booked for this service.
+              description: Indicates if an anonymousJoinWebUrl(webrtcUrl) is generated for the appointment booked for this service. The default value is false.
             isHiddenFromCustomers:
               type: boolean
               description: True means this service isn't available to customers for booking.
             isLocationOnline:
               type: boolean
-              description: True indicates that the appointments for the service will be held online. Default value is false.
+              description: Indicates that the appointments for the service are held online. The default value is false.
             languageTag:
               type: string
               description: The language of the self service booking page.
             lastUpdatedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date, time and timezone when the Service  was last updated.'
               format: date-time
               nullable: true
             maximumAttendeesCount:
@@ -17545,14 +17540,16 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date, time and timezone when the staff member was created.'
               format: date-time
               nullable: true
             isEmailNotificationEnabled:
               type: boolean
-              description: True indicates that a staff member will be notified via email when a booking assigned to them is created or changed.
+              description: Indicates that a staff members are  notified via email when a booking assigned to them is created or changed. The default value is true
             lastUpdatedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date, time and timezone when the staff member was last updated.'
               format: date-time
               nullable: true
             membershipStatus:
@@ -17570,7 +17567,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.bookingWorkHours'
-              description: 'The range of hours each day of the week that the staff member is available for booking. By default, they are initialized to be the same as the businessHours property of the business.'
+              description: 'The range of hours each day of the week that the staff member is available for booking. By default, they''re initialized to be the same as the businessHours property of the business.'
           additionalProperties:
             type: object
           description: Represents a staff member who provides services in a business.
@@ -18157,34 +18154,34 @@ components:
           $ref: '#/components/schemas/microsoft.graph.bookingPageAccessControl'
         bookingPageColorCode:
           type: string
-          description: 'Custom color for bookings page. Value should be in Hex format. Example: `#123456`.'
+          description: 'Custom color for the bookings page. The value should be in Hex format. Example: #123456.'
         businessTimeZone:
           type: string
-          description: 'The time zone of the customer. For a list of possible values, see [dateTimeTimeZone](https://learn.microsoft.com/en-us/graph/api/resources/datetimetimezone?view=graph-rest-beta).'
+          description: 'The time zone of the customer. For a list of possible values, see dateTimeTimeZone.'
         customerConsentMessage:
           type: string
-          description: Customer consent message that is displayed in the Booking page.
+          description: The personal data collection and usage consent message in the bookings page.
         enforceOneTimePassword:
           type: boolean
-          description: Enforcing One Time Password (OTP) during appointment creation.
+          description: Determines if the one-time password is required to create an appointment. The default value is false.
         isBusinessLogoDisplayEnabled:
           type: boolean
-          description: Enable display of business logo display on the Bookings page.
+          description: Indicates if the business logo is displayed on the bookings page. The default value is false.
         isCustomerConsentEnabled:
           type: boolean
-          description: Enforces customer consent on the customer consent message before appointment is booked.
+          description: Enables personal data collection and the usage consent toggle on the bookings page. The default value is false.
         isSearchEngineIndexabilityDisabled:
           type: boolean
-          description: Disable booking page to be indexed by search engines. False by default.
+          description: Ensures that the web crawlers don't index this page. The defaults value is false.
         isTimeSlotTimeZoneSetToBusinessTimeZone:
           type: boolean
-          description: If business time zone the default value for the time slots that we show in the bookings page. False by default.
+          description: Displays the booking time slots in the business time zone. The default value is false.
         privacyPolicyWebUrl:
           type: string
-          description: The URL of the business' Privacy Policy.
+          description: 'RL of a webpage that provides the terms and conditions of the business. If a privacy policy isn''t included, the following text appears on the bookings page as default: ''The policies and practices of <booking business''s name> apply to the use of your data.'
         termsAndConditionsWebUrl:
           type: string
-          description: The URL of the business' Terms and Conditions.
+          description: URL of a webpage that provides the terms and conditions of the business.
       additionalProperties:
         type: object
     microsoft.graph.bookingWorkHours:
@@ -18210,7 +18207,7 @@ components:
           description: True if to allow customers to choose a specific person for the booking.
         isMeetingInviteToCustomersEnabled:
           type: boolean
-          description: Enable sending meeting invite to customers.
+          description: Indicates if the meeting invite is sent to the customers. The default value is false
           nullable: true
         maximumAdvance:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'

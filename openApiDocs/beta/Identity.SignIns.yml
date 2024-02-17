@@ -9880,11 +9880,11 @@ paths:
     patch:
       tags:
         - identity.conditionalAccessRoot
-      summary: Update ipNamedlocation
-      description: Update the properties of an ipNamedLocation object.
+      summary: Update countryNamedLocation
+      description: Update the properties of a countryNamedLocation object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/ipnamedlocation-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/countrynamedlocation-update?view=graph-rest-1.0
       operationId: identity.conditionalAccess_UpdateNamedLocation
       parameters:
         - name: namedLocation-id
@@ -9915,11 +9915,11 @@ paths:
     delete:
       tags:
         - identity.conditionalAccessRoot
-      summary: Delete namedLocation
-      description: Delete a namedLocation object.
+      summary: Delete ipNamedLocation
+      description: Delete an ipNamedLocation object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/namedlocation-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/ipnamedlocation-delete?view=graph-rest-1.0
       operationId: identity.conditionalAccess_DeleteNamedLocation
       parameters:
         - name: namedLocation-id
@@ -12489,11 +12489,11 @@ paths:
     get:
       tags:
         - identityProtection.riskyUser
-      summary: Get riskyUser
-      description: Retrieve the properties and relationships of a riskyUser object.
+      summary: List riskyUsers
+      description: Retrieve the properties and relationships of a collection of riskyUser objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/riskyusers-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/riskyusers-list?view=graph-rest-1.0
       operationId: identityProtection_ListRiskyUser
       parameters:
         - $ref: '#/components/parameters/top'
@@ -28658,11 +28658,11 @@ paths:
     patch:
       tags:
         - tenantRelationships.multiTenantOrganization
-      summary: Update multiTenantOrganization
-      description: Update the properties of a multi-tenant organization.
+      summary: Create multiTenantOrganization
+      description: 'Create a new multi-tenant organization. By default, the creator tenant becomes an owner tenant upon successful creation. Only owner tenants can manage a multi-tenant organization. To allow for asynchronous processing, you must wait a minimum of 2 hours between creation and joining a multi-tenant organization.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/multitenantorganization-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/tenantrelationship-put-multitenantorganization?view=graph-rest-1.0
       operationId: tenantRelationship_UpdateMultiTenantOrganization
       requestBody:
         description: New navigation property values
@@ -39297,7 +39297,7 @@ components:
               nullable: true
             manufacturer:
               type: string
-              description: Manufacturer of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
+              description: Manufacturer of the device. Read-only.
               nullable: true
             mdmAppId:
               type: string
@@ -39305,7 +39305,7 @@ components:
               nullable: true
             model:
               type: string
-              description: Model of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
+              description: Model of the device. Read-only.
               nullable: true
             name:
               type: string
@@ -39363,7 +39363,7 @@ components:
               description: 'List of labels applied to the device by the system. Supports $filter (/$count eq 0, /$count ne 0).'
             trustType:
               type: string
-              description: 'Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Microsoft Entra ID). For more details, see Introduction to device management in Microsoft Entra ID.'
+              description: 'Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Microsoft Entra ID). For more information, see Introduction to device management in Microsoft Entra ID.'
               nullable: true
             commands:
               type: array
@@ -42579,7 +42579,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamGuestSettings'
             internalId:
               type: string
-              description: A unique ID for the team that has been used in a few places such as the audit log/Office 365 Management Activity API.
+              description: A unique ID for the team used in a few places such as the audit log/Office 365 Management Activity API.
               nullable: true
             isArchived:
               type: boolean
@@ -42587,7 +42587,7 @@ components:
               nullable: true
             isMembershipLimitedToOwners:
               type: boolean
-              description: 'If set to true, the team is currently in the owner-only team membership state and not accessible by other team members, such as students.'
+              description: 'If set to true, the team is currently in the owner-only team membership state and inaccessible by other team members, such as students.'
               nullable: true
             memberSettings:
               $ref: '#/components/schemas/microsoft.graph.teamMemberSettings'
@@ -42605,7 +42605,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamVisibilityType'
             webUrl:
               type: string
-              description: 'A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.'
+              description: 'A hyperlink that goes to the team in the Microsoft Teams client. It is the URL you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.'
               nullable: true
             allChannels:
               type: array
@@ -42649,7 +42649,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.user'
-              description: 'The list of this team''s owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user delegated permissions, no owner can be specified (the current user is the owner). Owner must be specified as an object ID (GUID), not a UPN.'
+              description: 'The list of this team''s owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user-delegated permissions, no owner can be specified (the current user is the owner). The owner must be specified as an object ID (GUID), not a UPN.'
               x-ms-navigationProperty: true
             permissionGrants:
               type: array
@@ -49167,6 +49167,11 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.shift'
               description: The shifts in the schedule.
+              x-ms-navigationProperty: true
+            shiftsRoleDefinitions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.shiftsRoleDefinition'
               x-ms-navigationProperty: true
             swapShiftsChangeRequests:
               type: array
@@ -56239,6 +56244,22 @@ components:
               $ref: '#/components/schemas/microsoft.graph.shiftsUserInfo'
           additionalProperties:
             type: object
+    microsoft.graph.shiftsRoleDefinition:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: shiftsRoleDefinition
+          type: object
+          properties:
+            description:
+              type: string
+            displayName:
+              type: string
+            shiftsRolePermissions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.shiftsRolePermission'
+          additionalProperties:
+            type: object
     microsoft.graph.swapShiftsChangeRequest:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.offerShiftRequest'
@@ -61018,12 +61039,15 @@ components:
       properties:
         code:
           type: string
+          description: The code for the schedulingGroup.
           nullable: true
         displayName:
           type: string
+          description: The display name for the schedulingGroup. Required.
           nullable: true
         schedulingGroupId:
           type: string
+          description: ID of the schedulingGroup.
           nullable: true
       additionalProperties:
         type: object
@@ -61033,9 +61057,11 @@ components:
       properties:
         displayName:
           type: string
+          description: The display name for the team. Required.
           nullable: true
         teamId:
           type: string
+          description: ID of the team.
           nullable: true
       additionalProperties:
         type: object
@@ -61066,10 +61092,22 @@ components:
       properties:
         displayName:
           type: string
+          description: The display name for the user. Required.
           nullable: true
         userId:
           type: string
+          description: ID of the user.
           nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.shiftsRolePermission:
+      title: shiftsRolePermission
+      type: object
+      properties:
+        allowedResourceActions:
+          type: array
+          items:
+            type: string
       additionalProperties:
         type: object
     microsoft.graph.timeCardBreak:
