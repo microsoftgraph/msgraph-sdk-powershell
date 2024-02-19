@@ -17136,6 +17136,7 @@ components:
         - androidMobileApplicationManagement
         - iOSMobileApplicationManagement
         - unknownFutureValue
+        - windowsMobileApplicationManagement
       type: string
       description: Supported platform types.
       x-ms-enum:
@@ -17181,6 +17182,9 @@ components:
           - value: unknownFutureValue
             description: Evolvable enumeration sentinel value. Do not use
             name: unknownFutureValue
+          - value: windowsMobileApplicationManagement
+            description: Indicates Mobile Application Management (MAM) for Windows devices.
+            name: windowsMobileApplicationManagement
     microsoft.graph.deviceLogCollectionTemplateType:
       title: deviceLogCollectionTemplateType
       enum:
@@ -17409,6 +17413,7 @@ components:
         - enrollment
         - endpointPrivilegeManagement
         - unknownFutureValue
+        - windowsOsRecovery
       type: string
       description: Describes which technology this setting can be deployed with
       x-ms-enum-flags:
@@ -17453,6 +17458,9 @@ components:
           - value: unknownFutureValue
             description: Evolvable enumeration sentinel value. Do not use.
             name: unknownFutureValue
+          - value: windowsOsRecovery
+            description: Setting can be deployed using the Operating System Recovery channel
+            name: windowsOsRecovery
     microsoft.graph.deviceManagementConfigurationPolicyTemplateReference:
       title: deviceManagementConfigurationPolicyTemplateReference
       type: object
@@ -17967,6 +17975,10 @@ components:
           type: string
           description: 'The product version of the application for which elevation request has been made. For example, ''2.40.1.0'''
           nullable: true
+        publisherCert:
+          type: string
+          description: 'The list of base64 encoded certificate for each signer, for example, string[encoded_leaf_cert1, encoded_leaf_cert2....]'
+          nullable: true
         publisherName:
           type: string
           description: 'The certificate issuer name of the certificate used to sign the application, for example, ''Sectigo Public Code Signing CA R36'''
@@ -17983,6 +17995,7 @@ components:
         - denied
         - expired
         - unknownFutureValue
+        - revoked
       type: string
       description: Indicates state of elevation request
       x-ms-enum:
@@ -18007,6 +18020,9 @@ components:
           - value: unknownFutureValue
             description: Evolvable enumeration sentinel value. Do not use.
             name: unknownFutureValue
+          - value: revoked
+            description: 'Set to expire when Approved for is elapsed or ExpireDate is elapsed, whichever is sooner.'
+            name: revoked
     microsoft.graph.groupPolicyConfigurationType:
       title: groupPolicyConfigurationType
       enum:
@@ -19422,6 +19438,7 @@ components:
         - unknownFutureValue
         - deviceConfigurationScripts
         - deviceConfigurationPolicies
+        - windowsOsRecoveryPolicies
         - companyPortal
       type: string
       description: Describes the TemplateFamily for the Template entity
@@ -19474,6 +19491,9 @@ components:
           - value: deviceConfigurationPolicies
             description: Template Family for device configuration policies
             name: deviceConfigurationPolicies
+          - value: windowsOsRecoveryPolicies
+            description: Template Family for windowsOsRecovery that can be applied during a Windows operating system recovery
+            name: windowsOsRecoveryPolicies
           - value: companyPortal
             description: Template Family for Company Portal settings
             name: companyPortal
@@ -19493,26 +19513,26 @@ components:
               nullable: true
             categoryId:
               type: string
-              description: Specifies the area group under which the setting is configured in a specified configuration service provider (CSP)
+              description: Specify category in which the setting is under. Support $filters.
               nullable: true
             description:
               type: string
-              description: Description of the item
+              description: Description of the setting.
               nullable: true
             displayName:
               type: string
-              description: Display name of the item
+              description: 'Name of the setting. For example: Allow Toast.'
               nullable: true
             helpText:
               type: string
-              description: Help text of the item
+              description: Help text of the setting. Give more details of the setting.
               nullable: true
             infoUrls:
               type: array
               items:
                 type: string
                 nullable: true
-              description: List of links more info for the setting can be found at
+              description: List of links more info for the setting can be found at.
             keywords:
               type: array
               items:
@@ -19536,7 +19556,7 @@ components:
               description: List of referred setting information.
             rootDefinitionId:
               type: string
-              description: Root setting definition if the setting is a child setting.
+              description: Root setting definition id if the setting is a child setting.
               nullable: true
             settingUsage:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationSettingUsage'
@@ -22562,7 +22582,7 @@ components:
               nullable: true
             manufacturer:
               type: string
-              description: Manufacturer of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
+              description: Manufacturer of the device. Read-only.
               nullable: true
             mdmAppId:
               type: string
@@ -22570,7 +22590,7 @@ components:
               nullable: true
             model:
               type: string
-              description: Model of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
+              description: Model of the device. Read-only.
               nullable: true
             name:
               type: string
@@ -22628,7 +22648,7 @@ components:
               description: 'List of labels applied to the device by the system. Supports $filter (/$count eq 0, /$count ne 0).'
             trustType:
               type: string
-              description: 'Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Microsoft Entra ID). For more details, see Introduction to device management in Microsoft Entra ID.'
+              description: 'Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Microsoft Entra ID). For more information, see Introduction to device management in Microsoft Entra ID.'
               nullable: true
             commands:
               type: array
@@ -23298,7 +23318,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamGuestSettings'
             internalId:
               type: string
-              description: A unique ID for the team that has been used in a few places such as the audit log/Office 365 Management Activity API.
+              description: A unique ID for the team used in a few places such as the audit log/Office 365 Management Activity API.
               nullable: true
             isArchived:
               type: boolean
@@ -23306,7 +23326,7 @@ components:
               nullable: true
             isMembershipLimitedToOwners:
               type: boolean
-              description: 'If set to true, the team is currently in the owner-only team membership state and not accessible by other team members, such as students.'
+              description: 'If set to true, the team is currently in the owner-only team membership state and inaccessible by other team members, such as students.'
               nullable: true
             memberSettings:
               $ref: '#/components/schemas/microsoft.graph.teamMemberSettings'
@@ -23324,7 +23344,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamVisibilityType'
             webUrl:
               type: string
-              description: 'A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.'
+              description: 'A hyperlink that goes to the team in the Microsoft Teams client. It is the URL you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.'
               nullable: true
             allChannels:
               type: array
@@ -23368,7 +23388,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.user'
-              description: 'The list of this team''s owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user delegated permissions, no owner can be specified (the current user is the owner). Owner must be specified as an object ID (GUID), not a UPN.'
+              description: 'The list of this team''s owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user-delegated permissions, no owner can be specified (the current user is the owner). The owner must be specified as an object ID (GUID), not a UPN.'
               x-ms-navigationProperty: true
             permissionGrants:
               type: array
@@ -28647,6 +28667,11 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.shift'
               description: The shifts in the schedule.
+              x-ms-navigationProperty: true
+            shiftsRoleDefinitions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.shiftsRoleDefinition'
               x-ms-navigationProperty: true
             swapShiftsChangeRequests:
               type: array
@@ -35672,6 +35697,22 @@ components:
               $ref: '#/components/schemas/microsoft.graph.shiftsUserInfo'
           additionalProperties:
             type: object
+    microsoft.graph.shiftsRoleDefinition:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: shiftsRoleDefinition
+          type: object
+          properties:
+            description:
+              type: string
+            displayName:
+              type: string
+            shiftsRolePermissions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.shiftsRolePermission'
+          additionalProperties:
+            type: object
     microsoft.graph.swapShiftsChangeRequest:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.offerShiftRequest'
@@ -40376,12 +40417,15 @@ components:
       properties:
         code:
           type: string
+          description: The code for the schedulingGroup.
           nullable: true
         displayName:
           type: string
+          description: The display name for the schedulingGroup. Required.
           nullable: true
         schedulingGroupId:
           type: string
+          description: ID of the schedulingGroup.
           nullable: true
       additionalProperties:
         type: object
@@ -40391,9 +40435,11 @@ components:
       properties:
         displayName:
           type: string
+          description: The display name for the team. Required.
           nullable: true
         teamId:
           type: string
+          description: ID of the team.
           nullable: true
       additionalProperties:
         type: object
@@ -40424,10 +40470,22 @@ components:
       properties:
         displayName:
           type: string
+          description: The display name for the user. Required.
           nullable: true
         userId:
           type: string
+          description: ID of the user.
           nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.shiftsRolePermission:
+      title: shiftsRolePermission
+      type: object
+      properties:
+        allowedResourceActions:
+          type: array
+          items:
+            type: string
       additionalProperties:
         type: object
     microsoft.graph.timeCardBreak:

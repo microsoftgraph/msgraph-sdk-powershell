@@ -4,7 +4,7 @@
 
 Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
 
-Get-MgBetaOrganization -OrganizationId $organizationId
+Get-MgBetaOrganization
 
 ```
 This example shows how to use the Get-MgBetaOrganization Cmdlet.

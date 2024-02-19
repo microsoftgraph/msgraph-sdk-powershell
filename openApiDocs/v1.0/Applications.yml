@@ -114,6 +114,8 @@ paths:
                 - tags desc
                 - tokenEncryptionKeyId
                 - tokenEncryptionKeyId desc
+                - uniqueName
+                - uniqueName desc
                 - verifiedPublisher
                 - verifiedPublisher desc
                 - web
@@ -165,6 +167,7 @@ paths:
                 - spa
                 - tags
                 - tokenEncryptionKeyId
+                - uniqueName
                 - verifiedPublisher
                 - web
                 - appManagementPolicies
@@ -298,6 +301,7 @@ paths:
                 - spa
                 - tags
                 - tokenEncryptionKeyId
+                - uniqueName
                 - verifiedPublisher
                 - web
                 - appManagementPolicies
@@ -3159,6 +3163,7 @@ paths:
                 - status
                 - synchronizationJobSettings
                 - templateId
+                - bulkUpload
                 - schema
               type: string
         - name: $expand
@@ -3172,6 +3177,7 @@ paths:
             items:
               enum:
                 - '*'
+                - bulkUpload
                 - schema
               type: string
       responses:
@@ -3260,6 +3266,7 @@ paths:
                 - status
                 - synchronizationJobSettings
                 - templateId
+                - bulkUpload
                 - schema
               type: string
         - name: $expand
@@ -3273,6 +3280,7 @@ paths:
             items:
               enum:
                 - '*'
+                - bulkUpload
                 - schema
               type: string
       responses:
@@ -3356,6 +3364,206 @@ paths:
           style: simple
           schema:
             type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/bulkUpload':
+    get:
+      tags:
+        - applications.synchronization
+      summary: Get bulkUpload from applications
+      operationId: application.synchronization.job_GetBulkUpload
+      parameters:
+        - name: application-id
+          in: path
+          description: The unique identifier of application
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: application
+        - name: synchronizationJob-id
+          in: path
+          description: The unique identifier of synchronizationJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: synchronizationJob
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.bulkUpload'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - applications.synchronization
+      summary: Update the navigation property bulkUpload in applications
+      operationId: application.synchronization.job_UpdateBulkUpload
+      parameters:
+        - name: application-id
+          in: path
+          description: The unique identifier of application
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: application
+        - name: synchronizationJob-id
+          in: path
+          description: The unique identifier of synchronizationJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: synchronizationJob
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.bulkUpload'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.bulkUpload'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - applications.synchronization
+      summary: Delete navigation property bulkUpload for applications
+      operationId: application.synchronization.job_DeleteBulkUpload
+      parameters:
+        - name: application-id
+          in: path
+          description: The unique identifier of application
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: application
+        - name: synchronizationJob-id
+          in: path
+          description: The unique identifier of synchronizationJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: synchronizationJob
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/bulkUpload/$value':
+    get:
+      tags:
+        - applications.synchronization
+      summary: Get media content for the navigation property bulkUpload from applications
+      operationId: application.synchronization.job_GetBulkUploadContent
+      parameters:
+        - name: application-id
+          in: path
+          description: The unique identifier of application
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: application
+        - name: synchronizationJob-id
+          in: path
+          description: The unique identifier of synchronizationJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: synchronizationJob
+      responses:
+        2XX:
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - applications.synchronization
+      summary: Update media content for the navigation property bulkUpload in applications
+      operationId: application.synchronization.job_SetBulkUploadContent
+      parameters:
+        - name: application-id
+          in: path
+          description: The unique identifier of application
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: application
+        - name: synchronizationJob-id
+          in: path
+          description: The unique identifier of synchronizationJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: synchronizationJob
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
       responses:
         2XX:
           description: Success
@@ -6142,6 +6350,7 @@ paths:
                 - spa
                 - tags
                 - tokenEncryptionKeyId
+                - uniqueName
                 - verifiedPublisher
                 - web
                 - appManagementPolicies
@@ -6250,6 +6459,180 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/applications(uniqueName=''{uniqueName}'')':
+    get:
+      tags:
+        - applications.application
+      summary: Get application
+      description: Get the properties and relationships of an application object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/application-get?view=graph-rest-1.0
+      operationId: application_GetApplicationGraphBPreUniqueName
+      parameters:
+        - name: uniqueName
+          in: path
+          description: Alternate key of application
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+                - addIns
+                - api
+                - appId
+                - applicationTemplateId
+                - appRoles
+                - certification
+                - createdDateTime
+                - defaultRedirectUri
+                - description
+                - disabledByMicrosoftStatus
+                - displayName
+                - groupMembershipClaims
+                - identifierUris
+                - info
+                - isDeviceOnlyAuthSupported
+                - isFallbackPublicClient
+                - keyCredentials
+                - logo
+                - notes
+                - oauth2RequirePostResponse
+                - optionalClaims
+                - parentalControlSettings
+                - passwordCredentials
+                - publicClient
+                - publisherDomain
+                - requestSignatureVerification
+                - requiredResourceAccess
+                - samlMetadataUrl
+                - serviceManagementReference
+                - servicePrincipalLockConfiguration
+                - signInAudience
+                - spa
+                - tags
+                - tokenEncryptionKeyId
+                - uniqueName
+                - verifiedPublisher
+                - web
+                - appManagementPolicies
+                - createdOnBehalfOf
+                - extensionProperties
+                - federatedIdentityCredentials
+                - homeRealmDiscoveryPolicies
+                - owners
+                - synchronization
+                - tokenIssuancePolicies
+                - tokenLifetimePolicies
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - appManagementPolicies
+                - createdOnBehalfOf
+                - extensionProperties
+                - federatedIdentityCredentials
+                - homeRealmDiscoveryPolicies
+                - owners
+                - synchronization
+                - tokenIssuancePolicies
+                - tokenLifetimePolicies
+              type: string
+      responses:
+        2XX:
+          description: Retrieved entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.application'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - applications.application
+      summary: Update application
+      description: Update the properties of an application object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/application-update?view=graph-rest-1.0
+      operationId: application_UpdateApplicationGraphBPreUniqueName
+      parameters:
+        - name: uniqueName
+          in: path
+          description: Alternate key of application
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+      requestBody:
+        description: New property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.application'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.application'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - applications.application
+      summary: Delete application
+      description: 'Delete an application object. When deleted, apps are moved to a temporary container and can be restored within 30 days. After that time, they are permanently deleted.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/application-delete?view=graph-rest-1.0
+      operationId: application_DeleteApplicationGraphBPreUniqueName
+      parameters:
+        - name: uniqueName
+          in: path
+          description: Alternate key of application
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   /applications/$count:
     get:
       tags:
@@ -6332,6 +6715,7 @@ paths:
                 - spa
                 - tags
                 - tokenEncryptionKeyId
+                - uniqueName
                 - verifiedPublisher
                 - web
                 - appManagementPolicies
@@ -6426,6 +6810,8 @@ paths:
                 - tags desc
                 - tokenEncryptionKeyId
                 - tokenEncryptionKeyId desc
+                - uniqueName
+                - uniqueName desc
                 - verifiedPublisher
                 - verifiedPublisher desc
                 - web
@@ -13794,6 +14180,7 @@ paths:
                 - status
                 - synchronizationJobSettings
                 - templateId
+                - bulkUpload
                 - schema
               type: string
         - name: $expand
@@ -13807,6 +14194,7 @@ paths:
             items:
               enum:
                 - '*'
+                - bulkUpload
                 - schema
               type: string
       responses:
@@ -13895,6 +14283,7 @@ paths:
                 - status
                 - synchronizationJobSettings
                 - templateId
+                - bulkUpload
                 - schema
               type: string
         - name: $expand
@@ -13908,6 +14297,7 @@ paths:
             items:
               enum:
                 - '*'
+                - bulkUpload
                 - schema
               type: string
       responses:
@@ -13991,6 +14381,206 @@ paths:
           style: simple
           schema:
             type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/{synchronizationJob-id}/bulkUpload':
+    get:
+      tags:
+        - servicePrincipals.synchronization
+      summary: Get bulkUpload from servicePrincipals
+      operationId: servicePrincipal.synchronization.job_GetBulkUpload
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: The unique identifier of servicePrincipal
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - name: synchronizationJob-id
+          in: path
+          description: The unique identifier of synchronizationJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: synchronizationJob
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.bulkUpload'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - servicePrincipals.synchronization
+      summary: Update the navigation property bulkUpload in servicePrincipals
+      operationId: servicePrincipal.synchronization.job_UpdateBulkUpload
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: The unique identifier of servicePrincipal
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - name: synchronizationJob-id
+          in: path
+          description: The unique identifier of synchronizationJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: synchronizationJob
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.bulkUpload'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.bulkUpload'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - servicePrincipals.synchronization
+      summary: Delete navigation property bulkUpload for servicePrincipals
+      operationId: servicePrincipal.synchronization.job_DeleteBulkUpload
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: The unique identifier of servicePrincipal
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - name: synchronizationJob-id
+          in: path
+          description: The unique identifier of synchronizationJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: synchronizationJob
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/{synchronizationJob-id}/bulkUpload/$value':
+    get:
+      tags:
+        - servicePrincipals.synchronization
+      summary: Get media content for the navigation property bulkUpload from servicePrincipals
+      operationId: servicePrincipal.synchronization.job_GetBulkUploadContent
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: The unique identifier of servicePrincipal
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - name: synchronizationJob-id
+          in: path
+          description: The unique identifier of synchronizationJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: synchronizationJob
+      responses:
+        2XX:
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - servicePrincipals.synchronization
+      summary: Update media content for the navigation property bulkUpload in servicePrincipals
+      operationId: servicePrincipal.synchronization.job_SetBulkUploadContent
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: The unique identifier of servicePrincipal
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - name: synchronizationJob-id
+          in: path
+          description: The unique identifier of synchronizationJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: synchronizationJob
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
       responses:
         2XX:
           description: Success
@@ -18259,6 +18849,9 @@ components:
               description: 'Specifies the keyId of a public key from the keyCredentials collection. When configured, Microsoft Entra ID encrypts all the tokens it emits by using the key this property points to. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.'
               format: uuid
               nullable: true
+            uniqueName:
+              type: string
+              nullable: true
             verifiedPublisher:
               $ref: '#/components/schemas/microsoft.graph.verifiedPublisher'
             web:
@@ -19390,8 +19983,17 @@ components:
               type: string
               description: Identifier of the synchronization template this job is based on.
               nullable: true
+            bulkUpload:
+              $ref: '#/components/schemas/microsoft.graph.bulkUpload'
             schema:
               $ref: '#/components/schemas/microsoft.graph.synchronizationSchema'
+          additionalProperties:
+            type: object
+    microsoft.graph.bulkUpload:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: bulkUpload
+          type: object
           additionalProperties:
             type: object
     microsoft.graph.synchronizationJobApplicationParameters:
@@ -19969,6 +20571,9 @@ components:
             theme:
               type: string
               description: 'Specifies a Microsoft 365 group''s color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.'
+              nullable: true
+            uniqueName:
+              type: string
               nullable: true
             unseenCount:
               maximum: 2147483647

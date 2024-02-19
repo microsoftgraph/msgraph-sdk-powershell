@@ -12784,7 +12784,7 @@ paths:
       tags:
         - groups.team
       summary: Get owners from groups
-      description: 'The list of this team''s owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user delegated permissions, no owner can be specified (the current user is the owner). Owner must be specified as an object ID (GUID), not a UPN.'
+      description: 'The list of this team''s owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user-delegated permissions, no owner can be specified (the current user is the owner). The owner must be specified as an object ID (GUID), not a UPN.'
       operationId: group.team_ListOwner
       parameters:
         - name: group-id
@@ -13242,7 +13242,7 @@ paths:
       tags:
         - groups.team
       summary: Get owners from groups
-      description: 'The list of this team''s owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user delegated permissions, no owner can be specified (the current user is the owner). Owner must be specified as an object ID (GUID), not a UPN.'
+      description: 'The list of this team''s owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user-delegated permissions, no owner can be specified (the current user is the owner). The owner must be specified as an object ID (GUID), not a UPN.'
       operationId: group.team_GetOwner
       parameters:
         - name: group-id
@@ -17389,6 +17389,7 @@ paths:
                 - openShifts
                 - schedulingGroups
                 - shifts
+                - shiftsRoleDefinitions
                 - swapShiftsChangeRequests
                 - timeCards
                 - timeOffReasons
@@ -17412,6 +17413,7 @@ paths:
                 - openShifts
                 - schedulingGroups
                 - shifts
+                - shiftsRoleDefinitions
                 - swapShiftsChangeRequests
                 - timeCards
                 - timeOffReasons
@@ -19269,6 +19271,267 @@ paths:
         - groups.team
       summary: Get the number of the resource
       operationId: group.team.schedule.shift_GetCount
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/groups/{group-id}/team/schedule/shiftsRoleDefinitions':
+    get:
+      tags:
+        - groups.team
+      summary: Get shiftsRoleDefinitions from groups
+      operationId: group.team.schedule_ListShiftsRoleDefinition
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - description
+                - description desc
+                - displayName
+                - displayName desc
+                - shiftsRolePermissions
+                - shiftsRolePermissions desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - description
+                - displayName
+                - shiftsRolePermissions
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.shiftsRoleDefinitionCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - groups.team
+      summary: Create new navigation property to shiftsRoleDefinitions for groups
+      operationId: group.team.schedule_CreateShiftsRoleDefinition
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.shiftsRoleDefinition'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.shiftsRoleDefinition'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/groups/{group-id}/team/schedule/shiftsRoleDefinitions/{shiftsRoleDefinition-id}':
+    get:
+      tags:
+        - groups.team
+      summary: Get shiftsRoleDefinitions from groups
+      operationId: group.team.schedule_GetShiftsRoleDefinition
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: shiftsRoleDefinition-id
+          in: path
+          description: The unique identifier of shiftsRoleDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: shiftsRoleDefinition
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - description
+                - displayName
+                - shiftsRolePermissions
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.shiftsRoleDefinition'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - groups.team
+      summary: Update the navigation property shiftsRoleDefinitions in groups
+      operationId: group.team.schedule_UpdateShiftsRoleDefinition
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: shiftsRoleDefinition-id
+          in: path
+          description: The unique identifier of shiftsRoleDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: shiftsRoleDefinition
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.shiftsRoleDefinition'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.shiftsRoleDefinition'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groups.team
+      summary: Delete navigation property shiftsRoleDefinitions for groups
+      operationId: group.team.schedule_DeleteShiftsRoleDefinition
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: shiftsRoleDefinition-id
+          in: path
+          description: The unique identifier of shiftsRoleDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: shiftsRoleDefinition
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/groups/{group-id}/team/schedule/shiftsRoleDefinitions/$count':
+    get:
+      tags:
+        - groups.team
+      summary: Get the number of the resource
+      operationId: group.team.schedule.shiftsRoleDefinition_GetCount
       parameters:
         - name: group-id
           in: path
@@ -29118,7 +29381,7 @@ paths:
       tags:
         - teams.user
       summary: Get owners from teams
-      description: 'The list of this team''s owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user delegated permissions, no owner can be specified (the current user is the owner). Owner must be specified as an object ID (GUID), not a UPN.'
+      description: 'The list of this team''s owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user-delegated permissions, no owner can be specified (the current user is the owner). The owner must be specified as an object ID (GUID), not a UPN.'
       operationId: team_ListOwner
       parameters:
         - name: team-id
@@ -29576,7 +29839,7 @@ paths:
       tags:
         - teams.user
       summary: Get owners from teams
-      description: 'The list of this team''s owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user delegated permissions, no owner can be specified (the current user is the owner). Owner must be specified as an object ID (GUID), not a UPN.'
+      description: 'The list of this team''s owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user-delegated permissions, no owner can be specified (the current user is the owner). The owner must be specified as an object ID (GUID), not a UPN.'
       operationId: team_GetOwner
       parameters:
         - name: team-id
@@ -34623,6 +34886,7 @@ paths:
                 - openShifts
                 - schedulingGroups
                 - shifts
+                - shiftsRoleDefinitions
                 - swapShiftsChangeRequests
                 - timeCards
                 - timeOffReasons
@@ -34646,6 +34910,7 @@ paths:
                 - openShifts
                 - schedulingGroups
                 - shifts
+                - shiftsRoleDefinitions
                 - swapShiftsChangeRequests
                 - timeCards
                 - timeOffReasons
@@ -36552,6 +36817,267 @@ paths:
         - teams.schedule
       summary: Get the number of the resource
       operationId: team.schedule.shift_GetCount
+      parameters:
+        - name: team-id
+          in: path
+          description: The unique identifier of team
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/teams/{team-id}/schedule/shiftsRoleDefinitions':
+    get:
+      tags:
+        - teams.schedule
+      summary: Get shiftsRoleDefinitions from teams
+      operationId: team.schedule_ListShiftsRoleDefinition
+      parameters:
+        - name: team-id
+          in: path
+          description: The unique identifier of team
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - description
+                - description desc
+                - displayName
+                - displayName desc
+                - shiftsRolePermissions
+                - shiftsRolePermissions desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - description
+                - displayName
+                - shiftsRolePermissions
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.shiftsRoleDefinitionCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - teams.schedule
+      summary: Create new navigation property to shiftsRoleDefinitions for teams
+      operationId: team.schedule_CreateShiftsRoleDefinition
+      parameters:
+        - name: team-id
+          in: path
+          description: The unique identifier of team
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.shiftsRoleDefinition'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.shiftsRoleDefinition'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teams/{team-id}/schedule/shiftsRoleDefinitions/{shiftsRoleDefinition-id}':
+    get:
+      tags:
+        - teams.schedule
+      summary: Get shiftsRoleDefinitions from teams
+      operationId: team.schedule_GetShiftsRoleDefinition
+      parameters:
+        - name: team-id
+          in: path
+          description: The unique identifier of team
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: shiftsRoleDefinition-id
+          in: path
+          description: The unique identifier of shiftsRoleDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: shiftsRoleDefinition
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - description
+                - displayName
+                - shiftsRolePermissions
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.shiftsRoleDefinition'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - teams.schedule
+      summary: Update the navigation property shiftsRoleDefinitions in teams
+      operationId: team.schedule_UpdateShiftsRoleDefinition
+      parameters:
+        - name: team-id
+          in: path
+          description: The unique identifier of team
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: shiftsRoleDefinition-id
+          in: path
+          description: The unique identifier of shiftsRoleDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: shiftsRoleDefinition
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.shiftsRoleDefinition'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.shiftsRoleDefinition'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - teams.schedule
+      summary: Delete navigation property shiftsRoleDefinitions for teams
+      operationId: team.schedule_DeleteShiftsRoleDefinition
+      parameters:
+        - name: team-id
+          in: path
+          description: The unique identifier of team
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: shiftsRoleDefinition-id
+          in: path
+          description: The unique identifier of shiftsRoleDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: shiftsRoleDefinition
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teams/{team-id}/schedule/shiftsRoleDefinitions/$count':
+    get:
+      tags:
+        - teams.schedule
+      summary: Get the number of the resource
+      operationId: team.schedule.shiftsRoleDefinition_GetCount
       parameters:
         - name: team-id
           in: path
@@ -46787,11 +47313,11 @@ paths:
     get:
       tags:
         - teamwork.teamTemplate
-      summary: List definitions
-      description: 'List the teamTemplateDefinition objects associated with a teamTemplate. '
+      summary: List teamTemplates
+      description: 'Get the list of teamTemplate objects that are available for a tenant. '
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/teamtemplate-list-definitions?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/teamwork-list-teamtemplates?view=graph-rest-1.0
       operationId: teamwork_ListTeamTemplate
       parameters:
         - $ref: '#/components/parameters/top'
@@ -55634,7 +56160,7 @@ paths:
       tags:
         - teamwork.teamTemplate
       summary: Get owners from teamwork
-      description: 'The list of this team''s owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user delegated permissions, no owner can be specified (the current user is the owner). Owner must be specified as an object ID (GUID), not a UPN.'
+      description: 'The list of this team''s owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user-delegated permissions, no owner can be specified (the current user is the owner). The owner must be specified as an object ID (GUID), not a UPN.'
       operationId: teamwork.teamTemplate.definition.teamDefinition_ListOwner
       parameters:
         - name: teamTemplate-id
@@ -56100,7 +56626,7 @@ paths:
       tags:
         - teamwork.teamTemplate
       summary: Get owners from teamwork
-      description: 'The list of this team''s owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user delegated permissions, no owner can be specified (the current user is the owner). Owner must be specified as an object ID (GUID), not a UPN.'
+      description: 'The list of this team''s owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user-delegated permissions, no owner can be specified (the current user is the owner). The owner must be specified as an object ID (GUID), not a UPN.'
       operationId: teamwork.teamTemplate.definition.teamDefinition_GetOwner
       parameters:
         - name: teamTemplate-id
@@ -61875,6 +62401,7 @@ paths:
                 - openShifts
                 - schedulingGroups
                 - shifts
+                - shiftsRoleDefinitions
                 - swapShiftsChangeRequests
                 - timeCards
                 - timeOffReasons
@@ -61898,6 +62425,7 @@ paths:
                 - openShifts
                 - schedulingGroups
                 - shifts
+                - shiftsRoleDefinitions
                 - swapShiftsChangeRequests
                 - timeCards
                 - timeOffReasons
@@ -64108,6 +64636,315 @@ paths:
         - teamwork.teamTemplate
       summary: Get the number of the resource
       operationId: teamwork.teamTemplate.definition.teamDefinition.schedule.shift_GetCount
+      parameters:
+        - name: teamTemplate-id
+          in: path
+          description: The unique identifier of teamTemplate
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamTemplate
+        - name: teamTemplateDefinition-id
+          in: path
+          description: The unique identifier of teamTemplateDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamTemplateDefinition
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/teamwork/teamTemplates/{teamTemplate-id}/definitions/{teamTemplateDefinition-id}/teamDefinition/schedule/shiftsRoleDefinitions':
+    get:
+      tags:
+        - teamwork.teamTemplate
+      summary: Get shiftsRoleDefinitions from teamwork
+      operationId: teamwork.teamTemplate.definition.teamDefinition.schedule_ListShiftsRoleDefinition
+      parameters:
+        - name: teamTemplate-id
+          in: path
+          description: The unique identifier of teamTemplate
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamTemplate
+        - name: teamTemplateDefinition-id
+          in: path
+          description: The unique identifier of teamTemplateDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamTemplateDefinition
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - description
+                - description desc
+                - displayName
+                - displayName desc
+                - shiftsRolePermissions
+                - shiftsRolePermissions desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - description
+                - displayName
+                - shiftsRolePermissions
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.shiftsRoleDefinitionCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - teamwork.teamTemplate
+      summary: Create new navigation property to shiftsRoleDefinitions for teamwork
+      operationId: teamwork.teamTemplate.definition.teamDefinition.schedule_CreateShiftsRoleDefinition
+      parameters:
+        - name: teamTemplate-id
+          in: path
+          description: The unique identifier of teamTemplate
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamTemplate
+        - name: teamTemplateDefinition-id
+          in: path
+          description: The unique identifier of teamTemplateDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamTemplateDefinition
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.shiftsRoleDefinition'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.shiftsRoleDefinition'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teamwork/teamTemplates/{teamTemplate-id}/definitions/{teamTemplateDefinition-id}/teamDefinition/schedule/shiftsRoleDefinitions/{shiftsRoleDefinition-id}':
+    get:
+      tags:
+        - teamwork.teamTemplate
+      summary: Get shiftsRoleDefinitions from teamwork
+      operationId: teamwork.teamTemplate.definition.teamDefinition.schedule_GetShiftsRoleDefinition
+      parameters:
+        - name: teamTemplate-id
+          in: path
+          description: The unique identifier of teamTemplate
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamTemplate
+        - name: teamTemplateDefinition-id
+          in: path
+          description: The unique identifier of teamTemplateDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamTemplateDefinition
+        - name: shiftsRoleDefinition-id
+          in: path
+          description: The unique identifier of shiftsRoleDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: shiftsRoleDefinition
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - description
+                - displayName
+                - shiftsRolePermissions
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.shiftsRoleDefinition'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - teamwork.teamTemplate
+      summary: Update the navigation property shiftsRoleDefinitions in teamwork
+      operationId: teamwork.teamTemplate.definition.teamDefinition.schedule_UpdateShiftsRoleDefinition
+      parameters:
+        - name: teamTemplate-id
+          in: path
+          description: The unique identifier of teamTemplate
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamTemplate
+        - name: teamTemplateDefinition-id
+          in: path
+          description: The unique identifier of teamTemplateDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamTemplateDefinition
+        - name: shiftsRoleDefinition-id
+          in: path
+          description: The unique identifier of shiftsRoleDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: shiftsRoleDefinition
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.shiftsRoleDefinition'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.shiftsRoleDefinition'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - teamwork.teamTemplate
+      summary: Delete navigation property shiftsRoleDefinitions for teamwork
+      operationId: teamwork.teamTemplate.definition.teamDefinition.schedule_DeleteShiftsRoleDefinition
+      parameters:
+        - name: teamTemplate-id
+          in: path
+          description: The unique identifier of teamTemplate
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamTemplate
+        - name: teamTemplateDefinition-id
+          in: path
+          description: The unique identifier of teamTemplateDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamTemplateDefinition
+        - name: shiftsRoleDefinition-id
+          in: path
+          description: The unique identifier of shiftsRoleDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: shiftsRoleDefinition
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teamwork/teamTemplates/{teamTemplate-id}/definitions/{teamTemplateDefinition-id}/teamDefinition/schedule/shiftsRoleDefinitions/$count':
+    get:
+      tags:
+        - teamwork.teamTemplate
+      summary: Get the number of the resource
+      operationId: teamwork.teamTemplate.definition.teamDefinition.schedule.shiftsRoleDefinition_GetCount
       parameters:
         - name: teamTemplate-id
           in: path
@@ -73817,7 +74654,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamGuestSettings'
             internalId:
               type: string
-              description: A unique ID for the team that has been used in a few places such as the audit log/Office 365 Management Activity API.
+              description: A unique ID for the team used in a few places such as the audit log/Office 365 Management Activity API.
               nullable: true
             isArchived:
               type: boolean
@@ -73825,7 +74662,7 @@ components:
               nullable: true
             isMembershipLimitedToOwners:
               type: boolean
-              description: 'If set to true, the team is currently in the owner-only team membership state and not accessible by other team members, such as students.'
+              description: 'If set to true, the team is currently in the owner-only team membership state and inaccessible by other team members, such as students.'
               nullable: true
             memberSettings:
               $ref: '#/components/schemas/microsoft.graph.teamMemberSettings'
@@ -73843,7 +74680,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamVisibilityType'
             webUrl:
               type: string
-              description: 'A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.'
+              description: 'A hyperlink that goes to the team in the Microsoft Teams client. It is the URL you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.'
               nullable: true
             allChannels:
               type: array
@@ -73887,7 +74724,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.user'
-              description: 'The list of this team''s owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user delegated permissions, no owner can be specified (the current user is the owner). Owner must be specified as an object ID (GUID), not a UPN.'
+              description: 'The list of this team''s owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user-delegated permissions, no owner can be specified (the current user is the owner). The owner must be specified as an object ID (GUID), not a UPN.'
               x-ms-navigationProperty: true
             permissionGrants:
               type: array
@@ -75317,6 +76154,11 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.shift'
               description: The shifts in the schedule.
               x-ms-navigationProperty: true
+            shiftsRoleDefinitions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.shiftsRoleDefinition'
+              x-ms-navigationProperty: true
             swapShiftsChangeRequests:
               type: array
               items:
@@ -75485,6 +76327,22 @@ components:
               nullable: true
             userInfo:
               $ref: '#/components/schemas/microsoft.graph.shiftsUserInfo'
+          additionalProperties:
+            type: object
+    microsoft.graph.shiftsRoleDefinition:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: shiftsRoleDefinition
+          type: object
+          properties:
+            description:
+              type: string
+            displayName:
+              type: string
+            shiftsRolePermissions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.shiftsRolePermission'
           additionalProperties:
             type: object
     microsoft.graph.swapShiftsChangeRequest:
@@ -79761,7 +80619,7 @@ components:
               nullable: true
             manufacturer:
               type: string
-              description: Manufacturer of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
+              description: Manufacturer of the device. Read-only.
               nullable: true
             mdmAppId:
               type: string
@@ -79769,7 +80627,7 @@ components:
               nullable: true
             model:
               type: string
-              description: Model of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
+              description: Model of the device. Read-only.
               nullable: true
             name:
               type: string
@@ -79827,7 +80685,7 @@ components:
               description: 'List of labels applied to the device by the system. Supports $filter (/$count eq 0, /$count ne 0).'
             trustType:
               type: string
-              description: 'Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Microsoft Entra ID). For more details, see Introduction to device management in Microsoft Entra ID.'
+              description: 'Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Microsoft Entra ID). For more information, see Introduction to device management in Microsoft Entra ID.'
               nullable: true
             commands:
               type: array
@@ -81594,12 +82452,15 @@ components:
       properties:
         code:
           type: string
+          description: The code for the schedulingGroup.
           nullable: true
         displayName:
           type: string
+          description: The display name for the schedulingGroup. Required.
           nullable: true
         schedulingGroupId:
           type: string
+          description: ID of the schedulingGroup.
           nullable: true
       additionalProperties:
         type: object
@@ -81609,9 +82470,11 @@ components:
       properties:
         displayName:
           type: string
+          description: The display name for the team. Required.
           nullable: true
         teamId:
           type: string
+          description: ID of the team.
           nullable: true
       additionalProperties:
         type: object
@@ -81642,10 +82505,22 @@ components:
       properties:
         displayName:
           type: string
+          description: The display name for the user. Required.
           nullable: true
         userId:
           type: string
+          description: ID of the user.
           nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.shiftsRolePermission:
+      title: shiftsRolePermission
+      type: object
+      properties:
+        allowedResourceActions:
+          type: array
+          items:
+            type: string
       additionalProperties:
         type: object
     microsoft.graph.timeCardBreak:
@@ -82450,6 +83325,19 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.shift'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.shiftsRoleDefinitionCollectionResponse:
+      title: Collection of shiftsRoleDefinition
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.shiftsRoleDefinition'
         '@odata.nextLink':
           type: string
           nullable: true
@@ -99735,6 +100623,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.shiftCollectionResponse'
+    microsoft.graph.shiftsRoleDefinitionCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.shiftsRoleDefinitionCollectionResponse'
     microsoft.graph.swapShiftsChangeRequestCollectionResponse:
       description: Retrieved collection
       content:

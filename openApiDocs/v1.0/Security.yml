@@ -6007,6 +6007,7 @@ paths:
                 - securityIdentifier
                 - serviceProvisioningErrors
                 - theme
+                - uniqueName
                 - unseenCount
                 - visibility
                 - acceptedSenders
@@ -25016,6 +25017,9 @@ components:
             theme:
               type: string
               description: 'Specifies a Microsoft 365 group''s color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.'
+              nullable: true
+            uniqueName:
+              type: string
               nullable: true
             unseenCount:
               maximum: 2147483647

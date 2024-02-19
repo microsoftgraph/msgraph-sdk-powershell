@@ -446,6 +446,8 @@ paths:
                 - serviceProvisioningErrors desc
                 - theme
                 - theme desc
+                - uniqueName
+                - uniqueName desc
                 - unseenCount
                 - unseenCount desc
                 - visibility
@@ -500,6 +502,7 @@ paths:
                 - securityIdentifier
                 - serviceProvisioningErrors
                 - theme
+                - uniqueName
                 - unseenCount
                 - visibility
                 - acceptedSenders
@@ -672,6 +675,7 @@ paths:
                 - securityIdentifier
                 - serviceProvisioningErrors
                 - theme
+                - uniqueName
                 - unseenCount
                 - visibility
                 - acceptedSenders
@@ -754,11 +758,11 @@ paths:
     patch:
       tags:
         - groups.group
-      summary: Update group
-      description: Update the properties of a group object.
+      summary: Add members
+      description: Add a member to a security or Microsoft 365 group through the members navigation property. The following table shows the types of members that can be added to either security groups or Microsoft 365 groups.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/group-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/group-post-members?view=graph-rest-1.0
       operationId: group_UpdateGroup
       parameters:
         - name: group-id
@@ -5133,11 +5137,11 @@ paths:
     post:
       tags:
         - groups.conversation
-      summary: Create conversation
-      description: Use reply thread or reply post to further post to that conversation.
+      summary: Create open extension
+      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/group-post-conversations?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
       operationId: group_CreateConversation
       parameters:
         - name: group-id
@@ -5170,10 +5174,10 @@ paths:
       tags:
         - groups.conversation
       summary: Get conversation
-      description: Retrieve the properties and relationships of conversation object.
+      description: The group's conversations.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversation-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/group-get-conversation?view=graph-rest-1.0
       operationId: group_GetConversation
       parameters:
         - name: group-id
@@ -5574,10 +5578,10 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action reply
-      description: 'Reply to a post and add a new post to the specified thread in a group conversation.  You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.'
+      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/post-reply?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
       operationId: group.conversation.thread_reply
       parameters:
         - name: group-id
@@ -5626,11 +5630,11 @@ paths:
     get:
       tags:
         - groups.conversation
-      summary: List posts
-      description: "Get the posts of the specified thread. You can specify both the parent conversation and the thread, or, \nyou can specify the thread without referencing the parent conversation."
+      summary: Get post
+      description: "Get the properties and relationships of a post in a specified thread. You can specify both the parent \nconversation and the thread, or, you can specify the thread without referencing the parent conversation. Since the post resource supports extensions, you can also use the GET operation to get custom properties and extension data in a post instance."
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationthread-list-posts?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/post-get?view=graph-rest-1.0
       operationId: group.conversation.thread_ListPost
       parameters:
         - name: group-id
@@ -30903,11 +30907,11 @@ paths:
     get:
       tags:
         - groups.conversationThread
-      summary: Get conversation thread
-      description: Get a thread object.
+      summary: Get conversationThread
+      description: "Get a specific thread that belongs to a group. You can specify both the parent conversation and the thread, or, \nyou can specify the thread without referencing the parent conversation. "
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/group-get-thread?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/conversationthread-get?view=graph-rest-1.0
       operationId: group_GetThread
       parameters:
         - name: group-id
@@ -31042,10 +31046,10 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action reply
-      description: 'Reply to a post and add a new post to the specified thread in a group conversation.  You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.'
+      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/post-reply?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
       operationId: group.thread_reply
       parameters:
         - name: group-id
@@ -31086,11 +31090,11 @@ paths:
     get:
       tags:
         - groups.conversationThread
-      summary: List posts
-      description: "Get the posts of the specified thread. You can specify both the parent conversation and the thread, or, \nyou can specify the thread without referencing the parent conversation."
+      summary: Get post
+      description: "Get the properties and relationships of a post in a specified thread. You can specify both the parent \nconversation and the thread, or, you can specify the thread without referencing the parent conversation. Since the post resource supports extensions, you can also use the GET operation to get custom properties and extension data in a post instance."
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationthread-list-posts?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/post-get?view=graph-rest-1.0
       operationId: group.thread_ListPost
       parameters:
         - name: group-id
@@ -34872,6 +34876,219 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/groups(uniqueName=''{uniqueName}'')':
+    get:
+      tags:
+        - groups.group
+      summary: Get group
+      description: 'Get the properties and relationships of a group object. This operation returns by default only a subset of all the available properties, as noted in the Properties section. To get properties that aren''t_ returned by default, specify them in a $select OData query option. The hasMembersWithLicenseErrors and isArchived properties are an exception and aren''t returned in the $select query.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/group-get?view=graph-rest-1.0
+      operationId: group_GetGroupGraphBPreUniqueName
+      parameters:
+        - name: uniqueName
+          in: path
+          description: Alternate key of group
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+                - allowExternalSenders
+                - assignedLabels
+                - assignedLicenses
+                - autoSubscribeNewMembers
+                - classification
+                - createdDateTime
+                - description
+                - displayName
+                - expirationDateTime
+                - groupTypes
+                - hasMembersWithLicenseErrors
+                - hideFromAddressLists
+                - hideFromOutlookClients
+                - isArchived
+                - isAssignableToRole
+                - isSubscribedByMail
+                - licenseProcessingState
+                - mail
+                - mailEnabled
+                - mailNickname
+                - membershipRule
+                - membershipRuleProcessingState
+                - onPremisesDomainName
+                - onPremisesLastSyncDateTime
+                - onPremisesNetBiosName
+                - onPremisesProvisioningErrors
+                - onPremisesSamAccountName
+                - onPremisesSecurityIdentifier
+                - onPremisesSyncEnabled
+                - preferredDataLocation
+                - preferredLanguage
+                - proxyAddresses
+                - renewedDateTime
+                - securityEnabled
+                - securityIdentifier
+                - serviceProvisioningErrors
+                - theme
+                - uniqueName
+                - unseenCount
+                - visibility
+                - acceptedSenders
+                - appRoleAssignments
+                - calendar
+                - calendarView
+                - conversations
+                - createdOnBehalfOf
+                - drive
+                - drives
+                - events
+                - extensions
+                - groupLifecyclePolicies
+                - memberOf
+                - members
+                - membersWithLicenseErrors
+                - onenote
+                - owners
+                - permissionGrants
+                - photo
+                - photos
+                - planner
+                - rejectedSenders
+                - settings
+                - sites
+                - team
+                - threads
+                - transitiveMemberOf
+                - transitiveMembers
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - acceptedSenders
+                - appRoleAssignments
+                - calendar
+                - calendarView
+                - conversations
+                - createdOnBehalfOf
+                - drive
+                - drives
+                - events
+                - extensions
+                - groupLifecyclePolicies
+                - memberOf
+                - members
+                - membersWithLicenseErrors
+                - onenote
+                - owners
+                - permissionGrants
+                - photo
+                - photos
+                - planner
+                - rejectedSenders
+                - settings
+                - sites
+                - team
+                - threads
+                - transitiveMemberOf
+                - transitiveMembers
+              type: string
+      responses:
+        2XX:
+          description: Retrieved entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.group'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - groups.group
+      summary: Add members
+      description: Add a member to a security or Microsoft 365 group through the members navigation property. The following table shows the types of members that can be added to either security groups or Microsoft 365 groups.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/group-post-members?view=graph-rest-1.0
+      operationId: group_UpdateGroupGraphBPreUniqueName
+      parameters:
+        - name: uniqueName
+          in: path
+          description: Alternate key of group
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+      requestBody:
+        description: New property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.group'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.group'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groups.group
+      summary: Delete group
+      description: 'Delete group. When deleted, Microsoft 365 groups are moved to a temporary container and can be restored within 30 days. After that time, they''re permanently deleted. This isn''t applicable to Security groups and Distribution groups which are permanently deleted immediately. To learn more, see deletedItems.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/group-delete?view=graph-rest-1.0
+      operationId: group_DeleteGroupGraphBPreUniqueName
+      parameters:
+        - name: uniqueName
+          in: path
+          description: Alternate key of group
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   /groups/$count:
     get:
       tags:
@@ -34957,6 +35174,7 @@ paths:
                 - securityIdentifier
                 - serviceProvisioningErrors
                 - theme
+                - uniqueName
                 - unseenCount
                 - visibility
                 - acceptedSenders
@@ -35075,6 +35293,8 @@ paths:
                 - serviceProvisioningErrors desc
                 - theme
                 - theme desc
+                - uniqueName
+                - uniqueName desc
                 - unseenCount
                 - unseenCount desc
                 - visibility
@@ -36401,6 +36621,9 @@ components:
               type: string
               description: 'Specifies a Microsoft 365 group''s color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.'
               nullable: true
+            uniqueName:
+              type: string
+              nullable: true
             unseenCount:
               maximum: 2147483647
               minimum: -2147483648
@@ -37563,6 +37786,9 @@ components:
               type: string
               description: 'Specifies the keyId of a public key from the keyCredentials collection. When configured, Microsoft Entra ID encrypts all the tokens it emits by using the key this property points to. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.'
               format: uuid
+              nullable: true
+            uniqueName:
+              type: string
               nullable: true
             verifiedPublisher:
               $ref: '#/components/schemas/microsoft.graph.verifiedPublisher'
@@ -45858,6 +46084,8 @@ components:
               type: string
               description: Identifier of the synchronization template this job is based on.
               nullable: true
+            bulkUpload:
+              $ref: '#/components/schemas/microsoft.graph.bulkUpload'
             schema:
               $ref: '#/components/schemas/microsoft.graph.synchronizationSchema'
           additionalProperties:
@@ -49128,6 +49356,13 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.bulkUpload:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: bulkUpload
+          type: object
+          additionalProperties:
+            type: object
     microsoft.graph.synchronizationSchema:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'

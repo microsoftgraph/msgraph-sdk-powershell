@@ -331,6 +331,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRegionalAndLanguageSettings
 
+### System.Collections.Hashtable
+
 ## NOTES
 
 ALIASES

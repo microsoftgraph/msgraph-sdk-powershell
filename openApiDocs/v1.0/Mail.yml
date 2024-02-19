@@ -2006,10 +2006,10 @@ paths:
       tags:
         - users.mailFolder
       summary: Add attachment
-      description: "Use this API to add an attachment to a message. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. You can add an attachment to an existing message by posting to its attachments collection, or you can\nadd an attachment to a message that is being created and sent on the fly. This operation limits the size of the attachment you can add to under 3 MB."
+      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource."
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/message-post-attachments?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
       operationId: user.mailFolder.childFolder.message_CreateAttachment
       parameters:
         - name: user-id
@@ -3658,10 +3658,10 @@ paths:
       tags:
         - users.mailFolder
       summary: Add attachment
-      description: "Use this API to add an attachment to a message. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. You can add an attachment to an existing message by posting to its attachments collection, or you can\nadd an attachment to a message that is being created and sent on the fly. This operation limits the size of the attachment you can add to under 3 MB."
+      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource."
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/message-post-attachments?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
       operationId: user.mailFolder.message_CreateAttachment
       parameters:
         - name: user-id
@@ -4289,7 +4289,7 @@ paths:
       description: The messages in a mailbox or folder. Read-only. Nullable.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/user-list-messages?view=graph-rest-1.0
       operationId: user_ListMessage
       parameters:
         - name: user-id
@@ -4459,11 +4459,11 @@ paths:
     post:
       tags:
         - users.message
-      summary: Create message
-      description: "Create a draft of a new message in either JSON or MIME format. When using JSON format, you can:\n- Include an attachment to the message.\n- Update the draft later to add content to the body or change other message properties. When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\n- /* Add any attachments and S/MIME properties to the MIME content. By default, this operation saves the draft in the Drafts folder. Send the draft message in a subsequent operation. Alternatively, send a new message in a single operation, or create a draft to forward, reply and reply-all to an existing message."
+      summary: Create open extension
+      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/user-post-messages?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
       operationId: user_CreateMessage
       parameters:
         - name: user-id
@@ -4499,7 +4499,7 @@ paths:
       description: The messages in a mailbox or folder. Read-only. Nullable.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/eventmessage-get?view=graph-rest-1.0
       operationId: user_GetMessage
       parameters:
         - name: user-id
@@ -4685,7 +4685,7 @@ paths:
       summary: Get media content for the navigation property messages from users
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/user-list-messages?view=graph-rest-1.0
       operationId: user_GetMessagesContent
       parameters:
         - name: user-id
@@ -4852,10 +4852,10 @@ paths:
       tags:
         - users.message
       summary: Add attachment
-      description: "Use this API to add an attachment to a message. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. You can add an attachment to an existing message by posting to its attachments collection, or you can\nadd an attachment to a message that is being created and sent on the fly. This operation limits the size of the attachment you can add to under 3 MB."
+      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource."
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/message-post-attachments?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
       operationId: user.message_CreateAttachment
       parameters:
         - name: user-id

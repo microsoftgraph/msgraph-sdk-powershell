@@ -1,9 +1,22 @@
-### Example 1: Code snippet
+### Example 1: List sites using query parameters
 
-```powershellImport-Module Microsoft.Graph.Sites
+```powershell
 
-Get-MgSite -SiteId $siteId
+Import-Module Microsoft.Graph.Sites
+
+Get-MgSite -Property "siteCollection,webUrl" -Filter "siteCollection/root ne null" 
+
 ```
-This example shows how to use the Get-MgSite Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example will list sites using query parameters
+
+### Example 2: List all sites
+
+```powershell
+
+Import-Module Microsoft.Graph.Sites
+
+Get-MgSite
+
+```
+This example will list all sites
 

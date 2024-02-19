@@ -1,6 +1,8 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Beta.SchemaExtensions
+```powershell
+
+Import-Module Microsoft.Graph.Beta.SchemaExtensions
 
 $params = @{
 	owner = "ef4cb9a8-97c3-4ca7-854b-5cb5ced376fa"
@@ -25,7 +27,7 @@ $params = @{
 }
 
 Update-MgBetaSchemaExtension -SchemaExtensionId $schemaExtensionId -BodyParameter $params
+
 ```
 This example shows how to use the Update-MgBetaSchemaExtension Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
