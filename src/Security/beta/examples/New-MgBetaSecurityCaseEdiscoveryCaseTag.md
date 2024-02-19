@@ -1,18 +1,35 @@
-### Example 1: {{ Add title here }}
+### Example 1: Create a tag
+
 ```powershell
-PS C:\> {{ Add code here }}
 
-{{ Add output here }}
+Import-Module Microsoft.Graph.Beta.Security
+
+$params = @{
+	displayName = "My tag API"
+	description = "Use Graph API to create tags"
+	childSelectability = "Many"
+}
+
+New-MgBetaSecurityCaseEdiscoveryCaseTag -EdiscoveryCaseId $ediscoveryCaseId -BodyParameter $params
+
 ```
+This example will create a tag
 
-{{ Add description here }}
+### Example 2: Create a tag with a parent
 
-### Example 2: {{ Add title here }}
 ```powershell
-PS C:\> {{ Add code here }}
 
-{{ Add output here }}
+Import-Module Microsoft.Graph.Beta.Security
+
+$params = @{
+	displayName = "My tag API"
+	description = "Use Graph API to create tags"
+	childSelectability = "Many"
+	"parent@odata.bind" = ""
+}
+
+New-MgBetaSecurityCaseEdiscoveryCaseTag -EdiscoveryCaseId $ediscoveryCaseId -BodyParameter $params
+
 ```
-
-{{ Add description here }}
+This example will create a tag with a parent
 
