@@ -16,15 +16,15 @@ Create new navigation property to windowsInformationProtectionWipeActions for de
 ```
 New-MgBetaDeviceAppManagementWindowsInformationProtectionWipeAction [-AdditionalProperties <Hashtable>]
  [-Id <String>] [-LastCheckInDateTime <DateTime>] [-Status <String>] [-TargetedDeviceMacAddress <String>]
- [-TargetedDeviceName <String>] [-TargetedDeviceRegistrationId <String>] [-TargetedUserId <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-TargetedDeviceName <String>] [-TargetedDeviceRegistrationId <String>] [-TargetedUserId <String>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaDeviceAppManagementWindowsInformationProtectionWipeAction
- -BodyParameter <IMicrosoftGraphWindowsInformationProtectionWipeAction> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphWindowsInformationProtectionWipeAction> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -73,21 +73,6 @@ Parameter Sets: Create
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -238,13 +223,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionWipeAction
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionWipeAction
-
-### System.Collections.Hashtable
 
 ## NOTES
 

@@ -15,14 +15,14 @@ Print jobs can be canceled only on behalf of a user, using delegated permissions
 
 ### Cancel (Default)
 ```
-Stop-MgBetaPrintPrinterJob -PrinterId <String> -PrintJobId <String> [-Headers <IDictionary>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Stop-MgBetaPrintPrinterJob -PrinterId <String> -PrintJobId <String> [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### CancelViaIdentity
 ```
-Stop-MgBetaPrintPrinterJob -InputObject <IDevicesCloudPrintIdentity> [-Headers <IDictionary>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Stop-MgBetaPrintPrinterJob -InputObject <IDevicesCloudPrintIdentity> [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -46,21 +46,6 @@ Print jobs can be canceled only on behalf of a user, using delegated permissions
 
 
 ## PARAMETERS
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
 
 ### -InputObject
 Identity Parameter
@@ -161,13 +146,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCloudPrintIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
-
-### System.Collections.Hashtable
 
 ## NOTES
 

@@ -15,13 +15,13 @@ Delete navigation property mobileAppIntentAndStates for users
 ### Delete (Default)
 ```
 Remove-MgBetaUserMobileAppIntentAndState -MobileAppIntentAndStateId <String> -UserId <String>
- [-IfMatch <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
 Remove-MgBetaUserMobileAppIntentAndState -InputObject <IDevicesCorporateManagementIdentity>
- [-IfMatch <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -44,21 +44,6 @@ Delete navigation property mobileAppIntentAndStates for users
 {{ Add output here }}
 
 ## PARAMETERS
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
 
 ### -IfMatch
 ETag
@@ -174,13 +159,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
-
-### System.Collections.Hashtable
 
 ## NOTES
 

@@ -17,20 +17,20 @@ Create new navigation property to trending for users
 New-MgBetaUserInsightTrending -UserId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-LastModifiedDateTime <DateTime>] [-Resource <IMicrosoftGraphEntity>]
  [-ResourceReference <IMicrosoftGraphResourceReference>]
- [-ResourceVisualization <IMicrosoftGraphResourceVisualization>] [-Weight <Double>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ResourceVisualization <IMicrosoftGraphResourceVisualization>] [-Weight <Double>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgBetaUserInsightTrending -UserId <String> -BodyParameter <IMicrosoftGraphTrending>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaUserInsightTrending -UserId <String> -BodyParameter <IMicrosoftGraphTrending> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaUserInsightTrending -InputObject <IUsersIdentity> -BodyParameter <IMicrosoftGraphTrending>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -38,8 +38,8 @@ New-MgBetaUserInsightTrending -InputObject <IUsersIdentity> -BodyParameter <IMic
 New-MgBetaUserInsightTrending -InputObject <IUsersIdentity> [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-LastModifiedDateTime <DateTime>] [-Resource <IMicrosoftGraphEntity>]
  [-ResourceReference <IMicrosoftGraphResourceReference>]
- [-ResourceVisualization <IMicrosoftGraphResourceVisualization>] [-Weight <Double>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ResourceVisualization <IMicrosoftGraphResourceVisualization>] [-Weight <Double>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -88,21 +88,6 @@ Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -276,13 +261,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTrending
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -318,7 +299,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[Weight <Double?>]`: Value indicating how much the document is currently trending. The larger the number, the more the document is currently trending around the user (the more relevant it is). Returned documents are sorted by this value.
 
 `INPUTOBJECT <IUsersIdentity>`: Identity Parameter
-  - `[AppId <String>]`: Alternate key of servicePrincipal
   - `[AttachmentBaseId <String>]`: The unique identifier of attachmentBase
   - `[AttachmentId <String>]`: The unique identifier of attachment
   - `[AttachmentSessionId <String>]`: The unique identifier of attachmentSession

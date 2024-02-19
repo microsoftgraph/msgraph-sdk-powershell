@@ -14,14 +14,13 @@ Create new navigation property to policies for trustFramework
 
 ### CreateExpanded (Default)
 ```
-New-MgBetaTrustFrameworkPolicy [-AdditionalProperties <Hashtable>] [-Id <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaTrustFrameworkPolicy [-AdditionalProperties <Hashtable>] [-Id <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgBetaTrustFrameworkPolicy -BodyParameter <Hashtable> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+New-MgBetaTrustFrameworkPolicy -BodyParameter <Hashtable> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -69,21 +68,6 @@ Parameter Sets: Create
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -144,11 +128,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Collections.Hashtable
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
-
-### System.Collections.Hashtable
 
 ### System.String
 

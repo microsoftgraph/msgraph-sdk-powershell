@@ -18,19 +18,19 @@ New-MgPrintShareJob -PrinterShareId <String> [-AdditionalProperties <Hashtable>]
  [-Configuration <IMicrosoftGraphPrintJobConfiguration>] [-CreatedBy <IMicrosoftGraphUserIdentity>]
  [-CreatedDateTime <DateTime>] [-Documents <IMicrosoftGraphPrintDocument[]>] [-Id <String>] [-IsFetchable]
  [-RedirectedFrom <String>] [-RedirectedTo <String>] [-Status <IMicrosoftGraphPrintJobStatus>]
- [-Tasks <IMicrosoftGraphPrintTask[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Tasks <IMicrosoftGraphPrintTask[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgPrintShareJob -PrinterShareId <String> -BodyParameter <IMicrosoftGraphPrintJob> [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgPrintShareJob -PrinterShareId <String> -BodyParameter <IMicrosoftGraphPrintJob> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgPrintShareJob -InputObject <IDevicesCloudPrintIdentity> -BodyParameter <IMicrosoftGraphPrintJob>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -39,7 +39,7 @@ New-MgPrintShareJob -InputObject <IDevicesCloudPrintIdentity> [-AdditionalProper
  [-Configuration <IMicrosoftGraphPrintJobConfiguration>] [-CreatedBy <IMicrosoftGraphUserIdentity>]
  [-CreatedDateTime <DateTime>] [-Documents <IMicrosoftGraphPrintDocument[]>] [-Id <String>] [-IsFetchable]
  [-RedirectedFrom <String>] [-RedirectedTo <String>] [-Status <IMicrosoftGraphPrintJobStatus>]
- [-Tasks <IMicrosoftGraphPrintTask[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Tasks <IMicrosoftGraphPrintTask[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -155,21 +155,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -337,13 +322,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintJob
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintJob
-
-### System.Collections.Hashtable
 
 ## NOTES
 

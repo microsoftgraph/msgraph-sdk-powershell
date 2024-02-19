@@ -16,29 +16,27 @@ Create new navigation property to apps for deviceAppManagement
 ```
 New-MgBetaDeviceAppManagementTargetedManagedAppConfigurationApp -TargetedManagedAppConfigurationId <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-MobileAppIdentifier <Hashtable>] [-Version <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaDeviceAppManagementTargetedManagedAppConfigurationApp -TargetedManagedAppConfigurationId <String>
- -BodyParameter <IMicrosoftGraphManagedMobileApp> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphManagedMobileApp> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaDeviceAppManagementTargetedManagedAppConfigurationApp
  -InputObject <IDevicesCorporateManagementIdentity> -BodyParameter <IMicrosoftGraphManagedMobileApp>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgBetaDeviceAppManagementTargetedManagedAppConfigurationApp
  -InputObject <IDevicesCorporateManagementIdentity> [-AdditionalProperties <Hashtable>] [-Id <String>]
- [-MobileAppIdentifier <Hashtable>] [-Version <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-MobileAppIdentifier <Hashtable>] [-Version <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -87,21 +85,6 @@ Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -225,13 +208,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedMobileApp
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedMobileApp
-
-### System.Collections.Hashtable
 
 ## NOTES
 

@@ -16,28 +16,28 @@ Invoke action assign
 ```
 Set-MgBetaDeviceManagementIntuneBrandingProfile -IntuneBrandingProfileId <String>
  [-AdditionalProperties <Hashtable>] [-Assignments <IMicrosoftGraphIntuneBrandingProfileAssignment[]>]
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Assign
 ```
 Set-MgBetaDeviceManagementIntuneBrandingProfile -IntuneBrandingProfileId <String>
  -BodyParameter <IPaths1I5JkzDevicemanagementIntunebrandingprofilesIntunebrandingprofileIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AssignViaIdentity
 ```
 Set-MgBetaDeviceManagementIntuneBrandingProfile -InputObject <IDeviceManagementActionsIdentity>
  -BodyParameter <IPaths1I5JkzDevicemanagementIntunebrandingprofilesIntunebrandingprofileIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AssignViaIdentityExpanded
 ```
 Set-MgBetaDeviceManagementIntuneBrandingProfile -InputObject <IDeviceManagementActionsIdentity>
  [-AdditionalProperties <Hashtable>] [-Assignments <IMicrosoftGraphIntuneBrandingProfileAssignment[]>]
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -102,21 +102,6 @@ Parameter Sets: Assign, AssignViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -209,13 +194,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPaths1I5JkzDevicemanagementIntunebrandingprofilesIntunebrandingprofileIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -286,7 +267,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[MicrosoftTunnelSiteId <String>]`: The unique identifier of microsoftTunnelSite
   - `[MobileAppTroubleshootingEventId <String>]`: The unique identifier of mobileAppTroubleshootingEvent
   - `[NotificationMessageTemplateId <String>]`: The unique identifier of notificationMessageTemplate
-  - `[OperationApprovalRequestId <String>]`: The unique identifier of operationApprovalRequest
   - `[PrivilegeManagementElevationRequestId <String>]`: The unique identifier of privilegeManagementElevationRequest
   - `[RemoteAssistancePartnerId <String>]`: The unique identifier of remoteAssistancePartner
   - `[RoleScopeTagId <String>]`: The unique identifier of roleScopeTag

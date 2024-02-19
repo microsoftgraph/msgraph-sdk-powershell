@@ -16,15 +16,15 @@ Delete navigation property deviceStatuses for deviceAppManagement
 ```
 Remove-MgBetaDeviceAppManagementWdacSupplementalPolicyDeviceStatus
  -WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusId <String>
- -WindowsDefenderApplicationControlSupplementalPolicyId <String> [-IfMatch <String>] [-Headers <IDictionary>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -WindowsDefenderApplicationControlSupplementalPolicyId <String> [-IfMatch <String>] [-PassThru] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
 Remove-MgBetaDeviceAppManagementWdacSupplementalPolicyDeviceStatus
- -InputObject <IDevicesCorporateManagementIdentity> [-IfMatch <String>] [-Headers <IDictionary>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -InputObject <IDevicesCorporateManagementIdentity> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -47,21 +47,6 @@ Delete navigation property deviceStatuses for deviceAppManagement
 
 
 ## PARAMETERS
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
 
 ### -IfMatch
 ETag
@@ -177,13 +162,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
-
-### System.Collections.Hashtable
 
 ## NOTES
 

@@ -21,22 +21,20 @@ Update-MgBetaDeviceManagementGroupPolicyMigrationReport -GroupPolicyMigrationRep
  [-Id <String>] [-LastModifiedDateTime <DateTime>] [-MigrationReadiness <GroupPolicyMigrationReadiness>]
  [-OuDistinguishedName <String>] [-RoleScopeTagIds <String[]>] [-SupportedSettingsCount <Int32>]
  [-SupportedSettingsPercent <Int32>] [-TargetedInActiveDirectory] [-TotalSettingsCount <Int32>]
- [-UnsupportedGroupPolicyExtensions <IMicrosoftGraphUnsupportedGroupPolicyExtension[]>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-UnsupportedGroupPolicyExtensions <IMicrosoftGraphUnsupportedGroupPolicyExtension[]>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaDeviceManagementGroupPolicyMigrationReport -GroupPolicyMigrationReportId <String>
- -BodyParameter <IMicrosoftGraphGroupPolicyMigrationReport> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphGroupPolicyMigrationReport> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaDeviceManagementGroupPolicyMigrationReport -InputObject <IDeviceManagementAdministrationIdentity>
- -BodyParameter <IMicrosoftGraphGroupPolicyMigrationReport> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphGroupPolicyMigrationReport> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -48,8 +46,8 @@ Update-MgBetaDeviceManagementGroupPolicyMigrationReport -InputObject <IDeviceMan
  [-Id <String>] [-LastModifiedDateTime <DateTime>] [-MigrationReadiness <GroupPolicyMigrationReadiness>]
  [-OuDistinguishedName <String>] [-RoleScopeTagIds <String[]>] [-SupportedSettingsCount <Int32>]
  [-SupportedSettingsPercent <Int32>] [-TargetedInActiveDirectory] [-TotalSettingsCount <Int32>]
- [-UnsupportedGroupPolicyExtensions <IMicrosoftGraphUnsupportedGroupPolicyExtension[]>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-UnsupportedGroupPolicyExtensions <IMicrosoftGraphUnsupportedGroupPolicyExtension[]>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -207,21 +205,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -433,13 +416,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyMigrationReport
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyMigrationReport
-
-### System.Collections.Hashtable
 
 ## NOTES
 

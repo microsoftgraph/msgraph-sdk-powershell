@@ -18,22 +18,20 @@ Update-MgDeviceManagementExchangeConnector -DeviceManagementExchangeConnectorId 
  [-AdditionalProperties <Hashtable>] [-ConnectorServerName <String>] [-ExchangeAlias <String>]
  [-ExchangeConnectorType <DeviceManagementExchangeConnectorType>] [-ExchangeOrganization <String>]
  [-Id <String>] [-LastSyncDateTime <DateTime>] [-PrimarySmtpAddress <String>] [-ServerName <String>]
- [-Status <DeviceManagementExchangeConnectorStatus>] [-Version <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-Status <DeviceManagementExchangeConnectorStatus>] [-Version <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgDeviceManagementExchangeConnector -DeviceManagementExchangeConnectorId <String>
- -BodyParameter <IMicrosoftGraphDeviceManagementExchangeConnector> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphDeviceManagementExchangeConnector> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgDeviceManagementExchangeConnector -InputObject <IDeviceManagementAdministrationIdentity>
- -BodyParameter <IMicrosoftGraphDeviceManagementExchangeConnector> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphDeviceManagementExchangeConnector> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -42,8 +40,8 @@ Update-MgDeviceManagementExchangeConnector -InputObject <IDeviceManagementAdmini
  [-AdditionalProperties <Hashtable>] [-ConnectorServerName <String>] [-ExchangeAlias <String>]
  [-ExchangeConnectorType <DeviceManagementExchangeConnectorType>] [-ExchangeOrganization <String>]
  [-Id <String>] [-LastSyncDateTime <DateTime>] [-PrimarySmtpAddress <String>] [-ServerName <String>]
- [-Status <DeviceManagementExchangeConnectorStatus>] [-Version <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-Status <DeviceManagementExchangeConnectorStatus>] [-Version <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -170,21 +168,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -335,13 +318,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementExchangeConnector
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementExchangeConnector
-
-### System.Collections.Hashtable
 
 ## NOTES
 

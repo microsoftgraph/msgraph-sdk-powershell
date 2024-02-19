@@ -19,27 +19,27 @@ You need to be an organizer to cancel a meeting.' This action differs from Delet
 ### CancelExpanded (Default)
 ```
 Stop-MgUserEvent -EventId <String> -UserId <String> [-AdditionalProperties <Hashtable>] [-Comment <String>]
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Cancel
 ```
 Stop-MgUserEvent -EventId <String> -UserId <String>
  -BodyParameter <IPaths1F7X6GlUsersUserIdEventsEventIdMicrosoftGraphCancelPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CancelViaIdentity
 ```
 Stop-MgUserEvent -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPaths1F7X6GlUsersUserIdEventsEventIdMicrosoftGraphCancelPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CancelViaIdentityExpanded
 ```
 Stop-MgUserEvent -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>] [-Comment <String>]
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -123,21 +123,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -227,13 +212,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -271,7 +252,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[NotebookId <String>]`: The unique identifier of notebook
   - `[OnenotePageId <String>]`: The unique identifier of onenotePage
   - `[OnenoteSectionId <String>]`: The unique identifier of onenoteSection
-  - `[OnlineMeetingId <String>]`: The unique identifier of onlineMeeting
   - `[PermissionId <String>]`: The unique identifier of permission
   - `[PhoneAuthenticationMethodId <String>]`: The unique identifier of phoneAuthenticationMethod
   - `[SubscriptionId <String>]`: The unique identifier of subscription

@@ -13,8 +13,7 @@ Invoke action unbind
 ## SYNTAX
 
 ```
-Invoke-MgBetaUnbindDeviceManagementAndroidForWorkSetting [-Headers <IDictionary>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Invoke-MgBetaUnbindDeviceManagementAndroidForWorkSetting [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -37,21 +36,6 @@ Invoke action unbind
 {{ Add output here }}
 
 ## PARAMETERS
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
 
 ### -PassThru
 Returns true when the command succeeds
@@ -104,13 +88,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
-
-### System.Collections.Hashtable
 
 ## NOTES
 

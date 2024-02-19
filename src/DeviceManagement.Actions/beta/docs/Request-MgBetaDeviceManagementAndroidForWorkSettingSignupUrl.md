@@ -15,14 +15,14 @@ Invoke action requestSignupUrl
 ### RequestExpanded (Default)
 ```
 Request-MgBetaDeviceManagementAndroidForWorkSettingSignupUrl [-AdditionalProperties <Hashtable>]
- [-HostName <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-HostName <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Request
 ```
 Request-MgBetaDeviceManagementAndroidForWorkSettingSignupUrl
  -BodyParameter <IPaths4D3Ll5DevicemanagementAndroidforworksettingsMicrosoftGraphRequestsignupurlPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -71,21 +71,6 @@ Parameter Sets: Request
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -145,11 +130,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPaths4D3Ll5DevicemanagementAndroidforworksettingsMicrosoftGraphRequestsignupurlPostRequestbodyContentApplicationJsonSchema
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
-
-### System.Collections.Hashtable
 
 ### System.String
 

@@ -16,14 +16,14 @@ Delete navigation property resourceScope for roleManagement
 ```
 Remove-MgBetaRoleManagementExchangeResourceNamespaceResourceActionResourceScope
  -UnifiedRbacResourceActionId <String> -UnifiedRbacResourceNamespaceId <String> [-IfMatch <String>]
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
 Remove-MgBetaRoleManagementExchangeResourceNamespaceResourceActionResourceScope
- -InputObject <IDeviceManagementEnrollmentIdentity> [-IfMatch <String>] [-Headers <IDictionary>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -InputObject <IDeviceManagementEnrollmentIdentity> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -46,21 +46,6 @@ Delete navigation property resourceScope for roleManagement
 
 
 ## PARAMETERS
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
 
 ### -IfMatch
 ETag
@@ -176,13 +161,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementEnrollmentIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
-
-### System.Collections.Hashtable
 
 ## NOTES
 

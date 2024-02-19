@@ -15,25 +15,25 @@ Update the properties on a [listItem][].
 ### UpdateExpanded (Default)
 ```
 Update-MgDriveItemListItemField -DriveId <String> -DriveItemId <String> [-AdditionalProperties <Hashtable>]
- [-Id <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgDriveItemListItemField -DriveId <String> -DriveItemId <String> -BodyParameter <Hashtable>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgDriveItemListItemField -DriveId <String> -DriveItemId <String> -BodyParameter <Hashtable> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDriveItemListItemField -InputObject <IFilesIdentity> -BodyParameter <Hashtable>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgDriveItemListItemField -InputObject <IFilesIdentity> -BodyParameter <Hashtable> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgDriveItemListItemField -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>]
- [-Id <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -117,21 +117,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -204,11 +189,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Collections.Hashtable
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
-
-### System.Collections.Hashtable
 
 ### System.String
 

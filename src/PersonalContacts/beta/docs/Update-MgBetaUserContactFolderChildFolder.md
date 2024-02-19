@@ -20,21 +20,19 @@ Update-MgBetaUserContactFolderChildFolder -ContactFolderId <String> -ContactFold
  [-MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]
  [-ParentFolderId <String>]
  [-SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]
- [-WellKnownName <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-WellKnownName <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaUserContactFolderChildFolder -ContactFolderId <String> -ContactFolderId1 <String>
- -UserId <String> -BodyParameter <IMicrosoftGraphContactFolder> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -UserId <String> -BodyParameter <IMicrosoftGraphContactFolder> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaUserContactFolderChildFolder -InputObject <IPersonalContactsIdentity>
- -BodyParameter <IMicrosoftGraphContactFolder> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphContactFolder> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -45,7 +43,7 @@ Update-MgBetaUserContactFolderChildFolder -InputObject <IPersonalContactsIdentit
  [-MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]
  [-ParentFolderId <String>]
  [-SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]
- [-WellKnownName <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-WellKnownName <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -180,21 +178,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -352,13 +335,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPersonalContactsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphContactFolder
-
-### System.Collections.Hashtable
 
 ## NOTES
 

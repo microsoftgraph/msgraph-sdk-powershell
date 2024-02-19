@@ -17,8 +17,8 @@ Invoke action uploadNewVersion
 Invoke-MgBetaUploadDeviceManagementGroupPolicyUploadedDefinitionFileNewVersion
  -GroupPolicyUploadedDefinitionFileId <String> [-AdditionalProperties <Hashtable>]
  [-ContentInputFile <String>]
- [-GroupPolicyUploadedLanguageFiles <IMicrosoftGraphGroupPolicyUploadedLanguageFile[]>]
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-GroupPolicyUploadedLanguageFiles <IMicrosoftGraphGroupPolicyUploadedLanguageFile[]>] [-PassThru] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Upload
@@ -26,7 +26,7 @@ Invoke-MgBetaUploadDeviceManagementGroupPolicyUploadedDefinitionFileNewVersion
 Invoke-MgBetaUploadDeviceManagementGroupPolicyUploadedDefinitionFileNewVersion
  -GroupPolicyUploadedDefinitionFileId <String>
  -BodyParameter <IPathsQaczrkDevicemanagementGrouppolicyuploadeddefinitionfilesGrouppolicyuploadeddefinitionfileIdMicrosoftGraphUploadnewversionPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UploadViaIdentity
@@ -34,7 +34,7 @@ Invoke-MgBetaUploadDeviceManagementGroupPolicyUploadedDefinitionFileNewVersion
 Invoke-MgBetaUploadDeviceManagementGroupPolicyUploadedDefinitionFileNewVersion
  -InputObject <IDeviceManagementActionsIdentity>
  -BodyParameter <IPathsQaczrkDevicemanagementGrouppolicyuploadeddefinitionfilesGrouppolicyuploadeddefinitionfileIdMicrosoftGraphUploadnewversionPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UploadViaIdentityExpanded
@@ -42,8 +42,8 @@ Invoke-MgBetaUploadDeviceManagementGroupPolicyUploadedDefinitionFileNewVersion
 Invoke-MgBetaUploadDeviceManagementGroupPolicyUploadedDefinitionFileNewVersion
  -InputObject <IDeviceManagementActionsIdentity> [-AdditionalProperties <Hashtable>]
  [-ContentInputFile <String>]
- [-GroupPolicyUploadedLanguageFiles <IMicrosoftGraphGroupPolicyUploadedLanguageFile[]>]
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-GroupPolicyUploadedLanguageFiles <IMicrosoftGraphGroupPolicyUploadedLanguageFile[]>] [-PassThru] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -144,21 +144,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -230,13 +215,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPathsQaczrkDevicemanagementGrouppolicyuploadeddefinitionfilesGrouppolicyuploadeddefinitionfileIdMicrosoftGraphUploadnewversionPostRequestbodyContentApplicationJsonSchema
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -308,7 +289,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[MicrosoftTunnelSiteId <String>]`: The unique identifier of microsoftTunnelSite
   - `[MobileAppTroubleshootingEventId <String>]`: The unique identifier of mobileAppTroubleshootingEvent
   - `[NotificationMessageTemplateId <String>]`: The unique identifier of notificationMessageTemplate
-  - `[OperationApprovalRequestId <String>]`: The unique identifier of operationApprovalRequest
   - `[PrivilegeManagementElevationRequestId <String>]`: The unique identifier of privilegeManagementElevationRequest
   - `[RemoteAssistancePartnerId <String>]`: The unique identifier of remoteAssistancePartner
   - `[RoleScopeTagId <String>]`: The unique identifier of roleScopeTag

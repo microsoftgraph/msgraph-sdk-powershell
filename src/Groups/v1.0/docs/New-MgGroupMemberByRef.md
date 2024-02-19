@@ -15,26 +15,26 @@ The following table shows the types of members that can be added to either secur
 
 ### CreateExpanded (Default)
 ```
-New-MgGroupMemberByRef -GroupId <String> -OdataId <String> [-AdditionalProperties <Hashtable>]
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgGroupMemberByRef -GroupId <String> -OdataId <String> [-AdditionalProperties <Hashtable>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgGroupMemberByRef -GroupId <String> -BodyParameter <IReferenceCreate> [-Headers <IDictionary>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgGroupMemberByRef -GroupId <String> -BodyParameter <IReferenceCreate> [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgGroupMemberByRef -InputObject <IGroupsIdentity> -BodyParameter <IReferenceCreate>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgGroupMemberByRef -InputObject <IGroupsIdentity> -BodyParameter <IReferenceCreate> [-PassThru] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgGroupMemberByRef -InputObject <IGroupsIdentity> -OdataId <String> [-AdditionalProperties <Hashtable>]
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -99,21 +99,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -204,13 +189,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IReferenceCreate
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -251,7 +232,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[OnenotePageId <String>]`: The unique identifier of onenotePage
   - `[OnenoteSectionId <String>]`: The unique identifier of onenoteSection
   - `[Path <String>]`: Usage: path='{path}'
-  - `[Path1 <String>]`: Usage: path='{path1}'
   - `[PermissionId <String>]`: The unique identifier of permission
   - `[PostId <String>]`: The unique identifier of post
   - `[ProfilePhotoId <String>]`: The unique identifier of profilePhoto
@@ -261,7 +241,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[StartDateTime <String>]`: Usage: startDateTime='{startDateTime}'
   - `[SubscriptionId <String>]`: The unique identifier of subscription
   - `[Token <String>]`: Usage: token='{token}'
-  - `[UniqueName <String>]`: Alternate key of group
   - `[User <String>]`: Usage: User='{User}'
 
 ## RELATED LINKS

@@ -16,30 +16,28 @@ Update the navigation property apps in deviceAppManagement
 ```
 Update-MgBetaDeviceAppManagementDefaultManagedAppProtectionApp -DefaultManagedAppProtectionId <String>
  -ManagedMobileAppId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
- [-MobileAppIdentifier <Hashtable>] [-Version <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-MobileAppIdentifier <Hashtable>] [-Version <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaDeviceAppManagementDefaultManagedAppProtectionApp -DefaultManagedAppProtectionId <String>
- -ManagedMobileAppId <String> -BodyParameter <IMicrosoftGraphManagedMobileApp> [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -ManagedMobileAppId <String> -BodyParameter <IMicrosoftGraphManagedMobileApp> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaDeviceAppManagementDefaultManagedAppProtectionApp
  -InputObject <IDevicesCorporateManagementIdentity> -BodyParameter <IMicrosoftGraphManagedMobileApp>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgBetaDeviceAppManagementDefaultManagedAppProtectionApp
  -InputObject <IDevicesCorporateManagementIdentity> [-AdditionalProperties <Hashtable>] [-Id <String>]
- [-MobileAppIdentifier <Hashtable>] [-Version <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-MobileAppIdentifier <Hashtable>] [-Version <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -106,21 +104,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -241,13 +224,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedMobileApp
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedMobileApp
-
-### System.Collections.Hashtable
 
 ## NOTES
 

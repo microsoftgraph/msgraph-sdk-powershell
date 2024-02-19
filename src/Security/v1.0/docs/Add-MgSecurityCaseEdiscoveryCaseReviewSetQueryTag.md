@@ -18,8 +18,8 @@ For details, see Tag documents in a review set in eDiscovery.
 Add-MgSecurityCaseEdiscoveryCaseReviewSetQueryTag -EdiscoveryCaseId <String> -EdiscoveryReviewSetId <String>
  -EdiscoveryReviewSetQueryId <String> [-AdditionalProperties <Hashtable>]
  [-TagsToAdd <IMicrosoftGraphSecurityEdiscoveryReviewTag[]>]
- [-TagsToRemove <IMicrosoftGraphSecurityEdiscoveryReviewTag[]>] [-Headers <IDictionary>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-TagsToRemove <IMicrosoftGraphSecurityEdiscoveryReviewTag[]>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Apply
@@ -27,22 +27,22 @@ Add-MgSecurityCaseEdiscoveryCaseReviewSetQueryTag -EdiscoveryCaseId <String> -Ed
 Add-MgSecurityCaseEdiscoveryCaseReviewSetQueryTag -EdiscoveryCaseId <String> -EdiscoveryReviewSetId <String>
  -EdiscoveryReviewSetQueryId <String>
  -BodyParameter <IPathsA2Ja7OSecurityCasesEdiscoverycasesEdiscoverycaseIdReviewsetsEdiscoveryreviewsetIdQueriesEdiscoveryreviewsetqueryIdMicrosoftGraphSecurityApplytagsPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ApplyViaIdentity
 ```
 Add-MgSecurityCaseEdiscoveryCaseReviewSetQueryTag -InputObject <ISecurityIdentity>
  -BodyParameter <IPathsA2Ja7OSecurityCasesEdiscoverycasesEdiscoverycaseIdReviewsetsEdiscoveryreviewsetIdQueriesEdiscoveryreviewsetqueryIdMicrosoftGraphSecurityApplytagsPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ApplyViaIdentityExpanded
 ```
 Add-MgSecurityCaseEdiscoveryCaseReviewSetQueryTag -InputObject <ISecurityIdentity>
  [-AdditionalProperties <Hashtable>] [-TagsToAdd <IMicrosoftGraphSecurityEdiscoveryReviewTag[]>]
- [-TagsToRemove <IMicrosoftGraphSecurityEdiscoveryReviewTag[]>] [-Headers <IDictionary>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-TagsToRemove <IMicrosoftGraphSecurityEdiscoveryReviewTag[]>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -141,21 +141,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -262,13 +247,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
-
-### System.Collections.Hashtable
 
 ## NOTES
 

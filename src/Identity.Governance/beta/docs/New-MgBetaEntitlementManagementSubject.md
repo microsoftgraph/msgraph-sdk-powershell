@@ -18,14 +18,13 @@ New-MgBetaEntitlementManagementSubject [-AdditionalProperties <Hashtable>] [-Alt
  [-CleanupScheduledDateTime <DateTime>] [-ConnectedOrganization <IMicrosoftGraphConnectedOrganization>]
  [-ConnectedOrganizationId <String>] [-DisplayName <String>] [-Email <String>] [-Id <String>]
  [-ObjectId <String>] [-OnPremisesSecurityIdentifier <String>] [-PrincipalName <String>]
- [-SubjectLifecycle <String>] [-Type <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-SubjectLifecycle <String>] [-Type <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgBetaEntitlementManagementSubject -BodyParameter <IMicrosoftGraphAccessPackageSubject>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaEntitlementManagementSubject -BodyParameter <IMicrosoftGraphAccessPackageSubject> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -172,21 +171,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -318,13 +302,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessPackageSubject
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessPackageSubject
-
-### System.Collections.Hashtable
 
 ## NOTES
 

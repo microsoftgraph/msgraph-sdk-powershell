@@ -15,20 +15,17 @@ Retrieve the properties and relationships of a calendar group object.
 ### List (Default)
 ```
 Get-MgUserCalendarGroup -UserId <String> [-Filter <String>] [-Property <String[]>] [-Skip <Int32>]
- [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-Headers <IDictionary>]
- [-PageSize <Int32>] [<CommonParameters>]
+ [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgUserCalendarGroup -CalendarGroupId <String> -UserId <String> [-Property <String[]>]
- [-Headers <IDictionary>] [<CommonParameters>]
+Get-MgUserCalendarGroup -CalendarGroupId <String> -UserId <String> [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserCalendarGroup -InputObject <ICalendarIdentity> [-Property <String[]>] [-Headers <IDictionary>]
- [<CommonParameters>]
+Get-MgUserCalendarGroup -InputObject <ICalendarIdentity> [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -104,21 +101,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -235,13 +217,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.ICalendarIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCalendarGroup
-
-### System.Collections.Hashtable
 
 ## NOTES
 

@@ -17,28 +17,28 @@ You can identify the room, workspace, or roomList by specifying the id or emailA
 ```
 Update-MgBetaPlace -PlaceId <String> [-AdditionalProperties <Hashtable>]
  [-Address <IMicrosoftGraphPhysicalAddress>] [-DisplayName <String>]
- [-GeoCoordinates <IMicrosoftGraphOutlookGeoCoordinates>] [-Id <String>] [-Phone <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-GeoCoordinates <IMicrosoftGraphOutlookGeoCoordinates>] [-Id <String>] [-Phone <String>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgBetaPlace -PlaceId <String> -BodyParameter <IMicrosoftGraphPlace> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Update-MgBetaPlace -PlaceId <String> -BodyParameter <IMicrosoftGraphPlace> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgBetaPlace -InputObject <ICalendarIdentity> -BodyParameter <IMicrosoftGraphPlace>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgBetaPlace -InputObject <ICalendarIdentity> -BodyParameter <IMicrosoftGraphPlace> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgBetaPlace -InputObject <ICalendarIdentity> [-AdditionalProperties <Hashtable>]
  [-Address <IMicrosoftGraphPhysicalAddress>] [-DisplayName <String>]
- [-GeoCoordinates <IMicrosoftGraphOutlookGeoCoordinates>] [-Id <String>] [-Phone <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-GeoCoordinates <IMicrosoftGraphOutlookGeoCoordinates>] [-Id <String>] [-Phone <String>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -159,21 +159,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -276,13 +261,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlace
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlace
-
-### System.Collections.Hashtable
 
 ## NOTES
 

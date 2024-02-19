@@ -19,22 +19,21 @@ Update-MgBetaDeviceManagementDepOnboardingSettingImportedAppleDeviceIdentity -De
  [-Description <String>] [-DiscoverySource <DiscoverySource>] [-EnrollmentState <EnrollmentState>]
  [-Id <String>] [-IsDeleted] [-IsSupervised] [-LastContactedDateTime <DateTime>] [-Platform <Platform>]
  [-RequestedEnrollmentProfileAssignmentDateTime <DateTime>] [-RequestedEnrollmentProfileId <String>]
- [-SerialNumber <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-SerialNumber <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaDeviceManagementDepOnboardingSettingImportedAppleDeviceIdentity -DepOnboardingSettingId <String>
  -ImportedAppleDeviceIdentityId <String> -BodyParameter <IMicrosoftGraphImportedAppleDeviceIdentity>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaDeviceManagementDepOnboardingSettingImportedAppleDeviceIdentity
  -InputObject <IDeviceManagementEnrollmentIdentity>
- -BodyParameter <IMicrosoftGraphImportedAppleDeviceIdentity> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphImportedAppleDeviceIdentity> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -45,7 +44,7 @@ Update-MgBetaDeviceManagementDepOnboardingSettingImportedAppleDeviceIdentity
  [-EnrollmentState <EnrollmentState>] [-Id <String>] [-IsDeleted] [-IsSupervised]
  [-LastContactedDateTime <DateTime>] [-Platform <Platform>]
  [-RequestedEnrollmentProfileAssignmentDateTime <DateTime>] [-RequestedEnrollmentProfileId <String>]
- [-SerialNumber <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-SerialNumber <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -175,21 +174,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -254,6 +238,7 @@ Accept wildcard characters: False
 
 ### -IsSupervised
 Indicates if the Apple device is supervised.
+More information is at: https://support.apple.com/en-us/HT202837
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -382,13 +367,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphImportedAppleDeviceIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphImportedAppleDeviceIdentity
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -407,7 +388,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[DiscoverySource <DiscoverySource?>]`: discoverySource
   - `[EnrollmentState <EnrollmentState?>]`: enrollmentState
   - `[IsDeleted <Boolean?>]`: Indicates if the device is deleted from Apple Business Manager
-  - `[IsSupervised <Boolean?>]`: Indicates if the Apple device is supervised.
+  - `[IsSupervised <Boolean?>]`: Indicates if the Apple device is supervised. More information is at: https://support.apple.com/en-us/HT202837
   - `[LastContactedDateTime <DateTime?>]`: Last Contacted Date Time of the device
   - `[Platform <Platform?>]`: platform
   - `[RequestedEnrollmentProfileAssignmentDateTime <DateTime?>]`: The time enrollment profile was assigned to the device
@@ -420,7 +401,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[AppScopeId <String>]`: The unique identifier of appScope
   - `[AppleEnrollmentProfileAssignmentId <String>]`: The unique identifier of appleEnrollmentProfileAssignment
   - `[AppleUserInitiatedEnrollmentProfileId <String>]`: The unique identifier of appleUserInitiatedEnrollmentProfile
-  - `[CustomAppScopeId <String>]`: The unique identifier of customAppScope
   - `[DepOnboardingSettingId <String>]`: The unique identifier of depOnboardingSetting
   - `[DeviceEnrollmentConfigurationId <String>]`: The unique identifier of deviceEnrollmentConfiguration
   - `[DeviceManagementAutopilotEventId <String>]`: The unique identifier of deviceManagementAutopilotEvent
@@ -433,7 +413,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[ImportedWindowsAutopilotDeviceIdentityId <String>]`: The unique identifier of importedWindowsAutopilotDeviceIdentity
   - `[UnifiedRbacResourceActionId <String>]`: The unique identifier of unifiedRbacResourceAction
   - `[UnifiedRbacResourceNamespaceId <String>]`: The unique identifier of unifiedRbacResourceNamespace
-  - `[UnifiedRoleAssignmentId <String>]`: The unique identifier of unifiedRoleAssignment
   - `[UnifiedRoleAssignmentMultipleId <String>]`: The unique identifier of unifiedRoleAssignmentMultiple
   - `[UnifiedRoleDefinitionId <String>]`: The unique identifier of unifiedRoleDefinition
   - `[UnifiedRoleDefinitionId1 <String>]`: The unique identifier of unifiedRoleDefinition

@@ -17,21 +17,21 @@ Update the properties of a deviceAndAppManagementRoleAssignment object.
 Update-MgDeviceManagementRoleAssignment -DeviceAndAppManagementRoleAssignmentId <String>
  [-AdditionalProperties <Hashtable>] [-Description <String>] [-DisplayName <String>] [-Id <String>]
  [-Members <String[]>] [-ResourceScopes <String[]>] [-RoleDefinition <IMicrosoftGraphRoleDefinition>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgDeviceManagementRoleAssignment -DeviceAndAppManagementRoleAssignmentId <String>
- -BodyParameter <IMicrosoftGraphDeviceAndAppManagementRoleAssignment> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphDeviceAndAppManagementRoleAssignment> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgDeviceManagementRoleAssignment -InputObject <IDeviceManagementAdministrationIdentity>
- -BodyParameter <IMicrosoftGraphDeviceAndAppManagementRoleAssignment> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphDeviceAndAppManagementRoleAssignment> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -39,7 +39,7 @@ Update-MgDeviceManagementRoleAssignment -InputObject <IDeviceManagementAdministr
 Update-MgDeviceManagementRoleAssignment -InputObject <IDeviceManagementAdministrationIdentity>
  [-AdditionalProperties <Hashtable>] [-Description <String>] [-DisplayName <String>] [-Id <String>]
  [-Members <String[]>] [-ResourceScopes <String[]>] [-RoleDefinition <IMicrosoftGraphRoleDefinition>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -139,21 +139,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -283,13 +268,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceAndAppManagementRoleAssignment
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceAndAppManagementRoleAssignment
-
-### System.Collections.Hashtable
 
 ## NOTES
 

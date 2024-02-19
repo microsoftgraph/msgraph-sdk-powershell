@@ -21,21 +21,20 @@ Update-MgBetaDeviceManagementTemplateMigratableTo -DeviceManagementTemplateId <S
  [-MigratableTo <IMicrosoftGraphDeviceManagementTemplate[]>] [-PlatformType <PolicyPlatformType>]
  [-PublishedDateTime <DateTime>] [-Settings <IMicrosoftGraphDeviceManagementSettingInstance[]>]
  [-TemplateSubtype <DeviceManagementTemplateSubtype>] [-TemplateType <DeviceManagementTemplateType>]
- [-VersionInfo <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-VersionInfo <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaDeviceManagementTemplateMigratableTo -DeviceManagementTemplateId <String>
- -DeviceManagementTemplateId1 <String> -BodyParameter <IMicrosoftGraphDeviceManagementTemplate>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -DeviceManagementTemplateId1 <String> -BodyParameter <IMicrosoftGraphDeviceManagementTemplate> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaDeviceManagementTemplateMigratableTo -InputObject <IDeviceManagementIdentity>
- -BodyParameter <IMicrosoftGraphDeviceManagementTemplate> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphDeviceManagementTemplate> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -46,7 +45,7 @@ Update-MgBetaDeviceManagementTemplateMigratableTo -InputObject <IDeviceManagemen
  [-MigratableTo <IMicrosoftGraphDeviceManagementTemplate[]>] [-PlatformType <PolicyPlatformType>]
  [-PublishedDateTime <DateTime>] [-Settings <IMicrosoftGraphDeviceManagementSettingInstance[]>]
  [-TemplateSubtype <DeviceManagementTemplateSubtype>] [-TemplateType <DeviceManagementTemplateType>]
- [-VersionInfo <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-VersionInfo <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -174,21 +173,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -402,13 +386,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementTemplate
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementTemplate
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -561,7 +541,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[MacOSSoftwareUpdateCategorySummaryId <String>]`: The unique identifier of macOSSoftwareUpdateCategorySummary
   - `[MacOSSoftwareUpdateStateSummaryId <String>]`: The unique identifier of macOSSoftwareUpdateStateSummary
   - `[MalwareStateForWindowsDeviceId <String>]`: The unique identifier of malwareStateForWindowsDevice
-  - `[ManagedDeviceCleanupRuleId <String>]`: The unique identifier of managedDeviceCleanupRule
   - `[ManagedDeviceEncryptionStateId <String>]`: The unique identifier of managedDeviceEncryptionState
   - `[ManagedDeviceId <String>]`: The unique identifier of managedDevice
   - `[ManagedDeviceMobileAppConfigurationStateId <String>]`: The unique identifier of managedDeviceMobileAppConfigurationState

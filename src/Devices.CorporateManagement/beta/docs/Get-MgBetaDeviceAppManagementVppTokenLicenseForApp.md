@@ -15,14 +15,13 @@ Invoke function getLicensesForApp
 ### Get (Default)
 ```
 Get-MgBetaDeviceAppManagementVppTokenLicenseForApp -BundleId <String> [-Count] [-Filter <String>]
- [-Search <String>] [-Skip <Int32>] [-Top <Int32>] [-Headers <IDictionary>] [<CommonParameters>]
+ [-Search <String>] [-Skip <Int32>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
 Get-MgBetaDeviceAppManagementVppTokenLicenseForApp -InputObject <IDevicesCorporateManagementIdentity> [-Count]
- [-Filter <String>] [-Search <String>] [-Skip <Int32>] [-Top <Int32>] [-Headers <IDictionary>]
- [<CommonParameters>]
+ [-Filter <String>] [-Search <String>] [-Skip <Int32>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -88,21 +87,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -174,13 +158,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphVppTokenLicenseSummary
-
-### System.Collections.Hashtable
 
 ## NOTES
 

@@ -17,22 +17,20 @@ Update the navigation property operations in security
 Update-MgBetaSecurityAttackSimulationOperation -AttackSimulationOperationId <String>
  [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>] [-Id <String>]
  [-LastActionDateTime <DateTime>] [-PercentageCompleted <Int32>] [-ResourceLocation <String>]
- [-Status <String>] [-StatusDetail <String>] [-TenantId <String>] [-Type <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Status <String>] [-StatusDetail <String>] [-TenantId <String>] [-Type <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaSecurityAttackSimulationOperation -AttackSimulationOperationId <String>
- -BodyParameter <IMicrosoftGraphAttackSimulationOperation> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphAttackSimulationOperation> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaSecurityAttackSimulationOperation -InputObject <ISecurityIdentity>
- -BodyParameter <IMicrosoftGraphAttackSimulationOperation> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphAttackSimulationOperation> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -40,8 +38,8 @@ Update-MgBetaSecurityAttackSimulationOperation -InputObject <ISecurityIdentity>
 Update-MgBetaSecurityAttackSimulationOperation -InputObject <ISecurityIdentity>
  [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>] [-Id <String>]
  [-LastActionDateTime <DateTime>] [-PercentageCompleted <Int32>] [-ResourceLocation <String>]
- [-Status <String>] [-StatusDetail <String>] [-TenantId <String>] [-Type <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Status <String>] [-StatusDetail <String>] [-TenantId <String>] [-Type <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -113,7 +111,7 @@ Accept wildcard characters: False
 
 ### -CreatedDateTime
 The start time of the operation.
-The timestamp type represents date and time information using ISO 8601 format and is always in UTC.
+The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
 For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 
 ```yaml
@@ -125,21 +123,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -177,7 +160,7 @@ Accept wildcard characters: False
 
 ### -LastActionDateTime
 The time of the last action in the operation.
-The timestamp type represents date and time information using ISO 8601 format and is always in UTC.
+The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
 For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 
 ```yaml
@@ -322,13 +305,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAttackSimulationOperation
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -341,8 +320,8 @@ To create the parameters described below, construct a hash table containing the 
 
 `BODYPARAMETER <IMicrosoftGraphAttackSimulationOperation>`: attackSimulationOperation
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[CreatedDateTime <DateTime?>]`: The start time of the operation. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-  - `[LastActionDateTime <DateTime?>]`: The time of the last action in the operation. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+  - `[CreatedDateTime <DateTime?>]`: The start time of the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+  - `[LastActionDateTime <DateTime?>]`: The time of the last action in the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
   - `[ResourceLocation <String>]`: URI of the resource that the operation is performed on.
   - `[Status <String>]`: longRunningOperationStatus
   - `[StatusDetail <String>]`: Details about the status of the operation.
@@ -353,7 +332,6 @@ To create the parameters described below, construct a hash table containing the 
 
 `INPUTOBJECT <ISecurityIdentity>`: Identity Parameter
   - `[AlertId <String>]`: The unique identifier of alert
-  - `[AnalyzedEmailId <String>]`: The unique identifier of analyzedEmail
   - `[ArticleId <String>]`: The unique identifier of article
   - `[ArticleIndicatorId <String>]`: The unique identifier of articleIndicator
   - `[AttackSimulationOperationId <String>]`: The unique identifier of attackSimulationOperation

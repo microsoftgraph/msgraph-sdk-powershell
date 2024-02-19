@@ -16,8 +16,7 @@ Invoke action targetApps
 ```
 Invoke-MgBetaTargetDeviceAppManagementManagedAppRegistrationAppliedPolicyApp -ManagedAppPolicyId <String>
  -ManagedAppRegistrationId <String> [-AdditionalProperties <Hashtable>]
- [-Apps <IMicrosoftGraphManagedMobileApp[]>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Apps <IMicrosoftGraphManagedMobileApp[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Target
@@ -25,7 +24,7 @@ Invoke-MgBetaTargetDeviceAppManagementManagedAppRegistrationAppliedPolicyApp -Ma
 Invoke-MgBetaTargetDeviceAppManagementManagedAppRegistrationAppliedPolicyApp -ManagedAppPolicyId <String>
  -ManagedAppRegistrationId <String>
  -BodyParameter <IPathsVf2Dh9DeviceappmanagementManagedappregistrationsManagedappregistrationIdAppliedpoliciesManagedapppolicyIdMicrosoftGraphTargetappsPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### TargetViaIdentity
@@ -33,15 +32,14 @@ Invoke-MgBetaTargetDeviceAppManagementManagedAppRegistrationAppliedPolicyApp -Ma
 Invoke-MgBetaTargetDeviceAppManagementManagedAppRegistrationAppliedPolicyApp
  -InputObject <IDevicesCorporateManagementIdentity>
  -BodyParameter <IPathsVf2Dh9DeviceappmanagementManagedappregistrationsManagedappregistrationIdAppliedpoliciesManagedapppolicyIdMicrosoftGraphTargetappsPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### TargetViaIdentityExpanded
 ```
 Invoke-MgBetaTargetDeviceAppManagementManagedAppRegistrationAppliedPolicyApp
  -InputObject <IDevicesCorporateManagementIdentity> [-AdditionalProperties <Hashtable>]
- [-Apps <IMicrosoftGraphManagedMobileApp[]>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Apps <IMicrosoftGraphManagedMobileApp[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -106,21 +104,6 @@ Parameter Sets: Target, TargetViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -228,13 +211,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPathsVf2Dh9DeviceappmanagementManagedappregistrationsManagedappregistrationIdAppliedpoliciesManagedapppolicyIdMicrosoftGraphTargetappsPostRequestbodyContentApplicationJsonSchema
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
-
-### System.Collections.Hashtable
 
 ## NOTES
 

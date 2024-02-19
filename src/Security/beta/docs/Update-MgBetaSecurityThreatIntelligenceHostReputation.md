@@ -16,29 +16,27 @@ Update the navigation property reputation in security
 ```
 Update-MgBetaSecurityThreatIntelligenceHostReputation -HostId <String> [-AdditionalProperties <Hashtable>]
  [-Classification <String>] [-Id <String>] [-Rules <IMicrosoftGraphSecurityHostReputationRule[]>]
- [-Score <Int32>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Score <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaSecurityThreatIntelligenceHostReputation -HostId <String>
- -BodyParameter <IMicrosoftGraphSecurityHostReputation> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphSecurityHostReputation> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaSecurityThreatIntelligenceHostReputation -InputObject <ISecurityIdentity>
- -BodyParameter <IMicrosoftGraphSecurityHostReputation> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphSecurityHostReputation> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgBetaSecurityThreatIntelligenceHostReputation -InputObject <ISecurityIdentity>
  [-AdditionalProperties <Hashtable>] [-Classification <String>] [-Id <String>]
- [-Rules <IMicrosoftGraphSecurityHostReputationRule[]>] [-Score <Int32>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-Rules <IMicrosoftGraphSecurityHostReputationRule[]>] [-Score <Int32>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -105,21 +103,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -242,13 +225,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityHostReputation
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -272,7 +251,6 @@ To create the parameters described below, construct a hash table containing the 
 
 `INPUTOBJECT <ISecurityIdentity>`: Identity Parameter
   - `[AlertId <String>]`: The unique identifier of alert
-  - `[AnalyzedEmailId <String>]`: The unique identifier of analyzedEmail
   - `[ArticleId <String>]`: The unique identifier of article
   - `[ArticleIndicatorId <String>]`: The unique identifier of articleIndicator
   - `[AttackSimulationOperationId <String>]`: The unique identifier of attackSimulationOperation

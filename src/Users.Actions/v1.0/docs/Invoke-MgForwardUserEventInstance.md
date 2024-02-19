@@ -18,28 +18,28 @@ This convenience is not available when forwarding from an Outlook.com account.
 ```
 Invoke-MgForwardUserEventInstance -EventId <String> -EventId1 <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-Comment <String>] [-ToRecipients <IMicrosoftGraphRecipient[]>]
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Forward
 ```
 Invoke-MgForwardUserEventInstance -EventId <String> -EventId1 <String> -UserId <String>
  -BodyParameter <IPaths1K9ImduUsersUserIdEventsEventIdInstancesEventId1MicrosoftGraphForwardPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ForwardViaIdentity
 ```
 Invoke-MgForwardUserEventInstance -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPaths1K9ImduUsersUserIdEventsEventIdInstancesEventId1MicrosoftGraphForwardPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ForwardViaIdentityExpanded
 ```
 Invoke-MgForwardUserEventInstance -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
- [-Comment <String>] [-ToRecipients <IMicrosoftGraphRecipient[]>] [-Headers <IDictionary>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Comment <String>] [-ToRecipients <IMicrosoftGraphRecipient[]>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -147,21 +147,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -264,13 +249,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -313,7 +294,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[NotebookId <String>]`: The unique identifier of notebook
   - `[OnenotePageId <String>]`: The unique identifier of onenotePage
   - `[OnenoteSectionId <String>]`: The unique identifier of onenoteSection
-  - `[OnlineMeetingId <String>]`: The unique identifier of onlineMeeting
   - `[PermissionId <String>]`: The unique identifier of permission
   - `[PhoneAuthenticationMethodId <String>]`: The unique identifier of phoneAuthenticationMethod
   - `[SubscriptionId <String>]`: The unique identifier of subscription

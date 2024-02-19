@@ -14,30 +14,30 @@ Invoke function getOffice365GroupsActivityDetail
 
 ### Get (Default)
 ```
-Get-MgBetaReportOffice365GroupActivityDetail -Date <DateTime> [-Count] [-ExpandProperty <String[]>]
- [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
- [-Top <Int32>] [-Headers <IDictionary>] [<CommonParameters>]
+Get-MgBetaReportOffice365GroupActivityDetail -Date <DateTime> [-Count] [-Filter <String>]
+ [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
+ [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgBetaReportOffice365GroupActivityDetail -Period <String> [-Count] [-ExpandProperty <String[]>]
- [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
- [-Top <Int32>] [-Headers <IDictionary>] [<CommonParameters>]
+Get-MgBetaReportOffice365GroupActivityDetail -Period <String> [-Count] [-Filter <String>]
+ [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
+ [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgBetaReportOffice365GroupActivityDetail -InputObject <IReportsIdentity> [-Count]
- [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
- [-Sort <String[]>] [-Top <Int32>] [-Headers <IDictionary>] [<CommonParameters>]
+Get-MgBetaReportOffice365GroupActivityDetail -InputObject <IReportsIdentity> [-Count] [-Filter <String>]
+ [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
+ [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgBetaReportOffice365GroupActivityDetail -InputObject <IReportsIdentity> [-Count]
- [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
- [-Sort <String[]>] [-Top <Int32>] [-Headers <IDictionary>] [<CommonParameters>]
+Get-MgBetaReportOffice365GroupActivityDetail -InputObject <IReportsIdentity> [-Count] [-Filter <String>]
+ [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -91,21 +91,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ExpandProperty
-Expand related entities
-
-```yaml
-Type: System.String[]
-Parameter Sets: (All)
-Aliases: Expand
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Filter
 Filter items by property values
 
@@ -118,21 +103,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -249,13 +219,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IReportsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOffice365GroupsActivityDetail
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -288,11 +254,9 @@ To create the parameters described below, construct a hash table containing the 
   - `[IncludedUserTypes <String>]`: Usage: includedUserTypes='{includedUserTypes}'
   - `[InclusiveIntervalStartDateTime <DateTime?>]`: Usage: inclusiveIntervalStartDateTime={inclusiveIntervalStartDateTime}
   - `[InsightSummaryId <String>]`: The unique identifier of insightSummary
-  - `[ManifestId <String>]`: The unique identifier of manifest
   - `[MfaCompletionMetricId <String>]`: The unique identifier of mfaCompletionMetric
   - `[MonthlyInactiveUsersByApplicationMetricId <String>]`: The unique identifier of monthlyInactiveUsersByApplicationMetric
   - `[MonthlyInactiveUsersMetricId <String>]`: The unique identifier of monthlyInactiveUsersMetric
-  - `[OperationId <String>]`: The unique identifier of operation
   - `[Period <String>]`: Usage: period='{period}'
   - `[PrintUsageByPrinterId <String>]`: The unique identifier of printUsageByPrinter
   - `[PrintUsageByUserId <String>]`: The unique identifier of printUsageByUser

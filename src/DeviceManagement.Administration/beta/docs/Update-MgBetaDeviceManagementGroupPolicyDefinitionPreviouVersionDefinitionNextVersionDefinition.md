@@ -23,21 +23,21 @@ Update-MgBetaDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionNextVe
  [-MinUserCspVersion <String>] [-NextVersionDefinition <IMicrosoftGraphGroupPolicyDefinition>]
  [-PolicyType <GroupPolicyType>] [-Presentations <IMicrosoftGraphGroupPolicyPresentation[]>]
  [-PreviousVersionDefinition <IMicrosoftGraphGroupPolicyDefinition>] [-SupportedOn <String>]
- [-Version <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Version <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionNextVersionDefinition
- -GroupPolicyDefinitionId <String> -BodyParameter <IMicrosoftGraphGroupPolicyDefinition>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -GroupPolicyDefinitionId <String> -BodyParameter <IMicrosoftGraphGroupPolicyDefinition> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionNextVersionDefinition
  -InputObject <IDeviceManagementAdministrationIdentity> -BodyParameter <IMicrosoftGraphGroupPolicyDefinition>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -51,7 +51,7 @@ Update-MgBetaDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionNextVe
  [-MinUserCspVersion <String>] [-NextVersionDefinition <IMicrosoftGraphGroupPolicyDefinition>]
  [-PolicyType <GroupPolicyType>] [-Presentations <IMicrosoftGraphGroupPolicyPresentation[]>]
  [-PreviousVersionDefinition <IMicrosoftGraphGroupPolicyDefinition>] [-SupportedOn <String>]
- [-Version <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Version <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -243,21 +243,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -471,13 +456,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyDefinition
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyDefinition
-
-### System.Collections.Hashtable
 
 ## NOTES
 

@@ -14,26 +14,14 @@ Revoke the specified user's access to submit print jobs to the associated printe
 
 ### Delete (Default)
 ```
-Remove-MgBetaPrintPrinterShareAllowedUserByRef -PrinterShareId <String> -UserId <String> [-IfMatch <String>]
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### Delete1
-```
-Remove-MgBetaPrintPrinterShareAllowedUserByRef -PrinterShareId <String> -Id <String> [-IfMatch <String>]
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-MgBetaPrintPrinterShareAllowedUserByRef -PrinterShareId <String> -UserId <String> [-Id <String>]
+ [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgBetaPrintPrinterShareAllowedUserByRef -InputObject <IDevicesCloudPrintIdentity> [-IfMatch <String>]
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### DeleteViaIdentity1
-```
-Remove-MgBetaPrintPrinterShareAllowedUserByRef -InputObject <IDevicesCloudPrintIdentity> -Id <String>
- [-IfMatch <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-MgBetaPrintPrinterShareAllowedUserByRef -InputObject <IDevicesCloudPrintIdentity> [-Id <String>]
+ [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -51,30 +39,15 @@ Remove-MgBetaPrintPrinterShareAllowedUserByRef -PrinterShareId $printerShareId -
 
 ## PARAMETERS
 
-### -Headers
-Optional headers that will be added to the request.
+### -Id
+Delete Uri
 
 ```yaml
-Type: System.Collections.IDictionary
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Id
-The delete Uri
-
-```yaml
-Type: System.String
-Parameter Sets: Delete1, DeleteViaIdentity1
-Aliases:
-
-Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -102,7 +75,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCloudPrintIdentity
-Parameter Sets: DeleteViaIdentity, DeleteViaIdentity1
+Parameter Sets: DeleteViaIdentity
 Aliases:
 
 Required: True
@@ -132,7 +105,7 @@ The unique identifier of printerShare
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete, Delete1
+Parameter Sets: Delete
 Aliases:
 
 Required: True
@@ -195,13 +168,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCloudPrintIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
-
-### System.Collections.Hashtable
 
 ## NOTES
 

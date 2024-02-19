@@ -21,19 +21,19 @@ New-MgUserOnenotePage -UserId <String> [-AdditionalProperties <Hashtable>] [-Con
  [-ContentUrl <String>] [-CreatedByAppId <String>] [-CreatedDateTime <DateTime>] [-Id <String>]
  [-LastModifiedDateTime <DateTime>] [-Level <Int32>] [-Links <IMicrosoftGraphPageLinks>] [-Order <Int32>]
  [-ParentNotebook <IMicrosoftGraphNotebook>] [-ParentSection <IMicrosoftGraphOnenoteSection>] [-Self <String>]
- [-Title <String>] [-UserTags <String[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Title <String>] [-UserTags <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgUserOnenotePage -UserId <String> -BodyParameter <IMicrosoftGraphOnenotePage> [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgUserOnenotePage -UserId <String> -BodyParameter <IMicrosoftGraphOnenotePage> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgUserOnenotePage -InputObject <INotesIdentity> -BodyParameter <IMicrosoftGraphOnenotePage>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgUserOnenotePage -InputObject <INotesIdentity> -BodyParameter <IMicrosoftGraphOnenotePage> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -42,8 +42,7 @@ New-MgUserOnenotePage -InputObject <INotesIdentity> [-AdditionalProperties <Hash
  [-ContentInputFile <String>] [-ContentUrl <String>] [-CreatedByAppId <String>] [-CreatedDateTime <DateTime>]
  [-Id <String>] [-LastModifiedDateTime <DateTime>] [-Level <Int32>] [-Links <IMicrosoftGraphPageLinks>]
  [-Order <Int32>] [-ParentNotebook <IMicrosoftGraphNotebook>] [-ParentSection <IMicrosoftGraphOnenoteSection>]
- [-Self <String>] [-Title <String>] [-UserTags <String[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Self <String>] [-Title <String>] [-UserTags <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -163,21 +162,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -412,13 +396,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.INotesIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnenotePage
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -513,8 +493,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[OnenotePageId <String>]`: The unique identifier of onenotePage
   - `[OnenoteResourceId <String>]`: The unique identifier of onenoteResource
   - `[OnenoteSectionId <String>]`: The unique identifier of onenoteSection
-  - `[Path <String>]`: Usage: path='{path}'
-  - `[Path1 <String>]`: Usage: path='{path1}'
   - `[SectionGroupId <String>]`: The unique identifier of sectionGroup
   - `[SiteId <String>]`: The unique identifier of site
   - `[UserId <String>]`: The unique identifier of user

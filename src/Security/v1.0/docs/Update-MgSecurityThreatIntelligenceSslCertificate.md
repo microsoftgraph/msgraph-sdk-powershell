@@ -19,22 +19,19 @@ Update-MgSecurityThreatIntelligenceSslCertificate -SslCertificateId <String>
  [-FirstSeenDateTime <DateTime>] [-Id <String>] [-IssueDateTime <DateTime>]
  [-Issuer <IMicrosoftGraphSecuritySslCertificateEntity>] [-LastSeenDateTime <DateTime>]
  [-RelatedHosts <IMicrosoftGraphSecurityHost[]>] [-SerialNumber <String>] [-Sha1 <String>]
- [-Subject <IMicrosoftGraphSecuritySslCertificateEntity>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Subject <IMicrosoftGraphSecuritySslCertificateEntity>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgSecurityThreatIntelligenceSslCertificate -SslCertificateId <String>
- -BodyParameter <IMicrosoftGraphSecuritySslCertificate> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphSecuritySslCertificate> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgSecurityThreatIntelligenceSslCertificate -InputObject <ISecurityIdentity>
- -BodyParameter <IMicrosoftGraphSecuritySslCertificate> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphSecuritySslCertificate> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -44,8 +41,7 @@ Update-MgSecurityThreatIntelligenceSslCertificate -InputObject <ISecurityIdentit
  [-FirstSeenDateTime <DateTime>] [-Id <String>] [-IssueDateTime <DateTime>]
  [-Issuer <IMicrosoftGraphSecuritySslCertificateEntity>] [-LastSeenDateTime <DateTime>]
  [-RelatedHosts <IMicrosoftGraphSecurityHost[]>] [-SerialNumber <String>] [-Sha1 <String>]
- [-Subject <IMicrosoftGraphSecuritySslCertificateEntity>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Subject <IMicrosoftGraphSecuritySslCertificateEntity>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -146,21 +142,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -364,13 +345,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecuritySslCertificate
-
-### System.Collections.Hashtable
 
 ## NOTES
 

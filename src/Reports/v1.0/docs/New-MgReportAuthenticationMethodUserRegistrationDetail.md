@@ -19,14 +19,13 @@ New-MgReportAuthenticationMethodUserRegistrationDetail [-AdditionalProperties <H
  [-IsSsprRegistered] [-IsSystemPreferredAuthenticationMethodEnabled] [-LastUpdatedDateTime <DateTime>]
  [-MethodsRegistered <String[]>] [-SystemPreferredAuthenticationMethods <String[]>]
  [-UserDisplayName <String>] [-UserPreferredMethodForSecondaryAuthentication <String>]
- [-UserPrincipalName <String>] [-UserType <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-UserPrincipalName <String>] [-UserType <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgReportAuthenticationMethodUserRegistrationDetail -BodyParameter <IMicrosoftGraphUserRegistrationDetails>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -75,21 +74,6 @@ Parameter Sets: Create
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -395,13 +379,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserRegistrationDetails
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserRegistrationDetails
-
-### System.Collections.Hashtable
 
 ## NOTES
 

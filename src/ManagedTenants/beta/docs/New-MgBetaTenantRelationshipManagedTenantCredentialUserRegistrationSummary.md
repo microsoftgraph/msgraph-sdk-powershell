@@ -19,14 +19,14 @@ New-MgBetaTenantRelationshipManagedTenantCredentialUserRegistrationSummary [-Add
  [-MfaConditionalAccessPolicyState <String>] [-MfaExcludedUserCount <Int32>] [-MfaRegisteredUserCount <Int32>]
  [-SecurityDefaultsEnabled] [-SsprEnabledUserCount <Int32>] [-SsprRegisteredUserCount <Int32>]
  [-TenantDisplayName <String>] [-TenantId <String>] [-TenantLicenseType <String>] [-TotalUserCount <Int32>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaTenantRelationshipManagedTenantCredentialUserRegistrationSummary
- -BodyParameter <IMicrosoftGraphManagedTenantsCredentialUserRegistrationsSummary> [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphManagedTenantsCredentialUserRegistrationsSummary> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -75,21 +75,6 @@ Parameter Sets: Create
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -352,13 +337,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsCredentialUserRegistrationsSummary
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsCredentialUserRegistrationsSummary
-
-### System.Collections.Hashtable
 
 ## NOTES
 

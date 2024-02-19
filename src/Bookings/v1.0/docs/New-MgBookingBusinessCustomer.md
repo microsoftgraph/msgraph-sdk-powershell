@@ -15,25 +15,25 @@ Create a new bookingCustomer object.
 ### CreateExpanded (Default)
 ```
 New-MgBookingBusinessCustomer -BookingBusinessId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgBookingBusinessCustomer -BookingBusinessId <String> -BodyParameter <Hashtable> [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBookingBusinessCustomer -BookingBusinessId <String> -BodyParameter <Hashtable> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgBookingBusinessCustomer -InputObject <IBookingsIdentity> -BodyParameter <Hashtable>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBookingBusinessCustomer -InputObject <IBookingsIdentity> -BodyParameter <Hashtable> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgBookingBusinessCustomer -InputObject <IBookingsIdentity> [-AdditionalProperties <Hashtable>]
- [-Id <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -102,21 +102,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -192,11 +177,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Collections.Hashtable
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
-
-### System.Collections.Hashtable
 
 ### System.String
 

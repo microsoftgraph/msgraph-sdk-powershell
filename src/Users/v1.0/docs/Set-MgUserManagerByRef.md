@@ -15,25 +15,25 @@ Assign a user's manager.
 ### SetExpanded (Default)
 ```
 Set-MgUserManagerByRef -UserId <String> -OdataId <String> [-AdditionalProperties <Hashtable>]
- [-OdataType <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-OdataType <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Set
 ```
-Set-MgUserManagerByRef -UserId <String> -BodyParameter <IReferenceUpdate> [-Headers <IDictionary>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Set-MgUserManagerByRef -UserId <String> -BodyParameter <IReferenceUpdate> [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### SetViaIdentity
 ```
-Set-MgUserManagerByRef -InputObject <IUsersIdentity> -BodyParameter <IReferenceUpdate>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Set-MgUserManagerByRef -InputObject <IUsersIdentity> -BodyParameter <IReferenceUpdate> [-PassThru] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentityExpanded
 ```
 Set-MgUserManagerByRef -InputObject <IUsersIdentity> -OdataId <String> [-AdditionalProperties <Hashtable>]
- [-OdataType <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-OdataType <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -77,21 +77,6 @@ Parameter Sets: Set, SetViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -215,13 +200,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IUsersIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
-
-### System.Collections.Hashtable
 
 ## NOTES
 

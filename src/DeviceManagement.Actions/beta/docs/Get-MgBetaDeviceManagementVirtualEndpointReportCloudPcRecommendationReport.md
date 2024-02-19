@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgBetaDeviceManagementVirtualEndpointReportCloudPcRecommendationReport
 
 ## SYNOPSIS
-Get the device recommendation reports for Cloud PCs, such as the usage category report.
-The usage category report categorizes a Cloud PC as Undersized, Oversized, Rightsized, or Underutilized, and also provides the recommended SKU when the Cloud PC isn't Rightsized.
+Invoke action getCloudPcRecommendationReports
 
 ## SYNTAX
 
@@ -17,20 +16,19 @@ The usage category report categorizes a Cloud PC as Undersized, Oversized, Right
 ```
 Get-MgBetaDeviceManagementVirtualEndpointReportCloudPcRecommendationReport -OutFile <String>
  [-AdditionalProperties <Hashtable>] [-Filter <String>] [-GroupBy <String[]>] [-Property <String[]>]
- [-ReportName <String>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ReportName <String>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Get
 ```
 Get-MgBetaDeviceManagementVirtualEndpointReportCloudPcRecommendationReport
  -BodyParameter <IPaths1Vvo8XoDevicemanagementVirtualendpointReportsMicrosoftGraphGetcloudpcrecommendationreportsPostRequestbodyContentApplicationJsonSchema>
- -OutFile <String> [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -OutFile <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get the device recommendation reports for Cloud PCs, such as the usage category report.
-The usage category report categorizes a Cloud PC as Undersized, Oversized, Rightsized, or Underutilized, and also provides the recommended SKU when the Cloud PC isn't Rightsized.
+Invoke action getCloudPcRecommendationReports
 
 ## EXAMPLES
 
@@ -108,21 +106,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -284,13 +267,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPaths1Vvo8XoDevicemanagementVirtualendpointReportsMicrosoftGraphGetcloudpcrecommendationreportsPostRequestbodyContentApplicationJsonSchema
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
-
-### System.Collections.Hashtable
 
 ## NOTES
 

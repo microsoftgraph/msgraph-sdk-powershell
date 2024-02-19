@@ -16,14 +16,13 @@ The role definition that the request aims to.
 ### Get (Default)
 ```
 Get-MgBetaPrivilegedAccessRoleAssignmentRequestRoleDefinition -GovernanceRoleAssignmentRequestId <String>
- -PrivilegedAccessId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [-Headers <IDictionary>]
- [<CommonParameters>]
+ -PrivilegedAccessId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
 Get-MgBetaPrivilegedAccessRoleAssignmentRequestRoleDefinition -InputObject <IIdentityGovernanceIdentity>
- [-ExpandProperty <String[]>] [-Property <String[]>] [-Headers <IDictionary>] [<CommonParameters>]
+ [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -75,21 +74,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -146,13 +130,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGovernanceRoleDefinition
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -215,7 +195,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[GroupId <String>]`: The unique identifier of group
   - `[IncompatibleAccessPackageId <String>]`: Usage: incompatibleAccessPackageId='{incompatibleAccessPackageId}'
   - `[LongRunningOperationId <String>]`: The unique identifier of longRunningOperation
-  - `[ObjectId <String>]`: Alternate key of accessPackageSubject
   - `[On <String>]`: Usage: on='{on}'
   - `[PermissionsCreepIndexDistributionId <String>]`: The unique identifier of permissionsCreepIndexDistribution
   - `[PermissionsRequestChangeId <String>]`: The unique identifier of permissionsRequestChange

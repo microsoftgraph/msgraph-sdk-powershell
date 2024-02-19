@@ -15,29 +15,27 @@ Grant users access to a link represented by a [permission][].
 ### GrantExpanded (Default)
 ```
 Grant-MgBetaSharePermission -SharedDriveItemId <String> [-AdditionalProperties <Hashtable>]
- [-Recipients <IMicrosoftGraphDriveRecipient[]>] [-Roles <String[]>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-Recipients <IMicrosoftGraphDriveRecipient[]>] [-Roles <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Grant
 ```
 Grant-MgBetaSharePermission -SharedDriveItemId <String>
  -BodyParameter <IPaths1Mcxy93SharesShareddriveitemIdPermissionMicrosoftGraphGrantPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### GrantViaIdentity
 ```
 Grant-MgBetaSharePermission -InputObject <IFilesIdentity>
  -BodyParameter <IPaths1Mcxy93SharesShareddriveitemIdPermissionMicrosoftGraphGrantPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### GrantViaIdentityExpanded
 ```
 Grant-MgBetaSharePermission -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>]
- [-Recipients <IMicrosoftGraphDriveRecipient[]>] [-Roles <String[]>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-Recipients <IMicrosoftGraphDriveRecipient[]>] [-Roles <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -93,21 +91,6 @@ Parameter Sets: Grant, GrantViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -216,13 +199,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPaths1Mcxy93SharesShareddriveitemIdPermissionMicrosoftGraphGrantPostRequestbodyContentApplicationJsonSchema
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPermission
-
-### System.Collections.Hashtable
 
 ## NOTES
 

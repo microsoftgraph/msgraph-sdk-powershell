@@ -20,15 +20,13 @@ New-MgRoleManagementDirectoryRoleEligibilitySchedule [-AdditionalProperties <Has
  [-Id <String>] [-MemberType <String>] [-ModifiedDateTime <DateTime>]
  [-Principal <IMicrosoftGraphDirectoryObject>] [-PrincipalId <String>]
  [-RoleDefinition <IMicrosoftGraphUnifiedRoleDefinition>] [-RoleDefinitionId <String>]
- [-ScheduleInfo <IMicrosoftGraphRequestSchedule>] [-Status <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-ScheduleInfo <IMicrosoftGraphRequestSchedule>] [-Status <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgRoleManagementDirectoryRoleEligibilitySchedule
- -BodyParameter <IMicrosoftGraphUnifiedRoleEligibilitySchedule> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphUnifiedRoleEligibilitySchedule> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -180,21 +178,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -378,13 +361,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUnifiedRoleEligibilitySchedule
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUnifiedRoleEligibilitySchedule
-
-### System.Collections.Hashtable
 
 ## NOTES
 

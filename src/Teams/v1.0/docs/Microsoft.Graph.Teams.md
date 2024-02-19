@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Teams
-Module Guid: 34b900c5-0e15-4846-b885-c530ee194811
+Module Guid: 88f81a66-95ab-4e1d-bb45-ff2f46ea8f47
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.teams
 Help Version: 1.0.0.0
 Locale: en-US
@@ -280,8 +280,7 @@ This can't be changed after tab creation.
 Get group from groups
 
 ### [Get-MgGroupTeamGroupServiceProvisioningError](Get-MgGroupTeamGroupServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a group object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgGroupTeamGroupServiceProvisioningErrorCount](Get-MgGroupTeamGroupServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -550,8 +549,7 @@ This can't be changed after tab creation.
 Get the number of the resource
 
 ### [Get-MgTeamGroupServiceProvisioningError](Get-MgTeamGroupServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a group object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgTeamGroupServiceProvisioningErrorCount](Get-MgTeamGroupServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -972,9 +970,7 @@ Mark a chat as read for a user.
 Mark a chat as unread for a user.
 
 ### [Invoke-MgShareTeamSchedule](Invoke-MgShareTeamSchedule.md)
-Share a schedule time range with schedule members.
-This action makes the collections of shift, openshift and timeOff items in the specified time range of the schedule viewable by the specified team members, including employees and managers.
-Each shift, openshift and timeOff instance in a schedule supports a draft version and a shared version of the item.
+Share a schedule time range with schedule members.\nMake the collections of shift, openshift and timeOff items in the specified time range of the schedule viewable by the specified team members, including employees and managers.\nEach shift, openshift and timeOff instance in a schedule supports a draft version and a shared version of the item.
 The draft version is viewable by only managers, and the shared version is viewable by employees and managers.
 For each shift, openshift and timeOff instance in the specified time range, the share action updates the shared version from the draft version, so that in addition to managers, employees can also view the most current information about the item.
 The notifyTeam parameter further specifies which employees can view the item.
@@ -1030,7 +1026,8 @@ Install a teamsApp to the specified chat.
 Add a conversationMember to a chat.
 
 ### [New-MgChatMessage](New-MgChatMessage.md)
-Send a new chatMessage in the specified channel or a chat.
+Send a new chatMessage in the specified chat.
+This API can't create a new chat; you must use the list chats method to retrieve the ID of an existing chat before you can create a chat message.
 
 ### [New-MgChatMessageHostedContent](New-MgChatMessageHostedContent.md)
 Create new navigation property to hostedContents for chats
@@ -1060,6 +1057,7 @@ If you're creating a private channel, you can add a maximum of 200 members.
 
 ### [New-MgGroupTeamChannelMember](New-MgGroupTeamChannelMember.md)
 Add a conversationMember to a channel.
+This operation is allowed only for channels with a membershipType value of private or shared.
 
 ### [New-MgGroupTeamChannelMessage](New-MgGroupTeamChannelMessage.md)
 Send a new chatMessage in the specified channel or a chat.
@@ -1094,6 +1092,7 @@ Create new navigation property to permissionGrants for groups
 
 ### [New-MgGroupTeamPrimaryChannelMember](New-MgGroupTeamPrimaryChannelMember.md)
 Add a conversationMember to a channel.
+This operation is allowed only for channels with a membershipType value of private or shared.
 
 ### [New-MgGroupTeamPrimaryChannelMessage](New-MgGroupTeamPrimaryChannelMessage.md)
 Send a new chatMessage in the specified channel or a chat.
@@ -1165,6 +1164,7 @@ To remove the email address of a channel, use the removeEmail method.
 
 ### [New-MgTeamChannelMember](New-MgTeamChannelMember.md)
 Add a conversationMember to a channel.
+This operation is allowed only for channels with a membershipType value of private or shared.
 
 ### [New-MgTeamChannelMessage](New-MgTeamChannelMessage.md)
 Send a new chatMessage in the specified channel or a chat.
@@ -1205,6 +1205,7 @@ To remove the email address of a channel, use the removeEmail method.
 
 ### [New-MgTeamPrimaryChannelMember](New-MgTeamPrimaryChannelMember.md)
 Add a conversationMember to a channel.
+This operation is allowed only for channels with a membershipType value of private or shared.
 
 ### [New-MgTeamPrimaryChannelMessage](New-MgTeamPrimaryChannelMessage.md)
 Send a new chatMessage in the specified channel or a chat.
@@ -1273,6 +1274,7 @@ To remove the email address of a channel, use the removeEmail method.
 
 ### [New-MgTeamworkDeletedTeamChannelMember](New-MgTeamworkDeletedTeamChannelMember.md)
 Add a conversationMember to a channel.
+This operation is allowed only for channels with a membershipType value of private or shared.
 
 ### [New-MgTeamworkDeletedTeamChannelMessage](New-MgTeamworkDeletedTeamChannelMessage.md)
 Send a new chatMessage in the specified channel or a chat.
@@ -1306,7 +1308,8 @@ Install a teamsApp to the specified chat.
 Add a conversationMember to a chat.
 
 ### [New-MgUserChatMessage](New-MgUserChatMessage.md)
-Send a new chatMessage in the specified channel or a chat.
+Send a new chatMessage in the specified chat.
+This API can't create a new chat; you must use the list chats method to retrieve the ID of an existing chat before you can create a chat message.
 
 ### [New-MgUserChatMessageHostedContent](New-MgUserChatMessageHostedContent.md)
 Create new navigation property to hostedContents for users
@@ -1396,6 +1399,9 @@ This operation is allowed only for channels with a membershipType value of share
 
 ### [Remove-MgGroupTeamChannelTab](Remove-MgGroupTeamChannelTab.md)
 Removes (unpins) a tab from the specified channel within a team.
+
+### [Remove-MgGroupTeamIncomingChannel](Remove-MgGroupTeamIncomingChannel.md)
+Remove an incoming channel (a channel shared with a team) from a team.
 
 ### [Remove-MgGroupTeamInstalledApp](Remove-MgGroupTeamInstalledApp.md)
 Uninstalls an app from the specified team.
@@ -1496,6 +1502,9 @@ This operation is allowed only for channels with a membershipType value of share
 
 ### [Remove-MgTeamChannelTab](Remove-MgTeamChannelTab.md)
 Removes (unpins) a tab from the specified channel within a team.
+
+### [Remove-MgTeamIncomingChannel](Remove-MgTeamIncomingChannel.md)
+Remove an incoming channel (a channel shared with a team) from a team.
 
 ### [Remove-MgTeamInstalledApp](Remove-MgTeamInstalledApp.md)
 Uninstalls an app from the specified team.
@@ -1651,15 +1660,15 @@ Uninstall an app from the personal scope of the specified user.
 
 ### [Send-MgChatActivityNotification](Send-MgChatActivityNotification.md)
 Send an activity feed notification in scope of a chat.
-For more information about sending notifications and the requirements for doing so, see sending Teams activity notifications.
+For more details about sending notifications and the requirements for doing so, see sending Teams activity notifications.
 
 ### [Send-MgTeamActivityNotification](Send-MgTeamActivityNotification.md)
 Send an activity feed notification in the scope of a team.
-For more information about sending notifications and the requirements for doing so, see\nsending Teams activity notifications.
+For more details about sending notifications and the requirements for doing so, see\nsending Teams activity notifications.
 
 ### [Send-MgTeamworkActivityNotificationToRecipient](Send-MgTeamworkActivityNotificationToRecipient.md)
 Send activity feed notifications to multiple users, in bulk.
-For more information, see sending Teams activity notifications.
+For more details about sending notifications and the requirements for doing so, see\nsending Teams activity notifications.
 
 ### [Set-MgChatMessageHostedContent](Set-MgChatMessageHostedContent.md)
 Update media content for the navigation property hostedContents in chats

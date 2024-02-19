@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceManagementDeviceConfiguration
 
 ## SYNOPSIS
-Update the properties of a androidGeneralDeviceConfiguration object.
+Update the properties of a sharedPCConfiguration object.
 
 ## SYNTAX
 
@@ -22,22 +22,20 @@ Update-MgDeviceManagementDeviceConfiguration -DeviceConfigurationId <String>
  [-DeviceStatusOverview <IMicrosoftGraphDeviceConfigurationDeviceOverview>] [-DisplayName <String>]
  [-Id <String>] [-LastModifiedDateTime <DateTime>]
  [-UserStatuses <IMicrosoftGraphDeviceConfigurationUserStatus[]>]
- [-UserStatusOverview <IMicrosoftGraphDeviceConfigurationUserOverview>] [-Version <Int32>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-UserStatusOverview <IMicrosoftGraphDeviceConfigurationUserOverview>] [-Version <Int32>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgDeviceManagementDeviceConfiguration -DeviceConfigurationId <String>
- -BodyParameter <IMicrosoftGraphDeviceConfiguration> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphDeviceConfiguration> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgDeviceManagementDeviceConfiguration -InputObject <IDeviceManagementIdentity>
- -BodyParameter <IMicrosoftGraphDeviceConfiguration> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphDeviceConfiguration> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -50,12 +48,12 @@ Update-MgDeviceManagementDeviceConfiguration -InputObject <IDeviceManagementIden
  [-DeviceStatusOverview <IMicrosoftGraphDeviceConfigurationDeviceOverview>] [-DisplayName <String>]
  [-Id <String>] [-LastModifiedDateTime <DateTime>]
  [-UserStatuses <IMicrosoftGraphDeviceConfigurationUserStatus[]>]
- [-UserStatusOverview <IMicrosoftGraphDeviceConfigurationUserOverview>] [-Version <Int32>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-UserStatusOverview <IMicrosoftGraphDeviceConfigurationUserOverview>] [-Version <Int32>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Update the properties of a androidGeneralDeviceConfiguration object.
+Update the properties of a sharedPCConfiguration object.
 
 ## EXAMPLES
 
@@ -230,21 +228,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -379,13 +362,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceConfiguration
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceConfiguration
-
-### System.Collections.Hashtable
 
 ## NOTES
 

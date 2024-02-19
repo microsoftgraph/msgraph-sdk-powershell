@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Reports
-Module Guid: 95dfe6e5-275d-4a1b-b763-1af83d22df09
+Module Guid: c6334a8b-f6f2-41e9-a258-62694e673ec4
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.reports
 Help Version: 1.0.0.0
 Locale: en-US
@@ -21,12 +21,6 @@ For details about investigating Identity Protection risks, see How to investigat
 Allow admins to mark an event in Microsoft Entra sign-in logs as safe.
 Admins can either mark the events flagged as risky by Microsoft Entra ID Protection as safe, or they can mark unflagged events as safe.
 For details about investigating Identity Protection risks, see How to investigate risk.
-
-### [Export-MgBetaReportPartnerBillingUsageBilled](Export-MgBetaReportPartnerBillingUsageBilled.md)
-Export the billed Azure usage data.
-
-### [Export-MgBetaReportPartnerBillingUsageUnbilled](Export-MgBetaReportPartnerBillingUsageUnbilled.md)
-Export the unbilled Azure usage data for a specific billing period and a given currency.
 
 ### [Get-MgBetaAdminReportSetting](Get-MgBetaAdminReportSetting.md)
 Get the tenant-level settings for Microsoft 365 reports.
@@ -66,13 +60,13 @@ Get the number of the resource
 Reports singleton
 
 ### [Get-MgBetaDeviceManagementReportCachedReportConfiguration](Get-MgBetaDeviceManagementReportCachedReportConfiguration.md)
-Entity representing the configuration of a cached report.
+Entity representing the configuration of a cached report
 
 ### [Get-MgBetaDeviceManagementReportCachedReportConfigurationCount](Get-MgBetaDeviceManagementReportCachedReportConfigurationCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaDeviceManagementReportExportJob](Get-MgBetaDeviceManagementReportExportJob.md)
-Entity representing a job to export a report.
+Entity representing a job to export a report
 
 ### [Get-MgBetaDeviceManagementReportExportJobCount](Get-MgBetaDeviceManagementReportExportJobCount.md)
 Get the number of the resource
@@ -315,33 +309,6 @@ Invoke function getOneDriveUsageFileCounts
 
 ### [Get-MgBetaReportOneDriveUsageStorage](Get-MgBetaReportOneDriveUsageStorage.md)
 Invoke function getOneDriveUsageStorage
-
-### [Get-MgBetaReportPartner](Get-MgBetaReportPartner.md)
-Represents billing details for a Microsoft direct partner.
-
-### [Get-MgBetaReportPartnerBilling](Get-MgBetaReportPartnerBilling.md)
-Represents billing details for billed and unbilled data.
-
-### [Get-MgBetaReportPartnerBillingManifest](Get-MgBetaReportPartnerBillingManifest.md)
-Read the properties and relationships of a manifest object.
-
-### [Get-MgBetaReportPartnerBillingManifestCount](Get-MgBetaReportPartnerBillingManifestCount.md)
-Get the number of the resource
-
-### [Get-MgBetaReportPartnerBillingOperation](Get-MgBetaReportPartnerBillingOperation.md)
-Read the properties and relationships of an operation object.
-
-### [Get-MgBetaReportPartnerBillingOperationCount](Get-MgBetaReportPartnerBillingOperationCount.md)
-Get the number of the resource
-
-### [Get-MgBetaReportPartnerBillingUsage](Get-MgBetaReportPartnerBillingUsage.md)
-Represents details for billed and unbilled Azure usage data.
-
-### [Get-MgBetaReportPartnerBillingUsageBilled](Get-MgBetaReportPartnerBillingUsageBilled.md)
-Represents details for billed Azure usage data.
-
-### [Get-MgBetaReportPartnerBillingUsageUnbilled](Get-MgBetaReportPartnerBillingUsageUnbilled.md)
-Represents details for unbilled Azure usage data.
 
 ### [Get-MgBetaReportPrinterArchivedPrintJob](Get-MgBetaReportPrinterArchivedPrintJob.md)
 Invoke function getPrinterArchivedPrintJobs
@@ -674,12 +641,6 @@ Invoke function usersRegisteredByFeature
 ### [New-MgBetaReportAuthenticationMethodUserRegistrationDetail](New-MgBetaReportAuthenticationMethodUserRegistrationDetail.md)
 Create new navigation property to userRegistrationDetails for reports
 
-### [New-MgBetaReportPartnerBillingManifest](New-MgBetaReportPartnerBillingManifest.md)
-Create new navigation property to manifests for reports
-
-### [New-MgBetaReportPartnerBillingOperation](New-MgBetaReportPartnerBillingOperation.md)
-Create new navigation property to operations for reports
-
 ### [Remove-MgBetaAdminReportSetting](Remove-MgBetaAdminReportSetting.md)
 Delete navigation property reportSettings for admin
 
@@ -688,24 +649,6 @@ Delete navigation property reports for deviceManagement
 
 ### [Remove-MgBetaReportAuthenticationMethodUserRegistrationDetail](Remove-MgBetaReportAuthenticationMethodUserRegistrationDetail.md)
 Delete navigation property userRegistrationDetails for reports
-
-### [Remove-MgBetaReportPartnerBilling](Remove-MgBetaReportPartnerBilling.md)
-Delete navigation property billing for reports
-
-### [Remove-MgBetaReportPartnerBillingManifest](Remove-MgBetaReportPartnerBillingManifest.md)
-Delete navigation property manifests for reports
-
-### [Remove-MgBetaReportPartnerBillingOperation](Remove-MgBetaReportPartnerBillingOperation.md)
-Delete navigation property operations for reports
-
-### [Remove-MgBetaReportPartnerBillingUsage](Remove-MgBetaReportPartnerBillingUsage.md)
-Delete navigation property usage for reports
-
-### [Remove-MgBetaReportPartnerBillingUsageBilled](Remove-MgBetaReportPartnerBillingUsageBilled.md)
-Delete navigation property billed for reports
-
-### [Remove-MgBetaReportPartnerBillingUsageUnbilled](Remove-MgBetaReportPartnerBillingUsageUnbilled.md)
-Delete navigation property unbilled for reports
 
 ### [Remove-MgBetaReportSlaAzureAdAuthentication](Remove-MgBetaReportSlaAzureAdAuthentication.md)
 Delete navigation property azureADAuthentication for reports
@@ -724,24 +667,6 @@ Update the navigation property reports in deviceManagement
 
 ### [Update-MgBetaReportAuthenticationMethodUserRegistrationDetail](Update-MgBetaReportAuthenticationMethodUserRegistrationDetail.md)
 Update the navigation property userRegistrationDetails in reports
-
-### [Update-MgBetaReportPartnerBilling](Update-MgBetaReportPartnerBilling.md)
-Update the navigation property billing in reports
-
-### [Update-MgBetaReportPartnerBillingManifest](Update-MgBetaReportPartnerBillingManifest.md)
-Update the navigation property manifests in reports
-
-### [Update-MgBetaReportPartnerBillingOperation](Update-MgBetaReportPartnerBillingOperation.md)
-Update the navigation property operations in reports
-
-### [Update-MgBetaReportPartnerBillingUsage](Update-MgBetaReportPartnerBillingUsage.md)
-Update the navigation property usage in reports
-
-### [Update-MgBetaReportPartnerBillingUsageBilled](Update-MgBetaReportPartnerBillingUsageBilled.md)
-Update the navigation property billed in reports
-
-### [Update-MgBetaReportPartnerBillingUsageUnbilled](Update-MgBetaReportPartnerBillingUsageUnbilled.md)
-Update the navigation property unbilled in reports
 
 ### [Update-MgBetaReportSlaAzureAdAuthentication](Update-MgBetaReportSlaAzureAdAuthentication.md)
 Update the navigation property azureADAuthentication in reports

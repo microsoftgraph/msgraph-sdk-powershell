@@ -16,30 +16,28 @@ Update the navigation property bulkActions in deviceManagement
 ```
 Update-MgBetaDeviceManagementVirtualEndpointBulkAction -CloudPcBulkActionId <String>
  [-ActionSummary <IMicrosoftGraphCloudPcBulkActionSummary>] [-AdditionalProperties <Hashtable>]
- [-CloudPcIds <String[]>] [-CreatedDateTime <DateTime>] [-DisplayName <String>] [-Id <String>]
- [-ScheduledDuringMaintenanceWindow] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-CloudPcIds <String[]>] [-CreatedDateTime <DateTime>] [-DisplayName <String>] [-Id <String>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaDeviceManagementVirtualEndpointBulkAction -CloudPcBulkActionId <String>
- -BodyParameter <IMicrosoftGraphCloudPcBulkAction> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphCloudPcBulkAction> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaDeviceManagementVirtualEndpointBulkAction -InputObject <IDeviceManagementAdministrationIdentity>
- -BodyParameter <IMicrosoftGraphCloudPcBulkAction> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphCloudPcBulkAction> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgBetaDeviceManagementVirtualEndpointBulkAction -InputObject <IDeviceManagementAdministrationIdentity>
  [-ActionSummary <IMicrosoftGraphCloudPcBulkActionSummary>] [-AdditionalProperties <Hashtable>]
- [-CloudPcIds <String[]>] [-CreatedDateTime <DateTime>] [-DisplayName <String>] [-Id <String>]
- [-ScheduledDuringMaintenanceWindow] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-CloudPcIds <String[]>] [-CreatedDateTime <DateTime>] [-DisplayName <String>] [-Id <String>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -170,21 +168,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -214,21 +197,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -ScheduledDuringMaintenanceWindow
-.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -272,13 +240,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcBulkAction
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcBulkAction
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -310,7 +274,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[CloudPcIds <String[]>]`: 
   - `[CreatedDateTime <DateTime?>]`: 
   - `[DisplayName <String>]`: 
-  - `[ScheduledDuringMaintenanceWindow <Boolean?>]`: 
 
 `INPUTOBJECT <IDeviceManagementAdministrationIdentity>`: Identity Parameter
   - `[AuditEventId <String>]`: The unique identifier of auditEvent

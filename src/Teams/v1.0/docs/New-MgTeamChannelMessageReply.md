@@ -23,21 +23,20 @@ New-MgTeamChannelMessageReply -ChannelId <String> -ChatMessageId <String> -TeamI
  [-Mentions <IMicrosoftGraphChatMessageMention[]>] [-MessageHistory <IMicrosoftGraphChatMessageHistoryItem[]>]
  [-MessageType <String>] [-PolicyViolation <IMicrosoftGraphChatMessagePolicyViolation>]
  [-Reactions <IMicrosoftGraphChatMessageReaction[]>] [-Replies <IMicrosoftGraphChatMessage[]>]
- [-ReplyToId <String>] [-Subject <String>] [-Summary <String>] [-WebUrl <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ReplyToId <String>] [-Subject <String>] [-Summary <String>] [-WebUrl <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgTeamChannelMessageReply -ChannelId <String> -ChatMessageId <String> -TeamId <String>
- -BodyParameter <IMicrosoftGraphChatMessage> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphChatMessage> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgTeamChannelMessageReply -InputObject <ITeamsIdentity> -BodyParameter <IMicrosoftGraphChatMessage>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -51,8 +50,8 @@ New-MgTeamChannelMessageReply -InputObject <ITeamsIdentity> [-AdditionalProperti
  [-Mentions <IMicrosoftGraphChatMessageMention[]>] [-MessageHistory <IMicrosoftGraphChatMessageHistoryItem[]>]
  [-MessageType <String>] [-PolicyViolation <IMicrosoftGraphChatMessagePolicyViolation>]
  [-Reactions <IMicrosoftGraphChatMessageReaction[]>] [-Replies <IMicrosoftGraphChatMessage[]>]
- [-ReplyToId <String>] [-Subject <String>] [-Summary <String>] [-WebUrl <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ReplyToId <String>] [-Subject <String>] [-Summary <String>] [-WebUrl <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -274,21 +273,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -621,13 +605,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphChatMessage
-
-### System.Collections.Hashtable
 
 ## NOTES
 

@@ -20,23 +20,23 @@ Update-MgBetaTenantRelationshipManagedTenantCredentialUserRegistrationSummary
  [-MfaConditionalAccessPolicyState <String>] [-MfaExcludedUserCount <Int32>] [-MfaRegisteredUserCount <Int32>]
  [-SecurityDefaultsEnabled] [-SsprEnabledUserCount <Int32>] [-SsprRegisteredUserCount <Int32>]
  [-TenantDisplayName <String>] [-TenantId <String>] [-TenantLicenseType <String>] [-TotalUserCount <Int32>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaTenantRelationshipManagedTenantCredentialUserRegistrationSummary
  -CredentialUserRegistrationsSummaryId <String>
- -BodyParameter <IMicrosoftGraphManagedTenantsCredentialUserRegistrationsSummary> [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphManagedTenantsCredentialUserRegistrationsSummary> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaTenantRelationshipManagedTenantCredentialUserRegistrationSummary
  -InputObject <IManagedTenantsIdentity>
- -BodyParameter <IMicrosoftGraphManagedTenantsCredentialUserRegistrationsSummary> [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphManagedTenantsCredentialUserRegistrationsSummary> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -47,7 +47,7 @@ Update-MgBetaTenantRelationshipManagedTenantCredentialUserRegistrationSummary
  [-MfaConditionalAccessPolicyState <String>] [-MfaExcludedUserCount <Int32>] [-MfaRegisteredUserCount <Int32>]
  [-SecurityDefaultsEnabled] [-SsprEnabledUserCount <Int32>] [-SsprRegisteredUserCount <Int32>]
  [-TenantDisplayName <String>] [-TenantId <String>] [-TenantLicenseType <String>] [-TotalUserCount <Int32>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -114,21 +114,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -406,13 +391,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsCredentialUserRegistrationsSummary
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsCredentialUserRegistrationsSummary
-
-### System.Collections.Hashtable
 
 ## NOTES
 

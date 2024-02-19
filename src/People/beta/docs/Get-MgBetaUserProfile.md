@@ -18,13 +18,13 @@ See the methods exposed by profile.
 ### Get (Default)
 ```
 Get-MgBetaUserProfile -UserId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
- [-Headers <IDictionary>] [<CommonParameters>]
+ [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
 Get-MgBetaUserProfile -InputObject <IPeopleIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
- [-Headers <IDictionary>] [<CommonParameters>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -67,21 +67,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -138,13 +123,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPeopleIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphProfile
-
-### System.Collections.Hashtable
 
 ## NOTES
 

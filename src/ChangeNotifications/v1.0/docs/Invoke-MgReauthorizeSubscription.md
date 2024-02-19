@@ -14,14 +14,14 @@ Reauthorize a subscription when you receive a reauthorizationRequired challenge.
 
 ### Reauthorize (Default)
 ```
-Invoke-MgReauthorizeSubscription -SubscriptionId <String> [-Headers <IDictionary>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Invoke-MgReauthorizeSubscription -SubscriptionId <String> [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### ReauthorizeViaIdentity
 ```
-Invoke-MgReauthorizeSubscription -InputObject <IChangeNotificationsIdentity> [-Headers <IDictionary>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Invoke-MgReauthorizeSubscription -InputObject <IChangeNotificationsIdentity> [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -37,21 +37,6 @@ Import-Module Microsoft.Graph.ChangeNotifications
 Invoke-MgReauthorizeSubscription -SubscriptionId $subscriptionId
 
 ## PARAMETERS
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
 
 ### -InputObject
 Identity Parameter
@@ -137,13 +122,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IChangeNotificationsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
-
-### System.Collections.Hashtable
 
 ## NOTES
 

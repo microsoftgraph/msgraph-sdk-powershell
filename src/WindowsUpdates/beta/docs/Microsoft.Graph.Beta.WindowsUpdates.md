@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.WindowsUpdates
-Module Guid: e451a6f9-e262-49c8-a823-f5ce7f8481e2
+Module Guid: f58b877b-277e-498d-b5ab-87c127639182
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.windowsupdates
 Help Version: 1.0.0.0
 Locale: en-US
@@ -99,7 +99,7 @@ Specifies the assets to include in the audience.
 Get the number of the resource
 
 ### [Get-MgBetaWindowsUpdatesPolicyComplianceChange](Get-MgBetaWindowsUpdatesPolicyComplianceChange.md)
-Read the properties and relationships of a contentApproval object.
+Read the properties and relationships of a complianceChange object.
 
 ### [Get-MgBetaWindowsUpdatesPolicyComplianceChangeCount](Get-MgBetaWindowsUpdatesPolicyComplianceChangeCount.md)
 Get the number of the resource
@@ -117,7 +117,7 @@ Read the properties and relationships of a resourceConnection object.
 Get the number of the resource
 
 ### [Get-MgBetaWindowsUpdatesUpdatableAsset](Get-MgBetaWindowsUpdatesUpdatableAsset.md)
-Read the properties of an azureADDevice object.
+Read the properties and relationships of an updatableAsset object.
 
 ### [Get-MgBetaWindowsUpdatesUpdatableAssetCount](Get-MgBetaWindowsUpdatesUpdatableAssetCount.md)
 Get the number of the resource
@@ -279,7 +279,7 @@ Update the navigation property exclusions in admin
 Update the navigation property members in admin
 
 ### [Update-MgBetaWindowsUpdatesPolicyComplianceChange](Update-MgBetaWindowsUpdatesPolicyComplianceChange.md)
-Update the properties of a complianceChange object.
+Update the properties of a contentApproval object.
 
 ### [Update-MgBetaWindowsUpdatesResourceConnection](Update-MgBetaWindowsUpdatesResourceConnection.md)
 Update the navigation property resourceConnections in admin

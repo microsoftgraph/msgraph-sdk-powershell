@@ -15,13 +15,13 @@ The content stream, if the item represents a file.
 ### Get (Default)
 ```
 Get-MgUserDriveRootChildContent -DriveId <String> -DriveItemId <String> -UserId <String> -OutFile <String>
- [-Format <String>] [-Headers <IDictionary>] [-PassThru] [<CommonParameters>]
+ [-PassThru] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserDriveRootChildContent -InputObject <IFilesIdentity> -OutFile <String> [-Format <String>]
- [-Headers <IDictionary>] [-PassThru] [<CommonParameters>]
+Get-MgUserDriveRootChildContent -InputObject <IFilesIdentity> -OutFile <String> [-PassThru]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -72,36 +72,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Format
-Format of the content
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -173,13 +143,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IFilesIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
-
-### System.Collections.Hashtable
 
 ## NOTES
 

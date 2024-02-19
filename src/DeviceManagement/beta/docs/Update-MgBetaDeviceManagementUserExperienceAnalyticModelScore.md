@@ -17,23 +17,20 @@ Update the navigation property userExperienceAnalyticsModelScores in deviceManag
 Update-MgBetaDeviceManagementUserExperienceAnalyticModelScore -UserExperienceAnalyticsModelScoresId <String>
  [-AdditionalProperties <Hashtable>] [-AppReliabilityScore <Double>] [-BatteryHealthScore <Double>]
  [-EndpointAnalyticsScore <Double>] [-HealthStatus <UserExperienceAnalyticsHealthState>] [-Id <String>]
- [-Manufacturer <String>] [-MeanResourceSpikeTimeScore <Double>] [-Model <String>] [-ModelDeviceCount <Int64>]
- [-StartupPerformanceScore <Double>] [-WorkFromAnywhereScore <Double>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-Manufacturer <String>] [-Model <String>] [-ModelDeviceCount <Int64>] [-StartupPerformanceScore <Double>]
+ [-WorkFromAnywhereScore <Double>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaDeviceManagementUserExperienceAnalyticModelScore -UserExperienceAnalyticsModelScoresId <String>
- -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsModelScores> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsModelScores> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaDeviceManagementUserExperienceAnalyticModelScore -InputObject <IDeviceManagementIdentity>
- -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsModelScores> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsModelScores> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -41,9 +38,8 @@ Update-MgBetaDeviceManagementUserExperienceAnalyticModelScore -InputObject <IDev
 Update-MgBetaDeviceManagementUserExperienceAnalyticModelScore -InputObject <IDeviceManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-AppReliabilityScore <Double>] [-BatteryHealthScore <Double>]
  [-EndpointAnalyticsScore <Double>] [-HealthStatus <UserExperienceAnalyticsHealthState>] [-Id <String>]
- [-Manufacturer <String>] [-MeanResourceSpikeTimeScore <Double>] [-Model <String>] [-ModelDeviceCount <Int64>]
- [-StartupPerformanceScore <Double>] [-WorkFromAnywhereScore <Double>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-Manufacturer <String>] [-Model <String>] [-ModelDeviceCount <Int64>] [-StartupPerformanceScore <Double>]
+ [-WorkFromAnywhereScore <Double>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -158,21 +154,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -HealthStatus
 userExperienceAnalyticsHealthState
 
@@ -228,26 +209,6 @@ Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -MeanResourceSpikeTimeScore
-Indicates a calulated score indicating the health of the device's resource spike score .
-Valid values range from 0-100.
-Value -1 means associated score is unavailable.
-A higher score indicates a healthier device.
-Read-only.
-Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-
-```yaml
-Type: System.Double
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -388,13 +349,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsModelScores
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsModelScores
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -413,7 +370,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[EndpointAnalyticsScore <Double?>]`: Indicates a weighted average of the various scores. Valid values range from 0-100. Value -1 means associated score is unavailable. A higher score indicates a healthier device. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
   - `[HealthStatus <UserExperienceAnalyticsHealthState?>]`: userExperienceAnalyticsHealthState
   - `[Manufacturer <String>]`: The manufacturer name of the device. Examples: Microsoft Corporation, HP, Lenovo. Supports: $select, $OrderBy. Read-only.
-  - `[MeanResourceSpikeTimeScore <Double?>]`: Indicates a calulated score indicating the health of the device's resource spike score . Valid values range from 0-100. Value -1 means associated score is unavailable. A higher score indicates a healthier device. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
   - `[Model <String>]`: The model name of the device. Supports: $select, $OrderBy. Read-only.
   - `[ModelDeviceCount <Int64?>]`: Indicates unique devices count of given model in a consolidated report. Supports: $select, $OrderBy. Read-only. Valid values -9.22337203685478E+18 to 9.22337203685478E+18
   - `[StartupPerformanceScore <Double?>]`: Indicates a weighted average of boot score and logon score used for measuring startup performance. Valid values range from 0-100. Value -1 means associated score is unavailable. A higher score indicates a healthier device. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
@@ -499,7 +455,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[MacOSSoftwareUpdateCategorySummaryId <String>]`: The unique identifier of macOSSoftwareUpdateCategorySummary
   - `[MacOSSoftwareUpdateStateSummaryId <String>]`: The unique identifier of macOSSoftwareUpdateStateSummary
   - `[MalwareStateForWindowsDeviceId <String>]`: The unique identifier of malwareStateForWindowsDevice
-  - `[ManagedDeviceCleanupRuleId <String>]`: The unique identifier of managedDeviceCleanupRule
   - `[ManagedDeviceEncryptionStateId <String>]`: The unique identifier of managedDeviceEncryptionState
   - `[ManagedDeviceId <String>]`: The unique identifier of managedDevice
   - `[ManagedDeviceMobileAppConfigurationStateId <String>]`: The unique identifier of managedDeviceMobileAppConfigurationState

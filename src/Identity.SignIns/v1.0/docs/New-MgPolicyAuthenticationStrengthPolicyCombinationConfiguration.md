@@ -16,29 +16,29 @@ In use, only fido2combinationConfigurations may be created, and these may only b
 ### CreateExpanded (Default)
 ```
 New-MgPolicyAuthenticationStrengthPolicyCombinationConfiguration -AuthenticationStrengthPolicyId <String>
- [-AdditionalProperties <Hashtable>] [-AppliesToCombinations <String[]>] [-Id <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-AppliesToCombinations <String[]>] [-Id <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgPolicyAuthenticationStrengthPolicyCombinationConfiguration -AuthenticationStrengthPolicyId <String>
- -BodyParameter <IMicrosoftGraphAuthenticationCombinationConfiguration> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphAuthenticationCombinationConfiguration> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgPolicyAuthenticationStrengthPolicyCombinationConfiguration -InputObject <IIdentitySignInsIdentity>
- -BodyParameter <IMicrosoftGraphAuthenticationCombinationConfiguration> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphAuthenticationCombinationConfiguration> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgPolicyAuthenticationStrengthPolicyCombinationConfiguration -InputObject <IIdentitySignInsIdentity>
- [-AdditionalProperties <Hashtable>] [-AppliesToCombinations <String[]>] [-Id <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-AppliesToCombinations <String[]>] [-Id <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -126,21 +126,6 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -213,13 +198,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuthenticationCombinationConfiguration
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuthenticationCombinationConfiguration
-
-### System.Collections.Hashtable
 
 ## NOTES
 

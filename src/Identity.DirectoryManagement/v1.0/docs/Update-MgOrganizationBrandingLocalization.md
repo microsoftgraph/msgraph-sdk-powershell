@@ -27,21 +27,20 @@ Update-MgOrganizationBrandingLocalization -OrganizationalBrandingLocalizationId 
  [-LoginPageLayoutConfiguration <IMicrosoftGraphLoginPageLayoutConfiguration>]
  [-LoginPageTextVisibilitySettings <IMicrosoftGraphLoginPageTextVisibilitySettings>]
  [-SignInPageText <String>] [-SquareLogoDarkInputFile <String>] [-SquareLogoDarkRelativeUrl <String>]
- [-SquareLogoInputFile <String>] [-SquareLogoRelativeUrl <String>] [-UsernameHintText <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-SquareLogoInputFile <String>] [-SquareLogoRelativeUrl <String>] [-UsernameHintText <String>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgOrganizationBrandingLocalization -OrganizationalBrandingLocalizationId <String>
- -OrganizationId <String> -BodyParameter <Hashtable> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -OrganizationId <String> -BodyParameter <Hashtable> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgOrganizationBrandingLocalization -InputObject <IIdentityDirectoryManagementIdentity>
- -BodyParameter <Hashtable> [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <Hashtable> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -59,8 +58,8 @@ Update-MgOrganizationBrandingLocalization -InputObject <IIdentityDirectoryManage
  [-LoginPageLayoutConfiguration <IMicrosoftGraphLoginPageLayoutConfiguration>]
  [-LoginPageTextVisibilitySettings <IMicrosoftGraphLoginPageTextVisibilitySettings>]
  [-SignInPageText <String>] [-SquareLogoDarkInputFile <String>] [-SquareLogoDarkRelativeUrl <String>]
- [-SquareLogoInputFile <String>] [-SquareLogoRelativeUrl <String>] [-UsernameHintText <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-SquareLogoInputFile <String>] [-SquareLogoRelativeUrl <String>] [-UsernameHintText <String>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -482,21 +481,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -730,13 +714,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Collections.Hashtable
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOrganizationalBrandingLocalization
-
-### System.Collections.Hashtable
 
 ## NOTES
 

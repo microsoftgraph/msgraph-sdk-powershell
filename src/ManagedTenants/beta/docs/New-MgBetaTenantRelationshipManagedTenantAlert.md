@@ -24,15 +24,13 @@ New-MgBetaTenantRelationshipManagedTenantAlert [-AdditionalProperties <Hashtable
  [-CreatedByUserId <String>] [-CreatedDateTime <DateTime>]
  [-EmailNotifications <IMicrosoftGraphManagedTenantsManagedTenantEmailNotification[]>] [-Id <String>]
  [-LastActionByUserId <String>] [-LastActionDateTime <DateTime>] [-Message <String>] [-Severity <String>]
- [-Status <String>] [-TenantId <String>] [-Title <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Status <String>] [-TenantId <String>] [-Title <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaTenantRelationshipManagedTenantAlert
- -BodyParameter <IMicrosoftGraphManagedTenantsManagedTenantAlert> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphManagedTenantsManagedTenantAlert> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -273,21 +271,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -447,13 +430,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantAlert
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantAlert
-
-### System.Collections.Hashtable
 
 ## NOTES
 

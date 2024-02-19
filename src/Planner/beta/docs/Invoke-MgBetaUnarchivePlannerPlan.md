@@ -15,27 +15,27 @@ Invoke action unarchive
 ### UnarchiveExpanded (Default)
 ```
 Invoke-MgBetaUnarchivePlannerPlan -PlannerPlanId <String> [-AdditionalProperties <Hashtable>]
- [-Justification <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Justification <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Unarchive
 ```
 Invoke-MgBetaUnarchivePlannerPlan -PlannerPlanId <String>
  -BodyParameter <IPathsQm9MadPlannerPlansPlannerplanIdMicrosoftGraphUnarchivePostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UnarchiveViaIdentity
 ```
 Invoke-MgBetaUnarchivePlannerPlan -InputObject <IPlannerIdentity>
  -BodyParameter <IPathsQm9MadPlannerPlansPlannerplanIdMicrosoftGraphUnarchivePostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UnarchiveViaIdentityExpanded
 ```
 Invoke-MgBetaUnarchivePlannerPlan -InputObject <IPlannerIdentity> [-AdditionalProperties <Hashtable>]
- [-Justification <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Justification <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -84,21 +84,6 @@ Parameter Sets: Unarchive, UnarchiveViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -206,13 +191,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPlannerIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
-
-### System.Collections.Hashtable
 
 ## NOTES
 

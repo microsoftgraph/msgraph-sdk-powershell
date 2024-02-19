@@ -21,15 +21,13 @@ New-MgBetaDeviceManagementAndroidDeviceOwnerEnrollmentProfile [-AccountId <Strin
  [-Id <String>] [-IsTeamsDeviceProfile] [-LastModifiedDateTime <DateTime>] [-QrCodeContent <String>]
  [-QrCodeImage <IMicrosoftGraphMimeContent>] [-RoleScopeTagIds <String[]>] [-TokenCreationDateTime <DateTime>]
  [-TokenExpirationDateTime <DateTime>] [-TokenValue <String>] [-WifiHidden] [-WifiPassword <String>]
- [-WifiSecurityType <AospWifiSecurityType>] [-WifiSsid <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-WifiSecurityType <AospWifiSecurityType>] [-WifiSsid <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaDeviceManagementAndroidDeviceOwnerEnrollmentProfile
- -BodyParameter <IMicrosoftGraphAndroidDeviceOwnerEnrollmentProfile> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphAndroidDeviceOwnerEnrollmentProfile> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -220,21 +218,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -473,13 +456,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAndroidDeviceOwnerEnrollmentProfile
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAndroidDeviceOwnerEnrollmentProfile
-
-### System.Collections.Hashtable
 
 ## NOTES
 

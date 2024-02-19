@@ -313,8 +313,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPartnersBillingManifest
 
-### System.Collections.Hashtable
-
 ## NOTES
 
 ALIASES

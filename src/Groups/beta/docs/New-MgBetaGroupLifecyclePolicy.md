@@ -15,41 +15,40 @@ Creates a new groupLifecyclePolicy.
 ### CreateExpanded (Default)
 ```
 New-MgBetaGroupLifecyclePolicy [-AdditionalProperties <Hashtable>] [-AlternateNotificationEmails <String>]
- [-GroupLifetimeInDays <Int32>] [-Id <String>] [-ManagedGroupTypes <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-GroupLifetimeInDays <Int32>] [-Id <String>] [-ManagedGroupTypes <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgBetaGroupLifecyclePolicy -BodyParameter <IMicrosoftGraphGroupLifecyclePolicy> [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaGroupLifecyclePolicy -BodyParameter <IMicrosoftGraphGroupLifecyclePolicy> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create1
 ```
 New-MgBetaGroupLifecyclePolicy -GroupId <String> -BodyParameter <IMicrosoftGraphGroupLifecyclePolicy>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateExpanded1
 ```
 New-MgBetaGroupLifecyclePolicy -GroupId <String> [-AdditionalProperties <Hashtable>]
  [-AlternateNotificationEmails <String>] [-GroupLifetimeInDays <Int32>] [-Id <String>]
- [-ManagedGroupTypes <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ManagedGroupTypes <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaGroupLifecyclePolicy -InputObject <IGroupsIdentity>
- -BodyParameter <IMicrosoftGraphGroupLifecyclePolicy> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphGroupLifecyclePolicy> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgBetaGroupLifecyclePolicy -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>]
  [-AlternateNotificationEmails <String>] [-GroupLifetimeInDays <Int32>] [-Id <String>]
- [-ManagedGroupTypes <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ManagedGroupTypes <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -150,21 +149,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -253,13 +237,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupLifecyclePolicy
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupLifecyclePolicy
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -279,7 +259,6 @@ To create the parameters described below, construct a hash table containing the 
 
 `INPUTOBJECT <IGroupsIdentity>`: Identity Parameter
   - `[AttachmentId <String>]`: The unique identifier of attachment
-  - `[BaseSitePageId <String>]`: The unique identifier of baseSitePage
   - `[ContentTypeId <String>]`: The unique identifier of contentType
   - `[ConversationId <String>]`: The unique identifier of conversation
   - `[ConversationThreadId <String>]`: The unique identifier of conversationThread
@@ -295,8 +274,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[ExtensionId <String>]`: The unique identifier of extension
   - `[GroupId <String>]`: The unique identifier of group
   - `[GroupLifecyclePolicyId <String>]`: The unique identifier of groupLifecyclePolicy
-  - `[HorizontalSectionColumnId <String>]`: The unique identifier of horizontalSectionColumn
-  - `[HorizontalSectionId <String>]`: The unique identifier of horizontalSection
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}
   - `[Interval <String>]`: Usage: interval='{interval}'
   - `[ListId <String>]`: The unique identifier of list
@@ -307,7 +284,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[OnenotePageId <String>]`: The unique identifier of onenotePage
   - `[OnenoteSectionId <String>]`: The unique identifier of onenoteSection
   - `[Path <String>]`: Usage: path='{path}'
-  - `[Path1 <String>]`: Usage: path='{path1}'
   - `[PermissionId <String>]`: The unique identifier of permission
   - `[PlannerBucketId <String>]`: The unique identifier of plannerBucket
   - `[PlannerPlanId <String>]`: The unique identifier of plannerPlan
@@ -323,7 +299,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[UniqueName <String>]`: Alternate key of group
   - `[User <String>]`: Usage: User='{User}'
   - `[UserId <String>]`: The unique identifier of user
-  - `[WebPartId <String>]`: The unique identifier of webPart
 
 ## RELATED LINKS
 

@@ -8,9 +8,7 @@ schema: 2.0.0
 # New-MgGroupConversation
 
 ## SYNOPSIS
-Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
-You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
-The table in the Permissions section lists the resources that support open extensions.
+Use reply thread or reply post to further post to that conversation.
 
 ## SYNTAX
 
@@ -18,34 +16,31 @@ The table in the Permissions section lists the resources that support open exten
 ```
 New-MgGroupConversation -GroupId <String> [-AdditionalProperties <Hashtable>] [-HasAttachments] [-Id <String>]
  [-LastDeliveredDateTime <DateTime>] [-Preview <String>] [-Threads <IMicrosoftGraphConversationThread[]>]
- [-Topic <String>] [-UniqueSenders <String[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Topic <String>] [-UniqueSenders <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgGroupConversation -GroupId <String> -BodyParameter <IMicrosoftGraphConversation>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgGroupConversation -GroupId <String> -BodyParameter <IMicrosoftGraphConversation> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgGroupConversation -InputObject <IGroupsIdentity> -BodyParameter <IMicrosoftGraphConversation>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgGroupConversation -InputObject <IGroupsIdentity> -BodyParameter <IMicrosoftGraphConversation> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgGroupConversation -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>] [-HasAttachments]
  [-Id <String>] [-LastDeliveredDateTime <DateTime>] [-Preview <String>]
- [-Threads <IMicrosoftGraphConversationThread[]>] [-Topic <String>] [-UniqueSenders <String[]>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Threads <IMicrosoftGraphConversationThread[]>] [-Topic <String>] [-UniqueSenders <String[]>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
-You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
-The table in the Permissions section lists the resources that support open extensions.
+Use reply thread or reply post to further post to that conversation.
 
 ## EXAMPLES
 
@@ -124,21 +119,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -296,13 +276,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConversation
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConversation
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -395,7 +371,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[OnenotePageId <String>]`: The unique identifier of onenotePage
   - `[OnenoteSectionId <String>]`: The unique identifier of onenoteSection
   - `[Path <String>]`: Usage: path='{path}'
-  - `[Path1 <String>]`: Usage: path='{path1}'
   - `[PermissionId <String>]`: The unique identifier of permission
   - `[PostId <String>]`: The unique identifier of post
   - `[ProfilePhotoId <String>]`: The unique identifier of profilePhoto
@@ -405,7 +380,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[StartDateTime <String>]`: Usage: startDateTime='{startDateTime}'
   - `[SubscriptionId <String>]`: The unique identifier of subscription
   - `[Token <String>]`: Usage: token='{token}'
-  - `[UniqueName <String>]`: Alternate key of group
   - `[User <String>]`: Usage: User='{User}'
 
 `THREADS <IMicrosoftGraphConversationThread[]>`: A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.

@@ -18,14 +18,14 @@ If the response contains only warnings, synchronization starts.
 
 ### Start (Default)
 ```
-Start-MgBetaEducationSynchronizationProfile -EducationSynchronizationProfileId <String>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Start-MgBetaEducationSynchronizationProfile -EducationSynchronizationProfileId <String> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### StartViaIdentity
 ```
-Start-MgBetaEducationSynchronizationProfile -InputObject <IEducationIdentity> [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Start-MgBetaEducationSynchronizationProfile -InputObject <IEducationIdentity> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -59,21 +59,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -131,13 +116,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationFileSynchronizationVerificationMessage
-
-### System.Collections.Hashtable
 
 ## NOTES
 

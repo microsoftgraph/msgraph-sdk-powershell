@@ -16,32 +16,31 @@ Create new navigation property to assignments for deviceAppManagement
 ```
 New-MgBetaDeviceAppManagementWdacSupplementalPolicyAssignment
  -WindowsDefenderApplicationControlSupplementalPolicyId <String> [-AdditionalProperties <Hashtable>]
- [-Id <String>] [-Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaDeviceAppManagementWdacSupplementalPolicyAssignment
  -WindowsDefenderApplicationControlSupplementalPolicyId <String>
- -BodyParameter <IMicrosoftGraphWindowsDefenderApplicationControlSupplementalPolicyAssignment>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphWindowsDefenderApplicationControlSupplementalPolicyAssignment> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaDeviceAppManagementWdacSupplementalPolicyAssignment
  -InputObject <IDevicesCorporateManagementIdentity>
- -BodyParameter <IMicrosoftGraphWindowsDefenderApplicationControlSupplementalPolicyAssignment>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphWindowsDefenderApplicationControlSupplementalPolicyAssignment> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgBetaDeviceAppManagementWdacSupplementalPolicyAssignment
  -InputObject <IDevicesCorporateManagementIdentity> [-AdditionalProperties <Hashtable>] [-Id <String>]
- [-Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -90,21 +89,6 @@ Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -214,13 +198,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsDefenderApplicationControlSupplementalPolicyAssignment
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsDefenderApplicationControlSupplementalPolicyAssignment
-
-### System.Collections.Hashtable
 
 ## NOTES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgBetaExternalIndustryDataConnector
 
 ## SYNOPSIS
-Update the properties of an industryDataConnector object.
+Update the properties of an azureDataLakeConnector object.
 
 ## SYNTAX
 
@@ -16,33 +16,30 @@ Update the properties of an industryDataConnector object.
 ```
 Update-MgBetaExternalIndustryDataConnector -IndustryDataConnectorId <String>
  [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>]
- [-SourceSystem <IMicrosoftGraphIndustryDataSourceSystemDefinition>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-SourceSystem <IMicrosoftGraphIndustryDataSourceSystemDefinition>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaExternalIndustryDataConnector -IndustryDataConnectorId <String>
- -BodyParameter <IMicrosoftGraphIndustryDataConnector> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphIndustryDataConnector> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaExternalIndustryDataConnector -InputObject <ISearchIdentity>
- -BodyParameter <IMicrosoftGraphIndustryDataConnector> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphIndustryDataConnector> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgBetaExternalIndustryDataConnector -InputObject <ISearchIdentity> [-AdditionalProperties <Hashtable>]
  [-DisplayName <String>] [-Id <String>] [-SourceSystem <IMicrosoftGraphIndustryDataSourceSystemDefinition>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Update the properties of an industryDataConnector object.
+Update the properties of an azureDataLakeConnector object.
 
 ## EXAMPLES
 
@@ -106,21 +103,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -227,13 +209,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.ISearchIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIndustryDataConnector
-
-### System.Collections.Hashtable
 
 ## NOTES
 

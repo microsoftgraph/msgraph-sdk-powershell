@@ -18,14 +18,13 @@ New-MgBetaSecuritySecureScore [-ActiveUserCount <Int32>] [-AdditionalProperties 
  [-AverageComparativeScores <IMicrosoftGraphAverageComparativeScore[]>] [-AzureTenantId <String>]
  [-ControlScores <IMicrosoftGraphControlScore[]>] [-CreatedDateTime <DateTime>] [-CurrentScore <Double>]
  [-EnabledServices <String[]>] [-Id <String>] [-LicensedUserCount <Int32>] [-MaxScore <Double>]
- [-VendorInformation <IMicrosoftGraphSecurityVendorInformation>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-VendorInformation <IMicrosoftGraphSecurityVendorInformation>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgBetaSecuritySecureScore -BodyParameter <IMicrosoftGraphSecureScore> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+New-MgBetaSecuritySecureScore -BodyParameter <IMicrosoftGraphSecureScore> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -35,17 +34,10 @@ Create new navigation property to secureScores for security
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Beta.Security
 ```
 
-
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-
+Get-MgBetaSecuritySecureScore -Top 1
 
 ## PARAMETERS
 
@@ -187,21 +179,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -302,13 +279,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecureScore
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecureScore
-
-### System.Collections.Hashtable
 
 ## NOTES
 

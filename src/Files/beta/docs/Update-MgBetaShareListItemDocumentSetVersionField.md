@@ -15,54 +15,50 @@ Update the navigation property fields in shares
 ### UpdateExpanded1 (Default)
 ```
 Update-MgBetaShareListItemDocumentSetVersionField -DocumentSetVersionId <String> -SharedDriveItemId <String>
- [-AdditionalProperties <Hashtable>] [-Id <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-Id <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaShareListItemDocumentSetVersionField -DocumentSetVersionId <String> -ListItemId <String>
- -SharedDriveItemId <String> -BodyParameter <Hashtable> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -SharedDriveItemId <String> -BodyParameter <Hashtable> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update1
 ```
 Update-MgBetaShareListItemDocumentSetVersionField -DocumentSetVersionId <String> -SharedDriveItemId <String>
- -BodyParameter <Hashtable> [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <Hashtable> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateExpanded
 ```
 Update-MgBetaShareListItemDocumentSetVersionField -DocumentSetVersionId <String> -ListItemId <String>
- -SharedDriveItemId <String> [-AdditionalProperties <Hashtable>] [-Id <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -SharedDriveItemId <String> [-AdditionalProperties <Hashtable>] [-Id <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaShareListItemDocumentSetVersionField -InputObject <IFilesIdentity> -BodyParameter <Hashtable>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
 Update-MgBetaShareListItemDocumentSetVersionField -InputObject <IFilesIdentity> -BodyParameter <Hashtable>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgBetaShareListItemDocumentSetVersionField -InputObject <IFilesIdentity>
- [-AdditionalProperties <Hashtable>] [-Id <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-Id <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
 ```
 Update-MgBetaShareListItemDocumentSetVersionField -InputObject <IFilesIdentity>
- [-AdditionalProperties <Hashtable>] [-Id <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-Id <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -128,21 +124,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -248,11 +229,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Collections.Hashtable
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
-
-### System.Collections.Hashtable
 
 ### System.String
 

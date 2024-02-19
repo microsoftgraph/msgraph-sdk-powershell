@@ -18,23 +18,22 @@ Update-MgBetaDeviceAppManagementAndroidManagedAppProtectionDeploymentSummary
  -AndroidManagedAppProtectionId <String> [-AdditionalProperties <Hashtable>]
  [-ConfigurationDeployedUserCount <Int32>]
  [-ConfigurationDeploymentSummaryPerApp <IMicrosoftGraphManagedAppPolicyDeploymentSummaryPerApp[]>]
- [-DisplayName <String>] [-Id <String>] [-LastRefreshTime <DateTime>] [-Version <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-DisplayName <String>] [-Id <String>] [-LastRefreshTime <DateTime>] [-Version <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaDeviceAppManagementAndroidManagedAppProtectionDeploymentSummary
  -AndroidManagedAppProtectionId <String> -BodyParameter <IMicrosoftGraphManagedAppPolicyDeploymentSummary>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaDeviceAppManagementAndroidManagedAppProtectionDeploymentSummary
  -InputObject <IDevicesCorporateManagementIdentity>
- -BodyParameter <IMicrosoftGraphManagedAppPolicyDeploymentSummary> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphManagedAppPolicyDeploymentSummary> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -43,8 +42,8 @@ Update-MgBetaDeviceAppManagementAndroidManagedAppProtectionDeploymentSummary
  -InputObject <IDevicesCorporateManagementIdentity> [-AdditionalProperties <Hashtable>]
  [-ConfigurationDeployedUserCount <Int32>]
  [-ConfigurationDeploymentSummaryPerApp <IMicrosoftGraphManagedAppPolicyDeploymentSummaryPerApp[]>]
- [-DisplayName <String>] [-Id <String>] [-LastRefreshTime <DateTime>] [-Version <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-DisplayName <String>] [-Id <String>] [-LastRefreshTime <DateTime>] [-Version <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -115,7 +114,7 @@ Accept wildcard characters: False
 ```
 
 ### -ConfigurationDeployedUserCount
-.
+Not yet documented
 
 ```yaml
 Type: System.Int32
@@ -130,7 +129,7 @@ Accept wildcard characters: False
 ```
 
 ### -ConfigurationDeploymentSummaryPerApp
-.
+Not yet documented
 To construct, see NOTES section for CONFIGURATIONDEPLOYMENTSUMMARYPERAPP properties and create a hash table.
 
 ```yaml
@@ -146,7 +145,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-.
+Not yet documented
 
 ```yaml
 Type: System.String
@@ -157,21 +156,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -208,7 +192,7 @@ Accept wildcard characters: False
 ```
 
 ### -LastRefreshTime
-.
+Not yet documented
 
 ```yaml
 Type: System.DateTime
@@ -277,13 +261,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedAppPolicyDeploymentSummary
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedAppPolicyDeploymentSummary
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -299,16 +279,16 @@ To create the parameters described below, construct a hash table containing the 
 `BODYPARAMETER <IMicrosoftGraphManagedAppPolicyDeploymentSummary>`: The ManagedAppEntity is the base entity type for all other entity types under app management workflow.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[ConfigurationDeployedUserCount <Int32?>]`: 
-  - `[ConfigurationDeploymentSummaryPerApp <IMicrosoftGraphManagedAppPolicyDeploymentSummaryPerApp[]>]`: 
+  - `[ConfigurationDeployedUserCount <Int32?>]`: Not yet documented
+  - `[ConfigurationDeploymentSummaryPerApp <IMicrosoftGraphManagedAppPolicyDeploymentSummaryPerApp[]>]`: Not yet documented
     - `[ConfigurationAppliedUserCount <Int32?>]`: Number of users the policy is applied.
     - `[MobileAppIdentifier <IMicrosoftGraphMobileAppIdentifier>]`: The identifier for a mobile app.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[DisplayName <String>]`: 
-  - `[LastRefreshTime <DateTime?>]`: 
+  - `[DisplayName <String>]`: Not yet documented
+  - `[LastRefreshTime <DateTime?>]`: Not yet documented
   - `[Version <String>]`: Version of the entity.
 
-`CONFIGURATIONDEPLOYMENTSUMMARYPERAPP <IMicrosoftGraphManagedAppPolicyDeploymentSummaryPerApp[]>`: .
+`CONFIGURATIONDEPLOYMENTSUMMARYPERAPP <IMicrosoftGraphManagedAppPolicyDeploymentSummaryPerApp[]>`: Not yet documented
   - `[ConfigurationAppliedUserCount <Int32?>]`: Number of users the policy is applied.
   - `[MobileAppIdentifier <IMicrosoftGraphMobileAppIdentifier>]`: The identifier for a mobile app.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.

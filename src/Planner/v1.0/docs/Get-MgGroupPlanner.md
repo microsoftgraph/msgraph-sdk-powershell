@@ -14,14 +14,13 @@ Entry-point to Planner resource that might exist for a Unified Group.
 
 ### Get (Default)
 ```
-Get-MgGroupPlanner -GroupId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
- [-Headers <IDictionary>] [<CommonParameters>]
+Get-MgGroupPlanner -GroupId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
 Get-MgGroupPlanner -InputObject <IPlannerIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
- [-Headers <IDictionary>] [<CommonParameters>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -75,21 +74,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -128,13 +112,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IPlannerIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerGroup
-
-### System.Collections.Hashtable
 
 ## NOTES
 

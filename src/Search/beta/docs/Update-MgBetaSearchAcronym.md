@@ -16,20 +16,20 @@ Update the properties of an acronym object.
 ```
 Update-MgBetaSearchAcronym -AcronymId <String> [-AdditionalProperties <Hashtable>] [-Description <String>]
  [-DisplayName <String>] [-Id <String>] [-LastModifiedBy <IMicrosoftGraphSearchIdentitySet>]
- [-LastModifiedDateTime <DateTime>] [-StandsFor <String>] [-State <String>] [-WebUrl <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-LastModifiedDateTime <DateTime>] [-StandsFor <String>] [-State <String>] [-WebUrl <String>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgBetaSearchAcronym -AcronymId <String> -BodyParameter <IMicrosoftGraphSearchAcronym>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgBetaSearchAcronym -AcronymId <String> -BodyParameter <IMicrosoftGraphSearchAcronym> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaSearchAcronym -InputObject <ISearchIdentity> -BodyParameter <IMicrosoftGraphSearchAcronym>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -37,7 +37,7 @@ Update-MgBetaSearchAcronym -InputObject <ISearchIdentity> -BodyParameter <IMicro
 Update-MgBetaSearchAcronym -InputObject <ISearchIdentity> [-AdditionalProperties <Hashtable>]
  [-Description <String>] [-DisplayName <String>] [-Id <String>]
  [-LastModifiedBy <IMicrosoftGraphSearchIdentitySet>] [-LastModifiedDateTime <DateTime>] [-StandsFor <String>]
- [-State <String>] [-WebUrl <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-State <String>] [-WebUrl <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -131,21 +131,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -299,13 +284,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.ISearchIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSearchAcronym
-
-### System.Collections.Hashtable
 
 ## NOTES
 

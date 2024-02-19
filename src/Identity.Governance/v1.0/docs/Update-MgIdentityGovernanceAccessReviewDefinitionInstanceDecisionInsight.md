@@ -17,8 +17,7 @@ Update the navigation property insights in identityGovernance
 Update-MgIdentityGovernanceAccessReviewDefinitionInstanceDecisionInsight
  -AccessReviewInstanceDecisionItemId <String> -AccessReviewInstanceId <String>
  -AccessReviewScheduleDefinitionId <String> -GovernanceInsightId <String> [-AdditionalProperties <Hashtable>]
- [-Id <String>] [-InsightCreatedDateTime <DateTime>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Id <String>] [-InsightCreatedDateTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
@@ -26,22 +25,21 @@ Update-MgIdentityGovernanceAccessReviewDefinitionInstanceDecisionInsight
 Update-MgIdentityGovernanceAccessReviewDefinitionInstanceDecisionInsight
  -AccessReviewInstanceDecisionItemId <String> -AccessReviewInstanceId <String>
  -AccessReviewScheduleDefinitionId <String> -GovernanceInsightId <String>
- -BodyParameter <IMicrosoftGraphGovernanceInsight> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphGovernanceInsight> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgIdentityGovernanceAccessReviewDefinitionInstanceDecisionInsight
- -InputObject <IIdentityGovernanceIdentity> -BodyParameter <IMicrosoftGraphGovernanceInsight>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -InputObject <IIdentityGovernanceIdentity> -BodyParameter <IMicrosoftGraphGovernanceInsight> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgIdentityGovernanceAccessReviewDefinitionInstanceDecisionInsight
  -InputObject <IIdentityGovernanceIdentity> [-AdditionalProperties <Hashtable>] [-Id <String>]
- [-InsightCreatedDateTime <DateTime>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-InsightCreatedDateTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -156,21 +154,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -258,13 +241,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGovernanceInsight
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGovernanceInsight
-
-### System.Collections.Hashtable
 
 ## NOTES
 

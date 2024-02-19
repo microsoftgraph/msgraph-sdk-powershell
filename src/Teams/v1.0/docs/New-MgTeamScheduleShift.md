@@ -17,28 +17,28 @@ The duration of a shift cannot be less than 1 minute or longer than 24 hours.
 ```
 New-MgTeamScheduleShift -TeamId <String> [-AdditionalProperties <Hashtable>]
  [-DraftShift <IMicrosoftGraphShiftItem>] [-Id <String>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
- [-SchedulingGroupId <String>] [-SharedShift <IMicrosoftGraphShiftItem>] [-UserId <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-SchedulingGroupId <String>] [-SharedShift <IMicrosoftGraphShiftItem>] [-UserId <String>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgTeamScheduleShift -TeamId <String> -BodyParameter <IMicrosoftGraphShift> [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgTeamScheduleShift -TeamId <String> -BodyParameter <IMicrosoftGraphShift> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgTeamScheduleShift -InputObject <ITeamsIdentity> -BodyParameter <IMicrosoftGraphShift>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgTeamScheduleShift -InputObject <ITeamsIdentity> -BodyParameter <IMicrosoftGraphShift> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgTeamScheduleShift -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
  [-DraftShift <IMicrosoftGraphShiftItem>] [-Id <String>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
- [-SchedulingGroupId <String>] [-SharedShift <IMicrosoftGraphShiftItem>] [-UserId <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-SchedulingGroupId <String>] [-SharedShift <IMicrosoftGraphShiftItem>] [-UserId <String>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -138,21 +138,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -307,13 +292,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphShift
-
-### System.Collections.Hashtable
 
 ## NOTES
 

@@ -14,14 +14,14 @@ Get content for the navigation property versions from drives
 
 ### Get (Default)
 ```
-Get-MgBetaDriveRootVersionContent -DriveId <String> -DriveItemVersionId <String> -OutFile <String>
- [-Headers <IDictionary>] [-PassThru] [<CommonParameters>]
+Get-MgBetaDriveRootVersionContent -DriveId <String> -DriveItemVersionId <String> -OutFile <String> [-PassThru]
+ [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgBetaDriveRootVersionContent -InputObject <IFilesIdentity> -OutFile <String> [-Headers <IDictionary>]
- [-PassThru] [<CommonParameters>]
+Get-MgBetaDriveRootVersionContent -InputObject <IFilesIdentity> -OutFile <String> [-PassThru]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -72,21 +72,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -143,13 +128,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
-
-### System.Collections.Hashtable
 
 ## NOTES
 

@@ -24,15 +24,15 @@ To learn more about configuring naming policies, see Configure naming policy.
 ### ValidateExpanded (Default)
 ```
 Test-MgGroupSettingTemplateProperty [-AdditionalProperties <Hashtable>] [-DisplayName <String>]
- [-EntityType <String>] [-MailNickname <String>] [-OnBehalfOfUserId <String>] [-Headers <IDictionary>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-EntityType <String>] [-MailNickname <String>] [-OnBehalfOfUserId <String>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Validate
 ```
 Test-MgGroupSettingTemplateProperty
  -BodyParameter <IPaths1Wf2XtvGroupsettingtemplatesMicrosoftGraphValidatepropertiesPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -126,21 +126,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -MailNickname
 .
 
@@ -224,13 +209,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IPaths1Wf2XtvGroupsettingtemplatesMicrosoftGraphValidatepropertiesPostRequestbodyContentApplicationJsonSchema
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
-
-### System.Collections.Hashtable
 
 ## NOTES
 

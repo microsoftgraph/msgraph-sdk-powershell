@@ -18,14 +18,13 @@ Admins can approve or reject these apps via this API or the Microsoft Teams admi
 ```
 New-MgAppCatalogTeamApp [-AdditionalProperties <Hashtable>]
  [-AppDefinitions <IMicrosoftGraphTeamsAppDefinition[]>] [-DisplayName <String>]
- [-DistributionMethod <String>] [-ExternalId <String>] [-Id <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-DistributionMethod <String>] [-ExternalId <String>] [-Id <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgAppCatalogTeamApp -BodyParameter <IMicrosoftGraphTeamsApp> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+New-MgAppCatalogTeamApp -BodyParameter <IMicrosoftGraphTeamsApp> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -146,21 +145,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -215,13 +199,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamsApp
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamsApp
-
-### System.Collections.Hashtable
 
 ## NOTES
 

@@ -17,21 +17,19 @@ Create new navigation property to presenters for solutions
 New-MgBetaVirtualEventPresenter -VirtualEventId <String> [-AdditionalProperties <Hashtable>] [-Email <String>]
  [-Id <String>] [-Identity <IMicrosoftGraphCommunicationsUserIdentity>]
  [-PresenterDetails <IMicrosoftGraphVirtualEventPresenterDetails>] [-ProfilePhotoInputFile <String>]
- [-Sessions <IMicrosoftGraphVirtualEventSession[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Sessions <IMicrosoftGraphVirtualEventSession[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaVirtualEventPresenter -VirtualEventId <String> -BodyParameter <IMicrosoftGraphVirtualEventPresenter>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaVirtualEventPresenter -InputObject <IBookingsIdentity>
- -BodyParameter <IMicrosoftGraphVirtualEventPresenter> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphVirtualEventPresenter> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -39,8 +37,7 @@ New-MgBetaVirtualEventPresenter -InputObject <IBookingsIdentity>
 New-MgBetaVirtualEventPresenter -InputObject <IBookingsIdentity> [-AdditionalProperties <Hashtable>]
  [-Email <String>] [-Id <String>] [-Identity <IMicrosoftGraphCommunicationsUserIdentity>]
  [-PresenterDetails <IMicrosoftGraphVirtualEventPresenterDetails>] [-ProfilePhotoInputFile <String>]
- [-Sessions <IMicrosoftGraphVirtualEventSession[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Sessions <IMicrosoftGraphVirtualEventSession[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -107,21 +104,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -275,13 +257,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphVirtualEventPresenter
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphVirtualEventPresenter
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -298,8 +276,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[Email <String>]`: Email address of the presenter.
   - `[Identity <IMicrosoftGraphCommunicationsUserIdentity>]`: communicationsUserIdentity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-    - `[Id <String>]`: Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn't included in the response.
+    - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+    - `[Id <String>]`: The identifier of the identity. This property is read-only.
     - `[TenantId <String>]`: The user's tenant ID.
   - `[PresenterDetails <IMicrosoftGraphVirtualEventPresenterDetails>]`: virtualEventPresenterDetails
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -334,8 +312,8 @@ To create the parameters described below, construct a hash table containing the 
         - `[EmailAddress <String>]`: Email address of the user associated with this attendance record.
         - `[Identity <IMicrosoftGraphIdentity>]`: identity
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-          - `[Id <String>]`: Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn't included in the response.
+          - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+          - `[Id <String>]`: The identifier of the identity. This property is read-only.
         - `[RegistrantId <String>]`: Unique identifier of a meetingRegistrant. Presents when the participant has registered for the meeting.
         - `[Role <String>]`: Role of the attendee. Possible values are: None, Attendee, Presenter, and Organizer.
         - `[TotalAttendanceInSeconds <Int32?>]`: Total duration of the attendances in seconds.
@@ -405,8 +383,8 @@ To create the parameters described below, construct a hash table containing the 
 
 `IDENTITY <IMicrosoftGraphCommunicationsUserIdentity>`: communicationsUserIdentity
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-  - `[Id <String>]`: Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn't included in the response.
+  - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+  - `[Id <String>]`: The identifier of the identity. This property is read-only.
   - `[TenantId <String>]`: The user's tenant ID.
 
 `INPUTOBJECT <IBookingsIdentity>`: Identity Parameter
@@ -420,11 +398,9 @@ To create the parameters described below, construct a hash table containing the 
   - `[BookingStaffMemberId <String>]`: The unique identifier of bookingStaffMember
   - `[BusinessScenarioId <String>]`: The unique identifier of businessScenario
   - `[BusinessScenarioTaskId <String>]`: The unique identifier of businessScenarioTask
-  - `[JoinWebUrl <String>]`: Alternate key of virtualEventSession
   - `[MeetingAttendanceReportId <String>]`: The unique identifier of meetingAttendanceReport
   - `[PlannerPlanConfigurationLocalizationId <String>]`: The unique identifier of plannerPlanConfigurationLocalization
   - `[Role <String>]`: Usage: role='{role}'
-  - `[UniqueName <String>]`: Alternate key of businessScenario
   - `[UserId <String>]`: Usage: userId='{userId}'
   - `[VirtualEventId <String>]`: The unique identifier of virtualEvent
   - `[VirtualEventPresenterId <String>]`: The unique identifier of virtualEventPresenter
@@ -466,8 +442,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[EmailAddress <String>]`: Email address of the user associated with this attendance record.
       - `[Identity <IMicrosoftGraphIdentity>]`: identity
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-        - `[Id <String>]`: Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn't included in the response.
+        - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+        - `[Id <String>]`: The identifier of the identity. This property is read-only.
       - `[RegistrantId <String>]`: Unique identifier of a meetingRegistrant. Presents when the participant has registered for the meeting.
       - `[Role <String>]`: Role of the attendee. Possible values are: None, Attendee, Presenter, and Organizer.
       - `[TotalAttendanceInSeconds <Int32?>]`: Total duration of the attendances in seconds.
@@ -524,8 +500,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[Email <String>]`: Email address of the presenter.
     - `[Identity <IMicrosoftGraphCommunicationsUserIdentity>]`: communicationsUserIdentity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-      - `[Id <String>]`: Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn't included in the response.
+      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+      - `[Id <String>]`: The identifier of the identity. This property is read-only.
       - `[TenantId <String>]`: The user's tenant ID.
     - `[PresenterDetails <IMicrosoftGraphVirtualEventPresenterDetails>]`: virtualEventPresenterDetails
       - `[(Any) <Object>]`: This indicates any property can be added to this object.

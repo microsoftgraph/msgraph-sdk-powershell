@@ -17,28 +17,26 @@ Only teachers, students, and applications with application permissions can perfo
 ```
 Get-MgBetaEducationClassAssignmentCategory -EducationClassId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
- [-Top <Int32>] [-All] [-CountVariable <String>] [-Headers <IDictionary>] [-PageSize <Int32>]
- [<CommonParameters>]
+ [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
 Get-MgBetaEducationClassAssignmentCategory -EducationCategoryId <String> -EducationClassId <String>
- [-ExpandProperty <String[]>] [-Property <String[]>] [-Headers <IDictionary>] [<CommonParameters>]
+ [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
 Get-MgBetaEducationClassAssignmentCategory -InputObject <IEducationIdentity> [-ExpandProperty <String[]>]
- [-Property <String[]>] [-Headers <IDictionary>] [<CommonParameters>]
+ [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### List1
 ```
 Get-MgBetaEducationClassAssignmentCategory -EducationAssignmentId <String> -EducationClassId <String>
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
- [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-Headers <IDictionary>]
- [-PageSize <Int32>] [<CommonParameters>]
+ [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -53,20 +51,6 @@ Import-Module Microsoft.Graph.Beta.Education
 ```
 
 Get-MgBetaEducationClassAssignmentCategory -EducationClassId $educationClassId
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Education
-```
-
-Get-MgBetaEducationClassAssignmentCategory -EducationClassId $educationClassId -Filter "id eq 'd4cb4f68-9136-48d3-9054-c1208ea274f0'"
-
-### -------------------------- EXAMPLE 3 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Education
-```
-
-Get-MgBetaEducationClassAssignmentCategory -EducationClassId $educationClassId -Sort "displayName"
 
 ## PARAMETERS
 
@@ -173,21 +157,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -304,13 +273,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationCategory
-
-### System.Collections.Hashtable
 
 ## NOTES
 

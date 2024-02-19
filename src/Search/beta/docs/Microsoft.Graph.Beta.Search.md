@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Search
-Module Guid: 5dbe1ac9-eed8-49a8-9f5c-35a16b2bf152
+Module Guid: 1c464169-139c-42b2-bac7-2e90034c0469
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.search
 Help Version: 1.0.0.0
 Locale: en-US
@@ -81,7 +81,7 @@ Retrieve the properties of a schema for an externalConnection.
 Get industryData from external
 
 ### [Get-MgBetaExternalIndustryDataConnector](Get-MgBetaExternalIndustryDataConnector.md)
-Read the properties and relationships of an industryDataConnector object.
+Read the properties and relationships of an azureDataLakeConnector object.
 
 ### [Get-MgBetaExternalIndustryDataConnectorCount](Get-MgBetaExternalIndustryDataConnectorCount.md)
 Get the number of the resource
@@ -251,10 +251,10 @@ Delete navigation property operations for external
 Delete navigation property quota for external
 
 ### [Remove-MgBetaExternalIndustryDataConnector](Remove-MgBetaExternalIndustryDataConnector.md)
-Delete an industryDataConnector object.
+Delete an azureDataLakeConnector object.
 
 ### [Remove-MgBetaExternalIndustryDataInboundFlow](Remove-MgBetaExternalIndustryDataInboundFlow.md)
-Delete an inboundFileFlow object.
+Delete an inboundFlow object.
 
 ### [Remove-MgBetaExternalIndustryDataOperation](Remove-MgBetaExternalIndustryDataOperation.md)
 Delete navigation property operations for external
@@ -314,10 +314,10 @@ Update the navigation property operations in external
 Update the navigation property quota in external
 
 ### [Update-MgBetaExternalConnectionSchema](Update-MgBetaExternalConnectionSchema.md)
-Update the properties of a schema for an externalConnection.
+Create the schema for a Microsoft Search connection.
 
 ### [Update-MgBetaExternalIndustryDataConnector](Update-MgBetaExternalIndustryDataConnector.md)
-Update the properties of an industryDataConnector object.
+Update the properties of an azureDataLakeConnector object.
 
 ### [Update-MgBetaExternalIndustryDataInboundFlow](Update-MgBetaExternalIndustryDataInboundFlow.md)
 Update the properties of an inboundFlow object.

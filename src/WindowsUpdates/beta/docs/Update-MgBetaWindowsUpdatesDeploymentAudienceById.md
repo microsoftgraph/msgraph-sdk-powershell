@@ -19,30 +19,30 @@ You can also use the method updateAudience to update the deploymentAudience.
 ```
 Update-MgBetaWindowsUpdatesDeploymentAudienceById -DeploymentId <String> [-AddExclusions <String[]>]
  [-AdditionalProperties <Hashtable>] [-AddMembers <String[]>] [-MemberEntityType <String>]
- [-RemoveExclusions <String[]>] [-RemoveMembers <String[]>] [-Headers <IDictionary>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-RemoveExclusions <String[]>] [-RemoveMembers <String[]>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaWindowsUpdatesDeploymentAudienceById -DeploymentId <String>
  -BodyParameter <IPaths1Yczx1TAdminWindowsUpdatesDeploymentsDeploymentIdAudienceMicrosoftGraphWindowsupdatesUpdateaudiencebyidPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaWindowsUpdatesDeploymentAudienceById -InputObject <IWindowsUpdatesIdentity>
  -BodyParameter <IPaths1Yczx1TAdminWindowsUpdatesDeploymentsDeploymentIdAudienceMicrosoftGraphWindowsupdatesUpdateaudiencebyidPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgBetaWindowsUpdatesDeploymentAudienceById -InputObject <IWindowsUpdatesIdentity>
  [-AddExclusions <String[]>] [-AdditionalProperties <Hashtable>] [-AddMembers <String[]>]
- [-MemberEntityType <String>] [-RemoveExclusions <String[]>] [-RemoveMembers <String[]>]
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-MemberEntityType <String>] [-RemoveExclusions <String[]>] [-RemoveMembers <String[]>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -151,21 +151,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -285,13 +270,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IWindowsUpdatesIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
-
-### System.Collections.Hashtable
 
 ## NOTES
 

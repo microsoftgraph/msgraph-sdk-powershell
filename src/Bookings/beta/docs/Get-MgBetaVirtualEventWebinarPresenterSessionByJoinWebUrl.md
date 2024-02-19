@@ -165,8 +165,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphVirtualEventSession
 
-### System.Collections.Hashtable
-
 ## NOTES
 
 ALIASES

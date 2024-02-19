@@ -16,29 +16,26 @@ Update the properties and relationships of a shiftPreferences object.
 ```
 Update-MgBetaUserSettingShiftPreference -UserId <String> [-AdditionalProperties <Hashtable>]
  [-Availability <IMicrosoftGraphShiftAvailability[]>] [-CreatedBy <IMicrosoftGraphIdentitySet>] [-Id <String>]
- [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaUserSettingShiftPreference -UserId <String> -BodyParameter <IMicrosoftGraphShiftPreferences>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaUserSettingShiftPreference -InputObject <IUsersIdentity>
- -BodyParameter <IMicrosoftGraphShiftPreferences> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphShiftPreferences> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgBetaUserSettingShiftPreference -InputObject <IUsersIdentity> [-AdditionalProperties <Hashtable>]
  [-Availability <IMicrosoftGraphShiftAvailability[]>] [-CreatedBy <IMicrosoftGraphIdentitySet>] [-Id <String>]
- [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -140,21 +137,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -261,13 +243,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphShiftPreferences
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -348,7 +326,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[User <IMicrosoftGraphIdentity>]`: identity
 
 `INPUTOBJECT <IUsersIdentity>`: Identity Parameter
-  - `[AppId <String>]`: Alternate key of servicePrincipal
   - `[AttachmentBaseId <String>]`: The unique identifier of attachmentBase
   - `[AttachmentId <String>]`: The unique identifier of attachment
   - `[AttachmentSessionId <String>]`: The unique identifier of attachmentSession

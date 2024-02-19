@@ -18,19 +18,19 @@ Update-MgPrintPrinterJob -PrinterId <String> -PrintJobId <String> [-AdditionalPr
  [-Configuration <IMicrosoftGraphPrintJobConfiguration>] [-CreatedBy <IMicrosoftGraphUserIdentity>]
  [-CreatedDateTime <DateTime>] [-Documents <IMicrosoftGraphPrintDocument[]>] [-Id <String>] [-IsFetchable]
  [-RedirectedFrom <String>] [-RedirectedTo <String>] [-Status <IMicrosoftGraphPrintJobStatus>]
- [-Tasks <IMicrosoftGraphPrintTask[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Tasks <IMicrosoftGraphPrintTask[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgPrintPrinterJob -PrinterId <String> -PrintJobId <String> -BodyParameter <IMicrosoftGraphPrintJob>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgPrintPrinterJob -InputObject <IDevicesCloudPrintIdentity> -BodyParameter <IMicrosoftGraphPrintJob>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -39,7 +39,7 @@ Update-MgPrintPrinterJob -InputObject <IDevicesCloudPrintIdentity> [-AdditionalP
  [-Configuration <IMicrosoftGraphPrintJobConfiguration>] [-CreatedBy <IMicrosoftGraphUserIdentity>]
  [-CreatedDateTime <DateTime>] [-Documents <IMicrosoftGraphPrintDocument[]>] [-Id <String>] [-IsFetchable]
  [-RedirectedFrom <String>] [-RedirectedTo <String>] [-Status <IMicrosoftGraphPrintJobStatus>]
- [-Tasks <IMicrosoftGraphPrintTask[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Tasks <IMicrosoftGraphPrintTask[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -155,21 +155,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -352,13 +337,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintJob
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintJob
-
-### System.Collections.Hashtable
 
 ## NOTES
 

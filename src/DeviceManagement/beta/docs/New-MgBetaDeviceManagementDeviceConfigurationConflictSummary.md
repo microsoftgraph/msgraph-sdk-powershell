@@ -16,15 +16,13 @@ Create new navigation property to deviceConfigurationConflictSummary for deviceM
 ```
 New-MgBetaDeviceManagementDeviceConfigurationConflictSummary [-AdditionalProperties <Hashtable>]
  [-ConflictingDeviceConfigurations <IMicrosoftGraphSettingSource[]>] [-ContributingSettings <String[]>]
- [-DeviceCheckinsImpacted <Int32>] [-Id <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-DeviceCheckinsImpacted <Int32>] [-Id <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaDeviceManagementDeviceConfigurationConflictSummary
- -BodyParameter <IMicrosoftGraphDeviceConfigurationConflictSummary> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphDeviceConfigurationConflictSummary> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -125,21 +123,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -194,13 +177,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceConfigurationConflictSummary
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceConfigurationConflictSummary
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -215,15 +194,15 @@ To create the parameters described below, construct a hash table containing the 
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[ConflictingDeviceConfigurations <IMicrosoftGraphSettingSource[]>]`: The set of policies in conflict with the given setting
-    - `[DisplayName <String>]`: 
-    - `[Id <String>]`: 
+    - `[DisplayName <String>]`: Not yet documented
+    - `[Id <String>]`: Not yet documented
     - `[SourceType <String>]`: settingSourceType
   - `[ContributingSettings <String[]>]`: The set of settings in conflict with the given policies
   - `[DeviceCheckinsImpacted <Int32?>]`: The count of checkins impacted by the conflicting policies and settings
 
 `CONFLICTINGDEVICECONFIGURATIONS <IMicrosoftGraphSettingSource[]>`: The set of policies in conflict with the given setting
-  - `[DisplayName <String>]`: 
-  - `[Id <String>]`: 
+  - `[DisplayName <String>]`: Not yet documented
+  - `[Id <String>]`: Not yet documented
   - `[SourceType <String>]`: settingSourceType
 
 ## RELATED LINKS

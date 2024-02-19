@@ -16,27 +16,26 @@ Update the navigation property taxAreas in financials
 ```
 Update-MgBetaFinancialCompanyTaxArea -CompanyId <String> -TaxAreaId <String>
  [-AdditionalProperties <Hashtable>] [-Code <String>] [-DisplayName <String>] [-Id <String>]
- [-LastModifiedDateTime <DateTime>] [-TaxType <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-LastModifiedDateTime <DateTime>] [-TaxType <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaFinancialCompanyTaxArea -CompanyId <String> -TaxAreaId <String>
- -BodyParameter <IMicrosoftGraphTaxArea> [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphTaxArea> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaFinancialCompanyTaxArea -InputObject <IFinancialsIdentity>
- -BodyParameter <IMicrosoftGraphTaxArea> [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphTaxArea> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgBetaFinancialCompanyTaxArea -InputObject <IFinancialsIdentity> [-AdditionalProperties <Hashtable>]
  [-Code <String>] [-DisplayName <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>]
- [-TaxType <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-TaxType <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -133,21 +132,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -267,13 +251,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTaxArea
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTaxArea
-
-### System.Collections.Hashtable
 
 ## NOTES
 

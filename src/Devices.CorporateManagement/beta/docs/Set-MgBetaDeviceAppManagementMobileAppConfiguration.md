@@ -16,30 +16,30 @@ Invoke action assign
 ```
 Set-MgBetaDeviceAppManagementMobileAppConfiguration -ManagedDeviceMobileAppConfigurationId <String>
  [-AdditionalProperties <Hashtable>]
- [-Assignments <IMicrosoftGraphManagedDeviceMobileAppConfigurationAssignment[]>] [-Headers <IDictionary>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Assignments <IMicrosoftGraphManagedDeviceMobileAppConfigurationAssignment[]>] [-PassThru] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Assign
 ```
 Set-MgBetaDeviceAppManagementMobileAppConfiguration -ManagedDeviceMobileAppConfigurationId <String>
  -BodyParameter <IPaths1Pwcjs5DeviceappmanagementMobileappconfigurationsManageddevicemobileappconfigurationIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AssignViaIdentity
 ```
 Set-MgBetaDeviceAppManagementMobileAppConfiguration -InputObject <IDevicesCorporateManagementIdentity>
  -BodyParameter <IPaths1Pwcjs5DeviceappmanagementMobileappconfigurationsManageddevicemobileappconfigurationIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AssignViaIdentityExpanded
 ```
 Set-MgBetaDeviceAppManagementMobileAppConfiguration -InputObject <IDevicesCorporateManagementIdentity>
  [-AdditionalProperties <Hashtable>]
- [-Assignments <IMicrosoftGraphManagedDeviceMobileAppConfigurationAssignment[]>] [-Headers <IDictionary>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Assignments <IMicrosoftGraphManagedDeviceMobileAppConfigurationAssignment[]>] [-PassThru] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -104,21 +104,6 @@ Parameter Sets: Assign, AssignViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -211,13 +196,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPaths1Pwcjs5DeviceappmanagementMobileappconfigurationsManageddevicemobileappconfigurationIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
-
-### System.Collections.Hashtable
 
 ## NOTES
 

@@ -17,22 +17,19 @@ Update properties of a  permissionGrantPolicy.
 Update-MgBetaPolicyPermissionGrantPolicy -PermissionGrantPolicyId <String> [-AdditionalProperties <Hashtable>]
  [-DeletedDateTime <DateTime>] [-Description <String>] [-DisplayName <String>]
  [-Excludes <IMicrosoftGraphPermissionGrantConditionSet[]>] [-Id <String>]
- [-Includes <IMicrosoftGraphPermissionGrantConditionSet[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Includes <IMicrosoftGraphPermissionGrantConditionSet[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaPolicyPermissionGrantPolicy -PermissionGrantPolicyId <String>
- -BodyParameter <IMicrosoftGraphPermissionGrantPolicy> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphPermissionGrantPolicy> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaPolicyPermissionGrantPolicy -InputObject <IIdentitySignInsIdentity>
- -BodyParameter <IMicrosoftGraphPermissionGrantPolicy> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphPermissionGrantPolicy> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -40,8 +37,7 @@ Update-MgBetaPolicyPermissionGrantPolicy -InputObject <IIdentitySignInsIdentity>
 Update-MgBetaPolicyPermissionGrantPolicy -InputObject <IIdentitySignInsIdentity>
  [-AdditionalProperties <Hashtable>] [-DeletedDateTime <DateTime>] [-Description <String>]
  [-DisplayName <String>] [-Excludes <IMicrosoftGraphPermissionGrantConditionSet[]>] [-Id <String>]
- [-Includes <IMicrosoftGraphPermissionGrantConditionSet[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Includes <IMicrosoftGraphPermissionGrantConditionSet[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -155,21 +151,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -274,13 +255,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPermissionGrantPolicy
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPermissionGrantPolicy
-
-### System.Collections.Hashtable
 
 ## NOTES
 

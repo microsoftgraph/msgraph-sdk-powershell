@@ -18,29 +18,29 @@ You can also use the method addMembersById to add members.
 ### AddExpanded (Default)
 ```
 Add-MgBetaWindowsUpdatesPolicyAudienceExclusionMember -UpdatableAssetId <String> -UpdatePolicyId <String>
- [-AdditionalProperties <Hashtable>] [-Assets <IMicrosoftGraphWindowsUpdatesUpdatableAsset[]>]
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-Assets <IMicrosoftGraphWindowsUpdatesUpdatableAsset[]>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Add
 ```
 Add-MgBetaWindowsUpdatesPolicyAudienceExclusionMember -UpdatableAssetId <String> -UpdatePolicyId <String>
  -BodyParameter <IPathsE23XqfAdminWindowsUpdatesUpdatepoliciesUpdatepolicyIdAudienceExclusionsUpdatableassetIdMicrosoftGraphWindowsupdatesAddmembersPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AddViaIdentity
 ```
 Add-MgBetaWindowsUpdatesPolicyAudienceExclusionMember -InputObject <IWindowsUpdatesIdentity>
  -BodyParameter <IPathsE23XqfAdminWindowsUpdatesUpdatepoliciesUpdatepolicyIdAudienceExclusionsUpdatableassetIdMicrosoftGraphWindowsupdatesAddmembersPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AddViaIdentityExpanded
 ```
 Add-MgBetaWindowsUpdatesPolicyAudienceExclusionMember -InputObject <IWindowsUpdatesIdentity>
- [-AdditionalProperties <Hashtable>] [-Assets <IMicrosoftGraphWindowsUpdatesUpdatableAsset[]>]
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-Assets <IMicrosoftGraphWindowsUpdatesUpdatableAsset[]>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -108,21 +108,6 @@ Parameter Sets: Add, AddViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -230,13 +215,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IWindowsUpdatesIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
-
-### System.Collections.Hashtable
 
 ## NOTES
 

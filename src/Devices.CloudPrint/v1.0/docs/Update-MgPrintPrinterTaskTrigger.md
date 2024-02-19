@@ -16,28 +16,26 @@ Update the navigation property taskTriggers in print
 ```
 Update-MgPrintPrinterTaskTrigger -PrinterId <String> -PrintTaskTriggerId <String>
  [-AdditionalProperties <Hashtable>] [-Definition <IMicrosoftGraphPrintTaskDefinition>] [-Event <String>]
- [-Id <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgPrintPrinterTaskTrigger -PrinterId <String> -PrintTaskTriggerId <String>
- -BodyParameter <IMicrosoftGraphPrintTaskTrigger> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphPrintTaskTrigger> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgPrintPrinterTaskTrigger -InputObject <IDevicesCloudPrintIdentity>
- -BodyParameter <IMicrosoftGraphPrintTaskTrigger> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphPrintTaskTrigger> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgPrintPrinterTaskTrigger -InputObject <IDevicesCloudPrintIdentity> [-AdditionalProperties <Hashtable>]
- [-Definition <IMicrosoftGraphPrintTaskDefinition>] [-Event <String>] [-Id <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Definition <IMicrosoftGraphPrintTaskDefinition>] [-Event <String>] [-Id <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -120,21 +118,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -240,13 +223,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintTaskTrigger
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintTaskTrigger
-
-### System.Collections.Hashtable
 
 ## NOTES
 

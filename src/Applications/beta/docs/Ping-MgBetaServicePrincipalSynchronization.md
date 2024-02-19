@@ -14,14 +14,12 @@ Invoke function Ping
 
 ### Ping (Default)
 ```
-Ping-MgBetaServicePrincipalSynchronization -ServicePrincipalId <String> [-Headers <IDictionary>]
- [<CommonParameters>]
+Ping-MgBetaServicePrincipalSynchronization -ServicePrincipalId <String> [<CommonParameters>]
 ```
 
 ### PingViaIdentity
 ```
-Ping-MgBetaServicePrincipalSynchronization -InputObject <IApplicationsIdentity> [-Headers <IDictionary>]
- [<CommonParameters>]
+Ping-MgBetaServicePrincipalSynchronization -InputObject <IApplicationsIdentity> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -44,21 +42,6 @@ Invoke function Ping
 
 
 ## PARAMETERS
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
 
 ### -InputObject
 Identity Parameter
@@ -98,11 +81,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
-
-### System.Collections.Hashtable
 
 ### System.String
 

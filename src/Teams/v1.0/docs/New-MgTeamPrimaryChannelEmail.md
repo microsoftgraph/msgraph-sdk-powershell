@@ -17,14 +17,12 @@ To remove the email address of a channel, use the removeEmail method.
 
 ### Provision (Default)
 ```
-New-MgTeamPrimaryChannelEmail -TeamId <String> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+New-MgTeamPrimaryChannelEmail -TeamId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ProvisionViaIdentity
 ```
-New-MgTeamPrimaryChannelEmail -InputObject <ITeamsIdentity> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+New-MgTeamPrimaryChannelEmail -InputObject <ITeamsIdentity> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -50,21 +48,6 @@ To remove the email address of a channel, use the removeEmail method.
 
 
 ## PARAMETERS
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
 
 ### -InputObject
 Identity Parameter
@@ -135,11 +118,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
-
-### System.Collections.Hashtable
 
 ### System.String
 

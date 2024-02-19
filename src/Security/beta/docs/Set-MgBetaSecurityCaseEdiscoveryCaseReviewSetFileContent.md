@@ -15,14 +15,13 @@ Update content for the navigation property files in security
 ### Set (Default)
 ```
 Set-MgBetaSecurityCaseEdiscoveryCaseReviewSetFileContent -EdiscoveryCaseId <String> -EdiscoveryFileId <String>
- -EdiscoveryReviewSetId <String> -InFile <String> [-Data <Stream>] [-ContentType <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -EdiscoveryReviewSetId <String> -InFile <String> [-Data <Stream>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentity
 ```
 Set-MgBetaSecurityCaseEdiscoveryCaseReviewSetFileContent -InputObject <ISecurityIdentity> -InFile <String>
- [-Data <Stream>] [-ContentType <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Data <Stream>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -45,21 +44,6 @@ Update content for the navigation property files in security
 {{ Add output here }}
 
 ## PARAMETERS
-
-### -ContentType
-ContentType Parameter
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
 
 ### -Data
 .
@@ -118,21 +102,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -207,17 +176,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 
-### System.Collections.IDictionary
-
 ### System.IO.Stream
-
-### System.String
 
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityEdiscoveryFile
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -230,7 +193,6 @@ To create the parameters described below, construct a hash table containing the 
 
 `INPUTOBJECT <ISecurityIdentity>`: Identity Parameter
   - `[AlertId <String>]`: The unique identifier of alert
-  - `[AnalyzedEmailId <String>]`: The unique identifier of analyzedEmail
   - `[ArticleId <String>]`: The unique identifier of article
   - `[ArticleIndicatorId <String>]`: The unique identifier of articleIndicator
   - `[AttackSimulationOperationId <String>]`: The unique identifier of attackSimulationOperation

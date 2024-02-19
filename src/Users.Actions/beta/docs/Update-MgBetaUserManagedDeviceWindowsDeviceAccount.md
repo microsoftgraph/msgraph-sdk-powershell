@@ -17,21 +17,21 @@ Invoke action updateWindowsDeviceAccount
 Update-MgBetaUserManagedDeviceWindowsDeviceAccount -ManagedDeviceId <String> -UserId <String>
  [-AdditionalProperties <Hashtable>]
  [-UpdateWindowsDeviceAccountActionParameter <IMicrosoftGraphUpdateWindowsDeviceAccountActionParameter>]
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaUserManagedDeviceWindowsDeviceAccount -ManagedDeviceId <String> -UserId <String>
  -BodyParameter <IPaths1Q6DqpaUsersUserIdManageddevicesManageddeviceIdMicrosoftGraphUpdatewindowsdeviceaccountPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaUserManagedDeviceWindowsDeviceAccount -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPaths1Q6DqpaUsersUserIdManageddevicesManageddeviceIdMicrosoftGraphUpdatewindowsdeviceaccountPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -39,7 +39,7 @@ Update-MgBetaUserManagedDeviceWindowsDeviceAccount -InputObject <IUsersActionsId
 Update-MgBetaUserManagedDeviceWindowsDeviceAccount -InputObject <IUsersActionsIdentity>
  [-AdditionalProperties <Hashtable>]
  [-UpdateWindowsDeviceAccountActionParameter <IMicrosoftGraphUpdateWindowsDeviceAccountActionParameter>]
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -88,21 +88,6 @@ Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -226,13 +211,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -247,14 +228,14 @@ To create the parameters described below, construct a hash table containing the 
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[UpdateWindowsDeviceAccountActionParameter <IMicrosoftGraphUpdateWindowsDeviceAccountActionParameter>]`: updateWindowsDeviceAccountActionParameter
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[CalendarSyncEnabled <Boolean?>]`: 
+    - `[CalendarSyncEnabled <Boolean?>]`: Not yet documented
     - `[DeviceAccount <IMicrosoftGraphWindowsDeviceAccount>]`: windowsDeviceAccount
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Password <String>]`: 
-    - `[DeviceAccountEmail <String>]`: 
-    - `[ExchangeServer <String>]`: 
-    - `[PasswordRotationEnabled <Boolean?>]`: 
-    - `[SessionInitiationProtocalAddress <String>]`: 
+      - `[Password <String>]`: Not yet documented
+    - `[DeviceAccountEmail <String>]`: Not yet documented
+    - `[ExchangeServer <String>]`: Not yet documented
+    - `[PasswordRotationEnabled <Boolean?>]`: Not yet documented
+    - `[SessionInitiationProtocalAddress <String>]`: Not yet documented
 
 `INPUTOBJECT <IUsersActionsIdentity>`: Identity Parameter
   - `[AccessReviewInstanceId <String>]`: The unique identifier of accessReviewInstance
@@ -275,7 +256,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[DriveItemVersionId <String>]`: The unique identifier of driveItemVersion
   - `[EventId <String>]`: The unique identifier of event
   - `[EventId1 <String>]`: The unique identifier of event
-  - `[JoinWebUrl <String>]`: Alternate key of onlineMeeting
   - `[ListItemId <String>]`: The unique identifier of listItem
   - `[ListItemVersionId <String>]`: The unique identifier of listItemVersion
   - `[MailFolderId <String>]`: The unique identifier of mailFolder
@@ -301,14 +281,14 @@ To create the parameters described below, construct a hash table containing the 
 
 `UPDATEWINDOWSDEVICEACCOUNTACTIONPARAMETER <IMicrosoftGraphUpdateWindowsDeviceAccountActionParameter>`: updateWindowsDeviceAccountActionParameter
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[CalendarSyncEnabled <Boolean?>]`: 
+  - `[CalendarSyncEnabled <Boolean?>]`: Not yet documented
   - `[DeviceAccount <IMicrosoftGraphWindowsDeviceAccount>]`: windowsDeviceAccount
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Password <String>]`: 
-  - `[DeviceAccountEmail <String>]`: 
-  - `[ExchangeServer <String>]`: 
-  - `[PasswordRotationEnabled <Boolean?>]`: 
-  - `[SessionInitiationProtocalAddress <String>]`: 
+    - `[Password <String>]`: Not yet documented
+  - `[DeviceAccountEmail <String>]`: Not yet documented
+  - `[ExchangeServer <String>]`: Not yet documented
+  - `[PasswordRotationEnabled <Boolean?>]`: Not yet documented
+  - `[SessionInitiationProtocalAddress <String>]`: Not yet documented
 
 ## RELATED LINKS
 

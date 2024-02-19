@@ -20,21 +20,20 @@ Update-MgBetaUserInformationProtection -UserId <String> [-AdditionalProperties <
  [-Policy <IMicrosoftGraphInformationProtectionPolicy>]
  [-SensitivityLabels <IMicrosoftGraphSensitivityLabel[]>]
  [-SensitivityPolicySettings <IMicrosoftGraphSensitivityPolicySettings>]
- [-ThreatAssessmentRequests <IMicrosoftGraphThreatAssessmentRequest[]>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-ThreatAssessmentRequests <IMicrosoftGraphThreatAssessmentRequest[]>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaUserInformationProtection -UserId <String> -BodyParameter <IMicrosoftGraphInformationProtection>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaUserInformationProtection -InputObject <IIdentitySignInsIdentity>
- -BodyParameter <IMicrosoftGraphInformationProtection> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphInformationProtection> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -45,8 +44,8 @@ Update-MgBetaUserInformationProtection -InputObject <IIdentitySignInsIdentity>
  [-Policy <IMicrosoftGraphInformationProtectionPolicy>]
  [-SensitivityLabels <IMicrosoftGraphSensitivityLabel[]>]
  [-SensitivityPolicySettings <IMicrosoftGraphSensitivityPolicySettings>]
- [-ThreatAssessmentRequests <IMicrosoftGraphThreatAssessmentRequest[]>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-ThreatAssessmentRequests <IMicrosoftGraphThreatAssessmentRequest[]>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -130,21 +129,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -299,13 +283,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphInformationProtection
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphInformationProtection
-
-### System.Collections.Hashtable
 
 ## NOTES
 

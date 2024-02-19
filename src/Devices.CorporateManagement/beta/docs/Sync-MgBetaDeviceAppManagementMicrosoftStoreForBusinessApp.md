@@ -13,8 +13,8 @@ Syncs Intune account with Microsoft Store For Business
 ## SYNTAX
 
 ```
-Sync-MgBetaDeviceAppManagementMicrosoftStoreForBusinessApp [-Headers <IDictionary>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Sync-MgBetaDeviceAppManagementMicrosoftStoreForBusinessApp [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -37,21 +37,6 @@ Syncs Intune account with Microsoft Store For Business
 
 
 ## PARAMETERS
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
 
 ### -PassThru
 Returns true when the command succeeds
@@ -104,13 +89,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
-
-### System.Collections.Hashtable
 
 ## NOTES
 

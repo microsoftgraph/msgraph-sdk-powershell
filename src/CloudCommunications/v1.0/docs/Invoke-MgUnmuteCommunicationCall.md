@@ -17,28 +17,27 @@ For more information about how to handle unmute operations, see unmuteParticipan
 ### UnmuteExpanded (Default)
 ```
 Invoke-MgUnmuteCommunicationCall -CallId <String> [-AdditionalProperties <Hashtable>]
- [-ClientContext <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ClientContext <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Unmute
 ```
 Invoke-MgUnmuteCommunicationCall -CallId <String>
  -BodyParameter <IPaths1X7BvttCommunicationsCallsCallIdMicrosoftGraphUnmutePostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UnmuteViaIdentity
 ```
 Invoke-MgUnmuteCommunicationCall -InputObject <ICloudCommunicationsIdentity>
  -BodyParameter <IPaths1X7BvttCommunicationsCallsCallIdMicrosoftGraphUnmutePostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UnmuteViaIdentityExpanded
 ```
 Invoke-MgUnmuteCommunicationCall -InputObject <ICloudCommunicationsIdentity>
- [-AdditionalProperties <Hashtable>] [-ClientContext <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-ClientContext <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -122,21 +121,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -193,13 +177,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IPaths1X7BvttCommunicationsCallsCallIdMicrosoftGraphUnmutePostRequestbodyContentApplicationJsonSchema
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUnmuteParticipantOperation
-
-### System.Collections.Hashtable
 
 ## NOTES
 

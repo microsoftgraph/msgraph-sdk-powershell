@@ -9,31 +9,27 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete the definition of a schema extension.
-In app-only scenarios, only the app that created the schema extension (owner app) can delete the schema extension definition, and only when the extension is in the InDevelopment state.
-In delegated scenarios, the owner of the owner app can delete the schema extension definition, and only when the extension is in the InDevelopment state.
-Deleting a schema extension definition before deleting the data associated with the extension in the target resources makes the data inaccessible.
-To recover the data, you can recreate the schema extension definition with the same configuration, but only if you used the verified domain for the schema extension id.
+Only the app that created the schema extension (owner app) can delete the schema extension definition, and only when the extension is in the InDevelopment state.
+Deleting a schema extension definition does not affect accessing custom data that has been added to resource instances based on that definition.
 
 ## SYNTAX
 
 ### Delete (Default)
 ```
-Remove-MgBetaSchemaExtension -SchemaExtensionId <String> [-IfMatch <String>] [-Headers <IDictionary>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-MgBetaSchemaExtension -SchemaExtensionId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgBetaSchemaExtension -InputObject <ISchemaExtensionsIdentity> [-IfMatch <String>]
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-MgBetaSchemaExtension -InputObject <ISchemaExtensionsIdentity> [-IfMatch <String>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Delete the definition of a schema extension.
-In app-only scenarios, only the app that created the schema extension (owner app) can delete the schema extension definition, and only when the extension is in the InDevelopment state.
-In delegated scenarios, the owner of the owner app can delete the schema extension definition, and only when the extension is in the InDevelopment state.
-Deleting a schema extension definition before deleting the data associated with the extension in the target resources makes the data inaccessible.
-To recover the data, you can recreate the schema extension definition with the same configuration, but only if you used the verified domain for the schema extension id.
+Only the app that created the schema extension (owner app) can delete the schema extension definition, and only when the extension is in the InDevelopment state.
+Deleting a schema extension definition does not affect accessing custom data that has been added to resource instances based on that definition.
 
 ## EXAMPLES
 
@@ -45,21 +41,6 @@ Import-Module Microsoft.Graph.Beta.SchemaExtensions
 Remove-MgBetaSchemaExtension -SchemaExtensionId $schemaExtensionId
 
 ## PARAMETERS
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
 
 ### -IfMatch
 ETag
@@ -160,13 +141,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.ISchemaExtensionsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
-
-### System.Collections.Hashtable
 
 ## NOTES
 

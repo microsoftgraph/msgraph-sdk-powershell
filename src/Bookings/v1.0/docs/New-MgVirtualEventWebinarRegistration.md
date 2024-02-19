@@ -18,21 +18,19 @@ New-MgVirtualEventWebinarRegistration -VirtualEventWebinarId <String> [-Addition
  [-CancelationDateTime <DateTime>] [-Email <String>] [-FirstName <String>] [-Id <String>] [-LastName <String>]
  [-RegistrationDateTime <DateTime>]
  [-RegistrationQuestionAnswers <IMicrosoftGraphVirtualEventRegistrationQuestionAnswer[]>] [-Status <String>]
- [-UserId <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-UserId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgVirtualEventWebinarRegistration -VirtualEventWebinarId <String>
- -BodyParameter <IMicrosoftGraphVirtualEventRegistration> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphVirtualEventRegistration> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgVirtualEventWebinarRegistration -InputObject <IBookingsIdentity>
- -BodyParameter <IMicrosoftGraphVirtualEventRegistration> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphVirtualEventRegistration> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -41,7 +39,7 @@ New-MgVirtualEventWebinarRegistration -InputObject <IBookingsIdentity> [-Additio
  [-CancelationDateTime <DateTime>] [-Email <String>] [-FirstName <String>] [-Id <String>] [-LastName <String>]
  [-RegistrationDateTime <DateTime>]
  [-RegistrationQuestionAnswers <IMicrosoftGraphVirtualEventRegistrationQuestionAnswer[]>] [-Status <String>]
- [-UserId <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-UserId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -97,10 +95,7 @@ Accept wildcard characters: False
 ```
 
 ### -CancelationDateTime
-Date and time when the registrant cancels their registration for the virtual event.
-Only appears when applicable.
-The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
-For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+.
 
 ```yaml
 Type: System.DateTime
@@ -115,7 +110,7 @@ Accept wildcard characters: False
 ```
 
 ### -Email
-Email address of the registrant.
+.
 
 ```yaml
 Type: System.String
@@ -130,7 +125,7 @@ Accept wildcard characters: False
 ```
 
 ### -FirstName
-First name of the registrant.
+.
 
 ```yaml
 Type: System.String
@@ -141,21 +136,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -192,7 +172,7 @@ Accept wildcard characters: False
 ```
 
 ### -LastName
-Last name of the registrant.
+.
 
 ```yaml
 Type: System.String
@@ -207,9 +187,7 @@ Accept wildcard characters: False
 ```
 
 ### -RegistrationDateTime
-Date and time when the registrant registers for the virtual event.
-The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
-For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+.
 
 ```yaml
 Type: System.DateTime
@@ -224,7 +202,7 @@ Accept wildcard characters: False
 ```
 
 ### -RegistrationQuestionAnswers
-The registrant's answer to the registration questions.
+.
 To construct, see NOTES section for REGISTRATIONQUESTIONANSWERS properties and create a hash table.
 
 ```yaml
@@ -255,8 +233,7 @@ Accept wildcard characters: False
 ```
 
 ### -UserId
-The registrant's ID in Microsoft Entra ID.
-Only appears when the registrant is registered in Microsoft Entra ID.
+.
 
 ```yaml
 Type: System.String
@@ -325,13 +302,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphVirtualEventRegistration
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphVirtualEventRegistration
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -345,19 +318,19 @@ To create the parameters described below, construct a hash table containing the 
 `BODYPARAMETER <IMicrosoftGraphVirtualEventRegistration>`: virtualEventRegistration
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[CancelationDateTime <DateTime?>]`: Date and time when the registrant cancels their registration for the virtual event. Only appears when applicable. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-  - `[Email <String>]`: Email address of the registrant.
-  - `[FirstName <String>]`: First name of the registrant.
-  - `[LastName <String>]`: Last name of the registrant.
-  - `[RegistrationDateTime <DateTime?>]`: Date and time when the registrant registers for the virtual event. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-  - `[RegistrationQuestionAnswers <IMicrosoftGraphVirtualEventRegistrationQuestionAnswer[]>]`: The registrant's answer to the registration questions.
-    - `[BooleanValue <Boolean?>]`: Boolean answer of the virtual event registration question. Only appears when answerInputType is boolean.
-    - `[DisplayName <String>]`: Display name of the registration question.
-    - `[MultiChoiceValues <String[]>]`: Collection of text answer of the virtual event registration question. Only appears when answerInputType is multiChoice.
-    - `[QuestionId <String>]`: id of the virtual event registration question.
-    - `[Value <String>]`: Text answer of the virtual event registration question. Appears when answerInputType is text, multilineText or singleChoice.
+  - `[CancelationDateTime <DateTime?>]`: 
+  - `[Email <String>]`: 
+  - `[FirstName <String>]`: 
+  - `[LastName <String>]`: 
+  - `[RegistrationDateTime <DateTime?>]`: 
+  - `[RegistrationQuestionAnswers <IMicrosoftGraphVirtualEventRegistrationQuestionAnswer[]>]`: 
+    - `[BooleanValue <Boolean?>]`: 
+    - `[DisplayName <String>]`: 
+    - `[MultiChoiceValues <String[]>]`: 
+    - `[QuestionId <String>]`: 
+    - `[Value <String>]`: 
   - `[Status <String>]`: virtualEventAttendeeRegistrationStatus
-  - `[UserId <String>]`: The registrant's ID in Microsoft Entra ID. Only appears when the registrant is registered in Microsoft Entra ID.
+  - `[UserId <String>]`: 
 
 `INPUTOBJECT <IBookingsIdentity>`: Identity Parameter
   - `[AttendanceRecordId <String>]`: The unique identifier of attendanceRecord
@@ -376,12 +349,12 @@ To create the parameters described below, construct a hash table containing the 
   - `[VirtualEventSessionId <String>]`: The unique identifier of virtualEventSession
   - `[VirtualEventWebinarId <String>]`: The unique identifier of virtualEventWebinar
 
-`REGISTRATIONQUESTIONANSWERS <IMicrosoftGraphVirtualEventRegistrationQuestionAnswer[]>`: The registrant's answer to the registration questions.
-  - `[BooleanValue <Boolean?>]`: Boolean answer of the virtual event registration question. Only appears when answerInputType is boolean.
-  - `[DisplayName <String>]`: Display name of the registration question.
-  - `[MultiChoiceValues <String[]>]`: Collection of text answer of the virtual event registration question. Only appears when answerInputType is multiChoice.
-  - `[QuestionId <String>]`: id of the virtual event registration question.
-  - `[Value <String>]`: Text answer of the virtual event registration question. Appears when answerInputType is text, multilineText or singleChoice.
+`REGISTRATIONQUESTIONANSWERS <IMicrosoftGraphVirtualEventRegistrationQuestionAnswer[]>`: .
+  - `[BooleanValue <Boolean?>]`: 
+  - `[DisplayName <String>]`: 
+  - `[MultiChoiceValues <String[]>]`: 
+  - `[QuestionId <String>]`: 
+  - `[Value <String>]`: 
 
 ## RELATED LINKS
 

@@ -17,23 +17,21 @@ Update the properties of a termsAndConditionsAcceptanceStatus object.
 Update-MgDeviceManagementTermAndConditionAcceptanceStatus -TermsAndConditionsAcceptanceStatusId <String>
  -TermsAndConditionsId <String> [-AcceptedDateTime <DateTime>] [-AcceptedVersion <Int32>]
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-TermsAndConditions <IMicrosoftGraphTermsAndConditions>]
- [-UserDisplayName <String>] [-UserPrincipalName <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-UserDisplayName <String>] [-UserPrincipalName <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgDeviceManagementTermAndConditionAcceptanceStatus -TermsAndConditionsAcceptanceStatusId <String>
- -TermsAndConditionsId <String> -BodyParameter <IMicrosoftGraphTermsAndConditionsAcceptanceStatus>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -TermsAndConditionsId <String> -BodyParameter <IMicrosoftGraphTermsAndConditionsAcceptanceStatus> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgDeviceManagementTermAndConditionAcceptanceStatus
  -InputObject <IDeviceManagementAdministrationIdentity>
- -BodyParameter <IMicrosoftGraphTermsAndConditionsAcceptanceStatus> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphTermsAndConditionsAcceptanceStatus> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -42,7 +40,7 @@ Update-MgDeviceManagementTermAndConditionAcceptanceStatus
  -InputObject <IDeviceManagementAdministrationIdentity> [-AcceptedDateTime <DateTime>]
  [-AcceptedVersion <Int32>] [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-TermsAndConditions <IMicrosoftGraphTermsAndConditions>] [-UserDisplayName <String>]
- [-UserPrincipalName <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-UserPrincipalName <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -122,21 +120,6 @@ Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -293,13 +276,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTermsAndConditionsAcceptanceStatus
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTermsAndConditionsAcceptanceStatus
-
-### System.Collections.Hashtable
 
 ## NOTES
 

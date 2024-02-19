@@ -17,14 +17,13 @@ Create new navigation property to roleAssignments for deviceManagement
 New-MgBetaDeviceManagementRoleAssignment [-AdditionalProperties <Hashtable>] [-Description <String>]
  [-DisplayName <String>] [-Id <String>] [-Members <String[]>] [-ResourceScopes <String[]>]
  [-RoleDefinition <IMicrosoftGraphRoleDefinition>] [-RoleScopeTags <IMicrosoftGraphRoleScopeTag[]>]
- [-ScopeMembers <String[]>] [-ScopeType <RoleAssignmentScopeType>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-ScopeMembers <String[]>] [-ScopeType <RoleAssignmentScopeType>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaDeviceManagementRoleAssignment -BodyParameter <IMicrosoftGraphDeviceAndAppManagementRoleAssignment>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -109,21 +108,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -282,13 +266,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceAndAppManagementRoleAssignment
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceAndAppManagementRoleAssignment
-
-### System.Collections.Hashtable
 
 ## NOTES
 

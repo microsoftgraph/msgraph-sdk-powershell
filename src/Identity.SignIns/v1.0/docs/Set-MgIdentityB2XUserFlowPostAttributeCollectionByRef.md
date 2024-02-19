@@ -15,29 +15,27 @@ Update the ref of navigation property postAttributeCollection in identity
 ### SetExpanded (Default)
 ```
 Set-MgIdentityB2XUserFlowPostAttributeCollectionByRef -B2XIdentityUserFlowId <String> -OdataId <String>
- [-AdditionalProperties <Hashtable>] [-OdataType <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-OdataType <String>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Set
 ```
 Set-MgIdentityB2XUserFlowPostAttributeCollectionByRef -B2XIdentityUserFlowId <String>
- -BodyParameter <IReferenceUpdate> [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IReferenceUpdate> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentity
 ```
 Set-MgIdentityB2XUserFlowPostAttributeCollectionByRef -InputObject <IIdentitySignInsIdentity>
- -BodyParameter <IReferenceUpdate> [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IReferenceUpdate> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentityExpanded
 ```
 Set-MgIdentityB2XUserFlowPostAttributeCollectionByRef -InputObject <IIdentitySignInsIdentity>
- -OdataId <String> [-AdditionalProperties <Hashtable>] [-OdataType <String>] [-Headers <IDictionary>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -OdataId <String> [-AdditionalProperties <Hashtable>] [-OdataType <String>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -101,21 +99,6 @@ Parameter Sets: Set, SetViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -224,13 +207,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IReferenceUpdate
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
-
-### System.Collections.Hashtable
 
 ## NOTES
 

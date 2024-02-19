@@ -15,14 +15,14 @@ Update external
 ### UpdateExpanded (Default)
 ```
 Update-MgExternal [-AdditionalProperties <Hashtable>]
- [-Connections <IMicrosoftGraphExternalConnectorsExternalConnection[]>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-Connections <IMicrosoftGraphExternalConnectorsExternalConnection[]>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgExternal -BodyParameter <IMicrosoftGraphExternalConnectorsExternal> [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgExternal -BodyParameter <IMicrosoftGraphExternalConnectorsExternal> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -93,21 +93,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
@@ -146,13 +131,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExternalConnectorsExternal
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExternalConnectorsExternalConnection
-
-### System.Collections.Hashtable
 
 ## NOTES
 

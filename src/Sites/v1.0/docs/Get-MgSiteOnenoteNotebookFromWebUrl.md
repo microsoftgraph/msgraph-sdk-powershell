@@ -16,27 +16,27 @@ The location can be user notebooks on Microsoft 365, group notebooks, or SharePo
 ### GetExpanded (Default)
 ```
 Get-MgSiteOnenoteNotebookFromWebUrl -SiteId <String> [-AdditionalProperties <Hashtable>] [-WebUrl <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Get
 ```
 Get-MgSiteOnenoteNotebookFromWebUrl -SiteId <String>
  -BodyParameter <IPathsUkf43DSitesSiteIdOnenoteNotebooksMicrosoftGraphGetnotebookfromweburlPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
 Get-MgSiteOnenoteNotebookFromWebUrl -InputObject <ISitesIdentity>
  -BodyParameter <IPathsUkf43DSitesSiteIdOnenoteNotebooksMicrosoftGraphGetnotebookfromweburlPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### GetViaIdentityExpanded
 ```
 Get-MgSiteOnenoteNotebookFromWebUrl -InputObject <ISitesIdentity> [-AdditionalProperties <Hashtable>]
- [-WebUrl <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-WebUrl <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -47,17 +47,15 @@ The location can be user notebooks on Microsoft 365, group notebooks, or SharePo
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Users.Actions
 ```
 
+$params = @{
+	WebUrl = "webUrl value"
+}
 
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-
+# A UPN can also be used as -UserId.
+Get-MgUserOnenoteNotebookFromWebUrl -UserId $userId -BodyParameter $params
 
 ## PARAMETERS
 
@@ -86,21 +84,6 @@ Parameter Sets: Get, GetViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -193,13 +176,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.ISitesIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCopyNotebookModel
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -238,7 +217,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[OnenoteResourceId <String>]`: The unique identifier of onenoteResource
   - `[OnenoteSectionId <String>]`: The unique identifier of onenoteSection
   - `[Path <String>]`: Usage: path='{path}'
-  - `[Path1 <String>]`: Usage: path='{path1}'
   - `[PermissionId <String>]`: The unique identifier of permission
   - `[RelationId <String>]`: The unique identifier of relation
   - `[RichLongRunningOperationId <String>]`: The unique identifier of richLongRunningOperation

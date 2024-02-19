@@ -15,12 +15,12 @@ Optionally, you can expand the manager's chain up to the root node.
 
 ### Get (Default)
 ```
-Get-MgUserManagerByRef -UserId <String> [-Headers <IDictionary>] [<CommonParameters>]
+Get-MgUserManagerByRef -UserId <String> [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserManagerByRef -InputObject <IUsersIdentity> [-Headers <IDictionary>] [<CommonParameters>]
+Get-MgUserManagerByRef -InputObject <IUsersIdentity> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -44,21 +44,6 @@ Optionally, you can expand the manager's chain up to the root node.
 
 
 ## PARAMETERS
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
 
 ### -InputObject
 Identity Parameter
@@ -98,11 +83,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IUsersIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
-
-### System.Collections.Hashtable
 
 ### System.String
 

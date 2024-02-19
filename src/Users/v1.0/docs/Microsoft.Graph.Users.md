@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users
-Module Guid: d6c14cfe-857b-42ee-a7f7-3a368028d649
+Module Guid: 615d8a13-5d8d-48e7-a153-3417042e0cd2
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.users
 Help Version: 1.0.0.0
 Locale: en-US
@@ -70,7 +70,7 @@ Get the number of the resource
 
 ### [Get-MgUserMailboxSetting](Get-MgUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgUserManager](Get-MgUserManager.md)
@@ -342,11 +342,17 @@ Delete navigation property extensions for users
 ### [Remove-MgUserLicenseDetail](Remove-MgUserLicenseDetail.md)
 Delete navigation property licenseDetails for users
 
+### [Remove-MgUserManager](Remove-MgUserManager.md)
+Remove a user's manager.
+
 ### [Remove-MgUserManagerByRef](Remove-MgUserManagerByRef.md)
 Remove a user's manager.
 
 ### [Remove-MgUserOutlookMasterCategory](Remove-MgUserOutlookMasterCategory.md)
 Delete the specified outlookCategory object.
+
+### [Remove-MgUserPhoto](Remove-MgUserPhoto.md)
+Delete navigation property photo for users
 
 ### [Remove-MgUserSetting](Remove-MgUserSetting.md)
 Delete navigation property settings for users

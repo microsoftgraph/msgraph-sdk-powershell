@@ -18,21 +18,20 @@ Update-MgDeviceManagementManagedDeviceCompliancePolicyState -DeviceCompliancePol
  -ManagedDeviceId <String> [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>]
  [-PlatformType <PolicyPlatformType>] [-SettingCount <Int32>]
  [-SettingStates <IMicrosoftGraphDeviceCompliancePolicySettingState[]>] [-State <String>] [-Version <Int32>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgDeviceManagementManagedDeviceCompliancePolicyState -DeviceCompliancePolicyStateId <String>
- -ManagedDeviceId <String> -BodyParameter <IMicrosoftGraphDeviceCompliancePolicyState>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -ManagedDeviceId <String> -BodyParameter <IMicrosoftGraphDeviceCompliancePolicyState> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgDeviceManagementManagedDeviceCompliancePolicyState -InputObject <IDeviceManagementIdentity>
- -BodyParameter <IMicrosoftGraphDeviceCompliancePolicyState> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphDeviceCompliancePolicyState> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -41,7 +40,7 @@ Update-MgDeviceManagementManagedDeviceCompliancePolicyState -InputObject <IDevic
  [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>]
  [-PlatformType <PolicyPlatformType>] [-SettingCount <Int32>]
  [-SettingStates <IMicrosoftGraphDeviceCompliancePolicySettingState[]>] [-State <String>] [-Version <Int32>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -123,21 +122,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -304,13 +288,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceCompliancePolicyState
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceCompliancePolicyState
-
-### System.Collections.Hashtable
 
 ## NOTES
 

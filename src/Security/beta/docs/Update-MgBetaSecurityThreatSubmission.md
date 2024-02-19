@@ -18,14 +18,13 @@ Update-MgBetaSecurityThreatSubmission [-AdditionalProperties <Hashtable>]
  [-EmailThreats <IMicrosoftGraphSecurityEmailThreatSubmission[]>]
  [-EmailThreatSubmissionPolicies <IMicrosoftGraphSecurityEmailThreatSubmissionPolicy[]>]
  [-FileThreats <IMicrosoftGraphSecurityFileThreatSubmission[]>] [-Id <String>]
- [-UrlThreats <IMicrosoftGraphSecurityUrlThreatSubmission[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-UrlThreats <IMicrosoftGraphSecurityUrlThreatSubmission[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgBetaSecurityThreatSubmission -BodyParameter <IMicrosoftGraphSecurityThreatSubmissionRoot>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgBetaSecurityThreatSubmission -BodyParameter <IMicrosoftGraphSecurityThreatSubmissionRoot> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -128,21 +127,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -213,13 +197,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityThreatSubmissionRoot
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityThreatSubmissionRoot
-
-### System.Collections.Hashtable
 
 ## NOTES
 

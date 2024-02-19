@@ -20,22 +20,21 @@ Update-MgBetaDeviceManagementComanagedDeviceSecurityBaselineStateSettingState -M
  [-ContributingPolicies <IMicrosoftGraphSecurityBaselineContributingPolicy[]>] [-ErrorCode <String>]
  [-Id <String>] [-SettingCategoryId <String>] [-SettingCategoryName <String>] [-SettingId <String>]
  [-SettingName <String>] [-SourcePolicies <IMicrosoftGraphSettingSource[]>]
- [-State <SecurityBaselineComplianceState>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-State <SecurityBaselineComplianceState>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaDeviceManagementComanagedDeviceSecurityBaselineStateSettingState -ManagedDeviceId <String>
  -SecurityBaselineSettingStateId <String> -SecurityBaselineStateId <String>
- -BodyParameter <IMicrosoftGraphSecurityBaselineSettingState> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphSecurityBaselineSettingState> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaDeviceManagementComanagedDeviceSecurityBaselineStateSettingState
  -InputObject <IDeviceManagementIdentity> -BodyParameter <IMicrosoftGraphSecurityBaselineSettingState>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -45,7 +44,7 @@ Update-MgBetaDeviceManagementComanagedDeviceSecurityBaselineStateSettingState
  [-ContributingPolicies <IMicrosoftGraphSecurityBaselineContributingPolicy[]>] [-ErrorCode <String>]
  [-Id <String>] [-SettingCategoryId <String>] [-SettingCategoryName <String>] [-SettingId <String>]
  [-SettingName <String>] [-SourcePolicies <IMicrosoftGraphSettingSource[]>]
- [-State <SecurityBaselineComplianceState>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-State <SecurityBaselineComplianceState>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -128,21 +127,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -354,13 +338,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityBaselineSettingState
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityBaselineSettingState
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -384,8 +364,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[SettingId <String>]`: The setting id guid
   - `[SettingName <String>]`: The setting name that is being reported
   - `[SourcePolicies <IMicrosoftGraphSettingSource[]>]`: The policies that contribute to this setting instance
-    - `[DisplayName <String>]`: 
-    - `[Id <String>]`: 
+    - `[DisplayName <String>]`: Not yet documented
+    - `[Id <String>]`: Not yet documented
     - `[SourceType <String>]`: settingSourceType
   - `[State <SecurityBaselineComplianceState?>]`: Security Baseline Compliance State
 
@@ -474,7 +454,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[MacOSSoftwareUpdateCategorySummaryId <String>]`: The unique identifier of macOSSoftwareUpdateCategorySummary
   - `[MacOSSoftwareUpdateStateSummaryId <String>]`: The unique identifier of macOSSoftwareUpdateStateSummary
   - `[MalwareStateForWindowsDeviceId <String>]`: The unique identifier of malwareStateForWindowsDevice
-  - `[ManagedDeviceCleanupRuleId <String>]`: The unique identifier of managedDeviceCleanupRule
   - `[ManagedDeviceEncryptionStateId <String>]`: The unique identifier of managedDeviceEncryptionState
   - `[ManagedDeviceId <String>]`: The unique identifier of managedDevice
   - `[ManagedDeviceMobileAppConfigurationStateId <String>]`: The unique identifier of managedDeviceMobileAppConfigurationState
@@ -537,8 +516,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[WindowsQualityUpdateProfileId <String>]`: The unique identifier of windowsQualityUpdateProfile
 
 `SOURCEPOLICIES <IMicrosoftGraphSettingSource[]>`: The policies that contribute to this setting instance
-  - `[DisplayName <String>]`: 
-  - `[Id <String>]`: 
+  - `[DisplayName <String>]`: Not yet documented
+  - `[Id <String>]`: Not yet documented
   - `[SourceType <String>]`: settingSourceType
 
 ## RELATED LINKS

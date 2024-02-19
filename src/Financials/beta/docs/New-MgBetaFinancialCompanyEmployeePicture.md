@@ -16,26 +16,26 @@ Create new navigation property to picture for financials
 ```
 New-MgBetaFinancialCompanyEmployeePicture -CompanyId <String> -EmployeeId <String>
  [-AdditionalProperties <Hashtable>] [-ContentInputFile <String>] [-ContentType <String>] [-Height <Int32>]
- [-Id <String>] [-Width <Int32>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-Width <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaFinancialCompanyEmployeePicture -CompanyId <String> -EmployeeId <String>
- -BodyParameter <IMicrosoftGraphPicture> [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphPicture> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaFinancialCompanyEmployeePicture -InputObject <IFinancialsIdentity>
- -BodyParameter <IMicrosoftGraphPicture> [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphPicture> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgBetaFinancialCompanyEmployeePicture -InputObject <IFinancialsIdentity>
  [-AdditionalProperties <Hashtable>] [-ContentInputFile <String>] [-ContentType <String>] [-Height <Int32>]
- [-Id <String>] [-Width <Int32>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-Width <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -150,21 +150,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Height
 .
 
@@ -266,13 +251,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPicture
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPicture
-
-### System.Collections.Hashtable
 
 ## NOTES
 

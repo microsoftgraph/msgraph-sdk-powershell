@@ -16,14 +16,12 @@ There are two scenarios where an app can get another user's calendar:
 
 ### Get (Default)
 ```
-Get-MgUserDefaultCalendar -UserId <String> [-Property <String[]>] [-Headers <IDictionary>]
- [<CommonParameters>]
+Get-MgUserDefaultCalendar -UserId <String> [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserDefaultCalendar -InputObject <ICalendarIdentity> [-Property <String[]>] [-Headers <IDictionary>]
- [<CommonParameters>]
+Get-MgUserDefaultCalendar -InputObject <ICalendarIdentity> [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -42,21 +40,6 @@ Import-Module Microsoft.Graph.Calendar
 Get-MgUserDefaultCalendar -UserId $userId
 
 ## PARAMETERS
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
 
 ### -InputObject
 Identity Parameter
@@ -111,13 +94,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.ICalendarIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCalendar
-
-### System.Collections.Hashtable
 
 ## NOTES
 

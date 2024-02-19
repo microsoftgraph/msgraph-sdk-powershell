@@ -16,30 +16,28 @@ Update the navigation property lastMessagePreview in users
 ```
 Update-MgUserChatLastMessagePreview -ChatId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
  [-Body <IMicrosoftGraphItemBody>] [-CreatedDateTime <DateTime>] [-EventDetail <Hashtable>]
- [-From <Hashtable>] [-Id <String>] [-IsDeleted] [-MessageType <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-From <Hashtable>] [-Id <String>] [-IsDeleted] [-MessageType <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgUserChatLastMessagePreview -ChatId <String> -UserId <String>
- -BodyParameter <IMicrosoftGraphChatMessageInfo> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphChatMessageInfo> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgUserChatLastMessagePreview -InputObject <ITeamsIdentity>
- -BodyParameter <IMicrosoftGraphChatMessageInfo> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphChatMessageInfo> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgUserChatLastMessagePreview -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
  [-Body <IMicrosoftGraphItemBody>] [-CreatedDateTime <DateTime>] [-EventDetail <Hashtable>]
- [-From <Hashtable>] [-Id <String>] [-IsDeleted] [-MessageType <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-From <Hashtable>] [-Id <String>] [-IsDeleted] [-MessageType <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -170,21 +168,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -302,13 +285,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphChatMessageInfo
-
-### System.Collections.Hashtable
 
 ## NOTES
 

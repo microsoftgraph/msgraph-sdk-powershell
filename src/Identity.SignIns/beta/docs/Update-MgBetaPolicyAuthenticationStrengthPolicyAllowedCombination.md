@@ -16,29 +16,29 @@ To update other properties of an authenticationStrengthPolicy object, use the Up
 ### UpdateExpanded (Default)
 ```
 Update-MgBetaPolicyAuthenticationStrengthPolicyAllowedCombination -AuthenticationStrengthPolicyId <String>
- [-AdditionalProperties <Hashtable>] [-AllowedCombinations <String[]>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-AllowedCombinations <String[]>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaPolicyAuthenticationStrengthPolicyAllowedCombination -AuthenticationStrengthPolicyId <String>
  -BodyParameter <IPaths1Uurx0PoliciesAuthenticationstrengthpoliciesAuthenticationstrengthpolicyIdMicrosoftGraphUpdateallowedcombinationsPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaPolicyAuthenticationStrengthPolicyAllowedCombination -InputObject <IIdentitySignInsIdentity>
  -BodyParameter <IPaths1Uurx0PoliciesAuthenticationstrengthpoliciesAuthenticationstrengthpolicyIdMicrosoftGraphUpdateallowedcombinationsPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgBetaPolicyAuthenticationStrengthPolicyAllowedCombination -InputObject <IIdentitySignInsIdentity>
- [-AdditionalProperties <Hashtable>] [-AllowedCombinations <String[]>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-AllowedCombinations <String[]>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -124,21 +124,6 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -195,13 +180,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPaths1Uurx0PoliciesAuthenticationstrengthpoliciesAuthenticationstrengthpolicyIdMicrosoftGraphUpdateallowedcombinationsPostRequestbodyContentApplicationJsonSchema
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUpdateAllowedCombinationsResult
-
-### System.Collections.Hashtable
 
 ## NOTES
 

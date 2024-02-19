@@ -15,13 +15,13 @@ The content stream, if the item represents a file.
 ### Set (Default)
 ```
 Set-MgTeamChannelFileFolderContent -ChannelId <String> -TeamId <String> -InFile <String> [-Data <Stream>]
- [-ContentType <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentity
 ```
-Set-MgTeamChannelFileFolderContent -InputObject <ITeamsIdentity> -InFile <String> [-Data <Stream>]
- [-ContentType <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Set-MgTeamChannelFileFolderContent -InputObject <ITeamsIdentity> -InFile <String> [-Data <Stream>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -53,41 +53,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ContentType
-ContentType Parameter
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Data
 .
 
 ```yaml
 Type: System.IO.Stream
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
 Parameter Sets: (All)
 Aliases:
 
@@ -184,17 +154,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
 
-### System.Collections.IDictionary
-
 ### System.IO.Stream
-
-### System.String
 
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDriveItem
-
-### System.Collections.Hashtable
 
 ## NOTES
 

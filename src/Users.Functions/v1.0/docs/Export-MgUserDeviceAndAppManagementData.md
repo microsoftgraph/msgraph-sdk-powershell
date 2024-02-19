@@ -14,26 +14,25 @@ Invoke function exportDeviceAndAppManagementData
 
 ### Export (Default)
 ```
-Export-MgUserDeviceAndAppManagementData -UserId <String> -OutFile <String> [-Headers <IDictionary>]
- [-PassThru] [<CommonParameters>]
+Export-MgUserDeviceAndAppManagementData -UserId <String> -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
 ### Export1
 ```
 Export-MgUserDeviceAndAppManagementData -Skip <Int32> -Top <Int32> -UserId <String> -OutFile <String>
- [-Headers <IDictionary>] [-PassThru] [<CommonParameters>]
+ [-PassThru] [<CommonParameters>]
 ```
 
 ### ExportViaIdentity
 ```
-Export-MgUserDeviceAndAppManagementData -InputObject <IUsersFunctionsIdentity> -OutFile <String>
- [-Headers <IDictionary>] [-PassThru] [<CommonParameters>]
+Export-MgUserDeviceAndAppManagementData -InputObject <IUsersFunctionsIdentity> -OutFile <String> [-PassThru]
+ [<CommonParameters>]
 ```
 
 ### ExportViaIdentity1
 ```
-Export-MgUserDeviceAndAppManagementData -InputObject <IUsersFunctionsIdentity> -OutFile <String>
- [-Headers <IDictionary>] [-PassThru] [<CommonParameters>]
+Export-MgUserDeviceAndAppManagementData -InputObject <IUsersFunctionsIdentity> -OutFile <String> [-PassThru]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -56,21 +55,6 @@ Invoke function exportDeviceAndAppManagementData
 
 
 ## PARAMETERS
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
 
 ### -InputObject
 Identity Parameter
@@ -170,13 +154,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
-
-### System.Collections.Hashtable
 
 ## NOTES
 

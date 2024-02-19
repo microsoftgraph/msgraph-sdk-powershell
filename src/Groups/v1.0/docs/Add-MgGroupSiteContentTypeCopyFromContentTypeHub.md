@@ -18,29 +18,27 @@ For more information, see contentType: getCompatibleHubContentTypes and the blog
 ### AddExpanded (Default)
 ```
 Add-MgGroupSiteContentTypeCopyFromContentTypeHub -GroupId <String> -SiteId <String>
- [-AdditionalProperties <Hashtable>] [-ContentTypeId <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-ContentTypeId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Add
 ```
 Add-MgGroupSiteContentTypeCopyFromContentTypeHub -GroupId <String> -SiteId <String>
  -BodyParameter <IPaths1Pf20SeGroupsGroupIdSitesSiteIdContenttypesMicrosoftGraphAddcopyfromcontenttypehubPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AddViaIdentity
 ```
 Add-MgGroupSiteContentTypeCopyFromContentTypeHub -InputObject <IGroupsIdentity>
  -BodyParameter <IPaths1Pf20SeGroupsGroupIdSitesSiteIdContenttypesMicrosoftGraphAddcopyfromcontenttypehubPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AddViaIdentityExpanded
 ```
 Add-MgGroupSiteContentTypeCopyFromContentTypeHub -InputObject <IGroupsIdentity>
- [-AdditionalProperties <Hashtable>] [-ContentTypeId <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-ContentTypeId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -128,21 +126,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -214,13 +197,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IPaths1Pf20SeGroupsGroupIdSitesSiteIdContenttypesMicrosoftGraphAddcopyfromcontenttypehubPostRequestbodyContentApplicationJsonSchema
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContentType
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -261,7 +240,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[OnenotePageId <String>]`: The unique identifier of onenotePage
   - `[OnenoteSectionId <String>]`: The unique identifier of onenoteSection
   - `[Path <String>]`: Usage: path='{path}'
-  - `[Path1 <String>]`: Usage: path='{path1}'
   - `[PermissionId <String>]`: The unique identifier of permission
   - `[PostId <String>]`: The unique identifier of post
   - `[ProfilePhotoId <String>]`: The unique identifier of profilePhoto
@@ -271,7 +249,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[StartDateTime <String>]`: Usage: startDateTime='{startDateTime}'
   - `[SubscriptionId <String>]`: The unique identifier of subscription
   - `[Token <String>]`: Usage: token='{token}'
-  - `[UniqueName <String>]`: Alternate key of group
   - `[User <String>]`: Usage: User='{User}'
 
 ## RELATED LINKS

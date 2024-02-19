@@ -17,30 +17,28 @@ Update the navigation property versions in groups
 Update-MgGroupDriveListItemVersion -DriveId <String> -GroupId <String> -ListItemId <String>
  -ListItemVersionId <String> [-AdditionalProperties <Hashtable>] [-Fields <Hashtable>] [-Id <String>]
  [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>]
- [-Publication <IMicrosoftGraphPublicationFacet>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Publication <IMicrosoftGraphPublicationFacet>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgGroupDriveListItemVersion -DriveId <String> -GroupId <String> -ListItemId <String>
- -ListItemVersionId <String> -BodyParameter <IMicrosoftGraphListItemVersion> [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -ListItemVersionId <String> -BodyParameter <IMicrosoftGraphListItemVersion> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgGroupDriveListItemVersion -InputObject <IFilesIdentity>
- -BodyParameter <IMicrosoftGraphListItemVersion> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphListItemVersion> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgGroupDriveListItemVersion -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>]
  [-Fields <Hashtable>] [-Id <String>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
- [-LastModifiedDateTime <DateTime>] [-Publication <IMicrosoftGraphPublicationFacet>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-LastModifiedDateTime <DateTime>] [-Publication <IMicrosoftGraphPublicationFacet>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -137,21 +135,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -305,13 +288,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphListItemVersion
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphListItemVersion
-
-### System.Collections.Hashtable
 
 ## NOTES
 

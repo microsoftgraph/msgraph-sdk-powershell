@@ -15,13 +15,13 @@ Get the number of the resource
 ### Get (Default)
 ```
 Get-MgBetaCommunicationCallParticipantCount -CallId <String> [-Filter <String>] [-Search <String>]
- [-Headers <IDictionary>] [<CommonParameters>]
+ [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
 Get-MgBetaCommunicationCallParticipantCount -InputObject <ICloudCommunicationsIdentity> [-Filter <String>]
- [-Search <String>] [-Headers <IDictionary>] [<CommonParameters>]
+ [-Search <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -75,21 +75,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -128,11 +113,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.ICloudCommunicationsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
-
-### System.Collections.Hashtable
 
 ### System.Int32
 
@@ -155,7 +136,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[CommsOperationId <String>]`: The unique identifier of commsOperation
   - `[ContentSharingSessionId <String>]`: The unique identifier of contentSharingSession
   - `[FromDateTime <DateTime?>]`: Usage: fromDateTime={fromDateTime}
-  - `[JoinWebUrl <String>]`: Alternate key of onlineMeeting
   - `[MeetingAttendanceReportId <String>]`: The unique identifier of meetingAttendanceReport
   - `[MeetingRegistrantBaseId <String>]`: The unique identifier of meetingRegistrantBase
   - `[MeetingRegistrationQuestionId <String>]`: The unique identifier of meetingRegistrationQuestion

@@ -22,22 +22,22 @@ The bot must download the recording promptly after the recording operation finis
 Invoke-MgBetaRecordCommunicationCallResponse -CallId <String> [-AdditionalProperties <Hashtable>]
  [-BargeInAllowed] [-ClientContext <String>] [-InitialSilenceTimeoutInSeconds <Int32>]
  [-MaxRecordDurationInSeconds <Int32>] [-MaxSilenceTimeoutInSeconds <Int32>] [-PlayBeep]
- [-Prompts <IMicrosoftGraphPrompt[]>] [-StopTones <String[]>] [-StreamWhileRecording] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Prompts <IMicrosoftGraphPrompt[]>] [-StopTones <String[]>] [-StreamWhileRecording] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Record
 ```
 Invoke-MgBetaRecordCommunicationCallResponse -CallId <String>
  -BodyParameter <IPaths14Wb7KqCommunicationsCallsCallIdMicrosoftGraphRecordresponsePostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RecordViaIdentity
 ```
 Invoke-MgBetaRecordCommunicationCallResponse -InputObject <ICloudCommunicationsIdentity>
  -BodyParameter <IPaths14Wb7KqCommunicationsCallsCallIdMicrosoftGraphRecordresponsePostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RecordViaIdentityExpanded
@@ -46,8 +46,7 @@ Invoke-MgBetaRecordCommunicationCallResponse -InputObject <ICloudCommunicationsI
  [-AdditionalProperties <Hashtable>] [-BargeInAllowed] [-ClientContext <String>]
  [-InitialSilenceTimeoutInSeconds <Int32>] [-MaxRecordDurationInSeconds <Int32>]
  [-MaxSilenceTimeoutInSeconds <Int32>] [-PlayBeep] [-Prompts <IMicrosoftGraphPrompt[]>]
- [-StopTones <String[]>] [-StreamWhileRecording] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-StopTones <String[]>] [-StreamWhileRecording] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -161,21 +160,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -340,13 +324,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPaths14Wb7KqCommunicationsCallsCallIdMicrosoftGraphRecordresponsePostRequestbodyContentApplicationJsonSchema
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRecordOperation
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -379,7 +359,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[CommsOperationId <String>]`: The unique identifier of commsOperation
   - `[ContentSharingSessionId <String>]`: The unique identifier of contentSharingSession
   - `[FromDateTime <DateTime?>]`: Usage: fromDateTime={fromDateTime}
-  - `[JoinWebUrl <String>]`: Alternate key of onlineMeeting
   - `[MeetingAttendanceReportId <String>]`: The unique identifier of meetingAttendanceReport
   - `[MeetingRegistrantBaseId <String>]`: The unique identifier of meetingRegistrantBase
   - `[MeetingRegistrationQuestionId <String>]`: The unique identifier of meetingRegistrationQuestion

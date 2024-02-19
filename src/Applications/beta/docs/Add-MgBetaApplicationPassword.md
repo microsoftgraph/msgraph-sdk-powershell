@@ -15,29 +15,27 @@ Adds a strong password to an application.
 ### AddExpanded (Default)
 ```
 Add-MgBetaApplicationPassword -ApplicationId <String> [-AdditionalProperties <Hashtable>]
- [-PasswordCredential <IMicrosoftGraphPasswordCredential>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-PasswordCredential <IMicrosoftGraphPasswordCredential>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Add
 ```
 Add-MgBetaApplicationPassword -ApplicationId <String>
  -BodyParameter <IPaths141Ryo0ApplicationsApplicationIdMicrosoftGraphAddpasswordPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AddViaIdentity
 ```
 Add-MgBetaApplicationPassword -InputObject <IApplicationsIdentity>
  -BodyParameter <IPaths141Ryo0ApplicationsApplicationIdMicrosoftGraphAddpasswordPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AddViaIdentityExpanded
 ```
 Add-MgBetaApplicationPassword -InputObject <IApplicationsIdentity> [-AdditionalProperties <Hashtable>]
- [-PasswordCredential <IMicrosoftGraphPasswordCredential>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-PasswordCredential <IMicrosoftGraphPasswordCredential>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -147,21 +145,6 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -234,13 +217,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPaths141Ryo0ApplicationsApplicationIdMicrosoftGraphAddpasswordPostRequestbodyContentApplicationJsonSchema
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPasswordCredential
-
-### System.Collections.Hashtable
 
 ## NOTES
 

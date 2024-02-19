@@ -14,14 +14,14 @@ Delete the specified Outlook task in the user's mailbox.
 
 ### Delete (Default)
 ```
-Remove-MgBetaUserOutlookTask -OutlookTaskId <String> -UserId <String> [-IfMatch <String>]
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-MgBetaUserOutlookTask -OutlookTaskId <String> -UserId <String> [-IfMatch <String>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgBetaUserOutlookTask -InputObject <IUsersIdentity> [-IfMatch <String>] [-Headers <IDictionary>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-MgBetaUserOutlookTask -InputObject <IUsersIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -39,21 +39,6 @@ Remove-MgBetaUserOutlookTask -UserId $userId -OutlookTaskId $outlookTaskId
 
 
 ## PARAMETERS
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
 
 ### -IfMatch
 ETag
@@ -169,13 +154,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -187,7 +168,6 @@ To create the parameters described below, construct a hash table containing the 
 
 
 `INPUTOBJECT <IUsersIdentity>`: Identity Parameter
-  - `[AppId <String>]`: Alternate key of servicePrincipal
   - `[AttachmentBaseId <String>]`: The unique identifier of attachmentBase
   - `[AttachmentId <String>]`: The unique identifier of attachment
   - `[AttachmentSessionId <String>]`: The unique identifier of attachmentSession

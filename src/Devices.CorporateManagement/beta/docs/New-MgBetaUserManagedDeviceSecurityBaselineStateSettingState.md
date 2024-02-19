@@ -19,23 +19,21 @@ New-MgBetaUserManagedDeviceSecurityBaselineStateSettingState -ManagedDeviceId <S
  [-ContributingPolicies <IMicrosoftGraphSecurityBaselineContributingPolicy[]>] [-ErrorCode <String>]
  [-Id <String>] [-SettingCategoryId <String>] [-SettingCategoryName <String>] [-SettingId <String>]
  [-SettingName <String>] [-SourcePolicies <IMicrosoftGraphSettingSource[]>]
- [-State <SecurityBaselineComplianceState>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-State <SecurityBaselineComplianceState>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaUserManagedDeviceSecurityBaselineStateSettingState -ManagedDeviceId <String>
  -SecurityBaselineStateId <String> -UserId <String>
- -BodyParameter <IMicrosoftGraphSecurityBaselineSettingState> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphSecurityBaselineSettingState> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaUserManagedDeviceSecurityBaselineStateSettingState
  -InputObject <IDevicesCorporateManagementIdentity>
- -BodyParameter <IMicrosoftGraphSecurityBaselineSettingState> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphSecurityBaselineSettingState> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -45,7 +43,7 @@ New-MgBetaUserManagedDeviceSecurityBaselineStateSettingState
  [-ContributingPolicies <IMicrosoftGraphSecurityBaselineContributingPolicy[]>] [-ErrorCode <String>]
  [-Id <String>] [-SettingCategoryId <String>] [-SettingCategoryName <String>] [-SettingId <String>]
  [-SettingName <String>] [-SourcePolicies <IMicrosoftGraphSettingSource[]>]
- [-State <SecurityBaselineComplianceState>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-State <SecurityBaselineComplianceState>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -128,21 +126,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -354,13 +337,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityBaselineSettingState
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityBaselineSettingState
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -384,8 +363,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[SettingId <String>]`: The setting id guid
   - `[SettingName <String>]`: The setting name that is being reported
   - `[SourcePolicies <IMicrosoftGraphSettingSource[]>]`: The policies that contribute to this setting instance
-    - `[DisplayName <String>]`: 
-    - `[Id <String>]`: 
+    - `[DisplayName <String>]`: Not yet documented
+    - `[Id <String>]`: Not yet documented
     - `[SourceType <String>]`: settingSourceType
   - `[State <SecurityBaselineComplianceState?>]`: Security Baseline Compliance State
 
@@ -465,8 +444,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[WindowsManagedAppProtectionId <String>]`: The unique identifier of windowsManagedAppProtection
 
 `SOURCEPOLICIES <IMicrosoftGraphSettingSource[]>`: The policies that contribute to this setting instance
-  - `[DisplayName <String>]`: 
-  - `[Id <String>]`: 
+  - `[DisplayName <String>]`: Not yet documented
+  - `[Id <String>]`: Not yet documented
   - `[SourceType <String>]`: settingSourceType
 
 ## RELATED LINKS

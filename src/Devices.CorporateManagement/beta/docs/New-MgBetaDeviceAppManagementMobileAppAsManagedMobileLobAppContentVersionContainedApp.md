@@ -16,28 +16,28 @@ Create new navigation property to containedApps for deviceAppManagement
 ```
 New-MgBetaDeviceAppManagementMobileAppAsManagedMobileLobAppContentVersionContainedApp
  -MobileAppContentId <String> -MobileAppId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaDeviceAppManagementMobileAppAsManagedMobileLobAppContentVersionContainedApp
- -MobileAppContentId <String> -MobileAppId <String> -BodyParameter <Hashtable> [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -MobileAppContentId <String> -MobileAppId <String> -BodyParameter <Hashtable> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaDeviceAppManagementMobileAppAsManagedMobileLobAppContentVersionContainedApp
- -InputObject <IDevicesCorporateManagementIdentity> -BodyParameter <Hashtable> [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -InputObject <IDevicesCorporateManagementIdentity> -BodyParameter <Hashtable> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgBetaDeviceAppManagementMobileAppAsManagedMobileLobAppContentVersionContainedApp
  -InputObject <IDevicesCorporateManagementIdentity> [-AdditionalProperties <Hashtable>] [-Id <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -85,21 +85,6 @@ Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -208,11 +193,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Collections.Hashtable
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
-
-### System.Collections.Hashtable
 
 ### System.String
 

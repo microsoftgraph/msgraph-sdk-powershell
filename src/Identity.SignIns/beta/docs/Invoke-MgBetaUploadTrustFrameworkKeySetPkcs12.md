@@ -17,29 +17,29 @@ This method returns trustFrameworkKey.
 ### UploadExpanded (Default)
 ```
 Invoke-MgBetaUploadTrustFrameworkKeySetPkcs12 -TrustFrameworkKeySetId <String>
- [-AdditionalProperties <Hashtable>] [-Key <String>] [-Password <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-Key <String>] [-Password <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Upload
 ```
 Invoke-MgBetaUploadTrustFrameworkKeySetPkcs12 -TrustFrameworkKeySetId <String>
  -BodyParameter <IPaths11Ap814TrustframeworkKeysetsTrustframeworkkeysetIdMicrosoftGraphUploadpkcs12PostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UploadViaIdentity
 ```
 Invoke-MgBetaUploadTrustFrameworkKeySetPkcs12 -InputObject <IIdentitySignInsIdentity>
  -BodyParameter <IPaths11Ap814TrustframeworkKeysetsTrustframeworkkeysetIdMicrosoftGraphUploadpkcs12PostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UploadViaIdentityExpanded
 ```
 Invoke-MgBetaUploadTrustFrameworkKeySetPkcs12 -InputObject <IIdentitySignInsIdentity>
- [-AdditionalProperties <Hashtable>] [-Key <String>] [-Password <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-Key <String>] [-Password <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -88,21 +88,6 @@ Parameter Sets: Upload, UploadViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -210,13 +195,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPaths11Ap814TrustframeworkKeysetsTrustframeworkkeysetIdMicrosoftGraphUploadpkcs12PostRequestbodyContentApplicationJsonSchema
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTrustFrameworkKey
-
-### System.Collections.Hashtable
 
 ## NOTES
 

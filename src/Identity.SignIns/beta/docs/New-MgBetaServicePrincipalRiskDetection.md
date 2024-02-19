@@ -20,14 +20,14 @@ New-MgBetaServicePrincipalRiskDetection [-Activity <String>] [-ActivityDateTime 
  [-KeyIds <String[]>] [-LastUpdatedDateTime <DateTime>] [-Location <IMicrosoftGraphSignInLocation>]
  [-MitreTechniqueId <String>] [-RequestId <String>] [-RiskDetail <String>] [-RiskEventType <String>]
  [-RiskLevel <String>] [-RiskState <String>] [-ServicePrincipalDisplayName <String>]
- [-ServicePrincipalId <String>] [-Source <String>] [-TokenIssuerType <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ServicePrincipalId <String>] [-Source <String>] [-TokenIssuerType <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaServicePrincipalRiskDetection -BodyParameter <IMicrosoftGraphServicePrincipalRiskDetection>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -190,21 +190,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -478,13 +463,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphServicePrincipalRiskDetection
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphServicePrincipalRiskDetection
-
-### System.Collections.Hashtable
 
 ## NOTES
 

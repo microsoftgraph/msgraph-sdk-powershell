@@ -16,13 +16,13 @@ Only teachers can perform this operation.
 ### Get (Default)
 ```
 Get-MgBetaEducationClassAssignmentSetting -EducationClassId <String> [-ExpandProperty <String[]>]
- [-Property <String[]>] [-Headers <IDictionary>] [<CommonParameters>]
+ [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
 Get-MgBetaEducationClassAssignmentSetting -InputObject <IEducationIdentity> [-ExpandProperty <String[]>]
- [-Property <String[]>] [-Headers <IDictionary>] [<CommonParameters>]
+ [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -33,17 +33,14 @@ Only teachers can perform this operation.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Beta.Education
 ```
 
+$params = @{
+	submissionAnimationDisabled = $true
+}
 
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-
+Update-MgBetaEducationClassAssignmentSetting -EducationClassId $educationClassId -BodyParameter $params
 
 ## PARAMETERS
 
@@ -74,21 +71,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -130,13 +112,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationAssignmentSettings
-
-### System.Collections.Hashtable
 
 ## NOTES
 

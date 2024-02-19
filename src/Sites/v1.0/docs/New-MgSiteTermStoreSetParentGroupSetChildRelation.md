@@ -17,35 +17,34 @@ Create new navigation property to relations for sites
 New-MgSiteTermStoreSetParentGroupSetChildRelation -SetId <String> -SetId1 <String> -SiteId <String>
  -TermId <String> [-AdditionalProperties <Hashtable>] [-FromTerm <IMicrosoftGraphTermStoreTerm>]
  [-Id <String>] [-Relationship <String>] [-Set <IMicrosoftGraphTermStoreSet>]
- [-ToTerm <IMicrosoftGraphTermStoreTerm>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ToTerm <IMicrosoftGraphTermStoreTerm>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgSiteTermStoreSetParentGroupSetChildRelation -SetId <String> -SetId1 <String> -SiteId <String>
- -TermId <String> -TermId1 <String> -BodyParameter <IMicrosoftGraphTermStoreRelation> [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -TermId <String> -TermId1 <String> -BodyParameter <IMicrosoftGraphTermStoreRelation> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create1
 ```
 New-MgSiteTermStoreSetParentGroupSetChildRelation -SetId <String> -SetId1 <String> -SiteId <String>
- -TermId <String> -BodyParameter <IMicrosoftGraphTermStoreRelation> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -TermId <String> -BodyParameter <IMicrosoftGraphTermStoreRelation> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create2
 ```
 New-MgSiteTermStoreSetParentGroupSetChildRelation -SetId <String> -SetId1 <String> -SiteId <String>
  -StoreId <String> -TermId <String> -TermId1 <String> -BodyParameter <IMicrosoftGraphTermStoreRelation>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create3
 ```
 New-MgSiteTermStoreSetParentGroupSetChildRelation -SetId <String> -SetId1 <String> -SiteId <String>
- -StoreId <String> -TermId <String> -BodyParameter <IMicrosoftGraphTermStoreRelation> [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -StoreId <String> -TermId <String> -BodyParameter <IMicrosoftGraphTermStoreRelation> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### CreateExpanded
@@ -53,8 +52,8 @@ New-MgSiteTermStoreSetParentGroupSetChildRelation -SetId <String> -SetId1 <Strin
 New-MgSiteTermStoreSetParentGroupSetChildRelation -SetId <String> -SetId1 <String> -SiteId <String>
  -TermId <String> -TermId1 <String> [-AdditionalProperties <Hashtable>]
  [-FromTerm <IMicrosoftGraphTermStoreTerm>] [-Id <String>] [-Relationship <String>]
- [-Set <IMicrosoftGraphTermStoreSet>] [-ToTerm <IMicrosoftGraphTermStoreTerm>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Set <IMicrosoftGraphTermStoreSet>] [-ToTerm <IMicrosoftGraphTermStoreTerm>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### CreateExpanded2
@@ -62,8 +61,8 @@ New-MgSiteTermStoreSetParentGroupSetChildRelation -SetId <String> -SetId1 <Strin
 New-MgSiteTermStoreSetParentGroupSetChildRelation -SetId <String> -SetId1 <String> -SiteId <String>
  -StoreId <String> -TermId <String> -TermId1 <String> [-AdditionalProperties <Hashtable>]
  [-FromTerm <IMicrosoftGraphTermStoreTerm>] [-Id <String>] [-Relationship <String>]
- [-Set <IMicrosoftGraphTermStoreSet>] [-ToTerm <IMicrosoftGraphTermStoreTerm>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Set <IMicrosoftGraphTermStoreSet>] [-ToTerm <IMicrosoftGraphTermStoreTerm>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### CreateExpanded3
@@ -71,36 +70,32 @@ New-MgSiteTermStoreSetParentGroupSetChildRelation -SetId <String> -SetId1 <Strin
 New-MgSiteTermStoreSetParentGroupSetChildRelation -SetId <String> -SetId1 <String> -SiteId <String>
  -StoreId <String> -TermId <String> [-AdditionalProperties <Hashtable>]
  [-FromTerm <IMicrosoftGraphTermStoreTerm>] [-Id <String>] [-Relationship <String>]
- [-Set <IMicrosoftGraphTermStoreSet>] [-ToTerm <IMicrosoftGraphTermStoreTerm>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Set <IMicrosoftGraphTermStoreSet>] [-ToTerm <IMicrosoftGraphTermStoreTerm>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgSiteTermStoreSetParentGroupSetChildRelation -InputObject <ISitesIdentity>
- -BodyParameter <IMicrosoftGraphTermStoreRelation> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphTermStoreRelation> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity1
 ```
 New-MgSiteTermStoreSetParentGroupSetChildRelation -InputObject <ISitesIdentity>
- -BodyParameter <IMicrosoftGraphTermStoreRelation> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphTermStoreRelation> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity2
 ```
 New-MgSiteTermStoreSetParentGroupSetChildRelation -InputObject <ISitesIdentity>
- -BodyParameter <IMicrosoftGraphTermStoreRelation> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphTermStoreRelation> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity3
 ```
 New-MgSiteTermStoreSetParentGroupSetChildRelation -InputObject <ISitesIdentity>
- -BodyParameter <IMicrosoftGraphTermStoreRelation> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphTermStoreRelation> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -108,7 +103,7 @@ New-MgSiteTermStoreSetParentGroupSetChildRelation -InputObject <ISitesIdentity>
 New-MgSiteTermStoreSetParentGroupSetChildRelation -InputObject <ISitesIdentity>
  [-AdditionalProperties <Hashtable>] [-FromTerm <IMicrosoftGraphTermStoreTerm>] [-Id <String>]
  [-Relationship <String>] [-Set <IMicrosoftGraphTermStoreSet>] [-ToTerm <IMicrosoftGraphTermStoreTerm>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded1
@@ -116,7 +111,7 @@ New-MgSiteTermStoreSetParentGroupSetChildRelation -InputObject <ISitesIdentity>
 New-MgSiteTermStoreSetParentGroupSetChildRelation -InputObject <ISitesIdentity>
  [-AdditionalProperties <Hashtable>] [-FromTerm <IMicrosoftGraphTermStoreTerm>] [-Id <String>]
  [-Relationship <String>] [-Set <IMicrosoftGraphTermStoreSet>] [-ToTerm <IMicrosoftGraphTermStoreTerm>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded2
@@ -124,7 +119,7 @@ New-MgSiteTermStoreSetParentGroupSetChildRelation -InputObject <ISitesIdentity>
 New-MgSiteTermStoreSetParentGroupSetChildRelation -InputObject <ISitesIdentity>
  [-AdditionalProperties <Hashtable>] [-FromTerm <IMicrosoftGraphTermStoreTerm>] [-Id <String>]
  [-Relationship <String>] [-Set <IMicrosoftGraphTermStoreSet>] [-ToTerm <IMicrosoftGraphTermStoreTerm>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded3
@@ -132,7 +127,7 @@ New-MgSiteTermStoreSetParentGroupSetChildRelation -InputObject <ISitesIdentity>
 New-MgSiteTermStoreSetParentGroupSetChildRelation -InputObject <ISitesIdentity>
  [-AdditionalProperties <Hashtable>] [-FromTerm <IMicrosoftGraphTermStoreTerm>] [-Id <String>]
  [-Relationship <String>] [-Set <IMicrosoftGraphTermStoreSet>] [-ToTerm <IMicrosoftGraphTermStoreTerm>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -200,21 +195,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -427,13 +407,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.ISitesIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTermStoreRelation
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -557,7 +533,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[OnenoteResourceId <String>]`: The unique identifier of onenoteResource
   - `[OnenoteSectionId <String>]`: The unique identifier of onenoteSection
   - `[Path <String>]`: Usage: path='{path}'
-  - `[Path1 <String>]`: Usage: path='{path1}'
   - `[PermissionId <String>]`: The unique identifier of permission
   - `[RelationId <String>]`: The unique identifier of relation
   - `[RichLongRunningOperationId <String>]`: The unique identifier of richLongRunningOperation

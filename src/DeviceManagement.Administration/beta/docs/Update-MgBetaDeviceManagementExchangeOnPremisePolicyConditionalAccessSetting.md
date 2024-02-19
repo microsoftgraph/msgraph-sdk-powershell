@@ -16,47 +16,43 @@ Update the navigation property conditionalAccessSettings in deviceManagement
 ```
 Update-MgBetaDeviceManagementExchangeOnPremisePolicyConditionalAccessSetting
  [-AdditionalProperties <Hashtable>] [-Enabled] [-ExcludedGroups <String[]>] [-Id <String>]
- [-IncludedGroups <String[]>] [-OverrideDefaultRule] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-IncludedGroups <String[]>] [-OverrideDefaultRule] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaDeviceManagementExchangeOnPremisePolicyConditionalAccessSetting
  -DeviceManagementExchangeOnPremisesPolicyId <String>
- -BodyParameter <IMicrosoftGraphOnPremisesConditionalAccessSettings> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphOnPremisesConditionalAccessSettings> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update1
 ```
 Update-MgBetaDeviceManagementExchangeOnPremisePolicyConditionalAccessSetting
- -BodyParameter <IMicrosoftGraphOnPremisesConditionalAccessSettings> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphOnPremisesConditionalAccessSettings> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateExpanded
 ```
 Update-MgBetaDeviceManagementExchangeOnPremisePolicyConditionalAccessSetting
  -DeviceManagementExchangeOnPremisesPolicyId <String> [-AdditionalProperties <Hashtable>] [-Enabled]
- [-ExcludedGroups <String[]>] [-Id <String>] [-IncludedGroups <String[]>] [-OverrideDefaultRule]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ExcludedGroups <String[]>] [-Id <String>] [-IncludedGroups <String[]>] [-OverrideDefaultRule] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaDeviceManagementExchangeOnPremisePolicyConditionalAccessSetting
  -InputObject <IDeviceManagementAdministrationIdentity>
- -BodyParameter <IMicrosoftGraphOnPremisesConditionalAccessSettings> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphOnPremisesConditionalAccessSettings> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgBetaDeviceManagementExchangeOnPremisePolicyConditionalAccessSetting
  -InputObject <IDeviceManagementAdministrationIdentity> [-AdditionalProperties <Hashtable>] [-Enabled]
- [-ExcludedGroups <String[]>] [-Id <String>] [-IncludedGroups <String[]>] [-OverrideDefaultRule]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ExcludedGroups <String[]>] [-Id <String>] [-IncludedGroups <String[]>] [-OverrideDefaultRule] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -154,21 +150,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -275,13 +256,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOnPremisesConditionalAccessSettings
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOnPremisesConditionalAccessSettings
-
-### System.Collections.Hashtable
 
 ## NOTES
 

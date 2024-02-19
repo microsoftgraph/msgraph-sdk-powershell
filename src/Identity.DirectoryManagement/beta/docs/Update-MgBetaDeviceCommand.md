@@ -17,19 +17,19 @@ Update the navigation property commands in devices
 Update-MgBetaDeviceCommand -CommandId <String> -DeviceId <String> [-AdditionalProperties <Hashtable>]
  [-AppServiceName <String>] [-Error <String>] [-Id <String>] [-PackageFamilyName <String>]
  [-Payload <Hashtable>] [-PermissionTicket <String>] [-PostBackUri <String>] [-Responsepayload <Hashtable>]
- [-Status <String>] [-Type <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Status <String>] [-Type <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaDeviceCommand -CommandId <String> -DeviceId <String> -BodyParameter <IMicrosoftGraphCommand>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaDeviceCommand -InputObject <IIdentityDirectoryManagementIdentity>
- -BodyParameter <IMicrosoftGraphCommand> [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphCommand> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -37,8 +37,7 @@ Update-MgBetaDeviceCommand -InputObject <IIdentityDirectoryManagementIdentity>
 Update-MgBetaDeviceCommand -InputObject <IIdentityDirectoryManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-AppServiceName <String>] [-Error <String>] [-Id <String>]
  [-PackageFamilyName <String>] [-Payload <Hashtable>] [-PermissionTicket <String>] [-PostBackUri <String>]
- [-Responsepayload <Hashtable>] [-Status <String>] [-Type <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-Responsepayload <Hashtable>] [-Status <String>] [-Type <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -150,21 +149,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -345,13 +329,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCommand
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCommand
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -385,7 +365,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[CertificateAuthorityAsEntityId <String>]`: The unique identifier of certificateAuthorityAsEntity
   - `[CertificateBasedApplicationConfigurationId <String>]`: The unique identifier of certificateBasedApplicationConfiguration
   - `[CommandId <String>]`: The unique identifier of command
-  - `[CommerceSubscriptionId <String>]`: Alternate key of companySubscription
   - `[CompanySubscriptionId <String>]`: The unique identifier of companySubscription
   - `[ContractId <String>]`: The unique identifier of contract
   - `[CustomSecurityAttributeDefinitionId <String>]`: The unique identifier of customSecurityAttributeDefinition
@@ -406,7 +385,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[InternalDomainFederationId <String>]`: The unique identifier of internalDomainFederation
   - `[ManagedTenantAlertId <String>]`: The unique identifier of managedTenantAlert
   - `[ManagementActionId <String>]`: The unique identifier of managementAction
-  - `[OcpSubscriptionId <String>]`: Alternate key of companySubscription
   - `[OnPremisesDirectorySynchronizationId <String>]`: The unique identifier of onPremisesDirectorySynchronization
   - `[OrgContactId <String>]`: The unique identifier of orgContact
   - `[OrganizationId <String>]`: The unique identifier of organization

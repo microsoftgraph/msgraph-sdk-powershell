@@ -16,28 +16,28 @@ Invoke action selfActivate
 ```
 Invoke-MgBetaSelfPrivilegedRoleAssignmentRoleInfoActivate -PrivilegedRoleAssignmentId <String>
  [-AdditionalProperties <Hashtable>] [-Duration <String>] [-Reason <String>] [-TicketNumber <String>]
- [-TicketSystem <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-TicketSystem <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Self
 ```
 Invoke-MgBetaSelfPrivilegedRoleAssignmentRoleInfoActivate -PrivilegedRoleAssignmentId <String>
  -BodyParameter <IPathsHsjobxPrivilegedroleassignmentsPrivilegedroleassignmentIdRoleinfoMicrosoftGraphSelfactivatePostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SelfViaIdentity
 ```
 Invoke-MgBetaSelfPrivilegedRoleAssignmentRoleInfoActivate -InputObject <IIdentityGovernanceIdentity>
  -BodyParameter <IPathsHsjobxPrivilegedroleassignmentsPrivilegedroleassignmentIdRoleinfoMicrosoftGraphSelfactivatePostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SelfViaIdentityExpanded
 ```
 Invoke-MgBetaSelfPrivilegedRoleAssignmentRoleInfoActivate -InputObject <IIdentityGovernanceIdentity>
  [-AdditionalProperties <Hashtable>] [-Duration <String>] [-Reason <String>] [-TicketNumber <String>]
- [-TicketSystem <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-TicketSystem <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -104,21 +104,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -238,13 +223,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPathsHsjobxPrivilegedroleassignmentsPrivilegedroleassignmentIdRoleinfoMicrosoftGraphSelfactivatePostRequestbodyContentApplicationJsonSchema
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrivilegedRoleAssignment
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -314,7 +295,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[GroupId <String>]`: The unique identifier of group
   - `[IncompatibleAccessPackageId <String>]`: Usage: incompatibleAccessPackageId='{incompatibleAccessPackageId}'
   - `[LongRunningOperationId <String>]`: The unique identifier of longRunningOperation
-  - `[ObjectId <String>]`: Alternate key of accessPackageSubject
   - `[On <String>]`: Usage: on='{on}'
   - `[PermissionsCreepIndexDistributionId <String>]`: The unique identifier of permissionsCreepIndexDistribution
   - `[PermissionsRequestChangeId <String>]`: The unique identifier of permissionsRequestChange

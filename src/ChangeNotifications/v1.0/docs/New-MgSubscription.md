@@ -22,13 +22,12 @@ New-MgSubscription [-AdditionalProperties <Hashtable>] [-ApplicationId <String>]
  [-EncryptionCertificateId <String>] [-ExpirationDateTime <DateTime>] [-Id <String>] [-IncludeResourceData]
  [-LatestSupportedTlsVersion <String>] [-LifecycleNotificationUrl <String>]
  [-NotificationQueryOptions <String>] [-NotificationUrl <String>] [-NotificationUrlAppId <String>]
- [-Resource <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Resource <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgSubscription -BodyParameter <IMicrosoftGraphSubscription> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+New-MgSubscription -BodyParameter <IMicrosoftGraphSubscription> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -215,21 +214,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -413,13 +397,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSubscription
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSubscription
-
-### System.Collections.Hashtable
 
 ## NOTES
 

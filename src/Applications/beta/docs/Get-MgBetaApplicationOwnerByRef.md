@@ -18,7 +18,7 @@ Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 
 ```
 Get-MgBetaApplicationOwnerByRef -ApplicationId <String> [-Filter <String>] [-Search <String>] [-Skip <Int32>]
  [-Sort <String[]>] [-Top <Int32>] [-ConsistencyLevel <String>] [-All] [-CountVariable <String>]
- [-Headers <IDictionary>] [-PageSize <Int32>] [<CommonParameters>]
+ [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -122,21 +122,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -PageSize
 Sets the page size of results.
 
@@ -217,11 +202,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
-
-### System.Collections.Hashtable
 
 ### System.String
 

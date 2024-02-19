@@ -17,15 +17,13 @@ Update the properties of a applePushNotificationCertificate object.
 Update-MgDeviceManagementApplePushNotificationCertificate [-AdditionalProperties <Hashtable>]
  [-AppleIdentifier <String>] [-Certificate <String>] [-CertificateUploadFailureReason <String>]
  [-CertificateUploadStatus <String>] [-ExpirationDateTime <DateTime>] [-Id <String>]
- [-LastModifiedDateTime <DateTime>] [-TopicIdentifier <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-LastModifiedDateTime <DateTime>] [-TopicIdentifier <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgDeviceManagementApplePushNotificationCertificate
- -BodyParameter <IMicrosoftGraphApplePushNotificationCertificate> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphApplePushNotificationCertificate> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -155,21 +153,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -254,13 +237,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphApplePushNotificationCertificate
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphApplePushNotificationCertificate
-
-### System.Collections.Hashtable
 
 ## NOTES
 

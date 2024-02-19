@@ -18,7 +18,7 @@ This method returns an apiConnector.
 ```
 Invoke-MgBetaUploadIdentityB2XUserFlowApiConnectorConfigurationPostAttributeCollectionClientCertificate
  -B2XIdentityUserFlowId <String> [-AdditionalProperties <Hashtable>] [-Password <String>]
- [-Pkcs12Value <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Pkcs12Value <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Upload
@@ -26,7 +26,7 @@ Invoke-MgBetaUploadIdentityB2XUserFlowApiConnectorConfigurationPostAttributeColl
 Invoke-MgBetaUploadIdentityB2XUserFlowApiConnectorConfigurationPostAttributeCollectionClientCertificate
  -B2XIdentityUserFlowId <String>
  -BodyParameter <IPaths5ChofkIdentityB2XuserflowsB2XidentityuserflowIdApiconnectorconfigurationPostattributecollectionMicrosoftGraphUploadclientcertificatePostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UploadViaIdentity
@@ -34,14 +34,14 @@ Invoke-MgBetaUploadIdentityB2XUserFlowApiConnectorConfigurationPostAttributeColl
 Invoke-MgBetaUploadIdentityB2XUserFlowApiConnectorConfigurationPostAttributeCollectionClientCertificate
  -InputObject <IIdentitySignInsIdentity>
  -BodyParameter <IPaths5ChofkIdentityB2XuserflowsB2XidentityuserflowIdApiconnectorconfigurationPostattributecollectionMicrosoftGraphUploadclientcertificatePostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UploadViaIdentityExpanded
 ```
 Invoke-MgBetaUploadIdentityB2XUserFlowApiConnectorConfigurationPostAttributeCollectionClientCertificate
  -InputObject <IIdentitySignInsIdentity> [-AdditionalProperties <Hashtable>] [-Password <String>]
- [-Pkcs12Value <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Pkcs12Value <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -107,21 +107,6 @@ Parameter Sets: Upload, UploadViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -214,13 +199,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPaths5ChofkIdentityB2XuserflowsB2XidentityuserflowIdApiconnectorconfigurationPostattributecollectionMicrosoftGraphUploadclientcertificatePostRequestbodyContentApplicationJsonSchema
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentityApiConnector
-
-### System.Collections.Hashtable
 
 ## NOTES
 

@@ -20,22 +20,19 @@ Update-MgIdentityGovernanceAccessReviewHistoryDefinition -AccessReviewHistoryDef
  [-Instances <IMicrosoftGraphAccessReviewHistoryInstance[]>] [-ReviewHistoryPeriodEndDateTime <DateTime>]
  [-ReviewHistoryPeriodStartDateTime <DateTime>]
  [-ScheduleSettings <IMicrosoftGraphAccessReviewHistoryScheduleSettings>]
- [-Scopes <IMicrosoftGraphAccessReviewScope[]>] [-Status <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-Scopes <IMicrosoftGraphAccessReviewScope[]>] [-Status <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgIdentityGovernanceAccessReviewHistoryDefinition -AccessReviewHistoryDefinitionId <String>
- -BodyParameter <IMicrosoftGraphAccessReviewHistoryDefinition> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphAccessReviewHistoryDefinition> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgIdentityGovernanceAccessReviewHistoryDefinition -InputObject <IIdentityGovernanceIdentity>
- -BodyParameter <IMicrosoftGraphAccessReviewHistoryDefinition> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphAccessReviewHistoryDefinition> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -46,8 +43,7 @@ Update-MgIdentityGovernanceAccessReviewHistoryDefinition -InputObject <IIdentity
  [-Instances <IMicrosoftGraphAccessReviewHistoryInstance[]>] [-ReviewHistoryPeriodEndDateTime <DateTime>]
  [-ReviewHistoryPeriodStartDateTime <DateTime>]
  [-ScheduleSettings <IMicrosoftGraphAccessReviewHistoryScheduleSettings>]
- [-Scopes <IMicrosoftGraphAccessReviewScope[]>] [-Status <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-Scopes <IMicrosoftGraphAccessReviewScope[]>] [-Status <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -179,21 +175,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -368,13 +349,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewHistoryDefinition
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewHistoryDefinition
-
-### System.Collections.Hashtable
 
 ## NOTES
 

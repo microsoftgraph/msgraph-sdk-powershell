@@ -15,15 +15,14 @@ Update media content for the navigation property messages in users
 ### Set (Default)
 ```
 Set-MgBetaUserMailFolderChildFolderMessageContent -MailFolderId <String> -MailFolderId1 <String>
- -MessageId <String> -UserId <String> -InFile <String> [-Data <Stream>] [-ContentType <String>]
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -MessageId <String> -UserId <String> -InFile <String> [-Data <Stream>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### SetViaIdentity
 ```
 Set-MgBetaUserMailFolderChildFolderMessageContent -InputObject <IMailIdentity> -InFile <String>
- [-Data <Stream>] [-ContentType <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Data <Stream>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -47,41 +46,11 @@ Update media content for the navigation property messages in users
 
 ## PARAMETERS
 
-### -ContentType
-ContentType Parameter
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Data
 .
 
 ```yaml
 Type: System.IO.Stream
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
 Parameter Sets: (All)
 Aliases:
 
@@ -238,17 +207,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMailIdentity
 
-### System.Collections.IDictionary
-
 ### System.IO.Stream
-
-### System.String
 
 ## OUTPUTS
 
 ### System.Boolean
-
-### System.Collections.Hashtable
 
 ## NOTES
 

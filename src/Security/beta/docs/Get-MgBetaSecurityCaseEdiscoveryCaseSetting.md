@@ -15,13 +15,13 @@ Read the properties and relationships of an ediscoveryCaseSettings object.
 ### Get (Default)
 ```
 Get-MgBetaSecurityCaseEdiscoveryCaseSetting -EdiscoveryCaseId <String> [-ExpandProperty <String[]>]
- [-Property <String[]>] [-Headers <IDictionary>] [<CommonParameters>]
+ [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
 Get-MgBetaSecurityCaseEdiscoveryCaseSetting -InputObject <ISecurityIdentity> [-ExpandProperty <String[]>]
- [-Property <String[]>] [-Headers <IDictionary>] [<CommonParameters>]
+ [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -68,21 +68,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -121,13 +106,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityEdiscoveryCaseSettings
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -140,7 +121,6 @@ To create the parameters described below, construct a hash table containing the 
 
 `INPUTOBJECT <ISecurityIdentity>`: Identity Parameter
   - `[AlertId <String>]`: The unique identifier of alert
-  - `[AnalyzedEmailId <String>]`: The unique identifier of analyzedEmail
   - `[ArticleId <String>]`: The unique identifier of article
   - `[ArticleIndicatorId <String>]`: The unique identifier of articleIndicator
   - `[AttackSimulationOperationId <String>]`: The unique identifier of attackSimulationOperation

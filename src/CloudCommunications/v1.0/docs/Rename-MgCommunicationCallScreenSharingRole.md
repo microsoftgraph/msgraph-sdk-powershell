@@ -15,28 +15,27 @@ Allow applications to share screen content with the participants of a group call
 ### ChangeExpanded (Default)
 ```
 Rename-MgCommunicationCallScreenSharingRole -CallId <String> [-AdditionalProperties <Hashtable>]
- [-Role <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Role <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Change
 ```
 Rename-MgCommunicationCallScreenSharingRole -CallId <String>
  -BodyParameter <IPathsOj95ZpCommunicationsCallsCallIdMicrosoftGraphChangescreensharingrolePostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ChangeViaIdentity
 ```
 Rename-MgCommunicationCallScreenSharingRole -InputObject <ICloudCommunicationsIdentity>
  -BodyParameter <IPathsOj95ZpCommunicationsCallsCallIdMicrosoftGraphChangescreensharingrolePostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ChangeViaIdentityExpanded
 ```
 Rename-MgCommunicationCallScreenSharingRole -InputObject <ICloudCommunicationsIdentity>
- [-AdditionalProperties <Hashtable>] [-Role <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-Role <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -47,13 +46,13 @@ Allow applications to share screen content with the participants of a group call
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.CloudCommunications
+$params = @{
+	Role = "viewer"
+}
+Rename-MgCommunicationCallScreenSharingRole -CallId $callId -BodyParameter $params
 ```
 
-$params = @{
-	role = "viewer"
-}
 
-Rename-MgCommunicationCallScreenSharingRole -CallId $callId -BodyParameter $params
 
 ## PARAMETERS
 
@@ -100,21 +99,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -204,13 +188,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IPathsOj95ZpCommunicationsCallsCallIdMicrosoftGraphChangescreensharingrolePostRequestbodyContentApplicationJsonSchema
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
-
-### System.Collections.Hashtable
 
 ## NOTES
 

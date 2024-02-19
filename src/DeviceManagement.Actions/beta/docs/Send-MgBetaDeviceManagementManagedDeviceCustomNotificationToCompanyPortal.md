@@ -15,15 +15,15 @@ Invoke action sendCustomNotificationToCompanyPortal
 ### SendExpanded (Default)
 ```
 Send-MgBetaDeviceManagementManagedDeviceCustomNotificationToCompanyPortal -ManagedDeviceId <String>
- [-AdditionalProperties <Hashtable>] [-NotificationBody <String>] [-NotificationTitle <String>]
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-NotificationBody <String>] [-NotificationTitle <String>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Send
 ```
 Send-MgBetaDeviceManagementManagedDeviceCustomNotificationToCompanyPortal -ManagedDeviceId <String>
  -BodyParameter <IPaths1R4OrraDevicemanagementManageddevicesManageddeviceIdMicrosoftGraphSendcustomnotificationtocompanyportalPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SendViaIdentity
@@ -31,15 +31,15 @@ Send-MgBetaDeviceManagementManagedDeviceCustomNotificationToCompanyPortal -Manag
 Send-MgBetaDeviceManagementManagedDeviceCustomNotificationToCompanyPortal
  -InputObject <IDeviceManagementActionsIdentity>
  -BodyParameter <IPaths1R4OrraDevicemanagementManageddevicesManageddeviceIdMicrosoftGraphSendcustomnotificationtocompanyportalPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SendViaIdentityExpanded
 ```
 Send-MgBetaDeviceManagementManagedDeviceCustomNotificationToCompanyPortal
  -InputObject <IDeviceManagementActionsIdentity> [-AdditionalProperties <Hashtable>]
- [-NotificationBody <String>] [-NotificationTitle <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-NotificationBody <String>] [-NotificationTitle <String>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -88,21 +88,6 @@ Parameter Sets: Send, SendViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -225,13 +210,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPaths1R4OrraDevicemanagementManageddevicesManageddeviceIdMicrosoftGraphSendcustomnotificationtocompanyportalPostRequestbodyContentApplicationJsonSchema
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -291,7 +272,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[MicrosoftTunnelSiteId <String>]`: The unique identifier of microsoftTunnelSite
   - `[MobileAppTroubleshootingEventId <String>]`: The unique identifier of mobileAppTroubleshootingEvent
   - `[NotificationMessageTemplateId <String>]`: The unique identifier of notificationMessageTemplate
-  - `[OperationApprovalRequestId <String>]`: The unique identifier of operationApprovalRequest
   - `[PrivilegeManagementElevationRequestId <String>]`: The unique identifier of privilegeManagementElevationRequest
   - `[RemoteAssistancePartnerId <String>]`: The unique identifier of remoteAssistancePartner
   - `[RoleScopeTagId <String>]`: The unique identifier of roleScopeTag

@@ -16,30 +16,27 @@ Update the permissions assigned to an existing share recipient or delegate, thro
 ```
 Update-MgGroupCalendarPermission -CalendarPermissionId <String> -GroupId <String>
  [-AdditionalProperties <Hashtable>] [-AllowedRoles <String[]>] [-EmailAddress <IMicrosoftGraphEmailAddress>]
- [-Id <String>] [-IsInsideOrganization] [-IsRemovable] [-Role <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-IsInsideOrganization] [-IsRemovable] [-Role <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgGroupCalendarPermission -CalendarPermissionId <String> -GroupId <String>
- -BodyParameter <IMicrosoftGraphCalendarPermission> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphCalendarPermission> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgGroupCalendarPermission -InputObject <ICalendarIdentity>
- -BodyParameter <IMicrosoftGraphCalendarPermission> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphCalendarPermission> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgGroupCalendarPermission -InputObject <ICalendarIdentity> [-AdditionalProperties <Hashtable>]
  [-AllowedRoles <String[]>] [-EmailAddress <IMicrosoftGraphEmailAddress>] [-Id <String>]
- [-IsInsideOrganization] [-IsRemovable] [-Role <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-IsInsideOrganization] [-IsRemovable] [-Role <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -153,21 +150,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -290,13 +272,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCalendarPermission
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCalendarPermission
-
-### System.Collections.Hashtable
 
 ## NOTES
 

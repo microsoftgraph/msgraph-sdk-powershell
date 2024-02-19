@@ -15,26 +15,25 @@ Update the privacy settings for itemInsights and meeting hours insights of a use
 ### UpdateExpanded (Default)
 ```
 Update-MgBetaUserSettingItemInsight -UserId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
- [-IsEnabled] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-IsEnabled] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaUserSettingItemInsight -UserId <String> -BodyParameter <IMicrosoftGraphUserInsightsSettings>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaUserSettingItemInsight -InputObject <IUsersIdentity>
- -BodyParameter <IMicrosoftGraphUserInsightsSettings> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphUserInsightsSettings> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgBetaUserSettingItemInsight -InputObject <IUsersIdentity> [-AdditionalProperties <Hashtable>]
- [-Id <String>] [-IsEnabled] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-IsEnabled] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -80,21 +79,6 @@ Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -205,13 +189,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserInsightsSettings
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -228,7 +208,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[IsEnabled <Boolean?>]`: true if user's itemInsights and meeting hours insights are enabled; false if user's itemInsights and meeting hours insights are disabled. Default is true. Optional.
 
 `INPUTOBJECT <IUsersIdentity>`: Identity Parameter
-  - `[AppId <String>]`: Alternate key of servicePrincipal
   - `[AttachmentBaseId <String>]`: The unique identifier of attachmentBase
   - `[AttachmentId <String>]`: The unique identifier of attachment
   - `[AttachmentSessionId <String>]`: The unique identifier of attachmentSession

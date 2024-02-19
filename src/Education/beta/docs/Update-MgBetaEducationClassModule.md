@@ -20,22 +20,20 @@ Use the publish action to change the module status.
 Update-MgBetaEducationClassModule -EducationClassId <String> -EducationModuleId <String>
  [-AdditionalProperties <Hashtable>] [-CreatedBy <IMicrosoftGraphIdentitySet>] [-Description <String>]
  [-DisplayName <String>] [-Id <String>] [-IsPinned] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
- [-Resources <IMicrosoftGraphEducationModuleResource[]>] [-Status <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Resources <IMicrosoftGraphEducationModuleResource[]>] [-Status <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaEducationClassModule -EducationClassId <String> -EducationModuleId <String>
- -BodyParameter <IMicrosoftGraphEducationModule> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphEducationModule> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaEducationClassModule -InputObject <IEducationIdentity>
- -BodyParameter <IMicrosoftGraphEducationModule> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphEducationModule> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -43,8 +41,8 @@ Update-MgBetaEducationClassModule -InputObject <IEducationIdentity>
 Update-MgBetaEducationClassModule -InputObject <IEducationIdentity> [-AdditionalProperties <Hashtable>]
  [-CreatedBy <IMicrosoftGraphIdentitySet>] [-Description <String>] [-DisplayName <String>] [-Id <String>]
  [-IsPinned] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
- [-Resources <IMicrosoftGraphEducationModuleResource[]>] [-Status <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Resources <IMicrosoftGraphEducationModuleResource[]>] [-Status <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -175,21 +173,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -329,13 +312,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationModule
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationModule
-
-### System.Collections.Hashtable
 
 ## NOTES
 

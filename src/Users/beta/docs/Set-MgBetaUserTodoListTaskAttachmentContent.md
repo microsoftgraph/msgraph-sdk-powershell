@@ -15,14 +15,14 @@ Update media content for the navigation property attachments in users
 ### Set (Default)
 ```
 Set-MgBetaUserTodoListTaskAttachmentContent -AttachmentBaseId <String> -TodoTaskId <String>
- -TodoTaskListId <String> -UserId <String> -InFile <String> [-Data <Stream>] [-ContentType <String>]
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -TodoTaskListId <String> -UserId <String> -InFile <String> [-Data <Stream>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### SetViaIdentity
 ```
 Set-MgBetaUserTodoListTaskAttachmentContent -InputObject <IUsersIdentity> -InFile <String> [-Data <Stream>]
- [-ContentType <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -61,41 +61,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ContentType
-ContentType Parameter
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Data
 .
 
 ```yaml
 Type: System.IO.Stream
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
 Parameter Sets: (All)
 Aliases:
 
@@ -237,17 +207,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 
-### System.Collections.IDictionary
-
 ### System.IO.Stream
-
-### System.String
 
 ## OUTPUTS
 
 ### System.Boolean
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -259,7 +223,6 @@ To create the parameters described below, construct a hash table containing the 
 
 
 `INPUTOBJECT <IUsersIdentity>`: Identity Parameter
-  - `[AppId <String>]`: Alternate key of servicePrincipal
   - `[AttachmentBaseId <String>]`: The unique identifier of attachmentBase
   - `[AttachmentId <String>]`: The unique identifier of attachment
   - `[AttachmentSessionId <String>]`: The unique identifier of attachmentSession

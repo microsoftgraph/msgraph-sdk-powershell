@@ -16,30 +16,28 @@ Update the navigation property attachmentSessions in users
 ```
 Update-MgBetaUserTodoListTaskAttachmentSession -AttachmentSessionId <String> -TodoTaskId <String>
  -TodoTaskListId <String> -UserId <String> [-AdditionalProperties <Hashtable>] [-ContentInputFile <String>]
- [-ExpirationDateTime <DateTime>] [-Id <String>] [-NextExpectedRanges <String[]>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ExpirationDateTime <DateTime>] [-Id <String>] [-NextExpectedRanges <String[]>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaUserTodoListTaskAttachmentSession -AttachmentSessionId <String> -TodoTaskId <String>
- -TodoTaskListId <String> -UserId <String> -BodyParameter <IMicrosoftGraphAttachmentSession>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -TodoTaskListId <String> -UserId <String> -BodyParameter <IMicrosoftGraphAttachmentSession> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaUserTodoListTaskAttachmentSession -InputObject <IUsersIdentity>
- -BodyParameter <IMicrosoftGraphAttachmentSession> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphAttachmentSession> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgBetaUserTodoListTaskAttachmentSession -InputObject <IUsersIdentity>
  [-AdditionalProperties <Hashtable>] [-ContentInputFile <String>] [-ExpirationDateTime <DateTime>]
- [-Id <String>] [-NextExpectedRanges <String[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Id <String>] [-NextExpectedRanges <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -137,21 +135,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -287,13 +270,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAttachmentSession
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -312,7 +291,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[NextExpectedRanges <String[]>]`: Indicates a single value {start} that represents the location in the file where the next upload should begin.
 
 `INPUTOBJECT <IUsersIdentity>`: Identity Parameter
-  - `[AppId <String>]`: Alternate key of servicePrincipal
   - `[AttachmentBaseId <String>]`: The unique identifier of attachmentBase
   - `[AttachmentId <String>]`: The unique identifier of attachment
   - `[AttachmentSessionId <String>]`: The unique identifier of attachmentSession

@@ -17,21 +17,19 @@ Update the navigation property ndesConnectors in deviceManagement
 Update-MgBetaDeviceManagementNdeConnector -NdesConnectorId <String> [-AdditionalProperties <Hashtable>]
  [-ConnectorVersion <String>] [-DisplayName <String>] [-EnrolledDateTime <DateTime>] [-Id <String>]
  [-LastConnectionDateTime <DateTime>] [-MachineName <String>] [-RoleScopeTagIds <String[]>]
- [-State <NdesConnectorState>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-State <NdesConnectorState>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaDeviceManagementNdeConnector -NdesConnectorId <String>
- -BodyParameter <IMicrosoftGraphNdesConnector> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphNdesConnector> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaDeviceManagementNdeConnector -InputObject <IDeviceManagementAdministrationIdentity>
- -BodyParameter <IMicrosoftGraphNdesConnector> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphNdesConnector> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -39,8 +37,7 @@ Update-MgBetaDeviceManagementNdeConnector -InputObject <IDeviceManagementAdminis
 Update-MgBetaDeviceManagementNdeConnector -InputObject <IDeviceManagementAdministrationIdentity>
  [-AdditionalProperties <Hashtable>] [-ConnectorVersion <String>] [-DisplayName <String>]
  [-EnrolledDateTime <DateTime>] [-Id <String>] [-LastConnectionDateTime <DateTime>] [-MachineName <String>]
- [-RoleScopeTagIds <String[]>] [-State <NdesConnectorState>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-RoleScopeTagIds <String[]>] [-State <NdesConnectorState>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -137,21 +134,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -302,13 +284,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphNdesConnector
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphNdesConnector
-
-### System.Collections.Hashtable
 
 ## NOTES
 

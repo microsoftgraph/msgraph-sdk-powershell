@@ -16,28 +16,26 @@ Update the properties of a todoTaskList object.
 ```
 Update-MgUserTodoList -TodoTaskListId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
  [-DisplayName <String>] [-Extensions <IMicrosoftGraphExtension[]>] [-Id <String>] [-IsOwner] [-IsShared]
- [-Tasks <IMicrosoftGraphTodoTask[]>] [-WellknownListName <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-Tasks <IMicrosoftGraphTodoTask[]>] [-WellknownListName <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgUserTodoList -TodoTaskListId <String> -UserId <String> -BodyParameter <IMicrosoftGraphTodoTaskList>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgUserTodoList -InputObject <IUsersIdentity> -BodyParameter <IMicrosoftGraphTodoTaskList>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgUserTodoList -InputObject <IUsersIdentity> -BodyParameter <IMicrosoftGraphTodoTaskList> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgUserTodoList -InputObject <IUsersIdentity> [-AdditionalProperties <Hashtable>]
  [-DisplayName <String>] [-Extensions <IMicrosoftGraphExtension[]>] [-Id <String>] [-IsOwner] [-IsShared]
- [-Tasks <IMicrosoftGraphTodoTask[]>] [-WellknownListName <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-Tasks <IMicrosoftGraphTodoTask[]>] [-WellknownListName <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -119,21 +117,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -302,13 +285,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IUsersIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTodoTaskList
-
-### System.Collections.Hashtable
 
 ## NOTES
 

@@ -20,19 +20,19 @@ Update-MgBetaPlaceAsRoomListRoom -PlaceId <String> -RoomId <String> [-Additional
  [-EmailAddress <String>] [-FloorLabel <String>] [-FloorNumber <Int32>]
  [-GeoCoordinates <IMicrosoftGraphOutlookGeoCoordinates>] [-Id <String>] [-IsWheelChairAccessible]
  [-Label <String>] [-Nickname <String>] [-Phone <String>] [-Tags <String[]>] [-VideoDeviceName <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaPlaceAsRoomListRoom -PlaceId <String> -RoomId <String> -BodyParameter <IMicrosoftGraphRoom>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaPlaceAsRoomListRoom -InputObject <ICalendarIdentity> -BodyParameter <IMicrosoftGraphRoom>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -43,7 +43,7 @@ Update-MgBetaPlaceAsRoomListRoom -InputObject <ICalendarIdentity> [-AdditionalPr
  [-EmailAddress <String>] [-FloorLabel <String>] [-FloorNumber <Int32>]
  [-GeoCoordinates <IMicrosoftGraphOutlookGeoCoordinates>] [-Id <String>] [-IsWheelChairAccessible]
  [-Label <String>] [-Nickname <String>] [-Phone <String>] [-Tags <String[]>] [-VideoDeviceName <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -265,21 +265,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -403,7 +388,7 @@ Accept wildcard characters: False
 ```
 
 ### -Tags
-Specifies other features of the room; for example, the type of view or furniture type.
+Specifies additional features of the room, for example, details like the type of view or furniture type.
 
 ```yaml
 Type: System.String[]
@@ -472,13 +457,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRoom
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRoom
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -531,7 +512,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[IsWheelChairAccessible <Boolean?>]`: Specifies whether the room is wheelchair accessible.
   - `[Label <String>]`: Specifies a descriptive label for the room, for example, a number or name.
   - `[Nickname <String>]`: Specifies a nickname for the room, for example, 'conf room'.
-  - `[Tags <String[]>]`: Specifies other features of the room; for example, the type of view or furniture type.
+  - `[Tags <String[]>]`: Specifies additional features of the room, for example, details like the type of view or furniture type.
   - `[VideoDeviceName <String>]`: Specifies the name of the video device in the room.
 
 `GEOCOORDINATES <IMicrosoftGraphOutlookGeoCoordinates>`: outlookGeoCoordinates

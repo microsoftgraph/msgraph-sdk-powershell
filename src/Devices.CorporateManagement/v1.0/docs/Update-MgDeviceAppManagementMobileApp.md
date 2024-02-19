@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceAppManagementMobileApp
 
 ## SYNOPSIS
-Update the properties of a macOSLobApp object.
+Update the properties of a managedAndroidLobApp object.
 
 ## SYNTAX
 
@@ -19,20 +19,19 @@ Update-MgDeviceAppManagementMobileApp -MobileAppId <String> [-AdditionalProperti
  [-CreatedDateTime <DateTime>] [-Description <String>] [-Developer <String>] [-DisplayName <String>]
  [-Id <String>] [-InformationUrl <String>] [-IsFeatured] [-LargeIcon <IMicrosoftGraphMimeContent>]
  [-LastModifiedDateTime <DateTime>] [-Notes <String>] [-Owner <String>] [-PrivacyInformationUrl <String>]
- [-Publisher <String>] [-PublishingState <MobileAppPublishingState>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-Publisher <String>] [-PublishingState <MobileAppPublishingState>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgDeviceAppManagementMobileApp -MobileAppId <String> -BodyParameter <IMicrosoftGraphMobileApp>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgDeviceAppManagementMobileApp -InputObject <IDevicesCorporateManagementIdentity>
- -BodyParameter <IMicrosoftGraphMobileApp> [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphMobileApp> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -43,12 +42,11 @@ Update-MgDeviceAppManagementMobileApp -InputObject <IDevicesCorporateManagementI
  [-Developer <String>] [-DisplayName <String>] [-Id <String>] [-InformationUrl <String>] [-IsFeatured]
  [-LargeIcon <IMicrosoftGraphMimeContent>] [-LastModifiedDateTime <DateTime>] [-Notes <String>]
  [-Owner <String>] [-PrivacyInformationUrl <String>] [-Publisher <String>]
- [-PublishingState <MobileAppPublishingState>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-PublishingState <MobileAppPublishingState>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Update the properties of a macOSLobApp object.
+Update the properties of a managedAndroidLobApp object.
 
 ## EXAMPLES
 
@@ -191,21 +189,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -432,13 +415,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileApp
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileApp
-
-### System.Collections.Hashtable
 
 ## NOTES
 

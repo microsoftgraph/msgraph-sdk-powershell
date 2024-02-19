@@ -20,21 +20,19 @@ Update-MgBetaUserProfileLanguage -LanguageProficiencyId <String> -UserId <String
  [-Inference <IMicrosoftGraphInferenceData>] [-IsSearchable] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
  [-LastModifiedDateTime <DateTime>] [-Proficiency <String>] [-Reading <String>]
  [-Source <IMicrosoftGraphPersonDataSources>] [-Spoken <String>] [-Tag <String>] [-ThumbnailUrl <String>]
- [-Written <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Written <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaUserProfileLanguage -LanguageProficiencyId <String> -UserId <String>
- -BodyParameter <IMicrosoftGraphLanguageProficiency> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphLanguageProficiency> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaUserProfileLanguage -InputObject <IPeopleIdentity>
- -BodyParameter <IMicrosoftGraphLanguageProficiency> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphLanguageProficiency> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -44,8 +42,7 @@ Update-MgBetaUserProfileLanguage -InputObject <IPeopleIdentity> [-AdditionalProp
  [-DisplayName <String>] [-Id <String>] [-Inference <IMicrosoftGraphInferenceData>] [-IsSearchable]
  [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>] [-Proficiency <String>]
  [-Reading <String>] [-Source <IMicrosoftGraphPersonDataSources>] [-Spoken <String>] [-Tag <String>]
- [-ThumbnailUrl <String>] [-Written <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-ThumbnailUrl <String>] [-Written <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -156,21 +153,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -444,13 +426,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPeopleIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphLanguageProficiency
-
-### System.Collections.Hashtable
 
 ## NOTES
 

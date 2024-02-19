@@ -19,13 +19,13 @@ New-MgBetaDeviceManagementGroupPolicyConfiguration [-AdditionalProperties <Hasht
  [-DefinitionValues <IMicrosoftGraphGroupPolicyDefinitionValue[]>] [-Description <String>]
  [-DisplayName <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>]
  [-PolicyConfigurationIngestionType <GroupPolicyConfigurationIngestionType>] [-RoleScopeTagIds <String[]>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaDeviceManagementGroupPolicyConfiguration -BodyParameter <IMicrosoftGraphGroupPolicyConfiguration>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -157,21 +157,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -271,13 +256,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyConfiguration
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyConfiguration
-
-### System.Collections.Hashtable
 
 ## NOTES
 

@@ -20,14 +20,13 @@ After 30 days, the item is permanently deleted.
 
 ### Restore (Default)
 ```
-Restore-MgDirectoryDeletedItem -DirectoryObjectId <String> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Restore-MgDirectoryDeletedItem -DirectoryObjectId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RestoreViaIdentity
 ```
-Restore-MgDirectoryDeletedItem -InputObject <IIdentityDirectoryManagementIdentity> [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Restore-MgDirectoryDeletedItem -InputObject <IIdentityDirectoryManagementIdentity> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -44,9 +43,10 @@ After 30 days, the item is permanently deleted.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Identity.DirectoryManagement
+Restore-MgDirectoryDeletedItem -DirectoryObjectId $directoryObjectId
 ```
 
-Restore-MgDirectoryDeletedItem -DirectoryObjectId $directoryObjectId
+
 
 ## PARAMETERS
 
@@ -62,21 +62,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -134,13 +119,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject
-
-### System.Collections.Hashtable
 
 ## NOTES
 

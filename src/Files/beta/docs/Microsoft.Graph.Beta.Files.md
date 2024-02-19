@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Files
-Module Guid: 8cf7786c-09e0-48a5-83d0-252e9fbfe429
+Module Guid: e571bde0-4c9f-46d9-80bc-17b3f9782cc6
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.files
 Help Version: 1.0.0.0
 Locale: en-US
@@ -2380,6 +2380,9 @@ Delete navigation property analytics for drives
 ### [Remove-MgBetaDriveItemAnalyticItemActivityStat](Remove-MgBetaDriveItemAnalyticItemActivityStat.md)
 Delete navigation property itemActivityStats for drives
 
+### [Remove-MgBetaDriveItemChild](Remove-MgBetaDriveItemChild.md)
+Remove an item from a [bundle][].
+
 ### [Remove-MgBetaDriveItemListItem](Remove-MgBetaDriveItemListItem.md)
 Delete navigation property listItem for drives
 
@@ -2466,6 +2469,9 @@ Delete navigation property analytics for drives
 ### [Remove-MgBetaDriveRootAnalyticItemActivityStat](Remove-MgBetaDriveRootAnalyticItemActivityStat.md)
 Delete navigation property itemActivityStats for drives
 
+### [Remove-MgBetaDriveRootChild](Remove-MgBetaDriveRootChild.md)
+Remove an item from a [bundle][].
+
 ### [Remove-MgBetaDriveRootListItem](Remove-MgBetaDriveRootListItem.md)
 Delete navigation property listItem for drives
 
@@ -2515,6 +2521,9 @@ Delete navigation property analytics for groups
 
 ### [Remove-MgBetaGroupDriveItemAnalyticItemActivityStat](Remove-MgBetaGroupDriveItemAnalyticItemActivityStat.md)
 Delete navigation property itemActivityStats for groups
+
+### [Remove-MgBetaGroupDriveItemChild](Remove-MgBetaGroupDriveItemChild.md)
+Remove an item from a [bundle][].
 
 ### [Remove-MgBetaGroupDriveItemListItem](Remove-MgBetaGroupDriveItemListItem.md)
 Delete navigation property listItem for groups
@@ -2598,6 +2607,9 @@ Delete navigation property analytics for groups
 
 ### [Remove-MgBetaGroupDriveRootAnalyticItemActivityStat](Remove-MgBetaGroupDriveRootAnalyticItemActivityStat.md)
 Delete navigation property itemActivityStats for groups
+
+### [Remove-MgBetaGroupDriveRootChild](Remove-MgBetaGroupDriveRootChild.md)
+Remove an item from a [bundle][].
 
 ### [Remove-MgBetaGroupDriveRootListItem](Remove-MgBetaGroupDriveRootListItem.md)
 Delete navigation property listItem for groups
@@ -2691,6 +2703,9 @@ Delete navigation property analytics for users
 ### [Remove-MgBetaUserDriveItemAnalyticItemActivityStat](Remove-MgBetaUserDriveItemAnalyticItemActivityStat.md)
 Delete navigation property itemActivityStats for users
 
+### [Remove-MgBetaUserDriveItemChild](Remove-MgBetaUserDriveItemChild.md)
+Remove an item from a [bundle][].
+
 ### [Remove-MgBetaUserDriveItemListItem](Remove-MgBetaUserDriveItemListItem.md)
 Delete navigation property listItem for users
 
@@ -2773,6 +2788,9 @@ Delete navigation property analytics for users
 
 ### [Remove-MgBetaUserDriveRootAnalyticItemActivityStat](Remove-MgBetaUserDriveRootAnalyticItemActivityStat.md)
 Delete navigation property itemActivityStats for users
+
+### [Remove-MgBetaUserDriveRootChild](Remove-MgBetaUserDriveRootChild.md)
+Remove an item from a [bundle][].
 
 ### [Remove-MgBetaUserDriveRootListItem](Remove-MgBetaUserDriveRootListItem.md)
 Delete navigation property listItem for users

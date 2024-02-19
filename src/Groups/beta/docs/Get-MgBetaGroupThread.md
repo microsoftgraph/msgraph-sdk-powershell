@@ -8,33 +8,29 @@ schema: 2.0.0
 # Get-MgBetaGroupThread
 
 ## SYNOPSIS
-Get a specific thread that belongs to a group.
-You can specify both the parent conversation and the thread, or, \nyou can specify the thread without referencing the parent conversation.
+Get a thread object.
 
 ## SYNTAX
 
 ### List (Default)
 ```
 Get-MgBetaGroupThread -GroupId <String> [-Filter <String>] [-Property <String[]>] [-Skip <Int32>]
- [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-Headers <IDictionary>]
- [-PageSize <Int32>] [<CommonParameters>]
+ [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
 Get-MgBetaGroupThread -ConversationThreadId <String> -GroupId <String> [-Property <String[]>]
- [-Headers <IDictionary>] [<CommonParameters>]
+ [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgBetaGroupThread -InputObject <IGroupsIdentity> [-Property <String[]>] [-Headers <IDictionary>]
- [<CommonParameters>]
+Get-MgBetaGroupThread -InputObject <IGroupsIdentity> [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get a specific thread that belongs to a group.
-You can specify both the parent conversation and the thread, or, \nyou can specify the thread without referencing the parent conversation.
+Get a thread object.
 
 ## EXAMPLES
 
@@ -120,21 +116,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -236,13 +217,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IGroupsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphConversationThread
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -255,7 +232,6 @@ To create the parameters described below, construct a hash table containing the 
 
 `INPUTOBJECT <IGroupsIdentity>`: Identity Parameter
   - `[AttachmentId <String>]`: The unique identifier of attachment
-  - `[BaseSitePageId <String>]`: The unique identifier of baseSitePage
   - `[ContentTypeId <String>]`: The unique identifier of contentType
   - `[ConversationId <String>]`: The unique identifier of conversation
   - `[ConversationThreadId <String>]`: The unique identifier of conversationThread
@@ -271,8 +247,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[ExtensionId <String>]`: The unique identifier of extension
   - `[GroupId <String>]`: The unique identifier of group
   - `[GroupLifecyclePolicyId <String>]`: The unique identifier of groupLifecyclePolicy
-  - `[HorizontalSectionColumnId <String>]`: The unique identifier of horizontalSectionColumn
-  - `[HorizontalSectionId <String>]`: The unique identifier of horizontalSection
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}
   - `[Interval <String>]`: Usage: interval='{interval}'
   - `[ListId <String>]`: The unique identifier of list
@@ -283,7 +257,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[OnenotePageId <String>]`: The unique identifier of onenotePage
   - `[OnenoteSectionId <String>]`: The unique identifier of onenoteSection
   - `[Path <String>]`: Usage: path='{path}'
-  - `[Path1 <String>]`: Usage: path='{path1}'
   - `[PermissionId <String>]`: The unique identifier of permission
   - `[PlannerBucketId <String>]`: The unique identifier of plannerBucket
   - `[PlannerPlanId <String>]`: The unique identifier of plannerPlan
@@ -299,7 +272,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[UniqueName <String>]`: Alternate key of group
   - `[User <String>]`: Usage: User='{User}'
   - `[UserId <String>]`: The unique identifier of user
-  - `[WebPartId <String>]`: The unique identifier of webPart
 
 ## RELATED LINKS
 

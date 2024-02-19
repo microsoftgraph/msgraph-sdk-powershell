@@ -31,21 +31,21 @@ Update-MgBetaUserMailFolderChildFolderMessage -MailFolderId <String> -MailFolder
  [-Sender <IMicrosoftGraphRecipient>] [-SentDateTime <DateTime>]
  [-SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>] [-Subject <String>]
  [-ToRecipients <IMicrosoftGraphRecipient[]>] [-UniqueBody <IMicrosoftGraphItemBody>]
- [-UnsubscribeData <String[]>] [-UnsubscribeEnabled] [-WebLink <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-UnsubscribeData <String[]>] [-UnsubscribeEnabled] [-WebLink <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaUserMailFolderChildFolderMessage -MailFolderId <String> -MailFolderId1 <String>
- -MessageId <String> -UserId <String> -BodyParameter <IMicrosoftGraphMessage> [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -MessageId <String> -UserId <String> -BodyParameter <IMicrosoftGraphMessage> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaUserMailFolderChildFolderMessage -InputObject <IMailIdentity>
- -BodyParameter <IMicrosoftGraphMessage> [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphMessage> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -66,8 +66,8 @@ Update-MgBetaUserMailFolderChildFolderMessage -InputObject <IMailIdentity> [-Add
  [-Sender <IMicrosoftGraphRecipient>] [-SentDateTime <DateTime>]
  [-SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>] [-Subject <String>]
  [-ToRecipients <IMicrosoftGraphRecipient[]>] [-UniqueBody <IMicrosoftGraphItemBody>]
- [-UnsubscribeData <String[]>] [-UnsubscribeEnabled] [-WebLink <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-UnsubscribeData <String[]>] [-UnsubscribeEnabled] [-WebLink <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -342,21 +342,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -865,13 +850,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMessage
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMessage
-
-### System.Collections.Hashtable
 
 ## NOTES
 

@@ -17,27 +17,26 @@ An attachment can be one of the following types: All these types of attachment r
 ```
 New-MgUserMailFolderMessageAttachment -MailFolderId <String> -MessageId <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-ContentType <String>] [-Id <String>] [-IsInline]
- [-LastModifiedDateTime <DateTime>] [-Name <String>] [-Size <Int32>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-LastModifiedDateTime <DateTime>] [-Name <String>] [-Size <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgUserMailFolderMessageAttachment -MailFolderId <String> -MessageId <String> -UserId <String>
- -BodyParameter <IMicrosoftGraphAttachment> [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphAttachment> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgUserMailFolderMessageAttachment -InputObject <IMailIdentity> -BodyParameter <IMicrosoftGraphAttachment>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgUserMailFolderMessageAttachment -InputObject <IMailIdentity> [-AdditionalProperties <Hashtable>]
  [-ContentType <String>] [-Id <String>] [-IsInline] [-LastModifiedDateTime <DateTime>] [-Name <String>]
- [-Size <Int32>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Size <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -105,21 +104,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -301,13 +285,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAttachment
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAttachment
-
-### System.Collections.Hashtable
 
 ## NOTES
 

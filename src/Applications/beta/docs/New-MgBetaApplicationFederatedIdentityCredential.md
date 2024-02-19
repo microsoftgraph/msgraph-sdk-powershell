@@ -18,29 +18,26 @@ Maximum of 20 objects can be added to an application.
 ```
 New-MgBetaApplicationFederatedIdentityCredential -ApplicationId <String> [-AdditionalProperties <Hashtable>]
  [-Audiences <String[]>] [-Description <String>] [-Id <String>] [-Issuer <String>] [-Name <String>]
- [-Subject <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Subject <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaApplicationFederatedIdentityCredential -ApplicationId <String>
- -BodyParameter <IMicrosoftGraphFederatedIdentityCredential> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphFederatedIdentityCredential> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaApplicationFederatedIdentityCredential -InputObject <IApplicationsIdentity>
- -BodyParameter <IMicrosoftGraphFederatedIdentityCredential> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphFederatedIdentityCredential> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgBetaApplicationFederatedIdentityCredential -InputObject <IApplicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-Audiences <String[]>] [-Description <String>] [-Id <String>]
- [-Issuer <String>] [-Name <String>] [-Subject <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Issuer <String>] [-Name <String>] [-Subject <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -148,21 +145,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -296,13 +278,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphFederatedIdentityCredential
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphFederatedIdentityCredential
-
-### System.Collections.Hashtable
 
 ## NOTES
 

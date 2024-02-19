@@ -19,21 +19,19 @@ Update-MgBetaFinancialCompanySaleQuoteLineItem -CompanyId <String> -SalesQuoteLi
  [-Gtin <String>] [-Id <String>] [-Inventory <Decimal>] [-ItemCategory <IMicrosoftGraphItemCategory>]
  [-ItemCategoryCode <String>] [-ItemCategoryId <String>] [-LastModifiedDateTime <DateTime>] [-Number <String>]
  [-Picture <IMicrosoftGraphPicture[]>] [-PriceIncludesTax] [-TaxGroupCode <String>] [-TaxGroupId <String>]
- [-Type <String>] [-UnitCost <Decimal>] [-UnitPrice <Decimal>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Type <String>] [-UnitCost <Decimal>] [-UnitPrice <Decimal>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaFinancialCompanySaleQuoteLineItem -CompanyId <String> -SalesQuoteLineId <String>
- -BodyParameter <IMicrosoftGraphItem> [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphItem> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update1
 ```
 Update-MgBetaFinancialCompanySaleQuoteLineItem -CompanyId <String> -SalesQuoteId <String>
- -SalesQuoteLineId <String> -BodyParameter <IMicrosoftGraphItem> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -SalesQuoteLineId <String> -BodyParameter <IMicrosoftGraphItem> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateExpanded1
@@ -44,19 +42,19 @@ Update-MgBetaFinancialCompanySaleQuoteLineItem -CompanyId <String> -SalesQuoteId
  [-ItemCategory <IMicrosoftGraphItemCategory>] [-ItemCategoryCode <String>] [-ItemCategoryId <String>]
  [-LastModifiedDateTime <DateTime>] [-Number <String>] [-Picture <IMicrosoftGraphPicture[]>]
  [-PriceIncludesTax] [-TaxGroupCode <String>] [-TaxGroupId <String>] [-Type <String>] [-UnitCost <Decimal>]
- [-UnitPrice <Decimal>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-UnitPrice <Decimal>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaFinancialCompanySaleQuoteLineItem -InputObject <IFinancialsIdentity>
- -BodyParameter <IMicrosoftGraphItem> [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphItem> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
 Update-MgBetaFinancialCompanySaleQuoteLineItem -InputObject <IFinancialsIdentity>
- -BodyParameter <IMicrosoftGraphItem> [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphItem> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -66,8 +64,7 @@ Update-MgBetaFinancialCompanySaleQuoteLineItem -InputObject <IFinancialsIdentity
  [-Gtin <String>] [-Id <String>] [-Inventory <Decimal>] [-ItemCategory <IMicrosoftGraphItemCategory>]
  [-ItemCategoryCode <String>] [-ItemCategoryId <String>] [-LastModifiedDateTime <DateTime>] [-Number <String>]
  [-Picture <IMicrosoftGraphPicture[]>] [-PriceIncludesTax] [-TaxGroupCode <String>] [-TaxGroupId <String>]
- [-Type <String>] [-UnitCost <Decimal>] [-UnitPrice <Decimal>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Type <String>] [-UnitCost <Decimal>] [-UnitPrice <Decimal>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
@@ -77,8 +74,7 @@ Update-MgBetaFinancialCompanySaleQuoteLineItem -InputObject <IFinancialsIdentity
  [-Gtin <String>] [-Id <String>] [-Inventory <Decimal>] [-ItemCategory <IMicrosoftGraphItemCategory>]
  [-ItemCategoryCode <String>] [-ItemCategoryId <String>] [-LastModifiedDateTime <DateTime>] [-Number <String>]
  [-Picture <IMicrosoftGraphPicture[]>] [-PriceIncludesTax] [-TaxGroupCode <String>] [-TaxGroupId <String>]
- [-Type <String>] [-UnitCost <Decimal>] [-UnitPrice <Decimal>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Type <String>] [-UnitCost <Decimal>] [-UnitPrice <Decimal>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -205,21 +201,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -521,13 +502,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphItem
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphItem
-
-### System.Collections.Hashtable
 
 ## NOTES
 

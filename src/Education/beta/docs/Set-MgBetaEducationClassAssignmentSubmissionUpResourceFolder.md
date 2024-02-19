@@ -18,14 +18,13 @@ Only a student in the class can determine what files to upload in a given submis
 ### Set (Default)
 ```
 Set-MgBetaEducationClassAssignmentSubmissionUpResourceFolder -EducationAssignmentId <String>
- -EducationClassId <String> -EducationSubmissionId <String> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -EducationClassId <String> -EducationSubmissionId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentity
 ```
-Set-MgBetaEducationClassAssignmentSubmissionUpResourceFolder -InputObject <IEducationIdentity>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Set-MgBetaEducationClassAssignmentSubmissionUpResourceFolder -InputObject <IEducationIdentity> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -39,32 +38,32 @@ Only a student in the class can determine what files to upload in a given submis
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Education
-```
-
 $params = @{
 }
-
 Set-MgBetaEducationClassAssignmentSubmissionUpResourceFolder -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -BodyParameter $params
+```
+
+
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Education
-```
-
 $params = @{
 }
-
 Set-MgBetaEducationClassAssignmentSubmissionUpResourceFolder -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -BodyParameter $params
+```
+
+
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Education
-```
-
 $params = @{
 }
-
 Set-MgBetaEducationClassAssignmentSubmissionUpResourceFolder -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -BodyParameter $params
+```
+
+
 
 ## PARAMETERS
 
@@ -110,21 +109,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -182,13 +166,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationSubmission
-
-### System.Collections.Hashtable
 
 ## NOTES
 

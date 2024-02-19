@@ -17,22 +17,19 @@ Create a new userInstallStateSummary object.
 New-MgDeviceAppManagementManagedEBookUserStateSummary -ManagedEBookId <String>
  [-AdditionalProperties <Hashtable>] [-DeviceStates <IMicrosoftGraphDeviceInstallState[]>]
  [-FailedDeviceCount <Int32>] [-Id <String>] [-InstalledDeviceCount <Int32>]
- [-NotInstalledDeviceCount <Int32>] [-UserName <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-NotInstalledDeviceCount <Int32>] [-UserName <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgDeviceAppManagementManagedEBookUserStateSummary -ManagedEBookId <String>
- -BodyParameter <IMicrosoftGraphUserInstallStateSummary> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphUserInstallStateSummary> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgDeviceAppManagementManagedEBookUserStateSummary -InputObject <IDevicesCorporateManagementIdentity>
- -BodyParameter <IMicrosoftGraphUserInstallStateSummary> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphUserInstallStateSummary> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -40,8 +37,7 @@ New-MgDeviceAppManagementManagedEBookUserStateSummary -InputObject <IDevicesCorp
 New-MgDeviceAppManagementManagedEBookUserStateSummary -InputObject <IDevicesCorporateManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-DeviceStates <IMicrosoftGraphDeviceInstallState[]>]
  [-FailedDeviceCount <Int32>] [-Id <String>] [-InstalledDeviceCount <Int32>]
- [-NotInstalledDeviceCount <Int32>] [-UserName <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-NotInstalledDeviceCount <Int32>] [-UserName <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -124,21 +120,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -274,13 +255,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserInstallStateSummary
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserInstallStateSummary
-
-### System.Collections.Hashtable
 
 ## NOTES
 

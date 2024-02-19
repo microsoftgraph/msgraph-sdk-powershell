@@ -18,22 +18,20 @@ Update-MgBetaUserActivityHistoryItem -ActivityHistoryItemId <String> -UserActivi
  [-ActiveDurationSeconds <Int32>] [-Activity <IMicrosoftGraphUserActivity>]
  [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>] [-ExpirationDateTime <DateTime>]
  [-Id <String>] [-LastActiveDateTime <DateTime>] [-LastModifiedDateTime <DateTime>]
- [-StartedDateTime <DateTime>] [-Status <String>] [-UserTimezone <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-StartedDateTime <DateTime>] [-Status <String>] [-UserTimezone <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaUserActivityHistoryItem -ActivityHistoryItemId <String> -UserActivityId <String> -UserId <String>
- -BodyParameter <IMicrosoftGraphActivityHistoryItem> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphActivityHistoryItem> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaUserActivityHistoryItem -InputObject <ICrossDeviceExperiencesIdentity>
- -BodyParameter <IMicrosoftGraphActivityHistoryItem> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphActivityHistoryItem> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -42,8 +40,8 @@ Update-MgBetaUserActivityHistoryItem -InputObject <ICrossDeviceExperiencesIdenti
  [-ActiveDurationSeconds <Int32>] [-Activity <IMicrosoftGraphUserActivity>]
  [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>] [-ExpirationDateTime <DateTime>]
  [-Id <String>] [-LastActiveDateTime <DateTime>] [-LastModifiedDateTime <DateTime>]
- [-StartedDateTime <DateTime>] [-Status <String>] [-UserTimezone <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-StartedDateTime <DateTime>] [-Status <String>] [-UserTimezone <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -171,21 +169,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -366,13 +349,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphActivityHistoryItem
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphActivityHistoryItem
-
-### System.Collections.Hashtable
 
 ## NOTES
 

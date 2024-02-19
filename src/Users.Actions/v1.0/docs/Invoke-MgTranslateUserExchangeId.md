@@ -15,29 +15,28 @@ Translate identifiers of Outlook-related resources between formats.
 ### TranslateExpanded (Default)
 ```
 Invoke-MgTranslateUserExchangeId -UserId <String> [-AdditionalProperties <Hashtable>] [-InputIds <String[]>]
- [-SourceIdType <String>] [-TargetIdType <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-SourceIdType <String>] [-TargetIdType <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Translate
 ```
 Invoke-MgTranslateUserExchangeId -UserId <String>
  -BodyParameter <IComponents1L8Ofp3RequestbodiesTranslateexchangeidsrequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### TranslateViaIdentity
 ```
 Invoke-MgTranslateUserExchangeId -InputObject <IUsersActionsIdentity>
  -BodyParameter <IComponents1L8Ofp3RequestbodiesTranslateexchangeidsrequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### TranslateViaIdentityExpanded
 ```
 Invoke-MgTranslateUserExchangeId -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
- [-InputIds <String[]>] [-SourceIdType <String>] [-TargetIdType <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-InputIds <String[]>] [-SourceIdType <String>] [-TargetIdType <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -89,21 +88,6 @@ Parameter Sets: Translate, TranslateViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -226,13 +210,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConvertIdResult
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -272,7 +252,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[NotebookId <String>]`: The unique identifier of notebook
   - `[OnenotePageId <String>]`: The unique identifier of onenotePage
   - `[OnenoteSectionId <String>]`: The unique identifier of onenoteSection
-  - `[OnlineMeetingId <String>]`: The unique identifier of onlineMeeting
   - `[PermissionId <String>]`: The unique identifier of permission
   - `[PhoneAuthenticationMethodId <String>]`: The unique identifier of phoneAuthenticationMethod
   - `[SubscriptionId <String>]`: The unique identifier of subscription

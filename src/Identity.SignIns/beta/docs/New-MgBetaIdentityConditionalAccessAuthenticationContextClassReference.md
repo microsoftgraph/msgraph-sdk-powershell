@@ -15,15 +15,14 @@ Create a new authenticationContextClassReference.
 ### CreateExpanded (Default)
 ```
 New-MgBetaIdentityConditionalAccessAuthenticationContextClassReference [-AdditionalProperties <Hashtable>]
- [-Description <String>] [-DisplayName <String>] [-Id <String>] [-IsAvailable] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Description <String>] [-DisplayName <String>] [-Id <String>] [-IsAvailable] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaIdentityConditionalAccessAuthenticationContextClassReference
- -BodyParameter <IMicrosoftGraphAuthenticationContextClassReference> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphAuthenticationContextClassReference> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -104,21 +103,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -191,13 +175,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAuthenticationContextClassReference
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAuthenticationContextClassReference
-
-### System.Collections.Hashtable
 
 ## NOTES
 

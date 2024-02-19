@@ -23,20 +23,20 @@ Update-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomer -Comp
  [-PhoneNumber <String>] [-Picture <IMicrosoftGraphPicture[]>]
  [-ShipmentMethod <IMicrosoftGraphShipmentMethod>] [-ShipmentMethodId <String>] [-TaxAreaDisplayName <String>]
  [-TaxAreaId <String>] [-TaxLiable] [-TaxRegistrationNumber <String>] [-Type <String>] [-Website <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomer -CompanyId <String>
  -CustomerPaymentId <String> -CustomerPaymentJournalId <String> -BodyParameter <IMicrosoftGraphCustomer>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomer -InputObject <IFinancialsIdentity>
- -BodyParameter <IMicrosoftGraphCustomer> [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphCustomer> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -49,8 +49,8 @@ Update-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPaymentCustomer -Inpu
  [-PaymentTerm <IMicrosoftGraphPaymentTerm>] [-PaymentTermsId <String>] [-PhoneNumber <String>]
  [-Picture <IMicrosoftGraphPicture[]>] [-ShipmentMethod <IMicrosoftGraphShipmentMethod>]
  [-ShipmentMethodId <String>] [-TaxAreaDisplayName <String>] [-TaxAreaId <String>] [-TaxLiable]
- [-TaxRegistrationNumber <String>] [-Type <String>] [-Website <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-TaxRegistrationNumber <String>] [-Type <String>] [-Website <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -254,21 +254,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -587,13 +572,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCustomer
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCustomer
-
-### System.Collections.Hashtable
 
 ## NOTES
 

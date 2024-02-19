@@ -16,23 +16,20 @@ Update the properties of a telecomExpenseManagementPartner object.
 ```
 Update-MgDeviceManagementTelecomExpenseManagementPartner -TelecomExpenseManagementPartnerId <String>
  [-AdditionalProperties <Hashtable>] [-AppAuthorized] [-DisplayName <String>] [-Enabled] [-Id <String>]
- [-LastConnectionDateTime <DateTime>] [-Url <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-LastConnectionDateTime <DateTime>] [-Url <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgDeviceManagementTelecomExpenseManagementPartner -TelecomExpenseManagementPartnerId <String>
- -BodyParameter <IMicrosoftGraphTelecomExpenseManagementPartner> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphTelecomExpenseManagementPartner> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgDeviceManagementTelecomExpenseManagementPartner
  -InputObject <IDeviceManagementAdministrationIdentity>
- -BodyParameter <IMicrosoftGraphTelecomExpenseManagementPartner> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphTelecomExpenseManagementPartner> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -40,7 +37,7 @@ Update-MgDeviceManagementTelecomExpenseManagementPartner
 Update-MgDeviceManagementTelecomExpenseManagementPartner
  -InputObject <IDeviceManagementAdministrationIdentity> [-AdditionalProperties <Hashtable>] [-AppAuthorized]
  [-DisplayName <String>] [-Enabled] [-Id <String>] [-LastConnectionDateTime <DateTime>] [-Url <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -140,21 +137,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -275,13 +257,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTelecomExpenseManagementPartner
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTelecomExpenseManagementPartner
-
-### System.Collections.Hashtable
 
 ## NOTES
 

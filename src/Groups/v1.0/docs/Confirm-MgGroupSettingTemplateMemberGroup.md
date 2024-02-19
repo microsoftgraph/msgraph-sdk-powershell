@@ -19,27 +19,27 @@ Because Microsoft 365 groups cannot contain other groups, membership in a Micros
 ### CheckExpanded (Default)
 ```
 Confirm-MgGroupSettingTemplateMemberGroup -GroupSettingTemplateId <String> [-AdditionalProperties <Hashtable>]
- [-GroupIds <String[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-GroupIds <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Check
 ```
 Confirm-MgGroupSettingTemplateMemberGroup -GroupSettingTemplateId <String>
  -BodyParameter <IPaths15V2Yw0GroupsettingtemplatesGroupsettingtemplateIdMicrosoftGraphCheckmembergroupsPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CheckViaIdentity
 ```
 Confirm-MgGroupSettingTemplateMemberGroup -InputObject <IGroupsIdentity>
  -BodyParameter <IPaths15V2Yw0GroupsettingtemplatesGroupsettingtemplateIdMicrosoftGraphCheckmembergroupsPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CheckViaIdentityExpanded
 ```
 Confirm-MgGroupSettingTemplateMemberGroup -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>]
- [-GroupIds <String[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-GroupIds <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -128,21 +128,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -199,11 +184,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IPaths15V2Yw0GroupsettingtemplatesGroupsettingtemplateIdMicrosoftGraphCheckmembergroupsPostRequestbodyContentApplicationJsonSchema
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
-
-### System.Collections.Hashtable
 
 ### System.String
 
@@ -246,7 +227,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[OnenotePageId <String>]`: The unique identifier of onenotePage
   - `[OnenoteSectionId <String>]`: The unique identifier of onenoteSection
   - `[Path <String>]`: Usage: path='{path}'
-  - `[Path1 <String>]`: Usage: path='{path1}'
   - `[PermissionId <String>]`: The unique identifier of permission
   - `[PostId <String>]`: The unique identifier of post
   - `[ProfilePhotoId <String>]`: The unique identifier of profilePhoto
@@ -256,7 +236,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[StartDateTime <String>]`: Usage: startDateTime='{startDateTime}'
   - `[SubscriptionId <String>]`: The unique identifier of subscription
   - `[Token <String>]`: Usage: token='{token}'
-  - `[UniqueName <String>]`: Alternate key of group
   - `[User <String>]`: Usage: User='{User}'
 
 ## RELATED LINKS

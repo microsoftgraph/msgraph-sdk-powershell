@@ -17,22 +17,19 @@ Update the navigation property servicePlans in deviceManagement
 Update-MgBetaDeviceManagementVirtualEndpointServicePlan -CloudPcServicePlanId <String>
  [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>] [-ProvisioningType <String>]
  [-RamInGb <Int32>] [-StorageInGb <Int32>] [-SupportedSolution <String>] [-Type <String>]
- [-UserProfileInGb <Int32>] [-VCpuCount <Int32>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-UserProfileInGb <Int32>] [-VCpuCount <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaDeviceManagementVirtualEndpointServicePlan -CloudPcServicePlanId <String>
- -BodyParameter <IMicrosoftGraphCloudPcServicePlan> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphCloudPcServicePlan> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaDeviceManagementVirtualEndpointServicePlan -InputObject <IDeviceManagementAdministrationIdentity>
- -BodyParameter <IMicrosoftGraphCloudPcServicePlan> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphCloudPcServicePlan> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -40,8 +37,7 @@ Update-MgBetaDeviceManagementVirtualEndpointServicePlan -InputObject <IDeviceMan
 Update-MgBetaDeviceManagementVirtualEndpointServicePlan -InputObject <IDeviceManagementAdministrationIdentity>
  [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>] [-ProvisioningType <String>]
  [-RamInGb <Int32>] [-StorageInGb <Int32>] [-SupportedSolution <String>] [-Type <String>]
- [-UserProfileInGb <Int32>] [-VCpuCount <Int32>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-UserProfileInGb <Int32>] [-VCpuCount <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -124,21 +120,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -323,13 +304,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcServicePlan
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcServicePlan
-
-### System.Collections.Hashtable
 
 ## NOTES
 

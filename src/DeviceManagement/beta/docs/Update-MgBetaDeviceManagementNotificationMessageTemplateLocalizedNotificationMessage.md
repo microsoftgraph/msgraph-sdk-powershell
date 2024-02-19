@@ -17,23 +17,21 @@ Update the navigation property localizedNotificationMessages in deviceManagement
 Update-MgBetaDeviceManagementNotificationMessageTemplateLocalizedNotificationMessage
  -LocalizedNotificationMessageId <String> -NotificationMessageTemplateId <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-IsDefault] [-LastModifiedDateTime <DateTime>]
- [-Locale <String>] [-MessageTemplate <String>] [-Subject <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-Locale <String>] [-MessageTemplate <String>] [-Subject <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaDeviceManagementNotificationMessageTemplateLocalizedNotificationMessage
  -LocalizedNotificationMessageId <String> -NotificationMessageTemplateId <String>
- -BodyParameter <IMicrosoftGraphLocalizedNotificationMessage> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphLocalizedNotificationMessage> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaDeviceManagementNotificationMessageTemplateLocalizedNotificationMessage
  -InputObject <IDeviceManagementIdentity> -BodyParameter <IMicrosoftGraphLocalizedNotificationMessage>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -41,7 +39,7 @@ Update-MgBetaDeviceManagementNotificationMessageTemplateLocalizedNotificationMes
 Update-MgBetaDeviceManagementNotificationMessageTemplateLocalizedNotificationMessage
  -InputObject <IDeviceManagementIdentity> [-AdditionalProperties <Hashtable>] [-Id <String>] [-IsDefault]
  [-LastModifiedDateTime <DateTime>] [-Locale <String>] [-MessageTemplate <String>] [-Subject <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -90,21 +88,6 @@ Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -290,13 +273,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphLocalizedNotificationMessage
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphLocalizedNotificationMessage
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -396,7 +375,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[MacOSSoftwareUpdateCategorySummaryId <String>]`: The unique identifier of macOSSoftwareUpdateCategorySummary
   - `[MacOSSoftwareUpdateStateSummaryId <String>]`: The unique identifier of macOSSoftwareUpdateStateSummary
   - `[MalwareStateForWindowsDeviceId <String>]`: The unique identifier of malwareStateForWindowsDevice
-  - `[ManagedDeviceCleanupRuleId <String>]`: The unique identifier of managedDeviceCleanupRule
   - `[ManagedDeviceEncryptionStateId <String>]`: The unique identifier of managedDeviceEncryptionState
   - `[ManagedDeviceId <String>]`: The unique identifier of managedDevice
   - `[ManagedDeviceMobileAppConfigurationStateId <String>]`: The unique identifier of managedDeviceMobileAppConfigurationState

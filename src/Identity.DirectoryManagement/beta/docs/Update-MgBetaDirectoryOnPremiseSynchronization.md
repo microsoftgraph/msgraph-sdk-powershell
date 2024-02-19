@@ -17,22 +17,20 @@ Update the properties of an onPremisesDirectorySynchronization object.
 Update-MgBetaDirectoryOnPremiseSynchronization -OnPremisesDirectorySynchronizationId <String>
  [-AdditionalProperties <Hashtable>]
  [-Configuration <IMicrosoftGraphOnPremisesDirectorySynchronizationConfiguration>]
- [-Features <IMicrosoftGraphOnPremisesDirectorySynchronizationFeature>] [-Id <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Features <IMicrosoftGraphOnPremisesDirectorySynchronizationFeature>] [-Id <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaDirectoryOnPremiseSynchronization -OnPremisesDirectorySynchronizationId <String>
- -BodyParameter <IMicrosoftGraphOnPremisesDirectorySynchronization> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphOnPremisesDirectorySynchronization> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaDirectoryOnPremiseSynchronization -InputObject <IIdentityDirectoryManagementIdentity>
- -BodyParameter <IMicrosoftGraphOnPremisesDirectorySynchronization> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphOnPremisesDirectorySynchronization> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -40,8 +38,8 @@ Update-MgBetaDirectoryOnPremiseSynchronization -InputObject <IIdentityDirectoryM
 Update-MgBetaDirectoryOnPremiseSynchronization -InputObject <IIdentityDirectoryManagementIdentity>
  [-AdditionalProperties <Hashtable>]
  [-Configuration <IMicrosoftGraphOnPremisesDirectorySynchronizationConfiguration>]
- [-Features <IMicrosoftGraphOnPremisesDirectorySynchronizationFeature>] [-Id <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Features <IMicrosoftGraphOnPremisesDirectorySynchronizationFeature>] [-Id <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -125,21 +123,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -230,13 +213,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOnPremisesDirectorySynchronization
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOnPremisesDirectorySynchronization
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -352,7 +331,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[CertificateAuthorityAsEntityId <String>]`: The unique identifier of certificateAuthorityAsEntity
   - `[CertificateBasedApplicationConfigurationId <String>]`: The unique identifier of certificateBasedApplicationConfiguration
   - `[CommandId <String>]`: The unique identifier of command
-  - `[CommerceSubscriptionId <String>]`: Alternate key of companySubscription
   - `[CompanySubscriptionId <String>]`: The unique identifier of companySubscription
   - `[ContractId <String>]`: The unique identifier of contract
   - `[CustomSecurityAttributeDefinitionId <String>]`: The unique identifier of customSecurityAttributeDefinition
@@ -373,7 +351,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[InternalDomainFederationId <String>]`: The unique identifier of internalDomainFederation
   - `[ManagedTenantAlertId <String>]`: The unique identifier of managedTenantAlert
   - `[ManagementActionId <String>]`: The unique identifier of managementAction
-  - `[OcpSubscriptionId <String>]`: Alternate key of companySubscription
   - `[OnPremisesDirectorySynchronizationId <String>]`: The unique identifier of onPremisesDirectorySynchronization
   - `[OrgContactId <String>]`: The unique identifier of orgContact
   - `[OrganizationId <String>]`: The unique identifier of organization

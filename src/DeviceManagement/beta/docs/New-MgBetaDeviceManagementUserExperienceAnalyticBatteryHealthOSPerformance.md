@@ -20,14 +20,14 @@ New-MgBetaDeviceManagementUserExperienceAnalyticBatteryHealthOSPerformance [-Act
  [-MeanFullBatteryDrainCount <Int32>] [-MedianEstimatedRuntimeInMinutes <Int32>]
  [-MedianFullBatteryDrainCount <Int32>] [-MedianMaxCapacityPercentage <Int32>] [-OSBatteryHealthScore <Int32>]
  [-OSBuildNumber <String>] [-OSHealthStatus <UserExperienceAnalyticsHealthState>] [-OSVersion <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaDeviceManagementUserExperienceAnalyticBatteryHealthOSPerformance
- -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsBatteryHealthOSPerformance> [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsBatteryHealthOSPerformance> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -144,21 +144,6 @@ Parameter Sets: Create
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -348,13 +333,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsBatteryHealthOSPerformance
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsBatteryHealthOSPerformance
-
-### System.Collections.Hashtable
 
 ## NOTES
 

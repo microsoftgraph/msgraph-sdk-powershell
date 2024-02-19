@@ -19,21 +19,19 @@ Update-MgBetaSecurityThreatSubmissionUrlThreat -UrlThreatSubmissionId <String>
  [-Category <String>] [-ClientSource <String>] [-ContentType <String>]
  [-CreatedBy <IMicrosoftGraphSecuritySubmissionUserIdentity>] [-CreatedDateTime <DateTime>] [-Id <String>]
  [-Result <IMicrosoftGraphSecuritySubmissionResult>] [-Source <String>] [-Status <String>]
- [-TenantId <String>] [-WebUrl <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-TenantId <String>] [-WebUrl <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaSecurityThreatSubmissionUrlThreat -UrlThreatSubmissionId <String>
- -BodyParameter <IMicrosoftGraphSecurityUrlThreatSubmission> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphSecurityUrlThreatSubmission> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaSecurityThreatSubmissionUrlThreat -InputObject <ISecurityIdentity>
- -BodyParameter <IMicrosoftGraphSecurityUrlThreatSubmission> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphSecurityUrlThreatSubmission> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -43,7 +41,7 @@ Update-MgBetaSecurityThreatSubmissionUrlThreat -InputObject <ISecurityIdentity>
  [-Category <String>] [-ClientSource <String>] [-ContentType <String>]
  [-CreatedBy <IMicrosoftGraphSecuritySubmissionUserIdentity>] [-CreatedDateTime <DateTime>] [-Id <String>]
  [-Result <IMicrosoftGraphSecuritySubmissionResult>] [-Source <String>] [-Status <String>]
- [-TenantId <String>] [-WebUrl <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-TenantId <String>] [-WebUrl <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -188,21 +186,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -371,13 +354,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityUrlThreatSubmission
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -433,7 +412,6 @@ To create the parameters described below, construct a hash table containing the 
 
 `INPUTOBJECT <ISecurityIdentity>`: Identity Parameter
   - `[AlertId <String>]`: The unique identifier of alert
-  - `[AnalyzedEmailId <String>]`: The unique identifier of analyzedEmail
   - `[ArticleId <String>]`: The unique identifier of article
   - `[ArticleIndicatorId <String>]`: The unique identifier of articleIndicator
   - `[AttackSimulationOperationId <String>]`: The unique identifier of attackSimulationOperation

@@ -22,20 +22,20 @@ Set-MgGroupTeamSchedule -GroupId <String> [-AdditionalProperties <Hashtable>] [-
  [-SwapShiftsChangeRequests <IMicrosoftGraphSwapShiftsChangeRequest[]>] [-SwapShiftsRequestsEnabled]
  [-TimeClockEnabled] [-TimeOffReasons <IMicrosoftGraphTimeOffReason[]>]
  [-TimeOffRequests <IMicrosoftGraphTimeOffRequest[]>] [-TimeOffRequestsEnabled]
- [-TimesOff <IMicrosoftGraphTimeOff[]>] [-TimeZone <String>] [-WorkforceIntegrationIds <String[]>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-TimesOff <IMicrosoftGraphTimeOff[]>] [-TimeZone <String>] [-WorkforceIntegrationIds <String[]>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Set
 ```
-Set-MgGroupTeamSchedule -GroupId <String> -BodyParameter <IMicrosoftGraphSchedule> [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Set-MgGroupTeamSchedule -GroupId <String> -BodyParameter <IMicrosoftGraphSchedule> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### SetViaIdentity
 ```
-Set-MgGroupTeamSchedule -InputObject <ITeamsIdentity> -BodyParameter <IMicrosoftGraphSchedule>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Set-MgGroupTeamSchedule -InputObject <ITeamsIdentity> -BodyParameter <IMicrosoftGraphSchedule> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentityExpanded
@@ -48,8 +48,8 @@ Set-MgGroupTeamSchedule -InputObject <ITeamsIdentity> [-AdditionalProperties <Ha
  [-SwapShiftsChangeRequests <IMicrosoftGraphSwapShiftsChangeRequest[]>] [-SwapShiftsRequestsEnabled]
  [-TimeClockEnabled] [-TimeOffReasons <IMicrosoftGraphTimeOffReason[]>]
  [-TimeOffRequests <IMicrosoftGraphTimeOffRequest[]>] [-TimeOffRequestsEnabled]
- [-TimesOff <IMicrosoftGraphTimeOff[]>] [-TimeZone <String>] [-WorkforceIntegrationIds <String[]>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-TimesOff <IMicrosoftGraphTimeOff[]>] [-TimeZone <String>] [-WorkforceIntegrationIds <String[]>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -132,21 +132,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -487,13 +472,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSchedule
-
-### System.Collections.Hashtable
 
 ## NOTES
 

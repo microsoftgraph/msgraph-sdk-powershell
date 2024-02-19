@@ -18,22 +18,21 @@ Update-MgPolicyPermissionGrantPolicyExclude -PermissionGrantConditionSetId <Stri
  -PermissionGrantPolicyId <String> [-AdditionalProperties <Hashtable>] [-ClientApplicationIds <String[]>]
  [-ClientApplicationPublisherIds <String[]>] [-ClientApplicationsFromVerifiedPublisherOnly]
  [-ClientApplicationTenantIds <String[]>] [-Id <String>] [-PermissionClassification <String>]
- [-Permissions <String[]>] [-PermissionType <String>] [-ResourceApplication <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Permissions <String[]>] [-PermissionType <String>] [-ResourceApplication <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgPolicyPermissionGrantPolicyExclude -PermissionGrantConditionSetId <String>
- -PermissionGrantPolicyId <String> -BodyParameter <IMicrosoftGraphPermissionGrantConditionSet>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -PermissionGrantPolicyId <String> -BodyParameter <IMicrosoftGraphPermissionGrantConditionSet> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgPolicyPermissionGrantPolicyExclude -InputObject <IIdentitySignInsIdentity>
- -BodyParameter <IMicrosoftGraphPermissionGrantConditionSet> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphPermissionGrantConditionSet> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -42,8 +41,8 @@ Update-MgPolicyPermissionGrantPolicyExclude -InputObject <IIdentitySignInsIdenti
  [-AdditionalProperties <Hashtable>] [-ClientApplicationIds <String[]>]
  [-ClientApplicationPublisherIds <String[]>] [-ClientApplicationsFromVerifiedPublisherOnly]
  [-ClientApplicationTenantIds <String[]>] [-Id <String>] [-PermissionClassification <String>]
- [-Permissions <String[]>] [-PermissionType <String>] [-ResourceApplication <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Permissions <String[]>] [-PermissionType <String>] [-ResourceApplication <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -154,21 +153,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -340,13 +324,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPermissionGrantConditionSet
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPermissionGrantConditionSet
-
-### System.Collections.Hashtable
 
 ## NOTES
 

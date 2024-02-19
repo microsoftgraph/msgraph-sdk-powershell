@@ -15,15 +15,14 @@ Invoke action hasPayloadLinks
 ### LinkExpanded (Default)
 ```
 Invoke-MgBetaHasDeviceAppManagementiOSLobAppProvisioningConfigurationPayloadLink
- [-AdditionalProperties <Hashtable>] [-PayloadIds <String[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-PayloadIds <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Link
 ```
 Invoke-MgBetaHasDeviceAppManagementiOSLobAppProvisioningConfigurationPayloadLink
  -Body <IPaths9Fmuz0DeviceappmanagementIoslobappprovisioningconfigurationsMicrosoftGraphHaspayloadlinksPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -72,21 +71,6 @@ Parameter Sets: Link
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -146,13 +130,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPaths9Fmuz0DeviceappmanagementIoslobappprovisioningconfigurationsMicrosoftGraphHaspayloadlinksPostRequestbodyContentApplicationJsonSchema
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphHasPayloadLinkResultItem
-
-### System.Collections.Hashtable
 
 ## NOTES
 

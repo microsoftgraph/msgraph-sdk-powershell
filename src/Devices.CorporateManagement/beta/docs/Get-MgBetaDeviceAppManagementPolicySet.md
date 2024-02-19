@@ -15,34 +15,33 @@ The PolicySet of Policies and Applications
 ### GetExpanded (Default)
 ```
 Get-MgBetaDeviceAppManagementPolicySet [-AdditionalProperties <Hashtable>] [-PolicySetIds <String[]>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Get
 ```
 Get-MgBetaDeviceAppManagementPolicySet -PolicySetId <String> [-ExpandProperty <String[]>]
- [-Property <String[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Property <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Get1
 ```
 Get-MgBetaDeviceAppManagementPolicySet
  -BodyParameter <IPathsFqku8GDeviceappmanagementPolicysetsMicrosoftGraphGetpolicysetsPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
 Get-MgBetaDeviceAppManagementPolicySet -InputObject <IDevicesCorporateManagementIdentity>
- [-ExpandProperty <String[]>] [-Property <String[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-ExpandProperty <String[]>] [-Property <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### List
 ```
 Get-MgBetaDeviceAppManagementPolicySet [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
- [-Headers <IDictionary>] [-PageSize <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PageSize <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -155,21 +154,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -349,13 +333,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPathsFqku8GDeviceappmanagementPolicysetsMicrosoftGraphGetpolicysetsPostRequestbodyContentApplicationJsonSchema
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPolicySet
-
-### System.Collections.Hashtable
 
 ## NOTES
 

@@ -15,15 +15,14 @@ Get content for the navigation property picture from financials
 ### Get (Default)
 ```
 Get-MgBetaFinancialCompanySaleCreditMemoSaleCreditMemoLineItemPictureContent -CompanyId <String>
- -PictureId <String> -SalesCreditMemoId <String> -SalesCreditMemoLineId <String> -OutFile <String>
- [-Headers <IDictionary>] [-PassThru] [<CommonParameters>]
+ -PictureId <String> -SalesCreditMemoId <String> -SalesCreditMemoLineId <String> -OutFile <String> [-PassThru]
+ [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
 Get-MgBetaFinancialCompanySaleCreditMemoSaleCreditMemoLineItemPictureContent
- -InputObject <IFinancialsIdentity> -OutFile <String> [-Headers <IDictionary>] [-PassThru]
- [<CommonParameters>]
+ -InputObject <IFinancialsIdentity> -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -59,21 +58,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -175,13 +159,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
-
-### System.Collections.Hashtable
 
 ## NOTES
 

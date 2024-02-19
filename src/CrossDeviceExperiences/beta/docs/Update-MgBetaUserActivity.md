@@ -19,22 +19,20 @@ Update-MgBetaUserActivity -UserActivityId <String> -UserId <String> [-Activation
  [-AppDisplayName <String>] [-ContentInfo <Hashtable>] [-ContentUrl <String>] [-CreatedDateTime <DateTime>]
  [-ExpirationDateTime <DateTime>] [-FallbackUrl <String>]
  [-HistoryItems <IMicrosoftGraphActivityHistoryItem[]>] [-Id <String>] [-LastModifiedDateTime <DateTime>]
- [-Status <String>] [-UserTimezone <String>] [-VisualElements <IMicrosoftGraphVisualInfo>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Status <String>] [-UserTimezone <String>] [-VisualElements <IMicrosoftGraphVisualInfo>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaUserActivity -UserActivityId <String> -UserId <String>
- -BodyParameter <IMicrosoftGraphUserActivity> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphUserActivity> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaUserActivity -InputObject <ICrossDeviceExperiencesIdentity>
- -BodyParameter <IMicrosoftGraphUserActivity> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphUserActivity> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -44,8 +42,8 @@ Update-MgBetaUserActivity -InputObject <ICrossDeviceExperiencesIdentity> [-Activ
  [-AppDisplayName <String>] [-ContentInfo <Hashtable>] [-ContentUrl <String>] [-CreatedDateTime <DateTime>]
  [-ExpirationDateTime <DateTime>] [-FallbackUrl <String>]
  [-HistoryItems <IMicrosoftGraphActivityHistoryItem[]>] [-Id <String>] [-LastModifiedDateTime <DateTime>]
- [-Status <String>] [-UserTimezone <String>] [-VisualElements <IMicrosoftGraphVisualInfo>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Status <String>] [-UserTimezone <String>] [-VisualElements <IMicrosoftGraphVisualInfo>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -250,21 +248,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -HistoryItems
 Optional.
 NavigationProperty/Containment; navigation property to the activity's historyItems.
@@ -447,13 +430,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserActivity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserActivity
-
-### System.Collections.Hashtable
 
 ## NOTES
 

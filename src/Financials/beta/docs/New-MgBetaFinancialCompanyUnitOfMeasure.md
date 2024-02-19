@@ -16,27 +16,26 @@ Create new navigation property to unitsOfMeasure for financials
 ```
 New-MgBetaFinancialCompanyUnitOfMeasure -CompanyId <String> [-AdditionalProperties <Hashtable>]
  [-Code <String>] [-DisplayName <String>] [-Id <String>] [-InternationalStandardCode <String>]
- [-LastModifiedDateTime <DateTime>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-LastModifiedDateTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaFinancialCompanyUnitOfMeasure -CompanyId <String> -BodyParameter <IMicrosoftGraphUnitOfMeasure>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaFinancialCompanyUnitOfMeasure -InputObject <IFinancialsIdentity>
- -BodyParameter <IMicrosoftGraphUnitOfMeasure> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphUnitOfMeasure> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgBetaFinancialCompanyUnitOfMeasure -InputObject <IFinancialsIdentity> [-AdditionalProperties <Hashtable>]
  [-Code <String>] [-DisplayName <String>] [-Id <String>] [-InternationalStandardCode <String>]
- [-LastModifiedDateTime <DateTime>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-LastModifiedDateTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -133,21 +132,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -252,13 +236,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUnitOfMeasure
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUnitOfMeasure
-
-### System.Collections.Hashtable
 
 ## NOTES
 

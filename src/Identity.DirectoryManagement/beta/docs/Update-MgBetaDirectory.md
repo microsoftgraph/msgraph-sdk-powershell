@@ -28,14 +28,12 @@ Update-MgBetaDirectory [-AdditionalProperties <Hashtable>]
  [-OutboundSharedUserProfiles <IMicrosoftGraphOutboundSharedUserProfile[]>]
  [-Recommendations <IMicrosoftGraphRecommendation[]>]
  [-SharedEmailDomains <IMicrosoftGraphSharedEmailDomain[]>]
- [-Subscriptions <IMicrosoftGraphCompanySubscription[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Subscriptions <IMicrosoftGraphCompanySubscription[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgBetaDirectory -BodyParameter <IMicrosoftGraphDirectory> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Update-MgBetaDirectory -BodyParameter <IMicrosoftGraphDirectory> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -155,9 +153,7 @@ Accept wildcard characters: False
 ```
 
 ### -DeletedItems
-Recently deleted items.
-Read-only.
-Nullable.
+.
 To construct, see NOTES section for DELETEDITEMS properties and create a hash table.
 
 ```yaml
@@ -220,21 +216,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -268,7 +249,7 @@ Accept wildcard characters: False
 ```
 
 ### -InboundSharedUserProfiles
-A collection of external users whose profile data is shared with the Microsoft Entra tenant.
+A collection of external Azure AD users whose profile data has been shared with the Azure AD tenant.
 Nullable.
 To construct, see NOTES section for INBOUNDSHAREDUSERPROFILES properties and create a hash table.
 
@@ -349,7 +330,7 @@ Accept wildcard characters: False
 ```
 
 ### -Subscriptions
-List of commercial subscriptions that an organization has.
+List of commercial subscriptions that an organization has acquired.
 To construct, see NOTES section for SUBSCRIPTIONS properties and create a hash table.
 
 ```yaml
@@ -402,13 +383,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectory
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectory
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -436,8 +413,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[RoleId <String>]`: Unique identifier for the directory role that the member is in.
     - `[RoleMemberInfo <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-      - `[Id <String>]`: Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn't included in the response.
+      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+      - `[Id <String>]`: The identifier of the identity. This property is read-only.
   - `[Visibility <String>]`: Controls whether the administrative unit and its members are hidden or public. Can be set to HiddenMembership or Public. If not set, the default behavior is Public. When set to HiddenMembership, only members of the administrative unit can list other members of the administrative unit.
 
 `ATTRIBUTESETS <IMicrosoftGraphAttributeSet[]>`: Group of related custom security attribute definitions.
@@ -465,8 +442,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[RoleId <String>]`: Unique identifier for the directory role that the member is in.
       - `[RoleMemberInfo <IMicrosoftGraphIdentity>]`: identity
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-        - `[Id <String>]`: Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn't included in the response.
+        - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+        - `[Id <String>]`: The identifier of the identity. This property is read-only.
     - `[Visibility <String>]`: Controls whether the administrative unit and its members are hidden or public. Can be set to HiddenMembership or Public. If not set, the default behavior is Public. When set to HiddenMembership, only members of the administrative unit can list other members of the administrative unit.
   - `[AttributeSets <IMicrosoftGraphAttributeSet[]>]`: Group of related custom security attribute definitions.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -499,7 +476,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[Status <String>]`: Specifies whether the custom security attribute is active or deactivated. Acceptable values are: Available and Deprecated. Can be changed later.
     - `[Type <String>]`: Data type for the custom security attribute values. Supported types are: Boolean, Integer, and String. Cannot be changed later.
     - `[UsePreDefinedValuesOnly <Boolean?>]`: Indicates whether only predefined values can be assigned to the custom security attribute. If set to false, free-form values are allowed. Can later be changed from true to false, but cannot be changed from false to true. If type is set to Boolean, usePreDefinedValuesOnly cannot be set to true.
-  - `[DeletedItems <IMicrosoftGraphDirectoryObject[]>]`: Recently deleted items. Read-only. Nullable.
+  - `[DeletedItems <IMicrosoftGraphDirectoryObject[]>]`: 
   - `[DeviceLocalCredentials <IMicrosoftGraphDeviceLocalCredentialInfo[]>]`: The credentials of the device's local administrator account backed up to Microsoft Entra ID.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Credentials <IMicrosoftGraphDeviceLocalCredential[]>]`: The credentials of the device's local administrator account backed up to Azure Active Directory.
@@ -526,8 +503,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[AddedDateTime <DateTime?>]`: The date and time when the impactedResource object was initially associated with the recommendation.
     - `[AdditionalDetails <IMicrosoftGraphKeyValue[]>]`: Additional information unique to the impactedResource to help contextualize the recommendation.
-      - `[Key <String>]`: Contains the name of the field that a value is associated with.
-      - `[Value <String>]`: Contains the corresponding value for the specified key.
+      - `[Key <String>]`: Key.
+      - `[Value <String>]`: Value.
     - `[ApiUrl <String>]`: The URL link to the corresponding Microsoft Entra resource.
     - `[DisplayName <String>]`: Friendly name of the Microsoft Entra resource.
     - `[LastModifiedBy <String>]`: Name of the user or service that last updated the status.
@@ -540,7 +517,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[ResourceType <String>]`: Indicates the type of Microsoft Entra resource. Examples include user, application.
     - `[Status <String>]`: recommendationStatus
     - `[SubjectId <String>]`: The related unique identifier, depending on the resourceType. For example, this property is set to the applicationId if the resourceType is an application.
-  - `[InboundSharedUserProfiles <IMicrosoftGraphInboundSharedUserProfile[]>]`: A collection of external users whose profile data is shared with the Microsoft Entra tenant. Nullable.
+  - `[InboundSharedUserProfiles <IMicrosoftGraphInboundSharedUserProfile[]>]`: A collection of external Azure AD users whose profile data has been shared with the Azure AD tenant. Nullable.
     - `[DisplayName <String>]`: The name displayed in the address book for the user at the time when the sharing record was created. Read-only.
     - `[HomeTenantId <String>]`: The home tenant id of the external user. Read-only.
     - `[UserId <String>]`: The object id of the external user. Read-only.
@@ -629,7 +606,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[SharedEmailDomains <IMicrosoftGraphSharedEmailDomain[]>]`: 
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[ProvisioningStatus <String>]`: 
-  - `[Subscriptions <IMicrosoftGraphCompanySubscription[]>]`: List of commercial subscriptions that an organization has.
+  - `[Subscriptions <IMicrosoftGraphCompanySubscription[]>]`: List of commercial subscriptions that an organization has acquired.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[CommerceSubscriptionId <String>]`: The ID of this subscription in the commerce system. Alternate key.
     - `[CreatedDateTime <DateTime?>]`: The date and time when this subscription was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
@@ -678,7 +655,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[Type <String>]`: Data type for the custom security attribute values. Supported types are: Boolean, Integer, and String. Cannot be changed later.
   - `[UsePreDefinedValuesOnly <Boolean?>]`: Indicates whether only predefined values can be assigned to the custom security attribute. If set to false, free-form values are allowed. Can later be changed from true to false, but cannot be changed from false to true. If type is set to Boolean, usePreDefinedValuesOnly cannot be set to true.
 
-`DELETEDITEMS <IMicrosoftGraphDirectoryObject[]>`: Recently deleted items. Read-only. Nullable.
+`DELETEDITEMS <IMicrosoftGraphDirectoryObject[]>`: .
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
 
@@ -713,8 +690,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[AddedDateTime <DateTime?>]`: The date and time when the impactedResource object was initially associated with the recommendation.
   - `[AdditionalDetails <IMicrosoftGraphKeyValue[]>]`: Additional information unique to the impactedResource to help contextualize the recommendation.
-    - `[Key <String>]`: Contains the name of the field that a value is associated with.
-    - `[Value <String>]`: Contains the corresponding value for the specified key.
+    - `[Key <String>]`: Key.
+    - `[Value <String>]`: Value.
   - `[ApiUrl <String>]`: The URL link to the corresponding Microsoft Entra resource.
   - `[DisplayName <String>]`: Friendly name of the Microsoft Entra resource.
   - `[LastModifiedBy <String>]`: Name of the user or service that last updated the status.
@@ -728,7 +705,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[Status <String>]`: recommendationStatus
   - `[SubjectId <String>]`: The related unique identifier, depending on the resourceType. For example, this property is set to the applicationId if the resourceType is an application.
 
-`INBOUNDSHAREDUSERPROFILES <IMicrosoftGraphInboundSharedUserProfile[]>`: A collection of external users whose profile data is shared with the Microsoft Entra tenant. Nullable.
+`INBOUNDSHAREDUSERPROFILES <IMicrosoftGraphInboundSharedUserProfile[]>`: A collection of external Azure AD users whose profile data has been shared with the Azure AD tenant. Nullable.
   - `[DisplayName <String>]`: The name displayed in the address book for the user at the time when the sharing record was created. Read-only.
   - `[HomeTenantId <String>]`: The home tenant id of the external user. Read-only.
   - `[UserId <String>]`: The object id of the external user. Read-only.
@@ -808,8 +785,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[AddedDateTime <DateTime?>]`: The date and time when the impactedResource object was initially associated with the recommendation.
     - `[AdditionalDetails <IMicrosoftGraphKeyValue[]>]`: Additional information unique to the impactedResource to help contextualize the recommendation.
-      - `[Key <String>]`: Contains the name of the field that a value is associated with.
-      - `[Value <String>]`: Contains the corresponding value for the specified key.
+      - `[Key <String>]`: Key.
+      - `[Value <String>]`: Value.
     - `[ApiUrl <String>]`: The URL link to the corresponding Microsoft Entra resource.
     - `[DisplayName <String>]`: Friendly name of the Microsoft Entra resource.
     - `[LastModifiedBy <String>]`: Name of the user or service that last updated the status.
@@ -839,7 +816,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[ProvisioningStatus <String>]`: 
 
-`SUBSCRIPTIONS <IMicrosoftGraphCompanySubscription[]>`: List of commercial subscriptions that an organization has.
+`SUBSCRIPTIONS <IMicrosoftGraphCompanySubscription[]>`: List of commercial subscriptions that an organization has acquired.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[CommerceSubscriptionId <String>]`: The ID of this subscription in the commerce system. Alternate key.
   - `[CreatedDateTime <DateTime?>]`: The date and time when this subscription was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.

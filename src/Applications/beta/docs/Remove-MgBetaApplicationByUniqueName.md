@@ -16,14 +16,14 @@ After that time, they are permanently deleted.
 
 ### Delete (Default)
 ```
-Remove-MgBetaApplicationByUniqueName -UniqueName <String> [-IfMatch <String>] [-Headers <IDictionary>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-MgBetaApplicationByUniqueName -AppId <String> -UniqueName <String> [-IfMatch <String>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgBetaApplicationByUniqueName -InputObject <IApplicationsIdentity> [-IfMatch <String>]
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-MgBetaApplicationByUniqueName -InputObject <IApplicationsIdentity> [-IfMatch <String>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -49,18 +49,18 @@ After that time, they are permanently deleted.
 
 ## PARAMETERS
 
-### -Headers
-Optional headers that will be added to the request.
+### -AppId
+Alternate key of application
 
 ```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
+Type: System.String
+Parameter Sets: Delete
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
-Accept pipeline input: True (ByValue)
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -163,13 +163,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
-
-### System.Collections.Hashtable
 
 ## NOTES
 

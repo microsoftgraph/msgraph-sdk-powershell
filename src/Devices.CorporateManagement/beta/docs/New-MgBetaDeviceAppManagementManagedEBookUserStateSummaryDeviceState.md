@@ -18,21 +18,21 @@ New-MgBetaDeviceAppManagementManagedEBookUserStateSummaryDeviceState -ManagedEBo
  -UserInstallStateSummaryId <String> [-AdditionalProperties <Hashtable>] [-DeviceId <String>]
  [-DeviceName <String>] [-ErrorCode <String>] [-Id <String>] [-InstallState <InstallState>]
  [-LastSyncDateTime <DateTime>] [-OSDescription <String>] [-OSVersion <String>] [-UserName <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaDeviceAppManagementManagedEBookUserStateSummaryDeviceState -ManagedEBookId <String>
- -UserInstallStateSummaryId <String> -BodyParameter <IMicrosoftGraphDeviceInstallState>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -UserInstallStateSummaryId <String> -BodyParameter <IMicrosoftGraphDeviceInstallState> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaDeviceAppManagementManagedEBookUserStateSummaryDeviceState
  -InputObject <IDevicesCorporateManagementIdentity> -BodyParameter <IMicrosoftGraphDeviceInstallState>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -41,7 +41,7 @@ New-MgBetaDeviceAppManagementManagedEBookUserStateSummaryDeviceState
  -InputObject <IDevicesCorporateManagementIdentity> [-AdditionalProperties <Hashtable>] [-DeviceId <String>]
  [-DeviceName <String>] [-ErrorCode <String>] [-Id <String>] [-InstallState <InstallState>]
  [-LastSyncDateTime <DateTime>] [-OSDescription <String>] [-OSVersion <String>] [-UserName <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -138,21 +138,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -333,13 +318,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceInstallState
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceInstallState
-
-### System.Collections.Hashtable
 
 ## NOTES
 

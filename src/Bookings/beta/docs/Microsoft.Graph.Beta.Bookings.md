@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Bookings
-Module Guid: b87c07ea-0abc-4f9a-b1bd-58e906430ce3
+Module Guid: 9676258a-f511-444c-b12e-1fe33c73e640
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.bookings
 Help Version: 1.0.0.0
 Locale: en-US
@@ -12,7 +12,7 @@ Microsoft Graph PowerShell Cmdlets
 
 ## Microsoft.Graph.Beta.Bookings Cmdlets
 ### [Get-MgBetaBookingBusiness](Get-MgBetaBookingBusiness.md)
-Represents a Microsoft Bookings Business.
+Get the properties and relationships of a bookingBusiness object.
 
 ### [Get-MgBetaBookingBusinessAppointment](Get-MgBetaBookingBusinessAppointment.md)
 Get the properties and relationships of a bookingAppointment object in the specified bookingBusiness.
@@ -60,15 +60,13 @@ Get the properties and relationships of a bookingStaffMember in the specified bo
 Get the number of the resource
 
 ### [Get-MgBetaBookingCurrency](Get-MgBetaBookingCurrency.md)
-Get entity from bookingCurrencies by key
+Get the properties of a bookingCurrency object that is available to a Microsoft Bookings business.
+Use the id property, which is the currency code, to specify the currency.
 
 ### [Get-MgBetaBookingCurrencyCount](Get-MgBetaBookingCurrencyCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaBusinessScenario](Get-MgBetaBusinessScenario.md)
-Read the properties and relationships of a businessScenario object.
-
-### [Get-MgBetaBusinessScenarioByUniqueName](Get-MgBetaBusinessScenarioByUniqueName.md)
 Read the properties and relationships of a businessScenario object.
 
 ### [Get-MgBetaBusinessScenarioCount](Get-MgBetaBusinessScenarioCount.md)
@@ -118,7 +116,7 @@ Get events from solutions
 Get the number of the resource
 
 ### [Get-MgBetaVirtualEventPresenter](Get-MgBetaVirtualEventPresenter.md)
-The virtual event presenters.
+Presenters' information of the virtual event.
 
 ### [Get-MgBetaVirtualEventPresenterCount](Get-MgBetaVirtualEventPresenterCount.md)
 Get the number of the resource
@@ -129,14 +127,11 @@ Get profilePhoto for the navigation property presenters from solutions
 ### [Get-MgBetaVirtualEventPresenterSession](Get-MgBetaVirtualEventPresenterSession.md)
 Get sessions from solutions
 
-### [Get-MgBetaVirtualEventPresenterSessionByJoinWebUrl](Get-MgBetaVirtualEventPresenterSessionByJoinWebUrl.md)
-Get sessions from solutions
-
 ### [Get-MgBetaVirtualEventPresenterSessionCount](Get-MgBetaVirtualEventPresenterSessionCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaVirtualEventSession](Get-MgBetaVirtualEventSession.md)
-Sessions for the virtual event.
+Sessions of the virtual event.
 
 ### [Get-MgBetaVirtualEventSessionAttendanceReport](Get-MgBetaVirtualEventSessionAttendanceReport.md)
 The attendance reports of an online meeting.
@@ -151,9 +146,6 @@ Get the number of the resource
 
 ### [Get-MgBetaVirtualEventSessionAttendanceReportCount](Get-MgBetaVirtualEventSessionAttendanceReportCount.md)
 Get the number of the resource
-
-### [Get-MgBetaVirtualEventSessionByJoinWebUrl](Get-MgBetaVirtualEventSessionByJoinWebUrl.md)
-Sessions for the virtual event.
 
 ### [Get-MgBetaVirtualEventSessionCount](Get-MgBetaVirtualEventSessionCount.md)
 Get the number of the resource
@@ -186,7 +178,7 @@ Invoke function getByUserRole
 Get the number of the resource
 
 ### [Get-MgBetaVirtualEventTownhallPresenter](Get-MgBetaVirtualEventTownhallPresenter.md)
-The virtual event presenters.
+Presenters' information of the virtual event.
 
 ### [Get-MgBetaVirtualEventTownhallPresenterCount](Get-MgBetaVirtualEventTownhallPresenterCount.md)
 Get the number of the resource
@@ -197,14 +189,11 @@ Get profilePhoto for the navigation property presenters from solutions
 ### [Get-MgBetaVirtualEventTownhallPresenterSession](Get-MgBetaVirtualEventTownhallPresenterSession.md)
 Get sessions from solutions
 
-### [Get-MgBetaVirtualEventTownhallPresenterSessionByJoinWebUrl](Get-MgBetaVirtualEventTownhallPresenterSessionByJoinWebUrl.md)
-Get sessions from solutions
-
 ### [Get-MgBetaVirtualEventTownhallPresenterSessionCount](Get-MgBetaVirtualEventTownhallPresenterSessionCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaVirtualEventTownhallSession](Get-MgBetaVirtualEventTownhallSession.md)
-Sessions for the virtual event.
+Sessions of the virtual event.
 
 ### [Get-MgBetaVirtualEventTownhallSessionAttendanceReport](Get-MgBetaVirtualEventTownhallSessionAttendanceReport.md)
 The attendance reports of an online meeting.
@@ -219,9 +208,6 @@ Get the number of the resource
 
 ### [Get-MgBetaVirtualEventTownhallSessionAttendanceReportCount](Get-MgBetaVirtualEventTownhallSessionAttendanceReportCount.md)
 Get the number of the resource
-
-### [Get-MgBetaVirtualEventTownhallSessionByJoinWebUrl](Get-MgBetaVirtualEventTownhallSessionByJoinWebUrl.md)
-Sessions for the virtual event.
 
 ### [Get-MgBetaVirtualEventTownhallSessionCount](Get-MgBetaVirtualEventTownhallSessionCount.md)
 Get the number of the resource
@@ -254,7 +240,7 @@ Invoke function getByUserRole
 Get the number of the resource
 
 ### [Get-MgBetaVirtualEventWebinarPresenter](Get-MgBetaVirtualEventWebinarPresenter.md)
-The virtual event presenters.
+Presenters' information of the virtual event.
 
 ### [Get-MgBetaVirtualEventWebinarPresenterCount](Get-MgBetaVirtualEventWebinarPresenterCount.md)
 Get the number of the resource
@@ -263,9 +249,6 @@ Get the number of the resource
 Get profilePhoto for the navigation property presenters from solutions
 
 ### [Get-MgBetaVirtualEventWebinarPresenterSession](Get-MgBetaVirtualEventWebinarPresenterSession.md)
-Get sessions from solutions
-
-### [Get-MgBetaVirtualEventWebinarPresenterSessionByJoinWebUrl](Get-MgBetaVirtualEventWebinarPresenterSessionByJoinWebUrl.md)
 Get sessions from solutions
 
 ### [Get-MgBetaVirtualEventWebinarPresenterSessionCount](Get-MgBetaVirtualEventWebinarPresenterSessionCount.md)
@@ -283,14 +266,11 @@ Get the number of the resource
 ### [Get-MgBetaVirtualEventWebinarRegistrationSession](Get-MgBetaVirtualEventWebinarRegistrationSession.md)
 Get sessions from solutions
 
-### [Get-MgBetaVirtualEventWebinarRegistrationSessionByJoinWebUrl](Get-MgBetaVirtualEventWebinarRegistrationSessionByJoinWebUrl.md)
-Get sessions from solutions
-
 ### [Get-MgBetaVirtualEventWebinarRegistrationSessionCount](Get-MgBetaVirtualEventWebinarRegistrationSessionCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaVirtualEventWebinarSession](Get-MgBetaVirtualEventWebinarSession.md)
-Sessions for the virtual event.
+Sessions of the virtual event.
 
 ### [Get-MgBetaVirtualEventWebinarSessionAttendanceReport](Get-MgBetaVirtualEventWebinarSessionAttendanceReport.md)
 The attendance reports of an online meeting.
@@ -305,9 +285,6 @@ Get the number of the resource
 
 ### [Get-MgBetaVirtualEventWebinarSessionAttendanceReportCount](Get-MgBetaVirtualEventWebinarSessionAttendanceReportCount.md)
 Get the number of the resource
-
-### [Get-MgBetaVirtualEventWebinarSessionByJoinWebUrl](Get-MgBetaVirtualEventWebinarSessionByJoinWebUrl.md)
-Sessions for the virtual event.
 
 ### [Get-MgBetaVirtualEventWebinarSessionCount](Get-MgBetaVirtualEventWebinarSessionCount.md)
 Get the number of the resource
@@ -328,7 +305,9 @@ Get registrations from solutions
 Get the number of the resource
 
 ### [New-MgBetaBookingBusiness](New-MgBetaBookingBusiness.md)
-Add new entity to bookingBusinesses
+Create a new Microsoft Bookings business in a tenant.
+This is the first step in setting up a Bookings business where you must specify the business display name.
+You can include other information such as business address, web site address, and scheduling policy, or set that information later by updating the bookingBusiness.
 
 ### [New-MgBetaBookingBusinessAppointment](New-MgBetaBookingBusinessAppointment.md)
 Create a new bookingAppointment for the specified bookingBusiness.
@@ -416,7 +395,7 @@ Set the isPublished property to true, and publicUrl property to the URL of the s
 Invoke action publish
 
 ### [Remove-MgBetaBookingBusiness](Remove-MgBetaBookingBusiness.md)
-Delete entity from bookingBusinesses
+Delete a bookingBusiness object.
 
 ### [Remove-MgBetaBookingBusinessAppointment](Remove-MgBetaBookingBusinessAppointment.md)
 Delete a bookingAppointment in the specified bookingBusiness.
@@ -440,10 +419,6 @@ Delete a staff member in the specified bookingbusiness.
 Delete entity from bookingCurrencies
 
 ### [Remove-MgBetaBusinessScenario](Remove-MgBetaBusinessScenario.md)
-Delete a businessScenario object.
-The deletion of a scenario causes all data associated with the scenario to be deleted.
-
-### [Remove-MgBetaBusinessScenarioByUniqueName](Remove-MgBetaBusinessScenarioByUniqueName.md)
 Delete a businessScenario object.
 The deletion of a scenario causes all data associated with the scenario to be deleted.
 
@@ -489,9 +464,6 @@ Delete navigation property attendanceReports for solutions
 ### [Remove-MgBetaVirtualEventSessionAttendanceReportAttendanceRecord](Remove-MgBetaVirtualEventSessionAttendanceReportAttendanceRecord.md)
 Delete navigation property attendanceRecords for solutions
 
-### [Remove-MgBetaVirtualEventSessionByJoinWebUrl](Remove-MgBetaVirtualEventSessionByJoinWebUrl.md)
-Delete navigation property sessions for solutions
-
 ### [Remove-MgBetaVirtualEventTownhall](Remove-MgBetaVirtualEventTownhall.md)
 Delete navigation property townhalls for solutions
 
@@ -506,9 +478,6 @@ Delete navigation property attendanceReports for solutions
 
 ### [Remove-MgBetaVirtualEventTownhallSessionAttendanceReportAttendanceRecord](Remove-MgBetaVirtualEventTownhallSessionAttendanceReportAttendanceRecord.md)
 Delete navigation property attendanceRecords for solutions
-
-### [Remove-MgBetaVirtualEventTownhallSessionByJoinWebUrl](Remove-MgBetaVirtualEventTownhallSessionByJoinWebUrl.md)
-Delete navigation property sessions for solutions
 
 ### [Remove-MgBetaVirtualEventWebinar](Remove-MgBetaVirtualEventWebinar.md)
 Delete navigation property webinars for solutions
@@ -527,9 +496,6 @@ Delete navigation property attendanceReports for solutions
 
 ### [Remove-MgBetaVirtualEventWebinarSessionAttendanceReportAttendanceRecord](Remove-MgBetaVirtualEventWebinarSessionAttendanceReportAttendanceRecord.md)
 Delete navigation property attendanceRecords for solutions
-
-### [Remove-MgBetaVirtualEventWebinarSessionByJoinWebUrl](Remove-MgBetaVirtualEventWebinarSessionByJoinWebUrl.md)
-Delete navigation property sessions for solutions
 
 ### [Set-MgBetaVirtualEventPresenterProfilePhoto](Set-MgBetaVirtualEventPresenterProfilePhoto.md)
 Update profilePhoto for the navigation property presenters in solutions
@@ -563,7 +529,7 @@ Make the scheduling page of this business not available to external customers.
 Set the isPublished property to false, and publicUrl property to null.
 
 ### [Update-MgBetaBookingBusiness](Update-MgBetaBookingBusiness.md)
-Update entity in bookingBusinesses
+Update the properties of a bookingBusiness object.
 
 ### [Update-MgBetaBookingBusinessAppointment](Update-MgBetaBookingBusinessAppointment.md)
 Update the properties of a bookingAppointment object in the specified bookingBusiness.
@@ -588,9 +554,6 @@ Update the properties of a bookingStaffMember in the specified bookingBusiness.
 Update entity in bookingCurrencies
 
 ### [Update-MgBetaBusinessScenario](Update-MgBetaBusinessScenario.md)
-Update the properties of a businessScenario object.
-
-### [Update-MgBetaBusinessScenarioByUniqueName](Update-MgBetaBusinessScenarioByUniqueName.md)
 Update the properties of a businessScenario object.
 
 ### [Update-MgBetaBusinessScenarioPlanner](Update-MgBetaBusinessScenarioPlanner.md)
@@ -635,9 +598,6 @@ Update the navigation property attendanceReports in solutions
 ### [Update-MgBetaVirtualEventSessionAttendanceReportAttendanceRecord](Update-MgBetaVirtualEventSessionAttendanceReportAttendanceRecord.md)
 Update the navigation property attendanceRecords in solutions
 
-### [Update-MgBetaVirtualEventSessionByJoinWebUrl](Update-MgBetaVirtualEventSessionByJoinWebUrl.md)
-Update the navigation property sessions in solutions
-
 ### [Update-MgBetaVirtualEventTownhall](Update-MgBetaVirtualEventTownhall.md)
 Update the navigation property townhalls in solutions
 
@@ -652,9 +612,6 @@ Update the navigation property attendanceReports in solutions
 
 ### [Update-MgBetaVirtualEventTownhallSessionAttendanceReportAttendanceRecord](Update-MgBetaVirtualEventTownhallSessionAttendanceReportAttendanceRecord.md)
 Update the navigation property attendanceRecords in solutions
-
-### [Update-MgBetaVirtualEventTownhallSessionByJoinWebUrl](Update-MgBetaVirtualEventTownhallSessionByJoinWebUrl.md)
-Update the navigation property sessions in solutions
 
 ### [Update-MgBetaVirtualEventWebinar](Update-MgBetaVirtualEventWebinar.md)
 Update the navigation property webinars in solutions
@@ -673,7 +630,4 @@ Update the navigation property attendanceReports in solutions
 
 ### [Update-MgBetaVirtualEventWebinarSessionAttendanceReportAttendanceRecord](Update-MgBetaVirtualEventWebinarSessionAttendanceReportAttendanceRecord.md)
 Update the navigation property attendanceRecords in solutions
-
-### [Update-MgBetaVirtualEventWebinarSessionByJoinWebUrl](Update-MgBetaVirtualEventWebinarSessionByJoinWebUrl.md)
-Update the navigation property sessions in solutions
 

@@ -14,14 +14,13 @@ Invoke function verifyWindowsEnrollmentAutoDiscovery
 
 ### Verify (Default)
 ```
-Confirm-MgDeviceManagementWindowsEnrollmentAutoDiscovery -DomainName <String> [-Headers <IDictionary>]
- [<CommonParameters>]
+Confirm-MgDeviceManagementWindowsEnrollmentAutoDiscovery -DomainName <String> [<CommonParameters>]
 ```
 
 ### VerifyViaIdentity
 ```
 Confirm-MgDeviceManagementWindowsEnrollmentAutoDiscovery -InputObject <IDeviceManagementFunctionsIdentity>
- [-Headers <IDictionary>] [<CommonParameters>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -60,21 +59,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -98,13 +82,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IDeviceManagementFunctionsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
-
-### System.Collections.Hashtable
 
 ## NOTES
 

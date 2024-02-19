@@ -16,30 +16,30 @@ Invoke action assign
 ```
 Set-MgBetaDeviceManagementDeviceConfiguration -DeviceConfigurationId <String>
  [-AdditionalProperties <Hashtable>] [-Assignments <IMicrosoftGraphDeviceConfigurationAssignment[]>]
- [-DeviceConfigurationGroupAssignments <IMicrosoftGraphDeviceConfigurationGroupAssignment[]>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-DeviceConfigurationGroupAssignments <IMicrosoftGraphDeviceConfigurationGroupAssignment[]>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Assign
 ```
 Set-MgBetaDeviceManagementDeviceConfiguration -DeviceConfigurationId <String>
  -BodyParameter <IPathsKq4LptDevicemanagementDeviceconfigurationsDeviceconfigurationIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AssignViaIdentity
 ```
 Set-MgBetaDeviceManagementDeviceConfiguration -InputObject <IDeviceManagementActionsIdentity>
  -BodyParameter <IPathsKq4LptDevicemanagementDeviceconfigurationsDeviceconfigurationIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AssignViaIdentityExpanded
 ```
 Set-MgBetaDeviceManagementDeviceConfiguration -InputObject <IDeviceManagementActionsIdentity>
  [-AdditionalProperties <Hashtable>] [-Assignments <IMicrosoftGraphDeviceConfigurationAssignment[]>]
- [-DeviceConfigurationGroupAssignments <IMicrosoftGraphDeviceConfigurationGroupAssignment[]>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-DeviceConfigurationGroupAssignments <IMicrosoftGraphDeviceConfigurationGroupAssignment[]>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -141,21 +141,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -212,13 +197,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPathsKq4LptDevicemanagementDeviceconfigurationsDeviceconfigurationIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceConfigurationAssignment
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -465,7 +446,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[MicrosoftTunnelSiteId <String>]`: The unique identifier of microsoftTunnelSite
   - `[MobileAppTroubleshootingEventId <String>]`: The unique identifier of mobileAppTroubleshootingEvent
   - `[NotificationMessageTemplateId <String>]`: The unique identifier of notificationMessageTemplate
-  - `[OperationApprovalRequestId <String>]`: The unique identifier of operationApprovalRequest
   - `[PrivilegeManagementElevationRequestId <String>]`: The unique identifier of privilegeManagementElevationRequest
   - `[RemoteAssistancePartnerId <String>]`: The unique identifier of remoteAssistancePartner
   - `[RoleScopeTagId <String>]`: The unique identifier of roleScopeTag

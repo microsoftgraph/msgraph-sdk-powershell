@@ -17,21 +17,19 @@ Update the navigation property delegatedAdminCustomers in tenantRelationships
 Update-MgBetaTenantRelationshipDelegatedAdminCustomer -DelegatedAdminCustomerId <String>
  [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>]
  [-ServiceManagementDetails <IMicrosoftGraphDelegatedAdminServiceManagementDetail[]>] [-TenantId <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaTenantRelationshipDelegatedAdminCustomer -DelegatedAdminCustomerId <String>
- -BodyParameter <IMicrosoftGraphDelegatedAdminCustomer> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphDelegatedAdminCustomer> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaTenantRelationshipDelegatedAdminCustomer -InputObject <IIdentityPartnerIdentity>
- -BodyParameter <IMicrosoftGraphDelegatedAdminCustomer> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphDelegatedAdminCustomer> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -39,7 +37,7 @@ Update-MgBetaTenantRelationshipDelegatedAdminCustomer -InputObject <IIdentityPar
 Update-MgBetaTenantRelationshipDelegatedAdminCustomer -InputObject <IIdentityPartnerIdentity>
  [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>]
  [-ServiceManagementDetails <IMicrosoftGraphDelegatedAdminServiceManagementDetail[]>] [-TenantId <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -123,21 +121,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -245,13 +228,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDelegatedAdminCustomer
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDelegatedAdminCustomer
-
-### System.Collections.Hashtable
 
 ## NOTES
 

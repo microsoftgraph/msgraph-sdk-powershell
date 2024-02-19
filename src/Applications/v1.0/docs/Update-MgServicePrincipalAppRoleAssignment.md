@@ -17,22 +17,20 @@ Update the navigation property appRoleAssignments in servicePrincipals
 Update-MgServicePrincipalAppRoleAssignment -AppRoleAssignmentId <String> -ServicePrincipalId <String>
  [-AdditionalProperties <Hashtable>] [-AppRoleId <String>] [-CreatedDateTime <DateTime>]
  [-DeletedDateTime <DateTime>] [-Id <String>] [-PrincipalDisplayName <String>] [-PrincipalId <String>]
- [-PrincipalType <String>] [-ResourceDisplayName <String>] [-ResourceId <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PrincipalType <String>] [-ResourceDisplayName <String>] [-ResourceId <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgServicePrincipalAppRoleAssignment -AppRoleAssignmentId <String> -ServicePrincipalId <String>
- -BodyParameter <IMicrosoftGraphAppRoleAssignment> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphAppRoleAssignment> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgServicePrincipalAppRoleAssignment -InputObject <IApplicationsIdentity>
- -BodyParameter <IMicrosoftGraphAppRoleAssignment> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphAppRoleAssignment> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -40,8 +38,8 @@ Update-MgServicePrincipalAppRoleAssignment -InputObject <IApplicationsIdentity>
 Update-MgServicePrincipalAppRoleAssignment -InputObject <IApplicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-AppRoleId <String>] [-CreatedDateTime <DateTime>]
  [-DeletedDateTime <DateTime>] [-Id <String>] [-PrincipalDisplayName <String>] [-PrincipalId <String>]
- [-PrincipalType <String>] [-ResourceDisplayName <String>] [-ResourceId <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PrincipalType <String>] [-ResourceDisplayName <String>] [-ResourceId <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -160,21 +158,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -348,13 +331,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAppRoleAssignment
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAppRoleAssignment
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -399,7 +378,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[TargetDeviceGroupId <String>]`: The unique identifier of targetDeviceGroup
   - `[TokenIssuancePolicyId <String>]`: The unique identifier of tokenIssuancePolicy
   - `[TokenLifetimePolicyId <String>]`: The unique identifier of tokenLifetimePolicy
-  - `[UniqueName <String>]`: Alternate key of application
   - `[UserId <String>]`: The unique identifier of user
 
 ## RELATED LINKS

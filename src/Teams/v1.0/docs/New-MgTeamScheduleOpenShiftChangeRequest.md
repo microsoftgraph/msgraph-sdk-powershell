@@ -17,21 +17,19 @@ Create instance of an openShiftChangeRequest object.
 New-MgTeamScheduleOpenShiftChangeRequest -TeamId <String> [-AdditionalProperties <Hashtable>]
  [-AssignedTo <String>] [-Id <String>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
  [-ManagerActionMessage <String>] [-OpenShiftId <String>] [-SenderMessage <String>] [-State <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgTeamScheduleOpenShiftChangeRequest -TeamId <String>
- -BodyParameter <IMicrosoftGraphOpenShiftChangeRequest> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphOpenShiftChangeRequest> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgTeamScheduleOpenShiftChangeRequest -InputObject <ITeamsIdentity>
- -BodyParameter <IMicrosoftGraphOpenShiftChangeRequest> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphOpenShiftChangeRequest> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -39,7 +37,7 @@ New-MgTeamScheduleOpenShiftChangeRequest -InputObject <ITeamsIdentity>
 New-MgTeamScheduleOpenShiftChangeRequest -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
  [-AssignedTo <String>] [-Id <String>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
  [-ManagerActionMessage <String>] [-OpenShiftId <String>] [-SenderMessage <String>] [-State <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -101,21 +99,6 @@ Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -285,13 +268,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOpenShiftChangeRequest
-
-### System.Collections.Hashtable
 
 ## NOTES
 

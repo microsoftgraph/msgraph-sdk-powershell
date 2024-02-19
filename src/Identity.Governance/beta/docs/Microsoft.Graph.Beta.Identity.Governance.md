@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Identity.Governance
-Module Guid: c46948f5-4c56-496e-ae78-1f961c56698e
+Module Guid: 2b48e72e-f783-401a-be39-bbdad7af8927
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.identity.governance
 Help Version: 1.0.0.0
 Locale: en-US
@@ -197,7 +197,7 @@ Get the number of the resource
 Retrieve the properties and relationships of an accessPackageCatalog object.
 
 ### [Get-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageCustomWorkflowExtension](Get-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageCustomWorkflowExtension.md)
-Read the properties and relationships of an accessPackageAssignmentRequestWorkflowExtension object.
+Read the properties and relationships of an accessPackageAssignmentWorkflowExtension object.
 
 ### [Get-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageResource](Get-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageResource.md)
 Retrieve a list of accessPackageResource objects in an accessPackageCatalog.
@@ -257,22 +257,6 @@ Represents a request to add or remove a resource to or from a catalog respective
 ### [Get-MgBetaEntitlementManagementAccessPackageResourceRequestCount](Get-MgBetaEntitlementManagementAccessPackageResourceRequestCount.md)
 Get the number of the resource
 
-### [Get-MgBetaEntitlementManagementAssignmentRequest](Get-MgBetaEntitlementManagementAssignmentRequest.md)
-Represents access package assignment requests created by or on behalf of a user.
-
-### [Get-MgBetaEntitlementManagementAssignmentRequestAccessPackageAssignment](Get-MgBetaEntitlementManagementAssignmentRequestAccessPackageAssignment.md)
-For a requestType of UserAdd or AdminAdd, this is an access package assignment requested to be created.
-For a requestType of UserRemove, AdminRemove or SystemRemove, this has the id property of an existing assignment to be removed.
-Supports $expand.
-
-### [Get-MgBetaEntitlementManagementAssignmentRequestCount](Get-MgBetaEntitlementManagementAssignmentRequestCount.md)
-Get the number of the resource
-
-### [Get-MgBetaEntitlementManagementAssignmentRequestRequestorConnectedOrganization](Get-MgBetaEntitlementManagementAssignmentRequestRequestorConnectedOrganization.md)
-The connected organization of the subject.
-Read-only.
-Nullable.
-
 ### [Get-MgBetaEntitlementManagementConnectedOrganization](Get-MgBetaEntitlementManagementConnectedOrganization.md)
 Retrieve the properties and relationships of a connectedOrganization object.
 
@@ -305,9 +289,6 @@ Get the number of the resource
 Retrieve the properties of an entitlementManagementSettings object.
 
 ### [Get-MgBetaEntitlementManagementSubject](Get-MgBetaEntitlementManagementSubject.md)
-Represents the subjects within entitlement management.
-
-### [Get-MgBetaEntitlementManagementSubjectByObjectId](Get-MgBetaEntitlementManagementSubjectByObjectId.md)
 Represents the subjects within entitlement management.
 
 ### [Get-MgBetaEntitlementManagementSubjectConnectedOrganization](Get-MgBetaEntitlementManagementSubjectConnectedOrganization.md)
@@ -922,22 +903,6 @@ Read the properties and relationships of a permissionsRequestChange object.
 
 ### [Get-MgBetaIdentityGovernancePermissionManagementPermissionRequestChangeCount](Get-MgBetaIdentityGovernancePermissionManagementPermissionRequestChangeCount.md)
 Get the number of the resource
-
-### [Get-MgBetaIdentityGovernancePermissionManagementScheduledPermissionApproval](Get-MgBetaIdentityGovernancePermissionManagementScheduledPermissionApproval.md)
-Get scheduledPermissionsApprovals from identityGovernance
-
-### [Get-MgBetaIdentityGovernancePermissionManagementScheduledPermissionApprovalCount](Get-MgBetaIdentityGovernancePermissionManagementScheduledPermissionApprovalCount.md)
-Get the number of the resource
-
-### [Get-MgBetaIdentityGovernancePermissionManagementScheduledPermissionApprovalStep](Get-MgBetaIdentityGovernancePermissionManagementScheduledPermissionApprovalStep.md)
-Retrieve the properties of an approvalStep object.
-
-### [Get-MgBetaIdentityGovernancePermissionManagementScheduledPermissionApprovalStepCount](Get-MgBetaIdentityGovernancePermissionManagementScheduledPermissionApprovalStepCount.md)
-Get the number of the resource
-
-### [Get-MgBetaIdentityGovernancePermissionManagementScheduledPermissionRequest](Get-MgBetaIdentityGovernancePermissionManagementScheduledPermissionRequest.md)
-Represents a permissions request that Permissions Management uses to manage permissions for an identity on resources in the authorization system.
-This request can be granted, rejected or canceled by identities in Permissions Management.
 
 ### [Get-MgBetaIdentityGovernancePrivilegedAccess](Get-MgBetaIdentityGovernancePrivilegedAccess.md)
 Get privilegedAccess from identityGovernance
@@ -2318,9 +2283,6 @@ Invoke function filterByCurrentUser
 ### [Invoke-MgBetaFilterEntitlementManagementAccessPackageByCurrentUser](Invoke-MgBetaFilterEntitlementManagementAccessPackageByCurrentUser.md)
 Invoke function filterByCurrentUser
 
-### [Invoke-MgBetaFilterEntitlementManagementAssignmentRequestByCurrentUser](Invoke-MgBetaFilterEntitlementManagementAssignmentRequestByCurrentUser.md)
-Invoke function filterByCurrentUser
-
 ### [Invoke-MgBetaFilterIdentityGovernanceAccessReviewDecisionByCurrentUser](Invoke-MgBetaFilterIdentityGovernanceAccessReviewDecisionByCurrentUser.md)
 Invoke function filterByCurrentUser
 
@@ -2352,12 +2314,6 @@ Invoke function filterByCurrentUser
 Invoke function filterByCurrentUser
 
 ### [Invoke-MgBetaFilterIdentityGovernanceAppConsentRequestUserConsentRequestByCurrentUser](Invoke-MgBetaFilterIdentityGovernanceAppConsentRequestUserConsentRequestByCurrentUser.md)
-Invoke function filterByCurrentUser
-
-### [Invoke-MgBetaFilterIdentityGovernancePermissionManagementScheduledPermissionApprovalByCurrentUser](Invoke-MgBetaFilterIdentityGovernancePermissionManagementScheduledPermissionApprovalByCurrentUser.md)
-Invoke function filterByCurrentUser
-
-### [Invoke-MgBetaFilterIdentityGovernancePermissionManagementScheduledPermissionRequestByCurrentUser](Invoke-MgBetaFilterIdentityGovernancePermissionManagementScheduledPermissionRequestByCurrentUser.md)
 Invoke function filterByCurrentUser
 
 ### [Invoke-MgBetaFilterIdentityGovernancePrivilegedAccessGroupAssignmentApprovalByCurrentUser](Invoke-MgBetaFilterIdentityGovernancePrivilegedAccessGroupAssignmentApprovalByCurrentUser.md)
@@ -2627,10 +2583,6 @@ Create a new accessPackageResourceRoleScope for adding a resource role to an acc
 The access package resource, for a group, an app, or a SharePoint Online site, must already exist in the access package catalog, and the originId for the resource role retrieved from the list of the resource roles.
 Once you add the resource role scope to the access package, the user will receive this resource role through any current and future access package assignments.
 
-### [New-MgBetaEntitlementManagementAssignmentRequest](New-MgBetaEntitlementManagementAssignmentRequest.md)
-In Microsoft Entra Entitlement Management, create a new accessPackageAssignmentRequest object.
-This operation is used to assign a user to an access package, update the assignment, or to remove an access package assignment.
-
 ### [New-MgBetaEntitlementManagementConnectedOrganization](New-MgBetaEntitlementManagementConnectedOrganization.md)
 Create a new connectedOrganization object.
 
@@ -2755,12 +2707,6 @@ Create new navigation property to permissionsCreepIndexDistributions for identit
 
 ### [New-MgBetaIdentityGovernancePermissionManagementPermissionRequestChange](New-MgBetaIdentityGovernancePermissionManagementPermissionRequestChange.md)
 Create new navigation property to permissionsRequestChanges for identityGovernance
-
-### [New-MgBetaIdentityGovernancePermissionManagementScheduledPermissionApproval](New-MgBetaIdentityGovernancePermissionManagementScheduledPermissionApproval.md)
-Create new navigation property to scheduledPermissionsApprovals for identityGovernance
-
-### [New-MgBetaIdentityGovernancePermissionManagementScheduledPermissionApprovalStep](New-MgBetaIdentityGovernancePermissionManagementScheduledPermissionApprovalStep.md)
-Create new navigation property to steps for identityGovernance
 
 ### [New-MgBetaIdentityGovernancePermissionManagementScheduledPermissionRequest](New-MgBetaIdentityGovernancePermissionManagementScheduledPermissionRequest.md)
 Create a new scheduledPermissionsRequest object.
@@ -3120,14 +3066,14 @@ Delete an accessPackageCatalog.
 Delete navigation property accessPackageCustomWorkflowExtensions for identityGovernance
 
 ### [Remove-MgBetaEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension](Remove-MgBetaEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension.md)
-Delete a customAccessPackageWorkflowExtension object.
+Delete an accessPackageAssignmentWorkflowExtension object.
 The custom workflow extension must first be removed from any associated policies before it can be deleted.
 Follow these steps to remove the custom workflow extension from any associated policies:\n1.
 First retrieve the accessPackageCatalogId by calling the Get accessPackageAssignmentPolicies operation and appending ?$expand=accessPackage($expand=accessPackageCatalog) to the query.
 For example, https://graph.microsoft.com/beta/identityGovernance/entitlementManagement/accessPackageAssignmentPolicies?$expand=accessPackage($expand=accessPackageCatalog).\n2.
-Use the access package catalog ID and retrieve the ID of the customAccessPackageWorkflowExtension object that you want to delete by running the LIST customAccessPackageWorkflowExtensions operation.\n3.
+Use the access package catalog ID and retrieve the ID of the accessPackageCustomWorkflowExtension object that you want to delete by running the List accessPackageCustomWorkflowExtensions operation.\n3.
 Call the Update accessPackageAssignmentPolicy operation to remove the custom workflow extension object from the policy.
-For an example, see Example 2: Remove the customExtensionHandlers and verifiableCredentialSettings from a policy.
+For an example, see Example 3: Remove the customExtensionStageSettings from a policy.
 
 ### [Remove-MgBetaEntitlementManagementAccessPackageIncompatibleAccessPackageByRef](Remove-MgBetaEntitlementManagementAccessPackageIncompatibleAccessPackageByRef.md)
 Remove an access package from the list of access packages that have been marked as incompatible on an accessPackage.
@@ -3141,9 +3087,6 @@ Delete navigation property accessPackageResourceRequests for identityGovernance
 ### [Remove-MgBetaEntitlementManagementAccessPackageResourceRoleScope](Remove-MgBetaEntitlementManagementAccessPackageResourceRoleScope.md)
 Delete navigation property accessPackageResourceRoleScopes for identityGovernance
 
-### [Remove-MgBetaEntitlementManagementAssignmentRequest](Remove-MgBetaEntitlementManagementAssignmentRequest.md)
-Delete navigation property assignmentRequests for identityGovernance
-
 ### [Remove-MgBetaEntitlementManagementConnectedOrganization](Remove-MgBetaEntitlementManagementConnectedOrganization.md)
 Delete a connectedOrganization object.
 
@@ -3156,9 +3099,6 @@ Remove a user or a group from the connected organization's internal sponsors.
 The internal sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
 
 ### [Remove-MgBetaEntitlementManagementSubject](Remove-MgBetaEntitlementManagementSubject.md)
-Delete navigation property subjects for identityGovernance
-
-### [Remove-MgBetaEntitlementManagementSubjectByObjectId](Remove-MgBetaEntitlementManagementSubjectByObjectId.md)
 Delete navigation property subjects for identityGovernance
 
 ### [Remove-MgBetaIdentityGovernanceAccessReviewDecision](Remove-MgBetaIdentityGovernanceAccessReviewDecision.md)
@@ -3297,12 +3237,6 @@ Delete navigation property permissionsManagement for identityGovernance
 
 ### [Remove-MgBetaIdentityGovernancePermissionManagementPermissionRequestChange](Remove-MgBetaIdentityGovernancePermissionManagementPermissionRequestChange.md)
 Delete navigation property permissionsRequestChanges for identityGovernance
-
-### [Remove-MgBetaIdentityGovernancePermissionManagementScheduledPermissionApproval](Remove-MgBetaIdentityGovernancePermissionManagementScheduledPermissionApproval.md)
-Delete navigation property scheduledPermissionsApprovals for identityGovernance
-
-### [Remove-MgBetaIdentityGovernancePermissionManagementScheduledPermissionApprovalStep](Remove-MgBetaIdentityGovernancePermissionManagementScheduledPermissionApprovalStep.md)
-Delete navigation property steps for identityGovernance
 
 ### [Remove-MgBetaIdentityGovernancePrivilegedAccess](Remove-MgBetaIdentityGovernancePrivilegedAccess.md)
 Delete navigation property privilegedAccess for identityGovernance
@@ -3692,10 +3626,6 @@ You can only restore a workflow that was deleted within the last 30 days before 
 In Microsoft Entra entitlement management, when an access package policy has been enabled to call out a custom extension and the request processing is waiting for the callback from the customer, the customer can initiate a resume action.
 It is performed on an accessPackageAssignmentRequest object whose requestStatus is in a WaitingForCallback state.
 
-### [Resume-MgBetaEntitlementManagementAssignmentRequest](Resume-MgBetaEntitlementManagementAssignmentRequest.md)
-In Microsoft Entra entitlement management, when an access package policy has been enabled to call out a custom extension and the request processing is waiting for the callback from the customer, the customer can initiate a resume action.
-It is performed on an accessPackageAssignmentRequest object whose requestStatus is in a WaitingForCallback state.
-
 ### [Resume-MgBetaIdentityGovernanceLifecycleWorkflowRunTaskProcessingResult](Resume-MgBetaIdentityGovernanceLifecycleWorkflowRunTaskProcessingResult.md)
 Resume a task processing result that's inProgress.
 In the default case an Azure Logic Apps system-assigned managed identity calls this API.
@@ -3744,9 +3674,6 @@ Send a reminder to the reviewers of a currently active accessReviewInstance.
 ### [Set-MgBetaEntitlementManagementAccessPackageAssignmentPolicy](Set-MgBetaEntitlementManagementAccessPackageAssignmentPolicy.md)
 Update the navigation property accessPackageAssignmentPolicies in identityGovernance
 
-### [Set-MgBetaIdentityGovernanceAccessReviewDefinition](Set-MgBetaIdentityGovernanceAccessReviewDefinition.md)
-Update the navigation property definitions in identityGovernance
-
 ### [Split-MgBetaEntitlementManagementConnectedOrganization](Split-MgBetaEntitlementManagementConnectedOrganization.md)
 Split elements of a connectedOrganization
 
@@ -3763,9 +3690,6 @@ The target object can be either a one-time access review, or an instance of a re
 After the access review stops, reviewers can no longer give input, and the access review decisions can be applied.
 
 ### [Stop-MgBetaEntitlementManagementAccessPackageAssignmentRequest](Stop-MgBetaEntitlementManagementAccessPackageAssignmentRequest.md)
-In Microsoft Entra Entitlement Management, cancel accessPackageAssignmentRequest objects that are in a cancelable state: accepted, pendingApproval, pendingNotBefore, pendingApprovalEscalated.
-
-### [Stop-MgBetaEntitlementManagementAssignmentRequest](Stop-MgBetaEntitlementManagementAssignmentRequest.md)
 In Microsoft Entra Entitlement Management, cancel accessPackageAssignmentRequest objects that are in a cancelable state: accepted, pendingApproval, pendingNotBefore, pendingApprovalEscalated.
 
 ### [Stop-MgBetaIdentityGovernanceAccessReviewDecisionInstance](Stop-MgBetaIdentityGovernanceAccessReviewDecisionInstance.md)
@@ -3928,9 +3852,6 @@ Update the navigation property accessPackageResourceRequests in identityGovernan
 ### [Update-MgBetaEntitlementManagementAccessPackageResourceRoleScope](Update-MgBetaEntitlementManagementAccessPackageResourceRoleScope.md)
 Update the navigation property accessPackageResourceRoleScopes in identityGovernance
 
-### [Update-MgBetaEntitlementManagementAssignmentRequest](Update-MgBetaEntitlementManagementAssignmentRequest.md)
-Invoke action reprocess
-
 ### [Update-MgBetaEntitlementManagementConnectedOrganization](Update-MgBetaEntitlementManagementConnectedOrganization.md)
 Update a connectedOrganization object to change one or more of its properties.
 
@@ -3938,9 +3859,6 @@ Update a connectedOrganization object to change one or more of its properties.
 Update an existing entitlementManagementSettings object to change one or more of its properties.
 
 ### [Update-MgBetaEntitlementManagementSubject](Update-MgBetaEntitlementManagementSubject.md)
-Update the navigation property subjects in identityGovernance
-
-### [Update-MgBetaEntitlementManagementSubjectByObjectId](Update-MgBetaEntitlementManagementSubjectByObjectId.md)
 Update the navigation property subjects in identityGovernance
 
 ### [Update-MgBetaIdentityGovernanceAccessReviewDecision](Update-MgBetaIdentityGovernanceAccessReviewDecision.md)
@@ -3972,6 +3890,9 @@ Update access decisions, known as accessReviewInstanceDecisionItems, for which t
 
 ### [Update-MgBetaIdentityGovernanceAccessReviewDecisionInstanceStageDecisionInsight](Update-MgBetaIdentityGovernanceAccessReviewDecisionInstanceStageDecisionInsight.md)
 Update the navigation property insights in identityGovernance
+
+### [Update-MgBetaIdentityGovernanceAccessReviewDefinition](Update-MgBetaIdentityGovernanceAccessReviewDefinition.md)
+Update an existing accessReviewScheduleDefinition object to change one or more of its properties.
 
 ### [Update-MgBetaIdentityGovernanceAccessReviewDefinitionInstance](Update-MgBetaIdentityGovernanceAccessReviewDefinitionInstance.md)
 Update the properties of an accessReviewInstance object.
@@ -4121,12 +4042,6 @@ Update the navigation property permissionsManagement in identityGovernance
 
 ### [Update-MgBetaIdentityGovernancePermissionManagementPermissionRequestChange](Update-MgBetaIdentityGovernancePermissionManagementPermissionRequestChange.md)
 Update the navigation property permissionsRequestChanges in identityGovernance
-
-### [Update-MgBetaIdentityGovernancePermissionManagementScheduledPermissionApproval](Update-MgBetaIdentityGovernancePermissionManagementScheduledPermissionApproval.md)
-Update the navigation property scheduledPermissionsApprovals in identityGovernance
-
-### [Update-MgBetaIdentityGovernancePermissionManagementScheduledPermissionApprovalStep](Update-MgBetaIdentityGovernancePermissionManagementScheduledPermissionApprovalStep.md)
-Apply approve or deny decision on an approvalStep object.
 
 ### [Update-MgBetaIdentityGovernancePrivilegedAccess](Update-MgBetaIdentityGovernancePrivilegedAccess.md)
 Update the navigation property privilegedAccess in identityGovernance

@@ -15,29 +15,27 @@ Create new navigation property to verificationDnsRecords for domains
 ### CreateExpanded (Default)
 ```
 New-MgBetaDomainVerificationDnsRecord -DomainId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
- [-IsOptional] [-Label <String>] [-RecordType <String>] [-SupportedService <String>] [-Ttl <Int32>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-IsOptional] [-Label <String>] [-RecordType <String>] [-SupportedService <String>] [-Ttl <Int32>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaDomainVerificationDnsRecord -DomainId <String> -BodyParameter <IMicrosoftGraphDomainDnsRecord>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaDomainVerificationDnsRecord -InputObject <IIdentityDirectoryManagementIdentity>
- -BodyParameter <IMicrosoftGraphDomainDnsRecord> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphDomainDnsRecord> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgBetaDomainVerificationDnsRecord -InputObject <IIdentityDirectoryManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-IsOptional] [-Label <String>] [-RecordType <String>]
- [-SupportedService <String>] [-Ttl <Int32>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-SupportedService <String>] [-Ttl <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -47,17 +45,10 @@ Create new navigation property to verificationDnsRecords for domains
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
 ```
 
-
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-
+Get-MgBetaDomainVerificationDnsRecord -DomainId $domainId
 
 ## PARAMETERS
 
@@ -104,21 +95,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -272,13 +248,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDomainDnsRecord
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDomainDnsRecord
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -305,7 +277,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[CertificateAuthorityAsEntityId <String>]`: The unique identifier of certificateAuthorityAsEntity
   - `[CertificateBasedApplicationConfigurationId <String>]`: The unique identifier of certificateBasedApplicationConfiguration
   - `[CommandId <String>]`: The unique identifier of command
-  - `[CommerceSubscriptionId <String>]`: Alternate key of companySubscription
   - `[CompanySubscriptionId <String>]`: The unique identifier of companySubscription
   - `[ContractId <String>]`: The unique identifier of contract
   - `[CustomSecurityAttributeDefinitionId <String>]`: The unique identifier of customSecurityAttributeDefinition
@@ -326,7 +297,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[InternalDomainFederationId <String>]`: The unique identifier of internalDomainFederation
   - `[ManagedTenantAlertId <String>]`: The unique identifier of managedTenantAlert
   - `[ManagementActionId <String>]`: The unique identifier of managementAction
-  - `[OcpSubscriptionId <String>]`: Alternate key of companySubscription
   - `[OnPremisesDirectorySynchronizationId <String>]`: The unique identifier of onPremisesDirectorySynchronization
   - `[OrgContactId <String>]`: The unique identifier of orgContact
   - `[OrganizationId <String>]`: The unique identifier of organization

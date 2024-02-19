@@ -18,29 +18,27 @@ Only teachers can perform this operation.
 Update-MgBetaEducationUserAssignmentSubmissionOutcome -EducationAssignmentId <String>
  -EducationOutcomeId <String> -EducationSubmissionId <String> -EducationUserId <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
- [-LastModifiedDateTime <DateTime>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-LastModifiedDateTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaEducationUserAssignmentSubmissionOutcome -EducationAssignmentId <String>
  -EducationOutcomeId <String> -EducationSubmissionId <String> -EducationUserId <String>
- -BodyParameter <IMicrosoftGraphEducationOutcome> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphEducationOutcome> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaEducationUserAssignmentSubmissionOutcome -InputObject <IEducationIdentity>
- -BodyParameter <IMicrosoftGraphEducationOutcome> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphEducationOutcome> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgBetaEducationUserAssignmentSubmissionOutcome -InputObject <IEducationIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
- [-LastModifiedDateTime <DateTime>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-LastModifiedDateTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -54,14 +52,14 @@ Only teachers can perform this operation.
 {{ Add code here }}
 ```
 
-
+{{ Add output here }}
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
 {{ Add code here }}
 ```
 
-
+{{ Add output here }}
 
 ## PARAMETERS
 
@@ -153,21 +151,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -276,13 +259,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationOutcome
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationOutcome
-
-### System.Collections.Hashtable
 
 ## NOTES
 

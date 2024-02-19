@@ -16,30 +16,26 @@ Update the navigation property operations in communications
 ```
 Update-MgCommunicationCallOperation -CallId <String> -CommsOperationId <String>
  [-AdditionalProperties <Hashtable>] [-ClientContext <String>] [-Id <String>]
- [-ResultInfo <IMicrosoftGraphResultInfo>] [-Status <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-ResultInfo <IMicrosoftGraphResultInfo>] [-Status <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgCommunicationCallOperation -CallId <String> -CommsOperationId <String>
- -BodyParameter <IMicrosoftGraphCommsOperation> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphCommsOperation> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgCommunicationCallOperation -InputObject <ICloudCommunicationsIdentity>
- -BodyParameter <IMicrosoftGraphCommsOperation> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphCommsOperation> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgCommunicationCallOperation -InputObject <ICloudCommunicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-ClientContext <String>] [-Id <String>]
- [-ResultInfo <IMicrosoftGraphResultInfo>] [-Status <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-ResultInfo <IMicrosoftGraphResultInfo>] [-Status <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -137,21 +133,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -258,13 +239,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCommsOperation
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCommsOperation
-
-### System.Collections.Hashtable
 
 ## NOTES
 

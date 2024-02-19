@@ -15,14 +15,13 @@ Update the navigation property internetExplorerMode in admin
 ### UpdateExpanded (Default)
 ```
 Update-MgAdminEdgeInternetExplorerMode [-AdditionalProperties <Hashtable>] [-Id <String>]
- [-SiteLists <IMicrosoftGraphBrowserSiteList[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-SiteLists <IMicrosoftGraphBrowserSiteList[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgAdminEdgeInternetExplorerMode -BodyParameter <IMicrosoftGraphInternetExplorerMode>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgAdminEdgeInternetExplorerMode -BodyParameter <IMicrosoftGraphInternetExplorerMode> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -71,21 +70,6 @@ Parameter Sets: Update
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -162,13 +146,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInternetExplorerMode
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInternetExplorerMode
-
-### System.Collections.Hashtable
 
 ## NOTES
 

@@ -16,30 +16,26 @@ Update the navigation property resourceNamespaces in roleManagement
 ```
 Update-MgRoleManagementDirectoryResourceNamespace -UnifiedRbacResourceNamespaceId <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Name <String>]
- [-ResourceActions <IMicrosoftGraphUnifiedRbacResourceAction[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-ResourceActions <IMicrosoftGraphUnifiedRbacResourceAction[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgRoleManagementDirectoryResourceNamespace -UnifiedRbacResourceNamespaceId <String>
- -BodyParameter <IMicrosoftGraphUnifiedRbacResourceNamespace> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphUnifiedRbacResourceNamespace> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgRoleManagementDirectoryResourceNamespace -InputObject <IIdentityGovernanceIdentity>
- -BodyParameter <IMicrosoftGraphUnifiedRbacResourceNamespace> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphUnifiedRbacResourceNamespace> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgRoleManagementDirectoryResourceNamespace -InputObject <IIdentityGovernanceIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Name <String>]
- [-ResourceActions <IMicrosoftGraphUnifiedRbacResourceAction[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-ResourceActions <IMicrosoftGraphUnifiedRbacResourceAction[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -88,21 +84,6 @@ Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -227,13 +208,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUnifiedRbacResourceNamespace
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUnifiedRbacResourceNamespace
-
-### System.Collections.Hashtable
 
 ## NOTES
 

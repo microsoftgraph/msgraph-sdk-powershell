@@ -17,22 +17,20 @@ Create new navigation property to submittedResources for education
 New-MgBetaEducationMeAssignmentSubmissionSubmittedResource -EducationAssignmentId <String>
  -EducationSubmissionId <String> [-AdditionalProperties <Hashtable>] [-AssignmentResourceUrl <String>]
  [-DependentResources <IMicrosoftGraphEducationSubmissionResource[]>] [-Id <String>]
- [-Resource <IMicrosoftGraphEducationResource>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Resource <IMicrosoftGraphEducationResource>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaEducationMeAssignmentSubmissionSubmittedResource -EducationAssignmentId <String>
- -EducationSubmissionId <String> -BodyParameter <IMicrosoftGraphEducationSubmissionResource>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -EducationSubmissionId <String> -BodyParameter <IMicrosoftGraphEducationSubmissionResource> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaEducationMeAssignmentSubmissionSubmittedResource -InputObject <IEducationIdentity>
- -BodyParameter <IMicrosoftGraphEducationSubmissionResource> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphEducationSubmissionResource> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -40,8 +38,7 @@ New-MgBetaEducationMeAssignmentSubmissionSubmittedResource -InputObject <IEducat
 New-MgBetaEducationMeAssignmentSubmissionSubmittedResource -InputObject <IEducationIdentity>
  [-AdditionalProperties <Hashtable>] [-AssignmentResourceUrl <String>]
  [-DependentResources <IMicrosoftGraphEducationSubmissionResource[]>] [-Id <String>]
- [-Resource <IMicrosoftGraphEducationResource>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Resource <IMicrosoftGraphEducationResource>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -51,17 +48,10 @@ Create new navigation property to submittedResources for education
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Beta.Education
 ```
 
-
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-
+Get-MgBetaEducationClassAssignmentSubmissionSubmittedResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId
 
 ## PARAMETERS
 
@@ -158,21 +148,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -261,13 +236,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationSubmissionResource
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationSubmissionResource
-
-### System.Collections.Hashtable
 
 ## NOTES
 

@@ -16,29 +16,27 @@ Update the navigation property apps in deviceAppManagement
 ```
 Update-MgBetaDeviceAppManagementiOSManagedAppProtectionApp -IosManagedAppProtectionId <String>
  -ManagedMobileAppId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
- [-MobileAppIdentifier <Hashtable>] [-Version <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-MobileAppIdentifier <Hashtable>] [-Version <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaDeviceAppManagementiOSManagedAppProtectionApp -IosManagedAppProtectionId <String>
- -ManagedMobileAppId <String> -BodyParameter <IMicrosoftGraphManagedMobileApp> [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -ManagedMobileAppId <String> -BodyParameter <IMicrosoftGraphManagedMobileApp> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaDeviceAppManagementiOSManagedAppProtectionApp -InputObject <IDevicesCorporateManagementIdentity>
- -BodyParameter <IMicrosoftGraphManagedMobileApp> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphManagedMobileApp> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgBetaDeviceAppManagementiOSManagedAppProtectionApp -InputObject <IDevicesCorporateManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-MobileAppIdentifier <Hashtable>] [-Version <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -87,21 +85,6 @@ Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -240,13 +223,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedMobileApp
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedMobileApp
-
-### System.Collections.Hashtable
 
 ## NOTES
 

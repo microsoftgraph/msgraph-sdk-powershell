@@ -16,13 +16,13 @@ Read-only.
 ### Get (Default)
 ```
 Get-MgGroupDriveCreatedByUser -DriveId <String> -GroupId <String> [-ExpandProperty <String[]>]
- [-Property <String[]>] [-Headers <IDictionary>] [<CommonParameters>]
+ [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
 Get-MgGroupDriveCreatedByUser -InputObject <IFilesIdentity> [-ExpandProperty <String[]>]
- [-Property <String[]>] [-Headers <IDictionary>] [<CommonParameters>]
+ [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -92,21 +92,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -145,13 +130,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IFilesIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUser
-
-### System.Collections.Hashtable
 
 ## NOTES
 

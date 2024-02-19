@@ -17,30 +17,26 @@ Use this configuration to enable or disable the Microsoft Entra ID Remote Deskto
 ```
 Update-MgBetaServicePrincipalRemoteDesktopSecurityConfiguration -ServicePrincipalId <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-IsRemoteDesktopProtocolEnabled]
- [-TargetDeviceGroups <IMicrosoftGraphTargetDeviceGroup[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-TargetDeviceGroups <IMicrosoftGraphTargetDeviceGroup[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaServicePrincipalRemoteDesktopSecurityConfiguration -ServicePrincipalId <String>
- -BodyParameter <IMicrosoftGraphRemoteDesktopSecurityConfiguration> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphRemoteDesktopSecurityConfiguration> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaServicePrincipalRemoteDesktopSecurityConfiguration -InputObject <IApplicationsIdentity>
- -BodyParameter <IMicrosoftGraphRemoteDesktopSecurityConfiguration> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphRemoteDesktopSecurityConfiguration> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgBetaServicePrincipalRemoteDesktopSecurityConfiguration -InputObject <IApplicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-IsRemoteDesktopProtocolEnabled]
- [-TargetDeviceGroups <IMicrosoftGraphTargetDeviceGroup[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-TargetDeviceGroups <IMicrosoftGraphTargetDeviceGroup[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -90,21 +86,6 @@ Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -229,13 +210,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRemoteDesktopSecurityConfiguration
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRemoteDesktopSecurityConfiguration
-
-### System.Collections.Hashtable
 
 ## NOTES
 

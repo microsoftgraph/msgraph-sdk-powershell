@@ -17,28 +17,27 @@ NOTE: This functionality is currently only available for OneDrive Personal.
 ```
 Restore-MgUserDriveItem -DriveId <String> -DriveItemId <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-Name <String>] [-ParentReference <IMicrosoftGraphItemReference>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Restore
 ```
 Restore-MgUserDriveItem -DriveId <String> -DriveItemId <String> -UserId <String>
  -BodyParameter <IPaths14Ul7QfUsersUserIdDrivesDriveIdItemsDriveitemIdMicrosoftGraphRestorePostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RestoreViaIdentity
 ```
 Restore-MgUserDriveItem -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPaths14Ul7QfUsersUserIdDrivesDriveIdItemsDriveitemIdMicrosoftGraphRestorePostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RestoreViaIdentityExpanded
 ```
 Restore-MgUserDriveItem -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
- [-Name <String>] [-ParentReference <IMicrosoftGraphItemReference>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-Name <String>] [-ParentReference <IMicrosoftGraphItemReference>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -121,21 +120,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -241,13 +225,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDriveItem
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -303,7 +283,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[NotebookId <String>]`: The unique identifier of notebook
   - `[OnenotePageId <String>]`: The unique identifier of onenotePage
   - `[OnenoteSectionId <String>]`: The unique identifier of onenoteSection
-  - `[OnlineMeetingId <String>]`: The unique identifier of onlineMeeting
   - `[PermissionId <String>]`: The unique identifier of permission
   - `[PhoneAuthenticationMethodId <String>]`: The unique identifier of phoneAuthenticationMethod
   - `[SubscriptionId <String>]`: The unique identifier of subscription

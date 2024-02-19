@@ -18,22 +18,22 @@ New-MgBetaDeviceManagementCompliancePolicyScheduledActionForRuleScheduledActionC
  -DeviceManagementCompliancePolicyId <String> -DeviceManagementComplianceScheduledActionForRuleId <String>
  [-ActionType <DeviceManagementComplianceActionType>] [-AdditionalProperties <Hashtable>]
  [-GracePeriodHours <Int32>] [-Id <String>] [-NotificationMessageCcList <String[]>]
- [-NotificationTemplateId <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-NotificationTemplateId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaDeviceManagementCompliancePolicyScheduledActionForRuleScheduledActionConfiguration
  -DeviceManagementCompliancePolicyId <String> -DeviceManagementComplianceScheduledActionForRuleId <String>
- -BodyParameter <IMicrosoftGraphDeviceManagementComplianceActionItem> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphDeviceManagementComplianceActionItem> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaDeviceManagementCompliancePolicyScheduledActionForRuleScheduledActionConfiguration
  -InputObject <IDeviceManagementIdentity> -BodyParameter <IMicrosoftGraphDeviceManagementComplianceActionItem>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -41,8 +41,8 @@ New-MgBetaDeviceManagementCompliancePolicyScheduledActionForRuleScheduledActionC
 New-MgBetaDeviceManagementCompliancePolicyScheduledActionForRuleScheduledActionConfiguration
  -InputObject <IDeviceManagementIdentity> [-ActionType <DeviceManagementComplianceActionType>]
  [-AdditionalProperties <Hashtable>] [-GracePeriodHours <Int32>] [-Id <String>]
- [-NotificationMessageCcList <String[]>] [-NotificationTemplateId <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-NotificationMessageCcList <String[]>] [-NotificationTemplateId <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -158,21 +158,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -276,13 +261,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementComplianceActionItem
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementComplianceActionItem
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -381,7 +362,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[MacOSSoftwareUpdateCategorySummaryId <String>]`: The unique identifier of macOSSoftwareUpdateCategorySummary
   - `[MacOSSoftwareUpdateStateSummaryId <String>]`: The unique identifier of macOSSoftwareUpdateStateSummary
   - `[MalwareStateForWindowsDeviceId <String>]`: The unique identifier of malwareStateForWindowsDevice
-  - `[ManagedDeviceCleanupRuleId <String>]`: The unique identifier of managedDeviceCleanupRule
   - `[ManagedDeviceEncryptionStateId <String>]`: The unique identifier of managedDeviceEncryptionState
   - `[ManagedDeviceId <String>]`: The unique identifier of managedDevice
   - `[ManagedDeviceMobileAppConfigurationStateId <String>]`: The unique identifier of managedDeviceMobileAppConfigurationState

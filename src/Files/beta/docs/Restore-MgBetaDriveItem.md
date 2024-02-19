@@ -15,29 +15,27 @@ Restore a driveItem that has been deleted and is currently in the recycle bin.
 ### RestoreExpanded (Default)
 ```
 Restore-MgBetaDriveItem -DriveId <String> -DriveItemId <String> [-AdditionalProperties <Hashtable>]
- [-Name <String>] [-ParentReference <IMicrosoftGraphItemReference>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-Name <String>] [-ParentReference <IMicrosoftGraphItemReference>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Restore
 ```
 Restore-MgBetaDriveItem -DriveId <String> -DriveItemId <String>
  -BodyParameter <IPaths17Wfo8EDrivesDriveIdItemsDriveitemIdMicrosoftGraphRestorePostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RestoreViaIdentity
 ```
 Restore-MgBetaDriveItem -InputObject <IFilesIdentity>
  -BodyParameter <IPaths17Wfo8EDrivesDriveIdItemsDriveitemIdMicrosoftGraphRestorePostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RestoreViaIdentityExpanded
 ```
 Restore-MgBetaDriveItem -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>] [-Name <String>]
- [-ParentReference <IMicrosoftGraphItemReference>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-ParentReference <IMicrosoftGraphItemReference>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -119,21 +117,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -224,13 +207,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPaths17Wfo8EDrivesDriveIdItemsDriveitemIdMicrosoftGraphRestorePostRequestbodyContentApplicationJsonSchema
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDriveItem
-
-### System.Collections.Hashtable
 
 ## NOTES
 

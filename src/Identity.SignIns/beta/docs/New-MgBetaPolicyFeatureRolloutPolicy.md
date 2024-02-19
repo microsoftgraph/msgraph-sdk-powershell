@@ -16,14 +16,14 @@ Create a new featureRolloutPolicy object.
 ```
 New-MgBetaPolicyFeatureRolloutPolicy [-AdditionalProperties <Hashtable>]
  [-AppliesTo <IMicrosoftGraphDirectoryObject[]>] [-Description <String>] [-DisplayName <String>]
- [-Feature <String>] [-Id <String>] [-IsAppliedToOrganization] [-IsEnabled] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Feature <String>] [-Id <String>] [-IsAppliedToOrganization] [-IsEnabled] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgBetaPolicyFeatureRolloutPolicy -BodyParameter <IMicrosoftGraphFeatureRolloutPolicy>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaPolicyFeatureRolloutPolicy -BodyParameter <IMicrosoftGraphFeatureRolloutPolicy> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -141,21 +141,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -240,13 +225,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphFeatureRolloutPolicy
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphFeatureRolloutPolicy
-
-### System.Collections.Hashtable
 
 ## NOTES
 

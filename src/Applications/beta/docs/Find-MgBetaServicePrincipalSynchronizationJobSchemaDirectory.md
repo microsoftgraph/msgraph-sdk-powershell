@@ -15,14 +15,13 @@ Discover the latest schema definition for provisioning to an application.
 ### Discover (Default)
 ```
 Find-MgBetaServicePrincipalSynchronizationJobSchemaDirectory -DirectoryDefinitionId <String>
- -ServicePrincipalId <String> -SynchronizationJobId <String> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -ServicePrincipalId <String> -SynchronizationJobId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DiscoverViaIdentity
 ```
-Find-MgBetaServicePrincipalSynchronizationJobSchemaDirectory -InputObject <IApplicationsIdentity>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Find-MgBetaServicePrincipalSynchronizationJobSchemaDirectory -InputObject <IApplicationsIdentity> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -51,21 +50,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -153,13 +137,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryDefinition
-
-### System.Collections.Hashtable
 
 ## NOTES
 

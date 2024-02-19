@@ -16,29 +16,27 @@ The response provides details about which memberships could and couldn't be crea
 ### AddExpanded (Default)
 ```
 Add-MgTeamPrimaryChannelMember -TeamId <String> [-AdditionalProperties <Hashtable>]
- [-Values <IMicrosoftGraphConversationMember[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Values <IMicrosoftGraphConversationMember[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Add
 ```
 Add-MgTeamPrimaryChannelMember -TeamId <String>
  -BodyParameter <IPathsU53MjcTeamsTeamIdPrimarychannelMembersMicrosoftGraphAddPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AddViaIdentity
 ```
 Add-MgTeamPrimaryChannelMember -InputObject <ITeamsIdentity>
  -BodyParameter <IPathsU53MjcTeamsTeamIdPrimarychannelMembersMicrosoftGraphAddPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AddViaIdentityExpanded
 ```
 Add-MgTeamPrimaryChannelMember -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
- [-Values <IMicrosoftGraphConversationMember[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Values <IMicrosoftGraphConversationMember[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -88,21 +86,6 @@ Parameter Sets: Add, AddViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -196,13 +179,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphActionResultPart
-
-### System.Collections.Hashtable
 
 ## NOTES
 

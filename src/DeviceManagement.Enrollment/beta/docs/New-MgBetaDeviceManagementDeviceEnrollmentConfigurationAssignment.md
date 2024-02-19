@@ -16,23 +16,21 @@ Create new navigation property to assignments for deviceManagement
 ```
 New-MgBetaDeviceManagementDeviceEnrollmentConfigurationAssignment -DeviceEnrollmentConfigurationId <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Source <DeviceAndAppManagementAssignmentSource>]
- [-SourceId <String>] [-Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-SourceId <String>] [-Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaDeviceManagementDeviceEnrollmentConfigurationAssignment -DeviceEnrollmentConfigurationId <String>
- -BodyParameter <IMicrosoftGraphEnrollmentConfigurationAssignment> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphEnrollmentConfigurationAssignment> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaDeviceManagementDeviceEnrollmentConfigurationAssignment
  -InputObject <IDeviceManagementEnrollmentIdentity>
- -BodyParameter <IMicrosoftGraphEnrollmentConfigurationAssignment> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphEnrollmentConfigurationAssignment> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -40,8 +38,7 @@ New-MgBetaDeviceManagementDeviceEnrollmentConfigurationAssignment
 New-MgBetaDeviceManagementDeviceEnrollmentConfigurationAssignment
  -InputObject <IDeviceManagementEnrollmentIdentity> [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-Source <DeviceAndAppManagementAssignmentSource>] [-SourceId <String>]
- [-Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -108,21 +105,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -244,13 +226,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEnrollmentConfigurationAssignment
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEnrollmentConfigurationAssignment
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -277,7 +255,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[AppScopeId <String>]`: The unique identifier of appScope
   - `[AppleEnrollmentProfileAssignmentId <String>]`: The unique identifier of appleEnrollmentProfileAssignment
   - `[AppleUserInitiatedEnrollmentProfileId <String>]`: The unique identifier of appleUserInitiatedEnrollmentProfile
-  - `[CustomAppScopeId <String>]`: The unique identifier of customAppScope
   - `[DepOnboardingSettingId <String>]`: The unique identifier of depOnboardingSetting
   - `[DeviceEnrollmentConfigurationId <String>]`: The unique identifier of deviceEnrollmentConfiguration
   - `[DeviceManagementAutopilotEventId <String>]`: The unique identifier of deviceManagementAutopilotEvent
@@ -290,7 +267,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[ImportedWindowsAutopilotDeviceIdentityId <String>]`: The unique identifier of importedWindowsAutopilotDeviceIdentity
   - `[UnifiedRbacResourceActionId <String>]`: The unique identifier of unifiedRbacResourceAction
   - `[UnifiedRbacResourceNamespaceId <String>]`: The unique identifier of unifiedRbacResourceNamespace
-  - `[UnifiedRoleAssignmentId <String>]`: The unique identifier of unifiedRoleAssignment
   - `[UnifiedRoleAssignmentMultipleId <String>]`: The unique identifier of unifiedRoleAssignmentMultiple
   - `[UnifiedRoleDefinitionId <String>]`: The unique identifier of unifiedRoleDefinition
   - `[UnifiedRoleDefinitionId1 <String>]`: The unique identifier of unifiedRoleDefinition

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgBetaIdentityConditionalAccessNamedLocation
 
 ## SYNOPSIS
-Update the properties of a countryNamedLocation object.
+Update the properties of an ipNamedLocation object.
 
 ## SYNTAX
 
@@ -16,32 +16,30 @@ Update the properties of a countryNamedLocation object.
 ```
 Update-MgBetaIdentityConditionalAccessNamedLocation -NamedLocationId <String>
  [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>] [-DisplayName <String>] [-Id <String>]
- [-ModifiedDateTime <DateTime>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ModifiedDateTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaIdentityConditionalAccessNamedLocation -NamedLocationId <String>
- -BodyParameter <IMicrosoftGraphNamedLocation> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphNamedLocation> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaIdentityConditionalAccessNamedLocation -InputObject <IIdentitySignInsIdentity>
- -BodyParameter <IMicrosoftGraphNamedLocation> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphNamedLocation> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgBetaIdentityConditionalAccessNamedLocation -InputObject <IIdentitySignInsIdentity>
  [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>] [-DisplayName <String>] [-Id <String>]
- [-ModifiedDateTime <DateTime>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ModifiedDateTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Update the properties of a countryNamedLocation object.
+Update the properties of an ipNamedLocation object.
 
 ## EXAMPLES
 
@@ -126,21 +124,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -248,13 +231,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphNamedLocation
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphNamedLocation
-
-### System.Collections.Hashtable
 
 ## NOTES
 

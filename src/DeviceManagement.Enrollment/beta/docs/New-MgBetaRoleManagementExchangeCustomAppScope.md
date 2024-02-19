@@ -16,14 +16,14 @@ Currently only the Exchange Online RBAC provider is supported.
 ### CreateExpanded (Default)
 ```
 New-MgBetaRoleManagementExchangeCustomAppScope [-AdditionalProperties <Hashtable>]
- [-CustomAttributes <Hashtable>] [-DisplayName <String>] [-Id <String>] [-Type <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-CustomAttributes <Hashtable>] [-DisplayName <String>] [-Id <String>] [-Type <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgBetaRoleManagementExchangeCustomAppScope -BodyParameter <IMicrosoftGraphCustomAppScope>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaRoleManagementExchangeCustomAppScope -BodyParameter <IMicrosoftGraphCustomAppScope> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -111,21 +111,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -196,13 +181,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCustomAppScope
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCustomAppScope
-
-### System.Collections.Hashtable
 
 ## NOTES
 

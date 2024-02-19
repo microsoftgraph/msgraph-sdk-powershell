@@ -15,28 +15,27 @@ Update the properties of an attributeSet object.
 ### UpdateExpanded (Default)
 ```
 Update-MgBetaDirectoryAttributeSet -AttributeSetId <String> [-AdditionalProperties <Hashtable>]
- [-Description <String>] [-Id <String>] [-MaxAttributesPerSet <Int32>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-Description <String>] [-Id <String>] [-MaxAttributesPerSet <Int32>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaDirectoryAttributeSet -AttributeSetId <String> -BodyParameter <IMicrosoftGraphAttributeSet>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaDirectoryAttributeSet -InputObject <IIdentityDirectoryManagementIdentity>
- -BodyParameter <IMicrosoftGraphAttributeSet> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphAttributeSet> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgBetaDirectoryAttributeSet -InputObject <IIdentityDirectoryManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-Description <String>] [-Id <String>] [-MaxAttributesPerSet <Int32>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -47,14 +46,14 @@ Update the properties of an attributeSet object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+$params = @{
+	Description = "Attributes for engineering team"
+	MaxAttributesPerSet = 20
+}
+Update-MgBetaDirectoryAttributeSet -AttributeSetId $attributeSetId -BodyParameter $params
 ```
 
-$params = @{
-	description = "Attributes for engineering team"
-	maxAttributesPerSet = 20
-}
 
-Update-MgBetaDirectoryAttributeSet -AttributeSetId $attributeSetId -BodyParameter $params
 
 ## PARAMETERS
 
@@ -118,21 +117,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -226,13 +210,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAttributeSet
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAttributeSet
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -256,7 +236,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[CertificateAuthorityAsEntityId <String>]`: The unique identifier of certificateAuthorityAsEntity
   - `[CertificateBasedApplicationConfigurationId <String>]`: The unique identifier of certificateBasedApplicationConfiguration
   - `[CommandId <String>]`: The unique identifier of command
-  - `[CommerceSubscriptionId <String>]`: Alternate key of companySubscription
   - `[CompanySubscriptionId <String>]`: The unique identifier of companySubscription
   - `[ContractId <String>]`: The unique identifier of contract
   - `[CustomSecurityAttributeDefinitionId <String>]`: The unique identifier of customSecurityAttributeDefinition
@@ -277,7 +256,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[InternalDomainFederationId <String>]`: The unique identifier of internalDomainFederation
   - `[ManagedTenantAlertId <String>]`: The unique identifier of managedTenantAlert
   - `[ManagementActionId <String>]`: The unique identifier of managementAction
-  - `[OcpSubscriptionId <String>]`: Alternate key of companySubscription
   - `[OnPremisesDirectorySynchronizationId <String>]`: The unique identifier of onPremisesDirectorySynchronization
   - `[OrgContactId <String>]`: The unique identifier of orgContact
   - `[OrganizationId <String>]`: The unique identifier of organization

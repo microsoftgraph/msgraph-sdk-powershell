@@ -19,22 +19,19 @@ New-MgBetaRiskyServicePrincipalHistory -RiskyServicePrincipalId <String> [-Accou
  [-AppId <String>] [-DisplayName <String>] [-History <IMicrosoftGraphRiskyServicePrincipalHistoryItem[]>]
  [-Id <String>] [-InitiatedBy <String>] [-IsEnabled] [-IsProcessing] [-RiskDetail <String>]
  [-RiskLastUpdatedDateTime <DateTime>] [-RiskLevel <String>] [-RiskState <String>]
- [-ServicePrincipalId <String>] [-ServicePrincipalType <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-ServicePrincipalId <String>] [-ServicePrincipalType <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaRiskyServicePrincipalHistory -RiskyServicePrincipalId <String>
- -BodyParameter <IMicrosoftGraphRiskyServicePrincipalHistoryItem> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphRiskyServicePrincipalHistoryItem> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaRiskyServicePrincipalHistory -InputObject <IIdentitySignInsIdentity>
- -BodyParameter <IMicrosoftGraphRiskyServicePrincipalHistoryItem> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphRiskyServicePrincipalHistoryItem> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -44,8 +41,7 @@ New-MgBetaRiskyServicePrincipalHistory -InputObject <IIdentitySignInsIdentity> [
  [-AppId <String>] [-DisplayName <String>] [-History <IMicrosoftGraphRiskyServicePrincipalHistoryItem[]>]
  [-Id <String>] [-InitiatedBy <String>] [-IsEnabled] [-IsProcessing] [-RiskDetail <String>]
  [-RiskLastUpdatedDateTime <DateTime>] [-RiskLevel <String>] [-RiskState <String>]
- [-ServicePrincipalId <String>] [-ServicePrincipalType <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-ServicePrincipalId <String>] [-ServicePrincipalType <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -151,21 +147,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -411,13 +392,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRiskyServicePrincipalHistoryItem
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRiskyServicePrincipalHistoryItem
-
-### System.Collections.Hashtable
 
 ## NOTES
 

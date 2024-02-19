@@ -24,22 +24,22 @@ Update-MgBetaExternalConnection -ExternalConnectionId <String>
  [-Operations <IMicrosoftGraphExternalConnectorsConnectionOperation[]>]
  [-Quota <IMicrosoftGraphExternalConnectorsConnectionQuota>]
  [-Schema <IMicrosoftGraphExternalConnectorsSchema>]
- [-SearchSettings <IMicrosoftGraphExternalConnectorsSearchSettings>] [-State <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-SearchSettings <IMicrosoftGraphExternalConnectorsSearchSettings>] [-State <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaExternalConnection -ExternalConnectionId <String>
- -BodyParameter <IMicrosoftGraphExternalConnectorsExternalConnection> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphExternalConnectorsExternalConnection> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaExternalConnection -InputObject <ISearchIdentity>
- -BodyParameter <IMicrosoftGraphExternalConnectorsExternalConnection> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphExternalConnectorsExternalConnection> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -54,8 +54,8 @@ Update-MgBetaExternalConnection -InputObject <ISearchIdentity>
  [-Operations <IMicrosoftGraphExternalConnectorsConnectionOperation[]>]
  [-Quota <IMicrosoftGraphExternalConnectorsConnectionQuota>]
  [-Schema <IMicrosoftGraphExternalConnectorsSchema>]
- [-SearchSettings <IMicrosoftGraphExternalConnectorsSearchSettings>] [-State <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-SearchSettings <IMicrosoftGraphExternalConnectorsSearchSettings>] [-State <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -231,21 +231,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -450,13 +435,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.ISearchIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphExternalConnectorsExternalConnection
-
-### System.Collections.Hashtable
 
 ## NOTES
 

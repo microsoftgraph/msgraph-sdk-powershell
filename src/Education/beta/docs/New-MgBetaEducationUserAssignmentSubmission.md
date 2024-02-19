@@ -20,22 +20,19 @@ New-MgBetaEducationUserAssignmentSubmission -EducationAssignmentId <String> -Edu
  [-Recipient <Hashtable>] [-Resources <IMicrosoftGraphEducationSubmissionResource[]>]
  [-ReturnedBy <IMicrosoftGraphIdentitySet>] [-Status <String>] [-SubmittedBy <IMicrosoftGraphIdentitySet>]
  [-SubmittedResources <IMicrosoftGraphEducationSubmissionResource[]>]
- [-UnsubmittedBy <IMicrosoftGraphIdentitySet>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-UnsubmittedBy <IMicrosoftGraphIdentitySet>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaEducationUserAssignmentSubmission -EducationAssignmentId <String> -EducationUserId <String>
- -BodyParameter <IMicrosoftGraphEducationSubmission> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphEducationSubmission> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaEducationUserAssignmentSubmission -InputObject <IEducationIdentity>
- -BodyParameter <IMicrosoftGraphEducationSubmission> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphEducationSubmission> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -46,8 +43,7 @@ New-MgBetaEducationUserAssignmentSubmission -InputObject <IEducationIdentity>
  [-Recipient <Hashtable>] [-Resources <IMicrosoftGraphEducationSubmissionResource[]>]
  [-ReturnedBy <IMicrosoftGraphIdentitySet>] [-Status <String>] [-SubmittedBy <IMicrosoftGraphIdentitySet>]
  [-SubmittedResources <IMicrosoftGraphEducationSubmissionResource[]>]
- [-UnsubmittedBy <IMicrosoftGraphIdentitySet>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-UnsubmittedBy <IMicrosoftGraphIdentitySet>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -57,17 +53,17 @@ Create new navigation property to submissions for education
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Beta.Education
 ```
 
-
+Get-MgBetaEducationClassAssignmentSubmission -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Beta.Education
 ```
 
-
+Get-MgBetaEducationClassAssignmentSubmission -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -ExpandProperty "outcomes"
 
 ## PARAMETERS
 
@@ -145,21 +141,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -377,13 +358,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationSubmission
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationSubmission
-
-### System.Collections.Hashtable
 
 ## NOTES
 

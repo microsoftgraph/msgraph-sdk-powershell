@@ -16,29 +16,29 @@ Update the navigation property authenticationMethodModes in identity
 ```
 Update-MgBetaIdentityConditionalAccessAuthenticationStrengthAuthenticationMethodMode
  -AuthenticationMethodModeDetailId <String> [-AdditionalProperties <Hashtable>]
- [-AuthenticationMethod <String>] [-DisplayName <String>] [-Id <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-AuthenticationMethod <String>] [-DisplayName <String>] [-Id <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update1
 ```
 Update-MgBetaIdentityConditionalAccessAuthenticationStrengthAuthenticationMethodMode
  -AuthenticationMethodModeDetailId <String> -BodyParameter <IMicrosoftGraphAuthenticationMethodModeDetail>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
 Update-MgBetaIdentityConditionalAccessAuthenticationStrengthAuthenticationMethodMode
  -InputObject <IIdentitySignInsIdentity> -BodyParameter <IMicrosoftGraphAuthenticationMethodModeDetail>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
 ```
 Update-MgBetaIdentityConditionalAccessAuthenticationStrengthAuthenticationMethodMode
  -InputObject <IIdentitySignInsIdentity> [-AdditionalProperties <Hashtable>] [-AuthenticationMethod <String>]
- [-DisplayName <String>] [-Id <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-DisplayName <String>] [-Id <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -138,21 +138,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -225,13 +210,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAuthenticationMethodModeDetail
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAuthenticationMethodModeDetail
-
-### System.Collections.Hashtable
 
 ## NOTES
 

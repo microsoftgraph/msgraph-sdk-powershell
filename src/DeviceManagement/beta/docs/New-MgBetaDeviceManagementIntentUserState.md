@@ -16,30 +16,28 @@ Create new navigation property to userStates for deviceManagement
 ```
 New-MgBetaDeviceManagementIntentUserState -DeviceManagementIntentId <String>
  [-AdditionalProperties <Hashtable>] [-DeviceCount <Int32>] [-Id <String>] [-LastReportedDateTime <DateTime>]
- [-State <String>] [-UserName <String>] [-UserPrincipalName <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-State <String>] [-UserName <String>] [-UserPrincipalName <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaDeviceManagementIntentUserState -DeviceManagementIntentId <String>
- -BodyParameter <IMicrosoftGraphDeviceManagementIntentUserState> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphDeviceManagementIntentUserState> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaDeviceManagementIntentUserState -InputObject <IDeviceManagementIdentity>
- -BodyParameter <IMicrosoftGraphDeviceManagementIntentUserState> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphDeviceManagementIntentUserState> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgBetaDeviceManagementIntentUserState -InputObject <IDeviceManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-DeviceCount <Int32>] [-Id <String>] [-LastReportedDateTime <DateTime>]
- [-State <String>] [-UserName <String>] [-UserPrincipalName <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-State <String>] [-UserName <String>] [-UserPrincipalName <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -121,21 +119,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -271,13 +254,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementIntentUserState
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementIntentUserState
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -377,7 +356,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[MacOSSoftwareUpdateCategorySummaryId <String>]`: The unique identifier of macOSSoftwareUpdateCategorySummary
   - `[MacOSSoftwareUpdateStateSummaryId <String>]`: The unique identifier of macOSSoftwareUpdateStateSummary
   - `[MalwareStateForWindowsDeviceId <String>]`: The unique identifier of malwareStateForWindowsDevice
-  - `[ManagedDeviceCleanupRuleId <String>]`: The unique identifier of managedDeviceCleanupRule
   - `[ManagedDeviceEncryptionStateId <String>]`: The unique identifier of managedDeviceEncryptionState
   - `[ManagedDeviceId <String>]`: The unique identifier of managedDevice
   - `[ManagedDeviceMobileAppConfigurationStateId <String>]`: The unique identifier of managedDeviceMobileAppConfigurationState

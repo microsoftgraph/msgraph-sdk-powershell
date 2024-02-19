@@ -14,15 +14,15 @@ Delete multiple threat intelligence (TI) indicators in one request instead of mu
 
 ### DeleteExpanded (Default)
 ```
-Remove-MgBetaSecurityTiIndicatorMultiple [-AdditionalProperties <Hashtable>] [-Value <String[]>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-MgBetaSecurityTiIndicatorMultiple [-AdditionalProperties <Hashtable>] [-Value <String[]>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Delete1
 ```
 Remove-MgBetaSecurityTiIndicatorMultiple
  -BodyParameter <IPaths9Mf33ASecurityTiindicatorsMicrosoftGraphDeletetiindicatorsPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -71,21 +71,6 @@ Parameter Sets: Delete1
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -145,13 +130,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPaths9Mf33ASecurityTiindicatorsMicrosoftGraphDeletetiindicatorsPostRequestbodyContentApplicationJsonSchema
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphResultInfo
-
-### System.Collections.Hashtable
 
 ## NOTES
 

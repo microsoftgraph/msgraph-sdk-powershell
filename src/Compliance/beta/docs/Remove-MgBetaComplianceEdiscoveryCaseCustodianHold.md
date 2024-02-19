@@ -15,40 +15,39 @@ Invoke action removeHold
 ### RemoveExpanded (Default)
 ```
 Remove-MgBetaComplianceEdiscoveryCaseCustodianHold -CaseId <String> [-AdditionalProperties <Hashtable>]
- [-Ids <String[]>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Ids <String[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Remove
 ```
-Remove-MgBetaComplianceEdiscoveryCaseCustodianHold -CaseId <String> -CustodianId <String>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-MgBetaComplianceEdiscoveryCaseCustodianHold -CaseId <String> -CustodianId <String> [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Remove1
 ```
 Remove-MgBetaComplianceEdiscoveryCaseCustodianHold -CaseId <String>
  -BodyParameter <IPathsKujstgComplianceEdiscoveryCasesCaseIdCustodiansMicrosoftGraphEdiscoveryRemoveholdPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RemoveViaIdentity
 ```
-Remove-MgBetaComplianceEdiscoveryCaseCustodianHold -InputObject <IComplianceIdentity> [-Headers <IDictionary>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-MgBetaComplianceEdiscoveryCaseCustodianHold -InputObject <IComplianceIdentity> [-PassThru] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### RemoveViaIdentity1
 ```
 Remove-MgBetaComplianceEdiscoveryCaseCustodianHold -InputObject <IComplianceIdentity>
  -BodyParameter <IPathsKujstgComplianceEdiscoveryCasesCaseIdCustodiansMicrosoftGraphEdiscoveryRemoveholdPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RemoveViaIdentityExpanded
 ```
 Remove-MgBetaComplianceEdiscoveryCaseCustodianHold -InputObject <IComplianceIdentity>
- [-AdditionalProperties <Hashtable>] [-Ids <String[]>] [-Headers <IDictionary>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-Ids <String[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -130,21 +129,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -234,13 +218,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPathsKujstgComplianceEdiscoveryCasesCaseIdCustodiansMicrosoftGraphEdiscoveryRemoveholdPostRequestbodyContentApplicationJsonSchema
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
-
-### System.Collections.Hashtable
 
 ## NOTES
 

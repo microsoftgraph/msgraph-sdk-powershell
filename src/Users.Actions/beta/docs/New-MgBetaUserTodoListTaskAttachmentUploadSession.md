@@ -20,7 +20,7 @@ The following are the steps to attach a file to a Microsoft To Do task using an 
 ```
 New-MgBetaUserTodoListTaskAttachmentUploadSession -TodoTaskId <String> -TodoTaskListId <String>
  -UserId <String> [-AdditionalProperties <Hashtable>] [-AttachmentInfo <IMicrosoftGraphAttachmentInfo>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
@@ -28,21 +28,21 @@ New-MgBetaUserTodoListTaskAttachmentUploadSession -TodoTaskId <String> -TodoTask
 New-MgBetaUserTodoListTaskAttachmentUploadSession -TodoTaskId <String> -TodoTaskListId <String>
  -UserId <String>
  -BodyParameter <IPaths4768B9UsersUserIdTodoListsTodotasklistIdTasksTodotaskIdAttachmentsMicrosoftGraphCreateuploadsessionPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaUserTodoListTaskAttachmentUploadSession -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPaths4768B9UsersUserIdTodoListsTodotasklistIdTasksTodotaskIdAttachmentsMicrosoftGraphCreateuploadsessionPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgBetaUserTodoListTaskAttachmentUploadSession -InputObject <IUsersActionsIdentity>
- [-AdditionalProperties <Hashtable>] [-AttachmentInfo <IMicrosoftGraphAttachmentInfo>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-AttachmentInfo <IMicrosoftGraphAttachmentInfo>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -113,21 +113,6 @@ Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -235,13 +220,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUploadSession
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -287,7 +268,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[DriveItemVersionId <String>]`: The unique identifier of driveItemVersion
   - `[EventId <String>]`: The unique identifier of event
   - `[EventId1 <String>]`: The unique identifier of event
-  - `[JoinWebUrl <String>]`: Alternate key of onlineMeeting
   - `[ListItemId <String>]`: The unique identifier of listItem
   - `[ListItemVersionId <String>]`: The unique identifier of listItemVersion
   - `[MailFolderId <String>]`: The unique identifier of mailFolder

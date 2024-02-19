@@ -19,21 +19,19 @@ Update-MgBetaPrivilegedRoleAssignmentRequest -PrivilegedRoleAssignmentRequestId 
  [-Reason <String>] [-RequestedDateTime <DateTime>] [-RoleId <String>]
  [-RoleInfo <IMicrosoftGraphPrivilegedRole>] [-Schedule <IMicrosoftGraphGovernanceSchedule>]
  [-Status <String>] [-TicketNumber <String>] [-TicketSystem <String>] [-Type <String>] [-UserId <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaPrivilegedRoleAssignmentRequest -PrivilegedRoleAssignmentRequestId <String>
- -BodyParameter <IMicrosoftGraphPrivilegedRoleAssignmentRequest> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphPrivilegedRoleAssignmentRequest> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaPrivilegedRoleAssignmentRequest -InputObject <IIdentityGovernanceIdentity>
- -BodyParameter <IMicrosoftGraphPrivilegedRoleAssignmentRequest> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphPrivilegedRoleAssignmentRequest> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -43,7 +41,7 @@ Update-MgBetaPrivilegedRoleAssignmentRequest -InputObject <IIdentityGovernanceId
  [-Reason <String>] [-RequestedDateTime <DateTime>] [-RoleId <String>]
  [-RoleInfo <IMicrosoftGraphPrivilegedRole>] [-Schedule <IMicrosoftGraphGovernanceSchedule>]
  [-Status <String>] [-TicketNumber <String>] [-TicketSystem <String>] [-Type <String>] [-UserId <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -125,21 +123,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -382,13 +365,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrivilegedRoleAssignmentRequest
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrivilegedRoleAssignmentRequest
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -504,7 +483,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[GroupId <String>]`: The unique identifier of group
   - `[IncompatibleAccessPackageId <String>]`: Usage: incompatibleAccessPackageId='{incompatibleAccessPackageId}'
   - `[LongRunningOperationId <String>]`: The unique identifier of longRunningOperation
-  - `[ObjectId <String>]`: Alternate key of accessPackageSubject
   - `[On <String>]`: Usage: on='{on}'
   - `[PermissionsCreepIndexDistributionId <String>]`: The unique identifier of permissionsCreepIndexDistribution
   - `[PermissionsRequestChangeId <String>]`: The unique identifier of permissionsRequestChange

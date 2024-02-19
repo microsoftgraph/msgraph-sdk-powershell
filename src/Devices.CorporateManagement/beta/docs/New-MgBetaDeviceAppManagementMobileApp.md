@@ -22,13 +22,13 @@ New-MgBetaDeviceAppManagementMobileApp [-AdditionalProperties <Hashtable>]
  [-Owner <String>] [-PrivacyInformationUrl <String>] [-Publisher <String>]
  [-PublishingState <MobileAppPublishingState>] [-Relationships <IMicrosoftGraphMobileAppRelationship[]>]
  [-RoleScopeTagIds <String[]>] [-SupersededAppCount <Int32>] [-SupersedingAppCount <Int32>]
- [-UploadState <Int32>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-UploadState <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgBetaDeviceAppManagementMobileApp -BodyParameter <IMicrosoftGraphMobileApp> [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaDeviceAppManagementMobileApp -BodyParameter <IMicrosoftGraphMobileApp> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -190,21 +190,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -489,13 +474,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMobileApp
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMobileApp
-
-### System.Collections.Hashtable
 
 ## NOTES
 

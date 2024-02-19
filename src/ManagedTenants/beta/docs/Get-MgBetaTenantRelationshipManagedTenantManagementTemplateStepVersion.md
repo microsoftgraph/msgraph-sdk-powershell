@@ -16,42 +16,40 @@ Get managementTemplateStepVersions from tenantRelationships
 ```
 Get-MgBetaTenantRelationshipManagedTenantManagementTemplateStepVersion [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
- [-Top <Int32>] [-All] [-CountVariable <String>] [-Headers <IDictionary>] [-PageSize <Int32>]
- [<CommonParameters>]
+ [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
 Get-MgBetaTenantRelationshipManagedTenantManagementTemplateStepVersion
  -ManagementTemplateStepVersionId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
- [-Headers <IDictionary>] [<CommonParameters>]
+ [<CommonParameters>]
 ```
 
 ### Get1
 ```
 Get-MgBetaTenantRelationshipManagedTenantManagementTemplateStepVersion -ManagementTemplateStepId <String>
  -ManagementTemplateStepVersionId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
- [-Headers <IDictionary>] [<CommonParameters>]
+ [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
 Get-MgBetaTenantRelationshipManagedTenantManagementTemplateStepVersion -InputObject <IManagedTenantsIdentity>
- [-ExpandProperty <String[]>] [-Property <String[]>] [-Headers <IDictionary>] [<CommonParameters>]
+ [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
 Get-MgBetaTenantRelationshipManagedTenantManagementTemplateStepVersion -InputObject <IManagedTenantsIdentity>
- [-ExpandProperty <String[]>] [-Property <String[]>] [-Headers <IDictionary>] [<CommonParameters>]
+ [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### List1
 ```
 Get-MgBetaTenantRelationshipManagedTenantManagementTemplateStepVersion -ManagementTemplateStepId <String>
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
- [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-Headers <IDictionary>]
- [-PageSize <Int32>] [<CommonParameters>]
+ [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -133,21 +131,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -294,13 +277,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementTemplateStepVersion
-
-### System.Collections.Hashtable
 
 ## NOTES
 

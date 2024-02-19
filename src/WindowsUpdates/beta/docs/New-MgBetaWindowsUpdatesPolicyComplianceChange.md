@@ -16,30 +16,27 @@ Create a new contentApproval object.
 ```
 New-MgBetaWindowsUpdatesPolicyComplianceChange -UpdatePolicyId <String> [-AdditionalProperties <Hashtable>]
  [-CreatedDateTime <DateTime>] [-Id <String>] [-IsRevoked] [-RevokedDateTime <DateTime>]
- [-UpdatePolicy <IMicrosoftGraphWindowsUpdatesUpdatePolicy>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-UpdatePolicy <IMicrosoftGraphWindowsUpdatesUpdatePolicy>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaWindowsUpdatesPolicyComplianceChange -UpdatePolicyId <String>
- -BodyParameter <IMicrosoftGraphWindowsUpdatesComplianceChange> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphWindowsUpdatesComplianceChange> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaWindowsUpdatesPolicyComplianceChange -InputObject <IWindowsUpdatesIdentity>
- -BodyParameter <IMicrosoftGraphWindowsUpdatesComplianceChange> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphWindowsUpdatesComplianceChange> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgBetaWindowsUpdatesPolicyComplianceChange -InputObject <IWindowsUpdatesIdentity>
  [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>] [-Id <String>] [-IsRevoked]
- [-RevokedDateTime <DateTime>] [-UpdatePolicy <IMicrosoftGraphWindowsUpdatesUpdatePolicy>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-RevokedDateTime <DateTime>] [-UpdatePolicy <IMicrosoftGraphWindowsUpdatesUpdatePolicy>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -106,21 +103,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -258,13 +240,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IWindowsUpdatesIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsUpdatesComplianceChange
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -320,7 +298,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[Expedite <IMicrosoftGraphWindowsUpdatesExpediteSettings>]`: expediteSettings
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[IsExpedited <Boolean?>]`: True indicates that the deployment of the content is expedited.
-        - `[IsReadinessTest <Boolean?>]`: True indicates that the deployment is an expedite readiness test.
+        - `[IsReadinessTest <Boolean?>]`: 
       - `[Monitoring <IMicrosoftGraphWindowsUpdatesMonitoringSettings>]`: monitoringSettings
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[MonitoringRules <IMicrosoftGraphWindowsUpdatesMonitoringRule[]>]`: Specifies the rules through which monitoring signals can trigger actions on the deployment. Rules are combined using 'or.'
@@ -336,7 +314,6 @@ To create the parameters described below, construct a hash table containing the 
       - `[UserExperience <IMicrosoftGraphWindowsUpdatesUserExperienceSettings>]`: userExperienceSettings
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[DaysUntilForcedReboot <Int32?>]`: Specifies the number of days after an update is installed, during which the user of the device can control when the device restarts.
-        - `[OfferAsOptional <Boolean?>]`: Specifies whether the update is offered as Optional rather than Required.
 
 `INPUTOBJECT <IWindowsUpdatesIdentity>`: Identity Parameter
   - `[CatalogEntryId <String>]`: The unique identifier of catalogEntry
@@ -388,7 +365,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[Expedite <IMicrosoftGraphWindowsUpdatesExpediteSettings>]`: expediteSettings
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[IsExpedited <Boolean?>]`: True indicates that the deployment of the content is expedited.
-      - `[IsReadinessTest <Boolean?>]`: True indicates that the deployment is an expedite readiness test.
+      - `[IsReadinessTest <Boolean?>]`: 
     - `[Monitoring <IMicrosoftGraphWindowsUpdatesMonitoringSettings>]`: monitoringSettings
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[MonitoringRules <IMicrosoftGraphWindowsUpdatesMonitoringRule[]>]`: Specifies the rules through which monitoring signals can trigger actions on the deployment. Rules are combined using 'or.'
@@ -404,7 +381,6 @@ To create the parameters described below, construct a hash table containing the 
     - `[UserExperience <IMicrosoftGraphWindowsUpdatesUserExperienceSettings>]`: userExperienceSettings
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[DaysUntilForcedReboot <Int32?>]`: Specifies the number of days after an update is installed, during which the user of the device can control when the device restarts.
-      - `[OfferAsOptional <Boolean?>]`: Specifies whether the update is offered as Optional rather than Required.
 
 ## RELATED LINKS
 

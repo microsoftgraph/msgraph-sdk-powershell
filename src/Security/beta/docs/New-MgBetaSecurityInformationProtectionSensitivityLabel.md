@@ -17,14 +17,13 @@ Create new navigation property to sensitivityLabels for security
 New-MgBetaSecurityInformationProtectionSensitivityLabel [-AdditionalProperties <Hashtable>] [-Color <String>]
  [-ContentFormats <String[]>] [-Description <String>] [-HasProtection] [-Id <String>] [-IsActive]
  [-IsAppliable] [-Name <String>] [-Parent <IMicrosoftGraphSecuritySensitivityLabel>] [-Sensitivity <Int32>]
- [-Tooltip <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Tooltip <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaSecurityInformationProtectionSensitivityLabel
- -BodyParameter <IMicrosoftGraphSecuritySensitivityLabel> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphSecuritySensitivityLabel> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -136,21 +135,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -301,13 +285,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecuritySensitivityLabel
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecuritySensitivityLabel
-
-### System.Collections.Hashtable
 
 ## NOTES
 

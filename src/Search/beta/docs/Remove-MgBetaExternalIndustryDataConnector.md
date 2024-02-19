@@ -8,24 +8,24 @@ schema: 2.0.0
 # Remove-MgBetaExternalIndustryDataConnector
 
 ## SYNOPSIS
-Delete an industryDataConnector object.
+Delete an azureDataLakeConnector object.
 
 ## SYNTAX
 
 ### Delete (Default)
 ```
-Remove-MgBetaExternalIndustryDataConnector -IndustryDataConnectorId <String> [-IfMatch <String>]
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-MgBetaExternalIndustryDataConnector -IndustryDataConnectorId <String> [-IfMatch <String>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgBetaExternalIndustryDataConnector -InputObject <ISearchIdentity> [-IfMatch <String>]
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-MgBetaExternalIndustryDataConnector -InputObject <ISearchIdentity> [-IfMatch <String>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Delete an industryDataConnector object.
+Delete an azureDataLakeConnector object.
 
 ## EXAMPLES
 
@@ -44,21 +44,6 @@ Delete an industryDataConnector object.
 
 
 ## PARAMETERS
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
 
 ### -IfMatch
 ETag
@@ -159,13 +144,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.ISearchIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
-
-### System.Collections.Hashtable
 
 ## NOTES
 

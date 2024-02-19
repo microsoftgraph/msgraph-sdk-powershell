@@ -16,19 +16,18 @@ Read the properties and relationships of a taskFileAttachment object.
 ```
 Get-MgBetaUserTodoTaskAttachment -TodoTaskId <String> -TodoTaskListId <String> -UserId <String>
  [-Filter <String>] [-Property <String[]>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
- [-CountVariable <String>] [-Headers <IDictionary>] [-PageSize <Int32>] [<CommonParameters>]
+ [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
 Get-MgBetaUserTodoTaskAttachment -AttachmentBaseId <String> -TodoTaskId <String> -TodoTaskListId <String>
- -UserId <String> [-Property <String[]>] [-Headers <IDictionary>] [<CommonParameters>]
+ -UserId <String> [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgBetaUserTodoTaskAttachment -InputObject <IUsersIdentity> [-Property <String[]>] [-Headers <IDictionary>]
- [<CommonParameters>]
+Get-MgBetaUserTodoTaskAttachment -InputObject <IUsersIdentity> [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -110,21 +109,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -271,13 +255,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAttachmentBase
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -289,7 +269,6 @@ To create the parameters described below, construct a hash table containing the 
 
 
 `INPUTOBJECT <IUsersIdentity>`: Identity Parameter
-  - `[AppId <String>]`: Alternate key of servicePrincipal
   - `[AttachmentBaseId <String>]`: The unique identifier of attachmentBase
   - `[AttachmentId <String>]`: The unique identifier of attachment
   - `[AttachmentSessionId <String>]`: The unique identifier of attachmentSession

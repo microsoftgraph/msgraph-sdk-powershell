@@ -16,31 +16,30 @@ Update the navigation property windowsInformationProtectionNetworkLearningSummar
 ```
 Update-MgBetaDeviceManagementWindowsInformationProtectionNetworkLearningSummary
  -WindowsInformationProtectionNetworkLearningSummaryId <String> [-AdditionalProperties <Hashtable>]
- [-DeviceCount <Int32>] [-Id <String>] [-Url <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-DeviceCount <Int32>] [-Id <String>] [-Url <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaDeviceManagementWindowsInformationProtectionNetworkLearningSummary
  -WindowsInformationProtectionNetworkLearningSummaryId <String>
- -BodyParameter <IMicrosoftGraphWindowsInformationProtectionNetworkLearningSummary> [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphWindowsInformationProtectionNetworkLearningSummary> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaDeviceManagementWindowsInformationProtectionNetworkLearningSummary
  -InputObject <IDeviceManagementIdentity>
- -BodyParameter <IMicrosoftGraphWindowsInformationProtectionNetworkLearningSummary> [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphWindowsInformationProtectionNetworkLearningSummary> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgBetaDeviceManagementWindowsInformationProtectionNetworkLearningSummary
  -InputObject <IDeviceManagementIdentity> [-AdditionalProperties <Hashtable>] [-DeviceCount <Int32>]
- [-Id <String>] [-Url <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-Url <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -107,21 +106,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -227,13 +211,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionNetworkLearningSummary
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionNetworkLearningSummary
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -330,7 +310,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[MacOSSoftwareUpdateCategorySummaryId <String>]`: The unique identifier of macOSSoftwareUpdateCategorySummary
   - `[MacOSSoftwareUpdateStateSummaryId <String>]`: The unique identifier of macOSSoftwareUpdateStateSummary
   - `[MalwareStateForWindowsDeviceId <String>]`: The unique identifier of malwareStateForWindowsDevice
-  - `[ManagedDeviceCleanupRuleId <String>]`: The unique identifier of managedDeviceCleanupRule
   - `[ManagedDeviceEncryptionStateId <String>]`: The unique identifier of managedDeviceEncryptionState
   - `[ManagedDeviceId <String>]`: The unique identifier of managedDevice
   - `[ManagedDeviceMobileAppConfigurationStateId <String>]`: The unique identifier of managedDeviceMobileAppConfigurationState

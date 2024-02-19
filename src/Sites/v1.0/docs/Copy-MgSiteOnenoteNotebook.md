@@ -16,28 +16,28 @@ For Copy operations, you follow an asynchronous calling pattern:  First call the
 ```
 Copy-MgSiteOnenoteNotebook -NotebookId <String> -SiteId <String> [-AdditionalProperties <Hashtable>]
  [-GroupId <String>] [-NotebookFolder <String>] [-RenameAs <String>] [-SiteCollectionId <String>]
- [-SiteId1 <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-SiteId1 <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Copy
 ```
 Copy-MgSiteOnenoteNotebook -NotebookId <String> -SiteId <String>
  -BodyParameter <IPathsS3Y1MrSitesSiteIdOnenoteNotebooksNotebookIdMicrosoftGraphCopynotebookPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CopyViaIdentity
 ```
 Copy-MgSiteOnenoteNotebook -InputObject <ISitesIdentity>
  -BodyParameter <IPathsS3Y1MrSitesSiteIdOnenoteNotebooksNotebookIdMicrosoftGraphCopynotebookPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CopyViaIdentityExpanded
 ```
 Copy-MgSiteOnenoteNotebook -InputObject <ISitesIdentity> [-SiteId <String>]
  [-AdditionalProperties <Hashtable>] [-GroupId <String>] [-NotebookFolder <String>] [-RenameAs <String>]
- [-SiteCollectionId <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-SiteCollectionId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -104,21 +104,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -268,13 +253,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.ISitesIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnenoteOperation
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -317,7 +298,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[OnenoteResourceId <String>]`: The unique identifier of onenoteResource
   - `[OnenoteSectionId <String>]`: The unique identifier of onenoteSection
   - `[Path <String>]`: Usage: path='{path}'
-  - `[Path1 <String>]`: Usage: path='{path1}'
   - `[PermissionId <String>]`: The unique identifier of permission
   - `[RelationId <String>]`: The unique identifier of relation
   - `[RichLongRunningOperationId <String>]`: The unique identifier of richLongRunningOperation

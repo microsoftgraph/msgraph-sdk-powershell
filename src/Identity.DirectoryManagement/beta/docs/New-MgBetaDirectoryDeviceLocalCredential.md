@@ -16,14 +16,13 @@ Create new navigation property to deviceLocalCredentials for directory
 ```
 New-MgBetaDirectoryDeviceLocalCredential [-AdditionalProperties <Hashtable>]
  [-Credentials <IMicrosoftGraphDeviceLocalCredential[]>] [-DeviceName <String>] [-Id <String>]
- [-LastBackupDateTime <DateTime>] [-RefreshDateTime <DateTime>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-LastBackupDateTime <DateTime>] [-RefreshDateTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgBetaDirectoryDeviceLocalCredential -BodyParameter <IMicrosoftGraphDeviceLocalCredentialInfo>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaDirectoryDeviceLocalCredential -BodyParameter <IMicrosoftGraphDeviceLocalCredentialInfo> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -106,21 +105,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -208,13 +192,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceLocalCredentialInfo
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceLocalCredentialInfo
-
-### System.Collections.Hashtable
 
 ## NOTES
 

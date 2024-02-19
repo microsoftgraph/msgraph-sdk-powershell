@@ -23,15 +23,15 @@ However, you can validate both the mail nickname and the display name and receiv
 ### ValidateExpanded (Default)
 ```
 Test-MgBetaDirectoryObjectProperty [-AdditionalProperties <Hashtable>] [-DisplayName <String>]
- [-EntityType <String>] [-MailNickname <String>] [-OnBehalfOfUserId <String>] [-Headers <IDictionary>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-EntityType <String>] [-MailNickname <String>] [-OnBehalfOfUserId <String>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Validate
 ```
 Test-MgBetaDirectoryObjectProperty
  -BodyParameter <IPaths1Re7RfDirectoryobjectsMicrosoftGraphValidatepropertiesPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -50,16 +50,16 @@ However, you can validate both the mail nickname and the display name and receiv
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.DirectoryObjects
+$params = @{
+	EntityType = "Group"
+	DisplayName = "Myprefix_test_mysuffix"
+	MailNickname = "Myprefix_test_mysuffix"
+	OnBehalfOfUserId = "onBehalfOfUserId-value"
+}
+Test-MgBetaDirectoryObjectProperty -BodyParameter $params
 ```
 
-$params = @{
-	entityType = "Group"
-	displayName = "Myprefix_test_mysuffix"
-	mailNickname = "Myprefix_test_mysuffix"
-	onBehalfOfUserId = "onBehalfOfUserId-value"
-}
 
-Test-MgBetaDirectoryObjectProperty -BodyParameter $params
 
 ## PARAMETERS
 
@@ -121,21 +121,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -222,13 +207,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPaths1Re7RfDirectoryobjectsMicrosoftGraphValidatepropertiesPostRequestbodyContentApplicationJsonSchema
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
-
-### System.Collections.Hashtable
 
 ## NOTES
 

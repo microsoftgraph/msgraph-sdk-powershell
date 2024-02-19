@@ -18,15 +18,15 @@ New-MgBetaDeviceManagementAdvancedThreatProtectionOnboardingStateSummaryAdvanced
  [-AdditionalProperties <Hashtable>] [-ComplianceGracePeriodExpirationDateTime <DateTime>]
  [-DeviceId <String>] [-DeviceModel <String>] [-DeviceName <String>] [-Id <String>]
  [-PlatformType <DeviceType>] [-Setting <String>] [-SettingName <String>] [-State <String>]
- [-UserEmail <String>] [-UserId <String>] [-UserName <String>] [-UserPrincipalName <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-UserEmail <String>] [-UserId <String>] [-UserName <String>] [-UserPrincipalName <String>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaDeviceManagementAdvancedThreatProtectionOnboardingStateSummaryAdvancedThreatProtectionOnboardingDeviceSettingState
- -BodyParameter <IMicrosoftGraphAdvancedThreatProtectionOnboardingDeviceSettingState> [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphAdvancedThreatProtectionOnboardingDeviceSettingState> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -138,21 +138,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -330,13 +315,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAdvancedThreatProtectionOnboardingDeviceSettingState
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAdvancedThreatProtectionOnboardingDeviceSettingState
-
-### System.Collections.Hashtable
 
 ## NOTES
 

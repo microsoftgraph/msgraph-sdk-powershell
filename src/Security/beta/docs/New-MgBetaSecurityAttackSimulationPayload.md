@@ -20,14 +20,13 @@ New-MgBetaSecurityAttackSimulationPayload [-AdditionalProperties <Hashtable>] [-
  [-Industry <String>] [-IsAutomated] [-IsControversial] [-IsCurrentEvent] [-Language <String>]
  [-LastModifiedBy <IMicrosoftGraphEmailIdentity>] [-LastModifiedDateTime <DateTime>] [-PayloadTags <String[]>]
  [-Platform <String>] [-PredictedCompromiseRate <Double>] [-SimulationAttackType <String>] [-Source <String>]
- [-Status <String>] [-Technique <String>] [-Theme <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Status <String>] [-Technique <String>] [-Theme <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgBetaSecurityAttackSimulationPayload -BodyParameter <IMicrosoftGraphPayload> [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaSecurityAttackSimulationPayload -BodyParameter <IMicrosoftGraphPayload> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -189,21 +188,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -490,13 +474,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPayload
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPayload
-
-### System.Collections.Hashtable
 
 ## NOTES
 

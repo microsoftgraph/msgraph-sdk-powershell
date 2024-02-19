@@ -13,8 +13,7 @@ Invoke action disconnect
 ## SYNTAX
 
 ```
-Disconnect-MgBetaDeviceManagementChromeOSOnboardingSetting [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Disconnect-MgBetaDeviceManagementChromeOSOnboardingSetting [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -37,21 +36,6 @@ Invoke action disconnect
 {{ Add output here }}
 
 ## PARAMETERS
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
 
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
@@ -89,13 +73,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Support.ChromeOSOnboardingStatus
-
-### System.Collections.Hashtable
 
 ## NOTES
 

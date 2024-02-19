@@ -15,14 +15,14 @@ Update informationProtection
 ### UpdateExpanded (Default)
 ```
 Update-MgInformationProtection [-AdditionalProperties <Hashtable>] [-Bitlocker <IMicrosoftGraphBitlocker>]
- [-ThreatAssessmentRequests <IMicrosoftGraphThreatAssessmentRequest[]>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-ThreatAssessmentRequests <IMicrosoftGraphThreatAssessmentRequest[]>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgInformationProtection -BodyParameter <IMicrosoftGraphInformationProtection> [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgInformationProtection -BodyParameter <IMicrosoftGraphInformationProtection> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -93,21 +93,6 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -ThreatAssessmentRequests
 .
 To construct, see NOTES section for THREATASSESSMENTREQUESTS properties and create a hash table.
@@ -162,13 +147,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInformationProtection
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInformationProtection
-
-### System.Collections.Hashtable
 
 ## NOTES
 

@@ -16,26 +16,26 @@ Update entity in contracts
 ```
 Update-MgContract -ContractId <String> [-AdditionalProperties <Hashtable>] [-ContractType <String>]
  [-CustomerId <String>] [-DefaultDomainName <String>] [-DeletedDateTime <DateTime>] [-DisplayName <String>]
- [-Id <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgContract -ContractId <String> -BodyParameter <IMicrosoftGraphContract> [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgContract -ContractId <String> -BodyParameter <IMicrosoftGraphContract> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgContract -InputObject <IIdentityDirectoryManagementIdentity> -BodyParameter <IMicrosoftGraphContract>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgContract -InputObject <IIdentityDirectoryManagementIdentity> [-AdditionalProperties <Hashtable>]
  [-ContractType <String>] [-CustomerId <String>] [-DefaultDomainName <String>] [-DeletedDateTime <DateTime>]
- [-DisplayName <String>] [-Id <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-DisplayName <String>] [-Id <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -45,17 +45,10 @@ Update entity in contracts
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Identity.DirectoryManagement
 ```
 
-
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-
+Get-MgContract -ContractId $contractId
 
 ## PARAMETERS
 
@@ -188,21 +181,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -275,13 +253,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContract
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContract
-
-### System.Collections.Hashtable
 
 ## NOTES
 

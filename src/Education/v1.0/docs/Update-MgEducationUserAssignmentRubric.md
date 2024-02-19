@@ -19,22 +19,19 @@ Update-MgEducationUserAssignmentRubric -EducationAssignmentId <String> -Educatio
  [-AdditionalProperties <Hashtable>] [-CreatedBy <IMicrosoftGraphIdentitySet>]
  [-Description <IMicrosoftGraphEducationItemBody>] [-DisplayName <String>] [-Grading <Hashtable>]
  [-Id <String>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-Levels <IMicrosoftGraphRubricLevel[]>]
- [-Qualities <IMicrosoftGraphRubricQuality[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Qualities <IMicrosoftGraphRubricQuality[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgEducationUserAssignmentRubric -EducationAssignmentId <String> -EducationUserId <String>
- -BodyParameter <IMicrosoftGraphEducationRubric> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphEducationRubric> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgEducationUserAssignmentRubric -InputObject <IEducationIdentity>
- -BodyParameter <IMicrosoftGraphEducationRubric> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphEducationRubric> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -42,8 +39,8 @@ Update-MgEducationUserAssignmentRubric -InputObject <IEducationIdentity>
 Update-MgEducationUserAssignmentRubric -InputObject <IEducationIdentity> [-AdditionalProperties <Hashtable>]
  [-CreatedBy <IMicrosoftGraphIdentitySet>] [-Description <IMicrosoftGraphEducationItemBody>]
  [-DisplayName <String>] [-Grading <Hashtable>] [-Id <String>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
- [-Levels <IMicrosoftGraphRubricLevel[]>] [-Qualities <IMicrosoftGraphRubricQuality[]>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Levels <IMicrosoftGraphRubricLevel[]>] [-Qualities <IMicrosoftGraphRubricQuality[]>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -191,21 +188,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -326,13 +308,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationRubric
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationRubric
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -394,9 +372,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[EducationAssignmentResourceId <String>]`: The unique identifier of educationAssignmentResource
   - `[EducationCategoryId <String>]`: The unique identifier of educationCategory
   - `[EducationClassId <String>]`: The unique identifier of educationClass
-  - `[EducationGradingCategoryId <String>]`: The unique identifier of educationGradingCategory
-  - `[EducationModuleId <String>]`: The unique identifier of educationModule
-  - `[EducationModuleResourceId <String>]`: The unique identifier of educationModuleResource
   - `[EducationOutcomeId <String>]`: The unique identifier of educationOutcome
   - `[EducationRubricId <String>]`: The unique identifier of educationRubric
   - `[EducationSchoolId <String>]`: The unique identifier of educationSchool

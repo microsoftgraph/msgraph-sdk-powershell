@@ -14,14 +14,14 @@ The content stream, if the item represents a file.
 
 ### Get (Default)
 ```
-Get-MgGroupTeamPrimaryChannelFileFolderContent -GroupId <String> -OutFile <String> [-Format <String>]
- [-Headers <IDictionary>] [-PassThru] [<CommonParameters>]
+Get-MgGroupTeamPrimaryChannelFileFolderContent -GroupId <String> -OutFile <String> [-PassThru]
+ [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgGroupTeamPrimaryChannelFileFolderContent -InputObject <ITeamsIdentity> -OutFile <String>
- [-Format <String>] [-Headers <IDictionary>] [-PassThru] [<CommonParameters>]
+Get-MgGroupTeamPrimaryChannelFileFolderContent -InputObject <ITeamsIdentity> -OutFile <String> [-PassThru]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -45,21 +45,6 @@ The content stream, if the item represents a file.
 
 ## PARAMETERS
 
-### -Format
-Format of the content
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -GroupId
 The unique identifier of group
 
@@ -72,21 +57,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -143,13 +113,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
-
-### System.Collections.Hashtable
 
 ## NOTES
 

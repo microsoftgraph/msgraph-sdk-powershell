@@ -27,21 +27,20 @@ Update-MgBetaUserOutlookTask -OutlookTaskId <String> -UserId <String> [-Addition
  [-ParentFolderId <String>] [-Recurrence <IMicrosoftGraphPatternedRecurrence>]
  [-ReminderDateTime <IMicrosoftGraphDateTimeZone>] [-Sensitivity <String>]
  [-SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]
- [-StartDateTime <IMicrosoftGraphDateTimeZone>] [-Status <String>] [-Subject <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-StartDateTime <IMicrosoftGraphDateTimeZone>] [-Status <String>] [-Subject <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaUserOutlookTask -OutlookTaskId <String> -UserId <String>
- -BodyParameter <IMicrosoftGraphOutlookTask> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphOutlookTask> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaUserOutlookTask -InputObject <IUsersIdentity> -BodyParameter <IMicrosoftGraphOutlookTask>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -55,8 +54,8 @@ Update-MgBetaUserOutlookTask -InputObject <IUsersIdentity> [-AdditionalPropertie
  [-ParentFolderId <String>] [-Recurrence <IMicrosoftGraphPatternedRecurrence>]
  [-ReminderDateTime <IMicrosoftGraphDateTimeZone>] [-Sensitivity <String>]
  [-SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]
- [-StartDateTime <IMicrosoftGraphDateTimeZone>] [-Status <String>] [-Subject <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-StartDateTime <IMicrosoftGraphDateTimeZone>] [-Status <String>] [-Subject <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -256,21 +255,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -581,13 +565,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOutlookTask
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -681,7 +661,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for possible values.
 
 `INPUTOBJECT <IUsersIdentity>`: Identity Parameter
-  - `[AppId <String>]`: Alternate key of servicePrincipal
   - `[AttachmentBaseId <String>]`: The unique identifier of attachmentBase
   - `[AttachmentId <String>]`: The unique identifier of attachment
   - `[AttachmentSessionId <String>]`: The unique identifier of attachmentSession

@@ -17,22 +17,20 @@ Update the navigation property operations in drives
 Update-MgDriveListOperation -DriveId <String> -RichLongRunningOperationId <String>
  [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>] [-Error <IMicrosoftGraphPublicError>]
  [-Id <String>] [-LastActionDateTime <DateTime>] [-PercentageComplete <Int32>] [-ResourceId <String>]
- [-ResourceLocation <String>] [-Status <String>] [-StatusDetail <String>] [-Type <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ResourceLocation <String>] [-Status <String>] [-StatusDetail <String>] [-Type <String>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgDriveListOperation -DriveId <String> -RichLongRunningOperationId <String>
- -BodyParameter <IMicrosoftGraphRichLongRunningOperation> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphRichLongRunningOperation> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgDriveListOperation -InputObject <IFilesIdentity>
- -BodyParameter <IMicrosoftGraphRichLongRunningOperation> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphRichLongRunningOperation> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -40,8 +38,8 @@ Update-MgDriveListOperation -InputObject <IFilesIdentity>
 Update-MgDriveListOperation -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>]
  [-CreatedDateTime <DateTime>] [-Error <IMicrosoftGraphPublicError>] [-Id <String>]
  [-LastActionDateTime <DateTime>] [-PercentageComplete <Int32>] [-ResourceId <String>]
- [-ResourceLocation <String>] [-Status <String>] [-StatusDetail <String>] [-Type <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ResourceLocation <String>] [-Status <String>] [-StatusDetail <String>] [-Type <String>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -141,21 +139,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -353,13 +336,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRichLongRunningOperation
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRichLongRunningOperation
-
-### System.Collections.Hashtable
 
 ## NOTES
 

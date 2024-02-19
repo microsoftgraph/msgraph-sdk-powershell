@@ -8,24 +8,24 @@ schema: 2.0.0
 # Remove-MgBetaIdentityConditionalAccessNamedLocation
 
 ## SYNOPSIS
-Delete an ipNamedLocation object.
+Delete a countryNamedLocation object.
 
 ## SYNTAX
 
 ### Delete (Default)
 ```
-Remove-MgBetaIdentityConditionalAccessNamedLocation -NamedLocationId <String> [-IfMatch <String>]
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-MgBetaIdentityConditionalAccessNamedLocation -NamedLocationId <String> [-IfMatch <String>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
 Remove-MgBetaIdentityConditionalAccessNamedLocation -InputObject <IIdentitySignInsIdentity>
- [-IfMatch <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Delete an ipNamedLocation object.
+Delete a countryNamedLocation object.
 
 ## EXAMPLES
 
@@ -37,21 +37,6 @@ Connect-MgBetaGraph -Scopes 'Policy.ReadWrite.ConditionalAccess'
 Remove-MgBetaIdentityConditionalAccessNamedLocation -NamedLocationId $namedLocationId
 
 ## PARAMETERS
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
 
 ### -IfMatch
 ETag
@@ -152,13 +137,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
-
-### System.Collections.Hashtable
 
 ## NOTES
 

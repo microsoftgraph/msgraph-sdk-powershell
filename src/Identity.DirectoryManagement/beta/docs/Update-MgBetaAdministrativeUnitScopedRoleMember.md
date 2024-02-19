@@ -16,30 +16,28 @@ Update the navigation property scopedRoleMembers in administrativeUnits
 ```
 Update-MgBetaAdministrativeUnitScopedRoleMember -AdministrativeUnitId <String>
  -ScopedRoleMembershipId <String> [-AdditionalProperties <Hashtable>] [-AdministrativeUnitId1 <String>]
- [-Id <String>] [-RoleId <String>] [-RoleMemberInfo <IMicrosoftGraphIdentity>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-RoleId <String>] [-RoleMemberInfo <IMicrosoftGraphIdentity>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaAdministrativeUnitScopedRoleMember -AdministrativeUnitId <String>
- -ScopedRoleMembershipId <String> -BodyParameter <IMicrosoftGraphScopedRoleMembership>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -ScopedRoleMembershipId <String> -BodyParameter <IMicrosoftGraphScopedRoleMembership> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaAdministrativeUnitScopedRoleMember -InputObject <IIdentityDirectoryManagementIdentity>
- -BodyParameter <IMicrosoftGraphScopedRoleMembership> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphScopedRoleMembership> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgBetaAdministrativeUnitScopedRoleMember -InputObject <IIdentityDirectoryManagementIdentity>
  [-AdministrativeUnitId <String>] [-AdditionalProperties <Hashtable>] [-Id <String>] [-RoleId <String>]
- [-RoleMemberInfo <IMicrosoftGraphIdentity>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-RoleMemberInfo <IMicrosoftGraphIdentity>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -118,21 +116,6 @@ Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -257,13 +240,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphScopedRoleMembership
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphScopedRoleMembership
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -281,8 +260,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[RoleId <String>]`: Unique identifier for the directory role that the member is in.
   - `[RoleMemberInfo <IMicrosoftGraphIdentity>]`: identity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-    - `[Id <String>]`: Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn't included in the response.
+    - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+    - `[Id <String>]`: The identifier of the identity. This property is read-only.
 
 `INPUTOBJECT <IIdentityDirectoryManagementIdentity>`: Identity Parameter
   - `[AdministrativeUnitId <String>]`: The unique identifier of administrativeUnit
@@ -291,7 +270,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[CertificateAuthorityAsEntityId <String>]`: The unique identifier of certificateAuthorityAsEntity
   - `[CertificateBasedApplicationConfigurationId <String>]`: The unique identifier of certificateBasedApplicationConfiguration
   - `[CommandId <String>]`: The unique identifier of command
-  - `[CommerceSubscriptionId <String>]`: Alternate key of companySubscription
   - `[CompanySubscriptionId <String>]`: The unique identifier of companySubscription
   - `[ContractId <String>]`: The unique identifier of contract
   - `[CustomSecurityAttributeDefinitionId <String>]`: The unique identifier of customSecurityAttributeDefinition
@@ -312,7 +290,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[InternalDomainFederationId <String>]`: The unique identifier of internalDomainFederation
   - `[ManagedTenantAlertId <String>]`: The unique identifier of managedTenantAlert
   - `[ManagementActionId <String>]`: The unique identifier of managementAction
-  - `[OcpSubscriptionId <String>]`: Alternate key of companySubscription
   - `[OnPremisesDirectorySynchronizationId <String>]`: The unique identifier of onPremisesDirectorySynchronization
   - `[OrgContactId <String>]`: The unique identifier of orgContact
   - `[OrganizationId <String>]`: The unique identifier of organization
@@ -333,8 +310,8 @@ To create the parameters described below, construct a hash table containing the 
 
 `ROLEMEMBERINFO <IMicrosoftGraphIdentity>`: identity
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-  - `[Id <String>]`: Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn't included in the response.
+  - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+  - `[Id <String>]`: The identifier of the identity. This property is read-only.
 
 ## RELATED LINKS
 

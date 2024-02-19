@@ -16,28 +16,27 @@ Update the navigation property picture in financials
 ```
 Update-MgBetaFinancialCompanySaleOrderCustomerPicture -CompanyId <String> -PictureId <String>
  -SalesOrderId <String> [-AdditionalProperties <Hashtable>] [-ContentInputFile <String>]
- [-ContentType <String>] [-Height <Int32>] [-Id <String>] [-Width <Int32>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-ContentType <String>] [-Height <Int32>] [-Id <String>] [-Width <Int32>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaFinancialCompanySaleOrderCustomerPicture -CompanyId <String> -PictureId <String>
- -SalesOrderId <String> -BodyParameter <IMicrosoftGraphPicture> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -SalesOrderId <String> -BodyParameter <IMicrosoftGraphPicture> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaFinancialCompanySaleOrderCustomerPicture -InputObject <IFinancialsIdentity>
- -BodyParameter <IMicrosoftGraphPicture> [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphPicture> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgBetaFinancialCompanySaleOrderCustomerPicture -InputObject <IFinancialsIdentity>
  [-AdditionalProperties <Hashtable>] [-ContentInputFile <String>] [-ContentType <String>] [-Height <Int32>]
- [-Id <String>] [-Width <Int32>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-Width <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -134,21 +133,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -283,13 +267,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPicture
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPicture
-
-### System.Collections.Hashtable
 
 ## NOTES
 

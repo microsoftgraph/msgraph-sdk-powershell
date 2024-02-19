@@ -16,13 +16,13 @@ This method doesn't delete the rubric itself and can only be performed by teache
 ### Delete (Default)
 ```
 Remove-MgEducationClassAssignmentRubric -EducationAssignmentId <String> -EducationClassId <String>
- [-IfMatch <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgEducationClassAssignmentRubric -InputObject <IEducationIdentity> [-IfMatch <String>]
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-MgEducationClassAssignmentRubric -InputObject <IEducationIdentity> [-IfMatch <String>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -33,17 +33,10 @@ This method doesn't delete the rubric itself and can only be performed by teache
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Education
 ```
 
-
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-
+Remove-MgEducationClassAssignmentRubricByRef -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId
 
 ## PARAMETERS
 
@@ -74,21 +67,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -176,13 +154,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IEducationIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -198,9 +172,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[EducationAssignmentResourceId <String>]`: The unique identifier of educationAssignmentResource
   - `[EducationCategoryId <String>]`: The unique identifier of educationCategory
   - `[EducationClassId <String>]`: The unique identifier of educationClass
-  - `[EducationGradingCategoryId <String>]`: The unique identifier of educationGradingCategory
-  - `[EducationModuleId <String>]`: The unique identifier of educationModule
-  - `[EducationModuleResourceId <String>]`: The unique identifier of educationModuleResource
   - `[EducationOutcomeId <String>]`: The unique identifier of educationOutcome
   - `[EducationRubricId <String>]`: The unique identifier of educationRubric
   - `[EducationSchoolId <String>]`: The unique identifier of educationSchool

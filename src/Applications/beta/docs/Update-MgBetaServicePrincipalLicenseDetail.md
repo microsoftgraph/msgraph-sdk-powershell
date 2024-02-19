@@ -16,30 +16,26 @@ Update the navigation property licenseDetails in servicePrincipals
 ```
 Update-MgBetaServicePrincipalLicenseDetail -LicenseDetailsId <String> -ServicePrincipalId <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-ServicePlans <IMicrosoftGraphServicePlanInfo[]>]
- [-SkuId <String>] [-SkuPartNumber <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-SkuId <String>] [-SkuPartNumber <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaServicePrincipalLicenseDetail -LicenseDetailsId <String> -ServicePrincipalId <String>
- -BodyParameter <IMicrosoftGraphLicenseDetails> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphLicenseDetails> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaServicePrincipalLicenseDetail -InputObject <IApplicationsIdentity>
- -BodyParameter <IMicrosoftGraphLicenseDetails> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphLicenseDetails> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgBetaServicePrincipalLicenseDetail -InputObject <IApplicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-ServicePlans <IMicrosoftGraphServicePlanInfo[]>]
- [-SkuId <String>] [-SkuPartNumber <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-SkuId <String>] [-SkuPartNumber <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -88,21 +84,6 @@ Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -262,13 +243,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphLicenseDetails
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphLicenseDetails
-
-### System.Collections.Hashtable
 
 ## NOTES
 

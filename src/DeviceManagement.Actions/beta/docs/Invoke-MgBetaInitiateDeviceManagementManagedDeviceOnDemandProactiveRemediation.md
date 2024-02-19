@@ -15,15 +15,15 @@ Perform On Demand Proactive Remediation
 ### InitiateExpanded (Default)
 ```
 Invoke-MgBetaInitiateDeviceManagementManagedDeviceOnDemandProactiveRemediation -ManagedDeviceId <String>
- [-AdditionalProperties <Hashtable>] [-ScriptPolicyId <String>] [-Headers <IDictionary>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-ScriptPolicyId <String>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Initiate
 ```
 Invoke-MgBetaInitiateDeviceManagementManagedDeviceOnDemandProactiveRemediation -ManagedDeviceId <String>
  -Body <IPathsUgs0LuDevicemanagementManageddevicesManageddeviceIdMicrosoftGraphInitiateondemandproactiveremediationPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### InitiateViaIdentity
@@ -31,14 +31,14 @@ Invoke-MgBetaInitiateDeviceManagementManagedDeviceOnDemandProactiveRemediation -
 Invoke-MgBetaInitiateDeviceManagementManagedDeviceOnDemandProactiveRemediation
  -InputObject <IDeviceManagementActionsIdentity>
  -BodyParameter <IPathsUgs0LuDevicemanagementManageddevicesManageddeviceIdMicrosoftGraphInitiateondemandproactiveremediationPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### InitiateViaIdentityExpanded
 ```
 Invoke-MgBetaInitiateDeviceManagementManagedDeviceOnDemandProactiveRemediation
  -InputObject <IDeviceManagementActionsIdentity> [-AdditionalProperties <Hashtable>]
- [-ScriptPolicyId <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ScriptPolicyId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -103,21 +103,6 @@ Parameter Sets: InitiateViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -225,13 +210,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPathsUgs0LuDevicemanagementManageddevicesManageddeviceIdMicrosoftGraphInitiateondemandproactiveremediationPostRequestbodyContentApplicationJsonSchema
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -294,7 +275,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[MicrosoftTunnelSiteId <String>]`: The unique identifier of microsoftTunnelSite
   - `[MobileAppTroubleshootingEventId <String>]`: The unique identifier of mobileAppTroubleshootingEvent
   - `[NotificationMessageTemplateId <String>]`: The unique identifier of notificationMessageTemplate
-  - `[OperationApprovalRequestId <String>]`: The unique identifier of operationApprovalRequest
   - `[PrivilegeManagementElevationRequestId <String>]`: The unique identifier of privilegeManagementElevationRequest
   - `[RemoteAssistancePartnerId <String>]`: The unique identifier of remoteAssistancePartner
   - `[RoleScopeTagId <String>]`: The unique identifier of roleScopeTag

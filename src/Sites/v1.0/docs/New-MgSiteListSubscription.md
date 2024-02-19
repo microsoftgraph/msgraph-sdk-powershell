@@ -19,20 +19,19 @@ New-MgSiteListSubscription -ListId <String> -SiteId <String> [-AdditionalPropert
  [-EncryptionCertificate <String>] [-EncryptionCertificateId <String>] [-ExpirationDateTime <DateTime>]
  [-Id <String>] [-IncludeResourceData] [-LatestSupportedTlsVersion <String>]
  [-LifecycleNotificationUrl <String>] [-NotificationQueryOptions <String>] [-NotificationUrl <String>]
- [-NotificationUrlAppId <String>] [-Resource <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-NotificationUrlAppId <String>] [-Resource <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgSiteListSubscription -ListId <String> -SiteId <String> -BodyParameter <IMicrosoftGraphSubscription>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgSiteListSubscription -InputObject <ISitesIdentity> -BodyParameter <IMicrosoftGraphSubscription>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -42,8 +41,7 @@ New-MgSiteListSubscription -InputObject <ISitesIdentity> [-AdditionalProperties 
  [-EncryptionCertificate <String>] [-EncryptionCertificateId <String>] [-ExpirationDateTime <DateTime>]
  [-Id <String>] [-IncludeResourceData] [-LatestSupportedTlsVersion <String>]
  [-LifecycleNotificationUrl <String>] [-NotificationQueryOptions <String>] [-NotificationUrl <String>]
- [-NotificationUrlAppId <String>] [-Resource <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-NotificationUrlAppId <String>] [-Resource <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -222,21 +220,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -471,13 +454,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.ISitesIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSubscription
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -530,7 +509,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[OnenoteResourceId <String>]`: The unique identifier of onenoteResource
   - `[OnenoteSectionId <String>]`: The unique identifier of onenoteSection
   - `[Path <String>]`: Usage: path='{path}'
-  - `[Path1 <String>]`: Usage: path='{path1}'
   - `[PermissionId <String>]`: The unique identifier of permission
   - `[RelationId <String>]`: The unique identifier of relation
   - `[RichLongRunningOperationId <String>]`: The unique identifier of richLongRunningOperation

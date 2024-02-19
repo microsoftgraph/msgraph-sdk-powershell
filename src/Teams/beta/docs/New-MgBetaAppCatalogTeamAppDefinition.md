@@ -19,25 +19,22 @@ This API specifically updates an app published to your organization's app catalo
 New-MgBetaAppCatalogTeamAppDefinition -TeamsAppId <String> [-AdditionalProperties <Hashtable>]
  [-AllowedInstallationScopes <String>] [-Authorization <IMicrosoftGraphTeamsAppAuthorization>]
  [-AzureAdAppId <String>] [-Bot <Hashtable>] [-ColorIcon <IMicrosoftGraphTeamsAppIcon>]
- [-CreatedBy <IMicrosoftGraphIdentitySet>]
- [-DashboardCards <IMicrosoftGraphTeamsAppDashboardCardDefinition[]>] [-Description <String>]
- [-DisplayName <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>]
- [-OutlineIcon <IMicrosoftGraphTeamsAppIcon>] [-PublishingState <String>] [-Shortdescription <String>]
- [-TeamsAppId1 <String>] [-Version <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
+ [-CreatedBy <IMicrosoftGraphIdentitySet>] [-Description <String>] [-DisplayName <String>] [-Id <String>]
+ [-LastModifiedDateTime <DateTime>] [-OutlineIcon <IMicrosoftGraphTeamsAppIcon>] [-PublishingState <String>]
+ [-Shortdescription <String>] [-TeamsAppId1 <String>] [-Version <String>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaAppCatalogTeamAppDefinition -TeamsAppId <String> -BodyParameter <IMicrosoftGraphTeamsAppDefinition>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaAppCatalogTeamAppDefinition -InputObject <ITeamsIdentity>
- -BodyParameter <IMicrosoftGraphTeamsAppDefinition> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphTeamsAppDefinition> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -45,11 +42,10 @@ New-MgBetaAppCatalogTeamAppDefinition -InputObject <ITeamsIdentity>
 New-MgBetaAppCatalogTeamAppDefinition -InputObject <ITeamsIdentity> [-TeamsAppId <String>]
  [-AdditionalProperties <Hashtable>] [-AllowedInstallationScopes <String>]
  [-Authorization <IMicrosoftGraphTeamsAppAuthorization>] [-AzureAdAppId <String>] [-Bot <Hashtable>]
- [-ColorIcon <IMicrosoftGraphTeamsAppIcon>] [-CreatedBy <IMicrosoftGraphIdentitySet>]
- [-DashboardCards <IMicrosoftGraphTeamsAppDashboardCardDefinition[]>] [-Description <String>]
+ [-ColorIcon <IMicrosoftGraphTeamsAppIcon>] [-CreatedBy <IMicrosoftGraphIdentitySet>] [-Description <String>]
  [-DisplayName <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>]
  [-OutlineIcon <IMicrosoftGraphTeamsAppIcon>] [-PublishingState <String>] [-Shortdescription <String>]
- [-Version <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Version <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -195,22 +191,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -DashboardCards
-.
-To construct, see NOTES section for DASHBOARDCARDS properties and create a hash table.
-
-```yaml
-Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTeamsAppDashboardCardDefinition[]
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Description
 .
 
@@ -238,21 +218,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -434,13 +399,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTeamsAppDefinition
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -487,26 +448,10 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-      - `[Id <String>]`: Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn't included in the response.
+      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+      - `[Id <String>]`: The identifier of the identity. This property is read-only.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
-  - `[DashboardCards <IMicrosoftGraphTeamsAppDashboardCardDefinition[]>]`: 
-    - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[ContentSource <IMicrosoftGraphTeamsAppDashboardCardContentSource>]`: teamsAppDashboardCardContentSource
-      - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[BotConfiguration <IMicrosoftGraphTeamsAppDashboardCardBotConfiguration>]`: teamsAppDashboardCardBotConfiguration
-        - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[BotId <String>]`: 
-      - `[SourceType <String>]`: teamsAppDashboardCardSourceType
-    - `[DefaultSize <String>]`: teamsAppDashboardCardSize
-    - `[Description <String>]`: 
-    - `[DisplayName <String>]`: 
-    - `[Icon <IMicrosoftGraphTeamsAppDashboardCardIcon>]`: teamsAppDashboardCardIcon
-      - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[IconUrl <String>]`: 
-      - `[OfficeUiFabricIconName <String>]`: 
-    - `[PickerGroupId <String>]`: 
   - `[Description <String>]`: 
   - `[DisplayName <String>]`: The name of the app provided by the app developer.
   - `[LastModifiedDateTime <DateTime?>]`: 
@@ -530,27 +475,10 @@ To create the parameters described below, construct a hash table containing the 
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Application <IMicrosoftGraphIdentity>]`: identity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-    - `[Id <String>]`: Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn't included in the response.
+    - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+    - `[Id <String>]`: The identifier of the identity. This property is read-only.
   - `[Device <IMicrosoftGraphIdentity>]`: identity
   - `[User <IMicrosoftGraphIdentity>]`: identity
-
-`DASHBOARDCARDS <IMicrosoftGraphTeamsAppDashboardCardDefinition[]>`: .
-  - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[ContentSource <IMicrosoftGraphTeamsAppDashboardCardContentSource>]`: teamsAppDashboardCardContentSource
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[BotConfiguration <IMicrosoftGraphTeamsAppDashboardCardBotConfiguration>]`: teamsAppDashboardCardBotConfiguration
-      - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[BotId <String>]`: 
-    - `[SourceType <String>]`: teamsAppDashboardCardSourceType
-  - `[DefaultSize <String>]`: teamsAppDashboardCardSize
-  - `[Description <String>]`: 
-  - `[DisplayName <String>]`: 
-  - `[Icon <IMicrosoftGraphTeamsAppDashboardCardIcon>]`: teamsAppDashboardCardIcon
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[IconUrl <String>]`: 
-    - `[OfficeUiFabricIconName <String>]`: 
-  - `[PickerGroupId <String>]`: 
 
 `INPUTOBJECT <ITeamsIdentity>`: Identity Parameter
   - `[AssociatedTeamInfoId <String>]`: The unique identifier of associatedTeamInfo
@@ -572,12 +500,10 @@ To create the parameters described below, construct a hash table containing the 
   - `[SchedulingGroupId <String>]`: The unique identifier of schedulingGroup
   - `[SharedWithChannelTeamInfoId <String>]`: The unique identifier of sharedWithChannelTeamInfo
   - `[ShiftId <String>]`: The unique identifier of shift
-  - `[ShiftsRoleDefinitionId <String>]`: The unique identifier of shiftsRoleDefinition
   - `[SwapShiftsChangeRequestId <String>]`: The unique identifier of swapShiftsChangeRequest
   - `[TeamId <String>]`: The unique identifier of team
   - `[TeamTemplateDefinitionId <String>]`: The unique identifier of teamTemplateDefinition
   - `[TeamTemplateId <String>]`: The unique identifier of teamTemplate
-  - `[TeamsAppDashboardCardDefinitionId <String>]`: The unique identifier of teamsAppDashboardCardDefinition
   - `[TeamsAppDefinitionId <String>]`: The unique identifier of teamsAppDefinition
   - `[TeamsAppId <String>]`: The unique identifier of teamsApp
   - `[TeamsAppInstallationId <String>]`: The unique identifier of teamsAppInstallation

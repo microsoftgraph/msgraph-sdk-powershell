@@ -26,14 +26,13 @@ New-MgDomain [-AdditionalProperties <Hashtable>] [-AuthenticationType <String>] 
  [-IsDefault] [-IsInitial] [-IsRoot] [-IsVerified] [-Manufacturer <String>] [-Model <String>]
  [-PasswordNotificationWindowInDays <Int32>] [-PasswordValidityPeriodInDays <Int32>]
  [-ServiceConfigurationRecords <IMicrosoftGraphDomainDnsRecord[]>] [-State <IMicrosoftGraphDomainState>]
- [-SupportedServices <String[]>] [-VerificationDnsRecords <IMicrosoftGraphDomainDnsRecord[]>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-SupportedServices <String[]>] [-VerificationDnsRecords <IMicrosoftGraphDomainDnsRecord[]>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgDomain -BodyParameter <IMicrosoftGraphDomain> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+New-MgDomain -BodyParameter <IMicrosoftGraphDomain> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -160,21 +159,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -448,13 +432,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDomain
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDomain
-
-### System.Collections.Hashtable
 
 ## NOTES
 

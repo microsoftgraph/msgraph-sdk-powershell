@@ -15,15 +15,14 @@ Create new navigation property to frontLineServicePlans for deviceManagement
 ### CreateExpanded (Default)
 ```
 New-MgBetaDeviceManagementVirtualEndpointFrontLineServicePlan [-AdditionalProperties <Hashtable>]
- [-DisplayName <String>] [-Id <String>] [-TotalCount <Int32>] [-UsedCount <Int32>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-DisplayName <String>] [-Id <String>] [-TotalCount <Int32>] [-UsedCount <Int32>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaDeviceManagementVirtualEndpointFrontLineServicePlan
- -BodyParameter <IMicrosoftGraphCloudPcFrontLineServicePlan> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphCloudPcFrontLineServicePlan> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -91,21 +90,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -193,13 +177,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcFrontLineServicePlan
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcFrontLineServicePlan
-
-### System.Collections.Hashtable
 
 ## NOTES
 

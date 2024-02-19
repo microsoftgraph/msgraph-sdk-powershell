@@ -15,29 +15,29 @@ Create new navigation property to deviceManagementTroubleshootingEvents for user
 ### CreateExpanded (Default)
 ```
 New-MgUserDeviceManagementTroubleshootingEvent -UserId <String> [-AdditionalProperties <Hashtable>]
- [-CorrelationId <String>] [-EventDateTime <DateTime>] [-Id <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-CorrelationId <String>] [-EventDateTime <DateTime>] [-Id <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgUserDeviceManagementTroubleshootingEvent -UserId <String>
- -BodyParameter <IMicrosoftGraphDeviceManagementTroubleshootingEvent> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphDeviceManagementTroubleshootingEvent> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgUserDeviceManagementTroubleshootingEvent -InputObject <IDevicesCorporateManagementIdentity>
- -BodyParameter <IMicrosoftGraphDeviceManagementTroubleshootingEvent> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphDeviceManagementTroubleshootingEvent> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgUserDeviceManagementTroubleshootingEvent -InputObject <IDevicesCorporateManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-CorrelationId <String>] [-EventDateTime <DateTime>] [-Id <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -119,21 +119,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -224,13 +209,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementTroubleshootingEvent
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementTroubleshootingEvent
-
-### System.Collections.Hashtable
 
 ## NOTES
 

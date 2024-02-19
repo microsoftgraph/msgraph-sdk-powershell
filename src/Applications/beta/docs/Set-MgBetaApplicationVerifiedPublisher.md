@@ -16,29 +16,28 @@ For more information, including prerequisites to setting a verified publisher, s
 ### SetExpanded (Default)
 ```
 Set-MgBetaApplicationVerifiedPublisher -ApplicationId <String> [-AdditionalProperties <Hashtable>]
- [-VerifiedPublisherId <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-VerifiedPublisherId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Set
 ```
 Set-MgBetaApplicationVerifiedPublisher -ApplicationId <String>
  -BodyParameter <IPaths1X6U4MfApplicationsApplicationIdMicrosoftGraphSetverifiedpublisherPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentity
 ```
 Set-MgBetaApplicationVerifiedPublisher -InputObject <IApplicationsIdentity>
  -BodyParameter <IPaths1X6U4MfApplicationsApplicationIdMicrosoftGraphSetverifiedpublisherPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentityExpanded
 ```
 Set-MgBetaApplicationVerifiedPublisher -InputObject <IApplicationsIdentity>
- [-AdditionalProperties <Hashtable>] [-VerifiedPublisherId <String>] [-Headers <IDictionary>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-VerifiedPublisherId <String>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -100,21 +99,6 @@ Parameter Sets: Set, SetViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -207,13 +191,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPaths1X6U4MfApplicationsApplicationIdMicrosoftGraphSetverifiedpublisherPostRequestbodyContentApplicationJsonSchema
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
-
-### System.Collections.Hashtable
 
 ## NOTES
 

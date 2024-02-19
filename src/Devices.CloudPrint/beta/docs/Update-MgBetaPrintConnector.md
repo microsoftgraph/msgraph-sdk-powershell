@@ -17,21 +17,20 @@ Update the properties of a printConnector object.
 Update-MgBetaPrintConnector -PrintConnectorId <String> [-AdditionalProperties <Hashtable>]
  [-AppVersion <String>] [-DeviceHealth <IMicrosoftGraphDeviceHealth>] [-DisplayName <String>]
  [-FullyQualifiedDomainName <String>] [-Id <String>] [-Location <IMicrosoftGraphPrinterLocation>]
- [-Name <String>] [-OperatingSystem <String>] [-RegisteredDateTime <DateTime>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Name <String>] [-OperatingSystem <String>] [-RegisteredDateTime <DateTime>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaPrintConnector -PrintConnectorId <String> -BodyParameter <IMicrosoftGraphPrintConnector>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaPrintConnector -InputObject <IDevicesCloudPrintIdentity>
- -BodyParameter <IMicrosoftGraphPrintConnector> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphPrintConnector> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -39,8 +38,8 @@ Update-MgBetaPrintConnector -InputObject <IDevicesCloudPrintIdentity>
 Update-MgBetaPrintConnector -InputObject <IDevicesCloudPrintIdentity> [-AdditionalProperties <Hashtable>]
  [-AppVersion <String>] [-DeviceHealth <IMicrosoftGraphDeviceHealth>] [-DisplayName <String>]
  [-FullyQualifiedDomainName <String>] [-Id <String>] [-Location <IMicrosoftGraphPrinterLocation>]
- [-Name <String>] [-OperatingSystem <String>] [-RegisteredDateTime <DateTime>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Name <String>] [-OperatingSystem <String>] [-RegisteredDateTime <DateTime>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -153,21 +152,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -319,13 +303,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrintConnector
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrintConnector
-
-### System.Collections.Hashtable
 
 ## NOTES
 

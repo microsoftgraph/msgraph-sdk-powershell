@@ -18,22 +18,20 @@ Update-MgBetaDeviceManagementIoUpdateStatus -IosUpdateDeviceStatusId <String>
  [-AdditionalProperties <Hashtable>] [-ComplianceGracePeriodExpirationDateTime <DateTime>]
  [-DeviceDisplayName <String>] [-DeviceId <String>] [-DeviceModel <String>] [-Id <String>]
  [-InstallStatus <String>] [-LastReportedDateTime <DateTime>] [-OSVersion <String>] [-Platform <Int32>]
- [-Status <String>] [-UserId <String>] [-UserName <String>] [-UserPrincipalName <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Status <String>] [-UserId <String>] [-UserName <String>] [-UserPrincipalName <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaDeviceManagementIoUpdateStatus -IosUpdateDeviceStatusId <String>
- -BodyParameter <IMicrosoftGraphIosUpdateDeviceStatus> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphIosUpdateDeviceStatus> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaDeviceManagementIoUpdateStatus -InputObject <IDeviceManagementAdministrationIdentity>
- -BodyParameter <IMicrosoftGraphIosUpdateDeviceStatus> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphIosUpdateDeviceStatus> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -42,8 +40,8 @@ Update-MgBetaDeviceManagementIoUpdateStatus -InputObject <IDeviceManagementAdmin
  [-AdditionalProperties <Hashtable>] [-ComplianceGracePeriodExpirationDateTime <DateTime>]
  [-DeviceDisplayName <String>] [-DeviceId <String>] [-DeviceModel <String>] [-Id <String>]
  [-InstallStatus <String>] [-LastReportedDateTime <DateTime>] [-OSVersion <String>] [-Platform <Int32>]
- [-Status <String>] [-UserId <String>] [-UserName <String>] [-UserPrincipalName <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Status <String>] [-UserId <String>] [-UserName <String>] [-UserPrincipalName <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -155,21 +153,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -380,13 +363,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIosUpdateDeviceStatus
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIosUpdateDeviceStatus
-
-### System.Collections.Hashtable
 
 ## NOTES
 

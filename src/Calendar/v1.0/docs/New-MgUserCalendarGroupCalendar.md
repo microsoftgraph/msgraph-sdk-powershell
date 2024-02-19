@@ -21,20 +21,20 @@ New-MgUserCalendarGroupCalendar -CalendarGroupId <String> -UserId <String> [-Add
  [-HexColor <String>] [-Id <String>] [-IsDefaultCalendar] [-IsRemovable] [-IsTallyingResponses]
  [-MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>] [-Name <String>]
  [-Owner <IMicrosoftGraphEmailAddress>]
- [-SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgUserCalendarGroupCalendar -CalendarGroupId <String> -UserId <String>
- -BodyParameter <IMicrosoftGraphCalendar> [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphCalendar> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgUserCalendarGroupCalendar -InputObject <ICalendarIdentity> -BodyParameter <IMicrosoftGraphCalendar>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -46,8 +46,8 @@ New-MgUserCalendarGroupCalendar -InputObject <ICalendarIdentity> [-AdditionalPro
  [-HexColor <String>] [-Id <String>] [-IsDefaultCalendar] [-IsRemovable] [-IsTallyingResponses]
  [-MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>] [-Name <String>]
  [-Owner <IMicrosoftGraphEmailAddress>]
- [-SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -279,21 +279,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -HexColor
 The calendar color, expressed in a hex color code of three hexadecimal values, each ranging from 00 to FF and representing the red, green, or blue components of the color in the RGB color space.
 If the user has never explicitly set a color for the calendar, this property is empty.
@@ -511,13 +496,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCalendar
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCalendar
-
-### System.Collections.Hashtable
 
 ## NOTES
 

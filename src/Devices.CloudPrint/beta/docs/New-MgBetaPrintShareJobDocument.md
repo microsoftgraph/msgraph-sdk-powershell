@@ -17,22 +17,19 @@ Create new navigation property to documents for print
 New-MgBetaPrintShareJobDocument -PrinterShareId <String> -PrintJobId <String>
  [-AdditionalProperties <Hashtable>] [-Configuration <IMicrosoftGraphPrinterDocumentConfiguration>]
  [-ContentType <String>] [-DisplayName <String>] [-DownloadedDateTime <DateTime>] [-Id <String>]
- [-Size <Int64>] [-UploadedDateTime <DateTime>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Size <Int64>] [-UploadedDateTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaPrintShareJobDocument -PrinterShareId <String> -PrintJobId <String>
- -BodyParameter <IMicrosoftGraphPrintDocument> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphPrintDocument> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaPrintShareJobDocument -InputObject <IDevicesCloudPrintIdentity>
- -BodyParameter <IMicrosoftGraphPrintDocument> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphPrintDocument> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -40,7 +37,7 @@ New-MgBetaPrintShareJobDocument -InputObject <IDevicesCloudPrintIdentity>
 New-MgBetaPrintShareJobDocument -InputObject <IDevicesCloudPrintIdentity> [-AdditionalProperties <Hashtable>]
  [-Configuration <IMicrosoftGraphPrinterDocumentConfiguration>] [-ContentType <String>]
  [-DisplayName <String>] [-DownloadedDateTime <DateTime>] [-Id <String>] [-Size <Int64>]
- [-UploadedDateTime <DateTime>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-UploadedDateTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -155,21 +152,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -306,13 +288,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrintDocument
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrintDocument
-
-### System.Collections.Hashtable
 
 ## NOTES
 

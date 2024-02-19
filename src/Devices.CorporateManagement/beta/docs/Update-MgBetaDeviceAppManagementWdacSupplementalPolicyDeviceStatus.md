@@ -20,8 +20,8 @@ Update-MgBetaDeviceAppManagementWdacSupplementalPolicyDeviceStatus
  [-DeploymentStatus <WindowsDefenderApplicationControlSupplementalPolicyStatuses>] [-DeviceId <String>]
  [-DeviceName <String>] [-Id <String>] [-LastSyncDateTime <DateTime>] [-OSDescription <String>]
  [-OSVersion <String>] [-Policy <IMicrosoftGraphWindowsDefenderApplicationControlSupplementalPolicy>]
- [-PolicyVersion <String>] [-UserName <String>] [-UserPrincipalName <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PolicyVersion <String>] [-UserName <String>] [-UserPrincipalName <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
@@ -30,7 +30,7 @@ Update-MgBetaDeviceAppManagementWdacSupplementalPolicyDeviceStatus
  -WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusId <String>
  -WindowsDefenderApplicationControlSupplementalPolicyId <String>
  -BodyParameter <IMicrosoftGraphWindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
@@ -38,7 +38,7 @@ Update-MgBetaDeviceAppManagementWdacSupplementalPolicyDeviceStatus
 Update-MgBetaDeviceAppManagementWdacSupplementalPolicyDeviceStatus
  -InputObject <IDevicesCorporateManagementIdentity>
  -BodyParameter <IMicrosoftGraphWindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -48,8 +48,8 @@ Update-MgBetaDeviceAppManagementWdacSupplementalPolicyDeviceStatus
  [-DeploymentStatus <WindowsDefenderApplicationControlSupplementalPolicyStatuses>] [-DeviceId <String>]
  [-DeviceName <String>] [-Id <String>] [-LastSyncDateTime <DateTime>] [-OSDescription <String>]
  [-OSVersion <String>] [-Policy <IMicrosoftGraphWindowsDefenderApplicationControlSupplementalPolicy>]
- [-PolicyVersion <String>] [-UserName <String>] [-UserPrincipalName <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PolicyVersion <String>] [-UserName <String>] [-UserPrincipalName <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -146,21 +146,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -372,13 +357,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus
-
-### System.Collections.Hashtable
 
 ## NOTES
 

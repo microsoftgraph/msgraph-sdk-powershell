@@ -15,14 +15,13 @@ Update content for the navigation property picture in financials
 ### Set (Default)
 ```
 Set-MgBetaFinancialCompanyEmployeePictureContent -CompanyId <String> -EmployeeId <String> -PictureId <String>
- -InFile <String> [-Data <Stream>] [-ContentType <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -InFile <String> [-Data <Stream>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentity
 ```
 Set-MgBetaFinancialCompanyEmployeePictureContent -InputObject <IFinancialsIdentity> -InFile <String>
- [-Data <Stream>] [-ContentType <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Data <Stream>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -61,21 +60,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ContentType
-ContentType Parameter
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Data
 .
 
@@ -103,21 +87,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -207,17 +176,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
-### System.Collections.IDictionary
-
 ### System.IO.Stream
-
-### System.String
 
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPicture
-
-### System.Collections.Hashtable
 
 ## NOTES
 

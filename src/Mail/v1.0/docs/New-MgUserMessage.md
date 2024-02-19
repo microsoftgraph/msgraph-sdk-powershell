@@ -8,9 +8,12 @@ schema: 2.0.0
 # New-MgUserMessage
 
 ## SYNOPSIS
-Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
-You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
-The table in the Permissions section lists the resources that support open extensions.
+Create a draft of a new message in either JSON or MIME format.
+When using JSON format, you can:\n- Include an attachment to the message.\n- Update the draft later to add content to the body or change other message properties.
+When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\n- /* Add any attachments and S/MIME properties to the MIME content.
+By default, this operation saves the draft in the Drafts folder.
+Send the draft message in a subsequent operation.
+Alternatively, send a new message in a single operation, or create a draft to forward, reply and reply-all to an existing message.
 
 ## SYNTAX
 
@@ -31,19 +34,19 @@ New-MgUserMessage -UserId <String> [-AdditionalProperties <Hashtable>]
  [-Sender <IMicrosoftGraphRecipient>] [-SentDateTime <DateTime>]
  [-SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>] [-Subject <String>]
  [-ToRecipients <IMicrosoftGraphRecipient[]>] [-UniqueBody <IMicrosoftGraphItemBody>] [-WebLink <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgUserMessage -UserId <String> -BodyParameter <IMicrosoftGraphMessage> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+New-MgUserMessage -UserId <String> -BodyParameter <IMicrosoftGraphMessage> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgUserMessage -InputObject <IMailIdentity> -BodyParameter <IMicrosoftGraphMessage>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgUserMessage -InputObject <IMailIdentity> -BodyParameter <IMicrosoftGraphMessage> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -63,13 +66,16 @@ New-MgUserMessage -InputObject <IMailIdentity> [-AdditionalProperties <Hashtable
  [-Sender <IMicrosoftGraphRecipient>] [-SentDateTime <DateTime>]
  [-SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>] [-Subject <String>]
  [-ToRecipients <IMicrosoftGraphRecipient[]>] [-UniqueBody <IMicrosoftGraphItemBody>] [-WebLink <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
-You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
-The table in the Permissions section lists the resources that support open extensions.
+Create a draft of a new message in either JSON or MIME format.
+When using JSON format, you can:\n- Include an attachment to the message.\n- Update the draft later to add content to the body or change other message properties.
+When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\n- /* Add any attachments and S/MIME properties to the MIME content.
+By default, this operation saves the draft in the Drafts folder.
+Send the draft message in a subsequent operation.
+Alternatively, send a new message in a single operation, or create a draft to forward, reply and reply-all to an existing message.
 
 ## EXAMPLES
 
@@ -385,21 +391,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -800,13 +791,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMessage
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMessage
-
-### System.Collections.Hashtable
 
 ## NOTES
 

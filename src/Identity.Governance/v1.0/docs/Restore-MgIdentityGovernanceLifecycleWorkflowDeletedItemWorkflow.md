@@ -15,14 +15,14 @@ You can only restore a workflow that was deleted within the last 30 days before 
 
 ### Restore (Default)
 ```
-Restore-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow -WorkflowId <String> [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Restore-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow -WorkflowId <String> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### RestoreViaIdentity
 ```
 Restore-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow -InputObject <IIdentityGovernanceIdentity>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -46,21 +46,6 @@ You can only restore a workflow that was deleted within the last 30 days before 
 
 
 ## PARAMETERS
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
 
 ### -InputObject
 Identity Parameter
@@ -131,13 +116,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentityGovernanceWorkflow
-
-### System.Collections.Hashtable
 
 ## NOTES
 

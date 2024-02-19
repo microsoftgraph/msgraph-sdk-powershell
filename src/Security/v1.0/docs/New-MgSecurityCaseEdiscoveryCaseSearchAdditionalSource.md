@@ -16,30 +16,26 @@ Create a new additional source associated with an eDiscovery search.
 ```
 New-MgSecurityCaseEdiscoveryCaseSearchAdditionalSource -EdiscoveryCaseId <String> -EdiscoverySearchId <String>
  [-AdditionalProperties <Hashtable>] [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>]
- [-DisplayName <String>] [-HoldStatus <String>] [-Id <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-DisplayName <String>] [-HoldStatus <String>] [-Id <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgSecurityCaseEdiscoveryCaseSearchAdditionalSource -EdiscoveryCaseId <String> -EdiscoverySearchId <String>
- -BodyParameter <IMicrosoftGraphSecurityDataSource> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphSecurityDataSource> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgSecurityCaseEdiscoveryCaseSearchAdditionalSource -InputObject <ISecurityIdentity>
- -BodyParameter <IMicrosoftGraphSecurityDataSource> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphSecurityDataSource> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgSecurityCaseEdiscoveryCaseSearchAdditionalSource -InputObject <ISecurityIdentity>
  [-AdditionalProperties <Hashtable>] [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>]
- [-DisplayName <String>] [-HoldStatus <String>] [-Id <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-DisplayName <String>] [-HoldStatus <String>] [-Id <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -170,21 +166,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -HoldStatus
 dataSourceHoldStatus
 
@@ -272,13 +253,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityDataSource
-
-### System.Collections.Hashtable
 
 ## NOTES
 

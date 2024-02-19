@@ -16,28 +16,25 @@ This API cannot create a new chat; you must use the list chats method to retriev
 ### CreateExpanded (Default)
 ```
 New-MgUserChatPinnedMessage -ChatId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
- [-Id <String>] [-Message <IMicrosoftGraphChatMessage>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Id <String>] [-Message <IMicrosoftGraphChatMessage>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgUserChatPinnedMessage -ChatId <String> -UserId <String>
- -BodyParameter <IMicrosoftGraphPinnedChatMessageInfo> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphPinnedChatMessageInfo> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgUserChatPinnedMessage -InputObject <ITeamsIdentity>
- -BodyParameter <IMicrosoftGraphPinnedChatMessageInfo> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphPinnedChatMessageInfo> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgUserChatPinnedMessage -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>] [-Id <String>]
- [-Message <IMicrosoftGraphChatMessage>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Message <IMicrosoftGraphChatMessage>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -105,21 +102,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -226,13 +208,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPinnedChatMessageInfo
-
-### System.Collections.Hashtable
 
 ## NOTES
 

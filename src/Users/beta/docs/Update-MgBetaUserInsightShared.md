@@ -18,21 +18,19 @@ Update-MgBetaUserInsightShared -SharedInsightId <String> -UserId <String> [-Addi
  [-Id <String>] [-LastShared <IMicrosoftGraphSharingDetail>] [-LastSharedMethod <IMicrosoftGraphEntity>]
  [-Resource <IMicrosoftGraphEntity>] [-ResourceReference <IMicrosoftGraphResourceReference>]
  [-ResourceVisualization <IMicrosoftGraphResourceVisualization>]
- [-SharingHistory <IMicrosoftGraphSharingDetail[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-SharingHistory <IMicrosoftGraphSharingDetail[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaUserInsightShared -SharedInsightId <String> -UserId <String>
- -BodyParameter <IMicrosoftGraphSharedInsight> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphSharedInsight> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaUserInsightShared -InputObject <IUsersIdentity> -BodyParameter <IMicrosoftGraphSharedInsight>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -41,8 +39,7 @@ Update-MgBetaUserInsightShared -InputObject <IUsersIdentity> [-AdditionalPropert
  [-Id <String>] [-LastShared <IMicrosoftGraphSharingDetail>] [-LastSharedMethod <IMicrosoftGraphEntity>]
  [-Resource <IMicrosoftGraphEntity>] [-ResourceReference <IMicrosoftGraphResourceReference>]
  [-ResourceVisualization <IMicrosoftGraphResourceVisualization>]
- [-SharingHistory <IMicrosoftGraphSharingDetail[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-SharingHistory <IMicrosoftGraphSharingDetail[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -91,21 +88,6 @@ Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -310,13 +292,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSharedInsight
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -363,7 +341,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[SharingHistory <IMicrosoftGraphSharingDetail[]>]`: 
 
 `INPUTOBJECT <IUsersIdentity>`: Identity Parameter
-  - `[AppId <String>]`: Alternate key of servicePrincipal
   - `[AttachmentBaseId <String>]`: The unique identifier of attachmentBase
   - `[AttachmentId <String>]`: The unique identifier of attachment
   - `[AttachmentSessionId <String>]`: The unique identifier of attachmentSession

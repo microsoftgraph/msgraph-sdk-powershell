@@ -17,13 +17,13 @@ The teacher determines the resources to upload in the feedback resources folder 
 ### Set (Default)
 ```
 Set-MgBetaEducationUserAssignmentUpFeedbackResourceFolder -EducationAssignmentId <String>
- -EducationUserId <String> [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -EducationUserId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentity
 ```
-Set-MgBetaEducationUserAssignmentUpFeedbackResourceFolder -InputObject <IEducationIdentity>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Set-MgBetaEducationUserAssignmentUpFeedbackResourceFolder -InputObject <IEducationIdentity> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -38,14 +38,14 @@ The teacher determines the resources to upload in the feedback resources folder 
 {{ Add code here }}
 ```
 
-
+{{ Add output here }}
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
 {{ Add code here }}
 ```
 
-
+{{ Add output here }}
 
 ## PARAMETERS
 
@@ -76,21 +76,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -148,13 +133,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationAssignment
-
-### System.Collections.Hashtable
 
 ## NOTES
 

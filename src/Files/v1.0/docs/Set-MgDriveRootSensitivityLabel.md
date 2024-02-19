@@ -15,29 +15,29 @@ Invoke action assignSensitivityLabel
 ### AssignExpanded (Default)
 ```
 Set-MgDriveRootSensitivityLabel -DriveId <String> [-AdditionalProperties <Hashtable>]
- [-AssignmentMethod <String>] [-JustificationText <String>] [-SensitivityLabelId <String>]
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AssignmentMethod <String>] [-JustificationText <String>] [-SensitivityLabelId <String>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Assign
 ```
 Set-MgDriveRootSensitivityLabel -DriveId <String>
  -BodyParameter <IPaths9Hea9QDrivesDriveIdRootMicrosoftGraphAssignsensitivitylabelPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AssignViaIdentity
 ```
 Set-MgDriveRootSensitivityLabel -InputObject <IFilesIdentity>
  -BodyParameter <IPaths9Hea9QDrivesDriveIdRootMicrosoftGraphAssignsensitivitylabelPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AssignViaIdentityExpanded
 ```
 Set-MgDriveRootSensitivityLabel -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>]
- [-AssignmentMethod <String>] [-JustificationText <String>] [-SensitivityLabelId <String>]
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AssignmentMethod <String>] [-JustificationText <String>] [-SensitivityLabelId <String>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -119,21 +119,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -238,13 +223,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IPaths9Hea9QDrivesDriveIdRootMicrosoftGraphAssignsensitivitylabelPostRequestbodyContentApplicationJsonSchema
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
-
-### System.Collections.Hashtable
 
 ## NOTES
 

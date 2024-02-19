@@ -32,19 +32,19 @@ New-MgUserDefaultCalendarEvent -UserId <String> [-AdditionalProperties <Hashtabl
  [-ResponseStatus <IMicrosoftGraphResponseStatus>] [-Sensitivity <String>] [-SeriesMasterId <String>]
  [-ShowAs <String>] [-SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]
  [-Start <IMicrosoftGraphDateTimeZone>] [-Subject <String>] [-TransactionId <String>] [-Type <String>]
- [-WebLink <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-WebLink <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgUserDefaultCalendarEvent -UserId <String> -BodyParameter <IMicrosoftGraphEvent> [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgUserDefaultCalendarEvent -UserId <String> -BodyParameter <IMicrosoftGraphEvent> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgUserDefaultCalendarEvent -InputObject <ICalendarIdentity> -BodyParameter <IMicrosoftGraphEvent>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -66,7 +66,7 @@ New-MgUserDefaultCalendarEvent -InputObject <ICalendarIdentity> [-AdditionalProp
  [-ResponseStatus <IMicrosoftGraphResponseStatus>] [-Sensitivity <String>] [-SeriesMasterId <String>]
  [-ShowAs <String>] [-SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]
  [-Start <IMicrosoftGraphDateTimeZone>] [-Subject <String>] [-TransactionId <String>] [-Type <String>]
- [-WebLink <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-WebLink <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -316,21 +316,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -953,13 +938,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEvent
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEvent
-
-### System.Collections.Hashtable
 
 ## NOTES
 

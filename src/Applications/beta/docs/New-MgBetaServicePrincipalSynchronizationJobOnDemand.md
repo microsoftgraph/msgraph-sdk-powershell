@@ -18,8 +18,8 @@ No user or group will be provisioned on-demand that would not have been provisio
 ```
 New-MgBetaServicePrincipalSynchronizationJobOnDemand -ServicePrincipalId <String>
  -SynchronizationJobId <String> [-AdditionalProperties <Hashtable>]
- [-Parameters <IMicrosoftGraphSynchronizationJobApplicationParameters[]>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-Parameters <IMicrosoftGraphSynchronizationJobApplicationParameters[]>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Provision
@@ -27,21 +27,21 @@ New-MgBetaServicePrincipalSynchronizationJobOnDemand -ServicePrincipalId <String
 New-MgBetaServicePrincipalSynchronizationJobOnDemand -ServicePrincipalId <String>
  -SynchronizationJobId <String>
  -BodyParameter <IPathsJgtujvServiceprincipalsServiceprincipalIdSynchronizationJobsSynchronizationjobIdMicrosoftGraphProvisionondemandPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ProvisionViaIdentity
 ```
 New-MgBetaServicePrincipalSynchronizationJobOnDemand -InputObject <IApplicationsIdentity>
  -BodyParameter <IPathsJgtujvServiceprincipalsServiceprincipalIdSynchronizationJobsSynchronizationjobIdMicrosoftGraphProvisionondemandPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ProvisionViaIdentityExpanded
 ```
 New-MgBetaServicePrincipalSynchronizationJobOnDemand -InputObject <IApplicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-Parameters <IMicrosoftGraphSynchronizationJobApplicationParameters[]>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -180,21 +180,6 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -297,13 +282,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPathsJgtujvServiceprincipalsServiceprincipalIdSynchronizationJobsSynchronizationjobIdMicrosoftGraphProvisionondemandPostRequestbodyContentApplicationJsonSchema
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphStringKeyStringValuePair
-
-### System.Collections.Hashtable
 
 ## NOTES
 

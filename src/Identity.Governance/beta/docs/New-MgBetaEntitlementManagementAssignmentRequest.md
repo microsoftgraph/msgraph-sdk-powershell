@@ -421,8 +421,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessPackageAssignmentRequest
 
-### System.Collections.Hashtable
-
 ## NOTES
 
 ALIASES
@@ -1408,10 +1406,10 @@ To create the parameters described below, construct a hash table containing the 
               - `[IsRooted <Boolean?>]`: true if device is rooted; false if device is jail-broken. This can only be updated by Intune.
               - `[Kind <String>]`: Form factor of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
               - `[ManagementType <String>]`: Management channel of the device.  This property is set by Intune. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.
-              - `[Manufacturer <String>]`: Manufacturer of the device. Read-only.
+              - `[Manufacturer <String>]`: Manufacturer of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
               - `[MdmAppId <String>]`: Application identifier used to register device into MDM. Read-only. Supports $filter (eq, ne, not, startsWith).
               - `[MemberOf <IMicrosoftGraphDirectoryObject[]>]`: Groups and administrative units that this device is a member of. Read-only. Nullable. Supports $expand.
-              - `[Model <String>]`: Model of the device. Read-only.
+              - `[Model <String>]`: Model of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
               - `[Name <String>]`: Friendly name of the device. Only returned if user signs in with a Microsoft account as part of Project Rome.
               - `[OnPremisesLastSyncDateTime <DateTime?>]`: The last time at which the object was synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Read-only. Supports $filter (eq, ne, not, ge, le, in).
               - `[OnPremisesSecurityIdentifier <String>]`: The on-premises security identifier (SID) for the user who was synchronized from on-premises to the cloud. Read-only. Returned only on $select. Supports $filter (eq).
@@ -1427,7 +1425,7 @@ To create the parameters described below, construct a hash table containing the 
               - `[Status <String>]`: Device is online or offline. Only returned if user signs in with a Microsoft account as part of Project Rome.
               - `[SystemLabels <String[]>]`: List of labels applied to the device by the system. Supports $filter (/$count eq 0, /$count ne 0).
               - `[TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>]`: Groups and administrative units that this device is a member of. This operation is transitive. Supports $expand.
-              - `[TrustType <String>]`: Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Microsoft Entra ID). For more information, see Introduction to device management in Microsoft Entra ID.
+              - `[TrustType <String>]`: Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Microsoft Entra ID). For more details, see Introduction to device management in Microsoft Entra ID.
               - `[UsageRights <IMicrosoftGraphUsageRight[]>]`: Represents the usage rights a device has been granted.
                 - `[Id <String>]`: The unique identifier for an entity. Read-only.
                 - `[CatalogId <String>]`: Product id corresponding to the usage right.
@@ -3189,9 +3187,9 @@ To create the parameters described below, construct a hash table containing the 
             - `[AllowDeleteChannels <Boolean?>]`: If set to true, guests can delete channels.
           - `[IncomingChannels <IMicrosoftGraphChannel[]>]`: List of channels shared with the team.
           - `[InstalledApps <IMicrosoftGraphTeamsAppInstallation[]>]`: The apps installed in this team.
-          - `[InternalId <String>]`: A unique ID for the team used in a few places such as the audit log/Office 365 Management Activity API.
+          - `[InternalId <String>]`: A unique ID for the team that has been used in a few places such as the audit log/Office 365 Management Activity API.
           - `[IsArchived <Boolean?>]`: Whether this team is in read-only mode.
-          - `[IsMembershipLimitedToOwners <Boolean?>]`: If set to true, the team is currently in the owner-only team membership state and inaccessible by other team members, such as students.
+          - `[IsMembershipLimitedToOwners <Boolean?>]`: If set to true, the team is currently in the owner-only team membership state and not accessible by other team members, such as students.
           - `[MemberSettings <IMicrosoftGraphTeamMemberSettings>]`: teamMemberSettings
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[AllowAddRemoveApps <Boolean?>]`: If set to true, members can add and remove apps.
@@ -3209,7 +3207,7 @@ To create the parameters described below, construct a hash table containing the 
             - `[AllowUserDeleteMessages <Boolean?>]`: If set to true, users can delete their messages.
             - `[AllowUserEditMessages <Boolean?>]`: If set to true, users can edit their messages.
           - `[Operations <IMicrosoftGraphTeamsAsyncOperation[]>]`: The async operations that ran or are running on this team.
-          - `[Owners <IMicrosoftGraphUser[]>]`: The list of this team's owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user-delegated permissions, no owner can be specified (the current user is the owner). The owner must be specified as an object ID (GUID), not a UPN.
+          - `[Owners <IMicrosoftGraphUser[]>]`: The list of this team's owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user delegated permissions, no owner can be specified (the current user is the owner). Owner must be specified as an object ID (GUID), not a UPN.
           - `[PermissionGrants <IMicrosoftGraphResourceSpecificPermissionGrant[]>]`: A collection of permissions granted to apps to access the team.
           - `[Photo <IMicrosoftGraphProfilePhoto>]`: profilePhoto
           - `[PrimaryChannel <IMicrosoftGraphChannel>]`: channel
@@ -3269,14 +3267,14 @@ To create the parameters described below, construct a hash table containing the 
               - `[SchedulingGroupId <String>]`: The ID of the schedulingGroup that contains the openShift.
               - `[SchedulingGroupInfo <IMicrosoftGraphSchedulingGroupInfo>]`: schedulingGroupInfo
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                - `[Code <String>]`: The code for the schedulingGroup.
-                - `[DisplayName <String>]`: The display name for the schedulingGroup. Required.
-                - `[SchedulingGroupId <String>]`: ID of the schedulingGroup.
+                - `[Code <String>]`: 
+                - `[DisplayName <String>]`: 
+                - `[SchedulingGroupId <String>]`: 
               - `[SharedOpenShift <IMicrosoftGraphOpenShiftItem>]`: openShiftItem
               - `[TeamInfo <IMicrosoftGraphShiftsTeamInfo>]`: shiftsTeamInfo
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                - `[DisplayName <String>]`: The display name for the team. Required.
-                - `[TeamId <String>]`: ID of the team.
+                - `[DisplayName <String>]`: 
+                - `[TeamId <String>]`: 
             - `[OpenShiftsEnabled <Boolean?>]`: Indicates whether open shifts are enabled for the schedule.
             - `[ProvisionStatus <String>]`: operationStatus
             - `[SchedulingGroups <IMicrosoftGraphSchedulingGroup[]>]`: The logical grouping of users in the schedule (usually by role).
@@ -3306,14 +3304,8 @@ To create the parameters described below, construct a hash table containing the 
               - `[UserId <String>]`: ID of the user assigned to the shift. Required.
               - `[UserInfo <IMicrosoftGraphShiftsUserInfo>]`: shiftsUserInfo
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                - `[DisplayName <String>]`: The display name for the user. Required.
-                - `[UserId <String>]`: ID of the user.
-            - `[ShiftsRoleDefinitions <IMicrosoftGraphShiftsRoleDefinition[]>]`: 
-              - `[Id <String>]`: The unique identifier for an entity. Read-only.
-              - `[Description <String>]`: 
-              - `[DisplayName <String>]`: 
-              - `[ShiftsRolePermissions <IMicrosoftGraphShiftsRolePermission[]>]`: 
-                - `[AllowedResourceActions <String[]>]`: 
+                - `[DisplayName <String>]`: 
+                - `[UserId <String>]`: 
             - `[StartDayOfWeek <String>]`: dayOfWeek
             - `[SwapShiftsChangeRequests <IMicrosoftGraphSwapShiftsChangeRequest[]>]`: The swap requests for shifts in the schedule.
               - `[RecipientActionMessage <String>]`: Custom message sent by recipient of the offer shift request.
@@ -3431,7 +3423,7 @@ To create the parameters described below, construct a hash table containing the 
             - `[TeamDefinition <IMicrosoftGraphTeam>]`: team
           - `[TenantId <String>]`: The ID of the Microsoft Entra tenant.
           - `[Visibility <String>]`: teamVisibilityType
-          - `[WebUrl <String>]`: A hyperlink that goes to the team in the Microsoft Teams client. It is the URL you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.
+          - `[WebUrl <String>]`: A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.
         - `[LastPasswordChangeDateTime <DateTime?>]`: When this Microsoft Entra user last changed their password or when their password was created, whichever date the latest action was performed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Returned only on $select.
         - `[LegalAgeGroupClassification <String>]`: Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, MinorWithOutParentalConsent, MinorWithParentalConsent, MinorNoParentalConsentRequired, NotAdult, and Adult. For more information, see legal age group property definitions. Returned only on $select.
         - `[LicenseAssignmentStates <IMicrosoftGraphLicenseAssignmentState[]>]`: State of license assignments for this user. It also indicates licenses that are directly assigned and the ones the user inherited through group memberships. Read-only. Returned only on $select.
@@ -6521,10 +6513,10 @@ To create the parameters described below, construct a hash table containing the 
                 - `[IsRooted <Boolean?>]`: true if device is rooted; false if device is jail-broken. This can only be updated by Intune.
                 - `[Kind <String>]`: Form factor of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
                 - `[ManagementType <String>]`: Management channel of the device.  This property is set by Intune. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.
-                - `[Manufacturer <String>]`: Manufacturer of the device. Read-only.
+                - `[Manufacturer <String>]`: Manufacturer of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
                 - `[MdmAppId <String>]`: Application identifier used to register device into MDM. Read-only. Supports $filter (eq, ne, not, startsWith).
                 - `[MemberOf <IMicrosoftGraphDirectoryObject[]>]`: Groups and administrative units that this device is a member of. Read-only. Nullable. Supports $expand.
-                - `[Model <String>]`: Model of the device. Read-only.
+                - `[Model <String>]`: Model of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
                 - `[Name <String>]`: Friendly name of the device. Only returned if user signs in with a Microsoft account as part of Project Rome.
                 - `[OnPremisesLastSyncDateTime <DateTime?>]`: The last time at which the object was synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Read-only. Supports $filter (eq, ne, not, ge, le, in).
                 - `[OnPremisesSecurityIdentifier <String>]`: The on-premises security identifier (SID) for the user who was synchronized from on-premises to the cloud. Read-only. Returned only on $select. Supports $filter (eq).
@@ -6540,7 +6532,7 @@ To create the parameters described below, construct a hash table containing the 
                 - `[Status <String>]`: Device is online or offline. Only returned if user signs in with a Microsoft account as part of Project Rome.
                 - `[SystemLabels <String[]>]`: List of labels applied to the device by the system. Supports $filter (/$count eq 0, /$count ne 0).
                 - `[TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>]`: Groups and administrative units that this device is a member of. This operation is transitive. Supports $expand.
-                - `[TrustType <String>]`: Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Microsoft Entra ID). For more information, see Introduction to device management in Microsoft Entra ID.
+                - `[TrustType <String>]`: Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Microsoft Entra ID). For more details, see Introduction to device management in Microsoft Entra ID.
                 - `[UsageRights <IMicrosoftGraphUsageRight[]>]`: Represents the usage rights a device has been granted.
                   - `[Id <String>]`: The unique identifier for an entity. Read-only.
                   - `[CatalogId <String>]`: Product id corresponding to the usage right.
@@ -8302,9 +8294,9 @@ To create the parameters described below, construct a hash table containing the 
               - `[AllowDeleteChannels <Boolean?>]`: If set to true, guests can delete channels.
             - `[IncomingChannels <IMicrosoftGraphChannel[]>]`: List of channels shared with the team.
             - `[InstalledApps <IMicrosoftGraphTeamsAppInstallation[]>]`: The apps installed in this team.
-            - `[InternalId <String>]`: A unique ID for the team used in a few places such as the audit log/Office 365 Management Activity API.
+            - `[InternalId <String>]`: A unique ID for the team that has been used in a few places such as the audit log/Office 365 Management Activity API.
             - `[IsArchived <Boolean?>]`: Whether this team is in read-only mode.
-            - `[IsMembershipLimitedToOwners <Boolean?>]`: If set to true, the team is currently in the owner-only team membership state and inaccessible by other team members, such as students.
+            - `[IsMembershipLimitedToOwners <Boolean?>]`: If set to true, the team is currently in the owner-only team membership state and not accessible by other team members, such as students.
             - `[MemberSettings <IMicrosoftGraphTeamMemberSettings>]`: teamMemberSettings
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[AllowAddRemoveApps <Boolean?>]`: If set to true, members can add and remove apps.
@@ -8322,7 +8314,7 @@ To create the parameters described below, construct a hash table containing the 
               - `[AllowUserDeleteMessages <Boolean?>]`: If set to true, users can delete their messages.
               - `[AllowUserEditMessages <Boolean?>]`: If set to true, users can edit their messages.
             - `[Operations <IMicrosoftGraphTeamsAsyncOperation[]>]`: The async operations that ran or are running on this team.
-            - `[Owners <IMicrosoftGraphUser[]>]`: The list of this team's owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user-delegated permissions, no owner can be specified (the current user is the owner). The owner must be specified as an object ID (GUID), not a UPN.
+            - `[Owners <IMicrosoftGraphUser[]>]`: The list of this team's owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user delegated permissions, no owner can be specified (the current user is the owner). Owner must be specified as an object ID (GUID), not a UPN.
             - `[PermissionGrants <IMicrosoftGraphResourceSpecificPermissionGrant[]>]`: A collection of permissions granted to apps to access the team.
             - `[Photo <IMicrosoftGraphProfilePhoto>]`: profilePhoto
             - `[PrimaryChannel <IMicrosoftGraphChannel>]`: channel
@@ -8382,14 +8374,14 @@ To create the parameters described below, construct a hash table containing the 
                 - `[SchedulingGroupId <String>]`: The ID of the schedulingGroup that contains the openShift.
                 - `[SchedulingGroupInfo <IMicrosoftGraphSchedulingGroupInfo>]`: schedulingGroupInfo
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                  - `[Code <String>]`: The code for the schedulingGroup.
-                  - `[DisplayName <String>]`: The display name for the schedulingGroup. Required.
-                  - `[SchedulingGroupId <String>]`: ID of the schedulingGroup.
+                  - `[Code <String>]`: 
+                  - `[DisplayName <String>]`: 
+                  - `[SchedulingGroupId <String>]`: 
                 - `[SharedOpenShift <IMicrosoftGraphOpenShiftItem>]`: openShiftItem
                 - `[TeamInfo <IMicrosoftGraphShiftsTeamInfo>]`: shiftsTeamInfo
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                  - `[DisplayName <String>]`: The display name for the team. Required.
-                  - `[TeamId <String>]`: ID of the team.
+                  - `[DisplayName <String>]`: 
+                  - `[TeamId <String>]`: 
               - `[OpenShiftsEnabled <Boolean?>]`: Indicates whether open shifts are enabled for the schedule.
               - `[ProvisionStatus <String>]`: operationStatus
               - `[SchedulingGroups <IMicrosoftGraphSchedulingGroup[]>]`: The logical grouping of users in the schedule (usually by role).
@@ -8419,14 +8411,8 @@ To create the parameters described below, construct a hash table containing the 
                 - `[UserId <String>]`: ID of the user assigned to the shift. Required.
                 - `[UserInfo <IMicrosoftGraphShiftsUserInfo>]`: shiftsUserInfo
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                  - `[DisplayName <String>]`: The display name for the user. Required.
-                  - `[UserId <String>]`: ID of the user.
-              - `[ShiftsRoleDefinitions <IMicrosoftGraphShiftsRoleDefinition[]>]`: 
-                - `[Id <String>]`: The unique identifier for an entity. Read-only.
-                - `[Description <String>]`: 
-                - `[DisplayName <String>]`: 
-                - `[ShiftsRolePermissions <IMicrosoftGraphShiftsRolePermission[]>]`: 
-                  - `[AllowedResourceActions <String[]>]`: 
+                  - `[DisplayName <String>]`: 
+                  - `[UserId <String>]`: 
               - `[StartDayOfWeek <String>]`: dayOfWeek
               - `[SwapShiftsChangeRequests <IMicrosoftGraphSwapShiftsChangeRequest[]>]`: The swap requests for shifts in the schedule.
                 - `[RecipientActionMessage <String>]`: Custom message sent by recipient of the offer shift request.
@@ -8544,7 +8530,7 @@ To create the parameters described below, construct a hash table containing the 
               - `[TeamDefinition <IMicrosoftGraphTeam>]`: team
             - `[TenantId <String>]`: The ID of the Microsoft Entra tenant.
             - `[Visibility <String>]`: teamVisibilityType
-            - `[WebUrl <String>]`: A hyperlink that goes to the team in the Microsoft Teams client. It is the URL you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.
+            - `[WebUrl <String>]`: A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.
           - `[LastPasswordChangeDateTime <DateTime?>]`: When this Microsoft Entra user last changed their password or when their password was created, whichever date the latest action was performed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Returned only on $select.
           - `[LegalAgeGroupClassification <String>]`: Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, MinorWithOutParentalConsent, MinorWithParentalConsent, MinorNoParentalConsentRequired, NotAdult, and Adult. For more information, see legal age group property definitions. Returned only on $select.
           - `[LicenseAssignmentStates <IMicrosoftGraphLicenseAssignmentState[]>]`: State of license assignments for this user. It also indicates licenses that are directly assigned and the ones the user inherited through group memberships. Read-only. Returned only on $select.
@@ -11736,10 +11722,10 @@ To create the parameters described below, construct a hash table containing the 
                 - `[IsRooted <Boolean?>]`: true if device is rooted; false if device is jail-broken. This can only be updated by Intune.
                 - `[Kind <String>]`: Form factor of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
                 - `[ManagementType <String>]`: Management channel of the device.  This property is set by Intune. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.
-                - `[Manufacturer <String>]`: Manufacturer of the device. Read-only.
+                - `[Manufacturer <String>]`: Manufacturer of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
                 - `[MdmAppId <String>]`: Application identifier used to register device into MDM. Read-only. Supports $filter (eq, ne, not, startsWith).
                 - `[MemberOf <IMicrosoftGraphDirectoryObject[]>]`: Groups and administrative units that this device is a member of. Read-only. Nullable. Supports $expand.
-                - `[Model <String>]`: Model of the device. Read-only.
+                - `[Model <String>]`: Model of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
                 - `[Name <String>]`: Friendly name of the device. Only returned if user signs in with a Microsoft account as part of Project Rome.
                 - `[OnPremisesLastSyncDateTime <DateTime?>]`: The last time at which the object was synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Read-only. Supports $filter (eq, ne, not, ge, le, in).
                 - `[OnPremisesSecurityIdentifier <String>]`: The on-premises security identifier (SID) for the user who was synchronized from on-premises to the cloud. Read-only. Returned only on $select. Supports $filter (eq).
@@ -11755,7 +11741,7 @@ To create the parameters described below, construct a hash table containing the 
                 - `[Status <String>]`: Device is online or offline. Only returned if user signs in with a Microsoft account as part of Project Rome.
                 - `[SystemLabels <String[]>]`: List of labels applied to the device by the system. Supports $filter (/$count eq 0, /$count ne 0).
                 - `[TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>]`: Groups and administrative units that this device is a member of. This operation is transitive. Supports $expand.
-                - `[TrustType <String>]`: Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Microsoft Entra ID). For more information, see Introduction to device management in Microsoft Entra ID.
+                - `[TrustType <String>]`: Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Microsoft Entra ID). For more details, see Introduction to device management in Microsoft Entra ID.
                 - `[UsageRights <IMicrosoftGraphUsageRight[]>]`: Represents the usage rights a device has been granted.
                   - `[Id <String>]`: The unique identifier for an entity. Read-only.
                   - `[CatalogId <String>]`: Product id corresponding to the usage right.
@@ -13517,9 +13503,9 @@ To create the parameters described below, construct a hash table containing the 
               - `[AllowDeleteChannels <Boolean?>]`: If set to true, guests can delete channels.
             - `[IncomingChannels <IMicrosoftGraphChannel[]>]`: List of channels shared with the team.
             - `[InstalledApps <IMicrosoftGraphTeamsAppInstallation[]>]`: The apps installed in this team.
-            - `[InternalId <String>]`: A unique ID for the team used in a few places such as the audit log/Office 365 Management Activity API.
+            - `[InternalId <String>]`: A unique ID for the team that has been used in a few places such as the audit log/Office 365 Management Activity API.
             - `[IsArchived <Boolean?>]`: Whether this team is in read-only mode.
-            - `[IsMembershipLimitedToOwners <Boolean?>]`: If set to true, the team is currently in the owner-only team membership state and inaccessible by other team members, such as students.
+            - `[IsMembershipLimitedToOwners <Boolean?>]`: If set to true, the team is currently in the owner-only team membership state and not accessible by other team members, such as students.
             - `[MemberSettings <IMicrosoftGraphTeamMemberSettings>]`: teamMemberSettings
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[AllowAddRemoveApps <Boolean?>]`: If set to true, members can add and remove apps.
@@ -13537,7 +13523,7 @@ To create the parameters described below, construct a hash table containing the 
               - `[AllowUserDeleteMessages <Boolean?>]`: If set to true, users can delete their messages.
               - `[AllowUserEditMessages <Boolean?>]`: If set to true, users can edit their messages.
             - `[Operations <IMicrosoftGraphTeamsAsyncOperation[]>]`: The async operations that ran or are running on this team.
-            - `[Owners <IMicrosoftGraphUser[]>]`: The list of this team's owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user-delegated permissions, no owner can be specified (the current user is the owner). The owner must be specified as an object ID (GUID), not a UPN.
+            - `[Owners <IMicrosoftGraphUser[]>]`: The list of this team's owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user delegated permissions, no owner can be specified (the current user is the owner). Owner must be specified as an object ID (GUID), not a UPN.
             - `[PermissionGrants <IMicrosoftGraphResourceSpecificPermissionGrant[]>]`: A collection of permissions granted to apps to access the team.
             - `[Photo <IMicrosoftGraphProfilePhoto>]`: profilePhoto
             - `[PrimaryChannel <IMicrosoftGraphChannel>]`: channel
@@ -13597,14 +13583,14 @@ To create the parameters described below, construct a hash table containing the 
                 - `[SchedulingGroupId <String>]`: The ID of the schedulingGroup that contains the openShift.
                 - `[SchedulingGroupInfo <IMicrosoftGraphSchedulingGroupInfo>]`: schedulingGroupInfo
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                  - `[Code <String>]`: The code for the schedulingGroup.
-                  - `[DisplayName <String>]`: The display name for the schedulingGroup. Required.
-                  - `[SchedulingGroupId <String>]`: ID of the schedulingGroup.
+                  - `[Code <String>]`: 
+                  - `[DisplayName <String>]`: 
+                  - `[SchedulingGroupId <String>]`: 
                 - `[SharedOpenShift <IMicrosoftGraphOpenShiftItem>]`: openShiftItem
                 - `[TeamInfo <IMicrosoftGraphShiftsTeamInfo>]`: shiftsTeamInfo
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                  - `[DisplayName <String>]`: The display name for the team. Required.
-                  - `[TeamId <String>]`: ID of the team.
+                  - `[DisplayName <String>]`: 
+                  - `[TeamId <String>]`: 
               - `[OpenShiftsEnabled <Boolean?>]`: Indicates whether open shifts are enabled for the schedule.
               - `[ProvisionStatus <String>]`: operationStatus
               - `[SchedulingGroups <IMicrosoftGraphSchedulingGroup[]>]`: The logical grouping of users in the schedule (usually by role).
@@ -13634,14 +13620,8 @@ To create the parameters described below, construct a hash table containing the 
                 - `[UserId <String>]`: ID of the user assigned to the shift. Required.
                 - `[UserInfo <IMicrosoftGraphShiftsUserInfo>]`: shiftsUserInfo
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                  - `[DisplayName <String>]`: The display name for the user. Required.
-                  - `[UserId <String>]`: ID of the user.
-              - `[ShiftsRoleDefinitions <IMicrosoftGraphShiftsRoleDefinition[]>]`: 
-                - `[Id <String>]`: The unique identifier for an entity. Read-only.
-                - `[Description <String>]`: 
-                - `[DisplayName <String>]`: 
-                - `[ShiftsRolePermissions <IMicrosoftGraphShiftsRolePermission[]>]`: 
-                  - `[AllowedResourceActions <String[]>]`: 
+                  - `[DisplayName <String>]`: 
+                  - `[UserId <String>]`: 
               - `[StartDayOfWeek <String>]`: dayOfWeek
               - `[SwapShiftsChangeRequests <IMicrosoftGraphSwapShiftsChangeRequest[]>]`: The swap requests for shifts in the schedule.
                 - `[RecipientActionMessage <String>]`: Custom message sent by recipient of the offer shift request.
@@ -13759,7 +13739,7 @@ To create the parameters described below, construct a hash table containing the 
               - `[TeamDefinition <IMicrosoftGraphTeam>]`: team
             - `[TenantId <String>]`: The ID of the Microsoft Entra tenant.
             - `[Visibility <String>]`: teamVisibilityType
-            - `[WebUrl <String>]`: A hyperlink that goes to the team in the Microsoft Teams client. It is the URL you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.
+            - `[WebUrl <String>]`: A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.
           - `[LastPasswordChangeDateTime <DateTime?>]`: When this Microsoft Entra user last changed their password or when their password was created, whichever date the latest action was performed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Returned only on $select.
           - `[LegalAgeGroupClassification <String>]`: Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, MinorWithOutParentalConsent, MinorWithParentalConsent, MinorNoParentalConsentRequired, NotAdult, and Adult. For more information, see legal age group property definitions. Returned only on $select.
           - `[LicenseAssignmentStates <IMicrosoftGraphLicenseAssignmentState[]>]`: State of license assignments for this user. It also indicates licenses that are directly assigned and the ones the user inherited through group memberships. Read-only. Returned only on $select.

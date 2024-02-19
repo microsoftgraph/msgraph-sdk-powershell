@@ -18,24 +18,23 @@ Update-MgDeviceManagementUserExperienceAnalyticAppHealthApplicationPerformanceBy
  -UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsId <String>
  [-AdditionalProperties <Hashtable>] [-AppCrashCount <Int32>] [-AppDisplayName <String>] [-AppName <String>]
  [-AppPublisher <String>] [-AppVersion <String>] [-DeviceCountWithCrashes <Int32>] [-Id <String>]
- [-IsLatestUsedVersion] [-IsMostUsedVersion] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-IsLatestUsedVersion] [-IsMostUsedVersion] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgDeviceManagementUserExperienceAnalyticAppHealthApplicationPerformanceByAppVersionDetail
  -UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsId <String>
- -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgDeviceManagementUserExperienceAnalyticAppHealthApplicationPerformanceByAppVersionDetail
  -InputObject <IDeviceManagementIdentity>
- -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -43,8 +42,8 @@ Update-MgDeviceManagementUserExperienceAnalyticAppHealthApplicationPerformanceBy
 Update-MgDeviceManagementUserExperienceAnalyticAppHealthApplicationPerformanceByAppVersionDetail
  -InputObject <IDeviceManagementIdentity> [-AdditionalProperties <Hashtable>] [-AppCrashCount <Int32>]
  [-AppDisplayName <String>] [-AppName <String>] [-AppPublisher <String>] [-AppVersion <String>]
- [-DeviceCountWithCrashes <Int32>] [-Id <String>] [-IsLatestUsedVersion] [-IsMostUsedVersion]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-DeviceCountWithCrashes <Int32>] [-Id <String>] [-IsLatestUsedVersion] [-IsMostUsedVersion] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -194,21 +193,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -333,13 +317,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails
-
-### System.Collections.Hashtable
 
 ## NOTES
 

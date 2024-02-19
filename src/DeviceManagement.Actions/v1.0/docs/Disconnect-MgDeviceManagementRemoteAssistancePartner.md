@@ -14,14 +14,14 @@ A request to remove the active TeamViewer connector
 
 ### Disconnect (Default)
 ```
-Disconnect-MgDeviceManagementRemoteAssistancePartner -RemoteAssistancePartnerId <String>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Disconnect-MgDeviceManagementRemoteAssistancePartner -RemoteAssistancePartnerId <String> [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DisconnectViaIdentity
 ```
 Disconnect-MgDeviceManagementRemoteAssistancePartner -InputObject <IDeviceManagementActionsIdentity>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -37,21 +37,6 @@ Import-Module Microsoft.Graph.DeviceManagement.Actions
 Disconnect-MgDeviceManagementRemoteAssistancePartner -RemoteAssistancePartnerId $remoteAssistancePartnerId
 
 ## PARAMETERS
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
 
 ### -InputObject
 Identity Parameter
@@ -137,13 +122,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IDeviceManagementActionsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
-
-### System.Collections.Hashtable
 
 ## NOTES
 

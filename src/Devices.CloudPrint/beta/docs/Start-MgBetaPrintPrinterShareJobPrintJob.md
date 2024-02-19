@@ -14,14 +14,14 @@ Invoke action startPrintJob
 
 ### Start (Default)
 ```
-Start-MgBetaPrintPrinterShareJobPrintJob -PrinterShareId <String> -PrintJobId <String>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Start-MgBetaPrintPrinterShareJobPrintJob -PrinterShareId <String> -PrintJobId <String> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### StartViaIdentity
 ```
-Start-MgBetaPrintPrinterShareJobPrintJob -InputObject <IDevicesCloudPrintIdentity> [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Start-MgBetaPrintPrinterShareJobPrintJob -InputObject <IDevicesCloudPrintIdentity> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -44,21 +44,6 @@ Invoke action startPrintJob
 
 
 ## PARAMETERS
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
 
 ### -InputObject
 Identity Parameter
@@ -144,13 +129,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCloudPrintIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrintJobStatus
-
-### System.Collections.Hashtable
 
 ## NOTES
 

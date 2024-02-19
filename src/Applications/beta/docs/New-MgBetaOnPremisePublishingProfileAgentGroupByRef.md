@@ -15,58 +15,53 @@ Create new navigation property ref to agentGroups for onPremisesPublishingProfil
 ### CreateExpanded1 (Default)
 ```
 New-MgBetaOnPremisePublishingProfileAgentGroupByRef -OnPremisesAgentId <String>
- -OnPremisesPublishingProfileId <String> -OdataId <String> [-AdditionalProperties <Hashtable>]
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -OnPremisesPublishingProfileId <String> -OdataId <String> [-AdditionalProperties <Hashtable>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaOnPremisePublishingProfileAgentGroupByRef -OnPremisesAgentGroupId <String>
  -OnPremisesAgentId <String> -OnPremisesPublishingProfileId <String> -BodyParameter <IReferenceCreate>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create1
 ```
 New-MgBetaOnPremisePublishingProfileAgentGroupByRef -OnPremisesAgentId <String>
- -OnPremisesPublishingProfileId <String> -BodyParameter <IReferenceCreate> [-Headers <IDictionary>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -OnPremisesPublishingProfileId <String> -BodyParameter <IReferenceCreate> [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### CreateExpanded
 ```
 New-MgBetaOnPremisePublishingProfileAgentGroupByRef -OnPremisesAgentGroupId <String>
  -OnPremisesAgentId <String> -OnPremisesPublishingProfileId <String> -OdataId <String>
- [-AdditionalProperties <Hashtable>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaOnPremisePublishingProfileAgentGroupByRef -InputObject <IApplicationsIdentity>
- -BodyParameter <IReferenceCreate> [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IReferenceCreate> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity1
 ```
 New-MgBetaOnPremisePublishingProfileAgentGroupByRef -InputObject <IApplicationsIdentity>
- -BodyParameter <IReferenceCreate> [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IReferenceCreate> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgBetaOnPremisePublishingProfileAgentGroupByRef -InputObject <IApplicationsIdentity> -OdataId <String>
- [-AdditionalProperties <Hashtable>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded1
 ```
 New-MgBetaOnPremisePublishingProfileAgentGroupByRef -InputObject <IApplicationsIdentity> -OdataId <String>
- [-AdditionalProperties <Hashtable>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -115,21 +110,6 @@ Parameter Sets: Create, Create1, CreateViaIdentity, CreateViaIdentity1
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -268,13 +248,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IReferenceCreate
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
-
-### System.Collections.Hashtable
 
 ## NOTES
 

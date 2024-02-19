@@ -17,22 +17,20 @@ Create new navigation property to attendanceReports for solutions
 New-MgVirtualEventWebinarSessionAttendanceReport -VirtualEventSessionId <String>
  -VirtualEventWebinarId <String> [-AdditionalProperties <Hashtable>]
  [-AttendanceRecords <IMicrosoftGraphAttendanceRecord[]>] [-Id <String>] [-MeetingEndDateTime <DateTime>]
- [-MeetingStartDateTime <DateTime>] [-TotalParticipantCount <Int32>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-MeetingStartDateTime <DateTime>] [-TotalParticipantCount <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgVirtualEventWebinarSessionAttendanceReport -VirtualEventSessionId <String>
- -VirtualEventWebinarId <String> -BodyParameter <IMicrosoftGraphMeetingAttendanceReport>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -VirtualEventWebinarId <String> -BodyParameter <IMicrosoftGraphMeetingAttendanceReport> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgVirtualEventWebinarSessionAttendanceReport -InputObject <IBookingsIdentity>
- -BodyParameter <IMicrosoftGraphMeetingAttendanceReport> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphMeetingAttendanceReport> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -40,7 +38,7 @@ New-MgVirtualEventWebinarSessionAttendanceReport -InputObject <IBookingsIdentity
 New-MgVirtualEventWebinarSessionAttendanceReport -InputObject <IBookingsIdentity>
  [-AdditionalProperties <Hashtable>] [-AttendanceRecords <IMicrosoftGraphAttendanceRecord[]>] [-Id <String>]
  [-MeetingEndDateTime <DateTime>] [-MeetingStartDateTime <DateTime>] [-TotalParticipantCount <Int32>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -106,21 +104,6 @@ Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -277,13 +260,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMeetingAttendanceReport
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMeetingAttendanceReport
-
-### System.Collections.Hashtable
 
 ## NOTES
 

@@ -16,15 +16,14 @@ Create new navigation property to userExperienceAnalyticsImpactingProcess for de
 ```
 New-MgBetaDeviceManagementUserExperienceAnalyticImpactingProcess [-AdditionalProperties <Hashtable>]
  [-Category <String>] [-Description <String>] [-DeviceId <String>] [-Id <String>] [-ImpactValue <Double>]
- [-ProcessName <String>] [-Publisher <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-ProcessName <String>] [-Publisher <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaDeviceManagementUserExperienceAnalyticImpactingProcess
- -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsImpactingProcess> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsImpactingProcess> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -121,21 +120,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -239,13 +223,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsImpactingProcess
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsImpactingProcess
-
-### System.Collections.Hashtable
 
 ## NOTES
 

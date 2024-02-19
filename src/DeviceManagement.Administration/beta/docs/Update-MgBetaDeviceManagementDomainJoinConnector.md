@@ -17,21 +17,19 @@ Update the navigation property domainJoinConnectors in deviceManagement
 Update-MgBetaDeviceManagementDomainJoinConnector -DeviceManagementDomainJoinConnectorId <String>
  [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>]
  [-LastConnectionDateTime <DateTime>] [-State <DeviceManagementDomainJoinConnectorState>] [-Version <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaDeviceManagementDomainJoinConnector -DeviceManagementDomainJoinConnectorId <String>
- -BodyParameter <IMicrosoftGraphDeviceManagementDomainJoinConnector> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphDeviceManagementDomainJoinConnector> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaDeviceManagementDomainJoinConnector -InputObject <IDeviceManagementAdministrationIdentity>
- -BodyParameter <IMicrosoftGraphDeviceManagementDomainJoinConnector> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphDeviceManagementDomainJoinConnector> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -39,7 +37,7 @@ Update-MgBetaDeviceManagementDomainJoinConnector -InputObject <IDeviceManagement
 Update-MgBetaDeviceManagementDomainJoinConnector -InputObject <IDeviceManagementAdministrationIdentity>
  [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>]
  [-LastConnectionDateTime <DateTime>] [-State <DeviceManagementDomainJoinConnectorState>] [-Version <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -121,21 +119,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -256,13 +239,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementDomainJoinConnector
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementDomainJoinConnector
-
-### System.Collections.Hashtable
 
 ## NOTES
 

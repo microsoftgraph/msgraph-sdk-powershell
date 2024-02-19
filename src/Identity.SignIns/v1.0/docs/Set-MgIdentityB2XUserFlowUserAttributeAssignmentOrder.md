@@ -15,29 +15,29 @@ Set the order of identityUserFlowAttributeAssignments being collected within a u
 ### SetExpanded (Default)
 ```
 Set-MgIdentityB2XUserFlowUserAttributeAssignmentOrder -B2XIdentityUserFlowId <String>
- [-AdditionalProperties <Hashtable>] [-NewAssignmentOrder <IMicrosoftGraphAssignmentOrder>]
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-NewAssignmentOrder <IMicrosoftGraphAssignmentOrder>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Set
 ```
 Set-MgIdentityB2XUserFlowUserAttributeAssignmentOrder -B2XIdentityUserFlowId <String>
  -BodyParameter <IPathsOg5H01IdentityB2XuserflowsB2XidentityuserflowIdUserattributeassignmentsMicrosoftGraphSetorderPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentity
 ```
 Set-MgIdentityB2XUserFlowUserAttributeAssignmentOrder -InputObject <IIdentitySignInsIdentity>
  -BodyParameter <IPathsOg5H01IdentityB2XuserflowsB2XidentityuserflowIdUserattributeassignmentsMicrosoftGraphSetorderPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentityExpanded
 ```
 Set-MgIdentityB2XUserFlowUserAttributeAssignmentOrder -InputObject <IIdentitySignInsIdentity>
- [-AdditionalProperties <Hashtable>] [-NewAssignmentOrder <IMicrosoftGraphAssignmentOrder>]
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-NewAssignmentOrder <IMicrosoftGraphAssignmentOrder>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -103,21 +103,6 @@ Parameter Sets: Set, SetViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -211,13 +196,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IPathsOg5H01IdentityB2XuserflowsB2XidentityuserflowIdUserattributeassignmentsMicrosoftGraphSetorderPostRequestbodyContentApplicationJsonSchema
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
-
-### System.Collections.Hashtable
 
 ## NOTES
 

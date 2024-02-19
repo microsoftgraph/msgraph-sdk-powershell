@@ -17,20 +17,19 @@ Get outcomes from education
 Get-MgBetaEducationMeAssignmentSubmissionOutcome -EducationAssignmentId <String>
  -EducationSubmissionId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
- [-Headers <IDictionary>] [-PageSize <Int32>] [<CommonParameters>]
+ [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
 Get-MgBetaEducationMeAssignmentSubmissionOutcome -EducationAssignmentId <String> -EducationOutcomeId <String>
- -EducationSubmissionId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [-Headers <IDictionary>]
- [<CommonParameters>]
+ -EducationSubmissionId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
 Get-MgBetaEducationMeAssignmentSubmissionOutcome -InputObject <IEducationIdentity>
- [-ExpandProperty <String[]>] [-Property <String[]>] [-Headers <IDictionary>] [<CommonParameters>]
+ [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -160,21 +159,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -288,13 +272,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationOutcome
-
-### System.Collections.Hashtable
 
 ## NOTES
 

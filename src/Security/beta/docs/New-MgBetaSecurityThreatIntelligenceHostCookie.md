@@ -16,14 +16,13 @@ Create new navigation property to hostCookies for security
 ```
 New-MgBetaSecurityThreatIntelligenceHostCookie [-AdditionalProperties <Hashtable>] [-Domain <String>]
  [-FirstSeenDateTime <DateTime>] [-Host1 <IMicrosoftGraphSecurityHost>] [-Id <String>]
- [-LastSeenDateTime <DateTime>] [-Name <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-LastSeenDateTime <DateTime>] [-Name <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgBetaSecurityThreatIntelligenceHostCookie -BodyParameter <IMicrosoftGraphSecurityHostCookie>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaSecurityThreatIntelligenceHostCookie -BodyParameter <IMicrosoftGraphSecurityHostCookie> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -107,21 +106,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -227,13 +211,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityHostCookie
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityHostCookie
-
-### System.Collections.Hashtable
 
 ## NOTES
 

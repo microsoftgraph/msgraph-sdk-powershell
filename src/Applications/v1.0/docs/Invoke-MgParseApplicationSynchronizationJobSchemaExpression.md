@@ -18,8 +18,7 @@ For more information about expressions, see Writing Expressions for Attribute Ma
 Invoke-MgParseApplicationSynchronizationJobSchemaExpression -ApplicationId <String>
  -SynchronizationJobId <String> [-AdditionalProperties <Hashtable>] [-Expression <String>]
  [-TargetAttributeDefinition <IMicrosoftGraphAttributeDefinition>]
- [-TestInputObject <IMicrosoftGraphExpressionInputObject>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-TestInputObject <IMicrosoftGraphExpressionInputObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Parse
@@ -27,14 +26,14 @@ Invoke-MgParseApplicationSynchronizationJobSchemaExpression -ApplicationId <Stri
 Invoke-MgParseApplicationSynchronizationJobSchemaExpression -ApplicationId <String>
  -SynchronizationJobId <String>
  -BodyParameter <IPaths14L6Pq1ApplicationsApplicationIdSynchronizationJobsSynchronizationjobIdSchemaMicrosoftGraphParseexpressionPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ParseViaIdentity
 ```
 Invoke-MgParseApplicationSynchronizationJobSchemaExpression -InputObject <IApplicationsIdentity>
  -BodyParameter <IPaths14L6Pq1ApplicationsApplicationIdSynchronizationJobsSynchronizationjobIdSchemaMicrosoftGraphParseexpressionPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ParseViaIdentityExpanded
@@ -42,8 +41,7 @@ Invoke-MgParseApplicationSynchronizationJobSchemaExpression -InputObject <IAppli
 Invoke-MgParseApplicationSynchronizationJobSchemaExpression -InputObject <IApplicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-Expression <String>]
  [-TargetAttributeDefinition <IMicrosoftGraphAttributeDefinition>]
- [-TestInputObject <IMicrosoftGraphExpressionInputObject>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-TestInputObject <IMicrosoftGraphExpressionInputObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -126,21 +124,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -247,13 +230,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IPaths14L6Pq1ApplicationsApplicationIdSynchronizationJobsSynchronizationjobIdSchemaMicrosoftGraphParseexpressionPostRequestbodyContentApplicationJsonSchema
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphParseExpressionResponse
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -322,7 +301,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[TargetDeviceGroupId <String>]`: The unique identifier of targetDeviceGroup
   - `[TokenIssuancePolicyId <String>]`: The unique identifier of tokenIssuancePolicy
   - `[TokenLifetimePolicyId <String>]`: The unique identifier of tokenLifetimePolicy
-  - `[UniqueName <String>]`: Alternate key of application
   - `[UserId <String>]`: The unique identifier of user
 
 `TARGETATTRIBUTEDEFINITION <IMicrosoftGraphAttributeDefinition>`: attributeDefinition

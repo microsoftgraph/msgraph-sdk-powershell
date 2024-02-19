@@ -14,14 +14,14 @@ Delete entity from organization
 
 ### Delete (Default)
 ```
-Remove-MgOrganization -OrganizationId <String> [-IfMatch <String>] [-Headers <IDictionary>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-MgOrganization -OrganizationId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgOrganization -InputObject <IIdentityDirectoryManagementIdentity> [-IfMatch <String>]
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-MgOrganization -InputObject <IIdentityDirectoryManagementIdentity> [-IfMatch <String>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -31,34 +31,31 @@ Delete entity from organization
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Identity.DirectoryManagement
 ```
 
+$params = @{
+	marketingNotificationEmails = @(
+		"marketing@contoso.com"
+	)
+	privacyProfile = @{
+		contactEmail = "alice@contoso.com"
+		statementUrl = "https://contoso.com/privacyStatement"
+	}
+	securityComplianceNotificationMails = @(
+		"security@contoso.com"
+	)
+	securityComplianceNotificationPhones = @(
+		"(123) 456-7890"
+	)
+	technicalNotificationMails = @(
+		"tech@contoso.com"
+	)
+}
 
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-
+Update-MgOrganization -OrganizationId $organizationId -BodyParameter $params
 
 ## PARAMETERS
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
 
 ### -IfMatch
 ETag
@@ -159,13 +156,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
-
-### System.Collections.Hashtable
 
 ## NOTES
 

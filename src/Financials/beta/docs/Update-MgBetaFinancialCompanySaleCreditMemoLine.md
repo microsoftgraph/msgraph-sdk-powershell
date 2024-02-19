@@ -22,21 +22,19 @@ Update-MgBetaFinancialCompanySaleCreditMemoLine -CompanyId <String> -SalesCredit
  [-LineType <String>] [-NetAmount <Decimal>] [-NetAmountIncludingTax <Decimal>] [-NetTaxAmount <Decimal>]
  [-Quantity <Decimal>] [-Sequence <Int32>] [-ShipmentDate <DateTime>] [-TaxCode <String>]
  [-TaxPercent <Decimal>] [-TotalTaxAmount <Decimal>] [-UnitOfMeasureId <String>] [-UnitPrice <Decimal>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaFinancialCompanySaleCreditMemoLine -CompanyId <String> -SalesCreditMemoLineId <String>
- -BodyParameter <IMicrosoftGraphSalesCreditMemoLine> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphSalesCreditMemoLine> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaFinancialCompanySaleCreditMemoLine -InputObject <IFinancialsIdentity>
- -BodyParameter <IMicrosoftGraphSalesCreditMemoLine> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphSalesCreditMemoLine> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -49,7 +47,7 @@ Update-MgBetaFinancialCompanySaleCreditMemoLine -InputObject <IFinancialsIdentit
  [-LineType <String>] [-NetAmount <Decimal>] [-NetAmountIncludingTax <Decimal>] [-NetTaxAmount <Decimal>]
  [-Quantity <Decimal>] [-Sequence <Int32>] [-ShipmentDate <DateTime>] [-TaxCode <String>]
  [-TaxPercent <Decimal>] [-TotalTaxAmount <Decimal>] [-UnitOfMeasureId <String>] [-UnitPrice <Decimal>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -252,21 +250,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -583,13 +566,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSalesCreditMemoLine
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSalesCreditMemoLine
-
-### System.Collections.Hashtable
 
 ## NOTES
 

@@ -19,20 +19,20 @@ New-MgBetaUserProfileWebAccount -UserId <String> [-AdditionalProperties <Hashtab
  [-Description <String>] [-Id <String>] [-Inference <IMicrosoftGraphInferenceData>] [-IsSearchable]
  [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>]
  [-Service <IMicrosoftGraphServiceInformation>] [-Source <IMicrosoftGraphPersonDataSources>]
- [-StatusMessage <String>] [-ThumbnailUrl <String>] [-UserId1 <String>] [-WebUrl <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-StatusMessage <String>] [-ThumbnailUrl <String>] [-UserId1 <String>] [-WebUrl <String>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgBetaUserProfileWebAccount -UserId <String> -BodyParameter <IMicrosoftGraphWebAccount>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaUserProfileWebAccount -UserId <String> -BodyParameter <IMicrosoftGraphWebAccount> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaUserProfileWebAccount -InputObject <IPeopleIdentity> -BodyParameter <IMicrosoftGraphWebAccount>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -43,7 +43,7 @@ New-MgBetaUserProfileWebAccount -InputObject <IPeopleIdentity> [-UserId <String>
  [-Inference <IMicrosoftGraphInferenceData>] [-IsSearchable] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
  [-LastModifiedDateTime <DateTime>] [-Service <IMicrosoftGraphServiceInformation>]
  [-Source <IMicrosoftGraphPersonDataSources>] [-StatusMessage <String>] [-ThumbnailUrl <String>]
- [-WebUrl <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-WebUrl <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -159,21 +159,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -418,13 +403,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPeopleIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWebAccount
-
-### System.Collections.Hashtable
 
 ## NOTES
 

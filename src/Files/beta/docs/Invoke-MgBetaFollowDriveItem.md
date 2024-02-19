@@ -14,14 +14,12 @@ Follow a driveItem.
 
 ### Follow (Default)
 ```
-Invoke-MgBetaFollowDriveItem -DriveId <String> -DriveItemId <String> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Invoke-MgBetaFollowDriveItem -DriveId <String> -DriveItemId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### FollowViaIdentity
 ```
-Invoke-MgBetaFollowDriveItem -InputObject <IFilesIdentity> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Invoke-MgBetaFollowDriveItem -InputObject <IFilesIdentity> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -72,21 +70,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -144,13 +127,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDriveItem
-
-### System.Collections.Hashtable
 
 ## NOTES
 

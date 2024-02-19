@@ -21,15 +21,14 @@ New-MgBetaTenantRelationshipDelegatedAdminRelationship
  [-Customer <IMicrosoftGraphDelegatedAdminRelationshipCustomerParticipant>] [-DisplayName <String>]
  [-Duration <TimeSpan>] [-EndDateTime <DateTime>] [-Id <String>] [-LastModifiedDateTime <DateTime>]
  [-Operations <IMicrosoftGraphDelegatedAdminRelationshipOperation[]>]
- [-Requests <IMicrosoftGraphDelegatedAdminRelationshipRequest[]>] [-Status <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Requests <IMicrosoftGraphDelegatedAdminRelationshipRequest[]>] [-Status <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaTenantRelationshipDelegatedAdminRelationship
- -BodyParameter <IMicrosoftGraphDelegatedAdminRelationship> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphDelegatedAdminRelationship> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -233,21 +232,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -365,13 +349,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDelegatedAdminRelationship
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDelegatedAdminRelationship
-
-### System.Collections.Hashtable
 
 ## NOTES
 

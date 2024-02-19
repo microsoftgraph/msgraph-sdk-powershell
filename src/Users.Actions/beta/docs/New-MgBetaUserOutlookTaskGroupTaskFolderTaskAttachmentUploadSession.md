@@ -23,8 +23,7 @@ The following are the steps to attach a file to an Outlook item using an upload 
 ```
 New-MgBetaUserOutlookTaskGroupTaskFolderTaskAttachmentUploadSession -OutlookTaskFolderId <String>
  -OutlookTaskGroupId <String> -OutlookTaskId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
- [-AttachmentItem <IMicrosoftGraphAttachmentItem>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-AttachmentItem <IMicrosoftGraphAttachmentItem>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
@@ -32,21 +31,21 @@ New-MgBetaUserOutlookTaskGroupTaskFolderTaskAttachmentUploadSession -OutlookTask
 New-MgBetaUserOutlookTaskGroupTaskFolderTaskAttachmentUploadSession -OutlookTaskFolderId <String>
  -OutlookTaskGroupId <String> -OutlookTaskId <String> -UserId <String>
  -BodyParameter <IPaths1E6Bxs8UsersUserIdOutlookTaskgroupsOutlooktaskgroupIdTaskfoldersOutlooktaskfolderIdTasksOutlooktaskIdAttachmentsMicrosoftGraphCreateuploadsessionPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaUserOutlookTaskGroupTaskFolderTaskAttachmentUploadSession -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPaths1E6Bxs8UsersUserIdOutlookTaskgroupsOutlooktaskgroupIdTaskfoldersOutlooktaskfolderIdTasksOutlooktaskIdAttachmentsMicrosoftGraphCreateuploadsessionPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgBetaUserOutlookTaskGroupTaskFolderTaskAttachmentUploadSession -InputObject <IUsersActionsIdentity>
- [-AdditionalProperties <Hashtable>] [-AttachmentItem <IMicrosoftGraphAttachmentItem>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-AttachmentItem <IMicrosoftGraphAttachmentItem>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -118,21 +117,6 @@ Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -255,13 +239,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUploadSession
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -311,7 +291,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[DriveItemVersionId <String>]`: The unique identifier of driveItemVersion
   - `[EventId <String>]`: The unique identifier of event
   - `[EventId1 <String>]`: The unique identifier of event
-  - `[JoinWebUrl <String>]`: Alternate key of onlineMeeting
   - `[ListItemId <String>]`: The unique identifier of listItem
   - `[ListItemVersionId <String>]`: The unique identifier of listItemVersion
   - `[MailFolderId <String>]`: The unique identifier of mailFolder

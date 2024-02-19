@@ -15,13 +15,13 @@ Create a new attributeSet object.
 ### CreateExpanded (Default)
 ```
 New-MgBetaDirectoryAttributeSet [-AdditionalProperties <Hashtable>] [-Description <String>] [-Id <String>]
- [-MaxAttributesPerSet <Int32>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-MaxAttributesPerSet <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgBetaDirectoryAttributeSet -BodyParameter <IMicrosoftGraphAttributeSet> [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaDirectoryAttributeSet -BodyParameter <IMicrosoftGraphAttributeSet> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -32,15 +32,15 @@ Create a new attributeSet object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+$params = @{
+	Id = "Engineering"
+	Description = "Attributes for engineering team"
+	MaxAttributesPerSet = 25
+}
+New-MgBetaDirectoryAttributeSet -BodyParameter $params
 ```
 
-$params = @{
-	id = "Engineering"
-	description = "Attributes for engineering team"
-	maxAttributesPerSet = 25
-}
 
-New-MgBetaDirectoryAttributeSet -BodyParameter $params
 
 ## PARAMETERS
 
@@ -89,21 +89,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -179,13 +164,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAttributeSet
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAttributeSet
-
-### System.Collections.Hashtable
 
 ## NOTES
 

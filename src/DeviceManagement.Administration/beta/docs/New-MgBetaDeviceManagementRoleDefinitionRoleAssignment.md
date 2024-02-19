@@ -17,21 +17,19 @@ Create new navigation property to roleAssignments for deviceManagement
 New-MgBetaDeviceManagementRoleDefinitionRoleAssignment -RoleDefinitionId <String>
  [-AdditionalProperties <Hashtable>] [-Description <String>] [-DisplayName <String>] [-Id <String>]
  [-ResourceScopes <String[]>] [-RoleDefinition <IMicrosoftGraphRoleDefinition>] [-ScopeMembers <String[]>]
- [-ScopeType <RoleAssignmentScopeType>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ScopeType <RoleAssignmentScopeType>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaDeviceManagementRoleDefinitionRoleAssignment -RoleDefinitionId <String>
- -BodyParameter <IMicrosoftGraphRoleAssignment> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphRoleAssignment> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaDeviceManagementRoleDefinitionRoleAssignment -InputObject <IDeviceManagementAdministrationIdentity>
- -BodyParameter <IMicrosoftGraphRoleAssignment> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphRoleAssignment> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -39,7 +37,7 @@ New-MgBetaDeviceManagementRoleDefinitionRoleAssignment -InputObject <IDeviceMana
 New-MgBetaDeviceManagementRoleDefinitionRoleAssignment -InputObject <IDeviceManagementAdministrationIdentity>
  [-AdditionalProperties <Hashtable>] [-Description <String>] [-DisplayName <String>] [-Id <String>]
  [-ResourceScopes <String[]>] [-RoleDefinition <IMicrosoftGraphRoleDefinition>] [-ScopeMembers <String[]>]
- [-ScopeType <RoleAssignmentScopeType>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ScopeType <RoleAssignmentScopeType>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -124,21 +122,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -298,13 +281,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRoleAssignment
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRoleAssignment
-
-### System.Collections.Hashtable
 
 ## NOTES
 

@@ -132,8 +132,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### System.Collections.Hashtable
-
 ### System.Int32
 
 ## NOTES

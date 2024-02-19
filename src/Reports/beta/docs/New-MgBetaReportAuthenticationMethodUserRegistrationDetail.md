@@ -20,15 +20,13 @@ New-MgBetaReportAuthenticationMethodUserRegistrationDetail [-AdditionalPropertie
  [-IsSystemPreferredAuthenticationMethodEnabled] [-LastUpdatedDateTime <DateTime>]
  [-MethodsRegistered <String[]>] [-SystemPreferredAuthenticationMethods <String[]>]
  [-UserDisplayName <String>] [-UserPreferredMethodForSecondaryAuthentication <String>]
- [-UserPrincipalName <String>] [-UserType <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-UserPrincipalName <String>] [-UserType <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaReportAuthenticationMethodUserRegistrationDetail
- -BodyParameter <IMicrosoftGraphUserRegistrationDetails> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphUserRegistrationDetails> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -95,21 +93,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -412,13 +395,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserRegistrationDetails
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserRegistrationDetails
-
-### System.Collections.Hashtable
 
 ## NOTES
 

@@ -8,42 +8,38 @@ schema: 2.0.0
 # Move-MgBetaPlannerPlanToContainer
 
 ## SYNOPSIS
-Move a planner plan object from one planner plan container to another.
-Planner plans can only be moved from a user container to a group container.
+Invoke action moveToContainer
 
 ## SYNTAX
 
 ### MoveExpanded (Default)
 ```
 Move-MgBetaPlannerPlanToContainer -PlannerPlanId <String> [-AdditionalProperties <Hashtable>]
- [-Container <IMicrosoftGraphPlannerPlanContainer>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Container <IMicrosoftGraphPlannerPlanContainer>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Move
 ```
 Move-MgBetaPlannerPlanToContainer -PlannerPlanId <String>
  -BodyParameter <IPathsXmyifhPlannerPlansPlannerplanIdMicrosoftGraphMovetocontainerPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### MoveViaIdentity
 ```
 Move-MgBetaPlannerPlanToContainer -InputObject <IPlannerIdentity>
  -BodyParameter <IPathsXmyifhPlannerPlansPlannerplanIdMicrosoftGraphMovetocontainerPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### MoveViaIdentityExpanded
 ```
 Move-MgBetaPlannerPlanToContainer -InputObject <IPlannerIdentity> [-AdditionalProperties <Hashtable>]
- [-Container <IMicrosoftGraphPlannerPlanContainer>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Container <IMicrosoftGraphPlannerPlanContainer>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Move a planner plan object from one planner plan container to another.
-Planner plans can only be moved from a user container to a group container.
+Invoke action moveToContainer
 
 ## EXAMPLES
 
@@ -107,21 +103,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -196,13 +177,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPlannerIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerPlan
-
-### System.Collections.Hashtable
 
 ## NOTES
 

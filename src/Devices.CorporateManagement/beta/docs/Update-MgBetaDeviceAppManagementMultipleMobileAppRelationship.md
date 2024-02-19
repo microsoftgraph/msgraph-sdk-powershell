@@ -15,15 +15,15 @@ Invoke action updateRelationships
 ### UpdateExpanded (Default)
 ```
 Update-MgBetaDeviceAppManagementMultipleMobileAppRelationship -MobileAppId <String>
- [-AdditionalProperties <Hashtable>] [-Relationships <IMicrosoftGraphMobileAppRelationship[]>]
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-Relationships <IMicrosoftGraphMobileAppRelationship[]>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaDeviceAppManagementMultipleMobileAppRelationship -MobileAppId <String>
  -BodyParameter <IPaths1Kxp2ItDeviceappmanagementMobileappsMobileappIdMicrosoftGraphUpdaterelationshipsPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
@@ -31,15 +31,15 @@ Update-MgBetaDeviceAppManagementMultipleMobileAppRelationship -MobileAppId <Stri
 Update-MgBetaDeviceAppManagementMultipleMobileAppRelationship
  -InputObject <IDevicesCorporateManagementIdentity>
  -BodyParameter <IPaths1Kxp2ItDeviceappmanagementMobileappsMobileappIdMicrosoftGraphUpdaterelationshipsPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgBetaDeviceAppManagementMultipleMobileAppRelationship
  -InputObject <IDevicesCorporateManagementIdentity> [-AdditionalProperties <Hashtable>]
- [-Relationships <IMicrosoftGraphMobileAppRelationship[]>] [-Headers <IDictionary>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-Relationships <IMicrosoftGraphMobileAppRelationship[]>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -88,21 +88,6 @@ Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -211,13 +196,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPaths1Kxp2ItDeviceappmanagementMobileappsMobileappIdMicrosoftGraphUpdaterelationshipsPostRequestbodyContentApplicationJsonSchema
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
-
-### System.Collections.Hashtable
 
 ## NOTES
 

@@ -17,19 +17,19 @@ Create new navigation property to versions for agreements
 New-MgAgreementFileLocalizationVersion -AgreementFileLocalizationId <String> -AgreementId <String>
  [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>] [-DisplayName <String>]
  [-FileData <IMicrosoftGraphAgreementFileData>] [-FileName <String>] [-Id <String>] [-IsDefault]
- [-IsMajorVersion] [-Language <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-IsMajorVersion] [-Language <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgAgreementFileLocalizationVersion -AgreementFileLocalizationId <String> -AgreementId <String>
- -BodyParameter <Hashtable> [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <Hashtable> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgAgreementFileLocalizationVersion -InputObject <IIdentityGovernanceIdentity> -BodyParameter <Hashtable>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -37,7 +37,7 @@ New-MgAgreementFileLocalizationVersion -InputObject <IIdentityGovernanceIdentity
 New-MgAgreementFileLocalizationVersion -InputObject <IIdentityGovernanceIdentity>
  [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>] [-DisplayName <String>]
  [-FileData <IMicrosoftGraphAgreementFileData>] [-FileName <String>] [-Id <String>] [-IsDefault]
- [-IsMajorVersion] [-Language <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-IsMajorVersion] [-Language <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -186,21 +186,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -325,13 +310,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Collections.Hashtable
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAgreementFileVersion
-
-### System.Collections.Hashtable
 
 ## NOTES
 

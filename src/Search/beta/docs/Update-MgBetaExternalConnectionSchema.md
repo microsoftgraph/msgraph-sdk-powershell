@@ -8,40 +8,38 @@ schema: 2.0.0
 # Update-MgBetaExternalConnectionSchema
 
 ## SYNOPSIS
-Update the properties of a schema for an externalConnection.
+Create the schema for a Microsoft Search connection.
 
 ## SYNTAX
 
 ### UpdateExpanded (Default)
 ```
 Update-MgBetaExternalConnectionSchema -ExternalConnectionId <String> [-AdditionalProperties <Hashtable>]
- [-BaseType <String>] [-Id <String>] [-Properties <IMicrosoftGraphExternalConnectorsProperty[]>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-BaseType <String>] [-Id <String>] [-Properties <IMicrosoftGraphExternalConnectorsProperty[]>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaExternalConnectionSchema -ExternalConnectionId <String>
- -BodyParameter <IMicrosoftGraphExternalConnectorsSchema> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphExternalConnectorsSchema> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaExternalConnectionSchema -InputObject <ISearchIdentity>
- -BodyParameter <IMicrosoftGraphExternalConnectorsSchema> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphExternalConnectorsSchema> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgBetaExternalConnectionSchema -InputObject <ISearchIdentity> [-AdditionalProperties <Hashtable>]
- [-BaseType <String>] [-Id <String>] [-Properties <IMicrosoftGraphExternalConnectorsProperty[]>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-BaseType <String>] [-Id <String>] [-Properties <IMicrosoftGraphExternalConnectorsProperty[]>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Update the properties of a schema for an externalConnection.
+Create the schema for a Microsoft Search connection.
 
 ## EXAMPLES
 
@@ -113,21 +111,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -220,13 +203,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.ISearchIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphExternalConnectorsSchema
-
-### System.Collections.Hashtable
 
 ## NOTES
 

@@ -17,22 +17,20 @@ Update the navigation property resourceActions in roleManagement
 Update-MgRoleManagementDirectoryResourceNamespaceResourceAction -UnifiedRbacResourceActionId <String>
  -UnifiedRbacResourceNamespaceId <String> [-ActionVerb <String>] [-AdditionalProperties <Hashtable>]
  [-AuthenticationContextId <String>] [-Description <String>] [-Id <String>] [-IsAuthenticationContextSettable]
- [-Name <String>] [-ResourceScopeId <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Name <String>] [-ResourceScopeId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgRoleManagementDirectoryResourceNamespaceResourceAction -UnifiedRbacResourceActionId <String>
- -UnifiedRbacResourceNamespaceId <String> -BodyParameter <IMicrosoftGraphUnifiedRbacResourceAction>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -UnifiedRbacResourceNamespaceId <String> -BodyParameter <IMicrosoftGraphUnifiedRbacResourceAction> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgRoleManagementDirectoryResourceNamespaceResourceAction -InputObject <IIdentityGovernanceIdentity>
- -BodyParameter <IMicrosoftGraphUnifiedRbacResourceAction> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphUnifiedRbacResourceAction> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -40,7 +38,7 @@ Update-MgRoleManagementDirectoryResourceNamespaceResourceAction -InputObject <II
 Update-MgRoleManagementDirectoryResourceNamespaceResourceAction -InputObject <IIdentityGovernanceIdentity>
  [-ActionVerb <String>] [-AdditionalProperties <Hashtable>] [-AuthenticationContextId <String>]
  [-Description <String>] [-Id <String>] [-IsAuthenticationContextSettable] [-Name <String>]
- [-ResourceScopeId <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ResourceScopeId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -137,21 +135,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -302,13 +285,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUnifiedRbacResourceAction
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUnifiedRbacResourceAction
-
-### System.Collections.Hashtable
 
 ## NOTES
 

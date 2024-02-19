@@ -16,14 +16,14 @@ In Azure AD B2C, this operation can currently delete a socialIdentityProvider, o
 
 ### Delete (Default)
 ```
-Remove-MgBetaIdentityProvider -IdentityProviderBaseId <String> [-IfMatch <String>] [-Headers <IDictionary>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-MgBetaIdentityProvider -IdentityProviderBaseId <String> [-IfMatch <String>] [-PassThru] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgBetaIdentityProvider -InputObject <IIdentitySignInsIdentity> [-IfMatch <String>]
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-MgBetaIdentityProvider -InputObject <IIdentitySignInsIdentity> [-IfMatch <String>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -41,21 +41,6 @@ Import-Module Microsoft.Graph.Beta.Identity.SignIns
 Remove-MgBetaIdentityProvider -IdentityProviderBaseId $identityProviderBaseId
 
 ## PARAMETERS
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
 
 ### -IdentityProviderBaseId
 The unique identifier of identityProviderBase
@@ -156,13 +141,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
-
-### System.Collections.Hashtable
 
 ## NOTES
 

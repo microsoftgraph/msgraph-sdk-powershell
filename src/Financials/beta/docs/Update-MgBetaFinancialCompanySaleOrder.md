@@ -27,19 +27,19 @@ Update-MgBetaFinancialCompanySaleOrder -CompanyId <String> -SalesOrderId <String
  [-SellingPostalAddress <IMicrosoftGraphPostalAddressType>]
  [-ShippingPostalAddress <IMicrosoftGraphPostalAddressType>] [-ShipToContact <String>] [-ShipToName <String>]
  [-Status <String>] [-TotalAmountExcludingTax <Decimal>] [-TotalAmountIncludingTax <Decimal>]
- [-TotalTaxAmount <Decimal>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-TotalTaxAmount <Decimal>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaFinancialCompanySaleOrder -CompanyId <String> -SalesOrderId <String>
- -BodyParameter <IMicrosoftGraphSalesOrder> [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphSalesOrder> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaFinancialCompanySaleOrder -InputObject <IFinancialsIdentity>
- -BodyParameter <IMicrosoftGraphSalesOrder> [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphSalesOrder> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -56,7 +56,7 @@ Update-MgBetaFinancialCompanySaleOrder -InputObject <IFinancialsIdentity> [-Addi
  [-Salesperson <String>] [-SellingPostalAddress <IMicrosoftGraphPostalAddressType>]
  [-ShippingPostalAddress <IMicrosoftGraphPostalAddressType>] [-ShipToContact <String>] [-ShipToName <String>]
  [-Status <String>] [-TotalAmountExcludingTax <Decimal>] [-TotalAmountIncludingTax <Decimal>]
- [-TotalTaxAmount <Decimal>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-TotalTaxAmount <Decimal>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -366,21 +366,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -759,13 +744,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSalesOrder
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSalesOrder
-
-### System.Collections.Hashtable
 
 ## NOTES
 

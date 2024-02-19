@@ -227,8 +227,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessPackageAssignmentRequest
 
-### System.Collections.Hashtable
-
 ## NOTES
 
 ALIASES

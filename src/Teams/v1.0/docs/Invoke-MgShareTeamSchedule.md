@@ -8,9 +8,7 @@ schema: 2.0.0
 # Invoke-MgShareTeamSchedule
 
 ## SYNOPSIS
-Share a schedule time range with schedule members.
-This action makes the collections of shift, openshift and timeOff items in the specified time range of the schedule viewable by the specified team members, including employees and managers.
-Each shift, openshift and timeOff instance in a schedule supports a draft version and a shared version of the item.
+Share a schedule time range with schedule members.\nMake the collections of shift, openshift and timeOff items in the specified time range of the schedule viewable by the specified team members, including employees and managers.\nEach shift, openshift and timeOff instance in a schedule supports a draft version and a shared version of the item.
 The draft version is viewable by only managers, and the shared version is viewable by employees and managers.
 For each shift, openshift and timeOff instance in the specified time range, the share action updates the shared version from the draft version, so that in addition to managers, employees can also view the most current information about the item.
 The notifyTeam parameter further specifies which employees can view the item.
@@ -20,35 +18,32 @@ The notifyTeam parameter further specifies which employees can view the item.
 ### ShareExpanded (Default)
 ```
 Invoke-MgShareTeamSchedule -TeamId <String> [-AdditionalProperties <Hashtable>] [-EndDateTime <DateTime>]
- [-NotifyTeam] [-StartDateTime <DateTime>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-NotifyTeam] [-StartDateTime <DateTime>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Share
 ```
 Invoke-MgShareTeamSchedule -TeamId <String>
  -BodyParameter <IPathsCo6ShtTeamsTeamIdScheduleMicrosoftGraphSharePostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ShareViaIdentity
 ```
 Invoke-MgShareTeamSchedule -InputObject <ITeamsIdentity>
  -BodyParameter <IPathsCo6ShtTeamsTeamIdScheduleMicrosoftGraphSharePostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ShareViaIdentityExpanded
 ```
 Invoke-MgShareTeamSchedule -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
- [-EndDateTime <DateTime>] [-NotifyTeam] [-StartDateTime <DateTime>] [-Headers <IDictionary>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-EndDateTime <DateTime>] [-NotifyTeam] [-StartDateTime <DateTime>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Share a schedule time range with schedule members.
-This action makes the collections of shift, openshift and timeOff items in the specified time range of the schedule viewable by the specified team members, including employees and managers.
-Each shift, openshift and timeOff instance in a schedule supports a draft version and a shared version of the item.
+Share a schedule time range with schedule members.\nMake the collections of shift, openshift and timeOff items in the specified time range of the schedule viewable by the specified team members, including employees and managers.\nEach shift, openshift and timeOff instance in a schedule supports a draft version and a shared version of the item.
 The draft version is viewable by only managers, and the shared version is viewable by employees and managers.
 For each shift, openshift and timeOff instance in the specified time range, the share action updates the shared version from the draft version, so that in addition to managers, employees can also view the most current information about the item.
 The notifyTeam parameter further specifies which employees can view the item.
@@ -113,21 +108,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -247,13 +227,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
-
-### System.Collections.Hashtable
 
 ## NOTES
 

@@ -2,7 +2,7 @@
   <PropertyGroup>
     <TargetFrameworks>net6.0;net472</TargetFrameworks>
     <IsPackable>false</IsPackable>
-    <Version>2.14.0</Version>
+    <Version>2.11.0</Version>
     <AssemblyOriginatorKeyFile>D:\a\_work\1\s\tools\35MSSharedLib1024.snk</AssemblyOriginatorKeyFile>
     <DelaySign>true</DelaySign>
     <SignAssembly>true</SignAssembly>

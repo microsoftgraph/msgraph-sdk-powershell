@@ -17,28 +17,26 @@ A user may only have one email authentication method.
 ### CreateExpanded (Default)
 ```
 New-MgBetaUserAuthenticationEmailMethod -UserId <String> [-AdditionalProperties <Hashtable>]
- [-EmailAddress <String>] [-Id <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-EmailAddress <String>] [-Id <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaUserAuthenticationEmailMethod -UserId <String>
- -BodyParameter <IMicrosoftGraphEmailAuthenticationMethod> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphEmailAuthenticationMethod> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaUserAuthenticationEmailMethod -InputObject <IIdentitySignInsIdentity>
- -BodyParameter <IMicrosoftGraphEmailAuthenticationMethod> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphEmailAuthenticationMethod> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgBetaUserAuthenticationEmailMethod -InputObject <IIdentitySignInsIdentity>
- [-AdditionalProperties <Hashtable>] [-EmailAddress <String>] [-Id <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-EmailAddress <String>] [-Id <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -104,21 +102,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -209,13 +192,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEmailAuthenticationMethod
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEmailAuthenticationMethod
-
-### System.Collections.Hashtable
 
 ## NOTES
 

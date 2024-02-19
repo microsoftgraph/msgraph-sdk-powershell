@@ -15,17 +15,16 @@ Create new navigation property to notificationMessageTemplates for deviceManagem
 ### CreateExpanded (Default)
 ```
 New-MgBetaDeviceManagementNotificationMessageTemplate [-AdditionalProperties <Hashtable>]
- [-BrandingOptions <NotificationTemplateBrandingOptions>] [-DefaultLocale <String>] [-Description <String>]
- [-DisplayName <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>]
+ [-BrandingOptions <NotificationTemplateBrandingOptions>] [-DefaultLocale <String>] [-DisplayName <String>]
+ [-Id <String>] [-LastModifiedDateTime <DateTime>]
  [-LocalizedNotificationMessages <IMicrosoftGraphLocalizedNotificationMessage[]>]
- [-RoleScopeTagIds <String[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-RoleScopeTagIds <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaDeviceManagementNotificationMessageTemplate
- -BodyParameter <IMicrosoftGraphNotificationMessageTemplate> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphNotificationMessageTemplate> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -113,21 +112,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Description
-Display name for the Notification Message Template.
-
-```yaml
-Type: System.String
-Parameter Sets: CreateExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -DisplayName
 Display name for the Notification Message Template.
 
@@ -140,21 +124,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -258,13 +227,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphNotificationMessageTemplate
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphNotificationMessageTemplate
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -280,7 +245,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[BrandingOptions <NotificationTemplateBrandingOptions?>]`: Branding Options for the Message Template. Branding is defined in the Intune Admin Console.
   - `[DefaultLocale <String>]`: The default locale to fallback onto when the requested locale is not available.
-  - `[Description <String>]`: Display name for the Notification Message Template.
   - `[DisplayName <String>]`: Display name for the Notification Message Template.
   - `[LastModifiedDateTime <DateTime?>]`: DateTime the object was last modified.
   - `[LocalizedNotificationMessages <IMicrosoftGraphLocalizedNotificationMessage[]>]`: The list of localized messages for this Notification Message Template.

@@ -22,19 +22,18 @@ Update-MgChat -ChatId <String> [-AdditionalProperties <Hashtable>] [-ChatType <S
  [-PermissionGrants <IMicrosoftGraphResourceSpecificPermissionGrant[]>]
  [-PinnedMessages <IMicrosoftGraphPinnedChatMessageInfo[]>] [-Tabs <IMicrosoftGraphTeamsTab[]>]
  [-TenantId <String>] [-Topic <String>] [-Viewpoint <IMicrosoftGraphChatViewpoint>] [-WebUrl <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgChat -ChatId <String> -BodyParameter <IMicrosoftGraphChat> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Update-MgChat -ChatId <String> -BodyParameter <IMicrosoftGraphChat> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgChat -InputObject <ITeamsIdentity> -BodyParameter <IMicrosoftGraphChat> [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgChat -InputObject <ITeamsIdentity> -BodyParameter <IMicrosoftGraphChat> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -47,7 +46,7 @@ Update-MgChat -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>] 
  [-PermissionGrants <IMicrosoftGraphResourceSpecificPermissionGrant[]>]
  [-PinnedMessages <IMicrosoftGraphPinnedChatMessageInfo[]>] [-Tabs <IMicrosoftGraphTeamsTab[]>]
  [-TenantId <String>] [-Topic <String>] [-Viewpoint <IMicrosoftGraphChatViewpoint>] [-WebUrl <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -142,21 +141,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -446,13 +430,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphChat
-
-### System.Collections.Hashtable
 
 ## NOTES
 

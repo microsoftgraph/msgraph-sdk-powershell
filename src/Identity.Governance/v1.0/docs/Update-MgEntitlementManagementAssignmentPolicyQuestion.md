@@ -17,21 +17,20 @@ Update the navigation property questions in identityGovernance
 Update-MgEntitlementManagementAssignmentPolicyQuestion -AccessPackageAssignmentPolicyId <String>
  -AccessPackageQuestionId <String> [-AdditionalProperties <Hashtable>] [-Id <String>] [-IsAnswerEditable]
  [-IsRequired] [-Localizations <IMicrosoftGraphAccessPackageLocalizedText[]>] [-Sequence <Int32>]
- [-Text <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Text <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgEntitlementManagementAssignmentPolicyQuestion -AccessPackageAssignmentPolicyId <String>
- -AccessPackageQuestionId <String> -BodyParameter <IMicrosoftGraphAccessPackageQuestion>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -AccessPackageQuestionId <String> -BodyParameter <IMicrosoftGraphAccessPackageQuestion> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgEntitlementManagementAssignmentPolicyQuestion -InputObject <IIdentityGovernanceIdentity>
- -BodyParameter <IMicrosoftGraphAccessPackageQuestion> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphAccessPackageQuestion> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -39,7 +38,7 @@ Update-MgEntitlementManagementAssignmentPolicyQuestion -InputObject <IIdentityGo
 Update-MgEntitlementManagementAssignmentPolicyQuestion -InputObject <IIdentityGovernanceIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-IsAnswerEditable] [-IsRequired]
  [-Localizations <IMicrosoftGraphAccessPackageLocalizedText[]>] [-Sequence <Int32>] [-Text <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -118,21 +117,6 @@ Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -287,13 +271,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageQuestion
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageQuestion
-
-### System.Collections.Hashtable
 
 ## NOTES
 

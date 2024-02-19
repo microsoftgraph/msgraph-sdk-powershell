@@ -15,14 +15,14 @@ Create a new custom identityUserFlowAttribute object.
 ### CreateExpanded (Default)
 ```
 New-MgIdentityUserFlowAttribute [-AdditionalProperties <Hashtable>] [-DataType <String>]
- [-Description <String>] [-DisplayName <String>] [-Id <String>] [-UserFlowAttributeType <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Description <String>] [-DisplayName <String>] [-Id <String>] [-UserFlowAttributeType <String>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgIdentityUserFlowAttribute -BodyParameter <IMicrosoftGraphIdentityUserFlowAttribute>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgIdentityUserFlowAttribute -BodyParameter <IMicrosoftGraphIdentityUserFlowAttribute> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -122,21 +122,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -206,13 +191,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentityUserFlowAttribute
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentityUserFlowAttribute
-
-### System.Collections.Hashtable
 
 ## NOTES
 

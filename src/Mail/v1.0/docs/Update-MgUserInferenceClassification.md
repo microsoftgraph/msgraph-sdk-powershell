@@ -15,28 +15,26 @@ Update the navigation property inferenceClassification in users
 ### UpdateExpanded (Default)
 ```
 Update-MgUserInferenceClassification -UserId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
- [-Overrides <IMicrosoftGraphInferenceClassificationOverride[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Overrides <IMicrosoftGraphInferenceClassificationOverride[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgUserInferenceClassification -UserId <String> -BodyParameter <IMicrosoftGraphInferenceClassification>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgUserInferenceClassification -InputObject <IMailIdentity>
- -BodyParameter <IMicrosoftGraphInferenceClassification> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphInferenceClassification> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgUserInferenceClassification -InputObject <IMailIdentity> [-AdditionalProperties <Hashtable>]
- [-Id <String>] [-Overrides <IMicrosoftGraphInferenceClassificationOverride[]>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-Overrides <IMicrosoftGraphInferenceClassificationOverride[]>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -85,21 +83,6 @@ Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -211,13 +194,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInferenceClassification
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInferenceClassification
-
-### System.Collections.Hashtable
 
 ## NOTES
 

@@ -17,29 +17,26 @@ Only teachers can update these settings.
 ```
 Update-MgBetaEducationClassAssignmentSetting -EducationClassId <String> [-AdditionalProperties <Hashtable>]
  [-GradingCategories <IMicrosoftGraphEducationGradingCategory[]>] [-Id <String>]
- [-SubmissionAnimationDisabled] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-SubmissionAnimationDisabled] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaEducationClassAssignmentSetting -EducationClassId <String>
- -BodyParameter <IMicrosoftGraphEducationAssignmentSettings> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphEducationAssignmentSettings> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaEducationClassAssignmentSetting -InputObject <IEducationIdentity>
- -BodyParameter <IMicrosoftGraphEducationAssignmentSettings> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphEducationAssignmentSettings> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgBetaEducationClassAssignmentSetting -InputObject <IEducationIdentity>
  [-AdditionalProperties <Hashtable>] [-GradingCategories <IMicrosoftGraphEducationGradingCategory[]>]
- [-Id <String>] [-SubmissionAnimationDisabled] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Id <String>] [-SubmissionAnimationDisabled] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -55,30 +52,6 @@ Import-Module Microsoft.Graph.Beta.Education
 
 $params = @{
 	submissionAnimationDisabled = $true
-}
-
-Update-MgBetaEducationClassAssignmentSetting -EducationClassId $educationClassId -BodyParameter $params
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Education
-```
-
-$params = @{
-	gradingCategories = @(
-		@{
-			displayName = "Lab"
-			percentageWeight = 10
-		}
-		@{
-			displayName = "Homework"
-			percentageWeight = 80
-		}
-		@{
-			displayName = "Test"
-			percentageWeight = 10
-		}
-	)
 }
 
 Update-MgBetaEducationClassAssignmentSetting -EducationClassId $educationClassId -BodyParameter $params
@@ -132,7 +105,7 @@ Accept wildcard characters: False
 ```
 
 ### -GradingCategories
-When set, enables users to weight assignments differently when computing a class average grade.
+.
 To construct, see NOTES section for GRADINGCATEGORIES properties and create a hash table.
 
 ```yaml
@@ -144,21 +117,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -251,13 +209,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationAssignmentSettings
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationAssignmentSettings
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -271,13 +225,13 @@ To create the parameters described below, construct a hash table containing the 
 `BODYPARAMETER <IMicrosoftGraphEducationAssignmentSettings>`: educationAssignmentSettings
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[GradingCategories <IMicrosoftGraphEducationGradingCategory[]>]`: When set, enables users to weight assignments differently when computing a class average grade.
+  - `[GradingCategories <IMicrosoftGraphEducationGradingCategory[]>]`: 
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[DisplayName <String>]`: The name of the grading category.
     - `[PercentageWeight <Int32?>]`: The weight of the category; an integer between 0 and 100.
   - `[SubmissionAnimationDisabled <Boolean?>]`: Indicates whether turn-in celebration animation will be shown. If true, the animation won't be shown. The default value is false.
 
-`GRADINGCATEGORIES <IMicrosoftGraphEducationGradingCategory[]>`: When set, enables users to weight assignments differently when computing a class average grade.
+`GRADINGCATEGORIES <IMicrosoftGraphEducationGradingCategory[]>`: .
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[DisplayName <String>]`: The name of the grading category.
   - `[PercentageWeight <Int32?>]`: The weight of the category; an integer between 0 and 100.

@@ -16,13 +16,12 @@ Only teachers, students, and applications with application permissions can perfo
 ### Get (Default)
 ```
 Get-MgBetaEducationUserAssignmentRubricByRef -EducationAssignmentId <String> -EducationUserId <String>
- [-Headers <IDictionary>] [<CommonParameters>]
+ [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgBetaEducationUserAssignmentRubricByRef -InputObject <IEducationIdentity> [-Headers <IDictionary>]
- [<CommonParameters>]
+Get-MgBetaEducationUserAssignmentRubricByRef -InputObject <IEducationIdentity> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -77,21 +76,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -115,11 +99,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
-
-### System.Collections.Hashtable
 
 ### System.String
 

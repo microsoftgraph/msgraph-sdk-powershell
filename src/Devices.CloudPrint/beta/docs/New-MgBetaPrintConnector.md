@@ -17,13 +17,13 @@ Create new navigation property to connectors for print
 New-MgBetaPrintConnector [-AdditionalProperties <Hashtable>] [-AppVersion <String>]
  [-DeviceHealth <IMicrosoftGraphDeviceHealth>] [-DisplayName <String>] [-FullyQualifiedDomainName <String>]
  [-Id <String>] [-Location <IMicrosoftGraphPrinterLocation>] [-Name <String>] [-OperatingSystem <String>]
- [-RegisteredDateTime <DateTime>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-RegisteredDateTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgBetaPrintConnector -BodyParameter <IMicrosoftGraphPrintConnector> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+New-MgBetaPrintConnector -BodyParameter <IMicrosoftGraphPrintConnector> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -33,17 +33,10 @@ Create new navigation property to connectors for print
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Beta.Devices.CloudPrint
 ```
 
-
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-
+Get-MgBetaPrintConnector
 
 ## PARAMETERS
 
@@ -136,21 +129,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -269,13 +247,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrintConnector
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrintConnector
-
-### System.Collections.Hashtable
 
 ## NOTES
 

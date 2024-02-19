@@ -15,14 +15,14 @@ Create new navigation property to healthOverviews for admin
 ### CreateExpanded (Default)
 ```
 New-MgBetaServiceAnnouncementHealthOverview [-AdditionalProperties <Hashtable>] [-Id <String>]
- [-Issues <IMicrosoftGraphServiceHealthIssue[]>] [-Service <String>] [-Status <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Issues <IMicrosoftGraphServiceHealthIssue[]>] [-Service <String>] [-Status <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgBetaServiceAnnouncementHealthOverview -BodyParameter <IMicrosoftGraphServiceHealth>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaServiceAnnouncementHealthOverview -BodyParameter <IMicrosoftGraphServiceHealth> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -32,17 +32,17 @@ Create new navigation property to healthOverviews for admin
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Beta.Devices.ServiceAnnouncement
 ```
 
-
+Get-MgBetaServiceAnnouncementHealthOverview
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Beta.Devices.ServiceAnnouncement
 ```
 
-
+Get-MgBetaServiceAnnouncementHealthOverview -ExpandProperty "issues"
 
 ## PARAMETERS
 
@@ -71,21 +71,6 @@ Parameter Sets: Create
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -193,13 +178,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphServiceHealth
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphServiceHealth
-
-### System.Collections.Hashtable
 
 ## NOTES
 

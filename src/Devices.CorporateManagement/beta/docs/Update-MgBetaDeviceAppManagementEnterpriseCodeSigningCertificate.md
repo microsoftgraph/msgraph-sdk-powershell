@@ -17,23 +17,20 @@ Update the navigation property enterpriseCodeSigningCertificates in deviceAppMan
 Update-MgBetaDeviceAppManagementEnterpriseCodeSigningCertificate -EnterpriseCodeSigningCertificateId <String>
  [-AdditionalProperties <Hashtable>] [-ContentInputFile <String>] [-ExpirationDateTime <DateTime>]
  [-Id <String>] [-Issuer <String>] [-IssuerName <String>] [-Status <String>] [-Subject <String>]
- [-SubjectName <String>] [-UploadDateTime <DateTime>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-SubjectName <String>] [-UploadDateTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaDeviceAppManagementEnterpriseCodeSigningCertificate -EnterpriseCodeSigningCertificateId <String>
- -BodyParameter <IMicrosoftGraphEnterpriseCodeSigningCertificate> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphEnterpriseCodeSigningCertificate> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaDeviceAppManagementEnterpriseCodeSigningCertificate
  -InputObject <IDevicesCorporateManagementIdentity>
- -BodyParameter <IMicrosoftGraphEnterpriseCodeSigningCertificate> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphEnterpriseCodeSigningCertificate> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -42,7 +39,7 @@ Update-MgBetaDeviceAppManagementEnterpriseCodeSigningCertificate
  -InputObject <IDevicesCorporateManagementIdentity> [-AdditionalProperties <Hashtable>]
  [-ContentInputFile <String>] [-ExpirationDateTime <DateTime>] [-Id <String>] [-Issuer <String>]
  [-IssuerName <String>] [-Status <String>] [-Subject <String>] [-SubjectName <String>]
- [-UploadDateTime <DateTime>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-UploadDateTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -143,21 +140,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -342,13 +324,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEnterpriseCodeSigningCertificate
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEnterpriseCodeSigningCertificate
-
-### System.Collections.Hashtable
 
 ## NOTES
 

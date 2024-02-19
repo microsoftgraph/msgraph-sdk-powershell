@@ -15,40 +15,40 @@ Creates a new groupLifecyclePolicy.
 ### CreateExpanded (Default)
 ```
 New-MgGroupLifecyclePolicy [-AdditionalProperties <Hashtable>] [-AlternateNotificationEmails <String>]
- [-GroupLifetimeInDays <Int32>] [-Id <String>] [-ManagedGroupTypes <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-GroupLifetimeInDays <Int32>] [-Id <String>] [-ManagedGroupTypes <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgGroupLifecyclePolicy -BodyParameter <IMicrosoftGraphGroupLifecyclePolicy> [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgGroupLifecyclePolicy -BodyParameter <IMicrosoftGraphGroupLifecyclePolicy> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create1
 ```
-New-MgGroupLifecyclePolicy -GroupId <String> -BodyParameter <IMicrosoftGraphGroupLifecyclePolicy>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgGroupLifecyclePolicy -GroupId <String> -BodyParameter <IMicrosoftGraphGroupLifecyclePolicy> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateExpanded1
 ```
 New-MgGroupLifecyclePolicy -GroupId <String> [-AdditionalProperties <Hashtable>]
  [-AlternateNotificationEmails <String>] [-GroupLifetimeInDays <Int32>] [-Id <String>]
- [-ManagedGroupTypes <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ManagedGroupTypes <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgGroupLifecyclePolicy -InputObject <IGroupsIdentity> -BodyParameter <IMicrosoftGraphGroupLifecyclePolicy>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgGroupLifecyclePolicy -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>]
  [-AlternateNotificationEmails <String>] [-GroupLifetimeInDays <Int32>] [-Id <String>]
- [-ManagedGroupTypes <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ManagedGroupTypes <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -149,21 +149,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -252,13 +237,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupLifecyclePolicy
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroupLifecyclePolicy
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -302,7 +283,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[OnenotePageId <String>]`: The unique identifier of onenotePage
   - `[OnenoteSectionId <String>]`: The unique identifier of onenoteSection
   - `[Path <String>]`: Usage: path='{path}'
-  - `[Path1 <String>]`: Usage: path='{path1}'
   - `[PermissionId <String>]`: The unique identifier of permission
   - `[PostId <String>]`: The unique identifier of post
   - `[ProfilePhotoId <String>]`: The unique identifier of profilePhoto
@@ -312,7 +292,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[StartDateTime <String>]`: Usage: startDateTime='{startDateTime}'
   - `[SubscriptionId <String>]`: The unique identifier of subscription
   - `[Token <String>]`: Usage: token='{token}'
-  - `[UniqueName <String>]`: Alternate key of group
   - `[User <String>]`: Usage: User='{User}'
 
 ## RELATED LINKS

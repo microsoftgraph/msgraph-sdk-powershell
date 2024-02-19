@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Security
-Module Guid: 1b31cd14-86a7-4168-9e0c-4a13181b5397
+Module Guid: eb53e463-3871-46e0-874b-60d9c20ebceb
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.security
 Help Version: 1.0.0.0
 Locale: en-US
@@ -155,7 +155,7 @@ Get queries from security
 Get the number of the resource
 
 ### [Get-MgBetaSecurityAuditLogQueryRecord](Get-MgBetaSecurityAuditLogQueryRecord.md)
-An individual audit log record.
+Get records from security
 
 ### [Get-MgBetaSecurityAuditLogQueryRecordCount](Get-MgBetaSecurityAuditLogQueryRecordCount.md)
 Get the number of the resource
@@ -330,15 +330,6 @@ Returns the parent tag of the specified tag.
 Get cloudAppSecurityProfiles from security
 
 ### [Get-MgBetaSecurityCloudAppSecurityProfileCount](Get-MgBetaSecurityCloudAppSecurityProfileCount.md)
-Get the number of the resource
-
-### [Get-MgBetaSecurityCollaboration](Get-MgBetaSecurityCollaboration.md)
-Get collaboration from security
-
-### [Get-MgBetaSecurityCollaborationAnalyzedEmail](Get-MgBetaSecurityCollaborationAnalyzedEmail.md)
-Get analyzedEmails from security
-
-### [Get-MgBetaSecurityCollaborationAnalyzedEmailCount](Get-MgBetaSecurityCollaborationAnalyzedEmailCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaSecurityDomainSecurityProfile](Get-MgBetaSecurityDomainSecurityProfile.md)
@@ -873,9 +864,6 @@ To learn more about searches in eDiscovery, see Collect data for a case in eDisc
 Use the metadata that exists on an already-labeled piece of information to resolve the metadata to a specific sensitivity label.
 The contentInfo input is resolved to informationProtectionContentLabel.
 
-### [Invoke-MgBetaRemediateSecurityCollaborationAnalyzedEmail](Invoke-MgBetaRemediateSecurityCollaborationAnalyzedEmail.md)
-Invoke action remediate
-
 ### [Invoke-MgBetaReopenSecurityCaseEdiscoveryCase](Invoke-MgBetaReopenSecurityCaseEdiscoveryCase.md)
 Reopen an eDiscovery case that was closed.
 For details, see Reopen a closed case.
@@ -981,9 +969,6 @@ Create a new ediscoveryReviewTag object.
 
 ### [New-MgBetaSecurityCloudAppSecurityProfile](New-MgBetaSecurityCloudAppSecurityProfile.md)
 Create new navigation property to cloudAppSecurityProfiles for security
-
-### [New-MgBetaSecurityCollaborationAnalyzedEmail](New-MgBetaSecurityCollaborationAnalyzedEmail.md)
-Create new navigation property to analyzedEmails for security
 
 ### [New-MgBetaSecurityDomainSecurityProfile](New-MgBetaSecurityDomainSecurityProfile.md)
 Create new navigation property to domainSecurityProfiles for security
@@ -1240,6 +1225,12 @@ Delete an ediscoverySearch object.
 ### [Remove-MgBetaSecurityCaseEdiscoveryCaseSearchAdditionalSource](Remove-MgBetaSecurityCaseEdiscoveryCaseSearchAdditionalSource.md)
 Delete navigation property additionalSources for security
 
+### [Remove-MgBetaSecurityCaseEdiscoveryCaseSearchCustodianSource](Remove-MgBetaSecurityCaseEdiscoveryCaseSearchCustodianSource.md)
+Remove a dataSource object.
+
+### [Remove-MgBetaSecurityCaseEdiscoveryCaseSearchNoncustodialSource](Remove-MgBetaSecurityCaseEdiscoveryCaseSearchNoncustodialSource.md)
+Remove an ediscoveryNoncustodialDataSource object.
+
 ### [Remove-MgBetaSecurityCaseEdiscoveryCaseSetting](Remove-MgBetaSecurityCaseEdiscoveryCaseSetting.md)
 Delete navigation property settings for security
 
@@ -1248,12 +1239,6 @@ Remove an ediscoveryReviewTag object.
 
 ### [Remove-MgBetaSecurityCloudAppSecurityProfile](Remove-MgBetaSecurityCloudAppSecurityProfile.md)
 Delete navigation property cloudAppSecurityProfiles for security
-
-### [Remove-MgBetaSecurityCollaboration](Remove-MgBetaSecurityCollaboration.md)
-Delete navigation property collaboration for security
-
-### [Remove-MgBetaSecurityCollaborationAnalyzedEmail](Remove-MgBetaSecurityCollaborationAnalyzedEmail.md)
-Delete navigation property analyzedEmails for security
 
 ### [Remove-MgBetaSecurityDomainSecurityProfile](Remove-MgBetaSecurityDomainSecurityProfile.md)
 Delete navigation property domainSecurityProfiles for security
@@ -1600,12 +1585,6 @@ Update the properties of an ediscoveryReviewTag object.
 
 ### [Update-MgBetaSecurityCloudAppSecurityProfile](Update-MgBetaSecurityCloudAppSecurityProfile.md)
 Update the navigation property cloudAppSecurityProfiles in security
-
-### [Update-MgBetaSecurityCollaboration](Update-MgBetaSecurityCollaboration.md)
-Update the navigation property collaboration in security
-
-### [Update-MgBetaSecurityCollaborationAnalyzedEmail](Update-MgBetaSecurityCollaborationAnalyzedEmail.md)
-Update the navigation property analyzedEmails in security
 
 ### [Update-MgBetaSecurityDomainSecurityProfile](Update-MgBetaSecurityDomainSecurityProfile.md)
 Update the navigation property domainSecurityProfiles in security

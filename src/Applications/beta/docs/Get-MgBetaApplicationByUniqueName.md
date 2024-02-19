@@ -14,14 +14,14 @@ Get the properties and relationships of an application object.
 
 ### Get (Default)
 ```
-Get-MgBetaApplicationByUniqueName -UniqueName <String> [-ExpandProperty <String[]>] [-Property <String[]>]
- [-Headers <IDictionary>] [<CommonParameters>]
+Get-MgBetaApplicationByUniqueName -AppId <String> -UniqueName <String> [-ExpandProperty <String[]>]
+ [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
 Get-MgBetaApplicationByUniqueName -InputObject <IApplicationsIdentity> [-ExpandProperty <String[]>]
- [-Property <String[]>] [-Headers <IDictionary>] [<CommonParameters>]
+ [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -45,6 +45,21 @@ Get the properties and relationships of an application object.
 
 ## PARAMETERS
 
+### -AppId
+Alternate key of application
+
+```yaml
+Type: System.String
+Parameter Sets: Get
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -ExpandProperty
 Expand related entities
 
@@ -57,21 +72,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -128,13 +128,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphApplication
-
-### System.Collections.Hashtable
 
 ## NOTES
 

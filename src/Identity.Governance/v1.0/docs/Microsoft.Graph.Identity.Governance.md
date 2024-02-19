@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.Governance
-Module Guid: 3add563a-afd8-48fc-b796-0d18edb44271
+Module Guid: eed05c6d-f6ea-41bf-9086-a41ac0901a5b
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.identity.governance
 Help Version: 1.0.0.0
 Locale: en-US
@@ -156,7 +156,7 @@ Get the number of the resource
 Get the number of the resource
 
 ### [Get-MgEntitlementManagementCatalogCustomWorkflowExtension](Get-MgEntitlementManagementCatalogCustomWorkflowExtension.md)
-Read the properties and relationships of an accessPackageAssignmentRequestWorkflowExtension object.
+Read the properties and relationships of an accessPackageAssignmentWorkflowExtension object.
 
 ### [Get-MgEntitlementManagementCatalogCustomWorkflowExtensionCount](Get-MgEntitlementManagementCatalogCustomWorkflowExtensionCount.md)
 Get the number of the resource
@@ -365,7 +365,7 @@ Nullable.
 Get the number of the resource
 
 ### [Get-MgEntitlementManagementResourceRequestCatalogCustomWorkflowExtension](Get-MgEntitlementManagementResourceRequestCatalogCustomWorkflowExtension.md)
-Read the properties and relationships of an accessPackageAssignmentRequestWorkflowExtension object.
+Read the properties and relationships of an accessPackageAssignmentWorkflowExtension object.
 
 ### [Get-MgEntitlementManagementResourceRequestCatalogCustomWorkflowExtensionCount](Get-MgEntitlementManagementResourceRequestCatalogCustomWorkflowExtensionCount.md)
 Get the number of the resource
@@ -769,12 +769,11 @@ The user who created the workflow.
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowCreatedByMailboxSetting](Get-MgIdentityGovernanceLifecycleWorkflowCreatedByMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowCreatedByServiceProvisioningError](Get-MgIdentityGovernanceLifecycleWorkflowCreatedByServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowCreatedByServiceProvisioningErrorCount](Get-MgIdentityGovernanceLifecycleWorkflowCreatedByServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -790,12 +789,11 @@ The unique identifier of the Microsoft Entra user that created the custom task e
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtensionCreatedByMailboxSetting](Get-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtensionCreatedByMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtensionCreatedByServiceProvisioningError](Get-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtensionCreatedByServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtensionCreatedByServiceProvisioningErrorCount](Get-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtensionCreatedByServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -805,12 +803,11 @@ The unique identifier of the Microsoft Entra user that modified the custom task 
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtensionLastModifiedByMailboxSetting](Get-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtensionLastModifiedByMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtensionLastModifiedByServiceProvisioningError](Get-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtensionLastModifiedByServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtensionLastModifiedByServiceProvisioningErrorCount](Get-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtensionLastModifiedByServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -859,12 +856,11 @@ The unique identifier of the Microsoft Entra identity that last modified the wor
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowLastModifiedByMailboxSetting](Get-MgIdentityGovernanceLifecycleWorkflowLastModifiedByMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowLastModifiedByServiceProvisioningError](Get-MgIdentityGovernanceLifecycleWorkflowLastModifiedByServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowLastModifiedByServiceProvisioningErrorCount](Get-MgIdentityGovernanceLifecycleWorkflowLastModifiedByServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -886,12 +882,11 @@ The unique identifier of the Microsoft Entra user targeted for the task executio
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowRunTaskProcessingResultSubjectMailboxSetting](Get-MgIdentityGovernanceLifecycleWorkflowRunTaskProcessingResultSubjectMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowRunTaskProcessingResultSubjectServiceProvisioningError](Get-MgIdentityGovernanceLifecycleWorkflowRunTaskProcessingResultSubjectServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowRunTaskProcessingResultSubjectServiceProvisioningErrorCount](Get-MgIdentityGovernanceLifecycleWorkflowRunTaskProcessingResultSubjectServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -910,12 +905,11 @@ The unique identifier of the AAD user targeted for the taskProcessingResult.Supp
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowRunUserProcessingResultSubjectMailboxSetting](Get-MgIdentityGovernanceLifecycleWorkflowRunUserProcessingResultSubjectMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowRunUserProcessingResultSubjectServiceProvisioningError](Get-MgIdentityGovernanceLifecycleWorkflowRunUserProcessingResultSubjectServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowRunUserProcessingResultSubjectServiceProvisioningErrorCount](Get-MgIdentityGovernanceLifecycleWorkflowRunUserProcessingResultSubjectServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -949,12 +943,11 @@ The unique identifier of the Microsoft Entra user targeted for the task executio
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowTaskProcessingResultSubjectMailboxSetting](Get-MgIdentityGovernanceLifecycleWorkflowTaskProcessingResultSubjectMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowTaskProcessingResultSubjectServiceProvisioningError](Get-MgIdentityGovernanceLifecycleWorkflowTaskProcessingResultSubjectServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowTaskProcessingResultSubjectServiceProvisioningErrorCount](Get-MgIdentityGovernanceLifecycleWorkflowTaskProcessingResultSubjectServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -985,12 +978,11 @@ The unique identifier of the Microsoft Entra user targeted for the task executio
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResultSubjectMailboxSetting](Get-MgIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResultSubjectMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResultSubjectServiceProvisioningError](Get-MgIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResultSubjectServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResultSubjectServiceProvisioningErrorCount](Get-MgIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResultSubjectServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -1022,12 +1014,11 @@ The unique identifier of the Microsoft Entra user targeted for the task executio
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResultSubjectMailboxSetting](Get-MgIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResultSubjectMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResultSubjectServiceProvisioningError](Get-MgIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResultSubjectServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResultSubjectServiceProvisioningErrorCount](Get-MgIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResultSubjectServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -1046,12 +1037,11 @@ The unique identifier of the AAD user targeted for the taskProcessingResult.Supp
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowUserProcessingResultSubjectMailboxSetting](Get-MgIdentityGovernanceLifecycleWorkflowUserProcessingResultSubjectMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowUserProcessingResultSubjectServiceProvisioningError](Get-MgIdentityGovernanceLifecycleWorkflowUserProcessingResultSubjectServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowUserProcessingResultSubjectServiceProvisioningErrorCount](Get-MgIdentityGovernanceLifecycleWorkflowUserProcessingResultSubjectServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -1070,12 +1060,11 @@ The user who created the workflow.
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowVersionCreatedByMailboxSetting](Get-MgIdentityGovernanceLifecycleWorkflowVersionCreatedByMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowVersionCreatedByServiceProvisioningError](Get-MgIdentityGovernanceLifecycleWorkflowVersionCreatedByServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowVersionCreatedByServiceProvisioningErrorCount](Get-MgIdentityGovernanceLifecycleWorkflowVersionCreatedByServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -1085,12 +1074,11 @@ The unique identifier of the Microsoft Entra identity that last modified the wor
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowVersionLastModifiedByMailboxSetting](Get-MgIdentityGovernanceLifecycleWorkflowVersionLastModifiedByMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowVersionLastModifiedByServiceProvisioningError](Get-MgIdentityGovernanceLifecycleWorkflowVersionLastModifiedByServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowVersionLastModifiedByServiceProvisioningErrorCount](Get-MgIdentityGovernanceLifecycleWorkflowVersionLastModifiedByServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -1112,12 +1100,11 @@ The unique identifier of the Microsoft Entra user targeted for the task executio
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowVersionTaskProcessingResultSubjectMailboxSetting](Get-MgIdentityGovernanceLifecycleWorkflowVersionTaskProcessingResultSubjectMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowVersionTaskProcessingResultSubjectServiceProvisioningError](Get-MgIdentityGovernanceLifecycleWorkflowVersionTaskProcessingResultSubjectServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowVersionTaskProcessingResultSubjectServiceProvisioningErrorCount](Get-MgIdentityGovernanceLifecycleWorkflowVersionTaskProcessingResultSubjectServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -1160,8 +1147,7 @@ References the group that is the scope of the membership or ownership assignment
 Supports $expand.
 
 ### [Get-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleGroupServiceProvisioningError](Get-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleGroupServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a group object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleGroupServiceProvisioningErrorCount](Get-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleGroupServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -1181,8 +1167,7 @@ References the group that is the scope of the membership or ownership assignment
 Supports $expand.
 
 ### [Get-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleInstanceGroupServiceProvisioningError](Get-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleInstanceGroupServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a group object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleInstanceGroupServiceProvisioningErrorCount](Get-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleInstanceGroupServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -1211,8 +1196,7 @@ References the group that is the scope of the membership or ownership assignment
 Supports $expand.
 
 ### [Get-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleRequestGroupServiceProvisioningError](Get-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleRequestGroupServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a group object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleRequestGroupServiceProvisioningErrorCount](Get-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleRequestGroupServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -1236,8 +1220,7 @@ References the group that is the scope of the membership or ownership eligibilit
 Supports $expand.
 
 ### [Get-MgIdentityGovernancePrivilegedAccessGroupEligibilityScheduleGroupServiceProvisioningError](Get-MgIdentityGovernancePrivilegedAccessGroupEligibilityScheduleGroupServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a group object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgIdentityGovernancePrivilegedAccessGroupEligibilityScheduleGroupServiceProvisioningErrorCount](Get-MgIdentityGovernancePrivilegedAccessGroupEligibilityScheduleGroupServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -1253,8 +1236,7 @@ References the group that is the scope of the membership or ownership eligibilit
 Supports $expand.
 
 ### [Get-MgIdentityGovernancePrivilegedAccessGroupEligibilityScheduleInstanceGroupServiceProvisioningError](Get-MgIdentityGovernancePrivilegedAccessGroupEligibilityScheduleInstanceGroupServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a group object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgIdentityGovernancePrivilegedAccessGroupEligibilityScheduleInstanceGroupServiceProvisioningErrorCount](Get-MgIdentityGovernancePrivilegedAccessGroupEligibilityScheduleInstanceGroupServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -1278,8 +1260,7 @@ References the group that is the scope of the membership or ownership eligibilit
 Supports $expand.
 
 ### [Get-MgIdentityGovernancePrivilegedAccessGroupEligibilityScheduleRequestGroupServiceProvisioningError](Get-MgIdentityGovernancePrivilegedAccessGroupEligibilityScheduleRequestGroupServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a group object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgIdentityGovernancePrivilegedAccessGroupEligibilityScheduleRequestGroupServiceProvisioningErrorCount](Get-MgIdentityGovernancePrivilegedAccessGroupEligibilityScheduleRequestGroupServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -2851,7 +2832,7 @@ For requests completed more than 14 days, you will need to ask the users to canc
 Update an existing accessPackageCatalog object to change one or more of its properties, such as the display name or description.
 
 ### [Update-MgEntitlementManagementCatalogCustomWorkflowExtension](Update-MgEntitlementManagementCatalogCustomWorkflowExtension.md)
-Update the properties of an accessPackageAssignmentRequestWorkflowExtension object.
+Update the properties of an accessPackageAssignmentWorkflowExtension object.
 
 ### [Update-MgEntitlementManagementCatalogResource](Update-MgEntitlementManagementCatalogResource.md)
 Update the navigation property resources in identityGovernance
@@ -2929,7 +2910,7 @@ Update the navigation property resourceRequests in identityGovernance
 Update the navigation property catalog in identityGovernance
 
 ### [Update-MgEntitlementManagementResourceRequestCatalogCustomWorkflowExtension](Update-MgEntitlementManagementResourceRequestCatalogCustomWorkflowExtension.md)
-Update the properties of an accessPackageAssignmentRequestWorkflowExtension object.
+Update the properties of an accessPackageAssignmentWorkflowExtension object.
 
 ### [Update-MgEntitlementManagementResourceRequestCatalogResource](Update-MgEntitlementManagementResourceRequestCatalogResource.md)
 Update the navigation property resources in identityGovernance

@@ -16,14 +16,13 @@ Update the navigation property informationProtection in security
 ```
 Update-MgBetaSecurityInformationProtection [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-LabelPolicySettings <IMicrosoftGraphSecurityInformationProtectionPolicySetting>]
- [-SensitivityLabels <IMicrosoftGraphSecuritySensitivityLabel[]>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-SensitivityLabels <IMicrosoftGraphSecuritySensitivityLabel[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaSecurityInformationProtection -BodyParameter <IMicrosoftGraphSecurityInformationProtection>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -72,21 +71,6 @@ Parameter Sets: Update
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -179,13 +163,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityInformationProtection
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityInformationProtection
-
-### System.Collections.Hashtable
 
 ## NOTES
 

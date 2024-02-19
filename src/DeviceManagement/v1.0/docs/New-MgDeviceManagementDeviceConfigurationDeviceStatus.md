@@ -17,22 +17,20 @@ Create a new deviceConfigurationDeviceStatus object.
 New-MgDeviceManagementDeviceConfigurationDeviceStatus -DeviceConfigurationId <String>
  [-AdditionalProperties <Hashtable>] [-ComplianceGracePeriodExpirationDateTime <DateTime>]
  [-DeviceDisplayName <String>] [-DeviceModel <String>] [-Id <String>] [-LastReportedDateTime <DateTime>]
- [-Status <String>] [-UserName <String>] [-UserPrincipalName <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-Status <String>] [-UserName <String>] [-UserPrincipalName <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgDeviceManagementDeviceConfigurationDeviceStatus -DeviceConfigurationId <String>
- -BodyParameter <IMicrosoftGraphDeviceConfigurationDeviceStatus> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphDeviceConfigurationDeviceStatus> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgDeviceManagementDeviceConfigurationDeviceStatus -InputObject <IDeviceManagementIdentity>
- -BodyParameter <IMicrosoftGraphDeviceConfigurationDeviceStatus> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphDeviceConfigurationDeviceStatus> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -40,8 +38,8 @@ New-MgDeviceManagementDeviceConfigurationDeviceStatus -InputObject <IDeviceManag
 New-MgDeviceManagementDeviceConfigurationDeviceStatus -InputObject <IDeviceManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-ComplianceGracePeriodExpirationDateTime <DateTime>]
  [-DeviceDisplayName <String>] [-DeviceModel <String>] [-Id <String>] [-LastReportedDateTime <DateTime>]
- [-Status <String>] [-UserName <String>] [-UserPrincipalName <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-Status <String>] [-UserName <String>] [-UserPrincipalName <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -153,21 +151,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -303,13 +286,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceConfigurationDeviceStatus
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceConfigurationDeviceStatus
-
-### System.Collections.Hashtable
 
 ## NOTES
 

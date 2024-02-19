@@ -14,14 +14,12 @@ Invoke function isPublished
 
 ### Is (Default)
 ```
-Test-MgBetaDriveListContentTypePublished -ContentTypeId <String> -DriveId <String> [-Headers <IDictionary>]
- [<CommonParameters>]
+Test-MgBetaDriveListContentTypePublished -ContentTypeId <String> -DriveId <String> [<CommonParameters>]
 ```
 
 ### IsViaIdentity
 ```
-Test-MgBetaDriveListContentTypePublished -InputObject <IFilesIdentity> [-Headers <IDictionary>]
- [<CommonParameters>]
+Test-MgBetaDriveListContentTypePublished -InputObject <IFilesIdentity> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -75,21 +73,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -113,13 +96,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
-
-### System.Collections.Hashtable
 
 ## NOTES
 

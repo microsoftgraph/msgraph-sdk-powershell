@@ -17,21 +17,19 @@ Update the properties of a workforceIntegration object.
 Update-MgTeamworkWorkforceIntegration -WorkforceIntegrationId <String> [-AdditionalProperties <Hashtable>]
  [-ApiVersion <Int32>] [-DisplayName <String>] [-Encryption <IMicrosoftGraphWorkforceIntegrationEncryption>]
  [-Id <String>] [-IsActive] [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-SupportedEntities <String>]
- [-Url <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Url <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgTeamworkWorkforceIntegration -WorkforceIntegrationId <String>
- -BodyParameter <IMicrosoftGraphWorkforceIntegration> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphWorkforceIntegration> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgTeamworkWorkforceIntegration -InputObject <ITeamsIdentity>
- -BodyParameter <IMicrosoftGraphWorkforceIntegration> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphWorkforceIntegration> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -39,7 +37,7 @@ Update-MgTeamworkWorkforceIntegration -InputObject <ITeamsIdentity>
 Update-MgTeamworkWorkforceIntegration -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
  [-ApiVersion <Int32>] [-DisplayName <String>] [-Encryption <IMicrosoftGraphWorkforceIntegrationEncryption>]
  [-Id <String>] [-IsActive] [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-SupportedEntities <String>]
- [-Url <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Url <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -143,21 +141,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -309,13 +292,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWorkforceIntegration
-
-### System.Collections.Hashtable
 
 ## NOTES
 

@@ -16,14 +16,14 @@ This API returns up to 1,000 deleted objects owned by the user, sorted by ID, an
 ### GetExpanded (Default)
 ```
 Get-MgBetaDirectoryObjectUserOwnedObject [-AdditionalProperties <Hashtable>] [-Type <String>]
- [-UserId <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-UserId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Get
 ```
 Get-MgBetaDirectoryObjectUserOwnedObject
  -BodyParameter <IPaths50Tm3XDirectoryobjectsMicrosoftGraphGetuserownedobjectsPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -73,21 +73,6 @@ Parameter Sets: Get
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -162,13 +147,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPaths50Tm3XDirectoryobjectsMicrosoftGraphGetuserownedobjectsPostRequestbodyContentApplicationJsonSchema
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject
-
-### System.Collections.Hashtable
 
 ## NOTES
 

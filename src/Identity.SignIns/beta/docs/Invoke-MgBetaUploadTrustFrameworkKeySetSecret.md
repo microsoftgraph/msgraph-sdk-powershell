@@ -17,29 +17,29 @@ his method returns trustFrameworkKey.
 ### UploadExpanded (Default)
 ```
 Invoke-MgBetaUploadTrustFrameworkKeySetSecret -TrustFrameworkKeySetId <String>
- [-AdditionalProperties <Hashtable>] [-Exp <Int64>] [-K <String>] [-Nbf <Int64>] [-Use <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-Exp <Int64>] [-K <String>] [-Nbf <Int64>] [-Use <String>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Upload
 ```
 Invoke-MgBetaUploadTrustFrameworkKeySetSecret -TrustFrameworkKeySetId <String>
  -BodyParameter <IPathsDmvqaiTrustframeworkKeysetsTrustframeworkkeysetIdMicrosoftGraphUploadsecretPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UploadViaIdentity
 ```
 Invoke-MgBetaUploadTrustFrameworkKeySetSecret -InputObject <IIdentitySignInsIdentity>
  -BodyParameter <IPathsDmvqaiTrustframeworkKeysetsTrustframeworkkeysetIdMicrosoftGraphUploadsecretPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UploadViaIdentityExpanded
 ```
 Invoke-MgBetaUploadTrustFrameworkKeySetSecret -InputObject <IIdentitySignInsIdentity>
- [-AdditionalProperties <Hashtable>] [-Exp <Int64>] [-K <String>] [-Nbf <Int64>] [-Use <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-Exp <Int64>] [-K <String>] [-Nbf <Int64>] [-Use <String>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -108,21 +108,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -242,13 +227,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPathsDmvqaiTrustframeworkKeysetsTrustframeworkkeysetIdMicrosoftGraphUploadsecretPostRequestbodyContentApplicationJsonSchema
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTrustFrameworkKey
-
-### System.Collections.Hashtable
 
 ## NOTES
 

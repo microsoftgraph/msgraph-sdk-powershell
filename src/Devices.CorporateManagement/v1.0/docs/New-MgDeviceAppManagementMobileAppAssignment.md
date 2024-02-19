@@ -15,29 +15,27 @@ Create a new mobileAppAssignment object.
 ### CreateExpanded (Default)
 ```
 New-MgDeviceAppManagementMobileAppAssignment -MobileAppId <String> [-AdditionalProperties <Hashtable>]
- [-Id <String>] [-Intent <InstallIntent>] [-Settings <Hashtable>] [-Target <Hashtable>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-Intent <InstallIntent>] [-Settings <Hashtable>] [-Target <Hashtable>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgDeviceAppManagementMobileAppAssignment -MobileAppId <String>
- -BodyParameter <IMicrosoftGraphMobileAppAssignment> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphMobileAppAssignment> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgDeviceAppManagementMobileAppAssignment -InputObject <IDevicesCorporateManagementIdentity>
- -BodyParameter <IMicrosoftGraphMobileAppAssignment> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphMobileAppAssignment> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgDeviceAppManagementMobileAppAssignment -InputObject <IDevicesCorporateManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Intent <InstallIntent>] [-Settings <Hashtable>]
- [-Target <Hashtable>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Target <Hashtable>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -86,21 +84,6 @@ Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -239,13 +222,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppAssignment
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppAssignment
-
-### System.Collections.Hashtable
 
 ## NOTES
 

@@ -18,30 +18,29 @@ If the user requires a new Temporary Access Pass while the current Temporary Acc
 ```
 New-MgBetaUserAuthenticationTemporaryAccessPassMethod -UserId <String> [-AdditionalProperties <Hashtable>]
  [-CreatedDateTime <DateTime>] [-Id <String>] [-IsUsableOnce] [-LifetimeInMinutes <Int32>]
- [-StartDateTime <DateTime>] [-TemporaryAccessPass <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-StartDateTime <DateTime>] [-TemporaryAccessPass <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaUserAuthenticationTemporaryAccessPassMethod -UserId <String>
- -BodyParameter <IMicrosoftGraphTemporaryAccessPassAuthenticationMethod> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphTemporaryAccessPassAuthenticationMethod> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaUserAuthenticationTemporaryAccessPassMethod -InputObject <IIdentitySignInsIdentity>
- -BodyParameter <IMicrosoftGraphTemporaryAccessPassAuthenticationMethod> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphTemporaryAccessPassAuthenticationMethod> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgBetaUserAuthenticationTemporaryAccessPassMethod -InputObject <IIdentitySignInsIdentity>
  [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>] [-Id <String>] [-IsUsableOnce]
- [-LifetimeInMinutes <Int32>] [-StartDateTime <DateTime>] [-TemporaryAccessPass <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-LifetimeInMinutes <Int32>] [-StartDateTime <DateTime>] [-TemporaryAccessPass <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -109,21 +108,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -277,13 +261,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTemporaryAccessPassAuthenticationMethod
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTemporaryAccessPassAuthenticationMethod
-
-### System.Collections.Hashtable
 
 ## NOTES
 

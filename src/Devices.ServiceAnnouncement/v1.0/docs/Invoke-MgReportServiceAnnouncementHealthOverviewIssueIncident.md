@@ -15,14 +15,13 @@ Invoke function incidentReport
 ### Report (Default)
 ```
 Invoke-MgReportServiceAnnouncementHealthOverviewIssueIncident -ServiceHealthId <String>
- -ServiceHealthIssueId <String> -OutFile <String> [-Headers <IDictionary>] [-PassThru] [<CommonParameters>]
+ -ServiceHealthIssueId <String> -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
 ### ReportViaIdentity
 ```
 Invoke-MgReportServiceAnnouncementHealthOverviewIssueIncident
- -InputObject <IDevicesServiceAnnouncementIdentity> -OutFile <String> [-Headers <IDictionary>] [-PassThru]
- [<CommonParameters>]
+ -InputObject <IDevicesServiceAnnouncementIdentity> -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -45,21 +44,6 @@ Invoke function incidentReport
 {{ Add output here }}
 
 ## PARAMETERS
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
 
 ### -InputObject
 Identity Parameter
@@ -144,13 +128,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IDevicesServiceAnnouncementIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
-
-### System.Collections.Hashtable
 
 ## NOTES
 

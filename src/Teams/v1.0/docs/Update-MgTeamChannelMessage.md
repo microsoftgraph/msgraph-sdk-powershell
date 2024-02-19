@@ -28,21 +28,20 @@ Update-MgTeamChannelMessage -ChannelId <String> -ChatMessageId <String> -TeamId 
  [-Mentions <IMicrosoftGraphChatMessageMention[]>] [-MessageHistory <IMicrosoftGraphChatMessageHistoryItem[]>]
  [-MessageType <String>] [-PolicyViolation <IMicrosoftGraphChatMessagePolicyViolation>]
  [-Reactions <IMicrosoftGraphChatMessageReaction[]>] [-Replies <IMicrosoftGraphChatMessage[]>]
- [-ReplyToId <String>] [-Subject <String>] [-Summary <String>] [-WebUrl <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ReplyToId <String>] [-Subject <String>] [-Summary <String>] [-WebUrl <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgTeamChannelMessage -ChannelId <String> -ChatMessageId <String> -TeamId <String>
- -BodyParameter <IMicrosoftGraphChatMessage> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphChatMessage> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgTeamChannelMessage -InputObject <ITeamsIdentity> -BodyParameter <IMicrosoftGraphChatMessage>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -56,8 +55,8 @@ Update-MgTeamChannelMessage -InputObject <ITeamsIdentity> [-AdditionalProperties
  [-Mentions <IMicrosoftGraphChatMessageMention[]>] [-MessageHistory <IMicrosoftGraphChatMessageHistoryItem[]>]
  [-MessageType <String>] [-PolicyViolation <IMicrosoftGraphChatMessagePolicyViolation>]
  [-Reactions <IMicrosoftGraphChatMessageReaction[]>] [-Replies <IMicrosoftGraphChatMessage[]>]
- [-ReplyToId <String>] [-Subject <String>] [-Summary <String>] [-WebUrl <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ReplyToId <String>] [-Subject <String>] [-Summary <String>] [-WebUrl <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -833,21 +832,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -HostedContents
 Content in a message hosted by Microsoft Teams - for example, images or code snippets.
 To construct, see NOTES section for HOSTEDCONTENTS properties and create a hash table.
@@ -1177,13 +1161,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphChatMessage
-
-### System.Collections.Hashtable
 
 ## NOTES
 

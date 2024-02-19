@@ -17,21 +17,21 @@ Create new navigation property to appLogCollectionRequests for users
 New-MgBetaUserMobileAppTroubleshootingEventAppLogCollectionRequest -MobileAppTroubleshootingEventId <String>
  -UserId <String> [-AdditionalProperties <Hashtable>] [-CompletedDateTime <DateTime>]
  [-CustomLogFolders <String[]>] [-ErrorMessage <String>] [-Id <String>] [-Status <AppLogUploadState>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaUserMobileAppTroubleshootingEventAppLogCollectionRequest -MobileAppTroubleshootingEventId <String>
- -UserId <String> -BodyParameter <IMicrosoftGraphAppLogCollectionRequest> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -UserId <String> -BodyParameter <IMicrosoftGraphAppLogCollectionRequest> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaUserMobileAppTroubleshootingEventAppLogCollectionRequest
  -InputObject <IDevicesCorporateManagementIdentity> -BodyParameter <IMicrosoftGraphAppLogCollectionRequest>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -39,7 +39,7 @@ New-MgBetaUserMobileAppTroubleshootingEventAppLogCollectionRequest
 New-MgBetaUserMobileAppTroubleshootingEventAppLogCollectionRequest
  -InputObject <IDevicesCorporateManagementIdentity> [-AdditionalProperties <Hashtable>]
  [-CompletedDateTime <DateTime>] [-CustomLogFolders <String[]>] [-ErrorMessage <String>] [-Id <String>]
- [-Status <AppLogUploadState>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Status <AppLogUploadState>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -136,21 +136,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -271,13 +256,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAppLogCollectionRequest
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAppLogCollectionRequest
-
-### System.Collections.Hashtable
 
 ## NOTES
 

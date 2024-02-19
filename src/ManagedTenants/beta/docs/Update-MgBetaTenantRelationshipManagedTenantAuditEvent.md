@@ -18,22 +18,20 @@ Update-MgBetaTenantRelationshipManagedTenantAuditEvent -AuditEventId <String> [-
  [-ActivityDateTime <DateTime>] [-ActivityId <String>] [-AdditionalProperties <Hashtable>]
  [-Category <String>] [-HttpVerb <String>] [-Id <String>] [-InitiatedByAppId <String>]
  [-InitiatedByUpn <String>] [-InitiatedByUserId <String>] [-IPAddress <String>] [-RequestBody <String>]
- [-RequestUrl <String>] [-TenantIds <String>] [-TenantNames <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-RequestUrl <String>] [-TenantIds <String>] [-TenantNames <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaTenantRelationshipManagedTenantAuditEvent -AuditEventId <String>
- -BodyParameter <IMicrosoftGraphManagedTenantsAuditEvent> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphManagedTenantsAuditEvent> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaTenantRelationshipManagedTenantAuditEvent -InputObject <IManagedTenantsIdentity>
- -BodyParameter <IMicrosoftGraphManagedTenantsAuditEvent> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphManagedTenantsAuditEvent> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -42,8 +40,8 @@ Update-MgBetaTenantRelationshipManagedTenantAuditEvent -InputObject <IManagedTen
  [-Activity <String>] [-ActivityDateTime <DateTime>] [-ActivityId <String>]
  [-AdditionalProperties <Hashtable>] [-Category <String>] [-HttpVerb <String>] [-Id <String>]
  [-InitiatedByAppId <String>] [-InitiatedByUpn <String>] [-InitiatedByUserId <String>] [-IPAddress <String>]
- [-RequestBody <String>] [-RequestUrl <String>] [-TenantIds <String>] [-TenantNames <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-RequestBody <String>] [-RequestUrl <String>] [-TenantIds <String>] [-TenantNames <String>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -178,21 +176,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -421,13 +404,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsAuditEvent
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsAuditEvent
-
-### System.Collections.Hashtable
 
 ## NOTES
 

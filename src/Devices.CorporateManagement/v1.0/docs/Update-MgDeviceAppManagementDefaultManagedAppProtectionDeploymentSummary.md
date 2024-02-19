@@ -18,23 +18,22 @@ Update-MgDeviceAppManagementDefaultManagedAppProtectionDeploymentSummary
  -DefaultManagedAppProtectionId <String> [-AdditionalProperties <Hashtable>]
  [-ConfigurationDeployedUserCount <Int32>]
  [-ConfigurationDeploymentSummaryPerApp <IMicrosoftGraphManagedAppPolicyDeploymentSummaryPerApp[]>]
- [-DisplayName <String>] [-Id <String>] [-LastRefreshTime <DateTime>] [-Version <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-DisplayName <String>] [-Id <String>] [-LastRefreshTime <DateTime>] [-Version <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgDeviceAppManagementDefaultManagedAppProtectionDeploymentSummary
  -DefaultManagedAppProtectionId <String> -BodyParameter <IMicrosoftGraphManagedAppPolicyDeploymentSummary>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgDeviceAppManagementDefaultManagedAppProtectionDeploymentSummary
  -InputObject <IDevicesCorporateManagementIdentity>
- -BodyParameter <IMicrosoftGraphManagedAppPolicyDeploymentSummary> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphManagedAppPolicyDeploymentSummary> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -43,8 +42,8 @@ Update-MgDeviceAppManagementDefaultManagedAppProtectionDeploymentSummary
  -InputObject <IDevicesCorporateManagementIdentity> [-AdditionalProperties <Hashtable>]
  [-ConfigurationDeployedUserCount <Int32>]
  [-ConfigurationDeploymentSummaryPerApp <IMicrosoftGraphManagedAppPolicyDeploymentSummaryPerApp[]>]
- [-DisplayName <String>] [-Id <String>] [-LastRefreshTime <DateTime>] [-Version <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-DisplayName <String>] [-Id <String>] [-LastRefreshTime <DateTime>] [-Version <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -160,21 +159,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -277,13 +261,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppPolicyDeploymentSummary
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppPolicyDeploymentSummary
-
-### System.Collections.Hashtable
 
 ## NOTES
 

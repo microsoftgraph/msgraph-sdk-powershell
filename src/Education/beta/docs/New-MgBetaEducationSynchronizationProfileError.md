@@ -17,21 +17,19 @@ Create new navigation property to errors for education
 New-MgBetaEducationSynchronizationProfileError -EducationSynchronizationProfileId <String>
  [-AdditionalProperties <Hashtable>] [-EntryType <String>] [-ErrorCode <String>] [-ErrorMessage <String>]
  [-Id <String>] [-JoiningValue <String>] [-RecordedDateTime <DateTime>] [-ReportableIdentifier <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaEducationSynchronizationProfileError -EducationSynchronizationProfileId <String>
- -BodyParameter <IMicrosoftGraphEducationSynchronizationError> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphEducationSynchronizationError> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaEducationSynchronizationProfileError -InputObject <IEducationIdentity>
- -BodyParameter <IMicrosoftGraphEducationSynchronizationError> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphEducationSynchronizationError> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -39,7 +37,7 @@ New-MgBetaEducationSynchronizationProfileError -InputObject <IEducationIdentity>
 New-MgBetaEducationSynchronizationProfileError -InputObject <IEducationIdentity>
  [-AdditionalProperties <Hashtable>] [-EntryType <String>] [-ErrorCode <String>] [-ErrorMessage <String>]
  [-Id <String>] [-JoiningValue <String>] [-RecordedDateTime <DateTime>] [-ReportableIdentifier <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -151,21 +149,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -286,13 +269,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationSynchronizationError
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationSynchronizationError
-
-### System.Collections.Hashtable
 
 ## NOTES
 

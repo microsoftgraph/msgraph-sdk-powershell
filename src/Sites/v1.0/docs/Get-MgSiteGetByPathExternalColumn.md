@@ -271,8 +271,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphColumnDefinition
 
-### System.Collections.Hashtable
-
 ## NOTES
 
 ALIASES

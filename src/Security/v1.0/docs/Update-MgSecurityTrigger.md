@@ -15,14 +15,13 @@ Update the navigation property triggers in security
 ### UpdateExpanded (Default)
 ```
 Update-MgSecurityTrigger [-AdditionalProperties <Hashtable>] [-Id <String>]
- [-RetentionEvents <IMicrosoftGraphSecurityRetentionEvent[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-RetentionEvents <IMicrosoftGraphSecurityRetentionEvent[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgSecurityTrigger -BodyParameter <IMicrosoftGraphSecurityTriggersRoot> [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgSecurityTrigger -BodyParameter <IMicrosoftGraphSecurityTriggersRoot> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -71,21 +70,6 @@ Parameter Sets: Update
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -162,13 +146,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityTriggersRoot
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityTriggersRoot
-
-### System.Collections.Hashtable
 
 ## NOTES
 

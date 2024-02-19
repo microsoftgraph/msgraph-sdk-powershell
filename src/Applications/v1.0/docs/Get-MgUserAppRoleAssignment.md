@@ -17,20 +17,19 @@ Supports $expand.
 ```
 Get-MgUserAppRoleAssignment -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
- [-ConsistencyLevel <String>] [-All] [-CountVariable <String>] [-Headers <IDictionary>] [-PageSize <Int32>]
- [<CommonParameters>]
+ [-ConsistencyLevel <String>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
 Get-MgUserAppRoleAssignment -AppRoleAssignmentId <String> -UserId <String> [-ExpandProperty <String[]>]
- [-Property <String[]>] [-ConsistencyLevel <String>] [-Headers <IDictionary>] [<CommonParameters>]
+ [-Property <String[]>] [-ConsistencyLevel <String>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
 Get-MgUserAppRoleAssignment -InputObject <IApplicationsIdentity> [-ExpandProperty <String[]>]
- [-Property <String[]>] [-ConsistencyLevel <String>] [-Headers <IDictionary>] [<CommonParameters>]
+ [-Property <String[]>] [-ConsistencyLevel <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -150,21 +149,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -296,13 +280,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAppRoleAssignment
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -335,7 +315,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[TargetDeviceGroupId <String>]`: The unique identifier of targetDeviceGroup
   - `[TokenIssuancePolicyId <String>]`: The unique identifier of tokenIssuancePolicy
   - `[TokenLifetimePolicyId <String>]`: The unique identifier of tokenLifetimePolicy
-  - `[UniqueName <String>]`: Alternate key of application
   - `[UserId <String>]`: The unique identifier of user
 
 ## RELATED LINKS

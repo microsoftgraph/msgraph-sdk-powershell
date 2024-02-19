@@ -17,22 +17,21 @@ Update the properties of an onPremisesAgentGroup object.
 Update-MgBetaOnPremisePublishingProfileAgentGroup -OnPremisesAgentGroupId <String>
  -OnPremisesPublishingProfileId <String> [-AdditionalProperties <Hashtable>]
  [-Agents <IMicrosoftGraphOnPremisesAgent[]>] [-DisplayName <String>] [-Id <String>] [-IsDefault]
- [-PublishedResources <IMicrosoftGraphPublishedResource[]>] [-PublishingType <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PublishedResources <IMicrosoftGraphPublishedResource[]>] [-PublishingType <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaOnPremisePublishingProfileAgentGroup -OnPremisesAgentGroupId <String>
- -OnPremisesPublishingProfileId <String> -BodyParameter <IMicrosoftGraphOnPremisesAgentGroup>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -OnPremisesPublishingProfileId <String> -BodyParameter <IMicrosoftGraphOnPremisesAgentGroup> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaOnPremisePublishingProfileAgentGroup -InputObject <IApplicationsIdentity>
- -BodyParameter <IMicrosoftGraphOnPremisesAgentGroup> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphOnPremisesAgentGroup> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -40,7 +39,7 @@ Update-MgBetaOnPremisePublishingProfileAgentGroup -InputObject <IApplicationsIde
 Update-MgBetaOnPremisePublishingProfileAgentGroup -InputObject <IApplicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-Agents <IMicrosoftGraphOnPremisesAgent[]>] [-DisplayName <String>]
  [-Id <String>] [-IsDefault] [-PublishedResources <IMicrosoftGraphPublishedResource[]>]
- [-PublishingType <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PublishingType <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -122,21 +121,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -291,13 +275,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOnPremisesAgentGroup
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOnPremisesAgentGroup
-
-### System.Collections.Hashtable
 
 ## NOTES
 

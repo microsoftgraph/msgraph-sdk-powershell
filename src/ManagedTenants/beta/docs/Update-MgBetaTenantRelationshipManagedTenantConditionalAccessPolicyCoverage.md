@@ -17,24 +17,23 @@ Update the navigation property conditionalAccessPolicyCoverages in tenantRelatio
 Update-MgBetaTenantRelationshipManagedTenantConditionalAccessPolicyCoverage
  -ConditionalAccessPolicyCoverageId <String> [-AdditionalProperties <Hashtable>]
  [-ConditionalAccessPolicyState <String>] [-Id <String>] [-LatestPolicyModifiedDateTime <DateTime>]
- [-RequiresDeviceCompliance] [-TenantDisplayName <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-RequiresDeviceCompliance] [-TenantDisplayName <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaTenantRelationshipManagedTenantConditionalAccessPolicyCoverage
  -ConditionalAccessPolicyCoverageId <String>
- -BodyParameter <IMicrosoftGraphManagedTenantsConditionalAccessPolicyCoverage> [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphManagedTenantsConditionalAccessPolicyCoverage> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaTenantRelationshipManagedTenantConditionalAccessPolicyCoverage
  -InputObject <IManagedTenantsIdentity>
- -BodyParameter <IMicrosoftGraphManagedTenantsConditionalAccessPolicyCoverage> [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphManagedTenantsConditionalAccessPolicyCoverage> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -42,8 +41,7 @@ Update-MgBetaTenantRelationshipManagedTenantConditionalAccessPolicyCoverage
 Update-MgBetaTenantRelationshipManagedTenantConditionalAccessPolicyCoverage
  -InputObject <IManagedTenantsIdentity> [-AdditionalProperties <Hashtable>]
  [-ConditionalAccessPolicyState <String>] [-Id <String>] [-LatestPolicyModifiedDateTime <DateTime>]
- [-RequiresDeviceCompliance] [-TenantDisplayName <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-RequiresDeviceCompliance] [-TenantDisplayName <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -128,21 +126,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -269,13 +252,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsConditionalAccessPolicyCoverage
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsConditionalAccessPolicyCoverage
-
-### System.Collections.Hashtable
 
 ## NOTES
 

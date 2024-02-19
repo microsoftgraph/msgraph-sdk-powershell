@@ -18,15 +18,15 @@ New-MgBetaTenantRelationshipManagedTenantAggregatedPolicyCompliance [-Additional
  [-CompliancePolicyId <String>] [-CompliancePolicyName <String>] [-CompliancePolicyPlatform <String>]
  [-CompliancePolicyType <String>] [-Id <String>] [-LastRefreshedDateTime <DateTime>]
  [-NumberOfCompliantDevices <Int64>] [-NumberOfErrorDevices <Int64>] [-NumberOfNonCompliantDevices <Int64>]
- [-PolicyModifiedDateTime <DateTime>] [-TenantDisplayName <String>] [-TenantId <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PolicyModifiedDateTime <DateTime>] [-TenantDisplayName <String>] [-TenantId <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaTenantRelationshipManagedTenantAggregatedPolicyCompliance
- -BodyParameter <IMicrosoftGraphManagedTenantsAggregatedPolicyCompliance> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphManagedTenantsAggregatedPolicyCompliance> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -147,21 +147,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -338,13 +323,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsAggregatedPolicyCompliance
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsAggregatedPolicyCompliance
-
-### System.Collections.Hashtable
 
 ## NOTES
 

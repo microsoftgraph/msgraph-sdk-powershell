@@ -17,22 +17,20 @@ Update the navigation property userStatusOverview in deviceManagement
 Update-MgBetaDeviceManagementDeviceConfigurationUserStatusOverview -DeviceConfigurationId <String>
  [-AdditionalProperties <Hashtable>] [-ConfigurationVersion <Int32>] [-ConflictCount <Int32>]
  [-ErrorCount <Int32>] [-FailedCount <Int32>] [-Id <String>] [-LastUpdateDateTime <DateTime>]
- [-NotApplicableCount <Int32>] [-PendingCount <Int32>] [-SuccessCount <Int32>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-NotApplicableCount <Int32>] [-PendingCount <Int32>] [-SuccessCount <Int32>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaDeviceManagementDeviceConfigurationUserStatusOverview -DeviceConfigurationId <String>
- -BodyParameter <IMicrosoftGraphDeviceConfigurationUserOverview> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphDeviceConfigurationUserOverview> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaDeviceManagementDeviceConfigurationUserStatusOverview -InputObject <IDeviceManagementIdentity>
- -BodyParameter <IMicrosoftGraphDeviceConfigurationUserOverview> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphDeviceConfigurationUserOverview> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -40,8 +38,8 @@ Update-MgBetaDeviceManagementDeviceConfigurationUserStatusOverview -InputObject 
 Update-MgBetaDeviceManagementDeviceConfigurationUserStatusOverview -InputObject <IDeviceManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-ConfigurationVersion <Int32>] [-ConflictCount <Int32>]
  [-ErrorCount <Int32>] [-FailedCount <Int32>] [-Id <String>] [-LastUpdateDateTime <DateTime>]
- [-NotApplicableCount <Int32>] [-PendingCount <Int32>] [-SuccessCount <Int32>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-NotApplicableCount <Int32>] [-PendingCount <Int32>] [-SuccessCount <Int32>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -168,21 +166,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -318,13 +301,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceConfigurationUserOverview
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceConfigurationUserOverview
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -427,7 +406,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[MacOSSoftwareUpdateCategorySummaryId <String>]`: The unique identifier of macOSSoftwareUpdateCategorySummary
   - `[MacOSSoftwareUpdateStateSummaryId <String>]`: The unique identifier of macOSSoftwareUpdateStateSummary
   - `[MalwareStateForWindowsDeviceId <String>]`: The unique identifier of malwareStateForWindowsDevice
-  - `[ManagedDeviceCleanupRuleId <String>]`: The unique identifier of managedDeviceCleanupRule
   - `[ManagedDeviceEncryptionStateId <String>]`: The unique identifier of managedDeviceEncryptionState
   - `[ManagedDeviceId <String>]`: The unique identifier of managedDevice
   - `[ManagedDeviceMobileAppConfigurationStateId <String>]`: The unique identifier of managedDeviceMobileAppConfigurationState

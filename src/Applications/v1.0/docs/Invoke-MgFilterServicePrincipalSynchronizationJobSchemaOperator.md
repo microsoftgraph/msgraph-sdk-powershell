@@ -15,16 +15,15 @@ Invoke function filterOperators
 ### Filter (Default)
 ```
 Invoke-MgFilterServicePrincipalSynchronizationJobSchemaOperator -ServicePrincipalId <String>
- -SynchronizationJobId <String> [-Count] [-ExpandProperty <String[]>] [-Filter <String>]
- [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
- [-Headers <IDictionary>] [<CommonParameters>]
+ -SynchronizationJobId <String> [-Count] [-Filter <String>] [-Property <String[]>] [-Search <String>]
+ [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### FilterViaIdentity
 ```
 Invoke-MgFilterServicePrincipalSynchronizationJobSchemaOperator -InputObject <IApplicationsIdentity> [-Count]
- [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
- [-Sort <String[]>] [-Top <Int32>] [-Headers <IDictionary>] [<CommonParameters>]
+ [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
+ [-Top <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -63,21 +62,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ExpandProperty
-Expand related entities
-
-```yaml
-Type: System.String[]
-Parameter Sets: (All)
-Aliases: Expand
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Filter
 Filter items by property values
 
@@ -90,21 +74,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -236,13 +205,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphFilterOperatorSchema
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -275,7 +240,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[TargetDeviceGroupId <String>]`: The unique identifier of targetDeviceGroup
   - `[TokenIssuancePolicyId <String>]`: The unique identifier of tokenIssuancePolicy
   - `[TokenLifetimePolicyId <String>]`: The unique identifier of tokenLifetimePolicy
-  - `[UniqueName <String>]`: Alternate key of application
   - `[UserId <String>]`: The unique identifier of user
 
 ## RELATED LINKS

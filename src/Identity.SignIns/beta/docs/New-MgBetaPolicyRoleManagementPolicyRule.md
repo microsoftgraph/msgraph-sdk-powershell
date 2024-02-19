@@ -16,30 +16,26 @@ Create new navigation property to rules for policies
 ```
 New-MgBetaPolicyRoleManagementPolicyRule -UnifiedRoleManagementPolicyId <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>]
- [-Target <IMicrosoftGraphUnifiedRoleManagementPolicyRuleTarget>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-Target <IMicrosoftGraphUnifiedRoleManagementPolicyRuleTarget>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaPolicyRoleManagementPolicyRule -UnifiedRoleManagementPolicyId <String>
- -BodyParameter <IMicrosoftGraphUnifiedRoleManagementPolicyRule> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphUnifiedRoleManagementPolicyRule> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaPolicyRoleManagementPolicyRule -InputObject <IIdentitySignInsIdentity>
- -BodyParameter <IMicrosoftGraphUnifiedRoleManagementPolicyRule> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphUnifiedRoleManagementPolicyRule> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgBetaPolicyRoleManagementPolicyRule -InputObject <IIdentitySignInsIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>]
- [-Target <IMicrosoftGraphUnifiedRoleManagementPolicyRuleTarget>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-Target <IMicrosoftGraphUnifiedRoleManagementPolicyRuleTarget>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -81,21 +77,6 @@ Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -205,13 +186,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUnifiedRoleManagementPolicyRule
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUnifiedRoleManagementPolicyRule
-
-### System.Collections.Hashtable
 
 ## NOTES
 

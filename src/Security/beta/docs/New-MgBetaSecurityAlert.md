@@ -32,14 +32,12 @@ New-MgBetaSecurityAlert [-ActivityGroupName <String>] [-AdditionalProperties <Ha
  [-UriClickSecurityStates <IMicrosoftGraphUriClickSecurityState[]>]
  [-UserStates <IMicrosoftGraphUserSecurityState[]>]
  [-VendorInformation <IMicrosoftGraphSecurityVendorInformation>]
- [-VulnerabilityStates <IMicrosoftGraphVulnerabilityState[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-VulnerabilityStates <IMicrosoftGraphVulnerabilityState[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgBetaSecurityAlert -BodyParameter <IMicrosoftGraphAlert> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+New-MgBetaSecurityAlert -BodyParameter <IMicrosoftGraphAlert> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -49,17 +47,10 @@ Create new navigation property to alerts for security
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Beta.Security
 ```
 
-
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-
+Get-MgBetaSecurityAlert
 
 ## PARAMETERS
 
@@ -343,21 +334,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -780,13 +756,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAlert
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAlert
-
-### System.Collections.Hashtable
 
 ## NOTES
 

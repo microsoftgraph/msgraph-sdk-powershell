@@ -15,27 +15,25 @@ Update the navigation property planner in groups
 ### UpdateExpanded (Default)
 ```
 Update-MgGroupPlanner -GroupId <String> -IfMatch <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
- [-Plans <IMicrosoftGraphPlannerPlan[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Plans <IMicrosoftGraphPlannerPlan[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgGroupPlanner -GroupId <String> -IfMatch <String> -BodyParameter <IMicrosoftGraphPlannerGroup>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgGroupPlanner -InputObject <IPlannerIdentity> -IfMatch <String>
- -BodyParameter <IMicrosoftGraphPlannerGroup> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphPlannerGroup> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgGroupPlanner -InputObject <IPlannerIdentity> -IfMatch <String> [-AdditionalProperties <Hashtable>]
- [-Id <String>] [-Plans <IMicrosoftGraphPlannerPlan[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Id <String>] [-Plans <IMicrosoftGraphPlannerPlan[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -102,21 +100,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -225,13 +208,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IPlannerIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerGroup
-
-### System.Collections.Hashtable
 
 ## NOTES
 

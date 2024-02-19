@@ -14,14 +14,13 @@ Invoke function getFileVaultKey
 
 ### Get (Default)
 ```
-Get-MgBetaDeviceManagementManagedDeviceFileVaultKey -ManagedDeviceId <String> [-Headers <IDictionary>]
- [<CommonParameters>]
+Get-MgBetaDeviceManagementManagedDeviceFileVaultKey -ManagedDeviceId <String> [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
 Get-MgBetaDeviceManagementManagedDeviceFileVaultKey -InputObject <IDeviceManagementFunctionsIdentity>
- [-Headers <IDictionary>] [<CommonParameters>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -44,21 +43,6 @@ Invoke function getFileVaultKey
 {{ Add output here }}
 
 ## PARAMETERS
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
 
 ### -InputObject
 Identity Parameter
@@ -98,11 +82,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementFunctionsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
-
-### System.Collections.Hashtable
 
 ### System.String
 
@@ -132,7 +112,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[EnrollmentType <String>]`: Usage: enrollmentType='{enrollmentType}'
   - `[ExpiringBeforeDateTime <String>]`: Usage: expiringBeforeDateTime='{expiringBeforeDateTime}'
   - `[GroupId <String>]`: Usage: groupId='{groupId}'
-  - `[Id <String>]`: Usage: id='{id}'
   - `[Ids <String[]>]`: Usage: ids={ids}
   - `[ManagedDeviceId <String>]`: The unique identifier of managedDevice
   - `[Platform <DevicePlatformType?>]`: Usage: platform='{platform}'

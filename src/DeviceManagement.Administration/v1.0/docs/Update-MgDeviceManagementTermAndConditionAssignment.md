@@ -16,28 +16,27 @@ Update the properties of a termsAndConditionsAssignment object.
 ```
 Update-MgDeviceManagementTermAndConditionAssignment -TermsAndConditionsAssignmentId <String>
  -TermsAndConditionsId <String> [-AdditionalProperties <Hashtable>] [-Id <String>] [-Target <Hashtable>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgDeviceManagementTermAndConditionAssignment -TermsAndConditionsAssignmentId <String>
- -TermsAndConditionsId <String> -BodyParameter <IMicrosoftGraphTermsAndConditionsAssignment>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -TermsAndConditionsId <String> -BodyParameter <IMicrosoftGraphTermsAndConditionsAssignment> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgDeviceManagementTermAndConditionAssignment -InputObject <IDeviceManagementAdministrationIdentity>
- -BodyParameter <IMicrosoftGraphTermsAndConditionsAssignment> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphTermsAndConditionsAssignment> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgDeviceManagementTermAndConditionAssignment -InputObject <IDeviceManagementAdministrationIdentity>
- [-AdditionalProperties <Hashtable>] [-Id <String>] [-Target <Hashtable>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-Id <String>] [-Target <Hashtable>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -87,21 +86,6 @@ Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -225,13 +209,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTermsAndConditionsAssignment
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTermsAndConditionsAssignment
-
-### System.Collections.Hashtable
 
 ## NOTES
 

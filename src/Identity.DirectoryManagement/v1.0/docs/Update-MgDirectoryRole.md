@@ -17,21 +17,19 @@ Update entity in directoryRoles
 Update-MgDirectoryRole -DirectoryRoleId <String> [-AdditionalProperties <Hashtable>]
  [-DeletedDateTime <DateTime>] [-Description <String>] [-DisplayName <String>] [-Id <String>]
  [-Members <IMicrosoftGraphDirectoryObject[]>] [-RoleTemplateId <String>]
- [-ScopedMembers <IMicrosoftGraphScopedRoleMembership[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-ScopedMembers <IMicrosoftGraphScopedRoleMembership[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgDirectoryRole -DirectoryRoleId <String> -BodyParameter <IMicrosoftGraphDirectoryRole>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgDirectoryRole -DirectoryRoleId <String> -BodyParameter <IMicrosoftGraphDirectoryRole> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgDirectoryRole -InputObject <IIdentityDirectoryManagementIdentity>
- -BodyParameter <IMicrosoftGraphDirectoryRole> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphDirectoryRole> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -39,8 +37,7 @@ Update-MgDirectoryRole -InputObject <IIdentityDirectoryManagementIdentity>
 Update-MgDirectoryRole -InputObject <IIdentityDirectoryManagementIdentity> [-AdditionalProperties <Hashtable>]
  [-DeletedDateTime <DateTime>] [-Description <String>] [-DisplayName <String>] [-Id <String>]
  [-Members <IMicrosoftGraphDirectoryObject[]>] [-RoleTemplateId <String>]
- [-ScopedMembers <IMicrosoftGraphScopedRoleMembership[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-ScopedMembers <IMicrosoftGraphScopedRoleMembership[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -50,17 +47,10 @@ Update entity in directoryRoles
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Identity.DirectoryManagement
 ```
 
-
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-
+Get-MgDirectoryRole -DirectoryRoleId $directoryRoleId
 
 ## PARAMETERS
 
@@ -157,21 +147,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -303,13 +278,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryRole
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryRole
-
-### System.Collections.Hashtable
 
 ## NOTES
 

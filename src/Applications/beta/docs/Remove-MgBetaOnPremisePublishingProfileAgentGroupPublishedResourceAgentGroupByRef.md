@@ -16,30 +16,15 @@ Delete ref of navigation property agentGroups for onPremisesPublishingProfiles
 ```
 Remove-MgBetaOnPremisePublishingProfileAgentGroupPublishedResourceAgentGroupByRef
  -OnPremisesAgentGroupId <String> -OnPremisesAgentGroupId1 <String> -OnPremisesPublishingProfileId <String>
- -PublishedResourceId <String> [-IfMatch <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
-```
-
-### Delete1
-```
-Remove-MgBetaOnPremisePublishingProfileAgentGroupPublishedResourceAgentGroupByRef
- -OnPremisesAgentGroupId <String> -OnPremisesPublishingProfileId <String> -PublishedResourceId <String>
- -Id <String> [-IfMatch <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
+ -PublishedResourceId <String> [-Id <String>] [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
 Remove-MgBetaOnPremisePublishingProfileAgentGroupPublishedResourceAgentGroupByRef
- -InputObject <IApplicationsIdentity> [-IfMatch <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
-```
-
-### DeleteViaIdentity1
-```
-Remove-MgBetaOnPremisePublishingProfileAgentGroupPublishedResourceAgentGroupByRef
- -InputObject <IApplicationsIdentity> -Id <String> [-IfMatch <String>] [-Headers <IDictionary>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -InputObject <IApplicationsIdentity> [-Id <String>] [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -63,30 +48,15 @@ Delete ref of navigation property agentGroups for onPremisesPublishingProfiles
 
 ## PARAMETERS
 
-### -Headers
-Optional headers that will be added to the request.
+### -Id
+Delete Uri
 
 ```yaml
-Type: System.Collections.IDictionary
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Id
-The delete Uri
-
-```yaml
-Type: System.String
-Parameter Sets: Delete1, DeleteViaIdentity1
-Aliases:
-
-Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -114,7 +84,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
-Parameter Sets: DeleteViaIdentity, DeleteViaIdentity1
+Parameter Sets: DeleteViaIdentity
 Aliases:
 
 Required: True
@@ -129,7 +99,7 @@ The unique identifier of onPremisesAgentGroup
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete, Delete1
+Parameter Sets: Delete
 Aliases:
 
 Required: True
@@ -159,7 +129,7 @@ The unique identifier of onPremisesPublishingProfile
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete, Delete1
+Parameter Sets: Delete
 Aliases:
 
 Required: True
@@ -189,7 +159,7 @@ The unique identifier of publishedResource
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete, Delete1
+Parameter Sets: Delete
 Aliases:
 
 Required: True
@@ -237,13 +207,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
-
-### System.Collections.Hashtable
 
 ## NOTES
 

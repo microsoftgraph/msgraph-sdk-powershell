@@ -17,22 +17,21 @@ Update the navigation property managedTenantTicketingEndpoints in tenantRelation
 Update-MgBetaTenantRelationshipManagedTenantTicketingEndpoint -ManagedTenantTicketingEndpointId <String>
  [-AdditionalProperties <Hashtable>] [-CreatedByUserId <String>] [-CreatedDateTime <DateTime>]
  [-DisplayName <String>] [-EmailAddress <String>] [-Id <String>] [-LastActionByUserId <String>]
- [-LastActionDateTime <DateTime>] [-PhoneNumber <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-LastActionDateTime <DateTime>] [-PhoneNumber <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaTenantRelationshipManagedTenantTicketingEndpoint -ManagedTenantTicketingEndpointId <String>
- -BodyParameter <IMicrosoftGraphManagedTenantsManagedTenantTicketingEndpoint> [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphManagedTenantsManagedTenantTicketingEndpoint> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaTenantRelationshipManagedTenantTicketingEndpoint -InputObject <IManagedTenantsIdentity>
- -BodyParameter <IMicrosoftGraphManagedTenantsManagedTenantTicketingEndpoint> [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphManagedTenantsManagedTenantTicketingEndpoint> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -40,8 +39,7 @@ Update-MgBetaTenantRelationshipManagedTenantTicketingEndpoint -InputObject <IMan
 Update-MgBetaTenantRelationshipManagedTenantTicketingEndpoint -InputObject <IManagedTenantsIdentity>
  [-AdditionalProperties <Hashtable>] [-CreatedByUserId <String>] [-CreatedDateTime <DateTime>]
  [-DisplayName <String>] [-EmailAddress <String>] [-Id <String>] [-LastActionByUserId <String>]
- [-LastActionDateTime <DateTime>] [-PhoneNumber <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-LastActionDateTime <DateTime>] [-PhoneNumber <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -153,21 +151,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -303,13 +286,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantTicketingEndpoint
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantTicketingEndpoint
-
-### System.Collections.Hashtable
 
 ## NOTES
 

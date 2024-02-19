@@ -16,14 +16,14 @@ Create new navigation property to servicePlans for deviceManagement
 ```
 New-MgBetaDeviceManagementVirtualEndpointServicePlan [-AdditionalProperties <Hashtable>]
  [-DisplayName <String>] [-Id <String>] [-ProvisioningType <String>] [-RamInGb <Int32>] [-StorageInGb <Int32>]
- [-SupportedSolution <String>] [-Type <String>] [-UserProfileInGb <Int32>] [-VCpuCount <Int32>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-SupportedSolution <String>] [-Type <String>] [-UserProfileInGb <Int32>] [-VCpuCount <Int32>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaDeviceManagementVirtualEndpointServicePlan -BodyParameter <IMicrosoftGraphCloudPcServicePlan>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -91,21 +91,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -272,13 +257,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcServicePlan
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcServicePlan
-
-### System.Collections.Hashtable
 
 ## NOTES
 

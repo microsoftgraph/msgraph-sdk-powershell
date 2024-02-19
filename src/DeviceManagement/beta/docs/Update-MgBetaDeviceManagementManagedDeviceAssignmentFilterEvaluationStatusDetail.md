@@ -16,31 +16,31 @@ Update the navigation property assignmentFilterEvaluationStatusDetails in device
 ```
 Update-MgBetaDeviceManagementManagedDeviceAssignmentFilterEvaluationStatusDetail
  -AssignmentFilterEvaluationStatusDetailsId <String> -ManagedDeviceId <String>
- [-AdditionalProperties <Hashtable>] [-Id <String>] [-PayloadId <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-Id <String>] [-PayloadId <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaDeviceManagementManagedDeviceAssignmentFilterEvaluationStatusDetail
  -AssignmentFilterEvaluationStatusDetailsId <String> -ManagedDeviceId <String>
- -BodyParameter <IMicrosoftGraphAssignmentFilterEvaluationStatusDetails> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphAssignmentFilterEvaluationStatusDetails> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaDeviceManagementManagedDeviceAssignmentFilterEvaluationStatusDetail
  -InputObject <IDeviceManagementIdentity>
- -BodyParameter <IMicrosoftGraphAssignmentFilterEvaluationStatusDetails> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphAssignmentFilterEvaluationStatusDetails> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgBetaDeviceManagementManagedDeviceAssignmentFilterEvaluationStatusDetail
  -InputObject <IDeviceManagementIdentity> [-AdditionalProperties <Hashtable>] [-Id <String>]
- [-PayloadId <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PayloadId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -104,21 +104,6 @@ Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -227,13 +212,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAssignmentFilterEvaluationStatusDetails
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAssignmentFilterEvaluationStatusDetails
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -329,7 +310,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[MacOSSoftwareUpdateCategorySummaryId <String>]`: The unique identifier of macOSSoftwareUpdateCategorySummary
   - `[MacOSSoftwareUpdateStateSummaryId <String>]`: The unique identifier of macOSSoftwareUpdateStateSummary
   - `[MalwareStateForWindowsDeviceId <String>]`: The unique identifier of malwareStateForWindowsDevice
-  - `[ManagedDeviceCleanupRuleId <String>]`: The unique identifier of managedDeviceCleanupRule
   - `[ManagedDeviceEncryptionStateId <String>]`: The unique identifier of managedDeviceEncryptionState
   - `[ManagedDeviceId <String>]`: The unique identifier of managedDevice
   - `[ManagedDeviceMobileAppConfigurationStateId <String>]`: The unique identifier of managedDeviceMobileAppConfigurationState

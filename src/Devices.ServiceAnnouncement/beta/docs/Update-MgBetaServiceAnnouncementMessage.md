@@ -20,22 +20,20 @@ Update-MgBetaServiceAnnouncementMessage -ServiceUpdateMessageId <String>
  [-Body <IMicrosoftGraphItemBody>] [-Category <String>] [-Details <IMicrosoftGraphKeyValuePair[]>]
  [-EndDateTime <DateTime>] [-HasAttachments] [-Id <String>] [-IsMajorChange]
  [-LastModifiedDateTime <DateTime>] [-Services <String[]>] [-Severity <String>] [-StartDateTime <DateTime>]
- [-Tags <String[]>] [-Title <String>] [-ViewPoint <IMicrosoftGraphServiceUpdateMessageViewpoint>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Tags <String[]>] [-Title <String>] [-ViewPoint <IMicrosoftGraphServiceUpdateMessageViewpoint>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaServiceAnnouncementMessage -ServiceUpdateMessageId <String>
- -BodyParameter <IMicrosoftGraphServiceUpdateMessage> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphServiceUpdateMessage> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaServiceAnnouncementMessage -InputObject <IDevicesServiceAnnouncementIdentity>
- -BodyParameter <IMicrosoftGraphServiceUpdateMessage> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphServiceUpdateMessage> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -46,8 +44,8 @@ Update-MgBetaServiceAnnouncementMessage -InputObject <IDevicesServiceAnnouncemen
  [-Body <IMicrosoftGraphItemBody>] [-Category <String>] [-Details <IMicrosoftGraphKeyValuePair[]>]
  [-EndDateTime <DateTime>] [-HasAttachments] [-Id <String>] [-IsMajorChange]
  [-LastModifiedDateTime <DateTime>] [-Services <String[]>] [-Severity <String>] [-StartDateTime <DateTime>]
- [-Tags <String[]>] [-Title <String>] [-ViewPoint <IMicrosoftGraphServiceUpdateMessageViewpoint>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Tags <String[]>] [-Title <String>] [-ViewPoint <IMicrosoftGraphServiceUpdateMessageViewpoint>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -223,21 +221,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -450,13 +433,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphServiceUpdateMessage
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphServiceUpdateMessage
-
-### System.Collections.Hashtable
 
 ## NOTES
 

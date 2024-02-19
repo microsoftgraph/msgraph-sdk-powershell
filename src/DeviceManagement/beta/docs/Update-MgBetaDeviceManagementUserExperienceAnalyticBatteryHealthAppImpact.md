@@ -17,24 +17,24 @@ Update the navigation property userExperienceAnalyticsBatteryHealthAppImpact in 
 Update-MgBetaDeviceManagementUserExperienceAnalyticBatteryHealthAppImpact
  -UserExperienceAnalyticsBatteryHealthAppImpactId <String> [-ActiveDevices <Int32>]
  [-AdditionalProperties <Hashtable>] [-AppDisplayName <String>] [-AppName <String>] [-AppPublisher <String>]
- [-BatteryUsagePercentage <Double>] [-Id <String>] [-IsForegroundApp] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-BatteryUsagePercentage <Double>] [-Id <String>] [-IsForegroundApp] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaDeviceManagementUserExperienceAnalyticBatteryHealthAppImpact
  -UserExperienceAnalyticsBatteryHealthAppImpactId <String>
- -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsBatteryHealthAppImpact> [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsBatteryHealthAppImpact> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaDeviceManagementUserExperienceAnalyticBatteryHealthAppImpact
  -InputObject <IDeviceManagementIdentity>
- -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsBatteryHealthAppImpact> [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsBatteryHealthAppImpact> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -42,7 +42,7 @@ Update-MgBetaDeviceManagementUserExperienceAnalyticBatteryHealthAppImpact
 Update-MgBetaDeviceManagementUserExperienceAnalyticBatteryHealthAppImpact
  -InputObject <IDeviceManagementIdentity> [-ActiveDevices <Int32>] [-AdditionalProperties <Hashtable>]
  [-AppDisplayName <String>] [-AppName <String>] [-AppPublisher <String>] [-BatteryUsagePercentage <Double>]
- [-Id <String>] [-IsForegroundApp] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-IsForegroundApp] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -178,21 +178,6 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -295,13 +280,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsBatteryHealthAppImpact
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsBatteryHealthAppImpact
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -402,7 +383,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[MacOSSoftwareUpdateCategorySummaryId <String>]`: The unique identifier of macOSSoftwareUpdateCategorySummary
   - `[MacOSSoftwareUpdateStateSummaryId <String>]`: The unique identifier of macOSSoftwareUpdateStateSummary
   - `[MalwareStateForWindowsDeviceId <String>]`: The unique identifier of malwareStateForWindowsDevice
-  - `[ManagedDeviceCleanupRuleId <String>]`: The unique identifier of managedDeviceCleanupRule
   - `[ManagedDeviceEncryptionStateId <String>]`: The unique identifier of managedDeviceEncryptionState
   - `[ManagedDeviceId <String>]`: The unique identifier of managedDevice
   - `[ManagedDeviceMobileAppConfigurationStateId <String>]`: The unique identifier of managedDeviceMobileAppConfigurationState

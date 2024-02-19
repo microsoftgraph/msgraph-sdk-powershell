@@ -24,14 +24,12 @@ New-MgBetaContact [-AdditionalProperties <Hashtable>] [-Addresses <IMicrosoftGra
  [-Phones <IMicrosoftGraphPhone[]>] [-ProxyAddresses <String[]>]
  [-ServiceProvisioningErrors <IMicrosoftGraphServiceProvisioningError[]>] [-Surname <String>]
  [-TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>]
- [-TransitiveReports <IMicrosoftGraphDirectoryObject[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-TransitiveReports <IMicrosoftGraphDirectoryObject[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgBetaContact -BodyParameter <IMicrosoftGraphOrgContact> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+New-MgBetaContact -BodyParameter <IMicrosoftGraphOrgContact> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -41,17 +39,24 @@ Add new entity to contacts
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
 ```
 
-
+Get-MgBetaContact
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
 ```
 
+Get-MgBetaContact -Filter "startswith(displayName,'A')" -CountVariable CountVar -Top 1 -Sort "displayName" -ConsistencyLevel eventual
 
+### -------------------------- EXAMPLE 3 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+```
+
+Get-MgBetaContact -Search '"displayName:wa"' -CountVariable CountVar -ConsistencyLevel eventual
 
 ## PARAMETERS
 
@@ -199,21 +204,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -507,13 +497,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOrgContact
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOrgContact
-
-### System.Collections.Hashtable
 
 ## NOTES
 

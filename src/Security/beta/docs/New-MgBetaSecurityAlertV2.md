@@ -24,13 +24,13 @@ New-MgBetaSecurityAlertV2 [-ActorDisplayName <String>] [-AdditionalData <Hashtab
  [-ProductName <String>] [-ProviderAlertId <String>] [-RecommendedActions <String>]
  [-ResolvedDateTime <DateTime>] [-ServiceSource <String>] [-Severity <String>] [-Status <String>]
  [-SystemTags <String[]>] [-TenantId <String>] [-ThreatDisplayName <String>] [-ThreatFamilyName <String>]
- [-Title <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Title <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgBetaSecurityAlertV2 -BodyParameter <IMicrosoftGraphSecurityAlert> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+New-MgBetaSecurityAlertV2 -BodyParameter <IMicrosoftGraphSecurityAlert> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -310,21 +310,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -637,13 +622,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityAlert
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityAlert
-
-### System.Collections.Hashtable
 
 ## NOTES
 

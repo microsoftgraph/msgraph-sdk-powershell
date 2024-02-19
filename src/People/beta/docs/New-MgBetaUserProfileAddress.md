@@ -19,20 +19,19 @@ New-MgBetaUserProfileAddress -UserId <String> [-AdditionalProperties <Hashtable>
  [-Detail <IMicrosoftGraphPhysicalAddress>] [-DisplayName <String>]
  [-GeoCoordinates <IMicrosoftGraphGeoCoordinates>] [-Id <String>] [-Inference <IMicrosoftGraphInferenceData>]
  [-IsSearchable] [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>]
- [-Source <IMicrosoftGraphPersonDataSources>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Source <IMicrosoftGraphPersonDataSources>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgBetaUserProfileAddress -UserId <String> -BodyParameter <IMicrosoftGraphItemAddress>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaUserProfileAddress -UserId <String> -BodyParameter <IMicrosoftGraphItemAddress> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaUserProfileAddress -InputObject <IPeopleIdentity> -BodyParameter <IMicrosoftGraphItemAddress>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -42,8 +41,7 @@ New-MgBetaUserProfileAddress -InputObject <IPeopleIdentity> [-AdditionalProperti
  [-Detail <IMicrosoftGraphPhysicalAddress>] [-DisplayName <String>]
  [-GeoCoordinates <IMicrosoftGraphGeoCoordinates>] [-Id <String>] [-Inference <IMicrosoftGraphInferenceData>]
  [-IsSearchable] [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>]
- [-Source <IMicrosoftGraphPersonDataSources>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Source <IMicrosoftGraphPersonDataSources>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -195,21 +193,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -378,13 +361,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPeopleIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphItemAddress
-
-### System.Collections.Hashtable
 
 ## NOTES
 

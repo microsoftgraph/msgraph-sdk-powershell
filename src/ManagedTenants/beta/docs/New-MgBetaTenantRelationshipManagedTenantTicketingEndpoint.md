@@ -17,14 +17,14 @@ Create new navigation property to managedTenantTicketingEndpoints for tenantRela
 New-MgBetaTenantRelationshipManagedTenantTicketingEndpoint [-AdditionalProperties <Hashtable>]
  [-CreatedByUserId <String>] [-CreatedDateTime <DateTime>] [-DisplayName <String>] [-EmailAddress <String>]
  [-Id <String>] [-LastActionByUserId <String>] [-LastActionDateTime <DateTime>] [-PhoneNumber <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaTenantRelationshipManagedTenantTicketingEndpoint
- -BodyParameter <IMicrosoftGraphManagedTenantsManagedTenantTicketingEndpoint> [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphManagedTenantsManagedTenantTicketingEndpoint> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -139,21 +139,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -253,13 +238,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantTicketingEndpoint
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantTicketingEndpoint
-
-### System.Collections.Hashtable
 
 ## NOTES
 

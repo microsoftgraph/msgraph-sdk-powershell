@@ -16,28 +16,26 @@ Update the navigation property healthOverviews in admin
 ```
 Update-MgBetaServiceAnnouncementHealthOverview -ServiceHealthId <String> [-AdditionalProperties <Hashtable>]
  [-Id <String>] [-Issues <IMicrosoftGraphServiceHealthIssue[]>] [-Service <String>] [-Status <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaServiceAnnouncementHealthOverview -ServiceHealthId <String>
- -BodyParameter <IMicrosoftGraphServiceHealth> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphServiceHealth> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaServiceAnnouncementHealthOverview -InputObject <IDevicesServiceAnnouncementIdentity>
- -BodyParameter <IMicrosoftGraphServiceHealth> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphServiceHealth> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgBetaServiceAnnouncementHealthOverview -InputObject <IDevicesServiceAnnouncementIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Issues <IMicrosoftGraphServiceHealthIssue[]>]
- [-Service <String>] [-Status <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Service <String>] [-Status <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -86,21 +84,6 @@ Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -241,13 +224,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphServiceHealth
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphServiceHealth
-
-### System.Collections.Hashtable
 
 ## NOTES
 

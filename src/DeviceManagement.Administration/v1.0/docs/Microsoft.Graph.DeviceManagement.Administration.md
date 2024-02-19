@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.DeviceManagement.Administration
-Module Guid: 23bd9316-cbc0-4c37-85da-e8caeaa2180f
+Module Guid: b2a58f7f-c7d7-47f4-bafd-75065c2c3bbe
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.devicemanagement.administration
 Help Version: 1.0.0.0
 Locale: en-US
@@ -72,7 +72,7 @@ Get the number of the resource
 Role definition this assignment is part of.
 
 ### [Get-MgDeviceManagementRoleDefinition](Get-MgDeviceManagementRoleDefinition.md)
-Read properties and relationships of the deviceAndAppManagementRoleDefinition object.
+Read properties and relationships of the roleDefinition object.
 
 ### [Get-MgDeviceManagementRoleDefinitionCount](Get-MgDeviceManagementRoleDefinitionCount.md)
 Get the number of the resource
@@ -112,9 +112,6 @@ Get the number of the resource
 
 ### [Get-MgDeviceManagementTermAndConditionCount](Get-MgDeviceManagementTermAndConditionCount.md)
 Get the number of the resource
-
-### [Get-MgDeviceManagementVirtualEndpoint](Get-MgDeviceManagementVirtualEndpoint.md)
-Get virtualEndpoint from deviceManagement
 
 ### [New-MgDeviceManagementAuditEvent](New-MgDeviceManagementAuditEvent.md)
 Create a new auditEvent object.
@@ -240,7 +237,7 @@ Update the properties of a resourceOperation object.
 Update the properties of a deviceAndAppManagementRoleAssignment object.
 
 ### [Update-MgDeviceManagementRoleDefinition](Update-MgDeviceManagementRoleDefinition.md)
-Update the properties of a deviceAndAppManagementRoleDefinition object.
+Update the properties of a roleDefinition object.
 
 ### [Update-MgDeviceManagementRoleDefinitionRoleAssignment](Update-MgDeviceManagementRoleDefinitionRoleAssignment.md)
 Update the properties of a roleAssignment object.

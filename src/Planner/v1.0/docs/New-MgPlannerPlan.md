@@ -17,14 +17,12 @@ Use this API to create a new plannerPlan.
 New-MgPlannerPlan [-AdditionalProperties <Hashtable>] [-Buckets <IMicrosoftGraphPlannerBucket[]>]
  [-Container <IMicrosoftGraphPlannerPlanContainer>] [-CreatedBy <IMicrosoftGraphIdentitySet>]
  [-CreatedDateTime <DateTime>] [-Details <IMicrosoftGraphPlannerPlanDetails>] [-Id <String>] [-Owner <String>]
- [-Tasks <IMicrosoftGraphPlannerTask[]>] [-Title <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Tasks <IMicrosoftGraphPlannerTask[]>] [-Title <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgPlannerPlan -BodyParameter <IMicrosoftGraphPlannerPlan> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+New-MgPlannerPlan -BodyParameter <IMicrosoftGraphPlannerPlan> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -163,21 +161,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -281,13 +264,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerPlan
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerPlan
-
-### System.Collections.Hashtable
 
 ## NOTES
 

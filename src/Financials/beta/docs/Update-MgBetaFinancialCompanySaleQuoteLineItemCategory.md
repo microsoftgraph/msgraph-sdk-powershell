@@ -16,57 +16,53 @@ Update the navigation property itemCategory in financials
 ```
 Update-MgBetaFinancialCompanySaleQuoteLineItemCategory -CompanyId <String> -SalesQuoteLineId <String>
  [-AdditionalProperties <Hashtable>] [-Code <String>] [-DisplayName <String>] [-Id <String>]
- [-LastModifiedDateTime <DateTime>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-LastModifiedDateTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaFinancialCompanySaleQuoteLineItemCategory -CompanyId <String> -SalesQuoteLineId <String>
- -BodyParameter <IMicrosoftGraphItemCategory> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphItemCategory> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update1
 ```
 Update-MgBetaFinancialCompanySaleQuoteLineItemCategory -CompanyId <String> -SalesQuoteId <String>
- -SalesQuoteLineId <String> -BodyParameter <IMicrosoftGraphItemCategory> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -SalesQuoteLineId <String> -BodyParameter <IMicrosoftGraphItemCategory> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateExpanded1
 ```
 Update-MgBetaFinancialCompanySaleQuoteLineItemCategory -CompanyId <String> -SalesQuoteId <String>
  -SalesQuoteLineId <String> [-AdditionalProperties <Hashtable>] [-Code <String>] [-DisplayName <String>]
- [-Id <String>] [-LastModifiedDateTime <DateTime>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Id <String>] [-LastModifiedDateTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaFinancialCompanySaleQuoteLineItemCategory -InputObject <IFinancialsIdentity>
- -BodyParameter <IMicrosoftGraphItemCategory> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphItemCategory> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
 Update-MgBetaFinancialCompanySaleQuoteLineItemCategory -InputObject <IFinancialsIdentity>
- -BodyParameter <IMicrosoftGraphItemCategory> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphItemCategory> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgBetaFinancialCompanySaleQuoteLineItemCategory -InputObject <IFinancialsIdentity>
  [-AdditionalProperties <Hashtable>] [-Code <String>] [-DisplayName <String>] [-Id <String>]
- [-LastModifiedDateTime <DateTime>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-LastModifiedDateTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
 ```
 Update-MgBetaFinancialCompanySaleQuoteLineItemCategory -InputObject <IFinancialsIdentity>
  [-AdditionalProperties <Hashtable>] [-Code <String>] [-DisplayName <String>] [-Id <String>]
- [-LastModifiedDateTime <DateTime>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-LastModifiedDateTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -163,21 +159,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -297,13 +278,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphItemCategory
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphItemCategory
-
-### System.Collections.Hashtable
 
 ## NOTES
 

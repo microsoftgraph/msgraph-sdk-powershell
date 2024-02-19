@@ -17,19 +17,19 @@ Update the properties of a homeRealmDiscoveryPolicy object.
 Update-MgPolicyHomeRealmDiscoveryPolicy -HomeRealmDiscoveryPolicyId <String>
  [-AdditionalProperties <Hashtable>] [-AppliesTo <IMicrosoftGraphDirectoryObject[]>] [-Definition <String[]>]
  [-DeletedDateTime <DateTime>] [-Description <String>] [-DisplayName <String>] [-Id <String>]
- [-IsOrganizationDefault] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-IsOrganizationDefault] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgPolicyHomeRealmDiscoveryPolicy -HomeRealmDiscoveryPolicyId <String> -BodyParameter <Hashtable>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgPolicyHomeRealmDiscoveryPolicy -InputObject <IIdentitySignInsIdentity> -BodyParameter <Hashtable>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -37,7 +37,7 @@ Update-MgPolicyHomeRealmDiscoveryPolicy -InputObject <IIdentitySignInsIdentity> 
 Update-MgPolicyHomeRealmDiscoveryPolicy -InputObject <IIdentitySignInsIdentity>
  [-AdditionalProperties <Hashtable>] [-AppliesTo <IMicrosoftGraphDirectoryObject[]>] [-Definition <String[]>]
  [-DeletedDateTime <DateTime>] [-Description <String>] [-DisplayName <String>] [-Id <String>]
- [-IsOrganizationDefault] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-IsOrganizationDefault] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -172,21 +172,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -HomeRealmDiscoveryPolicyId
 The unique identifier of homeRealmDiscoveryPolicy
 
@@ -291,13 +276,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Collections.Hashtable
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphHomeRealmDiscoveryPolicy
-
-### System.Collections.Hashtable
 
 ## NOTES
 

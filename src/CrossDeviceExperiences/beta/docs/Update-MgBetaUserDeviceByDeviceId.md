@@ -586,7 +586,7 @@ Accept wildcard characters: False
 
 ### -Manufacturer
 Manufacturer of the device.
-Read-only.
+Only returned if the user signs in with a Microsoft account as part of Project Rome.
 
 ```yaml
 Type: System.String
@@ -638,7 +638,7 @@ Accept wildcard characters: False
 
 ### -Model
 Model of the device.
-Read-only.
+Only returned if the user signs in with a Microsoft account as part of Project Rome.
 
 ```yaml
 Type: System.String
@@ -916,7 +916,7 @@ Accept wildcard characters: False
 Type of trust for the joined device.
 Read-only.
 Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Microsoft Entra ID).
-For more information, see Introduction to device management in Microsoft Entra ID.
+For more details, see Introduction to device management in Microsoft Entra ID.
 
 ```yaml
 Type: System.String
@@ -1007,8 +1007,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDevice
 
-### System.Collections.Hashtable
-
 ## NOTES
 
 ALIASES
@@ -1083,12 +1081,12 @@ To create the parameters described below, construct a hash table containing the 
   - `[IsRooted <Boolean?>]`: true if device is rooted; false if device is jail-broken. This can only be updated by Intune.
   - `[Kind <String>]`: Form factor of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
   - `[ManagementType <String>]`: Management channel of the device.  This property is set by Intune. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.
-  - `[Manufacturer <String>]`: Manufacturer of the device. Read-only.
+  - `[Manufacturer <String>]`: Manufacturer of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
   - `[MdmAppId <String>]`: Application identifier used to register device into MDM. Read-only. Supports $filter (eq, ne, not, startsWith).
   - `[MemberOf <IMicrosoftGraphDirectoryObject[]>]`: Groups and administrative units that this device is a member of. Read-only. Nullable. Supports $expand.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
-  - `[Model <String>]`: Model of the device. Read-only.
+  - `[Model <String>]`: Model of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
   - `[Name <String>]`: Friendly name of the device. Only returned if user signs in with a Microsoft account as part of Project Rome.
   - `[OnPremisesLastSyncDateTime <DateTime?>]`: The last time at which the object was synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Read-only. Supports $filter (eq, ne, not, ge, le, in).
   - `[OnPremisesSecurityIdentifier <String>]`: The on-premises security identifier (SID) for the user who was synchronized from on-premises to the cloud. Read-only. Returned only on $select. Supports $filter (eq).
@@ -1104,7 +1102,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[Status <String>]`: Device is online or offline. Only returned if user signs in with a Microsoft account as part of Project Rome.
   - `[SystemLabels <String[]>]`: List of labels applied to the device by the system. Supports $filter (/$count eq 0, /$count ne 0).
   - `[TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>]`: Groups and administrative units that this device is a member of. This operation is transitive. Supports $expand.
-  - `[TrustType <String>]`: Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Microsoft Entra ID). For more information, see Introduction to device management in Microsoft Entra ID.
+  - `[TrustType <String>]`: Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Microsoft Entra ID). For more details, see Introduction to device management in Microsoft Entra ID.
   - `[UsageRights <IMicrosoftGraphUsageRight[]>]`: Represents the usage rights a device has been granted.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[CatalogId <String>]`: Product id corresponding to the usage right.

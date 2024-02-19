@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Notes
-Module Guid: a4101dcc-926e-4397-842e-3e4e1d038b61
+Module Guid: 5d38c1a7-b66a-43b9-b6a6-2a7d048776d6
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.notes
 Help Version: 1.0.0.0
 Locale: en-US
@@ -75,9 +75,6 @@ Retrieve a list of onenoteSection objects from the specified section group.
 The collection of pages in the section.
 Read-only.
 Nullable.
-
-### [Get-MgBetaSiteGetByPathOnenote](Get-MgBetaSiteGetByPathOnenote.md)
-Get onenote from sites
 
 ### [Get-MgBetaSiteOnenoteNotebook](Get-MgBetaSiteOnenoteNotebook.md)
 Retrieve the properties and relationships of a notebook object.
@@ -293,9 +290,6 @@ Delete navigation property sections for groups
 ### [Remove-MgBetaGroupOnenoteSectionGroup](Remove-MgBetaGroupOnenoteSectionGroup.md)
 Delete navigation property sectionGroups for groups
 
-### [Remove-MgBetaSiteGetByPathOnenote](Remove-MgBetaSiteGetByPathOnenote.md)
-Delete navigation property onenote for sites
-
 ### [Remove-MgBetaSiteOnenoteNotebook](Remove-MgBetaSiteOnenoteNotebook.md)
 Delete navigation property notebooks for sites
 
@@ -358,9 +352,6 @@ Update the navigation property sections in groups
 
 ### [Update-MgBetaGroupOnenoteSectionGroup](Update-MgBetaGroupOnenoteSectionGroup.md)
 Update the navigation property sectionGroups in groups
-
-### [Update-MgBetaSiteGetByPathOnenote](Update-MgBetaSiteGetByPathOnenote.md)
-Update the navigation property onenote in sites
 
 ### [Update-MgBetaSiteOnenoteNotebook](Update-MgBetaSiteOnenoteNotebook.md)
 Update the navigation property notebooks in sites

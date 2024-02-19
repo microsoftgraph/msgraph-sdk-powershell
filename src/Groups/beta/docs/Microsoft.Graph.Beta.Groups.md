@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Groups
-Module Guid: bc8bf54d-5eb2-496c-9621-519e992b9f3d
+Module Guid: 33ce9f67-4ae2-472f-a0dd-04af338de932
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.groups
 Help Version: 1.0.0.0
 Locale: en-US
@@ -534,15 +534,6 @@ Invoke function getCompatibleHubContentTypes
 ### [Get-MgBetaGroupSiteDelta](Get-MgBetaGroupSiteDelta.md)
 Invoke function delta
 
-### [Get-MgBetaGroupSiteGetByPathApplicableContentTypeForList](Get-MgBetaGroupSiteGetByPathApplicableContentTypeForList.md)
-Invoke function getApplicableContentTypesForList
-
-### [Get-MgBetaGroupSiteGetGraphBPrePathActivityByInterval](Get-MgBetaGroupSiteGetGraphBPrePathActivityByInterval.md)
-Invoke function getActivitiesByInterval
-
-### [Get-MgBetaGroupSiteGetGraphBPrePathByPath](Get-MgBetaGroupSiteGetGraphBPrePathByPath.md)
-Invoke function getByPath
-
 ### [Get-MgBetaGroupSiteListContentTypeCompatibleHubContentType](Get-MgBetaGroupSiteListContentTypeCompatibleHubContentType.md)
 Invoke function getCompatibleHubContentTypes
 
@@ -552,18 +543,8 @@ Invoke function getActivitiesByInterval
 ### [Get-MgBetaGroupSiteListItemDelta](Get-MgBetaGroupSiteListItemDelta.md)
 Invoke function delta
 
-### [Get-MgBetaGroupSitePageMicrosoftGraphSitePageCanvaLayoutHorizontalSectionColumnWebpartPositionOfWebPart](Get-MgBetaGroupSitePageMicrosoftGraphSitePageCanvaLayoutHorizontalSectionColumnWebpartPositionOfWebPart.md)
-Invoke action getPositionOfWebPart
-
-### [Get-MgBetaGroupSitePageMicrosoftGraphSitePageCanvaLayoutVerticalSectionWebpartPositionOfWebPart](Get-MgBetaGroupSitePageMicrosoftGraphSitePageCanvaLayoutVerticalSectionWebpartPositionOfWebPart.md)
-Invoke action getPositionOfWebPart
-
-### [Get-MgBetaGroupSitePageMicrosoftGraphSitePageWebPartPositionOfWebPart](Get-MgBetaGroupSitePageMicrosoftGraphSitePageWebPartPositionOfWebPart.md)
-Invoke action getPositionOfWebPart
-
 ### [Get-MgBetaGroupThread](Get-MgBetaGroupThread.md)
-Get a specific thread that belongs to a group.
-You can specify both the parent conversation and the thread, or, \nyou can specify the thread without referencing the parent conversation.
+Get a thread object.
 
 ### [Get-MgBetaGroupThreadCount](Get-MgBetaGroupThreadCount.md)
 Get the number of the resource
@@ -715,9 +696,6 @@ Accept the specified event in a user calendar.
 Tentatively accept the specified event in a user calendar.
 If the event allows proposals for new times, on responding tentative to the event, an invitee can choose to suggest an alternative time by including the proposedNewTime parameter.
 For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.
-
-### [Invoke-MgBetaArchiveGroupPlannerPlan](Invoke-MgBetaArchiveGroupPlannerPlan.md)
-Invoke action archive
 
 ### [Invoke-MgBetaBufferGroupSiteInformationProtectionDecrypt](Invoke-MgBetaBufferGroupSiteInformationProtectionDecrypt.md)
 Invoke action decryptBuffer
@@ -879,9 +857,6 @@ Postpone a reminder for an event in a user calendar until a new time.
 Calling this method will enable the current user to receive email notifications for this group, about new posts, events, and files in that group.
 Supported for Microsoft 365 groups only.
 
-### [Invoke-MgBetaUnarchiveGroupPlannerPlan](Invoke-MgBetaUnarchiveGroupPlannerPlan.md)
-Invoke action unarchive
-
 ### [Invoke-MgBetaUnfollowGroupDriveItem](Invoke-MgBetaUnfollowGroupDriveItem.md)
 Unfollow a driveItem.
 
@@ -898,8 +873,7 @@ Associate a [content type][contentType] with a list of hub sites.
 Associate a [content type][contentType] with a list of hub sites.
 
 ### [Move-MgBetaGroupPlannerPlanToContainer](Move-MgBetaGroupPlannerPlanToContainer.md)
-Move a planner plan object from one planner plan container to another.
-Planner plans can only be moved from a user container to a group container.
+Invoke action moveToContainer
 
 ### [New-MgBetaGroup](New-MgBetaGroup.md)
 Create a new group as specified in the request body.
@@ -915,9 +889,8 @@ Users in the accepted senders list can post to conversations of the group.
 Make sure you don't specify the same user or group in the accepted senders and rejected senders lists, otherwise you'll get an error.
 
 ### [New-MgBetaGroupConversation](New-MgBetaGroupConversation.md)
-Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
-You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
-The table in the Permissions section lists the resources that support open extensions.
+Create a new conversation by including a thread and a post.
+Use reply thread or reply post to further post to that conversation.
 
 ### [New-MgBetaGroupConversationThread](New-MgBetaGroupConversationThread.md)
 Create a new thread in the specified conversation.
@@ -1175,7 +1148,7 @@ Delete navigation property settings for groups
 Unfollow a user's site or multiple sites.
 
 ### [Remove-MgBetaGroupThread](Remove-MgBetaGroupThread.md)
-Delete conversationThread.
+Delete a thread object.
 
 ### [Remove-MgBetaGroupThreadPostAttachment](Remove-MgBetaGroupThreadPostAttachment.md)
 Delete navigation property attachments for groups

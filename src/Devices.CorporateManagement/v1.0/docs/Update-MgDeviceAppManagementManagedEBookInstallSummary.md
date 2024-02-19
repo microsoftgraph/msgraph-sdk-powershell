@@ -17,21 +17,19 @@ Update the properties of a eBookInstallSummary object.
 Update-MgDeviceAppManagementManagedEBookInstallSummary -ManagedEBookId <String>
  [-AdditionalProperties <Hashtable>] [-FailedDeviceCount <Int32>] [-FailedUserCount <Int32>] [-Id <String>]
  [-InstalledDeviceCount <Int32>] [-InstalledUserCount <Int32>] [-NotInstalledDeviceCount <Int32>]
- [-NotInstalledUserCount <Int32>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-NotInstalledUserCount <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgDeviceAppManagementManagedEBookInstallSummary -ManagedEBookId <String>
- -BodyParameter <IMicrosoftGraphEBookInstallSummary> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphEBookInstallSummary> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgDeviceAppManagementManagedEBookInstallSummary -InputObject <IDevicesCorporateManagementIdentity>
- -BodyParameter <IMicrosoftGraphEBookInstallSummary> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphEBookInstallSummary> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -39,7 +37,7 @@ Update-MgDeviceAppManagementManagedEBookInstallSummary -InputObject <IDevicesCor
 Update-MgDeviceAppManagementManagedEBookInstallSummary -InputObject <IDevicesCorporateManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-FailedDeviceCount <Int32>] [-FailedUserCount <Int32>] [-Id <String>]
  [-InstalledDeviceCount <Int32>] [-InstalledUserCount <Int32>] [-NotInstalledDeviceCount <Int32>]
- [-NotInstalledUserCount <Int32>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-NotInstalledUserCount <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -121,21 +119,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -286,13 +269,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEBookInstallSummary
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEBookInstallSummary
-
-### System.Collections.Hashtable
 
 ## NOTES
 

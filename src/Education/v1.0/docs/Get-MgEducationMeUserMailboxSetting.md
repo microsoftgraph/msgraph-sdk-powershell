@@ -9,19 +9,18 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ## SYNTAX
 
 ```
-Get-MgEducationMeUserMailboxSetting [-ExpandProperty <String[]>] [-Property <String[]>]
- [-Headers <IDictionary>] [<CommonParameters>]
+Get-MgEducationMeUserMailboxSetting [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ## EXAMPLES
@@ -57,21 +56,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Property
 Select properties to be returned
 
@@ -92,13 +76,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMailboxSettings
-
-### System.Collections.Hashtable
 
 ## NOTES
 

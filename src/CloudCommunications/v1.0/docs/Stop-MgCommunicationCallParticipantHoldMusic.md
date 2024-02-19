@@ -15,29 +15,27 @@ Reincorporate a participant previously put on hold to the call.
 ### StopExpanded (Default)
 ```
 Stop-MgCommunicationCallParticipantHoldMusic -CallId <String> -ParticipantId <String>
- [-AdditionalProperties <Hashtable>] [-ClientContext <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-ClientContext <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Stop
 ```
 Stop-MgCommunicationCallParticipantHoldMusic -CallId <String> -ParticipantId <String>
  -BodyParameter <IPaths1AuzqgwCommunicationsCallsCallIdParticipantsParticipantIdMicrosoftGraphStopholdmusicPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### StopViaIdentity
 ```
 Stop-MgCommunicationCallParticipantHoldMusic -InputObject <ICloudCommunicationsIdentity>
  -BodyParameter <IPaths1AuzqgwCommunicationsCallsCallIdParticipantsParticipantIdMicrosoftGraphStopholdmusicPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### StopViaIdentityExpanded
 ```
 Stop-MgCommunicationCallParticipantHoldMusic -InputObject <ICloudCommunicationsIdentity>
- [-AdditionalProperties <Hashtable>] [-ClientContext <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-ClientContext <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -48,13 +46,13 @@ Reincorporate a participant previously put on hold to the call.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.CloudCommunications
+$params = @{
+	ClientContext = "d45324c1-fcb5-430a-902c-f20af696537c"
+}
+Stop-MgCommunicationCallParticipantHoldMusic -CallId $callId -ParticipantId $participantId -BodyParameter $params
 ```
 
-$params = @{
-	clientContext = "d45324c1-fcb5-430a-902c-f20af696537c"
-}
 
-Stop-MgCommunicationCallParticipantHoldMusic -CallId $callId -ParticipantId $participantId -BodyParameter $params
 
 ## PARAMETERS
 
@@ -116,21 +114,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -205,13 +188,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IPaths1AuzqgwCommunicationsCallsCallIdParticipantsParticipantIdMicrosoftGraphStopholdmusicPostRequestbodyContentApplicationJsonSchema
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphStopHoldMusicOperation
-
-### System.Collections.Hashtable
 
 ## NOTES
 

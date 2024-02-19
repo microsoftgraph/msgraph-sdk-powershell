@@ -19,22 +19,20 @@ New-MgAdminEdgeInternetExplorerModeSiteListSharedCookie -BrowserSiteListId <Stri
  [-DeletedDateTime <DateTime>] [-DisplayName <String>]
  [-History <IMicrosoftGraphBrowserSharedCookieHistory[]>] [-HostOnly] [-HostOrDomain <String>] [-Id <String>]
  [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>] [-Path <String>]
- [-SourceEnvironment <BrowserSharedCookieSourceEnvironment>] [-Status <BrowserSharedCookieStatus>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-SourceEnvironment <BrowserSharedCookieSourceEnvironment>] [-Status <BrowserSharedCookieStatus>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgAdminEdgeInternetExplorerModeSiteListSharedCookie -BrowserSiteListId <String>
- -BodyParameter <IMicrosoftGraphBrowserSharedCookie> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphBrowserSharedCookie> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgAdminEdgeInternetExplorerModeSiteListSharedCookie -InputObject <IDeviceManagementIdentity>
- -BodyParameter <IMicrosoftGraphBrowserSharedCookie> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphBrowserSharedCookie> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -44,8 +42,8 @@ New-MgAdminEdgeInternetExplorerModeSiteListSharedCookie -InputObject <IDeviceMan
  [-DeletedDateTime <DateTime>] [-DisplayName <String>]
  [-History <IMicrosoftGraphBrowserSharedCookieHistory[]>] [-HostOnly] [-HostOrDomain <String>] [-Id <String>]
  [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>] [-Path <String>]
- [-SourceEnvironment <BrowserSharedCookieSourceEnvironment>] [-Status <BrowserSharedCookieStatus>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-SourceEnvironment <BrowserSharedCookieSourceEnvironment>] [-Status <BrowserSharedCookieStatus>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -172,21 +170,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -384,13 +367,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBrowserSharedCookie
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBrowserSharedCookie
-
-### System.Collections.Hashtable
 
 ## NOTES
 

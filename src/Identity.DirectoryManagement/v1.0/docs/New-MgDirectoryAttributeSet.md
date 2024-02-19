@@ -15,13 +15,13 @@ Create a new attributeSet object.
 ### CreateExpanded (Default)
 ```
 New-MgDirectoryAttributeSet [-AdditionalProperties <Hashtable>] [-Description <String>] [-Id <String>]
- [-MaxAttributesPerSet <Int32>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-MaxAttributesPerSet <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgDirectoryAttributeSet -BodyParameter <IMicrosoftGraphAttributeSet> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+New-MgDirectoryAttributeSet -BodyParameter <IMicrosoftGraphAttributeSet> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -90,21 +90,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -180,13 +165,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAttributeSet
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAttributeSet
-
-### System.Collections.Hashtable
 
 ## NOTES
 

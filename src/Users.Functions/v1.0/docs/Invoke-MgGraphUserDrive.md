@@ -14,16 +14,15 @@ Invoke function sharedWithMe
 
 ### Graph (Default)
 ```
-Invoke-MgGraphUserDrive -DriveId <String> -UserId <String> [-Count] [-ExpandProperty <String[]>]
- [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
- [-Top <Int32>] [-Headers <IDictionary>] [<CommonParameters>]
+Invoke-MgGraphUserDrive -DriveId <String> -UserId <String> [-Count] [-Filter <String>] [-Property <String[]>]
+ [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### GraphViaIdentity
 ```
-Invoke-MgGraphUserDrive -InputObject <IUsersFunctionsIdentity> [-Count] [-ExpandProperty <String[]>]
- [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
- [-Top <Int32>] [-Headers <IDictionary>] [<CommonParameters>]
+Invoke-MgGraphUserDrive -InputObject <IUsersFunctionsIdentity> [-Count] [-Filter <String>]
+ [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -77,21 +76,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ExpandProperty
-Expand related entities
-
-```yaml
-Type: System.String[]
-Parameter Sets: (All)
-Aliases: Expand
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Filter
 Filter items by property values
 
@@ -104,21 +88,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -235,13 +204,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDriveItem
-
-### System.Collections.Hashtable
 
 ## NOTES
 

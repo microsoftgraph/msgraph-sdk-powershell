@@ -14,32 +14,30 @@ Invoke function delta
 
 ### Delta (Default)
 ```
-Get-MgEducationClassAssignmentCategoryDelta -EducationClassId <String> [-ExpandProperty <String[]>]
- [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
- [-Top <Int32>] [-All] [-CountVariable <String>] [-Headers <IDictionary>] [-PageSize <Int32>]
- [<CommonParameters>]
+Get-MgEducationClassAssignmentCategoryDelta -EducationClassId <String> [-Filter <String>]
+ [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
+ [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Delta1
 ```
 Get-MgEducationClassAssignmentCategoryDelta -EducationAssignmentId <String> -EducationClassId <String>
- [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
- [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-Headers <IDictionary>]
- [-PageSize <Int32>] [<CommonParameters>]
+ [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
+ [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### DeltaViaIdentity
 ```
-Get-MgEducationClassAssignmentCategoryDelta -InputObject <IEducationIdentity> [-Count]
- [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
- [-Sort <String[]>] [-Top <Int32>] [-Headers <IDictionary>] [<CommonParameters>]
+Get-MgEducationClassAssignmentCategoryDelta -InputObject <IEducationIdentity> [-Count] [-Filter <String>]
+ [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
+ [<CommonParameters>]
 ```
 
 ### DeltaViaIdentity1
 ```
-Get-MgEducationClassAssignmentCategoryDelta -InputObject <IEducationIdentity> [-Count]
- [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
- [-Sort <String[]>] [-Top <Int32>] [-Headers <IDictionary>] [<CommonParameters>]
+Get-MgEducationClassAssignmentCategoryDelta -InputObject <IEducationIdentity> [-Count] [-Filter <String>]
+ [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -157,21 +155,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ExpandProperty
-Expand related entities
-
-```yaml
-Type: System.String[]
-Parameter Sets: (All)
-Aliases: Expand
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Filter
 Filter items by property values
 
@@ -184,21 +167,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -315,13 +283,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IEducationIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationCategory
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -337,9 +301,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[EducationAssignmentResourceId <String>]`: The unique identifier of educationAssignmentResource
   - `[EducationCategoryId <String>]`: The unique identifier of educationCategory
   - `[EducationClassId <String>]`: The unique identifier of educationClass
-  - `[EducationGradingCategoryId <String>]`: The unique identifier of educationGradingCategory
-  - `[EducationModuleId <String>]`: The unique identifier of educationModule
-  - `[EducationModuleResourceId <String>]`: The unique identifier of educationModuleResource
   - `[EducationOutcomeId <String>]`: The unique identifier of educationOutcome
   - `[EducationRubricId <String>]`: The unique identifier of educationRubric
   - `[EducationSchoolId <String>]`: The unique identifier of educationSchool

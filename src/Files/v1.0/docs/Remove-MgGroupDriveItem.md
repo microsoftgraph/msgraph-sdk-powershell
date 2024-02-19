@@ -8,24 +8,24 @@ schema: 2.0.0
 # Remove-MgGroupDriveItem
 
 ## SYNOPSIS
-Delete a [bundle][] of driveItems by using its id.\nDeleting a bundle using this method permanently deletes the bundle and doesn't move it to the Recycle Bin.\nIt doesn't, however, remove the items that were referenced by the bundle.\nThey remain in their parent folders.
+Delete a DriveItem by using its ID or path.\nDeleting items using this method moves the items to the recycle bin instead of permanently deleting the item.
 
 ## SYNTAX
 
 ### Delete (Default)
 ```
 Remove-MgGroupDriveItem -DriveId <String> -DriveItemId <String> -GroupId <String> [-IfMatch <String>]
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgGroupDriveItem -InputObject <IFilesIdentity> [-IfMatch <String>] [-Headers <IDictionary>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-MgGroupDriveItem -InputObject <IFilesIdentity> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Delete a [bundle][] of driveItems by using its id.\nDeleting a bundle using this method permanently deletes the bundle and doesn't move it to the Recycle Bin.\nIt doesn't, however, remove the items that were referenced by the bundle.\nThey remain in their parent folders.
+Delete a DriveItem by using its ID or path.\nDeleting items using this method moves the items to the recycle bin instead of permanently deleting the item.
 
 ## EXAMPLES
 
@@ -87,21 +87,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -189,13 +174,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IFilesIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
-
-### System.Collections.Hashtable
 
 ## NOTES
 

@@ -16,30 +16,28 @@ Create new navigation property to assignedLicenses for deviceAppManagement
 ```
 New-MgBetaDeviceAppManagementMobileAppAsIoVppAppAssignedLicense -MobileAppId <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-UserEmailAddress <String>] [-UserId <String>]
- [-UserName <String>] [-UserPrincipalName <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-UserName <String>] [-UserPrincipalName <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaDeviceAppManagementMobileAppAsIoVppAppAssignedLicense -MobileAppId <String>
- -BodyParameter <IMicrosoftGraphIosVppAppAssignedLicense> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphIosVppAppAssignedLicense> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaDeviceAppManagementMobileAppAsIoVppAppAssignedLicense
  -InputObject <IDevicesCorporateManagementIdentity> -BodyParameter <IMicrosoftGraphIosVppAppAssignedLicense>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgBetaDeviceAppManagementMobileAppAsIoVppAppAssignedLicense
  -InputObject <IDevicesCorporateManagementIdentity> [-AdditionalProperties <Hashtable>] [-Id <String>]
- [-UserEmailAddress <String>] [-UserId <String>] [-UserName <String>] [-UserPrincipalName <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-UserEmailAddress <String>] [-UserId <String>] [-UserName <String>] [-UserPrincipalName <String>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -89,21 +87,6 @@ Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -257,13 +240,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIosVppAppAssignedLicense
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIosVppAppAssignedLicense
-
-### System.Collections.Hashtable
 
 ## NOTES
 

@@ -16,15 +16,14 @@ Create new navigation property to managementIntents for tenantRelationships
 ```
 New-MgBetaTenantRelationshipManagedTenantManagementIntent [-AdditionalProperties <Hashtable>]
  [-DisplayName <String>] [-Id <String>] [-IsGlobal]
- [-ManagementTemplates <IMicrosoftGraphManagedTenantsManagementTemplateDetailedInfo[]>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ManagementTemplates <IMicrosoftGraphManagedTenantsManagementTemplateDetailedInfo[]>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaTenantRelationshipManagedTenantManagementIntent
- -BodyParameter <IMicrosoftGraphManagedTenantsManagementIntent> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphManagedTenantsManagementIntent> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -93,21 +92,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -200,13 +184,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementIntent
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementIntent
-
-### System.Collections.Hashtable
 
 ## NOTES
 

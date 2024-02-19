@@ -19,22 +19,19 @@ Update-MgBetaDeviceManagementUserPfxCertificate -UserPfxCertificateId <String>
  [-EncryptedPfxPassword <String>] [-ExpirationDateTime <DateTime>] [-Id <String>]
  [-IntendedPurpose <UserPfxIntendedPurpose>] [-KeyName <String>] [-LastModifiedDateTime <DateTime>]
  [-PaddingScheme <UserPfxPaddingScheme>] [-ProviderName <String>] [-StartDateTime <DateTime>]
- [-Thumbprint <String>] [-UserPrincipalName <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Thumbprint <String>] [-UserPrincipalName <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaDeviceManagementUserPfxCertificate -UserPfxCertificateId <String>
- -BodyParameter <IMicrosoftGraphUserPfxCertificate> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphUserPfxCertificate> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaDeviceManagementUserPfxCertificate -InputObject <IDeviceManagementAdministrationIdentity>
- -BodyParameter <IMicrosoftGraphUserPfxCertificate> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphUserPfxCertificate> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -44,8 +41,7 @@ Update-MgBetaDeviceManagementUserPfxCertificate -InputObject <IDeviceManagementA
  [-EncryptedPfxPassword <String>] [-ExpirationDateTime <DateTime>] [-Id <String>]
  [-IntendedPurpose <UserPfxIntendedPurpose>] [-KeyName <String>] [-LastModifiedDateTime <DateTime>]
  [-PaddingScheme <UserPfxPaddingScheme>] [-ProviderName <String>] [-StartDateTime <DateTime>]
- [-Thumbprint <String>] [-UserPrincipalName <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Thumbprint <String>] [-UserPrincipalName <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -157,21 +153,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -382,13 +363,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserPfxCertificate
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserPfxCertificate
-
-### System.Collections.Hashtable
 
 ## NOTES
 

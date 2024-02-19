@@ -17,19 +17,19 @@ Create new navigation property to journals for financials
 New-MgBetaFinancialCompanyJournal -CompanyId <String> [-Account <IMicrosoftGraphAccount>]
  [-AdditionalProperties <Hashtable>] [-BalancingAccountId <String>] [-BalancingAccountNumber <String>]
  [-Code <String>] [-DisplayName <String>] [-Id <String>] [-JournalLines <IMicrosoftGraphJournalLine[]>]
- [-LastModifiedDateTime <DateTime>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-LastModifiedDateTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgBetaFinancialCompanyJournal -CompanyId <String> -BodyParameter <IMicrosoftGraphJournal>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaFinancialCompanyJournal -CompanyId <String> -BodyParameter <IMicrosoftGraphJournal> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaFinancialCompanyJournal -InputObject <IFinancialsIdentity> -BodyParameter <IMicrosoftGraphJournal>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -37,7 +37,7 @@ New-MgBetaFinancialCompanyJournal -InputObject <IFinancialsIdentity> -BodyParame
 New-MgBetaFinancialCompanyJournal -InputObject <IFinancialsIdentity> [-Account <IMicrosoftGraphAccount>]
  [-AdditionalProperties <Hashtable>] [-BalancingAccountId <String>] [-BalancingAccountNumber <String>]
  [-Code <String>] [-DisplayName <String>] [-Id <String>] [-JournalLines <IMicrosoftGraphJournalLine[]>]
- [-LastModifiedDateTime <DateTime>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-LastModifiedDateTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -183,21 +183,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 .
 
@@ -300,13 +285,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphJournal
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphJournal
-
-### System.Collections.Hashtable
 
 ## NOTES
 

@@ -16,28 +16,26 @@ Create new navigation property to gradingCategories for education
 ```
 New-MgEducationClassAssignmentSettingGradingCategory -EducationClassId <String>
  [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>] [-PercentageWeight <Int32>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgEducationClassAssignmentSettingGradingCategory -EducationClassId <String>
- -BodyParameter <IMicrosoftGraphEducationGradingCategory> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphEducationGradingCategory> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgEducationClassAssignmentSettingGradingCategory -InputObject <IEducationIdentity>
- -BodyParameter <IMicrosoftGraphEducationGradingCategory> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphEducationGradingCategory> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgEducationClassAssignmentSettingGradingCategory -InputObject <IEducationIdentity>
  [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>] [-PercentageWeight <Int32>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -93,7 +91,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-The name of the grading category.
+.
 
 ```yaml
 Type: System.String
@@ -119,21 +117,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -170,7 +153,7 @@ Accept wildcard characters: False
 ```
 
 ### -PercentageWeight
-The weight of the category; an integer between 0 and 100.
+.
 
 ```yaml
 Type: System.Int32
@@ -224,13 +207,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationGradingCategory
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationGradingCategory
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -244,8 +223,8 @@ To create the parameters described below, construct a hash table containing the 
 `BODYPARAMETER <IMicrosoftGraphEducationGradingCategory>`: educationGradingCategory
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[DisplayName <String>]`: The name of the grading category.
-  - `[PercentageWeight <Int32?>]`: The weight of the category; an integer between 0 and 100.
+  - `[DisplayName <String>]`: 
+  - `[PercentageWeight <Int32?>]`: 
 
 `INPUTOBJECT <IEducationIdentity>`: Identity Parameter
   - `[EducationAssignmentId <String>]`: The unique identifier of educationAssignment
@@ -253,8 +232,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[EducationCategoryId <String>]`: The unique identifier of educationCategory
   - `[EducationClassId <String>]`: The unique identifier of educationClass
   - `[EducationGradingCategoryId <String>]`: The unique identifier of educationGradingCategory
-  - `[EducationModuleId <String>]`: The unique identifier of educationModule
-  - `[EducationModuleResourceId <String>]`: The unique identifier of educationModuleResource
   - `[EducationOutcomeId <String>]`: The unique identifier of educationOutcome
   - `[EducationRubricId <String>]`: The unique identifier of educationRubric
   - `[EducationSchoolId <String>]`: The unique identifier of educationSchool

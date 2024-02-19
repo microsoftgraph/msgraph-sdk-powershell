@@ -8,39 +8,38 @@ schema: 2.0.0
 # Remove-MgBetaUserPasswordSingleSignOnCredential
 
 ## SYNOPSIS
-Delete the password-based single sign-on credentials for a given user to a given service principal.
+Invoke action deletePasswordSingleSignOnCredentials
 
 ## SYNTAX
 
 ### DeleteExpanded (Default)
 ```
 Remove-MgBetaUserPasswordSingleSignOnCredential -UserId <String> [-AdditionalProperties <Hashtable>]
- [-Id <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Delete
 ```
 Remove-MgBetaUserPasswordSingleSignOnCredential -UserId <String>
  -BodyParameter <IComponents7C4RwpRequestbodiesDeletepasswordsinglesignoncredentialsrequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
 Remove-MgBetaUserPasswordSingleSignOnCredential -InputObject <IUsersActionsIdentity>
  -BodyParameter <IComponents7C4RwpRequestbodiesDeletepasswordsinglesignoncredentialsrequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentityExpanded
 ```
 Remove-MgBetaUserPasswordSingleSignOnCredential -InputObject <IUsersActionsIdentity>
- [-AdditionalProperties <Hashtable>] [-Id <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Delete the password-based single sign-on credentials for a given user to a given service principal.
+Invoke action deletePasswordSingleSignOnCredentials
 
 ## EXAMPLES
 
@@ -85,21 +84,6 @@ Parameter Sets: Delete, DeleteViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -207,13 +191,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -247,7 +227,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[DriveItemVersionId <String>]`: The unique identifier of driveItemVersion
   - `[EventId <String>]`: The unique identifier of event
   - `[EventId1 <String>]`: The unique identifier of event
-  - `[JoinWebUrl <String>]`: Alternate key of onlineMeeting
   - `[ListItemId <String>]`: The unique identifier of listItem
   - `[ListItemVersionId <String>]`: The unique identifier of listItemVersion
   - `[MailFolderId <String>]`: The unique identifier of mailFolder

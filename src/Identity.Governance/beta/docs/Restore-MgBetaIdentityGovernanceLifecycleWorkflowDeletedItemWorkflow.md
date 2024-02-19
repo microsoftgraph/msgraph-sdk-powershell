@@ -15,14 +15,14 @@ You can only restore a workflow that was deleted within the last 30 days before 
 
 ### Restore (Default)
 ```
-Restore-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow -WorkflowId <String>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Restore-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow -WorkflowId <String> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### RestoreViaIdentity
 ```
 Restore-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow
- -InputObject <IIdentityGovernanceIdentity> [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -InputObject <IIdentityGovernanceIdentity> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -40,21 +40,6 @@ Restore-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow -WorkflowId
 
 
 ## PARAMETERS
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
 
 ### -InputObject
 Identity Parameter
@@ -125,13 +110,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentityGovernanceWorkflow
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -194,7 +175,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[GroupId <String>]`: The unique identifier of group
   - `[IncompatibleAccessPackageId <String>]`: Usage: incompatibleAccessPackageId='{incompatibleAccessPackageId}'
   - `[LongRunningOperationId <String>]`: The unique identifier of longRunningOperation
-  - `[ObjectId <String>]`: Alternate key of accessPackageSubject
   - `[On <String>]`: Usage: on='{on}'
   - `[PermissionsCreepIndexDistributionId <String>]`: The unique identifier of permissionsCreepIndexDistribution
   - `[PermissionsRequestChangeId <String>]`: The unique identifier of permissionsRequestChange

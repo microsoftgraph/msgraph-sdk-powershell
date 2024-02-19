@@ -17,21 +17,19 @@ Update the navigation property snapshots in deviceManagement
 Update-MgBetaDeviceManagementVirtualEndpointSnapshot -CloudPcSnapshotId <String>
  [-AdditionalProperties <Hashtable>] [-CloudPcId <String>] [-CreatedDateTime <DateTime>]
  [-ExpirationDateTime <DateTime>] [-Id <String>] [-LastRestoredDateTime <DateTime>] [-SnapshotType <String>]
- [-Status <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Status <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaDeviceManagementVirtualEndpointSnapshot -CloudPcSnapshotId <String>
- -BodyParameter <IMicrosoftGraphCloudPcSnapshot> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphCloudPcSnapshot> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaDeviceManagementVirtualEndpointSnapshot -InputObject <IDeviceManagementAdministrationIdentity>
- -BodyParameter <IMicrosoftGraphCloudPcSnapshot> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphCloudPcSnapshot> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -39,7 +37,7 @@ Update-MgBetaDeviceManagementVirtualEndpointSnapshot -InputObject <IDeviceManage
 Update-MgBetaDeviceManagementVirtualEndpointSnapshot -InputObject <IDeviceManagementAdministrationIdentity>
  [-AdditionalProperties <Hashtable>] [-CloudPcId <String>] [-CreatedDateTime <DateTime>]
  [-ExpirationDateTime <DateTime>] [-Id <String>] [-LastRestoredDateTime <DateTime>] [-SnapshotType <String>]
- [-Status <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Status <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -155,21 +153,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -292,13 +275,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcSnapshot
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcSnapshot
-
-### System.Collections.Hashtable
 
 ## NOTES
 

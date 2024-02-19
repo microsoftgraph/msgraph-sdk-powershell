@@ -17,20 +17,19 @@ Create new navigation property to used for users
 New-MgBetaUserInsightUsed -UserId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-LastUsed <IMicrosoftGraphUsageDetails>] [-Resource <IMicrosoftGraphEntity>]
  [-ResourceReference <IMicrosoftGraphResourceReference>]
- [-ResourceVisualization <IMicrosoftGraphResourceVisualization>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-ResourceVisualization <IMicrosoftGraphResourceVisualization>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgBetaUserInsightUsed -UserId <String> -BodyParameter <IMicrosoftGraphUsedInsight>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaUserInsightUsed -UserId <String> -BodyParameter <IMicrosoftGraphUsedInsight> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgBetaUserInsightUsed -InputObject <IUsersIdentity> -BodyParameter <IMicrosoftGraphUsedInsight>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaUserInsightUsed -InputObject <IUsersIdentity> -BodyParameter <IMicrosoftGraphUsedInsight> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -38,8 +37,7 @@ New-MgBetaUserInsightUsed -InputObject <IUsersIdentity> -BodyParameter <IMicroso
 New-MgBetaUserInsightUsed -InputObject <IUsersIdentity> [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-LastUsed <IMicrosoftGraphUsageDetails>] [-Resource <IMicrosoftGraphEntity>]
  [-ResourceReference <IMicrosoftGraphResourceReference>]
- [-ResourceVisualization <IMicrosoftGraphResourceVisualization>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-ResourceVisualization <IMicrosoftGraphResourceVisualization>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -88,21 +86,6 @@ Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -260,13 +243,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IUsersIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUsedInsight
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -304,7 +283,6 @@ To create the parameters described below, construct a hash table containing the 
     - `[Type <String>]`: The item's media type. Can be used for filtering for a specific file based on a specific type. See the Type property values section, for supported types.
 
 `INPUTOBJECT <IUsersIdentity>`: Identity Parameter
-  - `[AppId <String>]`: Alternate key of servicePrincipal
   - `[AttachmentBaseId <String>]`: The unique identifier of attachmentBase
   - `[AttachmentId <String>]`: The unique identifier of attachment
   - `[AttachmentSessionId <String>]`: The unique identifier of attachmentSession

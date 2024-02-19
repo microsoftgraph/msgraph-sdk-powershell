@@ -16,29 +16,27 @@ Update the navigation property delegatedPermissionClassifications in servicePrin
 ```
 Update-MgBetaServicePrincipalDelegatedPermissionClassification -DelegatedPermissionClassificationId <String>
  -ServicePrincipalId <String> [-AdditionalProperties <Hashtable>] [-Classification <String>] [-Id <String>]
- [-PermissionId <String>] [-PermissionName <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-PermissionId <String>] [-PermissionName <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaServicePrincipalDelegatedPermissionClassification -DelegatedPermissionClassificationId <String>
- -ServicePrincipalId <String> -BodyParameter <IMicrosoftGraphDelegatedPermissionClassification>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -ServicePrincipalId <String> -BodyParameter <IMicrosoftGraphDelegatedPermissionClassification> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaServicePrincipalDelegatedPermissionClassification -InputObject <IApplicationsIdentity>
- -BodyParameter <IMicrosoftGraphDelegatedPermissionClassification> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphDelegatedPermissionClassification> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgBetaServicePrincipalDelegatedPermissionClassification -InputObject <IApplicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-Classification <String>] [-Id <String>] [-PermissionId <String>]
- [-PermissionName <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PermissionName <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -120,21 +118,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -258,13 +241,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDelegatedPermissionClassification
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDelegatedPermissionClassification
-
-### System.Collections.Hashtable
 
 ## NOTES
 

@@ -14,14 +14,14 @@ Get attendeeReport for the navigation property onlineMeetings from users
 
 ### Get (Default)
 ```
-Get-MgUserOnlineMeetingAttendeeReport -OnlineMeetingId <String> -UserId <String> -OutFile <String>
- [-Headers <IDictionary>] [-PassThru] [<CommonParameters>]
+Get-MgUserOnlineMeetingAttendeeReport -OnlineMeetingId <String> -UserId <String> -OutFile <String> [-PassThru]
+ [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
 Get-MgUserOnlineMeetingAttendeeReport -InputObject <ICloudCommunicationsIdentity> -OutFile <String>
- [-Headers <IDictionary>] [-PassThru] [<CommonParameters>]
+ [-PassThru] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -38,21 +38,6 @@ Import-Module Microsoft.Graph.CloudCommunications
 Get-MgUserOnlineMeetingAttendeeReport -UserId $userId -OnlineMeetingId $onlineMeetingId
 
 ## PARAMETERS
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
 
 ### -InputObject
 Identity Parameter
@@ -137,13 +122,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
-
-### System.Collections.Hashtable
 
 ## NOTES
 

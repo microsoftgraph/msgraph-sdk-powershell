@@ -17,15 +17,15 @@ Create new navigation property to resourceAccessProfiles for deviceManagement
 New-MgBetaDeviceManagementResourceAccessProfile [-AdditionalProperties <Hashtable>]
  [-Assignments <IMicrosoftGraphDeviceManagementResourceAccessProfileAssignment[]>]
  [-CreationDateTime <DateTime>] [-Description <String>] [-DisplayName <String>] [-Id <String>]
- [-LastModifiedDateTime <DateTime>] [-RoleScopeTagIds <String[]>] [-Version <Int32>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-LastModifiedDateTime <DateTime>] [-RoleScopeTagIds <String[]>] [-Version <Int32>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaDeviceManagementResourceAccessProfile
- -BodyParameter <IMicrosoftGraphDeviceManagementResourceAccessProfileBase> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphDeviceManagementResourceAccessProfileBase> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -141,21 +141,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -255,13 +240,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementResourceAccessProfileBase
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementResourceAccessProfileBase
-
-### System.Collections.Hashtable
 
 ## NOTES
 

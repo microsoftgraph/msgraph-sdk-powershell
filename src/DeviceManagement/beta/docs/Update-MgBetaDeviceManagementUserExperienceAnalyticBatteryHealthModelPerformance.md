@@ -20,24 +20,24 @@ Update-MgBetaDeviceManagementUserExperienceAnalyticBatteryHealthModelPerformance
  [-AverageEstimatedRuntimeInMinutes <Int32>] [-AverageMaxCapacityPercentage <Int32>] [-Id <String>]
  [-Manufacturer <String>] [-MeanFullBatteryDrainCount <Int32>] [-MedianEstimatedRuntimeInMinutes <Int32>]
  [-MedianFullBatteryDrainCount <Int32>] [-MedianMaxCapacityPercentage <Int32>] [-Model <String>]
- [-ModelBatteryHealthScore <Int32>] [-ModelHealthStatus <UserExperienceAnalyticsHealthState>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ModelBatteryHealthScore <Int32>] [-ModelHealthStatus <UserExperienceAnalyticsHealthState>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaDeviceManagementUserExperienceAnalyticBatteryHealthModelPerformance
  -UserExperienceAnalyticsBatteryHealthModelPerformanceId <String>
- -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsBatteryHealthModelPerformance> [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsBatteryHealthModelPerformance> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaDeviceManagementUserExperienceAnalyticBatteryHealthModelPerformance
  -InputObject <IDeviceManagementIdentity>
- -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsBatteryHealthModelPerformance> [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsBatteryHealthModelPerformance> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -48,8 +48,8 @@ Update-MgBetaDeviceManagementUserExperienceAnalyticBatteryHealthModelPerformance
  [-AverageMaxCapacityPercentage <Int32>] [-Id <String>] [-Manufacturer <String>]
  [-MeanFullBatteryDrainCount <Int32>] [-MedianEstimatedRuntimeInMinutes <Int32>]
  [-MedianFullBatteryDrainCount <Int32>] [-MedianMaxCapacityPercentage <Int32>] [-Model <String>]
- [-ModelBatteryHealthScore <Int32>] [-ModelHealthStatus <UserExperienceAnalyticsHealthState>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ModelBatteryHealthScore <Int32>] [-ModelHealthStatus <UserExperienceAnalyticsHealthState>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -166,21 +166,6 @@ Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -403,13 +388,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsBatteryHealthModelPerformance
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsBatteryHealthModelPerformance
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -516,7 +497,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[MacOSSoftwareUpdateCategorySummaryId <String>]`: The unique identifier of macOSSoftwareUpdateCategorySummary
   - `[MacOSSoftwareUpdateStateSummaryId <String>]`: The unique identifier of macOSSoftwareUpdateStateSummary
   - `[MalwareStateForWindowsDeviceId <String>]`: The unique identifier of malwareStateForWindowsDevice
-  - `[ManagedDeviceCleanupRuleId <String>]`: The unique identifier of managedDeviceCleanupRule
   - `[ManagedDeviceEncryptionStateId <String>]`: The unique identifier of managedDeviceEncryptionState
   - `[ManagedDeviceId <String>]`: The unique identifier of managedDevice
   - `[ManagedDeviceMobileAppConfigurationStateId <String>]`: The unique identifier of managedDeviceMobileAppConfigurationState

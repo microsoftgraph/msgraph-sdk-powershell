@@ -15,13 +15,13 @@ Invoke function incidentReport
 ### Report (Default)
 ```
 Invoke-MgBetaReportServiceAnnouncementIssueIncident -ServiceHealthIssueId <String> -OutFile <String>
- [-Headers <IDictionary>] [-PassThru] [<CommonParameters>]
+ [-PassThru] [<CommonParameters>]
 ```
 
 ### ReportViaIdentity
 ```
 Invoke-MgBetaReportServiceAnnouncementIssueIncident -InputObject <IDevicesServiceAnnouncementIdentity>
- -OutFile <String> [-Headers <IDictionary>] [-PassThru] [<CommonParameters>]
+ -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -38,21 +38,6 @@ Invoke-MgBetaReportServiceAnnouncementIssueIncident -ServiceHealthIssueId $servi
 
 
 ## PARAMETERS
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
 
 ### -InputObject
 Identity Parameter
@@ -122,13 +107,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IDevicesServiceAnnouncementIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
-
-### System.Collections.Hashtable
 
 ## NOTES
 

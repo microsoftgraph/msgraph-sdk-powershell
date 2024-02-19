@@ -19,21 +19,20 @@ Update-MgGroupDriveRootListItemDocumentSetVersion -DocumentSetVersionId <String>
  [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>] [-Fields <Hashtable>] [-Id <String>]
  [-Items <IMicrosoftGraphDocumentSetVersionItem[]>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
  [-LastModifiedDateTime <DateTime>] [-Publication <IMicrosoftGraphPublicationFacet>]
- [-ShouldCaptureMinorVersion] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ShouldCaptureMinorVersion] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgGroupDriveRootListItemDocumentSetVersion -DocumentSetVersionId <String> -DriveId <String>
- -GroupId <String> -BodyParameter <IMicrosoftGraphDocumentSetVersion> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -GroupId <String> -BodyParameter <IMicrosoftGraphDocumentSetVersion> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgGroupDriveRootListItemDocumentSetVersion -InputObject <IFilesIdentity>
- -BodyParameter <IMicrosoftGraphDocumentSetVersion> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphDocumentSetVersion> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -43,7 +42,7 @@ Update-MgGroupDriveRootListItemDocumentSetVersion -InputObject <IFilesIdentity>
  [-CreatedDateTime <DateTime>] [-Fields <Hashtable>] [-Id <String>]
  [-Items <IMicrosoftGraphDocumentSetVersionItem[]>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
  [-LastModifiedDateTime <DateTime>] [-Publication <IMicrosoftGraphPublicationFacet>]
- [-ShouldCaptureMinorVersion] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ShouldCaptureMinorVersion] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -204,21 +203,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -371,13 +355,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDocumentSetVersion
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDocumentSetVersion
-
-### System.Collections.Hashtable
 
 ## NOTES
 

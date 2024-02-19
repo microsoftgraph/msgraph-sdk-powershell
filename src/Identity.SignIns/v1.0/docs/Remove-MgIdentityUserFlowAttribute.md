@@ -14,14 +14,14 @@ Delete a custom identityUserFlowAttribute.
 
 ### Delete (Default)
 ```
-Remove-MgIdentityUserFlowAttribute -IdentityUserFlowAttributeId <String> [-IfMatch <String>]
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-MgIdentityUserFlowAttribute -IdentityUserFlowAttributeId <String> [-IfMatch <String>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgIdentityUserFlowAttribute -InputObject <IIdentitySignInsIdentity> [-IfMatch <String>]
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-MgIdentityUserFlowAttribute -InputObject <IIdentitySignInsIdentity> [-IfMatch <String>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -37,21 +37,6 @@ Import-Module Microsoft.Graph.Identity.SignIns
 Remove-MgIdentityUserFlowAttribute -IdentityUserFlowAttributeId $identityUserFlowAttributeId
 
 ## PARAMETERS
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
 
 ### -IdentityUserFlowAttributeId
 The unique identifier of identityUserFlowAttribute
@@ -152,13 +137,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
-
-### System.Collections.Hashtable
 
 ## NOTES
 

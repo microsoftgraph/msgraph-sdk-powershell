@@ -18,14 +18,13 @@ The template named Group.Unified can be used to configure tenant-wide Microsoft 
 ### CreateExpanded (Default)
 ```
 New-MgBetaDirectorySetting [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>]
- [-TemplateId <String>] [-Values <IMicrosoftGraphSettingValue[]>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-TemplateId <String>] [-Values <IMicrosoftGraphSettingValue[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgBetaDirectorySetting -BodyParameter <IMicrosoftGraphDirectorySetting> [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaDirectorySetting -BodyParameter <IMicrosoftGraphDirectorySetting> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -111,21 +110,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -215,13 +199,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectorySetting
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectorySetting
-
-### System.Collections.Hashtable
 
 ## NOTES
 

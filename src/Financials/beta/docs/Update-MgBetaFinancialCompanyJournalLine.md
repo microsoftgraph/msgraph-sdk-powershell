@@ -18,22 +18,20 @@ Update-MgBetaFinancialCompanyJournalLine -CompanyId <String> -JournalLineId <Str
  [-Account <IMicrosoftGraphAccount>] [-AccountId <String>] [-AccountNumber <String>]
  [-AdditionalProperties <Hashtable>] [-Amount <Decimal>] [-Comment <String>] [-Description <String>]
  [-DocumentNumber <String>] [-ExternalDocumentNumber <String>] [-Id <String>] [-JournalDisplayName <String>]
- [-LastModifiedDateTime <DateTime>] [-LineNumber <Int32>] [-PostingDate <DateTime>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-LastModifiedDateTime <DateTime>] [-LineNumber <Int32>] [-PostingDate <DateTime>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaFinancialCompanyJournalLine -CompanyId <String> -JournalLineId <String>
- -BodyParameter <IMicrosoftGraphJournalLine> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphJournalLine> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update1
 ```
 Update-MgBetaFinancialCompanyJournalLine -CompanyId <String> -JournalId <String> -JournalLineId <String>
- -BodyParameter <IMicrosoftGraphJournalLine> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphJournalLine> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateExpanded1
@@ -42,22 +40,20 @@ Update-MgBetaFinancialCompanyJournalLine -CompanyId <String> -JournalId <String>
  [-Account <IMicrosoftGraphAccount>] [-AccountId <String>] [-AccountNumber <String>]
  [-AdditionalProperties <Hashtable>] [-Amount <Decimal>] [-Comment <String>] [-Description <String>]
  [-DocumentNumber <String>] [-ExternalDocumentNumber <String>] [-Id <String>] [-JournalDisplayName <String>]
- [-LastModifiedDateTime <DateTime>] [-LineNumber <Int32>] [-PostingDate <DateTime>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-LastModifiedDateTime <DateTime>] [-LineNumber <Int32>] [-PostingDate <DateTime>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaFinancialCompanyJournalLine -InputObject <IFinancialsIdentity>
- -BodyParameter <IMicrosoftGraphJournalLine> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphJournalLine> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
 Update-MgBetaFinancialCompanyJournalLine -InputObject <IFinancialsIdentity>
- -BodyParameter <IMicrosoftGraphJournalLine> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphJournalLine> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -66,8 +62,8 @@ Update-MgBetaFinancialCompanyJournalLine -InputObject <IFinancialsIdentity>
  [-Account <IMicrosoftGraphAccount>] [-AccountId <String>] [-AccountNumber <String>]
  [-AdditionalProperties <Hashtable>] [-Amount <Decimal>] [-Comment <String>] [-Description <String>]
  [-DocumentNumber <String>] [-ExternalDocumentNumber <String>] [-Id <String>] [-JournalDisplayName <String>]
- [-LastModifiedDateTime <DateTime>] [-LineNumber <Int32>] [-PostingDate <DateTime>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-LastModifiedDateTime <DateTime>] [-LineNumber <Int32>] [-PostingDate <DateTime>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
@@ -76,8 +72,8 @@ Update-MgBetaFinancialCompanyJournalLine -InputObject <IFinancialsIdentity>
  [-Account <IMicrosoftGraphAccount>] [-AccountId <String>] [-AccountNumber <String>]
  [-AdditionalProperties <Hashtable>] [-Amount <Decimal>] [-Comment <String>] [-Description <String>]
  [-DocumentNumber <String>] [-ExternalDocumentNumber <String>] [-Id <String>] [-JournalDisplayName <String>]
- [-LastModifiedDateTime <DateTime>] [-LineNumber <Int32>] [-PostingDate <DateTime>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-LastModifiedDateTime <DateTime>] [-LineNumber <Int32>] [-PostingDate <DateTime>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -268,21 +264,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 .
 
@@ -444,13 +425,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphJournalLine
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphJournalLine
-
-### System.Collections.Hashtable
 
 ## NOTES
 

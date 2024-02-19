@@ -20,29 +20,27 @@ To restore a team from its archived state, use the API to unarchive.
 ### ArchiveExpanded (Default)
 ```
 Invoke-MgArchiveTeam -TeamId <String> [-AdditionalProperties <Hashtable>]
- [-ShouldSetSpoSiteReadOnlyForMembers] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-ShouldSetSpoSiteReadOnlyForMembers] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Archive
 ```
 Invoke-MgArchiveTeam -TeamId <String>
  -BodyParameter <IPathsBezc4TeamsTeamIdMicrosoftGraphArchivePostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ArchiveViaIdentity
 ```
 Invoke-MgArchiveTeam -InputObject <ITeamsIdentity>
  -BodyParameter <IPathsBezc4TeamsTeamIdMicrosoftGraphArchivePostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ArchiveViaIdentityExpanded
 ```
 Invoke-MgArchiveTeam -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
- [-ShouldSetSpoSiteReadOnlyForMembers] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-ShouldSetSpoSiteReadOnlyForMembers] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -89,21 +87,6 @@ Parameter Sets: Archive, ArchiveViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -211,13 +194,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
-
-### System.Collections.Hashtable
 
 ## NOTES
 

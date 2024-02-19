@@ -17,29 +17,27 @@ Update the navigation property permissionGrants in teams
 Update-MgTeamPermissionGrant -ResourceSpecificPermissionGrantId <String> -TeamId <String>
  [-AdditionalProperties <Hashtable>] [-ClientAppId <String>] [-ClientId <String>]
  [-DeletedDateTime <DateTime>] [-Id <String>] [-Permission <String>] [-PermissionType <String>]
- [-ResourceAppId <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ResourceAppId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgTeamPermissionGrant -ResourceSpecificPermissionGrantId <String> -TeamId <String>
- -BodyParameter <IMicrosoftGraphResourceSpecificPermissionGrant> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphResourceSpecificPermissionGrant> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgTeamPermissionGrant -InputObject <ITeamsIdentity>
- -BodyParameter <IMicrosoftGraphResourceSpecificPermissionGrant> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphResourceSpecificPermissionGrant> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgTeamPermissionGrant -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
  [-ClientAppId <String>] [-ClientId <String>] [-DeletedDateTime <DateTime>] [-Id <String>]
- [-Permission <String>] [-PermissionType <String>] [-ResourceAppId <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Permission <String>] [-PermissionType <String>] [-ResourceAppId <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -139,21 +137,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -308,13 +291,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphResourceSpecificPermissionGrant
-
-### System.Collections.Hashtable
 
 ## NOTES
 

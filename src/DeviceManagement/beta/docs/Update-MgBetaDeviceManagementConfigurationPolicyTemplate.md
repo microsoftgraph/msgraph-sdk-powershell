@@ -21,23 +21,22 @@ Update-MgBetaDeviceManagementConfigurationPolicyTemplate
  [-Platforms <DeviceManagementConfigurationPlatforms>]
  [-SettingTemplates <IMicrosoftGraphDeviceManagementConfigurationSettingTemplate[]>]
  [-Technologies <DeviceManagementConfigurationTechnologies>]
- [-TemplateFamily <DeviceManagementConfigurationTemplateFamily>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-TemplateFamily <DeviceManagementConfigurationTemplateFamily>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaDeviceManagementConfigurationPolicyTemplate
  -DeviceManagementConfigurationPolicyTemplateId <String>
- -BodyParameter <IMicrosoftGraphDeviceManagementConfigurationPolicyTemplate> [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphDeviceManagementConfigurationPolicyTemplate> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaDeviceManagementConfigurationPolicyTemplate -InputObject <IDeviceManagementIdentity>
- -BodyParameter <IMicrosoftGraphDeviceManagementConfigurationPolicyTemplate> [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphDeviceManagementConfigurationPolicyTemplate> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -49,8 +48,7 @@ Update-MgBetaDeviceManagementConfigurationPolicyTemplate -InputObject <IDeviceMa
  [-Platforms <DeviceManagementConfigurationPlatforms>]
  [-SettingTemplates <IMicrosoftGraphDeviceManagementConfigurationSettingTemplate[]>]
  [-Technologies <DeviceManagementConfigurationTechnologies>]
- [-TemplateFamily <DeviceManagementConfigurationTemplateFamily>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-TemplateFamily <DeviceManagementConfigurationTemplateFamily>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -192,21 +190,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -358,13 +341,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementConfigurationPolicyTemplate
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementConfigurationPolicyTemplate
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -410,7 +389,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[MinDeviceOccurrence <Int32?>]`: Minimum times setting can be set on device. A MinDeviceOccurrence of 0 means setting is optional
       - `[OffsetUri <String>]`: Offset CSP Path from Base
       - `[ReferredSettingInformationList <IMicrosoftGraphDeviceManagementConfigurationReferredSettingInformation[]>]`: List of referred setting information.
-        - `[SettingDefinitionId <String>]`: Setting definition id that is being referred to a setting. Applicable for reusable setting.
+        - `[SettingDefinitionId <String>]`: Setting definition id that is being referred to a setting. Applicable for reusable setting
       - `[RootDefinitionId <String>]`: Root setting definition id if the setting is a child setting.
       - `[SettingUsage <DeviceManagementConfigurationSettingUsage?>]`: Supported setting types
       - `[UxBehavior <DeviceManagementConfigurationControlType?>]`: Setting control type representation in the UX
@@ -504,7 +483,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[MacOSSoftwareUpdateCategorySummaryId <String>]`: The unique identifier of macOSSoftwareUpdateCategorySummary
   - `[MacOSSoftwareUpdateStateSummaryId <String>]`: The unique identifier of macOSSoftwareUpdateStateSummary
   - `[MalwareStateForWindowsDeviceId <String>]`: The unique identifier of malwareStateForWindowsDevice
-  - `[ManagedDeviceCleanupRuleId <String>]`: The unique identifier of managedDeviceCleanupRule
   - `[ManagedDeviceEncryptionStateId <String>]`: The unique identifier of managedDeviceEncryptionState
   - `[ManagedDeviceId <String>]`: The unique identifier of managedDevice
   - `[ManagedDeviceMobileAppConfigurationStateId <String>]`: The unique identifier of managedDeviceMobileAppConfigurationState
@@ -591,7 +569,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[MinDeviceOccurrence <Int32?>]`: Minimum times setting can be set on device. A MinDeviceOccurrence of 0 means setting is optional
     - `[OffsetUri <String>]`: Offset CSP Path from Base
     - `[ReferredSettingInformationList <IMicrosoftGraphDeviceManagementConfigurationReferredSettingInformation[]>]`: List of referred setting information.
-      - `[SettingDefinitionId <String>]`: Setting definition id that is being referred to a setting. Applicable for reusable setting.
+      - `[SettingDefinitionId <String>]`: Setting definition id that is being referred to a setting. Applicable for reusable setting
     - `[RootDefinitionId <String>]`: Root setting definition id if the setting is a child setting.
     - `[SettingUsage <DeviceManagementConfigurationSettingUsage?>]`: Supported setting types
     - `[UxBehavior <DeviceManagementConfigurationControlType?>]`: Setting control type representation in the UX

@@ -16,29 +16,27 @@ The caller doesn't have to provide a secret.
 ### GenerateExpanded (Default)
 ```
 New-MgBetaTrustFrameworkKeySetKey -TrustFrameworkKeySetId <String> [-AdditionalProperties <Hashtable>]
- [-Exp <Int64>] [-Kty <String>] [-Nbf <Int64>] [-Use <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Exp <Int64>] [-Kty <String>] [-Nbf <Int64>] [-Use <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Generate
 ```
 New-MgBetaTrustFrameworkKeySetKey -TrustFrameworkKeySetId <String>
  -BodyParameter <IPaths1IaopbhTrustframeworkKeysetsTrustframeworkkeysetIdMicrosoftGraphGeneratekeyPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### GenerateViaIdentity
 ```
 New-MgBetaTrustFrameworkKeySetKey -InputObject <IIdentitySignInsIdentity>
  -BodyParameter <IPaths1IaopbhTrustframeworkKeysetsTrustframeworkkeysetIdMicrosoftGraphGeneratekeyPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### GenerateViaIdentityExpanded
 ```
 New-MgBetaTrustFrameworkKeySetKey -InputObject <IIdentitySignInsIdentity> [-AdditionalProperties <Hashtable>]
- [-Exp <Int64>] [-Kty <String>] [-Nbf <Int64>] [-Use <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Exp <Int64>] [-Kty <String>] [-Nbf <Int64>] [-Use <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -106,21 +104,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -240,13 +223,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPaths1IaopbhTrustframeworkKeysetsTrustframeworkkeysetIdMicrosoftGraphGeneratekeyPostRequestbodyContentApplicationJsonSchema
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTrustFrameworkKey
-
-### System.Collections.Hashtable
 
 ## NOTES
 

@@ -18,13 +18,13 @@ New-MgBetaDeviceManagementGroupPolicyDefinitionFile [-AdditionalProperties <Hash
  [-Definitions <IMicrosoftGraphGroupPolicyDefinition[]>] [-Description <String>] [-DisplayName <String>]
  [-FileName <String>] [-Id <String>] [-LanguageCodes <String[]>] [-LastModifiedDateTime <DateTime>]
  [-PolicyType <GroupPolicyType>] [-Revision <String>] [-TargetNamespace <String>] [-TargetPrefix <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaDeviceManagementGroupPolicyDefinitionFile -BodyParameter <IMicrosoftGraphGroupPolicyDefinitionFile>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -141,21 +141,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -303,13 +288,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyDefinitionFile
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyDefinitionFile
-
-### System.Collections.Hashtable
 
 ## NOTES
 

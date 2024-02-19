@@ -15,36 +15,31 @@ Update the properties of an alertRule object.
 ### UpdateExpanded (Default)
 ```
 Update-MgBetaDeviceManagementMonitoringAlertRule -AlertRuleId <String> [-AdditionalProperties <Hashtable>]
- [-AlertRuleTemplate <String>] [-Conditions <IMicrosoftGraphDeviceManagementRuleCondition[]>]
- [-Description <String>] [-DisplayName <String>] [-Enabled] [-Id <String>] [-IsSystemRule]
- [-NotificationChannels <IMicrosoftGraphDeviceManagementNotificationChannel[]>] [-Severity <String>]
- [-Threshold <IMicrosoftGraphDeviceManagementRuleThreshold>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
+ [-AlertRuleTemplate <String>] [-Description <String>] [-DisplayName <String>] [-Enabled] [-Id <String>]
+ [-IsSystemRule] [-NotificationChannels <IMicrosoftGraphDeviceManagementNotificationChannel[]>]
+ [-Severity <String>] [-Threshold <IMicrosoftGraphDeviceManagementRuleThreshold>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaDeviceManagementMonitoringAlertRule -AlertRuleId <String>
- -BodyParameter <IMicrosoftGraphDeviceManagementAlertRule> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphDeviceManagementAlertRule> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaDeviceManagementMonitoringAlertRule -InputObject <IDeviceManagementIdentity>
- -BodyParameter <IMicrosoftGraphDeviceManagementAlertRule> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphDeviceManagementAlertRule> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgBetaDeviceManagementMonitoringAlertRule -InputObject <IDeviceManagementIdentity>
- [-AdditionalProperties <Hashtable>] [-AlertRuleTemplate <String>]
- [-Conditions <IMicrosoftGraphDeviceManagementRuleCondition[]>] [-Description <String>]
+ [-AdditionalProperties <Hashtable>] [-AlertRuleTemplate <String>] [-Description <String>]
  [-DisplayName <String>] [-Enabled] [-Id <String>] [-IsSystemRule]
  [-NotificationChannels <IMicrosoftGraphDeviceManagementNotificationChannel[]>] [-Severity <String>]
- [-Threshold <IMicrosoftGraphDeviceManagementRuleThreshold>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Threshold <IMicrosoftGraphDeviceManagementRuleThreshold>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -129,23 +124,6 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Conditions
-The conditions that determine when to send alerts.
-For example, you can configure a condition to send an alert when provisioning fails for six or more Cloud PCs.
-To construct, see NOTES section for CONDITIONS properties and create a hash table.
-
-```yaml
-Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementRuleCondition[]
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Description
 The rule description.
 
@@ -189,21 +167,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -343,13 +306,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementAlertRule
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementAlertRule
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -364,12 +323,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[AlertRuleTemplate <String>]`: alertRuleTemplate
-  - `[Conditions <IMicrosoftGraphDeviceManagementRuleCondition[]>]`: The conditions that determine when to send alerts. For example, you can configure a condition to send an alert when provisioning fails for six or more Cloud PCs.
-    - `[Aggregation <String>]`: aggregationType
-    - `[ConditionCategory <String>]`: conditionCategory
-    - `[Operator <String>]`: operatorType
-    - `[RelationshipType <String>]`: relationshipType
-    - `[ThresholdValue <String>]`: The threshold value of the alert condition. The threshold value can be a number in string form or string like 'WestUS'.
   - `[Description <String>]`: The rule description.
   - `[DisplayName <String>]`: The display name of the rule.
   - `[Enabled <Boolean?>]`: The status of the rule that indicates whether the rule is enabled or disabled. If true, the rule is enabled; otherwise, the rule is disabled.
@@ -385,13 +338,6 @@ To create the parameters described below, construct a hash table containing the 
     - `[Aggregation <String>]`: aggregationType
     - `[Operator <String>]`: operatorType
     - `[Target <Int32?>]`: The target threshold value.
-
-`CONDITIONS <IMicrosoftGraphDeviceManagementRuleCondition[]>`: The conditions that determine when to send alerts. For example, you can configure a condition to send an alert when provisioning fails for six or more Cloud PCs.
-  - `[Aggregation <String>]`: aggregationType
-  - `[ConditionCategory <String>]`: conditionCategory
-  - `[Operator <String>]`: operatorType
-  - `[RelationshipType <String>]`: relationshipType
-  - `[ThresholdValue <String>]`: The threshold value of the alert condition. The threshold value can be a number in string form or string like 'WestUS'.
 
 `INPUTOBJECT <IDeviceManagementIdentity>`: Identity Parameter
   - `[AdvancedThreatProtectionOnboardingDeviceSettingStateId <String>]`: The unique identifier of advancedThreatProtectionOnboardingDeviceSettingState
@@ -473,7 +419,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[MacOSSoftwareUpdateCategorySummaryId <String>]`: The unique identifier of macOSSoftwareUpdateCategorySummary
   - `[MacOSSoftwareUpdateStateSummaryId <String>]`: The unique identifier of macOSSoftwareUpdateStateSummary
   - `[MalwareStateForWindowsDeviceId <String>]`: The unique identifier of malwareStateForWindowsDevice
-  - `[ManagedDeviceCleanupRuleId <String>]`: The unique identifier of managedDeviceCleanupRule
   - `[ManagedDeviceEncryptionStateId <String>]`: The unique identifier of managedDeviceEncryptionState
   - `[ManagedDeviceId <String>]`: The unique identifier of managedDevice
   - `[ManagedDeviceMobileAppConfigurationStateId <String>]`: The unique identifier of managedDeviceMobileAppConfigurationState

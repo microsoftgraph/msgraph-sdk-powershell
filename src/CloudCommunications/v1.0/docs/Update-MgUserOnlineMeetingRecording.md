@@ -17,21 +17,19 @@ Update the navigation property recordings in users
 Update-MgUserOnlineMeetingRecording -CallRecordingId <String> -OnlineMeetingId <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-ContentInputFile <String>] [-CreatedDateTime <DateTime>] [-Id <String>]
  [-MeetingId <String>] [-MeetingOrganizer <IMicrosoftGraphIdentitySet>] [-RecordingContentUrl <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgUserOnlineMeetingRecording -CallRecordingId <String> -OnlineMeetingId <String> -UserId <String>
- -BodyParameter <IMicrosoftGraphCallRecording> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphCallRecording> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgUserOnlineMeetingRecording -InputObject <ICloudCommunicationsIdentity>
- -BodyParameter <IMicrosoftGraphCallRecording> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphCallRecording> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -39,7 +37,7 @@ Update-MgUserOnlineMeetingRecording -InputObject <ICloudCommunicationsIdentity>
 Update-MgUserOnlineMeetingRecording -InputObject <ICloudCommunicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-ContentInputFile <String>] [-CreatedDateTime <DateTime>] [-Id <String>]
  [-MeetingId <String>] [-MeetingOrganizer <IMicrosoftGraphIdentitySet>] [-RecordingContentUrl <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -140,21 +138,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -308,13 +291,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCallRecording
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCallRecording
-
-### System.Collections.Hashtable
 
 ## NOTES
 

@@ -22,22 +22,22 @@ Update-MgDeviceManagementUserExperienceAnalyticDevicePerformance
  [-HealthStatus <UserExperienceAnalyticsHealthState>] [-Id <String>] [-LoginScore <Int32>]
  [-Manufacturer <String>] [-Model <String>] [-ModelStartupPerformanceScore <Double>]
  [-OperatingSystemVersion <String>] [-ResponsiveDesktopTimeInMS <Int32>] [-RestartCount <Int32>]
- [-StartupPerformanceScore <Double>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-StartupPerformanceScore <Double>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgDeviceManagementUserExperienceAnalyticDevicePerformance
  -UserExperienceAnalyticsDevicePerformanceId <String>
- -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsDevicePerformance> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsDevicePerformance> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgDeviceManagementUserExperienceAnalyticDevicePerformance -InputObject <IDeviceManagementIdentity>
- -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsDevicePerformance> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsDevicePerformance> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -49,7 +49,7 @@ Update-MgDeviceManagementUserExperienceAnalyticDevicePerformance -InputObject <I
  [-GroupPolicyLoginTimeInMS <Int32>] [-HealthStatus <UserExperienceAnalyticsHealthState>] [-Id <String>]
  [-LoginScore <Int32>] [-Manufacturer <String>] [-Model <String>] [-ModelStartupPerformanceScore <Double>]
  [-OperatingSystemVersion <String>] [-ResponsiveDesktopTimeInMS <Int32>] [-RestartCount <Int32>]
- [-StartupPerformanceScore <Double>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-StartupPerformanceScore <Double>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -269,21 +269,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -512,13 +497,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsDevicePerformance
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsDevicePerformance
-
-### System.Collections.Hashtable
 
 ## NOTES
 

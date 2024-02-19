@@ -307,8 +307,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemAnalytics
 
-### System.Collections.Hashtable
-
 ## NOTES
 
 ALIASES
@@ -1788,7 +1786,6 @@ To create the parameters described below, construct a hash table containing the 
             - `[Threads <IMicrosoftGraphConversationThread[]>]`: The group's conversation threads. Nullable.
             - `[TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>]`: The groups that a group is a member of, either directly or through nested membership. Nullable.
             - `[TransitiveMembers <IMicrosoftGraphDirectoryObject[]>]`: The direct and transitive members of a group. Nullable.
-            - `[UniqueName <String>]`: 
             - `[UnseenCount <Int32?>]`: Count of conversations that have received new posts since the signed-in user last visited the group. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
             - `[Visibility <String>]`: Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups when the groups are created. It can't be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default, and the Microsoft 365 group is Public. Groups assignable to roles are always Private. To learn more, see group visibility options. Returned by default. Nullable.
           - `[GuestSettings <IMicrosoftGraphTeamGuestSettings>]`: teamGuestSettings
@@ -4691,7 +4688,6 @@ To create the parameters described below, construct a hash table containing the 
               - `[Threads <IMicrosoftGraphConversationThread[]>]`: The group's conversation threads. Nullable.
               - `[TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>]`: The groups that a group is a member of, either directly or through nested membership. Nullable.
               - `[TransitiveMembers <IMicrosoftGraphDirectoryObject[]>]`: The direct and transitive members of a group. Nullable.
-              - `[UniqueName <String>]`: 
               - `[UnseenCount <Int32?>]`: Count of conversations that have received new posts since the signed-in user last visited the group. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
               - `[Visibility <String>]`: Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups when the groups are created. It can't be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default, and the Microsoft 365 group is Public. Groups assignable to roles are always Private. To learn more, see group visibility options. Returned by default. Nullable.
             - `[GuestSettings <IMicrosoftGraphTeamGuestSettings>]`: teamGuestSettings
@@ -7638,7 +7634,6 @@ To create the parameters described below, construct a hash table containing the 
             - `[Threads <IMicrosoftGraphConversationThread[]>]`: The group's conversation threads. Nullable.
             - `[TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>]`: The groups that a group is a member of, either directly or through nested membership. Nullable.
             - `[TransitiveMembers <IMicrosoftGraphDirectoryObject[]>]`: The direct and transitive members of a group. Nullable.
-            - `[UniqueName <String>]`: 
             - `[UnseenCount <Int32?>]`: Count of conversations that have received new posts since the signed-in user last visited the group. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
             - `[Visibility <String>]`: Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups when the groups are created. It can't be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default, and the Microsoft 365 group is Public. Groups assignable to roles are always Private. To learn more, see group visibility options. Returned by default. Nullable.
           - `[GuestSettings <IMicrosoftGraphTeamGuestSettings>]`: teamGuestSettings
@@ -10543,7 +10538,6 @@ To create the parameters described below, construct a hash table containing the 
             - `[Threads <IMicrosoftGraphConversationThread[]>]`: The group's conversation threads. Nullable.
             - `[TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>]`: The groups that a group is a member of, either directly or through nested membership. Nullable.
             - `[TransitiveMembers <IMicrosoftGraphDirectoryObject[]>]`: The direct and transitive members of a group. Nullable.
-            - `[UniqueName <String>]`: 
             - `[UnseenCount <Int32?>]`: Count of conversations that have received new posts since the signed-in user last visited the group. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
             - `[Visibility <String>]`: Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups when the groups are created. It can't be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default, and the Microsoft 365 group is Public. Groups assignable to roles are always Private. To learn more, see group visibility options. Returned by default. Nullable.
           - `[GuestSettings <IMicrosoftGraphTeamGuestSettings>]`: teamGuestSettings

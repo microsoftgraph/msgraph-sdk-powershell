@@ -17,22 +17,20 @@ Update the navigation property operations in groups
 Update-MgBetaGroupDriveListOperation -DriveId <String> -GroupId <String> -RichLongRunningOperationId <String>
  [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>] [-Error <IMicrosoftGraphPublicError>]
  [-Id <String>] [-LastActionDateTime <DateTime>] [-PercentageComplete <Int32>] [-ResourceId <String>]
- [-ResourceLocation <String>] [-Status <String>] [-StatusDetail <String>] [-Type <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ResourceLocation <String>] [-Status <String>] [-StatusDetail <String>] [-Type <String>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaGroupDriveListOperation -DriveId <String> -GroupId <String> -RichLongRunningOperationId <String>
- -BodyParameter <IMicrosoftGraphRichLongRunningOperation> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphRichLongRunningOperation> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaGroupDriveListOperation -InputObject <IFilesIdentity>
- -BodyParameter <IMicrosoftGraphRichLongRunningOperation> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphRichLongRunningOperation> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -40,8 +38,8 @@ Update-MgBetaGroupDriveListOperation -InputObject <IFilesIdentity>
 Update-MgBetaGroupDriveListOperation -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>]
  [-CreatedDateTime <DateTime>] [-Error <IMicrosoftGraphPublicError>] [-Id <String>]
  [-LastActionDateTime <DateTime>] [-PercentageComplete <Int32>] [-ResourceId <String>]
- [-ResourceLocation <String>] [-Status <String>] [-StatusDetail <String>] [-Type <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ResourceLocation <String>] [-Status <String>] [-StatusDetail <String>] [-Type <String>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -98,7 +96,7 @@ Accept wildcard characters: False
 
 ### -CreatedDateTime
 The start time of the operation.
-The timestamp type represents date and time information using ISO 8601 format and is always in UTC.
+The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
 For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 
 ```yaml
@@ -159,21 +157,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -208,7 +191,7 @@ Accept wildcard characters: False
 
 ### -LastActionDateTime
 The time of the last action in the operation.
-The timestamp type represents date and time information using ISO 8601 format and is always in UTC.
+The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
 For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 
 ```yaml
@@ -368,13 +351,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRichLongRunningOperation
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRichLongRunningOperation
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -387,8 +366,8 @@ To create the parameters described below, construct a hash table containing the 
 
 `BODYPARAMETER <IMicrosoftGraphRichLongRunningOperation>`: richLongRunningOperation
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[CreatedDateTime <DateTime?>]`: The start time of the operation. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-  - `[LastActionDateTime <DateTime?>]`: The time of the last action in the operation. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+  - `[CreatedDateTime <DateTime?>]`: The start time of the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+  - `[LastActionDateTime <DateTime?>]`: The time of the last action in the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
   - `[ResourceLocation <String>]`: URI of the resource that the operation is performed on.
   - `[Status <String>]`: longRunningOperationStatus
   - `[StatusDetail <String>]`: Details about the status of the operation.

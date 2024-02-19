@@ -19,19 +19,19 @@ Update-MgSecurityAttackSimulationTraining -TrainingId <String> [-AdditionalPrope
  [-Description <String>] [-DisplayName <String>] [-DurationInMinutes <Int32>] [-HasEvaluation] [-Id <String>]
  [-LanguageDetails <IMicrosoftGraphTrainingLanguageDetail[]>] [-LastModifiedBy <IMicrosoftGraphEmailIdentity>]
  [-LastModifiedDateTime <DateTime>] [-Source <String>] [-SupportedLocales <String[]>] [-Tags <String[]>]
- [-Type <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Type <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgSecurityAttackSimulationTraining -TrainingId <String> -BodyParameter <IMicrosoftGraphTraining>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgSecurityAttackSimulationTraining -InputObject <ISecurityIdentity>
- -BodyParameter <IMicrosoftGraphTraining> [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphTraining> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -41,7 +41,7 @@ Update-MgSecurityAttackSimulationTraining -InputObject <ISecurityIdentity> [-Add
  [-Description <String>] [-DisplayName <String>] [-DurationInMinutes <Int32>] [-HasEvaluation] [-Id <String>]
  [-LanguageDetails <IMicrosoftGraphTrainingLanguageDetail[]>] [-LastModifiedBy <IMicrosoftGraphEmailIdentity>]
  [-LastModifiedDateTime <DateTime>] [-Source <String>] [-SupportedLocales <String[]>] [-Tags <String[]>]
- [-Type <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Type <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -201,21 +201,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -415,13 +400,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTraining
-
-### System.Collections.Hashtable
 
 ## NOTES
 

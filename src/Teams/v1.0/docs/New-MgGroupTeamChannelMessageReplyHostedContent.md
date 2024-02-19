@@ -16,28 +16,28 @@ Create new navigation property to hostedContents for groups
 ```
 New-MgGroupTeamChannelMessageReplyHostedContent -ChannelId <String> -ChatMessageId <String>
  -ChatMessageId1 <String> -GroupId <String> [-AdditionalProperties <Hashtable>]
- [-ContentBytesInputFile <String>] [-ContentType <String>] [-Id <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-ContentBytesInputFile <String>] [-ContentType <String>] [-Id <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgGroupTeamChannelMessageReplyHostedContent -ChannelId <String> -ChatMessageId <String>
- -ChatMessageId1 <String> -GroupId <String> -BodyParameter <Hashtable> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -ChatMessageId1 <String> -GroupId <String> -BodyParameter <Hashtable> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgGroupTeamChannelMessageReplyHostedContent -InputObject <ITeamsIdentity> -BodyParameter <Hashtable>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgGroupTeamChannelMessageReplyHostedContent -InputObject <ITeamsIdentity>
  [-AdditionalProperties <Hashtable>] [-ContentBytesInputFile <String>] [-ContentType <String>] [-Id <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -191,21 +191,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -278,13 +263,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Collections.Hashtable
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphChatMessageHostedContent
-
-### System.Collections.Hashtable
 
 ## NOTES
 

@@ -21,13 +21,12 @@ New-MgBetaDirectoryRecommendation [-ActionSteps <IMicrosoftGraphActionStep[]>]
  [-ImpactType <String>] [-Insights <String>] [-LastCheckedDateTime <DateTime>] [-LastModifiedBy <String>]
  [-LastModifiedDateTime <DateTime>] [-MaxScore <Double>] [-PostponeUntilDateTime <DateTime>]
  [-Priority <String>] [-RecommendationType <String>] [-ReleaseType <String>] [-RemediationImpact <String>]
- [-Status <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Status <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgBetaDirectoryRecommendation -BodyParameter <Hashtable> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+New-MgBetaDirectoryRecommendation -BodyParameter <Hashtable> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -186,21 +185,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -475,13 +459,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Collections.Hashtable
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRecommendation
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -504,8 +484,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[AddedDateTime <DateTime?>]`: The date and time when the impactedResource object was initially associated with the recommendation.
   - `[AdditionalDetails <IMicrosoftGraphKeyValue[]>]`: Additional information unique to the impactedResource to help contextualize the recommendation.
-    - `[Key <String>]`: Contains the name of the field that a value is associated with.
-    - `[Value <String>]`: Contains the corresponding value for the specified key.
+    - `[Key <String>]`: Key.
+    - `[Value <String>]`: Value.
   - `[ApiUrl <String>]`: The URL link to the corresponding Microsoft Entra resource.
   - `[DisplayName <String>]`: Friendly name of the Microsoft Entra resource.
   - `[LastModifiedBy <String>]`: Name of the user or service that last updated the status.

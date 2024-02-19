@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.CloudCommunications
-Module Guid: 14d63104-efe2-450d-8a79-7aa26a63a187
+Module Guid: b748c3c5-d1c6-49af-8d37-3d1c2efbfdca
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.cloudcommunications
 Help Version: 1.0.0.0
 Locale: en-US
@@ -77,8 +77,7 @@ Get the number of the resource
 Get onlineMeetings from communications
 
 ### [Get-MgCommunicationOnlineMeetingAttendanceReport](Get-MgCommunicationOnlineMeetingAttendanceReport.md)
-The attendance reports of an online meeting.
-Read-only.
+Get attendanceReports from communications
 
 ### [Get-MgCommunicationOnlineMeetingAttendanceReportAttendanceRecord](Get-MgCommunicationOnlineMeetingAttendanceReportAttendanceRecord.md)
 List of attendance records of an attendance report.
@@ -144,8 +143,7 @@ For example, you can: Teams live event attendee report (deprecated) is an online
 For details, see Online meeting artifacts and permissions.
 
 ### [Get-MgUserOnlineMeetingAttendanceReport](Get-MgUserOnlineMeetingAttendanceReport.md)
-The attendance reports of an online meeting.
-Read-only.
+Get attendanceReports from users
 
 ### [Get-MgUserOnlineMeetingAttendanceReportAttendanceRecord](Get-MgUserOnlineMeetingAttendanceReportAttendanceRecord.md)
 List of attendance records of an attendance report.
@@ -395,15 +393,6 @@ Delete navigation property presence for users
 
 ### [Rename-MgCommunicationCallScreenSharingRole](Rename-MgCommunicationCallScreenSharingRole.md)
 Allow applications to share screen content with the participants of a group call.
-
-### [Send-MgCommunicationCallDtmfTone](Send-MgCommunicationCallDtmfTone.md)
-Invoke action sendDtmfTones
-
-### [Send-MgCommunicationOnlineMeetingVirtualAppointmentReminderSm](Send-MgCommunicationOnlineMeetingVirtualAppointmentReminderSm.md)
-Invoke action sendVirtualAppointmentReminderSms
-
-### [Send-MgCommunicationOnlineMeetingVirtualAppointmentSm](Send-MgCommunicationOnlineMeetingVirtualAppointmentSm.md)
-Invoke action sendVirtualAppointmentSms
 
 ### [Set-MgCommunicationOnlineMeetingAttendeeReport](Set-MgCommunicationOnlineMeetingAttendeeReport.md)
 Update attendeeReport for the navigation property onlineMeetings in communications

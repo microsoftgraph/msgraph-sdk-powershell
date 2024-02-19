@@ -15,15 +15,14 @@ Invoke function getStorageAccounts
 ### Get (Default)
 ```
 Get-MgBetaDeviceManagementVirtualEndpointSnapshotStorageAccount -SubscriptionId <String> [-Count]
- [-Filter <String>] [-Search <String>] [-Skip <Int32>] [-Top <Int32>] [-Headers <IDictionary>]
- [<CommonParameters>]
+ [-Filter <String>] [-Search <String>] [-Skip <Int32>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
 Get-MgBetaDeviceManagementVirtualEndpointSnapshotStorageAccount
  -InputObject <IDeviceManagementFunctionsIdentity> [-Count] [-Filter <String>] [-Search <String>]
- [-Skip <Int32>] [-Top <Int32>] [-Headers <IDictionary>] [<CommonParameters>]
+ [-Skip <Int32>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -74,21 +73,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -175,13 +159,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementFunctionsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcForensicStorageAccount
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -209,7 +189,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[EnrollmentType <String>]`: Usage: enrollmentType='{enrollmentType}'
   - `[ExpiringBeforeDateTime <String>]`: Usage: expiringBeforeDateTime='{expiringBeforeDateTime}'
   - `[GroupId <String>]`: Usage: groupId='{groupId}'
-  - `[Id <String>]`: Usage: id='{id}'
   - `[Ids <String[]>]`: Usage: ids={ids}
   - `[ManagedDeviceId <String>]`: The unique identifier of managedDevice
   - `[Platform <DevicePlatformType?>]`: Usage: platform='{platform}'

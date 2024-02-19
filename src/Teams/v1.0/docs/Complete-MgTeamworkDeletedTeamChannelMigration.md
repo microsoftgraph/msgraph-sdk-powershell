@@ -17,14 +17,14 @@ You can add members to the team after the request returns a successful response.
 
 ### Complete (Default)
 ```
-Complete-MgTeamworkDeletedTeamChannelMigration -ChannelId <String> -DeletedTeamId <String>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Complete-MgTeamworkDeletedTeamChannelMigration -ChannelId <String> -DeletedTeamId <String> [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CompleteViaIdentity
 ```
-Complete-MgTeamworkDeletedTeamChannelMigration -InputObject <ITeamsIdentity> [-Headers <IDictionary>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Complete-MgTeamworkDeletedTeamChannelMigration -InputObject <ITeamsIdentity> [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -78,21 +78,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -165,13 +150,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
-
-### System.Collections.Hashtable
 
 ## NOTES
 

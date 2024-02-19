@@ -16,15 +16,14 @@ Create new navigation property to userExperienceAnalyticsDeviceTimelineEvent for
 ```
 New-MgBetaDeviceManagementUserExperienceAnalyticDeviceTimelineEvent [-AdditionalProperties <Hashtable>]
  [-DeviceId <String>] [-EventDateTime <DateTime>] [-EventDetails <String>] [-EventLevel <DeviceEventLevel>]
- [-EventName <String>] [-EventSource <String>] [-Id <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-EventName <String>] [-EventSource <String>] [-Id <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaDeviceManagementUserExperienceAnalyticDeviceTimelineEvent
- -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsDeviceTimelineEvent> [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsDeviceTimelineEvent> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -172,21 +171,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -241,13 +225,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsDeviceTimelineEvent
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsDeviceTimelineEvent
-
-### System.Collections.Hashtable
 
 ## NOTES
 

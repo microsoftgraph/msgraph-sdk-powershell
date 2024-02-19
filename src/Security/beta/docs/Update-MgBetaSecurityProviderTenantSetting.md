@@ -16,30 +16,28 @@ Update the navigation property providerTenantSettings in security
 ```
 Update-MgBetaSecurityProviderTenantSetting -ProviderTenantSettingId <String>
  [-AdditionalProperties <Hashtable>] [-AzureTenantId <String>] [-Enabled] [-Id <String>]
- [-LastModifiedDateTime <DateTime>] [-Provider <String>] [-Vendor <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-LastModifiedDateTime <DateTime>] [-Provider <String>] [-Vendor <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaSecurityProviderTenantSetting -ProviderTenantSettingId <String>
- -BodyParameter <IMicrosoftGraphProviderTenantSetting> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphProviderTenantSetting> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaSecurityProviderTenantSetting -InputObject <ISecurityIdentity>
- -BodyParameter <IMicrosoftGraphProviderTenantSetting> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphProviderTenantSetting> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgBetaSecurityProviderTenantSetting -InputObject <ISecurityIdentity>
  [-AdditionalProperties <Hashtable>] [-AzureTenantId <String>] [-Enabled] [-Id <String>]
- [-LastModifiedDateTime <DateTime>] [-Provider <String>] [-Vendor <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-LastModifiedDateTime <DateTime>] [-Provider <String>] [-Vendor <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -121,21 +119,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -271,13 +254,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphProviderTenantSetting
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -299,7 +278,6 @@ To create the parameters described below, construct a hash table containing the 
 
 `INPUTOBJECT <ISecurityIdentity>`: Identity Parameter
   - `[AlertId <String>]`: The unique identifier of alert
-  - `[AnalyzedEmailId <String>]`: The unique identifier of analyzedEmail
   - `[ArticleId <String>]`: The unique identifier of article
   - `[ArticleIndicatorId <String>]`: The unique identifier of articleIndicator
   - `[AttackSimulationOperationId <String>]`: The unique identifier of attackSimulationOperation

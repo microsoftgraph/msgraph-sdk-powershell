@@ -16,15 +16,15 @@ Create new navigation property to userExperienceAnalyticsAppHealthOSVersionPerfo
 ```
 New-MgBetaDeviceManagementUserExperienceAnalyticAppHealthOSVersionPerformance [-ActiveDeviceCount <Int32>]
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-MeanTimeToFailureInMinutes <Int32>]
- [-OSBuildNumber <String>] [-OSVersion <String>] [-OSVersionAppHealthScore <Double>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-OSBuildNumber <String>] [-OSVersion <String>] [-OSVersionAppHealthScore <Double>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaDeviceManagementUserExperienceAnalyticAppHealthOSVersionPerformance
- -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsAppHealthOSVersionPerformance> [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsAppHealthOSVersionPerformance> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -92,21 +92,6 @@ Parameter Sets: Create
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -239,13 +224,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsAppHealthOSVersionPerformance
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsAppHealthOSVersionPerformance
-
-### System.Collections.Hashtable
 
 ## NOTES
 

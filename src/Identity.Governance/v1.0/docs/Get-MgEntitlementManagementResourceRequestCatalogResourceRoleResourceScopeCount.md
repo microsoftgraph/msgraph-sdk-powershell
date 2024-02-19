@@ -16,29 +16,26 @@ Get the number of the resource
 ```
 Get-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScopeCount
  -AccessPackageResourceRequestId <String> -AccessPackageResourceRoleId <String> [-Filter <String>]
- [-Search <String>] [-Headers <IDictionary>] [<CommonParameters>]
+ [-Search <String>] [<CommonParameters>]
 ```
 
 ### Get1
 ```
 Get-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScopeCount
  -AccessPackageResourceId <String> -AccessPackageResourceRequestId <String>
- -AccessPackageResourceRoleId <String> [-Filter <String>] [-Search <String>] [-Headers <IDictionary>]
- [<CommonParameters>]
+ -AccessPackageResourceRoleId <String> [-Filter <String>] [-Search <String>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
 Get-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScopeCount
- -InputObject <IIdentityGovernanceIdentity> [-Filter <String>] [-Search <String>] [-Headers <IDictionary>]
- [<CommonParameters>]
+ -InputObject <IIdentityGovernanceIdentity> [-Filter <String>] [-Search <String>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
 Get-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScopeCount
- -InputObject <IIdentityGovernanceIdentity> [-Filter <String>] [-Search <String>] [-Headers <IDictionary>]
- [<CommonParameters>]
+ -InputObject <IIdentityGovernanceIdentity> [-Filter <String>] [-Search <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -122,21 +119,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -175,11 +157,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
-
-### System.Collections.Hashtable
 
 ### System.Int32
 

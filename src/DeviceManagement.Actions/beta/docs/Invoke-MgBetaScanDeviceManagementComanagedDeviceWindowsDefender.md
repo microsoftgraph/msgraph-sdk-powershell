@@ -15,15 +15,14 @@ Invoke action windowsDefenderScan
 ### ScanExpanded (Default)
 ```
 Invoke-MgBetaScanDeviceManagementComanagedDeviceWindowsDefender -ManagedDeviceId <String>
- [-AdditionalProperties <Hashtable>] [-QuickScan] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-QuickScan] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Scan
 ```
 Invoke-MgBetaScanDeviceManagementComanagedDeviceWindowsDefender -ManagedDeviceId <String>
  -BodyParameter <IPaths88QmudDevicemanagementComanageddevicesManageddeviceIdMicrosoftGraphWindowsdefenderscanPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ScanViaIdentity
@@ -31,14 +30,14 @@ Invoke-MgBetaScanDeviceManagementComanagedDeviceWindowsDefender -ManagedDeviceId
 Invoke-MgBetaScanDeviceManagementComanagedDeviceWindowsDefender
  -InputObject <IDeviceManagementActionsIdentity>
  -BodyParameter <IPaths88QmudDevicemanagementComanageddevicesManageddeviceIdMicrosoftGraphWindowsdefenderscanPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ScanViaIdentityExpanded
 ```
 Invoke-MgBetaScanDeviceManagementComanagedDeviceWindowsDefender
- -InputObject <IDeviceManagementActionsIdentity> [-AdditionalProperties <Hashtable>] [-QuickScan]
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -InputObject <IDeviceManagementActionsIdentity> [-AdditionalProperties <Hashtable>] [-QuickScan] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -87,21 +86,6 @@ Parameter Sets: Scan, ScanViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -209,13 +193,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPaths88QmudDevicemanagementComanageddevicesManageddeviceIdMicrosoftGraphWindowsdefenderscanPostRequestbodyContentApplicationJsonSchema
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -274,7 +254,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[MicrosoftTunnelSiteId <String>]`: The unique identifier of microsoftTunnelSite
   - `[MobileAppTroubleshootingEventId <String>]`: The unique identifier of mobileAppTroubleshootingEvent
   - `[NotificationMessageTemplateId <String>]`: The unique identifier of notificationMessageTemplate
-  - `[OperationApprovalRequestId <String>]`: The unique identifier of operationApprovalRequest
   - `[PrivilegeManagementElevationRequestId <String>]`: The unique identifier of privilegeManagementElevationRequest
   - `[RemoteAssistancePartnerId <String>]`: The unique identifier of remoteAssistancePartner
   - `[RoleScopeTagId <String>]`: The unique identifier of roleScopeTag

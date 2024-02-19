@@ -18,24 +18,24 @@ Update-MgDeviceManagementImportedWindowsAutopilotDeviceIdentity
  -ImportedWindowsAutopilotDeviceIdentityId <String> [-AdditionalProperties <Hashtable>]
  [-AssignedUserPrincipalName <String>] [-GroupTag <String>] [-HardwareIdentifierInputFile <String>]
  [-Id <String>] [-ImportId <String>] [-ProductKey <String>] [-SerialNumber <String>]
- [-State <IMicrosoftGraphImportedWindowsAutopilotDeviceIdentityState>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-State <IMicrosoftGraphImportedWindowsAutopilotDeviceIdentityState>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgDeviceManagementImportedWindowsAutopilotDeviceIdentity
  -ImportedWindowsAutopilotDeviceIdentityId <String>
- -BodyParameter <IMicrosoftGraphImportedWindowsAutopilotDeviceIdentity> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphImportedWindowsAutopilotDeviceIdentity> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgDeviceManagementImportedWindowsAutopilotDeviceIdentity
  -InputObject <IDeviceManagementEnrollmentIdentity>
- -BodyParameter <IMicrosoftGraphImportedWindowsAutopilotDeviceIdentity> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphImportedWindowsAutopilotDeviceIdentity> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -44,8 +44,8 @@ Update-MgDeviceManagementImportedWindowsAutopilotDeviceIdentity
  -InputObject <IDeviceManagementEnrollmentIdentity> [-AdditionalProperties <Hashtable>]
  [-AssignedUserPrincipalName <String>] [-GroupTag <String>] [-HardwareIdentifierInputFile <String>]
  [-Id <String>] [-ImportId <String>] [-ProductKey <String>] [-SerialNumber <String>]
- [-State <IMicrosoftGraphImportedWindowsAutopilotDeviceIdentityState>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-State <IMicrosoftGraphImportedWindowsAutopilotDeviceIdentityState>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -142,21 +142,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -308,13 +293,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphImportedWindowsAutopilotDeviceIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphImportedWindowsAutopilotDeviceIdentity
-
-### System.Collections.Hashtable
 
 ## NOTES
 

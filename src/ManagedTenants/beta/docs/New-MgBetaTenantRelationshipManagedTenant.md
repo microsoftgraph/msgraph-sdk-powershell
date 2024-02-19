@@ -17,14 +17,14 @@ Create new navigation property to tenants for tenantRelationships
 New-MgBetaTenantRelationshipManagedTenant [-AdditionalProperties <Hashtable>]
  [-Contract <IMicrosoftGraphManagedTenantsTenantContract>] [-CreatedDateTime <DateTime>]
  [-DisplayName <String>] [-Id <String>] [-LastUpdatedDateTime <DateTime>] [-TenantId <String>]
- [-TenantStatusInformation <IMicrosoftGraphManagedTenantsTenantStatusInformation>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-TenantStatusInformation <IMicrosoftGraphManagedTenantsTenantStatusInformation>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgBetaTenantRelationshipManagedTenant -BodyParameter <IMicrosoftGraphManagedTenantsTenant>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaTenantRelationshipManagedTenant -BodyParameter <IMicrosoftGraphManagedTenantsTenant> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -126,21 +126,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -248,13 +233,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsTenant
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsTenant
-
-### System.Collections.Hashtable
 
 ## NOTES
 

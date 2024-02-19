@@ -16,28 +16,28 @@ Update the navigation property teamsApps in appCatalogs
 ```
 Update-MgAppCatalogTeamApp -TeamsAppId <String> [-AdditionalProperties <Hashtable>]
  [-AppDefinitions <IMicrosoftGraphTeamsAppDefinition[]>] [-DisplayName <String>]
- [-DistributionMethod <String>] [-ExternalId <String>] [-Id <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-DistributionMethod <String>] [-ExternalId <String>] [-Id <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgAppCatalogTeamApp -TeamsAppId <String> -BodyParameter <IMicrosoftGraphTeamsApp>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgAppCatalogTeamApp -TeamsAppId <String> -BodyParameter <IMicrosoftGraphTeamsApp> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgAppCatalogTeamApp -InputObject <ITeamsIdentity> -BodyParameter <IMicrosoftGraphTeamsApp>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgAppCatalogTeamApp -InputObject <ITeamsIdentity> -BodyParameter <IMicrosoftGraphTeamsApp> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgAppCatalogTeamApp -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
  [-AppDefinitions <IMicrosoftGraphTeamsAppDefinition[]>] [-DisplayName <String>]
- [-DistributionMethod <String>] [-ExternalId <String>] [-Id <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-DistributionMethod <String>] [-ExternalId <String>] [-Id <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -153,21 +153,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -255,13 +240,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamsApp
-
-### System.Collections.Hashtable
 
 ## NOTES
 

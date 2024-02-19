@@ -15,27 +15,27 @@ Invoke action archive
 ### ArchiveExpanded (Default)
 ```
 Invoke-MgBetaArchivePlannerPlan -PlannerPlanId <String> [-AdditionalProperties <Hashtable>]
- [-Justification <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Justification <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Archive
 ```
 Invoke-MgBetaArchivePlannerPlan -PlannerPlanId <String>
  -BodyParameter <IPathsAx5Qm7PlannerPlansPlannerplanIdMicrosoftGraphArchivePostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ArchiveViaIdentity
 ```
 Invoke-MgBetaArchivePlannerPlan -InputObject <IPlannerIdentity>
  -BodyParameter <IPathsAx5Qm7PlannerPlansPlannerplanIdMicrosoftGraphArchivePostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ArchiveViaIdentityExpanded
 ```
 Invoke-MgBetaArchivePlannerPlan -InputObject <IPlannerIdentity> [-AdditionalProperties <Hashtable>]
- [-Justification <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Justification <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -84,21 +84,6 @@ Parameter Sets: Archive, ArchiveViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -206,13 +191,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPlannerIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
-
-### System.Collections.Hashtable
 
 ## NOTES
 

@@ -16,58 +16,52 @@ Create a calendarPermission resource to specify the identity and role of the use
 ```
 New-MgUserCalendarPermission -UserId <String> [-AdditionalProperties <Hashtable>] [-AllowedRoles <String[]>]
  [-EmailAddress <IMicrosoftGraphEmailAddress>] [-Id <String>] [-IsInsideOrganization] [-IsRemovable]
- [-Role <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Role <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgUserCalendarPermission -UserId <String> -BodyParameter <IMicrosoftGraphCalendarPermission>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgUserCalendarPermission -UserId <String> -BodyParameter <IMicrosoftGraphCalendarPermission> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create1
 ```
 New-MgUserCalendarPermission -CalendarId <String> -UserId <String>
- -BodyParameter <IMicrosoftGraphCalendarPermission> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphCalendarPermission> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateExpanded1
 ```
 New-MgUserCalendarPermission -CalendarId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
  [-AllowedRoles <String[]>] [-EmailAddress <IMicrosoftGraphEmailAddress>] [-Id <String>]
- [-IsInsideOrganization] [-IsRemovable] [-Role <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-IsInsideOrganization] [-IsRemovable] [-Role <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgUserCalendarPermission -InputObject <ICalendarIdentity>
- -BodyParameter <IMicrosoftGraphCalendarPermission> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphCalendarPermission> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity1
 ```
 New-MgUserCalendarPermission -InputObject <ICalendarIdentity>
- -BodyParameter <IMicrosoftGraphCalendarPermission> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphCalendarPermission> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgUserCalendarPermission -InputObject <ICalendarIdentity> [-AdditionalProperties <Hashtable>]
  [-AllowedRoles <String[]>] [-EmailAddress <IMicrosoftGraphEmailAddress>] [-Id <String>]
- [-IsInsideOrganization] [-IsRemovable] [-Role <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-IsInsideOrganization] [-IsRemovable] [-Role <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded1
 ```
 New-MgUserCalendarPermission -InputObject <ICalendarIdentity> [-AdditionalProperties <Hashtable>]
  [-AllowedRoles <String[]>] [-EmailAddress <IMicrosoftGraphEmailAddress>] [-Id <String>]
- [-IsInsideOrganization] [-IsRemovable] [-Role <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-IsInsideOrganization] [-IsRemovable] [-Role <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -166,21 +160,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -318,13 +297,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCalendarPermission
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCalendarPermission
-
-### System.Collections.Hashtable
 
 ## NOTES
 

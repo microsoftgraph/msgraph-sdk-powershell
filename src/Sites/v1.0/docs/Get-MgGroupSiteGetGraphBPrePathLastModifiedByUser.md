@@ -194,8 +194,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUser
 
-### System.Collections.Hashtable
-
 ## NOTES
 
 ALIASES

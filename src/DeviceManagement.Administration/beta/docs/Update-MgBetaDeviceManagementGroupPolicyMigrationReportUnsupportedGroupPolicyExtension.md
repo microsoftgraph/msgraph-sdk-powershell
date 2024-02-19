@@ -17,24 +17,21 @@ Update the navigation property unsupportedGroupPolicyExtensions in deviceManagem
 Update-MgBetaDeviceManagementGroupPolicyMigrationReportUnsupportedGroupPolicyExtension
  -GroupPolicyMigrationReportId <String> -UnsupportedGroupPolicyExtensionId <String>
  [-AdditionalProperties <Hashtable>] [-ExtensionType <String>] [-Id <String>] [-NamespaceUrl <String>]
- [-NodeName <String>] [-SettingScope <GroupPolicySettingScope>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-NodeName <String>] [-SettingScope <GroupPolicySettingScope>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaDeviceManagementGroupPolicyMigrationReportUnsupportedGroupPolicyExtension
  -GroupPolicyMigrationReportId <String> -UnsupportedGroupPolicyExtensionId <String>
- -BodyParameter <IMicrosoftGraphUnsupportedGroupPolicyExtension> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphUnsupportedGroupPolicyExtension> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaDeviceManagementGroupPolicyMigrationReportUnsupportedGroupPolicyExtension
  -InputObject <IDeviceManagementAdministrationIdentity>
- -BodyParameter <IMicrosoftGraphUnsupportedGroupPolicyExtension> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphUnsupportedGroupPolicyExtension> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -42,7 +39,7 @@ Update-MgBetaDeviceManagementGroupPolicyMigrationReportUnsupportedGroupPolicyExt
 Update-MgBetaDeviceManagementGroupPolicyMigrationReportUnsupportedGroupPolicyExtension
  -InputObject <IDeviceManagementAdministrationIdentity> [-AdditionalProperties <Hashtable>]
  [-ExtensionType <String>] [-Id <String>] [-NamespaceUrl <String>] [-NodeName <String>]
- [-SettingScope <GroupPolicySettingScope>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-SettingScope <GroupPolicySettingScope>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -124,21 +121,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -274,13 +256,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUnsupportedGroupPolicyExtension
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUnsupportedGroupPolicyExtension
-
-### System.Collections.Hashtable
 
 ## NOTES
 

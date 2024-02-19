@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgUserDriveItemLastModifiedByUserServiceProvisioningError
 
 ## SYNOPSIS
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ## SYNTAX
 
@@ -17,21 +16,20 @@ Supports $filter (eq, not, for isResolved and serviceInstance).
 ```
 Get-MgUserDriveItemLastModifiedByUserServiceProvisioningError -DriveId <String> -DriveItemId <String>
  -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
- [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-Headers <IDictionary>]
- [-PageSize <Int32>] [<CommonParameters>]
+ [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>]
+ [<CommonParameters>]
 ```
 
 ### List1
 ```
 Get-MgUserDriveItemLastModifiedByUserServiceProvisioningError -DriveId <String> -ListItemId <String>
  -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
- [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-Headers <IDictionary>]
- [-PageSize <Int32>] [<CommonParameters>]
+ [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ## EXAMPLES
 
@@ -139,21 +137,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -282,13 +265,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphServiceProvisioningError
-
-### System.Collections.Hashtable
 
 ## NOTES
 

@@ -17,29 +17,26 @@ Create new navigation property to attendanceReports for solutions
 New-MgVirtualEventSessionAttendanceReport -VirtualEventId <String> -VirtualEventSessionId <String>
  [-AdditionalProperties <Hashtable>] [-AttendanceRecords <IMicrosoftGraphAttendanceRecord[]>] [-Id <String>]
  [-MeetingEndDateTime <DateTime>] [-MeetingStartDateTime <DateTime>] [-TotalParticipantCount <Int32>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgVirtualEventSessionAttendanceReport -VirtualEventId <String> -VirtualEventSessionId <String>
- -BodyParameter <IMicrosoftGraphMeetingAttendanceReport> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphMeetingAttendanceReport> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgVirtualEventSessionAttendanceReport -InputObject <IBookingsIdentity>
- -BodyParameter <IMicrosoftGraphMeetingAttendanceReport> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphMeetingAttendanceReport> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgVirtualEventSessionAttendanceReport -InputObject <IBookingsIdentity> [-AdditionalProperties <Hashtable>]
  [-AttendanceRecords <IMicrosoftGraphAttendanceRecord[]>] [-Id <String>] [-MeetingEndDateTime <DateTime>]
- [-MeetingStartDateTime <DateTime>] [-TotalParticipantCount <Int32>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-MeetingStartDateTime <DateTime>] [-TotalParticipantCount <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -105,21 +102,6 @@ Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -276,13 +258,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMeetingAttendanceReport
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMeetingAttendanceReport
-
-### System.Collections.Hashtable
 
 ## NOTES
 

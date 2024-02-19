@@ -17,22 +17,20 @@ Update the navigation property remoteAssistancePartners in deviceManagement
 Update-MgBetaDeviceManagementRemoteAssistancePartner -RemoteAssistancePartnerId <String>
  [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>]
  [-LastConnectionDateTime <DateTime>] [-OnboardingRequestExpiryDateTime <DateTime>]
- [-OnboardingStatus <RemoteAssistanceOnboardingStatus>] [-OnboardingUrl <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-OnboardingStatus <RemoteAssistanceOnboardingStatus>] [-OnboardingUrl <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaDeviceManagementRemoteAssistancePartner -RemoteAssistancePartnerId <String>
- -BodyParameter <IMicrosoftGraphRemoteAssistancePartner> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphRemoteAssistancePartner> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaDeviceManagementRemoteAssistancePartner -InputObject <IDeviceManagementAdministrationIdentity>
- -BodyParameter <IMicrosoftGraphRemoteAssistancePartner> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphRemoteAssistancePartner> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -40,8 +38,8 @@ Update-MgBetaDeviceManagementRemoteAssistancePartner -InputObject <IDeviceManage
 Update-MgBetaDeviceManagementRemoteAssistancePartner -InputObject <IDeviceManagementAdministrationIdentity>
  [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>]
  [-LastConnectionDateTime <DateTime>] [-OnboardingRequestExpiryDateTime <DateTime>]
- [-OnboardingStatus <RemoteAssistanceOnboardingStatus>] [-OnboardingUrl <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-OnboardingStatus <RemoteAssistanceOnboardingStatus>] [-OnboardingUrl <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -108,21 +106,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -273,13 +256,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRemoteAssistancePartner
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRemoteAssistancePartner
-
-### System.Collections.Hashtable
 
 ## NOTES
 

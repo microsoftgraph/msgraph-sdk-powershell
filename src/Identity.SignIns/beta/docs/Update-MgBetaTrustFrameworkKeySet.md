@@ -17,29 +17,25 @@ Specifying the ID in the request payload is optional.
 ### UpdateExpanded (Default)
 ```
 Update-MgBetaTrustFrameworkKeySet -TrustFrameworkKeySetId <String> [-AdditionalProperties <Hashtable>]
- [-Id <String>] [-Keys <IMicrosoftGraphTrustFrameworkKey[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Id <String>] [-Keys <IMicrosoftGraphTrustFrameworkKey[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaTrustFrameworkKeySet -TrustFrameworkKeySetId <String>
- -BodyParameter <IMicrosoftGraphTrustFrameworkKeySet> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphTrustFrameworkKeySet> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaTrustFrameworkKeySet -InputObject <IIdentitySignInsIdentity>
- -BodyParameter <IMicrosoftGraphTrustFrameworkKeySet> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphTrustFrameworkKeySet> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgBetaTrustFrameworkKeySet -InputObject <IIdentitySignInsIdentity> [-AdditionalProperties <Hashtable>]
- [-Id <String>] [-Keys <IMicrosoftGraphTrustFrameworkKey[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Id <String>] [-Keys <IMicrosoftGraphTrustFrameworkKey[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -90,21 +86,6 @@ Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -214,13 +195,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTrustFrameworkKeySet
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTrustFrameworkKeySet
-
-### System.Collections.Hashtable
 
 ## NOTES
 

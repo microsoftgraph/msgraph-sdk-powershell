@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Users.Actions
-Module Guid: 1abd3acb-7540-4113-921e-1c98b08b96da
+Module Guid: 62fb0f4f-929e-435d-bfbe-7147b58d5a9b
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.users.actions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -197,8 +197,7 @@ Retrieve a list of recently deleted application and group objects owned by the s
 This API returns up to 1,000 deleted objects owned by the user, sorted by ID, and doesn't support pagination.
 
 ### [Get-MgBetaUserPasswordSingleSignOnCredential](Get-MgBetaUserPasswordSingleSignOnCredential.md)
-Get the list of password-based single sign-on credentials for a given user.
-This API returns the encrypted passwords as null or empty strings.
+Invoke action getPasswordSingleSignOnCredentials
 
 ### [Grant-MgBetaUserDriveItemPermission](Grant-MgBetaUserDriveItemPermission.md)
 Grant users access to a link represented by a [permission][].
@@ -232,9 +231,6 @@ For more information on how to propose a time, and how to receive and accept a n
 Allows the acceptance of recommendations on all accessReviewInstanceDecisionItem objects that haven't been reviewed for an accessReviewInstance object for which the calling user is a reviewer.
 Recommendations are generated if recommendationsEnabled is true on the accessReviewScheduleDefinition object.
 If there isn't a recommendation on an accessReviewInstanceDecisionItem object no decision will be recorded.
-
-### [Invoke-MgBetaArchiveUserPlannerPlan](Invoke-MgBetaArchiveUserPlannerPlan.md)
-Invoke action archive
 
 ### [Invoke-MgBetaBatchUserPendingAccessReviewInstanceRecordDecision](Invoke-MgBetaBatchUserPendingAccessReviewInstanceRecordDecision.md)
 Enables reviewers to review all accessReviewInstanceDecisionItem objects in batches by using principalId, resourceId, or neither.
@@ -371,9 +367,6 @@ Unhide a chat for a user.
 
 ### [Invoke-MgBetaHasUserDeviceEnrollmentConfigurationPayloadLink](Invoke-MgBetaHasUserDeviceEnrollmentConfigurationPayloadLink.md)
 Invoke action hasPayloadLinks
-
-### [Invoke-MgBetaInitiateUserManagedDeviceAttestation](Invoke-MgBetaInitiateUserManagedDeviceAttestation.md)
-Perform Device Attestation
 
 ### [Invoke-MgBetaInitiateUserManagedDeviceMobileDeviceManagementKeyRecovery](Invoke-MgBetaInitiateUserManagedDeviceMobileDeviceManagementKeyRecovery.md)
 Perform MDM key recovery and TPM attestation
@@ -559,9 +552,6 @@ Translate identifiers of Outlook-related resources between formats.
 Troubleshoot a specific Cloud PC.
 Use this API to check the health status of the Cloud PC and the session host.
 
-### [Invoke-MgBetaUnarchiveUserPlannerPlan](Invoke-MgBetaUnarchiveUserPlannerPlan.md)
-Invoke action unarchive
-
 ### [Invoke-MgBetaUnfollowUserDriveItem](Invoke-MgBetaUnfollowUserDriveItem.md)
 Unfollow a driveItem.
 
@@ -629,8 +619,7 @@ Move a message to another folder within the specified user's mailbox.
 This creates a new copy of the message in the destination folder and removes the original message.
 
 ### [Move-MgBetaUserPlannerPlanToContainer](Move-MgBetaUserPlannerPlanToContainer.md)
-Move a planner plan object from one planner plan container to another.
-Planner plans can only be moved from a user container to a group container.
+Invoke action moveToContainer
 
 ### [New-MgBetaUserCloudPcSnapshot](New-MgBetaUserCloudPcSnapshot.md)
 Invoke action createSnapshot
@@ -865,7 +854,7 @@ Remove device from Device Firmware Configuration Interface management
 Delete user from shared Apple device
 
 ### [Remove-MgBetaUserPasswordSingleSignOnCredential](Remove-MgBetaUserPasswordSingleSignOnCredential.md)
-Delete the password-based single sign-on credentials for a given user to a given service principal.
+Invoke action deletePasswordSingleSignOnCredentials
 
 ### [Rename-MgBetaUserCloudPc](Rename-MgBetaUserCloudPc.md)
 Rename a specific Cloud PC.
@@ -988,23 +977,11 @@ The draft message can be a new message draft, reply draft, reply-all draft, or a
 This method saves the message in the Sent Items folder.
 Alternatively, send a new message in a single operation.
 
-### [Send-MgBetaUserOnlineMeetingJoinWebUrlVirtualAppointmentReminderSm](Send-MgBetaUserOnlineMeetingJoinWebUrlVirtualAppointmentReminderSm.md)
-Send an SMS reminder to external attendees for a Teams Virtual Appointment.
-This feature requires Teams Premium and attendees must have a valid United States phone number to receive SMS notifications.
-
-### [Send-MgBetaUserOnlineMeetingJoinWebUrlVirtualAppointmentSm](Send-MgBetaUserOnlineMeetingJoinWebUrlVirtualAppointmentSm.md)
-Send an SMS notification to external attendees when a Teams Virtual Appointment is confirmed, rescheduled, or canceled.
-This feature requires Teams Premium.
-Attendees must have a valid United States phone number to receive these SMS notifications.
-
 ### [Send-MgBetaUserOnlineMeetingVirtualAppointmentReminderSm](Send-MgBetaUserOnlineMeetingVirtualAppointmentReminderSm.md)
-Send an SMS reminder to external attendees for a Teams Virtual Appointment.
-This feature requires Teams Premium and attendees must have a valid United States phone number to receive SMS notifications.
+Invoke action sendVirtualAppointmentReminderSms
 
 ### [Send-MgBetaUserOnlineMeetingVirtualAppointmentSm](Send-MgBetaUserOnlineMeetingVirtualAppointmentSm.md)
-Send an SMS notification to external attendees when a Teams Virtual Appointment is confirmed, rescheduled, or canceled.
-This feature requires Teams Premium.
-Attendees must have a valid United States phone number to receive these SMS notifications.
+Invoke action sendVirtualAppointmentSms
 
 ### [Send-MgBetaUserPendingAccessReviewInstanceReminder](Send-MgBetaUserPendingAccessReviewInstanceReminder.md)
 Send a reminder to the reviewers of a currently active accessReviewInstance.

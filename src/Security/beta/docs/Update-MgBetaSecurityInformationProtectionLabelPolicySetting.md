@@ -16,14 +16,14 @@ Update the navigation property labelPolicySettings in security
 ```
 Update-MgBetaSecurityInformationProtectionLabelPolicySetting [-AdditionalProperties <Hashtable>]
  [-DefaultLabelId <String>] [-Id <String>] [-IsDowngradeJustificationRequired] [-IsMandatory]
- [-MoreInfoUrl <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-MoreInfoUrl <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaSecurityInformationProtectionLabelPolicySetting
- -BodyParameter <IMicrosoftGraphSecurityInformationProtectionPolicySetting> [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphSecurityInformationProtectionPolicySetting> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -90,21 +90,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -207,13 +192,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityInformationProtectionPolicySetting
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityInformationProtectionPolicySetting
-
-### System.Collections.Hashtable
 
 ## NOTES
 

@@ -17,14 +17,13 @@ Update the navigation property deviceConfigurationUserStateSummaries in deviceMa
 Update-MgBetaDeviceManagementDeviceConfigurationUserStateSummary [-AdditionalProperties <Hashtable>]
  [-CompliantUserCount <Int32>] [-ConflictUserCount <Int32>] [-ErrorUserCount <Int32>] [-Id <String>]
  [-NonCompliantUserCount <Int32>] [-NotApplicableUserCount <Int32>] [-RemediatedUserCount <Int32>]
- [-UnknownUserCount <Int32>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-UnknownUserCount <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaDeviceManagementDeviceConfigurationUserStateSummary
- -BodyParameter <IMicrosoftGraphDeviceConfigurationUserStateSummary> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphDeviceConfigurationUserStateSummary> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -121,21 +120,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -253,13 +237,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceConfigurationUserStateSummary
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceConfigurationUserStateSummary
-
-### System.Collections.Hashtable
 
 ## NOTES
 

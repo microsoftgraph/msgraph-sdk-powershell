@@ -18,22 +18,19 @@ Update-MgGroupTeamScheduleOfferShiftRequest -GroupId <String> -OfferShiftRequest
  [-AdditionalProperties <Hashtable>] [-AssignedTo <String>] [-Id <String>]
  [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-ManagerActionMessage <String>]
  [-RecipientActionMessage <String>] [-RecipientUserId <String>] [-SenderMessage <String>]
- [-SenderShiftId <String>] [-State <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-SenderShiftId <String>] [-State <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgGroupTeamScheduleOfferShiftRequest -GroupId <String> -OfferShiftRequestId <String>
- -BodyParameter <IMicrosoftGraphOfferShiftRequest> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphOfferShiftRequest> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgGroupTeamScheduleOfferShiftRequest -InputObject <ITeamsIdentity>
- -BodyParameter <IMicrosoftGraphOfferShiftRequest> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphOfferShiftRequest> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -41,8 +38,8 @@ Update-MgGroupTeamScheduleOfferShiftRequest -InputObject <ITeamsIdentity>
 Update-MgGroupTeamScheduleOfferShiftRequest -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
  [-AssignedTo <String>] [-Id <String>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
  [-ManagerActionMessage <String>] [-RecipientActionMessage <String>] [-RecipientUserId <String>]
- [-SenderMessage <String>] [-SenderShiftId <String>] [-State <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-SenderMessage <String>] [-SenderShiftId <String>] [-State <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -124,21 +121,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -335,13 +317,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOfferShiftRequest
-
-### System.Collections.Hashtable
 
 ## NOTES
 

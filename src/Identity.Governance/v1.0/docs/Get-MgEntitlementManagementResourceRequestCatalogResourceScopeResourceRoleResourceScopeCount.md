@@ -16,15 +16,13 @@ Get the number of the resource
 ```
 Get-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceRoleResourceScopeCount
  -AccessPackageResourceRequestId <String> -AccessPackageResourceRoleId <String>
- -AccessPackageResourceScopeId <String> [-Filter <String>] [-Search <String>] [-Headers <IDictionary>]
- [<CommonParameters>]
+ -AccessPackageResourceScopeId <String> [-Filter <String>] [-Search <String>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
 Get-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceRoleResourceScopeCount
- -InputObject <IIdentityGovernanceIdentity> [-Filter <String>] [-Search <String>] [-Headers <IDictionary>]
- [<CommonParameters>]
+ -InputObject <IIdentityGovernanceIdentity> [-Filter <String>] [-Search <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -108,21 +106,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -161,11 +144,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
-
-### System.Collections.Hashtable
 
 ### System.Int32
 

@@ -15,35 +15,31 @@ Update the navigation property deviceImages in deviceManagement
 ### UpdateExpanded (Default)
 ```
 Update-MgBetaDeviceManagementVirtualEndpointDeviceImage -CloudPcDeviceImageId <String>
- [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-ErrorCode <String>]
- [-ExpirationDate <DateTime>] [-Id <String>] [-LastModifiedDateTime <DateTime>] [-OperatingSystem <String>]
- [-OSBuildNumber <String>] [-OSStatus <String>] [-ScopeIds <String[]>] [-SourceImageResourceId <String>]
- [-Status <String>] [-StatusDetails <String>] [-Version <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-ExpirationDate <DateTime>] [-Id <String>]
+ [-LastModifiedDateTime <DateTime>] [-OperatingSystem <String>] [-OSBuildNumber <String>] [-OSStatus <String>]
+ [-ScopeIds <String[]>] [-SourceImageResourceId <String>] [-Status <String>] [-StatusDetails <String>]
+ [-Version <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaDeviceManagementVirtualEndpointDeviceImage -CloudPcDeviceImageId <String>
- -BodyParameter <IMicrosoftGraphCloudPcDeviceImage> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphCloudPcDeviceImage> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaDeviceManagementVirtualEndpointDeviceImage -InputObject <IDeviceManagementAdministrationIdentity>
- -BodyParameter <IMicrosoftGraphCloudPcDeviceImage> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphCloudPcDeviceImage> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgBetaDeviceManagementVirtualEndpointDeviceImage -InputObject <IDeviceManagementAdministrationIdentity>
- [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-ErrorCode <String>]
- [-ExpirationDate <DateTime>] [-Id <String>] [-LastModifiedDateTime <DateTime>] [-OperatingSystem <String>]
- [-OSBuildNumber <String>] [-OSStatus <String>] [-ScopeIds <String[]>] [-SourceImageResourceId <String>]
- [-Status <String>] [-StatusDetails <String>] [-Version <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-ExpirationDate <DateTime>] [-Id <String>]
+ [-LastModifiedDateTime <DateTime>] [-OperatingSystem <String>] [-OSBuildNumber <String>] [-OSStatus <String>]
+ [-ScopeIds <String[]>] [-SourceImageResourceId <String>] [-Status <String>] [-StatusDetails <String>]
+ [-Version <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -114,24 +110,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-The display name of the associated device image.
-The device image display name and the version are used to uniquely identify the Cloud PC device image.
-Read-only.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ErrorCode
-cloudPcDeviceImageErrorCode
+The display name of the image.
 
 ```yaml
 Type: System.String
@@ -146,8 +125,7 @@ Accept wildcard characters: False
 ```
 
 ### -ExpirationDate
-The date when the image became unavailable.
-Read-only.
+The date the image became unavailable.
 
 ```yaml
 Type: System.DateTime
@@ -158,21 +136,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -209,10 +172,9 @@ Accept wildcard characters: False
 ```
 
 ### -LastModifiedDateTime
-The data and time when the image was last modified.
-The timestamp represents date and time information using ISO 8601 format and is always in UTC.
-For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-Read-only.
+The data and time that the image was last modified.
+The time is shown in ISO 8601 format and Coordinated Universal Time (UTC) time.
+For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.
 
 ```yaml
 Type: System.DateTime
@@ -229,7 +191,6 @@ Accept wildcard characters: False
 ### -OperatingSystem
 The operating system of the image.
 For example, Windows 10 Enterprise.
-Read-only.
 
 ```yaml
 Type: System.String
@@ -246,7 +207,6 @@ Accept wildcard characters: False
 ### -OSBuildNumber
 The OS build version of the image.
 For example, 1909.
-Read-only.
 
 ```yaml
 Type: System.String
@@ -291,9 +251,8 @@ Accept wildcard characters: False
 ```
 
 ### -SourceImageResourceId
-The unique identifier (ID) of the source image resource on Azure.
-The required ID format is: '/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/images/{imageName}'.
-Read-only.
+The ID of the source image resource on Azure.
+Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/images/{imageName}.
 
 ```yaml
 Type: System.String
@@ -340,7 +299,6 @@ Accept wildcard characters: False
 ### -Version
 The image version.
 For example, 0.0.1 and 1.5.13.
-Read-only.
 
 ```yaml
 Type: System.String
@@ -394,13 +352,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcDeviceImage
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcDeviceImage
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -414,18 +368,17 @@ To create the parameters described below, construct a hash table containing the 
 `BODYPARAMETER <IMicrosoftGraphCloudPcDeviceImage>`: cloudPcDeviceImage
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[DisplayName <String>]`: The display name of the associated device image. The device image display name and the version are used to uniquely identify the Cloud PC device image. Read-only.
-  - `[ErrorCode <String>]`: cloudPcDeviceImageErrorCode
-  - `[ExpirationDate <DateTime?>]`: The date when the image became unavailable. Read-only.
-  - `[LastModifiedDateTime <DateTime?>]`: The data and time when the image was last modified. The timestamp represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-  - `[OSBuildNumber <String>]`: The OS build version of the image. For example, 1909. Read-only.
+  - `[DisplayName <String>]`: The display name of the image.
+  - `[ExpirationDate <DateTime?>]`: The date the image became unavailable.
+  - `[LastModifiedDateTime <DateTime?>]`: The data and time that the image was last modified. The time is shown in ISO 8601 format and  Coordinated Universal Time (UTC) time. For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.
+  - `[OSBuildNumber <String>]`: The OS build version of the image. For example, 1909.
   - `[OSStatus <String>]`: cloudPcDeviceImageOsStatus
-  - `[OperatingSystem <String>]`: The operating system of the image. For example, Windows 10 Enterprise. Read-only.
+  - `[OperatingSystem <String>]`: The operating system of the image. For example, Windows 10 Enterprise.
   - `[ScopeIds <String[]>]`: 
-  - `[SourceImageResourceId <String>]`: The unique identifier (ID) of the source image resource on Azure. The required ID format is: '/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/images/{imageName}'. Read-only.
+  - `[SourceImageResourceId <String>]`: The ID of the source image resource on Azure. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/images/{imageName}.
   - `[Status <String>]`: cloudPcDeviceImageStatus
   - `[StatusDetails <String>]`: cloudPcDeviceImageStatusDetails
-  - `[Version <String>]`: The image version. For example, 0.0.1 and 1.5.13. Read-only.
+  - `[Version <String>]`: The image version. For example, 0.0.1 and 1.5.13.
 
 `INPUTOBJECT <IDeviceManagementAdministrationIdentity>`: Identity Parameter
   - `[AuditEventId <String>]`: The unique identifier of auditEvent

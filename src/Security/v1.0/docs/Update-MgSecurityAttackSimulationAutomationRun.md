@@ -16,30 +16,28 @@ Update the navigation property runs in security
 ```
 Update-MgSecurityAttackSimulationAutomationRun -SimulationAutomationId <String>
  -SimulationAutomationRunId <String> [-AdditionalProperties <Hashtable>] [-EndDateTime <DateTime>]
- [-Id <String>] [-SimulationId <String>] [-StartDateTime <DateTime>] [-Status <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-SimulationId <String>] [-StartDateTime <DateTime>] [-Status <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgSecurityAttackSimulationAutomationRun -SimulationAutomationId <String>
- -SimulationAutomationRunId <String> -BodyParameter <IMicrosoftGraphSimulationAutomationRun>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -SimulationAutomationRunId <String> -BodyParameter <IMicrosoftGraphSimulationAutomationRun> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgSecurityAttackSimulationAutomationRun -InputObject <ISecurityIdentity>
- -BodyParameter <IMicrosoftGraphSimulationAutomationRun> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphSimulationAutomationRun> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgSecurityAttackSimulationAutomationRun -InputObject <ISecurityIdentity>
  [-AdditionalProperties <Hashtable>] [-EndDateTime <DateTime>] [-Id <String>] [-SimulationId <String>]
- [-StartDateTime <DateTime>] [-Status <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-StartDateTime <DateTime>] [-Status <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -106,21 +104,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -271,13 +254,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSimulationAutomationRun
-
-### System.Collections.Hashtable
 
 ## NOTES
 

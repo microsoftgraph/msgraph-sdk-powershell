@@ -16,31 +16,29 @@ Update the navigation property serviceManagementDetails in tenantRelationships
 ```
 Update-MgTenantRelationshipDelegatedAdminCustomerServiceManagementDetail -DelegatedAdminCustomerId <String>
  -DelegatedAdminServiceManagementDetailId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
- [-ServiceManagementUrl <String>] [-ServiceName <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-ServiceManagementUrl <String>] [-ServiceName <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgTenantRelationshipDelegatedAdminCustomerServiceManagementDetail -DelegatedAdminCustomerId <String>
  -DelegatedAdminServiceManagementDetailId <String>
- -BodyParameter <IMicrosoftGraphDelegatedAdminServiceManagementDetail> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphDelegatedAdminServiceManagementDetail> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgTenantRelationshipDelegatedAdminCustomerServiceManagementDetail
  -InputObject <IIdentityPartnerIdentity> -BodyParameter <IMicrosoftGraphDelegatedAdminServiceManagementDetail>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgTenantRelationshipDelegatedAdminCustomerServiceManagementDetail
  -InputObject <IIdentityPartnerIdentity> [-AdditionalProperties <Hashtable>] [-Id <String>]
- [-ServiceManagementUrl <String>] [-ServiceName <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-ServiceManagementUrl <String>] [-ServiceName <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -122,21 +120,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -244,13 +227,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDelegatedAdminServiceManagementDetail
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDelegatedAdminServiceManagementDetail
-
-### System.Collections.Hashtable
 
 ## NOTES
 

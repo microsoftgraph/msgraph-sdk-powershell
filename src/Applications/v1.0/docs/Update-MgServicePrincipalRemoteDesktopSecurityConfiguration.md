@@ -17,30 +17,26 @@ Use this configuration to enable or disable the Microsoft Entra ID Remote Deskto
 ```
 Update-MgServicePrincipalRemoteDesktopSecurityConfiguration -ServicePrincipalId <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-IsRemoteDesktopProtocolEnabled]
- [-TargetDeviceGroups <IMicrosoftGraphTargetDeviceGroup[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-TargetDeviceGroups <IMicrosoftGraphTargetDeviceGroup[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgServicePrincipalRemoteDesktopSecurityConfiguration -ServicePrincipalId <String>
- -BodyParameter <IMicrosoftGraphRemoteDesktopSecurityConfiguration> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphRemoteDesktopSecurityConfiguration> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgServicePrincipalRemoteDesktopSecurityConfiguration -InputObject <IApplicationsIdentity>
- -BodyParameter <IMicrosoftGraphRemoteDesktopSecurityConfiguration> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphRemoteDesktopSecurityConfiguration> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgServicePrincipalRemoteDesktopSecurityConfiguration -InputObject <IApplicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-IsRemoteDesktopProtocolEnabled]
- [-TargetDeviceGroups <IMicrosoftGraphTargetDeviceGroup[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-TargetDeviceGroups <IMicrosoftGraphTargetDeviceGroup[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -90,21 +86,6 @@ Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -229,13 +210,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRemoteDesktopSecurityConfiguration
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRemoteDesktopSecurityConfiguration
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -276,7 +253,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[TargetDeviceGroupId <String>]`: The unique identifier of targetDeviceGroup
   - `[TokenIssuancePolicyId <String>]`: The unique identifier of tokenIssuancePolicy
   - `[TokenLifetimePolicyId <String>]`: The unique identifier of tokenLifetimePolicy
-  - `[UniqueName <String>]`: Alternate key of application
   - `[UserId <String>]`: The unique identifier of user
 
 `TARGETDEVICEGROUPS <IMicrosoftGraphTargetDeviceGroup[]>`: The collection of target device groups that are associated with the RDS security configuration that will be enabled for SSO when a client connects to the target device over RDP using the new Microsoft Entra ID RDS authentication protocol.

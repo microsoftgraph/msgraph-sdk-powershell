@@ -21,22 +21,19 @@ For information about retention labels from an administrator's perspective, see 
 Update-MgUserDriveRootRetentionLabel -DriveId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
  [-Id <String>] [-IsLabelAppliedExplicitly] [-LabelAppliedBy <IMicrosoftGraphIdentitySet>]
  [-LabelAppliedDateTime <DateTime>] [-Name <String>]
- [-RetentionSettings <IMicrosoftGraphRetentionLabelSettings>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-RetentionSettings <IMicrosoftGraphRetentionLabelSettings>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgUserDriveRootRetentionLabel -DriveId <String> -UserId <String>
- -BodyParameter <IMicrosoftGraphItemRetentionLabel> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphItemRetentionLabel> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgUserDriveRootRetentionLabel -InputObject <IFilesIdentity>
- -BodyParameter <IMicrosoftGraphItemRetentionLabel> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphItemRetentionLabel> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -44,8 +41,7 @@ Update-MgUserDriveRootRetentionLabel -InputObject <IFilesIdentity>
 Update-MgUserDriveRootRetentionLabel -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>]
  [-Id <String>] [-IsLabelAppliedExplicitly] [-LabelAppliedBy <IMicrosoftGraphIdentitySet>]
  [-LabelAppliedDateTime <DateTime>] [-Name <String>]
- [-RetentionSettings <IMicrosoftGraphRetentionLabelSettings>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-RetentionSettings <IMicrosoftGraphRetentionLabelSettings>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -116,21 +112,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -304,13 +285,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemRetentionLabel
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemRetentionLabel
-
-### System.Collections.Hashtable
 
 ## NOTES
 

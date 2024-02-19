@@ -15,15 +15,13 @@ Update the navigation property directoryRoleAccessReviewPolicy in policies
 ### UpdateExpanded (Default)
 ```
 Update-MgBetaPolicyDirectoryRoleAccessReviewPolicy [-AdditionalProperties <Hashtable>] [-Id <String>]
- [-Settings <IMicrosoftGraphAccessReviewScheduleSettings>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Settings <IMicrosoftGraphAccessReviewScheduleSettings>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaPolicyDirectoryRoleAccessReviewPolicy
- -BodyParameter <IMicrosoftGraphDirectoryRoleAccessReviewPolicy> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphDirectoryRoleAccessReviewPolicy> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -72,21 +70,6 @@ Parameter Sets: Update
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -163,13 +146,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryRoleAccessReviewPolicy
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryRoleAccessReviewPolicy
-
-### System.Collections.Hashtable
 
 ## NOTES
 

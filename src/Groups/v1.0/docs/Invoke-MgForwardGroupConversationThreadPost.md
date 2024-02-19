@@ -17,8 +17,7 @@ You can specify both the parent conversation and thread in the request, \nor, yo
 ```
 Invoke-MgForwardGroupConversationThreadPost -ConversationId <String> -ConversationThreadId <String>
  -GroupId <String> -PostId <String> [-AdditionalProperties <Hashtable>] [-Comment <String>]
- [-ToRecipients <IMicrosoftGraphRecipient[]>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-ToRecipients <IMicrosoftGraphRecipient[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Forward
@@ -26,21 +25,21 @@ Invoke-MgForwardGroupConversationThreadPost -ConversationId <String> -Conversati
 Invoke-MgForwardGroupConversationThreadPost -ConversationId <String> -ConversationThreadId <String>
  -GroupId <String> -PostId <String>
  -BodyParameter <IPaths1Trbs0NGroupsGroupIdConversationsConversationIdThreadsConversationthreadIdPostsPostIdMicrosoftGraphForwardPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ForwardViaIdentity
 ```
 Invoke-MgForwardGroupConversationThreadPost -InputObject <IGroupsIdentity>
  -BodyParameter <IPaths1Trbs0NGroupsGroupIdConversationsConversationIdThreadsConversationthreadIdPostsPostIdMicrosoftGraphForwardPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ForwardViaIdentityExpanded
 ```
 Invoke-MgForwardGroupConversationThreadPost -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>]
- [-Comment <String>] [-ToRecipients <IMicrosoftGraphRecipient[]>] [-Headers <IDictionary>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Comment <String>] [-ToRecipients <IMicrosoftGraphRecipient[]>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -161,21 +160,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -278,13 +262,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IPaths1Trbs0NGroupsGroupIdConversationsConversationIdThreadsConversationthreadIdPostsPostIdMicrosoftGraphForwardPostRequestbodyContentApplicationJsonSchema
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -330,7 +310,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[OnenotePageId <String>]`: The unique identifier of onenotePage
   - `[OnenoteSectionId <String>]`: The unique identifier of onenoteSection
   - `[Path <String>]`: Usage: path='{path}'
-  - `[Path1 <String>]`: Usage: path='{path1}'
   - `[PermissionId <String>]`: The unique identifier of permission
   - `[PostId <String>]`: The unique identifier of post
   - `[ProfilePhotoId <String>]`: The unique identifier of profilePhoto
@@ -340,7 +319,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[StartDateTime <String>]`: Usage: startDateTime='{startDateTime}'
   - `[SubscriptionId <String>]`: The unique identifier of subscription
   - `[Token <String>]`: Usage: token='{token}'
-  - `[UniqueName <String>]`: Alternate key of group
   - `[User <String>]`: Usage: User='{User}'
 
 `TORECIPIENTS <IMicrosoftGraphRecipient[]>`: .

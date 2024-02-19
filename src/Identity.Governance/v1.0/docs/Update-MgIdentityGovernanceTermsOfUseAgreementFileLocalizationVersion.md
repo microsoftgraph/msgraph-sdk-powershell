@@ -17,22 +17,22 @@ Update the navigation property versions in identityGovernance
 Update-MgIdentityGovernanceTermsOfUseAgreementFileLocalizationVersion -AgreementFileLocalizationId <String>
  -AgreementFileVersionId <String> -AgreementId <String> [-AdditionalProperties <Hashtable>]
  [-CreatedDateTime <DateTime>] [-DisplayName <String>] [-FileData <IMicrosoftGraphAgreementFileData>]
- [-FileName <String>] [-Id <String>] [-IsDefault] [-IsMajorVersion] [-Language <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-FileName <String>] [-Id <String>] [-IsDefault] [-IsMajorVersion] [-Language <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgIdentityGovernanceTermsOfUseAgreementFileLocalizationVersion -AgreementFileLocalizationId <String>
- -AgreementFileVersionId <String> -AgreementId <String> -BodyParameter <Hashtable> [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -AgreementFileVersionId <String> -AgreementId <String> -BodyParameter <Hashtable> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgIdentityGovernanceTermsOfUseAgreementFileLocalizationVersion
- -InputObject <IIdentityGovernanceIdentity> -BodyParameter <Hashtable> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -InputObject <IIdentityGovernanceIdentity> -BodyParameter <Hashtable> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -40,8 +40,7 @@ Update-MgIdentityGovernanceTermsOfUseAgreementFileLocalizationVersion
 Update-MgIdentityGovernanceTermsOfUseAgreementFileLocalizationVersion
  -InputObject <IIdentityGovernanceIdentity> [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>]
  [-DisplayName <String>] [-FileData <IMicrosoftGraphAgreementFileData>] [-FileName <String>] [-Id <String>]
- [-IsDefault] [-IsMajorVersion] [-Language <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-IsDefault] [-IsMajorVersion] [-Language <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -205,21 +204,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -344,13 +328,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Collections.Hashtable
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAgreementFileVersion
-
-### System.Collections.Hashtable
 
 ## NOTES
 

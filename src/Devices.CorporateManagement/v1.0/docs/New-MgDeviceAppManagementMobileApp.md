@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceAppManagementMobileApp
 
 ## SYNOPSIS
-Create a new windowsAppX object.
+Create a new managedAndroidStoreApp object.
 
 ## SYNTAX
 
@@ -19,18 +19,17 @@ New-MgDeviceAppManagementMobileApp [-AdditionalProperties <Hashtable>]
  [-CreatedDateTime <DateTime>] [-Description <String>] [-Developer <String>] [-DisplayName <String>]
  [-Id <String>] [-InformationUrl <String>] [-IsFeatured] [-LargeIcon <IMicrosoftGraphMimeContent>]
  [-LastModifiedDateTime <DateTime>] [-Notes <String>] [-Owner <String>] [-PrivacyInformationUrl <String>]
- [-Publisher <String>] [-PublishingState <MobileAppPublishingState>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-Publisher <String>] [-PublishingState <MobileAppPublishingState>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgDeviceAppManagementMobileApp -BodyParameter <IMicrosoftGraphMobileApp> [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgDeviceAppManagementMobileApp -BodyParameter <IMicrosoftGraphMobileApp> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Create a new windowsAppX object.
+Create a new managedAndroidStoreApp object.
 
 ## EXAMPLES
 
@@ -173,21 +172,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -381,13 +365,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileApp
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileApp
-
-### System.Collections.Hashtable
 
 ## NOTES
 

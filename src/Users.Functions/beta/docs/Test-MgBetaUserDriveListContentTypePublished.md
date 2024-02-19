@@ -15,13 +15,12 @@ Invoke function isPublished
 ### Is (Default)
 ```
 Test-MgBetaUserDriveListContentTypePublished -ContentTypeId <String> -DriveId <String> -UserId <String>
- [-Headers <IDictionary>] [<CommonParameters>]
+ [<CommonParameters>]
 ```
 
 ### IsViaIdentity
 ```
-Test-MgBetaUserDriveListContentTypePublished -InputObject <IUsersFunctionsIdentity> [-Headers <IDictionary>]
- [<CommonParameters>]
+Test-MgBetaUserDriveListContentTypePublished -InputObject <IUsersFunctionsIdentity> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -75,21 +74,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -128,13 +112,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IUsersFunctionsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -162,7 +142,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[GroupId <String>]`: Usage: groupId='{groupId}'
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}
   - `[Interval <String>]`: Usage: interval='{interval}'
-  - `[JoinWebUrl <String>]`: Alternate key of onlineMeeting
   - `[ListItemId <String>]`: The unique identifier of listItem
   - `[MailFolderId <String>]`: The unique identifier of mailFolder
   - `[MailFolderId1 <String>]`: The unique identifier of mailFolder

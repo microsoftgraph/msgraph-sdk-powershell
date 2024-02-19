@@ -16,8 +16,8 @@ Commits a file of a given app.
 ```
 Invoke-MgCommitDeviceAppManagementMobileAppMicrosoftGraphAndroidLobAppContentVersionFile
  -MobileAppContentFileId <String> -MobileAppContentId <String> -MobileAppId <String>
- [-AdditionalProperties <Hashtable>] [-FileEncryptionInfo <IMicrosoftGraphFileEncryptionInfo>]
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-FileEncryptionInfo <IMicrosoftGraphFileEncryptionInfo>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Commit
@@ -25,7 +25,7 @@ Invoke-MgCommitDeviceAppManagementMobileAppMicrosoftGraphAndroidLobAppContentVer
 Invoke-MgCommitDeviceAppManagementMobileAppMicrosoftGraphAndroidLobAppContentVersionFile
  -MobileAppContentFileId <String> -MobileAppContentId <String> -MobileAppId <String>
  -BodyParameter <IPathsNf5Mr6DeviceappmanagementMobileappsMobileappIdMicrosoftGraphAndroidlobappContentversionsMobileappcontentIdFilesMobileappcontentfileIdMicrosoftGraphCommitPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CommitViaIdentity
@@ -33,15 +33,15 @@ Invoke-MgCommitDeviceAppManagementMobileAppMicrosoftGraphAndroidLobAppContentVer
 Invoke-MgCommitDeviceAppManagementMobileAppMicrosoftGraphAndroidLobAppContentVersionFile
  -InputObject <IDevicesCorporateManagementIdentity>
  -BodyParameter <IPathsNf5Mr6DeviceappmanagementMobileappsMobileappIdMicrosoftGraphAndroidlobappContentversionsMobileappcontentIdFilesMobileappcontentfileIdMicrosoftGraphCommitPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CommitViaIdentityExpanded
 ```
 Invoke-MgCommitDeviceAppManagementMobileAppMicrosoftGraphAndroidLobAppContentVersionFile
  -InputObject <IDevicesCorporateManagementIdentity> [-AdditionalProperties <Hashtable>]
- [-FileEncryptionInfo <IMicrosoftGraphFileEncryptionInfo>] [-Headers <IDictionary>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-FileEncryptionInfo <IMicrosoftGraphFileEncryptionInfo>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -109,21 +109,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -243,13 +228,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IPathsNf5Mr6DeviceappmanagementMobileappsMobileappIdMicrosoftGraphAndroidlobappContentversionsMobileappcontentIdFilesMobileappcontentfileIdMicrosoftGraphCommitPostRequestbodyContentApplicationJsonSchema
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
-
-### System.Collections.Hashtable
 
 ## NOTES
 

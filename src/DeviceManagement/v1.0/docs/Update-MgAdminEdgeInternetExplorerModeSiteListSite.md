@@ -20,22 +20,20 @@ Update-MgAdminEdgeInternetExplorerModeSiteListSite -BrowserSiteId <String> -Brow
  [-DeletedDateTime <DateTime>] [-History <IMicrosoftGraphBrowserSiteHistory[]>] [-Id <String>]
  [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>]
  [-MergeType <BrowserSiteMergeType>] [-Status <BrowserSiteStatus>]
- [-TargetEnvironment <BrowserSiteTargetEnvironment>] [-WebUrl <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-TargetEnvironment <BrowserSiteTargetEnvironment>] [-WebUrl <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgAdminEdgeInternetExplorerModeSiteListSite -BrowserSiteId <String> -BrowserSiteListId <String>
- -BodyParameter <IMicrosoftGraphBrowserSite> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphBrowserSite> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgAdminEdgeInternetExplorerModeSiteListSite -InputObject <IDeviceManagementIdentity>
- -BodyParameter <IMicrosoftGraphBrowserSite> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphBrowserSite> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -46,8 +44,8 @@ Update-MgAdminEdgeInternetExplorerModeSiteListSite -InputObject <IDeviceManageme
  [-DeletedDateTime <DateTime>] [-History <IMicrosoftGraphBrowserSiteHistory[]>] [-Id <String>]
  [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>]
  [-MergeType <BrowserSiteMergeType>] [-Status <BrowserSiteStatus>]
- [-TargetEnvironment <BrowserSiteTargetEnvironment>] [-WebUrl <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-TargetEnvironment <BrowserSiteTargetEnvironment>] [-WebUrl <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -205,21 +203,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -402,13 +385,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBrowserSite
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBrowserSite
-
-### System.Collections.Hashtable
 
 ## NOTES
 

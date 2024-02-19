@@ -17,22 +17,21 @@ Create new navigation property to presentations for deviceManagement
 New-MgBetaDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionNextVersionDefinitionPresentation
  -GroupPolicyDefinitionId <String> [-AdditionalProperties <Hashtable>]
  [-Definition <IMicrosoftGraphGroupPolicyDefinition>] [-Id <String>] [-Label <String>]
- [-LastModifiedDateTime <DateTime>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-LastModifiedDateTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionNextVersionDefinitionPresentation
- -GroupPolicyDefinitionId <String> -BodyParameter <IMicrosoftGraphGroupPolicyPresentation>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -GroupPolicyDefinitionId <String> -BodyParameter <IMicrosoftGraphGroupPolicyPresentation> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionNextVersionDefinitionPresentation
  -InputObject <IDeviceManagementAdministrationIdentity>
- -BodyParameter <IMicrosoftGraphGroupPolicyPresentation> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphGroupPolicyPresentation> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -40,7 +39,7 @@ New-MgBetaDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionNextVersi
 New-MgBetaDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionNextVersionDefinitionPresentation
  -InputObject <IDeviceManagementAdministrationIdentity> [-AdditionalProperties <Hashtable>]
  [-Definition <IMicrosoftGraphGroupPolicyDefinition>] [-Id <String>] [-Label <String>]
- [-LastModifiedDateTime <DateTime>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-LastModifiedDateTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -123,21 +122,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -244,13 +228,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyPresentation
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyPresentation
-
-### System.Collections.Hashtable
 
 ## NOTES
 

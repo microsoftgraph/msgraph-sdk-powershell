@@ -28,22 +28,19 @@ Update-MgBetaFinancialCompanySaleInvoice -CompanyId <String> -SalesInvoiceId <St
  [-SellingPostalAddress <IMicrosoftGraphPostalAddressType>] [-ShipmentMethod <IMicrosoftGraphShipmentMethod>]
  [-ShipmentMethodId <String>] [-ShippingPostalAddress <IMicrosoftGraphPostalAddressType>]
  [-ShipToContact <String>] [-ShipToName <String>] [-Status <String>] [-TotalAmountExcludingTax <Decimal>]
- [-TotalAmountIncludingTax <Decimal>] [-TotalTaxAmount <Decimal>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-TotalAmountIncludingTax <Decimal>] [-TotalTaxAmount <Decimal>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaFinancialCompanySaleInvoice -CompanyId <String> -SalesInvoiceId <String>
- -BodyParameter <IMicrosoftGraphSalesInvoice> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphSalesInvoice> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaFinancialCompanySaleInvoice -InputObject <IFinancialsIdentity>
- -BodyParameter <IMicrosoftGraphSalesInvoice> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphSalesInvoice> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -62,8 +59,7 @@ Update-MgBetaFinancialCompanySaleInvoice -InputObject <IFinancialsIdentity>
  [-SellingPostalAddress <IMicrosoftGraphPostalAddressType>] [-ShipmentMethod <IMicrosoftGraphShipmentMethod>]
  [-ShipmentMethodId <String>] [-ShippingPostalAddress <IMicrosoftGraphPostalAddressType>]
  [-ShipToContact <String>] [-ShipToName <String>] [-Status <String>] [-TotalAmountExcludingTax <Decimal>]
- [-TotalAmountIncludingTax <Decimal>] [-TotalTaxAmount <Decimal>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-TotalAmountIncludingTax <Decimal>] [-TotalTaxAmount <Decimal>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -388,21 +384,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -812,13 +793,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSalesInvoice
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSalesInvoice
-
-### System.Collections.Hashtable
 
 ## NOTES
 

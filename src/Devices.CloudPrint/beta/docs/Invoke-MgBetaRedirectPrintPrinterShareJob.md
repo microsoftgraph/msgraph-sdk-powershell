@@ -18,28 +18,28 @@ For details about how to use this API to add pull printing support to Universal 
 ```
 Invoke-MgBetaRedirectPrintPrinterShareJob -PrinterShareId <String> -PrintJobId <String>
  [-AdditionalProperties <Hashtable>] [-Configuration <IMicrosoftGraphPrintJobConfiguration>]
- [-DestinationPrinterId <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-DestinationPrinterId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Redirect
 ```
 Invoke-MgBetaRedirectPrintPrinterShareJob -PrinterShareId <String> -PrintJobId <String>
  -BodyParameter <IPathsV0BkcePrintPrintersharesPrintershareIdJobsPrintjobIdMicrosoftGraphRedirectPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RedirectViaIdentity
 ```
 Invoke-MgBetaRedirectPrintPrinterShareJob -InputObject <IDevicesCloudPrintIdentity>
  -BodyParameter <IPathsV0BkcePrintPrintersharesPrintershareIdJobsPrintjobIdMicrosoftGraphRedirectPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RedirectViaIdentityExpanded
 ```
 Invoke-MgBetaRedirectPrintPrinterShareJob -InputObject <IDevicesCloudPrintIdentity>
  [-AdditionalProperties <Hashtable>] [-Configuration <IMicrosoftGraphPrintJobConfiguration>]
- [-DestinationPrinterId <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-DestinationPrinterId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -124,21 +124,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -228,13 +213,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPathsV0BkcePrintPrintersharesPrintershareIdJobsPrintjobIdMicrosoftGraphRedirectPostRequestbodyContentApplicationJsonSchema
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrintJob
-
-### System.Collections.Hashtable
 
 ## NOTES
 

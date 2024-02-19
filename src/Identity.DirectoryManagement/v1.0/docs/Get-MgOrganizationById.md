@@ -16,15 +16,15 @@ Some common uses for this function are to:
 
 ### GetExpanded (Default)
 ```
-Get-MgOrganizationById [-AdditionalProperties <Hashtable>] [-Ids <String[]>] [-Types <String[]>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Get-MgOrganizationById [-AdditionalProperties <Hashtable>] [-Ids <String[]>] [-Types <String[]>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Get
 ```
 Get-MgOrganizationById
  -BodyParameter <IPaths11G1VgqOrganizationMicrosoftGraphGetbyidsPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -36,17 +36,24 @@ Some common uses for this function are to:
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.DirectoryObjects
 ```
 
+$params = @{
+	Ids = @(
+		"84b80893-8749-40a3-97b7-68513b600544"
+		"5d6059b6-368d-45f8-91e1-8e07d485f1d0"
+		"0b944de3-e0fc-4774-a49a-b135213725ef"
+		"b75a5ab2-fe55-4463-bd31-d21ad555c6e0"
+	)
+	Types = @(
+		"user"
+		"group"
+		"device"
+	)
+}
 
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-
+Get-MgDirectoryObjectById -BodyParameter $params
 
 ## PARAMETERS
 
@@ -75,21 +82,6 @@ Parameter Sets: Get
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -164,13 +156,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IPaths11G1VgqOrganizationMicrosoftGraphGetbyidsPostRequestbodyContentApplicationJsonSchema
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject
-
-### System.Collections.Hashtable
 
 ## NOTES
 

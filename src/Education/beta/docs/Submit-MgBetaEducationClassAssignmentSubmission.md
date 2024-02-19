@@ -20,13 +20,13 @@ A teacher can also submit a student's assignment on their behalf.
 ### Submit (Default)
 ```
 Submit-MgBetaEducationClassAssignmentSubmission -EducationAssignmentId <String> -EducationClassId <String>
- -EducationSubmissionId <String> [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -EducationSubmissionId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SubmitViaIdentity
 ```
-Submit-MgBetaEducationClassAssignmentSubmission -InputObject <IEducationIdentity> [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Submit-MgBetaEducationClassAssignmentSubmission -InputObject <IEducationIdentity> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -42,9 +42,10 @@ A teacher can also submit a student's assignment on their behalf.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Education
+Submit-MgBetaEducationClassAssignmentSubmission -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId
 ```
 
-Submit-MgBetaEducationClassAssignmentSubmission -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId
+
 
 ## PARAMETERS
 
@@ -90,21 +91,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -162,13 +148,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationSubmission
-
-### System.Collections.Hashtable
 
 ## NOTES
 

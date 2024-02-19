@@ -15,29 +15,27 @@ Invoke action preview
 ### PreviewExpanded (Default)
 ```
 Invoke-MgBetaPreviewDriveRoot -DriveId <String> [-AdditionalProperties <Hashtable>] [-AllowEdit] [-Chromeless]
- [-Page <String>] [-Viewer <String>] [-Zoom <Double>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Page <String>] [-Viewer <String>] [-Zoom <Double>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Preview
 ```
 Invoke-MgBetaPreviewDriveRoot -DriveId <String>
  -BodyParameter <IPaths1X99IewDrivesDriveIdRootMicrosoftGraphPreviewPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### PreviewViaIdentity
 ```
 Invoke-MgBetaPreviewDriveRoot -InputObject <IFilesIdentity>
  -BodyParameter <IPaths1X99IewDrivesDriveIdRootMicrosoftGraphPreviewPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### PreviewViaIdentityExpanded
 ```
 Invoke-MgBetaPreviewDriveRoot -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>] [-AllowEdit]
- [-Chromeless] [-Page <String>] [-Viewer <String>] [-Zoom <Double>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-Chromeless] [-Page <String>] [-Viewer <String>] [-Zoom <Double>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -134,21 +132,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -253,13 +236,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPaths1X99IewDrivesDriveIdRootMicrosoftGraphPreviewPostRequestbodyContentApplicationJsonSchema
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphItemPreviewInfo
-
-### System.Collections.Hashtable
 
 ## NOTES
 

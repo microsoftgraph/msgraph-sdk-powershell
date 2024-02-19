@@ -23,14 +23,13 @@ New-MgBetaSecurityThreatIntelligenceWhoisRecord [-Abuse <IMicrosoftGraphSecurity
  [-Noc <IMicrosoftGraphSecurityWhoisContact>] [-RawWhoisText <String>]
  [-Registrant <IMicrosoftGraphSecurityWhoisContact>] [-Registrar <IMicrosoftGraphSecurityWhoisContact>]
  [-RegistrationDateTime <DateTime>] [-Technical <IMicrosoftGraphSecurityWhoisContact>] [-WhoisServer <String>]
- [-Zone <IMicrosoftGraphSecurityWhoisContact>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Zone <IMicrosoftGraphSecurityWhoisContact>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgBetaSecurityThreatIntelligenceWhoisRecord -BodyParameter <IMicrosoftGraphSecurityWhoisRecord>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaSecurityThreatIntelligenceWhoisRecord -BodyParameter <IMicrosoftGraphSecurityWhoisRecord> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -179,21 +178,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -460,13 +444,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityWhoisRecord
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityWhoisRecord
-
-### System.Collections.Hashtable
 
 ## NOTES
 

@@ -13,8 +13,7 @@ Metadata for the device configuration user activity report
 ## SYNTAX
 
 ```
-Get-MgBetaReportDeviceConfigurationUserActivity -OutFile <String> [-Headers <IDictionary>] [-PassThru]
- [<CommonParameters>]
+Get-MgBetaReportDeviceConfigurationUserActivity -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -37,21 +36,6 @@ Metadata for the device configuration user activity report
 {{ Add output here }}
 
 ## PARAMETERS
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
 
 ### -OutFile
 Path to write output file to
@@ -88,13 +72,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
-
-### System.Collections.Hashtable
 
 ## NOTES
 

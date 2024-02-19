@@ -16,19 +16,18 @@ Read properties and relationships of the user object.
 ```
 Get-MgUser [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
  [-Sort <String[]>] [-Top <Int32>] [-ConsistencyLevel <String>] [-All] [-CountVariable <String>]
- [-Headers <IDictionary>] [-PageSize <Int32>] [<CommonParameters>]
+ [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgUser -UserId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [-Headers <IDictionary>]
- [<CommonParameters>]
+Get-MgUser -UserId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
 Get-MgUser -InputObject <IUsersIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
- [-Headers <IDictionary>] [<CommonParameters>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -197,21 +196,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -325,13 +309,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IUsersIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUser
-
-### System.Collections.Hashtable
 
 ## NOTES
 

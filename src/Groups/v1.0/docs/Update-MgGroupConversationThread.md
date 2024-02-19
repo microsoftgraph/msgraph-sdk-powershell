@@ -18,21 +18,19 @@ Update-MgGroupConversationThread -ConversationId <String> -ConversationThreadId 
  [-AdditionalProperties <Hashtable>] [-CcRecipients <IMicrosoftGraphRecipient[]>] [-HasAttachments]
  [-Id <String>] [-IsLocked] [-LastDeliveredDateTime <DateTime>] [-Posts <IMicrosoftGraphPost[]>]
  [-Preview <String>] [-Topic <String>] [-ToRecipients <IMicrosoftGraphRecipient[]>]
- [-UniqueSenders <String[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-UniqueSenders <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgGroupConversationThread -ConversationId <String> -ConversationThreadId <String> -GroupId <String>
- -BodyParameter <IMicrosoftGraphConversationThread> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphConversationThread> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgGroupConversationThread -InputObject <IGroupsIdentity>
- -BodyParameter <IMicrosoftGraphConversationThread> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphConversationThread> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -40,8 +38,8 @@ Update-MgGroupConversationThread -InputObject <IGroupsIdentity>
 Update-MgGroupConversationThread -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>]
  [-CcRecipients <IMicrosoftGraphRecipient[]>] [-HasAttachments] [-Id <String>] [-IsLocked]
  [-LastDeliveredDateTime <DateTime>] [-Posts <IMicrosoftGraphPost[]>] [-Preview <String>] [-Topic <String>]
- [-ToRecipients <IMicrosoftGraphRecipient[]>] [-UniqueSenders <String[]>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-ToRecipients <IMicrosoftGraphRecipient[]>] [-UniqueSenders <String[]>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -171,21 +169,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -375,13 +358,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConversationThread
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConversationThread
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -473,7 +452,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[OnenotePageId <String>]`: The unique identifier of onenotePage
   - `[OnenoteSectionId <String>]`: The unique identifier of onenoteSection
   - `[Path <String>]`: Usage: path='{path}'
-  - `[Path1 <String>]`: Usage: path='{path1}'
   - `[PermissionId <String>]`: The unique identifier of permission
   - `[PostId <String>]`: The unique identifier of post
   - `[ProfilePhotoId <String>]`: The unique identifier of profilePhoto
@@ -483,7 +461,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[StartDateTime <String>]`: Usage: startDateTime='{startDateTime}'
   - `[SubscriptionId <String>]`: The unique identifier of subscription
   - `[Token <String>]`: Usage: token='{token}'
-  - `[UniqueName <String>]`: Alternate key of group
   - `[User <String>]`: Usage: User='{User}'
 
 `POSTS <IMicrosoftGraphPost[]>`: .

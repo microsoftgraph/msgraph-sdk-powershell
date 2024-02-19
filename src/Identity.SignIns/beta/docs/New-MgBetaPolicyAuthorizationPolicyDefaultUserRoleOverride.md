@@ -16,30 +16,26 @@ Create new navigation property to defaultUserRoleOverrides for policies
 ```
 New-MgBetaPolicyAuthorizationPolicyDefaultUserRoleOverride -AuthorizationPolicyId <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-IsDefault]
- [-RolePermissions <IMicrosoftGraphUnifiedRolePermission[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-RolePermissions <IMicrosoftGraphUnifiedRolePermission[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaPolicyAuthorizationPolicyDefaultUserRoleOverride -AuthorizationPolicyId <String>
- -BodyParameter <IMicrosoftGraphDefaultUserRoleOverride> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphDefaultUserRoleOverride> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaPolicyAuthorizationPolicyDefaultUserRoleOverride -InputObject <IIdentitySignInsIdentity>
- -BodyParameter <IMicrosoftGraphDefaultUserRoleOverride> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphDefaultUserRoleOverride> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgBetaPolicyAuthorizationPolicyDefaultUserRoleOverride -InputObject <IIdentitySignInsIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-IsDefault]
- [-RolePermissions <IMicrosoftGraphUnifiedRolePermission[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-RolePermissions <IMicrosoftGraphUnifiedRolePermission[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -103,21 +99,6 @@ Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -227,13 +208,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDefaultUserRoleOverride
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDefaultUserRoleOverride
-
-### System.Collections.Hashtable
 
 ## NOTES
 

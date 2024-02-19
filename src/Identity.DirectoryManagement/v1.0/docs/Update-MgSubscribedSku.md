@@ -18,20 +18,19 @@ Update-MgSubscribedSku -SubscribedSkuId <String> [-AccountId <String>] [-Account
  [-AdditionalProperties <Hashtable>] [-AppliesTo <String>] [-CapabilityStatus <String>]
  [-ConsumedUnits <Int32>] [-Id <String>] [-PrepaidUnits <IMicrosoftGraphLicenseUnitsDetail>]
  [-ServicePlans <IMicrosoftGraphServicePlanInfo[]>] [-SkuId <String>] [-SkuPartNumber <String>]
- [-SubscriptionIds <String[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-SubscriptionIds <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgSubscribedSku -SubscribedSkuId <String> -BodyParameter <IMicrosoftGraphSubscribedSku>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgSubscribedSku -SubscribedSkuId <String> -BodyParameter <IMicrosoftGraphSubscribedSku> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgSubscribedSku -InputObject <IIdentityDirectoryManagementIdentity>
- -BodyParameter <IMicrosoftGraphSubscribedSku> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphSubscribedSku> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -40,8 +39,8 @@ Update-MgSubscribedSku -InputObject <IIdentityDirectoryManagementIdentity> [-Acc
  [-AccountName <String>] [-AdditionalProperties <Hashtable>] [-AppliesTo <String>]
  [-CapabilityStatus <String>] [-ConsumedUnits <Int32>] [-Id <String>]
  [-PrepaidUnits <IMicrosoftGraphLicenseUnitsDetail>] [-ServicePlans <IMicrosoftGraphServicePlanInfo[]>]
- [-SkuId <String>] [-SkuPartNumber <String>] [-SubscriptionIds <String[]>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-SkuId <String>] [-SkuPartNumber <String>] [-SubscriptionIds <String[]>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -51,17 +50,10 @@ Update entity in subscribedSkus
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Identity.DirectoryManagement
 ```
 
-
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-
+Get-MgSubscribedSku -SubscribedSkuId $subscribedSkuId
 
 ## PARAMETERS
 
@@ -172,21 +164,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -356,13 +333,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSubscribedSku
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSubscribedSku
-
-### System.Collections.Hashtable
 
 ## NOTES
 

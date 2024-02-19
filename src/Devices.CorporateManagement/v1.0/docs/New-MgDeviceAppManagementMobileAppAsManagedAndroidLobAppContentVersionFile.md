@@ -18,21 +18,21 @@ New-MgDeviceAppManagementMobileAppAsManagedAndroidLobAppContentVersionFile -Mobi
  -MobileAppId <String> [-AdditionalProperties <Hashtable>] [-AzureStorageUri <String>]
  [-AzureStorageUriExpirationDateTime <DateTime>] [-CreatedDateTime <DateTime>] [-Id <String>] [-IsCommitted]
  [-ManifestInputFile <String>] [-Name <String>] [-Size <Int64>] [-SizeEncrypted <Int64>]
- [-UploadState <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-UploadState <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgDeviceAppManagementMobileAppAsManagedAndroidLobAppContentVersionFile -MobileAppContentId <String>
- -MobileAppId <String> -BodyParameter <IMicrosoftGraphMobileAppContentFile> [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -MobileAppId <String> -BodyParameter <IMicrosoftGraphMobileAppContentFile> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgDeviceAppManagementMobileAppAsManagedAndroidLobAppContentVersionFile
  -InputObject <IDevicesCorporateManagementIdentity> -BodyParameter <IMicrosoftGraphMobileAppContentFile>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -41,8 +41,7 @@ New-MgDeviceAppManagementMobileAppAsManagedAndroidLobAppContentVersionFile
  -InputObject <IDevicesCorporateManagementIdentity> [-AdditionalProperties <Hashtable>]
  [-AzureStorageUri <String>] [-AzureStorageUriExpirationDateTime <DateTime>] [-CreatedDateTime <DateTime>]
  [-Id <String>] [-IsCommitted] [-ManifestInputFile <String>] [-Name <String>] [-Size <Int64>]
- [-SizeEncrypted <Int64>] [-UploadState <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-SizeEncrypted <Int64>] [-UploadState <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -139,21 +138,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -349,13 +333,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppContentFile
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppContentFile
-
-### System.Collections.Hashtable
 
 ## NOTES
 

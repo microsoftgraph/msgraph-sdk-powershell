@@ -8,49 +8,42 @@ schema: 2.0.0
 # Invoke-MgBetaInviteCommunicationCallParticipant
 
 ## SYNOPSIS
-Delete a specific participant in a call.
-In some situations, it is appropriate for an application to remove a participant from an active call.
-This action can be done before or after the participant answers the call.
-When an active caller is removed, they are immediately dropped from the call with no pre- or post-removal notification.
-When an invited participant is removed, any outstanding add participant request is canceled.
+Invite participants to the active call.
+For more information about how to handle operations, see commsOperation.
 
 ## SYNTAX
 
 ### InviteExpanded (Default)
 ```
 Invoke-MgBetaInviteCommunicationCallParticipant -CallId <String> [-AdditionalProperties <Hashtable>]
- [-ClientContext <String>] [-Participants <IMicrosoftGraphInvitationParticipantInfo[]>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ClientContext <String>] [-Participants <IMicrosoftGraphInvitationParticipantInfo[]>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Invite
 ```
 Invoke-MgBetaInviteCommunicationCallParticipant -CallId <String>
  -BodyParameter <IPaths1Bh76WaCommunicationsCallsCallIdParticipantsMicrosoftGraphInvitePostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### InviteViaIdentity
 ```
 Invoke-MgBetaInviteCommunicationCallParticipant -InputObject <ICloudCommunicationsIdentity>
  -BodyParameter <IPaths1Bh76WaCommunicationsCallsCallIdParticipantsMicrosoftGraphInvitePostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### InviteViaIdentityExpanded
 ```
 Invoke-MgBetaInviteCommunicationCallParticipant -InputObject <ICloudCommunicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-ClientContext <String>]
- [-Participants <IMicrosoftGraphInvitationParticipantInfo[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Participants <IMicrosoftGraphInvitationParticipantInfo[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Delete a specific participant in a call.
-In some situations, it is appropriate for an application to remove a participant from an active call.
-This action can be done before or after the participant answers the call.
-When an active caller is removed, they are immediately dropped from the call with no pre- or post-removal notification.
-When an invited participant is removed, any outstanding add participant request is canceled.
+Invite participants to the active call.
+For more information about how to handle operations, see commsOperation.
 
 ## EXAMPLES
 
@@ -216,21 +209,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -303,13 +281,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPaths1Bh76WaCommunicationsCallsCallIdParticipantsMicrosoftGraphInvitePostRequestbodyContentApplicationJsonSchema
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphInviteParticipantsOperation
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -348,7 +322,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[CommsOperationId <String>]`: The unique identifier of commsOperation
   - `[ContentSharingSessionId <String>]`: The unique identifier of contentSharingSession
   - `[FromDateTime <DateTime?>]`: Usage: fromDateTime={fromDateTime}
-  - `[JoinWebUrl <String>]`: Alternate key of onlineMeeting
   - `[MeetingAttendanceReportId <String>]`: The unique identifier of meetingAttendanceReport
   - `[MeetingRegistrantBaseId <String>]`: The unique identifier of meetingRegistrantBase
   - `[MeetingRegistrationQuestionId <String>]`: The unique identifier of meetingRegistrationQuestion

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Users
-Module Guid: d97e5ac8-550c-4761-9782-15fec8d89fb7
+Module Guid: 950867ec-4468-46c3-8b97-5347b8d70854
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.users
 Help Version: 1.0.0.0
 Locale: en-US
@@ -19,9 +19,6 @@ To get properties that are not returned by default, do a GET operation for the u
 Because the user resource supports extensions, you can also use the GET operation to get custom properties and extension data in a user instance.
 
 ### [Get-MgBetaUserAppRoleAssignedResource](Get-MgBetaUserAppRoleAssignedResource.md)
-Get appRoleAssignedResources from users
-
-### [Get-MgBetaUserAppRoleAssignedResourceByAppId](Get-MgBetaUserAppRoleAssignedResourceByAppId.md)
 Get appRoleAssignedResources from users
 
 ### [Get-MgBetaUserAppRoleAssignedResourceCount](Get-MgBetaUserAppRoleAssignedResourceCount.md)
@@ -540,6 +537,9 @@ Delete navigation property used for users
 ### [Remove-MgBetaUserLicenseDetail](Remove-MgBetaUserLicenseDetail.md)
 Delete navigation property licenseDetails for users
 
+### [Remove-MgBetaUserManager](Remove-MgBetaUserManager.md)
+Remove a user's manager.
+
 ### [Remove-MgBetaUserManagerByRef](Remove-MgBetaUserManagerByRef.md)
 Remove a user's manager.
 
@@ -590,6 +590,9 @@ Delete navigation property regionalAndLanguageSettings for users
 
 ### [Remove-MgBetaUserSettingShiftPreference](Remove-MgBetaUserSettingShiftPreference.md)
 Delete navigation property shiftPreferences for users
+
+### [Remove-MgBetaUserSponsor](Remove-MgBetaUserSponsor.md)
+Remove a user's sponsor.
 
 ### [Remove-MgBetaUserTodoList](Remove-MgBetaUserTodoList.md)
 Deletes a todoTaskList object.

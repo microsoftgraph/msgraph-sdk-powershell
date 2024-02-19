@@ -15,27 +15,27 @@ Invoke action preview
 ### PreviewExpanded (Default)
 ```
 Invoke-MgPreviewDriveRoot -DriveId <String> [-AdditionalProperties <Hashtable>] [-Page <String>]
- [-Zoom <Double>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Zoom <Double>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Preview
 ```
 Invoke-MgPreviewDriveRoot -DriveId <String>
  -BodyParameter <IPaths1X99IewDrivesDriveIdRootMicrosoftGraphPreviewPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### PreviewViaIdentity
 ```
 Invoke-MgPreviewDriveRoot -InputObject <IFilesIdentity>
  -BodyParameter <IPaths1X99IewDrivesDriveIdRootMicrosoftGraphPreviewPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### PreviewViaIdentityExpanded
 ```
 Invoke-MgPreviewDriveRoot -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>] [-Page <String>]
- [-Zoom <Double>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Zoom <Double>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -102,21 +102,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -206,13 +191,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IPaths1X99IewDrivesDriveIdRootMicrosoftGraphPreviewPostRequestbodyContentApplicationJsonSchema
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemPreviewInfo
-
-### System.Collections.Hashtable
 
 ## NOTES
 

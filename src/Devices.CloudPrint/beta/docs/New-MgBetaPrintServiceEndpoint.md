@@ -15,28 +15,27 @@ Create new navigation property to endpoints for print
 ### CreateExpanded (Default)
 ```
 New-MgBetaPrintServiceEndpoint -PrintServiceId <String> [-AdditionalProperties <Hashtable>]
- [-DisplayName <String>] [-Id <String>] [-Name <String>] [-Uri <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-DisplayName <String>] [-Id <String>] [-Name <String>] [-Uri <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaPrintServiceEndpoint -PrintServiceId <String> -BodyParameter <IMicrosoftGraphPrintServiceEndpoint>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaPrintServiceEndpoint -InputObject <IDevicesCloudPrintIdentity>
- -BodyParameter <IMicrosoftGraphPrintServiceEndpoint> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphPrintServiceEndpoint> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgBetaPrintServiceEndpoint -InputObject <IDevicesCloudPrintIdentity> [-AdditionalProperties <Hashtable>]
- [-DisplayName <String>] [-Id <String>] [-Name <String>] [-Uri <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-DisplayName <String>] [-Id <String>] [-Name <String>] [-Uri <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -46,17 +45,10 @@ Create new navigation property to endpoints for print
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Beta.Devices.CloudPrint
 ```
 
-
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-
+Get-MgBetaPrintServiceEndpoint -PrintServiceId $printServiceId
 
 ## PARAMETERS
 
@@ -103,21 +95,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -238,13 +215,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrintServiceEndpoint
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrintServiceEndpoint
-
-### System.Collections.Hashtable
 
 ## NOTES
 

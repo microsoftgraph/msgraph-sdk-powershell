@@ -18,14 +18,14 @@ Invoke-MgBetaExecuteDeviceManagementComanagedDeviceAction [-ActionName <ManagedD
  [-AdditionalProperties <Hashtable>] [-CarrierUrl <String>] [-DeprovisionReason <String>]
  [-DeviceIds <String[]>] [-DeviceName <String>] [-KeepEnrollmentData] [-KeepUserData]
  [-NotificationBody <String>] [-NotificationTitle <String>] [-OrganizationalUnitPath <String>]
- [-PersistEsimDataPlan] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PersistEsimDataPlan] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Execute
 ```
 Invoke-MgBetaExecuteDeviceManagementComanagedDeviceAction
  -BodyParameter <IPaths5Wfb68DevicemanagementComanageddevicesMicrosoftGraphExecuteactionPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -152,21 +152,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -298,13 +283,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPaths5Wfb68DevicemanagementComanageddevicesMicrosoftGraphExecuteactionPostRequestbodyContentApplicationJsonSchema
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBulkManagedDeviceActionResult
-
-### System.Collections.Hashtable
 
 ## NOTES
 

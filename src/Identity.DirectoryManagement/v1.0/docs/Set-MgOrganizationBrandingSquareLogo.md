@@ -16,15 +16,14 @@ We recommend using a transparent image with no padding around the logo.
 
 ### Set (Default)
 ```
-Set-MgOrganizationBrandingSquareLogo -OrganizationId <String> -InFile <String> [-Data <Stream>]
- [-ContentType <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Set-MgOrganizationBrandingSquareLogo -OrganizationId <String> -InFile <String> [-Data <Stream>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentity
 ```
 Set-MgOrganizationBrandingSquareLogo -InputObject <IIdentityDirectoryManagementIdentity> -InFile <String>
- [-Data <Stream>] [-ContentType <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Data <Stream>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -36,55 +35,39 @@ We recommend using a transparent image with no padding around the logo.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Identity.DirectoryManagement
 ```
 
-
+Get-MgOrganizationBranding -OrganizationId $organizationId
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Identity.DirectoryManagement
 ```
 
+Get-MgOrganizationBranding -OrganizationId $organizationId
 
+### -------------------------- EXAMPLE 3 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Identity.DirectoryManagement
+```
+
+Get-MgOrganizationBranding -OrganizationId $organizationId
+
+### -------------------------- EXAMPLE 4 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Identity.DirectoryManagement
+```
+
+Get-MgOrganizationBrandingLocalizationBannerLogo -OrganizationId $organizationId -OrganizationalBrandingLocalizationId $organizationalBrandingLocalizationId
 
 ## PARAMETERS
-
-### -ContentType
-ContentType Parameter
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
 
 ### -Data
 .
 
 ```yaml
 Type: System.IO.Stream
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
 Parameter Sets: (All)
 Aliases:
 
@@ -196,17 +179,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
-### System.Collections.IDictionary
-
 ### System.IO.Stream
-
-### System.String
 
 ## OUTPUTS
 
 ### System.Boolean
-
-### System.Collections.Hashtable
 
 ## NOTES
 

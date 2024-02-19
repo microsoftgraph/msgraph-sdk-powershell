@@ -20,14 +20,13 @@ To allow for asynchronous processing, you must wait a minimum of 2 hours between
 Update-MgBetaTenantRelationshipMultiTenantOrganization [-AdditionalProperties <Hashtable>]
  [-CreatedDateTime <DateTime>] [-Description <String>] [-DisplayName <String>] [-Id <String>]
  [-JoinRequest <IMicrosoftGraphMultiTenantOrganizationJoinRequestRecord>] [-State <String>]
- [-Tenants <IMicrosoftGraphMultiTenantOrganizationMember[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Tenants <IMicrosoftGraphMultiTenantOrganizationMember[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaTenantRelationshipMultiTenantOrganization -BodyParameter <IMicrosoftGraphMultiTenantOrganization>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -128,21 +127,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -247,13 +231,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMultiTenantOrganization
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMultiTenantOrganization
-
-### System.Collections.Hashtable
 
 ## NOTES
 

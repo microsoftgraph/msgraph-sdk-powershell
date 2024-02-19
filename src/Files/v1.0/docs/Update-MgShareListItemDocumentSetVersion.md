@@ -19,21 +19,20 @@ Update-MgShareListItemDocumentSetVersion -DocumentSetVersionId <String> -SharedD
  [-CreatedDateTime <DateTime>] [-Fields <Hashtable>] [-Id <String>]
  [-Items <IMicrosoftGraphDocumentSetVersionItem[]>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
  [-LastModifiedDateTime <DateTime>] [-Publication <IMicrosoftGraphPublicationFacet>]
- [-ShouldCaptureMinorVersion] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ShouldCaptureMinorVersion] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgShareListItemDocumentSetVersion -DocumentSetVersionId <String> -ListItemId <String>
- -SharedDriveItemId <String> -BodyParameter <IMicrosoftGraphDocumentSetVersion> [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -SharedDriveItemId <String> -BodyParameter <IMicrosoftGraphDocumentSetVersion> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update1
 ```
 Update-MgShareListItemDocumentSetVersion -DocumentSetVersionId <String> -SharedDriveItemId <String>
- -BodyParameter <IMicrosoftGraphDocumentSetVersion> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphDocumentSetVersion> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateExpanded
@@ -43,21 +42,19 @@ Update-MgShareListItemDocumentSetVersion -DocumentSetVersionId <String> -ListIte
  [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>] [-Fields <Hashtable>] [-Id <String>]
  [-Items <IMicrosoftGraphDocumentSetVersionItem[]>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
  [-LastModifiedDateTime <DateTime>] [-Publication <IMicrosoftGraphPublicationFacet>]
- [-ShouldCaptureMinorVersion] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ShouldCaptureMinorVersion] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgShareListItemDocumentSetVersion -InputObject <IFilesIdentity>
- -BodyParameter <IMicrosoftGraphDocumentSetVersion> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphDocumentSetVersion> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
 Update-MgShareListItemDocumentSetVersion -InputObject <IFilesIdentity>
- -BodyParameter <IMicrosoftGraphDocumentSetVersion> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphDocumentSetVersion> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -66,8 +63,8 @@ Update-MgShareListItemDocumentSetVersion -InputObject <IFilesIdentity> [-Additio
  [-Comment <String>] [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>]
  [-Fields <Hashtable>] [-Id <String>] [-Items <IMicrosoftGraphDocumentSetVersionItem[]>]
  [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>]
- [-Publication <IMicrosoftGraphPublicationFacet>] [-ShouldCaptureMinorVersion] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Publication <IMicrosoftGraphPublicationFacet>] [-ShouldCaptureMinorVersion] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
@@ -76,8 +73,8 @@ Update-MgShareListItemDocumentSetVersion -InputObject <IFilesIdentity> [-Additio
  [-Comment <String>] [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>]
  [-Fields <Hashtable>] [-Id <String>] [-Items <IMicrosoftGraphDocumentSetVersionItem[]>]
  [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>]
- [-Publication <IMicrosoftGraphPublicationFacet>] [-ShouldCaptureMinorVersion] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Publication <IMicrosoftGraphPublicationFacet>] [-ShouldCaptureMinorVersion] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -205,21 +202,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -405,13 +387,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDocumentSetVersion
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDocumentSetVersion
-
-### System.Collections.Hashtable
 
 ## NOTES
 

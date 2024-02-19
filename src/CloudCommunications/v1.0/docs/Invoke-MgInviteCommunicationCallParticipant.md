@@ -19,30 +19,29 @@ When an invited participant is removed, any outstanding add participant request 
 ### InviteExpanded (Default)
 ```
 Invoke-MgInviteCommunicationCallParticipant -CallId <String> [-AdditionalProperties <Hashtable>]
- [-ClientContext <String>] [-Participants <IMicrosoftGraphInvitationParticipantInfo[]>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ClientContext <String>] [-Participants <IMicrosoftGraphInvitationParticipantInfo[]>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Invite
 ```
 Invoke-MgInviteCommunicationCallParticipant -CallId <String>
  -BodyParameter <IPaths1Bh76WaCommunicationsCallsCallIdParticipantsMicrosoftGraphInvitePostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### InviteViaIdentity
 ```
 Invoke-MgInviteCommunicationCallParticipant -InputObject <ICloudCommunicationsIdentity>
  -BodyParameter <IPaths1Bh76WaCommunicationsCallsCallIdParticipantsMicrosoftGraphInvitePostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### InviteViaIdentityExpanded
 ```
 Invoke-MgInviteCommunicationCallParticipant -InputObject <ICloudCommunicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-ClientContext <String>]
- [-Participants <IMicrosoftGraphInvitationParticipantInfo[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Participants <IMicrosoftGraphInvitationParticipantInfo[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -253,21 +252,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -340,13 +324,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IPaths1Bh76WaCommunicationsCallsCallIdParticipantsMicrosoftGraphInvitePostRequestbodyContentApplicationJsonSchema
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInviteParticipantsOperation
-
-### System.Collections.Hashtable
 
 ## NOTES
 

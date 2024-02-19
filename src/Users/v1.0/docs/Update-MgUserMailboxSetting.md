@@ -18,20 +18,19 @@ Update-MgUserMailboxSetting -UserId <String> [-AdditionalProperties <Hashtable>]
  [-AutomaticRepliesSetting <IMicrosoftGraphAutomaticRepliesSetting>] [-DateFormat <String>]
  [-DelegateMeetingMessageDeliveryOptions <String>] [-Language <IMicrosoftGraphLocaleInfo>]
  [-TimeFormat <String>] [-TimeZone <String>] [-UserPurpose <String>]
- [-WorkingHours <IMicrosoftGraphWorkingHours>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-WorkingHours <IMicrosoftGraphWorkingHours>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgUserMailboxSetting -UserId <String> -BodyParameter <IMicrosoftGraphMailboxSettings>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgUserMailboxSetting -UserId <String> -BodyParameter <IMicrosoftGraphMailboxSettings> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgUserMailboxSetting -InputObject <IUsersIdentity> -BodyParameter <IMicrosoftGraphMailboxSettings>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -40,8 +39,7 @@ Update-MgUserMailboxSetting -InputObject <IUsersIdentity> [-AdditionalProperties
  [-ArchiveFolder <String>] [-AutomaticRepliesSetting <IMicrosoftGraphAutomaticRepliesSetting>]
  [-DateFormat <String>] [-DelegateMeetingMessageDeliveryOptions <String>]
  [-Language <IMicrosoftGraphLocaleInfo>] [-TimeFormat <String>] [-TimeZone <String>] [-UserPurpose <String>]
- [-WorkingHours <IMicrosoftGraphWorkingHours>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-WorkingHours <IMicrosoftGraphWorkingHours>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -154,21 +152,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -320,13 +303,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IUsersIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMailboxSettings
-
-### System.Collections.Hashtable
 
 ## NOTES
 

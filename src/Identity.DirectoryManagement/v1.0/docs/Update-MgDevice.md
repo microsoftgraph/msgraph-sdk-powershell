@@ -22,24 +22,24 @@ Update-MgDevice -DeviceId <String> [-AccountEnabled] [-AdditionalProperties <Has
  [-DeviceOwnership <String>] [-DeviceVersion <Int32>] [-DisplayName <String>]
  [-EnrollmentProfileName <String>] [-Extensions <IMicrosoftGraphExtension[]>] [-Id <String>] [-IsCompliant]
  [-IsManaged] [-MdmAppId <String>] [-MemberOf <IMicrosoftGraphDirectoryObject[]>]
- [-OnPremisesLastSyncDateTime <DateTime>] [-OnPremisesSecurityIdentifier <String>] [-OnPremisesSyncEnabled]
- [-OperatingSystem <String>] [-OperatingSystemVersion <String>] [-PhysicalIds <String[]>]
- [-ProfileType <String>] [-RegisteredOwners <IMicrosoftGraphDirectoryObject[]>]
- [-RegisteredUsers <IMicrosoftGraphDirectoryObject[]>] [-RegistrationDateTime <DateTime>]
- [-SystemLabels <String[]>] [-TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>] [-TrustType <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-OnPremisesLastSyncDateTime <DateTime>] [-OnPremisesSyncEnabled] [-OperatingSystem <String>]
+ [-OperatingSystemVersion <String>] [-PhysicalIds <String[]>] [-ProfileType <String>]
+ [-RegisteredOwners <IMicrosoftGraphDirectoryObject[]>] [-RegisteredUsers <IMicrosoftGraphDirectoryObject[]>]
+ [-RegistrationDateTime <DateTime>] [-SystemLabels <String[]>]
+ [-TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>] [-TrustType <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgDevice -DeviceId <String> -BodyParameter <IMicrosoftGraphDevice> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Update-MgDevice -DeviceId <String> -BodyParameter <IMicrosoftGraphDevice> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgDevice -InputObject <IIdentityDirectoryManagementIdentity> -BodyParameter <IMicrosoftGraphDevice>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -51,12 +51,12 @@ Update-MgDevice -InputObject <IIdentityDirectoryManagementIdentity> [-DeviceId <
  [-DeviceOwnership <String>] [-DeviceVersion <Int32>] [-DisplayName <String>]
  [-EnrollmentProfileName <String>] [-Extensions <IMicrosoftGraphExtension[]>] [-Id <String>] [-IsCompliant]
  [-IsManaged] [-MdmAppId <String>] [-MemberOf <IMicrosoftGraphDirectoryObject[]>]
- [-OnPremisesLastSyncDateTime <DateTime>] [-OnPremisesSecurityIdentifier <String>] [-OnPremisesSyncEnabled]
- [-OperatingSystem <String>] [-OperatingSystemVersion <String>] [-PhysicalIds <String[]>]
- [-ProfileType <String>] [-RegisteredOwners <IMicrosoftGraphDirectoryObject[]>]
- [-RegisteredUsers <IMicrosoftGraphDirectoryObject[]>] [-RegistrationDateTime <DateTime>]
- [-SystemLabels <String[]>] [-TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>] [-TrustType <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-OnPremisesLastSyncDateTime <DateTime>] [-OnPremisesSyncEnabled] [-OperatingSystem <String>]
+ [-OperatingSystemVersion <String>] [-PhysicalIds <String[]>] [-ProfileType <String>]
+ [-RegisteredOwners <IMicrosoftGraphDirectoryObject[]>] [-RegisteredUsers <IMicrosoftGraphDirectoryObject[]>]
+ [-RegistrationDateTime <DateTime>] [-SystemLabels <String[]>]
+ [-TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>] [-TrustType <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -355,21 +355,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -481,21 +466,6 @@ Supports $filter (eq, ne, not, ge, le, in).
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -OnPremisesSecurityIdentifier
-.
-
-```yaml
-Type: System.String
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -740,13 +710,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDevice
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDevice
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -789,7 +755,6 @@ To create the parameters described below, construct a hash table containing the 
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
   - `[OnPremisesLastSyncDateTime <DateTime?>]`: The last time at which the object was synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Read-only. Supports $filter (eq, ne, not, ge, le, in).
-  - `[OnPremisesSecurityIdentifier <String>]`: 
   - `[OnPremisesSyncEnabled <Boolean?>]`: true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
   - `[OperatingSystem <String>]`: The type of operating system on the device. Required. Supports $filter (eq, ne, not, ge, le, startsWith, and eq on null values).
   - `[OperatingSystemVersion <String>]`: The version of the operating system on the device. Required. Supports $filter (eq, ne, not, ge, le, startsWith, and eq on null values).

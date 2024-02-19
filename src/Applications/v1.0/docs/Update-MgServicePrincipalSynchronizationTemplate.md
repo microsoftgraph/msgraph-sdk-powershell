@@ -18,21 +18,20 @@ Update-MgServicePrincipalSynchronizationTemplate -ServicePrincipalId <String>
  -SynchronizationTemplateId <String> [-AdditionalProperties <Hashtable>] [-ApplicationId <String>] [-Default]
  [-Description <String>] [-Discoverable] [-FactoryTag <String>] [-Id <String>]
  [-Metadata <IMicrosoftGraphSynchronizationMetadataEntry[]>] [-Schema <IMicrosoftGraphSynchronizationSchema>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgServicePrincipalSynchronizationTemplate -ServicePrincipalId <String>
- -SynchronizationTemplateId <String> -BodyParameter <IMicrosoftGraphSynchronizationTemplate>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -SynchronizationTemplateId <String> -BodyParameter <IMicrosoftGraphSynchronizationTemplate> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgServicePrincipalSynchronizationTemplate -InputObject <IApplicationsIdentity>
- -BodyParameter <IMicrosoftGraphSynchronizationTemplate> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphSynchronizationTemplate> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -41,7 +40,7 @@ Update-MgServicePrincipalSynchronizationTemplate -InputObject <IApplicationsIden
  [-AdditionalProperties <Hashtable>] [-ApplicationId <String>] [-Default] [-Description <String>]
  [-Discoverable] [-FactoryTag <String>] [-Id <String>]
  [-Metadata <IMicrosoftGraphSynchronizationMetadataEntry[]>] [-Schema <IMicrosoftGraphSynchronizationSchema>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -169,21 +168,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -322,13 +306,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSynchronizationTemplate
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSynchronizationTemplate
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -459,7 +439,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[TargetDeviceGroupId <String>]`: The unique identifier of targetDeviceGroup
   - `[TokenIssuancePolicyId <String>]`: The unique identifier of tokenIssuancePolicy
   - `[TokenLifetimePolicyId <String>]`: The unique identifier of tokenLifetimePolicy
-  - `[UniqueName <String>]`: Alternate key of application
   - `[UserId <String>]`: The unique identifier of user
 
 `METADATA <IMicrosoftGraphSynchronizationMetadataEntry[]>`: Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.

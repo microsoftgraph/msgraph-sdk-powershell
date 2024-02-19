@@ -18,14 +18,13 @@ New-MgDeviceManagementUserExperienceAnalyticDeviceScore [-AdditionalProperties <
  [-AppReliabilityScore <Double>] [-BatteryHealthScore <Double>] [-DeviceName <String>]
  [-EndpointAnalyticsScore <Double>] [-HealthStatus <UserExperienceAnalyticsHealthState>] [-Id <String>]
  [-Manufacturer <String>] [-Model <String>] [-StartupPerformanceScore <Double>]
- [-WorkFromAnywhereScore <Double>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-WorkFromAnywhereScore <Double>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgDeviceManagementUserExperienceAnalyticDeviceScore
- -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsDeviceScores> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsDeviceScores> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -154,21 +153,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -316,13 +300,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsDeviceScores
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsDeviceScores
-
-### System.Collections.Hashtable
 
 ## NOTES
 

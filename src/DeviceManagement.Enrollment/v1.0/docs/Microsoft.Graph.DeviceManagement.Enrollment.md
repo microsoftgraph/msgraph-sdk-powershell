@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.DeviceManagement.Enrollment
-Module Guid: b356e9e8-6663-4d2e-86bb-22a0a5183e12
+Module Guid: 9b6513df-fedd-4197-8ab2-79aefbc7b7a6
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.devicemanagement.enrollment
 Help Version: 1.0.0.0
 Locale: en-US
@@ -15,7 +15,7 @@ Microsoft Graph PowerShell Cmdlets
 Read properties and relationships of the onPremisesConditionalAccessSettings object.
 
 ### [Get-MgDeviceManagementDeviceEnrollmentConfiguration](Get-MgDeviceManagementDeviceEnrollmentConfiguration.md)
-Read properties and relationships of the deviceEnrollmentPlatformRestrictionsConfiguration object.
+Read properties and relationships of the deviceEnrollmentConfiguration object.
 
 ### [Get-MgDeviceManagementDeviceEnrollmentConfigurationAssignment](Get-MgDeviceManagementDeviceEnrollmentConfigurationAssignment.md)
 Read properties and relationships of the enrollmentConfigurationAssignment object.
@@ -42,7 +42,7 @@ Get the number of the resource
 Get roleManagement
 
 ### [New-MgDeviceManagementDeviceEnrollmentConfiguration](New-MgDeviceManagementDeviceEnrollmentConfiguration.md)
-Create a new deviceEnrollmentWindowsHelloForBusinessConfiguration object.
+Create a new deviceEnrollmentLimitConfiguration object.
 
 ### [New-MgDeviceManagementDeviceEnrollmentConfigurationAssignment](New-MgDeviceManagementDeviceEnrollmentConfigurationAssignment.md)
 Create a new enrollmentConfigurationAssignment object.
@@ -72,7 +72,7 @@ Deletes a windowsAutopilotDeviceIdentity.
 Update the properties of a onPremisesConditionalAccessSettings object.
 
 ### [Update-MgDeviceManagementDeviceEnrollmentConfiguration](Update-MgDeviceManagementDeviceEnrollmentConfiguration.md)
-Update the properties of a deviceEnrollmentPlatformRestrictionsConfiguration object.
+Update the properties of a deviceEnrollmentWindowsHelloForBusinessConfiguration object.
 
 ### [Update-MgDeviceManagementDeviceEnrollmentConfigurationAssignment](Update-MgDeviceManagementDeviceEnrollmentConfigurationAssignment.md)
 Update the properties of a enrollmentConfigurationAssignment object.

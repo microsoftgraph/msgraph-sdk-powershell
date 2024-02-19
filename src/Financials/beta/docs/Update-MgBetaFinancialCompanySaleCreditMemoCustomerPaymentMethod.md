@@ -16,29 +16,27 @@ Update the navigation property paymentMethod in financials
 ```
 Update-MgBetaFinancialCompanySaleCreditMemoCustomerPaymentMethod -CompanyId <String>
  -SalesCreditMemoId <String> [-AdditionalProperties <Hashtable>] [-Code <String>] [-DisplayName <String>]
- [-Id <String>] [-LastModifiedDateTime <DateTime>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Id <String>] [-LastModifiedDateTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaFinancialCompanySaleCreditMemoCustomerPaymentMethod -CompanyId <String>
- -SalesCreditMemoId <String> -BodyParameter <IMicrosoftGraphPaymentMethod> [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -SalesCreditMemoId <String> -BodyParameter <IMicrosoftGraphPaymentMethod> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaFinancialCompanySaleCreditMemoCustomerPaymentMethod -InputObject <IFinancialsIdentity>
- -BodyParameter <IMicrosoftGraphPaymentMethod> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphPaymentMethod> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgBetaFinancialCompanySaleCreditMemoCustomerPaymentMethod -InputObject <IFinancialsIdentity>
  [-AdditionalProperties <Hashtable>] [-Code <String>] [-DisplayName <String>] [-Id <String>]
- [-LastModifiedDateTime <DateTime>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-LastModifiedDateTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -135,21 +133,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -254,13 +237,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPaymentMethod
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPaymentMethod
-
-### System.Collections.Hashtable
 
 ## NOTES
 

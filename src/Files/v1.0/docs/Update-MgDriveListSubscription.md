@@ -19,21 +19,19 @@ Update-MgDriveListSubscription -DriveId <String> -SubscriptionId <String> [-Addi
  [-EncryptionCertificate <String>] [-EncryptionCertificateId <String>] [-ExpirationDateTime <DateTime>]
  [-Id <String>] [-IncludeResourceData] [-LatestSupportedTlsVersion <String>]
  [-LifecycleNotificationUrl <String>] [-NotificationQueryOptions <String>] [-NotificationUrl <String>]
- [-NotificationUrlAppId <String>] [-Resource <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-NotificationUrlAppId <String>] [-Resource <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgDriveListSubscription -DriveId <String> -SubscriptionId <String>
- -BodyParameter <IMicrosoftGraphSubscription> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphSubscription> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgDriveListSubscription -InputObject <IFilesIdentity> -BodyParameter <IMicrosoftGraphSubscription>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -43,8 +41,7 @@ Update-MgDriveListSubscription -InputObject <IFilesIdentity> [-AdditionalPropert
  [-EncryptionCertificate <String>] [-EncryptionCertificateId <String>] [-ExpirationDateTime <DateTime>]
  [-Id <String>] [-IncludeResourceData] [-LatestSupportedTlsVersion <String>]
  [-LifecycleNotificationUrl <String>] [-NotificationQueryOptions <String>] [-NotificationUrl <String>]
- [-NotificationUrlAppId <String>] [-Resource <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-NotificationUrlAppId <String>] [-Resource <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -238,21 +235,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -472,13 +454,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSubscription
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSubscription
-
-### System.Collections.Hashtable
 
 ## NOTES
 

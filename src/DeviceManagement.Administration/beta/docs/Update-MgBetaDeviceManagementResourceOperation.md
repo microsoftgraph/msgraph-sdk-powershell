@@ -16,28 +16,26 @@ Update the navigation property resourceOperations in deviceManagement
 ```
 Update-MgBetaDeviceManagementResourceOperation -ResourceOperationId <String> [-ActionName <String>]
  [-AdditionalProperties <Hashtable>] [-Description <String>] [-Id <String>] [-ResourceName <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaDeviceManagementResourceOperation -ResourceOperationId <String>
- -BodyParameter <IMicrosoftGraphResourceOperation> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphResourceOperation> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaDeviceManagementResourceOperation -InputObject <IDeviceManagementAdministrationIdentity>
- -BodyParameter <IMicrosoftGraphResourceOperation> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphResourceOperation> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgBetaDeviceManagementResourceOperation -InputObject <IDeviceManagementAdministrationIdentity>
  [-ActionName <String>] [-AdditionalProperties <Hashtable>] [-Description <String>] [-Id <String>]
- [-ResourceName <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ResourceName <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -121,21 +119,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -241,13 +224,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphResourceOperation
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphResourceOperation
-
-### System.Collections.Hashtable
 
 ## NOTES
 

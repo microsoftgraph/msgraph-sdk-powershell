@@ -236,8 +236,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Boolean
 
-### System.Collections.Hashtable
-
 ## NOTES
 
 ALIASES

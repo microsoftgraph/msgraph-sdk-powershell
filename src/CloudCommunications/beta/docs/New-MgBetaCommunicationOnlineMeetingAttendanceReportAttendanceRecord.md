@@ -17,22 +17,20 @@ Create new navigation property to attendanceRecords for communications
 New-MgBetaCommunicationOnlineMeetingAttendanceReportAttendanceRecord -OnlineMeetingId <String>
  [-AdditionalProperties <Hashtable>] [-AttendanceIntervals <IMicrosoftGraphAttendanceInterval[]>]
  [-EmailAddress <String>] [-Id <String>] [-Identity <IMicrosoftGraphIdentity>] [-RegistrantId <String>]
- [-Role <String>] [-TotalAttendanceInSeconds <Int32>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Role <String>] [-TotalAttendanceInSeconds <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaCommunicationOnlineMeetingAttendanceReportAttendanceRecord -MeetingAttendanceReportId <String>
- -OnlineMeetingId <String> -BodyParameter <IMicrosoftGraphAttendanceRecord> [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -OnlineMeetingId <String> -BodyParameter <IMicrosoftGraphAttendanceRecord> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create1
 ```
 New-MgBetaCommunicationOnlineMeetingAttendanceReportAttendanceRecord -OnlineMeetingId <String>
- -BodyParameter <IMicrosoftGraphAttendanceRecord> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphAttendanceRecord> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateExpanded
@@ -41,21 +39,21 @@ New-MgBetaCommunicationOnlineMeetingAttendanceReportAttendanceRecord -MeetingAtt
  -OnlineMeetingId <String> [-AdditionalProperties <Hashtable>]
  [-AttendanceIntervals <IMicrosoftGraphAttendanceInterval[]>] [-EmailAddress <String>] [-Id <String>]
  [-Identity <IMicrosoftGraphIdentity>] [-RegistrantId <String>] [-Role <String>]
- [-TotalAttendanceInSeconds <Int32>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-TotalAttendanceInSeconds <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaCommunicationOnlineMeetingAttendanceReportAttendanceRecord
- -InputObject <ICloudCommunicationsIdentity> -BodyParameter <IMicrosoftGraphAttendanceRecord>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -InputObject <ICloudCommunicationsIdentity> -BodyParameter <IMicrosoftGraphAttendanceRecord> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity1
 ```
 New-MgBetaCommunicationOnlineMeetingAttendanceReportAttendanceRecord
- -InputObject <ICloudCommunicationsIdentity> -BodyParameter <IMicrosoftGraphAttendanceRecord>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -InputObject <ICloudCommunicationsIdentity> -BodyParameter <IMicrosoftGraphAttendanceRecord> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -64,7 +62,7 @@ New-MgBetaCommunicationOnlineMeetingAttendanceReportAttendanceRecord
  -InputObject <ICloudCommunicationsIdentity> [-AdditionalProperties <Hashtable>]
  [-AttendanceIntervals <IMicrosoftGraphAttendanceInterval[]>] [-EmailAddress <String>] [-Id <String>]
  [-Identity <IMicrosoftGraphIdentity>] [-RegistrantId <String>] [-Role <String>]
- [-TotalAttendanceInSeconds <Int32>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-TotalAttendanceInSeconds <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded1
@@ -73,7 +71,7 @@ New-MgBetaCommunicationOnlineMeetingAttendanceReportAttendanceRecord
  -InputObject <ICloudCommunicationsIdentity> [-AdditionalProperties <Hashtable>]
  [-AttendanceIntervals <IMicrosoftGraphAttendanceInterval[]>] [-EmailAddress <String>] [-Id <String>]
  [-Identity <IMicrosoftGraphIdentity>] [-RegistrantId <String>] [-Role <String>]
- [-TotalAttendanceInSeconds <Int32>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-TotalAttendanceInSeconds <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -156,21 +154,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -339,13 +322,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAttendanceRecord
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAttendanceRecord
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -392,7 +371,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[CommsOperationId <String>]`: The unique identifier of commsOperation
   - `[ContentSharingSessionId <String>]`: The unique identifier of contentSharingSession
   - `[FromDateTime <DateTime?>]`: Usage: fromDateTime={fromDateTime}
-  - `[JoinWebUrl <String>]`: Alternate key of onlineMeeting
   - `[MeetingAttendanceReportId <String>]`: The unique identifier of meetingAttendanceReport
   - `[MeetingRegistrantBaseId <String>]`: The unique identifier of meetingRegistrantBase
   - `[MeetingRegistrationQuestionId <String>]`: The unique identifier of meetingRegistrationQuestion

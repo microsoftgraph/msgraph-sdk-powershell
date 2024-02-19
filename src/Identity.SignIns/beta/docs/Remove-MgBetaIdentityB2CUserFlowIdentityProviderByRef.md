@@ -16,26 +16,14 @@ For more information about identity providers available for user flows, see the 
 ### Delete (Default)
 ```
 Remove-MgBetaIdentityB2CUserFlowIdentityProviderByRef -B2CIdentityUserFlowId <String>
- -IdentityProviderId <String> [-IfMatch <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
+ -IdentityProviderId <String> [-Id <String>] [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
-```
-
-### Delete1
-```
-Remove-MgBetaIdentityB2CUserFlowIdentityProviderByRef -B2CIdentityUserFlowId <String> -Id <String>
- [-IfMatch <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgBetaIdentityB2CUserFlowIdentityProviderByRef -InputObject <IIdentitySignInsIdentity>
- [-IfMatch <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### DeleteViaIdentity1
-```
-Remove-MgBetaIdentityB2CUserFlowIdentityProviderByRef -InputObject <IIdentitySignInsIdentity> -Id <String>
- [-IfMatch <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-MgBetaIdentityB2CUserFlowIdentityProviderByRef -InputObject <IIdentitySignInsIdentity> [-Id <String>]
+ [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -59,7 +47,7 @@ The unique identifier of b2cIdentityUserFlow
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete, Delete1
+Parameter Sets: Delete
 Aliases:
 
 Required: True
@@ -69,30 +57,15 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
+### -Id
+Delete Uri
 
 ```yaml
-Type: System.Collections.IDictionary
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Id
-The delete Uri
-
-```yaml
-Type: System.String
-Parameter Sets: Delete1, DeleteViaIdentity1
-Aliases:
-
-Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -135,7 +108,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
-Parameter Sets: DeleteViaIdentity, DeleteViaIdentity1
+Parameter Sets: DeleteViaIdentity
 Aliases:
 
 Required: True
@@ -198,13 +171,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
-
-### System.Collections.Hashtable
 
 ## NOTES
 

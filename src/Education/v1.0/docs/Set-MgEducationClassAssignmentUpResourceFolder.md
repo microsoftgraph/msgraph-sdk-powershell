@@ -17,13 +17,13 @@ The teacher determines the resources to upload in the assignment's folder.
 ### Set (Default)
 ```
 Set-MgEducationClassAssignmentUpResourceFolder -EducationAssignmentId <String> -EducationClassId <String>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentity
 ```
-Set-MgEducationClassAssignmentUpResourceFolder -InputObject <IEducationIdentity> [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Set-MgEducationClassAssignmentUpResourceFolder -InputObject <IEducationIdentity> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -36,12 +36,12 @@ The teacher determines the resources to upload in the assignment's folder.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Education
-```
-
 $params = @{
 }
-
 Set-MgEducationClassAssignmentUpResourceFolder -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -BodyParameter $params
+```
+
+
 
 ## PARAMETERS
 
@@ -72,21 +72,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -144,13 +129,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IEducationIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationAssignment
-
-### System.Collections.Hashtable
 
 ## NOTES
 
@@ -166,9 +147,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[EducationAssignmentResourceId <String>]`: The unique identifier of educationAssignmentResource
   - `[EducationCategoryId <String>]`: The unique identifier of educationCategory
   - `[EducationClassId <String>]`: The unique identifier of educationClass
-  - `[EducationGradingCategoryId <String>]`: The unique identifier of educationGradingCategory
-  - `[EducationModuleId <String>]`: The unique identifier of educationModule
-  - `[EducationModuleResourceId <String>]`: The unique identifier of educationModuleResource
   - `[EducationOutcomeId <String>]`: The unique identifier of educationOutcome
   - `[EducationRubricId <String>]`: The unique identifier of educationRubric
   - `[EducationSchoolId <String>]`: The unique identifier of educationSchool

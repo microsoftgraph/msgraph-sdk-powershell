@@ -15,27 +15,27 @@ Invoke action checkMemberObjects
 ### CheckExpanded (Default)
 ```
 Confirm-MgApplicationMemberObject -ApplicationId <String> [-AdditionalProperties <Hashtable>]
- [-Ids <String[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Ids <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Check
 ```
 Confirm-MgApplicationMemberObject -ApplicationId <String>
  -BodyParameter <IPaths1Lkksh4ApplicationsApplicationIdMicrosoftGraphCheckmemberobjectsPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CheckViaIdentity
 ```
 Confirm-MgApplicationMemberObject -InputObject <IApplicationsIdentity>
  -BodyParameter <IPaths1Lkksh4ApplicationsApplicationIdMicrosoftGraphCheckmemberobjectsPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CheckViaIdentityExpanded
 ```
 Confirm-MgApplicationMemberObject -InputObject <IApplicationsIdentity> [-AdditionalProperties <Hashtable>]
- [-Ids <String[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Ids <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -99,21 +99,6 @@ Parameter Sets: Check, CheckViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -191,11 +176,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IPaths1Lkksh4ApplicationsApplicationIdMicrosoftGraphCheckmemberobjectsPostRequestbodyContentApplicationJsonSchema
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
-
-### System.Collections.Hashtable
 
 ### System.String
 
@@ -234,7 +215,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[TargetDeviceGroupId <String>]`: The unique identifier of targetDeviceGroup
   - `[TokenIssuancePolicyId <String>]`: The unique identifier of tokenIssuancePolicy
   - `[TokenLifetimePolicyId <String>]`: The unique identifier of tokenLifetimePolicy
-  - `[UniqueName <String>]`: Alternate key of application
   - `[UserId <String>]`: The unique identifier of user
 
 ## RELATED LINKS

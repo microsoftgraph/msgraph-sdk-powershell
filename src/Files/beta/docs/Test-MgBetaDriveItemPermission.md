@@ -15,29 +15,27 @@ Invoke action validatePermission
 ### ValidateExpanded (Default)
 ```
 Test-MgBetaDriveItemPermission -DriveId <String> -DriveItemId <String> [-AdditionalProperties <Hashtable>]
- [-ChallengeToken <String>] [-Password <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-ChallengeToken <String>] [-Password <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Validate
 ```
 Test-MgBetaDriveItemPermission -DriveId <String> -DriveItemId <String>
  -BodyParameter <IPathsJjps9NDrivesDriveIdItemsDriveitemIdMicrosoftGraphValidatepermissionPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ValidateViaIdentity
 ```
 Test-MgBetaDriveItemPermission -InputObject <IFilesIdentity>
  -BodyParameter <IPathsJjps9NDrivesDriveIdItemsDriveitemIdMicrosoftGraphValidatepermissionPostRequestbodyContentApplicationJsonSchema>
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ValidateViaIdentityExpanded
 ```
 Test-MgBetaDriveItemPermission -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>]
- [-ChallengeToken <String>] [-Password <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-ChallengeToken <String>] [-Password <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -137,21 +135,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -238,13 +221,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPathsJjps9NDrivesDriveIdItemsDriveitemIdMicrosoftGraphValidatepermissionPostRequestbodyContentApplicationJsonSchema
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
-
-### System.Collections.Hashtable
 
 ## NOTES
 

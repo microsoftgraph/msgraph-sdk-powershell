@@ -18,23 +18,23 @@ Update-MgBetaDeviceAppManagementMobileAppConfigurationUserStatusSummary
  -ManagedDeviceMobileAppConfigurationId <String> [-AdditionalProperties <Hashtable>]
  [-ConfigurationVersion <Int32>] [-ConflictCount <Int32>] [-ErrorCount <Int32>] [-FailedCount <Int32>]
  [-Id <String>] [-LastUpdateDateTime <DateTime>] [-NotApplicableCount <Int32>] [-PendingCount <Int32>]
- [-SuccessCount <Int32>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-SuccessCount <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaDeviceAppManagementMobileAppConfigurationUserStatusSummary
  -ManagedDeviceMobileAppConfigurationId <String>
- -BodyParameter <IMicrosoftGraphManagedDeviceMobileAppConfigurationUserSummary> [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphManagedDeviceMobileAppConfigurationUserSummary> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaDeviceAppManagementMobileAppConfigurationUserStatusSummary
  -InputObject <IDevicesCorporateManagementIdentity>
- -BodyParameter <IMicrosoftGraphManagedDeviceMobileAppConfigurationUserSummary> [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphManagedDeviceMobileAppConfigurationUserSummary> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -43,7 +43,7 @@ Update-MgBetaDeviceAppManagementMobileAppConfigurationUserStatusSummary
  -InputObject <IDevicesCorporateManagementIdentity> [-AdditionalProperties <Hashtable>]
  [-ConfigurationVersion <Int32>] [-ConflictCount <Int32>] [-ErrorCount <Int32>] [-FailedCount <Int32>]
  [-Id <String>] [-LastUpdateDateTime <DateTime>] [-NotApplicableCount <Int32>] [-PendingCount <Int32>]
- [-SuccessCount <Int32>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-SuccessCount <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -155,21 +155,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -320,13 +305,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationUserSummary
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationUserSummary
-
-### System.Collections.Hashtable
 
 ## NOTES
 
