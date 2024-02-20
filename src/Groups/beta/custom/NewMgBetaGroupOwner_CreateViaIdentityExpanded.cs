@@ -48,7 +48,7 @@
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = "Optional Response Headers Variable.")]
         [global::System.Management.Automation.Alias("RHV")]
         public string ResponseHeadersVariable { get => this._responseHeadersVariable; set => this._responseHeadersVariable = value; }
-        
+
         /// <summary>SendAsync Pipeline Steps to be appended to the front of the pipeline</summary>
         [System.Management.Automation.Parameter(Mandatory = false, DontShow = true, HelpMessage = "SendAsync Pipeline Steps to be appended to the front of the pipeline")]
         [System.Management.Automation.ValidateNotNull]
@@ -278,7 +278,7 @@
                         ThrowTerminatingError(new System.Management.Automation.ErrorRecord(new System.Exception("InputObject has null value for InputObject.GroupId"), string.Empty, System.Management.Automation.ErrorCategory.InvalidArgument, InputObject));
                     }
                     _bodyParameter.OdataId = $"https://graph.microsoft.com/beta/directoryObjects/{DirectoryObjectId}";
-                    await this.Client.GroupCreateOwnerGraphBPreRef(InputObject.GroupId ?? null,Headers, _bodyParameter, onNoContent, onDefault, this, Pipeline);
+                    await this.Client.GroupCreateOwnerGraphBPreRef(InputObject.GroupId ?? null, Headers, _bodyParameter, onNoContent, onDefault, this, Pipeline);
                     await ((Runtime.IEventListener)this).Signal(Runtime.Events.CmdletAfterAPICall); if (((Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
                 }
                 catch (Runtime.UndeclaredResponseException urexception)
@@ -367,9 +367,9 @@
                 // get the headers from the response and assign it to the variable provided by the user via the RHV(ResponseHeadersVariable) parameter.
                 if (!string.IsNullOrEmpty(ResponseHeadersVariable))
                 {
-                   var headers = Microsoft.Graph.PowerShell.ResponseHeaders.Helpers.ResponseHeaderHelper.GetHttpResponseHeaders(responseMessage);
-                   var vi = this.SessionState.PSVariable;
-                   vi.Set(new System.Management.Automation.PSVariable($"global:{ResponseHeadersVariable}", headers));
+                    var headers = Microsoft.Graph.PowerShell.ResponseHeaders.Helpers.ResponseHeaderHelper.GetHttpResponseHeaders(responseMessage);
+                    var vi = this.SessionState.PSVariable;
+                    vi.Set(new System.Management.Automation.PSVariable($"global:{ResponseHeadersVariable}", headers));
                 }
             }
         }

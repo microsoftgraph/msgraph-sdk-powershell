@@ -367,9 +367,9 @@
                 // get the headers from the response and assign it to the variable provided by the user via the RHV(ResponseHeadersVariable) parameter.
                 if (!string.IsNullOrEmpty(ResponseHeadersVariable))
                 {
-                   var headers = Microsoft.Graph.PowerShell.ResponseHeaders.Helpers.ResponseHeaderHelper.GetHttpResponseHeaders(responseMessage);
-                   var vi = this.SessionState.PSVariable;
-                   vi.Set(new System.Management.Automation.PSVariable($"global:{ResponseHeadersVariable}", headers));
+                    var headers = Microsoft.Graph.PowerShell.ResponseHeaders.Helpers.ResponseHeaderHelper.GetHttpResponseHeaders(responseMessage);
+                    var vi = this.SessionState.PSVariable;
+                    vi.Set(new System.Management.Automation.PSVariable($"global:{ResponseHeadersVariable}", headers));
                 }
             }
         }
