@@ -25,12 +25,12 @@ Describe 'New-MgGroup' {
     Context 'Create' {
         It 'ShouldCreateNewGroup' {
             $CreateGroups = @()
-            1..10 | ForEach-Object {
+            1..100 | ForEach-Object {
                 $Mock.PushScenario('ShouldCreateNewGroup')
                 $CreateGroups += New-MgGroup -DisplayName "new-mggroup-test" -MailEnabled:$false -MailNickname 'unused' -SecurityEnabled
             }
 
-            $CreateGroups | Should -HaveCount 10
+            $CreateGroups | Should -HaveCount 100
             $CreateGroups[0].DisplayName | Should -Be "new-mggroup-test"
             $CreateGroups[0].MailEnabled | Should -BeFalse
         } 
@@ -45,9 +45,7 @@ Describe 'New-MgGroup' {
             $Mock.PushScenario('ShouldCreateNewGroup')
             New-MgGroup -DisplayName "new-mggroup-test" -MailEnabled:$false -MailNickname 'unused' -SecurityEnabled -RHV rv
             $rv.Vary | Should -Be "Accept-Encoding"
-            $rv.'Content-Type' | Should -Be "application/json"
-            
-
+            $rv.'Content-Type' | Should -Be "application/json" 
         }
     }
 }
