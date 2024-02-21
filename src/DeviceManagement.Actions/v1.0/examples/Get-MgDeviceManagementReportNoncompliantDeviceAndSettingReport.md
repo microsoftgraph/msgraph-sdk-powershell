@@ -1,18 +1,29 @@
-### Example 1: {{ Add title here }}
+### Example 1: Code snippet
+
 ```powershell
-PS C:\> {{ Add code here }}
 
-{{ Add output here }}
+Import-Module Microsoft.Graph.DeviceManagement.Actions
+
+$params = @{
+	name = "Name value"
+	select = @(
+		"Select value"
+	)
+	search = "Search value"
+	groupBy = @(
+		"Group By value"
+	)
+	orderBy = @(
+		"Order By value"
+	)
+	skip = 4
+	top = 3
+	sessionId = "Session Id value"
+	filter = "Filter value"
+}
+
+Get-MgDeviceManagementReportNoncompliantDeviceAndSettingReport -BodyParameter $params
+
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
+This example shows how to use the Get-MgDeviceManagementReportNoncompliantDeviceAndSettingReport Cmdlet.
 

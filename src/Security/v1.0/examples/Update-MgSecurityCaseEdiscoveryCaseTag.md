@@ -1,18 +1,16 @@
-### Example 1: {{ Add title here }}
+### Example 1: Code snippet
+
 ```powershell
-PS C:\> {{ Add code here }}
 
-{{ Add output here }}
+Import-Module Microsoft.Graph.Security
+
+$params = @{
+	displayName = "My tag API 2"
+	description = "Use Graph API to create tags (updated)"
+}
+
+Update-MgSecurityCaseEdiscoveryCaseTag -EdiscoveryCaseId $ediscoveryCaseId -EdiscoveryReviewTagId $ediscoveryReviewTagId -BodyParameter $params
+
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
+This example shows how to use the Update-MgSecurityCaseEdiscoveryCaseTag Cmdlet.
 
