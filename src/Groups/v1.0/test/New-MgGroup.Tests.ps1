@@ -34,5 +34,18 @@ Describe 'New-MgGroup' {
             $CreateGroups[0].DisplayName | Should -Be "new-mggroup-test"
             $CreateGroups[0].MailEnabled | Should -BeFalse
         } 
+
+        It 'ShouldHaveASingleResponseObjectIfRHVIsPassed' {
+            $Mock.PushScenario('ShouldCreateNewGroup')
+            $group = New-MgGroup -DisplayName "new-mggroup-test" -MailEnabled:$false -MailNickname 'unused' -SecurityEnabled -RHV rh
+            $group.Count | Should -HaveCount 1
+        }
+
+        It 'ShouldAssignRetrieveHeadersToRHVIfPassed' {
+            $Mock.PushScenario('ShouldCreateNewGroup')
+            New-MgGroup -DisplayName "new-mggroup-test" -MailEnabled:$false -MailNickname 'unused' -SecurityEnabled -RHV rv
+            $rv.Vary | Should -Be "Accept-Encoding"
+            $rv.'Content-Type' | Should -Be "application/json" 
+        }
     }
 }
