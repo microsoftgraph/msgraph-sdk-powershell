@@ -2495,11 +2495,11 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: List azureDataLakeConnectors
-      description: Get a list of the azureDataLakeConnector objects and their properties.
+      summary: List industryDataConnectors
+      description: Get the industryDataConnector resources from the dataConnector navigation property.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-azuredatalakeconnector-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/industrydata-industrydataconnector-list?view=graph-rest-1.0
       operationId: external.industryData_ListDataConnector
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2561,11 +2561,11 @@ paths:
     post:
       tags:
         - external.industryDataRoot
-      summary: Create industryDataConnector
-      description: Create a new industryDataConnector object.
+      summary: Create azureDataLakeConnector
+      description: Create a new azureDataLakeConnector object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-industrydataconnector-post?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/industrydata-azuredatalakeconnector-post?view=graph-rest-1.0
       operationId: external.industryData_CreateDataConnector
       requestBody:
         description: New navigation property
@@ -2801,11 +2801,11 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: List inboundFlows
-      description: Get a list of the inboundFlow objects and their properties.
+      summary: List inboundFileFlows
+      description: Get a list of the inboundFileFlow objects and their properties.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-inboundflow-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-list?view=graph-rest-1.0
       operationId: external.industryData_ListInboundFlow
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2881,11 +2881,11 @@ paths:
     post:
       tags:
         - external.industryDataRoot
-      summary: Create inboundFileFlow
-      description: 'Create a new inboundFileFlow object. The following prerequisite resources are required when you create an inboundFileFlow:'
+      summary: Create inboundFlow
+      description: 'Create a new inboundFlow object. The following prerequisite resources are required when you create an inboundFlow:'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-post?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/industrydata-inboundflow-post?view=graph-rest-1.0
       operationId: external.industryData_CreateInboundFlow
       requestBody:
         description: New navigation property
@@ -3004,11 +3004,11 @@ paths:
     delete:
       tags:
         - external.industryDataRoot
-      summary: Delete inboundFileFlow
-      description: Delete an inboundFileFlow object.
+      summary: Delete inboundFlow
+      description: Delete an inboundFlow object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/industrydata-inboundflow-delete?view=graph-rest-1.0
       operationId: external.industryData_DeleteInboundFlow
       parameters:
         - name: inboundFlow-id
