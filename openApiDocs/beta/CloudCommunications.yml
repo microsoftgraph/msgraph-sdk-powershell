@@ -6136,11 +6136,11 @@ paths:
     get:
       tags:
         - communications.onlineMeeting
-      summary: Get meetingRegistration
-      description: Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
+      summary: Get externalMeetingRegistration
+      description: Get the externalMeetingRegistration details associated with an onlineMeeting.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/meetingregistration-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/externalmeetingregistration-get?view=graph-rest-1.0
       operationId: communication.onlineMeeting_GetRegistration
       parameters:
         - name: onlineMeeting-id
@@ -10547,11 +10547,11 @@ paths:
     get:
       tags:
         - users.onlineMeeting
-      summary: Get meetingRegistration
-      description: Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
+      summary: Get externalMeetingRegistration
+      description: Get the externalMeetingRegistration details associated with an onlineMeeting.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/meetingregistration-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/externalmeetingregistration-get?view=graph-rest-1.0
       operationId: user.onlineMeeting_GetRegistration
       parameters:
         - name: user-id

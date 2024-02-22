@@ -2083,7 +2083,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get instances from groups
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-list-instances?view=graph-rest-1.0
@@ -2305,7 +2305,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get instances from groups
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       operationId: group.calendar.calendarView.exceptionOccurrence_GetInstance
       parameters:
         - name: group-id
@@ -3649,7 +3649,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get instances from groups
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-list-instances?view=graph-rest-1.0
@@ -3863,7 +3863,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get instances from groups
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       operationId: group.calendar.calendarView_GetInstance
       parameters:
         - name: group-id
@@ -6225,7 +6225,7 @@ paths:
       tags:
         - groups.calendar
       summary: Create event
-      description: 'Use this API to create a new event in a calendar. The calendar can be one for a user, or the default calendar of a Microsoft 365 group. '
+      description: 'Use this API to create a new event in a calendar. The calendar can be one for a user, or the default calendar of a Microsoft 365 group.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/calendar-post-events?view=graph-rest-1.0
@@ -7884,7 +7884,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get instances from groups
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-list-instances?view=graph-rest-1.0
@@ -8106,7 +8106,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get instances from groups
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       operationId: group.calendar.event.exceptionOccurrence_GetInstance
       parameters:
         - name: group-id
@@ -9450,7 +9450,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get instances from groups
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-list-instances?view=graph-rest-1.0
@@ -9664,7 +9664,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get instances from groups
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       operationId: group.calendar.event_GetInstance
       parameters:
         - name: group-id
@@ -13571,7 +13571,7 @@ paths:
       tags:
         - groups.event
       summary: Get instances from groups
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-list-instances?view=graph-rest-1.0
@@ -13793,7 +13793,7 @@ paths:
       tags:
         - groups.event
       summary: Get instances from groups
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       operationId: group.calendarView.exceptionOccurrence_GetInstance
       parameters:
         - name: group-id
@@ -15137,7 +15137,7 @@ paths:
       tags:
         - groups.event
       summary: Get instances from groups
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-list-instances?view=graph-rest-1.0
@@ -15351,7 +15351,7 @@ paths:
       tags:
         - groups.event
       summary: Get instances from groups
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       operationId: group.calendarView_GetInstance
       parameters:
         - name: group-id
@@ -19345,7 +19345,7 @@ paths:
       tags:
         - groups.event
       summary: Get instances from groups
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-list-instances?view=graph-rest-1.0
@@ -19567,7 +19567,7 @@ paths:
       tags:
         - groups.event
       summary: Get instances from groups
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       operationId: group.event.exceptionOccurrence_GetInstance
       parameters:
         - name: group-id
@@ -20911,7 +20911,7 @@ paths:
       tags:
         - groups.event
       summary: Get instances from groups
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-list-instances?view=graph-rest-1.0
@@ -21125,7 +21125,7 @@ paths:
       tags:
         - groups.event
       summary: Get instances from groups
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       operationId: group.event_GetInstance
       parameters:
         - name: group-id
@@ -24243,7 +24243,7 @@ paths:
       tags:
         - users.calendar
       summary: Get calendar
-      description: "Get the properties and relationships of a calendar object. The calendar can be one for a user, \nor the default calendar of a Microsoft 365 group. There are two scenarios where an app can get another user's calendar:"
+      description: "Get the properties and relationships of a calendar object. The calendar can be one for a user,\nor the default calendar of a Microsoft 365 group. There are two scenarios where an app can get another user's calendar:"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/calendar-get?view=graph-rest-1.0
@@ -24304,7 +24304,7 @@ paths:
       tags:
         - users.calendar
       summary: Update calendar
-      description: "Update the properties of a calendar object. The calendar can be one for a user, \nor the default calendar of a Microsoft 365 group."
+      description: "Update the properties of a calendar object. The calendar can be one for a user,\nor the default calendar of a Microsoft 365 group."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/calendar-update?view=graph-rest-1.0
@@ -26383,7 +26383,7 @@ paths:
       tags:
         - users.calendar
       summary: Get instances from users
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-list-instances?view=graph-rest-1.0
@@ -26605,7 +26605,7 @@ paths:
       tags:
         - users.calendar
       summary: Get instances from users
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       operationId: user.calendar.calendarView.exceptionOccurrence_GetInstance
       parameters:
         - name: user-id
@@ -27949,7 +27949,7 @@ paths:
       tags:
         - users.calendar
       summary: Get instances from users
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-list-instances?view=graph-rest-1.0
@@ -28163,7 +28163,7 @@ paths:
       tags:
         - users.calendar
       summary: Get instances from users
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       operationId: user.calendar.calendarView_GetInstance
       parameters:
         - name: user-id
@@ -30525,7 +30525,7 @@ paths:
       tags:
         - users.calendar
       summary: Create event
-      description: 'Use this API to create a new event in a calendar. The calendar can be one for a user, or the default calendar of a Microsoft 365 group. '
+      description: 'Use this API to create a new event in a calendar. The calendar can be one for a user, or the default calendar of a Microsoft 365 group.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/calendar-post-events?view=graph-rest-1.0
@@ -32184,7 +32184,7 @@ paths:
       tags:
         - users.calendar
       summary: Get instances from users
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-list-instances?view=graph-rest-1.0
@@ -32406,7 +32406,7 @@ paths:
       tags:
         - users.calendar
       summary: Get instances from users
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       operationId: user.calendar.event.exceptionOccurrence_GetInstance
       parameters:
         - name: user-id
@@ -33750,7 +33750,7 @@ paths:
       tags:
         - users.calendar
       summary: Get instances from users
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-list-instances?view=graph-rest-1.0
@@ -33964,7 +33964,7 @@ paths:
       tags:
         - users.calendar
       summary: Get instances from users
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       operationId: user.calendar.event_GetInstance
       parameters:
         - name: user-id
@@ -39140,7 +39140,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get instances from users
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-list-instances?view=graph-rest-1.0
@@ -39378,7 +39378,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get instances from users
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       operationId: user.calendarGroup.calendar.calendarView.exceptionOccurrence_GetInstance
       parameters:
         - name: user-id
@@ -41058,7 +41058,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get instances from users
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-list-instances?view=graph-rest-1.0
@@ -41288,7 +41288,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get instances from users
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       operationId: user.calendarGroup.calendar.calendarView_GetInstance
       parameters:
         - name: user-id
@@ -44146,7 +44146,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Create event
-      description: 'Use this API to create a new event in a calendar. The calendar can be one for a user, or the default calendar of a Microsoft 365 group. '
+      description: 'Use this API to create a new event in a calendar. The calendar can be one for a user, or the default calendar of a Microsoft 365 group.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/calendar-post-events?view=graph-rest-1.0
@@ -46189,7 +46189,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get instances from users
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-list-instances?view=graph-rest-1.0
@@ -46427,7 +46427,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get instances from users
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       operationId: user.calendarGroup.calendar.event.exceptionOccurrence_GetInstance
       parameters:
         - name: user-id
@@ -48107,7 +48107,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get instances from users
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-list-instances?view=graph-rest-1.0
@@ -48337,7 +48337,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get instances from users
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       operationId: user.calendarGroup.calendar.event_GetInstance
       parameters:
         - name: user-id
@@ -51021,7 +51021,7 @@ paths:
       tags:
         - users.calendar
       summary: List calendars
-      description: 'Get all the user''s calendars (/calendars navigation property), get the calendars from the default calendar group or from a specific calendar group. '
+      description: 'Get all the user''s calendars (/calendars navigation property), get the calendars from the default calendar group or from a specific calendar group.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-list-calendars?view=graph-rest-1.0
@@ -53577,7 +53577,7 @@ paths:
       tags:
         - users.calendar
       summary: Get instances from users
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-list-instances?view=graph-rest-1.0
@@ -53807,7 +53807,7 @@ paths:
       tags:
         - users.calendar
       summary: Get instances from users
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       operationId: user.calendar.calendarView.exceptionOccurrence_GetInstance
       parameters:
         - name: user-id
@@ -55319,7 +55319,7 @@ paths:
       tags:
         - users.calendar
       summary: Get instances from users
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-list-instances?view=graph-rest-1.0
@@ -55541,7 +55541,7 @@ paths:
       tags:
         - users.calendar
       summary: Get instances from users
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       operationId: user.calendar.calendarView_GetInstance
       parameters:
         - name: user-id
@@ -58151,7 +58151,7 @@ paths:
       tags:
         - users.calendar
       summary: Create event
-      description: 'Use this API to create a new event in a calendar. The calendar can be one for a user, or the default calendar of a Microsoft 365 group. '
+      description: 'Use this API to create a new event in a calendar. The calendar can be one for a user, or the default calendar of a Microsoft 365 group.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/calendar-post-events?view=graph-rest-1.0
@@ -60002,7 +60002,7 @@ paths:
       tags:
         - users.calendar
       summary: Get instances from users
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-list-instances?view=graph-rest-1.0
@@ -60232,7 +60232,7 @@ paths:
       tags:
         - users.calendar
       summary: Get instances from users
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       operationId: user.calendar.event.exceptionOccurrence_GetInstance
       parameters:
         - name: user-id
@@ -61744,7 +61744,7 @@ paths:
       tags:
         - users.calendar
       summary: Get instances from users
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-list-instances?view=graph-rest-1.0
@@ -61966,7 +61966,7 @@ paths:
       tags:
         - users.calendar
       summary: Get instances from users
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       operationId: user.calendar.event_GetInstance
       parameters:
         - name: user-id
@@ -66172,7 +66172,7 @@ paths:
       tags:
         - users.event
       summary: Get instances from users
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-list-instances?view=graph-rest-1.0
@@ -66394,7 +66394,7 @@ paths:
       tags:
         - users.event
       summary: Get instances from users
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       operationId: user.calendarView.exceptionOccurrence_GetInstance
       parameters:
         - name: user-id
@@ -67738,7 +67738,7 @@ paths:
       tags:
         - users.event
       summary: Get instances from users
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-list-instances?view=graph-rest-1.0
@@ -67952,7 +67952,7 @@ paths:
       tags:
         - users.event
       summary: Get instances from users
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       operationId: user.calendarView_GetInstance
       parameters:
         - name: user-id
@@ -70314,7 +70314,7 @@ paths:
       tags:
         - users.event
       summary: Create event
-      description: "Create an event in the user's default calendar or specified calendar. By default, the allowNewTimeProposals property is set to true when an event is created, which means invitees can propose a different date/time for the event. See Propose new meeting times for more information on how to propose a time, and how to receive and accept a new time proposal. You can specify the time zone for each of the start and end times of the event as part of their values, because the \nstart and end properties are of dateTimeTimeZone type. First find the supported time zones to make sure you set only time zones that have been configured for the user's mailbox server.  When an event is sent, the server sends invitations to all the attendees. Setting the location in an event An Exchange administrator can set up a mailbox and an email address for a resource such as a meeting room, or equipment\nlike a projector. Users can then invite the resource as an attendee to a meeting. On behalf of the resource, the server accepts or rejects\nthe meeting request based on the free/busy schedule of the resource.\nIf the server accepts a meeting for the resource, it creates an event for the meeting in the resource's calendar. If the meeting is rescheduled,\nthe server automatically updates the event in the resource's calendar. Another advantage of setting up a mailbox for a resource is to control scheduling of the resource, for example, only executives\nor their delegates can book a private meeting room. If you're organizing an event that involves a meeting location: Additionally, if the meeting location has been set up as a resource, or if the event involves some equipment that has been set up as a resource:"
+      description: "Create an event in the user's default calendar or specified calendar. By default, the allowNewTimeProposals property is set to true when an event is created, which means invitees can propose a different date/time for the event. See Propose new meeting times for more information on how to propose a time, and how to receive and accept a new time proposal. You can specify the time zone for each of the start and end times of the event as part of their values, because the\nstart and end properties are of dateTimeTimeZone type. First find the supported time zones to make sure you set only time zones that have been configured for the user's mailbox server. When an event is sent, the server sends invitations to all the attendees. Setting the location in an event An Exchange administrator can set up a mailbox and an email address for a resource such as a meeting room, or equipment\nlike a projector. Users can then invite the resource as an attendee to a meeting. On behalf of the resource, the server accepts or rejects\nthe meeting request based on the free/busy schedule of the resource.\nIf the server accepts a meeting for the resource, it creates an event for the meeting in the resource's calendar. If the meeting is rescheduled,\nthe server automatically updates the event in the resource's calendar. Another advantage of setting up a mailbox for a resource is to control scheduling of the resource, for example, only executives\nor their delegates can book a private meeting room. If you're organizing an event that involves a meeting location: Additionally, if the meeting location has been set up as a resource, or if the event involves some equipment that has been set up as a resource:"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-post-events?view=graph-rest-1.0
@@ -71984,7 +71984,7 @@ paths:
       tags:
         - users.event
       summary: Get instances from users
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-list-instances?view=graph-rest-1.0
@@ -72206,7 +72206,7 @@ paths:
       tags:
         - users.event
       summary: Get instances from users
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       operationId: user.event.exceptionOccurrence_GetInstance
       parameters:
         - name: user-id
@@ -73550,7 +73550,7 @@ paths:
       tags:
         - users.event
       summary: Get instances from users
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-list-instances?view=graph-rest-1.0
@@ -73764,7 +73764,7 @@ paths:
       tags:
         - users.event
       summary: Get instances from users
-      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
+      description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
       operationId: user.event_GetInstance
       parameters:
         - name: user-id
@@ -76063,7 +76063,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: 'Contains occurrenceId property values of cancelled instances in a recurring series, if the event is the series master. Instances in a recurring series that are cancelled are called cancelledOccurences.Returned only on $select in a Get operation which specifies the id of a series master event (that is, the seriesMasterId property value).'
+              description: 'Contains occurrenceId property values of canceled instances in a recurring series, if the event is the series master. Instances in a recurring series that are canceled are called cancelledOccurences.Returned only on $select in a Get operation which specifies the id of a series master event (that is, the seriesMasterId property value).'
             end:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
             hasAttachments:
@@ -76182,7 +76182,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.event'
-              description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
+              description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
               x-ms-navigationProperty: true
             multiValueExtendedProperties:
               type: array
