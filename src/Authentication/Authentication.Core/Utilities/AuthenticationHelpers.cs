@@ -136,16 +136,32 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
                     if (IsATPoPSupported())
                     {
                         // Logic to implement ATPoP Authentication
-                        var client = new PopClient(interactiveBrowserCredential, authContext, new PopClientOptions() 
-                        { 
-                            Diagnostics = 
-                            { 
-                                IsLoggingContentEnabled = true, 
-                                LoggedHeaderNames = { "Authorization" } 
-                            } 
+                        authRecord = await Task.Run(() =>
+                        {
+                            var popTokenAuthenticationPolicy = new PopTokenAuthenticationPolicy(interactiveBrowserCredential as ISupportsProofOfPossession, $"https://graph.microsoft.com/.default");
+
+                            var pipelineOptions = new HttpPipelineOptions(new PopClientOptions()
+                            {
+                                Diagnostics = 
+                                {
+                                    IsLoggingContentEnabled = true,
+                                    LoggedHeaderNames = { "Authorization" }
+                                },
+                            });
+                            pipelineOptions.PerRetryPolicies.Add(popTokenAuthenticationPolicy);
+
+                            var _pipeline = HttpPipelineBuilder.Build(pipelineOptions, new HttpPipelineTransportOptions { ServerCertificateCustomValidationCallback = (_) => true });
+                            using var request = _pipeline.CreateRequest();
+                            request.Method = RequestMethod.Get;
+                            request.Uri.Reset(new Uri("https://20.190.132.47/beta/me"));
+                            var response = _pipeline.SendRequest(request, cancellationToken);
+                            var message = new HttpMessage(request, new ResponseClassifier());
+
+                            // Manually invoke the authentication policy's process method
+                            popTokenAuthenticationPolicy.ProcessAsync(message, ReadOnlyMemory<HttpPipelinePolicy>.Empty);
+                            // Run the thread in MTA.
+                            return interactiveBrowserCredential.Authenticate(new TokenRequestContext(authContext.Scopes), cancellationToken);
                         });
-                        //var response = client.Get(new Uri("https://20.190.132.47/beta/me"), CancellationToken.None);
-                        authRecord = client.GetAuthRecord();
                     }
                     else
                     {
@@ -471,5 +487,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
                 File.Delete(Constants.AuthRecordPath);
             return Task.CompletedTask;
         }
+    }
+    internal class PopClientOptions : ClientOptions
+    {
     }
 }
