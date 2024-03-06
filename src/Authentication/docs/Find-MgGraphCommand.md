@@ -14,17 +14,20 @@ Find-MgGraphCommand aims to make it easier for you to discover which API path a 
 
 ### FindByCommandOrUri (Default)
 ```
-Find-MgGraphCommand [-ApiVersion <String>] [-InputObject] <Object[]> [<CommonParameters>]
+Find-MgGraphCommand [-ApiVersion <String>] [-InputObject] <Object[]> [-ProgressAction <ActionPreference>]
+ [<CommonParameters>]
 ```
 
 ### FindByUri
 ```
-Find-MgGraphCommand [-Uri] <String[]> [-Method <String>] [-ApiVersion <String>] [<CommonParameters>]
+Find-MgGraphCommand [-Uri] <String[]> [-Method <String>] [-ApiVersion <String>]
+ [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ### FindByCommand
 ```
-Find-MgGraphCommand [-ApiVersion <String>] -Command <String[]> [<CommonParameters>]
+Find-MgGraphCommand [-ApiVersion <String>] -Command <String[]> [-ProgressAction <ActionPreference>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -180,6 +183,21 @@ Accept wildcard characters: False
 Type: String
 Parameter Sets: FindByUri
 Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProgressAction
+{{ Fill ProgressAction Description }}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
 
 Required: False
 Position: Named
