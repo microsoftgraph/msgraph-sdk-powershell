@@ -1,4 +1,4 @@
-### Example 1: Code snippet
+### Example 1: Update submissionAnimationDisabled
 
 ```powershell
 
@@ -11,9 +11,9 @@ $params = @{
 Update-MgBetaEducationClassAssignmentSetting -EducationClassId $educationClassId -BodyParameter $params
 
 ```
-This example shows how to use the Update-MgBetaEducationClassAssignmentSetting Cmdlet.
+This example will update submissionanimationdisabled
 
-### Example 2: Code snippet
+### Example 2: Create grading categories
 
 ```powershell
 
@@ -39,5 +39,5 @@ $params = @{
 Update-MgBetaEducationClassAssignmentSetting -EducationClassId $educationClassId -BodyParameter $params
 
 ```
-This example shows how to use the Update-MgBetaEducationClassAssignmentSetting Cmdlet.
+This example will create grading categories
 
