@@ -30,14 +30,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - notebooks
-                - operations
-                - pages
-                - resources
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -48,14 +40,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - notebooks
-                - operations
-                - pages
-                - resources
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -157,33 +141,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - self
-                - self desc
-                - createdDateTime
-                - createdDateTime desc
-                - createdBy
-                - createdBy desc
-                - displayName
-                - displayName desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - isDefault
-                - isDefault desc
-                - isShared
-                - isShared desc
-                - links
-                - links desc
-                - sectionGroupsUrl
-                - sectionGroupsUrl desc
-                - sectionsUrl
-                - sectionsUrl desc
-                - userRole
-                - userRole desc
               type: string
         - name: $select
           in: query
@@ -194,22 +151,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - isShared
-                - links
-                - sectionGroupsUrl
-                - sectionsUrl
-                - userRole
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -220,10 +161,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -305,22 +242,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - isShared
-                - links
-                - sectionGroupsUrl
-                - sectionsUrl
-                - userRole
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -331,10 +252,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -460,25 +377,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - self
-                - self desc
-                - createdDateTime
-                - createdDateTime desc
-                - createdBy
-                - createdBy desc
-                - displayName
-                - displayName desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - sectionGroupsUrl
-                - sectionGroupsUrl desc
-                - sectionsUrl
-                - sectionsUrl desc
               type: string
         - name: $select
           in: query
@@ -489,20 +387,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - sectionGroupsUrl
-                - sectionsUrl
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -513,12 +397,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -613,20 +491,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - sectionGroupsUrl
-                - sectionsUrl
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -637,12 +501,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -784,22 +642,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - isShared
-                - links
-                - sectionGroupsUrl
-                - sectionsUrl
-                - userRole
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -810,10 +652,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -866,20 +704,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - sectionGroupsUrl
-                - sectionsUrl
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -890,12 +714,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -956,25 +774,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - self
-                - self desc
-                - createdDateTime
-                - createdDateTime desc
-                - createdBy
-                - createdBy desc
-                - displayName
-                - displayName desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - sectionGroupsUrl
-                - sectionGroupsUrl desc
-                - sectionsUrl
-                - sectionsUrl desc
               type: string
         - name: $select
           in: query
@@ -985,20 +784,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - sectionGroupsUrl
-                - sectionsUrl
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -1009,12 +794,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -1074,20 +853,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - sectionGroupsUrl
-                - sectionsUrl
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -1098,12 +863,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -1202,27 +961,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - self
-                - self desc
-                - createdDateTime
-                - createdDateTime desc
-                - createdBy
-                - createdBy desc
-                - displayName
-                - displayName desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - isDefault
-                - isDefault desc
-                - links
-                - links desc
-                - pagesUrl
-                - pagesUrl desc
               type: string
         - name: $select
           in: query
@@ -1233,20 +971,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - links
-                - pagesUrl
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
         - name: $expand
           in: query
@@ -1257,11 +981,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
       responses:
         2XX:
@@ -1372,20 +1091,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - links
-                - pagesUrl
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
         - name: $expand
           in: query
@@ -1396,11 +1101,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
       responses:
         2XX:
@@ -1574,31 +1274,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - self
-                - self desc
-                - createdDateTime
-                - createdDateTime desc
-                - content
-                - content desc
-                - contentUrl
-                - contentUrl desc
-                - createdByAppId
-                - createdByAppId desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - level
-                - level desc
-                - links
-                - links desc
-                - order
-                - order desc
-                - title
-                - title desc
-                - userTags
-                - userTags desc
               type: string
         - name: $select
           in: query
@@ -1609,21 +1284,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - content
-                - contentUrl
-                - createdByAppId
-                - lastModifiedDateTime
-                - level
-                - links
-                - order
-                - title
-                - userTags
-                - parentNotebook
-                - parentSection
               type: string
         - name: $expand
           in: query
@@ -1634,10 +1294,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - parentNotebook
-                - parentSection
               type: string
       responses:
         2XX:
@@ -1764,21 +1420,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - content
-                - contentUrl
-                - createdByAppId
-                - lastModifiedDateTime
-                - level
-                - links
-                - order
-                - title
-                - userTags
-                - parentNotebook
-                - parentSection
               type: string
         - name: $expand
           in: query
@@ -1789,10 +1430,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - parentNotebook
-                - parentSection
               type: string
       responses:
         2XX:
@@ -2109,22 +1746,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - isShared
-                - links
-                - sectionGroupsUrl
-                - sectionsUrl
-                - userRole
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -2135,10 +1756,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -2207,20 +1824,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - links
-                - pagesUrl
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
         - name: $expand
           in: query
@@ -2231,11 +1834,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
       responses:
         2XX:
@@ -2342,22 +1940,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - isShared
-                - links
-                - sectionGroupsUrl
-                - sectionsUrl
-                - userRole
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -2368,10 +1950,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -2432,20 +2010,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - sectionGroupsUrl
-                - sectionsUrl
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -2456,12 +2020,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -2582,27 +2140,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - self
-                - self desc
-                - createdDateTime
-                - createdDateTime desc
-                - createdBy
-                - createdBy desc
-                - displayName
-                - displayName desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - isDefault
-                - isDefault desc
-                - links
-                - links desc
-                - pagesUrl
-                - pagesUrl desc
               type: string
         - name: $select
           in: query
@@ -2613,20 +2150,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - links
-                - pagesUrl
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
         - name: $expand
           in: query
@@ -2637,11 +2160,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
       responses:
         2XX:
@@ -2736,20 +2254,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - links
-                - pagesUrl
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
         - name: $expand
           in: query
@@ -2760,11 +2264,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
       responses:
         2XX:
@@ -2914,31 +2413,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - self
-                - self desc
-                - createdDateTime
-                - createdDateTime desc
-                - content
-                - content desc
-                - contentUrl
-                - contentUrl desc
-                - createdByAppId
-                - createdByAppId desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - level
-                - level desc
-                - links
-                - links desc
-                - order
-                - order desc
-                - title
-                - title desc
-                - userTags
-                - userTags desc
               type: string
         - name: $select
           in: query
@@ -2949,21 +2423,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - content
-                - contentUrl
-                - createdByAppId
-                - lastModifiedDateTime
-                - level
-                - links
-                - order
-                - title
-                - userTags
-                - parentNotebook
-                - parentSection
               type: string
         - name: $expand
           in: query
@@ -2974,10 +2433,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - parentNotebook
-                - parentSection
               type: string
       responses:
         2XX:
@@ -3088,21 +2543,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - content
-                - contentUrl
-                - createdByAppId
-                - lastModifiedDateTime
-                - level
-                - links
-                - order
-                - title
-                - userTags
-                - parentNotebook
-                - parentSection
               type: string
         - name: $expand
           in: query
@@ -3113,10 +2553,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - parentNotebook
-                - parentSection
               type: string
       responses:
         2XX:
@@ -3393,22 +2829,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - isShared
-                - links
-                - sectionGroupsUrl
-                - sectionsUrl
-                - userRole
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -3419,10 +2839,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -3483,20 +2899,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - links
-                - pagesUrl
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
         - name: $expand
           in: query
@@ -3507,11 +2909,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
       responses:
         2XX:
@@ -3602,22 +2999,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - isShared
-                - links
-                - sectionGroupsUrl
-                - sectionsUrl
-                - userRole
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -3628,10 +3009,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -3684,20 +3061,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - sectionGroupsUrl
-                - sectionsUrl
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -3708,12 +3071,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -3807,23 +3164,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - createdDateTime
-                - createdDateTime desc
-                - lastActionDateTime
-                - lastActionDateTime desc
-                - status
-                - status desc
-                - error
-                - error desc
-                - percentComplete
-                - percentComplete desc
-                - resourceId
-                - resourceId desc
-                - resourceLocation
-                - resourceLocation desc
               type: string
         - name: $select
           in: query
@@ -3834,15 +3174,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdDateTime
-                - lastActionDateTime
-                - status
-                - error
-                - percentComplete
-                - resourceId
-                - resourceLocation
               type: string
         - name: $expand
           in: query
@@ -3853,8 +3184,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3932,15 +3261,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdDateTime
-                - lastActionDateTime
-                - status
-                - error
-                - percentComplete
-                - resourceId
-                - resourceLocation
               type: string
         - name: $expand
           in: query
@@ -3951,8 +3271,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -4092,31 +3410,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - self
-                - self desc
-                - createdDateTime
-                - createdDateTime desc
-                - content
-                - content desc
-                - contentUrl
-                - contentUrl desc
-                - createdByAppId
-                - createdByAppId desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - level
-                - level desc
-                - links
-                - links desc
-                - order
-                - order desc
-                - title
-                - title desc
-                - userTags
-                - userTags desc
               type: string
         - name: $select
           in: query
@@ -4127,21 +3420,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - content
-                - contentUrl
-                - createdByAppId
-                - lastModifiedDateTime
-                - level
-                - links
-                - order
-                - title
-                - userTags
-                - parentNotebook
-                - parentSection
               type: string
         - name: $expand
           in: query
@@ -4152,10 +3430,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - parentNotebook
-                - parentSection
               type: string
       responses:
         2XX:
@@ -4237,21 +3511,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - content
-                - contentUrl
-                - createdByAppId
-                - lastModifiedDateTime
-                - level
-                - links
-                - order
-                - title
-                - userTags
-                - parentNotebook
-                - parentSection
               type: string
         - name: $expand
           in: query
@@ -4262,10 +3521,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - parentNotebook
-                - parentSection
               type: string
       responses:
         2XX:
@@ -4466,22 +3721,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - isShared
-                - links
-                - sectionGroupsUrl
-                - sectionsUrl
-                - userRole
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -4492,10 +3731,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -4540,20 +3775,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - links
-                - pagesUrl
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
         - name: $expand
           in: query
@@ -4564,11 +3785,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
       responses:
         2XX:
@@ -4632,15 +3848,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - self
-                - self desc
-                - content
-                - content desc
-                - contentUrl
-                - contentUrl desc
               type: string
         - name: $select
           in: query
@@ -4651,11 +3858,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - content
-                - contentUrl
               type: string
         - name: $expand
           in: query
@@ -4666,8 +3868,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -4742,11 +3942,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - content
-                - contentUrl
               type: string
         - name: $expand
           in: query
@@ -4757,8 +3952,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -4974,25 +4167,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - self
-                - self desc
-                - createdDateTime
-                - createdDateTime desc
-                - createdBy
-                - createdBy desc
-                - displayName
-                - displayName desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - sectionGroupsUrl
-                - sectionGroupsUrl desc
-                - sectionsUrl
-                - sectionsUrl desc
               type: string
         - name: $select
           in: query
@@ -5003,20 +4177,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - sectionGroupsUrl
-                - sectionsUrl
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -5027,12 +4187,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -5110,20 +4264,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - sectionGroupsUrl
-                - sectionsUrl
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -5134,12 +4274,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -5257,22 +4391,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - isShared
-                - links
-                - sectionGroupsUrl
-                - sectionsUrl
-                - userRole
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -5283,10 +4401,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -5331,20 +4445,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - sectionGroupsUrl
-                - sectionsUrl
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -5355,12 +4455,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -5413,25 +4507,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - self
-                - self desc
-                - createdDateTime
-                - createdDateTime desc
-                - createdBy
-                - createdBy desc
-                - displayName
-                - displayName desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - sectionGroupsUrl
-                - sectionGroupsUrl desc
-                - sectionsUrl
-                - sectionsUrl desc
               type: string
         - name: $select
           in: query
@@ -5442,20 +4517,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - sectionGroupsUrl
-                - sectionsUrl
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -5466,12 +4527,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -5523,20 +4578,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - sectionGroupsUrl
-                - sectionsUrl
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -5547,12 +4588,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -5635,27 +4670,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - self
-                - self desc
-                - createdDateTime
-                - createdDateTime desc
-                - createdBy
-                - createdBy desc
-                - displayName
-                - displayName desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - isDefault
-                - isDefault desc
-                - links
-                - links desc
-                - pagesUrl
-                - pagesUrl desc
               type: string
         - name: $select
           in: query
@@ -5666,20 +4680,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - links
-                - pagesUrl
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
         - name: $expand
           in: query
@@ -5690,11 +4690,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
       responses:
         2XX:
@@ -5789,20 +4784,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - links
-                - pagesUrl
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
         - name: $expand
           in: query
@@ -5813,11 +4794,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
       responses:
         2XX:
@@ -5967,31 +4943,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - self
-                - self desc
-                - createdDateTime
-                - createdDateTime desc
-                - content
-                - content desc
-                - contentUrl
-                - contentUrl desc
-                - createdByAppId
-                - createdByAppId desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - level
-                - level desc
-                - links
-                - links desc
-                - order
-                - order desc
-                - title
-                - title desc
-                - userTags
-                - userTags desc
               type: string
         - name: $select
           in: query
@@ -6002,21 +4953,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - content
-                - contentUrl
-                - createdByAppId
-                - lastModifiedDateTime
-                - level
-                - links
-                - order
-                - title
-                - userTags
-                - parentNotebook
-                - parentSection
               type: string
         - name: $expand
           in: query
@@ -6027,10 +4963,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - parentNotebook
-                - parentSection
               type: string
       responses:
         2XX:
@@ -6141,21 +5073,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - content
-                - contentUrl
-                - createdByAppId
-                - lastModifiedDateTime
-                - level
-                - links
-                - order
-                - title
-                - userTags
-                - parentNotebook
-                - parentSection
               type: string
         - name: $expand
           in: query
@@ -6166,10 +5083,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - parentNotebook
-                - parentSection
               type: string
       responses:
         2XX:
@@ -6446,22 +5359,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - isShared
-                - links
-                - sectionGroupsUrl
-                - sectionsUrl
-                - userRole
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -6472,10 +5369,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -6536,20 +5429,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - links
-                - pagesUrl
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
         - name: $expand
           in: query
@@ -6560,11 +5439,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
       responses:
         2XX:
@@ -6655,22 +5529,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - isShared
-                - links
-                - sectionGroupsUrl
-                - sectionsUrl
-                - userRole
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -6681,10 +5539,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -6737,20 +5591,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - sectionGroupsUrl
-                - sectionsUrl
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -6761,12 +5601,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -6863,27 +5697,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - self
-                - self desc
-                - createdDateTime
-                - createdDateTime desc
-                - createdBy
-                - createdBy desc
-                - displayName
-                - displayName desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - isDefault
-                - isDefault desc
-                - links
-                - links desc
-                - pagesUrl
-                - pagesUrl desc
               type: string
         - name: $select
           in: query
@@ -6894,20 +5707,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - links
-                - pagesUrl
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
         - name: $expand
           in: query
@@ -6918,11 +5717,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
       responses:
         2XX:
@@ -7000,20 +5794,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - links
-                - pagesUrl
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
         - name: $expand
           in: query
@@ -7024,11 +5804,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
       responses:
         2XX:
@@ -7154,31 +5929,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - self
-                - self desc
-                - createdDateTime
-                - createdDateTime desc
-                - content
-                - content desc
-                - contentUrl
-                - contentUrl desc
-                - createdByAppId
-                - createdByAppId desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - level
-                - level desc
-                - links
-                - links desc
-                - order
-                - order desc
-                - title
-                - title desc
-                - userTags
-                - userTags desc
               type: string
         - name: $select
           in: query
@@ -7189,21 +5939,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - content
-                - contentUrl
-                - createdByAppId
-                - lastModifiedDateTime
-                - level
-                - links
-                - order
-                - title
-                - userTags
-                - parentNotebook
-                - parentSection
               type: string
         - name: $expand
           in: query
@@ -7214,10 +5949,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - parentNotebook
-                - parentSection
               type: string
       responses:
         2XX:
@@ -7312,21 +6043,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - content
-                - contentUrl
-                - createdByAppId
-                - lastModifiedDateTime
-                - level
-                - links
-                - order
-                - title
-                - userTags
-                - parentNotebook
-                - parentSection
               type: string
         - name: $expand
           in: query
@@ -7337,10 +6053,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - parentNotebook
-                - parentSection
               type: string
       responses:
         2XX:
@@ -7577,22 +6289,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - isShared
-                - links
-                - sectionGroupsUrl
-                - sectionsUrl
-                - userRole
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -7603,10 +6299,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -7659,20 +6351,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - links
-                - pagesUrl
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
         - name: $expand
           in: query
@@ -7683,11 +6361,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
       responses:
         2XX:
@@ -7762,22 +6435,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - isShared
-                - links
-                - sectionGroupsUrl
-                - sectionsUrl
-                - userRole
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -7788,10 +6445,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -7836,20 +6489,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - sectionGroupsUrl
-                - sectionsUrl
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -7860,12 +6499,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -7940,14 +6573,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - notebooks
-                - operations
-                - pages
-                - resources
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -7958,14 +6583,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - notebooks
-                - operations
-                - pages
-                - resources
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -8099,14 +6716,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - notebooks
-                - operations
-                - pages
-                - resources
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -8117,14 +6726,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - notebooks
-                - operations
-                - pages
-                - resources
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -8234,14 +6835,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - notebooks
-                - operations
-                - pages
-                - resources
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -8252,14 +6845,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - notebooks
-                - operations
-                - pages
-                - resources
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -8361,33 +6946,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - self
-                - self desc
-                - createdDateTime
-                - createdDateTime desc
-                - createdBy
-                - createdBy desc
-                - displayName
-                - displayName desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - isDefault
-                - isDefault desc
-                - isShared
-                - isShared desc
-                - links
-                - links desc
-                - sectionGroupsUrl
-                - sectionGroupsUrl desc
-                - sectionsUrl
-                - sectionsUrl desc
-                - userRole
-                - userRole desc
               type: string
         - name: $select
           in: query
@@ -8398,22 +6956,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - isShared
-                - links
-                - sectionGroupsUrl
-                - sectionsUrl
-                - userRole
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -8424,10 +6966,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -8509,22 +7047,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - isShared
-                - links
-                - sectionGroupsUrl
-                - sectionsUrl
-                - userRole
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -8535,10 +7057,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -8664,25 +7182,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - self
-                - self desc
-                - createdDateTime
-                - createdDateTime desc
-                - createdBy
-                - createdBy desc
-                - displayName
-                - displayName desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - sectionGroupsUrl
-                - sectionGroupsUrl desc
-                - sectionsUrl
-                - sectionsUrl desc
               type: string
         - name: $select
           in: query
@@ -8693,20 +7192,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - sectionGroupsUrl
-                - sectionsUrl
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -8717,12 +7202,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -8817,20 +7296,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - sectionGroupsUrl
-                - sectionsUrl
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -8841,12 +7306,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -8988,22 +7447,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - isShared
-                - links
-                - sectionGroupsUrl
-                - sectionsUrl
-                - userRole
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -9014,10 +7457,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -9070,20 +7509,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - sectionGroupsUrl
-                - sectionsUrl
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -9094,12 +7519,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -9160,25 +7579,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - self
-                - self desc
-                - createdDateTime
-                - createdDateTime desc
-                - createdBy
-                - createdBy desc
-                - displayName
-                - displayName desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - sectionGroupsUrl
-                - sectionGroupsUrl desc
-                - sectionsUrl
-                - sectionsUrl desc
               type: string
         - name: $select
           in: query
@@ -9189,20 +7589,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - sectionGroupsUrl
-                - sectionsUrl
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -9213,12 +7599,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -9278,20 +7658,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - sectionGroupsUrl
-                - sectionsUrl
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -9302,12 +7668,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -9406,27 +7766,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - self
-                - self desc
-                - createdDateTime
-                - createdDateTime desc
-                - createdBy
-                - createdBy desc
-                - displayName
-                - displayName desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - isDefault
-                - isDefault desc
-                - links
-                - links desc
-                - pagesUrl
-                - pagesUrl desc
               type: string
         - name: $select
           in: query
@@ -9437,20 +7776,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - links
-                - pagesUrl
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
         - name: $expand
           in: query
@@ -9461,11 +7786,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
       responses:
         2XX:
@@ -9576,20 +7896,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - links
-                - pagesUrl
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
         - name: $expand
           in: query
@@ -9600,11 +7906,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
       responses:
         2XX:
@@ -9778,31 +8079,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - self
-                - self desc
-                - createdDateTime
-                - createdDateTime desc
-                - content
-                - content desc
-                - contentUrl
-                - contentUrl desc
-                - createdByAppId
-                - createdByAppId desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - level
-                - level desc
-                - links
-                - links desc
-                - order
-                - order desc
-                - title
-                - title desc
-                - userTags
-                - userTags desc
               type: string
         - name: $select
           in: query
@@ -9813,21 +8089,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - content
-                - contentUrl
-                - createdByAppId
-                - lastModifiedDateTime
-                - level
-                - links
-                - order
-                - title
-                - userTags
-                - parentNotebook
-                - parentSection
               type: string
         - name: $expand
           in: query
@@ -9838,10 +8099,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - parentNotebook
-                - parentSection
               type: string
       responses:
         2XX:
@@ -9968,21 +8225,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - content
-                - contentUrl
-                - createdByAppId
-                - lastModifiedDateTime
-                - level
-                - links
-                - order
-                - title
-                - userTags
-                - parentNotebook
-                - parentSection
               type: string
         - name: $expand
           in: query
@@ -9993,10 +8235,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - parentNotebook
-                - parentSection
               type: string
       responses:
         2XX:
@@ -10313,22 +8551,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - isShared
-                - links
-                - sectionGroupsUrl
-                - sectionsUrl
-                - userRole
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -10339,10 +8561,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -10411,20 +8629,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - links
-                - pagesUrl
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
         - name: $expand
           in: query
@@ -10435,11 +8639,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
       responses:
         2XX:
@@ -10546,22 +8745,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - isShared
-                - links
-                - sectionGroupsUrl
-                - sectionsUrl
-                - userRole
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -10572,10 +8755,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -10636,20 +8815,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - sectionGroupsUrl
-                - sectionsUrl
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -10660,12 +8825,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -10786,27 +8945,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - self
-                - self desc
-                - createdDateTime
-                - createdDateTime desc
-                - createdBy
-                - createdBy desc
-                - displayName
-                - displayName desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - isDefault
-                - isDefault desc
-                - links
-                - links desc
-                - pagesUrl
-                - pagesUrl desc
               type: string
         - name: $select
           in: query
@@ -10817,20 +8955,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - links
-                - pagesUrl
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
         - name: $expand
           in: query
@@ -10841,11 +8965,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
       responses:
         2XX:
@@ -10940,20 +9059,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - links
-                - pagesUrl
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
         - name: $expand
           in: query
@@ -10964,11 +9069,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
       responses:
         2XX:
@@ -11118,31 +9218,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - self
-                - self desc
-                - createdDateTime
-                - createdDateTime desc
-                - content
-                - content desc
-                - contentUrl
-                - contentUrl desc
-                - createdByAppId
-                - createdByAppId desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - level
-                - level desc
-                - links
-                - links desc
-                - order
-                - order desc
-                - title
-                - title desc
-                - userTags
-                - userTags desc
               type: string
         - name: $select
           in: query
@@ -11153,21 +9228,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - content
-                - contentUrl
-                - createdByAppId
-                - lastModifiedDateTime
-                - level
-                - links
-                - order
-                - title
-                - userTags
-                - parentNotebook
-                - parentSection
               type: string
         - name: $expand
           in: query
@@ -11178,10 +9238,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - parentNotebook
-                - parentSection
               type: string
       responses:
         2XX:
@@ -11292,21 +9348,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - content
-                - contentUrl
-                - createdByAppId
-                - lastModifiedDateTime
-                - level
-                - links
-                - order
-                - title
-                - userTags
-                - parentNotebook
-                - parentSection
               type: string
         - name: $expand
           in: query
@@ -11317,10 +9358,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - parentNotebook
-                - parentSection
               type: string
       responses:
         2XX:
@@ -11597,22 +9634,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - isShared
-                - links
-                - sectionGroupsUrl
-                - sectionsUrl
-                - userRole
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -11623,10 +9644,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -11687,20 +9704,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - links
-                - pagesUrl
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
         - name: $expand
           in: query
@@ -11711,11 +9714,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
       responses:
         2XX:
@@ -11806,22 +9804,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - isShared
-                - links
-                - sectionGroupsUrl
-                - sectionsUrl
-                - userRole
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -11832,10 +9814,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -11888,20 +9866,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - sectionGroupsUrl
-                - sectionsUrl
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -11912,12 +9876,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -12011,23 +9969,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - createdDateTime
-                - createdDateTime desc
-                - lastActionDateTime
-                - lastActionDateTime desc
-                - status
-                - status desc
-                - error
-                - error desc
-                - percentComplete
-                - percentComplete desc
-                - resourceId
-                - resourceId desc
-                - resourceLocation
-                - resourceLocation desc
               type: string
         - name: $select
           in: query
@@ -12038,15 +9979,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdDateTime
-                - lastActionDateTime
-                - status
-                - error
-                - percentComplete
-                - resourceId
-                - resourceLocation
               type: string
         - name: $expand
           in: query
@@ -12057,8 +9989,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -12136,15 +10066,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdDateTime
-                - lastActionDateTime
-                - status
-                - error
-                - percentComplete
-                - resourceId
-                - resourceLocation
               type: string
         - name: $expand
           in: query
@@ -12155,8 +10076,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -12296,31 +10215,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - self
-                - self desc
-                - createdDateTime
-                - createdDateTime desc
-                - content
-                - content desc
-                - contentUrl
-                - contentUrl desc
-                - createdByAppId
-                - createdByAppId desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - level
-                - level desc
-                - links
-                - links desc
-                - order
-                - order desc
-                - title
-                - title desc
-                - userTags
-                - userTags desc
               type: string
         - name: $select
           in: query
@@ -12331,21 +10225,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - content
-                - contentUrl
-                - createdByAppId
-                - lastModifiedDateTime
-                - level
-                - links
-                - order
-                - title
-                - userTags
-                - parentNotebook
-                - parentSection
               type: string
         - name: $expand
           in: query
@@ -12356,10 +10235,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - parentNotebook
-                - parentSection
               type: string
       responses:
         2XX:
@@ -12441,21 +10316,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - content
-                - contentUrl
-                - createdByAppId
-                - lastModifiedDateTime
-                - level
-                - links
-                - order
-                - title
-                - userTags
-                - parentNotebook
-                - parentSection
               type: string
         - name: $expand
           in: query
@@ -12466,10 +10326,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - parentNotebook
-                - parentSection
               type: string
       responses:
         2XX:
@@ -12670,22 +10526,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - isShared
-                - links
-                - sectionGroupsUrl
-                - sectionsUrl
-                - userRole
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -12696,10 +10536,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -12744,20 +10580,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - links
-                - pagesUrl
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
         - name: $expand
           in: query
@@ -12768,11 +10590,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
       responses:
         2XX:
@@ -12836,15 +10653,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - self
-                - self desc
-                - content
-                - content desc
-                - contentUrl
-                - contentUrl desc
               type: string
         - name: $select
           in: query
@@ -12855,11 +10663,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - content
-                - contentUrl
               type: string
         - name: $expand
           in: query
@@ -12870,8 +10673,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -12946,11 +10747,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - content
-                - contentUrl
               type: string
         - name: $expand
           in: query
@@ -12961,8 +10757,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -13178,25 +10972,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - self
-                - self desc
-                - createdDateTime
-                - createdDateTime desc
-                - createdBy
-                - createdBy desc
-                - displayName
-                - displayName desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - sectionGroupsUrl
-                - sectionGroupsUrl desc
-                - sectionsUrl
-                - sectionsUrl desc
               type: string
         - name: $select
           in: query
@@ -13207,20 +10982,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - sectionGroupsUrl
-                - sectionsUrl
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -13231,12 +10992,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -13314,20 +11069,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - sectionGroupsUrl
-                - sectionsUrl
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -13338,12 +11079,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -13461,22 +11196,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - isShared
-                - links
-                - sectionGroupsUrl
-                - sectionsUrl
-                - userRole
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -13487,10 +11206,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -13535,20 +11250,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - sectionGroupsUrl
-                - sectionsUrl
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -13559,12 +11260,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -13617,25 +11312,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - self
-                - self desc
-                - createdDateTime
-                - createdDateTime desc
-                - createdBy
-                - createdBy desc
-                - displayName
-                - displayName desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - sectionGroupsUrl
-                - sectionGroupsUrl desc
-                - sectionsUrl
-                - sectionsUrl desc
               type: string
         - name: $select
           in: query
@@ -13646,20 +11322,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - sectionGroupsUrl
-                - sectionsUrl
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -13670,12 +11332,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -13727,20 +11383,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - sectionGroupsUrl
-                - sectionsUrl
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -13751,12 +11393,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -13839,27 +11475,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - self
-                - self desc
-                - createdDateTime
-                - createdDateTime desc
-                - createdBy
-                - createdBy desc
-                - displayName
-                - displayName desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - isDefault
-                - isDefault desc
-                - links
-                - links desc
-                - pagesUrl
-                - pagesUrl desc
               type: string
         - name: $select
           in: query
@@ -13870,20 +11485,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - links
-                - pagesUrl
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
         - name: $expand
           in: query
@@ -13894,11 +11495,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
       responses:
         2XX:
@@ -13993,20 +11589,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - links
-                - pagesUrl
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
         - name: $expand
           in: query
@@ -14017,11 +11599,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
       responses:
         2XX:
@@ -14171,31 +11748,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - self
-                - self desc
-                - createdDateTime
-                - createdDateTime desc
-                - content
-                - content desc
-                - contentUrl
-                - contentUrl desc
-                - createdByAppId
-                - createdByAppId desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - level
-                - level desc
-                - links
-                - links desc
-                - order
-                - order desc
-                - title
-                - title desc
-                - userTags
-                - userTags desc
               type: string
         - name: $select
           in: query
@@ -14206,21 +11758,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - content
-                - contentUrl
-                - createdByAppId
-                - lastModifiedDateTime
-                - level
-                - links
-                - order
-                - title
-                - userTags
-                - parentNotebook
-                - parentSection
               type: string
         - name: $expand
           in: query
@@ -14231,10 +11768,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - parentNotebook
-                - parentSection
               type: string
       responses:
         2XX:
@@ -14345,21 +11878,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - content
-                - contentUrl
-                - createdByAppId
-                - lastModifiedDateTime
-                - level
-                - links
-                - order
-                - title
-                - userTags
-                - parentNotebook
-                - parentSection
               type: string
         - name: $expand
           in: query
@@ -14370,10 +11888,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - parentNotebook
-                - parentSection
               type: string
       responses:
         2XX:
@@ -14650,22 +12164,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - isShared
-                - links
-                - sectionGroupsUrl
-                - sectionsUrl
-                - userRole
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -14676,10 +12174,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -14740,20 +12234,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - links
-                - pagesUrl
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
         - name: $expand
           in: query
@@ -14764,11 +12244,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
       responses:
         2XX:
@@ -14859,22 +12334,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - isShared
-                - links
-                - sectionGroupsUrl
-                - sectionsUrl
-                - userRole
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -14885,10 +12344,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -14941,20 +12396,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - sectionGroupsUrl
-                - sectionsUrl
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -14965,12 +12406,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -15067,27 +12502,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - self
-                - self desc
-                - createdDateTime
-                - createdDateTime desc
-                - createdBy
-                - createdBy desc
-                - displayName
-                - displayName desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - isDefault
-                - isDefault desc
-                - links
-                - links desc
-                - pagesUrl
-                - pagesUrl desc
               type: string
         - name: $select
           in: query
@@ -15098,20 +12512,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - links
-                - pagesUrl
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
         - name: $expand
           in: query
@@ -15122,11 +12522,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
       responses:
         2XX:
@@ -15204,20 +12599,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - links
-                - pagesUrl
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
         - name: $expand
           in: query
@@ -15228,11 +12609,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
       responses:
         2XX:
@@ -15358,31 +12734,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - self
-                - self desc
-                - createdDateTime
-                - createdDateTime desc
-                - content
-                - content desc
-                - contentUrl
-                - contentUrl desc
-                - createdByAppId
-                - createdByAppId desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - level
-                - level desc
-                - links
-                - links desc
-                - order
-                - order desc
-                - title
-                - title desc
-                - userTags
-                - userTags desc
               type: string
         - name: $select
           in: query
@@ -15393,21 +12744,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - content
-                - contentUrl
-                - createdByAppId
-                - lastModifiedDateTime
-                - level
-                - links
-                - order
-                - title
-                - userTags
-                - parentNotebook
-                - parentSection
               type: string
         - name: $expand
           in: query
@@ -15418,10 +12754,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - parentNotebook
-                - parentSection
               type: string
       responses:
         2XX:
@@ -15516,21 +12848,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - content
-                - contentUrl
-                - createdByAppId
-                - lastModifiedDateTime
-                - level
-                - links
-                - order
-                - title
-                - userTags
-                - parentNotebook
-                - parentSection
               type: string
         - name: $expand
           in: query
@@ -15541,10 +12858,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - parentNotebook
-                - parentSection
               type: string
       responses:
         2XX:
@@ -15781,22 +13094,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - isShared
-                - links
-                - sectionGroupsUrl
-                - sectionsUrl
-                - userRole
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -15807,10 +13104,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -15863,20 +13156,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - links
-                - pagesUrl
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
         - name: $expand
           in: query
@@ -15887,11 +13166,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
       responses:
         2XX:
@@ -15966,22 +13240,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - isShared
-                - links
-                - sectionGroupsUrl
-                - sectionsUrl
-                - userRole
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -15992,10 +13250,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -16040,20 +13294,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - sectionGroupsUrl
-                - sectionsUrl
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -16064,12 +13304,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -16127,14 +13361,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - notebooks
-                - operations
-                - pages
-                - resources
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -16145,14 +13371,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - notebooks
-                - operations
-                - pages
-                - resources
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -16254,33 +13472,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - self
-                - self desc
-                - createdDateTime
-                - createdDateTime desc
-                - createdBy
-                - createdBy desc
-                - displayName
-                - displayName desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - isDefault
-                - isDefault desc
-                - isShared
-                - isShared desc
-                - links
-                - links desc
-                - sectionGroupsUrl
-                - sectionGroupsUrl desc
-                - sectionsUrl
-                - sectionsUrl desc
-                - userRole
-                - userRole desc
               type: string
         - name: $select
           in: query
@@ -16291,22 +13482,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - isShared
-                - links
-                - sectionGroupsUrl
-                - sectionsUrl
-                - userRole
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -16317,10 +13492,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -16402,22 +13573,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - isShared
-                - links
-                - sectionGroupsUrl
-                - sectionsUrl
-                - userRole
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -16428,10 +13583,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -16557,25 +13708,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - self
-                - self desc
-                - createdDateTime
-                - createdDateTime desc
-                - createdBy
-                - createdBy desc
-                - displayName
-                - displayName desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - sectionGroupsUrl
-                - sectionGroupsUrl desc
-                - sectionsUrl
-                - sectionsUrl desc
               type: string
         - name: $select
           in: query
@@ -16586,20 +13718,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - sectionGroupsUrl
-                - sectionsUrl
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -16610,12 +13728,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -16710,20 +13822,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - sectionGroupsUrl
-                - sectionsUrl
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -16734,12 +13832,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -16881,22 +13973,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - isShared
-                - links
-                - sectionGroupsUrl
-                - sectionsUrl
-                - userRole
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -16907,10 +13983,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -16963,20 +14035,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - sectionGroupsUrl
-                - sectionsUrl
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -16987,12 +14045,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -17053,25 +14105,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - self
-                - self desc
-                - createdDateTime
-                - createdDateTime desc
-                - createdBy
-                - createdBy desc
-                - displayName
-                - displayName desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - sectionGroupsUrl
-                - sectionGroupsUrl desc
-                - sectionsUrl
-                - sectionsUrl desc
               type: string
         - name: $select
           in: query
@@ -17082,20 +14115,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - sectionGroupsUrl
-                - sectionsUrl
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -17106,12 +14125,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -17171,20 +14184,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - sectionGroupsUrl
-                - sectionsUrl
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -17195,12 +14194,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -17299,27 +14292,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - self
-                - self desc
-                - createdDateTime
-                - createdDateTime desc
-                - createdBy
-                - createdBy desc
-                - displayName
-                - displayName desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - isDefault
-                - isDefault desc
-                - links
-                - links desc
-                - pagesUrl
-                - pagesUrl desc
               type: string
         - name: $select
           in: query
@@ -17330,20 +14302,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - links
-                - pagesUrl
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
         - name: $expand
           in: query
@@ -17354,11 +14312,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
       responses:
         2XX:
@@ -17469,20 +14422,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - links
-                - pagesUrl
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
         - name: $expand
           in: query
@@ -17493,11 +14432,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
       responses:
         2XX:
@@ -17671,31 +14605,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - self
-                - self desc
-                - createdDateTime
-                - createdDateTime desc
-                - content
-                - content desc
-                - contentUrl
-                - contentUrl desc
-                - createdByAppId
-                - createdByAppId desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - level
-                - level desc
-                - links
-                - links desc
-                - order
-                - order desc
-                - title
-                - title desc
-                - userTags
-                - userTags desc
               type: string
         - name: $select
           in: query
@@ -17706,21 +14615,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - content
-                - contentUrl
-                - createdByAppId
-                - lastModifiedDateTime
-                - level
-                - links
-                - order
-                - title
-                - userTags
-                - parentNotebook
-                - parentSection
               type: string
         - name: $expand
           in: query
@@ -17731,10 +14625,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - parentNotebook
-                - parentSection
               type: string
       responses:
         2XX:
@@ -17861,21 +14751,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - content
-                - contentUrl
-                - createdByAppId
-                - lastModifiedDateTime
-                - level
-                - links
-                - order
-                - title
-                - userTags
-                - parentNotebook
-                - parentSection
               type: string
         - name: $expand
           in: query
@@ -17886,10 +14761,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - parentNotebook
-                - parentSection
               type: string
       responses:
         2XX:
@@ -18206,22 +15077,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - isShared
-                - links
-                - sectionGroupsUrl
-                - sectionsUrl
-                - userRole
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -18232,10 +15087,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -18304,20 +15155,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - links
-                - pagesUrl
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
         - name: $expand
           in: query
@@ -18328,11 +15165,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
       responses:
         2XX:
@@ -18439,22 +15271,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - isShared
-                - links
-                - sectionGroupsUrl
-                - sectionsUrl
-                - userRole
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -18465,10 +15281,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -18529,20 +15341,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - sectionGroupsUrl
-                - sectionsUrl
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -18553,12 +15351,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -18679,27 +15471,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - self
-                - self desc
-                - createdDateTime
-                - createdDateTime desc
-                - createdBy
-                - createdBy desc
-                - displayName
-                - displayName desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - isDefault
-                - isDefault desc
-                - links
-                - links desc
-                - pagesUrl
-                - pagesUrl desc
               type: string
         - name: $select
           in: query
@@ -18710,20 +15481,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - links
-                - pagesUrl
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
         - name: $expand
           in: query
@@ -18734,11 +15491,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
       responses:
         2XX:
@@ -18833,20 +15585,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - links
-                - pagesUrl
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
         - name: $expand
           in: query
@@ -18857,11 +15595,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
       responses:
         2XX:
@@ -19011,31 +15744,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - self
-                - self desc
-                - createdDateTime
-                - createdDateTime desc
-                - content
-                - content desc
-                - contentUrl
-                - contentUrl desc
-                - createdByAppId
-                - createdByAppId desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - level
-                - level desc
-                - links
-                - links desc
-                - order
-                - order desc
-                - title
-                - title desc
-                - userTags
-                - userTags desc
               type: string
         - name: $select
           in: query
@@ -19046,21 +15754,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - content
-                - contentUrl
-                - createdByAppId
-                - lastModifiedDateTime
-                - level
-                - links
-                - order
-                - title
-                - userTags
-                - parentNotebook
-                - parentSection
               type: string
         - name: $expand
           in: query
@@ -19071,10 +15764,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - parentNotebook
-                - parentSection
               type: string
       responses:
         2XX:
@@ -19185,21 +15874,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - content
-                - contentUrl
-                - createdByAppId
-                - lastModifiedDateTime
-                - level
-                - links
-                - order
-                - title
-                - userTags
-                - parentNotebook
-                - parentSection
               type: string
         - name: $expand
           in: query
@@ -19210,10 +15884,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - parentNotebook
-                - parentSection
               type: string
       responses:
         2XX:
@@ -19490,22 +16160,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - isShared
-                - links
-                - sectionGroupsUrl
-                - sectionsUrl
-                - userRole
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -19516,10 +16170,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -19580,20 +16230,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - links
-                - pagesUrl
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
         - name: $expand
           in: query
@@ -19604,11 +16240,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
       responses:
         2XX:
@@ -19699,22 +16330,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - isShared
-                - links
-                - sectionGroupsUrl
-                - sectionsUrl
-                - userRole
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -19725,10 +16340,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -19781,20 +16392,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - sectionGroupsUrl
-                - sectionsUrl
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -19805,12 +16402,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -19904,23 +16495,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - createdDateTime
-                - createdDateTime desc
-                - lastActionDateTime
-                - lastActionDateTime desc
-                - status
-                - status desc
-                - error
-                - error desc
-                - percentComplete
-                - percentComplete desc
-                - resourceId
-                - resourceId desc
-                - resourceLocation
-                - resourceLocation desc
               type: string
         - name: $select
           in: query
@@ -19931,15 +16505,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdDateTime
-                - lastActionDateTime
-                - status
-                - error
-                - percentComplete
-                - resourceId
-                - resourceLocation
               type: string
         - name: $expand
           in: query
@@ -19950,8 +16515,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -20029,15 +16592,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdDateTime
-                - lastActionDateTime
-                - status
-                - error
-                - percentComplete
-                - resourceId
-                - resourceLocation
               type: string
         - name: $expand
           in: query
@@ -20048,8 +16602,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -20189,31 +16741,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - self
-                - self desc
-                - createdDateTime
-                - createdDateTime desc
-                - content
-                - content desc
-                - contentUrl
-                - contentUrl desc
-                - createdByAppId
-                - createdByAppId desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - level
-                - level desc
-                - links
-                - links desc
-                - order
-                - order desc
-                - title
-                - title desc
-                - userTags
-                - userTags desc
               type: string
         - name: $select
           in: query
@@ -20224,21 +16751,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - content
-                - contentUrl
-                - createdByAppId
-                - lastModifiedDateTime
-                - level
-                - links
-                - order
-                - title
-                - userTags
-                - parentNotebook
-                - parentSection
               type: string
         - name: $expand
           in: query
@@ -20249,10 +16761,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - parentNotebook
-                - parentSection
               type: string
       responses:
         2XX:
@@ -20334,21 +16842,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - content
-                - contentUrl
-                - createdByAppId
-                - lastModifiedDateTime
-                - level
-                - links
-                - order
-                - title
-                - userTags
-                - parentNotebook
-                - parentSection
               type: string
         - name: $expand
           in: query
@@ -20359,10 +16852,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - parentNotebook
-                - parentSection
               type: string
       responses:
         2XX:
@@ -20563,22 +17052,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - isShared
-                - links
-                - sectionGroupsUrl
-                - sectionsUrl
-                - userRole
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -20589,10 +17062,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -20637,20 +17106,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - links
-                - pagesUrl
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
         - name: $expand
           in: query
@@ -20661,11 +17116,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
       responses:
         2XX:
@@ -20729,15 +17179,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - self
-                - self desc
-                - content
-                - content desc
-                - contentUrl
-                - contentUrl desc
               type: string
         - name: $select
           in: query
@@ -20748,11 +17189,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - content
-                - contentUrl
               type: string
         - name: $expand
           in: query
@@ -20763,8 +17199,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -20839,11 +17273,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - content
-                - contentUrl
               type: string
         - name: $expand
           in: query
@@ -20854,8 +17283,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -21071,25 +17498,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - self
-                - self desc
-                - createdDateTime
-                - createdDateTime desc
-                - createdBy
-                - createdBy desc
-                - displayName
-                - displayName desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - sectionGroupsUrl
-                - sectionGroupsUrl desc
-                - sectionsUrl
-                - sectionsUrl desc
               type: string
         - name: $select
           in: query
@@ -21100,20 +17508,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - sectionGroupsUrl
-                - sectionsUrl
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -21124,12 +17518,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -21207,20 +17595,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - sectionGroupsUrl
-                - sectionsUrl
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -21231,12 +17605,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -21354,22 +17722,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - isShared
-                - links
-                - sectionGroupsUrl
-                - sectionsUrl
-                - userRole
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -21380,10 +17732,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -21428,20 +17776,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - sectionGroupsUrl
-                - sectionsUrl
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -21452,12 +17786,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -21510,25 +17838,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - self
-                - self desc
-                - createdDateTime
-                - createdDateTime desc
-                - createdBy
-                - createdBy desc
-                - displayName
-                - displayName desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - sectionGroupsUrl
-                - sectionGroupsUrl desc
-                - sectionsUrl
-                - sectionsUrl desc
               type: string
         - name: $select
           in: query
@@ -21539,20 +17848,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - sectionGroupsUrl
-                - sectionsUrl
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -21563,12 +17858,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -21620,20 +17909,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - sectionGroupsUrl
-                - sectionsUrl
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -21644,12 +17919,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -21732,27 +18001,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - self
-                - self desc
-                - createdDateTime
-                - createdDateTime desc
-                - createdBy
-                - createdBy desc
-                - displayName
-                - displayName desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - isDefault
-                - isDefault desc
-                - links
-                - links desc
-                - pagesUrl
-                - pagesUrl desc
               type: string
         - name: $select
           in: query
@@ -21763,20 +18011,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - links
-                - pagesUrl
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
         - name: $expand
           in: query
@@ -21787,11 +18021,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
       responses:
         2XX:
@@ -21886,20 +18115,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - links
-                - pagesUrl
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
         - name: $expand
           in: query
@@ -21910,11 +18125,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
       responses:
         2XX:
@@ -22064,31 +18274,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - self
-                - self desc
-                - createdDateTime
-                - createdDateTime desc
-                - content
-                - content desc
-                - contentUrl
-                - contentUrl desc
-                - createdByAppId
-                - createdByAppId desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - level
-                - level desc
-                - links
-                - links desc
-                - order
-                - order desc
-                - title
-                - title desc
-                - userTags
-                - userTags desc
               type: string
         - name: $select
           in: query
@@ -22099,21 +18284,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - content
-                - contentUrl
-                - createdByAppId
-                - lastModifiedDateTime
-                - level
-                - links
-                - order
-                - title
-                - userTags
-                - parentNotebook
-                - parentSection
               type: string
         - name: $expand
           in: query
@@ -22124,10 +18294,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - parentNotebook
-                - parentSection
               type: string
       responses:
         2XX:
@@ -22238,21 +18404,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - content
-                - contentUrl
-                - createdByAppId
-                - lastModifiedDateTime
-                - level
-                - links
-                - order
-                - title
-                - userTags
-                - parentNotebook
-                - parentSection
               type: string
         - name: $expand
           in: query
@@ -22263,10 +18414,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - parentNotebook
-                - parentSection
               type: string
       responses:
         2XX:
@@ -22543,22 +18690,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - isShared
-                - links
-                - sectionGroupsUrl
-                - sectionsUrl
-                - userRole
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -22569,10 +18700,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -22633,20 +18760,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - links
-                - pagesUrl
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
         - name: $expand
           in: query
@@ -22657,11 +18770,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
       responses:
         2XX:
@@ -22752,22 +18860,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - isShared
-                - links
-                - sectionGroupsUrl
-                - sectionsUrl
-                - userRole
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -22778,10 +18870,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -22834,20 +18922,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - sectionGroupsUrl
-                - sectionsUrl
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -22858,12 +18932,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -22960,27 +19028,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - self
-                - self desc
-                - createdDateTime
-                - createdDateTime desc
-                - createdBy
-                - createdBy desc
-                - displayName
-                - displayName desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - isDefault
-                - isDefault desc
-                - links
-                - links desc
-                - pagesUrl
-                - pagesUrl desc
               type: string
         - name: $select
           in: query
@@ -22991,20 +19038,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - links
-                - pagesUrl
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
         - name: $expand
           in: query
@@ -23015,11 +19048,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
       responses:
         2XX:
@@ -23097,20 +19125,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - links
-                - pagesUrl
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
         - name: $expand
           in: query
@@ -23121,11 +19135,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
       responses:
         2XX:
@@ -23251,31 +19260,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - self
-                - self desc
-                - createdDateTime
-                - createdDateTime desc
-                - content
-                - content desc
-                - contentUrl
-                - contentUrl desc
-                - createdByAppId
-                - createdByAppId desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - level
-                - level desc
-                - links
-                - links desc
-                - order
-                - order desc
-                - title
-                - title desc
-                - userTags
-                - userTags desc
               type: string
         - name: $select
           in: query
@@ -23286,21 +19270,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - content
-                - contentUrl
-                - createdByAppId
-                - lastModifiedDateTime
-                - level
-                - links
-                - order
-                - title
-                - userTags
-                - parentNotebook
-                - parentSection
               type: string
         - name: $expand
           in: query
@@ -23311,10 +19280,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - parentNotebook
-                - parentSection
               type: string
       responses:
         2XX:
@@ -23409,21 +19374,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - content
-                - contentUrl
-                - createdByAppId
-                - lastModifiedDateTime
-                - level
-                - links
-                - order
-                - title
-                - userTags
-                - parentNotebook
-                - parentSection
               type: string
         - name: $expand
           in: query
@@ -23434,10 +19384,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - parentNotebook
-                - parentSection
               type: string
       responses:
         2XX:
@@ -23674,22 +19620,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - isShared
-                - links
-                - sectionGroupsUrl
-                - sectionsUrl
-                - userRole
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -23700,10 +19630,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -23756,20 +19682,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - links
-                - pagesUrl
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
         - name: $expand
           in: query
@@ -23780,11 +19692,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - pages
-                - parentNotebook
-                - parentSectionGroup
               type: string
       responses:
         2XX:
@@ -23859,22 +19766,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - isDefault
-                - isShared
-                - links
-                - sectionGroupsUrl
-                - sectionsUrl
-                - userRole
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -23885,10 +19776,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:
@@ -23933,20 +19820,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - self
-                - createdDateTime
-                - createdBy
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - sectionGroupsUrl
-                - sectionsUrl
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
         - name: $expand
           in: query
@@ -23957,12 +19830,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - parentNotebook
-                - parentSectionGroup
-                - sectionGroups
-                - sections
               type: string
       responses:
         2XX:

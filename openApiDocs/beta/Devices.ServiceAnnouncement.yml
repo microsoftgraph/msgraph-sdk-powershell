@@ -72,11 +72,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - healthOverviews
-                - issues
-                - messages
               type: string
         - name: $expand
           in: query
@@ -87,11 +82,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - healthOverviews
-                - issues
-                - messages
               type: string
       responses:
         2XX:
@@ -168,13 +158,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - service
-                - service desc
-                - status
-                - status desc
               type: string
         - name: $select
           in: query
@@ -185,11 +168,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - service
-                - status
-                - issues
               type: string
         - name: $expand
           in: query
@@ -200,9 +178,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - issues
               type: string
       responses:
         2XX:
@@ -263,11 +238,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - service
-                - status
-                - issues
               type: string
         - name: $expand
           in: query
@@ -278,9 +248,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - issues
               type: string
       responses:
         2XX:
@@ -379,37 +346,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - details
-                - details desc
-                - endDateTime
-                - endDateTime desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - startDateTime
-                - startDateTime desc
-                - title
-                - title desc
-                - classification
-                - classification desc
-                - feature
-                - feature desc
-                - featureGroup
-                - featureGroup desc
-                - impactDescription
-                - impactDescription desc
-                - isResolved
-                - isResolved desc
-                - origin
-                - origin desc
-                - posts
-                - posts desc
-                - service
-                - service desc
-                - status
-                - status desc
               type: string
         - name: $select
           in: query
@@ -420,22 +356,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - details
-                - endDateTime
-                - lastModifiedDateTime
-                - startDateTime
-                - title
-                - classification
-                - feature
-                - featureGroup
-                - impactDescription
-                - isResolved
-                - origin
-                - posts
-                - service
-                - status
               type: string
         - name: $expand
           in: query
@@ -446,8 +366,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -522,22 +440,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - details
-                - endDateTime
-                - lastModifiedDateTime
-                - startDateTime
-                - title
-                - classification
-                - feature
-                - featureGroup
-                - impactDescription
-                - isResolved
-                - origin
-                - posts
-                - service
-                - status
               type: string
         - name: $expand
           in: query
@@ -548,8 +450,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -735,37 +635,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - details
-                - details desc
-                - endDateTime
-                - endDateTime desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - startDateTime
-                - startDateTime desc
-                - title
-                - title desc
-                - classification
-                - classification desc
-                - feature
-                - feature desc
-                - featureGroup
-                - featureGroup desc
-                - impactDescription
-                - impactDescription desc
-                - isResolved
-                - isResolved desc
-                - origin
-                - origin desc
-                - posts
-                - posts desc
-                - service
-                - service desc
-                - status
-                - status desc
               type: string
         - name: $select
           in: query
@@ -776,22 +645,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - details
-                - endDateTime
-                - lastModifiedDateTime
-                - startDateTime
-                - title
-                - classification
-                - feature
-                - featureGroup
-                - impactDescription
-                - isResolved
-                - origin
-                - posts
-                - service
-                - status
               type: string
         - name: $expand
           in: query
@@ -802,8 +655,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -864,22 +715,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - details
-                - endDateTime
-                - lastModifiedDateTime
-                - startDateTime
-                - title
-                - classification
-                - feature
-                - featureGroup
-                - impactDescription
-                - isResolved
-                - origin
-                - posts
-                - service
-                - status
               type: string
         - name: $expand
           in: query
@@ -890,8 +725,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1031,39 +864,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - details
-                - details desc
-                - endDateTime
-                - endDateTime desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - startDateTime
-                - startDateTime desc
-                - title
-                - title desc
-                - actionRequiredByDateTime
-                - actionRequiredByDateTime desc
-                - attachmentsArchive
-                - attachmentsArchive desc
-                - body
-                - body desc
-                - category
-                - category desc
-                - hasAttachments
-                - hasAttachments desc
-                - isMajorChange
-                - isMajorChange desc
-                - services
-                - services desc
-                - severity
-                - severity desc
-                - tags
-                - tags desc
-                - viewPoint
-                - viewPoint desc
               type: string
         - name: $select
           in: query
@@ -1074,24 +874,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - details
-                - endDateTime
-                - lastModifiedDateTime
-                - startDateTime
-                - title
-                - actionRequiredByDateTime
-                - attachmentsArchive
-                - body
-                - category
-                - hasAttachments
-                - isMajorChange
-                - services
-                - severity
-                - tags
-                - viewPoint
-                - attachments
               type: string
         - name: $expand
           in: query
@@ -1102,9 +884,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - attachments
               type: string
       responses:
         2XX:
@@ -1165,24 +944,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - details
-                - endDateTime
-                - lastModifiedDateTime
-                - startDateTime
-                - title
-                - actionRequiredByDateTime
-                - attachmentsArchive
-                - body
-                - category
-                - hasAttachments
-                - isMajorChange
-                - services
-                - severity
-                - tags
-                - viewPoint
-                - attachments
               type: string
         - name: $expand
           in: query
@@ -1193,9 +954,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - attachments
               type: string
       responses:
         2XX:
@@ -1297,19 +1055,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - content
-                - content desc
-                - contentType
-                - contentType desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - name
-                - name desc
-                - size
-                - size desc
               type: string
         - name: $select
           in: query
@@ -1320,13 +1065,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - content
-                - contentType
-                - lastModifiedDateTime
-                - name
-                - size
               type: string
         - name: $expand
           in: query
@@ -1337,8 +1075,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1416,13 +1152,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - content
-                - contentType
-                - lastModifiedDateTime
-                - name
-                - size
               type: string
         - name: $expand
           in: query
@@ -1433,8 +1162,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:

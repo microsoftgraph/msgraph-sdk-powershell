@@ -22,10 +22,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - authorizationSystems
-                - connections
-                - industryData
               type: string
         - name: $expand
           in: query
@@ -36,11 +32,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - authorizationSystems
-                - connections
-                - industryData
               type: string
       responses:
         2XX:
@@ -99,15 +90,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - authorizationSystemId
-                - authorizationSystemId desc
-                - authorizationSystemName
-                - authorizationSystemName desc
-                - authorizationSystemType
-                - authorizationSystemType desc
               type: string
         - name: $select
           in: query
@@ -118,12 +100,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - authorizationSystemId
-                - authorizationSystemName
-                - authorizationSystemType
-                - dataCollectionInfo
               type: string
         - name: $expand
           in: query
@@ -134,9 +110,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - dataCollectionInfo
               type: string
       responses:
         2XX:
@@ -194,12 +167,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - authorizationSystemId
-                - authorizationSystemName
-                - authorizationSystemType
-                - dataCollectionInfo
               type: string
         - name: $expand
           in: query
@@ -210,9 +177,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - dataCollectionInfo
               type: string
       responses:
         2XX:
@@ -306,9 +270,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - entitlements
               type: string
         - name: $expand
           in: query
@@ -319,8 +280,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -428,29 +387,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - activitySettings
-                - activitySettings desc
-                - complianceSettings
-                - complianceSettings desc
-                - configuration
-                - configuration desc
-                - connectorId
-                - connectorId desc
-                - description
-                - description desc
-                - enabledContentExperiences
-                - enabledContentExperiences desc
-                - ingestedItemsCount
-                - ingestedItemsCount desc
-                - name
-                - name desc
-                - searchSettings
-                - searchSettings desc
-                - state
-                - state desc
               type: string
         - name: $select
           in: query
@@ -461,23 +397,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - activitySettings
-                - complianceSettings
-                - configuration
-                - connectorId
-                - description
-                - enabledContentExperiences
-                - ingestedItemsCount
-                - name
-                - searchSettings
-                - state
-                - groups
-                - items
-                - operations
-                - quota
-                - schema
               type: string
         - name: $expand
           in: query
@@ -488,13 +407,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - groups
-                - items
-                - operations
-                - quota
-                - schema
               type: string
       responses:
         2XX:
@@ -559,23 +471,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - activitySettings
-                - complianceSettings
-                - configuration
-                - connectorId
-                - description
-                - enabledContentExperiences
-                - ingestedItemsCount
-                - name
-                - searchSettings
-                - state
-                - groups
-                - items
-                - operations
-                - quota
-                - schema
               type: string
         - name: $expand
           in: query
@@ -586,13 +481,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - groups
-                - items
-                - operations
-                - quota
-                - schema
               type: string
       responses:
         2XX:
@@ -698,13 +586,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
               type: string
         - name: $select
           in: query
@@ -715,11 +596,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - description
-                - displayName
-                - members
               type: string
         - name: $expand
           in: query
@@ -730,9 +606,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - members
               type: string
       responses:
         2XX:
@@ -810,11 +683,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - description
-                - displayName
-                - members
               type: string
         - name: $expand
           in: query
@@ -825,9 +693,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - members
               type: string
       responses:
         2XX:
@@ -954,11 +819,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - type
-                - type desc
               type: string
         - name: $select
           in: query
@@ -969,9 +829,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - type
               type: string
         - name: $expand
           in: query
@@ -982,8 +839,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1078,9 +933,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - type
               type: string
         - name: $expand
           in: query
@@ -1091,8 +943,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1279,15 +1129,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - acl
-                - acl desc
-                - content
-                - content desc
-                - properties
-                - properties desc
               type: string
         - name: $select
           in: query
@@ -1298,12 +1139,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - acl
-                - content
-                - properties
-                - activities
               type: string
         - name: $expand
           in: query
@@ -1314,9 +1149,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - activities
               type: string
       responses:
         2XX:
@@ -1394,12 +1226,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - acl
-                - content
-                - properties
-                - activities
               type: string
         - name: $expand
           in: query
@@ -1410,9 +1236,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - activities
               type: string
       responses:
         2XX:
@@ -1539,13 +1362,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - startDateTime
-                - startDateTime desc
-                - type
-                - type desc
               type: string
         - name: $select
           in: query
@@ -1556,11 +1372,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - startDateTime
-                - type
-                - performedBy
               type: string
         - name: $expand
           in: query
@@ -1571,9 +1382,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - performedBy
               type: string
       responses:
         2XX:
@@ -1664,11 +1472,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - startDateTime
-                - type
-                - performedBy
               type: string
         - name: $expand
           in: query
@@ -1679,9 +1482,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - performedBy
               type: string
       responses:
         2XX:
@@ -1823,9 +1623,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - type
               type: string
         - name: $expand
           in: query
@@ -1836,8 +1633,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1991,13 +1786,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - error
-                - error desc
-                - status
-                - status desc
               type: string
         - name: $select
           in: query
@@ -2008,10 +1796,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - error
-                - status
               type: string
         - name: $expand
           in: query
@@ -2022,8 +1806,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2097,10 +1879,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - error
-                - status
               type: string
         - name: $expand
           in: query
@@ -2111,8 +1889,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2247,9 +2023,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - itemsRemaining
               type: string
         - name: $expand
           in: query
@@ -2260,8 +2033,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2358,10 +2129,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - baseType
-                - properties
               type: string
         - name: $expand
           in: query
@@ -2372,8 +2139,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2450,16 +2215,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - dataConnectors
-                - inboundFlows
-                - operations
-                - referenceDefinitions
-                - roleGroups
-                - runs
-                - sourceSystems
-                - years
               type: string
         - name: $expand
           in: query
@@ -2470,16 +2225,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - dataConnectors
-                - inboundFlows
-                - operations
-                - referenceDefinitions
-                - roleGroups
-                - runs
-                - sourceSystems
-                - years
               type: string
       responses:
         2XX:
@@ -2516,11 +2261,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - displayName
-                - displayName desc
               type: string
         - name: $select
           in: query
@@ -2531,10 +2271,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
-                - sourceSystem
               type: string
         - name: $expand
           in: query
@@ -2545,9 +2281,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - sourceSystem
               type: string
       responses:
         2XX:
@@ -2588,11 +2321,11 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: Get industryDataConnector
-      description: Read the properties and relationships of an industryDataConnector object.
+      summary: Get azureDataLakeConnector
+      description: Read the properties and relationships of an azureDataLakeConnector object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-industrydataconnector-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/industrydata-azuredatalakeconnector-get?view=graph-rest-1.0
       operationId: external.industryData_GetDataConnector
       parameters:
         - name: industryDataConnector-id
@@ -2612,10 +2345,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
-                - sourceSystem
               type: string
         - name: $expand
           in: query
@@ -2626,9 +2355,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - sourceSystem
               type: string
       responses:
         2XX:
@@ -2643,11 +2369,11 @@ paths:
     patch:
       tags:
         - external.industryDataRoot
-      summary: Update industryDataConnector
-      description: Update the properties of an industryDataConnector object.
+      summary: Update azureDataLakeConnector
+      description: Update the properties of an azureDataLakeConnector object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-industrydataconnector-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/industrydata-azuredatalakeconnector-update?view=graph-rest-1.0
       operationId: external.industryData_UpdateDataConnector
       parameters:
         - name: industryDataConnector-id
@@ -2755,11 +2481,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
-                - userMatchingSettings
-                - vendor
               type: string
         - name: $expand
           in: query
@@ -2770,8 +2491,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2801,11 +2520,11 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: List inboundFileFlows
-      description: Get a list of the inboundFileFlow objects and their properties.
+      summary: List inboundFlows
+      description: Get a list of the inboundFlow objects and their properties.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/industrydata-inboundflow-list?view=graph-rest-1.0
       operationId: external.industryData_ListInboundFlow
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2822,19 +2541,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - displayName
-                - displayName desc
-                - readinessStatus
-                - readinessStatus desc
-                - dataDomain
-                - dataDomain desc
-                - effectiveDateTime
-                - effectiveDateTime desc
-                - expirationDateTime
-                - expirationDateTime desc
               type: string
         - name: $select
           in: query
@@ -2845,15 +2551,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
-                - readinessStatus
-                - dataDomain
-                - effectiveDateTime
-                - expirationDateTime
-                - dataConnector
-                - year
               type: string
         - name: $expand
           in: query
@@ -2864,10 +2561,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - dataConnector
-                - year
               type: string
       responses:
         2XX:
@@ -2908,11 +2601,11 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: Get inboundFlow
-      description: Read the properties and relationships of an inboundFlow object.
+      summary: Get inboundFileFlow
+      description: Read the properties and relationships of an inboundFileFlow object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-inboundflow-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-get?view=graph-rest-1.0
       operationId: external.industryData_GetInboundFlow
       parameters:
         - name: inboundFlow-id
@@ -2932,15 +2625,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
-                - readinessStatus
-                - dataDomain
-                - effectiveDateTime
-                - expirationDateTime
-                - dataConnector
-                - year
               type: string
         - name: $expand
           in: query
@@ -2951,10 +2635,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - dataConnector
-                - year
               type: string
       responses:
         2XX:
@@ -2969,11 +2649,11 @@ paths:
     patch:
       tags:
         - external.industryDataRoot
-      summary: Update inboundFlow
-      description: Update the properties of an inboundFlow object.
+      summary: Update inboundFileFlow
+      description: Update the properties of an inboundFileFlow object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-inboundflow-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-update?view=graph-rest-1.0
       operationId: external.industryData_UpdateInboundFlow
       parameters:
         - name: inboundFlow-id
@@ -3056,10 +2736,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
-                - sourceSystem
               type: string
         - name: $expand
           in: query
@@ -3070,9 +2746,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - sourceSystem
               type: string
       responses:
         2XX:
@@ -3109,12 +2782,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
-                - endDate
-                - startDate
-                - year
               type: string
         - name: $expand
           in: query
@@ -3125,8 +2792,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3177,19 +2842,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - createdDateTime
-                - createdDateTime desc
-                - lastActionDateTime
-                - lastActionDateTime desc
-                - resourceLocation
-                - resourceLocation desc
-                - status
-                - status desc
-                - statusDetail
-                - statusDetail desc
               type: string
         - name: $select
           in: query
@@ -3200,13 +2852,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdDateTime
-                - lastActionDateTime
-                - resourceLocation
-                - status
-                - statusDetail
               type: string
         - name: $expand
           in: query
@@ -3217,8 +2862,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3279,13 +2922,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdDateTime
-                - lastActionDateTime
-                - resourceLocation
-                - status
-                - statusDetail
               type: string
         - name: $expand
           in: query
@@ -3296,8 +2932,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3405,23 +3039,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - code
-                - code desc
-                - createdDateTime
-                - createdDateTime desc
-                - isDisabled
-                - isDisabled desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - referenceType
-                - referenceType desc
-                - sortIndex
-                - sortIndex desc
-                - source
-                - source desc
               type: string
         - name: $select
           in: query
@@ -3432,15 +3049,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - code
-                - createdDateTime
-                - isDisabled
-                - lastModifiedDateTime
-                - referenceType
-                - sortIndex
-                - source
               type: string
         - name: $expand
           in: query
@@ -3451,8 +3059,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3513,15 +3119,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - code
-                - createdDateTime
-                - isDisabled
-                - lastModifiedDateTime
-                - referenceType
-                - sortIndex
-                - source
               type: string
         - name: $expand
           in: query
@@ -3532,8 +3129,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3641,13 +3236,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - displayName
-                - displayName desc
-                - roles
-                - roles desc
               type: string
         - name: $select
           in: query
@@ -3658,10 +3246,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
-                - roles
               type: string
         - name: $expand
           in: query
@@ -3672,8 +3256,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3734,10 +3316,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
-                - roles
               type: string
         - name: $expand
           in: query
@@ -3748,8 +3326,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3857,19 +3433,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - blockingError
-                - blockingError desc
-                - displayName
-                - displayName desc
-                - endDateTime
-                - endDateTime desc
-                - startDateTime
-                - startDateTime desc
-                - status
-                - status desc
               type: string
         - name: $select
           in: query
@@ -3880,14 +3443,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - blockingError
-                - displayName
-                - endDateTime
-                - startDateTime
-                - status
-                - activities
               type: string
         - name: $expand
           in: query
@@ -3898,9 +3453,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - activities
               type: string
       responses:
         2XX:
@@ -3939,14 +3491,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - blockingError
-                - displayName
-                - endDateTime
-                - startDateTime
-                - status
-                - activities
               type: string
         - name: $expand
           in: query
@@ -3957,9 +3501,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - activities
               type: string
       responses:
         2XX:
@@ -4001,15 +3542,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - blockingError
-                - blockingError desc
-                - displayName
-                - displayName desc
-                - status
-                - status desc
               type: string
         - name: $select
           in: query
@@ -4020,12 +3552,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - blockingError
-                - displayName
-                - status
-                - activity
               type: string
         - name: $expand
           in: query
@@ -4036,9 +3562,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - activity
               type: string
       responses:
         2XX:
@@ -4082,12 +3605,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - blockingError
-                - displayName
-                - status
-                - activity
               type: string
         - name: $expand
           in: query
@@ -4098,9 +3615,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - activity
               type: string
       responses:
         2XX:
@@ -4145,10 +3659,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
-                - readinessStatus
               type: string
         - name: $expand
           in: query
@@ -4159,8 +3669,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -4274,15 +3782,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - displayName
-                - displayName desc
-                - userMatchingSettings
-                - userMatchingSettings desc
-                - vendor
-                - vendor desc
               type: string
         - name: $select
           in: query
@@ -4293,11 +3792,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
-                - userMatchingSettings
-                - vendor
               type: string
         - name: $expand
           in: query
@@ -4308,8 +3802,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -4374,11 +3866,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
-                - userMatchingSettings
-                - vendor
               type: string
         - name: $expand
           in: query
@@ -4389,8 +3876,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -4506,17 +3991,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - displayName
-                - displayName desc
-                - endDate
-                - endDate desc
-                - startDate
-                - startDate desc
-                - year
-                - year desc
               type: string
         - name: $select
           in: query
@@ -4527,12 +4001,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
-                - endDate
-                - startDate
-                - year
               type: string
         - name: $expand
           in: query
@@ -4543,8 +4011,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -4609,12 +4075,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
-                - endDate
-                - startDate
-                - year
               type: string
         - name: $expand
           in: query
@@ -4625,8 +4085,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -4733,11 +4191,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - acronyms
-                - bookmarks
-                - qnas
               type: string
         - name: $expand
           in: query
@@ -4748,11 +4201,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - acronyms
-                - bookmarks
-                - qnas
               type: string
       responses:
         2XX:
@@ -4811,23 +4259,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - webUrl
-                - webUrl desc
-                - standsFor
-                - standsFor desc
-                - state
-                - state desc
               type: string
         - name: $select
           in: query
@@ -4838,15 +4269,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - description
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - webUrl
-                - standsFor
-                - state
               type: string
         - name: $expand
           in: query
@@ -4857,8 +4279,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -4923,15 +4343,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - description
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - webUrl
-                - standsFor
-                - state
               type: string
         - name: $expand
           in: query
@@ -4942,8 +4353,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -5059,41 +4468,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - webUrl
-                - webUrl desc
-                - availabilityEndDateTime
-                - availabilityEndDateTime desc
-                - availabilityStartDateTime
-                - availabilityStartDateTime desc
-                - categories
-                - categories desc
-                - groupIds
-                - groupIds desc
-                - isSuggested
-                - isSuggested desc
-                - keywords
-                - keywords desc
-                - languageTags
-                - languageTags desc
-                - platforms
-                - platforms desc
-                - powerAppIds
-                - powerAppIds desc
-                - state
-                - state desc
-                - targetedVariations
-                - targetedVariations desc
               type: string
         - name: $select
           in: query
@@ -5104,24 +4478,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - description
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - webUrl
-                - availabilityEndDateTime
-                - availabilityStartDateTime
-                - categories
-                - groupIds
-                - isSuggested
-                - keywords
-                - languageTags
-                - platforms
-                - powerAppIds
-                - state
-                - targetedVariations
               type: string
         - name: $expand
           in: query
@@ -5132,8 +4488,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -5198,24 +4552,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - description
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - webUrl
-                - availabilityEndDateTime
-                - availabilityStartDateTime
-                - categories
-                - groupIds
-                - isSuggested
-                - keywords
-                - languageTags
-                - platforms
-                - powerAppIds
-                - state
-                - targetedVariations
               type: string
         - name: $expand
           in: query
@@ -5226,8 +4562,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -5390,37 +4724,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - webUrl
-                - webUrl desc
-                - availabilityEndDateTime
-                - availabilityEndDateTime desc
-                - availabilityStartDateTime
-                - availabilityStartDateTime desc
-                - groupIds
-                - groupIds desc
-                - isSuggested
-                - isSuggested desc
-                - keywords
-                - keywords desc
-                - languageTags
-                - languageTags desc
-                - platforms
-                - platforms desc
-                - state
-                - state desc
-                - targetedVariations
-                - targetedVariations desc
               type: string
         - name: $select
           in: query
@@ -5431,22 +4734,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - description
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - webUrl
-                - availabilityEndDateTime
-                - availabilityStartDateTime
-                - groupIds
-                - isSuggested
-                - keywords
-                - languageTags
-                - platforms
-                - state
-                - targetedVariations
               type: string
         - name: $expand
           in: query
@@ -5457,8 +4744,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -5523,22 +4808,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - description
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - webUrl
-                - availabilityEndDateTime
-                - availabilityStartDateTime
-                - groupIds
-                - isSuggested
-                - keywords
-                - languageTags
-                - platforms
-                - state
-                - targetedVariations
               type: string
         - name: $expand
           in: query
@@ -5549,8 +4818,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:

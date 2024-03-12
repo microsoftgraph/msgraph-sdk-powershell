@@ -28,21 +28,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - completedDateTime
-                - completedDateTime desc
-                - progress
-                - progress desc
-                - status
-                - status desc
-                - storageLocation
-                - storageLocation desc
-                - submittedDateTime
-                - submittedDateTime desc
-                - userId
-                - userId desc
               type: string
         - name: $select
           in: query
@@ -53,14 +38,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - completedDateTime
-                - progress
-                - status
-                - storageLocation
-                - submittedDateTime
-                - userId
               type: string
         - name: $expand
           in: query
@@ -71,8 +48,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -133,14 +108,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - completedDateTime
-                - progress
-                - status
-                - storageLocation
-                - submittedDateTime
-                - userId
               type: string
         - name: $expand
           in: query
@@ -151,8 +118,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -251,13 +216,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - apiConnectors
-                - b2xUserFlows
-                - conditionalAccess
-                - identityProviders
-                - userFlowAttributes
               type: string
         - name: $expand
           in: query
@@ -268,13 +226,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - apiConnectors
-                - b2xUserFlows
-                - conditionalAccess
-                - identityProviders
-                - userFlowAttributes
               type: string
       responses:
         2XX:
@@ -333,15 +284,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - authenticationConfiguration
-                - authenticationConfiguration desc
-                - displayName
-                - displayName desc
-                - targetUrl
-                - targetUrl desc
               type: string
         - name: $select
           in: query
@@ -352,11 +294,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - authenticationConfiguration
-                - displayName
-                - targetUrl
               type: string
         - name: $expand
           in: query
@@ -367,8 +304,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -433,11 +368,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - authenticationConfiguration
-                - displayName
-                - targetUrl
               type: string
         - name: $expand
           in: query
@@ -448,8 +378,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -610,15 +538,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - userFlowType
-                - userFlowType desc
-                - userFlowTypeVersion
-                - userFlowTypeVersion desc
-                - apiConnectorConfiguration
-                - apiConnectorConfiguration desc
               type: string
         - name: $select
           in: query
@@ -629,15 +548,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - userFlowType
-                - userFlowTypeVersion
-                - apiConnectorConfiguration
-                - identityProviders
-                - languages
-                - userAttributeAssignments
-                - userFlowIdentityProviders
               type: string
         - name: $expand
           in: query
@@ -648,12 +558,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - identityProviders
-                - languages
-                - userAttributeAssignments
-                - userFlowIdentityProviders
               type: string
       responses:
         2XX:
@@ -718,15 +622,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - userFlowType
-                - userFlowTypeVersion
-                - apiConnectorConfiguration
-                - identityProviders
-                - languages
-                - userAttributeAssignments
-                - userFlowIdentityProviders
               type: string
         - name: $expand
           in: query
@@ -737,12 +632,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - identityProviders
-                - languages
-                - userAttributeAssignments
-                - userFlowIdentityProviders
               type: string
       responses:
         2XX:
@@ -840,9 +729,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - postAttributeCollection
-                - postFederationSignup
               type: string
         - name: $expand
           in: query
@@ -853,10 +739,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - postAttributeCollection
-                - postFederationSignup
               type: string
       responses:
         2XX:
@@ -891,11 +773,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - authenticationConfiguration
-                - displayName
-                - targetUrl
               type: string
         - name: $expand
           in: query
@@ -906,8 +783,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1118,11 +993,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - authenticationConfiguration
-                - displayName
-                - targetUrl
               type: string
         - name: $expand
           in: query
@@ -1133,8 +1003,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1354,17 +1222,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - clientId
-                - clientId desc
-                - clientSecret
-                - clientSecret desc
-                - name
-                - name desc
-                - type
-                - type desc
               type: string
         - name: $select
           in: query
@@ -1375,12 +1232,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - clientId
-                - clientSecret
-                - name
-                - type
               type: string
         - name: $expand
           in: query
@@ -1391,8 +1242,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1401,8 +1250,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-03-15T00:00:00.0000000+00:00'
-        date: '2021-08-24T00:00:00.0000000+00:00'
+        removalDate: '2023-03-15'
+        date: '2021-08-24'
         version: 2021-05/identityProvider
         description: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API.
       x-ms-pageable:
@@ -1442,12 +1291,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - clientId
-                - clientSecret
-                - name
-                - type
               type: string
         - name: $expand
           in: query
@@ -1458,8 +1301,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1472,8 +1313,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-03-15T00:00:00.0000000+00:00'
-        date: '2021-08-24T00:00:00.0000000+00:00'
+        removalDate: '2023-03-15'
+        date: '2021-08-24'
         version: 2021-05/identityProvider
         description: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API.
       x-ms-docs-operation-type: operation
@@ -1501,8 +1342,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-03-15T00:00:00.0000000+00:00'
-        date: '2021-08-24T00:00:00.0000000+00:00'
+        removalDate: '2023-03-15'
+        date: '2021-08-24'
         version: 2021-05/identityProvider
         description: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API.
   '/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/languages':
@@ -1538,13 +1379,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - displayName
-                - displayName desc
-                - isEnabled
-                - isEnabled desc
               type: string
         - name: $select
           in: query
@@ -1555,12 +1389,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
-                - isEnabled
-                - defaultPages
-                - overridesPages
               type: string
         - name: $expand
           in: query
@@ -1571,10 +1399,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - defaultPages
-                - overridesPages
               type: string
       responses:
         2XX:
@@ -1652,12 +1476,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
-                - isEnabled
-                - defaultPages
-                - overridesPages
               type: string
         - name: $expand
           in: query
@@ -1668,10 +1486,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - defaultPages
-                - overridesPages
               type: string
       responses:
         2XX:
@@ -1794,9 +1608,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
               type: string
         - name: $select
           in: query
@@ -1807,8 +1618,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
               type: string
         - name: $expand
           in: query
@@ -1819,8 +1628,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1911,8 +1718,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
               type: string
         - name: $expand
           in: query
@@ -1923,8 +1728,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2189,9 +1992,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
               type: string
         - name: $select
           in: query
@@ -2202,8 +2002,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
               type: string
         - name: $expand
           in: query
@@ -2214,8 +2012,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2306,8 +2102,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
               type: string
         - name: $expand
           in: query
@@ -2318,8 +2112,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2601,19 +2393,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - displayName
-                - displayName desc
-                - isOptional
-                - isOptional desc
-                - requiresVerification
-                - requiresVerification desc
-                - userAttributeValues
-                - userAttributeValues desc
-                - userInputType
-                - userInputType desc
               type: string
         - name: $select
           in: query
@@ -2624,14 +2403,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
-                - isOptional
-                - requiresVerification
-                - userAttributeValues
-                - userInputType
-                - userAttribute
               type: string
         - name: $expand
           in: query
@@ -2642,9 +2413,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - userAttribute
               type: string
       responses:
         2XX:
@@ -2726,14 +2494,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
-                - isOptional
-                - requiresVerification
-                - userAttributeValues
-                - userInputType
-                - userAttribute
               type: string
         - name: $expand
           in: query
@@ -2744,9 +2504,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - userAttribute
               type: string
       responses:
         2XX:
@@ -2872,12 +2629,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - dataType
-                - description
-                - displayName
-                - userFlowAttributeType
               type: string
         - name: $expand
           in: query
@@ -2888,8 +2639,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3014,11 +2763,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - displayName
-                - displayName desc
               type: string
         - name: $select
           in: query
@@ -3029,9 +2773,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
               type: string
         - name: $expand
           in: query
@@ -3042,8 +2783,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3140,11 +2879,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - displayName
-                - displayName desc
               type: string
       responses:
         2XX:
@@ -3225,98 +2959,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-  /identity/conditionalAccess:
-    get:
-      tags:
-        - identity.conditionalAccessRoot
-      summary: Get conditionalAccess from identity
-      description: the entry point for the Conditional Access (CA) object model.
-      operationId: identity_GetConditionalAccess
-      parameters:
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - authenticationContextClassReferences
-                - authenticationStrength
-                - namedLocations
-                - policies
-                - templates
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - authenticationContextClassReferences
-                - authenticationStrength
-                - namedLocations
-                - policies
-                - templates
-              type: string
-      responses:
-        2XX:
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.conditionalAccessRoot'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - identity.conditionalAccessRoot
-      summary: Update the navigation property conditionalAccess in identity
-      operationId: identity_UpdateConditionalAccess
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.conditionalAccessRoot'
-        required: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.conditionalAccessRoot'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - identity.conditionalAccessRoot
-      summary: Delete navigation property conditionalAccess for identity
-      operationId: identity_DeleteConditionalAccess
-      parameters:
-        - name: If-Match
-          in: header
-          description: ETag
-          style: simple
-          schema:
-            type: string
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   /identity/conditionalAccess/authenticationContextClassReferences:
     get:
       tags:
@@ -3342,15 +2984,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - isAvailable
-                - isAvailable desc
               type: string
         - name: $select
           in: query
@@ -3361,11 +2994,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - description
-                - displayName
-                - isAvailable
               type: string
         - name: $expand
           in: query
@@ -3376,8 +3004,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3438,11 +3064,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - description
-                - displayName
-                - isAvailable
               type: string
         - name: $expand
           in: query
@@ -3453,8 +3074,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3561,11 +3180,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - combinations
-                - authenticationMethodModes
-                - policies
               type: string
         - name: $expand
           in: query
@@ -3576,10 +3190,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - authenticationMethodModes
-                - policies
               type: string
       responses:
         2XX:
@@ -3656,13 +3266,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - authenticationMethod
-                - authenticationMethod desc
-                - displayName
-                - displayName desc
               type: string
         - name: $select
           in: query
@@ -3673,10 +3276,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - authenticationMethod
-                - displayName
               type: string
         - name: $expand
           in: query
@@ -3687,8 +3286,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3746,10 +3343,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - authenticationMethod
-                - displayName
               type: string
         - name: $expand
           in: query
@@ -3760,8 +3353,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3866,23 +3457,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - allowedCombinations
-                - allowedCombinations desc
-                - createdDateTime
-                - createdDateTime desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - modifiedDateTime
-                - modifiedDateTime desc
-                - policyType
-                - policyType desc
-                - requirementsSatisfied
-                - requirementsSatisfied desc
               type: string
         - name: $select
           in: query
@@ -3893,16 +3467,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedCombinations
-                - createdDateTime
-                - description
-                - displayName
-                - modifiedDateTime
-                - policyType
-                - requirementsSatisfied
-                - combinationConfigurations
               type: string
         - name: $expand
           in: query
@@ -3913,9 +3477,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - combinationConfigurations
               type: string
       responses:
         2XX:
@@ -3973,16 +3534,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedCombinations
-                - createdDateTime
-                - description
-                - displayName
-                - modifiedDateTime
-                - policyType
-                - requirementsSatisfied
-                - combinationConfigurations
               type: string
         - name: $expand
           in: query
@@ -3993,9 +3544,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - combinationConfigurations
               type: string
       responses:
         2XX:
@@ -4097,11 +3645,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - appliesToCombinations
-                - appliesToCombinations desc
               type: string
         - name: $select
           in: query
@@ -4112,9 +3655,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - appliesToCombinations
               type: string
         - name: $expand
           in: query
@@ -4125,8 +3665,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -4208,9 +3746,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - appliesToCombinations
               type: string
         - name: $expand
           in: query
@@ -4221,8 +3756,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -4444,15 +3977,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - createdDateTime
-                - createdDateTime desc
-                - displayName
-                - displayName desc
-                - modifiedDateTime
-                - modifiedDateTime desc
               type: string
         - name: $select
           in: query
@@ -4463,11 +3987,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdDateTime
-                - displayName
-                - modifiedDateTime
               type: string
         - name: $expand
           in: query
@@ -4478,8 +3997,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -4520,11 +4037,11 @@ paths:
     get:
       tags:
         - identity.conditionalAccessRoot
-      summary: Get namedLocation
-      description: Retrieve the properties and relationships of a namedLocation object.
+      summary: Get ipNamedLocation
+      description: Retrieve the properties and relationships of an ipNamedLocation object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/namedlocation-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/ipnamedlocation-get?view=graph-rest-1.0
       operationId: identity.conditionalAccess_GetNamedLocation
       parameters:
         - name: namedLocation-id
@@ -4544,11 +4061,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdDateTime
-                - displayName
-                - modifiedDateTime
               type: string
         - name: $expand
           in: query
@@ -4559,8 +4071,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -4610,11 +4120,11 @@ paths:
     delete:
       tags:
         - identity.conditionalAccessRoot
-      summary: Delete ipNamedLocation
-      description: Delete an ipNamedLocation object.
+      summary: Delete countryNamedLocation
+      description: Delete a countryNamedLocation object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/ipnamedlocation-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/countrynamedlocation-delete?view=graph-rest-1.0
       operationId: identity.conditionalAccess_DeleteNamedLocation
       parameters:
         - name: namedLocation-id
@@ -4676,27 +4186,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - conditions
-                - conditions desc
-                - createdDateTime
-                - createdDateTime desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - grantControls
-                - grantControls desc
-                - modifiedDateTime
-                - modifiedDateTime desc
-                - sessionControls
-                - sessionControls desc
-                - state
-                - state desc
-                - templateId
-                - templateId desc
               type: string
         - name: $select
           in: query
@@ -4707,17 +4196,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - conditions
-                - createdDateTime
-                - description
-                - displayName
-                - grantControls
-                - modifiedDateTime
-                - sessionControls
-                - state
-                - templateId
               type: string
         - name: $expand
           in: query
@@ -4728,8 +4206,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -4794,17 +4270,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - conditions
-                - createdDateTime
-                - description
-                - displayName
-                - grantControls
-                - modifiedDateTime
-                - sessionControls
-                - state
-                - templateId
               type: string
         - name: $expand
           in: query
@@ -4815,8 +4280,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -4932,17 +4395,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - description
-                - description desc
-                - details
-                - details desc
-                - name
-                - name desc
-                - scenarios
-                - scenarios desc
               type: string
         - name: $select
           in: query
@@ -4953,12 +4405,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - description
-                - details
-                - name
-                - scenarios
               type: string
         - name: $expand
           in: query
@@ -4969,8 +4415,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -5009,12 +4453,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - description
-                - details
-                - name
-                - scenarios
               type: string
         - name: $expand
           in: query
@@ -5025,8 +4463,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -5077,11 +4513,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - displayName
-                - displayName desc
               type: string
         - name: $select
           in: query
@@ -5092,9 +4523,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
               type: string
         - name: $expand
           in: query
@@ -5105,8 +4533,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -5171,9 +4597,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
               type: string
         - name: $expand
           in: query
@@ -5184,8 +4607,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -5337,17 +4758,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - dataType
-                - dataType desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - userFlowAttributeType
-                - userFlowAttributeType desc
               type: string
         - name: $select
           in: query
@@ -5358,12 +4768,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - dataType
-                - description
-                - displayName
-                - userFlowAttributeType
               type: string
         - name: $expand
           in: query
@@ -5374,8 +4778,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -5440,12 +4842,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - dataType
-                - description
-                - displayName
-                - userFlowAttributeType
               type: string
         - name: $expand
           in: query
@@ -5456,8 +4852,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -5564,11 +4958,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - riskDetections
-                - riskyServicePrincipals
-                - riskyUsers
-                - servicePrincipalRiskDetections
               type: string
         - name: $expand
           in: query
@@ -5579,12 +4968,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - riskDetections
-                - riskyServicePrincipals
-                - riskyUsers
-                - servicePrincipalRiskDetections
               type: string
       responses:
         2XX:
@@ -5643,47 +5026,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - activity
-                - activity desc
-                - activityDateTime
-                - activityDateTime desc
-                - additionalInfo
-                - additionalInfo desc
-                - correlationId
-                - correlationId desc
-                - detectedDateTime
-                - detectedDateTime desc
-                - detectionTimingType
-                - detectionTimingType desc
-                - ipAddress
-                - ipAddress desc
-                - lastUpdatedDateTime
-                - lastUpdatedDateTime desc
-                - location
-                - location desc
-                - requestId
-                - requestId desc
-                - riskDetail
-                - riskDetail desc
-                - riskEventType
-                - riskEventType desc
-                - riskLevel
-                - riskLevel desc
-                - riskState
-                - riskState desc
-                - source
-                - source desc
-                - tokenIssuerType
-                - tokenIssuerType desc
-                - userDisplayName
-                - userDisplayName desc
-                - userId
-                - userId desc
-                - userPrincipalName
-                - userPrincipalName desc
               type: string
         - name: $select
           in: query
@@ -5694,27 +5036,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - activity
-                - activityDateTime
-                - additionalInfo
-                - correlationId
-                - detectedDateTime
-                - detectionTimingType
-                - ipAddress
-                - lastUpdatedDateTime
-                - location
-                - requestId
-                - riskDetail
-                - riskEventType
-                - riskLevel
-                - riskState
-                - source
-                - tokenIssuerType
-                - userDisplayName
-                - userId
-                - userPrincipalName
               type: string
         - name: $expand
           in: query
@@ -5725,8 +5046,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -5787,27 +5106,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - activity
-                - activityDateTime
-                - additionalInfo
-                - correlationId
-                - detectedDateTime
-                - detectionTimingType
-                - ipAddress
-                - lastUpdatedDateTime
-                - location
-                - requestId
-                - riskDetail
-                - riskEventType
-                - riskLevel
-                - riskState
-                - source
-                - tokenIssuerType
-                - userDisplayName
-                - userId
-                - userPrincipalName
               type: string
         - name: $expand
           in: query
@@ -5818,8 +5116,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -5927,27 +5223,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - appId
-                - appId desc
-                - displayName
-                - displayName desc
-                - isEnabled
-                - isEnabled desc
-                - isProcessing
-                - isProcessing desc
-                - riskDetail
-                - riskDetail desc
-                - riskLastUpdatedDateTime
-                - riskLastUpdatedDateTime desc
-                - riskLevel
-                - riskLevel desc
-                - riskState
-                - riskState desc
-                - servicePrincipalType
-                - servicePrincipalType desc
               type: string
         - name: $select
           in: query
@@ -5958,18 +5233,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - appId
-                - displayName
-                - isEnabled
-                - isProcessing
-                - riskDetail
-                - riskLastUpdatedDateTime
-                - riskLevel
-                - riskState
-                - servicePrincipalType
-                - history
               type: string
         - name: $expand
           in: query
@@ -5980,9 +5243,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - history
               type: string
       responses:
         2XX:
@@ -6043,18 +5303,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - appId
-                - displayName
-                - isEnabled
-                - isProcessing
-                - riskDetail
-                - riskLastUpdatedDateTime
-                - riskLevel
-                - riskState
-                - servicePrincipalType
-                - history
               type: string
         - name: $expand
           in: query
@@ -6065,9 +5313,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - history
               type: string
       responses:
         2XX:
@@ -6169,31 +5414,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - appId
-                - appId desc
-                - displayName
-                - displayName desc
-                - isEnabled
-                - isEnabled desc
-                - isProcessing
-                - isProcessing desc
-                - riskDetail
-                - riskDetail desc
-                - riskLastUpdatedDateTime
-                - riskLastUpdatedDateTime desc
-                - riskLevel
-                - riskLevel desc
-                - riskState
-                - riskState desc
-                - servicePrincipalType
-                - servicePrincipalType desc
-                - activity
-                - activity desc
-                - initiatedBy
-                - initiatedBy desc
               type: string
         - name: $select
           in: query
@@ -6204,20 +5424,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - appId
-                - displayName
-                - isEnabled
-                - isProcessing
-                - riskDetail
-                - riskLastUpdatedDateTime
-                - riskLevel
-                - riskState
-                - servicePrincipalType
-                - activity
-                - initiatedBy
-                - history
               type: string
         - name: $expand
           in: query
@@ -6228,9 +5434,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - history
               type: string
       responses:
         2XX:
@@ -6305,20 +5508,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - appId
-                - displayName
-                - isEnabled
-                - isProcessing
-                - riskDetail
-                - riskLastUpdatedDateTime
-                - riskLevel
-                - riskState
-                - servicePrincipalType
-                - activity
-                - initiatedBy
-                - history
               type: string
         - name: $expand
           in: query
@@ -6329,9 +5518,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - history
               type: string
       responses:
         2XX:
@@ -6539,25 +5725,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - isDeleted
-                - isDeleted desc
-                - isProcessing
-                - isProcessing desc
-                - riskDetail
-                - riskDetail desc
-                - riskLastUpdatedDateTime
-                - riskLastUpdatedDateTime desc
-                - riskLevel
-                - riskLevel desc
-                - riskState
-                - riskState desc
-                - userDisplayName
-                - userDisplayName desc
-                - userPrincipalName
-                - userPrincipalName desc
               type: string
         - name: $select
           in: query
@@ -6568,17 +5735,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - isDeleted
-                - isProcessing
-                - riskDetail
-                - riskLastUpdatedDateTime
-                - riskLevel
-                - riskState
-                - userDisplayName
-                - userPrincipalName
-                - history
               type: string
         - name: $expand
           in: query
@@ -6589,9 +5745,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - history
               type: string
       responses:
         2XX:
@@ -6652,17 +5805,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - isDeleted
-                - isProcessing
-                - riskDetail
-                - riskLastUpdatedDateTime
-                - riskLevel
-                - riskState
-                - userDisplayName
-                - userPrincipalName
-                - history
               type: string
         - name: $expand
           in: query
@@ -6673,9 +5815,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - history
               type: string
       responses:
         2XX:
@@ -6777,31 +5916,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - isDeleted
-                - isDeleted desc
-                - isProcessing
-                - isProcessing desc
-                - riskDetail
-                - riskDetail desc
-                - riskLastUpdatedDateTime
-                - riskLastUpdatedDateTime desc
-                - riskLevel
-                - riskLevel desc
-                - riskState
-                - riskState desc
-                - userDisplayName
-                - userDisplayName desc
-                - userPrincipalName
-                - userPrincipalName desc
-                - activity
-                - activity desc
-                - initiatedBy
-                - initiatedBy desc
-                - userId
-                - userId desc
               type: string
         - name: $select
           in: query
@@ -6812,20 +5926,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - isDeleted
-                - isProcessing
-                - riskDetail
-                - riskLastUpdatedDateTime
-                - riskLevel
-                - riskState
-                - userDisplayName
-                - userPrincipalName
-                - activity
-                - initiatedBy
-                - userId
-                - history
               type: string
         - name: $expand
           in: query
@@ -6836,9 +5936,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - history
               type: string
       responses:
         2XX:
@@ -6913,20 +6010,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - isDeleted
-                - isProcessing
-                - riskDetail
-                - riskLastUpdatedDateTime
-                - riskLevel
-                - riskState
-                - userDisplayName
-                - userPrincipalName
-                - activity
-                - initiatedBy
-                - userId
-                - history
               type: string
         - name: $expand
           in: query
@@ -6937,9 +6020,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - history
               type: string
       responses:
         2XX:
@@ -7147,49 +6227,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - activity
-                - activity desc
-                - activityDateTime
-                - activityDateTime desc
-                - additionalInfo
-                - additionalInfo desc
-                - appId
-                - appId desc
-                - correlationId
-                - correlationId desc
-                - detectedDateTime
-                - detectedDateTime desc
-                - detectionTimingType
-                - detectionTimingType desc
-                - ipAddress
-                - ipAddress desc
-                - keyIds
-                - keyIds desc
-                - lastUpdatedDateTime
-                - lastUpdatedDateTime desc
-                - location
-                - location desc
-                - requestId
-                - requestId desc
-                - riskDetail
-                - riskDetail desc
-                - riskEventType
-                - riskEventType desc
-                - riskLevel
-                - riskLevel desc
-                - riskState
-                - riskState desc
-                - servicePrincipalDisplayName
-                - servicePrincipalDisplayName desc
-                - servicePrincipalId
-                - servicePrincipalId desc
-                - source
-                - source desc
-                - tokenIssuerType
-                - tokenIssuerType desc
               type: string
         - name: $select
           in: query
@@ -7200,28 +6237,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - activity
-                - activityDateTime
-                - additionalInfo
-                - appId
-                - correlationId
-                - detectedDateTime
-                - detectionTimingType
-                - ipAddress
-                - keyIds
-                - lastUpdatedDateTime
-                - location
-                - requestId
-                - riskDetail
-                - riskEventType
-                - riskLevel
-                - riskState
-                - servicePrincipalDisplayName
-                - servicePrincipalId
-                - source
-                - tokenIssuerType
               type: string
         - name: $expand
           in: query
@@ -7232,8 +6247,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -7294,28 +6307,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - activity
-                - activityDateTime
-                - additionalInfo
-                - appId
-                - correlationId
-                - detectedDateTime
-                - detectionTimingType
-                - ipAddress
-                - keyIds
-                - lastUpdatedDateTime
-                - location
-                - requestId
-                - riskDetail
-                - riskEventType
-                - riskLevel
-                - riskState
-                - servicePrincipalDisplayName
-                - servicePrincipalId
-                - source
-                - tokenIssuerType
               type: string
         - name: $expand
           in: query
@@ -7326,8 +6317,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -7435,17 +6424,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - clientId
-                - clientId desc
-                - clientSecret
-                - clientSecret desc
-                - name
-                - name desc
-                - type
-                - type desc
               type: string
         - name: $select
           in: query
@@ -7456,12 +6434,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - clientId
-                - clientSecret
-                - name
-                - type
               type: string
         - name: $expand
           in: query
@@ -7472,8 +6444,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -7482,8 +6452,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-03-15T00:00:00.0000000+00:00'
-        date: '2021-08-24T00:00:00.0000000+00:00'
+        removalDate: '2023-03-15'
+        date: '2021-08-24'
         version: 2021-05/identityProvider
         description: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API.
       x-ms-pageable:
@@ -7517,8 +6487,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-03-15T00:00:00.0000000+00:00'
-        date: '2021-08-24T00:00:00.0000000+00:00'
+        removalDate: '2023-03-15'
+        date: '2021-08-24'
         version: 2021-05/identityProvider
         description: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API.
       x-ms-docs-operation-type: operation
@@ -7550,12 +6520,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - clientId
-                - clientSecret
-                - name
-                - type
               type: string
         - name: $expand
           in: query
@@ -7566,8 +6530,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -7580,8 +6542,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-03-15T00:00:00.0000000+00:00'
-        date: '2021-08-24T00:00:00.0000000+00:00'
+        removalDate: '2023-03-15'
+        date: '2021-08-24'
         version: 2021-05/identityProvider
         description: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API.
       x-ms-docs-operation-type: operation
@@ -7621,8 +6583,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-03-15T00:00:00.0000000+00:00'
-        date: '2021-08-24T00:00:00.0000000+00:00'
+        removalDate: '2023-03-15'
+        date: '2021-08-24'
         version: 2021-05/identityProvider
         description: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API.
       x-ms-docs-operation-type: operation
@@ -7657,8 +6619,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-03-15T00:00:00.0000000+00:00'
-        date: '2021-08-24T00:00:00.0000000+00:00'
+        removalDate: '2023-03-15'
+        date: '2021-08-24'
         version: 2021-05/identityProvider
         description: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API.
       x-ms-docs-operation-type: operation
@@ -7678,8 +6640,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-03-15T00:00:00.0000000+00:00'
-        date: '2021-08-24T00:00:00.0000000+00:00'
+        removalDate: '2023-03-15'
+        date: '2021-08-24'
         version: 2021-05/identityProvider
         description: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API.
   /identityProviders/microsoft.graph.availableProviderTypes():
@@ -7716,8 +6678,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-03-15T00:00:00.0000000+00:00'
-        date: '2021-08-24T00:00:00.0000000+00:00'
+        removalDate: '2023-03-15'
+        date: '2021-08-24'
         version: 2021-05/identityProvider
         description: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API.
       x-ms-docs-operation-type: function
@@ -7740,9 +6702,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - bitlocker
-                - threatAssessmentRequests
               type: string
         - name: $expand
           in: query
@@ -7753,10 +6712,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - bitlocker
-                - threatAssessmentRequests
               type: string
       responses:
         2XX:
@@ -7806,9 +6761,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - recoveryKeys
               type: string
         - name: $expand
           in: query
@@ -7819,9 +6771,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - recoveryKeys
               type: string
       responses:
         2XX:
@@ -7858,17 +6807,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - createdDateTime
-                - createdDateTime desc
-                - deviceId
-                - deviceId desc
-                - key
-                - key desc
-                - volumeType
-                - volumeType desc
               type: string
         - name: $select
           in: query
@@ -7879,12 +6817,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdDateTime
-                - deviceId
-                - key
-                - volumeType
               type: string
         - name: $expand
           in: query
@@ -7895,8 +6827,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -7935,12 +6865,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdDateTime
-                - deviceId
-                - key
-                - volumeType
               type: string
         - name: $expand
           in: query
@@ -7951,8 +6875,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -8003,23 +6925,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - category
-                - category desc
-                - contentType
-                - contentType desc
-                - createdBy
-                - createdBy desc
-                - createdDateTime
-                - createdDateTime desc
-                - expectedAssessment
-                - expectedAssessment desc
-                - requestSource
-                - requestSource desc
-                - status
-                - status desc
               type: string
         - name: $select
           in: query
@@ -8030,16 +6935,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - category
-                - contentType
-                - createdBy
-                - createdDateTime
-                - expectedAssessment
-                - requestSource
-                - status
-                - results
               type: string
         - name: $expand
           in: query
@@ -8050,9 +6945,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - results
               type: string
       responses:
         2XX:
@@ -8117,16 +7009,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - category
-                - contentType
-                - createdBy
-                - createdDateTime
-                - expectedAssessment
-                - requestSource
-                - status
-                - results
               type: string
         - name: $expand
           in: query
@@ -8137,9 +7019,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - results
               type: string
       responses:
         2XX:
@@ -8238,15 +7117,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - createdDateTime
-                - createdDateTime desc
-                - message
-                - message desc
-                - resultType
-                - resultType desc
               type: string
         - name: $select
           in: query
@@ -8257,11 +7127,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdDateTime
-                - message
-                - resultType
               type: string
         - name: $expand
           in: query
@@ -8272,8 +7137,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -8348,11 +7211,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdDateTime
-                - message
-                - resultType
               type: string
         - name: $expand
           in: query
@@ -8363,8 +7221,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -8506,27 +7362,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - invitedUserDisplayName
-                - invitedUserDisplayName desc
-                - invitedUserEmailAddress
-                - invitedUserEmailAddress desc
-                - invitedUserMessageInfo
-                - invitedUserMessageInfo desc
-                - invitedUserType
-                - invitedUserType desc
-                - inviteRedeemUrl
-                - inviteRedeemUrl desc
-                - inviteRedirectUrl
-                - inviteRedirectUrl desc
-                - resetRedemption
-                - resetRedemption desc
-                - sendInvitationMessage
-                - sendInvitationMessage desc
-                - status
-                - status desc
               type: string
         - name: $select
           in: query
@@ -8537,18 +7372,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - invitedUserDisplayName
-                - invitedUserEmailAddress
-                - invitedUserMessageInfo
-                - invitedUserType
-                - inviteRedeemUrl
-                - inviteRedirectUrl
-                - resetRedemption
-                - sendInvitationMessage
-                - status
-                - invitedUser
               type: string
         - name: $expand
           in: query
@@ -8559,9 +7382,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - invitedUser
               type: string
       responses:
         2XX:
@@ -8622,18 +7442,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - invitedUserDisplayName
-                - invitedUserEmailAddress
-                - invitedUserMessageInfo
-                - invitedUserType
-                - inviteRedeemUrl
-                - inviteRedirectUrl
-                - resetRedemption
-                - sendInvitationMessage
-                - status
-                - invitedUser
               type: string
         - name: $expand
           in: query
@@ -8644,9 +7452,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - invitedUser
               type: string
       responses:
         2XX:
@@ -8740,134 +7545,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
-                - aboutMe
-                - accountEnabled
-                - ageGroup
-                - assignedLicenses
-                - assignedPlans
-                - authorizationInfo
-                - birthday
-                - businessPhones
-                - city
-                - companyName
-                - consentProvidedForMinor
-                - country
-                - createdDateTime
-                - creationType
-                - customSecurityAttributes
-                - department
-                - deviceEnrollmentLimit
-                - displayName
-                - employeeHireDate
-                - employeeId
-                - employeeLeaveDateTime
-                - employeeOrgData
-                - employeeType
-                - externalUserState
-                - externalUserStateChangeDateTime
-                - faxNumber
-                - givenName
-                - hireDate
-                - identities
-                - imAddresses
-                - interests
-                - isResourceAccount
-                - jobTitle
-                - lastPasswordChangeDateTime
-                - legalAgeGroupClassification
-                - licenseAssignmentStates
-                - mail
-                - mailboxSettings
-                - mailNickname
-                - mobilePhone
-                - mySite
-                - officeLocation
-                - onPremisesDistinguishedName
-                - onPremisesDomainName
-                - onPremisesExtensionAttributes
-                - onPremisesImmutableId
-                - onPremisesLastSyncDateTime
-                - onPremisesProvisioningErrors
-                - onPremisesSamAccountName
-                - onPremisesSecurityIdentifier
-                - onPremisesSyncEnabled
-                - onPremisesUserPrincipalName
-                - otherMails
-                - passwordPolicies
-                - passwordProfile
-                - pastProjects
-                - postalCode
-                - preferredDataLocation
-                - preferredLanguage
-                - preferredName
-                - print
-                - provisionedPlans
-                - proxyAddresses
-                - responsibilities
-                - schools
-                - securityIdentifier
-                - serviceProvisioningErrors
-                - showInAddressList
-                - signInActivity
-                - signInSessionsValidFromDateTime
-                - skills
-                - state
-                - streetAddress
-                - surname
-                - usageLocation
-                - userPrincipalName
-                - userType
-                - activities
-                - agreementAcceptances
-                - appRoleAssignments
-                - authentication
-                - calendar
-                - calendarGroups
-                - calendars
-                - calendarView
-                - chats
-                - contactFolders
-                - contacts
-                - createdObjects
-                - deviceManagementTroubleshootingEvents
-                - directReports
-                - drive
-                - drives
-                - employeeExperience
-                - events
-                - extensions
-                - followedSites
-                - inferenceClassification
-                - insights
-                - joinedTeams
-                - licenseDetails
-                - mailFolders
-                - managedAppRegistrations
-                - managedDevices
-                - manager
-                - memberOf
-                - messages
-                - oauth2PermissionGrants
-                - onenote
-                - onlineMeetings
-                - outlook
-                - ownedDevices
-                - ownedObjects
-                - people
-                - permissionGrants
-                - photo
-                - photos
-                - planner
-                - presence
-                - registeredDevices
-                - scopedRoleMemberOf
-                - settings
-                - teamwork
-                - todo
-                - transitiveMemberOf
               type: string
         - name: $expand
           in: query
@@ -8878,56 +7555,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - activities
-                - agreementAcceptances
-                - appRoleAssignments
-                - authentication
-                - calendar
-                - calendarGroups
-                - calendars
-                - calendarView
-                - chats
-                - contactFolders
-                - contacts
-                - createdObjects
-                - deviceManagementTroubleshootingEvents
-                - directReports
-                - drive
-                - drives
-                - employeeExperience
-                - events
-                - extensions
-                - followedSites
-                - inferenceClassification
-                - insights
-                - joinedTeams
-                - licenseDetails
-                - mailFolders
-                - managedAppRegistrations
-                - managedDevices
-                - manager
-                - memberOf
-                - messages
-                - oauth2PermissionGrants
-                - onenote
-                - onlineMeetings
-                - outlook
-                - ownedDevices
-                - ownedObjects
-                - people
-                - permissionGrants
-                - photo
-                - photos
-                - planner
-                - presence
-                - registeredDevices
-                - scopedRoleMemberOf
-                - settings
-                - teamwork
-                - todo
-                - transitiveMemberOf
               type: string
       responses:
         2XX:
@@ -8964,16 +7591,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - archiveFolder
-                - automaticRepliesSetting
-                - dateFormat
-                - delegateMeetingMessageDeliveryOptions
-                - language
-                - timeFormat
-                - timeZone
-                - userPurpose
-                - workingHours
               type: string
         - name: $expand
           in: query
@@ -8984,8 +7601,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -9056,13 +7671,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - createdDateTime
-                - createdDateTime desc
-                - isResolved
-                - isResolved desc
-                - serviceInstance
-                - serviceInstance desc
               type: string
         - name: $select
           in: query
@@ -9073,10 +7681,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - createdDateTime
-                - isResolved
-                - serviceInstance
               type: string
         - name: $expand
           in: query
@@ -9087,8 +7691,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -9159,19 +7761,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - clientId
-                - clientId desc
-                - consentType
-                - consentType desc
-                - principalId
-                - principalId desc
-                - resourceId
-                - resourceId desc
-                - scope
-                - scope desc
               type: string
         - name: $select
           in: query
@@ -9182,13 +7771,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - clientId
-                - consentType
-                - principalId
-                - resourceId
-                - scope
               type: string
         - name: $expand
           in: query
@@ -9199,8 +7781,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -9265,13 +7845,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - clientId
-                - consentType
-                - principalId
-                - resourceId
-                - scope
               type: string
         - name: $expand
           in: query
@@ -9282,8 +7855,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -9395,13 +7966,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - clientId
-                - consentType
-                - principalId
-                - resourceId
-                - scope
               type: string
         - name: $orderby
           in: query
@@ -9412,19 +7976,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - clientId
-                - clientId desc
-                - consentType
-                - consentType desc
-                - principalId
-                - principalId desc
-                - resourceId
-                - resourceId desc
-                - scope
-                - scope desc
               type: string
         - name: $expand
           in: query
@@ -9435,8 +7986,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -9498,11 +8047,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - certificateAuthorities
-                - certificateAuthorities desc
               type: string
         - name: $select
           in: query
@@ -9513,9 +8057,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - certificateAuthorities
               type: string
         - name: $expand
           in: query
@@ -9526,8 +8067,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -9609,9 +8148,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - certificateAuthorities
               type: string
         - name: $expand
           in: query
@@ -9622,8 +8158,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -9711,27 +8245,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - activityBasedTimeoutPolicies
-                - adminConsentRequestPolicy
-                - appManagementPolicies
-                - authenticationFlowsPolicy
-                - authenticationMethodsPolicy
-                - authenticationStrengthPolicies
-                - authorizationPolicy
-                - claimsMappingPolicies
-                - conditionalAccessPolicies
-                - crossTenantAccessPolicy
-                - defaultAppManagementPolicy
-                - featureRolloutPolicies
-                - homeRealmDiscoveryPolicies
-                - identitySecurityDefaultsEnforcementPolicy
-                - permissionGrantPolicies
-                - roleManagementPolicies
-                - roleManagementPolicyAssignments
-                - tokenIssuancePolicies
-                - tokenLifetimePolicies
               type: string
         - name: $expand
           in: query
@@ -9742,27 +8255,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - activityBasedTimeoutPolicies
-                - adminConsentRequestPolicy
-                - appManagementPolicies
-                - authenticationFlowsPolicy
-                - authenticationMethodsPolicy
-                - authenticationStrengthPolicies
-                - authorizationPolicy
-                - claimsMappingPolicies
-                - conditionalAccessPolicies
-                - crossTenantAccessPolicy
-                - defaultAppManagementPolicy
-                - featureRolloutPolicies
-                - homeRealmDiscoveryPolicies
-                - identitySecurityDefaultsEnforcementPolicy
-                - permissionGrantPolicies
-                - roleManagementPolicies
-                - roleManagementPolicyAssignments
-                - tokenIssuancePolicies
-                - tokenLifetimePolicies
               type: string
       responses:
         2XX:
@@ -9821,19 +8313,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - deletedDateTime
-                - deletedDateTime desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - definition
-                - definition desc
-                - isOrganizationDefault
-                - isOrganizationDefault desc
               type: string
         - name: $select
           in: query
@@ -9844,14 +8323,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
-                - description
-                - displayName
-                - definition
-                - isOrganizationDefault
-                - appliesTo
               type: string
         - name: $expand
           in: query
@@ -9862,9 +8333,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - appliesTo
               type: string
       responses:
         2XX:
@@ -9929,14 +8397,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
-                - description
-                - displayName
-                - definition
-                - isOrganizationDefault
-                - appliesTo
               type: string
         - name: $expand
           in: query
@@ -9947,9 +8407,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - appliesTo
               type: string
       responses:
         2XX:
@@ -10055,11 +8512,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - deletedDateTime
-                - deletedDateTime desc
               type: string
         - name: $select
           in: query
@@ -10070,9 +8522,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
               type: string
         - name: $expand
           in: query
@@ -10083,8 +8532,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -10127,9 +8574,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
               type: string
         - name: $expand
           in: query
@@ -10140,8 +8584,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -10209,14 +8651,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - isEnabled
-                - notifyReviewers
-                - remindersEnabled
-                - requestDurationInDays
-                - reviewers
-                - version
               type: string
         - name: $expand
           in: query
@@ -10227,8 +8661,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -10309,19 +8741,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - deletedDateTime
-                - deletedDateTime desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - isEnabled
-                - isEnabled desc
-                - restrictions
-                - restrictions desc
               type: string
         - name: $select
           in: query
@@ -10332,14 +8751,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
-                - description
-                - displayName
-                - isEnabled
-                - restrictions
-                - appliesTo
               type: string
         - name: $expand
           in: query
@@ -10350,9 +8761,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - appliesTo
               type: string
       responses:
         2XX:
@@ -10417,14 +8825,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
-                - description
-                - displayName
-                - isEnabled
-                - restrictions
-                - appliesTo
               type: string
         - name: $expand
           in: query
@@ -10435,9 +8835,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - appliesTo
               type: string
       responses:
         2XX:
@@ -10547,11 +8944,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - deletedDateTime
-                - deletedDateTime desc
               type: string
         - name: $select
           in: query
@@ -10562,9 +8954,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
               type: string
         - name: $expand
           in: query
@@ -10575,8 +8964,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -10620,9 +9007,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
               type: string
         - name: $expand
           in: query
@@ -10633,8 +9017,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -10702,11 +9084,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - description
-                - displayName
-                - selfServiceSignUp
               type: string
         - name: $expand
           in: query
@@ -10717,8 +9094,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -10794,16 +9169,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - description
-                - displayName
-                - lastModifiedDateTime
-                - policyMigrationState
-                - policyVersion
-                - reconfirmationInDays
-                - registrationEnforcement
-                - authenticationMethodConfigurations
               type: string
         - name: $expand
           in: query
@@ -10814,9 +9179,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - authenticationMethodConfigurations
               type: string
       responses:
         2XX:
@@ -10894,13 +9256,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - excludeTargets
-                - excludeTargets desc
-                - state
-                - state desc
               type: string
         - name: $select
           in: query
@@ -10911,10 +9266,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - excludeTargets
-                - state
               type: string
         - name: $expand
           in: query
@@ -10925,8 +9276,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -10984,10 +9333,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - excludeTargets
-                - state
               type: string
         - name: $expand
           in: query
@@ -10998,8 +9343,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -11107,23 +9450,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - allowedCombinations
-                - allowedCombinations desc
-                - createdDateTime
-                - createdDateTime desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - modifiedDateTime
-                - modifiedDateTime desc
-                - policyType
-                - policyType desc
-                - requirementsSatisfied
-                - requirementsSatisfied desc
               type: string
         - name: $select
           in: query
@@ -11134,16 +9460,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedCombinations
-                - createdDateTime
-                - description
-                - displayName
-                - modifiedDateTime
-                - policyType
-                - requirementsSatisfied
-                - combinationConfigurations
               type: string
         - name: $expand
           in: query
@@ -11154,9 +9470,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - combinationConfigurations
               type: string
       responses:
         2XX:
@@ -11221,16 +9534,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedCombinations
-                - createdDateTime
-                - description
-                - displayName
-                - modifiedDateTime
-                - policyType
-                - requirementsSatisfied
-                - combinationConfigurations
               type: string
         - name: $expand
           in: query
@@ -11241,9 +9544,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - combinationConfigurations
               type: string
       responses:
         2XX:
@@ -11353,11 +9653,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - appliesToCombinations
-                - appliesToCombinations desc
               type: string
         - name: $select
           in: query
@@ -11368,9 +9663,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - appliesToCombinations
               type: string
         - name: $expand
           in: query
@@ -11381,8 +9673,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -11464,9 +9754,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - appliesToCombinations
               type: string
         - name: $expand
           in: query
@@ -11477,8 +9764,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -11695,19 +9980,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
-                - description
-                - displayName
-                - allowedToSignUpEmailBasedSubscriptions
-                - allowedToUseSSPR
-                - allowEmailVerifiedUsersToJoinOrganization
-                - allowInvitesFrom
-                - allowUserConsentForRiskyApps
-                - blockMsolPowerShell
-                - defaultUserRolePermissions
-                - guestUserRoleId
               type: string
         - name: $expand
           in: query
@@ -11718,8 +9990,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -11800,19 +10070,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - deletedDateTime
-                - deletedDateTime desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - definition
-                - definition desc
-                - isOrganizationDefault
-                - isOrganizationDefault desc
               type: string
         - name: $select
           in: query
@@ -11823,14 +10080,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
-                - description
-                - displayName
-                - definition
-                - isOrganizationDefault
-                - appliesTo
               type: string
         - name: $expand
           in: query
@@ -11841,9 +10090,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - appliesTo
               type: string
       responses:
         2XX:
@@ -11908,14 +10154,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
-                - description
-                - displayName
-                - definition
-                - isOrganizationDefault
-                - appliesTo
               type: string
         - name: $expand
           in: query
@@ -11926,9 +10164,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - appliesTo
               type: string
       responses:
         2XX:
@@ -12034,11 +10269,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - deletedDateTime
-                - deletedDateTime desc
               type: string
         - name: $select
           in: query
@@ -12049,9 +10279,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
               type: string
         - name: $expand
           in: query
@@ -12062,8 +10289,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -12106,9 +10331,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
               type: string
         - name: $expand
           in: query
@@ -12119,8 +10341,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -12190,27 +10410,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - conditions
-                - conditions desc
-                - createdDateTime
-                - createdDateTime desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - grantControls
-                - grantControls desc
-                - modifiedDateTime
-                - modifiedDateTime desc
-                - sessionControls
-                - sessionControls desc
-                - state
-                - state desc
-                - templateId
-                - templateId desc
               type: string
         - name: $select
           in: query
@@ -12221,17 +10420,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - conditions
-                - createdDateTime
-                - description
-                - displayName
-                - grantControls
-                - modifiedDateTime
-                - sessionControls
-                - state
-                - templateId
               type: string
         - name: $expand
           in: query
@@ -12242,8 +10430,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -12301,17 +10487,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - conditions
-                - createdDateTime
-                - description
-                - displayName
-                - grantControls
-                - modifiedDateTime
-                - sessionControls
-                - state
-                - templateId
               type: string
         - name: $expand
           in: query
@@ -12322,8 +10497,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -12426,14 +10599,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
-                - description
-                - displayName
-                - allowedCloudEndpoints
-                - default
-                - partners
               type: string
         - name: $expand
           in: query
@@ -12444,10 +10609,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - default
-                - partners
               type: string
       responses:
         2XX:
@@ -12523,15 +10684,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - automaticUserConsentSettings
-                - b2bCollaborationInbound
-                - b2bCollaborationOutbound
-                - b2bDirectConnectInbound
-                - b2bDirectConnectOutbound
-                - inboundTrust
-                - isServiceDefault
               type: string
         - name: $expand
           in: query
@@ -12542,8 +10694,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -12640,23 +10790,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - automaticUserConsentSettings
-                - automaticUserConsentSettings desc
-                - b2bCollaborationInbound
-                - b2bCollaborationInbound desc
-                - b2bCollaborationOutbound
-                - b2bCollaborationOutbound desc
-                - b2bDirectConnectInbound
-                - b2bDirectConnectInbound desc
-                - b2bDirectConnectOutbound
-                - b2bDirectConnectOutbound desc
-                - inboundTrust
-                - inboundTrust desc
-                - isServiceProvider
-                - isServiceProvider desc
-                - tenantId
-                - tenantId desc
               type: string
         - name: $select
           in: query
@@ -12667,16 +10800,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - automaticUserConsentSettings
-                - b2bCollaborationInbound
-                - b2bCollaborationOutbound
-                - b2bDirectConnectInbound
-                - b2bDirectConnectOutbound
-                - inboundTrust
-                - isServiceProvider
-                - tenantId
-                - identitySynchronization
               type: string
         - name: $expand
           in: query
@@ -12687,9 +10810,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - identitySynchronization
               type: string
       responses:
         2XX:
@@ -12754,16 +10874,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - automaticUserConsentSettings
-                - b2bCollaborationInbound
-                - b2bCollaborationOutbound
-                - b2bDirectConnectInbound
-                - b2bDirectConnectOutbound
-                - inboundTrust
-                - isServiceProvider
-                - tenantId
-                - identitySynchronization
               type: string
         - name: $expand
           in: query
@@ -12774,9 +10884,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - identitySynchronization
               type: string
       responses:
         2XX:
@@ -12881,10 +10988,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - displayName
-                - tenantId
-                - userSyncInbound
               type: string
         - name: $expand
           in: query
@@ -12895,8 +10998,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -13003,14 +11104,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
-                - description
-                - displayName
-                - applicationRestrictions
-                - isEnabled
-                - servicePrincipalRestrictions
               type: string
         - name: $expand
           in: query
@@ -13021,8 +11114,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -13078,6 +11169,33 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /policies/deviceRegistrationPolicy:
+    get:
+      tags:
+        - policies.deviceRegistrationPolicy
+      summary: Get deviceRegistrationPolicy from policies
+      operationId: policy_GetDeviceRegistrationPolicy
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceRegistrationPolicy'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   /policies/featureRolloutPolicies:
     get:
       tags:
@@ -13103,19 +11221,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - feature
-                - feature desc
-                - isAppliedToOrganization
-                - isAppliedToOrganization desc
-                - isEnabled
-                - isEnabled desc
               type: string
         - name: $select
           in: query
@@ -13126,14 +11231,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - description
-                - displayName
-                - feature
-                - isAppliedToOrganization
-                - isEnabled
-                - appliesTo
               type: string
         - name: $expand
           in: query
@@ -13144,9 +11241,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - appliesTo
               type: string
       responses:
         2XX:
@@ -13211,14 +11305,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - description
-                - displayName
-                - feature
-                - isAppliedToOrganization
-                - isEnabled
-                - appliesTo
               type: string
         - name: $expand
           in: query
@@ -13229,9 +11315,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - appliesTo
               type: string
       responses:
         2XX:
@@ -13338,11 +11421,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - deletedDateTime
-                - deletedDateTime desc
               type: string
         - name: $select
           in: query
@@ -13353,9 +11431,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
               type: string
         - name: $expand
           in: query
@@ -13366,8 +11441,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -13504,11 +11577,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - deletedDateTime
-                - deletedDateTime desc
               type: string
       responses:
         2XX:
@@ -13622,19 +11690,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - deletedDateTime
-                - deletedDateTime desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - definition
-                - definition desc
-                - isOrganizationDefault
-                - isOrganizationDefault desc
               type: string
         - name: $select
           in: query
@@ -13645,14 +11700,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
-                - description
-                - displayName
-                - definition
-                - isOrganizationDefault
-                - appliesTo
               type: string
         - name: $expand
           in: query
@@ -13663,9 +11710,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - appliesTo
               type: string
       responses:
         2XX:
@@ -13730,14 +11774,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
-                - description
-                - displayName
-                - definition
-                - isOrganizationDefault
-                - appliesTo
               type: string
         - name: $expand
           in: query
@@ -13748,9 +11784,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - appliesTo
               type: string
       responses:
         2XX:
@@ -13856,11 +11889,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - deletedDateTime
-                - deletedDateTime desc
               type: string
         - name: $select
           in: query
@@ -13871,9 +11899,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
               type: string
         - name: $expand
           in: query
@@ -13884,8 +11909,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -13928,9 +11951,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
               type: string
         - name: $expand
           in: query
@@ -13941,8 +11961,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -14010,12 +12028,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
-                - description
-                - displayName
-                - isEnabled
               type: string
         - name: $expand
           in: query
@@ -14026,8 +12038,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -14108,15 +12118,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - deletedDateTime
-                - deletedDateTime desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
               type: string
         - name: $select
           in: query
@@ -14127,13 +12128,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
-                - description
-                - displayName
-                - excludes
-                - includes
               type: string
         - name: $expand
           in: query
@@ -14144,10 +12138,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - excludes
-                - includes
               type: string
       responses:
         2XX:
@@ -14212,13 +12202,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
-                - description
-                - displayName
-                - excludes
-                - includes
               type: string
         - name: $expand
           in: query
@@ -14229,10 +12212,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - excludes
-                - includes
               type: string
       responses:
         2XX:
@@ -14342,25 +12321,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - clientApplicationIds
-                - clientApplicationIds desc
-                - clientApplicationPublisherIds
-                - clientApplicationPublisherIds desc
-                - clientApplicationsFromVerifiedPublisherOnly
-                - clientApplicationsFromVerifiedPublisherOnly desc
-                - clientApplicationTenantIds
-                - clientApplicationTenantIds desc
-                - permissionClassification
-                - permissionClassification desc
-                - permissions
-                - permissions desc
-                - permissionType
-                - permissionType desc
-                - resourceApplication
-                - resourceApplication desc
               type: string
         - name: $select
           in: query
@@ -14371,16 +12331,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - clientApplicationIds
-                - clientApplicationPublisherIds
-                - clientApplicationsFromVerifiedPublisherOnly
-                - clientApplicationTenantIds
-                - permissionClassification
-                - permissions
-                - permissionType
-                - resourceApplication
               type: string
         - name: $expand
           in: query
@@ -14391,8 +12341,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -14471,16 +12419,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - clientApplicationIds
-                - clientApplicationPublisherIds
-                - clientApplicationsFromVerifiedPublisherOnly
-                - clientApplicationTenantIds
-                - permissionClassification
-                - permissions
-                - permissionType
-                - resourceApplication
               type: string
         - name: $expand
           in: query
@@ -14491,8 +12429,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -14636,25 +12572,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - clientApplicationIds
-                - clientApplicationIds desc
-                - clientApplicationPublisherIds
-                - clientApplicationPublisherIds desc
-                - clientApplicationsFromVerifiedPublisherOnly
-                - clientApplicationsFromVerifiedPublisherOnly desc
-                - clientApplicationTenantIds
-                - clientApplicationTenantIds desc
-                - permissionClassification
-                - permissionClassification desc
-                - permissions
-                - permissions desc
-                - permissionType
-                - permissionType desc
-                - resourceApplication
-                - resourceApplication desc
               type: string
         - name: $select
           in: query
@@ -14665,16 +12582,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - clientApplicationIds
-                - clientApplicationPublisherIds
-                - clientApplicationsFromVerifiedPublisherOnly
-                - clientApplicationTenantIds
-                - permissionClassification
-                - permissions
-                - permissionType
-                - resourceApplication
               type: string
         - name: $expand
           in: query
@@ -14685,8 +12592,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -14765,16 +12670,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - clientApplicationIds
-                - clientApplicationPublisherIds
-                - clientApplicationsFromVerifiedPublisherOnly
-                - clientApplicationTenantIds
-                - permissionClassification
-                - permissions
-                - permissionType
-                - resourceApplication
               type: string
         - name: $expand
           in: query
@@ -14785,8 +12680,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -14936,23 +12829,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - isOrganizationDefault
-                - isOrganizationDefault desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - scopeId
-                - scopeId desc
-                - scopeType
-                - scopeType desc
               type: string
         - name: $select
           in: query
@@ -14963,17 +12839,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - description
-                - displayName
-                - isOrganizationDefault
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - scopeId
-                - scopeType
-                - effectiveRules
-                - rules
               type: string
         - name: $expand
           in: query
@@ -14984,10 +12849,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - effectiveRules
-                - rules
               type: string
       responses:
         2XX:
@@ -15048,17 +12909,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - description
-                - displayName
-                - isOrganizationDefault
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - scopeId
-                - scopeType
-                - effectiveRules
-                - rules
               type: string
         - name: $expand
           in: query
@@ -15069,10 +12919,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - effectiveRules
-                - rules
               type: string
       responses:
         2XX:
@@ -15171,11 +13017,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - target
-                - target desc
               type: string
         - name: $select
           in: query
@@ -15186,9 +13027,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - target
               type: string
         - name: $expand
           in: query
@@ -15199,8 +13037,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -15275,9 +13111,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - target
               type: string
         - name: $expand
           in: query
@@ -15288,8 +13121,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -15429,11 +13260,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - target
-                - target desc
               type: string
         - name: $select
           in: query
@@ -15444,9 +13270,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - target
               type: string
         - name: $expand
           in: query
@@ -15457,8 +13280,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -15536,9 +13357,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - target
               type: string
         - name: $expand
           in: query
@@ -15549,8 +13367,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -15700,17 +13516,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - policyId
-                - policyId desc
-                - roleDefinitionId
-                - roleDefinitionId desc
-                - scopeId
-                - scopeId desc
-                - scopeType
-                - scopeType desc
               type: string
         - name: $select
           in: query
@@ -15721,13 +13526,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - policyId
-                - roleDefinitionId
-                - scopeId
-                - scopeType
-                - policy
               type: string
         - name: $expand
           in: query
@@ -15738,9 +13536,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - policy
               type: string
       responses:
         2XX:
@@ -15801,13 +13596,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - policyId
-                - roleDefinitionId
-                - scopeId
-                - scopeType
-                - policy
               type: string
         - name: $expand
           in: query
@@ -15818,9 +13606,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - policy
               type: string
       responses:
         2XX:
@@ -15914,17 +13699,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - description
-                - displayName
-                - isOrganizationDefault
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - scopeId
-                - scopeType
-                - effectiveRules
-                - rules
               type: string
         - name: $expand
           in: query
@@ -15935,10 +13709,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - effectiveRules
-                - rules
               type: string
       responses:
         2XX:
@@ -15989,19 +13759,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - deletedDateTime
-                - deletedDateTime desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - definition
-                - definition desc
-                - isOrganizationDefault
-                - isOrganizationDefault desc
               type: string
         - name: $select
           in: query
@@ -16012,14 +13769,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
-                - description
-                - displayName
-                - definition
-                - isOrganizationDefault
-                - appliesTo
               type: string
         - name: $expand
           in: query
@@ -16030,9 +13779,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - appliesTo
               type: string
       responses:
         2XX:
@@ -16094,14 +13840,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
-                - description
-                - displayName
-                - definition
-                - isOrganizationDefault
-                - appliesTo
               type: string
         - name: $expand
           in: query
@@ -16112,9 +13850,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - appliesTo
               type: string
       responses:
         2XX:
@@ -16220,11 +13955,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - deletedDateTime
-                - deletedDateTime desc
               type: string
         - name: $select
           in: query
@@ -16235,9 +13965,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
               type: string
         - name: $expand
           in: query
@@ -16248,8 +13975,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -16292,9 +14017,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
               type: string
         - name: $expand
           in: query
@@ -16305,8 +14027,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -16379,19 +14099,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - deletedDateTime
-                - deletedDateTime desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - definition
-                - definition desc
-                - isOrganizationDefault
-                - isOrganizationDefault desc
               type: string
         - name: $select
           in: query
@@ -16402,14 +14109,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
-                - description
-                - displayName
-                - definition
-                - isOrganizationDefault
-                - appliesTo
               type: string
         - name: $expand
           in: query
@@ -16420,9 +14119,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - appliesTo
               type: string
       responses:
         2XX:
@@ -16487,14 +14183,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
-                - description
-                - displayName
-                - definition
-                - isOrganizationDefault
-                - appliesTo
               type: string
         - name: $expand
           in: query
@@ -16505,9 +14193,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - appliesTo
               type: string
       responses:
         2XX:
@@ -16613,11 +14298,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - deletedDateTime
-                - deletedDateTime desc
               type: string
         - name: $select
           in: query
@@ -16628,9 +14308,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
               type: string
         - name: $expand
           in: query
@@ -16641,8 +14318,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -16685,9 +14360,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
               type: string
         - name: $expand
           in: query
@@ -16698,8 +14370,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -16772,18 +14442,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - emailMethods
-                - fido2Methods
-                - methods
-                - microsoftAuthenticatorMethods
-                - operations
-                - passwordMethods
-                - phoneMethods
-                - softwareOathMethods
-                - temporaryAccessPassMethods
-                - windowsHelloForBusinessMethods
               type: string
         - name: $expand
           in: query
@@ -16794,18 +14452,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - emailMethods
-                - fido2Methods
-                - methods
-                - microsoftAuthenticatorMethods
-                - operations
-                - passwordMethods
-                - phoneMethods
-                - softwareOathMethods
-                - temporaryAccessPassMethods
-                - windowsHelloForBusinessMethods
               type: string
       responses:
         2XX:
@@ -16907,11 +14553,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - emailAddress
-                - emailAddress desc
               type: string
         - name: $select
           in: query
@@ -16922,9 +14563,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - emailAddress
               type: string
         - name: $expand
           in: query
@@ -16935,8 +14573,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -17018,9 +14654,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - emailAddress
               type: string
         - name: $expand
           in: query
@@ -17031,8 +14664,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -17180,21 +14811,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - aaGuid
-                - aaGuid desc
-                - attestationCertificates
-                - attestationCertificates desc
-                - attestationLevel
-                - attestationLevel desc
-                - createdDateTime
-                - createdDateTime desc
-                - displayName
-                - displayName desc
-                - model
-                - model desc
               type: string
         - name: $select
           in: query
@@ -17205,14 +14821,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - aaGuid
-                - attestationCertificates
-                - attestationLevel
-                - createdDateTime
-                - displayName
-                - model
               type: string
         - name: $expand
           in: query
@@ -17223,8 +14831,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -17271,14 +14877,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - aaGuid
-                - attestationCertificates
-                - attestationLevel
-                - createdDateTime
-                - displayName
-                - model
               type: string
         - name: $expand
           in: query
@@ -17289,8 +14887,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -17395,9 +14991,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
               type: string
         - name: $select
           in: query
@@ -17408,8 +15001,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
               type: string
         - name: $expand
           in: query
@@ -17420,8 +15011,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -17499,8 +15088,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
               type: string
         - name: $expand
           in: query
@@ -17511,8 +15098,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -17618,17 +15203,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - createdDateTime
-                - createdDateTime desc
-                - deviceTag
-                - deviceTag desc
-                - displayName
-                - displayName desc
-                - phoneAppVersion
-                - phoneAppVersion desc
               type: string
         - name: $select
           in: query
@@ -17639,13 +15213,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdDateTime
-                - deviceTag
-                - displayName
-                - phoneAppVersion
-                - device
               type: string
         - name: $expand
           in: query
@@ -17656,9 +15223,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - device
               type: string
       responses:
         2XX:
@@ -17705,13 +15269,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdDateTime
-                - deviceTag
-                - displayName
-                - phoneAppVersion
-                - device
               type: string
         - name: $expand
           in: query
@@ -17722,9 +15279,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - device
               type: string
       responses:
         2XX:
@@ -17807,38 +15361,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
-                - accountEnabled
-                - alternativeSecurityIds
-                - approximateLastSignInDateTime
-                - complianceExpirationDateTime
-                - deviceCategory
-                - deviceId
-                - deviceMetadata
-                - deviceOwnership
-                - deviceVersion
-                - displayName
-                - enrollmentProfileName
-                - isCompliant
-                - isManaged
-                - mdmAppId
-                - onPremisesLastSyncDateTime
-                - onPremisesSecurityIdentifier
-                - onPremisesSyncEnabled
-                - operatingSystem
-                - operatingSystemVersion
-                - physicalIds
-                - profileType
-                - registrationDateTime
-                - systemLabels
-                - trustType
-                - extensions
-                - memberOf
-                - registeredOwners
-                - registeredUsers
-                - transitiveMemberOf
               type: string
         - name: $expand
           in: query
@@ -17849,13 +15371,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - extensions
-                - memberOf
-                - registeredOwners
-                - registeredUsers
-                - transitiveMemberOf
               type: string
       responses:
         2XX:
@@ -17919,19 +15434,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - createdDateTime
-                - createdDateTime desc
-                - lastActionDateTime
-                - lastActionDateTime desc
-                - resourceLocation
-                - resourceLocation desc
-                - status
-                - status desc
-                - statusDetail
-                - statusDetail desc
               type: string
         - name: $select
           in: query
@@ -17942,13 +15444,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdDateTime
-                - lastActionDateTime
-                - resourceLocation
-                - status
-                - statusDetail
               type: string
         - name: $expand
           in: query
@@ -17959,8 +15454,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -18038,13 +15531,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdDateTime
-                - lastActionDateTime
-                - resourceLocation
-                - status
-                - statusDetail
               type: string
         - name: $expand
           in: query
@@ -18055,8 +15541,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -18196,13 +15680,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - createdDateTime
-                - createdDateTime desc
-                - password
-                - password desc
               type: string
         - name: $select
           in: query
@@ -18213,10 +15690,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdDateTime
-                - password
               type: string
         - name: $expand
           in: query
@@ -18227,8 +15700,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -18306,10 +15777,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdDateTime
-                - password
               type: string
         - name: $expand
           in: query
@@ -18320,8 +15787,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -18388,15 +15853,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - phoneNumber
-                - phoneNumber desc
-                - phoneType
-                - phoneType desc
-                - smsSignInState
-                - smsSignInState desc
               type: string
         - name: $select
           in: query
@@ -18407,11 +15863,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - phoneNumber
-                - phoneType
-                - smsSignInState
               type: string
         - name: $expand
           in: query
@@ -18422,8 +15873,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -18505,11 +15954,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - phoneNumber
-                - phoneType
-                - smsSignInState
               type: string
         - name: $expand
           in: query
@@ -18520,8 +15964,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -18669,11 +16111,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - secretKey
-                - secretKey desc
               type: string
         - name: $select
           in: query
@@ -18684,9 +16121,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - secretKey
               type: string
         - name: $expand
           in: query
@@ -18697,8 +16131,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -18745,9 +16177,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - secretKey
               type: string
         - name: $expand
           in: query
@@ -18758,8 +16187,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -18864,23 +16291,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - createdDateTime
-                - createdDateTime desc
-                - isUsable
-                - isUsable desc
-                - isUsableOnce
-                - isUsableOnce desc
-                - lifetimeInMinutes
-                - lifetimeInMinutes desc
-                - methodUsabilityReason
-                - methodUsabilityReason desc
-                - startDateTime
-                - startDateTime desc
-                - temporaryAccessPass
-                - temporaryAccessPass desc
               type: string
         - name: $select
           in: query
@@ -18891,15 +16301,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdDateTime
-                - isUsable
-                - isUsableOnce
-                - lifetimeInMinutes
-                - methodUsabilityReason
-                - startDateTime
-                - temporaryAccessPass
               type: string
         - name: $expand
           in: query
@@ -18910,8 +16311,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -18993,15 +16392,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdDateTime
-                - isUsable
-                - isUsableOnce
-                - lifetimeInMinutes
-                - methodUsabilityReason
-                - startDateTime
-                - temporaryAccessPass
               type: string
         - name: $expand
           in: query
@@ -19012,8 +16402,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -19118,15 +16506,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - createdDateTime
-                - createdDateTime desc
-                - displayName
-                - displayName desc
-                - keyStrength
-                - keyStrength desc
               type: string
         - name: $select
           in: query
@@ -19137,12 +16516,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdDateTime
-                - displayName
-                - keyStrength
-                - device
               type: string
         - name: $expand
           in: query
@@ -19153,9 +16526,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - device
               type: string
       responses:
         2XX:
@@ -19202,12 +16572,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdDateTime
-                - displayName
-                - keyStrength
-                - device
               type: string
         - name: $expand
           in: query
@@ -19218,9 +16582,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - device
               type: string
       responses:
         2XX:
@@ -19303,38 +16664,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
-                - accountEnabled
-                - alternativeSecurityIds
-                - approximateLastSignInDateTime
-                - complianceExpirationDateTime
-                - deviceCategory
-                - deviceId
-                - deviceMetadata
-                - deviceOwnership
-                - deviceVersion
-                - displayName
-                - enrollmentProfileName
-                - isCompliant
-                - isManaged
-                - mdmAppId
-                - onPremisesLastSyncDateTime
-                - onPremisesSecurityIdentifier
-                - onPremisesSyncEnabled
-                - operatingSystem
-                - operatingSystemVersion
-                - physicalIds
-                - profileType
-                - registrationDateTime
-                - systemLabels
-                - trustType
-                - extensions
-                - memberOf
-                - registeredOwners
-                - registeredUsers
-                - transitiveMemberOf
               type: string
         - name: $expand
           in: query
@@ -19345,13 +16674,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - extensions
-                - memberOf
-                - registeredOwners
-                - registeredUsers
-                - transitiveMemberOf
               type: string
       responses:
         2XX:
@@ -19630,40 +16952,6 @@ components:
           description: A list of identityUserFlowAttribute object identifiers that determine the order in which attributes should be collected within a user flow.
       additionalProperties:
         type: object
-    microsoft.graph.conditionalAccessRoot:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: conditionalAccessRoot
-          type: object
-          properties:
-            authenticationContextClassReferences:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.authenticationContextClassReference'
-              description: Read-only. Nullable. Returns a collection of the specified authentication context class references.
-              x-ms-navigationProperty: true
-            authenticationStrength:
-              $ref: '#/components/schemas/microsoft.graph.authenticationStrengthRoot'
-            namedLocations:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.namedLocation'
-              description: Read-only. Nullable. Returns a collection of the specified named locations.
-              x-ms-navigationProperty: true
-            policies:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.conditionalAccessPolicy'
-              description: Read-only. Nullable. Returns a collection of the specified Conditional Access (CA) policies.
-              x-ms-navigationProperty: true
-            templates:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.conditionalAccessTemplate'
-              description: Read-only. Nullable. Returns a collection of the specified Conditional Access templates.
-              x-ms-navigationProperty: true
-          additionalProperties:
-            type: object
     microsoft.graph.authenticationContextClassReference:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -20763,6 +18051,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.chat'
               x-ms-navigationProperty: true
+            cloudClipboard:
+              $ref: '#/components/schemas/microsoft.graph.cloudClipboardRoot'
             contactFolders:
               type: array
               items:
@@ -21062,6 +18352,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.crossTenantAccessPolicy'
             defaultAppManagementPolicy:
               $ref: '#/components/schemas/microsoft.graph.tenantAppManagementPolicy'
+            deviceRegistrationPolicy:
+              $ref: '#/components/schemas/microsoft.graph.deviceRegistrationPolicy'
             featureRolloutPolicies:
               type: array
               items:
@@ -21268,7 +18560,7 @@ components:
               description: Indicates whether users can sign up for email based subscriptions.
             allowedToUseSSPR:
               type: boolean
-              description: Indicates whether users can use the Self-Service Password Reset feature on the tenant.
+              description: 'Indicates whether administrators of the tenant can use the Self-Service Password Reset (SSPR). For more information, see Self-service password reset for administrators.'
             allowEmailVerifiedUsersToJoinOrganization:
               type: boolean
               description: Indicates whether a user can join the tenant by email validation.
@@ -21287,7 +18579,7 @@ components:
             guestUserRoleId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
               type: string
-              description: 'Represents role templateId for the role that should be granted to guest user. Currently following roles are supported:  User (a0b1b346-4d3e-4e8b-98f8-753987be4970), Guest User (10dae51f-b6af-4016-8d66-8c2a99b929b3), and Restricted Guest User (2af84b1e-32c8-42b7-82bc-daa82404023b).'
+              description: 'Represents role templateId for the role that should be granted to guests. Currently following roles are supported:  User (a0b1b346-4d3e-4e8b-98f8-753987be4970), Guest User (10dae51f-b6af-4016-8d66-8c2a99b929b3), and Restricted Guest User (2af84b1e-32c8-42b7-82bc-daa82404023b).'
               format: uuid
               nullable: true
           additionalProperties:
@@ -21399,6 +18691,33 @@ components:
               description: Denotes whether the policy is enabled. Default value is false.
             servicePrincipalRestrictions:
               $ref: '#/components/schemas/microsoft.graph.appManagementConfiguration'
+          additionalProperties:
+            type: object
+    microsoft.graph.deviceRegistrationPolicy:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: deviceRegistrationPolicy
+          type: object
+          properties:
+            azureADJoin:
+              $ref: '#/components/schemas/microsoft.graph.azureADJoinPolicy'
+            azureADRegistration:
+              $ref: '#/components/schemas/microsoft.graph.azureADRegistrationPolicy'
+            description:
+              type: string
+              nullable: true
+            displayName:
+              type: string
+              nullable: true
+            localAdminPassword:
+              $ref: '#/components/schemas/microsoft.graph.localAdminPasswordSettings'
+            multiFactorAuthConfiguration:
+              $ref: '#/components/schemas/microsoft.graph.multiFactorAuthConfiguration'
+            userDeviceQuota:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
           additionalProperties:
             type: object
     microsoft.graph.featureRolloutPolicy:
@@ -21812,6 +19131,9 @@ components:
               type: string
               description: 'Enrollment profile applied to the device. For example, Apple Device Enrollment Profile, Device enrollment - Corporate device identifiers, or Windows Autopilot profile name. This property is set by Intune.'
               nullable: true
+            enrollmentType:
+              type: string
+              nullable: true
             isCompliant:
               type: boolean
               description: 'true if the device complies with Mobile Device Management (MDM) policies; otherwise, false. Read-only. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).'
@@ -21820,9 +19142,23 @@ components:
               type: boolean
               description: 'true if the device is managed by a Mobile Device Management (MDM) app; otherwise, false. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).'
               nullable: true
+            isRooted:
+              type: boolean
+              nullable: true
+            managementType:
+              type: string
+              nullable: true
+            manufacturer:
+              type: string
+              description: Manufacturer of the device. Read-only.
+              nullable: true
             mdmAppId:
               type: string
               description: 'Application identifier used to register device into MDM. Read-only. Supports $filter (eq, ne, not, startsWith).'
+              nullable: true
+            model:
+              type: string
+              description: Model of the device. Read-only.
               nullable: true
             onPremisesLastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -22065,6 +19401,40 @@ components:
         - failed
         - unknownFutureValue
       type: string
+    microsoft.graph.conditionalAccessRoot:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: conditionalAccessRoot
+          type: object
+          properties:
+            authenticationContextClassReferences:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.authenticationContextClassReference'
+              description: Read-only. Nullable. Returns a collection of the specified authentication context class references.
+              x-ms-navigationProperty: true
+            authenticationStrength:
+              $ref: '#/components/schemas/microsoft.graph.authenticationStrengthRoot'
+            namedLocations:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.namedLocation'
+              description: Read-only. Nullable. Returns a collection of the specified named locations.
+              x-ms-navigationProperty: true
+            policies:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.conditionalAccessPolicy'
+              description: Read-only. Nullable. Returns a collection of the specified Conditional Access (CA) policies.
+              x-ms-navigationProperty: true
+            templates:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.conditionalAccessTemplate'
+              description: Read-only. Nullable. Returns a collection of the specified Conditional Access templates.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.apiAuthenticationConfigurationBase:
       title: apiAuthenticationConfigurationBase
       type: object
@@ -22552,7 +19922,7 @@ components:
       properties:
         issuer:
           type: string
-          description: 'Specifies the issuer of the identity, for example facebook.com. 512 character limit. For local accounts (where signInType isn''t federated), this property is the local default domain name for the tenant, for example contoso.com.<br>For guests from other Microsoft Entra organization, this is the domain of the federated organization, for examplecontoso.com`.  For more information about filtering behavior for this property, see Filtering on the identities property of a user.'
+          description: 'Specifies the issuer of the identity, for example facebook.com. 512 character limit. For local accounts (where signInType isn''t federated), this property is the local default domain name for the tenant, for example contoso.com.  For guests from other Microsoft Entra organizations, this is the domain of the federated organization, for example contoso.com. For more information about filtering behavior for this property, see Filtering on the identities property of a user.'
           nullable: true
         issuerAssignedId:
           type: string
@@ -22692,15 +20062,15 @@ components:
       properties:
         forceChangePasswordNextSignIn:
           type: boolean
-          description: true if the user must change her password on the next login; otherwise false.
+          description: true if the user must change their password on the next sign-in; otherwise false.
           nullable: true
         forceChangePasswordNextSignInWithMfa:
           type: boolean
-          description: 'If true, at next sign-in, the user must perform a multi-factor authentication (MFA) before being forced to change their password. The behavior is identical to forceChangePasswordNextSignIn except that the user is required to first perform a multi-factor authentication before password change. After a password change, this property will be automatically reset to false. If not set, default is false.'
+          description: 'If true, at next sign-in, the user must perform a multifactor authentication (MFA) before being forced to change their password. The behavior is identical to forceChangePasswordNextSignIn except that the user is required to first perform a multifactor authentication before password change. After a password change, this property will be automatically reset to false. If not set, default is false.'
           nullable: true
         password:
           type: string
-          description: 'The password for the user. This property is required when a user is created. It can be updated, but the user will be required to change the password on the next login. The password must satisfy minimum requirements as specified by the user''s passwordPolicies property. By default, a strong password is required.'
+          description: 'The password for the user. This property is required when a user is created. It can be updated, but the user will be required to change the password on the next sign-in. The password must satisfy minimum requirements as specified by the user''s passwordPolicies property. By default, a strong password is required.'
           nullable: true
       additionalProperties:
         type: object
@@ -23284,6 +20654,19 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.cloudClipboardRoot:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: cloudClipboardRoot
+          type: object
+          properties:
+            items:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudClipboardItem'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.contactFolder:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -23627,6 +21010,11 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.richLongRunningOperation'
               description: The collection of long-running operations on the site.
               x-ms-navigationProperty: true
+            pages:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.baseSitePage'
+              x-ms-navigationProperty: true
             permissions:
               type: array
               items:
@@ -23813,16 +21201,16 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.servicePlanInfo'
-              description: 'Information about the service plans assigned with the license. Read-only, Not nullable'
+              description: Information about the service plans assigned with the license. Read-only. Not nullable.
             skuId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
               type: string
-              description: Unique identifier (GUID) for the service SKU. Equal to the skuId property on the related SubscribedSku object. Read-only
+              description: Unique identifier (GUID) for the service SKU. Equal to the skuId property on the related subscribedSku object. Read-only.
               format: uuid
               nullable: true
             skuPartNumber:
               type: string
-              description: 'Unique SKU display name. Equal to the skuPartNumber on the related SubscribedSku object; for example: ''AAD_Premium''. Read-only'
+              description: 'Unique SKU display name. Equal to the skuPartNumber on the related subscribedSku object; for example, AAD_Premium. Read-only.'
               nullable: true
           additionalProperties:
             type: object
@@ -24431,7 +21819,7 @@ components:
             endDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The meeting end time in UTC.
+              description: The meeting end time in UTC. Required when you create an online meeting.
               format: date-time
               nullable: true
             externalId:
@@ -24445,7 +21833,7 @@ components:
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The meeting start time in UTC.
+              description: The meeting start time in UTC. Required when you create an online meeting.
               format: date-time
               nullable: true
             recordings:
@@ -24680,6 +22068,11 @@ components:
               description: 'When set to true, the delegate access to the user''s trending API is disabled. When set to true, documents in the user''s Office Delve are disabled. When set to true, the relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for Business is affected. Users can control this setting in Office Delve.'
             shiftPreferences:
               $ref: '#/components/schemas/microsoft.graph.shiftPreferences'
+            windows:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.windowsSetting'
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.userTeamwork:
@@ -25026,6 +22419,44 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.azureADJoinPolicy:
+      title: azureADJoinPolicy
+      type: object
+      properties:
+        allowedToJoin:
+          $ref: '#/components/schemas/microsoft.graph.deviceRegistrationMembership'
+        isAdminConfigurable:
+          type: boolean
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.azureADRegistrationPolicy:
+      title: azureADRegistrationPolicy
+      type: object
+      properties:
+        allowedToRegister:
+          $ref: '#/components/schemas/microsoft.graph.deviceRegistrationMembership'
+        isAdminConfigurable:
+          type: boolean
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.localAdminPasswordSettings:
+      title: localAdminPasswordSettings
+      type: object
+      properties:
+        isEnabled:
+          type: boolean
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.multiFactorAuthConfiguration:
+      title: multiFactorAuthConfiguration
+      enum:
+        - notRequired
+        - required
+        - unknownFutureValue
+      type: string
     microsoft.graph.stagedFeatureName:
       title: stagedFeatureName
       enum:
@@ -26809,6 +24240,31 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamsApp'
           additionalProperties:
             type: object
+    microsoft.graph.cloudClipboardItem:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: cloudClipboardItem
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            expirationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            payloads:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudClipboardItemPayload'
+          additionalProperties:
+            type: object
     microsoft.graph.physicalAddress:
       title: physicalAddress
       type: object
@@ -27408,6 +24864,21 @@ components:
             type:
               type: string
               description: The type of the operation.
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.baseSitePage:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.baseItem'
+        - title: baseSitePage
+          type: object
+          properties:
+            pageLayout:
+              $ref: '#/components/schemas/microsoft.graph.pageLayoutType'
+            publishingState:
+              $ref: '#/components/schemas/microsoft.graph.publicationFacet'
+            title:
+              type: string
               nullable: true
           additionalProperties:
             type: object
@@ -29834,6 +27305,27 @@ components:
               description: Availability of the user to be scheduled for work and its recurrence pattern.
           additionalProperties:
             type: object
+    microsoft.graph.windowsSetting:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: windowsSetting
+          type: object
+          properties:
+            payloadType:
+              type: string
+              nullable: true
+            settingType:
+              $ref: '#/components/schemas/microsoft.graph.windowsSettingType'
+            windowsDeviceId:
+              type: string
+              nullable: true
+            instances:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.windowsSettingInstance'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.associatedTeamInfo:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.teamInfo'
@@ -29998,6 +27490,11 @@ components:
           items:
             $ref: '#/components/schemas/microsoft.graph.crossTenantAccessPolicyTarget'
           description: 'Specifies whether to target users, groups, or applications with this rule.'
+      additionalProperties:
+        type: object
+    microsoft.graph.deviceRegistrationMembership:
+      title: deviceRegistrationMembership
+      type: object
       additionalProperties:
         type: object
     microsoft.graph.unifiedRoleManagementPolicyRuleTargetOperations:
@@ -30650,6 +28147,16 @@ components:
           type: string
           description: Url for showing tab contents outside of Teams.
           nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.cloudClipboardItemPayload:
+      title: cloudClipboardItemPayload
+      type: object
+      properties:
+        content:
+          type: string
+        formatName:
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.itemReference:
@@ -31817,6 +29324,14 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.pageLayoutType:
+      title: pageLayoutType
+      enum:
+        - microsoftReserved
+        - article
+        - home
+        - unknownFutureValue
+      type: string
     microsoft.graph.sharePointIdentitySet:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -33675,6 +31190,36 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.windowsSettingType:
+      title: windowsSettingType
+      enum:
+        - roaming
+        - backup
+        - unknownFutureValue
+      type: string
+    microsoft.graph.windowsSettingInstance:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: windowsSettingInstance
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            expirationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            payload:
+              type: string
+          additionalProperties:
+            type: object
     microsoft.graph.teamInfo:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'

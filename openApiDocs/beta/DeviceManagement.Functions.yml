@@ -1154,12 +1154,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - description
-                - displayName
-                - isBuiltIn
-                - assignments
               type: string
         - name: $orderby
           in: query
@@ -1170,15 +1164,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - isBuiltIn
-                - isBuiltIn desc
               type: string
         - name: $expand
           in: query
@@ -1189,9 +1174,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - assignments
               type: string
       responses:
         2XX:
@@ -1246,12 +1228,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - description
-                - displayName
-                - isBuiltIn
-                - assignments
               type: string
         - name: $orderby
           in: query
@@ -1262,15 +1238,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - isBuiltIn
-                - isBuiltIn desc
               type: string
         - name: $expand
           in: query
@@ -1281,9 +1248,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - assignments
               type: string
       responses:
         2XX:
@@ -1649,18 +1613,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - approvalJustification
-                - approver
-                - expirationDateTime
-                - lastModifiedDateTime
-                - operationApprovalPolicies
-                - requestDateTime
-                - requestJustification
-                - requestor
-                - requiredOperationApprovalPolicyTypes
-                - status
               type: string
         - name: $orderby
           in: query
@@ -1671,29 +1623,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - approvalJustification
-                - approvalJustification desc
-                - approver
-                - approver desc
-                - expirationDateTime
-                - expirationDateTime desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - operationApprovalPolicies
-                - operationApprovalPolicies desc
-                - requestDateTime
-                - requestDateTime desc
-                - requestJustification
-                - requestJustification desc
-                - requestor
-                - requestor desc
-                - requiredOperationApprovalPolicyTypes
-                - requiredOperationApprovalPolicyTypes desc
-                - status
-                - status desc
               type: string
         - name: $expand
           in: query
@@ -1704,8 +1633,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1992,28 +1919,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - averageBlueScreens
-                - averageRestarts
-                - blueScreenCount
-                - bootScore
-                - coreBootTimeInMs
-                - coreLoginTimeInMs
-                - deviceCount
-                - deviceName
-                - diskType
-                - groupPolicyBootTimeInMs
-                - groupPolicyLoginTimeInMs
-                - healthStatus
-                - loginScore
-                - manufacturer
-                - model
-                - modelStartupPerformanceScore
-                - operatingSystemVersion
-                - responsiveDesktopTimeInMs
-                - restartCount
-                - startupPerformanceScore
               type: string
         - name: $orderby
           in: query
@@ -2024,49 +1929,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - averageBlueScreens
-                - averageBlueScreens desc
-                - averageRestarts
-                - averageRestarts desc
-                - blueScreenCount
-                - blueScreenCount desc
-                - bootScore
-                - bootScore desc
-                - coreBootTimeInMs
-                - coreBootTimeInMs desc
-                - coreLoginTimeInMs
-                - coreLoginTimeInMs desc
-                - deviceCount
-                - deviceCount desc
-                - deviceName
-                - deviceName desc
-                - diskType
-                - diskType desc
-                - groupPolicyBootTimeInMs
-                - groupPolicyBootTimeInMs desc
-                - groupPolicyLoginTimeInMs
-                - groupPolicyLoginTimeInMs desc
-                - healthStatus
-                - healthStatus desc
-                - loginScore
-                - loginScore desc
-                - manufacturer
-                - manufacturer desc
-                - model
-                - model desc
-                - modelStartupPerformanceScore
-                - modelStartupPerformanceScore desc
-                - operatingSystemVersion
-                - operatingSystemVersion desc
-                - responsiveDesktopTimeInMs
-                - responsiveDesktopTimeInMs desc
-                - restartCount
-                - restartCount desc
-                - startupPerformanceScore
-                - startupPerformanceScore desc
               type: string
         - name: $expand
           in: query
@@ -2077,8 +1939,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2132,21 +1992,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - cloudPcFailurePercentage
-                - cloudPcRoundTripTime
-                - cloudPcSignInTime
-                - coreBootTime
-                - coreSignInTime
-                - deviceCount
-                - deviceId
-                - deviceName
-                - manufacturer
-                - model
-                - remoteSignInTime
-                - userPrincipalName
-                - virtualNetwork
               type: string
         - name: $orderby
           in: query
@@ -2157,35 +2002,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - cloudPcFailurePercentage
-                - cloudPcFailurePercentage desc
-                - cloudPcRoundTripTime
-                - cloudPcRoundTripTime desc
-                - cloudPcSignInTime
-                - cloudPcSignInTime desc
-                - coreBootTime
-                - coreBootTime desc
-                - coreSignInTime
-                - coreSignInTime desc
-                - deviceCount
-                - deviceCount desc
-                - deviceId
-                - deviceId desc
-                - deviceName
-                - deviceName desc
-                - manufacturer
-                - manufacturer desc
-                - model
-                - model desc
-                - remoteSignInTime
-                - remoteSignInTime desc
-                - userPrincipalName
-                - userPrincipalName desc
-                - virtualNetwork
-                - virtualNetwork desc
               type: string
         - name: $expand
           in: query
@@ -2196,8 +2012,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2251,28 +2065,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - averageSpikeTimeScore
-                - cpuClockSpeedInMHz
-                - cpuDisplayName
-                - cpuSpikeTimePercentage
-                - cpuSpikeTimePercentageThreshold
-                - cpuSpikeTimeScore
-                - deviceCount
-                - deviceId
-                - deviceName
-                - deviceResourcePerformanceScore
-                - diskType
-                - healthStatus
-                - machineType
-                - manufacturer
-                - model
-                - ramSpikeTimePercentage
-                - ramSpikeTimePercentageThreshold
-                - ramSpikeTimeScore
-                - totalProcessorCoreCount
-                - totalRamInMB
               type: string
         - name: $orderby
           in: query
@@ -2283,49 +2075,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - averageSpikeTimeScore
-                - averageSpikeTimeScore desc
-                - cpuClockSpeedInMHz
-                - cpuClockSpeedInMHz desc
-                - cpuDisplayName
-                - cpuDisplayName desc
-                - cpuSpikeTimePercentage
-                - cpuSpikeTimePercentage desc
-                - cpuSpikeTimePercentageThreshold
-                - cpuSpikeTimePercentageThreshold desc
-                - cpuSpikeTimeScore
-                - cpuSpikeTimeScore desc
-                - deviceCount
-                - deviceCount desc
-                - deviceId
-                - deviceId desc
-                - deviceName
-                - deviceName desc
-                - deviceResourcePerformanceScore
-                - deviceResourcePerformanceScore desc
-                - diskType
-                - diskType desc
-                - healthStatus
-                - healthStatus desc
-                - machineType
-                - machineType desc
-                - manufacturer
-                - manufacturer desc
-                - model
-                - model desc
-                - ramSpikeTimePercentage
-                - ramSpikeTimePercentage desc
-                - ramSpikeTimePercentageThreshold
-                - ramSpikeTimePercentageThreshold desc
-                - ramSpikeTimeScore
-                - ramSpikeTimeScore desc
-                - totalProcessorCoreCount
-                - totalProcessorCoreCount desc
-                - totalRamInMB
-                - totalRamInMB desc
               type: string
         - name: $expand
           in: query
@@ -2336,8 +2085,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2518,8 +2265,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-12-31T00:00:00.0000000+00:00'
-        date: '2023-09-05T00:00:00.0000000+00:00'
+        removalDate: '2023-12-31'
+        date: '2023-09-05'
         version: 2023-08/getShiftWorkCloudPcAccessState
         description: 'The getShiftWorkCloudPcAccessState API is deprecated and will stop returning data on Dec 31, 2023. Please use the new getFrontlineCloudPcAccessState API'
       x-ms-docs-operation-type: function
@@ -2603,36 +2350,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - aadDeviceId
-                - connectionSettings
-                - connectivityResult
-                - disasterRecoveryCapability
-                - diskEncryptionState
-                - displayName
-                - gracePeriodEndDateTime
-                - imageDisplayName
-                - lastLoginResult
-                - lastModifiedDateTime
-                - lastRemoteActionResult
-                - managedDeviceId
-                - managedDeviceName
-                - onPremisesConnectionName
-                - osVersion
-                - partnerAgentInstallResults
-                - powerState
-                - provisioningPolicyId
-                - provisioningPolicyName
-                - provisioningType
-                - scopeIds
-                - servicePlanId
-                - servicePlanName
-                - servicePlanType
-                - status
-                - statusDetails
-                - userAccountType
-                - userPrincipalName
               type: string
         - name: $orderby
           in: query
@@ -2643,65 +2360,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - aadDeviceId
-                - aadDeviceId desc
-                - connectionSettings
-                - connectionSettings desc
-                - connectivityResult
-                - connectivityResult desc
-                - disasterRecoveryCapability
-                - disasterRecoveryCapability desc
-                - diskEncryptionState
-                - diskEncryptionState desc
-                - displayName
-                - displayName desc
-                - gracePeriodEndDateTime
-                - gracePeriodEndDateTime desc
-                - imageDisplayName
-                - imageDisplayName desc
-                - lastLoginResult
-                - lastLoginResult desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - lastRemoteActionResult
-                - lastRemoteActionResult desc
-                - managedDeviceId
-                - managedDeviceId desc
-                - managedDeviceName
-                - managedDeviceName desc
-                - onPremisesConnectionName
-                - onPremisesConnectionName desc
-                - osVersion
-                - osVersion desc
-                - partnerAgentInstallResults
-                - partnerAgentInstallResults desc
-                - powerState
-                - powerState desc
-                - provisioningPolicyId
-                - provisioningPolicyId desc
-                - provisioningPolicyName
-                - provisioningPolicyName desc
-                - provisioningType
-                - provisioningType desc
-                - scopeIds
-                - scopeIds desc
-                - servicePlanId
-                - servicePlanId desc
-                - servicePlanName
-                - servicePlanName desc
-                - servicePlanType
-                - servicePlanType desc
-                - status
-                - status desc
-                - statusDetails
-                - statusDetails desc
-                - userAccountType
-                - userAccountType desc
-                - userPrincipalName
-                - userPrincipalName desc
               type: string
         - name: $expand
           in: query
@@ -2712,8 +2370,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -5884,26 +5540,26 @@ components:
               nullable: true
             categoryId:
               type: string
-              description: Specify category in which the setting is under. Support $filters.
+              description: Specifies the area group under which the setting is configured in a specified configuration service provider (CSP)
               nullable: true
             description:
               type: string
-              description: Description of the setting.
+              description: Description of the item
               nullable: true
             displayName:
               type: string
-              description: 'Name of the setting. For example: Allow Toast.'
+              description: Display name of the item
               nullable: true
             helpText:
               type: string
-              description: Help text of the setting. Give more details of the setting.
+              description: Help text of the item
               nullable: true
             infoUrls:
               type: array
               items:
                 type: string
                 nullable: true
-              description: List of links more info for the setting can be found at.
+              description: List of links more info for the setting can be found at
             keywords:
               type: array
               items:
@@ -5927,7 +5583,7 @@ components:
               description: List of referred setting information.
             rootDefinitionId:
               type: string
-              description: Root setting definition id if the setting is a child setting.
+              description: Root setting definition if the setting is a child setting.
               nullable: true
             settingUsage:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationSettingUsage'

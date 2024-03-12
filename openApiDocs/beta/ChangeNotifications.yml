@@ -27,23 +27,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - applicationId
-                - changeType
-                - clientState
-                - creatorId
-                - encryptionCertificate
-                - encryptionCertificateId
-                - expirationDateTime
-                - includeResourceData
-                - latestSupportedTlsVersion
-                - lifecycleNotificationUrl
-                - notificationContentType
-                - notificationQueryOptions
-                - notificationUrl
-                - notificationUrlAppId
-                - resource
               type: string
       responses:
         2XX:
@@ -108,23 +91,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - applicationId
-                - changeType
-                - clientState
-                - creatorId
-                - encryptionCertificate
-                - encryptionCertificateId
-                - expirationDateTime
-                - includeResourceData
-                - latestSupportedTlsVersion
-                - lifecycleNotificationUrl
-                - notificationContentType
-                - notificationQueryOptions
-                - notificationUrl
-                - notificationUrlAppId
-                - resource
               type: string
       responses:
         2XX:

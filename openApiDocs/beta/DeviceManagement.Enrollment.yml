@@ -28,51 +28,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - accountId
-                - accountId desc
-                - configureWifi
-                - configureWifi desc
-                - createdDateTime
-                - createdDateTime desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - enrolledDeviceCount
-                - enrolledDeviceCount desc
-                - enrollmentMode
-                - enrollmentMode desc
-                - enrollmentTokenType
-                - enrollmentTokenType desc
-                - enrollmentTokenUsageCount
-                - enrollmentTokenUsageCount desc
-                - isTeamsDeviceProfile
-                - isTeamsDeviceProfile desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - qrCodeContent
-                - qrCodeContent desc
-                - qrCodeImage
-                - qrCodeImage desc
-                - roleScopeTagIds
-                - roleScopeTagIds desc
-                - tokenCreationDateTime
-                - tokenCreationDateTime desc
-                - tokenExpirationDateTime
-                - tokenExpirationDateTime desc
-                - tokenValue
-                - tokenValue desc
-                - wifiHidden
-                - wifiHidden desc
-                - wifiPassword
-                - wifiPassword desc
-                - wifiSecurityType
-                - wifiSecurityType desc
-                - wifiSsid
-                - wifiSsid desc
               type: string
         - name: $select
           in: query
@@ -83,29 +38,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - accountId
-                - configureWifi
-                - createdDateTime
-                - description
-                - displayName
-                - enrolledDeviceCount
-                - enrollmentMode
-                - enrollmentTokenType
-                - enrollmentTokenUsageCount
-                - isTeamsDeviceProfile
-                - lastModifiedDateTime
-                - qrCodeContent
-                - qrCodeImage
-                - roleScopeTagIds
-                - tokenCreationDateTime
-                - tokenExpirationDateTime
-                - tokenValue
-                - wifiHidden
-                - wifiPassword
-                - wifiSecurityType
-                - wifiSsid
               type: string
         - name: $expand
           in: query
@@ -116,8 +48,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -175,29 +105,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - accountId
-                - configureWifi
-                - createdDateTime
-                - description
-                - displayName
-                - enrolledDeviceCount
-                - enrollmentMode
-                - enrollmentTokenType
-                - enrollmentTokenUsageCount
-                - isTeamsDeviceProfile
-                - lastModifiedDateTime
-                - qrCodeContent
-                - qrCodeImage
-                - roleScopeTagIds
-                - tokenCreationDateTime
-                - tokenExpirationDateTime
-                - tokenValue
-                - wifiHidden
-                - wifiPassword
-                - wifiSecurityType
-                - wifiSsid
               type: string
         - name: $expand
           in: query
@@ -208,8 +115,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -314,29 +219,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - accountId
-                - accountId desc
-                - createdDateTime
-                - createdDateTime desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - enrolledDeviceCount
-                - enrolledDeviceCount desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - qrCodeContent
-                - qrCodeContent desc
-                - qrCodeImage
-                - qrCodeImage desc
-                - tokenExpirationDateTime
-                - tokenExpirationDateTime desc
-                - tokenValue
-                - tokenValue desc
               type: string
         - name: $select
           in: query
@@ -347,18 +229,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - accountId
-                - createdDateTime
-                - description
-                - displayName
-                - enrolledDeviceCount
-                - lastModifiedDateTime
-                - qrCodeContent
-                - qrCodeImage
-                - tokenExpirationDateTime
-                - tokenValue
               type: string
         - name: $expand
           in: query
@@ -369,8 +239,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -428,18 +296,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - accountId
-                - createdDateTime
-                - description
-                - displayName
-                - enrolledDeviceCount
-                - lastModifiedDateTime
-                - qrCodeContent
-                - qrCodeImage
-                - tokenExpirationDateTime
-                - tokenValue
               type: string
         - name: $expand
           in: query
@@ -450,8 +306,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -556,25 +410,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - availableEnrollmentTypeOptions
-                - availableEnrollmentTypeOptions desc
-                - createdDateTime
-                - createdDateTime desc
-                - defaultEnrollmentType
-                - defaultEnrollmentType desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - platform
-                - platform desc
-                - priority
-                - priority desc
               type: string
         - name: $select
           in: query
@@ -585,17 +420,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - availableEnrollmentTypeOptions
-                - createdDateTime
-                - defaultEnrollmentType
-                - description
-                - displayName
-                - lastModifiedDateTime
-                - platform
-                - priority
-                - assignments
               type: string
         - name: $expand
           in: query
@@ -606,9 +430,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - assignments
               type: string
       responses:
         2XX:
@@ -666,17 +487,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - availableEnrollmentTypeOptions
-                - createdDateTime
-                - defaultEnrollmentType
-                - description
-                - displayName
-                - lastModifiedDateTime
-                - platform
-                - priority
-                - assignments
               type: string
         - name: $expand
           in: query
@@ -687,9 +497,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - assignments
               type: string
       responses:
         2XX:
@@ -788,11 +595,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - target
-                - target desc
               type: string
         - name: $select
           in: query
@@ -803,9 +605,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - target
               type: string
         - name: $expand
           in: query
@@ -816,8 +615,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -892,9 +689,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - target
               type: string
         - name: $expand
           in: query
@@ -905,8 +699,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1049,61 +841,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - accountSetupDuration
-                - accountSetupDuration desc
-                - accountSetupStatus
-                - accountSetupStatus desc
-                - deploymentDuration
-                - deploymentDuration desc
-                - deploymentEndDateTime
-                - deploymentEndDateTime desc
-                - deploymentStartDateTime
-                - deploymentStartDateTime desc
-                - deploymentState
-                - deploymentState desc
-                - deploymentTotalDuration
-                - deploymentTotalDuration desc
-                - deviceId
-                - deviceId desc
-                - devicePreparationDuration
-                - devicePreparationDuration desc
-                - deviceRegisteredDateTime
-                - deviceRegisteredDateTime desc
-                - deviceSerialNumber
-                - deviceSerialNumber desc
-                - deviceSetupDuration
-                - deviceSetupDuration desc
-                - deviceSetupStatus
-                - deviceSetupStatus desc
-                - enrollmentFailureDetails
-                - enrollmentFailureDetails desc
-                - enrollmentStartDateTime
-                - enrollmentStartDateTime desc
-                - enrollmentState
-                - enrollmentState desc
-                - enrollmentType
-                - enrollmentType desc
-                - eventDateTime
-                - eventDateTime desc
-                - managedDeviceName
-                - managedDeviceName desc
-                - osVersion
-                - osVersion desc
-                - targetedAppCount
-                - targetedAppCount desc
-                - targetedPolicyCount
-                - targetedPolicyCount desc
-                - userPrincipalName
-                - userPrincipalName desc
-                - windows10EnrollmentCompletionPageConfigurationDisplayName
-                - windows10EnrollmentCompletionPageConfigurationDisplayName desc
-                - windows10EnrollmentCompletionPageConfigurationId
-                - windows10EnrollmentCompletionPageConfigurationId desc
-                - windowsAutopilotDeploymentProfileDisplayName
-                - windowsAutopilotDeploymentProfileDisplayName desc
               type: string
         - name: $select
           in: query
@@ -1114,35 +851,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - accountSetupDuration
-                - accountSetupStatus
-                - deploymentDuration
-                - deploymentEndDateTime
-                - deploymentStartDateTime
-                - deploymentState
-                - deploymentTotalDuration
-                - deviceId
-                - devicePreparationDuration
-                - deviceRegisteredDateTime
-                - deviceSerialNumber
-                - deviceSetupDuration
-                - deviceSetupStatus
-                - enrollmentFailureDetails
-                - enrollmentStartDateTime
-                - enrollmentState
-                - enrollmentType
-                - eventDateTime
-                - managedDeviceName
-                - osVersion
-                - targetedAppCount
-                - targetedPolicyCount
-                - userPrincipalName
-                - windows10EnrollmentCompletionPageConfigurationDisplayName
-                - windows10EnrollmentCompletionPageConfigurationId
-                - windowsAutopilotDeploymentProfileDisplayName
-                - policyStatusDetails
               type: string
         - name: $expand
           in: query
@@ -1153,9 +861,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - policyStatusDetails
               type: string
       responses:
         2XX:
@@ -1213,35 +918,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - accountSetupDuration
-                - accountSetupStatus
-                - deploymentDuration
-                - deploymentEndDateTime
-                - deploymentStartDateTime
-                - deploymentState
-                - deploymentTotalDuration
-                - deviceId
-                - devicePreparationDuration
-                - deviceRegisteredDateTime
-                - deviceSerialNumber
-                - deviceSetupDuration
-                - deviceSetupStatus
-                - enrollmentFailureDetails
-                - enrollmentStartDateTime
-                - enrollmentState
-                - enrollmentType
-                - eventDateTime
-                - managedDeviceName
-                - osVersion
-                - targetedAppCount
-                - targetedPolicyCount
-                - userPrincipalName
-                - windows10EnrollmentCompletionPageConfigurationDisplayName
-                - windows10EnrollmentCompletionPageConfigurationId
-                - windowsAutopilotDeploymentProfileDisplayName
-                - policyStatusDetails
               type: string
         - name: $expand
           in: query
@@ -1252,9 +928,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - policyStatusDetails
               type: string
       responses:
         2XX:
@@ -1353,21 +1026,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - complianceStatus
-                - complianceStatus desc
-                - displayName
-                - displayName desc
-                - errorCode
-                - errorCode desc
-                - lastReportedDateTime
-                - lastReportedDateTime desc
-                - policyType
-                - policyType desc
-                - trackedOnEnrollmentStatus
-                - trackedOnEnrollmentStatus desc
               type: string
         - name: $select
           in: query
@@ -1378,14 +1036,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - complianceStatus
-                - displayName
-                - errorCode
-                - lastReportedDateTime
-                - policyType
-                - trackedOnEnrollmentStatus
               type: string
         - name: $expand
           in: query
@@ -1396,8 +1046,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1472,14 +1120,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - complianceStatus
-                - displayName
-                - errorCode
-                - lastReportedDateTime
-                - policyType
-                - trackedOnEnrollmentStatus
               type: string
         - name: $expand
           in: query
@@ -1490,8 +1130,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1629,12 +1267,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - enabled
-                - excludedGroups
-                - includedGroups
-                - overrideDefaultRule
               type: string
         - name: $expand
           in: query
@@ -1645,8 +1277,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1720,33 +1350,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - appleIdentifier
-                - appleIdentifier desc
-                - dataSharingConsentGranted
-                - dataSharingConsentGranted desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - lastSuccessfulSyncDateTime
-                - lastSuccessfulSyncDateTime desc
-                - lastSyncErrorCode
-                - lastSyncErrorCode desc
-                - lastSyncTriggeredDateTime
-                - lastSyncTriggeredDateTime desc
-                - roleScopeTagIds
-                - roleScopeTagIds desc
-                - shareTokenWithSchoolDataSyncService
-                - shareTokenWithSchoolDataSyncService desc
-                - syncedDeviceCount
-                - syncedDeviceCount desc
-                - tokenExpirationDateTime
-                - tokenExpirationDateTime desc
-                - tokenName
-                - tokenName desc
-                - tokenType
-                - tokenType desc
               type: string
         - name: $select
           in: query
@@ -1757,24 +1360,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - appleIdentifier
-                - dataSharingConsentGranted
-                - lastModifiedDateTime
-                - lastSuccessfulSyncDateTime
-                - lastSyncErrorCode
-                - lastSyncTriggeredDateTime
-                - roleScopeTagIds
-                - shareTokenWithSchoolDataSyncService
-                - syncedDeviceCount
-                - tokenExpirationDateTime
-                - tokenName
-                - tokenType
-                - defaultIosEnrollmentProfile
-                - defaultMacOsEnrollmentProfile
-                - enrollmentProfiles
-                - importedAppleDeviceIdentities
               type: string
         - name: $expand
           in: query
@@ -1785,12 +1370,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - defaultIosEnrollmentProfile
-                - defaultMacOsEnrollmentProfile
-                - enrollmentProfiles
-                - importedAppleDeviceIdentities
               type: string
       responses:
         2XX:
@@ -1848,24 +1427,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - appleIdentifier
-                - dataSharingConsentGranted
-                - lastModifiedDateTime
-                - lastSuccessfulSyncDateTime
-                - lastSyncErrorCode
-                - lastSyncTriggeredDateTime
-                - roleScopeTagIds
-                - shareTokenWithSchoolDataSyncService
-                - syncedDeviceCount
-                - tokenExpirationDateTime
-                - tokenName
-                - tokenType
-                - defaultIosEnrollmentProfile
-                - defaultMacOsEnrollmentProfile
-                - enrollmentProfiles
-                - importedAppleDeviceIdentities
               type: string
         - name: $expand
           in: query
@@ -1876,12 +1437,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - defaultIosEnrollmentProfile
-                - defaultMacOsEnrollmentProfile
-                - enrollmentProfiles
-                - importedAppleDeviceIdentities
               type: string
       responses:
         2XX:
@@ -1975,65 +1530,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - configurationEndpointUrl
-                - description
-                - displayName
-                - enableAuthenticationViaCompanyPortal
-                - requireCompanyPortalOnSetupAssistantEnrolledDevices
-                - requiresUserAuthentication
-                - appleIdDisabled
-                - applePayDisabled
-                - configurationWebUrl
-                - deviceNameTemplate
-                - diagnosticsDisabled
-                - displayToneSetupDisabled
-                - enabledSkipKeys
-                - enrollmentTimeAzureAdGroupIds
-                - isDefault
-                - isMandatory
-                - locationDisabled
-                - privacyPaneDisabled
-                - profileRemovalDisabled
-                - restoreBlocked
-                - screenTimeScreenDisabled
-                - siriDisabled
-                - supervisedModeEnabled
-                - supportDepartment
-                - supportPhoneNumber
-                - termsAndConditionsDisabled
-                - touchIdDisabled
-                - waitForDeviceConfiguredConfirmation
-                - appearanceScreenDisabled
-                - awaitDeviceConfiguredConfirmation
-                - carrierActivationUrl
-                - companyPortalVppTokenId
-                - deviceToDeviceMigrationDisabled
-                - enableSharedIPad
-                - enableSingleAppEnrollmentMode
-                - expressLanguageScreenDisabled
-                - forceTemporarySession
-                - homeButtonScreenDisabled
-                - iMessageAndFaceTimeScreenDisabled
-                - iTunesPairingMode
-                - managementCertificates
-                - onBoardingScreenDisabled
-                - passCodeDisabled
-                - passcodeLockGracePeriodInSeconds
-                - preferredLanguageScreenDisabled
-                - restoreCompletedScreenDisabled
-                - restoreFromAndroidDisabled
-                - sharedIPadMaximumUserCount
-                - simSetupScreenDisabled
-                - softwareUpdateScreenDisabled
-                - temporarySessionTimeoutInSeconds
-                - updateCompleteScreenDisabled
-                - userlessSharedAadModeEnabled
-                - userSessionTimeoutInSeconds
-                - watchMigrationScreenDisabled
-                - welcomeScreenDisabled
-                - zoomDisabled
               type: string
         - name: $expand
           in: query
@@ -2044,8 +1540,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2082,57 +1576,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - configurationEndpointUrl
-                - description
-                - displayName
-                - enableAuthenticationViaCompanyPortal
-                - requireCompanyPortalOnSetupAssistantEnrolledDevices
-                - requiresUserAuthentication
-                - appleIdDisabled
-                - applePayDisabled
-                - configurationWebUrl
-                - deviceNameTemplate
-                - diagnosticsDisabled
-                - displayToneSetupDisabled
-                - enabledSkipKeys
-                - enrollmentTimeAzureAdGroupIds
-                - isDefault
-                - isMandatory
-                - locationDisabled
-                - privacyPaneDisabled
-                - profileRemovalDisabled
-                - restoreBlocked
-                - screenTimeScreenDisabled
-                - siriDisabled
-                - supervisedModeEnabled
-                - supportDepartment
-                - supportPhoneNumber
-                - termsAndConditionsDisabled
-                - touchIdDisabled
-                - waitForDeviceConfiguredConfirmation
-                - accessibilityScreenDisabled
-                - adminAccountFullName
-                - adminAccountPassword
-                - adminAccountUserName
-                - autoAdvanceSetupEnabled
-                - autoUnlockWithWatchDisabled
-                - chooseYourLockScreenDisabled
-                - dontAutoPopulatePrimaryAccountInfo
-                - enableRestrictEditing
-                - fileVaultDisabled
-                - hideAdminAccount
-                - iCloudDiagnosticsDisabled
-                - iCloudStorageDisabled
-                - passCodeDisabled
-                - primaryAccountFullName
-                - primaryAccountUserName
-                - registrationDisabled
-                - requestRequiresNetworkTether
-                - setPrimarySetupAccountAsRegularUser
-                - skipPrimarySetupAccountCreation
-                - zoomDisabled
               type: string
         - name: $expand
           in: query
@@ -2143,8 +1586,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2186,21 +1627,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - configurationEndpointUrl
-                - configurationEndpointUrl desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - enableAuthenticationViaCompanyPortal
-                - enableAuthenticationViaCompanyPortal desc
-                - requireCompanyPortalOnSetupAssistantEnrolledDevices
-                - requireCompanyPortalOnSetupAssistantEnrolledDevices desc
-                - requiresUserAuthentication
-                - requiresUserAuthentication desc
               type: string
         - name: $select
           in: query
@@ -2211,14 +1637,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - configurationEndpointUrl
-                - description
-                - displayName
-                - enableAuthenticationViaCompanyPortal
-                - requireCompanyPortalOnSetupAssistantEnrolledDevices
-                - requiresUserAuthentication
               type: string
         - name: $expand
           in: query
@@ -2229,8 +1647,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2305,14 +1721,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - configurationEndpointUrl
-                - description
-                - displayName
-                - enableAuthenticationViaCompanyPortal
-                - requireCompanyPortalOnSetupAssistantEnrolledDevices
-                - requiresUserAuthentication
               type: string
         - name: $expand
           in: query
@@ -2323,8 +1731,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2461,31 +1867,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - createdDateTime
-                - createdDateTime desc
-                - description
-                - description desc
-                - discoverySource
-                - discoverySource desc
-                - enrollmentState
-                - enrollmentState desc
-                - isDeleted
-                - isDeleted desc
-                - isSupervised
-                - isSupervised desc
-                - lastContactedDateTime
-                - lastContactedDateTime desc
-                - platform
-                - platform desc
-                - requestedEnrollmentProfileAssignmentDateTime
-                - requestedEnrollmentProfileAssignmentDateTime desc
-                - requestedEnrollmentProfileId
-                - requestedEnrollmentProfileId desc
-                - serialNumber
-                - serialNumber desc
               type: string
         - name: $select
           in: query
@@ -2496,19 +1877,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdDateTime
-                - description
-                - discoverySource
-                - enrollmentState
-                - isDeleted
-                - isSupervised
-                - lastContactedDateTime
-                - platform
-                - requestedEnrollmentProfileAssignmentDateTime
-                - requestedEnrollmentProfileId
-                - serialNumber
               type: string
         - name: $expand
           in: query
@@ -2519,8 +1887,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2595,19 +1961,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdDateTime
-                - description
-                - discoverySource
-                - enrollmentState
-                - isDeleted
-                - isSupervised
-                - lastContactedDateTime
-                - platform
-                - requestedEnrollmentProfileAssignmentDateTime
-                - requestedEnrollmentProfileId
-                - serialNumber
               type: string
         - name: $expand
           in: query
@@ -2618,8 +1971,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2762,25 +2113,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - createdDateTime
-                - createdDateTime desc
-                - description
-                - description desc
-                - deviceEnrollmentConfigurationType
-                - deviceEnrollmentConfigurationType desc
-                - displayName
-                - displayName desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - priority
-                - priority desc
-                - roleScopeTagIds
-                - roleScopeTagIds desc
-                - version
-                - version desc
               type: string
         - name: $select
           in: query
@@ -2791,17 +2123,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdDateTime
-                - description
-                - deviceEnrollmentConfigurationType
-                - displayName
-                - lastModifiedDateTime
-                - priority
-                - roleScopeTagIds
-                - version
-                - assignments
               type: string
         - name: $expand
           in: query
@@ -2812,9 +2133,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - assignments
               type: string
       responses:
         2XX:
@@ -2872,17 +2190,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdDateTime
-                - description
-                - deviceEnrollmentConfigurationType
-                - displayName
-                - lastModifiedDateTime
-                - priority
-                - roleScopeTagIds
-                - version
-                - assignments
               type: string
         - name: $expand
           in: query
@@ -2893,9 +2200,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - assignments
               type: string
       responses:
         2XX:
@@ -2994,15 +2298,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - source
-                - source desc
-                - sourceId
-                - sourceId desc
-                - target
-                - target desc
               type: string
         - name: $select
           in: query
@@ -3013,11 +2308,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - source
-                - sourceId
-                - target
               type: string
         - name: $expand
           in: query
@@ -3028,8 +2318,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3104,11 +2392,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - source
-                - sourceId
-                - target
               type: string
         - name: $expand
           in: query
@@ -3119,8 +2402,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3263,25 +2544,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - createdDateTime
-                - createdDateTime desc
-                - description
-                - description desc
-                - enrollmentState
-                - enrollmentState desc
-                - importedDeviceIdentifier
-                - importedDeviceIdentifier desc
-                - importedDeviceIdentityType
-                - importedDeviceIdentityType desc
-                - lastContactedDateTime
-                - lastContactedDateTime desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - platform
-                - platform desc
               type: string
         - name: $select
           in: query
@@ -3292,16 +2554,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdDateTime
-                - description
-                - enrollmentState
-                - importedDeviceIdentifier
-                - importedDeviceIdentityType
-                - lastContactedDateTime
-                - lastModifiedDateTime
-                - platform
               type: string
         - name: $expand
           in: query
@@ -3312,8 +2564,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3371,16 +2621,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdDateTime
-                - description
-                - enrollmentState
-                - importedDeviceIdentifier
-                - importedDeviceIdentityType
-                - lastContactedDateTime
-                - lastModifiedDateTime
-                - platform
               type: string
         - name: $expand
           in: query
@@ -3391,8 +2631,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3497,23 +2735,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - assignedUserPrincipalName
-                - assignedUserPrincipalName desc
-                - groupTag
-                - groupTag desc
-                - hardwareIdentifier
-                - hardwareIdentifier desc
-                - importId
-                - importId desc
-                - productKey
-                - productKey desc
-                - serialNumber
-                - serialNumber desc
-                - state
-                - state desc
               type: string
         - name: $select
           in: query
@@ -3524,15 +2745,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - assignedUserPrincipalName
-                - groupTag
-                - hardwareIdentifier
-                - importId
-                - productKey
-                - serialNumber
-                - state
               type: string
         - name: $expand
           in: query
@@ -3543,8 +2755,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3602,15 +2812,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - assignedUserPrincipalName
-                - groupTag
-                - hardwareIdentifier
-                - importId
-                - productKey
-                - serialNumber
-                - state
               type: string
         - name: $expand
           in: query
@@ -3621,8 +2822,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3727,27 +2926,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - autoPilotProfileAssigned
-                - autoPilotProfileAssigned desc
-                - autoPilotRegistered
-                - autoPilotRegistered desc
-                - azureAdJoinType
-                - azureAdJoinType desc
-                - azureAdRegistered
-                - azureAdRegistered desc
-                - deviceName
-                - deviceName desc
-                - managedBy
-                - managedBy desc
-                - manufacturer
-                - manufacturer desc
-                - model
-                - model desc
-                - serialNumber
-                - serialNumber desc
               type: string
         - name: $select
           in: query
@@ -3758,17 +2936,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - autoPilotProfileAssigned
-                - autoPilotRegistered
-                - azureAdJoinType
-                - azureAdRegistered
-                - deviceName
-                - managedBy
-                - manufacturer
-                - model
-                - serialNumber
               type: string
         - name: $expand
           in: query
@@ -3779,8 +2946,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3838,17 +3003,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - autoPilotProfileAssigned
-                - autoPilotRegistered
-                - azureAdJoinType
-                - azureAdRegistered
-                - deviceName
-                - managedBy
-                - manufacturer
-                - model
-                - serialNumber
               type: string
         - name: $expand
           in: query
@@ -3859,8 +3013,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3965,35 +3117,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - createdDateTime
-                - createdDateTime desc
-                - description
-                - description desc
-                - deviceNameTemplate
-                - deviceNameTemplate desc
-                - deviceType
-                - deviceType desc
-                - displayName
-                - displayName desc
-                - enableWhiteGlove
-                - enableWhiteGlove desc
-                - enrollmentStatusScreenSettings
-                - enrollmentStatusScreenSettings desc
-                - extractHardwareHash
-                - extractHardwareHash desc
-                - language
-                - language desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - managementServiceAppId
-                - managementServiceAppId desc
-                - outOfBoxExperienceSettings
-                - outOfBoxExperienceSettings desc
-                - roleScopeTagIds
-                - roleScopeTagIds desc
               type: string
         - name: $select
           in: query
@@ -4004,23 +3127,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdDateTime
-                - description
-                - deviceNameTemplate
-                - deviceType
-                - displayName
-                - enableWhiteGlove
-                - enrollmentStatusScreenSettings
-                - extractHardwareHash
-                - language
-                - lastModifiedDateTime
-                - managementServiceAppId
-                - outOfBoxExperienceSettings
-                - roleScopeTagIds
-                - assignedDevices
-                - assignments
               type: string
         - name: $expand
           in: query
@@ -4031,10 +3137,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - assignedDevices
-                - assignments
               type: string
       responses:
         2XX:
@@ -4092,23 +3194,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdDateTime
-                - description
-                - deviceNameTemplate
-                - deviceType
-                - displayName
-                - enableWhiteGlove
-                - enrollmentStatusScreenSettings
-                - extractHardwareHash
-                - language
-                - lastModifiedDateTime
-                - managementServiceAppId
-                - outOfBoxExperienceSettings
-                - roleScopeTagIds
-                - assignedDevices
-                - assignments
               type: string
         - name: $expand
           in: query
@@ -4119,10 +3204,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - assignedDevices
-                - assignments
               type: string
       responses:
         2XX:
@@ -4221,61 +3302,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - addressableUserName
-                - addressableUserName desc
-                - azureActiveDirectoryDeviceId
-                - azureActiveDirectoryDeviceId desc
-                - azureAdDeviceId
-                - azureAdDeviceId desc
-                - deploymentProfileAssignedDateTime
-                - deploymentProfileAssignedDateTime desc
-                - deploymentProfileAssignmentDetailedStatus
-                - deploymentProfileAssignmentDetailedStatus desc
-                - deploymentProfileAssignmentStatus
-                - deploymentProfileAssignmentStatus desc
-                - deviceAccountPassword
-                - deviceAccountPassword desc
-                - deviceAccountUpn
-                - deviceAccountUpn desc
-                - deviceFriendlyName
-                - deviceFriendlyName desc
-                - displayName
-                - displayName desc
-                - enrollmentState
-                - enrollmentState desc
-                - groupTag
-                - groupTag desc
-                - lastContactedDateTime
-                - lastContactedDateTime desc
-                - managedDeviceId
-                - managedDeviceId desc
-                - manufacturer
-                - manufacturer desc
-                - model
-                - model desc
-                - productKey
-                - productKey desc
-                - purchaseOrderIdentifier
-                - purchaseOrderIdentifier desc
-                - remediationState
-                - remediationState desc
-                - remediationStateLastModifiedDateTime
-                - remediationStateLastModifiedDateTime desc
-                - resourceName
-                - resourceName desc
-                - serialNumber
-                - serialNumber desc
-                - skuNumber
-                - skuNumber desc
-                - systemFamily
-                - systemFamily desc
-                - userlessEnrollmentStatus
-                - userlessEnrollmentStatus desc
-                - userPrincipalName
-                - userPrincipalName desc
               type: string
         - name: $select
           in: query
@@ -4286,36 +3312,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - addressableUserName
-                - azureActiveDirectoryDeviceId
-                - azureAdDeviceId
-                - deploymentProfileAssignedDateTime
-                - deploymentProfileAssignmentDetailedStatus
-                - deploymentProfileAssignmentStatus
-                - deviceAccountPassword
-                - deviceAccountUpn
-                - deviceFriendlyName
-                - displayName
-                - enrollmentState
-                - groupTag
-                - lastContactedDateTime
-                - managedDeviceId
-                - manufacturer
-                - model
-                - productKey
-                - purchaseOrderIdentifier
-                - remediationState
-                - remediationStateLastModifiedDateTime
-                - resourceName
-                - serialNumber
-                - skuNumber
-                - systemFamily
-                - userlessEnrollmentStatus
-                - userPrincipalName
-                - deploymentProfile
-                - intendedDeploymentProfile
               type: string
         - name: $expand
           in: query
@@ -4326,10 +3322,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - deploymentProfile
-                - intendedDeploymentProfile
               type: string
       responses:
         2XX:
@@ -4404,36 +3396,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - addressableUserName
-                - azureActiveDirectoryDeviceId
-                - azureAdDeviceId
-                - deploymentProfileAssignedDateTime
-                - deploymentProfileAssignmentDetailedStatus
-                - deploymentProfileAssignmentStatus
-                - deviceAccountPassword
-                - deviceAccountUpn
-                - deviceFriendlyName
-                - displayName
-                - enrollmentState
-                - groupTag
-                - lastContactedDateTime
-                - managedDeviceId
-                - manufacturer
-                - model
-                - productKey
-                - purchaseOrderIdentifier
-                - remediationState
-                - remediationStateLastModifiedDateTime
-                - resourceName
-                - serialNumber
-                - skuNumber
-                - systemFamily
-                - userlessEnrollmentStatus
-                - userPrincipalName
-                - deploymentProfile
-                - intendedDeploymentProfile
               type: string
         - name: $expand
           in: query
@@ -4444,10 +3406,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - deploymentProfile
-                - intendedDeploymentProfile
               type: string
       responses:
         2XX:
@@ -4565,23 +3523,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdDateTime
-                - description
-                - deviceNameTemplate
-                - deviceType
-                - displayName
-                - enableWhiteGlove
-                - enrollmentStatusScreenSettings
-                - extractHardwareHash
-                - language
-                - lastModifiedDateTime
-                - managementServiceAppId
-                - outOfBoxExperienceSettings
-                - roleScopeTagIds
-                - assignedDevices
-                - assignments
               type: string
         - name: $expand
           in: query
@@ -4592,10 +3533,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - assignedDevices
-                - assignments
               type: string
       responses:
         2XX:
@@ -4640,23 +3577,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdDateTime
-                - description
-                - deviceNameTemplate
-                - deviceType
-                - displayName
-                - enableWhiteGlove
-                - enrollmentStatusScreenSettings
-                - extractHardwareHash
-                - language
-                - lastModifiedDateTime
-                - managementServiceAppId
-                - outOfBoxExperienceSettings
-                - roleScopeTagIds
-                - assignedDevices
-                - assignments
               type: string
         - name: $expand
           in: query
@@ -4667,10 +3587,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - assignedDevices
-                - assignments
               type: string
       responses:
         2XX:
@@ -4734,15 +3650,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - source
-                - source desc
-                - sourceId
-                - sourceId desc
-                - target
-                - target desc
               type: string
         - name: $select
           in: query
@@ -4753,11 +3660,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - source
-                - sourceId
-                - target
               type: string
         - name: $expand
           in: query
@@ -4768,8 +3670,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -4844,11 +3744,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - source
-                - sourceId
-                - target
               type: string
         - name: $expand
           in: query
@@ -4859,8 +3754,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -5003,61 +3896,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - addressableUserName
-                - addressableUserName desc
-                - azureActiveDirectoryDeviceId
-                - azureActiveDirectoryDeviceId desc
-                - azureAdDeviceId
-                - azureAdDeviceId desc
-                - deploymentProfileAssignedDateTime
-                - deploymentProfileAssignedDateTime desc
-                - deploymentProfileAssignmentDetailedStatus
-                - deploymentProfileAssignmentDetailedStatus desc
-                - deploymentProfileAssignmentStatus
-                - deploymentProfileAssignmentStatus desc
-                - deviceAccountPassword
-                - deviceAccountPassword desc
-                - deviceAccountUpn
-                - deviceAccountUpn desc
-                - deviceFriendlyName
-                - deviceFriendlyName desc
-                - displayName
-                - displayName desc
-                - enrollmentState
-                - enrollmentState desc
-                - groupTag
-                - groupTag desc
-                - lastContactedDateTime
-                - lastContactedDateTime desc
-                - managedDeviceId
-                - managedDeviceId desc
-                - manufacturer
-                - manufacturer desc
-                - model
-                - model desc
-                - productKey
-                - productKey desc
-                - purchaseOrderIdentifier
-                - purchaseOrderIdentifier desc
-                - remediationState
-                - remediationState desc
-                - remediationStateLastModifiedDateTime
-                - remediationStateLastModifiedDateTime desc
-                - resourceName
-                - resourceName desc
-                - serialNumber
-                - serialNumber desc
-                - skuNumber
-                - skuNumber desc
-                - systemFamily
-                - systemFamily desc
-                - userlessEnrollmentStatus
-                - userlessEnrollmentStatus desc
-                - userPrincipalName
-                - userPrincipalName desc
               type: string
         - name: $select
           in: query
@@ -5068,36 +3906,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - addressableUserName
-                - azureActiveDirectoryDeviceId
-                - azureAdDeviceId
-                - deploymentProfileAssignedDateTime
-                - deploymentProfileAssignmentDetailedStatus
-                - deploymentProfileAssignmentStatus
-                - deviceAccountPassword
-                - deviceAccountUpn
-                - deviceFriendlyName
-                - displayName
-                - enrollmentState
-                - groupTag
-                - lastContactedDateTime
-                - managedDeviceId
-                - manufacturer
-                - model
-                - productKey
-                - purchaseOrderIdentifier
-                - remediationState
-                - remediationStateLastModifiedDateTime
-                - resourceName
-                - serialNumber
-                - skuNumber
-                - systemFamily
-                - userlessEnrollmentStatus
-                - userPrincipalName
-                - deploymentProfile
-                - intendedDeploymentProfile
               type: string
         - name: $expand
           in: query
@@ -5108,10 +3916,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - deploymentProfile
-                - intendedDeploymentProfile
               type: string
       responses:
         2XX:
@@ -5169,36 +3973,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - addressableUserName
-                - azureActiveDirectoryDeviceId
-                - azureAdDeviceId
-                - deploymentProfileAssignedDateTime
-                - deploymentProfileAssignmentDetailedStatus
-                - deploymentProfileAssignmentStatus
-                - deviceAccountPassword
-                - deviceAccountUpn
-                - deviceFriendlyName
-                - displayName
-                - enrollmentState
-                - groupTag
-                - lastContactedDateTime
-                - managedDeviceId
-                - manufacturer
-                - model
-                - productKey
-                - purchaseOrderIdentifier
-                - remediationState
-                - remediationStateLastModifiedDateTime
-                - resourceName
-                - serialNumber
-                - skuNumber
-                - systemFamily
-                - userlessEnrollmentStatus
-                - userPrincipalName
-                - deploymentProfile
-                - intendedDeploymentProfile
               type: string
         - name: $expand
           in: query
@@ -5209,10 +3983,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - deploymentProfile
-                - intendedDeploymentProfile
               type: string
       responses:
         2XX:
@@ -5306,23 +4076,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdDateTime
-                - description
-                - deviceNameTemplate
-                - deviceType
-                - displayName
-                - enableWhiteGlove
-                - enrollmentStatusScreenSettings
-                - extractHardwareHash
-                - language
-                - lastModifiedDateTime
-                - managementServiceAppId
-                - outOfBoxExperienceSettings
-                - roleScopeTagIds
-                - assignedDevices
-                - assignments
               type: string
         - name: $expand
           in: query
@@ -5333,10 +4086,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - assignedDevices
-                - assignments
               type: string
       responses:
         2XX:
@@ -5373,23 +4122,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdDateTime
-                - description
-                - deviceNameTemplate
-                - deviceType
-                - displayName
-                - enableWhiteGlove
-                - enrollmentStatusScreenSettings
-                - extractHardwareHash
-                - language
-                - lastModifiedDateTime
-                - managementServiceAppId
-                - outOfBoxExperienceSettings
-                - roleScopeTagIds
-                - assignedDevices
-                - assignments
               type: string
         - name: $expand
           in: query
@@ -5400,10 +4132,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - assignedDevices
-                - assignments
               type: string
       responses:
         2XX:
@@ -5446,11 +4174,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - lastManualSyncTriggerDateTime
-                - lastSyncDateTime
-                - syncStatus
               type: string
         - name: $expand
           in: query
@@ -5461,8 +4184,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -5536,29 +4257,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - createdDateTime
-                - createdDateTime desc
-                - deployableContentDisplayName
-                - deployableContentDisplayName desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - endOfSupportDate
-                - endOfSupportDate desc
-                - featureUpdateVersion
-                - featureUpdateVersion desc
-                - installLatestWindows10OnWindows11IneligibleDevice
-                - installLatestWindows10OnWindows11IneligibleDevice desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - roleScopeTagIds
-                - roleScopeTagIds desc
-                - rolloutSettings
-                - rolloutSettings desc
               type: string
         - name: $select
           in: query
@@ -5569,19 +4267,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdDateTime
-                - deployableContentDisplayName
-                - description
-                - displayName
-                - endOfSupportDate
-                - featureUpdateVersion
-                - installLatestWindows10OnWindows11IneligibleDevice
-                - lastModifiedDateTime
-                - roleScopeTagIds
-                - rolloutSettings
-                - assignments
               type: string
         - name: $expand
           in: query
@@ -5592,9 +4277,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - assignments
               type: string
       responses:
         2XX:
@@ -5652,19 +4334,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdDateTime
-                - deployableContentDisplayName
-                - description
-                - displayName
-                - endOfSupportDate
-                - featureUpdateVersion
-                - installLatestWindows10OnWindows11IneligibleDevice
-                - lastModifiedDateTime
-                - roleScopeTagIds
-                - rolloutSettings
-                - assignments
               type: string
         - name: $expand
           in: query
@@ -5675,9 +4344,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - assignments
               type: string
       responses:
         2XX:
@@ -5776,11 +4442,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - target
-                - target desc
               type: string
         - name: $select
           in: query
@@ -5791,9 +4452,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - target
               type: string
         - name: $expand
           in: query
@@ -5804,8 +4462,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -5880,9 +4536,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - target
               type: string
         - name: $expand
           in: query
@@ -5893,8 +4546,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -6031,13 +4682,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - cloudPC
-                - deviceManagement
-                - directory
-                - enterpriseApps
-                - entitlementManagement
-                - exchange
               type: string
         - name: $expand
           in: query
@@ -6048,14 +4692,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - cloudPC
-                - deviceManagement
-                - directory
-                - enterpriseApps
-                - entitlementManagement
-                - exchange
               type: string
       responses:
         2XX:
@@ -6105,11 +4741,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - resourceNamespaces
-                - roleAssignments
-                - roleDefinitions
               type: string
         - name: $expand
           in: query
@@ -6120,11 +4751,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - resourceNamespaces
-                - roleAssignments
-                - roleDefinitions
               type: string
       responses:
         2XX:
@@ -6197,11 +4823,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - name
-                - name desc
               type: string
         - name: $select
           in: query
@@ -6212,10 +4833,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - name
-                - resourceActions
               type: string
         - name: $expand
           in: query
@@ -6226,9 +4843,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - resourceActions
               type: string
       responses:
         2XX:
@@ -6285,10 +4899,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - name
-                - resourceActions
               type: string
         - name: $expand
           in: query
@@ -6299,9 +4909,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - resourceActions
               type: string
       responses:
         2XX:
@@ -6403,23 +5010,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - actionVerb
-                - actionVerb desc
-                - authenticationContextId
-                - authenticationContextId desc
-                - description
-                - description desc
-                - isAuthenticationContextSettable
-                - isAuthenticationContextSettable desc
-                - isPrivileged
-                - isPrivileged desc
-                - name
-                - name desc
-                - resourceScopeId
-                - resourceScopeId desc
               type: string
         - name: $select
           in: query
@@ -6430,17 +5020,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - actionVerb
-                - authenticationContextId
-                - description
-                - isAuthenticationContextSettable
-                - isPrivileged
-                - name
-                - resourceScopeId
-                - authenticationContext
-                - resourceScope
               type: string
         - name: $expand
           in: query
@@ -6451,10 +5030,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - authenticationContext
-                - resourceScope
               type: string
       responses:
         2XX:
@@ -6532,17 +5107,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - actionVerb
-                - authenticationContextId
-                - description
-                - isAuthenticationContextSettable
-                - isPrivileged
-                - name
-                - resourceScopeId
-                - authenticationContext
-                - resourceScope
               type: string
         - name: $expand
           in: query
@@ -6553,10 +5117,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - authenticationContext
-                - resourceScope
               type: string
       responses:
         2XX:
@@ -6673,11 +5233,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - description
-                - displayName
-                - isAvailable
               type: string
         - name: $expand
           in: query
@@ -6688,8 +5243,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -6733,11 +5286,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
-                - scope
-                - type
               type: string
         - name: $expand
           in: query
@@ -6748,8 +5296,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -6878,7 +5424,7 @@ paths:
       description: "Get the properties and relationships of a unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Microsoft Entra ID), use unifiedRoleAssignment."
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/rbacapplicationmultiple-list-roleassignments?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/unifiedroleassignmentmultiple-get?view=graph-rest-1.0
       operationId: roleManagement.cloudPC_ListRoleAssignment
       parameters:
         - $ref: '#/components/parameters/top'
@@ -6895,23 +5441,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - appScopeIds
-                - appScopeIds desc
-                - condition
-                - condition desc
-                - description
-                - description desc
-                - directoryScopeIds
-                - directoryScopeIds desc
-                - displayName
-                - displayName desc
-                - principalIds
-                - principalIds desc
-                - roleDefinitionId
-                - roleDefinitionId desc
               type: string
         - name: $select
           in: query
@@ -6922,19 +5451,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - appScopeIds
-                - condition
-                - description
-                - directoryScopeIds
-                - displayName
-                - principalIds
-                - roleDefinitionId
-                - appScopes
-                - directoryScopes
-                - principals
-                - roleDefinition
               type: string
         - name: $expand
           in: query
@@ -6945,12 +5461,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - appScopes
-                - directoryScopes
-                - principals
-                - roleDefinition
               type: string
       responses:
         2XX:
@@ -7015,19 +5525,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - appScopeIds
-                - condition
-                - description
-                - directoryScopeIds
-                - displayName
-                - principalIds
-                - roleDefinitionId
-                - appScopes
-                - directoryScopes
-                - principals
-                - roleDefinition
               type: string
         - name: $expand
           in: query
@@ -7038,12 +5535,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - appScopes
-                - directoryScopes
-                - principals
-                - roleDefinition
               type: string
       responses:
         2XX:
@@ -7150,13 +5641,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - displayName
-                - displayName desc
-                - type
-                - type desc
               type: string
         - name: $select
           in: query
@@ -7167,10 +5651,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
-                - type
               type: string
         - name: $expand
           in: query
@@ -7181,8 +5661,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -7257,10 +5735,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
-                - type
               type: string
         - name: $expand
           in: query
@@ -7271,8 +5745,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -7409,11 +5881,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - deletedDateTime
-                - deletedDateTime desc
               type: string
         - name: $select
           in: query
@@ -7424,9 +5891,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
               type: string
         - name: $expand
           in: query
@@ -7437,8 +5901,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -7482,9 +5944,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
               type: string
         - name: $expand
           in: query
@@ -7495,8 +5954,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -7560,11 +6017,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - deletedDateTime
-                - deletedDateTime desc
               type: string
         - name: $select
           in: query
@@ -7575,9 +6027,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
               type: string
         - name: $expand
           in: query
@@ -7588,8 +6037,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -7633,9 +6080,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
               type: string
         - name: $expand
           in: query
@@ -7646,8 +6090,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -7706,19 +6148,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedPrincipalTypes
-                - description
-                - displayName
-                - isBuiltIn
-                - isEnabled
-                - isPrivileged
-                - resourceScopes
-                - rolePermissions
-                - templateId
-                - version
-                - inheritsPermissionsFrom
               type: string
         - name: $expand
           in: query
@@ -7729,9 +6158,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - inheritsPermissionsFrom
               type: string
       responses:
         2XX:
@@ -7782,29 +6208,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - allowedPrincipalTypes
-                - allowedPrincipalTypes desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - isBuiltIn
-                - isBuiltIn desc
-                - isEnabled
-                - isEnabled desc
-                - isPrivileged
-                - isPrivileged desc
-                - resourceScopes
-                - resourceScopes desc
-                - rolePermissions
-                - rolePermissions desc
-                - templateId
-                - templateId desc
-                - version
-                - version desc
               type: string
         - name: $select
           in: query
@@ -7815,19 +6218,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedPrincipalTypes
-                - description
-                - displayName
-                - isBuiltIn
-                - isEnabled
-                - isPrivileged
-                - resourceScopes
-                - rolePermissions
-                - templateId
-                - version
-                - inheritsPermissionsFrom
               type: string
         - name: $expand
           in: query
@@ -7838,9 +6228,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - inheritsPermissionsFrom
               type: string
       responses:
         2XX:
@@ -7905,19 +6292,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedPrincipalTypes
-                - description
-                - displayName
-                - isBuiltIn
-                - isEnabled
-                - isPrivileged
-                - resourceScopes
-                - rolePermissions
-                - templateId
-                - version
-                - inheritsPermissionsFrom
               type: string
         - name: $expand
           in: query
@@ -7928,9 +6302,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - inheritsPermissionsFrom
               type: string
       responses:
         2XX:
@@ -8037,29 +6408,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - allowedPrincipalTypes
-                - allowedPrincipalTypes desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - isBuiltIn
-                - isBuiltIn desc
-                - isEnabled
-                - isEnabled desc
-                - isPrivileged
-                - isPrivileged desc
-                - resourceScopes
-                - resourceScopes desc
-                - rolePermissions
-                - rolePermissions desc
-                - templateId
-                - templateId desc
-                - version
-                - version desc
               type: string
         - name: $select
           in: query
@@ -8070,19 +6418,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedPrincipalTypes
-                - description
-                - displayName
-                - isBuiltIn
-                - isEnabled
-                - isPrivileged
-                - resourceScopes
-                - rolePermissions
-                - templateId
-                - version
-                - inheritsPermissionsFrom
               type: string
         - name: $expand
           in: query
@@ -8093,9 +6428,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - inheritsPermissionsFrom
               type: string
       responses:
         2XX:
@@ -8170,19 +6502,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedPrincipalTypes
-                - description
-                - displayName
-                - isBuiltIn
-                - isEnabled
-                - isPrivileged
-                - resourceScopes
-                - rolePermissions
-                - templateId
-                - version
-                - inheritsPermissionsFrom
               type: string
         - name: $expand
           in: query
@@ -8193,9 +6512,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - inheritsPermissionsFrom
               type: string
       responses:
         2XX:
@@ -8333,11 +6649,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - resourceNamespaces
-                - roleAssignments
-                - roleDefinitions
               type: string
         - name: $expand
           in: query
@@ -8348,11 +6659,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - resourceNamespaces
-                - roleAssignments
-                - roleDefinitions
               type: string
       responses:
         2XX:
@@ -8425,11 +6731,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - name
-                - name desc
               type: string
         - name: $select
           in: query
@@ -8440,10 +6741,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - name
-                - resourceActions
               type: string
         - name: $expand
           in: query
@@ -8454,9 +6751,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - resourceActions
               type: string
       responses:
         2XX:
@@ -8513,10 +6807,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - name
-                - resourceActions
               type: string
         - name: $expand
           in: query
@@ -8527,9 +6817,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - resourceActions
               type: string
       responses:
         2XX:
@@ -8631,23 +6918,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - actionVerb
-                - actionVerb desc
-                - authenticationContextId
-                - authenticationContextId desc
-                - description
-                - description desc
-                - isAuthenticationContextSettable
-                - isAuthenticationContextSettable desc
-                - isPrivileged
-                - isPrivileged desc
-                - name
-                - name desc
-                - resourceScopeId
-                - resourceScopeId desc
               type: string
         - name: $select
           in: query
@@ -8658,17 +6928,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - actionVerb
-                - authenticationContextId
-                - description
-                - isAuthenticationContextSettable
-                - isPrivileged
-                - name
-                - resourceScopeId
-                - authenticationContext
-                - resourceScope
               type: string
         - name: $expand
           in: query
@@ -8679,10 +6938,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - authenticationContext
-                - resourceScope
               type: string
       responses:
         2XX:
@@ -8760,17 +7015,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - actionVerb
-                - authenticationContextId
-                - description
-                - isAuthenticationContextSettable
-                - isPrivileged
-                - name
-                - resourceScopeId
-                - authenticationContext
-                - resourceScope
               type: string
         - name: $expand
           in: query
@@ -8781,10 +7025,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - authenticationContext
-                - resourceScope
               type: string
       responses:
         2XX:
@@ -8901,11 +7141,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - description
-                - displayName
-                - isAvailable
               type: string
         - name: $expand
           in: query
@@ -8916,8 +7151,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -8961,11 +7194,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
-                - scope
-                - type
               type: string
         - name: $expand
           in: query
@@ -8976,8 +7204,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -9106,7 +7332,7 @@ paths:
       description: "Get the properties and relationships of a unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Microsoft Entra ID), use unifiedRoleAssignment."
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/rbacapplicationmultiple-list-roleassignments?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/unifiedroleassignmentmultiple-get?view=graph-rest-1.0
       operationId: roleManagement.deviceManagement_ListRoleAssignment
       parameters:
         - $ref: '#/components/parameters/top'
@@ -9123,23 +7349,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - appScopeIds
-                - appScopeIds desc
-                - condition
-                - condition desc
-                - description
-                - description desc
-                - directoryScopeIds
-                - directoryScopeIds desc
-                - displayName
-                - displayName desc
-                - principalIds
-                - principalIds desc
-                - roleDefinitionId
-                - roleDefinitionId desc
               type: string
         - name: $select
           in: query
@@ -9150,19 +7359,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - appScopeIds
-                - condition
-                - description
-                - directoryScopeIds
-                - displayName
-                - principalIds
-                - roleDefinitionId
-                - appScopes
-                - directoryScopes
-                - principals
-                - roleDefinition
               type: string
         - name: $expand
           in: query
@@ -9173,12 +7369,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - appScopes
-                - directoryScopes
-                - principals
-                - roleDefinition
               type: string
       responses:
         2XX:
@@ -9243,19 +7433,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - appScopeIds
-                - condition
-                - description
-                - directoryScopeIds
-                - displayName
-                - principalIds
-                - roleDefinitionId
-                - appScopes
-                - directoryScopes
-                - principals
-                - roleDefinition
               type: string
         - name: $expand
           in: query
@@ -9266,12 +7443,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - appScopes
-                - directoryScopes
-                - principals
-                - roleDefinition
               type: string
       responses:
         2XX:
@@ -9378,13 +7549,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - displayName
-                - displayName desc
-                - type
-                - type desc
               type: string
         - name: $select
           in: query
@@ -9395,10 +7559,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
-                - type
               type: string
         - name: $expand
           in: query
@@ -9409,8 +7569,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -9485,10 +7643,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
-                - type
               type: string
         - name: $expand
           in: query
@@ -9499,8 +7653,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -9637,11 +7789,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - deletedDateTime
-                - deletedDateTime desc
               type: string
         - name: $select
           in: query
@@ -9652,9 +7799,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
               type: string
         - name: $expand
           in: query
@@ -9665,8 +7809,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -9710,9 +7852,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
               type: string
         - name: $expand
           in: query
@@ -9723,8 +7862,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -9788,11 +7925,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - deletedDateTime
-                - deletedDateTime desc
               type: string
         - name: $select
           in: query
@@ -9803,9 +7935,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
               type: string
         - name: $expand
           in: query
@@ -9816,8 +7945,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -9861,9 +7988,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
               type: string
         - name: $expand
           in: query
@@ -9874,8 +7998,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -9934,19 +8056,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedPrincipalTypes
-                - description
-                - displayName
-                - isBuiltIn
-                - isEnabled
-                - isPrivileged
-                - resourceScopes
-                - rolePermissions
-                - templateId
-                - version
-                - inheritsPermissionsFrom
               type: string
         - name: $expand
           in: query
@@ -9957,9 +8066,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - inheritsPermissionsFrom
               type: string
       responses:
         2XX:
@@ -10010,29 +8116,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - allowedPrincipalTypes
-                - allowedPrincipalTypes desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - isBuiltIn
-                - isBuiltIn desc
-                - isEnabled
-                - isEnabled desc
-                - isPrivileged
-                - isPrivileged desc
-                - resourceScopes
-                - resourceScopes desc
-                - rolePermissions
-                - rolePermissions desc
-                - templateId
-                - templateId desc
-                - version
-                - version desc
               type: string
         - name: $select
           in: query
@@ -10043,19 +8126,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedPrincipalTypes
-                - description
-                - displayName
-                - isBuiltIn
-                - isEnabled
-                - isPrivileged
-                - resourceScopes
-                - rolePermissions
-                - templateId
-                - version
-                - inheritsPermissionsFrom
               type: string
         - name: $expand
           in: query
@@ -10066,9 +8136,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - inheritsPermissionsFrom
               type: string
       responses:
         2XX:
@@ -10133,19 +8200,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedPrincipalTypes
-                - description
-                - displayName
-                - isBuiltIn
-                - isEnabled
-                - isPrivileged
-                - resourceScopes
-                - rolePermissions
-                - templateId
-                - version
-                - inheritsPermissionsFrom
               type: string
         - name: $expand
           in: query
@@ -10156,9 +8210,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - inheritsPermissionsFrom
               type: string
       responses:
         2XX:
@@ -10265,29 +8316,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - allowedPrincipalTypes
-                - allowedPrincipalTypes desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - isBuiltIn
-                - isBuiltIn desc
-                - isEnabled
-                - isEnabled desc
-                - isPrivileged
-                - isPrivileged desc
-                - resourceScopes
-                - resourceScopes desc
-                - rolePermissions
-                - rolePermissions desc
-                - templateId
-                - templateId desc
-                - version
-                - version desc
               type: string
         - name: $select
           in: query
@@ -10298,19 +8326,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedPrincipalTypes
-                - description
-                - displayName
-                - isBuiltIn
-                - isEnabled
-                - isPrivileged
-                - resourceScopes
-                - rolePermissions
-                - templateId
-                - version
-                - inheritsPermissionsFrom
               type: string
         - name: $expand
           in: query
@@ -10321,9 +8336,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - inheritsPermissionsFrom
               type: string
       responses:
         2XX:
@@ -10398,19 +8410,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedPrincipalTypes
-                - description
-                - displayName
-                - isBuiltIn
-                - isEnabled
-                - isPrivileged
-                - resourceScopes
-                - rolePermissions
-                - templateId
-                - version
-                - inheritsPermissionsFrom
               type: string
         - name: $expand
           in: query
@@ -10421,9 +8420,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - inheritsPermissionsFrom
               type: string
       responses:
         2XX:
@@ -10560,13 +8556,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - customAppScopes
-                - resourceNamespaces
-                - roleAssignments
-                - roleDefinitions
-                - transitiveRoleAssignments
               type: string
         - name: $expand
           in: query
@@ -10577,13 +8566,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - customAppScopes
-                - resourceNamespaces
-                - roleAssignments
-                - roleDefinitions
-                - transitiveRoleAssignments
               type: string
       responses:
         2XX:
@@ -10660,15 +8642,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - displayName
-                - displayName desc
-                - type
-                - type desc
-                - customAttributes
-                - customAttributes desc
               type: string
         - name: $select
           in: query
@@ -10679,11 +8652,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
-                - type
-                - customAttributes
               type: string
         - name: $expand
           in: query
@@ -10694,8 +8662,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -10760,11 +8726,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
-                - type
-                - customAttributes
               type: string
         - name: $expand
           in: query
@@ -10775,8 +8736,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -10889,11 +8848,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - name
-                - name desc
               type: string
         - name: $select
           in: query
@@ -10904,10 +8858,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - name
-                - resourceActions
               type: string
         - name: $expand
           in: query
@@ -10918,9 +8868,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - resourceActions
               type: string
       responses:
         2XX:
@@ -10978,10 +8925,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - name
-                - resourceActions
               type: string
         - name: $expand
           in: query
@@ -10992,9 +8935,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - resourceActions
               type: string
       responses:
         2XX:
@@ -11096,23 +9036,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - actionVerb
-                - actionVerb desc
-                - authenticationContextId
-                - authenticationContextId desc
-                - description
-                - description desc
-                - isAuthenticationContextSettable
-                - isAuthenticationContextSettable desc
-                - isPrivileged
-                - isPrivileged desc
-                - name
-                - name desc
-                - resourceScopeId
-                - resourceScopeId desc
               type: string
         - name: $select
           in: query
@@ -11123,17 +9046,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - actionVerb
-                - authenticationContextId
-                - description
-                - isAuthenticationContextSettable
-                - isPrivileged
-                - name
-                - resourceScopeId
-                - authenticationContext
-                - resourceScope
               type: string
         - name: $expand
           in: query
@@ -11144,10 +9056,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - authenticationContext
-                - resourceScope
               type: string
       responses:
         2XX:
@@ -11225,17 +9133,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - actionVerb
-                - authenticationContextId
-                - description
-                - isAuthenticationContextSettable
-                - isPrivileged
-                - name
-                - resourceScopeId
-                - authenticationContext
-                - resourceScope
               type: string
         - name: $expand
           in: query
@@ -11246,10 +9143,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - authenticationContext
-                - resourceScope
               type: string
       responses:
         2XX:
@@ -11366,11 +9259,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - description
-                - displayName
-                - isAvailable
               type: string
         - name: $expand
           in: query
@@ -11381,8 +9269,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -11426,11 +9312,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
-                - scope
-                - type
               type: string
         - name: $expand
           in: query
@@ -11441,8 +9322,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -11588,23 +9467,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - appScopeId
-                - appScopeId desc
-                - condition
-                - condition desc
-                - directoryScopeId
-                - directoryScopeId desc
-                - principalId
-                - principalId desc
-                - principalOrganizationId
-                - principalOrganizationId desc
-                - resourceScope
-                - resourceScope desc
-                - roleDefinitionId
-                - roleDefinitionId desc
               type: string
         - name: $select
           in: query
@@ -11615,19 +9477,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - appScopeId
-                - condition
-                - directoryScopeId
-                - principalId
-                - principalOrganizationId
-                - resourceScope
-                - roleDefinitionId
-                - appScope
-                - directoryScope
-                - principal
-                - roleDefinition
               type: string
         - name: $expand
           in: query
@@ -11638,12 +9487,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - appScope
-                - directoryScope
-                - principal
-                - roleDefinition
               type: string
       responses:
         2XX:
@@ -11708,19 +9551,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - appScopeId
-                - condition
-                - directoryScopeId
-                - principalId
-                - principalOrganizationId
-                - resourceScope
-                - roleDefinitionId
-                - appScope
-                - directoryScope
-                - principal
-                - roleDefinition
               type: string
         - name: $expand
           in: query
@@ -11731,12 +9561,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - appScope
-                - directoryScope
-                - principal
-                - roleDefinition
               type: string
       responses:
         2XX:
@@ -11834,10 +9658,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
-                - type
               type: string
         - name: $expand
           in: query
@@ -11848,8 +9668,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -11943,9 +9761,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
               type: string
         - name: $expand
           in: query
@@ -11956,8 +9771,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -11994,9 +9807,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
               type: string
         - name: $expand
           in: query
@@ -12007,8 +9817,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -12045,19 +9853,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedPrincipalTypes
-                - description
-                - displayName
-                - isBuiltIn
-                - isEnabled
-                - isPrivileged
-                - resourceScopes
-                - rolePermissions
-                - templateId
-                - version
-                - inheritsPermissionsFrom
               type: string
         - name: $expand
           in: query
@@ -12068,9 +9863,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - inheritsPermissionsFrom
               type: string
       responses:
         2XX:
@@ -12121,29 +9913,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - allowedPrincipalTypes
-                - allowedPrincipalTypes desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - isBuiltIn
-                - isBuiltIn desc
-                - isEnabled
-                - isEnabled desc
-                - isPrivileged
-                - isPrivileged desc
-                - resourceScopes
-                - resourceScopes desc
-                - rolePermissions
-                - rolePermissions desc
-                - templateId
-                - templateId desc
-                - version
-                - version desc
               type: string
         - name: $select
           in: query
@@ -12154,19 +9923,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedPrincipalTypes
-                - description
-                - displayName
-                - isBuiltIn
-                - isEnabled
-                - isPrivileged
-                - resourceScopes
-                - rolePermissions
-                - templateId
-                - version
-                - inheritsPermissionsFrom
               type: string
         - name: $expand
           in: query
@@ -12177,9 +9933,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - inheritsPermissionsFrom
               type: string
       responses:
         2XX:
@@ -12240,19 +9993,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedPrincipalTypes
-                - description
-                - displayName
-                - isBuiltIn
-                - isEnabled
-                - isPrivileged
-                - resourceScopes
-                - rolePermissions
-                - templateId
-                - version
-                - inheritsPermissionsFrom
               type: string
         - name: $expand
           in: query
@@ -12263,9 +10003,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - inheritsPermissionsFrom
               type: string
       responses:
         2XX:
@@ -12364,29 +10101,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - allowedPrincipalTypes
-                - allowedPrincipalTypes desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - isBuiltIn
-                - isBuiltIn desc
-                - isEnabled
-                - isEnabled desc
-                - isPrivileged
-                - isPrivileged desc
-                - resourceScopes
-                - resourceScopes desc
-                - rolePermissions
-                - rolePermissions desc
-                - templateId
-                - templateId desc
-                - version
-                - version desc
               type: string
         - name: $select
           in: query
@@ -12397,19 +10111,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedPrincipalTypes
-                - description
-                - displayName
-                - isBuiltIn
-                - isEnabled
-                - isPrivileged
-                - resourceScopes
-                - rolePermissions
-                - templateId
-                - version
-                - inheritsPermissionsFrom
               type: string
         - name: $expand
           in: query
@@ -12420,9 +10121,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - inheritsPermissionsFrom
               type: string
       responses:
         2XX:
@@ -12497,19 +10195,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedPrincipalTypes
-                - description
-                - displayName
-                - isBuiltIn
-                - isEnabled
-                - isPrivileged
-                - resourceScopes
-                - rolePermissions
-                - templateId
-                - version
-                - inheritsPermissionsFrom
               type: string
         - name: $expand
           in: query
@@ -12520,9 +10205,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - inheritsPermissionsFrom
               type: string
       responses:
         2XX:
@@ -12665,23 +10347,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - appScopeId
-                - appScopeId desc
-                - condition
-                - condition desc
-                - directoryScopeId
-                - directoryScopeId desc
-                - principalId
-                - principalId desc
-                - principalOrganizationId
-                - principalOrganizationId desc
-                - resourceScope
-                - resourceScope desc
-                - roleDefinitionId
-                - roleDefinitionId desc
               type: string
         - name: $select
           in: query
@@ -12692,19 +10357,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - appScopeId
-                - condition
-                - directoryScopeId
-                - principalId
-                - principalOrganizationId
-                - resourceScope
-                - roleDefinitionId
-                - appScope
-                - directoryScope
-                - principal
-                - roleDefinition
               type: string
         - name: $expand
           in: query
@@ -12715,12 +10367,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - appScope
-                - directoryScope
-                - principal
-                - roleDefinition
               type: string
       responses:
         2XX:
@@ -12778,19 +10424,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - appScopeId
-                - condition
-                - directoryScopeId
-                - principalId
-                - principalOrganizationId
-                - resourceScope
-                - roleDefinitionId
-                - appScope
-                - directoryScope
-                - principal
-                - roleDefinition
               type: string
         - name: $expand
           in: query
@@ -12801,12 +10434,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - appScope
-                - directoryScope
-                - principal
-                - roleDefinition
               type: string
       responses:
         2XX:
@@ -12900,10 +10527,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
-                - type
               type: string
         - name: $expand
           in: query
@@ -12914,8 +10537,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -13009,9 +10630,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
               type: string
         - name: $expand
           in: query
@@ -13022,8 +10640,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -13060,9 +10676,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
               type: string
         - name: $expand
           in: query
@@ -13073,8 +10686,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -13111,19 +10722,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedPrincipalTypes
-                - description
-                - displayName
-                - isBuiltIn
-                - isEnabled
-                - isPrivileged
-                - resourceScopes
-                - rolePermissions
-                - templateId
-                - version
-                - inheritsPermissionsFrom
               type: string
         - name: $expand
           in: query
@@ -13134,9 +10732,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - inheritsPermissionsFrom
               type: string
       responses:
         2XX:
@@ -16201,7 +13796,7 @@ components:
           properties:
             assignmentType:
               type: string
-              description: 'Type of the assignment which can either be Assigned or Activated. Supports $filter (eq, ne).'
+              description: 'The type of the assignment that can either be Assigned or Activated. Supports $filter (eq, ne).'
               nullable: true
             endDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -16211,11 +13806,11 @@ components:
               nullable: true
             memberType:
               type: string
-              description: 'How the assignments is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleAssignmentSchedule can be managed by the caller. Supports $filter (eq, ne).'
+              description: 'How the assignment is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleAssignmentSchedule can be managed by the caller. Supports $filter (eq, ne).'
               nullable: true
             roleAssignmentOriginId:
               type: string
-              description: The identifier of the role assignment in Azure AD.
+              description: The identifier of the role assignment in Microsoft Entra ID.
               nullable: true
             roleAssignmentScheduleId:
               type: string
@@ -16295,11 +13890,11 @@ components:
           properties:
             assignmentType:
               type: string
-              description: 'Type of the assignment which can either be Assigned or Activated. Supports $filter (eq, ne).'
+              description: 'The type of the assignment that can either be Assigned or Activated. Supports $filter (eq, ne).'
               nullable: true
             memberType:
               type: string
-              description: 'How the assignments is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleAssignmentSchedule can be managed by the caller. Supports $filter (eq, ne).'
+              description: 'How the assignment is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleAssignmentSchedule can be managed by the caller. Supports $filter (eq, ne).'
               nullable: true
             scheduleInfo:
               $ref: '#/components/schemas/microsoft.graph.requestSchedule'

@@ -396,9 +396,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - updates
               type: string
         - name: $expand
           in: query
@@ -409,9 +406,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - updates
               type: string
       responses:
         2XX:
@@ -480,14 +474,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - catalog
-                - deploymentAudiences
-                - deployments
-                - resourceConnections
-                - updatableAssets
-                - updatePolicies
               type: string
         - name: $expand
           in: query
@@ -498,14 +484,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - catalog
-                - deploymentAudiences
-                - deployments
-                - resourceConnections
-                - updatableAssets
-                - updatePolicies
               type: string
       responses:
         2XX:
@@ -574,9 +552,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - entries
               type: string
         - name: $expand
           in: query
@@ -587,9 +562,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - entries
               type: string
       responses:
         2XX:
@@ -666,15 +638,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - deployableUntilDateTime
-                - deployableUntilDateTime desc
-                - displayName
-                - displayName desc
-                - releaseDateTime
-                - releaseDateTime desc
               type: string
         - name: $select
           in: query
@@ -685,11 +648,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deployableUntilDateTime
-                - displayName
-                - releaseDateTime
               type: string
         - name: $expand
           in: query
@@ -700,8 +658,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -759,11 +715,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deployableUntilDateTime
-                - displayName
-                - releaseDateTime
               type: string
         - name: $expand
           in: query
@@ -774,8 +725,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -883,11 +832,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - applicableContent
-                - applicableContent desc
               type: string
         - name: $select
           in: query
@@ -898,11 +842,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - applicableContent
-                - exclusions
-                - members
               type: string
         - name: $expand
           in: query
@@ -913,10 +852,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - exclusions
-                - members
               type: string
       responses:
         2XX:
@@ -981,11 +916,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - applicableContent
-                - exclusions
-                - members
               type: string
         - name: $expand
           in: query
@@ -996,10 +926,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - exclusions
-                - members
               type: string
       responses:
         2XX:
@@ -1072,6 +998,588 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/applicableContent':
+    get:
+      tags:
+        - admin.adminWindows
+      summary: Get applicableContent from admin
+      description: Content eligible to deploy to devices in the audience. Not nullable. Read-only.
+      operationId: admin.window.update.deploymentAudience_ListApplicableContent
+      parameters:
+        - name: deploymentAudience-id
+          in: path
+          description: The unique identifier of deploymentAudience
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deploymentAudience
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.windowsUpdates.applicableContentCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - admin.adminWindows
+      summary: Create new navigation property to applicableContent for admin
+      operationId: admin.window.update.deploymentAudience_CreateApplicableContent
+      parameters:
+        - name: deploymentAudience-id
+          in: path
+          description: The unique identifier of deploymentAudience
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deploymentAudience
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.windowsUpdates.applicableContent'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.applicableContent'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/applicableContent/{applicableContent-catalogEntryId}':
+    get:
+      tags:
+        - admin.adminWindows
+      summary: Get applicableContent from admin
+      description: Content eligible to deploy to devices in the audience. Not nullable. Read-only.
+      operationId: admin.window.update.deploymentAudience_GetApplicableContent
+      parameters:
+        - name: deploymentAudience-id
+          in: path
+          description: The unique identifier of deploymentAudience
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deploymentAudience
+        - name: applicableContent-catalogEntryId
+          in: path
+          description: The unique identifier of applicableContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: applicableContent
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.applicableContent'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - admin.adminWindows
+      summary: Update the navigation property applicableContent in admin
+      operationId: admin.window.update.deploymentAudience_UpdateApplicableContent
+      parameters:
+        - name: deploymentAudience-id
+          in: path
+          description: The unique identifier of deploymentAudience
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deploymentAudience
+        - name: applicableContent-catalogEntryId
+          in: path
+          description: The unique identifier of applicableContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: applicableContent
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.windowsUpdates.applicableContent'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.applicableContent'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - admin.adminWindows
+      summary: Delete navigation property applicableContent for admin
+      operationId: admin.window.update.deploymentAudience_DeleteApplicableContent
+      parameters:
+        - name: deploymentAudience-id
+          in: path
+          description: The unique identifier of deploymentAudience
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deploymentAudience
+        - name: applicableContent-catalogEntryId
+          in: path
+          description: The unique identifier of applicableContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: applicableContent
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/applicableContent/{applicableContent-catalogEntryId}/catalogEntry':
+    get:
+      tags:
+        - admin.adminWindows
+      summary: Get catalogEntry from admin
+      description: Catalog entry for the update or content.
+      operationId: admin.window.update.deploymentAudience.applicableContent_GetCatalogEntry
+      parameters:
+        - name: deploymentAudience-id
+          in: path
+          description: The unique identifier of deploymentAudience
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deploymentAudience
+        - name: applicableContent-catalogEntryId
+          in: path
+          description: The unique identifier of applicableContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: applicableContent
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.catalogEntry'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/applicableContent/{applicableContent-catalogEntryId}/matchedDevices':
+    get:
+      tags:
+        - admin.adminWindows
+      summary: Get matchedDevices from admin
+      description: Collection of devices and recommendations for applicable catalog content.
+      operationId: admin.window.update.deploymentAudience.applicableContent_ListMatchedDevice
+      parameters:
+        - name: deploymentAudience-id
+          in: path
+          description: The unique identifier of deploymentAudience
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deploymentAudience
+        - name: applicableContent-catalogEntryId
+          in: path
+          description: The unique identifier of applicableContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: applicableContent
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.windowsUpdates.applicableContentDeviceMatchCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - admin.adminWindows
+      summary: Create new navigation property to matchedDevices for admin
+      operationId: admin.window.update.deploymentAudience.applicableContent_CreateMatchedDevice
+      parameters:
+        - name: deploymentAudience-id
+          in: path
+          description: The unique identifier of deploymentAudience
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deploymentAudience
+        - name: applicableContent-catalogEntryId
+          in: path
+          description: The unique identifier of applicableContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: applicableContent
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.windowsUpdates.applicableContentDeviceMatch'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.applicableContentDeviceMatch'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/applicableContent/{applicableContent-catalogEntryId}/matchedDevices/{applicableContentDeviceMatch-deviceId}':
+    get:
+      tags:
+        - admin.adminWindows
+      summary: Get matchedDevices from admin
+      description: Collection of devices and recommendations for applicable catalog content.
+      operationId: admin.window.update.deploymentAudience.applicableContent_GetMatchedDevice
+      parameters:
+        - name: deploymentAudience-id
+          in: path
+          description: The unique identifier of deploymentAudience
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deploymentAudience
+        - name: applicableContent-catalogEntryId
+          in: path
+          description: The unique identifier of applicableContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: applicableContent
+        - name: applicableContentDeviceMatch-deviceId
+          in: path
+          description: The unique identifier of applicableContentDeviceMatch
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: applicableContentDeviceMatch
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.applicableContentDeviceMatch'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - admin.adminWindows
+      summary: Update the navigation property matchedDevices in admin
+      operationId: admin.window.update.deploymentAudience.applicableContent_UpdateMatchedDevice
+      parameters:
+        - name: deploymentAudience-id
+          in: path
+          description: The unique identifier of deploymentAudience
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deploymentAudience
+        - name: applicableContent-catalogEntryId
+          in: path
+          description: The unique identifier of applicableContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: applicableContent
+        - name: applicableContentDeviceMatch-deviceId
+          in: path
+          description: The unique identifier of applicableContentDeviceMatch
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: applicableContentDeviceMatch
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.windowsUpdates.applicableContentDeviceMatch'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.applicableContentDeviceMatch'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - admin.adminWindows
+      summary: Delete navigation property matchedDevices for admin
+      operationId: admin.window.update.deploymentAudience.applicableContent_DeleteMatchedDevice
+      parameters:
+        - name: deploymentAudience-id
+          in: path
+          description: The unique identifier of deploymentAudience
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deploymentAudience
+        - name: applicableContent-catalogEntryId
+          in: path
+          description: The unique identifier of applicableContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: applicableContent
+        - name: applicableContentDeviceMatch-deviceId
+          in: path
+          description: The unique identifier of applicableContentDeviceMatch
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: applicableContentDeviceMatch
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/applicableContent/{applicableContent-catalogEntryId}/matchedDevices/$count':
+    get:
+      tags:
+        - admin.adminWindows
+      summary: Get the number of the resource
+      operationId: admin.window.update.deploymentAudience.applicableContent.matchedDevice_GetCount
+      parameters:
+        - name: deploymentAudience-id
+          in: path
+          description: The unique identifier of deploymentAudience
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deploymentAudience
+        - name: applicableContent-catalogEntryId
+          in: path
+          description: The unique identifier of applicableContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: applicableContent
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/applicableContent/$count':
+    get:
+      tags:
+        - admin.adminWindows
+      summary: Get the number of the resource
+      operationId: admin.window.update.deploymentAudience.applicableContent_GetCount
+      parameters:
+        - name: deploymentAudience-id
+          in: path
+          description: The unique identifier of deploymentAudience
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deploymentAudience
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/exclusions':
     get:
       tags:
@@ -1105,9 +1613,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
               type: string
         - name: $select
           in: query
@@ -1118,8 +1623,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
               type: string
         - name: $expand
           in: query
@@ -1130,8 +1633,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1206,8 +1707,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
               type: string
         - name: $expand
           in: query
@@ -1218,8 +1717,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1711,9 +2208,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
               type: string
         - name: $select
           in: query
@@ -1724,8 +2218,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
               type: string
         - name: $expand
           in: query
@@ -1736,8 +2228,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1812,8 +2302,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
               type: string
         - name: $expand
           in: query
@@ -1824,8 +2312,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2432,19 +2918,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - content
-                - content desc
-                - createdDateTime
-                - createdDateTime desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - settings
-                - settings desc
-                - state
-                - state desc
               type: string
         - name: $select
           in: query
@@ -2455,14 +2928,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - content
-                - createdDateTime
-                - lastModifiedDateTime
-                - settings
-                - state
-                - audience
               type: string
         - name: $expand
           in: query
@@ -2473,9 +2938,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - audience
               type: string
       responses:
         2XX:
@@ -2540,14 +3002,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - content
-                - createdDateTime
-                - lastModifiedDateTime
-                - settings
-                - state
-                - audience
               type: string
         - name: $expand
           in: query
@@ -2558,9 +3012,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - audience
               type: string
       responses:
         2XX:
@@ -2662,11 +3113,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - applicableContent
-                - exclusions
-                - members
               type: string
         - name: $expand
           in: query
@@ -2677,10 +3123,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - exclusions
-                - members
               type: string
       responses:
         2XX:
@@ -2749,6 +3191,588 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/admin/windows/updates/deployments/{deployment-id}/audience/applicableContent':
+    get:
+      tags:
+        - admin.adminWindows
+      summary: Get applicableContent from admin
+      description: Content eligible to deploy to devices in the audience. Not nullable. Read-only.
+      operationId: admin.window.update.deployment.audience_ListApplicableContent
+      parameters:
+        - name: deployment-id
+          in: path
+          description: The unique identifier of deployment
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deployment
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.windowsUpdates.applicableContentCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - admin.adminWindows
+      summary: Create new navigation property to applicableContent for admin
+      operationId: admin.window.update.deployment.audience_CreateApplicableContent
+      parameters:
+        - name: deployment-id
+          in: path
+          description: The unique identifier of deployment
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deployment
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.windowsUpdates.applicableContent'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.applicableContent'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/admin/windows/updates/deployments/{deployment-id}/audience/applicableContent/{applicableContent-catalogEntryId}':
+    get:
+      tags:
+        - admin.adminWindows
+      summary: Get applicableContent from admin
+      description: Content eligible to deploy to devices in the audience. Not nullable. Read-only.
+      operationId: admin.window.update.deployment.audience_GetApplicableContent
+      parameters:
+        - name: deployment-id
+          in: path
+          description: The unique identifier of deployment
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deployment
+        - name: applicableContent-catalogEntryId
+          in: path
+          description: The unique identifier of applicableContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: applicableContent
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.applicableContent'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - admin.adminWindows
+      summary: Update the navigation property applicableContent in admin
+      operationId: admin.window.update.deployment.audience_UpdateApplicableContent
+      parameters:
+        - name: deployment-id
+          in: path
+          description: The unique identifier of deployment
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deployment
+        - name: applicableContent-catalogEntryId
+          in: path
+          description: The unique identifier of applicableContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: applicableContent
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.windowsUpdates.applicableContent'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.applicableContent'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - admin.adminWindows
+      summary: Delete navigation property applicableContent for admin
+      operationId: admin.window.update.deployment.audience_DeleteApplicableContent
+      parameters:
+        - name: deployment-id
+          in: path
+          description: The unique identifier of deployment
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deployment
+        - name: applicableContent-catalogEntryId
+          in: path
+          description: The unique identifier of applicableContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: applicableContent
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/admin/windows/updates/deployments/{deployment-id}/audience/applicableContent/{applicableContent-catalogEntryId}/catalogEntry':
+    get:
+      tags:
+        - admin.adminWindows
+      summary: Get catalogEntry from admin
+      description: Catalog entry for the update or content.
+      operationId: admin.window.update.deployment.audience.applicableContent_GetCatalogEntry
+      parameters:
+        - name: deployment-id
+          in: path
+          description: The unique identifier of deployment
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deployment
+        - name: applicableContent-catalogEntryId
+          in: path
+          description: The unique identifier of applicableContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: applicableContent
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.catalogEntry'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/admin/windows/updates/deployments/{deployment-id}/audience/applicableContent/{applicableContent-catalogEntryId}/matchedDevices':
+    get:
+      tags:
+        - admin.adminWindows
+      summary: Get matchedDevices from admin
+      description: Collection of devices and recommendations for applicable catalog content.
+      operationId: admin.window.update.deployment.audience.applicableContent_ListMatchedDevice
+      parameters:
+        - name: deployment-id
+          in: path
+          description: The unique identifier of deployment
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deployment
+        - name: applicableContent-catalogEntryId
+          in: path
+          description: The unique identifier of applicableContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: applicableContent
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.windowsUpdates.applicableContentDeviceMatchCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - admin.adminWindows
+      summary: Create new navigation property to matchedDevices for admin
+      operationId: admin.window.update.deployment.audience.applicableContent_CreateMatchedDevice
+      parameters:
+        - name: deployment-id
+          in: path
+          description: The unique identifier of deployment
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deployment
+        - name: applicableContent-catalogEntryId
+          in: path
+          description: The unique identifier of applicableContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: applicableContent
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.windowsUpdates.applicableContentDeviceMatch'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.applicableContentDeviceMatch'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/admin/windows/updates/deployments/{deployment-id}/audience/applicableContent/{applicableContent-catalogEntryId}/matchedDevices/{applicableContentDeviceMatch-deviceId}':
+    get:
+      tags:
+        - admin.adminWindows
+      summary: Get matchedDevices from admin
+      description: Collection of devices and recommendations for applicable catalog content.
+      operationId: admin.window.update.deployment.audience.applicableContent_GetMatchedDevice
+      parameters:
+        - name: deployment-id
+          in: path
+          description: The unique identifier of deployment
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deployment
+        - name: applicableContent-catalogEntryId
+          in: path
+          description: The unique identifier of applicableContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: applicableContent
+        - name: applicableContentDeviceMatch-deviceId
+          in: path
+          description: The unique identifier of applicableContentDeviceMatch
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: applicableContentDeviceMatch
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.applicableContentDeviceMatch'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - admin.adminWindows
+      summary: Update the navigation property matchedDevices in admin
+      operationId: admin.window.update.deployment.audience.applicableContent_UpdateMatchedDevice
+      parameters:
+        - name: deployment-id
+          in: path
+          description: The unique identifier of deployment
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deployment
+        - name: applicableContent-catalogEntryId
+          in: path
+          description: The unique identifier of applicableContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: applicableContent
+        - name: applicableContentDeviceMatch-deviceId
+          in: path
+          description: The unique identifier of applicableContentDeviceMatch
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: applicableContentDeviceMatch
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.windowsUpdates.applicableContentDeviceMatch'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.applicableContentDeviceMatch'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - admin.adminWindows
+      summary: Delete navigation property matchedDevices for admin
+      operationId: admin.window.update.deployment.audience.applicableContent_DeleteMatchedDevice
+      parameters:
+        - name: deployment-id
+          in: path
+          description: The unique identifier of deployment
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deployment
+        - name: applicableContent-catalogEntryId
+          in: path
+          description: The unique identifier of applicableContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: applicableContent
+        - name: applicableContentDeviceMatch-deviceId
+          in: path
+          description: The unique identifier of applicableContentDeviceMatch
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: applicableContentDeviceMatch
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/admin/windows/updates/deployments/{deployment-id}/audience/applicableContent/{applicableContent-catalogEntryId}/matchedDevices/$count':
+    get:
+      tags:
+        - admin.adminWindows
+      summary: Get the number of the resource
+      operationId: admin.window.update.deployment.audience.applicableContent.matchedDevice_GetCount
+      parameters:
+        - name: deployment-id
+          in: path
+          description: The unique identifier of deployment
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deployment
+        - name: applicableContent-catalogEntryId
+          in: path
+          description: The unique identifier of applicableContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: applicableContent
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/admin/windows/updates/deployments/{deployment-id}/audience/applicableContent/$count':
+    get:
+      tags:
+        - admin.adminWindows
+      summary: Get the number of the resource
+      operationId: admin.window.update.deployment.audience.applicableContent_GetCount
+      parameters:
+        - name: deployment-id
+          in: path
+          description: The unique identifier of deployment
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deployment
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/admin/windows/updates/deployments/{deployment-id}/audience/exclusions':
     get:
       tags:
@@ -2782,9 +3806,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
               type: string
         - name: $select
           in: query
@@ -2795,8 +3816,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
               type: string
         - name: $expand
           in: query
@@ -2807,8 +3826,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2883,8 +3900,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
               type: string
         - name: $expand
           in: query
@@ -2895,8 +3910,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3388,9 +4401,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
               type: string
         - name: $select
           in: query
@@ -3401,8 +4411,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
               type: string
         - name: $expand
           in: query
@@ -3413,8 +4421,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3489,8 +4495,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
               type: string
         - name: $expand
           in: query
@@ -3501,8 +4505,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -4109,11 +5111,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - state
-                - state desc
               type: string
         - name: $select
           in: query
@@ -4124,9 +5121,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - state
               type: string
         - name: $expand
           in: query
@@ -4137,8 +5131,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -4203,9 +5195,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - state
               type: string
         - name: $expand
           in: query
@@ -4216,8 +5205,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -4329,9 +5316,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
               type: string
         - name: $select
           in: query
@@ -4342,8 +5326,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
               type: string
         - name: $expand
           in: query
@@ -4354,8 +5336,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -4420,8 +5400,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
               type: string
         - name: $expand
           in: query
@@ -4432,8 +5410,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -4479,11 +5455,11 @@ paths:
     delete:
       tags:
         - admin.adminWindows
-      summary: Delete updatableAsset
-      description: Delete an updatableAsset object.
+      summary: Delete azureADDevice
+      description: 'Delete an azureADDevice object. When a Microsoft Entra device is deleted, it is unregistered from the deployment service and automatically unenrolled from management by the service for all update categories, as well as removed from every deploymentAudience and updatableAssetGroup.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-updatableasset-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/windowsupdates-azureaddevice-delete?view=graph-rest-1.0
       operationId: admin.window.update_DeleteUpdatableAsset
       parameters:
         - name: updatableAsset-id
@@ -4829,15 +5805,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - complianceChangeRules
-                - complianceChangeRules desc
-                - createdDateTime
-                - createdDateTime desc
-                - deploymentSettings
-                - deploymentSettings desc
               type: string
         - name: $select
           in: query
@@ -4848,13 +5815,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - complianceChangeRules
-                - createdDateTime
-                - deploymentSettings
-                - audience
-                - complianceChanges
               type: string
         - name: $expand
           in: query
@@ -4865,10 +5825,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - audience
-                - complianceChanges
               type: string
       responses:
         2XX:
@@ -4933,13 +5889,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - complianceChangeRules
-                - createdDateTime
-                - deploymentSettings
-                - audience
-                - complianceChanges
               type: string
         - name: $expand
           in: query
@@ -4950,10 +5899,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - audience
-                - complianceChanges
               type: string
       responses:
         2XX:
@@ -5055,11 +6000,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - applicableContent
-                - exclusions
-                - members
               type: string
         - name: $expand
           in: query
@@ -5070,10 +6010,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - exclusions
-                - members
               type: string
       responses:
         2XX:
@@ -5142,6 +6078,588 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/applicableContent':
+    get:
+      tags:
+        - admin.adminWindows
+      summary: Get applicableContent from admin
+      description: Content eligible to deploy to devices in the audience. Not nullable. Read-only.
+      operationId: admin.window.update.updatePolicy.audience_ListApplicableContent
+      parameters:
+        - name: updatePolicy-id
+          in: path
+          description: The unique identifier of updatePolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: updatePolicy
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.windowsUpdates.applicableContentCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - admin.adminWindows
+      summary: Create new navigation property to applicableContent for admin
+      operationId: admin.window.update.updatePolicy.audience_CreateApplicableContent
+      parameters:
+        - name: updatePolicy-id
+          in: path
+          description: The unique identifier of updatePolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: updatePolicy
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.windowsUpdates.applicableContent'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.applicableContent'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/applicableContent/{applicableContent-catalogEntryId}':
+    get:
+      tags:
+        - admin.adminWindows
+      summary: Get applicableContent from admin
+      description: Content eligible to deploy to devices in the audience. Not nullable. Read-only.
+      operationId: admin.window.update.updatePolicy.audience_GetApplicableContent
+      parameters:
+        - name: updatePolicy-id
+          in: path
+          description: The unique identifier of updatePolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: updatePolicy
+        - name: applicableContent-catalogEntryId
+          in: path
+          description: The unique identifier of applicableContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: applicableContent
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.applicableContent'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - admin.adminWindows
+      summary: Update the navigation property applicableContent in admin
+      operationId: admin.window.update.updatePolicy.audience_UpdateApplicableContent
+      parameters:
+        - name: updatePolicy-id
+          in: path
+          description: The unique identifier of updatePolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: updatePolicy
+        - name: applicableContent-catalogEntryId
+          in: path
+          description: The unique identifier of applicableContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: applicableContent
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.windowsUpdates.applicableContent'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.applicableContent'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - admin.adminWindows
+      summary: Delete navigation property applicableContent for admin
+      operationId: admin.window.update.updatePolicy.audience_DeleteApplicableContent
+      parameters:
+        - name: updatePolicy-id
+          in: path
+          description: The unique identifier of updatePolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: updatePolicy
+        - name: applicableContent-catalogEntryId
+          in: path
+          description: The unique identifier of applicableContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: applicableContent
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/applicableContent/{applicableContent-catalogEntryId}/catalogEntry':
+    get:
+      tags:
+        - admin.adminWindows
+      summary: Get catalogEntry from admin
+      description: Catalog entry for the update or content.
+      operationId: admin.window.update.updatePolicy.audience.applicableContent_GetCatalogEntry
+      parameters:
+        - name: updatePolicy-id
+          in: path
+          description: The unique identifier of updatePolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: updatePolicy
+        - name: applicableContent-catalogEntryId
+          in: path
+          description: The unique identifier of applicableContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: applicableContent
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.catalogEntry'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/applicableContent/{applicableContent-catalogEntryId}/matchedDevices':
+    get:
+      tags:
+        - admin.adminWindows
+      summary: Get matchedDevices from admin
+      description: Collection of devices and recommendations for applicable catalog content.
+      operationId: admin.window.update.updatePolicy.audience.applicableContent_ListMatchedDevice
+      parameters:
+        - name: updatePolicy-id
+          in: path
+          description: The unique identifier of updatePolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: updatePolicy
+        - name: applicableContent-catalogEntryId
+          in: path
+          description: The unique identifier of applicableContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: applicableContent
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.windowsUpdates.applicableContentDeviceMatchCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - admin.adminWindows
+      summary: Create new navigation property to matchedDevices for admin
+      operationId: admin.window.update.updatePolicy.audience.applicableContent_CreateMatchedDevice
+      parameters:
+        - name: updatePolicy-id
+          in: path
+          description: The unique identifier of updatePolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: updatePolicy
+        - name: applicableContent-catalogEntryId
+          in: path
+          description: The unique identifier of applicableContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: applicableContent
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.windowsUpdates.applicableContentDeviceMatch'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.applicableContentDeviceMatch'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/applicableContent/{applicableContent-catalogEntryId}/matchedDevices/{applicableContentDeviceMatch-deviceId}':
+    get:
+      tags:
+        - admin.adminWindows
+      summary: Get matchedDevices from admin
+      description: Collection of devices and recommendations for applicable catalog content.
+      operationId: admin.window.update.updatePolicy.audience.applicableContent_GetMatchedDevice
+      parameters:
+        - name: updatePolicy-id
+          in: path
+          description: The unique identifier of updatePolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: updatePolicy
+        - name: applicableContent-catalogEntryId
+          in: path
+          description: The unique identifier of applicableContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: applicableContent
+        - name: applicableContentDeviceMatch-deviceId
+          in: path
+          description: The unique identifier of applicableContentDeviceMatch
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: applicableContentDeviceMatch
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.applicableContentDeviceMatch'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - admin.adminWindows
+      summary: Update the navigation property matchedDevices in admin
+      operationId: admin.window.update.updatePolicy.audience.applicableContent_UpdateMatchedDevice
+      parameters:
+        - name: updatePolicy-id
+          in: path
+          description: The unique identifier of updatePolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: updatePolicy
+        - name: applicableContent-catalogEntryId
+          in: path
+          description: The unique identifier of applicableContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: applicableContent
+        - name: applicableContentDeviceMatch-deviceId
+          in: path
+          description: The unique identifier of applicableContentDeviceMatch
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: applicableContentDeviceMatch
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.windowsUpdates.applicableContentDeviceMatch'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.applicableContentDeviceMatch'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - admin.adminWindows
+      summary: Delete navigation property matchedDevices for admin
+      operationId: admin.window.update.updatePolicy.audience.applicableContent_DeleteMatchedDevice
+      parameters:
+        - name: updatePolicy-id
+          in: path
+          description: The unique identifier of updatePolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: updatePolicy
+        - name: applicableContent-catalogEntryId
+          in: path
+          description: The unique identifier of applicableContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: applicableContent
+        - name: applicableContentDeviceMatch-deviceId
+          in: path
+          description: The unique identifier of applicableContentDeviceMatch
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: applicableContentDeviceMatch
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/applicableContent/{applicableContent-catalogEntryId}/matchedDevices/$count':
+    get:
+      tags:
+        - admin.adminWindows
+      summary: Get the number of the resource
+      operationId: admin.window.update.updatePolicy.audience.applicableContent.matchedDevice_GetCount
+      parameters:
+        - name: updatePolicy-id
+          in: path
+          description: The unique identifier of updatePolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: updatePolicy
+        - name: applicableContent-catalogEntryId
+          in: path
+          description: The unique identifier of applicableContent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: applicableContent
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/applicableContent/$count':
+    get:
+      tags:
+        - admin.adminWindows
+      summary: Get the number of the resource
+      operationId: admin.window.update.updatePolicy.audience.applicableContent_GetCount
+      parameters:
+        - name: updatePolicy-id
+          in: path
+          description: The unique identifier of updatePolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: updatePolicy
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/exclusions':
     get:
       tags:
@@ -5175,9 +6693,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
               type: string
         - name: $select
           in: query
@@ -5188,8 +6703,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
               type: string
         - name: $expand
           in: query
@@ -5200,8 +6713,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -5276,8 +6787,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
               type: string
         - name: $expand
           in: query
@@ -5288,8 +6797,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -5781,9 +7288,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
               type: string
         - name: $select
           in: query
@@ -5794,8 +7298,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
               type: string
         - name: $expand
           in: query
@@ -5806,8 +7308,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -5882,8 +7382,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
               type: string
         - name: $expand
           in: query
@@ -5894,8 +7392,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -6496,15 +7992,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - createdDateTime
-                - createdDateTime desc
-                - isRevoked
-                - isRevoked desc
-                - revokedDateTime
-                - revokedDateTime desc
               type: string
         - name: $select
           in: query
@@ -6515,12 +8002,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdDateTime
-                - isRevoked
-                - revokedDateTime
-                - updatePolicy
               type: string
         - name: $expand
           in: query
@@ -6531,9 +8012,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - updatePolicy
               type: string
       responses:
         2XX:
@@ -6615,12 +8093,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdDateTime
-                - isRevoked
-                - revokedDateTime
-                - updatePolicy
               type: string
         - name: $expand
           in: query
@@ -6631,9 +8103,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - updatePolicy
               type: string
       responses:
         2XX:
@@ -6691,11 +8160,11 @@ paths:
     delete:
       tags:
         - admin.adminWindows
-      summary: Delete contentApproval
-      description: Delete a contentApproval object.
+      summary: Delete complianceChange
+      description: Delete a complianceChange object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-contentapproval-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/windowsupdates-compliancechange-delete?view=graph-rest-1.0
       operationId: admin.window.update.updatePolicy_DeleteComplianceChange
       parameters:
         - name: updatePolicy-id
@@ -6759,13 +8228,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - complianceChangeRules
-                - createdDateTime
-                - deploymentSettings
-                - audience
-                - complianceChanges
               type: string
         - name: $expand
           in: query
@@ -6776,10 +8238,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - audience
-                - complianceChanges
               type: string
       responses:
         2XX:
@@ -7073,6 +8531,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.windowsUpdates.applicableContent'
               description: Content eligible to deploy to devices in the audience. Not nullable. Read-only.
+              x-ms-navigationProperty: true
             exclusions:
               type: array
               items:
@@ -7087,6 +8546,37 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.windowsUpdates.applicableContent:
+      title: applicableContent
+      type: object
+      properties:
+        catalogEntryId:
+          type: string
+          description: ID of the catalog entry for the applicable content.
+        catalogEntry:
+          $ref: '#/components/schemas/microsoft.graph.windowsUpdates.catalogEntry'
+        matchedDevices:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.windowsUpdates.applicableContentDeviceMatch'
+          description: Collection of devices and recommendations for applicable catalog content.
+          x-ms-navigationProperty: true
+      additionalProperties:
+        type: object
+    microsoft.graph.windowsUpdates.applicableContentDeviceMatch:
+      title: applicableContentDeviceMatch
+      type: object
+      properties:
+        deviceId:
+          type: string
+          description: Collection of vendors who recommend the content.
+        recommendedBy:
+          type: array
+          items:
+            type: string
+          description: Collection of vendors who recommend the content.
+      additionalProperties:
+        type: object
     microsoft.graph.windowsUpdates.updatableAsset:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -7478,19 +8968,6 @@ components:
           - value: unknownFutureValue
             description: 'Placeholder for evolvable enum, but this enum is never returned to the caller, so it shoudn''t be necessary.'
             name: unknownFutureValue
-    microsoft.graph.windowsUpdates.applicableContent:
-      title: applicableContent
-      type: object
-      properties:
-        matchedDevices:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.windowsUpdates.applicableContentDeviceMatch'
-          description: Collection of devices and recommendations for applicable catalog content.
-        catalogEntry:
-          $ref: '#/components/schemas/microsoft.graph.windowsUpdates.catalogEntry'
-      additionalProperties:
-        type: object
     microsoft.graph.windowsUpdates.deployableContent:
       title: deployableContent
       type: object
@@ -7597,6 +9074,32 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.windowsUpdates.applicableContentCollectionResponse:
+      title: Collection of applicableContent
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.windowsUpdates.applicableContent'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.windowsUpdates.applicableContentDeviceMatchCollectionResponse:
+      title: Collection of applicableContentDeviceMatch
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.windowsUpdates.applicableContentDeviceMatch'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.windowsUpdates.updatableAssetCollectionResponse:
       title: Collection of updatableAsset
       type: object
@@ -7674,19 +9177,6 @@ components:
           type: string
           description: 'Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn''t included in the response.'
           nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.windowsUpdates.applicableContentDeviceMatch:
-      title: applicableContentDeviceMatch
-      type: object
-      properties:
-        deviceId:
-          type: string
-        recommendedBy:
-          type: array
-          items:
-            type: string
-          description: Collection of vendors who recommend the content.
       additionalProperties:
         type: object
     microsoft.graph.windowsUpdates.contentApplicabilitySettings:
@@ -7931,6 +9421,18 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.windowsUpdates.deploymentAudienceCollectionResponse'
+    microsoft.graph.windowsUpdates.applicableContentCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.windowsUpdates.applicableContentCollectionResponse'
+    microsoft.graph.windowsUpdates.applicableContentDeviceMatchCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.windowsUpdates.applicableContentDeviceMatchCollectionResponse'
     microsoft.graph.windowsUpdates.updatableAssetCollectionResponse:
       description: Retrieved collection
       content:

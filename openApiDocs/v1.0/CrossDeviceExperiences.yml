@@ -39,35 +39,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - activationUrl
-                - activationUrl desc
-                - activitySourceHost
-                - activitySourceHost desc
-                - appActivityId
-                - appActivityId desc
-                - appDisplayName
-                - appDisplayName desc
-                - contentInfo
-                - contentInfo desc
-                - contentUrl
-                - contentUrl desc
-                - createdDateTime
-                - createdDateTime desc
-                - expirationDateTime
-                - expirationDateTime desc
-                - fallbackUrl
-                - fallbackUrl desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - status
-                - status desc
-                - userTimezone
-                - userTimezone desc
-                - visualElements
-                - visualElements desc
               type: string
         - name: $select
           in: query
@@ -78,22 +49,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - activationUrl
-                - activitySourceHost
-                - appActivityId
-                - appDisplayName
-                - contentInfo
-                - contentUrl
-                - createdDateTime
-                - expirationDateTime
-                - fallbackUrl
-                - lastModifiedDateTime
-                - status
-                - userTimezone
-                - visualElements
-                - historyItems
               type: string
         - name: $expand
           in: query
@@ -104,9 +59,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - historyItems
               type: string
       responses:
         2XX:
@@ -181,22 +133,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - activationUrl
-                - activitySourceHost
-                - appActivityId
-                - appDisplayName
-                - contentInfo
-                - contentUrl
-                - createdDateTime
-                - expirationDateTime
-                - fallbackUrl
-                - lastModifiedDateTime
-                - status
-                - userTimezone
-                - visualElements
-                - historyItems
               type: string
         - name: $expand
           in: query
@@ -207,9 +143,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - historyItems
               type: string
       responses:
         2XX:
@@ -336,25 +269,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - activeDurationSeconds
-                - activeDurationSeconds desc
-                - createdDateTime
-                - createdDateTime desc
-                - expirationDateTime
-                - expirationDateTime desc
-                - lastActiveDateTime
-                - lastActiveDateTime desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - startedDateTime
-                - startedDateTime desc
-                - status
-                - status desc
-                - userTimezone
-                - userTimezone desc
               type: string
         - name: $select
           in: query
@@ -365,17 +279,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - activeDurationSeconds
-                - createdDateTime
-                - expirationDateTime
-                - lastActiveDateTime
-                - lastModifiedDateTime
-                - startedDateTime
-                - status
-                - userTimezone
-                - activity
               type: string
         - name: $expand
           in: query
@@ -386,9 +289,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - activity
               type: string
       responses:
         2XX:
@@ -479,17 +379,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - activeDurationSeconds
-                - createdDateTime
-                - expirationDateTime
-                - lastActiveDateTime
-                - lastModifiedDateTime
-                - startedDateTime
-                - status
-                - userTimezone
-                - activity
               type: string
         - name: $expand
           in: query
@@ -500,9 +389,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - activity
               type: string
       responses:
         2XX:
@@ -517,11 +403,11 @@ paths:
     patch:
       tags:
         - users.userActivity
-      summary: Create or replace a historyItem
-      description: Create a new or replace an existing history item for an existing user activity.
+      summary: Delete a historyItem
+      description: Delete an existing history item for an existing user activity.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/projectrome-put-historyitem?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/projectrome-delete-historyitem?view=graph-rest-1.0
       operationId: user.activity_UpdateHistoryItem
       parameters:
         - name: user-id
@@ -648,22 +534,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - activationUrl
-                - activitySourceHost
-                - appActivityId
-                - appDisplayName
-                - contentInfo
-                - contentUrl
-                - createdDateTime
-                - expirationDateTime
-                - fallbackUrl
-                - lastModifiedDateTime
-                - status
-                - userTimezone
-                - visualElements
-                - historyItems
               type: string
         - name: $expand
           in: query
@@ -674,9 +544,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - historyItems
               type: string
       responses:
         2XX:

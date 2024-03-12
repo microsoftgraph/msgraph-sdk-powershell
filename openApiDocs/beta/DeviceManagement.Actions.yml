@@ -1377,8 +1377,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-09-30T00:00:00.0000000+00:00'
-        date: '2023-07-17T00:00:00.0000000+00:00'
+        removalDate: '2023-09-30'
+        date: '2023-07-17'
         version: 2023-07/reprovisionCloudPc
         description: 'The reprovisionCloudPc API is deprecated and will stop returning on Sep 30, 2023. Please use reprovision instead'
       x-ms-docs-operation-type: action
@@ -1465,8 +1465,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-10-30T00:00:00.0000000+00:00'
-        date: '2023-07-24T00:00:00.0000000+00:00'
+        removalDate: '2023-10-30'
+        date: '2023-07-24'
         version: 2023-05/resizeCloudPc
         description: 'The resizeCloudPc API is deprecated and will stop returning on Oct 30, 2023. Please use resize instead'
       x-ms-docs-operation-type: action
@@ -1509,8 +1509,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-10-30T00:00:00.0000000+00:00'
-        date: '2023-08-22T00:00:00.0000000+00:00'
+        removalDate: '2023-10-30'
+        date: '2023-08-22'
         version: 2023-07/restoreCloudPc
         description: 'The restoreCloudPc API is deprecated and will stop returning on Sep 30, 2023. Please use restore instead'
       x-ms-docs-operation-type: action
@@ -1984,8 +1984,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-09-24T00:00:00.0000000+00:00'
-        date: '2023-05-24T00:00:00.0000000+00:00'
+        removalDate: '2023-09-24'
+        date: '2023-05-24'
         version: 2023-05/bulkReprovisionCloudPc
         description: 'The bulkReprovisionCloudPc action is deprecated and will stop supporting on September 24, 2023. Please use bulk action entity api.'
       x-ms-docs-operation-type: action
@@ -2032,8 +2032,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-09-24T00:00:00.0000000+00:00'
-        date: '2023-05-24T00:00:00.0000000+00:00'
+        removalDate: '2023-09-24'
+        date: '2023-05-24'
         version: 2023-05/bulkRestoreCloudPc
         description: 'The bulkRestoreCloudPc action is deprecated and will stop supporting on September 24, 2023. Please use bulk action entity api.'
       x-ms-docs-operation-type: action
@@ -5268,8 +5268,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-09-30T00:00:00.0000000+00:00'
-        date: '2023-07-17T00:00:00.0000000+00:00'
+        removalDate: '2023-09-30'
+        date: '2023-07-17'
         version: 2023-07/reprovisionCloudPc
         description: 'The reprovisionCloudPc API is deprecated and will stop returning on Sep 30, 2023. Please use reprovision instead'
       x-ms-docs-operation-type: action
@@ -5356,8 +5356,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-10-30T00:00:00.0000000+00:00'
-        date: '2023-07-24T00:00:00.0000000+00:00'
+        removalDate: '2023-10-30'
+        date: '2023-07-24'
         version: 2023-05/resizeCloudPc
         description: 'The resizeCloudPc API is deprecated and will stop returning on Oct 30, 2023. Please use resize instead'
       x-ms-docs-operation-type: action
@@ -5400,8 +5400,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-10-30T00:00:00.0000000+00:00'
-        date: '2023-08-22T00:00:00.0000000+00:00'
+        removalDate: '2023-10-30'
+        date: '2023-08-22'
         version: 2023-07/restoreCloudPc
         description: 'The restoreCloudPc API is deprecated and will stop returning on Sep 30, 2023. Please use restore instead'
       x-ms-docs-operation-type: action
@@ -5875,8 +5875,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-09-24T00:00:00.0000000+00:00'
-        date: '2023-05-24T00:00:00.0000000+00:00'
+        removalDate: '2023-09-24'
+        date: '2023-05-24'
         version: 2023-05/bulkReprovisionCloudPc
         description: 'The bulkReprovisionCloudPc action is deprecated and will stop supporting on September 24, 2023. Please use bulk action entity api.'
       x-ms-docs-operation-type: action
@@ -5923,8 +5923,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-09-24T00:00:00.0000000+00:00'
-        date: '2023-05-24T00:00:00.0000000+00:00'
+        removalDate: '2023-09-24'
+        date: '2023-05-24'
         version: 2023-05/bulkRestoreCloudPc
         description: 'The bulkRestoreCloudPc action is deprecated and will stop supporting on September 24, 2023. Please use bulk action entity api.'
       x-ms-docs-operation-type: action
@@ -6616,6 +6616,32 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: alertRecord
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /deviceManagement/monitoring/alertRecords/microsoft.graph.deviceManagement.changeAlertRecordsPortalNotificationAsSent:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action changeAlertRecordsPortalNotificationAsSent
+      operationId: deviceManagement.monitoring.alertRecord_changeAlertRecordsPortalNotificationAsSent
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                alertRecordIds:
+                  type: array
+                  items:
+                    type: string
+              additionalProperties:
+                type: object
+        required: true
       responses:
         2XX:
           description: Success
@@ -12990,8 +13016,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-09-24T00:00:00.0000000+00:00'
-        date: '2023-05-24T00:00:00.0000000+00:00'
+        removalDate: '2023-09-24'
+        date: '2023-05-24'
         version: 2023-05/bulkResize
         description: 'The bulkResize action is deprecated and will stop supporting on September 24, 2023. Please use bulk action entity api.'
       x-ms-docs-operation-type: action
@@ -13171,8 +13197,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-07-30T00:00:00.0000000+00:00'
-        date: '2023-03-16T00:00:00.0000000+00:00'
+        removalDate: '2023-07-30'
+        date: '2023-03-16'
         version: 2023-03/onPremisesConnectionId
         description: 'The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023.'
       x-ms-docs-operation-type: action
@@ -13216,8 +13242,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-07-30T00:00:00.0000000+00:00'
-        date: '2023-03-16T00:00:00.0000000+00:00'
+        removalDate: '2023-07-30'
+        date: '2023-03-16'
         version: 2023-03/onPremisesConnectionId
         description: 'The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023.'
       x-ms-docs-operation-type: action
@@ -13251,8 +13277,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-07-30T00:00:00.0000000+00:00'
-        date: '2023-03-16T00:00:00.0000000+00:00'
+        removalDate: '2023-07-30'
+        date: '2023-03-16'
         version: 2023-03/onPremisesConnectionId
         description: 'The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023.'
       x-ms-docs-operation-type: action
@@ -13963,8 +13989,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-10-17T00:00:00.0000000+00:00'
-        date: '2023-05-17T00:00:00.0000000+00:00'
+        removalDate: '2023-10-17'
+        date: '2023-05-17'
         version: 2023-05/getSharedUseLicenseUsageReport
         description: 'The getSharedUseLicenseUsageReport API is deprecated and will stop returning on Oct 17, 2023. Please use getFrontlineReport instead.'
       x-ms-docs-operation-type: action
@@ -19035,6 +19061,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.chat'
               x-ms-navigationProperty: true
+            cloudClipboard:
+              $ref: '#/components/schemas/microsoft.graph.cloudClipboardRoot'
             cloudPCs:
               type: array
               items:
@@ -19513,26 +19541,26 @@ components:
               nullable: true
             categoryId:
               type: string
-              description: Specify category in which the setting is under. Support $filters.
+              description: Specifies the area group under which the setting is configured in a specified configuration service provider (CSP)
               nullable: true
             description:
               type: string
-              description: Description of the setting.
+              description: Description of the item
               nullable: true
             displayName:
               type: string
-              description: 'Name of the setting. For example: Allow Toast.'
+              description: Display name of the item
               nullable: true
             helpText:
               type: string
-              description: Help text of the setting. Give more details of the setting.
+              description: Help text of the item
               nullable: true
             infoUrls:
               type: array
               items:
                 type: string
                 nullable: true
-              description: List of links more info for the setting can be found at.
+              description: List of links more info for the setting can be found at
             keywords:
               type: array
               items:
@@ -19556,7 +19584,7 @@ components:
               description: List of referred setting information.
             rootDefinitionId:
               type: string
-              description: Root setting definition id if the setting is a child setting.
+              description: Root setting definition if the setting is a child setting.
               nullable: true
             settingUsage:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationSettingUsage'
@@ -20924,7 +20952,7 @@ components:
       properties:
         issuer:
           type: string
-          description: 'Specifies the issuer of the identity, for example facebook.com. 512 character limit. For local accounts (where signInType isn''t federated), this property is the local default domain name for the tenant, for example contoso.com.<br>For guests from other Microsoft Entra organization, this is the domain of the federated organization, for examplecontoso.com`.  For more information about filtering behavior for this property, see Filtering on the identities property of a user.'
+          description: 'Specifies the issuer of the identity, for example facebook.com. 512 character limit. For local accounts (where signInType isn''t federated), this property is the local default domain name for the tenant, for example contoso.com.  For guests from other Microsoft Entra organizations, this is the domain of the federated organization, for example contoso.com. For more information about filtering behavior for this property, see Filtering on the identities property of a user.'
           nullable: true
         issuerAssignedId:
           type: string
@@ -21121,15 +21149,15 @@ components:
       properties:
         forceChangePasswordNextSignIn:
           type: boolean
-          description: 'true if the user must change her password on the next login; otherwise false. If not set, default is false.'
+          description: 'true if the user must change their password on the next sign-in; otherwise false. If not set, default is false.'
           nullable: true
         forceChangePasswordNextSignInWithMfa:
           type: boolean
-          description: 'If true, at next sign-in, the user must perform a multi-factor authentication (MFA) before being forced to change their password. The behavior is identical to forceChangePasswordNextSignIn except that the user is required to first perform a multi-factor authentication before password change. After a password change, this property will be automatically reset to false. If not set, default is false.'
+          description: 'If true, at next sign-in, the user must perform a multifactor authentication (MFA) before being forced to change their password. The behavior is identical to forceChangePasswordNextSignIn except that the user is required to first perform a multifactor authentication before password change. After a password change, this property will be automatically reset to false. If not set, default is false.'
           nullable: true
         password:
           type: string
-          description: 'The password for the user. This property is required when a user is created. It can be updated, but the user will be required to change the password on the next login. The password must satisfy minimum requirements as specified by the user''s passwordPolicies property. By default, a strong password is required.'
+          description: 'The password for the user. This property is required when a user is created. It can be updated, but the user will be required to change the password on the next sign-in. The password must satisfy minimum requirements as specified by the user''s passwordPolicies property. By default, a strong password is required.'
           nullable: true
       additionalProperties:
         type: object
@@ -21189,7 +21217,7 @@ components:
         lastNonInteractiveSignInDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client attempted (either successfully or unsuccessfully) to sign in to the directory the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Microsoft Entra ID maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.'
+          description: 'The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client attempted (either successfully or unsuccessfully) to sign in to the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Microsoft Entra ID maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.'
           format: date-time
           nullable: true
         lastNonInteractiveSignInRequestId:
@@ -22161,6 +22189,19 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.cloudClipboardRoot:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: cloudClipboardRoot
+          type: object
+          properties:
+            items:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudClipboardItem'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.cloudPC:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -23091,12 +23132,12 @@ components:
               type: array
               items:
                 type: string
-              description: 'Specifies the group behaviors that can be set for a Microsoft 365 group during creation. This can be set only as part of creation (POST). Possible values are AllowOnlyMembersToPost, HideGroupInOutlook, SubscribeNewGroupMembers, WelcomeEmailDisabled. For more information, see Set Microsoft 365 group behaviors and provisioning options.'
+              description: 'Specifies the group behaviors that can be set for a Microsoft 365 group during creation. This can be set only as part of creation (POST). For the list of possible values, see Set Microsoft 365 group behaviors and provisioning options.'
             resourceProvisioningOptions:
               type: array
               items:
                 type: string
-              description: 'Specifies the group resources that are provisioned as part of Microsoft 365 group creation that isn''t normally part of default group creation. The possible value is Team. For more information, see Set Microsoft 365 group behaviors and provisioning options. Returned by default. Supports $filter (eq, not, startsWith.'
+              description: 'Specifies the group resources that are associated with the Microsoft 365 group. The possible value is Team. For more information, see Set Microsoft 365 group behaviors and provisioning options. Returned by default. Supports $filter (eq, not, startsWith.'
             securityEnabled:
               type: boolean
               description: 'Specifies whether the group is a security group. Required.Returned by default. Supports $filter (eq, ne, not, in).'
@@ -23424,16 +23465,16 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.servicePlanInfo'
-              description: 'Information about the service plans assigned with the license. Read-only, Not nullable'
+              description: Information about the service plans assigned with the license. Read-only. Not nullable.
             skuId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
               type: string
-              description: Unique identifier (GUID) for the service SKU. Equal to the skuId property on the related SubscribedSku object. Read-only
+              description: Unique identifier (GUID) for the service SKU. Equal to the skuId property on the related subscribedSku object. Read-only.
               format: uuid
               nullable: true
             skuPartNumber:
               type: string
-              description: 'Unique SKU display name. Equal to the skuPartNumber on the related SubscribedSku object; for example: ''AAD_Premium''. Read-only'
+              description: 'Unique SKU display name. Equal to the skuPartNumber on the related subscribedSku object; for example, AAD_Premium. Read-only.'
               nullable: true
           additionalProperties:
             type: object
@@ -24371,7 +24412,7 @@ components:
             endDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The meeting end time in UTC.
+              description: The meeting end time in UTC. Required when you create an online meeting.
               format: date-time
               nullable: true
             externalId:
@@ -24384,6 +24425,10 @@ components:
             joinUrl:
               type: string
               nullable: true
+            meetingTemplateId:
+              type: string
+              description: The ID of the meeting template.
+              nullable: true
             participants:
               $ref: '#/components/schemas/microsoft.graph.meetingParticipants'
             recording:
@@ -24393,7 +24438,7 @@ components:
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The meeting start time in UTC.
+              description: The meeting start time in UTC. Required when you create an online meeting.
               format: date-time
               nullable: true
             meetingAttendanceReport:
@@ -24885,6 +24930,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.regionalAndLanguageSettings'
             shiftPreferences:
               $ref: '#/components/schemas/microsoft.graph.shiftPreferences'
+            windows:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.windowsSetting'
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.userTeamwork:
@@ -24895,11 +24945,11 @@ components:
           properties:
             locale:
               type: string
-              description: Represents the chosen locale of a user in Microsoft Teams.
+              description: The chosen locale of a user in Microsoft Teams.
               nullable: true
             region:
               type: string
-              description: Represents the region of the user in Microsoft Teams.
+              description: The region of the user in Microsoft Teams.
               nullable: true
             associatedTeams:
               type: array
@@ -25988,6 +26038,7 @@ components:
             subject:
               type: string
               description: 'Required. The identifier of the external software workload within the external identity provider. Like the audience value, it has no fixed format, as each identity provider uses their own - sometimes a GUID, sometimes a colon delimited identifier, sometimes arbitrary strings. The value here must match the sub claim within the token presented to Microsoft Entra ID. The combination of issuer and subject must be unique on the app. It has a limit of 600 characters. Supports $filter (eq).'
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.homeRealmDiscoveryPolicy:
@@ -26965,6 +27016,31 @@ components:
               nullable: true
             teamsApp:
               $ref: '#/components/schemas/microsoft.graph.teamsApp'
+          additionalProperties:
+            type: object
+    microsoft.graph.cloudClipboardItem:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: cloudClipboardItem
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            expirationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            payloads:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudClipboardItemPayload'
           additionalProperties:
             type: object
     microsoft.graph.cloudPcConnectionSettings:
@@ -28591,6 +28667,14 @@ components:
               type: boolean
               description: Indicates whether the schedule is enabled for the team. Required.
               nullable: true
+            isCrossLocationShiftRequestApprovalRequired:
+              type: boolean
+              description: Indicates whether approval is required by a manager of this schedule for cross location shift requests.
+              nullable: true
+            isCrossLocationShiftsEnabled:
+              type: boolean
+              description: Indicates whether the cross-location marketplace feature is enabled for this schedule.
+              nullable: true
             offerShiftRequestsEnabled:
               type: boolean
               description: Indicates whether offer shift requests are enabled for the schedule.
@@ -28631,7 +28715,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: The Ids for the workforce integrations associated with this schedule.
+              description: The IDs for the workforce integrations associated with this schedule.
             dayNotes:
               type: array
               items:
@@ -28672,6 +28756,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.shiftsRoleDefinition'
+              description: The definitions of the roles in the schedule.
               x-ms-navigationProperty: true
             swapShiftsChangeRequests:
               type: array
@@ -32495,6 +32580,27 @@ components:
               description: Availability of the user to be scheduled for work and its recurrence pattern.
           additionalProperties:
             type: object
+    microsoft.graph.windowsSetting:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: windowsSetting
+          type: object
+          properties:
+            payloadType:
+              type: string
+              nullable: true
+            settingType:
+              $ref: '#/components/schemas/microsoft.graph.windowsSettingType'
+            windowsDeviceId:
+              type: string
+              nullable: true
+            instances:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.windowsSettingInstance'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.associatedTeamInfo:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.teamInfo'
@@ -33370,6 +33476,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.teamsAppDashboardCardDefinition'
+              description: Dashboard cards specified in the Teams app manifest.
               x-ms-navigationProperty: true
             outlineIcon:
               $ref: '#/components/schemas/microsoft.graph.teamsAppIcon'
@@ -33585,6 +33692,16 @@ components:
           type: string
           description: Url for showing tab contents outside of Teams.
           nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.cloudClipboardItemPayload:
+      title: cloudClipboardItemPayload
+      type: object
+      properties:
+        content:
+          type: string
+        formatName:
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.cloudPcHealthCheckItem:
@@ -35648,7 +35765,7 @@ components:
           properties:
             code:
               type: string
-              description: The code for the schedulingGroup to represent an external identifier.
+              description: 'The code for the schedulingGroup to represent an external identifier. This field must be unique within the team in Microsoft Teams and uses an alphanumeric format, with a maximum of 100 characters.'
               nullable: true
             displayName:
               type: string
@@ -35705,12 +35822,15 @@ components:
           properties:
             description:
               type: string
+              description: The description of the role.
             displayName:
               type: string
+              description: The display name of the role.
             shiftsRolePermissions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.shiftsRolePermission'
+              description: The collection of role permissions within the role.
           additionalProperties:
             type: object
     microsoft.graph.swapShiftsChangeRequest:
@@ -35762,7 +35882,7 @@ components:
           properties:
             code:
               type: string
-              description: The code of the timeOffReason to represent an external identifier.
+              description: 'The code of the timeOffReason to represent an external identifier. This field must be unique within the team in Microsoft Teams and uses an alphanumeric format, with a maximum of 100 characters.'
               nullable: true
             displayName:
               type: string
@@ -37219,6 +37339,7 @@ components:
       properties:
         allowTextOnly:
           type: boolean
+          description: Indicates whether only text is allowed in the meeting chat. Optional.
           nullable: true
       additionalProperties:
         type: object
@@ -37802,6 +37923,7 @@ components:
         - unknownFutureValue
         - formCompletion
         - approvalCompletion
+        - completionInHostedApp
       type: string
       x-ms-enum-flags:
         isFlags: true
@@ -38287,6 +38409,36 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.windowsSettingType:
+      title: windowsSettingType
+      enum:
+        - roaming
+        - backup
+        - unknownFutureValue
+      type: string
+    microsoft.graph.windowsSettingInstance:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: windowsSettingInstance
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            expirationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            payload:
+              type: string
+          additionalProperties:
+            type: object
     microsoft.graph.teamInfo:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -39363,14 +39515,17 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamsAppDashboardCardSize'
             description:
               type: string
+              description: The description for the card. Required.
               nullable: true
             displayName:
               type: string
+              description: The name of the card. Required.
               nullable: true
             icon:
               $ref: '#/components/schemas/microsoft.graph.teamsAppDashboardCardIcon'
             pickerGroupId:
               type: string
+              description: ID for the group in the card picker. Required.
               nullable: true
           additionalProperties:
             type: object
@@ -39709,6 +39864,9 @@ components:
         - stream
         - powerPoint
         - office
+        - loki
+        - loop
+        - other
         - unknownFutureValue
       type: string
     microsoft.graph.retentionLabelSettings:
@@ -40486,6 +40644,7 @@ components:
           type: array
           items:
             type: string
+          description: The permissions that are allowed for a role. Permissions that aren't in this collection are disabled.
       additionalProperties:
         type: object
     microsoft.graph.timeCardBreak:
@@ -41613,13 +41772,9 @@ components:
               description: Email address of the presenter.
               nullable: true
             identity:
-              $ref: '#/components/schemas/microsoft.graph.communicationsUserIdentity'
+              $ref: '#/components/schemas/microsoft.graph.identity'
             presenterDetails:
               $ref: '#/components/schemas/microsoft.graph.virtualEventPresenterDetails'
-            profilePhoto:
-              type: string
-              format: base64url
-              nullable: true
             sessions:
               type: array
               items:
@@ -43218,9 +43373,11 @@ components:
       properties:
         iconUrl:
           type: string
+          description: 'The icon for the card, displayed in the toolbox and card bar, is represented as a URL. The preferred size for raster images is 28x28 pixels. If this property has a value, the officeFabricIconFontName property is ignored.'
           nullable: true
         officeUIFabricIconName:
           type: string
+          description: 'The friendly name of the Office UI Fabric/Fluent UI icon for the card that is used when the iconUrl property isn''t specified. For example, ''officeUIFabricIconName'': ''Search''.'
           nullable: true
       additionalProperties:
         type: object
@@ -43266,6 +43423,11 @@ components:
         - liveStream
         - presentation
         - screenRecording
+        - story
+        - profile
+        - chat
+        - note
+        - comment
         - unknownFutureValue
       type: string
     microsoft.graph.security.behaviorDuringRetentionPeriod:
@@ -43722,6 +43884,11 @@ components:
           type: string
           description: The presenter's personal website URL.
           nullable: true
+        photo:
+          type: string
+          description: The content stream of the presenter's photo.
+          format: base64url
+          nullable: true
         twitterProfileWebUrl:
           type: string
           description: The presenter's Twitter profile URL.
@@ -44055,6 +44222,7 @@ components:
       properties:
         botId:
           type: string
+          description: The ID (usually a GUID) of the bot associated with the specific teamsAppDefinition. This is a unique app ID for the bot as registered with the Bot Framework.
           nullable: true
       additionalProperties:
         type: object

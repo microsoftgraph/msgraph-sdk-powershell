@@ -26,12 +26,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - enabled
-                - excludedGroups
-                - includedGroups
-                - overrideDefaultRule
               type: string
         - name: $expand
           in: query
@@ -42,8 +36,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -103,11 +95,11 @@ paths:
     get:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
-      summary: List deviceEnrollmentWindowsHelloForBusinessConfigurations
-      description: List properties and relationships of the deviceEnrollmentWindowsHelloForBusinessConfiguration objects.
+      summary: List deviceEnrollmentPlatformRestrictionsConfigurations
+      description: List properties and relationships of the deviceEnrollmentPlatformRestrictionsConfiguration objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-onboarding-deviceenrollmentwindowshelloforbusinessconfiguration-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-onboarding-deviceenrollmentplatformrestrictionsconfiguration-list?view=graph-rest-1.0
       operationId: deviceManagement_ListDeviceEnrollmentConfiguration
       parameters:
         - $ref: '#/components/parameters/top'
@@ -124,21 +116,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - createdDateTime
-                - createdDateTime desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - priority
-                - priority desc
-                - version
-                - version desc
               type: string
         - name: $select
           in: query
@@ -149,15 +126,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdDateTime
-                - description
-                - displayName
-                - lastModifiedDateTime
-                - priority
-                - version
-                - assignments
               type: string
         - name: $expand
           in: query
@@ -168,9 +136,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - assignments
               type: string
       responses:
         2XX:
@@ -235,15 +200,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdDateTime
-                - description
-                - displayName
-                - lastModifiedDateTime
-                - priority
-                - version
-                - assignments
               type: string
         - name: $expand
           in: query
@@ -254,9 +210,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - assignments
               type: string
       responses:
         2XX:
@@ -271,11 +224,11 @@ paths:
     patch:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
-      summary: Update deviceEnrollmentLimitConfiguration
-      description: Update the properties of a deviceEnrollmentLimitConfiguration object.
+      summary: Update deviceEnrollmentPlatformRestrictionsConfiguration
+      description: Update the properties of a deviceEnrollmentPlatformRestrictionsConfiguration object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-onboarding-deviceenrollmentlimitconfiguration-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-onboarding-deviceenrollmentplatformrestrictionsconfiguration-update?view=graph-rest-1.0
       operationId: deviceManagement_UpdateDeviceEnrollmentConfiguration
       parameters:
         - name: deviceEnrollmentConfiguration-id
@@ -306,11 +259,11 @@ paths:
     delete:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
-      summary: Delete deviceEnrollmentPlatformRestrictionsConfiguration
-      description: Deletes a deviceEnrollmentPlatformRestrictionsConfiguration.
+      summary: Delete deviceEnrollmentLimitConfiguration
+      description: Deletes a deviceEnrollmentLimitConfiguration.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-onboarding-deviceenrollmentplatformrestrictionsconfiguration-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-onboarding-deviceenrollmentlimitconfiguration-delete?view=graph-rest-1.0
       operationId: deviceManagement_DeleteDeviceEnrollmentConfiguration
       parameters:
         - name: deviceEnrollmentConfiguration-id
@@ -366,11 +319,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - target
-                - target desc
               type: string
         - name: $select
           in: query
@@ -381,9 +329,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - target
               type: string
         - name: $expand
           in: query
@@ -394,8 +339,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -477,9 +420,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - target
               type: string
         - name: $expand
           in: query
@@ -490,8 +430,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -645,23 +583,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - assignedUserPrincipalName
-                - assignedUserPrincipalName desc
-                - groupTag
-                - groupTag desc
-                - hardwareIdentifier
-                - hardwareIdentifier desc
-                - importId
-                - importId desc
-                - productKey
-                - productKey desc
-                - serialNumber
-                - serialNumber desc
-                - state
-                - state desc
               type: string
         - name: $select
           in: query
@@ -672,15 +593,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - assignedUserPrincipalName
-                - groupTag
-                - hardwareIdentifier
-                - importId
-                - productKey
-                - serialNumber
-                - state
               type: string
         - name: $expand
           in: query
@@ -691,8 +603,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -757,15 +667,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - assignedUserPrincipalName
-                - groupTag
-                - hardwareIdentifier
-                - importId
-                - productKey
-                - serialNumber
-                - state
               type: string
         - name: $expand
           in: query
@@ -776,8 +677,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -889,41 +788,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - addressableUserName
-                - addressableUserName desc
-                - azureActiveDirectoryDeviceId
-                - azureActiveDirectoryDeviceId desc
-                - displayName
-                - displayName desc
-                - enrollmentState
-                - enrollmentState desc
-                - groupTag
-                - groupTag desc
-                - lastContactedDateTime
-                - lastContactedDateTime desc
-                - managedDeviceId
-                - managedDeviceId desc
-                - manufacturer
-                - manufacturer desc
-                - model
-                - model desc
-                - productKey
-                - productKey desc
-                - purchaseOrderIdentifier
-                - purchaseOrderIdentifier desc
-                - resourceName
-                - resourceName desc
-                - serialNumber
-                - serialNumber desc
-                - skuNumber
-                - skuNumber desc
-                - systemFamily
-                - systemFamily desc
-                - userPrincipalName
-                - userPrincipalName desc
               type: string
         - name: $select
           in: query
@@ -934,24 +798,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - addressableUserName
-                - azureActiveDirectoryDeviceId
-                - displayName
-                - enrollmentState
-                - groupTag
-                - lastContactedDateTime
-                - managedDeviceId
-                - manufacturer
-                - model
-                - productKey
-                - purchaseOrderIdentifier
-                - resourceName
-                - serialNumber
-                - skuNumber
-                - systemFamily
-                - userPrincipalName
               type: string
         - name: $expand
           in: query
@@ -962,8 +808,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1028,24 +872,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - addressableUserName
-                - azureActiveDirectoryDeviceId
-                - displayName
-                - enrollmentState
-                - groupTag
-                - lastContactedDateTime
-                - managedDeviceId
-                - manufacturer
-                - model
-                - productKey
-                - purchaseOrderIdentifier
-                - resourceName
-                - serialNumber
-                - skuNumber
-                - systemFamily
-                - userPrincipalName
               type: string
         - name: $expand
           in: query
@@ -1056,8 +882,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1160,9 +984,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - directory
-                - entitlementManagement
               type: string
         - name: $expand
           in: query
@@ -1173,10 +994,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - directory
-                - entitlementManagement
               type: string
       responses:
         2XX:
@@ -1691,7 +1508,7 @@ components:
           properties:
             assignmentType:
               type: string
-              description: 'Type of the assignment which can either be Assigned or Activated. Supports $filter (eq, ne).'
+              description: 'The type of the assignment that can either be Assigned or Activated. Supports $filter (eq, ne).'
               nullable: true
             endDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -1701,7 +1518,7 @@ components:
               nullable: true
             memberType:
               type: string
-              description: 'How the assignments is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleAssignmentSchedule can be managed by the caller. Supports $filter (eq, ne).'
+              description: 'How the assignment is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleAssignmentSchedule can be managed by the caller. Supports $filter (eq, ne).'
               nullable: true
             roleAssignmentOriginId:
               type: string
@@ -1783,11 +1600,11 @@ components:
           properties:
             assignmentType:
               type: string
-              description: 'Type of the assignment which can either be Assigned or Activated. Supports $filter (eq, ne).'
+              description: 'The type of the assignment that can either be Assigned or Activated. Supports $filter (eq, ne).'
               nullable: true
             memberType:
               type: string
-              description: 'How the assignments is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleAssignmentSchedule can be managed by the caller. Supports $filter (eq, ne).'
+              description: 'How the assignment is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleAssignmentSchedule can be managed by the caller. Supports $filter (eq, ne).'
               nullable: true
             scheduleInfo:
               $ref: '#/components/schemas/microsoft.graph.requestSchedule'

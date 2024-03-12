@@ -22,14 +22,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - settings
-                - connectors
-                - operations
-                - printers
-                - services
-                - shares
-                - taskDefinitions
               type: string
         - name: $expand
           in: query
@@ -40,14 +32,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - connectors
-                - operations
-                - printers
-                - services
-                - shares
-                - taskDefinitions
               type: string
       responses:
         2XX:
@@ -106,21 +90,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - appVersion
-                - appVersion desc
-                - displayName
-                - displayName desc
-                - fullyQualifiedDomainName
-                - fullyQualifiedDomainName desc
-                - location
-                - location desc
-                - operatingSystem
-                - operatingSystem desc
-                - registeredDateTime
-                - registeredDateTime desc
               type: string
         - name: $select
           in: query
@@ -131,14 +100,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - appVersion
-                - displayName
-                - fullyQualifiedDomainName
-                - location
-                - operatingSystem
-                - registeredDateTime
               type: string
         - name: $expand
           in: query
@@ -149,8 +110,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -211,14 +170,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - appVersion
-                - displayName
-                - fullyQualifiedDomainName
-                - location
-                - operatingSystem
-                - registeredDateTime
               type: string
         - name: $expand
           in: query
@@ -229,8 +180,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -343,13 +292,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - createdDateTime
-                - createdDateTime desc
-                - status
-                - status desc
               type: string
         - name: $select
           in: query
@@ -360,10 +302,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdDateTime
-                - status
               type: string
         - name: $expand
           in: query
@@ -374,8 +312,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -436,10 +372,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdDateTime
-                - status
               type: string
         - name: $expand
           in: query
@@ -450,8 +382,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -559,33 +489,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - capabilities
-                - capabilities desc
-                - defaults
-                - defaults desc
-                - displayName
-                - displayName desc
-                - isAcceptingJobs
-                - isAcceptingJobs desc
-                - location
-                - location desc
-                - manufacturer
-                - manufacturer desc
-                - model
-                - model desc
-                - status
-                - status desc
-                - hasPhysicalDevice
-                - hasPhysicalDevice desc
-                - isShared
-                - isShared desc
-                - lastSeenDateTime
-                - lastSeenDateTime desc
-                - registeredDateTime
-                - registeredDateTime desc
               type: string
         - name: $select
           in: query
@@ -596,24 +499,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - capabilities
-                - defaults
-                - displayName
-                - isAcceptingJobs
-                - location
-                - manufacturer
-                - model
-                - status
-                - hasPhysicalDevice
-                - isShared
-                - lastSeenDateTime
-                - registeredDateTime
-                - jobs
-                - connectors
-                - shares
-                - taskTriggers
               type: string
         - name: $expand
           in: query
@@ -624,12 +509,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - jobs
-                - connectors
-                - shares
-                - taskTriggers
               type: string
       responses:
         2XX:
@@ -690,24 +569,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - capabilities
-                - defaults
-                - displayName
-                - isAcceptingJobs
-                - location
-                - manufacturer
-                - model
-                - status
-                - hasPhysicalDevice
-                - isShared
-                - lastSeenDateTime
-                - registeredDateTime
-                - jobs
-                - connectors
-                - shares
-                - taskTriggers
               type: string
         - name: $expand
           in: query
@@ -718,12 +579,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - jobs
-                - connectors
-                - shares
-                - taskTriggers
               type: string
       responses:
         2XX:
@@ -833,21 +688,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - appVersion
-                - appVersion desc
-                - displayName
-                - displayName desc
-                - fullyQualifiedDomainName
-                - fullyQualifiedDomainName desc
-                - location
-                - location desc
-                - operatingSystem
-                - operatingSystem desc
-                - registeredDateTime
-                - registeredDateTime desc
               type: string
         - name: $select
           in: query
@@ -858,14 +698,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - appVersion
-                - displayName
-                - fullyQualifiedDomainName
-                - location
-                - operatingSystem
-                - registeredDateTime
               type: string
         - name: $expand
           in: query
@@ -876,8 +708,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -921,14 +751,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - appVersion
-                - displayName
-                - fullyQualifiedDomainName
-                - location
-                - operatingSystem
-                - registeredDateTime
               type: string
         - name: $expand
           in: query
@@ -939,8 +761,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1004,23 +824,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - configuration
-                - configuration desc
-                - createdBy
-                - createdBy desc
-                - createdDateTime
-                - createdDateTime desc
-                - isFetchable
-                - isFetchable desc
-                - redirectedFrom
-                - redirectedFrom desc
-                - redirectedTo
-                - redirectedTo desc
-                - status
-                - status desc
               type: string
         - name: $select
           in: query
@@ -1031,17 +834,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - configuration
-                - createdBy
-                - createdDateTime
-                - isFetchable
-                - redirectedFrom
-                - redirectedTo
-                - status
-                - documents
-                - tasks
               type: string
         - name: $expand
           in: query
@@ -1052,10 +844,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - documents
-                - tasks
               type: string
       responses:
         2XX:
@@ -1130,17 +918,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - configuration
-                - createdBy
-                - createdDateTime
-                - isFetchable
-                - redirectedFrom
-                - redirectedTo
-                - status
-                - documents
-                - tasks
               type: string
         - name: $expand
           in: query
@@ -1151,10 +928,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - documents
-                - tasks
               type: string
       responses:
         2XX:
@@ -1276,15 +1049,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - contentType
-                - contentType desc
-                - displayName
-                - displayName desc
-                - size
-                - size desc
               type: string
         - name: $select
           in: query
@@ -1295,11 +1059,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - contentType
-                - displayName
-                - size
               type: string
         - name: $expand
           in: query
@@ -1310,8 +1069,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1401,11 +1158,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - contentType
-                - displayName
-                - size
               type: string
         - name: $expand
           in: query
@@ -1416,8 +1168,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1896,13 +1646,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - parentUrl
-                - parentUrl desc
-                - status
-                - status desc
               type: string
         - name: $select
           in: query
@@ -1913,12 +1656,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - parentUrl
-                - status
-                - definition
-                - trigger
               type: string
         - name: $expand
           in: query
@@ -1929,10 +1666,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - definition
-                - trigger
               type: string
       responses:
         2XX:
@@ -2023,12 +1756,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - parentUrl
-                - status
-                - definition
-                - trigger
               type: string
         - name: $expand
           in: query
@@ -2039,10 +1766,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - definition
-                - trigger
               type: string
       responses:
         2XX:
@@ -2184,11 +1907,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdBy
-                - displayName
-                - tasks
               type: string
         - name: $expand
           in: query
@@ -2199,9 +1917,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - tasks
               type: string
       responses:
         2XX:
@@ -2254,10 +1969,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - event
-                - definition
               type: string
         - name: $expand
           in: query
@@ -2268,9 +1979,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - definition
               type: string
       responses:
         2XX:
@@ -2392,31 +2100,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - capabilities
-                - capabilities desc
-                - defaults
-                - defaults desc
-                - displayName
-                - displayName desc
-                - isAcceptingJobs
-                - isAcceptingJobs desc
-                - location
-                - location desc
-                - manufacturer
-                - manufacturer desc
-                - model
-                - model desc
-                - status
-                - status desc
-                - allowAllUsers
-                - allowAllUsers desc
-                - createdDateTime
-                - createdDateTime desc
-                - viewPoint
-                - viewPoint desc
               type: string
         - name: $select
           in: query
@@ -2427,23 +2110,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - capabilities
-                - defaults
-                - displayName
-                - isAcceptingJobs
-                - location
-                - manufacturer
-                - model
-                - status
-                - allowAllUsers
-                - createdDateTime
-                - viewPoint
-                - jobs
-                - allowedGroups
-                - allowedUsers
-                - printer
               type: string
         - name: $expand
           in: query
@@ -2454,12 +2120,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - jobs
-                - allowedGroups
-                - allowedUsers
-                - printer
               type: string
       responses:
         2XX:
@@ -2503,23 +2163,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - capabilities
-                - defaults
-                - displayName
-                - isAcceptingJobs
-                - location
-                - manufacturer
-                - model
-                - status
-                - allowAllUsers
-                - createdDateTime
-                - viewPoint
-                - jobs
-                - allowedGroups
-                - allowedUsers
-                - printer
               type: string
         - name: $expand
           in: query
@@ -2530,12 +2173,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - jobs
-                - allowedGroups
-                - allowedUsers
-                - printer
               type: string
       responses:
         2XX:
@@ -2602,11 +2239,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - event
-                - event desc
               type: string
         - name: $select
           in: query
@@ -2617,10 +2249,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - event
-                - definition
               type: string
         - name: $expand
           in: query
@@ -2631,9 +2259,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - definition
               type: string
       responses:
         2XX:
@@ -2715,10 +2340,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - event
-                - definition
               type: string
         - name: $expand
           in: query
@@ -2729,9 +2350,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - definition
               type: string
       responses:
         2XX:
@@ -2853,11 +2471,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdBy
-                - displayName
-                - tasks
               type: string
         - name: $expand
           in: query
@@ -2868,9 +2481,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - tasks
               type: string
       responses:
         2XX:
@@ -2987,9 +2597,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
               type: string
         - name: $select
           in: query
@@ -3000,9 +2607,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - endpoints
               type: string
         - name: $expand
           in: query
@@ -3013,9 +2617,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - endpoints
               type: string
       responses:
         2XX:
@@ -3076,9 +2677,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - endpoints
               type: string
         - name: $expand
           in: query
@@ -3089,9 +2687,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - endpoints
               type: string
       responses:
         2XX:
@@ -3193,13 +2788,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - displayName
-                - displayName desc
-                - uri
-                - uri desc
               type: string
         - name: $select
           in: query
@@ -3210,10 +2798,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
-                - uri
               type: string
         - name: $expand
           in: query
@@ -3224,8 +2808,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3303,10 +2885,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
-                - uri
               type: string
         - name: $expand
           in: query
@@ -3317,8 +2895,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3464,31 +3040,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - capabilities
-                - capabilities desc
-                - defaults
-                - defaults desc
-                - displayName
-                - displayName desc
-                - isAcceptingJobs
-                - isAcceptingJobs desc
-                - location
-                - location desc
-                - manufacturer
-                - manufacturer desc
-                - model
-                - model desc
-                - status
-                - status desc
-                - allowAllUsers
-                - allowAllUsers desc
-                - createdDateTime
-                - createdDateTime desc
-                - viewPoint
-                - viewPoint desc
               type: string
         - name: $select
           in: query
@@ -3499,23 +3050,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - capabilities
-                - defaults
-                - displayName
-                - isAcceptingJobs
-                - location
-                - manufacturer
-                - model
-                - status
-                - allowAllUsers
-                - createdDateTime
-                - viewPoint
-                - jobs
-                - allowedGroups
-                - allowedUsers
-                - printer
               type: string
         - name: $expand
           in: query
@@ -3526,12 +3060,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - jobs
-                - allowedGroups
-                - allowedUsers
-                - printer
               type: string
       responses:
         2XX:
@@ -3596,23 +3124,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - capabilities
-                - defaults
-                - displayName
-                - isAcceptingJobs
-                - location
-                - manufacturer
-                - model
-                - status
-                - allowAllUsers
-                - createdDateTime
-                - viewPoint
-                - jobs
-                - allowedGroups
-                - allowedUsers
-                - printer
               type: string
         - name: $expand
           in: query
@@ -3623,12 +3134,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - jobs
-                - allowedGroups
-                - allowedUsers
-                - printer
               type: string
       responses:
         2XX:
@@ -3738,91 +3243,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - deletedDateTime
-                - deletedDateTime desc
-                - allowExternalSenders
-                - allowExternalSenders desc
-                - assignedLabels
-                - assignedLabels desc
-                - assignedLicenses
-                - assignedLicenses desc
-                - autoSubscribeNewMembers
-                - autoSubscribeNewMembers desc
-                - classification
-                - classification desc
-                - createdDateTime
-                - createdDateTime desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - expirationDateTime
-                - expirationDateTime desc
-                - groupTypes
-                - groupTypes desc
-                - hasMembersWithLicenseErrors
-                - hasMembersWithLicenseErrors desc
-                - hideFromAddressLists
-                - hideFromAddressLists desc
-                - hideFromOutlookClients
-                - hideFromOutlookClients desc
-                - isArchived
-                - isArchived desc
-                - isAssignableToRole
-                - isAssignableToRole desc
-                - isSubscribedByMail
-                - isSubscribedByMail desc
-                - licenseProcessingState
-                - licenseProcessingState desc
-                - mail
-                - mail desc
-                - mailEnabled
-                - mailEnabled desc
-                - mailNickname
-                - mailNickname desc
-                - membershipRule
-                - membershipRule desc
-                - membershipRuleProcessingState
-                - membershipRuleProcessingState desc
-                - onPremisesDomainName
-                - onPremisesDomainName desc
-                - onPremisesLastSyncDateTime
-                - onPremisesLastSyncDateTime desc
-                - onPremisesNetBiosName
-                - onPremisesNetBiosName desc
-                - onPremisesProvisioningErrors
-                - onPremisesProvisioningErrors desc
-                - onPremisesSamAccountName
-                - onPremisesSamAccountName desc
-                - onPremisesSecurityIdentifier
-                - onPremisesSecurityIdentifier desc
-                - onPremisesSyncEnabled
-                - onPremisesSyncEnabled desc
-                - preferredDataLocation
-                - preferredDataLocation desc
-                - preferredLanguage
-                - preferredLanguage desc
-                - proxyAddresses
-                - proxyAddresses desc
-                - renewedDateTime
-                - renewedDateTime desc
-                - securityEnabled
-                - securityEnabled desc
-                - securityIdentifier
-                - securityIdentifier desc
-                - serviceProvisioningErrors
-                - serviceProvisioningErrors desc
-                - theme
-                - theme desc
-                - uniqueName
-                - uniqueName desc
-                - unseenCount
-                - unseenCount desc
-                - visibility
-                - visibility desc
               type: string
         - name: $select
           in: query
@@ -3833,76 +3253,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
-                - allowExternalSenders
-                - assignedLabels
-                - assignedLicenses
-                - autoSubscribeNewMembers
-                - classification
-                - createdDateTime
-                - description
-                - displayName
-                - expirationDateTime
-                - groupTypes
-                - hasMembersWithLicenseErrors
-                - hideFromAddressLists
-                - hideFromOutlookClients
-                - isArchived
-                - isAssignableToRole
-                - isSubscribedByMail
-                - licenseProcessingState
-                - mail
-                - mailEnabled
-                - mailNickname
-                - membershipRule
-                - membershipRuleProcessingState
-                - onPremisesDomainName
-                - onPremisesLastSyncDateTime
-                - onPremisesNetBiosName
-                - onPremisesProvisioningErrors
-                - onPremisesSamAccountName
-                - onPremisesSecurityIdentifier
-                - onPremisesSyncEnabled
-                - preferredDataLocation
-                - preferredLanguage
-                - proxyAddresses
-                - renewedDateTime
-                - securityEnabled
-                - securityIdentifier
-                - serviceProvisioningErrors
-                - theme
-                - uniqueName
-                - unseenCount
-                - visibility
-                - acceptedSenders
-                - appRoleAssignments
-                - calendar
-                - calendarView
-                - conversations
-                - createdOnBehalfOf
-                - drive
-                - drives
-                - events
-                - extensions
-                - groupLifecyclePolicies
-                - memberOf
-                - members
-                - membersWithLicenseErrors
-                - onenote
-                - owners
-                - permissionGrants
-                - photo
-                - photos
-                - planner
-                - rejectedSenders
-                - settings
-                - sites
-                - team
-                - threads
-                - transitiveMemberOf
-                - transitiveMembers
               type: string
         - name: $expand
           in: query
@@ -3913,35 +3263,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - acceptedSenders
-                - appRoleAssignments
-                - calendar
-                - calendarView
-                - conversations
-                - createdOnBehalfOf
-                - drive
-                - drives
-                - events
-                - extensions
-                - groupLifecyclePolicies
-                - memberOf
-                - members
-                - membersWithLicenseErrors
-                - onenote
-                - owners
-                - permissionGrants
-                - photo
-                - photos
-                - planner
-                - rejectedSenders
-                - settings
-                - sites
-                - team
-                - threads
-                - transitiveMemberOf
-                - transitiveMembers
               type: string
       responses:
         2XX:
@@ -4029,13 +3350,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - createdDateTime
-                - createdDateTime desc
-                - isResolved
-                - isResolved desc
-                - serviceInstance
-                - serviceInstance desc
               type: string
         - name: $select
           in: query
@@ -4046,10 +3360,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - createdDateTime
-                - isResolved
-                - serviceInstance
               type: string
         - name: $expand
           in: query
@@ -4060,8 +3370,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -4156,91 +3464,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - deletedDateTime
-                - deletedDateTime desc
-                - allowExternalSenders
-                - allowExternalSenders desc
-                - assignedLabels
-                - assignedLabels desc
-                - assignedLicenses
-                - assignedLicenses desc
-                - autoSubscribeNewMembers
-                - autoSubscribeNewMembers desc
-                - classification
-                - classification desc
-                - createdDateTime
-                - createdDateTime desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - expirationDateTime
-                - expirationDateTime desc
-                - groupTypes
-                - groupTypes desc
-                - hasMembersWithLicenseErrors
-                - hasMembersWithLicenseErrors desc
-                - hideFromAddressLists
-                - hideFromAddressLists desc
-                - hideFromOutlookClients
-                - hideFromOutlookClients desc
-                - isArchived
-                - isArchived desc
-                - isAssignableToRole
-                - isAssignableToRole desc
-                - isSubscribedByMail
-                - isSubscribedByMail desc
-                - licenseProcessingState
-                - licenseProcessingState desc
-                - mail
-                - mail desc
-                - mailEnabled
-                - mailEnabled desc
-                - mailNickname
-                - mailNickname desc
-                - membershipRule
-                - membershipRule desc
-                - membershipRuleProcessingState
-                - membershipRuleProcessingState desc
-                - onPremisesDomainName
-                - onPremisesDomainName desc
-                - onPremisesLastSyncDateTime
-                - onPremisesLastSyncDateTime desc
-                - onPremisesNetBiosName
-                - onPremisesNetBiosName desc
-                - onPremisesProvisioningErrors
-                - onPremisesProvisioningErrors desc
-                - onPremisesSamAccountName
-                - onPremisesSamAccountName desc
-                - onPremisesSecurityIdentifier
-                - onPremisesSecurityIdentifier desc
-                - onPremisesSyncEnabled
-                - onPremisesSyncEnabled desc
-                - preferredDataLocation
-                - preferredDataLocation desc
-                - preferredLanguage
-                - preferredLanguage desc
-                - proxyAddresses
-                - proxyAddresses desc
-                - renewedDateTime
-                - renewedDateTime desc
-                - securityEnabled
-                - securityEnabled desc
-                - securityIdentifier
-                - securityIdentifier desc
-                - serviceProvisioningErrors
-                - serviceProvisioningErrors desc
-                - theme
-                - theme desc
-                - uniqueName
-                - uniqueName desc
-                - unseenCount
-                - unseenCount desc
-                - visibility
-                - visibility desc
               type: string
       responses:
         2XX:
@@ -4348,165 +3571,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - deletedDateTime
-                - deletedDateTime desc
-                - aboutMe
-                - aboutMe desc
-                - accountEnabled
-                - accountEnabled desc
-                - ageGroup
-                - ageGroup desc
-                - assignedLicenses
-                - assignedLicenses desc
-                - assignedPlans
-                - assignedPlans desc
-                - authorizationInfo
-                - authorizationInfo desc
-                - birthday
-                - birthday desc
-                - businessPhones
-                - businessPhones desc
-                - city
-                - city desc
-                - companyName
-                - companyName desc
-                - consentProvidedForMinor
-                - consentProvidedForMinor desc
-                - country
-                - country desc
-                - createdDateTime
-                - createdDateTime desc
-                - creationType
-                - creationType desc
-                - customSecurityAttributes
-                - customSecurityAttributes desc
-                - department
-                - department desc
-                - deviceEnrollmentLimit
-                - deviceEnrollmentLimit desc
-                - displayName
-                - displayName desc
-                - employeeHireDate
-                - employeeHireDate desc
-                - employeeId
-                - employeeId desc
-                - employeeLeaveDateTime
-                - employeeLeaveDateTime desc
-                - employeeOrgData
-                - employeeOrgData desc
-                - employeeType
-                - employeeType desc
-                - externalUserState
-                - externalUserState desc
-                - externalUserStateChangeDateTime
-                - externalUserStateChangeDateTime desc
-                - faxNumber
-                - faxNumber desc
-                - givenName
-                - givenName desc
-                - hireDate
-                - hireDate desc
-                - identities
-                - identities desc
-                - imAddresses
-                - imAddresses desc
-                - interests
-                - interests desc
-                - isResourceAccount
-                - isResourceAccount desc
-                - jobTitle
-                - jobTitle desc
-                - lastPasswordChangeDateTime
-                - lastPasswordChangeDateTime desc
-                - legalAgeGroupClassification
-                - legalAgeGroupClassification desc
-                - licenseAssignmentStates
-                - licenseAssignmentStates desc
-                - mail
-                - mail desc
-                - mailboxSettings
-                - mailboxSettings desc
-                - mailNickname
-                - mailNickname desc
-                - mobilePhone
-                - mobilePhone desc
-                - mySite
-                - mySite desc
-                - officeLocation
-                - officeLocation desc
-                - onPremisesDistinguishedName
-                - onPremisesDistinguishedName desc
-                - onPremisesDomainName
-                - onPremisesDomainName desc
-                - onPremisesExtensionAttributes
-                - onPremisesExtensionAttributes desc
-                - onPremisesImmutableId
-                - onPremisesImmutableId desc
-                - onPremisesLastSyncDateTime
-                - onPremisesLastSyncDateTime desc
-                - onPremisesProvisioningErrors
-                - onPremisesProvisioningErrors desc
-                - onPremisesSamAccountName
-                - onPremisesSamAccountName desc
-                - onPremisesSecurityIdentifier
-                - onPremisesSecurityIdentifier desc
-                - onPremisesSyncEnabled
-                - onPremisesSyncEnabled desc
-                - onPremisesUserPrincipalName
-                - onPremisesUserPrincipalName desc
-                - otherMails
-                - otherMails desc
-                - passwordPolicies
-                - passwordPolicies desc
-                - passwordProfile
-                - passwordProfile desc
-                - pastProjects
-                - pastProjects desc
-                - postalCode
-                - postalCode desc
-                - preferredDataLocation
-                - preferredDataLocation desc
-                - preferredLanguage
-                - preferredLanguage desc
-                - preferredName
-                - preferredName desc
-                - print
-                - print desc
-                - provisionedPlans
-                - provisionedPlans desc
-                - proxyAddresses
-                - proxyAddresses desc
-                - responsibilities
-                - responsibilities desc
-                - schools
-                - schools desc
-                - securityIdentifier
-                - securityIdentifier desc
-                - serviceProvisioningErrors
-                - serviceProvisioningErrors desc
-                - showInAddressList
-                - showInAddressList desc
-                - signInActivity
-                - signInActivity desc
-                - signInSessionsValidFromDateTime
-                - signInSessionsValidFromDateTime desc
-                - skills
-                - skills desc
-                - state
-                - state desc
-                - streetAddress
-                - streetAddress desc
-                - surname
-                - surname desc
-                - usageLocation
-                - usageLocation desc
-                - userPrincipalName
-                - userPrincipalName desc
-                - userType
-                - userType desc
               type: string
         - name: $select
           in: query
@@ -4517,134 +3581,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
-                - aboutMe
-                - accountEnabled
-                - ageGroup
-                - assignedLicenses
-                - assignedPlans
-                - authorizationInfo
-                - birthday
-                - businessPhones
-                - city
-                - companyName
-                - consentProvidedForMinor
-                - country
-                - createdDateTime
-                - creationType
-                - customSecurityAttributes
-                - department
-                - deviceEnrollmentLimit
-                - displayName
-                - employeeHireDate
-                - employeeId
-                - employeeLeaveDateTime
-                - employeeOrgData
-                - employeeType
-                - externalUserState
-                - externalUserStateChangeDateTime
-                - faxNumber
-                - givenName
-                - hireDate
-                - identities
-                - imAddresses
-                - interests
-                - isResourceAccount
-                - jobTitle
-                - lastPasswordChangeDateTime
-                - legalAgeGroupClassification
-                - licenseAssignmentStates
-                - mail
-                - mailboxSettings
-                - mailNickname
-                - mobilePhone
-                - mySite
-                - officeLocation
-                - onPremisesDistinguishedName
-                - onPremisesDomainName
-                - onPremisesExtensionAttributes
-                - onPremisesImmutableId
-                - onPremisesLastSyncDateTime
-                - onPremisesProvisioningErrors
-                - onPremisesSamAccountName
-                - onPremisesSecurityIdentifier
-                - onPremisesSyncEnabled
-                - onPremisesUserPrincipalName
-                - otherMails
-                - passwordPolicies
-                - passwordProfile
-                - pastProjects
-                - postalCode
-                - preferredDataLocation
-                - preferredLanguage
-                - preferredName
-                - print
-                - provisionedPlans
-                - proxyAddresses
-                - responsibilities
-                - schools
-                - securityIdentifier
-                - serviceProvisioningErrors
-                - showInAddressList
-                - signInActivity
-                - signInSessionsValidFromDateTime
-                - skills
-                - state
-                - streetAddress
-                - surname
-                - usageLocation
-                - userPrincipalName
-                - userType
-                - activities
-                - agreementAcceptances
-                - appRoleAssignments
-                - authentication
-                - calendar
-                - calendarGroups
-                - calendars
-                - calendarView
-                - chats
-                - contactFolders
-                - contacts
-                - createdObjects
-                - deviceManagementTroubleshootingEvents
-                - directReports
-                - drive
-                - drives
-                - employeeExperience
-                - events
-                - extensions
-                - followedSites
-                - inferenceClassification
-                - insights
-                - joinedTeams
-                - licenseDetails
-                - mailFolders
-                - managedAppRegistrations
-                - managedDevices
-                - manager
-                - memberOf
-                - messages
-                - oauth2PermissionGrants
-                - onenote
-                - onlineMeetings
-                - outlook
-                - ownedDevices
-                - ownedObjects
-                - people
-                - permissionGrants
-                - photo
-                - photos
-                - planner
-                - presence
-                - registeredDevices
-                - scopedRoleMemberOf
-                - settings
-                - teamwork
-                - todo
-                - transitiveMemberOf
               type: string
         - name: $expand
           in: query
@@ -4655,56 +3591,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - activities
-                - agreementAcceptances
-                - appRoleAssignments
-                - authentication
-                - calendar
-                - calendarGroups
-                - calendars
-                - calendarView
-                - chats
-                - contactFolders
-                - contacts
-                - createdObjects
-                - deviceManagementTroubleshootingEvents
-                - directReports
-                - drive
-                - drives
-                - employeeExperience
-                - events
-                - extensions
-                - followedSites
-                - inferenceClassification
-                - insights
-                - joinedTeams
-                - licenseDetails
-                - mailFolders
-                - managedAppRegistrations
-                - managedDevices
-                - manager
-                - memberOf
-                - messages
-                - oauth2PermissionGrants
-                - onenote
-                - onlineMeetings
-                - outlook
-                - ownedDevices
-                - ownedObjects
-                - people
-                - permissionGrants
-                - photo
-                - photos
-                - planner
-                - presence
-                - registeredDevices
-                - scopedRoleMemberOf
-                - settings
-                - teamwork
-                - todo
-                - transitiveMemberOf
               type: string
       responses:
         2XX:
@@ -4787,16 +3673,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - archiveFolder
-                - automaticRepliesSetting
-                - dateFormat
-                - delegateMeetingMessageDeliveryOptions
-                - language
-                - timeFormat
-                - timeZone
-                - userPurpose
-                - workingHours
               type: string
         - name: $expand
           in: query
@@ -4807,8 +3683,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -4895,13 +3769,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - createdDateTime
-                - createdDateTime desc
-                - isResolved
-                - isResolved desc
-                - serviceInstance
-                - serviceInstance desc
               type: string
         - name: $select
           in: query
@@ -4912,10 +3779,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - createdDateTime
-                - isResolved
-                - serviceInstance
               type: string
         - name: $expand
           in: query
@@ -4926,8 +3789,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -5022,165 +3883,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - deletedDateTime
-                - deletedDateTime desc
-                - aboutMe
-                - aboutMe desc
-                - accountEnabled
-                - accountEnabled desc
-                - ageGroup
-                - ageGroup desc
-                - assignedLicenses
-                - assignedLicenses desc
-                - assignedPlans
-                - assignedPlans desc
-                - authorizationInfo
-                - authorizationInfo desc
-                - birthday
-                - birthday desc
-                - businessPhones
-                - businessPhones desc
-                - city
-                - city desc
-                - companyName
-                - companyName desc
-                - consentProvidedForMinor
-                - consentProvidedForMinor desc
-                - country
-                - country desc
-                - createdDateTime
-                - createdDateTime desc
-                - creationType
-                - creationType desc
-                - customSecurityAttributes
-                - customSecurityAttributes desc
-                - department
-                - department desc
-                - deviceEnrollmentLimit
-                - deviceEnrollmentLimit desc
-                - displayName
-                - displayName desc
-                - employeeHireDate
-                - employeeHireDate desc
-                - employeeId
-                - employeeId desc
-                - employeeLeaveDateTime
-                - employeeLeaveDateTime desc
-                - employeeOrgData
-                - employeeOrgData desc
-                - employeeType
-                - employeeType desc
-                - externalUserState
-                - externalUserState desc
-                - externalUserStateChangeDateTime
-                - externalUserStateChangeDateTime desc
-                - faxNumber
-                - faxNumber desc
-                - givenName
-                - givenName desc
-                - hireDate
-                - hireDate desc
-                - identities
-                - identities desc
-                - imAddresses
-                - imAddresses desc
-                - interests
-                - interests desc
-                - isResourceAccount
-                - isResourceAccount desc
-                - jobTitle
-                - jobTitle desc
-                - lastPasswordChangeDateTime
-                - lastPasswordChangeDateTime desc
-                - legalAgeGroupClassification
-                - legalAgeGroupClassification desc
-                - licenseAssignmentStates
-                - licenseAssignmentStates desc
-                - mail
-                - mail desc
-                - mailboxSettings
-                - mailboxSettings desc
-                - mailNickname
-                - mailNickname desc
-                - mobilePhone
-                - mobilePhone desc
-                - mySite
-                - mySite desc
-                - officeLocation
-                - officeLocation desc
-                - onPremisesDistinguishedName
-                - onPremisesDistinguishedName desc
-                - onPremisesDomainName
-                - onPremisesDomainName desc
-                - onPremisesExtensionAttributes
-                - onPremisesExtensionAttributes desc
-                - onPremisesImmutableId
-                - onPremisesImmutableId desc
-                - onPremisesLastSyncDateTime
-                - onPremisesLastSyncDateTime desc
-                - onPremisesProvisioningErrors
-                - onPremisesProvisioningErrors desc
-                - onPremisesSamAccountName
-                - onPremisesSamAccountName desc
-                - onPremisesSecurityIdentifier
-                - onPremisesSecurityIdentifier desc
-                - onPremisesSyncEnabled
-                - onPremisesSyncEnabled desc
-                - onPremisesUserPrincipalName
-                - onPremisesUserPrincipalName desc
-                - otherMails
-                - otherMails desc
-                - passwordPolicies
-                - passwordPolicies desc
-                - passwordProfile
-                - passwordProfile desc
-                - pastProjects
-                - pastProjects desc
-                - postalCode
-                - postalCode desc
-                - preferredDataLocation
-                - preferredDataLocation desc
-                - preferredLanguage
-                - preferredLanguage desc
-                - preferredName
-                - preferredName desc
-                - print
-                - print desc
-                - provisionedPlans
-                - provisionedPlans desc
-                - proxyAddresses
-                - proxyAddresses desc
-                - responsibilities
-                - responsibilities desc
-                - schools
-                - schools desc
-                - securityIdentifier
-                - securityIdentifier desc
-                - serviceProvisioningErrors
-                - serviceProvisioningErrors desc
-                - showInAddressList
-                - showInAddressList desc
-                - signInActivity
-                - signInActivity desc
-                - signInSessionsValidFromDateTime
-                - signInSessionsValidFromDateTime desc
-                - skills
-                - skills desc
-                - state
-                - state desc
-                - streetAddress
-                - streetAddress desc
-                - surname
-                - surname desc
-                - usageLocation
-                - usageLocation desc
-                - userPrincipalName
-                - userPrincipalName desc
-                - userType
-                - userType desc
               type: string
       responses:
         2XX:
@@ -5285,23 +3987,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - configuration
-                - configuration desc
-                - createdBy
-                - createdBy desc
-                - createdDateTime
-                - createdDateTime desc
-                - isFetchable
-                - isFetchable desc
-                - redirectedFrom
-                - redirectedFrom desc
-                - redirectedTo
-                - redirectedTo desc
-                - status
-                - status desc
               type: string
         - name: $select
           in: query
@@ -5312,17 +3997,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - configuration
-                - createdBy
-                - createdDateTime
-                - isFetchable
-                - redirectedFrom
-                - redirectedTo
-                - status
-                - documents
-                - tasks
               type: string
         - name: $expand
           in: query
@@ -5333,10 +4007,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - documents
-                - tasks
               type: string
       responses:
         2XX:
@@ -5411,17 +4081,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - configuration
-                - createdBy
-                - createdDateTime
-                - isFetchable
-                - redirectedFrom
-                - redirectedTo
-                - status
-                - documents
-                - tasks
               type: string
         - name: $expand
           in: query
@@ -5432,10 +4091,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - documents
-                - tasks
               type: string
       responses:
         2XX:
@@ -5557,15 +4212,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - contentType
-                - contentType desc
-                - displayName
-                - displayName desc
-                - size
-                - size desc
               type: string
         - name: $select
           in: query
@@ -5576,11 +4222,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - contentType
-                - displayName
-                - size
               type: string
         - name: $expand
           in: query
@@ -5591,8 +4232,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -5682,11 +4321,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - contentType
-                - displayName
-                - size
               type: string
         - name: $expand
           in: query
@@ -5697,8 +4331,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -6177,13 +4809,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - parentUrl
-                - parentUrl desc
-                - status
-                - status desc
               type: string
         - name: $select
           in: query
@@ -6194,12 +4819,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - parentUrl
-                - status
-                - definition
-                - trigger
               type: string
         - name: $expand
           in: query
@@ -6210,10 +4829,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - definition
-                - trigger
               type: string
       responses:
         2XX:
@@ -6304,12 +4919,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - parentUrl
-                - status
-                - definition
-                - trigger
               type: string
         - name: $expand
           in: query
@@ -6320,10 +4929,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - definition
-                - trigger
               type: string
       responses:
         2XX:
@@ -6465,11 +5070,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdBy
-                - displayName
-                - tasks
               type: string
         - name: $expand
           in: query
@@ -6480,9 +5080,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - tasks
               type: string
       responses:
         2XX:
@@ -6535,10 +5132,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - event
-                - definition
               type: string
         - name: $expand
           in: query
@@ -6549,9 +5142,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - definition
               type: string
       responses:
         2XX:
@@ -6640,24 +5230,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - capabilities
-                - defaults
-                - displayName
-                - isAcceptingJobs
-                - location
-                - manufacturer
-                - model
-                - status
-                - hasPhysicalDevice
-                - isShared
-                - lastSeenDateTime
-                - registeredDateTime
-                - jobs
-                - connectors
-                - shares
-                - taskTriggers
               type: string
         - name: $expand
           in: query
@@ -6668,12 +5240,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - jobs
-                - connectors
-                - shares
-                - taskTriggers
               type: string
       responses:
         2XX:
@@ -6724,13 +5290,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - createdBy
-                - createdBy desc
-                - displayName
-                - displayName desc
               type: string
         - name: $select
           in: query
@@ -6741,11 +5300,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdBy
-                - displayName
-                - tasks
               type: string
         - name: $expand
           in: query
@@ -6756,9 +5310,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - tasks
               type: string
       responses:
         2XX:
@@ -6823,11 +5374,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdBy
-                - displayName
-                - tasks
               type: string
         - name: $expand
           in: query
@@ -6838,9 +5384,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - tasks
               type: string
       responses:
         2XX:
@@ -6950,13 +5493,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - parentUrl
-                - parentUrl desc
-                - status
-                - status desc
               type: string
         - name: $select
           in: query
@@ -6967,12 +5503,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - parentUrl
-                - status
-                - definition
-                - trigger
               type: string
         - name: $expand
           in: query
@@ -6983,10 +5513,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - definition
-                - trigger
               type: string
       responses:
         2XX:
@@ -7064,12 +5590,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - parentUrl
-                - status
-                - definition
-                - trigger
               type: string
         - name: $expand
           in: query
@@ -7080,10 +5600,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - definition
-                - trigger
               type: string
       responses:
         2XX:
@@ -7205,11 +5721,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdBy
-                - displayName
-                - tasks
               type: string
         - name: $expand
           in: query
@@ -7220,9 +5731,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - tasks
               type: string
       responses:
         2XX:
@@ -7267,10 +5775,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - event
-                - definition
               type: string
         - name: $expand
           in: query
@@ -7281,9 +5785,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - definition
               type: string
       responses:
         2XX:
@@ -8880,6 +7381,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.chat'
               x-ms-navigationProperty: true
+            cloudClipboard:
+              $ref: '#/components/schemas/microsoft.graph.cloudClipboardRoot'
             contactFolders:
               type: array
               items:
@@ -10317,6 +8820,11 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.richLongRunningOperation'
               description: The collection of long-running operations on the site.
               x-ms-navigationProperty: true
+            pages:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.baseSitePage'
+              x-ms-navigationProperty: true
             permissions:
               type: array
               items:
@@ -10560,7 +9068,7 @@ components:
       properties:
         issuer:
           type: string
-          description: 'Specifies the issuer of the identity, for example facebook.com. 512 character limit. For local accounts (where signInType isn''t federated), this property is the local default domain name for the tenant, for example contoso.com.<br>For guests from other Microsoft Entra organization, this is the domain of the federated organization, for examplecontoso.com`.  For more information about filtering behavior for this property, see Filtering on the identities property of a user.'
+          description: 'Specifies the issuer of the identity, for example facebook.com. 512 character limit. For local accounts (where signInType isn''t federated), this property is the local default domain name for the tenant, for example contoso.com.  For guests from other Microsoft Entra organizations, this is the domain of the federated organization, for example contoso.com. For more information about filtering behavior for this property, see Filtering on the identities property of a user.'
           nullable: true
         issuerAssignedId:
           type: string
@@ -10676,15 +9184,15 @@ components:
       properties:
         forceChangePasswordNextSignIn:
           type: boolean
-          description: true if the user must change her password on the next login; otherwise false.
+          description: true if the user must change their password on the next sign-in; otherwise false.
           nullable: true
         forceChangePasswordNextSignInWithMfa:
           type: boolean
-          description: 'If true, at next sign-in, the user must perform a multi-factor authentication (MFA) before being forced to change their password. The behavior is identical to forceChangePasswordNextSignIn except that the user is required to first perform a multi-factor authentication before password change. After a password change, this property will be automatically reset to false. If not set, default is false.'
+          description: 'If true, at next sign-in, the user must perform a multifactor authentication (MFA) before being forced to change their password. The behavior is identical to forceChangePasswordNextSignIn except that the user is required to first perform a multifactor authentication before password change. After a password change, this property will be automatically reset to false. If not set, default is false.'
           nullable: true
         password:
           type: string
-          description: 'The password for the user. This property is required when a user is created. It can be updated, but the user will be required to change the password on the next login. The password must satisfy minimum requirements as specified by the user''s passwordPolicies property. By default, a strong password is required.'
+          description: 'The password for the user. This property is required when a user is created. It can be updated, but the user will be required to change the password on the next sign-in. The password must satisfy minimum requirements as specified by the user''s passwordPolicies property. By default, a strong password is required.'
           nullable: true
       additionalProperties:
         type: object
@@ -11040,6 +9548,19 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.cloudClipboardRoot:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: cloudClipboardRoot
+          type: object
+          properties:
+            items:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudClipboardItem'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.contactFolder:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -11309,16 +9830,16 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.servicePlanInfo'
-              description: 'Information about the service plans assigned with the license. Read-only, Not nullable'
+              description: Information about the service plans assigned with the license. Read-only. Not nullable.
             skuId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
               type: string
-              description: Unique identifier (GUID) for the service SKU. Equal to the skuId property on the related SubscribedSku object. Read-only
+              description: Unique identifier (GUID) for the service SKU. Equal to the skuId property on the related subscribedSku object. Read-only.
               format: uuid
               nullable: true
             skuPartNumber:
               type: string
-              description: 'Unique SKU display name. Equal to the skuPartNumber on the related SubscribedSku object; for example: ''AAD_Premium''. Read-only'
+              description: 'Unique SKU display name. Equal to the skuPartNumber on the related subscribedSku object; for example, AAD_Premium. Read-only.'
               nullable: true
           additionalProperties:
             type: object
@@ -11909,7 +10430,7 @@ components:
             endDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The meeting end time in UTC.
+              description: The meeting end time in UTC. Required when you create an online meeting.
               format: date-time
               nullable: true
             externalId:
@@ -11923,7 +10444,7 @@ components:
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The meeting start time in UTC.
+              description: The meeting start time in UTC. Required when you create an online meeting.
               format: date-time
               nullable: true
             recordings:
@@ -12108,6 +10629,11 @@ components:
               description: 'When set to true, the delegate access to the user''s trending API is disabled. When set to true, documents in the user''s Office Delve are disabled. When set to true, the relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for Business is affected. Users can control this setting in Office Delve.'
             shiftPreferences:
               $ref: '#/components/schemas/microsoft.graph.shiftPreferences'
+            windows:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.windowsSetting'
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.userTeamwork:
@@ -14152,6 +12678,21 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.baseSitePage:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.baseItem'
+        - title: baseSitePage
+          type: object
+          properties:
+            pageLayout:
+              $ref: '#/components/schemas/microsoft.graph.pageLayoutType'
+            publishingState:
+              $ref: '#/components/schemas/microsoft.graph.publicationFacet'
+            title:
+              type: string
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.permission:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -15227,6 +13768,31 @@ components:
               nullable: true
             teamsApp:
               $ref: '#/components/schemas/microsoft.graph.teamsApp'
+          additionalProperties:
+            type: object
+    microsoft.graph.cloudClipboardItem:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: cloudClipboardItem
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            expirationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            payloads:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudClipboardItemPayload'
           additionalProperties:
             type: object
     microsoft.graph.physicalAddress:
@@ -16706,6 +15272,27 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.shiftAvailability'
               description: Availability of the user to be scheduled for work and its recurrence pattern.
+          additionalProperties:
+            type: object
+    microsoft.graph.windowsSetting:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: windowsSetting
+          type: object
+          properties:
+            payloadType:
+              type: string
+              nullable: true
+            settingType:
+              $ref: '#/components/schemas/microsoft.graph.windowsSettingType'
+            windowsDeviceId:
+              type: string
+              nullable: true
+            instances:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.windowsSettingInstance'
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.associatedTeamInfo:
@@ -18297,6 +16884,14 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.pageLayoutType:
+      title: pageLayoutType
+      enum:
+        - microsoftReserved
+        - article
+        - home
+        - unknownFutureValue
+      type: string
     microsoft.graph.sharePointIdentitySet:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -18904,6 +17499,9 @@ components:
               type: string
               description: 'Enrollment profile applied to the device. For example, Apple Device Enrollment Profile, Device enrollment - Corporate device identifiers, or Windows Autopilot profile name. This property is set by Intune.'
               nullable: true
+            enrollmentType:
+              type: string
+              nullable: true
             isCompliant:
               type: boolean
               description: 'true if the device complies with Mobile Device Management (MDM) policies; otherwise, false. Read-only. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).'
@@ -18912,9 +17510,23 @@ components:
               type: boolean
               description: 'true if the device is managed by a Mobile Device Management (MDM) app; otherwise, false. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).'
               nullable: true
+            isRooted:
+              type: boolean
+              nullable: true
+            managementType:
+              type: string
+              nullable: true
+            manufacturer:
+              type: string
+              description: Manufacturer of the device. Read-only.
+              nullable: true
             mdmAppId:
               type: string
               description: 'Application identifier used to register device into MDM. Read-only. Supports $filter (eq, ne, not, startsWith).'
+              nullable: true
+            model:
+              type: string
+              description: Model of the device. Read-only.
               nullable: true
             onPremisesLastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -19210,6 +17822,16 @@ components:
           type: string
           description: Url for showing tab contents outside of Teams.
           nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.cloudClipboardItemPayload:
+      title: cloudClipboardItemPayload
+      type: object
+      properties:
+        content:
+          type: string
+        formatName:
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.courseStatus:
@@ -20299,6 +18921,36 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.windowsSettingType:
+      title: windowsSettingType
+      enum:
+        - roaming
+        - backup
+        - unknownFutureValue
+      type: string
+    microsoft.graph.windowsSettingInstance:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: windowsSettingInstance
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            expirationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            payload:
+              type: string
+          additionalProperties:
+            type: object
     microsoft.graph.teamInfo:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'

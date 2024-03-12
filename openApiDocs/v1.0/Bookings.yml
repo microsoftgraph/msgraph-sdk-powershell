@@ -22,10 +22,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - bookingBusinesses
-                - bookingCurrencies
-                - virtualEvents
               type: string
         - name: $expand
           in: query
@@ -36,11 +32,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - bookingBusinesses
-                - bookingCurrencies
-                - virtualEvents
               type: string
       responses:
         2XX:
@@ -99,33 +90,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - address
-                - address desc
-                - businessHours
-                - businessHours desc
-                - businessType
-                - businessType desc
-                - defaultCurrencyIso
-                - defaultCurrencyIso desc
-                - displayName
-                - displayName desc
-                - email
-                - email desc
-                - isPublished
-                - isPublished desc
-                - languageTag
-                - languageTag desc
-                - phone
-                - phone desc
-                - publicUrl
-                - publicUrl desc
-                - schedulingPolicy
-                - schedulingPolicy desc
-                - webSiteUrl
-                - webSiteUrl desc
               type: string
         - name: $select
           in: query
@@ -136,26 +100,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - address
-                - businessHours
-                - businessType
-                - defaultCurrencyIso
-                - displayName
-                - email
-                - isPublished
-                - languageTag
-                - phone
-                - publicUrl
-                - schedulingPolicy
-                - webSiteUrl
-                - appointments
-                - calendarView
-                - customers
-                - customQuestions
-                - services
-                - staffMembers
               type: string
         - name: $expand
           in: query
@@ -166,14 +110,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - appointments
-                - calendarView
-                - customers
-                - customQuestions
-                - services
-                - staffMembers
               type: string
       responses:
         2XX:
@@ -238,26 +174,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - address
-                - businessHours
-                - businessType
-                - defaultCurrencyIso
-                - displayName
-                - email
-                - isPublished
-                - languageTag
-                - phone
-                - publicUrl
-                - schedulingPolicy
-                - webSiteUrl
-                - appointments
-                - calendarView
-                - customers
-                - customQuestions
-                - services
-                - staffMembers
               type: string
         - name: $expand
           in: query
@@ -268,14 +184,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - appointments
-                - calendarView
-                - customers
-                - customQuestions
-                - services
-                - staffMembers
               type: string
       responses:
         2XX:
@@ -385,57 +293,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - additionalInformation
-                - additionalInformation desc
-                - anonymousJoinWebUrl
-                - anonymousJoinWebUrl desc
-                - customers
-                - customers desc
-                - customerTimeZone
-                - customerTimeZone desc
-                - duration
-                - duration desc
-                - endDateTime
-                - endDateTime desc
-                - filledAttendeesCount
-                - filledAttendeesCount desc
-                - isLocationOnline
-                - isLocationOnline desc
-                - joinWebUrl
-                - joinWebUrl desc
-                - maximumAttendeesCount
-                - maximumAttendeesCount desc
-                - optOutOfCustomerEmail
-                - optOutOfCustomerEmail desc
-                - postBuffer
-                - postBuffer desc
-                - preBuffer
-                - preBuffer desc
-                - price
-                - price desc
-                - priceType
-                - priceType desc
-                - reminders
-                - reminders desc
-                - selfServiceAppointmentId
-                - selfServiceAppointmentId desc
-                - serviceId
-                - serviceId desc
-                - serviceLocation
-                - serviceLocation desc
-                - serviceName
-                - serviceName desc
-                - serviceNotes
-                - serviceNotes desc
-                - smsNotificationsEnabled
-                - smsNotificationsEnabled desc
-                - staffMemberIds
-                - staffMemberIds desc
-                - startDateTime
-                - startDateTime desc
               type: string
         - name: $select
           in: query
@@ -446,32 +303,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - additionalInformation
-                - anonymousJoinWebUrl
-                - customers
-                - customerTimeZone
-                - duration
-                - endDateTime
-                - filledAttendeesCount
-                - isLocationOnline
-                - joinWebUrl
-                - maximumAttendeesCount
-                - optOutOfCustomerEmail
-                - postBuffer
-                - preBuffer
-                - price
-                - priceType
-                - reminders
-                - selfServiceAppointmentId
-                - serviceId
-                - serviceLocation
-                - serviceName
-                - serviceNotes
-                - smsNotificationsEnabled
-                - staffMemberIds
-                - startDateTime
               type: string
         - name: $expand
           in: query
@@ -482,8 +313,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -565,32 +394,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - additionalInformation
-                - anonymousJoinWebUrl
-                - customers
-                - customerTimeZone
-                - duration
-                - endDateTime
-                - filledAttendeesCount
-                - isLocationOnline
-                - joinWebUrl
-                - maximumAttendeesCount
-                - optOutOfCustomerEmail
-                - postBuffer
-                - preBuffer
-                - price
-                - priceType
-                - reminders
-                - selfServiceAppointmentId
-                - serviceId
-                - serviceLocation
-                - serviceName
-                - serviceNotes
-                - smsNotificationsEnabled
-                - staffMemberIds
-                - startDateTime
               type: string
         - name: $expand
           in: query
@@ -601,8 +404,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -812,57 +613,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - additionalInformation
-                - additionalInformation desc
-                - anonymousJoinWebUrl
-                - anonymousJoinWebUrl desc
-                - customers
-                - customers desc
-                - customerTimeZone
-                - customerTimeZone desc
-                - duration
-                - duration desc
-                - endDateTime
-                - endDateTime desc
-                - filledAttendeesCount
-                - filledAttendeesCount desc
-                - isLocationOnline
-                - isLocationOnline desc
-                - joinWebUrl
-                - joinWebUrl desc
-                - maximumAttendeesCount
-                - maximumAttendeesCount desc
-                - optOutOfCustomerEmail
-                - optOutOfCustomerEmail desc
-                - postBuffer
-                - postBuffer desc
-                - preBuffer
-                - preBuffer desc
-                - price
-                - price desc
-                - priceType
-                - priceType desc
-                - reminders
-                - reminders desc
-                - selfServiceAppointmentId
-                - selfServiceAppointmentId desc
-                - serviceId
-                - serviceId desc
-                - serviceLocation
-                - serviceLocation desc
-                - serviceName
-                - serviceName desc
-                - serviceNotes
-                - serviceNotes desc
-                - smsNotificationsEnabled
-                - smsNotificationsEnabled desc
-                - staffMemberIds
-                - staffMemberIds desc
-                - startDateTime
-                - startDateTime desc
               type: string
         - name: $select
           in: query
@@ -873,32 +623,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - additionalInformation
-                - anonymousJoinWebUrl
-                - customers
-                - customerTimeZone
-                - duration
-                - endDateTime
-                - filledAttendeesCount
-                - isLocationOnline
-                - joinWebUrl
-                - maximumAttendeesCount
-                - optOutOfCustomerEmail
-                - postBuffer
-                - preBuffer
-                - price
-                - priceType
-                - reminders
-                - selfServiceAppointmentId
-                - serviceId
-                - serviceLocation
-                - serviceName
-                - serviceNotes
-                - smsNotificationsEnabled
-                - staffMemberIds
-                - startDateTime
               type: string
         - name: $expand
           in: query
@@ -909,8 +633,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1001,32 +723,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - additionalInformation
-                - anonymousJoinWebUrl
-                - customers
-                - customerTimeZone
-                - duration
-                - endDateTime
-                - filledAttendeesCount
-                - isLocationOnline
-                - joinWebUrl
-                - maximumAttendeesCount
-                - optOutOfCustomerEmail
-                - postBuffer
-                - preBuffer
-                - price
-                - priceType
-                - reminders
-                - selfServiceAppointmentId
-                - serviceId
-                - serviceLocation
-                - serviceName
-                - serviceNotes
-                - smsNotificationsEnabled
-                - staffMemberIds
-                - startDateTime
               type: string
         - name: $expand
           in: query
@@ -1037,8 +733,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1224,9 +918,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
               type: string
         - name: $select
           in: query
@@ -1237,8 +928,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
               type: string
         - name: $expand
           in: query
@@ -1249,8 +938,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1332,8 +1019,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
               type: string
         - name: $expand
           in: query
@@ -1344,8 +1029,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1493,15 +1176,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - answerInputType
-                - answerInputType desc
-                - answerOptions
-                - answerOptions desc
-                - displayName
-                - displayName desc
               type: string
         - name: $select
           in: query
@@ -1512,11 +1186,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - answerInputType
-                - answerOptions
-                - displayName
               type: string
         - name: $expand
           in: query
@@ -1527,8 +1196,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1610,11 +1277,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - answerInputType
-                - answerOptions
-                - displayName
               type: string
         - name: $expand
           in: query
@@ -1625,8 +1287,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1884,51 +1544,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - additionalInformation
-                - additionalInformation desc
-                - customQuestions
-                - customQuestions desc
-                - defaultDuration
-                - defaultDuration desc
-                - defaultLocation
-                - defaultLocation desc
-                - defaultPrice
-                - defaultPrice desc
-                - defaultPriceType
-                - defaultPriceType desc
-                - defaultReminders
-                - defaultReminders desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - isAnonymousJoinEnabled
-                - isAnonymousJoinEnabled desc
-                - isHiddenFromCustomers
-                - isHiddenFromCustomers desc
-                - isLocationOnline
-                - isLocationOnline desc
-                - languageTag
-                - languageTag desc
-                - maximumAttendeesCount
-                - maximumAttendeesCount desc
-                - notes
-                - notes desc
-                - postBuffer
-                - postBuffer desc
-                - preBuffer
-                - preBuffer desc
-                - schedulingPolicy
-                - schedulingPolicy desc
-                - smsNotificationsEnabled
-                - smsNotificationsEnabled desc
-                - staffMemberIds
-                - staffMemberIds desc
-                - webUrl
-                - webUrl desc
               type: string
         - name: $select
           in: query
@@ -1939,29 +1554,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - additionalInformation
-                - customQuestions
-                - defaultDuration
-                - defaultLocation
-                - defaultPrice
-                - defaultPriceType
-                - defaultReminders
-                - description
-                - displayName
-                - isAnonymousJoinEnabled
-                - isHiddenFromCustomers
-                - isLocationOnline
-                - languageTag
-                - maximumAttendeesCount
-                - notes
-                - postBuffer
-                - preBuffer
-                - schedulingPolicy
-                - smsNotificationsEnabled
-                - staffMemberIds
-                - webUrl
               type: string
         - name: $expand
           in: query
@@ -1972,8 +1564,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2055,29 +1645,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - additionalInformation
-                - customQuestions
-                - defaultDuration
-                - defaultLocation
-                - defaultPrice
-                - defaultPriceType
-                - defaultReminders
-                - description
-                - displayName
-                - isAnonymousJoinEnabled
-                - isHiddenFromCustomers
-                - isLocationOnline
-                - languageTag
-                - maximumAttendeesCount
-                - notes
-                - postBuffer
-                - preBuffer
-                - schedulingPolicy
-                - smsNotificationsEnabled
-                - staffMemberIds
-                - webUrl
               type: string
         - name: $expand
           in: query
@@ -2088,8 +1655,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2237,9 +1802,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
               type: string
         - name: $select
           in: query
@@ -2250,8 +1812,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
               type: string
         - name: $expand
           in: query
@@ -2262,8 +1822,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2345,8 +1903,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
               type: string
         - name: $expand
           in: query
@@ -2357,8 +1913,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2512,11 +2066,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - symbol
-                - symbol desc
               type: string
         - name: $select
           in: query
@@ -2527,9 +2076,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - symbol
               type: string
         - name: $expand
           in: query
@@ -2540,8 +2086,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2602,9 +2146,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - symbol
               type: string
         - name: $expand
           in: query
@@ -2615,8 +2156,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2715,10 +2254,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - events
-                - webinars
               type: string
         - name: $expand
           in: query
@@ -2729,10 +2264,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - events
-                - webinars
               type: string
       responses:
         2XX:
@@ -2805,21 +2336,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - createdBy
-                - createdBy desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - endDateTime
-                - endDateTime desc
-                - startDateTime
-                - startDateTime desc
-                - status
-                - status desc
               type: string
         - name: $select
           in: query
@@ -2830,15 +2346,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdBy
-                - description
-                - displayName
-                - endDateTime
-                - startDateTime
-                - status
-                - sessions
               type: string
         - name: $expand
           in: query
@@ -2849,9 +2356,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - sessions
               type: string
       responses:
         2XX:
@@ -2908,15 +2412,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdBy
-                - description
-                - displayName
-                - endDateTime
-                - startDateTime
-                - status
-                - sessions
               type: string
         - name: $expand
           in: query
@@ -2927,9 +2422,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - sessions
               type: string
       responses:
         2XX:
@@ -3028,49 +2520,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - allowAttendeeToEnableCamera
-                - allowAttendeeToEnableCamera desc
-                - allowAttendeeToEnableMic
-                - allowAttendeeToEnableMic desc
-                - allowedPresenters
-                - allowedPresenters desc
-                - allowMeetingChat
-                - allowMeetingChat desc
-                - allowParticipantsToChangeName
-                - allowParticipantsToChangeName desc
-                - allowTeamworkReactions
-                - allowTeamworkReactions desc
-                - audioConferencing
-                - audioConferencing desc
-                - chatInfo
-                - chatInfo desc
-                - isEntryExitAnnounced
-                - isEntryExitAnnounced desc
-                - joinInformation
-                - joinInformation desc
-                - joinMeetingIdSettings
-                - joinMeetingIdSettings desc
-                - joinWebUrl
-                - joinWebUrl desc
-                - lobbyBypassSettings
-                - lobbyBypassSettings desc
-                - recordAutomatically
-                - recordAutomatically desc
-                - shareMeetingChatHistoryDefault
-                - shareMeetingChatHistoryDefault desc
-                - subject
-                - subject desc
-                - videoTeleconferenceId
-                - videoTeleconferenceId desc
-                - watermarkProtection
-                - watermarkProtection desc
-                - endDateTime
-                - endDateTime desc
-                - startDateTime
-                - startDateTime desc
               type: string
         - name: $select
           in: query
@@ -3081,29 +2530,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowAttendeeToEnableCamera
-                - allowAttendeeToEnableMic
-                - allowedPresenters
-                - allowMeetingChat
-                - allowParticipantsToChangeName
-                - allowTeamworkReactions
-                - audioConferencing
-                - chatInfo
-                - isEntryExitAnnounced
-                - joinInformation
-                - joinMeetingIdSettings
-                - joinWebUrl
-                - lobbyBypassSettings
-                - recordAutomatically
-                - shareMeetingChatHistoryDefault
-                - subject
-                - videoTeleconferenceId
-                - watermarkProtection
-                - endDateTime
-                - startDateTime
-                - attendanceReports
               type: string
         - name: $expand
           in: query
@@ -3114,9 +2540,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - attendanceReports
               type: string
       responses:
         2XX:
@@ -3191,29 +2614,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowAttendeeToEnableCamera
-                - allowAttendeeToEnableMic
-                - allowedPresenters
-                - allowMeetingChat
-                - allowParticipantsToChangeName
-                - allowTeamworkReactions
-                - audioConferencing
-                - chatInfo
-                - isEntryExitAnnounced
-                - joinInformation
-                - joinMeetingIdSettings
-                - joinWebUrl
-                - lobbyBypassSettings
-                - recordAutomatically
-                - shareMeetingChatHistoryDefault
-                - subject
-                - videoTeleconferenceId
-                - watermarkProtection
-                - endDateTime
-                - startDateTime
-                - attendanceReports
               type: string
         - name: $expand
           in: query
@@ -3224,9 +2624,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - attendanceReports
               type: string
       responses:
         2XX:
@@ -3349,15 +2746,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - meetingEndDateTime
-                - meetingEndDateTime desc
-                - meetingStartDateTime
-                - meetingStartDateTime desc
-                - totalParticipantCount
-                - totalParticipantCount desc
               type: string
         - name: $select
           in: query
@@ -3368,12 +2756,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - meetingEndDateTime
-                - meetingStartDateTime
-                - totalParticipantCount
-                - attendanceRecords
               type: string
         - name: $expand
           in: query
@@ -3384,9 +2766,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - attendanceRecords
               type: string
       responses:
         2XX:
@@ -3477,12 +2856,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - meetingEndDateTime
-                - meetingStartDateTime
-                - totalParticipantCount
-                - attendanceRecords
               type: string
         - name: $expand
           in: query
@@ -3493,9 +2866,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - attendanceRecords
               type: string
       responses:
         2XX:
@@ -3645,19 +3015,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - attendanceIntervals
-                - attendanceIntervals desc
-                - emailAddress
-                - emailAddress desc
-                - identity
-                - identity desc
-                - role
-                - role desc
-                - totalAttendanceInSeconds
-                - totalAttendanceInSeconds desc
               type: string
         - name: $select
           in: query
@@ -3668,13 +3025,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - attendanceIntervals
-                - emailAddress
-                - identity
-                - role
-                - totalAttendanceInSeconds
               type: string
         - name: $expand
           in: query
@@ -3685,8 +3035,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3793,13 +3141,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - attendanceIntervals
-                - emailAddress
-                - identity
-                - role
-                - totalAttendanceInSeconds
               type: string
         - name: $expand
           in: query
@@ -3810,8 +3151,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -4057,25 +3396,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - createdBy
-                - createdBy desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - endDateTime
-                - endDateTime desc
-                - startDateTime
-                - startDateTime desc
-                - status
-                - status desc
-                - audience
-                - audience desc
-                - coOrganizers
-                - coOrganizers desc
               type: string
         - name: $select
           in: query
@@ -4086,18 +3406,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdBy
-                - description
-                - displayName
-                - endDateTime
-                - startDateTime
-                - status
-                - audience
-                - coOrganizers
-                - sessions
-                - registrations
               type: string
         - name: $expand
           in: query
@@ -4108,10 +3416,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - sessions
-                - registrations
               type: string
       responses:
         2XX:
@@ -4168,18 +3472,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdBy
-                - description
-                - displayName
-                - endDateTime
-                - startDateTime
-                - status
-                - audience
-                - coOrganizers
-                - sessions
-                - registrations
               type: string
         - name: $expand
           in: query
@@ -4190,10 +3482,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - sessions
-                - registrations
               type: string
       responses:
         2XX:
@@ -4295,25 +3583,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - cancelationDateTime
-                - cancelationDateTime desc
-                - email
-                - email desc
-                - firstName
-                - firstName desc
-                - lastName
-                - lastName desc
-                - registrationDateTime
-                - registrationDateTime desc
-                - registrationQuestionAnswers
-                - registrationQuestionAnswers desc
-                - status
-                - status desc
-                - userId
-                - userId desc
               type: string
         - name: $select
           in: query
@@ -4324,16 +3593,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - cancelationDateTime
-                - email
-                - firstName
-                - lastName
-                - registrationDateTime
-                - registrationQuestionAnswers
-                - status
-                - userId
               type: string
         - name: $expand
           in: query
@@ -4344,8 +3603,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -4423,16 +3680,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - cancelationDateTime
-                - email
-                - firstName
-                - lastName
-                - registrationDateTime
-                - registrationQuestionAnswers
-                - status
-                - userId
               type: string
         - name: $expand
           in: query
@@ -4443,8 +3690,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -4581,49 +3826,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - allowAttendeeToEnableCamera
-                - allowAttendeeToEnableCamera desc
-                - allowAttendeeToEnableMic
-                - allowAttendeeToEnableMic desc
-                - allowedPresenters
-                - allowedPresenters desc
-                - allowMeetingChat
-                - allowMeetingChat desc
-                - allowParticipantsToChangeName
-                - allowParticipantsToChangeName desc
-                - allowTeamworkReactions
-                - allowTeamworkReactions desc
-                - audioConferencing
-                - audioConferencing desc
-                - chatInfo
-                - chatInfo desc
-                - isEntryExitAnnounced
-                - isEntryExitAnnounced desc
-                - joinInformation
-                - joinInformation desc
-                - joinMeetingIdSettings
-                - joinMeetingIdSettings desc
-                - joinWebUrl
-                - joinWebUrl desc
-                - lobbyBypassSettings
-                - lobbyBypassSettings desc
-                - recordAutomatically
-                - recordAutomatically desc
-                - shareMeetingChatHistoryDefault
-                - shareMeetingChatHistoryDefault desc
-                - subject
-                - subject desc
-                - videoTeleconferenceId
-                - videoTeleconferenceId desc
-                - watermarkProtection
-                - watermarkProtection desc
-                - endDateTime
-                - endDateTime desc
-                - startDateTime
-                - startDateTime desc
               type: string
         - name: $select
           in: query
@@ -4634,29 +3836,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowAttendeeToEnableCamera
-                - allowAttendeeToEnableMic
-                - allowedPresenters
-                - allowMeetingChat
-                - allowParticipantsToChangeName
-                - allowTeamworkReactions
-                - audioConferencing
-                - chatInfo
-                - isEntryExitAnnounced
-                - joinInformation
-                - joinMeetingIdSettings
-                - joinWebUrl
-                - lobbyBypassSettings
-                - recordAutomatically
-                - shareMeetingChatHistoryDefault
-                - subject
-                - videoTeleconferenceId
-                - watermarkProtection
-                - endDateTime
-                - startDateTime
-                - attendanceReports
               type: string
         - name: $expand
           in: query
@@ -4667,9 +3846,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - attendanceReports
               type: string
       responses:
         2XX:
@@ -4744,29 +3920,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowAttendeeToEnableCamera
-                - allowAttendeeToEnableMic
-                - allowedPresenters
-                - allowMeetingChat
-                - allowParticipantsToChangeName
-                - allowTeamworkReactions
-                - audioConferencing
-                - chatInfo
-                - isEntryExitAnnounced
-                - joinInformation
-                - joinMeetingIdSettings
-                - joinWebUrl
-                - lobbyBypassSettings
-                - recordAutomatically
-                - shareMeetingChatHistoryDefault
-                - subject
-                - videoTeleconferenceId
-                - watermarkProtection
-                - endDateTime
-                - startDateTime
-                - attendanceReports
               type: string
         - name: $expand
           in: query
@@ -4777,9 +3930,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - attendanceReports
               type: string
       responses:
         2XX:
@@ -4902,15 +4052,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - meetingEndDateTime
-                - meetingEndDateTime desc
-                - meetingStartDateTime
-                - meetingStartDateTime desc
-                - totalParticipantCount
-                - totalParticipantCount desc
               type: string
         - name: $select
           in: query
@@ -4921,12 +4062,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - meetingEndDateTime
-                - meetingStartDateTime
-                - totalParticipantCount
-                - attendanceRecords
               type: string
         - name: $expand
           in: query
@@ -4937,9 +4072,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - attendanceRecords
               type: string
       responses:
         2XX:
@@ -5030,12 +4162,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - meetingEndDateTime
-                - meetingStartDateTime
-                - totalParticipantCount
-                - attendanceRecords
               type: string
         - name: $expand
           in: query
@@ -5046,9 +4172,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - attendanceRecords
               type: string
       responses:
         2XX:
@@ -5198,19 +4321,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - attendanceIntervals
-                - attendanceIntervals desc
-                - emailAddress
-                - emailAddress desc
-                - identity
-                - identity desc
-                - role
-                - role desc
-                - totalAttendanceInSeconds
-                - totalAttendanceInSeconds desc
               type: string
         - name: $select
           in: query
@@ -5221,13 +4331,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - attendanceIntervals
-                - emailAddress
-                - identity
-                - role
-                - totalAttendanceInSeconds
               type: string
         - name: $expand
           in: query
@@ -5238,8 +4341,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -5346,13 +4447,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - attendanceIntervals
-                - emailAddress
-                - identity
-                - role
-                - totalAttendanceInSeconds
               type: string
         - name: $expand
           in: query
@@ -5363,8 +4457,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -5620,18 +4712,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdBy
-                - description
-                - displayName
-                - endDateTime
-                - startDateTime
-                - status
-                - audience
-                - coOrganizers
-                - sessions
-                - registrations
               type: string
         - name: $orderby
           in: query
@@ -5642,25 +4722,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - createdBy
-                - createdBy desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - endDateTime
-                - endDateTime desc
-                - startDateTime
-                - startDateTime desc
-                - status
-                - status desc
-                - audience
-                - audience desc
-                - coOrganizers
-                - coOrganizers desc
               type: string
         - name: $expand
           in: query
@@ -5671,10 +4732,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - sessions
-                - registrations
               type: string
       responses:
         2XX:
@@ -5728,18 +4785,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdBy
-                - description
-                - displayName
-                - endDateTime
-                - startDateTime
-                - status
-                - audience
-                - coOrganizers
-                - sessions
-                - registrations
               type: string
         - name: $orderby
           in: query
@@ -5750,25 +4795,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - createdBy
-                - createdBy desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - endDateTime
-                - endDateTime desc
-                - startDateTime
-                - startDateTime desc
-                - status
-                - status desc
-                - audience
-                - audience desc
-                - coOrganizers
-                - coOrganizers desc
               type: string
         - name: $expand
           in: query
@@ -5779,10 +4805,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - sessions
-                - registrations
               type: string
       responses:
         2XX:

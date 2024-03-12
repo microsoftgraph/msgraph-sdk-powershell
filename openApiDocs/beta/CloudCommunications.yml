@@ -22,11 +22,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - callRecords
-                - calls
-                - onlineMeetings
-                - presences
               type: string
         - name: $expand
           in: query
@@ -37,12 +32,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - callRecords
-                - calls
-                - onlineMeetings
-                - presences
               type: string
       responses:
         2XX:
@@ -101,27 +90,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - endDateTime
-                - endDateTime desc
-                - joinWebUrl
-                - joinWebUrl desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - modalities
-                - modalities desc
-                - organizer
-                - organizer desc
-                - participants
-                - participants desc
-                - startDateTime
-                - startDateTime desc
-                - type
-                - type desc
-                - version
-                - version desc
               type: string
         - name: $select
           in: query
@@ -132,20 +100,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - endDateTime
-                - joinWebUrl
-                - lastModifiedDateTime
-                - modalities
-                - organizer
-                - participants
-                - startDateTime
-                - type
-                - version
-                - organizer_v2
-                - participants_v2
-                - sessions
               type: string
         - name: $expand
           in: query
@@ -156,11 +110,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - organizer_v2
-                - participants_v2
-                - sessions
               type: string
       responses:
         2XX:
@@ -221,20 +170,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - endDateTime
-                - joinWebUrl
-                - lastModifiedDateTime
-                - modalities
-                - organizer
-                - participants
-                - startDateTime
-                - type
-                - version
-                - organizer_v2
-                - participants_v2
-                - sessions
               type: string
         - name: $expand
           in: query
@@ -245,11 +180,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - organizer_v2
-                - participants_v2
-                - sessions
               type: string
       responses:
         2XX:
@@ -343,9 +273,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - identity
               type: string
         - name: $expand
           in: query
@@ -356,8 +283,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -459,11 +384,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - identity
-                - identity desc
               type: string
         - name: $select
           in: query
@@ -474,9 +394,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - identity
               type: string
         - name: $expand
           in: query
@@ -487,8 +404,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -563,9 +478,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - identity
               type: string
         - name: $expand
           in: query
@@ -576,8 +488,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -717,23 +627,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - callee
-                - callee desc
-                - caller
-                - caller desc
-                - endDateTime
-                - endDateTime desc
-                - failureInfo
-                - failureInfo desc
-                - isTest
-                - isTest desc
-                - modalities
-                - modalities desc
-                - startDateTime
-                - startDateTime desc
               type: string
         - name: $select
           in: query
@@ -744,16 +637,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - callee
-                - caller
-                - endDateTime
-                - failureInfo
-                - isTest
-                - modalities
-                - startDateTime
-                - segments
               type: string
         - name: $expand
           in: query
@@ -764,9 +647,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - segments
               type: string
       responses:
         2XX:
@@ -841,16 +721,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - callee
-                - caller
-                - endDateTime
-                - failureInfo
-                - isTest
-                - modalities
-                - startDateTime
-                - segments
               type: string
         - name: $expand
           in: query
@@ -861,9 +731,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - segments
               type: string
       responses:
         2XX:
@@ -986,21 +853,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - callee
-                - callee desc
-                - caller
-                - caller desc
-                - endDateTime
-                - endDateTime desc
-                - failureInfo
-                - failureInfo desc
-                - media
-                - media desc
-                - startDateTime
-                - startDateTime desc
               type: string
         - name: $select
           in: query
@@ -1011,14 +863,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - callee
-                - caller
-                - endDateTime
-                - failureInfo
-                - media
-                - startDateTime
               type: string
         - name: $expand
           in: query
@@ -1029,8 +873,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1121,14 +963,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - callee
-                - caller
-                - endDateTime
-                - failureInfo
-                - media
-                - startDateTime
               type: string
         - name: $expand
           in: query
@@ -1139,8 +973,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1494,61 +1326,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - activeModalities
-                - activeModalities desc
-                - answeredBy
-                - answeredBy desc
-                - callbackUri
-                - callbackUri desc
-                - callChainId
-                - callChainId desc
-                - callOptions
-                - callOptions desc
-                - callRoutes
-                - callRoutes desc
-                - chatInfo
-                - chatInfo desc
-                - direction
-                - direction desc
-                - incomingContext
-                - incomingContext desc
-                - mediaConfig
-                - mediaConfig desc
-                - mediaState
-                - mediaState desc
-                - meetingCapability
-                - meetingCapability desc
-                - meetingInfo
-                - meetingInfo desc
-                - myParticipantId
-                - myParticipantId desc
-                - requestedModalities
-                - requestedModalities desc
-                - resultInfo
-                - resultInfo desc
-                - ringingTimeoutInSeconds
-                - ringingTimeoutInSeconds desc
-                - routingPolicies
-                - routingPolicies desc
-                - source
-                - source desc
-                - state
-                - state desc
-                - subject
-                - subject desc
-                - targets
-                - targets desc
-                - tenantId
-                - tenantId desc
-                - terminationReason
-                - terminationReason desc
-                - toneInfo
-                - toneInfo desc
-                - transcription
-                - transcription desc
               type: string
         - name: $select
           in: query
@@ -1559,38 +1336,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - activeModalities
-                - answeredBy
-                - callbackUri
-                - callChainId
-                - callOptions
-                - callRoutes
-                - chatInfo
-                - direction
-                - incomingContext
-                - mediaConfig
-                - mediaState
-                - meetingCapability
-                - meetingInfo
-                - myParticipantId
-                - requestedModalities
-                - resultInfo
-                - ringingTimeoutInSeconds
-                - routingPolicies
-                - source
-                - state
-                - subject
-                - targets
-                - tenantId
-                - terminationReason
-                - toneInfo
-                - transcription
-                - audioRoutingGroups
-                - contentSharingSessions
-                - operations
-                - participants
               type: string
         - name: $expand
           in: query
@@ -1601,12 +1346,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - audioRoutingGroups
-                - contentSharingSessions
-                - operations
-                - participants
               type: string
       responses:
         2XX:
@@ -1671,38 +1410,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - activeModalities
-                - answeredBy
-                - callbackUri
-                - callChainId
-                - callOptions
-                - callRoutes
-                - chatInfo
-                - direction
-                - incomingContext
-                - mediaConfig
-                - mediaState
-                - meetingCapability
-                - meetingInfo
-                - myParticipantId
-                - requestedModalities
-                - resultInfo
-                - ringingTimeoutInSeconds
-                - routingPolicies
-                - source
-                - state
-                - subject
-                - targets
-                - tenantId
-                - terminationReason
-                - toneInfo
-                - transcription
-                - audioRoutingGroups
-                - contentSharingSessions
-                - operations
-                - participants
               type: string
         - name: $expand
           in: query
@@ -1713,12 +1420,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - audioRoutingGroups
-                - contentSharingSessions
-                - operations
-                - participants
               type: string
       responses:
         2XX:
@@ -1824,15 +1525,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - receivers
-                - receivers desc
-                - routingMode
-                - routingMode desc
-                - sources
-                - sources desc
               type: string
         - name: $select
           in: query
@@ -1843,11 +1535,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - receivers
-                - routingMode
-                - sources
               type: string
         - name: $expand
           in: query
@@ -1858,8 +1545,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1941,11 +1626,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - receivers
-                - routingMode
-                - sources
               type: string
         - name: $expand
           in: query
@@ -1956,8 +1636,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2105,9 +1783,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
               type: string
         - name: $select
           in: query
@@ -2118,8 +1793,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
               type: string
         - name: $expand
           in: query
@@ -2130,8 +1803,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2209,8 +1880,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
               type: string
         - name: $expand
           in: query
@@ -2221,8 +1890,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3119,15 +2786,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - clientContext
-                - clientContext desc
-                - resultInfo
-                - resultInfo desc
-                - status
-                - status desc
               type: string
         - name: $select
           in: query
@@ -3138,11 +2796,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - clientContext
-                - resultInfo
-                - status
               type: string
         - name: $expand
           in: query
@@ -3153,8 +2806,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3232,11 +2883,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - clientContext
-                - resultInfo
-                - status
               type: string
         - name: $expand
           in: query
@@ -3247,8 +2893,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3388,31 +3032,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - info
-                - info desc
-                - isIdentityAnonymized
-                - isIdentityAnonymized desc
-                - isInLobby
-                - isInLobby desc
-                - isMuted
-                - isMuted desc
-                - mediaStreams
-                - mediaStreams desc
-                - metadata
-                - metadata desc
-                - preferredDisplayName
-                - preferredDisplayName desc
-                - recordingInfo
-                - recordingInfo desc
-                - removedState
-                - removedState desc
-                - restrictedExperience
-                - restrictedExperience desc
-                - rosterSequenceNumber
-                - rosterSequenceNumber desc
               type: string
         - name: $select
           in: query
@@ -3423,19 +3042,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - info
-                - isIdentityAnonymized
-                - isInLobby
-                - isMuted
-                - mediaStreams
-                - metadata
-                - preferredDisplayName
-                - recordingInfo
-                - removedState
-                - restrictedExperience
-                - rosterSequenceNumber
               type: string
         - name: $expand
           in: query
@@ -3446,8 +3052,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3525,19 +3129,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - info
-                - isIdentityAnonymized
-                - isInLobby
-                - isMuted
-                - mediaStreams
-                - metadata
-                - preferredDisplayName
-                - recordingInfo
-                - removedState
-                - restrictedExperience
-                - rosterSequenceNumber
               type: string
         - name: $expand
           in: query
@@ -3548,8 +3139,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3817,10 +3406,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action invite
-      description: 'Delete a specific participant in a call. In some situations, it is appropriate for an application to remove a participant from an active call. This action can be done before or after the participant answers the call. When an active caller is removed, they are immediately dropped from the call with no pre- or post-removal notification. When an invited participant is removed, any outstanding add participant request is canceled.'
+      description: 'Invite participants to the active call. For more information about how to handle operations, see commsOperation.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/participant-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/participant-invite?view=graph-rest-1.0
       operationId: communication.call.participant_invite
       parameters:
         - name: call-id
@@ -4020,81 +3609,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - allowAttendeeToEnableCamera
-                - allowAttendeeToEnableCamera desc
-                - allowAttendeeToEnableMic
-                - allowAttendeeToEnableMic desc
-                - allowedPresenters
-                - allowedPresenters desc
-                - allowMeetingChat
-                - allowMeetingChat desc
-                - allowParticipantsToChangeName
-                - allowParticipantsToChangeName desc
-                - allowRecording
-                - allowRecording desc
-                - allowTeamworkReactions
-                - allowTeamworkReactions desc
-                - allowTranscription
-                - allowTranscription desc
-                - anonymizeIdentityForRoles
-                - anonymizeIdentityForRoles desc
-                - audioConferencing
-                - audioConferencing desc
-                - chatInfo
-                - chatInfo desc
-                - chatRestrictions
-                - chatRestrictions desc
-                - isEndToEndEncryptionEnabled
-                - isEndToEndEncryptionEnabled desc
-                - isEntryExitAnnounced
-                - isEntryExitAnnounced desc
-                - joinInformation
-                - joinInformation desc
-                - joinMeetingIdSettings
-                - joinMeetingIdSettings desc
-                - joinWebUrl
-                - joinWebUrl desc
-                - lobbyBypassSettings
-                - lobbyBypassSettings desc
-                - recordAutomatically
-                - recordAutomatically desc
-                - shareMeetingChatHistoryDefault
-                - shareMeetingChatHistoryDefault desc
-                - subject
-                - subject desc
-                - videoTeleconferenceId
-                - videoTeleconferenceId desc
-                - watermarkProtection
-                - watermarkProtection desc
-                - alternativeRecording
-                - alternativeRecording desc
-                - attendeeReport
-                - attendeeReport desc
-                - broadcastRecording
-                - broadcastRecording desc
-                - broadcastSettings
-                - broadcastSettings desc
-                - capabilities
-                - capabilities desc
-                - creationDateTime
-                - creationDateTime desc
-                - endDateTime
-                - endDateTime desc
-                - externalId
-                - externalId desc
-                - isBroadcast
-                - isBroadcast desc
-                - joinUrl
-                - joinUrl desc
-                - participants
-                - participants desc
-                - recording
-                - recording desc
-                - startDateTime
-                - startDateTime desc
               type: string
         - name: $select
           in: query
@@ -4105,49 +3619,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowAttendeeToEnableCamera
-                - allowAttendeeToEnableMic
-                - allowedPresenters
-                - allowMeetingChat
-                - allowParticipantsToChangeName
-                - allowRecording
-                - allowTeamworkReactions
-                - allowTranscription
-                - anonymizeIdentityForRoles
-                - audioConferencing
-                - chatInfo
-                - chatRestrictions
-                - isEndToEndEncryptionEnabled
-                - isEntryExitAnnounced
-                - joinInformation
-                - joinMeetingIdSettings
-                - joinWebUrl
-                - lobbyBypassSettings
-                - recordAutomatically
-                - shareMeetingChatHistoryDefault
-                - subject
-                - videoTeleconferenceId
-                - watermarkProtection
-                - alternativeRecording
-                - attendeeReport
-                - broadcastRecording
-                - broadcastSettings
-                - capabilities
-                - creationDateTime
-                - endDateTime
-                - externalId
-                - isBroadcast
-                - joinUrl
-                - participants
-                - recording
-                - startDateTime
-                - attendanceReports
-                - meetingAttendanceReport
-                - recordings
-                - registration
-                - transcripts
               type: string
         - name: $expand
           in: query
@@ -4158,13 +3629,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - attendanceReports
-                - meetingAttendanceReport
-                - recordings
-                - registration
-                - transcripts
               type: string
       responses:
         2XX:
@@ -4221,49 +3685,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowAttendeeToEnableCamera
-                - allowAttendeeToEnableMic
-                - allowedPresenters
-                - allowMeetingChat
-                - allowParticipantsToChangeName
-                - allowRecording
-                - allowTeamworkReactions
-                - allowTranscription
-                - anonymizeIdentityForRoles
-                - audioConferencing
-                - chatInfo
-                - chatRestrictions
-                - isEndToEndEncryptionEnabled
-                - isEntryExitAnnounced
-                - joinInformation
-                - joinMeetingIdSettings
-                - joinWebUrl
-                - lobbyBypassSettings
-                - recordAutomatically
-                - shareMeetingChatHistoryDefault
-                - subject
-                - videoTeleconferenceId
-                - watermarkProtection
-                - alternativeRecording
-                - attendeeReport
-                - broadcastRecording
-                - broadcastSettings
-                - capabilities
-                - creationDateTime
-                - endDateTime
-                - externalId
-                - isBroadcast
-                - joinUrl
-                - participants
-                - recording
-                - startDateTime
-                - attendanceReports
-                - meetingAttendanceReport
-                - recordings
-                - registration
-                - transcripts
               type: string
         - name: $expand
           in: query
@@ -4274,13 +3695,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - attendanceReports
-                - meetingAttendanceReport
-                - recordings
-                - registration
-                - transcripts
               type: string
       responses:
         2XX:
@@ -4436,15 +3850,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - meetingEndDateTime
-                - meetingEndDateTime desc
-                - meetingStartDateTime
-                - meetingStartDateTime desc
-                - totalParticipantCount
-                - totalParticipantCount desc
               type: string
         - name: $select
           in: query
@@ -4455,12 +3860,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - meetingEndDateTime
-                - meetingStartDateTime
-                - totalParticipantCount
-                - attendanceRecords
               type: string
         - name: $expand
           in: query
@@ -4471,9 +3870,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - attendanceRecords
               type: string
       responses:
         2XX:
@@ -4548,12 +3944,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - meetingEndDateTime
-                - meetingStartDateTime
-                - totalParticipantCount
-                - attendanceRecords
               type: string
         - name: $expand
           in: query
@@ -4564,9 +3954,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - attendanceRecords
               type: string
       responses:
         2XX:
@@ -4692,21 +4079,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - attendanceIntervals
-                - attendanceIntervals desc
-                - emailAddress
-                - emailAddress desc
-                - identity
-                - identity desc
-                - registrantId
-                - registrantId desc
-                - role
-                - role desc
-                - totalAttendanceInSeconds
-                - totalAttendanceInSeconds desc
               type: string
         - name: $select
           in: query
@@ -4717,14 +4089,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - attendanceIntervals
-                - emailAddress
-                - identity
-                - registrantId
-                - role
-                - totalAttendanceInSeconds
               type: string
         - name: $expand
           in: query
@@ -4735,8 +4099,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -4827,14 +4189,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - attendanceIntervals
-                - emailAddress
-                - identity
-                - registrantId
-                - role
-                - totalAttendanceInSeconds
               type: string
         - name: $expand
           in: query
@@ -4845,8 +4199,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -5118,7 +4470,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get meetingAttendanceReport
-      description: 'Get the meetingAttendanceReport for an onlineMeeting. Each time an online meeting ends, an attendance report is generated for that session.'
+      description: 'Get the meetingAttendanceReport for an onlineMeeting or a virtualEvent. Each time an online meeting ends, an attendance report is generated for that session.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/meetingattendancereport-get?view=graph-rest-1.0
@@ -5141,12 +4493,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - meetingEndDateTime
-                - meetingStartDateTime
-                - totalParticipantCount
-                - attendanceRecords
               type: string
         - name: $expand
           in: query
@@ -5157,9 +4503,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - attendanceRecords
               type: string
       responses:
         2XX:
@@ -5261,21 +4604,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - attendanceIntervals
-                - attendanceIntervals desc
-                - emailAddress
-                - emailAddress desc
-                - identity
-                - identity desc
-                - registrantId
-                - registrantId desc
-                - role
-                - role desc
-                - totalAttendanceInSeconds
-                - totalAttendanceInSeconds desc
               type: string
         - name: $select
           in: query
@@ -5286,14 +4614,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - attendanceIntervals
-                - emailAddress
-                - identity
-                - registrantId
-                - role
-                - totalAttendanceInSeconds
               type: string
         - name: $expand
           in: query
@@ -5304,8 +4624,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -5380,14 +4698,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - attendanceIntervals
-                - emailAddress
-                - identity
-                - registrantId
-                - role
-                - totalAttendanceInSeconds
               type: string
         - name: $expand
           in: query
@@ -5398,8 +4708,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -5706,21 +5014,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - content
-                - content desc
-                - createdDateTime
-                - createdDateTime desc
-                - meetingId
-                - meetingId desc
-                - meetingOrganizer
-                - meetingOrganizer desc
-                - meetingOrganizerId
-                - meetingOrganizerId desc
-                - recordingContentUrl
-                - recordingContentUrl desc
               type: string
         - name: $select
           in: query
@@ -5731,14 +5024,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - content
-                - createdDateTime
-                - meetingId
-                - meetingOrganizer
-                - meetingOrganizerId
-                - recordingContentUrl
               type: string
         - name: $expand
           in: query
@@ -5749,8 +5034,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -5828,14 +5111,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - content
-                - createdDateTime
-                - meetingId
-                - meetingOrganizer
-                - meetingOrganizerId
-                - recordingContentUrl
               type: string
         - name: $expand
           in: query
@@ -5846,8 +5121,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -6059,14 +5332,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - content
-                - createdDateTime
-                - meetingId
-                - meetingOrganizer
-                - meetingOrganizerId
-                - recordingContentUrl
               type: string
         - name: $orderby
           in: query
@@ -6077,21 +5342,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - content
-                - content desc
-                - createdDateTime
-                - createdDateTime desc
-                - meetingId
-                - meetingId desc
-                - meetingOrganizer
-                - meetingOrganizer desc
-                - meetingOrganizerId
-                - meetingOrganizerId desc
-                - recordingContentUrl
-                - recordingContentUrl desc
               type: string
         - name: $expand
           in: query
@@ -6102,8 +5352,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -6160,18 +5408,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedRegistrant
-                - description
-                - endDateTime
-                - registrationPageViewCount
-                - registrationPageWebUrl
-                - speakers
-                - startDateTime
-                - subject
-                - registrants
-                - customQuestions
               type: string
         - name: $expand
           in: query
@@ -6182,10 +5418,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - registrants
-                - customQuestions
               type: string
       responses:
         2XX:
@@ -6295,17 +5527,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - answerInputType
-                - answerInputType desc
-                - answerOptions
-                - answerOptions desc
-                - displayName
-                - displayName desc
-                - isRequired
-                - isRequired desc
               type: string
         - name: $select
           in: query
@@ -6316,12 +5537,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - answerInputType
-                - answerOptions
-                - displayName
-                - isRequired
               type: string
         - name: $expand
           in: query
@@ -6332,8 +5547,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -6415,12 +5628,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - answerInputType
-                - answerOptions
-                - displayName
-                - isRequired
               type: string
         - name: $expand
           in: query
@@ -6431,8 +5638,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -6577,11 +5782,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - joinWebUrl
-                - joinWebUrl desc
               type: string
         - name: $select
           in: query
@@ -6592,9 +5792,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - joinWebUrl
               type: string
         - name: $expand
           in: query
@@ -6605,8 +5802,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -6681,9 +5876,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - joinWebUrl
               type: string
         - name: $expand
           in: query
@@ -6694,8 +5886,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -6835,23 +6025,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - content
-                - content desc
-                - createdDateTime
-                - createdDateTime desc
-                - meetingId
-                - meetingId desc
-                - meetingOrganizer
-                - meetingOrganizer desc
-                - meetingOrganizerId
-                - meetingOrganizerId desc
-                - metadataContent
-                - metadataContent desc
-                - transcriptContentUrl
-                - transcriptContentUrl desc
               type: string
         - name: $select
           in: query
@@ -6862,15 +6035,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - content
-                - createdDateTime
-                - meetingId
-                - meetingOrganizer
-                - meetingOrganizerId
-                - metadataContent
-                - transcriptContentUrl
               type: string
         - name: $expand
           in: query
@@ -6881,8 +6045,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -6960,15 +6122,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - content
-                - createdDateTime
-                - meetingId
-                - meetingOrganizer
-                - meetingOrganizerId
-                - metadataContent
-                - transcriptContentUrl
               type: string
         - name: $expand
           in: query
@@ -6979,8 +6132,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -7270,15 +6421,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - content
-                - createdDateTime
-                - meetingId
-                - meetingOrganizer
-                - meetingOrganizerId
-                - metadataContent
-                - transcriptContentUrl
               type: string
         - name: $orderby
           in: query
@@ -7289,23 +6431,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - content
-                - content desc
-                - createdDateTime
-                - createdDateTime desc
-                - meetingId
-                - meetingId desc
-                - meetingOrganizer
-                - meetingOrganizer desc
-                - meetingOrganizerId
-                - meetingOrganizerId desc
-                - metadataContent
-                - metadataContent desc
-                - transcriptContentUrl
-                - transcriptContentUrl desc
               type: string
         - name: $expand
           in: query
@@ -7316,8 +6441,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -7370,49 +6493,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowAttendeeToEnableCamera
-                - allowAttendeeToEnableMic
-                - allowedPresenters
-                - allowMeetingChat
-                - allowParticipantsToChangeName
-                - allowRecording
-                - allowTeamworkReactions
-                - allowTranscription
-                - anonymizeIdentityForRoles
-                - audioConferencing
-                - chatInfo
-                - chatRestrictions
-                - isEndToEndEncryptionEnabled
-                - isEntryExitAnnounced
-                - joinInformation
-                - joinMeetingIdSettings
-                - joinWebUrl
-                - lobbyBypassSettings
-                - recordAutomatically
-                - shareMeetingChatHistoryDefault
-                - subject
-                - videoTeleconferenceId
-                - watermarkProtection
-                - alternativeRecording
-                - attendeeReport
-                - broadcastRecording
-                - broadcastSettings
-                - capabilities
-                - creationDateTime
-                - endDateTime
-                - externalId
-                - isBroadcast
-                - joinUrl
-                - participants
-                - recording
-                - startDateTime
-                - attendanceReports
-                - meetingAttendanceReport
-                - recordings
-                - registration
-                - transcripts
               type: string
         - name: $expand
           in: query
@@ -7423,13 +6503,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - attendanceReports
-                - meetingAttendanceReport
-                - recordings
-                - registration
-                - transcripts
               type: string
       responses:
         2XX:
@@ -7695,14 +6768,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - content
-                - createdDateTime
-                - meetingId
-                - meetingOrganizer
-                - meetingOrganizerId
-                - recordingContentUrl
               type: string
         - name: $orderby
           in: query
@@ -7713,21 +6778,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - content
-                - content desc
-                - createdDateTime
-                - createdDateTime desc
-                - meetingId
-                - meetingId desc
-                - meetingOrganizer
-                - meetingOrganizer desc
-                - meetingOrganizerId
-                - meetingOrganizerId desc
-                - recordingContentUrl
-                - recordingContentUrl desc
               type: string
         - name: $expand
           in: query
@@ -7738,8 +6788,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -7786,15 +6834,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - content
-                - createdDateTime
-                - meetingId
-                - meetingOrganizer
-                - meetingOrganizerId
-                - metadataContent
-                - transcriptContentUrl
               type: string
         - name: $orderby
           in: query
@@ -7805,23 +6844,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - content
-                - content desc
-                - createdDateTime
-                - createdDateTime desc
-                - meetingId
-                - meetingId desc
-                - meetingOrganizer
-                - meetingOrganizer desc
-                - meetingOrganizerId
-                - meetingOrganizerId desc
-                - metadataContent
-                - metadataContent desc
-                - transcriptContentUrl
-                - transcriptContentUrl desc
               type: string
         - name: $expand
           in: query
@@ -7832,8 +6854,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -7881,17 +6901,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - activity
-                - activity desc
-                - availability
-                - availability desc
-                - outOfOfficeSettings
-                - outOfOfficeSettings desc
-                - statusMessage
-                - statusMessage desc
               type: string
         - name: $select
           in: query
@@ -7902,12 +6911,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - activity
-                - availability
-                - outOfOfficeSettings
-                - statusMessage
               type: string
         - name: $expand
           in: query
@@ -7918,8 +6921,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -7980,12 +6981,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - activity
-                - availability
-                - outOfOfficeSettings
-                - statusMessage
               type: string
         - name: $expand
           in: query
@@ -7996,8 +6991,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -8304,81 +7297,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - allowAttendeeToEnableCamera
-                - allowAttendeeToEnableCamera desc
-                - allowAttendeeToEnableMic
-                - allowAttendeeToEnableMic desc
-                - allowedPresenters
-                - allowedPresenters desc
-                - allowMeetingChat
-                - allowMeetingChat desc
-                - allowParticipantsToChangeName
-                - allowParticipantsToChangeName desc
-                - allowRecording
-                - allowRecording desc
-                - allowTeamworkReactions
-                - allowTeamworkReactions desc
-                - allowTranscription
-                - allowTranscription desc
-                - anonymizeIdentityForRoles
-                - anonymizeIdentityForRoles desc
-                - audioConferencing
-                - audioConferencing desc
-                - chatInfo
-                - chatInfo desc
-                - chatRestrictions
-                - chatRestrictions desc
-                - isEndToEndEncryptionEnabled
-                - isEndToEndEncryptionEnabled desc
-                - isEntryExitAnnounced
-                - isEntryExitAnnounced desc
-                - joinInformation
-                - joinInformation desc
-                - joinMeetingIdSettings
-                - joinMeetingIdSettings desc
-                - joinWebUrl
-                - joinWebUrl desc
-                - lobbyBypassSettings
-                - lobbyBypassSettings desc
-                - recordAutomatically
-                - recordAutomatically desc
-                - shareMeetingChatHistoryDefault
-                - shareMeetingChatHistoryDefault desc
-                - subject
-                - subject desc
-                - videoTeleconferenceId
-                - videoTeleconferenceId desc
-                - watermarkProtection
-                - watermarkProtection desc
-                - alternativeRecording
-                - alternativeRecording desc
-                - attendeeReport
-                - attendeeReport desc
-                - broadcastRecording
-                - broadcastRecording desc
-                - broadcastSettings
-                - broadcastSettings desc
-                - capabilities
-                - capabilities desc
-                - creationDateTime
-                - creationDateTime desc
-                - endDateTime
-                - endDateTime desc
-                - externalId
-                - externalId desc
-                - isBroadcast
-                - isBroadcast desc
-                - joinUrl
-                - joinUrl desc
-                - participants
-                - participants desc
-                - recording
-                - recording desc
-                - startDateTime
-                - startDateTime desc
               type: string
         - name: $select
           in: query
@@ -8389,49 +7307,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowAttendeeToEnableCamera
-                - allowAttendeeToEnableMic
-                - allowedPresenters
-                - allowMeetingChat
-                - allowParticipantsToChangeName
-                - allowRecording
-                - allowTeamworkReactions
-                - allowTranscription
-                - anonymizeIdentityForRoles
-                - audioConferencing
-                - chatInfo
-                - chatRestrictions
-                - isEndToEndEncryptionEnabled
-                - isEntryExitAnnounced
-                - joinInformation
-                - joinMeetingIdSettings
-                - joinWebUrl
-                - lobbyBypassSettings
-                - recordAutomatically
-                - shareMeetingChatHistoryDefault
-                - subject
-                - videoTeleconferenceId
-                - watermarkProtection
-                - alternativeRecording
-                - attendeeReport
-                - broadcastRecording
-                - broadcastSettings
-                - capabilities
-                - creationDateTime
-                - endDateTime
-                - externalId
-                - isBroadcast
-                - joinUrl
-                - participants
-                - recording
-                - startDateTime
-                - attendanceReports
-                - meetingAttendanceReport
-                - recordings
-                - registration
-                - transcripts
               type: string
         - name: $expand
           in: query
@@ -8442,13 +7317,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - attendanceReports
-                - meetingAttendanceReport
-                - recordings
-                - registration
-                - transcripts
               type: string
       responses:
         2XX:
@@ -8527,49 +7395,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowAttendeeToEnableCamera
-                - allowAttendeeToEnableMic
-                - allowedPresenters
-                - allowMeetingChat
-                - allowParticipantsToChangeName
-                - allowRecording
-                - allowTeamworkReactions
-                - allowTranscription
-                - anonymizeIdentityForRoles
-                - audioConferencing
-                - chatInfo
-                - chatRestrictions
-                - isEndToEndEncryptionEnabled
-                - isEntryExitAnnounced
-                - joinInformation
-                - joinMeetingIdSettings
-                - joinWebUrl
-                - lobbyBypassSettings
-                - recordAutomatically
-                - shareMeetingChatHistoryDefault
-                - subject
-                - videoTeleconferenceId
-                - watermarkProtection
-                - alternativeRecording
-                - attendeeReport
-                - broadcastRecording
-                - broadcastSettings
-                - capabilities
-                - creationDateTime
-                - endDateTime
-                - externalId
-                - isBroadcast
-                - joinUrl
-                - participants
-                - recording
-                - startDateTime
-                - attendanceReports
-                - meetingAttendanceReport
-                - recordings
-                - registration
-                - transcripts
               type: string
         - name: $expand
           in: query
@@ -8580,13 +7405,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - attendanceReports
-                - meetingAttendanceReport
-                - recordings
-                - registration
-                - transcripts
               type: string
       responses:
         2XX:
@@ -8790,15 +7608,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - meetingEndDateTime
-                - meetingEndDateTime desc
-                - meetingStartDateTime
-                - meetingStartDateTime desc
-                - totalParticipantCount
-                - totalParticipantCount desc
               type: string
         - name: $select
           in: query
@@ -8809,12 +7618,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - meetingEndDateTime
-                - meetingStartDateTime
-                - totalParticipantCount
-                - attendanceRecords
               type: string
         - name: $expand
           in: query
@@ -8825,9 +7628,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - attendanceRecords
               type: string
       responses:
         2XX:
@@ -8918,12 +7718,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - meetingEndDateTime
-                - meetingStartDateTime
-                - totalParticipantCount
-                - attendanceRecords
               type: string
         - name: $expand
           in: query
@@ -8934,9 +7728,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - attendanceRecords
               type: string
       responses:
         2XX:
@@ -9086,21 +7877,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - attendanceIntervals
-                - attendanceIntervals desc
-                - emailAddress
-                - emailAddress desc
-                - identity
-                - identity desc
-                - registrantId
-                - registrantId desc
-                - role
-                - role desc
-                - totalAttendanceInSeconds
-                - totalAttendanceInSeconds desc
               type: string
         - name: $select
           in: query
@@ -9111,14 +7887,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - attendanceIntervals
-                - emailAddress
-                - identity
-                - registrantId
-                - role
-                - totalAttendanceInSeconds
               type: string
         - name: $expand
           in: query
@@ -9129,8 +7897,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -9237,14 +8003,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - attendanceIntervals
-                - emailAddress
-                - identity
-                - registrantId
-                - role
-                - totalAttendanceInSeconds
               type: string
         - name: $expand
           in: query
@@ -9255,8 +8013,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -9592,7 +8348,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get meetingAttendanceReport
-      description: 'Get the meetingAttendanceReport for an onlineMeeting. Each time an online meeting ends, an attendance report is generated for that session.'
+      description: 'Get the meetingAttendanceReport for an onlineMeeting or a virtualEvent. Each time an online meeting ends, an attendance report is generated for that session.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/meetingattendancereport-get?view=graph-rest-1.0
@@ -9623,12 +8379,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - meetingEndDateTime
-                - meetingStartDateTime
-                - totalParticipantCount
-                - attendanceRecords
               type: string
         - name: $expand
           in: query
@@ -9639,9 +8389,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - attendanceRecords
               type: string
       responses:
         2XX:
@@ -9767,21 +8514,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - attendanceIntervals
-                - attendanceIntervals desc
-                - emailAddress
-                - emailAddress desc
-                - identity
-                - identity desc
-                - registrantId
-                - registrantId desc
-                - role
-                - role desc
-                - totalAttendanceInSeconds
-                - totalAttendanceInSeconds desc
               type: string
         - name: $select
           in: query
@@ -9792,14 +8524,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - attendanceIntervals
-                - emailAddress
-                - identity
-                - registrantId
-                - role
-                - totalAttendanceInSeconds
               type: string
         - name: $expand
           in: query
@@ -9810,8 +8534,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -9902,14 +8624,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - attendanceIntervals
-                - emailAddress
-                - identity
-                - registrantId
-                - role
-                - totalAttendanceInSeconds
               type: string
         - name: $expand
           in: query
@@ -9920,8 +8634,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -10163,21 +8875,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - content
-                - content desc
-                - createdDateTime
-                - createdDateTime desc
-                - meetingId
-                - meetingId desc
-                - meetingOrganizer
-                - meetingOrganizer desc
-                - meetingOrganizerId
-                - meetingOrganizerId desc
-                - recordingContentUrl
-                - recordingContentUrl desc
               type: string
         - name: $select
           in: query
@@ -10188,14 +8885,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - content
-                - createdDateTime
-                - meetingId
-                - meetingOrganizer
-                - meetingOrganizerId
-                - recordingContentUrl
               type: string
         - name: $expand
           in: query
@@ -10206,8 +8895,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -10301,14 +8988,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - content
-                - createdDateTime
-                - meetingId
-                - meetingOrganizer
-                - meetingOrganizerId
-                - recordingContentUrl
               type: string
         - name: $expand
           in: query
@@ -10319,8 +8998,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -10579,18 +9256,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedRegistrant
-                - description
-                - endDateTime
-                - registrationPageViewCount
-                - registrationPageWebUrl
-                - speakers
-                - startDateTime
-                - subject
-                - registrants
-                - customQuestions
               type: string
         - name: $expand
           in: query
@@ -10601,10 +9266,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - registrants
-                - customQuestions
               type: string
       responses:
         2XX:
@@ -10738,17 +9399,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - answerInputType
-                - answerInputType desc
-                - answerOptions
-                - answerOptions desc
-                - displayName
-                - displayName desc
-                - isRequired
-                - isRequired desc
               type: string
         - name: $select
           in: query
@@ -10759,12 +9409,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - answerInputType
-                - answerOptions
-                - displayName
-                - isRequired
               type: string
         - name: $expand
           in: query
@@ -10775,8 +9419,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -10874,12 +9516,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - answerInputType
-                - answerOptions
-                - displayName
-                - isRequired
               type: string
         - name: $expand
           in: query
@@ -10890,8 +9526,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -11068,11 +9702,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - joinWebUrl
-                - joinWebUrl desc
               type: string
         - name: $select
           in: query
@@ -11083,9 +9712,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - joinWebUrl
               type: string
         - name: $expand
           in: query
@@ -11096,8 +9722,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -11188,9 +9812,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - joinWebUrl
               type: string
         - name: $expand
           in: query
@@ -11201,8 +9822,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -11374,23 +9993,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - content
-                - content desc
-                - createdDateTime
-                - createdDateTime desc
-                - meetingId
-                - meetingId desc
-                - meetingOrganizer
-                - meetingOrganizer desc
-                - meetingOrganizerId
-                - meetingOrganizerId desc
-                - metadataContent
-                - metadataContent desc
-                - transcriptContentUrl
-                - transcriptContentUrl desc
               type: string
         - name: $select
           in: query
@@ -11401,15 +10003,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - content
-                - createdDateTime
-                - meetingId
-                - meetingOrganizer
-                - meetingOrganizerId
-                - metadataContent
-                - transcriptContentUrl
               type: string
         - name: $expand
           in: query
@@ -11420,8 +10013,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -11515,15 +10106,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - content
-                - createdDateTime
-                - meetingId
-                - meetingOrganizer
-                - meetingOrganizerId
-                - metadataContent
-                - transcriptContentUrl
               type: string
         - name: $expand
           in: query
@@ -11534,8 +10116,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -11885,49 +10465,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowAttendeeToEnableCamera
-                - allowAttendeeToEnableMic
-                - allowedPresenters
-                - allowMeetingChat
-                - allowParticipantsToChangeName
-                - allowRecording
-                - allowTeamworkReactions
-                - allowTranscription
-                - anonymizeIdentityForRoles
-                - audioConferencing
-                - chatInfo
-                - chatRestrictions
-                - isEndToEndEncryptionEnabled
-                - isEntryExitAnnounced
-                - joinInformation
-                - joinMeetingIdSettings
-                - joinWebUrl
-                - lobbyBypassSettings
-                - recordAutomatically
-                - shareMeetingChatHistoryDefault
-                - subject
-                - videoTeleconferenceId
-                - watermarkProtection
-                - alternativeRecording
-                - attendeeReport
-                - broadcastRecording
-                - broadcastSettings
-                - capabilities
-                - creationDateTime
-                - endDateTime
-                - externalId
-                - isBroadcast
-                - joinUrl
-                - participants
-                - recording
-                - startDateTime
-                - attendanceReports
-                - meetingAttendanceReport
-                - recordings
-                - registration
-                - transcripts
               type: string
         - name: $expand
           in: query
@@ -11938,13 +10475,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - attendanceReports
-                - meetingAttendanceReport
-                - recordings
-                - registration
-                - transcripts
               type: string
       responses:
         2XX:
@@ -12063,11 +10593,11 @@ paths:
     get:
       tags:
         - users.presence
-      summary: Get presence
-      description: Get a user's presence information.
+      summary: 'presence: setStatusMessage'
+      description: Set a presence status message for a user. An optional expiration date and time can be supplied.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/presence-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/presence-setstatusmessage?view=graph-rest-1.0
       operationId: user_GetPresence
       parameters:
         - name: user-id
@@ -12087,12 +10617,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - activity
-                - availability
-                - outOfOfficeSettings
-                - statusMessage
               type: string
         - name: $expand
           in: query
@@ -12103,8 +10627,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -12429,89 +10951,71 @@ components:
       additionalProperties:
         type: object
     microsoft.graph.callRecords.smsLogRow:
-      title: smsLogRow
-      type: object
-      properties:
-        callCharge:
-          type: number
-          description: Amount of money or cost of the SMS that is charged.
-          format: decimal
-          nullable: true
-        currency:
-          type: string
-          description: 'Currency used to calculate the cost of the call. For details, see ISO 4217.'
-          nullable: true
-        destinationContext:
-          type: string
-          description: Indicates whether the SMS was Domestic (within a country or region) or International (outside a country or region) based on the user's location.
-          nullable: true
-        destinationName:
-          type: string
-          description: Country or region of a phone number that received the SMS.
-          nullable: true
-        destinationNumber:
-          type: string
-          description: 'Partially obfuscated phone number that received the SMS. For details, see E.164.'
-          nullable: true
-        id:
-          type: string
-          description: Unique identifier (GUID) for the SMS.
-          nullable: true
-        licenseCapability:
-          type: string
-          description: The license used for the SMS.
-          nullable: true
-        otherPartyCountryCode:
-          type: string
-          description: 'For an outbound SMS, the country code of the receiver; otherwise (inbound SMS) the country code of the sender. For details, see ISO 3166-1 alpha-2.'
-          nullable: true
-        sentDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          description: The date and time when the SMS was sent.
-          format: date-time
-          nullable: true
-        smsId:
-          type: string
-          description: SMS identifier. Not guaranteed to be unique.
-          nullable: true
-        smsType:
-          type: string
-          description: Type of SMS such as outbound or inbound.
-          nullable: true
-        smsUnits:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          description: Number of SMS units sent/received.
-          format: int32
-          nullable: true
-        sourceNumber:
-          type: string
-          description: 'Partially obfuscated phone number that sent the SMS. For details, see E.164.'
-          nullable: true
-        tenantCountryCode:
-          type: string
-          description: 'Country code of the tenant. For details, see ISO 3166-1 alpha-2.'
-          nullable: true
-        userCountryCode:
-          type: string
-          description: 'Country code of the user. For details, see ISO 3166-1 alpha-2.'
-          nullable: true
-        userDisplayName:
-          type: string
-          description: Display name of the user.
-          nullable: true
-        userId:
-          type: string
-          description: The unique identifier (GUID) of the user in Microsoft Entra ID.
-          nullable: true
-        userPrincipalName:
-          type: string
-          description: 'The user principal name (sign-in name) in Microsoft Entra ID. This is usually the same as the user''s SIP address, and can be same as the user''s e-mail address.'
-          nullable: true
-      additionalProperties:
-        type: object
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.callRecords.callLogRow'
+        - title: smsLogRow
+          type: object
+          properties:
+            callCharge:
+              type: number
+              description: Amount of money or cost of the SMS that is charged.
+              format: decimal
+              nullable: true
+            currency:
+              type: string
+              description: 'Currency used to calculate the cost of the call. For details, see ISO 4217.'
+              nullable: true
+            destinationContext:
+              type: string
+              description: Indicates whether the SMS was Domestic (within a country or region) or International (outside a country or region) based on the user's location.
+              nullable: true
+            destinationName:
+              type: string
+              description: Country or region of a phone number that received the SMS.
+              nullable: true
+            destinationNumber:
+              type: string
+              description: 'Partially obfuscated phone number that received the SMS. For details, see E.164.'
+              nullable: true
+            licenseCapability:
+              type: string
+              description: The license used for the SMS.
+              nullable: true
+            sentDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time when the SMS was sent.
+              format: date-time
+              nullable: true
+            smsId:
+              type: string
+              description: SMS identifier. Not guaranteed to be unique.
+              nullable: true
+            smsType:
+              type: string
+              description: Type of SMS such as outbound or inbound.
+              nullable: true
+            smsUnits:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: Number of SMS units sent/received.
+              format: int32
+              nullable: true
+            sourceNumber:
+              type: string
+              description: 'Partially obfuscated phone number that sent the SMS. For details, see E.164.'
+              nullable: true
+            tenantCountryCode:
+              type: string
+              description: 'Country code of the tenant. For details, see ISO 3166-1 alpha-2.'
+              nullable: true
+            userCountryCode:
+              type: string
+              description: 'Country code of the user. For details, see ISO 3166-1 alpha-2.'
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.call:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -13064,7 +11568,7 @@ components:
             endDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The meeting end time in UTC.
+              description: The meeting end time in UTC. Required when you create an online meeting.
               format: date-time
               nullable: true
             externalId:
@@ -13077,6 +11581,10 @@ components:
             joinUrl:
               type: string
               nullable: true
+            meetingTemplateId:
+              type: string
+              description: The ID of the meeting template.
+              nullable: true
             participants:
               $ref: '#/components/schemas/microsoft.graph.meetingParticipants'
             recording:
@@ -13086,7 +11594,7 @@ components:
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The meeting start time in UTC.
+              description: The meeting start time in UTC. Required when you create an online meeting.
               format: date-time
               nullable: true
             meetingAttendanceReport:
@@ -13186,9 +11694,11 @@ components:
       properties:
         phoneNumber:
           type: string
+          description: The phone number of the external attendee. Required.
           nullable: true
         timeZone:
           type: string
+          description: The time zone of the external attendee. The timeZone property can be set to any of the time zones currently supported by Windows. Required.
           nullable: true
       additionalProperties:
         type: object
@@ -13457,6 +11967,11 @@ components:
         - title: participantBase
           type: object
           properties:
+            administrativeUnitInfos:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.callRecords.administrativeUnitInfo'
+              description: List of administrativeUnitInfo of the call participant.
             identity:
               $ref: '#/components/schemas/microsoft.graph.communicationsIdentitySet'
           additionalProperties:
@@ -13511,6 +12026,31 @@ components:
         - unblocked
         - unknownFutureValue
       type: string
+    microsoft.graph.callRecords.callLogRow:
+      title: callLogRow
+      type: object
+      properties:
+        administrativeUnitInfos:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.callRecords.administrativeUnitInfo'
+        id:
+          type: string
+          nullable: true
+        otherPartyCountryCode:
+          type: string
+          nullable: true
+        userDisplayName:
+          type: string
+          nullable: true
+        userId:
+          type: string
+          nullable: true
+        userPrincipalName:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.callOptions:
       title: callOptions
       type: object
@@ -14372,6 +12912,16 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.callRecords.administrativeUnitInfo:
+      title: administrativeUnitInfo
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the administrative unit.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.communicationsIdentitySet:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -14934,6 +13484,7 @@ components:
       properties:
         allowTextOnly:
           type: boolean
+          description: Indicates whether only text is allowed in the meeting chat. Optional.
           nullable: true
       additionalProperties:
         type: object
