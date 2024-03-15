@@ -15,29 +15,28 @@ Invoke action createUploadSession
 ### CreateExpanded (Default)
 ```
 New-MgBetaUserDriveItemUploadSession -DriveId <String> -DriveItemId <String> -UserId <String>
- [-AdditionalProperties <Hashtable>] [-Item <IMicrosoftGraphDriveItemUploadableProperties>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-Item <IMicrosoftGraphDriveItemUploadableProperties>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaUserDriveItemUploadSession -DriveId <String> -DriveItemId <String> -UserId <String>
  -BodyParameter <IPaths10ZzsxfUsersUserIdDrivesDriveIdItemsDriveitemIdMicrosoftGraphCreateuploadsessionPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaUserDriveItemUploadSession -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPaths10ZzsxfUsersUserIdDrivesDriveIdItemsDriveitemIdMicrosoftGraphCreateuploadsessionPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgBetaUserDriveItemUploadSession -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
- [-Item <IMicrosoftGraphDriveItemUploadableProperties>] [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Item <IMicrosoftGraphDriveItemUploadableProperties>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -122,21 +121,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -161,21 +145,6 @@ To construct, see NOTES section for ITEM properties and create a hash table.
 Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDriveItemUploadableProperties
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -239,8 +208,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUploadSession
@@ -259,19 +226,12 @@ To create the parameters described below, construct a hash table containing the 
   - `[Item <IMicrosoftGraphDriveItemUploadableProperties>]`: driveItemUploadableProperties
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Description <String>]`: Provides a user-visible description of the item. Read-write. Only on OneDrive Personal.
-    - `[DriveItemSource <IMicrosoftGraphDriveItemSource>]`: driveItemSource
-      - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Application <String>]`: driveItemSourceApplication
-      - `[ExternalId <String>]`: The external identifier for the drive item from the source.
     - `[FileSize <Int64?>]`: Provides an expected file size to perform a quota check prior to upload. Only on OneDrive Personal.
     - `[FileSystemInfo <IMicrosoftGraphFileSystemInfo>]`: fileSystemInfo
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[CreatedDateTime <DateTime?>]`: The UTC date and time the file was created on a client.
       - `[LastAccessedDateTime <DateTime?>]`: The UTC date and time the file was last accessed. Available for the recent file list only.
       - `[LastModifiedDateTime <DateTime?>]`: The UTC date and time the file was last modified on a client.
-    - `[MediaSource <IMicrosoftGraphMediaSource>]`: mediaSource
-      - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[ContentCategory <String>]`: mediaSourceContentCategory
     - `[Name <String>]`: The name of the item (filename and extension). Read-write.
 
 `INPUTOBJECT <IUsersActionsIdentity>`: Identity Parameter
@@ -293,7 +253,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[DriveItemVersionId <String>]`: The unique identifier of driveItemVersion
   - `[EventId <String>]`: The unique identifier of event
   - `[EventId1 <String>]`: The unique identifier of event
-  - `[JoinWebUrl <String>]`: Alternate key of onlineMeeting
   - `[ListItemId <String>]`: The unique identifier of listItem
   - `[ListItemVersionId <String>]`: The unique identifier of listItemVersion
   - `[MailFolderId <String>]`: The unique identifier of mailFolder
@@ -320,19 +279,12 @@ To create the parameters described below, construct a hash table containing the 
 `ITEM <IMicrosoftGraphDriveItemUploadableProperties>`: driveItemUploadableProperties
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Description <String>]`: Provides a user-visible description of the item. Read-write. Only on OneDrive Personal.
-  - `[DriveItemSource <IMicrosoftGraphDriveItemSource>]`: driveItemSource
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Application <String>]`: driveItemSourceApplication
-    - `[ExternalId <String>]`: The external identifier for the drive item from the source.
   - `[FileSize <Int64?>]`: Provides an expected file size to perform a quota check prior to upload. Only on OneDrive Personal.
   - `[FileSystemInfo <IMicrosoftGraphFileSystemInfo>]`: fileSystemInfo
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[CreatedDateTime <DateTime?>]`: The UTC date and time the file was created on a client.
     - `[LastAccessedDateTime <DateTime?>]`: The UTC date and time the file was last accessed. Available for the recent file list only.
     - `[LastModifiedDateTime <DateTime?>]`: The UTC date and time the file was last modified on a client.
-  - `[MediaSource <IMicrosoftGraphMediaSource>]`: mediaSource
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[ContentCategory <String>]`: mediaSourceContentCategory
   - `[Name <String>]`: The name of the item (filename and extension). Read-write.
 
 ## RELATED LINKS

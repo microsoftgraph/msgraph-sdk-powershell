@@ -18,15 +18,14 @@ New-MgSecurityThreatIntelligenceHostPort [-AdditionalProperties <Hashtable>]
  [-Banners <IMicrosoftGraphSecurityHostPortBanner[]>] [-FirstSeenDateTime <DateTime>]
  [-Host1 <IMicrosoftGraphSecurityHost>] [-Id <String>] [-LastScanDateTime <DateTime>]
  [-LastSeenDateTime <DateTime>] [-MostRecentSslCertificate <IMicrosoftGraphSecuritySslCertificate>]
- [-Port <Int32>] [-Protocol <String>] [-ResponseHeadersVariable <String>]
- [-Services <IMicrosoftGraphSecurityHostPortComponent[]>] [-Status <String>] [-TimesObserved <Int32>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Port <Int32>] [-Protocol <String>] [-Services <IMicrosoftGraphSecurityHostPortComponent[]>]
+ [-Status <String>] [-TimesObserved <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgSecurityThreatIntelligenceHostPort -BodyParameter <IMicrosoftGraphSecurityHostPort>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgSecurityThreatIntelligenceHostPort -BodyParameter <IMicrosoftGraphSecurityHostPort> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -111,21 +110,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -241,21 +225,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Services
 The hostPortComponents retrieved from scanning the port.
 To construct, see NOTES section for SERVICES properties and create a hash table.
@@ -339,8 +308,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityHostPort
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

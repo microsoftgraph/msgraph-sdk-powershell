@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Security
-Module Guid: fc5d2d42-977a-4974-8275-4eb4a1841af2
+Module Guid: eb53e463-3871-46e0-874b-60d9c20ebceb
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.security
 Help Version: 1.0.0.0
 Locale: en-US
@@ -68,7 +68,7 @@ Retrieve the properties and relationships of an alert object.
 Get the number of the resource
 
 ### [Get-MgBetaSecurityAlertV2](Get-MgBetaSecurityAlertV2.md)
-Get the properties and relationships of an alert object.
+Get the properties and relationships of an alert in an organization based on the specified alert id property.
 
 ### [Get-MgBetaSecurityAlertV2Count](Get-MgBetaSecurityAlertV2Count.md)
 Get the number of the resource
@@ -136,12 +136,6 @@ Get the number of the resource
 ### [Get-MgBetaSecurityAttackSimulationTraining](Get-MgBetaSecurityAttackSimulationTraining.md)
 Represents details about attack simulation trainings.
 
-### [Get-MgBetaSecurityAttackSimulationTrainingCampaign](Get-MgBetaSecurityAttackSimulationTrainingCampaign.md)
-Get trainingCampaigns from security
-
-### [Get-MgBetaSecurityAttackSimulationTrainingCampaignCount](Get-MgBetaSecurityAttackSimulationTrainingCampaignCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaSecurityAttackSimulationTrainingCount](Get-MgBetaSecurityAttackSimulationTrainingCount.md)
 Get the number of the resource
 
@@ -155,13 +149,13 @@ Get the number of the resource
 Get auditLog from security
 
 ### [Get-MgBetaSecurityAuditLogQuery](Get-MgBetaSecurityAuditLogQuery.md)
-Read the properties and relationships of an auditLogQuery object.
+Get queries from security
 
 ### [Get-MgBetaSecurityAuditLogQueryCount](Get-MgBetaSecurityAuditLogQueryCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaSecurityAuditLogQueryRecord](Get-MgBetaSecurityAuditLogQueryRecord.md)
-An individual audit log record.
+Get records from security
 
 ### [Get-MgBetaSecurityAuditLogQueryRecordCount](Get-MgBetaSecurityAuditLogQueryRecordCount.md)
 Get the number of the resource
@@ -338,15 +332,6 @@ Get cloudAppSecurityProfiles from security
 ### [Get-MgBetaSecurityCloudAppSecurityProfileCount](Get-MgBetaSecurityCloudAppSecurityProfileCount.md)
 Get the number of the resource
 
-### [Get-MgBetaSecurityCollaboration](Get-MgBetaSecurityCollaboration.md)
-Get collaboration from security
-
-### [Get-MgBetaSecurityCollaborationAnalyzedEmail](Get-MgBetaSecurityCollaborationAnalyzedEmail.md)
-Get analyzedEmails from security
-
-### [Get-MgBetaSecurityCollaborationAnalyzedEmailCount](Get-MgBetaSecurityCollaborationAnalyzedEmailCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaSecurityDomainSecurityProfile](Get-MgBetaSecurityDomainSecurityProfile.md)
 Get domainSecurityProfiles from security
 
@@ -482,15 +467,6 @@ Get the number of the resource
 Get providerTenantSettings from security
 
 ### [Get-MgBetaSecurityProviderTenantSettingCount](Get-MgBetaSecurityProviderTenantSettingCount.md)
-Get the number of the resource
-
-### [Get-MgBetaSecurityRule](Get-MgBetaSecurityRule.md)
-Get rules from security
-
-### [Get-MgBetaSecurityRuleDetectionRule](Get-MgBetaSecurityRuleDetectionRule.md)
-Get detectionRules from security
-
-### [Get-MgBetaSecurityRuleDetectionRuleCount](Get-MgBetaSecurityRuleDetectionRuleCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaSecuritySecureScore](Get-MgBetaSecuritySecureScore.md)
@@ -888,9 +864,6 @@ To learn more about searches in eDiscovery, see Collect data for a case in eDisc
 Use the metadata that exists on an already-labeled piece of information to resolve the metadata to a specific sensitivity label.
 The contentInfo input is resolved to informationProtectionContentLabel.
 
-### [Invoke-MgBetaRemediateSecurityCollaborationAnalyzedEmail](Invoke-MgBetaRemediateSecurityCollaborationAnalyzedEmail.md)
-Invoke action remediate
-
 ### [Invoke-MgBetaReopenSecurityCaseEdiscoveryCase](Invoke-MgBetaReopenSecurityCaseEdiscoveryCase.md)
 Reopen an eDiscovery case that was closed.
 For details, see Reopen a closed case.
@@ -937,14 +910,11 @@ Create new navigation property to payloads for security
 ### [New-MgBetaSecurityAttackSimulationTraining](New-MgBetaSecurityAttackSimulationTraining.md)
 Create new navigation property to trainings for security
 
-### [New-MgBetaSecurityAttackSimulationTrainingCampaign](New-MgBetaSecurityAttackSimulationTrainingCampaign.md)
-Create new navigation property to trainingCampaigns for security
-
 ### [New-MgBetaSecurityAttackSimulationTrainingLanguageDetail](New-MgBetaSecurityAttackSimulationTrainingLanguageDetail.md)
 Create new navigation property to languageDetails for security
 
 ### [New-MgBetaSecurityAuditLogQuery](New-MgBetaSecurityAuditLogQuery.md)
-Create a new auditLogQuery object.
+Create new navigation property to queries for security
 
 ### [New-MgBetaSecurityAuditLogQueryRecord](New-MgBetaSecurityAuditLogQueryRecord.md)
 Create new navigation property to records for security
@@ -1000,9 +970,6 @@ Create a new ediscoveryReviewTag object.
 ### [New-MgBetaSecurityCloudAppSecurityProfile](New-MgBetaSecurityCloudAppSecurityProfile.md)
 Create new navigation property to cloudAppSecurityProfiles for security
 
-### [New-MgBetaSecurityCollaborationAnalyzedEmail](New-MgBetaSecurityCollaborationAnalyzedEmail.md)
-Create new navigation property to analyzedEmails for security
-
 ### [New-MgBetaSecurityDomainSecurityProfile](New-MgBetaSecurityDomainSecurityProfile.md)
 Create new navigation property to domainSecurityProfiles for security
 
@@ -1048,9 +1015,6 @@ Create new navigation property to dispositionReviewStages for security
 
 ### [New-MgBetaSecurityProviderTenantSetting](New-MgBetaSecurityProviderTenantSetting.md)
 Create new navigation property to providerTenantSettings for security
-
-### [New-MgBetaSecurityRuleDetectionRule](New-MgBetaSecurityRuleDetectionRule.md)
-Create new navigation property to detectionRules for security
 
 ### [New-MgBetaSecuritySecureScore](New-MgBetaSecuritySecureScore.md)
 Create new navigation property to secureScores for security
@@ -1191,9 +1155,6 @@ Delete navigation property payloads for security
 ### [Remove-MgBetaSecurityAttackSimulationTraining](Remove-MgBetaSecurityAttackSimulationTraining.md)
 Delete navigation property trainings for security
 
-### [Remove-MgBetaSecurityAttackSimulationTrainingCampaign](Remove-MgBetaSecurityAttackSimulationTrainingCampaign.md)
-Delete navigation property trainingCampaigns for security
-
 ### [Remove-MgBetaSecurityAttackSimulationTrainingLanguageDetail](Remove-MgBetaSecurityAttackSimulationTrainingLanguageDetail.md)
 Delete navigation property languageDetails for security
 
@@ -1264,6 +1225,12 @@ Delete an ediscoverySearch object.
 ### [Remove-MgBetaSecurityCaseEdiscoveryCaseSearchAdditionalSource](Remove-MgBetaSecurityCaseEdiscoveryCaseSearchAdditionalSource.md)
 Delete navigation property additionalSources for security
 
+### [Remove-MgBetaSecurityCaseEdiscoveryCaseSearchCustodianSource](Remove-MgBetaSecurityCaseEdiscoveryCaseSearchCustodianSource.md)
+Remove a dataSource object.
+
+### [Remove-MgBetaSecurityCaseEdiscoveryCaseSearchNoncustodialSource](Remove-MgBetaSecurityCaseEdiscoveryCaseSearchNoncustodialSource.md)
+Remove an ediscoveryNoncustodialDataSource object.
+
 ### [Remove-MgBetaSecurityCaseEdiscoveryCaseSetting](Remove-MgBetaSecurityCaseEdiscoveryCaseSetting.md)
 Delete navigation property settings for security
 
@@ -1272,12 +1239,6 @@ Remove an ediscoveryReviewTag object.
 
 ### [Remove-MgBetaSecurityCloudAppSecurityProfile](Remove-MgBetaSecurityCloudAppSecurityProfile.md)
 Delete navigation property cloudAppSecurityProfiles for security
-
-### [Remove-MgBetaSecurityCollaboration](Remove-MgBetaSecurityCollaboration.md)
-Delete navigation property collaboration for security
-
-### [Remove-MgBetaSecurityCollaborationAnalyzedEmail](Remove-MgBetaSecurityCollaborationAnalyzedEmail.md)
-Delete navigation property analyzedEmails for security
 
 ### [Remove-MgBetaSecurityDomainSecurityProfile](Remove-MgBetaSecurityDomainSecurityProfile.md)
 Delete navigation property domainSecurityProfiles for security
@@ -1338,12 +1299,6 @@ Delete navigation property dispositionReviewStages for security
 
 ### [Remove-MgBetaSecurityProviderTenantSetting](Remove-MgBetaSecurityProviderTenantSetting.md)
 Delete navigation property providerTenantSettings for security
-
-### [Remove-MgBetaSecurityRule](Remove-MgBetaSecurityRule.md)
-Delete navigation property rules for security
-
-### [Remove-MgBetaSecurityRuleDetectionRule](Remove-MgBetaSecurityRuleDetectionRule.md)
-Delete navigation property detectionRules for security
 
 ### [Remove-MgBetaSecuritySecureScore](Remove-MgBetaSecuritySecureScore.md)
 Delete navigation property secureScores for security
@@ -1524,7 +1479,7 @@ This method updates any solution that has a record of the referenced alert ID.
 Update multiple alerts in one request instead of multiple requests.
 
 ### [Update-MgBetaSecurityAlertV2](Update-MgBetaSecurityAlertV2.md)
-Update the properties of an alert object.
+Update the properties of an alert object in an organization based on the specified alert id property.
 
 ### [Update-MgBetaSecurityAttackSimulationAutomation](Update-MgBetaSecurityAttackSimulationAutomation.md)
 Update the navigation property simulationAutomations in security
@@ -1555,9 +1510,6 @@ Update the navigation property payloads in security
 
 ### [Update-MgBetaSecurityAttackSimulationTraining](Update-MgBetaSecurityAttackSimulationTraining.md)
 Update the navigation property trainings in security
-
-### [Update-MgBetaSecurityAttackSimulationTrainingCampaign](Update-MgBetaSecurityAttackSimulationTrainingCampaign.md)
-Update the navigation property trainingCampaigns in security
 
 ### [Update-MgBetaSecurityAttackSimulationTrainingLanguageDetail](Update-MgBetaSecurityAttackSimulationTrainingLanguageDetail.md)
 Update the navigation property languageDetails in security
@@ -1634,12 +1586,6 @@ Update the properties of an ediscoveryReviewTag object.
 ### [Update-MgBetaSecurityCloudAppSecurityProfile](Update-MgBetaSecurityCloudAppSecurityProfile.md)
 Update the navigation property cloudAppSecurityProfiles in security
 
-### [Update-MgBetaSecurityCollaboration](Update-MgBetaSecurityCollaboration.md)
-Update the navigation property collaboration in security
-
-### [Update-MgBetaSecurityCollaborationAnalyzedEmail](Update-MgBetaSecurityCollaborationAnalyzedEmail.md)
-Update the navigation property analyzedEmails in security
-
 ### [Update-MgBetaSecurityDomainSecurityProfile](Update-MgBetaSecurityDomainSecurityProfile.md)
 Update the navigation property domainSecurityProfiles in security
 
@@ -1700,12 +1646,6 @@ Update the navigation property dispositionReviewStages in security
 
 ### [Update-MgBetaSecurityProviderTenantSetting](Update-MgBetaSecurityProviderTenantSetting.md)
 Update the navigation property providerTenantSettings in security
-
-### [Update-MgBetaSecurityRule](Update-MgBetaSecurityRule.md)
-Update the navigation property rules in security
-
-### [Update-MgBetaSecurityRuleDetectionRule](Update-MgBetaSecurityRuleDetectionRule.md)
-Update the navigation property detectionRules in security
 
 ### [Update-MgBetaSecuritySecureScore](Update-MgBetaSecuritySecureScore.md)
 Update the navigation property secureScores in security

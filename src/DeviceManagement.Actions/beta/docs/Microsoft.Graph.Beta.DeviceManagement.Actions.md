@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
-Module Guid: 13d7fdb4-13aa-40f6-a185-fdf305bff0d2
+Module Guid: e64f73fb-4f82-4a92-89b3-7f3b431fbab1
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devicemanagement.actions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -28,9 +28,6 @@ Invoke action approveApps
 
 ### [Approve-MgBetaDeviceManagementElevationRequest](Approve-MgBetaDeviceManagementElevationRequest.md)
 Invoke action approve
-
-### [Approve-MgBetaDeviceManagementOperationApprovalRequest](Approve-MgBetaDeviceManagementOperationApprovalRequest.md)
-Approves the requested instance of an operationApprovalRequest.
 
 ### [Approve-MgBetaDeviceManagementZebraFotaConnectorFotaApp](Approve-MgBetaDeviceManagementZebraFotaConnectorFotaApp.md)
 Invoke action approveFotaApps
@@ -138,9 +135,6 @@ Invoke action getHealthMetrics
 
 ### [Get-MgBetaDeviceManagementMicrosoftTunnelSiteMicrosoftTunnelServerHealthMetricTimeSeries](Get-MgBetaDeviceManagementMicrosoftTunnelSiteMicrosoftTunnelServerHealthMetricTimeSeries.md)
 Invoke action getHealthMetricTimeSeries
-
-### [Get-MgBetaDeviceManagementOperationApprovalRequestStatus](Get-MgBetaDeviceManagementOperationApprovalRequestStatus.md)
-Invoke action retrieveRequestStatus
 
 ### [Get-MgBetaDeviceManagementReportActiveMalwareReport](Get-MgBetaDeviceManagementReportActiveMalwareReport.md)
 Invoke action getActiveMalwareReport
@@ -350,21 +344,14 @@ Invoke action getZebraFotaDeploymentReport
 Invoke action getRoleScopeTagsById
 
 ### [Get-MgBetaDeviceManagementVirtualEndpointReportActionStatusReport](Get-MgBetaDeviceManagementVirtualEndpointReportActionStatusReport.md)
-Get the remote action status reports, including data such as the Cloud PC ID, Cloud PC device display name, initiating user's principal name, device owner's user principal name, action taken, and action state.
-
-### [Get-MgBetaDeviceManagementVirtualEndpointReportCloudPcPerformanceReport](Get-MgBetaDeviceManagementVirtualEndpointReportCloudPcPerformanceReport.md)
-Invoke action getCloudPcPerformanceReport
+Invoke action getActionStatusReports
 
 ### [Get-MgBetaDeviceManagementVirtualEndpointReportCloudPcRecommendationReport](Get-MgBetaDeviceManagementVirtualEndpointReportCloudPcRecommendationReport.md)
-Get the device recommendation reports for Cloud PCs, such as the usage category report.
-The usage category report categorizes a Cloud PC as Undersized, Oversized, Rightsized, or Underutilized, and also provides the recommended SKU when the Cloud PC isn't Rightsized.
+Invoke action getCloudPcRecommendationReports
 
 ### [Get-MgBetaDeviceManagementVirtualEndpointReportConnectionQualityReport](Get-MgBetaDeviceManagementVirtualEndpointReportConnectionQualityReport.md)
 Get the overall connection quality reports for all devices within a current tenant during a given time period, including metrics like the average round trip time (P50), average available bandwidth, and UDP connection percentage.
 Get also other real-time metrics such as last connection round trip time, last connection client IP, last connection gateway, and last connection protocol.
-
-### [Get-MgBetaDeviceManagementVirtualEndpointReportCrossRegionDisasterRecoveryReport](Get-MgBetaDeviceManagementVirtualEndpointReportCrossRegionDisasterRecoveryReport.md)
-Invoke action retrieveCrossRegionDisasterRecoveryReport
 
 ### [Get-MgBetaDeviceManagementVirtualEndpointReportDailyAggregatedRemoteConnectionReport](Get-MgBetaDeviceManagementVirtualEndpointReportDailyAggregatedRemoteConnectionReport.md)
 Get the daily aggregated remote connection reports, such as round trip time, available bandwidth, and so on, in a given period.
@@ -516,17 +503,11 @@ Invoke action hasPayloadLinks
 ### [Invoke-MgBetaHasDeviceManagementZebraFotaConnectorActiveDeployment](Invoke-MgBetaHasDeviceManagementZebraFotaConnectorActiveDeployment.md)
 Invoke action hasActiveDeployments
 
-### [Invoke-MgBetaInitiateDeviceManagementComanagedDeviceAttestation](Invoke-MgBetaInitiateDeviceManagementComanagedDeviceAttestation.md)
-Perform Device Attestation
-
 ### [Invoke-MgBetaInitiateDeviceManagementComanagedDeviceMobileDeviceManagementKeyRecovery](Invoke-MgBetaInitiateDeviceManagementComanagedDeviceMobileDeviceManagementKeyRecovery.md)
 Perform MDM key recovery and TPM attestation
 
 ### [Invoke-MgBetaInitiateDeviceManagementComanagedDeviceOnDemandProactiveRemediation](Invoke-MgBetaInitiateDeviceManagementComanagedDeviceOnDemandProactiveRemediation.md)
 Perform On Demand Proactive Remediation
-
-### [Invoke-MgBetaInitiateDeviceManagementManagedDeviceAttestation](Invoke-MgBetaInitiateDeviceManagementManagedDeviceAttestation.md)
-Perform Device Attestation
 
 ### [Invoke-MgBetaInitiateDeviceManagementManagedDeviceMobileDeviceManagementKeyRecovery](Invoke-MgBetaInitiateDeviceManagementManagedDeviceMobileDeviceManagementKeyRecovery.md)
 Perform MDM key recovery and TPM attestation
@@ -560,9 +541,6 @@ Invoke action reenable
 
 ### [Invoke-MgBetaReenableDeviceManagementManagedDevice](Invoke-MgBetaReenableDeviceManagementManagedDevice.md)
 Invoke action reenable
-
-### [Invoke-MgBetaRejectDeviceManagementOperationApprovalRequest](Invoke-MgBetaRejectDeviceManagementOperationApprovalRequest.md)
-Rejects the requested instance of an operationApprovalRequest.
 
 ### [Invoke-MgBetaReorderDeviceManagementConfigurationPolicy](Invoke-MgBetaReorderDeviceManagementConfigurationPolicy.md)
 Invoke action reorder
@@ -736,9 +714,6 @@ Remove device from Device Firmware Configuration Interface management
 
 ### [Remove-MgBetaDeviceManagementManagedDeviceUserFromSharedAppleDevice](Remove-MgBetaDeviceManagementManagedDeviceUserFromSharedAppleDevice.md)
 Delete user from shared Apple device
-
-### [Rename-MgBetaDeviceManagementMonitoringAlertRecordPortalNotificationAsSent](Rename-MgBetaDeviceManagementMonitoringAlertRecordPortalNotificationAsSent.md)
-Invoke action changeAlertRecordsPortalNotificationAsSent
 
 ### [Rename-MgBetaDeviceManagementVirtualEndpointCloudPc](Rename-MgBetaDeviceManagementVirtualEndpointCloudPc.md)
 Rename a specific Cloud PC.
@@ -962,12 +937,6 @@ Only IT admin users can perform this action.
 ### [Start-MgBetaDeviceManagementVirtualEndpointOnPremiseConnectionHealthCheck](Start-MgBetaDeviceManagementVirtualEndpointOnPremiseConnectionHealthCheck.md)
 Run health checks on the cloudPcOnPremisesConnection object.
 This will trigger a new health check for this cloudPcOnPremisesConnection object and change the healthCheckStatus and healthCheckStatusDetails properties when check finished.
-
-### [Stop-MgBetaDeviceManagementOperationApprovalRequestApproval](Stop-MgBetaDeviceManagementOperationApprovalRequestApproval.md)
-Cancels an already approved instance of an operationApprovalRequest.
-
-### [Stop-MgBetaDeviceManagementOperationApprovalRequestMyRequest](Stop-MgBetaDeviceManagementOperationApprovalRequestMyRequest.md)
-Invoke action cancelMyRequest
 
 ### [Stop-MgBetaDeviceManagementVirtualEndpointCloudPc](Stop-MgBetaDeviceManagementVirtualEndpointCloudPc.md)
 Power off a Windows 365 Frontline Cloud PC.

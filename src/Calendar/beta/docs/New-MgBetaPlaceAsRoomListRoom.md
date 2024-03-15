@@ -19,21 +19,20 @@ New-MgBetaPlaceAsRoomListRoom -PlaceId <String> [-AdditionalProperties <Hashtabl
  [-Building <String>] [-Capacity <Int32>] [-DisplayDeviceName <String>] [-DisplayName <String>]
  [-EmailAddress <String>] [-FloorLabel <String>] [-FloorNumber <Int32>]
  [-GeoCoordinates <IMicrosoftGraphOutlookGeoCoordinates>] [-Id <String>] [-IsWheelChairAccessible]
- [-Label <String>] [-Nickname <String>] [-Phone <String>] [-ResponseHeadersVariable <String>]
- [-Tags <String[]>] [-VideoDeviceName <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Label <String>] [-Nickname <String>] [-Phone <String>] [-Tags <String[]>] [-VideoDeviceName <String>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgBetaPlaceAsRoomListRoom -PlaceId <String> -BodyParameter <IMicrosoftGraphRoom>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaPlaceAsRoomListRoom -PlaceId <String> -BodyParameter <IMicrosoftGraphRoom> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgBetaPlaceAsRoomListRoom -InputObject <ICalendarIdentity> -BodyParameter <IMicrosoftGraphRoom>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaPlaceAsRoomListRoom -InputObject <ICalendarIdentity> -BodyParameter <IMicrosoftGraphRoom> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -43,9 +42,8 @@ New-MgBetaPlaceAsRoomListRoom -InputObject <ICalendarIdentity> [-AdditionalPrope
  [-Building <String>] [-Capacity <Int32>] [-DisplayDeviceName <String>] [-DisplayName <String>]
  [-EmailAddress <String>] [-FloorLabel <String>] [-FloorNumber <Int32>]
  [-GeoCoordinates <IMicrosoftGraphOutlookGeoCoordinates>] [-Id <String>] [-IsWheelChairAccessible]
- [-Label <String>] [-Nickname <String>] [-Phone <String>] [-ResponseHeadersVariable <String>]
- [-Tags <String[]>] [-VideoDeviceName <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Label <String>] [-Nickname <String>] [-Phone <String>] [-Tags <String[]>] [-VideoDeviceName <String>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -267,21 +265,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -389,23 +372,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Tags
-Specifies other features of the room; for example, the type of view or furniture type.
+Specifies additional features of the room, for example, details like the type of view or furniture type.
 
 ```yaml
 Type: System.String[]
@@ -474,8 +442,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRoom
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRoom
@@ -531,7 +497,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[IsWheelChairAccessible <Boolean?>]`: Specifies whether the room is wheelchair accessible.
   - `[Label <String>]`: Specifies a descriptive label for the room, for example, a number or name.
   - `[Nickname <String>]`: Specifies a nickname for the room, for example, 'conf room'.
-  - `[Tags <String[]>]`: Specifies other features of the room; for example, the type of view or furniture type.
+  - `[Tags <String[]>]`: Specifies additional features of the room, for example, details like the type of view or furniture type.
   - `[VideoDeviceName <String>]`: Specifies the name of the video device in the room.
 
 `GEOCOORDINATES <IMicrosoftGraphOutlookGeoCoordinates>`: outlookGeoCoordinates

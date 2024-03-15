@@ -106,7 +106,7 @@ Accept wildcard characters: False
 Label selection mode for Teams.
 
 ```yaml
-Type: System.Nullable`1[[Microsoft.Graph.Beta.PowerShell.Models.MicrosoftGraphSensitivityLabelCondition, Microsoft.Graph.Beta.Teams.private, Version=2.16.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35]]
+Type: System.Nullable`1[[Microsoft.Graph.Beta.PowerShell.Models.MicrosoftGraphSensitivityLabelCondition, Microsoft.Graph.Beta.Teams.private, Version=2.11.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35]]
 Parameter Sets: (All)
 Aliases:
 

@@ -16,32 +16,28 @@ Create new navigation property to details for security
 ```
 New-MgSecurityAttackSimulationEndUserNotificationDetail -EndUserNotificationId <String>
  [-AdditionalProperties <Hashtable>] [-EmailContent <String>] [-Id <String>] [-IsDefaultLangauge]
- [-Language <String>] [-Locale <String>] [-ResponseHeadersVariable <String>]
- [-SentFrom <IMicrosoftGraphEmailIdentity>] [-Subject <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Language <String>] [-Locale <String>] [-SentFrom <IMicrosoftGraphEmailIdentity>] [-Subject <String>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgSecurityAttackSimulationEndUserNotificationDetail -EndUserNotificationId <String>
- -BodyParameter <IMicrosoftGraphEndUserNotificationDetail> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphEndUserNotificationDetail> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgSecurityAttackSimulationEndUserNotificationDetail -InputObject <ISecurityIdentity>
- -BodyParameter <IMicrosoftGraphEndUserNotificationDetail> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphEndUserNotificationDetail> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgSecurityAttackSimulationEndUserNotificationDetail -InputObject <ISecurityIdentity>
  [-AdditionalProperties <Hashtable>] [-EmailContent <String>] [-Id <String>] [-IsDefaultLangauge]
- [-Language <String>] [-Locale <String>] [-ResponseHeadersVariable <String>]
- [-SentFrom <IMicrosoftGraphEmailIdentity>] [-Subject <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Language <String>] [-Locale <String>] [-SentFrom <IMicrosoftGraphEmailIdentity>] [-Subject <String>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -126,21 +122,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -210,21 +191,6 @@ Notification locale.
 Type: System.String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -303,8 +269,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEndUserNotificationDetail
 
 ### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

@@ -18,22 +18,22 @@ Update-MgBetaTenantRelationshipManagedTenantEmailNotification -ManagedTenantEmai
  [-AdditionalProperties <Hashtable>] [-Alert <IMicrosoftGraphManagedTenantsManagedTenantAlert>]
  [-CreatedByUserId <String>] [-CreatedDateTime <DateTime>]
  [-EmailAddresses <IMicrosoftGraphManagedTenantsEmail[]>] [-EmailBody <String>] [-Id <String>]
- [-LastActionByUserId <String>] [-LastActionDateTime <DateTime>] [-ResponseHeadersVariable <String>]
- [-Subject <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-LastActionByUserId <String>] [-LastActionDateTime <DateTime>] [-Subject <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaTenantRelationshipManagedTenantEmailNotification -ManagedTenantEmailNotificationId <String>
- -BodyParameter <IMicrosoftGraphManagedTenantsManagedTenantEmailNotification>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphManagedTenantsManagedTenantEmailNotification> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaTenantRelationshipManagedTenantEmailNotification -InputObject <IManagedTenantsIdentity>
- -BodyParameter <IMicrosoftGraphManagedTenantsManagedTenantEmailNotification>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphManagedTenantsManagedTenantEmailNotification> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -42,8 +42,8 @@ Update-MgBetaTenantRelationshipManagedTenantEmailNotification -InputObject <IMan
  [-AdditionalProperties <Hashtable>] [-Alert <IMicrosoftGraphManagedTenantsManagedTenantAlert>]
  [-CreatedByUserId <String>] [-CreatedDateTime <DateTime>]
  [-EmailAddresses <IMicrosoftGraphManagedTenantsEmail[]>] [-EmailBody <String>] [-Id <String>]
- [-LastActionByUserId <String>] [-LastActionDateTime <DateTime>] [-ResponseHeadersVariable <String>]
- [-Subject <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-LastActionByUserId <String>] [-LastActionDateTime <DateTime>] [-Subject <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -175,21 +175,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -267,21 +252,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Subject
 .
 
@@ -336,8 +306,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantEmailNotification
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

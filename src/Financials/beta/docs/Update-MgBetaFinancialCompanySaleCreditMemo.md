@@ -23,25 +23,22 @@ Update-MgBetaFinancialCompanySaleCreditMemo -CompanyId <String> -SalesCreditMemo
  [-Email <String>] [-ExternalDocumentNumber <String>] [-Id <String>] [-InvoiceId <String>]
  [-InvoiceNumber <String>] [-LastModifiedDateTime <DateTime>] [-Number <String>]
  [-PaymentTerm <IMicrosoftGraphPaymentTerm>] [-PaymentTermsId <String>] [-PhoneNumber <String>]
- [-PricesIncludeTax] [-ResponseHeadersVariable <String>]
- [-SalesCreditMemoLines <IMicrosoftGraphSalesCreditMemoLine[]>] [-Salesperson <String>]
+ [-PricesIncludeTax] [-SalesCreditMemoLines <IMicrosoftGraphSalesCreditMemoLine[]>] [-Salesperson <String>]
  [-SellingPostalAddress <IMicrosoftGraphPostalAddressType>] [-Status <String>]
  [-TotalAmountExcludingTax <Decimal>] [-TotalAmountIncludingTax <Decimal>] [-TotalTaxAmount <Decimal>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaFinancialCompanySaleCreditMemo -CompanyId <String> -SalesCreditMemoId <String>
- -BodyParameter <IMicrosoftGraphSalesCreditMemo> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphSalesCreditMemo> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaFinancialCompanySaleCreditMemo -InputObject <IFinancialsIdentity>
- -BodyParameter <IMicrosoftGraphSalesCreditMemo> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphSalesCreditMemo> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -55,11 +52,10 @@ Update-MgBetaFinancialCompanySaleCreditMemo -InputObject <IFinancialsIdentity>
  [-Email <String>] [-ExternalDocumentNumber <String>] [-Id <String>] [-InvoiceId <String>]
  [-InvoiceNumber <String>] [-LastModifiedDateTime <DateTime>] [-Number <String>]
  [-PaymentTerm <IMicrosoftGraphPaymentTerm>] [-PaymentTermsId <String>] [-PhoneNumber <String>]
- [-PricesIncludeTax] [-ResponseHeadersVariable <String>]
- [-SalesCreditMemoLines <IMicrosoftGraphSalesCreditMemoLine[]>] [-Salesperson <String>]
+ [-PricesIncludeTax] [-SalesCreditMemoLines <IMicrosoftGraphSalesCreditMemoLine[]>] [-Salesperson <String>]
  [-SellingPostalAddress <IMicrosoftGraphPostalAddressType>] [-Status <String>]
  [-TotalAmountExcludingTax <Decimal>] [-TotalAmountIncludingTax <Decimal>] [-TotalTaxAmount <Decimal>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -387,21 +383,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 .
 
@@ -546,21 +527,6 @@ Accept wildcard characters: False
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -730,8 +696,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSalesCreditMemo
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

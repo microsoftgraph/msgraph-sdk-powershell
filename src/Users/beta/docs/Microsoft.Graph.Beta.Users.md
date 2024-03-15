@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Users
-Module Guid: 1e94b82f-d5a9-4bb1-93d1-5d2c4a7f9927
+Module Guid: 950867ec-4468-46c3-8b97-5347b8d70854
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.users
 Help Version: 1.0.0.0
 Locale: en-US
@@ -17,12 +17,8 @@ This operation returns by default only a subset of the more commonly used proper
 These default properties are noted in the Properties section.
 To get properties that are not returned by default, do a GET operation for the user and specify the properties in a $select OData query option.
 Because the user resource supports extensions, you can also use the GET operation to get custom properties and extension data in a user instance.
-Customers through Microsoft Entra ID for customers can also use this API operation to retrieve their details.
 
 ### [Get-MgBetaUserAppRoleAssignedResource](Get-MgBetaUserAppRoleAssignedResource.md)
-Get appRoleAssignedResources from users
-
-### [Get-MgBetaUserAppRoleAssignedResourceByAppId](Get-MgBetaUserAppRoleAssignedResourceByAppId.md)
 Get appRoleAssignedResources from users
 
 ### [Get-MgBetaUserAppRoleAssignedResourceCount](Get-MgBetaUserAppRoleAssignedResourceCount.md)
@@ -335,18 +331,6 @@ Retrieve the properties of a user's regionalAndLanguageSettings.
 ### [Get-MgBetaUserSettingShiftPreference](Get-MgBetaUserSettingShiftPreference.md)
 Retrieve the properties and relationships of a shiftPreferences object by ID.
 
-### [Get-MgBetaUserSettingWindows](Get-MgBetaUserSettingWindows.md)
-Get windows from users
-
-### [Get-MgBetaUserSettingWindowsCount](Get-MgBetaUserSettingWindowsCount.md)
-Get the number of the resource
-
-### [Get-MgBetaUserSettingWindowsInstance](Get-MgBetaUserSettingWindowsInstance.md)
-Get instances from users
-
-### [Get-MgBetaUserSettingWindowsInstanceCount](Get-MgBetaUserSettingWindowsInstanceCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaUserSponsor](Get-MgBetaUserSponsor.md)
 The users and groups responsible for this guest user's privileges in the tenant and keep the guest user's information and access updated.
 (HTTP Methods: GET, POST, DELETE.).
@@ -504,12 +488,6 @@ The POST method always ignores the time portion of startDateTime and dueDateTime
 Use this API to add an attachment to an outlookTask.
 The attachment can be a file (of fileAttachment type) or Outlook item (itemAttachment type).
 
-### [New-MgBetaUserSettingWindows](New-MgBetaUserSettingWindows.md)
-Create new navigation property to windows for users
-
-### [New-MgBetaUserSettingWindowsInstance](New-MgBetaUserSettingWindowsInstance.md)
-Create new navigation property to instances for users
-
 ### [New-MgBetaUserTodoList](New-MgBetaUserTodoList.md)
 Create a new lists object.
 
@@ -558,6 +536,9 @@ Delete navigation property used for users
 
 ### [Remove-MgBetaUserLicenseDetail](Remove-MgBetaUserLicenseDetail.md)
 Delete navigation property licenseDetails for users
+
+### [Remove-MgBetaUserManager](Remove-MgBetaUserManager.md)
+Remove a user's manager.
 
 ### [Remove-MgBetaUserManagerByRef](Remove-MgBetaUserManagerByRef.md)
 Remove a user's manager.
@@ -610,11 +591,8 @@ Delete navigation property regionalAndLanguageSettings for users
 ### [Remove-MgBetaUserSettingShiftPreference](Remove-MgBetaUserSettingShiftPreference.md)
 Delete navigation property shiftPreferences for users
 
-### [Remove-MgBetaUserSettingWindows](Remove-MgBetaUserSettingWindows.md)
-Delete navigation property windows for users
-
-### [Remove-MgBetaUserSettingWindowsInstance](Remove-MgBetaUserSettingWindowsInstance.md)
-Delete navigation property instances for users
+### [Remove-MgBetaUserSponsor](Remove-MgBetaUserSponsor.md)
+Remove a user's sponsor.
 
 ### [Remove-MgBetaUserTodoList](Remove-MgBetaUserTodoList.md)
 Deletes a todoTaskList object.
@@ -656,8 +634,6 @@ The content streams that are uploaded.
 Update the properties of a user object.
 Not all properties can be updated by Member or Guest users with their default permissions without Administrator roles.
 Compare member and guest default permissions to see properties they can manage.
-Customers through Microsoft Entra ID for customers can also use this API operation to update their details.
-See Default user permissions in customer tenants for the list of properties they can update.
 
 ### [Update-MgBetaUserExtension](Update-MgBetaUserExtension.md)
 Update the navigation property extensions in users
@@ -724,12 +700,6 @@ Update some or all of the properties of a regionalAndLanguageSettings object.
 
 ### [Update-MgBetaUserSettingShiftPreference](Update-MgBetaUserSettingShiftPreference.md)
 Update the properties and relationships of a shiftPreferences object.
-
-### [Update-MgBetaUserSettingWindows](Update-MgBetaUserSettingWindows.md)
-Update the navigation property windows in users
-
-### [Update-MgBetaUserSettingWindowsInstance](Update-MgBetaUserSettingWindowsInstance.md)
-Update the navigation property instances in users
 
 ### [Update-MgBetaUserTodoList](Update-MgBetaUserTodoList.md)
 Update the properties of a todoTaskList object.

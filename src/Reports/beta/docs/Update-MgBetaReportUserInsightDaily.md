@@ -19,16 +19,15 @@ Update-MgBetaReportUserInsightDaily [-ActiveUsers <IMicrosoftGraphActiveUsersMet
  [-Authentications <IMicrosoftGraphAuthenticationsMetric[]>] [-Id <String>]
  [-InactiveUsers <IMicrosoftGraphDailyInactiveUsersMetric[]>]
  [-InactiveUsersByApplication <IMicrosoftGraphDailyInactiveUsersByApplicationMetric[]>]
- [-MfaCompletions <IMicrosoftGraphMfaCompletionMetric[]>] [-ResponseHeadersVariable <String>]
- [-SignUps <IMicrosoftGraphUserSignUpMetric[]>] [-Summary <IMicrosoftGraphInsightSummary[]>]
- [-UserCount <IMicrosoftGraphUserCountMetric[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-MfaCompletions <IMicrosoftGraphMfaCompletionMetric[]>] [-SignUps <IMicrosoftGraphUserSignUpMetric[]>]
+ [-Summary <IMicrosoftGraphInsightSummary[]>] [-UserCount <IMicrosoftGraphUserCountMetric[]>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgBetaReportUserInsightDaily -BodyParameter <IMicrosoftGraphDailyUserInsightMetricsRoot>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgBetaReportUserInsightDaily -BodyParameter <IMicrosoftGraphDailyUserInsightMetricsRoot> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -69,7 +68,7 @@ Accept wildcard characters: False
 ```
 
 ### -ActiveUsersBreakdown
-.
+Insights for the breakdown of users who were active on apps registered in the tenant for a specified period.
 To construct, see NOTES section for ACTIVEUSERSBREAKDOWN properties and create a hash table.
 
 ```yaml
@@ -125,21 +124,6 @@ Parameter Sets: Update
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -202,21 +186,6 @@ To construct, see NOTES section for MFACOMPLETIONS properties and create a hash 
 Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMfaCompletionMetric[]
 Parameter Sets: UpdateExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -311,8 +280,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDailyUserInsightMetricsRoot
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDailyUserInsightMetricsRoot
@@ -331,7 +298,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[Count <Int64?>]`: The total number of users who made at least one authentication request within the specified time period.
   - `[FactDate <DateTime?>]`: Date of the insight.
 
-`ACTIVEUSERSBREAKDOWN <IMicrosoftGraphActiveUsersBreakdownMetric[]>`: .
+`ACTIVEUSERSBREAKDOWN <IMicrosoftGraphActiveUsersBreakdownMetric[]>`: Insights for the breakdown of users who were active on apps registered in the tenant for a specified period.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[AppId <String>]`: The ID of the Microsoft Entra application.
   - `[AppName <String>]`: Name of the application users authenticated to.
@@ -355,7 +322,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Count <Int64?>]`: The total number of users who made at least one authentication request within the specified time period.
     - `[FactDate <DateTime?>]`: Date of the insight.
-  - `[ActiveUsersBreakdown <IMicrosoftGraphActiveUsersBreakdownMetric[]>]`: 
+  - `[ActiveUsersBreakdown <IMicrosoftGraphActiveUsersBreakdownMetric[]>]`: Insights for the breakdown of users who were active on apps registered in the tenant for a specified period.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[AppId <String>]`: The ID of the Microsoft Entra application.
     - `[AppName <String>]`: Name of the application users authenticated to.

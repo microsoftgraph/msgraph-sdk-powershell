@@ -18,29 +18,27 @@ Update the properties of the userSettings object.
 ```
 Update-MgUserSetting -UserId <String> [-AdditionalProperties <Hashtable>]
  [-ContributionToContentDiscoveryAsOrganizationDisabled] [-ContributionToContentDiscoveryDisabled]
- [-Id <String>] [-ResponseHeadersVariable <String>] [-ShiftPreferences <IMicrosoftGraphShiftPreferences>]
- [-Windows <IMicrosoftGraphWindowsSetting[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
+ [-Id <String>] [-ShiftPreferences <IMicrosoftGraphShiftPreferences>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgUserSetting -UserId <String> -BodyParameter <IMicrosoftGraphUserSettings>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgUserSetting -UserId <String> -BodyParameter <IMicrosoftGraphUserSettings> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgUserSetting -InputObject <IUsersIdentity> -BodyParameter <IMicrosoftGraphUserSettings>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgUserSetting -InputObject <IUsersIdentity> -BodyParameter <IMicrosoftGraphUserSettings> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgUserSetting -InputObject <IUsersIdentity> [-AdditionalProperties <Hashtable>]
  [-ContributionToContentDiscoveryAsOrganizationDisabled] [-ContributionToContentDiscoveryDisabled]
- [-Id <String>] [-ResponseHeadersVariable <String>] [-ShiftPreferences <IMicrosoftGraphShiftPreferences>]
- [-Windows <IMicrosoftGraphWindowsSetting[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
+ [-Id <String>] [-ShiftPreferences <IMicrosoftGraphShiftPreferences>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -132,21 +130,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -179,21 +162,6 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -ShiftPreferences
 shiftPreferences
 To construct, see NOTES section for SHIFTPREFERENCES properties and create a hash table.
@@ -219,22 +187,6 @@ Parameter Sets: Update, UpdateExpanded
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Windows
-.
-To construct, see NOTES section for WINDOWS properties and create a hash table.
-
-```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsSetting[]
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -280,8 +232,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserSettings
 
 ### Microsoft.Graph.PowerShell.Models.IUsersIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 
@@ -335,17 +285,6 @@ To create the parameters described below, construct a hash table containing the 
         - `[EndTime <String>]`: End time for the time range.
         - `[StartTime <String>]`: Start time for the time range.
       - `[TimeZone <String>]`: Specifies the time zone for the indicated time.
-  - `[Windows <IMicrosoftGraphWindowsSetting[]>]`: 
-    - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[Instances <IMicrosoftGraphWindowsSettingInstance[]>]`: 
-      - `[Id <String>]`: The unique identifier for an entity. Read-only.
-      - `[CreatedDateTime <DateTime?>]`: 
-      - `[ExpirationDateTime <DateTime?>]`: 
-      - `[LastModifiedDateTime <DateTime?>]`: 
-      - `[Payload <String>]`: 
-    - `[PayloadType <String>]`: 
-    - `[SettingType <String>]`: windowsSettingType
-    - `[WindowsDeviceId <String>]`: 
 
 `INPUTOBJECT <IUsersIdentity>`: Identity Parameter
   - `[AttachmentBaseId <String>]`: The unique identifier of attachmentBase
@@ -361,8 +300,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[TodoTaskId <String>]`: The unique identifier of todoTask
   - `[TodoTaskListId <String>]`: The unique identifier of todoTaskList
   - `[UserId <String>]`: The unique identifier of user
-  - `[WindowsSettingId <String>]`: The unique identifier of windowsSetting
-  - `[WindowsSettingInstanceId <String>]`: The unique identifier of windowsSettingInstance
 
 `SHIFTPREFERENCES <IMicrosoftGraphShiftPreferences>`: shiftPreferences
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -398,18 +335,6 @@ To create the parameters described below, construct a hash table containing the 
       - `[EndTime <String>]`: End time for the time range.
       - `[StartTime <String>]`: Start time for the time range.
     - `[TimeZone <String>]`: Specifies the time zone for the indicated time.
-
-`WINDOWS <IMicrosoftGraphWindowsSetting[]>`: .
-  - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[Instances <IMicrosoftGraphWindowsSettingInstance[]>]`: 
-    - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[CreatedDateTime <DateTime?>]`: 
-    - `[ExpirationDateTime <DateTime?>]`: 
-    - `[LastModifiedDateTime <DateTime?>]`: 
-    - `[Payload <String>]`: 
-  - `[PayloadType <String>]`: 
-  - `[SettingType <String>]`: windowsSettingType
-  - `[WindowsDeviceId <String>]`: 
 
 ## RELATED LINKS
 

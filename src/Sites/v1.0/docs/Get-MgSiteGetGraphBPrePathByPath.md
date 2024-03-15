@@ -14,14 +14,13 @@ Invoke function getByPath
 
 ### Get (Default)
 ```
-Get-MgSiteGetGraphBPrePathByPath -Path <String> -Path1 <String> -SiteId <String>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [<CommonParameters>]
+Get-MgSiteGetGraphBPrePathByPath -Path <String> -Path1 <String> -SiteId <String> [-Headers <IDictionary>]
+ [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgSiteGetGraphBPrePathByPath -InputObject <ISitesIdentity> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [<CommonParameters>]
+Get-MgSiteGetGraphBPrePathByPath -InputObject <ISitesIdentity> [-Headers <IDictionary>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -100,21 +99,6 @@ Parameter Sets: Get
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False

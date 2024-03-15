@@ -19,21 +19,20 @@ Update-MgBetaUserSetting -UserId <String> [-AdditionalProperties <Hashtable>]
  [-ContributionToContentDiscoveryAsOrganizationDisabled] [-ContributionToContentDiscoveryDisabled]
  [-Id <String>] [-ItemInsights <IMicrosoftGraphUserInsightsSettings>]
  [-RegionalAndLanguageSettings <IMicrosoftGraphRegionalAndLanguageSettings>]
- [-ResponseHeadersVariable <String>] [-ShiftPreferences <IMicrosoftGraphShiftPreferences>]
- [-Windows <IMicrosoftGraphWindowsSetting[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
+ [-ShiftPreferences <IMicrosoftGraphShiftPreferences>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaUserSetting -UserId <String> -BodyParameter <IMicrosoftGraphUserSettings>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaUserSetting -InputObject <IUsersIdentity> -BodyParameter <IMicrosoftGraphUserSettings>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -43,8 +42,7 @@ Update-MgBetaUserSetting -InputObject <IUsersIdentity> [-AdditionalProperties <H
  [-ContributionToContentDiscoveryAsOrganizationDisabled] [-ContributionToContentDiscoveryDisabled]
  [-Id <String>] [-ItemInsights <IMicrosoftGraphUserInsightsSettings>]
  [-RegionalAndLanguageSettings <IMicrosoftGraphRegionalAndLanguageSettings>]
- [-ResponseHeadersVariable <String>] [-ShiftPreferences <IMicrosoftGraphShiftPreferences>]
- [-Windows <IMicrosoftGraphWindowsSetting[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
+ [-ShiftPreferences <IMicrosoftGraphShiftPreferences>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -336,6 +334,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserSettings
 
+### System.Collections.Hashtable
+
 ## NOTES
 
 ALIASES
@@ -437,7 +437,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[IsEnabled <Boolean?>]`: true if the duplicate contact merge suggestions feature is enabled for the user; false if the feature is disabled. Default value is true.
 
 `INPUTOBJECT <IUsersIdentity>`: Identity Parameter
-  - `[AppId <String>]`: Alternate key of servicePrincipal
   - `[AttachmentBaseId <String>]`: The unique identifier of attachmentBase
   - `[AttachmentId <String>]`: The unique identifier of attachment
   - `[AttachmentSessionId <String>]`: The unique identifier of attachmentSession
@@ -460,8 +459,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[TrendingId <String>]`: The unique identifier of trending
   - `[UsedInsightId <String>]`: The unique identifier of usedInsight
   - `[UserId <String>]`: The unique identifier of user
-  - `[WindowsSettingId <String>]`: The unique identifier of windowsSetting
-  - `[WindowsSettingInstanceId <String>]`: The unique identifier of windowsSettingInstance
 
 `ITEMINSIGHTS <IMicrosoftGraphUserInsightsSettings>`: userInsightsSettings
   - `[(Any) <Object>]`: This indicates any property can be added to this object.

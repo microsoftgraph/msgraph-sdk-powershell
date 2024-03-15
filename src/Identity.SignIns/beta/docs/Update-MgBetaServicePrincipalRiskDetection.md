@@ -19,24 +19,21 @@ Update-MgBetaServicePrincipalRiskDetection -ServicePrincipalRiskDetectionId <Str
  [-AppId <String>] [-CorrelationId <String>] [-DetectedDateTime <DateTime>] [-DetectionTimingType <String>]
  [-Id <String>] [-IPAddress <String>] [-KeyIds <String[]>] [-LastUpdatedDateTime <DateTime>]
  [-Location <IMicrosoftGraphSignInLocation>] [-MitreTechniqueId <String>] [-RequestId <String>]
- [-ResponseHeadersVariable <String>] [-RiskDetail <String>] [-RiskEventType <String>] [-RiskLevel <String>]
- [-RiskState <String>] [-ServicePrincipalDisplayName <String>] [-ServicePrincipalId <String>]
- [-Source <String>] [-TokenIssuerType <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-RiskDetail <String>] [-RiskEventType <String>] [-RiskLevel <String>] [-RiskState <String>]
+ [-ServicePrincipalDisplayName <String>] [-ServicePrincipalId <String>] [-Source <String>]
+ [-TokenIssuerType <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaServicePrincipalRiskDetection -ServicePrincipalRiskDetectionId <String>
- -BodyParameter <IMicrosoftGraphServicePrincipalRiskDetection> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphServicePrincipalRiskDetection> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaServicePrincipalRiskDetection -InputObject <IIdentitySignInsIdentity>
- -BodyParameter <IMicrosoftGraphServicePrincipalRiskDetection> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphServicePrincipalRiskDetection> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -46,10 +43,9 @@ Update-MgBetaServicePrincipalRiskDetection -InputObject <IIdentitySignInsIdentit
  [-AppId <String>] [-CorrelationId <String>] [-DetectedDateTime <DateTime>] [-DetectionTimingType <String>]
  [-Id <String>] [-IPAddress <String>] [-KeyIds <String[]>] [-LastUpdatedDateTime <DateTime>]
  [-Location <IMicrosoftGraphSignInLocation>] [-MitreTechniqueId <String>] [-RequestId <String>]
- [-ResponseHeadersVariable <String>] [-RiskDetail <String>] [-RiskEventType <String>] [-RiskLevel <String>]
- [-RiskState <String>] [-ServicePrincipalDisplayName <String>] [-ServicePrincipalId <String>]
- [-Source <String>] [-TokenIssuerType <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-RiskDetail <String>] [-RiskEventType <String>] [-RiskLevel <String>] [-RiskState <String>]
+ [-ServicePrincipalDisplayName <String>] [-ServicePrincipalId <String>] [-Source <String>]
+ [-TokenIssuerType <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -215,21 +211,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -347,21 +328,6 @@ Supports $filter (eq).
 Type: System.String
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -547,8 +513,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphServicePrincipalRiskDetection
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

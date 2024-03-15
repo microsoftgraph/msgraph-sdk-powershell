@@ -16,23 +16,22 @@ Update the navigation property permissionsRequestChanges in identityGovernance
 ```
 Update-MgBetaIdentityGovernancePermissionManagementPermissionRequestChange
  -PermissionsRequestChangeId <String> [-ActiveOccurrenceStatus <String>] [-AdditionalProperties <Hashtable>]
- [-Id <String>] [-ModificationDateTime <DateTime>] [-PermissionsRequestId <String>]
- [-ResponseHeadersVariable <String>] [-StatusDetail <String>] [-TicketId <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-ModificationDateTime <DateTime>] [-PermissionsRequestId <String>] [-StatusDetail <String>]
+ [-TicketId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaIdentityGovernancePermissionManagementPermissionRequestChange
- -PermissionsRequestChangeId <String> -BodyParameter <IMicrosoftGraphPermissionsRequestChange>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -PermissionsRequestChangeId <String> -BodyParameter <IMicrosoftGraphPermissionsRequestChange> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaIdentityGovernancePermissionManagementPermissionRequestChange
  -InputObject <IIdentityGovernanceIdentity> -BodyParameter <IMicrosoftGraphPermissionsRequestChange>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -40,8 +39,8 @@ Update-MgBetaIdentityGovernancePermissionManagementPermissionRequestChange
 Update-MgBetaIdentityGovernancePermissionManagementPermissionRequestChange
  -InputObject <IIdentityGovernanceIdentity> [-ActiveOccurrenceStatus <String>]
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-ModificationDateTime <DateTime>]
- [-PermissionsRequestId <String>] [-ResponseHeadersVariable <String>] [-StatusDetail <String>]
- [-TicketId <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PermissionsRequestId <String>] [-StatusDetail <String>] [-TicketId <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -105,21 +104,6 @@ Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -203,21 +187,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -StatusDetail
 statusDetail
 
@@ -287,8 +256,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPermissionsRequestChange
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 
@@ -364,7 +331,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[GroupId <String>]`: The unique identifier of group
   - `[IncompatibleAccessPackageId <String>]`: Usage: incompatibleAccessPackageId='{incompatibleAccessPackageId}'
   - `[LongRunningOperationId <String>]`: The unique identifier of longRunningOperation
-  - `[ObjectId <String>]`: Alternate key of accessPackageSubject
   - `[On <String>]`: Usage: on='{on}'
   - `[PermissionsCreepIndexDistributionId <String>]`: The unique identifier of permissionsCreepIndexDistribution
   - `[PermissionsRequestChangeId <String>]`: The unique identifier of permissionsRequestChange

@@ -18,26 +18,25 @@ Update-MgBetaTenantRelationshipManagedTenantCredentialUserRegistrationSummary
  -CredentialUserRegistrationsSummaryId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-LastRefreshedDateTime <DateTime>] [-MfaAndSsprCapableUserCount <Int32>]
  [-MfaConditionalAccessPolicyState <String>] [-MfaExcludedUserCount <Int32>] [-MfaRegisteredUserCount <Int32>]
- [-ResponseHeadersVariable <String>] [-SecurityDefaultsEnabled] [-SsprEnabledUserCount <Int32>]
- [-SsprRegisteredUserCount <Int32>] [-TenantDisplayName <String>] [-TenantId <String>]
- [-TenantLicenseType <String>] [-TotalUserCount <Int32>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-SecurityDefaultsEnabled] [-SsprEnabledUserCount <Int32>] [-SsprRegisteredUserCount <Int32>]
+ [-TenantDisplayName <String>] [-TenantId <String>] [-TenantLicenseType <String>] [-TotalUserCount <Int32>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaTenantRelationshipManagedTenantCredentialUserRegistrationSummary
  -CredentialUserRegistrationsSummaryId <String>
- -BodyParameter <IMicrosoftGraphManagedTenantsCredentialUserRegistrationsSummary>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphManagedTenantsCredentialUserRegistrationsSummary> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaTenantRelationshipManagedTenantCredentialUserRegistrationSummary
  -InputObject <IManagedTenantsIdentity>
- -BodyParameter <IMicrosoftGraphManagedTenantsCredentialUserRegistrationsSummary>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphManagedTenantsCredentialUserRegistrationsSummary> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -46,10 +45,9 @@ Update-MgBetaTenantRelationshipManagedTenantCredentialUserRegistrationSummary
  -InputObject <IManagedTenantsIdentity> [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-LastRefreshedDateTime <DateTime>] [-MfaAndSsprCapableUserCount <Int32>]
  [-MfaConditionalAccessPolicyState <String>] [-MfaExcludedUserCount <Int32>] [-MfaRegisteredUserCount <Int32>]
- [-ResponseHeadersVariable <String>] [-SecurityDefaultsEnabled] [-SsprEnabledUserCount <Int32>]
- [-SsprRegisteredUserCount <Int32>] [-TenantDisplayName <String>] [-TenantId <String>]
- [-TenantLicenseType <String>] [-TotalUserCount <Int32>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-SecurityDefaultsEnabled] [-SsprEnabledUserCount <Int32>] [-SsprRegisteredUserCount <Int32>]
+ [-TenantDisplayName <String>] [-TenantId <String>] [-TenantLicenseType <String>] [-TotalUserCount <Int32>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -116,21 +114,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -243,21 +226,6 @@ Read-only.
 Type: System.Int32
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -422,8 +390,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsCredentialUserRegistrationsSummary
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

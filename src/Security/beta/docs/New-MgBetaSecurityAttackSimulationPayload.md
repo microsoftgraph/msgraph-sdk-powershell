@@ -19,15 +19,14 @@ New-MgBetaSecurityAttackSimulationPayload [-AdditionalProperties <Hashtable>] [-
  [-Description <String>] [-Detail <IMicrosoftGraphPayloadDetail>] [-DisplayName <String>] [-Id <String>]
  [-Industry <String>] [-IsAutomated] [-IsControversial] [-IsCurrentEvent] [-Language <String>]
  [-LastModifiedBy <IMicrosoftGraphEmailIdentity>] [-LastModifiedDateTime <DateTime>] [-PayloadTags <String[]>]
- [-Platform <String>] [-PredictedCompromiseRate <Double>] [-ResponseHeadersVariable <String>]
- [-SimulationAttackType <String>] [-Source <String>] [-Status <String>] [-Technique <String>]
- [-Theme <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Platform <String>] [-PredictedCompromiseRate <Double>] [-SimulationAttackType <String>] [-Source <String>]
+ [-Status <String>] [-Technique <String>] [-Theme <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgBetaSecurityAttackSimulationPayload -BodyParameter <IMicrosoftGraphPayload>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaSecurityAttackSimulationPayload -BodyParameter <IMicrosoftGraphPayload> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -189,21 +188,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -377,21 +361,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -SimulationAttackType
 simulationAttackType
 
@@ -504,8 +473,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPayload
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

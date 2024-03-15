@@ -17,23 +17,21 @@ Update the navigation property appLogCollectionRequests in users
 Update-MgBetaUserMobileAppTroubleshootingEventAppLogCollectionRequest -AppLogCollectionRequestId <String>
  -MobileAppTroubleshootingEventId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
  [-CompletedDateTime <DateTime>] [-CustomLogFolders <String[]>] [-ErrorMessage <String>] [-Id <String>]
- [-ResponseHeadersVariable <String>] [-Status <AppLogUploadState>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-Status <AppLogUploadState>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaUserMobileAppTroubleshootingEventAppLogCollectionRequest -AppLogCollectionRequestId <String>
  -MobileAppTroubleshootingEventId <String> -UserId <String>
- -BodyParameter <IMicrosoftGraphAppLogCollectionRequest> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphAppLogCollectionRequest> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaUserMobileAppTroubleshootingEventAppLogCollectionRequest
  -InputObject <IDevicesCorporateManagementIdentity> -BodyParameter <IMicrosoftGraphAppLogCollectionRequest>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -41,8 +39,7 @@ Update-MgBetaUserMobileAppTroubleshootingEventAppLogCollectionRequest
 Update-MgBetaUserMobileAppTroubleshootingEventAppLogCollectionRequest
  -InputObject <IDevicesCorporateManagementIdentity> [-AdditionalProperties <Hashtable>]
  [-CompletedDateTime <DateTime>] [-CustomLogFolders <String[]>] [-ErrorMessage <String>] [-Id <String>]
- [-ResponseHeadersVariable <String>] [-Status <AppLogUploadState>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-Status <AppLogUploadState>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -157,21 +154,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -213,21 +195,6 @@ Parameter Sets: Update, UpdateExpanded
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -303,8 +270,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAppLogCollectionRequest
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

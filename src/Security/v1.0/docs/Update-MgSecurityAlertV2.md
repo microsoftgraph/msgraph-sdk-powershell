@@ -22,22 +22,21 @@ Update-MgSecurityAlertV2 -AlertId <String> [-ActorDisplayName <String>] [-Additi
  [-FirstActivityDateTime <DateTime>] [-Id <String>] [-IncidentId <String>] [-IncidentWebUrl <String>]
  [-LastActivityDateTime <DateTime>] [-LastUpdateDateTime <DateTime>] [-MitreTechniques <String[]>]
  [-ProductName <String>] [-ProviderAlertId <String>] [-RecommendedActions <String>]
- [-ResolvedDateTime <DateTime>] [-ResponseHeadersVariable <String>] [-ServiceSource <String>]
- [-Severity <String>] [-Status <String>] [-SystemTags <String[]>] [-TenantId <String>]
- [-ThreatDisplayName <String>] [-ThreatFamilyName <String>] [-Title <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ResolvedDateTime <DateTime>] [-ServiceSource <String>] [-Severity <String>] [-Status <String>]
+ [-TenantId <String>] [-ThreatDisplayName <String>] [-ThreatFamilyName <String>] [-Title <String>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgSecurityAlertV2 -AlertId <String> -BodyParameter <IMicrosoftGraphSecurityAlert>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgSecurityAlertV2 -AlertId <String> -BodyParameter <IMicrosoftGraphSecurityAlert> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgSecurityAlertV2 -InputObject <ISecurityIdentity> -BodyParameter <IMicrosoftGraphSecurityAlert>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -51,9 +50,9 @@ Update-MgSecurityAlertV2 -InputObject <ISecurityIdentity> [-ActorDisplayName <St
  [-IncidentId <String>] [-IncidentWebUrl <String>] [-LastActivityDateTime <DateTime>]
  [-LastUpdateDateTime <DateTime>] [-MitreTechniques <String[]>] [-ProductName <String>]
  [-ProviderAlertId <String>] [-RecommendedActions <String>] [-ResolvedDateTime <DateTime>]
- [-ResponseHeadersVariable <String>] [-ServiceSource <String>] [-Severity <String>] [-Status <String>]
- [-SystemTags <String[]>] [-TenantId <String>] [-ThreatDisplayName <String>] [-ThreatFamilyName <String>]
- [-Title <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ServiceSource <String>] [-Severity <String>] [-Status <String>] [-TenantId <String>]
+ [-ThreatDisplayName <String>] [-ThreatFamilyName <String>] [-Title <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -138,7 +137,7 @@ Accept wildcard characters: False
 ```
 
 ### -AlertPolicyId
-The ID of the policy that generated the alert, and populated when there is a specific policy that generated the alert, whether configured by a customer or a built-in policy.
+.
 
 ```yaml
 Type: System.String
@@ -153,7 +152,7 @@ Accept wildcard characters: False
 ```
 
 ### -AlertWebUrl
-.
+URL for the alert page in the Microsoft 365 Defender portal.
 
 ```yaml
 Type: System.String
@@ -351,21 +350,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -533,21 +517,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -ServiceSource
 serviceSource
 
@@ -583,21 +552,6 @@ alertStatus
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SystemTags
-The system tags associated with the alert.
-
-```yaml
-Type: System.String[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -708,8 +662,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityAlert
@@ -729,8 +681,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[ActorDisplayName <String>]`: The adversary or activity group that is associated with this alert.
   - `[AdditionalData <IMicrosoftGraphSecurityDictionary>]`: dictionary
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[AlertPolicyId <String>]`: The ID of the policy that generated the alert, and populated when there is a specific policy that generated the alert, whether configured by a customer or a built-in policy.
-  - `[AlertWebUrl <String>]`: 
+  - `[AlertPolicyId <String>]`: 
+  - `[AlertWebUrl <String>]`: URL for the alert page in the Microsoft 365 Defender portal.
   - `[AssignedTo <String>]`: Owner of the alert, or null if no owner is assigned.
   - `[Category <String>]`: The attack kill-chain category that the alert belongs to. Aligned with the MITRE ATT&CK framework.
   - `[Classification <String>]`: alertClassification
@@ -764,7 +716,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[ServiceSource <String>]`: serviceSource
   - `[Severity <String>]`: alertSeverity
   - `[Status <String>]`: alertStatus
-  - `[SystemTags <String[]>]`: The system tags associated with the alert.
   - `[TenantId <String>]`: The Microsoft Entra tenant the alert was created in.
   - `[ThreatDisplayName <String>]`: The threat associated with this alert.
   - `[ThreatFamilyName <String>]`: Threat family associated with this alert.

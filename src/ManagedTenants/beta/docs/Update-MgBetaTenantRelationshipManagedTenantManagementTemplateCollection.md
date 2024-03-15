@@ -18,24 +18,24 @@ Update-MgBetaTenantRelationshipManagedTenantManagementTemplateCollection
  -ManagementTemplateCollectionId <String> [-AdditionalProperties <Hashtable>] [-CreatedByUserId <String>]
  [-CreatedDateTime <DateTime>] [-Description <String>] [-DisplayName <String>] [-Id <String>]
  [-LastActionByUserId <String>] [-LastActionDateTime <DateTime>]
- [-ManagementTemplates <IMicrosoftGraphManagedTenantsManagementTemplate[]>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ManagementTemplates <IMicrosoftGraphManagedTenantsManagementTemplate[]>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaTenantRelationshipManagedTenantManagementTemplateCollection
  -ManagementTemplateCollectionId <String>
- -BodyParameter <IMicrosoftGraphManagedTenantsManagementTemplateCollection>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphManagedTenantsManagementTemplateCollection> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaTenantRelationshipManagedTenantManagementTemplateCollection
  -InputObject <IManagedTenantsIdentity>
- -BodyParameter <IMicrosoftGraphManagedTenantsManagementTemplateCollection>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphManagedTenantsManagementTemplateCollection> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -44,8 +44,8 @@ Update-MgBetaTenantRelationshipManagedTenantManagementTemplateCollection
  -InputObject <IManagedTenantsIdentity> [-AdditionalProperties <Hashtable>] [-CreatedByUserId <String>]
  [-CreatedDateTime <DateTime>] [-Description <String>] [-DisplayName <String>] [-Id <String>]
  [-LastActionByUserId <String>] [-LastActionDateTime <DateTime>]
- [-ManagementTemplates <IMicrosoftGraphManagedTenantsManagementTemplate[]>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ManagementTemplates <IMicrosoftGraphManagedTenantsManagementTemplate[]>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -160,21 +160,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -268,21 +253,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
@@ -322,8 +292,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagementTemplateCollection
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 
@@ -393,13 +361,11 @@ To create the parameters described below, construct a hash table containing the 
       - `[CreatedDateTime <DateTime?>]`: 
       - `[Description <String>]`: 
       - `[DisplayName <String>]`: 
-      - `[InformationLinks <IMicrosoftGraphActionUrl[]>]`: 
       - `[LastActionByUserId <String>]`: 
       - `[LastActionDateTime <DateTime?>]`: 
       - `[ManagementTemplate <IMicrosoftGraphManagedTenantsManagementTemplate>]`: managementTemplate
       - `[PortalLink <IMicrosoftGraphActionUrl>]`: actionUrl
       - `[Priority <Int32?>]`: 
-      - `[UserImpact <String>]`: 
       - `[Versions <IMicrosoftGraphManagedTenantsManagementTemplateStepVersion[]>]`: 
     - `[Parameters <IMicrosoftGraphManagedTenantsTemplateParameter[]>]`: The collection of parameters used by the management template. Optional. Read-only.
       - `[Description <String>]`: The description for the template parameter. Optional. Read-only.
@@ -519,13 +485,11 @@ To create the parameters described below, construct a hash table containing the 
     - `[CreatedDateTime <DateTime?>]`: 
     - `[Description <String>]`: 
     - `[DisplayName <String>]`: 
-    - `[InformationLinks <IMicrosoftGraphActionUrl[]>]`: 
     - `[LastActionByUserId <String>]`: 
     - `[LastActionDateTime <DateTime?>]`: 
     - `[ManagementTemplate <IMicrosoftGraphManagedTenantsManagementTemplate>]`: managementTemplate
     - `[PortalLink <IMicrosoftGraphActionUrl>]`: actionUrl
     - `[Priority <Int32?>]`: 
-    - `[UserImpact <String>]`: 
     - `[Versions <IMicrosoftGraphManagedTenantsManagementTemplateStepVersion[]>]`: 
   - `[Parameters <IMicrosoftGraphManagedTenantsTemplateParameter[]>]`: The collection of parameters used by the management template. Optional. Read-only.
     - `[Description <String>]`: The description for the template parameter. Optional. Read-only.

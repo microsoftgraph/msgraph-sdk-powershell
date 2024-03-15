@@ -22,23 +22,20 @@ Update-MgUserManagedDeviceWindowsProtectionState -ManagedDeviceId <String> -User
  [-LastFullScanSignatureVersion <String>] [-LastQuickScanDateTime <DateTime>]
  [-LastQuickScanSignatureVersion <String>] [-LastReportedDateTime <DateTime>] [-MalwareProtectionEnabled]
  [-NetworkInspectionSystemEnabled] [-ProductStatus <WindowsDefenderProductStatus>] [-QuickScanOverdue]
- [-RealTimeProtectionEnabled] [-RebootRequired] [-ResponseHeadersVariable <String>] [-SignatureUpdateOverdue]
- [-SignatureVersion <String>] [-TamperProtectionEnabled] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-RealTimeProtectionEnabled] [-RebootRequired] [-SignatureUpdateOverdue] [-SignatureVersion <String>]
+ [-TamperProtectionEnabled] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgUserManagedDeviceWindowsProtectionState -ManagedDeviceId <String> -UserId <String>
- -BodyParameter <IMicrosoftGraphWindowsProtectionState> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphWindowsProtectionState> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgUserManagedDeviceWindowsProtectionState -InputObject <IDevicesCorporateManagementIdentity>
- -BodyParameter <IMicrosoftGraphWindowsProtectionState> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphWindowsProtectionState> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -51,9 +48,8 @@ Update-MgUserManagedDeviceWindowsProtectionState -InputObject <IDevicesCorporate
  [-LastFullScanSignatureVersion <String>] [-LastQuickScanDateTime <DateTime>]
  [-LastQuickScanSignatureVersion <String>] [-LastReportedDateTime <DateTime>] [-MalwareProtectionEnabled]
  [-NetworkInspectionSystemEnabled] [-ProductStatus <WindowsDefenderProductStatus>] [-QuickScanOverdue]
- [-RealTimeProtectionEnabled] [-RebootRequired] [-ResponseHeadersVariable <String>] [-SignatureUpdateOverdue]
- [-SignatureVersion <String>] [-TamperProtectionEnabled] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-RealTimeProtectionEnabled] [-RebootRequired] [-SignatureUpdateOverdue] [-SignatureVersion <String>]
+ [-TamperProtectionEnabled] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -198,21 +194,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -448,21 +429,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -SignatureUpdateOverdue
 When TRUE indicates signature is out of date, when FALSE indicates signature is not out of date.
 Defaults to setting on client device.
@@ -564,8 +530,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsProtectionState
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

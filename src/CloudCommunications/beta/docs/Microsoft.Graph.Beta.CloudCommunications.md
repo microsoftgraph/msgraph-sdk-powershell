@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.CloudCommunications
-Module Guid: 567424d0-9f12-43d1-a8ae-7106f5e15119
+Module Guid: aa037956-7e4c-4da1-a250-cd8bf4c486f6
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.cloudcommunications
 Help Version: 1.0.0.0
 Locale: en-US
@@ -117,14 +117,8 @@ Get attendeeReport for the navigation property onlineMeetings from communication
 ### [Get-MgBetaCommunicationOnlineMeetingBroadcastRecording](Get-MgBetaCommunicationOnlineMeetingBroadcastRecording.md)
 Get broadcastRecording for the navigation property onlineMeetings from communications
 
-### [Get-MgBetaCommunicationOnlineMeetingByJoinWebUrl](Get-MgBetaCommunicationOnlineMeetingByJoinWebUrl.md)
-Get onlineMeetings from communications
-
 ### [Get-MgBetaCommunicationOnlineMeetingCount](Get-MgBetaCommunicationOnlineMeetingCount.md)
 Get the number of the resource
-
-### [Get-MgBetaCommunicationOnlineMeetingJoinWebUrlVirtualAppointmentJoinWebUrl](Get-MgBetaCommunicationOnlineMeetingJoinWebUrlVirtualAppointmentJoinWebUrl.md)
-Invoke function getVirtualAppointmentJoinWebUrl
 
 ### [Get-MgBetaCommunicationOnlineMeetingRecording](Get-MgBetaCommunicationOnlineMeetingRecording.md)
 Get recording for the navigation property onlineMeetings from communications
@@ -140,7 +134,7 @@ Get the number of the resource
 Invoke function delta
 
 ### [Get-MgBetaCommunicationOnlineMeetingRegistration](Get-MgBetaCommunicationOnlineMeetingRegistration.md)
-Get the externalMeetingRegistration details associated with an onlineMeeting.
+Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
 
 ### [Get-MgBetaCommunicationOnlineMeetingRegistrationCustomQuestion](Get-MgBetaCommunicationOnlineMeetingRegistrationCustomQuestion.md)
 Get a custom registration question associated with a meetingRegistration object on behalf of the organizer.
@@ -212,9 +206,6 @@ Get attendeeReport for the navigation property onlineMeetings from users
 ### [Get-MgBetaUserOnlineMeetingBroadcastRecording](Get-MgBetaUserOnlineMeetingBroadcastRecording.md)
 Get broadcastRecording for the navigation property onlineMeetings from users
 
-### [Get-MgBetaUserOnlineMeetingByJoinWebUrl](Get-MgBetaUserOnlineMeetingByJoinWebUrl.md)
-Information about a meeting, including the URL used to join a meeting, the attendees list, and the description.
-
 ### [Get-MgBetaUserOnlineMeetingCount](Get-MgBetaUserOnlineMeetingCount.md)
 Get the number of the resource
 
@@ -229,7 +220,7 @@ Read-only.
 Get the number of the resource
 
 ### [Get-MgBetaUserOnlineMeetingRegistration](Get-MgBetaUserOnlineMeetingRegistration.md)
-Get the externalMeetingRegistration details associated with an onlineMeeting.
+Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
 
 ### [Get-MgBetaUserOnlineMeetingRegistrationCustomQuestion](Get-MgBetaUserOnlineMeetingRegistrationCustomQuestion.md)
 Get a custom registration question associated with a meetingRegistration object on behalf of the organizer.
@@ -261,8 +252,7 @@ The time-aligned metadata of the utterances in the transcript.
 Read-only.
 
 ### [Get-MgBetaUserPresence](Get-MgBetaUserPresence.md)
-Set a presence status message for a user.
-An optional expiration date and time can be supplied.
+Get a user's presence information.
 
 ### [Invoke-MgBetaAnswerCommunicationCall](Invoke-MgBetaAnswerCommunicationCall.md)
 Enable a bot to answer an incoming call.
@@ -459,14 +449,11 @@ Delete navigation property attendanceReports for communications
 ### [Remove-MgBetaCommunicationOnlineMeetingAttendanceReportAttendanceRecord](Remove-MgBetaCommunicationOnlineMeetingAttendanceReportAttendanceRecord.md)
 Delete navigation property attendanceRecords for communications
 
-### [Remove-MgBetaCommunicationOnlineMeetingByJoinWebUrl](Remove-MgBetaCommunicationOnlineMeetingByJoinWebUrl.md)
-Delete navigation property onlineMeetings for communications
-
 ### [Remove-MgBetaCommunicationOnlineMeetingRecording](Remove-MgBetaCommunicationOnlineMeetingRecording.md)
 Delete navigation property recordings for communications
 
 ### [Remove-MgBetaCommunicationOnlineMeetingRegistration](Remove-MgBetaCommunicationOnlineMeetingRegistration.md)
-Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
+Disable and delete the externalMeetingRegistration of an onlineMeeting.
 
 ### [Remove-MgBetaCommunicationOnlineMeetingRegistrationCustomQuestion](Remove-MgBetaCommunicationOnlineMeetingRegistrationCustomQuestion.md)
 Delete a custom registration question from a meetingRegistration object on behalf of the organizer.
@@ -489,14 +476,11 @@ Delete navigation property attendanceReports for users
 ### [Remove-MgBetaUserOnlineMeetingAttendanceReportAttendanceRecord](Remove-MgBetaUserOnlineMeetingAttendanceReportAttendanceRecord.md)
 Delete navigation property attendanceRecords for users
 
-### [Remove-MgBetaUserOnlineMeetingByJoinWebUrl](Remove-MgBetaUserOnlineMeetingByJoinWebUrl.md)
-Delete an onlineMeeting object.
-
 ### [Remove-MgBetaUserOnlineMeetingRecording](Remove-MgBetaUserOnlineMeetingRecording.md)
 Delete navigation property recordings for users
 
 ### [Remove-MgBetaUserOnlineMeetingRegistration](Remove-MgBetaUserOnlineMeetingRegistration.md)
-Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
+Disable and delete the externalMeetingRegistration of an onlineMeeting.
 
 ### [Remove-MgBetaUserOnlineMeetingRegistrationCustomQuestion](Remove-MgBetaUserOnlineMeetingRegistrationCustomQuestion.md)
 Delete a custom registration question from a meetingRegistration object on behalf of the organizer.
@@ -516,23 +500,11 @@ Allow applications to share screen content with the participants of a group call
 ### [Send-MgBetaCommunicationCallDtmfTone](Send-MgBetaCommunicationCallDtmfTone.md)
 Invoke action sendDtmfTones
 
-### [Send-MgBetaCommunicationOnlineMeetingJoinWebUrlVirtualAppointmentReminderSm](Send-MgBetaCommunicationOnlineMeetingJoinWebUrlVirtualAppointmentReminderSm.md)
-Send an SMS reminder to external attendees for a Teams Virtual Appointment.
-This feature requires Teams Premium and attendees must have a valid United States phone number to receive SMS notifications.
-
-### [Send-MgBetaCommunicationOnlineMeetingJoinWebUrlVirtualAppointmentSm](Send-MgBetaCommunicationOnlineMeetingJoinWebUrlVirtualAppointmentSm.md)
-Send an SMS notification to external attendees when a Teams Virtual Appointment is confirmed, rescheduled, or canceled.
-This feature requires Teams Premium.
-Attendees must have a valid United States phone number to receive these SMS notifications.
-
 ### [Send-MgBetaCommunicationOnlineMeetingVirtualAppointmentReminderSm](Send-MgBetaCommunicationOnlineMeetingVirtualAppointmentReminderSm.md)
-Send an SMS reminder to external attendees for a Teams Virtual Appointment.
-This feature requires Teams Premium and attendees must have a valid United States phone number to receive SMS notifications.
+Invoke action sendVirtualAppointmentReminderSms
 
 ### [Send-MgBetaCommunicationOnlineMeetingVirtualAppointmentSm](Send-MgBetaCommunicationOnlineMeetingVirtualAppointmentSm.md)
-Send an SMS notification to external attendees when a Teams Virtual Appointment is confirmed, rescheduled, or canceled.
-This feature requires Teams Premium.
-Attendees must have a valid United States phone number to receive these SMS notifications.
+Invoke action sendVirtualAppointmentSms
 
 ### [Set-MgBetaCommunicationOnlineMeetingAlternativeRecording](Set-MgBetaCommunicationOnlineMeetingAlternativeRecording.md)
 Update alternativeRecording for the navigation property onlineMeetings in communications
@@ -644,9 +616,6 @@ Update the navigation property attendanceReports in communications
 ### [Update-MgBetaCommunicationOnlineMeetingAttendanceReportAttendanceRecord](Update-MgBetaCommunicationOnlineMeetingAttendanceReportAttendanceRecord.md)
 Update the navigation property attendanceRecords in communications
 
-### [Update-MgBetaCommunicationOnlineMeetingByJoinWebUrl](Update-MgBetaCommunicationOnlineMeetingByJoinWebUrl.md)
-Update the navigation property onlineMeetings in communications
-
 ### [Update-MgBetaCommunicationOnlineMeetingRecording](Update-MgBetaCommunicationOnlineMeetingRecording.md)
 Update the navigation property recordings in communications
 
@@ -674,10 +643,6 @@ Update the navigation property attendanceReports in users
 
 ### [Update-MgBetaUserOnlineMeetingAttendanceReportAttendanceRecord](Update-MgBetaUserOnlineMeetingAttendanceReportAttendanceRecord.md)
 Update the navigation property attendanceRecords in users
-
-### [Update-MgBetaUserOnlineMeetingByJoinWebUrl](Update-MgBetaUserOnlineMeetingByJoinWebUrl.md)
-Update the properties of the specified onlineMeeting object.
-Please see Request body section for the list of properties that support updating.
 
 ### [Update-MgBetaUserOnlineMeetingRecording](Update-MgBetaUserOnlineMeetingRecording.md)
 Update the navigation property recordings in users

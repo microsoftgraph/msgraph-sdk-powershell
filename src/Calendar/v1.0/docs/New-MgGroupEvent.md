@@ -27,24 +27,23 @@ New-MgGroupEvent -GroupId <String> [-AdditionalProperties <Hashtable>] [-AllowNe
  [-OnlineMeeting <IMicrosoftGraphOnlineMeetingInfo>] [-OnlineMeetingProvider <String>]
  [-OnlineMeetingUrl <String>] [-Organizer <IMicrosoftGraphRecipient>] [-OriginalEndTimeZone <String>]
  [-OriginalStart <DateTime>] [-OriginalStartTimeZone <String>]
- [-Recurrence <IMicrosoftGraphPatternedRecurrence>] [-ReminderMinutesBeforeStart <Int32>]
- [-ResponseHeadersVariable <String>] [-ResponseRequested] [-ResponseStatus <IMicrosoftGraphResponseStatus>]
- [-Sensitivity <String>] [-SeriesMasterId <String>] [-ShowAs <String>]
- [-SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]
+ [-Recurrence <IMicrosoftGraphPatternedRecurrence>] [-ReminderMinutesBeforeStart <Int32>] [-ResponseRequested]
+ [-ResponseStatus <IMicrosoftGraphResponseStatus>] [-Sensitivity <String>] [-SeriesMasterId <String>]
+ [-ShowAs <String>] [-SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]
  [-Start <IMicrosoftGraphDateTimeZone>] [-Subject <String>] [-TransactionId <String>] [-Type <String>]
- [-WebLink <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-WebLink <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgGroupEvent -GroupId <String> -BodyParameter <IMicrosoftGraphEvent> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgGroupEvent -GroupId <String> -BodyParameter <IMicrosoftGraphEvent> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgGroupEvent -InputObject <ICalendarIdentity> -BodyParameter <IMicrosoftGraphEvent>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgGroupEvent -InputObject <ICalendarIdentity> -BodyParameter <IMicrosoftGraphEvent> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -62,12 +61,11 @@ New-MgGroupEvent -InputObject <ICalendarIdentity> [-AdditionalProperties <Hashta
  [-OnlineMeeting <IMicrosoftGraphOnlineMeetingInfo>] [-OnlineMeetingProvider <String>]
  [-OnlineMeetingUrl <String>] [-Organizer <IMicrosoftGraphRecipient>] [-OriginalEndTimeZone <String>]
  [-OriginalStart <DateTime>] [-OriginalStartTimeZone <String>]
- [-Recurrence <IMicrosoftGraphPatternedRecurrence>] [-ReminderMinutesBeforeStart <Int32>]
- [-ResponseHeadersVariable <String>] [-ResponseRequested] [-ResponseStatus <IMicrosoftGraphResponseStatus>]
- [-Sensitivity <String>] [-SeriesMasterId <String>] [-ShowAs <String>]
- [-SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]
+ [-Recurrence <IMicrosoftGraphPatternedRecurrence>] [-ReminderMinutesBeforeStart <Int32>] [-ResponseRequested]
+ [-ResponseStatus <IMicrosoftGraphResponseStatus>] [-Sensitivity <String>] [-SeriesMasterId <String>]
+ [-ShowAs <String>] [-SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]
  [-Start <IMicrosoftGraphDateTimeZone>] [-Subject <String>] [-TransactionId <String>] [-Type <String>]
- [-WebLink <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-WebLink <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -352,21 +350,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -764,21 +747,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -ResponseRequested
 .
 
@@ -988,8 +956,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.ICalendarIdentity
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEvent
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

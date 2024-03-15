@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Groups
-Module Guid: 53f147bd-a44f-4b04-9fa8-b1f72c655938
+Module Guid: 33ce9f67-4ae2-472f-a0dd-04af338de932
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.groups
 Help Version: 1.0.0.0
 Locale: en-US
@@ -163,7 +163,7 @@ Get the number of the resource
 
 ### [Get-MgBetaGroupConversationThreadPost](Get-MgBetaGroupConversationThreadPost.md)
 Get the properties and relationships of a post in a specified thread.
-You can specify both the parent\nconversation and the thread, or, you can specify the thread without referencing the parent conversation.
+You can specify both the parent \nconversation and the thread, or, you can specify the thread without referencing the parent conversation.
 Since the post resource supports extensions, you can also use the GET operation to get custom properties and extension data in a post instance.
 
 ### [Get-MgBetaGroupConversationThreadPostAttachment](Get-MgBetaGroupConversationThreadPostAttachment.md)
@@ -534,15 +534,6 @@ Invoke function getCompatibleHubContentTypes
 ### [Get-MgBetaGroupSiteDelta](Get-MgBetaGroupSiteDelta.md)
 Invoke function delta
 
-### [Get-MgBetaGroupSiteGetByPathApplicableContentTypeForList](Get-MgBetaGroupSiteGetByPathApplicableContentTypeForList.md)
-Invoke function getApplicableContentTypesForList
-
-### [Get-MgBetaGroupSiteGetGraphBPrePathActivityByInterval](Get-MgBetaGroupSiteGetGraphBPrePathActivityByInterval.md)
-Invoke function getActivitiesByInterval
-
-### [Get-MgBetaGroupSiteGetGraphBPrePathByPath](Get-MgBetaGroupSiteGetGraphBPrePathByPath.md)
-Invoke function getByPath
-
 ### [Get-MgBetaGroupSiteListContentTypeCompatibleHubContentType](Get-MgBetaGroupSiteListContentTypeCompatibleHubContentType.md)
 Invoke function getCompatibleHubContentTypes
 
@@ -552,15 +543,6 @@ Invoke function getActivitiesByInterval
 ### [Get-MgBetaGroupSiteListItemDelta](Get-MgBetaGroupSiteListItemDelta.md)
 Invoke function delta
 
-### [Get-MgBetaGroupSitePageMicrosoftGraphSitePageCanvaLayoutHorizontalSectionColumnWebpartPositionOfWebPart](Get-MgBetaGroupSitePageMicrosoftGraphSitePageCanvaLayoutHorizontalSectionColumnWebpartPositionOfWebPart.md)
-Invoke action getPositionOfWebPart
-
-### [Get-MgBetaGroupSitePageMicrosoftGraphSitePageCanvaLayoutVerticalSectionWebpartPositionOfWebPart](Get-MgBetaGroupSitePageMicrosoftGraphSitePageCanvaLayoutVerticalSectionWebpartPositionOfWebPart.md)
-Invoke action getPositionOfWebPart
-
-### [Get-MgBetaGroupSitePageMicrosoftGraphSitePageWebPartPositionOfWebPart](Get-MgBetaGroupSitePageMicrosoftGraphSitePageWebPartPositionOfWebPart.md)
-Invoke action getPositionOfWebPart
-
 ### [Get-MgBetaGroupThread](Get-MgBetaGroupThread.md)
 Get a thread object.
 
@@ -569,7 +551,7 @@ Get the number of the resource
 
 ### [Get-MgBetaGroupThreadPost](Get-MgBetaGroupThreadPost.md)
 Get the properties and relationships of a post in a specified thread.
-You can specify both the parent\nconversation and the thread, or, you can specify the thread without referencing the parent conversation.
+You can specify both the parent \nconversation and the thread, or, you can specify the thread without referencing the parent conversation.
 Since the post resource supports extensions, you can also use the GET operation to get custom properties and extension data in a post instance.
 
 ### [Get-MgBetaGroupThreadPostAttachment](Get-MgBetaGroupThreadPostAttachment.md)
@@ -715,9 +697,6 @@ Tentatively accept the specified event in a user calendar.
 If the event allows proposals for new times, on responding tentative to the event, an invitee can choose to suggest an alternative time by including the proposedNewTime parameter.
 For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.
 
-### [Invoke-MgBetaArchiveGroupPlannerPlan](Invoke-MgBetaArchiveGroupPlannerPlan.md)
-Invoke action archive
-
 ### [Invoke-MgBetaBufferGroupSiteInformationProtectionDecrypt](Invoke-MgBetaBufferGroupSiteInformationProtectionDecrypt.md)
 Invoke action decryptBuffer
 
@@ -772,8 +751,8 @@ Follow a driveItem.
 Follow a driveItem.
 
 ### [Invoke-MgBetaForwardGroupCalendarEvent](Invoke-MgBetaForwardGroupCalendarEvent.md)
-This action allows the organizer or attendee of a meeting event to forward the\nmeeting request to a new recipient.
-If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action\nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's\ncopy of the meeting event.
+This action allows the organizer or attendee of a meeting event to forward the \nmeeting request to a new recipient.
+If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action \nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's \ncopy of the meeting event.
 This convenience is not available when forwarding from an Outlook.com account.
 
 ### [Invoke-MgBetaForwardGroupConversationThreadPost](Invoke-MgBetaForwardGroupConversationThreadPost.md)
@@ -785,8 +764,8 @@ Forward a post to a recipient.
 You can specify both the parent conversation and thread in the request, \nor, you can specify just the parent thread without the parent conversation.
 
 ### [Invoke-MgBetaForwardGroupEvent](Invoke-MgBetaForwardGroupEvent.md)
-This action allows the organizer or attendee of a meeting event to forward the\nmeeting request to a new recipient.
-If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action\nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's\ncopy of the meeting event.
+This action allows the organizer or attendee of a meeting event to forward the \nmeeting request to a new recipient.
+If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action \nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's \ncopy of the meeting event.
 This convenience is not available when forwarding from an Outlook.com account.
 
 ### [Invoke-MgBetaForwardGroupThreadPost](Invoke-MgBetaForwardGroupThreadPost.md)
@@ -878,9 +857,6 @@ Postpone a reminder for an event in a user calendar until a new time.
 Calling this method will enable the current user to receive email notifications for this group, about new posts, events, and files in that group.
 Supported for Microsoft 365 groups only.
 
-### [Invoke-MgBetaUnarchiveGroupPlannerPlan](Invoke-MgBetaUnarchiveGroupPlannerPlan.md)
-Invoke action unarchive
-
 ### [Invoke-MgBetaUnfollowGroupDriveItem](Invoke-MgBetaUnfollowGroupDriveItem.md)
 Unfollow a driveItem.
 
@@ -897,8 +873,7 @@ Associate a [content type][contentType] with a list of hub sites.
 Associate a [content type][contentType] with a list of hub sites.
 
 ### [Move-MgBetaGroupPlannerPlanToContainer](Move-MgBetaGroupPlannerPlanToContainer.md)
-Move a planner plan object from one planner plan container to another.
-Planner plans can only be moved from a user container to a group container.
+Invoke action moveToContainer
 
 ### [New-MgBetaGroup](New-MgBetaGroup.md)
 Create a new group as specified in the request body.
@@ -914,9 +889,8 @@ Users in the accepted senders list can post to conversations of the group.
 Make sure you don't specify the same user or group in the accepted senders and rejected senders lists, otherwise you'll get an error.
 
 ### [New-MgBetaGroupConversation](New-MgBetaGroupConversation.md)
-Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
-You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
-The table in the Permissions section lists the resources that support open extensions.
+Create a new conversation by including a thread and a post.
+Use reply thread or reply post to further post to that conversation.
 
 ### [New-MgBetaGroupConversationThread](New-MgBetaGroupConversationThread.md)
 Create a new thread in the specified conversation.
@@ -1108,7 +1082,7 @@ This isn't applicable to Security groups and Distribution groups that are perman
 To learn more, see deletedItems.
 
 ### [Remove-MgBetaGroupConversation](Remove-MgBetaGroupConversation.md)
-Delete a conversation object.
+Delete conversation.
 
 ### [Remove-MgBetaGroupConversationThread](Remove-MgBetaGroupConversationThread.md)
 Delete navigation property threads for groups

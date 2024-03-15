@@ -18,24 +18,23 @@ Update-MgBetaDeviceManagementDeviceCompliancePolicySettingStateSummaryDeviceComp
  -DeviceCompliancePolicySettingStateSummaryId <String> -DeviceComplianceSettingStateId <String>
  [-AdditionalProperties <Hashtable>] [-ComplianceGracePeriodExpirationDateTime <DateTime>]
  [-DeviceId <String>] [-DeviceModel <String>] [-DeviceName <String>] [-Id <String>]
- [-PlatformType <DeviceType>] [-ResponseHeadersVariable <String>] [-Setting <String>] [-SettingName <String>]
- [-State <String>] [-UserEmail <String>] [-UserId <String>] [-UserName <String>] [-UserPrincipalName <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PlatformType <DeviceType>] [-Setting <String>] [-SettingName <String>] [-State <String>]
+ [-UserEmail <String>] [-UserId <String>] [-UserName <String>] [-UserPrincipalName <String>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaDeviceManagementDeviceCompliancePolicySettingStateSummaryDeviceComplianceSettingState
  -DeviceCompliancePolicySettingStateSummaryId <String> -DeviceComplianceSettingStateId <String>
- -BodyParameter <IMicrosoftGraphDeviceComplianceSettingState> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphDeviceComplianceSettingState> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaDeviceManagementDeviceCompliancePolicySettingStateSummaryDeviceComplianceSettingState
  -InputObject <IDeviceManagementIdentity> -BodyParameter <IMicrosoftGraphDeviceComplianceSettingState>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -43,10 +42,9 @@ Update-MgBetaDeviceManagementDeviceCompliancePolicySettingStateSummaryDeviceComp
 Update-MgBetaDeviceManagementDeviceCompliancePolicySettingStateSummaryDeviceComplianceSettingState
  -InputObject <IDeviceManagementIdentity> [-AdditionalProperties <Hashtable>]
  [-ComplianceGracePeriodExpirationDateTime <DateTime>] [-DeviceId <String>] [-DeviceModel <String>]
- [-DeviceName <String>] [-Id <String>] [-PlatformType <DeviceType>] [-ResponseHeadersVariable <String>]
- [-Setting <String>] [-SettingName <String>] [-State <String>] [-UserEmail <String>] [-UserId <String>]
- [-UserName <String>] [-UserPrincipalName <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-DeviceName <String>] [-Id <String>] [-PlatformType <DeviceType>] [-Setting <String>]
+ [-SettingName <String>] [-State <String>] [-UserEmail <String>] [-UserId <String>] [-UserName <String>]
+ [-UserPrincipalName <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -191,21 +189,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -245,21 +228,6 @@ Device type.
 Type: Microsoft.Graph.Beta.PowerShell.Support.DeviceType
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -413,8 +381,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceComplianceSettingState
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceComplianceSettingState
@@ -524,7 +490,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[MacOSSoftwareUpdateCategorySummaryId <String>]`: The unique identifier of macOSSoftwareUpdateCategorySummary
   - `[MacOSSoftwareUpdateStateSummaryId <String>]`: The unique identifier of macOSSoftwareUpdateStateSummary
   - `[MalwareStateForWindowsDeviceId <String>]`: The unique identifier of malwareStateForWindowsDevice
-  - `[ManagedDeviceCleanupRuleId <String>]`: The unique identifier of managedDeviceCleanupRule
   - `[ManagedDeviceEncryptionStateId <String>]`: The unique identifier of managedDeviceEncryptionState
   - `[ManagedDeviceId <String>]`: The unique identifier of managedDevice
   - `[ManagedDeviceMobileAppConfigurationStateId <String>]`: The unique identifier of managedDeviceMobileAppConfigurationState

@@ -17,23 +17,22 @@ Create new navigation property to files for deviceAppManagement
 New-MgDeviceAppManagementMobileAppAsWindowsAppXContentVersionFile -MobileAppContentId <String>
  -MobileAppId <String> [-AdditionalProperties <Hashtable>] [-AzureStorageUri <String>]
  [-AzureStorageUriExpirationDateTime <DateTime>] [-CreatedDateTime <DateTime>] [-Id <String>] [-IsCommitted]
- [-ManifestInputFile <String>] [-Name <String>] [-ResponseHeadersVariable <String>] [-Size <Int64>]
- [-SizeEncrypted <Int64>] [-UploadState <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-ManifestInputFile <String>] [-Name <String>] [-Size <Int64>] [-SizeEncrypted <Int64>]
+ [-UploadState <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgDeviceAppManagementMobileAppAsWindowsAppXContentVersionFile -MobileAppContentId <String>
- -MobileAppId <String> -BodyParameter <IMicrosoftGraphMobileAppContentFile>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -MobileAppId <String> -BodyParameter <IMicrosoftGraphMobileAppContentFile> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgDeviceAppManagementMobileAppAsWindowsAppXContentVersionFile
  -InputObject <IDevicesCorporateManagementIdentity> -BodyParameter <IMicrosoftGraphMobileAppContentFile>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -41,9 +40,8 @@ New-MgDeviceAppManagementMobileAppAsWindowsAppXContentVersionFile
 New-MgDeviceAppManagementMobileAppAsWindowsAppXContentVersionFile
  -InputObject <IDevicesCorporateManagementIdentity> [-AdditionalProperties <Hashtable>]
  [-AzureStorageUri <String>] [-AzureStorageUriExpirationDateTime <DateTime>] [-CreatedDateTime <DateTime>]
- [-Id <String>] [-IsCommitted] [-ManifestInputFile <String>] [-Name <String>]
- [-ResponseHeadersVariable <String>] [-Size <Int64>] [-SizeEncrypted <Int64>] [-UploadState <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-IsCommitted] [-ManifestInputFile <String>] [-Name <String>] [-Size <Int64>]
+ [-SizeEncrypted <Int64>] [-UploadState <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -140,21 +138,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -265,21 +248,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Size
 The size of the file prior to encryption.
 
@@ -364,8 +332,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppContentFile
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

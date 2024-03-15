@@ -16,22 +16,20 @@ Update the navigation property hostPairs in security
 ```
 Update-MgSecurityThreatIntelligenceHostPair -HostPairId <String> [-AdditionalProperties <Hashtable>]
  [-ChildHost <IMicrosoftGraphSecurityHost>] [-FirstSeenDateTime <DateTime>] [-Id <String>]
- [-LastSeenDateTime <DateTime>] [-LinkKind <String>] [-ParentHost <IMicrosoftGraphSecurityHost>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-LastSeenDateTime <DateTime>] [-LinkKind <String>] [-ParentHost <IMicrosoftGraphSecurityHost>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgSecurityThreatIntelligenceHostPair -HostPairId <String>
- -BodyParameter <IMicrosoftGraphSecurityHostPair> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphSecurityHostPair> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgSecurityThreatIntelligenceHostPair -InputObject <ISecurityIdentity>
- -BodyParameter <IMicrosoftGraphSecurityHostPair> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphSecurityHostPair> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -39,8 +37,7 @@ Update-MgSecurityThreatIntelligenceHostPair -InputObject <ISecurityIdentity>
 Update-MgSecurityThreatIntelligenceHostPair -InputObject <ISecurityIdentity>
  [-AdditionalProperties <Hashtable>] [-ChildHost <IMicrosoftGraphSecurityHost>]
  [-FirstSeenDateTime <DateTime>] [-Id <String>] [-LastSeenDateTime <DateTime>] [-LinkKind <String>]
- [-ParentHost <IMicrosoftGraphSecurityHost>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ParentHost <IMicrosoftGraphSecurityHost>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -125,21 +122,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -238,21 +220,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
@@ -292,8 +259,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityHostPair
 
 ### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

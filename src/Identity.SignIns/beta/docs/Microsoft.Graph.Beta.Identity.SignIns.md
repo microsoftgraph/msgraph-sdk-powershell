@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Identity.SignIns
-Module Guid: 518e561c-7515-490f-a3f7-cec67ca0910d
+Module Guid: 42c2db96-12d3-4e1b-bd13-1094e8d10350
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.identity.signins
 Help Version: 1.0.0.0
 Locale: en-US
@@ -47,40 +47,20 @@ Only externalUsersSelfServiceSignupEventsFlow object types are available.
 ### [Get-MgBetaIdentityAuthenticationEventFlowAsExternalUserSelfServiceSignUpEventFlow](Get-MgBetaIdentityAuthenticationEventFlowAsExternalUserSelfServiceSignUpEventFlow.md)
 Get the item of type microsoft.graph.authenticationEventsFlow as microsoft.graph.externalUsersSelfServiceSignUpEventsFlow
 
-### [Get-MgBetaIdentityAuthenticationEventFlowAsExternalUserSelfServiceSignUpEventFlowCondition](Get-MgBetaIdentityAuthenticationEventFlowAsExternalUserSelfServiceSignUpEventFlowCondition.md)
-The conditions representing the context of the authentication request that will be used to decide whether the events policy will be invoked.
-
 ### [Get-MgBetaIdentityAuthenticationEventFlowAsExternalUserSelfServiceSignUpEventFlowIncludeApplication](Get-MgBetaIdentityAuthenticationEventFlowAsExternalUserSelfServiceSignUpEventFlowIncludeApplication.md)
 Get includeApplications from identity
-
-### [Get-MgBetaIdentityAuthenticationEventFlowAsExternalUserSelfServiceSignUpEventFlowIncludeApplicationCount](Get-MgBetaIdentityAuthenticationEventFlowAsExternalUserSelfServiceSignUpEventFlowIncludeApplicationCount.md)
-Get the number of the resource
-
-### [Get-MgBetaIdentityAuthenticationEventFlowAsExternalUserSelfServiceSignUpEventFlowOnAttributeCollection](Get-MgBetaIdentityAuthenticationEventFlowAsExternalUserSelfServiceSignUpEventFlowOnAttributeCollection.md)
-The configuration for what to invoke when attributes are ready to be collected from the user.
-
-### [Get-MgBetaIdentityAuthenticationEventFlowAsExternalUserSelfServiceSignUpEventFlowOnAuthenticationMethodLoadStart](Get-MgBetaIdentityAuthenticationEventFlowAsExternalUserSelfServiceSignUpEventFlowOnAuthenticationMethodLoadStart.md)
-Required.
-The configuration for what to invoke when authentication methods are ready to be presented to the user.
-Must have at least one identity provider linked.
 
 ### [Get-MgBetaIdentityAuthenticationEventFlowAsOnAttributeCollectionExternalUserSelfServiceSignUpAttribute](Get-MgBetaIdentityAuthenticationEventFlowAsOnAttributeCollectionExternalUserSelfServiceSignUpAttribute.md)
 Get attributes from identity
 
-### [Get-MgBetaIdentityAuthenticationEventFlowAsOnAttributeCollectionExternalUserSelfServiceSignUpAttributeCount](Get-MgBetaIdentityAuthenticationEventFlowAsOnAttributeCollectionExternalUserSelfServiceSignUpAttributeCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaIdentityAuthenticationEventFlowAsOnAuthenticationMethodLoadStartExternalUserSelfServiceSignUpIdentityProvider](Get-MgBetaIdentityAuthenticationEventFlowAsOnAuthenticationMethodLoadStartExternalUserSelfServiceSignUpIdentityProvider.md)
 Get identityProviders from identity
 
-### [Get-MgBetaIdentityAuthenticationEventFlowAsOnAuthenticationMethodLoadStartExternalUserSelfServiceSignUpIdentityProviderByRef](Get-MgBetaIdentityAuthenticationEventFlowAsOnAuthenticationMethodLoadStartExternalUserSelfServiceSignUpIdentityProviderByRef.md)
-Get ref of identityProviders from identity
-
-### [Get-MgBetaIdentityAuthenticationEventFlowAsOnAuthenticationMethodLoadStartExternalUserSelfServiceSignUpIdentityProviderCount](Get-MgBetaIdentityAuthenticationEventFlowAsOnAuthenticationMethodLoadStartExternalUserSelfServiceSignUpIdentityProviderCount.md)
-Get the number of the resource
-
-### [Get-MgBetaIdentityAuthenticationEventFlowAsOnGraphAPretributeCollectionExternalUserSelfServiceSignUpAttributeByRef](Get-MgBetaIdentityAuthenticationEventFlowAsOnGraphAPretributeCollectionExternalUserSelfServiceSignUpAttributeByRef.md)
+### [Get-MgBetaIdentityAuthenticationEventFlowAttributeByRef](Get-MgBetaIdentityAuthenticationEventFlowAttributeByRef.md)
 Get ref of attributes from identity
+
+### [Get-MgBetaIdentityAuthenticationEventFlowAttributeCount](Get-MgBetaIdentityAuthenticationEventFlowAttributeCount.md)
+Get the number of the resource
 
 ### [Get-MgBetaIdentityAuthenticationEventFlowCondition](Get-MgBetaIdentityAuthenticationEventFlowCondition.md)
 The conditions representing the context of the authentication request that will be used to decide whether the events policy will be invoked.
@@ -91,14 +71,28 @@ Get the number of the resource
 ### [Get-MgBetaIdentityAuthenticationEventFlowCountAsExternalUserSelfServiceSignUpEventFlow](Get-MgBetaIdentityAuthenticationEventFlowCountAsExternalUserSelfServiceSignUpEventFlow.md)
 Get the number of the resource
 
+### [Get-MgBetaIdentityAuthenticationEventFlowIdentityProviderByRef](Get-MgBetaIdentityAuthenticationEventFlowIdentityProviderByRef.md)
+Get ref of identityProviders from identity
+
+### [Get-MgBetaIdentityAuthenticationEventFlowIdentityProviderCount](Get-MgBetaIdentityAuthenticationEventFlowIdentityProviderCount.md)
+Get the number of the resource
+
 ### [Get-MgBetaIdentityAuthenticationEventFlowIncludeApplication](Get-MgBetaIdentityAuthenticationEventFlowIncludeApplication.md)
 Get includeApplications from identity
 
 ### [Get-MgBetaIdentityAuthenticationEventFlowIncludeApplicationCount](Get-MgBetaIdentityAuthenticationEventFlowIncludeApplicationCount.md)
 Get the number of the resource
 
+### [Get-MgBetaIdentityAuthenticationEventFlowOnAttributeCollection](Get-MgBetaIdentityAuthenticationEventFlowOnAttributeCollection.md)
+The configuration for what to invoke when attributes are ready to be collected from the user.
+
 ### [Get-MgBetaIdentityAuthenticationEventFlowOnAttributeCollectionAsOnAttributeCollectionExternalUserSelfServiceSignUp](Get-MgBetaIdentityAuthenticationEventFlowOnAttributeCollectionAsOnAttributeCollectionExternalUserSelfServiceSignUp.md)
 Get the items of type microsoft.graph.onAttributeCollectionExternalUsersSelfServiceSignUp in the microsoft.graph.onAttributeCollectionHandler collection
+
+### [Get-MgBetaIdentityAuthenticationEventFlowOnAuthenticationMethodLoadStart](Get-MgBetaIdentityAuthenticationEventFlowOnAuthenticationMethodLoadStart.md)
+Required.
+The configuration for what to invoke when authentication methods are ready to be presented to the user.
+Must have at least one identity provider linked.
 
 ### [Get-MgBetaIdentityAuthenticationEventFlowOnAuthenticationMethodLoadStartAsOnAuthenticationMethodLoadStartExternalUserSelfServiceSignUp](Get-MgBetaIdentityAuthenticationEventFlowOnAuthenticationMethodLoadStartAsOnAuthenticationMethodLoadStartExternalUserSelfServiceSignUp.md)
 Get the items of type microsoft.graph.onAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp in the microsoft.graph.onAuthenticationMethodLoadStartHandler collection
@@ -240,6 +234,9 @@ Invoke function getOrder
 ### [Get-MgBetaIdentityB2XUserFlowUserAttributeAssignmentUserAttribute](Get-MgBetaIdentityB2XUserFlowUserAttributeAssignmentUserAttribute.md)
 The user attribute that you want to add to your user flow.
 
+### [Get-MgBetaIdentityConditionalAccess](Get-MgBetaIdentityConditionalAccess.md)
+the entry point for the Conditional Access (CA) object model.
+
 ### [Get-MgBetaIdentityConditionalAccessAuthenticationContextClassReference](Get-MgBetaIdentityConditionalAccessAuthenticationContextClassReference.md)
 Retrieve the properties and relationships of a authenticationContextClassReference object.
 
@@ -268,7 +265,7 @@ Get the number of the resource
 Get the number of the resource
 
 ### [Get-MgBetaIdentityConditionalAccessNamedLocation](Get-MgBetaIdentityConditionalAccessNamedLocation.md)
-Retrieve the properties and relationships of a countryNamedLocation object.
+Retrieve the properties and relationships of a namedLocation object.
 
 ### [Get-MgBetaIdentityConditionalAccessNamedLocationCount](Get-MgBetaIdentityConditionalAccessNamedLocationCount.md)
 Get the number of the resource
@@ -551,7 +548,7 @@ Get the number of the resource
 Get the number of the resource
 
 ### [Get-MgBetaPolicyFederatedTokenValidationPolicy](Get-MgBetaPolicyFederatedTokenValidationPolicy.md)
-Get a list of the federatedTokenValidationPolicy objects and their properties.
+Get federatedTokenValidationPolicy from policies
 
 ### [Get-MgBetaPolicyHomeRealmDiscoveryPolicy](Get-MgBetaPolicyHomeRealmDiscoveryPolicy.md)
 Retrieve the properties and relationships of a homeRealmDiscoveryPolicy object.
@@ -704,7 +701,7 @@ Get the number of the resource
 Get the number of the resource
 
 ### [Get-MgBetaRiskDetection](Get-MgBetaRiskDetection.md)
-Retrieve the properties of a collection of riskDetection objects.
+Retrieve the properties of a riskDetection object.
 
 ### [Get-MgBetaRiskDetectionCount](Get-MgBetaRiskDetectionCount.md)
 Get the number of the resource
@@ -842,10 +839,6 @@ The registered device on which this Platform Credential resides.
 Supports $expand.
 When you get a user's Platform Credential registration information, this property is returned only on a single GET and when you specify ?$expand.
 For example, GET /users/admin@contoso.com/authentication/platformCredentialAuthenticationMethod/_jpuR-TGZtk6aQCLF3BQjA2?$expand=device.
-
-### [Get-MgBetaUserAuthenticationSignInPreference](Get-MgBetaUserAuthenticationSignInPreference.md)
-The settings and preferences for to the sign-in experience of a user.
-Use this property to configure the user's default multifactor authentication (MFA) method.
 
 ### [Get-MgBetaUserAuthenticationSoftwareOathMethod](Get-MgBetaUserAuthenticationSoftwareOathMethod.md)
 Retrieve a user's single Software OATH token authentication method object and its properties.
@@ -1012,11 +1005,11 @@ You can create only an externalUsersSelfServiceSignupEventsFlow object type.
 ### [New-MgBetaIdentityAuthenticationEventFlowAsExternalUserSelfServiceSignUpEventFlowIncludeApplication](New-MgBetaIdentityAuthenticationEventFlowAsExternalUserSelfServiceSignUpEventFlowIncludeApplication.md)
 Create new navigation property to includeApplications for identity
 
-### [New-MgBetaIdentityAuthenticationEventFlowAsOnAuthenticationMethodLoadStartExternalUserSelfServiceSignUpIdentityProviderByRef](New-MgBetaIdentityAuthenticationEventFlowAsOnAuthenticationMethodLoadStartExternalUserSelfServiceSignUpIdentityProviderByRef.md)
-Create new navigation property ref to identityProviders for identity
-
-### [New-MgBetaIdentityAuthenticationEventFlowAsOnGraphAPretributeCollectionExternalUserSelfServiceSignUpAttributeByRef](New-MgBetaIdentityAuthenticationEventFlowAsOnGraphAPretributeCollectionExternalUserSelfServiceSignUpAttributeByRef.md)
+### [New-MgBetaIdentityAuthenticationEventFlowAttributeByRef](New-MgBetaIdentityAuthenticationEventFlowAttributeByRef.md)
 Create new navigation property ref to attributes for identity
+
+### [New-MgBetaIdentityAuthenticationEventFlowIdentityProviderByRef](New-MgBetaIdentityAuthenticationEventFlowIdentityProviderByRef.md)
+Create new navigation property ref to identityProviders for identity
 
 ### [New-MgBetaIdentityAuthenticationEventFlowIncludeApplication](New-MgBetaIdentityAuthenticationEventFlowIncludeApplication.md)
 Create new navigation property to includeApplications for identity
@@ -1071,7 +1064,8 @@ Create new navigation property to authenticationMethodModes for identity
 Create new navigation property to policies for identity
 
 ### [New-MgBetaIdentityConditionalAccessAuthenticationStrengthPolicyCombinationConfiguration](New-MgBetaIdentityConditionalAccessAuthenticationStrengthPolicyCombinationConfiguration.md)
-Create a new authenticationCombinationConfiguration object which can be of one of the following derived types:\n* fido2combinationConfigurations\n* x509certificatecombinationconfiguration
+Create a new authenticationCombinationConfiguration object.
+In use, only fido2combinationConfigurations might be created, and only for custom authentication strength policies.
 
 ### [New-MgBetaIdentityConditionalAccessNamedLocation](New-MgBetaIdentityConditionalAccessNamedLocation.md)
 Create a new namedLocation object.
@@ -1082,7 +1076,7 @@ Create a new conditionalAccessPolicy.
 
 ### [New-MgBetaIdentityCustomAuthenticationExtension](New-MgBetaIdentityCustomAuthenticationExtension.md)
 Create a new customAuthenticationExtension object.
-The following derived types are currently supported.
+Only the onTokenIssuanceStartCustomExtension object type is supported.
 
 ### [New-MgBetaIdentityProvider](New-MgBetaIdentityProvider.md)
 Create an identity provider object that is of the type specified in the request body.
@@ -1133,7 +1127,8 @@ Create new navigation property to authenticationMethodConfigurations for policie
 Create a new custom authenticationStrengthPolicy object.
 
 ### [New-MgBetaPolicyAuthenticationStrengthPolicyCombinationConfiguration](New-MgBetaPolicyAuthenticationStrengthPolicyCombinationConfiguration.md)
-Create a new authenticationCombinationConfiguration object which can be of one of the following derived types:\n* fido2combinationConfigurations\n* x509certificatecombinationconfiguration
+Create a new authenticationCombinationConfiguration object.
+In use, only fido2combinationConfigurations might be created, and only for custom authentication strength policies.
 
 ### [New-MgBetaPolicyAuthorizationPolicy](New-MgBetaPolicyAuthorizationPolicy.md)
 Create new navigation property to authorizationPolicy for policies
@@ -1303,11 +1298,11 @@ Only externalUsersSelfServiceSignupEventsFlow object types are available.
 ### [Remove-MgBetaIdentityAuthenticationEventFlowAsExternalUserSelfServiceSignUpEventFlowIncludeApplication](Remove-MgBetaIdentityAuthenticationEventFlowAsExternalUserSelfServiceSignUpEventFlowIncludeApplication.md)
 Delete navigation property includeApplications for identity
 
-### [Remove-MgBetaIdentityAuthenticationEventFlowAsOnAuthenticationMethodLoadStartExternalUserSelfServiceSignUpIdentityProviderByRef](Remove-MgBetaIdentityAuthenticationEventFlowAsOnAuthenticationMethodLoadStartExternalUserSelfServiceSignUpIdentityProviderByRef.md)
-Delete ref of navigation property identityProviders for identity
-
-### [Remove-MgBetaIdentityAuthenticationEventFlowAsOnGraphAPretributeCollectionExternalUserSelfServiceSignUpAttributeByRef](Remove-MgBetaIdentityAuthenticationEventFlowAsOnGraphAPretributeCollectionExternalUserSelfServiceSignUpAttributeByRef.md)
+### [Remove-MgBetaIdentityAuthenticationEventFlowAttributeByRef](Remove-MgBetaIdentityAuthenticationEventFlowAttributeByRef.md)
 Delete ref of navigation property attributes for identity
+
+### [Remove-MgBetaIdentityAuthenticationEventFlowIdentityProviderByRef](Remove-MgBetaIdentityAuthenticationEventFlowIdentityProviderByRef.md)
+Delete ref of navigation property identityProviders for identity
 
 ### [Remove-MgBetaIdentityAuthenticationEventFlowIncludeApplication](Remove-MgBetaIdentityAuthenticationEventFlowIncludeApplication.md)
 Delete navigation property includeApplications for identity
@@ -1337,6 +1332,10 @@ Delete an identityUserFlowAttributeAssignment object.
 
 ### [Remove-MgBetaIdentityB2XUserFlow](Remove-MgBetaIdentityB2XUserFlow.md)
 Delete a b2xIdentityUserFlow object.
+
+### [Remove-MgBetaIdentityB2XUserFlowIdentityProvider](Remove-MgBetaIdentityB2XUserFlowIdentityProvider.md)
+Delete an identity provider from a b2xIdentityUserFlow object.
+For self-service sign-up user flows, the values can be Google-OAUTH or Facebook-OAUTH.
 
 ### [Remove-MgBetaIdentityB2XUserFlowIdentityProviderByRef](Remove-MgBetaIdentityB2XUserFlowIdentityProviderByRef.md)
 Delete ref of navigation property userFlowIdentityProviders for identity
@@ -1368,6 +1367,9 @@ Delete navigation property preTokenIssuance for identity
 ### [Remove-MgBetaIdentityB2XUserFlowUserAttributeAssignment](Remove-MgBetaIdentityB2XUserFlowUserAttributeAssignment.md)
 Delete navigation property userAttributeAssignments for identity
 
+### [Remove-MgBetaIdentityConditionalAccess](Remove-MgBetaIdentityConditionalAccess.md)
+Delete navigation property conditionalAccess for identity
+
 ### [Remove-MgBetaIdentityConditionalAccessAuthenticationContextClassReference](Remove-MgBetaIdentityConditionalAccessAuthenticationContextClassReference.md)
 Delete an authenticationContextClassReference object that's not published or used by a conditional access policy.
 
@@ -1384,7 +1386,7 @@ Delete navigation property policies for identity
 Delete an authenticationCombinationConfiguration  for a custom authenticationStrengthPolicy object.
 
 ### [Remove-MgBetaIdentityConditionalAccessNamedLocation](Remove-MgBetaIdentityConditionalAccessNamedLocation.md)
-Delete a namedLocation object.
+Delete a countryNamedLocation object.
 
 ### [Remove-MgBetaIdentityConditionalAccessPolicy](Remove-MgBetaIdentityConditionalAccessPolicy.md)
 Delete a conditionalAccessPolicy object.
@@ -1780,6 +1782,9 @@ Update the navigation property preTokenIssuance in identity
 ### [Update-MgBetaIdentityB2XUserFlowUserAttributeAssignment](Update-MgBetaIdentityB2XUserFlowUserAttributeAssignment.md)
 Update the navigation property userAttributeAssignments in identity
 
+### [Update-MgBetaIdentityConditionalAccess](Update-MgBetaIdentityConditionalAccess.md)
+Update the navigation property conditionalAccess in identity
+
 ### [Update-MgBetaIdentityConditionalAccessAuthenticationContextClassReference](Update-MgBetaIdentityConditionalAccessAuthenticationContextClassReference.md)
 Update the properties of an authenticationContextClassReference object.
 
@@ -1798,10 +1803,10 @@ To update other properties of an authenticationStrengthPolicy object, use the Up
 
 ### [Update-MgBetaIdentityConditionalAccessAuthenticationStrengthPolicyCombinationConfiguration](Update-MgBetaIdentityConditionalAccessAuthenticationStrengthPolicyCombinationConfiguration.md)
 Update the properties of an authenticationCombinationConfiguration object.
-\nThe properties can be for one of the following derived types:\n* fido2combinationConfigurations\n* x509certificatecombinationconfiguration
+In use, only fido2combinationConfigurations may be updated as they're the only type of authenticationCombinationConfiguration that may be created.
 
 ### [Update-MgBetaIdentityConditionalAccessNamedLocation](Update-MgBetaIdentityConditionalAccessNamedLocation.md)
-Update the properties of a countryNamedLocation object.
+Update the properties of an ipNamedLocation object.
 
 ### [Update-MgBetaIdentityConditionalAccessPolicy](Update-MgBetaIdentityConditionalAccessPolicy.md)
 Update the properties of a conditionalAccessPolicy object.
@@ -1887,7 +1892,7 @@ To update other properties of an authenticationStrengthPolicy object, use the Up
 
 ### [Update-MgBetaPolicyAuthenticationStrengthPolicyCombinationConfiguration](Update-MgBetaPolicyAuthenticationStrengthPolicyCombinationConfiguration.md)
 Update the properties of an authenticationCombinationConfiguration object.
-\nThe properties can be for one of the following derived types:\n* fido2combinationConfigurations\n* x509certificatecombinationconfiguration
+In use, only fido2combinationConfigurations may be updated as they're the only type of authenticationCombinationConfiguration that may be created.
 
 ### [Update-MgBetaPolicyAuthorizationPolicy](Update-MgBetaPolicyAuthorizationPolicy.md)
 Update the navigation property authorizationPolicy in policies
@@ -1936,7 +1941,7 @@ Update the settings of the tenant-wide externalIdentitiesPolicy object that cont
 Update the properties of featureRolloutPolicy object.
 
 ### [Update-MgBetaPolicyFederatedTokenValidationPolicy](Update-MgBetaPolicyFederatedTokenValidationPolicy.md)
-Update the properties of a federatedTokenValidationPolicy object.
+Update the navigation property federatedTokenValidationPolicy in policies
 
 ### [Update-MgBetaPolicyHomeRealmDiscoveryPolicy](Update-MgBetaPolicyHomeRealmDiscoveryPolicy.md)
 Update the properties of a homeRealmDiscoveryPolicy object.
@@ -2006,7 +2011,10 @@ Update the navigation property history in identityProtection
 Update the navigation property servicePrincipalRiskDetections in identityProtection
 
 ### [Update-MgBetaTenantRelationshipMultiTenantOrganization](Update-MgBetaTenantRelationshipMultiTenantOrganization.md)
-Update the properties of a multi-tenant organization.
+Create a new multi-tenant organization.
+By default, the creator tenant becomes an owner tenant upon successful creation.
+Only owner tenants can manage a multi-tenant organization.
+To allow for asynchronous processing, you must wait a minimum of 2 hours between creation and joining a multi-tenant organization.
 
 ### [Update-MgBetaTenantRelationshipMultiTenantOrganizationJoinRequest](Update-MgBetaTenantRelationshipMultiTenantOrganizationJoinRequest.md)
 Join a multi-tenant organization, after the owner of the multi-tenant organization has added your tenant to the multi-tenant organization as pending.
@@ -2042,9 +2050,6 @@ Update the phone number associated with a phone authentication method.
 You can't change a phone's type.
 To change a phone's type, add a new number of the desired type and then delete the object with the original type.
 If a user is enabled by policy to use SMS to sign in and the mobile number is changed, the system attempts to register the number for use in that system.
-
-### [Update-MgBetaUserAuthenticationSignInPreference](Update-MgBetaUserAuthenticationSignInPreference.md)
-Update property signInPreferences value.
 
 ### [Update-MgBetaUserInformationProtection](Update-MgBetaUserInformationProtection.md)
 Update the navigation property informationProtection in users

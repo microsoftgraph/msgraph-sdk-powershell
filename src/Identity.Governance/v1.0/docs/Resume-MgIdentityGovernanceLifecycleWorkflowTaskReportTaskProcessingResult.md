@@ -18,9 +18,8 @@ For more information, see: Lifecycle Workflows extensibility approach.
 ```
 Resume-MgIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResult -TaskProcessingResultId <String>
  -TaskReportId <String> -WorkflowId <String> [-AdditionalProperties <Hashtable>]
- [-Data <IMicrosoftGraphIdentityGovernanceCustomTaskExtensionCallbackData>]
- [-ResponseHeadersVariable <String>] [-Source <String>] [-Type <String>] [-Headers <IDictionary>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Data <IMicrosoftGraphIdentityGovernanceCustomTaskExtensionCallbackData>] [-Source <String>]
+ [-Type <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Resume
@@ -28,8 +27,7 @@ Resume-MgIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResult -Task
 Resume-MgIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResult -TaskProcessingResultId <String>
  -TaskReportId <String> -WorkflowId <String>
  -BodyParameter <IPaths1B3Rfy2IdentitygovernanceLifecycleworkflowsWorkflowsWorkflowIdTaskreportsTaskreportIdTaskprocessingresultsTaskprocessingresultIdMicrosoftGraphIdentitygovernanceResumePostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ResumeViaIdentity
@@ -37,17 +35,15 @@ Resume-MgIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResult -Task
 Resume-MgIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResult
  -InputObject <IIdentityGovernanceIdentity>
  -BodyParameter <IPaths1B3Rfy2IdentitygovernanceLifecycleworkflowsWorkflowsWorkflowIdTaskreportsTaskreportIdTaskprocessingresultsTaskprocessingresultIdMicrosoftGraphIdentitygovernanceResumePostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ResumeViaIdentityExpanded
 ```
 Resume-MgIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResult
  -InputObject <IIdentityGovernanceIdentity> [-AdditionalProperties <Hashtable>]
- [-Data <IMicrosoftGraphIdentityGovernanceCustomTaskExtensionCallbackData>]
- [-ResponseHeadersVariable <String>] [-Source <String>] [-Type <String>] [-Headers <IDictionary>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Data <IMicrosoftGraphIdentityGovernanceCustomTaskExtensionCallbackData>] [-Source <String>]
+ [-Type <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -120,21 +116,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -158,21 +139,6 @@ Returns true when the command succeeds
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -295,8 +261,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
 
 ### Microsoft.Graph.PowerShell.Models.IPaths1B3Rfy2IdentitygovernanceLifecycleworkflowsWorkflowsWorkflowIdTaskreportsTaskreportIdTaskprocessingresultsTaskprocessingresultIdMicrosoftGraphIdentitygovernanceResumePostRequestbodyContentApplicationJsonSchema
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

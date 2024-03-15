@@ -16,33 +16,29 @@ It is performed on an accessPackageAssignmentRequest object whose requestStatus 
 ### ResumeExpanded (Default)
 ```
 Resume-MgBetaEntitlementManagementAssignmentRequest -AccessPackageAssignmentRequestId <String>
- [-AdditionalProperties <Hashtable>] [-Data <Hashtable>] [-ResponseHeadersVariable <String>]
- [-Source <String>] [-Type <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-Data <Hashtable>] [-Source <String>] [-Type <String>]
+ [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Resume
 ```
 Resume-MgBetaEntitlementManagementAssignmentRequest -AccessPackageAssignmentRequestId <String>
  -BodyParameter <IPathsQsyd4AIdentitygovernanceEntitlementmanagementAssignmentrequestsAccesspackageassignmentrequestIdMicrosoftGraphResumePostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ResumeViaIdentity
 ```
 Resume-MgBetaEntitlementManagementAssignmentRequest -InputObject <IIdentityGovernanceIdentity>
  -BodyParameter <IPathsQsyd4AIdentitygovernanceEntitlementmanagementAssignmentrequestsAccesspackageassignmentrequestIdMicrosoftGraphResumePostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ResumeViaIdentityExpanded
 ```
 Resume-MgBetaEntitlementManagementAssignmentRequest -InputObject <IIdentityGovernanceIdentity>
- [-AdditionalProperties <Hashtable>] [-Data <Hashtable>] [-ResponseHeadersVariable <String>]
- [-Source <String>] [-Type <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-Data <Hashtable>] [-Source <String>] [-Type <String>]
+ [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -166,21 +162,6 @@ Returns true when the command succeeds
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named

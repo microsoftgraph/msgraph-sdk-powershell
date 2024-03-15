@@ -24,7 +24,7 @@ New-MgBetaSecurityCollaborationAnalyzedEmail [-AdditionalProperties <Hashtable>]
  [-LatestDelivery <IMicrosoftGraphSecurityAnalyzedEmailDeliveryDetail>] [-LoggedDateTime <DateTime>]
  [-NetworkMessageId <String>] [-OriginalDelivery <IMicrosoftGraphSecurityAnalyzedEmailDeliveryDetail>]
  [-OverrideSources <String[]>] [-PhishConfidenceLevel <String>] [-Policy <String>] [-PolicyAction <String>]
- [-RecipientEmailAddresses <String[]>] [-ResponseHeadersVariable <String>] [-ReturnPath <String>]
+ [-RecipientEmailAddresses <String[]>] [-ReturnPath <String>]
  [-SenderDetail <IMicrosoftGraphSecurityAnalyzedEmailSenderDetail>] [-SizeInBytes <Int32>]
  [-SpamConfidenceLevel <String>] [-Subject <String>] [-ThreatType <String>]
  [-Urls <IMicrosoftGraphSecurityAnalyzedEmailUrl[]>] [-UrlsCount <Int32>] [-Headers <IDictionary>] [-Confirm]
@@ -34,7 +34,7 @@ New-MgBetaSecurityCollaborationAnalyzedEmail [-AdditionalProperties <Hashtable>]
 ### Create
 ```
 New-MgBetaSecurityCollaborationAnalyzedEmail -BodyParameter <IMicrosoftGraphSecurityAnalyzedEmail>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -447,21 +447,6 @@ Accept wildcard characters: False
 Type: System.String[]
 Parameter Sets: CreateExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named

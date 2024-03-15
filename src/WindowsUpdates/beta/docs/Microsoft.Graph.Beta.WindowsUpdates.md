@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.WindowsUpdates
-Module Guid: 4c2b7454-195f-4da6-9085-4f19ca21aef5
+Module Guid: f58b877b-277e-498d-b5ab-87c127639182
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.windowsupdates
 Help Version: 1.0.0.0
 Locale: en-US
@@ -65,23 +65,6 @@ Get the number of the resource
 ### [Get-MgBetaWindowsUpdatesDeployment](Get-MgBetaWindowsUpdatesDeployment.md)
 Read the properties and relationships of a deployment object.
 
-### [Get-MgBetaWindowsUpdatesDeploymentAudienceApplicableContent](Get-MgBetaWindowsUpdatesDeploymentAudienceApplicableContent.md)
-Content eligible to deploy to devices in the audience.
-Not nullable.
-Read-only.
-
-### [Get-MgBetaWindowsUpdatesDeploymentAudienceApplicableContentCatalogEntry](Get-MgBetaWindowsUpdatesDeploymentAudienceApplicableContentCatalogEntry.md)
-Catalog entry for the update or content.
-
-### [Get-MgBetaWindowsUpdatesDeploymentAudienceApplicableContentCount](Get-MgBetaWindowsUpdatesDeploymentAudienceApplicableContentCount.md)
-Get the number of the resource
-
-### [Get-MgBetaWindowsUpdatesDeploymentAudienceApplicableContentMatchedDevice](Get-MgBetaWindowsUpdatesDeploymentAudienceApplicableContentMatchedDevice.md)
-Collection of devices and recommendations for applicable catalog content.
-
-### [Get-MgBetaWindowsUpdatesDeploymentAudienceApplicableContentMatchedDeviceCount](Get-MgBetaWindowsUpdatesDeploymentAudienceApplicableContentMatchedDeviceCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaWindowsUpdatesDeploymentAudienceExclusion](Get-MgBetaWindowsUpdatesDeploymentAudienceExclusion.md)
 Specifies the assets to exclude from the audience.
 
@@ -102,23 +85,6 @@ Read the properties and relationships of an updatePolicy object.
 
 ### [Get-MgBetaWindowsUpdatesPolicyAudience](Get-MgBetaWindowsUpdatesPolicyAudience.md)
 Specifies the audience to target.
-
-### [Get-MgBetaWindowsUpdatesPolicyAudienceApplicableContent](Get-MgBetaWindowsUpdatesPolicyAudienceApplicableContent.md)
-Content eligible to deploy to devices in the audience.
-Not nullable.
-Read-only.
-
-### [Get-MgBetaWindowsUpdatesPolicyAudienceApplicableContentCatalogEntry](Get-MgBetaWindowsUpdatesPolicyAudienceApplicableContentCatalogEntry.md)
-Catalog entry for the update or content.
-
-### [Get-MgBetaWindowsUpdatesPolicyAudienceApplicableContentCount](Get-MgBetaWindowsUpdatesPolicyAudienceApplicableContentCount.md)
-Get the number of the resource
-
-### [Get-MgBetaWindowsUpdatesPolicyAudienceApplicableContentMatchedDevice](Get-MgBetaWindowsUpdatesPolicyAudienceApplicableContentMatchedDevice.md)
-Collection of devices and recommendations for applicable catalog content.
-
-### [Get-MgBetaWindowsUpdatesPolicyAudienceApplicableContentMatchedDeviceCount](Get-MgBetaWindowsUpdatesPolicyAudienceApplicableContentMatchedDeviceCount.md)
-Get the number of the resource
 
 ### [Get-MgBetaWindowsUpdatesPolicyAudienceExclusion](Get-MgBetaWindowsUpdatesPolicyAudienceExclusion.md)
 Specifies the assets to exclude from the audience.
@@ -151,7 +117,7 @@ Read the properties and relationships of a resourceConnection object.
 Get the number of the resource
 
 ### [Get-MgBetaWindowsUpdatesUpdatableAsset](Get-MgBetaWindowsUpdatesUpdatableAsset.md)
-Read the properties and relationships of an updatableAssetGroup object.
+Read the properties and relationships of an updatableAsset object.
 
 ### [Get-MgBetaWindowsUpdatesUpdatableAssetCount](Get-MgBetaWindowsUpdatesUpdatableAssetCount.md)
 Get the number of the resource
@@ -207,20 +173,8 @@ Invoke action unenrollAssets
 ### [New-MgBetaWindowsUpdatesDeployment](New-MgBetaWindowsUpdatesDeployment.md)
 Create a new deployment object.
 
-### [New-MgBetaWindowsUpdatesDeploymentAudienceApplicableContent](New-MgBetaWindowsUpdatesDeploymentAudienceApplicableContent.md)
-Create new navigation property to applicableContent for admin
-
-### [New-MgBetaWindowsUpdatesDeploymentAudienceApplicableContentMatchedDevice](New-MgBetaWindowsUpdatesDeploymentAudienceApplicableContentMatchedDevice.md)
-Create new navigation property to matchedDevices for admin
-
 ### [New-MgBetaWindowsUpdatesPolicy](New-MgBetaWindowsUpdatesPolicy.md)
 Create a new updatePolicy object.
-
-### [New-MgBetaWindowsUpdatesPolicyAudienceApplicableContent](New-MgBetaWindowsUpdatesPolicyAudienceApplicableContent.md)
-Create new navigation property to applicableContent for admin
-
-### [New-MgBetaWindowsUpdatesPolicyAudienceApplicableContentMatchedDevice](New-MgBetaWindowsUpdatesPolicyAudienceApplicableContentMatchedDevice.md)
-Create new navigation property to matchedDevices for admin
 
 ### [New-MgBetaWindowsUpdatesPolicyAudienceExclusion](New-MgBetaWindowsUpdatesPolicyAudienceExclusion.md)
 Create new navigation property to exclusions for admin
@@ -241,12 +195,6 @@ The updatableAssetGroup resource inherits from updatableAsset.
 ### [Remove-MgBetaWindowsUpdatesDeployment](Remove-MgBetaWindowsUpdatesDeployment.md)
 Delete a deployment object.
 
-### [Remove-MgBetaWindowsUpdatesDeploymentAudienceApplicableContent](Remove-MgBetaWindowsUpdatesDeploymentAudienceApplicableContent.md)
-Delete navigation property applicableContent for admin
-
-### [Remove-MgBetaWindowsUpdatesDeploymentAudienceApplicableContentMatchedDevice](Remove-MgBetaWindowsUpdatesDeploymentAudienceApplicableContentMatchedDevice.md)
-Delete navigation property matchedDevices for admin
-
 ### [Remove-MgBetaWindowsUpdatesDeploymentAudienceExclusionMemberById](Remove-MgBetaWindowsUpdatesDeploymentAudienceExclusionMemberById.md)
 Remove members of the same type from an updatableAssetGroup.
 You can also use the method removeMembers to remove members.
@@ -260,12 +208,6 @@ Delete an updatePolicy object.
 
 ### [Remove-MgBetaWindowsUpdatesPolicyAudience](Remove-MgBetaWindowsUpdatesPolicyAudience.md)
 Delete navigation property audience for admin
-
-### [Remove-MgBetaWindowsUpdatesPolicyAudienceApplicableContent](Remove-MgBetaWindowsUpdatesPolicyAudienceApplicableContent.md)
-Delete navigation property applicableContent for admin
-
-### [Remove-MgBetaWindowsUpdatesPolicyAudienceApplicableContentMatchedDevice](Remove-MgBetaWindowsUpdatesPolicyAudienceApplicableContentMatchedDevice.md)
-Delete navigation property matchedDevices for admin
 
 ### [Remove-MgBetaWindowsUpdatesPolicyAudienceExclusion](Remove-MgBetaWindowsUpdatesPolicyAudienceExclusion.md)
 Delete navigation property exclusions for admin
@@ -289,11 +231,11 @@ You can also use the method removeMembers to remove members.
 Delete a complianceChange object.
 
 ### [Remove-MgBetaWindowsUpdatesResourceConnection](Remove-MgBetaWindowsUpdatesResourceConnection.md)
-Delete a resourceConnection object.
+Delete an operationalInsightsConnection object.
 
 ### [Remove-MgBetaWindowsUpdatesUpdatableAsset](Remove-MgBetaWindowsUpdatesUpdatableAsset.md)
-Delete an azureADDevice object.
-When a Microsoft Entra device is deleted, it is unregistered from the deployment service and automatically unenrolled from management by the service for all update categories, as well as removed from every deploymentAudience and updatableAssetGroup.
+Delete an updatableAssetGroup object.
+When an updatableAssetGroup object, its member updatableAsset objects are not deleted.
 
 ### [Remove-MgBetaWindowsUpdatesUpdatableAssetMember](Remove-MgBetaWindowsUpdatesUpdatableAssetMember.md)
 Remove members from an updatableAssetGroup.
@@ -312,12 +254,6 @@ Adding an azureADDevice to the members or exclusions collections of a deployment
 If the same updatableAsset gets included in the exclusions and members collections of a deploymentAudience, deployment will not apply to that asset.
 If all updatableAsset objects are the same type, you can also use the method updateAudienceById to update the deploymentAudience.
 
-### [Update-MgBetaWindowsUpdatesDeploymentAudienceApplicableContent](Update-MgBetaWindowsUpdatesDeploymentAudienceApplicableContent.md)
-Update the navigation property applicableContent in admin
-
-### [Update-MgBetaWindowsUpdatesDeploymentAudienceApplicableContentMatchedDevice](Update-MgBetaWindowsUpdatesDeploymentAudienceApplicableContentMatchedDevice.md)
-Update the navigation property matchedDevices in admin
-
 ### [Update-MgBetaWindowsUpdatesDeploymentAudienceById](Update-MgBetaWindowsUpdatesDeploymentAudienceById.md)
 Update the members and exclusions collections of a deploymentAudience with updatableAsset resources of the same type.
 Adding an azureADDevice to the members or exclusions collections of a deployment audience automatically creates a Microsoft Entra device object if it does not already exist.
@@ -329,12 +265,6 @@ Update the properties of an updatePolicy object.
 
 ### [Update-MgBetaWindowsUpdatesPolicyAudience](Update-MgBetaWindowsUpdatesPolicyAudience.md)
 Update the navigation property audience in admin
-
-### [Update-MgBetaWindowsUpdatesPolicyAudienceApplicableContent](Update-MgBetaWindowsUpdatesPolicyAudienceApplicableContent.md)
-Update the navigation property applicableContent in admin
-
-### [Update-MgBetaWindowsUpdatesPolicyAudienceApplicableContentMatchedDevice](Update-MgBetaWindowsUpdatesPolicyAudienceApplicableContentMatchedDevice.md)
-Update the navigation property matchedDevices in admin
 
 ### [Update-MgBetaWindowsUpdatesPolicyAudienceById](Update-MgBetaWindowsUpdatesPolicyAudienceById.md)
 Update the members and exclusions collections of a deploymentAudience with updatableAsset resources of the same type.

@@ -16,32 +16,30 @@ Wipe a device
 ```
 Clear-MgBetaUserManagedDevice -ManagedDeviceId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
  [-KeepEnrollmentData] [-KeepUserData] [-MacOSUnlockCode <String>]
- [-ObliterationBehavior <ObliterationBehavior>] [-PersistEsimDataPlan] [-ResponseHeadersVariable <String>]
- [-UseProtectedWipe] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ObliterationBehavior <ObliterationBehavior>] [-PersistEsimDataPlan] [-UseProtectedWipe] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Wipe
 ```
 Clear-MgBetaUserManagedDevice -ManagedDeviceId <String> -UserId <String>
  -BodyParameter <IPaths14R8Rr7UsersUserIdManageddevicesManageddeviceIdMicrosoftGraphWipePostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### WipeViaIdentity
 ```
 Clear-MgBetaUserManagedDevice -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPaths14R8Rr7UsersUserIdManageddevicesManageddeviceIdMicrosoftGraphWipePostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### WipeViaIdentityExpanded
 ```
 Clear-MgBetaUserManagedDevice -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
  [-KeepEnrollmentData] [-KeepUserData] [-MacOSUnlockCode <String>]
- [-ObliterationBehavior <ObliterationBehavior>] [-PersistEsimDataPlan] [-ResponseHeadersVariable <String>]
- [-UseProtectedWipe] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ObliterationBehavior <ObliterationBehavior>] [-PersistEsimDataPlan] [-UseProtectedWipe] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -90,21 +88,6 @@ Parameter Sets: Wipe, WipeViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -236,21 +219,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -UseProtectedWipe
 .
 
@@ -321,8 +289,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
@@ -364,7 +330,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[DriveItemVersionId <String>]`: The unique identifier of driveItemVersion
   - `[EventId <String>]`: The unique identifier of event
   - `[EventId1 <String>]`: The unique identifier of event
-  - `[JoinWebUrl <String>]`: Alternate key of onlineMeeting
   - `[ListItemId <String>]`: The unique identifier of listItem
   - `[ListItemVersionId <String>]`: The unique identifier of listItemVersion
   - `[MailFolderId <String>]`: The unique identifier of mailFolder

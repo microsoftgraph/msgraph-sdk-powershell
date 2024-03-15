@@ -16,31 +16,27 @@ Create new navigation property to tasks for print
 ```
 New-MgBetaPrintPrinterJobTask -PrinterId <String> -PrintJobId <String> [-AdditionalProperties <Hashtable>]
  [-Definition <IMicrosoftGraphPrintTaskDefinition>] [-Id <String>] [-ParentUrl <String>]
- [-ResponseHeadersVariable <String>] [-Status <IMicrosoftGraphPrintTaskStatus>]
- [-Trigger <IMicrosoftGraphPrintTaskTrigger>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
+ [-Status <IMicrosoftGraphPrintTaskStatus>] [-Trigger <IMicrosoftGraphPrintTaskTrigger>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaPrintPrinterJobTask -PrinterId <String> -PrintJobId <String>
- -BodyParameter <IMicrosoftGraphPrintTask> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphPrintTask> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaPrintPrinterJobTask -InputObject <IDevicesCloudPrintIdentity>
- -BodyParameter <IMicrosoftGraphPrintTask> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphPrintTask> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgBetaPrintPrinterJobTask -InputObject <IDevicesCloudPrintIdentity> [-AdditionalProperties <Hashtable>]
  [-Definition <IMicrosoftGraphPrintTaskDefinition>] [-Id <String>] [-ParentUrl <String>]
- [-ResponseHeadersVariable <String>] [-Status <IMicrosoftGraphPrintTaskStatus>]
- [-Trigger <IMicrosoftGraphPrintTaskTrigger>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
+ [-Status <IMicrosoftGraphPrintTaskStatus>] [-Trigger <IMicrosoftGraphPrintTaskTrigger>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -109,21 +105,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -206,21 +187,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Status
 printTaskStatus
 To construct, see NOTES section for STATUS properties and create a hash table.
@@ -292,8 +258,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCloudPrintIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrintTask
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

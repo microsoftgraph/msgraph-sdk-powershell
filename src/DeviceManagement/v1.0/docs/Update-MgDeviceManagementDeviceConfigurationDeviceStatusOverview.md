@@ -17,22 +17,19 @@ Update the properties of a deviceConfigurationDeviceOverview object.
 Update-MgDeviceManagementDeviceConfigurationDeviceStatusOverview -DeviceConfigurationId <String>
  [-AdditionalProperties <Hashtable>] [-ConfigurationVersion <Int32>] [-ErrorCount <Int32>]
  [-FailedCount <Int32>] [-Id <String>] [-LastUpdateDateTime <DateTime>] [-NotApplicableCount <Int32>]
- [-PendingCount <Int32>] [-ResponseHeadersVariable <String>] [-SuccessCount <Int32>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PendingCount <Int32>] [-SuccessCount <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgDeviceManagementDeviceConfigurationDeviceStatusOverview -DeviceConfigurationId <String>
- -BodyParameter <IMicrosoftGraphDeviceConfigurationDeviceOverview> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphDeviceConfigurationDeviceOverview> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgDeviceManagementDeviceConfigurationDeviceStatusOverview -InputObject <IDeviceManagementIdentity>
- -BodyParameter <IMicrosoftGraphDeviceConfigurationDeviceOverview> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphDeviceConfigurationDeviceOverview> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -40,8 +37,7 @@ Update-MgDeviceManagementDeviceConfigurationDeviceStatusOverview -InputObject <I
 Update-MgDeviceManagementDeviceConfigurationDeviceStatusOverview -InputObject <IDeviceManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-ConfigurationVersion <Int32>] [-ErrorCount <Int32>]
  [-FailedCount <Int32>] [-Id <String>] [-LastUpdateDateTime <DateTime>] [-NotApplicableCount <Int32>]
- [-PendingCount <Int32>] [-ResponseHeadersVariable <String>] [-SuccessCount <Int32>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PendingCount <Int32>] [-SuccessCount <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -156,21 +152,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -248,21 +229,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -SuccessCount
 Number of succeeded devices
 
@@ -317,8 +283,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceConfigurationDeviceOverview
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

@@ -16,29 +16,26 @@ Update the properties of calendargroup object.
 ```
 Update-MgUserCalendarGroup -CalendarGroupId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
  [-Calendars <IMicrosoftGraphCalendar[]>] [-ChangeKey <String>] [-ClassId <String>] [-Id <String>]
- [-Name <String>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Name <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgUserCalendarGroup -CalendarGroupId <String> -UserId <String>
- -BodyParameter <IMicrosoftGraphCalendarGroup> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphCalendarGroup> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgUserCalendarGroup -InputObject <ICalendarIdentity> -BodyParameter <IMicrosoftGraphCalendarGroup>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgUserCalendarGroup -InputObject <ICalendarIdentity> [-AdditionalProperties <Hashtable>]
  [-Calendars <IMicrosoftGraphCalendar[]>] [-ChangeKey <String>] [-ClassId <String>] [-Id <String>]
- [-Name <String>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Name <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -159,21 +156,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -213,21 +195,6 @@ The group name.
 Type: System.String
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -290,8 +257,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.ICalendarIdentity
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCalendarGroup
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

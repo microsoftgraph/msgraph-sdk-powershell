@@ -15,14 +15,12 @@ The content stream, if the item represents a file.
 ### Get (Default)
 ```
 Get-MgBetaUserDriveItemListItemDriveItemContent -DriveId <String> -DriveItemId <String> -UserId <String>
- -OutFile <String> [-Format <String>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru]
- [<CommonParameters>]
+ -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgBetaUserDriveItemListItemDriveItemContent -InputObject <IFilesIdentity> -OutFile <String>
- [-Format <String>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru]
+Get-MgBetaUserDriveItemListItemDriveItemContent -InputObject <IFilesIdentity> -OutFile <String> [-PassThru]
  [<CommonParameters>]
 ```
 
@@ -77,36 +75,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Format
-Format of the content
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -153,21 +121,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -UserId
 The unique identifier of user
 
@@ -189,8 +142,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

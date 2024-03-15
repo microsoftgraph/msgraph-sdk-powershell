@@ -17,22 +17,20 @@ Update the navigation property alertRecords in deviceManagement
 Update-MgBetaDeviceManagementMonitoringAlertRecord -AlertRecordId <String> [-AdditionalProperties <Hashtable>]
  [-AlertImpact <IMicrosoftGraphDeviceManagementAlertImpact>] [-AlertRuleId <String>]
  [-AlertRuleTemplate <String>] [-DetectedDateTime <DateTime>] [-DisplayName <String>] [-Id <String>]
- [-LastUpdatedDateTime <DateTime>] [-ResolvedDateTime <DateTime>] [-ResponseHeadersVariable <String>]
- [-Severity <String>] [-Status <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-LastUpdatedDateTime <DateTime>] [-ResolvedDateTime <DateTime>] [-Severity <String>] [-Status <String>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaDeviceManagementMonitoringAlertRecord -AlertRecordId <String>
- -BodyParameter <IMicrosoftGraphDeviceManagementAlertRecord> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphDeviceManagementAlertRecord> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaDeviceManagementMonitoringAlertRecord -InputObject <IDeviceManagementIdentity>
- -BodyParameter <IMicrosoftGraphDeviceManagementAlertRecord> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphDeviceManagementAlertRecord> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -40,9 +38,8 @@ Update-MgBetaDeviceManagementMonitoringAlertRecord -InputObject <IDeviceManageme
 Update-MgBetaDeviceManagementMonitoringAlertRecord -InputObject <IDeviceManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-AlertImpact <IMicrosoftGraphDeviceManagementAlertImpact>]
  [-AlertRuleId <String>] [-AlertRuleTemplate <String>] [-DetectedDateTime <DateTime>] [-DisplayName <String>]
- [-Id <String>] [-LastUpdatedDateTime <DateTime>] [-ResolvedDateTime <DateTime>]
- [-ResponseHeadersVariable <String>] [-Severity <String>] [-Status <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-LastUpdatedDateTime <DateTime>] [-ResolvedDateTime <DateTime>] [-Severity <String>]
+ [-Status <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -190,21 +187,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -263,21 +245,6 @@ For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 Type: System.DateTime
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -355,8 +322,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementAlertRecord
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 
@@ -478,7 +443,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[MacOSSoftwareUpdateCategorySummaryId <String>]`: The unique identifier of macOSSoftwareUpdateCategorySummary
   - `[MacOSSoftwareUpdateStateSummaryId <String>]`: The unique identifier of macOSSoftwareUpdateStateSummary
   - `[MalwareStateForWindowsDeviceId <String>]`: The unique identifier of malwareStateForWindowsDevice
-  - `[ManagedDeviceCleanupRuleId <String>]`: The unique identifier of managedDeviceCleanupRule
   - `[ManagedDeviceEncryptionStateId <String>]`: The unique identifier of managedDeviceEncryptionState
   - `[ManagedDeviceId <String>]`: The unique identifier of managedDevice
   - `[ManagedDeviceMobileAppConfigurationStateId <String>]`: The unique identifier of managedDeviceMobileAppConfigurationState

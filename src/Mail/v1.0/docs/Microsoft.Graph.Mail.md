@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Mail
-Module Guid: 1cb6edae-0295-4425-8e1c-6f524d5d755c
+Module Guid: 75424c0c-e979-4cd3-9903-809ea06fa6f3
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.mail
 Help Version: 1.0.0.0
 Locale: en-US
@@ -221,7 +221,7 @@ For the list of resources that support open extensions, see the table in the Per
 Delete the specified messageRule object.
 
 ### [Remove-MgUserMessage](Remove-MgUserMessage.md)
-Delete eventMessage.
+Delete a message in the specified user's mailbox, or delete a relationship of the message.
 
 ### [Remove-MgUserMessageAttachment](Remove-MgUserMessageAttachment.md)
 Delete navigation property attachments for users
@@ -249,7 +249,7 @@ If an override exists for a sender and the sender changes his/her display name, 
 If an override exists for a sender and the sender changes his/her SMTP address, deleting the existing override and creating a new one with\nthe new SMTP address is the only way to 'update' the override for this sender.
 
 ### [Update-MgUserMailFolder](Update-MgUserMailFolder.md)
-Update the writable properties of a mailSearchFolder object.
+Update the properties of mailfolder object.
 
 ### [Update-MgUserMailFolderChildFolder](Update-MgUserMailFolderChildFolder.md)
 Update the navigation property childFolders in users

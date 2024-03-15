@@ -16,23 +16,21 @@ Create new navigation property to history for identityProtection
 ```
 New-MgBetaRiskyUserHistory -RiskyUserId <String> [-Activity <IMicrosoftGraphRiskUserActivity>]
  [-AdditionalProperties <Hashtable>] [-History <IMicrosoftGraphRiskyUserHistoryItem[]>] [-Id <String>]
- [-InitiatedBy <String>] [-IsDeleted] [-IsProcessing] [-ResponseHeadersVariable <String>]
- [-RiskDetail <String>] [-RiskLastUpdatedDateTime <DateTime>] [-RiskLevel <String>] [-RiskState <String>]
- [-UserDisplayName <String>] [-UserId <String>] [-UserPrincipalName <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-InitiatedBy <String>] [-IsDeleted] [-IsProcessing] [-RiskDetail <String>]
+ [-RiskLastUpdatedDateTime <DateTime>] [-RiskLevel <String>] [-RiskState <String>] [-UserDisplayName <String>]
+ [-UserId <String>] [-UserPrincipalName <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaRiskyUserHistory -RiskyUserId <String> -BodyParameter <IMicrosoftGraphRiskyUserHistoryItem>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaRiskyUserHistory -InputObject <IIdentitySignInsIdentity>
- -BodyParameter <IMicrosoftGraphRiskyUserHistoryItem> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphRiskyUserHistoryItem> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -40,10 +38,9 @@ New-MgBetaRiskyUserHistory -InputObject <IIdentitySignInsIdentity>
 New-MgBetaRiskyUserHistory -InputObject <IIdentitySignInsIdentity>
  [-Activity <IMicrosoftGraphRiskUserActivity>] [-AdditionalProperties <Hashtable>]
  [-History <IMicrosoftGraphRiskyUserHistoryItem[]>] [-Id <String>] [-InitiatedBy <String>] [-IsDeleted]
- [-IsProcessing] [-ResponseHeadersVariable <String>] [-RiskDetail <String>]
- [-RiskLastUpdatedDateTime <DateTime>] [-RiskLevel <String>] [-RiskState <String>] [-UserDisplayName <String>]
- [-UserId <String>] [-UserPrincipalName <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-IsProcessing] [-RiskDetail <String>] [-RiskLastUpdatedDateTime <DateTime>] [-RiskLevel <String>]
+ [-RiskState <String>] [-UserDisplayName <String>] [-UserId <String>] [-UserPrincipalName <String>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -101,21 +98,6 @@ Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -203,27 +185,11 @@ Accept wildcard characters: False
 
 ### -IsProcessing
 Indicates whether a user's risky state is being processed by the backend.
-Supports $filter (eq).
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -251,7 +217,6 @@ Accept wildcard characters: False
 The date and time that the risky user was last updated.
 The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time.
 For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-Supports $filter (eq, gt, lt).
 
 ```yaml
 Type: System.DateTime
@@ -395,8 +360,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRiskyUserHistoryItem
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRiskyUserHistoryItem
@@ -420,9 +383,9 @@ To create the parameters described below, construct a hash table containing the 
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[History <IMicrosoftGraphRiskyUserHistoryItem[]>]`: 
   - `[IsDeleted <Boolean?>]`: Indicates whether the user is deleted. Possible values are: true, false.
-  - `[IsProcessing <Boolean?>]`: Indicates whether a user's risky state is being processed by the backend. Supports $filter (eq).
+  - `[IsProcessing <Boolean?>]`: Indicates whether a user's risky state is being processed by the backend.
   - `[RiskDetail <String>]`: riskDetail
-  - `[RiskLastUpdatedDateTime <DateTime?>]`: The date and time that the risky user was last updated.  The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, gt, lt).
+  - `[RiskLastUpdatedDateTime <DateTime?>]`: The date and time that the risky user was last updated.  The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
   - `[RiskLevel <String>]`: riskLevel
   - `[RiskState <String>]`: riskState
   - `[UserDisplayName <String>]`: Risky user display name.
@@ -439,9 +402,9 @@ To create the parameters described below, construct a hash table containing the 
 `HISTORY <IMicrosoftGraphRiskyUserHistoryItem[]>`: .
   - `[History <IMicrosoftGraphRiskyUserHistoryItem[]>]`: 
   - `[IsDeleted <Boolean?>]`: Indicates whether the user is deleted. Possible values are: true, false.
-  - `[IsProcessing <Boolean?>]`: Indicates whether a user's risky state is being processed by the backend. Supports $filter (eq).
+  - `[IsProcessing <Boolean?>]`: Indicates whether a user's risky state is being processed by the backend.
   - `[RiskDetail <String>]`: riskDetail
-  - `[RiskLastUpdatedDateTime <DateTime?>]`: The date and time that the risky user was last updated.  The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, gt, lt).
+  - `[RiskLastUpdatedDateTime <DateTime?>]`: The date and time that the risky user was last updated.  The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
   - `[RiskLevel <String>]`: riskLevel
   - `[RiskState <String>]`: riskState
   - `[UserDisplayName <String>]`: Risky user display name.

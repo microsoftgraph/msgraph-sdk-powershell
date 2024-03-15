@@ -16,16 +16,15 @@ Invoke action changeDeploymentStatus
 ```
 Rename-MgBetaTenantRelationshipManagedTenantManagementActionTenantDeploymentStatus
  [-AdditionalProperties <Hashtable>] [-ManagementActionId <String>] [-ManagementTemplateId <String>]
- [-ManagementTemplateVersion <Int32>] [-ResponseHeadersVariable <String>] [-Status <String>]
- [-TenantGroupId <String>] [-TenantId <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-ManagementTemplateVersion <Int32>] [-Status <String>] [-TenantGroupId <String>] [-TenantId <String>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Change
 ```
 Rename-MgBetaTenantRelationshipManagedTenantManagementActionTenantDeploymentStatus
  -BodyParameter <IPathsNmcreiTenantrelationshipsManagedtenantsManagementactiontenantdeploymentstatusesMicrosoftGraphManagedtenantsChangedeploymentstatusPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -80,21 +79,6 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -ManagementActionId
 .
 
@@ -132,21 +116,6 @@ Accept wildcard characters: False
 Type: System.Int32
 Parameter Sets: ChangeExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -237,8 +206,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPathsNmcreiTenantrelationshipsManagedtenantsManagementactiontenantdeploymentstatusesMicrosoftGraphManagedtenantsChangedeploymentstatusPostRequestbodyContentApplicationJsonSchema
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

@@ -15,14 +15,13 @@ Update the navigation property itemInsights in admin
 ### UpdateExpanded (Default)
 ```
 Update-MgBetaAdminPeopleItemInsight [-AdditionalProperties <Hashtable>] [-DisabledForGroup <String>]
- [-Id <String>] [-IsEnabledInOrganization] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-IsEnabledInOrganization] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgBetaAdminPeopleItemInsight -BodyParameter <IMicrosoftGraphInsightsSettings>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgBetaAdminPeopleItemInsight -BodyParameter <IMicrosoftGraphInsightsSettings> [-Headers <IDictionary>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -134,21 +133,6 @@ Optional.
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: UpdateExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named

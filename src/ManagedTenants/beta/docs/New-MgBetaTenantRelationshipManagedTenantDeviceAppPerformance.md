@@ -18,16 +18,14 @@ New-MgBetaTenantRelationshipManagedTenantDeviceAppPerformance [-AdditionalProper
  [-AppFriendlyName <String>] [-AppName <String>] [-AppPublisher <String>] [-AppVersion <String>]
  [-DeviceId <String>] [-DeviceManufacturer <String>] [-DeviceModel <String>] [-DeviceName <String>]
  [-HealthStatus <String>] [-Id <String>] [-IsLatestUsedVersion <Int32>] [-IsMostUsedVersion <Int32>]
- [-LastUpdatedDateTime <DateTime>] [-ResponseHeadersVariable <String>] [-TenantDisplayName <String>]
- [-TenantId <String>] [-TotalAppCrashCount <Int32>] [-TotalAppFreezeCount <Int32>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-LastUpdatedDateTime <DateTime>] [-TenantDisplayName <String>] [-TenantId <String>]
+ [-TotalAppCrashCount <Int32>] [-TotalAppFreezeCount <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaTenantRelationshipManagedTenantDeviceAppPerformance
- -BodyParameter <IMicrosoftGraphManagedTenantsDeviceAppPerformance> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphManagedTenantsDeviceAppPerformance> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -202,21 +200,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -HealthStatus
 .
 
@@ -285,21 +268,6 @@ Accept wildcard characters: False
 Type: System.DateTime
 Parameter Sets: CreateExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -405,8 +373,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsDeviceAppPerformance
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

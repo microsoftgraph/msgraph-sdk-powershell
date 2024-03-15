@@ -19,22 +19,20 @@ New-MgBetaUserProfileCertification -UserId <String> [-AdditionalProperties <Hash
  [-CreatedDateTime <DateTime>] [-Description <String>] [-DisplayName <String>] [-EndDate <DateTime>]
  [-Id <String>] [-Inference <IMicrosoftGraphInferenceData>] [-IsSearchable] [-IssuedDate <DateTime>]
  [-IssuingAuthority <String>] [-IssuingCompany <String>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
- [-LastModifiedDateTime <DateTime>] [-ResponseHeadersVariable <String>]
- [-Source <IMicrosoftGraphPersonDataSources>] [-StartDate <DateTime>] [-ThumbnailUrl <String>]
- [-WebUrl <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-LastModifiedDateTime <DateTime>] [-Source <IMicrosoftGraphPersonDataSources>] [-StartDate <DateTime>]
+ [-ThumbnailUrl <String>] [-WebUrl <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaUserProfileCertification -UserId <String> -BodyParameter <IMicrosoftGraphPersonCertification>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaUserProfileCertification -InputObject <IPeopleIdentity>
- -BodyParameter <IMicrosoftGraphPersonCertification> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphPersonCertification> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -44,9 +42,8 @@ New-MgBetaUserProfileCertification -InputObject <IPeopleIdentity> [-AdditionalPr
  [-CreatedDateTime <DateTime>] [-Description <String>] [-DisplayName <String>] [-EndDate <DateTime>]
  [-Id <String>] [-Inference <IMicrosoftGraphInferenceData>] [-IsSearchable] [-IssuedDate <DateTime>]
  [-IssuingAuthority <String>] [-IssuingCompany <String>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
- [-LastModifiedDateTime <DateTime>] [-ResponseHeadersVariable <String>]
- [-Source <IMicrosoftGraphPersonDataSources>] [-StartDate <DateTime>] [-ThumbnailUrl <String>]
- [-WebUrl <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-LastModifiedDateTime <DateTime>] [-Source <IMicrosoftGraphPersonDataSources>] [-StartDate <DateTime>]
+ [-ThumbnailUrl <String>] [-WebUrl <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -209,21 +206,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -363,21 +345,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Source
 personDataSources
 To construct, see NOTES section for SOURCE properties and create a hash table.
@@ -493,8 +460,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPersonCertification
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPeopleIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

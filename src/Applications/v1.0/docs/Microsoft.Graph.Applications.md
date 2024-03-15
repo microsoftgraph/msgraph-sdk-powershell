@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Applications
-Module Guid: eb897b8e-c837-4643-8225-62a8e2ce5a2f
+Module Guid: b99bf422-494c-4616-8374-474ca1974b9e
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.applications
 Help Version: 1.0.0.0
 Locale: en-US
@@ -97,9 +97,6 @@ Return the directory objects specified in a list of IDs.
 Only a subset of user properties are returned by default in v1.0.
 Some common uses for this function are to:
 
-### [Get-MgApplicationByUniqueName](Get-MgApplicationByUniqueName.md)
-Get the properties and relationships of an application object.
-
 ### [Get-MgApplicationCount](Get-MgApplicationCount.md)
 Get the number of the resource
 
@@ -191,12 +188,6 @@ Acquire an OAuth access token to authorize the Microsoft Entra provisioning serv
 
 ### [Get-MgApplicationSynchronizationJob](Get-MgApplicationSynchronizationJob.md)
 Retrieve the existing synchronization job and its properties.
-
-### [Get-MgApplicationSynchronizationJobBulkUpload](Get-MgApplicationSynchronizationJobBulkUpload.md)
-Get bulkUpload from applications
-
-### [Get-MgApplicationSynchronizationJobBulkUploadContent](Get-MgApplicationSynchronizationJobBulkUploadContent.md)
-Get media content for the navigation property bulkUpload from applications
 
 ### [Get-MgApplicationSynchronizationJobCount](Get-MgApplicationSynchronizationJobCount.md)
 Get the number of the resource
@@ -489,12 +480,6 @@ Acquire an OAuth access token to authorize the Microsoft Entra provisioning serv
 ### [Get-MgServicePrincipalSynchronizationJob](Get-MgServicePrincipalSynchronizationJob.md)
 Retrieve the existing synchronization job and its properties.
 
-### [Get-MgServicePrincipalSynchronizationJobBulkUpload](Get-MgServicePrincipalSynchronizationJobBulkUpload.md)
-Get bulkUpload from servicePrincipals
-
-### [Get-MgServicePrincipalSynchronizationJobBulkUploadContent](Get-MgServicePrincipalSynchronizationJobBulkUploadContent.md)
-Get media content for the navigation property bulkUpload from servicePrincipals
-
 ### [Get-MgServicePrincipalSynchronizationJobCount](Get-MgServicePrincipalSynchronizationJobCount.md)
 Get the number of the resource
 
@@ -734,11 +719,6 @@ Delete an application object.
 When deleted, apps are moved to a temporary container and can be restored within 30 days.
 After that time, they are permanently deleted.
 
-### [Remove-MgApplicationByUniqueName](Remove-MgApplicationByUniqueName.md)
-Delete an application object.
-When deleted, apps are moved to a temporary container and can be restored within 30 days.
-After that time, they are permanently deleted.
-
 ### [Remove-MgApplicationExtensionProperty](Remove-MgApplicationExtensionProperty.md)
 Delete a directory extension definition represented by an extensionProperty object.
 You can delete only directory extensions that aren't synced from on-premises active directory (AD).
@@ -764,9 +744,6 @@ Delete navigation property synchronization for applications
 ### [Remove-MgApplicationSynchronizationJob](Remove-MgApplicationSynchronizationJob.md)
 Stop the synchronization job, and permanently delete all the state associated with it.
 Synchronized accounts are left as-is.
-
-### [Remove-MgApplicationSynchronizationJobBulkUpload](Remove-MgApplicationSynchronizationJobBulkUpload.md)
-Delete navigation property bulkUpload for applications
 
 ### [Remove-MgApplicationSynchronizationJobSchema](Remove-MgApplicationSynchronizationJobSchema.md)
 Delete navigation property schema for applications
@@ -794,6 +771,10 @@ Deletes an appRoleAssignment that a group has been granted.
 
 ### [Remove-MgServicePrincipal](Remove-MgServicePrincipal.md)
 Delete a servicePrincipal object.
+
+### [Remove-MgServicePrincipalAppManagementPolicy](Remove-MgServicePrincipalAppManagementPolicy.md)
+Remove an appManagementPolicy policy object from an application or service principal object.
+When you remove the appManagementPolicy, the application or service principal adopts the tenant-wide tenantAppManagementPolicy setting.
 
 ### [Remove-MgServicePrincipalAppRoleAssignedTo](Remove-MgServicePrincipalAppRoleAssignedTo.md)
 Deletes an appRoleAssignment that a user, group, or client service principal has been granted for a resource service principal.
@@ -845,9 +826,6 @@ Delete navigation property synchronization for servicePrincipals
 Stop the synchronization job, and permanently delete all the state associated with it.
 Synchronized accounts are left as-is.
 
-### [Remove-MgServicePrincipalSynchronizationJobBulkUpload](Remove-MgServicePrincipalSynchronizationJobBulkUpload.md)
-Delete navigation property bulkUpload for servicePrincipals
-
 ### [Remove-MgServicePrincipalSynchronizationJobSchema](Remove-MgServicePrincipalSynchronizationJobSchema.md)
 Delete navigation property schema for servicePrincipals
 
@@ -881,9 +859,6 @@ Not nullable.
 ### [Set-MgApplicationSynchronization](Set-MgApplicationSynchronization.md)
 Update the navigation property synchronization in applications
 
-### [Set-MgApplicationSynchronizationJobBulkUploadContent](Set-MgApplicationSynchronizationJobBulkUploadContent.md)
-Update media content for the navigation property bulkUpload in applications
-
 ### [Set-MgApplicationSynchronizationSecret](Set-MgApplicationSynchronizationSecret.md)
 Update property secrets value.
 
@@ -893,9 +868,6 @@ For more information, including prerequisites to setting a verified publisher, s
 
 ### [Set-MgServicePrincipalSynchronization](Set-MgServicePrincipalSynchronization.md)
 Update the navigation property synchronization in servicePrincipals
-
-### [Set-MgServicePrincipalSynchronizationJobBulkUploadContent](Set-MgServicePrincipalSynchronizationJobBulkUploadContent.md)
-Update media content for the navigation property bulkUpload in servicePrincipals
 
 ### [Set-MgServicePrincipalSynchronizationSecret](Set-MgServicePrincipalSynchronizationSecret.md)
 Update property secrets value.
@@ -958,9 +930,6 @@ Update the properties of an application object.
 ### [Update-MgApplicationByAppId](Update-MgApplicationByAppId.md)
 Update the properties of an application object.
 
-### [Update-MgApplicationByUniqueName](Update-MgApplicationByUniqueName.md)
-Update the properties of an application object.
-
 ### [Update-MgApplicationExtensionProperty](Update-MgApplicationExtensionProperty.md)
 Update the navigation property extensionProperties in applications
 
@@ -969,9 +938,6 @@ Update the properties of a federatedIdentityCredential object.
 
 ### [Update-MgApplicationSynchronizationJob](Update-MgApplicationSynchronizationJob.md)
 Update the navigation property jobs in applications
-
-### [Update-MgApplicationSynchronizationJobBulkUpload](Update-MgApplicationSynchronizationJobBulkUpload.md)
-Update the navigation property bulkUpload in applications
 
 ### [Update-MgApplicationSynchronizationJobSchema](Update-MgApplicationSynchronizationJobSchema.md)
 Update the synchronization schema for a given job or template.
@@ -1022,9 +988,6 @@ You can configure a maximum of 10 target device groups for the remoteDesktopSecu
 
 ### [Update-MgServicePrincipalSynchronizationJob](Update-MgServicePrincipalSynchronizationJob.md)
 Update the navigation property jobs in servicePrincipals
-
-### [Update-MgServicePrincipalSynchronizationJobBulkUpload](Update-MgServicePrincipalSynchronizationJobBulkUpload.md)
-Update the navigation property bulkUpload in servicePrincipals
 
 ### [Update-MgServicePrincipalSynchronizationJobSchema](Update-MgServicePrincipalSynchronizationJobSchema.md)
 Update the synchronization schema for a given job or template.

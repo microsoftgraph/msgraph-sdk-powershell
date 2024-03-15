@@ -18,23 +18,22 @@ Update-MgBetaEntitlementManagementSubjectByObjectId -ObjectId <String> [-Additio
  [-AltSecId <String>] [-CleanupScheduledDateTime <DateTime>]
  [-ConnectedOrganization <IMicrosoftGraphConnectedOrganization>] [-ConnectedOrganizationId <String>]
  [-DisplayName <String>] [-Email <String>] [-Id <String>] [-ObjectId1 <String>]
- [-OnPremisesSecurityIdentifier <String>] [-PrincipalName <String>] [-ResponseHeadersVariable <String>]
- [-SubjectLifecycle <String>] [-Type <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-OnPremisesSecurityIdentifier <String>] [-PrincipalName <String>] [-SubjectLifecycle <String>]
+ [-Type <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaEntitlementManagementSubjectByObjectId -ObjectId <String>
- -BodyParameter <IMicrosoftGraphAccessPackageSubject> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphAccessPackageSubject> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaEntitlementManagementSubjectByObjectId -InputObject <IIdentityGovernanceIdentity>
- -BodyParameter <IMicrosoftGraphAccessPackageSubject> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphAccessPackageSubject> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -43,9 +42,8 @@ Update-MgBetaEntitlementManagementSubjectByObjectId -InputObject <IIdentityGover
  [-ObjectId <String>] [-AdditionalProperties <Hashtable>] [-AltSecId <String>]
  [-CleanupScheduledDateTime <DateTime>] [-ConnectedOrganization <IMicrosoftGraphConnectedOrganization>]
  [-ConnectedOrganizationId <String>] [-DisplayName <String>] [-Email <String>] [-Id <String>]
- [-OnPremisesSecurityIdentifier <String>] [-PrincipalName <String>] [-ResponseHeadersVariable <String>]
- [-SubjectLifecycle <String>] [-Type <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-OnPremisesSecurityIdentifier <String>] [-PrincipalName <String>] [-SubjectLifecycle <String>]
+ [-Type <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -293,21 +291,6 @@ The principal name, if known, of the subject.
 Type: System.String
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named

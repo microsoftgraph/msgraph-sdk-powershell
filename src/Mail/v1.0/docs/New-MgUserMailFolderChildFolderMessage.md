@@ -26,23 +26,22 @@ New-MgUserMailFolderChildFolderMessage -MailFolderId <String> -MailFolderId1 <St
  [-LastModifiedDateTime <DateTime>]
  [-MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]
  [-ParentFolderId <String>] [-ReceivedDateTime <DateTime>] [-ReplyTo <IMicrosoftGraphRecipient[]>]
- [-ResponseHeadersVariable <String>] [-Sender <IMicrosoftGraphRecipient>] [-SentDateTime <DateTime>]
+ [-Sender <IMicrosoftGraphRecipient>] [-SentDateTime <DateTime>]
  [-SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>] [-Subject <String>]
  [-ToRecipients <IMicrosoftGraphRecipient[]>] [-UniqueBody <IMicrosoftGraphItemBody>] [-WebLink <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgUserMailFolderChildFolderMessage -MailFolderId <String> -MailFolderId1 <String> -UserId <String>
- -BodyParameter <IMicrosoftGraphMessage> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphMessage> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgUserMailFolderChildFolderMessage -InputObject <IMailIdentity> -BodyParameter <IMicrosoftGraphMessage>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -59,10 +58,10 @@ New-MgUserMailFolderChildFolderMessage -InputObject <IMailIdentity> [-Additional
  [-LastModifiedDateTime <DateTime>]
  [-MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]
  [-ParentFolderId <String>] [-ReceivedDateTime <DateTime>] [-ReplyTo <IMicrosoftGraphRecipient[]>]
- [-ResponseHeadersVariable <String>] [-Sender <IMicrosoftGraphRecipient>] [-SentDateTime <DateTime>]
+ [-Sender <IMicrosoftGraphRecipient>] [-SentDateTime <DateTime>]
  [-SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>] [-Subject <String>]
  [-ToRecipients <IMicrosoftGraphRecipient[]>] [-UniqueBody <IMicrosoftGraphItemBody>] [-WebLink <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -342,21 +341,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -619,21 +603,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Sender
 recipient
 To construct, see NOTES section for SENDER properties and create a hash table.
@@ -798,8 +767,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IMailIdentity
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMessage
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

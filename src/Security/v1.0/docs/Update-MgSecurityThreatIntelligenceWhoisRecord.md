@@ -23,23 +23,20 @@ Update-MgSecurityThreatIntelligenceWhoisRecord -WhoisRecordId <String>
  [-Nameservers <IMicrosoftGraphSecurityWhoisNameserver[]>] [-Noc <IMicrosoftGraphSecurityWhoisContact>]
  [-RawWhoisText <String>] [-Registrant <IMicrosoftGraphSecurityWhoisContact>]
  [-Registrar <IMicrosoftGraphSecurityWhoisContact>] [-RegistrationDateTime <DateTime>]
- [-ResponseHeadersVariable <String>] [-Technical <IMicrosoftGraphSecurityWhoisContact>]
- [-WhoisServer <String>] [-Zone <IMicrosoftGraphSecurityWhoisContact>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-Technical <IMicrosoftGraphSecurityWhoisContact>] [-WhoisServer <String>]
+ [-Zone <IMicrosoftGraphSecurityWhoisContact>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgSecurityThreatIntelligenceWhoisRecord -WhoisRecordId <String>
- -BodyParameter <IMicrosoftGraphSecurityWhoisRecord> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphSecurityWhoisRecord> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgSecurityThreatIntelligenceWhoisRecord -InputObject <ISecurityIdentity>
- -BodyParameter <IMicrosoftGraphSecurityWhoisRecord> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphSecurityWhoisRecord> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -53,9 +50,8 @@ Update-MgSecurityThreatIntelligenceWhoisRecord -InputObject <ISecurityIdentity>
  [-Nameservers <IMicrosoftGraphSecurityWhoisNameserver[]>] [-Noc <IMicrosoftGraphSecurityWhoisContact>]
  [-RawWhoisText <String>] [-Registrant <IMicrosoftGraphSecurityWhoisContact>]
  [-Registrar <IMicrosoftGraphSecurityWhoisContact>] [-RegistrationDateTime <DateTime>]
- [-ResponseHeadersVariable <String>] [-Technical <IMicrosoftGraphSecurityWhoisContact>]
- [-WhoisServer <String>] [-Zone <IMicrosoftGraphSecurityWhoisContact>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-Technical <IMicrosoftGraphSecurityWhoisContact>] [-WhoisServer <String>]
+ [-Zone <IMicrosoftGraphSecurityWhoisContact>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -204,21 +200,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -416,21 +397,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Technical
 whoisContact
 To construct, see NOTES section for TECHNICAL properties and create a hash table.
@@ -532,8 +498,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityWhoisRecord
 
 ### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

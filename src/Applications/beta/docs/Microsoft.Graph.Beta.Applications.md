@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Applications
-Module Guid: 367bad74-ffa0-4c8d-a976-f450aa6f443c
+Module Guid: 7a3d0fac-b855-4263-a24f-8515b799599a
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.applications
 Help Version: 1.0.0.0
 Locale: en-US
@@ -114,9 +114,6 @@ Read a directory extension definition represented by an extensionProperty object
 Get the number of the resource
 
 ### [Get-MgBetaApplicationFederatedIdentityCredential](Get-MgBetaApplicationFederatedIdentityCredential.md)
-Read the properties and relationships of a federatedIdentityCredential object.
-
-### [Get-MgBetaApplicationFederatedIdentityCredentialByName](Get-MgBetaApplicationFederatedIdentityCredentialByName.md)
 Read the properties and relationships of a federatedIdentityCredential object.
 
 ### [Get-MgBetaApplicationFederatedIdentityCredentialCount](Get-MgBetaApplicationFederatedIdentityCredentialCount.md)
@@ -318,12 +315,6 @@ Retrieve the properties of a connectorGroup.
 ### [Get-MgBetaOnPremisePublishingProfileConnectorGroupApplication](Get-MgBetaOnPremisePublishingProfileConnectorGroupApplication.md)
 Get applications from onPremisesPublishingProfiles
 
-### [Get-MgBetaOnPremisePublishingProfileConnectorGroupApplicationByAppId](Get-MgBetaOnPremisePublishingProfileConnectorGroupApplicationByAppId.md)
-Get applications from onPremisesPublishingProfiles
-
-### [Get-MgBetaOnPremisePublishingProfileConnectorGroupApplicationByUniqueName](Get-MgBetaOnPremisePublishingProfileConnectorGroupApplicationByUniqueName.md)
-Get applications from onPremisesPublishingProfiles
-
 ### [Get-MgBetaOnPremisePublishingProfileConnectorGroupApplicationCount](Get-MgBetaOnPremisePublishingProfileConnectorGroupApplicationCount.md)
 Get the number of the resource
 
@@ -462,9 +453,6 @@ Get licenseDetails from servicePrincipals
 
 ### [Get-MgBetaServicePrincipalLicenseDetailCount](Get-MgBetaServicePrincipalLicenseDetailCount.md)
 Get the number of the resource
-
-### [Get-MgBetaServicePrincipalLicenseDetailTeamLicensingDetail](Get-MgBetaServicePrincipalLicenseDetailTeamLicensingDetail.md)
-Invoke function getTeamsLicensingDetails
 
 ### [Get-MgBetaServicePrincipalMemberGroup](Get-MgBetaServicePrincipalMemberGroup.md)
 Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of.
@@ -927,9 +915,6 @@ You can delete only directory extensions that aren't synced from on-premises act
 ### [Remove-MgBetaApplicationFederatedIdentityCredential](Remove-MgBetaApplicationFederatedIdentityCredential.md)
 Deletes a federatedIdentityCredential object from an application.
 
-### [Remove-MgBetaApplicationFederatedIdentityCredentialByName](Remove-MgBetaApplicationFederatedIdentityCredentialByName.md)
-Deletes a federatedIdentityCredential object from an application.
-
 ### [Remove-MgBetaApplicationKey](Remove-MgBetaApplicationKey.md)
 Remove a key credential from an application.
 This method along with addKey can be used by an application to automate rolling its expiring keys.
@@ -1018,6 +1003,10 @@ Delete ref of navigation property agentGroups for onPremisesPublishingProfiles
 
 ### [Remove-MgBetaServicePrincipal](Remove-MgBetaServicePrincipal.md)
 Delete a servicePrincipal object.
+
+### [Remove-MgBetaServicePrincipalAppManagementPolicy](Remove-MgBetaServicePrincipalAppManagementPolicy.md)
+Remove an appManagementPolicy policy object from an application or service principal object.
+When you remove the appManagementPolicy, the application or service principal adopts the tenant-wide tenantAppManagementPolicy setting.
 
 ### [Remove-MgBetaServicePrincipalAppRoleAssignedTo](Remove-MgBetaServicePrincipalAppRoleAssignedTo.md)
 Deletes an appRoleAssignment that a user, group, or client service principal has been granted for a resource service principal.
@@ -1192,9 +1181,6 @@ Update the properties of an application object.
 Update the navigation property extensionProperties in applications
 
 ### [Update-MgBetaApplicationFederatedIdentityCredential](Update-MgBetaApplicationFederatedIdentityCredential.md)
-Update the properties of a federatedIdentityCredential object.
-
-### [Update-MgBetaApplicationFederatedIdentityCredentialByName](Update-MgBetaApplicationFederatedIdentityCredentialByName.md)
 Update the properties of a federatedIdentityCredential object.
 
 ### [Update-MgBetaApplicationSynchronizationJob](Update-MgBetaApplicationSynchronizationJob.md)

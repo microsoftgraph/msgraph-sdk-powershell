@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.DeviceManagement
-Module Guid: fac91224-b409-4d21-bb07-02cdf214111b
+Module Guid: d7759453-521d-44eb-bca8-e881cbfd7a5b
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devicemanagement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -600,12 +600,6 @@ Get the number of the resource
 
 ### [Get-MgBetaDeviceManagementManagedDeviceCategory](Get-MgBetaDeviceManagementManagedDeviceCategory.md)
 Device category
-
-### [Get-MgBetaDeviceManagementManagedDeviceCleanupRule](Get-MgBetaDeviceManagementManagedDeviceCleanupRule.md)
-Device cleanup rule V2
-
-### [Get-MgBetaDeviceManagementManagedDeviceCleanupRuleCount](Get-MgBetaDeviceManagementManagedDeviceCleanupRuleCount.md)
-Get the number of the resource
 
 ### [Get-MgBetaDeviceManagementManagedDeviceCompliancePolicyState](Get-MgBetaDeviceManagementManagedDeviceCompliancePolicyState.md)
 Device compliance policy states for this device.
@@ -1456,9 +1450,6 @@ Create new navigation property to managedDevices for deviceManagement
 ### [New-MgBetaDeviceManagementManagedDeviceAssignmentFilterEvaluationStatusDetail](New-MgBetaDeviceManagementManagedDeviceAssignmentFilterEvaluationStatusDetail.md)
 Create new navigation property to assignmentFilterEvaluationStatusDetails for deviceManagement
 
-### [New-MgBetaDeviceManagementManagedDeviceCleanupRule](New-MgBetaDeviceManagementManagedDeviceCleanupRule.md)
-Create new navigation property to managedDeviceCleanupRules for deviceManagement
-
 ### [New-MgBetaDeviceManagementManagedDeviceCompliancePolicyState](New-MgBetaDeviceManagementManagedDeviceCompliancePolicyState.md)
 Create new navigation property to deviceCompliancePolicyStates for deviceManagement
 
@@ -2022,9 +2013,6 @@ Delete navigation property assignmentFilterEvaluationStatusDetails for deviceMan
 
 ### [Remove-MgBetaDeviceManagementManagedDeviceCategory](Remove-MgBetaDeviceManagementManagedDeviceCategory.md)
 Delete navigation property deviceCategory for deviceManagement
-
-### [Remove-MgBetaDeviceManagementManagedDeviceCleanupRule](Remove-MgBetaDeviceManagementManagedDeviceCleanupRule.md)
-Delete navigation property managedDeviceCleanupRules for deviceManagement
 
 ### [Remove-MgBetaDeviceManagementManagedDeviceCompliancePolicyState](Remove-MgBetaDeviceManagementManagedDeviceCompliancePolicyState.md)
 Delete navigation property deviceCompliancePolicyStates for deviceManagement
@@ -2616,9 +2604,6 @@ Update the navigation property assignmentFilterEvaluationStatusDetails in device
 
 ### [Update-MgBetaDeviceManagementManagedDeviceCategory](Update-MgBetaDeviceManagementManagedDeviceCategory.md)
 Update the navigation property deviceCategory in deviceManagement
-
-### [Update-MgBetaDeviceManagementManagedDeviceCleanupRule](Update-MgBetaDeviceManagementManagedDeviceCleanupRule.md)
-Update the navigation property managedDeviceCleanupRules in deviceManagement
 
 ### [Update-MgBetaDeviceManagementManagedDeviceCompliancePolicyState](Update-MgBetaDeviceManagementManagedDeviceCompliancePolicyState.md)
 Update the navigation property deviceCompliancePolicyStates in deviceManagement

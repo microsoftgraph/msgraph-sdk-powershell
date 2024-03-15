@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
-Module Guid: d5233613-edcf-4a19-8d8d-cf4369259b95
+Module Guid: 1755f28e-eb7e-478a-9846-c724a61ba4ac
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devicemanagement.administration
 Help Version: 1.0.0.0
 Locale: en-US
@@ -849,7 +849,7 @@ Delete navigation property galleryImages for deviceManagement
 ### [Remove-MgBetaDeviceManagementVirtualEndpointOnPremiseConnection](Remove-MgBetaDeviceManagementVirtualEndpointOnPremiseConnection.md)
 Delete a specific cloudPcOnPremisesConnection object.
 When you delete an Azure network connection, permissions to the service are removed from the specified Azure resources.
-You can't delete an Azure network connection when it's in use, as indicated by the inUse property.
+You cannot delete an Azure network connection when it's in use, as indicated by the inUse property.
 
 ### [Remove-MgBetaDeviceManagementVirtualEndpointOrganizationSetting](Remove-MgBetaDeviceManagementVirtualEndpointOrganizationSetting.md)
 Delete navigation property organizationSettings for deviceManagement

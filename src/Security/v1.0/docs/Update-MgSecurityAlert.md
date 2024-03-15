@@ -28,26 +28,24 @@ Update-MgSecurityAlert -AlertId <String> [-ActivityGroupName <String>] [-Additio
  [-MessageSecurityStates <IMicrosoftGraphMessageSecurityState[]>]
  [-NetworkConnections <IMicrosoftGraphNetworkConnection[]>] [-Processes <IMicrosoftGraphProcess[]>]
  [-RecommendedActions <String[]>] [-RegistryKeyStates <IMicrosoftGraphRegistryKeyState[]>]
- [-ResponseHeadersVariable <String>] [-SecurityResources <IMicrosoftGraphSecurityResource[]>]
- [-Severity <String>] [-SourceMaterials <String[]>] [-Status <String>] [-Tags <String[]>] [-Title <String>]
- [-Triggers <IMicrosoftGraphAlertTrigger[]>]
+ [-SecurityResources <IMicrosoftGraphSecurityResource[]>] [-Severity <String>] [-SourceMaterials <String[]>]
+ [-Status <String>] [-Tags <String[]>] [-Title <String>] [-Triggers <IMicrosoftGraphAlertTrigger[]>]
  [-UriClickSecurityStates <IMicrosoftGraphUriClickSecurityState[]>]
  [-UserStates <IMicrosoftGraphUserSecurityState[]>]
  [-VendorInformation <IMicrosoftGraphSecurityVendorInformation>]
- [-VulnerabilityStates <IMicrosoftGraphVulnerabilityState[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-VulnerabilityStates <IMicrosoftGraphVulnerabilityState[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgSecurityAlert -AlertId <String> -BodyParameter <IMicrosoftGraphAlert>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgSecurityAlert -AlertId <String> -BodyParameter <IMicrosoftGraphAlert> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgSecurityAlert -InputObject <ISecurityIdentity> -BodyParameter <IMicrosoftGraphAlert>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgSecurityAlert -InputObject <ISecurityIdentity> -BodyParameter <IMicrosoftGraphAlert> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -65,14 +63,12 @@ Update-MgSecurityAlert -InputObject <ISecurityIdentity> [-ActivityGroupName <Str
  [-MessageSecurityStates <IMicrosoftGraphMessageSecurityState[]>]
  [-NetworkConnections <IMicrosoftGraphNetworkConnection[]>] [-Processes <IMicrosoftGraphProcess[]>]
  [-RecommendedActions <String[]>] [-RegistryKeyStates <IMicrosoftGraphRegistryKeyState[]>]
- [-ResponseHeadersVariable <String>] [-SecurityResources <IMicrosoftGraphSecurityResource[]>]
- [-Severity <String>] [-SourceMaterials <String[]>] [-Status <String>] [-Tags <String[]>] [-Title <String>]
- [-Triggers <IMicrosoftGraphAlertTrigger[]>]
+ [-SecurityResources <IMicrosoftGraphSecurityResource[]>] [-Severity <String>] [-SourceMaterials <String[]>]
+ [-Status <String>] [-Tags <String[]>] [-Title <String>] [-Triggers <IMicrosoftGraphAlertTrigger[]>]
  [-UriClickSecurityStates <IMicrosoftGraphUriClickSecurityState[]>]
  [-UserStates <IMicrosoftGraphUserSecurityState[]>]
  [-VendorInformation <IMicrosoftGraphSecurityVendorInformation>]
- [-VulnerabilityStates <IMicrosoftGraphVulnerabilityState[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-VulnerabilityStates <IMicrosoftGraphVulnerabilityState[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -429,21 +425,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -HistoryStates
 .
 To construct, see NOTES section for HISTORYSTATES properties and create a hash table.
@@ -666,21 +647,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -SecurityResources
 Resources related to current alert.
 For example, for some alerts this can have the Azure Resource value.
@@ -895,8 +861,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAlert
 
 ### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

@@ -18,8 +18,7 @@ This method returns an apiConnector.
 ```
 Invoke-MgUploadIdentityB2XUserFlowApiConnectorConfigurationPostFederationSignupClientCertificate
  -B2XIdentityUserFlowId <String> [-AdditionalProperties <Hashtable>] [-Password <String>]
- [-Pkcs12Value <String>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Pkcs12Value <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Upload
@@ -27,7 +26,7 @@ Invoke-MgUploadIdentityB2XUserFlowApiConnectorConfigurationPostFederationSignupC
 Invoke-MgUploadIdentityB2XUserFlowApiConnectorConfigurationPostFederationSignupClientCertificate
  -B2XIdentityUserFlowId <String>
  -BodyParameter <IPathsVcsnhbIdentityB2XuserflowsB2XidentityuserflowIdApiconnectorconfigurationPostfederationsignupMicrosoftGraphUploadclientcertificatePostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UploadViaIdentity
@@ -35,15 +34,14 @@ Invoke-MgUploadIdentityB2XUserFlowApiConnectorConfigurationPostFederationSignupC
 Invoke-MgUploadIdentityB2XUserFlowApiConnectorConfigurationPostFederationSignupClientCertificate
  -InputObject <IIdentitySignInsIdentity>
  -BodyParameter <IPathsVcsnhbIdentityB2XuserflowsB2XidentityuserflowIdApiconnectorconfigurationPostfederationsignupMicrosoftGraphUploadclientcertificatePostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UploadViaIdentityExpanded
 ```
 Invoke-MgUploadIdentityB2XUserFlowApiConnectorConfigurationPostFederationSignupClientCertificate
  -InputObject <IIdentitySignInsIdentity> [-AdditionalProperties <Hashtable>] [-Password <String>]
- [-Pkcs12Value <String>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Pkcs12Value <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -115,21 +113,6 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -168,21 +151,6 @@ Accept wildcard characters: False
 Type: System.String
 Parameter Sets: UploadExpanded, UploadViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -230,8 +198,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
 
 ### Microsoft.Graph.PowerShell.Models.IPathsVcsnhbIdentityB2XuserflowsB2XidentityuserflowIdApiconnectorconfigurationPostfederationsignupMicrosoftGraphUploadclientcertificatePostRequestbodyContentApplicationJsonSchema
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

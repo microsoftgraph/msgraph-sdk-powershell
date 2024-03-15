@@ -16,15 +16,14 @@ Invoke action evaluate
 ```
 Test-MgBetaInformationProtectionDataLossPreventionPolicy [-AdditionalProperties <Hashtable>]
  [-EvaluationInput <IMicrosoftGraphDlpEvaluationInput>] [-NotificationInfo <IMicrosoftGraphDlpNotification>]
- [-ResponseHeadersVariable <String>] [-Target <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Target <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Evaluate
 ```
 Test-MgBetaInformationProtectionDataLossPreventionPolicy
  -BodyParameter <IPaths1JhdydfInformationprotectionDatalosspreventionpoliciesMicrosoftGraphEvaluatePostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -95,21 +94,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -NotificationInfo
 dlpNotification
 To construct, see NOTES section for NOTIFICATIONINFO properties and create a hash table.
@@ -118,21 +102,6 @@ To construct, see NOTES section for NOTIFICATIONINFO properties and create a has
 Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDlpNotification
 Parameter Sets: EvaluateExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -193,8 +162,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPaths1JhdydfInformationprotectionDatalosspreventionpoliciesMicrosoftGraphEvaluatePostRequestbodyContentApplicationJsonSchema
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

@@ -32,8 +32,8 @@ Update-MgApplicationByUniqueName -UniqueName <String> [-AddIns <IMicrosoftGraphA
  [-PasswordCredentials <IMicrosoftGraphPasswordCredential[]>]
  [-PublicClient <IMicrosoftGraphPublicClientApplication>] [-PublisherDomain <String>]
  [-RequestSignatureVerification <IMicrosoftGraphRequestSignatureVerification>]
- [-RequiredResourceAccess <IMicrosoftGraphRequiredResourceAccess[]>] [-ResponseHeadersVariable <String>]
- [-SamlMetadataUrl <String>] [-ServiceManagementReference <String>]
+ [-RequiredResourceAccess <IMicrosoftGraphRequiredResourceAccess[]>] [-SamlMetadataUrl <String>]
+ [-ServiceManagementReference <String>]
  [-ServicePrincipalLockConfiguration <IMicrosoftGraphServicePrincipalLockConfiguration>]
  [-SignInAudience <String>] [-Spa <IMicrosoftGraphSpaApplication>]
  [-Synchronization <IMicrosoftGraphSynchronization>] [-Tags <String[]>] [-TokenEncryptionKeyId <String>]
@@ -46,14 +46,14 @@ Update-MgApplicationByUniqueName -UniqueName <String> [-AddIns <IMicrosoftGraphA
 ### Update
 ```
 Update-MgApplicationByUniqueName -UniqueName <String> -BodyParameter <IMicrosoftGraphApplication>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgApplicationByUniqueName -InputObject <IApplicationsIdentity>
- -BodyParameter <IMicrosoftGraphApplication> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphApplication> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -76,8 +76,8 @@ Update-MgApplicationByUniqueName -InputObject <IApplicationsIdentity> [-UniqueNa
  [-PasswordCredentials <IMicrosoftGraphPasswordCredential[]>]
  [-PublicClient <IMicrosoftGraphPublicClientApplication>] [-PublisherDomain <String>]
  [-RequestSignatureVerification <IMicrosoftGraphRequestSignatureVerification>]
- [-RequiredResourceAccess <IMicrosoftGraphRequiredResourceAccess[]>] [-ResponseHeadersVariable <String>]
- [-SamlMetadataUrl <String>] [-ServiceManagementReference <String>]
+ [-RequiredResourceAccess <IMicrosoftGraphRequiredResourceAccess[]>] [-SamlMetadataUrl <String>]
+ [-ServiceManagementReference <String>]
  [-ServicePrincipalLockConfiguration <IMicrosoftGraphServicePrincipalLockConfiguration>]
  [-SignInAudience <String>] [-Spa <IMicrosoftGraphSpaApplication>]
  [-Synchronization <IMicrosoftGraphSynchronization>] [-Tags <String[]>] [-TokenEncryptionKeyId <String>]
@@ -764,21 +764,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -SamlMetadataUrl
 The URL where the service exposes SAML metadata for federation.
 This property is valid only for single-tenant applications.
@@ -1055,6 +1040,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphApplication
+
+### System.Collections.Hashtable
 
 ## NOTES
 

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Calendar
-Module Guid: e0d64d88-7a62-47f1-a05d-7a5db9391217
+Module Guid: 581570d2-11e1-4ca6-92ac-0f8ef162605e
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.calendar
 Help Version: 1.0.0.0
 Locale: en-US
@@ -77,7 +77,7 @@ Get the number of the resource
 
 ### [Get-MgBetaGroupEventExceptionOccurrenceInstance](Get-MgBetaGroupEventExceptionOccurrenceInstance.md)
 The occurrences of a recurring series, if the event is a series master.
-This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn't include occurrences that have been canceled from the series.
+This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series.
 Navigation property.
 Read-only.
 Nullable.
@@ -115,7 +115,7 @@ Get the number of the resource
 
 ### [Get-MgBetaGroupEventInstance](Get-MgBetaGroupEventInstance.md)
 The occurrences of a recurring series, if the event is a series master.
-This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn't include occurrences that have been canceled from the series.
+This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series.
 Navigation property.
 Read-only.
 Nullable.
@@ -232,7 +232,7 @@ Read-only.
 
 ### [Get-MgBetaUserDefaultCalendar](Get-MgBetaUserDefaultCalendar.md)
 Get the properties and relationships of a calendar object.
-The calendar can be one for a user,\nor the default calendar of a Microsoft 365 group.
+The calendar can be one for a user, \nor the default calendar of a Microsoft 365 group.
 There are two scenarios where an app can get another user's calendar:
 
 ### [Get-MgBetaUserDefaultCalendarEvent](Get-MgBetaUserDefaultCalendarEvent.md)
@@ -288,7 +288,7 @@ Get the number of the resource
 
 ### [Get-MgBetaUserEventExceptionOccurrenceInstance](Get-MgBetaUserEventExceptionOccurrenceInstance.md)
 The occurrences of a recurring series, if the event is a series master.
-This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn't include occurrences that have been canceled from the series.
+This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series.
 Navigation property.
 Read-only.
 Nullable.
@@ -326,7 +326,7 @@ Get the number of the resource
 
 ### [Get-MgBetaUserEventInstance](Get-MgBetaUserEventInstance.md)
 The occurrences of a recurring series, if the event is a series master.
-This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn't include occurrences that have been canceled from the series.
+This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series.
 Navigation property.
 Read-only.
 Nullable.
@@ -470,7 +470,7 @@ The calendar can be one for a user, or the default calendar of a Microsoft 365 g
 Create an event in the user's default calendar or specified calendar.
 By default, the allowNewTimeProposals property is set to true when an event is created, which means invitees can propose a different date/time for the event.
 See Propose new meeting times for more information on how to propose a time, and how to receive and accept a new time proposal.
-You can specify the time zone for each of the start and end times of the event as part of their values, because the\nstart and end properties are of dateTimeTimeZone type.
+You can specify the time zone for each of the start and end times of the event as part of their values, because the \nstart and end properties are of dateTimeTimeZone type.
 First find the supported time zones to make sure you set only time zones that have been configured for the user's mailbox server.
 When an event is sent, the server sends invitations to all the attendees.
 Setting the location in an event An Exchange administrator can set up a mailbox and an email address for a resource such as a meeting room, or equipment\nlike a projector.

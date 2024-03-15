@@ -16,8 +16,7 @@ Invoke action importResourceActions
 ```
 Import-MgBetaRoleManagementDeviceManagementResourceNamespaceResourceAction
  -UnifiedRbacResourceNamespaceId <String> [-AdditionalProperties <Hashtable>] [-Format <String>]
- [-OverwriteResourceNamespace] [-ResponseHeadersVariable <String>] [-Value <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-OverwriteResourceNamespace] [-Value <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Import
@@ -25,7 +24,7 @@ Import-MgBetaRoleManagementDeviceManagementResourceNamespaceResourceAction
 Import-MgBetaRoleManagementDeviceManagementResourceNamespaceResourceAction
  -UnifiedRbacResourceNamespaceId <String>
  -BodyParameter <IPaths1A0X10XRolemanagementDevicemanagementResourcenamespacesUnifiedrbacresourcenamespaceIdMicrosoftGraphImportresourceactionsPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ImportViaIdentity
@@ -33,15 +32,14 @@ Import-MgBetaRoleManagementDeviceManagementResourceNamespaceResourceAction
 Import-MgBetaRoleManagementDeviceManagementResourceNamespaceResourceAction
  -InputObject <IIdentityGovernanceIdentity>
  -BodyParameter <IPaths1A0X10XRolemanagementDevicemanagementResourcenamespacesUnifiedrbacresourcenamespaceIdMicrosoftGraphImportresourceactionsPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ImportViaIdentityExpanded
 ```
 Import-MgBetaRoleManagementDeviceManagementResourceNamespaceResourceAction
  -InputObject <IIdentityGovernanceIdentity> [-AdditionalProperties <Hashtable>] [-Format <String>]
- [-OverwriteResourceNamespace] [-ResponseHeadersVariable <String>] [-Value <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-OverwriteResourceNamespace] [-Value <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -111,21 +109,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -149,21 +132,6 @@ Accept wildcard characters: False
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: ImportExpanded, ImportViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -242,8 +210,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPaths1A0X10XRolemanagementDevicemanagementResourcenamespacesUnifiedrbacresourcenamespaceIdMicrosoftGraphImportresourceactionsPostRequestbodyContentApplicationJsonSchema
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUnifiedRbacResourceNamespace
@@ -315,7 +281,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[GroupId <String>]`: The unique identifier of group
   - `[IncompatibleAccessPackageId <String>]`: Usage: incompatibleAccessPackageId='{incompatibleAccessPackageId}'
   - `[LongRunningOperationId <String>]`: The unique identifier of longRunningOperation
-  - `[ObjectId <String>]`: Alternate key of accessPackageSubject
   - `[On <String>]`: Usage: on='{on}'
   - `[PermissionsCreepIndexDistributionId <String>]`: The unique identifier of permissionsCreepIndexDistribution
   - `[PermissionsRequestChangeId <String>]`: The unique identifier of permissionsRequestChange

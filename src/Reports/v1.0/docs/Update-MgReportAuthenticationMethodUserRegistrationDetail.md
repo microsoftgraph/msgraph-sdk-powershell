@@ -18,24 +18,21 @@ Update-MgReportAuthenticationMethodUserRegistrationDetail -UserRegistrationDetai
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-IsAdmin] [-IsMfaCapable] [-IsMfaRegistered]
  [-IsPasswordlessCapable] [-IsSsprCapable] [-IsSsprEnabled] [-IsSsprRegistered]
  [-IsSystemPreferredAuthenticationMethodEnabled] [-LastUpdatedDateTime <DateTime>]
- [-MethodsRegistered <String[]>] [-ResponseHeadersVariable <String>]
- [-SystemPreferredAuthenticationMethods <String[]>] [-UserDisplayName <String>]
- [-UserPreferredMethodForSecondaryAuthentication <String>] [-UserPrincipalName <String>] [-UserType <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-MethodsRegistered <String[]>] [-SystemPreferredAuthenticationMethods <String[]>]
+ [-UserDisplayName <String>] [-UserPreferredMethodForSecondaryAuthentication <String>]
+ [-UserPrincipalName <String>] [-UserType <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgReportAuthenticationMethodUserRegistrationDetail -UserRegistrationDetailsId <String>
- -BodyParameter <IMicrosoftGraphUserRegistrationDetails> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphUserRegistrationDetails> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgReportAuthenticationMethodUserRegistrationDetail -InputObject <IReportsIdentity>
- -BodyParameter <IMicrosoftGraphUserRegistrationDetails> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphUserRegistrationDetails> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -44,10 +41,9 @@ Update-MgReportAuthenticationMethodUserRegistrationDetail -InputObject <IReports
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-IsAdmin] [-IsMfaCapable] [-IsMfaRegistered]
  [-IsPasswordlessCapable] [-IsSsprCapable] [-IsSsprEnabled] [-IsSsprRegistered]
  [-IsSystemPreferredAuthenticationMethodEnabled] [-LastUpdatedDateTime <DateTime>]
- [-MethodsRegistered <String[]>] [-ResponseHeadersVariable <String>]
- [-SystemPreferredAuthenticationMethods <String[]>] [-UserDisplayName <String>]
- [-UserPreferredMethodForSecondaryAuthentication <String>] [-UserPrincipalName <String>] [-UserType <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-MethodsRegistered <String[]>] [-SystemPreferredAuthenticationMethods <String[]>]
+ [-UserDisplayName <String>] [-UserPreferredMethodForSecondaryAuthentication <String>]
+ [-UserPrincipalName <String>] [-UserType <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -96,21 +92,6 @@ Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -315,21 +296,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -SystemPreferredAuthenticationMethods
 Collection of authentication methods that the system determined to be the most secure authentication methods among the registered methods for second factor authentication.
 Possible values are: push, oath, voiceMobile, voiceAlternateMobile, voiceOffice, sms, none, unknownFutureValue.
@@ -464,8 +430,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IReportsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserRegistrationDetails
@@ -507,8 +471,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[GroupId <String>]`: Usage: groupId='{groupId}'
   - `[IncludedUserRoles <String>]`: Usage: includedUserRoles='{includedUserRoles}'
   - `[IncludedUserTypes <String>]`: Usage: includedUserTypes='{includedUserTypes}'
-  - `[ManifestId <String>]`: The unique identifier of manifest
-  - `[OperationId <String>]`: The unique identifier of operation
   - `[Period <String>]`: Usage: period='{period}'
   - `[PrintUsageByPrinterId <String>]`: The unique identifier of printUsageByPrinter
   - `[PrintUsageByUserId <String>]`: The unique identifier of printUsageByUser

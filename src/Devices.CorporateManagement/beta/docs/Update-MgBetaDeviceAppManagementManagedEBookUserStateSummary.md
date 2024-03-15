@@ -17,22 +17,22 @@ Update the navigation property userStateSummary in deviceAppManagement
 Update-MgBetaDeviceAppManagementManagedEBookUserStateSummary -ManagedEBookId <String>
  -UserInstallStateSummaryId <String> [-AdditionalProperties <Hashtable>]
  [-DeviceStates <IMicrosoftGraphDeviceInstallState[]>] [-FailedDeviceCount <Int32>] [-Id <String>]
- [-InstalledDeviceCount <Int32>] [-NotInstalledDeviceCount <Int32>] [-ResponseHeadersVariable <String>]
- [-UserName <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-InstalledDeviceCount <Int32>] [-NotInstalledDeviceCount <Int32>] [-UserName <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaDeviceAppManagementManagedEBookUserStateSummary -ManagedEBookId <String>
- -UserInstallStateSummaryId <String> -BodyParameter <IMicrosoftGraphUserInstallStateSummary>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -UserInstallStateSummaryId <String> -BodyParameter <IMicrosoftGraphUserInstallStateSummary> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaDeviceAppManagementManagedEBookUserStateSummary
  -InputObject <IDevicesCorporateManagementIdentity> -BodyParameter <IMicrosoftGraphUserInstallStateSummary>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -40,8 +40,8 @@ Update-MgBetaDeviceAppManagementManagedEBookUserStateSummary
 Update-MgBetaDeviceAppManagementManagedEBookUserStateSummary
  -InputObject <IDevicesCorporateManagementIdentity> [-AdditionalProperties <Hashtable>]
  [-DeviceStates <IMicrosoftGraphDeviceInstallState[]>] [-FailedDeviceCount <Int32>] [-Id <String>]
- [-InstalledDeviceCount <Int32>] [-NotInstalledDeviceCount <Int32>] [-ResponseHeadersVariable <String>]
- [-UserName <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-InstalledDeviceCount <Int32>] [-NotInstalledDeviceCount <Int32>] [-UserName <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -127,21 +127,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -219,21 +204,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -UserInstallStateSummaryId
 The unique identifier of userInstallStateSummary
 
@@ -303,8 +273,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserInstallStateSummary
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

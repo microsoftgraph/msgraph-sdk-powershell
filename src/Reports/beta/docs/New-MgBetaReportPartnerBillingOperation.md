@@ -15,14 +15,14 @@ Create new navigation property to operations for reports
 ### CreateExpanded (Default)
 ```
 New-MgBetaReportPartnerBillingOperation [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>]
- [-Id <String>] [-LastActionDateTime <DateTime>] [-ResponseHeadersVariable <String>] [-Status <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-LastActionDateTime <DateTime>] [-Status <String>] [-Headers <IDictionary>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaReportPartnerBillingOperation -BodyParameter <IMicrosoftGraphPartnersBillingOperation>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -134,21 +134,6 @@ For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 Type: System.DateTime
 Parameter Sets: CreateExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named

@@ -8,8 +8,8 @@ schema: 2.0.0
 # Get-MgRoleManagementEntitlementManagementRoleAssignmentScheduleActivatedUsing
 
 ## SYNOPSIS
-If the request is from an eligible administrator to activate a role, this parameter shows the related eligible assignment for that activation.
-Otherwise, it's null.
+If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation.
+Otherwise, it is null.
 Supports $expand.
 
 ## SYNTAX
@@ -18,19 +18,19 @@ Supports $expand.
 ```
 Get-MgRoleManagementEntitlementManagementRoleAssignmentScheduleActivatedUsing
  -UnifiedRoleAssignmentScheduleId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [<CommonParameters>]
+ [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
 Get-MgRoleManagementEntitlementManagementRoleAssignmentScheduleActivatedUsing
  -InputObject <IIdentityGovernanceIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [<CommonParameters>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-If the request is from an eligible administrator to activate a role, this parameter shows the related eligible assignment for that activation.
-Otherwise, it's null.
+If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation.
+Otherwise, it is null.
 Supports $expand.
 
 ## EXAMPLES
@@ -66,21 +66,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -112,21 +97,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -UnifiedRoleAssignmentScheduleId
 The unique identifier of unifiedRoleAssignmentSchedule
 
@@ -148,8 +118,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

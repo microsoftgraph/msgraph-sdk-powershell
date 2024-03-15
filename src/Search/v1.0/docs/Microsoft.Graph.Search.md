@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Search
-Module Guid: af06c142-64d7-472a-908f-9abfc5dcd4e3
+Module Guid: 9c80c343-0fda-48f7-8bc7-78bcb986bc5e
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.search
 Help Version: 1.0.0.0
 Locale: en-US
@@ -61,26 +61,8 @@ Get the number of the resource
 ### [Get-MgExternalConnectionSchema](Get-MgExternalConnectionSchema.md)
 Read the properties and relationships of a schema object.
 
-### [Get-MgSearchAcronym](Get-MgSearchAcronym.md)
-Get acronyms from search
-
-### [Get-MgSearchAcronymCount](Get-MgSearchAcronymCount.md)
-Get the number of the resource
-
-### [Get-MgSearchBookmark](Get-MgSearchBookmark.md)
-Get bookmarks from search
-
-### [Get-MgSearchBookmarkCount](Get-MgSearchBookmarkCount.md)
-Get the number of the resource
-
 ### [Get-MgSearchEntity](Get-MgSearchEntity.md)
 Get search
-
-### [Get-MgSearchQna](Get-MgSearchQna.md)
-Get qnas from search
-
-### [Get-MgSearchQnaCount](Get-MgSearchQnaCount.md)
-Get the number of the resource
 
 ### [Invoke-MgQuerySearch](Invoke-MgQuerySearch.md)
 Runs the query specified in the request body.
@@ -104,15 +86,6 @@ Create new navigation property to activities for external
 ### [New-MgExternalConnectionOperation](New-MgExternalConnectionOperation.md)
 Create new navigation property to operations for external
 
-### [New-MgSearchAcronym](New-MgSearchAcronym.md)
-Create new navigation property to acronyms for search
-
-### [New-MgSearchBookmark](New-MgSearchBookmark.md)
-Create new navigation property to bookmarks for search
-
-### [New-MgSearchQna](New-MgSearchQna.md)
-Create new navigation property to qnas for search
-
 ### [Remove-MgExternalConnection](Remove-MgExternalConnection.md)
 Deletes an externalConnection object.
 
@@ -130,15 +103,6 @@ Delete navigation property activities for external
 
 ### [Remove-MgExternalConnectionOperation](Remove-MgExternalConnectionOperation.md)
 Delete navigation property operations for external
-
-### [Remove-MgSearchAcronym](Remove-MgSearchAcronym.md)
-Delete navigation property acronyms for search
-
-### [Remove-MgSearchBookmark](Remove-MgSearchBookmark.md)
-Delete navigation property bookmarks for search
-
-### [Remove-MgSearchQna](Remove-MgSearchQna.md)
-Delete navigation property qnas for search
 
 ### [Set-MgExternalConnectionItem](Set-MgExternalConnectionItem.md)
 Update the navigation property items in external
@@ -164,15 +128,6 @@ Update the navigation property operations in external
 ### [Update-MgExternalConnectionSchema](Update-MgExternalConnectionSchema.md)
 Create a new schema object.
 
-### [Update-MgSearchAcronym](Update-MgSearchAcronym.md)
-Update the navigation property acronyms in search
-
-### [Update-MgSearchBookmark](Update-MgSearchBookmark.md)
-Update the navigation property bookmarks in search
-
 ### [Update-MgSearchEntity](Update-MgSearchEntity.md)
 Update search
-
-### [Update-MgSearchQna](Update-MgSearchQna.md)
-Update the navigation property qnas in search
 

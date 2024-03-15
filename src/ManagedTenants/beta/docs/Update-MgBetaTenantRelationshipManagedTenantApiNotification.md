@@ -17,23 +17,22 @@ Update the navigation property managedTenantApiNotifications in tenantRelationsh
 Update-MgBetaTenantRelationshipManagedTenantApiNotification -ManagedTenantApiNotificationId <String>
  [-AdditionalProperties <Hashtable>] [-Alert <IMicrosoftGraphManagedTenantsManagedTenantAlert>]
  [-CreatedByUserId <String>] [-CreatedDateTime <DateTime>] [-Id <String>] [-IsAcknowledged]
- [-LastActionByUserId <String>] [-LastActionDateTime <DateTime>] [-Message <String>]
- [-ResponseHeadersVariable <String>] [-Title <String>] [-UserId <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-LastActionByUserId <String>] [-LastActionDateTime <DateTime>] [-Message <String>] [-Title <String>]
+ [-UserId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaTenantRelationshipManagedTenantApiNotification -ManagedTenantApiNotificationId <String>
- -BodyParameter <IMicrosoftGraphManagedTenantsManagedTenantApiNotification>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphManagedTenantsManagedTenantApiNotification> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaTenantRelationshipManagedTenantApiNotification -InputObject <IManagedTenantsIdentity>
- -BodyParameter <IMicrosoftGraphManagedTenantsManagedTenantApiNotification>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphManagedTenantsManagedTenantApiNotification> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -41,9 +40,8 @@ Update-MgBetaTenantRelationshipManagedTenantApiNotification -InputObject <IManag
 Update-MgBetaTenantRelationshipManagedTenantApiNotification -InputObject <IManagedTenantsIdentity>
  [-AdditionalProperties <Hashtable>] [-Alert <IMicrosoftGraphManagedTenantsManagedTenantAlert>]
  [-CreatedByUserId <String>] [-CreatedDateTime <DateTime>] [-Id <String>] [-IsAcknowledged]
- [-LastActionByUserId <String>] [-LastActionDateTime <DateTime>] [-Message <String>]
- [-ResponseHeadersVariable <String>] [-Title <String>] [-UserId <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-LastActionByUserId <String>] [-LastActionDateTime <DateTime>] [-Message <String>] [-Title <String>]
+ [-UserId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -141,21 +139,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -266,21 +249,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Title
 .
 
@@ -350,8 +318,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantApiNotification
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

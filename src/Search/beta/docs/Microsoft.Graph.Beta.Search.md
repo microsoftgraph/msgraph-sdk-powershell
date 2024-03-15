@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Search
-Module Guid: f401ca97-326e-40f6-be59-e05fecc30b89
+Module Guid: 1c464169-139c-42b2-bac7-2e90034c0469
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.search
 Help Version: 1.0.0.0
 Locale: en-US
@@ -90,7 +90,7 @@ Get the number of the resource
 The sourceSystemDefinition this connector is connected to.
 
 ### [Get-MgBetaExternalIndustryDataInboundFlow](Get-MgBetaExternalIndustryDataInboundFlow.md)
-Read the properties and relationships of an inboundFileFlow object.
+Read the properties and relationships of an inboundFlow object.
 
 ### [Get-MgBetaExternalIndustryDataInboundFlowCount](Get-MgBetaExternalIndustryDataInboundFlowCount.md)
 Get the number of the resource
@@ -193,11 +193,11 @@ Create new navigation property to activities for external
 Create new navigation property to operations for external
 
 ### [New-MgBetaExternalIndustryDataConnector](New-MgBetaExternalIndustryDataConnector.md)
-Create a new azureDataLakeConnector object.
+Create a new industryDataConnector object.
 
 ### [New-MgBetaExternalIndustryDataInboundFlow](New-MgBetaExternalIndustryDataInboundFlow.md)
-Create a new inboundFlow object.
-The following prerequisite resources are required when you create an inboundFlow:
+Create a new inboundFileFlow object.
+The following prerequisite resources are required when you create an inboundFileFlow:
 
 ### [New-MgBetaExternalIndustryDataOperation](New-MgBetaExternalIndustryDataOperation.md)
 Create new navigation property to operations for external
@@ -251,7 +251,7 @@ Delete navigation property operations for external
 Delete navigation property quota for external
 
 ### [Remove-MgBetaExternalIndustryDataConnector](Remove-MgBetaExternalIndustryDataConnector.md)
-Delete an industryDataConnector object.
+Delete an azureDataLakeConnector object.
 
 ### [Remove-MgBetaExternalIndustryDataInboundFlow](Remove-MgBetaExternalIndustryDataInboundFlow.md)
 Delete an inboundFlow object.
@@ -314,13 +314,13 @@ Update the navigation property operations in external
 Update the navigation property quota in external
 
 ### [Update-MgBetaExternalConnectionSchema](Update-MgBetaExternalConnectionSchema.md)
-Update the properties of a schema for an externalConnection.
+Create the schema for a Microsoft Search connection.
 
 ### [Update-MgBetaExternalIndustryDataConnector](Update-MgBetaExternalIndustryDataConnector.md)
 Update the properties of an azureDataLakeConnector object.
 
 ### [Update-MgBetaExternalIndustryDataInboundFlow](Update-MgBetaExternalIndustryDataInboundFlow.md)
-Update the properties of an inboundFileFlow object.
+Update the properties of an inboundFlow object.
 
 ### [Update-MgBetaExternalIndustryDataOperation](Update-MgBetaExternalIndustryDataOperation.md)
 Update the navigation property operations in external

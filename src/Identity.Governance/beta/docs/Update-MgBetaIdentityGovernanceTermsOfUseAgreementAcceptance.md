@@ -17,24 +17,22 @@ Update the navigation property agreementAcceptances in identityGovernance
 Update-MgBetaIdentityGovernanceTermsOfUseAgreementAcceptance -AgreementAcceptanceId <String>
  [-AgreementId <String>] [-AdditionalProperties <Hashtable>] [-AgreementFileId <String>]
  [-DeviceDisplayName <String>] [-DeviceId <String>] [-DeviceOSType <String>] [-DeviceOSVersion <String>]
- [-ExpirationDateTime <DateTime>] [-Id <String>] [-RecordedDateTime <DateTime>]
- [-ResponseHeadersVariable <String>] [-State <String>] [-UserDisplayName <String>] [-UserEmail <String>]
- [-UserId <String>] [-UserPrincipalName <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-ExpirationDateTime <DateTime>] [-Id <String>] [-RecordedDateTime <DateTime>] [-State <String>]
+ [-UserDisplayName <String>] [-UserEmail <String>] [-UserId <String>] [-UserPrincipalName <String>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaIdentityGovernanceTermsOfUseAgreementAcceptance -AgreementAcceptanceId <String>
- -BodyParameter <IMicrosoftGraphAgreementAcceptance> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphAgreementAcceptance> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update1
 ```
 Update-MgBetaIdentityGovernanceTermsOfUseAgreementAcceptance -AgreementAcceptanceId <String>
- -AgreementId <String> -BodyParameter <IMicrosoftGraphAgreementAcceptance> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -AgreementId <String> -BodyParameter <IMicrosoftGraphAgreementAcceptance> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateExpanded1
@@ -43,23 +41,20 @@ Update-MgBetaIdentityGovernanceTermsOfUseAgreementAcceptance -AgreementAcceptanc
  -AgreementId <String> [-AdditionalProperties <Hashtable>] [-AgreementFileId <String>]
  [-AgreementId1 <String>] [-DeviceDisplayName <String>] [-DeviceId <String>] [-DeviceOSType <String>]
  [-DeviceOSVersion <String>] [-ExpirationDateTime <DateTime>] [-Id <String>] [-RecordedDateTime <DateTime>]
- [-ResponseHeadersVariable <String>] [-State <String>] [-UserDisplayName <String>] [-UserEmail <String>]
- [-UserId <String>] [-UserPrincipalName <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-State <String>] [-UserDisplayName <String>] [-UserEmail <String>] [-UserId <String>]
+ [-UserPrincipalName <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaIdentityGovernanceTermsOfUseAgreementAcceptance -InputObject <IIdentityGovernanceIdentity>
- -BodyParameter <IMicrosoftGraphAgreementAcceptance> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphAgreementAcceptance> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
 Update-MgBetaIdentityGovernanceTermsOfUseAgreementAcceptance -InputObject <IIdentityGovernanceIdentity>
- -BodyParameter <IMicrosoftGraphAgreementAcceptance> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphAgreementAcceptance> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -67,10 +62,9 @@ Update-MgBetaIdentityGovernanceTermsOfUseAgreementAcceptance -InputObject <IIden
 Update-MgBetaIdentityGovernanceTermsOfUseAgreementAcceptance -InputObject <IIdentityGovernanceIdentity>
  [-AgreementId <String>] [-AdditionalProperties <Hashtable>] [-AgreementFileId <String>]
  [-DeviceDisplayName <String>] [-DeviceId <String>] [-DeviceOSType <String>] [-DeviceOSVersion <String>]
- [-ExpirationDateTime <DateTime>] [-Id <String>] [-RecordedDateTime <DateTime>]
- [-ResponseHeadersVariable <String>] [-State <String>] [-UserDisplayName <String>] [-UserEmail <String>]
- [-UserId <String>] [-UserPrincipalName <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-ExpirationDateTime <DateTime>] [-Id <String>] [-RecordedDateTime <DateTime>] [-State <String>]
+ [-UserDisplayName <String>] [-UserEmail <String>] [-UserId <String>] [-UserPrincipalName <String>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
@@ -78,10 +72,9 @@ Update-MgBetaIdentityGovernanceTermsOfUseAgreementAcceptance -InputObject <IIden
 Update-MgBetaIdentityGovernanceTermsOfUseAgreementAcceptance -InputObject <IIdentityGovernanceIdentity>
  [-AgreementId <String>] [-AdditionalProperties <Hashtable>] [-AgreementFileId <String>]
  [-DeviceDisplayName <String>] [-DeviceId <String>] [-DeviceOSType <String>] [-DeviceOSVersion <String>]
- [-ExpirationDateTime <DateTime>] [-Id <String>] [-RecordedDateTime <DateTime>]
- [-ResponseHeadersVariable <String>] [-State <String>] [-UserDisplayName <String>] [-UserEmail <String>]
- [-UserId <String>] [-UserPrincipalName <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-ExpirationDateTime <DateTime>] [-Id <String>] [-RecordedDateTime <DateTime>] [-State <String>]
+ [-UserDisplayName <String>] [-UserEmail <String>] [-UserId <String>] [-UserPrincipalName <String>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -275,21 +268,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -331,21 +309,6 @@ Supports $filter (eq) and eq for null values.
 Type: System.DateTime
 Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -470,8 +433,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAgreementAcceptance
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAgreementAcceptance
@@ -554,7 +515,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[GroupId <String>]`: The unique identifier of group
   - `[IncompatibleAccessPackageId <String>]`: Usage: incompatibleAccessPackageId='{incompatibleAccessPackageId}'
   - `[LongRunningOperationId <String>]`: The unique identifier of longRunningOperation
-  - `[ObjectId <String>]`: Alternate key of accessPackageSubject
   - `[On <String>]`: Usage: on='{on}'
   - `[PermissionsCreepIndexDistributionId <String>]`: The unique identifier of permissionsCreepIndexDistribution
   - `[PermissionsRequestChangeId <String>]`: The unique identifier of permissionsRequestChange

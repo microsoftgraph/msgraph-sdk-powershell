@@ -19,23 +19,21 @@ Update-MgBetaDeviceManagementComanagementEligibleDevice -ComanagementEligibleDev
  [-DeviceName <String>] [-DeviceType <DeviceType>] [-EntitySource <Int32>] [-Id <String>]
  [-ManagementAgents <ManagementAgentType>] [-ManagementState <ManagementState>] [-Manufacturer <String>]
  [-MdmStatus <String>] [-Model <String>] [-OSDescription <String>] [-OSVersion <String>]
- [-OwnerType <OwnerType>] [-ReferenceId <String>] [-ResponseHeadersVariable <String>] [-SerialNumber <String>]
+ [-OwnerType <OwnerType>] [-ReferenceId <String>] [-SerialNumber <String>]
  [-Status <ComanagementEligibleType>] [-Upn <String>] [-UserEmail <String>] [-UserId <String>]
- [-UserName <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-UserName <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaDeviceManagementComanagementEligibleDevice -ComanagementEligibleDeviceId <String>
- -BodyParameter <IMicrosoftGraphComanagementEligibleDevice> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphComanagementEligibleDevice> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaDeviceManagementComanagementEligibleDevice -InputObject <IDeviceManagementAdministrationIdentity>
- -BodyParameter <IMicrosoftGraphComanagementEligibleDevice> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphComanagementEligibleDevice> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -45,9 +43,9 @@ Update-MgBetaDeviceManagementComanagementEligibleDevice -InputObject <IDeviceMan
  [-DeviceName <String>] [-DeviceType <DeviceType>] [-EntitySource <Int32>] [-Id <String>]
  [-ManagementAgents <ManagementAgentType>] [-ManagementState <ManagementState>] [-Manufacturer <String>]
  [-MdmStatus <String>] [-Model <String>] [-OSDescription <String>] [-OSVersion <String>]
- [-OwnerType <OwnerType>] [-ReferenceId <String>] [-ResponseHeadersVariable <String>] [-SerialNumber <String>]
+ [-OwnerType <OwnerType>] [-ReferenceId <String>] [-SerialNumber <String>]
  [-Status <ComanagementEligibleType>] [-Upn <String>] [-UserEmail <String>] [-UserId <String>]
- [-UserName <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-UserName <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -174,21 +172,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -359,21 +342,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -SerialNumber
 SerialNumber
 
@@ -503,8 +471,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphComanagementEligibleDevice
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

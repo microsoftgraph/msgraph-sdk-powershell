@@ -20,22 +20,20 @@ Update-MgSecurityAttackSimulationPayload -PayloadId <String> [-AdditionalPropert
  [-DisplayName <String>] [-Id <String>] [-Industry <String>] [-IsAutomated] [-IsControversial]
  [-IsCurrentEvent] [-Language <String>] [-LastModifiedBy <IMicrosoftGraphEmailIdentity>]
  [-LastModifiedDateTime <DateTime>] [-PayloadTags <String[]>] [-Platform <String>]
- [-PredictedCompromiseRate <Double>] [-ResponseHeadersVariable <String>] [-SimulationAttackType <String>]
- [-Source <String>] [-Status <String>] [-Technique <String>] [-Theme <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PredictedCompromiseRate <Double>] [-SimulationAttackType <String>] [-Source <String>] [-Status <String>]
+ [-Technique <String>] [-Theme <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgSecurityAttackSimulationPayload -PayloadId <String> -BodyParameter <IMicrosoftGraphPayload>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgSecurityAttackSimulationPayload -InputObject <ISecurityIdentity>
- -BodyParameter <IMicrosoftGraphPayload> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphPayload> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -46,9 +44,8 @@ Update-MgSecurityAttackSimulationPayload -InputObject <ISecurityIdentity> [-Addi
  [-DisplayName <String>] [-Id <String>] [-Industry <String>] [-IsAutomated] [-IsControversial]
  [-IsCurrentEvent] [-Language <String>] [-LastModifiedBy <IMicrosoftGraphEmailIdentity>]
  [-LastModifiedDateTime <DateTime>] [-PayloadTags <String[]>] [-Platform <String>]
- [-PredictedCompromiseRate <Double>] [-ResponseHeadersVariable <String>] [-SimulationAttackType <String>]
- [-Source <String>] [-Status <String>] [-Technique <String>] [-Theme <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PredictedCompromiseRate <Double>] [-SimulationAttackType <String>] [-Source <String>] [-Status <String>]
+ [-Technique <String>] [-Theme <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -210,21 +207,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -429,21 +411,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -SimulationAttackType
 simulationAttackType
 
@@ -558,8 +525,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPayload
 
 ### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

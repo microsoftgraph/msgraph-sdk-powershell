@@ -16,31 +16,29 @@ Update the navigation property questions in identityGovernance
 ```
 Update-MgEntitlementManagementAssignmentPolicyQuestion -AccessPackageAssignmentPolicyId <String>
  -AccessPackageQuestionId <String> [-AdditionalProperties <Hashtable>] [-Id <String>] [-IsAnswerEditable]
- [-IsRequired] [-Localizations <IMicrosoftGraphAccessPackageLocalizedText[]>]
- [-ResponseHeadersVariable <String>] [-Sequence <Int32>] [-Text <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-IsRequired] [-Localizations <IMicrosoftGraphAccessPackageLocalizedText[]>] [-Sequence <Int32>]
+ [-Text <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgEntitlementManagementAssignmentPolicyQuestion -AccessPackageAssignmentPolicyId <String>
- -AccessPackageQuestionId <String> -BodyParameter <IMicrosoftGraphAccessPackageQuestion>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -AccessPackageQuestionId <String> -BodyParameter <IMicrosoftGraphAccessPackageQuestion> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgEntitlementManagementAssignmentPolicyQuestion -InputObject <IIdentityGovernanceIdentity>
- -BodyParameter <IMicrosoftGraphAccessPackageQuestion> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphAccessPackageQuestion> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgEntitlementManagementAssignmentPolicyQuestion -InputObject <IIdentityGovernanceIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-IsAnswerEditable] [-IsRequired]
- [-Localizations <IMicrosoftGraphAccessPackageLocalizedText[]>] [-ResponseHeadersVariable <String>]
- [-Sequence <Int32>] [-Text <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Localizations <IMicrosoftGraphAccessPackageLocalizedText[]>] [-Sequence <Int32>] [-Text <String>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -125,21 +123,6 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -218,21 +201,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Sequence
 Relative position of this question when displaying a list of questions to the requestor.
 
@@ -302,8 +270,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageQuestion
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

@@ -26,17 +26,16 @@ New-MgBetaDeviceManagementWindowsAutopilotDeviceIdentity [-AdditionalProperties 
  [-LastContactedDateTime <DateTime>] [-ManagedDeviceId <String>] [-Manufacturer <String>] [-Model <String>]
  [-ProductKey <String>] [-PurchaseOrderIdentifier <String>]
  [-RemediationState <WindowsAutopilotDeviceRemediationState>]
- [-RemediationStateLastModifiedDateTime <DateTime>] [-ResourceName <String>]
- [-ResponseHeadersVariable <String>] [-SerialNumber <String>] [-SkuNumber <String>] [-SystemFamily <String>]
+ [-RemediationStateLastModifiedDateTime <DateTime>] [-ResourceName <String>] [-SerialNumber <String>]
+ [-SkuNumber <String>] [-SystemFamily <String>]
  [-UserlessEnrollmentStatus <WindowsAutopilotUserlessEnrollmentStatus>] [-UserPrincipalName <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaDeviceManagementWindowsAutopilotDeviceIdentity
- -BodyParameter <IMicrosoftGraphWindowsAutopilotDeviceIdentity> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphWindowsAutopilotDeviceIdentity> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -287,21 +286,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -469,21 +453,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -SerialNumber
 Serial number of the Windows autopilot device.
 
@@ -596,8 +565,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsAutopilotDeviceIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

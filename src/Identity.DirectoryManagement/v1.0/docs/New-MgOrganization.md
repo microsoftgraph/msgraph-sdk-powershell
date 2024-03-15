@@ -23,17 +23,14 @@ New-MgOrganization [-AdditionalProperties <Hashtable>] [-AssignedPlans <IMicroso
  [-MobileDeviceManagementAuthority <MdmAuthority>] [-OnPremisesLastSyncDateTime <DateTime>]
  [-OnPremisesSyncEnabled] [-PartnerTenantType <String>] [-PostalCode <String>] [-PreferredLanguage <String>]
  [-PrivacyProfile <IMicrosoftGraphPrivacyProfile>] [-ProvisionedPlans <IMicrosoftGraphProvisionedPlan[]>]
- [-ResponseHeadersVariable <String>] [-SecurityComplianceNotificationMails <String[]>]
- [-SecurityComplianceNotificationPhones <String[]>] [-State <String>] [-Street <String>]
- [-TechnicalNotificationMails <String[]>] [-TenantType <String>]
- [-VerifiedDomains <IMicrosoftGraphVerifiedDomain[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-SecurityComplianceNotificationMails <String[]>] [-SecurityComplianceNotificationPhones <String[]>]
+ [-State <String>] [-Street <String>] [-TechnicalNotificationMails <String[]>] [-TenantType <String>]
+ [-VerifiedDomains <IMicrosoftGraphVerifiedDomain[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgOrganization -BodyParameter <IMicrosoftGraphOrganization> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgOrganization -BodyParameter <IMicrosoftGraphOrganization> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -43,17 +40,10 @@ Add new entity to organization
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Identity.DirectoryManagement
 ```
 
-
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-
+Get-MgOrganization
 
 ## PARAMETERS
 
@@ -282,21 +272,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -456,21 +431,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -SecurityComplianceNotificationMails
 Not nullable.
 
@@ -619,8 +579,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOrganization
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOrganization
@@ -768,7 +726,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[Capabilities <String>]`: For example, Email, OfficeCommunicationsOnline.
     - `[IsDefault <Boolean?>]`: true if this is the default domain associated with the tenant; otherwise, false.
     - `[IsInitial <Boolean?>]`: true if this is the initial domain associated with the tenant; otherwise, false.
-    - `[Name <String>]`: The domain name; for example, contoso.com`.
+    - `[Name <String>]`: The domain name; for example, contoso.onmicrosoft.com.
     - `[Type <String>]`: For example, Managed.
 
 `BRANDING <IMicrosoftGraphOrganizationalBranding>`: organizationalBranding
@@ -875,7 +833,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[Capabilities <String>]`: For example, Email, OfficeCommunicationsOnline.
   - `[IsDefault <Boolean?>]`: true if this is the default domain associated with the tenant; otherwise, false.
   - `[IsInitial <Boolean?>]`: true if this is the initial domain associated with the tenant; otherwise, false.
-  - `[Name <String>]`: The domain name; for example, contoso.com`.
+  - `[Name <String>]`: The domain name; for example, contoso.onmicrosoft.com.
   - `[Type <String>]`: For example, Managed.
 
 ## RELATED LINKS

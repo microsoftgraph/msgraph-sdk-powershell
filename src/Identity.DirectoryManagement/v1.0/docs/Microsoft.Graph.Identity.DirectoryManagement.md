@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.DirectoryManagement
-Module Guid: 6e0b87ec-ec19-4f4a-b322-75377c049030
+Module Guid: 3c0ae1b5-e7f1-4db6-836e-a096e20e65a6
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.identity.directorymanagement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -94,10 +94,6 @@ The profileCardProperty is identified by its directoryPropertyName property.
 ### [Get-MgAdminPeopleProfileCardPropertyCount](Get-MgAdminPeopleProfileCardPropertyCount.md)
 Get the number of the resource
 
-### [Get-MgAdminPeoplePronoun](Get-MgAdminPeoplePronoun.md)
-Get the properties of the pronounsSettings resource for an organization.
-For more information on settings to manage pronouns support, see Manage pronouns settings for an organization using the Microsoft Graph API.
-
 ### [Get-MgContact](Get-MgContact.md)
 Get the properties and relationships of an organizational contact.
 
@@ -170,8 +166,7 @@ Get the number of the resource
 Get the number of the resource
 
 ### [Get-MgContactServiceProvisioningError](Get-MgContactServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from an organizational contact object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgContactServiceProvisioningErrorCount](Get-MgContactServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -999,7 +994,10 @@ Delete navigation property customSecurityAttributeDefinitions for directory
 Delete navigation property allowedValues for directory
 
 ### [Remove-MgDirectoryDeletedItem](Remove-MgDirectoryDeletedItem.md)
-Delete navigation property deletedItems for directory
+Permanently delete a recently deleted application, group, servicePrincipal, or user object from deleted items.
+After an item is permanently deleted, it cannot be restored.
+Administrative units cannot be permanently deleted by using the deletedItems API.
+Soft-deleted administrative units will be permanently deleted 30 days after initial deletion unless they are restored.
 
 ### [Remove-MgDirectoryDeviceLocalCredential](Remove-MgDirectoryDeviceLocalCredential.md)
 Delete navigation property deviceLocalCredentials for directory
@@ -1220,12 +1218,11 @@ If the properties fail multiple validations, only the first validation failure i
 However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
 To learn more about configuring naming policies, see Configure naming policy.
 
+### [Update-MgAdminPeople](Update-MgAdminPeople.md)
+Update the navigation property people in admin
+
 ### [Update-MgAdminPeopleProfileCardProperty](Update-MgAdminPeopleProfileCardProperty.md)
 Update the properties of a profileCardProperty object, identified by its directoryPropertyName property.
-
-### [Update-MgAdminPeoplePronoun](Update-MgAdminPeoplePronoun.md)
-Update the properties of a pronounsSettings object in an organization.
-For more information on settings to manage pronouns support, see Manage pronouns settings for an organization using the Microsoft Graph API.
 
 ### [Update-MgContact](Update-MgContact.md)
 Update entity in contacts

@@ -17,22 +17,19 @@ Create new navigation property to documents for print
 New-MgBetaPrintPrinterShareJobDocument -PrinterShareId <String> -PrintJobId <String>
  [-AdditionalProperties <Hashtable>] [-Configuration <IMicrosoftGraphPrinterDocumentConfiguration>]
  [-ContentType <String>] [-DisplayName <String>] [-DownloadedDateTime <DateTime>] [-Id <String>]
- [-ResponseHeadersVariable <String>] [-Size <Int64>] [-UploadedDateTime <DateTime>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Size <Int64>] [-UploadedDateTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaPrintPrinterShareJobDocument -PrinterShareId <String> -PrintJobId <String>
- -BodyParameter <IMicrosoftGraphPrintDocument> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphPrintDocument> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaPrintPrinterShareJobDocument -InputObject <IDevicesCloudPrintIdentity>
- -BodyParameter <IMicrosoftGraphPrintDocument> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphPrintDocument> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -40,8 +37,7 @@ New-MgBetaPrintPrinterShareJobDocument -InputObject <IDevicesCloudPrintIdentity>
 New-MgBetaPrintPrinterShareJobDocument -InputObject <IDevicesCloudPrintIdentity>
  [-AdditionalProperties <Hashtable>] [-Configuration <IMicrosoftGraphPrinterDocumentConfiguration>]
  [-ContentType <String>] [-DisplayName <String>] [-DownloadedDateTime <DateTime>] [-Id <String>]
- [-ResponseHeadersVariable <String>] [-Size <Int64>] [-UploadedDateTime <DateTime>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Size <Int64>] [-UploadedDateTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -159,21 +155,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -230,21 +211,6 @@ Parameter Sets: Create, CreateExpanded
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -321,8 +287,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCloudPrintIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrintDocument
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

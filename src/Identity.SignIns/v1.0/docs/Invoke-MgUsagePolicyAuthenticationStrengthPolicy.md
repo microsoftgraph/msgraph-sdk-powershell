@@ -14,14 +14,12 @@ Invoke function usage
 
 ### Usage (Default)
 ```
-Invoke-MgUsagePolicyAuthenticationStrengthPolicy -AuthenticationStrengthPolicyId <String>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [<CommonParameters>]
+Invoke-MgUsagePolicyAuthenticationStrengthPolicy -AuthenticationStrengthPolicyId <String> [<CommonParameters>]
 ```
 
 ### UsageViaIdentity
 ```
-Invoke-MgUsagePolicyAuthenticationStrengthPolicy -InputObject <IIdentitySignInsIdentity>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [<CommonParameters>]
+Invoke-MgUsagePolicyAuthenticationStrengthPolicy -InputObject <IIdentitySignInsIdentity> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -60,21 +58,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -91,29 +74,12 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

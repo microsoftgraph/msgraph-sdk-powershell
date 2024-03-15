@@ -16,31 +16,28 @@ Update the navigation property endpoints in servicePrincipals
 ```
 Update-MgServicePrincipalEndpoint -EndpointId <String> -ServicePrincipalId <String>
  [-AdditionalProperties <Hashtable>] [-Capability <String>] [-DeletedDateTime <DateTime>] [-Id <String>]
- [-ProviderId <String>] [-ProviderName <String>] [-ProviderResourceId <String>]
- [-ResponseHeadersVariable <String>] [-Uri <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-ProviderId <String>] [-ProviderName <String>] [-ProviderResourceId <String>] [-Uri <String>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgServicePrincipalEndpoint -EndpointId <String> -ServicePrincipalId <String>
- -BodyParameter <IMicrosoftGraphEndpoint> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphEndpoint> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgServicePrincipalEndpoint -InputObject <IApplicationsIdentity>
- -BodyParameter <IMicrosoftGraphEndpoint> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphEndpoint> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgServicePrincipalEndpoint -InputObject <IApplicationsIdentity> [-AdditionalProperties <Hashtable>]
  [-Capability <String>] [-DeletedDateTime <DateTime>] [-Id <String>] [-ProviderId <String>]
- [-ProviderName <String>] [-ProviderResourceId <String>] [-ResponseHeadersVariable <String>] [-Uri <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ProviderName <String>] [-ProviderResourceId <String>] [-Uri <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -141,21 +138,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -225,21 +207,6 @@ Accept wildcard characters: False
 Type: System.String
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -318,8 +285,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEndpoint
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEndpoint
@@ -365,7 +330,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[TargetDeviceGroupId <String>]`: The unique identifier of targetDeviceGroup
   - `[TokenIssuancePolicyId <String>]`: The unique identifier of tokenIssuancePolicy
   - `[TokenLifetimePolicyId <String>]`: The unique identifier of tokenLifetimePolicy
-  - `[UniqueName <String>]`: Alternate key of application
   - `[UserId <String>]`: The unique identifier of user
 
 ## RELATED LINKS

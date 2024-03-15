@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Mail
-Module Guid: ebd846f0-83dd-446d-850d-ce8e511bc4ff
+Module Guid: 7843a749-780b-4ea0-9d6a-9961d997d423
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.mail
 Help Version: 1.0.0.0
 Locale: en-US
@@ -164,7 +164,8 @@ Use this API to create a new mail folder in the root folder of the user's mailbo
 If you intend a new folder to be hidden, you must set the isHidden property to true on creation.
 
 ### [New-MgBetaUserMailFolderChildFolder](New-MgBetaUserMailFolderChildFolder.md)
-Create a new mailSearchFolder in the specified user's mailbox.
+Use this API to create a new child mailFolder.
+If you intend a new folder to be hidden, you must set the isHidden property to true on creation.
 
 ### [New-MgBetaUserMailFolderChildFolderMessage](New-MgBetaUserMailFolderChildFolderMessage.md)
 Use this API to create a new Message in a mailfolder.
@@ -326,7 +327,7 @@ Update the navigation property extensions in users
 Change writable properties on a messageRule object and save the changes.
 
 ### [Update-MgBetaUserMessage](Update-MgBetaUserMessage.md)
-Update the properties of an eventMessage object.
+Update the properties of a message object.
 
 ### [Update-MgBetaUserMessageExtension](Update-MgBetaUserMessageExtension.md)
 Update the navigation property extensions in users

@@ -8,28 +8,24 @@ schema: 2.0.0
 # Invoke-MgPinEducationClassModule
 
 ## SYNOPSIS
-Pin an educationModule in the class work list.
-This action sets the isPinned property to true for an educationModule.
-Only teachers can perform this action and only one module at a time can be pinned in the class work list.
+Invoke action pin
 
 ## SYNTAX
 
 ### Pin (Default)
 ```
 Invoke-MgPinEducationClassModule -EducationClassId <String> -EducationModuleId <String>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### PinViaIdentity
 ```
-Invoke-MgPinEducationClassModule -InputObject <IEducationIdentity> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Invoke-MgPinEducationClassModule -InputObject <IEducationIdentity> [-Headers <IDictionary>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Pin an educationModule in the class work list.
-This action sets the isPinned property to true for an educationModule.
-Only teachers can perform this action and only one module at a time can be pinned in the class work list.
+Invoke action pin
 
 ## EXAMPLES
 
@@ -107,21 +103,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 

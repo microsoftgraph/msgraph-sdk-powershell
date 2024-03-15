@@ -20,24 +20,20 @@ Update-MgBetaDirectory [-AdditionalProperties <Hashtable>]
  [-CustomSecurityAttributeDefinitions <IMicrosoftGraphCustomSecurityAttributeDefinition[]>]
  [-DeletedItems <IMicrosoftGraphDirectoryObject[]>]
  [-DeviceLocalCredentials <IMicrosoftGraphDeviceLocalCredentialInfo[]>]
- [-ExternalUserProfiles <IMicrosoftGraphExternalUserProfile[]>]
  [-FeatureRolloutPolicies <IMicrosoftGraphFeatureRolloutPolicy[]>]
  [-FederationConfigurations <IMicrosoftGraphIdentityProviderBase[]>] [-Id <String>]
  [-ImpactedResources <IMicrosoftGraphImpactedResource[]>]
  [-InboundSharedUserProfiles <IMicrosoftGraphInboundSharedUserProfile[]>]
  [-OnPremisesSynchronization <IMicrosoftGraphOnPremisesDirectorySynchronization[]>]
  [-OutboundSharedUserProfiles <IMicrosoftGraphOutboundSharedUserProfile[]>]
- [-PendingExternalUserProfiles <IMicrosoftGraphPendingExternalUserProfile[]>]
- [-Recommendations <IMicrosoftGraphRecommendation[]>] [-ResponseHeadersVariable <String>]
+ [-Recommendations <IMicrosoftGraphRecommendation[]>]
  [-SharedEmailDomains <IMicrosoftGraphSharedEmailDomain[]>]
- [-Subscriptions <IMicrosoftGraphCompanySubscription[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Subscriptions <IMicrosoftGraphCompanySubscription[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgBetaDirectory -BodyParameter <IMicrosoftGraphDirectory> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgBetaDirectory -BodyParameter <IMicrosoftGraphDirectory> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -157,9 +153,7 @@ Accept wildcard characters: False
 ```
 
 ### -DeletedItems
-Recently deleted items.
-Read-only.
-Nullable.
+.
 To construct, see NOTES section for DELETEDITEMS properties and create a hash table.
 
 ```yaml
@@ -180,22 +174,6 @@ To construct, see NOTES section for DEVICELOCALCREDENTIALS properties and create
 
 ```yaml
 Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceLocalCredentialInfo[]
-Parameter Sets: UpdateExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ExternalUserProfiles
-Collection of external user profiles that represent collaborators in the directory.
-To construct, see NOTES section for EXTERNALUSERPROFILES properties and create a hash table.
-
-```yaml
-Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphExternalUserProfile[]
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -238,21 +216,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -286,7 +249,7 @@ Accept wildcard characters: False
 ```
 
 ### -InboundSharedUserProfiles
-A collection of external users whose profile data is shared with the Microsoft Entra tenant.
+A collection of external Azure AD users whose profile data has been shared with the Azure AD tenant.
 Nullable.
 To construct, see NOTES section for INBOUNDSHAREDUSERPROFILES properties and create a hash table.
 
@@ -334,22 +297,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -PendingExternalUserProfiles
-Collection of pending external user profiles representing collaborators in the directory that are unredeemed.
-To construct, see NOTES section for PENDINGEXTERNALUSERPROFILES properties and create a hash table.
-
-```yaml
-Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPendingExternalUserProfile[]
-Parameter Sets: UpdateExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Recommendations
 List of recommended improvements to improve tenant posture.
 To construct, see NOTES section for RECOMMENDATIONS properties and create a hash table.
@@ -358,21 +305,6 @@ To construct, see NOTES section for RECOMMENDATIONS properties and create a hash
 Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRecommendation[]
 Parameter Sets: UpdateExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -398,7 +330,7 @@ Accept wildcard characters: False
 ```
 
 ### -Subscriptions
-List of commercial subscriptions that an organization has.
+List of commercial subscriptions that an organization has acquired.
 To construct, see NOTES section for SUBSCRIPTIONS properties and create a hash table.
 
 ```yaml
@@ -451,8 +383,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectory
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectory
@@ -477,17 +407,14 @@ To create the parameters described below, construct a hash table containing the 
   - `[Members <IMicrosoftGraphDirectoryObject[]>]`: Users and groups that are members of this administrative unit. Supports $expand.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
-  - `[MembershipRule <String>]`: Dynamic membership rule for the administrative unit. For more about the rules that you can use for dynamic administrative units and dynamic groups, see Using attributes to create advanced rules.
-  - `[MembershipRuleProcessingState <String>]`: Used to control whether the dynamic membership rule is actively processed. Set to On when you want the dynamic membership rule to be active and Paused if you want to stop updating membership dynamically. If not set, the default behavior is Paused.
-  - `[MembershipType <String>]`: Membership type for the administrative unit. Can be dynamic or assigned. If not set, the default behavior is assigned.
   - `[ScopedRoleMembers <IMicrosoftGraphScopedRoleMembership[]>]`: Scoped-role members of this administrative unit.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[AdministrativeUnitId <String>]`: Unique identifier for the administrative unit that the directory role is scoped to
     - `[RoleId <String>]`: Unique identifier for the directory role that the member is in.
     - `[RoleMemberInfo <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-      - `[Id <String>]`: Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn't included in the response.
+      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+      - `[Id <String>]`: The identifier of the identity. This property is read-only.
   - `[Visibility <String>]`: Controls whether the administrative unit and its members are hidden or public. Can be set to HiddenMembership or Public. If not set, the default behavior is Public. When set to HiddenMembership, only members of the administrative unit can list other members of the administrative unit.
 
 `ATTRIBUTESETS <IMicrosoftGraphAttributeSet[]>`: Group of related custom security attribute definitions.
@@ -509,17 +436,14 @@ To create the parameters described below, construct a hash table containing the 
     - `[Members <IMicrosoftGraphDirectoryObject[]>]`: Users and groups that are members of this administrative unit. Supports $expand.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
-    - `[MembershipRule <String>]`: Dynamic membership rule for the administrative unit. For more about the rules that you can use for dynamic administrative units and dynamic groups, see Using attributes to create advanced rules.
-    - `[MembershipRuleProcessingState <String>]`: Used to control whether the dynamic membership rule is actively processed. Set to On when you want the dynamic membership rule to be active and Paused if you want to stop updating membership dynamically. If not set, the default behavior is Paused.
-    - `[MembershipType <String>]`: Membership type for the administrative unit. Can be dynamic or assigned. If not set, the default behavior is assigned.
     - `[ScopedRoleMembers <IMicrosoftGraphScopedRoleMembership[]>]`: Scoped-role members of this administrative unit.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[AdministrativeUnitId <String>]`: Unique identifier for the administrative unit that the directory role is scoped to
       - `[RoleId <String>]`: Unique identifier for the directory role that the member is in.
       - `[RoleMemberInfo <IMicrosoftGraphIdentity>]`: identity
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-        - `[Id <String>]`: Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn't included in the response.
+        - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+        - `[Id <String>]`: The identifier of the identity. This property is read-only.
     - `[Visibility <String>]`: Controls whether the administrative unit and its members are hidden or public. Can be set to HiddenMembership or Public. If not set, the default behavior is Public. When set to HiddenMembership, only members of the administrative unit can list other members of the administrative unit.
   - `[AttributeSets <IMicrosoftGraphAttributeSet[]>]`: Group of related custom security attribute definitions.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -552,7 +476,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[Status <String>]`: Specifies whether the custom security attribute is active or deactivated. Acceptable values are: Available and Deprecated. Can be changed later.
     - `[Type <String>]`: Data type for the custom security attribute values. Supported types are: Boolean, Integer, and String. Cannot be changed later.
     - `[UsePreDefinedValuesOnly <Boolean?>]`: Indicates whether only predefined values can be assigned to the custom security attribute. If set to false, free-form values are allowed. Can later be changed from true to false, but cannot be changed from false to true. If type is set to Boolean, usePreDefinedValuesOnly cannot be set to true.
-  - `[DeletedItems <IMicrosoftGraphDirectoryObject[]>]`: Recently deleted items. Read-only. Nullable.
+  - `[DeletedItems <IMicrosoftGraphDirectoryObject[]>]`: 
   - `[DeviceLocalCredentials <IMicrosoftGraphDeviceLocalCredentialInfo[]>]`: The credentials of the device's local administrator account backed up to Microsoft Entra ID.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Credentials <IMicrosoftGraphDeviceLocalCredential[]>]`: The credentials of the device's local administrator account backed up to Azure Active Directory.
@@ -564,27 +488,6 @@ To create the parameters described below, construct a hash table containing the 
     - `[DeviceName <String>]`: Display name of the device that the local credentials are associated with.
     - `[LastBackupDateTime <DateTime?>]`: When the local administrator account credential was backed up to Microsoft Entra ID.
     - `[RefreshDateTime <DateTime?>]`: When the local administrator account credential will be refreshed and backed up to Microsoft Entra ID.
-  - `[ExternalUserProfiles <IMicrosoftGraphExternalUserProfile[]>]`: Collection of external user profiles that represent collaborators in the directory.
-    - `[Address <IMicrosoftGraphPhysicalOfficeAddress>]`: physicalOfficeAddress
-      - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[City <String>]`: The city.
-      - `[CountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
-      - `[OfficeLocation <String>]`: Office location such as building and office number for an organizational contact.
-      - `[PostalCode <String>]`: The postal code.
-      - `[State <String>]`: The state.
-      - `[Street <String>]`: The street.
-    - `[CompanyName <String>]`: The company name of the external user profile. Supports $filter (eq, startswith).
-    - `[CreatedBy <String>]`: The object ID of the user who created the external user profile. Read-only. Not nullable.
-    - `[CreatedDateTime <DateTime?>]`: Date and time when this external user was created. Not nullable. Read-only.
-    - `[Department <String>]`: The department of the external user profile.
-    - `[DisplayName <String>]`: The display name of the external user profile.
-    - `[IsDiscoverable <Boolean?>]`: Represents whether the external user profile is discoverable in the directory. When true, this external profile shows up in Teams search.
-    - `[IsEnabled <Boolean?>]`: Represents whether the external user profile is enabled in the directory. This property is peer to the accountEnabled property on the user object.
-    - `[JobTitle <String>]`: The job title of the external user profile.
-    - `[PhoneNumber <String>]`: The phone number of the external user profile. Must be in E164 format.
-    - `[SupervisorId <String>]`: The object ID of the supervisor of the external user profile. Supports $filter (eq, startswith).
-    - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
-    - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[FeatureRolloutPolicies <IMicrosoftGraphFeatureRolloutPolicy[]>]`: 
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[AppliesTo <IMicrosoftGraphDirectoryObject[]>]`: Nullable. Specifies a list of directoryObjects that feature is enabled for.
@@ -600,8 +503,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[AddedDateTime <DateTime?>]`: The date and time when the impactedResource object was initially associated with the recommendation.
     - `[AdditionalDetails <IMicrosoftGraphKeyValue[]>]`: Additional information unique to the impactedResource to help contextualize the recommendation.
-      - `[Key <String>]`: Contains the name of the field that a value is associated with.
-      - `[Value <String>]`: Contains the corresponding value for the specified key.
+      - `[Key <String>]`: Key.
+      - `[Value <String>]`: Value.
     - `[ApiUrl <String>]`: The URL link to the corresponding Microsoft Entra resource.
     - `[DisplayName <String>]`: Friendly name of the Microsoft Entra resource.
     - `[LastModifiedBy <String>]`: Name of the user or service that last updated the status.
@@ -614,7 +517,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[ResourceType <String>]`: Indicates the type of Microsoft Entra resource. Examples include user, application.
     - `[Status <String>]`: recommendationStatus
     - `[SubjectId <String>]`: The related unique identifier, depending on the resourceType. For example, this property is set to the applicationId if the resourceType is an application.
-  - `[InboundSharedUserProfiles <IMicrosoftGraphInboundSharedUserProfile[]>]`: A collection of external users whose profile data is shared with the Microsoft Entra tenant. Nullable.
+  - `[InboundSharedUserProfiles <IMicrosoftGraphInboundSharedUserProfile[]>]`: A collection of external Azure AD users whose profile data has been shared with the Azure AD tenant. Nullable.
     - `[DisplayName <String>]`: The name displayed in the address book for the user at the time when the sharing record was created. Read-only.
     - `[HomeTenantId <String>]`: The home tenant id of the external user. Read-only.
     - `[UserId <String>]`: The object id of the external user. Read-only.
@@ -671,20 +574,6 @@ To create the parameters described below, construct a hash table containing the 
     - `[Tenants <IMicrosoftGraphTenantReference[]>]`: The collection of external Microsoft Entra tenants that the user has shared profile data with. Read-only.
       - `[TenantId <String>]`: The identifier of the Microsoft Entra tenant. Read-only. Key.
     - `[UserId <String>]`: The object id of the external user. Read-only.
-  - `[PendingExternalUserProfiles <IMicrosoftGraphPendingExternalUserProfile[]>]`: Collection of pending external user profiles representing collaborators in the directory that are unredeemed.
-    - `[Address <IMicrosoftGraphPhysicalOfficeAddress>]`: physicalOfficeAddress
-    - `[CompanyName <String>]`: The company name of the external user profile. Supports $filter (eq, startswith).
-    - `[CreatedBy <String>]`: The object ID of the user who created the external user profile. Read-only. Not nullable.
-    - `[CreatedDateTime <DateTime?>]`: Date and time when this external user was created. Not nullable. Read-only.
-    - `[Department <String>]`: The department of the external user profile.
-    - `[DisplayName <String>]`: The display name of the external user profile.
-    - `[IsDiscoverable <Boolean?>]`: Represents whether the external user profile is discoverable in the directory. When true, this external profile shows up in Teams search.
-    - `[IsEnabled <Boolean?>]`: Represents whether the external user profile is enabled in the directory. This property is peer to the accountEnabled property on the user object.
-    - `[JobTitle <String>]`: The job title of the external user profile.
-    - `[PhoneNumber <String>]`: The phone number of the external user profile. Must be in E164 format.
-    - `[SupervisorId <String>]`: The object ID of the supervisor of the external user profile. Supports $filter (eq, startswith).
-    - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
-    - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Recommendations <IMicrosoftGraphRecommendation[]>]`: List of recommended improvements to improve tenant posture.
     - `[ActionSteps <IMicrosoftGraphActionStep[]>]`: List of actions to take to complete a recommendation.
       - `[ActionUrl <IMicrosoftGraphActionUrl>]`: actionUrl
@@ -717,7 +606,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[SharedEmailDomains <IMicrosoftGraphSharedEmailDomain[]>]`: 
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[ProvisioningStatus <String>]`: 
-  - `[Subscriptions <IMicrosoftGraphCompanySubscription[]>]`: List of commercial subscriptions that an organization has.
+  - `[Subscriptions <IMicrosoftGraphCompanySubscription[]>]`: List of commercial subscriptions that an organization has acquired.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[CommerceSubscriptionId <String>]`: The ID of this subscription in the commerce system. Alternate key.
     - `[CreatedDateTime <DateTime?>]`: The date and time when this subscription was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
@@ -766,7 +655,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[Type <String>]`: Data type for the custom security attribute values. Supported types are: Boolean, Integer, and String. Cannot be changed later.
   - `[UsePreDefinedValuesOnly <Boolean?>]`: Indicates whether only predefined values can be assigned to the custom security attribute. If set to false, free-form values are allowed. Can later be changed from true to false, but cannot be changed from false to true. If type is set to Boolean, usePreDefinedValuesOnly cannot be set to true.
 
-`DELETEDITEMS <IMicrosoftGraphDirectoryObject[]>`: Recently deleted items. Read-only. Nullable.
+`DELETEDITEMS <IMicrosoftGraphDirectoryObject[]>`: .
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
 
@@ -781,28 +670,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[DeviceName <String>]`: Display name of the device that the local credentials are associated with.
   - `[LastBackupDateTime <DateTime?>]`: When the local administrator account credential was backed up to Microsoft Entra ID.
   - `[RefreshDateTime <DateTime?>]`: When the local administrator account credential will be refreshed and backed up to Microsoft Entra ID.
-
-`EXTERNALUSERPROFILES <IMicrosoftGraphExternalUserProfile[]>`: Collection of external user profiles that represent collaborators in the directory.
-  - `[Address <IMicrosoftGraphPhysicalOfficeAddress>]`: physicalOfficeAddress
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[City <String>]`: The city.
-    - `[CountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
-    - `[OfficeLocation <String>]`: Office location such as building and office number for an organizational contact.
-    - `[PostalCode <String>]`: The postal code.
-    - `[State <String>]`: The state.
-    - `[Street <String>]`: The street.
-  - `[CompanyName <String>]`: The company name of the external user profile. Supports $filter (eq, startswith).
-  - `[CreatedBy <String>]`: The object ID of the user who created the external user profile. Read-only. Not nullable.
-  - `[CreatedDateTime <DateTime?>]`: Date and time when this external user was created. Not nullable. Read-only.
-  - `[Department <String>]`: The department of the external user profile.
-  - `[DisplayName <String>]`: The display name of the external user profile.
-  - `[IsDiscoverable <Boolean?>]`: Represents whether the external user profile is discoverable in the directory. When true, this external profile shows up in Teams search.
-  - `[IsEnabled <Boolean?>]`: Represents whether the external user profile is enabled in the directory. This property is peer to the accountEnabled property on the user object.
-  - `[JobTitle <String>]`: The job title of the external user profile.
-  - `[PhoneNumber <String>]`: The phone number of the external user profile. Must be in E164 format.
-  - `[SupervisorId <String>]`: The object ID of the supervisor of the external user profile. Supports $filter (eq, startswith).
-  - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
-  - `[Id <String>]`: The unique identifier for an entity. Read-only.
 
 `FEATUREROLLOUTPOLICIES <IMicrosoftGraphFeatureRolloutPolicy[]>`: .
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -823,8 +690,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[AddedDateTime <DateTime?>]`: The date and time when the impactedResource object was initially associated with the recommendation.
   - `[AdditionalDetails <IMicrosoftGraphKeyValue[]>]`: Additional information unique to the impactedResource to help contextualize the recommendation.
-    - `[Key <String>]`: Contains the name of the field that a value is associated with.
-    - `[Value <String>]`: Contains the corresponding value for the specified key.
+    - `[Key <String>]`: Key.
+    - `[Value <String>]`: Value.
   - `[ApiUrl <String>]`: The URL link to the corresponding Microsoft Entra resource.
   - `[DisplayName <String>]`: Friendly name of the Microsoft Entra resource.
   - `[LastModifiedBy <String>]`: Name of the user or service that last updated the status.
@@ -838,7 +705,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[Status <String>]`: recommendationStatus
   - `[SubjectId <String>]`: The related unique identifier, depending on the resourceType. For example, this property is set to the applicationId if the resourceType is an application.
 
-`INBOUNDSHAREDUSERPROFILES <IMicrosoftGraphInboundSharedUserProfile[]>`: A collection of external users whose profile data is shared with the Microsoft Entra tenant. Nullable.
+`INBOUNDSHAREDUSERPROFILES <IMicrosoftGraphInboundSharedUserProfile[]>`: A collection of external Azure AD users whose profile data has been shared with the Azure AD tenant. Nullable.
   - `[DisplayName <String>]`: The name displayed in the address book for the user at the time when the sharing record was created. Read-only.
   - `[HomeTenantId <String>]`: The home tenant id of the external user. Read-only.
   - `[UserId <String>]`: The object id of the external user. Read-only.
@@ -898,28 +765,6 @@ To create the parameters described below, construct a hash table containing the 
     - `[TenantId <String>]`: The identifier of the Microsoft Entra tenant. Read-only. Key.
   - `[UserId <String>]`: The object id of the external user. Read-only.
 
-`PENDINGEXTERNALUSERPROFILES <IMicrosoftGraphPendingExternalUserProfile[]>`: Collection of pending external user profiles representing collaborators in the directory that are unredeemed.
-  - `[Address <IMicrosoftGraphPhysicalOfficeAddress>]`: physicalOfficeAddress
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[City <String>]`: The city.
-    - `[CountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
-    - `[OfficeLocation <String>]`: Office location such as building and office number for an organizational contact.
-    - `[PostalCode <String>]`: The postal code.
-    - `[State <String>]`: The state.
-    - `[Street <String>]`: The street.
-  - `[CompanyName <String>]`: The company name of the external user profile. Supports $filter (eq, startswith).
-  - `[CreatedBy <String>]`: The object ID of the user who created the external user profile. Read-only. Not nullable.
-  - `[CreatedDateTime <DateTime?>]`: Date and time when this external user was created. Not nullable. Read-only.
-  - `[Department <String>]`: The department of the external user profile.
-  - `[DisplayName <String>]`: The display name of the external user profile.
-  - `[IsDiscoverable <Boolean?>]`: Represents whether the external user profile is discoverable in the directory. When true, this external profile shows up in Teams search.
-  - `[IsEnabled <Boolean?>]`: Represents whether the external user profile is enabled in the directory. This property is peer to the accountEnabled property on the user object.
-  - `[JobTitle <String>]`: The job title of the external user profile.
-  - `[PhoneNumber <String>]`: The phone number of the external user profile. Must be in E164 format.
-  - `[SupervisorId <String>]`: The object ID of the supervisor of the external user profile. Supports $filter (eq, startswith).
-  - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
-  - `[Id <String>]`: The unique identifier for an entity. Read-only.
-
 `RECOMMENDATIONS <IMicrosoftGraphRecommendation[]>`: List of recommended improvements to improve tenant posture.
   - `[ActionSteps <IMicrosoftGraphActionStep[]>]`: List of actions to take to complete a recommendation.
     - `[ActionUrl <IMicrosoftGraphActionUrl>]`: actionUrl
@@ -940,8 +785,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[AddedDateTime <DateTime?>]`: The date and time when the impactedResource object was initially associated with the recommendation.
     - `[AdditionalDetails <IMicrosoftGraphKeyValue[]>]`: Additional information unique to the impactedResource to help contextualize the recommendation.
-      - `[Key <String>]`: Contains the name of the field that a value is associated with.
-      - `[Value <String>]`: Contains the corresponding value for the specified key.
+      - `[Key <String>]`: Key.
+      - `[Value <String>]`: Value.
     - `[ApiUrl <String>]`: The URL link to the corresponding Microsoft Entra resource.
     - `[DisplayName <String>]`: Friendly name of the Microsoft Entra resource.
     - `[LastModifiedBy <String>]`: Name of the user or service that last updated the status.
@@ -971,7 +816,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[ProvisioningStatus <String>]`: 
 
-`SUBSCRIPTIONS <IMicrosoftGraphCompanySubscription[]>`: List of commercial subscriptions that an organization has.
+`SUBSCRIPTIONS <IMicrosoftGraphCompanySubscription[]>`: List of commercial subscriptions that an organization has acquired.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[CommerceSubscriptionId <String>]`: The ID of this subscription in the commerce system. Alternate key.
   - `[CreatedDateTime <DateTime?>]`: The date and time when this subscription was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.

@@ -19,14 +19,13 @@ Update-MgBetaPolicyDeviceRegistrationPolicy [-AdditionalProperties <Hashtable>]
  [-AzureAdJoin <IMicrosoftGraphAzureAdJoinPolicy>]
  [-AzureAdRegistration <IMicrosoftGraphAzureAdRegistrationPolicy>] [-Description <String>]
  [-DisplayName <String>] [-Id <String>] [-LocalAdminPassword <IMicrosoftGraphLocalAdminPasswordSettings>]
- [-MultiFactorAuthConfiguration <String>] [-ResponseHeadersVariable <String>] [-UserDeviceQuota <Int32>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-MultiFactorAuthConfiguration <String>] [-UserDeviceQuota <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaPolicyDeviceRegistrationPolicy -BodyParameter <IMicrosoftGraphDeviceRegistrationPolicy>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -148,21 +147,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -202,21 +186,6 @@ multiFactorAuthConfiguration
 Type: System.String
 Parameter Sets: UpdateExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -280,8 +249,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceRegistrationPolicy
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceRegistrationPolicy
@@ -299,13 +266,13 @@ To create the parameters described below, construct a hash table containing the 
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[AllowedToJoin <IMicrosoftGraphDeviceRegistrationMembership>]`: deviceRegistrationMembership
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[IsAdminConfigurable <Boolean?>]`: Determines if administrators can modify this policy.
+  - `[IsAdminConfigurable <Boolean?>]`: Specifies whether this policy scope is configurable by the admin. The default value is false. When an admin has enabled Intune (MEM) to manage devices, this property is set to false and appliesTo defaults to 1 (meaning all).
 
 `AZUREADREGISTRATION <IMicrosoftGraphAzureAdRegistrationPolicy>`: azureADRegistrationPolicy
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[AllowedToRegister <IMicrosoftGraphDeviceRegistrationMembership>]`: deviceRegistrationMembership
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[IsAdminConfigurable <Boolean?>]`: Determines if administrators can modify this policy.
+  - `[IsAdminConfigurable <Boolean?>]`: Specifies whether this policy scope is configurable by the admin. The default value is false. When an admin has enabled Intune (MEM) to manage devices, this property is set to false and appliesTo defaults to 1 (meaning all).
 
 `BODYPARAMETER <IMicrosoftGraphDeviceRegistrationPolicy>`: deviceRegistrationPolicy
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -314,11 +281,11 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[AllowedToJoin <IMicrosoftGraphDeviceRegistrationMembership>]`: deviceRegistrationMembership
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[IsAdminConfigurable <Boolean?>]`: Determines if administrators can modify this policy.
+    - `[IsAdminConfigurable <Boolean?>]`: Specifies whether this policy scope is configurable by the admin. The default value is false. When an admin has enabled Intune (MEM) to manage devices, this property is set to false and appliesTo defaults to 1 (meaning all).
   - `[AzureAdRegistration <IMicrosoftGraphAzureAdRegistrationPolicy>]`: azureADRegistrationPolicy
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[AllowedToRegister <IMicrosoftGraphDeviceRegistrationMembership>]`: deviceRegistrationMembership
-    - `[IsAdminConfigurable <Boolean?>]`: Determines if administrators can modify this policy.
+    - `[IsAdminConfigurable <Boolean?>]`: Specifies whether this policy scope is configurable by the admin. The default value is false. When an admin has enabled Intune (MEM) to manage devices, this property is set to false and appliesTo defaults to 1 (meaning all).
   - `[Description <String>]`: The description of the device registration policy. It's always set to Tenant-wide policy that manages intial provisioning controls using quota restrictions, additional authentication and authorization checks. Read-only.
   - `[DisplayName <String>]`: The name of the device registration policy. It's always set to Device Registration Policy. Read-only.
   - `[LocalAdminPassword <IMicrosoftGraphLocalAdminPasswordSettings>]`: localAdminPasswordSettings

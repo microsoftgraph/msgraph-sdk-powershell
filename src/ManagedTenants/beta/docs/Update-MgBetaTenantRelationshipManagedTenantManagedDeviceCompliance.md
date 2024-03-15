@@ -18,23 +18,22 @@ Update-MgBetaTenantRelationshipManagedTenantManagedDeviceCompliance -ManagedDevi
  [-AdditionalProperties <Hashtable>] [-ComplianceStatus <String>] [-DeviceType <String>] [-Id <String>]
  [-InGracePeriodUntilDateTime <DateTime>] [-LastRefreshedDateTime <DateTime>] [-LastSyncDateTime <DateTime>]
  [-ManagedDeviceId <String>] [-ManagedDeviceName <String>] [-Manufacturer <String>] [-Model <String>]
- [-OSDescription <String>] [-OSVersion <String>] [-OwnerType <String>] [-ResponseHeadersVariable <String>]
- [-TenantDisplayName <String>] [-TenantId <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-OSDescription <String>] [-OSVersion <String>] [-OwnerType <String>] [-TenantDisplayName <String>]
+ [-TenantId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaTenantRelationshipManagedTenantManagedDeviceCompliance -ManagedDeviceComplianceId <String>
- -BodyParameter <IMicrosoftGraphManagedTenantsManagedDeviceCompliance> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphManagedTenantsManagedDeviceCompliance> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaTenantRelationshipManagedTenantManagedDeviceCompliance -InputObject <IManagedTenantsIdentity>
- -BodyParameter <IMicrosoftGraphManagedTenantsManagedDeviceCompliance> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphManagedTenantsManagedDeviceCompliance> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -43,9 +42,8 @@ Update-MgBetaTenantRelationshipManagedTenantManagedDeviceCompliance -InputObject
  [-AdditionalProperties <Hashtable>] [-ComplianceStatus <String>] [-DeviceType <String>] [-Id <String>]
  [-InGracePeriodUntilDateTime <DateTime>] [-LastRefreshedDateTime <DateTime>] [-LastSyncDateTime <DateTime>]
  [-ManagedDeviceId <String>] [-ManagedDeviceName <String>] [-Manufacturer <String>] [-Model <String>]
- [-OSDescription <String>] [-OSVersion <String>] [-OwnerType <String>] [-ResponseHeadersVariable <String>]
- [-TenantDisplayName <String>] [-TenantId <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-OSDescription <String>] [-OSVersion <String>] [-OwnerType <String>] [-TenantDisplayName <String>]
+ [-TenantId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -135,21 +133,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -370,21 +353,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -TenantDisplayName
 The display name for the managed tenant.
 Optional.
@@ -458,8 +426,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedDeviceCompliance
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

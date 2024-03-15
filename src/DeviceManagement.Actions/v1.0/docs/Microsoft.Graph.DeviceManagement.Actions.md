@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.DeviceManagement.Actions
-Module Guid: 75d68279-4697-4b09-84e2-3e9d13ee26e5
+Module Guid: 3cbc04de-68a8-4917-b129-b6278d0731fb
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.devicemanagement.actions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -149,12 +149,6 @@ Not yet documented
 
 ### [Set-MgDeviceManagementDeviceEnrollmentConfigurationPriority](Set-MgDeviceManagementDeviceEnrollmentConfigurationPriority.md)
 Not yet documented
-
-### [Set-MgDeviceManagementVirtualEndpointProvisioningPolicy](Set-MgDeviceManagementVirtualEndpointProvisioningPolicy.md)
-Invoke action assign
-
-### [Set-MgDeviceManagementVirtualEndpointUserSetting](Set-MgDeviceManagementVirtualEndpointUserSetting.md)
-Invoke action assign
 
 ### [Set-MgDeviceManagementWindowsAutopilotDeviceIdentityUserToDevice](Set-MgDeviceManagementWindowsAutopilotDeviceIdentityUserToDevice.md)
 Assigns user to Autopilot devices.

@@ -18,16 +18,15 @@ New-MgServicePrincipalRiskDetection [-Activity <String>] [-ActivityDateTime <Dat
  [-AdditionalInfo <String>] [-AdditionalProperties <Hashtable>] [-AppId <String>] [-CorrelationId <String>]
  [-DetectedDateTime <DateTime>] [-DetectionTimingType <String>] [-Id <String>] [-IPAddress <String>]
  [-KeyIds <String[]>] [-LastUpdatedDateTime <DateTime>] [-Location <IMicrosoftGraphSignInLocation>]
- [-RequestId <String>] [-ResponseHeadersVariable <String>] [-RiskDetail <String>] [-RiskEventType <String>]
- [-RiskLevel <String>] [-RiskState <String>] [-ServicePrincipalDisplayName <String>]
- [-ServicePrincipalId <String>] [-Source <String>] [-TokenIssuerType <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-RequestId <String>] [-RiskDetail <String>] [-RiskEventType <String>] [-RiskLevel <String>]
+ [-RiskState <String>] [-ServicePrincipalDisplayName <String>] [-ServicePrincipalId <String>]
+ [-Source <String>] [-TokenIssuerType <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgServicePrincipalRiskDetection -BodyParameter <IMicrosoftGraphServicePrincipalRiskDetection>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgServicePrincipalRiskDetection -BodyParameter <IMicrosoftGraphServicePrincipalRiskDetection> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -193,21 +192,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -294,21 +278,6 @@ Supports $filter (eq).
 Type: System.String
 Parameter Sets: CreateExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -477,8 +446,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphServicePrincipalRiskDetection
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

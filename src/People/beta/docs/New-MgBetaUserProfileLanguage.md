@@ -18,22 +18,20 @@ New-MgBetaUserProfileLanguage -UserId <String> [-AdditionalProperties <Hashtable
  [-AllowedAudiences <String>] [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>]
  [-DisplayName <String>] [-Id <String>] [-Inference <IMicrosoftGraphInferenceData>] [-IsSearchable]
  [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>] [-Proficiency <String>]
- [-Reading <String>] [-ResponseHeadersVariable <String>] [-Source <IMicrosoftGraphPersonDataSources>]
- [-Spoken <String>] [-Tag <String>] [-ThumbnailUrl <String>] [-Written <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Reading <String>] [-Source <IMicrosoftGraphPersonDataSources>] [-Spoken <String>] [-Tag <String>]
+ [-ThumbnailUrl <String>] [-Written <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgBetaUserProfileLanguage -UserId <String> -BodyParameter <IMicrosoftGraphLanguageProficiency>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaUserProfileLanguage -UserId <String> -BodyParameter <IMicrosoftGraphLanguageProficiency> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaUserProfileLanguage -InputObject <IPeopleIdentity>
- -BodyParameter <IMicrosoftGraphLanguageProficiency> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphLanguageProficiency> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -42,9 +40,8 @@ New-MgBetaUserProfileLanguage -InputObject <IPeopleIdentity> [-AdditionalPropert
  [-AllowedAudiences <String>] [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>]
  [-DisplayName <String>] [-Id <String>] [-Inference <IMicrosoftGraphInferenceData>] [-IsSearchable]
  [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>] [-Proficiency <String>]
- [-Reading <String>] [-ResponseHeadersVariable <String>] [-Source <IMicrosoftGraphPersonDataSources>]
- [-Spoken <String>] [-Tag <String>] [-ThumbnailUrl <String>] [-Written <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Reading <String>] [-Source <IMicrosoftGraphPersonDataSources>] [-Spoken <String>] [-Tag <String>]
+ [-ThumbnailUrl <String>] [-Written <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -159,21 +156,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -293,21 +275,6 @@ languageProficiencyLevel
 Type: System.String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -446,8 +413,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphLanguageProficiency
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPeopleIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

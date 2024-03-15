@@ -16,15 +16,14 @@ Update the navigation property billing in reports
 ```
 Update-MgReportPartnerBilling [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-Manifests <IMicrosoftGraphPartnersBillingManifest[]>]
- [-Operations <IMicrosoftGraphPartnersBillingOperation[]>] [-ResponseHeadersVariable <String>]
- [-Usage <IMicrosoftGraphPartnersBillingAzureUsage>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Operations <IMicrosoftGraphPartnersBillingOperation[]>] [-Usage <IMicrosoftGraphPartnersBillingAzureUsage>]
+ [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgReportPartnerBilling -BodyParameter <IMicrosoftGraphPartnersBilling>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgReportPartnerBilling -BodyParameter <IMicrosoftGraphPartnersBilling> [-Headers <IDictionary>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -134,21 +133,6 @@ To construct, see NOTES section for OPERATIONS properties and create a hash tabl
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPartnersBillingOperation[]
 Parameter Sets: UpdateExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Teams
-Module Guid: ef2db833-952a-4b77-ad40-be696932a419
+Module Guid: 88f81a66-95ab-4e1d-bb45-ff2f46ea8f47
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.teams
 Help Version: 1.0.0.0
 Locale: en-US
@@ -280,8 +280,7 @@ This can't be changed after tab creation.
 Get group from groups
 
 ### [Get-MgGroupTeamGroupServiceProvisioningError](Get-MgGroupTeamGroupServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a group object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgGroupTeamGroupServiceProvisioningErrorCount](Get-MgGroupTeamGroupServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -550,8 +549,7 @@ This can't be changed after tab creation.
 Get the number of the resource
 
 ### [Get-MgTeamGroupServiceProvisioningError](Get-MgTeamGroupServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a group object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgTeamGroupServiceProvisioningErrorCount](Get-MgTeamGroupServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -748,12 +746,6 @@ See available templates.
 
 ### [Get-MgTeamwork](Get-MgTeamwork.md)
 Get teamwork
-
-### [Get-MgTeamworkDeletedChat](Get-MgTeamworkDeletedChat.md)
-Get deletedChats from teamwork
-
-### [Get-MgTeamworkDeletedChatCount](Get-MgTeamworkDeletedChatCount.md)
-Get the number of the resource
 
 ### [Get-MgTeamworkDeletedTeam](Get-MgTeamworkDeletedTeam.md)
 The deleted team.
@@ -978,9 +970,7 @@ Mark a chat as read for a user.
 Mark a chat as unread for a user.
 
 ### [Invoke-MgShareTeamSchedule](Invoke-MgShareTeamSchedule.md)
-Share a schedule time range with schedule members.
-This action makes the collections of shift, openshift and timeOff items in the specified time range of the schedule viewable by the specified team members, including employees and managers.
-Each shift, openshift and timeOff instance in a schedule supports a draft version and a shared version of the item.
+Share a schedule time range with schedule members.\nMake the collections of shift, openshift and timeOff items in the specified time range of the schedule viewable by the specified team members, including employees and managers.\nEach shift, openshift and timeOff instance in a schedule supports a draft version and a shared version of the item.
 The draft version is viewable by only managers, and the shared version is viewable by employees and managers.
 For each shift, openshift and timeOff instance in the specified time range, the share action updates the shared version from the draft version, so that in addition to managers, employees can also view the most current information about the item.
 The notifyTeam parameter further specifies which employees can view the item.
@@ -1043,7 +1033,7 @@ This API can't create a new chat; you must use the list chats method to retrieve
 Create new navigation property to hostedContents for chats
 
 ### [New-MgChatMessageReply](New-MgChatMessageReply.md)
-Send a new reply to a chatMessage in a specified channel.
+Create a new reply to a chatMessage in a specified channel.
 
 ### [New-MgChatMessageReplyHostedContent](New-MgChatMessageReplyHostedContent.md)
 Create new navigation property to hostedContents for chats
@@ -1067,15 +1057,16 @@ If you're creating a private channel, you can add a maximum of 200 members.
 
 ### [New-MgGroupTeamChannelMember](New-MgGroupTeamChannelMember.md)
 Add a conversationMember to a channel.
+This operation is allowed only for channels with a membershipType value of private or shared.
 
 ### [New-MgGroupTeamChannelMessage](New-MgGroupTeamChannelMessage.md)
-Send a new chatMessage in the specified channel.
+Send a new chatMessage in the specified channel or a chat.
 
 ### [New-MgGroupTeamChannelMessageHostedContent](New-MgGroupTeamChannelMessageHostedContent.md)
 Create new navigation property to hostedContents for groups
 
 ### [New-MgGroupTeamChannelMessageReply](New-MgGroupTeamChannelMessageReply.md)
-Send a new reply to a chatMessage in a specified channel.
+Create a new reply to a chatMessage in a specified channel.
 
 ### [New-MgGroupTeamChannelMessageReplyHostedContent](New-MgGroupTeamChannelMessageReplyHostedContent.md)
 Create new navigation property to hostedContents for groups
@@ -1101,15 +1092,16 @@ Create new navigation property to permissionGrants for groups
 
 ### [New-MgGroupTeamPrimaryChannelMember](New-MgGroupTeamPrimaryChannelMember.md)
 Add a conversationMember to a channel.
+This operation is allowed only for channels with a membershipType value of private or shared.
 
 ### [New-MgGroupTeamPrimaryChannelMessage](New-MgGroupTeamPrimaryChannelMessage.md)
-Send a new chatMessage in the specified channel.
+Send a new chatMessage in the specified channel or a chat.
 
 ### [New-MgGroupTeamPrimaryChannelMessageHostedContent](New-MgGroupTeamPrimaryChannelMessageHostedContent.md)
 Create new navigation property to hostedContents for groups
 
 ### [New-MgGroupTeamPrimaryChannelMessageReply](New-MgGroupTeamPrimaryChannelMessageReply.md)
-Send a new reply to a chatMessage in a specified channel.
+Create a new reply to a chatMessage in a specified channel.
 
 ### [New-MgGroupTeamPrimaryChannelMessageReplyHostedContent](New-MgGroupTeamPrimaryChannelMessageReplyHostedContent.md)
 Create new navigation property to hostedContents for groups
@@ -1172,15 +1164,16 @@ To remove the email address of a channel, use the removeEmail method.
 
 ### [New-MgTeamChannelMember](New-MgTeamChannelMember.md)
 Add a conversationMember to a channel.
+This operation is allowed only for channels with a membershipType value of private or shared.
 
 ### [New-MgTeamChannelMessage](New-MgTeamChannelMessage.md)
-Send a new chatMessage in the specified channel.
+Send a new chatMessage in the specified channel or a chat.
 
 ### [New-MgTeamChannelMessageHostedContent](New-MgTeamChannelMessageHostedContent.md)
 Create new navigation property to hostedContents for teams
 
 ### [New-MgTeamChannelMessageReply](New-MgTeamChannelMessageReply.md)
-Send a new reply to a chatMessage in a specified channel.
+Create a new reply to a chatMessage in a specified channel.
 
 ### [New-MgTeamChannelMessageReplyHostedContent](New-MgTeamChannelMessageReplyHostedContent.md)
 Create new navigation property to hostedContents for teams
@@ -1212,15 +1205,16 @@ To remove the email address of a channel, use the removeEmail method.
 
 ### [New-MgTeamPrimaryChannelMember](New-MgTeamPrimaryChannelMember.md)
 Add a conversationMember to a channel.
+This operation is allowed only for channels with a membershipType value of private or shared.
 
 ### [New-MgTeamPrimaryChannelMessage](New-MgTeamPrimaryChannelMessage.md)
-Send a new chatMessage in the specified channel.
+Send a new chatMessage in the specified channel or a chat.
 
 ### [New-MgTeamPrimaryChannelMessageHostedContent](New-MgTeamPrimaryChannelMessageHostedContent.md)
 Create new navigation property to hostedContents for teams
 
 ### [New-MgTeamPrimaryChannelMessageReply](New-MgTeamPrimaryChannelMessageReply.md)
-Send a new reply to a chatMessage in a specified channel.
+Create a new reply to a chatMessage in a specified channel.
 
 ### [New-MgTeamPrimaryChannelMessageReplyHostedContent](New-MgTeamPrimaryChannelMessageReplyHostedContent.md)
 Create new navigation property to hostedContents for teams
@@ -1266,9 +1260,6 @@ Create a standard tag for members in a team.
 ### [New-MgTeamTagMember](New-MgTeamTagMember.md)
 Create a new teamworkTagMember object in a team.
 
-### [New-MgTeamworkDeletedChat](New-MgTeamworkDeletedChat.md)
-Create new navigation property to deletedChats for teamwork
-
 ### [New-MgTeamworkDeletedTeam](New-MgTeamworkDeletedTeam.md)
 Create new navigation property to deletedTeams for teamwork
 
@@ -1283,15 +1274,16 @@ To remove the email address of a channel, use the removeEmail method.
 
 ### [New-MgTeamworkDeletedTeamChannelMember](New-MgTeamworkDeletedTeamChannelMember.md)
 Add a conversationMember to a channel.
+This operation is allowed only for channels with a membershipType value of private or shared.
 
 ### [New-MgTeamworkDeletedTeamChannelMessage](New-MgTeamworkDeletedTeamChannelMessage.md)
-Send a new chatMessage in the specified channel.
+Send a new chatMessage in the specified channel or a chat.
 
 ### [New-MgTeamworkDeletedTeamChannelMessageHostedContent](New-MgTeamworkDeletedTeamChannelMessageHostedContent.md)
 Create new navigation property to hostedContents for teamwork
 
 ### [New-MgTeamworkDeletedTeamChannelMessageReply](New-MgTeamworkDeletedTeamChannelMessageReply.md)
-Send a new reply to a chatMessage in a specified channel.
+Create a new reply to a chatMessage in a specified channel.
 
 ### [New-MgTeamworkDeletedTeamChannelMessageReplyHostedContent](New-MgTeamworkDeletedTeamChannelMessageReplyHostedContent.md)
 Create new navigation property to hostedContents for teamwork
@@ -1323,7 +1315,7 @@ This API can't create a new chat; you must use the list chats method to retrieve
 Create new navigation property to hostedContents for users
 
 ### [New-MgUserChatMessageReply](New-MgUserChatMessageReply.md)
-Send a new reply to a chatMessage in a specified channel.
+Create a new reply to a chatMessage in a specified channel.
 
 ### [New-MgUserChatMessageReplyHostedContent](New-MgUserChatMessageReplyHostedContent.md)
 Create new navigation property to hostedContents for users
@@ -1407,6 +1399,9 @@ This operation is allowed only for channels with a membershipType value of share
 
 ### [Remove-MgGroupTeamChannelTab](Remove-MgGroupTeamChannelTab.md)
 Removes (unpins) a tab from the specified channel within a team.
+
+### [Remove-MgGroupTeamIncomingChannel](Remove-MgGroupTeamIncomingChannel.md)
+Remove an incoming channel (a channel shared with a team) from a team.
 
 ### [Remove-MgGroupTeamInstalledApp](Remove-MgGroupTeamInstalledApp.md)
 Uninstalls an app from the specified team.
@@ -1508,6 +1503,9 @@ This operation is allowed only for channels with a membershipType value of share
 ### [Remove-MgTeamChannelTab](Remove-MgTeamChannelTab.md)
 Removes (unpins) a tab from the specified channel within a team.
 
+### [Remove-MgTeamIncomingChannel](Remove-MgTeamIncomingChannel.md)
+Remove an incoming channel (a channel shared with a team) from a team.
+
 ### [Remove-MgTeamInstalledApp](Remove-MgTeamInstalledApp.md)
 Uninstalls an app from the specified team.
 
@@ -1579,9 +1577,6 @@ Delete a tag object permanently.
 
 ### [Remove-MgTeamTagMember](Remove-MgTeamTagMember.md)
 Delete a member from a standard tag in a team.
-
-### [Remove-MgTeamworkDeletedChat](Remove-MgTeamworkDeletedChat.md)
-Delete navigation property deletedChats for teamwork
 
 ### [Remove-MgTeamworkDeletedTeam](Remove-MgTeamworkDeletedTeam.md)
 Delete navigation property deletedTeams for teamwork
@@ -1665,15 +1660,15 @@ Uninstall an app from the personal scope of the specified user.
 
 ### [Send-MgChatActivityNotification](Send-MgChatActivityNotification.md)
 Send an activity feed notification in scope of a chat.
-For more information about sending notifications and the requirements for doing so, see sending Teams activity notifications.
+For more details about sending notifications and the requirements for doing so, see sending Teams activity notifications.
 
 ### [Send-MgTeamActivityNotification](Send-MgTeamActivityNotification.md)
 Send an activity feed notification in the scope of a team.
-For more information about sending notifications and the requirements for doing so, see\nsending Teams activity notifications.
+For more details about sending notifications and the requirements for doing so, see\nsending Teams activity notifications.
 
 ### [Send-MgTeamworkActivityNotificationToRecipient](Send-MgTeamworkActivityNotificationToRecipient.md)
 Send activity feed notifications to multiple users, in bulk.
-For more information, see sending Teams activity notifications.
+For more details about sending notifications and the requirements for doing so, see\nsending Teams activity notifications.
 
 ### [Set-MgChatMessageHostedContent](Set-MgChatMessageHostedContent.md)
 Update media content for the navigation property hostedContents in chats
@@ -1789,9 +1784,6 @@ Undo soft deletion of a single chatMessage or a chat message reply in a channel 
 ### [Undo-MgTeamPrimaryChannelMessageSoftDelete](Undo-MgTeamPrimaryChannelMessageSoftDelete.md)
 Undo soft deletion of a single chatMessage or a chat message reply in a channel or a chat.
 
-### [Undo-MgTeamworkDeletedChatDelete](Undo-MgTeamworkDeletedChatDelete.md)
-Invoke action undoDelete
-
 ### [Undo-MgTeamworkDeletedTeamChannelMessageReplySoftDelete](Undo-MgTeamworkDeletedTeamChannelMessageReplySoftDelete.md)
 Undo soft deletion of a single chatMessage or a chat message reply in a channel or a chat.
 
@@ -1849,10 +1841,10 @@ This operation is allowed only for channels with a membershipType value of priva
 
 ### [Update-MgGroupTeamChannelMessage](Update-MgGroupTeamChannelMessage.md)
 Update a chatMessage object.
-\nExcept for the policyViolation property, all properties of a chatMessage can be updated in delegated permissions scenarios.\nOnly the policyViolation property of a chatMessage can be updated in application permissions scenarios.
+\nWith the exception of the policyViolation property, all properties of a chatMessage can be updated in delegated permissions scenarios.\nOnly the policyViolation property of a chatMessage can be updated in application permissions scenarios.
 The update only works for chats where members are Microsoft Teams users.
-If one of the participants is using Skype, the operation fails.
-This method doesn't support federation.
+If one of the participants is using Skype, the operation will fail.
+This method does not support federation.
 Only the user in the tenant who sent the message can perform data loss prevention (DLP) updates on the specified chat message.
 
 ### [Update-MgGroupTeamChannelMessageHostedContent](Update-MgGroupTeamChannelMessageHostedContent.md)
@@ -1891,10 +1883,10 @@ This operation is allowed only for channels with a membershipType value of priva
 
 ### [Update-MgGroupTeamPrimaryChannelMessage](Update-MgGroupTeamPrimaryChannelMessage.md)
 Update a chatMessage object.
-\nExcept for the policyViolation property, all properties of a chatMessage can be updated in delegated permissions scenarios.\nOnly the policyViolation property of a chatMessage can be updated in application permissions scenarios.
+\nWith the exception of the policyViolation property, all properties of a chatMessage can be updated in delegated permissions scenarios.\nOnly the policyViolation property of a chatMessage can be updated in application permissions scenarios.
 The update only works for chats where members are Microsoft Teams users.
-If one of the participants is using Skype, the operation fails.
-This method doesn't support federation.
+If one of the participants is using Skype, the operation will fail.
+This method does not support federation.
 Only the user in the tenant who sent the message can perform data loss prevention (DLP) updates on the specified chat message.
 
 ### [Update-MgGroupTeamPrimaryChannelMessageHostedContent](Update-MgGroupTeamPrimaryChannelMessageHostedContent.md)
@@ -1962,10 +1954,10 @@ This operation is allowed only for channels with a membershipType value of priva
 
 ### [Update-MgTeamChannelMessage](Update-MgTeamChannelMessage.md)
 Update a chatMessage object.
-\nExcept for the policyViolation property, all properties of a chatMessage can be updated in delegated permissions scenarios.\nOnly the policyViolation property of a chatMessage can be updated in application permissions scenarios.
+\nWith the exception of the policyViolation property, all properties of a chatMessage can be updated in delegated permissions scenarios.\nOnly the policyViolation property of a chatMessage can be updated in application permissions scenarios.
 The update only works for chats where members are Microsoft Teams users.
-If one of the participants is using Skype, the operation fails.
-This method doesn't support federation.
+If one of the participants is using Skype, the operation will fail.
+This method does not support federation.
 Only the user in the tenant who sent the message can perform data loss prevention (DLP) updates on the specified chat message.
 
 ### [Update-MgTeamChannelMessageReply](Update-MgTeamChannelMessageReply.md)
@@ -2004,10 +1996,10 @@ This operation is allowed only for channels with a membershipType value of priva
 
 ### [Update-MgTeamPrimaryChannelMessage](Update-MgTeamPrimaryChannelMessage.md)
 Update a chatMessage object.
-\nExcept for the policyViolation property, all properties of a chatMessage can be updated in delegated permissions scenarios.\nOnly the policyViolation property of a chatMessage can be updated in application permissions scenarios.
+\nWith the exception of the policyViolation property, all properties of a chatMessage can be updated in delegated permissions scenarios.\nOnly the policyViolation property of a chatMessage can be updated in application permissions scenarios.
 The update only works for chats where members are Microsoft Teams users.
-If one of the participants is using Skype, the operation fails.
-This method doesn't support federation.
+If one of the participants is using Skype, the operation will fail.
+This method does not support federation.
 Only the user in the tenant who sent the message can perform data loss prevention (DLP) updates on the specified chat message.
 
 ### [Update-MgTeamPrimaryChannelMessageReply](Update-MgTeamPrimaryChannelMessageReply.md)
@@ -2063,9 +2055,6 @@ Update the navigation property members in teams
 ### [Update-MgTeamwork](Update-MgTeamwork.md)
 Update teamwork
 
-### [Update-MgTeamworkDeletedChat](Update-MgTeamworkDeletedChat.md)
-Update the navigation property deletedChats in teamwork
-
 ### [Update-MgTeamworkDeletedTeam](Update-MgTeamworkDeletedTeam.md)
 Update the navigation property deletedTeams in teamwork
 
@@ -2078,10 +2067,10 @@ This operation is allowed only for channels with a membershipType value of priva
 
 ### [Update-MgTeamworkDeletedTeamChannelMessage](Update-MgTeamworkDeletedTeamChannelMessage.md)
 Update a chatMessage object.
-\nExcept for the policyViolation property, all properties of a chatMessage can be updated in delegated permissions scenarios.\nOnly the policyViolation property of a chatMessage can be updated in application permissions scenarios.
+\nWith the exception of the policyViolation property, all properties of a chatMessage can be updated in delegated permissions scenarios.\nOnly the policyViolation property of a chatMessage can be updated in application permissions scenarios.
 The update only works for chats where members are Microsoft Teams users.
-If one of the participants is using Skype, the operation fails.
-This method doesn't support federation.
+If one of the participants is using Skype, the operation will fail.
+This method does not support federation.
 Only the user in the tenant who sent the message can perform data loss prevention (DLP) updates on the specified chat message.
 
 ### [Update-MgTeamworkDeletedTeamChannelMessageHostedContent](Update-MgTeamworkDeletedTeamChannelMessageHostedContent.md)

@@ -18,31 +18,28 @@ If an organizer adds an attachment to a meeting event, the organizer can subsequ
 ```
 New-MgBetaUserEventExceptionOccurrenceInstanceAttachment -EventId <String> -EventId1 <String>
  -EventId2 <String> -UserId <String> [-AdditionalProperties <Hashtable>] [-ContentType <String>]
- [-Id <String>] [-IsInline] [-LastModifiedDateTime <DateTime>] [-Name <String>]
- [-ResponseHeadersVariable <String>] [-Size <Int32>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Id <String>] [-IsInline] [-LastModifiedDateTime <DateTime>] [-Name <String>] [-Size <Int32>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaUserEventExceptionOccurrenceInstanceAttachment -EventId <String> -EventId1 <String>
- -EventId2 <String> -UserId <String> -BodyParameter <IMicrosoftGraphAttachment>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -EventId2 <String> -UserId <String> -BodyParameter <IMicrosoftGraphAttachment> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaUserEventExceptionOccurrenceInstanceAttachment -InputObject <ICalendarIdentity>
- -BodyParameter <IMicrosoftGraphAttachment> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphAttachment> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgBetaUserEventExceptionOccurrenceInstanceAttachment -InputObject <ICalendarIdentity>
  [-AdditionalProperties <Hashtable>] [-ContentType <String>] [-Id <String>] [-IsInline]
- [-LastModifiedDateTime <DateTime>] [-Name <String>] [-ResponseHeadersVariable <String>] [-Size <Int32>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-LastModifiedDateTime <DateTime>] [-Name <String>] [-Size <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -159,21 +156,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -253,21 +235,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Size
 The length of the attachment in bytes.
 
@@ -337,8 +304,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.ICalendarIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAttachment
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

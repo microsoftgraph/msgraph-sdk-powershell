@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.DeviceManagement.Administration
-Module Guid: e8d08517-d9da-4580-8807-d67428dd8f86
+Module Guid: b2a58f7f-c7d7-47f4-bafd-75065c2c3bbe
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.devicemanagement.administration
 Help Version: 1.0.0.0
 Locale: en-US
@@ -113,57 +113,6 @@ Get the number of the resource
 ### [Get-MgDeviceManagementTermAndConditionCount](Get-MgDeviceManagementTermAndConditionCount.md)
 Get the number of the resource
 
-### [Get-MgDeviceManagementVirtualEndpoint](Get-MgDeviceManagementVirtualEndpoint.md)
-Get virtualEndpoint from deviceManagement
-
-### [Get-MgDeviceManagementVirtualEndpointAuditEvent](Get-MgDeviceManagementVirtualEndpointAuditEvent.md)
-Get auditEvents from deviceManagement
-
-### [Get-MgDeviceManagementVirtualEndpointAuditEventCount](Get-MgDeviceManagementVirtualEndpointAuditEventCount.md)
-Get the number of the resource
-
-### [Get-MgDeviceManagementVirtualEndpointProvisioningPolicy](Get-MgDeviceManagementVirtualEndpointProvisioningPolicy.md)
-Get provisioningPolicies from deviceManagement
-
-### [Get-MgDeviceManagementVirtualEndpointProvisioningPolicyAssignment](Get-MgDeviceManagementVirtualEndpointProvisioningPolicyAssignment.md)
-Get assignments from deviceManagement
-
-### [Get-MgDeviceManagementVirtualEndpointProvisioningPolicyAssignmentAssignedUser](Get-MgDeviceManagementVirtualEndpointProvisioningPolicyAssignmentAssignedUser.md)
-Get assignedUsers from deviceManagement
-
-### [Get-MgDeviceManagementVirtualEndpointProvisioningPolicyAssignmentAssignedUserCount](Get-MgDeviceManagementVirtualEndpointProvisioningPolicyAssignmentAssignedUserCount.md)
-Get the number of the resource
-
-### [Get-MgDeviceManagementVirtualEndpointProvisioningPolicyAssignmentAssignedUserMailboxSetting](Get-MgDeviceManagementVirtualEndpointProvisioningPolicyAssignmentAssignedUserMailboxSetting.md)
-Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
-Returned only on $select.
-
-### [Get-MgDeviceManagementVirtualEndpointProvisioningPolicyAssignmentAssignedUserServiceProvisioningError](Get-MgDeviceManagementVirtualEndpointProvisioningPolicyAssignmentAssignedUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
-
-### [Get-MgDeviceManagementVirtualEndpointProvisioningPolicyAssignmentAssignedUserServiceProvisioningErrorCount](Get-MgDeviceManagementVirtualEndpointProvisioningPolicyAssignmentAssignedUserServiceProvisioningErrorCount.md)
-Get the number of the resource
-
-### [Get-MgDeviceManagementVirtualEndpointProvisioningPolicyAssignmentCount](Get-MgDeviceManagementVirtualEndpointProvisioningPolicyAssignmentCount.md)
-Get the number of the resource
-
-### [Get-MgDeviceManagementVirtualEndpointProvisioningPolicyCount](Get-MgDeviceManagementVirtualEndpointProvisioningPolicyCount.md)
-Get the number of the resource
-
-### [Get-MgDeviceManagementVirtualEndpointUserSetting](Get-MgDeviceManagementVirtualEndpointUserSetting.md)
-Get userSettings from deviceManagement
-
-### [Get-MgDeviceManagementVirtualEndpointUserSettingAssignment](Get-MgDeviceManagementVirtualEndpointUserSettingAssignment.md)
-Get assignments from deviceManagement
-
-### [Get-MgDeviceManagementVirtualEndpointUserSettingAssignmentCount](Get-MgDeviceManagementVirtualEndpointUserSettingAssignmentCount.md)
-Get the number of the resource
-
-### [Get-MgDeviceManagementVirtualEndpointUserSettingCount](Get-MgDeviceManagementVirtualEndpointUserSettingCount.md)
-Get the number of the resource
-
 ### [New-MgDeviceManagementAuditEvent](New-MgDeviceManagementAuditEvent.md)
 Create a new auditEvent object.
 
@@ -208,18 +157,6 @@ Create a new termsAndConditionsAcceptanceStatus object.
 
 ### [New-MgDeviceManagementTermAndConditionAssignment](New-MgDeviceManagementTermAndConditionAssignment.md)
 Create a new termsAndConditionsAssignment object.
-
-### [New-MgDeviceManagementVirtualEndpointProvisioningPolicy](New-MgDeviceManagementVirtualEndpointProvisioningPolicy.md)
-Create new navigation property to provisioningPolicies for deviceManagement
-
-### [New-MgDeviceManagementVirtualEndpointProvisioningPolicyAssignment](New-MgDeviceManagementVirtualEndpointProvisioningPolicyAssignment.md)
-Create new navigation property to assignments for deviceManagement
-
-### [New-MgDeviceManagementVirtualEndpointUserSetting](New-MgDeviceManagementVirtualEndpointUserSetting.md)
-Create new navigation property to userSettings for deviceManagement
-
-### [New-MgDeviceManagementVirtualEndpointUserSettingAssignment](New-MgDeviceManagementVirtualEndpointUserSettingAssignment.md)
-Create new navigation property to assignments for deviceManagement
 
 ### [Remove-MgDeviceManagementApplePushNotificationCertificate](Remove-MgDeviceManagementApplePushNotificationCertificate.md)
 Delete navigation property applePushNotificationCertificate for deviceManagement
@@ -269,18 +206,6 @@ Deletes a termsAndConditionsAcceptanceStatus.
 ### [Remove-MgDeviceManagementTermAndConditionAssignment](Remove-MgDeviceManagementTermAndConditionAssignment.md)
 Deletes a termsAndConditionsAssignment.
 
-### [Remove-MgDeviceManagementVirtualEndpointProvisioningPolicy](Remove-MgDeviceManagementVirtualEndpointProvisioningPolicy.md)
-Delete navigation property provisioningPolicies for deviceManagement
-
-### [Remove-MgDeviceManagementVirtualEndpointProvisioningPolicyAssignment](Remove-MgDeviceManagementVirtualEndpointProvisioningPolicyAssignment.md)
-Delete navigation property assignments for deviceManagement
-
-### [Remove-MgDeviceManagementVirtualEndpointUserSetting](Remove-MgDeviceManagementVirtualEndpointUserSetting.md)
-Delete navigation property userSettings for deviceManagement
-
-### [Remove-MgDeviceManagementVirtualEndpointUserSettingAssignment](Remove-MgDeviceManagementVirtualEndpointUserSettingAssignment.md)
-Delete navigation property assignments for deviceManagement
-
 ### [Update-MgDeviceManagementApplePushNotificationCertificate](Update-MgDeviceManagementApplePushNotificationCertificate.md)
 Update the properties of a applePushNotificationCertificate object.
 
@@ -312,7 +237,7 @@ Update the properties of a resourceOperation object.
 Update the properties of a deviceAndAppManagementRoleAssignment object.
 
 ### [Update-MgDeviceManagementRoleDefinition](Update-MgDeviceManagementRoleDefinition.md)
-Update the properties of a deviceAndAppManagementRoleDefinition object.
+Update the properties of a roleDefinition object.
 
 ### [Update-MgDeviceManagementRoleDefinitionRoleAssignment](Update-MgDeviceManagementRoleDefinitionRoleAssignment.md)
 Update the properties of a roleAssignment object.
@@ -328,19 +253,4 @@ Update the properties of a termsAndConditionsAcceptanceStatus object.
 
 ### [Update-MgDeviceManagementTermAndConditionAssignment](Update-MgDeviceManagementTermAndConditionAssignment.md)
 Update the properties of a termsAndConditionsAssignment object.
-
-### [Update-MgDeviceManagementVirtualEndpointProvisioningPolicy](Update-MgDeviceManagementVirtualEndpointProvisioningPolicy.md)
-Update the navigation property provisioningPolicies in deviceManagement
-
-### [Update-MgDeviceManagementVirtualEndpointProvisioningPolicyAssignment](Update-MgDeviceManagementVirtualEndpointProvisioningPolicyAssignment.md)
-Update the navigation property assignments in deviceManagement
-
-### [Update-MgDeviceManagementVirtualEndpointProvisioningPolicyAssignmentAssignedUserMailboxSetting](Update-MgDeviceManagementVirtualEndpointProvisioningPolicyAssignmentAssignedUserMailboxSetting.md)
-Update property mailboxSettings value.
-
-### [Update-MgDeviceManagementVirtualEndpointUserSetting](Update-MgDeviceManagementVirtualEndpointUserSetting.md)
-Update the navigation property userSettings in deviceManagement
-
-### [Update-MgDeviceManagementVirtualEndpointUserSettingAssignment](Update-MgDeviceManagementVirtualEndpointUserSettingAssignment.md)
-Update the navigation property assignments in deviceManagement
 

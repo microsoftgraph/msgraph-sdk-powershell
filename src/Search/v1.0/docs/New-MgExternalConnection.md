@@ -18,16 +18,16 @@ New-MgExternalConnection [-ActivitySettings <IMicrosoftGraphExternalConnectorsAc
  [-AdditionalProperties <Hashtable>] [-Configuration <IMicrosoftGraphExternalConnectorsConfiguration>]
  [-ConnectorId <String>] [-Description <String>] [-Groups <IMicrosoftGraphExternalConnectorsExternalGroup[]>]
  [-Id <String>] [-Items <IMicrosoftGraphExternalConnectorsExternalItem[]>] [-Name <String>]
- [-Operations <IMicrosoftGraphExternalConnectorsConnectionOperation[]>] [-ResponseHeadersVariable <String>]
+ [-Operations <IMicrosoftGraphExternalConnectorsConnectionOperation[]>]
  [-Schema <IMicrosoftGraphExternalConnectorsSchema>]
- [-SearchSettings <IMicrosoftGraphExternalConnectorsSearchSettings>] [-State <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-SearchSettings <IMicrosoftGraphExternalConnectorsSearchSettings>] [-State <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgExternalConnection -BodyParameter <IMicrosoftGraphExternalConnectorsExternalConnection>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgExternalConnection -BodyParameter <IMicrosoftGraphExternalConnectorsExternalConnection> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -161,21 +161,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -233,21 +218,6 @@ To construct, see NOTES section for OPERATIONS properties and create a hash tabl
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExternalConnectorsConnectionOperation[]
 Parameter Sets: CreateExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -340,8 +310,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExternalConnectorsExternalConnection
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

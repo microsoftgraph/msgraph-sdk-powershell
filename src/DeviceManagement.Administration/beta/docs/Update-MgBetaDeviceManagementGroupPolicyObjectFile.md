@@ -17,22 +17,19 @@ Update the navigation property groupPolicyObjectFiles in deviceManagement
 Update-MgBetaDeviceManagementGroupPolicyObjectFile -GroupPolicyObjectFileId <String>
  [-AdditionalProperties <Hashtable>] [-Content <String>] [-CreatedDateTime <DateTime>]
  [-GroupPolicyObjectId <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>]
- [-OuDistinguishedName <String>] [-ResponseHeadersVariable <String>] [-RoleScopeTagIds <String[]>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-OuDistinguishedName <String>] [-RoleScopeTagIds <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaDeviceManagementGroupPolicyObjectFile -GroupPolicyObjectFileId <String>
- -BodyParameter <IMicrosoftGraphGroupPolicyObjectFile> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphGroupPolicyObjectFile> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaDeviceManagementGroupPolicyObjectFile -InputObject <IDeviceManagementAdministrationIdentity>
- -BodyParameter <IMicrosoftGraphGroupPolicyObjectFile> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphGroupPolicyObjectFile> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -40,8 +37,7 @@ Update-MgBetaDeviceManagementGroupPolicyObjectFile -InputObject <IDeviceManageme
 Update-MgBetaDeviceManagementGroupPolicyObjectFile -InputObject <IDeviceManagementAdministrationIdentity>
  [-AdditionalProperties <Hashtable>] [-Content <String>] [-CreatedDateTime <DateTime>]
  [-GroupPolicyObjectId <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>]
- [-OuDistinguishedName <String>] [-ResponseHeadersVariable <String>] [-RoleScopeTagIds <String[]>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-OuDistinguishedName <String>] [-RoleScopeTagIds <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -156,21 +152,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -233,21 +214,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -RoleScopeTagIds
 The list of scope tags for the configuration.
 
@@ -302,8 +268,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyObjectFile
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

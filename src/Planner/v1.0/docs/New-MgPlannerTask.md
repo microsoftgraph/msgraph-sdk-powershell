@@ -24,14 +24,13 @@ New-MgPlannerTask [-ActiveChecklistItemCount <Int32>] [-AdditionalProperties <Ha
  [-Details <IMicrosoftGraphPlannerTaskDetails>] [-DueDateTime <DateTime>] [-HasDescription] [-Id <String>]
  [-OrderHint <String>] [-PercentComplete <Int32>] [-PlanId <String>] [-PreviewType <String>]
  [-Priority <Int32>] [-ProgressTaskBoardFormat <IMicrosoftGraphPlannerProgressTaskBoardTaskFormat>]
- [-ReferenceCount <Int32>] [-ResponseHeadersVariable <String>] [-StartDateTime <DateTime>] [-Title <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ReferenceCount <Int32>] [-StartDateTime <DateTime>] [-Title <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgPlannerTask -BodyParameter <IMicrosoftGraphPlannerTask> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgPlannerTask -BodyParameter <IMicrosoftGraphPlannerTask> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -350,21 +349,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -492,21 +476,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -StartDateTime
 Date and time at which the task starts.
 The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
@@ -576,8 +545,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerTask
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

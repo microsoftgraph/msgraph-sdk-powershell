@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Users.Actions
-Module Guid: 77632d11-4395-4c95-b785-a0d13d24b17d
+Module Guid: 62fb0f4f-929e-435d-bfbe-7147b58d5a9b
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.users.actions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -23,9 +23,6 @@ Add or sync a copy of a published content type from the content type hub to a ta
 This method is part of the content type publishing changes to optimize the syncing of published content types to sites and lists, effectively switching from a 'push everywhere' to 'pull as needed' approach.
 The method allows users to pull content types directly from the content type hub to a site or list.
 For more information, see getCompatibleHubContentTypes and the blog post Syntex Product Updates – August 2021.
-
-### [Add-MgBetaUserFollowedSite](Add-MgBetaUserFollowedSite.md)
-Follow a user's site or multiple sites.
 
 ### [Add-MgBetaUserPendingAccessReviewInstanceDecision](Add-MgBetaUserPendingAccessReviewInstanceDecision.md)
 Apply review decisions on an accessReviewInstance if the decisions were not applied automatically because the autoApplyDecisionsEnabled property is false in the review's accessReviewScheduleSettings.
@@ -161,7 +158,8 @@ Locate a device
 
 ### [Find-MgBetaUserMeetingTime](Find-MgBetaUserMeetingTime.md)
 Suggest meeting times and locations based on organizer and attendee availability, and time or location constraints specified as parameters.
-If findMeetingTimes cannot return any meeting suggestions, the response would indicate a reason in the emptySuggestionsReason property.\nBased on this value, you can better adjust the parameters and call findMeetingTimes again.
+If findMeetingTimes cannot return any meeting suggestions, the response would indicate a reason in the emptySuggestionsReason property.
+\nBased on this value, you can better adjust the parameters and call findMeetingTimes again.
 The algorithm used to suggest meeting times and locations undergoes fine-tuning from time to time.
 In scenarios like test environments where the input parameters and calendar data remain static, expect that the suggested results may differ over time.
 
@@ -199,8 +197,7 @@ Retrieve a list of recently deleted application and group objects owned by the s
 This API returns up to 1,000 deleted objects owned by the user, sorted by ID, and doesn't support pagination.
 
 ### [Get-MgBetaUserPasswordSingleSignOnCredential](Get-MgBetaUserPasswordSingleSignOnCredential.md)
-Get the list of password-based single sign-on credentials for a given user.
-This API returns the encrypted passwords as null or empty strings.
+Invoke action getPasswordSingleSignOnCredentials
 
 ### [Grant-MgBetaUserDriveItemPermission](Grant-MgBetaUserDriveItemPermission.md)
 Grant users access to a link represented by a [permission][].
@@ -234,9 +231,6 @@ For more information on how to propose a time, and how to receive and accept a n
 Allows the acceptance of recommendations on all accessReviewInstanceDecisionItem objects that haven't been reviewed for an accessReviewInstance object for which the calling user is a reviewer.
 Recommendations are generated if recommendationsEnabled is true on the accessReviewScheduleDefinition object.
 If there isn't a recommendation on an accessReviewInstanceDecisionItem object no decision will be recorded.
-
-### [Invoke-MgBetaArchiveUserPlannerPlan](Invoke-MgBetaArchiveUserPlannerPlan.md)
-Invoke action archive
 
 ### [Invoke-MgBetaBatchUserPendingAccessReviewInstanceRecordDecision](Invoke-MgBetaBatchUserPendingAccessReviewInstanceRecordDecision.md)
 Enables reviewers to review all accessReviewInstanceDecisionItem objects in batches by using principalId, resourceId, or neither.
@@ -332,13 +326,13 @@ Follow a driveItem.
 Follow a driveItem.
 
 ### [Invoke-MgBetaForwardUserEvent](Invoke-MgBetaForwardUserEvent.md)
-This action allows the organizer or attendee of a meeting event to forward the\nmeeting request to a new recipient.
-If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action\nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's\ncopy of the meeting event.
+This action allows the organizer or attendee of a meeting event to forward the \nmeeting request to a new recipient.
+If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action \nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's \ncopy of the meeting event.
 This convenience is not available when forwarding from an Outlook.com account.
 
 ### [Invoke-MgBetaForwardUserEventInstance](Invoke-MgBetaForwardUserEventInstance.md)
-This action allows the organizer or attendee of a meeting event to forward the\nmeeting request to a new recipient.
-If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action\nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's\ncopy of the meeting event.
+This action allows the organizer or attendee of a meeting event to forward the \nmeeting request to a new recipient.
+If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action \nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's \ncopy of the meeting event.
 This convenience is not available when forwarding from an Outlook.com account.
 
 ### [Invoke-MgBetaForwardUserMailFolderChildFolderMessage](Invoke-MgBetaForwardUserMailFolderChildFolderMessage.md)
@@ -373,9 +367,6 @@ Unhide a chat for a user.
 
 ### [Invoke-MgBetaHasUserDeviceEnrollmentConfigurationPayloadLink](Invoke-MgBetaHasUserDeviceEnrollmentConfigurationPayloadLink.md)
 Invoke action hasPayloadLinks
-
-### [Invoke-MgBetaInitiateUserManagedDeviceAttestation](Invoke-MgBetaInitiateUserManagedDeviceAttestation.md)
-Perform Device Attestation
 
 ### [Invoke-MgBetaInitiateUserManagedDeviceMobileDeviceManagementKeyRecovery](Invoke-MgBetaInitiateUserManagedDeviceMobileDeviceManagementKeyRecovery.md)
 Perform MDM key recovery and TPM attestation
@@ -561,9 +552,6 @@ Translate identifiers of Outlook-related resources between formats.
 Troubleshoot a specific Cloud PC.
 Use this API to check the health status of the Cloud PC and the session host.
 
-### [Invoke-MgBetaUnarchiveUserPlannerPlan](Invoke-MgBetaUnarchiveUserPlannerPlan.md)
-Invoke action unarchive
-
 ### [Invoke-MgBetaUnfollowUserDriveItem](Invoke-MgBetaUnfollowUserDriveItem.md)
 Unfollow a driveItem.
 
@@ -631,8 +619,7 @@ Move a message to another folder within the specified user's mailbox.
 This creates a new copy of the message in the destination folder and removes the original message.
 
 ### [Move-MgBetaUserPlannerPlanToContainer](Move-MgBetaUserPlannerPlanToContainer.md)
-Move a planner plan object from one planner plan container to another.
-Planner plans can only be moved from a user container to a group container.
+Invoke action moveToContainer
 
 ### [New-MgBetaUserCloudPcSnapshot](New-MgBetaUserCloudPcSnapshot.md)
 Invoke action createSnapshot
@@ -860,9 +847,6 @@ Invoke action permanentDelete
 ### [Remove-MgBetaUserDriveRootPermanent](Remove-MgBetaUserDriveRootPermanent.md)
 Invoke action permanentDelete
 
-### [Remove-MgBetaUserFollowedSite](Remove-MgBetaUserFollowedSite.md)
-Unfollow a user's site or multiple sites.
-
 ### [Remove-MgBetaUserManagedDeviceFirmwareConfigurationInterfaceManagement](Remove-MgBetaUserManagedDeviceFirmwareConfigurationInterfaceManagement.md)
 Remove device from Device Firmware Configuration Interface management
 
@@ -870,7 +854,7 @@ Remove device from Device Firmware Configuration Interface management
 Delete user from shared Apple device
 
 ### [Remove-MgBetaUserPasswordSingleSignOnCredential](Remove-MgBetaUserPasswordSingleSignOnCredential.md)
-Delete the password-based single sign-on credentials for a given user to a given service principal.
+Invoke action deletePasswordSingleSignOnCredentials
 
 ### [Rename-MgBetaUserCloudPc](Rename-MgBetaUserCloudPc.md)
 Rename a specific Cloud PC.
@@ -883,12 +867,7 @@ Change the account type of the user on a specific Cloud PC.
 Request remote assistance
 
 ### [Reset-MgBetaUserAuthenticationMethodPassword](Reset-MgBetaUserAuthenticationMethodPassword.md)
-Initiate a reset for the password associated with a password authentication method object.
-This can only be done by an administrator with appropriate permissions and can't be performed on a user's own account.
-This flow writes the new password to Microsoft Entra ID and pushes it to on-premises Active Directory if configured using password writeback.
-The admin can either provide a new password or have the system generate one.
-The user is prompted to change their password on their next sign in.
-This reset is a long-running operation and will return a Location header with a link where the caller can periodically check for the status of the reset operation.
+Invoke action resetPassword
 
 ### [Reset-MgBetaUserManagedDevicePasscode](Reset-MgBetaUserManagedDevicePasscode.md)
 Reset passcode
@@ -998,23 +977,11 @@ The draft message can be a new message draft, reply draft, reply-all draft, or a
 This method saves the message in the Sent Items folder.
 Alternatively, send a new message in a single operation.
 
-### [Send-MgBetaUserOnlineMeetingJoinWebUrlVirtualAppointmentReminderSm](Send-MgBetaUserOnlineMeetingJoinWebUrlVirtualAppointmentReminderSm.md)
-Send an SMS reminder to external attendees for a Teams Virtual Appointment.
-This feature requires Teams Premium and attendees must have a valid United States phone number to receive SMS notifications.
-
-### [Send-MgBetaUserOnlineMeetingJoinWebUrlVirtualAppointmentSm](Send-MgBetaUserOnlineMeetingJoinWebUrlVirtualAppointmentSm.md)
-Send an SMS notification to external attendees when a Teams Virtual Appointment is confirmed, rescheduled, or canceled.
-This feature requires Teams Premium.
-Attendees must have a valid United States phone number to receive these SMS notifications.
-
 ### [Send-MgBetaUserOnlineMeetingVirtualAppointmentReminderSm](Send-MgBetaUserOnlineMeetingVirtualAppointmentReminderSm.md)
-Send an SMS reminder to external attendees for a Teams Virtual Appointment.
-This feature requires Teams Premium and attendees must have a valid United States phone number to receive SMS notifications.
+Invoke action sendVirtualAppointmentReminderSms
 
 ### [Send-MgBetaUserOnlineMeetingVirtualAppointmentSm](Send-MgBetaUserOnlineMeetingVirtualAppointmentSm.md)
-Send an SMS notification to external attendees when a Teams Virtual Appointment is confirmed, rescheduled, or canceled.
-This feature requires Teams Premium.
-Attendees must have a valid United States phone number to receive these SMS notifications.
+Invoke action sendVirtualAppointmentSms
 
 ### [Send-MgBetaUserPendingAccessReviewInstanceReminder](Send-MgBetaUserPendingAccessReviewInstanceReminder.md)
 Send a reminder to the reviewers of a currently active accessReviewInstance.

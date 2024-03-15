@@ -16,32 +16,30 @@ Create new navigation property to securityBaselineStates for users
 ```
 New-MgBetaUserManagedDeviceSecurityBaselineState -ManagedDeviceId <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>]
- [-ResponseHeadersVariable <String>] [-SecurityBaselineTemplateId <String>]
- [-SettingStates <IMicrosoftGraphSecurityBaselineSettingState[]>] [-State <SecurityBaselineComplianceState>]
- [-UserPrincipalName <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-SecurityBaselineTemplateId <String>] [-SettingStates <IMicrosoftGraphSecurityBaselineSettingState[]>]
+ [-State <SecurityBaselineComplianceState>] [-UserPrincipalName <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaUserManagedDeviceSecurityBaselineState -ManagedDeviceId <String> -UserId <String>
- -BodyParameter <IMicrosoftGraphSecurityBaselineState> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphSecurityBaselineState> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaUserManagedDeviceSecurityBaselineState -InputObject <IDevicesCorporateManagementIdentity>
- -BodyParameter <IMicrosoftGraphSecurityBaselineState> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphSecurityBaselineState> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgBetaUserManagedDeviceSecurityBaselineState -InputObject <IDevicesCorporateManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>]
- [-ResponseHeadersVariable <String>] [-SecurityBaselineTemplateId <String>]
- [-SettingStates <IMicrosoftGraphSecurityBaselineSettingState[]>] [-State <SecurityBaselineComplianceState>]
- [-UserPrincipalName <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-SecurityBaselineTemplateId <String>] [-SettingStates <IMicrosoftGraphSecurityBaselineSettingState[]>]
+ [-State <SecurityBaselineComplianceState>] [-UserPrincipalName <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -111,21 +109,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -167,21 +150,6 @@ Parameter Sets: Create, CreateExpanded
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -304,8 +272,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityBaselineState
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityBaselineState
@@ -336,8 +302,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[SettingId <String>]`: The setting id guid
     - `[SettingName <String>]`: The setting name that is being reported
     - `[SourcePolicies <IMicrosoftGraphSettingSource[]>]`: The policies that contribute to this setting instance
-      - `[DisplayName <String>]`: 
-      - `[Id <String>]`: 
+      - `[DisplayName <String>]`: Not yet documented
+      - `[Id <String>]`: Not yet documented
       - `[SourceType <String>]`: settingSourceType
     - `[State <SecurityBaselineComplianceState?>]`: Security Baseline Compliance State
   - `[State <SecurityBaselineComplianceState?>]`: Security Baseline Compliance State
@@ -425,8 +391,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[SettingId <String>]`: The setting id guid
   - `[SettingName <String>]`: The setting name that is being reported
   - `[SourcePolicies <IMicrosoftGraphSettingSource[]>]`: The policies that contribute to this setting instance
-    - `[DisplayName <String>]`: 
-    - `[Id <String>]`: 
+    - `[DisplayName <String>]`: Not yet documented
+    - `[Id <String>]`: Not yet documented
     - `[SourceType <String>]`: settingSourceType
   - `[State <SecurityBaselineComplianceState?>]`: Security Baseline Compliance State
 

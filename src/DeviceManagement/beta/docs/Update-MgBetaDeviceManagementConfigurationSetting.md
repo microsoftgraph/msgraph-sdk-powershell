@@ -21,25 +21,23 @@ Update-MgBetaDeviceManagementConfigurationSetting -DeviceManagementConfiguration
  [-InfoUrls <String[]>] [-Keywords <String[]>] [-Name <String>]
  [-Occurrence <IMicrosoftGraphDeviceManagementConfigurationSettingOccurrence>] [-OffsetUri <String>]
  [-ReferredSettingInformationList <IMicrosoftGraphDeviceManagementConfigurationReferredSettingInformation[]>]
- [-ResponseHeadersVariable <String>] [-RootDefinitionId <String>]
- [-SettingUsage <DeviceManagementConfigurationSettingUsage>]
+ [-RootDefinitionId <String>] [-SettingUsage <DeviceManagementConfigurationSettingUsage>]
  [-UxBehavior <DeviceManagementConfigurationControlType>] [-Version <String>]
- [-Visibility <DeviceManagementConfigurationSettingVisibility>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Visibility <DeviceManagementConfigurationSettingVisibility>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaDeviceManagementConfigurationSetting -DeviceManagementConfigurationSettingDefinitionId <String>
- -BodyParameter <IMicrosoftGraphDeviceManagementConfigurationSettingDefinition>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphDeviceManagementConfigurationSettingDefinition> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaDeviceManagementConfigurationSetting -InputObject <IDeviceManagementIdentity>
- -BodyParameter <IMicrosoftGraphDeviceManagementConfigurationSettingDefinition>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphDeviceManagementConfigurationSettingDefinition> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -51,11 +49,9 @@ Update-MgBetaDeviceManagementConfigurationSetting -InputObject <IDeviceManagemen
  [-InfoUrls <String[]>] [-Keywords <String[]>] [-Name <String>]
  [-Occurrence <IMicrosoftGraphDeviceManagementConfigurationSettingOccurrence>] [-OffsetUri <String>]
  [-ReferredSettingInformationList <IMicrosoftGraphDeviceManagementConfigurationReferredSettingInformation[]>]
- [-ResponseHeadersVariable <String>] [-RootDefinitionId <String>]
- [-SettingUsage <DeviceManagementConfigurationSettingUsage>]
+ [-RootDefinitionId <String>] [-SettingUsage <DeviceManagementConfigurationSettingUsage>]
  [-UxBehavior <DeviceManagementConfigurationControlType>] [-Version <String>]
- [-Visibility <DeviceManagementConfigurationSettingVisibility>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Visibility <DeviceManagementConfigurationSettingVisibility>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -157,7 +153,8 @@ Accept wildcard characters: False
 ```
 
 ### -CategoryId
-Specifies the area group under which the setting is configured in a specified configuration service provider (CSP)
+Specify category in which the setting is under.
+Support $filters.
 
 ```yaml
 Type: System.String
@@ -172,7 +169,7 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-Description of the item
+Description of the setting.
 
 ```yaml
 Type: System.String
@@ -202,7 +199,8 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-Display name of the item
+Name of the setting.
+For example: Allow Toast.
 
 ```yaml
 Type: System.String
@@ -216,23 +214,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -HelpText
-Help text of the item
+Help text of the setting.
+Give more details of the setting.
 
 ```yaml
 Type: System.String
@@ -263,7 +247,7 @@ Accept wildcard characters: False
 ```
 
 ### -InfoUrls
-List of links more info for the setting can be found at
+List of links more info for the setting can be found at.
 
 ```yaml
 Type: System.String[]
@@ -370,23 +354,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -RootDefinitionId
-Root setting definition if the setting is a child setting.
+Root setting definition id if the setting is a child setting.
 
 ```yaml
 Type: System.String
@@ -500,8 +469,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementConfigurationSettingDefinition
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementConfigurationSettingDefinition
@@ -533,11 +500,11 @@ To create the parameters described below, construct a hash table containing the 
     - `[Platform <DeviceManagementConfigurationPlatforms?>]`: Supported platform types.
     - `[Technologies <DeviceManagementConfigurationTechnologies?>]`: Describes which technology this setting can be deployed with
   - `[BaseUri <String>]`: Base CSP Path
-  - `[CategoryId <String>]`: Specifies the area group under which the setting is configured in a specified configuration service provider (CSP)
-  - `[Description <String>]`: Description of the item
-  - `[DisplayName <String>]`: Display name of the item
-  - `[HelpText <String>]`: Help text of the item
-  - `[InfoUrls <String[]>]`: List of links more info for the setting can be found at
+  - `[CategoryId <String>]`: Specify category in which the setting is under. Support $filters.
+  - `[Description <String>]`: Description of the setting.
+  - `[DisplayName <String>]`: Name of the setting. For example: Allow Toast.
+  - `[HelpText <String>]`: Help text of the setting. Give more details of the setting.
+  - `[InfoUrls <String[]>]`: List of links more info for the setting can be found at.
   - `[Keywords <String[]>]`: Tokens which to search settings on
   - `[Name <String>]`: Name of the item
   - `[Occurrence <IMicrosoftGraphDeviceManagementConfigurationSettingOccurrence>]`: deviceManagementConfigurationSettingOccurrence
@@ -547,7 +514,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[OffsetUri <String>]`: Offset CSP Path from Base
   - `[ReferredSettingInformationList <IMicrosoftGraphDeviceManagementConfigurationReferredSettingInformation[]>]`: List of referred setting information.
     - `[SettingDefinitionId <String>]`: Setting definition id that is being referred to a setting. Applicable for reusable setting
-  - `[RootDefinitionId <String>]`: Root setting definition if the setting is a child setting.
+  - `[RootDefinitionId <String>]`: Root setting definition id if the setting is a child setting.
   - `[SettingUsage <DeviceManagementConfigurationSettingUsage?>]`: Supported setting types
   - `[UxBehavior <DeviceManagementConfigurationControlType?>]`: Setting control type representation in the UX
   - `[Version <String>]`: Item Version
@@ -633,7 +600,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[MacOSSoftwareUpdateCategorySummaryId <String>]`: The unique identifier of macOSSoftwareUpdateCategorySummary
   - `[MacOSSoftwareUpdateStateSummaryId <String>]`: The unique identifier of macOSSoftwareUpdateStateSummary
   - `[MalwareStateForWindowsDeviceId <String>]`: The unique identifier of malwareStateForWindowsDevice
-  - `[ManagedDeviceCleanupRuleId <String>]`: The unique identifier of managedDeviceCleanupRule
   - `[ManagedDeviceEncryptionStateId <String>]`: The unique identifier of managedDeviceEncryptionState
   - `[ManagedDeviceId <String>]`: The unique identifier of managedDevice
   - `[ManagedDeviceMobileAppConfigurationStateId <String>]`: The unique identifier of managedDeviceMobileAppConfigurationState

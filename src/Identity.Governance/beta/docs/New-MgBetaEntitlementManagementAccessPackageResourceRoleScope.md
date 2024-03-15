@@ -20,22 +20,19 @@ New-MgBetaEntitlementManagementAccessPackageResourceRoleScope -AccessPackageId <
  [-AccessPackageResourceRole <IMicrosoftGraphAccessPackageResourceRole>]
  [-AccessPackageResourceScope <IMicrosoftGraphAccessPackageResourceScope>] [-AdditionalProperties <Hashtable>]
  [-CreatedBy <String>] [-CreatedDateTime <DateTime>] [-Id <String>] [-ModifiedBy <String>]
- [-ModifiedDateTime <DateTime>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-ModifiedDateTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaEntitlementManagementAccessPackageResourceRoleScope -AccessPackageId <String>
- -BodyParameter <IMicrosoftGraphAccessPackageResourceRoleScope> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphAccessPackageResourceRoleScope> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaEntitlementManagementAccessPackageResourceRoleScope -InputObject <IIdentityGovernanceIdentity>
- -BodyParameter <IMicrosoftGraphAccessPackageResourceRoleScope> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphAccessPackageResourceRoleScope> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -44,8 +41,7 @@ New-MgBetaEntitlementManagementAccessPackageResourceRoleScope -InputObject <IIde
  [-AccessPackageResourceRole <IMicrosoftGraphAccessPackageResourceRole>]
  [-AccessPackageResourceScope <IMicrosoftGraphAccessPackageResourceScope>] [-AdditionalProperties <Hashtable>]
  [-CreatedBy <String>] [-CreatedDateTime <DateTime>] [-Id <String>] [-ModifiedBy <String>]
- [-ModifiedDateTime <DateTime>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-ModifiedDateTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -191,21 +187,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -269,21 +250,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
@@ -323,8 +289,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessPackageResourceRoleScope
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 
@@ -384,10 +348,10 @@ To create the parameters described below, construct a hash table containing the 
       - `[IsEditable <Boolean?>]`: Specifies whether or not an existing attribute value can be edited by the requester.
       - `[IsPersistedOnAssignmentRemoval <Boolean?>]`: Specifies whether the attribute will remain in the end system after an assignment ends.
     - `[Description <String>]`: A description for the resource.
-    - `[DisplayName <String>]`: The display name of the resource, such as the application name, group name, or site name.
+    - `[DisplayName <String>]`: The display name of the resource, such as the application name, group name or site name.
     - `[IsPendingOnboarding <Boolean?>]`: True if the resource is not yet available for assignment. Read-only.
-    - `[OriginId <String>]`: The unique identifier of the resource in the origin system. In the case of a Microsoft Entra group, originId is the identifier of the group.
-    - `[OriginSystem <String>]`: The type of the resource in the origin system, such as SharePointOnline, AadApplication, or AadGroup.
+    - `[OriginId <String>]`: The unique identifier of the resource in the origin system. In the case of a Microsoft Entra group, this is the identifier of the group.
+    - `[OriginSystem <String>]`: The type of the resource in the origin system, such as SharePointOnline, AadApplication or AadGroup.
     - `[ResourceType <String>]`: The type of the resource, such as Application if it is a Microsoft Entra connected application, or SharePoint Online Site for a SharePoint Online site.
     - `[Url <String>]`: A unique resource locator for the resource, such as the URL for signing a user into an application.
   - `[Description <String>]`: A description for the resource role.
@@ -437,10 +401,10 @@ To create the parameters described below, construct a hash table containing the 
       - `[IsEditable <Boolean?>]`: Specifies whether or not an existing attribute value can be edited by the requester.
       - `[IsPersistedOnAssignmentRemoval <Boolean?>]`: Specifies whether the attribute will remain in the end system after an assignment ends.
     - `[Description <String>]`: A description for the resource.
-    - `[DisplayName <String>]`: The display name of the resource, such as the application name, group name, or site name.
+    - `[DisplayName <String>]`: The display name of the resource, such as the application name, group name or site name.
     - `[IsPendingOnboarding <Boolean?>]`: True if the resource is not yet available for assignment. Read-only.
-    - `[OriginId <String>]`: The unique identifier of the resource in the origin system. In the case of a Microsoft Entra group, originId is the identifier of the group.
-    - `[OriginSystem <String>]`: The type of the resource in the origin system, such as SharePointOnline, AadApplication, or AadGroup.
+    - `[OriginId <String>]`: The unique identifier of the resource in the origin system. In the case of a Microsoft Entra group, this is the identifier of the group.
+    - `[OriginSystem <String>]`: The type of the resource in the origin system, such as SharePointOnline, AadApplication or AadGroup.
     - `[ResourceType <String>]`: The type of the resource, such as Application if it is a Microsoft Entra connected application, or SharePoint Online Site for a SharePoint Online site.
     - `[Url <String>]`: A unique resource locator for the resource, such as the URL for signing a user into an application.
   - `[Description <String>]`: The description of the scope.
@@ -499,10 +463,10 @@ To create the parameters described below, construct a hash table containing the 
         - `[IsEditable <Boolean?>]`: Specifies whether or not an existing attribute value can be edited by the requester.
         - `[IsPersistedOnAssignmentRemoval <Boolean?>]`: Specifies whether the attribute will remain in the end system after an assignment ends.
       - `[Description <String>]`: A description for the resource.
-      - `[DisplayName <String>]`: The display name of the resource, such as the application name, group name, or site name.
+      - `[DisplayName <String>]`: The display name of the resource, such as the application name, group name or site name.
       - `[IsPendingOnboarding <Boolean?>]`: True if the resource is not yet available for assignment. Read-only.
-      - `[OriginId <String>]`: The unique identifier of the resource in the origin system. In the case of a Microsoft Entra group, originId is the identifier of the group.
-      - `[OriginSystem <String>]`: The type of the resource in the origin system, such as SharePointOnline, AadApplication, or AadGroup.
+      - `[OriginId <String>]`: The unique identifier of the resource in the origin system. In the case of a Microsoft Entra group, this is the identifier of the group.
+      - `[OriginSystem <String>]`: The type of the resource in the origin system, such as SharePointOnline, AadApplication or AadGroup.
       - `[ResourceType <String>]`: The type of the resource, such as Application if it is a Microsoft Entra connected application, or SharePoint Online Site for a SharePoint Online site.
       - `[Url <String>]`: A unique resource locator for the resource, such as the URL for signing a user into an application.
     - `[Description <String>]`: A description for the resource role.
@@ -567,7 +531,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[GroupId <String>]`: The unique identifier of group
   - `[IncompatibleAccessPackageId <String>]`: Usage: incompatibleAccessPackageId='{incompatibleAccessPackageId}'
   - `[LongRunningOperationId <String>]`: The unique identifier of longRunningOperation
-  - `[ObjectId <String>]`: Alternate key of accessPackageSubject
   - `[On <String>]`: Usage: on='{on}'
   - `[PermissionsCreepIndexDistributionId <String>]`: The unique identifier of permissionsCreepIndexDistribution
   - `[PermissionsRequestChangeId <String>]`: The unique identifier of permissionsRequestChange

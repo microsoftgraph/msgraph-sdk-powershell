@@ -24,21 +24,20 @@ Update-MgBetaUserProfile -UserId <String> [-Account <IMicrosoftGraphUserAccountI
  [-Notes <IMicrosoftGraphPersonAnnotation[]>] [-Patents <IMicrosoftGraphItemPatent[]>]
  [-Phones <IMicrosoftGraphItemPhone[]>] [-Positions <IMicrosoftGraphWorkPosition[]>]
  [-Projects <IMicrosoftGraphProjectParticipation[]>] [-Publications <IMicrosoftGraphItemPublication[]>]
- [-ResponseHeadersVariable <String>] [-Skills <IMicrosoftGraphSkillProficiency[]>]
- [-WebAccounts <IMicrosoftGraphWebAccount[]>] [-Websites <IMicrosoftGraphPersonWebsite[]>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Skills <IMicrosoftGraphSkillProficiency[]>] [-WebAccounts <IMicrosoftGraphWebAccount[]>]
+ [-Websites <IMicrosoftGraphPersonWebsite[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgBetaUserProfile -UserId <String> -BodyParameter <IMicrosoftGraphProfile>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgBetaUserProfile -UserId <String> -BodyParameter <IMicrosoftGraphProfile> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgBetaUserProfile -InputObject <IPeopleIdentity> -BodyParameter <IMicrosoftGraphProfile>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgBetaUserProfile -InputObject <IPeopleIdentity> -BodyParameter <IMicrosoftGraphProfile> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -53,9 +52,8 @@ Update-MgBetaUserProfile -InputObject <IPeopleIdentity> [-Account <IMicrosoftGra
  [-Notes <IMicrosoftGraphPersonAnnotation[]>] [-Patents <IMicrosoftGraphItemPatent[]>]
  [-Phones <IMicrosoftGraphItemPhone[]>] [-Positions <IMicrosoftGraphWorkPosition[]>]
  [-Projects <IMicrosoftGraphProjectParticipation[]>] [-Publications <IMicrosoftGraphItemPublication[]>]
- [-ResponseHeadersVariable <String>] [-Skills <IMicrosoftGraphSkillProficiency[]>]
- [-WebAccounts <IMicrosoftGraphWebAccount[]>] [-Websites <IMicrosoftGraphPersonWebsite[]>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Skills <IMicrosoftGraphSkillProficiency[]>] [-WebAccounts <IMicrosoftGraphWebAccount[]>]
+ [-Websites <IMicrosoftGraphPersonWebsite[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -219,21 +217,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -413,21 +396,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Skills
 Represents detailed information about skills associated with a user in various services.
 To construct, see NOTES section for SKILLS properties and create a hash table.
@@ -530,8 +498,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphProfile
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPeopleIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

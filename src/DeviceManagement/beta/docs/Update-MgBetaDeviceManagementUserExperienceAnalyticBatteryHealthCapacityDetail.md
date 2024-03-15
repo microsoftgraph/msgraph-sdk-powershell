@@ -16,15 +16,15 @@ Update the navigation property userExperienceAnalyticsBatteryHealthCapacityDetai
 ```
 Update-MgBetaDeviceManagementUserExperienceAnalyticBatteryHealthCapacityDetail [-ActiveDevices <Int32>]
  [-AdditionalProperties <Hashtable>] [-BatteryCapacityFair <Int32>] [-BatteryCapacityGood <Int32>]
- [-BatteryCapacityPoor <Int32>] [-Id <String>] [-LastRefreshedDateTime <DateTime>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-BatteryCapacityPoor <Int32>] [-Id <String>] [-LastRefreshedDateTime <DateTime>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaDeviceManagementUserExperienceAnalyticBatteryHealthCapacityDetail
- -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsBatteryHealthCapacityDetails>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsBatteryHealthCapacityDetails> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -143,21 +143,6 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -181,21 +166,6 @@ Recorded date time of this capacity details instance.
 Type: System.DateTime
 Parameter Sets: UpdateExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -241,8 +211,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsBatteryHealthCapacityDetails
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

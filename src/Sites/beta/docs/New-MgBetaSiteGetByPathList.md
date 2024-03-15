@@ -22,22 +22,21 @@ New-MgBetaSiteGetByPathList -Path <String> -SiteId <String> [-Activities <IMicro
  [-Items <IMicrosoftGraphListItem[]>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
  [-LastModifiedByUser <IMicrosoftGraphUser>] [-LastModifiedDateTime <DateTime>]
  [-List <IMicrosoftGraphListInfo>] [-Name <String>] [-Operations <IMicrosoftGraphRichLongRunningOperation[]>]
- [-ParentReference <IMicrosoftGraphItemReference>] [-ResponseHeadersVariable <String>]
- [-SharepointIds <IMicrosoftGraphSharepointIds>] [-Subscriptions <IMicrosoftGraphSubscription[]>]
- [-System <Hashtable>] [-WebUrl <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ParentReference <IMicrosoftGraphItemReference>] [-SharepointIds <IMicrosoftGraphSharepointIds>]
+ [-Subscriptions <IMicrosoftGraphSubscription[]>] [-System <Hashtable>] [-WebUrl <String>]
+ [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaSiteGetByPathList -Path <String> -SiteId <String> -BodyParameter <IMicrosoftGraphList>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create1
 ```
 New-MgBetaSiteGetByPathList -Path <String> -Path1 <String> -SiteId <String>
- -BodyParameter <IMicrosoftGraphList> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphList> [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateExpanded1
@@ -51,21 +50,20 @@ New-MgBetaSiteGetByPathList -Path <String> -Path1 <String> -SiteId <String>
  [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedByUser <IMicrosoftGraphUser>]
  [-LastModifiedDateTime <DateTime>] [-List <IMicrosoftGraphListInfo>] [-Name <String>]
  [-Operations <IMicrosoftGraphRichLongRunningOperation[]>] [-ParentReference <IMicrosoftGraphItemReference>]
- [-ResponseHeadersVariable <String>] [-SharepointIds <IMicrosoftGraphSharepointIds>]
- [-Subscriptions <IMicrosoftGraphSubscription[]>] [-System <Hashtable>] [-WebUrl <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-SharepointIds <IMicrosoftGraphSharepointIds>] [-Subscriptions <IMicrosoftGraphSubscription[]>]
+ [-System <Hashtable>] [-WebUrl <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaSiteGetByPathList -InputObject <ISitesIdentity> -BodyParameter <IMicrosoftGraphList>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity1
 ```
 New-MgBetaSiteGetByPathList -InputObject <ISitesIdentity> -BodyParameter <IMicrosoftGraphList>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -78,9 +76,9 @@ New-MgBetaSiteGetByPathList -InputObject <ISitesIdentity> [-Activities <IMicroso
  [-Items <IMicrosoftGraphListItem[]>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
  [-LastModifiedByUser <IMicrosoftGraphUser>] [-LastModifiedDateTime <DateTime>]
  [-List <IMicrosoftGraphListInfo>] [-Name <String>] [-Operations <IMicrosoftGraphRichLongRunningOperation[]>]
- [-ParentReference <IMicrosoftGraphItemReference>] [-ResponseHeadersVariable <String>]
- [-SharepointIds <IMicrosoftGraphSharepointIds>] [-Subscriptions <IMicrosoftGraphSubscription[]>]
- [-System <Hashtable>] [-WebUrl <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ParentReference <IMicrosoftGraphItemReference>] [-SharepointIds <IMicrosoftGraphSharepointIds>]
+ [-Subscriptions <IMicrosoftGraphSubscription[]>] [-System <Hashtable>] [-WebUrl <String>]
+ [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded1
@@ -93,9 +91,9 @@ New-MgBetaSiteGetByPathList -InputObject <ISitesIdentity> [-Activities <IMicroso
  [-Items <IMicrosoftGraphListItem[]>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
  [-LastModifiedByUser <IMicrosoftGraphUser>] [-LastModifiedDateTime <DateTime>]
  [-List <IMicrosoftGraphListInfo>] [-Name <String>] [-Operations <IMicrosoftGraphRichLongRunningOperation[]>]
- [-ParentReference <IMicrosoftGraphItemReference>] [-ResponseHeadersVariable <String>]
- [-SharepointIds <IMicrosoftGraphSharepointIds>] [-Subscriptions <IMicrosoftGraphSubscription[]>]
- [-System <Hashtable>] [-WebUrl <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ParentReference <IMicrosoftGraphItemReference>] [-SharepointIds <IMicrosoftGraphSharepointIds>]
+ [-Subscriptions <IMicrosoftGraphSubscription[]>] [-System <Hashtable>] [-WebUrl <String>]
+ [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -507,21 +505,6 @@ Parameter Sets: Create1, CreateExpanded1
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -1272,10 +1255,10 @@ To create the parameters described below, construct a hash table containing the 
             - `[IsRooted <Boolean?>]`: true if device is rooted; false if device is jail-broken. This can only be updated by Intune.
             - `[Kind <String>]`: Form factor of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
             - `[ManagementType <String>]`: Management channel of the device.  This property is set by Intune. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.
-            - `[Manufacturer <String>]`: Manufacturer of the device. Read-only.
+            - `[Manufacturer <String>]`: Manufacturer of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
             - `[MdmAppId <String>]`: Application identifier used to register device into MDM. Read-only. Supports $filter (eq, ne, not, startsWith).
             - `[MemberOf <IMicrosoftGraphDirectoryObject[]>]`: Groups and administrative units that this device is a member of. Read-only. Nullable. Supports $expand.
-            - `[Model <String>]`: Model of the device. Read-only.
+            - `[Model <String>]`: Model of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
             - `[Name <String>]`: Friendly name of the device. Only returned if user signs in with a Microsoft account as part of Project Rome.
             - `[OnPremisesLastSyncDateTime <DateTime?>]`: The last time at which the object was synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Read-only. Supports $filter (eq, ne, not, ge, le, in).
             - `[OnPremisesSecurityIdentifier <String>]`: The on-premises security identifier (SID) for the user who was synchronized from on-premises to the cloud. Read-only. Returned only on $select. Supports $filter (eq).
@@ -1291,7 +1274,7 @@ To create the parameters described below, construct a hash table containing the 
             - `[Status <String>]`: Device is online or offline. Only returned if user signs in with a Microsoft account as part of Project Rome.
             - `[SystemLabels <String[]>]`: List of labels applied to the device by the system. Supports $filter (/$count eq 0, /$count ne 0).
             - `[TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>]`: Groups and administrative units that this device is a member of. This operation is transitive. Supports $expand.
-            - `[TrustType <String>]`: Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Microsoft Entra ID). For more information, see Introduction to device management in Microsoft Entra ID.
+            - `[TrustType <String>]`: Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Microsoft Entra ID). For more details, see Introduction to device management in Microsoft Entra ID.
             - `[UsageRights <IMicrosoftGraphUsageRight[]>]`: Represents the usage rights a device has been granted.
               - `[Id <String>]`: The unique identifier for an entity. Read-only.
               - `[CatalogId <String>]`: Product id corresponding to the usage right.
@@ -1403,14 +1386,14 @@ To create the parameters described below, construct a hash table containing the 
             - `[ContentType <String>]`: bodyType
           - `[BodyPreview <String>]`: The preview of the message associated with the event. It is in text format.
           - `[Calendar <IMicrosoftGraphCalendar>]`: calendar
-          - `[CancelledOccurrences <String[]>]`: Contains occurrenceId property values of canceled instances in a recurring series, if the event is the series master. Instances in a recurring series that are canceled are called cancelledOccurences.Returned only on $select in a Get operation which specifies the id of a series master event (that is, the seriesMasterId property value).
+          - `[CancelledOccurrences <String[]>]`: Contains occurrenceId property values of cancelled instances in a recurring series, if the event is the series master. Instances in a recurring series that are cancelled are called cancelledOccurences.Returned only on $select in a Get operation which specifies the id of a series master event (that is, the seriesMasterId property value).
           - `[End <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
           - `[ExceptionOccurrences <IMicrosoftGraphEvent[]>]`: 
           - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the event. Nullable.
           - `[HasAttachments <Boolean?>]`: Set to true if the event has attachments.
           - `[HideAttendees <Boolean?>]`: When set to true, each attendee only sees themselves in the meeting request and meeting Tracking list. Default is false.
           - `[Importance <String>]`: importance
-          - `[Instances <IMicrosoftGraphEvent[]>]`: The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn't include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.
+          - `[Instances <IMicrosoftGraphEvent[]>]`: The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
           - `[IsAllDay <Boolean?>]`: 
           - `[IsCancelled <Boolean?>]`: 
           - `[IsDraft <Boolean?>]`: 
@@ -1608,12 +1591,12 @@ To create the parameters described below, construct a hash table containing the 
           - `[Id <String>]`: The unique identifier for an entity. Read-only.
           - `[Attachments <IMicrosoftGraphChatMessageAttachment[]>]`: References to attached objects like files, tabs, meetings etc.
             - `[Content <String>]`: The content of the attachment. If the attachment is a rich card, set the property to the rich card object. This property and contentUrl are mutually exclusive.
-            - `[ContentType <String>]`: The media type of the content attachment. It can have the following values: reference: Attachment is a link to another file. Populate the contentURL with the link to the object.Any contentType that is supported by the Bot Framework's Attachment object.application/vnd.microsoft.card.codesnippet: A code snippet. application/vnd.microsoft.card.announcement: An announcement header.
-            - `[ContentUrl <String>]`: The URL for the content of the attachment.
-            - `[Id <String>]`: Read-only. The unique id of the attachment.
+            - `[ContentType <String>]`: The media type of the content attachment. It can have the following values: reference: Attachment is a link to another file. Populate the contentURL with the link to the object.Any contentTypes supported by the Bot Framework's Attachment objectapplication/vnd.microsoft.card.codesnippet: A code snippet. application/vnd.microsoft.card.announcement: An announcement header.
+            - `[ContentUrl <String>]`: URL for the content of the attachment. Supported protocols: http, https, file and data.
+            - `[Id <String>]`: Read-only. Unique id of the attachment.
             - `[Name <String>]`: Name of the attachment.
-            - `[TeamsAppId <String>]`: The ID of the Teams app that is associated with the attachment. The property is used to attribute a Teams message card to the specified app.
-            - `[ThumbnailUrl <String>]`: The URL to a thumbnail image that the channel can use if it supports using an alternative, smaller form of content or contentUrl. For example, if you set contentType to application/word and set contentUrl to the location of the Word document, you might include a thumbnail image that represents the document. The channel could display the thumbnail image instead of the document. When the user selects the image, the channel would open the document.
+            - `[TeamsAppId <String>]`: The ID of the Teams app that is associated with the attachment. The property is specifically used to attribute a Teams message card to the specified app.
+            - `[ThumbnailUrl <String>]`: URL to a thumbnail image that the channel can use if it supports using an alternative, smaller form of content or contentUrl. For example, if you set contentType to application/word and set contentUrl to the location of the Word document, you might include a thumbnail image that represents the document. The channel could display the thumbnail image instead of the document. When the user clicks the image, the channel would open the document.
           - `[Body <IMicrosoftGraphItemBody>]`: itemBody
           - `[ChannelIdentity <IMicrosoftGraphChannelIdentity>]`: channelIdentity
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -2604,7 +2587,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[SharepointIds <IMicrosoftGraphSharepointIds>]`: sharepointIds
         - `[SiteCollection <IMicrosoftGraphSiteCollection>]`: siteCollection
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[DataLocationCode <String>]`: The geographic region code for where this site collection resides. Only present for multi-geo tenants. Read-only.
+          - `[DataLocationCode <String>]`: The geographic region code for where this site collection resides. Read-only.
           - `[Hostname <String>]`: The hostname for the site collection. Read-only.
           - `[Root <IMicrosoftGraphRoot>]`: root
         - `[Sites <IMicrosoftGraphSite[]>]`: The collection of the sub-sites under this site.
@@ -2617,10 +2600,10 @@ To create the parameters described below, construct a hash table containing the 
           - `[Sets <IMicrosoftGraphTermStoreSet[]>]`: Collection of all sets available in the term store.
       - `[GivenName <String>]`: The given name (first name) of the user. Maximum length is 64 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
       - `[HireDate <DateTime?>]`: The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.
-      - `[Identities <IMicrosoftGraphObjectIdentity[]>]`: Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft and tied to a user account. It may contain multiple items with the same signInType value.  Supports $filter (eq) with limitations.
-        - `[Issuer <String>]`: Specifies the issuer of the identity, for example facebook.com. 512 character limit. For local accounts (where signInType isn't federated), this property is the local default domain name for the tenant, for example contoso.com. For guests from other Microsoft Entra organization, this is the domain of the federated organization, for examplecontoso.com`.  For more information about filtering behavior for this property, see Filtering on the identities property of a user.
-        - `[IssuerAssignedId <String>]`: Specifies the unique identifier assigned to the user by the issuer. 64 character limit. The combination of issuer and issuerAssignedId must be unique within the organization. Represents the sign-in name for the user, when signInType is set to emailAddress or userName (also known as local accounts).When signInType is set to: emailAddress (or a custom string that starts with emailAddress like emailAddress1), issuerAssignedId must be a valid email addressuserName, issuerAssignedId must begin with an alphabetical character or number, and can only contain alphanumeric characters and the following symbols: - or _  For more information about filtering behavior for this property, see Filtering on the identities property of a user.
-        - `[SignInType <String>]`: Specifies the user sign-in types in your directory, such as emailAddress, userName, federated, or userPrincipalName. federated represents a unique identifier for a user from an issuer that can be in any format chosen by the issuer. Setting or updating a userPrincipalName identity updates the value of the userPrincipalName property on the user object. The validations performed on the userPrincipalName property on the user object, for example, verified domains and acceptable characters, are performed when setting or updating a userPrincipalName identity. Extra validation is enforced on issuerAssignedId when the sign-in type is set to emailAddress or userName. This property can also be set to any custom string.  For more information about filtering behavior for this property, see Filtering on the identities property of a user.
+      - `[Identities <IMicrosoftGraphObjectIdentity[]>]`: Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft and tied to a user account. It may contain multiple items with the same signInType value. Supports $filter (eq) including on null values, only where the signInType is not userPrincipalName.
+        - `[Issuer <String>]`: Specifies the issuer of the identity, for example facebook.com.For local accounts (where signInType isn't federated), this property is the local B2C tenant default domain name, for example contoso.onmicrosoft.com.For guests from other Microsoft Entra organization, this is the domain of the federated organization, for example contoso.com.Supports $filter. 512 character limit.
+        - `[IssuerAssignedId <String>]`: Specifies the unique identifier assigned to the user by the issuer. The combination of issuer and issuerAssignedId must be unique within the organization. Represents the sign-in name for the user, when signInType is set to emailAddress or userName (also known as local accounts).When signInType is set to: emailAddress, (or a custom string that starts with emailAddress like emailAddress1) issuerAssignedId must be a valid email addressuserName, issuerAssignedId must begin with an alphabetical character or number, and can only contain alphanumeric characters and the following symbols: - or Supports $filter. 64 character limit.
+        - `[SignInType <String>]`: Specifies the user sign-in types in your directory, such as emailAddress, userName, federated, or userPrincipalName. federated represents a unique identifier for a user from an issuer, that can be in any format chosen by the issuer. Setting or updating a userPrincipalName identity will update the value of the userPrincipalName property on the user object. The validations performed on the userPrincipalName property on the user object, for example, verified domains and acceptable characters, will be performed when setting or updating a userPrincipalName identity. Extra validation is enforced on issuerAssignedId when the sign-in type is set to emailAddress or userName. This property can also be set to any custom string.
       - `[ImAddresses <String[]>]`: The instant message voice-over IP (VOIP) session initiation protocol (SIP) addresses for the user. Read-only. Supports $filter (eq, not, ge, le, startsWith).
       - `[InferenceClassification <IMicrosoftGraphInferenceClassification>]`: inferenceClassification
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -2779,7 +2762,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[LicenseProcessingState <IMicrosoftGraphLicenseProcessingState>]`: licenseProcessingState
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[State <String>]`: 
-        - `[Mail <String>]`: The SMTP address for the group, for example, 'serviceadmins@contoso.com'. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+        - `[Mail <String>]`: The SMTP address for the group, for example, 'serviceadmins@contoso.onmicrosoft.com'. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
         - `[MailEnabled <Boolean?>]`: Specifies whether the group is mail-enabled. Required. Returned by default. Supports $filter (eq, ne, not, and eq on null values).
         - `[MailNickname <String>]`: The mail alias for the group, unique for Microsoft 365 groups in the organization. Maximum length is 64 characters. This property can contain only characters in the ASCII character set 0 - 127 except the following: @ () / [] ' ; : <> , SPACE. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith).
         - `[MemberOf <IMicrosoftGraphDirectoryObject[]>]`: Groups and administrative units that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.
@@ -3057,9 +3040,9 @@ To create the parameters described below, construct a hash table containing the 
             - `[AllowDeleteChannels <Boolean?>]`: If set to true, guests can delete channels.
           - `[IncomingChannels <IMicrosoftGraphChannel[]>]`: List of channels shared with the team.
           - `[InstalledApps <IMicrosoftGraphTeamsAppInstallation[]>]`: The apps installed in this team.
-          - `[InternalId <String>]`: A unique ID for the team used in a few places such as the audit log/Office 365 Management Activity API.
+          - `[InternalId <String>]`: A unique ID for the team that has been used in a few places such as the audit log/Office 365 Management Activity API.
           - `[IsArchived <Boolean?>]`: Whether this team is in read-only mode.
-          - `[IsMembershipLimitedToOwners <Boolean?>]`: If set to true, the team is currently in the owner-only team membership state and inaccessible by other team members, such as students.
+          - `[IsMembershipLimitedToOwners <Boolean?>]`: If set to true, the team is currently in the owner-only team membership state and not accessible by other team members, such as students.
           - `[MemberSettings <IMicrosoftGraphTeamMemberSettings>]`: teamMemberSettings
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[AllowAddRemoveApps <Boolean?>]`: If set to true, members can add and remove apps.
@@ -3077,7 +3060,7 @@ To create the parameters described below, construct a hash table containing the 
             - `[AllowUserDeleteMessages <Boolean?>]`: If set to true, users can delete their messages.
             - `[AllowUserEditMessages <Boolean?>]`: If set to true, users can edit their messages.
           - `[Operations <IMicrosoftGraphTeamsAsyncOperation[]>]`: The async operations that ran or are running on this team.
-          - `[Owners <IMicrosoftGraphUser[]>]`: The list of this team's owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user-delegated permissions, no owner can be specified (the current user is the owner). The owner must be specified as an object ID (GUID), not a UPN.
+          - `[Owners <IMicrosoftGraphUser[]>]`: The list of this team's owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user delegated permissions, no owner can be specified (the current user is the owner). Owner must be specified as an object ID (GUID), not a UPN.
           - `[PermissionGrants <IMicrosoftGraphResourceSpecificPermissionGrant[]>]`: A collection of permissions granted to apps to access the team.
           - `[Photo <IMicrosoftGraphProfilePhoto>]`: profilePhoto
           - `[PrimaryChannel <IMicrosoftGraphChannel>]`: channel
@@ -3137,14 +3120,14 @@ To create the parameters described below, construct a hash table containing the 
               - `[SchedulingGroupId <String>]`: The ID of the schedulingGroup that contains the openShift.
               - `[SchedulingGroupInfo <IMicrosoftGraphSchedulingGroupInfo>]`: schedulingGroupInfo
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                - `[Code <String>]`: The code for the schedulingGroup.
-                - `[DisplayName <String>]`: The display name for the schedulingGroup. Required.
-                - `[SchedulingGroupId <String>]`: ID of the schedulingGroup.
+                - `[Code <String>]`: 
+                - `[DisplayName <String>]`: 
+                - `[SchedulingGroupId <String>]`: 
               - `[SharedOpenShift <IMicrosoftGraphOpenShiftItem>]`: openShiftItem
               - `[TeamInfo <IMicrosoftGraphShiftsTeamInfo>]`: shiftsTeamInfo
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                - `[DisplayName <String>]`: The display name for the team. Required.
-                - `[TeamId <String>]`: ID of the team.
+                - `[DisplayName <String>]`: 
+                - `[TeamId <String>]`: 
             - `[OpenShiftsEnabled <Boolean?>]`: Indicates whether open shifts are enabled for the schedule.
             - `[ProvisionStatus <String>]`: operationStatus
             - `[SchedulingGroups <IMicrosoftGraphSchedulingGroup[]>]`: The logical grouping of users in the schedule (usually by role).
@@ -3174,14 +3157,8 @@ To create the parameters described below, construct a hash table containing the 
               - `[UserId <String>]`: ID of the user assigned to the shift. Required.
               - `[UserInfo <IMicrosoftGraphShiftsUserInfo>]`: shiftsUserInfo
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                - `[DisplayName <String>]`: The display name for the user. Required.
-                - `[UserId <String>]`: ID of the user.
-            - `[ShiftsRoleDefinitions <IMicrosoftGraphShiftsRoleDefinition[]>]`: 
-              - `[Id <String>]`: The unique identifier for an entity. Read-only.
-              - `[Description <String>]`: 
-              - `[DisplayName <String>]`: 
-              - `[ShiftsRolePermissions <IMicrosoftGraphShiftsRolePermission[]>]`: 
-                - `[AllowedResourceActions <String[]>]`: 
+                - `[DisplayName <String>]`: 
+                - `[UserId <String>]`: 
             - `[StartDayOfWeek <String>]`: dayOfWeek
             - `[SwapShiftsChangeRequests <IMicrosoftGraphSwapShiftsChangeRequest[]>]`: The swap requests for shifts in the schedule.
               - `[RecipientActionMessage <String>]`: Custom message sent by recipient of the offer shift request.
@@ -3303,7 +3280,7 @@ To create the parameters described below, construct a hash table containing the 
             - `[TeamDefinition <IMicrosoftGraphTeam>]`: team
           - `[TenantId <String>]`: The ID of the Microsoft Entra tenant.
           - `[Visibility <String>]`: teamVisibilityType
-          - `[WebUrl <String>]`: A hyperlink that goes to the team in the Microsoft Teams client. It is the URL you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.
+          - `[WebUrl <String>]`: A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.
         - `[Theme <String>]`: Specifies a Microsoft 365 group's color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.
         - `[Threads <IMicrosoftGraphConversationThread[]>]`: The group's conversation threads. Nullable.
         - `[TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>]`: The groups a group is a member of, either directly or through nested membership. Nullable.
@@ -6166,10 +6143,10 @@ To create the parameters described below, construct a hash table containing the 
           - `[IsRooted <Boolean?>]`: true if device is rooted; false if device is jail-broken. This can only be updated by Intune.
           - `[Kind <String>]`: Form factor of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
           - `[ManagementType <String>]`: Management channel of the device.  This property is set by Intune. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.
-          - `[Manufacturer <String>]`: Manufacturer of the device. Read-only.
+          - `[Manufacturer <String>]`: Manufacturer of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
           - `[MdmAppId <String>]`: Application identifier used to register device into MDM. Read-only. Supports $filter (eq, ne, not, startsWith).
           - `[MemberOf <IMicrosoftGraphDirectoryObject[]>]`: Groups and administrative units that this device is a member of. Read-only. Nullable. Supports $expand.
-          - `[Model <String>]`: Model of the device. Read-only.
+          - `[Model <String>]`: Model of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
           - `[Name <String>]`: Friendly name of the device. Only returned if user signs in with a Microsoft account as part of Project Rome.
           - `[OnPremisesLastSyncDateTime <DateTime?>]`: The last time at which the object was synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Read-only. Supports $filter (eq, ne, not, ge, le, in).
           - `[OnPremisesSecurityIdentifier <String>]`: The on-premises security identifier (SID) for the user who was synchronized from on-premises to the cloud. Read-only. Returned only on $select. Supports $filter (eq).
@@ -6185,7 +6162,7 @@ To create the parameters described below, construct a hash table containing the 
           - `[Status <String>]`: Device is online or offline. Only returned if user signs in with a Microsoft account as part of Project Rome.
           - `[SystemLabels <String[]>]`: List of labels applied to the device by the system. Supports $filter (/$count eq 0, /$count ne 0).
           - `[TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>]`: Groups and administrative units that this device is a member of. This operation is transitive. Supports $expand.
-          - `[TrustType <String>]`: Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Microsoft Entra ID). For more information, see Introduction to device management in Microsoft Entra ID.
+          - `[TrustType <String>]`: Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Microsoft Entra ID). For more details, see Introduction to device management in Microsoft Entra ID.
           - `[UsageRights <IMicrosoftGraphUsageRight[]>]`: Represents the usage rights a device has been granted.
             - `[Id <String>]`: The unique identifier for an entity. Read-only.
             - `[CatalogId <String>]`: Product id corresponding to the usage right.
@@ -6297,14 +6274,14 @@ To create the parameters described below, construct a hash table containing the 
           - `[ContentType <String>]`: bodyType
         - `[BodyPreview <String>]`: The preview of the message associated with the event. It is in text format.
         - `[Calendar <IMicrosoftGraphCalendar>]`: calendar
-        - `[CancelledOccurrences <String[]>]`: Contains occurrenceId property values of canceled instances in a recurring series, if the event is the series master. Instances in a recurring series that are canceled are called cancelledOccurences.Returned only on $select in a Get operation which specifies the id of a series master event (that is, the seriesMasterId property value).
+        - `[CancelledOccurrences <String[]>]`: Contains occurrenceId property values of cancelled instances in a recurring series, if the event is the series master. Instances in a recurring series that are cancelled are called cancelledOccurences.Returned only on $select in a Get operation which specifies the id of a series master event (that is, the seriesMasterId property value).
         - `[End <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
         - `[ExceptionOccurrences <IMicrosoftGraphEvent[]>]`: 
         - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the event. Nullable.
         - `[HasAttachments <Boolean?>]`: Set to true if the event has attachments.
         - `[HideAttendees <Boolean?>]`: When set to true, each attendee only sees themselves in the meeting request and meeting Tracking list. Default is false.
         - `[Importance <String>]`: importance
-        - `[Instances <IMicrosoftGraphEvent[]>]`: The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn't include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.
+        - `[Instances <IMicrosoftGraphEvent[]>]`: The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
         - `[IsAllDay <Boolean?>]`: 
         - `[IsCancelled <Boolean?>]`: 
         - `[IsDraft <Boolean?>]`: 
@@ -6502,12 +6479,12 @@ To create the parameters described below, construct a hash table containing the 
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
         - `[Attachments <IMicrosoftGraphChatMessageAttachment[]>]`: References to attached objects like files, tabs, meetings etc.
           - `[Content <String>]`: The content of the attachment. If the attachment is a rich card, set the property to the rich card object. This property and contentUrl are mutually exclusive.
-          - `[ContentType <String>]`: The media type of the content attachment. It can have the following values: reference: Attachment is a link to another file. Populate the contentURL with the link to the object.Any contentType that is supported by the Bot Framework's Attachment object.application/vnd.microsoft.card.codesnippet: A code snippet. application/vnd.microsoft.card.announcement: An announcement header.
-          - `[ContentUrl <String>]`: The URL for the content of the attachment.
-          - `[Id <String>]`: Read-only. The unique id of the attachment.
+          - `[ContentType <String>]`: The media type of the content attachment. It can have the following values: reference: Attachment is a link to another file. Populate the contentURL with the link to the object.Any contentTypes supported by the Bot Framework's Attachment objectapplication/vnd.microsoft.card.codesnippet: A code snippet. application/vnd.microsoft.card.announcement: An announcement header.
+          - `[ContentUrl <String>]`: URL for the content of the attachment. Supported protocols: http, https, file and data.
+          - `[Id <String>]`: Read-only. Unique id of the attachment.
           - `[Name <String>]`: Name of the attachment.
-          - `[TeamsAppId <String>]`: The ID of the Teams app that is associated with the attachment. The property is used to attribute a Teams message card to the specified app.
-          - `[ThumbnailUrl <String>]`: The URL to a thumbnail image that the channel can use if it supports using an alternative, smaller form of content or contentUrl. For example, if you set contentType to application/word and set contentUrl to the location of the Word document, you might include a thumbnail image that represents the document. The channel could display the thumbnail image instead of the document. When the user selects the image, the channel would open the document.
+          - `[TeamsAppId <String>]`: The ID of the Teams app that is associated with the attachment. The property is specifically used to attribute a Teams message card to the specified app.
+          - `[ThumbnailUrl <String>]`: URL to a thumbnail image that the channel can use if it supports using an alternative, smaller form of content or contentUrl. For example, if you set contentType to application/word and set contentUrl to the location of the Word document, you might include a thumbnail image that represents the document. The channel could display the thumbnail image instead of the document. When the user clicks the image, the channel would open the document.
         - `[Body <IMicrosoftGraphItemBody>]`: itemBody
         - `[ChannelIdentity <IMicrosoftGraphChannelIdentity>]`: channelIdentity
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -7971,7 +7948,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[SharepointIds <IMicrosoftGraphSharepointIds>]`: sharepointIds
       - `[SiteCollection <IMicrosoftGraphSiteCollection>]`: siteCollection
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DataLocationCode <String>]`: The geographic region code for where this site collection resides. Only present for multi-geo tenants. Read-only.
+        - `[DataLocationCode <String>]`: The geographic region code for where this site collection resides. Read-only.
         - `[Hostname <String>]`: The hostname for the site collection. Read-only.
         - `[Root <IMicrosoftGraphRoot>]`: root
       - `[Sites <IMicrosoftGraphSite[]>]`: The collection of the sub-sites under this site.
@@ -7984,10 +7961,10 @@ To create the parameters described below, construct a hash table containing the 
         - `[Sets <IMicrosoftGraphTermStoreSet[]>]`: Collection of all sets available in the term store.
     - `[GivenName <String>]`: The given name (first name) of the user. Maximum length is 64 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
     - `[HireDate <DateTime?>]`: The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.
-    - `[Identities <IMicrosoftGraphObjectIdentity[]>]`: Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft and tied to a user account. It may contain multiple items with the same signInType value.  Supports $filter (eq) with limitations.
-      - `[Issuer <String>]`: Specifies the issuer of the identity, for example facebook.com. 512 character limit. For local accounts (where signInType isn't federated), this property is the local default domain name for the tenant, for example contoso.com. For guests from other Microsoft Entra organization, this is the domain of the federated organization, for examplecontoso.com`.  For more information about filtering behavior for this property, see Filtering on the identities property of a user.
-      - `[IssuerAssignedId <String>]`: Specifies the unique identifier assigned to the user by the issuer. 64 character limit. The combination of issuer and issuerAssignedId must be unique within the organization. Represents the sign-in name for the user, when signInType is set to emailAddress or userName (also known as local accounts).When signInType is set to: emailAddress (or a custom string that starts with emailAddress like emailAddress1), issuerAssignedId must be a valid email addressuserName, issuerAssignedId must begin with an alphabetical character or number, and can only contain alphanumeric characters and the following symbols: - or _  For more information about filtering behavior for this property, see Filtering on the identities property of a user.
-      - `[SignInType <String>]`: Specifies the user sign-in types in your directory, such as emailAddress, userName, federated, or userPrincipalName. federated represents a unique identifier for a user from an issuer that can be in any format chosen by the issuer. Setting or updating a userPrincipalName identity updates the value of the userPrincipalName property on the user object. The validations performed on the userPrincipalName property on the user object, for example, verified domains and acceptable characters, are performed when setting or updating a userPrincipalName identity. Extra validation is enforced on issuerAssignedId when the sign-in type is set to emailAddress or userName. This property can also be set to any custom string.  For more information about filtering behavior for this property, see Filtering on the identities property of a user.
+    - `[Identities <IMicrosoftGraphObjectIdentity[]>]`: Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft and tied to a user account. It may contain multiple items with the same signInType value. Supports $filter (eq) including on null values, only where the signInType is not userPrincipalName.
+      - `[Issuer <String>]`: Specifies the issuer of the identity, for example facebook.com.For local accounts (where signInType isn't federated), this property is the local B2C tenant default domain name, for example contoso.onmicrosoft.com.For guests from other Microsoft Entra organization, this is the domain of the federated organization, for example contoso.com.Supports $filter. 512 character limit.
+      - `[IssuerAssignedId <String>]`: Specifies the unique identifier assigned to the user by the issuer. The combination of issuer and issuerAssignedId must be unique within the organization. Represents the sign-in name for the user, when signInType is set to emailAddress or userName (also known as local accounts).When signInType is set to: emailAddress, (or a custom string that starts with emailAddress like emailAddress1) issuerAssignedId must be a valid email addressuserName, issuerAssignedId must begin with an alphabetical character or number, and can only contain alphanumeric characters and the following symbols: - or Supports $filter. 64 character limit.
+      - `[SignInType <String>]`: Specifies the user sign-in types in your directory, such as emailAddress, userName, federated, or userPrincipalName. federated represents a unique identifier for a user from an issuer, that can be in any format chosen by the issuer. Setting or updating a userPrincipalName identity will update the value of the userPrincipalName property on the user object. The validations performed on the userPrincipalName property on the user object, for example, verified domains and acceptable characters, will be performed when setting or updating a userPrincipalName identity. Extra validation is enforced on issuerAssignedId when the sign-in type is set to emailAddress or userName. This property can also be set to any custom string.
     - `[ImAddresses <String[]>]`: The instant message voice-over IP (VOIP) session initiation protocol (SIP) addresses for the user. Read-only. Supports $filter (eq, not, ge, le, startsWith).
     - `[InferenceClassification <IMicrosoftGraphInferenceClassification>]`: inferenceClassification
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -8146,7 +8123,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[LicenseProcessingState <IMicrosoftGraphLicenseProcessingState>]`: licenseProcessingState
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[State <String>]`: 
-      - `[Mail <String>]`: The SMTP address for the group, for example, 'serviceadmins@contoso.com'. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+      - `[Mail <String>]`: The SMTP address for the group, for example, 'serviceadmins@contoso.onmicrosoft.com'. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
       - `[MailEnabled <Boolean?>]`: Specifies whether the group is mail-enabled. Required. Returned by default. Supports $filter (eq, ne, not, and eq on null values).
       - `[MailNickname <String>]`: The mail alias for the group, unique for Microsoft 365 groups in the organization. Maximum length is 64 characters. This property can contain only characters in the ASCII character set 0 - 127 except the following: @ () / [] ' ; : <> , SPACE. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith).
       - `[MemberOf <IMicrosoftGraphDirectoryObject[]>]`: Groups and administrative units that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.
@@ -8424,9 +8401,9 @@ To create the parameters described below, construct a hash table containing the 
           - `[AllowDeleteChannels <Boolean?>]`: If set to true, guests can delete channels.
         - `[IncomingChannels <IMicrosoftGraphChannel[]>]`: List of channels shared with the team.
         - `[InstalledApps <IMicrosoftGraphTeamsAppInstallation[]>]`: The apps installed in this team.
-        - `[InternalId <String>]`: A unique ID for the team used in a few places such as the audit log/Office 365 Management Activity API.
+        - `[InternalId <String>]`: A unique ID for the team that has been used in a few places such as the audit log/Office 365 Management Activity API.
         - `[IsArchived <Boolean?>]`: Whether this team is in read-only mode.
-        - `[IsMembershipLimitedToOwners <Boolean?>]`: If set to true, the team is currently in the owner-only team membership state and inaccessible by other team members, such as students.
+        - `[IsMembershipLimitedToOwners <Boolean?>]`: If set to true, the team is currently in the owner-only team membership state and not accessible by other team members, such as students.
         - `[MemberSettings <IMicrosoftGraphTeamMemberSettings>]`: teamMemberSettings
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[AllowAddRemoveApps <Boolean?>]`: If set to true, members can add and remove apps.
@@ -8444,7 +8421,7 @@ To create the parameters described below, construct a hash table containing the 
           - `[AllowUserDeleteMessages <Boolean?>]`: If set to true, users can delete their messages.
           - `[AllowUserEditMessages <Boolean?>]`: If set to true, users can edit their messages.
         - `[Operations <IMicrosoftGraphTeamsAsyncOperation[]>]`: The async operations that ran or are running on this team.
-        - `[Owners <IMicrosoftGraphUser[]>]`: The list of this team's owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user-delegated permissions, no owner can be specified (the current user is the owner). The owner must be specified as an object ID (GUID), not a UPN.
+        - `[Owners <IMicrosoftGraphUser[]>]`: The list of this team's owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user delegated permissions, no owner can be specified (the current user is the owner). Owner must be specified as an object ID (GUID), not a UPN.
         - `[PermissionGrants <IMicrosoftGraphResourceSpecificPermissionGrant[]>]`: A collection of permissions granted to apps to access the team.
         - `[Photo <IMicrosoftGraphProfilePhoto>]`: profilePhoto
         - `[PrimaryChannel <IMicrosoftGraphChannel>]`: channel
@@ -8504,14 +8481,14 @@ To create the parameters described below, construct a hash table containing the 
             - `[SchedulingGroupId <String>]`: The ID of the schedulingGroup that contains the openShift.
             - `[SchedulingGroupInfo <IMicrosoftGraphSchedulingGroupInfo>]`: schedulingGroupInfo
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[Code <String>]`: The code for the schedulingGroup.
-              - `[DisplayName <String>]`: The display name for the schedulingGroup. Required.
-              - `[SchedulingGroupId <String>]`: ID of the schedulingGroup.
+              - `[Code <String>]`: 
+              - `[DisplayName <String>]`: 
+              - `[SchedulingGroupId <String>]`: 
             - `[SharedOpenShift <IMicrosoftGraphOpenShiftItem>]`: openShiftItem
             - `[TeamInfo <IMicrosoftGraphShiftsTeamInfo>]`: shiftsTeamInfo
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[DisplayName <String>]`: The display name for the team. Required.
-              - `[TeamId <String>]`: ID of the team.
+              - `[DisplayName <String>]`: 
+              - `[TeamId <String>]`: 
           - `[OpenShiftsEnabled <Boolean?>]`: Indicates whether open shifts are enabled for the schedule.
           - `[ProvisionStatus <String>]`: operationStatus
           - `[SchedulingGroups <IMicrosoftGraphSchedulingGroup[]>]`: The logical grouping of users in the schedule (usually by role).
@@ -8541,14 +8518,8 @@ To create the parameters described below, construct a hash table containing the 
             - `[UserId <String>]`: ID of the user assigned to the shift. Required.
             - `[UserInfo <IMicrosoftGraphShiftsUserInfo>]`: shiftsUserInfo
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[DisplayName <String>]`: The display name for the user. Required.
-              - `[UserId <String>]`: ID of the user.
-          - `[ShiftsRoleDefinitions <IMicrosoftGraphShiftsRoleDefinition[]>]`: 
-            - `[Id <String>]`: The unique identifier for an entity. Read-only.
-            - `[Description <String>]`: 
-            - `[DisplayName <String>]`: 
-            - `[ShiftsRolePermissions <IMicrosoftGraphShiftsRolePermission[]>]`: 
-              - `[AllowedResourceActions <String[]>]`: 
+              - `[DisplayName <String>]`: 
+              - `[UserId <String>]`: 
           - `[StartDayOfWeek <String>]`: dayOfWeek
           - `[SwapShiftsChangeRequests <IMicrosoftGraphSwapShiftsChangeRequest[]>]`: The swap requests for shifts in the schedule.
             - `[RecipientActionMessage <String>]`: Custom message sent by recipient of the offer shift request.
@@ -8666,7 +8637,7 @@ To create the parameters described below, construct a hash table containing the 
           - `[TeamDefinition <IMicrosoftGraphTeam>]`: team
         - `[TenantId <String>]`: The ID of the Microsoft Entra tenant.
         - `[Visibility <String>]`: teamVisibilityType
-        - `[WebUrl <String>]`: A hyperlink that goes to the team in the Microsoft Teams client. It is the URL you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.
+        - `[WebUrl <String>]`: A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.
       - `[Theme <String>]`: Specifies a Microsoft 365 group's color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.
       - `[Threads <IMicrosoftGraphConversationThread[]>]`: The group's conversation threads. Nullable.
       - `[TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>]`: The groups a group is a member of, either directly or through nested membership. Nullable.
@@ -11425,10 +11396,10 @@ To create the parameters described below, construct a hash table containing the 
         - `[IsRooted <Boolean?>]`: true if device is rooted; false if device is jail-broken. This can only be updated by Intune.
         - `[Kind <String>]`: Form factor of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
         - `[ManagementType <String>]`: Management channel of the device.  This property is set by Intune. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.
-        - `[Manufacturer <String>]`: Manufacturer of the device. Read-only.
+        - `[Manufacturer <String>]`: Manufacturer of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
         - `[MdmAppId <String>]`: Application identifier used to register device into MDM. Read-only. Supports $filter (eq, ne, not, startsWith).
         - `[MemberOf <IMicrosoftGraphDirectoryObject[]>]`: Groups and administrative units that this device is a member of. Read-only. Nullable. Supports $expand.
-        - `[Model <String>]`: Model of the device. Read-only.
+        - `[Model <String>]`: Model of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
         - `[Name <String>]`: Friendly name of the device. Only returned if user signs in with a Microsoft account as part of Project Rome.
         - `[OnPremisesLastSyncDateTime <DateTime?>]`: The last time at which the object was synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Read-only. Supports $filter (eq, ne, not, ge, le, in).
         - `[OnPremisesSecurityIdentifier <String>]`: The on-premises security identifier (SID) for the user who was synchronized from on-premises to the cloud. Read-only. Returned only on $select. Supports $filter (eq).
@@ -11444,7 +11415,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[Status <String>]`: Device is online or offline. Only returned if user signs in with a Microsoft account as part of Project Rome.
         - `[SystemLabels <String[]>]`: List of labels applied to the device by the system. Supports $filter (/$count eq 0, /$count ne 0).
         - `[TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>]`: Groups and administrative units that this device is a member of. This operation is transitive. Supports $expand.
-        - `[TrustType <String>]`: Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Microsoft Entra ID). For more information, see Introduction to device management in Microsoft Entra ID.
+        - `[TrustType <String>]`: Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Microsoft Entra ID). For more details, see Introduction to device management in Microsoft Entra ID.
         - `[UsageRights <IMicrosoftGraphUsageRight[]>]`: Represents the usage rights a device has been granted.
           - `[Id <String>]`: The unique identifier for an entity. Read-only.
           - `[CatalogId <String>]`: Product id corresponding to the usage right.
@@ -11556,14 +11527,14 @@ To create the parameters described below, construct a hash table containing the 
         - `[ContentType <String>]`: bodyType
       - `[BodyPreview <String>]`: The preview of the message associated with the event. It is in text format.
       - `[Calendar <IMicrosoftGraphCalendar>]`: calendar
-      - `[CancelledOccurrences <String[]>]`: Contains occurrenceId property values of canceled instances in a recurring series, if the event is the series master. Instances in a recurring series that are canceled are called cancelledOccurences.Returned only on $select in a Get operation which specifies the id of a series master event (that is, the seriesMasterId property value).
+      - `[CancelledOccurrences <String[]>]`: Contains occurrenceId property values of cancelled instances in a recurring series, if the event is the series master. Instances in a recurring series that are cancelled are called cancelledOccurences.Returned only on $select in a Get operation which specifies the id of a series master event (that is, the seriesMasterId property value).
       - `[End <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
       - `[ExceptionOccurrences <IMicrosoftGraphEvent[]>]`: 
       - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the event. Nullable.
       - `[HasAttachments <Boolean?>]`: Set to true if the event has attachments.
       - `[HideAttendees <Boolean?>]`: When set to true, each attendee only sees themselves in the meeting request and meeting Tracking list. Default is false.
       - `[Importance <String>]`: importance
-      - `[Instances <IMicrosoftGraphEvent[]>]`: The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn't include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.
+      - `[Instances <IMicrosoftGraphEvent[]>]`: The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
       - `[IsAllDay <Boolean?>]`: 
       - `[IsCancelled <Boolean?>]`: 
       - `[IsDraft <Boolean?>]`: 
@@ -11761,12 +11732,12 @@ To create the parameters described below, construct a hash table containing the 
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[Attachments <IMicrosoftGraphChatMessageAttachment[]>]`: References to attached objects like files, tabs, meetings etc.
         - `[Content <String>]`: The content of the attachment. If the attachment is a rich card, set the property to the rich card object. This property and contentUrl are mutually exclusive.
-        - `[ContentType <String>]`: The media type of the content attachment. It can have the following values: reference: Attachment is a link to another file. Populate the contentURL with the link to the object.Any contentType that is supported by the Bot Framework's Attachment object.application/vnd.microsoft.card.codesnippet: A code snippet. application/vnd.microsoft.card.announcement: An announcement header.
-        - `[ContentUrl <String>]`: The URL for the content of the attachment.
-        - `[Id <String>]`: Read-only. The unique id of the attachment.
+        - `[ContentType <String>]`: The media type of the content attachment. It can have the following values: reference: Attachment is a link to another file. Populate the contentURL with the link to the object.Any contentTypes supported by the Bot Framework's Attachment objectapplication/vnd.microsoft.card.codesnippet: A code snippet. application/vnd.microsoft.card.announcement: An announcement header.
+        - `[ContentUrl <String>]`: URL for the content of the attachment. Supported protocols: http, https, file and data.
+        - `[Id <String>]`: Read-only. Unique id of the attachment.
         - `[Name <String>]`: Name of the attachment.
-        - `[TeamsAppId <String>]`: The ID of the Teams app that is associated with the attachment. The property is used to attribute a Teams message card to the specified app.
-        - `[ThumbnailUrl <String>]`: The URL to a thumbnail image that the channel can use if it supports using an alternative, smaller form of content or contentUrl. For example, if you set contentType to application/word and set contentUrl to the location of the Word document, you might include a thumbnail image that represents the document. The channel could display the thumbnail image instead of the document. When the user selects the image, the channel would open the document.
+        - `[TeamsAppId <String>]`: The ID of the Teams app that is associated with the attachment. The property is specifically used to attribute a Teams message card to the specified app.
+        - `[ThumbnailUrl <String>]`: URL to a thumbnail image that the channel can use if it supports using an alternative, smaller form of content or contentUrl. For example, if you set contentType to application/word and set contentUrl to the location of the Word document, you might include a thumbnail image that represents the document. The channel could display the thumbnail image instead of the document. When the user clicks the image, the channel would open the document.
       - `[Body <IMicrosoftGraphItemBody>]`: itemBody
       - `[ChannelIdentity <IMicrosoftGraphChannelIdentity>]`: channelIdentity
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -13258,7 +13229,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[SharepointIds <IMicrosoftGraphSharepointIds>]`: sharepointIds
     - `[SiteCollection <IMicrosoftGraphSiteCollection>]`: siteCollection
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DataLocationCode <String>]`: The geographic region code for where this site collection resides. Only present for multi-geo tenants. Read-only.
+      - `[DataLocationCode <String>]`: The geographic region code for where this site collection resides. Read-only.
       - `[Hostname <String>]`: The hostname for the site collection. Read-only.
       - `[Root <IMicrosoftGraphRoot>]`: root
     - `[Sites <IMicrosoftGraphSite[]>]`: The collection of the sub-sites under this site.
@@ -13271,10 +13242,10 @@ To create the parameters described below, construct a hash table containing the 
       - `[Sets <IMicrosoftGraphTermStoreSet[]>]`: Collection of all sets available in the term store.
   - `[GivenName <String>]`: The given name (first name) of the user. Maximum length is 64 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
   - `[HireDate <DateTime?>]`: The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.
-  - `[Identities <IMicrosoftGraphObjectIdentity[]>]`: Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft and tied to a user account. It may contain multiple items with the same signInType value.  Supports $filter (eq) with limitations.
-    - `[Issuer <String>]`: Specifies the issuer of the identity, for example facebook.com. 512 character limit. For local accounts (where signInType isn't federated), this property is the local default domain name for the tenant, for example contoso.com. For guests from other Microsoft Entra organization, this is the domain of the federated organization, for examplecontoso.com`.  For more information about filtering behavior for this property, see Filtering on the identities property of a user.
-    - `[IssuerAssignedId <String>]`: Specifies the unique identifier assigned to the user by the issuer. 64 character limit. The combination of issuer and issuerAssignedId must be unique within the organization. Represents the sign-in name for the user, when signInType is set to emailAddress or userName (also known as local accounts).When signInType is set to: emailAddress (or a custom string that starts with emailAddress like emailAddress1), issuerAssignedId must be a valid email addressuserName, issuerAssignedId must begin with an alphabetical character or number, and can only contain alphanumeric characters and the following symbols: - or _  For more information about filtering behavior for this property, see Filtering on the identities property of a user.
-    - `[SignInType <String>]`: Specifies the user sign-in types in your directory, such as emailAddress, userName, federated, or userPrincipalName. federated represents a unique identifier for a user from an issuer that can be in any format chosen by the issuer. Setting or updating a userPrincipalName identity updates the value of the userPrincipalName property on the user object. The validations performed on the userPrincipalName property on the user object, for example, verified domains and acceptable characters, are performed when setting or updating a userPrincipalName identity. Extra validation is enforced on issuerAssignedId when the sign-in type is set to emailAddress or userName. This property can also be set to any custom string.  For more information about filtering behavior for this property, see Filtering on the identities property of a user.
+  - `[Identities <IMicrosoftGraphObjectIdentity[]>]`: Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft and tied to a user account. It may contain multiple items with the same signInType value. Supports $filter (eq) including on null values, only where the signInType is not userPrincipalName.
+    - `[Issuer <String>]`: Specifies the issuer of the identity, for example facebook.com.For local accounts (where signInType isn't federated), this property is the local B2C tenant default domain name, for example contoso.onmicrosoft.com.For guests from other Microsoft Entra organization, this is the domain of the federated organization, for example contoso.com.Supports $filter. 512 character limit.
+    - `[IssuerAssignedId <String>]`: Specifies the unique identifier assigned to the user by the issuer. The combination of issuer and issuerAssignedId must be unique within the organization. Represents the sign-in name for the user, when signInType is set to emailAddress or userName (also known as local accounts).When signInType is set to: emailAddress, (or a custom string that starts with emailAddress like emailAddress1) issuerAssignedId must be a valid email addressuserName, issuerAssignedId must begin with an alphabetical character or number, and can only contain alphanumeric characters and the following symbols: - or Supports $filter. 64 character limit.
+    - `[SignInType <String>]`: Specifies the user sign-in types in your directory, such as emailAddress, userName, federated, or userPrincipalName. federated represents a unique identifier for a user from an issuer, that can be in any format chosen by the issuer. Setting or updating a userPrincipalName identity will update the value of the userPrincipalName property on the user object. The validations performed on the userPrincipalName property on the user object, for example, verified domains and acceptable characters, will be performed when setting or updating a userPrincipalName identity. Extra validation is enforced on issuerAssignedId when the sign-in type is set to emailAddress or userName. This property can also be set to any custom string.
   - `[ImAddresses <String[]>]`: The instant message voice-over IP (VOIP) session initiation protocol (SIP) addresses for the user. Read-only. Supports $filter (eq, not, ge, le, startsWith).
   - `[InferenceClassification <IMicrosoftGraphInferenceClassification>]`: inferenceClassification
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -13433,7 +13404,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[LicenseProcessingState <IMicrosoftGraphLicenseProcessingState>]`: licenseProcessingState
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[State <String>]`: 
-    - `[Mail <String>]`: The SMTP address for the group, for example, 'serviceadmins@contoso.com'. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+    - `[Mail <String>]`: The SMTP address for the group, for example, 'serviceadmins@contoso.onmicrosoft.com'. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
     - `[MailEnabled <Boolean?>]`: Specifies whether the group is mail-enabled. Required. Returned by default. Supports $filter (eq, ne, not, and eq on null values).
     - `[MailNickname <String>]`: The mail alias for the group, unique for Microsoft 365 groups in the organization. Maximum length is 64 characters. This property can contain only characters in the ASCII character set 0 - 127 except the following: @ () / [] ' ; : <> , SPACE. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith).
     - `[MemberOf <IMicrosoftGraphDirectoryObject[]>]`: Groups and administrative units that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.
@@ -13711,9 +13682,9 @@ To create the parameters described below, construct a hash table containing the 
         - `[AllowDeleteChannels <Boolean?>]`: If set to true, guests can delete channels.
       - `[IncomingChannels <IMicrosoftGraphChannel[]>]`: List of channels shared with the team.
       - `[InstalledApps <IMicrosoftGraphTeamsAppInstallation[]>]`: The apps installed in this team.
-      - `[InternalId <String>]`: A unique ID for the team used in a few places such as the audit log/Office 365 Management Activity API.
+      - `[InternalId <String>]`: A unique ID for the team that has been used in a few places such as the audit log/Office 365 Management Activity API.
       - `[IsArchived <Boolean?>]`: Whether this team is in read-only mode.
-      - `[IsMembershipLimitedToOwners <Boolean?>]`: If set to true, the team is currently in the owner-only team membership state and inaccessible by other team members, such as students.
+      - `[IsMembershipLimitedToOwners <Boolean?>]`: If set to true, the team is currently in the owner-only team membership state and not accessible by other team members, such as students.
       - `[MemberSettings <IMicrosoftGraphTeamMemberSettings>]`: teamMemberSettings
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[AllowAddRemoveApps <Boolean?>]`: If set to true, members can add and remove apps.
@@ -13731,7 +13702,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[AllowUserDeleteMessages <Boolean?>]`: If set to true, users can delete their messages.
         - `[AllowUserEditMessages <Boolean?>]`: If set to true, users can edit their messages.
       - `[Operations <IMicrosoftGraphTeamsAsyncOperation[]>]`: The async operations that ran or are running on this team.
-      - `[Owners <IMicrosoftGraphUser[]>]`: The list of this team's owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user-delegated permissions, no owner can be specified (the current user is the owner). The owner must be specified as an object ID (GUID), not a UPN.
+      - `[Owners <IMicrosoftGraphUser[]>]`: The list of this team's owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user delegated permissions, no owner can be specified (the current user is the owner). Owner must be specified as an object ID (GUID), not a UPN.
       - `[PermissionGrants <IMicrosoftGraphResourceSpecificPermissionGrant[]>]`: A collection of permissions granted to apps to access the team.
       - `[Photo <IMicrosoftGraphProfilePhoto>]`: profilePhoto
       - `[PrimaryChannel <IMicrosoftGraphChannel>]`: channel
@@ -13791,14 +13762,14 @@ To create the parameters described below, construct a hash table containing the 
           - `[SchedulingGroupId <String>]`: The ID of the schedulingGroup that contains the openShift.
           - `[SchedulingGroupInfo <IMicrosoftGraphSchedulingGroupInfo>]`: schedulingGroupInfo
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[Code <String>]`: The code for the schedulingGroup.
-            - `[DisplayName <String>]`: The display name for the schedulingGroup. Required.
-            - `[SchedulingGroupId <String>]`: ID of the schedulingGroup.
+            - `[Code <String>]`: 
+            - `[DisplayName <String>]`: 
+            - `[SchedulingGroupId <String>]`: 
           - `[SharedOpenShift <IMicrosoftGraphOpenShiftItem>]`: openShiftItem
           - `[TeamInfo <IMicrosoftGraphShiftsTeamInfo>]`: shiftsTeamInfo
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[DisplayName <String>]`: The display name for the team. Required.
-            - `[TeamId <String>]`: ID of the team.
+            - `[DisplayName <String>]`: 
+            - `[TeamId <String>]`: 
         - `[OpenShiftsEnabled <Boolean?>]`: Indicates whether open shifts are enabled for the schedule.
         - `[ProvisionStatus <String>]`: operationStatus
         - `[SchedulingGroups <IMicrosoftGraphSchedulingGroup[]>]`: The logical grouping of users in the schedule (usually by role).
@@ -13828,14 +13799,8 @@ To create the parameters described below, construct a hash table containing the 
           - `[UserId <String>]`: ID of the user assigned to the shift. Required.
           - `[UserInfo <IMicrosoftGraphShiftsUserInfo>]`: shiftsUserInfo
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[DisplayName <String>]`: The display name for the user. Required.
-            - `[UserId <String>]`: ID of the user.
-        - `[ShiftsRoleDefinitions <IMicrosoftGraphShiftsRoleDefinition[]>]`: 
-          - `[Id <String>]`: The unique identifier for an entity. Read-only.
-          - `[Description <String>]`: 
-          - `[DisplayName <String>]`: 
-          - `[ShiftsRolePermissions <IMicrosoftGraphShiftsRolePermission[]>]`: 
-            - `[AllowedResourceActions <String[]>]`: 
+            - `[DisplayName <String>]`: 
+            - `[UserId <String>]`: 
         - `[StartDayOfWeek <String>]`: dayOfWeek
         - `[SwapShiftsChangeRequests <IMicrosoftGraphSwapShiftsChangeRequest[]>]`: The swap requests for shifts in the schedule.
           - `[RecipientActionMessage <String>]`: Custom message sent by recipient of the offer shift request.
@@ -13953,7 +13918,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[TeamDefinition <IMicrosoftGraphTeam>]`: team
       - `[TenantId <String>]`: The ID of the Microsoft Entra tenant.
       - `[Visibility <String>]`: teamVisibilityType
-      - `[WebUrl <String>]`: A hyperlink that goes to the team in the Microsoft Teams client. It is the URL you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.
+      - `[WebUrl <String>]`: A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.
     - `[Theme <String>]`: Specifies a Microsoft 365 group's color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.
     - `[Threads <IMicrosoftGraphConversationThread[]>]`: The group's conversation threads. Nullable.
     - `[TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>]`: The groups a group is a member of, either directly or through nested membership. Nullable.
@@ -16360,10 +16325,10 @@ To create the parameters described below, construct a hash table containing the 
           - `[IsRooted <Boolean?>]`: true if device is rooted; false if device is jail-broken. This can only be updated by Intune.
           - `[Kind <String>]`: Form factor of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
           - `[ManagementType <String>]`: Management channel of the device.  This property is set by Intune. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.
-          - `[Manufacturer <String>]`: Manufacturer of the device. Read-only.
+          - `[Manufacturer <String>]`: Manufacturer of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
           - `[MdmAppId <String>]`: Application identifier used to register device into MDM. Read-only. Supports $filter (eq, ne, not, startsWith).
           - `[MemberOf <IMicrosoftGraphDirectoryObject[]>]`: Groups and administrative units that this device is a member of. Read-only. Nullable. Supports $expand.
-          - `[Model <String>]`: Model of the device. Read-only.
+          - `[Model <String>]`: Model of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
           - `[Name <String>]`: Friendly name of the device. Only returned if user signs in with a Microsoft account as part of Project Rome.
           - `[OnPremisesLastSyncDateTime <DateTime?>]`: The last time at which the object was synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Read-only. Supports $filter (eq, ne, not, ge, le, in).
           - `[OnPremisesSecurityIdentifier <String>]`: The on-premises security identifier (SID) for the user who was synchronized from on-premises to the cloud. Read-only. Returned only on $select. Supports $filter (eq).
@@ -16379,7 +16344,7 @@ To create the parameters described below, construct a hash table containing the 
           - `[Status <String>]`: Device is online or offline. Only returned if user signs in with a Microsoft account as part of Project Rome.
           - `[SystemLabels <String[]>]`: List of labels applied to the device by the system. Supports $filter (/$count eq 0, /$count ne 0).
           - `[TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>]`: Groups and administrative units that this device is a member of. This operation is transitive. Supports $expand.
-          - `[TrustType <String>]`: Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Microsoft Entra ID). For more information, see Introduction to device management in Microsoft Entra ID.
+          - `[TrustType <String>]`: Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Microsoft Entra ID). For more details, see Introduction to device management in Microsoft Entra ID.
           - `[UsageRights <IMicrosoftGraphUsageRight[]>]`: Represents the usage rights a device has been granted.
             - `[Id <String>]`: The unique identifier for an entity. Read-only.
             - `[CatalogId <String>]`: Product id corresponding to the usage right.
@@ -16491,14 +16456,14 @@ To create the parameters described below, construct a hash table containing the 
           - `[ContentType <String>]`: bodyType
         - `[BodyPreview <String>]`: The preview of the message associated with the event. It is in text format.
         - `[Calendar <IMicrosoftGraphCalendar>]`: calendar
-        - `[CancelledOccurrences <String[]>]`: Contains occurrenceId property values of canceled instances in a recurring series, if the event is the series master. Instances in a recurring series that are canceled are called cancelledOccurences.Returned only on $select in a Get operation which specifies the id of a series master event (that is, the seriesMasterId property value).
+        - `[CancelledOccurrences <String[]>]`: Contains occurrenceId property values of cancelled instances in a recurring series, if the event is the series master. Instances in a recurring series that are cancelled are called cancelledOccurences.Returned only on $select in a Get operation which specifies the id of a series master event (that is, the seriesMasterId property value).
         - `[End <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
         - `[ExceptionOccurrences <IMicrosoftGraphEvent[]>]`: 
         - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the event. Nullable.
         - `[HasAttachments <Boolean?>]`: Set to true if the event has attachments.
         - `[HideAttendees <Boolean?>]`: When set to true, each attendee only sees themselves in the meeting request and meeting Tracking list. Default is false.
         - `[Importance <String>]`: importance
-        - `[Instances <IMicrosoftGraphEvent[]>]`: The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn't include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.
+        - `[Instances <IMicrosoftGraphEvent[]>]`: The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
         - `[IsAllDay <Boolean?>]`: 
         - `[IsCancelled <Boolean?>]`: 
         - `[IsDraft <Boolean?>]`: 
@@ -16696,12 +16661,12 @@ To create the parameters described below, construct a hash table containing the 
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
         - `[Attachments <IMicrosoftGraphChatMessageAttachment[]>]`: References to attached objects like files, tabs, meetings etc.
           - `[Content <String>]`: The content of the attachment. If the attachment is a rich card, set the property to the rich card object. This property and contentUrl are mutually exclusive.
-          - `[ContentType <String>]`: The media type of the content attachment. It can have the following values: reference: Attachment is a link to another file. Populate the contentURL with the link to the object.Any contentType that is supported by the Bot Framework's Attachment object.application/vnd.microsoft.card.codesnippet: A code snippet. application/vnd.microsoft.card.announcement: An announcement header.
-          - `[ContentUrl <String>]`: The URL for the content of the attachment.
-          - `[Id <String>]`: Read-only. The unique id of the attachment.
+          - `[ContentType <String>]`: The media type of the content attachment. It can have the following values: reference: Attachment is a link to another file. Populate the contentURL with the link to the object.Any contentTypes supported by the Bot Framework's Attachment objectapplication/vnd.microsoft.card.codesnippet: A code snippet. application/vnd.microsoft.card.announcement: An announcement header.
+          - `[ContentUrl <String>]`: URL for the content of the attachment. Supported protocols: http, https, file and data.
+          - `[Id <String>]`: Read-only. Unique id of the attachment.
           - `[Name <String>]`: Name of the attachment.
-          - `[TeamsAppId <String>]`: The ID of the Teams app that is associated with the attachment. The property is used to attribute a Teams message card to the specified app.
-          - `[ThumbnailUrl <String>]`: The URL to a thumbnail image that the channel can use if it supports using an alternative, smaller form of content or contentUrl. For example, if you set contentType to application/word and set contentUrl to the location of the Word document, you might include a thumbnail image that represents the document. The channel could display the thumbnail image instead of the document. When the user selects the image, the channel would open the document.
+          - `[TeamsAppId <String>]`: The ID of the Teams app that is associated with the attachment. The property is specifically used to attribute a Teams message card to the specified app.
+          - `[ThumbnailUrl <String>]`: URL to a thumbnail image that the channel can use if it supports using an alternative, smaller form of content or contentUrl. For example, if you set contentType to application/word and set contentUrl to the location of the Word document, you might include a thumbnail image that represents the document. The channel could display the thumbnail image instead of the document. When the user clicks the image, the channel would open the document.
         - `[Body <IMicrosoftGraphItemBody>]`: itemBody
         - `[ChannelIdentity <IMicrosoftGraphChannelIdentity>]`: channelIdentity
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -18158,7 +18123,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[SharepointIds <IMicrosoftGraphSharepointIds>]`: sharepointIds
       - `[SiteCollection <IMicrosoftGraphSiteCollection>]`: siteCollection
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DataLocationCode <String>]`: The geographic region code for where this site collection resides. Only present for multi-geo tenants. Read-only.
+        - `[DataLocationCode <String>]`: The geographic region code for where this site collection resides. Read-only.
         - `[Hostname <String>]`: The hostname for the site collection. Read-only.
         - `[Root <IMicrosoftGraphRoot>]`: root
       - `[Sites <IMicrosoftGraphSite[]>]`: The collection of the sub-sites under this site.
@@ -18171,10 +18136,10 @@ To create the parameters described below, construct a hash table containing the 
         - `[Sets <IMicrosoftGraphTermStoreSet[]>]`: Collection of all sets available in the term store.
     - `[GivenName <String>]`: The given name (first name) of the user. Maximum length is 64 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
     - `[HireDate <DateTime?>]`: The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.
-    - `[Identities <IMicrosoftGraphObjectIdentity[]>]`: Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft and tied to a user account. It may contain multiple items with the same signInType value.  Supports $filter (eq) with limitations.
-      - `[Issuer <String>]`: Specifies the issuer of the identity, for example facebook.com. 512 character limit. For local accounts (where signInType isn't federated), this property is the local default domain name for the tenant, for example contoso.com. For guests from other Microsoft Entra organization, this is the domain of the federated organization, for examplecontoso.com`.  For more information about filtering behavior for this property, see Filtering on the identities property of a user.
-      - `[IssuerAssignedId <String>]`: Specifies the unique identifier assigned to the user by the issuer. 64 character limit. The combination of issuer and issuerAssignedId must be unique within the organization. Represents the sign-in name for the user, when signInType is set to emailAddress or userName (also known as local accounts).When signInType is set to: emailAddress (or a custom string that starts with emailAddress like emailAddress1), issuerAssignedId must be a valid email addressuserName, issuerAssignedId must begin with an alphabetical character or number, and can only contain alphanumeric characters and the following symbols: - or _  For more information about filtering behavior for this property, see Filtering on the identities property of a user.
-      - `[SignInType <String>]`: Specifies the user sign-in types in your directory, such as emailAddress, userName, federated, or userPrincipalName. federated represents a unique identifier for a user from an issuer that can be in any format chosen by the issuer. Setting or updating a userPrincipalName identity updates the value of the userPrincipalName property on the user object. The validations performed on the userPrincipalName property on the user object, for example, verified domains and acceptable characters, are performed when setting or updating a userPrincipalName identity. Extra validation is enforced on issuerAssignedId when the sign-in type is set to emailAddress or userName. This property can also be set to any custom string.  For more information about filtering behavior for this property, see Filtering on the identities property of a user.
+    - `[Identities <IMicrosoftGraphObjectIdentity[]>]`: Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft and tied to a user account. It may contain multiple items with the same signInType value. Supports $filter (eq) including on null values, only where the signInType is not userPrincipalName.
+      - `[Issuer <String>]`: Specifies the issuer of the identity, for example facebook.com.For local accounts (where signInType isn't federated), this property is the local B2C tenant default domain name, for example contoso.onmicrosoft.com.For guests from other Microsoft Entra organization, this is the domain of the federated organization, for example contoso.com.Supports $filter. 512 character limit.
+      - `[IssuerAssignedId <String>]`: Specifies the unique identifier assigned to the user by the issuer. The combination of issuer and issuerAssignedId must be unique within the organization. Represents the sign-in name for the user, when signInType is set to emailAddress or userName (also known as local accounts).When signInType is set to: emailAddress, (or a custom string that starts with emailAddress like emailAddress1) issuerAssignedId must be a valid email addressuserName, issuerAssignedId must begin with an alphabetical character or number, and can only contain alphanumeric characters and the following symbols: - or Supports $filter. 64 character limit.
+      - `[SignInType <String>]`: Specifies the user sign-in types in your directory, such as emailAddress, userName, federated, or userPrincipalName. federated represents a unique identifier for a user from an issuer, that can be in any format chosen by the issuer. Setting or updating a userPrincipalName identity will update the value of the userPrincipalName property on the user object. The validations performed on the userPrincipalName property on the user object, for example, verified domains and acceptable characters, will be performed when setting or updating a userPrincipalName identity. Extra validation is enforced on issuerAssignedId when the sign-in type is set to emailAddress or userName. This property can also be set to any custom string.
     - `[ImAddresses <String[]>]`: The instant message voice-over IP (VOIP) session initiation protocol (SIP) addresses for the user. Read-only. Supports $filter (eq, not, ge, le, startsWith).
     - `[InferenceClassification <IMicrosoftGraphInferenceClassification>]`: inferenceClassification
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -18333,7 +18298,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[LicenseProcessingState <IMicrosoftGraphLicenseProcessingState>]`: licenseProcessingState
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[State <String>]`: 
-      - `[Mail <String>]`: The SMTP address for the group, for example, 'serviceadmins@contoso.com'. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+      - `[Mail <String>]`: The SMTP address for the group, for example, 'serviceadmins@contoso.onmicrosoft.com'. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
       - `[MailEnabled <Boolean?>]`: Specifies whether the group is mail-enabled. Required. Returned by default. Supports $filter (eq, ne, not, and eq on null values).
       - `[MailNickname <String>]`: The mail alias for the group, unique for Microsoft 365 groups in the organization. Maximum length is 64 characters. This property can contain only characters in the ASCII character set 0 - 127 except the following: @ () / [] ' ; : <> , SPACE. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith).
       - `[MemberOf <IMicrosoftGraphDirectoryObject[]>]`: Groups and administrative units that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.
@@ -18611,9 +18576,9 @@ To create the parameters described below, construct a hash table containing the 
           - `[AllowDeleteChannels <Boolean?>]`: If set to true, guests can delete channels.
         - `[IncomingChannels <IMicrosoftGraphChannel[]>]`: List of channels shared with the team.
         - `[InstalledApps <IMicrosoftGraphTeamsAppInstallation[]>]`: The apps installed in this team.
-        - `[InternalId <String>]`: A unique ID for the team used in a few places such as the audit log/Office 365 Management Activity API.
+        - `[InternalId <String>]`: A unique ID for the team that has been used in a few places such as the audit log/Office 365 Management Activity API.
         - `[IsArchived <Boolean?>]`: Whether this team is in read-only mode.
-        - `[IsMembershipLimitedToOwners <Boolean?>]`: If set to true, the team is currently in the owner-only team membership state and inaccessible by other team members, such as students.
+        - `[IsMembershipLimitedToOwners <Boolean?>]`: If set to true, the team is currently in the owner-only team membership state and not accessible by other team members, such as students.
         - `[MemberSettings <IMicrosoftGraphTeamMemberSettings>]`: teamMemberSettings
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[AllowAddRemoveApps <Boolean?>]`: If set to true, members can add and remove apps.
@@ -18631,7 +18596,7 @@ To create the parameters described below, construct a hash table containing the 
           - `[AllowUserDeleteMessages <Boolean?>]`: If set to true, users can delete their messages.
           - `[AllowUserEditMessages <Boolean?>]`: If set to true, users can edit their messages.
         - `[Operations <IMicrosoftGraphTeamsAsyncOperation[]>]`: The async operations that ran or are running on this team.
-        - `[Owners <IMicrosoftGraphUser[]>]`: The list of this team's owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user-delegated permissions, no owner can be specified (the current user is the owner). The owner must be specified as an object ID (GUID), not a UPN.
+        - `[Owners <IMicrosoftGraphUser[]>]`: The list of this team's owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user delegated permissions, no owner can be specified (the current user is the owner). Owner must be specified as an object ID (GUID), not a UPN.
         - `[PermissionGrants <IMicrosoftGraphResourceSpecificPermissionGrant[]>]`: A collection of permissions granted to apps to access the team.
         - `[Photo <IMicrosoftGraphProfilePhoto>]`: profilePhoto
         - `[PrimaryChannel <IMicrosoftGraphChannel>]`: channel
@@ -18691,14 +18656,14 @@ To create the parameters described below, construct a hash table containing the 
             - `[SchedulingGroupId <String>]`: The ID of the schedulingGroup that contains the openShift.
             - `[SchedulingGroupInfo <IMicrosoftGraphSchedulingGroupInfo>]`: schedulingGroupInfo
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[Code <String>]`: The code for the schedulingGroup.
-              - `[DisplayName <String>]`: The display name for the schedulingGroup. Required.
-              - `[SchedulingGroupId <String>]`: ID of the schedulingGroup.
+              - `[Code <String>]`: 
+              - `[DisplayName <String>]`: 
+              - `[SchedulingGroupId <String>]`: 
             - `[SharedOpenShift <IMicrosoftGraphOpenShiftItem>]`: openShiftItem
             - `[TeamInfo <IMicrosoftGraphShiftsTeamInfo>]`: shiftsTeamInfo
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[DisplayName <String>]`: The display name for the team. Required.
-              - `[TeamId <String>]`: ID of the team.
+              - `[DisplayName <String>]`: 
+              - `[TeamId <String>]`: 
           - `[OpenShiftsEnabled <Boolean?>]`: Indicates whether open shifts are enabled for the schedule.
           - `[ProvisionStatus <String>]`: operationStatus
           - `[SchedulingGroups <IMicrosoftGraphSchedulingGroup[]>]`: The logical grouping of users in the schedule (usually by role).
@@ -18728,14 +18693,8 @@ To create the parameters described below, construct a hash table containing the 
             - `[UserId <String>]`: ID of the user assigned to the shift. Required.
             - `[UserInfo <IMicrosoftGraphShiftsUserInfo>]`: shiftsUserInfo
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[DisplayName <String>]`: The display name for the user. Required.
-              - `[UserId <String>]`: ID of the user.
-          - `[ShiftsRoleDefinitions <IMicrosoftGraphShiftsRoleDefinition[]>]`: 
-            - `[Id <String>]`: The unique identifier for an entity. Read-only.
-            - `[Description <String>]`: 
-            - `[DisplayName <String>]`: 
-            - `[ShiftsRolePermissions <IMicrosoftGraphShiftsRolePermission[]>]`: 
-              - `[AllowedResourceActions <String[]>]`: 
+              - `[DisplayName <String>]`: 
+              - `[UserId <String>]`: 
           - `[StartDayOfWeek <String>]`: dayOfWeek
           - `[SwapShiftsChangeRequests <IMicrosoftGraphSwapShiftsChangeRequest[]>]`: The swap requests for shifts in the schedule.
             - `[RecipientActionMessage <String>]`: Custom message sent by recipient of the offer shift request.
@@ -18853,7 +18812,7 @@ To create the parameters described below, construct a hash table containing the 
           - `[TeamDefinition <IMicrosoftGraphTeam>]`: team
         - `[TenantId <String>]`: The ID of the Microsoft Entra tenant.
         - `[Visibility <String>]`: teamVisibilityType
-        - `[WebUrl <String>]`: A hyperlink that goes to the team in the Microsoft Teams client. It is the URL you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.
+        - `[WebUrl <String>]`: A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.
       - `[Theme <String>]`: Specifies a Microsoft 365 group's color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.
       - `[Threads <IMicrosoftGraphConversationThread[]>]`: The group's conversation threads. Nullable.
       - `[TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>]`: The groups a group is a member of, either directly or through nested membership. Nullable.
@@ -21344,10 +21303,10 @@ To create the parameters described below, construct a hash table containing the 
           - `[IsRooted <Boolean?>]`: true if device is rooted; false if device is jail-broken. This can only be updated by Intune.
           - `[Kind <String>]`: Form factor of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
           - `[ManagementType <String>]`: Management channel of the device.  This property is set by Intune. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.
-          - `[Manufacturer <String>]`: Manufacturer of the device. Read-only.
+          - `[Manufacturer <String>]`: Manufacturer of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
           - `[MdmAppId <String>]`: Application identifier used to register device into MDM. Read-only. Supports $filter (eq, ne, not, startsWith).
           - `[MemberOf <IMicrosoftGraphDirectoryObject[]>]`: Groups and administrative units that this device is a member of. Read-only. Nullable. Supports $expand.
-          - `[Model <String>]`: Model of the device. Read-only.
+          - `[Model <String>]`: Model of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
           - `[Name <String>]`: Friendly name of the device. Only returned if user signs in with a Microsoft account as part of Project Rome.
           - `[OnPremisesLastSyncDateTime <DateTime?>]`: The last time at which the object was synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Read-only. Supports $filter (eq, ne, not, ge, le, in).
           - `[OnPremisesSecurityIdentifier <String>]`: The on-premises security identifier (SID) for the user who was synchronized from on-premises to the cloud. Read-only. Returned only on $select. Supports $filter (eq).
@@ -21363,7 +21322,7 @@ To create the parameters described below, construct a hash table containing the 
           - `[Status <String>]`: Device is online or offline. Only returned if user signs in with a Microsoft account as part of Project Rome.
           - `[SystemLabels <String[]>]`: List of labels applied to the device by the system. Supports $filter (/$count eq 0, /$count ne 0).
           - `[TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>]`: Groups and administrative units that this device is a member of. This operation is transitive. Supports $expand.
-          - `[TrustType <String>]`: Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Microsoft Entra ID). For more information, see Introduction to device management in Microsoft Entra ID.
+          - `[TrustType <String>]`: Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Microsoft Entra ID). For more details, see Introduction to device management in Microsoft Entra ID.
           - `[UsageRights <IMicrosoftGraphUsageRight[]>]`: Represents the usage rights a device has been granted.
             - `[Id <String>]`: The unique identifier for an entity. Read-only.
             - `[CatalogId <String>]`: Product id corresponding to the usage right.
@@ -21475,14 +21434,14 @@ To create the parameters described below, construct a hash table containing the 
           - `[ContentType <String>]`: bodyType
         - `[BodyPreview <String>]`: The preview of the message associated with the event. It is in text format.
         - `[Calendar <IMicrosoftGraphCalendar>]`: calendar
-        - `[CancelledOccurrences <String[]>]`: Contains occurrenceId property values of canceled instances in a recurring series, if the event is the series master. Instances in a recurring series that are canceled are called cancelledOccurences.Returned only on $select in a Get operation which specifies the id of a series master event (that is, the seriesMasterId property value).
+        - `[CancelledOccurrences <String[]>]`: Contains occurrenceId property values of cancelled instances in a recurring series, if the event is the series master. Instances in a recurring series that are cancelled are called cancelledOccurences.Returned only on $select in a Get operation which specifies the id of a series master event (that is, the seriesMasterId property value).
         - `[End <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
         - `[ExceptionOccurrences <IMicrosoftGraphEvent[]>]`: 
         - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the event. Nullable.
         - `[HasAttachments <Boolean?>]`: Set to true if the event has attachments.
         - `[HideAttendees <Boolean?>]`: When set to true, each attendee only sees themselves in the meeting request and meeting Tracking list. Default is false.
         - `[Importance <String>]`: importance
-        - `[Instances <IMicrosoftGraphEvent[]>]`: The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn't include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.
+        - `[Instances <IMicrosoftGraphEvent[]>]`: The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
         - `[IsAllDay <Boolean?>]`: 
         - `[IsCancelled <Boolean?>]`: 
         - `[IsDraft <Boolean?>]`: 
@@ -21680,12 +21639,12 @@ To create the parameters described below, construct a hash table containing the 
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
         - `[Attachments <IMicrosoftGraphChatMessageAttachment[]>]`: References to attached objects like files, tabs, meetings etc.
           - `[Content <String>]`: The content of the attachment. If the attachment is a rich card, set the property to the rich card object. This property and contentUrl are mutually exclusive.
-          - `[ContentType <String>]`: The media type of the content attachment. It can have the following values: reference: Attachment is a link to another file. Populate the contentURL with the link to the object.Any contentType that is supported by the Bot Framework's Attachment object.application/vnd.microsoft.card.codesnippet: A code snippet. application/vnd.microsoft.card.announcement: An announcement header.
-          - `[ContentUrl <String>]`: The URL for the content of the attachment.
-          - `[Id <String>]`: Read-only. The unique id of the attachment.
+          - `[ContentType <String>]`: The media type of the content attachment. It can have the following values: reference: Attachment is a link to another file. Populate the contentURL with the link to the object.Any contentTypes supported by the Bot Framework's Attachment objectapplication/vnd.microsoft.card.codesnippet: A code snippet. application/vnd.microsoft.card.announcement: An announcement header.
+          - `[ContentUrl <String>]`: URL for the content of the attachment. Supported protocols: http, https, file and data.
+          - `[Id <String>]`: Read-only. Unique id of the attachment.
           - `[Name <String>]`: Name of the attachment.
-          - `[TeamsAppId <String>]`: The ID of the Teams app that is associated with the attachment. The property is used to attribute a Teams message card to the specified app.
-          - `[ThumbnailUrl <String>]`: The URL to a thumbnail image that the channel can use if it supports using an alternative, smaller form of content or contentUrl. For example, if you set contentType to application/word and set contentUrl to the location of the Word document, you might include a thumbnail image that represents the document. The channel could display the thumbnail image instead of the document. When the user selects the image, the channel would open the document.
+          - `[TeamsAppId <String>]`: The ID of the Teams app that is associated with the attachment. The property is specifically used to attribute a Teams message card to the specified app.
+          - `[ThumbnailUrl <String>]`: URL to a thumbnail image that the channel can use if it supports using an alternative, smaller form of content or contentUrl. For example, if you set contentType to application/word and set contentUrl to the location of the Word document, you might include a thumbnail image that represents the document. The channel could display the thumbnail image instead of the document. When the user clicks the image, the channel would open the document.
         - `[Body <IMicrosoftGraphItemBody>]`: itemBody
         - `[ChannelIdentity <IMicrosoftGraphChannelIdentity>]`: channelIdentity
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -23135,7 +23094,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[SharepointIds <IMicrosoftGraphSharepointIds>]`: sharepointIds
       - `[SiteCollection <IMicrosoftGraphSiteCollection>]`: siteCollection
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DataLocationCode <String>]`: The geographic region code for where this site collection resides. Only present for multi-geo tenants. Read-only.
+        - `[DataLocationCode <String>]`: The geographic region code for where this site collection resides. Read-only.
         - `[Hostname <String>]`: The hostname for the site collection. Read-only.
         - `[Root <IMicrosoftGraphRoot>]`: root
       - `[Sites <IMicrosoftGraphSite[]>]`: The collection of the sub-sites under this site.
@@ -23148,10 +23107,10 @@ To create the parameters described below, construct a hash table containing the 
         - `[Sets <IMicrosoftGraphTermStoreSet[]>]`: Collection of all sets available in the term store.
     - `[GivenName <String>]`: The given name (first name) of the user. Maximum length is 64 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
     - `[HireDate <DateTime?>]`: The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.
-    - `[Identities <IMicrosoftGraphObjectIdentity[]>]`: Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft and tied to a user account. It may contain multiple items with the same signInType value.  Supports $filter (eq) with limitations.
-      - `[Issuer <String>]`: Specifies the issuer of the identity, for example facebook.com. 512 character limit. For local accounts (where signInType isn't federated), this property is the local default domain name for the tenant, for example contoso.com. For guests from other Microsoft Entra organization, this is the domain of the federated organization, for examplecontoso.com`.  For more information about filtering behavior for this property, see Filtering on the identities property of a user.
-      - `[IssuerAssignedId <String>]`: Specifies the unique identifier assigned to the user by the issuer. 64 character limit. The combination of issuer and issuerAssignedId must be unique within the organization. Represents the sign-in name for the user, when signInType is set to emailAddress or userName (also known as local accounts).When signInType is set to: emailAddress (or a custom string that starts with emailAddress like emailAddress1), issuerAssignedId must be a valid email addressuserName, issuerAssignedId must begin with an alphabetical character or number, and can only contain alphanumeric characters and the following symbols: - or _  For more information about filtering behavior for this property, see Filtering on the identities property of a user.
-      - `[SignInType <String>]`: Specifies the user sign-in types in your directory, such as emailAddress, userName, federated, or userPrincipalName. federated represents a unique identifier for a user from an issuer that can be in any format chosen by the issuer. Setting or updating a userPrincipalName identity updates the value of the userPrincipalName property on the user object. The validations performed on the userPrincipalName property on the user object, for example, verified domains and acceptable characters, are performed when setting or updating a userPrincipalName identity. Extra validation is enforced on issuerAssignedId when the sign-in type is set to emailAddress or userName. This property can also be set to any custom string.  For more information about filtering behavior for this property, see Filtering on the identities property of a user.
+    - `[Identities <IMicrosoftGraphObjectIdentity[]>]`: Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft and tied to a user account. It may contain multiple items with the same signInType value. Supports $filter (eq) including on null values, only where the signInType is not userPrincipalName.
+      - `[Issuer <String>]`: Specifies the issuer of the identity, for example facebook.com.For local accounts (where signInType isn't federated), this property is the local B2C tenant default domain name, for example contoso.onmicrosoft.com.For guests from other Microsoft Entra organization, this is the domain of the federated organization, for example contoso.com.Supports $filter. 512 character limit.
+      - `[IssuerAssignedId <String>]`: Specifies the unique identifier assigned to the user by the issuer. The combination of issuer and issuerAssignedId must be unique within the organization. Represents the sign-in name for the user, when signInType is set to emailAddress or userName (also known as local accounts).When signInType is set to: emailAddress, (or a custom string that starts with emailAddress like emailAddress1) issuerAssignedId must be a valid email addressuserName, issuerAssignedId must begin with an alphabetical character or number, and can only contain alphanumeric characters and the following symbols: - or Supports $filter. 64 character limit.
+      - `[SignInType <String>]`: Specifies the user sign-in types in your directory, such as emailAddress, userName, federated, or userPrincipalName. federated represents a unique identifier for a user from an issuer, that can be in any format chosen by the issuer. Setting or updating a userPrincipalName identity will update the value of the userPrincipalName property on the user object. The validations performed on the userPrincipalName property on the user object, for example, verified domains and acceptable characters, will be performed when setting or updating a userPrincipalName identity. Extra validation is enforced on issuerAssignedId when the sign-in type is set to emailAddress or userName. This property can also be set to any custom string.
     - `[ImAddresses <String[]>]`: The instant message voice-over IP (VOIP) session initiation protocol (SIP) addresses for the user. Read-only. Supports $filter (eq, not, ge, le, startsWith).
     - `[InferenceClassification <IMicrosoftGraphInferenceClassification>]`: inferenceClassification
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -23310,7 +23269,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[LicenseProcessingState <IMicrosoftGraphLicenseProcessingState>]`: licenseProcessingState
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[State <String>]`: 
-      - `[Mail <String>]`: The SMTP address for the group, for example, 'serviceadmins@contoso.com'. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+      - `[Mail <String>]`: The SMTP address for the group, for example, 'serviceadmins@contoso.onmicrosoft.com'. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
       - `[MailEnabled <Boolean?>]`: Specifies whether the group is mail-enabled. Required. Returned by default. Supports $filter (eq, ne, not, and eq on null values).
       - `[MailNickname <String>]`: The mail alias for the group, unique for Microsoft 365 groups in the organization. Maximum length is 64 characters. This property can contain only characters in the ASCII character set 0 - 127 except the following: @ () / [] ' ; : <> , SPACE. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith).
       - `[MemberOf <IMicrosoftGraphDirectoryObject[]>]`: Groups and administrative units that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.
@@ -23588,9 +23547,9 @@ To create the parameters described below, construct a hash table containing the 
           - `[AllowDeleteChannels <Boolean?>]`: If set to true, guests can delete channels.
         - `[IncomingChannels <IMicrosoftGraphChannel[]>]`: List of channels shared with the team.
         - `[InstalledApps <IMicrosoftGraphTeamsAppInstallation[]>]`: The apps installed in this team.
-        - `[InternalId <String>]`: A unique ID for the team used in a few places such as the audit log/Office 365 Management Activity API.
+        - `[InternalId <String>]`: A unique ID for the team that has been used in a few places such as the audit log/Office 365 Management Activity API.
         - `[IsArchived <Boolean?>]`: Whether this team is in read-only mode.
-        - `[IsMembershipLimitedToOwners <Boolean?>]`: If set to true, the team is currently in the owner-only team membership state and inaccessible by other team members, such as students.
+        - `[IsMembershipLimitedToOwners <Boolean?>]`: If set to true, the team is currently in the owner-only team membership state and not accessible by other team members, such as students.
         - `[MemberSettings <IMicrosoftGraphTeamMemberSettings>]`: teamMemberSettings
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[AllowAddRemoveApps <Boolean?>]`: If set to true, members can add and remove apps.
@@ -23608,7 +23567,7 @@ To create the parameters described below, construct a hash table containing the 
           - `[AllowUserDeleteMessages <Boolean?>]`: If set to true, users can delete their messages.
           - `[AllowUserEditMessages <Boolean?>]`: If set to true, users can edit their messages.
         - `[Operations <IMicrosoftGraphTeamsAsyncOperation[]>]`: The async operations that ran or are running on this team.
-        - `[Owners <IMicrosoftGraphUser[]>]`: The list of this team's owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user-delegated permissions, no owner can be specified (the current user is the owner). The owner must be specified as an object ID (GUID), not a UPN.
+        - `[Owners <IMicrosoftGraphUser[]>]`: The list of this team's owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user delegated permissions, no owner can be specified (the current user is the owner). Owner must be specified as an object ID (GUID), not a UPN.
         - `[PermissionGrants <IMicrosoftGraphResourceSpecificPermissionGrant[]>]`: A collection of permissions granted to apps to access the team.
         - `[Photo <IMicrosoftGraphProfilePhoto>]`: profilePhoto
         - `[PrimaryChannel <IMicrosoftGraphChannel>]`: channel
@@ -23668,14 +23627,14 @@ To create the parameters described below, construct a hash table containing the 
             - `[SchedulingGroupId <String>]`: The ID of the schedulingGroup that contains the openShift.
             - `[SchedulingGroupInfo <IMicrosoftGraphSchedulingGroupInfo>]`: schedulingGroupInfo
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[Code <String>]`: The code for the schedulingGroup.
-              - `[DisplayName <String>]`: The display name for the schedulingGroup. Required.
-              - `[SchedulingGroupId <String>]`: ID of the schedulingGroup.
+              - `[Code <String>]`: 
+              - `[DisplayName <String>]`: 
+              - `[SchedulingGroupId <String>]`: 
             - `[SharedOpenShift <IMicrosoftGraphOpenShiftItem>]`: openShiftItem
             - `[TeamInfo <IMicrosoftGraphShiftsTeamInfo>]`: shiftsTeamInfo
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[DisplayName <String>]`: The display name for the team. Required.
-              - `[TeamId <String>]`: ID of the team.
+              - `[DisplayName <String>]`: 
+              - `[TeamId <String>]`: 
           - `[OpenShiftsEnabled <Boolean?>]`: Indicates whether open shifts are enabled for the schedule.
           - `[ProvisionStatus <String>]`: operationStatus
           - `[SchedulingGroups <IMicrosoftGraphSchedulingGroup[]>]`: The logical grouping of users in the schedule (usually by role).
@@ -23705,14 +23664,8 @@ To create the parameters described below, construct a hash table containing the 
             - `[UserId <String>]`: ID of the user assigned to the shift. Required.
             - `[UserInfo <IMicrosoftGraphShiftsUserInfo>]`: shiftsUserInfo
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[DisplayName <String>]`: The display name for the user. Required.
-              - `[UserId <String>]`: ID of the user.
-          - `[ShiftsRoleDefinitions <IMicrosoftGraphShiftsRoleDefinition[]>]`: 
-            - `[Id <String>]`: The unique identifier for an entity. Read-only.
-            - `[Description <String>]`: 
-            - `[DisplayName <String>]`: 
-            - `[ShiftsRolePermissions <IMicrosoftGraphShiftsRolePermission[]>]`: 
-              - `[AllowedResourceActions <String[]>]`: 
+              - `[DisplayName <String>]`: 
+              - `[UserId <String>]`: 
           - `[StartDayOfWeek <String>]`: dayOfWeek
           - `[SwapShiftsChangeRequests <IMicrosoftGraphSwapShiftsChangeRequest[]>]`: The swap requests for shifts in the schedule.
             - `[RecipientActionMessage <String>]`: Custom message sent by recipient of the offer shift request.
@@ -23830,7 +23783,7 @@ To create the parameters described below, construct a hash table containing the 
           - `[TeamDefinition <IMicrosoftGraphTeam>]`: team
         - `[TenantId <String>]`: The ID of the Microsoft Entra tenant.
         - `[Visibility <String>]`: teamVisibilityType
-        - `[WebUrl <String>]`: A hyperlink that goes to the team in the Microsoft Teams client. It is the URL you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.
+        - `[WebUrl <String>]`: A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.
       - `[Theme <String>]`: Specifies a Microsoft 365 group's color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.
       - `[Threads <IMicrosoftGraphConversationThread[]>]`: The group's conversation threads. Nullable.
       - `[TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>]`: The groups a group is a member of, either directly or through nested membership. Nullable.
@@ -26282,10 +26235,10 @@ To create the parameters described below, construct a hash table containing the 
         - `[IsRooted <Boolean?>]`: true if device is rooted; false if device is jail-broken. This can only be updated by Intune.
         - `[Kind <String>]`: Form factor of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
         - `[ManagementType <String>]`: Management channel of the device.  This property is set by Intune. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.
-        - `[Manufacturer <String>]`: Manufacturer of the device. Read-only.
+        - `[Manufacturer <String>]`: Manufacturer of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
         - `[MdmAppId <String>]`: Application identifier used to register device into MDM. Read-only. Supports $filter (eq, ne, not, startsWith).
         - `[MemberOf <IMicrosoftGraphDirectoryObject[]>]`: Groups and administrative units that this device is a member of. Read-only. Nullable. Supports $expand.
-        - `[Model <String>]`: Model of the device. Read-only.
+        - `[Model <String>]`: Model of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
         - `[Name <String>]`: Friendly name of the device. Only returned if user signs in with a Microsoft account as part of Project Rome.
         - `[OnPremisesLastSyncDateTime <DateTime?>]`: The last time at which the object was synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Read-only. Supports $filter (eq, ne, not, ge, le, in).
         - `[OnPremisesSecurityIdentifier <String>]`: The on-premises security identifier (SID) for the user who was synchronized from on-premises to the cloud. Read-only. Returned only on $select. Supports $filter (eq).
@@ -26301,7 +26254,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[Status <String>]`: Device is online or offline. Only returned if user signs in with a Microsoft account as part of Project Rome.
         - `[SystemLabels <String[]>]`: List of labels applied to the device by the system. Supports $filter (/$count eq 0, /$count ne 0).
         - `[TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>]`: Groups and administrative units that this device is a member of. This operation is transitive. Supports $expand.
-        - `[TrustType <String>]`: Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Microsoft Entra ID). For more information, see Introduction to device management in Microsoft Entra ID.
+        - `[TrustType <String>]`: Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Microsoft Entra ID). For more details, see Introduction to device management in Microsoft Entra ID.
         - `[UsageRights <IMicrosoftGraphUsageRight[]>]`: Represents the usage rights a device has been granted.
           - `[Id <String>]`: The unique identifier for an entity. Read-only.
           - `[CatalogId <String>]`: Product id corresponding to the usage right.
@@ -26413,14 +26366,14 @@ To create the parameters described below, construct a hash table containing the 
         - `[ContentType <String>]`: bodyType
       - `[BodyPreview <String>]`: The preview of the message associated with the event. It is in text format.
       - `[Calendar <IMicrosoftGraphCalendar>]`: calendar
-      - `[CancelledOccurrences <String[]>]`: Contains occurrenceId property values of canceled instances in a recurring series, if the event is the series master. Instances in a recurring series that are canceled are called cancelledOccurences.Returned only on $select in a Get operation which specifies the id of a series master event (that is, the seriesMasterId property value).
+      - `[CancelledOccurrences <String[]>]`: Contains occurrenceId property values of cancelled instances in a recurring series, if the event is the series master. Instances in a recurring series that are cancelled are called cancelledOccurences.Returned only on $select in a Get operation which specifies the id of a series master event (that is, the seriesMasterId property value).
       - `[End <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
       - `[ExceptionOccurrences <IMicrosoftGraphEvent[]>]`: 
       - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the event. Nullable.
       - `[HasAttachments <Boolean?>]`: Set to true if the event has attachments.
       - `[HideAttendees <Boolean?>]`: When set to true, each attendee only sees themselves in the meeting request and meeting Tracking list. Default is false.
       - `[Importance <String>]`: importance
-      - `[Instances <IMicrosoftGraphEvent[]>]`: The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn't include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.
+      - `[Instances <IMicrosoftGraphEvent[]>]`: The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
       - `[IsAllDay <Boolean?>]`: 
       - `[IsCancelled <Boolean?>]`: 
       - `[IsDraft <Boolean?>]`: 
@@ -26618,12 +26571,12 @@ To create the parameters described below, construct a hash table containing the 
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[Attachments <IMicrosoftGraphChatMessageAttachment[]>]`: References to attached objects like files, tabs, meetings etc.
         - `[Content <String>]`: The content of the attachment. If the attachment is a rich card, set the property to the rich card object. This property and contentUrl are mutually exclusive.
-        - `[ContentType <String>]`: The media type of the content attachment. It can have the following values: reference: Attachment is a link to another file. Populate the contentURL with the link to the object.Any contentType that is supported by the Bot Framework's Attachment object.application/vnd.microsoft.card.codesnippet: A code snippet. application/vnd.microsoft.card.announcement: An announcement header.
-        - `[ContentUrl <String>]`: The URL for the content of the attachment.
-        - `[Id <String>]`: Read-only. The unique id of the attachment.
+        - `[ContentType <String>]`: The media type of the content attachment. It can have the following values: reference: Attachment is a link to another file. Populate the contentURL with the link to the object.Any contentTypes supported by the Bot Framework's Attachment objectapplication/vnd.microsoft.card.codesnippet: A code snippet. application/vnd.microsoft.card.announcement: An announcement header.
+        - `[ContentUrl <String>]`: URL for the content of the attachment. Supported protocols: http, https, file and data.
+        - `[Id <String>]`: Read-only. Unique id of the attachment.
         - `[Name <String>]`: Name of the attachment.
-        - `[TeamsAppId <String>]`: The ID of the Teams app that is associated with the attachment. The property is used to attribute a Teams message card to the specified app.
-        - `[ThumbnailUrl <String>]`: The URL to a thumbnail image that the channel can use if it supports using an alternative, smaller form of content or contentUrl. For example, if you set contentType to application/word and set contentUrl to the location of the Word document, you might include a thumbnail image that represents the document. The channel could display the thumbnail image instead of the document. When the user selects the image, the channel would open the document.
+        - `[TeamsAppId <String>]`: The ID of the Teams app that is associated with the attachment. The property is specifically used to attribute a Teams message card to the specified app.
+        - `[ThumbnailUrl <String>]`: URL to a thumbnail image that the channel can use if it supports using an alternative, smaller form of content or contentUrl. For example, if you set contentType to application/word and set contentUrl to the location of the Word document, you might include a thumbnail image that represents the document. The channel could display the thumbnail image instead of the document. When the user clicks the image, the channel would open the document.
       - `[Body <IMicrosoftGraphItemBody>]`: itemBody
       - `[ChannelIdentity <IMicrosoftGraphChannelIdentity>]`: channelIdentity
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -28115,7 +28068,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[SharepointIds <IMicrosoftGraphSharepointIds>]`: sharepointIds
     - `[SiteCollection <IMicrosoftGraphSiteCollection>]`: siteCollection
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DataLocationCode <String>]`: The geographic region code for where this site collection resides. Only present for multi-geo tenants. Read-only.
+      - `[DataLocationCode <String>]`: The geographic region code for where this site collection resides. Read-only.
       - `[Hostname <String>]`: The hostname for the site collection. Read-only.
       - `[Root <IMicrosoftGraphRoot>]`: root
     - `[Sites <IMicrosoftGraphSite[]>]`: The collection of the sub-sites under this site.
@@ -28128,10 +28081,10 @@ To create the parameters described below, construct a hash table containing the 
       - `[Sets <IMicrosoftGraphTermStoreSet[]>]`: Collection of all sets available in the term store.
   - `[GivenName <String>]`: The given name (first name) of the user. Maximum length is 64 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
   - `[HireDate <DateTime?>]`: The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.
-  - `[Identities <IMicrosoftGraphObjectIdentity[]>]`: Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft and tied to a user account. It may contain multiple items with the same signInType value.  Supports $filter (eq) with limitations.
-    - `[Issuer <String>]`: Specifies the issuer of the identity, for example facebook.com. 512 character limit. For local accounts (where signInType isn't federated), this property is the local default domain name for the tenant, for example contoso.com. For guests from other Microsoft Entra organization, this is the domain of the federated organization, for examplecontoso.com`.  For more information about filtering behavior for this property, see Filtering on the identities property of a user.
-    - `[IssuerAssignedId <String>]`: Specifies the unique identifier assigned to the user by the issuer. 64 character limit. The combination of issuer and issuerAssignedId must be unique within the organization. Represents the sign-in name for the user, when signInType is set to emailAddress or userName (also known as local accounts).When signInType is set to: emailAddress (or a custom string that starts with emailAddress like emailAddress1), issuerAssignedId must be a valid email addressuserName, issuerAssignedId must begin with an alphabetical character or number, and can only contain alphanumeric characters and the following symbols: - or _  For more information about filtering behavior for this property, see Filtering on the identities property of a user.
-    - `[SignInType <String>]`: Specifies the user sign-in types in your directory, such as emailAddress, userName, federated, or userPrincipalName. federated represents a unique identifier for a user from an issuer that can be in any format chosen by the issuer. Setting or updating a userPrincipalName identity updates the value of the userPrincipalName property on the user object. The validations performed on the userPrincipalName property on the user object, for example, verified domains and acceptable characters, are performed when setting or updating a userPrincipalName identity. Extra validation is enforced on issuerAssignedId when the sign-in type is set to emailAddress or userName. This property can also be set to any custom string.  For more information about filtering behavior for this property, see Filtering on the identities property of a user.
+  - `[Identities <IMicrosoftGraphObjectIdentity[]>]`: Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft and tied to a user account. It may contain multiple items with the same signInType value. Supports $filter (eq) including on null values, only where the signInType is not userPrincipalName.
+    - `[Issuer <String>]`: Specifies the issuer of the identity, for example facebook.com.For local accounts (where signInType isn't federated), this property is the local B2C tenant default domain name, for example contoso.onmicrosoft.com.For guests from other Microsoft Entra organization, this is the domain of the federated organization, for example contoso.com.Supports $filter. 512 character limit.
+    - `[IssuerAssignedId <String>]`: Specifies the unique identifier assigned to the user by the issuer. The combination of issuer and issuerAssignedId must be unique within the organization. Represents the sign-in name for the user, when signInType is set to emailAddress or userName (also known as local accounts).When signInType is set to: emailAddress, (or a custom string that starts with emailAddress like emailAddress1) issuerAssignedId must be a valid email addressuserName, issuerAssignedId must begin with an alphabetical character or number, and can only contain alphanumeric characters and the following symbols: - or Supports $filter. 64 character limit.
+    - `[SignInType <String>]`: Specifies the user sign-in types in your directory, such as emailAddress, userName, federated, or userPrincipalName. federated represents a unique identifier for a user from an issuer, that can be in any format chosen by the issuer. Setting or updating a userPrincipalName identity will update the value of the userPrincipalName property on the user object. The validations performed on the userPrincipalName property on the user object, for example, verified domains and acceptable characters, will be performed when setting or updating a userPrincipalName identity. Extra validation is enforced on issuerAssignedId when the sign-in type is set to emailAddress or userName. This property can also be set to any custom string.
   - `[ImAddresses <String[]>]`: The instant message voice-over IP (VOIP) session initiation protocol (SIP) addresses for the user. Read-only. Supports $filter (eq, not, ge, le, startsWith).
   - `[InferenceClassification <IMicrosoftGraphInferenceClassification>]`: inferenceClassification
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -28290,7 +28243,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[LicenseProcessingState <IMicrosoftGraphLicenseProcessingState>]`: licenseProcessingState
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[State <String>]`: 
-    - `[Mail <String>]`: The SMTP address for the group, for example, 'serviceadmins@contoso.com'. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+    - `[Mail <String>]`: The SMTP address for the group, for example, 'serviceadmins@contoso.onmicrosoft.com'. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
     - `[MailEnabled <Boolean?>]`: Specifies whether the group is mail-enabled. Required. Returned by default. Supports $filter (eq, ne, not, and eq on null values).
     - `[MailNickname <String>]`: The mail alias for the group, unique for Microsoft 365 groups in the organization. Maximum length is 64 characters. This property can contain only characters in the ASCII character set 0 - 127 except the following: @ () / [] ' ; : <> , SPACE. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith).
     - `[MemberOf <IMicrosoftGraphDirectoryObject[]>]`: Groups and administrative units that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.
@@ -28568,9 +28521,9 @@ To create the parameters described below, construct a hash table containing the 
         - `[AllowDeleteChannels <Boolean?>]`: If set to true, guests can delete channels.
       - `[IncomingChannels <IMicrosoftGraphChannel[]>]`: List of channels shared with the team.
       - `[InstalledApps <IMicrosoftGraphTeamsAppInstallation[]>]`: The apps installed in this team.
-      - `[InternalId <String>]`: A unique ID for the team used in a few places such as the audit log/Office 365 Management Activity API.
+      - `[InternalId <String>]`: A unique ID for the team that has been used in a few places such as the audit log/Office 365 Management Activity API.
       - `[IsArchived <Boolean?>]`: Whether this team is in read-only mode.
-      - `[IsMembershipLimitedToOwners <Boolean?>]`: If set to true, the team is currently in the owner-only team membership state and inaccessible by other team members, such as students.
+      - `[IsMembershipLimitedToOwners <Boolean?>]`: If set to true, the team is currently in the owner-only team membership state and not accessible by other team members, such as students.
       - `[MemberSettings <IMicrosoftGraphTeamMemberSettings>]`: teamMemberSettings
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[AllowAddRemoveApps <Boolean?>]`: If set to true, members can add and remove apps.
@@ -28588,7 +28541,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[AllowUserDeleteMessages <Boolean?>]`: If set to true, users can delete their messages.
         - `[AllowUserEditMessages <Boolean?>]`: If set to true, users can edit their messages.
       - `[Operations <IMicrosoftGraphTeamsAsyncOperation[]>]`: The async operations that ran or are running on this team.
-      - `[Owners <IMicrosoftGraphUser[]>]`: The list of this team's owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user-delegated permissions, no owner can be specified (the current user is the owner). The owner must be specified as an object ID (GUID), not a UPN.
+      - `[Owners <IMicrosoftGraphUser[]>]`: The list of this team's owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user delegated permissions, no owner can be specified (the current user is the owner). Owner must be specified as an object ID (GUID), not a UPN.
       - `[PermissionGrants <IMicrosoftGraphResourceSpecificPermissionGrant[]>]`: A collection of permissions granted to apps to access the team.
       - `[Photo <IMicrosoftGraphProfilePhoto>]`: profilePhoto
       - `[PrimaryChannel <IMicrosoftGraphChannel>]`: channel
@@ -28648,14 +28601,14 @@ To create the parameters described below, construct a hash table containing the 
           - `[SchedulingGroupId <String>]`: The ID of the schedulingGroup that contains the openShift.
           - `[SchedulingGroupInfo <IMicrosoftGraphSchedulingGroupInfo>]`: schedulingGroupInfo
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[Code <String>]`: The code for the schedulingGroup.
-            - `[DisplayName <String>]`: The display name for the schedulingGroup. Required.
-            - `[SchedulingGroupId <String>]`: ID of the schedulingGroup.
+            - `[Code <String>]`: 
+            - `[DisplayName <String>]`: 
+            - `[SchedulingGroupId <String>]`: 
           - `[SharedOpenShift <IMicrosoftGraphOpenShiftItem>]`: openShiftItem
           - `[TeamInfo <IMicrosoftGraphShiftsTeamInfo>]`: shiftsTeamInfo
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[DisplayName <String>]`: The display name for the team. Required.
-            - `[TeamId <String>]`: ID of the team.
+            - `[DisplayName <String>]`: 
+            - `[TeamId <String>]`: 
         - `[OpenShiftsEnabled <Boolean?>]`: Indicates whether open shifts are enabled for the schedule.
         - `[ProvisionStatus <String>]`: operationStatus
         - `[SchedulingGroups <IMicrosoftGraphSchedulingGroup[]>]`: The logical grouping of users in the schedule (usually by role).
@@ -28685,14 +28638,8 @@ To create the parameters described below, construct a hash table containing the 
           - `[UserId <String>]`: ID of the user assigned to the shift. Required.
           - `[UserInfo <IMicrosoftGraphShiftsUserInfo>]`: shiftsUserInfo
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[DisplayName <String>]`: The display name for the user. Required.
-            - `[UserId <String>]`: ID of the user.
-        - `[ShiftsRoleDefinitions <IMicrosoftGraphShiftsRoleDefinition[]>]`: 
-          - `[Id <String>]`: The unique identifier for an entity. Read-only.
-          - `[Description <String>]`: 
-          - `[DisplayName <String>]`: 
-          - `[ShiftsRolePermissions <IMicrosoftGraphShiftsRolePermission[]>]`: 
-            - `[AllowedResourceActions <String[]>]`: 
+            - `[DisplayName <String>]`: 
+            - `[UserId <String>]`: 
         - `[StartDayOfWeek <String>]`: dayOfWeek
         - `[SwapShiftsChangeRequests <IMicrosoftGraphSwapShiftsChangeRequest[]>]`: The swap requests for shifts in the schedule.
           - `[RecipientActionMessage <String>]`: Custom message sent by recipient of the offer shift request.
@@ -28810,7 +28757,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[TeamDefinition <IMicrosoftGraphTeam>]`: team
       - `[TenantId <String>]`: The ID of the Microsoft Entra tenant.
       - `[Visibility <String>]`: teamVisibilityType
-      - `[WebUrl <String>]`: A hyperlink that goes to the team in the Microsoft Teams client. It is the URL you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.
+      - `[WebUrl <String>]`: A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.
     - `[Theme <String>]`: Specifies a Microsoft 365 group's color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.
     - `[Threads <IMicrosoftGraphConversationThread[]>]`: The group's conversation threads. Nullable.
     - `[TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>]`: The groups a group is a member of, either directly or through nested membership. Nullable.
