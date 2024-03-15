@@ -37,11 +37,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - deletedDateTime
-                - deletedDateTime desc
               type: string
         - name: $select
           in: query
@@ -52,9 +47,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
               type: string
         - name: $expand
           in: query
@@ -65,8 +57,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -127,9 +117,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
               type: string
         - name: $expand
           in: query
@@ -140,8 +127,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -504,9 +489,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
               type: string
         - name: $orderby
           in: query
@@ -517,11 +499,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - deletedDateTime
-                - deletedDateTime desc
               type: string
         - name: $expand
           in: query
@@ -532,8 +509,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:

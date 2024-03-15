@@ -30,10 +30,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - settings
-                - activityStatistics
               type: string
         - name: $expand
           in: query
@@ -44,9 +40,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - activityStatistics
               type: string
       responses:
         2XX:
@@ -145,19 +138,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - activity
-                - activity desc
-                - duration
-                - duration desc
-                - endDate
-                - endDate desc
-                - startDate
-                - startDate desc
-                - timeZoneUsed
-                - timeZoneUsed desc
               type: string
         - name: $select
           in: query
@@ -168,13 +148,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - activity
-                - duration
-                - endDate
-                - startDate
-                - timeZoneUsed
               type: string
         - name: $expand
           in: query
@@ -185,8 +158,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -261,13 +232,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - activity
-                - duration
-                - endDate
-                - startDate
-                - timeZoneUsed
               type: string
         - name: $expand
           in: query
@@ -278,8 +242,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -419,49 +381,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - birthday
-                - birthday desc
-                - companyName
-                - companyName desc
-                - department
-                - department desc
-                - displayName
-                - displayName desc
-                - emailAddresses
-                - emailAddresses desc
-                - givenName
-                - givenName desc
-                - isFavorite
-                - isFavorite desc
-                - mailboxType
-                - mailboxType desc
-                - officeLocation
-                - officeLocation desc
-                - personNotes
-                - personNotes desc
-                - personType
-                - personType desc
-                - phones
-                - phones desc
-                - postalAddresses
-                - postalAddresses desc
-                - profession
-                - profession desc
-                - sources
-                - sources desc
-                - surname
-                - surname desc
-                - title
-                - title desc
-                - userPrincipalName
-                - userPrincipalName desc
-                - websites
-                - websites desc
-                - yomiCompany
-                - yomiCompany desc
               type: string
         - name: $select
           in: query
@@ -472,28 +391,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - birthday
-                - companyName
-                - department
-                - displayName
-                - emailAddresses
-                - givenName
-                - isFavorite
-                - mailboxType
-                - officeLocation
-                - personNotes
-                - personType
-                - phones
-                - postalAddresses
-                - profession
-                - sources
-                - surname
-                - title
-                - userPrincipalName
-                - websites
-                - yomiCompany
               type: string
       responses:
         2XX:
@@ -537,28 +434,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - birthday
-                - companyName
-                - department
-                - displayName
-                - emailAddresses
-                - givenName
-                - isFavorite
-                - mailboxType
-                - officeLocation
-                - personNotes
-                - personType
-                - phones
-                - postalAddresses
-                - profession
-                - sources
-                - surname
-                - title
-                - userPrincipalName
-                - websites
-                - yomiCompany
               type: string
       responses:
         2XX:
@@ -620,27 +495,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - account
-                - addresses
-                - anniversaries
-                - awards
-                - certifications
-                - educationalActivities
-                - emails
-                - interests
-                - languages
-                - names
-                - notes
-                - patents
-                - phones
-                - positions
-                - projects
-                - publications
-                - skills
-                - webAccounts
-                - websites
               type: string
         - name: $expand
           in: query
@@ -651,27 +505,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - account
-                - addresses
-                - anniversaries
-                - awards
-                - certifications
-                - educationalActivities
-                - emails
-                - interests
-                - languages
-                - names
-                - notes
-                - patents
-                - phones
-                - positions
-                - projects
-                - publications
-                - skills
-                - webAccounts
-                - websites
               type: string
       responses:
         2XX:
@@ -777,33 +610,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - allowedAudiences
-                - allowedAudiences desc
-                - createdBy
-                - createdBy desc
-                - createdDateTime
-                - createdDateTime desc
-                - inference
-                - inference desc
-                - isSearchable
-                - isSearchable desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - source
-                - source desc
-                - ageGroup
-                - ageGroup desc
-                - countryCode
-                - countryCode desc
-                - preferredLanguageTag
-                - preferredLanguageTag desc
-                - userPrincipalName
-                - userPrincipalName desc
               type: string
         - name: $select
           in: query
@@ -814,20 +620,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedAudiences
-                - createdBy
-                - createdDateTime
-                - inference
-                - isSearchable
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - source
-                - ageGroup
-                - countryCode
-                - preferredLanguageTag
-                - userPrincipalName
               type: string
         - name: $expand
           in: query
@@ -838,8 +630,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -921,20 +711,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedAudiences
-                - createdBy
-                - createdDateTime
-                - inference
-                - isSearchable
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - source
-                - ageGroup
-                - countryCode
-                - preferredLanguageTag
-                - userPrincipalName
               type: string
         - name: $expand
           in: query
@@ -945,8 +721,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1094,31 +868,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - allowedAudiences
-                - allowedAudiences desc
-                - createdBy
-                - createdBy desc
-                - createdDateTime
-                - createdDateTime desc
-                - inference
-                - inference desc
-                - isSearchable
-                - isSearchable desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - source
-                - source desc
-                - detail
-                - detail desc
-                - displayName
-                - displayName desc
-                - geoCoordinates
-                - geoCoordinates desc
               type: string
         - name: $select
           in: query
@@ -1129,19 +878,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedAudiences
-                - createdBy
-                - createdDateTime
-                - inference
-                - isSearchable
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - source
-                - detail
-                - displayName
-                - geoCoordinates
               type: string
         - name: $expand
           in: query
@@ -1152,8 +888,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1235,19 +969,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedAudiences
-                - createdBy
-                - createdDateTime
-                - inference
-                - isSearchable
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - source
-                - detail
-                - displayName
-                - geoCoordinates
               type: string
         - name: $expand
           in: query
@@ -1258,8 +979,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1407,31 +1126,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - allowedAudiences
-                - allowedAudiences desc
-                - createdBy
-                - createdBy desc
-                - createdDateTime
-                - createdDateTime desc
-                - inference
-                - inference desc
-                - isSearchable
-                - isSearchable desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - source
-                - source desc
-                - date
-                - date desc
-                - displayName
-                - displayName desc
-                - type
-                - type desc
               type: string
         - name: $select
           in: query
@@ -1442,19 +1136,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedAudiences
-                - createdBy
-                - createdDateTime
-                - inference
-                - isSearchable
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - source
-                - date
-                - displayName
-                - type
               type: string
         - name: $expand
           in: query
@@ -1465,8 +1146,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1548,19 +1227,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedAudiences
-                - createdBy
-                - createdDateTime
-                - inference
-                - isSearchable
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - source
-                - date
-                - displayName
-                - type
               type: string
         - name: $expand
           in: query
@@ -1571,8 +1237,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1720,37 +1384,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - allowedAudiences
-                - allowedAudiences desc
-                - createdBy
-                - createdBy desc
-                - createdDateTime
-                - createdDateTime desc
-                - inference
-                - inference desc
-                - isSearchable
-                - isSearchable desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - source
-                - source desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - issuedDate
-                - issuedDate desc
-                - issuingAuthority
-                - issuingAuthority desc
-                - thumbnailUrl
-                - thumbnailUrl desc
-                - webUrl
-                - webUrl desc
               type: string
         - name: $select
           in: query
@@ -1761,22 +1394,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedAudiences
-                - createdBy
-                - createdDateTime
-                - inference
-                - isSearchable
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - source
-                - description
-                - displayName
-                - issuedDate
-                - issuingAuthority
-                - thumbnailUrl
-                - webUrl
               type: string
         - name: $expand
           in: query
@@ -1787,8 +1404,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1870,22 +1485,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedAudiences
-                - createdBy
-                - createdDateTime
-                - inference
-                - isSearchable
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - source
-                - description
-                - displayName
-                - issuedDate
-                - issuingAuthority
-                - thumbnailUrl
-                - webUrl
               type: string
         - name: $expand
           in: query
@@ -1896,8 +1495,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2045,45 +1642,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - allowedAudiences
-                - allowedAudiences desc
-                - createdBy
-                - createdBy desc
-                - createdDateTime
-                - createdDateTime desc
-                - inference
-                - inference desc
-                - isSearchable
-                - isSearchable desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - source
-                - source desc
-                - certificationId
-                - certificationId desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - endDate
-                - endDate desc
-                - issuedDate
-                - issuedDate desc
-                - issuingAuthority
-                - issuingAuthority desc
-                - issuingCompany
-                - issuingCompany desc
-                - startDate
-                - startDate desc
-                - thumbnailUrl
-                - thumbnailUrl desc
-                - webUrl
-                - webUrl desc
               type: string
         - name: $select
           in: query
@@ -2094,26 +1652,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedAudiences
-                - createdBy
-                - createdDateTime
-                - inference
-                - isSearchable
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - source
-                - certificationId
-                - description
-                - displayName
-                - endDate
-                - issuedDate
-                - issuingAuthority
-                - issuingCompany
-                - startDate
-                - thumbnailUrl
-                - webUrl
               type: string
         - name: $expand
           in: query
@@ -2124,8 +1662,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2207,26 +1743,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedAudiences
-                - createdBy
-                - createdDateTime
-                - inference
-                - isSearchable
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - source
-                - certificationId
-                - description
-                - displayName
-                - endDate
-                - issuedDate
-                - issuingAuthority
-                - issuingCompany
-                - startDate
-                - thumbnailUrl
-                - webUrl
               type: string
         - name: $expand
           in: query
@@ -2237,8 +1753,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2386,35 +1900,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - allowedAudiences
-                - allowedAudiences desc
-                - createdBy
-                - createdBy desc
-                - createdDateTime
-                - createdDateTime desc
-                - inference
-                - inference desc
-                - isSearchable
-                - isSearchable desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - source
-                - source desc
-                - completionMonthYear
-                - completionMonthYear desc
-                - endMonthYear
-                - endMonthYear desc
-                - institution
-                - institution desc
-                - program
-                - program desc
-                - startMonthYear
-                - startMonthYear desc
               type: string
         - name: $select
           in: query
@@ -2425,21 +1910,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedAudiences
-                - createdBy
-                - createdDateTime
-                - inference
-                - isSearchable
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - source
-                - completionMonthYear
-                - endMonthYear
-                - institution
-                - program
-                - startMonthYear
               type: string
         - name: $expand
           in: query
@@ -2450,8 +1920,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2533,21 +2001,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedAudiences
-                - createdBy
-                - createdDateTime
-                - inference
-                - isSearchable
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - source
-                - completionMonthYear
-                - endMonthYear
-                - institution
-                - program
-                - startMonthYear
               type: string
         - name: $expand
           in: query
@@ -2558,8 +2011,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2707,31 +2158,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - allowedAudiences
-                - allowedAudiences desc
-                - createdBy
-                - createdBy desc
-                - createdDateTime
-                - createdDateTime desc
-                - inference
-                - inference desc
-                - isSearchable
-                - isSearchable desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - source
-                - source desc
-                - address
-                - address desc
-                - displayName
-                - displayName desc
-                - type
-                - type desc
               type: string
         - name: $select
           in: query
@@ -2742,19 +2168,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedAudiences
-                - createdBy
-                - createdDateTime
-                - inference
-                - isSearchable
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - source
-                - address
-                - displayName
-                - type
               type: string
         - name: $expand
           in: query
@@ -2765,8 +2178,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2848,19 +2259,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedAudiences
-                - createdBy
-                - createdDateTime
-                - inference
-                - isSearchable
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - source
-                - address
-                - displayName
-                - type
               type: string
         - name: $expand
           in: query
@@ -2871,8 +2269,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3020,37 +2416,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - allowedAudiences
-                - allowedAudiences desc
-                - createdBy
-                - createdBy desc
-                - createdDateTime
-                - createdDateTime desc
-                - inference
-                - inference desc
-                - isSearchable
-                - isSearchable desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - source
-                - source desc
-                - categories
-                - categories desc
-                - collaborationTags
-                - collaborationTags desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - thumbnailUrl
-                - thumbnailUrl desc
-                - webUrl
-                - webUrl desc
               type: string
         - name: $select
           in: query
@@ -3061,22 +2426,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedAudiences
-                - createdBy
-                - createdDateTime
-                - inference
-                - isSearchable
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - source
-                - categories
-                - collaborationTags
-                - description
-                - displayName
-                - thumbnailUrl
-                - webUrl
               type: string
         - name: $expand
           in: query
@@ -3087,8 +2436,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3170,22 +2517,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedAudiences
-                - createdBy
-                - createdDateTime
-                - inference
-                - isSearchable
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - source
-                - categories
-                - collaborationTags
-                - description
-                - displayName
-                - thumbnailUrl
-                - webUrl
               type: string
         - name: $expand
           in: query
@@ -3196,8 +2527,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3345,39 +2674,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - allowedAudiences
-                - allowedAudiences desc
-                - createdBy
-                - createdBy desc
-                - createdDateTime
-                - createdDateTime desc
-                - inference
-                - inference desc
-                - isSearchable
-                - isSearchable desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - source
-                - source desc
-                - displayName
-                - displayName desc
-                - proficiency
-                - proficiency desc
-                - reading
-                - reading desc
-                - spoken
-                - spoken desc
-                - tag
-                - tag desc
-                - thumbnailUrl
-                - thumbnailUrl desc
-                - written
-                - written desc
               type: string
         - name: $select
           in: query
@@ -3388,23 +2684,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedAudiences
-                - createdBy
-                - createdDateTime
-                - inference
-                - isSearchable
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - source
-                - displayName
-                - proficiency
-                - reading
-                - spoken
-                - tag
-                - thumbnailUrl
-                - written
               type: string
         - name: $expand
           in: query
@@ -3415,8 +2694,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3498,23 +2775,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedAudiences
-                - createdBy
-                - createdDateTime
-                - inference
-                - isSearchable
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - source
-                - displayName
-                - proficiency
-                - reading
-                - spoken
-                - tag
-                - thumbnailUrl
-                - written
               type: string
         - name: $expand
           in: query
@@ -3525,8 +2785,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3674,47 +2932,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - allowedAudiences
-                - allowedAudiences desc
-                - createdBy
-                - createdBy desc
-                - createdDateTime
-                - createdDateTime desc
-                - inference
-                - inference desc
-                - isSearchable
-                - isSearchable desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - source
-                - source desc
-                - displayName
-                - displayName desc
-                - first
-                - first desc
-                - initials
-                - initials desc
-                - languageTag
-                - languageTag desc
-                - last
-                - last desc
-                - maiden
-                - maiden desc
-                - middle
-                - middle desc
-                - nickname
-                - nickname desc
-                - pronunciation
-                - pronunciation desc
-                - suffix
-                - suffix desc
-                - title
-                - title desc
               type: string
         - name: $select
           in: query
@@ -3725,27 +2942,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedAudiences
-                - createdBy
-                - createdDateTime
-                - inference
-                - isSearchable
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - source
-                - displayName
-                - first
-                - initials
-                - languageTag
-                - last
-                - maiden
-                - middle
-                - nickname
-                - pronunciation
-                - suffix
-                - title
               type: string
         - name: $expand
           in: query
@@ -3756,8 +2952,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3839,27 +3033,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedAudiences
-                - createdBy
-                - createdDateTime
-                - inference
-                - isSearchable
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - source
-                - displayName
-                - first
-                - initials
-                - languageTag
-                - last
-                - maiden
-                - middle
-                - nickname
-                - pronunciation
-                - suffix
-                - title
               type: string
         - name: $expand
           in: query
@@ -3870,8 +3043,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -4019,31 +3190,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - allowedAudiences
-                - allowedAudiences desc
-                - createdBy
-                - createdBy desc
-                - createdDateTime
-                - createdDateTime desc
-                - inference
-                - inference desc
-                - isSearchable
-                - isSearchable desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - source
-                - source desc
-                - detail
-                - detail desc
-                - displayName
-                - displayName desc
-                - thumbnailUrl
-                - thumbnailUrl desc
               type: string
         - name: $select
           in: query
@@ -4054,19 +3200,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedAudiences
-                - createdBy
-                - createdDateTime
-                - inference
-                - isSearchable
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - source
-                - detail
-                - displayName
-                - thumbnailUrl
               type: string
         - name: $expand
           in: query
@@ -4077,8 +3210,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -4160,19 +3291,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedAudiences
-                - createdBy
-                - createdDateTime
-                - inference
-                - isSearchable
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - source
-                - detail
-                - displayName
-                - thumbnailUrl
               type: string
         - name: $expand
           in: query
@@ -4183,8 +3301,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -4332,39 +3448,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - allowedAudiences
-                - allowedAudiences desc
-                - createdBy
-                - createdBy desc
-                - createdDateTime
-                - createdDateTime desc
-                - inference
-                - inference desc
-                - isSearchable
-                - isSearchable desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - source
-                - source desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - isPending
-                - isPending desc
-                - issuedDate
-                - issuedDate desc
-                - issuingAuthority
-                - issuingAuthority desc
-                - number
-                - number desc
-                - webUrl
-                - webUrl desc
               type: string
         - name: $select
           in: query
@@ -4375,23 +3458,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedAudiences
-                - createdBy
-                - createdDateTime
-                - inference
-                - isSearchable
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - source
-                - description
-                - displayName
-                - isPending
-                - issuedDate
-                - issuingAuthority
-                - number
-                - webUrl
               type: string
         - name: $expand
           in: query
@@ -4402,8 +3468,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -4485,23 +3549,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedAudiences
-                - createdBy
-                - createdDateTime
-                - inference
-                - isSearchable
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - source
-                - description
-                - displayName
-                - isPending
-                - issuedDate
-                - issuingAuthority
-                - number
-                - webUrl
               type: string
         - name: $expand
           in: query
@@ -4512,8 +3559,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -4661,31 +3706,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - allowedAudiences
-                - allowedAudiences desc
-                - createdBy
-                - createdBy desc
-                - createdDateTime
-                - createdDateTime desc
-                - inference
-                - inference desc
-                - isSearchable
-                - isSearchable desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - source
-                - source desc
-                - displayName
-                - displayName desc
-                - number
-                - number desc
-                - type
-                - type desc
               type: string
         - name: $select
           in: query
@@ -4696,19 +3716,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedAudiences
-                - createdBy
-                - createdDateTime
-                - inference
-                - isSearchable
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - source
-                - displayName
-                - number
-                - type
               type: string
         - name: $expand
           in: query
@@ -4719,8 +3726,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -4802,19 +3807,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedAudiences
-                - createdBy
-                - createdDateTime
-                - inference
-                - isSearchable
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - source
-                - displayName
-                - number
-                - type
               type: string
         - name: $expand
           in: query
@@ -4825,8 +3817,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -4974,35 +3964,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - allowedAudiences
-                - allowedAudiences desc
-                - createdBy
-                - createdBy desc
-                - createdDateTime
-                - createdDateTime desc
-                - inference
-                - inference desc
-                - isSearchable
-                - isSearchable desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - source
-                - source desc
-                - categories
-                - categories desc
-                - colleagues
-                - colleagues desc
-                - detail
-                - detail desc
-                - isCurrent
-                - isCurrent desc
-                - manager
-                - manager desc
               type: string
         - name: $select
           in: query
@@ -5013,21 +3974,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedAudiences
-                - createdBy
-                - createdDateTime
-                - inference
-                - isSearchable
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - source
-                - categories
-                - colleagues
-                - detail
-                - isCurrent
-                - manager
               type: string
         - name: $expand
           in: query
@@ -5038,8 +3984,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -5121,21 +4065,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedAudiences
-                - createdBy
-                - createdDateTime
-                - inference
-                - isSearchable
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - source
-                - categories
-                - colleagues
-                - detail
-                - isCurrent
-                - manager
               type: string
         - name: $expand
           in: query
@@ -5146,8 +4075,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -5295,41 +4222,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - allowedAudiences
-                - allowedAudiences desc
-                - createdBy
-                - createdBy desc
-                - createdDateTime
-                - createdDateTime desc
-                - inference
-                - inference desc
-                - isSearchable
-                - isSearchable desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - source
-                - source desc
-                - categories
-                - categories desc
-                - client
-                - client desc
-                - collaborationTags
-                - collaborationTags desc
-                - colleagues
-                - colleagues desc
-                - detail
-                - detail desc
-                - displayName
-                - displayName desc
-                - sponsors
-                - sponsors desc
-                - thumbnailUrl
-                - thumbnailUrl desc
               type: string
         - name: $select
           in: query
@@ -5340,24 +4232,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedAudiences
-                - createdBy
-                - createdDateTime
-                - inference
-                - isSearchable
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - source
-                - categories
-                - client
-                - collaborationTags
-                - colleagues
-                - detail
-                - displayName
-                - sponsors
-                - thumbnailUrl
               type: string
         - name: $expand
           in: query
@@ -5368,8 +4242,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -5451,24 +4323,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedAudiences
-                - createdBy
-                - createdDateTime
-                - inference
-                - isSearchable
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - source
-                - categories
-                - client
-                - collaborationTags
-                - colleagues
-                - detail
-                - displayName
-                - sponsors
-                - thumbnailUrl
               type: string
         - name: $expand
           in: query
@@ -5479,8 +4333,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -5628,37 +4480,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - allowedAudiences
-                - allowedAudiences desc
-                - createdBy
-                - createdBy desc
-                - createdDateTime
-                - createdDateTime desc
-                - inference
-                - inference desc
-                - isSearchable
-                - isSearchable desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - source
-                - source desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - publishedDate
-                - publishedDate desc
-                - publisher
-                - publisher desc
-                - thumbnailUrl
-                - thumbnailUrl desc
-                - webUrl
-                - webUrl desc
               type: string
         - name: $select
           in: query
@@ -5669,22 +4490,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedAudiences
-                - createdBy
-                - createdDateTime
-                - inference
-                - isSearchable
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - source
-                - description
-                - displayName
-                - publishedDate
-                - publisher
-                - thumbnailUrl
-                - webUrl
               type: string
         - name: $expand
           in: query
@@ -5695,8 +4500,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -5778,22 +4581,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedAudiences
-                - createdBy
-                - createdDateTime
-                - inference
-                - isSearchable
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - source
-                - description
-                - displayName
-                - publishedDate
-                - publisher
-                - thumbnailUrl
-                - webUrl
               type: string
         - name: $expand
           in: query
@@ -5804,8 +4591,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -5953,37 +4738,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - allowedAudiences
-                - allowedAudiences desc
-                - createdBy
-                - createdBy desc
-                - createdDateTime
-                - createdDateTime desc
-                - inference
-                - inference desc
-                - isSearchable
-                - isSearchable desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - source
-                - source desc
-                - categories
-                - categories desc
-                - collaborationTags
-                - collaborationTags desc
-                - displayName
-                - displayName desc
-                - proficiency
-                - proficiency desc
-                - thumbnailUrl
-                - thumbnailUrl desc
-                - webUrl
-                - webUrl desc
               type: string
         - name: $select
           in: query
@@ -5994,22 +4748,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedAudiences
-                - createdBy
-                - createdDateTime
-                - inference
-                - isSearchable
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - source
-                - categories
-                - collaborationTags
-                - displayName
-                - proficiency
-                - thumbnailUrl
-                - webUrl
               type: string
         - name: $expand
           in: query
@@ -6020,8 +4758,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -6103,22 +4839,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedAudiences
-                - createdBy
-                - createdDateTime
-                - inference
-                - isSearchable
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - source
-                - categories
-                - collaborationTags
-                - displayName
-                - proficiency
-                - thumbnailUrl
-                - webUrl
               type: string
         - name: $expand
           in: query
@@ -6129,8 +4849,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -6278,37 +4996,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - allowedAudiences
-                - allowedAudiences desc
-                - createdBy
-                - createdBy desc
-                - createdDateTime
-                - createdDateTime desc
-                - inference
-                - inference desc
-                - isSearchable
-                - isSearchable desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - source
-                - source desc
-                - description
-                - description desc
-                - service
-                - service desc
-                - statusMessage
-                - statusMessage desc
-                - thumbnailUrl
-                - thumbnailUrl desc
-                - userId
-                - userId desc
-                - webUrl
-                - webUrl desc
               type: string
         - name: $select
           in: query
@@ -6319,22 +5006,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedAudiences
-                - createdBy
-                - createdDateTime
-                - inference
-                - isSearchable
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - source
-                - description
-                - service
-                - statusMessage
-                - thumbnailUrl
-                - userId
-                - webUrl
               type: string
         - name: $expand
           in: query
@@ -6345,8 +5016,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -6428,22 +5097,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedAudiences
-                - createdBy
-                - createdDateTime
-                - inference
-                - isSearchable
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - source
-                - description
-                - service
-                - statusMessage
-                - thumbnailUrl
-                - userId
-                - webUrl
               type: string
         - name: $expand
           in: query
@@ -6454,8 +5107,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -6603,35 +5254,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - allowedAudiences
-                - allowedAudiences desc
-                - createdBy
-                - createdBy desc
-                - createdDateTime
-                - createdDateTime desc
-                - inference
-                - inference desc
-                - isSearchable
-                - isSearchable desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - source
-                - source desc
-                - categories
-                - categories desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - thumbnailUrl
-                - thumbnailUrl desc
-                - webUrl
-                - webUrl desc
               type: string
         - name: $select
           in: query
@@ -6642,21 +5264,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedAudiences
-                - createdBy
-                - createdDateTime
-                - inference
-                - isSearchable
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - source
-                - categories
-                - description
-                - displayName
-                - thumbnailUrl
-                - webUrl
               type: string
         - name: $expand
           in: query
@@ -6667,8 +5274,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -6750,21 +5355,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedAudiences
-                - createdBy
-                - createdDateTime
-                - inference
-                - isSearchable
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - source
-                - categories
-                - description
-                - displayName
-                - thumbnailUrl
-                - webUrl
               type: string
         - name: $expand
           in: query
@@ -6775,8 +5365,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:

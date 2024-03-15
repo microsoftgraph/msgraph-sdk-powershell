@@ -1554,7 +1554,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action forward
-      description: "This action allows the organizer or attendee of a meeting event to forward the \nmeeting request to a new recipient.  If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action \nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's \ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
+      description: "This action allows the organizer or attendee of a meeting event to forward the\nmeeting request to a new recipient. If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action\nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's\ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
@@ -1749,7 +1749,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
+      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars. You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
@@ -2222,7 +2222,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action forward
-      description: "This action allows the organizer or attendee of a meeting event to forward the \nmeeting request to a new recipient.  If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action \nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's \ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
+      description: "This action allows the organizer or attendee of a meeting event to forward the\nmeeting request to a new recipient. If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action\nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's\ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
@@ -2393,7 +2393,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
+      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars. You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
@@ -3012,7 +3012,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action forward
-      description: "This action allows the organizer or attendee of a meeting event to forward the \nmeeting request to a new recipient.  If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action \nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's \ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
+      description: "This action allows the organizer or attendee of a meeting event to forward the\nmeeting request to a new recipient. If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action\nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's\ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
@@ -3207,7 +3207,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
+      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars. You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
@@ -3680,7 +3680,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action forward
-      description: "This action allows the organizer or attendee of a meeting event to forward the \nmeeting request to a new recipient.  If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action \nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's \ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
+      description: "This action allows the organizer or attendee of a meeting event to forward the\nmeeting request to a new recipient. If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action\nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's\ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
@@ -3851,7 +3851,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
+      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars. You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
@@ -4284,7 +4284,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action forward
-      description: "This action allows the organizer or attendee of a meeting event to forward the \nmeeting request to a new recipient.  If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action \nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's \ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
+      description: "This action allows the organizer or attendee of a meeting event to forward the\nmeeting request to a new recipient. If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action\nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's\ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
@@ -4431,7 +4431,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
+      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars. You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
@@ -5091,7 +5091,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action forward
-      description: "This action allows the organizer or attendee of a meeting event to forward the \nmeeting request to a new recipient.  If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action \nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's \ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
+      description: "This action allows the organizer or attendee of a meeting event to forward the\nmeeting request to a new recipient. If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action\nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's\ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
@@ -5286,7 +5286,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
+      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars. You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
@@ -5759,7 +5759,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action forward
-      description: "This action allows the organizer or attendee of a meeting event to forward the \nmeeting request to a new recipient.  If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action \nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's \ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
+      description: "This action allows the organizer or attendee of a meeting event to forward the\nmeeting request to a new recipient. If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action\nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's\ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
@@ -5930,7 +5930,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
+      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars. You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
@@ -6549,7 +6549,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action forward
-      description: "This action allows the organizer or attendee of a meeting event to forward the \nmeeting request to a new recipient.  If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action \nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's \ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
+      description: "This action allows the organizer or attendee of a meeting event to forward the\nmeeting request to a new recipient. If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action\nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's\ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
@@ -6744,7 +6744,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
+      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars. You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
@@ -7217,7 +7217,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action forward
-      description: "This action allows the organizer or attendee of a meeting event to forward the \nmeeting request to a new recipient.  If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action \nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's \ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
+      description: "This action allows the organizer or attendee of a meeting event to forward the\nmeeting request to a new recipient. If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action\nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's\ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
@@ -7388,7 +7388,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
+      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars. You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
@@ -7821,7 +7821,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action forward
-      description: "This action allows the organizer or attendee of a meeting event to forward the \nmeeting request to a new recipient.  If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action \nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's \ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
+      description: "This action allows the organizer or attendee of a meeting event to forward the\nmeeting request to a new recipient. If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action\nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's\ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
@@ -7968,7 +7968,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
+      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars. You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
@@ -8745,7 +8745,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action forward
-      description: "This action allows the organizer or attendee of a meeting event to forward the \nmeeting request to a new recipient.  If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action \nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's \ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
+      description: "This action allows the organizer or attendee of a meeting event to forward the\nmeeting request to a new recipient. If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action\nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's\ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
@@ -8940,7 +8940,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
+      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars. You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
@@ -9413,7 +9413,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action forward
-      description: "This action allows the organizer or attendee of a meeting event to forward the \nmeeting request to a new recipient.  If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action \nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's \ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
+      description: "This action allows the organizer or attendee of a meeting event to forward the\nmeeting request to a new recipient. If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action\nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's\ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
@@ -9584,7 +9584,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
+      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars. You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
@@ -10203,7 +10203,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action forward
-      description: "This action allows the organizer or attendee of a meeting event to forward the \nmeeting request to a new recipient.  If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action \nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's \ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
+      description: "This action allows the organizer or attendee of a meeting event to forward the\nmeeting request to a new recipient. If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action\nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's\ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
@@ -10398,7 +10398,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
+      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars. You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
@@ -10871,7 +10871,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action forward
-      description: "This action allows the organizer or attendee of a meeting event to forward the \nmeeting request to a new recipient.  If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action \nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's \ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
+      description: "This action allows the organizer or attendee of a meeting event to forward the\nmeeting request to a new recipient. If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action\nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's\ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
@@ -11042,7 +11042,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
+      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars. You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
@@ -11475,7 +11475,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action forward
-      description: "This action allows the organizer or attendee of a meeting event to forward the \nmeeting request to a new recipient.  If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action \nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's \ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
+      description: "This action allows the organizer or attendee of a meeting event to forward the\nmeeting request to a new recipient. If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action\nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's\ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
@@ -11622,7 +11622,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
+      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars. You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
@@ -12029,10 +12029,10 @@ paths:
       tags:
         - groups.conversation
       summary: Delete conversation
-      description: Delete conversation.
+      description: Delete a conversation object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversation-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/group-delete-conversation?view=graph-rest-1.0
       operationId: group_DeleteConversation
       parameters:
         - name: group-id
@@ -12432,7 +12432,7 @@ paths:
       tags:
         - groups.conversation
       summary: List posts
-      description: "Get the posts of the specified thread. You can specify both the parent conversation and the thread, or, \nyou can specify the thread without referencing the parent conversation."
+      description: "Get the posts of the specified thread. You can specify both the parent conversation and the thread, or,\nyou can specify the thread without referencing the parent conversation."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/conversationthread-list-posts?view=graph-rest-1.0
@@ -12568,7 +12568,7 @@ paths:
       tags:
         - groups.conversation
       summary: Get post
-      description: "Get the properties and relationships of a post in a specified thread. You can specify both the parent \nconversation and the thread, or, you can specify the thread without referencing the parent conversation. Since the post resource supports extensions, you can also use the GET operation to get custom properties and extension data in a post instance."
+      description: "Get the properties and relationships of a post in a specified thread. You can specify both the parent\nconversation and the thread, or, you can specify the thread without referencing the parent conversation. Since the post resource supports extensions, you can also use the GET operation to get custom properties and extension data in a post instance."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/post-get?view=graph-rest-1.0
@@ -22265,7 +22265,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action forward
-      description: "This action allows the organizer or attendee of a meeting event to forward the \nmeeting request to a new recipient.  If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action \nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's \ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
+      description: "This action allows the organizer or attendee of a meeting event to forward the\nmeeting request to a new recipient. If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action\nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's\ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
@@ -22460,7 +22460,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
+      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars. You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
@@ -22933,7 +22933,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action forward
-      description: "This action allows the organizer or attendee of a meeting event to forward the \nmeeting request to a new recipient.  If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action \nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's \ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
+      description: "This action allows the organizer or attendee of a meeting event to forward the\nmeeting request to a new recipient. If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action\nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's\ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
@@ -23104,7 +23104,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
+      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars. You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
@@ -23723,7 +23723,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action forward
-      description: "This action allows the organizer or attendee of a meeting event to forward the \nmeeting request to a new recipient.  If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action \nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's \ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
+      description: "This action allows the organizer or attendee of a meeting event to forward the\nmeeting request to a new recipient. If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action\nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's\ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
@@ -23918,7 +23918,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
+      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars. You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
@@ -24391,7 +24391,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action forward
-      description: "This action allows the organizer or attendee of a meeting event to forward the \nmeeting request to a new recipient.  If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action \nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's \ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
+      description: "This action allows the organizer or attendee of a meeting event to forward the\nmeeting request to a new recipient. If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action\nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's\ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
@@ -24562,7 +24562,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
+      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars. You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
@@ -24995,7 +24995,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action forward
-      description: "This action allows the organizer or attendee of a meeting event to forward the \nmeeting request to a new recipient.  If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action \nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's \ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
+      description: "This action allows the organizer or attendee of a meeting event to forward the\nmeeting request to a new recipient. If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action\nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's\ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
@@ -25142,7 +25142,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
+      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars. You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
@@ -43239,11 +43239,11 @@ paths:
     get:
       tags:
         - groups.conversationThread
-      summary: Get conversationThread
-      description: "Get a specific thread that belongs to a group. You can specify both the parent conversation and the thread, or, \nyou can specify the thread without referencing the parent conversation. "
+      summary: Get conversation thread
+      description: Get a thread object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationthread-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/group-get-thread?view=graph-rest-1.0
       operationId: group_GetThread
       parameters:
         - name: group-id
@@ -43339,11 +43339,11 @@ paths:
     delete:
       tags:
         - groups.conversationThread
-      summary: Delete conversationThread
-      description: Delete conversationThread.
+      summary: Delete conversation thread
+      description: Delete a thread object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationthread-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/group-delete-thread?view=graph-rest-1.0
       operationId: group_DeleteThread
       parameters:
         - name: group-id
@@ -43424,7 +43424,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: List posts
-      description: "Get the posts of the specified thread. You can specify both the parent conversation and the thread, or, \nyou can specify the thread without referencing the parent conversation."
+      description: "Get the posts of the specified thread. You can specify both the parent conversation and the thread, or,\nyou can specify the thread without referencing the parent conversation."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/conversationthread-list-posts?view=graph-rest-1.0
@@ -43552,7 +43552,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Get post
-      description: "Get the properties and relationships of a post in a specified thread. You can specify both the parent \nconversation and the thread, or, you can specify the thread without referencing the parent conversation. Since the post resource supports extensions, you can also use the GET operation to get custom properties and extension data in a post instance."
+      description: "Get the properties and relationships of a post in a specified thread. You can specify both the parent\nconversation and the thread, or, you can specify the thread without referencing the parent conversation. Since the post resource supports extensions, you can also use the GET operation to get custom properties and extension data in a post instance."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/post-get?view=graph-rest-1.0
@@ -48981,7 +48981,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.licenseProcessingState'
             mail:
               type: string
-              description: 'The SMTP address for the group, for example, ''serviceadmins@contoso.onmicrosoft.com''. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'The SMTP address for the group, for example, ''serviceadmins@contoso.com''. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             mailEnabled:
               type: boolean
@@ -49361,7 +49361,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: 'Contains occurrenceId property values of cancelled instances in a recurring series, if the event is the series master. Instances in a recurring series that are cancelled are called cancelledOccurences.Returned only on $select in a Get operation which specifies the id of a series master event (that is, the seriesMasterId property value).'
+              description: 'Contains occurrenceId property values of canceled instances in a recurring series, if the event is the series master. Instances in a recurring series that are canceled are called cancelledOccurences.Returned only on $select in a Get operation which specifies the id of a series master event (that is, the seriesMasterId property value).'
             end:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
             hasAttachments:
@@ -49480,7 +49480,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.event'
-              description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
+              description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
               x-ms-navigationProperty: true
             multiValueExtendedProperties:
               type: array
@@ -50705,7 +50705,7 @@ components:
               nullable: true
             mail:
               type: string
-              description: 'The SMTP address for the contact, for example, ''jeff@contoso.onmicrosoft.com''. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values).'
+              description: 'The SMTP address for the contact, for example, ''jeff@contoso.com''. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values).'
               nullable: true
             mailNickname:
               type: string
@@ -51175,7 +51175,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.objectIdentity'
-              description: 'Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft and tied to a user account. It may contain multiple items with the same signInType value. Supports $filter (eq) including on null values, only where the signInType is not userPrincipalName.'
+              description: 'Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft and tied to a user account. It may contain multiple items with the same signInType value.  Supports $filter (eq) with limitations.'
             imAddresses:
               type: array
               items:
@@ -55810,15 +55810,15 @@ components:
       properties:
         issuer:
           type: string
-          description: 'Specifies the issuer of the identity, for example facebook.com.For local accounts (where signInType isn''t federated), this property is the local B2C tenant default domain name, for example contoso.onmicrosoft.com.For guests from other Microsoft Entra organization, this is the domain of the federated organization, for example contoso.com.Supports $filter. 512 character limit.'
+          description: 'Specifies the issuer of the identity, for example facebook.com. 512 character limit. For local accounts (where signInType isn''t federated), this property is the local default domain name for the tenant, for example contoso.com.<br>For guests from other Microsoft Entra organization, this is the domain of the federated organization, for examplecontoso.com`.  For more information about filtering behavior for this property, see Filtering on the identities property of a user.'
           nullable: true
         issuerAssignedId:
           type: string
-          description: 'Specifies the unique identifier assigned to the user by the issuer. The combination of issuer and issuerAssignedId must be unique within the organization. Represents the sign-in name for the user, when signInType is set to emailAddress or userName (also known as local accounts).When signInType is set to: emailAddress, (or a custom string that starts with emailAddress like emailAddress1) issuerAssignedId must be a valid email addressuserName, issuerAssignedId must begin with an alphabetical character or number, and can only contain alphanumeric characters and the following symbols: - or Supports $filter. 64 character limit.'
+          description: 'Specifies the unique identifier assigned to the user by the issuer. 64 character limit. The combination of issuer and issuerAssignedId must be unique within the organization. Represents the sign-in name for the user, when signInType is set to emailAddress or userName (also known as local accounts).When signInType is set to: emailAddress (or a custom string that starts with emailAddress like emailAddress1), issuerAssignedId must be a valid email addressuserName, issuerAssignedId must begin with an alphabetical character or number, and can only contain alphanumeric characters and the following symbols: - or _  For more information about filtering behavior for this property, see Filtering on the identities property of a user.'
           nullable: true
         signInType:
           type: string
-          description: 'Specifies the user sign-in types in your directory, such as emailAddress, userName, federated, or userPrincipalName. federated represents a unique identifier for a user from an issuer, that can be in any format chosen by the issuer. Setting or updating a userPrincipalName identity will update the value of the userPrincipalName property on the user object. The validations performed on the userPrincipalName property on the user object, for example, verified domains and acceptable characters, will be performed when setting or updating a userPrincipalName identity. Extra validation is enforced on issuerAssignedId when the sign-in type is set to emailAddress or userName. This property can also be set to any custom string.'
+          description: 'Specifies the user sign-in types in your directory, such as emailAddress, userName, federated, or userPrincipalName. federated represents a unique identifier for a user from an issuer that can be in any format chosen by the issuer. Setting or updating a userPrincipalName identity updates the value of the userPrincipalName property on the user object. The validations performed on the userPrincipalName property on the user object, for example, verified domains and acceptable characters, are performed when setting or updating a userPrincipalName identity. Extra validation is enforced on issuerAssignedId when the sign-in type is set to emailAddress or userName. This property can also be set to any custom string.  For more information about filtering behavior for this property, see Filtering on the identities property of a user.'
           nullable: true
       additionalProperties:
         type: object
@@ -58674,7 +58674,7 @@ components:
       properties:
         dataLocationCode:
           type: string
-          description: The geographic region code for where this site collection resides. Read-only.
+          description: The geographic region code for where this site collection resides. Only present for multi-geo tenants. Read-only.
           nullable: true
         hostname:
           type: string
@@ -58858,15 +58858,15 @@ components:
           nullable: true
         contentType:
           type: string
-          description: 'The media type of the content attachment. It can have the following values: reference: Attachment is a link to another file. Populate the contentURL with the link to the object.Any contentTypes supported by the Bot Framework''s Attachment objectapplication/vnd.microsoft.card.codesnippet: A code snippet. application/vnd.microsoft.card.announcement: An announcement header.'
+          description: 'The media type of the content attachment. It can have the following values: reference: Attachment is a link to another file. Populate the contentURL with the link to the object.Any contentType that is supported by the Bot Framework''s Attachment object.application/vnd.microsoft.card.codesnippet: A code snippet. application/vnd.microsoft.card.announcement: An announcement header.'
           nullable: true
         contentUrl:
           type: string
-          description: 'URL for the content of the attachment. Supported protocols: http, https, file and data.'
+          description: The URL for the content of the attachment.
           nullable: true
         id:
           type: string
-          description: Read-only. Unique id of the attachment.
+          description: Read-only. The unique id of the attachment.
           nullable: true
         name:
           type: string
@@ -58874,11 +58874,11 @@ components:
           nullable: true
         teamsAppId:
           type: string
-          description: The ID of the Teams app that is associated with the attachment. The property is specifically used to attribute a Teams message card to the specified app.
+          description: The ID of the Teams app that is associated with the attachment. The property is used to attribute a Teams message card to the specified app.
           nullable: true
         thumbnailUrl:
           type: string
-          description: 'URL to a thumbnail image that the channel can use if it supports using an alternative, smaller form of content or contentUrl. For example, if you set contentType to application/word and set contentUrl to the location of the Word document, you might include a thumbnail image that represents the document. The channel could display the thumbnail image instead of the document. When the user clicks the image, the channel would open the document.'
+          description: 'The URL to a thumbnail image that the channel can use if it supports using an alternative, smaller form of content or contentUrl. For example, if you set contentType to application/word and set contentUrl to the location of the Word document, you might include a thumbnail image that represents the document. The channel could display the thumbnail image instead of the document. When the user selects the image, the channel would open the document.'
           nullable: true
       additionalProperties:
         type: object

@@ -40,7 +40,15 @@
         [System.Management.Automation.Parameter(Mandatory = false, HelpMessage = "Optional headers that will be added to the request.", ValueFromPipeline = true)]
         [Category(ParameterCategory.Runtime)]
         public System.Collections.IDictionary Headers { get => this._headers; set => this._headers = value; }
-        
+
+        // <summary>Backing field for <see cref="ResponseHeadersVariable" /> property.</summary>
+        private string _responseHeadersVariable;
+
+        /// <summary>Optional Response Headers Variable</summary>
+        [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = "Optional Response Headers Variable.")]
+        [global::System.Management.Automation.Alias("RHV")]
+        public string ResponseHeadersVariable { get => this._responseHeadersVariable; set => this._responseHeadersVariable = value; }
+
         /// <summary>SendAsync Pipeline Steps to be appended to the front of the pipeline</summary>
         [System.Management.Automation.Parameter(Mandatory = false, DontShow = true, HelpMessage = "SendAsync Pipeline Steps to be appended to the front of the pipeline")]
         [System.Management.Automation.ValidateNotNull]
@@ -355,6 +363,13 @@
                 if (true == MyInvocation?.BoundParameters?.ContainsKey("PassThru"))
                 {
                     WriteObject(true);
+                }
+                // get the headers from the response and assign it to the variable provided by the user via the RHV(ResponseHeadersVariable) parameter.
+                if (!string.IsNullOrEmpty(ResponseHeadersVariable))
+                {
+                    var headers = Microsoft.Graph.PowerShell.ResponseHeaders.Helpers.ResponseHeaderHelper.GetHttpResponseHeaders(responseMessage);
+                    var vi = this.SessionState.PSVariable;
+                    vi.Set(new System.Management.Automation.PSVariable($"global:{ResponseHeadersVariable}", headers));
                 }
             }
         }

@@ -190,6 +190,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -ResponseHeadersVariable
+Optional Response Headers Variable.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: RHV
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -UserId
 The unique identifier of user
 

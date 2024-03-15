@@ -31,19 +31,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - description
-                - description desc
-                - owner
-                - owner desc
-                - properties
-                - properties desc
-                - status
-                - status desc
-                - targetTypes
-                - targetTypes desc
               type: string
         - name: $select
           in: query
@@ -54,13 +41,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - description
-                - owner
-                - properties
-                - status
-                - targetTypes
               type: string
         - name: $expand
           in: query
@@ -71,8 +51,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -136,13 +114,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - description
-                - owner
-                - properties
-                - status
-                - targetTypes
               type: string
         - name: $expand
           in: query
@@ -153,8 +124,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:

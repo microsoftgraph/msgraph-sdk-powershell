@@ -226,6 +226,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -ResponseHeadersVariable
+Optional Response Headers Variable.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: RHV
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -ShiftPreferences
 shiftPreferences
 To construct, see NOTES section for SHIFTPREFERENCES properties and create a hash table.
@@ -251,6 +266,22 @@ Parameter Sets: Update, UpdateExpanded
 Aliases:
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Windows
+.
+To construct, see NOTES section for WINDOWS properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsSetting[]
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -388,6 +419,17 @@ To create the parameters described below, construct a hash table containing the 
         - `[EndTime <String>]`: End time for the time range.
         - `[StartTime <String>]`: Start time for the time range.
       - `[TimeZone <String>]`: Specifies the time zone for the indicated time.
+  - `[Windows <IMicrosoftGraphWindowsSetting[]>]`: 
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
+    - `[Instances <IMicrosoftGraphWindowsSettingInstance[]>]`: 
+      - `[Id <String>]`: The unique identifier for an entity. Read-only.
+      - `[CreatedDateTime <DateTime?>]`: 
+      - `[ExpirationDateTime <DateTime?>]`: 
+      - `[LastModifiedDateTime <DateTime?>]`: 
+      - `[Payload <String>]`: 
+    - `[PayloadType <String>]`: 
+    - `[SettingType <String>]`: windowsSettingType
+    - `[WindowsDeviceId <String>]`: 
 
 `CONTACTMERGESUGGESTIONS <IMicrosoftGraphContactMergeSuggestions>`: contactMergeSuggestions
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -485,6 +527,18 @@ To create the parameters described below, construct a hash table containing the 
       - `[EndTime <String>]`: End time for the time range.
       - `[StartTime <String>]`: Start time for the time range.
     - `[TimeZone <String>]`: Specifies the time zone for the indicated time.
+
+`WINDOWS <IMicrosoftGraphWindowsSetting[]>`: .
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
+  - `[Instances <IMicrosoftGraphWindowsSettingInstance[]>]`: 
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
+    - `[CreatedDateTime <DateTime?>]`: 
+    - `[ExpirationDateTime <DateTime?>]`: 
+    - `[LastModifiedDateTime <DateTime?>]`: 
+    - `[Payload <String>]`: 
+  - `[PayloadType <String>]`: 
+  - `[SettingType <String>]`: windowsSettingType
+  - `[WindowsDeviceId <String>]`: 
 
 ## RELATED LINKS
 

@@ -31,9 +31,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - plans
               type: string
         - name: $expand
           in: query
@@ -44,9 +41,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - plans
               type: string
       responses:
         2XX:
@@ -155,19 +149,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - container
-                - container desc
-                - createdBy
-                - createdBy desc
-                - createdDateTime
-                - createdDateTime desc
-                - owner
-                - owner desc
-                - title
-                - title desc
               type: string
         - name: $select
           in: query
@@ -178,16 +159,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - container
-                - createdBy
-                - createdDateTime
-                - owner
-                - title
-                - buckets
-                - details
-                - tasks
               type: string
         - name: $expand
           in: query
@@ -198,11 +169,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - buckets
-                - details
-                - tasks
               type: string
       responses:
         2XX:
@@ -277,16 +243,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - container
-                - createdBy
-                - createdDateTime
-                - owner
-                - title
-                - buckets
-                - details
-                - tasks
               type: string
         - name: $expand
           in: query
@@ -297,11 +253,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - buckets
-                - details
-                - tasks
               type: string
       responses:
         2XX:
@@ -427,15 +378,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - name
-                - name desc
-                - orderHint
-                - orderHint desc
-                - planId
-                - planId desc
               type: string
         - name: $select
           in: query
@@ -446,12 +388,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - name
-                - orderHint
-                - planId
-                - tasks
               type: string
         - name: $expand
           in: query
@@ -462,9 +398,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - tasks
               type: string
       responses:
         2XX:
@@ -555,12 +488,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - name
-                - orderHint
-                - planId
-                - tasks
               type: string
         - name: $expand
           in: query
@@ -571,9 +498,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - tasks
               type: string
       responses:
         2XX:
@@ -723,51 +647,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - activeChecklistItemCount
-                - activeChecklistItemCount desc
-                - appliedCategories
-                - appliedCategories desc
-                - assigneePriority
-                - assigneePriority desc
-                - assignments
-                - assignments desc
-                - bucketId
-                - bucketId desc
-                - checklistItemCount
-                - checklistItemCount desc
-                - completedBy
-                - completedBy desc
-                - completedDateTime
-                - completedDateTime desc
-                - conversationThreadId
-                - conversationThreadId desc
-                - createdBy
-                - createdBy desc
-                - createdDateTime
-                - createdDateTime desc
-                - dueDateTime
-                - dueDateTime desc
-                - hasDescription
-                - hasDescription desc
-                - orderHint
-                - orderHint desc
-                - percentComplete
-                - percentComplete desc
-                - planId
-                - planId desc
-                - previewType
-                - previewType desc
-                - priority
-                - priority desc
-                - referenceCount
-                - referenceCount desc
-                - startDateTime
-                - startDateTime desc
-                - title
-                - title desc
               type: string
         - name: $select
           in: query
@@ -778,33 +657,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - activeChecklistItemCount
-                - appliedCategories
-                - assigneePriority
-                - assignments
-                - bucketId
-                - checklistItemCount
-                - completedBy
-                - completedDateTime
-                - conversationThreadId
-                - createdBy
-                - createdDateTime
-                - dueDateTime
-                - hasDescription
-                - orderHint
-                - percentComplete
-                - planId
-                - previewType
-                - priority
-                - referenceCount
-                - startDateTime
-                - title
-                - assignedToTaskBoardFormat
-                - bucketTaskBoardFormat
-                - details
-                - progressTaskBoardFormat
               type: string
         - name: $expand
           in: query
@@ -815,12 +667,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - assignedToTaskBoardFormat
-                - bucketTaskBoardFormat
-                - details
-                - progressTaskBoardFormat
               type: string
       responses:
         2XX:
@@ -927,33 +773,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - activeChecklistItemCount
-                - appliedCategories
-                - assigneePriority
-                - assignments
-                - bucketId
-                - checklistItemCount
-                - completedBy
-                - completedDateTime
-                - conversationThreadId
-                - createdBy
-                - createdDateTime
-                - dueDateTime
-                - hasDescription
-                - orderHint
-                - percentComplete
-                - planId
-                - previewType
-                - priority
-                - referenceCount
-                - startDateTime
-                - title
-                - assignedToTaskBoardFormat
-                - bucketTaskBoardFormat
-                - details
-                - progressTaskBoardFormat
               type: string
         - name: $expand
           in: query
@@ -964,12 +783,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - assignedToTaskBoardFormat
-                - bucketTaskBoardFormat
-                - details
-                - progressTaskBoardFormat
               type: string
       responses:
         2XX:
@@ -1138,10 +951,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - orderHintsByAssignee
-                - unassignedOrderHint
               type: string
         - name: $expand
           in: query
@@ -1152,8 +961,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1332,9 +1139,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - orderHint
               type: string
         - name: $expand
           in: query
@@ -1345,8 +1149,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1525,12 +1327,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - checklist
-                - description
-                - previewType
-                - references
               type: string
         - name: $expand
           in: query
@@ -1541,8 +1337,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1721,9 +1515,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - orderHint
               type: string
         - name: $expand
           in: query
@@ -1734,8 +1525,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1966,10 +1755,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - categoryDescriptions
-                - sharedWith
               type: string
         - name: $expand
           in: query
@@ -1980,8 +1765,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2117,51 +1900,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - activeChecklistItemCount
-                - activeChecklistItemCount desc
-                - appliedCategories
-                - appliedCategories desc
-                - assigneePriority
-                - assigneePriority desc
-                - assignments
-                - assignments desc
-                - bucketId
-                - bucketId desc
-                - checklistItemCount
-                - checklistItemCount desc
-                - completedBy
-                - completedBy desc
-                - completedDateTime
-                - completedDateTime desc
-                - conversationThreadId
-                - conversationThreadId desc
-                - createdBy
-                - createdBy desc
-                - createdDateTime
-                - createdDateTime desc
-                - dueDateTime
-                - dueDateTime desc
-                - hasDescription
-                - hasDescription desc
-                - orderHint
-                - orderHint desc
-                - percentComplete
-                - percentComplete desc
-                - planId
-                - planId desc
-                - previewType
-                - previewType desc
-                - priority
-                - priority desc
-                - referenceCount
-                - referenceCount desc
-                - startDateTime
-                - startDateTime desc
-                - title
-                - title desc
               type: string
         - name: $select
           in: query
@@ -2172,33 +1910,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - activeChecklistItemCount
-                - appliedCategories
-                - assigneePriority
-                - assignments
-                - bucketId
-                - checklistItemCount
-                - completedBy
-                - completedDateTime
-                - conversationThreadId
-                - createdBy
-                - createdDateTime
-                - dueDateTime
-                - hasDescription
-                - orderHint
-                - percentComplete
-                - planId
-                - previewType
-                - priority
-                - referenceCount
-                - startDateTime
-                - title
-                - assignedToTaskBoardFormat
-                - bucketTaskBoardFormat
-                - details
-                - progressTaskBoardFormat
               type: string
         - name: $expand
           in: query
@@ -2209,12 +1920,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - assignedToTaskBoardFormat
-                - bucketTaskBoardFormat
-                - details
-                - progressTaskBoardFormat
               type: string
       responses:
         2XX:
@@ -2305,33 +2010,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - activeChecklistItemCount
-                - appliedCategories
-                - assigneePriority
-                - assignments
-                - bucketId
-                - checklistItemCount
-                - completedBy
-                - completedDateTime
-                - conversationThreadId
-                - createdBy
-                - createdDateTime
-                - dueDateTime
-                - hasDescription
-                - orderHint
-                - percentComplete
-                - planId
-                - previewType
-                - priority
-                - referenceCount
-                - startDateTime
-                - title
-                - assignedToTaskBoardFormat
-                - bucketTaskBoardFormat
-                - details
-                - progressTaskBoardFormat
               type: string
         - name: $expand
           in: query
@@ -2342,12 +2020,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - assignedToTaskBoardFormat
-                - bucketTaskBoardFormat
-                - details
-                - progressTaskBoardFormat
               type: string
       responses:
         2XX:
@@ -2492,10 +2164,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - orderHintsByAssignee
-                - unassignedOrderHint
               type: string
         - name: $expand
           in: query
@@ -2506,8 +2174,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2662,9 +2328,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - orderHint
               type: string
         - name: $expand
           in: query
@@ -2675,8 +2338,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2831,12 +2492,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - checklist
-                - description
-                - previewType
-                - references
               type: string
         - name: $expand
           in: query
@@ -2847,8 +2502,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3003,9 +2656,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - orderHint
               type: string
         - name: $expand
           in: query
@@ -3016,8 +2666,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3196,11 +2844,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - buckets
-                - plans
-                - tasks
               type: string
         - name: $expand
           in: query
@@ -3211,11 +2854,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - buckets
-                - plans
-                - tasks
               type: string
       responses:
         2XX:
@@ -3274,15 +2912,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - name
-                - name desc
-                - orderHint
-                - orderHint desc
-                - planId
-                - planId desc
               type: string
         - name: $select
           in: query
@@ -3293,12 +2922,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - name
-                - orderHint
-                - planId
-                - tasks
               type: string
         - name: $expand
           in: query
@@ -3309,9 +2932,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - tasks
               type: string
       responses:
         2XX:
@@ -3376,12 +2996,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - name
-                - orderHint
-                - planId
-                - tasks
               type: string
         - name: $expand
           in: query
@@ -3392,9 +3006,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - tasks
               type: string
       responses:
         2XX:
@@ -3510,51 +3121,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - activeChecklistItemCount
-                - activeChecklistItemCount desc
-                - appliedCategories
-                - appliedCategories desc
-                - assigneePriority
-                - assigneePriority desc
-                - assignments
-                - assignments desc
-                - bucketId
-                - bucketId desc
-                - checklistItemCount
-                - checklistItemCount desc
-                - completedBy
-                - completedBy desc
-                - completedDateTime
-                - completedDateTime desc
-                - conversationThreadId
-                - conversationThreadId desc
-                - createdBy
-                - createdBy desc
-                - createdDateTime
-                - createdDateTime desc
-                - dueDateTime
-                - dueDateTime desc
-                - hasDescription
-                - hasDescription desc
-                - orderHint
-                - orderHint desc
-                - percentComplete
-                - percentComplete desc
-                - planId
-                - planId desc
-                - previewType
-                - previewType desc
-                - priority
-                - priority desc
-                - referenceCount
-                - referenceCount desc
-                - startDateTime
-                - startDateTime desc
-                - title
-                - title desc
               type: string
         - name: $select
           in: query
@@ -3565,33 +3131,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - activeChecklistItemCount
-                - appliedCategories
-                - assigneePriority
-                - assignments
-                - bucketId
-                - checklistItemCount
-                - completedBy
-                - completedDateTime
-                - conversationThreadId
-                - createdBy
-                - createdDateTime
-                - dueDateTime
-                - hasDescription
-                - orderHint
-                - percentComplete
-                - planId
-                - previewType
-                - priority
-                - referenceCount
-                - startDateTime
-                - title
-                - assignedToTaskBoardFormat
-                - bucketTaskBoardFormat
-                - details
-                - progressTaskBoardFormat
               type: string
         - name: $expand
           in: query
@@ -3602,12 +3141,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - assignedToTaskBoardFormat
-                - bucketTaskBoardFormat
-                - details
-                - progressTaskBoardFormat
               type: string
       responses:
         2XX:
@@ -3682,33 +3215,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - activeChecklistItemCount
-                - appliedCategories
-                - assigneePriority
-                - assignments
-                - bucketId
-                - checklistItemCount
-                - completedBy
-                - completedDateTime
-                - conversationThreadId
-                - createdBy
-                - createdDateTime
-                - dueDateTime
-                - hasDescription
-                - orderHint
-                - percentComplete
-                - planId
-                - previewType
-                - priority
-                - referenceCount
-                - startDateTime
-                - title
-                - assignedToTaskBoardFormat
-                - bucketTaskBoardFormat
-                - details
-                - progressTaskBoardFormat
               type: string
         - name: $expand
           in: query
@@ -3719,12 +3225,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - assignedToTaskBoardFormat
-                - bucketTaskBoardFormat
-                - details
-                - progressTaskBoardFormat
               type: string
       responses:
         2XX:
@@ -3845,10 +3345,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - orderHintsByAssignee
-                - unassignedOrderHint
               type: string
         - name: $expand
           in: query
@@ -3859,8 +3355,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3991,9 +3485,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - orderHint
               type: string
         - name: $expand
           in: query
@@ -4004,8 +3495,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -4136,12 +3625,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - checklist
-                - description
-                - previewType
-                - references
               type: string
         - name: $expand
           in: query
@@ -4152,8 +3635,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -4284,9 +3765,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - orderHint
               type: string
         - name: $expand
           in: query
@@ -4297,8 +3775,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -4454,19 +3930,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - container
-                - container desc
-                - createdBy
-                - createdBy desc
-                - createdDateTime
-                - createdDateTime desc
-                - owner
-                - owner desc
-                - title
-                - title desc
               type: string
         - name: $select
           in: query
@@ -4477,16 +3940,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - container
-                - createdBy
-                - createdDateTime
-                - owner
-                - title
-                - buckets
-                - details
-                - tasks
               type: string
         - name: $expand
           in: query
@@ -4497,11 +3950,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - buckets
-                - details
-                - tasks
               type: string
       responses:
         2XX:
@@ -4566,16 +4014,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - container
-                - createdBy
-                - createdDateTime
-                - owner
-                - title
-                - buckets
-                - details
-                - tasks
               type: string
         - name: $expand
           in: query
@@ -4586,11 +4024,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - buckets
-                - details
-                - tasks
               type: string
       responses:
         2XX:
@@ -4700,15 +4133,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - name
-                - name desc
-                - orderHint
-                - orderHint desc
-                - planId
-                - planId desc
               type: string
         - name: $select
           in: query
@@ -4719,12 +4143,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - name
-                - orderHint
-                - planId
-                - tasks
               type: string
         - name: $expand
           in: query
@@ -4735,9 +4153,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - tasks
               type: string
       responses:
         2XX:
@@ -4812,12 +4227,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - name
-                - orderHint
-                - planId
-                - tasks
               type: string
         - name: $expand
           in: query
@@ -4828,9 +4237,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - tasks
               type: string
       responses:
         2XX:
@@ -4956,51 +4362,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - activeChecklistItemCount
-                - activeChecklistItemCount desc
-                - appliedCategories
-                - appliedCategories desc
-                - assigneePriority
-                - assigneePriority desc
-                - assignments
-                - assignments desc
-                - bucketId
-                - bucketId desc
-                - checklistItemCount
-                - checklistItemCount desc
-                - completedBy
-                - completedBy desc
-                - completedDateTime
-                - completedDateTime desc
-                - conversationThreadId
-                - conversationThreadId desc
-                - createdBy
-                - createdBy desc
-                - createdDateTime
-                - createdDateTime desc
-                - dueDateTime
-                - dueDateTime desc
-                - hasDescription
-                - hasDescription desc
-                - orderHint
-                - orderHint desc
-                - percentComplete
-                - percentComplete desc
-                - planId
-                - planId desc
-                - previewType
-                - previewType desc
-                - priority
-                - priority desc
-                - referenceCount
-                - referenceCount desc
-                - startDateTime
-                - startDateTime desc
-                - title
-                - title desc
               type: string
         - name: $select
           in: query
@@ -5011,33 +4372,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - activeChecklistItemCount
-                - appliedCategories
-                - assigneePriority
-                - assignments
-                - bucketId
-                - checklistItemCount
-                - completedBy
-                - completedDateTime
-                - conversationThreadId
-                - createdBy
-                - createdDateTime
-                - dueDateTime
-                - hasDescription
-                - orderHint
-                - percentComplete
-                - planId
-                - previewType
-                - priority
-                - referenceCount
-                - startDateTime
-                - title
-                - assignedToTaskBoardFormat
-                - bucketTaskBoardFormat
-                - details
-                - progressTaskBoardFormat
               type: string
         - name: $expand
           in: query
@@ -5048,12 +4382,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - assignedToTaskBoardFormat
-                - bucketTaskBoardFormat
-                - details
-                - progressTaskBoardFormat
               type: string
       responses:
         2XX:
@@ -5144,33 +4472,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - activeChecklistItemCount
-                - appliedCategories
-                - assigneePriority
-                - assignments
-                - bucketId
-                - checklistItemCount
-                - completedBy
-                - completedDateTime
-                - conversationThreadId
-                - createdBy
-                - createdDateTime
-                - dueDateTime
-                - hasDescription
-                - orderHint
-                - percentComplete
-                - planId
-                - previewType
-                - priority
-                - referenceCount
-                - startDateTime
-                - title
-                - assignedToTaskBoardFormat
-                - bucketTaskBoardFormat
-                - details
-                - progressTaskBoardFormat
               type: string
         - name: $expand
           in: query
@@ -5181,12 +4482,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - assignedToTaskBoardFormat
-                - bucketTaskBoardFormat
-                - details
-                - progressTaskBoardFormat
               type: string
       responses:
         2XX:
@@ -5331,10 +4626,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - orderHintsByAssignee
-                - unassignedOrderHint
               type: string
         - name: $expand
           in: query
@@ -5345,8 +4636,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -5501,9 +4790,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - orderHint
               type: string
         - name: $expand
           in: query
@@ -5514,8 +4800,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -5670,12 +4954,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - checklist
-                - description
-                - previewType
-                - references
               type: string
         - name: $expand
           in: query
@@ -5686,8 +4964,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -5842,9 +5118,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - orderHint
               type: string
         - name: $expand
           in: query
@@ -5855,8 +5128,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -6047,10 +5318,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - categoryDescriptions
-                - sharedWith
               type: string
         - name: $expand
           in: query
@@ -6061,8 +5328,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -6174,51 +5439,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - activeChecklistItemCount
-                - activeChecklistItemCount desc
-                - appliedCategories
-                - appliedCategories desc
-                - assigneePriority
-                - assigneePriority desc
-                - assignments
-                - assignments desc
-                - bucketId
-                - bucketId desc
-                - checklistItemCount
-                - checklistItemCount desc
-                - completedBy
-                - completedBy desc
-                - completedDateTime
-                - completedDateTime desc
-                - conversationThreadId
-                - conversationThreadId desc
-                - createdBy
-                - createdBy desc
-                - createdDateTime
-                - createdDateTime desc
-                - dueDateTime
-                - dueDateTime desc
-                - hasDescription
-                - hasDescription desc
-                - orderHint
-                - orderHint desc
-                - percentComplete
-                - percentComplete desc
-                - planId
-                - planId desc
-                - previewType
-                - previewType desc
-                - priority
-                - priority desc
-                - referenceCount
-                - referenceCount desc
-                - startDateTime
-                - startDateTime desc
-                - title
-                - title desc
               type: string
         - name: $select
           in: query
@@ -6229,33 +5449,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - activeChecklistItemCount
-                - appliedCategories
-                - assigneePriority
-                - assignments
-                - bucketId
-                - checklistItemCount
-                - completedBy
-                - completedDateTime
-                - conversationThreadId
-                - createdBy
-                - createdDateTime
-                - dueDateTime
-                - hasDescription
-                - orderHint
-                - percentComplete
-                - planId
-                - previewType
-                - priority
-                - referenceCount
-                - startDateTime
-                - title
-                - assignedToTaskBoardFormat
-                - bucketTaskBoardFormat
-                - details
-                - progressTaskBoardFormat
               type: string
         - name: $expand
           in: query
@@ -6266,12 +5459,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - assignedToTaskBoardFormat
-                - bucketTaskBoardFormat
-                - details
-                - progressTaskBoardFormat
               type: string
       responses:
         2XX:
@@ -6346,33 +5533,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - activeChecklistItemCount
-                - appliedCategories
-                - assigneePriority
-                - assignments
-                - bucketId
-                - checklistItemCount
-                - completedBy
-                - completedDateTime
-                - conversationThreadId
-                - createdBy
-                - createdDateTime
-                - dueDateTime
-                - hasDescription
-                - orderHint
-                - percentComplete
-                - planId
-                - previewType
-                - priority
-                - referenceCount
-                - startDateTime
-                - title
-                - assignedToTaskBoardFormat
-                - bucketTaskBoardFormat
-                - details
-                - progressTaskBoardFormat
               type: string
         - name: $expand
           in: query
@@ -6383,12 +5543,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - assignedToTaskBoardFormat
-                - bucketTaskBoardFormat
-                - details
-                - progressTaskBoardFormat
               type: string
       responses:
         2XX:
@@ -6509,10 +5663,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - orderHintsByAssignee
-                - unassignedOrderHint
               type: string
         - name: $expand
           in: query
@@ -6523,8 +5673,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -6655,9 +5803,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - orderHint
               type: string
         - name: $expand
           in: query
@@ -6668,8 +5813,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -6800,12 +5943,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - checklist
-                - description
-                - previewType
-                - references
               type: string
         - name: $expand
           in: query
@@ -6816,8 +5953,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -6948,9 +6083,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - orderHint
               type: string
         - name: $expand
           in: query
@@ -6961,8 +6093,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -7118,51 +6248,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - activeChecklistItemCount
-                - activeChecklistItemCount desc
-                - appliedCategories
-                - appliedCategories desc
-                - assigneePriority
-                - assigneePriority desc
-                - assignments
-                - assignments desc
-                - bucketId
-                - bucketId desc
-                - checklistItemCount
-                - checklistItemCount desc
-                - completedBy
-                - completedBy desc
-                - completedDateTime
-                - completedDateTime desc
-                - conversationThreadId
-                - conversationThreadId desc
-                - createdBy
-                - createdBy desc
-                - createdDateTime
-                - createdDateTime desc
-                - dueDateTime
-                - dueDateTime desc
-                - hasDescription
-                - hasDescription desc
-                - orderHint
-                - orderHint desc
-                - percentComplete
-                - percentComplete desc
-                - planId
-                - planId desc
-                - previewType
-                - previewType desc
-                - priority
-                - priority desc
-                - referenceCount
-                - referenceCount desc
-                - startDateTime
-                - startDateTime desc
-                - title
-                - title desc
               type: string
         - name: $select
           in: query
@@ -7173,33 +6258,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - activeChecklistItemCount
-                - appliedCategories
-                - assigneePriority
-                - assignments
-                - bucketId
-                - checklistItemCount
-                - completedBy
-                - completedDateTime
-                - conversationThreadId
-                - createdBy
-                - createdDateTime
-                - dueDateTime
-                - hasDescription
-                - orderHint
-                - percentComplete
-                - planId
-                - previewType
-                - priority
-                - referenceCount
-                - startDateTime
-                - title
-                - assignedToTaskBoardFormat
-                - bucketTaskBoardFormat
-                - details
-                - progressTaskBoardFormat
               type: string
         - name: $expand
           in: query
@@ -7210,12 +6268,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - assignedToTaskBoardFormat
-                - bucketTaskBoardFormat
-                - details
-                - progressTaskBoardFormat
               type: string
       responses:
         2XX:
@@ -7280,33 +6332,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - activeChecklistItemCount
-                - appliedCategories
-                - assigneePriority
-                - assignments
-                - bucketId
-                - checklistItemCount
-                - completedBy
-                - completedDateTime
-                - conversationThreadId
-                - createdBy
-                - createdDateTime
-                - dueDateTime
-                - hasDescription
-                - orderHint
-                - percentComplete
-                - planId
-                - previewType
-                - priority
-                - referenceCount
-                - startDateTime
-                - title
-                - assignedToTaskBoardFormat
-                - bucketTaskBoardFormat
-                - details
-                - progressTaskBoardFormat
               type: string
         - name: $expand
           in: query
@@ -7317,12 +6342,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - assignedToTaskBoardFormat
-                - bucketTaskBoardFormat
-                - details
-                - progressTaskBoardFormat
               type: string
       responses:
         2XX:
@@ -7433,10 +6452,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - orderHintsByAssignee
-                - unassignedOrderHint
               type: string
         - name: $expand
           in: query
@@ -7447,8 +6462,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -7555,9 +6568,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - orderHint
               type: string
         - name: $expand
           in: query
@@ -7568,8 +6578,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -7676,12 +6684,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - checklist
-                - description
-                - previewType
-                - references
               type: string
         - name: $expand
           in: query
@@ -7692,8 +6694,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -7800,9 +6800,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - orderHint
               type: string
         - name: $expand
           in: query
@@ -7813,8 +6810,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -7932,10 +6927,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - plans
-                - tasks
               type: string
         - name: $expand
           in: query
@@ -7946,10 +6937,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - plans
-                - tasks
               type: string
       responses:
         2XX:
@@ -8058,19 +7045,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - container
-                - container desc
-                - createdBy
-                - createdBy desc
-                - createdDateTime
-                - createdDateTime desc
-                - owner
-                - owner desc
-                - title
-                - title desc
               type: string
         - name: $select
           in: query
@@ -8081,16 +7055,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - container
-                - createdBy
-                - createdDateTime
-                - owner
-                - title
-                - buckets
-                - details
-                - tasks
               type: string
         - name: $expand
           in: query
@@ -8101,11 +7065,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - buckets
-                - details
-                - tasks
               type: string
       responses:
         2XX:
@@ -8180,16 +7139,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - container
-                - createdBy
-                - createdDateTime
-                - owner
-                - title
-                - buckets
-                - details
-                - tasks
               type: string
         - name: $expand
           in: query
@@ -8200,11 +7149,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - buckets
-                - details
-                - tasks
               type: string
       responses:
         2XX:
@@ -8330,15 +7274,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - name
-                - name desc
-                - orderHint
-                - orderHint desc
-                - planId
-                - planId desc
               type: string
         - name: $select
           in: query
@@ -8349,12 +7284,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - name
-                - orderHint
-                - planId
-                - tasks
               type: string
         - name: $expand
           in: query
@@ -8365,9 +7294,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - tasks
               type: string
       responses:
         2XX:
@@ -8458,12 +7384,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - name
-                - orderHint
-                - planId
-                - tasks
               type: string
         - name: $expand
           in: query
@@ -8474,9 +7394,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - tasks
               type: string
       responses:
         2XX:
@@ -8626,51 +7543,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - activeChecklistItemCount
-                - activeChecklistItemCount desc
-                - appliedCategories
-                - appliedCategories desc
-                - assigneePriority
-                - assigneePriority desc
-                - assignments
-                - assignments desc
-                - bucketId
-                - bucketId desc
-                - checklistItemCount
-                - checklistItemCount desc
-                - completedBy
-                - completedBy desc
-                - completedDateTime
-                - completedDateTime desc
-                - conversationThreadId
-                - conversationThreadId desc
-                - createdBy
-                - createdBy desc
-                - createdDateTime
-                - createdDateTime desc
-                - dueDateTime
-                - dueDateTime desc
-                - hasDescription
-                - hasDescription desc
-                - orderHint
-                - orderHint desc
-                - percentComplete
-                - percentComplete desc
-                - planId
-                - planId desc
-                - previewType
-                - previewType desc
-                - priority
-                - priority desc
-                - referenceCount
-                - referenceCount desc
-                - startDateTime
-                - startDateTime desc
-                - title
-                - title desc
               type: string
         - name: $select
           in: query
@@ -8681,33 +7553,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - activeChecklistItemCount
-                - appliedCategories
-                - assigneePriority
-                - assignments
-                - bucketId
-                - checklistItemCount
-                - completedBy
-                - completedDateTime
-                - conversationThreadId
-                - createdBy
-                - createdDateTime
-                - dueDateTime
-                - hasDescription
-                - orderHint
-                - percentComplete
-                - planId
-                - previewType
-                - priority
-                - referenceCount
-                - startDateTime
-                - title
-                - assignedToTaskBoardFormat
-                - bucketTaskBoardFormat
-                - details
-                - progressTaskBoardFormat
               type: string
         - name: $expand
           in: query
@@ -8718,12 +7563,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - assignedToTaskBoardFormat
-                - bucketTaskBoardFormat
-                - details
-                - progressTaskBoardFormat
               type: string
       responses:
         2XX:
@@ -8830,33 +7669,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - activeChecklistItemCount
-                - appliedCategories
-                - assigneePriority
-                - assignments
-                - bucketId
-                - checklistItemCount
-                - completedBy
-                - completedDateTime
-                - conversationThreadId
-                - createdBy
-                - createdDateTime
-                - dueDateTime
-                - hasDescription
-                - orderHint
-                - percentComplete
-                - planId
-                - previewType
-                - priority
-                - referenceCount
-                - startDateTime
-                - title
-                - assignedToTaskBoardFormat
-                - bucketTaskBoardFormat
-                - details
-                - progressTaskBoardFormat
               type: string
         - name: $expand
           in: query
@@ -8867,12 +7679,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - assignedToTaskBoardFormat
-                - bucketTaskBoardFormat
-                - details
-                - progressTaskBoardFormat
               type: string
       responses:
         2XX:
@@ -9041,10 +7847,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - orderHintsByAssignee
-                - unassignedOrderHint
               type: string
         - name: $expand
           in: query
@@ -9055,8 +7857,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -9235,9 +8035,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - orderHint
               type: string
         - name: $expand
           in: query
@@ -9248,8 +8045,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -9428,12 +8223,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - checklist
-                - description
-                - previewType
-                - references
               type: string
         - name: $expand
           in: query
@@ -9444,8 +8233,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -9624,9 +8411,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - orderHint
               type: string
         - name: $expand
           in: query
@@ -9637,8 +8421,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -9869,10 +8651,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - categoryDescriptions
-                - sharedWith
               type: string
         - name: $expand
           in: query
@@ -9883,8 +8661,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -10020,51 +8796,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - activeChecklistItemCount
-                - activeChecklistItemCount desc
-                - appliedCategories
-                - appliedCategories desc
-                - assigneePriority
-                - assigneePriority desc
-                - assignments
-                - assignments desc
-                - bucketId
-                - bucketId desc
-                - checklistItemCount
-                - checklistItemCount desc
-                - completedBy
-                - completedBy desc
-                - completedDateTime
-                - completedDateTime desc
-                - conversationThreadId
-                - conversationThreadId desc
-                - createdBy
-                - createdBy desc
-                - createdDateTime
-                - createdDateTime desc
-                - dueDateTime
-                - dueDateTime desc
-                - hasDescription
-                - hasDescription desc
-                - orderHint
-                - orderHint desc
-                - percentComplete
-                - percentComplete desc
-                - planId
-                - planId desc
-                - previewType
-                - previewType desc
-                - priority
-                - priority desc
-                - referenceCount
-                - referenceCount desc
-                - startDateTime
-                - startDateTime desc
-                - title
-                - title desc
               type: string
         - name: $select
           in: query
@@ -10075,33 +8806,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - activeChecklistItemCount
-                - appliedCategories
-                - assigneePriority
-                - assignments
-                - bucketId
-                - checklistItemCount
-                - completedBy
-                - completedDateTime
-                - conversationThreadId
-                - createdBy
-                - createdDateTime
-                - dueDateTime
-                - hasDescription
-                - orderHint
-                - percentComplete
-                - planId
-                - previewType
-                - priority
-                - referenceCount
-                - startDateTime
-                - title
-                - assignedToTaskBoardFormat
-                - bucketTaskBoardFormat
-                - details
-                - progressTaskBoardFormat
               type: string
         - name: $expand
           in: query
@@ -10112,12 +8816,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - assignedToTaskBoardFormat
-                - bucketTaskBoardFormat
-                - details
-                - progressTaskBoardFormat
               type: string
       responses:
         2XX:
@@ -10208,33 +8906,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - activeChecklistItemCount
-                - appliedCategories
-                - assigneePriority
-                - assignments
-                - bucketId
-                - checklistItemCount
-                - completedBy
-                - completedDateTime
-                - conversationThreadId
-                - createdBy
-                - createdDateTime
-                - dueDateTime
-                - hasDescription
-                - orderHint
-                - percentComplete
-                - planId
-                - previewType
-                - priority
-                - referenceCount
-                - startDateTime
-                - title
-                - assignedToTaskBoardFormat
-                - bucketTaskBoardFormat
-                - details
-                - progressTaskBoardFormat
               type: string
         - name: $expand
           in: query
@@ -10245,12 +8916,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - assignedToTaskBoardFormat
-                - bucketTaskBoardFormat
-                - details
-                - progressTaskBoardFormat
               type: string
       responses:
         2XX:
@@ -10395,10 +9060,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - orderHintsByAssignee
-                - unassignedOrderHint
               type: string
         - name: $expand
           in: query
@@ -10409,8 +9070,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -10565,9 +9224,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - orderHint
               type: string
         - name: $expand
           in: query
@@ -10578,8 +9234,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -10734,12 +9388,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - checklist
-                - description
-                - previewType
-                - references
               type: string
         - name: $expand
           in: query
@@ -10750,8 +9398,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -10906,9 +9552,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - orderHint
               type: string
         - name: $expand
           in: query
@@ -10919,8 +9562,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -11116,51 +9757,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - activeChecklistItemCount
-                - activeChecklistItemCount desc
-                - appliedCategories
-                - appliedCategories desc
-                - assigneePriority
-                - assigneePriority desc
-                - assignments
-                - assignments desc
-                - bucketId
-                - bucketId desc
-                - checklistItemCount
-                - checklistItemCount desc
-                - completedBy
-                - completedBy desc
-                - completedDateTime
-                - completedDateTime desc
-                - conversationThreadId
-                - conversationThreadId desc
-                - createdBy
-                - createdBy desc
-                - createdDateTime
-                - createdDateTime desc
-                - dueDateTime
-                - dueDateTime desc
-                - hasDescription
-                - hasDescription desc
-                - orderHint
-                - orderHint desc
-                - percentComplete
-                - percentComplete desc
-                - planId
-                - planId desc
-                - previewType
-                - previewType desc
-                - priority
-                - priority desc
-                - referenceCount
-                - referenceCount desc
-                - startDateTime
-                - startDateTime desc
-                - title
-                - title desc
               type: string
         - name: $select
           in: query
@@ -11171,33 +9767,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - activeChecklistItemCount
-                - appliedCategories
-                - assigneePriority
-                - assignments
-                - bucketId
-                - checklistItemCount
-                - completedBy
-                - completedDateTime
-                - conversationThreadId
-                - createdBy
-                - createdDateTime
-                - dueDateTime
-                - hasDescription
-                - orderHint
-                - percentComplete
-                - planId
-                - previewType
-                - priority
-                - referenceCount
-                - startDateTime
-                - title
-                - assignedToTaskBoardFormat
-                - bucketTaskBoardFormat
-                - details
-                - progressTaskBoardFormat
               type: string
         - name: $expand
           in: query
@@ -11208,12 +9777,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - assignedToTaskBoardFormat
-                - bucketTaskBoardFormat
-                - details
-                - progressTaskBoardFormat
               type: string
       responses:
         2XX:
@@ -11288,33 +9851,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - activeChecklistItemCount
-                - appliedCategories
-                - assigneePriority
-                - assignments
-                - bucketId
-                - checklistItemCount
-                - completedBy
-                - completedDateTime
-                - conversationThreadId
-                - createdBy
-                - createdDateTime
-                - dueDateTime
-                - hasDescription
-                - orderHint
-                - percentComplete
-                - planId
-                - previewType
-                - priority
-                - referenceCount
-                - startDateTime
-                - title
-                - assignedToTaskBoardFormat
-                - bucketTaskBoardFormat
-                - details
-                - progressTaskBoardFormat
               type: string
         - name: $expand
           in: query
@@ -11325,12 +9861,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - assignedToTaskBoardFormat
-                - bucketTaskBoardFormat
-                - details
-                - progressTaskBoardFormat
               type: string
       responses:
         2XX:
@@ -11451,10 +9981,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - orderHintsByAssignee
-                - unassignedOrderHint
               type: string
         - name: $expand
           in: query
@@ -11465,8 +9991,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -11597,9 +10121,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - orderHint
               type: string
         - name: $expand
           in: query
@@ -11610,8 +10131,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -11742,12 +10261,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - checklist
-                - description
-                - previewType
-                - references
               type: string
         - name: $expand
           in: query
@@ -11758,8 +10271,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -11890,9 +10401,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - orderHint
               type: string
         - name: $expand
           in: query
@@ -11903,8 +10411,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
