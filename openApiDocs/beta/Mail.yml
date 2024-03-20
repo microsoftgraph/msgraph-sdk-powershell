@@ -31,9 +31,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - overrides
               type: string
       responses:
         2XX:
@@ -108,13 +105,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - classifyAs
-                - classifyAs desc
-                - senderEmailAddress
-                - senderEmailAddress desc
               type: string
         - name: $select
           in: query
@@ -125,10 +115,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - classifyAs
-                - senderEmailAddress
               type: string
       responses:
         2XX:
@@ -207,10 +193,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - classifyAs
-                - senderEmailAddress
               type: string
       responses:
         2XX:
@@ -363,23 +345,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - childFolderCount
-                - childFolderCount desc
-                - displayName
-                - displayName desc
-                - isHidden
-                - isHidden desc
-                - parentFolderId
-                - parentFolderId desc
-                - totalItemCount
-                - totalItemCount desc
-                - unreadItemCount
-                - unreadItemCount desc
-                - wellKnownName
-                - wellKnownName desc
               type: string
         - name: $select
           in: query
@@ -390,21 +355,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - childFolderCount
-                - displayName
-                - isHidden
-                - parentFolderId
-                - totalItemCount
-                - unreadItemCount
-                - wellKnownName
-                - childFolders
-                - messageRules
-                - messages
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-                - userConfigurations
               type: string
         - name: $expand
           in: query
@@ -415,14 +365,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - childFolders
-                - messageRules
-                - messages
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-                - userConfigurations
               type: string
       responses:
         2XX:
@@ -511,21 +453,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - childFolderCount
-                - displayName
-                - isHidden
-                - parentFolderId
-                - totalItemCount
-                - unreadItemCount
-                - wellKnownName
-                - childFolders
-                - messageRules
-                - messages
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-                - userConfigurations
               type: string
         - name: $expand
           in: query
@@ -536,14 +463,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - childFolders
-                - messageRules
-                - messages
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-                - userConfigurations
               type: string
       responses:
         2XX:
@@ -558,11 +477,11 @@ paths:
     patch:
       tags:
         - users.mailFolder
-      summary: Update mailSearchFolder
-      description: Update the writable properties of a mailSearchFolder object.
+      summary: Update mailFolder
+      description: Update the properties of mailFolder object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/mailsearchfolder-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/mailfolder-update?view=graph-rest-1.0
       operationId: user_UpdateMailFolder
       parameters:
         - name: user-id
@@ -683,23 +602,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - childFolderCount
-                - childFolderCount desc
-                - displayName
-                - displayName desc
-                - isHidden
-                - isHidden desc
-                - parentFolderId
-                - parentFolderId desc
-                - totalItemCount
-                - totalItemCount desc
-                - unreadItemCount
-                - unreadItemCount desc
-                - wellKnownName
-                - wellKnownName desc
               type: string
         - name: $select
           in: query
@@ -710,21 +612,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - childFolderCount
-                - displayName
-                - isHidden
-                - parentFolderId
-                - totalItemCount
-                - unreadItemCount
-                - wellKnownName
-                - childFolders
-                - messageRules
-                - messages
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-                - userConfigurations
               type: string
         - name: $expand
           in: query
@@ -735,14 +622,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - childFolders
-                - messageRules
-                - messages
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-                - userConfigurations
               type: string
       responses:
         2XX:
@@ -756,11 +635,11 @@ paths:
     post:
       tags:
         - users.mailFolder
-      summary: Create child folder
-      description: 'Use this API to create a new child mailFolder. If you intend a new folder to be hidden, you must set the isHidden property to true on creation.'
+      summary: Create mailSearchFolder
+      description: Create a new mailSearchFolder in the specified user's mailbox.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/mailfolder-post-childfolders?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/mailsearchfolder-post?view=graph-rest-1.0
       operationId: user.mailFolder_CreateChildFolder
       parameters:
         - name: user-id
@@ -844,21 +723,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - childFolderCount
-                - displayName
-                - isHidden
-                - parentFolderId
-                - totalItemCount
-                - unreadItemCount
-                - wellKnownName
-                - childFolders
-                - messageRules
-                - messages
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-                - userConfigurations
               type: string
         - name: $expand
           in: query
@@ -869,14 +733,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - childFolders
-                - messageRules
-                - messages
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-                - userConfigurations
               type: string
       responses:
         2XX:
@@ -1025,25 +881,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - actions
-                - actions desc
-                - conditions
-                - conditions desc
-                - displayName
-                - displayName desc
-                - exceptions
-                - exceptions desc
-                - hasError
-                - hasError desc
-                - isEnabled
-                - isEnabled desc
-                - isReadOnly
-                - isReadOnly desc
-                - sequence
-                - sequence desc
               type: string
         - name: $select
           in: query
@@ -1054,16 +891,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - actions
-                - conditions
-                - displayName
-                - exceptions
-                - hasError
-                - isEnabled
-                - isReadOnly
-                - sequence
               type: string
       responses:
         2XX:
@@ -1177,16 +1004,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - actions
-                - conditions
-                - displayName
-                - exceptions
-                - hasError
-                - isEnabled
-                - isReadOnly
-                - sequence
               type: string
       responses:
         2XX:
@@ -1397,75 +1214,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - categories
-                - categories desc
-                - changeKey
-                - changeKey desc
-                - createdDateTime
-                - createdDateTime desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - bccRecipients
-                - bccRecipients desc
-                - body
-                - body desc
-                - bodyPreview
-                - bodyPreview desc
-                - ccRecipients
-                - ccRecipients desc
-                - conversationId
-                - conversationId desc
-                - conversationIndex
-                - conversationIndex desc
-                - flag
-                - flag desc
-                - from
-                - from desc
-                - hasAttachments
-                - hasAttachments desc
-                - importance
-                - importance desc
-                - inferenceClassification
-                - inferenceClassification desc
-                - internetMessageHeaders
-                - internetMessageHeaders desc
-                - internetMessageId
-                - internetMessageId desc
-                - isDeliveryReceiptRequested
-                - isDeliveryReceiptRequested desc
-                - isDraft
-                - isDraft desc
-                - isRead
-                - isRead desc
-                - isReadReceiptRequested
-                - isReadReceiptRequested desc
-                - mentionsPreview
-                - mentionsPreview desc
-                - parentFolderId
-                - parentFolderId desc
-                - receivedDateTime
-                - receivedDateTime desc
-                - replyTo
-                - replyTo desc
-                - sender
-                - sender desc
-                - sentDateTime
-                - sentDateTime desc
-                - subject
-                - subject desc
-                - toRecipients
-                - toRecipients desc
-                - uniqueBody
-                - uniqueBody desc
-                - unsubscribeData
-                - unsubscribeData desc
-                - unsubscribeEnabled
-                - unsubscribeEnabled desc
-                - webLink
-                - webLink desc
               type: string
         - name: $select
           in: query
@@ -1476,46 +1224,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - categories
-                - changeKey
-                - createdDateTime
-                - lastModifiedDateTime
-                - bccRecipients
-                - body
-                - bodyPreview
-                - ccRecipients
-                - conversationId
-                - conversationIndex
-                - flag
-                - from
-                - hasAttachments
-                - importance
-                - inferenceClassification
-                - internetMessageHeaders
-                - internetMessageId
-                - isDeliveryReceiptRequested
-                - isDraft
-                - isRead
-                - isReadReceiptRequested
-                - mentionsPreview
-                - parentFolderId
-                - receivedDateTime
-                - replyTo
-                - sender
-                - sentDateTime
-                - subject
-                - toRecipients
-                - uniqueBody
-                - unsubscribeData
-                - unsubscribeEnabled
-                - webLink
-                - attachments
-                - extensions
-                - mentions
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
               type: string
         - name: $expand
           in: query
@@ -1526,13 +1234,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - attachments
-                - extensions
-                - mentions
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
               type: string
       responses:
         2XX:
@@ -1643,46 +1344,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - categories
-                - changeKey
-                - createdDateTime
-                - lastModifiedDateTime
-                - bccRecipients
-                - body
-                - bodyPreview
-                - ccRecipients
-                - conversationId
-                - conversationIndex
-                - flag
-                - from
-                - hasAttachments
-                - importance
-                - inferenceClassification
-                - internetMessageHeaders
-                - internetMessageId
-                - isDeliveryReceiptRequested
-                - isDraft
-                - isRead
-                - isReadReceiptRequested
-                - mentionsPreview
-                - parentFolderId
-                - receivedDateTime
-                - replyTo
-                - sender
-                - sentDateTime
-                - subject
-                - toRecipients
-                - uniqueBody
-                - unsubscribeData
-                - unsubscribeEnabled
-                - webLink
-                - attachments
-                - extensions
-                - mentions
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
               type: string
         - name: $expand
           in: query
@@ -1693,13 +1354,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - attachments
-                - extensions
-                - mentions
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
               type: string
       responses:
         2XX:
@@ -1933,10 +1587,10 @@ paths:
       tags:
         - users.mailFolder
       summary: List attachments
-      description: Retrieve a list of attachment objects.
+      description: Retrieve a list of attachment objects attached to a message.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/eventmessage-list-attachments?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/message-list-attachments?view=graph-rest-1.0
       operationId: user.mailFolder.childFolder.message_ListAttachment
       parameters:
         - name: user-id
@@ -1982,19 +1636,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - contentType
-                - contentType desc
-                - isInline
-                - isInline desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - name
-                - name desc
-                - size
-                - size desc
               type: string
         - name: $select
           in: query
@@ -2005,13 +1646,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - contentType
-                - isInline
-                - lastModifiedDateTime
-                - name
-                - size
               type: string
         - name: $expand
           in: query
@@ -2022,8 +1656,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2038,10 +1670,10 @@ paths:
       tags:
         - users.mailFolder
       summary: Add attachment
-      description: "Use this API to add an attachment to a message. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. You can add an attachment to an existing message by posting to its attachments collection, or to a new\nmessage that is being drafted, or created and sent on the fly."
+      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource."
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/message-post-attachments?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
       operationId: user.mailFolder.childFolder.message_CreateAttachment
       parameters:
         - name: user-id
@@ -2153,13 +1785,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - contentType
-                - isInline
-                - lastModifiedDateTime
-                - name
-                - size
               type: string
         - name: $expand
           in: query
@@ -2170,8 +1795,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2339,9 +1962,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
               type: string
         - name: $select
           in: query
@@ -2352,8 +1972,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
               type: string
         - name: $expand
           in: query
@@ -2364,8 +1982,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2495,8 +2111,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
               type: string
         - name: $expand
           in: query
@@ -2507,8 +2121,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2743,25 +2355,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - application
-                - application desc
-                - clientReference
-                - clientReference desc
-                - createdBy
-                - createdBy desc
-                - createdDateTime
-                - createdDateTime desc
-                - deepLink
-                - deepLink desc
-                - mentioned
-                - mentioned desc
-                - mentionText
-                - mentionText desc
-                - serverCreatedDateTime
-                - serverCreatedDateTime desc
               type: string
         - name: $select
           in: query
@@ -2772,16 +2365,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - application
-                - clientReference
-                - createdBy
-                - createdDateTime
-                - deepLink
-                - mentioned
-                - mentionText
-                - serverCreatedDateTime
               type: string
         - name: $expand
           in: query
@@ -2792,8 +2375,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2916,16 +2497,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - application
-                - clientReference
-                - createdBy
-                - createdDateTime
-                - deepLink
-                - mentioned
-                - mentionText
-                - serverCreatedDateTime
               type: string
         - name: $expand
           in: query
@@ -2936,8 +2507,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3138,11 +2707,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - binaryData
-                - binaryData desc
               type: string
         - name: $select
           in: query
@@ -3153,9 +2717,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - binaryData
               type: string
       responses:
         2XX:
@@ -3214,9 +2775,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - binaryData
               type: string
       responses:
         2XX:
@@ -3334,25 +2892,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - actions
-                - actions desc
-                - conditions
-                - conditions desc
-                - displayName
-                - displayName desc
-                - exceptions
-                - exceptions desc
-                - hasError
-                - hasError desc
-                - isEnabled
-                - isEnabled desc
-                - isReadOnly
-                - isReadOnly desc
-                - sequence
-                - sequence desc
               type: string
         - name: $select
           in: query
@@ -3363,16 +2902,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - actions
-                - conditions
-                - displayName
-                - exceptions
-                - hasError
-                - isEnabled
-                - isReadOnly
-                - sequence
               type: string
       responses:
         2XX:
@@ -3470,16 +2999,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - actions
-                - conditions
-                - displayName
-                - exceptions
-                - hasError
-                - isEnabled
-                - isReadOnly
-                - sequence
               type: string
       responses:
         2XX:
@@ -3658,75 +3177,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - categories
-                - categories desc
-                - changeKey
-                - changeKey desc
-                - createdDateTime
-                - createdDateTime desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - bccRecipients
-                - bccRecipients desc
-                - body
-                - body desc
-                - bodyPreview
-                - bodyPreview desc
-                - ccRecipients
-                - ccRecipients desc
-                - conversationId
-                - conversationId desc
-                - conversationIndex
-                - conversationIndex desc
-                - flag
-                - flag desc
-                - from
-                - from desc
-                - hasAttachments
-                - hasAttachments desc
-                - importance
-                - importance desc
-                - inferenceClassification
-                - inferenceClassification desc
-                - internetMessageHeaders
-                - internetMessageHeaders desc
-                - internetMessageId
-                - internetMessageId desc
-                - isDeliveryReceiptRequested
-                - isDeliveryReceiptRequested desc
-                - isDraft
-                - isDraft desc
-                - isRead
-                - isRead desc
-                - isReadReceiptRequested
-                - isReadReceiptRequested desc
-                - mentionsPreview
-                - mentionsPreview desc
-                - parentFolderId
-                - parentFolderId desc
-                - receivedDateTime
-                - receivedDateTime desc
-                - replyTo
-                - replyTo desc
-                - sender
-                - sender desc
-                - sentDateTime
-                - sentDateTime desc
-                - subject
-                - subject desc
-                - toRecipients
-                - toRecipients desc
-                - uniqueBody
-                - uniqueBody desc
-                - unsubscribeData
-                - unsubscribeData desc
-                - unsubscribeEnabled
-                - unsubscribeEnabled desc
-                - webLink
-                - webLink desc
               type: string
         - name: $select
           in: query
@@ -3737,46 +3187,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - categories
-                - changeKey
-                - createdDateTime
-                - lastModifiedDateTime
-                - bccRecipients
-                - body
-                - bodyPreview
-                - ccRecipients
-                - conversationId
-                - conversationIndex
-                - flag
-                - from
-                - hasAttachments
-                - importance
-                - inferenceClassification
-                - internetMessageHeaders
-                - internetMessageId
-                - isDeliveryReceiptRequested
-                - isDraft
-                - isRead
-                - isReadReceiptRequested
-                - mentionsPreview
-                - parentFolderId
-                - receivedDateTime
-                - replyTo
-                - sender
-                - sentDateTime
-                - subject
-                - toRecipients
-                - uniqueBody
-                - unsubscribeData
-                - unsubscribeEnabled
-                - webLink
-                - attachments
-                - extensions
-                - mentions
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
               type: string
         - name: $expand
           in: query
@@ -3787,13 +3197,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - attachments
-                - extensions
-                - mentions
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
               type: string
       responses:
         2XX:
@@ -3888,46 +3291,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - categories
-                - changeKey
-                - createdDateTime
-                - lastModifiedDateTime
-                - bccRecipients
-                - body
-                - bodyPreview
-                - ccRecipients
-                - conversationId
-                - conversationIndex
-                - flag
-                - from
-                - hasAttachments
-                - importance
-                - inferenceClassification
-                - internetMessageHeaders
-                - internetMessageId
-                - isDeliveryReceiptRequested
-                - isDraft
-                - isRead
-                - isReadReceiptRequested
-                - mentionsPreview
-                - parentFolderId
-                - receivedDateTime
-                - replyTo
-                - sender
-                - sentDateTime
-                - subject
-                - toRecipients
-                - uniqueBody
-                - unsubscribeData
-                - unsubscribeEnabled
-                - webLink
-                - attachments
-                - extensions
-                - mentions
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
               type: string
         - name: $expand
           in: query
@@ -3938,13 +3301,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - attachments
-                - extensions
-                - mentions
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
               type: string
       responses:
         2XX:
@@ -4146,10 +3502,10 @@ paths:
       tags:
         - users.mailFolder
       summary: List attachments
-      description: Retrieve a list of attachment objects.
+      description: Retrieve a list of attachment objects attached to a message.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/eventmessage-list-attachments?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/message-list-attachments?view=graph-rest-1.0
       operationId: user.mailFolder.message_ListAttachment
       parameters:
         - name: user-id
@@ -4187,19 +3543,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - contentType
-                - contentType desc
-                - isInline
-                - isInline desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - name
-                - name desc
-                - size
-                - size desc
               type: string
         - name: $select
           in: query
@@ -4210,13 +3553,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - contentType
-                - isInline
-                - lastModifiedDateTime
-                - name
-                - size
               type: string
         - name: $expand
           in: query
@@ -4227,8 +3563,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -4243,10 +3577,10 @@ paths:
       tags:
         - users.mailFolder
       summary: Add attachment
-      description: "Use this API to add an attachment to a message. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. You can add an attachment to an existing message by posting to its attachments collection, or to a new\nmessage that is being drafted, or created and sent on the fly."
+      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource."
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/message-post-attachments?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
       operationId: user.mailFolder.message_CreateAttachment
       parameters:
         - name: user-id
@@ -4342,13 +3676,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - contentType
-                - isInline
-                - lastModifiedDateTime
-                - name
-                - size
               type: string
         - name: $expand
           in: query
@@ -4359,8 +3686,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -4504,9 +3829,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
               type: string
         - name: $select
           in: query
@@ -4517,8 +3839,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
               type: string
         - name: $expand
           in: query
@@ -4529,8 +3849,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -4644,8 +3962,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
               type: string
         - name: $expand
           in: query
@@ -4656,8 +3972,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -4860,25 +4174,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - application
-                - application desc
-                - clientReference
-                - clientReference desc
-                - createdBy
-                - createdBy desc
-                - createdDateTime
-                - createdDateTime desc
-                - deepLink
-                - deepLink desc
-                - mentioned
-                - mentioned desc
-                - mentionText
-                - mentionText desc
-                - serverCreatedDateTime
-                - serverCreatedDateTime desc
               type: string
         - name: $select
           in: query
@@ -4889,16 +4184,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - application
-                - clientReference
-                - createdBy
-                - createdDateTime
-                - deepLink
-                - mentioned
-                - mentionText
-                - serverCreatedDateTime
               type: string
         - name: $expand
           in: query
@@ -4909,8 +4194,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -5017,16 +4300,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - application
-                - clientReference
-                - createdBy
-                - createdDateTime
-                - deepLink
-                - mentioned
-                - mentionText
-                - serverCreatedDateTime
               type: string
         - name: $expand
           in: query
@@ -5037,8 +4310,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -5207,11 +4478,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - binaryData
-                - binaryData desc
               type: string
         - name: $select
           in: query
@@ -5222,9 +4488,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - binaryData
               type: string
       responses:
         2XX:
@@ -5275,9 +4538,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - binaryData
               type: string
       responses:
         2XX:
@@ -5379,75 +4639,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - categories
-                - categories desc
-                - changeKey
-                - changeKey desc
-                - createdDateTime
-                - createdDateTime desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - bccRecipients
-                - bccRecipients desc
-                - body
-                - body desc
-                - bodyPreview
-                - bodyPreview desc
-                - ccRecipients
-                - ccRecipients desc
-                - conversationId
-                - conversationId desc
-                - conversationIndex
-                - conversationIndex desc
-                - flag
-                - flag desc
-                - from
-                - from desc
-                - hasAttachments
-                - hasAttachments desc
-                - importance
-                - importance desc
-                - inferenceClassification
-                - inferenceClassification desc
-                - internetMessageHeaders
-                - internetMessageHeaders desc
-                - internetMessageId
-                - internetMessageId desc
-                - isDeliveryReceiptRequested
-                - isDeliveryReceiptRequested desc
-                - isDraft
-                - isDraft desc
-                - isRead
-                - isRead desc
-                - isReadReceiptRequested
-                - isReadReceiptRequested desc
-                - mentionsPreview
-                - mentionsPreview desc
-                - parentFolderId
-                - parentFolderId desc
-                - receivedDateTime
-                - receivedDateTime desc
-                - replyTo
-                - replyTo desc
-                - sender
-                - sender desc
-                - sentDateTime
-                - sentDateTime desc
-                - subject
-                - subject desc
-                - toRecipients
-                - toRecipients desc
-                - uniqueBody
-                - uniqueBody desc
-                - unsubscribeData
-                - unsubscribeData desc
-                - unsubscribeEnabled
-                - unsubscribeEnabled desc
-                - webLink
-                - webLink desc
               type: string
         - name: $select
           in: query
@@ -5458,46 +4649,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - categories
-                - changeKey
-                - createdDateTime
-                - lastModifiedDateTime
-                - bccRecipients
-                - body
-                - bodyPreview
-                - ccRecipients
-                - conversationId
-                - conversationIndex
-                - flag
-                - from
-                - hasAttachments
-                - importance
-                - inferenceClassification
-                - internetMessageHeaders
-                - internetMessageId
-                - isDeliveryReceiptRequested
-                - isDraft
-                - isRead
-                - isReadReceiptRequested
-                - mentionsPreview
-                - parentFolderId
-                - receivedDateTime
-                - replyTo
-                - sender
-                - sentDateTime
-                - subject
-                - toRecipients
-                - uniqueBody
-                - unsubscribeData
-                - unsubscribeEnabled
-                - webLink
-                - attachments
-                - extensions
-                - mentions
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
               type: string
         - name: $expand
           in: query
@@ -5508,13 +4659,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - attachments
-                - extensions
-                - mentions
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
               type: string
       responses:
         2XX:
@@ -5528,11 +4672,11 @@ paths:
     post:
       tags:
         - users.message
-      summary: Create openTypeExtension
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.'
+      summary: Create Message
+      description: "Create a draft of a new message in either JSON or MIME format. When using JSON format, you can:\n- Include an attachment.\n- Use a mention to call out another user in the new message.\n- Update the draft later to add content to the body or change other message properties. When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\n- /* Add any attachments and S/MIME properties to the MIME content. By default, this operation saves the draft in the Drafts folder. Send the draft message in a subsequent operation. Alternatively, send a new message in a single action, or create a draft to forward, to reply or to reply-all to an existing message."
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/user-post-messages?view=graph-rest-1.0
       operationId: user_CreateMessage
       parameters:
         - name: user-id
@@ -5568,7 +4712,7 @@ paths:
       description: The messages in a mailbox or folder. Read-only. Nullable.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/eventmessage-get?view=graph-rest-1.0
       operationId: user_GetMessage
       parameters:
         - name: user-id
@@ -5603,46 +4747,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - categories
-                - changeKey
-                - createdDateTime
-                - lastModifiedDateTime
-                - bccRecipients
-                - body
-                - bodyPreview
-                - ccRecipients
-                - conversationId
-                - conversationIndex
-                - flag
-                - from
-                - hasAttachments
-                - importance
-                - inferenceClassification
-                - internetMessageHeaders
-                - internetMessageId
-                - isDeliveryReceiptRequested
-                - isDraft
-                - isRead
-                - isReadReceiptRequested
-                - mentionsPreview
-                - parentFolderId
-                - receivedDateTime
-                - replyTo
-                - sender
-                - sentDateTime
-                - subject
-                - toRecipients
-                - uniqueBody
-                - unsubscribeData
-                - unsubscribeEnabled
-                - webLink
-                - attachments
-                - extensions
-                - mentions
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
               type: string
         - name: $expand
           in: query
@@ -5653,13 +4757,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - attachments
-                - extensions
-                - mentions
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
               type: string
       responses:
         2XX:
@@ -5717,11 +4814,11 @@ paths:
     delete:
       tags:
         - users.message
-      summary: Delete message
-      description: 'Delete a message in the specified user''s mailbox, or delete a relationship of the message. For example, you can delete a specific @-mention of the specified user in the message.'
+      summary: Delete eventMessage
+      description: Delete eventMessage.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/message-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/eventmessage-delete?view=graph-rest-1.0
       operationId: user_DeleteMessage
       parameters:
         - name: user-id
@@ -5837,10 +4934,10 @@ paths:
       tags:
         - users.message
       summary: List attachments
-      description: Retrieve a list of attachment objects.
+      description: Retrieve a list of attachment objects attached to a message.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/eventmessage-list-attachments?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/message-list-attachments?view=graph-rest-1.0
       operationId: user.message_ListAttachment
       parameters:
         - name: user-id
@@ -5870,19 +4967,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - contentType
-                - contentType desc
-                - isInline
-                - isInline desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - name
-                - name desc
-                - size
-                - size desc
               type: string
         - name: $select
           in: query
@@ -5893,13 +4977,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - contentType
-                - isInline
-                - lastModifiedDateTime
-                - name
-                - size
               type: string
         - name: $expand
           in: query
@@ -5910,8 +4987,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -5926,10 +5001,10 @@ paths:
       tags:
         - users.message
       summary: Add attachment
-      description: "Use this API to add an attachment to a message. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. You can add an attachment to an existing message by posting to its attachments collection, or to a new\nmessage that is being drafted, or created and sent on the fly."
+      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource."
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/message-post-attachments?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
       operationId: user.message_CreateAttachment
       parameters:
         - name: user-id
@@ -6009,13 +5084,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - contentType
-                - isInline
-                - lastModifiedDateTime
-                - name
-                - size
               type: string
         - name: $expand
           in: query
@@ -6026,8 +5094,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -6147,9 +5213,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
               type: string
         - name: $select
           in: query
@@ -6160,8 +5223,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
               type: string
         - name: $expand
           in: query
@@ -6172,8 +5233,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -6271,8 +5330,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
               type: string
         - name: $expand
           in: query
@@ -6283,8 +5340,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -6455,25 +5510,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - application
-                - application desc
-                - clientReference
-                - clientReference desc
-                - createdBy
-                - createdBy desc
-                - createdDateTime
-                - createdDateTime desc
-                - deepLink
-                - deepLink desc
-                - mentioned
-                - mentioned desc
-                - mentionText
-                - mentionText desc
-                - serverCreatedDateTime
-                - serverCreatedDateTime desc
               type: string
         - name: $select
           in: query
@@ -6484,16 +5520,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - application
-                - clientReference
-                - createdBy
-                - createdDateTime
-                - deepLink
-                - mentioned
-                - mentionText
-                - serverCreatedDateTime
               type: string
         - name: $expand
           in: query
@@ -6504,8 +5530,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -6596,16 +5620,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - application
-                - clientReference
-                - createdBy
-                - createdDateTime
-                - deepLink
-                - mentioned
-                - mentionText
-                - serverCreatedDateTime
               type: string
         - name: $expand
           in: query
@@ -6616,8 +5630,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:

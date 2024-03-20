@@ -22,11 +22,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - directoryAudits
-                - provisioning
-                - signIns
               type: string
         - name: $expand
           in: query
@@ -37,11 +32,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - directoryAudits
-                - provisioning
-                - signIns
               type: string
       responses:
         2XX:
@@ -100,31 +90,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - activityDateTime
-                - activityDateTime desc
-                - activityDisplayName
-                - activityDisplayName desc
-                - additionalDetails
-                - additionalDetails desc
-                - category
-                - category desc
-                - correlationId
-                - correlationId desc
-                - initiatedBy
-                - initiatedBy desc
-                - loggedByService
-                - loggedByService desc
-                - operationType
-                - operationType desc
-                - result
-                - result desc
-                - resultReason
-                - resultReason desc
-                - targetResources
-                - targetResources desc
               type: string
         - name: $select
           in: query
@@ -135,19 +100,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - activityDateTime
-                - activityDisplayName
-                - additionalDetails
-                - category
-                - correlationId
-                - initiatedBy
-                - loggedByService
-                - operationType
-                - result
-                - resultReason
-                - targetResources
               type: string
         - name: $expand
           in: query
@@ -158,8 +110,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -220,19 +170,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - activityDateTime
-                - activityDisplayName
-                - additionalDetails
-                - category
-                - correlationId
-                - initiatedBy
-                - loggedByService
-                - operationType
-                - result
-                - resultReason
-                - targetResources
               type: string
         - name: $expand
           in: query
@@ -243,8 +180,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -352,41 +287,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - activityDateTime
-                - activityDateTime desc
-                - changeId
-                - changeId desc
-                - cycleId
-                - cycleId desc
-                - durationInMilliseconds
-                - durationInMilliseconds desc
-                - initiatedBy
-                - initiatedBy desc
-                - jobId
-                - jobId desc
-                - modifiedProperties
-                - modifiedProperties desc
-                - provisioningAction
-                - provisioningAction desc
-                - provisioningStatusInfo
-                - provisioningStatusInfo desc
-                - provisioningSteps
-                - provisioningSteps desc
-                - servicePrincipal
-                - servicePrincipal desc
-                - sourceIdentity
-                - sourceIdentity desc
-                - sourceSystem
-                - sourceSystem desc
-                - targetIdentity
-                - targetIdentity desc
-                - targetSystem
-                - targetSystem desc
-                - tenantId
-                - tenantId desc
               type: string
         - name: $select
           in: query
@@ -397,24 +297,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - activityDateTime
-                - changeId
-                - cycleId
-                - durationInMilliseconds
-                - initiatedBy
-                - jobId
-                - modifiedProperties
-                - provisioningAction
-                - provisioningStatusInfo
-                - provisioningSteps
-                - servicePrincipal
-                - sourceIdentity
-                - sourceSystem
-                - targetIdentity
-                - targetSystem
-                - tenantId
               type: string
         - name: $expand
           in: query
@@ -425,8 +307,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -483,24 +363,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - activityDateTime
-                - changeId
-                - cycleId
-                - durationInMilliseconds
-                - initiatedBy
-                - jobId
-                - modifiedProperties
-                - provisioningAction
-                - provisioningStatusInfo
-                - provisioningSteps
-                - servicePrincipal
-                - sourceIdentity
-                - sourceSystem
-                - targetIdentity
-                - targetSystem
-                - tenantId
               type: string
         - name: $expand
           in: query
@@ -511,8 +373,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -620,55 +480,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - appDisplayName
-                - appDisplayName desc
-                - appId
-                - appId desc
-                - appliedConditionalAccessPolicies
-                - appliedConditionalAccessPolicies desc
-                - clientAppUsed
-                - clientAppUsed desc
-                - conditionalAccessStatus
-                - conditionalAccessStatus desc
-                - correlationId
-                - correlationId desc
-                - createdDateTime
-                - createdDateTime desc
-                - deviceDetail
-                - deviceDetail desc
-                - ipAddress
-                - ipAddress desc
-                - isInteractive
-                - isInteractive desc
-                - location
-                - location desc
-                - resourceDisplayName
-                - resourceDisplayName desc
-                - resourceId
-                - resourceId desc
-                - riskDetail
-                - riskDetail desc
-                - riskEventTypes
-                - riskEventTypes desc
-                - riskEventTypes_v2
-                - riskEventTypes_v2 desc
-                - riskLevelAggregated
-                - riskLevelAggregated desc
-                - riskLevelDuringSignIn
-                - riskLevelDuringSignIn desc
-                - riskState
-                - riskState desc
-                - status
-                - status desc
-                - userDisplayName
-                - userDisplayName desc
-                - userId
-                - userId desc
-                - userPrincipalName
-                - userPrincipalName desc
               type: string
         - name: $select
           in: query
@@ -679,31 +490,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - appDisplayName
-                - appId
-                - appliedConditionalAccessPolicies
-                - clientAppUsed
-                - conditionalAccessStatus
-                - correlationId
-                - createdDateTime
-                - deviceDetail
-                - ipAddress
-                - isInteractive
-                - location
-                - resourceDisplayName
-                - resourceId
-                - riskDetail
-                - riskEventTypes
-                - riskEventTypes_v2
-                - riskLevelAggregated
-                - riskLevelDuringSignIn
-                - riskState
-                - status
-                - userDisplayName
-                - userId
-                - userPrincipalName
               type: string
         - name: $expand
           in: query
@@ -714,8 +500,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -776,31 +560,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - appDisplayName
-                - appId
-                - appliedConditionalAccessPolicies
-                - clientAppUsed
-                - conditionalAccessStatus
-                - correlationId
-                - createdDateTime
-                - deviceDetail
-                - ipAddress
-                - isInteractive
-                - location
-                - resourceDisplayName
-                - resourceId
-                - riskDetail
-                - riskEventTypes
-                - riskEventTypes_v2
-                - riskLevelAggregated
-                - riskLevelDuringSignIn
-                - riskState
-                - status
-                - userDisplayName
-                - userId
-                - userPrincipalName
               type: string
         - name: $expand
           in: query
@@ -811,8 +570,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -915,9 +672,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - exportJobs
               type: string
         - name: $expand
           in: query
@@ -928,9 +682,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - exportJobs
               type: string
       responses:
         2XX:
@@ -1011,29 +762,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - expirationDateTime
-                - expirationDateTime desc
-                - filter
-                - filter desc
-                - format
-                - format desc
-                - localizationType
-                - localizationType desc
-                - reportName
-                - reportName desc
-                - requestDateTime
-                - requestDateTime desc
-                - select
-                - select desc
-                - snapshotId
-                - snapshotId desc
-                - status
-                - status desc
-                - url
-                - url desc
               type: string
         - name: $select
           in: query
@@ -1044,18 +772,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - expirationDateTime
-                - filter
-                - format
-                - localizationType
-                - reportName
-                - requestDateTime
-                - select
-                - snapshotId
-                - status
-                - url
               type: string
         - name: $expand
           in: query
@@ -1066,8 +782,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1132,18 +846,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - expirationDateTime
-                - filter
-                - format
-                - localizationType
-                - reportName
-                - requestDateTime
-                - select
-                - snapshotId
-                - status
-                - url
               type: string
         - name: $expand
           in: query
@@ -1154,8 +856,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1266,14 +966,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - authenticationMethods
-                - dailyPrintUsageByPrinter
-                - dailyPrintUsageByUser
-                - monthlyPrintUsageByPrinter
-                - monthlyPrintUsageByUser
-                - partners
-                - security
               type: string
         - name: $expand
           in: query
@@ -1284,15 +976,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - authenticationMethods
-                - dailyPrintUsageByPrinter
-                - dailyPrintUsageByUser
-                - monthlyPrintUsageByPrinter
-                - monthlyPrintUsageByUser
-                - partners
-                - security
               type: string
       responses:
         2XX:
@@ -1347,9 +1030,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - userRegistrationDetails
               type: string
         - name: $expand
           in: query
@@ -1360,9 +1040,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - userRegistrationDetails
               type: string
       responses:
         2XX:
@@ -1533,39 +1210,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - isAdmin
-                - isAdmin desc
-                - isMfaCapable
-                - isMfaCapable desc
-                - isMfaRegistered
-                - isMfaRegistered desc
-                - isPasswordlessCapable
-                - isPasswordlessCapable desc
-                - isSsprCapable
-                - isSsprCapable desc
-                - isSsprEnabled
-                - isSsprEnabled desc
-                - isSsprRegistered
-                - isSsprRegistered desc
-                - isSystemPreferredAuthenticationMethodEnabled
-                - isSystemPreferredAuthenticationMethodEnabled desc
-                - lastUpdatedDateTime
-                - lastUpdatedDateTime desc
-                - methodsRegistered
-                - methodsRegistered desc
-                - systemPreferredAuthenticationMethods
-                - systemPreferredAuthenticationMethods desc
-                - userDisplayName
-                - userDisplayName desc
-                - userPreferredMethodForSecondaryAuthentication
-                - userPreferredMethodForSecondaryAuthentication desc
-                - userPrincipalName
-                - userPrincipalName desc
-                - userType
-                - userType desc
               type: string
         - name: $select
           in: query
@@ -1576,23 +1220,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - isAdmin
-                - isMfaCapable
-                - isMfaRegistered
-                - isPasswordlessCapable
-                - isSsprCapable
-                - isSsprEnabled
-                - isSsprRegistered
-                - isSystemPreferredAuthenticationMethodEnabled
-                - lastUpdatedDateTime
-                - methodsRegistered
-                - systemPreferredAuthenticationMethods
-                - userDisplayName
-                - userPreferredMethodForSecondaryAuthentication
-                - userPrincipalName
-                - userType
               type: string
         - name: $expand
           in: query
@@ -1603,8 +1230,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1665,23 +1290,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - isAdmin
-                - isMfaCapable
-                - isMfaRegistered
-                - isPasswordlessCapable
-                - isSsprCapable
-                - isSsprEnabled
-                - isSsprRegistered
-                - isSystemPreferredAuthenticationMethodEnabled
-                - lastUpdatedDateTime
-                - methodsRegistered
-                - systemPreferredAuthenticationMethods
-                - userDisplayName
-                - userPreferredMethodForSecondaryAuthentication
-                - userPrincipalName
-                - userType
               type: string
         - name: $expand
           in: query
@@ -1692,8 +1300,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1801,35 +1407,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - blackAndWhitePageCount
-                - blackAndWhitePageCount desc
-                - colorPageCount
-                - colorPageCount desc
-                - completedBlackAndWhiteJobCount
-                - completedBlackAndWhiteJobCount desc
-                - completedColorJobCount
-                - completedColorJobCount desc
-                - completedJobCount
-                - completedJobCount desc
-                - doubleSidedSheetCount
-                - doubleSidedSheetCount desc
-                - incompleteJobCount
-                - incompleteJobCount desc
-                - mediaSheetCount
-                - mediaSheetCount desc
-                - pageCount
-                - pageCount desc
-                - singleSidedSheetCount
-                - singleSidedSheetCount desc
-                - usageDate
-                - usageDate desc
-                - printerId
-                - printerId desc
-                - printerName
-                - printerName desc
               type: string
         - name: $select
           in: query
@@ -1840,21 +1417,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - blackAndWhitePageCount
-                - colorPageCount
-                - completedBlackAndWhiteJobCount
-                - completedColorJobCount
-                - completedJobCount
-                - doubleSidedSheetCount
-                - incompleteJobCount
-                - mediaSheetCount
-                - pageCount
-                - singleSidedSheetCount
-                - usageDate
-                - printerId
-                - printerName
               type: string
         - name: $expand
           in: query
@@ -1865,8 +1427,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1927,21 +1487,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - blackAndWhitePageCount
-                - colorPageCount
-                - completedBlackAndWhiteJobCount
-                - completedColorJobCount
-                - completedJobCount
-                - doubleSidedSheetCount
-                - incompleteJobCount
-                - mediaSheetCount
-                - pageCount
-                - singleSidedSheetCount
-                - usageDate
-                - printerId
-                - printerName
               type: string
         - name: $expand
           in: query
@@ -1952,8 +1497,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2061,33 +1604,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - blackAndWhitePageCount
-                - blackAndWhitePageCount desc
-                - colorPageCount
-                - colorPageCount desc
-                - completedBlackAndWhiteJobCount
-                - completedBlackAndWhiteJobCount desc
-                - completedColorJobCount
-                - completedColorJobCount desc
-                - completedJobCount
-                - completedJobCount desc
-                - doubleSidedSheetCount
-                - doubleSidedSheetCount desc
-                - incompleteJobCount
-                - incompleteJobCount desc
-                - mediaSheetCount
-                - mediaSheetCount desc
-                - pageCount
-                - pageCount desc
-                - singleSidedSheetCount
-                - singleSidedSheetCount desc
-                - usageDate
-                - usageDate desc
-                - userPrincipalName
-                - userPrincipalName desc
               type: string
         - name: $select
           in: query
@@ -2098,20 +1614,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - blackAndWhitePageCount
-                - colorPageCount
-                - completedBlackAndWhiteJobCount
-                - completedColorJobCount
-                - completedJobCount
-                - doubleSidedSheetCount
-                - incompleteJobCount
-                - mediaSheetCount
-                - pageCount
-                - singleSidedSheetCount
-                - usageDate
-                - userPrincipalName
               type: string
         - name: $expand
           in: query
@@ -2122,8 +1624,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2184,20 +1684,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - blackAndWhitePageCount
-                - colorPageCount
-                - completedBlackAndWhiteJobCount
-                - completedColorJobCount
-                - completedJobCount
-                - doubleSidedSheetCount
-                - incompleteJobCount
-                - mediaSheetCount
-                - pageCount
-                - singleSidedSheetCount
-                - usageDate
-                - userPrincipalName
               type: string
         - name: $expand
           in: query
@@ -2208,8 +1694,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3599,6 +3083,79 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.archivedPrintJob'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/reports/microsoft.graph.getRelyingPartyDetailedSummary(period=''{period}'')':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getRelyingPartyDetailedSummary
+      operationId: report_getRelyingPartyDetailedSummary
+      parameters:
+        - name: period
+          in: path
+          description: 'Usage: period=''{period}'''
+          required: true
+          style: simple
+          schema:
+            type: string
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of relyingPartyDetailedSummary
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.relyingPartyDetailedSummary'
                   '@odata.nextLink':
                     type: string
                     nullable: true
@@ -5419,35 +4976,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - blackAndWhitePageCount
-                - blackAndWhitePageCount desc
-                - colorPageCount
-                - colorPageCount desc
-                - completedBlackAndWhiteJobCount
-                - completedBlackAndWhiteJobCount desc
-                - completedColorJobCount
-                - completedColorJobCount desc
-                - completedJobCount
-                - completedJobCount desc
-                - doubleSidedSheetCount
-                - doubleSidedSheetCount desc
-                - incompleteJobCount
-                - incompleteJobCount desc
-                - mediaSheetCount
-                - mediaSheetCount desc
-                - pageCount
-                - pageCount desc
-                - singleSidedSheetCount
-                - singleSidedSheetCount desc
-                - usageDate
-                - usageDate desc
-                - printerId
-                - printerId desc
-                - printerName
-                - printerName desc
               type: string
         - name: $select
           in: query
@@ -5458,21 +4986,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - blackAndWhitePageCount
-                - colorPageCount
-                - completedBlackAndWhiteJobCount
-                - completedColorJobCount
-                - completedJobCount
-                - doubleSidedSheetCount
-                - incompleteJobCount
-                - mediaSheetCount
-                - pageCount
-                - singleSidedSheetCount
-                - usageDate
-                - printerId
-                - printerName
               type: string
         - name: $expand
           in: query
@@ -5483,8 +4996,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -5542,21 +5053,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - blackAndWhitePageCount
-                - colorPageCount
-                - completedBlackAndWhiteJobCount
-                - completedColorJobCount
-                - completedJobCount
-                - doubleSidedSheetCount
-                - incompleteJobCount
-                - mediaSheetCount
-                - pageCount
-                - singleSidedSheetCount
-                - usageDate
-                - printerId
-                - printerName
               type: string
         - name: $expand
           in: query
@@ -5567,8 +5063,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -5676,33 +5170,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - blackAndWhitePageCount
-                - blackAndWhitePageCount desc
-                - colorPageCount
-                - colorPageCount desc
-                - completedBlackAndWhiteJobCount
-                - completedBlackAndWhiteJobCount desc
-                - completedColorJobCount
-                - completedColorJobCount desc
-                - completedJobCount
-                - completedJobCount desc
-                - doubleSidedSheetCount
-                - doubleSidedSheetCount desc
-                - incompleteJobCount
-                - incompleteJobCount desc
-                - mediaSheetCount
-                - mediaSheetCount desc
-                - pageCount
-                - pageCount desc
-                - singleSidedSheetCount
-                - singleSidedSheetCount desc
-                - usageDate
-                - usageDate desc
-                - userPrincipalName
-                - userPrincipalName desc
               type: string
         - name: $select
           in: query
@@ -5713,20 +5180,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - blackAndWhitePageCount
-                - colorPageCount
-                - completedBlackAndWhiteJobCount
-                - completedColorJobCount
-                - completedJobCount
-                - doubleSidedSheetCount
-                - incompleteJobCount
-                - mediaSheetCount
-                - pageCount
-                - singleSidedSheetCount
-                - usageDate
-                - userPrincipalName
               type: string
         - name: $expand
           in: query
@@ -5737,8 +5190,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -5796,20 +5247,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - blackAndWhitePageCount
-                - colorPageCount
-                - completedBlackAndWhiteJobCount
-                - completedColorJobCount
-                - completedJobCount
-                - doubleSidedSheetCount
-                - incompleteJobCount
-                - mediaSheetCount
-                - pageCount
-                - singleSidedSheetCount
-                - usageDate
-                - userPrincipalName
               type: string
         - name: $expand
           in: query
@@ -5820,8 +5257,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -5921,9 +5356,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - billing
               type: string
         - name: $expand
           in: query
@@ -5934,9 +5366,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - billing
               type: string
       responses:
         2XX:
@@ -6005,11 +5434,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - manifests
-                - operations
-                - usage
               type: string
         - name: $expand
           in: query
@@ -6020,11 +5444,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - manifests
-                - operations
-                - usage
               type: string
       responses:
         2XX:
@@ -6098,29 +5517,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - blobCount
-                - blobCount desc
-                - blobs
-                - blobs desc
-                - createdDateTime
-                - createdDateTime desc
-                - dataFormat
-                - dataFormat desc
-                - eTag
-                - eTag desc
-                - partitionType
-                - partitionType desc
-                - partnerTenantId
-                - partnerTenantId desc
-                - rootDirectory
-                - rootDirectory desc
-                - sasToken
-                - sasToken desc
-                - schemaVersion
-                - schemaVersion desc
               type: string
         - name: $select
           in: query
@@ -6131,18 +5527,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - blobCount
-                - blobs
-                - createdDateTime
-                - dataFormat
-                - eTag
-                - partitionType
-                - partnerTenantId
-                - rootDirectory
-                - sasToken
-                - schemaVersion
               type: string
         - name: $expand
           in: query
@@ -6153,8 +5537,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -6215,18 +5597,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - blobCount
-                - blobs
-                - createdDateTime
-                - dataFormat
-                - eTag
-                - partitionType
-                - partnerTenantId
-                - rootDirectory
-                - sasToken
-                - schemaVersion
               type: string
         - name: $expand
           in: query
@@ -6237,8 +5607,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -6343,15 +5711,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - createdDateTime
-                - createdDateTime desc
-                - lastActionDateTime
-                - lastActionDateTime desc
-                - status
-                - status desc
               type: string
         - name: $select
           in: query
@@ -6362,11 +5721,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdDateTime
-                - lastActionDateTime
-                - status
               type: string
         - name: $expand
           in: query
@@ -6377,8 +5731,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -6439,11 +5791,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdDateTime
-                - lastActionDateTime
-                - status
               type: string
         - name: $expand
           in: query
@@ -6454,8 +5801,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -6555,10 +5900,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - billed
-                - unbilled
               type: string
         - name: $expand
           in: query
@@ -6569,10 +5910,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - billed
-                - unbilled
               type: string
       responses:
         2XX:
@@ -6641,8 +5978,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
               type: string
         - name: $expand
           in: query
@@ -6653,8 +5988,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -6758,8 +6091,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
               type: string
         - name: $expand
           in: query
@@ -6770,8 +6101,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -6877,8 +6206,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
               type: string
         - name: $expand
           in: query
@@ -6889,8 +6216,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -7582,6 +6907,45 @@ components:
           $ref: '#/components/schemas/microsoft.graph.printJobProcessingState'
       additionalProperties:
         type: object
+    microsoft.graph.relyingPartyDetailedSummary:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: relyingPartyDetailedSummary
+          type: object
+          properties:
+            failedSignInCount:
+              type: integer
+              format: int64
+            migrationStatus:
+              $ref: '#/components/schemas/microsoft.graph.migrationStatus'
+            migrationValidationDetails:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.keyValuePair'
+            relyingPartyId:
+              type: string
+            relyingPartyName:
+              type: string
+            replyUrls:
+              type: array
+              items:
+                type: string
+            serviceId:
+              type: string
+            signInSuccessRate:
+              type: number
+              format: double
+            successfulSignInCount:
+              type: integer
+              format: int64
+            totalSignInCount:
+              type: integer
+              format: int64
+            uniqueUserCount:
+              type: integer
+              format: int64
+          additionalProperties:
+            type: object
     microsoft.graph.partners:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -8322,6 +7686,32 @@ components:
         - aborted
         - unknownFutureValue
       type: string
+    microsoft.graph.migrationStatus:
+      title: migrationStatus
+      enum:
+        - ready
+        - needsReview
+        - additionalStepsRequired
+        - unknownFutureValue
+      type: string
+    microsoft.graph.keyValuePair:
+      title: keyValuePair
+      type: object
+      properties:
+        name:
+          type: string
+          description: Name for this key-value pair
+        value:
+          type: string
+          description: Value for this key-value pair
+          nullable: true
+      additionalProperties:
+        type: object
+    ReferenceNumeric:
+      enum:
+        - '-INF'
+        - INF
+        - NaN
     microsoft.graph.partners.billing.blob:
       title: blob
       type: object
@@ -8699,11 +8089,6 @@ components:
         - success
         - unknownFutureValue
       type: string
-    ReferenceNumeric:
-      enum:
-        - '-INF'
-        - INF
-        - NaN
     microsoft.graph.ODataErrors.ErrorDetails:
       required:
         - code

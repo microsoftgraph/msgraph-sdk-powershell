@@ -36,35 +36,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - activationUrl
-                - activationUrl desc
-                - activitySourceHost
-                - activitySourceHost desc
-                - appActivityId
-                - appActivityId desc
-                - appDisplayName
-                - appDisplayName desc
-                - contentInfo
-                - contentInfo desc
-                - contentUrl
-                - contentUrl desc
-                - createdDateTime
-                - createdDateTime desc
-                - expirationDateTime
-                - expirationDateTime desc
-                - fallbackUrl
-                - fallbackUrl desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - status
-                - status desc
-                - userTimezone
-                - userTimezone desc
-                - visualElements
-                - visualElements desc
               type: string
         - name: $select
           in: query
@@ -75,22 +46,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - activationUrl
-                - activitySourceHost
-                - appActivityId
-                - appDisplayName
-                - contentInfo
-                - contentUrl
-                - createdDateTime
-                - expirationDateTime
-                - fallbackUrl
-                - lastModifiedDateTime
-                - status
-                - userTimezone
-                - visualElements
-                - historyItems
               type: string
         - name: $expand
           in: query
@@ -101,9 +56,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - historyItems
               type: string
       responses:
         2XX:
@@ -178,22 +130,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - activationUrl
-                - activitySourceHost
-                - appActivityId
-                - appDisplayName
-                - contentInfo
-                - contentUrl
-                - createdDateTime
-                - expirationDateTime
-                - fallbackUrl
-                - lastModifiedDateTime
-                - status
-                - userTimezone
-                - visualElements
-                - historyItems
               type: string
         - name: $expand
           in: query
@@ -204,9 +140,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - historyItems
               type: string
       responses:
         2XX:
@@ -333,25 +266,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - activeDurationSeconds
-                - activeDurationSeconds desc
-                - createdDateTime
-                - createdDateTime desc
-                - expirationDateTime
-                - expirationDateTime desc
-                - lastActiveDateTime
-                - lastActiveDateTime desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - startedDateTime
-                - startedDateTime desc
-                - status
-                - status desc
-                - userTimezone
-                - userTimezone desc
               type: string
         - name: $select
           in: query
@@ -362,17 +276,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - activeDurationSeconds
-                - createdDateTime
-                - expirationDateTime
-                - lastActiveDateTime
-                - lastModifiedDateTime
-                - startedDateTime
-                - status
-                - userTimezone
-                - activity
               type: string
         - name: $expand
           in: query
@@ -383,9 +286,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - activity
               type: string
       responses:
         2XX:
@@ -476,17 +376,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - activeDurationSeconds
-                - createdDateTime
-                - expirationDateTime
-                - lastActiveDateTime
-                - lastModifiedDateTime
-                - startedDateTime
-                - status
-                - userTimezone
-                - activity
               type: string
         - name: $expand
           in: query
@@ -497,9 +386,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - activity
               type: string
       responses:
         2XX:
@@ -644,22 +530,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - activationUrl
-                - activitySourceHost
-                - appActivityId
-                - appDisplayName
-                - contentInfo
-                - contentUrl
-                - createdDateTime
-                - expirationDateTime
-                - fallbackUrl
-                - lastModifiedDateTime
-                - status
-                - userTimezone
-                - visualElements
-                - historyItems
               type: string
         - name: $expand
           in: query
@@ -670,9 +540,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - historyItems
               type: string
       responses:
         2XX:
@@ -765,85 +632,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - deletedDateTime
-                - deletedDateTime desc
-                - accountEnabled
-                - accountEnabled desc
-                - alternativeSecurityIds
-                - alternativeSecurityIds desc
-                - approximateLastSignInDateTime
-                - approximateLastSignInDateTime desc
-                - complianceExpirationDateTime
-                - complianceExpirationDateTime desc
-                - deviceCategory
-                - deviceCategory desc
-                - deviceId
-                - deviceId desc
-                - deviceMetadata
-                - deviceMetadata desc
-                - deviceOwnership
-                - deviceOwnership desc
-                - deviceVersion
-                - deviceVersion desc
-                - displayName
-                - displayName desc
-                - domainName
-                - domainName desc
-                - enrollmentProfileName
-                - enrollmentProfileName desc
-                - enrollmentType
-                - enrollmentType desc
-                - extensionAttributes
-                - extensionAttributes desc
-                - hostnames
-                - hostnames desc
-                - isCompliant
-                - isCompliant desc
-                - isManaged
-                - isManaged desc
-                - isManagementRestricted
-                - isManagementRestricted desc
-                - isRooted
-                - isRooted desc
-                - kind
-                - kind desc
-                - managementType
-                - managementType desc
-                - manufacturer
-                - manufacturer desc
-                - mdmAppId
-                - mdmAppId desc
-                - model
-                - model desc
-                - name
-                - name desc
-                - onPremisesLastSyncDateTime
-                - onPremisesLastSyncDateTime desc
-                - onPremisesSecurityIdentifier
-                - onPremisesSecurityIdentifier desc
-                - onPremisesSyncEnabled
-                - onPremisesSyncEnabled desc
-                - operatingSystem
-                - operatingSystem desc
-                - operatingSystemVersion
-                - operatingSystemVersion desc
-                - physicalIds
-                - physicalIds desc
-                - platform
-                - platform desc
-                - profileType
-                - profileType desc
-                - registrationDateTime
-                - registrationDateTime desc
-                - status
-                - status desc
-                - systemLabels
-                - systemLabels desc
-                - trustType
-                - trustType desc
               type: string
         - name: $select
           in: query
@@ -854,53 +642,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
-                - accountEnabled
-                - alternativeSecurityIds
-                - approximateLastSignInDateTime
-                - complianceExpirationDateTime
-                - deviceCategory
-                - deviceId
-                - deviceMetadata
-                - deviceOwnership
-                - deviceVersion
-                - displayName
-                - domainName
-                - enrollmentProfileName
-                - enrollmentType
-                - extensionAttributes
-                - hostnames
-                - isCompliant
-                - isManaged
-                - isManagementRestricted
-                - isRooted
-                - kind
-                - managementType
-                - manufacturer
-                - mdmAppId
-                - model
-                - name
-                - onPremisesLastSyncDateTime
-                - onPremisesSecurityIdentifier
-                - onPremisesSyncEnabled
-                - operatingSystem
-                - operatingSystemVersion
-                - physicalIds
-                - platform
-                - profileType
-                - registrationDateTime
-                - status
-                - systemLabels
-                - trustType
-                - commands
-                - extensions
-                - memberOf
-                - registeredOwners
-                - registeredUsers
-                - transitiveMemberOf
-                - usageRights
               type: string
         - name: $expand
           in: query
@@ -911,15 +652,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - commands
-                - extensions
-                - memberOf
-                - registeredOwners
-                - registeredUsers
-                - transitiveMemberOf
-                - usageRights
               type: string
       responses:
         2XX:
@@ -993,53 +725,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
-                - accountEnabled
-                - alternativeSecurityIds
-                - approximateLastSignInDateTime
-                - complianceExpirationDateTime
-                - deviceCategory
-                - deviceId
-                - deviceMetadata
-                - deviceOwnership
-                - deviceVersion
-                - displayName
-                - domainName
-                - enrollmentProfileName
-                - enrollmentType
-                - extensionAttributes
-                - hostnames
-                - isCompliant
-                - isManaged
-                - isManagementRestricted
-                - isRooted
-                - kind
-                - managementType
-                - manufacturer
-                - mdmAppId
-                - model
-                - name
-                - onPremisesLastSyncDateTime
-                - onPremisesSecurityIdentifier
-                - onPremisesSyncEnabled
-                - operatingSystem
-                - operatingSystemVersion
-                - physicalIds
-                - platform
-                - profileType
-                - registrationDateTime
-                - status
-                - systemLabels
-                - trustType
-                - commands
-                - extensions
-                - memberOf
-                - registeredOwners
-                - registeredUsers
-                - transitiveMemberOf
-                - usageRights
               type: string
         - name: $expand
           in: query
@@ -1050,15 +735,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - commands
-                - extensions
-                - memberOf
-                - registeredOwners
-                - registeredUsers
-                - transitiveMemberOf
-                - usageRights
               type: string
       responses:
         2XX:
@@ -1181,25 +857,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - appServiceName
-                - appServiceName desc
-                - error
-                - error desc
-                - packageFamilyName
-                - packageFamilyName desc
-                - payload
-                - payload desc
-                - permissionTicket
-                - permissionTicket desc
-                - postBackUri
-                - postBackUri desc
-                - status
-                - status desc
-                - type
-                - type desc
               type: string
         - name: $select
           in: query
@@ -1210,17 +867,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - appServiceName
-                - error
-                - packageFamilyName
-                - payload
-                - permissionTicket
-                - postBackUri
-                - status
-                - type
-                - responsepayload
               type: string
         - name: $expand
           in: query
@@ -1231,9 +877,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - responsepayload
               type: string
       responses:
         2XX:
@@ -1324,17 +967,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - appServiceName
-                - error
-                - packageFamilyName
-                - payload
-                - permissionTicket
-                - postBackUri
-                - status
-                - type
-                - responsepayload
               type: string
         - name: $expand
           in: query
@@ -1345,9 +977,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - responsepayload
               type: string
       responses:
         2XX:
@@ -1488,8 +1117,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
               type: string
         - name: $expand
           in: query
@@ -1500,8 +1127,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1581,9 +1206,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
               type: string
         - name: $select
           in: query
@@ -1594,8 +1216,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
               type: string
         - name: $expand
           in: query
@@ -1606,8 +1226,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1698,8 +1316,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
               type: string
         - name: $expand
           in: query
@@ -1710,8 +1326,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1893,11 +1507,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - deletedDateTime
-                - deletedDateTime desc
               type: string
         - name: $select
           in: query
@@ -1908,9 +1517,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
               type: string
         - name: $expand
           in: query
@@ -1921,8 +1527,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1984,9 +1588,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
               type: string
         - name: $expand
           in: query
@@ -1997,8 +1598,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2060,9 +1659,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
               type: string
         - name: $expand
           in: query
@@ -2073,8 +1669,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2135,9 +1729,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
               type: string
         - name: $expand
           in: query
@@ -2148,8 +1739,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2247,11 +1836,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - deletedDateTime
-                - deletedDateTime desc
               type: string
         - name: $select
           in: query
@@ -2262,9 +1846,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
               type: string
         - name: $expand
           in: query
@@ -2275,8 +1856,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2373,11 +1952,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - deletedDateTime
-                - deletedDateTime desc
               type: string
         - name: $select
           in: query
@@ -2388,9 +1962,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
               type: string
         - name: $expand
           in: query
@@ -2401,8 +1972,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2503,11 +2072,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - deletedDateTime
-                - deletedDateTime desc
               type: string
         - name: $select
           in: query
@@ -2518,9 +2082,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
               type: string
         - name: $expand
           in: query
@@ -2531,8 +2092,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2640,9 +2199,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
               type: string
         - name: $expand
           in: query
@@ -2653,8 +2209,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2715,9 +2269,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
               type: string
         - name: $expand
           in: query
@@ -2728,8 +2279,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2790,9 +2339,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
               type: string
         - name: $expand
           in: query
@@ -2803,8 +2349,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2906,11 +2450,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - deletedDateTime
-                - deletedDateTime desc
               type: string
       responses:
         2XX:
@@ -3048,11 +2587,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - deletedDateTime
-                - deletedDateTime desc
               type: string
         - name: $select
           in: query
@@ -3063,9 +2597,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
               type: string
         - name: $expand
           in: query
@@ -3076,8 +2607,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3174,11 +2703,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - deletedDateTime
-                - deletedDateTime desc
               type: string
         - name: $select
           in: query
@@ -3189,9 +2713,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
               type: string
         - name: $expand
           in: query
@@ -3202,8 +2723,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3300,11 +2819,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - deletedDateTime
-                - deletedDateTime desc
               type: string
         - name: $select
           in: query
@@ -3315,9 +2829,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
               type: string
         - name: $expand
           in: query
@@ -3328,8 +2839,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3430,11 +2939,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - deletedDateTime
-                - deletedDateTime desc
               type: string
         - name: $select
           in: query
@@ -3445,9 +2949,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
               type: string
         - name: $expand
           in: query
@@ -3458,8 +2959,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3567,9 +3066,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
               type: string
         - name: $expand
           in: query
@@ -3580,8 +3076,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3642,9 +3136,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
               type: string
         - name: $expand
           in: query
@@ -3655,8 +3146,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3717,9 +3206,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
               type: string
         - name: $expand
           in: query
@@ -3730,8 +3216,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3833,11 +3317,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - deletedDateTime
-                - deletedDateTime desc
               type: string
       responses:
         2XX:
@@ -3975,11 +3454,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - deletedDateTime
-                - deletedDateTime desc
               type: string
         - name: $select
           in: query
@@ -3990,9 +3464,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
               type: string
         - name: $expand
           in: query
@@ -4003,8 +3474,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -4101,11 +3570,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - deletedDateTime
-                - deletedDateTime desc
               type: string
         - name: $select
           in: query
@@ -4116,9 +3580,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
               type: string
         - name: $expand
           in: query
@@ -4129,8 +3590,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -4227,11 +3686,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - deletedDateTime
-                - deletedDateTime desc
               type: string
         - name: $select
           in: query
@@ -4242,9 +3696,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
               type: string
         - name: $expand
           in: query
@@ -4255,8 +3706,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -4357,11 +3806,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - deletedDateTime
-                - deletedDateTime desc
               type: string
         - name: $select
           in: query
@@ -4372,9 +3816,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
               type: string
         - name: $expand
           in: query
@@ -4385,8 +3826,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -4448,9 +3887,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
               type: string
         - name: $expand
           in: query
@@ -4461,8 +3897,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -4524,9 +3958,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
               type: string
         - name: $expand
           in: query
@@ -4537,8 +3968,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -4599,9 +4028,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
               type: string
         - name: $expand
           in: query
@@ -4612,8 +4038,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -4711,11 +4135,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - deletedDateTime
-                - deletedDateTime desc
               type: string
         - name: $select
           in: query
@@ -4726,9 +4145,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
               type: string
         - name: $expand
           in: query
@@ -4739,8 +4155,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -4837,11 +4251,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - deletedDateTime
-                - deletedDateTime desc
               type: string
         - name: $select
           in: query
@@ -4852,9 +4261,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
               type: string
         - name: $expand
           in: query
@@ -4865,8 +4271,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -4957,15 +4361,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - catalogId
-                - catalogId desc
-                - serviceIdentifier
-                - serviceIdentifier desc
-                - state
-                - state desc
               type: string
         - name: $select
           in: query
@@ -4976,11 +4371,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - catalogId
-                - serviceIdentifier
-                - state
               type: string
         - name: $expand
           in: query
@@ -4991,8 +4381,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -5083,11 +4471,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - catalogId
-                - serviceIdentifier
-                - state
               type: string
         - name: $expand
           in: query
@@ -5098,8 +4481,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -5262,53 +4643,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
-                - accountEnabled
-                - alternativeSecurityIds
-                - approximateLastSignInDateTime
-                - complianceExpirationDateTime
-                - deviceCategory
-                - deviceId
-                - deviceMetadata
-                - deviceOwnership
-                - deviceVersion
-                - displayName
-                - domainName
-                - enrollmentProfileName
-                - enrollmentType
-                - extensionAttributes
-                - hostnames
-                - isCompliant
-                - isManaged
-                - isManagementRestricted
-                - isRooted
-                - kind
-                - managementType
-                - manufacturer
-                - mdmAppId
-                - model
-                - name
-                - onPremisesLastSyncDateTime
-                - onPremisesSecurityIdentifier
-                - onPremisesSyncEnabled
-                - operatingSystem
-                - operatingSystemVersion
-                - physicalIds
-                - platform
-                - profileType
-                - registrationDateTime
-                - status
-                - systemLabels
-                - trustType
-                - commands
-                - extensions
-                - memberOf
-                - registeredOwners
-                - registeredUsers
-                - transitiveMemberOf
-                - usageRights
               type: string
         - name: $expand
           in: query
@@ -5319,15 +4653,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - commands
-                - extensions
-                - memberOf
-                - registeredOwners
-                - registeredUsers
-                - transitiveMemberOf
-                - usageRights
               type: string
       responses:
         2XX:
@@ -5835,6 +5160,18 @@ components:
               type: boolean
               description: 'true if members of this administrative unit should be treated as sensitive, which requires specific permissions to manage. Default value is false. Use this property to define administrative units whose roles don''t inherit from tenant-level administrators, and management of individual member objects is limited to administrators scoped to a restricted management administrative unit. Immutable, so can''t be changed later.  For more information about working with restricted management administrative units, see Restricted management administrative units in Microsoft Entra ID.'
               nullable: true
+            membershipRule:
+              type: string
+              description: 'Dynamic membership rule for the administrative unit. For more about the rules that you can use for dynamic administrative units and dynamic groups, see Using attributes to create advanced rules.'
+              nullable: true
+            membershipRuleProcessingState:
+              type: string
+              description: 'Used to control whether the dynamic membership rule is actively processed. Set to On when you want the dynamic membership rule to be active and Paused if you want to stop updating membership dynamically. If not set, the default behavior is Paused.'
+              nullable: true
+            membershipType:
+              type: string
+              description: 'Membership type for the administrative unit. Can be dynamic or assigned. If not set, the default behavior is assigned.'
+              nullable: true
             visibility:
               type: string
               description: 'Controls whether the administrative unit and its members are hidden or public. Can be set to HiddenMembership or Public. If not set, the default behavior is Public. When set to HiddenMembership, only members of the administrative unit can list other members of the administrative unit.'
@@ -6035,12 +5372,12 @@ components:
               type: array
               items:
                 type: string
-              description: 'Specifies the group behaviors that can be set for a Microsoft 365 group during creation. This can be set only as part of creation (POST). Possible values are AllowOnlyMembersToPost, HideGroupInOutlook, SubscribeNewGroupMembers, WelcomeEmailDisabled. For more information, see Set Microsoft 365 group behaviors and provisioning options.'
+              description: 'Specifies the group behaviors that can be set for a Microsoft 365 group during creation. This can be set only as part of creation (POST). For the list of possible values, see Set Microsoft 365 group behaviors and provisioning options.'
             resourceProvisioningOptions:
               type: array
               items:
                 type: string
-              description: 'Specifies the group resources that are provisioned as part of Microsoft 365 group creation that isn''t normally part of default group creation. The possible value is Team. For more information, see Set Microsoft 365 group behaviors and provisioning options. Returned by default. Supports $filter (eq, not, startsWith.'
+              description: 'Specifies the group resources that are associated with the Microsoft 365 group. The possible value is Team. For more information, see Set Microsoft 365 group behaviors and provisioning options. Returned by default. Supports $filter (eq, not, startsWith.'
             securityEnabled:
               type: boolean
               description: 'Specifies whether the group is a security group. Required.Returned by default. Supports $filter (eq, ne, not, in).'
@@ -6949,6 +6286,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.chat'
               x-ms-navigationProperty: true
+            cloudClipboard:
+              $ref: '#/components/schemas/microsoft.graph.cloudClipboardRoot'
             cloudPCs:
               type: array
               items:
@@ -8628,6 +7967,7 @@ components:
             subject:
               type: string
               description: 'Required. The identifier of the external software workload within the external identity provider. Like the audience value, it has no fixed format, as each identity provider uses their own - sometimes a GUID, sometimes a colon delimited identifier, sometimes arbitrary strings. The value here must match the sub claim within the token presented to Microsoft Entra ID. The combination of issuer and subject must be unique on the app. It has a limit of 600 characters. Supports $filter (eq).'
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.homeRealmDiscoveryPolicy:
@@ -8647,16 +7987,16 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.servicePlanInfo'
-              description: 'Information about the service plans assigned with the license. Read-only, Not nullable'
+              description: Information about the service plans assigned with the license. Read-only. Not nullable.
             skuId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
               type: string
-              description: Unique identifier (GUID) for the service SKU. Equal to the skuId property on the related SubscribedSku object. Read-only
+              description: Unique identifier (GUID) for the service SKU. Equal to the skuId property on the related subscribedSku object. Read-only.
               format: uuid
               nullable: true
             skuPartNumber:
               type: string
-              description: 'Unique SKU display name. Equal to the skuPartNumber on the related SubscribedSku object; for example: ''AAD_Premium''. Read-only'
+              description: 'Unique SKU display name. Equal to the skuPartNumber on the related subscribedSku object; for example, AAD_Premium. Read-only.'
               nullable: true
           additionalProperties:
             type: object
@@ -8840,7 +8180,7 @@ components:
       properties:
         issuer:
           type: string
-          description: 'Specifies the issuer of the identity, for example facebook.com. 512 character limit. For local accounts (where signInType isn''t federated), this property is the local default domain name for the tenant, for example contoso.com.<br>For guests from other Microsoft Entra organization, this is the domain of the federated organization, for examplecontoso.com`.  For more information about filtering behavior for this property, see Filtering on the identities property of a user.'
+          description: 'Specifies the issuer of the identity, for example facebook.com. 512 character limit. For local accounts (where signInType isn''t federated), this property is the local default domain name for the tenant, for example contoso.com.  For guests from other Microsoft Entra organizations, this is the domain of the federated organization, for example contoso.com. For more information about filtering behavior for this property, see Filtering on the identities property of a user.'
           nullable: true
         issuerAssignedId:
           type: string
@@ -8947,15 +8287,15 @@ components:
       properties:
         forceChangePasswordNextSignIn:
           type: boolean
-          description: 'true if the user must change her password on the next login; otherwise false. If not set, default is false.'
+          description: 'true if the user must change their password on the next sign-in; otherwise false. If not set, default is false.'
           nullable: true
         forceChangePasswordNextSignInWithMfa:
           type: boolean
-          description: 'If true, at next sign-in, the user must perform a multi-factor authentication (MFA) before being forced to change their password. The behavior is identical to forceChangePasswordNextSignIn except that the user is required to first perform a multi-factor authentication before password change. After a password change, this property will be automatically reset to false. If not set, default is false.'
+          description: 'If true, at next sign-in, the user must perform a multifactor authentication (MFA) before being forced to change their password. The behavior is identical to forceChangePasswordNextSignIn except that the user is required to first perform a multifactor authentication before password change. After a password change, this property will be automatically reset to false. If not set, default is false.'
           nullable: true
         password:
           type: string
-          description: 'The password for the user. This property is required when a user is created. It can be updated, but the user will be required to change the password on the next login. The password must satisfy minimum requirements as specified by the user''s passwordPolicies property. By default, a strong password is required.'
+          description: 'The password for the user. This property is required when a user is created. It can be updated, but the user will be required to change the password on the next sign-in. The password must satisfy minimum requirements as specified by the user''s passwordPolicies property. By default, a strong password is required.'
           nullable: true
       additionalProperties:
         type: object
@@ -8995,7 +8335,7 @@ components:
         lastNonInteractiveSignInDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client attempted (either successfully or unsuccessfully) to sign in to the directory the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Microsoft Entra ID maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.'
+          description: 'The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client attempted (either successfully or unsuccessfully) to sign in to the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Microsoft Entra ID maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.'
           format: date-time
           nullable: true
         lastNonInteractiveSignInRequestId:
@@ -9332,6 +8672,19 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.teamsTab'
               description: A collection of all the tabs in the chat. Nullable.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.cloudClipboardRoot:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: cloudClipboardRoot
+          type: object
+          properties:
+            items:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudClipboardItem'
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -10624,7 +9977,7 @@ components:
             endDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The meeting end time in UTC.
+              description: The meeting end time in UTC. Required when you create an online meeting.
               format: date-time
               nullable: true
             externalId:
@@ -10637,6 +9990,10 @@ components:
             joinUrl:
               type: string
               nullable: true
+            meetingTemplateId:
+              type: string
+              description: The ID of the meeting template.
+              nullable: true
             participants:
               $ref: '#/components/schemas/microsoft.graph.meetingParticipants'
             recording:
@@ -10646,7 +10003,7 @@ components:
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The meeting start time in UTC.
+              description: The meeting start time in UTC. Required when you create an online meeting.
               format: date-time
               nullable: true
             meetingAttendanceReport:
@@ -11072,6 +10429,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.regionalAndLanguageSettings'
             shiftPreferences:
               $ref: '#/components/schemas/microsoft.graph.shiftPreferences'
+            windows:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.windowsSetting'
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.userTeamwork:
@@ -11082,11 +10444,11 @@ components:
           properties:
             locale:
               type: string
-              description: Represents the chosen locale of a user in Microsoft Teams.
+              description: The chosen locale of a user in Microsoft Teams.
               nullable: true
             region:
               type: string
-              description: Represents the region of the user in Microsoft Teams.
+              description: The region of the user in Microsoft Teams.
               nullable: true
             associatedTeams:
               type: array
@@ -12982,6 +12344,14 @@ components:
               type: boolean
               description: Indicates whether the schedule is enabled for the team. Required.
               nullable: true
+            isCrossLocationShiftRequestApprovalRequired:
+              type: boolean
+              description: Indicates whether approval is required by a manager of this schedule for cross location shift requests.
+              nullable: true
+            isCrossLocationShiftsEnabled:
+              type: boolean
+              description: Indicates whether the cross-location marketplace feature is enabled for this schedule.
+              nullable: true
             offerShiftRequestsEnabled:
               type: boolean
               description: Indicates whether offer shift requests are enabled for the schedule.
@@ -13022,7 +12392,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: The Ids for the workforce integrations associated with this schedule.
+              description: The IDs for the workforce integrations associated with this schedule.
             dayNotes:
               type: array
               items:
@@ -13063,6 +12433,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.shiftsRoleDefinition'
+              description: The definitions of the roles in the schedule.
               x-ms-navigationProperty: true
             swapShiftsChangeRequests:
               type: array
@@ -14185,6 +13556,31 @@ components:
               nullable: true
             teamsApp:
               $ref: '#/components/schemas/microsoft.graph.teamsApp'
+          additionalProperties:
+            type: object
+    microsoft.graph.cloudClipboardItem:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: cloudClipboardItem
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            expirationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            payloads:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudClipboardItemPayload'
           additionalProperties:
             type: object
     microsoft.graph.cloudPcConnectionSettings:
@@ -18261,6 +17657,27 @@ components:
               description: Availability of the user to be scheduled for work and its recurrence pattern.
           additionalProperties:
             type: object
+    microsoft.graph.windowsSetting:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: windowsSetting
+          type: object
+          properties:
+            payloadType:
+              type: string
+              nullable: true
+            settingType:
+              $ref: '#/components/schemas/microsoft.graph.windowsSettingType'
+            windowsDeviceId:
+              type: string
+              nullable: true
+            instances:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.windowsSettingInstance'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.associatedTeamInfo:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.teamInfo'
@@ -20317,6 +19734,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.teamsAppDashboardCardDefinition'
+              description: Dashboard cards specified in the Teams app manifest.
               x-ms-navigationProperty: true
             outlineIcon:
               $ref: '#/components/schemas/microsoft.graph.teamsAppIcon'
@@ -20477,7 +19895,7 @@ components:
           properties:
             code:
               type: string
-              description: The code for the schedulingGroup to represent an external identifier.
+              description: 'The code for the schedulingGroup to represent an external identifier. This field must be unique within the team in Microsoft Teams and uses an alphanumeric format, with a maximum of 100 characters.'
               nullable: true
             displayName:
               type: string
@@ -20534,12 +19952,15 @@ components:
           properties:
             description:
               type: string
+              description: The description of the role.
             displayName:
               type: string
+              description: The display name of the role.
             shiftsRolePermissions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.shiftsRolePermission'
+              description: The collection of role permissions within the role.
           additionalProperties:
             type: object
     microsoft.graph.swapShiftsChangeRequest:
@@ -20591,7 +20012,7 @@ components:
           properties:
             code:
               type: string
-              description: The code of the timeOffReason to represent an external identifier.
+              description: 'The code of the timeOffReason to represent an external identifier. This field must be unique within the team in Microsoft Teams and uses an alphanumeric format, with a maximum of 100 characters.'
               nullable: true
             displayName:
               type: string
@@ -21301,6 +20722,16 @@ components:
           type: string
           description: Url for showing tab contents outside of Teams.
           nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.cloudClipboardItemPayload:
+      title: cloudClipboardItemPayload
+      type: object
+      properties:
+        content:
+          type: string
+        formatName:
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.cloudPcHealthCheckItem:
@@ -23033,6 +22464,7 @@ components:
       properties:
         allowTextOnly:
           type: boolean
+          description: Indicates whether only text is allowed in the meeting chat. Optional.
           nullable: true
       additionalProperties:
         type: object
@@ -23515,6 +22947,7 @@ components:
         - unknownFutureValue
         - formCompletion
         - approvalCompletion
+        - completionInHostedApp
       type: string
       x-ms-enum-flags:
         isFlags: true
@@ -24000,6 +23433,36 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.windowsSettingType:
+      title: windowsSettingType
+      enum:
+        - roaming
+        - backup
+        - unknownFutureValue
+      type: string
+    microsoft.graph.windowsSettingInstance:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: windowsSettingInstance
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            expirationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            payload:
+              type: string
+          additionalProperties:
+            type: object
     microsoft.graph.teamInfo:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -24511,6 +23974,9 @@ components:
         - stream
         - powerPoint
         - office
+        - loki
+        - loop
+        - other
         - unknownFutureValue
       type: string
     microsoft.graph.retentionLabelSettings:
@@ -25250,14 +24716,17 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamsAppDashboardCardSize'
             description:
               type: string
+              description: The description for the card. Required.
               nullable: true
             displayName:
               type: string
+              description: The name of the card. Required.
               nullable: true
             icon:
               $ref: '#/components/schemas/microsoft.graph.teamsAppDashboardCardIcon'
             pickerGroupId:
               type: string
+              description: ID for the group in the card picker. Required.
               nullable: true
           additionalProperties:
             type: object
@@ -25388,6 +24857,7 @@ components:
           type: array
           items:
             type: string
+          description: The permissions that are allowed for a role. Permissions that aren't in this collection are disabled.
       additionalProperties:
         type: object
     microsoft.graph.timeCardBreak:
@@ -27415,13 +26885,9 @@ components:
               description: Email address of the presenter.
               nullable: true
             identity:
-              $ref: '#/components/schemas/microsoft.graph.communicationsUserIdentity'
+              $ref: '#/components/schemas/microsoft.graph.identity'
             presenterDetails:
               $ref: '#/components/schemas/microsoft.graph.virtualEventPresenterDetails'
-            profilePhoto:
-              type: string
-              format: base64url
-              nullable: true
             sessions:
               type: array
               items:
@@ -27539,6 +27005,11 @@ components:
         - liveStream
         - presentation
         - screenRecording
+        - story
+        - profile
+        - chat
+        - note
+        - comment
         - unknownFutureValue
       type: string
     microsoft.graph.security.behaviorDuringRetentionPeriod:
@@ -27850,9 +27321,11 @@ components:
       properties:
         iconUrl:
           type: string
+          description: 'The icon for the card, displayed in the toolbox and card bar, is represented as a URL. The preferred size for raster images is 28x28 pixels. If this property has a value, the officeFabricIconFontName property is ignored.'
           nullable: true
         officeUIFabricIconName:
           type: string
+          description: 'The friendly name of the Office UI Fabric/Fluent UI icon for the card that is used when the iconUrl property isn''t specified. For example, ''officeUIFabricIconName'': ''Search''.'
           nullable: true
       additionalProperties:
         type: object
@@ -29422,6 +28895,11 @@ components:
           type: string
           description: The presenter's personal website URL.
           nullable: true
+        photo:
+          type: string
+          description: The content stream of the presenter's photo.
+          format: base64url
+          nullable: true
         twitterProfileWebUrl:
           type: string
           description: The presenter's Twitter profile URL.
@@ -29749,6 +29227,7 @@ components:
       properties:
         botId:
           type: string
+          description: The ID (usually a GUID) of the bot associated with the specific teamsAppDefinition. This is a unique app ID for the bot as registered with the Bot Framework.
           nullable: true
       additionalProperties:
         type: object

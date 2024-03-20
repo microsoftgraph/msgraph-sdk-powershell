@@ -30,11 +30,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - shared
-                - trending
-                - used
               type: string
         - name: $expand
           in: query
@@ -45,11 +40,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - shared
-                - trending
-                - used
               type: string
       responses:
         2XX:
@@ -151,17 +141,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - lastShared
-                - lastShared desc
-                - resourceReference
-                - resourceReference desc
-                - resourceVisualization
-                - resourceVisualization desc
-                - sharingHistory
-                - sharingHistory desc
               type: string
         - name: $select
           in: query
@@ -172,14 +151,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - lastShared
-                - resourceReference
-                - resourceVisualization
-                - sharingHistory
-                - lastSharedMethod
-                - resource
               type: string
         - name: $expand
           in: query
@@ -190,10 +161,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - lastSharedMethod
-                - resource
               type: string
       responses:
         2XX:
@@ -268,14 +235,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - lastShared
-                - resourceReference
-                - resourceVisualization
-                - sharingHistory
-                - lastSharedMethod
-                - resource
               type: string
         - name: $expand
           in: query
@@ -286,10 +245,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - lastSharedMethod
-                - resource
               type: string
       responses:
         2XX:
@@ -406,8 +361,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
               type: string
         - name: $expand
           in: query
@@ -418,8 +371,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -464,8 +415,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
               type: string
         - name: $expand
           in: query
@@ -476,8 +425,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -544,17 +491,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - resourceReference
-                - resourceReference desc
-                - resourceVisualization
-                - resourceVisualization desc
-                - weight
-                - weight desc
               type: string
         - name: $select
           in: query
@@ -565,13 +501,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - lastModifiedDateTime
-                - resourceReference
-                - resourceVisualization
-                - weight
-                - resource
               type: string
         - name: $expand
           in: query
@@ -582,9 +511,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - resource
               type: string
       responses:
         2XX:
@@ -659,13 +585,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - lastModifiedDateTime
-                - resourceReference
-                - resourceVisualization
-                - weight
-                - resource
               type: string
         - name: $expand
           in: query
@@ -676,9 +595,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - resource
               type: string
       responses:
         2XX:
@@ -796,8 +712,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
               type: string
         - name: $expand
           in: query
@@ -808,8 +722,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -876,15 +788,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - lastUsed
-                - lastUsed desc
-                - resourceReference
-                - resourceReference desc
-                - resourceVisualization
-                - resourceVisualization desc
               type: string
         - name: $select
           in: query
@@ -895,12 +798,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - lastUsed
-                - resourceReference
-                - resourceVisualization
-                - resource
               type: string
         - name: $expand
           in: query
@@ -911,9 +808,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - resource
               type: string
       responses:
         2XX:
@@ -988,12 +882,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - lastUsed
-                - resourceReference
-                - resourceVisualization
-                - resource
               type: string
         - name: $expand
           in: query
@@ -1004,9 +892,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - resource
               type: string
       responses:
         2XX:
@@ -1124,8 +1009,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
               type: string
         - name: $expand
           in: query
@@ -1136,8 +1019,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1204,47 +1085,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - birthday
-                - birthday desc
-                - companyName
-                - companyName desc
-                - department
-                - department desc
-                - displayName
-                - displayName desc
-                - givenName
-                - givenName desc
-                - imAddress
-                - imAddress desc
-                - isFavorite
-                - isFavorite desc
-                - jobTitle
-                - jobTitle desc
-                - officeLocation
-                - officeLocation desc
-                - personNotes
-                - personNotes desc
-                - personType
-                - personType desc
-                - phones
-                - phones desc
-                - postalAddresses
-                - postalAddresses desc
-                - profession
-                - profession desc
-                - scoredEmailAddresses
-                - scoredEmailAddresses desc
-                - surname
-                - surname desc
-                - userPrincipalName
-                - userPrincipalName desc
-                - websites
-                - websites desc
-                - yomiCompany
-                - yomiCompany desc
               type: string
         - name: $select
           in: query
@@ -1255,27 +1095,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - birthday
-                - companyName
-                - department
-                - displayName
-                - givenName
-                - imAddress
-                - isFavorite
-                - jobTitle
-                - officeLocation
-                - personNotes
-                - personType
-                - phones
-                - postalAddresses
-                - profession
-                - scoredEmailAddresses
-                - surname
-                - userPrincipalName
-                - websites
-                - yomiCompany
               type: string
       responses:
         2XX:
@@ -1319,27 +1138,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - birthday
-                - companyName
-                - department
-                - displayName
-                - givenName
-                - imAddress
-                - isFavorite
-                - jobTitle
-                - officeLocation
-                - personNotes
-                - personType
-                - phones
-                - postalAddresses
-                - profession
-                - scoredEmailAddresses
-                - surname
-                - userPrincipalName
-                - websites
-                - yomiCompany
               type: string
       responses:
         2XX:

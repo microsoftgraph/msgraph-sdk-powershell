@@ -267,28 +267,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - averageBlueScreens
-                - averageRestarts
-                - blueScreenCount
-                - bootScore
-                - coreBootTimeInMs
-                - coreLoginTimeInMs
-                - deviceCount
-                - deviceName
-                - diskType
-                - groupPolicyBootTimeInMs
-                - groupPolicyLoginTimeInMs
-                - healthStatus
-                - loginScore
-                - manufacturer
-                - model
-                - modelStartupPerformanceScore
-                - operatingSystemVersion
-                - responsiveDesktopTimeInMs
-                - restartCount
-                - startupPerformanceScore
               type: string
         - name: $orderby
           in: query
@@ -299,49 +277,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - averageBlueScreens
-                - averageBlueScreens desc
-                - averageRestarts
-                - averageRestarts desc
-                - blueScreenCount
-                - blueScreenCount desc
-                - bootScore
-                - bootScore desc
-                - coreBootTimeInMs
-                - coreBootTimeInMs desc
-                - coreLoginTimeInMs
-                - coreLoginTimeInMs desc
-                - deviceCount
-                - deviceCount desc
-                - deviceName
-                - deviceName desc
-                - diskType
-                - diskType desc
-                - groupPolicyBootTimeInMs
-                - groupPolicyBootTimeInMs desc
-                - groupPolicyLoginTimeInMs
-                - groupPolicyLoginTimeInMs desc
-                - healthStatus
-                - healthStatus desc
-                - loginScore
-                - loginScore desc
-                - manufacturer
-                - manufacturer desc
-                - model
-                - model desc
-                - modelStartupPerformanceScore
-                - modelStartupPerformanceScore desc
-                - operatingSystemVersion
-                - operatingSystemVersion desc
-                - responsiveDesktopTimeInMs
-                - responsiveDesktopTimeInMs desc
-                - restartCount
-                - restartCount desc
-                - startupPerformanceScore
-                - startupPerformanceScore desc
               type: string
         - name: $expand
           in: query
@@ -352,8 +287,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -368,6 +301,42 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsDevicePerformance'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  /deviceManagement/virtualEndpoint/auditEvents/microsoft.graph.getAuditActivityTypes():
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getAuditActivityTypes
+      operationId: deviceManagement.virtualEndpoint.auditEvent_getAuditActivityType
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                      nullable: true
                   '@odata.nextLink':
                     type: string
                     nullable: true

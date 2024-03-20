@@ -22,11 +22,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - classes
-                - me
-                - schools
-                - users
               type: string
         - name: $expand
           in: query
@@ -37,12 +32,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - classes
-                - me
-                - schools
-                - users
               type: string
       responses:
         2XX:
@@ -101,33 +90,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - classCode
-                - classCode desc
-                - course
-                - course desc
-                - createdBy
-                - createdBy desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - externalId
-                - externalId desc
-                - externalName
-                - externalName desc
-                - externalSource
-                - externalSource desc
-                - externalSourceDetail
-                - externalSourceDetail desc
-                - grade
-                - grade desc
-                - mailNickname
-                - mailNickname desc
-                - term
-                - term desc
               type: string
         - name: $select
           in: query
@@ -138,29 +100,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - classCode
-                - course
-                - createdBy
-                - description
-                - displayName
-                - externalId
-                - externalName
-                - externalSource
-                - externalSourceDetail
-                - grade
-                - mailNickname
-                - term
-                - assignmentCategories
-                - assignmentDefaults
-                - assignments
-                - assignmentSettings
-                - group
-                - members
-                - modules
-                - schools
-                - teachers
               type: string
         - name: $expand
           in: query
@@ -171,17 +110,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - assignmentCategories
-                - assignmentDefaults
-                - assignments
-                - assignmentSettings
-                - group
-                - members
-                - modules
-                - schools
-                - teachers
               type: string
       responses:
         2XX:
@@ -246,29 +174,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - classCode
-                - course
-                - createdBy
-                - description
-                - displayName
-                - externalId
-                - externalName
-                - externalSource
-                - externalSourceDetail
-                - grade
-                - mailNickname
-                - term
-                - assignmentCategories
-                - assignmentDefaults
-                - assignments
-                - assignmentSettings
-                - group
-                - members
-                - modules
-                - schools
-                - teachers
               type: string
         - name: $expand
           in: query
@@ -279,17 +184,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - assignmentCategories
-                - assignmentDefaults
-                - assignments
-                - assignmentSettings
-                - group
-                - members
-                - modules
-                - schools
-                - teachers
               type: string
       responses:
         2XX:
@@ -399,11 +293,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - displayName
-                - displayName desc
               type: string
         - name: $select
           in: query
@@ -414,9 +303,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
               type: string
         - name: $expand
           in: query
@@ -427,8 +313,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -510,9 +394,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
               type: string
         - name: $expand
           in: query
@@ -523,8 +404,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -664,9 +543,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
               type: string
         - name: $orderby
           in: query
@@ -677,11 +553,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - displayName
-                - displayName desc
               type: string
         - name: $expand
           in: query
@@ -692,8 +563,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -750,12 +619,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - addedStudentAction
-                - addToCalendarAction
-                - dueTime
-                - notificationChannelUrl
               type: string
         - name: $expand
           in: query
@@ -766,8 +629,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -873,55 +734,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - addedStudentAction
-                - addedStudentAction desc
-                - addToCalendarAction
-                - addToCalendarAction desc
-                - allowLateSubmissions
-                - allowLateSubmissions desc
-                - allowStudentsToAddResourcesToSubmission
-                - allowStudentsToAddResourcesToSubmission desc
-                - assignDateTime
-                - assignDateTime desc
-                - assignedDateTime
-                - assignedDateTime desc
-                - assignTo
-                - assignTo desc
-                - classId
-                - classId desc
-                - closeDateTime
-                - closeDateTime desc
-                - createdBy
-                - createdBy desc
-                - createdDateTime
-                - createdDateTime desc
-                - displayName
-                - displayName desc
-                - dueDateTime
-                - dueDateTime desc
-                - feedbackResourcesFolderUrl
-                - feedbackResourcesFolderUrl desc
-                - grading
-                - grading desc
-                - instructions
-                - instructions desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - moduleUrl
-                - moduleUrl desc
-                - notificationChannelUrl
-                - notificationChannelUrl desc
-                - resourcesFolderUrl
-                - resourcesFolderUrl desc
-                - status
-                - status desc
-                - webUrl
-                - webUrl desc
               type: string
         - name: $select
           in: query
@@ -932,36 +744,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - addedStudentAction
-                - addToCalendarAction
-                - allowLateSubmissions
-                - allowStudentsToAddResourcesToSubmission
-                - assignDateTime
-                - assignedDateTime
-                - assignTo
-                - classId
-                - closeDateTime
-                - createdBy
-                - createdDateTime
-                - displayName
-                - dueDateTime
-                - feedbackResourcesFolderUrl
-                - grading
-                - instructions
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - moduleUrl
-                - notificationChannelUrl
-                - resourcesFolderUrl
-                - status
-                - webUrl
-                - categories
-                - gradingCategory
-                - resources
-                - rubric
-                - submissions
               type: string
         - name: $expand
           in: query
@@ -972,13 +754,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - categories
-                - gradingCategory
-                - resources
-                - rubric
-                - submissions
               type: string
       responses:
         2XX:
@@ -1029,7 +804,7 @@ paths:
       tags:
         - education.educationClass
       summary: Get educationAssignment
-      description: 'Get the properties and relationships of an assignment. Only teachers, students, and applications with application permissions can perform this operation. Students can only see assignments assigned to them; teachers and applications with application permissions can see all assignments in a class.'
+      description: 'Get the properties and relationships of an assignment. Only teachers, students, and applications with application permissions can perform this operation. Students can only see assignments assigned to them; teachers and applications with application permissions can see all assignments in a class. You can use the Prefer header in your request to get the inactive status in case the assignment is deactivated; otherwise, the response value for the status property is unknownFutureValue.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationassignment-get?view=graph-rest-1.0
@@ -1060,36 +835,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - addedStudentAction
-                - addToCalendarAction
-                - allowLateSubmissions
-                - allowStudentsToAddResourcesToSubmission
-                - assignDateTime
-                - assignedDateTime
-                - assignTo
-                - classId
-                - closeDateTime
-                - createdBy
-                - createdDateTime
-                - displayName
-                - dueDateTime
-                - feedbackResourcesFolderUrl
-                - grading
-                - instructions
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - moduleUrl
-                - notificationChannelUrl
-                - resourcesFolderUrl
-                - status
-                - webUrl
-                - categories
-                - gradingCategory
-                - resources
-                - rubric
-                - submissions
               type: string
         - name: $expand
           in: query
@@ -1100,13 +845,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - categories
-                - gradingCategory
-                - resources
-                - rubric
-                - submissions
               type: string
       responses:
         2XX:
@@ -1240,11 +978,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - displayName
-                - displayName desc
               type: string
         - name: $select
           in: query
@@ -1255,9 +988,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
               type: string
         - name: $expand
           in: query
@@ -1268,8 +998,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1441,11 +1169,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - displayName
-                - displayName desc
               type: string
       responses:
         2XX:
@@ -1573,9 +1296,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
               type: string
         - name: $orderby
           in: query
@@ -1586,11 +1306,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - displayName
-                - displayName desc
               type: string
         - name: $expand
           in: query
@@ -1601,8 +1316,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1664,10 +1377,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
-                - percentageWeight
               type: string
         - name: $expand
           in: query
@@ -1678,8 +1387,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1843,13 +1550,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - distributeForStudentWork
-                - distributeForStudentWork desc
-                - resource
-                - resource desc
               type: string
         - name: $select
           in: query
@@ -1860,10 +1560,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - distributeForStudentWork
-                - resource
               type: string
         - name: $expand
           in: query
@@ -1874,8 +1570,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1973,10 +1667,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - distributeForStudentWork
-                - resource
               type: string
         - name: $expand
           in: query
@@ -1987,8 +1677,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2159,17 +1847,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdBy
-                - createdDateTime
-                - description
-                - displayName
-                - grading
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - levels
-                - qualities
               type: string
         - name: $expand
           in: query
@@ -2180,8 +1857,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2424,33 +2099,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - reassignedBy
-                - reassignedBy desc
-                - reassignedDateTime
-                - reassignedDateTime desc
-                - recipient
-                - recipient desc
-                - resourcesFolderUrl
-                - resourcesFolderUrl desc
-                - returnedBy
-                - returnedBy desc
-                - returnedDateTime
-                - returnedDateTime desc
-                - status
-                - status desc
-                - submittedBy
-                - submittedBy desc
-                - submittedDateTime
-                - submittedDateTime desc
-                - unsubmittedBy
-                - unsubmittedBy desc
-                - unsubmittedDateTime
-                - unsubmittedDateTime desc
-                - webUrl
-                - webUrl desc
               type: string
         - name: $select
           in: query
@@ -2461,23 +2109,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - reassignedBy
-                - reassignedDateTime
-                - recipient
-                - resourcesFolderUrl
-                - returnedBy
-                - returnedDateTime
-                - status
-                - submittedBy
-                - submittedDateTime
-                - unsubmittedBy
-                - unsubmittedDateTime
-                - webUrl
-                - outcomes
-                - resources
-                - submittedResources
               type: string
         - name: $expand
           in: query
@@ -2488,11 +2119,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - outcomes
-                - resources
-                - submittedResources
               type: string
       responses:
         2XX:
@@ -2586,23 +2212,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - reassignedBy
-                - reassignedDateTime
-                - recipient
-                - resourcesFolderUrl
-                - returnedBy
-                - returnedDateTime
-                - status
-                - submittedBy
-                - submittedDateTime
-                - unsubmittedBy
-                - unsubmittedDateTime
-                - webUrl
-                - outcomes
-                - resources
-                - submittedResources
               type: string
         - name: $expand
           in: query
@@ -2613,11 +2222,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - outcomes
-                - resources
-                - submittedResources
               type: string
       responses:
         2XX:
@@ -2992,13 +2596,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
               type: string
         - name: $select
           in: query
@@ -3009,10 +2606,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - lastModifiedBy
-                - lastModifiedDateTime
               type: string
         - name: $expand
           in: query
@@ -3023,8 +2616,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3134,10 +2725,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - lastModifiedBy
-                - lastModifiedDateTime
               type: string
         - name: $expand
           in: query
@@ -3148,8 +2735,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3361,13 +2946,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - assignmentResourceUrl
-                - assignmentResourceUrl desc
-                - resource
-                - resource desc
               type: string
         - name: $select
           in: query
@@ -3378,10 +2956,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - assignmentResourceUrl
-                - resource
               type: string
         - name: $expand
           in: query
@@ -3392,8 +2966,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3507,10 +3079,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - assignmentResourceUrl
-                - resource
               type: string
         - name: $expand
           in: query
@@ -3521,8 +3089,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3730,13 +3296,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - assignmentResourceUrl
-                - assignmentResourceUrl desc
-                - resource
-                - resource desc
               type: string
         - name: $select
           in: query
@@ -3747,10 +3306,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - assignmentResourceUrl
-                - resource
               type: string
         - name: $expand
           in: query
@@ -3761,8 +3316,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3872,10 +3425,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - assignmentResourceUrl
-                - resource
               type: string
         - name: $expand
           in: query
@@ -3886,8 +3435,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -4123,36 +3670,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - addedStudentAction
-                - addToCalendarAction
-                - allowLateSubmissions
-                - allowStudentsToAddResourcesToSubmission
-                - assignDateTime
-                - assignedDateTime
-                - assignTo
-                - classId
-                - closeDateTime
-                - createdBy
-                - createdDateTime
-                - displayName
-                - dueDateTime
-                - feedbackResourcesFolderUrl
-                - grading
-                - instructions
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - moduleUrl
-                - notificationChannelUrl
-                - resourcesFolderUrl
-                - status
-                - webUrl
-                - categories
-                - gradingCategory
-                - resources
-                - rubric
-                - submissions
               type: string
         - name: $orderby
           in: query
@@ -4163,55 +3680,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - addedStudentAction
-                - addedStudentAction desc
-                - addToCalendarAction
-                - addToCalendarAction desc
-                - allowLateSubmissions
-                - allowLateSubmissions desc
-                - allowStudentsToAddResourcesToSubmission
-                - allowStudentsToAddResourcesToSubmission desc
-                - assignDateTime
-                - assignDateTime desc
-                - assignedDateTime
-                - assignedDateTime desc
-                - assignTo
-                - assignTo desc
-                - classId
-                - classId desc
-                - closeDateTime
-                - closeDateTime desc
-                - createdBy
-                - createdBy desc
-                - createdDateTime
-                - createdDateTime desc
-                - displayName
-                - displayName desc
-                - dueDateTime
-                - dueDateTime desc
-                - feedbackResourcesFolderUrl
-                - feedbackResourcesFolderUrl desc
-                - grading
-                - grading desc
-                - instructions
-                - instructions desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - moduleUrl
-                - moduleUrl desc
-                - notificationChannelUrl
-                - notificationChannelUrl desc
-                - resourcesFolderUrl
-                - resourcesFolderUrl desc
-                - status
-                - status desc
-                - webUrl
-                - webUrl desc
               type: string
         - name: $expand
           in: query
@@ -4222,13 +3690,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - categories
-                - gradingCategory
-                - resources
-                - rubric
-                - submissions
               type: string
       responses:
         2XX:
@@ -4282,10 +3743,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - submissionAnimationDisabled
-                - gradingCategories
               type: string
         - name: $expand
           in: query
@@ -4296,9 +3753,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - gradingCategories
               type: string
       responses:
         2XX:
@@ -4401,13 +3855,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - displayName
-                - displayName desc
-                - percentageWeight
-                - percentageWeight desc
               type: string
         - name: $select
           in: query
@@ -4418,10 +3865,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
-                - percentageWeight
               type: string
         - name: $expand
           in: query
@@ -4432,8 +3875,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -4508,10 +3949,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
-                - percentageWeight
               type: string
         - name: $expand
           in: query
@@ -4522,8 +3959,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -4538,7 +3973,11 @@ paths:
     patch:
       tags:
         - education.educationClass
-      summary: Update the navigation property gradingCategories in education
+      summary: Update gradingCategory
+      description: Update a single gradingCategory on the educationAssignmentSettings. Only teachers can perform this operation.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/educationgradingcategory-update?view=graph-rest-1.0
       operationId: education.class.assignmentSetting_UpdateGradingCategory
       parameters:
         - name: educationClass-id
@@ -4655,76 +4094,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
-                - allowExternalSenders
-                - assignedLabels
-                - assignedLicenses
-                - autoSubscribeNewMembers
-                - classification
-                - createdDateTime
-                - description
-                - displayName
-                - expirationDateTime
-                - groupTypes
-                - hasMembersWithLicenseErrors
-                - hideFromAddressLists
-                - hideFromOutlookClients
-                - isArchived
-                - isAssignableToRole
-                - isSubscribedByMail
-                - licenseProcessingState
-                - mail
-                - mailEnabled
-                - mailNickname
-                - membershipRule
-                - membershipRuleProcessingState
-                - onPremisesDomainName
-                - onPremisesLastSyncDateTime
-                - onPremisesNetBiosName
-                - onPremisesProvisioningErrors
-                - onPremisesSamAccountName
-                - onPremisesSecurityIdentifier
-                - onPremisesSyncEnabled
-                - preferredDataLocation
-                - preferredLanguage
-                - proxyAddresses
-                - renewedDateTime
-                - securityEnabled
-                - securityIdentifier
-                - serviceProvisioningErrors
-                - theme
-                - uniqueName
-                - unseenCount
-                - visibility
-                - acceptedSenders
-                - appRoleAssignments
-                - calendar
-                - calendarView
-                - conversations
-                - createdOnBehalfOf
-                - drive
-                - drives
-                - events
-                - extensions
-                - groupLifecyclePolicies
-                - memberOf
-                - members
-                - membersWithLicenseErrors
-                - onenote
-                - owners
-                - permissionGrants
-                - photo
-                - photos
-                - planner
-                - rejectedSenders
-                - settings
-                - sites
-                - team
-                - threads
-                - transitiveMemberOf
-                - transitiveMembers
               type: string
         - name: $expand
           in: query
@@ -4735,35 +4104,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - acceptedSenders
-                - appRoleAssignments
-                - calendar
-                - calendarView
-                - conversations
-                - createdOnBehalfOf
-                - drive
-                - drives
-                - events
-                - extensions
-                - groupLifecyclePolicies
-                - memberOf
-                - members
-                - membersWithLicenseErrors
-                - onenote
-                - owners
-                - permissionGrants
-                - photo
-                - photos
-                - planner
-                - rejectedSenders
-                - settings
-                - sites
-                - team
-                - threads
-                - transitiveMemberOf
-                - transitiveMembers
               type: string
       responses:
         2XX:
@@ -4805,13 +4145,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - createdDateTime
-                - createdDateTime desc
-                - isResolved
-                - isResolved desc
-                - serviceInstance
-                - serviceInstance desc
               type: string
         - name: $select
           in: query
@@ -4822,10 +4155,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - createdDateTime
-                - isResolved
-                - serviceInstance
               type: string
         - name: $expand
           in: query
@@ -4836,8 +4165,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -4902,73 +4229,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - accountEnabled
-                - accountEnabled desc
-                - assignedLicenses
-                - assignedLicenses desc
-                - assignedPlans
-                - assignedPlans desc
-                - businessPhones
-                - businessPhones desc
-                - createdBy
-                - createdBy desc
-                - department
-                - department desc
-                - displayName
-                - displayName desc
-                - externalSource
-                - externalSource desc
-                - externalSourceDetail
-                - externalSourceDetail desc
-                - givenName
-                - givenName desc
-                - mail
-                - mail desc
-                - mailingAddress
-                - mailingAddress desc
-                - mailNickname
-                - mailNickname desc
-                - middleName
-                - middleName desc
-                - mobilePhone
-                - mobilePhone desc
-                - officeLocation
-                - officeLocation desc
-                - onPremisesInfo
-                - onPremisesInfo desc
-                - passwordPolicies
-                - passwordPolicies desc
-                - passwordProfile
-                - passwordProfile desc
-                - preferredLanguage
-                - preferredLanguage desc
-                - primaryRole
-                - primaryRole desc
-                - provisionedPlans
-                - provisionedPlans desc
-                - refreshTokensValidFromDateTime
-                - refreshTokensValidFromDateTime desc
-                - relatedContacts
-                - relatedContacts desc
-                - residenceAddress
-                - residenceAddress desc
-                - showInAddressList
-                - showInAddressList desc
-                - student
-                - student desc
-                - surname
-                - surname desc
-                - teacher
-                - teacher desc
-                - usageLocation
-                - usageLocation desc
-                - userPrincipalName
-                - userPrincipalName desc
-                - userType
-                - userType desc
               type: string
         - name: $select
           in: query
@@ -4979,46 +4239,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - accountEnabled
-                - assignedLicenses
-                - assignedPlans
-                - businessPhones
-                - createdBy
-                - department
-                - displayName
-                - externalSource
-                - externalSourceDetail
-                - givenName
-                - mail
-                - mailingAddress
-                - mailNickname
-                - middleName
-                - mobilePhone
-                - officeLocation
-                - onPremisesInfo
-                - passwordPolicies
-                - passwordProfile
-                - preferredLanguage
-                - primaryRole
-                - provisionedPlans
-                - refreshTokensValidFromDateTime
-                - relatedContacts
-                - residenceAddress
-                - showInAddressList
-                - student
-                - surname
-                - teacher
-                - usageLocation
-                - userPrincipalName
-                - userType
-                - assignments
-                - classes
-                - rubrics
-                - schools
-                - taughtClasses
-                - user
               type: string
         - name: $expand
           in: query
@@ -5029,14 +4249,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - assignments
-                - classes
-                - rubrics
-                - schools
-                - taughtClasses
-                - user
               type: string
       responses:
         2XX:
@@ -5141,73 +4353,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - accountEnabled
-                - accountEnabled desc
-                - assignedLicenses
-                - assignedLicenses desc
-                - assignedPlans
-                - assignedPlans desc
-                - businessPhones
-                - businessPhones desc
-                - createdBy
-                - createdBy desc
-                - department
-                - department desc
-                - displayName
-                - displayName desc
-                - externalSource
-                - externalSource desc
-                - externalSourceDetail
-                - externalSourceDetail desc
-                - givenName
-                - givenName desc
-                - mail
-                - mail desc
-                - mailingAddress
-                - mailingAddress desc
-                - mailNickname
-                - mailNickname desc
-                - middleName
-                - middleName desc
-                - mobilePhone
-                - mobilePhone desc
-                - officeLocation
-                - officeLocation desc
-                - onPremisesInfo
-                - onPremisesInfo desc
-                - passwordPolicies
-                - passwordPolicies desc
-                - passwordProfile
-                - passwordProfile desc
-                - preferredLanguage
-                - preferredLanguage desc
-                - primaryRole
-                - primaryRole desc
-                - provisionedPlans
-                - provisionedPlans desc
-                - refreshTokensValidFromDateTime
-                - refreshTokensValidFromDateTime desc
-                - relatedContacts
-                - relatedContacts desc
-                - residenceAddress
-                - residenceAddress desc
-                - showInAddressList
-                - showInAddressList desc
-                - student
-                - student desc
-                - surname
-                - surname desc
-                - teacher
-                - teacher desc
-                - usageLocation
-                - usageLocation desc
-                - userPrincipalName
-                - userPrincipalName desc
-                - userType
-                - userType desc
               type: string
       responses:
         2XX:
@@ -5315,27 +4460,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - createdBy
-                - createdBy desc
-                - createdDateTime
-                - createdDateTime desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - isPinned
-                - isPinned desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - resourcesFolderUrl
-                - resourcesFolderUrl desc
-                - status
-                - status desc
               type: string
         - name: $select
           in: query
@@ -5346,18 +4470,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdBy
-                - createdDateTime
-                - description
-                - displayName
-                - isPinned
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - resourcesFolderUrl
-                - status
-                - resources
               type: string
         - name: $expand
           in: query
@@ -5368,9 +4480,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - resources
               type: string
       responses:
         2XX:
@@ -5452,18 +4561,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdBy
-                - createdDateTime
-                - description
-                - displayName
-                - isPinned
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - resourcesFolderUrl
-                - status
-                - resources
               type: string
         - name: $expand
           in: query
@@ -5474,9 +4571,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - resources
               type: string
       responses:
         2XX:
@@ -5758,11 +4852,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - resource
-                - resource desc
               type: string
         - name: $select
           in: query
@@ -5773,9 +4862,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - resource
               type: string
         - name: $expand
           in: query
@@ -5786,8 +4872,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -5885,9 +4969,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - resource
               type: string
         - name: $expand
           in: query
@@ -5898,8 +4979,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -6093,39 +5172,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - externalSource
-                - externalSource desc
-                - externalSourceDetail
-                - externalSourceDetail desc
-                - address
-                - address desc
-                - createdBy
-                - createdBy desc
-                - externalId
-                - externalId desc
-                - externalPrincipalId
-                - externalPrincipalId desc
-                - fax
-                - fax desc
-                - highestGrade
-                - highestGrade desc
-                - lowestGrade
-                - lowestGrade desc
-                - phone
-                - phone desc
-                - principalEmail
-                - principalEmail desc
-                - principalName
-                - principalName desc
-                - schoolNumber
-                - schoolNumber desc
               type: string
         - name: $select
           in: query
@@ -6136,26 +5182,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - description
-                - displayName
-                - externalSource
-                - externalSourceDetail
-                - address
-                - createdBy
-                - externalId
-                - externalPrincipalId
-                - fax
-                - highestGrade
-                - lowestGrade
-                - phone
-                - principalEmail
-                - principalName
-                - schoolNumber
-                - administrativeUnit
-                - classes
-                - users
               type: string
         - name: $expand
           in: query
@@ -6166,11 +5192,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - administrativeUnit
-                - classes
-                - users
               type: string
       responses:
         2XX:
@@ -6214,26 +5235,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - description
-                - displayName
-                - externalSource
-                - externalSourceDetail
-                - address
-                - createdBy
-                - externalId
-                - externalPrincipalId
-                - fax
-                - highestGrade
-                - lowestGrade
-                - phone
-                - principalEmail
-                - principalName
-                - schoolNumber
-                - administrativeUnit
-                - classes
-                - users
               type: string
         - name: $expand
           in: query
@@ -6244,11 +5245,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - administrativeUnit
-                - classes
-                - users
               type: string
       responses:
         2XX:
@@ -6315,73 +5311,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - accountEnabled
-                - accountEnabled desc
-                - assignedLicenses
-                - assignedLicenses desc
-                - assignedPlans
-                - assignedPlans desc
-                - businessPhones
-                - businessPhones desc
-                - createdBy
-                - createdBy desc
-                - department
-                - department desc
-                - displayName
-                - displayName desc
-                - externalSource
-                - externalSource desc
-                - externalSourceDetail
-                - externalSourceDetail desc
-                - givenName
-                - givenName desc
-                - mail
-                - mail desc
-                - mailingAddress
-                - mailingAddress desc
-                - mailNickname
-                - mailNickname desc
-                - middleName
-                - middleName desc
-                - mobilePhone
-                - mobilePhone desc
-                - officeLocation
-                - officeLocation desc
-                - onPremisesInfo
-                - onPremisesInfo desc
-                - passwordPolicies
-                - passwordPolicies desc
-                - passwordProfile
-                - passwordProfile desc
-                - preferredLanguage
-                - preferredLanguage desc
-                - primaryRole
-                - primaryRole desc
-                - provisionedPlans
-                - provisionedPlans desc
-                - refreshTokensValidFromDateTime
-                - refreshTokensValidFromDateTime desc
-                - relatedContacts
-                - relatedContacts desc
-                - residenceAddress
-                - residenceAddress desc
-                - showInAddressList
-                - showInAddressList desc
-                - student
-                - student desc
-                - surname
-                - surname desc
-                - teacher
-                - teacher desc
-                - usageLocation
-                - usageLocation desc
-                - userPrincipalName
-                - userPrincipalName desc
-                - userType
-                - userType desc
               type: string
         - name: $select
           in: query
@@ -6392,46 +5321,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - accountEnabled
-                - assignedLicenses
-                - assignedPlans
-                - businessPhones
-                - createdBy
-                - department
-                - displayName
-                - externalSource
-                - externalSourceDetail
-                - givenName
-                - mail
-                - mailingAddress
-                - mailNickname
-                - middleName
-                - mobilePhone
-                - officeLocation
-                - onPremisesInfo
-                - passwordPolicies
-                - passwordProfile
-                - preferredLanguage
-                - primaryRole
-                - provisionedPlans
-                - refreshTokensValidFromDateTime
-                - relatedContacts
-                - residenceAddress
-                - showInAddressList
-                - student
-                - surname
-                - teacher
-                - usageLocation
-                - userPrincipalName
-                - userType
-                - assignments
-                - classes
-                - rubrics
-                - schools
-                - taughtClasses
-                - user
               type: string
         - name: $expand
           in: query
@@ -6442,14 +5331,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - assignments
-                - classes
-                - rubrics
-                - schools
-                - taughtClasses
-                - user
               type: string
       responses:
         2XX:
@@ -6554,73 +5435,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - accountEnabled
-                - accountEnabled desc
-                - assignedLicenses
-                - assignedLicenses desc
-                - assignedPlans
-                - assignedPlans desc
-                - businessPhones
-                - businessPhones desc
-                - createdBy
-                - createdBy desc
-                - department
-                - department desc
-                - displayName
-                - displayName desc
-                - externalSource
-                - externalSource desc
-                - externalSourceDetail
-                - externalSourceDetail desc
-                - givenName
-                - givenName desc
-                - mail
-                - mail desc
-                - mailingAddress
-                - mailingAddress desc
-                - mailNickname
-                - mailNickname desc
-                - middleName
-                - middleName desc
-                - mobilePhone
-                - mobilePhone desc
-                - officeLocation
-                - officeLocation desc
-                - onPremisesInfo
-                - onPremisesInfo desc
-                - passwordPolicies
-                - passwordPolicies desc
-                - passwordProfile
-                - passwordProfile desc
-                - preferredLanguage
-                - preferredLanguage desc
-                - primaryRole
-                - primaryRole desc
-                - provisionedPlans
-                - provisionedPlans desc
-                - refreshTokensValidFromDateTime
-                - refreshTokensValidFromDateTime desc
-                - relatedContacts
-                - relatedContacts desc
-                - residenceAddress
-                - residenceAddress desc
-                - showInAddressList
-                - showInAddressList desc
-                - student
-                - student desc
-                - surname
-                - surname desc
-                - teacher
-                - teacher desc
-                - usageLocation
-                - usageLocation desc
-                - userPrincipalName
-                - userPrincipalName desc
-                - userType
-                - userType desc
               type: string
       responses:
         2XX:
@@ -6730,29 +5544,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - classCode
-                - course
-                - createdBy
-                - description
-                - displayName
-                - externalId
-                - externalName
-                - externalSource
-                - externalSourceDetail
-                - grade
-                - mailNickname
-                - term
-                - assignmentCategories
-                - assignmentDefaults
-                - assignments
-                - assignmentSettings
-                - group
-                - members
-                - modules
-                - schools
-                - teachers
               type: string
         - name: $orderby
           in: query
@@ -6763,33 +5554,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - classCode
-                - classCode desc
-                - course
-                - course desc
-                - createdBy
-                - createdBy desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - externalId
-                - externalId desc
-                - externalName
-                - externalName desc
-                - externalSource
-                - externalSource desc
-                - externalSourceDetail
-                - externalSourceDetail desc
-                - grade
-                - grade desc
-                - mailNickname
-                - mailNickname desc
-                - term
-                - term desc
               type: string
         - name: $expand
           in: query
@@ -6800,17 +5564,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - assignmentCategories
-                - assignmentDefaults
-                - assignments
-                - assignmentSettings
-                - group
-                - members
-                - modules
-                - schools
-                - teachers
               type: string
       responses:
         2XX:
@@ -6855,46 +5608,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - accountEnabled
-                - assignedLicenses
-                - assignedPlans
-                - businessPhones
-                - createdBy
-                - department
-                - displayName
-                - externalSource
-                - externalSourceDetail
-                - givenName
-                - mail
-                - mailingAddress
-                - mailNickname
-                - middleName
-                - mobilePhone
-                - officeLocation
-                - onPremisesInfo
-                - passwordPolicies
-                - passwordProfile
-                - preferredLanguage
-                - primaryRole
-                - provisionedPlans
-                - refreshTokensValidFromDateTime
-                - relatedContacts
-                - residenceAddress
-                - showInAddressList
-                - student
-                - surname
-                - teacher
-                - usageLocation
-                - userPrincipalName
-                - userType
-                - assignments
-                - classes
-                - rubrics
-                - schools
-                - taughtClasses
-                - user
               type: string
         - name: $expand
           in: query
@@ -6905,14 +5618,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - assignments
-                - classes
-                - rubrics
-                - schools
-                - taughtClasses
-                - user
               type: string
       responses:
         2XX:
@@ -6989,55 +5694,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - addedStudentAction
-                - addedStudentAction desc
-                - addToCalendarAction
-                - addToCalendarAction desc
-                - allowLateSubmissions
-                - allowLateSubmissions desc
-                - allowStudentsToAddResourcesToSubmission
-                - allowStudentsToAddResourcesToSubmission desc
-                - assignDateTime
-                - assignDateTime desc
-                - assignedDateTime
-                - assignedDateTime desc
-                - assignTo
-                - assignTo desc
-                - classId
-                - classId desc
-                - closeDateTime
-                - closeDateTime desc
-                - createdBy
-                - createdBy desc
-                - createdDateTime
-                - createdDateTime desc
-                - displayName
-                - displayName desc
-                - dueDateTime
-                - dueDateTime desc
-                - feedbackResourcesFolderUrl
-                - feedbackResourcesFolderUrl desc
-                - grading
-                - grading desc
-                - instructions
-                - instructions desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - moduleUrl
-                - moduleUrl desc
-                - notificationChannelUrl
-                - notificationChannelUrl desc
-                - resourcesFolderUrl
-                - resourcesFolderUrl desc
-                - status
-                - status desc
-                - webUrl
-                - webUrl desc
               type: string
         - name: $select
           in: query
@@ -7048,36 +5704,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - addedStudentAction
-                - addToCalendarAction
-                - allowLateSubmissions
-                - allowStudentsToAddResourcesToSubmission
-                - assignDateTime
-                - assignedDateTime
-                - assignTo
-                - classId
-                - closeDateTime
-                - createdBy
-                - createdDateTime
-                - displayName
-                - dueDateTime
-                - feedbackResourcesFolderUrl
-                - grading
-                - instructions
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - moduleUrl
-                - notificationChannelUrl
-                - resourcesFolderUrl
-                - status
-                - webUrl
-                - categories
-                - gradingCategory
-                - resources
-                - rubric
-                - submissions
               type: string
         - name: $expand
           in: query
@@ -7088,13 +5714,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - categories
-                - gradingCategory
-                - resources
-                - rubric
-                - submissions
               type: string
       responses:
         2XX:
@@ -7152,36 +5771,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - addedStudentAction
-                - addToCalendarAction
-                - allowLateSubmissions
-                - allowStudentsToAddResourcesToSubmission
-                - assignDateTime
-                - assignedDateTime
-                - assignTo
-                - classId
-                - closeDateTime
-                - createdBy
-                - createdDateTime
-                - displayName
-                - dueDateTime
-                - feedbackResourcesFolderUrl
-                - grading
-                - instructions
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - moduleUrl
-                - notificationChannelUrl
-                - resourcesFolderUrl
-                - status
-                - webUrl
-                - categories
-                - gradingCategory
-                - resources
-                - rubric
-                - submissions
               type: string
         - name: $expand
           in: query
@@ -7192,13 +5781,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - categories
-                - gradingCategory
-                - resources
-                - rubric
-                - submissions
               type: string
       responses:
         2XX:
@@ -7300,11 +5882,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - displayName
-                - displayName desc
               type: string
         - name: $select
           in: query
@@ -7315,9 +5892,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
               type: string
         - name: $expand
           in: query
@@ -7328,8 +5902,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -7469,11 +6041,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - displayName
-                - displayName desc
               type: string
       responses:
         2XX:
@@ -7577,9 +6144,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
               type: string
         - name: $orderby
           in: query
@@ -7590,11 +6154,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - displayName
-                - displayName desc
               type: string
         - name: $expand
           in: query
@@ -7605,8 +6164,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -7660,10 +6217,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
-                - percentageWeight
               type: string
         - name: $expand
           in: query
@@ -7674,8 +6227,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -7807,13 +6358,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - distributeForStudentWork
-                - distributeForStudentWork desc
-                - resource
-                - resource desc
               type: string
         - name: $select
           in: query
@@ -7824,10 +6368,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - distributeForStudentWork
-                - resource
               type: string
         - name: $expand
           in: query
@@ -7838,8 +6378,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -7921,10 +6459,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - distributeForStudentWork
-                - resource
               type: string
         - name: $expand
           in: query
@@ -7935,8 +6469,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -8075,17 +6607,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdBy
-                - createdDateTime
-                - description
-                - displayName
-                - grading
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - levels
-                - qualities
               type: string
         - name: $expand
           in: query
@@ -8096,8 +6617,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -8292,33 +6811,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - reassignedBy
-                - reassignedBy desc
-                - reassignedDateTime
-                - reassignedDateTime desc
-                - recipient
-                - recipient desc
-                - resourcesFolderUrl
-                - resourcesFolderUrl desc
-                - returnedBy
-                - returnedBy desc
-                - returnedDateTime
-                - returnedDateTime desc
-                - status
-                - status desc
-                - submittedBy
-                - submittedBy desc
-                - submittedDateTime
-                - submittedDateTime desc
-                - unsubmittedBy
-                - unsubmittedBy desc
-                - unsubmittedDateTime
-                - unsubmittedDateTime desc
-                - webUrl
-                - webUrl desc
               type: string
         - name: $select
           in: query
@@ -8329,23 +6821,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - reassignedBy
-                - reassignedDateTime
-                - recipient
-                - resourcesFolderUrl
-                - returnedBy
-                - returnedDateTime
-                - status
-                - submittedBy
-                - submittedDateTime
-                - unsubmittedBy
-                - unsubmittedDateTime
-                - webUrl
-                - outcomes
-                - resources
-                - submittedResources
               type: string
         - name: $expand
           in: query
@@ -8356,11 +6831,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - outcomes
-                - resources
-                - submittedResources
               type: string
       responses:
         2XX:
@@ -8438,23 +6908,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - reassignedBy
-                - reassignedDateTime
-                - recipient
-                - resourcesFolderUrl
-                - returnedBy
-                - returnedDateTime
-                - status
-                - submittedBy
-                - submittedDateTime
-                - unsubmittedBy
-                - unsubmittedDateTime
-                - webUrl
-                - outcomes
-                - resources
-                - submittedResources
               type: string
         - name: $expand
           in: query
@@ -8465,11 +6918,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - outcomes
-                - resources
-                - submittedResources
               type: string
       responses:
         2XX:
@@ -8780,13 +7228,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
               type: string
         - name: $select
           in: query
@@ -8797,10 +7238,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - lastModifiedBy
-                - lastModifiedDateTime
               type: string
         - name: $expand
           in: query
@@ -8811,8 +7248,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -8906,10 +7341,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - lastModifiedBy
-                - lastModifiedDateTime
               type: string
         - name: $expand
           in: query
@@ -8920,8 +7351,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -9101,13 +7530,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - assignmentResourceUrl
-                - assignmentResourceUrl desc
-                - resource
-                - resource desc
               type: string
         - name: $select
           in: query
@@ -9118,10 +7540,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - assignmentResourceUrl
-                - resource
               type: string
         - name: $expand
           in: query
@@ -9132,8 +7550,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -9231,10 +7647,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - assignmentResourceUrl
-                - resource
               type: string
         - name: $expand
           in: query
@@ -9245,8 +7657,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -9422,13 +7832,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - assignmentResourceUrl
-                - assignmentResourceUrl desc
-                - resource
-                - resource desc
               type: string
         - name: $select
           in: query
@@ -9439,10 +7842,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - assignmentResourceUrl
-                - resource
               type: string
         - name: $expand
           in: query
@@ -9453,8 +7852,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -9548,10 +7945,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - assignmentResourceUrl
-                - resource
               type: string
         - name: $expand
           in: query
@@ -9562,8 +7955,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -9751,36 +8142,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - addedStudentAction
-                - addToCalendarAction
-                - allowLateSubmissions
-                - allowStudentsToAddResourcesToSubmission
-                - assignDateTime
-                - assignedDateTime
-                - assignTo
-                - classId
-                - closeDateTime
-                - createdBy
-                - createdDateTime
-                - displayName
-                - dueDateTime
-                - feedbackResourcesFolderUrl
-                - grading
-                - instructions
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - moduleUrl
-                - notificationChannelUrl
-                - resourcesFolderUrl
-                - status
-                - webUrl
-                - categories
-                - gradingCategory
-                - resources
-                - rubric
-                - submissions
               type: string
         - name: $orderby
           in: query
@@ -9791,55 +8152,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - addedStudentAction
-                - addedStudentAction desc
-                - addToCalendarAction
-                - addToCalendarAction desc
-                - allowLateSubmissions
-                - allowLateSubmissions desc
-                - allowStudentsToAddResourcesToSubmission
-                - allowStudentsToAddResourcesToSubmission desc
-                - assignDateTime
-                - assignDateTime desc
-                - assignedDateTime
-                - assignedDateTime desc
-                - assignTo
-                - assignTo desc
-                - classId
-                - classId desc
-                - closeDateTime
-                - closeDateTime desc
-                - createdBy
-                - createdBy desc
-                - createdDateTime
-                - createdDateTime desc
-                - displayName
-                - displayName desc
-                - dueDateTime
-                - dueDateTime desc
-                - feedbackResourcesFolderUrl
-                - feedbackResourcesFolderUrl desc
-                - grading
-                - grading desc
-                - instructions
-                - instructions desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - moduleUrl
-                - moduleUrl desc
-                - notificationChannelUrl
-                - notificationChannelUrl desc
-                - resourcesFolderUrl
-                - resourcesFolderUrl desc
-                - status
-                - status desc
-                - webUrl
-                - webUrl desc
               type: string
         - name: $expand
           in: query
@@ -9850,13 +8162,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - categories
-                - gradingCategory
-                - resources
-                - rubric
-                - submissions
               type: string
       responses:
         2XX:
@@ -9910,33 +8215,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - classCode
-                - classCode desc
-                - course
-                - course desc
-                - createdBy
-                - createdBy desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - externalId
-                - externalId desc
-                - externalName
-                - externalName desc
-                - externalSource
-                - externalSource desc
-                - externalSourceDetail
-                - externalSourceDetail desc
-                - grade
-                - grade desc
-                - mailNickname
-                - mailNickname desc
-                - term
-                - term desc
               type: string
         - name: $select
           in: query
@@ -9947,29 +8225,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - classCode
-                - course
-                - createdBy
-                - description
-                - displayName
-                - externalId
-                - externalName
-                - externalSource
-                - externalSourceDetail
-                - grade
-                - mailNickname
-                - term
-                - assignmentCategories
-                - assignmentDefaults
-                - assignments
-                - assignmentSettings
-                - group
-                - members
-                - modules
-                - schools
-                - teachers
               type: string
         - name: $expand
           in: query
@@ -9980,17 +8235,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - assignmentCategories
-                - assignmentDefaults
-                - assignments
-                - assignmentSettings
-                - group
-                - members
-                - modules
-                - schools
-                - teachers
               type: string
       responses:
         2XX:
@@ -10026,29 +8270,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - classCode
-                - course
-                - createdBy
-                - description
-                - displayName
-                - externalId
-                - externalName
-                - externalSource
-                - externalSourceDetail
-                - grade
-                - mailNickname
-                - term
-                - assignmentCategories
-                - assignmentDefaults
-                - assignments
-                - assignmentSettings
-                - group
-                - members
-                - modules
-                - schools
-                - teachers
               type: string
         - name: $expand
           in: query
@@ -10059,17 +8280,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - assignmentCategories
-                - assignmentDefaults
-                - assignments
-                - assignmentSettings
-                - group
-                - members
-                - modules
-                - schools
-                - teachers
               type: string
       responses:
         2XX:
@@ -10120,27 +8330,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - createdBy
-                - createdBy desc
-                - createdDateTime
-                - createdDateTime desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - grading
-                - grading desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - levels
-                - levels desc
-                - qualities
-                - qualities desc
               type: string
         - name: $select
           in: query
@@ -10151,17 +8340,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdBy
-                - createdDateTime
-                - description
-                - displayName
-                - grading
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - levels
-                - qualities
               type: string
         - name: $expand
           in: query
@@ -10172,8 +8350,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -10238,17 +8414,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdBy
-                - createdDateTime
-                - description
-                - displayName
-                - grading
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - levels
-                - qualities
               type: string
         - name: $expand
           in: query
@@ -10259,8 +8424,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -10376,39 +8539,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - externalSource
-                - externalSource desc
-                - externalSourceDetail
-                - externalSourceDetail desc
-                - address
-                - address desc
-                - createdBy
-                - createdBy desc
-                - externalId
-                - externalId desc
-                - externalPrincipalId
-                - externalPrincipalId desc
-                - fax
-                - fax desc
-                - highestGrade
-                - highestGrade desc
-                - lowestGrade
-                - lowestGrade desc
-                - phone
-                - phone desc
-                - principalEmail
-                - principalEmail desc
-                - principalName
-                - principalName desc
-                - schoolNumber
-                - schoolNumber desc
               type: string
         - name: $select
           in: query
@@ -10419,26 +8549,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - description
-                - displayName
-                - externalSource
-                - externalSourceDetail
-                - address
-                - createdBy
-                - externalId
-                - externalPrincipalId
-                - fax
-                - highestGrade
-                - lowestGrade
-                - phone
-                - principalEmail
-                - principalName
-                - schoolNumber
-                - administrativeUnit
-                - classes
-                - users
               type: string
         - name: $expand
           in: query
@@ -10449,11 +8559,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - administrativeUnit
-                - classes
-                - users
               type: string
       responses:
         2XX:
@@ -10489,26 +8594,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - description
-                - displayName
-                - externalSource
-                - externalSourceDetail
-                - address
-                - createdBy
-                - externalId
-                - externalPrincipalId
-                - fax
-                - highestGrade
-                - lowestGrade
-                - phone
-                - principalEmail
-                - principalName
-                - schoolNumber
-                - administrativeUnit
-                - classes
-                - users
               type: string
         - name: $expand
           in: query
@@ -10519,11 +8604,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - administrativeUnit
-                - classes
-                - users
               type: string
       responses:
         2XX:
@@ -10574,33 +8654,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - classCode
-                - classCode desc
-                - course
-                - course desc
-                - createdBy
-                - createdBy desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - externalId
-                - externalId desc
-                - externalName
-                - externalName desc
-                - externalSource
-                - externalSource desc
-                - externalSourceDetail
-                - externalSourceDetail desc
-                - grade
-                - grade desc
-                - mailNickname
-                - mailNickname desc
-                - term
-                - term desc
               type: string
         - name: $select
           in: query
@@ -10611,29 +8664,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - classCode
-                - course
-                - createdBy
-                - description
-                - displayName
-                - externalId
-                - externalName
-                - externalSource
-                - externalSourceDetail
-                - grade
-                - mailNickname
-                - term
-                - assignmentCategories
-                - assignmentDefaults
-                - assignments
-                - assignmentSettings
-                - group
-                - members
-                - modules
-                - schools
-                - teachers
               type: string
         - name: $expand
           in: query
@@ -10644,17 +8674,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - assignmentCategories
-                - assignmentDefaults
-                - assignments
-                - assignmentSettings
-                - group
-                - members
-                - modules
-                - schools
-                - teachers
               type: string
       responses:
         2XX:
@@ -10690,29 +8709,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - classCode
-                - course
-                - createdBy
-                - description
-                - displayName
-                - externalId
-                - externalName
-                - externalSource
-                - externalSourceDetail
-                - grade
-                - mailNickname
-                - term
-                - assignmentCategories
-                - assignmentDefaults
-                - assignments
-                - assignmentSettings
-                - group
-                - members
-                - modules
-                - schools
-                - teachers
               type: string
         - name: $expand
           in: query
@@ -10723,17 +8719,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - assignmentCategories
-                - assignmentDefaults
-                - assignments
-                - assignmentSettings
-                - group
-                - members
-                - modules
-                - schools
-                - teachers
               type: string
       responses:
         2XX:
@@ -10779,134 +8764,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
-                - aboutMe
-                - accountEnabled
-                - ageGroup
-                - assignedLicenses
-                - assignedPlans
-                - authorizationInfo
-                - birthday
-                - businessPhones
-                - city
-                - companyName
-                - consentProvidedForMinor
-                - country
-                - createdDateTime
-                - creationType
-                - customSecurityAttributes
-                - department
-                - deviceEnrollmentLimit
-                - displayName
-                - employeeHireDate
-                - employeeId
-                - employeeLeaveDateTime
-                - employeeOrgData
-                - employeeType
-                - externalUserState
-                - externalUserStateChangeDateTime
-                - faxNumber
-                - givenName
-                - hireDate
-                - identities
-                - imAddresses
-                - interests
-                - isResourceAccount
-                - jobTitle
-                - lastPasswordChangeDateTime
-                - legalAgeGroupClassification
-                - licenseAssignmentStates
-                - mail
-                - mailboxSettings
-                - mailNickname
-                - mobilePhone
-                - mySite
-                - officeLocation
-                - onPremisesDistinguishedName
-                - onPremisesDomainName
-                - onPremisesExtensionAttributes
-                - onPremisesImmutableId
-                - onPremisesLastSyncDateTime
-                - onPremisesProvisioningErrors
-                - onPremisesSamAccountName
-                - onPremisesSecurityIdentifier
-                - onPremisesSyncEnabled
-                - onPremisesUserPrincipalName
-                - otherMails
-                - passwordPolicies
-                - passwordProfile
-                - pastProjects
-                - postalCode
-                - preferredDataLocation
-                - preferredLanguage
-                - preferredName
-                - print
-                - provisionedPlans
-                - proxyAddresses
-                - responsibilities
-                - schools
-                - securityIdentifier
-                - serviceProvisioningErrors
-                - showInAddressList
-                - signInActivity
-                - signInSessionsValidFromDateTime
-                - skills
-                - state
-                - streetAddress
-                - surname
-                - usageLocation
-                - userPrincipalName
-                - userType
-                - activities
-                - agreementAcceptances
-                - appRoleAssignments
-                - authentication
-                - calendar
-                - calendarGroups
-                - calendars
-                - calendarView
-                - chats
-                - contactFolders
-                - contacts
-                - createdObjects
-                - deviceManagementTroubleshootingEvents
-                - directReports
-                - drive
-                - drives
-                - employeeExperience
-                - events
-                - extensions
-                - followedSites
-                - inferenceClassification
-                - insights
-                - joinedTeams
-                - licenseDetails
-                - mailFolders
-                - managedAppRegistrations
-                - managedDevices
-                - manager
-                - memberOf
-                - messages
-                - oauth2PermissionGrants
-                - onenote
-                - onlineMeetings
-                - outlook
-                - ownedDevices
-                - ownedObjects
-                - people
-                - permissionGrants
-                - photo
-                - photos
-                - planner
-                - presence
-                - registeredDevices
-                - scopedRoleMemberOf
-                - settings
-                - teamwork
-                - todo
-                - transitiveMemberOf
               type: string
         - name: $expand
           in: query
@@ -10917,56 +8774,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - activities
-                - agreementAcceptances
-                - appRoleAssignments
-                - authentication
-                - calendar
-                - calendarGroups
-                - calendars
-                - calendarView
-                - chats
-                - contactFolders
-                - contacts
-                - createdObjects
-                - deviceManagementTroubleshootingEvents
-                - directReports
-                - drive
-                - drives
-                - employeeExperience
-                - events
-                - extensions
-                - followedSites
-                - inferenceClassification
-                - insights
-                - joinedTeams
-                - licenseDetails
-                - mailFolders
-                - managedAppRegistrations
-                - managedDevices
-                - manager
-                - memberOf
-                - messages
-                - oauth2PermissionGrants
-                - onenote
-                - onlineMeetings
-                - outlook
-                - ownedDevices
-                - ownedObjects
-                - people
-                - permissionGrants
-                - photo
-                - photos
-                - planner
-                - presence
-                - registeredDevices
-                - scopedRoleMemberOf
-                - settings
-                - teamwork
-                - todo
-                - transitiveMemberOf
               type: string
       responses:
         2XX:
@@ -10995,16 +8802,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - archiveFolder
-                - automaticRepliesSetting
-                - dateFormat
-                - delegateMeetingMessageDeliveryOptions
-                - language
-                - timeFormat
-                - timeZone
-                - userPurpose
-                - workingHours
               type: string
         - name: $expand
           in: query
@@ -11015,8 +8812,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -11070,13 +8865,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - createdDateTime
-                - createdDateTime desc
-                - isResolved
-                - isResolved desc
-                - serviceInstance
-                - serviceInstance desc
               type: string
         - name: $select
           in: query
@@ -11087,10 +8875,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - createdDateTime
-                - isResolved
-                - serviceInstance
               type: string
         - name: $expand
           in: query
@@ -11101,8 +8885,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -11151,39 +8933,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - externalSource
-                - externalSource desc
-                - externalSourceDetail
-                - externalSourceDetail desc
-                - address
-                - address desc
-                - createdBy
-                - createdBy desc
-                - externalId
-                - externalId desc
-                - externalPrincipalId
-                - externalPrincipalId desc
-                - fax
-                - fax desc
-                - highestGrade
-                - highestGrade desc
-                - lowestGrade
-                - lowestGrade desc
-                - phone
-                - phone desc
-                - principalEmail
-                - principalEmail desc
-                - principalName
-                - principalName desc
-                - schoolNumber
-                - schoolNumber desc
               type: string
         - name: $select
           in: query
@@ -11194,26 +8943,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - description
-                - displayName
-                - externalSource
-                - externalSourceDetail
-                - address
-                - createdBy
-                - externalId
-                - externalPrincipalId
-                - fax
-                - highestGrade
-                - lowestGrade
-                - phone
-                - principalEmail
-                - principalName
-                - schoolNumber
-                - administrativeUnit
-                - classes
-                - users
               type: string
         - name: $expand
           in: query
@@ -11224,11 +8953,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - administrativeUnit
-                - classes
-                - users
               type: string
       responses:
         2XX:
@@ -11293,26 +9017,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - description
-                - displayName
-                - externalSource
-                - externalSourceDetail
-                - address
-                - createdBy
-                - externalId
-                - externalPrincipalId
-                - fax
-                - highestGrade
-                - lowestGrade
-                - phone
-                - principalEmail
-                - principalName
-                - schoolNumber
-                - administrativeUnit
-                - classes
-                - users
               type: string
         - name: $expand
           in: query
@@ -11323,11 +9027,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - administrativeUnit
-                - classes
-                - users
               type: string
       responses:
         2XX:
@@ -11432,15 +9131,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
-                - description
-                - displayName
-                - visibility
-                - extensions
-                - members
-                - scopedRoleMembers
               type: string
         - name: $expand
           in: query
@@ -11451,11 +9141,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - extensions
-                - members
-                - scopedRoleMembers
               type: string
       responses:
         2XX:
@@ -11531,33 +9216,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - classCode
-                - classCode desc
-                - course
-                - course desc
-                - createdBy
-                - createdBy desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - externalId
-                - externalId desc
-                - externalName
-                - externalName desc
-                - externalSource
-                - externalSource desc
-                - externalSourceDetail
-                - externalSourceDetail desc
-                - grade
-                - grade desc
-                - mailNickname
-                - mailNickname desc
-                - term
-                - term desc
               type: string
         - name: $select
           in: query
@@ -11568,29 +9226,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - classCode
-                - course
-                - createdBy
-                - description
-                - displayName
-                - externalId
-                - externalName
-                - externalSource
-                - externalSourceDetail
-                - grade
-                - mailNickname
-                - term
-                - assignmentCategories
-                - assignmentDefaults
-                - assignments
-                - assignmentSettings
-                - group
-                - members
-                - modules
-                - schools
-                - teachers
               type: string
         - name: $expand
           in: query
@@ -11601,17 +9236,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - assignmentCategories
-                - assignmentDefaults
-                - assignments
-                - assignmentSettings
-                - group
-                - members
-                - modules
-                - schools
-                - teachers
               type: string
       responses:
         2XX:
@@ -11716,33 +9340,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - classCode
-                - classCode desc
-                - course
-                - course desc
-                - createdBy
-                - createdBy desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - externalId
-                - externalId desc
-                - externalName
-                - externalName desc
-                - externalSource
-                - externalSource desc
-                - externalSourceDetail
-                - externalSourceDetail desc
-                - grade
-                - grade desc
-                - mailNickname
-                - mailNickname desc
-                - term
-                - term desc
               type: string
       responses:
         2XX:
@@ -11850,73 +9447,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - accountEnabled
-                - accountEnabled desc
-                - assignedLicenses
-                - assignedLicenses desc
-                - assignedPlans
-                - assignedPlans desc
-                - businessPhones
-                - businessPhones desc
-                - createdBy
-                - createdBy desc
-                - department
-                - department desc
-                - displayName
-                - displayName desc
-                - externalSource
-                - externalSource desc
-                - externalSourceDetail
-                - externalSourceDetail desc
-                - givenName
-                - givenName desc
-                - mail
-                - mail desc
-                - mailingAddress
-                - mailingAddress desc
-                - mailNickname
-                - mailNickname desc
-                - middleName
-                - middleName desc
-                - mobilePhone
-                - mobilePhone desc
-                - officeLocation
-                - officeLocation desc
-                - onPremisesInfo
-                - onPremisesInfo desc
-                - passwordPolicies
-                - passwordPolicies desc
-                - passwordProfile
-                - passwordProfile desc
-                - preferredLanguage
-                - preferredLanguage desc
-                - primaryRole
-                - primaryRole desc
-                - provisionedPlans
-                - provisionedPlans desc
-                - refreshTokensValidFromDateTime
-                - refreshTokensValidFromDateTime desc
-                - relatedContacts
-                - relatedContacts desc
-                - residenceAddress
-                - residenceAddress desc
-                - showInAddressList
-                - showInAddressList desc
-                - student
-                - student desc
-                - surname
-                - surname desc
-                - teacher
-                - teacher desc
-                - usageLocation
-                - usageLocation desc
-                - userPrincipalName
-                - userPrincipalName desc
-                - userType
-                - userType desc
               type: string
         - name: $select
           in: query
@@ -11927,46 +9457,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - accountEnabled
-                - assignedLicenses
-                - assignedPlans
-                - businessPhones
-                - createdBy
-                - department
-                - displayName
-                - externalSource
-                - externalSourceDetail
-                - givenName
-                - mail
-                - mailingAddress
-                - mailNickname
-                - middleName
-                - mobilePhone
-                - officeLocation
-                - onPremisesInfo
-                - passwordPolicies
-                - passwordProfile
-                - preferredLanguage
-                - primaryRole
-                - provisionedPlans
-                - refreshTokensValidFromDateTime
-                - relatedContacts
-                - residenceAddress
-                - showInAddressList
-                - student
-                - surname
-                - teacher
-                - usageLocation
-                - userPrincipalName
-                - userType
-                - assignments
-                - classes
-                - rubrics
-                - schools
-                - taughtClasses
-                - user
               type: string
         - name: $expand
           in: query
@@ -11977,14 +9467,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - assignments
-                - classes
-                - rubrics
-                - schools
-                - taughtClasses
-                - user
               type: string
       responses:
         2XX:
@@ -12089,73 +9571,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - accountEnabled
-                - accountEnabled desc
-                - assignedLicenses
-                - assignedLicenses desc
-                - assignedPlans
-                - assignedPlans desc
-                - businessPhones
-                - businessPhones desc
-                - createdBy
-                - createdBy desc
-                - department
-                - department desc
-                - displayName
-                - displayName desc
-                - externalSource
-                - externalSource desc
-                - externalSourceDetail
-                - externalSourceDetail desc
-                - givenName
-                - givenName desc
-                - mail
-                - mail desc
-                - mailingAddress
-                - mailingAddress desc
-                - mailNickname
-                - mailNickname desc
-                - middleName
-                - middleName desc
-                - mobilePhone
-                - mobilePhone desc
-                - officeLocation
-                - officeLocation desc
-                - onPremisesInfo
-                - onPremisesInfo desc
-                - passwordPolicies
-                - passwordPolicies desc
-                - passwordProfile
-                - passwordProfile desc
-                - preferredLanguage
-                - preferredLanguage desc
-                - primaryRole
-                - primaryRole desc
-                - provisionedPlans
-                - provisionedPlans desc
-                - refreshTokensValidFromDateTime
-                - refreshTokensValidFromDateTime desc
-                - relatedContacts
-                - relatedContacts desc
-                - residenceAddress
-                - residenceAddress desc
-                - showInAddressList
-                - showInAddressList desc
-                - student
-                - student desc
-                - surname
-                - surname desc
-                - teacher
-                - teacher desc
-                - usageLocation
-                - usageLocation desc
-                - userPrincipalName
-                - userPrincipalName desc
-                - userType
-                - userType desc
               type: string
       responses:
         2XX:
@@ -12265,26 +9680,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - description
-                - displayName
-                - externalSource
-                - externalSourceDetail
-                - address
-                - createdBy
-                - externalId
-                - externalPrincipalId
-                - fax
-                - highestGrade
-                - lowestGrade
-                - phone
-                - principalEmail
-                - principalName
-                - schoolNumber
-                - administrativeUnit
-                - classes
-                - users
               type: string
         - name: $orderby
           in: query
@@ -12295,39 +9690,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - externalSource
-                - externalSource desc
-                - externalSourceDetail
-                - externalSourceDetail desc
-                - address
-                - address desc
-                - createdBy
-                - createdBy desc
-                - externalId
-                - externalId desc
-                - externalPrincipalId
-                - externalPrincipalId desc
-                - fax
-                - fax desc
-                - highestGrade
-                - highestGrade desc
-                - lowestGrade
-                - lowestGrade desc
-                - phone
-                - phone desc
-                - principalEmail
-                - principalEmail desc
-                - principalName
-                - principalName desc
-                - schoolNumber
-                - schoolNumber desc
               type: string
         - name: $expand
           in: query
@@ -12338,11 +9700,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - administrativeUnit
-                - classes
-                - users
               type: string
       responses:
         2XX:
@@ -12396,73 +9753,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - accountEnabled
-                - accountEnabled desc
-                - assignedLicenses
-                - assignedLicenses desc
-                - assignedPlans
-                - assignedPlans desc
-                - businessPhones
-                - businessPhones desc
-                - createdBy
-                - createdBy desc
-                - department
-                - department desc
-                - displayName
-                - displayName desc
-                - externalSource
-                - externalSource desc
-                - externalSourceDetail
-                - externalSourceDetail desc
-                - givenName
-                - givenName desc
-                - mail
-                - mail desc
-                - mailingAddress
-                - mailingAddress desc
-                - mailNickname
-                - mailNickname desc
-                - middleName
-                - middleName desc
-                - mobilePhone
-                - mobilePhone desc
-                - officeLocation
-                - officeLocation desc
-                - onPremisesInfo
-                - onPremisesInfo desc
-                - passwordPolicies
-                - passwordPolicies desc
-                - passwordProfile
-                - passwordProfile desc
-                - preferredLanguage
-                - preferredLanguage desc
-                - primaryRole
-                - primaryRole desc
-                - provisionedPlans
-                - provisionedPlans desc
-                - refreshTokensValidFromDateTime
-                - refreshTokensValidFromDateTime desc
-                - relatedContacts
-                - relatedContacts desc
-                - residenceAddress
-                - residenceAddress desc
-                - showInAddressList
-                - showInAddressList desc
-                - student
-                - student desc
-                - surname
-                - surname desc
-                - teacher
-                - teacher desc
-                - usageLocation
-                - usageLocation desc
-                - userPrincipalName
-                - userPrincipalName desc
-                - userType
-                - userType desc
               type: string
         - name: $select
           in: query
@@ -12473,46 +9763,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - accountEnabled
-                - assignedLicenses
-                - assignedPlans
-                - businessPhones
-                - createdBy
-                - department
-                - displayName
-                - externalSource
-                - externalSourceDetail
-                - givenName
-                - mail
-                - mailingAddress
-                - mailNickname
-                - middleName
-                - mobilePhone
-                - officeLocation
-                - onPremisesInfo
-                - passwordPolicies
-                - passwordProfile
-                - preferredLanguage
-                - primaryRole
-                - provisionedPlans
-                - refreshTokensValidFromDateTime
-                - relatedContacts
-                - residenceAddress
-                - showInAddressList
-                - student
-                - surname
-                - teacher
-                - usageLocation
-                - userPrincipalName
-                - userType
-                - assignments
-                - classes
-                - rubrics
-                - schools
-                - taughtClasses
-                - user
               type: string
         - name: $expand
           in: query
@@ -12523,14 +9773,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - assignments
-                - classes
-                - rubrics
-                - schools
-                - taughtClasses
-                - user
               type: string
       responses:
         2XX:
@@ -12595,46 +9837,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - accountEnabled
-                - assignedLicenses
-                - assignedPlans
-                - businessPhones
-                - createdBy
-                - department
-                - displayName
-                - externalSource
-                - externalSourceDetail
-                - givenName
-                - mail
-                - mailingAddress
-                - mailNickname
-                - middleName
-                - mobilePhone
-                - officeLocation
-                - onPremisesInfo
-                - passwordPolicies
-                - passwordProfile
-                - preferredLanguage
-                - primaryRole
-                - provisionedPlans
-                - refreshTokensValidFromDateTime
-                - relatedContacts
-                - residenceAddress
-                - showInAddressList
-                - student
-                - surname
-                - teacher
-                - usageLocation
-                - userPrincipalName
-                - userType
-                - assignments
-                - classes
-                - rubrics
-                - schools
-                - taughtClasses
-                - user
               type: string
         - name: $expand
           in: query
@@ -12645,14 +9847,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - assignments
-                - classes
-                - rubrics
-                - schools
-                - taughtClasses
-                - user
               type: string
       responses:
         2XX:
@@ -12762,55 +9956,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - addedStudentAction
-                - addedStudentAction desc
-                - addToCalendarAction
-                - addToCalendarAction desc
-                - allowLateSubmissions
-                - allowLateSubmissions desc
-                - allowStudentsToAddResourcesToSubmission
-                - allowStudentsToAddResourcesToSubmission desc
-                - assignDateTime
-                - assignDateTime desc
-                - assignedDateTime
-                - assignedDateTime desc
-                - assignTo
-                - assignTo desc
-                - classId
-                - classId desc
-                - closeDateTime
-                - closeDateTime desc
-                - createdBy
-                - createdBy desc
-                - createdDateTime
-                - createdDateTime desc
-                - displayName
-                - displayName desc
-                - dueDateTime
-                - dueDateTime desc
-                - feedbackResourcesFolderUrl
-                - feedbackResourcesFolderUrl desc
-                - grading
-                - grading desc
-                - instructions
-                - instructions desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - moduleUrl
-                - moduleUrl desc
-                - notificationChannelUrl
-                - notificationChannelUrl desc
-                - resourcesFolderUrl
-                - resourcesFolderUrl desc
-                - status
-                - status desc
-                - webUrl
-                - webUrl desc
               type: string
         - name: $select
           in: query
@@ -12821,36 +9966,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - addedStudentAction
-                - addToCalendarAction
-                - allowLateSubmissions
-                - allowStudentsToAddResourcesToSubmission
-                - assignDateTime
-                - assignedDateTime
-                - assignTo
-                - classId
-                - closeDateTime
-                - createdBy
-                - createdDateTime
-                - displayName
-                - dueDateTime
-                - feedbackResourcesFolderUrl
-                - grading
-                - instructions
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - moduleUrl
-                - notificationChannelUrl
-                - resourcesFolderUrl
-                - status
-                - webUrl
-                - categories
-                - gradingCategory
-                - resources
-                - rubric
-                - submissions
               type: string
         - name: $expand
           in: query
@@ -12861,13 +9976,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - categories
-                - gradingCategory
-                - resources
-                - rubric
-                - submissions
               type: string
       responses:
         2XX:
@@ -12942,36 +10050,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - addedStudentAction
-                - addToCalendarAction
-                - allowLateSubmissions
-                - allowStudentsToAddResourcesToSubmission
-                - assignDateTime
-                - assignedDateTime
-                - assignTo
-                - classId
-                - closeDateTime
-                - createdBy
-                - createdDateTime
-                - displayName
-                - dueDateTime
-                - feedbackResourcesFolderUrl
-                - grading
-                - instructions
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - moduleUrl
-                - notificationChannelUrl
-                - resourcesFolderUrl
-                - status
-                - webUrl
-                - categories
-                - gradingCategory
-                - resources
-                - rubric
-                - submissions
               type: string
         - name: $expand
           in: query
@@ -12982,13 +10060,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - categories
-                - gradingCategory
-                - resources
-                - rubric
-                - submissions
               type: string
       responses:
         2XX:
@@ -13114,11 +10185,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - displayName
-                - displayName desc
               type: string
         - name: $select
           in: query
@@ -13129,9 +10195,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
               type: string
         - name: $expand
           in: query
@@ -13142,8 +10205,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -13315,11 +10376,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - displayName
-                - displayName desc
               type: string
       responses:
         2XX:
@@ -13447,9 +10503,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
               type: string
         - name: $orderby
           in: query
@@ -13460,11 +10513,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - displayName
-                - displayName desc
               type: string
         - name: $expand
           in: query
@@ -13475,8 +10523,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -13538,10 +10584,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
-                - percentageWeight
               type: string
         - name: $expand
           in: query
@@ -13552,8 +10594,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -13717,13 +10757,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - distributeForStudentWork
-                - distributeForStudentWork desc
-                - resource
-                - resource desc
               type: string
         - name: $select
           in: query
@@ -13734,10 +10767,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - distributeForStudentWork
-                - resource
               type: string
         - name: $expand
           in: query
@@ -13748,8 +10777,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -13847,10 +10874,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - distributeForStudentWork
-                - resource
               type: string
         - name: $expand
           in: query
@@ -13861,8 +10884,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -14033,17 +11054,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdBy
-                - createdDateTime
-                - description
-                - displayName
-                - grading
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - levels
-                - qualities
               type: string
         - name: $expand
           in: query
@@ -14054,8 +11064,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -14298,33 +11306,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - reassignedBy
-                - reassignedBy desc
-                - reassignedDateTime
-                - reassignedDateTime desc
-                - recipient
-                - recipient desc
-                - resourcesFolderUrl
-                - resourcesFolderUrl desc
-                - returnedBy
-                - returnedBy desc
-                - returnedDateTime
-                - returnedDateTime desc
-                - status
-                - status desc
-                - submittedBy
-                - submittedBy desc
-                - submittedDateTime
-                - submittedDateTime desc
-                - unsubmittedBy
-                - unsubmittedBy desc
-                - unsubmittedDateTime
-                - unsubmittedDateTime desc
-                - webUrl
-                - webUrl desc
               type: string
         - name: $select
           in: query
@@ -14335,23 +11316,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - reassignedBy
-                - reassignedDateTime
-                - recipient
-                - resourcesFolderUrl
-                - returnedBy
-                - returnedDateTime
-                - status
-                - submittedBy
-                - submittedDateTime
-                - unsubmittedBy
-                - unsubmittedDateTime
-                - webUrl
-                - outcomes
-                - resources
-                - submittedResources
               type: string
         - name: $expand
           in: query
@@ -14362,11 +11326,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - outcomes
-                - resources
-                - submittedResources
               type: string
       responses:
         2XX:
@@ -14460,23 +11419,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - reassignedBy
-                - reassignedDateTime
-                - recipient
-                - resourcesFolderUrl
-                - returnedBy
-                - returnedDateTime
-                - status
-                - submittedBy
-                - submittedDateTime
-                - unsubmittedBy
-                - unsubmittedDateTime
-                - webUrl
-                - outcomes
-                - resources
-                - submittedResources
               type: string
         - name: $expand
           in: query
@@ -14487,11 +11429,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - outcomes
-                - resources
-                - submittedResources
               type: string
       responses:
         2XX:
@@ -14866,13 +11803,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
               type: string
         - name: $select
           in: query
@@ -14883,10 +11813,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - lastModifiedBy
-                - lastModifiedDateTime
               type: string
         - name: $expand
           in: query
@@ -14897,8 +11823,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -15008,10 +11932,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - lastModifiedBy
-                - lastModifiedDateTime
               type: string
         - name: $expand
           in: query
@@ -15022,8 +11942,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -15235,13 +12153,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - assignmentResourceUrl
-                - assignmentResourceUrl desc
-                - resource
-                - resource desc
               type: string
         - name: $select
           in: query
@@ -15252,10 +12163,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - assignmentResourceUrl
-                - resource
               type: string
         - name: $expand
           in: query
@@ -15266,8 +12173,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -15381,10 +12286,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - assignmentResourceUrl
-                - resource
               type: string
         - name: $expand
           in: query
@@ -15395,8 +12296,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -15604,13 +12503,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - assignmentResourceUrl
-                - assignmentResourceUrl desc
-                - resource
-                - resource desc
               type: string
         - name: $select
           in: query
@@ -15621,10 +12513,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - assignmentResourceUrl
-                - resource
               type: string
         - name: $expand
           in: query
@@ -15635,8 +12523,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -15746,10 +12632,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - assignmentResourceUrl
-                - resource
               type: string
         - name: $expand
           in: query
@@ -15760,8 +12642,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -15997,36 +12877,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - addedStudentAction
-                - addToCalendarAction
-                - allowLateSubmissions
-                - allowStudentsToAddResourcesToSubmission
-                - assignDateTime
-                - assignedDateTime
-                - assignTo
-                - classId
-                - closeDateTime
-                - createdBy
-                - createdDateTime
-                - displayName
-                - dueDateTime
-                - feedbackResourcesFolderUrl
-                - grading
-                - instructions
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - moduleUrl
-                - notificationChannelUrl
-                - resourcesFolderUrl
-                - status
-                - webUrl
-                - categories
-                - gradingCategory
-                - resources
-                - rubric
-                - submissions
               type: string
         - name: $orderby
           in: query
@@ -16037,55 +12887,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - addedStudentAction
-                - addedStudentAction desc
-                - addToCalendarAction
-                - addToCalendarAction desc
-                - allowLateSubmissions
-                - allowLateSubmissions desc
-                - allowStudentsToAddResourcesToSubmission
-                - allowStudentsToAddResourcesToSubmission desc
-                - assignDateTime
-                - assignDateTime desc
-                - assignedDateTime
-                - assignedDateTime desc
-                - assignTo
-                - assignTo desc
-                - classId
-                - classId desc
-                - closeDateTime
-                - closeDateTime desc
-                - createdBy
-                - createdBy desc
-                - createdDateTime
-                - createdDateTime desc
-                - displayName
-                - displayName desc
-                - dueDateTime
-                - dueDateTime desc
-                - feedbackResourcesFolderUrl
-                - feedbackResourcesFolderUrl desc
-                - grading
-                - grading desc
-                - instructions
-                - instructions desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - moduleUrl
-                - moduleUrl desc
-                - notificationChannelUrl
-                - notificationChannelUrl desc
-                - resourcesFolderUrl
-                - resourcesFolderUrl desc
-                - status
-                - status desc
-                - webUrl
-                - webUrl desc
               type: string
         - name: $expand
           in: query
@@ -16096,13 +12897,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - categories
-                - gradingCategory
-                - resources
-                - rubric
-                - submissions
               type: string
       responses:
         2XX:
@@ -16164,33 +12958,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - classCode
-                - classCode desc
-                - course
-                - course desc
-                - createdBy
-                - createdBy desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - externalId
-                - externalId desc
-                - externalName
-                - externalName desc
-                - externalSource
-                - externalSource desc
-                - externalSourceDetail
-                - externalSourceDetail desc
-                - grade
-                - grade desc
-                - mailNickname
-                - mailNickname desc
-                - term
-                - term desc
               type: string
         - name: $select
           in: query
@@ -16201,29 +12968,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - classCode
-                - course
-                - createdBy
-                - description
-                - displayName
-                - externalId
-                - externalName
-                - externalSource
-                - externalSourceDetail
-                - grade
-                - mailNickname
-                - term
-                - assignmentCategories
-                - assignmentDefaults
-                - assignments
-                - assignmentSettings
-                - group
-                - members
-                - modules
-                - schools
-                - teachers
               type: string
         - name: $expand
           in: query
@@ -16234,17 +12978,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - assignmentCategories
-                - assignmentDefaults
-                - assignments
-                - assignmentSettings
-                - group
-                - members
-                - modules
-                - schools
-                - teachers
               type: string
       responses:
         2XX:
@@ -16288,29 +13021,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - classCode
-                - course
-                - createdBy
-                - description
-                - displayName
-                - externalId
-                - externalName
-                - externalSource
-                - externalSourceDetail
-                - grade
-                - mailNickname
-                - term
-                - assignmentCategories
-                - assignmentDefaults
-                - assignments
-                - assignmentSettings
-                - group
-                - members
-                - modules
-                - schools
-                - teachers
               type: string
         - name: $expand
           in: query
@@ -16321,17 +13031,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - assignmentCategories
-                - assignmentDefaults
-                - assignments
-                - assignmentSettings
-                - group
-                - members
-                - modules
-                - schools
-                - teachers
               type: string
       responses:
         2XX:
@@ -16398,27 +13097,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - createdBy
-                - createdBy desc
-                - createdDateTime
-                - createdDateTime desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - grading
-                - grading desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - levels
-                - levels desc
-                - qualities
-                - qualities desc
               type: string
         - name: $select
           in: query
@@ -16429,17 +13107,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdBy
-                - createdDateTime
-                - description
-                - displayName
-                - grading
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - levels
-                - qualities
               type: string
         - name: $expand
           in: query
@@ -16450,8 +13117,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -16533,17 +13198,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdBy
-                - createdDateTime
-                - description
-                - displayName
-                - grading
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - levels
-                - qualities
               type: string
         - name: $expand
           in: query
@@ -16554,8 +13208,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -16703,39 +13355,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - externalSource
-                - externalSource desc
-                - externalSourceDetail
-                - externalSourceDetail desc
-                - address
-                - address desc
-                - createdBy
-                - createdBy desc
-                - externalId
-                - externalId desc
-                - externalPrincipalId
-                - externalPrincipalId desc
-                - fax
-                - fax desc
-                - highestGrade
-                - highestGrade desc
-                - lowestGrade
-                - lowestGrade desc
-                - phone
-                - phone desc
-                - principalEmail
-                - principalEmail desc
-                - principalName
-                - principalName desc
-                - schoolNumber
-                - schoolNumber desc
               type: string
         - name: $select
           in: query
@@ -16746,26 +13365,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - description
-                - displayName
-                - externalSource
-                - externalSourceDetail
-                - address
-                - createdBy
-                - externalId
-                - externalPrincipalId
-                - fax
-                - highestGrade
-                - lowestGrade
-                - phone
-                - principalEmail
-                - principalName
-                - schoolNumber
-                - administrativeUnit
-                - classes
-                - users
               type: string
         - name: $expand
           in: query
@@ -16776,11 +13375,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - administrativeUnit
-                - classes
-                - users
               type: string
       responses:
         2XX:
@@ -16824,26 +13418,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - description
-                - displayName
-                - externalSource
-                - externalSourceDetail
-                - address
-                - createdBy
-                - externalId
-                - externalPrincipalId
-                - fax
-                - highestGrade
-                - lowestGrade
-                - phone
-                - principalEmail
-                - principalName
-                - schoolNumber
-                - administrativeUnit
-                - classes
-                - users
               type: string
         - name: $expand
           in: query
@@ -16854,11 +13428,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - administrativeUnit
-                - classes
-                - users
               type: string
       responses:
         2XX:
@@ -16925,33 +13494,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - classCode
-                - classCode desc
-                - course
-                - course desc
-                - createdBy
-                - createdBy desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - externalId
-                - externalId desc
-                - externalName
-                - externalName desc
-                - externalSource
-                - externalSource desc
-                - externalSourceDetail
-                - externalSourceDetail desc
-                - grade
-                - grade desc
-                - mailNickname
-                - mailNickname desc
-                - term
-                - term desc
               type: string
         - name: $select
           in: query
@@ -16962,29 +13504,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - classCode
-                - course
-                - createdBy
-                - description
-                - displayName
-                - externalId
-                - externalName
-                - externalSource
-                - externalSourceDetail
-                - grade
-                - mailNickname
-                - term
-                - assignmentCategories
-                - assignmentDefaults
-                - assignments
-                - assignmentSettings
-                - group
-                - members
-                - modules
-                - schools
-                - teachers
               type: string
         - name: $expand
           in: query
@@ -16995,17 +13514,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - assignmentCategories
-                - assignmentDefaults
-                - assignments
-                - assignmentSettings
-                - group
-                - members
-                - modules
-                - schools
-                - teachers
               type: string
       responses:
         2XX:
@@ -17049,29 +13557,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - classCode
-                - course
-                - createdBy
-                - description
-                - displayName
-                - externalId
-                - externalName
-                - externalSource
-                - externalSourceDetail
-                - grade
-                - mailNickname
-                - term
-                - assignmentCategories
-                - assignmentDefaults
-                - assignments
-                - assignmentSettings
-                - group
-                - members
-                - modules
-                - schools
-                - teachers
               type: string
         - name: $expand
           in: query
@@ -17082,17 +13567,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - assignmentCategories
-                - assignmentDefaults
-                - assignments
-                - assignmentSettings
-                - group
-                - members
-                - modules
-                - schools
-                - teachers
               type: string
       responses:
         2XX:
@@ -17154,134 +13628,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
-                - aboutMe
-                - accountEnabled
-                - ageGroup
-                - assignedLicenses
-                - assignedPlans
-                - authorizationInfo
-                - birthday
-                - businessPhones
-                - city
-                - companyName
-                - consentProvidedForMinor
-                - country
-                - createdDateTime
-                - creationType
-                - customSecurityAttributes
-                - department
-                - deviceEnrollmentLimit
-                - displayName
-                - employeeHireDate
-                - employeeId
-                - employeeLeaveDateTime
-                - employeeOrgData
-                - employeeType
-                - externalUserState
-                - externalUserStateChangeDateTime
-                - faxNumber
-                - givenName
-                - hireDate
-                - identities
-                - imAddresses
-                - interests
-                - isResourceAccount
-                - jobTitle
-                - lastPasswordChangeDateTime
-                - legalAgeGroupClassification
-                - licenseAssignmentStates
-                - mail
-                - mailboxSettings
-                - mailNickname
-                - mobilePhone
-                - mySite
-                - officeLocation
-                - onPremisesDistinguishedName
-                - onPremisesDomainName
-                - onPremisesExtensionAttributes
-                - onPremisesImmutableId
-                - onPremisesLastSyncDateTime
-                - onPremisesProvisioningErrors
-                - onPremisesSamAccountName
-                - onPremisesSecurityIdentifier
-                - onPremisesSyncEnabled
-                - onPremisesUserPrincipalName
-                - otherMails
-                - passwordPolicies
-                - passwordProfile
-                - pastProjects
-                - postalCode
-                - preferredDataLocation
-                - preferredLanguage
-                - preferredName
-                - print
-                - provisionedPlans
-                - proxyAddresses
-                - responsibilities
-                - schools
-                - securityIdentifier
-                - serviceProvisioningErrors
-                - showInAddressList
-                - signInActivity
-                - signInSessionsValidFromDateTime
-                - skills
-                - state
-                - streetAddress
-                - surname
-                - usageLocation
-                - userPrincipalName
-                - userType
-                - activities
-                - agreementAcceptances
-                - appRoleAssignments
-                - authentication
-                - calendar
-                - calendarGroups
-                - calendars
-                - calendarView
-                - chats
-                - contactFolders
-                - contacts
-                - createdObjects
-                - deviceManagementTroubleshootingEvents
-                - directReports
-                - drive
-                - drives
-                - employeeExperience
-                - events
-                - extensions
-                - followedSites
-                - inferenceClassification
-                - insights
-                - joinedTeams
-                - licenseDetails
-                - mailFolders
-                - managedAppRegistrations
-                - managedDevices
-                - manager
-                - memberOf
-                - messages
-                - oauth2PermissionGrants
-                - onenote
-                - onlineMeetings
-                - outlook
-                - ownedDevices
-                - ownedObjects
-                - people
-                - permissionGrants
-                - photo
-                - photos
-                - planner
-                - presence
-                - registeredDevices
-                - scopedRoleMemberOf
-                - settings
-                - teamwork
-                - todo
-                - transitiveMemberOf
               type: string
         - name: $expand
           in: query
@@ -17292,56 +13638,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - activities
-                - agreementAcceptances
-                - appRoleAssignments
-                - authentication
-                - calendar
-                - calendarGroups
-                - calendars
-                - calendarView
-                - chats
-                - contactFolders
-                - contacts
-                - createdObjects
-                - deviceManagementTroubleshootingEvents
-                - directReports
-                - drive
-                - drives
-                - employeeExperience
-                - events
-                - extensions
-                - followedSites
-                - inferenceClassification
-                - insights
-                - joinedTeams
-                - licenseDetails
-                - mailFolders
-                - managedAppRegistrations
-                - managedDevices
-                - manager
-                - memberOf
-                - messages
-                - oauth2PermissionGrants
-                - onenote
-                - onlineMeetings
-                - outlook
-                - ownedDevices
-                - ownedObjects
-                - people
-                - permissionGrants
-                - photo
-                - photos
-                - planner
-                - presence
-                - registeredDevices
-                - scopedRoleMemberOf
-                - settings
-                - teamwork
-                - todo
-                - transitiveMemberOf
               type: string
       responses:
         2XX:
@@ -17378,16 +13674,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - archiveFolder
-                - automaticRepliesSetting
-                - dateFormat
-                - delegateMeetingMessageDeliveryOptions
-                - language
-                - timeFormat
-                - timeZone
-                - userPurpose
-                - workingHours
               type: string
         - name: $expand
           in: query
@@ -17398,8 +13684,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -17470,13 +13754,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - createdDateTime
-                - createdDateTime desc
-                - isResolved
-                - isResolved desc
-                - serviceInstance
-                - serviceInstance desc
               type: string
         - name: $select
           in: query
@@ -17487,10 +13764,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - createdDateTime
-                - isResolved
-                - serviceInstance
               type: string
         - name: $expand
           in: query
@@ -17501,8 +13774,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -17569,46 +13840,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - accountEnabled
-                - assignedLicenses
-                - assignedPlans
-                - businessPhones
-                - createdBy
-                - department
-                - displayName
-                - externalSource
-                - externalSourceDetail
-                - givenName
-                - mail
-                - mailingAddress
-                - mailNickname
-                - middleName
-                - mobilePhone
-                - officeLocation
-                - onPremisesInfo
-                - passwordPolicies
-                - passwordProfile
-                - preferredLanguage
-                - primaryRole
-                - provisionedPlans
-                - refreshTokensValidFromDateTime
-                - relatedContacts
-                - residenceAddress
-                - showInAddressList
-                - student
-                - surname
-                - teacher
-                - usageLocation
-                - userPrincipalName
-                - userType
-                - assignments
-                - classes
-                - rubrics
-                - schools
-                - taughtClasses
-                - user
               type: string
         - name: $orderby
           in: query
@@ -17619,73 +13850,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - accountEnabled
-                - accountEnabled desc
-                - assignedLicenses
-                - assignedLicenses desc
-                - assignedPlans
-                - assignedPlans desc
-                - businessPhones
-                - businessPhones desc
-                - createdBy
-                - createdBy desc
-                - department
-                - department desc
-                - displayName
-                - displayName desc
-                - externalSource
-                - externalSource desc
-                - externalSourceDetail
-                - externalSourceDetail desc
-                - givenName
-                - givenName desc
-                - mail
-                - mail desc
-                - mailingAddress
-                - mailingAddress desc
-                - mailNickname
-                - mailNickname desc
-                - middleName
-                - middleName desc
-                - mobilePhone
-                - mobilePhone desc
-                - officeLocation
-                - officeLocation desc
-                - onPremisesInfo
-                - onPremisesInfo desc
-                - passwordPolicies
-                - passwordPolicies desc
-                - passwordProfile
-                - passwordProfile desc
-                - preferredLanguage
-                - preferredLanguage desc
-                - primaryRole
-                - primaryRole desc
-                - provisionedPlans
-                - provisionedPlans desc
-                - refreshTokensValidFromDateTime
-                - refreshTokensValidFromDateTime desc
-                - relatedContacts
-                - relatedContacts desc
-                - residenceAddress
-                - residenceAddress desc
-                - showInAddressList
-                - showInAddressList desc
-                - student
-                - student desc
-                - surname
-                - surname desc
-                - teacher
-                - teacher desc
-                - usageLocation
-                - usageLocation desc
-                - userPrincipalName
-                - userPrincipalName desc
-                - userType
-                - userType desc
               type: string
         - name: $expand
           in: query
@@ -17696,14 +13860,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - assignments
-                - classes
-                - rubrics
-                - schools
-                - taughtClasses
-                - user
               type: string
       responses:
         2XX:
@@ -17875,7 +14031,7 @@ components:
               nullable: true
             notificationChannelUrl:
               type: string
-              description: Default Teams channel to which notifications will be sent. Default value is null.
+              description: Default Teams channel to which notifications are sent. Default value is null.
               nullable: true
           additionalProperties:
             type: object
@@ -19173,6 +15329,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.chat'
               x-ms-navigationProperty: true
+            cloudClipboard:
+              $ref: '#/components/schemas/microsoft.graph.cloudClipboardRoot'
             contactFolders:
               type: array
               items:
@@ -20320,6 +16478,11 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.richLongRunningOperation'
               description: The collection of long-running operations on the site.
               x-ms-navigationProperty: true
+            pages:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.baseSitePage'
+              x-ms-navigationProperty: true
             permissions:
               type: array
               items:
@@ -20597,15 +16760,15 @@ components:
       properties:
         forceChangePasswordNextSignIn:
           type: boolean
-          description: true if the user must change her password on the next login; otherwise false.
+          description: true if the user must change their password on the next sign-in; otherwise false.
           nullable: true
         forceChangePasswordNextSignInWithMfa:
           type: boolean
-          description: 'If true, at next sign-in, the user must perform a multi-factor authentication (MFA) before being forced to change their password. The behavior is identical to forceChangePasswordNextSignIn except that the user is required to first perform a multi-factor authentication before password change. After a password change, this property will be automatically reset to false. If not set, default is false.'
+          description: 'If true, at next sign-in, the user must perform a multifactor authentication (MFA) before being forced to change their password. The behavior is identical to forceChangePasswordNextSignIn except that the user is required to first perform a multifactor authentication before password change. After a password change, this property will be automatically reset to false. If not set, default is false.'
           nullable: true
         password:
           type: string
-          description: 'The password for the user. This property is required when a user is created. It can be updated, but the user will be required to change the password on the next login. The password must satisfy minimum requirements as specified by the user''s passwordPolicies property. By default, a strong password is required.'
+          description: 'The password for the user. This property is required when a user is created. It can be updated, but the user will be required to change the password on the next sign-in. The password must satisfy minimum requirements as specified by the user''s passwordPolicies property. By default, a strong password is required.'
           nullable: true
       additionalProperties:
         type: object
@@ -20737,7 +16900,7 @@ components:
       properties:
         issuer:
           type: string
-          description: 'Specifies the issuer of the identity, for example facebook.com. 512 character limit. For local accounts (where signInType isn''t federated), this property is the local default domain name for the tenant, for example contoso.com.<br>For guests from other Microsoft Entra organization, this is the domain of the federated organization, for examplecontoso.com`.  For more information about filtering behavior for this property, see Filtering on the identities property of a user.'
+          description: 'Specifies the issuer of the identity, for example facebook.com. 512 character limit. For local accounts (where signInType isn''t federated), this property is the local default domain name for the tenant, for example contoso.com.  For guests from other Microsoft Entra organizations, this is the domain of the federated organization, for example contoso.com. For more information about filtering behavior for this property, see Filtering on the identities property of a user.'
           nullable: true
         issuerAssignedId:
           type: string
@@ -21181,6 +17344,19 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.cloudClipboardRoot:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: cloudClipboardRoot
+          type: object
+          properties:
+            items:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudClipboardItem'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.contactFolder:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -21450,16 +17626,16 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.servicePlanInfo'
-              description: 'Information about the service plans assigned with the license. Read-only, Not nullable'
+              description: Information about the service plans assigned with the license. Read-only. Not nullable.
             skuId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
               type: string
-              description: Unique identifier (GUID) for the service SKU. Equal to the skuId property on the related SubscribedSku object. Read-only
+              description: Unique identifier (GUID) for the service SKU. Equal to the skuId property on the related subscribedSku object. Read-only.
               format: uuid
               nullable: true
             skuPartNumber:
               type: string
-              description: 'Unique SKU display name. Equal to the skuPartNumber on the related SubscribedSku object; for example: ''AAD_Premium''. Read-only'
+              description: 'Unique SKU display name. Equal to the skuPartNumber on the related subscribedSku object; for example, AAD_Premium. Read-only.'
               nullable: true
           additionalProperties:
             type: object
@@ -22050,7 +18226,7 @@ components:
             endDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The meeting end time in UTC.
+              description: The meeting end time in UTC. Required when you create an online meeting.
               format: date-time
               nullable: true
             externalId:
@@ -22064,7 +18240,7 @@ components:
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The meeting start time in UTC.
+              description: The meeting start time in UTC. Required when you create an online meeting.
               format: date-time
               nullable: true
             recordings:
@@ -22249,6 +18425,11 @@ components:
               description: 'When set to true, the delegate access to the user''s trending API is disabled. When set to true, documents in the user''s Office Delve are disabled. When set to true, the relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for Business is affected. Users can control this setting in Office Delve.'
             shiftPreferences:
               $ref: '#/components/schemas/microsoft.graph.shiftPreferences'
+            windows:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.windowsSetting'
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.userTeamwork:
@@ -23721,6 +19902,21 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.baseSitePage:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.baseItem'
+        - title: baseSitePage
+          type: object
+          properties:
+            pageLayout:
+              $ref: '#/components/schemas/microsoft.graph.pageLayoutType'
+            publishingState:
+              $ref: '#/components/schemas/microsoft.graph.publicationFacet'
+            title:
+              type: string
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.permission:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -24848,6 +21044,31 @@ components:
               nullable: true
             teamsApp:
               $ref: '#/components/schemas/microsoft.graph.teamsApp'
+          additionalProperties:
+            type: object
+    microsoft.graph.cloudClipboardItem:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: cloudClipboardItem
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            expirationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            payloads:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudClipboardItemPayload'
           additionalProperties:
             type: object
     microsoft.graph.learningCourseActivity:
@@ -26301,6 +22522,27 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.shiftAvailability'
               description: Availability of the user to be scheduled for work and its recurrence pattern.
+          additionalProperties:
+            type: object
+    microsoft.graph.windowsSetting:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: windowsSetting
+          type: object
+          properties:
+            payloadType:
+              type: string
+              nullable: true
+            settingType:
+              $ref: '#/components/schemas/microsoft.graph.windowsSettingType'
+            windowsDeviceId:
+              type: string
+              nullable: true
+            instances:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.windowsSettingInstance'
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.associatedTeamInfo:
@@ -27923,6 +24165,14 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.pageLayoutType:
+      title: pageLayoutType
+      enum:
+        - microsoftReserved
+        - article
+        - home
+        - unknownFutureValue
+      type: string
     microsoft.graph.sharePointIdentitySet:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -28622,6 +24872,9 @@ components:
               type: string
               description: 'Enrollment profile applied to the device. For example, Apple Device Enrollment Profile, Device enrollment - Corporate device identifiers, or Windows Autopilot profile name. This property is set by Intune.'
               nullable: true
+            enrollmentType:
+              type: string
+              nullable: true
             isCompliant:
               type: boolean
               description: 'true if the device complies with Mobile Device Management (MDM) policies; otherwise, false. Read-only. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).'
@@ -28630,9 +24883,23 @@ components:
               type: boolean
               description: 'true if the device is managed by a Mobile Device Management (MDM) app; otherwise, false. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).'
               nullable: true
+            isRooted:
+              type: boolean
+              nullable: true
+            managementType:
+              type: string
+              nullable: true
+            manufacturer:
+              type: string
+              description: Manufacturer of the device. Read-only.
+              nullable: true
             mdmAppId:
               type: string
               description: 'Application identifier used to register device into MDM. Read-only. Supports $filter (eq, ne, not, startsWith).'
+              nullable: true
+            model:
+              type: string
+              description: Model of the device. Read-only.
               nullable: true
             onPremisesLastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -28928,6 +25195,16 @@ components:
           type: string
           description: Url for showing tab contents outside of Teams.
           nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.cloudClipboardItemPayload:
+      title: cloudClipboardItemPayload
+      type: object
+      properties:
+        content:
+          type: string
+        formatName:
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.courseStatus:
@@ -30017,6 +26294,36 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.windowsSettingType:
+      title: windowsSettingType
+      enum:
+        - roaming
+        - backup
+        - unknownFutureValue
+      type: string
+    microsoft.graph.windowsSettingInstance:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: windowsSettingInstance
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            expirationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            payload:
+              type: string
+          additionalProperties:
+            type: object
     microsoft.graph.teamInfo:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'

@@ -38,15 +38,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - displayName
-                - displayName desc
-                - parentFolderId
-                - parentFolderId desc
-                - wellKnownName
-                - wellKnownName desc
               type: string
         - name: $select
           in: query
@@ -57,15 +48,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
-                - parentFolderId
-                - wellKnownName
-                - childFolders
-                - contacts
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
               type: string
         - name: $expand
           in: query
@@ -76,12 +58,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - childFolders
-                - contacts
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
               type: string
       responses:
         2XX:
@@ -163,15 +139,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
-                - parentFolderId
-                - wellKnownName
-                - childFolders
-                - contacts
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
               type: string
         - name: $expand
           in: query
@@ -182,12 +149,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - childFolders
-                - contacts
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
               type: string
       responses:
         2XX:
@@ -320,15 +281,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - displayName
-                - displayName desc
-                - parentFolderId
-                - parentFolderId desc
-                - wellKnownName
-                - wellKnownName desc
               type: string
         - name: $select
           in: query
@@ -339,15 +291,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
-                - parentFolderId
-                - wellKnownName
-                - childFolders
-                - contacts
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
               type: string
         - name: $expand
           in: query
@@ -358,12 +301,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - childFolders
-                - contacts
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
               type: string
       responses:
         2XX:
@@ -458,15 +395,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
-                - parentFolderId
-                - wellKnownName
-                - childFolders
-                - contacts
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
               type: string
         - name: $expand
           in: query
@@ -477,12 +405,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - childFolders
-                - contacts
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
               type: string
       responses:
         2XX:
@@ -631,83 +553,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - categories
-                - categories desc
-                - changeKey
-                - changeKey desc
-                - createdDateTime
-                - createdDateTime desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - assistantName
-                - assistantName desc
-                - birthday
-                - birthday desc
-                - children
-                - children desc
-                - companyName
-                - companyName desc
-                - department
-                - department desc
-                - displayName
-                - displayName desc
-                - emailAddresses
-                - emailAddresses desc
-                - fileAs
-                - fileAs desc
-                - flag
-                - flag desc
-                - gender
-                - gender desc
-                - generation
-                - generation desc
-                - givenName
-                - givenName desc
-                - imAddresses
-                - imAddresses desc
-                - initials
-                - initials desc
-                - isFavorite
-                - isFavorite desc
-                - jobTitle
-                - jobTitle desc
-                - manager
-                - manager desc
-                - middleName
-                - middleName desc
-                - nickName
-                - nickName desc
-                - officeLocation
-                - officeLocation desc
-                - parentFolderId
-                - parentFolderId desc
-                - personalNotes
-                - personalNotes desc
-                - phones
-                - phones desc
-                - postalAddresses
-                - postalAddresses desc
-                - profession
-                - profession desc
-                - spouseName
-                - spouseName desc
-                - surname
-                - surname desc
-                - title
-                - title desc
-                - websites
-                - websites desc
-                - weddingAnniversary
-                - weddingAnniversary desc
-                - yomiCompanyName
-                - yomiCompanyName desc
-                - yomiGivenName
-                - yomiGivenName desc
-                - yomiSurname
-                - yomiSurname desc
               type: string
         - name: $select
           in: query
@@ -718,49 +563,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - categories
-                - changeKey
-                - createdDateTime
-                - lastModifiedDateTime
-                - assistantName
-                - birthday
-                - children
-                - companyName
-                - department
-                - displayName
-                - emailAddresses
-                - fileAs
-                - flag
-                - gender
-                - generation
-                - givenName
-                - imAddresses
-                - initials
-                - isFavorite
-                - jobTitle
-                - manager
-                - middleName
-                - nickName
-                - officeLocation
-                - parentFolderId
-                - personalNotes
-                - phones
-                - postalAddresses
-                - profession
-                - spouseName
-                - surname
-                - title
-                - websites
-                - weddingAnniversary
-                - yomiCompanyName
-                - yomiGivenName
-                - yomiSurname
-                - extensions
-                - multiValueExtendedProperties
-                - photo
-                - singleValueExtendedProperties
               type: string
         - name: $expand
           in: query
@@ -771,12 +573,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - extensions
-                - multiValueExtendedProperties
-                - photo
-                - singleValueExtendedProperties
               type: string
       responses:
         2XX:
@@ -887,49 +683,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - categories
-                - changeKey
-                - createdDateTime
-                - lastModifiedDateTime
-                - assistantName
-                - birthday
-                - children
-                - companyName
-                - department
-                - displayName
-                - emailAddresses
-                - fileAs
-                - flag
-                - gender
-                - generation
-                - givenName
-                - imAddresses
-                - initials
-                - isFavorite
-                - jobTitle
-                - manager
-                - middleName
-                - nickName
-                - officeLocation
-                - parentFolderId
-                - personalNotes
-                - phones
-                - postalAddresses
-                - profession
-                - spouseName
-                - surname
-                - title
-                - websites
-                - weddingAnniversary
-                - yomiCompanyName
-                - yomiGivenName
-                - yomiSurname
-                - extensions
-                - multiValueExtendedProperties
-                - photo
-                - singleValueExtendedProperties
               type: string
         - name: $expand
           in: query
@@ -940,12 +693,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - extensions
-                - multiValueExtendedProperties
-                - photo
-                - singleValueExtendedProperties
               type: string
       responses:
         2XX:
@@ -1115,9 +862,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
               type: string
         - name: $select
           in: query
@@ -1128,8 +872,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
               type: string
         - name: $expand
           in: query
@@ -1140,8 +882,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1264,8 +1004,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
               type: string
         - name: $expand
           in: query
@@ -1276,8 +1014,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1504,10 +1240,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - height
-                - width
               type: string
       responses:
         2XX:
@@ -1789,83 +1521,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - categories
-                - categories desc
-                - changeKey
-                - changeKey desc
-                - createdDateTime
-                - createdDateTime desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - assistantName
-                - assistantName desc
-                - birthday
-                - birthday desc
-                - children
-                - children desc
-                - companyName
-                - companyName desc
-                - department
-                - department desc
-                - displayName
-                - displayName desc
-                - emailAddresses
-                - emailAddresses desc
-                - fileAs
-                - fileAs desc
-                - flag
-                - flag desc
-                - gender
-                - gender desc
-                - generation
-                - generation desc
-                - givenName
-                - givenName desc
-                - imAddresses
-                - imAddresses desc
-                - initials
-                - initials desc
-                - isFavorite
-                - isFavorite desc
-                - jobTitle
-                - jobTitle desc
-                - manager
-                - manager desc
-                - middleName
-                - middleName desc
-                - nickName
-                - nickName desc
-                - officeLocation
-                - officeLocation desc
-                - parentFolderId
-                - parentFolderId desc
-                - personalNotes
-                - personalNotes desc
-                - phones
-                - phones desc
-                - postalAddresses
-                - postalAddresses desc
-                - profession
-                - profession desc
-                - spouseName
-                - spouseName desc
-                - surname
-                - surname desc
-                - title
-                - title desc
-                - websites
-                - websites desc
-                - weddingAnniversary
-                - weddingAnniversary desc
-                - yomiCompanyName
-                - yomiCompanyName desc
-                - yomiGivenName
-                - yomiGivenName desc
-                - yomiSurname
-                - yomiSurname desc
               type: string
         - name: $select
           in: query
@@ -1876,49 +1531,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - categories
-                - changeKey
-                - createdDateTime
-                - lastModifiedDateTime
-                - assistantName
-                - birthday
-                - children
-                - companyName
-                - department
-                - displayName
-                - emailAddresses
-                - fileAs
-                - flag
-                - gender
-                - generation
-                - givenName
-                - imAddresses
-                - initials
-                - isFavorite
-                - jobTitle
-                - manager
-                - middleName
-                - nickName
-                - officeLocation
-                - parentFolderId
-                - personalNotes
-                - phones
-                - postalAddresses
-                - profession
-                - spouseName
-                - surname
-                - title
-                - websites
-                - weddingAnniversary
-                - yomiCompanyName
-                - yomiGivenName
-                - yomiSurname
-                - extensions
-                - multiValueExtendedProperties
-                - photo
-                - singleValueExtendedProperties
               type: string
         - name: $expand
           in: query
@@ -1929,12 +1541,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - extensions
-                - multiValueExtendedProperties
-                - photo
-                - singleValueExtendedProperties
               type: string
       responses:
         2XX:
@@ -2029,49 +1635,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - categories
-                - changeKey
-                - createdDateTime
-                - lastModifiedDateTime
-                - assistantName
-                - birthday
-                - children
-                - companyName
-                - department
-                - displayName
-                - emailAddresses
-                - fileAs
-                - flag
-                - gender
-                - generation
-                - givenName
-                - imAddresses
-                - initials
-                - isFavorite
-                - jobTitle
-                - manager
-                - middleName
-                - nickName
-                - officeLocation
-                - parentFolderId
-                - personalNotes
-                - phones
-                - postalAddresses
-                - profession
-                - spouseName
-                - surname
-                - title
-                - websites
-                - weddingAnniversary
-                - yomiCompanyName
-                - yomiGivenName
-                - yomiSurname
-                - extensions
-                - multiValueExtendedProperties
-                - photo
-                - singleValueExtendedProperties
               type: string
         - name: $expand
           in: query
@@ -2082,12 +1645,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - extensions
-                - multiValueExtendedProperties
-                - photo
-                - singleValueExtendedProperties
               type: string
       responses:
         2XX:
@@ -2233,9 +1790,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
               type: string
         - name: $select
           in: query
@@ -2246,8 +1800,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
               type: string
         - name: $expand
           in: query
@@ -2258,8 +1810,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2366,8 +1916,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
               type: string
         - name: $expand
           in: query
@@ -2378,8 +1926,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2574,10 +2120,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - height
-                - width
               type: string
       responses:
         2XX:
@@ -2812,83 +2354,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - categories
-                - categories desc
-                - changeKey
-                - changeKey desc
-                - createdDateTime
-                - createdDateTime desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - assistantName
-                - assistantName desc
-                - birthday
-                - birthday desc
-                - children
-                - children desc
-                - companyName
-                - companyName desc
-                - department
-                - department desc
-                - displayName
-                - displayName desc
-                - emailAddresses
-                - emailAddresses desc
-                - fileAs
-                - fileAs desc
-                - flag
-                - flag desc
-                - gender
-                - gender desc
-                - generation
-                - generation desc
-                - givenName
-                - givenName desc
-                - imAddresses
-                - imAddresses desc
-                - initials
-                - initials desc
-                - isFavorite
-                - isFavorite desc
-                - jobTitle
-                - jobTitle desc
-                - manager
-                - manager desc
-                - middleName
-                - middleName desc
-                - nickName
-                - nickName desc
-                - officeLocation
-                - officeLocation desc
-                - parentFolderId
-                - parentFolderId desc
-                - personalNotes
-                - personalNotes desc
-                - phones
-                - phones desc
-                - postalAddresses
-                - postalAddresses desc
-                - profession
-                - profession desc
-                - spouseName
-                - spouseName desc
-                - surname
-                - surname desc
-                - title
-                - title desc
-                - websites
-                - websites desc
-                - weddingAnniversary
-                - weddingAnniversary desc
-                - yomiCompanyName
-                - yomiCompanyName desc
-                - yomiGivenName
-                - yomiGivenName desc
-                - yomiSurname
-                - yomiSurname desc
               type: string
         - name: $select
           in: query
@@ -2899,49 +2364,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - categories
-                - changeKey
-                - createdDateTime
-                - lastModifiedDateTime
-                - assistantName
-                - birthday
-                - children
-                - companyName
-                - department
-                - displayName
-                - emailAddresses
-                - fileAs
-                - flag
-                - gender
-                - generation
-                - givenName
-                - imAddresses
-                - initials
-                - isFavorite
-                - jobTitle
-                - manager
-                - middleName
-                - nickName
-                - officeLocation
-                - parentFolderId
-                - personalNotes
-                - phones
-                - postalAddresses
-                - profession
-                - spouseName
-                - surname
-                - title
-                - websites
-                - weddingAnniversary
-                - yomiCompanyName
-                - yomiGivenName
-                - yomiSurname
-                - extensions
-                - multiValueExtendedProperties
-                - photo
-                - singleValueExtendedProperties
               type: string
         - name: $expand
           in: query
@@ -2952,12 +2374,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - extensions
-                - multiValueExtendedProperties
-                - photo
-                - singleValueExtendedProperties
               type: string
       responses:
         2XX:
@@ -3039,49 +2455,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - categories
-                - changeKey
-                - createdDateTime
-                - lastModifiedDateTime
-                - assistantName
-                - birthday
-                - children
-                - companyName
-                - department
-                - displayName
-                - emailAddresses
-                - fileAs
-                - flag
-                - gender
-                - generation
-                - givenName
-                - imAddresses
-                - initials
-                - isFavorite
-                - jobTitle
-                - manager
-                - middleName
-                - nickName
-                - officeLocation
-                - parentFolderId
-                - personalNotes
-                - phones
-                - postalAddresses
-                - profession
-                - spouseName
-                - surname
-                - title
-                - websites
-                - weddingAnniversary
-                - yomiCompanyName
-                - yomiGivenName
-                - yomiSurname
-                - extensions
-                - multiValueExtendedProperties
-                - photo
-                - singleValueExtendedProperties
               type: string
         - name: $expand
           in: query
@@ -3092,12 +2465,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - extensions
-                - multiValueExtendedProperties
-                - photo
-                - singleValueExtendedProperties
               type: string
       responses:
         2XX:
@@ -3227,9 +2594,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
               type: string
         - name: $select
           in: query
@@ -3240,8 +2604,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
               type: string
         - name: $expand
           in: query
@@ -3252,8 +2614,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3344,8 +2704,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
               type: string
         - name: $expand
           in: query
@@ -3356,8 +2714,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3520,10 +2876,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - height
-                - width
               type: string
       responses:
         2XX:
