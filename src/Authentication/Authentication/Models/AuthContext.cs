@@ -11,7 +11,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
 {
     public class AuthContext : IAuthContext
     {
-        private const string PowerShellClientId = "14d82eec-204b-4c2f-b7e8-296a70dab67e";
+        private const string PowerShellClientId = "3849bfaa-deab-480f-a8b1-39dc5bf58c35";
         public string ClientId { get; set; }
         public string TenantId { get; set; }
         public string[] Scopes { get; set; }
