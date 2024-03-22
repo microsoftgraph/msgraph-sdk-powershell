@@ -41,3 +41,19 @@ Update-MgBetaEducationClassAssignmentSetting -EducationClassId $educationClassId
 ```
 This example shows how to use the Update-MgBetaEducationClassAssignmentSetting Cmdlet.
 
+### Example 3: Code snippet
+
+```powershell
+
+Import-Module Microsoft.Graph.Beta.Education
+
+$params = @{
+	"gradingCategories@delta" = @(
+	)
+}
+
+Update-MgBetaEducationClassAssignmentSetting -EducationClassId $educationClassId -BodyParameter $params
+
+```
+This example shows how to use the Update-MgBetaEducationClassAssignmentSetting Cmdlet.
+
