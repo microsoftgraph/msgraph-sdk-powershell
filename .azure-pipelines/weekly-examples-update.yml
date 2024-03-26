@@ -40,7 +40,7 @@ extends:
       image: windows-2022
       os: windows
     sdl:
-      suppressionFile: .azure-pipelines/config/credscan/cresdscan-suppressions.json
+      suppressionsFile: .azure-pipelines/config/credscan/cresdscan-suppressions.json
     customBuildTags:
     - ES365AIMigrationTooling
     stages:
