@@ -41,7 +41,7 @@ extends:
       os: windows
     sdl:
       credscan:
-        suppressionsFile: $(Build.SourcesDirectory)/.azure-pipelines/config/cresdscan-suppressions.json
+        suppressionsFile: $(Build.SourcesDirectory)/.azure-pipelines/config/credscan-suppressions.json
       policheck:
         exclusionFile: $(Build.SourcesDirectory)/.azure-pipelines/config/policheck/policheck-exclusions.xml
     customBuildTags:
