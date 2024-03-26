@@ -54,7 +54,7 @@ extends:
             artifactName: 'ExamplesToBeReviewed'
             publishLocation: 'Container'
         steps:
-        - template: ./common-templates/install-sdk.yml@self
+        - template: /common-templates/install-sdk.yml@self
         - task: PowerShell@2
           name: "ComputeBranch"
           displayName: "Compute weekly examples update branch name"
@@ -95,7 +95,7 @@ extends:
               git commit -m "Updating examples"
               git push --set-upstream https://$(GITHUB_TOKEN)@github.com/microsoftgraph/msgraph-sdk-powershell.git $(ComputeBranch.WeeklyExamplesBranch)
               git status
-        - template: ./common-templates/create-pr.yml@self
+        - template: /common-templates/create-pr.yml@self
           parameters:
             BaseBranch: "dev"
             TargetBranch: $(ComputeBranch.WeeklyExamplesBranch)
