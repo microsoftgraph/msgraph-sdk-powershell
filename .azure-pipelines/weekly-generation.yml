@@ -74,7 +74,7 @@ extends:
         displayName: Refresh OpenApi documents
         timeoutInMinutes: 240
         steps:
-        - template: ./common-templates/download-openapi-docs.yml@self 
+        - template: common-templates/download-openapi-docs.yml
           parameters:
             Branch: $(Branch)
             BaseBranch: $(BaseBranch)
