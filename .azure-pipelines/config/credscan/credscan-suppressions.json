@@ -7,6 +7,18 @@
     },
     {
       "file": [
+        "src\\Authentication\\Authentication\\test\\Get-MgContext.Tests.ps1"
+      ],
+      "_justification": "[Authentication] Examples contain random values recognized as secret"
+    },
+    {
+      "file": [
+        "autorest.powershell\\docs\\samples\\timeswire\\readme.md"
+      ],
+      "_justification": "[AutoRest] Examples contain random values recognized as secret"
+    },
+    {
+      "file": [
         "src\\Applications\\beta\\examples\\New-MgBetaServicePrincipalPasswordSingleSignOnCredentials.md",
         "src\\Applications\\beta\\examples\\Remove-MgBetaApplicationPassword.md",
         "src\\Applications\\beta\\examples\\Update-MgBetaServicePrincipalPasswordSingleSignOnCredentials.md",
@@ -29,6 +41,12 @@
         "src\\DeviceManagement.Actions\\beta\\examples\\Update-MgBetaDeviceManagementVirtualEndpointOnPremisConnectionAdDomainPassword.md"
       ],
       "_justification": "[DeviceManagement.Actions] Examples contain random values recognized as secret"
+    },
+    {
+      "file": [
+        "tools\\Tests\\loadEnv.md"
+      ],
+      "_justification": "[ToolsTest] Examples contain random values recognized as secret"
     }
   ]
 }

@@ -11,7 +11,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # ----------------------------------------------------------------------------------
-
+[Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSAvoidUsingConvertToSecureStringWithPlainText', '', Justification='Just an example for testing purposes.')]
+param()
 if ($TestMode -eq 'live' -or $TestMode -eq 'record') {
     Connect-MgGraph -ClientId $env:testApp_clientId -TenantId $env:testApp_tenantId -CertificateThumbprint $env:testApp_certThumbprint
 }
