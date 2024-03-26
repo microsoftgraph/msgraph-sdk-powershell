@@ -74,7 +74,7 @@ extends:
         displayName: Refresh OpenApi documents
         timeoutInMinutes: 240
         steps:
-        - template: /temp/common-templates/download-openapi-docs.yml@self
+        - template: common-templates/download-openapi-docs.yml
           parameters:
             Branch: $(Branch)
             BaseBranch: $(BaseBranch)
@@ -104,35 +104,35 @@ extends:
               publishVstsFeed: $(PROJECT_NAME)/$(FEED_NAME)
               allowPackageConflicts: true
         steps:
-        - template: /temp/common-templates/checkout.yml@self
+        - template: /common-templates/checkout.yml
           parameters:
             TargetBranch: $(WeeklyBranch)
-        - template: /temp/common-templates/install-tools.yml@self
-        - template: /temp/common-templates/security-pre-checks.yml@self
-        - template: /temp/generation-templates/authentication-module.yml@self
+        - template: /common-templates/install-tools.yml
+        - template: /common-templates/security-pre-checks.yml
+        - template: /generation-templates/authentication-module.yml
           parameters:
             Test: ${{ parameters.Test }}
             Pack: ${{ parameters.Pack }}
             Sign: ${{ parameters.Sign }}
-        - template: /temp/generation-templates/workload-modules.yml@self
+        - template: /generation-templates/workload-modules.yml
           parameters:
             Test: ${{ parameters.Test }}
             Pack: ${{ parameters.Pack }}
             Sign: ${{ parameters.Sign }}
-        - template: /temp/generation-templates/meta-module.yml@self
+        - template: /generation-templates/meta-module.yml
           parameters:
             Test: ${{ parameters.Test }}
             Pack: ${{ parameters.Pack }}
             Sign: ${{ parameters.Sign }}
         - ${{ if and(eq(parameters.Pack, true), eq(parameters.Sign, true)) }}:
-          - template: /temp/common-templates/esrp/codesign-nuget.yml@self
+          - template: /common-templates/esrp/codesign-nuget.ym
             parameters:
               FolderPath: "$(Build.ArtifactStagingDirectory)"
               Pattern: "Microsoft.Graph*.nupkg"
-        - template: /temp/generation-templates/generate-command-metadata.yml@self
-        - template: /temp/common-templates/security-post-checks.yml@self
+        - template: /generation-templates/generate-command-metadata.yml
+        - template: /common-templates/security-post-checks.yml
         - ${{ if eq(parameters.CreatePullRequest, true) }}:
-          - template: /temp/common-templates/create-pr.yml@self
+          - template: /common-templates/create-pr.yml
             parameters:
               BaseBranch: $(BaseBranch)
               TargetBranch: $(WeeklyBranch)
@@ -179,7 +179,7 @@ extends:
               git push "https://$(GITHUB_TOKEN)@github.com/microsoftgraph/msgraph-sdk-powershell.git"
               git status
         - ${{ if eq(parameters.CreatePullRequest, true) }}:
-          - template: /temp/common-templates/create-pr.yml@self
+          - template: /common-templates/create-pr.yml
             parameters:
               BaseBranch: $(GenerationBranch)
               TargetBranch: $(ComputeGenerationBranch.WeeklyGenerationBranch)
