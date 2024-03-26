@@ -67,7 +67,9 @@ extends:
       os: windows
     sdl:
       credscan:
-        suppressionsFile: .azure-pipelines/config/credscan/cresdscan-suppressions.json
+        suppressionsFile: $(Build.SourcesDirectory)/.azure-pipelines/config/cresdscan-suppressions.json
+      policheck:
+        exclusionFile: $(Build.SourcesDirectory)/.azure-pipelines/config/policheck/policheck-exclusions.xml
     customBuildTags:
     - ES365AIMigrationTooling
     stages:
