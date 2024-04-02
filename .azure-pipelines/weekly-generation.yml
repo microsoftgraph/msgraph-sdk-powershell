@@ -77,7 +77,7 @@ extends:
       jobs:
       - job: RefreshOpenAPIDocuments
         displayName: Refresh OpenApi documents
-        timeoutInMinutes: 240
+        timeoutInMinutes: 1200
         steps:
         - template: .azure-pipelines/common-templates/download-openapi-docs.yml@self
           parameters:
