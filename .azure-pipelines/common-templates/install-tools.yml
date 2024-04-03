@@ -30,6 +30,12 @@ steps:
     displayName: Install NodeJs
     inputs:
       versionSpec: 16.x
+      
+  - task: Npm@1
+    displayName: Install AutoRest
+    inputs:
+      command: custom
+      customCommand: install -g autorest@3.0.509
 
   - task: Npm@1
     displayName: Install Rush
