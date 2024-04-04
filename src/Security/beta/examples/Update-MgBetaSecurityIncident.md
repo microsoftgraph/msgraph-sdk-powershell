@@ -8,8 +8,8 @@ $params = @{
 	classification = "TruePositive"
 	determination = "MultiStagedAttack"
 	customTags = @(
-		"Demo"
-	)
+	"Demo"
+)
 }
 
 Update-MgBetaSecurityIncident -IncidentId $incidentId -BodyParameter $params
