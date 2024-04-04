@@ -61,12 +61,11 @@ resources:
 extends:
   template: v1/1ES.Official.PipelineTemplate.yml@1ESPipelineTemplates
   parameters:
-    pool: $(BuildAgent)
-    sdl:
-      sourceAnalysisPool:
+    pool:
       name: Azure-Pipelines-1ESPT-ExDShared
       image: windows-latest
       os: windows
+    sdl:
       credscan:
         suppressionsFile: $(Build.SourcesDirectory)/.azure-pipelines/config/credscan/credscan-suppressions.json
       policheck:
