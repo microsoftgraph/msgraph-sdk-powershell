@@ -1,21 +1,31 @@
 {
     "Set-MgUserPhotoContent+[NoContext]+ShouldUpdatePhoto+$PUT+https://graph.microsoft.com/v1.0/users/contoso@micorosoft.com/photo/$value": {
-      "Request": {
-        "Method": "PUT",
-        "Body": "binary data",
-        "Headers": {
-            "Content-Type": "image/jpg"
+        "Request": {
+            "Method": "PUT",
+            "Body": "binary data",
+            "Headers": {
+                "Content-Type": "image/jpg"
+            }
+        },
+        "Response": {
+            "StatusCode": 200,
+            "Headers": {
+                "Strict-Transport-Security": [
+                    "max-age=31536000"
+                ],
+                "request-id": [
+                    "ceec1bb3-bfe4-4f4c-9bba-b47f18ab1372"
+                ],
+                "client-request-id": [
+                    "7f583ee0-9357-4c32-84df-25f1d7f05636"
+                ],
+                "x-ms-ags-diagnostic": [
+                    "{\"ServerInfo\":{\"DataCenter\":\"West US 2\",\"Slice\":\"E\",\"Ring\":\"1\",\"ScaleUnit\":\"001\",\"RoleInstance\":\"MW2PEPF0000749D\"}}"
+                ],
+                "Date": [
+                    "Thu, 04 Jun 2024 16:33:12 GMT"
+                ]
+            }
         }
-      },
-      "Response": {
-        "StatusCode": 200,
-        "Headers": {
-          "Strict-Transport-Security": [ "max-age=31536000" ],
-          "request-id": [ "ceec1bb3-bfe4-4f4c-9bba-b47f18ab1372" ],
-          "client-request-id": [ "7f583ee0-9357-4c32-84df-25f1d7f05636" ],
-          "x-ms-ags-diagnostic": [ "{\"ServerInfo\":{\"DataCenter\":\"West US 2\",\"Slice\":\"E\",\"Ring\":\"1\",\"ScaleUnit\":\"001\",\"RoleInstance\":\"MW2PEPF0000749D\"}}" ],
-          "Date": [ "Thu, 04 Jun 2024 16:33:12 GMT" ]
-        }
-      }
     }
-  }
+}
