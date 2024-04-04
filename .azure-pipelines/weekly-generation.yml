@@ -63,6 +63,10 @@ extends:
   parameters:
     pool: $(BuildAgent)
     sdl:
+      sourceAnalysisPool:
+      name: Azure-Pipelines-1ESPT-ExDShared
+      image: windows-latest
+      os: windows
       credscan:
         suppressionsFile: $(Build.SourcesDirectory)/.azure-pipelines/config/credscan/credscan-suppressions.json
       policheck:
