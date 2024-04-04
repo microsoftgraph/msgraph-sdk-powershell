@@ -37,34 +37,34 @@ $params = @{
 		}
 	)
 	businessPhones = @(
-		"String"
-	)
-	department = "String"
-	displayName = "String"
-	givenName = "String"
-	mail = "String"
-	mailNickname = "String"
-	mobilePhone = "String"
-	passwordPolicies = "String"
-	passwordProfile = @{
-		"@odata.type" = "microsoft.graph.passwordProfile"
+	"String"
+)
+department = "String"
+displayName = "String"
+givenName = "String"
+mail = "String"
+mailNickname = "String"
+mobilePhone = "String"
+passwordPolicies = "String"
+passwordProfile = @{
+	"@odata.type" = "microsoft.graph.passwordProfile"
+}
+officeLocation = "String"
+preferredLanguage = "String"
+provisionedPlans = @(
+	@{
+		"@odata.type" = "microsoft.graph.provisionedPlan"
 	}
-	officeLocation = "String"
-	preferredLanguage = "String"
-	provisionedPlans = @(
-		@{
-			"@odata.type" = "microsoft.graph.provisionedPlan"
-		}
-	)
-	refreshTokensValidFromDateTime = [System.DateTime]::Parse("String (timestamp)")
-	showInAddressList = "Boolean"
-	surname = "String"
-	usageLocation = "String"
-	userPrincipalName = "String"
-	userType = "String"
-	onPremisesInfo = @{
-		"@odata.type" = "microsoft.graph.educationOnPremisesInfo"
-	}
+)
+refreshTokensValidFromDateTime = [System.DateTime]::Parse("String (timestamp)")
+showInAddressList = "Boolean"
+surname = "String"
+usageLocation = "String"
+userPrincipalName = "String"
+userType = "String"
+onPremisesInfo = @{
+	"@odata.type" = "microsoft.graph.educationOnPremisesInfo"
+}
 }
 
 New-MgEducationUser -BodyParameter $params
