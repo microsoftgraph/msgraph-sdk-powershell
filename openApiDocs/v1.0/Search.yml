@@ -1873,7 +1873,11 @@ paths:
     get:
       tags:
         - search.acronym
-      summary: Get acronyms from search
+      summary: List acronyms
+      description: Get a list of the acronym objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/search-searchentity-list-acronyms?view=graph-rest-1.0
       operationId: search_ListAcronym
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1923,7 +1927,11 @@ paths:
     post:
       tags:
         - search.acronym
-      summary: Create new navigation property to acronyms for search
+      summary: Create acronym
+      description: Create a new acronym object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/search-searchentity-post-acronyms?view=graph-rest-1.0
       operationId: search_CreateAcronym
       requestBody:
         description: New navigation property
@@ -1946,7 +1954,11 @@ paths:
     get:
       tags:
         - search.acronym
-      summary: Get acronyms from search
+      summary: Get acronym
+      description: Read the properties and relationships of an acronym object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/search-acronym-get?view=graph-rest-1.0
       operationId: search_GetAcronym
       parameters:
         - name: acronym-id
@@ -1990,7 +2002,11 @@ paths:
     patch:
       tags:
         - search.acronym
-      summary: Update the navigation property acronyms in search
+      summary: Update acronym
+      description: Update the properties of an acronym object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/search-acronym-update?view=graph-rest-1.0
       operationId: search_UpdateAcronym
       parameters:
         - name: acronym-id
@@ -2021,7 +2037,11 @@ paths:
     delete:
       tags:
         - search.acronym
-      summary: Delete navigation property acronyms for search
+      summary: Delete acronym
+      description: Delete an acronym object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/search-acronym-delete?view=graph-rest-1.0
       operationId: search_DeleteAcronym
       parameters:
         - name: acronym-id
@@ -2062,7 +2082,11 @@ paths:
     get:
       tags:
         - search.bookmark
-      summary: Get bookmarks from search
+      summary: List bookmarks
+      description: Get a list of bookmark objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/search-searchentity-list-bookmarks?view=graph-rest-1.0
       operationId: search_ListBookmark
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2112,7 +2136,11 @@ paths:
     post:
       tags:
         - search.bookmark
-      summary: Create new navigation property to bookmarks for search
+      summary: Create bookmark
+      description: Create a new bookmark object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/search-searchentity-post-bookmarks?view=graph-rest-1.0
       operationId: search_CreateBookmark
       requestBody:
         description: New navigation property
@@ -2135,7 +2163,11 @@ paths:
     get:
       tags:
         - search.bookmark
-      summary: Get bookmarks from search
+      summary: Get bookmark
+      description: Read the properties and relationships of a bookmark object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/search-bookmark-get?view=graph-rest-1.0
       operationId: search_GetBookmark
       parameters:
         - name: bookmark-id
@@ -2179,7 +2211,11 @@ paths:
     patch:
       tags:
         - search.bookmark
-      summary: Update the navigation property bookmarks in search
+      summary: Update bookmark
+      description: Update the properties of a bookmark object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/search-bookmark-update?view=graph-rest-1.0
       operationId: search_UpdateBookmark
       parameters:
         - name: bookmark-id
@@ -2210,7 +2246,11 @@ paths:
     delete:
       tags:
         - search.bookmark
-      summary: Delete navigation property bookmarks for search
+      summary: Delete bookmark
+      description: Delete a bookmark object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/search-bookmark-delete?view=graph-rest-1.0
       operationId: search_DeleteBookmark
       parameters:
         - name: bookmark-id
@@ -2298,7 +2338,11 @@ paths:
     get:
       tags:
         - search.qna
-      summary: Get qnas from search
+      summary: List qnas
+      description: Get a list of the qna objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/search-searchentity-list-qnas?view=graph-rest-1.0
       operationId: search_ListQna
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2348,7 +2392,11 @@ paths:
     post:
       tags:
         - search.qna
-      summary: Create new navigation property to qnas for search
+      summary: Create qna
+      description: Create a new qna object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/search-searchentity-post-qnas?view=graph-rest-1.0
       operationId: search_CreateQna
       requestBody:
         description: New navigation property
@@ -2371,7 +2419,11 @@ paths:
     get:
       tags:
         - search.qna
-      summary: Get qnas from search
+      summary: Get qna
+      description: Read the properties and relationships of a qna object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/search-qna-get?view=graph-rest-1.0
       operationId: search_GetQna
       parameters:
         - name: qna-id
@@ -2415,7 +2467,11 @@ paths:
     patch:
       tags:
         - search.qna
-      summary: Update the navigation property qnas in search
+      summary: Update qna
+      description: Update the properties of a qna object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/search-qna-update?view=graph-rest-1.0
       operationId: search_UpdateQna
       parameters:
         - name: qna-id
@@ -2446,7 +2502,11 @@ paths:
     delete:
       tags:
         - search.qna
-      summary: Delete navigation property qnas for search
+      summary: Delete qna
+      description: Delete a qna object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/search-qna-delete?view=graph-rest-1.0
       operationId: search_DeleteQna
       parameters:
         - name: qna-id
@@ -2661,16 +2721,19 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.search.acronym'
+              description: Administrative answer in Microsoft Search results to define common acronyms in an organization.
               x-ms-navigationProperty: true
             bookmarks:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.search.bookmark'
+              description: Administrative answer in Microsoft Search results for common search queries in an organization.
               x-ms-navigationProperty: true
             qnas:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.search.qna'
+              description: Administrative answer in Microsoft Search results that provide answers for specific search keywords in an organization.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -2682,6 +2745,7 @@ components:
           properties:
             standsFor:
               type: string
+              description: What the acronym stands for.
               nullable: true
             state:
               $ref: '#/components/schemas/microsoft.graph.search.answerState'
@@ -2696,11 +2760,13 @@ components:
             availabilityEndDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Date and time when the bookmark stops appearing as a search result. Set as null for always available. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             availabilityStartDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Date and time when the bookmark starts to appear as a search result. Set as null for always available. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             categories:
@@ -2708,13 +2774,16 @@ components:
               items:
                 type: string
                 nullable: true
+              description: 'Categories commonly used to describe this bookmark. For example, IT and HR.'
             groupIds:
               type: array
               items:
                 type: string
                 nullable: true
+              description: The list of security groups that are able to view this bookmark.
             isSuggested:
               type: boolean
+              description: 'True if this bookmark was suggested to the admin, by a user, or was mined and suggested by Microsoft. Read-only.'
               nullable: true
             keywords:
               $ref: '#/components/schemas/microsoft.graph.search.answerKeyword'
@@ -2723,21 +2792,25 @@ components:
               items:
                 type: string
                 nullable: true
+              description: 'A list of geographically specific language names in which this bookmark can be viewed. Each language tag value follows the pattern {language}-{region}. For example, en-us is English as used in the United States. For the list of possible values, see Supported language tags.'
             platforms:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.devicePlatformType'
+              description: 'List of devices and operating systems that are able to view this bookmark. Possible values are: android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, unknown, androidASOP, androidMobileApplicationManagement, iOSMobileApplicationManagement, unknownFutureValue.'
             powerAppIds:
               type: array
               items:
                 type: string
                 nullable: true
+              description: 'List of Power Apps associated with this bookmark. If users add existing Power Apps to a bookmark, they can complete tasks directly on the search results page, such as entering vacation time or reporting expenses.'
             state:
               $ref: '#/components/schemas/microsoft.graph.search.answerState'
             targetedVariations:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.search.answerVariant'
+              description: 'Variations of a bookmark for different countries or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings apply to all variations.'
           additionalProperties:
             type: object
     microsoft.graph.searchRequest:
@@ -2842,11 +2915,13 @@ components:
             availabilityEndDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Date and time when the QnA stops appearing as a search result. Set as null for always available. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             availabilityStartDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Date and time when the QnA starts to appear as a search result. Set as null for always available. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             groupIds:
@@ -2854,8 +2929,10 @@ components:
               items:
                 type: string
                 nullable: true
+              description: The list of security groups that are able to view this QnA.
             isSuggested:
               type: boolean
+              description: True if a user or Microsoft suggested this QnA to the admin. Read-only.
               nullable: true
             keywords:
               $ref: '#/components/schemas/microsoft.graph.search.answerKeyword'
@@ -2864,16 +2941,19 @@ components:
               items:
                 type: string
                 nullable: true
+              description: 'A list of geographically specific language names in which this QnA can be viewed. Each language tag value follows the pattern {language}-{region}. For example, en-us is English as used in the United States. For the list of possible values, see Supported language tags.'
             platforms:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.devicePlatformType'
+              description: 'List of devices and operating systems that are able to view this QnA. Possible values are: android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, unknown, androidASOP, androidMobileApplicationManagement, iOSMobileApplicationManagement, unknownFutureValue.'
             state:
               $ref: '#/components/schemas/microsoft.graph.search.answerState'
             targetedVariations:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.search.answerVariant'
+              description: 'Variations of a QnA for different countries or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings apply to all variations.'
           additionalProperties:
             type: object
     microsoft.graph.entity:
@@ -3055,18 +3135,22 @@ components:
           properties:
             description:
               type: string
+              description: The search answer description that is shown on the search results page.
               nullable: true
             displayName:
               type: string
+              description: The search answer name that is displayed in search results.
             lastModifiedBy:
               $ref: '#/components/schemas/microsoft.graph.search.identitySet'
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Date and time when the search answer was created or last edited. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
             webUrl:
               type: string
+              description: 'The URL link for the search answer. When users select this search answer from the search results, they are directed to the specified URL.'
               nullable: true
           additionalProperties:
             type: object
@@ -3087,14 +3171,17 @@ components:
           items:
             type: string
             nullable: true
+          description: A collection of keywords used to trigger the search answer.
         matchSimilarKeywords:
           type: boolean
+          description: 'If true, indicates that the search term contains similar words to the keywords that should trigger the search answer.'
           nullable: true
         reservedKeywords:
           type: array
           items:
             type: string
             nullable: true
+          description: Unique keywords that guarantee the search answer is triggered.
       additionalProperties:
         type: object
     microsoft.graph.devicePlatformType:
@@ -3164,17 +3251,21 @@ components:
       properties:
         description:
           type: string
+          description: The answer variation description that is shown on the search results page.
           nullable: true
         displayName:
           type: string
+          description: The answer variation name that is displayed in search results.
           nullable: true
         languageTag:
           type: string
+          description: The country or region that can view this answer variation.
           nullable: true
         platform:
           $ref: '#/components/schemas/microsoft.graph.devicePlatformType'
         webUrl:
           type: string
+          description: 'The URL link for the answer variation. When users select this answer variation from the search results, they''re directed to the specified URL.'
           nullable: true
       additionalProperties:
         type: object
@@ -3186,12 +3277,12 @@ components:
           $ref: '#/components/schemas/microsoft.graph.bucketAggregationDefinition'
         field:
           type: string
-          description: Computes aggregation on the field while the field exists in current entity type. Required.
+          description: Computes aggregation on the field while the field exists in the current entity type. Required.
         size:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: The number of searchBucket resources to be returned. This isn't required when the range is provided manually in the search request. Optional.
+          description: 'The number of searchBucket resources to be returned. This isn''t required when the range is provided manually in the search request. The minimum accepted size is 1, and the maximum is 65535. Optional.'
           format: int32
           nullable: true
       additionalProperties:

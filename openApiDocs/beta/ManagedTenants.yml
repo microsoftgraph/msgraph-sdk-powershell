@@ -12452,6 +12452,7 @@ components:
         - active
         - inactive
         - unknownFutureValue
+        - disabled
       type: string
     microsoft.graph.managedTenants.tenantOnboardingEligibilityReason:
       title: tenantOnboardingEligibilityReason
