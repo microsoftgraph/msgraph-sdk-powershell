@@ -2,20 +2,58 @@
 <package>
   <metadata>
     <id>Microsoft.Graph.Beta</id>
-    <version>1.11.0-preview1</version>
+    <version>2.17.0</version>
     <authors>Microsoft</authors>
     <owners>Microsoft</owners>
     <licenseUrl>https://aka.ms/devservicesagreement</licenseUrl>
     <projectUrl>https://github.com/microsoftgraph/msgraph-sdk-powershell</projectUrl>
-    <iconUrl>https://raw.githubusercontent.com/microsoftgraph/msgraph-sdk-powershell/master/documentation/images/graph_color256.png</iconUrl>
+    <iconUrl>https://raw.githubusercontent.com/microsoftgraph/msgraph-sdk-powershell/dev/docs/images/graph_color256.png</iconUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>Microsoft Graph PowerShell module</description>
     <copyright>© Microsoft Corporation. All rights reserved.</copyright>
     <tags>MicrosoftGraph Microsoft Office365 Graph PowerShell Outlook OneDrive AzureAD SharePoint Intune AzureAutomationNotSupported PSModule PSIncludes_Cmdlet</tags>
     <dependencies>
-      <dependency id="Microsoft.Graph.Authentication" version="1.11.0" />
-      <dependency id="Microsoft.Graph.Beta.Search" version="[1.11.0]" />
-      <dependency id="Microsoft.Graph.Beta.WindowsUpdates" version="[1.11.0]" />
+      <dependency id="Microsoft.Graph.Authentication" version="[2.17.0]" />
+      <dependency id="Microsoft.Graph.Beta.Applications" version="[2.17.0]" />
+      <dependency id="Microsoft.Graph.Beta.Bookings" version="[2.17.0]" />
+      <dependency id="Microsoft.Graph.Beta.Calendar" version="[2.17.0]" />
+      <dependency id="Microsoft.Graph.Beta.ChangeNotifications" version="[2.17.0]" />
+      <dependency id="Microsoft.Graph.Beta.CloudCommunications" version="[2.17.0]" />
+      <dependency id="Microsoft.Graph.Beta.Compliance" version="[2.17.0]" />
+      <dependency id="Microsoft.Graph.Beta.CrossDeviceExperiences" version="[2.17.0]" />
+      <dependency id="Microsoft.Graph.Beta.Devices.CloudPrint" version="[2.17.0]" />
+      <dependency id="Microsoft.Graph.Beta.Devices.CorporateManagement" version="[2.17.0]" />
+      <dependency id="Microsoft.Graph.Beta.Devices.ServiceAnnouncement" version="[2.17.0]" />
+      <dependency id="Microsoft.Graph.Beta.DeviceManagement" version="[2.17.0]" />
+      <dependency id="Microsoft.Graph.Beta.DeviceManagement.Administration" version="[2.17.0]" />
+      <dependency id="Microsoft.Graph.Beta.DeviceManagement.Enrollment" version="[2.17.0]" />
+      <dependency id="Microsoft.Graph.Beta.DeviceManagement.Actions" version="[2.17.0]" />
+      <dependency id="Microsoft.Graph.Beta.DeviceManagement.Functions" version="[2.17.0]" />
+      <dependency id="Microsoft.Graph.Beta.DirectoryObjects" version="[2.17.0]" />
+      <dependency id="Microsoft.Graph.Beta.Education" version="[2.17.0]" />
+      <dependency id="Microsoft.Graph.Beta.Files" version="[2.17.0]" />
+      <dependency id="Microsoft.Graph.Beta.Financials" version="[2.17.0]" />
+      <dependency id="Microsoft.Graph.Beta.Groups" version="[2.17.0]" />
+      <dependency id="Microsoft.Graph.Beta.Identity.DirectoryManagement" version="[2.17.0]" />
+      <dependency id="Microsoft.Graph.Beta.Identity.Governance" version="[2.17.0]" />
+      <dependency id="Microsoft.Graph.Beta.Identity.SignIns" version="[2.17.0]" />
+      <dependency id="Microsoft.Graph.Beta.Identity.Partner" version="[2.17.0]" />
+      <dependency id="Microsoft.Graph.Beta.Mail" version="[2.17.0]" />
+      <dependency id="Microsoft.Graph.Beta.ManagedTenants" version="[2.17.0]" />
+      <dependency id="Microsoft.Graph.Beta.Notes" version="[2.17.0]" />
+      <dependency id="Microsoft.Graph.Beta.People" version="[2.17.0]" />
+      <dependency id="Microsoft.Graph.Beta.PersonalContacts" version="[2.17.0]" />
+      <dependency id="Microsoft.Graph.Beta.Planner" version="[2.17.0]" />
+      <dependency id="Microsoft.Graph.Beta.Reports" version="[2.17.0]" />
+      <dependency id="Microsoft.Graph.Beta.SchemaExtensions" version="[2.17.0]" />
+      <dependency id="Microsoft.Graph.Beta.Search" version="[2.17.0]" />
+      <dependency id="Microsoft.Graph.Beta.Security" version="[2.17.0]" />
+      <dependency id="Microsoft.Graph.Beta.Sites" version="[2.17.0]" />
+      <dependency id="Microsoft.Graph.Beta.Teams" version="[2.17.0]" />
+      <dependency id="Microsoft.Graph.Beta.Users" version="[2.17.0]" />
+      <dependency id="Microsoft.Graph.Beta.Users.Actions" version="[2.17.0]" />
+      <dependency id="Microsoft.Graph.Beta.Users.Functions" version="[2.17.0]" />
+      <dependency id="Microsoft.Graph.Beta.WindowsUpdates" version="[2.17.0]" />
     </dependencies>
     <releaseNotes>See https://aka.ms/GraphPowerShell-Release.</releaseNotes>
   </metadata>
