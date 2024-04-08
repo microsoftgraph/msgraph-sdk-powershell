@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgSearchBookmark
 
 ## SYNOPSIS
-Delete a bookmark object.
+Delete navigation property bookmarks for search
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgSearchBookmark -InputObject <ISearchIdentity> [-IfMatch <String>] [-Res
 ```
 
 ## DESCRIPTION
-Delete a bookmark object.
+Delete navigation property bookmarks for search
 
 ## EXAMPLES
 

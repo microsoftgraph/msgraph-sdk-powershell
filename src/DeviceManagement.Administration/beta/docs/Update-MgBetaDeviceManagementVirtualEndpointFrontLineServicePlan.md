@@ -15,32 +15,29 @@ Update the navigation property frontLineServicePlans in deviceManagement
 ### UpdateExpanded (Default)
 ```
 Update-MgBetaDeviceManagementVirtualEndpointFrontLineServicePlan -CloudPcFrontLineServicePlanId <String>
- [-AdditionalProperties <Hashtable>] [-AllotmentLicensesCount <Int32>] [-DisplayName <String>] [-Id <String>]
- [-ResponseHeadersVariable <String>] [-TotalCount <Int32>] [-UsedCount <Int32>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>] [-TotalCount <Int32>]
+ [-UsedCount <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaDeviceManagementVirtualEndpointFrontLineServicePlan -CloudPcFrontLineServicePlanId <String>
- -BodyParameter <IMicrosoftGraphCloudPcFrontLineServicePlan> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphCloudPcFrontLineServicePlan> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaDeviceManagementVirtualEndpointFrontLineServicePlan
  -InputObject <IDeviceManagementAdministrationIdentity>
- -BodyParameter <IMicrosoftGraphCloudPcFrontLineServicePlan> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphCloudPcFrontLineServicePlan> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgBetaDeviceManagementVirtualEndpointFrontLineServicePlan
  -InputObject <IDeviceManagementAdministrationIdentity> [-AdditionalProperties <Hashtable>]
- [-AllotmentLicensesCount <Int32>] [-DisplayName <String>] [-Id <String>] [-ResponseHeadersVariable <String>]
- [-TotalCount <Int32>] [-UsedCount <Int32>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-DisplayName <String>] [-Id <String>] [-TotalCount <Int32>] [-UsedCount <Int32>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -69,21 +66,6 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -AllotmentLicensesCount
-.
-
-```yaml
-Type: System.Int32
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -141,21 +123,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -185,21 +152,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -273,8 +225,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcFrontLineServicePlan
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCloudPcFrontLineServicePlan
@@ -291,7 +241,6 @@ To create the parameters described below, construct a hash table containing the 
 `BODYPARAMETER <IMicrosoftGraphCloudPcFrontLineServicePlan>`: cloudPcFrontLineServicePlan
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[AllotmentLicensesCount <Int32?>]`: 
   - `[DisplayName <String>]`: The display name of the front-line service plan. For example, 2vCPU/8GB/128GB Front-line or 4vCPU/16GB/256GB Front-line.
   - `[TotalCount <Int32?>]`: The total number of front-line service plans purchased by the customer.
   - `[UsedCount <Int32?>]`: The number of service plans that have been used for the account.

@@ -17,22 +17,19 @@ Create a new reviewSetQuery object.
 New-MgBetaComplianceEdiscoveryCaseReviewSetQuery -CaseId <String> -ReviewSetId <String>
  [-AdditionalProperties <Hashtable>] [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>]
  [-DisplayName <String>] [-Id <String>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
- [-LastModifiedDateTime <DateTime>] [-Query <String>] [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-LastModifiedDateTime <DateTime>] [-Query <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaComplianceEdiscoveryCaseReviewSetQuery -CaseId <String> -ReviewSetId <String>
- -BodyParameter <IMicrosoftGraphEdiscoveryReviewSetQuery> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphEdiscoveryReviewSetQuery> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaComplianceEdiscoveryCaseReviewSetQuery -InputObject <IComplianceIdentity>
- -BodyParameter <IMicrosoftGraphEdiscoveryReviewSetQuery> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphEdiscoveryReviewSetQuery> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -40,8 +37,7 @@ New-MgBetaComplianceEdiscoveryCaseReviewSetQuery -InputObject <IComplianceIdenti
 New-MgBetaComplianceEdiscoveryCaseReviewSetQuery -InputObject <IComplianceIdentity>
  [-AdditionalProperties <Hashtable>] [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>]
  [-DisplayName <String>] [-Id <String>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
- [-LastModifiedDateTime <DateTime>] [-Query <String>] [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-LastModifiedDateTime <DateTime>] [-Query <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -157,21 +153,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -255,21 +236,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -ReviewSetId
 The unique identifier of reviewSet
 
@@ -324,8 +290,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IComplianceIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEdiscoveryReviewSetQuery
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

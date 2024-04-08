@@ -14,15 +14,14 @@ Invoke function incidentReport
 
 ### Report (Default)
 ```
-Invoke-MgReportServiceAnnouncementIssueIncident -ServiceHealthIssueId <String> -OutFile <String>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [<CommonParameters>]
+Invoke-MgReportServiceAnnouncementIssueIncident -ServiceHealthIssueId <String> -OutFile <String> [-PassThru]
+ [<CommonParameters>]
 ```
 
 ### ReportViaIdentity
 ```
 Invoke-MgReportServiceAnnouncementIssueIncident -InputObject <IDevicesServiceAnnouncementIdentity>
- -OutFile <String> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru]
- [<CommonParameters>]
+ -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -39,21 +38,6 @@ Invoke-MgReportServiceAnnouncementIssueIncident -ServiceHealthIssueId $serviceHe
 
 
 ## PARAMETERS
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
 
 ### -InputObject
 Identity Parameter
@@ -101,21 +85,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -ServiceHealthIssueId
 The unique identifier of serviceHealthIssue
 
@@ -137,8 +106,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IDevicesServiceAnnouncementIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

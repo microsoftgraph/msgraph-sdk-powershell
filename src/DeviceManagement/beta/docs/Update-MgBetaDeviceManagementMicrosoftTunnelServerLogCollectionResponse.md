@@ -17,35 +17,33 @@ Update the navigation property microsoftTunnelServerLogCollectionResponses in de
 Update-MgBetaDeviceManagementMicrosoftTunnelServerLogCollectionResponse
  -MicrosoftTunnelServerLogCollectionResponseId <String> [-AdditionalProperties <Hashtable>]
  [-EndDateTime <DateTime>] [-ExpiryDateTime <DateTime>] [-Id <String>] [-RequestDateTime <DateTime>]
- [-ResponseHeadersVariable <String>] [-ServerId <String>] [-SizeInBytes <Int64>] [-StartDateTime <DateTime>]
- [-Status <MicrosoftTunnelLogCollectionStatus>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-ServerId <String>] [-SizeInBytes <Int64>] [-StartDateTime <DateTime>]
+ [-Status <MicrosoftTunnelLogCollectionStatus>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaDeviceManagementMicrosoftTunnelServerLogCollectionResponse
  -MicrosoftTunnelServerLogCollectionResponseId <String>
- -BodyParameter <IMicrosoftGraphMicrosoftTunnelServerLogCollectionResponse>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphMicrosoftTunnelServerLogCollectionResponse> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaDeviceManagementMicrosoftTunnelServerLogCollectionResponse
  -InputObject <IDeviceManagementIdentity>
- -BodyParameter <IMicrosoftGraphMicrosoftTunnelServerLogCollectionResponse>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphMicrosoftTunnelServerLogCollectionResponse> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgBetaDeviceManagementMicrosoftTunnelServerLogCollectionResponse
  -InputObject <IDeviceManagementIdentity> [-AdditionalProperties <Hashtable>] [-EndDateTime <DateTime>]
- [-ExpiryDateTime <DateTime>] [-Id <String>] [-RequestDateTime <DateTime>] [-ResponseHeadersVariable <String>]
- [-ServerId <String>] [-SizeInBytes <Int64>] [-StartDateTime <DateTime>]
- [-Status <MicrosoftTunnelLogCollectionStatus>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-ExpiryDateTime <DateTime>] [-Id <String>] [-RequestDateTime <DateTime>] [-ServerId <String>]
+ [-SizeInBytes <Int64>] [-StartDateTime <DateTime>] [-Status <MicrosoftTunnelLogCollectionStatus>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -130,21 +128,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -199,21 +182,6 @@ The time when the log collection was requested
 Type: System.DateTime
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -322,8 +290,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMicrosoftTunnelServerLogCollectionResponse
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMicrosoftTunnelServerLogCollectionResponse
@@ -428,7 +394,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[MacOSSoftwareUpdateCategorySummaryId <String>]`: The unique identifier of macOSSoftwareUpdateCategorySummary
   - `[MacOSSoftwareUpdateStateSummaryId <String>]`: The unique identifier of macOSSoftwareUpdateStateSummary
   - `[MalwareStateForWindowsDeviceId <String>]`: The unique identifier of malwareStateForWindowsDevice
-  - `[ManagedDeviceCleanupRuleId <String>]`: The unique identifier of managedDeviceCleanupRule
   - `[ManagedDeviceEncryptionStateId <String>]`: The unique identifier of managedDeviceEncryptionState
   - `[ManagedDeviceId <String>]`: The unique identifier of managedDevice
   - `[ManagedDeviceMobileAppConfigurationStateId <String>]`: The unique identifier of managedDeviceMobileAppConfigurationState

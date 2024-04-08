@@ -15,42 +15,37 @@ Get the number of the resource
 ### Get (Default)
 ```
 Get-MgEntitlementManagementCatalogResourceRoleCount -AccessPackageCatalogId <String> [-Filter <String>]
- [-Search <String>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [<CommonParameters>]
+ [-Search <String>] [<CommonParameters>]
 ```
 
 ### Get1
 ```
 Get-MgEntitlementManagementCatalogResourceRoleCount -AccessPackageCatalogId <String>
- -AccessPackageResourceRoleId <String> [-Filter <String>] [-Search <String>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [<CommonParameters>]
+ -AccessPackageResourceRoleId <String> [-Filter <String>] [-Search <String>] [<CommonParameters>]
 ```
 
 ### Get2
 ```
 Get-MgEntitlementManagementCatalogResourceRoleCount -AccessPackageCatalogId <String>
- -AccessPackageResourceId <String> [-Filter <String>] [-Search <String>] [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [<CommonParameters>]
+ -AccessPackageResourceId <String> [-Filter <String>] [-Search <String>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
 Get-MgEntitlementManagementCatalogResourceRoleCount -InputObject <IIdentityGovernanceIdentity>
- [-Filter <String>] [-Search <String>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [<CommonParameters>]
+ [-Filter <String>] [-Search <String>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
 Get-MgEntitlementManagementCatalogResourceRoleCount -InputObject <IIdentityGovernanceIdentity>
- [-Filter <String>] [-Search <String>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [<CommonParameters>]
+ [-Filter <String>] [-Search <String>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity2
 ```
 Get-MgEntitlementManagementCatalogResourceRoleCount -InputObject <IIdentityGovernanceIdentity>
- [-Filter <String>] [-Search <String>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [<CommonParameters>]
+ [-Filter <String>] [-Search <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -134,21 +129,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -162,21 +142,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -201,8 +166,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 
@@ -254,6 +217,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[DirectoryObjectId <String>]`: The unique identifier of directoryObject
   - `[EndDateTime <DateTime?>]`: Usage: endDateTime={endDateTime}
   - `[GovernanceInsightId <String>]`: The unique identifier of governanceInsight
+  - `[GroupId <String>]`: The unique identifier of group
   - `[IncompatibleAccessPackageId <String>]`: Usage: incompatibleAccessPackageId='{incompatibleAccessPackageId}'
   - `[On <String>]`: Usage: on='{on}'
   - `[PrivilegedAccessGroupAssignmentScheduleId <String>]`: The unique identifier of privilegedAccessGroupAssignmentSchedule

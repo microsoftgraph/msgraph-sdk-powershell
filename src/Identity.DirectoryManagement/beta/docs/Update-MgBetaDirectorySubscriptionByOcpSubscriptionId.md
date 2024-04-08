@@ -17,7 +17,7 @@ Update the navigation property subscriptions in directory
 Update-MgBetaDirectorySubscriptionByOcpSubscriptionId -OcpSubscriptionId <String>
  [-AdditionalProperties <Hashtable>] [-CommerceSubscriptionId <String>] [-CreatedDateTime <DateTime>]
  [-Id <String>] [-IsTrial] [-NextLifecycleDateTime <DateTime>] [-OcpSubscriptionId1 <String>]
- [-OwnerId <String>] [-OwnerTenantId <String>] [-OwnerType <String>] [-ResponseHeadersVariable <String>]
+ [-OwnerId <String>] [-OwnerTenantId <String>] [-OwnerType <String>]
  [-ServiceStatus <IMicrosoftGraphServicePlanInfo[]>] [-SkuId <String>] [-SkuPartNumber <String>]
  [-Status <String>] [-TotalLicenses <Int32>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -26,15 +26,15 @@ Update-MgBetaDirectorySubscriptionByOcpSubscriptionId -OcpSubscriptionId <String
 ### Update
 ```
 Update-MgBetaDirectorySubscriptionByOcpSubscriptionId -OcpSubscriptionId <String>
- -BodyParameter <IMicrosoftGraphCompanySubscription> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphCompanySubscription> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaDirectorySubscriptionByOcpSubscriptionId -InputObject <IIdentityDirectoryManagementIdentity>
- -BodyParameter <IMicrosoftGraphCompanySubscription> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphCompanySubscription> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -42,7 +42,7 @@ Update-MgBetaDirectorySubscriptionByOcpSubscriptionId -InputObject <IIdentityDir
 Update-MgBetaDirectorySubscriptionByOcpSubscriptionId -InputObject <IIdentityDirectoryManagementIdentity>
  [-OcpSubscriptionId <String>] [-AdditionalProperties <Hashtable>] [-CommerceSubscriptionId <String>]
  [-CreatedDateTime <DateTime>] [-Id <String>] [-IsTrial] [-NextLifecycleDateTime <DateTime>]
- [-OwnerId <String>] [-OwnerTenantId <String>] [-OwnerType <String>] [-ResponseHeadersVariable <String>]
+ [-OwnerId <String>] [-OwnerTenantId <String>] [-OwnerType <String>]
  [-ServiceStatus <IMicrosoftGraphServicePlanInfo[]>] [-SkuId <String>] [-SkuPartNumber <String>]
  [-Status <String>] [-TotalLicenses <Int32>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -287,21 +287,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -ServiceStatus
 The provisioning status of each service that's included in this subscription.
 To construct, see NOTES section for SERVICESTATUS properties and create a hash table.
@@ -476,7 +461,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[DomainDnsRecordId <String>]`: The unique identifier of domainDnsRecord
   - `[DomainId <String>]`: The unique identifier of domain
   - `[ExtensionId <String>]`: The unique identifier of extension
-  - `[ExternalUserProfileId <String>]`: The unique identifier of externalUserProfile
   - `[FeatureRolloutPolicyId <String>]`: The unique identifier of featureRolloutPolicy
   - `[IdentityProviderBaseId <String>]`: The unique identifier of identityProviderBase
   - `[ImpactedResourceId <String>]`: The unique identifier of impactedResource
@@ -490,7 +474,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[OrganizationId <String>]`: The unique identifier of organization
   - `[OrganizationalBrandingLocalizationId <String>]`: The unique identifier of organizationalBrandingLocalization
   - `[OutboundSharedUserProfileUserId <String>]`: The unique identifier of outboundSharedUserProfile
-  - `[PendingExternalUserProfileId <String>]`: The unique identifier of pendingExternalUserProfile
   - `[ProfileCardPropertyId <String>]`: The unique identifier of profileCardProperty
   - `[RecommendationId <String>]`: The unique identifier of recommendation
   - `[RoleTemplateId <String>]`: Alternate key of directoryRole

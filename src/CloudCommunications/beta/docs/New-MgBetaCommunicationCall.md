@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create call enables your bot to create a new outgoing peer-to-peer or group call, or join an existing meeting.
-You need to register the calling bot and go through the list of permissions needed.
+You will need to register the calling bot and go through the list of permissions needed.
 
 ## SYNTAX
 
@@ -24,23 +24,21 @@ New-MgBetaCommunicationCall [-ActiveModalities <String[]>] [-AdditionalPropertie
  [-MediaState <IMicrosoftGraphCallMediaState>] [-MeetingCapability <IMicrosoftGraphMeetingCapability>]
  [-MeetingInfo <IMicrosoftGraphMeetingInfo>] [-MyParticipantId <String>]
  [-Operations <IMicrosoftGraphCommsOperation[]>] [-Participants <IMicrosoftGraphParticipant[]>]
- [-RequestedModalities <String[]>] [-ResponseHeadersVariable <String>]
- [-ResultInfo <IMicrosoftGraphResultInfo>] [-RingingTimeoutInSeconds <Int32>] [-RoutingPolicies <String[]>]
- [-Source <IMicrosoftGraphParticipantInfo>] [-State <String>] [-Subject <String>]
- [-Targets <IMicrosoftGraphInvitationParticipantInfo[]>] [-TenantId <String>] [-TerminationReason <String>]
- [-ToneInfo <IMicrosoftGraphToneInfo>] [-Transcription <IMicrosoftGraphCallTranscriptionInfo>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-RequestedModalities <String[]>] [-ResultInfo <IMicrosoftGraphResultInfo>]
+ [-RingingTimeoutInSeconds <Int32>] [-RoutingPolicies <String[]>] [-Source <IMicrosoftGraphParticipantInfo>]
+ [-State <String>] [-Subject <String>] [-Targets <IMicrosoftGraphInvitationParticipantInfo[]>]
+ [-TenantId <String>] [-TerminationReason <String>] [-ToneInfo <IMicrosoftGraphToneInfo>]
+ [-Transcription <IMicrosoftGraphCallTranscriptionInfo>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgBetaCommunicationCall -BodyParameter <IMicrosoftGraphCall> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaCommunicationCall -BodyParameter <IMicrosoftGraphCall> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Create call enables your bot to create a new outgoing peer-to-peer or group call, or join an existing meeting.
-You need to register the calling bot and go through the list of permissions needed.
+You will need to register the calling bot and go through the list of permissions needed.
 
 ## EXAMPLES
 
@@ -743,21 +741,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -908,21 +891,6 @@ Accept wildcard characters: False
 Type: System.String[]
 Parameter Sets: CreateExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -1139,8 +1107,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCall
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCall
@@ -1162,8 +1128,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-      - `[Id <String>]`: The identifier of the identity. This property is read-only.
+      - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[Id <String>]`: Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn't included in the response.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[LanguageId <String>]`: The language culture string. Read-only.
@@ -1190,8 +1156,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Application <IMicrosoftGraphIdentity>]`: identity
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-        - `[Id <String>]`: The identifier of the identity. This property is read-only.
+        - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+        - `[Id <String>]`: Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn't included in the response.
       - `[Device <IMicrosoftGraphIdentity>]`: identity
       - `[User <IMicrosoftGraphIdentity>]`: identity
     - `[LanguageId <String>]`: The language culture string. Read-only.
@@ -1314,8 +1280,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-      - `[Id <String>]`: The identifier of the identity. This property is read-only.
+      - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[Id <String>]`: Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn't included in the response.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[Original <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -1337,8 +1303,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-      - `[Id <String>]`: The identifier of the identity. This property is read-only.
+      - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[Id <String>]`: Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn't included in the response.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[SourceParticipantId <String>]`: The id of the participant that triggered the incoming call. Read-only.
@@ -1382,8 +1348,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Application <IMicrosoftGraphIdentity>]`: identity
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-        - `[Id <String>]`: The identifier of the identity. This property is read-only.
+        - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+        - `[Id <String>]`: Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn't included in the response.
       - `[Device <IMicrosoftGraphIdentity>]`: identity
       - `[User <IMicrosoftGraphIdentity>]`: identity
     - `[LanguageId <String>]`: The language culture string. Read-only.
@@ -1430,8 +1396,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-      - `[Id <String>]`: The identifier of the identity. This property is read-only.
+      - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[Id <String>]`: Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn't included in the response.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[LanguageId <String>]`: The language culture string. Read-only.
@@ -1447,8 +1413,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-      - `[Id <String>]`: The identifier of the identity. This property is read-only.
+      - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[Id <String>]`: Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn't included in the response.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[ParticipantId <String>]`: Optional. The ID of the target participant.

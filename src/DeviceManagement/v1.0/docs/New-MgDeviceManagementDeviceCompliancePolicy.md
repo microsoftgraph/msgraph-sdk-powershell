@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementDeviceCompliancePolicy
 
 ## SYNOPSIS
-Create a new windows10CompliancePolicy object.
+Create a new androidCompliancePolicy object.
 
 ## SYNTAX
 
@@ -19,21 +19,21 @@ New-MgDeviceManagementDeviceCompliancePolicy [-AdditionalProperties <Hashtable>]
  [-Description <String>] [-DeviceSettingStateSummaries <IMicrosoftGraphSettingStateDeviceSummary[]>]
  [-DeviceStatuses <IMicrosoftGraphDeviceComplianceDeviceStatus[]>]
  [-DeviceStatusOverview <IMicrosoftGraphDeviceComplianceDeviceOverview>] [-DisplayName <String>]
- [-Id <String>] [-LastModifiedDateTime <DateTime>] [-ResponseHeadersVariable <String>]
+ [-Id <String>] [-LastModifiedDateTime <DateTime>]
  [-ScheduledActionsForRule <IMicrosoftGraphDeviceComplianceScheduledActionForRule[]>]
  [-UserStatuses <IMicrosoftGraphDeviceComplianceUserStatus[]>]
- [-UserStatusOverview <IMicrosoftGraphDeviceComplianceUserOverview>] [-Version <Int32>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-UserStatusOverview <IMicrosoftGraphDeviceComplianceUserOverview>] [-Version <Int32>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgDeviceManagementDeviceCompliancePolicy -BodyParameter <IMicrosoftGraphDeviceCompliancePolicy>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgDeviceManagementDeviceCompliancePolicy -BodyParameter <IMicrosoftGraphDeviceCompliancePolicy> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Create a new windows10CompliancePolicy object.
+Create a new androidCompliancePolicy object.
 
 ## EXAMPLES
 
@@ -195,21 +195,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -233,21 +218,6 @@ DateTime the object was last modified.
 Type: System.DateTime
 Parameter Sets: CreateExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -357,8 +327,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceCompliancePolicy
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

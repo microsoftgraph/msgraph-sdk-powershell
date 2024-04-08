@@ -39,18 +39,15 @@ New-MgDeviceAppManagementWindowsInformationProtectionPolicy [-AdditionalProperti
  [-PinUppercaseLetters <WindowsInformationProtectionPinCharacterRequirements>]
  [-ProtectedAppLockerFiles <IMicrosoftGraphWindowsInformationProtectionAppLockerFile[]>]
  [-ProtectedApps <IMicrosoftGraphWindowsInformationProtectionApp[]>] [-ProtectionUnderLockConfigRequired]
- [-ResponseHeadersVariable <String>] [-RevokeOnMdmHandoffDisabled] [-RevokeOnUnenrollDisabled]
- [-RightsManagementServicesTemplateId <String>]
+ [-RevokeOnMdmHandoffDisabled] [-RevokeOnUnenrollDisabled] [-RightsManagementServicesTemplateId <String>]
  [-SmbAutoEncryptedFileExtensions <IMicrosoftGraphWindowsInformationProtectionResourceCollection[]>]
- [-Version <String>] [-WindowsHelloForBusinessBlocked] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Version <String>] [-WindowsHelloForBusinessBlocked] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgDeviceAppManagementWindowsInformationProtectionPolicy
- -BodyParameter <IMicrosoftGraphWindowsInformationProtectionPolicy> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphWindowsInformationProtectionPolicy> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -414,21 +411,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -IconsVisible
 Determines whether overlays are added to icons for WIP protected files in Explorer and enterprise only app tiles in the Start menu.
 Starting in Windows 10, version 1703 this setting also configures the visibility of the WIP icon in the title bar of a WIP-protected app
@@ -720,21 +702,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -RevokeOnMdmHandoffDisabled
 New property in RS2, pending documentation
 
@@ -866,8 +833,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionPolicy
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

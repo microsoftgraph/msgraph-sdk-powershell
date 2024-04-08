@@ -16,60 +16,53 @@ Update the navigation property itemCategory in financials
 ```
 Update-MgBetaFinancialCompanySaleInvoiceLineItemCategory -CompanyId <String> -SalesInvoiceLineId <String>
  [-AdditionalProperties <Hashtable>] [-Code <String>] [-DisplayName <String>] [-Id <String>]
- [-LastModifiedDateTime <DateTime>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-LastModifiedDateTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaFinancialCompanySaleInvoiceLineItemCategory -CompanyId <String> -SalesInvoiceLineId <String>
- -BodyParameter <IMicrosoftGraphItemCategory> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphItemCategory> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update1
 ```
 Update-MgBetaFinancialCompanySaleInvoiceLineItemCategory -CompanyId <String> -SalesInvoiceId <String>
- -SalesInvoiceLineId <String> -BodyParameter <IMicrosoftGraphItemCategory> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -SalesInvoiceLineId <String> -BodyParameter <IMicrosoftGraphItemCategory> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateExpanded1
 ```
 Update-MgBetaFinancialCompanySaleInvoiceLineItemCategory -CompanyId <String> -SalesInvoiceId <String>
  -SalesInvoiceLineId <String> [-AdditionalProperties <Hashtable>] [-Code <String>] [-DisplayName <String>]
- [-Id <String>] [-LastModifiedDateTime <DateTime>] [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-LastModifiedDateTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaFinancialCompanySaleInvoiceLineItemCategory -InputObject <IFinancialsIdentity>
- -BodyParameter <IMicrosoftGraphItemCategory> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphItemCategory> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
 Update-MgBetaFinancialCompanySaleInvoiceLineItemCategory -InputObject <IFinancialsIdentity>
- -BodyParameter <IMicrosoftGraphItemCategory> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphItemCategory> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgBetaFinancialCompanySaleInvoiceLineItemCategory -InputObject <IFinancialsIdentity>
  [-AdditionalProperties <Hashtable>] [-Code <String>] [-DisplayName <String>] [-Id <String>]
- [-LastModifiedDateTime <DateTime>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-LastModifiedDateTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
 ```
 Update-MgBetaFinancialCompanySaleInvoiceLineItemCategory -InputObject <IFinancialsIdentity>
  [-AdditionalProperties <Hashtable>] [-Code <String>] [-DisplayName <String>] [-Id <String>]
- [-LastModifiedDateTime <DateTime>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-LastModifiedDateTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -169,21 +162,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 .
 
@@ -222,21 +200,6 @@ Accept wildcard characters: False
 Type: System.DateTime
 Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -314,8 +277,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphItemCategory
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

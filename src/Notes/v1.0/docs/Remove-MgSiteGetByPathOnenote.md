@@ -14,30 +14,26 @@ Delete navigation property onenote for sites
 
 ### Delete1 (Default)
 ```
-Remove-MgSiteGetByPathOnenote -Path <String> -SiteId <String> [-IfMatch <String>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Remove-MgSiteGetByPathOnenote -Path <String> -SiteId <String> [-IfMatch <String>] [-Headers <IDictionary>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Delete
 ```
 Remove-MgSiteGetByPathOnenote -Path <String> -Path1 <String> -SiteId <String> [-IfMatch <String>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgSiteGetByPathOnenote -InputObject <INotesIdentity> [-IfMatch <String>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Remove-MgSiteGetByPathOnenote -InputObject <INotesIdentity> [-IfMatch <String>] [-Headers <IDictionary>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity1
 ```
-Remove-MgSiteGetByPathOnenote -InputObject <INotesIdentity> [-IfMatch <String>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Remove-MgSiteGetByPathOnenote -InputObject <INotesIdentity> [-IfMatch <String>] [-Headers <IDictionary>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -146,21 +142,6 @@ Parameter Sets: Delete
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False

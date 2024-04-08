@@ -16,32 +16,30 @@ Invoke action createLink
 ```
 New-MgDriveListItemLink -DriveId <String> -ListItemId <String> [-AdditionalProperties <Hashtable>]
  [-ExpirationDateTime <DateTime>] [-Message <String>] [-Password <String>]
- [-Recipients <IMicrosoftGraphDriveRecipient[]>] [-ResponseHeadersVariable <String>]
- [-RetainInheritedPermissions] [-Scope <String>] [-SendNotification] [-Type <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Recipients <IMicrosoftGraphDriveRecipient[]>] [-RetainInheritedPermissions] [-Scope <String>]
+ [-SendNotification] [-Type <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgDriveListItemLink -DriveId <String> -ListItemId <String>
  -BodyParameter <IPathsVput3UDrivesDriveIdListItemsListitemIdMicrosoftGraphCreatelinkPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgDriveListItemLink -InputObject <IFilesIdentity>
  -BodyParameter <IPathsVput3UDrivesDriveIdListItemsListitemIdMicrosoftGraphCreatelinkPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgDriveListItemLink -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>]
  [-ExpirationDateTime <DateTime>] [-Message <String>] [-Password <String>]
- [-Recipients <IMicrosoftGraphDriveRecipient[]>] [-ResponseHeadersVariable <String>]
- [-RetainInheritedPermissions] [-Scope <String>] [-SendNotification] [-Type <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Recipients <IMicrosoftGraphDriveRecipient[]>] [-RetainInheritedPermissions] [-Scope <String>]
+ [-SendNotification] [-Type <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -126,21 +124,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -210,21 +193,6 @@ To construct, see NOTES section for RECIPIENTS properties and create a hash tabl
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDriveRecipient[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -332,8 +300,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IFilesIdentity
 
 ### Microsoft.Graph.PowerShell.Models.IPathsVput3UDrivesDriveIdListItemsListitemIdMicrosoftGraphCreatelinkPostRequestbodyContentApplicationJsonSchema
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

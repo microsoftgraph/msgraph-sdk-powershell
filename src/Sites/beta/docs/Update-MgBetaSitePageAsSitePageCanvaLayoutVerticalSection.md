@@ -15,29 +15,27 @@ Update the navigation property verticalSection in sites
 ### UpdateExpanded (Default)
 ```
 Update-MgBetaSitePageAsSitePageCanvaLayoutVerticalSection -BaseSitePageId <String> -SiteId <String>
- [-AdditionalProperties <Hashtable>] [-Emphasis <String>] [-Id <String>] [-ResponseHeadersVariable <String>]
- [-Webparts <IMicrosoftGraphWebPart[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-Emphasis <String>] [-Id <String>]
+ [-Webparts <IMicrosoftGraphWebPart[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaSitePageAsSitePageCanvaLayoutVerticalSection -BaseSitePageId <String> -SiteId <String>
- -BodyParameter <IMicrosoftGraphVerticalSection> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphVerticalSection> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaSitePageAsSitePageCanvaLayoutVerticalSection -InputObject <ISitesIdentity>
- -BodyParameter <IMicrosoftGraphVerticalSection> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphVerticalSection> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgBetaSitePageAsSitePageCanvaLayoutVerticalSection -InputObject <ISitesIdentity>
- [-AdditionalProperties <Hashtable>] [-Emphasis <String>] [-Id <String>] [-ResponseHeadersVariable <String>]
- [-Webparts <IMicrosoftGraphWebPart[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-Emphasis <String>] [-Id <String>]
+ [-Webparts <IMicrosoftGraphWebPart[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -122,21 +120,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -166,21 +149,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -255,8 +223,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphVerticalSection
@@ -308,7 +274,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[OnenoteResourceId <String>]`: The unique identifier of onenoteResource
   - `[OnenoteSectionId <String>]`: The unique identifier of onenoteSection
   - `[Path <String>]`: Usage: path='{path}'
-  - `[Path1 <String>]`: Usage: path='{path1}'
   - `[PermissionId <String>]`: The unique identifier of permission
   - `[RecycleBinItemId <String>]`: The unique identifier of recycleBinItem
   - `[RelationId <String>]`: The unique identifier of relation

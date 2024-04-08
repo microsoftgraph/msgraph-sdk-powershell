@@ -17,23 +17,21 @@ Update the navigation property onenote in groups
 Update-MgBetaGroupSiteGetByPathOnenote -GroupId <String> -Path <String> -SiteId <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Notebooks <IMicrosoftGraphNotebook[]>]
  [-Operations <IMicrosoftGraphOnenoteOperation[]>] [-Pages <IMicrosoftGraphOnenotePage[]>]
- [-Resources <IMicrosoftGraphOnenoteResource[]>] [-ResponseHeadersVariable <String>]
- [-SectionGroups <IMicrosoftGraphSectionGroup[]>] [-Sections <IMicrosoftGraphOnenoteSection[]>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Resources <IMicrosoftGraphOnenoteResource[]>] [-SectionGroups <IMicrosoftGraphSectionGroup[]>]
+ [-Sections <IMicrosoftGraphOnenoteSection[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaGroupSiteGetByPathOnenote -GroupId <String> -Path <String> -Path1 <String> -SiteId <String>
- -BodyParameter <IMicrosoftGraphOnenote> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphOnenote> [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update1
 ```
 Update-MgBetaGroupSiteGetByPathOnenote -GroupId <String> -Path <String> -SiteId <String>
- -BodyParameter <IMicrosoftGraphOnenote> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphOnenote> [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateExpanded
@@ -41,21 +39,21 @@ Update-MgBetaGroupSiteGetByPathOnenote -GroupId <String> -Path <String> -SiteId 
 Update-MgBetaGroupSiteGetByPathOnenote -GroupId <String> -Path <String> -Path1 <String> -SiteId <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Notebooks <IMicrosoftGraphNotebook[]>]
  [-Operations <IMicrosoftGraphOnenoteOperation[]>] [-Pages <IMicrosoftGraphOnenotePage[]>]
- [-Resources <IMicrosoftGraphOnenoteResource[]>] [-ResponseHeadersVariable <String>]
- [-SectionGroups <IMicrosoftGraphSectionGroup[]>] [-Sections <IMicrosoftGraphOnenoteSection[]>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Resources <IMicrosoftGraphOnenoteResource[]>] [-SectionGroups <IMicrosoftGraphSectionGroup[]>]
+ [-Sections <IMicrosoftGraphOnenoteSection[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaGroupSiteGetByPathOnenote -InputObject <ISitesIdentity> -BodyParameter <IMicrosoftGraphOnenote>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
 Update-MgBetaGroupSiteGetByPathOnenote -InputObject <ISitesIdentity> -BodyParameter <IMicrosoftGraphOnenote>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -63,9 +61,8 @@ Update-MgBetaGroupSiteGetByPathOnenote -InputObject <ISitesIdentity> -BodyParame
 Update-MgBetaGroupSiteGetByPathOnenote -InputObject <ISitesIdentity> [-AdditionalProperties <Hashtable>]
  [-Id <String>] [-Notebooks <IMicrosoftGraphNotebook[]>] [-Operations <IMicrosoftGraphOnenoteOperation[]>]
  [-Pages <IMicrosoftGraphOnenotePage[]>] [-Resources <IMicrosoftGraphOnenoteResource[]>]
- [-ResponseHeadersVariable <String>] [-SectionGroups <IMicrosoftGraphSectionGroup[]>]
- [-Sections <IMicrosoftGraphOnenoteSection[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-SectionGroups <IMicrosoftGraphSectionGroup[]>] [-Sections <IMicrosoftGraphOnenoteSection[]>]
+ [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
@@ -73,9 +70,8 @@ Update-MgBetaGroupSiteGetByPathOnenote -InputObject <ISitesIdentity> [-Additiona
 Update-MgBetaGroupSiteGetByPathOnenote -InputObject <ISitesIdentity> [-AdditionalProperties <Hashtable>]
  [-Id <String>] [-Notebooks <IMicrosoftGraphNotebook[]>] [-Operations <IMicrosoftGraphOnenoteOperation[]>]
  [-Pages <IMicrosoftGraphOnenotePage[]>] [-Resources <IMicrosoftGraphOnenoteResource[]>]
- [-ResponseHeadersVariable <String>] [-SectionGroups <IMicrosoftGraphSectionGroup[]>]
- [-Sections <IMicrosoftGraphOnenoteSection[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-SectionGroups <IMicrosoftGraphSectionGroup[]>] [-Sections <IMicrosoftGraphOnenoteSection[]>]
+ [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -296,21 +292,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -SectionGroups
 The section groups in all OneNote notebooks that are owned by the user or group.
 Read-only.
@@ -425,8 +406,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Application <IMicrosoftGraphIdentity>]`: identity
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-        - `[Id <String>]`: The identifier of the identity. This property is read-only.
+        - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+        - `[Id <String>]`: Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn't included in the response.
       - `[Device <IMicrosoftGraphIdentity>]`: identity
       - `[User <IMicrosoftGraphIdentity>]`: identity
     - `[DisplayName <String>]`: 
@@ -574,8 +555,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-      - `[Id <String>]`: The identifier of the identity. This property is read-only.
+      - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[Id <String>]`: Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn't included in the response.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[DisplayName <String>]`: 
@@ -679,8 +660,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Application <IMicrosoftGraphIdentity>]`: identity
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-        - `[Id <String>]`: The identifier of the identity. This property is read-only.
+        - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+        - `[Id <String>]`: Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn't included in the response.
       - `[Device <IMicrosoftGraphIdentity>]`: identity
       - `[User <IMicrosoftGraphIdentity>]`: identity
     - `[DisplayName <String>]`: 
@@ -744,8 +725,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-      - `[Id <String>]`: The identifier of the identity. This property is read-only.
+      - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[Id <String>]`: Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn't included in the response.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[DisplayName <String>]`: 
@@ -820,8 +801,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-      - `[Id <String>]`: The identifier of the identity. This property is read-only.
+      - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[Id <String>]`: Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn't included in the response.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[DisplayName <String>]`: 

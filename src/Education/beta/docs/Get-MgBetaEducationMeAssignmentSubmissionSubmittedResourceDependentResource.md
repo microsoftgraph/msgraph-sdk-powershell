@@ -17,8 +17,7 @@ Get dependentResources from education
 Get-MgBetaEducationMeAssignmentSubmissionSubmittedResourceDependentResource -EducationAssignmentId <String>
  -EducationSubmissionId <String> -EducationSubmissionResourceId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
- [-Top <Int32>] [-ResponseHeadersVariable <String>] [-All] [-CountVariable <String>] [-Headers <IDictionary>]
- [-PageSize <Int32>] [<CommonParameters>]
+ [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
@@ -26,14 +25,13 @@ Get-MgBetaEducationMeAssignmentSubmissionSubmittedResourceDependentResource -Edu
 Get-MgBetaEducationMeAssignmentSubmissionSubmittedResourceDependentResource -EducationAssignmentId <String>
  -EducationSubmissionId <String> -EducationSubmissionResourceId <String>
  -EducationSubmissionResourceId1 <String> [-ExpandProperty <String[]>] [-Property <String[]>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [<CommonParameters>]
+ [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
 Get-MgBetaEducationMeAssignmentSubmissionSubmittedResourceDependentResource -InputObject <IEducationIdentity>
- [-ExpandProperty <String[]>] [-Property <String[]>] [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [<CommonParameters>]
+ [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -178,21 +176,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -231,21 +214,6 @@ Select properties to be returned
 Type: System.String[]
 Parameter Sets: (All)
 Aliases: Select
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -321,8 +289,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IEducationIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationSubmissionResource
@@ -343,7 +309,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[EducationCategoryId <String>]`: The unique identifier of educationCategory
   - `[EducationClassId <String>]`: The unique identifier of educationClass
   - `[EducationGradingCategoryId <String>]`: The unique identifier of educationGradingCategory
-  - `[EducationGradingSchemeId <String>]`: The unique identifier of educationGradingScheme
   - `[EducationModuleId <String>]`: The unique identifier of educationModule
   - `[EducationModuleResourceId <String>]`: The unique identifier of educationModuleResource
   - `[EducationOutcomeId <String>]`: The unique identifier of educationOutcome

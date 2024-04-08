@@ -12,33 +12,18 @@ Update property secrets value.
 
 ## SYNTAX
 
-### SetExpanded (Default)
-```
-Set-MgBetaApplicationSynchronizationSecret -ApplicationId <String> [-AdditionalProperties <Hashtable>]
- [-ResponseHeadersVariable <String>] [-Value <IMicrosoftGraphSynchronizationSecretKeyStringValuePair[]>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### Set
+### Set (Default)
 ```
 Set-MgBetaApplicationSynchronizationSecret -ApplicationId <String>
- -BodyParameter <IPaths1Ihjy9AApplicationsApplicationIdSynchronizationSecretsPutRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphSynchronizationSecretKeyStringValuePair[]> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### SetViaIdentity
 ```
 Set-MgBetaApplicationSynchronizationSecret -InputObject <IApplicationsIdentity>
- -BodyParameter <IPaths1Ihjy9AApplicationsApplicationIdSynchronizationSecretsPutRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### SetViaIdentityExpanded
-```
-Set-MgBetaApplicationSynchronizationSecret -InputObject <IApplicationsIdentity>
- [-AdditionalProperties <Hashtable>] [-ResponseHeadersVariable <String>]
- [-Value <IMicrosoftGraphSynchronizationSecretKeyStringValuePair[]>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphSynchronizationSecretKeyStringValuePair[]> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -62,27 +47,12 @@ Update property secrets value.
 
 ## PARAMETERS
 
-### -AdditionalProperties
-Additional Parameters
-
-```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: SetExpanded, SetViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -ApplicationId
 The unique identifier of application
 
 ```yaml
 Type: System.String
-Parameter Sets: Set, SetExpanded
+Parameter Sets: Set
 Aliases:
 
 Required: True
@@ -93,30 +63,15 @@ Accept wildcard characters: False
 ```
 
 ### -BodyParameter
-.
+Array of microsoft.graph.synchronizationSecretKeyStringValuePair
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1Ihjy9AApplicationsApplicationIdSynchronizationSecretsPutRequestbodyContentApplicationJsonSchema
-Parameter Sets: Set, SetViaIdentity
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSynchronizationSecretKeyStringValuePair[]
 Parameter Sets: (All)
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -129,44 +84,13 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
-Parameter Sets: SetViaIdentity, SetViaIdentityExpanded
+Parameter Sets: SetViaIdentity
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Value
-.
-To construct, see NOTES section for VALUE properties and create a hash table.
-
-```yaml
-Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSynchronizationSecretKeyStringValuePair[]
-Parameter Sets: SetExpanded, SetViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -208,9 +132,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
-### Microsoft.Graph.Beta.PowerShell.Models.IPaths1Ihjy9AApplicationsApplicationIdSynchronizationSecretsPutRequestbodyContentApplicationJsonSchema
-
-### System.Collections.IDictionary
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSynchronizationSecretKeyStringValuePair[]
 
 ## OUTPUTS
 
@@ -225,11 +147,9 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-`BODYPARAMETER <IPaths1Ihjy9AApplicationsApplicationIdSynchronizationSecretsPutRequestbodyContentApplicationJsonSchema>`: .
-  - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Value <IMicrosoftGraphSynchronizationSecretKeyStringValuePair[]>]`: 
-    - `[Key <String>]`: synchronizationSecret
-    - `[Value <String>]`: The value of the secret.
+`BODYPARAMETER <IMicrosoftGraphSynchronizationSecretKeyStringValuePair[]>`: Array of microsoft.graph.synchronizationSecretKeyStringValuePair
+  - `[Key <String>]`: synchronizationSecret
+  - `[Value <String>]`: The value of the secret.
 
 `INPUTOBJECT <IApplicationsIdentity>`: Identity Parameter
   - `[AppId <String>]`: Alternate key of application
@@ -249,7 +169,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[GroupId <String>]`: The unique identifier of group
   - `[HomeRealmDiscoveryPolicyId <String>]`: The unique identifier of homeRealmDiscoveryPolicy
   - `[LicenseDetailsId <String>]`: The unique identifier of licenseDetails
-  - `[Name <String>]`: Alternate key of federatedIdentityCredential
   - `[OAuth2PermissionGrantId <String>]`: The unique identifier of oAuth2PermissionGrant
   - `[OnPremisesAgentGroupId <String>]`: The unique identifier of onPremisesAgentGroup
   - `[OnPremisesAgentGroupId1 <String>]`: The unique identifier of onPremisesAgentGroup
@@ -264,10 +183,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[TokenLifetimePolicyId <String>]`: The unique identifier of tokenLifetimePolicy
   - `[UniqueName <String>]`: Alternate key of application
   - `[UserId <String>]`: The unique identifier of user
-
-`VALUE <IMicrosoftGraphSynchronizationSecretKeyStringValuePair[]>`: .
-  - `[Key <String>]`: synchronizationSecret
-  - `[Value <String>]`: The value of the secret.
 
 ## RELATED LINKS
 

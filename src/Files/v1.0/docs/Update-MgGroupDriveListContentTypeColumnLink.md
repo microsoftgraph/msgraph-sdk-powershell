@@ -15,29 +15,26 @@ Update the navigation property columnLinks in groups
 ### UpdateExpanded (Default)
 ```
 Update-MgGroupDriveListContentTypeColumnLink -ColumnLinkId <String> -ContentTypeId <String> -DriveId <String>
- -GroupId <String> [-AdditionalProperties <Hashtable>] [-Id <String>] [-Name <String>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -GroupId <String> [-AdditionalProperties <Hashtable>] [-Id <String>] [-Name <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgGroupDriveListContentTypeColumnLink -ColumnLinkId <String> -ContentTypeId <String> -DriveId <String>
- -GroupId <String> -BodyParameter <IMicrosoftGraphColumnLink> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -GroupId <String> -BodyParameter <IMicrosoftGraphColumnLink> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgGroupDriveListContentTypeColumnLink -InputObject <IFilesIdentity>
- -BodyParameter <IMicrosoftGraphColumnLink> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphColumnLink> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgGroupDriveListContentTypeColumnLink -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>]
- [-Id <String>] [-Name <String>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-Name <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -152,21 +149,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -214,21 +196,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
@@ -268,8 +235,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IFilesIdentity
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphColumnLink
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

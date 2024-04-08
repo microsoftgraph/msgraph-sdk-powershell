@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgBetaUserDriveListContentTypeColumn
 
 ## SYNOPSIS
-Create columnDefinition for a content type
+Add a column to a [content type][contentType] in a site or list by specifying a [columnDefinition][columnDefinition].
 
 ## SYNTAX
 
@@ -23,25 +23,22 @@ New-MgBetaUserDriveListContentTypeColumn -ContentTypeId <String> -DriveId <Strin
  [-HyperlinkOrPicture <IMicrosoftGraphHyperlinkOrPictureColumn>] [-Id <String>] [-Indexed] [-IsDeletable]
  [-IsReorderable] [-IsSealed] [-Lookup <IMicrosoftGraphLookupColumn>] [-Name <String>]
  [-Number <IMicrosoftGraphNumberColumn>] [-PersonOrGroup <IMicrosoftGraphPersonOrGroupColumn>]
- [-PropagateChanges] [-ReadOnly] [-Required] [-ResponseHeadersVariable <String>]
- [-SourceColumn <IMicrosoftGraphColumnDefinition>] [-SourceContentType <IMicrosoftGraphContentTypeInfo>]
- [-Term <IMicrosoftGraphTermColumn>] [-Text <IMicrosoftGraphTextColumn>] [-Thumbnail <Hashtable>]
- [-Type <String>] [-Validation <IMicrosoftGraphColumnValidation>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-PropagateChanges] [-ReadOnly] [-Required] [-SourceColumn <IMicrosoftGraphColumnDefinition>]
+ [-SourceContentType <IMicrosoftGraphContentTypeInfo>] [-Term <IMicrosoftGraphTermColumn>]
+ [-Text <IMicrosoftGraphTextColumn>] [-Thumbnail <Hashtable>] [-Type <String>]
+ [-Validation <IMicrosoftGraphColumnValidation>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaUserDriveListContentTypeColumn -ContentTypeId <String> -DriveId <String> -UserId <String>
- -BodyParameter <IMicrosoftGraphColumnDefinition> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphColumnDefinition> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaUserDriveListContentTypeColumn -InputObject <IFilesIdentity>
- -BodyParameter <IMicrosoftGraphColumnDefinition> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphColumnDefinition> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -55,15 +52,14 @@ New-MgBetaUserDriveListContentTypeColumn -InputObject <IFilesIdentity> [-Additio
  [-HyperlinkOrPicture <IMicrosoftGraphHyperlinkOrPictureColumn>] [-Id <String>] [-Indexed] [-IsDeletable]
  [-IsReorderable] [-IsSealed] [-Lookup <IMicrosoftGraphLookupColumn>] [-Name <String>]
  [-Number <IMicrosoftGraphNumberColumn>] [-PersonOrGroup <IMicrosoftGraphPersonOrGroupColumn>]
- [-PropagateChanges] [-ReadOnly] [-Required] [-ResponseHeadersVariable <String>]
- [-SourceColumn <IMicrosoftGraphColumnDefinition>] [-SourceContentType <IMicrosoftGraphContentTypeInfo>]
- [-Term <IMicrosoftGraphTermColumn>] [-Text <IMicrosoftGraphTextColumn>] [-Thumbnail <Hashtable>]
- [-Type <String>] [-Validation <IMicrosoftGraphColumnValidation>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-PropagateChanges] [-ReadOnly] [-Required] [-SourceColumn <IMicrosoftGraphColumnDefinition>]
+ [-SourceContentType <IMicrosoftGraphContentTypeInfo>] [-Term <IMicrosoftGraphTermColumn>]
+ [-Text <IMicrosoftGraphTextColumn>] [-Thumbnail <Hashtable>] [-Type <String>]
+ [-Validation <IMicrosoftGraphColumnValidation>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Create columnDefinition for a content type
+Add a column to a [content type][contentType] in a site or list by specifying a [columnDefinition][columnDefinition].
 
 ## EXAMPLES
 
@@ -330,21 +326,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Hidden
 Specifies whether the column is displayed in the user interface.
 
@@ -578,21 +559,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -SourceColumn
 columnDefinition
 To construct, see NOTES section for SOURCECOLUMN properties and create a hash table.
@@ -758,8 +724,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphColumnDefinition
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphColumnDefinition
@@ -859,8 +823,8 @@ To create the parameters described below, construct a hash table containing the 
         - `[Name <String>]`: The name of the label.
       - `[LastModifiedDateTime <DateTime?>]`: Last date and time of term modification. Read-only.
       - `[Properties <IMicrosoftGraphKeyValue[]>]`: Collection of properties on the term.
-        - `[Key <String>]`: Contains the name of the field that a value is associated with.
-        - `[Value <String>]`: Contains the corresponding value for the specified key.
+        - `[Key <String>]`: Key.
+        - `[Value <String>]`: Value.
       - `[Relations <IMicrosoftGraphTermStoreRelation[]>]`: To indicate which terms are related to the current term as either pinned or reused.
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
         - `[FromTerm <IMicrosoftGraphTermStoreTerm>]`: term
@@ -1071,8 +1035,8 @@ To create the parameters described below, construct a hash table containing the 
         - `[Name <String>]`: The name of the label.
       - `[LastModifiedDateTime <DateTime?>]`: Last date and time of term modification. Read-only.
       - `[Properties <IMicrosoftGraphKeyValue[]>]`: Collection of properties on the term.
-        - `[Key <String>]`: Contains the name of the field that a value is associated with.
-        - `[Value <String>]`: Contains the corresponding value for the specified key.
+        - `[Key <String>]`: Key.
+        - `[Value <String>]`: Value.
       - `[Relations <IMicrosoftGraphTermStoreRelation[]>]`: To indicate which terms are related to the current term as either pinned or reused.
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
         - `[FromTerm <IMicrosoftGraphTermStoreTerm>]`: term
@@ -1142,8 +1106,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[Name <String>]`: The name of the label.
     - `[LastModifiedDateTime <DateTime?>]`: Last date and time of term modification. Read-only.
     - `[Properties <IMicrosoftGraphKeyValue[]>]`: Collection of properties on the term.
-      - `[Key <String>]`: Contains the name of the field that a value is associated with.
-      - `[Value <String>]`: Contains the corresponding value for the specified key.
+      - `[Key <String>]`: Key.
+      - `[Value <String>]`: Value.
     - `[Relations <IMicrosoftGraphTermStoreRelation[]>]`: To indicate which terms are related to the current term as either pinned or reused.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[FromTerm <IMicrosoftGraphTermStoreTerm>]`: term

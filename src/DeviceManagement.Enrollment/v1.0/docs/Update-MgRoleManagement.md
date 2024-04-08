@@ -15,14 +15,13 @@ Update roleManagement
 ### UpdateExpanded (Default)
 ```
 Update-MgRoleManagement [-AdditionalProperties <Hashtable>] [-Directory <IMicrosoftGraphRbacApplication>]
- [-EntitlementManagement <IMicrosoftGraphRbacApplication>] [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-EntitlementManagement <IMicrosoftGraphRbacApplication>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgRoleManagement -BodyParameter <IMicrosoftGraphRoleManagement> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgRoleManagement -BodyParameter <IMicrosoftGraphRoleManagement> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -109,36 +108,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
@@ -176,8 +145,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRoleManagement
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 
@@ -254,9 +221,9 @@ To create the parameters described below, construct a hash table containing the 
         - `[MemberType <String>]`: How the role eligibility is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleEligibilitySchedule can be managed by the caller. Supports $filter (eq, ne).
         - `[RoleEligibilityScheduleId <String>]`: The identifier of the unifiedRoleEligibilitySchedule object from which this instance was created. Supports $filter (eq, ne).
         - `[StartDateTime <DateTime?>]`: When this instance starts.
-      - `[AssignmentType <String>]`: The type of the assignment that can either be Assigned or Activated. Supports $filter (eq, ne).
+      - `[AssignmentType <String>]`: Type of the assignment which can either be Assigned or Activated. Supports $filter (eq, ne).
       - `[EndDateTime <DateTime?>]`: The end date of the schedule instance.
-      - `[MemberType <String>]`: How the assignment is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleAssignmentSchedule can be managed by the caller. Supports $filter (eq, ne).
+      - `[MemberType <String>]`: How the assignments is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleAssignmentSchedule can be managed by the caller. Supports $filter (eq, ne).
       - `[RoleAssignmentOriginId <String>]`: The identifier of the role assignment in Microsoft Entra. Supports $filter (eq, ne).
       - `[RoleAssignmentScheduleId <String>]`: The identifier of the unifiedRoleAssignmentSchedule object from which this instance was created. Supports $filter (eq, ne).
       - `[StartDateTime <DateTime?>]`: When this instance starts.
@@ -345,8 +312,8 @@ To create the parameters described below, construct a hash table containing the 
         - `[Status <String>]`: The status of the role assignment or eligibility request.
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
         - `[ActivatedUsing <IMicrosoftGraphUnifiedRoleEligibilitySchedule>]`: unifiedRoleEligibilitySchedule
-        - `[AssignmentType <String>]`: The type of the assignment that can either be Assigned or Activated. Supports $filter (eq, ne).
-        - `[MemberType <String>]`: How the assignment is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleAssignmentSchedule can be managed by the caller. Supports $filter (eq, ne).
+        - `[AssignmentType <String>]`: Type of the assignment which can either be Assigned or Activated. Supports $filter (eq, ne).
+        - `[MemberType <String>]`: How the assignments is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleAssignmentSchedule can be managed by the caller. Supports $filter (eq, ne).
         - `[ScheduleInfo <IMicrosoftGraphRequestSchedule>]`: requestSchedule
       - `[TargetScheduleId <String>]`: Identifier of the schedule object that's linked to the assignment request. Supports $filter (eq, ne).
       - `[TicketInfo <IMicrosoftGraphTicketInfo>]`: ticketInfo
@@ -453,9 +420,9 @@ To create the parameters described below, construct a hash table containing the 
       - `[MemberType <String>]`: How the role eligibility is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleEligibilitySchedule can be managed by the caller. Supports $filter (eq, ne).
       - `[RoleEligibilityScheduleId <String>]`: The identifier of the unifiedRoleEligibilitySchedule object from which this instance was created. Supports $filter (eq, ne).
       - `[StartDateTime <DateTime?>]`: When this instance starts.
-    - `[AssignmentType <String>]`: The type of the assignment that can either be Assigned or Activated. Supports $filter (eq, ne).
+    - `[AssignmentType <String>]`: Type of the assignment which can either be Assigned or Activated. Supports $filter (eq, ne).
     - `[EndDateTime <DateTime?>]`: The end date of the schedule instance.
-    - `[MemberType <String>]`: How the assignment is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleAssignmentSchedule can be managed by the caller. Supports $filter (eq, ne).
+    - `[MemberType <String>]`: How the assignments is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleAssignmentSchedule can be managed by the caller. Supports $filter (eq, ne).
     - `[RoleAssignmentOriginId <String>]`: The identifier of the role assignment in Microsoft Entra. Supports $filter (eq, ne).
     - `[RoleAssignmentScheduleId <String>]`: The identifier of the unifiedRoleAssignmentSchedule object from which this instance was created. Supports $filter (eq, ne).
     - `[StartDateTime <DateTime?>]`: When this instance starts.
@@ -544,8 +511,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[Status <String>]`: The status of the role assignment or eligibility request.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[ActivatedUsing <IMicrosoftGraphUnifiedRoleEligibilitySchedule>]`: unifiedRoleEligibilitySchedule
-      - `[AssignmentType <String>]`: The type of the assignment that can either be Assigned or Activated. Supports $filter (eq, ne).
-      - `[MemberType <String>]`: How the assignment is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleAssignmentSchedule can be managed by the caller. Supports $filter (eq, ne).
+      - `[AssignmentType <String>]`: Type of the assignment which can either be Assigned or Activated. Supports $filter (eq, ne).
+      - `[MemberType <String>]`: How the assignments is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleAssignmentSchedule can be managed by the caller. Supports $filter (eq, ne).
       - `[ScheduleInfo <IMicrosoftGraphRequestSchedule>]`: requestSchedule
     - `[TargetScheduleId <String>]`: Identifier of the schedule object that's linked to the assignment request. Supports $filter (eq, ne).
     - `[TicketInfo <IMicrosoftGraphTicketInfo>]`: ticketInfo
@@ -651,9 +618,9 @@ To create the parameters described below, construct a hash table containing the 
       - `[MemberType <String>]`: How the role eligibility is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleEligibilitySchedule can be managed by the caller. Supports $filter (eq, ne).
       - `[RoleEligibilityScheduleId <String>]`: The identifier of the unifiedRoleEligibilitySchedule object from which this instance was created. Supports $filter (eq, ne).
       - `[StartDateTime <DateTime?>]`: When this instance starts.
-    - `[AssignmentType <String>]`: The type of the assignment that can either be Assigned or Activated. Supports $filter (eq, ne).
+    - `[AssignmentType <String>]`: Type of the assignment which can either be Assigned or Activated. Supports $filter (eq, ne).
     - `[EndDateTime <DateTime?>]`: The end date of the schedule instance.
-    - `[MemberType <String>]`: How the assignment is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleAssignmentSchedule can be managed by the caller. Supports $filter (eq, ne).
+    - `[MemberType <String>]`: How the assignments is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleAssignmentSchedule can be managed by the caller. Supports $filter (eq, ne).
     - `[RoleAssignmentOriginId <String>]`: The identifier of the role assignment in Microsoft Entra. Supports $filter (eq, ne).
     - `[RoleAssignmentScheduleId <String>]`: The identifier of the unifiedRoleAssignmentSchedule object from which this instance was created. Supports $filter (eq, ne).
     - `[StartDateTime <DateTime?>]`: When this instance starts.
@@ -742,8 +709,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[Status <String>]`: The status of the role assignment or eligibility request.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[ActivatedUsing <IMicrosoftGraphUnifiedRoleEligibilitySchedule>]`: unifiedRoleEligibilitySchedule
-      - `[AssignmentType <String>]`: The type of the assignment that can either be Assigned or Activated. Supports $filter (eq, ne).
-      - `[MemberType <String>]`: How the assignment is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleAssignmentSchedule can be managed by the caller. Supports $filter (eq, ne).
+      - `[AssignmentType <String>]`: Type of the assignment which can either be Assigned or Activated. Supports $filter (eq, ne).
+      - `[MemberType <String>]`: How the assignments is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleAssignmentSchedule can be managed by the caller. Supports $filter (eq, ne).
       - `[ScheduleInfo <IMicrosoftGraphRequestSchedule>]`: requestSchedule
     - `[TargetScheduleId <String>]`: Identifier of the schedule object that's linked to the assignment request. Supports $filter (eq, ne).
     - `[TicketInfo <IMicrosoftGraphTicketInfo>]`: ticketInfo

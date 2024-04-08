@@ -17,22 +17,22 @@ Update the navigation property tenantsDetailedInformation in tenantRelationships
 Update-MgBetaTenantRelationshipManagedTenantDetailedInformation -TenantDetailedInformationId <String>
  [-AdditionalProperties <Hashtable>] [-City <String>] [-CountryCode <String>] [-CountryName <String>]
  [-DefaultDomainName <String>] [-DisplayName <String>] [-Id <String>] [-IndustryName <String>]
- [-Region <String>] [-ResponseHeadersVariable <String>] [-SegmentName <String>] [-TenantId <String>]
- [-VerticalName <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Region <String>] [-SegmentName <String>] [-TenantId <String>] [-VerticalName <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaTenantRelationshipManagedTenantDetailedInformation -TenantDetailedInformationId <String>
- -BodyParameter <IMicrosoftGraphManagedTenantsTenantDetailedInformation> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphManagedTenantsTenantDetailedInformation> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaTenantRelationshipManagedTenantDetailedInformation -InputObject <IManagedTenantsIdentity>
- -BodyParameter <IMicrosoftGraphManagedTenantsTenantDetailedInformation> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphManagedTenantsTenantDetailedInformation> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -40,8 +40,8 @@ Update-MgBetaTenantRelationshipManagedTenantDetailedInformation -InputObject <IM
 Update-MgBetaTenantRelationshipManagedTenantDetailedInformation -InputObject <IManagedTenantsIdentity>
  [-AdditionalProperties <Hashtable>] [-City <String>] [-CountryCode <String>] [-CountryName <String>]
  [-DefaultDomainName <String>] [-DisplayName <String>] [-Id <String>] [-IndustryName <String>]
- [-Region <String>] [-ResponseHeadersVariable <String>] [-SegmentName <String>] [-TenantId <String>]
- [-VerticalName <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Region <String>] [-SegmentName <String>] [-TenantId <String>] [-VerticalName <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -179,21 +179,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -252,21 +237,6 @@ Read-only.
 Type: System.String
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -378,8 +348,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IManagedTenantsIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsTenantDetailedInformation
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

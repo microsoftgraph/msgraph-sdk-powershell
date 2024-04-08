@@ -20,22 +20,20 @@ New-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPayment -CompanyId <Stri
  [-Customer <IMicrosoftGraphCustomer>] [-CustomerId <String>] [-CustomerNumber <String>]
  [-Description <String>] [-DocumentNumber <String>] [-ExternalDocumentNumber <String>] [-Id <String>]
  [-JournalDisplayName <String>] [-LastModifiedDateTime <DateTime>] [-LineNumber <Int32>]
- [-PostingDate <DateTime>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-PostingDate <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPayment -CompanyId <String>
- -CustomerPaymentJournalId <String> -BodyParameter <IMicrosoftGraphCustomerPayment>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -CustomerPaymentJournalId <String> -BodyParameter <IMicrosoftGraphCustomerPayment> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPayment -InputObject <IFinancialsIdentity>
- -BodyParameter <IMicrosoftGraphCustomerPayment> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphCustomerPayment> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -46,8 +44,7 @@ New-MgBetaFinancialCompanyCustomerPaymentJournalCustomerPayment -InputObject <IF
  [-Customer <IMicrosoftGraphCustomer>] [-CustomerId <String>] [-CustomerNumber <String>]
  [-Description <String>] [-DocumentNumber <String>] [-ExternalDocumentNumber <String>] [-Id <String>]
  [-JournalDisplayName <String>] [-LastModifiedDateTime <DateTime>] [-LineNumber <Int32>]
- [-PostingDate <DateTime>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-PostingDate <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -298,21 +295,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 .
 
@@ -404,21 +386,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
@@ -458,8 +425,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCustomerPayment
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

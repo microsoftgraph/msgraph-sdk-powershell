@@ -14,18 +14,17 @@ Create a new scheduledPermissionsRequest object.
 
 ### CreateExpanded (Default)
 ```
-New-MgBetaIdentityGovernancePermissionManagementScheduledPermissionRequest [-Action <String>]
- [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>] [-Id <String>] [-Justification <String>]
- [-Notes <String>] [-RequestedPermissions <IMicrosoftGraphPermissionsDefinition>]
- [-ResponseHeadersVariable <String>] [-ScheduleInfo <IMicrosoftGraphRequestSchedule>] [-StatusDetail <String>]
- [-TicketInfo <IMicrosoftGraphTicketInfo>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaIdentityGovernancePermissionManagementScheduledPermissionRequest [-AdditionalProperties <Hashtable>]
+ [-CreatedDateTime <DateTime>] [-Id <String>] [-Justification <String>] [-Notes <String>]
+ [-RequestedPermissions <IMicrosoftGraphPermissionsDefinition>]
+ [-ScheduleInfo <IMicrosoftGraphRequestSchedule>] [-StatusDetail <String>]
+ [-TicketInfo <IMicrosoftGraphTicketInfo>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaIdentityGovernancePermissionManagementScheduledPermissionRequest
- -BodyParameter <IMicrosoftGraphScheduledPermissionsRequest> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphScheduledPermissionsRequest> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -48,21 +47,6 @@ Create a new scheduledPermissionsRequest object.
 
 
 ## PARAMETERS
-
-### -Action
-unifiedRoleScheduleRequestActions
-
-```yaml
-Type: System.String
-Parameter Sets: CreateExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### -AdditionalProperties
 Additional Parameters
@@ -107,21 +91,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -179,21 +148,6 @@ To construct, see NOTES section for REQUESTEDPERMISSIONS properties and create a
 Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPermissionsDefinition
 Parameter Sets: CreateExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -287,8 +241,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphScheduledPermissionsRequest
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphScheduledPermissionsRequest
@@ -305,7 +257,6 @@ To create the parameters described below, construct a hash table containing the 
 `BODYPARAMETER <IMicrosoftGraphScheduledPermissionsRequest>`: scheduledPermissionsRequest
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[Action <String>]`: unifiedRoleScheduleRequestActions
   - `[CreatedDateTime <DateTime?>]`: Defines when the identity created the request.
   - `[Justification <String>]`: The identity's justification for the request.
   - `[Notes <String>]`: Additional context for the permissions request.

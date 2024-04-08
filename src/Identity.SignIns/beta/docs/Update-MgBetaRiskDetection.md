@@ -18,23 +18,22 @@ Update-MgBetaRiskDetection -RiskDetectionId <String> [-Activity <String>] [-Acti
  [-AdditionalInfo <String>] [-AdditionalProperties <Hashtable>] [-CorrelationId <String>]
  [-DetectedDateTime <DateTime>] [-DetectionTimingType <String>] [-Id <String>] [-IPAddress <String>]
  [-LastUpdatedDateTime <DateTime>] [-Location <IMicrosoftGraphSignInLocation>] [-MitreTechniqueId <String>]
- [-RequestId <String>] [-ResponseHeadersVariable <String>] [-RiskDetail <String>] [-RiskEventType <String>]
- [-RiskLevel <String>] [-RiskState <String>] [-RiskType <String>] [-Source <String>]
- [-TokenIssuerType <String>] [-UserDisplayName <String>] [-UserId <String>] [-UserPrincipalName <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-RequestId <String>] [-RiskDetail <String>] [-RiskEventType <String>] [-RiskLevel <String>]
+ [-RiskState <String>] [-RiskType <String>] [-Source <String>] [-TokenIssuerType <String>]
+ [-UserDisplayName <String>] [-UserId <String>] [-UserPrincipalName <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgBetaRiskDetection -RiskDetectionId <String> -BodyParameter <IMicrosoftGraphRiskDetection>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgBetaRiskDetection -RiskDetectionId <String> -BodyParameter <IMicrosoftGraphRiskDetection> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaRiskDetection -InputObject <IIdentitySignInsIdentity>
- -BodyParameter <IMicrosoftGraphRiskDetection> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphRiskDetection> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -43,10 +42,10 @@ Update-MgBetaRiskDetection -InputObject <IIdentitySignInsIdentity> [-Activity <S
  [-ActivityDateTime <DateTime>] [-AdditionalInfo <String>] [-AdditionalProperties <Hashtable>]
  [-CorrelationId <String>] [-DetectedDateTime <DateTime>] [-DetectionTimingType <String>] [-Id <String>]
  [-IPAddress <String>] [-LastUpdatedDateTime <DateTime>] [-Location <IMicrosoftGraphSignInLocation>]
- [-MitreTechniqueId <String>] [-RequestId <String>] [-ResponseHeadersVariable <String>] [-RiskDetail <String>]
- [-RiskEventType <String>] [-RiskLevel <String>] [-RiskState <String>] [-RiskType <String>] [-Source <String>]
+ [-MitreTechniqueId <String>] [-RequestId <String>] [-RiskDetail <String>] [-RiskEventType <String>]
+ [-RiskLevel <String>] [-RiskState <String>] [-RiskType <String>] [-Source <String>]
  [-TokenIssuerType <String>] [-UserDisplayName <String>] [-UserId <String>] [-UserPrincipalName <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -196,21 +195,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -320,21 +304,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -RiskDetail
 riskDetail
 
@@ -367,8 +336,8 @@ Accept wildcard characters: False
 
 ### -RiskEventType
 The type of risk event detected.
-The possible values are adminConfirmedUserCompromised, anomalousUserActivity, anonymizedIPAddress, generic, investigationsThreatIntelligence, investigationsThreatIntelligenceSigninLinked,leakedCredentials, maliciousIPAddress, maliciousIPAddressValidCredentialsBlockedIP, malwareInfectedIPAddress, mcasImpossibleTravel, mcasSuspiciousInboxManipulationRules, suspiciousAPITraffic, suspiciousIPAddress, unfamiliarFeatures, unlikelyTravel, userReportedSuspiciousActivity.
-For more information about each value, see Risk types and detection.
+The possible values are unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence, generic,adminConfirmedUserCompromised, mcasImpossibleTravel, mcasSuspiciousInboxManipulationRules, investigationsThreatIntelligenceSigninLinked, maliciousIPAddressValidCredentialsBlockedIP, anomalousUserActivity, userReportedSuspiciousActivity.
+For more information about each value, see riskEventType values.
 
 ```yaml
 Type: System.String
@@ -545,8 +514,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRiskDetection
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRiskDetection
@@ -584,7 +551,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[MitreTechniqueId <String>]`: 
   - `[RequestId <String>]`: Request ID of the sign-in associated with the risk detection. This property is null if the risk detection is not associated with a sign-in.
   - `[RiskDetail <String>]`: riskDetail
-  - `[RiskEventType <String>]`: The type of risk event detected. The possible values are adminConfirmedUserCompromised, anomalousUserActivity, anonymizedIPAddress, generic, investigationsThreatIntelligence, investigationsThreatIntelligenceSigninLinked,leakedCredentials, maliciousIPAddress, maliciousIPAddressValidCredentialsBlockedIP, malwareInfectedIPAddress, mcasImpossibleTravel, mcasSuspiciousInboxManipulationRules, suspiciousAPITraffic, suspiciousIPAddress,   unfamiliarFeatures, unlikelyTravel, userReportedSuspiciousActivity.  For more information about each value, see Risk types and detection.
+  - `[RiskEventType <String>]`: The type of risk event detected. The possible values are unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence, generic,adminConfirmedUserCompromised, mcasImpossibleTravel, mcasSuspiciousInboxManipulationRules, investigationsThreatIntelligenceSigninLinked, maliciousIPAddressValidCredentialsBlockedIP, anomalousUserActivity, userReportedSuspiciousActivity.  For more information about each value, see riskEventType values.
   - `[RiskLevel <String>]`: riskLevel
   - `[RiskState <String>]`: riskState
   - `[RiskType <String>]`: riskEventType

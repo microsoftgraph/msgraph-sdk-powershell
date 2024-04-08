@@ -18,22 +18,20 @@ Update-MgCommunicationCallRecordSession -CallRecordId <String> -SessionId <Strin
  [-AdditionalProperties <Hashtable>] [-Callee <IMicrosoftGraphCallRecordsEndpoint>]
  [-Caller <IMicrosoftGraphCallRecordsEndpoint>] [-EndDateTime <DateTime>]
  [-FailureInfo <IMicrosoftGraphCallRecordsFailureInfo>] [-Id <String>] [-IsTest] [-Modalities <String[]>]
- [-ResponseHeadersVariable <String>] [-Segments <IMicrosoftGraphCallRecordsSegment[]>]
- [-StartDateTime <DateTime>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Segments <IMicrosoftGraphCallRecordsSegment[]>] [-StartDateTime <DateTime>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgCommunicationCallRecordSession -CallRecordId <String> -SessionId <String>
- -BodyParameter <IMicrosoftGraphCallRecordsSession> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphCallRecordsSession> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgCommunicationCallRecordSession -InputObject <ICloudCommunicationsIdentity>
- -BodyParameter <IMicrosoftGraphCallRecordsSession> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphCallRecordsSession> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -42,8 +40,8 @@ Update-MgCommunicationCallRecordSession -InputObject <ICloudCommunicationsIdenti
  [-AdditionalProperties <Hashtable>] [-Callee <IMicrosoftGraphCallRecordsEndpoint>]
  [-Caller <IMicrosoftGraphCallRecordsEndpoint>] [-EndDateTime <DateTime>]
  [-FailureInfo <IMicrosoftGraphCallRecordsFailureInfo>] [-Id <String>] [-IsTest] [-Modalities <String[]>]
- [-ResponseHeadersVariable <String>] [-Segments <IMicrosoftGraphCallRecordsSegment[]>]
- [-StartDateTime <DateTime>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Segments <IMicrosoftGraphCallRecordsSegment[]>] [-StartDateTime <DateTime>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -178,21 +176,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -248,21 +231,6 @@ Possible values are: unknown, audio, video, videoBasedScreenSharing, data, scree
 Type: System.String[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -360,8 +328,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCallRecordsSession
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

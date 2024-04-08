@@ -15,31 +15,28 @@ Cancel the specified bookingAppointment in the specified bookingBusiness, and se
 ### CancelExpanded (Default)
 ```
 Stop-MgBetaBookingBusinessAppointment -BookingAppointmentId <String> -BookingBusinessId <String>
- [-AdditionalProperties <Hashtable>] [-CancellationMessage <String>] [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-CancellationMessage <String>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Cancel
 ```
 Stop-MgBetaBookingBusinessAppointment -BookingAppointmentId <String> -BookingBusinessId <String>
- -BodyParameter <IPaths17354LzSolutionsBookingbusinessesBookingbusinessIdAppointmentsBookingappointmentIdMicrosoftGraphCancelPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IPaths1K88Cl0BookingbusinessesBookingbusinessIdAppointmentsBookingappointmentIdMicrosoftGraphCancelPostRequestbodyContentApplicationJsonSchema>
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CancelViaIdentity
 ```
 Stop-MgBetaBookingBusinessAppointment -InputObject <IBookingsIdentity>
- -BodyParameter <IPaths17354LzSolutionsBookingbusinessesBookingbusinessIdAppointmentsBookingappointmentIdMicrosoftGraphCancelPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -BodyParameter <IPaths1K88Cl0BookingbusinessesBookingbusinessIdAppointmentsBookingappointmentIdMicrosoftGraphCancelPostRequestbodyContentApplicationJsonSchema>
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CancelViaIdentityExpanded
 ```
 Stop-MgBetaBookingBusinessAppointment -InputObject <IBookingsIdentity> [-AdditionalProperties <Hashtable>]
- [-CancellationMessage <String>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-CancellationMessage <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -50,14 +47,13 @@ Cancel the specified bookingAppointment in the specified bookingBusiness, and se
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Bookings
+$params = @{
+	CancellationMessage = "Your appointment has been successfully cancelled. Please call us again."
+}
+Stop-MgBetaBookingBusinessAppointment -BookingBusinessId $bookingBusinessId -BookingAppointmentId $bookingAppointmentId -BodyParameter $params
 ```
 
-$params = @{
-	cancellationMessage = "Your appointment has been successfully cancelled.
-Please call us again."
-}
 
-Stop-MgBetaBookingBusinessAppointment -BookingBusinessId $bookingBusinessId -BookingAppointmentId $bookingAppointmentId -BodyParameter $params
 
 ## PARAMETERS
 
@@ -81,7 +77,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths17354LzSolutionsBookingbusinessesBookingbusinessIdAppointmentsBookingappointmentIdMicrosoftGraphCancelPostRequestbodyContentApplicationJsonSchema
+Type: Microsoft.Graph.Beta.PowerShell.Models.IPaths1K88Cl0BookingbusinessesBookingbusinessIdAppointmentsBookingappointmentIdMicrosoftGraphCancelPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Cancel, CancelViaIdentity
 Aliases:
 
@@ -137,21 +133,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -175,21 +156,6 @@ Returns true when the command succeeds
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -236,9 +202,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IBookingsIdentity
 
-### Microsoft.Graph.Beta.PowerShell.Models.IPaths17354LzSolutionsBookingbusinessesBookingbusinessIdAppointmentsBookingappointmentIdMicrosoftGraphCancelPostRequestbodyContentApplicationJsonSchema
-
-### System.Collections.IDictionary
+### Microsoft.Graph.Beta.PowerShell.Models.IPaths1K88Cl0BookingbusinessesBookingbusinessIdAppointmentsBookingappointmentIdMicrosoftGraphCancelPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
@@ -253,7 +217,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-`BODYPARAMETER <IPaths17354LzSolutionsBookingbusinessesBookingbusinessIdAppointmentsBookingappointmentIdMicrosoftGraphCancelPostRequestbodyContentApplicationJsonSchema>`: .
+`BODYPARAMETER <IPaths1K88Cl0BookingbusinessesBookingbusinessIdAppointmentsBookingappointmentIdMicrosoftGraphCancelPostRequestbodyContentApplicationJsonSchema>`: .
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[CancellationMessage <String>]`: 
 
@@ -268,13 +232,10 @@ To create the parameters described below, construct a hash table containing the 
   - `[BookingStaffMemberId <String>]`: The unique identifier of bookingStaffMember
   - `[BusinessScenarioId <String>]`: The unique identifier of businessScenario
   - `[BusinessScenarioTaskId <String>]`: The unique identifier of businessScenarioTask
-  - `[Email <String>]`: Alternate key of virtualEventRegistration
-  - `[JoinWebUrl <String>]`: Alternate key of virtualEventSession
   - `[MeetingAttendanceReportId <String>]`: The unique identifier of meetingAttendanceReport
   - `[PlannerPlanConfigurationLocalizationId <String>]`: The unique identifier of plannerPlanConfigurationLocalization
   - `[Role <String>]`: Usage: role='{role}'
-  - `[UniqueName <String>]`: Alternate key of businessScenario
-  - `[UserId <String>]`: Alternate key of virtualEventRegistration
+  - `[UserId <String>]`: Usage: userId='{userId}'
   - `[VirtualEventId <String>]`: The unique identifier of virtualEvent
   - `[VirtualEventPresenterId <String>]`: The unique identifier of virtualEventPresenter
   - `[VirtualEventRegistrationId <String>]`: The unique identifier of virtualEventRegistration

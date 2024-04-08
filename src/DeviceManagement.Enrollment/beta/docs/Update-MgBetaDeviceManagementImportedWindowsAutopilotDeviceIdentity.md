@@ -17,25 +17,25 @@ Update the navigation property importedWindowsAutopilotDeviceIdentities in devic
 Update-MgBetaDeviceManagementImportedWindowsAutopilotDeviceIdentity
  -ImportedWindowsAutopilotDeviceIdentityId <String> [-AdditionalProperties <Hashtable>]
  [-AssignedUserPrincipalName <String>] [-GroupTag <String>] [-HardwareIdentifierInputFile <String>]
- [-Id <String>] [-ImportId <String>] [-ProductKey <String>] [-ResponseHeadersVariable <String>]
- [-SerialNumber <String>] [-State <IMicrosoftGraphImportedWindowsAutopilotDeviceIdentityState>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-ImportId <String>] [-ProductKey <String>] [-SerialNumber <String>]
+ [-State <IMicrosoftGraphImportedWindowsAutopilotDeviceIdentityState>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaDeviceManagementImportedWindowsAutopilotDeviceIdentity
  -ImportedWindowsAutopilotDeviceIdentityId <String>
- -BodyParameter <IMicrosoftGraphImportedWindowsAutopilotDeviceIdentity> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphImportedWindowsAutopilotDeviceIdentity> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaDeviceManagementImportedWindowsAutopilotDeviceIdentity
  -InputObject <IDeviceManagementEnrollmentIdentity>
- -BodyParameter <IMicrosoftGraphImportedWindowsAutopilotDeviceIdentity> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphImportedWindowsAutopilotDeviceIdentity> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -43,9 +43,9 @@ Update-MgBetaDeviceManagementImportedWindowsAutopilotDeviceIdentity
 Update-MgBetaDeviceManagementImportedWindowsAutopilotDeviceIdentity
  -InputObject <IDeviceManagementEnrollmentIdentity> [-AdditionalProperties <Hashtable>]
  [-AssignedUserPrincipalName <String>] [-GroupTag <String>] [-HardwareIdentifierInputFile <String>]
- [-Id <String>] [-ImportId <String>] [-ProductKey <String>] [-ResponseHeadersVariable <String>]
- [-SerialNumber <String>] [-State <IMicrosoftGraphImportedWindowsAutopilotDeviceIdentityState>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-ImportId <String>] [-ProductKey <String>] [-SerialNumber <String>]
+ [-State <IMicrosoftGraphImportedWindowsAutopilotDeviceIdentityState>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -145,21 +145,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -229,21 +214,6 @@ Product Key of the Windows autopilot device.
 Type: System.String
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -323,8 +293,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphImportedWindowsAutopilotDeviceIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphImportedWindowsAutopilotDeviceIdentity
@@ -360,7 +328,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[AppScopeId <String>]`: The unique identifier of appScope
   - `[AppleEnrollmentProfileAssignmentId <String>]`: The unique identifier of appleEnrollmentProfileAssignment
   - `[AppleUserInitiatedEnrollmentProfileId <String>]`: The unique identifier of appleUserInitiatedEnrollmentProfile
-  - `[CustomAppScopeId <String>]`: The unique identifier of customAppScope
   - `[DepOnboardingSettingId <String>]`: The unique identifier of depOnboardingSetting
   - `[DeviceEnrollmentConfigurationId <String>]`: The unique identifier of deviceEnrollmentConfiguration
   - `[DeviceManagementAutopilotEventId <String>]`: The unique identifier of deviceManagementAutopilotEvent
@@ -373,7 +340,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[ImportedWindowsAutopilotDeviceIdentityId <String>]`: The unique identifier of importedWindowsAutopilotDeviceIdentity
   - `[UnifiedRbacResourceActionId <String>]`: The unique identifier of unifiedRbacResourceAction
   - `[UnifiedRbacResourceNamespaceId <String>]`: The unique identifier of unifiedRbacResourceNamespace
-  - `[UnifiedRoleAssignmentId <String>]`: The unique identifier of unifiedRoleAssignment
   - `[UnifiedRoleAssignmentMultipleId <String>]`: The unique identifier of unifiedRoleAssignmentMultiple
   - `[UnifiedRoleDefinitionId <String>]`: The unique identifier of unifiedRoleDefinition
   - `[UnifiedRoleDefinitionId1 <String>]`: The unique identifier of unifiedRoleDefinition

@@ -15,29 +15,25 @@ Delete navigation property analytics for sites
 ### Delete (Default)
 ```
 Remove-MgBetaSiteGetByPathAnalytic -Path <String> -SiteId <String> [-IfMatch <String>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Delete1
 ```
 Remove-MgBetaSiteGetByPathAnalytic -Path <String> -Path1 <String> -SiteId <String> [-IfMatch <String>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgBetaSiteGetByPathAnalytic -InputObject <ISitesIdentity> [-IfMatch <String>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Remove-MgBetaSiteGetByPathAnalytic -InputObject <ISitesIdentity> [-IfMatch <String>] [-Headers <IDictionary>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity1
 ```
-Remove-MgBetaSiteGetByPathAnalytic -InputObject <ISitesIdentity> [-IfMatch <String>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Remove-MgBetaSiteGetByPathAnalytic -InputObject <ISitesIdentity> [-IfMatch <String>] [-Headers <IDictionary>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -146,21 +142,6 @@ Parameter Sets: Delete1
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False

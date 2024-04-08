@@ -17,24 +17,24 @@ Update the navigation property userExperienceAnalyticsAppHealthOSVersionPerforma
 Update-MgDeviceManagementUserExperienceAnalyticAppHealthOSVersionPerformance
  -UserExperienceAnalyticsAppHealthOSVersionPerformanceId <String> [-ActiveDeviceCount <Int32>]
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-MeanTimeToFailureInMinutes <Int32>]
- [-OSBuildNumber <String>] [-OSVersion <String>] [-OSVersionAppHealthScore <Double>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-OSBuildNumber <String>] [-OSVersion <String>] [-OSVersionAppHealthScore <Double>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgDeviceManagementUserExperienceAnalyticAppHealthOSVersionPerformance
  -UserExperienceAnalyticsAppHealthOSVersionPerformanceId <String>
- -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsAppHealthOSVersionPerformance>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsAppHealthOSVersionPerformance> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgDeviceManagementUserExperienceAnalyticAppHealthOSVersionPerformance
  -InputObject <IDeviceManagementIdentity>
- -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsAppHealthOSVersionPerformance>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsAppHealthOSVersionPerformance> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -42,8 +42,7 @@ Update-MgDeviceManagementUserExperienceAnalyticAppHealthOSVersionPerformance
 Update-MgDeviceManagementUserExperienceAnalyticAppHealthOSVersionPerformance
  -InputObject <IDeviceManagementIdentity> [-ActiveDeviceCount <Int32>] [-AdditionalProperties <Hashtable>]
  [-Id <String>] [-MeanTimeToFailureInMinutes <Int32>] [-OSBuildNumber <String>] [-OSVersion <String>]
- [-OSVersionAppHealthScore <Double>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-OSVersionAppHealthScore <Double>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -111,21 +110,6 @@ Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -236,21 +220,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -UserExperienceAnalyticsAppHealthOSVersionPerformanceId
 The unique identifier of userExperienceAnalyticsAppHealthOSVersionPerformance
 
@@ -305,8 +274,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsAppHealthOSVersionPerformance
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

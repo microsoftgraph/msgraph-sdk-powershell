@@ -16,30 +16,28 @@ Install an app to the specified team.
 ```
 New-MgBetaTeamInstalledApp -TeamId <String> [-AdditionalProperties <Hashtable>]
  [-ConsentedPermissionSet <IMicrosoftGraphTeamsAppPermissionSet>] [-Id <String>]
- [-ResponseHeadersVariable <String>] [-TeamsApp <IMicrosoftGraphTeamsApp>]
- [-TeamsAppDefinition <IMicrosoftGraphTeamsAppDefinition>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-TeamsApp <IMicrosoftGraphTeamsApp>] [-TeamsAppDefinition <IMicrosoftGraphTeamsAppDefinition>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgBetaTeamInstalledApp -TeamId <String> -BodyParameter <IMicrosoftGraphTeamsAppInstallation>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaTeamInstalledApp -TeamId <String> -BodyParameter <IMicrosoftGraphTeamsAppInstallation> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaTeamInstalledApp -InputObject <ITeamsIdentity> -BodyParameter <IMicrosoftGraphTeamsAppInstallation>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgBetaTeamInstalledApp -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
  [-ConsentedPermissionSet <IMicrosoftGraphTeamsAppPermissionSet>] [-Id <String>]
- [-ResponseHeadersVariable <String>] [-TeamsApp <IMicrosoftGraphTeamsApp>]
- [-TeamsAppDefinition <IMicrosoftGraphTeamsAppDefinition>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-TeamsApp <IMicrosoftGraphTeamsApp>] [-TeamsAppDefinition <IMicrosoftGraphTeamsAppDefinition>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -130,21 +128,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -174,21 +157,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -279,8 +247,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTeamsAppInstallation
@@ -332,22 +298,6 @@ To create the parameters described below, construct a hash table containing the 
           - `[Id <String>]`: The identifier of the identity. This property is read-only.
         - `[Device <IMicrosoftGraphIdentity>]`: identity
         - `[User <IMicrosoftGraphIdentity>]`: identity
-      - `[DashboardCards <IMicrosoftGraphTeamsAppDashboardCardDefinition[]>]`: Dashboard cards specified in the Teams app manifest.
-        - `[Id <String>]`: The unique identifier for an entity. Read-only.
-        - `[ContentSource <IMicrosoftGraphTeamsAppDashboardCardContentSource>]`: teamsAppDashboardCardContentSource
-          - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[BotConfiguration <IMicrosoftGraphTeamsAppDashboardCardBotConfiguration>]`: teamsAppDashboardCardBotConfiguration
-            - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[BotId <String>]`: The ID (usually a GUID) of the bot associated with the specific teamsAppDefinition. This is a unique app ID for the bot as registered with the Bot Framework.
-          - `[SourceType <String>]`: teamsAppDashboardCardSourceType
-        - `[DefaultSize <String>]`: teamsAppDashboardCardSize
-        - `[Description <String>]`: The description for the card. Required.
-        - `[DisplayName <String>]`: The name of the card. Required.
-        - `[Icon <IMicrosoftGraphTeamsAppDashboardCardIcon>]`: teamsAppDashboardCardIcon
-          - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[IconUrl <String>]`: The icon for the card, displayed in the toolbox and card bar, is represented as a URL. The preferred size for raster images is 28x28 pixels. If this property has a value, the officeFabricIconFontName property is ignored.
-          - `[OfficeUiFabricIconName <String>]`: The friendly name of the Office UI Fabric/Fluent UI icon for the card that is used when the iconUrl property isn't specified. For example, 'officeUIFabricIconName': 'Search'.
-        - `[PickerGroupId <String>]`: ID for the group in the card picker. Required.
       - `[Description <String>]`: 
       - `[DisplayName <String>]`: The name of the app provided by the app developer.
       - `[LastModifiedDateTime <DateTime?>]`: 
@@ -387,12 +337,10 @@ To create the parameters described below, construct a hash table containing the 
   - `[SchedulingGroupId <String>]`: The unique identifier of schedulingGroup
   - `[SharedWithChannelTeamInfoId <String>]`: The unique identifier of sharedWithChannelTeamInfo
   - `[ShiftId <String>]`: The unique identifier of shift
-  - `[ShiftsRoleDefinitionId <String>]`: The unique identifier of shiftsRoleDefinition
   - `[SwapShiftsChangeRequestId <String>]`: The unique identifier of swapShiftsChangeRequest
   - `[TeamId <String>]`: The unique identifier of team
   - `[TeamTemplateDefinitionId <String>]`: The unique identifier of teamTemplateDefinition
   - `[TeamTemplateId <String>]`: The unique identifier of teamTemplate
-  - `[TeamsAppDashboardCardDefinitionId <String>]`: The unique identifier of teamsAppDashboardCardDefinition
   - `[TeamsAppDefinitionId <String>]`: The unique identifier of teamsAppDefinition
   - `[TeamsAppId <String>]`: The unique identifier of teamsApp
   - `[TeamsAppInstallationId <String>]`: The unique identifier of teamsAppInstallation
@@ -444,22 +392,6 @@ To create the parameters described below, construct a hash table containing the 
         - `[Id <String>]`: The identifier of the identity. This property is read-only.
       - `[Device <IMicrosoftGraphIdentity>]`: identity
       - `[User <IMicrosoftGraphIdentity>]`: identity
-    - `[DashboardCards <IMicrosoftGraphTeamsAppDashboardCardDefinition[]>]`: Dashboard cards specified in the Teams app manifest.
-      - `[Id <String>]`: The unique identifier for an entity. Read-only.
-      - `[ContentSource <IMicrosoftGraphTeamsAppDashboardCardContentSource>]`: teamsAppDashboardCardContentSource
-        - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[BotConfiguration <IMicrosoftGraphTeamsAppDashboardCardBotConfiguration>]`: teamsAppDashboardCardBotConfiguration
-          - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[BotId <String>]`: The ID (usually a GUID) of the bot associated with the specific teamsAppDefinition. This is a unique app ID for the bot as registered with the Bot Framework.
-        - `[SourceType <String>]`: teamsAppDashboardCardSourceType
-      - `[DefaultSize <String>]`: teamsAppDashboardCardSize
-      - `[Description <String>]`: The description for the card. Required.
-      - `[DisplayName <String>]`: The name of the card. Required.
-      - `[Icon <IMicrosoftGraphTeamsAppDashboardCardIcon>]`: teamsAppDashboardCardIcon
-        - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[IconUrl <String>]`: The icon for the card, displayed in the toolbox and card bar, is represented as a URL. The preferred size for raster images is 28x28 pixels. If this property has a value, the officeFabricIconFontName property is ignored.
-        - `[OfficeUiFabricIconName <String>]`: The friendly name of the Office UI Fabric/Fluent UI icon for the card that is used when the iconUrl property isn't specified. For example, 'officeUIFabricIconName': 'Search'.
-      - `[PickerGroupId <String>]`: ID for the group in the card picker. Required.
     - `[Description <String>]`: 
     - `[DisplayName <String>]`: The name of the app provided by the app developer.
     - `[LastModifiedDateTime <DateTime?>]`: 
@@ -504,22 +436,6 @@ To create the parameters described below, construct a hash table containing the 
       - `[Id <String>]`: The identifier of the identity. This property is read-only.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
-  - `[DashboardCards <IMicrosoftGraphTeamsAppDashboardCardDefinition[]>]`: Dashboard cards specified in the Teams app manifest.
-    - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[ContentSource <IMicrosoftGraphTeamsAppDashboardCardContentSource>]`: teamsAppDashboardCardContentSource
-      - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[BotConfiguration <IMicrosoftGraphTeamsAppDashboardCardBotConfiguration>]`: teamsAppDashboardCardBotConfiguration
-        - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[BotId <String>]`: The ID (usually a GUID) of the bot associated with the specific teamsAppDefinition. This is a unique app ID for the bot as registered with the Bot Framework.
-      - `[SourceType <String>]`: teamsAppDashboardCardSourceType
-    - `[DefaultSize <String>]`: teamsAppDashboardCardSize
-    - `[Description <String>]`: The description for the card. Required.
-    - `[DisplayName <String>]`: The name of the card. Required.
-    - `[Icon <IMicrosoftGraphTeamsAppDashboardCardIcon>]`: teamsAppDashboardCardIcon
-      - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[IconUrl <String>]`: The icon for the card, displayed in the toolbox and card bar, is represented as a URL. The preferred size for raster images is 28x28 pixels. If this property has a value, the officeFabricIconFontName property is ignored.
-      - `[OfficeUiFabricIconName <String>]`: The friendly name of the Office UI Fabric/Fluent UI icon for the card that is used when the iconUrl property isn't specified. For example, 'officeUIFabricIconName': 'Search'.
-    - `[PickerGroupId <String>]`: ID for the group in the card picker. Required.
   - `[Description <String>]`: 
   - `[DisplayName <String>]`: The name of the app provided by the app developer.
   - `[LastModifiedDateTime <DateTime?>]`: 

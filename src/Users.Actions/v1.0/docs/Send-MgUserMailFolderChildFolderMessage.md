@@ -18,14 +18,12 @@ Alternatively, send a new message in a single operation.
 ### Send (Default)
 ```
 Send-MgUserMailFolderChildFolderMessage -MailFolderId <String> -MailFolderId1 <String> -MessageId <String>
- -UserId <String> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -UserId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SendViaIdentity
 ```
-Send-MgUserMailFolderChildFolderMessage -InputObject <IUsersActionsIdentity>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
+Send-MgUserMailFolderChildFolderMessage -InputObject <IUsersActionsIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -46,21 +44,6 @@ Import-Module Microsoft.Graph.Users.Actions
 Send-MgUserMessage -UserId $userId -MessageId $messageId
 
 ## PARAMETERS
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
 
 ### -InputObject
 Identity Parameter
@@ -138,21 +121,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -UserId
 The unique identifier of user
 
@@ -206,8 +174,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
@@ -244,7 +210,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[NotebookId <String>]`: The unique identifier of notebook
   - `[OnenotePageId <String>]`: The unique identifier of onenotePage
   - `[OnenoteSectionId <String>]`: The unique identifier of onenoteSection
-  - `[OnlineMeetingId <String>]`: The unique identifier of onlineMeeting
   - `[PermissionId <String>]`: The unique identifier of permission
   - `[PhoneAuthenticationMethodId <String>]`: The unique identifier of phoneAuthenticationMethod
   - `[SubscriptionId <String>]`: The unique identifier of subscription

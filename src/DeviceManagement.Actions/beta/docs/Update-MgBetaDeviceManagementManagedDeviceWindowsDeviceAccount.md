@@ -15,33 +15,31 @@ Invoke action updateWindowsDeviceAccount
 ### UpdateExpanded (Default)
 ```
 Update-MgBetaDeviceManagementManagedDeviceWindowsDeviceAccount -ManagedDeviceId <String>
- [-AdditionalProperties <Hashtable>] [-ResponseHeadersVariable <String>]
+ [-AdditionalProperties <Hashtable>]
  [-UpdateWindowsDeviceAccountActionParameter <IMicrosoftGraphUpdateWindowsDeviceAccountActionParameter>]
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaDeviceManagementManagedDeviceWindowsDeviceAccount -ManagedDeviceId <String>
  -BodyParameter <IPaths1L95NseDevicemanagementManageddevicesManageddeviceIdMicrosoftGraphUpdatewindowsdeviceaccountPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaDeviceManagementManagedDeviceWindowsDeviceAccount -InputObject <IDeviceManagementActionsIdentity>
  -BodyParameter <IPaths1L95NseDevicemanagementManageddevicesManageddeviceIdMicrosoftGraphUpdatewindowsdeviceaccountPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgBetaDeviceManagementManagedDeviceWindowsDeviceAccount -InputObject <IDeviceManagementActionsIdentity>
- [-AdditionalProperties <Hashtable>] [-ResponseHeadersVariable <String>]
+ [-AdditionalProperties <Hashtable>]
  [-UpdateWindowsDeviceAccountActionParameter <IMicrosoftGraphUpdateWindowsDeviceAccountActionParameter>]
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -96,21 +94,6 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -149,21 +132,6 @@ Returns true when the command succeeds
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -228,8 +196,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPaths1L95NseDevicemanagementManageddevicesManageddeviceIdMicrosoftGraphUpdatewindowsdeviceaccountPostRequestbodyContentApplicationJsonSchema
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
@@ -247,14 +213,14 @@ To create the parameters described below, construct a hash table containing the 
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[UpdateWindowsDeviceAccountActionParameter <IMicrosoftGraphUpdateWindowsDeviceAccountActionParameter>]`: updateWindowsDeviceAccountActionParameter
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[CalendarSyncEnabled <Boolean?>]`: 
+    - `[CalendarSyncEnabled <Boolean?>]`: Not yet documented
     - `[DeviceAccount <IMicrosoftGraphWindowsDeviceAccount>]`: windowsDeviceAccount
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Password <String>]`: 
-    - `[DeviceAccountEmail <String>]`: 
-    - `[ExchangeServer <String>]`: 
-    - `[PasswordRotationEnabled <Boolean?>]`: 
-    - `[SessionInitiationProtocalAddress <String>]`: 
+      - `[Password <String>]`: Not yet documented
+    - `[DeviceAccountEmail <String>]`: Not yet documented
+    - `[ExchangeServer <String>]`: Not yet documented
+    - `[PasswordRotationEnabled <Boolean?>]`: Not yet documented
+    - `[SessionInitiationProtocalAddress <String>]`: Not yet documented
 
 `INPUTOBJECT <IDeviceManagementActionsIdentity>`: Identity Parameter
   - `[AlertRecordId <String>]`: The unique identifier of alertRecord
@@ -300,7 +266,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[MicrosoftTunnelSiteId <String>]`: The unique identifier of microsoftTunnelSite
   - `[MobileAppTroubleshootingEventId <String>]`: The unique identifier of mobileAppTroubleshootingEvent
   - `[NotificationMessageTemplateId <String>]`: The unique identifier of notificationMessageTemplate
-  - `[OperationApprovalRequestId <String>]`: The unique identifier of operationApprovalRequest
   - `[PrivilegeManagementElevationRequestId <String>]`: The unique identifier of privilegeManagementElevationRequest
   - `[RemoteAssistancePartnerId <String>]`: The unique identifier of remoteAssistancePartner
   - `[RoleScopeTagId <String>]`: The unique identifier of roleScopeTag
@@ -313,14 +278,14 @@ To create the parameters described below, construct a hash table containing the 
 
 `UPDATEWINDOWSDEVICEACCOUNTACTIONPARAMETER <IMicrosoftGraphUpdateWindowsDeviceAccountActionParameter>`: updateWindowsDeviceAccountActionParameter
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[CalendarSyncEnabled <Boolean?>]`: 
+  - `[CalendarSyncEnabled <Boolean?>]`: Not yet documented
   - `[DeviceAccount <IMicrosoftGraphWindowsDeviceAccount>]`: windowsDeviceAccount
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Password <String>]`: 
-  - `[DeviceAccountEmail <String>]`: 
-  - `[ExchangeServer <String>]`: 
-  - `[PasswordRotationEnabled <Boolean?>]`: 
-  - `[SessionInitiationProtocalAddress <String>]`: 
+    - `[Password <String>]`: Not yet documented
+  - `[DeviceAccountEmail <String>]`: Not yet documented
+  - `[ExchangeServer <String>]`: Not yet documented
+  - `[PasswordRotationEnabled <Boolean?>]`: Not yet documented
+  - `[SessionInitiationProtocalAddress <String>]`: Not yet documented
 
 ## RELATED LINKS
 

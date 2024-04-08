@@ -17,23 +17,20 @@ Update the navigation property records in security
 Update-MgBetaSecurityAuditLogQueryRecord -AuditLogQueryId <String> -AuditLogRecordId <String>
  [-AdditionalProperties <Hashtable>] [-AdministrativeUnits <String[]>] [-AuditData <Hashtable>]
  [-AuditLogRecordType <String>] [-ClientIP <String>] [-CreatedDateTime <DateTime>] [-Id <String>]
- [-ObjectId <String>] [-Operation <String>] [-OrganizationId <String>] [-ResponseHeadersVariable <String>]
- [-Service <String>] [-UserId <String>] [-UserPrincipalName <String>] [-UserType <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ObjectId <String>] [-Operation <String>] [-OrganizationId <String>] [-Service <String>] [-UserId <String>]
+ [-UserPrincipalName <String>] [-UserType <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaSecurityAuditLogQueryRecord -AuditLogQueryId <String> -AuditLogRecordId <String>
- -BodyParameter <IMicrosoftGraphSecurityAuditLogRecord> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphSecurityAuditLogRecord> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaSecurityAuditLogQueryRecord -InputObject <ISecurityIdentity>
- -BodyParameter <IMicrosoftGraphSecurityAuditLogRecord> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphSecurityAuditLogRecord> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -41,9 +38,8 @@ Update-MgBetaSecurityAuditLogQueryRecord -InputObject <ISecurityIdentity>
 Update-MgBetaSecurityAuditLogQueryRecord -InputObject <ISecurityIdentity> [-AdditionalProperties <Hashtable>]
  [-AdministrativeUnits <String[]>] [-AuditData <Hashtable>] [-AuditLogRecordType <String>]
  [-ClientIP <String>] [-CreatedDateTime <DateTime>] [-Id <String>] [-ObjectId <String>] [-Operation <String>]
- [-OrganizationId <String>] [-ResponseHeadersVariable <String>] [-Service <String>] [-UserId <String>]
- [-UserPrincipalName <String>] [-UserType <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-OrganizationId <String>] [-Service <String>] [-UserId <String>] [-UserPrincipalName <String>]
+ [-UserType <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -83,7 +79,7 @@ Accept wildcard characters: False
 ```
 
 ### -AdministrativeUnits
-The administrative units tagged to an audit log record.
+.
 
 ```yaml
 Type: System.String[]
@@ -174,8 +170,7 @@ Accept wildcard characters: False
 ```
 
 ### -ClientIP
-The IP address of the device used when the activity was logged.
-The IP address is displayed in either an IPv4 or IPv6 address format.
+.
 
 ```yaml
 Type: System.String
@@ -190,7 +185,7 @@ Accept wildcard characters: False
 ```
 
 ### -CreatedDateTime
-The date and time in UTC when the user performed the activity.
+.
 
 ```yaml
 Type: System.DateTime
@@ -201,21 +196,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -252,9 +232,7 @@ Accept wildcard characters: False
 ```
 
 ### -ObjectId
-For Exchange admin audit logging, the name of the object modified by the cmdlet.
-For SharePoint activity, the full URL path name of the file or folder accessed by a user.
-For Microsoft Entra activity, the name of the user account that was modified.
+.
 
 ```yaml
 Type: System.String
@@ -269,7 +247,7 @@ Accept wildcard characters: False
 ```
 
 ### -Operation
-The name of the user or admin activity.
+.
 
 ```yaml
 Type: System.String
@@ -284,7 +262,7 @@ Accept wildcard characters: False
 ```
 
 ### -OrganizationId
-The GUID for your organization.
+.
 
 ```yaml
 Type: System.String
@@ -298,23 +276,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Service
-The Microsoft 365 service where the activity occurred.
+.
 
 ```yaml
 Type: System.String
@@ -329,10 +292,7 @@ Accept wildcard characters: False
 ```
 
 ### -UserId
-The user who performed the action (specified in the Operation property) that resulted in the record being logged.
-Audit records for activity performed by system accounts (such as SHAREPOINT/system or NT AUTHORITY/SYSTEM) are also included in the audit log.
-Another common value for the UserId property is app@sharepoint.
-It indicates that the 'user' who performed the activity was an application with the necessary permissions in SharePoint to perform organization-wide actions (such as searching a SharePoint site or OneDrive account) on behalf of a user, admin, or service.
+.
 
 ```yaml
 Type: System.String
@@ -347,7 +307,7 @@ Accept wildcard characters: False
 ```
 
 ### -UserPrincipalName
-UPN of the user who performed the action.
+.
 
 ```yaml
 Type: System.String
@@ -416,8 +376,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityAuditLogRecord
@@ -434,23 +392,22 @@ To create the parameters described below, construct a hash table containing the 
 `BODYPARAMETER <IMicrosoftGraphSecurityAuditLogRecord>`: auditLogRecord
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[AdministrativeUnits <String[]>]`: The administrative units tagged to an audit log record.
+  - `[AdministrativeUnits <String[]>]`: 
   - `[AuditData <IMicrosoftGraphSecurityAuditData>]`: auditData
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[AuditLogRecordType <String>]`: auditLogRecordType
-  - `[ClientIP <String>]`: The IP address of the device used when the activity was logged. The IP address is displayed in either an IPv4 or IPv6 address format.
-  - `[CreatedDateTime <DateTime?>]`: The date and time in UTC when the user performed the activity.
-  - `[ObjectId <String>]`: For Exchange admin audit logging, the name of the object modified by the cmdlet. For SharePoint activity, the full URL path name of the file or folder accessed by a user. For Microsoft Entra activity, the name of the user account that was modified.
-  - `[Operation <String>]`: The name of the user or admin activity.
-  - `[OrganizationId <String>]`: The GUID for your organization.
-  - `[Service <String>]`: The Microsoft 365 service where the activity occurred.
-  - `[UserId <String>]`: The user who performed the action (specified in the Operation property) that resulted in the record being logged. Audit records for activity performed by system accounts (such as SHAREPOINT/system or NT AUTHORITY/SYSTEM) are also included in the audit log. Another common value for the UserId property is app@sharepoint. It indicates that the 'user' who performed the activity was an application with the necessary permissions in SharePoint to perform organization-wide actions (such as searching a SharePoint site or OneDrive account) on behalf of a user, admin, or service.
-  - `[UserPrincipalName <String>]`: UPN of the user who performed the action.
+  - `[ClientIP <String>]`: 
+  - `[CreatedDateTime <DateTime?>]`: 
+  - `[ObjectId <String>]`: 
+  - `[Operation <String>]`: 
+  - `[OrganizationId <String>]`: 
+  - `[Service <String>]`: 
+  - `[UserId <String>]`: 
+  - `[UserPrincipalName <String>]`: 
   - `[UserType <String>]`: auditLogUserType
 
 `INPUTOBJECT <ISecurityIdentity>`: Identity Parameter
   - `[AlertId <String>]`: The unique identifier of alert
-  - `[AnalyzedEmailId <String>]`: The unique identifier of analyzedEmail
   - `[ArticleId <String>]`: The unique identifier of article
   - `[ArticleIndicatorId <String>]`: The unique identifier of articleIndicator
   - `[AttackSimulationOperationId <String>]`: The unique identifier of attackSimulationOperation
@@ -464,8 +421,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[CloudAppSecurityProfileId <String>]`: The unique identifier of cloudAppSecurityProfile
   - `[DataSourceId <String>]`: The unique identifier of dataSource
   - `[DepartmentTemplateId <String>]`: The unique identifier of departmentTemplate
-  - `[DetectionRuleId <String>]`: The unique identifier of detectionRule
-  - `[DispositionReviewStageNumber <String>]`: The unique identifier of dispositionReviewStage
+  - `[DispositionReviewStageId <String>]`: The unique identifier of dispositionReviewStage
   - `[DomainSecurityProfileId <String>]`: The unique identifier of domainSecurityProfile
   - `[EdiscoveryCaseId <String>]`: The unique identifier of ediscoveryCase
   - `[EdiscoveryCustodianId <String>]`: The unique identifier of ediscoveryCustodian
@@ -484,7 +440,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[FilePlanReferenceTemplateId <String>]`: The unique identifier of filePlanReferenceTemplate
   - `[FileSecurityProfileId <String>]`: The unique identifier of fileSecurityProfile
   - `[FileThreatSubmissionId <String>]`: The unique identifier of fileThreatSubmission
-  - `[HealthIssueId <String>]`: The unique identifier of healthIssue
   - `[HostComponentId <String>]`: The unique identifier of hostComponent
   - `[HostCookieId <String>]`: The unique identifier of hostCookie
   - `[HostId <String>]`: The unique identifier of host
@@ -515,11 +470,10 @@ To create the parameters described below, construct a hash table containing the 
   - `[SimulationId <String>]`: The unique identifier of simulation
   - `[SiteSourceId <String>]`: The unique identifier of siteSource
   - `[SslCertificateId <String>]`: The unique identifier of sslCertificate
-  - `[SubcategoryTemplateId <String>]`: The unique identifier of subcategoryTemplate
+  - `[SubCategoryTemplateId <String>]`: The unique identifier of subCategoryTemplate
   - `[SubdomainId <String>]`: The unique identifier of subdomain
   - `[SubjectRightsRequestId <String>]`: The unique identifier of subjectRightsRequest
   - `[TiIndicatorId <String>]`: The unique identifier of tiIndicator
-  - `[TrainingCampaignId <String>]`: The unique identifier of trainingCampaign
   - `[TrainingId <String>]`: The unique identifier of training
   - `[TrainingLanguageDetailId <String>]`: The unique identifier of trainingLanguageDetail
   - `[UnifiedGroupSourceId <String>]`: The unique identifier of unifiedGroupSource

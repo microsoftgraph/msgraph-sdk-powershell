@@ -17,22 +17,19 @@ Update properties of a  permissionGrantPolicy.
 Update-MgPolicyPermissionGrantPolicy -PermissionGrantPolicyId <String> [-AdditionalProperties <Hashtable>]
  [-DeletedDateTime <DateTime>] [-Description <String>] [-DisplayName <String>]
  [-Excludes <IMicrosoftGraphPermissionGrantConditionSet[]>] [-Id <String>]
- [-Includes <IMicrosoftGraphPermissionGrantConditionSet[]>] [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Includes <IMicrosoftGraphPermissionGrantConditionSet[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgPolicyPermissionGrantPolicy -PermissionGrantPolicyId <String>
- -BodyParameter <IMicrosoftGraphPermissionGrantPolicy> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphPermissionGrantPolicy> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgPolicyPermissionGrantPolicy -InputObject <IIdentitySignInsIdentity>
- -BodyParameter <IMicrosoftGraphPermissionGrantPolicy> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphPermissionGrantPolicy> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -40,8 +37,7 @@ Update-MgPolicyPermissionGrantPolicy -InputObject <IIdentitySignInsIdentity>
 Update-MgPolicyPermissionGrantPolicy -InputObject <IIdentitySignInsIdentity>
  [-AdditionalProperties <Hashtable>] [-DeletedDateTime <DateTime>] [-Description <String>]
  [-DisplayName <String>] [-Excludes <IMicrosoftGraphPermissionGrantConditionSet[]>] [-Id <String>]
- [-Includes <IMicrosoftGraphPermissionGrantConditionSet[]>] [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Includes <IMicrosoftGraphPermissionGrantConditionSet[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -155,21 +151,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -234,21 +215,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
@@ -288,8 +254,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPermissionGrantPolicy
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

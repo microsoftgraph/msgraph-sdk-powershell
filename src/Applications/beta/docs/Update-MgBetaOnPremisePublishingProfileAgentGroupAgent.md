@@ -17,32 +17,29 @@ Update the navigation property agents in onPremisesPublishingProfiles
 Update-MgBetaOnPremisePublishingProfileAgentGroupAgent -OnPremisesAgentGroupId <String>
  -OnPremisesAgentId <String> -OnPremisesPublishingProfileId <String> [-AdditionalProperties <Hashtable>]
  [-AgentGroups <IMicrosoftGraphOnPremisesAgentGroup[]>] [-ExternalIP <String>] [-Id <String>]
- [-MachineName <String>] [-ResponseHeadersVariable <String>] [-Status <String>]
- [-SupportedPublishingTypes <String[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-MachineName <String>] [-Status <String>] [-SupportedPublishingTypes <String[]>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaOnPremisePublishingProfileAgentGroupAgent -OnPremisesAgentGroupId <String>
  -OnPremisesAgentId <String> -OnPremisesPublishingProfileId <String>
- -BodyParameter <IMicrosoftGraphOnPremisesAgent> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphOnPremisesAgent> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaOnPremisePublishingProfileAgentGroupAgent -InputObject <IApplicationsIdentity>
- -BodyParameter <IMicrosoftGraphOnPremisesAgent> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphOnPremisesAgent> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgBetaOnPremisePublishingProfileAgentGroupAgent -InputObject <IApplicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-AgentGroups <IMicrosoftGraphOnPremisesAgentGroup[]>]
- [-ExternalIP <String>] [-Id <String>] [-MachineName <String>] [-ResponseHeadersVariable <String>]
- [-Status <String>] [-SupportedPublishingTypes <String[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-ExternalIP <String>] [-Id <String>] [-MachineName <String>] [-Status <String>]
+ [-SupportedPublishingTypes <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -128,21 +125,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -239,21 +221,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Status
 agentStatus
 
@@ -323,8 +290,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IApplicationsIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOnPremisesAgent
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 
@@ -396,7 +361,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[GroupId <String>]`: The unique identifier of group
   - `[HomeRealmDiscoveryPolicyId <String>]`: The unique identifier of homeRealmDiscoveryPolicy
   - `[LicenseDetailsId <String>]`: The unique identifier of licenseDetails
-  - `[Name <String>]`: Alternate key of federatedIdentityCredential
   - `[OAuth2PermissionGrantId <String>]`: The unique identifier of oAuth2PermissionGrant
   - `[OnPremisesAgentGroupId <String>]`: The unique identifier of onPremisesAgentGroup
   - `[OnPremisesAgentGroupId1 <String>]`: The unique identifier of onPremisesAgentGroup

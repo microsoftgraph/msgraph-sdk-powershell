@@ -16,30 +16,28 @@ Create new navigation property to questions for identityGovernance
 ```
 New-MgEntitlementManagementAssignmentPolicyQuestion -AccessPackageAssignmentPolicyId <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-IsAnswerEditable] [-IsRequired]
- [-Localizations <IMicrosoftGraphAccessPackageLocalizedText[]>] [-ResponseHeadersVariable <String>]
- [-Sequence <Int32>] [-Text <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Localizations <IMicrosoftGraphAccessPackageLocalizedText[]>] [-Sequence <Int32>] [-Text <String>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgEntitlementManagementAssignmentPolicyQuestion -AccessPackageAssignmentPolicyId <String>
- -BodyParameter <IMicrosoftGraphAccessPackageQuestion> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphAccessPackageQuestion> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgEntitlementManagementAssignmentPolicyQuestion -InputObject <IIdentityGovernanceIdentity>
- -BodyParameter <IMicrosoftGraphAccessPackageQuestion> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphAccessPackageQuestion> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgEntitlementManagementAssignmentPolicyQuestion -InputObject <IIdentityGovernanceIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-IsAnswerEditable] [-IsRequired]
- [-Localizations <IMicrosoftGraphAccessPackageLocalizedText[]>] [-ResponseHeadersVariable <String>]
- [-Sequence <Int32>] [-Text <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Localizations <IMicrosoftGraphAccessPackageLocalizedText[]>] [-Sequence <Int32>] [-Text <String>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -103,21 +101,6 @@ Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -202,21 +185,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Sequence
 Relative position of this question when displaying a list of questions to the requestor.
 
@@ -287,8 +255,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageQuestion
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageQuestion
@@ -350,6 +316,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[DirectoryObjectId <String>]`: The unique identifier of directoryObject
   - `[EndDateTime <DateTime?>]`: Usage: endDateTime={endDateTime}
   - `[GovernanceInsightId <String>]`: The unique identifier of governanceInsight
+  - `[GroupId <String>]`: The unique identifier of group
   - `[IncompatibleAccessPackageId <String>]`: Usage: incompatibleAccessPackageId='{incompatibleAccessPackageId}'
   - `[On <String>]`: Usage: on='{on}'
   - `[PrivilegedAccessGroupAssignmentScheduleId <String>]`: The unique identifier of privilegedAccessGroupAssignmentSchedule

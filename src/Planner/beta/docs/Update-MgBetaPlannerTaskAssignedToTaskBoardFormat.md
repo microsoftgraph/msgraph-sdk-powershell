@@ -16,30 +16,28 @@ Update the navigation property assignedToTaskBoardFormat in planner
 ```
 Update-MgBetaPlannerTaskAssignedToTaskBoardFormat -PlannerTaskId <String> -IfMatch <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-OrderHintsByAssignee <Hashtable>]
- [-ResponseHeadersVariable <String>] [-UnassignedOrderHint <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-UnassignedOrderHint <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaPlannerTaskAssignedToTaskBoardFormat -PlannerTaskId <String> -IfMatch <String>
- -BodyParameter <IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaPlannerTaskAssignedToTaskBoardFormat -InputObject <IPlannerIdentity> -IfMatch <String>
- -BodyParameter <IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgBetaPlannerTaskAssignedToTaskBoardFormat -InputObject <IPlannerIdentity> -IfMatch <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-OrderHintsByAssignee <Hashtable>]
- [-ResponseHeadersVariable <String>] [-UnassignedOrderHint <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-UnassignedOrderHint <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -58,7 +56,7 @@ $params = @{
 	}
 }
 
-Update-MgBetaPlannerTaskAssignedToTaskBoardFormat -PlannerTaskId $plannerTaskId -BodyParameter $params -IfMatch W/'"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAWCc="'
+Update-MgBetaPlannerTaskAssignedToTaskBoardFormat -PlannerTaskId $plannerTaskId -BodyParameter $params-If-Match W/"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAWCc="
 
 ## PARAMETERS
 
@@ -87,21 +85,6 @@ Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -185,21 +168,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -UnassignedOrderHint
 Hint value used to order the task on the AssignedTo view of the Task Board when the task isn't assigned to anyone, or if the orderHintsByAssignee dictionary doesn't provide an order hint for the user the task is assigned to.
 The format is defined as outlined here.
@@ -255,8 +223,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerAssignedToTaskBoardTaskFormat
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPlannerIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

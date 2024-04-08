@@ -16,29 +16,27 @@ Currently, only one task trigger can be specified per printer, but this limit mi
 ### CreateExpanded (Default)
 ```
 New-MgBetaPrintPrinterTaskTrigger -PrinterId <String> [-AdditionalProperties <Hashtable>]
- [-Definition <IMicrosoftGraphPrintTaskDefinition>] [-Event <String>] [-Id <String>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Definition <IMicrosoftGraphPrintTaskDefinition>] [-Event <String>] [-Id <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaPrintPrinterTaskTrigger -PrinterId <String> -BodyParameter <IMicrosoftGraphPrintTaskTrigger>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaPrintPrinterTaskTrigger -InputObject <IDevicesCloudPrintIdentity>
- -BodyParameter <IMicrosoftGraphPrintTaskTrigger> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphPrintTaskTrigger> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgBetaPrintPrinterTaskTrigger -InputObject <IDevicesCloudPrintIdentity>
  [-AdditionalProperties <Hashtable>] [-Definition <IMicrosoftGraphPrintTaskDefinition>] [-Event <String>]
- [-Id <String>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Id <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -54,7 +52,7 @@ Import-Module Microsoft.Graph.Beta.Devices.CloudPrint
 
 $params = @{
 	event = "jobStarted"
-	"definition@odata.bind" = "https://graph.microsoft.com/beta/print/taskDefinitions/3203656e-6069-4e10-8147-d25290b00a3c"
+	"definition@odata.bind" = "https://graph.microsoft.com/v1.0/print/taskDefinitions/{taskDefinitionId}"
 }
 
 New-MgBetaPrintPrinterTaskTrigger -PrinterId $printerId -BodyParameter $params
@@ -123,21 +121,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -185,21 +168,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
@@ -240,8 +208,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrintTaskTrigger
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrintTaskTrigger
@@ -263,9 +229,9 @@ To create the parameters described below, construct a hash table containing the 
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[CreatedBy <IMicrosoftGraphAppIdentity>]`: appIdentity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[AppId <String>]`: Refers to the unique identifier representing application ID in the Microsoft Entra ID.
+      - `[AppId <String>]`: Refers to the unique identifier representing Application Id in the Microsoft Entra ID.
       - `[DisplayName <String>]`: Refers to the application name displayed in the Microsoft Entra admin center.
-      - `[ServicePrincipalId <String>]`: Refers to the unique identifier indicating service principal ID in Microsoft Entra ID for the corresponding App.
+      - `[ServicePrincipalId <String>]`: Refers to the unique identifier indicating Service Principal Id in Microsoft Entra ID for the corresponding App.
       - `[ServicePrincipalName <String>]`: Refers to the Service Principal Name is the Application name in the tenant.
     - `[DisplayName <String>]`: The name of the printTaskDefinition.
     - `[Tasks <IMicrosoftGraphPrintTask[]>]`: A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
@@ -284,9 +250,9 @@ To create the parameters described below, construct a hash table containing the 
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[CreatedBy <IMicrosoftGraphAppIdentity>]`: appIdentity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[AppId <String>]`: Refers to the unique identifier representing application ID in the Microsoft Entra ID.
+    - `[AppId <String>]`: Refers to the unique identifier representing Application Id in the Microsoft Entra ID.
     - `[DisplayName <String>]`: Refers to the application name displayed in the Microsoft Entra admin center.
-    - `[ServicePrincipalId <String>]`: Refers to the unique identifier indicating service principal ID in Microsoft Entra ID for the corresponding App.
+    - `[ServicePrincipalId <String>]`: Refers to the unique identifier indicating Service Principal Id in Microsoft Entra ID for the corresponding App.
     - `[ServicePrincipalName <String>]`: Refers to the Service Principal Name is the Application name in the tenant.
   - `[DisplayName <String>]`: The name of the printTaskDefinition.
   - `[Tasks <IMicrosoftGraphPrintTask[]>]`: A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.

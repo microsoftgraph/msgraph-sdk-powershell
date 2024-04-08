@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgSearchAcronym
 
 ## SYNOPSIS
-Update the properties of an acronym object.
+Update the navigation property acronyms in search
 
 ## SYNTAX
 
@@ -42,7 +42,7 @@ Update-MgSearchAcronym -InputObject <ISearchIdentity> [-AdditionalProperties <Ha
 ```
 
 ## DESCRIPTION
-Update the properties of an acronym object.
+Update the navigation property acronyms in search
 
 ## EXAMPLES
 
@@ -109,7 +109,7 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-The search answer description that is shown on the search results page.
+.
 
 ```yaml
 Type: System.String
@@ -124,7 +124,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-The search answer name that is displayed in search results.
+.
 
 ```yaml
 Type: System.String
@@ -202,10 +202,7 @@ Accept wildcard characters: False
 ```
 
 ### -LastModifiedDateTime
-Date and time when the search answer was created or last edited.
-The timestamp type represents date and time information using ISO 8601 format and is always in UTC.
-For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-Read-only.
+.
 
 ```yaml
 Type: System.DateTime
@@ -235,7 +232,7 @@ Accept wildcard characters: False
 ```
 
 ### -StandsFor
-What the acronym stands for.
+.
 
 ```yaml
 Type: System.String
@@ -265,8 +262,7 @@ Accept wildcard characters: False
 ```
 
 ### -WebUrl
-The URL link for the search answer.
-When users select this search answer from the search results, they are directed to the specified URL.
+.
 
 ```yaml
 Type: System.String
@@ -337,8 +333,8 @@ To create the parameters described below, construct a hash table containing the 
 
 `BODYPARAMETER <IMicrosoftGraphSearchAcronym>`: acronym
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Description <String>]`: The search answer description that is shown on the search results page.
-  - `[DisplayName <String>]`: The search answer name that is displayed in search results.
+  - `[Description <String>]`: 
+  - `[DisplayName <String>]`: 
   - `[LastModifiedBy <IMicrosoftGraphSearchIdentitySet>]`: identitySet
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphSearchIdentity>]`: identity
@@ -347,10 +343,10 @@ To create the parameters described below, construct a hash table containing the 
       - `[Id <String>]`: 
     - `[Device <IMicrosoftGraphSearchIdentity>]`: identity
     - `[User <IMicrosoftGraphSearchIdentity>]`: identity
-  - `[LastModifiedDateTime <DateTime?>]`: Date and time when the search answer was created or last edited. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-  - `[WebUrl <String>]`: The URL link for the search answer. When users select this search answer from the search results, they are directed to the specified URL.
+  - `[LastModifiedDateTime <DateTime?>]`: 
+  - `[WebUrl <String>]`: 
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[StandsFor <String>]`: What the acronym stands for.
+  - `[StandsFor <String>]`: 
   - `[State <String>]`: answerState
 
 `INPUTOBJECT <ISearchIdentity>`: Identity Parameter

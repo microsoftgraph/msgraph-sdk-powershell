@@ -17,22 +17,21 @@ Update the navigation property parent in users
 Update-MgBetaUserSecurityInformationProtectionSensitivityLabelParent -SensitivityLabelId <String>
  -UserId <String> [-AdditionalProperties <Hashtable>] [-Color <String>] [-ContentFormats <String[]>]
  [-Description <String>] [-HasProtection] [-Id <String>] [-IsActive] [-IsAppliable] [-Name <String>]
- [-Parent <IMicrosoftGraphSecuritySensitivityLabel>] [-ResponseHeadersVariable <String>]
- [-Sensitivity <Int32>] [-Tooltip <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Parent <IMicrosoftGraphSecuritySensitivityLabel>] [-Sensitivity <Int32>] [-Tooltip <String>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaUserSecurityInformationProtectionSensitivityLabelParent -SensitivityLabelId <String>
- -UserId <String> -BodyParameter <IMicrosoftGraphSecuritySensitivityLabel> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -UserId <String> -BodyParameter <IMicrosoftGraphSecuritySensitivityLabel> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaUserSecurityInformationProtectionSensitivityLabelParent -InputObject <ISecurityIdentity>
- -BodyParameter <IMicrosoftGraphSecuritySensitivityLabel> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphSecuritySensitivityLabel> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -40,8 +39,8 @@ Update-MgBetaUserSecurityInformationProtectionSensitivityLabelParent -InputObjec
 Update-MgBetaUserSecurityInformationProtectionSensitivityLabelParent -InputObject <ISecurityIdentity>
  [-AdditionalProperties <Hashtable>] [-Color <String>] [-ContentFormats <String[]>] [-Description <String>]
  [-HasProtection] [-Id <String>] [-IsActive] [-IsAppliable] [-Name <String>]
- [-Parent <IMicrosoftGraphSecuritySensitivityLabel>] [-ResponseHeadersVariable <String>]
- [-Sensitivity <Int32>] [-Tooltip <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Parent <IMicrosoftGraphSecuritySensitivityLabel>] [-Sensitivity <Int32>] [-Tooltip <String>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -156,21 +155,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -258,21 +242,6 @@ To construct, see NOTES section for PARENT properties and create a hash table.
 Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecuritySensitivityLabel
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -381,8 +350,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecuritySensitivityLabel
@@ -412,7 +379,6 @@ To create the parameters described below, construct a hash table containing the 
 
 `INPUTOBJECT <ISecurityIdentity>`: Identity Parameter
   - `[AlertId <String>]`: The unique identifier of alert
-  - `[AnalyzedEmailId <String>]`: The unique identifier of analyzedEmail
   - `[ArticleId <String>]`: The unique identifier of article
   - `[ArticleIndicatorId <String>]`: The unique identifier of articleIndicator
   - `[AttackSimulationOperationId <String>]`: The unique identifier of attackSimulationOperation
@@ -426,8 +392,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[CloudAppSecurityProfileId <String>]`: The unique identifier of cloudAppSecurityProfile
   - `[DataSourceId <String>]`: The unique identifier of dataSource
   - `[DepartmentTemplateId <String>]`: The unique identifier of departmentTemplate
-  - `[DetectionRuleId <String>]`: The unique identifier of detectionRule
-  - `[DispositionReviewStageNumber <String>]`: The unique identifier of dispositionReviewStage
+  - `[DispositionReviewStageId <String>]`: The unique identifier of dispositionReviewStage
   - `[DomainSecurityProfileId <String>]`: The unique identifier of domainSecurityProfile
   - `[EdiscoveryCaseId <String>]`: The unique identifier of ediscoveryCase
   - `[EdiscoveryCustodianId <String>]`: The unique identifier of ediscoveryCustodian
@@ -446,7 +411,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[FilePlanReferenceTemplateId <String>]`: The unique identifier of filePlanReferenceTemplate
   - `[FileSecurityProfileId <String>]`: The unique identifier of fileSecurityProfile
   - `[FileThreatSubmissionId <String>]`: The unique identifier of fileThreatSubmission
-  - `[HealthIssueId <String>]`: The unique identifier of healthIssue
   - `[HostComponentId <String>]`: The unique identifier of hostComponent
   - `[HostCookieId <String>]`: The unique identifier of hostCookie
   - `[HostId <String>]`: The unique identifier of host
@@ -477,11 +441,10 @@ To create the parameters described below, construct a hash table containing the 
   - `[SimulationId <String>]`: The unique identifier of simulation
   - `[SiteSourceId <String>]`: The unique identifier of siteSource
   - `[SslCertificateId <String>]`: The unique identifier of sslCertificate
-  - `[SubcategoryTemplateId <String>]`: The unique identifier of subcategoryTemplate
+  - `[SubCategoryTemplateId <String>]`: The unique identifier of subCategoryTemplate
   - `[SubdomainId <String>]`: The unique identifier of subdomain
   - `[SubjectRightsRequestId <String>]`: The unique identifier of subjectRightsRequest
   - `[TiIndicatorId <String>]`: The unique identifier of tiIndicator
-  - `[TrainingCampaignId <String>]`: The unique identifier of trainingCampaign
   - `[TrainingId <String>]`: The unique identifier of training
   - `[TrainingLanguageDetailId <String>]`: The unique identifier of trainingLanguageDetail
   - `[UnifiedGroupSourceId <String>]`: The unique identifier of unifiedGroupSource

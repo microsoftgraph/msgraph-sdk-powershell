@@ -18,23 +18,20 @@ New-MgBetaUserInformationProtectionSensitivityLabel -UserId <String> [-Additiona
  [-ApplicableTo <String>] [-ApplicationMode <String>] [-AssignedPolicies <IMicrosoftGraphLabelPolicy[]>]
  [-AutoLabeling <IMicrosoftGraphAutoLabeling>] [-Description <String>] [-DisplayName <String>] [-Id <String>]
  [-IsDefault] [-IsEndpointProtectionEnabled] [-LabelActions <IMicrosoftGraphLabelActionBase[]>]
- [-Name <String>] [-Priority <Int32>] [-ResponseHeadersVariable <String>]
- [-Sublabels <IMicrosoftGraphSensitivityLabel[]>] [-ToolTip <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-Name <String>] [-Priority <Int32>] [-Sublabels <IMicrosoftGraphSensitivityLabel[]>] [-ToolTip <String>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaUserInformationProtectionSensitivityLabel -UserId <String>
- -BodyParameter <IMicrosoftGraphSensitivityLabel> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphSensitivityLabel> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaUserInformationProtectionSensitivityLabel -InputObject <IIdentitySignInsIdentity>
- -BodyParameter <IMicrosoftGraphSensitivityLabel> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphSensitivityLabel> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -44,8 +41,8 @@ New-MgBetaUserInformationProtectionSensitivityLabel -InputObject <IIdentitySignI
  [-AssignedPolicies <IMicrosoftGraphLabelPolicy[]>] [-AutoLabeling <IMicrosoftGraphAutoLabeling>]
  [-Description <String>] [-DisplayName <String>] [-Id <String>] [-IsDefault] [-IsEndpointProtectionEnabled]
  [-LabelActions <IMicrosoftGraphLabelActionBase[]>] [-Name <String>] [-Priority <Int32>]
- [-ResponseHeadersVariable <String>] [-Sublabels <IMicrosoftGraphSensitivityLabel[]>] [-ToolTip <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Sublabels <IMicrosoftGraphSensitivityLabel[]>] [-ToolTip <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -192,21 +189,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -315,21 +297,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Sublabels
 .
 To construct, see NOTES section for SUBLABELS properties and create a hash table.
@@ -415,8 +382,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSensitivityLabel
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

@@ -16,30 +16,28 @@ Update a custom registration question associated with a meetingRegistration obje
 ```
 Update-MgBetaUserOnlineMeetingRegistrationCustomQuestion -MeetingRegistrationQuestionId <String>
  -OnlineMeetingId <String> -UserId <String> [-AdditionalProperties <Hashtable>] [-AnswerInputType <String>]
- [-AnswerOptions <String[]>] [-DisplayName <String>] [-Id <String>] [-IsRequired]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AnswerOptions <String[]>] [-DisplayName <String>] [-Id <String>] [-IsRequired] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaUserOnlineMeetingRegistrationCustomQuestion -MeetingRegistrationQuestionId <String>
  -OnlineMeetingId <String> -UserId <String> -BodyParameter <IMicrosoftGraphMeetingRegistrationQuestion>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaUserOnlineMeetingRegistrationCustomQuestion -InputObject <ICloudCommunicationsIdentity>
- -BodyParameter <IMicrosoftGraphMeetingRegistrationQuestion> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphMeetingRegistrationQuestion> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgBetaUserOnlineMeetingRegistrationCustomQuestion -InputObject <ICloudCommunicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-AnswerInputType <String>] [-AnswerOptions <String[]>]
- [-DisplayName <String>] [-Id <String>] [-IsRequired] [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-DisplayName <String>] [-Id <String>] [-IsRequired] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -144,21 +142,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -237,21 +220,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -UserId
 The unique identifier of user
 
@@ -307,8 +275,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMeetingRegistrationQuestion
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMeetingRegistrationQuestion
@@ -340,7 +306,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[CommsOperationId <String>]`: The unique identifier of commsOperation
   - `[ContentSharingSessionId <String>]`: The unique identifier of contentSharingSession
   - `[FromDateTime <DateTime?>]`: Usage: fromDateTime={fromDateTime}
-  - `[JoinWebUrl <String>]`: Alternate key of onlineMeeting
   - `[MeetingAttendanceReportId <String>]`: The unique identifier of meetingAttendanceReport
   - `[MeetingRegistrantBaseId <String>]`: The unique identifier of meetingRegistrantBase
   - `[MeetingRegistrationQuestionId <String>]`: The unique identifier of meetingRegistrationQuestion

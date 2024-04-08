@@ -9,11 +9,11 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Record a short audio response from the caller.
-A bot can use this API to capture a voice response from a caller after they're prompted for a response.
-For more information about how to handle operations, see commsOperation.
-This action isn't intended to record the entire call.
-The maximum length of recording is 2 minutes.The Cloud Communications Platform doesn't save the recording permanently and discards it shortly after the call ends.
-The bot must download the recording promptly after the recording operation finishes by using the recordingLocation value provided in the completed notification.
+A bot can use this to capture a voice response from a caller after they are prompted for a response.
+For more information about how to handle operations, see commsOperation This action isn't intended to record the entire call.
+The maximum length of recording is 2 minutes.
+The recording isn't saved permanently by the Cloud Communications Platform and is discarded shortly after the call ends.
+The bot must download the recording promptly after the recording operation finishes by using the recordingLocation value that's given in the completed notification.
 
 ## SYNTAX
 
@@ -22,22 +22,22 @@ The bot must download the recording promptly after the recording operation finis
 Invoke-MgBetaRecordCommunicationCallResponse -CallId <String> [-AdditionalProperties <Hashtable>]
  [-BargeInAllowed] [-ClientContext <String>] [-InitialSilenceTimeoutInSeconds <Int32>]
  [-MaxRecordDurationInSeconds <Int32>] [-MaxSilenceTimeoutInSeconds <Int32>] [-PlayBeep]
- [-Prompts <IMicrosoftGraphPrompt[]>] [-ResponseHeadersVariable <String>] [-StopTones <String[]>]
- [-StreamWhileRecording] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Prompts <IMicrosoftGraphPrompt[]>] [-StopTones <String[]>] [-StreamWhileRecording] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Record
 ```
 Invoke-MgBetaRecordCommunicationCallResponse -CallId <String>
  -BodyParameter <IPaths14Wb7KqCommunicationsCallsCallIdMicrosoftGraphRecordresponsePostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RecordViaIdentity
 ```
 Invoke-MgBetaRecordCommunicationCallResponse -InputObject <ICloudCommunicationsIdentity>
  -BodyParameter <IPaths14Wb7KqCommunicationsCallsCallIdMicrosoftGraphRecordresponsePostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RecordViaIdentityExpanded
@@ -46,17 +46,16 @@ Invoke-MgBetaRecordCommunicationCallResponse -InputObject <ICloudCommunicationsI
  [-AdditionalProperties <Hashtable>] [-BargeInAllowed] [-ClientContext <String>]
  [-InitialSilenceTimeoutInSeconds <Int32>] [-MaxRecordDurationInSeconds <Int32>]
  [-MaxSilenceTimeoutInSeconds <Int32>] [-PlayBeep] [-Prompts <IMicrosoftGraphPrompt[]>]
- [-ResponseHeadersVariable <String>] [-StopTones <String[]>] [-StreamWhileRecording] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-StopTones <String[]>] [-StreamWhileRecording] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Record a short audio response from the caller.
-A bot can use this API to capture a voice response from a caller after they're prompted for a response.
-For more information about how to handle operations, see commsOperation.
-This action isn't intended to record the entire call.
-The maximum length of recording is 2 minutes.The Cloud Communications Platform doesn't save the recording permanently and discards it shortly after the call ends.
-The bot must download the recording promptly after the recording operation finishes by using the recordingLocation value provided in the completed notification.
+A bot can use this to capture a voice response from a caller after they are prompted for a response.
+For more information about how to handle operations, see commsOperation This action isn't intended to record the entire call.
+The maximum length of recording is 2 minutes.
+The recording isn't saved permanently by the Cloud Communications Platform and is discarded shortly after the call ends.
+The bot must download the recording promptly after the recording operation finishes by using the recordingLocation value that's given in the completed notification.
 
 ## EXAMPLES
 
@@ -164,21 +163,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InitialSilenceTimeoutInSeconds
 .
 
@@ -270,21 +254,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -StopTones
 .
 
@@ -355,8 +324,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPaths14Wb7KqCommunicationsCallsCallIdMicrosoftGraphRecordresponsePostRequestbodyContentApplicationJsonSchema
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRecordOperation
@@ -392,7 +359,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[CommsOperationId <String>]`: The unique identifier of commsOperation
   - `[ContentSharingSessionId <String>]`: The unique identifier of contentSharingSession
   - `[FromDateTime <DateTime?>]`: Usage: fromDateTime={fromDateTime}
-  - `[JoinWebUrl <String>]`: Alternate key of onlineMeeting
   - `[MeetingAttendanceReportId <String>]`: The unique identifier of meetingAttendanceReport
   - `[MeetingRegistrantBaseId <String>]`: The unique identifier of meetingRegistrantBase
   - `[MeetingRegistrationQuestionId <String>]`: The unique identifier of meetingRegistrationQuestion

@@ -16,29 +16,28 @@ Update the navigation property groupAssignments in deviceManagement
 ```
 Update-MgBetaDeviceManagementScriptGroupAssignment -DeviceManagementScriptGroupAssignmentId <String>
  -DeviceManagementScriptId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
- [-ResponseHeadersVariable <String>] [-TargetGroupId <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-TargetGroupId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaDeviceManagementScriptGroupAssignment -DeviceManagementScriptGroupAssignmentId <String>
  -DeviceManagementScriptId <String> -BodyParameter <IMicrosoftGraphDeviceManagementScriptGroupAssignment>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaDeviceManagementScriptGroupAssignment -InputObject <IDeviceManagementIdentity>
- -BodyParameter <IMicrosoftGraphDeviceManagementScriptGroupAssignment> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphDeviceManagementScriptGroupAssignment> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgBetaDeviceManagementScriptGroupAssignment -InputObject <IDeviceManagementIdentity>
- [-AdditionalProperties <Hashtable>] [-Id <String>] [-ResponseHeadersVariable <String>]
- [-TargetGroupId <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-Id <String>] [-TargetGroupId <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -123,21 +122,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -167,21 +151,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -239,8 +208,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementScriptGroupAssignment
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 
@@ -340,7 +307,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[MacOSSoftwareUpdateCategorySummaryId <String>]`: The unique identifier of macOSSoftwareUpdateCategorySummary
   - `[MacOSSoftwareUpdateStateSummaryId <String>]`: The unique identifier of macOSSoftwareUpdateStateSummary
   - `[MalwareStateForWindowsDeviceId <String>]`: The unique identifier of malwareStateForWindowsDevice
-  - `[ManagedDeviceCleanupRuleId <String>]`: The unique identifier of managedDeviceCleanupRule
   - `[ManagedDeviceEncryptionStateId <String>]`: The unique identifier of managedDeviceEncryptionState
   - `[ManagedDeviceId <String>]`: The unique identifier of managedDevice
   - `[ManagedDeviceMobileAppConfigurationStateId <String>]`: The unique identifier of managedDeviceMobileAppConfigurationState

@@ -17,16 +17,15 @@ Create new navigation property to managedTenantEmailNotifications for tenantRela
 New-MgBetaTenantRelationshipManagedTenantEmailNotification [-AdditionalProperties <Hashtable>]
  [-Alert <IMicrosoftGraphManagedTenantsManagedTenantAlert>] [-CreatedByUserId <String>]
  [-CreatedDateTime <DateTime>] [-EmailAddresses <IMicrosoftGraphManagedTenantsEmail[]>] [-EmailBody <String>]
- [-Id <String>] [-LastActionByUserId <String>] [-LastActionDateTime <DateTime>]
- [-ResponseHeadersVariable <String>] [-Subject <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Id <String>] [-LastActionByUserId <String>] [-LastActionDateTime <DateTime>] [-Subject <String>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaTenantRelationshipManagedTenantEmailNotification
- -BodyParameter <IMicrosoftGraphManagedTenantsManagedTenantEmailNotification>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphManagedTenantsManagedTenantEmailNotification> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -158,21 +157,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -211,21 +195,6 @@ Accept wildcard characters: False
 Type: System.DateTime
 Parameter Sets: CreateExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -286,8 +255,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsManagedTenantEmailNotification
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

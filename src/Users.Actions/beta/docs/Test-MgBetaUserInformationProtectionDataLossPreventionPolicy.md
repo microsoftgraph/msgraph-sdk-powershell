@@ -16,30 +16,30 @@ Invoke action evaluate
 ```
 Test-MgBetaUserInformationProtectionDataLossPreventionPolicy -UserId <String>
  [-AdditionalProperties <Hashtable>] [-EvaluationInput <IMicrosoftGraphDlpEvaluationInput>]
- [-NotificationInfo <IMicrosoftGraphDlpNotification>] [-ResponseHeadersVariable <String>] [-Target <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-NotificationInfo <IMicrosoftGraphDlpNotification>] [-Target <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Evaluate
 ```
 Test-MgBetaUserInformationProtectionDataLossPreventionPolicy -UserId <String>
  -BodyParameter <IPaths1EzienbUsersUserIdInformationprotectionDatalosspreventionpoliciesMicrosoftGraphEvaluatePostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### EvaluateViaIdentity
 ```
 Test-MgBetaUserInformationProtectionDataLossPreventionPolicy -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPaths1EzienbUsersUserIdInformationprotectionDatalosspreventionpoliciesMicrosoftGraphEvaluatePostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### EvaluateViaIdentityExpanded
 ```
 Test-MgBetaUserInformationProtectionDataLossPreventionPolicy -InputObject <IUsersActionsIdentity>
  [-AdditionalProperties <Hashtable>] [-EvaluationInput <IMicrosoftGraphDlpEvaluationInput>]
- [-NotificationInfo <IMicrosoftGraphDlpNotification>] [-ResponseHeadersVariable <String>] [-Target <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-NotificationInfo <IMicrosoftGraphDlpNotification>] [-Target <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -110,21 +110,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -149,21 +134,6 @@ To construct, see NOTES section for NOTIFICATIONINFO properties and create a has
 Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDlpNotification
 Parameter Sets: EvaluateExpanded, EvaluateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -242,8 +212,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDlpEvaluatePoliciesJobResponse
@@ -310,7 +278,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[DriveItemVersionId <String>]`: The unique identifier of driveItemVersion
   - `[EventId <String>]`: The unique identifier of event
   - `[EventId1 <String>]`: The unique identifier of event
-  - `[JoinWebUrl <String>]`: Alternate key of onlineMeeting
   - `[ListItemId <String>]`: The unique identifier of listItem
   - `[ListItemVersionId <String>]`: The unique identifier of listItemVersion
   - `[MailFolderId <String>]`: The unique identifier of mailFolder

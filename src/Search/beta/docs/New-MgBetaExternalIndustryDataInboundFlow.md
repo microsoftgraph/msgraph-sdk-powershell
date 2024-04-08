@@ -8,8 +8,8 @@ schema: 2.0.0
 # New-MgBetaExternalIndustryDataInboundFlow
 
 ## SYNOPSIS
-Create a new inboundFlow object.
-The following prerequisite resources are required when you create an inboundFlow:
+Create a new inboundFileFlow object.
+The following prerequisite resources are required when you create an inboundFileFlow:
 
 ## SYNTAX
 
@@ -18,19 +18,18 @@ The following prerequisite resources are required when you create an inboundFlow
 New-MgBetaExternalIndustryDataInboundFlow [-AdditionalProperties <Hashtable>]
  [-DataConnector <IMicrosoftGraphIndustryDataConnector>] [-DataDomain <String>] [-DisplayName <String>]
  [-EffectiveDateTime <DateTime>] [-ExpirationDateTime <DateTime>] [-Id <String>] [-ReadinessStatus <String>]
- [-ResponseHeadersVariable <String>] [-Year <IMicrosoftGraphIndustryDataYearTimePeriodDefinition>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Year <IMicrosoftGraphIndustryDataYearTimePeriodDefinition>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgBetaExternalIndustryDataInboundFlow -BodyParameter <IMicrosoftGraphIndustryDataInboundFlow>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaExternalIndustryDataInboundFlow -BodyParameter <IMicrosoftGraphIndustryDataInboundFlow> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Create a new inboundFlow object.
-The following prerequisite resources are required when you create an inboundFlow:
+Create a new inboundFileFlow object.
+The following prerequisite resources are required when you create an inboundFileFlow:
 
 ## EXAMPLES
 
@@ -162,21 +161,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -200,21 +184,6 @@ readinessStatus
 Type: System.String
 Parameter Sets: CreateExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -276,8 +245,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIndustryDataInboundFlow
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

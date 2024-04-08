@@ -20,16 +20,15 @@ New-MgBetaDeviceManagementDepOnboardingSetting [-AdditionalProperties <Hashtable
  [-EnrollmentProfiles <IMicrosoftGraphEnrollmentProfile[]>] [-Id <String>]
  [-ImportedAppleDeviceIdentities <IMicrosoftGraphImportedAppleDeviceIdentity[]>]
  [-LastModifiedDateTime <DateTime>] [-LastSuccessfulSyncDateTime <DateTime>] [-LastSyncErrorCode <Int32>]
- [-LastSyncTriggeredDateTime <DateTime>] [-ResponseHeadersVariable <String>] [-RoleScopeTagIds <String[]>]
- [-ShareTokenWithSchoolDataSyncService] [-SyncedDeviceCount <Int32>] [-TokenExpirationDateTime <DateTime>]
- [-TokenName <String>] [-TokenType <DepTokenType>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-LastSyncTriggeredDateTime <DateTime>] [-RoleScopeTagIds <String[]>] [-ShareTokenWithSchoolDataSyncService]
+ [-SyncedDeviceCount <Int32>] [-TokenExpirationDateTime <DateTime>] [-TokenName <String>]
+ [-TokenType <DepTokenType>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgBetaDeviceManagementDepOnboardingSetting -BodyParameter <IMicrosoftGraphDepOnboardingSetting>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaDeviceManagementDepOnboardingSetting -BodyParameter <IMicrosoftGraphDepOnboardingSetting> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -165,21 +164,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -264,21 +248,6 @@ When Intune last requested a sync.
 Type: System.DateTime
 Parameter Sets: CreateExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -414,8 +383,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDepOnboardingSetting
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 
@@ -564,7 +531,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[DiscoverySource <DiscoverySource?>]`: discoverySource
     - `[EnrollmentState <EnrollmentState?>]`: enrollmentState
     - `[IsDeleted <Boolean?>]`: Indicates if the device is deleted from Apple Business Manager
-    - `[IsSupervised <Boolean?>]`: Indicates if the Apple device is supervised.
+    - `[IsSupervised <Boolean?>]`: Indicates if the Apple device is supervised. More information is at: https://support.apple.com/en-us/HT202837
     - `[LastContactedDateTime <DateTime?>]`: Last Contacted Date Time of the device
     - `[Platform <Platform?>]`: platform
     - `[RequestedEnrollmentProfileAssignmentDateTime <DateTime?>]`: The time enrollment profile was assigned to the device
@@ -713,7 +680,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[DiscoverySource <DiscoverySource?>]`: discoverySource
   - `[EnrollmentState <EnrollmentState?>]`: enrollmentState
   - `[IsDeleted <Boolean?>]`: Indicates if the device is deleted from Apple Business Manager
-  - `[IsSupervised <Boolean?>]`: Indicates if the Apple device is supervised.
+  - `[IsSupervised <Boolean?>]`: Indicates if the Apple device is supervised. More information is at: https://support.apple.com/en-us/HT202837
   - `[LastContactedDateTime <DateTime?>]`: Last Contacted Date Time of the device
   - `[Platform <Platform?>]`: platform
   - `[RequestedEnrollmentProfileAssignmentDateTime <DateTime?>]`: The time enrollment profile was assigned to the device

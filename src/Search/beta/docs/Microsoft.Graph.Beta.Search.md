@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Search
-Module Guid: 6dc4d50d-9ba7-483b-b8fc-2cd0b47d3d32
+Module Guid: 1c464169-139c-42b2-bac7-2e90034c0469
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.search
 Help Version: 1.0.0.0
 Locale: en-US
@@ -196,8 +196,8 @@ Create new navigation property to operations for external
 Create a new industryDataConnector object.
 
 ### [New-MgBetaExternalIndustryDataInboundFlow](New-MgBetaExternalIndustryDataInboundFlow.md)
-Create a new inboundFlow object.
-The following prerequisite resources are required when you create an inboundFlow:
+Create a new inboundFileFlow object.
+The following prerequisite resources are required when you create an inboundFileFlow:
 
 ### [New-MgBetaExternalIndustryDataOperation](New-MgBetaExternalIndustryDataOperation.md)
 Create new navigation property to operations for external
@@ -272,7 +272,7 @@ Delete a sourceSystemDefinition object.
 Delete a yearTimePeriodDefinition object.
 
 ### [Remove-MgBetaSearchAcronym](Remove-MgBetaSearchAcronym.md)
-Delete an acronym object.
+Deletes an acronym object.
 
 ### [Remove-MgBetaSearchBookmark](Remove-MgBetaSearchBookmark.md)
 Delete a bookmark object.
@@ -314,13 +314,13 @@ Update the navigation property operations in external
 Update the navigation property quota in external
 
 ### [Update-MgBetaExternalConnectionSchema](Update-MgBetaExternalConnectionSchema.md)
-Update the properties of a schema for an externalConnection.
+Create the schema for a Microsoft Search connection.
 
 ### [Update-MgBetaExternalIndustryDataConnector](Update-MgBetaExternalIndustryDataConnector.md)
 Update the properties of an azureDataLakeConnector object.
 
 ### [Update-MgBetaExternalIndustryDataInboundFlow](Update-MgBetaExternalIndustryDataInboundFlow.md)
-Update the properties of an inboundFileFlow object.
+Update the properties of an inboundFlow object.
 
 ### [Update-MgBetaExternalIndustryDataOperation](Update-MgBetaExternalIndustryDataOperation.md)
 Update the navigation property operations in external

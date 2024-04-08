@@ -16,28 +16,26 @@ Create new navigation property to termStores for sites
 ```
 New-MgSiteTermStore -SiteId <String> [-AdditionalProperties <Hashtable>] [-DefaultLanguageTag <String>]
  [-Groups <IMicrosoftGraphTermStoreGroup[]>] [-Id <String>] [-LanguageTags <String[]>]
- [-ResponseHeadersVariable <String>] [-Sets <IMicrosoftGraphTermStoreSet[]>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Sets <IMicrosoftGraphTermStoreSet[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgSiteTermStore -SiteId <String> -BodyParameter <IMicrosoftGraphTermStore>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgSiteTermStore -SiteId <String> -BodyParameter <IMicrosoftGraphTermStore> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgSiteTermStore -InputObject <ISitesIdentity> -BodyParameter <IMicrosoftGraphTermStore>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgSiteTermStore -InputObject <ISitesIdentity> -BodyParameter <IMicrosoftGraphTermStore> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgSiteTermStore -InputObject <ISitesIdentity> [-AdditionalProperties <Hashtable>]
  [-DefaultLanguageTag <String>] [-Groups <IMicrosoftGraphTermStoreGroup[]>] [-Id <String>]
- [-LanguageTags <String[]>] [-ResponseHeadersVariable <String>] [-Sets <IMicrosoftGraphTermStoreSet[]>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-LanguageTags <String[]>] [-Sets <IMicrosoftGraphTermStoreSet[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -123,21 +121,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -177,21 +160,6 @@ List of languages for the term store.
 Type: System.String[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -271,8 +239,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTermStore
 
 ### Microsoft.Graph.PowerShell.Models.ISitesIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 
@@ -377,7 +343,6 @@ To create the parameters described below, construct a hash table containing the 
 
 `INPUTOBJECT <ISitesIdentity>`: Identity Parameter
   - `[BaseItemId <String>]`: The unique identifier of baseItem
-  - `[BaseSitePageId <String>]`: The unique identifier of baseSitePage
   - `[ColumnDefinitionId <String>]`: The unique identifier of columnDefinition
   - `[ColumnLinkId <String>]`: The unique identifier of columnLink
   - `[ContentTypeId <String>]`: The unique identifier of contentType
@@ -387,8 +352,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[EndDateTime <String>]`: Usage: endDateTime='{endDateTime}'
   - `[GroupId <String>]`: The unique identifier of group
   - `[GroupId1 <String>]`: The unique identifier of group
-  - `[HorizontalSectionColumnId <String>]`: The unique identifier of horizontalSectionColumn
-  - `[HorizontalSectionId <String>]`: The unique identifier of horizontalSection
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}
   - `[Interval <String>]`: Usage: interval='{interval}'
   - `[ItemActivityId <String>]`: The unique identifier of itemActivity
@@ -402,7 +365,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[OnenoteResourceId <String>]`: The unique identifier of onenoteResource
   - `[OnenoteSectionId <String>]`: The unique identifier of onenoteSection
   - `[Path <String>]`: Usage: path='{path}'
-  - `[Path1 <String>]`: Usage: path='{path1}'
   - `[PermissionId <String>]`: The unique identifier of permission
   - `[RelationId <String>]`: The unique identifier of relation
   - `[RichLongRunningOperationId <String>]`: The unique identifier of richLongRunningOperation
@@ -418,7 +380,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[TermId <String>]`: The unique identifier of term
   - `[TermId1 <String>]`: The unique identifier of term
   - `[UserId <String>]`: The unique identifier of user
-  - `[WebPartId <String>]`: The unique identifier of webPart
 
 `SETS <IMicrosoftGraphTermStoreSet[]>`: Collection of all sets available in the term store. This relationship can only be used to load a specific term set.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.

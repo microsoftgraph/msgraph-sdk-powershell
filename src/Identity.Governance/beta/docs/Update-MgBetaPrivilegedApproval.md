@@ -17,23 +17,20 @@ Update entity in privilegedApproval
 Update-MgBetaPrivilegedApproval -PrivilegedApprovalId <String> [-AdditionalProperties <Hashtable>]
  [-ApprovalDuration <TimeSpan>] [-ApprovalState <String>] [-ApprovalType <String>] [-ApproverReason <String>]
  [-EndDateTime <DateTime>] [-Id <String>] [-Request <IMicrosoftGraphPrivilegedRoleAssignmentRequest>]
- [-RequestorReason <String>] [-ResponseHeadersVariable <String>] [-RoleId <String>]
- [-RoleInfo <IMicrosoftGraphPrivilegedRole>] [-StartDateTime <DateTime>] [-UserId <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-RequestorReason <String>] [-RoleId <String>] [-RoleInfo <IMicrosoftGraphPrivilegedRole>]
+ [-StartDateTime <DateTime>] [-UserId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaPrivilegedApproval -PrivilegedApprovalId <String>
- -BodyParameter <IMicrosoftGraphPrivilegedApproval> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphPrivilegedApproval> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaPrivilegedApproval -InputObject <IIdentityGovernanceIdentity>
- -BodyParameter <IMicrosoftGraphPrivilegedApproval> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphPrivilegedApproval> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -41,9 +38,8 @@ Update-MgBetaPrivilegedApproval -InputObject <IIdentityGovernanceIdentity>
 Update-MgBetaPrivilegedApproval -InputObject <IIdentityGovernanceIdentity> [-AdditionalProperties <Hashtable>]
  [-ApprovalDuration <TimeSpan>] [-ApprovalState <String>] [-ApprovalType <String>] [-ApproverReason <String>]
  [-EndDateTime <DateTime>] [-Id <String>] [-Request <IMicrosoftGraphPrivilegedRoleAssignmentRequest>]
- [-RequestorReason <String>] [-ResponseHeadersVariable <String>] [-RoleId <String>]
- [-RoleInfo <IMicrosoftGraphPrivilegedRole>] [-StartDateTime <DateTime>] [-UserId <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-RequestorReason <String>] [-RoleId <String>] [-RoleInfo <IMicrosoftGraphPrivilegedRole>]
+ [-StartDateTime <DateTime>] [-UserId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -171,21 +167,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -256,21 +237,6 @@ Accept wildcard characters: False
 Type: System.String
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -379,8 +345,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrivilegedApproval
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 
@@ -510,9 +474,9 @@ To create the parameters described below, construct a hash table containing the 
   - `[GovernanceRoleAssignmentRequestId <String>]`: The unique identifier of governanceRoleAssignmentRequest
   - `[GovernanceRoleDefinitionId <String>]`: The unique identifier of governanceRoleDefinition
   - `[GovernanceRoleSettingId <String>]`: The unique identifier of governanceRoleSetting
+  - `[GroupId <String>]`: The unique identifier of group
   - `[IncompatibleAccessPackageId <String>]`: Usage: incompatibleAccessPackageId='{incompatibleAccessPackageId}'
   - `[LongRunningOperationId <String>]`: The unique identifier of longRunningOperation
-  - `[ObjectId <String>]`: Alternate key of accessPackageSubject
   - `[On <String>]`: Usage: on='{on}'
   - `[PermissionsCreepIndexDistributionId <String>]`: The unique identifier of permissionsCreepIndexDistribution
   - `[PermissionsRequestChangeId <String>]`: The unique identifier of permissionsRequestChange

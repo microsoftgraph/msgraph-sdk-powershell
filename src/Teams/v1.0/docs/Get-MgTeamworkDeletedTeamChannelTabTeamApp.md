@@ -16,14 +16,13 @@ This can't be changed after tab creation.
 ### Get (Default)
 ```
 Get-MgTeamworkDeletedTeamChannelTabTeamApp -ChannelId <String> -DeletedTeamId <String> -TeamsTabId <String>
- [-ExpandProperty <String[]>] [-Property <String[]>] [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [<CommonParameters>]
+ [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
 Get-MgTeamworkDeletedTeamChannelTabTeamApp -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>]
- [-Property <String[]>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [<CommonParameters>]
+ [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -93,21 +92,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -139,21 +123,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -TeamsTabId
 The unique identifier of teamsTab
 
@@ -176,8 +145,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamsApp
@@ -199,7 +166,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[ChatMessageId <String>]`: The unique identifier of chatMessage
   - `[ChatMessageId1 <String>]`: The unique identifier of chatMessage
   - `[ConversationMemberId <String>]`: The unique identifier of conversationMember
-  - `[DeletedChatId <String>]`: The unique identifier of deletedChat
   - `[DeletedTeamId <String>]`: The unique identifier of deletedTeam
   - `[GroupId <String>]`: The unique identifier of group
   - `[OfferShiftRequestId <String>]`: The unique identifier of offerShiftRequest

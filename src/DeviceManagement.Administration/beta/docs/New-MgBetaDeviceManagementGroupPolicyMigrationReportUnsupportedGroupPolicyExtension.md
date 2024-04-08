@@ -16,23 +16,22 @@ Create new navigation property to unsupportedGroupPolicyExtensions for deviceMan
 ```
 New-MgBetaDeviceManagementGroupPolicyMigrationReportUnsupportedGroupPolicyExtension
  -GroupPolicyMigrationReportId <String> [-AdditionalProperties <Hashtable>] [-ExtensionType <String>]
- [-Id <String>] [-NamespaceUrl <String>] [-NodeName <String>] [-ResponseHeadersVariable <String>]
- [-SettingScope <GroupPolicySettingScope>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-NamespaceUrl <String>] [-NodeName <String>] [-SettingScope <GroupPolicySettingScope>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaDeviceManagementGroupPolicyMigrationReportUnsupportedGroupPolicyExtension
  -GroupPolicyMigrationReportId <String> -BodyParameter <IMicrosoftGraphUnsupportedGroupPolicyExtension>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaDeviceManagementGroupPolicyMigrationReportUnsupportedGroupPolicyExtension
  -InputObject <IDeviceManagementAdministrationIdentity>
- -BodyParameter <IMicrosoftGraphUnsupportedGroupPolicyExtension> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphUnsupportedGroupPolicyExtension> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -40,8 +39,7 @@ New-MgBetaDeviceManagementGroupPolicyMigrationReportUnsupportedGroupPolicyExtens
 New-MgBetaDeviceManagementGroupPolicyMigrationReportUnsupportedGroupPolicyExtension
  -InputObject <IDeviceManagementAdministrationIdentity> [-AdditionalProperties <Hashtable>]
  [-ExtensionType <String>] [-Id <String>] [-NamespaceUrl <String>] [-NodeName <String>]
- [-ResponseHeadersVariable <String>] [-SettingScope <GroupPolicySettingScope>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-SettingScope <GroupPolicySettingScope>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -126,21 +124,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -203,21 +186,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -SettingScope
 Scope of the group policy setting.
 
@@ -272,8 +240,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUnsupportedGroupPolicyExtension
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

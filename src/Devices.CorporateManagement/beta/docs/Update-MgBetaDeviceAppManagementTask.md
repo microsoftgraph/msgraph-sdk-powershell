@@ -18,22 +18,19 @@ Update-MgBetaDeviceAppManagementTask -DeviceAppManagementTaskId <String> [-Addit
  [-AssignedTo <String>] [-Category <DeviceAppManagementTaskCategory>] [-CreatedDateTime <DateTime>]
  [-Creator <String>] [-CreatorNotes <String>] [-Description <String>] [-DisplayName <String>]
  [-DueDateTime <DateTime>] [-Id <String>] [-Priority <DeviceAppManagementTaskPriority>]
- [-ResponseHeadersVariable <String>] [-Status <DeviceAppManagementTaskStatus>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Status <DeviceAppManagementTaskStatus>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaDeviceAppManagementTask -DeviceAppManagementTaskId <String>
- -BodyParameter <IMicrosoftGraphDeviceAppManagementTask> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphDeviceAppManagementTask> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaDeviceAppManagementTask -InputObject <IDevicesCorporateManagementIdentity>
- -BodyParameter <IMicrosoftGraphDeviceAppManagementTask> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphDeviceAppManagementTask> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -42,8 +39,8 @@ Update-MgBetaDeviceAppManagementTask -InputObject <IDevicesCorporateManagementId
  [-AdditionalProperties <Hashtable>] [-AssignedTo <String>] [-Category <DeviceAppManagementTaskCategory>]
  [-CreatedDateTime <DateTime>] [-Creator <String>] [-CreatorNotes <String>] [-Description <String>]
  [-DisplayName <String>] [-DueDateTime <DateTime>] [-Id <String>]
- [-Priority <DeviceAppManagementTaskPriority>] [-ResponseHeadersVariable <String>]
- [-Status <DeviceAppManagementTaskStatus>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Priority <DeviceAppManagementTaskPriority>] [-Status <DeviceAppManagementTaskStatus>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -233,21 +230,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -287,21 +269,6 @@ Device app management task priority.
 Type: Microsoft.Graph.Beta.PowerShell.Support.DeviceAppManagementTaskPriority
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -364,8 +331,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCorporateManagementIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceAppManagementTask
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 
@@ -436,7 +401,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[ManagedMobileAppId <String>]`: The unique identifier of managedMobileApp
   - `[MdmWindowsInformationProtectionPolicyId <String>]`: The unique identifier of mdmWindowsInformationProtectionPolicy
   - `[MobileAppAssignmentId <String>]`: The unique identifier of mobileAppAssignment
-  - `[MobileAppCatalogPackageId <String>]`: The unique identifier of mobileAppCatalogPackage
   - `[MobileAppCategoryId <String>]`: The unique identifier of mobileAppCategory
   - `[MobileAppContentFileId <String>]`: The unique identifier of mobileAppContentFile
   - `[MobileAppContentId <String>]`: The unique identifier of mobileAppContent

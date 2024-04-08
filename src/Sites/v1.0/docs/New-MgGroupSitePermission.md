@@ -20,20 +20,20 @@ New-MgGroupSitePermission -GroupId <String> -SiteId <String> [-AdditionalPropert
  [-GrantedToIdentitiesV2 <IMicrosoftGraphSharePointIdentitySet[]>]
  [-GrantedToV2 <IMicrosoftGraphSharePointIdentitySet>] [-HasPassword] [-Id <String>]
  [-InheritedFrom <IMicrosoftGraphItemReference>] [-Invitation <IMicrosoftGraphSharingInvitation>]
- [-Link <IMicrosoftGraphSharingLink>] [-ResponseHeadersVariable <String>] [-Roles <String[]>]
- [-ShareId <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Link <IMicrosoftGraphSharingLink>] [-Roles <String[]>] [-ShareId <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgGroupSitePermission -GroupId <String> -SiteId <String> -BodyParameter <IMicrosoftGraphPermission>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgGroupSitePermission -InputObject <ISitesIdentity> -BodyParameter <IMicrosoftGraphPermission>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgGroupSitePermission -InputObject <ISitesIdentity> -BodyParameter <IMicrosoftGraphPermission> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -44,8 +44,8 @@ New-MgGroupSitePermission -InputObject <ISitesIdentity> [-AdditionalProperties <
  [-GrantedToIdentitiesV2 <IMicrosoftGraphSharePointIdentitySet[]>]
  [-GrantedToV2 <IMicrosoftGraphSharePointIdentitySet>] [-HasPassword] [-Id <String>]
  [-InheritedFrom <IMicrosoftGraphItemReference>] [-Invitation <IMicrosoftGraphSharingInvitation>]
- [-Link <IMicrosoftGraphSharingLink>] [-ResponseHeadersVariable <String>] [-Roles <String[]>]
- [-ShareId <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Link <IMicrosoftGraphSharingLink>] [-Roles <String[]>] [-ShareId <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -58,14 +58,14 @@ Create a new permission object on a site.
 {{ Add code here }}
 ```
 
-
+{{ Add output here }}
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
 {{ Add code here }}
 ```
 
-
+{{ Add output here }}
 
 ## PARAMETERS
 
@@ -216,21 +216,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -303,21 +288,6 @@ To construct, see NOTES section for LINK properties and create a hash table.
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSharingLink
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -413,8 +383,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPermission
 
 ### Microsoft.Graph.PowerShell.Models.ISitesIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 
@@ -559,7 +527,6 @@ To create the parameters described below, construct a hash table containing the 
 
 `INPUTOBJECT <ISitesIdentity>`: Identity Parameter
   - `[BaseItemId <String>]`: The unique identifier of baseItem
-  - `[BaseSitePageId <String>]`: The unique identifier of baseSitePage
   - `[ColumnDefinitionId <String>]`: The unique identifier of columnDefinition
   - `[ColumnLinkId <String>]`: The unique identifier of columnLink
   - `[ContentTypeId <String>]`: The unique identifier of contentType
@@ -569,8 +536,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[EndDateTime <String>]`: Usage: endDateTime='{endDateTime}'
   - `[GroupId <String>]`: The unique identifier of group
   - `[GroupId1 <String>]`: The unique identifier of group
-  - `[HorizontalSectionColumnId <String>]`: The unique identifier of horizontalSectionColumn
-  - `[HorizontalSectionId <String>]`: The unique identifier of horizontalSection
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}
   - `[Interval <String>]`: Usage: interval='{interval}'
   - `[ItemActivityId <String>]`: The unique identifier of itemActivity
@@ -584,7 +549,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[OnenoteResourceId <String>]`: The unique identifier of onenoteResource
   - `[OnenoteSectionId <String>]`: The unique identifier of onenoteSection
   - `[Path <String>]`: Usage: path='{path}'
-  - `[Path1 <String>]`: Usage: path='{path1}'
   - `[PermissionId <String>]`: The unique identifier of permission
   - `[RelationId <String>]`: The unique identifier of relation
   - `[RichLongRunningOperationId <String>]`: The unique identifier of richLongRunningOperation
@@ -600,7 +564,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[TermId <String>]`: The unique identifier of term
   - `[TermId1 <String>]`: The unique identifier of term
   - `[UserId <String>]`: The unique identifier of user
-  - `[WebPartId <String>]`: The unique identifier of webPart
 
 `INVITATION <IMicrosoftGraphSharingInvitation>`: sharingInvitation
   - `[(Any) <Object>]`: This indicates any property can be added to this object.

@@ -8,9 +8,7 @@ schema: 2.0.0
 # New-MgEducationClassModuleResource
 
 ## SYNOPSIS
-Create a resource in a module.
-Only teachers can perform this operation.
-You can create the following types of module resources: Every resource has an @odata.type property to indicate which type of resource is being created.
+Create new navigation property to resources for education
 
 ## SYNTAX
 
@@ -18,34 +16,32 @@ You can create the following types of module resources: Every resource has an @o
 ```
 New-MgEducationClassModuleResource -EducationClassId <String> -EducationModuleId <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Resource <IMicrosoftGraphEducationResource>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgEducationClassModuleResource -EducationClassId <String> -EducationModuleId <String>
- -BodyParameter <IMicrosoftGraphEducationModuleResource> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphEducationModuleResource> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgEducationClassModuleResource -InputObject <IEducationIdentity>
- -BodyParameter <IMicrosoftGraphEducationModuleResource> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphEducationModuleResource> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgEducationClassModuleResource -InputObject <IEducationIdentity> [-AdditionalProperties <Hashtable>]
- [-Id <String>] [-Resource <IMicrosoftGraphEducationResource>] [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-Resource <IMicrosoftGraphEducationResource>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Create a resource in a module.
-Only teachers can perform this operation.
-You can create the following types of module resources: Every resource has an @odata.type property to indicate which type of resource is being created.
+Create new navigation property to resources for education
 
 ## EXAMPLES
 
@@ -181,21 +177,6 @@ To construct, see NOTES section for RESOURCE properties and create a hash table.
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationResource
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named

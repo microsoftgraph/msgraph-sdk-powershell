@@ -15,15 +15,15 @@ Delete navigation property steps for identityGovernance
 ### Delete (Default)
 ```
 Remove-MgBetaIdentityGovernancePermissionManagementScheduledPermissionApprovalStep -ApprovalId <String>
- -ApprovalStepId <String> [-IfMatch <String>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -ApprovalStepId <String> [-IfMatch <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
 Remove-MgBetaIdentityGovernancePermissionManagementScheduledPermissionApprovalStep
- -InputObject <IIdentityGovernanceIdentity> [-IfMatch <String>] [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -InputObject <IIdentityGovernanceIdentity> [-IfMatch <String>] [-Headers <IDictionary>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -138,21 +138,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
@@ -196,6 +181,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ### System.Boolean
+
+### System.Collections.Hashtable
 
 ## NOTES
 
@@ -255,6 +242,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[GovernanceRoleAssignmentRequestId <String>]`: The unique identifier of governanceRoleAssignmentRequest
   - `[GovernanceRoleDefinitionId <String>]`: The unique identifier of governanceRoleDefinition
   - `[GovernanceRoleSettingId <String>]`: The unique identifier of governanceRoleSetting
+  - `[GroupId <String>]`: The unique identifier of group
   - `[IncompatibleAccessPackageId <String>]`: Usage: incompatibleAccessPackageId='{incompatibleAccessPackageId}'
   - `[LongRunningOperationId <String>]`: The unique identifier of longRunningOperation
   - `[ObjectId <String>]`: Alternate key of accessPackageSubject

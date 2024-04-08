@@ -15,30 +15,27 @@ Update the navigation property operations in print
 ### UpdateExpanded (Default)
 ```
 Update-MgBetaPrintOperation -PrintOperationId <String> [-AdditionalProperties <Hashtable>]
- [-CreatedDateTime <DateTime>] [-Id <String>] [-ResponseHeadersVariable <String>]
- [-Status <IMicrosoftGraphPrintOperationStatus>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-CreatedDateTime <DateTime>] [-Id <String>] [-Status <IMicrosoftGraphPrintOperationStatus>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaPrintOperation -PrintOperationId <String> -BodyParameter <IMicrosoftGraphPrintOperation>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaPrintOperation -InputObject <IDevicesCloudPrintIdentity>
- -BodyParameter <IMicrosoftGraphPrintOperation> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphPrintOperation> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgBetaPrintOperation -InputObject <IDevicesCloudPrintIdentity> [-AdditionalProperties <Hashtable>]
- [-CreatedDateTime <DateTime>] [-Id <String>] [-ResponseHeadersVariable <String>]
- [-Status <IMicrosoftGraphPrintOperationStatus>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-CreatedDateTime <DateTime>] [-Id <String>] [-Status <IMicrosoftGraphPrintOperationStatus>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -109,21 +106,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -165,21 +147,6 @@ Parameter Sets: Update, UpdateExpanded
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -241,8 +208,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCloudPrintIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPrintOperation
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

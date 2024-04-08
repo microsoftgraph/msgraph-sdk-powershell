@@ -18,23 +18,20 @@ A threat assessment request can be one of the following types:
 New-MgBetaGroupSiteInformationProtectionThreatAssessmentRequest -GroupId <String> -SiteId <String>
  [-AdditionalProperties <Hashtable>] [-Category <String>] [-ContentType <String>]
  [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>] [-ExpectedAssessment <String>]
- [-Id <String>] [-RequestSource <String>] [-ResponseHeadersVariable <String>]
- [-Results <IMicrosoftGraphThreatAssessmentResult[]>] [-Status <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-RequestSource <String>] [-Results <IMicrosoftGraphThreatAssessmentResult[]>]
+ [-Status <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaGroupSiteInformationProtectionThreatAssessmentRequest -GroupId <String> -SiteId <String>
- -BodyParameter <IMicrosoftGraphThreatAssessmentRequest> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphThreatAssessmentRequest> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaGroupSiteInformationProtectionThreatAssessmentRequest -InputObject <ISitesIdentity>
- -BodyParameter <IMicrosoftGraphThreatAssessmentRequest> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphThreatAssessmentRequest> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -42,9 +39,8 @@ New-MgBetaGroupSiteInformationProtectionThreatAssessmentRequest -InputObject <IS
 New-MgBetaGroupSiteInformationProtectionThreatAssessmentRequest -InputObject <ISitesIdentity>
  [-AdditionalProperties <Hashtable>] [-Category <String>] [-ContentType <String>]
  [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>] [-ExpectedAssessment <String>]
- [-Id <String>] [-RequestSource <String>] [-ResponseHeadersVariable <String>]
- [-Results <IMicrosoftGraphThreatAssessmentResult[]>] [-Status <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-RequestSource <String>] [-Results <IMicrosoftGraphThreatAssessmentResult[]>]
+ [-Status <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -192,21 +188,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -246,21 +227,6 @@ threatAssessmentRequestSource
 Type: System.String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -357,8 +323,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphThreatAssessmentRequest
@@ -418,8 +382,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[EndDateTime <String>]`: Usage: endDateTime='{endDateTime}'
   - `[GroupId <String>]`: The unique identifier of group
   - `[GroupId1 <String>]`: The unique identifier of group
-  - `[HorizontalSectionColumnId <String>]`: The unique identifier of horizontalSectionColumn
-  - `[HorizontalSectionId <String>]`: The unique identifier of horizontalSection
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}
   - `[InformationProtectionLabelId <String>]`: The unique identifier of informationProtectionLabel
   - `[Interval <String>]`: Usage: interval='{interval}'
@@ -435,7 +397,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[OnenoteResourceId <String>]`: The unique identifier of onenoteResource
   - `[OnenoteSectionId <String>]`: The unique identifier of onenoteSection
   - `[Path <String>]`: Usage: path='{path}'
-  - `[Path1 <String>]`: Usage: path='{path1}'
   - `[PermissionId <String>]`: The unique identifier of permission
   - `[RecycleBinItemId <String>]`: The unique identifier of recycleBinItem
   - `[RelationId <String>]`: The unique identifier of relation
@@ -456,7 +417,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[ThreatAssessmentResultId <String>]`: The unique identifier of threatAssessmentResult
   - `[Token <String>]`: Usage: token='{token}'
   - `[UserId <String>]`: The unique identifier of user
-  - `[WebPartId <String>]`: The unique identifier of webPart
 
 `RESULTS <IMicrosoftGraphThreatAssessmentResult[]>`: A collection of threat assessment results. Read-only. By default, a GET /threatAssessmentRequests/{id} does not return this property unless you apply $expand on it.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.

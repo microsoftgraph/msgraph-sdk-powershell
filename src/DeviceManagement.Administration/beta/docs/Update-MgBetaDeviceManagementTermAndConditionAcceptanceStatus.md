@@ -16,24 +16,22 @@ Update the navigation property acceptanceStatuses in deviceManagement
 ```
 Update-MgBetaDeviceManagementTermAndConditionAcceptanceStatus -TermsAndConditionsAcceptanceStatusId <String>
  -TermsAndConditionsId <String> [-AcceptedDateTime <DateTime>] [-AcceptedVersion <Int32>]
- [-AdditionalProperties <Hashtable>] [-Id <String>] [-ResponseHeadersVariable <String>]
- [-TermsAndConditions <IMicrosoftGraphTermsAndConditions>] [-UserDisplayName <String>]
- [-UserPrincipalName <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-Id <String>] [-TermsAndConditions <IMicrosoftGraphTermsAndConditions>]
+ [-UserDisplayName <String>] [-UserPrincipalName <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaDeviceManagementTermAndConditionAcceptanceStatus -TermsAndConditionsAcceptanceStatusId <String>
- -TermsAndConditionsId <String> -BodyParameter <IMicrosoftGraphTermsAndConditionsAcceptanceStatus>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -TermsAndConditionsId <String> -BodyParameter <IMicrosoftGraphTermsAndConditionsAcceptanceStatus> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaDeviceManagementTermAndConditionAcceptanceStatus
  -InputObject <IDeviceManagementAdministrationIdentity>
- -BodyParameter <IMicrosoftGraphTermsAndConditionsAcceptanceStatus> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphTermsAndConditionsAcceptanceStatus> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -41,9 +39,8 @@ Update-MgBetaDeviceManagementTermAndConditionAcceptanceStatus
 Update-MgBetaDeviceManagementTermAndConditionAcceptanceStatus
  -InputObject <IDeviceManagementAdministrationIdentity> [-AcceptedDateTime <DateTime>]
  [-AcceptedVersion <Int32>] [-AdditionalProperties <Hashtable>] [-Id <String>]
- [-ResponseHeadersVariable <String>] [-TermsAndConditions <IMicrosoftGraphTermsAndConditions>]
- [-UserDisplayName <String>] [-UserPrincipalName <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-TermsAndConditions <IMicrosoftGraphTermsAndConditions>] [-UserDisplayName <String>]
+ [-UserPrincipalName <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -129,21 +126,6 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -173,21 +155,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -308,8 +275,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTermsAndConditionsAcceptanceStatus
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

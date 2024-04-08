@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Applications
-Module Guid: 94a1b32a-7d4c-47a2-80b1-a7bd5b6720c9
+Module Guid: b99bf422-494c-4616-8374-474ca1974b9e
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.applications
 Help Version: 1.0.0.0
 Locale: en-US
@@ -97,9 +97,6 @@ Return the directory objects specified in a list of IDs.
 Only a subset of user properties are returned by default in v1.0.
 Some common uses for this function are to:
 
-### [Get-MgApplicationByUniqueName](Get-MgApplicationByUniqueName.md)
-Get the properties and relationships of an application object.
-
 ### [Get-MgApplicationCount](Get-MgApplicationCount.md)
 Get the number of the resource
 
@@ -191,12 +188,6 @@ Acquire an OAuth access token to authorize the Microsoft Entra provisioning serv
 
 ### [Get-MgApplicationSynchronizationJob](Get-MgApplicationSynchronizationJob.md)
 Retrieve the existing synchronization job and its properties.
-
-### [Get-MgApplicationSynchronizationJobBulkUpload](Get-MgApplicationSynchronizationJobBulkUpload.md)
-The bulk upload operation for the job.
-
-### [Get-MgApplicationSynchronizationJobBulkUploadContent](Get-MgApplicationSynchronizationJobBulkUploadContent.md)
-Get media content for the navigation property bulkUpload from applications
 
 ### [Get-MgApplicationSynchronizationJobCount](Get-MgApplicationSynchronizationJobCount.md)
 Get the number of the resource
@@ -390,7 +381,7 @@ Nullable.
 Get the number of the resource
 
 ### [Get-MgServicePrincipalOwnedObject](Get-MgServicePrincipalOwnedObject.md)
-Directory objects that this service principal owns.
+Directory objects that are owned by this service principal.
 Read-only.
 Nullable.
 Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
@@ -430,7 +421,7 @@ Get the number of the resource
 
 ### [Get-MgServicePrincipalOwner](Get-MgServicePrincipalOwner.md)
 Directory objects that are owners of this servicePrincipal.
-The owners are a set of nonadmin users or servicePrincipals who are allowed to modify this object.
+The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object.
 Read-only.
 Nullable.
 Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1), and $select nested in $expand.
@@ -449,7 +440,7 @@ Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
 
 ### [Get-MgServicePrincipalOwnerByRef](Get-MgServicePrincipalOwnerByRef.md)
 Directory objects that are owners of this servicePrincipal.
-The owners are a set of nonadmin users or servicePrincipals who are allowed to modify this object.
+The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object.
 Read-only.
 Nullable.
 Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1), and $select nested in $expand.
@@ -488,12 +479,6 @@ Acquire an OAuth access token to authorize the Microsoft Entra provisioning serv
 
 ### [Get-MgServicePrincipalSynchronizationJob](Get-MgServicePrincipalSynchronizationJob.md)
 Retrieve the existing synchronization job and its properties.
-
-### [Get-MgServicePrincipalSynchronizationJobBulkUpload](Get-MgServicePrincipalSynchronizationJobBulkUpload.md)
-The bulk upload operation for the job.
-
-### [Get-MgServicePrincipalSynchronizationJobBulkUploadContent](Get-MgServicePrincipalSynchronizationJobBulkUploadContent.md)
-Get media content for the navigation property bulkUpload from servicePrincipals
 
 ### [Get-MgServicePrincipalSynchronizationJobCount](Get-MgServicePrincipalSynchronizationJobCount.md)
 Get the number of the resource
@@ -594,7 +579,8 @@ Invoke function functions
 
 ### [Invoke-MgInstantiateApplicationTemplate](Invoke-MgInstantiateApplicationTemplate.md)
 Add an instance of an application from the Microsoft Entra application gallery into your directory.
-The application template with ID 8adf8e6e-67b2-4cf2-a259-e3dc5476c621 can be used to add a non-gallery app that you can configure different single-sign on (SSO) modes like SAML SSO and password-based SSO.
+You can also use this API to instantiate non-gallery apps.
+Use the following ID for the applicationTemplate object: 8adf8e6e-67b2-4cf2-a259-e3dc5476c621.
 
 ### [Invoke-MgParseApplicationSynchronizationJobSchemaExpression](Invoke-MgParseApplicationSynchronizationJobSchemaExpression.md)
 Parse a given string expression into an attributeMappingSource object.
@@ -724,20 +710,11 @@ Delete an application object.
 When deleted, apps are moved to a temporary container and can be restored within 30 days.
 After that time, they are permanently deleted.
 
-### [Remove-MgApplicationAppManagementPolicyAppManagementPolicyByRef](Remove-MgApplicationAppManagementPolicyAppManagementPolicyByRef.md)
-Remove an appManagementPolicy policy object from an application or service principal object.
-When you remove the appManagementPolicy, the application or service principal adopts the tenant-wide tenantAppManagementPolicy setting.
-
 ### [Remove-MgApplicationAppManagementPolicyByRef](Remove-MgApplicationAppManagementPolicyByRef.md)
 Remove an appManagementPolicy policy object from an application or service principal object.
 When you remove the appManagementPolicy, the application or service principal adopts the tenant-wide tenantAppManagementPolicy setting.
 
 ### [Remove-MgApplicationByAppId](Remove-MgApplicationByAppId.md)
-Delete an application object.
-When deleted, apps are moved to a temporary container and can be restored within 30 days.
-After that time, they are permanently deleted.
-
-### [Remove-MgApplicationByUniqueName](Remove-MgApplicationByUniqueName.md)
 Delete an application object.
 When deleted, apps are moved to a temporary container and can be restored within 30 days.
 After that time, they are permanently deleted.
@@ -758,10 +735,6 @@ As part of the request validation for this method, a proof of possession of an e
 Remove an owner from an application.
 As a recommended best practice, apps should have at least two owners.
 
-### [Remove-MgApplicationOwnerDirectoryObjectByRef](Remove-MgApplicationOwnerDirectoryObjectByRef.md)
-Remove an owner from an application.
-As a recommended best practice, apps should have at least two owners.
-
 ### [Remove-MgApplicationPassword](Remove-MgApplicationPassword.md)
 Remove a password from an application.
 
@@ -771,9 +744,6 @@ Delete navigation property synchronization for applications
 ### [Remove-MgApplicationSynchronizationJob](Remove-MgApplicationSynchronizationJob.md)
 Stop the synchronization job, and permanently delete all the state associated with it.
 Synchronized accounts are left as-is.
-
-### [Remove-MgApplicationSynchronizationJobBulkUpload](Remove-MgApplicationSynchronizationJobBulkUpload.md)
-Delete navigation property bulkUpload for applications
 
 ### [Remove-MgApplicationSynchronizationJobSchema](Remove-MgApplicationSynchronizationJobSchema.md)
 Delete navigation property schema for applications
@@ -793,13 +763,7 @@ Delete navigation property directories for applications
 ### [Remove-MgApplicationTokenIssuancePolicyByRef](Remove-MgApplicationTokenIssuancePolicyByRef.md)
 Remove a tokenIssuancePolicy from an application.
 
-### [Remove-MgApplicationTokenIssuancePolicyTokenIssuancePolicyByRef](Remove-MgApplicationTokenIssuancePolicyTokenIssuancePolicyByRef.md)
-Remove a tokenIssuancePolicy from an application.
-
 ### [Remove-MgApplicationTokenLifetimePolicyByRef](Remove-MgApplicationTokenLifetimePolicyByRef.md)
-Remove a tokenLifetimePolicy from an application.
-
-### [Remove-MgApplicationTokenLifetimePolicyTokenLifetimePolicyByRef](Remove-MgApplicationTokenLifetimePolicyTokenLifetimePolicyByRef.md)
 Remove a tokenLifetimePolicy from an application.
 
 ### [Remove-MgGroupAppRoleAssignment](Remove-MgGroupAppRoleAssignment.md)
@@ -807,6 +771,10 @@ Deletes an appRoleAssignment that a group has been granted.
 
 ### [Remove-MgServicePrincipal](Remove-MgServicePrincipal.md)
 Delete a servicePrincipal object.
+
+### [Remove-MgServicePrincipalAppManagementPolicy](Remove-MgServicePrincipalAppManagementPolicy.md)
+Remove an appManagementPolicy policy object from an application or service principal object.
+When you remove the appManagementPolicy, the application or service principal adopts the tenant-wide tenantAppManagementPolicy setting.
 
 ### [Remove-MgServicePrincipalAppRoleAssignedTo](Remove-MgServicePrincipalAppRoleAssignedTo.md)
 Deletes an appRoleAssignment that a user, group, or client service principal has been granted for a resource service principal.
@@ -822,9 +790,6 @@ Delete a servicePrincipal object.
 ### [Remove-MgServicePrincipalClaimMappingPolicyByRef](Remove-MgServicePrincipalClaimMappingPolicyByRef.md)
 Remove a claimsMappingPolicy from a servicePrincipal.
 
-### [Remove-MgServicePrincipalClaimMappingPolicyClaimMappingPolicyByRef](Remove-MgServicePrincipalClaimMappingPolicyClaimMappingPolicyByRef.md)
-Remove a claimsMappingPolicy from a servicePrincipal.
-
 ### [Remove-MgServicePrincipalDelegatedPermissionClassification](Remove-MgServicePrincipalDelegatedPermissionClassification.md)
 Deletes a delegatedPermissionClassification which had previously been set for a delegated permission.
 
@@ -834,19 +799,12 @@ Delete navigation property endpoints for servicePrincipals
 ### [Remove-MgServicePrincipalHomeRealmDiscoveryPolicyByRef](Remove-MgServicePrincipalHomeRealmDiscoveryPolicyByRef.md)
 Remove a homeRealmDiscoveryPolicy from a servicePrincipal.
 
-### [Remove-MgServicePrincipalHomeRealmDiscoveryPolicyHomeRealmDiscoveryPolicyByRef](Remove-MgServicePrincipalHomeRealmDiscoveryPolicyHomeRealmDiscoveryPolicyByRef.md)
-Remove a homeRealmDiscoveryPolicy from a servicePrincipal.
-
 ### [Remove-MgServicePrincipalKey](Remove-MgServicePrincipalKey.md)
 Remove a key credential from a servicePrincipal.
 This method along with addKey can be used by a servicePrincipal to automate rolling its expiring keys.
 As part of the request validation for this method, a proof of possession of an existing key is verified before the action can be performed.
 
 ### [Remove-MgServicePrincipalOwnerByRef](Remove-MgServicePrincipalOwnerByRef.md)
-Remove an owner from a servicePrincipal object.
-As a recommended best practice, service principals should have at least two owners.
-
-### [Remove-MgServicePrincipalOwnerDirectoryObjectByRef](Remove-MgServicePrincipalOwnerDirectoryObjectByRef.md)
 Remove an owner from a servicePrincipal object.
 As a recommended best practice, service principals should have at least two owners.
 
@@ -867,9 +825,6 @@ Delete navigation property synchronization for servicePrincipals
 ### [Remove-MgServicePrincipalSynchronizationJob](Remove-MgServicePrincipalSynchronizationJob.md)
 Stop the synchronization job, and permanently delete all the state associated with it.
 Synchronized accounts are left as-is.
-
-### [Remove-MgServicePrincipalSynchronizationJobBulkUpload](Remove-MgServicePrincipalSynchronizationJobBulkUpload.md)
-Delete navigation property bulkUpload for servicePrincipals
 
 ### [Remove-MgServicePrincipalSynchronizationJobSchema](Remove-MgServicePrincipalSynchronizationJobSchema.md)
 Delete navigation property schema for servicePrincipals
@@ -904,9 +859,6 @@ Not nullable.
 ### [Set-MgApplicationSynchronization](Set-MgApplicationSynchronization.md)
 Update the navigation property synchronization in applications
 
-### [Set-MgApplicationSynchronizationJobBulkUploadContent](Set-MgApplicationSynchronizationJobBulkUploadContent.md)
-Update media content for the navigation property bulkUpload in applications
-
 ### [Set-MgApplicationSynchronizationSecret](Set-MgApplicationSynchronizationSecret.md)
 Update property secrets value.
 
@@ -916,9 +868,6 @@ For more information, including prerequisites to setting a verified publisher, s
 
 ### [Set-MgServicePrincipalSynchronization](Set-MgServicePrincipalSynchronization.md)
 Update the navigation property synchronization in servicePrincipals
-
-### [Set-MgServicePrincipalSynchronizationJobBulkUploadContent](Set-MgServicePrincipalSynchronizationJobBulkUploadContent.md)
-Update media content for the navigation property bulkUpload in servicePrincipals
 
 ### [Set-MgServicePrincipalSynchronizationSecret](Set-MgServicePrincipalSynchronizationSecret.md)
 Update property secrets value.
@@ -981,9 +930,6 @@ Update the properties of an application object.
 ### [Update-MgApplicationByAppId](Update-MgApplicationByAppId.md)
 Update the properties of an application object.
 
-### [Update-MgApplicationByUniqueName](Update-MgApplicationByUniqueName.md)
-Update the properties of an application object.
-
 ### [Update-MgApplicationExtensionProperty](Update-MgApplicationExtensionProperty.md)
 Update the navigation property extensionProperties in applications
 
@@ -992,9 +938,6 @@ Update the properties of a federatedIdentityCredential object.
 
 ### [Update-MgApplicationSynchronizationJob](Update-MgApplicationSynchronizationJob.md)
 Update the navigation property jobs in applications
-
-### [Update-MgApplicationSynchronizationJobBulkUpload](Update-MgApplicationSynchronizationJobBulkUpload.md)
-Update the navigation property bulkUpload in applications
 
 ### [Update-MgApplicationSynchronizationJobSchema](Update-MgApplicationSynchronizationJobSchema.md)
 Update the synchronization schema for a given job or template.
@@ -1045,9 +988,6 @@ You can configure a maximum of 10 target device groups for the remoteDesktopSecu
 
 ### [Update-MgServicePrincipalSynchronizationJob](Update-MgServicePrincipalSynchronizationJob.md)
 Update the navigation property jobs in servicePrincipals
-
-### [Update-MgServicePrincipalSynchronizationJobBulkUpload](Update-MgServicePrincipalSynchronizationJobBulkUpload.md)
-Update the navigation property bulkUpload in servicePrincipals
 
 ### [Update-MgServicePrincipalSynchronizationJobSchema](Update-MgServicePrincipalSynchronizationJobSchema.md)
 Update the synchronization schema for a given job or template.

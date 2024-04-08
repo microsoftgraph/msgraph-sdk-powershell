@@ -17,33 +17,29 @@ Update the navigation property attendanceRecords in solutions
 Update-MgVirtualEventWebinarSessionAttendanceReportAttendanceRecord -AttendanceRecordId <String>
  -MeetingAttendanceReportId <String> -VirtualEventSessionId <String> -VirtualEventWebinarId <String>
  [-AdditionalProperties <Hashtable>] [-AttendanceIntervals <IMicrosoftGraphAttendanceInterval[]>]
- [-EmailAddress <String>] [-Id <String>] [-Identity <IMicrosoftGraphIdentity>]
- [-ResponseHeadersVariable <String>] [-Role <String>] [-TotalAttendanceInSeconds <Int32>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-EmailAddress <String>] [-Id <String>] [-Identity <IMicrosoftGraphIdentity>] [-Role <String>]
+ [-TotalAttendanceInSeconds <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgVirtualEventWebinarSessionAttendanceReportAttendanceRecord -AttendanceRecordId <String>
  -MeetingAttendanceReportId <String> -VirtualEventSessionId <String> -VirtualEventWebinarId <String>
- -BodyParameter <IMicrosoftGraphAttendanceRecord> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphAttendanceRecord> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgVirtualEventWebinarSessionAttendanceReportAttendanceRecord -InputObject <IBookingsIdentity>
- -BodyParameter <IMicrosoftGraphAttendanceRecord> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphAttendanceRecord> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgVirtualEventWebinarSessionAttendanceReportAttendanceRecord -InputObject <IBookingsIdentity>
  [-AdditionalProperties <Hashtable>] [-AttendanceIntervals <IMicrosoftGraphAttendanceInterval[]>]
- [-EmailAddress <String>] [-Id <String>] [-Identity <IMicrosoftGraphIdentity>]
- [-ResponseHeadersVariable <String>] [-Role <String>] [-TotalAttendanceInSeconds <Int32>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-EmailAddress <String>] [-Id <String>] [-Identity <IMicrosoftGraphIdentity>] [-Role <String>]
+ [-TotalAttendanceInSeconds <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -144,21 +140,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -216,21 +197,6 @@ Parameter Sets: Update, UpdateExpanded
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -337,8 +303,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IBookingsIdentity
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAttendanceRecord
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

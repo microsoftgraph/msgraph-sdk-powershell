@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Bookings
-Module Guid: 02eae36e-b664-4083-9e94-71916aae85da
+Module Guid: 2a9e636c-c99a-4ced-8549-68de9c52eeb7
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.bookings
 Help Version: 1.0.0.0
 Locale: en-US
@@ -73,11 +73,10 @@ Get events from solutions
 Get the number of the resource
 
 ### [Get-MgVirtualEventSession](Get-MgVirtualEventSession.md)
-Sessions for the virtual event.
+Get sessions from solutions
 
 ### [Get-MgVirtualEventSessionAttendanceReport](Get-MgVirtualEventSessionAttendanceReport.md)
-The attendance reports of an online meeting.
-Read-only.
+Get attendanceReports from solutions
 
 ### [Get-MgVirtualEventSessionAttendanceReportAttendanceRecord](Get-MgVirtualEventSessionAttendanceReportAttendanceRecord.md)
 List of attendance records of an attendance report.
@@ -105,17 +104,16 @@ Invoke function getByUserRole
 Get the number of the resource
 
 ### [Get-MgVirtualEventWebinarRegistration](Get-MgVirtualEventWebinarRegistration.md)
-Get the properties and relationships of a virtualEventRegistration object.
+Get registrations from solutions
 
 ### [Get-MgVirtualEventWebinarRegistrationCount](Get-MgVirtualEventWebinarRegistrationCount.md)
 Get the number of the resource
 
 ### [Get-MgVirtualEventWebinarSession](Get-MgVirtualEventWebinarSession.md)
-Sessions for the virtual event.
+Get sessions from solutions
 
 ### [Get-MgVirtualEventWebinarSessionAttendanceReport](Get-MgVirtualEventWebinarSessionAttendanceReport.md)
-The attendance reports of an online meeting.
-Read-only.
+Get attendanceReports from solutions
 
 ### [Get-MgVirtualEventWebinarSessionAttendanceReportAttendanceRecord](Get-MgVirtualEventWebinarSessionAttendanceReportAttendanceRecord.md)
 List of attendance records of an attendance report.

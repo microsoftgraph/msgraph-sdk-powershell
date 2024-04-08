@@ -19,25 +19,24 @@ Update-MgRoleManagementEntitlementManagementRoleEligibilityScheduleInstance
  [-AppScope <IMicrosoftGraphAppScope>] [-AppScopeId <String>]
  [-DirectoryScope <IMicrosoftGraphDirectoryObject>] [-DirectoryScopeId <String>] [-EndDateTime <DateTime>]
  [-Id <String>] [-MemberType <String>] [-Principal <IMicrosoftGraphDirectoryObject>] [-PrincipalId <String>]
- [-ResponseHeadersVariable <String>] [-RoleDefinition <IMicrosoftGraphUnifiedRoleDefinition>]
- [-RoleDefinitionId <String>] [-RoleEligibilityScheduleId <String>] [-StartDateTime <DateTime>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-RoleDefinition <IMicrosoftGraphUnifiedRoleDefinition>] [-RoleDefinitionId <String>]
+ [-RoleEligibilityScheduleId <String>] [-StartDateTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgRoleManagementEntitlementManagementRoleEligibilityScheduleInstance
  -UnifiedRoleEligibilityScheduleInstanceId <String>
- -BodyParameter <IMicrosoftGraphUnifiedRoleEligibilityScheduleInstance> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphUnifiedRoleEligibilityScheduleInstance> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgRoleManagementEntitlementManagementRoleEligibilityScheduleInstance
  -InputObject <IIdentityGovernanceIdentity>
- -BodyParameter <IMicrosoftGraphUnifiedRoleEligibilityScheduleInstance> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphUnifiedRoleEligibilityScheduleInstance> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -47,9 +46,8 @@ Update-MgRoleManagementEntitlementManagementRoleEligibilityScheduleInstance
  [-AppScope <IMicrosoftGraphAppScope>] [-AppScopeId <String>]
  [-DirectoryScope <IMicrosoftGraphDirectoryObject>] [-DirectoryScopeId <String>] [-EndDateTime <DateTime>]
  [-Id <String>] [-MemberType <String>] [-Principal <IMicrosoftGraphDirectoryObject>] [-PrincipalId <String>]
- [-ResponseHeadersVariable <String>] [-RoleDefinition <IMicrosoftGraphUnifiedRoleDefinition>]
- [-RoleDefinitionId <String>] [-RoleEligibilityScheduleId <String>] [-StartDateTime <DateTime>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-RoleDefinition <IMicrosoftGraphUnifiedRoleDefinition>] [-RoleDefinitionId <String>]
+ [-RoleEligibilityScheduleId <String>] [-StartDateTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -189,21 +187,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -277,21 +260,6 @@ Identifier of the principal that has been granted the role assignment or that's 
 Type: System.String
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -417,8 +385,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUnifiedRoleEligibilityScheduleInstance
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUnifiedRoleEligibilityScheduleInstance
@@ -517,6 +483,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[DirectoryObjectId <String>]`: The unique identifier of directoryObject
   - `[EndDateTime <DateTime?>]`: Usage: endDateTime={endDateTime}
   - `[GovernanceInsightId <String>]`: The unique identifier of governanceInsight
+  - `[GroupId <String>]`: The unique identifier of group
   - `[IncompatibleAccessPackageId <String>]`: Usage: incompatibleAccessPackageId='{incompatibleAccessPackageId}'
   - `[On <String>]`: Usage: on='{on}'
   - `[PrivilegedAccessGroupAssignmentScheduleId <String>]`: The unique identifier of privilegedAccessGroupAssignmentSchedule

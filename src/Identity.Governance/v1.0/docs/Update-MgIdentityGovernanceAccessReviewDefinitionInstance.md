@@ -22,23 +22,22 @@ Update-MgIdentityGovernanceAccessReviewDefinitionInstance -AccessReviewInstanceI
  [-ContactedReviewers <IMicrosoftGraphAccessReviewReviewer[]>]
  [-Decisions <IMicrosoftGraphAccessReviewInstanceDecisionItem[]>] [-EndDateTime <DateTime>]
  [-FallbackReviewers <IMicrosoftGraphAccessReviewReviewerScope[]>] [-Id <String>]
- [-ResponseHeadersVariable <String>] [-Reviewers <IMicrosoftGraphAccessReviewReviewerScope[]>]
- [-Scope <Hashtable>] [-Stages <IMicrosoftGraphAccessReviewStage[]>] [-StartDateTime <DateTime>]
- [-Status <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Reviewers <IMicrosoftGraphAccessReviewReviewerScope[]>] [-Scope <Hashtable>]
+ [-Stages <IMicrosoftGraphAccessReviewStage[]>] [-StartDateTime <DateTime>] [-Status <String>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgIdentityGovernanceAccessReviewDefinitionInstance -AccessReviewInstanceId <String>
- -AccessReviewScheduleDefinitionId <String> -BodyParameter <IMicrosoftGraphAccessReviewInstance>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -AccessReviewScheduleDefinitionId <String> -BodyParameter <IMicrosoftGraphAccessReviewInstance> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgIdentityGovernanceAccessReviewDefinitionInstance -InputObject <IIdentityGovernanceIdentity>
- -BodyParameter <IMicrosoftGraphAccessReviewInstance> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphAccessReviewInstance> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -47,9 +46,9 @@ Update-MgIdentityGovernanceAccessReviewDefinitionInstance -InputObject <IIdentit
  [-AdditionalProperties <Hashtable>] [-ContactedReviewers <IMicrosoftGraphAccessReviewReviewer[]>]
  [-Decisions <IMicrosoftGraphAccessReviewInstanceDecisionItem[]>] [-EndDateTime <DateTime>]
  [-FallbackReviewers <IMicrosoftGraphAccessReviewReviewerScope[]>] [-Id <String>]
- [-ResponseHeadersVariable <String>] [-Reviewers <IMicrosoftGraphAccessReviewReviewerScope[]>]
- [-Scope <Hashtable>] [-Stages <IMicrosoftGraphAccessReviewStage[]>] [-StartDateTime <DateTime>]
- [-Status <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Reviewers <IMicrosoftGraphAccessReviewReviewerScope[]>] [-Scope <Hashtable>]
+ [-Stages <IMicrosoftGraphAccessReviewStage[]>] [-StartDateTime <DateTime>] [-Status <String>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -243,21 +242,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -287,21 +271,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -433,8 +402,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewInstance
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 
@@ -585,6 +552,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[DirectoryObjectId <String>]`: The unique identifier of directoryObject
   - `[EndDateTime <DateTime?>]`: Usage: endDateTime={endDateTime}
   - `[GovernanceInsightId <String>]`: The unique identifier of governanceInsight
+  - `[GroupId <String>]`: The unique identifier of group
   - `[IncompatibleAccessPackageId <String>]`: Usage: incompatibleAccessPackageId='{incompatibleAccessPackageId}'
   - `[On <String>]`: Usage: on='{on}'
   - `[PrivilegedAccessGroupAssignmentScheduleId <String>]`: The unique identifier of privilegedAccessGroupAssignmentSchedule

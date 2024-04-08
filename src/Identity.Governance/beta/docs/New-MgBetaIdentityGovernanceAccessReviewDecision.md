@@ -21,16 +21,14 @@ New-MgBetaIdentityGovernanceAccessReviewDecision [-AccessReviewId <String>]
  [-Principal <IMicrosoftGraphIdentity>] [-PrincipalLink <String>]
  [-PrincipalResourceMembership <IMicrosoftGraphDecisionItemPrincipalResourceMembership>]
  [-Recommendation <String>] [-Resource <IMicrosoftGraphAccessReviewInstanceDecisionItemResource>]
- [-ResourceLink <String>] [-ResponseHeadersVariable <String>] [-ReviewedBy <IMicrosoftGraphUserIdentity>]
- [-ReviewedDateTime <DateTime>] [-Target <Hashtable>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-ResourceLink <String>] [-ReviewedBy <IMicrosoftGraphUserIdentity>] [-ReviewedDateTime <DateTime>]
+ [-Target <Hashtable>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaIdentityGovernanceAccessReviewDecision
- -BodyParameter <IMicrosoftGraphAccessReviewInstanceDecisionItem> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphAccessReviewInstanceDecisionItem> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -169,21 +167,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -355,21 +338,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -ReviewedBy
 userIdentity
 To construct, see NOTES section for REVIEWEDBY properties and create a hash table.
@@ -455,8 +423,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessReviewInstanceDecisionItem
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

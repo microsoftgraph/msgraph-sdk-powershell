@@ -16,30 +16,30 @@ Update the navigation property roleManagementPolicyAssignments in policies
 ```
 Update-MgBetaPolicyRoleManagementPolicyAssignment -UnifiedRoleManagementPolicyAssignmentId <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Policy <IMicrosoftGraphUnifiedRoleManagementPolicy>]
- [-PolicyId <String>] [-ResponseHeadersVariable <String>] [-RoleDefinitionId <String>] [-ScopeId <String>]
- [-ScopeType <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PolicyId <String>] [-RoleDefinitionId <String>] [-ScopeId <String>] [-ScopeType <String>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaPolicyRoleManagementPolicyAssignment -UnifiedRoleManagementPolicyAssignmentId <String>
- -BodyParameter <IMicrosoftGraphUnifiedRoleManagementPolicyAssignment> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphUnifiedRoleManagementPolicyAssignment> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaPolicyRoleManagementPolicyAssignment -InputObject <IIdentitySignInsIdentity>
- -BodyParameter <IMicrosoftGraphUnifiedRoleManagementPolicyAssignment> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphUnifiedRoleManagementPolicyAssignment> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgBetaPolicyRoleManagementPolicyAssignment -InputObject <IIdentitySignInsIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Policy <IMicrosoftGraphUnifiedRoleManagementPolicy>]
- [-PolicyId <String>] [-ResponseHeadersVariable <String>] [-RoleDefinitionId <String>] [-ScopeId <String>]
- [-ScopeType <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PolicyId <String>] [-RoleDefinitionId <String>] [-ScopeId <String>] [-ScopeType <String>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -88,21 +88,6 @@ Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -165,21 +150,6 @@ Inherited from entity.
 Type: System.String
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -294,8 +264,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUnifiedRoleManagementPolicyAssignment
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUnifiedRoleManagementPolicyAssignment
@@ -332,8 +300,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[IsOrganizationDefault <Boolean?>]`: This can only be set to true for a single tenant-wide policy which will apply to all scopes and roles. Set the scopeId to / and scopeType to Directory. Supports $filter (eq, ne).
     - `[LastModifiedBy <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-      - `[Id <String>]`: The identifier of the identity. This property is read-only.
+      - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[Id <String>]`: Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn't included in the response.
     - `[LastModifiedDateTime <DateTime?>]`: The time when the role setting was last modified.
     - `[Rules <IMicrosoftGraphUnifiedRoleManagementPolicyRule[]>]`: The collection of rules like approval rules and expiration rules. Supports $expand.
     - `[ScopeId <String>]`: The identifier of the scope where the policy is created. Can be / for the tenant or a group ID. Required.
@@ -442,8 +410,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[IsOrganizationDefault <Boolean?>]`: This can only be set to true for a single tenant-wide policy which will apply to all scopes and roles. Set the scopeId to / and scopeType to Directory. Supports $filter (eq, ne).
   - `[LastModifiedBy <IMicrosoftGraphIdentity>]`: identity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-    - `[Id <String>]`: The identifier of the identity. This property is read-only.
+    - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+    - `[Id <String>]`: Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn't included in the response.
   - `[LastModifiedDateTime <DateTime?>]`: The time when the role setting was last modified.
   - `[Rules <IMicrosoftGraphUnifiedRoleManagementPolicyRule[]>]`: The collection of rules like approval rules and expiration rules. Supports $expand.
   - `[ScopeId <String>]`: The identifier of the scope where the policy is created. Can be / for the tenant or a group ID. Required.

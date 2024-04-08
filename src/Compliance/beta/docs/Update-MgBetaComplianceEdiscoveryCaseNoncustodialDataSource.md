@@ -18,22 +18,20 @@ Update-MgBetaComplianceEdiscoveryCaseNoncustodialDataSource -CaseId <String>
  -NoncustodialDataSourceId <String> [-AdditionalProperties <Hashtable>] [-ApplyHoldToSource]
  [-CreatedDateTime <DateTime>] [-DataSource <IMicrosoftGraphEdiscoveryDataSource>] [-DisplayName <String>]
  [-HoldStatus <String>] [-Id <String>] [-LastIndexOperation <Hashtable>] [-LastModifiedDateTime <DateTime>]
- [-ReleasedDateTime <DateTime>] [-ResponseHeadersVariable <String>] [-Status <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ReleasedDateTime <DateTime>] [-Status <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaComplianceEdiscoveryCaseNoncustodialDataSource -CaseId <String>
  -NoncustodialDataSourceId <String> -BodyParameter <IMicrosoftGraphEdiscoveryNoncustodialDataSource>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaComplianceEdiscoveryCaseNoncustodialDataSource -InputObject <IComplianceIdentity>
- -BodyParameter <IMicrosoftGraphEdiscoveryNoncustodialDataSource> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphEdiscoveryNoncustodialDataSource> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -42,8 +40,7 @@ Update-MgBetaComplianceEdiscoveryCaseNoncustodialDataSource -InputObject <ICompl
  [-AdditionalProperties <Hashtable>] [-ApplyHoldToSource] [-CreatedDateTime <DateTime>]
  [-DataSource <IMicrosoftGraphEdiscoveryDataSource>] [-DisplayName <String>] [-HoldStatus <String>]
  [-Id <String>] [-LastIndexOperation <Hashtable>] [-LastModifiedDateTime <DateTime>]
- [-ReleasedDateTime <DateTime>] [-ResponseHeadersVariable <String>] [-Status <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ReleasedDateTime <DateTime>] [-Status <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -174,21 +171,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -HoldStatus
 dataSourceHoldStatus
 
@@ -296,21 +278,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Status
 dataSourceContainerStatus
 
@@ -365,8 +332,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IComplianceIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEdiscoveryNoncustodialDataSource
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

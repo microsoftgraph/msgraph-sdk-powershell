@@ -19,22 +19,20 @@ New-MgBetaAdminEdgeInternetExplorerModeSiteListSharedCookie -BrowserSiteListId <
  [-DeletedDateTime <DateTime>] [-DisplayName <String>]
  [-History <IMicrosoftGraphBrowserSharedCookieHistory[]>] [-HostOnly] [-HostOrDomain <String>] [-Id <String>]
  [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>] [-Path <String>]
- [-ResponseHeadersVariable <String>] [-SourceEnvironment <BrowserSharedCookieSourceEnvironment>]
- [-Status <BrowserSharedCookieStatus>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-SourceEnvironment <BrowserSharedCookieSourceEnvironment>] [-Status <BrowserSharedCookieStatus>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaAdminEdgeInternetExplorerModeSiteListSharedCookie -BrowserSiteListId <String>
- -BodyParameter <IMicrosoftGraphBrowserSharedCookie> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphBrowserSharedCookie> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaAdminEdgeInternetExplorerModeSiteListSharedCookie -InputObject <IDeviceManagementIdentity>
- -BodyParameter <IMicrosoftGraphBrowserSharedCookie> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphBrowserSharedCookie> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -44,8 +42,8 @@ New-MgBetaAdminEdgeInternetExplorerModeSiteListSharedCookie -InputObject <IDevic
  [-DeletedDateTime <DateTime>] [-DisplayName <String>]
  [-History <IMicrosoftGraphBrowserSharedCookieHistory[]>] [-HostOnly] [-HostOrDomain <String>] [-Id <String>]
  [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>] [-Path <String>]
- [-ResponseHeadersVariable <String>] [-SourceEnvironment <BrowserSharedCookieSourceEnvironment>]
- [-Status <BrowserSharedCookieStatus>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-SourceEnvironment <BrowserSharedCookieSourceEnvironment>] [-Status <BrowserSharedCookieStatus>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -175,21 +173,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -History
 The history of modifications applied to the cookie.
 To construct, see NOTES section for HISTORY properties and create a hash table.
@@ -314,21 +297,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -SourceEnvironment
 browserSharedCookieSourceEnvironment
 
@@ -398,8 +366,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBrowserSharedCookie
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 
@@ -542,7 +508,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[MacOSSoftwareUpdateCategorySummaryId <String>]`: The unique identifier of macOSSoftwareUpdateCategorySummary
   - `[MacOSSoftwareUpdateStateSummaryId <String>]`: The unique identifier of macOSSoftwareUpdateStateSummary
   - `[MalwareStateForWindowsDeviceId <String>]`: The unique identifier of malwareStateForWindowsDevice
-  - `[ManagedDeviceCleanupRuleId <String>]`: The unique identifier of managedDeviceCleanupRule
   - `[ManagedDeviceEncryptionStateId <String>]`: The unique identifier of managedDeviceEncryptionState
   - `[ManagedDeviceId <String>]`: The unique identifier of managedDevice
   - `[ManagedDeviceMobileAppConfigurationStateId <String>]`: The unique identifier of managedDeviceMobileAppConfigurationState

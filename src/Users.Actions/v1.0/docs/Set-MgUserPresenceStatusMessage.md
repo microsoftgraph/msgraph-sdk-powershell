@@ -16,31 +16,27 @@ An optional expiration date and time can be supplied.
 ### SetExpanded (Default)
 ```
 Set-MgUserPresenceStatusMessage -UserId <String> [-AdditionalProperties <Hashtable>]
- [-ResponseHeadersVariable <String>] [-StatusMessage <IMicrosoftGraphPresenceStatusMessage>]
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-StatusMessage <IMicrosoftGraphPresenceStatusMessage>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Set
 ```
 Set-MgUserPresenceStatusMessage -UserId <String>
  -BodyParameter <IPathsDovi6RUsersUserIdPresenceMicrosoftGraphSetstatusmessagePostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentity
 ```
 Set-MgUserPresenceStatusMessage -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPathsDovi6RUsersUserIdPresenceMicrosoftGraphSetstatusmessagePostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentityExpanded
 ```
 Set-MgUserPresenceStatusMessage -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
- [-ResponseHeadersVariable <String>] [-StatusMessage <IMicrosoftGraphPresenceStatusMessage>]
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-StatusMessage <IMicrosoftGraphPresenceStatusMessage>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -96,21 +92,6 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -134,21 +115,6 @@ Returns true when the command succeeds
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -228,8 +194,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
@@ -280,7 +244,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[NotebookId <String>]`: The unique identifier of notebook
   - `[OnenotePageId <String>]`: The unique identifier of onenotePage
   - `[OnenoteSectionId <String>]`: The unique identifier of onenoteSection
-  - `[OnlineMeetingId <String>]`: The unique identifier of onlineMeeting
   - `[PermissionId <String>]`: The unique identifier of permission
   - `[PhoneAuthenticationMethodId <String>]`: The unique identifier of phoneAuthenticationMethod
   - `[SubscriptionId <String>]`: The unique identifier of subscription

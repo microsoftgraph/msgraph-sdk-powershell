@@ -19,29 +19,27 @@ However, it will not cancel a subscribeToTone operation because it operates inde
 ### CancelExpanded (Default)
 ```
 Stop-MgCommunicationCallMediaProcessing -CallId <String> [-AdditionalProperties <Hashtable>]
- [-ClientContext <String>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-ClientContext <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Cancel
 ```
 Stop-MgCommunicationCallMediaProcessing -CallId <String>
  -BodyParameter <IPathsYp37FjCommunicationsCallsCallIdMicrosoftGraphCancelmediaprocessingPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CancelViaIdentity
 ```
 Stop-MgCommunicationCallMediaProcessing -InputObject <ICloudCommunicationsIdentity>
  -BodyParameter <IPathsYp37FjCommunicationsCallsCallIdMicrosoftGraphCancelmediaprocessingPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CancelViaIdentityExpanded
 ```
 Stop-MgCommunicationCallMediaProcessing -InputObject <ICloudCommunicationsIdentity>
- [-AdditionalProperties <Hashtable>] [-ClientContext <String>] [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-ClientContext <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -56,13 +54,13 @@ However, it will not cancel a subscribeToTone operation because it operates inde
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.CloudCommunications
+$params = @{
+	ClientContext = "clientContext-value"
+}
+Stop-MgCommunicationCallMediaProcessing -CallId $callId -BodyParameter $params
 ```
 
-$params = @{
-	clientContext = "clientContext-value"
-}
 
-Stop-MgCommunicationCallMediaProcessing -CallId $callId -BodyParameter $params
 
 ## PARAMETERS
 
@@ -127,21 +125,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -155,21 +138,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -212,8 +180,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
 
 ### Microsoft.Graph.PowerShell.Models.IPathsYp37FjCommunicationsCallsCallIdMicrosoftGraphCancelmediaprocessingPostRequestbodyContentApplicationJsonSchema
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

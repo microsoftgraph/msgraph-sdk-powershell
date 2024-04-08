@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgBetaExternalIndustryDataInboundFlow
 
 ## SYNOPSIS
-Update the properties of an inboundFileFlow object.
+Update the properties of an inboundFlow object.
 
 ## SYNTAX
 
@@ -17,22 +17,19 @@ Update the properties of an inboundFileFlow object.
 Update-MgBetaExternalIndustryDataInboundFlow -InboundFlowId <String> [-AdditionalProperties <Hashtable>]
  [-DataConnector <IMicrosoftGraphIndustryDataConnector>] [-DataDomain <String>] [-DisplayName <String>]
  [-EffectiveDateTime <DateTime>] [-ExpirationDateTime <DateTime>] [-Id <String>] [-ReadinessStatus <String>]
- [-ResponseHeadersVariable <String>] [-Year <IMicrosoftGraphIndustryDataYearTimePeriodDefinition>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Year <IMicrosoftGraphIndustryDataYearTimePeriodDefinition>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaExternalIndustryDataInboundFlow -InboundFlowId <String>
- -BodyParameter <IMicrosoftGraphIndustryDataInboundFlow> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphIndustryDataInboundFlow> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaExternalIndustryDataInboundFlow -InputObject <ISearchIdentity>
- -BodyParameter <IMicrosoftGraphIndustryDataInboundFlow> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphIndustryDataInboundFlow> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -41,12 +38,11 @@ Update-MgBetaExternalIndustryDataInboundFlow -InputObject <ISearchIdentity>
  [-AdditionalProperties <Hashtable>] [-DataConnector <IMicrosoftGraphIndustryDataConnector>]
  [-DataDomain <String>] [-DisplayName <String>] [-EffectiveDateTime <DateTime>]
  [-ExpirationDateTime <DateTime>] [-Id <String>] [-ReadinessStatus <String>]
- [-ResponseHeadersVariable <String>] [-Year <IMicrosoftGraphIndustryDataYearTimePeriodDefinition>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Year <IMicrosoftGraphIndustryDataYearTimePeriodDefinition>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Update the properties of an inboundFileFlow object.
+Update the properties of an inboundFlow object.
 
 ## EXAMPLES
 
@@ -178,21 +174,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -247,21 +228,6 @@ readinessStatus
 Type: System.String
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -325,8 +291,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIndustryDataInboundFlow
 
 ### Microsoft.Graph.Beta.PowerShell.Models.ISearchIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

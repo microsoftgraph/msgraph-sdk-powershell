@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a sharing link for a listItem.
-The createLink action creates a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, this action returns the existing sharing link.
+The createLink action creates a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, this action will return the existing sharing link.
 listItem resources inherit sharing permissions from the list the item resides in.
 
 ## SYNTAX
@@ -17,38 +17,36 @@ listItem resources inherit sharing permissions from the list the item resides in
 ### CreateExpanded (Default)
 ```
 New-MgBetaDriveItemListItemLink -DriveId <String> -DriveItemId <String> [-AdditionalProperties <Hashtable>]
- [-ExpirationDateTime <DateTime>] [-Message <String>] [-Password <String>]
- [-Recipients <IMicrosoftGraphDriveRecipient[]>] [-ResponseHeadersVariable <String>]
- [-RetainInheritedPermissions] [-Scope <String>] [-SendNotification] [-Type <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ExpirationDateTime <DateTime>] [-Password <String>] [-Recipients <IMicrosoftGraphDriveRecipient[]>]
+ [-RetainInheritedPermissions] [-Scope <String>] [-SendNotification] [-Type <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaDriveItemListItemLink -DriveId <String> -DriveItemId <String>
  -BodyParameter <IPathsUfl6MjDrivesDriveIdItemsDriveitemIdListitemMicrosoftGraphCreatelinkPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaDriveItemListItemLink -InputObject <IFilesIdentity>
  -BodyParameter <IPathsUfl6MjDrivesDriveIdItemsDriveitemIdListitemMicrosoftGraphCreatelinkPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgBetaDriveItemListItemLink -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>]
- [-ExpirationDateTime <DateTime>] [-Message <String>] [-Password <String>]
- [-Recipients <IMicrosoftGraphDriveRecipient[]>] [-ResponseHeadersVariable <String>]
- [-RetainInheritedPermissions] [-Scope <String>] [-SendNotification] [-Type <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ExpirationDateTime <DateTime>] [-Password <String>] [-Recipients <IMicrosoftGraphDriveRecipient[]>]
+ [-RetainInheritedPermissions] [-Scope <String>] [-SendNotification] [-Type <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Create a sharing link for a listItem.
-The createLink action creates a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, this action returns the existing sharing link.
+The createLink action creates a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, this action will return the existing sharing link.
 listItem resources inherit sharing permissions from the list the item resides in.
 
 ## EXAMPLES
@@ -145,21 +143,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -173,21 +156,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Message
-.
-
-```yaml
-Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -214,21 +182,6 @@ To construct, see NOTES section for RECIPIENTS properties and create a hash tabl
 Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDriveRecipient[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -337,8 +290,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPathsUfl6MjDrivesDriveIdItemsDriveitemIdListitemMicrosoftGraphCreatelinkPostRequestbodyContentApplicationJsonSchema
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPermission
@@ -355,7 +306,6 @@ To create the parameters described below, construct a hash table containing the 
 `BODYPARAMETER <IPathsUfl6MjDrivesDriveIdItemsDriveitemIdListitemMicrosoftGraphCreatelinkPostRequestbodyContentApplicationJsonSchema>`: .
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[ExpirationDateTime <DateTime?>]`: 
-  - `[Message <String>]`: 
   - `[Password <String>]`: 
   - `[Recipients <IMicrosoftGraphDriveRecipient[]>]`: 
     - `[Alias <String>]`: The alias of the domain object, for cases where an email address is unavailable (e.g. security groups).

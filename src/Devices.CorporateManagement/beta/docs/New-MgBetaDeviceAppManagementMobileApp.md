@@ -16,18 +16,19 @@ Create new navigation property to mobileApps for deviceAppManagement
 ```
 New-MgBetaDeviceAppManagementMobileApp [-AdditionalProperties <Hashtable>]
  [-Assignments <IMicrosoftGraphMobileAppAssignment[]>] [-Categories <IMicrosoftGraphMobileAppCategory[]>]
- [-Description <String>] [-Developer <String>] [-DisplayName <String>] [-Id <String>]
- [-InformationUrl <String>] [-IsFeatured] [-LargeIcon <IMicrosoftGraphMimeContent>] [-Notes <String>]
+ [-CreatedDateTime <DateTime>] [-DependentAppCount <Int32>] [-Description <String>] [-Developer <String>]
+ [-DisplayName <String>] [-Id <String>] [-InformationUrl <String>] [-IsAssigned] [-IsFeatured]
+ [-LargeIcon <IMicrosoftGraphMimeContent>] [-LastModifiedDateTime <DateTime>] [-Notes <String>]
  [-Owner <String>] [-PrivacyInformationUrl <String>] [-Publisher <String>]
  [-PublishingState <MobileAppPublishingState>] [-Relationships <IMicrosoftGraphMobileAppRelationship[]>]
- [-ResponseHeadersVariable <String>] [-RoleScopeTagIds <String[]>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-RoleScopeTagIds <String[]>] [-SupersededAppCount <Int32>] [-SupersedingAppCount <Int32>]
+ [-UploadState <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgBetaDeviceAppManagementMobileApp -BodyParameter <IMicrosoftGraphMobileApp>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaDeviceAppManagementMobileApp -BodyParameter <IMicrosoftGraphMobileApp> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -117,6 +118,36 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -CreatedDateTime
+The date and time the app was created.
+
+```yaml
+Type: System.DateTime
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DependentAppCount
+The total number of dependencies the child app has.
+
+```yaml
+Type: System.Int32
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Description
 The description of the app.
 
@@ -162,21 +193,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -208,6 +224,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -IsAssigned
+The value indicating whether the app is assigned to at least one group.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -IsFeatured
 The value indicating whether the app is marked as featured by the admin.
 
@@ -229,6 +260,21 @@ To construct, see NOTES section for LARGEICON properties and create a hash table
 
 ```yaml
 Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMimeContent
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -LastModifiedDateTime
+The date and time the app was last modified.
+
+```yaml
+Type: System.DateTime
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -330,13 +376,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
+### -RoleScopeTagIds
+List of scope tag ids for this mobile app.
 
 ```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
+Type: System.String[]
+Parameter Sets: CreateExpanded
+Aliases:
 
 Required: False
 Position: Named
@@ -345,11 +391,41 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -RoleScopeTagIds
-List of scope tag ids for this mobile app.
+### -SupersededAppCount
+The total number of apps this app is directly or indirectly superseded by.
 
 ```yaml
-Type: System.String[]
+Type: System.Int32
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SupersedingAppCount
+The total number of apps this app directly or indirectly supersedes.
+
+```yaml
+Type: System.Int32
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UploadState
+The upload state.
+
+```yaml
+Type: System.Int32
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -398,8 +474,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMobileApp
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMobileApp
@@ -421,6 +495,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[Settings <IMicrosoftGraphMobileAppAssignmentSettings>]`: Abstract class to contain properties used to assign a mobile app to a group.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Source <DeviceAndAppManagementAssignmentSource?>]`: Represents source of assignment.
+  - `[SourceId <String>]`: The identifier of the source of the assignment.
   - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>]`: Base type for assignment targets.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The Id of the filter for the target assignment.
@@ -435,6 +510,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[Settings <IMicrosoftGraphMobileAppAssignmentSettings>]`: Abstract class to contain properties used to assign a mobile app to a group.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Source <DeviceAndAppManagementAssignmentSource?>]`: Represents source of assignment.
+    - `[SourceId <String>]`: The identifier of the source of the assignment.
     - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>]`: Base type for assignment targets.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The Id of the filter for the target assignment.
@@ -442,15 +518,20 @@ To create the parameters described below, construct a hash table containing the 
   - `[Categories <IMicrosoftGraphMobileAppCategory[]>]`: The list of categories for this app.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[DisplayName <String>]`: The name of the app category.
+    - `[LastModifiedDateTime <DateTime?>]`: The date and time the mobileAppCategory was last modified.
+  - `[CreatedDateTime <DateTime?>]`: The date and time the app was created.
+  - `[DependentAppCount <Int32?>]`: The total number of dependencies the child app has.
   - `[Description <String>]`: The description of the app.
   - `[Developer <String>]`: The developer of the app.
   - `[DisplayName <String>]`: The admin provided or imported title of the app.
   - `[InformationUrl <String>]`: The more information Url.
+  - `[IsAssigned <Boolean?>]`: The value indicating whether the app is assigned to at least one group.
   - `[IsFeatured <Boolean?>]`: The value indicating whether the app is marked as featured by the admin.
   - `[LargeIcon <IMicrosoftGraphMimeContent>]`: Contains properties for a generic mime content.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Type <String>]`: Indicates the content mime type.
     - `[Value <Byte[]>]`: The byte array that contains the actual content.
+  - `[LastModifiedDateTime <DateTime?>]`: The date and time the app was last modified.
   - `[Notes <String>]`: Notes for the app.
   - `[Owner <String>]`: The owner of the app.
   - `[PrivacyInformationUrl <String>]`: The privacy statement Url.
@@ -458,13 +539,20 @@ To create the parameters described below, construct a hash table containing the 
   - `[PublishingState <MobileAppPublishingState?>]`: Indicates the publishing state of an app.
   - `[Relationships <IMicrosoftGraphMobileAppRelationship[]>]`: List of relationships for this mobile app.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
+    - `[TargetDisplayName <String>]`: The target mobile app's display name.
+    - `[TargetDisplayVersion <String>]`: The target mobile app's display version.
     - `[TargetId <String>]`: The target mobile app's app id.
+    - `[TargetPublisher <String>]`: The target mobile app's publisher.
     - `[TargetType <MobileAppRelationshipType?>]`: Indicates whether the target of a relationship is the parent or the child in the relationship.
   - `[RoleScopeTagIds <String[]>]`: List of scope tag ids for this mobile app.
+  - `[SupersededAppCount <Int32?>]`: The total number of apps this app is directly or indirectly superseded by.
+  - `[SupersedingAppCount <Int32?>]`: The total number of apps this app directly or indirectly supersedes.
+  - `[UploadState <Int32?>]`: The upload state.
 
 `CATEGORIES <IMicrosoftGraphMobileAppCategory[]>`: The list of categories for this app.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[DisplayName <String>]`: The name of the app category.
+  - `[LastModifiedDateTime <DateTime?>]`: The date and time the mobileAppCategory was last modified.
 
 `LARGEICON <IMicrosoftGraphMimeContent>`: Contains properties for a generic mime content.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -473,7 +561,10 @@ To create the parameters described below, construct a hash table containing the 
 
 `RELATIONSHIPS <IMicrosoftGraphMobileAppRelationship[]>`: List of relationships for this mobile app.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
+  - `[TargetDisplayName <String>]`: The target mobile app's display name.
+  - `[TargetDisplayVersion <String>]`: The target mobile app's display version.
   - `[TargetId <String>]`: The target mobile app's app id.
+  - `[TargetPublisher <String>]`: The target mobile app's publisher.
   - `[TargetType <MobileAppRelationshipType?>]`: Indicates whether the target of a relationship is the parent or the child in the relationship.
 
 ## RELATED LINKS

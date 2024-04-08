@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.SignIns
-Module Guid: 2c9053aa-219f-45c1-92a9-bd4fd26e865d
+Module Guid: f463eb00-8282-460e-95a0-19f415d6c8b6
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.identity.signins
 Help Version: 1.0.0.0
 Locale: en-US
@@ -102,6 +102,9 @@ Invoke function getOrder
 ### [Get-MgIdentityB2XUserFlowUserAttributeAssignmentUserAttribute](Get-MgIdentityB2XUserFlowUserAttributeAssignmentUserAttribute.md)
 The user attribute that you want to add to your user flow.
 
+### [Get-MgIdentityConditionalAccess](Get-MgIdentityConditionalAccess.md)
+the entry point for the Conditional Access (CA) object model.
+
 ### [Get-MgIdentityConditionalAccessAuthenticationContextClassReference](Get-MgIdentityConditionalAccessAuthenticationContextClassReference.md)
 Retrieve the properties and relationships of a authenticationContextClassReference object.
 
@@ -109,7 +112,7 @@ Retrieve the properties and relationships of a authenticationContextClassReferen
 Get the number of the resource
 
 ### [Get-MgIdentityConditionalAccessNamedLocation](Get-MgIdentityConditionalAccessNamedLocation.md)
-Retrieve the properties and relationships of an ipNamedLocation object.
+Retrieve the properties and relationships of a countryNamedLocation object.
 
 ### [Get-MgIdentityConditionalAccessNamedLocationCount](Get-MgIdentityConditionalAccessNamedLocationCount.md)
 Get the number of the resource
@@ -179,21 +182,13 @@ Get the number of the resource
 
 ### [Get-MgInvitationInvitedUserMailboxSetting](Get-MgInvitationInvitedUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgInvitationInvitedUserServiceProvisioningError](Get-MgInvitationInvitedUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgInvitationInvitedUserServiceProvisioningErrorCount](Get-MgInvitationInvitedUserServiceProvisioningErrorCount.md)
-Get the number of the resource
-
-### [Get-MgInvitationInvitedUserSponsor](Get-MgInvitationInvitedUserSponsor.md)
-The users or groups who are sponsors of the invited user.
-Sponsors are users and groups that are responsible for guest users' privileges in the tenant and for keeping the guest users' information and access up to date.
-
-### [Get-MgInvitationInvitedUserSponsorCount](Get-MgInvitationInvitedUserSponsorCount.md)
 Get the number of the resource
 
 ### [Get-MgOauth2PermissionGrant](Get-MgOauth2PermissionGrant.md)
@@ -300,9 +295,6 @@ Get the user synchronization policy of a partner-specific configuration.
 
 ### [Get-MgPolicyDefaultAppManagementPolicy](Get-MgPolicyDefaultAppManagementPolicy.md)
 Read the properties of a tenantAppManagementPolicy object.
-
-### [Get-MgPolicyDeviceRegistrationPolicy](Get-MgPolicyDeviceRegistrationPolicy.md)
-Get deviceRegistrationPolicy from policies
 
 ### [Get-MgPolicyFeatureRolloutPolicy](Get-MgPolicyFeatureRolloutPolicy.md)
 Retrieve the properties and relationships of a featureRolloutPolicy object.
@@ -736,8 +728,9 @@ Delete an identityApiConnector object.
 ### [Remove-MgIdentityB2XUserFlow](Remove-MgIdentityB2XUserFlow.md)
 Delete a b2xIdentityUserFlow object.
 
-### [Remove-MgIdentityB2XUserFlowIdentityProviderBaseByRef](Remove-MgIdentityB2XUserFlowIdentityProviderBaseByRef.md)
-Delete ref of navigation property userFlowIdentityProviders for identity
+### [Remove-MgIdentityB2XUserFlowIdentityProvider](Remove-MgIdentityB2XUserFlowIdentityProvider.md)
+Delete an identity provider from a b2xIdentityUserFlow object.
+For self-service sign-up user flows, the values can be Google-OAUTH or Facebook-OAUTH.
 
 ### [Remove-MgIdentityB2XUserFlowIdentityProviderByRef](Remove-MgIdentityB2XUserFlowIdentityProviderByRef.md)
 Delete ref of navigation property userFlowIdentityProviders for identity
@@ -766,11 +759,14 @@ Delete ref of navigation property postFederationSignup for identity
 ### [Remove-MgIdentityB2XUserFlowUserAttributeAssignment](Remove-MgIdentityB2XUserFlowUserAttributeAssignment.md)
 Delete an identityUserFlowAttributeAssignment object.
 
+### [Remove-MgIdentityConditionalAccess](Remove-MgIdentityConditionalAccess.md)
+Delete navigation property conditionalAccess for identity
+
 ### [Remove-MgIdentityConditionalAccessAuthenticationContextClassReference](Remove-MgIdentityConditionalAccessAuthenticationContextClassReference.md)
 Delete an authenticationContextClassReference object that's not published or used by a conditional access policy.
 
 ### [Remove-MgIdentityConditionalAccessNamedLocation](Remove-MgIdentityConditionalAccessNamedLocation.md)
-Delete a namedLocation object.
+Delete an ipNamedLocation object.
 
 ### [Remove-MgIdentityConditionalAccessPolicy](Remove-MgIdentityConditionalAccessPolicy.md)
 Delete a conditionalAccessPolicy object.
@@ -850,9 +846,6 @@ Delete navigation property defaultAppManagementPolicy for policies
 Delete a featureRolloutPolicy object.
 
 ### [Remove-MgPolicyFeatureRolloutPolicyApplyToByRef](Remove-MgPolicyFeatureRolloutPolicyApplyToByRef.md)
-Remove an appliesTo on a featureRolloutPolicy object to remove the directoryObject from feature rollout.
-
-### [Remove-MgPolicyFeatureRolloutPolicyApplyToDirectoryObjectByRef](Remove-MgPolicyFeatureRolloutPolicyApplyToDirectoryObjectByRef.md)
 Remove an appliesTo on a featureRolloutPolicy object to remove the directoryObject from feature rollout.
 
 ### [Remove-MgPolicyHomeRealmDiscoveryPolicy](Remove-MgPolicyHomeRealmDiscoveryPolicy.md)
@@ -982,6 +975,9 @@ Update the navigation property postFederationSignup in identity
 
 ### [Update-MgIdentityB2XUserFlowUserAttributeAssignment](Update-MgIdentityB2XUserFlowUserAttributeAssignment.md)
 Update the properties of a identityUserFlowAttributeAssignment object.
+
+### [Update-MgIdentityConditionalAccess](Update-MgIdentityConditionalAccess.md)
+Update the navigation property conditionalAccess in identity
 
 ### [Update-MgIdentityConditionalAccessAuthenticationContextClassReference](Update-MgIdentityConditionalAccessAuthenticationContextClassReference.md)
 Create an authenticationContextClassReference object, if the ID has not been used.

@@ -17,18 +17,16 @@ Create a new accessReviewHistoryDefinition object.
 New-MgBetaIdentityGovernanceAccessReviewHistoryDefinition [-AdditionalProperties <Hashtable>]
  [-CreatedBy <IMicrosoftGraphUserIdentity>] [-CreatedDateTime <DateTime>] [-Decisions <String[]>]
  [-DisplayName <String>] [-DownloadUri <String>] [-FulfilledDateTime <DateTime>] [-Id <String>]
- [-Instances <IMicrosoftGraphAccessReviewHistoryInstance[]>] [-ResponseHeadersVariable <String>]
- [-ReviewHistoryPeriodEndDateTime <DateTime>] [-ReviewHistoryPeriodStartDateTime <DateTime>]
+ [-Instances <IMicrosoftGraphAccessReviewHistoryInstance[]>] [-ReviewHistoryPeriodEndDateTime <DateTime>]
+ [-ReviewHistoryPeriodStartDateTime <DateTime>]
  [-ScheduleSettings <IMicrosoftGraphAccessReviewHistoryScheduleSettings>]
- [-Scopes <IMicrosoftGraphAccessReviewScope[]>] [-Status <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-Scopes <IMicrosoftGraphAccessReviewScope[]>] [-Status <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaIdentityGovernanceAccessReviewHistoryDefinition
- -BodyParameter <IMicrosoftGraphAccessReviewHistoryDefinition> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphAccessReviewHistoryDefinition> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -198,21 +196,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -238,21 +221,6 @@ To construct, see NOTES section for INSTANCES properties and create a hash table
 Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessReviewHistoryInstance[]
 Parameter Sets: CreateExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -380,8 +348,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessReviewHistoryDefinition
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

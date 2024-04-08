@@ -16,31 +16,29 @@ The resources in the access package must be present in the target catalog.
 ### MoveExpanded (Default)
 ```
 Move-MgBetaEntitlementManagementAccessPackageToCatalog -AccessPackageId <String>
- [-AdditionalProperties <Hashtable>] [-CatalogId <String>] [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-CatalogId <String>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Move
 ```
 Move-MgBetaEntitlementManagementAccessPackageToCatalog -AccessPackageId <String>
  -BodyParameter <IPaths1A7Wr23IdentitygovernanceEntitlementmanagementAccesspackagesAccesspackageIdMicrosoftGraphMovetocatalogPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### MoveViaIdentity
 ```
 Move-MgBetaEntitlementManagementAccessPackageToCatalog -InputObject <IIdentityGovernanceIdentity>
  -BodyParameter <IPaths1A7Wr23IdentitygovernanceEntitlementmanagementAccesspackagesAccesspackageIdMicrosoftGraphMovetocatalogPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### MoveViaIdentityExpanded
 ```
 Move-MgBetaEntitlementManagementAccessPackageToCatalog -InputObject <IIdentityGovernanceIdentity>
- [-AdditionalProperties <Hashtable>] [-CatalogId <String>] [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-CatalogId <String>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -126,21 +124,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -164,21 +147,6 @@ Returns true when the command succeeds
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -226,8 +194,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPaths1A7Wr23IdentitygovernanceEntitlementmanagementAccesspackagesAccesspackageIdMicrosoftGraphMovetocatalogPostRequestbodyContentApplicationJsonSchema
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 
@@ -295,9 +261,9 @@ To create the parameters described below, construct a hash table containing the 
   - `[GovernanceRoleAssignmentRequestId <String>]`: The unique identifier of governanceRoleAssignmentRequest
   - `[GovernanceRoleDefinitionId <String>]`: The unique identifier of governanceRoleDefinition
   - `[GovernanceRoleSettingId <String>]`: The unique identifier of governanceRoleSetting
+  - `[GroupId <String>]`: The unique identifier of group
   - `[IncompatibleAccessPackageId <String>]`: Usage: incompatibleAccessPackageId='{incompatibleAccessPackageId}'
   - `[LongRunningOperationId <String>]`: The unique identifier of longRunningOperation
-  - `[ObjectId <String>]`: Alternate key of accessPackageSubject
   - `[On <String>]`: Usage: on='{on}'
   - `[PermissionsCreepIndexDistributionId <String>]`: The unique identifier of permissionsCreepIndexDistribution
   - `[PermissionsRequestChangeId <String>]`: The unique identifier of permissionsRequestChange

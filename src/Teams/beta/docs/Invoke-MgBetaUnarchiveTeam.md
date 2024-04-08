@@ -11,27 +11,25 @@ schema: 2.0.0
 Restore an archived team and restores users' ability to send messages and edit the team, abiding by tenant and team settings.
 Teams are archived using the archive API.
 Unarchiving is an async operation.
-A team is unarchived once the async operation completes successfully, which might occur subsequent to a response from this API.
+A team is unarchived once the async operation completes successfully, which may occur subsequent to a response from this API.
 
 ## SYNTAX
 
 ### Unarchive (Default)
 ```
-Invoke-MgBetaUnarchiveTeam -TeamId <String> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Invoke-MgBetaUnarchiveTeam -TeamId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UnarchiveViaIdentity
 ```
-Invoke-MgBetaUnarchiveTeam -InputObject <ITeamsIdentity> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Invoke-MgBetaUnarchiveTeam -InputObject <ITeamsIdentity> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Restore an archived team and restores users' ability to send messages and edit the team, abiding by tenant and team settings.
 Teams are archived using the archive API.
 Unarchiving is an async operation.
-A team is unarchived once the async operation completes successfully, which might occur subsequent to a response from this API.
+A team is unarchived once the async operation completes successfully, which may occur subsequent to a response from this API.
 
 ## EXAMPLES
 
@@ -43,21 +41,6 @@ Import-Module Microsoft.Graph.Beta.Teams
 Invoke-MgBetaUnarchiveTeam -TeamId $teamId
 
 ## PARAMETERS
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
 
 ### -InputObject
 Identity Parameter
@@ -82,21 +65,6 @@ Returns true when the command succeeds
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -158,8 +126,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
@@ -193,12 +159,10 @@ To create the parameters described below, construct a hash table containing the 
   - `[SchedulingGroupId <String>]`: The unique identifier of schedulingGroup
   - `[SharedWithChannelTeamInfoId <String>]`: The unique identifier of sharedWithChannelTeamInfo
   - `[ShiftId <String>]`: The unique identifier of shift
-  - `[ShiftsRoleDefinitionId <String>]`: The unique identifier of shiftsRoleDefinition
   - `[SwapShiftsChangeRequestId <String>]`: The unique identifier of swapShiftsChangeRequest
   - `[TeamId <String>]`: The unique identifier of team
   - `[TeamTemplateDefinitionId <String>]`: The unique identifier of teamTemplateDefinition
   - `[TeamTemplateId <String>]`: The unique identifier of teamTemplate
-  - `[TeamsAppDashboardCardDefinitionId <String>]`: The unique identifier of teamsAppDashboardCardDefinition
   - `[TeamsAppDefinitionId <String>]`: The unique identifier of teamsAppDefinition
   - `[TeamsAppId <String>]`: The unique identifier of teamsApp
   - `[TeamsAppInstallationId <String>]`: The unique identifier of teamsAppInstallation

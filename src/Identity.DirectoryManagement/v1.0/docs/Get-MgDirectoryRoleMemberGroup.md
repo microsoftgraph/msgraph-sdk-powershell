@@ -19,29 +19,27 @@ As a workaround, use the List group transitive memberOf API.
 ### GetExpanded (Default)
 ```
 Get-MgDirectoryRoleMemberGroup -DirectoryRoleId <String> [-AdditionalProperties <Hashtable>]
- [-ResponseHeadersVariable <String>] [-SecurityEnabledOnly] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-SecurityEnabledOnly] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Get
 ```
 Get-MgDirectoryRoleMemberGroup -DirectoryRoleId <String>
  -BodyParameter <IPaths9Kz3QjDirectoryrolesDirectoryroleIdMicrosoftGraphGetmembergroupsPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
 Get-MgDirectoryRoleMemberGroup -InputObject <IIdentityDirectoryManagementIdentity>
  -BodyParameter <IPaths9Kz3QjDirectoryrolesDirectoryroleIdMicrosoftGraphGetmembergroupsPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### GetViaIdentityExpanded
 ```
 Get-MgDirectoryRoleMemberGroup -InputObject <IIdentityDirectoryManagementIdentity>
- [-AdditionalProperties <Hashtable>] [-ResponseHeadersVariable <String>] [-SecurityEnabledOnly]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-SecurityEnabledOnly] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -55,17 +53,26 @@ As a workaround, use the List group transitive memberOf API.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.DirectoryObjects
 ```
 
+$params = @{
+	SecurityEnabledOnly = $false
+}
 
+Get-MgDirectoryObjectMemberGroup -DirectoryObjectId $directoryObjectId -BodyParameter $params
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Users.Actions
 ```
 
+$params = @{
+	SecurityEnabledOnly = $true
+}
 
+# A UPN can also be used as -UserId.
+Get-MgUserMemberGroup -UserId $userId -BodyParameter $params
 
 ## PARAMETERS
 
@@ -115,21 +122,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -143,21 +135,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -215,8 +192,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
 ### Microsoft.Graph.PowerShell.Models.IPaths9Kz3QjDirectoryrolesDirectoryroleIdMicrosoftGraphGetmembergroupsPostRequestbodyContentApplicationJsonSchema
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

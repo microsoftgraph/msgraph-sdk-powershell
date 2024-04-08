@@ -15,34 +15,30 @@ Create new navigation property to assignments for deviceAppManagement
 ### CreateExpanded (Default)
 ```
 New-MgBetaDeviceAppManagementAndroidManagedAppProtectionAssignment -AndroidManagedAppProtectionId <String>
- [-AdditionalProperties <Hashtable>] [-Id <String>] [-ResponseHeadersVariable <String>]
- [-Source <DeviceAndAppManagementAssignmentSource>] [-SourceId <String>]
- [-Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-Id <String>] [-Source <DeviceAndAppManagementAssignmentSource>]
+ [-SourceId <String>] [-Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaDeviceAppManagementAndroidManagedAppProtectionAssignment -AndroidManagedAppProtectionId <String>
- -BodyParameter <IMicrosoftGraphTargetedManagedAppPolicyAssignment> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphTargetedManagedAppPolicyAssignment> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaDeviceAppManagementAndroidManagedAppProtectionAssignment
  -InputObject <IDevicesCorporateManagementIdentity>
- -BodyParameter <IMicrosoftGraphTargetedManagedAppPolicyAssignment> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphTargetedManagedAppPolicyAssignment> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgBetaDeviceAppManagementAndroidManagedAppProtectionAssignment
  -InputObject <IDevicesCorporateManagementIdentity> [-AdditionalProperties <Hashtable>] [-Id <String>]
- [-ResponseHeadersVariable <String>] [-Source <DeviceAndAppManagementAssignmentSource>] [-SourceId <String>]
- [-Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-Source <DeviceAndAppManagementAssignmentSource>] [-SourceId <String>]
+ [-Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -112,21 +108,6 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -156,21 +137,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -260,8 +226,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTargetedManagedAppPolicyAssignment
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTargetedManagedAppPolicyAssignment
@@ -327,7 +291,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[ManagedMobileAppId <String>]`: The unique identifier of managedMobileApp
   - `[MdmWindowsInformationProtectionPolicyId <String>]`: The unique identifier of mdmWindowsInformationProtectionPolicy
   - `[MobileAppAssignmentId <String>]`: The unique identifier of mobileAppAssignment
-  - `[MobileAppCatalogPackageId <String>]`: The unique identifier of mobileAppCatalogPackage
   - `[MobileAppCategoryId <String>]`: The unique identifier of mobileAppCategory
   - `[MobileAppContentFileId <String>]`: The unique identifier of mobileAppContentFile
   - `[MobileAppContentId <String>]`: The unique identifier of mobileAppContent

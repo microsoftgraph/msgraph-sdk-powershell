@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgSearchAcronym
 
 ## SYNOPSIS
-Delete an acronym object.
+Delete navigation property acronyms for search
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgSearchAcronym -InputObject <ISearchIdentity> [-IfMatch <String>] [-Resp
 ```
 
 ## DESCRIPTION
-Delete an acronym object.
+Delete navigation property acronyms for search
 
 ## EXAMPLES
 

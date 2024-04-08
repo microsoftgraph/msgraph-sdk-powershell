@@ -17,22 +17,19 @@ Update the navigation property userExperienceAnalyticsCategories in deviceManage
 Update-MgDeviceManagementUserExperienceAnalyticCategory -UserExperienceAnalyticsCategoryId <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-Insights <IMicrosoftGraphUserExperienceAnalyticsInsight[]>]
- [-MetricValues <IMicrosoftGraphUserExperienceAnalyticsMetric[]>] [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-MetricValues <IMicrosoftGraphUserExperienceAnalyticsMetric[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgDeviceManagementUserExperienceAnalyticCategory -UserExperienceAnalyticsCategoryId <String>
- -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsCategory> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsCategory> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgDeviceManagementUserExperienceAnalyticCategory -InputObject <IDeviceManagementIdentity>
- -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsCategory> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsCategory> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -40,8 +37,7 @@ Update-MgDeviceManagementUserExperienceAnalyticCategory -InputObject <IDeviceMan
 Update-MgDeviceManagementUserExperienceAnalyticCategory -InputObject <IDeviceManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-Insights <IMicrosoftGraphUserExperienceAnalyticsInsight[]>]
- [-MetricValues <IMicrosoftGraphUserExperienceAnalyticsMetric[]>] [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-MetricValues <IMicrosoftGraphUserExperienceAnalyticsMetric[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -90,21 +86,6 @@ Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -177,21 +158,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -UserExperienceAnalyticsCategoryId
 The unique identifier of userExperienceAnalyticsCategory
 
@@ -246,8 +212,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsCategory
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

@@ -15,28 +15,27 @@ Invoke action checkMemberObjects
 ### CheckExpanded (Default)
 ```
 Confirm-MgBetaUserMemberObject -UserId <String> [-AdditionalProperties <Hashtable>] [-Ids <String[]>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Check
 ```
 Confirm-MgBetaUserMemberObject -UserId <String>
  -BodyParameter <IPathsJ9Yxi4UsersUserIdMicrosoftGraphCheckmemberobjectsPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CheckViaIdentity
 ```
 Confirm-MgBetaUserMemberObject -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPathsJ9Yxi4UsersUserIdMicrosoftGraphCheckmemberobjectsPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CheckViaIdentityExpanded
 ```
 Confirm-MgBetaUserMemberObject -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
- [-Ids <String[]>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Ids <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -94,21 +93,6 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Ids
 .
 
@@ -137,21 +121,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -210,8 +179,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.String
@@ -248,7 +215,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[DriveItemVersionId <String>]`: The unique identifier of driveItemVersion
   - `[EventId <String>]`: The unique identifier of event
   - `[EventId1 <String>]`: The unique identifier of event
-  - `[JoinWebUrl <String>]`: Alternate key of onlineMeeting
   - `[ListItemId <String>]`: The unique identifier of listItem
   - `[ListItemVersionId <String>]`: The unique identifier of listItemVersion
   - `[MailFolderId <String>]`: The unique identifier of mailFolder

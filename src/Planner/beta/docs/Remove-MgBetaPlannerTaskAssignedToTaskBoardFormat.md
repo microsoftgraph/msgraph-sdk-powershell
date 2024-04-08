@@ -14,16 +14,14 @@ Delete navigation property assignedToTaskBoardFormat for planner
 
 ### Delete (Default)
 ```
-Remove-MgBetaPlannerTaskAssignedToTaskBoardFormat -PlannerTaskId <String> [-IfMatch <String>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Remove-MgBetaPlannerTaskAssignedToTaskBoardFormat -PlannerTaskId <String> [-IfMatch <String>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
 Remove-MgBetaPlannerTaskAssignedToTaskBoardFormat -InputObject <IPlannerIdentity> [-IfMatch <String>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -33,34 +31,18 @@ Delete navigation property assignedToTaskBoardFormat for planner
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Beta.Planner
 ```
 
+$params = @{
+	orderHintsByAssignee = @{
+		"aaa27244-1db4-476a-a5cb-004607466324" = "8566473P 957764Jk!"
+	}
+}
 
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-
+Update-MgBetaPlannerTaskAssignedToTaskBoardFormat -PlannerTaskId $plannerTaskId -BodyParameter $params-If-Match W/"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAWCc="
 
 ## PARAMETERS
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
 
 ### -IfMatch
 ETag
@@ -123,21 +105,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
@@ -175,8 +142,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPlannerIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

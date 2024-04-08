@@ -17,17 +17,15 @@ Create new navigation property to microsoftTunnelConfigurations for deviceManage
 New-MgBetaDeviceManagementMicrosoftTunnelConfiguration [-AdditionalProperties <Hashtable>]
  [-AdvancedSettings <IMicrosoftGraphKeyValuePair[]>] [-DefaultDomainSuffix <String>] [-Description <String>]
  [-DisableUdpConnections] [-DisplayName <String>] [-DnsServers <String[]>] [-Id <String>]
- [-LastUpdateDateTime <DateTime>] [-ListenPort <Int32>] [-Network <String>]
- [-ResponseHeadersVariable <String>] [-RoleScopeTagIds <String[]>] [-RouteExcludes <String[]>]
- [-RouteIncludes <String[]>] [-RoutesExclude <String[]>] [-RoutesInclude <String[]>] [-SplitDns <String[]>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-LastUpdateDateTime <DateTime>] [-ListenPort <Int32>] [-Network <String>] [-RoleScopeTagIds <String[]>]
+ [-RouteExcludes <String[]>] [-RouteIncludes <String[]>] [-RoutesExclude <String[]>]
+ [-RoutesInclude <String[]>] [-SplitDns <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaDeviceManagementMicrosoftTunnelConfiguration
- -BodyParameter <IMicrosoftGraphMicrosoftTunnelConfiguration> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphMicrosoftTunnelConfiguration> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -174,21 +172,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -242,21 +225,6 @@ The subnet that will be used to allocate virtual address for the clients
 Type: System.String
 Parameter Sets: CreateExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -394,8 +362,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMicrosoftTunnelConfiguration
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

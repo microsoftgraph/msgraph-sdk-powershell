@@ -16,28 +16,28 @@ Rejects the requested instance of an operationApprovalRequest.
 ```
 Invoke-MgBetaRejectDeviceManagementOperationApprovalRequest -OperationApprovalRequestId <String>
  [-AdditionalProperties <Hashtable>] [-ApprovalSource <OperationApprovalSource>] [-Justification <String>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Reject
 ```
 Invoke-MgBetaRejectDeviceManagementOperationApprovalRequest -OperationApprovalRequestId <String>
  -BodyParameter <IPaths1W8Sd70DevicemanagementOperationapprovalrequestsOperationapprovalrequestIdMicrosoftGraphRejectPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RejectViaIdentity
 ```
 Invoke-MgBetaRejectDeviceManagementOperationApprovalRequest -InputObject <IDeviceManagementActionsIdentity>
  -BodyParameter <IPaths1W8Sd70DevicemanagementOperationapprovalrequestsOperationapprovalrequestIdMicrosoftGraphRejectPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RejectViaIdentityExpanded
 ```
 Invoke-MgBetaRejectDeviceManagementOperationApprovalRequest -InputObject <IDeviceManagementActionsIdentity>
  [-AdditionalProperties <Hashtable>] [-ApprovalSource <OperationApprovalSource>] [-Justification <String>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -162,21 +162,6 @@ Parameter Sets: Reject, RejectExpanded
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False

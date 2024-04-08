@@ -15,15 +15,14 @@ Delete a plannerPlanConfigurationLocalization object.
 ### Delete (Default)
 ```
 Remove-MgBetaBusinessScenarioPlannerPlanConfigurationLocalization -BusinessScenarioId <String>
- -PlannerPlanConfigurationLocalizationId <String> [-IfMatch <String>] [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -PlannerPlanConfigurationLocalizationId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
 Remove-MgBetaBusinessScenarioPlannerPlanConfigurationLocalization -InputObject <IBookingsIdentity>
- [-IfMatch <String>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -59,21 +58,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -138,21 +122,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
@@ -191,8 +160,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IBookingsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
@@ -217,13 +184,10 @@ To create the parameters described below, construct a hash table containing the 
   - `[BookingStaffMemberId <String>]`: The unique identifier of bookingStaffMember
   - `[BusinessScenarioId <String>]`: The unique identifier of businessScenario
   - `[BusinessScenarioTaskId <String>]`: The unique identifier of businessScenarioTask
-  - `[Email <String>]`: Alternate key of virtualEventRegistration
-  - `[JoinWebUrl <String>]`: Alternate key of virtualEventSession
   - `[MeetingAttendanceReportId <String>]`: The unique identifier of meetingAttendanceReport
   - `[PlannerPlanConfigurationLocalizationId <String>]`: The unique identifier of plannerPlanConfigurationLocalization
   - `[Role <String>]`: Usage: role='{role}'
-  - `[UniqueName <String>]`: Alternate key of businessScenario
-  - `[UserId <String>]`: Alternate key of virtualEventRegistration
+  - `[UserId <String>]`: Usage: userId='{userId}'
   - `[VirtualEventId <String>]`: The unique identifier of virtualEvent
   - `[VirtualEventPresenterId <String>]`: The unique identifier of virtualEventPresenter
   - `[VirtualEventRegistrationId <String>]`: The unique identifier of virtualEventRegistration

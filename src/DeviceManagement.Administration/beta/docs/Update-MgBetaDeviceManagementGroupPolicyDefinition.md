@@ -21,23 +21,20 @@ Update-MgBetaDeviceManagementGroupPolicyDefinition -GroupPolicyDefinitionId <Str
  [-Id <String>] [-LastModifiedDateTime <DateTime>] [-MinDeviceCspVersion <String>]
  [-MinUserCspVersion <String>] [-NextVersionDefinition <IMicrosoftGraphGroupPolicyDefinition>]
  [-PolicyType <GroupPolicyType>] [-Presentations <IMicrosoftGraphGroupPolicyPresentation[]>]
- [-PreviousVersionDefinition <IMicrosoftGraphGroupPolicyDefinition>] [-ResponseHeadersVariable <String>]
- [-SupportedOn <String>] [-Version <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-PreviousVersionDefinition <IMicrosoftGraphGroupPolicyDefinition>] [-SupportedOn <String>]
+ [-Version <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaDeviceManagementGroupPolicyDefinition -GroupPolicyDefinitionId <String>
- -BodyParameter <IMicrosoftGraphGroupPolicyDefinition> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphGroupPolicyDefinition> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaDeviceManagementGroupPolicyDefinition -InputObject <IDeviceManagementAdministrationIdentity>
- -BodyParameter <IMicrosoftGraphGroupPolicyDefinition> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphGroupPolicyDefinition> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -49,9 +46,8 @@ Update-MgBetaDeviceManagementGroupPolicyDefinition -InputObject <IDeviceManageme
  [-Id <String>] [-LastModifiedDateTime <DateTime>] [-MinDeviceCspVersion <String>]
  [-MinUserCspVersion <String>] [-NextVersionDefinition <IMicrosoftGraphGroupPolicyDefinition>]
  [-PolicyType <GroupPolicyType>] [-Presentations <IMicrosoftGraphGroupPolicyPresentation[]>]
- [-PreviousVersionDefinition <IMicrosoftGraphGroupPolicyDefinition>] [-ResponseHeadersVariable <String>]
- [-SupportedOn <String>] [-Version <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-PreviousVersionDefinition <IMicrosoftGraphGroupPolicyDefinition>] [-SupportedOn <String>]
+ [-Version <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -246,21 +242,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -401,21 +382,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -SupportedOn
 Localized string used to specify what operating system or application version is affected by the policy.
 
@@ -485,8 +451,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphGroupPolicyDefinition
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

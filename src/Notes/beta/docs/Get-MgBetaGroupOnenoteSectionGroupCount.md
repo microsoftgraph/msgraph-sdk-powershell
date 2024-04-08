@@ -15,25 +15,25 @@ Get the number of the resource
 ### Get1 (Default)
 ```
 Get-MgBetaGroupOnenoteSectionGroupCount -GroupId <String> [-Filter <String>] [-Search <String>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [<CommonParameters>]
+ [<CommonParameters>]
 ```
 
 ### Get
 ```
 Get-MgBetaGroupOnenoteSectionGroupCount -GroupId <String> -SectionGroupId <String> [-Filter <String>]
- [-Search <String>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [<CommonParameters>]
+ [-Search <String>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
 Get-MgBetaGroupOnenoteSectionGroupCount -InputObject <INotesIdentity> [-Filter <String>] [-Search <String>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [<CommonParameters>]
+ [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
 Get-MgBetaGroupOnenoteSectionGroupCount -InputObject <INotesIdentity> [-Filter <String>] [-Search <String>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [<CommonParameters>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -87,21 +87,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -115,21 +100,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -170,8 +140,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.INotesIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Int32
@@ -192,8 +160,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[OnenotePageId <String>]`: The unique identifier of onenotePage
   - `[OnenoteResourceId <String>]`: The unique identifier of onenoteResource
   - `[OnenoteSectionId <String>]`: The unique identifier of onenoteSection
-  - `[Path <String>]`: Usage: path='{path}'
-  - `[Path1 <String>]`: Usage: path='{path1}'
   - `[SectionGroupId <String>]`: The unique identifier of sectionGroup
   - `[SiteId <String>]`: The unique identifier of site
   - `[UserId <String>]`: The unique identifier of user

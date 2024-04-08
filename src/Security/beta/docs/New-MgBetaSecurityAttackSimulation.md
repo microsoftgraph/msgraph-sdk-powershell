@@ -24,15 +24,14 @@ New-MgBetaSecurityAttackSimulation [-AdditionalProperties <Hashtable>] [-AttackT
  [-LandingPage <IMicrosoftGraphLandingPage>] [-LastModifiedBy <IMicrosoftGraphEmailIdentity>]
  [-LastModifiedDateTime <DateTime>] [-LaunchDateTime <DateTime>] [-LoginPage <IMicrosoftGraphLoginPage>]
  [-OAuthConsentAppDetail <IMicrosoftGraphOAuthConsentAppDetail>] [-Payload <IMicrosoftGraphPayload>]
- [-PayloadDeliveryPlatform <String>] [-Report <IMicrosoftGraphSimulationReport>]
- [-ResponseHeadersVariable <String>] [-Status <String>] [-TrainingSetting <IMicrosoftGraphTrainingSetting>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PayloadDeliveryPlatform <String>] [-Report <IMicrosoftGraphSimulationReport>] [-Status <String>]
+ [-TrainingSetting <IMicrosoftGraphTrainingSetting>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgBetaSecurityAttackSimulation -BodyParameter <IMicrosoftGraphSimulation>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaSecurityAttackSimulation -BodyParameter <IMicrosoftGraphSimulation> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -60,26 +59,21 @@ $params = @{
 		"@odata.type" = "#microsoft.graph.addressBookAccountTargetContent"
 		type = "addressBook"
 		accountTargetEmails = @(
-		"john@contoso.com"
-	)
-}
-trainingSetting = @{
-	settingType = "noTraining"
-}
-endUserNotificationSetting = @{
-	notificationPreference = "microsoft"
-	settingType = "noTraining"
-	positiveReinforcement = @{
-		deliveryPreference = "deliverAfterCampaignEnd"
-		endUserNotification = "https://graph.microsoft.com/beta/security/attacksimulation/endUserNotifications/1ewer3678-9abc-def0-123456789a"
-		defaultLanguage = "en"
+			"john@contoso.com"
+		)
 	}
-	simulationNotification = @{
-		targettedUserType = "compromised"
-		"endUserNotification@odata.bind" = "https://graph.microsoft.com/beta/security/attacksimulation/endUserNotifications/12wer3678-9abc-def0-123456789a"
-		defaultLanguage = "en"
+	trainingSetting = @{
+		settingType = "noTraining"
 	}
-}
+	endUserNotificationSetting = @{
+		notificationPreference = "microsoft"
+		settingType = "noTraining"
+		positiveReinforcement = @{
+			deliveryPreference = "deliverAfterCampaignEnd"
+			endUserNotification = "https://graph.microsoft.com/beta/security/attacksimulation/endUserNotifications/1ewer3678-9abc-def0-123456789a"
+			defaultLanguage = "en"
+		}
+	}
 }
 
 New-MgBetaSecurityAttackSimulation -BodyParameter $params
@@ -287,21 +281,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -492,21 +471,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Status
 simulationStatus
 
@@ -576,8 +540,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSimulation
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSimulation
@@ -600,8 +562,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[CompletionDateTime <DateTime?>]`: Date and time of completion of the attack simulation and training campaign. Supports $filter and $orderby.
   - `[CreatedBy <IMicrosoftGraphEmailIdentity>]`: emailIdentity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-    - `[Id <String>]`: The identifier of the identity. This property is read-only.
+    - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+    - `[Id <String>]`: Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn't included in the response.
     - `[Email <String>]`: Email address of the user.
   - `[CreatedDateTime <DateTime?>]`: Date and time of creation of the attack simulation and training campaign.
   - `[Description <String>]`: Description of the attack simulation and training campaign.
@@ -781,8 +743,8 @@ To create the parameters described below, construct a hash table containing the 
 
 `CREATEDBY <IMicrosoftGraphEmailIdentity>`: emailIdentity
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-  - `[Id <String>]`: The identifier of the identity. This property is read-only.
+  - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+  - `[Id <String>]`: Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn't included in the response.
   - `[Email <String>]`: Email address of the user.
 
 `ENDUSERNOTIFICATIONSETTING <IMicrosoftGraphEndUserNotificationSetting>`: endUserNotificationSetting
@@ -796,8 +758,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[CreatedBy <IMicrosoftGraphEmailIdentity>]`: emailIdentity
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-        - `[Id <String>]`: The identifier of the identity. This property is read-only.
+        - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+        - `[Id <String>]`: Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn't included in the response.
         - `[Email <String>]`: Email address of the user.
       - `[CreatedDateTime <DateTime?>]`: Date and time when the notification was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
       - `[Description <String>]`: Description of the notification as defined by the user.
@@ -832,8 +794,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[CreatedBy <IMicrosoftGraphEmailIdentity>]`: emailIdentity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-    - `[Id <String>]`: The identifier of the identity. This property is read-only.
+    - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+    - `[Id <String>]`: Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn't included in the response.
     - `[Email <String>]`: Email address of the user.
   - `[CreatedDateTime <DateTime?>]`: Date and time when the landing page was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
   - `[Description <String>]`: Description of the landing page as defined by the user.
@@ -852,8 +814,8 @@ To create the parameters described below, construct a hash table containing the 
 
 `LASTMODIFIEDBY <IMicrosoftGraphEmailIdentity>`: emailIdentity
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-  - `[Id <String>]`: The identifier of the identity. This property is read-only.
+  - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+  - `[Id <String>]`: Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn't included in the response.
   - `[Email <String>]`: Email address of the user.
 
 `LOGINPAGE <IMicrosoftGraphLoginPage>`: loginPage
@@ -862,8 +824,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[Content <String>]`: The HTML content of the login page.
   - `[CreatedBy <IMicrosoftGraphEmailIdentity>]`: emailIdentity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-    - `[Id <String>]`: The identifier of the identity. This property is read-only.
+    - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+    - `[Id <String>]`: Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn't included in the response.
     - `[Email <String>]`: Email address of the user.
   - `[CreatedDateTime <DateTime?>]`: Date and time when the login page was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
   - `[Description <String>]`: Description about the login page.
@@ -887,8 +849,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[Complexity <String>]`: payloadComplexity
   - `[CreatedBy <IMicrosoftGraphEmailIdentity>]`: emailIdentity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-    - `[Id <String>]`: The identifier of the identity. This property is read-only.
+    - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+    - `[Id <String>]`: Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn't included in the response.
     - `[Email <String>]`: Email address of the user.
   - `[CreatedDateTime <DateTime?>]`: Date and time when the attack simulation and training campaign payload. The timestamp represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
   - `[Description <String>]`: Description of the attack simulation and training campaign payload.

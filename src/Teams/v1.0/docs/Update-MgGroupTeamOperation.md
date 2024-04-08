@@ -17,30 +17,28 @@ Update the navigation property operations in groups
 Update-MgGroupTeamOperation -GroupId <String> -TeamsAsyncOperationId <String>
  [-AdditionalProperties <Hashtable>] [-AttemptsCount <Int32>] [-CreatedDateTime <DateTime>]
  [-Error <IMicrosoftGraphOperationError>] [-Id <String>] [-LastActionDateTime <DateTime>]
- [-OperationType <String>] [-ResponseHeadersVariable <String>] [-Status <String>] [-TargetResourceId <String>]
- [-TargetResourceLocation <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-OperationType <String>] [-Status <String>] [-TargetResourceId <String>] [-TargetResourceLocation <String>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgGroupTeamOperation -GroupId <String> -TeamsAsyncOperationId <String>
- -BodyParameter <IMicrosoftGraphTeamsAsyncOperation> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphTeamsAsyncOperation> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgGroupTeamOperation -InputObject <ITeamsIdentity> -BodyParameter <IMicrosoftGraphTeamsAsyncOperation>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgGroupTeamOperation -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
  [-AttemptsCount <Int32>] [-CreatedDateTime <DateTime>] [-Error <IMicrosoftGraphOperationError>]
- [-Id <String>] [-LastActionDateTime <DateTime>] [-OperationType <String>] [-ResponseHeadersVariable <String>]
- [-Status <String>] [-TargetResourceId <String>] [-TargetResourceLocation <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-LastActionDateTime <DateTime>] [-OperationType <String>] [-Status <String>]
+ [-TargetResourceId <String>] [-TargetResourceLocation <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -156,21 +154,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -225,21 +208,6 @@ teamsAsyncOperationType
 Type: System.String
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -349,8 +317,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamsAsyncOperation
@@ -392,7 +358,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[ChatMessageId <String>]`: The unique identifier of chatMessage
   - `[ChatMessageId1 <String>]`: The unique identifier of chatMessage
   - `[ConversationMemberId <String>]`: The unique identifier of conversationMember
-  - `[DeletedChatId <String>]`: The unique identifier of deletedChat
   - `[DeletedTeamId <String>]`: The unique identifier of deletedTeam
   - `[GroupId <String>]`: The unique identifier of group
   - `[OfferShiftRequestId <String>]`: The unique identifier of offerShiftRequest

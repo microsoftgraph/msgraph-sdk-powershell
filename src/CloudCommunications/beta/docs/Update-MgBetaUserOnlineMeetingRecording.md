@@ -17,22 +17,19 @@ Update the navigation property recordings in users
 Update-MgBetaUserOnlineMeetingRecording -CallRecordingId <String> -OnlineMeetingId <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-ContentInputFile <String>] [-CreatedDateTime <DateTime>] [-Id <String>]
  [-MeetingId <String>] [-MeetingOrganizer <IMicrosoftGraphIdentitySet>] [-MeetingOrganizerId <String>]
- [-RecordingContentUrl <String>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-RecordingContentUrl <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaUserOnlineMeetingRecording -CallRecordingId <String> -OnlineMeetingId <String> -UserId <String>
- -BodyParameter <IMicrosoftGraphCallRecording> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphCallRecording> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaUserOnlineMeetingRecording -InputObject <ICloudCommunicationsIdentity>
- -BodyParameter <IMicrosoftGraphCallRecording> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphCallRecording> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -40,8 +37,7 @@ Update-MgBetaUserOnlineMeetingRecording -InputObject <ICloudCommunicationsIdenti
 Update-MgBetaUserOnlineMeetingRecording -InputObject <ICloudCommunicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-ContentInputFile <String>] [-CreatedDateTime <DateTime>] [-Id <String>]
  [-MeetingId <String>] [-MeetingOrganizer <IMicrosoftGraphIdentitySet>] [-MeetingOrganizerId <String>]
- [-RecordingContentUrl <String>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-RecordingContentUrl <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -142,21 +138,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -271,21 +252,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -UserId
 The unique identifier of user
 
@@ -341,8 +307,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCallRecording
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCallRecording
@@ -366,8 +330,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-      - `[Id <String>]`: The identifier of the identity. This property is read-only.
+      - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[Id <String>]`: Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn't included in the response.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[MeetingOrganizerId <String>]`: The unique identifier of the organizer of the onlineMeeting related to this recording. Read-only.
@@ -383,7 +347,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[CommsOperationId <String>]`: The unique identifier of commsOperation
   - `[ContentSharingSessionId <String>]`: The unique identifier of contentSharingSession
   - `[FromDateTime <DateTime?>]`: Usage: fromDateTime={fromDateTime}
-  - `[JoinWebUrl <String>]`: Alternate key of onlineMeeting
   - `[MeetingAttendanceReportId <String>]`: The unique identifier of meetingAttendanceReport
   - `[MeetingRegistrantBaseId <String>]`: The unique identifier of meetingRegistrantBase
   - `[MeetingRegistrationQuestionId <String>]`: The unique identifier of meetingRegistrationQuestion
@@ -398,8 +361,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Application <IMicrosoftGraphIdentity>]`: identity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-    - `[Id <String>]`: The identifier of the identity. This property is read-only.
+    - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+    - `[Id <String>]`: Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn't included in the response.
   - `[Device <IMicrosoftGraphIdentity>]`: identity
   - `[User <IMicrosoftGraphIdentity>]`: identity
 

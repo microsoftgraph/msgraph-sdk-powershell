@@ -17,22 +17,19 @@ Adds a userSource to a legalHold object.
 New-MgBetaComplianceEdiscoveryCaseLegalHoldUserSource -CaseId <String> -LegalHoldId <String>
  [-AdditionalProperties <Hashtable>] [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>]
  [-DisplayName <String>] [-Email <String>] [-HoldStatus <String>] [-Id <String>] [-IncludedSources <String>]
- [-ResponseHeadersVariable <String>] [-SiteWebUrl <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-SiteWebUrl <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaComplianceEdiscoveryCaseLegalHoldUserSource -CaseId <String> -LegalHoldId <String>
- -BodyParameter <IMicrosoftGraphEdiscoveryUserSource> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphEdiscoveryUserSource> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaComplianceEdiscoveryCaseLegalHoldUserSource -InputObject <IComplianceIdentity>
- -BodyParameter <IMicrosoftGraphEdiscoveryUserSource> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphEdiscoveryUserSource> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -40,8 +37,7 @@ New-MgBetaComplianceEdiscoveryCaseLegalHoldUserSource -InputObject <IComplianceI
 New-MgBetaComplianceEdiscoveryCaseLegalHoldUserSource -InputObject <IComplianceIdentity>
  [-AdditionalProperties <Hashtable>] [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>]
  [-DisplayName <String>] [-Email <String>] [-HoldStatus <String>] [-Id <String>] [-IncludedSources <String>]
- [-ResponseHeadersVariable <String>] [-SiteWebUrl <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-SiteWebUrl <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -170,21 +166,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -HoldStatus
 dataSourceHoldStatus
 
@@ -262,21 +243,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -SiteWebUrl
 The URL of the user's OneDrive for Business site.
 Read-only.
@@ -332,8 +298,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IComplianceIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEdiscoveryUserSource
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

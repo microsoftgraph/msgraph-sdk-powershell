@@ -18,33 +18,29 @@ Update-MgBetaPlaceAsRoomListWorkspace -PlaceId <String> -WorkspaceId <String>
  [-AdditionalProperties <Hashtable>] [-Address <IMicrosoftGraphPhysicalAddress>] [-Building <String>]
  [-Capacity <Int32>] [-DisplayName <String>] [-EmailAddress <String>] [-FloorLabel <String>]
  [-FloorNumber <Int32>] [-GeoCoordinates <IMicrosoftGraphOutlookGeoCoordinates>] [-Id <String>]
- [-IsWheelChairAccessible] [-Label <String>] [-Nickname <String>] [-Phone <String>] [-PlaceId1 <String>]
- [-ResponseHeadersVariable <String>] [-Tags <String[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-IsWheelChairAccessible] [-Label <String>] [-Nickname <String>] [-Phone <String>] [-Tags <String[]>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaPlaceAsRoomListWorkspace -PlaceId <String> -WorkspaceId <String>
- -BodyParameter <IMicrosoftGraphWorkspace> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphWorkspace> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaPlaceAsRoomListWorkspace -InputObject <ICalendarIdentity>
- -BodyParameter <IMicrosoftGraphWorkspace> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphWorkspace> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgBetaPlaceAsRoomListWorkspace -InputObject <ICalendarIdentity> [-PlaceId <String>]
- [-AdditionalProperties <Hashtable>] [-Address <IMicrosoftGraphPhysicalAddress>] [-Building <String>]
- [-Capacity <Int32>] [-DisplayName <String>] [-EmailAddress <String>] [-FloorLabel <String>]
- [-FloorNumber <Int32>] [-GeoCoordinates <IMicrosoftGraphOutlookGeoCoordinates>] [-Id <String>]
- [-IsWheelChairAccessible] [-Label <String>] [-Nickname <String>] [-Phone <String>]
- [-ResponseHeadersVariable <String>] [-Tags <String[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
+Update-MgBetaPlaceAsRoomListWorkspace -InputObject <ICalendarIdentity> [-AdditionalProperties <Hashtable>]
+ [-Address <IMicrosoftGraphPhysicalAddress>] [-Building <String>] [-Capacity <Int32>] [-DisplayName <String>]
+ [-EmailAddress <String>] [-FloorLabel <String>] [-FloorNumber <Int32>]
+ [-GeoCoordinates <IMicrosoftGraphOutlookGeoCoordinates>] [-Id <String>] [-IsWheelChairAccessible]
+ [-Label <String>] [-Nickname <String>] [-Phone <String>] [-Tags <String[]>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -222,21 +218,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -334,7 +315,7 @@ The unique identifier of place
 
 ```yaml
 Type: System.String
-Parameter Sets: Update, UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: Update, UpdateExpanded
 Aliases:
 
 Required: True
@@ -344,40 +325,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -PlaceId1
-A unique, immutable identifier for the place.
-Read-only.
-The value of this identifier is equal to the ExternalDirectoryObjectId returned from the Get-Mailbox cmdlet.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Tags
-Specifies other features of the workspace; for example, the type of view or furniture type.
+Specifies additional features of the workspace, for example, details like the type of view or furniture type.
 
 ```yaml
 Type: System.String[]
@@ -446,8 +395,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWorkspace
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWorkspace
@@ -491,7 +438,6 @@ To create the parameters described below, construct a hash table containing the 
     - `[Latitude <Double?>]`: The latitude of the location.
     - `[Longitude <Double?>]`: The longitude of the location.
   - `[Phone <String>]`: The phone number of the place.
-  - `[PlaceId <String>]`: A unique, immutable identifier for the place. Read-only. The value of this identifier is equal to the ExternalDirectoryObjectId returned from the Get-Mailbox cmdlet.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Building <String>]`: Specifies the building name or building number that the workspace is in.
   - `[Capacity <Int32?>]`: Specifies the capacity of the workspace.
@@ -501,7 +447,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[IsWheelChairAccessible <Boolean?>]`: Specifies whether the workspace is wheelchair accessible.
   - `[Label <String>]`: Specifies a descriptive label for the workspace, for example, a number or name.
   - `[Nickname <String>]`: Specifies a nickname for the workspace, for example, 'quiet workspace'.
-  - `[Tags <String[]>]`: Specifies other features of the workspace; for example, the type of view or furniture type.
+  - `[Tags <String[]>]`: Specifies additional features of the workspace, for example, details like the type of view or furniture type.
 
 `GEOCOORDINATES <IMicrosoftGraphOutlookGeoCoordinates>`: outlookGeoCoordinates
   - `[(Any) <Object>]`: This indicates any property can be added to this object.

@@ -16,30 +16,26 @@ Update the navigation property sensitivityPolicySettings in users
 ```
 Update-MgBetaUserInformationProtectionSensitivityPolicySetting -UserId <String>
  [-AdditionalProperties <Hashtable>] [-ApplicableTo <String>] [-DowngradeSensitivityRequiresJustification]
- [-HelpWebUrl <String>] [-Id <String>] [-IsMandatory] [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-HelpWebUrl <String>] [-Id <String>] [-IsMandatory] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaUserInformationProtectionSensitivityPolicySetting -UserId <String>
- -BodyParameter <IMicrosoftGraphSensitivityPolicySettings> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphSensitivityPolicySettings> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaUserInformationProtectionSensitivityPolicySetting -InputObject <IIdentitySignInsIdentity>
- -BodyParameter <IMicrosoftGraphSensitivityPolicySettings> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphSensitivityPolicySettings> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgBetaUserInformationProtectionSensitivityPolicySetting -InputObject <IIdentitySignInsIdentity>
  [-AdditionalProperties <Hashtable>] [-ApplicableTo <String>] [-DowngradeSensitivityRequiresJustification]
- [-HelpWebUrl <String>] [-Id <String>] [-IsMandatory] [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-HelpWebUrl <String>] [-Id <String>] [-IsMandatory] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -124,21 +120,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -HelpWebUrl
 .
 
@@ -201,21 +182,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -UserId
 The unique identifier of user
 
@@ -270,8 +236,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IIdentitySignInsIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSensitivityPolicySettings
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

@@ -15,30 +15,27 @@ Update the navigation property healthOverviews in admin
 ### UpdateExpanded (Default)
 ```
 Update-MgServiceAnnouncementHealthOverview -ServiceHealthId <String> [-AdditionalProperties <Hashtable>]
- [-Id <String>] [-Issues <IMicrosoftGraphServiceHealthIssue[]>] [-ResponseHeadersVariable <String>]
- [-Service <String>] [-Status <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-Issues <IMicrosoftGraphServiceHealthIssue[]>] [-Service <String>] [-Status <String>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgServiceAnnouncementHealthOverview -ServiceHealthId <String>
- -BodyParameter <IMicrosoftGraphServiceHealth> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphServiceHealth> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgServiceAnnouncementHealthOverview -InputObject <IDevicesServiceAnnouncementIdentity>
- -BodyParameter <IMicrosoftGraphServiceHealth> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphServiceHealth> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgServiceAnnouncementHealthOverview -InputObject <IDevicesServiceAnnouncementIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Issues <IMicrosoftGraphServiceHealthIssue[]>]
- [-ResponseHeadersVariable <String>] [-Service <String>] [-Status <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Service <String>] [-Status <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -93,21 +90,6 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -148,21 +130,6 @@ To construct, see NOTES section for ISSUES properties and create a hash table.
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphServiceHealthIssue[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -256,8 +223,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IDevicesServiceAnnouncementIdentity
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphServiceHealth
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

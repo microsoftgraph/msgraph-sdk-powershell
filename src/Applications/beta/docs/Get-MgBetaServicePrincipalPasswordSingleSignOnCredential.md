@@ -15,29 +15,27 @@ Get a list of single sign-on credentials using a password for a user or group.
 ### GetExpanded (Default)
 ```
 Get-MgBetaServicePrincipalPasswordSingleSignOnCredential -ServicePrincipalId <String>
- [-AdditionalProperties <Hashtable>] [-Id <String>] [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-Id <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Get
 ```
 Get-MgBetaServicePrincipalPasswordSingleSignOnCredential -ServicePrincipalId <String>
  -BodyParameter <IPathsY2DqcyServiceprincipalsServiceprincipalIdMicrosoftGraphGetpasswordsinglesignoncredentialsPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
 Get-MgBetaServicePrincipalPasswordSingleSignOnCredential -InputObject <IApplicationsIdentity>
  -BodyParameter <IPathsY2DqcyServiceprincipalsServiceprincipalIdMicrosoftGraphGetpasswordsinglesignoncredentialsPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### GetViaIdentityExpanded
 ```
 Get-MgBetaServicePrincipalPasswordSingleSignOnCredential -InputObject <IApplicationsIdentity>
- [-AdditionalProperties <Hashtable>] [-Id <String>] [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-Id <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -92,21 +90,6 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 .
 
@@ -135,21 +118,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -208,8 +176,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPathsY2DqcyServiceprincipalsServiceprincipalIdMicrosoftGraphGetpasswordsinglesignoncredentialsPostRequestbodyContentApplicationJsonSchema
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPasswordSingleSignOnCredentialSet
@@ -245,7 +211,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[GroupId <String>]`: The unique identifier of group
   - `[HomeRealmDiscoveryPolicyId <String>]`: The unique identifier of homeRealmDiscoveryPolicy
   - `[LicenseDetailsId <String>]`: The unique identifier of licenseDetails
-  - `[Name <String>]`: Alternate key of federatedIdentityCredential
   - `[OAuth2PermissionGrantId <String>]`: The unique identifier of oAuth2PermissionGrant
   - `[OnPremisesAgentGroupId <String>]`: The unique identifier of onPremisesAgentGroup
   - `[OnPremisesAgentGroupId1 <String>]`: The unique identifier of onPremisesAgentGroup

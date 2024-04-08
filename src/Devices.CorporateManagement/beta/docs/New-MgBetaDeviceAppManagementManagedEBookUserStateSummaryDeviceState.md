@@ -17,23 +17,22 @@ Create new navigation property to deviceStates for deviceAppManagement
 New-MgBetaDeviceAppManagementManagedEBookUserStateSummaryDeviceState -ManagedEBookId <String>
  -UserInstallStateSummaryId <String> [-AdditionalProperties <Hashtable>] [-DeviceId <String>]
  [-DeviceName <String>] [-ErrorCode <String>] [-Id <String>] [-InstallState <InstallState>]
- [-LastSyncDateTime <DateTime>] [-OSDescription <String>] [-OSVersion <String>]
- [-ResponseHeadersVariable <String>] [-UserName <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-LastSyncDateTime <DateTime>] [-OSDescription <String>] [-OSVersion <String>] [-UserName <String>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaDeviceAppManagementManagedEBookUserStateSummaryDeviceState -ManagedEBookId <String>
- -UserInstallStateSummaryId <String> -BodyParameter <IMicrosoftGraphDeviceInstallState>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -UserInstallStateSummaryId <String> -BodyParameter <IMicrosoftGraphDeviceInstallState> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaDeviceAppManagementManagedEBookUserStateSummaryDeviceState
  -InputObject <IDevicesCorporateManagementIdentity> -BodyParameter <IMicrosoftGraphDeviceInstallState>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -41,9 +40,8 @@ New-MgBetaDeviceAppManagementManagedEBookUserStateSummaryDeviceState
 New-MgBetaDeviceAppManagementManagedEBookUserStateSummaryDeviceState
  -InputObject <IDevicesCorporateManagementIdentity> [-AdditionalProperties <Hashtable>] [-DeviceId <String>]
  [-DeviceName <String>] [-ErrorCode <String>] [-Id <String>] [-InstallState <InstallState>]
- [-LastSyncDateTime <DateTime>] [-OSDescription <String>] [-OSVersion <String>]
- [-ResponseHeadersVariable <String>] [-UserName <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-LastSyncDateTime <DateTime>] [-OSDescription <String>] [-OSVersion <String>] [-UserName <String>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -140,21 +138,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -265,21 +248,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -UserInstallStateSummaryId
 The unique identifier of userInstallStateSummary
 
@@ -350,8 +318,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceInstallState
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceInstallState
@@ -419,7 +385,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[ManagedMobileAppId <String>]`: The unique identifier of managedMobileApp
   - `[MdmWindowsInformationProtectionPolicyId <String>]`: The unique identifier of mdmWindowsInformationProtectionPolicy
   - `[MobileAppAssignmentId <String>]`: The unique identifier of mobileAppAssignment
-  - `[MobileAppCatalogPackageId <String>]`: The unique identifier of mobileAppCatalogPackage
   - `[MobileAppCategoryId <String>]`: The unique identifier of mobileAppCategory
   - `[MobileAppContentFileId <String>]`: The unique identifier of mobileAppContentFile
   - `[MobileAppContentId <String>]`: The unique identifier of mobileAppContent

@@ -16,8 +16,7 @@ Invoke function filterByCurrentUser
 ```
 Invoke-MgBetaFilterIdentityGovernancePermissionManagementScheduledPermissionApprovalByCurrentUser -On <String>
  [-Count] [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
- [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [<CommonParameters>]
+ [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-Headers <IDictionary>] [<CommonParameters>]
 ```
 
 ### FilterViaIdentity
@@ -25,7 +24,7 @@ Invoke-MgBetaFilterIdentityGovernancePermissionManagementScheduledPermissionAppr
 Invoke-MgBetaFilterIdentityGovernancePermissionManagementScheduledPermissionApprovalByCurrentUser
  -InputObject <IIdentityGovernanceIdentity> [-Count] [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [<CommonParameters>]
+ [-Headers <IDictionary>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -155,21 +154,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Search
 Search items by search phrases
 
@@ -243,6 +227,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphApproval
 
+### System.Collections.Hashtable
+
 ## NOTES
 
 ALIASES
@@ -301,6 +287,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[GovernanceRoleAssignmentRequestId <String>]`: The unique identifier of governanceRoleAssignmentRequest
   - `[GovernanceRoleDefinitionId <String>]`: The unique identifier of governanceRoleDefinition
   - `[GovernanceRoleSettingId <String>]`: The unique identifier of governanceRoleSetting
+  - `[GroupId <String>]`: The unique identifier of group
   - `[IncompatibleAccessPackageId <String>]`: Usage: incompatibleAccessPackageId='{incompatibleAccessPackageId}'
   - `[LongRunningOperationId <String>]`: The unique identifier of longRunningOperation
   - `[ObjectId <String>]`: Alternate key of accessPackageSubject

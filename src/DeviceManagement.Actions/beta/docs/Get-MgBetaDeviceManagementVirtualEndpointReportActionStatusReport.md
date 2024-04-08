@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaDeviceManagementVirtualEndpointReportActionStatusReport
 
 ## SYNOPSIS
-Get the remote action status reports, including data such as the Cloud PC ID, Cloud PC device display name, initiating user's principal name, device owner's user principal name, action taken, and action state.
+Invoke action getActionStatusReports
 
 ## SYNTAX
 
@@ -16,20 +16,19 @@ Get the remote action status reports, including data such as the Cloud PC ID, Cl
 ```
 Get-MgBetaDeviceManagementVirtualEndpointReportActionStatusReport -OutFile <String>
  [-AdditionalProperties <Hashtable>] [-Filter <String>] [-GroupBy <String[]>] [-Property <String[]>]
- [-ResponseHeadersVariable <String>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Get
 ```
 Get-MgBetaDeviceManagementVirtualEndpointReportActionStatusReport
  -BodyParameter <IPathsXvswb4DevicemanagementVirtualendpointReportsMicrosoftGraphGetactionstatusreportsPostRequestbodyContentApplicationJsonSchema>
- -OutFile <String> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -OutFile <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get the remote action status reports, including data such as the Cloud PC ID, Cloud PC device display name, initiating user's principal name, device owner's user principal name, action taken, and action state.
+Invoke action getActionStatusReports
 
 ## EXAMPLES
 
@@ -110,21 +109,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -OutFile
 Path to write output file to
 
@@ -162,21 +146,6 @@ Accept wildcard characters: False
 Type: System.String[]
 Parameter Sets: GetExpanded
 Aliases: Select
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -282,8 +251,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPathsXvswb4DevicemanagementVirtualendpointReportsMicrosoftGraphGetactionstatusreportsPostRequestbodyContentApplicationJsonSchema
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Groups
-Module Guid: b5283a0e-6c60-477f-86bf-4e74ecdef2eb
+Module Guid: 52b8634d-aa56-4fcf-a8f1-132fd2096425
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.groups
 Help Version: 1.0.0.0
 Locale: en-US
@@ -126,12 +126,6 @@ Return the directory objects specified in a list of IDs.
 Only a subset of user properties are returned by default in v1.0.
 Some common uses for this function are to:
 
-### [Get-MgGroupByUniqueName](Get-MgGroupByUniqueName.md)
-Get the properties and relationships of a group object.
-This operation returns by default only a subset of all the available properties, as noted in the Properties section.
-To get properties that aren't_ returned by default, specify them in a $select OData query option.
-The hasMembersWithLicenseErrors and isArchived properties are an exception and aren't returned in the $select query.
-
 ### [Get-MgGroupCalendarEventDelta](Get-MgGroupCalendarEventDelta.md)
 Get a set of event resources that have been added, deleted, or updated in a calendarView (a range of events defined by start and end dates) of the user's primary calendar.
 Typically, synchronizing events in a calendarView in a local store entails a round of multiple delta function calls.
@@ -142,7 +136,7 @@ This allows you to maintain and synchronize a local store of events in the speci
 Get the free/busy availability information for a collection of users, distributions lists, or resources (rooms or equipment) for a specified time period.
 
 ### [Get-MgGroupConversation](Get-MgGroupConversation.md)
-The group's conversations.
+Retrieve the properties and relationships of conversation object.
 
 ### [Get-MgGroupConversationCount](Get-MgGroupConversationCount.md)
 Get the number of the resource
@@ -518,29 +512,11 @@ Invoke function getCompatibleHubContentTypes
 ### [Get-MgGroupSiteDelta](Get-MgGroupSiteDelta.md)
 Invoke function delta
 
-### [Get-MgGroupSiteGetByPathApplicableContentTypeForList](Get-MgGroupSiteGetByPathApplicableContentTypeForList.md)
-Invoke function getApplicableContentTypesForList
-
-### [Get-MgGroupSiteGetGraphBPrePathActivityByInterval](Get-MgGroupSiteGetGraphBPrePathActivityByInterval.md)
-Invoke function getActivitiesByInterval
-
-### [Get-MgGroupSiteGetGraphBPrePathByPath](Get-MgGroupSiteGetGraphBPrePathByPath.md)
-Invoke function getByPath
-
 ### [Get-MgGroupSiteListContentTypeCompatibleHubContentType](Get-MgGroupSiteListContentTypeCompatibleHubContentType.md)
 Invoke function getCompatibleHubContentTypes
 
 ### [Get-MgGroupSiteListItemActivityByInterval](Get-MgGroupSiteListItemActivityByInterval.md)
 Invoke function getActivitiesByInterval
-
-### [Get-MgGroupSitePageMicrosoftGraphSitePageCanvaLayoutHorizontalSectionColumnWebpartPositionOfWebPart](Get-MgGroupSitePageMicrosoftGraphSitePageCanvaLayoutHorizontalSectionColumnWebpartPositionOfWebPart.md)
-Invoke action getPositionOfWebPart
-
-### [Get-MgGroupSitePageMicrosoftGraphSitePageCanvaLayoutVerticalSectionWebpartPositionOfWebPart](Get-MgGroupSitePageMicrosoftGraphSitePageCanvaLayoutVerticalSectionWebpartPositionOfWebPart.md)
-Invoke action getPositionOfWebPart
-
-### [Get-MgGroupSitePageMicrosoftGraphSitePageWebPartPositionOfWebPart](Get-MgGroupSitePageMicrosoftGraphSitePageWebPartPositionOfWebPart.md)
-Invoke action getPositionOfWebPart
 
 ### [Get-MgGroupThread](Get-MgGroupThread.md)
 Get a specific thread that belongs to a group.
@@ -718,8 +694,8 @@ Follow a driveItem.
 Follow a driveItem.
 
 ### [Invoke-MgForwardGroupCalendarEvent](Invoke-MgForwardGroupCalendarEvent.md)
-This action allows the organizer or attendee of a meeting event to forward the\nmeeting request to a new recipient.
-If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action\nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's\ncopy of the meeting event.
+This action allows the organizer or attendee of a meeting event to forward the \nmeeting request to a new recipient.
+If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action \nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's \ncopy of the meeting event.
 This convenience is not available when forwarding from an Outlook.com account.
 
 ### [Invoke-MgForwardGroupConversationThreadPost](Invoke-MgForwardGroupConversationThreadPost.md)
@@ -731,8 +707,8 @@ Forward a post to a recipient.
 You can specify both the parent conversation and thread in the request, \nor, you can specify just the parent thread without the parent conversation.
 
 ### [Invoke-MgForwardGroupEvent](Invoke-MgForwardGroupEvent.md)
-This action allows the organizer or attendee of a meeting event to forward the\nmeeting request to a new recipient.
-If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action\nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's\ncopy of the meeting event.
+This action allows the organizer or attendee of a meeting event to forward the \nmeeting request to a new recipient.
+If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action \nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's \ncopy of the meeting event.
 This convenience is not available when forwarding from an Outlook.com account.
 
 ### [Invoke-MgForwardGroupThreadPost](Invoke-MgForwardGroupThreadPost.md)
@@ -785,27 +761,33 @@ Renews a group's expiration.
 When a group is renewed, the group expiration is extended by the number of days defined in the policy.
 
 ### [Invoke-MgReplyGroupConversationThread](Invoke-MgReplyGroupConversationThread.md)
-Reply to a post and add a new post to the specified thread in a group conversation.
-You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.
+Add an attachment when creating a group post.
+This operation limits the size of the attachment you can add to under 3 MB.
+An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
 
 ### [Invoke-MgReplyGroupConversationThreadPost](Invoke-MgReplyGroupConversationThreadPost.md)
-Invoke action reply
-
-### [Invoke-MgReplyGroupConversationThreadPostInReplyTo](Invoke-MgReplyGroupConversationThreadPostInReplyTo.md)
-Invoke action reply
-
-### [Invoke-MgReplyGroupThread](Invoke-MgReplyGroupThread.md)
 Reply to a post and add a new post to the specified thread in a group conversation.
 You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.
 
+### [Invoke-MgReplyGroupConversationThreadPostInReplyTo](Invoke-MgReplyGroupConversationThreadPostInReplyTo.md)
+Reply to a post and add a new post to the specified thread in a group conversation.
+You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.
+
+### [Invoke-MgReplyGroupThread](Invoke-MgReplyGroupThread.md)
+Add an attachment when creating a group post.
+This operation limits the size of the attachment you can add to under 3 MB.
+An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
+
 ### [Invoke-MgReplyGroupThreadPost](Invoke-MgReplyGroupThreadPost.md)
-Invoke action reply
+Reply to a post and add a new post to the specified thread in a group conversation.
+You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.
 
 ### [Invoke-MgReplyGroupThreadPostInReplyTo](Invoke-MgReplyGroupThreadPostInReplyTo.md)
-Invoke action reply
+Reply to a post and add a new post to the specified thread in a group conversation.
+You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.
 
 ### [Invoke-MgRetryGroupServiceProvisioning](Invoke-MgRetryGroupServiceProvisioning.md)
-Retry the group service provisioning.
+Invoke action retryServiceProvisioning
 
 ### [Invoke-MgSnoozeGroupCalendarEventReminder](Invoke-MgSnoozeGroupCalendarEventReminder.md)
 Postpone a reminder for an event in a user calendar until a new time.
@@ -890,22 +872,13 @@ You can use createLink action to share a DriveItem via a sharing link.
 The createLink action will create a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, the existing sharing link will be returned.
 DriveItem resources inherit sharing permissions from their ancestors.
 
-### [New-MgGroupDriveItemListItemLink](New-MgGroupDriveItemListItemLink.md)
-Invoke action createLink
-
 ### [New-MgGroupDriveItemUploadSession](New-MgGroupDriveItemUploadSession.md)
 Invoke action createUploadSession
-
-### [New-MgGroupDriveListItemLink](New-MgGroupDriveListItemLink.md)
-Invoke action createLink
 
 ### [New-MgGroupDriveRootLink](New-MgGroupDriveRootLink.md)
 You can use createLink action to share a DriveItem via a sharing link.
 The createLink action will create a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, the existing sharing link will be returned.
 DriveItem resources inherit sharing permissions from their ancestors.
-
-### [New-MgGroupDriveRootListItemLink](New-MgGroupDriveRootListItemLink.md)
-Invoke action createLink
 
 ### [New-MgGroupDriveRootUploadSession](New-MgGroupDriveRootUploadSession.md)
 Invoke action createUploadSession
@@ -946,9 +919,6 @@ The template named Group.Unified can be used to configure tenant-wide Microsoft 
 
 ### [New-MgGroupSettingTemplateGroupSettingTemplate](New-MgGroupSettingTemplateGroupSettingTemplate.md)
 Add new entity to groupSettingTemplates
-
-### [New-MgGroupSiteListItemLink](New-MgGroupSiteListItemLink.md)
-Invoke action createLink
 
 ### [New-MgGroupThread](New-MgGroupThread.md)
 Start a new group conversation by first creating a thread.
@@ -1006,16 +976,6 @@ To learn more, see deletedItems.
 ### [Remove-MgGroupAcceptedSenderByRef](Remove-MgGroupAcceptedSenderByRef.md)
 Remove acceptedSender
 
-### [Remove-MgGroupAcceptedSenderDirectoryObjectByRef](Remove-MgGroupAcceptedSenderDirectoryObjectByRef.md)
-Remove acceptedSender
-
-### [Remove-MgGroupByUniqueName](Remove-MgGroupByUniqueName.md)
-Delete group.
-When deleted, Microsoft 365 groups are moved to a temporary container and can be restored within 30 days.
-After that time, they're permanently deleted.
-This isn't applicable to Security groups and Distribution groups which are permanently deleted immediately.
-To learn more, see deletedItems.
-
 ### [Remove-MgGroupConversation](Remove-MgGroupConversation.md)
 Delete conversation.
 
@@ -1057,15 +1017,7 @@ Delete a groupLifecyclePolicy.
 Remove a member from a group via the members navigation property.
 You can't remove a member from groups with dynamic memberships.
 
-### [Remove-MgGroupMemberDirectoryObjectByRef](Remove-MgGroupMemberDirectoryObjectByRef.md)
-Remove a member from a group via the members navigation property.
-You can't remove a member from groups with dynamic memberships.
-
 ### [Remove-MgGroupOwnerByRef](Remove-MgGroupOwnerByRef.md)
-Remove an owner from a Microsoft 365 group or a security group through the owners navigation property.
-Once owners are assigned to a group, the last owner (a user object) of the group cannot be removed.
-
-### [Remove-MgGroupOwnerDirectoryObjectByRef](Remove-MgGroupOwnerDirectoryObjectByRef.md)
 Remove an owner from a Microsoft 365 group or a security group through the owners navigation property.
 Once owners are assigned to a group, the last owner (a user object) of the group cannot be removed.
 
@@ -1076,9 +1028,6 @@ Delete navigation property permissionGrants for groups
 Delete navigation property photo for groups
 
 ### [Remove-MgGroupRejectedSenderByRef](Remove-MgGroupRejectedSenderByRef.md)
-Remove rejectedSender
-
-### [Remove-MgGroupRejectedSenderDirectoryObjectByRef](Remove-MgGroupRejectedSenderDirectoryObjectByRef.md)
 Remove rejectedSender
 
 ### [Remove-MgGroupSetting](Remove-MgGroupSetting.md)
@@ -1246,10 +1195,8 @@ Unpublish a [contentType][] from a content type hub site.
 Unpublish a [contentType][] from a content type hub site.
 
 ### [Update-MgGroup](Update-MgGroup.md)
-Update the properties of a group object.
-
-### [Update-MgGroupByUniqueName](Update-MgGroupByUniqueName.md)
-Update the properties of a group object.
+Add a member to a security or Microsoft 365 group through the members navigation property.
+The following table shows the types of members that can be added to either security groups or Microsoft 365 groups.
 
 ### [Update-MgGroupConversationThread](Update-MgGroupConversationThread.md)
 Update the navigation property threads in groups

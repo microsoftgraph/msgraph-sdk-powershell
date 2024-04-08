@@ -16,34 +16,30 @@ Create new navigation property to deviceCompliancePolicyStates for users
 ```
 New-MgBetaUserManagedDeviceCompliancePolicyState -ManagedDeviceId <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>]
- [-PlatformType <PolicyPlatformType>] [-ResponseHeadersVariable <String>] [-SettingCount <Int32>]
+ [-PlatformType <PolicyPlatformType>] [-SettingCount <Int32>]
  [-SettingStates <IMicrosoftGraphDeviceCompliancePolicySettingState[]>] [-State <String>] [-UserId1 <String>]
- [-UserPrincipalName <String>] [-Version <Int32>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-UserPrincipalName <String>] [-Version <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaUserManagedDeviceCompliancePolicyState -ManagedDeviceId <String> -UserId <String>
- -BodyParameter <IMicrosoftGraphDeviceCompliancePolicyState> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphDeviceCompliancePolicyState> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaUserManagedDeviceCompliancePolicyState -InputObject <IDevicesCorporateManagementIdentity>
- -BodyParameter <IMicrosoftGraphDeviceCompliancePolicyState> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphDeviceCompliancePolicyState> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgBetaUserManagedDeviceCompliancePolicyState -InputObject <IDevicesCorporateManagementIdentity>
  [-UserId <String>] [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>]
- [-PlatformType <PolicyPlatformType>] [-ResponseHeadersVariable <String>] [-SettingCount <Int32>]
+ [-PlatformType <PolicyPlatformType>] [-SettingCount <Int32>]
  [-SettingStates <IMicrosoftGraphDeviceCompliancePolicySettingState[]>] [-State <String>]
- [-UserPrincipalName <String>] [-Version <Int32>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-UserPrincipalName <String>] [-Version <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -113,21 +109,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -182,21 +163,6 @@ Supported platform types for policies.
 Type: Microsoft.Graph.Beta.PowerShell.Support.PolicyPlatformType
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -351,8 +317,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceCompliancePolicyState
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceCompliancePolicyState
@@ -381,8 +345,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[SettingInstanceId <String>]`: SettingInstanceId
     - `[SettingName <String>]`: Localized/user friendly setting name that is being reported
     - `[Sources <IMicrosoftGraphSettingSource[]>]`: Contributing policies
-      - `[DisplayName <String>]`: 
-      - `[Id <String>]`: 
+      - `[DisplayName <String>]`: Not yet documented
+      - `[Id <String>]`: Not yet documented
       - `[SourceType <String>]`: settingSourceType
     - `[State <String>]`: complianceStatus
     - `[UserEmail <String>]`: UserEmail
@@ -434,7 +398,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[ManagedMobileAppId <String>]`: The unique identifier of managedMobileApp
   - `[MdmWindowsInformationProtectionPolicyId <String>]`: The unique identifier of mdmWindowsInformationProtectionPolicy
   - `[MobileAppAssignmentId <String>]`: The unique identifier of mobileAppAssignment
-  - `[MobileAppCatalogPackageId <String>]`: The unique identifier of mobileAppCatalogPackage
   - `[MobileAppCategoryId <String>]`: The unique identifier of mobileAppCategory
   - `[MobileAppContentFileId <String>]`: The unique identifier of mobileAppContentFile
   - `[MobileAppContentId <String>]`: The unique identifier of mobileAppContent
@@ -474,8 +437,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[SettingInstanceId <String>]`: SettingInstanceId
   - `[SettingName <String>]`: Localized/user friendly setting name that is being reported
   - `[Sources <IMicrosoftGraphSettingSource[]>]`: Contributing policies
-    - `[DisplayName <String>]`: 
-    - `[Id <String>]`: 
+    - `[DisplayName <String>]`: Not yet documented
+    - `[Id <String>]`: Not yet documented
     - `[SourceType <String>]`: settingSourceType
   - `[State <String>]`: complianceStatus
   - `[UserEmail <String>]`: UserEmail

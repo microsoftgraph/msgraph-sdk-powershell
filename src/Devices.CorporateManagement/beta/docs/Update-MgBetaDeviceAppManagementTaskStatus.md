@@ -15,33 +15,29 @@ Set the task's status and attach a note.
 ### UpdateExpanded (Default)
 ```
 Update-MgBetaDeviceAppManagementTaskStatus -DeviceAppManagementTaskId <String>
- [-AdditionalProperties <Hashtable>] [-Note <String>] [-ResponseHeadersVariable <String>]
- [-Status <DeviceAppManagementTaskStatus>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-Note <String>] [-Status <DeviceAppManagementTaskStatus>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaDeviceAppManagementTaskStatus -DeviceAppManagementTaskId <String>
  -BodyParameter <IPathsH16W9LDeviceappmanagementDeviceappmanagementtasksDeviceappmanagementtaskIdMicrosoftGraphUpdatestatusPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaDeviceAppManagementTaskStatus -InputObject <IDevicesCorporateManagementIdentity>
  -BodyParameter <IPathsH16W9LDeviceappmanagementDeviceappmanagementtasksDeviceappmanagementtaskIdMicrosoftGraphUpdatestatusPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgBetaDeviceAppManagementTaskStatus -InputObject <IDevicesCorporateManagementIdentity>
- [-AdditionalProperties <Hashtable>] [-Note <String>] [-ResponseHeadersVariable <String>]
- [-Status <DeviceAppManagementTaskStatus>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-Note <String>] [-Status <DeviceAppManagementTaskStatus>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -111,21 +107,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -164,21 +145,6 @@ Returns true when the command succeeds
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -242,8 +208,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPathsH16W9LDeviceappmanagementDeviceappmanagementtasksDeviceappmanagementtaskIdMicrosoftGraphUpdatestatusPostRequestbodyContentApplicationJsonSchema
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
@@ -304,7 +268,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[ManagedMobileAppId <String>]`: The unique identifier of managedMobileApp
   - `[MdmWindowsInformationProtectionPolicyId <String>]`: The unique identifier of mdmWindowsInformationProtectionPolicy
   - `[MobileAppAssignmentId <String>]`: The unique identifier of mobileAppAssignment
-  - `[MobileAppCatalogPackageId <String>]`: The unique identifier of mobileAppCatalogPackage
   - `[MobileAppCategoryId <String>]`: The unique identifier of mobileAppCategory
   - `[MobileAppContentFileId <String>]`: The unique identifier of mobileAppContentFile
   - `[MobileAppContentId <String>]`: The unique identifier of mobileAppContent

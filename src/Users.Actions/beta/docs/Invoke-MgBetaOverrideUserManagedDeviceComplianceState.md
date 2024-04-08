@@ -16,32 +16,28 @@ Invoke action overrideComplianceState
 ```
 Invoke-MgBetaOverrideUserManagedDeviceComplianceState -ManagedDeviceId <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-ComplianceState <AdministratorConfiguredDeviceComplianceState>]
- [-RemediationUrl <String>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-RemediationUrl <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Override
 ```
 Invoke-MgBetaOverrideUserManagedDeviceComplianceState -ManagedDeviceId <String> -UserId <String>
  -BodyParameter <IPaths11FbqvhUsersUserIdManageddevicesManageddeviceIdMicrosoftGraphOverridecompliancestatePostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### OverrideViaIdentity
 ```
 Invoke-MgBetaOverrideUserManagedDeviceComplianceState -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPaths11FbqvhUsersUserIdManageddevicesManageddeviceIdMicrosoftGraphOverridecompliancestatePostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### OverrideViaIdentityExpanded
 ```
 Invoke-MgBetaOverrideUserManagedDeviceComplianceState -InputObject <IUsersActionsIdentity>
  [-AdditionalProperties <Hashtable>] [-ComplianceState <AdministratorConfiguredDeviceComplianceState>]
- [-RemediationUrl <String>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-RemediationUrl <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -111,21 +107,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -179,21 +160,6 @@ Accept wildcard characters: False
 Type: System.String
 Parameter Sets: OverrideExpanded, OverrideViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -257,8 +223,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
@@ -296,7 +260,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[DriveItemVersionId <String>]`: The unique identifier of driveItemVersion
   - `[EventId <String>]`: The unique identifier of event
   - `[EventId1 <String>]`: The unique identifier of event
-  - `[JoinWebUrl <String>]`: Alternate key of onlineMeeting
   - `[ListItemId <String>]`: The unique identifier of listItem
   - `[ListItemVersionId <String>]`: The unique identifier of listItemVersion
   - `[MailFolderId <String>]`: The unique identifier of mailFolder

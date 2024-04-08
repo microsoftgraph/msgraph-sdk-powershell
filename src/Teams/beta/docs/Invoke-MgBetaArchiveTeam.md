@@ -9,11 +9,9 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Archive the specified team.
-\nWhen a team is archived, users can no longer make most changes to the team.
-For example, users can no longer: send or like messages on any channel in the team; edit the team's name or description; nor edit other settings.
-However, membership changes to the team continue to be allowed.
+\nWhen a team is archived, users can no longer send or like messages on any channel in the team, edit the team's name, description, or other settings, or in general make most changes to the team.\nMembership changes to the team continue to be allowed.
 Archiving is an async operation.
-A team is archived once the async operation completes successfully, which can occur subsequent to a response from this API.
+A team is archived once the async operation completes successfully, which may occur subsequent to a response from this API.
 To archive a team, the team and group must have an owner.
 To restore a team from its archived state, use the API to unarchive.
 
@@ -22,40 +20,34 @@ To restore a team from its archived state, use the API to unarchive.
 ### ArchiveExpanded (Default)
 ```
 Invoke-MgBetaArchiveTeam -TeamId <String> [-AdditionalProperties <Hashtable>]
- [-ResponseHeadersVariable <String>] [-ShouldSetSpoSiteReadOnlyForMembers] [-Headers <IDictionary>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ShouldSetSpoSiteReadOnlyForMembers] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Archive
 ```
 Invoke-MgBetaArchiveTeam -TeamId <String>
  -BodyParameter <IPathsBezc4TeamsTeamIdMicrosoftGraphArchivePostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ArchiveViaIdentity
 ```
 Invoke-MgBetaArchiveTeam -InputObject <ITeamsIdentity>
  -BodyParameter <IPathsBezc4TeamsTeamIdMicrosoftGraphArchivePostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ArchiveViaIdentityExpanded
 ```
 Invoke-MgBetaArchiveTeam -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
- [-ResponseHeadersVariable <String>] [-ShouldSetSpoSiteReadOnlyForMembers] [-Headers <IDictionary>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ShouldSetSpoSiteReadOnlyForMembers] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Archive the specified team.
-\nWhen a team is archived, users can no longer make most changes to the team.
-For example, users can no longer: send or like messages on any channel in the team; edit the team's name or description; nor edit other settings.
-However, membership changes to the team continue to be allowed.
+\nWhen a team is archived, users can no longer send or like messages on any channel in the team, edit the team's name, description, or other settings, or in general make most changes to the team.\nMembership changes to the team continue to be allowed.
 Archiving is an async operation.
-A team is archived once the async operation completes successfully, which can occur subsequent to a response from this API.
+A team is archived once the async operation completes successfully, which may occur subsequent to a response from this API.
 To archive a team, the team and group must have an owner.
 To restore a team from its archived state, use the API to unarchive.
 
@@ -101,21 +93,6 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -139,21 +116,6 @@ Returns true when the command succeeds
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -232,8 +194,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
@@ -271,12 +231,10 @@ To create the parameters described below, construct a hash table containing the 
   - `[SchedulingGroupId <String>]`: The unique identifier of schedulingGroup
   - `[SharedWithChannelTeamInfoId <String>]`: The unique identifier of sharedWithChannelTeamInfo
   - `[ShiftId <String>]`: The unique identifier of shift
-  - `[ShiftsRoleDefinitionId <String>]`: The unique identifier of shiftsRoleDefinition
   - `[SwapShiftsChangeRequestId <String>]`: The unique identifier of swapShiftsChangeRequest
   - `[TeamId <String>]`: The unique identifier of team
   - `[TeamTemplateDefinitionId <String>]`: The unique identifier of teamTemplateDefinition
   - `[TeamTemplateId <String>]`: The unique identifier of teamTemplate
-  - `[TeamsAppDashboardCardDefinitionId <String>]`: The unique identifier of teamsAppDashboardCardDefinition
   - `[TeamsAppDefinitionId <String>]`: The unique identifier of teamsAppDefinition
   - `[TeamsAppId <String>]`: The unique identifier of teamsApp
   - `[TeamsAppInstallationId <String>]`: The unique identifier of teamsAppInstallation

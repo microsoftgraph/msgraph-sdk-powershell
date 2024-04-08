@@ -15,29 +15,25 @@ Delete navigation property recycleBin for groups
 ### Delete1 (Default)
 ```
 Remove-MgBetaGroupSiteGetByPathRecycleBin -GroupId <String> -Path <String> -SiteId <String>
- [-IfMatch <String>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-IfMatch <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Delete
 ```
 Remove-MgBetaGroupSiteGetByPathRecycleBin -GroupId <String> -Path <String> -Path1 <String> -SiteId <String>
- [-IfMatch <String>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-IfMatch <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
 Remove-MgBetaGroupSiteGetByPathRecycleBin -InputObject <ISitesIdentity> [-IfMatch <String>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity1
 ```
 Remove-MgBetaGroupSiteGetByPathRecycleBin -InputObject <ISitesIdentity> [-IfMatch <String>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -161,21 +157,6 @@ Parameter Sets: Delete
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False

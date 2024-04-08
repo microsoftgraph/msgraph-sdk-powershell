@@ -17,23 +17,21 @@ Update the navigation property onenote in groups
 Update-MgGroupSiteGetByPathOnenote -GroupId <String> -Path <String> -SiteId <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Notebooks <IMicrosoftGraphNotebook[]>]
  [-Operations <IMicrosoftGraphOnenoteOperation[]>] [-Pages <IMicrosoftGraphOnenotePage[]>]
- [-Resources <IMicrosoftGraphOnenoteResource[]>] [-ResponseHeadersVariable <String>]
- [-SectionGroups <IMicrosoftGraphSectionGroup[]>] [-Sections <IMicrosoftGraphOnenoteSection[]>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Resources <IMicrosoftGraphOnenoteResource[]>] [-SectionGroups <IMicrosoftGraphSectionGroup[]>]
+ [-Sections <IMicrosoftGraphOnenoteSection[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgGroupSiteGetByPathOnenote -GroupId <String> -Path <String> -Path1 <String> -SiteId <String>
- -BodyParameter <IMicrosoftGraphOnenote> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphOnenote> [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update1
 ```
 Update-MgGroupSiteGetByPathOnenote -GroupId <String> -Path <String> -SiteId <String>
- -BodyParameter <IMicrosoftGraphOnenote> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphOnenote> [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateExpanded
@@ -41,21 +39,21 @@ Update-MgGroupSiteGetByPathOnenote -GroupId <String> -Path <String> -SiteId <Str
 Update-MgGroupSiteGetByPathOnenote -GroupId <String> -Path <String> -Path1 <String> -SiteId <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Notebooks <IMicrosoftGraphNotebook[]>]
  [-Operations <IMicrosoftGraphOnenoteOperation[]>] [-Pages <IMicrosoftGraphOnenotePage[]>]
- [-Resources <IMicrosoftGraphOnenoteResource[]>] [-ResponseHeadersVariable <String>]
- [-SectionGroups <IMicrosoftGraphSectionGroup[]>] [-Sections <IMicrosoftGraphOnenoteSection[]>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Resources <IMicrosoftGraphOnenoteResource[]>] [-SectionGroups <IMicrosoftGraphSectionGroup[]>]
+ [-Sections <IMicrosoftGraphOnenoteSection[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgGroupSiteGetByPathOnenote -InputObject <ISitesIdentity> -BodyParameter <IMicrosoftGraphOnenote>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
 Update-MgGroupSiteGetByPathOnenote -InputObject <ISitesIdentity> -BodyParameter <IMicrosoftGraphOnenote>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -63,9 +61,8 @@ Update-MgGroupSiteGetByPathOnenote -InputObject <ISitesIdentity> -BodyParameter 
 Update-MgGroupSiteGetByPathOnenote -InputObject <ISitesIdentity> [-AdditionalProperties <Hashtable>]
  [-Id <String>] [-Notebooks <IMicrosoftGraphNotebook[]>] [-Operations <IMicrosoftGraphOnenoteOperation[]>]
  [-Pages <IMicrosoftGraphOnenotePage[]>] [-Resources <IMicrosoftGraphOnenoteResource[]>]
- [-ResponseHeadersVariable <String>] [-SectionGroups <IMicrosoftGraphSectionGroup[]>]
- [-Sections <IMicrosoftGraphOnenoteSection[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-SectionGroups <IMicrosoftGraphSectionGroup[]>] [-Sections <IMicrosoftGraphOnenoteSection[]>]
+ [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
@@ -73,9 +70,8 @@ Update-MgGroupSiteGetByPathOnenote -InputObject <ISitesIdentity> [-AdditionalPro
 Update-MgGroupSiteGetByPathOnenote -InputObject <ISitesIdentity> [-AdditionalProperties <Hashtable>]
  [-Id <String>] [-Notebooks <IMicrosoftGraphNotebook[]>] [-Operations <IMicrosoftGraphOnenoteOperation[]>]
  [-Pages <IMicrosoftGraphOnenotePage[]>] [-Resources <IMicrosoftGraphOnenoteResource[]>]
- [-ResponseHeadersVariable <String>] [-SectionGroups <IMicrosoftGraphSectionGroup[]>]
- [-Sections <IMicrosoftGraphOnenoteSection[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-SectionGroups <IMicrosoftGraphSectionGroup[]>] [-Sections <IMicrosoftGraphOnenoteSection[]>]
+ [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -296,21 +292,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -SectionGroups
 The section groups in all OneNote notebooks that are owned by the user or group.
 Read-only.
@@ -517,7 +498,6 @@ To create the parameters described below, construct a hash table containing the 
 
 `INPUTOBJECT <ISitesIdentity>`: Identity Parameter
   - `[BaseItemId <String>]`: The unique identifier of baseItem
-  - `[BaseSitePageId <String>]`: The unique identifier of baseSitePage
   - `[ColumnDefinitionId <String>]`: The unique identifier of columnDefinition
   - `[ColumnLinkId <String>]`: The unique identifier of columnLink
   - `[ContentTypeId <String>]`: The unique identifier of contentType
@@ -527,8 +507,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[EndDateTime <String>]`: Usage: endDateTime='{endDateTime}'
   - `[GroupId <String>]`: The unique identifier of group
   - `[GroupId1 <String>]`: The unique identifier of group
-  - `[HorizontalSectionColumnId <String>]`: The unique identifier of horizontalSectionColumn
-  - `[HorizontalSectionId <String>]`: The unique identifier of horizontalSection
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}
   - `[Interval <String>]`: Usage: interval='{interval}'
   - `[ItemActivityId <String>]`: The unique identifier of itemActivity
@@ -558,7 +536,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[TermId <String>]`: The unique identifier of term
   - `[TermId1 <String>]`: The unique identifier of term
   - `[UserId <String>]`: The unique identifier of user
-  - `[WebPartId <String>]`: The unique identifier of webPart
 
 `NOTEBOOKS <IMicrosoftGraphNotebook[]>`: The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
   - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet

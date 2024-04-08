@@ -16,14 +16,13 @@ Create new navigation property to hostTrackers for security
 ```
 New-MgBetaSecurityThreatIntelligenceHostTracker [-AdditionalProperties <Hashtable>]
  [-FirstSeenDateTime <DateTime>] [-Host1 <IMicrosoftGraphSecurityHost>] [-Id <String>] [-Kind <String>]
- [-LastSeenDateTime <DateTime>] [-ResponseHeadersVariable <String>] [-Value <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-LastSeenDateTime <DateTime>] [-Value <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgBetaSecurityThreatIntelligenceHostTracker -BodyParameter <IMicrosoftGraphSecurityHostTracker>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaSecurityThreatIntelligenceHostTracker -BodyParameter <IMicrosoftGraphSecurityHostTracker> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -95,21 +94,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Host1
 host
 To construct, see NOTES section for HOST1 properties and create a hash table.
@@ -175,21 +159,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Value
 The identification value for the hostTracker.
 
@@ -242,8 +211,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityHostTracker
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

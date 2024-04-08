@@ -17,22 +17,19 @@ Update the properties of a store object.
 Update-MgGroupSiteGetByPathTermStore -GroupId <String> -Path <String> -SiteId <String>
  [-AdditionalProperties <Hashtable>] [-DefaultLanguageTag <String>]
  [-Groups <IMicrosoftGraphTermStoreGroup[]>] [-Id <String>] [-LanguageTags <String[]>]
- [-ResponseHeadersVariable <String>] [-Sets <IMicrosoftGraphTermStoreSet[]>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Sets <IMicrosoftGraphTermStoreSet[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgGroupSiteGetByPathTermStore -GroupId <String> -Path <String> -Path1 <String> -SiteId <String>
- -BodyParameter <IMicrosoftGraphTermStore> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphTermStore> [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update1
 ```
 Update-MgGroupSiteGetByPathTermStore -GroupId <String> -Path <String> -SiteId <String>
- -BodyParameter <IMicrosoftGraphTermStore> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphTermStore> [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateExpanded
@@ -40,36 +37,35 @@ Update-MgGroupSiteGetByPathTermStore -GroupId <String> -Path <String> -SiteId <S
 Update-MgGroupSiteGetByPathTermStore -GroupId <String> -Path <String> -Path1 <String> -SiteId <String>
  [-AdditionalProperties <Hashtable>] [-DefaultLanguageTag <String>]
  [-Groups <IMicrosoftGraphTermStoreGroup[]>] [-Id <String>] [-LanguageTags <String[]>]
- [-ResponseHeadersVariable <String>] [-Sets <IMicrosoftGraphTermStoreSet[]>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Sets <IMicrosoftGraphTermStoreSet[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgGroupSiteGetByPathTermStore -InputObject <ISitesIdentity> -BodyParameter <IMicrosoftGraphTermStore>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
 Update-MgGroupSiteGetByPathTermStore -InputObject <ISitesIdentity> -BodyParameter <IMicrosoftGraphTermStore>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgGroupSiteGetByPathTermStore -InputObject <ISitesIdentity> [-AdditionalProperties <Hashtable>]
  [-DefaultLanguageTag <String>] [-Groups <IMicrosoftGraphTermStoreGroup[]>] [-Id <String>]
- [-LanguageTags <String[]>] [-ResponseHeadersVariable <String>] [-Sets <IMicrosoftGraphTermStoreSet[]>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-LanguageTags <String[]>] [-Sets <IMicrosoftGraphTermStoreSet[]>] [-Headers <IDictionary>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
 ```
 Update-MgGroupSiteGetByPathTermStore -InputObject <ISitesIdentity> [-AdditionalProperties <Hashtable>]
  [-DefaultLanguageTag <String>] [-Groups <IMicrosoftGraphTermStoreGroup[]>] [-Id <String>]
- [-LanguageTags <String[]>] [-ResponseHeadersVariable <String>] [-Sets <IMicrosoftGraphTermStoreSet[]>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-LanguageTags <String[]>] [-Sets <IMicrosoftGraphTermStoreSet[]>] [-Headers <IDictionary>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -262,21 +258,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Sets
 Collection of all sets available in the term store.
 This relationship can only be used to load a specific term set.
@@ -454,7 +435,6 @@ To create the parameters described below, construct a hash table containing the 
 
 `INPUTOBJECT <ISitesIdentity>`: Identity Parameter
   - `[BaseItemId <String>]`: The unique identifier of baseItem
-  - `[BaseSitePageId <String>]`: The unique identifier of baseSitePage
   - `[ColumnDefinitionId <String>]`: The unique identifier of columnDefinition
   - `[ColumnLinkId <String>]`: The unique identifier of columnLink
   - `[ContentTypeId <String>]`: The unique identifier of contentType
@@ -464,8 +444,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[EndDateTime <String>]`: Usage: endDateTime='{endDateTime}'
   - `[GroupId <String>]`: The unique identifier of group
   - `[GroupId1 <String>]`: The unique identifier of group
-  - `[HorizontalSectionColumnId <String>]`: The unique identifier of horizontalSectionColumn
-  - `[HorizontalSectionId <String>]`: The unique identifier of horizontalSection
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}
   - `[Interval <String>]`: Usage: interval='{interval}'
   - `[ItemActivityId <String>]`: The unique identifier of itemActivity
@@ -495,7 +473,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[TermId <String>]`: The unique identifier of term
   - `[TermId1 <String>]`: The unique identifier of term
   - `[UserId <String>]`: The unique identifier of user
-  - `[WebPartId <String>]`: The unique identifier of webPart
 
 `SETS <IMicrosoftGraphTermStoreSet[]>`: Collection of all sets available in the term store. This relationship can only be used to load a specific term set.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.

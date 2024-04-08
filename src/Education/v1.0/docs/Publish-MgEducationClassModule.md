@@ -8,30 +8,24 @@ schema: 2.0.0
 # Publish-MgEducationClassModule
 
 ## SYNOPSIS
-Change the state of an educationModule from its original draft status to the published status.
-Only teachers in the class can perform this operation.
-When a module is in draft status, students can't see the module.
-When you call this API, the module appears in the student's class work list.
+Invoke action publish
 
 ## SYNTAX
 
 ### Publish (Default)
 ```
-Publish-MgEducationClassModule -EducationClassId <String> -EducationModuleId <String>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Publish-MgEducationClassModule -EducationClassId <String> -EducationModuleId <String> [-Headers <IDictionary>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### PublishViaIdentity
 ```
-Publish-MgEducationClassModule -InputObject <IEducationIdentity> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Publish-MgEducationClassModule -InputObject <IEducationIdentity> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Change the state of an educationModule from its original draft status to the published status.
-Only teachers in the class can perform this operation.
-When a module is in draft status, students can't see the module.
-When you call this API, the module appears in the student's class work list.
+Invoke action publish
 
 ## EXAMPLES
 
@@ -109,21 +103,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 

@@ -14,16 +14,14 @@ Deletes an itemAddress object.
 
 ### Delete (Default)
 ```
-Remove-MgBetaUserProfileAddress -ItemAddressId <String> -UserId <String> [-IfMatch <String>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Remove-MgBetaUserProfileAddress -ItemAddressId <String> -UserId <String> [-IfMatch <String>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgBetaUserProfileAddress -InputObject <IPeopleIdentity> [-IfMatch <String>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Remove-MgBetaUserProfileAddress -InputObject <IPeopleIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -40,21 +38,6 @@ Remove-MgBetaUserProfileAddress -UserId $userId -ItemAddressId $itemAddressId
 
 
 ## PARAMETERS
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
 
 ### -IfMatch
 ETag
@@ -117,21 +100,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -UserId
 The unique identifier of user
 
@@ -184,8 +152,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPeopleIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

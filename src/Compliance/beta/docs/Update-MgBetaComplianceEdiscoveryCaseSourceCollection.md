@@ -22,22 +22,20 @@ Update-MgBetaComplianceEdiscoveryCaseSourceCollection -CaseId <String> -SourceCo
  [-Description <String>] [-DisplayName <String>] [-Id <String>]
  [-LastEstimateStatisticsOperation <IMicrosoftGraphEdiscoveryEstimateStatisticsOperation>]
  [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>]
- [-NoncustodialSources <IMicrosoftGraphEdiscoveryNoncustodialDataSource[]>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-NoncustodialSources <IMicrosoftGraphEdiscoveryNoncustodialDataSource[]>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaComplianceEdiscoveryCaseSourceCollection -CaseId <String> -SourceCollectionId <String>
- -BodyParameter <IMicrosoftGraphEdiscoverySourceCollection> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphEdiscoverySourceCollection> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaComplianceEdiscoveryCaseSourceCollection -InputObject <IComplianceIdentity>
- -BodyParameter <IMicrosoftGraphEdiscoverySourceCollection> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphEdiscoverySourceCollection> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -50,8 +48,8 @@ Update-MgBetaComplianceEdiscoveryCaseSourceCollection -InputObject <IComplianceI
  [-Description <String>] [-DisplayName <String>] [-Id <String>]
  [-LastEstimateStatisticsOperation <IMicrosoftGraphEdiscoveryEstimateStatisticsOperation>]
  [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>]
- [-NoncustodialSources <IMicrosoftGraphEdiscoveryNoncustodialDataSource[]>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-NoncustodialSources <IMicrosoftGraphEdiscoveryNoncustodialDataSource[]>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -259,21 +257,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -369,21 +352,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -SourceCollectionId
 The unique identifier of sourceCollection
 
@@ -438,8 +406,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IComplianceIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEdiscoverySourceCollection
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

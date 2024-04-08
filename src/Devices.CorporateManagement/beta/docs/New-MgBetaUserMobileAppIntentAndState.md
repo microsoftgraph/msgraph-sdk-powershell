@@ -16,29 +16,26 @@ Create new navigation property to mobileAppIntentAndStates for users
 ```
 New-MgBetaUserMobileAppIntentAndState -UserId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-ManagedDeviceIdentifier <String>] [-MobileAppList <IMicrosoftGraphMobileAppIntentAndStateDetail[]>]
- [-ResponseHeadersVariable <String>] [-UserId1 <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-UserId1 <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaUserMobileAppIntentAndState -UserId <String> -BodyParameter <IMicrosoftGraphMobileAppIntentAndState>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaUserMobileAppIntentAndState -InputObject <IDevicesCorporateManagementIdentity>
- -BodyParameter <IMicrosoftGraphMobileAppIntentAndState> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphMobileAppIntentAndState> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgBetaUserMobileAppIntentAndState -InputObject <IDevicesCorporateManagementIdentity> [-UserId <String>]
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-ManagedDeviceIdentifier <String>]
- [-MobileAppList <IMicrosoftGraphMobileAppIntentAndStateDetail[]>] [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-MobileAppList <IMicrosoftGraphMobileAppIntentAndStateDetail[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -87,21 +84,6 @@ Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -163,21 +145,6 @@ To construct, see NOTES section for MOBILEAPPLIST properties and create a hash t
 Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMobileAppIntentAndStateDetail[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -256,8 +223,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMobileAppIntentAndState
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMobileAppIntentAndState
@@ -327,7 +292,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[ManagedMobileAppId <String>]`: The unique identifier of managedMobileApp
   - `[MdmWindowsInformationProtectionPolicyId <String>]`: The unique identifier of mdmWindowsInformationProtectionPolicy
   - `[MobileAppAssignmentId <String>]`: The unique identifier of mobileAppAssignment
-  - `[MobileAppCatalogPackageId <String>]`: The unique identifier of mobileAppCatalogPackage
   - `[MobileAppCategoryId <String>]`: The unique identifier of mobileAppCategory
   - `[MobileAppContentFileId <String>]`: The unique identifier of mobileAppContentFile
   - `[MobileAppContentId <String>]`: The unique identifier of mobileAppContent

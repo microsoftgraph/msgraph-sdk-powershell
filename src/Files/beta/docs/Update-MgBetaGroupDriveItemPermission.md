@@ -21,21 +21,20 @@ Update-MgBetaGroupDriveItemPermission -DriveId <String> -DriveItemId <String> -G
  [-GrantedToIdentitiesV2 <IMicrosoftGraphSharePointIdentitySet[]>]
  [-GrantedToV2 <IMicrosoftGraphSharePointIdentitySet>] [-HasPassword] [-Id <String>]
  [-InheritedFrom <IMicrosoftGraphItemReference>] [-Invitation <IMicrosoftGraphSharingInvitation>]
- [-Link <IMicrosoftGraphSharingLink>] [-ResponseHeadersVariable <String>] [-Roles <String[]>]
- [-ShareId <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Link <IMicrosoftGraphSharingLink>] [-Roles <String[]>] [-ShareId <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaGroupDriveItemPermission -DriveId <String> -DriveItemId <String> -GroupId <String>
- -PermissionId <String> -BodyParameter <IMicrosoftGraphPermission> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -PermissionId <String> -BodyParameter <IMicrosoftGraphPermission> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaGroupDriveItemPermission -InputObject <IFilesIdentity> -BodyParameter <IMicrosoftGraphPermission>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -46,8 +45,8 @@ Update-MgBetaGroupDriveItemPermission -InputObject <IFilesIdentity> [-Additional
  [-GrantedToIdentitiesV2 <IMicrosoftGraphSharePointIdentitySet[]>]
  [-GrantedToV2 <IMicrosoftGraphSharePointIdentitySet>] [-HasPassword] [-Id <String>]
  [-InheritedFrom <IMicrosoftGraphItemReference>] [-Invitation <IMicrosoftGraphSharingInvitation>]
- [-Link <IMicrosoftGraphSharingLink>] [-ResponseHeadersVariable <String>] [-Roles <String[]>]
- [-ShareId <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Link <IMicrosoftGraphSharingLink>] [-Roles <String[]>] [-ShareId <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -249,21 +248,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -359,21 +343,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Roles
 The type of permission, for example, read.
 See the Roles property values section for the full list of roles.
@@ -446,8 +415,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPermission
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

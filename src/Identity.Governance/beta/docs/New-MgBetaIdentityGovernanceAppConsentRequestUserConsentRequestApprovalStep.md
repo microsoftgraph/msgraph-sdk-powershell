@@ -16,32 +16,32 @@ Create new navigation property to steps for identityGovernance
 ```
 New-MgBetaIdentityGovernanceAppConsentRequestUserConsentRequestApprovalStep -AppConsentRequestId <String>
  -UserConsentRequestId <String> [-AdditionalProperties <Hashtable>] [-AssignedToMe] [-DisplayName <String>]
- [-Id <String>] [-Justification <String>] [-ResponseHeadersVariable <String>]
- [-ReviewedBy <IMicrosoftGraphIdentity>] [-ReviewedDateTime <DateTime>] [-ReviewResult <String>]
- [-Status <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-Justification <String>] [-ReviewedBy <IMicrosoftGraphIdentity>]
+ [-ReviewedDateTime <DateTime>] [-ReviewResult <String>] [-Status <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaIdentityGovernanceAppConsentRequestUserConsentRequestApprovalStep -AppConsentRequestId <String>
- -UserConsentRequestId <String> -BodyParameter <IMicrosoftGraphApprovalStep>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -UserConsentRequestId <String> -BodyParameter <IMicrosoftGraphApprovalStep> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaIdentityGovernanceAppConsentRequestUserConsentRequestApprovalStep
- -InputObject <IIdentityGovernanceIdentity> -BodyParameter <IMicrosoftGraphApprovalStep>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -InputObject <IIdentityGovernanceIdentity> -BodyParameter <IMicrosoftGraphApprovalStep> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgBetaIdentityGovernanceAppConsentRequestUserConsentRequestApprovalStep
  -InputObject <IIdentityGovernanceIdentity> [-AdditionalProperties <Hashtable>] [-AssignedToMe]
- [-DisplayName <String>] [-Id <String>] [-Justification <String>] [-ResponseHeadersVariable <String>]
- [-ReviewedBy <IMicrosoftGraphIdentity>] [-ReviewedDateTime <DateTime>] [-ReviewResult <String>]
- [-Status <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-DisplayName <String>] [-Id <String>] [-Justification <String>] [-ReviewedBy <IMicrosoftGraphIdentity>]
+ [-ReviewedDateTime <DateTime>] [-ReviewResult <String>] [-Status <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -143,21 +143,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -197,21 +182,6 @@ The justification associated with the approval step decision.
 Type: System.String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -342,8 +312,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphApprovalStep
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphApprovalStep
@@ -420,9 +388,9 @@ To create the parameters described below, construct a hash table containing the 
   - `[GovernanceRoleAssignmentRequestId <String>]`: The unique identifier of governanceRoleAssignmentRequest
   - `[GovernanceRoleDefinitionId <String>]`: The unique identifier of governanceRoleDefinition
   - `[GovernanceRoleSettingId <String>]`: The unique identifier of governanceRoleSetting
+  - `[GroupId <String>]`: The unique identifier of group
   - `[IncompatibleAccessPackageId <String>]`: Usage: incompatibleAccessPackageId='{incompatibleAccessPackageId}'
   - `[LongRunningOperationId <String>]`: The unique identifier of longRunningOperation
-  - `[ObjectId <String>]`: Alternate key of accessPackageSubject
   - `[On <String>]`: Usage: on='{on}'
   - `[PermissionsCreepIndexDistributionId <String>]`: The unique identifier of permissionsCreepIndexDistribution
   - `[PermissionsRequestChangeId <String>]`: The unique identifier of permissionsRequestChange

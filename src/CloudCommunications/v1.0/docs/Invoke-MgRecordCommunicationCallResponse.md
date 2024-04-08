@@ -21,22 +21,21 @@ The bot must download the recording promptly after the recording operation finis
 Invoke-MgRecordCommunicationCallResponse -CallId <String> [-AdditionalProperties <Hashtable>]
  [-BargeInAllowed] [-ClientContext <String>] [-InitialSilenceTimeoutInSeconds <Int32>]
  [-MaxRecordDurationInSeconds <Int32>] [-MaxSilenceTimeoutInSeconds <Int32>] [-PlayBeep]
- [-Prompts <IMicrosoftGraphPrompt[]>] [-ResponseHeadersVariable <String>] [-StopTones <String[]>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Prompts <IMicrosoftGraphPrompt[]>] [-StopTones <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Record
 ```
 Invoke-MgRecordCommunicationCallResponse -CallId <String>
  -BodyParameter <IPaths14Wb7KqCommunicationsCallsCallIdMicrosoftGraphRecordresponsePostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RecordViaIdentity
 ```
 Invoke-MgRecordCommunicationCallResponse -InputObject <ICloudCommunicationsIdentity>
  -BodyParameter <IPaths14Wb7KqCommunicationsCallsCallIdMicrosoftGraphRecordresponsePostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RecordViaIdentityExpanded
@@ -45,8 +44,7 @@ Invoke-MgRecordCommunicationCallResponse -InputObject <ICloudCommunicationsIdent
  [-AdditionalProperties <Hashtable>] [-BargeInAllowed] [-ClientContext <String>]
  [-InitialSilenceTimeoutInSeconds <Int32>] [-MaxRecordDurationInSeconds <Int32>]
  [-MaxSilenceTimeoutInSeconds <Int32>] [-PlayBeep] [-Prompts <IMicrosoftGraphPrompt[]>]
- [-ResponseHeadersVariable <String>] [-StopTones <String[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-StopTones <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -69,10 +67,6 @@ $params = @{
 	prompts = @(
 		@{
 			"@odata.type" = "#microsoft.graph.mediaPrompt"
-			mediaInfo = @{
-				uri = "https://cdn.contoso.com/beep.wav"
-				resourceId = "1D6DE2D4-CD51-4309-8DAA-70768651088E"
-			}
 		}
 	)
 	maxRecordDurationInSeconds = 10
@@ -80,10 +74,10 @@ $params = @{
 	maxSilenceTimeoutInSeconds = 2
 	playBeep = $true
 	stopTones = @(
-	"#"
-"1"
-"*"
-)
+		"#"
+		"1"
+		"*"
+	)
 }
 
 Invoke-MgRecordCommunicationCallResponse -CallId $callId -BodyParameter $params
@@ -163,21 +157,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -272,21 +251,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -StopTones
 .
 
@@ -341,8 +305,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
 
 ### Microsoft.Graph.PowerShell.Models.IPaths14Wb7KqCommunicationsCallsCallIdMicrosoftGraphRecordresponsePostRequestbodyContentApplicationJsonSchema
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

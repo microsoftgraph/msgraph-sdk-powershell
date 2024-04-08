@@ -15,13 +15,13 @@ Get appRoleAssignedResources from users
 ### Get (Default)
 ```
 Get-MgBetaUserAppRoleAssignedResourceByAppId -AppId <String> -UserId <String> [-ExpandProperty <String[]>]
- [-Property <String[]>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [<CommonParameters>]
+ [-Property <String[]>] [-Headers <IDictionary>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
 Get-MgBetaUserAppRoleAssignedResourceByAppId -InputObject <IUsersIdentity> [-ExpandProperty <String[]>]
- [-Property <String[]>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [<CommonParameters>]
+ [-Property <String[]>] [-Headers <IDictionary>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -121,21 +121,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -UserId
 The unique identifier of user
 
@@ -191,15 +176,12 @@ To create the parameters described below, construct a hash table containing the 
   - `[OutlookTaskId <String>]`: The unique identifier of outlookTask
   - `[ProfilePhotoId <String>]`: The unique identifier of profilePhoto
   - `[ServicePrincipalId <String>]`: The unique identifier of servicePrincipal
-  - `[ServiceStorageQuotaBreakdownId <String>]`: The unique identifier of serviceStorageQuotaBreakdown
   - `[SharedInsightId <String>]`: The unique identifier of sharedInsight
   - `[TodoTaskId <String>]`: The unique identifier of todoTask
   - `[TodoTaskListId <String>]`: The unique identifier of todoTaskList
   - `[TrendingId <String>]`: The unique identifier of trending
   - `[UsedInsightId <String>]`: The unique identifier of usedInsight
   - `[UserId <String>]`: The unique identifier of user
-  - `[WindowsSettingId <String>]`: The unique identifier of windowsSetting
-  - `[WindowsSettingInstanceId <String>]`: The unique identifier of windowsSettingInstance
 
 ## RELATED LINKS
 

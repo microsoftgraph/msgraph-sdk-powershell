@@ -19,11 +19,11 @@ Describe 'New-MgBetaPlaceAsRoomListRoom' {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
-    It 'CreateViaIdentityExpanded' -skip {
+    It 'Create' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
-    It 'Create' -skip {
+    It 'CreateViaIdentityExpanded' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 

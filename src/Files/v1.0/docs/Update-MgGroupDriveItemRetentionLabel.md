@@ -21,31 +21,27 @@ For information about retention labels from an administrator's perspective, see 
 Update-MgGroupDriveItemRetentionLabel -DriveId <String> -DriveItemId <String> -GroupId <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-IsLabelAppliedExplicitly]
  [-LabelAppliedBy <IMicrosoftGraphIdentitySet>] [-LabelAppliedDateTime <DateTime>] [-Name <String>]
- [-ResponseHeadersVariable <String>] [-RetentionSettings <IMicrosoftGraphRetentionLabelSettings>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-RetentionSettings <IMicrosoftGraphRetentionLabelSettings>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgGroupDriveItemRetentionLabel -DriveId <String> -DriveItemId <String> -GroupId <String>
- -BodyParameter <IMicrosoftGraphItemRetentionLabel> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphItemRetentionLabel> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgGroupDriveItemRetentionLabel -InputObject <IFilesIdentity>
- -BodyParameter <IMicrosoftGraphItemRetentionLabel> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphItemRetentionLabel> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgGroupDriveItemRetentionLabel -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>]
  [-Id <String>] [-IsLabelAppliedExplicitly] [-LabelAppliedBy <IMicrosoftGraphIdentitySet>]
- [-LabelAppliedDateTime <DateTime>] [-Name <String>] [-ResponseHeadersVariable <String>]
- [-RetentionSettings <IMicrosoftGraphRetentionLabelSettings>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-LabelAppliedDateTime <DateTime>] [-Name <String>]
+ [-RetentionSettings <IMicrosoftGraphRetentionLabelSettings>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -149,21 +145,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -263,21 +244,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -RetentionSettings
 retentionLabelSettings
 To construct, see NOTES section for RETENTIONSETTINGS properties and create a hash table.
@@ -333,8 +299,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IFilesIdentity
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemRetentionLabel
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

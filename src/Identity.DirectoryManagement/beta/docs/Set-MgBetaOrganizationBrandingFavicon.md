@@ -14,16 +14,14 @@ A custom icon (favicon) to replace a default Microsoft product favicon on a Micr
 
 ### Set (Default)
 ```
-Set-MgBetaOrganizationBrandingFavicon -OrganizationId <String> -InFile <String> [-Data <Stream>]
- [-ResponseHeadersVariable <String>] [-ContentType <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Set-MgBetaOrganizationBrandingFavicon -OrganizationId <String> -InFile <String> [-Data <Stream>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentity
 ```
 Set-MgBetaOrganizationBrandingFavicon -InputObject <IIdentityDirectoryManagementIdentity> -InFile <String>
- [-Data <Stream>] [-ResponseHeadersVariable <String>] [-ContentType <String>] [-Headers <IDictionary>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Data <Stream>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -47,41 +45,11 @@ A custom icon (favicon) to replace a default Microsoft product favicon on a Micr
 
 ## PARAMETERS
 
-### -ContentType
-ContentType Parameter
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Data
 .
 
 ```yaml
 Type: System.IO.Stream
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
 Parameter Sets: (All)
 Aliases:
 
@@ -155,21 +123,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
@@ -208,11 +161,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
-### System.Collections.IDictionary
-
 ### System.IO.Stream
-
-### System.String
 
 ## OUTPUTS
 
@@ -234,7 +183,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[CertificateAuthorityAsEntityId <String>]`: The unique identifier of certificateAuthorityAsEntity
   - `[CertificateBasedApplicationConfigurationId <String>]`: The unique identifier of certificateBasedApplicationConfiguration
   - `[CommandId <String>]`: The unique identifier of command
-  - `[CommerceSubscriptionId <String>]`: Alternate key of companySubscription
   - `[CompanySubscriptionId <String>]`: The unique identifier of companySubscription
   - `[ContractId <String>]`: The unique identifier of contract
   - `[CustomSecurityAttributeDefinitionId <String>]`: The unique identifier of customSecurityAttributeDefinition
@@ -248,7 +196,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[DomainDnsRecordId <String>]`: The unique identifier of domainDnsRecord
   - `[DomainId <String>]`: The unique identifier of domain
   - `[ExtensionId <String>]`: The unique identifier of extension
-  - `[ExternalUserProfileId <String>]`: The unique identifier of externalUserProfile
   - `[FeatureRolloutPolicyId <String>]`: The unique identifier of featureRolloutPolicy
   - `[IdentityProviderBaseId <String>]`: The unique identifier of identityProviderBase
   - `[ImpactedResourceId <String>]`: The unique identifier of impactedResource
@@ -256,13 +203,11 @@ To create the parameters described below, construct a hash table containing the 
   - `[InternalDomainFederationId <String>]`: The unique identifier of internalDomainFederation
   - `[ManagedTenantAlertId <String>]`: The unique identifier of managedTenantAlert
   - `[ManagementActionId <String>]`: The unique identifier of managementAction
-  - `[OcpSubscriptionId <String>]`: Alternate key of companySubscription
   - `[OnPremisesDirectorySynchronizationId <String>]`: The unique identifier of onPremisesDirectorySynchronization
   - `[OrgContactId <String>]`: The unique identifier of orgContact
   - `[OrganizationId <String>]`: The unique identifier of organization
   - `[OrganizationalBrandingLocalizationId <String>]`: The unique identifier of organizationalBrandingLocalization
   - `[OutboundSharedUserProfileUserId <String>]`: The unique identifier of outboundSharedUserProfile
-  - `[PendingExternalUserProfileId <String>]`: The unique identifier of pendingExternalUserProfile
   - `[ProfileCardPropertyId <String>]`: The unique identifier of profileCardProperty
   - `[RecommendationId <String>]`: The unique identifier of recommendation
   - `[RoleTemplateId <String>]`: Alternate key of directoryRole

@@ -95,8 +95,7 @@ Accept wildcard characters: False
 ```
 
 ### -CreatedDateTime
-Set by the server.
-Represents the dateTime in UTC when the object was created on the server.
+.
 
 ```yaml
 Type: System.DateTime
@@ -111,8 +110,7 @@ Accept wildcard characters: False
 ```
 
 ### -ExpirationDateTime
-Set by the server.
-The object expires at the specified dateTime in UTC, making it unavailable after that time.
+.
 
 ```yaml
 Type: System.DateTime
@@ -174,8 +172,7 @@ Accept wildcard characters: False
 ```
 
 ### -LastModifiedDateTime
-Set by the server if not provided in the request from the Windows client device.
-Refers to the user's Windows device that modified the object at the specified dateTime in UTC.
+.
 
 ```yaml
 Type: System.DateTime
@@ -190,7 +187,7 @@ Accept wildcard characters: False
 ```
 
 ### -Payload
-Base64-encoded JSON setting value.
+.
 
 ```yaml
 Type: System.String
@@ -307,10 +304,10 @@ To create the parameters described below, construct a hash table containing the 
 `BODYPARAMETER <IMicrosoftGraphWindowsSettingInstance>`: windowsSettingInstance
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[CreatedDateTime <DateTime?>]`: Set by the server. Represents the dateTime in UTC when the object was created on the server.
-  - `[ExpirationDateTime <DateTime?>]`: Set by the server. The object expires at the specified dateTime in UTC, making it unavailable after that time.
-  - `[LastModifiedDateTime <DateTime?>]`: Set by the server if not provided in the request from the Windows client device. Refers to the user's Windows device that modified the object at the specified dateTime in UTC.
-  - `[Payload <String>]`: Base64-encoded JSON setting value.
+  - `[CreatedDateTime <DateTime?>]`: 
+  - `[ExpirationDateTime <DateTime?>]`: 
+  - `[LastModifiedDateTime <DateTime?>]`: 
+  - `[Payload <String>]`: 
 
 `INPUTOBJECT <IUsersIdentity>`: Identity Parameter
   - `[AttachmentBaseId <String>]`: The unique identifier of attachmentBase

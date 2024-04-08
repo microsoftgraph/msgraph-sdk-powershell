@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Used to address any item contained in this site.
-This collection can't be enumerated.
+This collection cannot be enumerated.
 
 ## SYNTAX
 
@@ -17,21 +17,21 @@ This collection can't be enumerated.
 ```
 Get-MgBetaGroupSiteGetByPathItem -GroupId <String> -Path <String> -SiteId <String>
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
- [-Sort <String[]>] [-Top <Int32>] [-ResponseHeadersVariable <String>] [-All] [-CountVariable <String>]
- [-Headers <IDictionary>] [-PageSize <Int32>] [<CommonParameters>]
+ [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-Headers <IDictionary>]
+ [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### List1
 ```
 Get-MgBetaGroupSiteGetByPathItem -GroupId <String> -Path <String> -Path1 <String> -SiteId <String>
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
- [-Sort <String[]>] [-Top <Int32>] [-ResponseHeadersVariable <String>] [-All] [-CountVariable <String>]
- [-Headers <IDictionary>] [-PageSize <Int32>] [<CommonParameters>]
+ [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-Headers <IDictionary>]
+ [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Used to address any item contained in this site.
-This collection can't be enumerated.
+This collection cannot be enumerated.
 
 ## EXAMPLES
 
@@ -194,21 +194,6 @@ Select properties to be returned
 Type: System.String[]
 Parameter Sets: (All)
 Aliases: Select
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named

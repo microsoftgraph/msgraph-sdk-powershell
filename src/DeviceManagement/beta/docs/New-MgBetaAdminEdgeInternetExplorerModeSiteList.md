@@ -17,15 +17,15 @@ Create a new browserSiteList object to support Internet Explorer mode.
 New-MgBetaAdminEdgeInternetExplorerModeSiteList [-AdditionalProperties <Hashtable>] [-Description <String>]
  [-DisplayName <String>] [-Id <String>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
  [-LastModifiedDateTime <DateTime>] [-PublishedBy <IMicrosoftGraphIdentitySet>]
- [-PublishedDateTime <DateTime>] [-ResponseHeadersVariable <String>] [-Revision <String>]
- [-SharedCookies <IMicrosoftGraphBrowserSharedCookie[]>] [-Sites <IMicrosoftGraphBrowserSite[]>]
- [-Status <BrowserSiteListStatus>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PublishedDateTime <DateTime>] [-Revision <String>] [-SharedCookies <IMicrosoftGraphBrowserSharedCookie[]>]
+ [-Sites <IMicrosoftGraphBrowserSite[]>] [-Status <BrowserSiteListStatus>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgBetaAdminEdgeInternetExplorerModeSiteList -BodyParameter <IMicrosoftGraphBrowserSiteList>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaAdminEdgeInternetExplorerModeSiteList -BodyParameter <IMicrosoftGraphBrowserSiteList> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -110,21 +110,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -195,21 +180,6 @@ The date and time when the site list was published.
 Type: System.DateTime
 Parameter Sets: CreateExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -317,8 +287,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBrowserSiteList
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

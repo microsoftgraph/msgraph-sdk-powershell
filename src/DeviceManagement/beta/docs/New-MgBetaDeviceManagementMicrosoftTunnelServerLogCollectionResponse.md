@@ -16,16 +16,15 @@ Create new navigation property to microsoftTunnelServerLogCollectionResponses fo
 ```
 New-MgBetaDeviceManagementMicrosoftTunnelServerLogCollectionResponse [-AdditionalProperties <Hashtable>]
  [-EndDateTime <DateTime>] [-ExpiryDateTime <DateTime>] [-Id <String>] [-RequestDateTime <DateTime>]
- [-ResponseHeadersVariable <String>] [-ServerId <String>] [-SizeInBytes <Int64>] [-StartDateTime <DateTime>]
- [-Status <MicrosoftTunnelLogCollectionStatus>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-ServerId <String>] [-SizeInBytes <Int64>] [-StartDateTime <DateTime>]
+ [-Status <MicrosoftTunnelLogCollectionStatus>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaDeviceManagementMicrosoftTunnelServerLogCollectionResponse
- -BodyParameter <IMicrosoftGraphMicrosoftTunnelServerLogCollectionResponse>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphMicrosoftTunnelServerLogCollectionResponse> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -110,21 +109,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -148,21 +132,6 @@ The time when the log collection was requested
 Type: System.DateTime
 Parameter Sets: CreateExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -268,8 +237,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMicrosoftTunnelServerLogCollectionResponse
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

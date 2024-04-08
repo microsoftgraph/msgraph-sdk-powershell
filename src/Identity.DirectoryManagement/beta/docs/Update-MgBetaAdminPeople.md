@@ -15,15 +15,14 @@ Update the navigation property people in admin
 ### UpdateExpanded (Default)
 ```
 Update-MgBetaAdminPeople [-AdditionalProperties <Hashtable>] [-Id <String>]
- [-ItemInsights <IMicrosoftGraphInsightsSettings>]
  [-ProfileCardProperties <IMicrosoftGraphProfileCardProperty[]>] [-Pronouns <IMicrosoftGraphPronounsSettings>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgBetaAdminPeople -BodyParameter <IMicrosoftGraphPeopleAdminSettings>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgBetaAdminPeople -BodyParameter <IMicrosoftGraphPeopleAdminSettings> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -78,21 +77,6 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -109,24 +93,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ItemInsights
-insightsSettings
-To construct, see NOTES section for ITEMINSIGHTS properties and create a hash table.
-
-```yaml
-Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphInsightsSettings
-Parameter Sets: UpdateExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -ProfileCardProperties
-Contains a collection of the properties an administrator defined as visible on the Microsoft 365 profile card.
+Contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card.
 To construct, see NOTES section for PROFILECARDPROPERTIES properties and create a hash table.
 
 ```yaml
@@ -149,21 +117,6 @@ To construct, see NOTES section for PRONOUNS properties and create a hash table.
 Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPronounsSettings
 Parameter Sets: UpdateExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -210,8 +163,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPeopleAdminSettings
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPeopleAdminSettings
@@ -228,12 +179,7 @@ To create the parameters described below, construct a hash table containing the 
 `BODYPARAMETER <IMicrosoftGraphPeopleAdminSettings>`: peopleAdminSettings
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[ItemInsights <IMicrosoftGraphInsightsSettings>]`: insightsSettings
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[DisabledForGroup <String>]`: The ID of a Microsoft Entra group, of which the specified type of insights are disabled for its members. Default is empty. Optional.
-    - `[IsEnabledInOrganization <Boolean?>]`: true if insights of the specified type are enabled for the organization; false if insights of the specified type are disabled for all users without exceptions. Default is true. Optional.
-  - `[ProfileCardProperties <IMicrosoftGraphProfileCardProperty[]>]`: Contains a collection of the properties an administrator defined as visible on the Microsoft 365 profile card.
+  - `[ProfileCardProperties <IMicrosoftGraphProfileCardProperty[]>]`: Contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Annotations <IMicrosoftGraphProfileCardAnnotation[]>]`: Allows an administrator to set a custom display label for the directory property and localize it for the users in their tenant.
       - `[DisplayName <String>]`: If present, the value of this field is used by the profile card as the default property label in the experience (for example, 'Cost Center').
@@ -244,15 +190,9 @@ To create the parameters described below, construct a hash table containing the 
   - `[Pronouns <IMicrosoftGraphPronounsSettings>]`: pronounsSettings
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[IsEnabledInOrganization <Boolean?>]`: true to enable pronouns in the organization; otherwise, false. The default value is false, and pronouns are disabled.
+    - `[IsEnabledInOrganization <Boolean?>]`: true to enable pronouns in the organization, false otherwise. The default is false, and pronouns are disabled.
 
-`ITEMINSIGHTS <IMicrosoftGraphInsightsSettings>`: insightsSettings
-  - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[DisabledForGroup <String>]`: The ID of a Microsoft Entra group, of which the specified type of insights are disabled for its members. Default is empty. Optional.
-  - `[IsEnabledInOrganization <Boolean?>]`: true if insights of the specified type are enabled for the organization; false if insights of the specified type are disabled for all users without exceptions. Default is true. Optional.
-
-`PROFILECARDPROPERTIES <IMicrosoftGraphProfileCardProperty[]>`: Contains a collection of the properties an administrator defined as visible on the Microsoft 365 profile card.
+`PROFILECARDPROPERTIES <IMicrosoftGraphProfileCardProperty[]>`: Contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Annotations <IMicrosoftGraphProfileCardAnnotation[]>]`: Allows an administrator to set a custom display label for the directory property and localize it for the users in their tenant.
     - `[DisplayName <String>]`: If present, the value of this field is used by the profile card as the default property label in the experience (for example, 'Cost Center').
@@ -264,7 +204,7 @@ To create the parameters described below, construct a hash table containing the 
 `PRONOUNS <IMicrosoftGraphPronounsSettings>`: pronounsSettings
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[IsEnabledInOrganization <Boolean?>]`: true to enable pronouns in the organization; otherwise, false. The default value is false, and pronouns are disabled.
+  - `[IsEnabledInOrganization <Boolean?>]`: true to enable pronouns in the organization, false otherwise. The default is false, and pronouns are disabled.
 
 ## RELATED LINKS
 

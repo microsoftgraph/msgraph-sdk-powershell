@@ -16,15 +16,13 @@ The status of the accessReviewInstance must be Completed to call this method.
 ### Apply (Default)
 ```
 Add-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceDecision -AccessReviewInstanceId <String>
- -AccessReviewScheduleDefinitionId <String> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -AccessReviewScheduleDefinitionId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ApplyViaIdentity
 ```
 Add-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceDecision -InputObject <IIdentityGovernanceIdentity>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -72,21 +70,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -110,21 +93,6 @@ Returns true when the command succeeds
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -170,8 +138,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 
@@ -235,9 +201,9 @@ To create the parameters described below, construct a hash table containing the 
   - `[GovernanceRoleAssignmentRequestId <String>]`: The unique identifier of governanceRoleAssignmentRequest
   - `[GovernanceRoleDefinitionId <String>]`: The unique identifier of governanceRoleDefinition
   - `[GovernanceRoleSettingId <String>]`: The unique identifier of governanceRoleSetting
+  - `[GroupId <String>]`: The unique identifier of group
   - `[IncompatibleAccessPackageId <String>]`: Usage: incompatibleAccessPackageId='{incompatibleAccessPackageId}'
   - `[LongRunningOperationId <String>]`: The unique identifier of longRunningOperation
-  - `[ObjectId <String>]`: Alternate key of accessPackageSubject
   - `[On <String>]`: Usage: on='{on}'
   - `[PermissionsCreepIndexDistributionId <String>]`: The unique identifier of permissionsCreepIndexDistribution
   - `[PermissionsRequestChangeId <String>]`: The unique identifier of permissionsRequestChange

@@ -16,28 +16,28 @@ Create new navigation property to dayNotes for groups
 ```
 New-MgBetaGroupTeamScheduleDayNote -GroupId <String> [-AdditionalProperties <Hashtable>]
  [-CreatedBy <IMicrosoftGraphIdentitySet>] [-DayNoteDate <DateTime>] [-DraftDayNote <IMicrosoftGraphItemBody>]
- [-Id <String>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-ResponseHeadersVariable <String>]
- [-SharedDayNote <IMicrosoftGraphItemBody>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-SharedDayNote <IMicrosoftGraphItemBody>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgBetaGroupTeamScheduleDayNote -GroupId <String> -BodyParameter <IMicrosoftGraphDayNote>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaGroupTeamScheduleDayNote -GroupId <String> -BodyParameter <IMicrosoftGraphDayNote> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaGroupTeamScheduleDayNote -InputObject <ITeamsIdentity> -BodyParameter <IMicrosoftGraphDayNote>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgBetaGroupTeamScheduleDayNote -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
  [-CreatedBy <IMicrosoftGraphIdentitySet>] [-DayNoteDate <DateTime>] [-DraftDayNote <IMicrosoftGraphItemBody>]
- [-Id <String>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-ResponseHeadersVariable <String>]
- [-SharedDayNote <IMicrosoftGraphItemBody>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-SharedDayNote <IMicrosoftGraphItemBody>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -109,7 +109,7 @@ Accept wildcard characters: False
 ```
 
 ### -DayNoteDate
-The date of the day note.
+.
 
 ```yaml
 Type: System.DateTime
@@ -154,21 +154,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -209,21 +194,6 @@ To construct, see NOTES section for LASTMODIFIEDBY properties and create a hash 
 Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -288,8 +258,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDayNote
@@ -315,7 +283,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[DayNoteDate <DateTime?>]`: The date of the day note.
+  - `[DayNoteDate <DateTime?>]`: 
   - `[DraftDayNote <IMicrosoftGraphItemBody>]`: itemBody
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Content <String>]`: The content of the item.
@@ -356,12 +324,10 @@ To create the parameters described below, construct a hash table containing the 
   - `[SchedulingGroupId <String>]`: The unique identifier of schedulingGroup
   - `[SharedWithChannelTeamInfoId <String>]`: The unique identifier of sharedWithChannelTeamInfo
   - `[ShiftId <String>]`: The unique identifier of shift
-  - `[ShiftsRoleDefinitionId <String>]`: The unique identifier of shiftsRoleDefinition
   - `[SwapShiftsChangeRequestId <String>]`: The unique identifier of swapShiftsChangeRequest
   - `[TeamId <String>]`: The unique identifier of team
   - `[TeamTemplateDefinitionId <String>]`: The unique identifier of teamTemplateDefinition
   - `[TeamTemplateId <String>]`: The unique identifier of teamTemplate
-  - `[TeamsAppDashboardCardDefinitionId <String>]`: The unique identifier of teamsAppDashboardCardDefinition
   - `[TeamsAppDefinitionId <String>]`: The unique identifier of teamsAppDefinition
   - `[TeamsAppId <String>]`: The unique identifier of teamsApp
   - `[TeamsAppInstallationId <String>]`: The unique identifier of teamsAppInstallation

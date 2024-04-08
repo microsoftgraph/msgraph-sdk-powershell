@@ -17,22 +17,20 @@ Update the navigation property resourceActions in roleManagement
 Update-MgRoleManagementDirectoryResourceNamespaceResourceAction -UnifiedRbacResourceActionId <String>
  -UnifiedRbacResourceNamespaceId <String> [-ActionVerb <String>] [-AdditionalProperties <Hashtable>]
  [-AuthenticationContextId <String>] [-Description <String>] [-Id <String>] [-IsAuthenticationContextSettable]
- [-Name <String>] [-ResourceScopeId <String>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Name <String>] [-ResourceScopeId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgRoleManagementDirectoryResourceNamespaceResourceAction -UnifiedRbacResourceActionId <String>
- -UnifiedRbacResourceNamespaceId <String> -BodyParameter <IMicrosoftGraphUnifiedRbacResourceAction>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -UnifiedRbacResourceNamespaceId <String> -BodyParameter <IMicrosoftGraphUnifiedRbacResourceAction> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgRoleManagementDirectoryResourceNamespaceResourceAction -InputObject <IIdentityGovernanceIdentity>
- -BodyParameter <IMicrosoftGraphUnifiedRbacResourceAction> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphUnifiedRbacResourceAction> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -40,8 +38,7 @@ Update-MgRoleManagementDirectoryResourceNamespaceResourceAction -InputObject <II
 Update-MgRoleManagementDirectoryResourceNamespaceResourceAction -InputObject <IIdentityGovernanceIdentity>
  [-ActionVerb <String>] [-AdditionalProperties <Hashtable>] [-AuthenticationContextId <String>]
  [-Description <String>] [-Id <String>] [-IsAuthenticationContextSettable] [-Name <String>]
- [-ResourceScopeId <String>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-ResourceScopeId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -141,21 +138,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -225,21 +207,6 @@ Accept wildcard characters: False
 Type: System.String
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -318,8 +285,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUnifiedRbacResourceAction
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUnifiedRbacResourceAction
@@ -380,6 +345,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[DirectoryObjectId <String>]`: The unique identifier of directoryObject
   - `[EndDateTime <DateTime?>]`: Usage: endDateTime={endDateTime}
   - `[GovernanceInsightId <String>]`: The unique identifier of governanceInsight
+  - `[GroupId <String>]`: The unique identifier of group
   - `[IncompatibleAccessPackageId <String>]`: Usage: incompatibleAccessPackageId='{incompatibleAccessPackageId}'
   - `[On <String>]`: Usage: on='{on}'
   - `[PrivilegedAccessGroupAssignmentScheduleId <String>]`: The unique identifier of privilegedAccessGroupAssignmentSchedule

@@ -16,30 +16,28 @@ Create new navigation property to attachments for groups
 ```
 New-MgGroupConversationThreadPostAttachment -ConversationId <String> -ConversationThreadId <String>
  -GroupId <String> -PostId <String> [-AdditionalProperties <Hashtable>] [-ContentType <String>] [-Id <String>]
- [-IsInline] [-LastModifiedDateTime <DateTime>] [-Name <String>] [-ResponseHeadersVariable <String>]
- [-Size <Int32>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-IsInline] [-LastModifiedDateTime <DateTime>] [-Name <String>] [-Size <Int32>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgGroupConversationThreadPostAttachment -ConversationId <String> -ConversationThreadId <String>
- -GroupId <String> -PostId <String> -BodyParameter <IMicrosoftGraphAttachment>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -GroupId <String> -PostId <String> -BodyParameter <IMicrosoftGraphAttachment> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgGroupConversationThreadPostAttachment -InputObject <IGroupsIdentity>
- -BodyParameter <IMicrosoftGraphAttachment> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphAttachment> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgGroupConversationThreadPostAttachment -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>]
  [-ContentType <String>] [-Id <String>] [-IsInline] [-LastModifiedDateTime <DateTime>] [-Name <String>]
- [-ResponseHeadersVariable <String>] [-Size <Int32>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Size <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -147,21 +145,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -255,21 +238,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Size
 The length of the attachment in bytes.
 
@@ -325,8 +293,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAttachment
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAttachment
@@ -351,7 +317,6 @@ To create the parameters described below, construct a hash table containing the 
 
 `INPUTOBJECT <IGroupsIdentity>`: Identity Parameter
   - `[AttachmentId <String>]`: The unique identifier of attachment
-  - `[BaseSitePageId <String>]`: The unique identifier of baseSitePage
   - `[ContentTypeId <String>]`: The unique identifier of contentType
   - `[ConversationId <String>]`: The unique identifier of conversation
   - `[ConversationThreadId <String>]`: The unique identifier of conversationThread
@@ -367,8 +332,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[GroupLifecyclePolicyId <String>]`: The unique identifier of groupLifecyclePolicy
   - `[GroupSettingId <String>]`: The unique identifier of groupSetting
   - `[GroupSettingTemplateId <String>]`: The unique identifier of groupSettingTemplate
-  - `[HorizontalSectionColumnId <String>]`: The unique identifier of horizontalSectionColumn
-  - `[HorizontalSectionId <String>]`: The unique identifier of horizontalSection
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}
   - `[Interval <String>]`: Usage: interval='{interval}'
   - `[ListId <String>]`: The unique identifier of list
@@ -378,7 +341,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[OnenotePageId <String>]`: The unique identifier of onenotePage
   - `[OnenoteSectionId <String>]`: The unique identifier of onenoteSection
   - `[Path <String>]`: Usage: path='{path}'
-  - `[Path1 <String>]`: Usage: path='{path1}'
   - `[PermissionId <String>]`: The unique identifier of permission
   - `[PostId <String>]`: The unique identifier of post
   - `[ProfilePhotoId <String>]`: The unique identifier of profilePhoto
@@ -388,9 +350,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[StartDateTime <String>]`: Usage: startDateTime='{startDateTime}'
   - `[SubscriptionId <String>]`: The unique identifier of subscription
   - `[Token <String>]`: Usage: token='{token}'
-  - `[UniqueName <String>]`: Alternate key of group
   - `[User <String>]`: Usage: User='{User}'
-  - `[WebPartId <String>]`: The unique identifier of webPart
 
 ## RELATED LINKS
 

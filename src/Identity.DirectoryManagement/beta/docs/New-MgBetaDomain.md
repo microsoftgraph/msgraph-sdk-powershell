@@ -24,18 +24,15 @@ New-MgBetaDomain [-AdditionalProperties <Hashtable>] [-AuthenticationType <Strin
  [-AvailabilityStatus <String>] [-DomainNameReferences <IMicrosoftGraphDirectoryObject[]>]
  [-FederationConfiguration <IMicrosoftGraphInternalDomainFederation[]>] [-Id <String>] [-IsAdminManaged]
  [-IsDefault] [-IsInitial] [-IsRoot] [-IsVerified] [-PasswordNotificationWindowInDays <Int32>]
- [-PasswordValidityPeriodInDays <Int32>] [-ResponseHeadersVariable <String>]
- [-ServiceConfigurationRecords <IMicrosoftGraphDomainDnsRecord[]>]
+ [-PasswordValidityPeriodInDays <Int32>] [-ServiceConfigurationRecords <IMicrosoftGraphDomainDnsRecord[]>]
  [-SharedEmailDomainInvitations <IMicrosoftGraphSharedEmailDomainInvitation[]>]
  [-State <IMicrosoftGraphDomainState>] [-SupportedServices <String[]>]
- [-VerificationDnsRecords <IMicrosoftGraphDomainDnsRecord[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-VerificationDnsRecords <IMicrosoftGraphDomainDnsRecord[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgBetaDomain -BodyParameter <IMicrosoftGraphDomain> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaDomain -BodyParameter <IMicrosoftGraphDomain> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -168,21 +165,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -234,7 +216,7 @@ Accept wildcard characters: False
 ```
 
 ### -IsInitial
-true if this is the initial domain created by Microsoft Online Services (contoso.com).
+true if this is the initial domain created by Microsoft Online Services (companyname.onmicrosoft.com).
 There is only one initial domain per company.
 Not nullable
 
@@ -307,21 +289,6 @@ If the property is not set, a default value of 90 days will be used.
 Type: System.Int32
 Parameter Sets: CreateExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -454,8 +421,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDomain
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDomain
@@ -497,7 +462,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[LastRunDateTime <DateTime?>]`: Date and time in ISO 8601 format and in UTC time when the certificate was last updated. Read-only.
   - `[IsAdminManaged <Boolean?>]`: The value of the property is false if the DNS record management of the domain has been delegated to Microsoft 365. Otherwise, the value is true. Not nullable
   - `[IsDefault <Boolean?>]`: true if this is the default domain that is used for user creation. There is only one default domain per company. Not nullable
-  - `[IsInitial <Boolean?>]`: true if this is the initial domain created by Microsoft Online Services (contoso.com). There is only one initial domain per company. Not nullable
+  - `[IsInitial <Boolean?>]`: true if this is the initial domain created by Microsoft Online Services (companyname.onmicrosoft.com). There is only one initial domain per company. Not nullable
   - `[IsRoot <Boolean?>]`: true if the domain is a verified root domain. Otherwise, false if the domain is a subdomain or unverified. Not nullable
   - `[IsVerified <Boolean?>]`: true if the domain has completed domain ownership verification. Not nullable
   - `[PasswordNotificationWindowInDays <Int32?>]`: Specifies the number of days before a user receives notification that their password will expire. If the property is not set, a default value of 14 days will be used.

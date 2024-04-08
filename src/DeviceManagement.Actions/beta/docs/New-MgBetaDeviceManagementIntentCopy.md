@@ -15,29 +15,28 @@ Invoke action createCopy
 ### CreateExpanded (Default)
 ```
 New-MgBetaDeviceManagementIntentCopy -DeviceManagementIntentId <String> [-AdditionalProperties <Hashtable>]
- [-Description <String>] [-DisplayName <String>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Description <String>] [-DisplayName <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaDeviceManagementIntentCopy -DeviceManagementIntentId <String>
  -BodyParameter <IPaths1FidwqiDevicemanagementIntentsDevicemanagementintentIdMicrosoftGraphCreatecopyPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaDeviceManagementIntentCopy -InputObject <IDeviceManagementActionsIdentity>
  -BodyParameter <IPaths1FidwqiDevicemanagementIntentsDevicemanagementintentIdMicrosoftGraphCreatecopyPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgBetaDeviceManagementIntentCopy -InputObject <IDeviceManagementActionsIdentity>
- [-AdditionalProperties <Hashtable>] [-Description <String>] [-DisplayName <String>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-Description <String>] [-DisplayName <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -137,21 +136,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -165,21 +149,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -222,8 +191,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementActionsIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPaths1FidwqiDevicemanagementIntentsDevicemanagementintentIdMicrosoftGraphCreatecopyPostRequestbodyContentApplicationJsonSchema
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 
@@ -287,7 +254,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[MicrosoftTunnelSiteId <String>]`: The unique identifier of microsoftTunnelSite
   - `[MobileAppTroubleshootingEventId <String>]`: The unique identifier of mobileAppTroubleshootingEvent
   - `[NotificationMessageTemplateId <String>]`: The unique identifier of notificationMessageTemplate
-  - `[OperationApprovalRequestId <String>]`: The unique identifier of operationApprovalRequest
   - `[PrivilegeManagementElevationRequestId <String>]`: The unique identifier of privilegeManagementElevationRequest
   - `[RemoteAssistancePartnerId <String>]`: The unique identifier of remoteAssistancePartner
   - `[RoleScopeTagId <String>]`: The unique identifier of roleScopeTag

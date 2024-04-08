@@ -16,23 +16,20 @@ Update the navigation property ndesConnectors in deviceManagement
 ```
 Update-MgBetaDeviceManagementNdeConnector -NdesConnectorId <String> [-AdditionalProperties <Hashtable>]
  [-ConnectorVersion <String>] [-DisplayName <String>] [-EnrolledDateTime <DateTime>] [-Id <String>]
- [-LastConnectionDateTime <DateTime>] [-MachineName <String>] [-ResponseHeadersVariable <String>]
- [-RoleScopeTagIds <String[]>] [-State <NdesConnectorState>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-LastConnectionDateTime <DateTime>] [-MachineName <String>] [-RoleScopeTagIds <String[]>]
+ [-State <NdesConnectorState>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaDeviceManagementNdeConnector -NdesConnectorId <String>
- -BodyParameter <IMicrosoftGraphNdesConnector> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphNdesConnector> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaDeviceManagementNdeConnector -InputObject <IDeviceManagementAdministrationIdentity>
- -BodyParameter <IMicrosoftGraphNdesConnector> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphNdesConnector> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -40,8 +37,7 @@ Update-MgBetaDeviceManagementNdeConnector -InputObject <IDeviceManagementAdminis
 Update-MgBetaDeviceManagementNdeConnector -InputObject <IDeviceManagementAdministrationIdentity>
  [-AdditionalProperties <Hashtable>] [-ConnectorVersion <String>] [-DisplayName <String>]
  [-EnrolledDateTime <DateTime>] [-Id <String>] [-LastConnectionDateTime <DateTime>] [-MachineName <String>]
- [-ResponseHeadersVariable <String>] [-RoleScopeTagIds <String[]>] [-State <NdesConnectorState>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-RoleScopeTagIds <String[]>] [-State <NdesConnectorState>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -141,21 +137,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -233,21 +214,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -RoleScopeTagIds
 List of Scope Tags for this Entity instance.
 
@@ -317,8 +283,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementAdministrationIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphNdesConnector
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

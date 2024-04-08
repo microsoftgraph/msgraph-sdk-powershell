@@ -14,16 +14,14 @@ Use this API to remove a member (user, group, or device) from an administrative 
 
 ### Delete (Default)
 ```
-Remove-MgDirectoryAdministrativeUnitMemberByRef -AdministrativeUnitId <String> -Id <String>
- [-IfMatch <String>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Remove-MgDirectoryAdministrativeUnitMemberByRef -AdministrativeUnitId <String> -DirectoryObjectId <String>
+ [-Id <String>] [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
 Remove-MgDirectoryAdministrativeUnitMemberByRef -InputObject <IIdentityDirectoryManagementIdentity>
- -Id <String> [-IfMatch <String>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -55,30 +53,30 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
+### -DirectoryObjectId
+The unique identifier of directoryObject
 
 ```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
+Type: System.String
+Parameter Sets: Delete
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
-Accept pipeline input: True (ByValue)
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Id
-The delete Uri
+Delete Uri
 
 ```yaml
 Type: System.String
 Parameter Sets: (All)
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -131,21 +129,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
@@ -183,8 +166,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

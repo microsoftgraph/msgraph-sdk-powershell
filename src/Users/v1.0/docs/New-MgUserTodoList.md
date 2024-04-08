@@ -16,28 +16,26 @@ Create a new lists object.
 ```
 New-MgUserTodoList -UserId <String> [-AdditionalProperties <Hashtable>] [-DisplayName <String>]
  [-Extensions <IMicrosoftGraphExtension[]>] [-Id <String>] [-IsOwner] [-IsShared]
- [-ResponseHeadersVariable <String>] [-Tasks <IMicrosoftGraphTodoTask[]>] [-WellknownListName <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Tasks <IMicrosoftGraphTodoTask[]>] [-WellknownListName <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgUserTodoList -UserId <String> -BodyParameter <IMicrosoftGraphTodoTaskList>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgUserTodoList -UserId <String> -BodyParameter <IMicrosoftGraphTodoTaskList> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgUserTodoList -InputObject <IUsersIdentity> -BodyParameter <IMicrosoftGraphTodoTaskList>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgUserTodoList -InputObject <IUsersIdentity> -BodyParameter <IMicrosoftGraphTodoTaskList> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgUserTodoList -InputObject <IUsersIdentity> [-AdditionalProperties <Hashtable>] [-DisplayName <String>]
  [-Extensions <IMicrosoftGraphExtension[]>] [-Id <String>] [-IsOwner] [-IsShared]
- [-ResponseHeadersVariable <String>] [-Tasks <IMicrosoftGraphTodoTask[]>] [-WellknownListName <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Tasks <IMicrosoftGraphTodoTask[]>] [-WellknownListName <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -122,21 +120,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -191,21 +174,6 @@ True if the task list is shared with other users
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -302,8 +270,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IUsersIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTodoTaskList
@@ -348,8 +314,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[CheckedDateTime <DateTime?>]`: The date and time when the checklistItem was finished.
       - `[CreatedDateTime <DateTime?>]`: The date and time when the checklistItem was created.
-      - `[DisplayName <String>]`: Indicates the title of the checklistItem.
-      - `[IsChecked <Boolean?>]`: State that indicates whether the item is checked off or not.
+      - `[DisplayName <String>]`: Field indicating the title of checklistItem.
+      - `[IsChecked <Boolean?>]`: State indicating whether the item is checked off or not.
     - `[CompletedDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
@@ -408,8 +374,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[TodoTaskId <String>]`: The unique identifier of todoTask
   - `[TodoTaskListId <String>]`: The unique identifier of todoTaskList
   - `[UserId <String>]`: The unique identifier of user
-  - `[WindowsSettingId <String>]`: The unique identifier of windowsSetting
-  - `[WindowsSettingInstanceId <String>]`: The unique identifier of windowsSettingInstance
 
 `TASKS <IMicrosoftGraphTodoTask[]>`: The tasks in this task list. Read-only. Nullable.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -434,8 +398,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[CheckedDateTime <DateTime?>]`: The date and time when the checklistItem was finished.
     - `[CreatedDateTime <DateTime?>]`: The date and time when the checklistItem was created.
-    - `[DisplayName <String>]`: Indicates the title of the checklistItem.
-    - `[IsChecked <Boolean?>]`: State that indicates whether the item is checked off or not.
+    - `[DisplayName <String>]`: Field indicating the title of checklistItem.
+    - `[IsChecked <Boolean?>]`: State indicating whether the item is checked off or not.
   - `[CompletedDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).

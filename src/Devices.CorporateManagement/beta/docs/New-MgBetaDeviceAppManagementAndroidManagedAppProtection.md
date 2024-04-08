@@ -70,18 +70,16 @@ New-MgBetaDeviceAppManagementAndroidManagedAppProtection [-AdditionalProperties 
  [-RequiredAndroidSafetyNetAppsVerificationType <AndroidManagedAppSafetyNetAppsVerificationType>]
  [-RequiredAndroidSafetyNetDeviceAttestationType <AndroidManagedAppSafetyNetDeviceAttestationType>]
  [-RequiredAndroidSafetyNetEvaluationType <AndroidManagedAppSafetyNetEvaluationType>]
- [-RequirePinAfterBiometricChange] [-ResponseHeadersVariable <String>] [-RoleScopeTagIds <String[]>]
- [-SaveAsBlocked] [-ScreenCaptureBlocked] [-SimplePinBlocked]
- [-TargetedAppManagementLevels <AppManagementLevel>] [-Version <String>]
+ [-RequirePinAfterBiometricChange] [-RoleScopeTagIds <String[]>] [-SaveAsBlocked] [-ScreenCaptureBlocked]
+ [-SimplePinBlocked] [-TargetedAppManagementLevels <AppManagementLevel>] [-Version <String>]
  [-WarnAfterCompanyPortalUpdateDeferralInDays <Int32>] [-WipeAfterCompanyPortalUpdateDeferralInDays <Int32>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaDeviceAppManagementAndroidManagedAppProtection
- -BodyParameter <IMicrosoftGraphAndroidManagedAppProtection> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphAndroidManagedAppProtection> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -896,21 +894,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -1589,21 +1572,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -RoleScopeTagIds
 List of Scope Tags for this Entity instance.
 
@@ -1762,8 +1730,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAndroidManagedAppProtection
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAndroidManagedAppProtection
@@ -1896,12 +1862,12 @@ To create the parameters described below, construct a hash table containing the 
   - `[DeploymentSummary <IMicrosoftGraphManagedAppPolicyDeploymentSummary>]`: The ManagedAppEntity is the base entity type for all other entity types under app management workflow.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[ConfigurationDeployedUserCount <Int32?>]`: 
-    - `[ConfigurationDeploymentSummaryPerApp <IMicrosoftGraphManagedAppPolicyDeploymentSummaryPerApp[]>]`: 
+    - `[ConfigurationDeployedUserCount <Int32?>]`: Not yet documented
+    - `[ConfigurationDeploymentSummaryPerApp <IMicrosoftGraphManagedAppPolicyDeploymentSummaryPerApp[]>]`: Not yet documented
       - `[ConfigurationAppliedUserCount <Int32?>]`: Number of users the policy is applied.
       - `[MobileAppIdentifier <IMicrosoftGraphMobileAppIdentifier>]`: The identifier for a mobile app.
-    - `[DisplayName <String>]`: 
-    - `[LastRefreshTime <DateTime?>]`: 
+    - `[DisplayName <String>]`: Not yet documented
+    - `[LastRefreshTime <DateTime?>]`: Not yet documented
     - `[Version <String>]`: Version of the entity.
   - `[DeviceLockRequired <Boolean?>]`: Defines if any kind of lock must be required on android device
   - `[DisableAppEncryptionIfDeviceEncryptionIsEnabled <Boolean?>]`: When this setting is enabled, app level encryption is disabled if device level encryption is enabled
@@ -1929,13 +1895,13 @@ To create the parameters described below, construct a hash table containing the 
 `DEPLOYMENTSUMMARY <IMicrosoftGraphManagedAppPolicyDeploymentSummary>`: The ManagedAppEntity is the base entity type for all other entity types under app management workflow.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[ConfigurationDeployedUserCount <Int32?>]`: 
-  - `[ConfigurationDeploymentSummaryPerApp <IMicrosoftGraphManagedAppPolicyDeploymentSummaryPerApp[]>]`: 
+  - `[ConfigurationDeployedUserCount <Int32?>]`: Not yet documented
+  - `[ConfigurationDeploymentSummaryPerApp <IMicrosoftGraphManagedAppPolicyDeploymentSummaryPerApp[]>]`: Not yet documented
     - `[ConfigurationAppliedUserCount <Int32?>]`: Number of users the policy is applied.
     - `[MobileAppIdentifier <IMicrosoftGraphMobileAppIdentifier>]`: The identifier for a mobile app.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[DisplayName <String>]`: 
-  - `[LastRefreshTime <DateTime?>]`: 
+  - `[DisplayName <String>]`: Not yet documented
+  - `[LastRefreshTime <DateTime?>]`: Not yet documented
   - `[Version <String>]`: Version of the entity.
 
 `EXEMPTEDAPPPACKAGES <IMicrosoftGraphKeyValuePair[]>`: App packages in this list will be exempt from the policy and will be able to receive data from managed apps.

@@ -21,24 +21,23 @@ Update-MgBetaDeviceManagementUserExperienceAnalyticDevicePerformance
  [-DiskType <DiskType>] [-GroupPolicyBootTimeInMS <Int32>] [-GroupPolicyLoginTimeInMS <Int32>]
  [-HealthStatus <UserExperienceAnalyticsHealthState>] [-Id <String>] [-LoginScore <Int32>]
  [-Manufacturer <String>] [-Model <String>] [-ModelStartupPerformanceScore <Double>]
- [-OperatingSystemVersion <String>] [-ResponseHeadersVariable <String>] [-ResponsiveDesktopTimeInMS <Int32>]
- [-RestartCount <Int32>] [-StartupPerformanceScore <Double>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-OperatingSystemVersion <String>] [-ResponsiveDesktopTimeInMS <Int32>] [-RestartCount <Int32>]
+ [-StartupPerformanceScore <Double>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaDeviceManagementUserExperienceAnalyticDevicePerformance
  -UserExperienceAnalyticsDevicePerformanceId <String>
- -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsDevicePerformance> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsDevicePerformance> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaDeviceManagementUserExperienceAnalyticDevicePerformance -InputObject <IDeviceManagementIdentity>
- -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsDevicePerformance> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsDevicePerformance> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -49,9 +48,8 @@ Update-MgBetaDeviceManagementUserExperienceAnalyticDevicePerformance -InputObjec
  [-DeviceCount <Int64>] [-DeviceName <String>] [-DiskType <DiskType>] [-GroupPolicyBootTimeInMS <Int32>]
  [-GroupPolicyLoginTimeInMS <Int32>] [-HealthStatus <UserExperienceAnalyticsHealthState>] [-Id <String>]
  [-LoginScore <Int32>] [-Manufacturer <String>] [-Model <String>] [-ModelStartupPerformanceScore <Double>]
- [-OperatingSystemVersion <String>] [-ResponseHeadersVariable <String>] [-ResponsiveDesktopTimeInMS <Int32>]
- [-RestartCount <Int32>] [-StartupPerformanceScore <Double>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-OperatingSystemVersion <String>] [-ResponsiveDesktopTimeInMS <Int32>] [-RestartCount <Int32>]
+ [-StartupPerformanceScore <Double>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -274,21 +272,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -HealthStatus
 userExperienceAnalyticsHealthState
 
@@ -412,21 +395,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -ResponsiveDesktopTimeInMS
 The user experience analytics responsive desktop time in milliseconds.
 
@@ -528,8 +496,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsDevicePerformance
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 
@@ -648,7 +614,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[MacOSSoftwareUpdateCategorySummaryId <String>]`: The unique identifier of macOSSoftwareUpdateCategorySummary
   - `[MacOSSoftwareUpdateStateSummaryId <String>]`: The unique identifier of macOSSoftwareUpdateStateSummary
   - `[MalwareStateForWindowsDeviceId <String>]`: The unique identifier of malwareStateForWindowsDevice
-  - `[ManagedDeviceCleanupRuleId <String>]`: The unique identifier of managedDeviceCleanupRule
   - `[ManagedDeviceEncryptionStateId <String>]`: The unique identifier of managedDeviceEncryptionState
   - `[ManagedDeviceId <String>]`: The unique identifier of managedDevice
   - `[ManagedDeviceMobileAppConfigurationStateId <String>]`: The unique identifier of managedDeviceMobileAppConfigurationState

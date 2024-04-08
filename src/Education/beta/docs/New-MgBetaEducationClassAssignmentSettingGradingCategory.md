@@ -16,28 +16,26 @@ Create new navigation property to gradingCategories for education
 ```
 New-MgBetaEducationClassAssignmentSettingGradingCategory -EducationClassId <String>
  [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>] [-PercentageWeight <Int32>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaEducationClassAssignmentSettingGradingCategory -EducationClassId <String>
- -BodyParameter <IMicrosoftGraphEducationGradingCategory> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphEducationGradingCategory> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaEducationClassAssignmentSettingGradingCategory -InputObject <IEducationIdentity>
- -BodyParameter <IMicrosoftGraphEducationGradingCategory> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphEducationGradingCategory> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgBetaEducationClassAssignmentSettingGradingCategory -InputObject <IEducationIdentity>
  [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>] [-PercentageWeight <Int32>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -122,21 +120,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -176,21 +159,6 @@ The weight of the category; an integer between 0 and 100.
 Type: System.Int32
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -239,8 +207,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationGradingCategory
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEducationGradingCategory
@@ -267,7 +233,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[EducationCategoryId <String>]`: The unique identifier of educationCategory
   - `[EducationClassId <String>]`: The unique identifier of educationClass
   - `[EducationGradingCategoryId <String>]`: The unique identifier of educationGradingCategory
-  - `[EducationGradingSchemeId <String>]`: The unique identifier of educationGradingScheme
   - `[EducationModuleId <String>]`: The unique identifier of educationModule
   - `[EducationModuleResourceId <String>]`: The unique identifier of educationModuleResource
   - `[EducationOutcomeId <String>]`: The unique identifier of educationOutcome

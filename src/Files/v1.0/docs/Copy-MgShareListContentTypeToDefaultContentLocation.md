@@ -16,33 +16,29 @@ The file can then be added as a default file or template via a POST operation.
 ### CopyExpanded (Default)
 ```
 Copy-MgShareListContentTypeToDefaultContentLocation -ContentTypeId <String> -SharedDriveItemId <String>
- [-AdditionalProperties <Hashtable>] [-DestinationFileName <String>] [-ResponseHeadersVariable <String>]
- [-SourceFile <IMicrosoftGraphItemReference>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-DestinationFileName <String>]
+ [-SourceFile <IMicrosoftGraphItemReference>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Copy
 ```
 Copy-MgShareListContentTypeToDefaultContentLocation -ContentTypeId <String> -SharedDriveItemId <String>
  -BodyParameter <IPaths1Vqnkb0SharesShareddriveitemIdListContenttypesContenttypeIdMicrosoftGraphCopytodefaultcontentlocationPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CopyViaIdentity
 ```
 Copy-MgShareListContentTypeToDefaultContentLocation -InputObject <IFilesIdentity>
  -BodyParameter <IPaths1Vqnkb0SharesShareddriveitemIdListContenttypesContenttypeIdMicrosoftGraphCopytodefaultcontentlocationPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CopyViaIdentityExpanded
 ```
 Copy-MgShareListContentTypeToDefaultContentLocation -InputObject <IFilesIdentity>
- [-AdditionalProperties <Hashtable>] [-DestinationFileName <String>] [-ResponseHeadersVariable <String>]
- [-SourceFile <IMicrosoftGraphItemReference>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-DestinationFileName <String>]
+ [-SourceFile <IMicrosoftGraphItemReference>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -128,21 +124,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -166,21 +147,6 @@ Returns true when the command succeeds
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -259,8 +225,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IFilesIdentity
 
 ### Microsoft.Graph.PowerShell.Models.IPaths1Vqnkb0SharesShareddriveitemIdListContenttypesContenttypeIdMicrosoftGraphCopytodefaultcontentlocationPostRequestbodyContentApplicationJsonSchema
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

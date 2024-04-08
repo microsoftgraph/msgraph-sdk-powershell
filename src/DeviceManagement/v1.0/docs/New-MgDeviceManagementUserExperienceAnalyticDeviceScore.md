@@ -17,16 +17,14 @@ Create new navigation property to userExperienceAnalyticsDeviceScores for device
 New-MgDeviceManagementUserExperienceAnalyticDeviceScore [-AdditionalProperties <Hashtable>]
  [-AppReliabilityScore <Double>] [-BatteryHealthScore <Double>] [-DeviceName <String>]
  [-EndpointAnalyticsScore <Double>] [-HealthStatus <UserExperienceAnalyticsHealthState>] [-Id <String>]
- [-Manufacturer <String>] [-Model <String>] [-ResponseHeadersVariable <String>]
- [-StartupPerformanceScore <Double>] [-WorkFromAnywhereScore <Double>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-Manufacturer <String>] [-Model <String>] [-StartupPerformanceScore <Double>]
+ [-WorkFromAnywhereScore <Double>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgDeviceManagementUserExperienceAnalyticDeviceScore
- -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsDeviceScores> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsDeviceScores> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -158,21 +156,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -HealthStatus
 userExperienceAnalyticsHealthState
 
@@ -231,21 +214,6 @@ Read-only.
 Type: System.String
 Parameter Sets: CreateExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -331,8 +299,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsDeviceScores
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

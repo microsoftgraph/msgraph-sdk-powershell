@@ -53,15 +53,15 @@ New-MgBetaDeviceAppManagementiOSManagedAppProtection [-AdditionalProperties <Has
  [-PinCharacterSet <ManagedAppPinCharacterSet>] [-PinRequired]
  [-PinRequiredInsteadOfBiometricTimeout <TimeSpan>] [-PreviousPinBlockCount <Int32>] [-PrintBlocked]
  [-ProtectedMessagingRedirectAppType <MessagingRedirectAppType>] [-ProtectInboundDataFromUnknownSources]
- [-ResponseHeadersVariable <String>] [-RoleScopeTagIds <String[]>] [-SaveAsBlocked] [-SimplePinBlocked]
+ [-RoleScopeTagIds <String[]>] [-SaveAsBlocked] [-SimplePinBlocked]
  [-TargetedAppManagementLevels <AppManagementLevel>] [-ThirdPartyKeyboardsBlocked] [-Version <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaDeviceAppManagementiOSManagedAppProtection -BodyParameter <IMicrosoftGraphIosManagedAppProtection>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -392,7 +392,6 @@ Accept wildcard characters: False
 
 ### -CustomBrowserProtocol
 A custom browser protocol to open weblink on iOS.
-When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
 
 ```yaml
 Type: System.String
@@ -647,21 +646,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -1223,21 +1207,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -RoleScopeTagIds
 List of Scope Tags for this Entity instance.
 
@@ -1366,8 +1335,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIosManagedAppProtection
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIosManagedAppProtection
@@ -1473,18 +1440,18 @@ To create the parameters described below, construct a hash table containing the 
     - `[MobileAppIdentifier <IMicrosoftGraphMobileAppIdentifier>]`: The identifier for a mobile app.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Version <String>]`: Version of the entity.
-  - `[CustomBrowserProtocol <String>]`: A custom browser protocol to open weblink on iOS. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
+  - `[CustomBrowserProtocol <String>]`: A custom browser protocol to open weblink on iOS.
   - `[CustomDialerAppProtocol <String>]`: Protocol of a custom dialer app to click-to-open a phone number on iOS, for example, skype:.
   - `[DeployedAppCount <Int32?>]`: Count of apps to which the current policy is deployed.
   - `[DeploymentSummary <IMicrosoftGraphManagedAppPolicyDeploymentSummary>]`: The ManagedAppEntity is the base entity type for all other entity types under app management workflow.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[ConfigurationDeployedUserCount <Int32?>]`: 
-    - `[ConfigurationDeploymentSummaryPerApp <IMicrosoftGraphManagedAppPolicyDeploymentSummaryPerApp[]>]`: 
+    - `[ConfigurationDeployedUserCount <Int32?>]`: Not yet documented
+    - `[ConfigurationDeploymentSummaryPerApp <IMicrosoftGraphManagedAppPolicyDeploymentSummaryPerApp[]>]`: Not yet documented
       - `[ConfigurationAppliedUserCount <Int32?>]`: Number of users the policy is applied.
       - `[MobileAppIdentifier <IMicrosoftGraphMobileAppIdentifier>]`: The identifier for a mobile app.
-    - `[DisplayName <String>]`: 
-    - `[LastRefreshTime <DateTime?>]`: 
+    - `[DisplayName <String>]`: Not yet documented
+    - `[LastRefreshTime <DateTime?>]`: Not yet documented
     - `[Version <String>]`: Version of the entity.
   - `[DisableProtectionOfManagedOutboundOpenInData <Boolean?>]`: Disable protection of data transferred to other apps through IOS OpenIn option. This setting is only allowed to be True when AllowedOutboundDataTransferDestinations is set to ManagedApps.
   - `[ExemptedAppProtocols <IMicrosoftGraphKeyValuePair[]>]`: Apps in this list will be exempt from the policy and will be able to receive data from managed apps.
@@ -1504,13 +1471,13 @@ To create the parameters described below, construct a hash table containing the 
 `DEPLOYMENTSUMMARY <IMicrosoftGraphManagedAppPolicyDeploymentSummary>`: The ManagedAppEntity is the base entity type for all other entity types under app management workflow.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[ConfigurationDeployedUserCount <Int32?>]`: 
-  - `[ConfigurationDeploymentSummaryPerApp <IMicrosoftGraphManagedAppPolicyDeploymentSummaryPerApp[]>]`: 
+  - `[ConfigurationDeployedUserCount <Int32?>]`: Not yet documented
+  - `[ConfigurationDeploymentSummaryPerApp <IMicrosoftGraphManagedAppPolicyDeploymentSummaryPerApp[]>]`: Not yet documented
     - `[ConfigurationAppliedUserCount <Int32?>]`: Number of users the policy is applied.
     - `[MobileAppIdentifier <IMicrosoftGraphMobileAppIdentifier>]`: The identifier for a mobile app.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[DisplayName <String>]`: 
-  - `[LastRefreshTime <DateTime?>]`: 
+  - `[DisplayName <String>]`: Not yet documented
+  - `[LastRefreshTime <DateTime?>]`: Not yet documented
   - `[Version <String>]`: Version of the entity.
 
 `EXEMPTEDAPPPROTOCOLS <IMicrosoftGraphKeyValuePair[]>`: Apps in this list will be exempt from the policy and will be able to receive data from managed apps.

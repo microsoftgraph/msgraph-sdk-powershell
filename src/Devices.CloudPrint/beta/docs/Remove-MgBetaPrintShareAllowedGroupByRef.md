@@ -14,30 +14,14 @@ Revoke the specified group's access to submit print jobs to the associated print
 
 ### Delete (Default)
 ```
-Remove-MgBetaPrintShareAllowedGroupByRef -PrinterShareId <String> -Id <String> [-IfMatch <String>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
-```
-
-### Delete1
-```
-Remove-MgBetaPrintShareAllowedGroupByRef -GroupId <String> -PrinterShareId <String> [-IfMatch <String>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Remove-MgBetaPrintShareAllowedGroupByRef -GroupId <String> -PrinterShareId <String> [-Id <String>]
+ [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgBetaPrintShareAllowedGroupByRef -InputObject <IDevicesCloudPrintIdentity> -Id <String>
- [-IfMatch <String>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
-```
-
-### DeleteViaIdentity1
-```
-Remove-MgBetaPrintShareAllowedGroupByRef -InputObject <IDevicesCloudPrintIdentity> [-IfMatch <String>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Remove-MgBetaPrintShareAllowedGroupByRef -InputObject <IDevicesCloudPrintIdentity> [-Id <String>]
+ [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -59,7 +43,7 @@ The unique identifier of group
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete1
+Parameter Sets: Delete
 Aliases:
 
 Required: True
@@ -69,30 +53,15 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
+### -Id
+Delete Uri
 
 ```yaml
-Type: System.Collections.IDictionary
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Id
-The delete Uri
-
-```yaml
-Type: System.String
-Parameter Sets: Delete, DeleteViaIdentity
-Aliases:
-
-Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -120,7 +89,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Microsoft.Graph.Beta.PowerShell.Models.IDevicesCloudPrintIdentity
-Parameter Sets: DeleteViaIdentity, DeleteViaIdentity1
+Parameter Sets: DeleteViaIdentity
 Aliases:
 
 Required: True
@@ -150,25 +119,10 @@ The unique identifier of printerShare
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete, Delete1
+Parameter Sets: Delete
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -212,8 +166,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IDevicesCloudPrintIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

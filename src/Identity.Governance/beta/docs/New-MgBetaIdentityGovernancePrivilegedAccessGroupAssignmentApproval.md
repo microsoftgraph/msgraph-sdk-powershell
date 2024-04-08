@@ -15,14 +15,13 @@ Create new navigation property to assignmentApprovals for identityGovernance
 ### CreateExpanded (Default)
 ```
 New-MgBetaIdentityGovernancePrivilegedAccessGroupAssignmentApproval [-AdditionalProperties <Hashtable>]
- [-Id <String>] [-ResponseHeadersVariable <String>] [-Steps <IMicrosoftGraphApprovalStep[]>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-Steps <IMicrosoftGraphApprovalStep[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaIdentityGovernancePrivilegedAccessGroupAssignmentApproval -BodyParameter <IMicrosoftGraphApproval>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -77,21 +76,6 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -100,21 +84,6 @@ Read-only.
 Type: System.String
 Parameter Sets: CreateExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -176,8 +145,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphApproval
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

@@ -17,23 +17,20 @@ Update the navigation property offerShiftRequests in groups
 Update-MgBetaGroupTeamScheduleOfferShiftRequest -GroupId <String> -OfferShiftRequestId <String>
  [-AdditionalProperties <Hashtable>] [-AssignedTo <String>] [-CreatedBy <IMicrosoftGraphIdentitySet>]
  [-Id <String>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-ManagerActionMessage <String>]
- [-RecipientActionMessage <String>] [-RecipientUserId <String>] [-ResponseHeadersVariable <String>]
- [-SenderMessage <String>] [-SenderShiftId <String>] [-State <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-RecipientActionMessage <String>] [-RecipientUserId <String>] [-SenderMessage <String>]
+ [-SenderShiftId <String>] [-State <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaGroupTeamScheduleOfferShiftRequest -GroupId <String> -OfferShiftRequestId <String>
- -BodyParameter <IMicrosoftGraphOfferShiftRequest> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphOfferShiftRequest> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaGroupTeamScheduleOfferShiftRequest -InputObject <ITeamsIdentity>
- -BodyParameter <IMicrosoftGraphOfferShiftRequest> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphOfferShiftRequest> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -41,9 +38,8 @@ Update-MgBetaGroupTeamScheduleOfferShiftRequest -InputObject <ITeamsIdentity>
 Update-MgBetaGroupTeamScheduleOfferShiftRequest -InputObject <ITeamsIdentity>
  [-AdditionalProperties <Hashtable>] [-AssignedTo <String>] [-CreatedBy <IMicrosoftGraphIdentitySet>]
  [-Id <String>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-ManagerActionMessage <String>]
- [-RecipientActionMessage <String>] [-RecipientUserId <String>] [-ResponseHeadersVariable <String>]
- [-SenderMessage <String>] [-SenderShiftId <String>] [-State <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-RecipientActionMessage <String>] [-RecipientUserId <String>] [-SenderMessage <String>]
+ [-SenderShiftId <String>] [-State <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -141,21 +137,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -267,21 +248,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -SenderMessage
 .
 
@@ -367,8 +333,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.ITeamsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphOfferShiftRequest
@@ -431,12 +395,10 @@ To create the parameters described below, construct a hash table containing the 
   - `[SchedulingGroupId <String>]`: The unique identifier of schedulingGroup
   - `[SharedWithChannelTeamInfoId <String>]`: The unique identifier of sharedWithChannelTeamInfo
   - `[ShiftId <String>]`: The unique identifier of shift
-  - `[ShiftsRoleDefinitionId <String>]`: The unique identifier of shiftsRoleDefinition
   - `[SwapShiftsChangeRequestId <String>]`: The unique identifier of swapShiftsChangeRequest
   - `[TeamId <String>]`: The unique identifier of team
   - `[TeamTemplateDefinitionId <String>]`: The unique identifier of teamTemplateDefinition
   - `[TeamTemplateId <String>]`: The unique identifier of teamTemplate
-  - `[TeamsAppDashboardCardDefinitionId <String>]`: The unique identifier of teamsAppDashboardCardDefinition
   - `[TeamsAppDefinitionId <String>]`: The unique identifier of teamsAppDefinition
   - `[TeamsAppId <String>]`: The unique identifier of teamsApp
   - `[TeamsAppInstallationId <String>]`: The unique identifier of teamsAppInstallation

@@ -19,16 +19,15 @@ New-MgBetaDeviceManagementMobileAppTroubleshootingEvent
  [-ApplicationId <String>] [-AppLogCollectionRequests <IMicrosoftGraphAppLogCollectionRequest[]>]
  [-CorrelationId <String>] [-DeviceId <String>] [-EventDateTime <DateTime>] [-EventName <String>]
  [-History <IMicrosoftGraphMobileAppTroubleshootingHistoryItem[]>] [-Id <String>]
- [-ManagedDeviceIdentifier <String>] [-ResponseHeadersVariable <String>]
+ [-ManagedDeviceIdentifier <String>]
  [-TroubleshootingErrorDetails <IMicrosoftGraphDeviceManagementTroubleshootingErrorDetails>]
- [-UserId <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-UserId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaDeviceManagementMobileAppTroubleshootingEvent
- -BodyParameter <IMicrosoftGraphMobileAppTroubleshootingEvent> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphMobileAppTroubleshootingEvent> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -99,7 +98,7 @@ Accept wildcard characters: False
 ```
 
 ### -AppLogCollectionRequests
-Indicates collection of App Log Upload Request.
+The collection property of AppLogUploadRequest.
 To construct, see NOTES section for APPLOGCOLLECTIONREQUESTS properties and create a hash table.
 
 ```yaml
@@ -191,21 +190,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -History
 Intune Mobile Application Troubleshooting History Item
 To construct, see NOTES section for HISTORY properties and create a hash table.
@@ -245,21 +229,6 @@ Device identifier created or collected by Intune.
 Type: System.String
 Parameter Sets: CreateExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -337,8 +306,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMobileAppTroubleshootingEvent
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMobileAppTroubleshootingEvent
@@ -356,7 +323,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[Name <String>]`: Name for this key-value pair
   - `[Value <String>]`: Value for this key-value pair
 
-`APPLOGCOLLECTIONREQUESTS <IMicrosoftGraphAppLogCollectionRequest[]>`: Indicates collection of App Log Upload Request.
+`APPLOGCOLLECTIONREQUESTS <IMicrosoftGraphAppLogCollectionRequest[]>`: The collection property of AppLogUploadRequest.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[CompletedDateTime <DateTime?>]`: Time at which the upload log request reached a completed state if not completed yet NULL will be returned.
   - `[CustomLogFolders <String[]>]`: List of log folders.
@@ -373,15 +340,15 @@ To create the parameters described below, construct a hash table containing the 
   - `[EventName <String>]`: Event Name corresponding to the Troubleshooting Event. It is an Optional field
   - `[TroubleshootingErrorDetails <IMicrosoftGraphDeviceManagementTroubleshootingErrorDetails>]`: Object containing detailed information about the error and its remediation.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Context <String>]`: 
-    - `[Failure <String>]`: 
+    - `[Context <String>]`: Not yet documented
+    - `[Failure <String>]`: Not yet documented
     - `[FailureDetails <String>]`: The detailed description of what went wrong.
     - `[Remediation <String>]`: The detailed description of how to remediate this issue.
     - `[Resources <IMicrosoftGraphDeviceManagementTroubleshootingErrorResource[]>]`: Links to helpful documentation about this failure.
       - `[Link <String>]`: The link to the web resource. Can contain any of the following formatters: {{UPN}}, {{DeviceGUID}}, {{UserGUID}}
-      - `[Text <String>]`: 
+      - `[Text <String>]`: Not yet documented
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[AppLogCollectionRequests <IMicrosoftGraphAppLogCollectionRequest[]>]`: Indicates collection of App Log Upload Request.
+  - `[AppLogCollectionRequests <IMicrosoftGraphAppLogCollectionRequest[]>]`: The collection property of AppLogUploadRequest.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[CompletedDateTime <DateTime?>]`: Time at which the upload log request reached a completed state if not completed yet NULL will be returned.
     - `[CustomLogFolders <String[]>]`: List of log folders.
@@ -399,23 +366,23 @@ To create the parameters described below, construct a hash table containing the 
   - `[OccurrenceDateTime <DateTime?>]`: Time when the history item occurred.
   - `[TroubleshootingErrorDetails <IMicrosoftGraphDeviceManagementTroubleshootingErrorDetails>]`: Object containing detailed information about the error and its remediation.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Context <String>]`: 
-    - `[Failure <String>]`: 
+    - `[Context <String>]`: Not yet documented
+    - `[Failure <String>]`: Not yet documented
     - `[FailureDetails <String>]`: The detailed description of what went wrong.
     - `[Remediation <String>]`: The detailed description of how to remediate this issue.
     - `[Resources <IMicrosoftGraphDeviceManagementTroubleshootingErrorResource[]>]`: Links to helpful documentation about this failure.
       - `[Link <String>]`: The link to the web resource. Can contain any of the following formatters: {{UPN}}, {{DeviceGUID}}, {{UserGUID}}
-      - `[Text <String>]`: 
+      - `[Text <String>]`: Not yet documented
 
 `TROUBLESHOOTINGERRORDETAILS <IMicrosoftGraphDeviceManagementTroubleshootingErrorDetails>`: Object containing detailed information about the error and its remediation.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Context <String>]`: 
-  - `[Failure <String>]`: 
+  - `[Context <String>]`: Not yet documented
+  - `[Failure <String>]`: Not yet documented
   - `[FailureDetails <String>]`: The detailed description of what went wrong.
   - `[Remediation <String>]`: The detailed description of how to remediate this issue.
   - `[Resources <IMicrosoftGraphDeviceManagementTroubleshootingErrorResource[]>]`: Links to helpful documentation about this failure.
     - `[Link <String>]`: The link to the web resource. Can contain any of the following formatters: {{UPN}}, {{DeviceGUID}}, {{UserGUID}}
-    - `[Text <String>]`: 
+    - `[Text <String>]`: Not yet documented
 
 ## RELATED LINKS
 

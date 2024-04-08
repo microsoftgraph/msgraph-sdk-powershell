@@ -14,16 +14,15 @@ Delete ref of navigation property userFlowIdentityProviders for identity
 
 ### Delete (Default)
 ```
-Remove-MgIdentityB2XUserFlowIdentityProviderByRef -B2XIdentityUserFlowId <String> -Id <String>
- [-IfMatch <String>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Remove-MgIdentityB2XUserFlowIdentityProviderByRef -B2XIdentityUserFlowId <String>
+ -IdentityProviderBaseId <String> [-Id <String>] [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgIdentityB2XUserFlowIdentityProviderByRef -InputObject <IIdentitySignInsIdentity> -Id <String>
- [-IfMatch <String>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Remove-MgIdentityB2XUserFlowIdentityProviderByRef -InputObject <IIdentitySignInsIdentity> [-Id <String>]
+ [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -62,27 +61,27 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
+### -Id
+Delete Uri
 
 ```yaml
-Type: System.Collections.IDictionary
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: True (ByValue)
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Id
-The delete Uri
+### -IdentityProviderBaseId
+The unique identifier of identityProviderBase
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: Delete
 Aliases:
 
 Required: True
@@ -138,21 +137,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
@@ -190,8 +174,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

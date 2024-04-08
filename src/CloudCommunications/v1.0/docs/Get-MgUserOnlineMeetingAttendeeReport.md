@@ -14,14 +14,14 @@ Get attendeeReport for the navigation property onlineMeetings from users
 
 ### Get (Default)
 ```
-Get-MgUserOnlineMeetingAttendeeReport -OnlineMeetingId <String> -UserId <String> -OutFile <String>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [<CommonParameters>]
+Get-MgUserOnlineMeetingAttendeeReport -OnlineMeetingId <String> -UserId <String> -OutFile <String> [-PassThru]
+ [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
 Get-MgUserOnlineMeetingAttendeeReport -InputObject <ICloudCommunicationsIdentity> -OutFile <String>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [<CommonParameters>]
+ [-PassThru] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -38,21 +38,6 @@ Import-Module Microsoft.Graph.CloudCommunications
 Get-MgUserOnlineMeetingAttendeeReport -UserId $userId -OnlineMeetingId $onlineMeetingId
 
 ## PARAMETERS
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
 
 ### -InputObject
 Identity Parameter
@@ -115,21 +100,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -UserId
 The unique identifier of user
 
@@ -151,8 +121,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

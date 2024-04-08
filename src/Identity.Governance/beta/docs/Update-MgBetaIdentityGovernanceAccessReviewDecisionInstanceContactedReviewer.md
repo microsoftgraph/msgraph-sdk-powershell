@@ -17,31 +17,29 @@ Update the navigation property contactedReviewers in identityGovernance
 Update-MgBetaIdentityGovernanceAccessReviewDecisionInstanceContactedReviewer
  -AccessReviewInstanceDecisionItemId <String> -AccessReviewReviewerId <String>
  [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>] [-DisplayName <String>] [-Id <String>]
- [-ResponseHeadersVariable <String>] [-UserPrincipalName <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-UserPrincipalName <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaIdentityGovernanceAccessReviewDecisionInstanceContactedReviewer
  -AccessReviewInstanceDecisionItemId <String> -AccessReviewReviewerId <String>
- -BodyParameter <IMicrosoftGraphAccessReviewReviewer> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphAccessReviewReviewer> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaIdentityGovernanceAccessReviewDecisionInstanceContactedReviewer
- -InputObject <IIdentityGovernanceIdentity> -BodyParameter <IMicrosoftGraphAccessReviewReviewer>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -InputObject <IIdentityGovernanceIdentity> -BodyParameter <IMicrosoftGraphAccessReviewReviewer> [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgBetaIdentityGovernanceAccessReviewDecisionInstanceContactedReviewer
  -InputObject <IIdentityGovernanceIdentity> [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>]
- [-DisplayName <String>] [-Id <String>] [-ResponseHeadersVariable <String>] [-UserPrincipalName <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-DisplayName <String>] [-Id <String>] [-UserPrincipalName <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -156,21 +154,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -200,21 +183,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -272,8 +240,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IIdentityGovernanceIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAccessReviewReviewer
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 
@@ -344,9 +310,9 @@ To create the parameters described below, construct a hash table containing the 
   - `[GovernanceRoleAssignmentRequestId <String>]`: The unique identifier of governanceRoleAssignmentRequest
   - `[GovernanceRoleDefinitionId <String>]`: The unique identifier of governanceRoleDefinition
   - `[GovernanceRoleSettingId <String>]`: The unique identifier of governanceRoleSetting
+  - `[GroupId <String>]`: The unique identifier of group
   - `[IncompatibleAccessPackageId <String>]`: Usage: incompatibleAccessPackageId='{incompatibleAccessPackageId}'
   - `[LongRunningOperationId <String>]`: The unique identifier of longRunningOperation
-  - `[ObjectId <String>]`: Alternate key of accessPackageSubject
   - `[On <String>]`: Usage: on='{on}'
   - `[PermissionsCreepIndexDistributionId <String>]`: The unique identifier of permissionsCreepIndexDistribution
   - `[PermissionsRequestChangeId <String>]`: The unique identifier of permissionsRequestChange

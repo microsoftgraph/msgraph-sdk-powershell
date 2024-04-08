@@ -18,8 +18,4 @@ Describe 'Publish-MgBetaVirtualEvent' {
     It 'Publish' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
-
-    It 'PublishViaIdentity' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
-    }
 }

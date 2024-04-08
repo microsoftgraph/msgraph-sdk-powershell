@@ -17,30 +17,28 @@ The request body contains the display name of the review set, which is the only 
 ```
 New-MgBetaComplianceEdiscoveryCaseReviewSet -CaseId <String> [-AdditionalProperties <Hashtable>]
  [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>] [-DisplayName <String>]
- [-Id <String>] [-Queries <IMicrosoftGraphEdiscoveryReviewSetQuery[]>] [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-Queries <IMicrosoftGraphEdiscoveryReviewSetQuery[]>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaComplianceEdiscoveryCaseReviewSet -CaseId <String>
- -BodyParameter <IMicrosoftGraphEdiscoveryReviewSet> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphEdiscoveryReviewSet> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaComplianceEdiscoveryCaseReviewSet -InputObject <IComplianceIdentity>
- -BodyParameter <IMicrosoftGraphEdiscoveryReviewSet> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphEdiscoveryReviewSet> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgBetaComplianceEdiscoveryCaseReviewSet -InputObject <IComplianceIdentity>
  [-AdditionalProperties <Hashtable>] [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>]
- [-DisplayName <String>] [-Id <String>] [-Queries <IMicrosoftGraphEdiscoveryReviewSetQuery[]>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-DisplayName <String>] [-Id <String>] [-Queries <IMicrosoftGraphEdiscoveryReviewSetQuery[]>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -158,21 +156,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -221,21 +204,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
@@ -275,8 +243,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IComplianceIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEdiscoveryReviewSet
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

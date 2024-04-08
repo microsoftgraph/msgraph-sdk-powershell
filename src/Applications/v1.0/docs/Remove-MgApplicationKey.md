@@ -17,31 +17,27 @@ As part of the request validation for this method, a proof of possession of an e
 ### RemoveExpanded (Default)
 ```
 Remove-MgApplicationKey -ApplicationId <String> [-AdditionalProperties <Hashtable>] [-KeyId <String>]
- [-Proof <String>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-Proof <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Remove
 ```
 Remove-MgApplicationKey -ApplicationId <String>
  -BodyParameter <IPathsHxlydaApplicationsApplicationIdMicrosoftGraphRemovekeyPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RemoveViaIdentity
 ```
 Remove-MgApplicationKey -InputObject <IApplicationsIdentity>
  -BodyParameter <IPathsHxlydaApplicationsApplicationIdMicrosoftGraphRemovekeyPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### RemoveViaIdentityExpanded
 ```
 Remove-MgApplicationKey -InputObject <IApplicationsIdentity> [-AdditionalProperties <Hashtable>]
- [-KeyId <String>] [-Proof <String>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-KeyId <String>] [-Proof <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -111,21 +107,6 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -187,21 +168,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
@@ -241,8 +207,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
 
 ### Microsoft.Graph.PowerShell.Models.IPathsHxlydaApplicationsApplicationIdMicrosoftGraphRemovekeyPostRequestbodyContentApplicationJsonSchema
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 
@@ -284,7 +248,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[TargetDeviceGroupId <String>]`: The unique identifier of targetDeviceGroup
   - `[TokenIssuancePolicyId <String>]`: The unique identifier of tokenIssuancePolicy
   - `[TokenLifetimePolicyId <String>]`: The unique identifier of tokenLifetimePolicy
-  - `[UniqueName <String>]`: Alternate key of application
   - `[UserId <String>]`: The unique identifier of user
 
 ## RELATED LINKS

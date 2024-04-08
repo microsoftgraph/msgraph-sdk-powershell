@@ -15,29 +15,27 @@ Update the navigation property presence in users
 ### UpdateExpanded (Default)
 ```
 Update-MgUserPresence -UserId <String> [-Activity <String>] [-AdditionalProperties <Hashtable>]
- [-Availability <String>] [-Id <String>] [-ResponseHeadersVariable <String>]
- [-StatusMessage <IMicrosoftGraphPresenceStatusMessage>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Availability <String>] [-Id <String>] [-StatusMessage <IMicrosoftGraphPresenceStatusMessage>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgUserPresence -UserId <String> -BodyParameter <IMicrosoftGraphPresence>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgUserPresence -UserId <String> -BodyParameter <IMicrosoftGraphPresence> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgUserPresence -InputObject <ICloudCommunicationsIdentity> -BodyParameter <IMicrosoftGraphPresence>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgUserPresence -InputObject <ICloudCommunicationsIdentity> [-Activity <String>]
  [-AdditionalProperties <Hashtable>] [-Availability <String>] [-Id <String>]
- [-ResponseHeadersVariable <String>] [-StatusMessage <IMicrosoftGraphPresenceStatusMessage>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-StatusMessage <IMicrosoftGraphPresenceStatusMessage>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -47,17 +45,25 @@ Update the navigation property presence in users
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.CloudCommunications
 ```
 
-
+# A UPN can also be used as -UserId.
+Get-MgUserPresence -UserId $userId
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.CloudCommunications
 ```
 
+Get-MgUserPresence -UserId $userId
 
+### -------------------------- EXAMPLE 3 --------------------------
+```powershell
+Import-Module Microsoft.Graph.CloudCommunications
+```
+
+Get-MgCommunicationPresence -PresenceId $presenceId
 
 ## PARAMETERS
 
@@ -124,21 +130,6 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -168,21 +159,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -256,8 +232,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPresence
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

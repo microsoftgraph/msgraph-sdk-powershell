@@ -14,15 +14,15 @@ Invoke action runHuntingQuery
 
 ### RunExpanded (Default)
 ```
-Start-MgBetaSecurityHuntingQuery [-AdditionalProperties <Hashtable>] [-Query <String>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Start-MgBetaSecurityHuntingQuery [-AdditionalProperties <Hashtable>] [-Query <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Run
 ```
 Start-MgBetaSecurityHuntingQuery
  -BodyParameter <IPathsU5PqctSecurityMicrosoftGraphSecurityRunhuntingqueryPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -77,21 +77,6 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Query
 .
 
@@ -99,21 +84,6 @@ Accept wildcard characters: False
 Type: System.String
 Parameter Sets: RunExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -159,8 +129,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IPathsU5PqctSecurityMicrosoftGraphSecurityRunhuntingqueryPostRequestbodyContentApplicationJsonSchema
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

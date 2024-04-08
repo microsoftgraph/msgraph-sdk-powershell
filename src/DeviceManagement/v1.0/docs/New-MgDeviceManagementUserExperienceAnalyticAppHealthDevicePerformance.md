@@ -18,15 +18,14 @@ New-MgDeviceManagementUserExperienceAnalyticAppHealthDevicePerformance [-Additio
  [-AppCrashCount <Int32>] [-AppHangCount <Int32>] [-CrashedAppCount <Int32>] [-DeviceAppHealthScore <Double>]
  [-DeviceDisplayName <String>] [-DeviceId <String>] [-DeviceManufacturer <String>] [-DeviceModel <String>]
  [-HealthStatus <UserExperienceAnalyticsHealthState>] [-Id <String>] [-MeanTimeToFailureInMinutes <Int32>]
- [-ProcessedDateTime <DateTime>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-ProcessedDateTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgDeviceManagementUserExperienceAnalyticAppHealthDevicePerformance
- -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsAppHealthDevicePerformance>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsAppHealthDevicePerformance> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -225,21 +224,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -HealthStatus
 userExperienceAnalyticsHealthState
 
@@ -310,21 +294,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
@@ -362,8 +331,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsAppHealthDevicePerformance
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

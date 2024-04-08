@@ -15,105 +15,47 @@ Create a new bookingAppointment for the specified bookingBusiness.
 ### CreateExpanded (Default)
 ```
 New-MgBetaBookingBusinessAppointment -BookingBusinessId <String> [-AdditionalInformation <String>]
- [-AdditionalProperties <Hashtable>] [-AnonymousJoinWebUrl <String>] [-AppointmentLabel <String>]
- [-CreatedDateTime <DateTime>] [-CustomerEmailAddress <String>] [-CustomerId <String>]
- [-CustomerLocation <IMicrosoftGraphLocation>] [-CustomerName <String>] [-CustomerNotes <String>]
- [-CustomerPhone <String>] [-Customers <IMicrosoftGraphBookingCustomerInformationBase[]>]
- [-CustomerTimeZone <String>] [-End <IMicrosoftGraphDateTimeZone>] [-Id <String>] [-InvoiceAmount <Double>]
+ [-AdditionalProperties <Hashtable>] [-AnonymousJoinWebUrl <String>] [-CustomerEmailAddress <String>]
+ [-CustomerId <String>] [-CustomerLocation <IMicrosoftGraphLocation>] [-CustomerName <String>]
+ [-CustomerNotes <String>] [-CustomerPhone <String>]
+ [-Customers <IMicrosoftGraphBookingCustomerInformationBase[]>] [-CustomerTimeZone <String>]
+ [-End <IMicrosoftGraphDateTimeZone>] [-Id <String>] [-InvoiceAmount <Double>]
  [-InvoiceDate <IMicrosoftGraphDateTimeZone>] [-InvoiceId <String>] [-InvoiceStatus <String>]
- [-InvoiceUrl <String>] [-IsCustomerAllowedToManageBooking] [-IsLocationOnline] [-JoinWebUrl <String>]
- [-LastUpdatedDateTime <DateTime>] [-MaximumAttendeesCount <Int32>] [-OnlineMeetingUrl <String>]
- [-OptOutOfCustomerEmail] [-PostBuffer <TimeSpan>] [-PreBuffer <TimeSpan>] [-Price <Double>]
- [-PriceType <BookingPriceType>] [-Reminders <IMicrosoftGraphBookingReminder[]>]
- [-ResponseHeadersVariable <String>] [-SelfServiceAppointmentId <String>] [-ServiceId <String>]
- [-ServiceLocation <IMicrosoftGraphLocation>] [-ServiceName <String>] [-ServiceNotes <String>]
- [-SmsNotificationsEnabled] [-StaffMemberIds <String[]>] [-Start <IMicrosoftGraphDateTimeZone>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-InvoiceUrl <String>] [-IsLocationOnline] [-JoinWebUrl <String>] [-MaximumAttendeesCount <Int32>]
+ [-OnlineMeetingUrl <String>] [-OptOutOfCustomerEmail] [-PostBuffer <TimeSpan>] [-PreBuffer <TimeSpan>]
+ [-Price <Double>] [-PriceType <BookingPriceType>] [-Reminders <IMicrosoftGraphBookingReminder[]>]
+ [-SelfServiceAppointmentId <String>] [-ServiceId <String>] [-ServiceLocation <IMicrosoftGraphLocation>]
+ [-ServiceName <String>] [-ServiceNotes <String>] [-SmsNotificationsEnabled] [-StaffMemberIds <String[]>]
+ [-Start <IMicrosoftGraphDateTimeZone>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaBookingBusinessAppointment -BookingBusinessId <String>
- -BodyParameter <IMicrosoftGraphBookingAppointment> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### Create1
-```
-New-MgBetaBookingBusinessAppointment -BookingBusinessId <String>
- -BodyParameter <IMicrosoftGraphBookingAppointment> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### CreateExpanded1
-```
-New-MgBetaBookingBusinessAppointment -BookingBusinessId <String> [-AdditionalInformation <String>]
- [-AdditionalProperties <Hashtable>] [-AnonymousJoinWebUrl <String>] [-AppointmentLabel <String>]
- [-CreatedDateTime <DateTime>] [-CustomerEmailAddress <String>] [-CustomerId <String>]
- [-CustomerLocation <IMicrosoftGraphLocation>] [-CustomerName <String>] [-CustomerNotes <String>]
- [-CustomerPhone <String>] [-Customers <IMicrosoftGraphBookingCustomerInformationBase[]>]
- [-CustomerTimeZone <String>] [-End <IMicrosoftGraphDateTimeZone>] [-Id <String>] [-InvoiceAmount <Double>]
- [-InvoiceDate <IMicrosoftGraphDateTimeZone>] [-InvoiceId <String>] [-InvoiceStatus <String>]
- [-InvoiceUrl <String>] [-IsCustomerAllowedToManageBooking] [-IsLocationOnline] [-JoinWebUrl <String>]
- [-LastUpdatedDateTime <DateTime>] [-MaximumAttendeesCount <Int32>] [-OnlineMeetingUrl <String>]
- [-OptOutOfCustomerEmail] [-PostBuffer <TimeSpan>] [-PreBuffer <TimeSpan>] [-Price <Double>]
- [-PriceType <BookingPriceType>] [-Reminders <IMicrosoftGraphBookingReminder[]>]
- [-ResponseHeadersVariable <String>] [-SelfServiceAppointmentId <String>] [-ServiceId <String>]
- [-ServiceLocation <IMicrosoftGraphLocation>] [-ServiceName <String>] [-ServiceNotes <String>]
- [-SmsNotificationsEnabled] [-StaffMemberIds <String[]>] [-Start <IMicrosoftGraphDateTimeZone>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphBookingAppointment> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgBetaBookingBusinessAppointment -InputObject <IBookingsIdentity>
- -BodyParameter <IMicrosoftGraphBookingAppointment> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### CreateViaIdentity1
-```
-New-MgBetaBookingBusinessAppointment -InputObject <IBookingsIdentity>
- -BodyParameter <IMicrosoftGraphBookingAppointment> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphBookingAppointment> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgBetaBookingBusinessAppointment -InputObject <IBookingsIdentity> [-AdditionalInformation <String>]
- [-AdditionalProperties <Hashtable>] [-AnonymousJoinWebUrl <String>] [-AppointmentLabel <String>]
- [-CreatedDateTime <DateTime>] [-CustomerEmailAddress <String>] [-CustomerId <String>]
- [-CustomerLocation <IMicrosoftGraphLocation>] [-CustomerName <String>] [-CustomerNotes <String>]
- [-CustomerPhone <String>] [-Customers <IMicrosoftGraphBookingCustomerInformationBase[]>]
- [-CustomerTimeZone <String>] [-End <IMicrosoftGraphDateTimeZone>] [-Id <String>] [-InvoiceAmount <Double>]
+ [-AdditionalProperties <Hashtable>] [-AnonymousJoinWebUrl <String>] [-CustomerEmailAddress <String>]
+ [-CustomerId <String>] [-CustomerLocation <IMicrosoftGraphLocation>] [-CustomerName <String>]
+ [-CustomerNotes <String>] [-CustomerPhone <String>]
+ [-Customers <IMicrosoftGraphBookingCustomerInformationBase[]>] [-CustomerTimeZone <String>]
+ [-End <IMicrosoftGraphDateTimeZone>] [-Id <String>] [-InvoiceAmount <Double>]
  [-InvoiceDate <IMicrosoftGraphDateTimeZone>] [-InvoiceId <String>] [-InvoiceStatus <String>]
- [-InvoiceUrl <String>] [-IsCustomerAllowedToManageBooking] [-IsLocationOnline] [-JoinWebUrl <String>]
- [-LastUpdatedDateTime <DateTime>] [-MaximumAttendeesCount <Int32>] [-OnlineMeetingUrl <String>]
- [-OptOutOfCustomerEmail] [-PostBuffer <TimeSpan>] [-PreBuffer <TimeSpan>] [-Price <Double>]
- [-PriceType <BookingPriceType>] [-Reminders <IMicrosoftGraphBookingReminder[]>]
- [-ResponseHeadersVariable <String>] [-SelfServiceAppointmentId <String>] [-ServiceId <String>]
- [-ServiceLocation <IMicrosoftGraphLocation>] [-ServiceName <String>] [-ServiceNotes <String>]
- [-SmsNotificationsEnabled] [-StaffMemberIds <String[]>] [-Start <IMicrosoftGraphDateTimeZone>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### CreateViaIdentityExpanded1
-```
-New-MgBetaBookingBusinessAppointment -InputObject <IBookingsIdentity> [-AdditionalInformation <String>]
- [-AdditionalProperties <Hashtable>] [-AnonymousJoinWebUrl <String>] [-AppointmentLabel <String>]
- [-CreatedDateTime <DateTime>] [-CustomerEmailAddress <String>] [-CustomerId <String>]
- [-CustomerLocation <IMicrosoftGraphLocation>] [-CustomerName <String>] [-CustomerNotes <String>]
- [-CustomerPhone <String>] [-Customers <IMicrosoftGraphBookingCustomerInformationBase[]>]
- [-CustomerTimeZone <String>] [-End <IMicrosoftGraphDateTimeZone>] [-Id <String>] [-InvoiceAmount <Double>]
- [-InvoiceDate <IMicrosoftGraphDateTimeZone>] [-InvoiceId <String>] [-InvoiceStatus <String>]
- [-InvoiceUrl <String>] [-IsCustomerAllowedToManageBooking] [-IsLocationOnline] [-JoinWebUrl <String>]
- [-LastUpdatedDateTime <DateTime>] [-MaximumAttendeesCount <Int32>] [-OnlineMeetingUrl <String>]
- [-OptOutOfCustomerEmail] [-PostBuffer <TimeSpan>] [-PreBuffer <TimeSpan>] [-Price <Double>]
- [-PriceType <BookingPriceType>] [-Reminders <IMicrosoftGraphBookingReminder[]>]
- [-ResponseHeadersVariable <String>] [-SelfServiceAppointmentId <String>] [-ServiceId <String>]
- [-ServiceLocation <IMicrosoftGraphLocation>] [-ServiceName <String>] [-ServiceNotes <String>]
- [-SmsNotificationsEnabled] [-StaffMemberIds <String[]>] [-Start <IMicrosoftGraphDateTimeZone>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-InvoiceUrl <String>] [-IsLocationOnline] [-JoinWebUrl <String>] [-MaximumAttendeesCount <Int32>]
+ [-OnlineMeetingUrl <String>] [-OptOutOfCustomerEmail] [-PostBuffer <TimeSpan>] [-PreBuffer <TimeSpan>]
+ [-Price <Double>] [-PriceType <BookingPriceType>] [-Reminders <IMicrosoftGraphBookingReminder[]>]
+ [-SelfServiceAppointmentId <String>] [-ServiceId <String>] [-ServiceLocation <IMicrosoftGraphLocation>]
+ [-ServiceName <String>] [-ServiceNotes <String>] [-SmsNotificationsEnabled] [-StaffMemberIds <String[]>]
+ [-Start <IMicrosoftGraphDateTimeZone>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -280,7 +222,7 @@ Additional information that is sent to the customer when an appointment is confi
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -295,7 +237,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -310,22 +252,7 @@ The URL of the meeting to join anonymously.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -AppointmentLabel
-The user can stamp a custom label on the appointment.
-
-```yaml
-Type: System.String
-Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -341,7 +268,7 @@ To construct, see NOTES section for BODYPARAMETER properties and create a hash t
 
 ```yaml
 Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBookingAppointment
-Parameter Sets: Create, Create1, CreateViaIdentity, CreateViaIdentity1
+Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
 Required: True
@@ -356,25 +283,10 @@ The unique identifier of bookingBusiness
 
 ```yaml
 Type: System.String
-Parameter Sets: Create, Create1, CreateExpanded, CreateExpanded1
+Parameter Sets: Create, CreateExpanded
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -CreatedDateTime
-The date, time, and timezone when the appointment was created.
-
-```yaml
-Type: System.DateTime
-Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -386,7 +298,7 @@ The SMTP address of the bookingCustomer who is booking the appointment.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -403,7 +315,7 @@ Once set, you should consider the customerId immutable.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -419,7 +331,7 @@ To construct, see NOTES section for CUSTOMERLOCATION properties and create a has
 
 ```yaml
 Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphLocation
-Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -434,7 +346,7 @@ The customer's name.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -452,7 +364,7 @@ After that point, the value is computed from the customer represented by custome
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -467,7 +379,7 @@ The customer's phone number.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -484,7 +396,7 @@ Optional.
 
 ```yaml
 Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBookingCustomerInformationBase[]
-Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -500,7 +412,7 @@ For a list of possible values, see dateTimeTimeZone.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -516,7 +428,7 @@ To construct, see NOTES section for END properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDateTimeZone
-Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -526,28 +438,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -563,7 +460,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Microsoft.Graph.Beta.PowerShell.Models.IBookingsIdentity
-Parameter Sets: CreateViaIdentity, CreateViaIdentity1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -578,7 +475,7 @@ The billed amount on the invoice.
 
 ```yaml
 Type: System.Double
-Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -594,7 +491,7 @@ To construct, see NOTES section for INVOICEDATE properties and create a hash tab
 
 ```yaml
 Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDateTimeZone
-Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -609,7 +506,7 @@ The ID of the invoice.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -624,7 +521,7 @@ bookingInvoiceStatus
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -639,23 +536,7 @@ The URL of the invoice in Microsoft Bookings.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -IsCustomerAllowedToManageBooking
-Indicates that the customer can manage bookings created by the staff.
-The default value is false.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -666,12 +547,12 @@ Accept wildcard characters: False
 ```
 
 ### -IsLocationOnline
-Indicates that the appointment is held online.
-The default value is false.
+True indicates that the appointment will be held online.
+Default value is false.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -686,22 +567,7 @@ The URL of the online meeting for the appointment.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -LastUpdatedDateTime
-The date, time and timezone when the booking business was last updated.
-
-```yaml
-Type: System.DateTime
-Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -718,7 +584,7 @@ To create a customer, use the Create bookingCustomer operation.
 
 ```yaml
 Type: System.Int32
-Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -733,7 +599,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -748,7 +614,7 @@ True indicates that the bookingCustomer for this appointment does not wish to re
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -764,7 +630,7 @@ The value is expressed in ISO8601 format.
 
 ```yaml
 Type: System.TimeSpan
-Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -780,7 +646,7 @@ The value is expressed in ISO8601 format.
 
 ```yaml
 Type: System.TimeSpan
-Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -795,7 +661,7 @@ The regular price for an appointment for the specified bookingService.
 
 ```yaml
 Type: System.Double
-Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -810,7 +676,7 @@ Represents the type of pricing of a booking service.
 
 ```yaml
 Type: Microsoft.Graph.Beta.PowerShell.Support.BookingPriceType
-Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -827,7 +693,7 @@ To construct, see NOTES section for REMINDERS properties and create a hash table
 
 ```yaml
 Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBookingReminder[]
-Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -837,27 +703,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -SelfServiceAppointmentId
-Another tracking ID for the appointment, if the appointment was created directly by the customer on the scheduling page, as opposed to by a staff member on behalf of customer.
+An additional tracking ID for the appointment, if the appointment has been created directly by the customer on the scheduling page, as opposed to by a staff member on the behalf of the customer.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -872,7 +723,7 @@ The ID of the bookingService associated with this appointment.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -888,7 +739,7 @@ To construct, see NOTES section for SERVICELOCATION properties and create a hash
 
 ```yaml
 Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphLocation
-Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -904,7 +755,7 @@ If not specified, it is computed from the service associated with the appointmen
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -920,7 +771,7 @@ The value of this property is available only when reading this bookingAppointmen
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -936,7 +787,7 @@ Default value is false.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -951,7 +802,7 @@ The ID of each bookingStaffMember who is scheduled in this appointment.
 
 ```yaml
 Type: System.String[]
-Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -967,7 +818,7 @@ To construct, see NOTES section for START properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDateTimeZone
-Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -1017,8 +868,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBookingAppointment
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphBookingAppointment
@@ -1037,8 +886,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[AdditionalInformation <String>]`: Additional information that is sent to the customer when an appointment is confirmed.
   - `[AnonymousJoinWebUrl <String>]`: The URL of the meeting to join anonymously.
-  - `[AppointmentLabel <String>]`: The user can stamp a custom label on the appointment.
-  - `[CreatedDateTime <DateTime?>]`: The date, time, and timezone when the appointment was created.
   - `[CustomerEmailAddress <String>]`: The SMTP address of the bookingCustomer who is booking the appointment.
   - `[CustomerId <String>]`: The ID of the bookingCustomer for this appointment. If no ID is specified when an appointment is created, then a new bookingCustomer object is created. Once set, you should consider the customerId immutable.
   - `[CustomerLocation <IMicrosoftGraphLocation>]`: location
@@ -1079,10 +926,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[InvoiceId <String>]`: The ID of the invoice.
   - `[InvoiceStatus <String>]`: bookingInvoiceStatus
   - `[InvoiceUrl <String>]`: The URL of the invoice in Microsoft Bookings.
-  - `[IsCustomerAllowedToManageBooking <Boolean?>]`: Indicates that the customer can manage bookings created by the staff. The default value is false.
-  - `[IsLocationOnline <Boolean?>]`: Indicates that the appointment is held online. The default value is false.
+  - `[IsLocationOnline <Boolean?>]`: True indicates that the appointment will be held online. Default value is false.
   - `[JoinWebUrl <String>]`: The URL of the online meeting for the appointment.
-  - `[LastUpdatedDateTime <DateTime?>]`: The date, time and timezone when the booking business was last updated.
   - `[MaximumAttendeesCount <Int32?>]`: The maximum number of customers allowed in an appointment. If maximumAttendeesCount of the service is greater than 1, pass valid customer IDs while creating or updating an appointment. To create a customer, use the Create bookingCustomer operation.
   - `[OnlineMeetingUrl <String>]`: 
   - `[OptOutOfCustomerEmail <Boolean?>]`: True indicates that the bookingCustomer for this appointment does not wish to receive a confirmation for this appointment.
@@ -1094,7 +939,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[Message <String>]`: The message in the reminder.
     - `[Offset <TimeSpan?>]`: The amount of time before the start of an appointment that the reminder should be sent. It's denoted in ISO 8601 format.
     - `[Recipients <String>]`: bookingReminderRecipients
-  - `[SelfServiceAppointmentId <String>]`: Another tracking ID for the appointment, if the appointment was created directly by the customer on the scheduling page, as opposed to by a staff member on behalf of customer.
+  - `[SelfServiceAppointmentId <String>]`: An additional tracking ID for the appointment, if the appointment has been created directly by the customer on the scheduling page, as opposed to by a staff member on the behalf of the customer.
   - `[ServiceId <String>]`: The ID of the bookingService associated with this appointment.
   - `[ServiceLocation <IMicrosoftGraphLocation>]`: location
   - `[ServiceName <String>]`: The name of the bookingService associated with this appointment.This property is optional when creating a new appointment. If not specified, it is computed from the service associated with the appointment by the serviceId property.
@@ -1144,13 +989,10 @@ To create the parameters described below, construct a hash table containing the 
   - `[BookingStaffMemberId <String>]`: The unique identifier of bookingStaffMember
   - `[BusinessScenarioId <String>]`: The unique identifier of businessScenario
   - `[BusinessScenarioTaskId <String>]`: The unique identifier of businessScenarioTask
-  - `[Email <String>]`: Alternate key of virtualEventRegistration
-  - `[JoinWebUrl <String>]`: Alternate key of virtualEventSession
   - `[MeetingAttendanceReportId <String>]`: The unique identifier of meetingAttendanceReport
   - `[PlannerPlanConfigurationLocalizationId <String>]`: The unique identifier of plannerPlanConfigurationLocalization
   - `[Role <String>]`: Usage: role='{role}'
-  - `[UniqueName <String>]`: Alternate key of businessScenario
-  - `[UserId <String>]`: Alternate key of virtualEventRegistration
+  - `[UserId <String>]`: Usage: userId='{userId}'
   - `[VirtualEventId <String>]`: The unique identifier of virtualEvent
   - `[VirtualEventPresenterId <String>]`: The unique identifier of virtualEventPresenter
   - `[VirtualEventRegistrationId <String>]`: The unique identifier of virtualEventRegistration

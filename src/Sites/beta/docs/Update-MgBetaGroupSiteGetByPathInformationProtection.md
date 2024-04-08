@@ -17,7 +17,7 @@ Update the navigation property informationProtection in groups
 Update-MgBetaGroupSiteGetByPathInformationProtection -GroupId <String> -Path <String> -SiteId <String>
  [-AdditionalProperties <Hashtable>] [-Bitlocker <IMicrosoftGraphBitlocker>]
  [-DataLossPreventionPolicies <IMicrosoftGraphDataLossPreventionPolicy[]>] [-Id <String>]
- [-Policy <IMicrosoftGraphInformationProtectionPolicy>] [-ResponseHeadersVariable <String>]
+ [-Policy <IMicrosoftGraphInformationProtectionPolicy>]
  [-SensitivityLabels <IMicrosoftGraphSensitivityLabel[]>]
  [-SensitivityPolicySettings <IMicrosoftGraphSensitivityPolicySettings>]
  [-ThreatAssessmentRequests <IMicrosoftGraphThreatAssessmentRequest[]>] [-Headers <IDictionary>] [-Confirm]
@@ -27,15 +27,15 @@ Update-MgBetaGroupSiteGetByPathInformationProtection -GroupId <String> -Path <St
 ### Update
 ```
 Update-MgBetaGroupSiteGetByPathInformationProtection -GroupId <String> -Path <String> -SiteId <String>
- -BodyParameter <IMicrosoftGraphInformationProtection> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphInformationProtection> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update1
 ```
 Update-MgBetaGroupSiteGetByPathInformationProtection -GroupId <String> -Path <String> -Path1 <String>
- -SiteId <String> -BodyParameter <IMicrosoftGraphInformationProtection> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -SiteId <String> -BodyParameter <IMicrosoftGraphInformationProtection> [-Headers <IDictionary>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateExpanded1
@@ -43,7 +43,7 @@ Update-MgBetaGroupSiteGetByPathInformationProtection -GroupId <String> -Path <St
 Update-MgBetaGroupSiteGetByPathInformationProtection -GroupId <String> -Path <String> -Path1 <String>
  -SiteId <String> [-AdditionalProperties <Hashtable>] [-Bitlocker <IMicrosoftGraphBitlocker>]
  [-DataLossPreventionPolicies <IMicrosoftGraphDataLossPreventionPolicy[]>] [-Id <String>]
- [-Policy <IMicrosoftGraphInformationProtectionPolicy>] [-ResponseHeadersVariable <String>]
+ [-Policy <IMicrosoftGraphInformationProtectionPolicy>]
  [-SensitivityLabels <IMicrosoftGraphSensitivityLabel[]>]
  [-SensitivityPolicySettings <IMicrosoftGraphSensitivityPolicySettings>]
  [-ThreatAssessmentRequests <IMicrosoftGraphThreatAssessmentRequest[]>] [-Headers <IDictionary>] [-Confirm]
@@ -53,15 +53,15 @@ Update-MgBetaGroupSiteGetByPathInformationProtection -GroupId <String> -Path <St
 ### UpdateViaIdentity
 ```
 Update-MgBetaGroupSiteGetByPathInformationProtection -InputObject <ISitesIdentity>
- -BodyParameter <IMicrosoftGraphInformationProtection> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphInformationProtection> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
 Update-MgBetaGroupSiteGetByPathInformationProtection -InputObject <ISitesIdentity>
- -BodyParameter <IMicrosoftGraphInformationProtection> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphInformationProtection> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -69,7 +69,7 @@ Update-MgBetaGroupSiteGetByPathInformationProtection -InputObject <ISitesIdentit
 Update-MgBetaGroupSiteGetByPathInformationProtection -InputObject <ISitesIdentity>
  [-AdditionalProperties <Hashtable>] [-Bitlocker <IMicrosoftGraphBitlocker>]
  [-DataLossPreventionPolicies <IMicrosoftGraphDataLossPreventionPolicy[]>] [-Id <String>]
- [-Policy <IMicrosoftGraphInformationProtectionPolicy>] [-ResponseHeadersVariable <String>]
+ [-Policy <IMicrosoftGraphInformationProtectionPolicy>]
  [-SensitivityLabels <IMicrosoftGraphSensitivityLabel[]>]
  [-SensitivityPolicySettings <IMicrosoftGraphSensitivityPolicySettings>]
  [-ThreatAssessmentRequests <IMicrosoftGraphThreatAssessmentRequest[]>] [-Headers <IDictionary>] [-Confirm]
@@ -81,7 +81,7 @@ Update-MgBetaGroupSiteGetByPathInformationProtection -InputObject <ISitesIdentit
 Update-MgBetaGroupSiteGetByPathInformationProtection -InputObject <ISitesIdentity>
  [-AdditionalProperties <Hashtable>] [-Bitlocker <IMicrosoftGraphBitlocker>]
  [-DataLossPreventionPolicies <IMicrosoftGraphDataLossPreventionPolicy[]>] [-Id <String>]
- [-Policy <IMicrosoftGraphInformationProtectionPolicy>] [-ResponseHeadersVariable <String>]
+ [-Policy <IMicrosoftGraphInformationProtectionPolicy>]
  [-SensitivityLabels <IMicrosoftGraphSensitivityLabel[]>]
  [-SensitivityPolicySettings <IMicrosoftGraphSensitivityPolicySettings>]
  [-ThreatAssessmentRequests <IMicrosoftGraphThreatAssessmentRequest[]>] [-Headers <IDictionary>] [-Confirm]
@@ -272,21 +272,6 @@ To construct, see NOTES section for POLICY properties and create a hash table.
 Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphInformationProtectionPolicy
 Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -495,8 +480,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Application <IMicrosoftGraphIdentity>]`: identity
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-        - `[Id <String>]`: The identifier of the identity. This property is read-only.
+        - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+        - `[Id <String>]`: Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn't included in the response.
       - `[Device <IMicrosoftGraphIdentity>]`: identity
       - `[User <IMicrosoftGraphIdentity>]`: identity
     - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
@@ -627,8 +612,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-      - `[Id <String>]`: The identifier of the identity. This property is read-only.
+      - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[Id <String>]`: Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn't included in the response.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.

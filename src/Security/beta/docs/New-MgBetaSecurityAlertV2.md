@@ -22,16 +22,15 @@ New-MgBetaSecurityAlertV2 [-ActorDisplayName <String>] [-AdditionalData <Hashtab
  [-FirstActivityDateTime <DateTime>] [-Id <String>] [-IncidentId <String>] [-IncidentWebUrl <String>]
  [-LastActivityDateTime <DateTime>] [-LastUpdateDateTime <DateTime>] [-MitreTechniques <String[]>]
  [-ProductName <String>] [-ProviderAlertId <String>] [-RecommendedActions <String>]
- [-ResolvedDateTime <DateTime>] [-ResponseHeadersVariable <String>] [-ServiceSource <String>]
- [-Severity <String>] [-Status <String>] [-SystemTags <String[]>] [-TenantId <String>]
- [-ThreatDisplayName <String>] [-ThreatFamilyName <String>] [-Title <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ResolvedDateTime <DateTime>] [-ServiceSource <String>] [-Severity <String>] [-Status <String>]
+ [-SystemTags <String[]>] [-TenantId <String>] [-ThreatDisplayName <String>] [-ThreatFamilyName <String>]
+ [-Title <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgBetaSecurityAlertV2 -BodyParameter <IMicrosoftGraphSecurityAlert> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaSecurityAlertV2 -BodyParameter <IMicrosoftGraphSecurityAlert> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -101,7 +100,7 @@ Accept wildcard characters: False
 ```
 
 ### -AlertPolicyId
-The ID of the policy that generated the alert, and populated when there is a specific policy that generated the alert, whether configured by a customer or a built-in policy.
+.
 
 ```yaml
 Type: System.String
@@ -116,7 +115,7 @@ Accept wildcard characters: False
 ```
 
 ### -AlertWebUrl
-URL for the Microsoft 365 Defender portal alert page.
+URL for the alert page in the Microsoft 365 Defender portal.
 
 ```yaml
 Type: System.String
@@ -314,21 +313,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -421,7 +405,7 @@ Accept wildcard characters: False
 ```
 
 ### -ProductName
-The name of the product which published this alert.
+.
 
 ```yaml
 Type: System.String
@@ -480,21 +464,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -ServiceSource
 serviceSource
 
@@ -541,7 +510,7 @@ Accept wildcard characters: False
 ```
 
 ### -SystemTags
-The system tags associated with the alert.
+.
 
 ```yaml
 Type: System.String[]
@@ -653,8 +622,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityAlert
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSecurityAlert
@@ -674,8 +641,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[ActorDisplayName <String>]`: The adversary or activity group that is associated with this alert.
   - `[AdditionalData <IMicrosoftGraphSecurityDictionary>]`: dictionary
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[AlertPolicyId <String>]`: The ID of the policy that generated the alert, and populated when there is a specific policy that generated the alert, whether configured by a customer or a built-in policy.
-  - `[AlertWebUrl <String>]`: URL for the Microsoft 365 Defender portal alert page.
+  - `[AlertPolicyId <String>]`: 
+  - `[AlertWebUrl <String>]`: URL for the alert page in the Microsoft 365 Defender portal.
   - `[AssignedTo <String>]`: Owner of the alert, or null if no owner is assigned.
   - `[Category <String>]`: The attack kill-chain category that the alert belongs to. Aligned with the MITRE ATT&CK framework.
   - `[Classification <String>]`: alertClassification
@@ -702,14 +669,14 @@ To create the parameters described below, construct a hash table containing the 
   - `[LastActivityDateTime <DateTime?>]`: The oldest activity associated with the alert.
   - `[LastUpdateDateTime <DateTime?>]`: Time when the alert was last updated at Microsoft 365 Defender.
   - `[MitreTechniques <String[]>]`: The attack techniques, as aligned with the MITRE ATT&CK framework.
-  - `[ProductName <String>]`: The name of the product which published this alert.
+  - `[ProductName <String>]`: 
   - `[ProviderAlertId <String>]`: The ID of the alert as it appears in the security provider product that generated the alert.
   - `[RecommendedActions <String>]`: Recommended response and remediation actions to take in the event this alert was generated.
   - `[ResolvedDateTime <DateTime?>]`: Time when the alert was resolved.
   - `[ServiceSource <String>]`: serviceSource
   - `[Severity <String>]`: alertSeverity
   - `[Status <String>]`: alertStatus
-  - `[SystemTags <String[]>]`: The system tags associated with the alert.
+  - `[SystemTags <String[]>]`: 
   - `[TenantId <String>]`: The Microsoft Entra tenant the alert was created in.
   - `[ThreatDisplayName <String>]`: The threat associated with this alert.
   - `[ThreatFamilyName <String>]`: Threat family associated with this alert.

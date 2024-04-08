@@ -21,25 +21,23 @@ Update-MgBetaDeviceAppManagementiOSLobAppProvisioningConfiguration
  [-DisplayName <String>] [-ExpirationDateTime <DateTime>]
  [-GroupAssignments <IMicrosoftGraphMobileAppProvisioningConfigGroupAssignment[]>] [-Id <String>]
  [-LastModifiedDateTime <DateTime>] [-PayloadFileName <String>] [-PayloadInputFile <String>]
- [-ResponseHeadersVariable <String>] [-RoleScopeTagIds <String[]>]
+ [-RoleScopeTagIds <String[]>]
  [-UserStatuses <IMicrosoftGraphManagedDeviceMobileAppConfigurationUserStatus[]>] [-Version <Int32>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaDeviceAppManagementiOSLobAppProvisioningConfiguration
  -IosLobAppProvisioningConfigurationId <String>
- -BodyParameter <IMicrosoftGraphIosLobAppProvisioningConfiguration> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphIosLobAppProvisioningConfiguration> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaDeviceAppManagementiOSLobAppProvisioningConfiguration
  -InputObject <IDevicesCorporateManagementIdentity>
- -BodyParameter <IMicrosoftGraphIosLobAppProvisioningConfiguration> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphIosLobAppProvisioningConfiguration> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -51,9 +49,9 @@ Update-MgBetaDeviceAppManagementiOSLobAppProvisioningConfiguration
  [-DisplayName <String>] [-ExpirationDateTime <DateTime>]
  [-GroupAssignments <IMicrosoftGraphMobileAppProvisioningConfigGroupAssignment[]>] [-Id <String>]
  [-LastModifiedDateTime <DateTime>] [-PayloadFileName <String>] [-PayloadInputFile <String>]
- [-ResponseHeadersVariable <String>] [-RoleScopeTagIds <String[]>]
+ [-RoleScopeTagIds <String[]>]
  [-UserStatuses <IMicrosoftGraphManagedDeviceMobileAppConfigurationUserStatus[]>] [-Version <Int32>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -93,7 +91,7 @@ Accept wildcard characters: False
 ```
 
 ### -Assignments
-The associated group assignments for IosLobAppProvisioningConfiguration, this determines which devices/users the IOS LOB app provisioning conifguration will be targeted to.
+The associated group assignments for IosLobAppProvisioningConfiguration.
 To construct, see NOTES section for ASSIGNMENTS properties and create a hash table.
 
 ```yaml
@@ -187,9 +185,6 @@ Accept wildcard characters: False
 
 ### -ExpirationDateTime
 Optional profile expiration date and time.
-The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
-For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
-Returned by default.
 
 ```yaml
 Type: System.DateTime
@@ -216,21 +211,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -327,21 +307,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -RoleScopeTagIds
 List of Scope Tags for this iOS LOB app provisioning configuration entity.
 
@@ -428,8 +393,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIosLobAppProvisioningConfiguration
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIosLobAppProvisioningConfiguration
@@ -445,7 +408,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-`ASSIGNMENTS <IMicrosoftGraphIosLobAppProvisioningConfigurationAssignment[]>`: The associated group assignments for IosLobAppProvisioningConfiguration, this determines which devices/users the IOS LOB app provisioning conifguration will be targeted to.
+`ASSIGNMENTS <IMicrosoftGraphIosLobAppProvisioningConfigurationAssignment[]>`: The associated group assignments for IosLobAppProvisioningConfiguration.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>]`: Base type for assignment targets.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -455,7 +418,7 @@ To create the parameters described below, construct a hash table containing the 
 `BODYPARAMETER <IMicrosoftGraphIosLobAppProvisioningConfiguration>`: This topic provides descriptions of the declared methods, properties and relationships exposed by the iOS Lob App Provisioning Configuration resource.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[Assignments <IMicrosoftGraphIosLobAppProvisioningConfigurationAssignment[]>]`: The associated group assignments for IosLobAppProvisioningConfiguration, this determines which devices/users the IOS LOB app provisioning conifguration will be targeted to.
+  - `[Assignments <IMicrosoftGraphIosLobAppProvisioningConfigurationAssignment[]>]`: The associated group assignments for IosLobAppProvisioningConfiguration.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>]`: Base type for assignment targets.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -474,7 +437,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[UserName <String>]`: The User Name that is being reported
     - `[UserPrincipalName <String>]`: UserPrincipalName.
   - `[DisplayName <String>]`: Admin provided name of the device configuration.
-  - `[ExpirationDateTime <DateTime?>]`: Optional profile expiration date and time. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Returned by default.
+  - `[ExpirationDateTime <DateTime?>]`: Optional profile expiration date and time.
   - `[GroupAssignments <IMicrosoftGraphMobileAppProvisioningConfigGroupAssignment[]>]`: The associated group assignments.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[TargetGroupId <String>]`: The ID of the AAD group in which the app provisioning configuration is being targeted.
@@ -546,7 +509,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[ManagedMobileAppId <String>]`: The unique identifier of managedMobileApp
   - `[MdmWindowsInformationProtectionPolicyId <String>]`: The unique identifier of mdmWindowsInformationProtectionPolicy
   - `[MobileAppAssignmentId <String>]`: The unique identifier of mobileAppAssignment
-  - `[MobileAppCatalogPackageId <String>]`: The unique identifier of mobileAppCatalogPackage
   - `[MobileAppCategoryId <String>]`: The unique identifier of mobileAppCategory
   - `[MobileAppContentFileId <String>]`: The unique identifier of mobileAppContentFile
   - `[MobileAppContentId <String>]`: The unique identifier of mobileAppContent

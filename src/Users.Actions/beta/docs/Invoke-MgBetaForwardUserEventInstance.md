@@ -8,8 +8,8 @@ schema: 2.0.0
 # Invoke-MgBetaForwardUserEventInstance
 
 ## SYNOPSIS
-This action allows the organizer or attendee of a meeting event to forward the\nmeeting request to a new recipient.
-If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action\nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's\ncopy of the meeting event.
+This action allows the organizer or attendee of a meeting event to forward the \nmeeting request to a new recipient.
+If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action \nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's \ncopy of the meeting event.
 This convenience is not available when forwarding from an Outlook.com account.
 
 ## SYNTAX
@@ -17,37 +17,34 @@ This convenience is not available when forwarding from an Outlook.com account.
 ### ForwardExpanded (Default)
 ```
 Invoke-MgBetaForwardUserEventInstance -EventId <String> -EventId1 <String> -UserId <String>
- [-AdditionalProperties <Hashtable>] [-Comment <String>] [-ResponseHeadersVariable <String>]
- [-ToRecipients <IMicrosoftGraphRecipient[]>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-Comment <String>] [-ToRecipients <IMicrosoftGraphRecipient[]>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Forward
 ```
 Invoke-MgBetaForwardUserEventInstance -EventId <String> -EventId1 <String> -UserId <String>
  -BodyParameter <IPaths1K9ImduUsersUserIdEventsEventIdInstancesEventId1MicrosoftGraphForwardPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ForwardViaIdentity
 ```
 Invoke-MgBetaForwardUserEventInstance -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPaths1K9ImduUsersUserIdEventsEventIdInstancesEventId1MicrosoftGraphForwardPostRequestbodyContentApplicationJsonSchema>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ForwardViaIdentityExpanded
 ```
 Invoke-MgBetaForwardUserEventInstance -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
- [-Comment <String>] [-ResponseHeadersVariable <String>] [-ToRecipients <IMicrosoftGraphRecipient[]>]
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Comment <String>] [-ToRecipients <IMicrosoftGraphRecipient[]>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-This action allows the organizer or attendee of a meeting event to forward the\nmeeting request to a new recipient.
-If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action\nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's\ncopy of the meeting event.
+This action allows the organizer or attendee of a meeting event to forward the \nmeeting request to a new recipient.
+If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action \nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's \ncopy of the meeting event.
 This convenience is not available when forwarding from an Outlook.com account.
 
 ## EXAMPLES
@@ -150,21 +147,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
@@ -188,21 +170,6 @@ Returns true when the command succeeds
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -282,8 +249,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IUsersActionsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### System.Boolean
@@ -325,7 +290,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[DriveItemVersionId <String>]`: The unique identifier of driveItemVersion
   - `[EventId <String>]`: The unique identifier of event
   - `[EventId1 <String>]`: The unique identifier of event
-  - `[JoinWebUrl <String>]`: Alternate key of onlineMeeting
   - `[ListItemId <String>]`: The unique identifier of listItem
   - `[ListItemVersionId <String>]`: The unique identifier of listItemVersion
   - `[MailFolderId <String>]`: The unique identifier of mailFolder

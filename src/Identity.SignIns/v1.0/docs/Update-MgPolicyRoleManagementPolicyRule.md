@@ -17,30 +17,27 @@ The rule can be one of the following types that are derived from the unifiedRole
 ```
 Update-MgPolicyRoleManagementPolicyRule -UnifiedRoleManagementPolicyId <String>
  -UnifiedRoleManagementPolicyRuleId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
- [-ResponseHeadersVariable <String>] [-Target <IMicrosoftGraphUnifiedRoleManagementPolicyRuleTarget>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Target <IMicrosoftGraphUnifiedRoleManagementPolicyRuleTarget>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgPolicyRoleManagementPolicyRule -UnifiedRoleManagementPolicyId <String>
  -UnifiedRoleManagementPolicyRuleId <String> -BodyParameter <IMicrosoftGraphUnifiedRoleManagementPolicyRule>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgPolicyRoleManagementPolicyRule -InputObject <IIdentitySignInsIdentity>
- -BodyParameter <IMicrosoftGraphUnifiedRoleManagementPolicyRule> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphUnifiedRoleManagementPolicyRule> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgPolicyRoleManagementPolicyRule -InputObject <IIdentitySignInsIdentity>
- [-AdditionalProperties <Hashtable>] [-Id <String>] [-ResponseHeadersVariable <String>]
- [-Target <IMicrosoftGraphUnifiedRoleManagementPolicyRuleTarget>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-Id <String>]
+ [-Target <IMicrosoftGraphUnifiedRoleManagementPolicyRuleTarget>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -108,21 +105,6 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -152,21 +134,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -255,8 +222,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUnifiedRoleManagementPolicyRule
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

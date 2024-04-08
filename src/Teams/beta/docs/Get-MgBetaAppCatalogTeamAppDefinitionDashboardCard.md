@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaAppCatalogTeamAppDefinitionDashboardCard
 
 ## SYNOPSIS
-Dashboard cards specified in the Teams app manifest.
+Get dashboardCards from appCatalogs
 
 ## SYNTAX
 
@@ -16,25 +16,25 @@ Dashboard cards specified in the Teams app manifest.
 ```
 Get-MgBetaAppCatalogTeamAppDefinitionDashboardCard -TeamsAppDefinitionId <String> -TeamsAppId <String>
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
- [-Sort <String[]>] [-Top <Int32>] [-ResponseHeadersVariable <String>] [-All] [-CountVariable <String>]
- [-Headers <IDictionary>] [-PageSize <Int32>] [<CommonParameters>]
+ [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-Headers <IDictionary>]
+ [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
 ```
 Get-MgBetaAppCatalogTeamAppDefinitionDashboardCard -TeamsAppDashboardCardDefinitionId <String>
  -TeamsAppDefinitionId <String> -TeamsAppId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [<CommonParameters>]
+ [-Headers <IDictionary>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
 Get-MgBetaAppCatalogTeamAppDefinitionDashboardCard -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>]
- [-Property <String[]>] [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [<CommonParameters>]
+ [-Property <String[]>] [-Headers <IDictionary>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Dashboard cards specified in the Teams app manifest.
+Get dashboardCards from appCatalogs
 
 ## EXAMPLES
 
@@ -168,21 +168,6 @@ Select properties to be returned
 Type: System.String[]
 Parameter Sets: (All)
 Aliases: Select
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -338,7 +323,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[SchedulingGroupId <String>]`: The unique identifier of schedulingGroup
   - `[SharedWithChannelTeamInfoId <String>]`: The unique identifier of sharedWithChannelTeamInfo
   - `[ShiftId <String>]`: The unique identifier of shift
-  - `[ShiftsRoleDefinitionId <String>]`: The unique identifier of shiftsRoleDefinition
   - `[SwapShiftsChangeRequestId <String>]`: The unique identifier of swapShiftsChangeRequest
   - `[TeamId <String>]`: The unique identifier of team
   - `[TeamTemplateDefinitionId <String>]`: The unique identifier of teamTemplateDefinition

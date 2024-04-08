@@ -17,33 +17,33 @@ Update the navigation property categories in deviceManagement
 Update-MgBetaDeviceManagementTemplateMigratableToCategory -DeviceManagementTemplateId <String>
  -DeviceManagementTemplateId1 <String> -DeviceManagementTemplateSettingCategoryId <String>
  [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-HasRequiredSetting] [-Id <String>]
- [-RecommendedSettings <IMicrosoftGraphDeviceManagementSettingInstance[]>] [-ResponseHeadersVariable <String>]
- [-SettingDefinitions <IMicrosoftGraphDeviceManagementSettingDefinition[]>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-RecommendedSettings <IMicrosoftGraphDeviceManagementSettingInstance[]>]
+ [-SettingDefinitions <IMicrosoftGraphDeviceManagementSettingDefinition[]>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaDeviceManagementTemplateMigratableToCategory -DeviceManagementTemplateId <String>
  -DeviceManagementTemplateId1 <String> -DeviceManagementTemplateSettingCategoryId <String>
- -BodyParameter <IMicrosoftGraphDeviceManagementTemplateSettingCategory> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphDeviceManagementTemplateSettingCategory> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaDeviceManagementTemplateMigratableToCategory -InputObject <IDeviceManagementIdentity>
- -BodyParameter <IMicrosoftGraphDeviceManagementTemplateSettingCategory> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphDeviceManagementTemplateSettingCategory> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgBetaDeviceManagementTemplateMigratableToCategory -InputObject <IDeviceManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-HasRequiredSetting] [-Id <String>]
- [-RecommendedSettings <IMicrosoftGraphDeviceManagementSettingInstance[]>] [-ResponseHeadersVariable <String>]
- [-SettingDefinitions <IMicrosoftGraphDeviceManagementSettingDefinition[]>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-RecommendedSettings <IMicrosoftGraphDeviceManagementSettingInstance[]>]
+ [-SettingDefinitions <IMicrosoftGraphDeviceManagementSettingDefinition[]>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -173,21 +173,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -228,21 +213,6 @@ To construct, see NOTES section for RECOMMENDEDSETTINGS properties and create a 
 Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementSettingInstance[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -306,8 +276,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IDeviceManagementIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceManagementTemplateSettingCategory
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 
@@ -427,7 +395,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[MacOSSoftwareUpdateCategorySummaryId <String>]`: The unique identifier of macOSSoftwareUpdateCategorySummary
   - `[MacOSSoftwareUpdateStateSummaryId <String>]`: The unique identifier of macOSSoftwareUpdateStateSummary
   - `[MalwareStateForWindowsDeviceId <String>]`: The unique identifier of malwareStateForWindowsDevice
-  - `[ManagedDeviceCleanupRuleId <String>]`: The unique identifier of managedDeviceCleanupRule
   - `[ManagedDeviceEncryptionStateId <String>]`: The unique identifier of managedDeviceEncryptionState
   - `[ManagedDeviceId <String>]`: The unique identifier of managedDevice
   - `[ManagedDeviceMobileAppConfigurationStateId <String>]`: The unique identifier of managedDeviceMobileAppConfigurationState
