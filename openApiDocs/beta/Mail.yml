@@ -1512,13 +1512,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: message
-        - name: $format
-          in: query
-          description: Format of the content
-          style: form
-          explode: false
-          schema:
-            type: string
       responses:
         2XX:
           description: Retrieved media content
@@ -1587,10 +1580,10 @@ paths:
       tags:
         - users.mailFolder
       summary: List attachments
-      description: Retrieve a list of attachment objects attached to a message.
+      description: Retrieve a list of attachment objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/message-list-attachments?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/eventmessage-list-attachments?view=graph-rest-1.0
       operationId: user.mailFolder.childFolder.message_ListAttachment
       parameters:
         - name: user-id
@@ -1670,10 +1663,10 @@ paths:
       tags:
         - users.mailFolder
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource."
+      description: "Use this API to add an attachment to a message. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. You can add an attachment to an existing message by posting to its attachments collection, or to a new\nmessage that is being drafted, or created and sent on the fly."
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/message-post-attachments?view=graph-rest-1.0
       operationId: user.mailFolder.childFolder.message_CreateAttachment
       parameters:
         - name: user-id
@@ -3435,13 +3428,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: message
-        - name: $format
-          in: query
-          description: Format of the content
-          style: form
-          explode: false
-          schema:
-            type: string
       responses:
         2XX:
           description: Retrieved media content
@@ -3502,10 +3488,10 @@ paths:
       tags:
         - users.mailFolder
       summary: List attachments
-      description: Retrieve a list of attachment objects attached to a message.
+      description: Retrieve a list of attachment objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/message-list-attachments?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/eventmessage-list-attachments?view=graph-rest-1.0
       operationId: user.mailFolder.message_ListAttachment
       parameters:
         - name: user-id
@@ -3577,10 +3563,10 @@ paths:
       tags:
         - users.mailFolder
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource."
+      description: "Use this API to add an attachment to a message. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. You can add an attachment to an existing message by posting to its attachments collection, or to a new\nmessage that is being drafted, or created and sent on the fly."
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/message-post-attachments?view=graph-rest-1.0
       operationId: user.mailFolder.message_CreateAttachment
       parameters:
         - name: user-id
@@ -4672,11 +4658,11 @@ paths:
     post:
       tags:
         - users.message
-      summary: Create Message
-      description: "Create a draft of a new message in either JSON or MIME format. When using JSON format, you can:\n- Include an attachment.\n- Use a mention to call out another user in the new message.\n- Update the draft later to add content to the body or change other message properties. When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\n- /* Add any attachments and S/MIME properties to the MIME content. By default, this operation saves the draft in the Drafts folder. Send the draft message in a subsequent operation. Alternatively, send a new message in a single action, or create a draft to forward, to reply or to reply-all to an existing message."
+      summary: Create openTypeExtension
+      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/user-post-messages?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
       operationId: user_CreateMessage
       parameters:
         - name: user-id
@@ -4875,13 +4861,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: message
-        - name: $format
-          in: query
-          description: Format of the content
-          style: form
-          explode: false
-          schema:
-            type: string
       responses:
         2XX:
           description: Retrieved media content
@@ -4934,10 +4913,10 @@ paths:
       tags:
         - users.message
       summary: List attachments
-      description: Retrieve a list of attachment objects attached to a message.
+      description: Retrieve a list of attachment objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/message-list-attachments?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/eventmessage-list-attachments?view=graph-rest-1.0
       operationId: user.message_ListAttachment
       parameters:
         - name: user-id
@@ -5001,10 +4980,10 @@ paths:
       tags:
         - users.message
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource."
+      description: "Use this API to add an attachment to a message. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. You can add an attachment to an existing message by posting to its attachments collection, or to a new\nmessage that is being drafted, or created and sent on the fly."
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/message-post-attachments?view=graph-rest-1.0
       operationId: user.message_CreateAttachment
       parameters:
         - name: user-id
@@ -5930,49 +5909,61 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.internetMessageHeader'
+              description: A collection of message headers defined by RFC5322. The set includes message headers indicating the network path taken by a message from the sender to the recipient. It can also contain custom message headers that hold app data for the message.  Returned only on applying a $select query option. Read-only.
             internetMessageId:
               type: string
+              description: The message ID in the format specified by RFC5322. Updatable only if isDraft is true.
               nullable: true
             isDeliveryReceiptRequested:
               type: boolean
+              description: Indicates whether a read receipt is requested for the message.
               nullable: true
             isDraft:
               type: boolean
+              description: Indicates whether the message is a draft. A message is a draft if it hasn't been sent yet.
               nullable: true
             isRead:
               type: boolean
+              description: Indicates whether the message has been read.
               nullable: true
             isReadReceiptRequested:
               type: boolean
+              description: Indicates whether a read receipt is requested for the message.
               nullable: true
             mentionsPreview:
               $ref: '#/components/schemas/microsoft.graph.mentionsPreview'
             parentFolderId:
               type: string
+              description: The unique identifier for the message's parent mailFolder.
               nullable: true
             receivedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time the message was received.  The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             replyTo:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.recipient'
+              description: The email addresses to use when replying.
             sender:
               $ref: '#/components/schemas/microsoft.graph.recipient'
             sentDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time the message was sent.  The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             subject:
               type: string
+              description: The subject of the message.
               nullable: true
             toRecipients:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.recipient'
+              description: 'The To: recipients for the message.'
             uniqueBody:
               $ref: '#/components/schemas/microsoft.graph.itemBody'
             unsubscribeData:
@@ -5980,11 +5971,14 @@ components:
               items:
                 type: string
                 nullable: true
+              description: The valid entries parsed from the List-Unsubscribe header.  This is the data for the mail command in the List-Unsubscribe header if UnsubscribeEnabled property is true.
             unsubscribeEnabled:
               type: boolean
+              description: Indicates whether the message is enabled for unsubscribe.  Its valueTrue if the list-Unsubscribe header conforms to rfc-2369.
               nullable: true
             webLink:
               type: string
+              description: 'The URL to open the message in Outlook on the web.You can append an ispopout argument to the end of the URL to change how the message is displayed. If ispopout is not present or if it is set to 1, then the message is shown in a popout window. If ispopout is set to 0, the browser shows the message in the Outlook on the web review pane.The message opens in the browser if you are signed in to your mailbox via Outlook on the web. You are prompted to sign in if you are not already signed in with the browser.This URL cannot be accessed from within an iFrame.'
               nullable: true
             attachments:
               type: array

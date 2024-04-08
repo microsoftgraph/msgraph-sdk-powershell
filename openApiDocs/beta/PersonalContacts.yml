@@ -1345,13 +1345,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: contact
-        - name: $format
-          in: query
-          description: Format of the content
-          style: form
-          explode: false
-          schema:
-            type: string
       responses:
         2XX:
           description: Retrieved media content
@@ -2209,13 +2202,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: contact
-        - name: $format
-          in: query
-          description: Format of the content
-          style: form
-          explode: false
-          schema:
-            type: string
       responses:
         2XX:
           description: Retrieved media content
@@ -2949,13 +2935,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: contact
-        - name: $format
-          in: query
-          description: Format of the content
-          style: form
-          explode: false
-          schema:
-            type: string
       responses:
         2XX:
           description: Retrieved media content
@@ -3133,70 +3112,90 @@ components:
               items:
                 type: string
                 nullable: true
+              description: The contact's instant messaging (IM) addresses.
             initials:
               type: string
+              description: The contact's initials.
               nullable: true
             isFavorite:
               type: boolean
               nullable: true
             jobTitle:
               type: string
+              description: The contact’s job title.
               nullable: true
             manager:
               type: string
+              description: The name of the contact's manager.
               nullable: true
             middleName:
               type: string
+              description: The contact's middle name.
               nullable: true
             nickName:
               type: string
+              description: The contact's nickname.
               nullable: true
             officeLocation:
               type: string
+              description: The location of the contact's office.
               nullable: true
             parentFolderId:
               type: string
+              description: The ID of the contact's parent folder.
               nullable: true
             personalNotes:
               type: string
+              description: The user's notes about the contact.
               nullable: true
             phones:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.phone'
+              description: 'Phone numbers associated with the contact, for example, home phone, mobile phone, and business phone.'
             postalAddresses:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.physicalAddress'
+              description: 'Addresses associated with the contact, for example, home address and business address.'
             profession:
               type: string
+              description: The contact's profession.
               nullable: true
             spouseName:
               type: string
+              description: The name of the contact's spouse/partner.
               nullable: true
             surname:
               type: string
+              description: The contact's surname.
               nullable: true
             title:
               type: string
+              description: The contact's title.
               nullable: true
             websites:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.website'
+              description: Web sites associated with the contact.
             weddingAnniversary:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
+              description: The contact's wedding anniversary.
               format: date
               nullable: true
             yomiCompanyName:
               type: string
+              description: The phonetic Japanese company name of the contact.
               nullable: true
             yomiGivenName:
               type: string
+              description: The phonetic Japanese given name (first name) of the contact.
               nullable: true
             yomiSurname:
               type: string
+              description: The phonetic Japanese surname (last name)  of the contact.
               nullable: true
             extensions:
               type: array

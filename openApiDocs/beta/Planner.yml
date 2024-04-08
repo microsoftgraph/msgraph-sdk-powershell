@@ -12673,7 +12673,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.plannerAssignments'
             bucketId:
               type: string
-              description: Bucket ID to which the task belongs. The bucket needs to be in the plan that the task is in. It is 28 characters long and case-sensitive. Format validation is done on the service.
+              description: Bucket ID to which the task belongs. The bucket needs to be in the plan that the task is in. It's 28 characters long and case-sensitive. Format validation is done on the service.
               nullable: true
             checklistItemCount:
               maximum: 2147483647
@@ -12719,10 +12719,12 @@ components:
               nullable: true
             isOnMyDay:
               type: boolean
+              description: 'A Boolean value that indicates whether to show this task in the MyDay view. true to show the task. Otherwise, false.'
               nullable: true
             isOnMyDayLastModifiedDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
+              description: Read-only. The date on which task is added to or removed from MyDay.
               format: date
               nullable: true
             orderHint:
@@ -12746,7 +12748,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: 'Priority of the task. Valid range of values is between 0 and 10 (inclusive), with increasing value being lower priority (0 has the highest priority and 10 has the lowest priority).  Currently, Planner interprets values 0 and 1 as ''urgent'', 2 and 3 and 4 as ''important'', 5, 6, and 7 as ''medium'', and 8, 9, and 10 as ''low''.  Currently, Planner sets the value 1 for ''urgent'', 3 for ''important'', 5 for ''medium'', and 9 for ''low''.'
+              description: 'The priority of the task. Valid values are between 0 and 10, inclusive. Larger values indicate lower priority. For example, 0 has the highest priority and 10 has the lowest priority. Currently, Planner interprets values 0 and 1 as ''urgent'', 2 and 3 and 4 as ''important'', 5, 6, and 7 as ''medium'', and 8, 9, and 10 as ''low''. Currently, Planner sets the value 1 for ''urgent'', 3 for ''important'', 5 for ''medium'', and 9 for ''low''.'
               format: int32
               nullable: true
             recurrence:
@@ -13430,11 +13432,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: 'Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn''t included in the response.'
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -13543,6 +13545,7 @@ components:
           items:
             type: string
             nullable: true
+          description: Read-only. A collection of keys from the plannerFormsDictionary that identify the plannerFormReference objects that specify the requirements to complete the plannerTask.
       additionalProperties:
         type: object
     microsoft.graph.Dictionary:

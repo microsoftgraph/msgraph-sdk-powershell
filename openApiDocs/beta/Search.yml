@@ -2294,11 +2294,11 @@ paths:
     post:
       tags:
         - external.industryDataRoot
-      summary: Create azureDataLakeConnector
-      description: Create a new azureDataLakeConnector object.
+      summary: Create industryDataConnector
+      description: Create a new industryDataConnector object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-azuredatalakeconnector-post?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/industrydata-industrydataconnector-post?view=graph-rest-1.0
       operationId: external.industryData_CreateDataConnector
       requestBody:
         description: New navigation property
@@ -2404,11 +2404,11 @@ paths:
     delete:
       tags:
         - external.industryDataRoot
-      summary: Delete industryDataConnector
-      description: Delete an industryDataConnector object.
+      summary: Delete azureDataLakeConnector
+      description: Delete an azureDataLakeConnector object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-industrydataconnector-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/industrydata-azuredatalakeconnector-delete?view=graph-rest-1.0
       operationId: external.industryData_DeleteDataConnector
       parameters:
         - name: industryDataConnector-id
@@ -2520,11 +2520,11 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: List inboundFlows
-      description: Get a list of the inboundFlow objects and their properties.
+      summary: List inboundFileFlows
+      description: Get a list of the inboundFileFlow objects and their properties.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-inboundflow-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-list?view=graph-rest-1.0
       operationId: external.industryData_ListInboundFlow
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2601,11 +2601,11 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: Get inboundFileFlow
-      description: Read the properties and relationships of an inboundFileFlow object.
+      summary: Get inboundFlow
+      description: Read the properties and relationships of an inboundFlow object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/industrydata-inboundflow-get?view=graph-rest-1.0
       operationId: external.industryData_GetInboundFlow
       parameters:
         - name: inboundFlow-id
@@ -4403,7 +4403,7 @@ paths:
       tags:
         - search.acronym
       summary: Delete acronym
-      description: Deletes an acronym object.
+      description: Delete an acronym object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/search-acronym-delete?view=graph-rest-1.0
@@ -5455,7 +5455,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.search.acronym'
-              description: Administrative answer in Microsoft Search results to define common acronyms in a organization.
+              description: Administrative answer in Microsoft Search results to define common acronyms in an organization.
               x-ms-navigationProperty: true
             bookmarks:
               type: array
@@ -5467,7 +5467,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.search.qna'
-              description: Administrative answer in Microsoft Search results which provide answers for specific search keywords in an organization.
+              description: Administrative answer in Microsoft Search results that provide answers for specific search keywords in an organization.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -5494,13 +5494,13 @@ components:
             availabilityEndDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Timestamp of when the bookmark will stop to appear as a search result. Set as null for always available.
+              description: 'Date and time when the bookmark stops appearing as a search result. Set as null for always available. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             availabilityStartDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Timestamp of when the bookmark will start to appear as a search result. Set as null for always available.
+              description: 'Date and time when the bookmark starts to appear as a search result. Set as null for always available. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             categories:
@@ -5514,10 +5514,10 @@ components:
               items:
                 type: string
                 nullable: true
-              description: List of security groups able to view this bookmark.
+              description: The list of security groups that are able to view this bookmark.
             isSuggested:
               type: boolean
-              description: True if this bookmark was suggested to the admin by a user or was mined and suggested by Microsoft. Read-only.
+              description: 'True if this bookmark was suggested to the admin, by a user, or was mined and suggested by Microsoft. Read-only.'
               nullable: true
             keywords:
               $ref: '#/components/schemas/microsoft.graph.search.answerKeyword'
@@ -5526,25 +5526,25 @@ components:
               items:
                 type: string
                 nullable: true
-              description: 'A list of language names that are geographically specific and that this bookmark can be viewed in. Each language tag value follows the pattern {language}-{region}. As an example, en-us is English as used in the United States. See supported language tags for the list of possible values.'
+              description: 'A list of geographically specific language names in which this bookmark can be viewed. Each language tag value follows the pattern {language}-{region}. For example, en-us is English as used in the United States. For the list of possible values, see Supported language tags.'
             platforms:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.devicePlatformType'
-              description: 'List of devices and operating systems able to view this bookmark. Possible values are: unknown, android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, androidASOP.'
+              description: 'List of devices and operating systems that are able to view this bookmark. Possible values are: android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, unknown, androidASOP, androidMobileApplicationManagement, iOSMobileApplicationManagement, unknownFutureValue.'
             powerAppIds:
               type: array
               items:
                 type: string
                 nullable: true
-              description: 'List of Power Apps associated with this bookmark. If users add existing Power Apps to a bookmark, they can complete tasks, such as to enter vacation time or to report expenses on the search results page.'
+              description: 'List of Power Apps associated with this bookmark. If users add existing Power Apps to a bookmark, they can complete tasks directly on the search results page, such as entering vacation time or reporting expenses.'
             state:
               $ref: '#/components/schemas/microsoft.graph.search.answerState'
             targetedVariations:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.search.answerVariant'
-              description: 'Variations of a bookmark for different countries or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings will apply to all variations.'
+              description: 'Variations of a bookmark for different countries or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings apply to all variations.'
           additionalProperties:
             type: object
     microsoft.graph.searchRequest:
@@ -5658,13 +5658,13 @@ components:
             availabilityEndDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Timestamp of when the qna stops to appear as a search result. Set as null for always available.
+              description: 'Date and time when the QnA stops appearing as a search result. Set as null for always available. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             availabilityStartDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Timestamp of when the qna starts to appear as a search result. Set as null for always available.
+              description: 'Date and time when the QnA starts to appear as a search result. Set as null for always available. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             groupIds:
@@ -5672,10 +5672,10 @@ components:
               items:
                 type: string
                 nullable: true
-              description: List of security groups able to view this qna.
+              description: The list of security groups that are able to view this QnA.
             isSuggested:
               type: boolean
-              description: True if a user or Microsoft suggested this qna to the admin. Read-only.
+              description: True if a user or Microsoft suggested this QnA to the admin. Read-only.
               nullable: true
             keywords:
               $ref: '#/components/schemas/microsoft.graph.search.answerKeyword'
@@ -5684,19 +5684,19 @@ components:
               items:
                 type: string
                 nullable: true
-              description: 'A list of language names that are geographically specific and that this QnA can be viewed in. Each language tag value follows the pattern {language}-{region}. As an example, en-us is English as used in the United States. For the list of possible values, see supported language tags.'
+              description: 'A list of geographically specific language names in which this QnA can be viewed. Each language tag value follows the pattern {language}-{region}. For example, en-us is English as used in the United States. For the list of possible values, see Supported language tags.'
             platforms:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.devicePlatformType'
-              description: 'List of devices and operating systems able to view this qna. Possible values are: unknown, android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, androidASOP.'
+              description: 'List of devices and operating systems that are able to view this QnA. Possible values are: android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, unknown, androidASOP, androidMobileApplicationManagement, iOSMobileApplicationManagement, unknownFutureValue.'
             state:
               $ref: '#/components/schemas/microsoft.graph.search.answerState'
             targetedVariations:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.search.answerVariant'
-              description: 'Variations of a qna for different countries or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings apply to all variations.'
+              description: 'Variations of a QnA for different countries or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings apply to all variations.'
           additionalProperties:
             type: object
     microsoft.graph.entity:
@@ -6070,22 +6070,22 @@ components:
           properties:
             description:
               type: string
-              description: Search answer description shown on search results page.
+              description: The search answer description that is shown on the search results page.
               nullable: true
             displayName:
               type: string
-              description: Search answer name displayed in search results.
+              description: The search answer name that is displayed in search results.
             lastModifiedBy:
               $ref: '#/components/schemas/microsoft.graph.search.identitySet'
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Timestamp of when the search answer is created or edited. Read-only.
+              description: 'Date and time when the search answer was created or last edited. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
             webUrl:
               type: string
-              description: 'Search answer URL link. When users click this search answer in search results, they''ll go to this URL.'
+              description: 'The URL link for the search answer. When users select this search answer from the search results, they''re directed to the specified URL.'
               nullable: true
           additionalProperties:
             type: object
@@ -6116,7 +6116,7 @@ components:
           items:
             type: string
             nullable: true
-          description: Unique keywords that will guarantee the search answer is triggered.
+          description: Unique keywords that guarantee the search answer is triggered.
       additionalProperties:
         type: object
     microsoft.graph.devicePlatformType:
@@ -6190,20 +6190,21 @@ components:
       properties:
         description:
           type: string
-          description: Answer variation description shown on search results page.
+          description: The answer variation description that is shown on the search results page.
           nullable: true
         displayName:
           type: string
-          description: Answer variation name displayed in search results.
+          description: The answer variation name that is displayed in search results.
           nullable: true
         languageTag:
           type: string
+          description: The country or region that can view this answer variation.
           nullable: true
         platform:
           $ref: '#/components/schemas/microsoft.graph.devicePlatformType'
         webUrl:
           type: string
-          description: 'Answer variation URL link. When users click this answer variation in search results, they will go to this URL.'
+          description: 'The URL link for the answer variation. When users select this answer variation from the search results, they''re directed to the specified URL.'
           nullable: true
       additionalProperties:
         type: object
@@ -6215,12 +6216,12 @@ components:
           $ref: '#/components/schemas/microsoft.graph.bucketAggregationDefinition'
         field:
           type: string
-          description: Computes aggregation on the field while the field exists in current entity type. Required.
+          description: Computes aggregation on the field while the field exists in the current entity type. Required.
         size:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: The number of searchBucket resources to be returned. This isn't required when the range is provided manually in the search request. Optional.
+          description: 'The number of searchBucket resources to be returned. This isn''t required when the range is provided manually in the search request. The minimum accepted size is 1, and the maximum is 65535. Optional.'
           format: int32
           nullable: true
       additionalProperties:

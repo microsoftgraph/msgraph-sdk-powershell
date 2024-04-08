@@ -895,7 +895,7 @@ paths:
       description: Read properties and relationships of the deviceManagement object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-companyterms-devicemanagement-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-auditing-devicemanagement-get?view=graph-rest-1.0
       operationId: deviceManagement_GetDeviceManagement
       parameters:
         - name: $select
@@ -935,7 +935,7 @@ paths:
       description: Update the properties of a deviceManagement object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-raimportcerts-devicemanagement-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-reporting-devicemanagement-update?view=graph-rest-1.0
       operationId: deviceManagement_UpdateDeviceManagement
       requestBody:
         description: New property values
@@ -1566,11 +1566,11 @@ paths:
     post:
       tags:
         - deviceManagement.deviceCompliancePolicy
-      summary: Create androidWorkProfileCompliancePolicy
-      description: Create a new androidWorkProfileCompliancePolicy object.
+      summary: Create windows10CompliancePolicy
+      description: Create a new windows10CompliancePolicy object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-androidworkprofilecompliancepolicy-create?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-windows10compliancepolicy-create?view=graph-rest-1.0
       operationId: deviceManagement_CreateDeviceCompliancePolicy
       requestBody:
         description: New navigation property
@@ -1593,11 +1593,11 @@ paths:
     get:
       tags:
         - deviceManagement.deviceCompliancePolicy
-      summary: Get windowsPhone81CompliancePolicy
-      description: Read properties and relationships of the windowsPhone81CompliancePolicy object.
+      summary: Get windows10MobileCompliancePolicy
+      description: Read properties and relationships of the windows10MobileCompliancePolicy object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-windowsphone81compliancepolicy-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-windows10mobilecompliancepolicy-get?view=graph-rest-1.0
       operationId: deviceManagement_GetDeviceCompliancePolicy
       parameters:
         - name: deviceCompliancePolicy-id
@@ -1676,11 +1676,11 @@ paths:
     delete:
       tags:
         - deviceManagement.deviceCompliancePolicy
-      summary: Delete androidCompliancePolicy
-      description: Deletes a androidCompliancePolicy.
+      summary: Delete windows10MobileCompliancePolicy
+      description: Deletes a windows10MobileCompliancePolicy.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-androidcompliancepolicy-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-windows10mobilecompliancepolicy-delete?view=graph-rest-1.0
       operationId: deviceManagement_DeleteDeviceCompliancePolicy
       parameters:
         - name: deviceCompliancePolicy-id
@@ -4156,11 +4156,11 @@ paths:
     get:
       tags:
         - deviceManagement.deviceConfiguration
-      summary: List iosUpdateConfigurations
-      description: List properties and relationships of the iosUpdateConfiguration objects.
+      summary: List androidCustomConfigurations
+      description: List properties and relationships of the androidCustomConfiguration objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-iosupdateconfiguration-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-androidcustomconfiguration-list?view=graph-rest-1.0
       operationId: deviceManagement_ListDeviceConfiguration
       parameters:
         - $ref: '#/components/parameters/top'
@@ -4210,11 +4210,11 @@ paths:
     post:
       tags:
         - deviceManagement.deviceConfiguration
-      summary: Create androidCustomConfiguration
-      description: Create a new androidCustomConfiguration object.
+      summary: Create windowsUpdateForBusinessConfiguration
+      description: Create a new windowsUpdateForBusinessConfiguration object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-androidcustomconfiguration-create?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-windowsupdateforbusinessconfiguration-create?view=graph-rest-1.0
       operationId: deviceManagement_CreateDeviceConfiguration
       requestBody:
         description: New navigation property
@@ -4237,11 +4237,11 @@ paths:
     get:
       tags:
         - deviceManagement.deviceConfiguration
-      summary: Get windows10TeamGeneralConfiguration
-      description: Read properties and relationships of the windows10TeamGeneralConfiguration object.
+      summary: Get iosCustomConfiguration
+      description: Read properties and relationships of the iosCustomConfiguration object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-windows10teamgeneralconfiguration-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-ioscustomconfiguration-get?view=graph-rest-1.0
       operationId: deviceManagement_GetDeviceConfiguration
       parameters:
         - name: deviceConfiguration-id
@@ -4285,11 +4285,11 @@ paths:
     patch:
       tags:
         - deviceManagement.deviceConfiguration
-      summary: Update macOSDeviceFeaturesConfiguration
-      description: Update the properties of a macOSDeviceFeaturesConfiguration object.
+      summary: Update iosDeviceFeaturesConfiguration
+      description: Update the properties of a iosDeviceFeaturesConfiguration object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-macosdevicefeaturesconfiguration-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-iosdevicefeaturesconfiguration-update?view=graph-rest-1.0
       operationId: deviceManagement_UpdateDeviceConfiguration
       parameters:
         - name: deviceConfiguration-id
@@ -4320,11 +4320,11 @@ paths:
     delete:
       tags:
         - deviceManagement.deviceConfiguration
-      summary: Delete iosDeviceFeaturesConfiguration
-      description: Deletes a iosDeviceFeaturesConfiguration.
+      summary: Delete androidCustomConfiguration
+      description: Deletes a androidCustomConfiguration.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-iosdevicefeaturesconfiguration-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-androidcustomconfiguration-delete?view=graph-rest-1.0
       operationId: deviceManagement_DeleteDeviceConfiguration
       parameters:
         - name: deviceConfiguration-id
@@ -18740,16 +18740,43 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcAuditEvent'
+              description: A collection of Cloud PC audit events.
+              x-ms-navigationProperty: true
+            cloudPCs:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudPC'
+              description: A collection of cloud-managed virtual desktops.
+              x-ms-navigationProperty: true
+            deviceImages:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcDeviceImage'
+              description: A collection of device image resources on Cloud PC.
+              x-ms-navigationProperty: true
+            galleryImages:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcGalleryImage'
+              description: A collection of gallery image resources on Cloud PC.
+              x-ms-navigationProperty: true
+            onPremisesConnections:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcOnPremisesConnection'
+              description: A defined collection of Azure resource information that can be used to establish Azure network connections for Cloud PCs.
               x-ms-navigationProperty: true
             provisioningPolicies:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcProvisioningPolicy'
+              description: A collection of Cloud PC provisioning policies.
               x-ms-navigationProperty: true
             userSettings:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcUserSetting'
+              description: A collection of Cloud PC user settings.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -19769,7 +19796,7 @@ components:
               nullable: true
             userType:
               type: string
-              description: 'A string value that can be used to classify user types in your directory, such as Member and Guest. Returned only on $select. Supports $filter (eq, ne, not, in, and eq on null values). NOTE: For more information about the permissions for member and guest users, see What are the default user permissions in Microsoft Entra ID?'
+              description: 'A string value that can be used to classify user types in your directory. The possible values are Member and Guest. Returned only on $select. Supports $filter (eq, ne, not, in, and eq on null values). NOTE: For more information about the permissions for member and guest users, see What are the default user permissions in Microsoft Entra ID?'
               nullable: true
             activities:
               type: array
@@ -19986,6 +20013,12 @@ components:
               x-ms-navigationProperty: true
             settings:
               $ref: '#/components/schemas/microsoft.graph.userSettings'
+            sponsors:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: 'The users and groups responsible for this guest user''s privileges in the tenant and keep the guest user''s information and access updated. (HTTP Methods: GET, POST, DELETE.). Supports $expand.'
+              x-ms-navigationProperty: true
             teamwork:
               $ref: '#/components/schemas/microsoft.graph.userTeamwork'
             todo:
@@ -22278,6 +22311,7 @@ components:
         - available
         - enabled
         - unresponsive
+        - unknownFutureValue
       type: string
       description: Partner state of this tenant.
       x-ms-enum:
@@ -22296,6 +22330,9 @@ components:
           - value: unresponsive
             description: Partner is unresponsive.
             name: unresponsive
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.remoteAssistanceOnboardingStatus:
       title: remoteAssistanceOnboardingStatus
       enum:
@@ -22362,7 +22399,7 @@ components:
               nullable: true
           additionalProperties:
             type: object
-          description: Entity representing a job to export a report
+          description: Entity representing a job to export a report.
     microsoft.graph.roleAssignment:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -22449,10 +22486,12 @@ components:
           properties:
             activity:
               type: string
+              description: The friendly name of the audit activity.
               nullable: true
             activityDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The date time in UTC when the activity was performed. Read-only.
               format: date-time
             activityOperationType:
               $ref: '#/components/schemas/microsoft.graph.cloudPcAuditActivityOperationType'
@@ -22460,20 +22499,248 @@ components:
               $ref: '#/components/schemas/microsoft.graph.cloudPcAuditActivityResult'
             activityType:
               type: string
+              description: The type of activity that was performed. Read-only.
             actor:
               $ref: '#/components/schemas/microsoft.graph.cloudPcAuditActor'
             category:
               $ref: '#/components/schemas/microsoft.graph.cloudPcAuditCategory'
             componentName:
               type: string
+              description: The component name for the audit event. Read-only.
             correlationId:
               type: string
+              description: The client request ID that is used to correlate activity within the system. Read-only.
             displayName:
               type: string
+              description: The display name for the audit event. Read-only.
             resources:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcAuditResource'
+              description: The list of cloudPcAuditResource objects. Read-only.
+          additionalProperties:
+            type: object
+    microsoft.graph.cloudPC:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: cloudPC
+          type: object
+          properties:
+            aadDeviceId:
+              type: string
+              description: 'The Microsoft Entra device ID for the Cloud PC, also known as the Azure Active Directory (Azure AD) device ID, that consists of 32 characters in a GUID format. Generated on a VM joined to Microsoft Entra ID. Read-only.'
+              nullable: true
+            displayName:
+              type: string
+              description: 'The display name for the Cloud PC. Maximum length is 64 characters. Read-only. You can use the cloudPC: rename API to modify the Cloud PC name.'
+              nullable: true
+            gracePeriodEndDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when the grace period ends and reprovisioning or deprovisioning happen. Required only if the status is inGracePeriod. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+              nullable: true
+            imageDisplayName:
+              type: string
+              description: 'The name of the operating system image used for the Cloud PC. Maximum length is 50 characters. Only letters (A-Z, a-z), numbers (0-9), and special characters (-,,.) are allowed for this property. The property value can''t begin or end with an underscore. Read-only.'
+              nullable: true
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The last modified date and time of the Cloud PC. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+            managedDeviceId:
+              type: string
+              description: The Intune enrolled device ID for the Cloud PC that consists of 32 characters in a GUID format. The managedDeviceId property of Windows 365 Business Cloud PCs is always null as Windows 365 Business Cloud PCs aren't Intune-enrolled automatically by Windows 365. Read-only.
+              nullable: true
+            managedDeviceName:
+              type: string
+              description: The Intune enrolled device name for the Cloud PC. The managedDeviceName property of Windows 365 Business Cloud PCs is always null as Windows 365 Business Cloud PCs aren't Intune-enrolled automatically by Windows 365. Read-only.
+              nullable: true
+            onPremisesConnectionName:
+              type: string
+              description: The on-premises connection that applied during the provisioning of Cloud PCs. Read-only.
+              nullable: true
+            provisioningPolicyId:
+              type: string
+              description: The provisioning policy ID for the Cloud PC that consists of 32 characters in a GUID format. A policy defines the type of Cloud PC the user wants to create. Read-only.
+              nullable: true
+            provisioningPolicyName:
+              type: string
+              description: The provisioning policy that applied during the provisioning of Cloud PCs. Maximum length is 120 characters. Read-only.
+              nullable: true
+            provisioningType:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcProvisioningType'
+            servicePlanId:
+              type: string
+              description: 'The service plan ID for the Cloud PC that consists of 32 characters in a GUID format. For more information about service plans, see Product names and service plan identifiers for licensing. Read-only.'
+              nullable: true
+            servicePlanName:
+              type: string
+              description: The service plan name for the customer-facing Cloud PC entity. Read-only.
+              nullable: true
+            userPrincipalName:
+              type: string
+              description: 'The user principal name (UPN) of the user assigned to the Cloud PC. Maximum length is 113 characters. For more information on username policies, see Password policies and account restrictions in Microsoft Entra ID. Read-only.'
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.cloudPcDeviceImage:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: cloudPcDeviceImage
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: The display name of the associated device image. The device image display name and the version are used to uniquely identify the Cloud PC device image. Read-only.
+              nullable: true
+            errorCode:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcDeviceImageErrorCode'
+            expirationDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              description: The date when the image became unavailable. Read-only.
+              format: date
+              nullable: true
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The data and time when the image was last modified. The timestamp represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+              format: date-time
+              nullable: true
+            operatingSystem:
+              type: string
+              description: 'The operating system (OS) of the image. For example, Windows 10 Enterprise. Read-only.'
+              nullable: true
+            osBuildNumber:
+              type: string
+              description: 'The OS build version of the image. For example, 1909. Read-only.'
+              nullable: true
+            osStatus:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcDeviceImageOsStatus'
+            sourceImageResourceId:
+              type: string
+              description: 'The unique identifier (ID) of the source image resource on Azure. The required ID format is: ''/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/images/{imageName}''. Read-only.'
+              nullable: true
+            status:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcDeviceImageStatus'
+            version:
+              type: string
+              description: 'The image version. For example, 0.0.1 and 1.5.13. Read-only.'
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.cloudPcGalleryImage:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: cloudPcGalleryImage
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: 'The display name of this gallery image. For example, Windows 11 Enterprise + Microsoft 365 Apps 22H2. Read-only.'
+              nullable: true
+            endDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              description: 'The date when the status of the image becomes supportedWithWarning. Users can still provision new Cloud PCs if the current time is later than endDate and earlier than expirationDate. For example, assume the endDate of a gallery image is 2023-9-14 and expirationDate is 2024-3-14, users are able to provision new Cloud PCs if today is 2023-10-01. Read-only.'
+              format: date
+              nullable: true
+            expirationDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              description: 'The date when the image is no longer available. Users are unable to provision new Cloud PCs if the current time is later than expirationDate. The value is usually endDate plus six months. For example, if the startDate is 2025-10-14, the expirationDate is usually 2026-04-14. Read-only.'
+              format: date
+              nullable: true
+            offerName:
+              type: string
+              description: The offer name of this gallery image that is passed to Azure Resource Manager (ARM) to retrieve the image resource. Read-only.
+              nullable: true
+            publisherName:
+              type: string
+              description: The publisher name of this gallery image that is passed to Azure Resource Manager (ARM) to retrieve the image resource. Read-only.
+              nullable: true
+            sizeInGB:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: 'Indicates the size of this image in gigabytes. For example, 64. Read-only.'
+              format: int32
+              nullable: true
+            skuName:
+              type: string
+              description: The SKU name of this image that is passed to Azure Resource Manager (ARM) to retrieve the image resource. Read-only.
+              nullable: true
+            startDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              description: 'The date when the Cloud PC image is available for provisioning new Cloud PCs. For example, 2022-09-20. Read-only.'
+              format: date
+              nullable: true
+            status:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcGalleryImageStatus'
+          additionalProperties:
+            type: object
+    microsoft.graph.cloudPcOnPremisesConnection:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: cloudPcOnPremisesConnection
+          type: object
+          properties:
+            adDomainName:
+              type: string
+              description: The fully qualified domain name (FQDN) of the Active Directory domain you want to join. Maximum length is 255. Optional.
+              nullable: true
+            adDomainPassword:
+              type: string
+              description: The password associated with the username of an Active Directory account (adDomainUsername).
+              nullable: true
+            adDomainUsername:
+              type: string
+              description: 'The username of an Active Directory account (user or service account) that has permission to create computer objects in Active Directory. Required format: admin@contoso.com. Optional.'
+              nullable: true
+            alternateResourceUrl:
+              type: string
+              description: The interface URL of the partner service's resource that links to this Azure network connection. Returned only on $select.
+              nullable: true
+            connectionType:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcOnPremisesConnectionType'
+            displayName:
+              type: string
+              description: The display name for the Azure network connection.
+            healthCheckStatus:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcOnPremisesConnectionStatus'
+            healthCheckStatusDetail:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcOnPremisesConnectionStatusDetail'
+            inUse:
+              type: boolean
+              description: 'When true, the Azure network connection is in use. When false, the connection isn''t in use. You can''t delete a connection that’s in use. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetail. Read-only.'
+              nullable: true
+            organizationalUnit:
+              type: string
+              description: 'The organizational unit (OU) in which the computer account is created. If left null, the OU configured as the default (a well-known computer object container) in the tenant''s Active Directory domain (OU) is used. Optional.'
+              nullable: true
+            resourceGroupId:
+              type: string
+              description: 'The unique identifier of the target resource group used associated with the on-premises network connectivity for Cloud PCs. Required format: ''/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}'''
+            subnetId:
+              type: string
+              description: 'The unique identifier of the target subnet used associated with the on-premises network connectivity for Cloud PCs. Required format: ''/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkId}/subnets/{subnetName}'''
+            subscriptionId:
+              type: string
+              description: The unique identifier of the Azure subscription associated with the tenant.
+            subscriptionName:
+              type: string
+              description: The name of the Azure subscription is used to create an Azure network connection. Read-only.
+              nullable: true
+            virtualNetworkId:
+              type: string
+              description: 'The unique identifier of the target virtual network used associated with the on-premises network connectivity for Cloud PCs. Required format: ''/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}'''
+            virtualNetworkLocation:
+              type: string
+              description: 'Indicates the resource location of the target virtual network. For example, the location can be eastus2, westeurope, etc. Read-only (computed value).'
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.cloudPcProvisioningPolicy:
@@ -22484,39 +22751,50 @@ components:
           properties:
             alternateResourceUrl:
               type: string
+              description: The URL of the alternate resource that links to this provisioning policy. Read-only.
               nullable: true
             cloudPcGroupDisplayName:
               type: string
+              description: The display name of the Cloud PC group that the Cloud PCs reside in. Read-only.
               nullable: true
             cloudPcNamingTemplate:
               type: string
+              description: 'The template used to name Cloud PCs provisioned using this policy. The template can contain custom text and replacement tokens, including %USERNAME:x% and %RAND:x%, which represent the user''s name and a randomly generated number, respectively. For example, CPC-%USERNAME:4%-%RAND:5% means that the name of the Cloud PC starts with CPC-, followed by a four-character username, a - character, and then five random characters. The total length of the text generated by the template can''t exceed 15 characters. Supports $filter, $select, and $orderby.'
               nullable: true
             description:
               type: string
+              description: 'The provisioning policy description. Supports $filter, $select, and $orderBy.'
               nullable: true
             displayName:
               type: string
+              description: The display name for the provisioning policy.
             domainJoinConfigurations:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcDomainJoinConfiguration'
+              description: Specifies a list ordered by priority on how Cloud PCs join Microsoft Entra ID (Azure AD). Supports $select.
             enableSingleSignOn:
               type: boolean
+              description: 'True if the provisioned Cloud PC can be accessed by single sign-on. False indicates that the provisioned Cloud PC doesn''t support this feature. The default value is false. Windows 365 users can use single sign-on to authenticate to Microsoft Entra ID with passwordless options (for example, FIDO keys) to access their Cloud PC. Optional.'
               nullable: true
             gracePeriodInHours:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: The number of hours to wait before reprovisioning/deprovisioning happens. Read-only.
               format: int32
               nullable: true
             imageDisplayName:
               type: string
+              description: 'The display name of the operating system image that is used for provisioning. For example, Windows 11 Preview + Microsoft 365 Apps 23H2 23H2. Supports $filter, $select, and $orderBy.'
             imageId:
               type: string
+              description: 'The unique identifier that represents an operating system image that is used for provisioning new Cloud PCs. The format for a gallery type image is: {publisherNameofferNameskuName}. Supported values for each of the parameters are:publisher: Microsoftwindowsdesktop offer: windows-ent-cpc sku: 21h1-ent-cpc-m365, 21h1-ent-cpc-os, 20h2-ent-cpc-m365, 20h2-ent-cpc-os, 20h1-ent-cpc-m365, 20h1-ent-cpc-os, 19h2-ent-cpc-m365, and 19h2-ent-cpc-os Supports $filter, $select, and $orderBy.'
             imageType:
               $ref: '#/components/schemas/microsoft.graph.cloudPcProvisioningPolicyImageType'
             localAdminEnabled:
               type: boolean
+              description: 'When true, the local admin is enabled for Cloud PCs; false indicates that the local admin isn''t enabled for Cloud PCs. The default value is false. Supports $filter, $select, and $orderBy.'
               nullable: true
             microsoftManagedDesktop:
               $ref: '#/components/schemas/microsoft.graph.microsoftManagedDesktop'
@@ -22528,6 +22806,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcProvisioningPolicyAssignment'
+              description: 'A defined collection of provisioning policy assignments. Represents the set of Microsoft 365 groups and security groups in Microsoft Entra ID that have provisioning policy assigned. Returned only on $expand. For an example about how to get the assignments relationship, see Get cloudPcProvisioningPolicy.'
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -22540,21 +22819,26 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time when the setting was created. The timestamp type represents the date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             displayName:
               type: string
+              description: The setting name displayed in the user interface.
               nullable: true
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time when the setting was last modified. The timestamp type represents the date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             localAdminEnabled:
               type: boolean
+              description: 'Indicates whether the local admin option is enabled. The default value is false. To enable the local admin option, change the setting to true. If the local admin option is enabled, the end user can be an admin of the Cloud PC device.'
               nullable: true
             resetEnabled:
               type: boolean
+              description: 'Indicates whether an end user is allowed to reset their Cloud PC. When true, the user is allowed to reset their Cloud PC. When false, end-user initiated reset is not allowed. The default value is false.'
               nullable: true
             restorePointSetting:
               $ref: '#/components/schemas/microsoft.graph.cloudPcRestorePointSetting'
@@ -22562,6 +22846,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcUserSettingAssignment'
+              description: 'Represents the set of Microsoft 365 groups and security groups in Microsoft Entra ID that have cloudPCUserSetting assigned. Returned only on $expand. For an example, see Get cloudPcUserSetting.'
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -23372,21 +23657,27 @@ components:
               $ref: '#/components/schemas/microsoft.graph.importance'
             isAllDay:
               type: boolean
+              description: 'Set to true if the event lasts all day. If true, regardless of whether it''s a single-day or multi-day event, start and end time must be set to midnight and be in the same time zone.'
               nullable: true
             isCancelled:
               type: boolean
+              description: Set to true if the event has been canceled.
               nullable: true
             isDraft:
               type: boolean
+              description: 'Set to true if the user has updated the meeting in Outlook but has not sent the updates to attendees. Set to false if all changes have been sent, or if the event is an appointment without any attendees.'
               nullable: true
             isOnlineMeeting:
               type: boolean
+              description: 'True if this event has online meeting information (that is, onlineMeeting points to an onlineMeetingInfo resource), false otherwise. Default is false (onlineMeeting is null). Optional.  After you set isOnlineMeeting to true, Microsoft Graph initializes onlineMeeting. Subsequently Outlook ignores any further changes to isOnlineMeeting, and the meeting remains available online.'
               nullable: true
             isOrganizer:
               type: boolean
+              description: Set to true if the calendar owner (specified by the owner property of the calendar) is the organizer of the event (specified by the organizer property of the event). This also applies if a delegate organized the event on behalf of the owner.
               nullable: true
             isReminderOn:
               type: boolean
+              description: Set to true if an alert is set to remind the user of the event.
               nullable: true
             location:
               $ref: '#/components/schemas/microsoft.graph.location'
@@ -23394,25 +23685,30 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.location'
+              description: 'The locations where the event is held or attended from. The location and locations properties always correspond with each other. If you update the location property, any prior locations in the locations collection would be removed and replaced by the new location value.'
             onlineMeeting:
               $ref: '#/components/schemas/microsoft.graph.onlineMeetingInfo'
             onlineMeetingProvider:
               $ref: '#/components/schemas/microsoft.graph.onlineMeetingProviderType'
             onlineMeetingUrl:
               type: string
+              description: 'A URL for an online meeting. The property is set only when an organizer specifies in Outlook that an event is an online meeting such as Skype. Read-only.To access the URL to join an online meeting, use joinUrl which is exposed via the onlineMeeting property of the event. The onlineMeetingUrl property will be deprecated in the future.'
               nullable: true
             organizer:
               $ref: '#/components/schemas/microsoft.graph.recipient'
             originalEndTimeZone:
               type: string
+              description: The end time zone that was set when the event was created. A value of tzone://Microsoft/Custom indicates that a legacy custom time zone was set in desktop Outlook.
               nullable: true
             originalStart:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Represents the start time of an event when it is initially created as an occurrence or exception in a recurring series. This property is not returned for events that are single instances. Its date and time information is expressed in ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
             originalStartTimeZone:
               type: string
+              description: The start time zone that was set when the event was created. A value of tzone://Microsoft/Custom indicates that a legacy custom time zone was set in desktop Outlook.
               nullable: true
             recurrence:
               $ref: '#/components/schemas/microsoft.graph.patternedRecurrence'
@@ -23420,10 +23716,12 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: The number of minutes before the event start time that the reminder alert occurs.
               format: int32
               nullable: true
             responseRequested:
               type: boolean
+              description: 'Default is true, which represents the organizer would like an invitee to send a response to the event.'
               nullable: true
             responseStatus:
               $ref: '#/components/schemas/microsoft.graph.responseStatus'
@@ -23431,6 +23729,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.sensitivity'
             seriesMasterId:
               type: string
+              description: 'The ID for the recurring series master item, if this event is part of a recurring series.'
               nullable: true
             showAs:
               $ref: '#/components/schemas/microsoft.graph.freeBusyStatus'
@@ -23438,14 +23737,17 @@ components:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
             subject:
               type: string
+              description: The text of the event's subject line.
               nullable: true
             transactionId:
               type: string
+              description: 'A custom identifier specified by a client app for the server to avoid redundant POST operations in case of client retries to create the same event. This is useful when low network connectivity causes the client to time out before receiving a response from the server for the client''s prior create-event request. After you set transactionId when creating an event, you cannot change transactionId in a subsequent update. This property is only returned in a response payload if an app has set it. Optional.'
               nullable: true
             type:
               $ref: '#/components/schemas/microsoft.graph.eventType'
             webLink:
               type: string
+              description: 'The URL to open the event in Outlook on the web.Outlook on the web opens the event in the browser if you are signed in to your mailbox. Otherwise, Outlook on the web prompts you to sign in.This URL cannot be accessed from within an iFrame.'
               nullable: true
             attachments:
               type: array
@@ -23498,7 +23800,7 @@ components:
             lastUpdatedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Date and time at which the chat was renamed or list of members were last changed. Read-only.
+              description: Date and time at which the chat was renamed or the list of members was last changed. Read-only.
               format: date-time
               nullable: true
             onlineMeetingInfo:
@@ -23567,6 +23869,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudClipboardItem'
+              description: Represents a collection of Cloud Clipboard items.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -23686,55 +23989,72 @@ components:
               items:
                 type: string
                 nullable: true
+              description: The contact's instant messaging (IM) addresses.
             initials:
               type: string
+              description: The contact's initials.
               nullable: true
             jobTitle:
               type: string
+              description: The contact’s job title.
               nullable: true
             manager:
               type: string
+              description: The name of the contact's manager.
               nullable: true
             middleName:
               type: string
+              description: The contact's middle name.
               nullable: true
             mobilePhone:
               type: string
+              description: The contact's mobile phone number.
               nullable: true
             nickName:
               type: string
+              description: The contact's nickname.
               nullable: true
             officeLocation:
               type: string
+              description: The location of the contact's office.
               nullable: true
             otherAddress:
               $ref: '#/components/schemas/microsoft.graph.physicalAddress'
             parentFolderId:
               type: string
+              description: The ID of the contact's parent folder.
               nullable: true
             personalNotes:
               type: string
+              description: The user's notes about the contact.
               nullable: true
             profession:
               type: string
+              description: The contact's profession.
               nullable: true
             spouseName:
               type: string
+              description: The name of the contact's spouse/partner.
               nullable: true
             surname:
               type: string
+              description: The contact's surname.
               nullable: true
             title:
               type: string
+              description: The contact's title.
               nullable: true
             yomiCompanyName:
               type: string
+              description: The phonetic Japanese company name of the contact.
               nullable: true
             yomiGivenName:
               type: string
+              description: The phonetic Japanese given name (first name) of the contact.
               nullable: true
             yomiSurname:
               type: string
+              description: The phonetic Japanese surname (last name)  of the contact.
               nullable: true
             extensions:
               type: array
@@ -24293,51 +24613,64 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.internetMessageHeader'
+              description: A collection of message headers defined by RFC5322. The set includes message headers indicating the network path taken by a message from the sender to the recipient. It can also contain custom message headers that hold app data for the message.  Returned only on applying a $select query option. Read-only.
             internetMessageId:
               type: string
+              description: The message ID in the format specified by RFC2822.
               nullable: true
             isDeliveryReceiptRequested:
               type: boolean
+              description: Indicates whether a read receipt is requested for the message.
               nullable: true
             isDraft:
               type: boolean
+              description: Indicates whether the message is a draft. A message is a draft if it hasn't been sent yet.
               nullable: true
             isRead:
               type: boolean
+              description: Indicates whether the message has been read.
               nullable: true
             isReadReceiptRequested:
               type: boolean
+              description: Indicates whether a read receipt is requested for the message.
               nullable: true
             parentFolderId:
               type: string
+              description: The unique identifier for the message's parent mailFolder.
               nullable: true
             receivedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time the message was received.  The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             replyTo:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.recipient'
+              description: The email addresses to use when replying.
             sender:
               $ref: '#/components/schemas/microsoft.graph.recipient'
             sentDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time the message was sent.  The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             subject:
               type: string
+              description: The subject of the message.
               nullable: true
             toRecipients:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.recipient'
+              description: 'The To: recipients for the message.'
             uniqueBody:
               $ref: '#/components/schemas/microsoft.graph.itemBody'
             webLink:
               type: string
+              description: 'The URL to open the message in Outlook on the web.You can append an ispopout argument to the end of the URL to change how the message is displayed. If ispopout is not present or if it is set to 1, then the message is shown in a popout window. If ispopout is set to 0, the browser shows the message in the Outlook on the web review pane.The message opens in the browser if you are signed in to your mailbox via Outlook on the web. You are prompted to sign in if you are not already signed in with the browser.This URL cannot be accessed from within an iFrame.'
               nullable: true
             attachments:
               type: array
@@ -24874,19 +25207,19 @@ components:
         - json
         - unknownFutureValue
       type: string
-      description: Possible values for the file format of a report
+      description: Possible values for the file format of a report.
       x-ms-enum:
         name: deviceManagementReportFileFormat
         modelAsString: false
         values:
           - value: csv
-            description: CSV Format
+            description: CSV Format.
             name: csv
           - value: pdf
-            description: PDF Format
+            description: PDF Format (Deprecate later).
             name: pdf
           - value: json
-            description: JSON Format
+            description: JSON Format.
             name: json
           - value: unknownFutureValue
             description: Evolvable enumeration sentinel value. Do not use.
@@ -24897,16 +25230,16 @@ components:
         - localizedValuesAsAdditionalColumn
         - replaceLocalizableValues
       type: string
-      description: Configures how the requested export job is localized
+      description: Configures how the requested export job is localized.
       x-ms-enum:
         name: deviceManagementExportJobLocalizationType
         modelAsString: false
         values:
           - value: localizedValuesAsAdditionalColumn
-            description: Configures the export job to expose localized values as an additional column
+            description: Configures the export job to expose localized values as an additional column.
             name: localizedValuesAsAdditionalColumn
           - value: replaceLocalizableValues
-            description: Configures the export job to replace enumerable values with their localized values
+            description: Configures the export job to replace enumerable values with their localized values.
             name: replaceLocalizableValues
     microsoft.graph.deviceManagementReportStatus:
       title: deviceManagementReportStatus
@@ -24917,25 +25250,25 @@ components:
         - completed
         - failed
       type: string
-      description: Possible statuses associated with a generated report
+      description: Possible statuses associated with a generated report.
       x-ms-enum:
         name: deviceManagementReportStatus
         modelAsString: false
         values:
           - value: unknown
-            description: Report generation status is unknown
+            description: Report generation status is unknown.
             name: unknown
           - value: notStarted
-            description: Report generation has not started
+            description: Report generation has not started.
             name: notStarted
           - value: inProgress
-            description: Report generation is in progress
+            description: Report generation is in progress.
             name: inProgress
           - value: completed
-            description: Report generation is completed
+            description: Report generation is completed.
             name: completed
           - value: failed
-            description: Report generation has failed
+            description: Report generation has failed.
             name: failed
     microsoft.graph.resourceAction:
       title: resourceAction
@@ -24979,36 +25312,46 @@ components:
       properties:
         applicationDisplayName:
           type: string
+          description: Name of the application.
           nullable: true
         applicationId:
           type: string
+          description: Microsoft Entra application ID.
           nullable: true
         ipAddress:
           type: string
+          description: IP address.
           nullable: true
         remoteTenantId:
           type: string
+          description: The delegated partner tenant ID.
           nullable: true
         remoteUserId:
           type: string
+          description: The delegated partner user ID.
           nullable: true
         servicePrincipalName:
           type: string
+          description: Service Principal Name (SPN).
           nullable: true
         userId:
           type: string
+          description: Microsoft Entra user ID.
           nullable: true
         userPermissions:
           type: array
           items:
             type: string
+          description: List of user permissions and application permissions when the audit event was performed.
         userPrincipalName:
           type: string
+          description: User Principal Name (UPN).
           nullable: true
         userRoleScopeTags:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.cloudPcUserRoleScopeTagInfo'
+          description: List of role scope tags.
       additionalProperties:
         type: object
     microsoft.graph.cloudPcAuditCategory:
@@ -25023,13 +25366,100 @@ components:
       properties:
         displayName:
           type: string
+          description: The display name of the modified resource entity.
           nullable: true
         modifiedProperties:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.cloudPcAuditProperty'
+          description: The list of modified properties.
         resourceId:
           type: string
+          description: The unique identifier of the modified resource entity.
+      additionalProperties:
+        type: object
+    microsoft.graph.cloudPcProvisioningType:
+      title: cloudPcProvisioningType
+      enum:
+        - dedicated
+        - shared
+        - unknownFutureValue
+      type: string
+    microsoft.graph.cloudPcDeviceImageErrorCode:
+      title: cloudPcDeviceImageErrorCode
+      enum:
+        - internalServerError
+        - sourceImageNotFound
+        - osVersionNotSupported
+        - sourceImageInvalid
+        - sourceImageNotGeneralized
+        - unknownFutureValue
+        - vmAlreadyAzureAdjoined
+        - paidSourceImageNotSupport
+        - sourceImageNotSupportCustomizeVMName
+        - sourceImageSizeExceedsLimitation
+      type: string
+    microsoft.graph.cloudPcDeviceImageOsStatus:
+      title: cloudPcDeviceImageOsStatus
+      enum:
+        - supported
+        - supportedWithWarning
+        - unknown
+        - unknownFutureValue
+      type: string
+    microsoft.graph.cloudPcDeviceImageStatus:
+      title: cloudPcDeviceImageStatus
+      enum:
+        - pending
+        - ready
+        - failed
+        - unknownFutureValue
+      type: string
+    microsoft.graph.cloudPcGalleryImageStatus:
+      title: cloudPcGalleryImageStatus
+      enum:
+        - supported
+        - supportedWithWarning
+        - notSupported
+        - unknownFutureValue
+      type: string
+    microsoft.graph.cloudPcOnPremisesConnectionType:
+      title: cloudPcOnPremisesConnectionType
+      enum:
+        - hybridAzureADJoin
+        - azureADJoin
+        - unknownFutureValue
+      type: string
+    microsoft.graph.cloudPcOnPremisesConnectionStatus:
+      title: cloudPcOnPremisesConnectionStatus
+      enum:
+        - pending
+        - running
+        - passed
+        - failed
+        - warning
+        - informational
+        - unknownFutureValue
+      type: string
+    microsoft.graph.cloudPcOnPremisesConnectionStatusDetail:
+      title: cloudPcOnPremisesConnectionStatusDetail
+      type: object
+      properties:
+        endDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The end time of the connection health check. The Timestamp  is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z. Read-Only.'
+          format: date-time
+        healthChecks:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.cloudPcOnPremisesConnectionHealthCheck'
+          description: A list of all checks that have been run on the connection. Read-Only.
+        startDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The start time of the health check. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appear as 2014-01-01T00:00:00Z. Read-Only.'
+          format: date-time
       additionalProperties:
         type: object
     microsoft.graph.cloudPcDomainJoinConfiguration:
@@ -25040,11 +25470,13 @@ components:
           $ref: '#/components/schemas/microsoft.graph.cloudPcDomainJoinType'
         onPremisesConnectionId:
           type: string
+          description: 'The Azure network connection ID that matches the virtual network IT admins want the provisioning policy to use when they create Cloud PCs. You can use this property in both domain join types: Azure AD joined or Hybrid Microsoft Entra joined. If you enter an onPremisesConnectionId, leave the regionName property empty.'
           nullable: true
         regionGroup:
           $ref: '#/components/schemas/microsoft.graph.cloudPcRegionGroup'
         regionName:
           type: string
+          description: 'The supported Azure region where the IT admin wants the provisioning policy to create Cloud PCs. Within this region, the Windows 365 service creates and manages the underlying virtual network. This option is available only when the IT admin selects Microsoft Entra joined as the domain join type. If you enter a regionName, leave the onPremisesConnectionId property empty.'
           nullable: true
       additionalProperties:
         type: object
@@ -25063,22 +25495,17 @@ components:
           $ref: '#/components/schemas/microsoft.graph.microsoftManagedDesktopType'
         profile:
           type: string
+          description: The name of the Microsoft Managed Desktop profile that the Windows 365 Cloud PC is associated with.
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.cloudPcProvisioningType:
-      title: cloudPcProvisioningType
-      enum:
-        - dedicated
-        - shared
-        - unknownFutureValue
-      type: string
     microsoft.graph.cloudPcWindowsSetting:
       title: cloudPcWindowsSetting
       type: object
       properties:
         locale:
           type: string
+          description: 'The Windows language or region tag to use for language pack configuration and localization of the Cloud PC. The default value is en-US, which corresponds to English (United States).'
           nullable: true
       additionalProperties:
         type: object
@@ -25094,6 +25521,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.user'
+              description: 'The assignment targeted users for the provisioning policy. This list of users is computed based on assignments, licenses, group memberships, and policies. Read-only. Supports$expand.'
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -25105,6 +25533,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.cloudPcRestorePointFrequencyType'
         userRestoreEnabled:
           type: boolean
+          description: 'If true, the user has the ability to use snapshots to restore Cloud PCs. If false, non-admin users can''t use snapshots to restore the Cloud PC.'
           nullable: true
       additionalProperties:
         type: object
@@ -25117,6 +25546,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time when this assignment was created. The timestamp type represents the date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             target:
@@ -26112,20 +26542,24 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Set by the server. DateTime in UTC when the object was created on the server.
               format: date-time
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Set by the server. DateTime in UTC when the object expires and after that the object is no longer available. The default and also maximum TTL is 12 hours after the creation, but it might change for performance optimization.'
               format: date-time
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Set by the server if not provided in the client's request. DateTime in UTC when the object was modified by the client.
               format: date-time
               nullable: true
             payloads:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudClipboardItemPayload'
+              description: A cloudClipboardItem can have multiple cloudClipboardItemPayload objects in the payloads. A window can place more than one clipboard object on the clipboard. Each one represents the same information in a different clipboard format.
           additionalProperties:
             type: object
     microsoft.graph.physicalAddress:
@@ -26632,7 +27066,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: List of canonical URLs for hub sites with which this content type is associated to. This will contain all hub sites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type will be applied to the lists in the enforced sites.
+              description: List of canonical URLs for hub sites with which this content type is associated to. This will contain all hub sites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type is applied to the lists in the enforced sites.
             description:
               type: string
               description: The descriptive text for the item.
@@ -26667,7 +27101,7 @@ components:
               nullable: true
             propagateChanges:
               type: boolean
-              description: 'If true, any changes made to the content type will be pushed to inherited content types and lists that implement the content type.'
+              description: 'If true, any changes made to the content type are pushed to inherited content types and lists that implement the content type.'
               nullable: true
             readOnly:
               type: boolean
@@ -26701,7 +27135,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.columnDefinition'
-              description: The collection of column definitions for this contentType.
+              description: The collection of column definitions for this content type.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -28399,16 +28833,19 @@ components:
           properties:
             payloadType:
               type: string
+              description: The type of setting payloads contained in the instances navigation property.
               nullable: true
             settingType:
               $ref: '#/components/schemas/microsoft.graph.windowsSettingType'
             windowsDeviceId:
               type: string
+              description: A unique identifier for the device the setting might belong to if it is of the settingType backup.
               nullable: true
             instances:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.windowsSettingInstance'
+              description: A collection of setting values for a given windowsSetting.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -28493,8 +28930,10 @@ components:
       properties:
         displayName:
           type: string
+          description: Scope tag display name.
         roleScopeTagId:
           type: string
+          description: Scope tag identity.
       additionalProperties:
         type: object
     microsoft.graph.cloudPcAuditProperty:
@@ -28503,11 +28942,50 @@ components:
       properties:
         displayName:
           type: string
+          description: The display name for this property.
         newValue:
           type: string
+          description: The new value for this property.
         oldValue:
           type: string
+          description: The old value for this property.
           nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.cloudPcOnPremisesConnectionHealthCheck:
+      title: cloudPcOnPremisesConnectionHealthCheck
+      type: object
+      properties:
+        additionalDetail:
+          type: string
+          description: 'Additional details about the health check or the recommended action. For exmaple, the string value can be download.microsoft.com:443;software-download.microsoft.com:443; Read-only.'
+          nullable: true
+        correlationId:
+          type: string
+          description: The unique identifier of the health check item-related activities. This identifier can be useful in troubleshooting.
+          nullable: true
+        displayName:
+          type: string
+          description: The display name for this health check item.
+          nullable: true
+        endDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The value cannot be modified and is automatically populated when the health check ends. The Timestamp type represents date and time information using ISO 8601 format and is in Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2024 would look like this: ''2024-01-01T00:00:00Z''. Returned by default. Read-only.'
+          format: date-time
+        errorType:
+          $ref: '#/components/schemas/microsoft.graph.cloudPcOnPremisesConnectionHealthCheckErrorType'
+        recommendedAction:
+          type: string
+          description: 'The recommended action to fix the corresponding error. For example, The Active Directory domain join check failed because the password of the domain join user has expired. Read-Only.'
+          nullable: true
+        startDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The value cannot be modified and is automatically populated when the health check starts. The Timestamp type represents date and time information using ISO 8601 format and is in  Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2024 would look like this: ''2024-01-01T00:00:00Z''. Returned by default. Read-only.'
+          format: date-time
+        status:
+          $ref: '#/components/schemas/microsoft.graph.cloudPcOnPremisesConnectionStatus'
       additionalProperties:
         type: object
     microsoft.graph.cloudPcDomainJoinType:
@@ -28817,6 +29295,7 @@ components:
               nullable: true
             onPremisesSecurityIdentifier:
               type: string
+              description: The on-premises security identifier (SID) for the user who was synchronized from on-premises to the cloud. Read-only. Returned only on $select. Supports $filter (eq).
               nullable: true
             onPremisesSyncEnabled:
               type: boolean
@@ -29354,8 +29833,10 @@ components:
       properties:
         content:
           type: string
+          description: The formatName version of the value of a cloud clipboard encoded in base64.
         formatName:
           type: string
+          description: For a list of possible values see formatName values.
       additionalProperties:
         type: object
     microsoft.graph.itemReference:
@@ -29946,14 +30427,14 @@ components:
               nullable: true
             changeType:
               type: string
-              description: 'Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType. Use updated to receive notifications when user or group is created, updated or soft deleted.  Use deleted to receive notifications when user or group is permanently deleted.'
+              description: 'Required. Indicates the type of change in the subscribed resource that raises a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType. Use updated to receive notifications when user or group is created, updated, or soft deleted. Use deleted to receive notifications when user or group is permanently deleted.'
             clientState:
               type: string
               description: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
               nullable: true
             creatorId:
               type: string
-              description: 'Optional. Identifier of the user or service principal that created the subscription. If the app used delegated permissions to create the subscription, this field contains the id of the signed-in user the app called on behalf of. If the app used application permissions, this field contains the id of the service principal corresponding to the app. Read-only.'
+              description: 'Optional. Identifier of the user or service principal that created the subscription. If the app used delegated permissions to create the subscription, this field contains the ID of the signed-in user the app called on behalf of. If the app used application permissions, this field contains the ID of the service principal corresponding to the app. Read-only.'
               nullable: true
             encryptionCertificate:
               type: string
@@ -29966,7 +30447,7 @@ components:
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Required. Specifies the date and time when the webhook subscription expires. The time is in UTC, and can be an amount of time from subscription creation that varies for the resource subscribed to. For the maximum supported subscription length of time, see the table below.'
+              description: 'Required. Specifies the date and time when the webhook subscription expires. The time is in UTC, and can be an amount of time from subscription creation that varies for the resource subscribed to. For the maximum supported subscription length of time, see Subscription lifetime.'
               format: date-time
             includeResourceData:
               type: boolean
@@ -29982,18 +30463,18 @@ components:
               nullable: true
             notificationQueryOptions:
               type: string
-              description: 'Optional. OData query options for specifying value for the targeting resource. Clients receive notifications when resource reaches the state matching the query options provided here. With this new property in the subscription creation payload along with all existing properties, Webhooks will deliver notifications whenever a resource reaches the desired state mentioned in the notificationQueryOptions property. For example, when the print job is completed or when a print job resource isFetchable property value becomes true etc.  Supported only for Universal Print Service. For more information, see Subscribe to change notifications from cloud printing APIs using Microsoft Graph.'
+              description: 'Optional. OData query options for specifying value for the targeting resource. Clients receive notifications when resource reaches the state matching the query options provided here. With this new property in the subscription creation payload along with all existing properties, Webhooks deliver notifications whenever a resource reaches the desired state mentioned in the notificationQueryOptions property. For example, when the print job is completed or when a print job resource isFetchable property value becomes true etc.  Supported only for Universal Print Service. For more information, see Subscribe to change notifications from cloud printing APIs using Microsoft Graph.'
               nullable: true
             notificationUrl:
               type: string
-              description: Required. The URL of the endpoint that will receive the change notifications. This URL must make use of the HTTPS protocol. Any query string parameter included in the notificationUrl property will be included in the HTTP POST request when Microsoft Graph sends the change notifications.
+              description: Required. The URL of the endpoint that receives the change notifications. This URL must make use of the HTTPS protocol. Any query string parameter included in the notificationUrl property is included in the HTTP POST request when Microsoft Graph sends the change notifications.
             notificationUrlAppId:
               type: string
-              description: Optional. The app ID that the subscription service can use to generate the validation token. This allows the client to validate the authenticity of the notification received.
+              description: Optional. The app ID that the subscription service can use to generate the validation token. The value allows the client to validate the authenticity of the notification received.
               nullable: true
             resource:
               type: string
-              description: Required. Specifies the resource that will be monitored for changes. Do not include the base URL (https://graph.microsoft.com/v1.0/). See the possible resource path values for each supported resource.
+              description: Required. Specifies the resource that is monitored for changes. Don't include the base URL (https://graph.microsoft.com/v1.0/). See the possible resource path values for each supported resource.
           additionalProperties:
             type: object
     microsoft.graph.thumbnailSet:
@@ -32007,18 +32488,22 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Set by the server. Represents the dateTime in UTC when the object was created on the server.
               format: date-time
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Set by the server. The object expires at the specified dateTime in UTC, making it unavailable after that time.'
               format: date-time
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Set by the server if not provided in the request from the Windows client device. Refers to the user's Windows device that modified the object at the specified dateTime in UTC.
               format: date-time
               nullable: true
             payload:
               type: string
+              description: Base64-encoded JSON setting value.
           additionalProperties:
             type: object
     microsoft.graph.teamInfo:
@@ -32132,6 +32617,78 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.cloudPcOnPremisesConnectionHealthCheckErrorType:
+      title: cloudPcOnPremisesConnectionHealthCheckErrorType
+      enum:
+        - dnsCheckFqdnNotFound
+        - dnsCheckNameWithInvalidCharacter
+        - dnsCheckUnknownError
+        - adJoinCheckFqdnNotFound
+        - adJoinCheckIncorrectCredentials
+        - adJoinCheckOrganizationalUnitNotFound
+        - adJoinCheckOrganizationalUnitIncorrectFormat
+        - adJoinCheckComputerObjectAlreadyExists
+        - adJoinCheckAccessDenied
+        - adJoinCheckCredentialsExpired
+        - adJoinCheckAccountLockedOrDisabled
+        - adJoinCheckAccountQuotaExceeded
+        - adJoinCheckServerNotOperational
+        - adJoinCheckUnknownError
+        - endpointConnectivityCheckCloudPcUrlNotAllowListed
+        - endpointConnectivityCheckWVDUrlNotAllowListed
+        - endpointConnectivityCheckIntuneUrlNotAllowListed
+        - endpointConnectivityCheckAzureADUrlNotAllowListed
+        - endpointConnectivityCheckLocaleUrlNotAllowListed
+        - endpointConnectivityCheckUnknownError
+        - azureAdDeviceSyncCheckDeviceNotFound
+        - azureAdDeviceSyncCheckLongSyncCircle
+        - azureAdDeviceSyncCheckConnectDisabled
+        - azureAdDeviceSyncCheckDurationExceeded
+        - azureAdDeviceSyncCheckScpNotConfigured
+        - azureAdDeviceSyncCheckTransientServiceError
+        - azureAdDeviceSyncCheckUnknownError
+        - resourceAvailabilityCheckNoSubnetIP
+        - resourceAvailabilityCheckSubscriptionDisabled
+        - resourceAvailabilityCheckAzurePolicyViolation
+        - resourceAvailabilityCheckSubscriptionNotFound
+        - resourceAvailabilityCheckSubscriptionTransferred
+        - resourceAvailabilityCheckGeneralSubscriptionError
+        - resourceAvailabilityCheckUnsupportedVNetRegion
+        - resourceAvailabilityCheckResourceGroupInvalid
+        - resourceAvailabilityCheckVNetInvalid
+        - resourceAvailabilityCheckSubnetInvalid
+        - resourceAvailabilityCheckResourceGroupBeingDeleted
+        - resourceAvailabilityCheckVNetBeingMoved
+        - resourceAvailabilityCheckSubnetDelegationFailed
+        - resourceAvailabilityCheckSubnetWithExternalResources
+        - resourceAvailabilityCheckResourceGroupLockedForReadonly
+        - resourceAvailabilityCheckResourceGroupLockedForDelete
+        - resourceAvailabilityCheckNoIntuneReaderRoleError
+        - resourceAvailabilityCheckIntuneDefaultWindowsRestrictionViolation
+        - resourceAvailabilityCheckIntuneCustomWindowsRestrictionViolation
+        - resourceAvailabilityCheckDeploymentQuotaLimitReached
+        - resourceAvailabilityCheckTransientServiceError
+        - resourceAvailabilityCheckUnknownError
+        - permissionCheckNoSubscriptionReaderRole
+        - permissionCheckNoResourceGroupOwnerRole
+        - permissionCheckNoVNetContributorRole
+        - permissionCheckNoResourceGroupNetworkContributorRole
+        - permissionCheckNoWindows365NetworkUserRole
+        - permissionCheckNoWindows365NetworkInterfaceContributorRole
+        - permissionCheckTransientServiceError
+        - permissionCheckUnknownError
+        - udpConnectivityCheckStunUrlNotAllowListed
+        - udpConnectivityCheckTurnUrlNotAllowListed
+        - udpConnectivityCheckUrlsNotAllowListed
+        - udpConnectivityCheckUnknownError
+        - internalServerErrorDeploymentCanceled
+        - internalServerErrorAllocateResourceFailed
+        - internalServerErrorVMDeploymentTimeout
+        - internalServerErrorUnableToRunDscScript
+        - ssoCheckKerberosConfigurationError
+        - internalServerUnknownError
+        - unknownFutureValue
+      type: string
     microsoft.graph.printerCapabilities:
       title: printerCapabilities
       type: object
@@ -32829,7 +33386,7 @@ components:
               description: Items within the document set that are captured as part of this version.
             shouldCaptureMinorVersion:
               type: boolean
-              description: 'If true, minor versions of items are also captured; otherwise, only major versions will be captured. Default value is false.'
+              description: 'If true, minor versions of items are also captured; otherwise, only major versions are captured. The default value is false.'
               nullable: true
           additionalProperties:
             type: object
@@ -33831,11 +34388,11 @@ components:
               format: date-time
             displayName:
               type: string
-              description: Field indicating the title of checklistItem.
+              description: Indicates the title of the checklistItem.
               nullable: true
             isChecked:
               type: boolean
-              description: State indicating whether the item is checked off or not.
+              description: State that indicates whether the item is checked off or not.
               nullable: true
           additionalProperties:
             type: object

@@ -3298,6 +3298,249 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/admin/windows/updates/products/{product-id}/microsoft.graph.windowsUpdates.getKnownIssuesByTimeRange(daysInPast={daysInPast},includeAllActive=@includeAllActive)':
+    get:
+      tags:
+        - admin.Functions
+      summary: Invoke function getKnownIssuesByTimeRange
+      operationId: admin.window.update.product_getKnownIssuesGraphBPreTimeRange
+      parameters:
+        - name: product-id
+          in: path
+          description: The unique identifier of product
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: product
+        - name: daysInPast
+          in: path
+          description: 'Usage: daysInPast={daysInPast}'
+          required: true
+          style: simple
+          schema:
+            maximum: 2147483647
+            minimum: -2147483648
+            type: integer
+            format: int32
+        - name: includeAllActive
+          in: query
+          description: 'Usage: includeAllActive=@includeAllActive'
+          style: form
+          explode: false
+          schema:
+            type: boolean
+            default: false
+            nullable: true
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of knownIssue
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.windowsUpdates.knownIssue'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/admin/windows/updates/products/microsoft.graph.windowsUpdates.findByCatalogId(catalogID=''{catalogID}'')':
+    get:
+      tags:
+        - admin.Functions
+      summary: Invoke function findByCatalogId
+      operationId: admin.window.update.product_findGraphBPreCatalogId
+      parameters:
+        - name: catalogID
+          in: path
+          description: 'Usage: catalogID=''{catalogID}'''
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of product
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.windowsUpdates.product'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/admin/windows/updates/products/microsoft.graph.windowsUpdates.findByKbNumber(kbNumber={kbNumber})':
+    get:
+      tags:
+        - admin.Functions
+      summary: Invoke function findByKbNumber
+      operationId: admin.window.update.product_findGraphBPreKbNumber
+      parameters:
+        - name: kbNumber
+          in: path
+          description: 'Usage: kbNumber={kbNumber}'
+          required: true
+          style: simple
+          schema:
+            maximum: 2147483647
+            minimum: -2147483648
+            type: integer
+            format: int32
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of product
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.windowsUpdates.product'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/admin/windows/updates/updatableAssets/{updatableAsset-id}/microsoft.graph.windowsUpdates.addMembers':
     post:
       tags:
@@ -4720,6 +4963,95 @@ components:
         - unknownFutureValue
         - driver
       type: string
+    microsoft.graph.windowsUpdates.knownIssue:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: knownIssue
+          type: object
+          properties:
+            description:
+              type: string
+              description: The description of the particular known issue.
+            knownIssueHistories:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.knownIssueHistoryItem'
+            lastUpdatedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when the known issue was last updated. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+              format: date-time
+            resolvedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when the known issue was resolved or mitigated. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+              nullable: true
+            safeguardHoldIds:
+              type: array
+              items:
+                maximum: 2147483647
+                minimum: -2147483648
+                type: integer
+                format: int32
+            startDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when the known issue was first reported. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+            status:
+              $ref: '#/components/schemas/microsoft.graph.windowsUpdates.windowsReleaseHealthStatus'
+            title:
+              type: string
+              description: The title of the known issue.
+            webViewUrl:
+              type: string
+              description: The URL to the known issue in the Windows Release Health dashboard on Microsoft 365 admin center.
+            originatingKnowledgeBaseArticle:
+              $ref: '#/components/schemas/microsoft.graph.windowsUpdates.knowledgeBaseArticle'
+            resolvingKnowledgeBaseArticle:
+              $ref: '#/components/schemas/microsoft.graph.windowsUpdates.knowledgeBaseArticle'
+          additionalProperties:
+            type: object
+    microsoft.graph.windowsUpdates.product:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: product
+          type: object
+          properties:
+            friendlyNames:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: 'The friendly names of the product. For example, Version 22H2 (OS build 22621). Read-only.'
+            groupName:
+              type: string
+              description: 'The name of the product group. For example, Windows 11. Read-only.'
+              nullable: true
+            name:
+              type: string
+              description: 'The name of the product. For example, Windows 11, version 22H2. Read-only.'
+            editions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.edition'
+              description: Represents an edition of a particular Windows product.
+              x-ms-navigationProperty: true
+            knownIssues:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.knownIssue'
+              description: Represents a known issue related to a Windows product.
+              x-ms-navigationProperty: true
+            revisions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.productRevision'
+              description: Represents a product revision.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.entity:
       title: entity
       type: object
@@ -5135,6 +5467,104 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.windowsUpdates.knownIssueHistoryItem:
+      title: knownIssueHistoryItem
+      type: object
+      properties:
+        body:
+          $ref: '#/components/schemas/microsoft.graph.windowsUpdates.itemBody'
+        createdDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The date and time when the post was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+          format: date-time
+      additionalProperties:
+        type: object
+    microsoft.graph.windowsUpdates.windowsReleaseHealthStatus:
+      title: windowsReleaseHealthStatus
+      enum:
+        - resolved
+        - mitigatedExternal
+        - mitigated
+        - resolvedExternal
+        - confirmed
+        - reported
+        - investigating
+        - unknownFutureValue
+      type: string
+    microsoft.graph.windowsUpdates.knowledgeBaseArticle:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: knowledgeBaseArticle
+          type: object
+          properties:
+            url:
+              type: string
+              description: The URL of the knowledge base article. Read-only.
+          additionalProperties:
+            type: object
+    microsoft.graph.windowsUpdates.edition:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: edition
+          type: object
+          properties:
+            deviceFamily:
+              type: string
+              description: The device family targeted by the edition.
+            endOfServiceDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when the edition reached the end of service. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+              format: date-time
+            generalAvailabilityDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when the edition became available to the general customers for the first time. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+              format: date-time
+            isInService:
+              type: boolean
+              description: Indicates whether the edition is in service or out of service.
+            name:
+              type: string
+              description: The name of the edition. Read-only.
+            releasedName:
+              type: string
+              description: The public name of the edition. Read-only.
+            servicingPeriods:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.servicingPeriod'
+          additionalProperties:
+            type: object
+    microsoft.graph.windowsUpdates.productRevision:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: productRevision
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: The display name of the content. Read-only.
+            osBuild:
+              $ref: '#/components/schemas/microsoft.graph.windowsUpdates.buildVersionDetails'
+            product:
+              type: string
+              description: 'The product of the revision. Possible values are: Windows 10, Windows 11. Read-only.'
+            releaseDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The release date for the content. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+              format: date-time
+            version:
+              type: string
+              description: The version of the feature update. Read-only.
+            catalogEntry:
+              $ref: '#/components/schemas/microsoft.graph.windowsUpdates.catalogEntry'
+            knowledgeBaseArticle:
+              $ref: '#/components/schemas/microsoft.graph.windowsUpdates.knowledgeBaseArticle'
+          additionalProperties:
+            type: object
     microsoft.graph.ODataErrors.ODataError:
       required:
         - error
@@ -5205,11 +5635,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: 'Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn''t included in the response.'
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -5240,6 +5670,90 @@ components:
         - text
         - html
       type: string
+    microsoft.graph.windowsUpdates.itemBody:
+      title: itemBody
+      type: object
+      properties:
+        content:
+          type: string
+          description: The content of the item.
+          nullable: true
+        contentType:
+          $ref: '#/components/schemas/microsoft.graph.windowsUpdates.bodyType'
+      additionalProperties:
+        type: object
+    microsoft.graph.windowsUpdates.servicingPeriod:
+      title: servicingPeriod
+      type: object
+      properties:
+        endDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The date and time when the servicing period ends. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+          format: date-time
+        name:
+          type: string
+          description: 'The name of the servicing period. For example, Modern Lifecycle.'
+        startDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The start date and time of the servicing period. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+          format: date-time
+      additionalProperties:
+        type: object
+    microsoft.graph.windowsUpdates.buildVersionDetails:
+      title: buildVersionDetails
+      type: object
+      properties:
+        buildNumber:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The build number of the product release. Read-only.
+          format: int32
+        majorVersion:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The major version of the product release. Read-only.
+          format: int32
+        minorVersion:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The minor version of the product release. Read-only.
+          format: int32
+        updateBuildRevision:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The update build revision number of the product revision. Read-only.
+          format: int32
+      additionalProperties:
+        type: object
+    microsoft.graph.windowsUpdates.catalogEntry:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: catalogEntry
+          type: object
+          properties:
+            deployableUntilDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date on which the content is no longer available to deploy using the service. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+              format: date-time
+              nullable: true
+            displayName:
+              type: string
+              description: The display name of the content. Read-only.
+              nullable: true
+            releaseDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The release date for the content. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+              format: date-time
+          additionalProperties:
+            type: object
     microsoft.graph.ODataErrors.MainError:
       required:
         - code
@@ -5262,6 +5776,13 @@ components:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
       additionalProperties:
         type: object
+    microsoft.graph.windowsUpdates.bodyType:
+      title: bodyType
+      enum:
+        - text
+        - html
+        - unknownFutureValue
+      type: string
     microsoft.graph.ODataErrors.ErrorDetails:
       required:
         - code

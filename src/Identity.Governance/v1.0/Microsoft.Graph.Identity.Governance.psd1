@@ -742,6 +742,7 @@ FunctionsToExport = 'Add-MgIdentityGovernanceAccessReviewDefinitionInstanceDecis
                'Remove-MgEntitlementManagementCatalogResourceScopeResourceRoleResourceScope', 
                'Remove-MgEntitlementManagementConnectedOrganization', 
                'Remove-MgEntitlementManagementConnectedOrganizationExternalSponsorByRef', 
+               'Remove-MgEntitlementManagementConnectedOrganizationExternalSponsorDirectoryObjectByRef', 
                'Remove-MgEntitlementManagementConnectedOrganizationInternalSponsorByRef', 
                'Remove-MgEntitlementManagementResource', 
                'Remove-MgEntitlementManagementResourceEnvironment', 

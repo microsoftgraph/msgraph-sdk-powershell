@@ -8,23 +8,23 @@ $params = @{
 	requests = @(
 		@{
 			entityTypes = @(
-				"externalItem"
-			)
-			contentSources = @(
-				"/external/connections/connectionfriendlyname"
-			)
-			region = "US"
-			query = @{
-				queryString = "contoso product"
-			}
-			from = 0
-			size = 25
-			fields = @(
-				"title"
-				"description"
-			)
-		}
+			"externalItem"
+		)
+		contentSources = @(
+		"/external/connections/connectionfriendlyname"
 	)
+	region = "US"
+	query = @{
+		queryString = "contoso product"
+	}
+	from = 0
+	size = 25
+	fields = @(
+	"title"
+"description"
+)
+}
+)
 }
 
 Invoke-MgBetaQuerySearch -BodyParameter $params
