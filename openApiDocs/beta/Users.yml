@@ -2442,6 +2442,51 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/users/{user-id}/invitedBy':
+    get:
+      tags:
+        - users.directoryObject
+      summary: Get invitedBy from users
+      operationId: user_GetInvitedGraphBPre
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/licenseDetails':
     get:
       tags:
@@ -4000,8 +4045,8 @@ paths:
     get:
       tags:
         - users.outlookUser
-      summary: List Outlook categories
-      description: Get all the categories that have been defined for the user.
+      summary: List masterCategories
+      description: Get all the categories that have been defined for a user.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/outlookuser-list-mastercategories?view=graph-rest-1.0
@@ -4133,8 +4178,8 @@ paths:
     patch:
       tags:
         - users.outlookUser
-      summary: Update Outlook category
-      description: "Update the writable property, color, of the specified outlookCategory object. You can't modify the displayName property\nonce you have created the category."
+      summary: Update outlookCategory
+      description: 'Update the writable property, color, of the specified outlookCategory object. You can''t modify the displayName property once you have created the category.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/outlookcategory-update?view=graph-rest-1.0
@@ -9455,6 +9500,457 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/settings/storage':
+    get:
+      tags:
+        - users.userSettings
+      summary: Get storage from users
+      operationId: user.setting_GetStorage
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.userStorage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - users.userSettings
+      summary: Update the navigation property storage in users
+      operationId: user.setting_UpdateStorage
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.userStorage'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.userStorage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.userSettings
+      summary: Delete navigation property storage for users
+      operationId: user.setting_DeleteStorage
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/settings/storage/quota':
+    get:
+      tags:
+        - users.userSettings
+      summary: Get unifiedStorageQuota
+      description: Read the properties and relationships of a unifiedStorageQuota object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/unifiedstoragequota-get?view=graph-rest-1.0
+      operationId: user.setting.storage_GetQuota
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedStorageQuota'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - users.userSettings
+      summary: Update the navigation property quota in users
+      operationId: user.setting.storage_UpdateQuota
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.unifiedStorageQuota'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedStorageQuota'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.userSettings
+      summary: Delete navigation property quota for users
+      operationId: user.setting.storage_DeleteQuota
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/settings/storage/quota/services':
+    get:
+      tags:
+        - users.userSettings
+      summary: List serviceStorageQuotaBreakdown
+      description: Get a list of serviceStorageQuotaBreakdown objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/unifiedstoragequota-list-services?view=graph-rest-1.0
+      operationId: user.setting.storage.quota_ListService
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.serviceStorageQuotaBreakdownCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - users.userSettings
+      summary: Create new navigation property to services for users
+      operationId: user.setting.storage.quota_CreateService
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.serviceStorageQuotaBreakdown'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.serviceStorageQuotaBreakdown'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/settings/storage/quota/services/{serviceStorageQuotaBreakdown-id}':
+    get:
+      tags:
+        - users.userSettings
+      summary: Get services from users
+      description: The breakdown of services contributing to the user's quota usage.
+      operationId: user.setting.storage.quota_GetService
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: serviceStorageQuotaBreakdown-id
+          in: path
+          description: The unique identifier of serviceStorageQuotaBreakdown
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: serviceStorageQuotaBreakdown
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.serviceStorageQuotaBreakdown'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - users.userSettings
+      summary: Update the navigation property services in users
+      operationId: user.setting.storage.quota_UpdateService
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: serviceStorageQuotaBreakdown-id
+          in: path
+          description: The unique identifier of serviceStorageQuotaBreakdown
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: serviceStorageQuotaBreakdown
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.serviceStorageQuotaBreakdown'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.serviceStorageQuotaBreakdown'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.userSettings
+      summary: Delete navigation property services for users
+      operationId: user.setting.storage.quota_DeleteService
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: serviceStorageQuotaBreakdown-id
+          in: path
+          description: The unique identifier of serviceStorageQuotaBreakdown
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: serviceStorageQuotaBreakdown
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/settings/storage/quota/services/$count':
+    get:
+      tags:
+        - users.userSettings
+      summary: Get the number of the resource
+      operationId: user.setting.storage.quota.service_GetCount
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/settings/windows':
     get:
       tags:
@@ -14092,7 +14588,7 @@ components:
               nullable: true
             userType:
               type: string
-              description: 'A String value that can be used to classify user types in your directory, such as Member and Guest. Supports $filter (eq, ne, not, in, and eq on null values). NOTE: For more information about the permissions for member and guest users, see What are the default user permissions in Microsoft Entra ID?'
+              description: 'A String value that can be used to classify user types in your directory. The possible values are Member and Guest. Supports $filter (eq, ne, not, in, and eq on null values). NOTE: For more information about the permissions for member and guest users, see What are the default user permissions in Microsoft Entra ID?'
               nullable: true
             activities:
               type: array
@@ -14237,6 +14733,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.informationProtection'
             insights:
               $ref: '#/components/schemas/microsoft.graph.itemInsights'
+            invitedBy:
+              $ref: '#/components/schemas/microsoft.graph.directoryObject'
             joinedGroups:
               type: array
               items:
@@ -14946,31 +15444,24 @@ components:
           properties:
             description:
               type: string
-              description: 'An optional description for the administrative unit. Supports $filter (eq, ne, in, startsWith), $search.'
               nullable: true
             displayName:
               type: string
-              description: 'Display name for the administrative unit. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.'
               nullable: true
             isMemberManagementRestricted:
               type: boolean
-              description: 'true if members of this administrative unit should be treated as sensitive, which requires specific permissions to manage. Default value is false. Use this property to define administrative units whose roles don''t inherit from tenant-level administrators, and management of individual member objects is limited to administrators scoped to a restricted management administrative unit. Immutable, so can''t be changed later.  For more information about working with restricted management administrative units, see Restricted management administrative units in Microsoft Entra ID.'
               nullable: true
             membershipRule:
               type: string
-              description: 'Dynamic membership rule for the administrative unit. For more about the rules that you can use for dynamic administrative units and dynamic groups, see Using attributes to create advanced rules.'
               nullable: true
             membershipRuleProcessingState:
               type: string
-              description: 'Used to control whether the dynamic membership rule is actively processed. Set to On when you want the dynamic membership rule to be active and Paused if you want to stop updating membership dynamically. If not set, the default behavior is Paused.'
               nullable: true
             membershipType:
               type: string
-              description: 'Membership type for the administrative unit. Can be dynamic or assigned. If not set, the default behavior is assigned.'
               nullable: true
             visibility:
               type: string
-              description: 'Controls whether the administrative unit and its members are hidden or public. Can be set to HiddenMembership or Public. If not set, the default behavior is Public. When set to HiddenMembership, only members of the administrative unit can list other members of the administrative unit.'
               nullable: true
             extensions:
               type: array
@@ -16035,7 +16526,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.servicePrincipalLockConfiguration'
             signInAudience:
               type: string
-              description: 'Specifies the Microsoft accounts that are supported for the current application. The possible values are: AzureADMyOrg, AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount (default), and PersonalMicrosoftAccount. See more in the table. The value of this object also limits the number of permissions an app can request. For more information, see Limits on requested permissions per app. The value for this property has implications on other app object properties. As a result, if you change this property, you may need to change other properties first. For more information, see Validation differences for signInAudience.Supports $filter (eq, ne, not).'
+              description: 'Specifies the Microsoft accounts that are supported for the current application. The possible values are: AzureADMyOrg (default), AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount, and PersonalMicrosoftAccount. See more in the table. The value of this object also limits the number of permissions an app can request. For more information, see Limits on requested permissions per app. The value for this property has implications on other app object properties. As a result, if you change this property, you may need to change other properties first. For more information, see Validation differences for signInAudience.Supports $filter (eq, ne, not).'
               nullable: true
             spa:
               $ref: '#/components/schemas/microsoft.graph.spaApplication'
@@ -16150,6 +16641,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.regionalAndLanguageSettings'
             shiftPreferences:
               $ref: '#/components/schemas/microsoft.graph.shiftPreferences'
+            storage:
+              $ref: '#/components/schemas/microsoft.graph.userStorage'
             windows:
               type: array
               items:
@@ -16217,6 +16710,64 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.shiftAvailability'
               description: Availability of the user to be scheduled for work and its recurrence pattern.
+          additionalProperties:
+            type: object
+    microsoft.graph.userStorage:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: userStorage
+          type: object
+          properties:
+            quota:
+              $ref: '#/components/schemas/microsoft.graph.unifiedStorageQuota'
+          additionalProperties:
+            type: object
+    microsoft.graph.unifiedStorageQuota:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: unifiedStorageQuota
+          type: object
+          properties:
+            deleted:
+              type: integer
+              format: int64
+              nullable: true
+            manageWebUrl:
+              type: string
+              description: A URL that can be used in a browser to manage the breakdown. Read-only.
+              nullable: true
+            remaining:
+              type: integer
+              description: Total space remaining before reaching the quota limit in bytes.
+              format: int64
+              nullable: true
+            state:
+              type: string
+              description: 'Indicates the state of the storage space. The possible values are: normal, nearing, critical, full, and overLimit.'
+              nullable: true
+            total:
+              type: integer
+              description: Total allowed storage space in bytes.
+              format: int64
+              nullable: true
+            used:
+              type: integer
+              description: Total space used in bytes.
+              format: int64
+              nullable: true
+            services:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.serviceStorageQuotaBreakdown'
+              description: The breakdown of services contributing to the user's quota usage.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.serviceStorageQuotaBreakdown:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.storageQuotaBreakdown'
+        - title: serviceStorageQuotaBreakdown
+          type: object
           additionalProperties:
             type: object
     microsoft.graph.windowsSetting:
@@ -18093,7 +18644,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.columnDefinition'
-              description: The collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
+              description: The collection of column definitions available in the site that is referenced from the sites in the parent hierarchy of the current site.
               x-ms-navigationProperty: true
             informationProtection:
               $ref: '#/components/schemas/microsoft.graph.informationProtection'
@@ -18101,7 +18652,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.baseItem'
-              description: Used to address any item contained in this site. This collection cannot be enumerated.
+              description: Used to address any item contained in this site. This collection can't be enumerated.
               x-ms-navigationProperty: true
             lists:
               type: array
@@ -18121,7 +18672,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.baseSitePage'
-              description: The collection of pages in the baseSitePages list in this site.
+              description: The collection of pages in the baseSitePages list on this site.
               x-ms-navigationProperty: true
             permissions:
               type: array
@@ -21293,6 +21844,24 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.storageQuotaBreakdown:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: storageQuotaBreakdown
+          type: object
+          properties:
+            displayName:
+              type: string
+              nullable: true
+            manageWebUrl:
+              type: string
+              nullable: true
+            used:
+              type: integer
+              format: int64
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.windowsSettingType:
       title: windowsSettingType
       enum:
@@ -21624,6 +22193,19 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.profilePhoto'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.serviceStorageQuotaBreakdownCollectionResponse:
+      title: Collection of serviceStorageQuotaBreakdown
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.serviceStorageQuotaBreakdown'
         '@odata.nextLink':
           type: string
           nullable: true
@@ -23077,10 +23659,10 @@ components:
       properties:
         name:
           type: string
-          description: 'Name for this key-value pair. For more information about possible names for each resource type that uses this configuration, see keyValuePair names and values.'
+          description: Name for this key-value pair
         value:
           type: string
-          description: 'Value for this key-value pair. For more information about possible values for each resource type that uses this configuration, see keyValuePair names and values.'
+          description: Value for this key-value pair
           nullable: true
       additionalProperties:
         type: object
@@ -23266,6 +23848,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.bundle'
             content:
               type: string
+              format: base64url
+              nullable: true
+            contentStream:
+              type: string
+              description: 'The content stream, if the item represents a file.'
               format: base64url
               nullable: true
             cTag:
@@ -23631,7 +24218,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: List of canonical URLs for hub sites with which this content type is associated to. This contains all hub sites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type will be applied to the lists in the enforced sites.
+              description: List of canonical URLs for hub sites with which this content type is associated to. This contains all hub sites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type is applied to the lists in the enforced sites.
             description:
               type: string
               description: The descriptive text for the item.
@@ -23666,7 +24253,7 @@ components:
               nullable: true
             propagateChanges:
               type: boolean
-              description: 'If true, any changes made to the content type will be pushed to inherited content types and lists that implement the content type.'
+              description: 'If true, any changes made to the content type are pushed to inherited content types and lists that implement the content type.'
               nullable: true
             readOnly:
               type: boolean
@@ -23688,7 +24275,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.columnLink'
-              description: The collection of columns that are required by this content type
+              description: The collection of columns that are required by this content type.
               x-ms-navigationProperty: true
             columnPositions:
               type: array
@@ -23700,7 +24287,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.columnDefinition'
-              description: The collection of column definitions for this contentType.
+              description: The collection of column definitions for this content type.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -24151,13 +24738,14 @@ components:
               nullable: true
             displayName:
               type: string
-              description: Channel name as it will appear to the user in Microsoft Teams. The maximum length is 50 characters.
+              description: Channel name as it appears to the user in Microsoft Teams. The maximum length is 50 characters.
             email:
               type: string
               description: The email address for sending messages to the channel. Read-only.
               nullable: true
             isArchived:
               type: boolean
+              description: Indicates whether the channel is archived. Read-only.
               nullable: true
             isFavoriteByDefault:
               type: boolean
@@ -24175,7 +24763,7 @@ components:
               nullable: true
             webUrl:
               type: string
-              description: 'A hyperlink that will go to the channel in Microsoft Teams. This is the URL that you get when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.'
+              description: 'A hyperlink to the channel in Microsoft Teams. This URL is supplied when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.'
               nullable: true
             filesFolder:
               $ref: '#/components/schemas/microsoft.graph.driveItem'
@@ -27195,7 +27783,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.plannerAssignments'
             bucketId:
               type: string
-              description: Bucket ID to which the task belongs. The bucket needs to be in the plan that the task is in. It is 28 characters long and case-sensitive. Format validation is done on the service.
+              description: Bucket ID to which the task belongs. The bucket needs to be in the plan that the task is in. It's 28 characters long and case-sensitive. Format validation is done on the service.
               nullable: true
             checklistItemCount:
               maximum: 2147483647
@@ -27241,10 +27829,12 @@ components:
               nullable: true
             isOnMyDay:
               type: boolean
+              description: 'A Boolean value that indicates whether to show this task in the MyDay view. true to show the task. Otherwise, false.'
               nullable: true
             isOnMyDayLastModifiedDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
+              description: Read-only. The date on which task is added to or removed from MyDay.
               format: date
               nullable: true
             orderHint:
@@ -27268,7 +27858,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: 'Priority of the task. Valid range of values is between 0 and 10 (inclusive), with increasing value being lower priority (0 has the highest priority and 10 has the lowest priority).  Currently, Planner interprets values 0 and 1 as ''urgent'', 2 and 3 and 4 as ''important'', 5, 6, and 7 as ''medium'', and 8, 9, and 10 as ''low''.  Currently, Planner sets the value 1 for ''urgent'', 3 for ''important'', 5 for ''medium'', and 9 for ''low''.'
+              description: 'The priority of the task. Valid values are between 0 and 10, inclusive. Larger values indicate lower priority. For example, 0 has the highest priority and 10 has the lowest priority. Currently, Planner interprets values 0 and 1 as ''urgent'', 2 and 3 and 4 as ''important'', 5, 6, and 7 as ''medium'', and 8, 9, and 10 as ''low''. Currently, Planner sets the value 1 for ''urgent'', 3 for ''important'', 5 for ''medium'', and 9 for ''low''.'
               format: int32
               nullable: true
             recurrence:
@@ -27971,11 +28561,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: Contains the name of the field that a value is associated with.
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key.
           nullable: true
       additionalProperties:
         type: object
@@ -28597,14 +29187,15 @@ components:
           properties:
             externalIp:
               type: string
-              description: The external IP address as detected by the the connector server. Read-only.
+              description: The external IP address as detected by the connector server. Read-only.
             machineName:
               type: string
-              description: The machine name the connector is installed and running on.
+              description: The name of the computer on which the connector is installed and runs on.
             status:
               $ref: '#/components/schemas/microsoft.graph.connectorStatus'
             version:
               type: string
+              description: The version of the connector.
             memberOf:
               type: array
               items:
@@ -35155,7 +35746,7 @@ components:
               description: Items within the document set that are captured as part of this version.
             shouldCaptureMinorVersion:
               type: boolean
-              description: 'If true, minor versions of items are also captured; otherwise, only major versions will be captured. Default value is false.'
+              description: 'If true, minor versions of items are also captured; otherwise, only major versions are captured. The default value is false.'
               nullable: true
           additionalProperties:
             type: object
@@ -38991,6 +39582,7 @@ components:
           items:
             type: string
             nullable: true
+          description: Read-only. A collection of keys from the plannerFormsDictionary that identify the plannerFormReference objects that specify the requirements to complete the plannerTask.
       additionalProperties:
         type: object
     microsoft.graph.Dictionary:
@@ -39345,7 +39937,7 @@ components:
       properties:
         appId:
           type: string
-          description: Refers to the unique identifier representing Application Id in the Microsoft Entra ID.
+          description: Refers to the unique identifier representing application ID in the Microsoft Entra ID.
           nullable: true
         displayName:
           type: string
@@ -39353,7 +39945,7 @@ components:
           nullable: true
         servicePrincipalId:
           type: string
-          description: Refers to the unique identifier indicating Service Principal Id in Microsoft Entra ID for the corresponding App.
+          description: Refers to the unique identifier indicating service principal ID in Microsoft Entra ID for the corresponding App.
           nullable: true
         servicePrincipalName:
           type: string
@@ -40418,6 +41010,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.profilePhotoCollectionResponse'
+    microsoft.graph.serviceStorageQuotaBreakdownCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.serviceStorageQuotaBreakdownCollectionResponse'
     microsoft.graph.windowsSettingCollectionResponse:
       description: Retrieved collection
       content:

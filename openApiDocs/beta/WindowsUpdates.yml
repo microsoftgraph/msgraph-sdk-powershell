@@ -5086,6 +5086,1667 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  /admin/windows/updates/products:
+    get:
+      tags:
+        - admin.adminWindows
+      summary: Get products from admin
+      description: A collection of Windows products.
+      operationId: admin.window.update_ListProduct
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.windowsUpdates.productCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - admin.adminWindows
+      summary: Create new navigation property to products for admin
+      operationId: admin.window.update_CreateProduct
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.windowsUpdates.product'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.product'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/admin/windows/updates/products/{product-id}':
+    get:
+      tags:
+        - admin.adminWindows
+      summary: Get products from admin
+      description: A collection of Windows products.
+      operationId: admin.window.update_GetProduct
+      parameters:
+        - name: product-id
+          in: path
+          description: The unique identifier of product
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: product
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.product'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - admin.adminWindows
+      summary: Update the navigation property products in admin
+      operationId: admin.window.update_UpdateProduct
+      parameters:
+        - name: product-id
+          in: path
+          description: The unique identifier of product
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: product
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.windowsUpdates.product'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.product'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - admin.adminWindows
+      summary: Delete navigation property products for admin
+      operationId: admin.window.update_DeleteProduct
+      parameters:
+        - name: product-id
+          in: path
+          description: The unique identifier of product
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: product
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/admin/windows/updates/products/{product-id}/editions':
+    get:
+      tags:
+        - admin.adminWindows
+      summary: Get editions from admin
+      description: Represents an edition of a particular Windows product.
+      operationId: admin.window.update.product_ListEdition
+      parameters:
+        - name: product-id
+          in: path
+          description: The unique identifier of product
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: product
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.windowsUpdates.editionCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - admin.adminWindows
+      summary: Create new navigation property to editions for admin
+      operationId: admin.window.update.product_CreateEdition
+      parameters:
+        - name: product-id
+          in: path
+          description: The unique identifier of product
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: product
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.windowsUpdates.edition'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.edition'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/admin/windows/updates/products/{product-id}/editions/{edition-id}':
+    get:
+      tags:
+        - admin.adminWindows
+      summary: Get editions from admin
+      description: Represents an edition of a particular Windows product.
+      operationId: admin.window.update.product_GetEdition
+      parameters:
+        - name: product-id
+          in: path
+          description: The unique identifier of product
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: product
+        - name: edition-id
+          in: path
+          description: The unique identifier of edition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: edition
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.edition'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - admin.adminWindows
+      summary: Update the navigation property editions in admin
+      operationId: admin.window.update.product_UpdateEdition
+      parameters:
+        - name: product-id
+          in: path
+          description: The unique identifier of product
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: product
+        - name: edition-id
+          in: path
+          description: The unique identifier of edition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: edition
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.windowsUpdates.edition'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.edition'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - admin.adminWindows
+      summary: Delete navigation property editions for admin
+      operationId: admin.window.update.product_DeleteEdition
+      parameters:
+        - name: product-id
+          in: path
+          description: The unique identifier of product
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: product
+        - name: edition-id
+          in: path
+          description: The unique identifier of edition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: edition
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/admin/windows/updates/products/{product-id}/editions/$count':
+    get:
+      tags:
+        - admin.adminWindows
+      summary: Get the number of the resource
+      operationId: admin.window.update.product.edition_GetCount
+      parameters:
+        - name: product-id
+          in: path
+          description: The unique identifier of product
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: product
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/admin/windows/updates/products/{product-id}/knownIssues':
+    get:
+      tags:
+        - admin.adminWindows
+      summary: Get knownIssues from admin
+      description: Represents a known issue related to a Windows product.
+      operationId: admin.window.update.product_ListKnownIssue
+      parameters:
+        - name: product-id
+          in: path
+          description: The unique identifier of product
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: product
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.windowsUpdates.knownIssueCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - admin.adminWindows
+      summary: Create new navigation property to knownIssues for admin
+      operationId: admin.window.update.product_CreateKnownIssue
+      parameters:
+        - name: product-id
+          in: path
+          description: The unique identifier of product
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: product
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.windowsUpdates.knownIssue'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.knownIssue'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/admin/windows/updates/products/{product-id}/knownIssues/{knownIssue-id}':
+    get:
+      tags:
+        - admin.adminWindows
+      summary: Get knownIssues from admin
+      description: Represents a known issue related to a Windows product.
+      operationId: admin.window.update.product_GetKnownIssue
+      parameters:
+        - name: product-id
+          in: path
+          description: The unique identifier of product
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: product
+        - name: knownIssue-id
+          in: path
+          description: The unique identifier of knownIssue
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: knownIssue
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.knownIssue'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - admin.adminWindows
+      summary: Update the navigation property knownIssues in admin
+      operationId: admin.window.update.product_UpdateKnownIssue
+      parameters:
+        - name: product-id
+          in: path
+          description: The unique identifier of product
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: product
+        - name: knownIssue-id
+          in: path
+          description: The unique identifier of knownIssue
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: knownIssue
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.windowsUpdates.knownIssue'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.knownIssue'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - admin.adminWindows
+      summary: Delete navigation property knownIssues for admin
+      operationId: admin.window.update.product_DeleteKnownIssue
+      parameters:
+        - name: product-id
+          in: path
+          description: The unique identifier of product
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: product
+        - name: knownIssue-id
+          in: path
+          description: The unique identifier of knownIssue
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: knownIssue
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/admin/windows/updates/products/{product-id}/knownIssues/{knownIssue-id}/originatingKnowledgeBaseArticle':
+    get:
+      tags:
+        - admin.adminWindows
+      summary: Get originatingKnowledgeBaseArticle from admin
+      description: Knowledge base article associated with the release when the known issue was first reported.
+      operationId: admin.window.update.product.knownIssue_GetOriginatingKnowledgeBaseArticle
+      parameters:
+        - name: product-id
+          in: path
+          description: The unique identifier of product
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: product
+        - name: knownIssue-id
+          in: path
+          description: The unique identifier of knownIssue
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: knownIssue
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.knowledgeBaseArticle'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - admin.adminWindows
+      summary: Update the navigation property originatingKnowledgeBaseArticle in admin
+      operationId: admin.window.update.product.knownIssue_UpdateOriginatingKnowledgeBaseArticle
+      parameters:
+        - name: product-id
+          in: path
+          description: The unique identifier of product
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: product
+        - name: knownIssue-id
+          in: path
+          description: The unique identifier of knownIssue
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: knownIssue
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.windowsUpdates.knowledgeBaseArticle'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.knowledgeBaseArticle'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - admin.adminWindows
+      summary: Delete navigation property originatingKnowledgeBaseArticle for admin
+      operationId: admin.window.update.product.knownIssue_DeleteOriginatingKnowledgeBaseArticle
+      parameters:
+        - name: product-id
+          in: path
+          description: The unique identifier of product
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: product
+        - name: knownIssue-id
+          in: path
+          description: The unique identifier of knownIssue
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: knownIssue
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/admin/windows/updates/products/{product-id}/knownIssues/{knownIssue-id}/resolvingKnowledgeBaseArticle':
+    get:
+      tags:
+        - admin.adminWindows
+      summary: Get resolvingKnowledgeBaseArticle from admin
+      description: Knowledge base article associated with the release when the known issue was resolved or mitigated.
+      operationId: admin.window.update.product.knownIssue_GetResolvingKnowledgeBaseArticle
+      parameters:
+        - name: product-id
+          in: path
+          description: The unique identifier of product
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: product
+        - name: knownIssue-id
+          in: path
+          description: The unique identifier of knownIssue
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: knownIssue
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.knowledgeBaseArticle'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - admin.adminWindows
+      summary: Update the navigation property resolvingKnowledgeBaseArticle in admin
+      operationId: admin.window.update.product.knownIssue_UpdateResolvingKnowledgeBaseArticle
+      parameters:
+        - name: product-id
+          in: path
+          description: The unique identifier of product
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: product
+        - name: knownIssue-id
+          in: path
+          description: The unique identifier of knownIssue
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: knownIssue
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.windowsUpdates.knowledgeBaseArticle'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.knowledgeBaseArticle'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - admin.adminWindows
+      summary: Delete navigation property resolvingKnowledgeBaseArticle for admin
+      operationId: admin.window.update.product.knownIssue_DeleteResolvingKnowledgeBaseArticle
+      parameters:
+        - name: product-id
+          in: path
+          description: The unique identifier of product
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: product
+        - name: knownIssue-id
+          in: path
+          description: The unique identifier of knownIssue
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: knownIssue
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/admin/windows/updates/products/{product-id}/knownIssues/$count':
+    get:
+      tags:
+        - admin.adminWindows
+      summary: Get the number of the resource
+      operationId: admin.window.update.product.knownIssue_GetCount
+      parameters:
+        - name: product-id
+          in: path
+          description: The unique identifier of product
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: product
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/admin/windows/updates/products/{product-id}/microsoft.graph.windowsUpdates.getKnownIssuesByTimeRange(daysInPast={daysInPast},includeAllActive=@includeAllActive)':
+    get:
+      tags:
+        - admin.Functions
+      summary: Invoke function getKnownIssuesByTimeRange
+      operationId: admin.window.update.product_getKnownIssuesGraphBPreTimeRange
+      parameters:
+        - name: product-id
+          in: path
+          description: The unique identifier of product
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: product
+        - name: daysInPast
+          in: path
+          description: 'Usage: daysInPast={daysInPast}'
+          required: true
+          style: simple
+          schema:
+            maximum: 2147483647
+            minimum: -2147483648
+            type: integer
+            format: int32
+        - name: includeAllActive
+          in: query
+          description: 'Usage: includeAllActive=@includeAllActive'
+          style: form
+          explode: false
+          schema:
+            type: boolean
+            default: false
+            nullable: true
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of knownIssue
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.windowsUpdates.knownIssue'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/admin/windows/updates/products/{product-id}/revisions':
+    get:
+      tags:
+        - admin.adminWindows
+      summary: Get revisions from admin
+      description: Represents a product revision.
+      operationId: admin.window.update.product_ListRevision
+      parameters:
+        - name: product-id
+          in: path
+          description: The unique identifier of product
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: product
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.windowsUpdates.productRevisionCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - admin.adminWindows
+      summary: Create new navigation property to revisions for admin
+      operationId: admin.window.update.product_CreateRevision
+      parameters:
+        - name: product-id
+          in: path
+          description: The unique identifier of product
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: product
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.windowsUpdates.productRevision'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.productRevision'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/admin/windows/updates/products/{product-id}/revisions/{productRevision-id}':
+    get:
+      tags:
+        - admin.adminWindows
+      summary: Get revisions from admin
+      description: Represents a product revision.
+      operationId: admin.window.update.product_GetRevision
+      parameters:
+        - name: product-id
+          in: path
+          description: The unique identifier of product
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: product
+        - name: productRevision-id
+          in: path
+          description: The unique identifier of productRevision
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: productRevision
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.productRevision'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - admin.adminWindows
+      summary: Update the navigation property revisions in admin
+      operationId: admin.window.update.product_UpdateRevision
+      parameters:
+        - name: product-id
+          in: path
+          description: The unique identifier of product
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: product
+        - name: productRevision-id
+          in: path
+          description: The unique identifier of productRevision
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: productRevision
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.windowsUpdates.productRevision'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.productRevision'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - admin.adminWindows
+      summary: Delete navigation property revisions for admin
+      operationId: admin.window.update.product_DeleteRevision
+      parameters:
+        - name: product-id
+          in: path
+          description: The unique identifier of product
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: product
+        - name: productRevision-id
+          in: path
+          description: The unique identifier of productRevision
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: productRevision
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/admin/windows/updates/products/{product-id}/revisions/{productRevision-id}/catalogEntry':
+    get:
+      tags:
+        - admin.adminWindows
+      summary: Get catalogEntry from admin
+      operationId: admin.window.update.product.revision_GetCatalogEntry
+      parameters:
+        - name: product-id
+          in: path
+          description: The unique identifier of product
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: product
+        - name: productRevision-id
+          in: path
+          description: The unique identifier of productRevision
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: productRevision
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.catalogEntry'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - admin.adminWindows
+      summary: Update the navigation property catalogEntry in admin
+      operationId: admin.window.update.product.revision_UpdateCatalogEntry
+      parameters:
+        - name: product-id
+          in: path
+          description: The unique identifier of product
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: product
+        - name: productRevision-id
+          in: path
+          description: The unique identifier of productRevision
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: productRevision
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.windowsUpdates.catalogEntry'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.catalogEntry'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - admin.adminWindows
+      summary: Delete navigation property catalogEntry for admin
+      operationId: admin.window.update.product.revision_DeleteCatalogEntry
+      parameters:
+        - name: product-id
+          in: path
+          description: The unique identifier of product
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: product
+        - name: productRevision-id
+          in: path
+          description: The unique identifier of productRevision
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: productRevision
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/admin/windows/updates/products/{product-id}/revisions/{productRevision-id}/knowledgeBaseArticle':
+    get:
+      tags:
+        - admin.adminWindows
+      summary: Get knowledgeBaseArticle from admin
+      description: The knowledge base article associated with the product revision.
+      operationId: admin.window.update.product.revision_GetKnowledgeBaseArticle
+      parameters:
+        - name: product-id
+          in: path
+          description: The unique identifier of product
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: product
+        - name: productRevision-id
+          in: path
+          description: The unique identifier of productRevision
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: productRevision
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.knowledgeBaseArticle'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - admin.adminWindows
+      summary: Update the navigation property knowledgeBaseArticle in admin
+      operationId: admin.window.update.product.revision_UpdateKnowledgeBaseArticle
+      parameters:
+        - name: product-id
+          in: path
+          description: The unique identifier of product
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: product
+        - name: productRevision-id
+          in: path
+          description: The unique identifier of productRevision
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: productRevision
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.windowsUpdates.knowledgeBaseArticle'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.knowledgeBaseArticle'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - admin.adminWindows
+      summary: Delete navigation property knowledgeBaseArticle for admin
+      operationId: admin.window.update.product.revision_DeleteKnowledgeBaseArticle
+      parameters:
+        - name: product-id
+          in: path
+          description: The unique identifier of product
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: product
+        - name: productRevision-id
+          in: path
+          description: The unique identifier of productRevision
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: productRevision
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/admin/windows/updates/products/{product-id}/revisions/$count':
+    get:
+      tags:
+        - admin.adminWindows
+      summary: Get the number of the resource
+      operationId: admin.window.update.product.revision_GetCount
+      parameters:
+        - name: product-id
+          in: path
+          description: The unique identifier of product
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: product
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /admin/windows/updates/products/$count:
+    get:
+      tags:
+        - admin.adminWindows
+      summary: Get the number of the resource
+      operationId: admin.window.update.product_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/admin/windows/updates/products/microsoft.graph.windowsUpdates.findByCatalogId(catalogID=''{catalogID}'')':
+    get:
+      tags:
+        - admin.Functions
+      summary: Invoke function findByCatalogId
+      operationId: admin.window.update.product_findGraphBPreCatalogId
+      parameters:
+        - name: catalogID
+          in: path
+          description: 'Usage: catalogID=''{catalogID}'''
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of product
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.windowsUpdates.product'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/admin/windows/updates/products/microsoft.graph.windowsUpdates.findByKbNumber(kbNumber={kbNumber})':
+    get:
+      tags:
+        - admin.Functions
+      summary: Invoke function findByKbNumber
+      operationId: admin.window.update.product_findGraphBPreKbNumber
+      parameters:
+        - name: kbNumber
+          in: path
+          description: 'Usage: kbNumber={kbNumber}'
+          required: true
+          style: simple
+          schema:
+            maximum: 2147483647
+            minimum: -2147483648
+            type: integer
+            format: int32
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of product
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.windowsUpdates.product'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   /admin/windows/updates/resourceConnections:
     get:
       tags:
@@ -5376,11 +7037,11 @@ paths:
     get:
       tags:
         - admin.adminWindows
-      summary: Get updatableAssetGroup
-      description: Read the properties and relationships of an updatableAssetGroup object.
+      summary: Get azureADDevice
+      description: Read the properties of an azureADDevice object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/windowsupdates-azureaddevice-get?view=graph-rest-1.0
       operationId: admin.window.update_GetUpdatableAsset
       parameters:
         - name: updatableAsset-id
@@ -8061,11 +9722,11 @@ paths:
     get:
       tags:
         - admin.adminWindows
-      summary: Get complianceChange
-      description: Read the properties and relationships of a complianceChange object.
+      summary: Get contentApproval
+      description: Read the properties and relationships of a contentApproval object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-compliancechange-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/windowsupdates-contentapproval-get?view=graph-rest-1.0
       operationId: admin.window.update.updatePolicy_GetComplianceChange
       parameters:
         - name: updatePolicy-id
@@ -8160,11 +9821,11 @@ paths:
     delete:
       tags:
         - admin.adminWindows
-      summary: Delete complianceChange
-      description: Delete a complianceChange object.
+      summary: Delete contentApproval
+      description: Delete a contentApproval object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-compliancechange-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/windowsupdates-contentapproval-delete?view=graph-rest-1.0
       operationId: admin.window.update.updatePolicy_DeleteComplianceChange
       parameters:
         - name: updatePolicy-id
@@ -8463,6 +10124,12 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.windowsUpdates.deployment'
               description: Deployments created using the deployment service.
               x-ms-navigationProperty: true
+            products:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.product'
+              description: A collection of Windows products.
+              x-ms-navigationProperty: true
             resourceConnections:
               type: array
               items:
@@ -8616,6 +10283,168 @@ components:
               $ref: '#/components/schemas/microsoft.graph.windowsUpdates.deploymentState'
             audience:
               $ref: '#/components/schemas/microsoft.graph.windowsUpdates.deploymentAudience'
+          additionalProperties:
+            type: object
+    microsoft.graph.windowsUpdates.product:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: product
+          type: object
+          properties:
+            friendlyNames:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: 'The friendly names of the product. For example, Version 22H2 (OS build 22621). Read-only.'
+            groupName:
+              type: string
+              description: 'The name of the product group. For example, Windows 11. Read-only.'
+              nullable: true
+            name:
+              type: string
+              description: 'The name of the product. For example, Windows 11, version 22H2. Read-only.'
+            editions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.edition'
+              description: Represents an edition of a particular Windows product.
+              x-ms-navigationProperty: true
+            knownIssues:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.knownIssue'
+              description: Represents a known issue related to a Windows product.
+              x-ms-navigationProperty: true
+            revisions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.productRevision'
+              description: Represents a product revision.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.windowsUpdates.edition:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: edition
+          type: object
+          properties:
+            deviceFamily:
+              type: string
+              description: The device family targeted by the edition.
+            endOfServiceDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when the edition reached the end of service. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+              format: date-time
+            generalAvailabilityDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when the edition became available to the general customers for the first time. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+              format: date-time
+            isInService:
+              type: boolean
+              description: Indicates whether the edition is in service or out of service.
+            name:
+              type: string
+              description: The name of the edition. Read-only.
+            releasedName:
+              type: string
+              description: The public name of the edition. Read-only.
+            servicingPeriods:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.servicingPeriod'
+          additionalProperties:
+            type: object
+    microsoft.graph.windowsUpdates.knownIssue:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: knownIssue
+          type: object
+          properties:
+            description:
+              type: string
+              description: The description of the particular known issue.
+            knownIssueHistories:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.knownIssueHistoryItem'
+            lastUpdatedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when the known issue was last updated. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+              format: date-time
+            resolvedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when the known issue was resolved or mitigated. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+              nullable: true
+            safeguardHoldIds:
+              type: array
+              items:
+                maximum: 2147483647
+                minimum: -2147483648
+                type: integer
+                format: int32
+            startDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when the known issue was first reported. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+            status:
+              $ref: '#/components/schemas/microsoft.graph.windowsUpdates.windowsReleaseHealthStatus'
+            title:
+              type: string
+              description: The title of the known issue.
+            webViewUrl:
+              type: string
+              description: The URL to the known issue in the Windows Release Health dashboard on Microsoft 365 admin center.
+            originatingKnowledgeBaseArticle:
+              $ref: '#/components/schemas/microsoft.graph.windowsUpdates.knowledgeBaseArticle'
+            resolvingKnowledgeBaseArticle:
+              $ref: '#/components/schemas/microsoft.graph.windowsUpdates.knowledgeBaseArticle'
+          additionalProperties:
+            type: object
+    microsoft.graph.windowsUpdates.knowledgeBaseArticle:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: knowledgeBaseArticle
+          type: object
+          properties:
+            url:
+              type: string
+              description: The URL of the knowledge base article. Read-only.
+          additionalProperties:
+            type: object
+    microsoft.graph.windowsUpdates.productRevision:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: productRevision
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: The display name of the content. Read-only.
+            osBuild:
+              $ref: '#/components/schemas/microsoft.graph.windowsUpdates.buildVersionDetails'
+            product:
+              type: string
+              description: 'The product of the revision. Possible values are: Windows 10, Windows 11. Read-only.'
+            releaseDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The release date for the content. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+              format: date-time
+            version:
+              type: string
+              description: The version of the feature update. Read-only.
+            catalogEntry:
+              $ref: '#/components/schemas/microsoft.graph.windowsUpdates.catalogEntry'
+            knowledgeBaseArticle:
+              $ref: '#/components/schemas/microsoft.graph.windowsUpdates.knowledgeBaseArticle'
           additionalProperties:
             type: object
     microsoft.graph.windowsUpdates.resourceConnection:
@@ -9004,6 +10833,80 @@ components:
           $ref: '#/components/schemas/microsoft.graph.windowsUpdates.requestedDeploymentStateValue'
       additionalProperties:
         type: object
+    microsoft.graph.windowsUpdates.servicingPeriod:
+      title: servicingPeriod
+      type: object
+      properties:
+        endDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The date and time when the servicing period ends. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+          format: date-time
+        name:
+          type: string
+          description: 'The name of the servicing period. For example, Modern Lifecycle.'
+        startDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The start date and time of the servicing period. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+          format: date-time
+      additionalProperties:
+        type: object
+    microsoft.graph.windowsUpdates.knownIssueHistoryItem:
+      title: knownIssueHistoryItem
+      type: object
+      properties:
+        body:
+          $ref: '#/components/schemas/microsoft.graph.windowsUpdates.itemBody'
+        createdDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The date and time when the post was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+          format: date-time
+      additionalProperties:
+        type: object
+    microsoft.graph.windowsUpdates.windowsReleaseHealthStatus:
+      title: windowsReleaseHealthStatus
+      enum:
+        - resolved
+        - mitigatedExternal
+        - mitigated
+        - resolvedExternal
+        - confirmed
+        - reported
+        - investigating
+        - unknownFutureValue
+      type: string
+    microsoft.graph.windowsUpdates.buildVersionDetails:
+      title: buildVersionDetails
+      type: object
+      properties:
+        buildNumber:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The build number of the product release. Read-only.
+          format: int32
+        majorVersion:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The major version of the product release. Read-only.
+          format: int32
+        minorVersion:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The minor version of the product release. Read-only.
+          format: int32
+        updateBuildRevision:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The update build revision number of the product revision. Read-only.
+          format: int32
+      additionalProperties:
+        type: object
     microsoft.graph.windowsUpdates.resourceConnectionState:
       title: resourceConnectionState
       enum:
@@ -9126,6 +11029,58 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.windowsUpdates.productCollectionResponse:
+      title: Collection of product
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.windowsUpdates.product'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.windowsUpdates.editionCollectionResponse:
+      title: Collection of edition
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.windowsUpdates.edition'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.windowsUpdates.knownIssueCollectionResponse:
+      title: Collection of knownIssue
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.windowsUpdates.knownIssue'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.windowsUpdates.productRevisionCollectionResponse:
+      title: Collection of productRevision
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.windowsUpdates.productRevision'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.windowsUpdates.resourceConnectionCollectionResponse:
       title: Collection of resourceConnection
       type: object
@@ -9171,11 +11126,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: 'Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn''t included in the response.'
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -9243,6 +11198,9 @@ components:
           description: 'Specifies the number of days after an update is installed, during which the user of the device can control when the device restarts.'
           format: int32
           nullable: true
+        isHotpatchEnabled:
+          type: boolean
+          nullable: true
         offerAsOptional:
           type: boolean
           description: Specifies whether the update is offered as Optional rather than Required.
@@ -9275,6 +11233,18 @@ components:
         - archived
         - unknownFutureValue
       type: string
+    microsoft.graph.windowsUpdates.itemBody:
+      title: itemBody
+      type: object
+      properties:
+        content:
+          type: string
+          description: The content of the item.
+          nullable: true
+        contentType:
+          $ref: '#/components/schemas/microsoft.graph.windowsUpdates.bodyType'
+      additionalProperties:
+        type: object
     microsoft.graph.ODataErrors.MainError:
       required:
         - code
@@ -9346,6 +11316,13 @@ components:
         - pausedByMonitoring
         - unknownFutureValue
         - faultedByContentOutdated
+      type: string
+    microsoft.graph.windowsUpdates.bodyType:
+      title: bodyType
+      enum:
+        - text
+        - html
+        - unknownFutureValue
       type: string
     microsoft.graph.ODataErrors.ErrorDetails:
       required:
@@ -9445,6 +11422,30 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.windowsUpdates.deploymentCollectionResponse'
+    microsoft.graph.windowsUpdates.productCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.windowsUpdates.productCollectionResponse'
+    microsoft.graph.windowsUpdates.editionCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.windowsUpdates.editionCollectionResponse'
+    microsoft.graph.windowsUpdates.knownIssueCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.windowsUpdates.knownIssueCollectionResponse'
+    microsoft.graph.windowsUpdates.productRevisionCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.windowsUpdates.productRevisionCollectionResponse'
     microsoft.graph.windowsUpdates.resourceConnectionCollectionResponse:
       description: Retrieved collection
       content:

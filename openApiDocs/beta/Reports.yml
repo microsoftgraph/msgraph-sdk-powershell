@@ -10070,7 +10070,7 @@ paths:
       tags:
         - reports.Actions
       summary: Invoke action export
-      description: Export the unbilled Azure usage data for a specific billing period and a given currency.
+      description: Export unbilled Azure usage data for a specific billing period and currency.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/partners-billing-unbilledusage-export?view=graph-rest-1.0
@@ -10963,7 +10963,7 @@ paths:
       tags:
         - reports.serviceLevelAgreementRoot
       summary: Get azureADAuthentication
-      description: 'Read the properties and relationships of an azureADAuthentication object to find the level of Microsoft Entra authentication availability for your tenant. The Microsoft Entra service Level Agreement (SLA) commits to at least 99.99% authentication availability, as described in Microsoft Entra SLA performance. This object provides you with your tenant’s actual performance against this commitment.'
+      description: 'Read the properties and relationships of an azureADAuthentication object to find the level of Microsoft Entra authentication availability for your tenant. The Microsoft Entra service Level Agreement (SLA) commits to at least 99.99% authentication availability, as described in Microsoft Entra SLA performance. This object provides you with your tenant''s actual performance against this commitment.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/azureadauthentication-get?view=graph-rest-1.0
@@ -13808,12 +13808,12 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appliedConditionalAccessPolicy'
-              description: 'A list of conditional access policies that are triggered by the corresponding sign-in activity. Apps need additional Conditional Access-related privileges to read the details of this property. For more information, see Viewing applied conditional access (CA) policies in sign-ins.'
+              description: 'A list of conditional access policies that the corresponding sign-in activity triggers. Apps need more Conditional Access-related privileges to read the details of this property. For more information, see Viewing applied conditional access (CA) policies in sign-ins.'
             appliedEventListeners:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appliedAuthenticationEventListener'
-              description: 'Detailed information about the listeners, such as Azure Logic Apps and Azure Functions, which were triggered by the corresponding events in the sign-in event.'
+              description: 'Detailed information about the listeners, such as Azure Logic Apps and Azure Functions, which the corresponding events in the sign-in event triggered.'
             appTokenProtectionStatus:
               $ref: '#/components/schemas/microsoft.graph.tokenProtectionStatus'
             authenticationAppDeviceDetails:
@@ -13876,7 +13876,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.conditionalAccessStatus'
             correlationId:
               type: string
-              description: The identifier that's sent from the client when sign-in is initiated. This is used for troubleshooting the corresponding sign-in activity when calling for support.  Supports $filter (eq).
+              description: The identifier the client sends when sign-in is initiated. This is used for troubleshooting the corresponding sign-in activity when calling for support.  Supports $filter (eq).
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -14573,7 +14573,7 @@ components:
       properties:
         content:
           type: string
-          description: Report content; details vary by report type.
+          description: The http content that has the data
           format: base64url
           nullable: true
       additionalProperties:
@@ -15712,15 +15712,30 @@ components:
         - title: activeUsersMetric
           type: object
           properties:
+            appId:
+              type: string
+              nullable: true
+            appName:
+              type: string
+              nullable: true
             count:
               type: integer
               description: The total number of users who made at least one authentication request within the specified time period.
               format: int64
+            country:
+              type: string
+              nullable: true
             factDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
               description: Date of the insight.
               format: date
+            language:
+              type: string
+              nullable: true
+            os:
+              type: string
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.activeUsersBreakdownMetric:
@@ -15772,6 +15787,13 @@ components:
               type: string
               description: The date of the user insight.
               format: date
+              nullable: true
+            identityProvider:
+              type: string
+              nullable: true
+            language:
+              type: string
+              nullable: true
             os:
               type: string
               description: The platform for the device that the customers used. Supports $filter (eq).
@@ -15820,11 +15842,21 @@ components:
               type: integer
               description: Number of users who attempted to sign up. Supports $filter (eq).
               format: int64
+            country:
+              type: string
+              nullable: true
             factDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
               description: The date of the user insight.
               format: date
+              nullable: true
+            identityProvider:
+              type: string
+              nullable: true
+            language:
+              type: string
+              nullable: true
             mfaMethod:
               type: string
               description: The MFA authentication method used by the customers. Supports $filter (eq).
@@ -15837,6 +15869,11 @@ components:
               type: integer
               description: Number of users who signed up successfully. Supports $filter (eq).
               format: int64
+            mfaFailures:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.mfaFailure'
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.userSignUpMetric:
@@ -15845,15 +15882,28 @@ components:
         - title: userSignUpMetric
           type: object
           properties:
+            appId:
+              type: string
+              nullable: true
             count:
               type: integer
               description: The total number of users who signed up in the specified period. Supports $filter (eq).
               format: int64
+            country:
+              type: string
+              nullable: true
             factDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
               description: The date of the user insight.
               format: date
+              nullable: true
+            identityProvider:
+              type: string
+              nullable: true
+            language:
+              type: string
+              nullable: true
             os:
               type: string
               description: The device plaform that the customers used. Supports $filter (eq).
@@ -15922,6 +15972,9 @@ components:
               type: string
               description: The date of the insight.
               format: date
+            language:
+              type: string
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.monthlyUserInsightMetricsRoot:
@@ -16013,11 +16066,24 @@ components:
         - title: userRequestsMetric
           type: object
           properties:
+            appId:
+              type: string
+              nullable: true
+            country:
+              type: string
+              nullable: true
             factDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
               description: The date of the user insight.
               format: date
+              nullable: true
+            identityProvider:
+              type: string
+              nullable: true
+            language:
+              type: string
+              nullable: true
             requestCount:
               type: integer
               description: Number of requests to the tenant. Supports $filter (eq).
@@ -16579,6 +16645,9 @@ components:
         - adminConfirmedServicePrincipalCompromised
         - adminDismissedAllRiskForServicePrincipal
         - m365DAdminDismissedDetection
+        - userChangedPasswordOnPremises
+        - adminDismissedRiskForSignIn
+        - adminConfirmedAccountSafe
       type: string
     microsoft.graph.riskLevel:
       title: riskLevel
@@ -17036,6 +17105,9 @@ components:
         - title: inactiveUsersMetricBase
           type: object
           properties:
+            appId:
+              type: string
+              nullable: true
             factDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
@@ -17079,6 +17151,23 @@ components:
               type: integer
               format: int64
               nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.mfaFailure:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: mfaFailure
+          type: object
+          properties:
+            count:
+              type: integer
+              format: int64
+              nullable: true
+            reason:
+              type: string
+              nullable: true
+            reasonCode:
+              $ref: '#/components/schemas/microsoft.graph.mfaFailureReasonCode'
           additionalProperties:
             type: object
     microsoft.graph.ODataErrors.ODataError:
@@ -17476,7 +17565,7 @@ components:
       properties:
         appId:
           type: string
-          description: Refers to the unique identifier representing Application Id in the Microsoft Entra ID.
+          description: Refers to the unique identifier representing application ID in the Microsoft Entra ID.
           nullable: true
         displayName:
           type: string
@@ -17484,7 +17573,7 @@ components:
           nullable: true
         servicePrincipalId:
           type: string
-          description: Refers to the unique identifier indicating Service Principal Id in Microsoft Entra ID for the corresponding App.
+          description: Refers to the unique identifier indicating service principal ID in Microsoft Entra ID for the corresponding App.
           nullable: true
         servicePrincipalName:
           type: string
@@ -17521,11 +17610,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: 'Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn''t included in the response.'
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -17809,6 +17898,16 @@ components:
         - enabled
         - capable
         - mfaRegistered
+        - unknownFutureValue
+      type: string
+    microsoft.graph.mfaFailureReasonCode:
+      title: mfaFailureReasonCode
+      enum:
+        - mfaIncomplete
+        - mfaDenied
+        - systemFailure
+        - badRequest
+        - other
         - unknownFutureValue
       type: string
     microsoft.graph.ODataErrors.MainError:

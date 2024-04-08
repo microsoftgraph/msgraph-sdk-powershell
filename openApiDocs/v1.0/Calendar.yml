@@ -22110,11 +22110,11 @@ paths:
     post:
       tags:
         - users.event
-      summary: Create single-value extended property
-      description: "Create one or more single-value extended properties in a new or existing instance of a resource. The following user resources are supported: The following group resources: See Extended properties overview for more information about when to use\nopen extensions or extended properties, and how to specify extended properties."
+      summary: Create multi-value extended property
+      description: "Create one or more multi-value extended properties in a new or existing instance of a resource. The following user resources are supported: The following group resources are supported: See Extended properties overview for more information about when to use\nopen extensions or extended properties, and how to specify extended properties."
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/singlevaluelegacyextendedproperty-post-singlevalueextendedproperties?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/multivaluelegacyextendedproperty-post-multivalueextendedproperties?view=graph-rest-1.0
       operationId: user_CreateEvent
       parameters:
         - name: user-id
@@ -23895,21 +23895,27 @@ components:
               $ref: '#/components/schemas/microsoft.graph.importance'
             isAllDay:
               type: boolean
+              description: 'Set to true if the event lasts all day. If true, regardless of whether it''s a single-day or multi-day event, start and end time must be set to midnight and be in the same time zone.'
               nullable: true
             isCancelled:
               type: boolean
+              description: Set to true if the event has been canceled.
               nullable: true
             isDraft:
               type: boolean
+              description: 'Set to true if the user has updated the meeting in Outlook but has not sent the updates to attendees. Set to false if all changes have been sent, or if the event is an appointment without any attendees.'
               nullable: true
             isOnlineMeeting:
               type: boolean
+              description: 'True if this event has online meeting information (that is, onlineMeeting points to an onlineMeetingInfo resource), false otherwise. Default is false (onlineMeeting is null). Optional.  After you set isOnlineMeeting to true, Microsoft Graph initializes onlineMeeting. Subsequently Outlook ignores any further changes to isOnlineMeeting, and the meeting remains available online.'
               nullable: true
             isOrganizer:
               type: boolean
+              description: Set to true if the calendar owner (specified by the owner property of the calendar) is the organizer of the event (specified by the organizer property of the event). This also applies if a delegate organized the event on behalf of the owner.
               nullable: true
             isReminderOn:
               type: boolean
+              description: Set to true if an alert is set to remind the user of the event.
               nullable: true
             location:
               $ref: '#/components/schemas/microsoft.graph.location'
@@ -23917,25 +23923,30 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.location'
+              description: 'The locations where the event is held or attended from. The location and locations properties always correspond with each other. If you update the location property, any prior locations in the locations collection would be removed and replaced by the new location value.'
             onlineMeeting:
               $ref: '#/components/schemas/microsoft.graph.onlineMeetingInfo'
             onlineMeetingProvider:
               $ref: '#/components/schemas/microsoft.graph.onlineMeetingProviderType'
             onlineMeetingUrl:
               type: string
+              description: 'A URL for an online meeting. The property is set only when an organizer specifies in Outlook that an event is an online meeting such as Skype. Read-only.To access the URL to join an online meeting, use joinUrl which is exposed via the onlineMeeting property of the event. The onlineMeetingUrl property will be deprecated in the future.'
               nullable: true
             organizer:
               $ref: '#/components/schemas/microsoft.graph.recipient'
             originalEndTimeZone:
               type: string
+              description: The end time zone that was set when the event was created. A value of tzone://Microsoft/Custom indicates that a legacy custom time zone was set in desktop Outlook.
               nullable: true
             originalStart:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Represents the start time of an event when it is initially created as an occurrence or exception in a recurring series. This property is not returned for events that are single instances. Its date and time information is expressed in ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
             originalStartTimeZone:
               type: string
+              description: The start time zone that was set when the event was created. A value of tzone://Microsoft/Custom indicates that a legacy custom time zone was set in desktop Outlook.
               nullable: true
             recurrence:
               $ref: '#/components/schemas/microsoft.graph.patternedRecurrence'
@@ -23943,10 +23954,12 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: The number of minutes before the event start time that the reminder alert occurs.
               format: int32
               nullable: true
             responseRequested:
               type: boolean
+              description: 'Default is true, which represents the organizer would like an invitee to send a response to the event.'
               nullable: true
             responseStatus:
               $ref: '#/components/schemas/microsoft.graph.responseStatus'
@@ -23954,6 +23967,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.sensitivity'
             seriesMasterId:
               type: string
+              description: 'The ID for the recurring series master item, if this event is part of a recurring series.'
               nullable: true
             showAs:
               $ref: '#/components/schemas/microsoft.graph.freeBusyStatus'
@@ -23961,14 +23975,17 @@ components:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
             subject:
               type: string
+              description: The text of the event's subject line.
               nullable: true
             transactionId:
               type: string
+              description: 'A custom identifier specified by a client app for the server to avoid redundant POST operations in case of client retries to create the same event. This is useful when low network connectivity causes the client to time out before receiving a response from the server for the client''s prior create-event request. After you set transactionId when creating an event, you cannot change transactionId in a subsequent update. This property is only returned in a response payload if an app has set it. Optional.'
               nullable: true
             type:
               $ref: '#/components/schemas/microsoft.graph.eventType'
             webLink:
               type: string
+              description: 'The URL to open the event in Outlook on the web.Outlook on the web opens the event in the browser if you are signed in to your mailbox. Otherwise, Outlook on the web prompts you to sign in.This URL cannot be accessed from within an iFrame.'
               nullable: true
             attachments:
               type: array
@@ -24119,7 +24136,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: 'Specifies additional features of the room, for example, details like the type of view or furniture type.'
+              description: 'Specifies other features of the room, for example, details like the type of view or furniture type.'
             videoDeviceName:
               type: string
               description: Specifies the name of the video device in the room.

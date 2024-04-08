@@ -11,7 +11,7 @@ paths:
       tags:
         - appCatalogs.teamsApp
       summary: List teamsApp
-      description: "List apps from the Microsoft Teams app catalog.\nThis includes apps from the Microsoft Teams store, as well as apps from your organization's app catalog (the tenant app catalog). To get apps from your organization's app catalog only, specify organization as the distributionMethod in the request."
+      description: 'List apps from the Microsoft Teams app catalog. This includes apps from the Microsoft Teams store and apps from your organization''s app catalog (the tenant app catalog). To get apps from your organization''s app catalog only, specify organization as the distributionMethod in the request.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/appcatalogs-list-teamsapps?view=graph-rest-1.0
@@ -2620,11 +2620,11 @@ paths:
     post:
       tags:
         - chats.chatMessage
-      summary: Send chatMessage in a channel or a chat
-      description: Send a new chatMessage in the specified channel or a chat.
+      summary: Send message in a chat
+      description: Send a new chatMessage in the specified chat. This API cannot create a new chat; you must use the list chats method to retrieve the ID of an existing chat before creating a chat message.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/chat-post-messages?view=graph-rest-1.0
       operationId: chat_CreateMessage
       parameters:
         - name: chat-id
@@ -2787,7 +2787,7 @@ paths:
       tags:
         - chats.chatMessage
       summary: List hostedContents
-      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content'
+      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content.s'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
@@ -3588,7 +3588,7 @@ paths:
       tags:
         - chats.chatMessage
       summary: List hostedContents
-      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content'
+      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content.s'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
@@ -6317,7 +6317,7 @@ paths:
       tags:
         - groups.team
       summary: Create channel
-      description: 'Create a new channel in a team, as specified in the request body. When you create a channel, the maximum length of the channel''s displayName is 50 characters. This is the name that appears to the user in Microsoft Teams. You can add a maximum of 200 members when you create a private channel.'
+      description: 'Create a new channel in a team, as specified in the request body. When you create a channel, the maximum length of the channel''s displayName is 50 characters. This display name appears to the user in Microsoft Teams. You can add a maximum of 200 members when you create a private channel.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/channel-post?view=graph-rest-1.0
@@ -6548,7 +6548,6 @@ paths:
       tags:
         - groups.team
       summary: Get content for the navigation property filesFolder from groups
-      description: 'The content stream, if the item represents a file.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/channel-get-filesfolder?view=graph-rest-1.0
@@ -6592,7 +6591,6 @@ paths:
       tags:
         - groups.team
       summary: Update content for the navigation property filesFolder in groups
-      description: 'The content stream, if the item represents a file.'
       operationId: group.team.channel_SetFilesFolderContent
       parameters:
         - name: group-id
@@ -6626,6 +6624,81 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/groups/{group-id}/team/channels/{channel-id}/filesFolder/contentStream':
+    get:
+      tags:
+        - groups.team
+      summary: Get contentStream for the navigation property filesFolder from groups
+      description: 'The content stream, if the item represents a file.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/channel-get-filesfolder?view=graph-rest-1.0
+      operationId: group.team.channel_GetFilesFolderContentStream
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: channel-id
+          in: path
+          description: The unique identifier of channel
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+      responses:
+        2XX:
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - groups.team
+      summary: Update contentStream for the navigation property filesFolder in groups
+      description: 'The content stream, if the item represents a file.'
+      operationId: group.team.channel_SetFilesFolderContentStream
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: channel-id
+          in: path
+          description: The unique identifier of channel
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        2XX:
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7118,7 +7191,7 @@ paths:
       tags:
         - groups.team
       summary: Update chatMessage
-      description: 'Update a chatMessage object. You can update all the properties of chatMessage in delegated permissions scenarios, except for the policyViolation property and read-only properties. The policyViolation property is the only property that can be updated in application permissions scenarios. Updating works only for chats where conversation members are Microsoft Teams users. If one of the members is using Skype, the operation fails. This method does not support federation. Only the user in the tenant who sent the message can perform data loss prevention (DLP) updates on the specified chat message.'
+      description: 'Update a chatMessage object. You can update all the properties of chatMessage in delegated permissions scenarios, except for the policyViolation property and read-only properties. The policyViolation property is the only property that can be updated in application permissions scenarios. Updating works only for chats where conversation members are Microsoft Teams users. If one of the members is using Skype, the operation fails. This method doesn''t support federation. Only the user in the tenant who sent the message can perform data loss prevention (DLP) updates on the specified chat message.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/chatmessage-update?view=graph-rest-1.0
@@ -7212,7 +7285,7 @@ paths:
       tags:
         - groups.team
       summary: List hostedContents
-      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content'
+      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content.s'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
@@ -7553,13 +7626,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: chatMessageHostedContent
-        - name: $format
-          in: query
-          description: Format of the content
-          style: form
-          explode: false
-          schema:
-            type: string
       responses:
         2XX:
           description: Retrieved media content
@@ -7974,7 +8040,7 @@ paths:
       tags:
         - groups.team
       summary: List hostedContents
-      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content'
+      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content.s'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
@@ -8363,13 +8429,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: chatMessageHostedContent
-        - name: $format
-          in: query
-          description: Format of the content
-          style: form
-          explode: false
-          schema:
-            type: string
       responses:
         2XX:
           description: Retrieved media content
@@ -11260,13 +11319,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: group
-        - name: $format
-          in: query
-          description: Format of the content
-          style: form
-          explode: false
-          schema:
-            type: string
       responses:
         2XX:
           description: Retrieved media content
@@ -11466,7 +11518,6 @@ paths:
       tags:
         - groups.team
       summary: Get content for the navigation property filesFolder from groups
-      description: 'The content stream, if the item represents a file.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/channel-get-filesfolder?view=graph-rest-1.0
@@ -11502,7 +11553,6 @@ paths:
       tags:
         - groups.team
       summary: Update content for the navigation property filesFolder in groups
-      description: 'The content stream, if the item represents a file.'
       operationId: group.team.primaryChannel_SetFilesFolderContent
       parameters:
         - name: group-id
@@ -11528,6 +11578,65 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/groups/{group-id}/team/primaryChannel/filesFolder/contentStream':
+    get:
+      tags:
+        - groups.team
+      summary: Get contentStream for the navigation property filesFolder from groups
+      description: 'The content stream, if the item represents a file.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/channel-get-filesfolder?view=graph-rest-1.0
+      operationId: group.team.primaryChannel_GetFilesFolderContentStream
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+      responses:
+        2XX:
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - groups.team
+      summary: Update contentStream for the navigation property filesFolder in groups
+      description: 'The content stream, if the item represents a file.'
+      operationId: group.team.primaryChannel_SetFilesFolderContentStream
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        2XX:
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11948,7 +12057,7 @@ paths:
       tags:
         - groups.team
       summary: Update chatMessage
-      description: 'Update a chatMessage object. You can update all the properties of chatMessage in delegated permissions scenarios, except for the policyViolation property and read-only properties. The policyViolation property is the only property that can be updated in application permissions scenarios. Updating works only for chats where conversation members are Microsoft Teams users. If one of the members is using Skype, the operation fails. This method does not support federation. Only the user in the tenant who sent the message can perform data loss prevention (DLP) updates on the specified chat message.'
+      description: 'Update a chatMessage object. You can update all the properties of chatMessage in delegated permissions scenarios, except for the policyViolation property and read-only properties. The policyViolation property is the only property that can be updated in application permissions scenarios. Updating works only for chats where conversation members are Microsoft Teams users. If one of the members is using Skype, the operation fails. This method doesn''t support federation. Only the user in the tenant who sent the message can perform data loss prevention (DLP) updates on the specified chat message.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/chatmessage-update?view=graph-rest-1.0
@@ -12026,7 +12135,7 @@ paths:
       tags:
         - groups.team
       summary: List hostedContents
-      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content'
+      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content.s'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
@@ -12319,13 +12428,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: chatMessageHostedContent
-        - name: $format
-          in: query
-          description: Format of the content
-          style: form
-          explode: false
-          schema:
-            type: string
       responses:
         2XX:
           description: Retrieved media content
@@ -12684,7 +12786,7 @@ paths:
       tags:
         - groups.team
       summary: List hostedContents
-      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content'
+      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content.s'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
@@ -13025,13 +13127,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: chatMessageHostedContent
-        - name: $format
-          in: query
-          description: Format of the content
-          style: form
-          explode: false
-          schema:
-            type: string
       responses:
         2XX:
           description: Retrieved media content
@@ -15299,7 +15394,7 @@ paths:
       tags:
         - groups.team
       summary: List shifts
-      description: Get the list of shift instances in a schedule.
+      description: The shifts in the schedule.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/schedule-list-shifts?view=graph-rest-1.0
@@ -16285,7 +16380,7 @@ paths:
       tags:
         - groups.team
       summary: List timeOffReasons
-      description: Get the list of timeOffReasons in a schedule.
+      description: The set of reasons for a time off in the schedule.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/schedule-list-timeoffreasons?view=graph-rest-1.0
@@ -16462,7 +16557,7 @@ paths:
       tags:
         - groups.team
       summary: Delete timeOffReason
-      description: Mark a timeOffReason as inactive by setting the isActive property. Every team must include at least one timeOffReason. This method does not remove the specified timeOffReason instance. timeOffItem instances that have been assigned this reason remain assigned to this reason.
+      description: Mark a timeOffReason as inactive by setting the isActive property. Every team must include at least one timeOffReason. This method doesn't remove the specified timeOffReason instance. timeOffItem instances that were assigned this reason remain assigned to this reason.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/timeoffreason-delete?view=graph-rest-1.0
@@ -18035,7 +18130,7 @@ paths:
       tags:
         - teams.channel
       summary: Create channel
-      description: 'Create a new channel in a team, as specified in the request body. When you create a channel, the maximum length of the channel''s displayName is 50 characters. This is the name that appears to the user in Microsoft Teams. You can add a maximum of 200 members when you create a private channel.'
+      description: 'Create a new channel in a team, as specified in the request body. When you create a channel, the maximum length of the channel''s displayName is 50 characters. This display name appears to the user in Microsoft Teams. You can add a maximum of 200 members when you create a private channel.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/channel-post?view=graph-rest-1.0
@@ -18266,7 +18361,6 @@ paths:
       tags:
         - teams.channel
       summary: Get content for the navigation property filesFolder from teams
-      description: 'The content stream, if the item represents a file.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/channel-get-filesfolder?view=graph-rest-1.0
@@ -18310,7 +18404,6 @@ paths:
       tags:
         - teams.channel
       summary: Update content for the navigation property filesFolder in teams
-      description: 'The content stream, if the item represents a file.'
       operationId: team.channel_SetFilesFolderContent
       parameters:
         - name: team-id
@@ -18344,6 +18437,81 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teams/{team-id}/channels/{channel-id}/filesFolder/contentStream':
+    get:
+      tags:
+        - teams.channel
+      summary: Get contentStream for the navigation property filesFolder from teams
+      description: 'The content stream, if the item represents a file.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/channel-get-filesfolder?view=graph-rest-1.0
+      operationId: team.channel_GetFilesFolderContentStream
+      parameters:
+        - name: team-id
+          in: path
+          description: The unique identifier of team
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: channel-id
+          in: path
+          description: The unique identifier of channel
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+      responses:
+        2XX:
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - teams.channel
+      summary: Update contentStream for the navigation property filesFolder in teams
+      description: 'The content stream, if the item represents a file.'
+      operationId: team.channel_SetFilesFolderContentStream
+      parameters:
+        - name: team-id
+          in: path
+          description: The unique identifier of team
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: channel-id
+          in: path
+          description: The unique identifier of channel
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        2XX:
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -18900,7 +19068,7 @@ paths:
       tags:
         - teams.channel
       summary: Update chatMessage
-      description: 'Update a chatMessage object. You can update all the properties of chatMessage in delegated permissions scenarios, except for the policyViolation property and read-only properties. The policyViolation property is the only property that can be updated in application permissions scenarios. Updating works only for chats where conversation members are Microsoft Teams users. If one of the members is using Skype, the operation fails. This method does not support federation. Only the user in the tenant who sent the message can perform data loss prevention (DLP) updates on the specified chat message.'
+      description: 'Update a chatMessage object. You can update all the properties of chatMessage in delegated permissions scenarios, except for the policyViolation property and read-only properties. The policyViolation property is the only property that can be updated in application permissions scenarios. Updating works only for chats where conversation members are Microsoft Teams users. If one of the members is using Skype, the operation fails. This method doesn''t support federation. Only the user in the tenant who sent the message can perform data loss prevention (DLP) updates on the specified chat message.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/chatmessage-update?view=graph-rest-1.0
@@ -18994,7 +19162,7 @@ paths:
       tags:
         - teams.channel
       summary: List hostedContents
-      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content'
+      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content.s'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
@@ -19335,13 +19503,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: chatMessageHostedContent
-        - name: $format
-          in: query
-          description: Format of the content
-          style: form
-          explode: false
-          schema:
-            type: string
       responses:
         2XX:
           description: Retrieved media content
@@ -19938,7 +20099,7 @@ paths:
       tags:
         - teams.channel
       summary: List hostedContents
-      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content'
+      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content.s'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
@@ -20327,13 +20488,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: chatMessageHostedContent
-        - name: $format
-          in: query
-          description: Format of the content
-          style: form
-          explode: false
-          schema:
-            type: string
       responses:
         2XX:
           description: Retrieved media content
@@ -20916,6 +21070,10 @@ paths:
       tags:
         - teams.Actions
       summary: Invoke action archive
+      description: 'Archive a channel in a team. When a channel is archived, users can''t send new messages or react to existing messages in the channel, edit the channel settings, or make other changes to the channel. You can delete an archived channel, or add and remove members from it. If you archive a team, its channels are archived for you. Archiving is asynchronous; a channel is archived after the asynchronous archiving operation completes successfully, which might occur after the response returns. A channel without an owner, or that belongs to a group that has no owner, can''t be archived. To restore a channel from its archived state, use the unarchive method. A channel can’t be archived or unarchived if its team is archived.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/channel-archive?view=graph-rest-1.0
       operationId: team.channel_archive
       parameters:
         - name: team-id
@@ -21055,7 +21213,7 @@ paths:
       tags:
         - teams.Actions
       summary: Invoke action provisionEmail
-      description: 'Provision an email address for a channel. Microsoft Teams doesn''t automatically provision an email address for a channel by default. To have Teams provision an email address, you can call provisionEmail, or through the Teams user interface, select Get email address, which triggers Teams to generate an email address if it has not already provisioned one. To remove the email address of a channel, use the removeEmail method.'
+      description: 'Provision an email address for a channel. Microsoft Teams doesn''t automatically provision an email address for a channel by default. To have Teams provision an email address, you can call provisionEmail, or through the Teams user interface, select Get email address, which triggers Teams to generate an email address if it didn''t provisioned one. To remove the email address of a channel, use the removeEmail method.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/channel-provisionemail?view=graph-rest-1.0
@@ -21125,6 +21283,10 @@ paths:
       tags:
         - teams.Actions
       summary: Invoke action unarchive
+      description: 'Restore an archived channel. Unarchiving restores the ability for users to send messages and edit the channel. Channels are archived via the archive API. Unarchiving is an asynchronous operation; a channel is unarchived when the asynchronous unarchive operation completes successfully, which might occur after this method responds.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/channel-unarchive?view=graph-rest-1.0
       operationId: team.channel_unarchive
       parameters:
         - name: team-id
@@ -23290,7 +23452,7 @@ paths:
       tags:
         - teams.Actions
       summary: Invoke action archive
-      description: "Archive the specified team. \nWhen a team is archived, users can no longer send or like messages on any channel in the team, edit the team's name, description, or other settings, or in general make most changes to the team.\nMembership changes to the team continue to be allowed. Archiving is an async operation. A team is archived once the async operation completes successfully, which may occur subsequent to a response from this API. To archive a team, the team and group must have an owner. To restore a team from its archived state, use the API to unarchive."
+      description: "Archive the specified team. \nWhen a team is archived, users can no longer make most changes to the team. For example, users can no longer: send or like messages on any channel in the team; edit the team's name or description; nor edit other settings. However, membership changes to the team continue to be allowed. Archiving is an async operation. A team is archived once the async operation completes successfully, which can occur subsequent to a response from this API. To archive a team, the team and group must have an owner. To restore a team from its archived state, use the API to unarchive."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/team-archive?view=graph-rest-1.0
@@ -23460,7 +23622,7 @@ paths:
       tags:
         - teams.Actions
       summary: Invoke action unarchive
-      description: 'Restore an archived team and restores users'' ability to send messages and edit the team, abiding by tenant and team settings. Teams are archived using the archive API. Unarchiving is an async operation. A team is unarchived once the async operation completes successfully, which may occur subsequent to a response from this API.'
+      description: 'Restore an archived team and restores users'' ability to send messages and edit the team, abiding by tenant and team settings. Teams are archived using the archive API. Unarchiving is an async operation. A team is unarchived once the async operation completes successfully, which might occur subsequent to a response from this API.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/team-unarchive?view=graph-rest-1.0
@@ -24379,13 +24541,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: team
-        - name: $format
-          in: query
-          description: Format of the content
-          style: form
-          explode: false
-          schema:
-            type: string
       responses:
         2XX:
           description: Retrieved media content
@@ -24585,7 +24740,6 @@ paths:
       tags:
         - teams.channel
       summary: Get content for the navigation property filesFolder from teams
-      description: 'The content stream, if the item represents a file.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/channel-get-filesfolder?view=graph-rest-1.0
@@ -24621,7 +24775,6 @@ paths:
       tags:
         - teams.channel
       summary: Update content for the navigation property filesFolder in teams
-      description: 'The content stream, if the item represents a file.'
       operationId: team.primaryChannel_SetFilesFolderContent
       parameters:
         - name: team-id
@@ -24647,6 +24800,65 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teams/{team-id}/primaryChannel/filesFolder/contentStream':
+    get:
+      tags:
+        - teams.channel
+      summary: Get contentStream for the navigation property filesFolder from teams
+      description: 'The content stream, if the item represents a file.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/channel-get-filesfolder?view=graph-rest-1.0
+      operationId: team.primaryChannel_GetFilesFolderContentStream
+      parameters:
+        - name: team-id
+          in: path
+          description: The unique identifier of team
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+      responses:
+        2XX:
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - teams.channel
+      summary: Update contentStream for the navigation property filesFolder in teams
+      description: 'The content stream, if the item represents a file.'
+      operationId: team.primaryChannel_SetFilesFolderContentStream
+      parameters:
+        - name: team-id
+          in: path
+          description: The unique identifier of team
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        2XX:
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -25123,7 +25335,7 @@ paths:
       tags:
         - teams.channel
       summary: Update chatMessage
-      description: 'Update a chatMessage object. You can update all the properties of chatMessage in delegated permissions scenarios, except for the policyViolation property and read-only properties. The policyViolation property is the only property that can be updated in application permissions scenarios. Updating works only for chats where conversation members are Microsoft Teams users. If one of the members is using Skype, the operation fails. This method does not support federation. Only the user in the tenant who sent the message can perform data loss prevention (DLP) updates on the specified chat message.'
+      description: 'Update a chatMessage object. You can update all the properties of chatMessage in delegated permissions scenarios, except for the policyViolation property and read-only properties. The policyViolation property is the only property that can be updated in application permissions scenarios. Updating works only for chats where conversation members are Microsoft Teams users. If one of the members is using Skype, the operation fails. This method doesn''t support federation. Only the user in the tenant who sent the message can perform data loss prevention (DLP) updates on the specified chat message.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/chatmessage-update?view=graph-rest-1.0
@@ -25201,7 +25413,7 @@ paths:
       tags:
         - teams.channel
       summary: List hostedContents
-      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content'
+      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content.s'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
@@ -25494,13 +25706,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: chatMessageHostedContent
-        - name: $format
-          in: query
-          description: Format of the content
-          style: form
-          explode: false
-          schema:
-            type: string
       responses:
         2XX:
           description: Retrieved media content
@@ -26009,7 +26214,7 @@ paths:
       tags:
         - teams.channel
       summary: List hostedContents
-      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content'
+      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content.s'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
@@ -26350,13 +26555,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: chatMessageHostedContent
-        - name: $format
-          in: query
-          description: Format of the content
-          style: form
-          explode: false
-          schema:
-            type: string
       responses:
         2XX:
           description: Retrieved media content
@@ -26859,6 +27057,10 @@ paths:
       tags:
         - teams.Actions
       summary: Invoke action archive
+      description: 'Archive a channel in a team. When a channel is archived, users can''t send new messages or react to existing messages in the channel, edit the channel settings, or make other changes to the channel. You can delete an archived channel, or add and remove members from it. If you archive a team, its channels are archived for you. Archiving is asynchronous; a channel is archived after the asynchronous archiving operation completes successfully, which might occur after the response returns. A channel without an owner, or that belongs to a group that has no owner, can''t be archived. To restore a channel from its archived state, use the unarchive method. A channel can’t be archived or unarchived if its team is archived.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/channel-archive?view=graph-rest-1.0
       operationId: team.primaryChannel_archive
       parameters:
         - name: team-id
@@ -26974,7 +27176,7 @@ paths:
       tags:
         - teams.Actions
       summary: Invoke action provisionEmail
-      description: 'Provision an email address for a channel. Microsoft Teams doesn''t automatically provision an email address for a channel by default. To have Teams provision an email address, you can call provisionEmail, or through the Teams user interface, select Get email address, which triggers Teams to generate an email address if it has not already provisioned one. To remove the email address of a channel, use the removeEmail method.'
+      description: 'Provision an email address for a channel. Microsoft Teams doesn''t automatically provision an email address for a channel by default. To have Teams provision an email address, you can call provisionEmail, or through the Teams user interface, select Get email address, which triggers Teams to generate an email address if it didn''t provisioned one. To remove the email address of a channel, use the removeEmail method.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/channel-provisionemail?view=graph-rest-1.0
@@ -27028,6 +27230,10 @@ paths:
       tags:
         - teams.Actions
       summary: Invoke action unarchive
+      description: 'Restore an archived channel. Unarchiving restores the ability for users to send messages and edit the channel. Channels are archived via the archive API. Unarchiving is an asynchronous operation; a channel is unarchived when the asynchronous unarchive operation completes successfully, which might occur after this method responds.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/channel-unarchive?view=graph-rest-1.0
       operationId: team.primaryChannel_unarchive
       parameters:
         - name: team-id
@@ -29207,7 +29413,7 @@ paths:
       tags:
         - teams.schedule
       summary: List shifts
-      description: Get the list of shift instances in a schedule.
+      description: The shifts in the schedule.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/schedule-list-shifts?view=graph-rest-1.0
@@ -30437,7 +30643,7 @@ paths:
       tags:
         - teams.schedule
       summary: List timeOffReasons
-      description: Get the list of timeOffReasons in a schedule.
+      description: The set of reasons for a time off in the schedule.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/schedule-list-timeoffreasons?view=graph-rest-1.0
@@ -30614,7 +30820,7 @@ paths:
       tags:
         - teams.schedule
       summary: Delete timeOffReason
-      description: Mark a timeOffReason as inactive by setting the isActive property. Every team must include at least one timeOffReason. This method does not remove the specified timeOffReason instance. timeOffItem instances that have been assigned this reason remain assigned to this reason.
+      description: Mark a timeOffReason as inactive by setting the isActive property. Every team must include at least one timeOffReason. This method doesn't remove the specified timeOffReason instance. timeOffItem instances that were assigned this reason remain assigned to this reason.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/timeoffreason-delete?view=graph-rest-1.0
@@ -32883,7 +33089,6 @@ paths:
       tags:
         - teamwork.deletedTeam
       summary: Get content for the navigation property filesFolder from teamwork
-      description: 'The content stream, if the item represents a file.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/channel-get-filesfolder?view=graph-rest-1.0
@@ -32927,7 +33132,6 @@ paths:
       tags:
         - teamwork.deletedTeam
       summary: Update content for the navigation property filesFolder in teamwork
-      description: 'The content stream, if the item represents a file.'
       operationId: teamwork.deletedTeam.channel_SetFilesFolderContent
       parameters:
         - name: deletedTeam-id
@@ -32961,6 +33165,81 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teamwork/deletedTeams/{deletedTeam-id}/channels/{channel-id}/filesFolder/contentStream':
+    get:
+      tags:
+        - teamwork.deletedTeam
+      summary: Get contentStream for the navigation property filesFolder from teamwork
+      description: 'The content stream, if the item represents a file.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/channel-get-filesfolder?view=graph-rest-1.0
+      operationId: teamwork.deletedTeam.channel_GetFilesFolderContentStream
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: The unique identifier of deletedTeam
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+        - name: channel-id
+          in: path
+          description: The unique identifier of channel
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+      responses:
+        2XX:
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - teamwork.deletedTeam
+      summary: Update contentStream for the navigation property filesFolder in teamwork
+      description: 'The content stream, if the item represents a file.'
+      operationId: teamwork.deletedTeam.channel_SetFilesFolderContentStream
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: The unique identifier of deletedTeam
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+        - name: channel-id
+          in: path
+          description: The unique identifier of channel
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        2XX:
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -33517,7 +33796,7 @@ paths:
       tags:
         - teamwork.deletedTeam
       summary: Update chatMessage
-      description: 'Update a chatMessage object. You can update all the properties of chatMessage in delegated permissions scenarios, except for the policyViolation property and read-only properties. The policyViolation property is the only property that can be updated in application permissions scenarios. Updating works only for chats where conversation members are Microsoft Teams users. If one of the members is using Skype, the operation fails. This method does not support federation. Only the user in the tenant who sent the message can perform data loss prevention (DLP) updates on the specified chat message.'
+      description: 'Update a chatMessage object. You can update all the properties of chatMessage in delegated permissions scenarios, except for the policyViolation property and read-only properties. The policyViolation property is the only property that can be updated in application permissions scenarios. Updating works only for chats where conversation members are Microsoft Teams users. If one of the members is using Skype, the operation fails. This method doesn''t support federation. Only the user in the tenant who sent the message can perform data loss prevention (DLP) updates on the specified chat message.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/chatmessage-update?view=graph-rest-1.0
@@ -33611,7 +33890,7 @@ paths:
       tags:
         - teamwork.deletedTeam
       summary: List hostedContents
-      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content'
+      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content.s'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
@@ -33952,13 +34231,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: chatMessageHostedContent
-        - name: $format
-          in: query
-          description: Format of the content
-          style: form
-          explode: false
-          schema:
-            type: string
       responses:
         2XX:
           description: Retrieved media content
@@ -34555,7 +34827,7 @@ paths:
       tags:
         - teamwork.deletedTeam
       summary: List hostedContents
-      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content'
+      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content.s'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
@@ -34944,13 +35216,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: chatMessageHostedContent
-        - name: $format
-          in: query
-          description: Format of the content
-          style: form
-          explode: false
-          schema:
-            type: string
       responses:
         2XX:
           description: Retrieved media content
@@ -35533,6 +35798,10 @@ paths:
       tags:
         - teamwork.Actions
       summary: Invoke action archive
+      description: 'Archive a channel in a team. When a channel is archived, users can''t send new messages or react to existing messages in the channel, edit the channel settings, or make other changes to the channel. You can delete an archived channel, or add and remove members from it. If you archive a team, its channels are archived for you. Archiving is asynchronous; a channel is archived after the asynchronous archiving operation completes successfully, which might occur after the response returns. A channel without an owner, or that belongs to a group that has no owner, can''t be archived. To restore a channel from its archived state, use the unarchive method. A channel can’t be archived or unarchived if its team is archived.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/channel-archive?view=graph-rest-1.0
       operationId: teamwork.deletedTeam.channel_archive
       parameters:
         - name: deletedTeam-id
@@ -35672,7 +35941,7 @@ paths:
       tags:
         - teamwork.Actions
       summary: Invoke action provisionEmail
-      description: 'Provision an email address for a channel. Microsoft Teams doesn''t automatically provision an email address for a channel by default. To have Teams provision an email address, you can call provisionEmail, or through the Teams user interface, select Get email address, which triggers Teams to generate an email address if it has not already provisioned one. To remove the email address of a channel, use the removeEmail method.'
+      description: 'Provision an email address for a channel. Microsoft Teams doesn''t automatically provision an email address for a channel by default. To have Teams provision an email address, you can call provisionEmail, or through the Teams user interface, select Get email address, which triggers Teams to generate an email address if it didn''t provisioned one. To remove the email address of a channel, use the removeEmail method.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/channel-provisionemail?view=graph-rest-1.0
@@ -35742,6 +36011,10 @@ paths:
       tags:
         - teamwork.Actions
       summary: Invoke action unarchive
+      description: 'Restore an archived channel. Unarchiving restores the ability for users to send messages and edit the channel. Channels are archived via the archive API. Unarchiving is an asynchronous operation; a channel is unarchived when the asynchronous unarchive operation completes successfully, which might occur after this method responds.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/channel-unarchive?view=graph-rest-1.0
       operationId: teamwork.deletedTeam.channel_unarchive
       parameters:
         - name: deletedTeam-id
@@ -37991,11 +38264,11 @@ paths:
     get:
       tags:
         - teamwork.teamTemplate
-      summary: List definitions
-      description: 'List the teamTemplateDefinition objects associated with a teamTemplate. '
+      summary: List teamTemplates
+      description: 'Get the list of teamTemplate objects that are available for a tenant. '
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/teamtemplate-list-definitions?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/teamwork-list-teamtemplates?view=graph-rest-1.0
       operationId: teamwork_ListTeamTemplate
       parameters:
         - $ref: '#/components/parameters/top'
@@ -38756,7 +39029,7 @@ paths:
       tags:
         - teamwork.teamTemplate
       summary: Create channel
-      description: 'Create a new channel in a team, as specified in the request body. When you create a channel, the maximum length of the channel''s displayName is 50 characters. This is the name that appears to the user in Microsoft Teams. You can add a maximum of 200 members when you create a private channel.'
+      description: 'Create a new channel in a team, as specified in the request body. When you create a channel, the maximum length of the channel''s displayName is 50 characters. This display name appears to the user in Microsoft Teams. You can add a maximum of 200 members when you create a private channel.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/channel-post?view=graph-rest-1.0
@@ -39027,7 +39300,6 @@ paths:
       tags:
         - teamwork.teamTemplate
       summary: Get content for the navigation property filesFolder from teamwork
-      description: 'The content stream, if the item represents a file.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/channel-get-filesfolder?view=graph-rest-1.0
@@ -39079,7 +39351,6 @@ paths:
       tags:
         - teamwork.teamTemplate
       summary: Update content for the navigation property filesFolder in teamwork
-      description: 'The content stream, if the item represents a file.'
       operationId: teamwork.teamTemplate.definition.teamDefinition.channel_SetFilesFolderContent
       parameters:
         - name: teamTemplate-id
@@ -39121,6 +39392,97 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teamwork/teamTemplates/{teamTemplate-id}/definitions/{teamTemplateDefinition-id}/teamDefinition/channels/{channel-id}/filesFolder/contentStream':
+    get:
+      tags:
+        - teamwork.teamTemplate
+      summary: Get contentStream for the navigation property filesFolder from teamwork
+      description: 'The content stream, if the item represents a file.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/channel-get-filesfolder?view=graph-rest-1.0
+      operationId: teamwork.teamTemplate.definition.teamDefinition.channel_GetFilesFolderContentStream
+      parameters:
+        - name: teamTemplate-id
+          in: path
+          description: The unique identifier of teamTemplate
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamTemplate
+        - name: teamTemplateDefinition-id
+          in: path
+          description: The unique identifier of teamTemplateDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamTemplateDefinition
+        - name: channel-id
+          in: path
+          description: The unique identifier of channel
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+      responses:
+        2XX:
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - teamwork.teamTemplate
+      summary: Update contentStream for the navigation property filesFolder in teamwork
+      description: 'The content stream, if the item represents a file.'
+      operationId: teamwork.teamTemplate.definition.teamDefinition.channel_SetFilesFolderContentStream
+      parameters:
+        - name: teamTemplate-id
+          in: path
+          description: The unique identifier of teamTemplate
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamTemplate
+        - name: teamTemplateDefinition-id
+          in: path
+          description: The unique identifier of teamTemplateDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamTemplateDefinition
+        - name: channel-id
+          in: path
+          description: The unique identifier of channel
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        2XX:
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -39757,7 +40119,7 @@ paths:
       tags:
         - teamwork.teamTemplate
       summary: Update chatMessage
-      description: 'Update a chatMessage object. You can update all the properties of chatMessage in delegated permissions scenarios, except for the policyViolation property and read-only properties. The policyViolation property is the only property that can be updated in application permissions scenarios. Updating works only for chats where conversation members are Microsoft Teams users. If one of the members is using Skype, the operation fails. This method does not support federation. Only the user in the tenant who sent the message can perform data loss prevention (DLP) updates on the specified chat message.'
+      description: 'Update a chatMessage object. You can update all the properties of chatMessage in delegated permissions scenarios, except for the policyViolation property and read-only properties. The policyViolation property is the only property that can be updated in application permissions scenarios. Updating works only for chats where conversation members are Microsoft Teams users. If one of the members is using Skype, the operation fails. This method doesn''t support federation. Only the user in the tenant who sent the message can perform data loss prevention (DLP) updates on the specified chat message.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/chatmessage-update?view=graph-rest-1.0
@@ -39867,7 +40229,7 @@ paths:
       tags:
         - teamwork.teamTemplate
       summary: List hostedContents
-      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content'
+      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content.s'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
@@ -40256,13 +40618,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: chatMessageHostedContent
-        - name: $format
-          in: query
-          description: Format of the content
-          style: form
-          explode: false
-          schema:
-            type: string
       responses:
         2XX:
           description: Retrieved media content
@@ -40947,7 +41302,7 @@ paths:
       tags:
         - teamwork.teamTemplate
       summary: List hostedContents
-      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content'
+      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content.s'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
@@ -41384,13 +41739,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: chatMessageHostedContent
-        - name: $format
-          in: query
-          description: Format of the content
-          style: form
-          explode: false
-          schema:
-            type: string
       responses:
         2XX:
           description: Retrieved media content
@@ -42053,6 +42401,10 @@ paths:
       tags:
         - teamwork.Actions
       summary: Invoke action archive
+      description: 'Archive a channel in a team. When a channel is archived, users can''t send new messages or react to existing messages in the channel, edit the channel settings, or make other changes to the channel. You can delete an archived channel, or add and remove members from it. If you archive a team, its channels are archived for you. Archiving is asynchronous; a channel is archived after the asynchronous archiving operation completes successfully, which might occur after the response returns. A channel without an owner, or that belongs to a group that has no owner, can''t be archived. To restore a channel from its archived state, use the unarchive method. A channel can’t be archived or unarchived if its team is archived.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/channel-archive?view=graph-rest-1.0
       operationId: teamwork.teamTemplate.definition.teamDefinition.channel_archive
       parameters:
         - name: teamTemplate-id
@@ -42216,7 +42568,7 @@ paths:
       tags:
         - teamwork.Actions
       summary: Invoke action provisionEmail
-      description: 'Provision an email address for a channel. Microsoft Teams doesn''t automatically provision an email address for a channel by default. To have Teams provision an email address, you can call provisionEmail, or through the Teams user interface, select Get email address, which triggers Teams to generate an email address if it has not already provisioned one. To remove the email address of a channel, use the removeEmail method.'
+      description: 'Provision an email address for a channel. Microsoft Teams doesn''t automatically provision an email address for a channel by default. To have Teams provision an email address, you can call provisionEmail, or through the Teams user interface, select Get email address, which triggers Teams to generate an email address if it didn''t provisioned one. To remove the email address of a channel, use the removeEmail method.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/channel-provisionemail?view=graph-rest-1.0
@@ -42302,6 +42654,10 @@ paths:
       tags:
         - teamwork.Actions
       summary: Invoke action unarchive
+      description: 'Restore an archived channel. Unarchiving restores the ability for users to send messages and edit the channel. Channels are archived via the archive API. Unarchiving is an asynchronous operation; a channel is unarchived when the asynchronous unarchive operation completes successfully, which might occur after this method responds.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/channel-unarchive?view=graph-rest-1.0
       operationId: teamwork.teamTemplate.definition.teamDefinition.channel_unarchive
       parameters:
         - name: teamTemplate-id
@@ -44819,7 +45175,7 @@ paths:
       tags:
         - teamwork.Actions
       summary: Invoke action archive
-      description: "Archive the specified team. \nWhen a team is archived, users can no longer send or like messages on any channel in the team, edit the team's name, description, or other settings, or in general make most changes to the team.\nMembership changes to the team continue to be allowed. Archiving is an async operation. A team is archived once the async operation completes successfully, which may occur subsequent to a response from this API. To archive a team, the team and group must have an owner. To restore a team from its archived state, use the API to unarchive."
+      description: "Archive the specified team. \nWhen a team is archived, users can no longer make most changes to the team. For example, users can no longer: send or like messages on any channel in the team; edit the team's name or description; nor edit other settings. However, membership changes to the team continue to be allowed. Archiving is an async operation. A team is archived once the async operation completes successfully, which can occur subsequent to a response from this API. To archive a team, the team and group must have an owner. To restore a team from its archived state, use the API to unarchive."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/team-archive?view=graph-rest-1.0
@@ -45021,7 +45377,7 @@ paths:
       tags:
         - teamwork.Actions
       summary: Invoke action unarchive
-      description: 'Restore an archived team and restores users'' ability to send messages and edit the team, abiding by tenant and team settings. Teams are archived using the archive API. Unarchiving is an async operation. A team is unarchived once the async operation completes successfully, which may occur subsequent to a response from this API.'
+      description: 'Restore an archived team and restores users'' ability to send messages and edit the team, abiding by tenant and team settings. Teams are archived using the archive API. Unarchiving is an async operation. A team is unarchived once the async operation completes successfully, which might occur subsequent to a response from this API.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/team-unarchive?view=graph-rest-1.0
@@ -46124,13 +46480,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: teamTemplateDefinition
-        - name: $format
-          in: query
-          description: Format of the content
-          style: form
-          explode: false
-          schema:
-            type: string
       responses:
         2XX:
           description: Retrieved media content
@@ -46370,7 +46719,6 @@ paths:
       tags:
         - teamwork.teamTemplate
       summary: Get content for the navigation property filesFolder from teamwork
-      description: 'The content stream, if the item represents a file.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/channel-get-filesfolder?view=graph-rest-1.0
@@ -46414,7 +46762,6 @@ paths:
       tags:
         - teamwork.teamTemplate
       summary: Update content for the navigation property filesFolder in teamwork
-      description: 'The content stream, if the item represents a file.'
       operationId: teamwork.teamTemplate.definition.teamDefinition.primaryChannel_SetFilesFolderContent
       parameters:
         - name: teamTemplate-id
@@ -46448,6 +46795,81 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teamwork/teamTemplates/{teamTemplate-id}/definitions/{teamTemplateDefinition-id}/teamDefinition/primaryChannel/filesFolder/contentStream':
+    get:
+      tags:
+        - teamwork.teamTemplate
+      summary: Get contentStream for the navigation property filesFolder from teamwork
+      description: 'The content stream, if the item represents a file.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/channel-get-filesfolder?view=graph-rest-1.0
+      operationId: teamwork.teamTemplate.definition.teamDefinition.primaryChannel_GetFilesFolderContentStream
+      parameters:
+        - name: teamTemplate-id
+          in: path
+          description: The unique identifier of teamTemplate
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamTemplate
+        - name: teamTemplateDefinition-id
+          in: path
+          description: The unique identifier of teamTemplateDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamTemplateDefinition
+      responses:
+        2XX:
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - teamwork.teamTemplate
+      summary: Update contentStream for the navigation property filesFolder in teamwork
+      description: 'The content stream, if the item represents a file.'
+      operationId: teamwork.teamTemplate.definition.teamDefinition.primaryChannel_SetFilesFolderContentStream
+      parameters:
+        - name: teamTemplate-id
+          in: path
+          description: The unique identifier of teamTemplate
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamTemplate
+        - name: teamTemplateDefinition-id
+          in: path
+          description: The unique identifier of teamTemplateDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: teamTemplateDefinition
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        2XX:
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -47004,7 +47426,7 @@ paths:
       tags:
         - teamwork.teamTemplate
       summary: Update chatMessage
-      description: 'Update a chatMessage object. You can update all the properties of chatMessage in delegated permissions scenarios, except for the policyViolation property and read-only properties. The policyViolation property is the only property that can be updated in application permissions scenarios. Updating works only for chats where conversation members are Microsoft Teams users. If one of the members is using Skype, the operation fails. This method does not support federation. Only the user in the tenant who sent the message can perform data loss prevention (DLP) updates on the specified chat message.'
+      description: 'Update a chatMessage object. You can update all the properties of chatMessage in delegated permissions scenarios, except for the policyViolation property and read-only properties. The policyViolation property is the only property that can be updated in application permissions scenarios. Updating works only for chats where conversation members are Microsoft Teams users. If one of the members is using Skype, the operation fails. This method doesn''t support federation. Only the user in the tenant who sent the message can perform data loss prevention (DLP) updates on the specified chat message.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/chatmessage-update?view=graph-rest-1.0
@@ -47098,7 +47520,7 @@ paths:
       tags:
         - teamwork.teamTemplate
       summary: List hostedContents
-      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content'
+      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content.s'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
@@ -47439,13 +47861,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: chatMessageHostedContent
-        - name: $format
-          in: query
-          description: Format of the content
-          style: form
-          explode: false
-          schema:
-            type: string
       responses:
         2XX:
           description: Retrieved media content
@@ -48042,7 +48457,7 @@ paths:
       tags:
         - teamwork.teamTemplate
       summary: List hostedContents
-      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content'
+      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content.s'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
@@ -48431,13 +48846,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: chatMessageHostedContent
-        - name: $format
-          in: query
-          description: Format of the content
-          style: form
-          explode: false
-          schema:
-            type: string
       responses:
         2XX:
           description: Retrieved media content
@@ -49020,6 +49428,10 @@ paths:
       tags:
         - teamwork.Actions
       summary: Invoke action archive
+      description: 'Archive a channel in a team. When a channel is archived, users can''t send new messages or react to existing messages in the channel, edit the channel settings, or make other changes to the channel. You can delete an archived channel, or add and remove members from it. If you archive a team, its channels are archived for you. Archiving is asynchronous; a channel is archived after the asynchronous archiving operation completes successfully, which might occur after the response returns. A channel without an owner, or that belongs to a group that has no owner, can''t be archived. To restore a channel from its archived state, use the unarchive method. A channel can’t be archived or unarchived if its team is archived.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/channel-archive?view=graph-rest-1.0
       operationId: teamwork.teamTemplate.definition.teamDefinition.primaryChannel_archive
       parameters:
         - name: teamTemplate-id
@@ -49159,7 +49571,7 @@ paths:
       tags:
         - teamwork.Actions
       summary: Invoke action provisionEmail
-      description: 'Provision an email address for a channel. Microsoft Teams doesn''t automatically provision an email address for a channel by default. To have Teams provision an email address, you can call provisionEmail, or through the Teams user interface, select Get email address, which triggers Teams to generate an email address if it has not already provisioned one. To remove the email address of a channel, use the removeEmail method.'
+      description: 'Provision an email address for a channel. Microsoft Teams doesn''t automatically provision an email address for a channel by default. To have Teams provision an email address, you can call provisionEmail, or through the Teams user interface, select Get email address, which triggers Teams to generate an email address if it didn''t provisioned one. To remove the email address of a channel, use the removeEmail method.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/channel-provisionemail?view=graph-rest-1.0
@@ -49229,6 +49641,10 @@ paths:
       tags:
         - teamwork.Actions
       summary: Invoke action unarchive
+      description: 'Restore an archived channel. Unarchiving restores the ability for users to send messages and edit the channel. Channels are archived via the archive API. Unarchiving is an asynchronous operation; a channel is unarchived when the asynchronous unarchive operation completes successfully, which might occur after this method responds.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/channel-unarchive?view=graph-rest-1.0
       operationId: teamwork.teamTemplate.definition.teamDefinition.primaryChannel_unarchive
       parameters:
         - name: teamTemplate-id
@@ -51824,7 +52240,7 @@ paths:
       tags:
         - teamwork.teamTemplate
       summary: List shifts
-      description: Get the list of shift instances in a schedule.
+      description: The shifts in the schedule.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/schedule-list-shifts?view=graph-rest-1.0
@@ -53286,7 +53702,7 @@ paths:
       tags:
         - teamwork.teamTemplate
       summary: List timeOffReasons
-      description: Get the list of timeOffReasons in a schedule.
+      description: The set of reasons for a time off in the schedule.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/schedule-list-timeoffreasons?view=graph-rest-1.0
@@ -53495,7 +53911,7 @@ paths:
       tags:
         - teamwork.teamTemplate
       summary: Delete timeOffReason
-      description: Mark a timeOffReason as inactive by setting the isActive property. Every team must include at least one timeOffReason. This method does not remove the specified timeOffReason instance. timeOffItem instances that have been assigned this reason remain assigned to this reason.
+      description: Mark a timeOffReason as inactive by setting the isActive property. Every team must include at least one timeOffReason. This method doesn't remove the specified timeOffReason instance. timeOffItem instances that were assigned this reason remain assigned to this reason.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/timeoffreason-delete?view=graph-rest-1.0
@@ -56293,11 +56709,11 @@ paths:
     post:
       tags:
         - users.chat
-      summary: Send chatMessage in a channel or a chat
-      description: Send a new chatMessage in the specified channel or a chat.
+      summary: Send message in a chat
+      description: Send a new chatMessage in the specified chat. This API cannot create a new chat; you must use the list chats method to retrieve the ID of an existing chat before creating a chat message.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/chat-post-messages?view=graph-rest-1.0
       operationId: user.chat_CreateMessage
       parameters:
         - name: user-id
@@ -56492,7 +56908,7 @@ paths:
       tags:
         - users.chat
       summary: List hostedContents
-      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content'
+      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content.s'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
@@ -56833,13 +57249,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: chatMessageHostedContent
-        - name: $format
-          in: query
-          description: Format of the content
-          style: form
-          explode: false
-          schema:
-            type: string
       responses:
         2XX:
           description: Retrieved media content
@@ -57254,7 +57663,7 @@ paths:
       tags:
         - users.chat
       summary: List hostedContents
-      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content'
+      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content.s'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
@@ -57643,13 +58052,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: chatMessageHostedContent
-        - name: $format
-          in: query
-          description: Format of the content
-          style: form
-          explode: false
-          schema:
-            type: string
       responses:
         2XX:
           description: Retrieved media content
@@ -60862,13 +61264,14 @@ components:
               nullable: true
             displayName:
               type: string
-              description: Channel name as it will appear to the user in Microsoft Teams. The maximum length is 50 characters.
+              description: Channel name as it appears to the user in Microsoft Teams. The maximum length is 50 characters.
             email:
               type: string
               description: The email address for sending messages to the channel. Read-only.
               nullable: true
             isArchived:
               type: boolean
+              description: Indicates whether the channel is archived. Read-only.
               nullable: true
             isFavoriteByDefault:
               type: boolean
@@ -60886,7 +61289,7 @@ components:
               nullable: true
             webUrl:
               type: string
-              description: 'A hyperlink that will go to the channel in Microsoft Teams. This is the URL that you get when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.'
+              description: 'A hyperlink to the channel in Microsoft Teams. This URL is supplied when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.'
               nullable: true
             filesFolder:
               $ref: '#/components/schemas/microsoft.graph.driveItem'
@@ -60927,6 +61330,10 @@ components:
             bundle:
               $ref: '#/components/schemas/microsoft.graph.bundle'
             content:
+              type: string
+              format: base64url
+              nullable: true
+            contentStream:
               type: string
               description: 'The content stream, if the item represents a file.'
               format: base64url
@@ -61224,12 +61631,12 @@ components:
               type: array
               items:
                 type: string
-              description: 'Specifies the group behaviors that can be set for a Microsoft 365 group during creation. This can be set only as part of creation (POST). For the list of possible values, see Set Microsoft 365 group behaviors and provisioning options.'
+              description: 'Specifies the group behaviors that can be set for a Microsoft 365 group during creation. This property can be set only as part of creation (POST). For the list of possible values, see Microsoft 365 group behaviors and provisioning options.'
             resourceProvisioningOptions:
               type: array
               items:
                 type: string
-              description: 'Specifies the group resources that are associated with the Microsoft 365 group. The possible value is Team. For more information, see Set Microsoft 365 group behaviors and provisioning options. Returned by default. Supports $filter (eq, not, startsWith.'
+              description: 'Specifies the group resources that are associated with the Microsoft 365 group. The possible value is Team. For more information, see Microsoft 365 group behaviors and provisioning options. Returned by default. Supports $filter (eq, not, startsWith.'
             securityEnabled:
               type: boolean
               description: 'Specifies whether the group is a security group. Required.Returned by default. Supports $filter (eq, ne, not, in).'
@@ -61249,6 +61656,7 @@ components:
               nullable: true
             uniqueName:
               type: string
+              description: The unique identifier that can be assigned to a group and used as an alternate key. Immutable. Read-only.
               nullable: true
             unseenConversationsCount:
               maximum: 2147483647
@@ -61780,7 +62188,7 @@ components:
               nullable: true
             userType:
               type: string
-              description: 'A String value that can be used to classify user types in your directory, such as Member and Guest. Supports $filter (eq, ne, not, in, and eq on null values). NOTE: For more information about the permissions for member and guest users, see What are the default user permissions in Microsoft Entra ID?'
+              description: 'A String value that can be used to classify user types in your directory. The possible values are Member and Guest. Supports $filter (eq, ne, not, in, and eq on null values). NOTE: For more information about the permissions for member and guest users, see What are the default user permissions in Microsoft Entra ID?'
               nullable: true
             activities:
               type: array
@@ -61925,6 +62333,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.informationProtection'
             insights:
               $ref: '#/components/schemas/microsoft.graph.itemInsights'
+            invitedBy:
+              $ref: '#/components/schemas/microsoft.graph.directoryObject'
             joinedGroups:
               type: array
               items:
@@ -63412,11 +63822,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: 'Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn''t included in the response.'
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -64453,7 +64863,7 @@ components:
               nullable: true
             changeType:
               type: string
-              description: 'Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType. Use updated to receive notifications when user or group is created, updated or soft deleted.  Use deleted to receive notifications when user or group is permanently deleted.'
+              description: 'Required. Indicates the type of change in the subscribed resource that raises a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType. Use updated to receive notifications when user or group is created, updated, or soft deleted. Use deleted to receive notifications when user or group is permanently deleted.'
             clientState:
               type: string
               description: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 255 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
@@ -64473,7 +64883,7 @@ components:
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Required. Specifies the date and time when the webhook subscription expires. The time is in UTC, and can be an amount of time from subscription creation that varies for the resource subscribed to. For the maximum supported subscription length of time, see the table below.'
+              description: 'Required. Specifies the date and time when the webhook subscription expires. The time is in UTC, and can be an amount of time from subscription creation that varies for the resource subscribed to. For the maximum supported subscription length of time, see Subscription lifetime.'
               format: date-time
             includeResourceData:
               type: boolean
@@ -64493,18 +64903,18 @@ components:
               nullable: true
             notificationQueryOptions:
               type: string
-              description: 'Optional.  OData query options for specifying the value for the targeting resource. Clients receive notifications when the resource reaches the state matching the query options provided here. With this new property in the subscription creation payload along with all existing properties, Webhooks will deliver notifications whenever a resource reaches the desired state mentioned in the notificationQueryOptions property. For example, when the print job is completed or when a print job resource isFetchable property value becomes true etc.  Supported only for Universal Print Service. For more information, see Subscribe to change notifications from cloud printing APIs using Microsoft Graph.'
+              description: 'Optional. OData query options for specifying the value for the targeting resource. Clients receive notifications when the resource reaches the state matching the query options provided here. With this new property in the subscription creation payload along with all existing properties, Webhooks deliver notifications whenever a resource reaches the desired state mentioned in the notificationQueryOptions property. For example, when the print job is completed or when a print job resource isFetchable property value becomes true etc.  Supported only for Universal Print Service. For more information, see Subscribe to change notifications from cloud printing APIs using Microsoft Graph.'
               nullable: true
             notificationUrl:
               type: string
-              description: Required. The URL of the endpoint that receives the change notifications. This URL must make use of the HTTPS protocol. Any query string parameter included in the notificationUrl property will be included in the HTTP POST request when Microsoft Graph sends the change notifications.
+              description: Required. The URL of the endpoint that receives the change notifications. This URL must make use of the HTTPS protocol. Any query string parameter included in the notificationUrl property is included in the HTTP POST request when Microsoft Graph sends the change notifications.
             notificationUrlAppId:
               type: string
-              description: Optional. The app ID that the subscription service can use to generate the validation token. This allows the client to validate the authenticity of the notification received.
+              description: Optional. The app ID that the subscription service can use to generate the validation token. The value allows the client to validate the authenticity of the notification received.
               nullable: true
             resource:
               type: string
-              description: Required. Specifies the resource that will be monitored for changes. Do not include the base URL (https://graph.microsoft.com/beta/). See the possible resource path values for each supported resource.
+              description: Required. Specifies the resource that is monitored for changes. Don't include the base URL (https://graph.microsoft.com/beta/). See the possible resource path values for each supported resource.
           additionalProperties:
             type: object
     microsoft.graph.thumbnailSet:
@@ -64904,21 +65314,27 @@ components:
               $ref: '#/components/schemas/microsoft.graph.importance'
             isAllDay:
               type: boolean
+              description: 'Set to true if the event lasts all day. If true, regardless of whether it''s a single-day or multi-day event, start and end time must be set to midnight and be in the same time zone.'
               nullable: true
             isCancelled:
               type: boolean
+              description: Set to true if the event has been canceled.
               nullable: true
             isDraft:
               type: boolean
+              description: 'Set to true if the user has updated the meeting in Outlook but hasn''t sent the updates to attendees. Set to false if all changes have been sent, or if the event is an appointment without any attendees.'
               nullable: true
             isOnlineMeeting:
               type: boolean
+              description: 'True if this event has online meeting information (that is, onlineMeeting points to an onlineMeetingInfo resource), false otherwise. Default is false (onlineMeeting is null). Optional.  After you set isOnlineMeeting to true, Microsoft Graph initializes onlineMeeting. Subsequently Outlook ignores any further changes to isOnlineMeeting, and the meeting remains available online.'
               nullable: true
             isOrganizer:
               type: boolean
+              description: Set to true if the calendar owner (specified by the owner property of the calendar) is the organizer of the event (specified by the organizer property of the event). This also applies if a delegate organized the event on behalf of the owner.
               nullable: true
             isReminderOn:
               type: boolean
+              description: Set to true if an alert is set to remind the user of the event.
               nullable: true
             location:
               $ref: '#/components/schemas/microsoft.graph.location'
@@ -64926,8 +65342,10 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.location'
+              description: 'The locations where the event is held or attended from. The location and locations properties always correspond with each other. If you update the location property, any prior locations in the locations collection would be removed and replaced by the new location value.'
             occurrenceId:
               type: string
+              description: 'An identifier for an occurrence in a recurring event series. Null if the event isn''t part of a recurring series.The format of the property value is OID.{seriesMasterId-value}.{occurrence-start-date}. The time zone for {occurrence-start-date} is the recurrenceTimeZone property defined for the corresponding recurrenceRange.This property can identify any occurrence in a recurring series, including an occurrence that has been modified or canceled. You can use this property to perform all operations supported by occurrences in the recurring series.'
               nullable: true
             onlineMeeting:
               $ref: '#/components/schemas/microsoft.graph.onlineMeetingInfo'
@@ -64935,19 +65353,23 @@ components:
               $ref: '#/components/schemas/microsoft.graph.onlineMeetingProviderType'
             onlineMeetingUrl:
               type: string
+              description: 'A URL for an online meeting. The property is set only when an organizer specifies in Outlook that an event is an online meeting such as Skype. Read-only.To access the URL to join an online meeting, use joinUrl which is exposed via the onlineMeeting property of the event. The onlineMeetingUrl property will be deprecated in the future.'
               nullable: true
             organizer:
               $ref: '#/components/schemas/microsoft.graph.recipient'
             originalEndTimeZone:
               type: string
+              description: The end time zone that was set when the event was created. A value of tzone://Microsoft/Custom indicates that a legacy custom time zone was set in desktop Outlook.
               nullable: true
             originalStart:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Represents the start time of an event when it is initially created as an occurrence or exception in a recurring series. This property isn''t returned for events that are single instances. Its date and time information is expressed in ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
             originalStartTimeZone:
               type: string
+              description: The start time zone that was set when the event was created. A value of tzone://Microsoft/Custom indicates that a legacy custom time zone was set in desktop Outlook.
               nullable: true
             recurrence:
               $ref: '#/components/schemas/microsoft.graph.patternedRecurrence'
@@ -64955,10 +65377,12 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: The number of minutes before the event start time that the reminder alert occurs.
               format: int32
               nullable: true
             responseRequested:
               type: boolean
+              description: 'Default is true, which represents the organizer would like an invitee to send a response to the event.'
               nullable: true
             responseStatus:
               $ref: '#/components/schemas/microsoft.graph.responseStatus'
@@ -64966,6 +65390,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.sensitivity'
             seriesMasterId:
               type: string
+              description: 'The ID for the recurring series master item, if this event is part of a recurring series.'
               nullable: true
             showAs:
               $ref: '#/components/schemas/microsoft.graph.freeBusyStatus'
@@ -64973,17 +65398,21 @@ components:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
             subject:
               type: string
+              description: The text of the event's subject line.
               nullable: true
             transactionId:
               type: string
+              description: 'A custom identifier specified by a client app for the server to avoid redundant POST operations in case of client retries to create the same event. This is useful when low network connectivity causes the client to time out before receiving a response from the server for the client''s prior create-event request. After you set transactionId when creating an event, you cannot change transactionId in a subsequent update. This property is only returned in a response payload if an app has set it. Optional.'
               nullable: true
             type:
               $ref: '#/components/schemas/microsoft.graph.eventType'
             uid:
               type: string
+              description: 'A unique identifier for calendar events. For recurring events, the value is the same for the series master and all of its occurrences including exceptions.'
               nullable: true
             webLink:
               type: string
+              description: 'The URL to open the event in Outlook on the web.Outlook on the web opens the event in the browser if you are signed in to your mailbox. Otherwise, Outlook on the web prompts you to sign in.This URL cannot be accessed from within an iFrame.'
               nullable: true
             attachments:
               type: array
@@ -65295,7 +65724,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.columnDefinition'
-              description: The collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
+              description: The collection of column definitions available in the site that is referenced from the sites in the parent hierarchy of the current site.
               x-ms-navigationProperty: true
             informationProtection:
               $ref: '#/components/schemas/microsoft.graph.informationProtection'
@@ -65303,7 +65732,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.baseItem'
-              description: Used to address any item contained in this site. This collection cannot be enumerated.
+              description: Used to address any item contained in this site. This collection can't be enumerated.
               x-ms-navigationProperty: true
             lists:
               type: array
@@ -65323,7 +65752,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.baseSitePage'
-              description: The collection of pages in the baseSitePages list in this site.
+              description: The collection of pages in the baseSitePages list on this site.
               x-ms-navigationProperty: true
             permissions:
               type: array
@@ -65874,18 +66303,18 @@ components:
           properties:
             accountEnabled:
               type: boolean
-              description: 'true if the service principal account is enabled; otherwise, false. If set to false, then no users will be able to sign in to this app, even if they are assigned to it. Supports $filter (eq, ne, not, in).'
+              description: 'true if the service principal account is enabled; otherwise, false. If set to false, then no users are able to sign in to this app, even if they''re assigned to it. Supports $filter (eq, ne, not, in).'
               nullable: true
             addIns:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.addIn'
-              description: 'Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the addIns property for its ''FileHandler'' functionality. This will let services like Microsoft 365 call the application in the context of a document the user is working on.'
+              description: 'Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the addIns property for its ''FileHandler'' functionality. This lets services like Microsoft 365 call the application in the context of a document the user is working on.'
             alternativeNames:
               type: array
               items:
                 type: string
-              description: 'Used to retrieve service principals by subscription, identify resource group and full resource ids for managed identities. Supports $filter (eq, not, ge, le, startsWith).'
+              description: 'Used to retrieve service principals by subscription, identify resource group and full resource IDs for managed identities. Supports $filter (eq, not, ge, le, startsWith).'
             appDescription:
               type: string
               description: The description exposed by the associated application.
@@ -65900,12 +66329,12 @@ components:
               nullable: true
             applicationTemplateId:
               type: string
-              description: 'Unique identifier of the applicationTemplate that the servicePrincipal was created from. Read-only. Supports $filter (eq, ne, NOT, startsWith).'
+              description: 'Unique identifier of the applicationTemplate. Supports $filter (eq, not, ne). Read-only. null if the app wasn''t created from an application template.'
               nullable: true
             appOwnerOrganizationId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
               type: string
-              description: 'Contains the tenant id where the application is registered. This is applicable only to service principals backed by applications. Supports $filter (eq, ne, NOT, ge, le).'
+              description: 'Contains the tenant ID where the application is registered. This is applicable only to service principals backed by applications. Supports $filter (eq, ne, NOT, ge, le).'
               format: uuid
               nullable: true
             appRoleAssignmentRequired:
@@ -65915,12 +66344,12 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appRole'
-              description: 'The roles exposed by the application, which this service principal represents. For more information see the appRoles property definition on the application entity. Not nullable.'
+              description: 'The roles exposed by the application, which this service principal represents. For more information, see the appRoles property definition on the application entity. Not nullable.'
             customSecurityAttributes:
               $ref: '#/components/schemas/microsoft.graph.customSecurityAttributeValue'
             description:
               type: string
-              description: 'Free text field to provide an internal end-user facing description of the service principal. End-user portals such MyApps will display the application description in this field. The maximum allowed size is 1024 characters. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.'
+              description: 'Free text field to provide an internal end-user facing description of the service principal. End-user portals such MyApps displays the application description in this field. The maximum allowed size is 1,024 characters. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.'
               nullable: true
             disabledByMicrosoftStatus:
               type: string
@@ -65951,11 +66380,11 @@ components:
               nullable: true
             logoutUrl:
               type: string
-              description: 'Specifies the URL that will be used by Microsoft''s authorization service to logout an user using OpenId Connect front-channel, back-channel or SAML logout protocols.'
+              description: 'Specifies the URL that the Microsoft''s authorization service uses to sign out a user using OpenId Connect front-channel, back-channel, or SAML sign out protocols.'
               nullable: true
             notes:
               type: string
-              description: 'Free text field to capture information about the service principal, typically used for operational purposes. Maximum allowed size is 1024 characters.'
+              description: 'Free text field to capture information about the service principal, typically used for operational purposes. Maximum allowed size is 1,024 characters.'
               nullable: true
             notificationEmailAddresses:
               type: array
@@ -65976,18 +66405,18 @@ components:
             preferredTokenSigningKeyEndDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Specifies the expiration date of the keyCredential used for token signing, marked by preferredTokenSigningKeyThumbprint. Updating this attribute is not currentlysupported. For details, see ServicePrincipal property differences.'
+              description: 'Specifies the expiration date of the keyCredential used for token signing, marked by preferredTokenSigningKeyThumbprint. Updating this attribute isn''t currently supported. For details, see ServicePrincipal property differences.'
               format: date-time
               nullable: true
             preferredTokenSigningKeyThumbprint:
               type: string
-              description: 'This property can be used on SAML applications (apps that have preferredSingleSignOnMode set to saml) to control which certificate is used to sign the SAML responses. For applications that are not SAML, do not write or otherwise rely on this property.'
+              description: 'This property can be used on SAML applications (apps that have preferredSingleSignOnMode set to saml) to control which certificate is used to sign the SAML responses. For applications that aren''t SAML, don''t write or otherwise rely on this property.'
               nullable: true
             publishedPermissionScopes:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.permissionScope'
-              description: 'The delegated permissions exposed by the application. For more information see the oauth2PermissionScopes property on the application entity''s api property. Not nullable. Note: This property is named oauth2PermissionScopes in v1.0.'
+              description: 'The delegated permissions exposed by the application. For more information, see the oauth2PermissionScopes property on the application entity''s api property. Not nullable. Note: This property is named oauth2PermissionScopes in v1.0.'
             publisherName:
               type: string
               description: The name of the Microsoft Entra tenant that published the application.
@@ -66007,14 +66436,14 @@ components:
               type: array
               items:
                 type: string
-              description: 'Contains the list of identifiersUris, copied over from the associated application. Additional values can be added to hybrid applications. These values can be used to identify the permissions exposed by this app within Microsoft Entra ID. For example,Client apps can specify a resource URI which is based on the values of this property to acquire an access token, which is the URI returned in the ''aud'' claim.The any operator is required for filter expressions on multi-valued properties. Not nullable.  Supports $filter (eq, not, ge, le, startsWith).'
+              description: 'Contains the list of identifiersUris, copied over from the associated application. More values can be added to hybrid applications. These values can be used to identify the permissions exposed by this app within Microsoft Entra ID. For example,Client apps can specify a resource URI that is based on the values of this property to acquire an access token, which is the URI returned in the ''aud'' claim.The any operator is required for filter expressions on multi-valued properties. Not nullable.  Supports $filter (eq, not, ge, le, startsWith).'
             servicePrincipalType:
               type: string
-              description: Identifies if the service principal represents an application or a managed identity. This is set by Microsoft Entra ID internally. For a service principal that represents an application this is set as Application. For a service principal that represent a managed identity this is set as ManagedIdentity. The SocialIdp type is for internal use.
+              description: Identifies if the service principal represents an application or a managed identity. This is set by Microsoft Entra ID internally. For a service principal that represents an application this is set as Application. For a service principal that represents a managed identity this is set as ManagedIdentity. The SocialIdp type is for internal use.
               nullable: true
             signInAudience:
               type: string
-              description: 'Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization''s Microsoft Entra tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization''s Microsoft Entra tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization''s Microsoft Entra tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.'
+              description: 'Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization''s Microsoft Entra tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization''s Microsoft Entra tenant (multitenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization''s Microsoft Entra tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.'
               nullable: true
             tags:
               type: array
@@ -66109,7 +66538,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.  Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
+              description: 'Directory objects that are owners of this servicePrincipal. The owners are a set of nonadmin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.  Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
               x-ms-navigationProperty: true
             remoteDesktopSecurityConfiguration:
               $ref: '#/components/schemas/microsoft.graph.remoteDesktopSecurityConfiguration'
@@ -66265,6 +66694,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudClipboardItem'
+              description: Represents a collection of Cloud Clipboard items.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -66473,70 +66903,90 @@ components:
               items:
                 type: string
                 nullable: true
+              description: The contact's instant messaging (IM) addresses.
             initials:
               type: string
+              description: The contact's initials.
               nullable: true
             isFavorite:
               type: boolean
               nullable: true
             jobTitle:
               type: string
+              description: The contact’s job title.
               nullable: true
             manager:
               type: string
+              description: The name of the contact's manager.
               nullable: true
             middleName:
               type: string
+              description: The contact's middle name.
               nullable: true
             nickName:
               type: string
+              description: The contact's nickname.
               nullable: true
             officeLocation:
               type: string
+              description: The location of the contact's office.
               nullable: true
             parentFolderId:
               type: string
+              description: The ID of the contact's parent folder.
               nullable: true
             personalNotes:
               type: string
+              description: The user's notes about the contact.
               nullable: true
             phones:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.phone'
+              description: 'Phone numbers associated with the contact, for example, home phone, mobile phone, and business phone.'
             postalAddresses:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.physicalAddress'
+              description: 'Addresses associated with the contact, for example, home address and business address.'
             profession:
               type: string
+              description: The contact's profession.
               nullable: true
             spouseName:
               type: string
+              description: The name of the contact's spouse/partner.
               nullable: true
             surname:
               type: string
+              description: The contact's surname.
               nullable: true
             title:
               type: string
+              description: The contact's title.
               nullable: true
             websites:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.website'
+              description: Web sites associated with the contact.
             weddingAnniversary:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
+              description: The contact's wedding anniversary.
               format: date
               nullable: true
             yomiCompanyName:
               type: string
+              description: The phonetic Japanese company name of the contact.
               nullable: true
             yomiGivenName:
               type: string
+              description: The phonetic Japanese given name (first name) of the contact.
               nullable: true
             yomiSurname:
               type: string
+              description: The phonetic Japanese surname (last name)  of the contact.
               nullable: true
             extensions:
               type: array
@@ -67579,49 +68029,61 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.internetMessageHeader'
+              description: A collection of message headers defined by RFC5322. The set includes message headers indicating the network path taken by a message from the sender to the recipient. It can also contain custom message headers that hold app data for the message.  Returned only on applying a $select query option. Read-only.
             internetMessageId:
               type: string
+              description: The message ID in the format specified by RFC5322. Updatable only if isDraft is true.
               nullable: true
             isDeliveryReceiptRequested:
               type: boolean
+              description: Indicates whether a read receipt is requested for the message.
               nullable: true
             isDraft:
               type: boolean
+              description: Indicates whether the message is a draft. A message is a draft if it hasn't been sent yet.
               nullable: true
             isRead:
               type: boolean
+              description: Indicates whether the message has been read.
               nullable: true
             isReadReceiptRequested:
               type: boolean
+              description: Indicates whether a read receipt is requested for the message.
               nullable: true
             mentionsPreview:
               $ref: '#/components/schemas/microsoft.graph.mentionsPreview'
             parentFolderId:
               type: string
+              description: The unique identifier for the message's parent mailFolder.
               nullable: true
             receivedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time the message was received.  The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             replyTo:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.recipient'
+              description: The email addresses to use when replying.
             sender:
               $ref: '#/components/schemas/microsoft.graph.recipient'
             sentDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time the message was sent.  The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             subject:
               type: string
+              description: The subject of the message.
               nullable: true
             toRecipients:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.recipient'
+              description: 'The To: recipients for the message.'
             uniqueBody:
               $ref: '#/components/schemas/microsoft.graph.itemBody'
             unsubscribeData:
@@ -67629,11 +68091,14 @@ components:
               items:
                 type: string
                 nullable: true
+              description: The valid entries parsed from the List-Unsubscribe header.  This is the data for the mail command in the List-Unsubscribe header if UnsubscribeEnabled property is true.
             unsubscribeEnabled:
               type: boolean
+              description: Indicates whether the message is enabled for unsubscribe.  Its valueTrue if the list-Unsubscribe header conforms to rfc-2369.
               nullable: true
             webLink:
               type: string
+              description: 'The URL to open the message in Outlook on the web.You can append an ispopout argument to the end of the URL to change how the message is displayed. If ispopout is not present or if it is set to 1, then the message is shown in a popout window. If ispopout is set to 0, the browser shows the message in the Outlook on the web review pane.The message opens in the browser if you are signed in to your mailbox via Outlook on the web. You are prompted to sign in if you are not already signed in with the browser.This URL cannot be accessed from within an iFrame.'
               nullable: true
             attachments:
               type: array
@@ -67720,7 +68185,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appLogCollectionRequest'
-              description: The collection property of AppLogUploadRequest.
+              description: Indicates collection of App Log Upload Request.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -68298,10 +68763,13 @@ components:
               $ref: '#/components/schemas/microsoft.graph.regionalAndLanguageSettings'
             shiftPreferences:
               $ref: '#/components/schemas/microsoft.graph.shiftPreferences'
+            storage:
+              $ref: '#/components/schemas/microsoft.graph.userStorage'
             windows:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.windowsSetting'
+              description: The Windows settings of the user stored in the cloud.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -70117,7 +70585,7 @@ components:
               description: Items within the document set that are captured as part of this version.
             shouldCaptureMinorVersion:
               type: boolean
-              description: 'If true, minor versions of items are also captured; otherwise, only major versions will be captured. Default value is false.'
+              description: 'If true, minor versions of items are also captured; otherwise, only major versions are captured. The default value is false.'
               nullable: true
           additionalProperties:
             type: object
@@ -71287,7 +71755,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: List of canonical URLs for hub sites with which this content type is associated to. This contains all hub sites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type will be applied to the lists in the enforced sites.
+              description: List of canonical URLs for hub sites with which this content type is associated to. This contains all hub sites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type is applied to the lists in the enforced sites.
             description:
               type: string
               description: The descriptive text for the item.
@@ -71322,7 +71790,7 @@ components:
               nullable: true
             propagateChanges:
               type: boolean
-              description: 'If true, any changes made to the content type will be pushed to inherited content types and lists that implement the content type.'
+              description: 'If true, any changes made to the content type are pushed to inherited content types and lists that implement the content type.'
               nullable: true
             readOnly:
               type: boolean
@@ -71344,7 +71812,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.columnLink'
-              description: The collection of columns that are required by this content type
+              description: The collection of columns that are required by this content type.
               x-ms-navigationProperty: true
             columnPositions:
               type: array
@@ -71356,7 +71824,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.columnDefinition'
-              description: The collection of column definitions for this contentType.
+              description: The collection of column definitions for this content type.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -72008,7 +72476,7 @@ components:
               description: The URL of the external identity provider and must match the issuer claim of the external token being exchanged. The combination of the values of issuer and subject must be unique on the app. It has a limit of 600 characters. Required.
             name:
               type: string
-              description: 'is the unique identifier for the federated identity credential, which has a limit of 120 characters and must be URL friendly. It is immutable once created. Required. Not nullable. Supports $filter (eq).'
+              description: 'The unique identifier for the federated identity credential, which has a limit of 120 characters and must be URL friendly. It is immutable once created. Alternate key. Required. Not nullable. Supports $filter (eq).'
             subject:
               type: string
               description: 'Required. The identifier of the external software workload within the external identity provider. Like the audience value, it has no fixed format, as each identity provider uses their own - sometimes a GUID, sometimes a colon delimited identifier, sometimes arbitrary strings. The value here must match the sub claim within the token presented to Microsoft Entra ID. The combination of issuer and subject must be unique on the app. It has a limit of 600 characters. Supports $filter (eq).'
@@ -72400,20 +72868,24 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Set by the server. DateTime in UTC when the object was created on the server.
               format: date-time
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Set by the server. DateTime in UTC when the object expires and after that the object is no longer available. The default and also maximum TTL is 12 hours after the creation, but it might change for performance optimization.'
               format: date-time
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Set by the server if not provided in the client's request. DateTime in UTC when the object was modified by the client.
               format: date-time
               nullable: true
             payloads:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudClipboardItemPayload'
+              description: A cloudClipboardItem can have multiple cloudClipboardItemPayload objects in the payloads. A window can place more than one clipboard object on the clipboard. Each one represents the same information in a different clipboard format.
           additionalProperties:
             type: object
     microsoft.graph.cloudPcConnectionSettings:
@@ -75446,12 +75918,15 @@ components:
               $ref: '#/components/schemas/microsoft.graph.importance'
             isReminderOn:
               type: boolean
+              description: Set to true if an alert is set to remind the user of the task.
               nullable: true
             owner:
               type: string
+              description: The name of the person who created the task.
               nullable: true
             parentFolderId:
               type: string
+              description: The unique identifier for the task's parent folder.
               nullable: true
             recurrence:
               $ref: '#/components/schemas/microsoft.graph.patternedRecurrence'
@@ -75465,6 +75940,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.taskStatus'
             subject:
               type: string
+              description: A brief description or title of the task.
               nullable: true
             attachments:
               type: array
@@ -75788,7 +76264,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.plannerAssignments'
             bucketId:
               type: string
-              description: Bucket ID to which the task belongs. The bucket needs to be in the plan that the task is in. It is 28 characters long and case-sensitive. Format validation is done on the service.
+              description: Bucket ID to which the task belongs. The bucket needs to be in the plan that the task is in. It's 28 characters long and case-sensitive. Format validation is done on the service.
               nullable: true
             checklistItemCount:
               maximum: 2147483647
@@ -75834,10 +76310,12 @@ components:
               nullable: true
             isOnMyDay:
               type: boolean
+              description: 'A Boolean value that indicates whether to show this task in the MyDay view. true to show the task. Otherwise, false.'
               nullable: true
             isOnMyDayLastModifiedDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
+              description: Read-only. The date on which task is added to or removed from MyDay.
               format: date
               nullable: true
             orderHint:
@@ -75861,7 +76339,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: 'Priority of the task. Valid range of values is between 0 and 10 (inclusive), with increasing value being lower priority (0 has the highest priority and 10 has the lowest priority).  Currently, Planner interprets values 0 and 1 as ''urgent'', 2 and 3 and 4 as ''important'', 5, 6, and 7 as ''medium'', and 8, 9, and 10 as ''low''.  Currently, Planner sets the value 1 for ''urgent'', 3 for ''important'', 5 for ''medium'', and 9 for ''low''.'
+              description: 'The priority of the task. Valid values are between 0 and 10, inclusive. Larger values indicate lower priority. For example, 0 has the highest priority and 10 has the lowest priority. Currently, Planner interprets values 0 and 1 as ''urgent'', 2 and 3 and 4 as ''important'', 5, 6, and 7 as ''medium'', and 8, 9, and 10 as ''low''. Currently, Planner sets the value 1 for ''urgent'', 3 for ''important'', 5 for ''medium'', and 9 for ''low''.'
               format: int32
               nullable: true
             recurrence:
@@ -76556,6 +77034,16 @@ components:
               description: Availability of the user to be scheduled for work and its recurrence pattern.
           additionalProperties:
             type: object
+    microsoft.graph.userStorage:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: userStorage
+          type: object
+          properties:
+            quota:
+              $ref: '#/components/schemas/microsoft.graph.unifiedStorageQuota'
+          additionalProperties:
+            type: object
     microsoft.graph.windowsSetting:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -76564,16 +77052,19 @@ components:
           properties:
             payloadType:
               type: string
+              description: The type of setting payloads contained in the instances navigation property.
               nullable: true
             settingType:
               $ref: '#/components/schemas/microsoft.graph.windowsSettingType'
             windowsDeviceId:
               type: string
+              description: A unique identifier for the device the setting might belong to if it is of the settingType backup.
               nullable: true
             instances:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.windowsSettingInstance'
+              description: A collection of setting values for a given windowsSetting.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -78731,8 +79222,10 @@ components:
       properties:
         content:
           type: string
+          description: The formatName version of the value of a cloud clipboard encoded in base64.
         formatName:
           type: string
+          description: For a list of possible values see formatName values.
       additionalProperties:
         type: object
     microsoft.graph.cloudPcHealthCheckItem:
@@ -81415,6 +81908,47 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.unifiedStorageQuota:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: unifiedStorageQuota
+          type: object
+          properties:
+            deleted:
+              type: integer
+              format: int64
+              nullable: true
+            manageWebUrl:
+              type: string
+              description: A URL that can be used in a browser to manage the breakdown. Read-only.
+              nullable: true
+            remaining:
+              type: integer
+              description: Total space remaining before reaching the quota limit in bytes.
+              format: int64
+              nullable: true
+            state:
+              type: string
+              description: 'Indicates the state of the storage space. The possible values are: normal, nearing, critical, full, and overLimit.'
+              nullable: true
+            total:
+              type: integer
+              description: Total allowed storage space in bytes.
+              format: int64
+              nullable: true
+            used:
+              type: integer
+              description: Total space used in bytes.
+              format: int64
+              nullable: true
+            services:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.serviceStorageQuotaBreakdown'
+              description: The breakdown of services contributing to the user's quota usage.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.windowsSettingType:
       title: windowsSettingType
       enum:
@@ -81431,18 +81965,22 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Set by the server. Represents the dateTime in UTC when the object was created on the server.
               format: date-time
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Set by the server. The object expires at the specified dateTime in UTC, making it unavailable after that time.'
               format: date-time
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Set by the server if not provided in the request from the Windows client device. Refers to the user's Windows device that modified the object at the specified dateTime in UTC.
               format: date-time
               nullable: true
             payload:
               type: string
+              description: Base64-encoded JSON setting value.
           additionalProperties:
             type: object
     microsoft.graph.wellknownListName:
@@ -83950,6 +84488,13 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.serviceStorageQuotaBreakdown:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.storageQuotaBreakdown'
+        - title: serviceStorageQuotaBreakdown
+          type: object
+          additionalProperties:
+            type: object
     microsoft.graph.attachmentBase:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -84022,11 +84567,11 @@ components:
               format: date-time
             displayName:
               type: string
-              description: Field indicating the title of checklistItem.
+              description: Indicates the title of the checklistItem.
               nullable: true
             isChecked:
               type: boolean
-              description: State indicating whether the item is checked off or not.
+              description: State that indicates whether the item is checked off or not.
               nullable: true
           additionalProperties:
             type: object
@@ -85940,6 +86485,7 @@ components:
           items:
             type: string
             nullable: true
+          description: Read-only. A collection of keys from the plannerFormsDictionary that identify the plannerFormReference objects that specify the requirements to complete the plannerTask.
       additionalProperties:
         type: object
     microsoft.graph.Dictionary:
@@ -85947,6 +86493,24 @@ components:
       type: object
       additionalProperties:
         type: object
+    microsoft.graph.storageQuotaBreakdown:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: storageQuotaBreakdown
+          type: object
+          properties:
+            displayName:
+              type: string
+              nullable: true
+            manageWebUrl:
+              type: string
+              nullable: true
+            used:
+              type: integer
+              format: int64
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.endpointType:
       title: endpointType
       enum:
@@ -86211,7 +86775,7 @@ components:
       properties:
         appId:
           type: string
-          description: Refers to the unique identifier representing Application Id in the Microsoft Entra ID.
+          description: Refers to the unique identifier representing application ID in the Microsoft Entra ID.
           nullable: true
         displayName:
           type: string
@@ -86219,7 +86783,7 @@ components:
           nullable: true
         servicePrincipalId:
           type: string
-          description: Refers to the unique identifier indicating Service Principal Id in Microsoft Entra ID for the corresponding App.
+          description: Refers to the unique identifier indicating service principal ID in Microsoft Entra ID for the corresponding App.
           nullable: true
         servicePrincipalName:
           type: string
