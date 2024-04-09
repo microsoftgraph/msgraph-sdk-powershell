@@ -348,6 +348,41 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  /deviceManagement/virtualEndpoint/deviceImages/microsoft.graph.getSourceImages():
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getSourceImages
+      operationId: deviceManagement.virtualEndpoint.deviceImage_getSourceImage
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.cloudPcSourceDeviceImage'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
 components:
   schemas:
     microsoft.graph.rolePermission:
@@ -577,6 +612,27 @@ components:
           additionalProperties:
             type: object
           description: The user experience analytics device performance entity contains device boot performance details.
+    microsoft.graph.cloudPcSourceDeviceImage:
+      title: cloudPcSourceDeviceImage
+      type: object
+      properties:
+        displayName:
+          type: string
+          description: The display name for the source image. Read-only.
+          nullable: true
+        resourceId:
+          type: string
+          description: 'The fully qualified unique identifier (ID) of the source image resource in Azure. The ID format is: ''/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/images/{imageName}''. Read-only.'
+        subscriptionDisplayName:
+          type: string
+          description: The display name of the subscription that hosts the source image. Read-only.
+          nullable: true
+        subscriptionId:
+          type: string
+          description: The unique identifier (ID) of the subscription that hosts the source image. Read-only.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.resourceAction:
       title: resourceAction
       type: object

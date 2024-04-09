@@ -5883,6 +5883,197 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  /reports/partners/billing/reconciliation:
+    get:
+      tags:
+        - reports.partners
+      summary: Get reconciliation from reports
+      description: Represents details for billed invoice reconciliation data.
+      operationId: report.partner.billing_GetReconciliation
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.partners.billing.billingReconciliation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - reports.partners
+      summary: Update the navigation property reconciliation in reports
+      operationId: report.partner.billing_UpdateReconciliation
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.partners.billing.billingReconciliation'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.partners.billing.billingReconciliation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - reports.partners
+      summary: Delete navigation property reconciliation for reports
+      operationId: report.partner.billing_DeleteReconciliation
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /reports/partners/billing/reconciliation/billed:
+    get:
+      tags:
+        - reports.partners
+      summary: Get billed from reports
+      description: Represents details for billed invoice reconciliation data.
+      operationId: report.partner.billing.reconciliation_GetBilled
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.partners.billing.billedReconciliation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - reports.partners
+      summary: Update the navigation property billed in reports
+      operationId: report.partner.billing.reconciliation_UpdateBilled
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.partners.billing.billedReconciliation'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.partners.billing.billedReconciliation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - reports.partners
+      summary: Delete navigation property billed for reports
+      operationId: report.partner.billing.reconciliation_DeleteBilled
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /reports/partners/billing/reconciliation/billed/microsoft.graph.partners.billing.export:
+    post:
+      tags:
+        - reports.Actions
+      summary: Invoke action export
+      description: Export the billed invoice reconciliation data.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/partners-billing-billedreconciliation-export?view=graph-rest-1.0
+      operationId: report.partner.billing.reconciliation.billed_export
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                invoiceId:
+                  type: string
+                  nullable: true
+                attributeSet:
+                  $ref: '#/components/schemas/microsoft.graph.partners.billing.attributeSet'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.partners.billing.operation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /reports/partners/billing/usage:
     get:
       tags:
@@ -6157,7 +6348,7 @@ paths:
       tags:
         - reports.Actions
       summary: Invoke action export
-      description: Export the unbilled Azure usage data for a specific billing period and a given currency.
+      description: Export unbilled Azure usage data for a specific billing period and currency.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/partners-billing-unbilledusage-export?view=graph-rest-1.0
@@ -6520,13 +6711,13 @@ components:
               nullable: true
             appId:
               type: string
-              description: Unique GUID representing the app ID in the Microsoft Entra ID.  Supports $filter (eq).
+              description: Unique GUID that represents the app ID in the Microsoft Entra ID.  Supports $filter (eq).
               nullable: true
             appliedConditionalAccessPolicies:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appliedConditionalAccessPolicy'
-              description: 'Provides a list of conditional access policies that are triggered by the corresponding sign-in activity. Apps need additional Conditional Access-related privileges to read the details of this property. For more information, see Viewing applied conditional access (CA) policies in sign-ins.'
+              description: 'Provides a list of conditional access policies that the corresponding sign-in activity triggers. Apps need more Conditional Access-related privileges to read the details of this property. For more information, see Viewing applied conditional access (CA) policies in sign-ins.'
             clientAppUsed:
               type: string
               description: 'Identifies the client used for the sign-in activity. Modern authentication clients include Browser, modern clients. Legacy authentication clients include Exchange ActiveSync, IMAP, MAPI, SMTP, POP, and other clients.  Supports $filter (eq).'
@@ -6535,7 +6726,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.conditionalAccessStatus'
             correlationId:
               type: string
-              description: The request ID sent from the client when the sign-in is initiated; used to troubleshoot sign-in activity.  Supports $filter (eq).
+              description: The request ID sent from the client when the sign-in is initiated. Used to troubleshoot sign-in activity.  Supports $filter (eq).
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -6550,7 +6741,7 @@ components:
               nullable: true
             isInteractive:
               type: boolean
-              description: Indicates if a sign-in is interactive or not.
+              description: Indicates whether a sign-in is interactive.
               nullable: true
             location:
               $ref: '#/components/schemas/microsoft.graph.signInLocation'
@@ -6568,13 +6759,12 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.riskEventType'
-              description: 'Risk event types associated with the sign-in. The possible values are: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, and unknownFutureValue.  Supports $filter (eq).'
             riskEventTypes_v2:
               type: array
               items:
                 type: string
                 nullable: true
-              description: 'The list of risk event types associated with the sign-in. Possible values: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, or unknownFutureValue.  Supports $filter (eq, startsWith).'
+              description: 'The list of risk event types associated with the sign-in. Possible values: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence, generic, or unknownFutureValue.  Supports $filter (eq, startsWith).'
             riskLevelAggregated:
               $ref: '#/components/schemas/microsoft.graph.riskLevel'
             riskLevelDuringSignIn:
@@ -6656,7 +6846,7 @@ components:
               nullable: true
           additionalProperties:
             type: object
-          description: Entity representing a job to export a report
+          description: Entity representing a job to export a report.
     microsoft.graph.reportRoot:
       title: reportRoot
       type: object
@@ -6915,6 +7105,7 @@ components:
           properties:
             failedSignInCount:
               type: integer
+              description: 'Number of failed sign ins on AD FS in the period specified. Supports $orderby, $filter (eq).'
               format: int64
             migrationStatus:
               $ref: '#/components/schemas/microsoft.graph.migrationStatus'
@@ -6922,27 +7113,36 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.keyValuePair'
+              description: Specifies all the validations checks done on applications config details.
             relyingPartyId:
               type: string
+              description: 'Identifies the relying party to this federation service. It''s used when issuing claims to the relying party. Supports $orderby, $filter (eq).'
             relyingPartyName:
               type: string
+              description: 'Name of the relying party''s website or other entity on the Internet that uses an identity provider to authenticate a user who wants to log in. Supports $orderby, $filter (eq).'
             replyUrls:
               type: array
               items:
                 type: string
+              description: Specifies where the relying party expects to receive the token.
             serviceId:
               type: string
+              description: 'Uniquely identifies the Active Directory forest. Supports $orderby, $filter (eq).'
             signInSuccessRate:
               type: number
+              description: 'Calculated as Number of successful / (Number of successful + Number of failed sign ins) or successfulSignInCount / totalSignInCount on AD FS in the period specified. Supports $orderby, $filter (eq).'
               format: double
             successfulSignInCount:
               type: integer
+              description: 'Number of successful sign ins on AD FS. Supports $orderby, $filter (eq).'
               format: int64
             totalSignInCount:
               type: integer
+              description: 'Number of successful + failed sign ins on AD FS in the period specified. Supports $orderby, $filter (eq).'
               format: int64
             uniqueUserCount:
               type: integer
+              description: 'Number of unique users that signed into the application. Supports $orderby, $filter (eq).'
               format: int64
           additionalProperties:
             type: object
@@ -6974,6 +7174,8 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.partners.billing.operation'
               description: Represents an operation to export the billing data of a partner.
               x-ms-navigationProperty: true
+            reconciliation:
+              $ref: '#/components/schemas/microsoft.graph.partners.billing.billingReconciliation'
             usage:
               $ref: '#/components/schemas/microsoft.graph.partners.billing.azureUsage'
           additionalProperties:
@@ -7043,6 +7245,30 @@ components:
               $ref: '#/components/schemas/microsoft.graph.longRunningOperationStatus'
           additionalProperties:
             type: object
+    microsoft.graph.partners.billing.billingReconciliation:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: billingReconciliation
+          type: object
+          properties:
+            billed:
+              $ref: '#/components/schemas/microsoft.graph.partners.billing.billedReconciliation'
+          additionalProperties:
+            type: object
+    microsoft.graph.partners.billing.billedReconciliation:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: billedReconciliation
+          type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.partners.billing.attributeSet:
+      title: attributeSet
+      enum:
+        - full
+        - basic
+        - unknownFutureValue
+      type: string
     microsoft.graph.partners.billing.azureUsage:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -7062,13 +7288,6 @@ components:
           type: object
           additionalProperties:
             type: object
-    microsoft.graph.partners.billing.attributeSet:
-      title: attributeSet
-      enum:
-        - full
-        - basic
-        - unknownFutureValue
-      type: string
     microsoft.graph.partners.billing.unbilledUsage:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -7431,6 +7650,9 @@ components:
         - m365DAdminDismissedDetection
         - adminConfirmedServicePrincipalCompromised
         - adminDismissedAllRiskForServicePrincipal
+        - userChangedPasswordOnPremises
+        - adminDismissedRiskForSignIn
+        - adminConfirmedAccountSafe
       type: string
     microsoft.graph.riskEventType:
       title: riskEventType
@@ -7501,19 +7723,19 @@ components:
         - json
         - unknownFutureValue
       type: string
-      description: Possible values for the file format of a report
+      description: Possible values for the file format of a report.
       x-ms-enum:
         name: deviceManagementReportFileFormat
         modelAsString: false
         values:
           - value: csv
-            description: CSV Format
+            description: CSV Format.
             name: csv
           - value: pdf
-            description: PDF Format
+            description: PDF Format (Deprecate later).
             name: pdf
           - value: json
-            description: JSON Format
+            description: JSON Format.
             name: json
           - value: unknownFutureValue
             description: Evolvable enumeration sentinel value. Do not use.
@@ -7524,16 +7746,16 @@ components:
         - localizedValuesAsAdditionalColumn
         - replaceLocalizableValues
       type: string
-      description: Configures how the requested export job is localized
+      description: Configures how the requested export job is localized.
       x-ms-enum:
         name: deviceManagementExportJobLocalizationType
         modelAsString: false
         values:
           - value: localizedValuesAsAdditionalColumn
-            description: Configures the export job to expose localized values as an additional column
+            description: Configures the export job to expose localized values as an additional column.
             name: localizedValuesAsAdditionalColumn
           - value: replaceLocalizableValues
-            description: Configures the export job to replace enumerable values with their localized values
+            description: Configures the export job to replace enumerable values with their localized values.
             name: replaceLocalizableValues
     microsoft.graph.deviceManagementReportStatus:
       title: deviceManagementReportStatus
@@ -7544,25 +7766,25 @@ components:
         - completed
         - failed
       type: string
-      description: Possible statuses associated with a generated report
+      description: Possible statuses associated with a generated report.
       x-ms-enum:
         name: deviceManagementReportStatus
         modelAsString: false
         values:
           - value: unknown
-            description: Report generation status is unknown
+            description: Report generation status is unknown.
             name: unknown
           - value: notStarted
-            description: Report generation has not started
+            description: Report generation has not started.
             name: notStarted
           - value: inProgress
-            description: Report generation is in progress
+            description: Report generation is in progress.
             name: inProgress
           - value: completed
-            description: Report generation is completed
+            description: Report generation is completed.
             name: completed
           - value: failed
-            description: Report generation has failed
+            description: Report generation has failed.
             name: failed
     microsoft.graph.userRegistrationFeatureCount:
       title: userRegistrationFeatureCount
