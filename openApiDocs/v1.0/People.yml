@@ -30,11 +30,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - shared
-                - trending
-                - used
               type: string
         - name: $expand
           in: query
@@ -45,11 +40,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - shared
-                - trending
-                - used
               type: string
       responses:
         2XX:
@@ -123,7 +113,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: List shared
-      description: 'Calculated insight that includes the list of documents shared with a user. This insight includes documents hosted on OneDrive/SharePoint in the user''s Microsoft 365 tenant that are shared with the user, and documents that are attached as files and sent to the user. This API is available in the following national cloud deployments.'
+      description: 'Calculated insight that includes the list of documents shared with a user. This insight includes documents hosted on OneDrive/SharePoint in the user''s Microsoft 365 tenant that are shared with the user, and documents that are attached as files and sent to the user.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/insights-list-shared?view=graph-rest-1.0
@@ -151,17 +141,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - lastShared
-                - lastShared desc
-                - resourceReference
-                - resourceReference desc
-                - resourceVisualization
-                - resourceVisualization desc
-                - sharingHistory
-                - sharingHistory desc
               type: string
         - name: $select
           in: query
@@ -172,14 +151,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - lastShared
-                - resourceReference
-                - resourceVisualization
-                - sharingHistory
-                - lastSharedMethod
-                - resource
               type: string
         - name: $expand
           in: query
@@ -190,10 +161,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - lastSharedMethod
-                - resource
               type: string
       responses:
         2XX:
@@ -268,14 +235,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - lastShared
-                - resourceReference
-                - resourceVisualization
-                - sharingHistory
-                - lastSharedMethod
-                - resource
               type: string
         - name: $expand
           in: query
@@ -286,10 +245,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - lastSharedMethod
-                - resource
               type: string
       responses:
         2XX:
@@ -406,8 +361,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
               type: string
         - name: $expand
           in: query
@@ -418,8 +371,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -464,8 +415,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
               type: string
         - name: $expand
           in: query
@@ -476,8 +425,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -516,7 +463,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: List trending
-      description: Calculated insight that includes a list of documents trending around the user. This API is available in the following national cloud deployments.
+      description: Calculated insight that includes a list of documents trending around the user.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/insights-list-trending?view=graph-rest-1.0
@@ -544,17 +491,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - resourceReference
-                - resourceReference desc
-                - resourceVisualization
-                - resourceVisualization desc
-                - weight
-                - weight desc
               type: string
         - name: $select
           in: query
@@ -565,13 +501,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - lastModifiedDateTime
-                - resourceReference
-                - resourceVisualization
-                - weight
-                - resource
               type: string
         - name: $expand
           in: query
@@ -582,9 +511,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - resource
               type: string
       responses:
         2XX:
@@ -659,13 +585,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - lastModifiedDateTime
-                - resourceReference
-                - resourceVisualization
-                - weight
-                - resource
               type: string
         - name: $expand
           in: query
@@ -676,9 +595,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - resource
               type: string
       responses:
         2XX:
@@ -796,8 +712,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
               type: string
         - name: $expand
           in: query
@@ -808,8 +722,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -848,7 +760,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: List used
-      description: "Calculate and list the documents that a user has viewed or modified.  For the signed-in user:\n- This method includes documents that the user has modified; see example 1. \n- Using an $orderby query parameter on the lastAccessedDateTime property returns the most recently viewed documents that the user might or might not not have modified; see example 2. For other users, this method includes only documents that the user has modified. This API is available in the following national cloud deployments."
+      description: "Calculate and list the documents that a user has viewed or modified.  For the signed-in user:\n- This method includes documents that the user has modified; see example 1. \n- Using an $orderby query parameter on the lastAccessedDateTime property returns the most recently viewed documents that the user might or might not not have modified; see example 2. For other users, this method includes only documents that the user has modified."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/insights-list-used?view=graph-rest-1.0
@@ -876,15 +788,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - lastUsed
-                - lastUsed desc
-                - resourceReference
-                - resourceReference desc
-                - resourceVisualization
-                - resourceVisualization desc
               type: string
         - name: $select
           in: query
@@ -895,12 +798,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - lastUsed
-                - resourceReference
-                - resourceVisualization
-                - resource
               type: string
         - name: $expand
           in: query
@@ -911,9 +808,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - resource
               type: string
       responses:
         2XX:
@@ -988,12 +882,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - lastUsed
-                - resourceReference
-                - resourceVisualization
-                - resource
               type: string
         - name: $expand
           in: query
@@ -1004,9 +892,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - resource
               type: string
       responses:
         2XX:
@@ -1124,8 +1009,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
               type: string
         - name: $expand
           in: query
@@ -1136,8 +1019,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1176,7 +1057,7 @@ paths:
       tags:
         - users.person
       summary: List people
-      description: 'Retrieve a collection of person objects ordered by their relevance to the user, which is determined by the user''s communication and collaboration patterns, and business relationships. You can get this information via the People API. For examples, see the Examples section and the article Use the People API to get information about the people most relevant to you. This API is available in the following national cloud deployments.'
+      description: 'Retrieve a collection of person objects ordered by their relevance to the user, which is determined by the user''s communication and collaboration patterns, and business relationships. You can get this information via the People API. For examples, see the Examples section and the article Use the People API to get information about the people most relevant to you.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-list-people?view=graph-rest-1.0
@@ -1204,47 +1085,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - birthday
-                - birthday desc
-                - companyName
-                - companyName desc
-                - department
-                - department desc
-                - displayName
-                - displayName desc
-                - givenName
-                - givenName desc
-                - imAddress
-                - imAddress desc
-                - isFavorite
-                - isFavorite desc
-                - jobTitle
-                - jobTitle desc
-                - officeLocation
-                - officeLocation desc
-                - personNotes
-                - personNotes desc
-                - personType
-                - personType desc
-                - phones
-                - phones desc
-                - postalAddresses
-                - postalAddresses desc
-                - profession
-                - profession desc
-                - scoredEmailAddresses
-                - scoredEmailAddresses desc
-                - surname
-                - surname desc
-                - userPrincipalName
-                - userPrincipalName desc
-                - websites
-                - websites desc
-                - yomiCompany
-                - yomiCompany desc
               type: string
         - name: $select
           in: query
@@ -1255,27 +1095,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - birthday
-                - companyName
-                - department
-                - displayName
-                - givenName
-                - imAddress
-                - isFavorite
-                - jobTitle
-                - officeLocation
-                - personNotes
-                - personType
-                - phones
-                - postalAddresses
-                - profession
-                - scoredEmailAddresses
-                - surname
-                - userPrincipalName
-                - websites
-                - yomiCompany
               type: string
       responses:
         2XX:
@@ -1319,27 +1138,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - birthday
-                - companyName
-                - department
-                - displayName
-                - givenName
-                - imAddress
-                - isFavorite
-                - jobTitle
-                - officeLocation
-                - personNotes
-                - personType
-                - phones
-                - postalAddresses
-                - profession
-                - scoredEmailAddresses
-                - surname
-                - userPrincipalName
-                - websites
-                - yomiCompany
               type: string
       responses:
         2XX:

@@ -11,7 +11,7 @@ paths:
       tags:
         - tenantRelationships.delegatedAdminCustomer
       summary: List delegatedAdminCustomers
-      description: Get a list of the delegatedAdminCustomer objects and their properties. This API is available in the following national cloud deployments.
+      description: Get a list of the delegatedAdminCustomer objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/tenantrelationship-list-delegatedadmincustomers?view=graph-rest-1.0
@@ -31,13 +31,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - displayName
-                - displayName desc
-                - tenantId
-                - tenantId desc
               type: string
         - name: $select
           in: query
@@ -48,11 +41,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
-                - tenantId
-                - serviceManagementDetails
               type: string
         - name: $expand
           in: query
@@ -63,9 +51,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - serviceManagementDetails
               type: string
       responses:
         2XX:
@@ -103,7 +88,7 @@ paths:
       tags:
         - tenantRelationships.delegatedAdminCustomer
       summary: Get delegatedAdminCustomer
-      description: Read the properties of a delegatedAdminCustomer object. This API is available in the following national cloud deployments.
+      description: Read the properties of a delegatedAdminCustomer object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/delegatedadmincustomer-get?view=graph-rest-1.0
@@ -126,11 +111,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
-                - tenantId
-                - serviceManagementDetails
               type: string
         - name: $expand
           in: query
@@ -141,9 +121,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - serviceManagementDetails
               type: string
       responses:
         2XX:
@@ -217,7 +194,7 @@ paths:
       tags:
         - tenantRelationships.delegatedAdminCustomer
       summary: List serviceManagementDetails
-      description: Get a list of the delegatedAdminServiceManagementDetail objects and their properties. This API is available in the following national cloud deployments.
+      description: Get a list of the delegatedAdminServiceManagementDetail objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/delegatedadmincustomer-list-servicemanagementdetails?view=graph-rest-1.0
@@ -245,13 +222,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - serviceManagementUrl
-                - serviceManagementUrl desc
-                - serviceName
-                - serviceName desc
               type: string
         - name: $select
           in: query
@@ -262,10 +232,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - serviceManagementUrl
-                - serviceName
               type: string
         - name: $expand
           in: query
@@ -276,8 +242,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -352,10 +316,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - serviceManagementUrl
-                - serviceName
               type: string
         - name: $expand
           in: query
@@ -366,8 +326,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -493,7 +451,7 @@ paths:
       tags:
         - tenantRelationships.delegatedAdminRelationship
       summary: List delegatedAdminRelationships
-      description: Get a list of the delegatedAdminRelationship objects and their properties. This API is available in the following national cloud deployments.
+      description: Get a list of the delegatedAdminRelationship objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/tenantrelationship-list-delegatedadminrelationships?view=graph-rest-1.0
@@ -513,29 +471,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - accessDetails
-                - accessDetails desc
-                - activatedDateTime
-                - activatedDateTime desc
-                - autoExtendDuration
-                - autoExtendDuration desc
-                - createdDateTime
-                - createdDateTime desc
-                - customer
-                - customer desc
-                - displayName
-                - displayName desc
-                - duration
-                - duration desc
-                - endDateTime
-                - endDateTime desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - status
-                - status desc
               type: string
         - name: $select
           in: query
@@ -546,21 +481,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - accessDetails
-                - activatedDateTime
-                - autoExtendDuration
-                - createdDateTime
-                - customer
-                - displayName
-                - duration
-                - endDateTime
-                - lastModifiedDateTime
-                - status
-                - accessAssignments
-                - operations
-                - requests
               type: string
         - name: $expand
           in: query
@@ -571,11 +491,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - accessAssignments
-                - operations
-                - requests
               type: string
       responses:
         2XX:
@@ -590,7 +505,7 @@ paths:
       tags:
         - tenantRelationships.delegatedAdminRelationship
       summary: Create delegatedAdminRelationship
-      description: Create a new delegatedAdminRelationship object. This API is available in the following national cloud deployments.
+      description: Create a new delegatedAdminRelationship object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/tenantrelationship-post-delegatedadminrelationships?view=graph-rest-1.0
@@ -617,7 +532,7 @@ paths:
       tags:
         - tenantRelationships.delegatedAdminRelationship
       summary: Get delegatedAdminRelationship
-      description: Read the properties of a delegatedAdminRelationship object. This API is available in the following national cloud deployments.
+      description: Read the properties of a delegatedAdminRelationship object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/delegatedadminrelationship-get?view=graph-rest-1.0
@@ -640,21 +555,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - accessDetails
-                - activatedDateTime
-                - autoExtendDuration
-                - createdDateTime
-                - customer
-                - displayName
-                - duration
-                - endDateTime
-                - lastModifiedDateTime
-                - status
-                - accessAssignments
-                - operations
-                - requests
               type: string
         - name: $expand
           in: query
@@ -665,11 +565,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - accessAssignments
-                - operations
-                - requests
               type: string
       responses:
         2XX:
@@ -685,7 +580,7 @@ paths:
       tags:
         - tenantRelationships.delegatedAdminRelationship
       summary: Update delegatedAdminRelationship
-      description: 'Update the properties of a delegatedAdminRelationship object. You can only update a relationship when it''s in the created status. However, you can update the autoExtendDuration property when the relationship is in either the created or active status. This API is available in the following national cloud deployments.'
+      description: 'Update the properties of a delegatedAdminRelationship object. You can only update a relationship when it''s in the created status. However, you can update the autoExtendDuration property when the relationship is in either the created or active status.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/delegatedadminrelationship-update?view=graph-rest-1.0
@@ -720,7 +615,7 @@ paths:
       tags:
         - tenantRelationships.delegatedAdminRelationship
       summary: Delete delegatedAdminRelationship
-      description: Delete a delegatedAdminRelationship object. A relationship can only be deleted if it's in the 'created' status.  This API is available in the following national cloud deployments.
+      description: 'Delete a delegatedAdminRelationship object. A relationship can only be deleted if it''s in the ''created'' status. '
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/delegatedadminrelationship-delete?view=graph-rest-1.0
@@ -751,7 +646,7 @@ paths:
       tags:
         - tenantRelationships.delegatedAdminRelationship
       summary: List accessAssignments
-      description: Get a list of the delegatedAdminAccessAssignment objects and their properties. This API is available in the following national cloud deployments.
+      description: Get a list of the delegatedAdminAccessAssignment objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/delegatedadminrelationship-list-accessassignments?view=graph-rest-1.0
@@ -779,19 +674,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - accessContainer
-                - accessContainer desc
-                - accessDetails
-                - accessDetails desc
-                - createdDateTime
-                - createdDateTime desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - status
-                - status desc
               type: string
         - name: $select
           in: query
@@ -802,13 +684,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - accessContainer
-                - accessDetails
-                - createdDateTime
-                - lastModifiedDateTime
-                - status
               type: string
         - name: $expand
           in: query
@@ -819,8 +694,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -835,7 +708,7 @@ paths:
       tags:
         - tenantRelationships.delegatedAdminRelationship
       summary: Create accessAssignments
-      description: Create a new delegatedAdminAccessAssignment object. This API is available in the following national cloud deployments.
+      description: Create a new delegatedAdminAccessAssignment object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/delegatedadminrelationship-post-accessassignments?view=graph-rest-1.0
@@ -871,7 +744,7 @@ paths:
       tags:
         - tenantRelationships.delegatedAdminRelationship
       summary: Get delegatedAdminAccessAssignment
-      description: Read the properties of a delegatedAdminAccessAssignment object. This API is available in the following national cloud deployments.
+      description: Read the properties of a delegatedAdminAccessAssignment object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/delegatedadminaccessassignment-get?view=graph-rest-1.0
@@ -902,13 +775,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - accessContainer
-                - accessDetails
-                - createdDateTime
-                - lastModifiedDateTime
-                - status
               type: string
         - name: $expand
           in: query
@@ -919,8 +785,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -936,7 +800,7 @@ paths:
       tags:
         - tenantRelationships.delegatedAdminRelationship
       summary: Update delegatedAdminAccessAssignment
-      description: Update the properties of a delegatedAdminAccessAssignment object. This API is available in the following national cloud deployments.
+      description: Update the properties of a delegatedAdminAccessAssignment object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/delegatedadminaccessassignment-update?view=graph-rest-1.0
@@ -979,7 +843,7 @@ paths:
       tags:
         - tenantRelationships.delegatedAdminRelationship
       summary: Delete delegatedAdminAccessAssignment
-      description: Delete a delegatedAdminAccessAssignment object. This API is available in the following national cloud deployments.
+      description: Delete a delegatedAdminAccessAssignment object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/delegatedadminaccessassignment-delete?view=graph-rest-1.0
@@ -1040,7 +904,7 @@ paths:
       tags:
         - tenantRelationships.delegatedAdminRelationship
       summary: List operations
-      description: Get a list of the delegatedAdminRelationshipOperation objects and their properties. This API is available in the following national cloud deployments.
+      description: Get a list of the delegatedAdminRelationshipOperation objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/delegatedadminrelationship-list-operations?view=graph-rest-1.0
@@ -1068,19 +932,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - createdDateTime
-                - createdDateTime desc
-                - data
-                - data desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - operationType
-                - operationType desc
-                - status
-                - status desc
               type: string
         - name: $select
           in: query
@@ -1091,13 +942,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdDateTime
-                - data
-                - lastModifiedDateTime
-                - operationType
-                - status
               type: string
         - name: $expand
           in: query
@@ -1108,8 +952,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1156,7 +998,7 @@ paths:
       tags:
         - tenantRelationships.delegatedAdminRelationship
       summary: Get delegatedAdminRelationshipOperation
-      description: Read the properties of a delegatedAdminRelationshipOperation object. This API is available in the following national cloud deployments.
+      description: Read the properties of a delegatedAdminRelationshipOperation object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/delegatedadminrelationshipoperation-get?view=graph-rest-1.0
@@ -1187,13 +1029,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdDateTime
-                - data
-                - lastModifiedDateTime
-                - operationType
-                - status
               type: string
         - name: $expand
           in: query
@@ -1204,8 +1039,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1317,7 +1150,7 @@ paths:
       tags:
         - tenantRelationships.delegatedAdminRelationship
       summary: List requests
-      description: Get a list of the delegatedAdminRelationshipRequest objects and their properties. This API is available in the following national cloud deployments.
+      description: Get a list of the delegatedAdminRelationshipRequest objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/delegatedadminrelationship-list-requests?view=graph-rest-1.0
@@ -1345,17 +1178,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - action
-                - action desc
-                - createdDateTime
-                - createdDateTime desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - status
-                - status desc
               type: string
         - name: $select
           in: query
@@ -1366,12 +1188,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - action
-                - createdDateTime
-                - lastModifiedDateTime
-                - status
               type: string
         - name: $expand
           in: query
@@ -1382,8 +1198,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1398,7 +1212,7 @@ paths:
       tags:
         - tenantRelationships.delegatedAdminRelationship
       summary: Create requests
-      description: Create a new delegatedAdminRelationshipRequest object. This API is available in the following national cloud deployments.
+      description: Create a new delegatedAdminRelationshipRequest object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/delegatedadminrelationship-post-requests?view=graph-rest-1.0
@@ -1434,7 +1248,7 @@ paths:
       tags:
         - tenantRelationships.delegatedAdminRelationship
       summary: Get delegatedAdminRelationshipRequest
-      description: Read the properties and relationships of a delegatedAdminRelationshipRequest object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a delegatedAdminRelationshipRequest object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/delegatedadminrelationshiprequest-get?view=graph-rest-1.0
@@ -1465,12 +1279,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - action
-                - createdDateTime
-                - lastModifiedDateTime
-                - status
               type: string
         - name: $expand
           in: query
@@ -1481,8 +1289,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1670,7 +1476,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.delegatedAdminRelationshipCustomerParticipant'
             displayName:
               type: string
-              description: The display name of the relationship used for ease of identification. Must be unique across all delegated admin relationships of the partner and is set by the partner only when the relationship is in the created status and can't be changed by the customer.
+              description: The display name of the relationship used for ease of identification. Must be unique across all delegated admin relationships of the partner and is set by the partner only when the relationship is in the created status and can't be changed by the customer. Maximum length is 50 characters.
             duration:
               pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
               type: string

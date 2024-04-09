@@ -24,9 +24,9 @@ namespace Microsoft.Graph.Beta.PowerShell.Models
         EnabledForAllApps,
 
         /// <summary>
-        /// Enabled for selected group of users.
+        /// RSC configuration is managed by Microsoft.
         /// </summary>
-        EnabledForSelectedGroupOfUsers,
+        ManagedByMicrosoft,
 
         /// <summary>
         /// Custom configuration not understood by the sdk.

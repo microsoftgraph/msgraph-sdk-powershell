@@ -50,6 +50,11 @@ if (-not (Test-Path $ModuleMappingPath)) {
     Write-Error "Module mapping file not be found: $ModuleMappingPath."
 }
 
+# Build AutoREST.PowerShell submodule.
+Set-Location (Join-Path $ScriptRoot "../autorest.powershell")
+rush update --purge
+rush build
+
 $RequiredGraphModules = @()
 $AuthModuleManifest = Join-Path $ModulesSrc "Authentication" "Authentication" "artifacts" "Microsoft.Graph.Authentication.psd1"
 $LoadedAuthModule = Import-Module $AuthModuleManifest -PassThru -ErrorAction SilentlyContinue

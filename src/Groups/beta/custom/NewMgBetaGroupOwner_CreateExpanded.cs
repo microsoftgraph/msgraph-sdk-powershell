@@ -33,6 +33,22 @@
         /// <summary>The reference to the client API class.</summary>
         public Groups Client => Module.Instance.ClientAPI;
 
+        /// <summary>Backing field for <see cref="Headers" /> property.</summary>
+        private System.Collections.IDictionary _headers;
+
+        /// <summary>Optional headers that will be added to the request.</summary>
+        [System.Management.Automation.Parameter(Mandatory = false, HelpMessage = "Optional headers that will be added to the request.", ValueFromPipeline = true)]
+        [Category(ParameterCategory.Runtime)]
+        public System.Collections.IDictionary Headers { get => this._headers; set => this._headers = value; }
+
+        // <summary>Backing field for <see cref="ResponseHeadersVariable" /> property.</summary>
+        private string _responseHeadersVariable;
+
+        /// <summary>Optional Response Headers Variable</summary>
+        [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = "Optional Response Headers Variable.")]
+        [global::System.Management.Automation.Alias("RHV")]
+        public string ResponseHeadersVariable { get => this._responseHeadersVariable; set => this._responseHeadersVariable = value; }
+
         /// <summary>Backing field for <see cref="GroupId" /> property.</summary>
         private string _groupId;
 
@@ -263,12 +279,12 @@
                 {
                     await ((Runtime.IEventListener)this).Signal(Microsoft.Graph.Beta.PowerShell.Runtime.Events.CmdletBeforeAPICall); if (((Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
                     _bodyParameter.OdataId = $"https://graph.microsoft.com/beta/directoryObjects/{DirectoryObjectId}";
-                    await this.Client.GroupCreateOwnerGraphBPreRef(GroupId, _bodyParameter, onNoContent, onDefault, this, Pipeline);
+                    await this.Client.GroupCreateOwnerGraphBPreRef(GroupId, Headers, _bodyParameter, onNoContent, onDefault, this, Pipeline);
                     await ((Runtime.IEventListener)this).Signal(Microsoft.Graph.Beta.PowerShell.Runtime.Events.CmdletAfterAPICall); if (((Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
                 }
                 catch (Runtime.UndeclaredResponseException urexception)
                 {
-                    WriteError(new System.Management.Automation.ErrorRecord(urexception, urexception.StatusCode.ToString(), System.Management.Automation.ErrorCategory.InvalidOperation, new { GroupId = GroupId, body = _bodyParameter })
+                    WriteError(new System.Management.Automation.ErrorRecord(urexception, urexception.StatusCode.ToString(), System.Management.Automation.ErrorCategory.InvalidOperation, new { GroupId = GroupId, Headers = Headers, body = _bodyParameter })
                     {
                         ErrorDetails = new System.Management.Automation.ErrorDetails(urexception.Message) { RecommendedAction = urexception.Action }
                     });
@@ -348,6 +364,13 @@
                 if (true == MyInvocation?.BoundParameters?.ContainsKey("PassThru"))
                 {
                     WriteObject(true);
+                }
+                // get the headers from the response and assign it to the variable provided by the user via the RHV(ResponseHeadersVariable) parameter.
+                if (!string.IsNullOrEmpty(ResponseHeadersVariable))
+                {
+                    var headers = Microsoft.Graph.PowerShell.ResponseHeaders.Helpers.ResponseHeaderHelper.GetHttpResponseHeaders(responseMessage);
+                    var vi = this.SessionState.PSVariable;
+                    vi.Set(new System.Management.Automation.PSVariable($"global:{ResponseHeadersVariable}", headers));
                 }
             }
         }

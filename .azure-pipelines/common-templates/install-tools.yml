@@ -16,7 +16,7 @@ steps:
   - task: NuGetToolInstaller@1
     displayName: Install Nuget
 
-  - task: NuGetAuthenticate@0
+  - task: NuGetAuthenticate@1
 
   - task: PowerShell@2
     displayName: Version Check
@@ -30,10 +30,16 @@ steps:
     displayName: Install NodeJs
     inputs:
       versionSpec: 16.x
-
+      
   - task: Npm@1
     displayName: Install AutoRest
     inputs:
       command: custom
       customCommand: install -g autorest@latest
+
+  - task: Npm@1
+    displayName: Install Rush
+    inputs:
+      command: custom
+      customCommand: install -g @microsoft/rush
 

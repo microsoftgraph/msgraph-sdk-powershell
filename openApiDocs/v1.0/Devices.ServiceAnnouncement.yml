@@ -11,7 +11,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action publish
-      description: Publish the specified browserSiteList for devices to download. This API is available in the following national cloud deployments.
+      description: Publish the specified browserSiteList for devices to download.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/browsersitelist-publish?view=graph-rest-1.0
@@ -72,11 +72,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - healthOverviews
-                - issues
-                - messages
               type: string
         - name: $expand
           in: query
@@ -87,11 +82,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - healthOverviews
-                - issues
-                - messages
               type: string
       responses:
         2XX:
@@ -148,7 +138,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: List healthOverviews
-      description: Retrieve the serviceHealth resources from the healthOverviews navigation property. This operation provides the health report of all subscribed services for a tenant. This API is available in the following national cloud deployments.
+      description: Retrieve the serviceHealth resources from the healthOverviews navigation property. This operation provides the health report of all subscribed services for a tenant.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceannouncement-list-healthoverviews?view=graph-rest-1.0
@@ -168,13 +158,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - service
-                - service desc
-                - status
-                - status desc
               type: string
         - name: $select
           in: query
@@ -185,11 +168,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - service
-                - status
-                - issues
               type: string
         - name: $expand
           in: query
@@ -200,9 +178,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - issues
               type: string
       responses:
         2XX:
@@ -240,7 +215,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get serviceHealth
-      description: Retrieve the properties and relationships of a serviceHealth object. This operation provides the health information of a specified service for a tenant. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of a serviceHealth object. This operation provides the health information of a specified service for a tenant.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/servicehealth-get?view=graph-rest-1.0
@@ -263,11 +238,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - service
-                - status
-                - issues
               type: string
         - name: $expand
           in: query
@@ -278,9 +248,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - issues
               type: string
       responses:
         2XX:
@@ -379,37 +346,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - details
-                - details desc
-                - endDateTime
-                - endDateTime desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - startDateTime
-                - startDateTime desc
-                - title
-                - title desc
-                - classification
-                - classification desc
-                - feature
-                - feature desc
-                - featureGroup
-                - featureGroup desc
-                - impactDescription
-                - impactDescription desc
-                - isResolved
-                - isResolved desc
-                - origin
-                - origin desc
-                - posts
-                - posts desc
-                - service
-                - service desc
-                - status
-                - status desc
               type: string
         - name: $select
           in: query
@@ -420,22 +356,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - details
-                - endDateTime
-                - lastModifiedDateTime
-                - startDateTime
-                - title
-                - classification
-                - feature
-                - featureGroup
-                - impactDescription
-                - isResolved
-                - origin
-                - posts
-                - service
-                - status
               type: string
         - name: $expand
           in: query
@@ -446,8 +366,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -522,22 +440,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - details
-                - endDateTime
-                - lastModifiedDateTime
-                - startDateTime
-                - title
-                - classification
-                - feature
-                - featureGroup
-                - impactDescription
-                - isResolved
-                - origin
-                - posts
-                - service
-                - status
               type: string
         - name: $expand
           in: query
@@ -548,8 +450,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -715,7 +615,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: List issues
-      description: Retrieve serviceHealthIssue resources from the issues navigation property. This operation retrieves information about all service health issues that exist for the tenant. This API is available in the following national cloud deployments.
+      description: Retrieve serviceHealthIssue resources from the issues navigation property. This operation retrieves information about all service health issues that exist for the tenant.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceannouncement-list-issues?view=graph-rest-1.0
@@ -735,37 +635,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - details
-                - details desc
-                - endDateTime
-                - endDateTime desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - startDateTime
-                - startDateTime desc
-                - title
-                - title desc
-                - classification
-                - classification desc
-                - feature
-                - feature desc
-                - featureGroup
-                - featureGroup desc
-                - impactDescription
-                - impactDescription desc
-                - isResolved
-                - isResolved desc
-                - origin
-                - origin desc
-                - posts
-                - posts desc
-                - service
-                - service desc
-                - status
-                - status desc
               type: string
         - name: $select
           in: query
@@ -776,22 +645,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - details
-                - endDateTime
-                - lastModifiedDateTime
-                - startDateTime
-                - title
-                - classification
-                - feature
-                - featureGroup
-                - impactDescription
-                - isResolved
-                - origin
-                - posts
-                - service
-                - status
               type: string
         - name: $expand
           in: query
@@ -802,8 +655,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -841,7 +692,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get serviceHealthIssue
-      description: Retrieve the properties and relationships of a serviceHealthIssue object. This operation retrieves a specified service health issue for tenant. The operation returns an error if the issue does not exist for the tenant. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of a serviceHealthIssue object. This operation retrieves a specified service health issue for tenant. The operation returns an error if the issue does not exist for the tenant.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/servicehealthissue-get?view=graph-rest-1.0
@@ -864,22 +715,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - details
-                - endDateTime
-                - lastModifiedDateTime
-                - startDateTime
-                - title
-                - classification
-                - feature
-                - featureGroup
-                - impactDescription
-                - isResolved
-                - origin
-                - posts
-                - service
-                - status
               type: string
         - name: $expand
           in: query
@@ -890,8 +725,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1011,7 +844,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: List serviceAnnouncement messages
-      description: Retrieve the serviceUpdateMessage resources from the messages navigation property. This operation retrieves all service update messages that exist for the tenant. This API is available in the following national cloud deployments.
+      description: Retrieve the serviceUpdateMessage resources from the messages navigation property. This operation retrieves all service update messages that exist for the tenant.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceannouncement-list-messages?view=graph-rest-1.0
@@ -1031,39 +864,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - details
-                - details desc
-                - endDateTime
-                - endDateTime desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - startDateTime
-                - startDateTime desc
-                - title
-                - title desc
-                - actionRequiredByDateTime
-                - actionRequiredByDateTime desc
-                - attachmentsArchive
-                - attachmentsArchive desc
-                - body
-                - body desc
-                - category
-                - category desc
-                - hasAttachments
-                - hasAttachments desc
-                - isMajorChange
-                - isMajorChange desc
-                - services
-                - services desc
-                - severity
-                - severity desc
-                - tags
-                - tags desc
-                - viewPoint
-                - viewPoint desc
               type: string
         - name: $select
           in: query
@@ -1074,24 +874,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - details
-                - endDateTime
-                - lastModifiedDateTime
-                - startDateTime
-                - title
-                - actionRequiredByDateTime
-                - attachmentsArchive
-                - body
-                - category
-                - hasAttachments
-                - isMajorChange
-                - services
-                - severity
-                - tags
-                - viewPoint
-                - attachments
               type: string
         - name: $expand
           in: query
@@ -1102,9 +884,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - attachments
               type: string
       responses:
         2XX:
@@ -1142,7 +921,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get serviceUpdateMessage
-      description: Retrieve the properties and relationships of a serviceUpdateMessage object. This operation retrieves a specified service update message for the tenant. The operation returns an error if the message does not exist for the tenant. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of a serviceUpdateMessage object. This operation retrieves a specified service update message for the tenant. The operation returns an error if the message does not exist for the tenant.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceupdatemessage-get?view=graph-rest-1.0
@@ -1165,24 +944,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - details
-                - endDateTime
-                - lastModifiedDateTime
-                - startDateTime
-                - title
-                - actionRequiredByDateTime
-                - attachmentsArchive
-                - body
-                - category
-                - hasAttachments
-                - isMajorChange
-                - services
-                - severity
-                - tags
-                - viewPoint
-                - attachments
               type: string
         - name: $expand
           in: query
@@ -1193,9 +954,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - attachments
               type: string
       responses:
         2XX:
@@ -1269,7 +1027,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: List attachments
-      description: Get the list of attachments associated with a service message. This API is available in the following national cloud deployments.
+      description: Get the list of attachments associated with a service message.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceupdatemessage-list-attachments?view=graph-rest-1.0
@@ -1297,19 +1055,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - content
-                - content desc
-                - contentType
-                - contentType desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - name
-                - name desc
-                - size
-                - size desc
               type: string
         - name: $select
           in: query
@@ -1320,13 +1065,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - content
-                - contentType
-                - lastModifiedDateTime
-                - name
-                - size
               type: string
         - name: $expand
           in: query
@@ -1337,8 +1075,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1385,7 +1121,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get serviceAnnouncementAttachment
-      description: Read the properties and relationships of a serviceAnnouncementAttachment object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a serviceAnnouncementAttachment object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceannouncementattachment-get?view=graph-rest-1.0
@@ -1416,13 +1152,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - content
-                - contentType
-                - lastModifiedDateTime
-                - name
-                - size
               type: string
         - name: $expand
           in: query
@@ -1433,8 +1162,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1698,7 +1425,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action archive
-      description: Archive a list of serviceUpdateMessages for the signed in user. This API is available in the following national cloud deployments.
+      description: Archive a list of serviceUpdateMessages for the signed in user.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceupdatemessage-archive?view=graph-rest-1.0
@@ -1740,7 +1467,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action favorite
-      description: Change the status of a list of serviceUpdateMessages to favorite for the signed in user. This API is available in the following national cloud deployments.
+      description: Change the status of a list of serviceUpdateMessages to favorite for the signed in user.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceupdatemessage-favorite?view=graph-rest-1.0
@@ -1782,7 +1509,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action markRead
-      description: Mark a list of serviceUpdateMessages as read for the signed in user. This API is available in the following national cloud deployments.
+      description: Mark a list of serviceUpdateMessages as read for the signed in user.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceupdatemessage-markread?view=graph-rest-1.0
@@ -1824,7 +1551,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action markUnread
-      description: Mark a list of serviceUpdateMessages as unread for the signed in user. This API is available in the following national cloud deployments.
+      description: Mark a list of serviceUpdateMessages as unread for the signed in user.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceupdatemessage-markunread?view=graph-rest-1.0
@@ -1866,7 +1593,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action unarchive
-      description: Unarchive a list of serviceUpdateMessages for the signed in user. This API is available in the following national cloud deployments.
+      description: Unarchive a list of serviceUpdateMessages for the signed in user.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceupdatemessage-unarchive?view=graph-rest-1.0
@@ -1908,7 +1635,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action unfavorite
-      description: Remove the favorite status of serviceUpdateMessages for the signed in user. This API is available in the following national cloud deployments.
+      description: Remove the favorite status of serviceUpdateMessages for the signed in user.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceupdatemessage-unfavorite?view=graph-rest-1.0

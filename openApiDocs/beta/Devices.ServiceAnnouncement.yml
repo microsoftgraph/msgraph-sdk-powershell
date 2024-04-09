@@ -11,7 +11,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action publish
-      description: Publish the specified browserSiteList for devices to download. This API is available in the following national cloud deployments.
+      description: Publish the specified browserSiteList for devices to download.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/browsersitelist-publish?view=graph-rest-1.0
@@ -72,11 +72,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - healthOverviews
-                - issues
-                - messages
               type: string
         - name: $expand
           in: query
@@ -87,11 +82,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - healthOverviews
-                - issues
-                - messages
               type: string
       responses:
         2XX:
@@ -148,7 +138,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: List healthOverviews
-      description: Retrieve the serviceHealth resources from the healthOverviews navigation property. This operation provides the health report of all subscribed services for a tenant. This API is available in the following national cloud deployments.
+      description: Retrieve the serviceHealth resources from the healthOverviews navigation property. This operation provides the health report of all subscribed services for a tenant.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceannouncement-list-healthoverviews?view=graph-rest-1.0
@@ -168,13 +158,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - service
-                - service desc
-                - status
-                - status desc
               type: string
         - name: $select
           in: query
@@ -185,11 +168,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - service
-                - status
-                - issues
               type: string
         - name: $expand
           in: query
@@ -200,9 +178,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - issues
               type: string
       responses:
         2XX:
@@ -240,7 +215,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get serviceHealth
-      description: Retrieve the properties and relationships of a serviceHealth object. This operation provides the health information of a specified service for a tenant. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of a serviceHealth object. This operation provides the health information of a specified service for a tenant.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/servicehealth-get?view=graph-rest-1.0
@@ -263,11 +238,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - service
-                - status
-                - issues
               type: string
         - name: $expand
           in: query
@@ -278,9 +248,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - issues
               type: string
       responses:
         2XX:
@@ -379,37 +346,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - details
-                - details desc
-                - endDateTime
-                - endDateTime desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - startDateTime
-                - startDateTime desc
-                - title
-                - title desc
-                - classification
-                - classification desc
-                - feature
-                - feature desc
-                - featureGroup
-                - featureGroup desc
-                - impactDescription
-                - impactDescription desc
-                - isResolved
-                - isResolved desc
-                - origin
-                - origin desc
-                - posts
-                - posts desc
-                - service
-                - service desc
-                - status
-                - status desc
               type: string
         - name: $select
           in: query
@@ -420,22 +356,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - details
-                - endDateTime
-                - lastModifiedDateTime
-                - startDateTime
-                - title
-                - classification
-                - feature
-                - featureGroup
-                - impactDescription
-                - isResolved
-                - origin
-                - posts
-                - service
-                - status
               type: string
         - name: $expand
           in: query
@@ -446,8 +366,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -522,22 +440,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - details
-                - endDateTime
-                - lastModifiedDateTime
-                - startDateTime
-                - title
-                - classification
-                - feature
-                - featureGroup
-                - impactDescription
-                - isResolved
-                - origin
-                - posts
-                - service
-                - status
               type: string
         - name: $expand
           in: query
@@ -548,8 +450,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -715,7 +615,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: List issues
-      description: Retrieve serviceHealthIssue resources from the issues navigation property. This operation retrieves information about all service health issues that exist for the tenant. This API is available in the following national cloud deployments.
+      description: Retrieve serviceHealthIssue resources from the issues navigation property. This operation retrieves information about all service health issues that exist for the tenant.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceannouncement-list-issues?view=graph-rest-1.0
@@ -735,37 +635,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - details
-                - details desc
-                - endDateTime
-                - endDateTime desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - startDateTime
-                - startDateTime desc
-                - title
-                - title desc
-                - classification
-                - classification desc
-                - feature
-                - feature desc
-                - featureGroup
-                - featureGroup desc
-                - impactDescription
-                - impactDescription desc
-                - isResolved
-                - isResolved desc
-                - origin
-                - origin desc
-                - posts
-                - posts desc
-                - service
-                - service desc
-                - status
-                - status desc
               type: string
         - name: $select
           in: query
@@ -776,22 +645,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - details
-                - endDateTime
-                - lastModifiedDateTime
-                - startDateTime
-                - title
-                - classification
-                - feature
-                - featureGroup
-                - impactDescription
-                - isResolved
-                - origin
-                - posts
-                - service
-                - status
               type: string
         - name: $expand
           in: query
@@ -802,8 +655,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -841,7 +692,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get serviceHealthIssue
-      description: Retrieve the properties and relationships of a serviceHealthIssue object. This operation retrieves a specified service health issue for tenant. The operation returns an error if the issue does not exist for the tenant. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of a serviceHealthIssue object. This operation retrieves a specified service health issue for tenant. The operation returns an error if the issue does not exist for the tenant.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/servicehealthissue-get?view=graph-rest-1.0
@@ -864,22 +715,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - details
-                - endDateTime
-                - lastModifiedDateTime
-                - startDateTime
-                - title
-                - classification
-                - feature
-                - featureGroup
-                - impactDescription
-                - isResolved
-                - origin
-                - posts
-                - service
-                - status
               type: string
         - name: $expand
           in: query
@@ -890,8 +725,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1011,7 +844,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: List messages
-      description: Retrieve the serviceUpdateMessage resources from the messages navigation property. This operation retrieves all service update messages that exist for the tenant. This API is available in the following national cloud deployments.
+      description: Retrieve the serviceUpdateMessage resources from the messages navigation property. This operation retrieves all service update messages that exist for the tenant.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceannouncement-list-messages?view=graph-rest-1.0
@@ -1031,39 +864,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - details
-                - details desc
-                - endDateTime
-                - endDateTime desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - startDateTime
-                - startDateTime desc
-                - title
-                - title desc
-                - actionRequiredByDateTime
-                - actionRequiredByDateTime desc
-                - attachmentsArchive
-                - attachmentsArchive desc
-                - body
-                - body desc
-                - category
-                - category desc
-                - hasAttachments
-                - hasAttachments desc
-                - isMajorChange
-                - isMajorChange desc
-                - services
-                - services desc
-                - severity
-                - severity desc
-                - tags
-                - tags desc
-                - viewPoint
-                - viewPoint desc
               type: string
         - name: $select
           in: query
@@ -1074,24 +874,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - details
-                - endDateTime
-                - lastModifiedDateTime
-                - startDateTime
-                - title
-                - actionRequiredByDateTime
-                - attachmentsArchive
-                - body
-                - category
-                - hasAttachments
-                - isMajorChange
-                - services
-                - severity
-                - tags
-                - viewPoint
-                - attachments
               type: string
         - name: $expand
           in: query
@@ -1102,9 +884,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - attachments
               type: string
       responses:
         2XX:
@@ -1142,7 +921,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get serviceUpdateMessage
-      description: Retrieve the properties and relationships of a serviceUpdateMessage object. This operation retrieves a specified service update message for the tenant. The operation returns an error if the message does not exist for the tenant. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of a serviceUpdateMessage object. This operation retrieves a specified service update message for the tenant. The operation returns an error if the message does not exist for the tenant.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceupdatemessage-get?view=graph-rest-1.0
@@ -1165,24 +944,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - details
-                - endDateTime
-                - lastModifiedDateTime
-                - startDateTime
-                - title
-                - actionRequiredByDateTime
-                - attachmentsArchive
-                - body
-                - category
-                - hasAttachments
-                - isMajorChange
-                - services
-                - severity
-                - tags
-                - viewPoint
-                - attachments
               type: string
         - name: $expand
           in: query
@@ -1193,9 +954,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - attachments
               type: string
       responses:
         2XX:
@@ -1269,7 +1027,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: List attachments
-      description: Get a list of attachments associated with a service message. This API is available in the following national cloud deployments.
+      description: Get a list of attachments associated with a service message.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceupdatemessage-list-attachments?view=graph-rest-1.0
@@ -1297,19 +1055,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - content
-                - content desc
-                - contentType
-                - contentType desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - name
-                - name desc
-                - size
-                - size desc
               type: string
         - name: $select
           in: query
@@ -1320,13 +1065,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - content
-                - contentType
-                - lastModifiedDateTime
-                - name
-                - size
               type: string
         - name: $expand
           in: query
@@ -1337,8 +1075,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1385,7 +1121,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get serviceAnnouncementAttachment
-      description: Read the properties and relationships of a serviceAnnouncementAttachment object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a serviceAnnouncementAttachment object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceannouncementattachment-get?view=graph-rest-1.0
@@ -1416,13 +1152,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - content
-                - contentType
-                - lastModifiedDateTime
-                - name
-                - size
               type: string
         - name: $expand
           in: query
@@ -1433,8 +1162,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1698,7 +1425,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action archive
-      description: Archive a list of serviceUpdateMessages for the signed in user. This API is available in the following national cloud deployments.
+      description: Archive a list of serviceUpdateMessages for the signed in user.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceupdatemessage-archive?view=graph-rest-1.0
@@ -1740,7 +1467,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action favorite
-      description: Change the status of a list of serviceUpdateMessages to favorite for the signed in user. This API is available in the following national cloud deployments.
+      description: Change the status of a list of serviceUpdateMessages to favorite for the signed in user.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceupdatemessage-favorite?view=graph-rest-1.0
@@ -1782,7 +1509,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action markRead
-      description: Mark a list of serviceUpdateMessages as read for the signed in user. This API is available in the following national cloud deployments.
+      description: Mark a list of serviceUpdateMessages as read for the signed in user.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceupdatemessage-markread?view=graph-rest-1.0
@@ -1824,7 +1551,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action markUnread
-      description: Mark a list of serviceUpdateMessages as unread for the signed in user. This API is available in the following national cloud deployments.
+      description: Mark a list of serviceUpdateMessages as unread for the signed in user.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceupdatemessage-markunread?view=graph-rest-1.0
@@ -1866,7 +1593,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action unarchive
-      description: Unarchive a list of serviceUpdateMessages for the signed in user. This API is available in the following national cloud deployments.
+      description: Unarchive a list of serviceUpdateMessages for the signed in user.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceupdatemessage-unarchive?view=graph-rest-1.0
@@ -1908,7 +1635,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action unfavorite
-      description: Remove the favorite status of serviceUpdateMessages for the signed in user. This API is available in the following national cloud deployments.
+      description: Remove the favorite status of serviceUpdateMessages for the signed in user.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceupdatemessage-unfavorite?view=graph-rest-1.0
@@ -1950,7 +1677,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action addMembers
-      description: 'Add members to an updatableAssetGroup. You can add azureADDevice resources as members, but may not add updatableAssetGroup resources as members. Adding a Microsoft Entra device as a member of an updatable asset group automatically creates an azureADDevice object, if it does not already exist. You can also use the method addMembersById to add members. This API is available in the following national cloud deployments.'
+      description: 'Add members to an updatableAssetGroup. You can add azureADDevice resources as members, but may not add updatableAssetGroup resources as members. Adding a Microsoft Entra device as a member of an updatable asset group automatically creates an azureADDevice object, if it does not already exist. You can also use the method addMembersById to add members.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembers?view=graph-rest-1.0
@@ -1997,7 +1724,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action addMembersById
-      description: Add members of the same type to an updatableAssetGroup. You can also use the method addMembers to add members. This API is available in the following national cloud deployments.
+      description: Add members of the same type to an updatableAssetGroup. You can also use the method addMembers to add members.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembersbyid?view=graph-rest-1.0
@@ -2048,7 +1775,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action removeMembers
-      description: Remove members from an updatableAssetGroup. You can also use the method removeMembersById to remove members. This API is available in the following national cloud deployments.
+      description: Remove members from an updatableAssetGroup. You can also use the method removeMembersById to remove members.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-removemembers?view=graph-rest-1.0
@@ -2095,7 +1822,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action removeMembersById
-      description: Remove members of the same type from an updatableAssetGroup. You can also use the method removeMembers to remove members. This API is available in the following national cloud deployments.
+      description: Remove members of the same type from an updatableAssetGroup. You can also use the method removeMembers to remove members.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-removemembersbyid?view=graph-rest-1.0
@@ -2302,7 +2029,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action addMembers
-      description: 'Add members to an updatableAssetGroup. You can add azureADDevice resources as members, but may not add updatableAssetGroup resources as members. Adding a Microsoft Entra device as a member of an updatable asset group automatically creates an azureADDevice object, if it does not already exist. You can also use the method addMembersById to add members. This API is available in the following national cloud deployments.'
+      description: 'Add members to an updatableAssetGroup. You can add azureADDevice resources as members, but may not add updatableAssetGroup resources as members. Adding a Microsoft Entra device as a member of an updatable asset group automatically creates an azureADDevice object, if it does not already exist. You can also use the method addMembersById to add members.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembers?view=graph-rest-1.0
@@ -2349,7 +2076,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action addMembersById
-      description: Add members of the same type to an updatableAssetGroup. You can also use the method addMembers to add members. This API is available in the following national cloud deployments.
+      description: Add members of the same type to an updatableAssetGroup. You can also use the method addMembers to add members.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembersbyid?view=graph-rest-1.0
@@ -2400,7 +2127,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action removeMembers
-      description: Remove members from an updatableAssetGroup. You can also use the method removeMembersById to remove members. This API is available in the following national cloud deployments.
+      description: Remove members from an updatableAssetGroup. You can also use the method removeMembersById to remove members.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-removemembers?view=graph-rest-1.0
@@ -2447,7 +2174,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action removeMembersById
-      description: Remove members of the same type from an updatableAssetGroup. You can also use the method removeMembers to remove members. This API is available in the following national cloud deployments.
+      description: Remove members of the same type from an updatableAssetGroup. You can also use the method removeMembers to remove members.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-removemembersbyid?view=graph-rest-1.0
@@ -2654,7 +2381,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action updateAudience
-      description: 'Update the members and exclusions collections of a deploymentAudience. Adding an azureADDevice to the members or exclusions collections of a deployment audience automatically creates a Microsoft Entra device object, if it does not already exist. If the same updatableAsset gets included in the exclusions and members collections of a deploymentAudience, deployment will not apply to that asset. If all updatableAsset objects are the same type, you can also use the method updateAudienceById to update the deploymentAudience. This API is available in the following national cloud deployments.'
+      description: 'Update the members and exclusions collections of a deploymentAudience. Adding an azureADDevice to the members or exclusions collections of a deployment audience automatically creates a Microsoft Entra device object, if it does not already exist. If the same updatableAsset gets included in the exclusions and members collections of a deploymentAudience, deployment will not apply to that asset. If all updatableAsset objects are the same type, you can also use the method updateAudienceById to update the deploymentAudience.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowsupdates-deploymentaudience-updateaudience?view=graph-rest-1.0
@@ -2705,7 +2432,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action updateAudienceById
-      description: 'Update the members and exclusions collections of a deploymentAudience with updatableAsset resources of the same type. Adding an azureADDevice to the members or exclusions collections of a deployment audience automatically creates a Microsoft Entra device object if it does not already exist. If the same updatableAsset gets included in the exclusions and members collections of a deploymentAudience, deployment will not apply to that asset. You can also use the method updateAudience to update the deploymentAudience. This API is available in the following national cloud deployments.'
+      description: 'Update the members and exclusions collections of a deploymentAudience with updatableAsset resources of the same type. Adding an azureADDevice to the members or exclusions collections of a deployment audience automatically creates a Microsoft Entra device object if it does not already exist. If the same updatableAsset gets included in the exclusions and members collections of a deploymentAudience, deployment will not apply to that asset. You can also use the method updateAudience to update the deploymentAudience.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowsupdates-deploymentaudience-updateaudiencebyid?view=graph-rest-1.0
@@ -2763,7 +2490,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action addMembers
-      description: 'Add members to an updatableAssetGroup. You can add azureADDevice resources as members, but may not add updatableAssetGroup resources as members. Adding a Microsoft Entra device as a member of an updatable asset group automatically creates an azureADDevice object, if it does not already exist. You can also use the method addMembersById to add members. This API is available in the following national cloud deployments.'
+      description: 'Add members to an updatableAssetGroup. You can add azureADDevice resources as members, but may not add updatableAssetGroup resources as members. Adding a Microsoft Entra device as a member of an updatable asset group automatically creates an azureADDevice object, if it does not already exist. You can also use the method addMembersById to add members.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembers?view=graph-rest-1.0
@@ -2810,7 +2537,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action addMembersById
-      description: Add members of the same type to an updatableAssetGroup. You can also use the method addMembers to add members. This API is available in the following national cloud deployments.
+      description: Add members of the same type to an updatableAssetGroup. You can also use the method addMembers to add members.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembersbyid?view=graph-rest-1.0
@@ -2861,7 +2588,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action removeMembers
-      description: Remove members from an updatableAssetGroup. You can also use the method removeMembersById to remove members. This API is available in the following national cloud deployments.
+      description: Remove members from an updatableAssetGroup. You can also use the method removeMembersById to remove members.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-removemembers?view=graph-rest-1.0
@@ -2908,7 +2635,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action removeMembersById
-      description: Remove members of the same type from an updatableAssetGroup. You can also use the method removeMembers to remove members. This API is available in the following national cloud deployments.
+      description: Remove members of the same type from an updatableAssetGroup. You can also use the method removeMembers to remove members.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-removemembersbyid?view=graph-rest-1.0
@@ -3115,7 +2842,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action addMembers
-      description: 'Add members to an updatableAssetGroup. You can add azureADDevice resources as members, but may not add updatableAssetGroup resources as members. Adding a Microsoft Entra device as a member of an updatable asset group automatically creates an azureADDevice object, if it does not already exist. You can also use the method addMembersById to add members. This API is available in the following national cloud deployments.'
+      description: 'Add members to an updatableAssetGroup. You can add azureADDevice resources as members, but may not add updatableAssetGroup resources as members. Adding a Microsoft Entra device as a member of an updatable asset group automatically creates an azureADDevice object, if it does not already exist. You can also use the method addMembersById to add members.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembers?view=graph-rest-1.0
@@ -3162,7 +2889,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action addMembersById
-      description: Add members of the same type to an updatableAssetGroup. You can also use the method addMembers to add members. This API is available in the following national cloud deployments.
+      description: Add members of the same type to an updatableAssetGroup. You can also use the method addMembers to add members.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembersbyid?view=graph-rest-1.0
@@ -3213,7 +2940,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action removeMembers
-      description: Remove members from an updatableAssetGroup. You can also use the method removeMembersById to remove members. This API is available in the following national cloud deployments.
+      description: Remove members from an updatableAssetGroup. You can also use the method removeMembersById to remove members.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-removemembers?view=graph-rest-1.0
@@ -3260,7 +2987,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action removeMembersById
-      description: Remove members of the same type from an updatableAssetGroup. You can also use the method removeMembers to remove members. This API is available in the following national cloud deployments.
+      description: Remove members of the same type from an updatableAssetGroup. You can also use the method removeMembers to remove members.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-removemembersbyid?view=graph-rest-1.0
@@ -3467,7 +3194,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action updateAudience
-      description: 'Update the members and exclusions collections of a deploymentAudience. Adding an azureADDevice to the members or exclusions collections of a deployment audience automatically creates a Microsoft Entra device object, if it does not already exist. If the same updatableAsset gets included in the exclusions and members collections of a deploymentAudience, deployment will not apply to that asset. If all updatableAsset objects are the same type, you can also use the method updateAudienceById to update the deploymentAudience. This API is available in the following national cloud deployments.'
+      description: 'Update the members and exclusions collections of a deploymentAudience. Adding an azureADDevice to the members or exclusions collections of a deployment audience automatically creates a Microsoft Entra device object, if it does not already exist. If the same updatableAsset gets included in the exclusions and members collections of a deploymentAudience, deployment will not apply to that asset. If all updatableAsset objects are the same type, you can also use the method updateAudienceById to update the deploymentAudience.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowsupdates-deploymentaudience-updateaudience?view=graph-rest-1.0
@@ -3518,7 +3245,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action updateAudienceById
-      description: 'Update the members and exclusions collections of a deploymentAudience with updatableAsset resources of the same type. Adding an azureADDevice to the members or exclusions collections of a deployment audience automatically creates a Microsoft Entra device object if it does not already exist. If the same updatableAsset gets included in the exclusions and members collections of a deploymentAudience, deployment will not apply to that asset. You can also use the method updateAudience to update the deploymentAudience. This API is available in the following national cloud deployments.'
+      description: 'Update the members and exclusions collections of a deploymentAudience with updatableAsset resources of the same type. Adding an azureADDevice to the members or exclusions collections of a deployment audience automatically creates a Microsoft Entra device object if it does not already exist. If the same updatableAsset gets included in the exclusions and members collections of a deploymentAudience, deployment will not apply to that asset. You can also use the method updateAudience to update the deploymentAudience.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowsupdates-deploymentaudience-updateaudiencebyid?view=graph-rest-1.0
@@ -3571,12 +3298,255 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/admin/windows/updates/products/{product-id}/microsoft.graph.windowsUpdates.getKnownIssuesByTimeRange(daysInPast={daysInPast},includeAllActive=@includeAllActive)':
+    get:
+      tags:
+        - admin.Functions
+      summary: Invoke function getKnownIssuesByTimeRange
+      operationId: admin.window.update.product_getKnownIssuesGraphBPreTimeRange
+      parameters:
+        - name: product-id
+          in: path
+          description: The unique identifier of product
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: product
+        - name: daysInPast
+          in: path
+          description: 'Usage: daysInPast={daysInPast}'
+          required: true
+          style: simple
+          schema:
+            maximum: 2147483647
+            minimum: -2147483648
+            type: integer
+            format: int32
+        - name: includeAllActive
+          in: query
+          description: 'Usage: includeAllActive=@includeAllActive'
+          style: form
+          explode: false
+          schema:
+            type: boolean
+            default: false
+            nullable: true
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of knownIssue
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.windowsUpdates.knownIssue'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/admin/windows/updates/products/microsoft.graph.windowsUpdates.findByCatalogId(catalogID=''{catalogID}'')':
+    get:
+      tags:
+        - admin.Functions
+      summary: Invoke function findByCatalogId
+      operationId: admin.window.update.product_findGraphBPreCatalogId
+      parameters:
+        - name: catalogID
+          in: path
+          description: 'Usage: catalogID=''{catalogID}'''
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of product
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.windowsUpdates.product'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/admin/windows/updates/products/microsoft.graph.windowsUpdates.findByKbNumber(kbNumber={kbNumber})':
+    get:
+      tags:
+        - admin.Functions
+      summary: Invoke function findByKbNumber
+      operationId: admin.window.update.product_findGraphBPreKbNumber
+      parameters:
+        - name: kbNumber
+          in: path
+          description: 'Usage: kbNumber={kbNumber}'
+          required: true
+          style: simple
+          schema:
+            maximum: 2147483647
+            minimum: -2147483648
+            type: integer
+            format: int32
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of product
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.windowsUpdates.product'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/admin/windows/updates/updatableAssets/{updatableAsset-id}/microsoft.graph.windowsUpdates.addMembers':
     post:
       tags:
         - admin.Actions
       summary: Invoke action addMembers
-      description: 'Add members to an updatableAssetGroup. You can add azureADDevice resources as members, but may not add updatableAssetGroup resources as members. Adding a Microsoft Entra device as a member of an updatable asset group automatically creates an azureADDevice object, if it does not already exist. You can also use the method addMembersById to add members. This API is available in the following national cloud deployments.'
+      description: 'Add members to an updatableAssetGroup. You can add azureADDevice resources as members, but may not add updatableAssetGroup resources as members. Adding a Microsoft Entra device as a member of an updatable asset group automatically creates an azureADDevice object, if it does not already exist. You can also use the method addMembersById to add members.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembers?view=graph-rest-1.0
@@ -3615,7 +3585,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action addMembersById
-      description: Add members of the same type to an updatableAssetGroup. You can also use the method addMembers to add members. This API is available in the following national cloud deployments.
+      description: Add members of the same type to an updatableAssetGroup. You can also use the method addMembers to add members.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembersbyid?view=graph-rest-1.0
@@ -3658,7 +3628,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action removeMembers
-      description: Remove members from an updatableAssetGroup. You can also use the method removeMembersById to remove members. This API is available in the following national cloud deployments.
+      description: Remove members from an updatableAssetGroup. You can also use the method removeMembersById to remove members.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-removemembers?view=graph-rest-1.0
@@ -3697,7 +3667,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action removeMembersById
-      description: Remove members of the same type from an updatableAssetGroup. You can also use the method removeMembers to remove members. This API is available in the following national cloud deployments.
+      description: Remove members of the same type from an updatableAssetGroup. You can also use the method removeMembers to remove members.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-removemembersbyid?view=graph-rest-1.0
@@ -3860,7 +3830,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action addMembers
-      description: 'Add members to an updatableAssetGroup. You can add azureADDevice resources as members, but may not add updatableAssetGroup resources as members. Adding a Microsoft Entra device as a member of an updatable asset group automatically creates an azureADDevice object, if it does not already exist. You can also use the method addMembersById to add members. This API is available in the following national cloud deployments.'
+      description: 'Add members to an updatableAssetGroup. You can add azureADDevice resources as members, but may not add updatableAssetGroup resources as members. Adding a Microsoft Entra device as a member of an updatable asset group automatically creates an azureADDevice object, if it does not already exist. You can also use the method addMembersById to add members.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembers?view=graph-rest-1.0
@@ -3907,7 +3877,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action addMembersById
-      description: Add members of the same type to an updatableAssetGroup. You can also use the method addMembers to add members. This API is available in the following national cloud deployments.
+      description: Add members of the same type to an updatableAssetGroup. You can also use the method addMembers to add members.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembersbyid?view=graph-rest-1.0
@@ -3958,7 +3928,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action removeMembers
-      description: Remove members from an updatableAssetGroup. You can also use the method removeMembersById to remove members. This API is available in the following national cloud deployments.
+      description: Remove members from an updatableAssetGroup. You can also use the method removeMembersById to remove members.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-removemembers?view=graph-rest-1.0
@@ -4005,7 +3975,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action removeMembersById
-      description: Remove members of the same type from an updatableAssetGroup. You can also use the method removeMembers to remove members. This API is available in the following national cloud deployments.
+      description: Remove members of the same type from an updatableAssetGroup. You can also use the method removeMembers to remove members.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-removemembersbyid?view=graph-rest-1.0
@@ -4212,7 +4182,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action addMembers
-      description: 'Add members to an updatableAssetGroup. You can add azureADDevice resources as members, but may not add updatableAssetGroup resources as members. Adding a Microsoft Entra device as a member of an updatable asset group automatically creates an azureADDevice object, if it does not already exist. You can also use the method addMembersById to add members. This API is available in the following national cloud deployments.'
+      description: 'Add members to an updatableAssetGroup. You can add azureADDevice resources as members, but may not add updatableAssetGroup resources as members. Adding a Microsoft Entra device as a member of an updatable asset group automatically creates an azureADDevice object, if it does not already exist. You can also use the method addMembersById to add members.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembers?view=graph-rest-1.0
@@ -4259,7 +4229,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action addMembersById
-      description: Add members of the same type to an updatableAssetGroup. You can also use the method addMembers to add members. This API is available in the following national cloud deployments.
+      description: Add members of the same type to an updatableAssetGroup. You can also use the method addMembers to add members.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-addmembersbyid?view=graph-rest-1.0
@@ -4310,7 +4280,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action removeMembers
-      description: Remove members from an updatableAssetGroup. You can also use the method removeMembersById to remove members. This API is available in the following national cloud deployments.
+      description: Remove members from an updatableAssetGroup. You can also use the method removeMembersById to remove members.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-removemembers?view=graph-rest-1.0
@@ -4357,7 +4327,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action removeMembersById
-      description: Remove members of the same type from an updatableAssetGroup. You can also use the method removeMembers to remove members. This API is available in the following national cloud deployments.
+      description: Remove members of the same type from an updatableAssetGroup. You can also use the method removeMembers to remove members.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-removemembersbyid?view=graph-rest-1.0
@@ -4564,7 +4534,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action updateAudience
-      description: 'Update the members and exclusions collections of a deploymentAudience. Adding an azureADDevice to the members or exclusions collections of a deployment audience automatically creates a Microsoft Entra device object, if it does not already exist. If the same updatableAsset gets included in the exclusions and members collections of a deploymentAudience, deployment will not apply to that asset. If all updatableAsset objects are the same type, you can also use the method updateAudienceById to update the deploymentAudience. This API is available in the following national cloud deployments.'
+      description: 'Update the members and exclusions collections of a deploymentAudience. Adding an azureADDevice to the members or exclusions collections of a deployment audience automatically creates a Microsoft Entra device object, if it does not already exist. If the same updatableAsset gets included in the exclusions and members collections of a deploymentAudience, deployment will not apply to that asset. If all updatableAsset objects are the same type, you can also use the method updateAudienceById to update the deploymentAudience.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowsupdates-deploymentaudience-updateaudience?view=graph-rest-1.0
@@ -4615,7 +4585,7 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action updateAudienceById
-      description: 'Update the members and exclusions collections of a deploymentAudience with updatableAsset resources of the same type. Adding an azureADDevice to the members or exclusions collections of a deployment audience automatically creates a Microsoft Entra device object if it does not already exist. If the same updatableAsset gets included in the exclusions and members collections of a deploymentAudience, deployment will not apply to that asset. You can also use the method updateAudience to update the deploymentAudience. This API is available in the following national cloud deployments.'
+      description: 'Update the members and exclusions collections of a deploymentAudience with updatableAsset resources of the same type. Adding an azureADDevice to the members or exclusions collections of a deployment audience automatically creates a Microsoft Entra device object if it does not already exist. If the same updatableAsset gets included in the exclusions and members collections of a deploymentAudience, deployment will not apply to that asset. You can also use the method updateAudience to update the deploymentAudience.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowsupdates-deploymentaudience-updateaudiencebyid?view=graph-rest-1.0
@@ -4993,6 +4963,95 @@ components:
         - unknownFutureValue
         - driver
       type: string
+    microsoft.graph.windowsUpdates.knownIssue:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: knownIssue
+          type: object
+          properties:
+            description:
+              type: string
+              description: The description of the particular known issue.
+            knownIssueHistories:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.knownIssueHistoryItem'
+            lastUpdatedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when the known issue was last updated. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+              format: date-time
+            resolvedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when the known issue was resolved or mitigated. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+              nullable: true
+            safeguardHoldIds:
+              type: array
+              items:
+                maximum: 2147483647
+                minimum: -2147483648
+                type: integer
+                format: int32
+            startDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when the known issue was first reported. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+            status:
+              $ref: '#/components/schemas/microsoft.graph.windowsUpdates.windowsReleaseHealthStatus'
+            title:
+              type: string
+              description: The title of the known issue.
+            webViewUrl:
+              type: string
+              description: The URL to the known issue in the Windows Release Health dashboard on Microsoft 365 admin center.
+            originatingKnowledgeBaseArticle:
+              $ref: '#/components/schemas/microsoft.graph.windowsUpdates.knowledgeBaseArticle'
+            resolvingKnowledgeBaseArticle:
+              $ref: '#/components/schemas/microsoft.graph.windowsUpdates.knowledgeBaseArticle'
+          additionalProperties:
+            type: object
+    microsoft.graph.windowsUpdates.product:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: product
+          type: object
+          properties:
+            friendlyNames:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: 'The friendly names of the product. For example, Version 22H2 (OS build 22621). Read-only.'
+            groupName:
+              type: string
+              description: 'The name of the product group. For example, Windows 11. Read-only.'
+              nullable: true
+            name:
+              type: string
+              description: 'The name of the product. For example, Windows 11, version 22H2. Read-only.'
+            editions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.edition'
+              description: Represents an edition of a particular Windows product.
+              x-ms-navigationProperty: true
+            knownIssues:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.knownIssue'
+              description: Represents a known issue related to a Windows product.
+              x-ms-navigationProperty: true
+            revisions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.productRevision'
+              description: Represents a product revision.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.entity:
       title: entity
       type: object
@@ -5408,6 +5467,104 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.windowsUpdates.knownIssueHistoryItem:
+      title: knownIssueHistoryItem
+      type: object
+      properties:
+        body:
+          $ref: '#/components/schemas/microsoft.graph.windowsUpdates.itemBody'
+        createdDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The date and time when the post was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+          format: date-time
+      additionalProperties:
+        type: object
+    microsoft.graph.windowsUpdates.windowsReleaseHealthStatus:
+      title: windowsReleaseHealthStatus
+      enum:
+        - resolved
+        - mitigatedExternal
+        - mitigated
+        - resolvedExternal
+        - confirmed
+        - reported
+        - investigating
+        - unknownFutureValue
+      type: string
+    microsoft.graph.windowsUpdates.knowledgeBaseArticle:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: knowledgeBaseArticle
+          type: object
+          properties:
+            url:
+              type: string
+              description: The URL of the knowledge base article. Read-only.
+          additionalProperties:
+            type: object
+    microsoft.graph.windowsUpdates.edition:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: edition
+          type: object
+          properties:
+            deviceFamily:
+              type: string
+              description: The device family targeted by the edition.
+            endOfServiceDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when the edition reached the end of service. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+              format: date-time
+            generalAvailabilityDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when the edition became available to the general customers for the first time. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+              format: date-time
+            isInService:
+              type: boolean
+              description: Indicates whether the edition is in service or out of service.
+            name:
+              type: string
+              description: The name of the edition. Read-only.
+            releasedName:
+              type: string
+              description: The public name of the edition. Read-only.
+            servicingPeriods:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.servicingPeriod'
+          additionalProperties:
+            type: object
+    microsoft.graph.windowsUpdates.productRevision:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: productRevision
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: The display name of the content. Read-only.
+            osBuild:
+              $ref: '#/components/schemas/microsoft.graph.windowsUpdates.buildVersionDetails'
+            product:
+              type: string
+              description: 'The product of the revision. Possible values are: Windows 10, Windows 11. Read-only.'
+            releaseDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The release date for the content. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+              format: date-time
+            version:
+              type: string
+              description: The version of the feature update. Read-only.
+            catalogEntry:
+              $ref: '#/components/schemas/microsoft.graph.windowsUpdates.catalogEntry'
+            knowledgeBaseArticle:
+              $ref: '#/components/schemas/microsoft.graph.windowsUpdates.knowledgeBaseArticle'
+          additionalProperties:
+            type: object
     microsoft.graph.ODataErrors.ODataError:
       required:
         - error
@@ -5513,6 +5670,90 @@ components:
         - text
         - html
       type: string
+    microsoft.graph.windowsUpdates.itemBody:
+      title: itemBody
+      type: object
+      properties:
+        content:
+          type: string
+          description: The content of the item.
+          nullable: true
+        contentType:
+          $ref: '#/components/schemas/microsoft.graph.windowsUpdates.bodyType'
+      additionalProperties:
+        type: object
+    microsoft.graph.windowsUpdates.servicingPeriod:
+      title: servicingPeriod
+      type: object
+      properties:
+        endDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The date and time when the servicing period ends. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+          format: date-time
+        name:
+          type: string
+          description: 'The name of the servicing period. For example, Modern Lifecycle.'
+        startDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The start date and time of the servicing period. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+          format: date-time
+      additionalProperties:
+        type: object
+    microsoft.graph.windowsUpdates.buildVersionDetails:
+      title: buildVersionDetails
+      type: object
+      properties:
+        buildNumber:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The build number of the product release. Read-only.
+          format: int32
+        majorVersion:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The major version of the product release. Read-only.
+          format: int32
+        minorVersion:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The minor version of the product release. Read-only.
+          format: int32
+        updateBuildRevision:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The update build revision number of the product revision. Read-only.
+          format: int32
+      additionalProperties:
+        type: object
+    microsoft.graph.windowsUpdates.catalogEntry:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: catalogEntry
+          type: object
+          properties:
+            deployableUntilDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date on which the content is no longer available to deploy using the service. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+              format: date-time
+              nullable: true
+            displayName:
+              type: string
+              description: The display name of the content. Read-only.
+              nullable: true
+            releaseDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The release date for the content. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+              format: date-time
+          additionalProperties:
+            type: object
     microsoft.graph.ODataErrors.MainError:
       required:
         - code
@@ -5535,6 +5776,13 @@ components:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
       additionalProperties:
         type: object
+    microsoft.graph.windowsUpdates.bodyType:
+      title: bodyType
+      enum:
+        - text
+        - html
+        - unknownFutureValue
+      type: string
     microsoft.graph.ODataErrors.ErrorDetails:
       required:
         - code

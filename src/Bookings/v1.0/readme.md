@@ -30,4 +30,18 @@ require:
 title: $(service-name)
 subject-prefix: ''
 namespace: Microsoft.Graph.PowerShell
+
+directive:
+  - where:
+      verb: Get
+      subject: ^(BookingBusinessStaffAvailability)$
+    remove: true
+  - where:
+      verb: Stop
+      subject: ^(BookingBusinessAppointment)$
+    remove: true
+  - where:
+      verb: Stop
+      subject: ^(BookingBusinessCalendarView)$
+    remove: true
 ```

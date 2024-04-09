@@ -23,7 +23,7 @@ resources:
  repositories:     
    - repository: msgraph-sdk-powershell
      type: github
-     endpoint: microsoftgraph
+     endpoint: MicrosoftDocs
      name: microsoftgraph/msgraph-sdk-powershell
      ref: dev
 

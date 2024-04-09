@@ -11,7 +11,7 @@ paths:
       tags:
         - users.contactFolder
       summary: List contactFolders
-      description: Get all the contact folders in the signed-in user's mailbox. This API is available in the following national cloud deployments.
+      description: Get all the contact folders in the signed-in user's mailbox.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-list-contactfolders?view=graph-rest-1.0
@@ -38,15 +38,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - displayName
-                - displayName desc
-                - parentFolderId
-                - parentFolderId desc
-                - wellKnownName
-                - wellKnownName desc
               type: string
         - name: $select
           in: query
@@ -57,15 +48,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
-                - parentFolderId
-                - wellKnownName
-                - childFolders
-                - contacts
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
               type: string
         - name: $expand
           in: query
@@ -76,12 +58,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - childFolders
-                - contacts
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
               type: string
       responses:
         2XX:
@@ -96,7 +72,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Create ContactFolder
-      description: Create a new contactFolder under the user's default contacts folder. You can also create a new contactfolder as a child of any specified contact folder. This API is available in the following national cloud deployments.
+      description: Create a new contactFolder under the user's default contacts folder. You can also create a new contactfolder as a child of any specified contact folder.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-post-contactfolders?view=graph-rest-1.0
@@ -132,7 +108,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Get contactFolder
-      description: 'Get a contact folder by using the contact folder ID. There are two scenarios where an app can get another user''s contact folder: This API is available in the following national cloud deployments.'
+      description: 'Get a contact folder by using the contact folder ID. There are two scenarios where an app can get another user''s contact folder:'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/contactfolder-get?view=graph-rest-1.0
@@ -163,15 +139,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
-                - parentFolderId
-                - wellKnownName
-                - childFolders
-                - contacts
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
               type: string
         - name: $expand
           in: query
@@ -182,12 +149,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - childFolders
-                - contacts
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
               type: string
       responses:
         2XX:
@@ -203,7 +164,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Update contactfolder
-      description: Update the properties of contactfolder object. This API is available in the following national cloud deployments.
+      description: Update the properties of contactfolder object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/contactfolder-update?view=graph-rest-1.0
@@ -246,7 +207,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Delete contactFolder
-      description: Delete contactFolder other than the default contactFolder. This API is available in the following national cloud deployments.
+      description: Delete contactFolder other than the default contactFolder.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/contactfolder-delete?view=graph-rest-1.0
@@ -285,7 +246,7 @@ paths:
       tags:
         - users.contactFolder
       summary: List childFolders
-      description: Get a collection of child folders under the specified contact folder. This API is available in the following national cloud deployments.
+      description: Get a collection of child folders under the specified contact folder.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/contactfolder-list-childfolders?view=graph-rest-1.0
@@ -320,15 +281,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - displayName
-                - displayName desc
-                - parentFolderId
-                - parentFolderId desc
-                - wellKnownName
-                - wellKnownName desc
               type: string
         - name: $select
           in: query
@@ -339,15 +291,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
-                - parentFolderId
-                - wellKnownName
-                - childFolders
-                - contacts
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
               type: string
         - name: $expand
           in: query
@@ -358,12 +301,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - childFolders
-                - contacts
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
               type: string
       responses:
         2XX:
@@ -378,7 +315,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Create ContactFolder
-      description: Create a new contactFolder as a child of a specified folder.  You can also create a new contactFolder under the user's default contact folder. This API is available in the following national cloud deployments.
+      description: Create a new contactFolder as a child of a specified folder.  You can also create a new contactFolder under the user's default contact folder.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/contactfolder-post-childfolders?view=graph-rest-1.0
@@ -458,15 +395,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
-                - parentFolderId
-                - wellKnownName
-                - childFolders
-                - contacts
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
               type: string
         - name: $expand
           in: query
@@ -477,12 +405,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - childFolders
-                - contacts
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
               type: string
       responses:
         2XX:
@@ -588,7 +510,7 @@ paths:
       tags:
         - users.contactFolder
       summary: List contacts
-      description: 'Get all the contacts in the signed-in user''s mailbox (.../me/contacts), or from the specified contact folder. This API is available in the following national cloud deployments.'
+      description: 'Get all the contacts in the signed-in user''s mailbox (.../me/contacts), or from the specified contact folder.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/contactfolder-list-contacts?view=graph-rest-1.0
@@ -631,83 +553,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - categories
-                - categories desc
-                - changeKey
-                - changeKey desc
-                - createdDateTime
-                - createdDateTime desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - assistantName
-                - assistantName desc
-                - birthday
-                - birthday desc
-                - children
-                - children desc
-                - companyName
-                - companyName desc
-                - department
-                - department desc
-                - displayName
-                - displayName desc
-                - emailAddresses
-                - emailAddresses desc
-                - fileAs
-                - fileAs desc
-                - flag
-                - flag desc
-                - gender
-                - gender desc
-                - generation
-                - generation desc
-                - givenName
-                - givenName desc
-                - imAddresses
-                - imAddresses desc
-                - initials
-                - initials desc
-                - isFavorite
-                - isFavorite desc
-                - jobTitle
-                - jobTitle desc
-                - manager
-                - manager desc
-                - middleName
-                - middleName desc
-                - nickName
-                - nickName desc
-                - officeLocation
-                - officeLocation desc
-                - parentFolderId
-                - parentFolderId desc
-                - personalNotes
-                - personalNotes desc
-                - phones
-                - phones desc
-                - postalAddresses
-                - postalAddresses desc
-                - profession
-                - profession desc
-                - spouseName
-                - spouseName desc
-                - surname
-                - surname desc
-                - title
-                - title desc
-                - websites
-                - websites desc
-                - weddingAnniversary
-                - weddingAnniversary desc
-                - yomiCompanyName
-                - yomiCompanyName desc
-                - yomiGivenName
-                - yomiGivenName desc
-                - yomiSurname
-                - yomiSurname desc
               type: string
         - name: $select
           in: query
@@ -718,49 +563,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - categories
-                - changeKey
-                - createdDateTime
-                - lastModifiedDateTime
-                - assistantName
-                - birthday
-                - children
-                - companyName
-                - department
-                - displayName
-                - emailAddresses
-                - fileAs
-                - flag
-                - gender
-                - generation
-                - givenName
-                - imAddresses
-                - initials
-                - isFavorite
-                - jobTitle
-                - manager
-                - middleName
-                - nickName
-                - officeLocation
-                - parentFolderId
-                - personalNotes
-                - phones
-                - postalAddresses
-                - profession
-                - spouseName
-                - surname
-                - title
-                - websites
-                - weddingAnniversary
-                - yomiCompanyName
-                - yomiGivenName
-                - yomiSurname
-                - extensions
-                - multiValueExtendedProperties
-                - photo
-                - singleValueExtendedProperties
               type: string
         - name: $expand
           in: query
@@ -771,12 +573,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - extensions
-                - multiValueExtendedProperties
-                - photo
-                - singleValueExtendedProperties
               type: string
       responses:
         2XX:
@@ -791,7 +587,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Create Contact
-      description: Add a contact to the root Contacts folder or to the contacts endpoint of another contact folder. This API is available in the following national cloud deployments.
+      description: Add a contact to the root Contacts folder or to the contacts endpoint of another contact folder.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/contactfolder-post-contacts?view=graph-rest-1.0
@@ -887,49 +683,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - categories
-                - changeKey
-                - createdDateTime
-                - lastModifiedDateTime
-                - assistantName
-                - birthday
-                - children
-                - companyName
-                - department
-                - displayName
-                - emailAddresses
-                - fileAs
-                - flag
-                - gender
-                - generation
-                - givenName
-                - imAddresses
-                - initials
-                - isFavorite
-                - jobTitle
-                - manager
-                - middleName
-                - nickName
-                - officeLocation
-                - parentFolderId
-                - personalNotes
-                - phones
-                - postalAddresses
-                - profession
-                - spouseName
-                - surname
-                - title
-                - websites
-                - weddingAnniversary
-                - yomiCompanyName
-                - yomiGivenName
-                - yomiSurname
-                - extensions
-                - multiValueExtendedProperties
-                - photo
-                - singleValueExtendedProperties
               type: string
         - name: $expand
           in: query
@@ -940,12 +693,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - extensions
-                - multiValueExtendedProperties
-                - photo
-                - singleValueExtendedProperties
               type: string
       responses:
         2XX:
@@ -1115,9 +862,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
               type: string
         - name: $select
           in: query
@@ -1128,8 +872,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
               type: string
         - name: $expand
           in: query
@@ -1140,8 +882,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1264,8 +1004,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
               type: string
         - name: $expand
           in: query
@@ -1276,8 +1014,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1504,10 +1240,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - height
-                - width
               type: string
       responses:
         2XX:
@@ -1747,7 +1479,7 @@ paths:
       tags:
         - users.contactFolder
       summary: List contacts
-      description: 'Get all the contacts in the signed-in user''s mailbox (.../me/contacts), or from the specified contact folder. This API is available in the following national cloud deployments.'
+      description: 'Get all the contacts in the signed-in user''s mailbox (.../me/contacts), or from the specified contact folder.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/contactfolder-list-contacts?view=graph-rest-1.0
@@ -1782,83 +1514,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - categories
-                - categories desc
-                - changeKey
-                - changeKey desc
-                - createdDateTime
-                - createdDateTime desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - assistantName
-                - assistantName desc
-                - birthday
-                - birthday desc
-                - children
-                - children desc
-                - companyName
-                - companyName desc
-                - department
-                - department desc
-                - displayName
-                - displayName desc
-                - emailAddresses
-                - emailAddresses desc
-                - fileAs
-                - fileAs desc
-                - flag
-                - flag desc
-                - gender
-                - gender desc
-                - generation
-                - generation desc
-                - givenName
-                - givenName desc
-                - imAddresses
-                - imAddresses desc
-                - initials
-                - initials desc
-                - isFavorite
-                - isFavorite desc
-                - jobTitle
-                - jobTitle desc
-                - manager
-                - manager desc
-                - middleName
-                - middleName desc
-                - nickName
-                - nickName desc
-                - officeLocation
-                - officeLocation desc
-                - parentFolderId
-                - parentFolderId desc
-                - personalNotes
-                - personalNotes desc
-                - phones
-                - phones desc
-                - postalAddresses
-                - postalAddresses desc
-                - profession
-                - profession desc
-                - spouseName
-                - spouseName desc
-                - surname
-                - surname desc
-                - title
-                - title desc
-                - websites
-                - websites desc
-                - weddingAnniversary
-                - weddingAnniversary desc
-                - yomiCompanyName
-                - yomiCompanyName desc
-                - yomiGivenName
-                - yomiGivenName desc
-                - yomiSurname
-                - yomiSurname desc
               type: string
         - name: $select
           in: query
@@ -1869,49 +1524,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - categories
-                - changeKey
-                - createdDateTime
-                - lastModifiedDateTime
-                - assistantName
-                - birthday
-                - children
-                - companyName
-                - department
-                - displayName
-                - emailAddresses
-                - fileAs
-                - flag
-                - gender
-                - generation
-                - givenName
-                - imAddresses
-                - initials
-                - isFavorite
-                - jobTitle
-                - manager
-                - middleName
-                - nickName
-                - officeLocation
-                - parentFolderId
-                - personalNotes
-                - phones
-                - postalAddresses
-                - profession
-                - spouseName
-                - surname
-                - title
-                - websites
-                - weddingAnniversary
-                - yomiCompanyName
-                - yomiGivenName
-                - yomiSurname
-                - extensions
-                - multiValueExtendedProperties
-                - photo
-                - singleValueExtendedProperties
               type: string
         - name: $expand
           in: query
@@ -1922,12 +1534,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - extensions
-                - multiValueExtendedProperties
-                - photo
-                - singleValueExtendedProperties
               type: string
       responses:
         2XX:
@@ -1942,7 +1548,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Create Contact
-      description: Add a contact to the root Contacts folder or to the contacts endpoint of another contact folder. This API is available in the following national cloud deployments.
+      description: Add a contact to the root Contacts folder or to the contacts endpoint of another contact folder.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/contactfolder-post-contacts?view=graph-rest-1.0
@@ -2022,49 +1628,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - categories
-                - changeKey
-                - createdDateTime
-                - lastModifiedDateTime
-                - assistantName
-                - birthday
-                - children
-                - companyName
-                - department
-                - displayName
-                - emailAddresses
-                - fileAs
-                - flag
-                - gender
-                - generation
-                - givenName
-                - imAddresses
-                - initials
-                - isFavorite
-                - jobTitle
-                - manager
-                - middleName
-                - nickName
-                - officeLocation
-                - parentFolderId
-                - personalNotes
-                - phones
-                - postalAddresses
-                - profession
-                - spouseName
-                - surname
-                - title
-                - websites
-                - weddingAnniversary
-                - yomiCompanyName
-                - yomiGivenName
-                - yomiSurname
-                - extensions
-                - multiValueExtendedProperties
-                - photo
-                - singleValueExtendedProperties
               type: string
         - name: $expand
           in: query
@@ -2075,12 +1638,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - extensions
-                - multiValueExtendedProperties
-                - photo
-                - singleValueExtendedProperties
               type: string
       responses:
         2XX:
@@ -2226,9 +1783,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
               type: string
         - name: $select
           in: query
@@ -2239,8 +1793,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
               type: string
         - name: $expand
           in: query
@@ -2251,8 +1803,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2359,8 +1909,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
               type: string
         - name: $expand
           in: query
@@ -2371,8 +1919,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2567,10 +2113,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - height
-                - width
               type: string
       responses:
         2XX:
@@ -2770,7 +2312,7 @@ paths:
       tags:
         - users.contact
       summary: List contacts
-      description: 'Get contacts in the user''s mailbox. There are two scenarios where an app can get contacts in another user''s contact folder: This API is available in the following national cloud deployments.'
+      description: 'Get contacts in the user''s mailbox. There are two scenarios where an app can get contacts in another user''s contact folder:'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-list-contacts?view=graph-rest-1.0
@@ -2798,83 +2340,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - categories
-                - categories desc
-                - changeKey
-                - changeKey desc
-                - createdDateTime
-                - createdDateTime desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - assistantName
-                - assistantName desc
-                - birthday
-                - birthday desc
-                - children
-                - children desc
-                - companyName
-                - companyName desc
-                - department
-                - department desc
-                - displayName
-                - displayName desc
-                - emailAddresses
-                - emailAddresses desc
-                - fileAs
-                - fileAs desc
-                - flag
-                - flag desc
-                - gender
-                - gender desc
-                - generation
-                - generation desc
-                - givenName
-                - givenName desc
-                - imAddresses
-                - imAddresses desc
-                - initials
-                - initials desc
-                - isFavorite
-                - isFavorite desc
-                - jobTitle
-                - jobTitle desc
-                - manager
-                - manager desc
-                - middleName
-                - middleName desc
-                - nickName
-                - nickName desc
-                - officeLocation
-                - officeLocation desc
-                - parentFolderId
-                - parentFolderId desc
-                - personalNotes
-                - personalNotes desc
-                - phones
-                - phones desc
-                - postalAddresses
-                - postalAddresses desc
-                - profession
-                - profession desc
-                - spouseName
-                - spouseName desc
-                - surname
-                - surname desc
-                - title
-                - title desc
-                - websites
-                - websites desc
-                - weddingAnniversary
-                - weddingAnniversary desc
-                - yomiCompanyName
-                - yomiCompanyName desc
-                - yomiGivenName
-                - yomiGivenName desc
-                - yomiSurname
-                - yomiSurname desc
               type: string
         - name: $select
           in: query
@@ -2885,49 +2350,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - categories
-                - changeKey
-                - createdDateTime
-                - lastModifiedDateTime
-                - assistantName
-                - birthday
-                - children
-                - companyName
-                - department
-                - displayName
-                - emailAddresses
-                - fileAs
-                - flag
-                - gender
-                - generation
-                - givenName
-                - imAddresses
-                - initials
-                - isFavorite
-                - jobTitle
-                - manager
-                - middleName
-                - nickName
-                - officeLocation
-                - parentFolderId
-                - personalNotes
-                - phones
-                - postalAddresses
-                - profession
-                - spouseName
-                - surname
-                - title
-                - websites
-                - weddingAnniversary
-                - yomiCompanyName
-                - yomiGivenName
-                - yomiSurname
-                - extensions
-                - multiValueExtendedProperties
-                - photo
-                - singleValueExtendedProperties
               type: string
         - name: $expand
           in: query
@@ -2938,12 +2360,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - extensions
-                - multiValueExtendedProperties
-                - photo
-                - singleValueExtendedProperties
               type: string
       responses:
         2XX:
@@ -2958,7 +2374,7 @@ paths:
       tags:
         - users.contact
       summary: Create contact
-      description: Add a contact to the root Contacts folder or to the contacts endpoint of another contact folder. This API is available in the following national cloud deployments.
+      description: Add a contact to the root Contacts folder or to the contacts endpoint of another contact folder.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-post-contacts?view=graph-rest-1.0
@@ -2994,7 +2410,7 @@ paths:
       tags:
         - users.contact
       summary: Get contact
-      description: 'Retrieve the properties and relationships of contact object. There are two scenarios where an app can get a contact in another user''s contact folder: This API is available in the following national cloud deployments.'
+      description: 'Retrieve the properties and relationships of contact object. There are two scenarios where an app can get a contact in another user''s contact folder:'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/contact-get?view=graph-rest-1.0
@@ -3025,49 +2441,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - categories
-                - changeKey
-                - createdDateTime
-                - lastModifiedDateTime
-                - assistantName
-                - birthday
-                - children
-                - companyName
-                - department
-                - displayName
-                - emailAddresses
-                - fileAs
-                - flag
-                - gender
-                - generation
-                - givenName
-                - imAddresses
-                - initials
-                - isFavorite
-                - jobTitle
-                - manager
-                - middleName
-                - nickName
-                - officeLocation
-                - parentFolderId
-                - personalNotes
-                - phones
-                - postalAddresses
-                - profession
-                - spouseName
-                - surname
-                - title
-                - websites
-                - weddingAnniversary
-                - yomiCompanyName
-                - yomiGivenName
-                - yomiSurname
-                - extensions
-                - multiValueExtendedProperties
-                - photo
-                - singleValueExtendedProperties
               type: string
         - name: $expand
           in: query
@@ -3078,12 +2451,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - extensions
-                - multiValueExtendedProperties
-                - photo
-                - singleValueExtendedProperties
               type: string
       responses:
         2XX:
@@ -3099,7 +2466,7 @@ paths:
       tags:
         - users.contact
       summary: Update contact
-      description: Update the properties of contact object. This API is available in the following national cloud deployments.
+      description: Update the properties of contact object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/contact-update?view=graph-rest-1.0
@@ -3142,7 +2509,7 @@ paths:
       tags:
         - users.contact
       summary: Delete contact
-      description: Delete contact. This API is available in the following national cloud deployments.
+      description: Delete contact.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/contact-delete?view=graph-rest-1.0
@@ -3213,9 +2580,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
               type: string
         - name: $select
           in: query
@@ -3226,8 +2590,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
               type: string
         - name: $expand
           in: query
@@ -3238,8 +2600,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3330,8 +2690,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
               type: string
         - name: $expand
           in: query
@@ -3342,8 +2700,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3506,10 +2862,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - height
-                - width
               type: string
       responses:
         2XX:
@@ -3760,70 +3112,90 @@ components:
               items:
                 type: string
                 nullable: true
+              description: The contact's instant messaging (IM) addresses.
             initials:
               type: string
+              description: The contact's initials.
               nullable: true
             isFavorite:
               type: boolean
               nullable: true
             jobTitle:
               type: string
+              description: The contact’s job title.
               nullable: true
             manager:
               type: string
+              description: The name of the contact's manager.
               nullable: true
             middleName:
               type: string
+              description: The contact's middle name.
               nullable: true
             nickName:
               type: string
+              description: The contact's nickname.
               nullable: true
             officeLocation:
               type: string
+              description: The location of the contact's office.
               nullable: true
             parentFolderId:
               type: string
+              description: The ID of the contact's parent folder.
               nullable: true
             personalNotes:
               type: string
+              description: The user's notes about the contact.
               nullable: true
             phones:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.phone'
+              description: 'Phone numbers associated with the contact, for example, home phone, mobile phone, and business phone.'
             postalAddresses:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.physicalAddress'
+              description: 'Addresses associated with the contact, for example, home address and business address.'
             profession:
               type: string
+              description: The contact's profession.
               nullable: true
             spouseName:
               type: string
+              description: The name of the contact's spouse/partner.
               nullable: true
             surname:
               type: string
+              description: The contact's surname.
               nullable: true
             title:
               type: string
+              description: The contact's title.
               nullable: true
             websites:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.website'
+              description: Web sites associated with the contact.
             weddingAnniversary:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
+              description: The contact's wedding anniversary.
               format: date
               nullable: true
             yomiCompanyName:
               type: string
+              description: The phonetic Japanese company name of the contact.
               nullable: true
             yomiGivenName:
               type: string
+              description: The phonetic Japanese given name (first name) of the contact.
               nullable: true
             yomiSurname:
               type: string
+              description: The phonetic Japanese surname (last name)  of the contact.
               nullable: true
             extensions:
               type: array
