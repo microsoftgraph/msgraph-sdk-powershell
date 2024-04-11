@@ -324,6 +324,8 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
         /// </summary>
         /// <param name="certName"></param>
         /// <returns></returns>
+        
+        #pragma warning disable IA5352
         private static X509Certificate2 CreateSelfSignedCert(string certName)
         {
             ECDsa ecdsaKey = ECDsa.Create();
