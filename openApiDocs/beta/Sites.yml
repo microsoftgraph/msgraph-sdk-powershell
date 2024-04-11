@@ -49497,11 +49497,11 @@ paths:
     get:
       tags:
         - sites.site
-      summary: List sites
-      description: "List all available [sites][] in an organization. Specific filter criteria and query options are also supported and described below: In addition, you can use a [$search][] query against the /sites collection to find sites matching given keywords.\nIf you want to list all sites across all geographies, refer to getAllSites][]. For more guidance about building applications that use site discovery for scanning purposes, see [Best practices for discovering files and detecting changes at scale."
+      summary: Search for sites
+      description: 'Search across a SharePoint tenant for [sites][] that match keywords provided. The only property that works for sorting is createdDateTime. The search filter is a free text search that uses multiple properties when retrieving the search results.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/site-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/site-search?view=graph-rest-1.0
       operationId: site_ListSite
       parameters:
         - $ref: '#/components/parameters/top'
@@ -95003,11 +95003,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: 'Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn''t included in the response.'
           nullable: true
       additionalProperties:
         type: object
