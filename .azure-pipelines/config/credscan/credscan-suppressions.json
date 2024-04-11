@@ -7,7 +7,8 @@
     },
     {
       "file": [
-        "src\\Authentication\\Authentication\\test\\Get-MgContext.Tests.ps1"
+        "src\\Authentication\\Authentication\\test\\Get-MgContext.Tests.ps1",
+        "src\\Authentication\\Authentication.Test\\Helpers\\AuthenticationHelpersTests.cs"
       ],
       "_justification": "[Authentication] Examples contain random values recognized as secret"
     },
