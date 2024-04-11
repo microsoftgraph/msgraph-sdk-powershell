@@ -19,21 +19,21 @@ New-MgUserContactFolder -UserId <String> [-AdditionalProperties <Hashtable>]
  [-ChildFolders <IMicrosoftGraphContactFolder[]>] [-Contacts <IMicrosoftGraphContact[]>]
  [-DisplayName <String>] [-Id <String>]
  [-MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]
- [-ParentFolderId <String>] [-ResponseHeadersVariable <String>]
- [-SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ParentFolderId <String>]
+ [-SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgUserContactFolder -UserId <String> -BodyParameter <IMicrosoftGraphContactFolder>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgUserContactFolder -UserId <String> -BodyParameter <IMicrosoftGraphContactFolder> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgUserContactFolder -InputObject <IPersonalContactsIdentity> -BodyParameter <IMicrosoftGraphContactFolder>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -42,9 +42,9 @@ New-MgUserContactFolder -InputObject <IPersonalContactsIdentity> [-AdditionalPro
  [-ChildFolders <IMicrosoftGraphContactFolder[]>] [-Contacts <IMicrosoftGraphContact[]>]
  [-DisplayName <String>] [-Id <String>]
  [-MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]
- [-ParentFolderId <String>] [-ResponseHeadersVariable <String>]
- [-SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ParentFolderId <String>]
+ [-SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -152,21 +152,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -224,21 +209,6 @@ The ID of the folder's parent folder.
 Type: System.String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -320,8 +290,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IPersonalContactsIdentity
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContactFolder
@@ -370,35 +338,35 @@ To create the parameters described below, construct a hash table containing the 
     - `[GivenName <String>]`: The contact's given name.
     - `[HomeAddress <IMicrosoftGraphPhysicalAddress>]`: physicalAddress
     - `[HomePhones <String[]>]`: The contact's home phone numbers.
-    - `[ImAddresses <String[]>]`: The contact's instant messaging (IM) addresses.
-    - `[Initials <String>]`: The contact's initials.
-    - `[JobTitle <String>]`: The contact’s job title.
-    - `[Manager <String>]`: The name of the contact's manager.
-    - `[MiddleName <String>]`: The contact's middle name.
-    - `[MobilePhone <String>]`: The contact's mobile phone number.
+    - `[ImAddresses <String[]>]`: 
+    - `[Initials <String>]`: 
+    - `[JobTitle <String>]`: 
+    - `[Manager <String>]`: 
+    - `[MiddleName <String>]`: 
+    - `[MobilePhone <String>]`: 
     - `[MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]`: The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[Value <String[]>]`: A collection of property values.
-    - `[NickName <String>]`: The contact's nickname.
-    - `[OfficeLocation <String>]`: The location of the contact's office.
+    - `[NickName <String>]`: 
+    - `[OfficeLocation <String>]`: 
     - `[OtherAddress <IMicrosoftGraphPhysicalAddress>]`: physicalAddress
-    - `[ParentFolderId <String>]`: The ID of the contact's parent folder.
-    - `[PersonalNotes <String>]`: The user's notes about the contact.
+    - `[ParentFolderId <String>]`: 
+    - `[PersonalNotes <String>]`: 
     - `[Photo <IMicrosoftGraphProfilePhoto>]`: profilePhoto
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[Height <Int32?>]`: The height of the photo. Read-only.
       - `[Width <Int32?>]`: The width of the photo. Read-only.
-    - `[Profession <String>]`: The contact's profession.
+    - `[Profession <String>]`: 
     - `[SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]`: The collection of single-value extended properties defined for the contact. Read-only. Nullable.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[Value <String>]`: A property value.
-    - `[SpouseName <String>]`: The name of the contact's spouse/partner.
-    - `[Surname <String>]`: The contact's surname.
-    - `[Title <String>]`: The contact's title.
-    - `[YomiCompanyName <String>]`: The phonetic Japanese company name of the contact.
-    - `[YomiGivenName <String>]`: The phonetic Japanese given name (first name) of the contact.
-    - `[YomiSurname <String>]`: The phonetic Japanese surname (last name)  of the contact.
+    - `[SpouseName <String>]`: 
+    - `[Surname <String>]`: 
+    - `[Title <String>]`: 
+    - `[YomiCompanyName <String>]`: 
+    - `[YomiGivenName <String>]`: 
+    - `[YomiSurname <String>]`: 
   - `[DisplayName <String>]`: The folder's display name.
   - `[MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]`: The collection of multi-value extended properties defined for the contactFolder. Read-only. Nullable.
   - `[ParentFolderId <String>]`: The ID of the folder's parent folder.
@@ -438,35 +406,35 @@ To create the parameters described below, construct a hash table containing the 
     - `[GivenName <String>]`: The contact's given name.
     - `[HomeAddress <IMicrosoftGraphPhysicalAddress>]`: physicalAddress
     - `[HomePhones <String[]>]`: The contact's home phone numbers.
-    - `[ImAddresses <String[]>]`: The contact's instant messaging (IM) addresses.
-    - `[Initials <String>]`: The contact's initials.
-    - `[JobTitle <String>]`: The contact’s job title.
-    - `[Manager <String>]`: The name of the contact's manager.
-    - `[MiddleName <String>]`: The contact's middle name.
-    - `[MobilePhone <String>]`: The contact's mobile phone number.
+    - `[ImAddresses <String[]>]`: 
+    - `[Initials <String>]`: 
+    - `[JobTitle <String>]`: 
+    - `[Manager <String>]`: 
+    - `[MiddleName <String>]`: 
+    - `[MobilePhone <String>]`: 
     - `[MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]`: The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[Value <String[]>]`: A collection of property values.
-    - `[NickName <String>]`: The contact's nickname.
-    - `[OfficeLocation <String>]`: The location of the contact's office.
+    - `[NickName <String>]`: 
+    - `[OfficeLocation <String>]`: 
     - `[OtherAddress <IMicrosoftGraphPhysicalAddress>]`: physicalAddress
-    - `[ParentFolderId <String>]`: The ID of the contact's parent folder.
-    - `[PersonalNotes <String>]`: The user's notes about the contact.
+    - `[ParentFolderId <String>]`: 
+    - `[PersonalNotes <String>]`: 
     - `[Photo <IMicrosoftGraphProfilePhoto>]`: profilePhoto
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[Height <Int32?>]`: The height of the photo. Read-only.
       - `[Width <Int32?>]`: The width of the photo. Read-only.
-    - `[Profession <String>]`: The contact's profession.
+    - `[Profession <String>]`: 
     - `[SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]`: The collection of single-value extended properties defined for the contact. Read-only. Nullable.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[Value <String>]`: A property value.
-    - `[SpouseName <String>]`: The name of the contact's spouse/partner.
-    - `[Surname <String>]`: The contact's surname.
-    - `[Title <String>]`: The contact's title.
-    - `[YomiCompanyName <String>]`: The phonetic Japanese company name of the contact.
-    - `[YomiGivenName <String>]`: The phonetic Japanese given name (first name) of the contact.
-    - `[YomiSurname <String>]`: The phonetic Japanese surname (last name)  of the contact.
+    - `[SpouseName <String>]`: 
+    - `[Surname <String>]`: 
+    - `[Title <String>]`: 
+    - `[YomiCompanyName <String>]`: 
+    - `[YomiGivenName <String>]`: 
+    - `[YomiSurname <String>]`: 
   - `[DisplayName <String>]`: The folder's display name.
   - `[MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]`: The collection of multi-value extended properties defined for the contactFolder. Read-only. Nullable.
   - `[ParentFolderId <String>]`: The ID of the folder's parent folder.
@@ -503,35 +471,35 @@ To create the parameters described below, construct a hash table containing the 
   - `[GivenName <String>]`: The contact's given name.
   - `[HomeAddress <IMicrosoftGraphPhysicalAddress>]`: physicalAddress
   - `[HomePhones <String[]>]`: The contact's home phone numbers.
-  - `[ImAddresses <String[]>]`: The contact's instant messaging (IM) addresses.
-  - `[Initials <String>]`: The contact's initials.
-  - `[JobTitle <String>]`: The contact’s job title.
-  - `[Manager <String>]`: The name of the contact's manager.
-  - `[MiddleName <String>]`: The contact's middle name.
-  - `[MobilePhone <String>]`: The contact's mobile phone number.
+  - `[ImAddresses <String[]>]`: 
+  - `[Initials <String>]`: 
+  - `[JobTitle <String>]`: 
+  - `[Manager <String>]`: 
+  - `[MiddleName <String>]`: 
+  - `[MobilePhone <String>]`: 
   - `[MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]`: The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Value <String[]>]`: A collection of property values.
-  - `[NickName <String>]`: The contact's nickname.
-  - `[OfficeLocation <String>]`: The location of the contact's office.
+  - `[NickName <String>]`: 
+  - `[OfficeLocation <String>]`: 
   - `[OtherAddress <IMicrosoftGraphPhysicalAddress>]`: physicalAddress
-  - `[ParentFolderId <String>]`: The ID of the contact's parent folder.
-  - `[PersonalNotes <String>]`: The user's notes about the contact.
+  - `[ParentFolderId <String>]`: 
+  - `[PersonalNotes <String>]`: 
   - `[Photo <IMicrosoftGraphProfilePhoto>]`: profilePhoto
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Height <Int32?>]`: The height of the photo. Read-only.
     - `[Width <Int32?>]`: The width of the photo. Read-only.
-  - `[Profession <String>]`: The contact's profession.
+  - `[Profession <String>]`: 
   - `[SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]`: The collection of single-value extended properties defined for the contact. Read-only. Nullable.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Value <String>]`: A property value.
-  - `[SpouseName <String>]`: The name of the contact's spouse/partner.
-  - `[Surname <String>]`: The contact's surname.
-  - `[Title <String>]`: The contact's title.
-  - `[YomiCompanyName <String>]`: The phonetic Japanese company name of the contact.
-  - `[YomiGivenName <String>]`: The phonetic Japanese given name (first name) of the contact.
-  - `[YomiSurname <String>]`: The phonetic Japanese surname (last name)  of the contact.
+  - `[SpouseName <String>]`: 
+  - `[Surname <String>]`: 
+  - `[Title <String>]`: 
+  - `[YomiCompanyName <String>]`: 
+  - `[YomiGivenName <String>]`: 
+  - `[YomiSurname <String>]`: 
 
 `INPUTOBJECT <IPersonalContactsIdentity>`: Identity Parameter
   - `[ContactFolderId <String>]`: The unique identifier of contactFolder

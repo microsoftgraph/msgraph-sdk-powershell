@@ -20,23 +20,21 @@ Update-MgBetaVirtualEventWebinar -VirtualEventWebinarId <String> [-AdditionalPro
  [-DisplayName <String>] [-EndDateTime <IMicrosoftGraphDateTimeZone>] [-Id <String>]
  [-Presenters <IMicrosoftGraphVirtualEventPresenter[]>]
  [-RegistrationConfiguration <IMicrosoftGraphVirtualEventWebinarRegistrationConfiguration>]
- [-Registrations <IMicrosoftGraphVirtualEventRegistration[]>] [-ResponseHeadersVariable <String>]
+ [-Registrations <IMicrosoftGraphVirtualEventRegistration[]>]
  [-Sessions <IMicrosoftGraphVirtualEventSession[]>] [-StartDateTime <IMicrosoftGraphDateTimeZone>]
- [-Status <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Status <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaVirtualEventWebinar -VirtualEventWebinarId <String>
- -BodyParameter <IMicrosoftGraphVirtualEventWebinar> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphVirtualEventWebinar> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaVirtualEventWebinar -InputObject <IBookingsIdentity>
- -BodyParameter <IMicrosoftGraphVirtualEventWebinar> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphVirtualEventWebinar> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -47,9 +45,9 @@ Update-MgBetaVirtualEventWebinar -InputObject <IBookingsIdentity> [-AdditionalPr
  [-DisplayName <String>] [-EndDateTime <IMicrosoftGraphDateTimeZone>] [-Id <String>]
  [-Presenters <IMicrosoftGraphVirtualEventPresenter[]>]
  [-RegistrationConfiguration <IMicrosoftGraphVirtualEventWebinarRegistrationConfiguration>]
- [-Registrations <IMicrosoftGraphVirtualEventRegistration[]>] [-ResponseHeadersVariable <String>]
+ [-Registrations <IMicrosoftGraphVirtualEventRegistration[]>]
  [-Sessions <IMicrosoftGraphVirtualEventSession[]>] [-StartDateTime <IMicrosoftGraphDateTimeZone>]
- [-Status <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Status <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -168,7 +166,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-Display name of the virtual event.
+Display name of the virtual event
 
 ```yaml
 Type: System.String
@@ -195,21 +193,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -246,7 +229,7 @@ Accept wildcard characters: False
 ```
 
 ### -Presenters
-The virtual event presenters.
+Presenters' information of the virtual event.
 To construct, see NOTES section for PRESENTERS properties and create a hash table.
 
 ```yaml
@@ -293,23 +276,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Sessions
-Sessions for the virtual event.
+Sessions of the virtual event.
 To construct, see NOTES section for SESSIONS properties and create a hash table.
 
 ```yaml
@@ -410,8 +378,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphVirtualEventWebinar
 
-### System.Collections.IDictionary
-
 ## OUTPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphVirtualEventWebinar
@@ -447,15 +413,19 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Content <String>]`: The content of the item.
     - `[ContentType <String>]`: bodyType
-  - `[DisplayName <String>]`: Display name of the virtual event.
+  - `[DisplayName <String>]`: Display name of the virtual event
   - `[EndDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}). For example, '2019-04-16T09:00:00'.
     - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for possible values.
-  - `[Presenters <IMicrosoftGraphVirtualEventPresenter[]>]`: The virtual event presenters.
+  - `[Presenters <IMicrosoftGraphVirtualEventPresenter[]>]`: Presenters' information of the virtual event.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Email <String>]`: Email address of the presenter.
-    - `[Identity <IMicrosoftGraphIdentity>]`: identity
+    - `[Identity <IMicrosoftGraphCommunicationsUserIdentity>]`: communicationsUserIdentity
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+      - `[Id <String>]`: The identifier of the identity. This property is read-only.
+      - `[TenantId <String>]`: The user's tenant ID.
     - `[PresenterDetails <IMicrosoftGraphVirtualEventPresenterDetails>]`: virtualEventPresenterDetails
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Bio <IMicrosoftGraphItemBody>]`: itemBody
@@ -463,8 +433,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[JobTitle <String>]`: The presenter's job title.
       - `[LinkedInProfileWebUrl <String>]`: The presenter's LinkedIn profile URL.
       - `[PersonalSiteWebUrl <String>]`: The presenter's personal website URL.
-      - `[Photo <Byte[]>]`: The content stream of the presenter's photo.
       - `[TwitterProfileWebUrl <String>]`: The presenter's Twitter profile URL.
+    - `[ProfilePhoto <Byte[]>]`: 
     - `[Sessions <IMicrosoftGraphVirtualEventSession[]>]`: 
       - `[AllowAttendeeToEnableCamera <Boolean?>]`: Indicates whether attendees can turn on their camera.
       - `[AllowAttendeeToEnableMic <Boolean?>]`: Indicates whether attendees can turn on their microphone.
@@ -506,7 +476,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[ThreadId <String>]`: The unique identifier for a thread in Microsoft Teams.
       - `[ChatRestrictions <IMicrosoftGraphChatRestrictions>]`: chatRestrictions
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[AllowTextOnly <Boolean?>]`: Indicates whether only text is allowed in the meeting chat. Optional.
+        - `[AllowTextOnly <Boolean?>]`: 
       - `[IsEndToEndEncryptionEnabled <Boolean?>]`: 
       - `[IsEntryExitAnnounced <Boolean?>]`: Indicates whether to announce when callers join or leave.
       - `[JoinInformation <IMicrosoftGraphItemBody>]`: itemBody
@@ -548,15 +518,12 @@ To create the parameters described below, construct a hash table containing the 
         - `[Status <String>]`: virtualEventAttendeeRegistrationStatus
         - `[UserId <String>]`: The registrant's ID in Microsoft Entra ID. Only appears when the registrant is registered in Microsoft Entra ID.
       - `[StartDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
-  - `[Sessions <IMicrosoftGraphVirtualEventSession[]>]`: Sessions for the virtual event.
+  - `[Sessions <IMicrosoftGraphVirtualEventSession[]>]`: Sessions of the virtual event.
   - `[StartDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
   - `[Status <String>]`: virtualEventStatus
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Audience <String>]`: meetingAudience
   - `[CoOrganizers <IMicrosoftGraphCommunicationsUserIdentity[]>]`: Identity information of coorganizers of the webinar.
-    - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-    - `[Id <String>]`: The identifier of the identity. This property is read-only.
-    - `[TenantId <String>]`: The user's tenant ID.
   - `[RegistrationConfiguration <IMicrosoftGraphVirtualEventWebinarRegistrationConfiguration>]`: virtualEventWebinarRegistrationConfiguration
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Capacity <Int32?>]`: Total capacity of the virtual event.
@@ -613,13 +580,10 @@ To create the parameters described below, construct a hash table containing the 
   - `[BookingStaffMemberId <String>]`: The unique identifier of bookingStaffMember
   - `[BusinessScenarioId <String>]`: The unique identifier of businessScenario
   - `[BusinessScenarioTaskId <String>]`: The unique identifier of businessScenarioTask
-  - `[Email <String>]`: Alternate key of virtualEventRegistration
-  - `[JoinWebUrl <String>]`: Alternate key of virtualEventSession
   - `[MeetingAttendanceReportId <String>]`: The unique identifier of meetingAttendanceReport
   - `[PlannerPlanConfigurationLocalizationId <String>]`: The unique identifier of plannerPlanConfigurationLocalization
   - `[Role <String>]`: Usage: role='{role}'
-  - `[UniqueName <String>]`: Alternate key of businessScenario
-  - `[UserId <String>]`: Alternate key of virtualEventRegistration
+  - `[UserId <String>]`: Usage: userId='{userId}'
   - `[VirtualEventId <String>]`: The unique identifier of virtualEvent
   - `[VirtualEventPresenterId <String>]`: The unique identifier of virtualEventPresenter
   - `[VirtualEventRegistrationId <String>]`: The unique identifier of virtualEventRegistration
@@ -627,13 +591,14 @@ To create the parameters described below, construct a hash table containing the 
   - `[VirtualEventTownhallId <String>]`: The unique identifier of virtualEventTownhall
   - `[VirtualEventWebinarId <String>]`: The unique identifier of virtualEventWebinar
 
-`PRESENTERS <IMicrosoftGraphVirtualEventPresenter[]>`: The virtual event presenters.
+`PRESENTERS <IMicrosoftGraphVirtualEventPresenter[]>`: Presenters' information of the virtual event.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Email <String>]`: Email address of the presenter.
-  - `[Identity <IMicrosoftGraphIdentity>]`: identity
+  - `[Identity <IMicrosoftGraphCommunicationsUserIdentity>]`: communicationsUserIdentity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
     - `[Id <String>]`: The identifier of the identity. This property is read-only.
+    - `[TenantId <String>]`: The user's tenant ID.
   - `[PresenterDetails <IMicrosoftGraphVirtualEventPresenterDetails>]`: virtualEventPresenterDetails
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Bio <IMicrosoftGraphItemBody>]`: itemBody
@@ -644,8 +609,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[JobTitle <String>]`: The presenter's job title.
     - `[LinkedInProfileWebUrl <String>]`: The presenter's LinkedIn profile URL.
     - `[PersonalSiteWebUrl <String>]`: The presenter's personal website URL.
-    - `[Photo <Byte[]>]`: The content stream of the presenter's photo.
     - `[TwitterProfileWebUrl <String>]`: The presenter's Twitter profile URL.
+  - `[ProfilePhoto <Byte[]>]`: 
   - `[Sessions <IMicrosoftGraphVirtualEventSession[]>]`: 
     - `[AllowAttendeeToEnableCamera <Boolean?>]`: Indicates whether attendees can turn on their camera.
     - `[AllowAttendeeToEnableMic <Boolean?>]`: Indicates whether attendees can turn on their microphone.
@@ -666,6 +631,9 @@ To create the parameters described below, construct a hash table containing the 
           - `[LeaveDateTime <DateTime?>]`: The time the attendee left in UTC.
         - `[EmailAddress <String>]`: Email address of the user associated with this attendance record.
         - `[Identity <IMicrosoftGraphIdentity>]`: identity
+          - `[(Any) <Object>]`: This indicates any property can be added to this object.
+          - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+          - `[Id <String>]`: The identifier of the identity. This property is read-only.
         - `[RegistrantId <String>]`: Unique identifier of a meetingRegistrant. Presents when the participant has registered for the meeting.
         - `[Role <String>]`: Role of the attendee. Possible values are: None, Attendee, Presenter, and Organizer.
         - `[TotalAttendanceInSeconds <Int32?>]`: Total duration of the attendances in seconds.
@@ -687,7 +655,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[ThreadId <String>]`: The unique identifier for a thread in Microsoft Teams.
     - `[ChatRestrictions <IMicrosoftGraphChatRestrictions>]`: chatRestrictions
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[AllowTextOnly <Boolean?>]`: Indicates whether only text is allowed in the meeting chat. Optional.
+      - `[AllowTextOnly <Boolean?>]`: 
     - `[IsEndToEndEncryptionEnabled <Boolean?>]`: 
     - `[IsEntryExitAnnounced <Boolean?>]`: Indicates whether to announce when callers join or leave.
     - `[JoinInformation <IMicrosoftGraphItemBody>]`: itemBody
@@ -802,7 +770,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[ThreadId <String>]`: The unique identifier for a thread in Microsoft Teams.
     - `[ChatRestrictions <IMicrosoftGraphChatRestrictions>]`: chatRestrictions
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[AllowTextOnly <Boolean?>]`: Indicates whether only text is allowed in the meeting chat. Optional.
+      - `[AllowTextOnly <Boolean?>]`: 
     - `[IsEndToEndEncryptionEnabled <Boolean?>]`: 
     - `[IsEntryExitAnnounced <Boolean?>]`: Indicates whether to announce when callers join or leave.
     - `[JoinInformation <IMicrosoftGraphItemBody>]`: itemBody
@@ -835,7 +803,11 @@ To create the parameters described below, construct a hash table containing the 
     - `[Presenters <IMicrosoftGraphVirtualEventPresenter[]>]`: 
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[Email <String>]`: Email address of the presenter.
-      - `[Identity <IMicrosoftGraphIdentity>]`: identity
+      - `[Identity <IMicrosoftGraphCommunicationsUserIdentity>]`: communicationsUserIdentity
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+        - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+        - `[Id <String>]`: The identifier of the identity. This property is read-only.
+        - `[TenantId <String>]`: The user's tenant ID.
       - `[PresenterDetails <IMicrosoftGraphVirtualEventPresenterDetails>]`: virtualEventPresenterDetails
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Bio <IMicrosoftGraphItemBody>]`: itemBody
@@ -843,15 +815,15 @@ To create the parameters described below, construct a hash table containing the 
         - `[JobTitle <String>]`: The presenter's job title.
         - `[LinkedInProfileWebUrl <String>]`: The presenter's LinkedIn profile URL.
         - `[PersonalSiteWebUrl <String>]`: The presenter's personal website URL.
-        - `[Photo <Byte[]>]`: The content stream of the presenter's photo.
         - `[TwitterProfileWebUrl <String>]`: The presenter's Twitter profile URL.
+      - `[ProfilePhoto <Byte[]>]`: 
       - `[Sessions <IMicrosoftGraphVirtualEventSession[]>]`: 
     - `[Registrations <IMicrosoftGraphVirtualEventRegistration[]>]`: 
     - `[StartDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
   - `[Status <String>]`: virtualEventAttendeeRegistrationStatus
   - `[UserId <String>]`: The registrant's ID in Microsoft Entra ID. Only appears when the registrant is registered in Microsoft Entra ID.
 
-`SESSIONS <IMicrosoftGraphVirtualEventSession[]>`: Sessions for the virtual event.
+`SESSIONS <IMicrosoftGraphVirtualEventSession[]>`: Sessions of the virtual event.
   - `[AllowAttendeeToEnableCamera <Boolean?>]`: Indicates whether attendees can turn on their camera.
   - `[AllowAttendeeToEnableMic <Boolean?>]`: Indicates whether attendees can turn on their microphone.
   - `[AllowMeetingChat <String>]`: meetingChatMode
@@ -895,7 +867,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[ThreadId <String>]`: The unique identifier for a thread in Microsoft Teams.
   - `[ChatRestrictions <IMicrosoftGraphChatRestrictions>]`: chatRestrictions
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[AllowTextOnly <Boolean?>]`: Indicates whether only text is allowed in the meeting chat. Optional.
+    - `[AllowTextOnly <Boolean?>]`: 
   - `[IsEndToEndEncryptionEnabled <Boolean?>]`: 
   - `[IsEntryExitAnnounced <Boolean?>]`: Indicates whether to announce when callers join or leave.
   - `[JoinInformation <IMicrosoftGraphItemBody>]`: itemBody
@@ -928,7 +900,11 @@ To create the parameters described below, construct a hash table containing the 
   - `[Presenters <IMicrosoftGraphVirtualEventPresenter[]>]`: 
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Email <String>]`: Email address of the presenter.
-    - `[Identity <IMicrosoftGraphIdentity>]`: identity
+    - `[Identity <IMicrosoftGraphCommunicationsUserIdentity>]`: communicationsUserIdentity
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+      - `[Id <String>]`: The identifier of the identity. This property is read-only.
+      - `[TenantId <String>]`: The user's tenant ID.
     - `[PresenterDetails <IMicrosoftGraphVirtualEventPresenterDetails>]`: virtualEventPresenterDetails
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Bio <IMicrosoftGraphItemBody>]`: itemBody
@@ -936,8 +912,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[JobTitle <String>]`: The presenter's job title.
       - `[LinkedInProfileWebUrl <String>]`: The presenter's LinkedIn profile URL.
       - `[PersonalSiteWebUrl <String>]`: The presenter's personal website URL.
-      - `[Photo <Byte[]>]`: The content stream of the presenter's photo.
       - `[TwitterProfileWebUrl <String>]`: The presenter's Twitter profile URL.
+    - `[ProfilePhoto <Byte[]>]`: 
     - `[Sessions <IMicrosoftGraphVirtualEventSession[]>]`: 
   - `[Registrations <IMicrosoftGraphVirtualEventRegistration[]>]`: 
     - `[Id <String>]`: The unique identifier for an entity. Read-only.

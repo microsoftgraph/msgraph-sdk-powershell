@@ -27,20 +27,17 @@ New-MgBetaSecurityAlert [-ActivityGroupName <String>] [-AdditionalProperties <Ha
  [-MessageSecurityStates <IMicrosoftGraphMessageSecurityState[]>]
  [-NetworkConnections <IMicrosoftGraphNetworkConnection[]>] [-Processes <IMicrosoftGraphProcess[]>]
  [-RecommendedActions <String[]>] [-RegistryKeyStates <IMicrosoftGraphRegistryKeyState[]>]
- [-ResponseHeadersVariable <String>] [-SecurityResources <IMicrosoftGraphSecurityResource[]>]
- [-Severity <String>] [-SourceMaterials <String[]>] [-Status <String>] [-Tags <String[]>] [-Title <String>]
- [-Triggers <IMicrosoftGraphAlertTrigger[]>]
+ [-SecurityResources <IMicrosoftGraphSecurityResource[]>] [-Severity <String>] [-SourceMaterials <String[]>]
+ [-Status <String>] [-Tags <String[]>] [-Title <String>] [-Triggers <IMicrosoftGraphAlertTrigger[]>]
  [-UriClickSecurityStates <IMicrosoftGraphUriClickSecurityState[]>]
  [-UserStates <IMicrosoftGraphUserSecurityState[]>]
  [-VendorInformation <IMicrosoftGraphSecurityVendorInformation>]
- [-VulnerabilityStates <IMicrosoftGraphVulnerabilityState[]>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-VulnerabilityStates <IMicrosoftGraphVulnerabilityState[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgBetaSecurityAlert -BodyParameter <IMicrosoftGraphAlert> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaSecurityAlert -BodyParameter <IMicrosoftGraphAlert> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -50,17 +47,10 @@ Create new navigation property to alerts for security
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Beta.Security
 ```
 
-
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-
+Get-MgBetaSecurityAlert
 
 ## PARAMETERS
 
@@ -347,21 +337,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -HistoryStates
 A collection of alertHistoryStates comprising an audit log of all updates made to an alert.
 To construct, see NOTES section for HISTORYSTATES properties and create a hash table.
@@ -560,21 +535,6 @@ To construct, see NOTES section for REGISTRYKEYSTATES properties and create a ha
 Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRegistryKeyState[]
 Parameter Sets: CreateExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -795,8 +755,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphAlert
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

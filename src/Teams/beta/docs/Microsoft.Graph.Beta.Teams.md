@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Teams
-Module Guid: 2a11a0fd-5e09-4c1b-9d98-93b2fadf83e4
+Module Guid: 42a9df00-49d5-4271-9bbc-9c40a1327ca9
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.teams
 Help Version: 1.0.0.0
 Locale: en-US
@@ -131,12 +131,6 @@ Retrieve the hosted content in an app's icon.
 ### [Get-MgBetaAppCatalogTeamAppDefinitionCount](Get-MgBetaAppCatalogTeamAppDefinitionCount.md)
 Get the number of the resource
 
-### [Get-MgBetaAppCatalogTeamAppDefinitionDashboardCard](Get-MgBetaAppCatalogTeamAppDefinitionDashboardCard.md)
-Dashboard cards specified in the Teams app manifest.
-
-### [Get-MgBetaAppCatalogTeamAppDefinitionDashboardCardCount](Get-MgBetaAppCatalogTeamAppDefinitionDashboardCardCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaAppCatalogTeamAppDefinitionOutlineIcon](Get-MgBetaAppCatalogTeamAppDefinitionOutlineIcon.md)
 Retrieve a Teams app icon associated with a specific definition of an app.
 
@@ -223,9 +217,6 @@ Nullable.
 ### [Get-MgBetaChatPinnedMessageCount](Get-MgBetaChatPinnedMessageCount.md)
 Get the number of the resource
 
-### [Get-MgBetaChatRetainedMessage](Get-MgBetaChatRetainedMessage.md)
-Invoke function getAllRetainedMessages
-
 ### [Get-MgBetaChatRscConfiguration](Get-MgBetaChatRscConfiguration.md)
 Get chat RSC configuration for tenant.
 
@@ -253,9 +244,6 @@ Get the number of the resource
 Get the metadata for the location where the files of a channel are stored.
 
 ### [Get-MgBetaGroupTeamChannelFileFolderContent](Get-MgBetaGroupTeamChannelFileFolderContent.md)
-Get content for the navigation property filesFolder from groups
-
-### [Get-MgBetaGroupTeamChannelFileFolderContentStream](Get-MgBetaGroupTeamChannelFileFolderContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Get-MgBetaGroupTeamChannelMember](Get-MgBetaGroupTeamChannelMember.md)
@@ -353,8 +341,8 @@ Get the number of the resource
 ### [Get-MgBetaGroupTeamOwner](Get-MgBetaGroupTeamOwner.md)
 The list of this team's owners.
 Currently, when creating a team using application permissions, exactly one owner must be specified.
-When using user-delegated permissions, no owner can be specified (the current user is the owner).
-The owner must be specified as an object ID (GUID), not a UPN.
+When using user delegated permissions, no owner can be specified (the current user is the owner).
+Owner must be specified as an object ID (GUID), not a UPN.
 
 ### [Get-MgBetaGroupTeamOwnerCount](Get-MgBetaGroupTeamOwnerCount.md)
 Get the number of the resource
@@ -390,9 +378,6 @@ Get the default channel, General, of a team.
 Get the metadata for the location where the files of a channel are stored.
 
 ### [Get-MgBetaGroupTeamPrimaryChannelFileFolderContent](Get-MgBetaGroupTeamPrimaryChannelFileFolderContent.md)
-Get content for the navigation property filesFolder from groups
-
-### [Get-MgBetaGroupTeamPrimaryChannelFileFolderContentStream](Get-MgBetaGroupTeamPrimaryChannelFileFolderContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Get-MgBetaGroupTeamPrimaryChannelMember](Get-MgBetaGroupTeamPrimaryChannelMember.md)
@@ -456,7 +441,7 @@ If the provisioning failed, clients can get additional information from the prov
 Clients can also inspect the configuration of the schedule.
 
 ### [Get-MgBetaGroupTeamScheduleDayNote](Get-MgBetaGroupTeamScheduleDayNote.md)
-The day notes in the schedule.
+Get dayNotes from groups
 
 ### [Get-MgBetaGroupTeamScheduleDayNoteCount](Get-MgBetaGroupTeamScheduleDayNoteCount.md)
 Get the number of the resource
@@ -489,12 +474,6 @@ Get the number of the resource
 Retrieve the properties and relationships of a shift object by ID.
 
 ### [Get-MgBetaGroupTeamScheduleShiftCount](Get-MgBetaGroupTeamScheduleShiftCount.md)
-Get the number of the resource
-
-### [Get-MgBetaGroupTeamScheduleShiftRoleDefinition](Get-MgBetaGroupTeamScheduleShiftRoleDefinition.md)
-The definitions of the roles in the schedule.
-
-### [Get-MgBetaGroupTeamScheduleShiftRoleDefinitionCount](Get-MgBetaGroupTeamScheduleShiftRoleDefinitionCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaGroupTeamScheduleSwapShiftChangeRequest](Get-MgBetaGroupTeamScheduleSwapShiftChangeRequest.md)
@@ -564,9 +543,6 @@ Get the number of the resource
 Get the metadata for the location where the files of a channel are stored.
 
 ### [Get-MgBetaTeamChannelFileFolderContent](Get-MgBetaTeamChannelFileFolderContent.md)
-Get content for the navigation property filesFolder from teams
-
-### [Get-MgBetaTeamChannelFileFolderContentStream](Get-MgBetaTeamChannelFileFolderContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Get-MgBetaTeamChannelMember](Get-MgBetaTeamChannelMember.md)
@@ -604,9 +580,6 @@ Retrieve the properties and relationships of chatMessageHostedContent object.
 
 ### [Get-MgBetaTeamChannelMessageReplyHostedContentCount](Get-MgBetaTeamChannelMessageReplyHostedContentCount.md)
 Get the number of the resource
-
-### [Get-MgBetaTeamChannelRetainedMessage](Get-MgBetaTeamChannelRetainedMessage.md)
-Invoke function getAllRetainedMessages
 
 ### [Get-MgBetaTeamChannelSharedWithTeam](Get-MgBetaTeamChannelSharedWithTeam.md)
 Get a team that has been shared with a specified channel.
@@ -664,9 +637,6 @@ Get a conversationMember from a team.
 ### [Get-MgBetaTeamMemberCount](Get-MgBetaTeamMemberCount.md)
 Get the number of the resource
 
-### [Get-MgBetaTeamOpenShift](Get-MgBetaTeamOpenShift.md)
-Invoke function getOpenShifts
-
 ### [Get-MgBetaTeamOperation](Get-MgBetaTeamOperation.md)
 The async operations that ran or are running on this team.
 
@@ -676,8 +646,8 @@ Get the number of the resource
 ### [Get-MgBetaTeamOwner](Get-MgBetaTeamOwner.md)
 The list of this team's owners.
 Currently, when creating a team using application permissions, exactly one owner must be specified.
-When using user-delegated permissions, no owner can be specified (the current user is the owner).
-The owner must be specified as an object ID (GUID), not a UPN.
+When using user delegated permissions, no owner can be specified (the current user is the owner).
+Owner must be specified as an object ID (GUID), not a UPN.
 
 ### [Get-MgBetaTeamOwnerCount](Get-MgBetaTeamOwnerCount.md)
 Get the number of the resource
@@ -713,9 +683,6 @@ Get the default channel, General, of a team.
 Get the metadata for the location where the files of a channel are stored.
 
 ### [Get-MgBetaTeamPrimaryChannelFileFolderContent](Get-MgBetaTeamPrimaryChannelFileFolderContent.md)
-Get content for the navigation property filesFolder from teams
-
-### [Get-MgBetaTeamPrimaryChannelFileFolderContentStream](Get-MgBetaTeamPrimaryChannelFileFolderContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Get-MgBetaTeamPrimaryChannelMember](Get-MgBetaTeamPrimaryChannelMember.md)
@@ -788,7 +755,7 @@ If the provisioning failed, clients can get additional information from the prov
 Clients can also inspect the configuration of the schedule.
 
 ### [Get-MgBetaTeamScheduleDayNote](Get-MgBetaTeamScheduleDayNote.md)
-The day notes in the schedule.
+Get dayNotes from teams
 
 ### [Get-MgBetaTeamScheduleDayNoteCount](Get-MgBetaTeamScheduleDayNoteCount.md)
 Get the number of the resource
@@ -823,12 +790,6 @@ Retrieve the properties and relationships of a shift object by ID.
 ### [Get-MgBetaTeamScheduleShiftCount](Get-MgBetaTeamScheduleShiftCount.md)
 Get the number of the resource
 
-### [Get-MgBetaTeamScheduleShiftRoleDefinition](Get-MgBetaTeamScheduleShiftRoleDefinition.md)
-The definitions of the roles in the schedule.
-
-### [Get-MgBetaTeamScheduleShiftRoleDefinitionCount](Get-MgBetaTeamScheduleShiftRoleDefinitionCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaTeamScheduleSwapShiftChangeRequest](Get-MgBetaTeamScheduleSwapShiftChangeRequest.md)
 Retrieve the properties and relationships of a swapShiftsChangeRequest object.
 
@@ -859,9 +820,6 @@ Retrieve the properties and relationships of a timeoffrequest object.
 ### [Get-MgBetaTeamScheduleTimeOffRequestCount](Get-MgBetaTeamScheduleTimeOffRequestCount.md)
 Get the number of the resource
 
-### [Get-MgBetaTeamShift](Get-MgBetaTeamShift.md)
-Invoke function getShifts
-
 ### [Get-MgBetaTeamTag](Get-MgBetaTeamTag.md)
 Read the properties and relationships of a tag object.
 
@@ -881,11 +839,8 @@ See available templates.
 ### [Get-MgBetaTeamTemplateDefinition](Get-MgBetaTeamTemplateDefinition.md)
 Generic representation of a team template definition for a team with a specific structure and configuration.
 
-### [Get-MgBetaTeamTimeOff](Get-MgBetaTeamTimeOff.md)
-Invoke function getTimesOff
-
 ### [Get-MgBetaTeamwork](Get-MgBetaTeamwork.md)
-Get the properties and relationships of a teamwork object, such as the region of the organization and whether Microsoft Teams is enabled.
+Get teamwork
 
 ### [Get-MgBetaTeamworkDeletedChat](Get-MgBetaTeamworkDeletedChat.md)
 Read the properties and relationships of a deletedChat object.
@@ -906,9 +861,6 @@ Get the number of the resource
 Get the metadata for the location where the files of a channel are stored.
 
 ### [Get-MgBetaTeamworkDeletedTeamChannelFileFolderContent](Get-MgBetaTeamworkDeletedTeamChannelFileFolderContent.md)
-Get content for the navigation property filesFolder from teamwork
-
-### [Get-MgBetaTeamworkDeletedTeamChannelFileFolderContentStream](Get-MgBetaTeamworkDeletedTeamChannelFileFolderContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Get-MgBetaTeamworkDeletedTeamChannelMember](Get-MgBetaTeamworkDeletedTeamChannelMember.md)
@@ -946,9 +898,6 @@ Retrieve the properties and relationships of chatMessageHostedContent object.
 
 ### [Get-MgBetaTeamworkDeletedTeamChannelMessageReplyHostedContentCount](Get-MgBetaTeamworkDeletedTeamChannelMessageReplyHostedContentCount.md)
 Get the number of the resource
-
-### [Get-MgBetaTeamworkDeletedTeamChannelRetainedMessage](Get-MgBetaTeamworkDeletedTeamChannelRetainedMessage.md)
-Invoke function getAllRetainedMessages
 
 ### [Get-MgBetaTeamworkDeletedTeamChannelSharedWithTeam](Get-MgBetaTeamworkDeletedTeamChannelSharedWithTeam.md)
 Get a team that has been shared with a specified channel.
@@ -1107,7 +1056,9 @@ The application that is linked to the tab.
 Get the teams in Microsoft Teams that the user is a direct member of.
 
 ### [Get-MgBetaUserTeamwork](Get-MgBetaUserTeamwork.md)
-Get the userTeamwork settings for a specified user, which includes the Microsoft Teams region and the locale chosen by the user.
+A container for Microsoft Teams features available for the user.
+Read-only.
+Nullable.
 
 ### [Get-MgBetaUserTeamworkAssociatedTeam](Get-MgBetaUserTeamworkAssociatedTeam.md)
 The list of associatedTeamInfo objects that a user is associated with.
@@ -1135,43 +1086,11 @@ Hide a chat for a user.
 
 ### [Invoke-MgBetaArchiveTeam](Invoke-MgBetaArchiveTeam.md)
 Archive the specified team.
-\nWhen a team is archived, users can no longer make most changes to the team.
-For example, users can no longer: send or like messages on any channel in the team; edit the team's name or description; nor edit other settings.
-However, membership changes to the team continue to be allowed.
+\nWhen a team is archived, users can no longer send or like messages on any channel in the team, edit the team's name, description, or other settings, or in general make most changes to the team.\nMembership changes to the team continue to be allowed.
 Archiving is an async operation.
-A team is archived once the async operation completes successfully, which can occur subsequent to a response from this API.
+A team is archived once the async operation completes successfully, which may occur subsequent to a response from this API.
 To archive a team, the team and group must have an owner.
 To restore a team from its archived state, use the API to unarchive.
-
-### [Invoke-MgBetaArchiveTeamChannel](Invoke-MgBetaArchiveTeamChannel.md)
-Archive a channel in a team.
-When a channel is archived, users can't send new messages or react to existing messages in the channel, edit the channel settings, or make other changes to the channel.
-You can delete an archived channel, or add and remove members from it.
-If you archive a team, its channels are archived for you.
-Archiving is asynchronous; a channel is archived after the asynchronous archiving operation completes successfully, which might occur after the response returns.
-A channel without an owner, or that belongs to a group that has no owner, can't be archived.
-To restore a channel from its archived state, use the unarchive method.
-A channel can’t be archived or unarchived if its team is archived.
-
-### [Invoke-MgBetaArchiveTeamPrimaryChannel](Invoke-MgBetaArchiveTeamPrimaryChannel.md)
-Archive a channel in a team.
-When a channel is archived, users can't send new messages or react to existing messages in the channel, edit the channel settings, or make other changes to the channel.
-You can delete an archived channel, or add and remove members from it.
-If you archive a team, its channels are archived for you.
-Archiving is asynchronous; a channel is archived after the asynchronous archiving operation completes successfully, which might occur after the response returns.
-A channel without an owner, or that belongs to a group that has no owner, can't be archived.
-To restore a channel from its archived state, use the unarchive method.
-A channel can’t be archived or unarchived if its team is archived.
-
-### [Invoke-MgBetaArchiveTeamworkDeletedTeamChannel](Invoke-MgBetaArchiveTeamworkDeletedTeamChannel.md)
-Archive a channel in a team.
-When a channel is archived, users can't send new messages or react to existing messages in the channel, edit the channel settings, or make other changes to the channel.
-You can delete an archived channel, or add and remove members from it.
-If you archive a team, its channels are archived for you.
-Archiving is asynchronous; a channel is archived after the asynchronous archiving operation completes successfully, which might occur after the response returns.
-A channel without an owner, or that belongs to a group that has no owner, can't be archived.
-To restore a channel from its archived state, use the unarchive method.
-A channel can’t be archived or unarchived if its team is archived.
 
 ### [Invoke-MgBetaClockTeamScheduleTimeCardIn](Invoke-MgBetaClockTeamScheduleTimeCardIn.md)
 Clock in to start a timeCard.
@@ -1210,10 +1129,8 @@ Invoke function allMessages
 Invoke function allMessages
 
 ### [Invoke-MgBetaShareTeamSchedule](Invoke-MgBetaShareTeamSchedule.md)
-Share a schedule time range with schedule members.
-This action makes the collections of shift, openshift and timeOff items in the specified time range of the schedule viewable by the specified team members, including employees and managers.
-Each shift, openshift and timeOff instance in a schedule supports a draft version and a shared version of the item.
-The draft version is viewable only by managers, and the shared version is viewable by employees and managers.
+Share a schedule time range with schedule members.\nMake the collections of shift, openshift and timeOff items in the specified time range of the schedule viewable by the specified team members, including employees and managers.\nEach shift, openshift and timeOff instance in a schedule supports a draft version and a shared version of the item.
+The draft version is viewable by only managers, and the shared version is viewable by employees and managers.
 For each shift, openshift and timeOff instance in the specified time range, the share action updates the shared version from the draft version, so that in addition to managers, employees can also view the most current information about the item.
 The notifyTeam parameter further specifies which employees can view the item.
 
@@ -1245,25 +1162,7 @@ Delete a single chatMessage or a chat message reply in a channel or a chat.
 Restore an archived team and restores users' ability to send messages and edit the team, abiding by tenant and team settings.
 Teams are archived using the archive API.
 Unarchiving is an async operation.
-A team is unarchived once the async operation completes successfully, which might occur subsequent to a response from this API.
-
-### [Invoke-MgBetaUnarchiveTeamChannel](Invoke-MgBetaUnarchiveTeamChannel.md)
-Restore an archived channel.
-Unarchiving restores the ability for users to send messages and edit the channel.
-Channels are archived via the archive API.
-Unarchiving is an asynchronous operation; a channel is unarchived when the asynchronous unarchive operation completes successfully, which might occur after this method responds.
-
-### [Invoke-MgBetaUnarchiveTeamPrimaryChannel](Invoke-MgBetaUnarchiveTeamPrimaryChannel.md)
-Restore an archived channel.
-Unarchiving restores the ability for users to send messages and edit the channel.
-Channels are archived via the archive API.
-Unarchiving is an asynchronous operation; a channel is unarchived when the asynchronous unarchive operation completes successfully, which might occur after this method responds.
-
-### [Invoke-MgBetaUnarchiveTeamworkDeletedTeamChannel](Invoke-MgBetaUnarchiveTeamworkDeletedTeamChannel.md)
-Restore an archived channel.
-Unarchiving restores the ability for users to send messages and edit the channel.
-Channels are archived via the archive API.
-Unarchiving is an asynchronous operation; a channel is unarchived when the asynchronous unarchive operation completes successfully, which might occur after this method responds.
+A team is unarchived once the async operation completes successfully, which may occur subsequent to a response from this API.
 
 ### [New-MgBetaAppCatalogTeamApp](New-MgBetaAppCatalogTeamApp.md)
 Publish an app to the Microsoft Teams app catalog.\nSpecifically, this API publishes the app to your organization's catalog (the tenant app catalog);\nthe created resource has a distributionMethod property value of organization.
@@ -1275,9 +1174,6 @@ Update an app previously published to the Microsoft Teams app catalog.
 To update an app, the distributionMethod property for the app must be set to organization.
 This API specifically updates an app published to your organization's app catalog (the tenant app catalog).
 
-### [New-MgBetaAppCatalogTeamAppDefinitionDashboardCard](New-MgBetaAppCatalogTeamAppDefinitionDashboardCard.md)
-Create new navigation property to dashboardCards for appCatalogs
-
 ### [New-MgBetaChat](New-MgBetaChat.md)
 Create a new chat object.
 
@@ -1288,7 +1184,8 @@ Install a teamsApp to the specified chat.
 Add a conversationMember to a chat.
 
 ### [New-MgBetaChatMessage](New-MgBetaChatMessage.md)
-Send a new chatMessage in the specified channel or a chat.
+Send a new chatMessage in the specified chat.
+This API cannot create a new chat; you must use the list chats method to retrieve the ID of an existing chat before creating a chat message.
 
 ### [New-MgBetaChatMessageHostedContent](New-MgBetaChatMessageHostedContent.md)
 Create new navigation property to hostedContents for chats
@@ -1316,7 +1213,7 @@ Add (pin) a tab to the specified chat.
 ### [New-MgBetaGroupTeamChannel](New-MgBetaGroupTeamChannel.md)
 Create a new channel in a team, as specified in the request body.
 When you create a channel, the maximum length of the channel's displayName is 50 characters.
-This display name appears to the user in Microsoft Teams.
+This is the name that appears to the user in Microsoft Teams.
 You can add a maximum of 200 members when you create a private channel.
 
 ### [New-MgBetaGroupTeamChannelMember](New-MgBetaGroupTeamChannelMember.md)
@@ -1394,9 +1291,6 @@ Create a new schedulingGroup.
 Create a new shift instance in a schedule.
 The duration of a shift cannot be less than 1 minute or longer than 24 hours.
 
-### [New-MgBetaGroupTeamScheduleShiftRoleDefinition](New-MgBetaGroupTeamScheduleShiftRoleDefinition.md)
-Create new navigation property to shiftsRoleDefinitions for groups
-
 ### [New-MgBetaGroupTeamScheduleSwapShiftChangeRequest](New-MgBetaGroupTeamScheduleSwapShiftChangeRequest.md)
 Create an instance of a swapShiftsChangeRequest object.
 
@@ -1427,13 +1321,13 @@ Create Preapproval policy associated with a Teams App.
 ### [New-MgBetaTeamChannel](New-MgBetaTeamChannel.md)
 Create a new channel in a team, as specified in the request body.
 When you create a channel, the maximum length of the channel's displayName is 50 characters.
-This display name appears to the user in Microsoft Teams.
+This is the name that appears to the user in Microsoft Teams.
 You can add a maximum of 200 members when you create a private channel.
 
 ### [New-MgBetaTeamChannelEmail](New-MgBetaTeamChannelEmail.md)
 Provision an email address for a channel.
 Microsoft Teams doesn't automatically provision an email address for a channel by default.
-To have Teams provision an email address, you can call provisionEmail, or through the Teams user interface, select Get email address, which triggers Teams to generate an email address if it didn't provisioned one.
+To have Teams provision an email address, you can call provisionEmail, or through the Teams user interface, select Get email address, which triggers Teams to generate an email address if it has not already provisioned one.
 To remove the email address of a channel, use the removeEmail method.
 
 ### [New-MgBetaTeamChannelMember](New-MgBetaTeamChannelMember.md)
@@ -1473,7 +1367,7 @@ Create new navigation property to permissionGrants for teams
 ### [New-MgBetaTeamPrimaryChannelEmail](New-MgBetaTeamPrimaryChannelEmail.md)
 Provision an email address for a channel.
 Microsoft Teams doesn't automatically provision an email address for a channel by default.
-To have Teams provision an email address, you can call provisionEmail, or through the Teams user interface, select Get email address, which triggers Teams to generate an email address if it didn't provisioned one.
+To have Teams provision an email address, you can call provisionEmail, or through the Teams user interface, select Get email address, which triggers Teams to generate an email address if it has not already provisioned one.
 To remove the email address of a channel, use the removeEmail method.
 
 ### [New-MgBetaTeamPrimaryChannelMember](New-MgBetaTeamPrimaryChannelMember.md)
@@ -1517,9 +1411,6 @@ Create a new schedulingGroup.
 Create a new shift instance in a schedule.
 The duration of a shift cannot be less than 1 minute or longer than 24 hours.
 
-### [New-MgBetaTeamScheduleShiftRoleDefinition](New-MgBetaTeamScheduleShiftRoleDefinition.md)
-Create new navigation property to shiftsRoleDefinitions for teams
-
 ### [New-MgBetaTeamScheduleSwapShiftChangeRequest](New-MgBetaTeamScheduleSwapShiftChangeRequest.md)
 Create an instance of a swapShiftsChangeRequest object.
 
@@ -1553,7 +1444,7 @@ Create new navigation property to channels for teamwork
 ### [New-MgBetaTeamworkDeletedTeamChannelEmail](New-MgBetaTeamworkDeletedTeamChannelEmail.md)
 Provision an email address for a channel.
 Microsoft Teams doesn't automatically provision an email address for a channel by default.
-To have Teams provision an email address, you can call provisionEmail, or through the Teams user interface, select Get email address, which triggers Teams to generate an email address if it didn't provisioned one.
+To have Teams provision an email address, you can call provisionEmail, or through the Teams user interface, select Get email address, which triggers Teams to generate an email address if it has not already provisioned one.
 To remove the email address of a channel, use the removeEmail method.
 
 ### [New-MgBetaTeamworkDeletedTeamChannelMember](New-MgBetaTeamworkDeletedTeamChannelMember.md)
@@ -1603,7 +1494,8 @@ Install a teamsApp to the specified chat.
 Add a conversationMember to a chat.
 
 ### [New-MgBetaUserChatMessage](New-MgBetaUserChatMessage.md)
-Send a new chatMessage in the specified channel or a chat.
+Send a new chatMessage in the specified chat.
+This API cannot create a new chat; you must use the list chats method to retrieve the ID of an existing chat before creating a chat message.
 
 ### [New-MgBetaUserChatMessageHostedContent](New-MgBetaUserChatMessageHostedContent.md)
 Create new navigation property to hostedContents for users
@@ -1650,9 +1542,6 @@ Delete navigation property colorIcon for appCatalogs
 
 ### [Remove-MgBetaAppCatalogTeamAppDefinitionColorIconHostedContent](Remove-MgBetaAppCatalogTeamAppDefinitionColorIconHostedContent.md)
 Delete navigation property hostedContent for appCatalogs
-
-### [Remove-MgBetaAppCatalogTeamAppDefinitionDashboardCard](Remove-MgBetaAppCatalogTeamAppDefinitionDashboardCard.md)
-Delete navigation property dashboardCards for appCatalogs
 
 ### [Remove-MgBetaAppCatalogTeamAppDefinitionOutlineIcon](Remove-MgBetaAppCatalogTeamAppDefinitionOutlineIcon.md)
 Delete navigation property outlineIcon for appCatalogs
@@ -1720,6 +1609,9 @@ This operation is allowed only for channels with a membershipType value of share
 ### [Remove-MgBetaGroupTeamChannelTab](Remove-MgBetaGroupTeamChannelTab.md)
 Delete navigation property tabs for groups
 
+### [Remove-MgBetaGroupTeamIncomingChannel](Remove-MgBetaGroupTeamIncomingChannel.md)
+Remove an incoming channel (a channel shared with a team) from a team.
+
 ### [Remove-MgBetaGroupTeamInstalledApp](Remove-MgBetaGroupTeamInstalledApp.md)
 Uninstalls an app from the specified team.
 
@@ -1780,9 +1672,6 @@ Existing shift instances assigned to the scheduling group remain part of the gro
 ### [Remove-MgBetaGroupTeamScheduleShift](Remove-MgBetaGroupTeamScheduleShift.md)
 Delete a shift from the schedule.
 
-### [Remove-MgBetaGroupTeamScheduleShiftRoleDefinition](Remove-MgBetaGroupTeamScheduleShiftRoleDefinition.md)
-Delete navigation property shiftsRoleDefinitions for groups
-
 ### [Remove-MgBetaGroupTeamScheduleSwapShiftChangeRequest](Remove-MgBetaGroupTeamScheduleSwapShiftChangeRequest.md)
 Delete navigation property swapShiftsChangeRequests for groups
 
@@ -1795,8 +1684,8 @@ Delete a timeOff instance from a schedule.
 ### [Remove-MgBetaGroupTeamScheduleTimeOffReason](Remove-MgBetaGroupTeamScheduleTimeOffReason.md)
 Mark a timeOffReason as inactive by setting the isActive property.
 Every team must include at least one timeOffReason.
-This method doesn't remove the specified timeOffReason instance.
-timeOffItem instances that were assigned this reason remain assigned to this reason.
+This method does not remove the specified timeOffReason instance.
+timeOffItem instances that have been assigned this reason remain assigned to this reason.
 
 ### [Remove-MgBetaGroupTeamScheduleTimeOffRequest](Remove-MgBetaGroupTeamScheduleTimeOffRequest.md)
 Delete a timeOffRequest object.
@@ -1833,6 +1722,9 @@ This operation is allowed only for channels with a membershipType value of share
 
 ### [Remove-MgBetaTeamChannelTab](Remove-MgBetaTeamChannelTab.md)
 Delete navigation property tabs for teams
+
+### [Remove-MgBetaTeamIncomingChannel](Remove-MgBetaTeamIncomingChannel.md)
+Remove an incoming channel (a channel shared with a team) from a team.
 
 ### [Remove-MgBetaTeamInstalledApp](Remove-MgBetaTeamInstalledApp.md)
 Uninstalls an app from the specified team.
@@ -1889,9 +1781,6 @@ Existing shift instances assigned to the scheduling group remain part of the gro
 ### [Remove-MgBetaTeamScheduleShift](Remove-MgBetaTeamScheduleShift.md)
 Delete a shift from the schedule.
 
-### [Remove-MgBetaTeamScheduleShiftRoleDefinition](Remove-MgBetaTeamScheduleShiftRoleDefinition.md)
-Delete navigation property shiftsRoleDefinitions for teams
-
 ### [Remove-MgBetaTeamScheduleSwapShiftChangeRequest](Remove-MgBetaTeamScheduleSwapShiftChangeRequest.md)
 Delete navigation property swapShiftsChangeRequests for teams
 
@@ -1904,8 +1793,8 @@ Delete a timeOff instance from a schedule.
 ### [Remove-MgBetaTeamScheduleTimeOffReason](Remove-MgBetaTeamScheduleTimeOffReason.md)
 Mark a timeOffReason as inactive by setting the isActive property.
 Every team must include at least one timeOffReason.
-This method doesn't remove the specified timeOffReason instance.
-timeOffItem instances that were assigned this reason remain assigned to this reason.
+This method does not remove the specified timeOffReason instance.
+timeOffItem instances that have been assigned this reason remain assigned to this reason.
 
 ### [Remove-MgBetaTeamScheduleTimeOffRequest](Remove-MgBetaTeamScheduleTimeOffRequest.md)
 Delete a timeOffRequest object.
@@ -2065,9 +1954,6 @@ Update Chat RSC configuration for tenant.
 Update the navigation property team in groups
 
 ### [Set-MgBetaGroupTeamChannelFileFolderContent](Set-MgBetaGroupTeamChannelFileFolderContent.md)
-Update content for the navigation property filesFolder in groups
-
-### [Set-MgBetaGroupTeamChannelFileFolderContentStream](Set-MgBetaGroupTeamChannelFileFolderContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Set-MgBetaGroupTeamChannelMessageHostedContent](Set-MgBetaGroupTeamChannelMessageHostedContent.md)
@@ -2080,9 +1966,6 @@ Update media content for the navigation property hostedContents in groups
 Update media content for the navigation property photo in groups
 
 ### [Set-MgBetaGroupTeamPrimaryChannelFileFolderContent](Set-MgBetaGroupTeamPrimaryChannelFileFolderContent.md)
-Update content for the navigation property filesFolder in groups
-
-### [Set-MgBetaGroupTeamPrimaryChannelFileFolderContentStream](Set-MgBetaGroupTeamPrimaryChannelFileFolderContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Set-MgBetaGroupTeamPrimaryChannelMessageHostedContent](Set-MgBetaGroupTeamPrimaryChannelMessageHostedContent.md)
@@ -2095,9 +1978,6 @@ Update media content for the navigation property hostedContents in groups
 Update the navigation property schedule in groups
 
 ### [Set-MgBetaTeamChannelFileFolderContent](Set-MgBetaTeamChannelFileFolderContent.md)
-Update content for the navigation property filesFolder in teams
-
-### [Set-MgBetaTeamChannelFileFolderContentStream](Set-MgBetaTeamChannelFileFolderContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Set-MgBetaTeamChannelMessageHostedContent](Set-MgBetaTeamChannelMessageHostedContent.md)
@@ -2116,9 +1996,6 @@ Invoke action setReaction
 Update media content for the navigation property photo in teams
 
 ### [Set-MgBetaTeamPrimaryChannelFileFolderContent](Set-MgBetaTeamPrimaryChannelFileFolderContent.md)
-Update content for the navigation property filesFolder in teams
-
-### [Set-MgBetaTeamPrimaryChannelFileFolderContentStream](Set-MgBetaTeamPrimaryChannelFileFolderContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Set-MgBetaTeamPrimaryChannelMessageHostedContent](Set-MgBetaTeamPrimaryChannelMessageHostedContent.md)
@@ -2140,9 +2017,6 @@ Update Team RSC configuration for tenant.
 Update the navigation property schedule in teams
 
 ### [Set-MgBetaTeamworkDeletedTeamChannelFileFolderContent](Set-MgBetaTeamworkDeletedTeamChannelFileFolderContent.md)
-Update content for the navigation property filesFolder in teamwork
-
-### [Set-MgBetaTeamworkDeletedTeamChannelFileFolderContentStream](Set-MgBetaTeamworkDeletedTeamChannelFileFolderContentStream.md)
 The content stream, if the item represents a file.
 
 ### [Set-MgBetaTeamworkDeletedTeamChannelMessageHostedContent](Set-MgBetaTeamworkDeletedTeamChannelMessageHostedContent.md)
@@ -2192,7 +2066,7 @@ Undo soft deletion of a single chatMessage or a chat message reply in a channel 
 Undo soft deletion of a single chatMessage or a chat message reply in a channel or a chat.
 
 ### [Undo-MgBetaTeamworkDeletedChatDelete](Undo-MgBetaTeamworkDeletedChatDelete.md)
-Restore a deletedChat to an active chat.
+Restore a  deletedChat to an active chat.
 
 ### [Undo-MgBetaTeamworkDeletedTeamChannelMessageReplySoftDelete](Undo-MgBetaTeamworkDeletedTeamChannelMessageReplySoftDelete.md)
 Undo soft deletion of a single chatMessage or a chat message reply in a channel or a chat.
@@ -2216,9 +2090,6 @@ Update the navigation property colorIcon in appCatalogs
 
 ### [Update-MgBetaAppCatalogTeamAppDefinitionColorIconHostedContent](Update-MgBetaAppCatalogTeamAppDefinitionColorIconHostedContent.md)
 Update the navigation property hostedContent in appCatalogs
-
-### [Update-MgBetaAppCatalogTeamAppDefinitionDashboardCard](Update-MgBetaAppCatalogTeamAppDefinitionDashboardCard.md)
-Update the navigation property dashboardCards in appCatalogs
 
 ### [Update-MgBetaAppCatalogTeamAppDefinitionOutlineIcon](Update-MgBetaAppCatalogTeamAppDefinitionOutlineIcon.md)
 Update the navigation property outlineIcon in appCatalogs
@@ -2258,7 +2129,7 @@ Update the navigation property pinnedMessages in chats
 
 ### [Update-MgBetaChatTab](Update-MgBetaChatTab.md)
 Update the properties of the specified tab in a chat.
-\nThis API can be used to configure the content of the tab.
+\nThis can be used to configure the content of the tab.
 
 ### [Update-MgBetaGroupTeamChannel](Update-MgBetaGroupTeamChannel.md)
 Update the properties of the specified channel.
@@ -2273,7 +2144,7 @@ You can update all the properties of chatMessage in delegated permissions scenar
 The policyViolation property is the only property that can be updated in application permissions scenarios.
 Updating works only for chats where conversation members are Microsoft Teams users.
 If one of the members is using Skype, the operation fails.
-This method doesn't support federation.
+This method does not support federation.
 Only the user in the tenant who sent the message can perform data loss prevention (DLP) updates on the specified chat message.
 
 ### [Update-MgBetaGroupTeamChannelMessageHostedContent](Update-MgBetaGroupTeamChannelMessageHostedContent.md)
@@ -2319,7 +2190,7 @@ You can update all the properties of chatMessage in delegated permissions scenar
 The policyViolation property is the only property that can be updated in application permissions scenarios.
 Updating works only for chats where conversation members are Microsoft Teams users.
 If one of the members is using Skype, the operation fails.
-This method doesn't support federation.
+This method does not support federation.
 Only the user in the tenant who sent the message can perform data loss prevention (DLP) updates on the specified chat message.
 
 ### [Update-MgBetaGroupTeamPrimaryChannelMessageHostedContent](Update-MgBetaGroupTeamPrimaryChannelMessageHostedContent.md)
@@ -2338,7 +2209,7 @@ Update the navigation property sharedWithTeams in groups
 Update the navigation property tabs in groups
 
 ### [Update-MgBetaGroupTeamScheduleDayNote](Update-MgBetaGroupTeamScheduleDayNote.md)
-Update the properties of a day note.
+Update the navigation property dayNotes in groups
 
 ### [Update-MgBetaGroupTeamScheduleOfferShiftRequest](Update-MgBetaGroupTeamScheduleOfferShiftRequest.md)
 Update the navigation property offerShiftRequests in groups
@@ -2357,9 +2228,6 @@ If the specified schedulingGroup doesn't exist, this method returns 404 Not foun
 Replace an existing shift.
 If the specified shift doesn't exist, this method returns 404 Not found.
 The duration of a shift can't be less than 1 minute or longer than 24 hours.
-
-### [Update-MgBetaGroupTeamScheduleShiftRoleDefinition](Update-MgBetaGroupTeamScheduleShiftRoleDefinition.md)
-Update the navigation property shiftsRoleDefinitions in groups
 
 ### [Update-MgBetaGroupTeamScheduleSwapShiftChangeRequest](Update-MgBetaGroupTeamScheduleSwapShiftChangeRequest.md)
 Update the navigation property swapShiftsChangeRequests in groups
@@ -2403,7 +2271,7 @@ You can update all the properties of chatMessage in delegated permissions scenar
 The policyViolation property is the only property that can be updated in application permissions scenarios.
 Updating works only for chats where conversation members are Microsoft Teams users.
 If one of the members is using Skype, the operation fails.
-This method doesn't support federation.
+This method does not support federation.
 Only the user in the tenant who sent the message can perform data loss prevention (DLP) updates on the specified chat message.
 
 ### [Update-MgBetaTeamChannelMessageReply](Update-MgBetaTeamChannelMessageReply.md)
@@ -2449,7 +2317,7 @@ You can update all the properties of chatMessage in delegated permissions scenar
 The policyViolation property is the only property that can be updated in application permissions scenarios.
 Updating works only for chats where conversation members are Microsoft Teams users.
 If one of the members is using Skype, the operation fails.
-This method doesn't support federation.
+This method does not support federation.
 Only the user in the tenant who sent the message can perform data loss prevention (DLP) updates on the specified chat message.
 
 ### [Update-MgBetaTeamPrimaryChannelMessageReply](Update-MgBetaTeamPrimaryChannelMessageReply.md)
@@ -2465,7 +2333,7 @@ Update the navigation property sharedWithTeams in teams
 Update the navigation property tabs in teams
 
 ### [Update-MgBetaTeamScheduleDayNote](Update-MgBetaTeamScheduleDayNote.md)
-Update the properties of a day note.
+Update the navigation property dayNotes in teams
 
 ### [Update-MgBetaTeamScheduleOfferShiftRequest](Update-MgBetaTeamScheduleOfferShiftRequest.md)
 Update the navigation property offerShiftRequests in teams
@@ -2484,9 +2352,6 @@ If the specified schedulingGroup doesn't exist, this method returns 404 Not foun
 Replace an existing shift.
 If the specified shift doesn't exist, this method returns 404 Not found.
 The duration of a shift can't be less than 1 minute or longer than 24 hours.
-
-### [Update-MgBetaTeamScheduleShiftRoleDefinition](Update-MgBetaTeamScheduleShiftRoleDefinition.md)
-Update the navigation property shiftsRoleDefinitions in teams
 
 ### [Update-MgBetaTeamScheduleSwapShiftChangeRequest](Update-MgBetaTeamScheduleSwapShiftChangeRequest.md)
 Update the navigation property swapShiftsChangeRequests in teams
@@ -2533,7 +2398,7 @@ You can update all the properties of chatMessage in delegated permissions scenar
 The policyViolation property is the only property that can be updated in application permissions scenarios.
 Updating works only for chats where conversation members are Microsoft Teams users.
 If one of the members is using Skype, the operation fails.
-This method doesn't support federation.
+This method does not support federation.
 Only the user in the tenant who sent the message can perform data loss prevention (DLP) updates on the specified chat message.
 
 ### [Update-MgBetaTeamworkDeletedTeamChannelMessageHostedContent](Update-MgBetaTeamworkDeletedTeamChannelMessageHostedContent.md)
@@ -2614,7 +2479,7 @@ Update the navigation property pinnedMessages in users
 
 ### [Update-MgBetaUserChatTab](Update-MgBetaUserChatTab.md)
 Update the properties of the specified tab in a chat.
-\nThis API can be used to configure the content of the tab.
+\nThis can be used to configure the content of the tab.
 
 ### [Update-MgBetaUserTeamwork](Update-MgBetaUserTeamwork.md)
 Update the navigation property teamwork in users

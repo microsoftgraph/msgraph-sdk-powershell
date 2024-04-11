@@ -8,9 +8,7 @@ schema: 2.0.0
 # New-MgEducationClassModule
 
 ## SYNOPSIS
-Create a new module in a class.
-Only teachers in a class can create a module.
-Modules start in the draft state, which means that students can't see the modules until publication.
+Create new navigation property to modules for education
 
 ## SYNTAX
 
@@ -19,20 +17,20 @@ Modules start in the draft state, which means that students can't see the module
 New-MgEducationClassModule -EducationClassId <String> [-AdditionalProperties <Hashtable>]
  [-CreatedBy <IMicrosoftGraphIdentitySet>] [-Description <String>] [-DisplayName <String>] [-Id <String>]
  [-IsPinned] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
- [-Resources <IMicrosoftGraphEducationModuleResource[]>] [-ResponseHeadersVariable <String>]
- [-Status <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Resources <IMicrosoftGraphEducationModuleResource[]>] [-Status <String>] [-Headers <IDictionary>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgEducationClassModule -EducationClassId <String> -BodyParameter <IMicrosoftGraphEducationModule>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgEducationClassModule -InputObject <IEducationIdentity> -BodyParameter <IMicrosoftGraphEducationModule>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -40,14 +38,12 @@ New-MgEducationClassModule -InputObject <IEducationIdentity> -BodyParameter <IMi
 New-MgEducationClassModule -InputObject <IEducationIdentity> [-AdditionalProperties <Hashtable>]
  [-CreatedBy <IMicrosoftGraphIdentitySet>] [-Description <String>] [-DisplayName <String>] [-Id <String>]
  [-IsPinned] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
- [-Resources <IMicrosoftGraphEducationModuleResource[]>] [-ResponseHeadersVariable <String>]
- [-Status <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Resources <IMicrosoftGraphEducationModuleResource[]>] [-Status <String>] [-Headers <IDictionary>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Create a new module in a class.
-Only teachers in a class can create a module.
-Modules start in the draft state, which means that students can't see the modules until publication.
+Create new navigation property to modules for education
 
 ## EXAMPLES
 
@@ -115,7 +111,7 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-Description of the module.
+.
 
 ```yaml
 Type: System.String
@@ -130,7 +126,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-Name of the module.
+.
 
 ```yaml
 Type: System.String
@@ -207,7 +203,7 @@ Accept wildcard characters: False
 ```
 
 ### -IsPinned
-Indicates whether the module is pinned or not.
+.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -238,30 +234,13 @@ Accept wildcard characters: False
 ```
 
 ### -Resources
-Learning objects that are associated with this module.
-Only teachers can modify this list.
-Nullable.
+.
 To construct, see NOTES section for RESOURCES properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationModuleResource[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -351,11 +330,11 @@ To create the parameters described below, construct a hash table containing the 
       - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
-  - `[Description <String>]`: Description of the module.
-  - `[DisplayName <String>]`: Name of the module.
-  - `[IsPinned <Boolean?>]`: Indicates whether the module is pinned or not.
+  - `[Description <String>]`: 
+  - `[DisplayName <String>]`: 
+  - `[IsPinned <Boolean?>]`: 
   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-  - `[Resources <IMicrosoftGraphEducationModuleResource[]>]`: Learning objects that are associated with this module. Only teachers can modify this list. Nullable.
+  - `[Resources <IMicrosoftGraphEducationModuleResource[]>]`: 
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Resource <IMicrosoftGraphEducationResource>]`: educationResource
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -397,7 +376,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[Device <IMicrosoftGraphIdentity>]`: identity
   - `[User <IMicrosoftGraphIdentity>]`: identity
 
-`RESOURCES <IMicrosoftGraphEducationModuleResource[]>`: Learning objects that are associated with this module. Only teachers can modify this list. Nullable.
+`RESOURCES <IMicrosoftGraphEducationModuleResource[]>`: .
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Resource <IMicrosoftGraphEducationResource>]`: educationResource
     - `[(Any) <Object>]`: This indicates any property can be added to this object.

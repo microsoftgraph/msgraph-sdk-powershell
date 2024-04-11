@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgBetaEducationClassAssignmentSettingGradingScheme
 
 ## SYNOPSIS
-Create a new educationGradingScheme object.
+Create new navigation property to gradingSchemes for education
 
 ## SYNTAX
 
@@ -43,7 +43,7 @@ New-MgBetaEducationClassAssignmentSettingGradingScheme -InputObject <IEducationI
 ```
 
 ## DESCRIPTION
-Create a new educationGradingScheme object.
+Create new navigation property to gradingSchemes for education
 
 ## EXAMPLES
 
@@ -95,7 +95,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-The name of the grading scheme.
+.
 
 ```yaml
 Type: System.String
@@ -125,7 +125,7 @@ Accept wildcard characters: False
 ```
 
 ### -Grades
-The grades that make up the scheme.
+.
 To construct, see NOTES section for GRADES properties and create a hash table.
 
 ```yaml
@@ -156,8 +156,7 @@ Accept wildcard characters: False
 ```
 
 ### -HidePointsDuringGrading
-The display setting for the UI.
-Indicates whether teachers can grade with points in addition to letter grades.
+.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -276,17 +275,17 @@ To create the parameters described below, construct a hash table containing the 
 `BODYPARAMETER <IMicrosoftGraphEducationGradingScheme>`: educationGradingScheme
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[DisplayName <String>]`: The name of the grading scheme.
-  - `[Grades <IMicrosoftGraphEducationGradingSchemeGrade[]>]`: The grades that make up the scheme.
-    - `[DefaultPercentage <Single?>]`: The midpoint of the grade range.
-    - `[DisplayName <String>]`: The name of the grading scheme.
-    - `[MinPercentage <Single?>]`: The minimum percentage of the total points needed to achieve this grade.
-  - `[HidePointsDuringGrading <Boolean?>]`: The display setting for the UI. Indicates whether teachers can grade with points in addition to letter grades.
+  - `[DisplayName <String>]`: 
+  - `[Grades <IMicrosoftGraphEducationGradingSchemeGrade[]>]`: 
+    - `[DefaultPercentage <Single?>]`: 
+    - `[DisplayName <String>]`: 
+    - `[MinPercentage <Single?>]`: 
+  - `[HidePointsDuringGrading <Boolean?>]`: 
 
-`GRADES <IMicrosoftGraphEducationGradingSchemeGrade[]>`: The grades that make up the scheme.
-  - `[DefaultPercentage <Single?>]`: The midpoint of the grade range.
-  - `[DisplayName <String>]`: The name of the grading scheme.
-  - `[MinPercentage <Single?>]`: The minimum percentage of the total points needed to achieve this grade.
+`GRADES <IMicrosoftGraphEducationGradingSchemeGrade[]>`: .
+  - `[DefaultPercentage <Single?>]`: 
+  - `[DisplayName <String>]`: 
+  - `[MinPercentage <Single?>]`: 
 
 `INPUTOBJECT <IEducationIdentity>`: Identity Parameter
   - `[EducationAssignmentId <String>]`: The unique identifier of educationAssignment

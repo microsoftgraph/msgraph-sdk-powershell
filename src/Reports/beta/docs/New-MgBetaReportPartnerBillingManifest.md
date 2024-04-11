@@ -17,14 +17,14 @@ Create new navigation property to manifests for reports
 New-MgBetaReportPartnerBillingManifest [-AdditionalProperties <Hashtable>] [-BlobCount <Int32>]
  [-Blobs <IMicrosoftGraphPartnersBillingBlob[]>] [-CreatedDateTime <DateTime>] [-DataFormat <String>]
  [-ETag <String>] [-Id <String>] [-PartitionType <String>] [-PartnerTenantId <String>]
- [-ResponseHeadersVariable <String>] [-RootDirectory <String>] [-SasToken <String>] [-SchemaVersion <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-RootDirectory <String>] [-SasToken <String>] [-SchemaVersion <String>] [-Headers <IDictionary>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaReportPartnerBillingManifest -BodyParameter <IMicrosoftGraphPartnersBillingManifest>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -216,21 +216,6 @@ The Microsoft Entra tenant ID of the partner.
 Type: System.String
 Parameter Sets: CreateExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named

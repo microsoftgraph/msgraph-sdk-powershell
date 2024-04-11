@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.CloudCommunications
-Module Guid: dc043e8c-559a-4be0-8d1d-56cb7ab8e451
+Module Guid: aa037956-7e4c-4da1-a250-cd8bf4c486f6
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.cloudcommunications
 Help Version: 1.0.0.0
 Locale: en-US
@@ -117,14 +117,8 @@ Get attendeeReport for the navigation property onlineMeetings from communication
 ### [Get-MgBetaCommunicationOnlineMeetingBroadcastRecording](Get-MgBetaCommunicationOnlineMeetingBroadcastRecording.md)
 Get broadcastRecording for the navigation property onlineMeetings from communications
 
-### [Get-MgBetaCommunicationOnlineMeetingByJoinWebUrl](Get-MgBetaCommunicationOnlineMeetingByJoinWebUrl.md)
-Get onlineMeetings from communications
-
 ### [Get-MgBetaCommunicationOnlineMeetingCount](Get-MgBetaCommunicationOnlineMeetingCount.md)
 Get the number of the resource
-
-### [Get-MgBetaCommunicationOnlineMeetingJoinWebUrlVirtualAppointmentJoinWebUrl](Get-MgBetaCommunicationOnlineMeetingJoinWebUrlVirtualAppointmentJoinWebUrl.md)
-Invoke function getVirtualAppointmentJoinWebUrl
 
 ### [Get-MgBetaCommunicationOnlineMeetingRecording](Get-MgBetaCommunicationOnlineMeetingRecording.md)
 Get recording for the navigation property onlineMeetings from communications
@@ -140,7 +134,7 @@ Get the number of the resource
 Invoke function delta
 
 ### [Get-MgBetaCommunicationOnlineMeetingRegistration](Get-MgBetaCommunicationOnlineMeetingRegistration.md)
-Get the externalMeetingRegistration details associated with an onlineMeeting.
+Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
 
 ### [Get-MgBetaCommunicationOnlineMeetingRegistrationCustomQuestion](Get-MgBetaCommunicationOnlineMeetingRegistrationCustomQuestion.md)
 Get a custom registration question associated with a meetingRegistration object on behalf of the organizer.
@@ -212,9 +206,6 @@ Get attendeeReport for the navigation property onlineMeetings from users
 ### [Get-MgBetaUserOnlineMeetingBroadcastRecording](Get-MgBetaUserOnlineMeetingBroadcastRecording.md)
 Get broadcastRecording for the navigation property onlineMeetings from users
 
-### [Get-MgBetaUserOnlineMeetingByJoinWebUrl](Get-MgBetaUserOnlineMeetingByJoinWebUrl.md)
-Information about a meeting, including the URL used to join a meeting, the attendees list, and the description.
-
 ### [Get-MgBetaUserOnlineMeetingCount](Get-MgBetaUserOnlineMeetingCount.md)
 Get the number of the resource
 
@@ -229,7 +220,7 @@ Read-only.
 Get the number of the resource
 
 ### [Get-MgBetaUserOnlineMeetingRegistration](Get-MgBetaUserOnlineMeetingRegistration.md)
-Get the externalMeetingRegistration details associated with an onlineMeeting.
+Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
 
 ### [Get-MgBetaUserOnlineMeetingRegistrationCustomQuestion](Get-MgBetaUserOnlineMeetingRegistrationCustomQuestion.md)
 Get a custom registration question associated with a meetingRegistration object on behalf of the organizer.
@@ -281,11 +272,11 @@ For more information about how to handle operations, see commsOperation.
 
 ### [Invoke-MgBetaKeepCommunicationCallAlive](Invoke-MgBetaKeepCommunicationCallAlive.md)
 Make a request to this API every 15 to 45 minutes to ensure that an ongoing call remains active.
-A call that doesn't receive this request within 45 minutes is considered inactive and ends.
+A call that does not receive this request within 45 minutes is considered inactive and will subsequently end.
 At least one successful request must be made within 45 minutes of the previous request, or the start of the call.
 We recommend that you send a request in shorter time intervals (every 15 minutes).
 Make sure that these requests are successful to prevent the call from timing out and ending.
-Attempting to send a request to a call that ended results in a 404 Not Found error.
+Attempting to send a request to a call that has already ended will result in a 404 Not-Found error.
 The resources related to the call should be cleaned up on the application side.
 
 ### [Invoke-MgBetaLogCommunicationCallTeleconferenceDeviceQuality](Invoke-MgBetaLogCommunicationCallTeleconferenceDeviceQuality.md)
@@ -302,8 +293,8 @@ Mute all participants in the call.
 
 ### [Invoke-MgBetaMuteCommunicationCall](Invoke-MgBetaMuteCommunicationCall.md)
 Allows the application to mute itself.
-This is a server mute, meaning that the server drops all audio packets for this participant, even if the participant continues to stream audio.
-For more information about how to handle mute operations, see muteParticipantOperation.
+This is a server mute, meaning that the server will drop all audio packets for this participant, even if the participant continues to stream audio.
+For more details about how to handle mute operations, see muteParticipantOperation
 
 ### [Invoke-MgBetaMuteCommunicationCallParticipant](Invoke-MgBetaMuteCommunicationCallParticipant.md)
 Mute a specific participant in the call.
@@ -319,14 +310,14 @@ Invoke action record
 
 ### [Invoke-MgBetaRecordCommunicationCallResponse](Invoke-MgBetaRecordCommunicationCallResponse.md)
 Record a short audio response from the caller.
-A bot can use this API to capture a voice response from a caller after they're prompted for a response.
-For more information about how to handle operations, see commsOperation.
-This action isn't intended to record the entire call.
-The maximum length of recording is 2 minutes.The Cloud Communications Platform doesn't save the recording permanently and discards it shortly after the call ends.
-The bot must download the recording promptly after the recording operation finishes by using the recordingLocation value provided in the completed notification.
+A bot can use this to capture a voice response from a caller after they are prompted for a response.
+For more information about how to handle operations, see commsOperation This action isn't intended to record the entire call.
+The maximum length of recording is 2 minutes.
+The recording isn't saved permanently by the Cloud Communications Platform and is discarded shortly after the call ends.
+The bot must download the recording promptly after the recording operation finishes by using the recordingLocation value that's given in the completed notification.
 
 ### [Invoke-MgBetaRedirectCommunicationCall](Invoke-MgBetaRedirectCommunicationCall.md)
-Redirect an incoming call that wasn't answered or rejected yet.
+Redirect an incoming call that hasn't been answered or rejected yet.
 The terms 'redirecting' and 'forwarding' a call are used interchangeably.
 The bot is expected to redirect the call before the call times out.
 The current timeout value is 15 seconds.
@@ -334,15 +325,14 @@ The current timeout value is 15 seconds.
 ### [Invoke-MgBetaRejectCommunicationCall](Invoke-MgBetaRejectCommunicationCall.md)
 Enable a bot to reject an incoming call.
 The incoming call request can be an invite from a participant in a group call or a peer-to-peer call.
-If an invite to a group call is received, the notification contains the chatInfo and meetingInfo parameters.
+If an invite to a group call is received, the notification will contain the chatInfo and meetingInfo parameters.
 The bot is expected to answer or reject the call before the call times out.
 The current timeout value is 15 seconds.
-This API doesn't end existing calls that have already been answered.
+This API does not end existing calls that have already been answered.
 Use delete call to end a call.
 
 ### [Invoke-MgBetaSubscribeCommunicationCallToTone](Invoke-MgBetaSubscribeCommunicationCallToTone.md)
-Subscribe to DTMF (dual-tone multi-frequency signaling) to allow you to be notified when the user presses keys on a dialpad.
-This action is supported only for calls that are initiated with serviceHostedMediaConfig.
+Subscribe to DTMF (dual-tone multi-frequency signaling) to allow you to be notified when the user presses keys on a 'Dialpad'.
 
 ### [Invoke-MgBetaUnmuteCommunicationCall](Invoke-MgBetaUnmuteCommunicationCall.md)
 Allow the application to unmute itself.
@@ -356,7 +346,7 @@ This is opposed to transfering the call directly.
 
 ### [New-MgBetaCommunicationCall](New-MgBetaCommunicationCall.md)
 Create call enables your bot to create a new outgoing peer-to-peer or group call, or join an existing meeting.
-You need to register the calling bot and go through the list of permissions needed.
+You will need to register the calling bot and go through the list of permissions needed.
 
 ### [New-MgBetaCommunicationCallAudioRoutingGroup](New-MgBetaCommunicationCallAudioRoutingGroup.md)
 Create a new audioRoutingGroup.
@@ -459,14 +449,11 @@ Delete navigation property attendanceReports for communications
 ### [Remove-MgBetaCommunicationOnlineMeetingAttendanceReportAttendanceRecord](Remove-MgBetaCommunicationOnlineMeetingAttendanceReportAttendanceRecord.md)
 Delete navigation property attendanceRecords for communications
 
-### [Remove-MgBetaCommunicationOnlineMeetingByJoinWebUrl](Remove-MgBetaCommunicationOnlineMeetingByJoinWebUrl.md)
-Delete navigation property onlineMeetings for communications
-
 ### [Remove-MgBetaCommunicationOnlineMeetingRecording](Remove-MgBetaCommunicationOnlineMeetingRecording.md)
 Delete navigation property recordings for communications
 
 ### [Remove-MgBetaCommunicationOnlineMeetingRegistration](Remove-MgBetaCommunicationOnlineMeetingRegistration.md)
-Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
+Disable and delete the externalMeetingRegistration of an onlineMeeting.
 
 ### [Remove-MgBetaCommunicationOnlineMeetingRegistrationCustomQuestion](Remove-MgBetaCommunicationOnlineMeetingRegistrationCustomQuestion.md)
 Delete a custom registration question from a meetingRegistration object on behalf of the organizer.
@@ -489,14 +476,11 @@ Delete navigation property attendanceReports for users
 ### [Remove-MgBetaUserOnlineMeetingAttendanceReportAttendanceRecord](Remove-MgBetaUserOnlineMeetingAttendanceReportAttendanceRecord.md)
 Delete navigation property attendanceRecords for users
 
-### [Remove-MgBetaUserOnlineMeetingByJoinWebUrl](Remove-MgBetaUserOnlineMeetingByJoinWebUrl.md)
-Delete an onlineMeeting object.
-
 ### [Remove-MgBetaUserOnlineMeetingRecording](Remove-MgBetaUserOnlineMeetingRecording.md)
 Delete navigation property recordings for users
 
 ### [Remove-MgBetaUserOnlineMeetingRegistration](Remove-MgBetaUserOnlineMeetingRegistration.md)
-Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
+Disable and delete the externalMeetingRegistration of an onlineMeeting.
 
 ### [Remove-MgBetaUserOnlineMeetingRegistrationCustomQuestion](Remove-MgBetaUserOnlineMeetingRegistrationCustomQuestion.md)
 Delete a custom registration question from a meetingRegistration object on behalf of the organizer.
@@ -516,23 +500,11 @@ Allow applications to share screen content with the participants of a group call
 ### [Send-MgBetaCommunicationCallDtmfTone](Send-MgBetaCommunicationCallDtmfTone.md)
 Invoke action sendDtmfTones
 
-### [Send-MgBetaCommunicationOnlineMeetingJoinWebUrlVirtualAppointmentReminderSm](Send-MgBetaCommunicationOnlineMeetingJoinWebUrlVirtualAppointmentReminderSm.md)
-Send an SMS reminder to external attendees for a Teams Virtual Appointment.
-This feature requires Teams Premium and attendees must have a valid United States phone number to receive SMS notifications.
-
-### [Send-MgBetaCommunicationOnlineMeetingJoinWebUrlVirtualAppointmentSm](Send-MgBetaCommunicationOnlineMeetingJoinWebUrlVirtualAppointmentSm.md)
-Send an SMS notification to external attendees when a Teams Virtual Appointment is confirmed, rescheduled, or canceled.
-This feature requires Teams Premium.
-Attendees must have a valid United States phone number to receive these SMS notifications.
-
 ### [Send-MgBetaCommunicationOnlineMeetingVirtualAppointmentReminderSm](Send-MgBetaCommunicationOnlineMeetingVirtualAppointmentReminderSm.md)
-Send an SMS reminder to external attendees for a Teams Virtual Appointment.
-This feature requires Teams Premium and attendees must have a valid United States phone number to receive SMS notifications.
+Invoke action sendVirtualAppointmentReminderSms
 
 ### [Send-MgBetaCommunicationOnlineMeetingVirtualAppointmentSm](Send-MgBetaCommunicationOnlineMeetingVirtualAppointmentSm.md)
-Send an SMS notification to external attendees when a Teams Virtual Appointment is confirmed, rescheduled, or canceled.
-This feature requires Teams Premium.
-Attendees must have a valid United States phone number to receive these SMS notifications.
+Invoke action sendVirtualAppointmentSms
 
 ### [Set-MgBetaCommunicationOnlineMeetingAlternativeRecording](Set-MgBetaCommunicationOnlineMeetingAlternativeRecording.md)
 Update alternativeRecording for the navigation property onlineMeetings in communications
@@ -644,9 +616,6 @@ Update the navigation property attendanceReports in communications
 ### [Update-MgBetaCommunicationOnlineMeetingAttendanceReportAttendanceRecord](Update-MgBetaCommunicationOnlineMeetingAttendanceReportAttendanceRecord.md)
 Update the navigation property attendanceRecords in communications
 
-### [Update-MgBetaCommunicationOnlineMeetingByJoinWebUrl](Update-MgBetaCommunicationOnlineMeetingByJoinWebUrl.md)
-Update the navigation property onlineMeetings in communications
-
 ### [Update-MgBetaCommunicationOnlineMeetingRecording](Update-MgBetaCommunicationOnlineMeetingRecording.md)
 Update the navigation property recordings in communications
 
@@ -674,10 +643,6 @@ Update the navigation property attendanceReports in users
 
 ### [Update-MgBetaUserOnlineMeetingAttendanceReportAttendanceRecord](Update-MgBetaUserOnlineMeetingAttendanceReportAttendanceRecord.md)
 Update the navigation property attendanceRecords in users
-
-### [Update-MgBetaUserOnlineMeetingByJoinWebUrl](Update-MgBetaUserOnlineMeetingByJoinWebUrl.md)
-Update the properties of the specified onlineMeeting object.
-Please see Request body section for the list of properties that support updating.
 
 ### [Update-MgBetaUserOnlineMeetingRecording](Update-MgBetaUserOnlineMeetingRecording.md)
 Update the navigation property recordings in users

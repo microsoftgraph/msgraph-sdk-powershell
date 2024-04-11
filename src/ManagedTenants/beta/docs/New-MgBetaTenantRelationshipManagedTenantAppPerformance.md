@@ -16,17 +16,15 @@ Create new navigation property to appPerformances for tenantRelationships
 ```
 New-MgBetaTenantRelationshipManagedTenantAppPerformance [-AdditionalProperties <Hashtable>]
  [-AppFriendlyName <String>] [-AppName <String>] [-AppPublisher <String>] [-Id <String>]
- [-LastUpdatedDateTime <DateTime>] [-MeanTimeToFailureInMinutes <Int32>] [-ResponseHeadersVariable <String>]
- [-TenantDisplayName <String>] [-TenantId <String>] [-TotalActiveDeviceCount <Int32>]
- [-TotalAppCrashCount <Int32>] [-TotalAppFreezeCount <Int32>] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-LastUpdatedDateTime <DateTime>] [-MeanTimeToFailureInMinutes <Int32>] [-TenantDisplayName <String>]
+ [-TenantId <String>] [-TotalActiveDeviceCount <Int32>] [-TotalAppCrashCount <Int32>]
+ [-TotalAppFreezeCount <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaTenantRelationshipManagedTenantAppPerformance
- -BodyParameter <IMicrosoftGraphManagedTenantsAppPerformance> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphManagedTenantsAppPerformance> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -126,21 +124,6 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -179,21 +162,6 @@ Accept wildcard characters: False
 Type: System.Int32
 Parameter Sets: CreateExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -314,8 +282,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphManagedTenantsAppPerformance
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

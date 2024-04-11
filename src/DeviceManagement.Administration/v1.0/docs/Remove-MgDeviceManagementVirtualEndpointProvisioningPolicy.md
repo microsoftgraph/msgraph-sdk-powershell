@@ -8,8 +8,7 @@ schema: 2.0.0
 # Remove-MgDeviceManagementVirtualEndpointProvisioningPolicy
 
 ## SYNOPSIS
-Delete a cloudPcProvisioningPolicy object.
-You can’t delete a policy that’s in use.
+Delete navigation property provisioningPolicies for deviceManagement
 
 ## SYNTAX
 
@@ -29,8 +28,7 @@ Remove-MgDeviceManagementVirtualEndpointProvisioningPolicy
 ```
 
 ## DESCRIPTION
-Delete a cloudPcProvisioningPolicy object.
-You can’t delete a policy that’s in use.
+Delete navigation property provisioningPolicies for deviceManagement
 
 ## EXAMPLES
 
@@ -197,10 +195,6 @@ To create the parameters described below, construct a hash table containing the 
 `INPUTOBJECT <IDeviceManagementAdministrationIdentity>`: Identity Parameter
   - `[AuditEventId <String>]`: The unique identifier of auditEvent
   - `[CloudPcAuditEventId <String>]`: The unique identifier of cloudPcAuditEvent
-  - `[CloudPcDeviceImageId <String>]`: The unique identifier of cloudPcDeviceImage
-  - `[CloudPcGalleryImageId <String>]`: The unique identifier of cloudPcGalleryImage
-  - `[CloudPcId <String>]`: The unique identifier of cloudPC
-  - `[CloudPcOnPremisesConnectionId <String>]`: The unique identifier of cloudPcOnPremisesConnection
   - `[CloudPcProvisioningPolicyAssignmentId <String>]`: The unique identifier of cloudPcProvisioningPolicyAssignment
   - `[CloudPcProvisioningPolicyId <String>]`: The unique identifier of cloudPcProvisioningPolicy
   - `[CloudPcUserSettingAssignmentId <String>]`: The unique identifier of cloudPcUserSettingAssignment

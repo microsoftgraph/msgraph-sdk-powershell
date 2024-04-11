@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Sites
-Module Guid: d6d83579-634c-4c4c-9fcf-4d37b02e8378
+Module Guid: 813cb519-6641-42bc-8379-b311c67d9a16
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.sites
 Help Version: 1.0.0.0
 Locale: en-US
@@ -101,7 +101,7 @@ The list of SharePoint sites in this group.
 Access the default site with /sites/root.
 
 ### [Get-MgGroupSiteAnalytic](Get-MgGroupSiteAnalytic.md)
-Analytics about the view activities that took place on this site.
+Analytics about the view activities that took place in this site.
 
 ### [Get-MgGroupSiteAnalyticItemActivityStat](Get-MgGroupSiteAnalyticItemActivityStat.md)
 Get itemActivityStats from groups
@@ -181,12 +181,11 @@ Read-only.
 
 ### [Get-MgGroupSiteCreatedByUserMailboxSetting](Get-MgGroupSiteCreatedByUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgGroupSiteCreatedByUserServiceProvisioningError](Get-MgGroupSiteCreatedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgGroupSiteCreatedByUserServiceProvisioningErrorCount](Get-MgGroupSiteCreatedByUserServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -206,55 +205,6 @@ Get externalColumns from groups
 ### [Get-MgGroupSiteExternalColumnCount](Get-MgGroupSiteExternalColumnCount.md)
 Get the number of the resource
 
-### [Get-MgGroupSiteGetByPath](Get-MgGroupSiteGetByPath.md)
-Get the collection of [lists][] for a [site][].
-Lists with the [system][] facet are hidden by default.\nTo list them, include system in your $select statement.
-
-### [Get-MgGroupSiteGetByPathAnalytic](Get-MgGroupSiteGetByPathAnalytic.md)
-Analytics about the view activities that took place on this site.
-
-### [Get-MgGroupSiteGetByPathColumn](Get-MgGroupSiteGetByPathColumn.md)
-Get the collection of columns represented as [columnDefinition][columnDefinition] resources in a [site][site].
-
-### [Get-MgGroupSiteGetByPathContentType](Get-MgGroupSiteGetByPathContentType.md)
-Get the collection of [contentType][contentType] resources in a [site][].
-
-### [Get-MgGroupSiteGetByPathDrive](Get-MgGroupSiteGetByPathDrive.md)
-The default drive (document library) for this site.
-
-### [Get-MgGroupSiteGetByPathExternalColumn](Get-MgGroupSiteGetByPathExternalColumn.md)
-Get externalColumns from groups
-
-### [Get-MgGroupSiteGetByPathItem](Get-MgGroupSiteGetByPathItem.md)
-Used to address any item contained in this site.
-This collection can't be enumerated.
-
-### [Get-MgGroupSiteGetByPathOnenote](Get-MgGroupSiteGetByPathOnenote.md)
-Calls the OneNote service for notebook related operations.
-
-### [Get-MgGroupSiteGetByPathOperation](Get-MgGroupSiteGetByPathOperation.md)
-Get a list of rich long-running operations associated with a site.
-
-### [Get-MgGroupSiteGetByPathPage](Get-MgGroupSiteGetByPathPage.md)
-Get pages from groups
-
-### [Get-MgGroupSiteGetByPathPermission](Get-MgGroupSiteGetByPathPermission.md)
-Get the permission resources from the permissions navigation property on a site.
-
-### [Get-MgGroupSiteGetByPathSite](Get-MgGroupSiteGetByPathSite.md)
-Get a collection of subsites defined for a [site][].
-
-### [Get-MgGroupSiteGetByPathTermStore](Get-MgGroupSiteGetByPathTermStore.md)
-Read the properties and relationships of a store object.
-
-### [Get-MgGroupSiteGetGraphBPrePathCreatedByUser](Get-MgGroupSiteGetGraphBPrePathCreatedByUser.md)
-Identity of the user who created the item.
-Read-only.
-
-### [Get-MgGroupSiteGetGraphBPrePathLastModifiedByUser](Get-MgGroupSiteGetGraphBPrePathLastModifiedByUser.md)
-Identity of the user who last modified the item.
-Read-only.
-
 ### [Get-MgGroupSiteItem](Get-MgGroupSiteItem.md)
 Used to address any item contained in this site.
 This collection can't be enumerated.
@@ -268,12 +218,11 @@ Read-only.
 
 ### [Get-MgGroupSiteItemLastModifiedByUserMailboxSetting](Get-MgGroupSiteItemLastModifiedByUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgGroupSiteItemLastModifiedByUserServiceProvisioningError](Get-MgGroupSiteItemLastModifiedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgGroupSiteItemLastModifiedByUserServiceProvisioningErrorCount](Get-MgGroupSiteItemLastModifiedByUserServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -284,12 +233,11 @@ Read-only.
 
 ### [Get-MgGroupSiteLastModifiedByUserMailboxSetting](Get-MgGroupSiteLastModifiedByUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgGroupSiteLastModifiedByUserServiceProvisioningError](Get-MgGroupSiteLastModifiedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgGroupSiteLastModifiedByUserServiceProvisioningErrorCount](Get-MgGroupSiteLastModifiedByUserServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -342,12 +290,11 @@ Read-only.
 
 ### [Get-MgGroupSiteListCreatedByUserMailboxSetting](Get-MgGroupSiteListCreatedByUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgGroupSiteListCreatedByUserServiceProvisioningError](Get-MgGroupSiteListCreatedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgGroupSiteListCreatedByUserServiceProvisioningErrorCount](Get-MgGroupSiteListCreatedByUserServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -368,12 +315,11 @@ Read-only.
 
 ### [Get-MgGroupSiteListItemCreatedByUserMailboxSetting](Get-MgGroupSiteListItemCreatedByUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgGroupSiteListItemCreatedByUserServiceProvisioningError](Get-MgGroupSiteListItemCreatedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgGroupSiteListItemCreatedByUserServiceProvisioningErrorCount](Get-MgGroupSiteListItemCreatedByUserServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -638,118 +584,6 @@ Read-only.
 Get the status of a rich long-running operation on a site or a list.
 
 ### [Get-MgGroupSiteOperationCount](Get-MgGroupSiteOperationCount.md)
-Get the number of the resource
-
-### [Get-MgGroupSitePage](Get-MgGroupSitePage.md)
-Get pages from groups
-
-### [Get-MgGroupSitePageAsSitePage](Get-MgGroupSitePageAsSitePage.md)
-Get the item of type microsoft.graph.baseSitePage as microsoft.graph.sitePage
-
-### [Get-MgGroupSitePageAsSitePageCanvaLayout](Get-MgGroupSitePageAsSitePageCanvaLayout.md)
-Get canvasLayout from groups
-
-### [Get-MgGroupSitePageAsSitePageCanvaLayoutHorizontalSection](Get-MgGroupSitePageAsSitePageCanvaLayoutHorizontalSection.md)
-Get horizontalSections from groups
-
-### [Get-MgGroupSitePageAsSitePageCanvaLayoutHorizontalSectionColumn](Get-MgGroupSitePageAsSitePageCanvaLayoutHorizontalSectionColumn.md)
-Get columns from groups
-
-### [Get-MgGroupSitePageAsSitePageCanvaLayoutHorizontalSectionColumnCount](Get-MgGroupSitePageAsSitePageCanvaLayoutHorizontalSectionColumnCount.md)
-Get the number of the resource
-
-### [Get-MgGroupSitePageAsSitePageCanvaLayoutHorizontalSectionColumnWebpart](Get-MgGroupSitePageAsSitePageCanvaLayoutHorizontalSectionColumnWebpart.md)
-Get webparts from groups
-
-### [Get-MgGroupSitePageAsSitePageCanvaLayoutHorizontalSectionColumnWebpartCount](Get-MgGroupSitePageAsSitePageCanvaLayoutHorizontalSectionColumnWebpartCount.md)
-Get the number of the resource
-
-### [Get-MgGroupSitePageAsSitePageCanvaLayoutHorizontalSectionCount](Get-MgGroupSitePageAsSitePageCanvaLayoutHorizontalSectionCount.md)
-Get the number of the resource
-
-### [Get-MgGroupSitePageAsSitePageCanvaLayoutVerticalSection](Get-MgGroupSitePageAsSitePageCanvaLayoutVerticalSection.md)
-Get verticalSection from groups
-
-### [Get-MgGroupSitePageAsSitePageCanvaLayoutVerticalSectionWebpart](Get-MgGroupSitePageAsSitePageCanvaLayoutVerticalSectionWebpart.md)
-Get webparts from groups
-
-### [Get-MgGroupSitePageAsSitePageCanvaLayoutVerticalSectionWebpartCount](Get-MgGroupSitePageAsSitePageCanvaLayoutVerticalSectionWebpartCount.md)
-Get the number of the resource
-
-### [Get-MgGroupSitePageAsSitePageCreatedByUser](Get-MgGroupSitePageAsSitePageCreatedByUser.md)
-Identity of the user who created the item.
-Read-only.
-
-### [Get-MgGroupSitePageAsSitePageCreatedByUserMailboxSetting](Get-MgGroupSitePageAsSitePageCreatedByUserMailboxSetting.md)
-Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
-Returned only on $select.
-
-### [Get-MgGroupSitePageAsSitePageCreatedByUserServiceProvisioningError](Get-MgGroupSitePageAsSitePageCreatedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
-
-### [Get-MgGroupSitePageAsSitePageCreatedByUserServiceProvisioningErrorCount](Get-MgGroupSitePageAsSitePageCreatedByUserServiceProvisioningErrorCount.md)
-Get the number of the resource
-
-### [Get-MgGroupSitePageAsSitePageLastModifiedByUser](Get-MgGroupSitePageAsSitePageLastModifiedByUser.md)
-Identity of the user who last modified the item.
-Read-only.
-
-### [Get-MgGroupSitePageAsSitePageLastModifiedByUserMailboxSetting](Get-MgGroupSitePageAsSitePageLastModifiedByUserMailboxSetting.md)
-Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
-Returned only on $select.
-
-### [Get-MgGroupSitePageAsSitePageLastModifiedByUserServiceProvisioningError](Get-MgGroupSitePageAsSitePageLastModifiedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
-
-### [Get-MgGroupSitePageAsSitePageLastModifiedByUserServiceProvisioningErrorCount](Get-MgGroupSitePageAsSitePageLastModifiedByUserServiceProvisioningErrorCount.md)
-Get the number of the resource
-
-### [Get-MgGroupSitePageAsSitePageWebPart](Get-MgGroupSitePageAsSitePageWebPart.md)
-Get webParts from groups
-
-### [Get-MgGroupSitePageAsSitePageWebPartCount](Get-MgGroupSitePageAsSitePageWebPartCount.md)
-Get the number of the resource
-
-### [Get-MgGroupSitePageCount](Get-MgGroupSitePageCount.md)
-Get the number of the resource
-
-### [Get-MgGroupSitePageCountAsSitePage](Get-MgGroupSitePageCountAsSitePage.md)
-Get the number of the resource
-
-### [Get-MgGroupSitePageCreatedByUser](Get-MgGroupSitePageCreatedByUser.md)
-Identity of the user who created the item.
-Read-only.
-
-### [Get-MgGroupSitePageCreatedByUserMailboxSetting](Get-MgGroupSitePageCreatedByUserMailboxSetting.md)
-Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
-Returned only on $select.
-
-### [Get-MgGroupSitePageCreatedByUserServiceProvisioningError](Get-MgGroupSitePageCreatedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
-
-### [Get-MgGroupSitePageCreatedByUserServiceProvisioningErrorCount](Get-MgGroupSitePageCreatedByUserServiceProvisioningErrorCount.md)
-Get the number of the resource
-
-### [Get-MgGroupSitePageLastModifiedByUser](Get-MgGroupSitePageLastModifiedByUser.md)
-Identity of the user who last modified the item.
-Read-only.
-
-### [Get-MgGroupSitePageLastModifiedByUserMailboxSetting](Get-MgGroupSitePageLastModifiedByUserMailboxSetting.md)
-Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
-Returned only on $select.
-
-### [Get-MgGroupSitePageLastModifiedByUserServiceProvisioningError](Get-MgGroupSitePageLastModifiedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
-
-### [Get-MgGroupSitePageLastModifiedByUserServiceProvisioningErrorCount](Get-MgGroupSitePageLastModifiedByUserServiceProvisioningErrorCount.md)
 Get the number of the resource
 
 ### [Get-MgGroupSitePermission](Get-MgGroupSitePermission.md)
@@ -1104,7 +938,7 @@ Retrieve properties and relationships for a [site][] resource.\nA site resource 
 Invoke function getActivitiesByInterval
 
 ### [Get-MgSiteAnalytic](Get-MgSiteAnalytic.md)
-Analytics about the view activities that took place on this site.
+Analytics about the view activities that took place in this site.
 
 ### [Get-MgSiteAnalyticItemActivityStat](Get-MgSiteAnalyticItemActivityStat.md)
 Get itemActivityStats from sites
@@ -1205,61 +1039,17 @@ Get externalColumns from sites
 ### [Get-MgSiteExternalColumnCount](Get-MgSiteExternalColumnCount.md)
 Get the number of the resource
 
-### [Get-MgSiteGetByPath](Get-MgSiteGetByPath.md)
-Get the collection of [lists][] for a [site][].
-Lists with the [system][] facet are hidden by default.\nTo list them, include system in your $select statement.
-
-### [Get-MgSiteGetByPathAnalytic](Get-MgSiteGetByPathAnalytic.md)
-Analytics about the view activities that took place on this site.
-
-### [Get-MgSiteGetByPathApplicableContentTypeForList](Get-MgSiteGetByPathApplicableContentTypeForList.md)
-Invoke function getApplicableContentTypesForList
-
-### [Get-MgSiteGetByPathColumn](Get-MgSiteGetByPathColumn.md)
-Get the collection of columns represented as [columnDefinition][columnDefinition] resources in a [site][site].
-
-### [Get-MgSiteGetByPathContentType](Get-MgSiteGetByPathContentType.md)
-Get the collection of [contentType][contentType] resources in a [site][].
-
-### [Get-MgSiteGetByPathDrive](Get-MgSiteGetByPathDrive.md)
-The default drive (document library) for this site.
-
-### [Get-MgSiteGetByPathExternalColumn](Get-MgSiteGetByPathExternalColumn.md)
-Get externalColumns from sites
-
-### [Get-MgSiteGetByPathOperation](Get-MgSiteGetByPathOperation.md)
-Get a list of rich long-running operations associated with a site.
-
-### [Get-MgSiteGetByPathPage](Get-MgSiteGetByPathPage.md)
-Get pages from sites
-
-### [Get-MgSiteGetByPathPermission](Get-MgSiteGetByPathPermission.md)
-Get the permission resources from the permissions navigation property on a site.
-
-### [Get-MgSiteGetByPathSite](Get-MgSiteGetByPathSite.md)
-Get a collection of subsites defined for a [site][].
-
-### [Get-MgSiteGetByPathTermStore](Get-MgSiteGetByPathTermStore.md)
-Read the properties and relationships of a store object.
-
-### [Get-MgSiteGetGraphBPrePathActivityByInterval](Get-MgSiteGetGraphBPrePathActivityByInterval.md)
-Invoke function getActivitiesByInterval
-
-### [Get-MgSiteGetGraphBPrePathByPath](Get-MgSiteGetGraphBPrePathByPath.md)
-Invoke function getByPath
-
 ### [Get-MgSiteItemLastModifiedByUser](Get-MgSiteItemLastModifiedByUser.md)
 Identity of the user who last modified the item.
 Read-only.
 
 ### [Get-MgSiteItemLastModifiedByUserMailboxSetting](Get-MgSiteItemLastModifiedByUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgSiteItemLastModifiedByUserServiceProvisioningError](Get-MgSiteItemLastModifiedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgSiteItemLastModifiedByUserServiceProvisioningErrorCount](Get-MgSiteItemLastModifiedByUserServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -1270,12 +1060,11 @@ Read-only.
 
 ### [Get-MgSiteLastModifiedByUserMailboxSetting](Get-MgSiteLastModifiedByUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgSiteLastModifiedByUserServiceProvisioningError](Get-MgSiteLastModifiedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgSiteLastModifiedByUserServiceProvisioningErrorCount](Get-MgSiteLastModifiedByUserServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -1331,12 +1120,11 @@ Read-only.
 
 ### [Get-MgSiteListCreatedByUserMailboxSetting](Get-MgSiteListCreatedByUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgSiteListCreatedByUserServiceProvisioningError](Get-MgSiteListCreatedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgSiteListCreatedByUserServiceProvisioningErrorCount](Get-MgSiteListCreatedByUserServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -1360,12 +1148,11 @@ Read-only.
 
 ### [Get-MgSiteListItemCreatedByUserMailboxSetting](Get-MgSiteListItemCreatedByUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgSiteListItemCreatedByUserServiceProvisioningError](Get-MgSiteListItemCreatedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgSiteListItemCreatedByUserServiceProvisioningErrorCount](Get-MgSiteListItemCreatedByUserServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -1418,127 +1205,6 @@ Get the status of a rich long-running operation on a site or a list.
 
 ### [Get-MgSiteOperationCount](Get-MgSiteOperationCount.md)
 Get the number of the resource
-
-### [Get-MgSitePage](Get-MgSitePage.md)
-Get pages from sites
-
-### [Get-MgSitePageAsSitePage](Get-MgSitePageAsSitePage.md)
-Get the item of type microsoft.graph.baseSitePage as microsoft.graph.sitePage
-
-### [Get-MgSitePageAsSitePageCanvaLayout](Get-MgSitePageAsSitePageCanvaLayout.md)
-Get canvasLayout from sites
-
-### [Get-MgSitePageAsSitePageCanvaLayoutHorizontalSection](Get-MgSitePageAsSitePageCanvaLayoutHorizontalSection.md)
-Get horizontalSections from sites
-
-### [Get-MgSitePageAsSitePageCanvaLayoutHorizontalSectionColumn](Get-MgSitePageAsSitePageCanvaLayoutHorizontalSectionColumn.md)
-Get columns from sites
-
-### [Get-MgSitePageAsSitePageCanvaLayoutHorizontalSectionColumnCount](Get-MgSitePageAsSitePageCanvaLayoutHorizontalSectionColumnCount.md)
-Get the number of the resource
-
-### [Get-MgSitePageAsSitePageCanvaLayoutHorizontalSectionColumnWebpart](Get-MgSitePageAsSitePageCanvaLayoutHorizontalSectionColumnWebpart.md)
-Get webparts from sites
-
-### [Get-MgSitePageAsSitePageCanvaLayoutHorizontalSectionColumnWebpartCount](Get-MgSitePageAsSitePageCanvaLayoutHorizontalSectionColumnWebpartCount.md)
-Get the number of the resource
-
-### [Get-MgSitePageAsSitePageCanvaLayoutHorizontalSectionCount](Get-MgSitePageAsSitePageCanvaLayoutHorizontalSectionCount.md)
-Get the number of the resource
-
-### [Get-MgSitePageAsSitePageCanvaLayoutVerticalSection](Get-MgSitePageAsSitePageCanvaLayoutVerticalSection.md)
-Get verticalSection from sites
-
-### [Get-MgSitePageAsSitePageCanvaLayoutVerticalSectionWebpart](Get-MgSitePageAsSitePageCanvaLayoutVerticalSectionWebpart.md)
-Get webparts from sites
-
-### [Get-MgSitePageAsSitePageCanvaLayoutVerticalSectionWebpartCount](Get-MgSitePageAsSitePageCanvaLayoutVerticalSectionWebpartCount.md)
-Get the number of the resource
-
-### [Get-MgSitePageAsSitePageCreatedByUser](Get-MgSitePageAsSitePageCreatedByUser.md)
-Identity of the user who created the item.
-Read-only.
-
-### [Get-MgSitePageAsSitePageCreatedByUserMailboxSetting](Get-MgSitePageAsSitePageCreatedByUserMailboxSetting.md)
-Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
-Returned only on $select.
-
-### [Get-MgSitePageAsSitePageCreatedByUserServiceProvisioningError](Get-MgSitePageAsSitePageCreatedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
-
-### [Get-MgSitePageAsSitePageCreatedByUserServiceProvisioningErrorCount](Get-MgSitePageAsSitePageCreatedByUserServiceProvisioningErrorCount.md)
-Get the number of the resource
-
-### [Get-MgSitePageAsSitePageLastModifiedByUser](Get-MgSitePageAsSitePageLastModifiedByUser.md)
-Identity of the user who last modified the item.
-Read-only.
-
-### [Get-MgSitePageAsSitePageLastModifiedByUserMailboxSetting](Get-MgSitePageAsSitePageLastModifiedByUserMailboxSetting.md)
-Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
-Returned only on $select.
-
-### [Get-MgSitePageAsSitePageLastModifiedByUserServiceProvisioningError](Get-MgSitePageAsSitePageLastModifiedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
-
-### [Get-MgSitePageAsSitePageLastModifiedByUserServiceProvisioningErrorCount](Get-MgSitePageAsSitePageLastModifiedByUserServiceProvisioningErrorCount.md)
-Get the number of the resource
-
-### [Get-MgSitePageAsSitePageWebPart](Get-MgSitePageAsSitePageWebPart.md)
-Get webParts from sites
-
-### [Get-MgSitePageAsSitePageWebPartCount](Get-MgSitePageAsSitePageWebPartCount.md)
-Get the number of the resource
-
-### [Get-MgSitePageCount](Get-MgSitePageCount.md)
-Get the number of the resource
-
-### [Get-MgSitePageCountAsSitePage](Get-MgSitePageCountAsSitePage.md)
-Get the number of the resource
-
-### [Get-MgSitePageCreatedByUser](Get-MgSitePageCreatedByUser.md)
-Identity of the user who created the item.
-Read-only.
-
-### [Get-MgSitePageCreatedByUserMailboxSetting](Get-MgSitePageCreatedByUserMailboxSetting.md)
-Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
-Returned only on $select.
-
-### [Get-MgSitePageCreatedByUserServiceProvisioningError](Get-MgSitePageCreatedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
-
-### [Get-MgSitePageCreatedByUserServiceProvisioningErrorCount](Get-MgSitePageCreatedByUserServiceProvisioningErrorCount.md)
-Get the number of the resource
-
-### [Get-MgSitePageLastModifiedByUser](Get-MgSitePageLastModifiedByUser.md)
-Identity of the user who last modified the item.
-Read-only.
-
-### [Get-MgSitePageLastModifiedByUserMailboxSetting](Get-MgSitePageLastModifiedByUserMailboxSetting.md)
-Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
-Returned only on $select.
-
-### [Get-MgSitePageLastModifiedByUserServiceProvisioningError](Get-MgSitePageLastModifiedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
-
-### [Get-MgSitePageLastModifiedByUserServiceProvisioningErrorCount](Get-MgSitePageLastModifiedByUserServiceProvisioningErrorCount.md)
-Get the number of the resource
-
-### [Get-MgSitePageMicrosoftGraphSitePageCanvaLayoutHorizontalSectionColumnWebpartPositionOfWebPart](Get-MgSitePageMicrosoftGraphSitePageCanvaLayoutHorizontalSectionColumnWebpartPositionOfWebPart.md)
-Invoke action getPositionOfWebPart
-
-### [Get-MgSitePageMicrosoftGraphSitePageCanvaLayoutVerticalSectionWebpartPositionOfWebPart](Get-MgSitePageMicrosoftGraphSitePageCanvaLayoutVerticalSectionWebpartPositionOfWebPart.md)
-Invoke action getPositionOfWebPart
-
-### [Get-MgSitePageMicrosoftGraphSitePageWebPartPositionOfWebPart](Get-MgSitePageMicrosoftGraphSitePageWebPartPositionOfWebPart.md)
-Invoke action getPositionOfWebPart
 
 ### [Get-MgSitePermission](Get-MgSitePermission.md)
 Retrieve the properties and relationships of a permission object on a site.
@@ -1939,27 +1605,6 @@ Add a column to a [content type][contentType] in a site, or a list with a reques
 ### [New-MgGroupSiteContentTypeColumnLink](New-MgGroupSiteContentTypeColumnLink.md)
 Create new navigation property to columnLinks for groups
 
-### [New-MgGroupSiteGetByPathColumn](New-MgGroupSiteGetByPathColumn.md)
-Create a column for a [site][site] with a request that specifies a [columnDefinition][columnDefinition].
-
-### [New-MgGroupSiteGetByPathContentType](New-MgGroupSiteGetByPathContentType.md)
-Create a new [contentType][] in a [site][].
-
-### [New-MgGroupSiteGetByPathList](New-MgGroupSiteGetByPathList.md)
-Create a new [list][] in a [site][].
-
-### [New-MgGroupSiteGetByPathOperation](New-MgGroupSiteGetByPathOperation.md)
-Create new navigation property to operations for groups
-
-### [New-MgGroupSiteGetByPathPage](New-MgGroupSiteGetByPathPage.md)
-Create new navigation property to pages for groups
-
-### [New-MgGroupSiteGetByPathPermission](New-MgGroupSiteGetByPathPermission.md)
-Create a new permission object on a site.
-
-### [New-MgGroupSiteGetByPathTermStore](New-MgGroupSiteGetByPathTermStore.md)
-Create new navigation property to termStores for groups
-
 ### [New-MgGroupSiteList](New-MgGroupSiteList.md)
 Create a new [list][] in a [site][].
 
@@ -2037,24 +1682,6 @@ Create a new page in the specified section.
 
 ### [New-MgGroupSiteOperation](New-MgGroupSiteOperation.md)
 Create new navigation property to operations for groups
-
-### [New-MgGroupSitePage](New-MgGroupSitePage.md)
-Create new navigation property to pages for groups
-
-### [New-MgGroupSitePageAsSitePageCanvaLayoutHorizontalSection](New-MgGroupSitePageAsSitePageCanvaLayoutHorizontalSection.md)
-Create new navigation property to horizontalSections for groups
-
-### [New-MgGroupSitePageAsSitePageCanvaLayoutHorizontalSectionColumn](New-MgGroupSitePageAsSitePageCanvaLayoutHorizontalSectionColumn.md)
-Create new navigation property to columns for groups
-
-### [New-MgGroupSitePageAsSitePageCanvaLayoutHorizontalSectionColumnWebpart](New-MgGroupSitePageAsSitePageCanvaLayoutHorizontalSectionColumnWebpart.md)
-Create new navigation property to webparts for groups
-
-### [New-MgGroupSitePageAsSitePageCanvaLayoutVerticalSectionWebpart](New-MgGroupSitePageAsSitePageCanvaLayoutVerticalSectionWebpart.md)
-Create new navigation property to webparts for groups
-
-### [New-MgGroupSitePageAsSitePageWebPart](New-MgGroupSitePageAsSitePageWebPart.md)
-Create new navigation property to webParts for groups
 
 ### [New-MgGroupSitePermission](New-MgGroupSitePermission.md)
 Create a new permission object on a site.
@@ -2155,27 +1782,6 @@ Add a column to a [content type][contentType] in a site, or a list with a reques
 ### [New-MgSiteContentTypeColumnLink](New-MgSiteContentTypeColumnLink.md)
 Create new navigation property to columnLinks for sites
 
-### [New-MgSiteGetByPathColumn](New-MgSiteGetByPathColumn.md)
-Create a column for a [site][site] with a request that specifies a [columnDefinition][columnDefinition].
-
-### [New-MgSiteGetByPathContentType](New-MgSiteGetByPathContentType.md)
-Create a new [contentType][] in a [site][].
-
-### [New-MgSiteGetByPathList](New-MgSiteGetByPathList.md)
-Create a new [list][] in a [site][].
-
-### [New-MgSiteGetByPathOperation](New-MgSiteGetByPathOperation.md)
-Create new navigation property to operations for sites
-
-### [New-MgSiteGetByPathPage](New-MgSiteGetByPathPage.md)
-Create new navigation property to pages for sites
-
-### [New-MgSiteGetByPathPermission](New-MgSiteGetByPathPermission.md)
-Create a new permission object on a site.
-
-### [New-MgSiteGetByPathTermStore](New-MgSiteGetByPathTermStore.md)
-Create new navigation property to termStores for sites
-
 ### [New-MgSiteList](New-MgSiteList.md)
 Create a new [list][] in a [site][].
 
@@ -2197,9 +1803,6 @@ Create a new [listItem][] in a [list][].
 ### [New-MgSiteListItemDocumentSetVersion](New-MgSiteListItemDocumentSetVersion.md)
 Create a new version of a document set item in a list.
 
-### [New-MgSiteListItemLink](New-MgSiteListItemLink.md)
-Invoke action createLink
-
 ### [New-MgSiteListItemVersion](New-MgSiteListItemVersion.md)
 Create new navigation property to versions for sites
 
@@ -2211,24 +1814,6 @@ Create new navigation property to subscriptions for sites
 
 ### [New-MgSiteOperation](New-MgSiteOperation.md)
 Create new navigation property to operations for sites
-
-### [New-MgSitePage](New-MgSitePage.md)
-Create new navigation property to pages for sites
-
-### [New-MgSitePageAsSitePageCanvaLayoutHorizontalSection](New-MgSitePageAsSitePageCanvaLayoutHorizontalSection.md)
-Create new navigation property to horizontalSections for sites
-
-### [New-MgSitePageAsSitePageCanvaLayoutHorizontalSectionColumn](New-MgSitePageAsSitePageCanvaLayoutHorizontalSectionColumn.md)
-Create new navigation property to columns for sites
-
-### [New-MgSitePageAsSitePageCanvaLayoutHorizontalSectionColumnWebpart](New-MgSitePageAsSitePageCanvaLayoutHorizontalSectionColumnWebpart.md)
-Create new navigation property to webparts for sites
-
-### [New-MgSitePageAsSitePageCanvaLayoutVerticalSectionWebpart](New-MgSitePageAsSitePageCanvaLayoutVerticalSectionWebpart.md)
-Create new navigation property to webparts for sites
-
-### [New-MgSitePageAsSitePageWebPart](New-MgSitePageAsSitePageWebPart.md)
-Create new navigation property to webParts for sites
 
 ### [New-MgSitePermission](New-MgSitePermission.md)
 Create a new permission object on a site.
@@ -2344,15 +1929,6 @@ Remove a [column][columndefinition] from a [site][], a [list][], or a [content t
 ### [Remove-MgGroupSiteContentTypeColumnLink](Remove-MgGroupSiteContentTypeColumnLink.md)
 Delete navigation property columnLinks for groups
 
-### [Remove-MgGroupSiteGetByPathAnalytic](Remove-MgGroupSiteGetByPathAnalytic.md)
-Delete navigation property analytics for groups
-
-### [Remove-MgGroupSiteGetByPathOnenote](Remove-MgGroupSiteGetByPathOnenote.md)
-Delete navigation property onenote for groups
-
-### [Remove-MgGroupSiteGetByPathTermStore](Remove-MgGroupSiteGetByPathTermStore.md)
-Delete navigation property termStore for groups
-
 ### [Remove-MgGroupSiteList](Remove-MgGroupSiteList.md)
 Delete navigation property lists for groups
 
@@ -2439,30 +2015,6 @@ Delete navigation property pages for groups
 
 ### [Remove-MgGroupSiteOperation](Remove-MgGroupSiteOperation.md)
 Delete navigation property operations for groups
-
-### [Remove-MgGroupSitePage](Remove-MgGroupSitePage.md)
-Delete navigation property pages for groups
-
-### [Remove-MgGroupSitePageAsSitePageCanvaLayout](Remove-MgGroupSitePageAsSitePageCanvaLayout.md)
-Delete navigation property canvasLayout for groups
-
-### [Remove-MgGroupSitePageAsSitePageCanvaLayoutHorizontalSection](Remove-MgGroupSitePageAsSitePageCanvaLayoutHorizontalSection.md)
-Delete navigation property horizontalSections for groups
-
-### [Remove-MgGroupSitePageAsSitePageCanvaLayoutHorizontalSectionColumn](Remove-MgGroupSitePageAsSitePageCanvaLayoutHorizontalSectionColumn.md)
-Delete navigation property columns for groups
-
-### [Remove-MgGroupSitePageAsSitePageCanvaLayoutHorizontalSectionColumnWebpart](Remove-MgGroupSitePageAsSitePageCanvaLayoutHorizontalSectionColumnWebpart.md)
-Delete navigation property webparts for groups
-
-### [Remove-MgGroupSitePageAsSitePageCanvaLayoutVerticalSection](Remove-MgGroupSitePageAsSitePageCanvaLayoutVerticalSection.md)
-Delete navigation property verticalSection for groups
-
-### [Remove-MgGroupSitePageAsSitePageCanvaLayoutVerticalSectionWebpart](Remove-MgGroupSitePageAsSitePageCanvaLayoutVerticalSectionWebpart.md)
-Delete navigation property webparts for groups
-
-### [Remove-MgGroupSitePageAsSitePageWebPart](Remove-MgGroupSitePageAsSitePageWebPart.md)
-Delete navigation property webParts for groups
 
 ### [Remove-MgGroupSitePermission](Remove-MgGroupSitePermission.md)
 Delete a permission object on a site.
@@ -2572,12 +2124,6 @@ Remove a [column][columndefinition] from a [site][], a [list][], or a [content t
 ### [Remove-MgSiteContentTypeColumnLink](Remove-MgSiteContentTypeColumnLink.md)
 Delete navigation property columnLinks for sites
 
-### [Remove-MgSiteGetByPathAnalytic](Remove-MgSiteGetByPathAnalytic.md)
-Delete navigation property analytics for sites
-
-### [Remove-MgSiteGetByPathTermStore](Remove-MgSiteGetByPathTermStore.md)
-Delete navigation property termStore for sites
-
 ### [Remove-MgSiteList](Remove-MgSiteList.md)
 Delete navigation property lists for sites
 
@@ -2619,30 +2165,6 @@ Delete navigation property subscriptions for sites
 
 ### [Remove-MgSiteOperation](Remove-MgSiteOperation.md)
 Delete navigation property operations for sites
-
-### [Remove-MgSitePage](Remove-MgSitePage.md)
-Delete navigation property pages for sites
-
-### [Remove-MgSitePageAsSitePageCanvaLayout](Remove-MgSitePageAsSitePageCanvaLayout.md)
-Delete navigation property canvasLayout for sites
-
-### [Remove-MgSitePageAsSitePageCanvaLayoutHorizontalSection](Remove-MgSitePageAsSitePageCanvaLayoutHorizontalSection.md)
-Delete navigation property horizontalSections for sites
-
-### [Remove-MgSitePageAsSitePageCanvaLayoutHorizontalSectionColumn](Remove-MgSitePageAsSitePageCanvaLayoutHorizontalSectionColumn.md)
-Delete navigation property columns for sites
-
-### [Remove-MgSitePageAsSitePageCanvaLayoutHorizontalSectionColumnWebpart](Remove-MgSitePageAsSitePageCanvaLayoutHorizontalSectionColumnWebpart.md)
-Delete navigation property webparts for sites
-
-### [Remove-MgSitePageAsSitePageCanvaLayoutVerticalSection](Remove-MgSitePageAsSitePageCanvaLayoutVerticalSection.md)
-Delete navigation property verticalSection for sites
-
-### [Remove-MgSitePageAsSitePageCanvaLayoutVerticalSectionWebpart](Remove-MgSitePageAsSitePageCanvaLayoutVerticalSectionWebpart.md)
-Delete navigation property webparts for sites
-
-### [Remove-MgSitePageAsSitePageWebPart](Remove-MgSitePageAsSitePageWebPart.md)
-Delete navigation property webParts for sites
 
 ### [Remove-MgSitePermission](Remove-MgSitePermission.md)
 Delete a permission object on a site.
@@ -2813,15 +2335,6 @@ Update the navigation property columnLinks in groups
 ### [Update-MgGroupSiteCreatedByUserMailboxSetting](Update-MgGroupSiteCreatedByUserMailboxSetting.md)
 Update property mailboxSettings value.
 
-### [Update-MgGroupSiteGetByPathAnalytic](Update-MgGroupSiteGetByPathAnalytic.md)
-Update the navigation property analytics in groups
-
-### [Update-MgGroupSiteGetByPathOnenote](Update-MgGroupSiteGetByPathOnenote.md)
-Update the navigation property onenote in groups
-
-### [Update-MgGroupSiteGetByPathTermStore](Update-MgGroupSiteGetByPathTermStore.md)
-Update the properties of a store object.
-
 ### [Update-MgGroupSiteLastModifiedByUserMailboxSetting](Update-MgGroupSiteLastModifiedByUserMailboxSetting.md)
 Update property mailboxSettings value.
 
@@ -2923,42 +2436,6 @@ Update the navigation property pages in groups
 
 ### [Update-MgGroupSiteOperation](Update-MgGroupSiteOperation.md)
 Update the navigation property operations in groups
-
-### [Update-MgGroupSitePage](Update-MgGroupSitePage.md)
-Update the navigation property pages in groups
-
-### [Update-MgGroupSitePageAsSitePageCanvaLayout](Update-MgGroupSitePageAsSitePageCanvaLayout.md)
-Update the navigation property canvasLayout in groups
-
-### [Update-MgGroupSitePageAsSitePageCanvaLayoutHorizontalSection](Update-MgGroupSitePageAsSitePageCanvaLayoutHorizontalSection.md)
-Update the navigation property horizontalSections in groups
-
-### [Update-MgGroupSitePageAsSitePageCanvaLayoutHorizontalSectionColumn](Update-MgGroupSitePageAsSitePageCanvaLayoutHorizontalSectionColumn.md)
-Update the navigation property columns in groups
-
-### [Update-MgGroupSitePageAsSitePageCanvaLayoutHorizontalSectionColumnWebpart](Update-MgGroupSitePageAsSitePageCanvaLayoutHorizontalSectionColumnWebpart.md)
-Update the navigation property webparts in groups
-
-### [Update-MgGroupSitePageAsSitePageCanvaLayoutVerticalSection](Update-MgGroupSitePageAsSitePageCanvaLayoutVerticalSection.md)
-Update the navigation property verticalSection in groups
-
-### [Update-MgGroupSitePageAsSitePageCanvaLayoutVerticalSectionWebpart](Update-MgGroupSitePageAsSitePageCanvaLayoutVerticalSectionWebpart.md)
-Update the navigation property webparts in groups
-
-### [Update-MgGroupSitePageAsSitePageCreatedByUserMailboxSetting](Update-MgGroupSitePageAsSitePageCreatedByUserMailboxSetting.md)
-Update property mailboxSettings value.
-
-### [Update-MgGroupSitePageAsSitePageLastModifiedByUserMailboxSetting](Update-MgGroupSitePageAsSitePageLastModifiedByUserMailboxSetting.md)
-Update property mailboxSettings value.
-
-### [Update-MgGroupSitePageAsSitePageWebPart](Update-MgGroupSitePageAsSitePageWebPart.md)
-Update the navigation property webParts in groups
-
-### [Update-MgGroupSitePageCreatedByUserMailboxSetting](Update-MgGroupSitePageCreatedByUserMailboxSetting.md)
-Update property mailboxSettings value.
-
-### [Update-MgGroupSitePageLastModifiedByUserMailboxSetting](Update-MgGroupSitePageLastModifiedByUserMailboxSetting.md)
-Update property mailboxSettings value.
 
 ### [Update-MgGroupSitePermission](Update-MgGroupSitePermission.md)
 Update an application permission object on a site.
@@ -3071,12 +2548,6 @@ Update a [site][], a [list][], or a [content type][contentType] [column][columnD
 ### [Update-MgSiteContentTypeColumnLink](Update-MgSiteContentTypeColumnLink.md)
 Update the navigation property columnLinks in sites
 
-### [Update-MgSiteGetByPathAnalytic](Update-MgSiteGetByPathAnalytic.md)
-Update the navigation property analytics in sites
-
-### [Update-MgSiteGetByPathTermStore](Update-MgSiteGetByPathTermStore.md)
-Update the properties of a store object.
-
 ### [Update-MgSiteList](Update-MgSiteList.md)
 Update the navigation property lists in sites
 
@@ -3145,42 +2616,6 @@ Invoke action onenotePatchContent
 
 ### [Update-MgSiteOperation](Update-MgSiteOperation.md)
 Update the navigation property operations in sites
-
-### [Update-MgSitePage](Update-MgSitePage.md)
-Update the navigation property pages in sites
-
-### [Update-MgSitePageAsSitePageCanvaLayout](Update-MgSitePageAsSitePageCanvaLayout.md)
-Update the navigation property canvasLayout in sites
-
-### [Update-MgSitePageAsSitePageCanvaLayoutHorizontalSection](Update-MgSitePageAsSitePageCanvaLayoutHorizontalSection.md)
-Update the navigation property horizontalSections in sites
-
-### [Update-MgSitePageAsSitePageCanvaLayoutHorizontalSectionColumn](Update-MgSitePageAsSitePageCanvaLayoutHorizontalSectionColumn.md)
-Update the navigation property columns in sites
-
-### [Update-MgSitePageAsSitePageCanvaLayoutHorizontalSectionColumnWebpart](Update-MgSitePageAsSitePageCanvaLayoutHorizontalSectionColumnWebpart.md)
-Update the navigation property webparts in sites
-
-### [Update-MgSitePageAsSitePageCanvaLayoutVerticalSection](Update-MgSitePageAsSitePageCanvaLayoutVerticalSection.md)
-Update the navigation property verticalSection in sites
-
-### [Update-MgSitePageAsSitePageCanvaLayoutVerticalSectionWebpart](Update-MgSitePageAsSitePageCanvaLayoutVerticalSectionWebpart.md)
-Update the navigation property webparts in sites
-
-### [Update-MgSitePageAsSitePageCreatedByUserMailboxSetting](Update-MgSitePageAsSitePageCreatedByUserMailboxSetting.md)
-Update property mailboxSettings value.
-
-### [Update-MgSitePageAsSitePageLastModifiedByUserMailboxSetting](Update-MgSitePageAsSitePageLastModifiedByUserMailboxSetting.md)
-Update property mailboxSettings value.
-
-### [Update-MgSitePageAsSitePageWebPart](Update-MgSitePageAsSitePageWebPart.md)
-Update the navigation property webParts in sites
-
-### [Update-MgSitePageCreatedByUserMailboxSetting](Update-MgSitePageCreatedByUserMailboxSetting.md)
-Update property mailboxSettings value.
-
-### [Update-MgSitePageLastModifiedByUserMailboxSetting](Update-MgSitePageLastModifiedByUserMailboxSetting.md)
-Update property mailboxSettings value.
 
 ### [Update-MgSitePermission](Update-MgSitePermission.md)
 Update an application permission object on a site.

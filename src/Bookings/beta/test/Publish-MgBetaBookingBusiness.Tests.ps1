@@ -19,14 +19,6 @@ Describe 'Publish-MgBetaBookingBusiness' {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
-    It 'Publish1' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
-    }
-
-    It 'PublishViaIdentity1' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
-    }
-
     It 'PublishViaIdentity' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }

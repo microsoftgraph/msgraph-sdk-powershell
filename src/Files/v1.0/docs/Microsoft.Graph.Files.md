@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Files
-Module Guid: 85d3c442-c85f-4fcc-84d2-e2faf8dcfcac
+Module Guid: 00ee6641-77ca-444e-8f6b-bd8b2f23874b
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.files
 Help Version: 1.0.0.0
 Locale: en-US
@@ -70,12 +70,11 @@ Read-only.
 
 ### [Get-MgDriveCreatedByUserMailboxSetting](Get-MgDriveCreatedByUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgDriveCreatedByUserServiceProvisioningError](Get-MgDriveCreatedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgDriveCreatedByUserServiceProvisioningErrorCount](Get-MgDriveCreatedByUserServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -138,12 +137,11 @@ Read-only.
 
 ### [Get-MgDriveItemCreatedByUserMailboxSetting](Get-MgDriveItemCreatedByUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgDriveItemCreatedByUserServiceProvisioningError](Get-MgDriveItemCreatedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgDriveItemCreatedByUserServiceProvisioningErrorCount](Get-MgDriveItemCreatedByUserServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -157,12 +155,11 @@ Read-only.
 
 ### [Get-MgDriveItemItemLastModifiedByUserMailboxSetting](Get-MgDriveItemItemLastModifiedByUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgDriveItemItemLastModifiedByUserServiceProvisioningError](Get-MgDriveItemItemLastModifiedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgDriveItemItemLastModifiedByUserServiceProvisioningErrorCount](Get-MgDriveItemItemLastModifiedByUserServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -173,12 +170,11 @@ Read-only.
 
 ### [Get-MgDriveItemLastModifiedByUserMailboxSetting](Get-MgDriveItemLastModifiedByUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgDriveItemLastModifiedByUserServiceProvisioningError](Get-MgDriveItemLastModifiedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgDriveItemLastModifiedByUserServiceProvisioningErrorCount](Get-MgDriveItemLastModifiedByUserServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -200,12 +196,11 @@ Read-only.
 
 ### [Get-MgDriveItemListItemCreatedByUserMailboxSetting](Get-MgDriveItemListItemCreatedByUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgDriveItemListItemCreatedByUserServiceProvisioningError](Get-MgDriveItemListItemCreatedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgDriveItemListItemCreatedByUserServiceProvisioningErrorCount](Get-MgDriveItemListItemCreatedByUserServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -280,12 +275,11 @@ Read-only.
 
 ### [Get-MgDriveLastModifiedByUserMailboxSetting](Get-MgDriveLastModifiedByUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgDriveLastModifiedByUserServiceProvisioningError](Get-MgDriveLastModifiedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgDriveLastModifiedByUserServiceProvisioningErrorCount](Get-MgDriveLastModifiedByUserServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -340,12 +334,11 @@ Read-only.
 
 ### [Get-MgDriveListCreatedByUserMailboxSetting](Get-MgDriveListCreatedByUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgDriveListCreatedByUserServiceProvisioningError](Get-MgDriveListCreatedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgDriveListCreatedByUserServiceProvisioningErrorCount](Get-MgDriveListCreatedByUserServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -372,12 +365,11 @@ Read-only.
 
 ### [Get-MgDriveListItemCreatedByUserMailboxSetting](Get-MgDriveListItemCreatedByUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgDriveListItemCreatedByUserServiceProvisioningError](Get-MgDriveListItemCreatedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgDriveListItemCreatedByUserServiceProvisioningErrorCount](Get-MgDriveListItemCreatedByUserServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -467,12 +459,11 @@ Read-only.
 
 ### [Get-MgDriveRootCreatedByUserMailboxSetting](Get-MgDriveRootCreatedByUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgDriveRootCreatedByUserServiceProvisioningError](Get-MgDriveRootCreatedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgDriveRootCreatedByUserServiceProvisioningErrorCount](Get-MgDriveRootCreatedByUserServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -486,12 +477,11 @@ Read-only.
 
 ### [Get-MgDriveRootItemLastModifiedByUserMailboxSetting](Get-MgDriveRootItemLastModifiedByUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgDriveRootItemLastModifiedByUserServiceProvisioningError](Get-MgDriveRootItemLastModifiedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgDriveRootItemLastModifiedByUserServiceProvisioningErrorCount](Get-MgDriveRootItemLastModifiedByUserServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -502,12 +492,11 @@ Read-only.
 
 ### [Get-MgDriveRootLastModifiedByUserMailboxSetting](Get-MgDriveRootLastModifiedByUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgDriveRootLastModifiedByUserServiceProvisioningError](Get-MgDriveRootLastModifiedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgDriveRootLastModifiedByUserServiceProvisioningErrorCount](Get-MgDriveRootLastModifiedByUserServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -529,12 +518,11 @@ Read-only.
 
 ### [Get-MgDriveRootListItemCreatedByUserMailboxSetting](Get-MgDriveRootListItemCreatedByUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgDriveRootListItemCreatedByUserServiceProvisioningError](Get-MgDriveRootListItemCreatedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgDriveRootListItemCreatedByUserServiceProvisioningErrorCount](Get-MgDriveRootListItemCreatedByUserServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -651,12 +639,11 @@ Read-only.
 
 ### [Get-MgGroupDriveCreatedByUserMailboxSetting](Get-MgGroupDriveCreatedByUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgGroupDriveCreatedByUserServiceProvisioningError](Get-MgGroupDriveCreatedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgGroupDriveCreatedByUserServiceProvisioningErrorCount](Get-MgGroupDriveCreatedByUserServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -716,12 +703,11 @@ Read-only.
 
 ### [Get-MgGroupDriveItemCreatedByUserMailboxSetting](Get-MgGroupDriveItemCreatedByUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgGroupDriveItemCreatedByUserServiceProvisioningError](Get-MgGroupDriveItemCreatedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgGroupDriveItemCreatedByUserServiceProvisioningErrorCount](Get-MgGroupDriveItemCreatedByUserServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -732,12 +718,11 @@ Read-only.
 
 ### [Get-MgGroupDriveItemItemLastModifiedByUserMailboxSetting](Get-MgGroupDriveItemItemLastModifiedByUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgGroupDriveItemItemLastModifiedByUserServiceProvisioningError](Get-MgGroupDriveItemItemLastModifiedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgGroupDriveItemItemLastModifiedByUserServiceProvisioningErrorCount](Get-MgGroupDriveItemItemLastModifiedByUserServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -748,12 +733,11 @@ Read-only.
 
 ### [Get-MgGroupDriveItemLastModifiedByUserMailboxSetting](Get-MgGroupDriveItemLastModifiedByUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgGroupDriveItemLastModifiedByUserServiceProvisioningError](Get-MgGroupDriveItemLastModifiedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgGroupDriveItemLastModifiedByUserServiceProvisioningErrorCount](Get-MgGroupDriveItemLastModifiedByUserServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -772,12 +756,11 @@ Read-only.
 
 ### [Get-MgGroupDriveItemListItemCreatedByUserMailboxSetting](Get-MgGroupDriveItemListItemCreatedByUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgGroupDriveItemListItemCreatedByUserServiceProvisioningError](Get-MgGroupDriveItemListItemCreatedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgGroupDriveItemListItemCreatedByUserServiceProvisioningErrorCount](Get-MgGroupDriveItemListItemCreatedByUserServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -852,12 +835,11 @@ Read-only.
 
 ### [Get-MgGroupDriveLastModifiedByUserMailboxSetting](Get-MgGroupDriveLastModifiedByUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgGroupDriveLastModifiedByUserServiceProvisioningError](Get-MgGroupDriveLastModifiedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgGroupDriveLastModifiedByUserServiceProvisioningErrorCount](Get-MgGroupDriveLastModifiedByUserServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -909,12 +891,11 @@ Read-only.
 
 ### [Get-MgGroupDriveListCreatedByUserMailboxSetting](Get-MgGroupDriveListCreatedByUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgGroupDriveListCreatedByUserServiceProvisioningError](Get-MgGroupDriveListCreatedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgGroupDriveListCreatedByUserServiceProvisioningErrorCount](Get-MgGroupDriveListCreatedByUserServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -935,12 +916,11 @@ Read-only.
 
 ### [Get-MgGroupDriveListItemCreatedByUserMailboxSetting](Get-MgGroupDriveListItemCreatedByUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgGroupDriveListItemCreatedByUserServiceProvisioningError](Get-MgGroupDriveListItemCreatedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgGroupDriveListItemCreatedByUserServiceProvisioningErrorCount](Get-MgGroupDriveListItemCreatedByUserServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -1027,12 +1007,11 @@ Read-only.
 
 ### [Get-MgGroupDriveRootCreatedByUserMailboxSetting](Get-MgGroupDriveRootCreatedByUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgGroupDriveRootCreatedByUserServiceProvisioningError](Get-MgGroupDriveRootCreatedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgGroupDriveRootCreatedByUserServiceProvisioningErrorCount](Get-MgGroupDriveRootCreatedByUserServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -1043,12 +1022,11 @@ Read-only.
 
 ### [Get-MgGroupDriveRootItemLastModifiedByUserMailboxSetting](Get-MgGroupDriveRootItemLastModifiedByUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgGroupDriveRootItemLastModifiedByUserServiceProvisioningError](Get-MgGroupDriveRootItemLastModifiedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgGroupDriveRootItemLastModifiedByUserServiceProvisioningErrorCount](Get-MgGroupDriveRootItemLastModifiedByUserServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -1059,12 +1037,11 @@ Read-only.
 
 ### [Get-MgGroupDriveRootLastModifiedByUserMailboxSetting](Get-MgGroupDriveRootLastModifiedByUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgGroupDriveRootLastModifiedByUserServiceProvisioningError](Get-MgGroupDriveRootLastModifiedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgGroupDriveRootLastModifiedByUserServiceProvisioningErrorCount](Get-MgGroupDriveRootLastModifiedByUserServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -1083,12 +1060,11 @@ Read-only.
 
 ### [Get-MgGroupDriveRootListItemCreatedByUserMailboxSetting](Get-MgGroupDriveRootListItemCreatedByUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgGroupDriveRootListItemCreatedByUserServiceProvisioningError](Get-MgGroupDriveRootListItemCreatedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgGroupDriveRootListItemCreatedByUserServiceProvisioningErrorCount](Get-MgGroupDriveRootListItemCreatedByUserServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -1188,12 +1164,11 @@ Read-only.
 
 ### [Get-MgShareCreatedByUserMailboxSetting](Get-MgShareCreatedByUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgShareCreatedByUserServiceProvisioningError](Get-MgShareCreatedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgShareCreatedByUserServiceProvisioningErrorCount](Get-MgShareCreatedByUserServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -1221,12 +1196,11 @@ Read-only.
 
 ### [Get-MgShareItemLastModifiedByUserMailboxSetting](Get-MgShareItemLastModifiedByUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgShareItemLastModifiedByUserServiceProvisioningError](Get-MgShareItemLastModifiedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgShareItemLastModifiedByUserServiceProvisioningErrorCount](Get-MgShareItemLastModifiedByUserServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -1237,12 +1211,11 @@ Read-only.
 
 ### [Get-MgShareLastModifiedByUserMailboxSetting](Get-MgShareLastModifiedByUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgShareLastModifiedByUserServiceProvisioningError](Get-MgShareLastModifiedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgShareLastModifiedByUserServiceProvisioningErrorCount](Get-MgShareLastModifiedByUserServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -1295,12 +1268,11 @@ Read-only.
 
 ### [Get-MgShareListCreatedByUserMailboxSetting](Get-MgShareListCreatedByUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgShareListCreatedByUserServiceProvisioningError](Get-MgShareListCreatedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgShareListCreatedByUserServiceProvisioningErrorCount](Get-MgShareListCreatedByUserServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -1324,12 +1296,11 @@ Read-only.
 
 ### [Get-MgShareListItemCreatedByUserMailboxSetting](Get-MgShareListItemCreatedByUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgShareListItemCreatedByUserServiceProvisioningError](Get-MgShareListItemCreatedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgShareListItemCreatedByUserServiceProvisioningErrorCount](Get-MgShareListItemCreatedByUserServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -1425,12 +1396,11 @@ Read-only.
 
 ### [Get-MgUserDriveCreatedByUserMailboxSetting](Get-MgUserDriveCreatedByUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgUserDriveCreatedByUserServiceProvisioningError](Get-MgUserDriveCreatedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgUserDriveCreatedByUserServiceProvisioningErrorCount](Get-MgUserDriveCreatedByUserServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -1490,12 +1460,11 @@ Read-only.
 
 ### [Get-MgUserDriveItemCreatedByUserMailboxSetting](Get-MgUserDriveItemCreatedByUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgUserDriveItemCreatedByUserServiceProvisioningError](Get-MgUserDriveItemCreatedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgUserDriveItemCreatedByUserServiceProvisioningErrorCount](Get-MgUserDriveItemCreatedByUserServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -1506,12 +1475,11 @@ Read-only.
 
 ### [Get-MgUserDriveItemItemLastModifiedByUserMailboxSetting](Get-MgUserDriveItemItemLastModifiedByUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgUserDriveItemItemLastModifiedByUserServiceProvisioningError](Get-MgUserDriveItemItemLastModifiedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgUserDriveItemItemLastModifiedByUserServiceProvisioningErrorCount](Get-MgUserDriveItemItemLastModifiedByUserServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -1522,12 +1490,11 @@ Read-only.
 
 ### [Get-MgUserDriveItemLastModifiedByUserMailboxSetting](Get-MgUserDriveItemLastModifiedByUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgUserDriveItemLastModifiedByUserServiceProvisioningError](Get-MgUserDriveItemLastModifiedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgUserDriveItemLastModifiedByUserServiceProvisioningErrorCount](Get-MgUserDriveItemLastModifiedByUserServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -1546,12 +1513,11 @@ Read-only.
 
 ### [Get-MgUserDriveItemListItemCreatedByUserMailboxSetting](Get-MgUserDriveItemListItemCreatedByUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgUserDriveItemListItemCreatedByUserServiceProvisioningError](Get-MgUserDriveItemListItemCreatedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgUserDriveItemListItemCreatedByUserServiceProvisioningErrorCount](Get-MgUserDriveItemListItemCreatedByUserServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -1626,12 +1592,11 @@ Read-only.
 
 ### [Get-MgUserDriveLastModifiedByUserMailboxSetting](Get-MgUserDriveLastModifiedByUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgUserDriveLastModifiedByUserServiceProvisioningError](Get-MgUserDriveLastModifiedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgUserDriveLastModifiedByUserServiceProvisioningErrorCount](Get-MgUserDriveLastModifiedByUserServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -1683,12 +1648,11 @@ Read-only.
 
 ### [Get-MgUserDriveListCreatedByUserMailboxSetting](Get-MgUserDriveListCreatedByUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgUserDriveListCreatedByUserServiceProvisioningError](Get-MgUserDriveListCreatedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgUserDriveListCreatedByUserServiceProvisioningErrorCount](Get-MgUserDriveListCreatedByUserServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -1709,12 +1673,11 @@ Read-only.
 
 ### [Get-MgUserDriveListItemCreatedByUserMailboxSetting](Get-MgUserDriveListItemCreatedByUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgUserDriveListItemCreatedByUserServiceProvisioningError](Get-MgUserDriveListItemCreatedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgUserDriveListItemCreatedByUserServiceProvisioningErrorCount](Get-MgUserDriveListItemCreatedByUserServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -1801,12 +1764,11 @@ Read-only.
 
 ### [Get-MgUserDriveRootCreatedByUserMailboxSetting](Get-MgUserDriveRootCreatedByUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgUserDriveRootCreatedByUserServiceProvisioningError](Get-MgUserDriveRootCreatedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgUserDriveRootCreatedByUserServiceProvisioningErrorCount](Get-MgUserDriveRootCreatedByUserServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -1817,12 +1779,11 @@ Read-only.
 
 ### [Get-MgUserDriveRootItemLastModifiedByUserMailboxSetting](Get-MgUserDriveRootItemLastModifiedByUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgUserDriveRootItemLastModifiedByUserServiceProvisioningError](Get-MgUserDriveRootItemLastModifiedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgUserDriveRootItemLastModifiedByUserServiceProvisioningErrorCount](Get-MgUserDriveRootItemLastModifiedByUserServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -1833,12 +1794,11 @@ Read-only.
 
 ### [Get-MgUserDriveRootLastModifiedByUserMailboxSetting](Get-MgUserDriveRootLastModifiedByUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgUserDriveRootLastModifiedByUserServiceProvisioningError](Get-MgUserDriveRootLastModifiedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgUserDriveRootLastModifiedByUserServiceProvisioningErrorCount](Get-MgUserDriveRootLastModifiedByUserServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -1857,12 +1817,11 @@ Read-only.
 
 ### [Get-MgUserDriveRootListItemCreatedByUserMailboxSetting](Get-MgUserDriveRootListItemCreatedByUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgUserDriveRootListItemCreatedByUserServiceProvisioningError](Get-MgUserDriveRootListItemCreatedByUserServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgUserDriveRootListItemCreatedByUserServiceProvisioningErrorCount](Get-MgUserDriveRootListItemCreatedByUserServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -2042,9 +2001,6 @@ DriveItem resources inherit sharing permissions from their ancestors.
 ### [New-MgDriveItemListItemDocumentSetVersion](New-MgDriveItemListItemDocumentSetVersion.md)
 Create a new version of a document set item in a list.
 
-### [New-MgDriveItemListItemLink](New-MgDriveItemListItemLink.md)
-Invoke action createLink
-
 ### [New-MgDriveItemListItemVersion](New-MgDriveItemListItemVersion.md)
 Create new navigation property to versions for drives
 
@@ -2081,9 +2037,6 @@ Create a new [listItem][] in a [list][].
 ### [New-MgDriveListItemDocumentSetVersion](New-MgDriveListItemDocumentSetVersion.md)
 Create a new version of a document set item in a list.
 
-### [New-MgDriveListItemLink](New-MgDriveListItemLink.md)
-Invoke action createLink
-
 ### [New-MgDriveListItemVersion](New-MgDriveListItemVersion.md)
 Create new navigation property to versions for drives
 
@@ -2106,9 +2059,6 @@ DriveItem resources inherit sharing permissions from their ancestors.
 
 ### [New-MgDriveRootListItemDocumentSetVersion](New-MgDriveRootListItemDocumentSetVersion.md)
 Create a new version of a document set item in a list.
-
-### [New-MgDriveRootListItemLink](New-MgDriveRootListItemLink.md)
-Invoke action createLink
 
 ### [New-MgDriveRootListItemVersion](New-MgDriveRootListItemVersion.md)
 Create new navigation property to versions for drives
@@ -2336,13 +2286,16 @@ Publishes a [contentType][] present in the content type hub site.
 Delete entity from drives
 
 ### [Remove-MgDriveItem](Remove-MgDriveItem.md)
-Delete a [bundle][] of driveItems by using its id.\nDeleting a bundle using this method permanently deletes the bundle and doesn't move it to the Recycle Bin.\nIt doesn't, however, remove the items that were referenced by the bundle.\nThey remain in their parent folders.
+Delete a DriveItem by using its ID or path.\nDeleting items using this method moves the items to the recycle bin instead of permanently deleting the item.
 
 ### [Remove-MgDriveItemAnalytic](Remove-MgDriveItemAnalytic.md)
 Delete navigation property analytics for drives
 
 ### [Remove-MgDriveItemAnalyticItemActivityStat](Remove-MgDriveItemAnalyticItemActivityStat.md)
 Delete navigation property itemActivityStats for drives
+
+### [Remove-MgDriveItemChild](Remove-MgDriveItemChild.md)
+Remove an item from a [bundle][].
 
 ### [Remove-MgDriveItemListItem](Remove-MgDriveItemListItem.md)
 Delete navigation property listItem for drives
@@ -2430,6 +2383,9 @@ Delete navigation property analytics for drives
 ### [Remove-MgDriveRootAnalyticItemActivityStat](Remove-MgDriveRootAnalyticItemActivityStat.md)
 Delete navigation property itemActivityStats for drives
 
+### [Remove-MgDriveRootChild](Remove-MgDriveRootChild.md)
+Remove an item from a [bundle][].
+
 ### [Remove-MgDriveRootListItem](Remove-MgDriveRootListItem.md)
 Delete navigation property listItem for drives
 
@@ -2472,13 +2428,16 @@ Delete navigation property versions for drives
 Delete navigation property drives for groups
 
 ### [Remove-MgGroupDriveItem](Remove-MgGroupDriveItem.md)
-Delete a [bundle][] of driveItems by using its id.\nDeleting a bundle using this method permanently deletes the bundle and doesn't move it to the Recycle Bin.\nIt doesn't, however, remove the items that were referenced by the bundle.\nThey remain in their parent folders.
+Delete a DriveItem by using its ID or path.\nDeleting items using this method moves the items to the recycle bin instead of permanently deleting the item.
 
 ### [Remove-MgGroupDriveItemAnalytic](Remove-MgGroupDriveItemAnalytic.md)
 Delete navigation property analytics for groups
 
 ### [Remove-MgGroupDriveItemAnalyticItemActivityStat](Remove-MgGroupDriveItemAnalyticItemActivityStat.md)
 Delete navigation property itemActivityStats for groups
+
+### [Remove-MgGroupDriveItemChild](Remove-MgGroupDriveItemChild.md)
+Remove an item from a [bundle][].
 
 ### [Remove-MgGroupDriveItemListItem](Remove-MgGroupDriveItemListItem.md)
 Delete navigation property listItem for groups
@@ -2562,6 +2521,9 @@ Delete navigation property analytics for groups
 
 ### [Remove-MgGroupDriveRootAnalyticItemActivityStat](Remove-MgGroupDriveRootAnalyticItemActivityStat.md)
 Delete navigation property itemActivityStats for groups
+
+### [Remove-MgGroupDriveRootChild](Remove-MgGroupDriveRootChild.md)
+Remove an item from a [bundle][].
 
 ### [Remove-MgGroupDriveRootListItem](Remove-MgGroupDriveRootListItem.md)
 Delete navigation property listItem for groups
@@ -2647,13 +2609,16 @@ Delete entity from shares
 Delete navigation property drives for users
 
 ### [Remove-MgUserDriveItem](Remove-MgUserDriveItem.md)
-Delete a [bundle][] of driveItems by using its id.\nDeleting a bundle using this method permanently deletes the bundle and doesn't move it to the Recycle Bin.\nIt doesn't, however, remove the items that were referenced by the bundle.\nThey remain in their parent folders.
+Delete a DriveItem by using its ID or path.\nDeleting items using this method moves the items to the recycle bin instead of permanently deleting the item.
 
 ### [Remove-MgUserDriveItemAnalytic](Remove-MgUserDriveItemAnalytic.md)
 Delete navigation property analytics for users
 
 ### [Remove-MgUserDriveItemAnalyticItemActivityStat](Remove-MgUserDriveItemAnalyticItemActivityStat.md)
 Delete navigation property itemActivityStats for users
+
+### [Remove-MgUserDriveItemChild](Remove-MgUserDriveItemChild.md)
+Remove an item from a [bundle][].
 
 ### [Remove-MgUserDriveItemListItem](Remove-MgUserDriveItemListItem.md)
 Delete navigation property listItem for users
@@ -2737,6 +2702,9 @@ Delete navigation property analytics for users
 
 ### [Remove-MgUserDriveRootAnalyticItemActivityStat](Remove-MgUserDriveRootAnalyticItemActivityStat.md)
 Delete navigation property itemActivityStats for users
+
+### [Remove-MgUserDriveRootChild](Remove-MgUserDriveRootChild.md)
+Remove an item from a [bundle][].
 
 ### [Remove-MgUserDriveRootListItem](Remove-MgUserDriveRootListItem.md)
 Delete navigation property listItem for users
@@ -2977,7 +2945,8 @@ Update entity in drives
 Update property mailboxSettings value.
 
 ### [Update-MgDriveItem](Update-MgDriveItem.md)
-Update the metadata for a [bundle][] of [driveItems][driveItem] by ID.\nYou can only update the following metadata: Any other change requests will be ignored.
+Update the metadata for a driveItem by ID or path.
+You can also use update to move an item to another parent by updating the item's parentReference property.
 
 ### [Update-MgDriveItemAnalytic](Update-MgDriveItemAnalytic.md)
 Update the navigation property analytics in drives
@@ -3155,7 +3124,8 @@ Update the navigation property drives in groups
 Update property mailboxSettings value.
 
 ### [Update-MgGroupDriveItem](Update-MgGroupDriveItem.md)
-Update the metadata for a [bundle][] of [driveItems][driveItem] by ID.\nYou can only update the following metadata: Any other change requests will be ignored.
+Update the metadata for a driveItem by ID or path.
+You can also use update to move an item to another parent by updating the item's parentReference property.
 
 ### [Update-MgGroupDriveItemAnalytic](Update-MgGroupDriveItemAnalytic.md)
 Update the navigation property analytics in groups
@@ -3396,7 +3366,8 @@ Update the navigation property drives in users
 Update property mailboxSettings value.
 
 ### [Update-MgUserDriveItem](Update-MgUserDriveItem.md)
-Update the metadata for a [bundle][] of [driveItems][driveItem] by ID.\nYou can only update the following metadata: Any other change requests will be ignored.
+Update the metadata for a driveItem by ID or path.
+You can also use update to move an item to another parent by updating the item's parentReference property.
 
 ### [Update-MgUserDriveItemAnalytic](Update-MgUserDriveItemAnalytic.md)
 Update the navigation property analytics in users

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Security
-Module Guid: 034e2ec9-92c0-43e8-8d78-2efafe34f4b9
+Module Guid: cde6fe2b-c25f-4c48-b2cf-a921ee734682
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.security
 Help Version: 1.0.0.0
 Locale: en-US
@@ -56,7 +56,7 @@ Retrieve the properties and relationships of an alert object.
 Get the number of the resource
 
 ### [Get-MgSecurityAlertV2](Get-MgSecurityAlertV2.md)
-Get the properties and relationships of an alert object.
+Get the properties and relationships of an alert in an organization based on the specified alert id property.
 
 ### [Get-MgSecurityAlertV2Count](Get-MgSecurityAlertV2Count.md)
 Get the number of the resource
@@ -170,8 +170,7 @@ Get the number of the resource
 Represents a group.
 
 ### [Get-MgSecurityCaseEdiscoveryCaseCustodianUnifiedGroupSourceGroupServiceProvisioningError](Get-MgSecurityCaseEdiscoveryCaseCustodianUnifiedGroupSourceGroupServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a group object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgSecurityCaseEdiscoveryCaseCustodianUnifiedGroupSourceGroupServiceProvisioningErrorCount](Get-MgSecurityCaseEdiscoveryCaseCustodianUnifiedGroupSourceGroupServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -276,78 +275,6 @@ Get the number of the resource
 ### [Get-MgSecurityIncidentCount](Get-MgSecurityIncidentCount.md)
 Get the number of the resource
 
-### [Get-MgSecurityLabel](Get-MgSecurityLabel.md)
-Get labels from security
-
-### [Get-MgSecurityLabelAuthority](Get-MgSecurityLabelAuthority.md)
-Read the properties and relationships of a authorityTemplate object.
-
-### [Get-MgSecurityLabelAuthorityCount](Get-MgSecurityLabelAuthorityCount.md)
-Get the number of the resource
-
-### [Get-MgSecurityLabelCategory](Get-MgSecurityLabelCategory.md)
-Read the properties and relationships of a categoryTemplate object.
-
-### [Get-MgSecurityLabelCategoryCount](Get-MgSecurityLabelCategoryCount.md)
-Get the number of the resource
-
-### [Get-MgSecurityLabelCategorySubcategory](Get-MgSecurityLabelCategorySubcategory.md)
-Get subcategories from security
-
-### [Get-MgSecurityLabelCategorySubcategoryCount](Get-MgSecurityLabelCategorySubcategoryCount.md)
-Get the number of the resource
-
-### [Get-MgSecurityLabelCitation](Get-MgSecurityLabelCitation.md)
-Read the properties and relationships of a citationTemplate object.
-
-### [Get-MgSecurityLabelCitationCount](Get-MgSecurityLabelCitationCount.md)
-Get the number of the resource
-
-### [Get-MgSecurityLabelDepartment](Get-MgSecurityLabelDepartment.md)
-Read the properties and relationships of a departmentTemplate object.
-
-### [Get-MgSecurityLabelDepartmentCount](Get-MgSecurityLabelDepartmentCount.md)
-Get the number of the resource
-
-### [Get-MgSecurityLabelFilePlanReference](Get-MgSecurityLabelFilePlanReference.md)
-Read the properties and relationships of a filePlanReferenceTemplate object.
-
-### [Get-MgSecurityLabelFilePlanReferenceCount](Get-MgSecurityLabelFilePlanReferenceCount.md)
-Get the number of the resource
-
-### [Get-MgSecurityLabelRetentionEventType](Get-MgSecurityLabelRetentionEventType.md)
-Represents the type associated with a retention event.
-
-### [Get-MgSecurityLabelRetentionLabel](Get-MgSecurityLabelRetentionLabel.md)
-Represents how customers can manage their data, whether and for how long to retain or delete it.
-
-### [Get-MgSecurityLabelRetentionLabelCount](Get-MgSecurityLabelRetentionLabelCount.md)
-Get the number of the resource
-
-### [Get-MgSecurityLabelRetentionLabelDescriptor](Get-MgSecurityLabelRetentionLabelDescriptor.md)
-Represents out-of-the-box values that provide more options to improve the manageability and organization of the content you need to label.
-
-### [Get-MgSecurityLabelRetentionLabelDescriptorAuthorityTemplate](Get-MgSecurityLabelRetentionLabelDescriptorAuthorityTemplate.md)
-Specifies the underlying authority that describes the type of content to be retained and its retention schedule.
-
-### [Get-MgSecurityLabelRetentionLabelDescriptorCategoryTemplate](Get-MgSecurityLabelRetentionLabelDescriptorCategoryTemplate.md)
-Specifies a group of similar types of content in a particular department.
-
-### [Get-MgSecurityLabelRetentionLabelDescriptorCitationTemplate](Get-MgSecurityLabelRetentionLabelDescriptorCitationTemplate.md)
-The specific rule or regulation created by a jurisdiction used to determine whether certain labels and content should be retained or deleted.
-
-### [Get-MgSecurityLabelRetentionLabelDescriptorDepartmentTemplate](Get-MgSecurityLabelRetentionLabelDescriptorDepartmentTemplate.md)
-Specifies the  department or business unit of an organization to which a label belongs.
-
-### [Get-MgSecurityLabelRetentionLabelDescriptorFilePlanReferenceTemplate](Get-MgSecurityLabelRetentionLabelDescriptorFilePlanReferenceTemplate.md)
-Specifies a unique alpha-numeric identifier for an organization’s retention schedule.
-
-### [Get-MgSecurityLabelRetentionLabelDispositionReviewStage](Get-MgSecurityLabelRetentionLabelDispositionReviewStage.md)
-When action at the end of retention is chosen as 'dispositionReview', dispositionReviewStages specifies a sequential set of stages with at least one reviewer in each stage.
-
-### [Get-MgSecurityLabelRetentionLabelDispositionReviewStageCount](Get-MgSecurityLabelRetentionLabelDispositionReviewStageCount.md)
-Get the number of the resource
-
 ### [Get-MgSecuritySecureScore](Get-MgSecuritySecureScore.md)
 Retrieve the properties and relationships of a secureScore object.
 
@@ -372,12 +299,11 @@ Get the number of the resource
 
 ### [Get-MgSecuritySubjectRightsRequestApproverMailboxSetting](Get-MgSecuritySubjectRightsRequestApproverMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgSecuritySubjectRightsRequestApproverServiceProvisioningError](Get-MgSecuritySubjectRightsRequestApproverServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgSecuritySubjectRightsRequestApproverServiceProvisioningErrorCount](Get-MgSecuritySubjectRightsRequestApproverServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -390,12 +316,11 @@ Get the number of the resource
 
 ### [Get-MgSecuritySubjectRightsRequestCollaboratorMailboxSetting](Get-MgSecuritySubjectRightsRequestCollaboratorMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgSecuritySubjectRightsRequestCollaboratorServiceProvisioningError](Get-MgSecuritySubjectRightsRequestCollaboratorServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .
-Supports $filter (eq, not, for isResolved and serviceInstance).
+Get serviceProvisioningErrors property value
 
 ### [Get-MgSecuritySubjectRightsRequestCollaboratorServiceProvisioningErrorCount](Get-MgSecuritySubjectRightsRequestCollaboratorServiceProvisioningErrorCount.md)
 Get the number of the resource
@@ -766,31 +691,6 @@ Create a new ediscoveryReviewTag object.
 ### [New-MgSecurityIncident](New-MgSecurityIncident.md)
 Create new navigation property to incidents for security
 
-### [New-MgSecurityLabelAuthority](New-MgSecurityLabelAuthority.md)
-Create a new authorityTemplate object.
-
-### [New-MgSecurityLabelCategory](New-MgSecurityLabelCategory.md)
-Create a new categoryTemplate object.
-
-### [New-MgSecurityLabelCategorySubcategory](New-MgSecurityLabelCategorySubcategory.md)
-Create new navigation property to subcategories for security
-
-### [New-MgSecurityLabelCitation](New-MgSecurityLabelCitation.md)
-Create a new citationTemplate object.
-
-### [New-MgSecurityLabelDepartment](New-MgSecurityLabelDepartment.md)
-Create a new departmentTemplate object.
-
-### [New-MgSecurityLabelFilePlanReference](New-MgSecurityLabelFilePlanReference.md)
-Create a new filePlanReferenceTemplate object.
-
-### [New-MgSecurityLabelRetentionLabel](New-MgSecurityLabelRetentionLabel.md)
-Create a new retentionLabel object.
-To create a disposition review stage, include the actionAfterRetentionPeriod property in the request body with one of the possible values specified.
-
-### [New-MgSecurityLabelRetentionLabelDispositionReviewStage](New-MgSecurityLabelRetentionLabelDispositionReviewStage.md)
-Create new navigation property to dispositionReviewStages for security
-
 ### [New-MgSecuritySecureScore](New-MgSecuritySecureScore.md)
 Create new navigation property to secureScores for security
 
@@ -955,6 +855,12 @@ Delete an ediscoverySearch object.
 ### [Remove-MgSecurityCaseEdiscoveryCaseSearchAdditionalSource](Remove-MgSecurityCaseEdiscoveryCaseSearchAdditionalSource.md)
 Delete navigation property additionalSources for security
 
+### [Remove-MgSecurityCaseEdiscoveryCaseSearchCustodianSource](Remove-MgSecurityCaseEdiscoveryCaseSearchCustodianSource.md)
+Remove a dataSource object.
+
+### [Remove-MgSecurityCaseEdiscoveryCaseSearchNoncustodialSource](Remove-MgSecurityCaseEdiscoveryCaseSearchNoncustodialSource.md)
+Remove an ediscoveryNoncustodialDataSource object.
+
 ### [Remove-MgSecurityCaseEdiscoveryCaseSetting](Remove-MgSecurityCaseEdiscoveryCaseSetting.md)
 Delete navigation property settings for security
 
@@ -963,36 +869,6 @@ Remove an ediscoveryReviewTag object.
 
 ### [Remove-MgSecurityIncident](Remove-MgSecurityIncident.md)
 Delete navigation property incidents for security
-
-### [Remove-MgSecurityLabel](Remove-MgSecurityLabel.md)
-Delete navigation property labels for security
-
-### [Remove-MgSecurityLabelAuthority](Remove-MgSecurityLabelAuthority.md)
-Delete a authorityTemplate object.
-
-### [Remove-MgSecurityLabelCategory](Remove-MgSecurityLabelCategory.md)
-Delete a categoryTemplate object.
-
-### [Remove-MgSecurityLabelCategorySubcategory](Remove-MgSecurityLabelCategorySubcategory.md)
-Delete navigation property subcategories for security
-
-### [Remove-MgSecurityLabelCitation](Remove-MgSecurityLabelCitation.md)
-Delete a citationTemplate object.
-
-### [Remove-MgSecurityLabelDepartment](Remove-MgSecurityLabelDepartment.md)
-Delete a departmentTemplate object.
-
-### [Remove-MgSecurityLabelFilePlanReference](Remove-MgSecurityLabelFilePlanReference.md)
-Delete a filePlanReferenceTemplate object.
-
-### [Remove-MgSecurityLabelRetentionLabel](Remove-MgSecurityLabelRetentionLabel.md)
-Delete a retentionLabel object.
-
-### [Remove-MgSecurityLabelRetentionLabelDescriptor](Remove-MgSecurityLabelRetentionLabelDescriptor.md)
-Delete navigation property descriptors for security
-
-### [Remove-MgSecurityLabelRetentionLabelDispositionReviewStage](Remove-MgSecurityLabelRetentionLabelDispositionReviewStage.md)
-Delete navigation property dispositionReviewStages for security
 
 ### [Remove-MgSecuritySecureScore](Remove-MgSecuritySecureScore.md)
 Delete navigation property secureScores for security
@@ -1180,37 +1056,6 @@ Update the properties of an ediscoveryReviewTag object.
 
 ### [Update-MgSecurityIncident](Update-MgSecurityIncident.md)
 Update the properties of an incident object.
-
-### [Update-MgSecurityLabel](Update-MgSecurityLabel.md)
-Update the navigation property labels in security
-
-### [Update-MgSecurityLabelAuthority](Update-MgSecurityLabelAuthority.md)
-Update the navigation property authorities in security
-
-### [Update-MgSecurityLabelCategory](Update-MgSecurityLabelCategory.md)
-Update the navigation property categories in security
-
-### [Update-MgSecurityLabelCategorySubcategory](Update-MgSecurityLabelCategorySubcategory.md)
-Update the navigation property subcategories in security
-
-### [Update-MgSecurityLabelCitation](Update-MgSecurityLabelCitation.md)
-Update the navigation property citations in security
-
-### [Update-MgSecurityLabelDepartment](Update-MgSecurityLabelDepartment.md)
-Update the navigation property departments in security
-
-### [Update-MgSecurityLabelFilePlanReference](Update-MgSecurityLabelFilePlanReference.md)
-Update the navigation property filePlanReferences in security
-
-### [Update-MgSecurityLabelRetentionLabel](Update-MgSecurityLabelRetentionLabel.md)
-Update the properties of a retentionLabel object.
-To update a disposition review stage, include the actionAfterRetentionPeriod property in the request body with one of the possible values specified.
-
-### [Update-MgSecurityLabelRetentionLabelDescriptor](Update-MgSecurityLabelRetentionLabelDescriptor.md)
-Update the navigation property descriptors in security
-
-### [Update-MgSecurityLabelRetentionLabelDispositionReviewStage](Update-MgSecurityLabelRetentionLabelDispositionReviewStage.md)
-Update the navigation property dispositionReviewStages in security
 
 ### [Update-MgSecuritySecureScore](Update-MgSecuritySecureScore.md)
 Update the navigation property secureScores in security

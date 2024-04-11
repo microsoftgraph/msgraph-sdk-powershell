@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
-Module Guid: be6cdd57-da24-44ef-86bb-bd059824d81d
+Module Guid: 1755f28e-eb7e-478a-9846-c724a61ba4ac
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devicemanagement.administration
 Help Version: 1.0.0.0
 Locale: en-US
@@ -473,7 +473,7 @@ Cloud PC related reports.
 Read the properties and relationships of a cloudPcExportJob object.
 You can download a report by first creating a new cloudPcExportJob resource to initiate downloading.
 Use this GET operation to verify the exportJobStatus property of the cloudPcExportJob resource.
-The property becomes completed when the report finishes downloading in the location specified by the exportUrl property.
+When the property becomes completed, the report has finished downloading in the location specified by the exportUrl property.
 
 ### [Get-MgBetaDeviceManagementVirtualEndpointReportExportJobCount](Get-MgBetaDeviceManagementVirtualEndpointReportExportJobCount.md)
 Get the number of the resource
@@ -849,7 +849,7 @@ Delete navigation property galleryImages for deviceManagement
 ### [Remove-MgBetaDeviceManagementVirtualEndpointOnPremiseConnection](Remove-MgBetaDeviceManagementVirtualEndpointOnPremiseConnection.md)
 Delete a specific cloudPcOnPremisesConnection object.
 When you delete an Azure network connection, permissions to the service are removed from the specified Azure resources.
-You can't delete an Azure network connection when it's in use, as indicated by the inUse property.
+You cannot delete an Azure network connection when it's in use, as indicated by the inUse property.
 
 ### [Remove-MgBetaDeviceManagementVirtualEndpointOrganizationSetting](Remove-MgBetaDeviceManagementVirtualEndpointOrganizationSetting.md)
 Delete navigation property organizationSettings for deviceManagement

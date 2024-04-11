@@ -8,28 +8,25 @@ schema: 2.0.0
 # Remove-MgEducationClassModuleResource
 
 ## SYNOPSIS
-Delete a specific educationModuleResource attached to a module.
-Only teachers in the class can remove a resource.
+Delete navigation property resources for education
 
 ## SYNTAX
 
 ### Delete (Default)
 ```
 Remove-MgEducationClassModuleResource -EducationClassId <String> -EducationModuleId <String>
- -EducationModuleResourceId <String> [-IfMatch <String>] [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -EducationModuleResourceId <String> [-IfMatch <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
 Remove-MgEducationClassModuleResource -InputObject <IEducationIdentity> [-IfMatch <String>]
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Headers <IDictionary>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Delete a specific educationModuleResource attached to a module.
-Only teachers in the class can remove a resource.
+Delete navigation property resources for education
 
 ## EXAMPLES
 
@@ -147,21 +144,6 @@ Returns true when the command succeeds
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named

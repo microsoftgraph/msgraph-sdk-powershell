@@ -8,26 +8,24 @@ schema: 2.0.0
 # Get-MgApplicationSynchronizationJobBulkUpload
 
 ## SYNOPSIS
-The bulk upload operation for the job.
+Get bulkUpload from applications
 
 ## SYNTAX
 
 ### Get (Default)
 ```
 Get-MgApplicationSynchronizationJobBulkUpload -ApplicationId <String> -SynchronizationJobId <String>
- [-ExpandProperty <String[]>] [-Property <String[]>] [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [<CommonParameters>]
+ [-ExpandProperty <String[]>] [-Property <String[]>] [-Headers <IDictionary>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
 Get-MgApplicationSynchronizationJobBulkUpload -InputObject <IApplicationsIdentity>
- [-ExpandProperty <String[]>] [-Property <String[]>] [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [<CommonParameters>]
+ [-ExpandProperty <String[]>] [-Property <String[]>] [-Headers <IDictionary>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The bulk upload operation for the job.
+Get bulkUpload from applications
 
 ## EXAMPLES
 
@@ -123,21 +121,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -SynchronizationJobId
 The unique identifier of synchronizationJob
 
@@ -163,6 +146,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### System.Collections.IDictionary
 
 ## OUTPUTS
+
+### System.Collections.Hashtable
 
 ### System.String
 

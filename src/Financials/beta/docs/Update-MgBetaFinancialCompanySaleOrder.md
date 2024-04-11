@@ -23,25 +23,23 @@ Update-MgBetaFinancialCompanySaleOrder -CompanyId <String> -SalesOrderId <String
  [-ExternalDocumentNumber <String>] [-FullyShipped] [-Id <String>] [-LastModifiedDateTime <DateTime>]
  [-Number <String>] [-OrderDate <DateTime>] [-PartialShipping] [-PaymentTerm <IMicrosoftGraphPaymentTerm>]
  [-PaymentTermsId <String>] [-PhoneNumber <String>] [-PricesIncludeTax] [-RequestedDeliveryDate <DateTime>]
- [-ResponseHeadersVariable <String>] [-SalesOrderLines <IMicrosoftGraphSalesOrderLine[]>]
- [-Salesperson <String>] [-SellingPostalAddress <IMicrosoftGraphPostalAddressType>]
+ [-SalesOrderLines <IMicrosoftGraphSalesOrderLine[]>] [-Salesperson <String>]
+ [-SellingPostalAddress <IMicrosoftGraphPostalAddressType>]
  [-ShippingPostalAddress <IMicrosoftGraphPostalAddressType>] [-ShipToContact <String>] [-ShipToName <String>]
  [-Status <String>] [-TotalAmountExcludingTax <Decimal>] [-TotalAmountIncludingTax <Decimal>]
- [-TotalTaxAmount <Decimal>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-TotalTaxAmount <Decimal>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaFinancialCompanySaleOrder -CompanyId <String> -SalesOrderId <String>
- -BodyParameter <IMicrosoftGraphSalesOrder> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphSalesOrder> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaFinancialCompanySaleOrder -InputObject <IFinancialsIdentity>
- -BodyParameter <IMicrosoftGraphSalesOrder> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphSalesOrder> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -54,12 +52,11 @@ Update-MgBetaFinancialCompanySaleOrder -InputObject <IFinancialsIdentity> [-Addi
  [-Email <String>] [-ExternalDocumentNumber <String>] [-FullyShipped] [-Id <String>]
  [-LastModifiedDateTime <DateTime>] [-Number <String>] [-OrderDate <DateTime>] [-PartialShipping]
  [-PaymentTerm <IMicrosoftGraphPaymentTerm>] [-PaymentTermsId <String>] [-PhoneNumber <String>]
- [-PricesIncludeTax] [-RequestedDeliveryDate <DateTime>] [-ResponseHeadersVariable <String>]
- [-SalesOrderLines <IMicrosoftGraphSalesOrderLine[]>] [-Salesperson <String>]
- [-SellingPostalAddress <IMicrosoftGraphPostalAddressType>]
+ [-PricesIncludeTax] [-RequestedDeliveryDate <DateTime>] [-SalesOrderLines <IMicrosoftGraphSalesOrderLine[]>]
+ [-Salesperson <String>] [-SellingPostalAddress <IMicrosoftGraphPostalAddressType>]
  [-ShippingPostalAddress <IMicrosoftGraphPostalAddressType>] [-ShipToContact <String>] [-ShipToName <String>]
  [-Status <String>] [-TotalAmountExcludingTax <Decimal>] [-TotalAmountIncludingTax <Decimal>]
- [-TotalTaxAmount <Decimal>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-TotalTaxAmount <Decimal>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -372,21 +369,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 .
 
@@ -546,21 +528,6 @@ Accept wildcard characters: False
 Type: System.DateTime
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -776,8 +743,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSalesOrder
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

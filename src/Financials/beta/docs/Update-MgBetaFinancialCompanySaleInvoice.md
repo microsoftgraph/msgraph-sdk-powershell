@@ -23,27 +23,24 @@ Update-MgBetaFinancialCompanySaleInvoice -CompanyId <String> -SalesInvoiceId <St
  [-DiscountAppliedBeforeTax] [-DueDate <DateTime>] [-Email <String>] [-ExternalDocumentNumber <String>]
  [-Id <String>] [-InvoiceDate <DateTime>] [-LastModifiedDateTime <DateTime>] [-Number <String>]
  [-OrderId <String>] [-OrderNumber <String>] [-PaymentTerm <IMicrosoftGraphPaymentTerm>]
- [-PaymentTermsId <String>] [-PhoneNumber <String>] [-PricesIncludeTax] [-ResponseHeadersVariable <String>]
+ [-PaymentTermsId <String>] [-PhoneNumber <String>] [-PricesIncludeTax]
  [-SalesInvoiceLines <IMicrosoftGraphSalesInvoiceLine[]>] [-Salesperson <String>]
  [-SellingPostalAddress <IMicrosoftGraphPostalAddressType>] [-ShipmentMethod <IMicrosoftGraphShipmentMethod>]
  [-ShipmentMethodId <String>] [-ShippingPostalAddress <IMicrosoftGraphPostalAddressType>]
  [-ShipToContact <String>] [-ShipToName <String>] [-Status <String>] [-TotalAmountExcludingTax <Decimal>]
- [-TotalAmountIncludingTax <Decimal>] [-TotalTaxAmount <Decimal>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-TotalAmountIncludingTax <Decimal>] [-TotalTaxAmount <Decimal>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaFinancialCompanySaleInvoice -CompanyId <String> -SalesInvoiceId <String>
- -BodyParameter <IMicrosoftGraphSalesInvoice> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphSalesInvoice> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaFinancialCompanySaleInvoice -InputObject <IFinancialsIdentity>
- -BodyParameter <IMicrosoftGraphSalesInvoice> [-ResponseHeadersVariable <String>] [-Headers <IDictionary>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphSalesInvoice> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -57,13 +54,12 @@ Update-MgBetaFinancialCompanySaleInvoice -InputObject <IFinancialsIdentity>
  [-DiscountAppliedBeforeTax] [-DueDate <DateTime>] [-Email <String>] [-ExternalDocumentNumber <String>]
  [-Id <String>] [-InvoiceDate <DateTime>] [-LastModifiedDateTime <DateTime>] [-Number <String>]
  [-OrderId <String>] [-OrderNumber <String>] [-PaymentTerm <IMicrosoftGraphPaymentTerm>]
- [-PaymentTermsId <String>] [-PhoneNumber <String>] [-PricesIncludeTax] [-ResponseHeadersVariable <String>]
+ [-PaymentTermsId <String>] [-PhoneNumber <String>] [-PricesIncludeTax]
  [-SalesInvoiceLines <IMicrosoftGraphSalesInvoiceLine[]>] [-Salesperson <String>]
  [-SellingPostalAddress <IMicrosoftGraphPostalAddressType>] [-ShipmentMethod <IMicrosoftGraphShipmentMethod>]
  [-ShipmentMethodId <String>] [-ShippingPostalAddress <IMicrosoftGraphPostalAddressType>]
  [-ShipToContact <String>] [-ShipToName <String>] [-Status <String>] [-TotalAmountExcludingTax <Decimal>]
- [-TotalAmountIncludingTax <Decimal>] [-TotalTaxAmount <Decimal>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-TotalAmountIncludingTax <Decimal>] [-TotalTaxAmount <Decimal>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -391,21 +387,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 .
 
@@ -565,21 +546,6 @@ Accept wildcard characters: False
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -826,8 +792,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.Beta.PowerShell.Models.IFinancialsIdentity
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSalesInvoice
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

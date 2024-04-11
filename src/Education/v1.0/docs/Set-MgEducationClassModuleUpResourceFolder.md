@@ -8,28 +8,24 @@ schema: 2.0.0
 # Set-MgEducationClassModuleUpResourceFolder
 
 ## SYNOPSIS
-Create a SharePoint folder to upload files for a given educationModule.
-Only teachers can perform this operation.
-The teacher determines what resources to upload to the SharePoint folder for the module.
+Invoke action setUpResourcesFolder
 
 ## SYNTAX
 
 ### Set (Default)
 ```
 Set-MgEducationClassModuleUpResourceFolder -EducationClassId <String> -EducationModuleId <String>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentity
 ```
-Set-MgEducationClassModuleUpResourceFolder -InputObject <IEducationIdentity>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Set-MgEducationClassModuleUpResourceFolder -InputObject <IEducationIdentity> [-Headers <IDictionary>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Create a SharePoint folder to upload files for a given educationModule.
-Only teachers can perform this operation.
-The teacher determines what resources to upload to the SharePoint folder for the module.
+Invoke action setUpResourcesFolder
 
 ## EXAMPLES
 
@@ -107,21 +103,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 

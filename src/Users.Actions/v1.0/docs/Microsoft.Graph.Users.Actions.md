@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users.Actions
-Module Guid: 30863cac-ae53-41f8-ad89-8c0c4c685198
+Module Guid: ca56ca8e-5a65-4fe4-b033-1cee08f55f0e
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.users.actions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -23,9 +23,6 @@ Add or sync a copy of a published content type from the content type hub to a ta
 This method is part of the content type publishing changes to optimize the syncing of published content types to sites and lists, effectively switching from a 'push everywhere' to 'pull as needed' approach.
 The method allows users to pull content types directly from the content type hub to a site or list.
 For more information, see contentType: getCompatibleHubContentTypes and the blog post Syntex Product Updates – August 2021.
-
-### [Add-MgUserFollowedSite](Add-MgUserFollowedSite.md)
-Follow a user's site or multiple sites.
 
 ### [Clear-MgUserChatMessageReaction](Clear-MgUserChatMessageReaction.md)
 Invoke action unsetReaction
@@ -113,7 +110,8 @@ Locate a device
 
 ### [Find-MgUserMeetingTime](Find-MgUserMeetingTime.md)
 Suggest meeting times and locations based on organizer and attendee availability, and time or location constraints specified as parameters.
-If findMeetingTimes cannot return any meeting suggestions, the response would indicate a reason in the emptySuggestionsReason property.\nBased on this value, you can better adjust the parameters and call findMeetingTimes again.
+If findMeetingTimes cannot return any meeting suggestions, the response would indicate a reason in the emptySuggestionsReason property.
+\nBased on this value, you can better adjust the parameters and call findMeetingTimes again.
 The algorithm used to suggest meeting times and locations undergoes fine-tuning from time to time.
 In scenarios like test environments where the input parameters and calendar data remain static, expect that the suggested results may differ over time.
 
@@ -225,13 +223,13 @@ Follow a driveItem.
 Follow a driveItem.
 
 ### [Invoke-MgForwardUserEvent](Invoke-MgForwardUserEvent.md)
-This action allows the organizer or attendee of a meeting event to forward the\nmeeting request to a new recipient.
-If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action\nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's\ncopy of the meeting event.
+This action allows the organizer or attendee of a meeting event to forward the \nmeeting request to a new recipient.
+If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action \nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's \ncopy of the meeting event.
 This convenience is not available when forwarding from an Outlook.com account.
 
 ### [Invoke-MgForwardUserEventInstance](Invoke-MgForwardUserEventInstance.md)
-This action allows the organizer or attendee of a meeting event to forward the\nmeeting request to a new recipient.
-If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action\nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's\ncopy of the meeting event.
+This action allows the organizer or attendee of a meeting event to forward the \nmeeting request to a new recipient.
+If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action \nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's \ncopy of the meeting event.
 This convenience is not available when forwarding from an Outlook.com account.
 
 ### [Invoke-MgForwardUserMailFolderChildFolderMessage](Invoke-MgForwardUserMailFolderChildFolderMessage.md)
@@ -351,7 +349,7 @@ Alternatively, create a draft to reply to an existing message and send it later.
 Retire a device
 
 ### [Invoke-MgRetryUserServiceProvisioning](Invoke-MgRetryUserServiceProvisioning.md)
-Retry the user service provisioning.
+Invoke action retryServiceProvisioning
 
 ### [Invoke-MgScanUserManagedDeviceWindowsDefender](Invoke-MgScanUserManagedDeviceWindowsDefender.md)
 Not yet documented
@@ -406,22 +404,13 @@ You can use createLink action to share a DriveItem via a sharing link.
 The createLink action will create a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, the existing sharing link will be returned.
 DriveItem resources inherit sharing permissions from their ancestors.
 
-### [New-MgUserDriveItemListItemLink](New-MgUserDriveItemListItemLink.md)
-Invoke action createLink
-
 ### [New-MgUserDriveItemUploadSession](New-MgUserDriveItemUploadSession.md)
 Invoke action createUploadSession
-
-### [New-MgUserDriveListItemLink](New-MgUserDriveListItemLink.md)
-Invoke action createLink
 
 ### [New-MgUserDriveRootLink](New-MgUserDriveRootLink.md)
 You can use createLink action to share a DriveItem via a sharing link.
 The createLink action will create a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, the existing sharing link will be returned.
 DriveItem resources inherit sharing permissions from their ancestors.
-
-### [New-MgUserDriveRootListItemLink](New-MgUserDriveRootListItemLink.md)
-Invoke action createLink
 
 ### [New-MgUserDriveRootUploadSession](New-MgUserDriveRootUploadSession.md)
 Invoke action createUploadSession
@@ -576,9 +565,6 @@ Invoke action permanentDelete
 ### [Remove-MgUserDriveRootPermanent](Remove-MgUserDriveRootPermanent.md)
 Invoke action permanentDelete
 
-### [Remove-MgUserFollowedSite](Remove-MgUserFollowedSite.md)
-Unfollow a user's site or multiple sites.
-
 ### [Remove-MgUserManagedDeviceUserFromSharedAppleDevice](Remove-MgUserManagedDeviceUserFromSharedAppleDevice.md)
 Delete user from shared Apple device
 
@@ -646,7 +632,7 @@ This operation prevents access to the organization's data through applications o
 
 ### [Send-MgUserChatActivityNotification](Send-MgUserChatActivityNotification.md)
 Send an activity feed notification in scope of a chat.
-For more information about sending notifications and the requirements for doing so, see sending Teams activity notifications.
+For more details about sending notifications and the requirements for doing so, see sending Teams activity notifications.
 
 ### [Send-MgUserMail](Send-MgUserMail.md)
 Send the message specified in the request body using either JSON or MIME format.
@@ -673,18 +659,9 @@ The draft message can be a new message draft, reply draft, reply-all draft, or a
 This method saves the message in the Sent Items folder.
 Alternatively, send a new message in a single operation.
 
-### [Send-MgUserOnlineMeetingVirtualAppointmentReminderSm](Send-MgUserOnlineMeetingVirtualAppointmentReminderSm.md)
-Send an SMS reminder to external attendees for a Teams virtual appointment.
-This feature requires Teams premium and attendees must have a valid United States phone number to receive SMS notifications.
-
-### [Send-MgUserOnlineMeetingVirtualAppointmentSm](Send-MgUserOnlineMeetingVirtualAppointmentSm.md)
-Send an SMS notification to external attendees when a Teams virtual appointment is confirmed, rescheduled, or canceled.
-This feature requires Teams premium.
-Attendees must have a valid United States phone number to receive these SMS notifications.
-
 ### [Send-MgUserTeamworkActivityNotification](Send-MgUserTeamworkActivityNotification.md)
 Send an activity feed notification to a user.
-For more information, see sending Teams activity notifications.
+For more details about sending notifications and the requirements for doing so, see sending Teams activity notifications.
 
 ### [Set-MgUserChatMessageReaction](Set-MgUserChatMessageReaction.md)
 Invoke action setReaction

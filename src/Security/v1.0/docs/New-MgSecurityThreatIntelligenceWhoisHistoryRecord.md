@@ -22,15 +22,14 @@ New-MgSecurityThreatIntelligenceWhoisHistoryRecord [-Abuse <IMicrosoftGraphSecur
  [-Nameservers <IMicrosoftGraphSecurityWhoisNameserver[]>] [-Noc <IMicrosoftGraphSecurityWhoisContact>]
  [-RawWhoisText <String>] [-Registrant <IMicrosoftGraphSecurityWhoisContact>]
  [-Registrar <IMicrosoftGraphSecurityWhoisContact>] [-RegistrationDateTime <DateTime>]
- [-ResponseHeadersVariable <String>] [-Technical <IMicrosoftGraphSecurityWhoisContact>]
- [-WhoisServer <String>] [-Zone <IMicrosoftGraphSecurityWhoisContact>] [-Headers <IDictionary>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-Technical <IMicrosoftGraphSecurityWhoisContact>] [-WhoisServer <String>]
+ [-Zone <IMicrosoftGraphSecurityWhoisContact>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgSecurityThreatIntelligenceWhoisHistoryRecord -BodyParameter <Hashtable>
- [-ResponseHeadersVariable <String>] [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgSecurityThreatIntelligenceWhoisHistoryRecord -BodyParameter <Hashtable> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -178,21 +177,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -358,21 +342,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Technical
 whoisContact
 To construct, see NOTES section for TECHNICAL properties and create a hash table.
@@ -457,8 +426,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### System.Collections.Hashtable
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

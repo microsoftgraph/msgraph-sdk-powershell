@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgSearchQna
 
 ## SYNOPSIS
-Delete a qna object.
+Delete navigation property qnas for search
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgSearchQna -InputObject <ISearchIdentity> [-IfMatch <String>] [-Response
 ```
 
 ## DESCRIPTION
-Delete a qna object.
+Delete navigation property qnas for search
 
 ## EXAMPLES
 

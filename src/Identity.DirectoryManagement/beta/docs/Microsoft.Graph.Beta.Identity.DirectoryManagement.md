@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
-Module Guid: e226b514-b64d-4386-8740-fc7c8b6e3126
+Module Guid: 86c2ff3a-a15d-46de-a225-329a7adf8d23
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.identity.directorymanagement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -214,10 +214,6 @@ This API returns up to 1,000 deleted objects owned by the user, sorted by ID, an
 
 ### [Get-MgBetaAdminPeople](Get-MgBetaAdminPeople.md)
 Retrieve the properties and relationships of a peopleAdminSettings object.
-
-### [Get-MgBetaAdminPeopleItemInsight](Get-MgBetaAdminPeopleItemInsight.md)
-Get the properties of an insightsSettings object for displaying or returning item insights in an organization.
-To learn how to customize the privacy of item insights in an organization, see Customize item insights privacy.
 
 ### [Get-MgBetaAdminPeopleProfileCardProperty](Get-MgBetaAdminPeopleProfileCardProperty.md)
 Retrieve the properties of a profileCardProperty entity.
@@ -633,9 +629,7 @@ Get the number of the resource
 Get the number of the resource
 
 ### [Get-MgBetaDirectoryDeletedItem](Get-MgBetaDirectoryDeletedItem.md)
-Recently deleted items.
-Read-only.
-Nullable.
+Get deletedItems from directory
 
 ### [Get-MgBetaDirectoryDeletedItemAsAdministrativeUnit](Get-MgBetaDirectoryDeletedItemAsAdministrativeUnit.md)
 Get the item of type microsoft.graph.directoryObject as microsoft.graph.administrativeUnit
@@ -693,12 +687,6 @@ Retrieve the properties of a deviceLocalCredentialInfo for a specified device ob
 ### [Get-MgBetaDirectoryDeviceLocalCredentialCount](Get-MgBetaDirectoryDeviceLocalCredentialCount.md)
 Get the number of the resource
 
-### [Get-MgBetaDirectoryExternalUserProfile](Get-MgBetaDirectoryExternalUserProfile.md)
-Retrieve the properties of a specific externalUserProfile.
-
-### [Get-MgBetaDirectoryExternalUserProfileCount](Get-MgBetaDirectoryExternalUserProfileCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaDirectoryFeatureRolloutPolicy](Get-MgBetaDirectoryFeatureRolloutPolicy.md)
 Get featureRolloutPolicies from directory
 
@@ -751,12 +739,6 @@ The collection of external Microsoft Entra tenants that the user has shared prof
 Read-only.
 
 ### [Get-MgBetaDirectoryOutboundSharedUserProfileTenantCount](Get-MgBetaDirectoryOutboundSharedUserProfileTenantCount.md)
-Get the number of the resource
-
-### [Get-MgBetaDirectoryPendingExternalUserProfile](Get-MgBetaDirectoryPendingExternalUserProfile.md)
-Retrieve the properties of a specific pendingExternalUserProfile.
-
-### [Get-MgBetaDirectoryPendingExternalUserProfileCount](Get-MgBetaDirectoryPendingExternalUserProfileCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaDirectoryRecommendation](Get-MgBetaDirectoryRecommendation.md)
@@ -933,12 +915,6 @@ Get sharedEmailDomains from directory
 Get the number of the resource
 
 ### [Get-MgBetaDirectorySubscription](Get-MgBetaDirectorySubscription.md)
-Get a specific commercial subscription that an organization has acquired.
-
-### [Get-MgBetaDirectorySubscriptionByCommerceSubscriptionId](Get-MgBetaDirectorySubscriptionByCommerceSubscriptionId.md)
-Get a specific commercial subscription that an organization has acquired.
-
-### [Get-MgBetaDirectorySubscriptionByOcpSubscriptionId](Get-MgBetaDirectorySubscriptionByOcpSubscriptionId.md)
 Get a specific commercial subscription that an organization has acquired.
 
 ### [Get-MgBetaDirectorySubscriptionCount](Get-MgBetaDirectorySubscriptionCount.md)
@@ -1278,9 +1254,6 @@ Create a new allowedValue object.
 ### [New-MgBetaDirectoryDeviceLocalCredential](New-MgBetaDirectoryDeviceLocalCredential.md)
 Create new navigation property to deviceLocalCredentials for directory
 
-### [New-MgBetaDirectoryExternalUserProfile](New-MgBetaDirectoryExternalUserProfile.md)
-Create new navigation property to externalUserProfiles for directory
-
 ### [New-MgBetaDirectoryFeatureRolloutPolicy](New-MgBetaDirectoryFeatureRolloutPolicy.md)
 Create new navigation property to featureRolloutPolicies for directory
 
@@ -1307,9 +1280,6 @@ Create new navigation property to outboundSharedUserProfiles for directory
 
 ### [New-MgBetaDirectoryOutboundSharedUserProfileTenant](New-MgBetaDirectoryOutboundSharedUserProfileTenant.md)
 Create new navigation property to tenants for directory
-
-### [New-MgBetaDirectoryPendingExternalUserProfile](New-MgBetaDirectoryPendingExternalUserProfile.md)
-Create a new pendingExternalUserProfile object.
 
 ### [New-MgBetaDirectoryRecommendation](New-MgBetaDirectoryRecommendation.md)
 Create new navigation property to recommendations for directory
@@ -1399,17 +1369,11 @@ Delete navigation property extensions for administrativeUnits
 ### [Remove-MgBetaAdministrativeUnitMemberByRef](Remove-MgBetaAdministrativeUnitMemberByRef.md)
 Delete ref of navigation property members for administrativeUnits
 
-### [Remove-MgBetaAdministrativeUnitMemberDirectoryObjectByRef](Remove-MgBetaAdministrativeUnitMemberDirectoryObjectByRef.md)
-Delete ref of navigation property members for administrativeUnits
-
 ### [Remove-MgBetaAdministrativeUnitScopedRoleMember](Remove-MgBetaAdministrativeUnitScopedRoleMember.md)
 Remove a Microsoft Entra role assignment with administrative unit scope.
 
 ### [Remove-MgBetaAdminPeople](Remove-MgBetaAdminPeople.md)
 Delete navigation property people for admin
-
-### [Remove-MgBetaAdminPeopleItemInsight](Remove-MgBetaAdminPeopleItemInsight.md)
-Delete navigation property itemInsights for admin
 
 ### [Remove-MgBetaAdminPeopleProfileCardProperty](Remove-MgBetaAdminPeopleProfileCardProperty.md)
 Delete the profileCardProperty object specified by its directoryPropertyName from the organization's profile card, and remove any localized customizations for that property.
@@ -1438,13 +1402,7 @@ Delete navigation property extensions for devices
 ### [Remove-MgBetaDeviceRegisteredOwnerByRef](Remove-MgBetaDeviceRegisteredOwnerByRef.md)
 Remove a user as a registered owner of the device.
 
-### [Remove-MgBetaDeviceRegisteredOwnerDirectoryObjectByRef](Remove-MgBetaDeviceRegisteredOwnerDirectoryObjectByRef.md)
-Remove a user as a registered owner of the device.
-
 ### [Remove-MgBetaDeviceRegisteredUserByRef](Remove-MgBetaDeviceRegisteredUserByRef.md)
-Remove a user as a registered user of the device.
-
-### [Remove-MgBetaDeviceRegisteredUserDirectoryObjectByRef](Remove-MgBetaDeviceRegisteredUserDirectoryObjectByRef.md)
 Remove a user as a registered user of the device.
 
 ### [Remove-MgBetaDeviceUsageRights](Remove-MgBetaDeviceUsageRights.md)
@@ -1457,9 +1415,6 @@ Delete navigation property administrativeUnits for directory
 Delete navigation property extensions for directory
 
 ### [Remove-MgBetaDirectoryAdministrativeUnitMemberByRef](Remove-MgBetaDirectoryAdministrativeUnitMemberByRef.md)
-Delete ref of navigation property members for directory
-
-### [Remove-MgBetaDirectoryAdministrativeUnitMemberDirectoryObjectByRef](Remove-MgBetaDirectoryAdministrativeUnitMemberDirectoryObjectByRef.md)
 Delete ref of navigation property members for directory
 
 ### [Remove-MgBetaDirectoryAdministrativeUnitScopedRoleMember](Remove-MgBetaDirectoryAdministrativeUnitScopedRoleMember.md)
@@ -1483,24 +1438,13 @@ Delete navigation property customSecurityAttributeDefinitions for directory
 ### [Remove-MgBetaDirectoryCustomSecurityAttributeDefinitionAllowedValue](Remove-MgBetaDirectoryCustomSecurityAttributeDefinitionAllowedValue.md)
 Delete navigation property allowedValues for directory
 
-### [Remove-MgBetaDirectoryDeletedItem](Remove-MgBetaDirectoryDeletedItem.md)
-Delete navigation property deletedItems for directory
-
 ### [Remove-MgBetaDirectoryDeviceLocalCredential](Remove-MgBetaDirectoryDeviceLocalCredential.md)
 Delete navigation property deviceLocalCredentials for directory
-
-### [Remove-MgBetaDirectoryExternalUserProfile](Remove-MgBetaDirectoryExternalUserProfile.md)
-Delete an externalUserProfile object.
-Note: To permanently delete the externalUserProfile, follow permanently delete an item.
-To restore an externalUserProfile, follow restore a deleted item.
 
 ### [Remove-MgBetaDirectoryFeatureRolloutPolicy](Remove-MgBetaDirectoryFeatureRolloutPolicy.md)
 Delete navigation property featureRolloutPolicies for directory
 
 ### [Remove-MgBetaDirectoryFeatureRolloutPolicyApplyToByRef](Remove-MgBetaDirectoryFeatureRolloutPolicyApplyToByRef.md)
-Remove an appliesTo on a featureRolloutPolicy object to remove the directoryObject from feature rollout.
-
-### [Remove-MgBetaDirectoryFeatureRolloutPolicyApplyToDirectoryObjectByRef](Remove-MgBetaDirectoryFeatureRolloutPolicyApplyToDirectoryObjectByRef.md)
 Remove an appliesTo on a featureRolloutPolicy object to remove the directoryObject from feature rollout.
 
 ### [Remove-MgBetaDirectoryFederationConfiguration](Remove-MgBetaDirectoryFederationConfiguration.md)
@@ -1527,11 +1471,6 @@ Delete navigation property tenants for directory
 ### [Remove-MgBetaDirectoryOutboundSharedUserProfileTenantPersonalData](Remove-MgBetaDirectoryOutboundSharedUserProfileTenantPersonalData.md)
 Create a request to remove the personal data for an outboundSharedUserProfile.
 
-### [Remove-MgBetaDirectoryPendingExternalUserProfile](Remove-MgBetaDirectoryPendingExternalUserProfile.md)
-Delete a pendingExternalUserProfile object.
-Note: To permanently delete the pendingExternalUserProfile, follow permanently delete an item.
-To restore a pendingExternalUserProfile, follow restore a deleted item.
-
 ### [Remove-MgBetaDirectoryRecommendation](Remove-MgBetaDirectoryRecommendation.md)
 Delete navigation property recommendations for directory
 
@@ -1545,12 +1484,6 @@ Delete entity from directoryRoles
 Delete entity from directoryRoles by roleTemplateId
 
 ### [Remove-MgBetaDirectoryRoleMemberByRef](Remove-MgBetaDirectoryRoleMemberByRef.md)
-Remove a member from a directoryRole.
-You can use both the object ID and template ID of the directoryRole with this API.
-The template ID of a built-in role is immutable and can be seen in the role description on the Microsoft Entra admin center.
-For details, see Role template IDs.
-
-### [Remove-MgBetaDirectoryRoleMemberDirectoryObjectByRef](Remove-MgBetaDirectoryRoleMemberDirectoryObjectByRef.md)
 Remove a member from a directoryRole.
 You can use both the object ID and template ID of the directoryRole with this API.
 The template ID of a built-in role is immutable and can be seen in the role description on the Microsoft Entra admin center.
@@ -1572,12 +1505,6 @@ Delete entity from directorySettingTemplates
 Delete navigation property sharedEmailDomains for directory
 
 ### [Remove-MgBetaDirectorySubscription](Remove-MgBetaDirectorySubscription.md)
-Delete navigation property subscriptions for directory
-
-### [Remove-MgBetaDirectorySubscriptionByCommerceSubscriptionId](Remove-MgBetaDirectorySubscriptionByCommerceSubscriptionId.md)
-Delete navigation property subscriptions for directory
-
-### [Remove-MgBetaDirectorySubscriptionByOcpSubscriptionId](Remove-MgBetaDirectorySubscriptionByOcpSubscriptionId.md)
 Delete navigation property subscriptions for directory
 
 ### [Remove-MgBetaDomain](Remove-MgBetaDomain.md)
@@ -1641,7 +1568,7 @@ Carries out the appropriate procedures to reset the onboarding status for the ma
 By invoking this action the platform attempts to onboard the managed tenant for management.
 
 ### [Restore-MgBetaDirectoryDeletedItem](Restore-MgBetaDirectoryDeletedItem.md)
-Restore a recently deleted application, externalUserProfile, group, pendingExternalUserProfile, servicePrincipal, administrative unit, or user object from deleted items.
+Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.
 If an item was accidentally deleted, you can fully restore the item.
 This isn't applicable to security groups, which are deleted permanently.
 Also, restoring an application doesn't restore the associated service principal automatically.
@@ -1830,16 +1757,11 @@ Update the navigation property scopedRoleMembers in administrativeUnits
 ### [Update-MgBetaAdminPeople](Update-MgBetaAdminPeople.md)
 Update the navigation property people in admin
 
-### [Update-MgBetaAdminPeopleItemInsight](Update-MgBetaAdminPeopleItemInsight.md)
-Update privacy settings to display or return the specified type of insights in an organization.
-The type of settings can be contact insights, item insights, or people insights.
-To learn more about customizing insights privacy for your organization, see:\n-  Customize item insights privacy \n-  Customize people insights privacy
-
 ### [Update-MgBetaAdminPeopleProfileCardProperty](Update-MgBetaAdminPeopleProfileCardProperty.md)
 Update the properties of a profileCardProperty object, identified by its directoryPropertyName property.
 
 ### [Update-MgBetaAdminPeoplePronoun](Update-MgBetaAdminPeoplePronoun.md)
-Update the properties of a pronounsSettings object in an organization.
+Update the properties of a pronounsSettings in an organization.
 For more information on settings to manage pronouns support, see Manage pronouns settings for an organization using the Microsoft Graph API.
 
 ### [Update-MgBetaContact](Update-MgBetaContact.md)
@@ -1899,9 +1821,6 @@ Update the properties of an allowedValue object.
 ### [Update-MgBetaDirectoryDeviceLocalCredential](Update-MgBetaDirectoryDeviceLocalCredential.md)
 Update the navigation property deviceLocalCredentials in directory
 
-### [Update-MgBetaDirectoryExternalUserProfile](Update-MgBetaDirectoryExternalUserProfile.md)
-Update the properties of a externalUserProfile object.
-
 ### [Update-MgBetaDirectoryFeatureRolloutPolicy](Update-MgBetaDirectoryFeatureRolloutPolicy.md)
 Update the navigation property featureRolloutPolicies in directory
 
@@ -1922,9 +1841,6 @@ Update the navigation property outboundSharedUserProfiles in directory
 
 ### [Update-MgBetaDirectoryOutboundSharedUserProfileTenant](Update-MgBetaDirectoryOutboundSharedUserProfileTenant.md)
 Update the navigation property tenants in directory
-
-### [Update-MgBetaDirectoryPendingExternalUserProfile](Update-MgBetaDirectoryPendingExternalUserProfile.md)
-Update the properties of a pendingExternalUserProfile object.
 
 ### [Update-MgBetaDirectoryRecommendation](Update-MgBetaDirectoryRecommendation.md)
 Update the navigation property recommendations in directory
@@ -1954,12 +1870,6 @@ Update entity in directorySettingTemplates
 Update the navigation property sharedEmailDomains in directory
 
 ### [Update-MgBetaDirectorySubscription](Update-MgBetaDirectorySubscription.md)
-Update the navigation property subscriptions in directory
-
-### [Update-MgBetaDirectorySubscriptionByCommerceSubscriptionId](Update-MgBetaDirectorySubscriptionByCommerceSubscriptionId.md)
-Update the navigation property subscriptions in directory
-
-### [Update-MgBetaDirectorySubscriptionByOcpSubscriptionId](Update-MgBetaDirectorySubscriptionByOcpSubscriptionId.md)
 Update the navigation property subscriptions in directory
 
 ### [Update-MgBetaDomain](Update-MgBetaDomain.md)
@@ -2003,7 +1913,9 @@ The type of settings can be contact insights, item insights, or people insights.
 To learn more about customizing insights privacy for your organization, see:\n-  Customize item insights privacy \n-  Customize people insights privacy
 
 ### [Update-MgBetaOrganizationSettingItemInsight](Update-MgBetaOrganizationSettingItemInsight.md)
-Update the navigation property itemInsights in organization
+Update privacy settings to display or return the specified type of insights in an organization.
+The type of settings can be contact insights, item insights, or people insights.
+To learn more about customizing insights privacy for your organization, see:\n-  Customize item insights privacy \n-  Customize people insights privacy
 
 ### [Update-MgBetaOrganizationSettingMicrosoftApplicationDataAccess](Update-MgBetaOrganizationSettingMicrosoftApplicationDataAccess.md)
 Update the settings in a microsoftApplicationDataAccessSettings object that specify access from Microsoft applications to Microsoft 365 user data in an organization.

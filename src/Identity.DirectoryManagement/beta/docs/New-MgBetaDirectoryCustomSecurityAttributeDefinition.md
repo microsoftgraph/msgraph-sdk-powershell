@@ -16,16 +16,14 @@ Create a new customSecurityAttributeDefinition object.
 ```
 New-MgBetaDirectoryCustomSecurityAttributeDefinition [-AdditionalProperties <Hashtable>]
  [-AllowedValues <IMicrosoftGraphAllowedValue[]>] [-AttributeSet <String>] [-Description <String>]
- [-Id <String>] [-IsCollection] [-IsSearchable] [-Name <String>] [-ResponseHeadersVariable <String>]
- [-Status <String>] [-Type <String>] [-UsePreDefinedValuesOnly] [-Headers <IDictionary>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Id <String>] [-IsCollection] [-IsSearchable] [-Name <String>] [-Status <String>] [-Type <String>]
+ [-UsePreDefinedValuesOnly] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgBetaDirectoryCustomSecurityAttributeDefinition
- -BodyParameter <IMicrosoftGraphCustomSecurityAttributeDefinition> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphCustomSecurityAttributeDefinition> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -36,70 +34,70 @@ Create a new customSecurityAttributeDefinition object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+$params = @{
+	AttributeSet = "Engineering"
+	Description = "Active projects for user"
+	IsCollection = $true
+	IsSearchable = $true
+	Name = "Project"
+	Status = "Available"
+	Type = "String"
+	UsePreDefinedValuesOnly = $true
+	AllowedValues = @(
+		@{
+			Id = "Alpine"
+			IsActive = $true
+		}
+		@{
+			Id = "Baker"
+			IsActive = $true
+		}
+		@{
+			Id = "Cascade"
+			IsActive = $true
+		}
+	)
+}
+New-MgBetaDirectoryCustomSecurityAttributeDefinition -BodyParameter $params
 ```
 
-$params = @{
-	attributeSet = "Engineering"
-	description = "Target completion date"
-	isCollection = $false
-	isSearchable = $true
-	name = "ProjectDate"
-	status = "Available"
-	type = "String"
-	usePreDefinedValuesOnly = $false
-}
 
-New-MgBetaDirectoryCustomSecurityAttributeDefinition -BodyParameter $params
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+$params = @{
+	AttributeSet = "Engineering"
+	Description = "Target completion date"
+	IsCollection = $false
+	IsSearchable = $true
+	Name = "ProjectDate"
+	Status = "Available"
+	Type = "String"
+	UsePreDefinedValuesOnly = $false
+}
+New-MgBetaDirectoryCustomSecurityAttributeDefinition -BodyParameter $params
 ```
 
-$params = @{
-	attributeSet = "Engineering"
-	description = "Active projects for user"
-	isCollection = $true
-	isSearchable = $true
-	name = "Project"
-	status = "Available"
-	type = "String"
-	usePreDefinedValuesOnly = $true
-}
 
-New-MgBetaDirectoryCustomSecurityAttributeDefinition -BodyParameter $params
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+$params = @{
+	AttributeSet = "Engineering"
+	Description = "Active projects for user"
+	IsCollection = $true
+	IsSearchable = $true
+	Name = "Project"
+	Status = "Available"
+	Type = "String"
+	UsePreDefinedValuesOnly = $true
+}
+New-MgBetaDirectoryCustomSecurityAttributeDefinition -BodyParameter $params
 ```
 
-$params = @{
-	attributeSet = "Engineering"
-	description = "Active projects for user"
-	isCollection = $true
-	isSearchable = $true
-	name = "Project"
-	status = "Available"
-	type = "String"
-	usePreDefinedValuesOnly = $true
-	allowedValues = @(
-		@{
-			id = "Alpine"
-			isActive = $true
-		}
-		@{
-			id = "Baker"
-			isActive = $true
-		}
-		@{
-			id = "Cascade"
-			isActive = $true
-		}
-	)
-}
 
-New-MgBetaDirectoryCustomSecurityAttributeDefinition -BodyParameter $params
 
 ## PARAMETERS
 
@@ -185,21 +183,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Headers
-Optional headers that will be added to the request.
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -261,21 +244,6 @@ Case insensitive.
 Type: System.String
 Parameter Sets: CreateExpanded
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
 
 Required: False
 Position: Named
@@ -373,8 +341,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphCustomSecurityAttributeDefinition
-
-### System.Collections.IDictionary
 
 ## OUTPUTS
 

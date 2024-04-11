@@ -8,10 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementVirtualEndpointProvisioningPolicyAssignment
 
 ## SYNOPSIS
-A defined collection of provisioning policy assignments.
-Represents the set of Microsoft 365 groups and security groups in Microsoft Entra ID that have provisioning policy assigned.
-Returned only on $expand.
-For an example about how to get the assignments relationship, see Get cloudPcProvisioningPolicy.
+Get assignments from deviceManagement
 
 ## SYNTAX
 
@@ -39,10 +36,7 @@ Get-MgDeviceManagementVirtualEndpointProvisioningPolicyAssignment
 ```
 
 ## DESCRIPTION
-A defined collection of provisioning policy assignments.
-Represents the set of Microsoft 365 groups and security groups in Microsoft Entra ID that have provisioning policy assigned.
-Returned only on $expand.
-For an example about how to get the assignments relationship, see Get cloudPcProvisioningPolicy.
+Get assignments from deviceManagement
 
 ## EXAMPLES
 
@@ -314,10 +308,6 @@ To create the parameters described below, construct a hash table containing the 
 `INPUTOBJECT <IDeviceManagementAdministrationIdentity>`: Identity Parameter
   - `[AuditEventId <String>]`: The unique identifier of auditEvent
   - `[CloudPcAuditEventId <String>]`: The unique identifier of cloudPcAuditEvent
-  - `[CloudPcDeviceImageId <String>]`: The unique identifier of cloudPcDeviceImage
-  - `[CloudPcGalleryImageId <String>]`: The unique identifier of cloudPcGalleryImage
-  - `[CloudPcId <String>]`: The unique identifier of cloudPC
-  - `[CloudPcOnPremisesConnectionId <String>]`: The unique identifier of cloudPcOnPremisesConnection
   - `[CloudPcProvisioningPolicyAssignmentId <String>]`: The unique identifier of cloudPcProvisioningPolicyAssignment
   - `[CloudPcProvisioningPolicyId <String>]`: The unique identifier of cloudPcProvisioningPolicy
   - `[CloudPcUserSettingAssignmentId <String>]`: The unique identifier of cloudPcUserSettingAssignment

@@ -16,28 +16,28 @@ Update the navigation property shiftsRoleDefinitions in teams
 ```
 Update-MgBetaTeamScheduleShiftRoleDefinition -ShiftsRoleDefinitionId <String> -TeamId <String>
  [-AdditionalProperties <Hashtable>] [-Description <String>] [-DisplayName <String>] [-Id <String>]
- [-ResponseHeadersVariable <String>] [-ShiftsRolePermissions <IMicrosoftGraphShiftsRolePermission[]>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ShiftsRolePermissions <IMicrosoftGraphShiftsRolePermission[]>] [-Headers <IDictionary>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBetaTeamScheduleShiftRoleDefinition -ShiftsRoleDefinitionId <String> -TeamId <String>
- -BodyParameter <IMicrosoftGraphShiftsRoleDefinition> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphShiftsRoleDefinition> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaTeamScheduleShiftRoleDefinition -InputObject <ITeamsIdentity>
- -BodyParameter <IMicrosoftGraphShiftsRoleDefinition> [-ResponseHeadersVariable <String>]
- [-Headers <IDictionary>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphShiftsRoleDefinition> [-Headers <IDictionary>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgBetaTeamScheduleShiftRoleDefinition -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
- [-Description <String>] [-DisplayName <String>] [-Id <String>] [-ResponseHeadersVariable <String>]
+ [-Description <String>] [-DisplayName <String>] [-Id <String>]
  [-ShiftsRolePermissions <IMicrosoftGraphShiftsRolePermission[]>] [-Headers <IDictionary>] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
@@ -95,7 +95,7 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-The description of the role.
+.
 
 ```yaml
 Type: System.String
@@ -110,7 +110,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-The display name of the role.
+.
 
 ```yaml
 Type: System.String
@@ -171,21 +171,6 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -ResponseHeadersVariable
-Optional Response Headers Variable.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: RHV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -ShiftsRoleDefinitionId
 The unique identifier of shiftsRoleDefinition
 
@@ -202,7 +187,7 @@ Accept wildcard characters: False
 ```
 
 ### -ShiftsRolePermissions
-The collection of role permissions within the role.
+.
 To construct, see NOTES section for SHIFTSROLEPERMISSIONS properties and create a hash table.
 
 ```yaml
@@ -278,6 +263,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphShiftsRoleDefinition
 
+### System.Collections.Hashtable
+
 ## NOTES
 
 ALIASES
@@ -290,10 +277,10 @@ To create the parameters described below, construct a hash table containing the 
 `BODYPARAMETER <IMicrosoftGraphShiftsRoleDefinition>`: shiftsRoleDefinition
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[Description <String>]`: The description of the role.
-  - `[DisplayName <String>]`: The display name of the role.
-  - `[ShiftsRolePermissions <IMicrosoftGraphShiftsRolePermission[]>]`: The collection of role permissions within the role.
-    - `[AllowedResourceActions <String[]>]`: The permissions that are allowed for a role. Permissions that aren't in this collection are disabled.
+  - `[Description <String>]`: 
+  - `[DisplayName <String>]`: 
+  - `[ShiftsRolePermissions <IMicrosoftGraphShiftsRolePermission[]>]`: 
+    - `[AllowedResourceActions <String[]>]`: 
 
 `INPUTOBJECT <ITeamsIdentity>`: Identity Parameter
   - `[AssociatedTeamInfoId <String>]`: The unique identifier of associatedTeamInfo
@@ -338,8 +325,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[UserScopeTeamsAppInstallationId <String>]`: The unique identifier of userScopeTeamsAppInstallation
   - `[WorkforceIntegrationId <String>]`: The unique identifier of workforceIntegration
 
-`SHIFTSROLEPERMISSIONS <IMicrosoftGraphShiftsRolePermission[]>`: The collection of role permissions within the role.
-  - `[AllowedResourceActions <String[]>]`: The permissions that are allowed for a role. Permissions that aren't in this collection are disabled.
+`SHIFTSROLEPERMISSIONS <IMicrosoftGraphShiftsRolePermission[]>`: .
+  - `[AllowedResourceActions <String[]>]`: 
 
 ## RELATED LINKS
 

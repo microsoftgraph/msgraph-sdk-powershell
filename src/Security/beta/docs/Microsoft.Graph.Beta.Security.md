@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Security
-Module Guid: 09c10d6c-21d6-4f5a-aa4f-dd40391da8d4
+Module Guid: eb53e463-3871-46e0-874b-60d9c20ebceb
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.security
 Help Version: 1.0.0.0
 Locale: en-US
@@ -68,7 +68,7 @@ Retrieve the properties and relationships of an alert object.
 Get the number of the resource
 
 ### [Get-MgBetaSecurityAlertV2](Get-MgBetaSecurityAlertV2.md)
-Get the properties and relationships of an alert object.
+Get the properties and relationships of an alert in an organization based on the specified alert id property.
 
 ### [Get-MgBetaSecurityAlertV2Count](Get-MgBetaSecurityAlertV2Count.md)
 Get the number of the resource
@@ -136,17 +136,11 @@ Get the number of the resource
 ### [Get-MgBetaSecurityAttackSimulationTraining](Get-MgBetaSecurityAttackSimulationTraining.md)
 Represents details about attack simulation trainings.
 
-### [Get-MgBetaSecurityAttackSimulationTrainingCampaign](Get-MgBetaSecurityAttackSimulationTrainingCampaign.md)
-Read the properties and relationships of a trainingCampaign object.
-
-### [Get-MgBetaSecurityAttackSimulationTrainingCampaignCount](Get-MgBetaSecurityAttackSimulationTrainingCampaignCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaSecurityAttackSimulationTrainingCount](Get-MgBetaSecurityAttackSimulationTrainingCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaSecurityAttackSimulationTrainingLanguageDetail](Get-MgBetaSecurityAttackSimulationTrainingLanguageDetail.md)
-Details about the language used in the training.
+Language specific details on a training.
 
 ### [Get-MgBetaSecurityAttackSimulationTrainingLanguageDetailCount](Get-MgBetaSecurityAttackSimulationTrainingLanguageDetailCount.md)
 Get the number of the resource
@@ -155,13 +149,13 @@ Get the number of the resource
 Get auditLog from security
 
 ### [Get-MgBetaSecurityAuditLogQuery](Get-MgBetaSecurityAuditLogQuery.md)
-Read the properties and relationships of an auditLogQuery object.
+Get queries from security
 
 ### [Get-MgBetaSecurityAuditLogQueryCount](Get-MgBetaSecurityAuditLogQueryCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaSecurityAuditLogQueryRecord](Get-MgBetaSecurityAuditLogQueryRecord.md)
-An individual audit log record.
+Get records from security
 
 ### [Get-MgBetaSecurityAuditLogQueryRecordCount](Get-MgBetaSecurityAuditLogQueryRecordCount.md)
 Get the number of the resource
@@ -338,15 +332,6 @@ Get cloudAppSecurityProfiles from security
 ### [Get-MgBetaSecurityCloudAppSecurityProfileCount](Get-MgBetaSecurityCloudAppSecurityProfileCount.md)
 Get the number of the resource
 
-### [Get-MgBetaSecurityCollaboration](Get-MgBetaSecurityCollaboration.md)
-Enables read and other actions on collaborative entities in Microsoft Defender.
-
-### [Get-MgBetaSecurityCollaborationAnalyzedEmail](Get-MgBetaSecurityCollaborationAnalyzedEmail.md)
-Read the properties and relationships of an analyzedEmail object.
-
-### [Get-MgBetaSecurityCollaborationAnalyzedEmailCount](Get-MgBetaSecurityCollaborationAnalyzedEmailCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaSecurityDomainSecurityProfile](Get-MgBetaSecurityDomainSecurityProfile.md)
 Get domainSecurityProfiles from security
 
@@ -363,15 +348,6 @@ Get the number of the resource
 Get hostSecurityProfiles from security
 
 ### [Get-MgBetaSecurityHostSecurityProfileCount](Get-MgBetaSecurityHostSecurityProfileCount.md)
-Get the number of the resource
-
-### [Get-MgBetaSecurityIdentity](Get-MgBetaSecurityIdentity.md)
-A container for security identities APIs.
-
-### [Get-MgBetaSecurityIdentityHealthIssue](Get-MgBetaSecurityIdentityHealthIssue.md)
-Read the properties and relationships of a healthIssue object.
-
-### [Get-MgBetaSecurityIdentityHealthIssueCount](Get-MgBetaSecurityIdentityHealthIssueCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaSecurityIncident](Get-MgBetaSecurityIncident.md)
@@ -430,10 +406,10 @@ Read the properties and relationships of a categoryTemplate object.
 ### [Get-MgBetaSecurityLabelCategoryCount](Get-MgBetaSecurityLabelCategoryCount.md)
 Get the number of the resource
 
-### [Get-MgBetaSecurityLabelCategorySubcategory](Get-MgBetaSecurityLabelCategorySubcategory.md)
-Get subcategories from security
+### [Get-MgBetaSecurityLabelCategorySubCategory](Get-MgBetaSecurityLabelCategorySubCategory.md)
+Read the properties and relationships of a subCategoryTemplate object.
 
-### [Get-MgBetaSecurityLabelCategorySubcategoryCount](Get-MgBetaSecurityLabelCategorySubcategoryCount.md)
+### [Get-MgBetaSecurityLabelCategorySubCategoryCount](Get-MgBetaSecurityLabelCategorySubCategoryCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaSecurityLabelCitation](Get-MgBetaSecurityLabelCitation.md)
@@ -491,15 +467,6 @@ Get the number of the resource
 Get providerTenantSettings from security
 
 ### [Get-MgBetaSecurityProviderTenantSettingCount](Get-MgBetaSecurityProviderTenantSettingCount.md)
-Get the number of the resource
-
-### [Get-MgBetaSecurityRule](Get-MgBetaSecurityRule.md)
-Get rules from security
-
-### [Get-MgBetaSecurityRuleDetectionRule](Get-MgBetaSecurityRuleDetectionRule.md)
-Get detectionRules from security
-
-### [Get-MgBetaSecurityRuleDetectionRuleCount](Get-MgBetaSecurityRuleDetectionRuleCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaSecuritySecureScore](Get-MgBetaSecuritySecureScore.md)
@@ -897,14 +864,6 @@ To learn more about searches in eDiscovery, see Collect data for a case in eDisc
 Use the metadata that exists on an already-labeled piece of information to resolve the metadata to a specific sensitivity label.
 The contentInfo input is resolved to informationProtectionContentLabel.
 
-### [Invoke-MgBetaRemediateSecurityCollaborationAnalyzedEmail](Invoke-MgBetaRemediateSecurityCollaborationAnalyzedEmail.md)
-Remove a potential threat from end users' mailboxes.
-Remediation means to take prescribed action against a threat.
-This API can trigger email purge actions like move to junk, move to deleted items, soft delete, hard delete, or move to Inbox.
-This API enables scenarios and use cases such as SOAR integration, playbooks, and automations.
-For more information read email remediation, trigger action and track actions.
-If there is false positives admins can take move to inbox action.
-
 ### [Invoke-MgBetaReopenSecurityCaseEdiscoveryCase](Invoke-MgBetaReopenSecurityCaseEdiscoveryCase.md)
 Reopen an eDiscovery case that was closed.
 For details, see Reopen a closed case.
@@ -951,14 +910,11 @@ Create new navigation property to payloads for security
 ### [New-MgBetaSecurityAttackSimulationTraining](New-MgBetaSecurityAttackSimulationTraining.md)
 Create new navigation property to trainings for security
 
-### [New-MgBetaSecurityAttackSimulationTrainingCampaign](New-MgBetaSecurityAttackSimulationTrainingCampaign.md)
-Create a new trainingCampaign object.
-
 ### [New-MgBetaSecurityAttackSimulationTrainingLanguageDetail](New-MgBetaSecurityAttackSimulationTrainingLanguageDetail.md)
 Create new navigation property to languageDetails for security
 
 ### [New-MgBetaSecurityAuditLogQuery](New-MgBetaSecurityAuditLogQuery.md)
-Create a new auditLogQuery object.
+Create new navigation property to queries for security
 
 ### [New-MgBetaSecurityAuditLogQueryRecord](New-MgBetaSecurityAuditLogQueryRecord.md)
 Create new navigation property to records for security
@@ -1014,9 +970,6 @@ Create a new ediscoveryReviewTag object.
 ### [New-MgBetaSecurityCloudAppSecurityProfile](New-MgBetaSecurityCloudAppSecurityProfile.md)
 Create new navigation property to cloudAppSecurityProfiles for security
 
-### [New-MgBetaSecurityCollaborationAnalyzedEmail](New-MgBetaSecurityCollaborationAnalyzedEmail.md)
-Create new navigation property to analyzedEmails for security
-
 ### [New-MgBetaSecurityDomainSecurityProfile](New-MgBetaSecurityDomainSecurityProfile.md)
 Create new navigation property to domainSecurityProfiles for security
 
@@ -1025,9 +978,6 @@ Create new navigation property to fileSecurityProfiles for security
 
 ### [New-MgBetaSecurityHostSecurityProfile](New-MgBetaSecurityHostSecurityProfile.md)
 Create new navigation property to hostSecurityProfiles for security
-
-### [New-MgBetaSecurityIdentityHealthIssue](New-MgBetaSecurityIdentityHealthIssue.md)
-Create new navigation property to healthIssues for security
 
 ### [New-MgBetaSecurityIncident](New-MgBetaSecurityIncident.md)
 Create new navigation property to incidents for security
@@ -1044,8 +994,8 @@ Create a new authorityTemplate object.
 ### [New-MgBetaSecurityLabelCategory](New-MgBetaSecurityLabelCategory.md)
 Create a new categoryTemplate object.
 
-### [New-MgBetaSecurityLabelCategorySubcategory](New-MgBetaSecurityLabelCategorySubcategory.md)
-Create new navigation property to subcategories for security
+### [New-MgBetaSecurityLabelCategorySubCategory](New-MgBetaSecurityLabelCategorySubCategory.md)
+Create a new subCategoryTemplate object.
 
 ### [New-MgBetaSecurityLabelCitation](New-MgBetaSecurityLabelCitation.md)
 Create a new citationTemplate object.
@@ -1065,9 +1015,6 @@ Create new navigation property to dispositionReviewStages for security
 
 ### [New-MgBetaSecurityProviderTenantSetting](New-MgBetaSecurityProviderTenantSetting.md)
 Create new navigation property to providerTenantSettings for security
-
-### [New-MgBetaSecurityRuleDetectionRule](New-MgBetaSecurityRuleDetectionRule.md)
-Create new navigation property to detectionRules for security
 
 ### [New-MgBetaSecuritySecureScore](New-MgBetaSecuritySecureScore.md)
 Create new navigation property to secureScores for security
@@ -1208,9 +1155,6 @@ Delete navigation property payloads for security
 ### [Remove-MgBetaSecurityAttackSimulationTraining](Remove-MgBetaSecurityAttackSimulationTraining.md)
 Delete navigation property trainings for security
 
-### [Remove-MgBetaSecurityAttackSimulationTrainingCampaign](Remove-MgBetaSecurityAttackSimulationTrainingCampaign.md)
-Delete a trainingCampaign object.
-
 ### [Remove-MgBetaSecurityAttackSimulationTrainingLanguageDetail](Remove-MgBetaSecurityAttackSimulationTrainingLanguageDetail.md)
 Delete navigation property languageDetails for security
 
@@ -1233,7 +1177,9 @@ Delete an ediscoveryCase object.
 Delete navigation property custodians for security
 
 ### [Remove-MgBetaSecurityCaseEdiscoveryCaseCustodianHold](Remove-MgBetaSecurityCaseEdiscoveryCaseCustodianHold.md)
-Invoke action removeHold
+Start the process of removing hold from eDiscovery custodians.
+After the operation is created, you can get the status by retrieving the Location parameter from the response headers.
+The location provides a URL that will return an eDiscoveryHoldOperation object.
 
 ### [Remove-MgBetaSecurityCaseEdiscoveryCaseCustodianSiteSource](Remove-MgBetaSecurityCaseEdiscoveryCaseCustodianSiteSource.md)
 Delete navigation property siteSources for security
@@ -1279,6 +1225,12 @@ Delete an ediscoverySearch object.
 ### [Remove-MgBetaSecurityCaseEdiscoveryCaseSearchAdditionalSource](Remove-MgBetaSecurityCaseEdiscoveryCaseSearchAdditionalSource.md)
 Delete navigation property additionalSources for security
 
+### [Remove-MgBetaSecurityCaseEdiscoveryCaseSearchCustodianSource](Remove-MgBetaSecurityCaseEdiscoveryCaseSearchCustodianSource.md)
+Remove a dataSource object.
+
+### [Remove-MgBetaSecurityCaseEdiscoveryCaseSearchNoncustodialSource](Remove-MgBetaSecurityCaseEdiscoveryCaseSearchNoncustodialSource.md)
+Remove an ediscoveryNoncustodialDataSource object.
+
 ### [Remove-MgBetaSecurityCaseEdiscoveryCaseSetting](Remove-MgBetaSecurityCaseEdiscoveryCaseSetting.md)
 Delete navigation property settings for security
 
@@ -1288,12 +1240,6 @@ Remove an ediscoveryReviewTag object.
 ### [Remove-MgBetaSecurityCloudAppSecurityProfile](Remove-MgBetaSecurityCloudAppSecurityProfile.md)
 Delete navigation property cloudAppSecurityProfiles for security
 
-### [Remove-MgBetaSecurityCollaboration](Remove-MgBetaSecurityCollaboration.md)
-Delete navigation property collaboration for security
-
-### [Remove-MgBetaSecurityCollaborationAnalyzedEmail](Remove-MgBetaSecurityCollaborationAnalyzedEmail.md)
-Delete navigation property analyzedEmails for security
-
 ### [Remove-MgBetaSecurityDomainSecurityProfile](Remove-MgBetaSecurityDomainSecurityProfile.md)
 Delete navigation property domainSecurityProfiles for security
 
@@ -1302,12 +1248,6 @@ Delete navigation property fileSecurityProfiles for security
 
 ### [Remove-MgBetaSecurityHostSecurityProfile](Remove-MgBetaSecurityHostSecurityProfile.md)
 Delete navigation property hostSecurityProfiles for security
-
-### [Remove-MgBetaSecurityIdentity](Remove-MgBetaSecurityIdentity.md)
-Delete navigation property identities for security
-
-### [Remove-MgBetaSecurityIdentityHealthIssue](Remove-MgBetaSecurityIdentityHealthIssue.md)
-Delete navigation property healthIssues for security
 
 ### [Remove-MgBetaSecurityIncident](Remove-MgBetaSecurityIncident.md)
 Delete navigation property incidents for security
@@ -1331,22 +1271,22 @@ Delete navigation property ipSecurityProfiles for security
 Delete navigation property labels for security
 
 ### [Remove-MgBetaSecurityLabelAuthority](Remove-MgBetaSecurityLabelAuthority.md)
-Delete navigation property authorities for security
+Delete a authorityTemplate object.
 
 ### [Remove-MgBetaSecurityLabelCategory](Remove-MgBetaSecurityLabelCategory.md)
-Delete navigation property categories for security
+Delete a categoryTemplate object.
 
-### [Remove-MgBetaSecurityLabelCategorySubcategory](Remove-MgBetaSecurityLabelCategorySubcategory.md)
-Delete navigation property subcategories for security
+### [Remove-MgBetaSecurityLabelCategorySubCategory](Remove-MgBetaSecurityLabelCategorySubCategory.md)
+Delete a subCategoryTemplate object.
 
 ### [Remove-MgBetaSecurityLabelCitation](Remove-MgBetaSecurityLabelCitation.md)
-Delete navigation property citations for security
+Delete a citationTemplate object.
 
 ### [Remove-MgBetaSecurityLabelDepartment](Remove-MgBetaSecurityLabelDepartment.md)
-Delete navigation property departments for security
+Delete a departmentTemplate object.
 
 ### [Remove-MgBetaSecurityLabelFilePlanReference](Remove-MgBetaSecurityLabelFilePlanReference.md)
-Delete navigation property filePlanReferences for security
+Delete a filePlanReferenceTemplate object.
 
 ### [Remove-MgBetaSecurityLabelRetentionLabel](Remove-MgBetaSecurityLabelRetentionLabel.md)
 Delete a retentionLabel object.
@@ -1359,12 +1299,6 @@ Delete navigation property dispositionReviewStages for security
 
 ### [Remove-MgBetaSecurityProviderTenantSetting](Remove-MgBetaSecurityProviderTenantSetting.md)
 Delete navigation property providerTenantSettings for security
-
-### [Remove-MgBetaSecurityRule](Remove-MgBetaSecurityRule.md)
-Delete navigation property rules for security
-
-### [Remove-MgBetaSecurityRuleDetectionRule](Remove-MgBetaSecurityRuleDetectionRule.md)
-Delete navigation property detectionRules for security
 
 ### [Remove-MgBetaSecuritySecureScore](Remove-MgBetaSecuritySecureScore.md)
 Delete navigation property secureScores for security
@@ -1545,7 +1479,7 @@ This method updates any solution that has a record of the referenced alert ID.
 Update multiple alerts in one request instead of multiple requests.
 
 ### [Update-MgBetaSecurityAlertV2](Update-MgBetaSecurityAlertV2.md)
-Update the properties of an alert object.
+Update the properties of an alert object in an organization based on the specified alert id property.
 
 ### [Update-MgBetaSecurityAttackSimulationAutomation](Update-MgBetaSecurityAttackSimulationAutomation.md)
 Update the navigation property simulationAutomations in security
@@ -1576,9 +1510,6 @@ Update the navigation property payloads in security
 
 ### [Update-MgBetaSecurityAttackSimulationTraining](Update-MgBetaSecurityAttackSimulationTraining.md)
 Update the navigation property trainings in security
-
-### [Update-MgBetaSecurityAttackSimulationTrainingCampaign](Update-MgBetaSecurityAttackSimulationTrainingCampaign.md)
-Update the properties of a trainingCampaign object.
 
 ### [Update-MgBetaSecurityAttackSimulationTrainingLanguageDetail](Update-MgBetaSecurityAttackSimulationTrainingLanguageDetail.md)
 Update the navigation property languageDetails in security
@@ -1655,12 +1586,6 @@ Update the properties of an ediscoveryReviewTag object.
 ### [Update-MgBetaSecurityCloudAppSecurityProfile](Update-MgBetaSecurityCloudAppSecurityProfile.md)
 Update the navigation property cloudAppSecurityProfiles in security
 
-### [Update-MgBetaSecurityCollaboration](Update-MgBetaSecurityCollaboration.md)
-Update the navigation property collaboration in security
-
-### [Update-MgBetaSecurityCollaborationAnalyzedEmail](Update-MgBetaSecurityCollaborationAnalyzedEmail.md)
-Update the navigation property analyzedEmails in security
-
 ### [Update-MgBetaSecurityDomainSecurityProfile](Update-MgBetaSecurityDomainSecurityProfile.md)
 Update the navigation property domainSecurityProfiles in security
 
@@ -1669,12 +1594,6 @@ Update the navigation property fileSecurityProfiles in security
 
 ### [Update-MgBetaSecurityHostSecurityProfile](Update-MgBetaSecurityHostSecurityProfile.md)
 Update the navigation property hostSecurityProfiles in security
-
-### [Update-MgBetaSecurityIdentity](Update-MgBetaSecurityIdentity.md)
-Update the navigation property identities in security
-
-### [Update-MgBetaSecurityIdentityHealthIssue](Update-MgBetaSecurityIdentityHealthIssue.md)
-Update the properties of a healthIssue object.
 
 ### [Update-MgBetaSecurityIncident](Update-MgBetaSecurityIncident.md)
 Update the properties of an incident object.
@@ -1703,8 +1622,8 @@ Update the navigation property authorities in security
 ### [Update-MgBetaSecurityLabelCategory](Update-MgBetaSecurityLabelCategory.md)
 Update the navigation property categories in security
 
-### [Update-MgBetaSecurityLabelCategorySubcategory](Update-MgBetaSecurityLabelCategorySubcategory.md)
-Update the navigation property subcategories in security
+### [Update-MgBetaSecurityLabelCategorySubCategory](Update-MgBetaSecurityLabelCategorySubCategory.md)
+Update the navigation property subCategories in security
 
 ### [Update-MgBetaSecurityLabelCitation](Update-MgBetaSecurityLabelCitation.md)
 Update the navigation property citations in security
@@ -1727,12 +1646,6 @@ Update the navigation property dispositionReviewStages in security
 
 ### [Update-MgBetaSecurityProviderTenantSetting](Update-MgBetaSecurityProviderTenantSetting.md)
 Update the navigation property providerTenantSettings in security
-
-### [Update-MgBetaSecurityRule](Update-MgBetaSecurityRule.md)
-Update the navigation property rules in security
-
-### [Update-MgBetaSecurityRuleDetectionRule](Update-MgBetaSecurityRuleDetectionRule.md)
-Update the navigation property detectionRules in security
 
 ### [Update-MgBetaSecuritySecureScore](Update-MgBetaSecuritySecureScore.md)
 Update the navigation property secureScores in security

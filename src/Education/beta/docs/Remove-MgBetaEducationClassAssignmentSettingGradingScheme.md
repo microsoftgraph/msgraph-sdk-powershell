@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgBetaEducationClassAssignmentSettingGradingScheme
 
 ## SYNOPSIS
-Delete an educationGradingScheme object.
+Delete navigation property gradingSchemes for education
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ Remove-MgBetaEducationClassAssignmentSettingGradingScheme -InputObject <IEducati
 ```
 
 ## DESCRIPTION
-Delete an educationGradingScheme object.
+Delete navigation property gradingSchemes for education
 
 ## EXAMPLES
 

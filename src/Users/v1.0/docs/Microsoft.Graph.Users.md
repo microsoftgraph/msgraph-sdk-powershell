@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users
-Module Guid: 6bad1865-2adb-4af3-9175-8bd30a61f8ca
+Module Guid: 615d8a13-5d8d-48e7-a153-3417042e0cd2
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.users
 Help Version: 1.0.0.0
 Locale: en-US
@@ -70,7 +70,7 @@ Get the number of the resource
 
 ### [Get-MgUserMailboxSetting](Get-MgUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
 ### [Get-MgUserManager](Get-MgUserManager.md)
@@ -216,28 +216,6 @@ Read the user and organization userSettings object.\nTo learn how to update the 
 ### [Get-MgUserSettingShiftPreference](Get-MgUserSettingShiftPreference.md)
 Retrieve the properties and relationships of a shiftPreferences object by ID.
 
-### [Get-MgUserSettingWindows](Get-MgUserSettingWindows.md)
-Read the properties and relationships of a windowsSetting object by passing the ID of the setting in the URL.
-This method gets the setting for the signed-in user.
-
-### [Get-MgUserSettingWindowsCount](Get-MgUserSettingWindowsCount.md)
-Get the number of the resource
-
-### [Get-MgUserSettingWindowsInstance](Get-MgUserSettingWindowsInstance.md)
-Read the properties and relationships of a windowsSettingInstance object by passing the Windows setting ID and Windows setting instance ID in the URL.
-This method gets a windowsSettingInstance for the signed-in user.
-
-### [Get-MgUserSettingWindowsInstanceCount](Get-MgUserSettingWindowsInstanceCount.md)
-Get the number of the resource
-
-### [Get-MgUserSponsor](Get-MgUserSponsor.md)
-The users and groups responsible for this guest user's privileges in the tenant and keep the guest user's information and access updated.
-(HTTP Methods: GET, POST, DELETE.).
-Supports $expand.
-
-### [Get-MgUserSponsorCount](Get-MgUserSponsorCount.md)
-Get the number of the resource
-
 ### [Get-MgUserTodoList](Get-MgUserTodoList.md)
 Read the properties and relationships of a todoTaskList object.
 
@@ -320,19 +298,15 @@ Get the number of the resource
 Get the number of the resource
 
 ### [New-MgUser](New-MgUser.md)
-Create a new user object.
+Create a new user.\nThe request body contains the user to create.
+At a minimum, you must specify the required properties for the user.
+You can optionally specify any other writable properties.
 
 ### [New-MgUserExtension](New-MgUserExtension.md)
 Create new navigation property to extensions for users
 
 ### [New-MgUserOutlookMasterCategory](New-MgUserOutlookMasterCategory.md)
 Create an outlookCategory object in the user's master list of categories.
-
-### [New-MgUserSettingWindows](New-MgUserSettingWindows.md)
-Create new navigation property to windows for users
-
-### [New-MgUserSettingWindowsInstance](New-MgUserSettingWindowsInstance.md)
-Create new navigation property to instances for users
 
 ### [New-MgUserTodoList](New-MgUserTodoList.md)
 Create a new lists object.
@@ -360,16 +334,16 @@ For example, you can associate a task with an email item in Outlook that spurred
 You can also create a linkedResource object while creating a task.
 
 ### [Remove-MgUser](Remove-MgUser.md)
-Delete user.
- When deleted, user resources are moved to a temporary container and can be restored within 30 days.
-After that time, they are permanently deleted.
-To learn more, see deletedItems.
+Deletes a user.
 
 ### [Remove-MgUserExtension](Remove-MgUserExtension.md)
 Delete navigation property extensions for users
 
 ### [Remove-MgUserLicenseDetail](Remove-MgUserLicenseDetail.md)
 Delete navigation property licenseDetails for users
+
+### [Remove-MgUserManager](Remove-MgUserManager.md)
+Remove a user's manager.
 
 ### [Remove-MgUserManagerByRef](Remove-MgUserManagerByRef.md)
 Remove a user's manager.
@@ -385,12 +359,6 @@ Delete navigation property settings for users
 
 ### [Remove-MgUserSettingShiftPreference](Remove-MgUserSettingShiftPreference.md)
 Delete navigation property shiftPreferences for users
-
-### [Remove-MgUserSettingWindows](Remove-MgUserSettingWindows.md)
-Delete navigation property windows for users
-
-### [Remove-MgUserSettingWindowsInstance](Remove-MgUserSettingWindowsInstance.md)
-Delete navigation property instances for users
 
 ### [Remove-MgUserTodoList](Remove-MgUserTodoList.md)
 Deletes a todoTaskList object.
@@ -414,7 +382,7 @@ Delete a checklistItem object.
 Delete navigation property extensions for users
 
 ### [Remove-MgUserTodoListTaskLinkedResource](Remove-MgUserTodoListTaskLinkedResource.md)
-Delete a linkedResource object.
+Deletes a linkedResource object.
 
 ### [Set-MgUserManagerByRef](Set-MgUserManagerByRef.md)
 Assign a user's manager.
@@ -430,10 +398,6 @@ The content streams that are uploaded.
 
 ### [Update-MgUser](Update-MgUser.md)
 Update the properties of a user object.
-Not all properties can be updated by Member or Guest users with their default permissions without Administrator roles.
-Compare member and guest default permissions to see properties they can manage.
-Customers through Microsoft Entra ID for customers can also use this API operation to update their details.
-See Default user permissions in customer tenants for the list of properties they can update.
 
 ### [Update-MgUserExtension](Update-MgUserExtension.md)
 Update the navigation property extensions in users
@@ -446,7 +410,7 @@ Update property mailboxSettings value.
 
 ### [Update-MgUserOutlookMasterCategory](Update-MgUserOutlookMasterCategory.md)
 Update the writable property, color, of the specified outlookCategory object.
-You can't modify the displayName property once you have created the category.
+You can't modify the displayName property\nonce you have created the category.
 
 ### [Update-MgUserSetting](Update-MgUserSetting.md)
 Update the properties of the userSettings object.
@@ -455,12 +419,6 @@ Update the properties of the userSettings object.
 
 ### [Update-MgUserSettingShiftPreference](Update-MgUserSettingShiftPreference.md)
 Update the properties and relationships of a shiftPreferences object.
-
-### [Update-MgUserSettingWindows](Update-MgUserSettingWindows.md)
-Update the navigation property windows in users
-
-### [Update-MgUserSettingWindowsInstance](Update-MgUserSettingWindowsInstance.md)
-Update the navigation property instances in users
 
 ### [Update-MgUserTodoList](Update-MgUserTodoList.md)
 Update the properties of a todoTaskList object.
