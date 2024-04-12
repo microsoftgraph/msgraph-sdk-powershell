@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Question on use of powershell sdk
+    url: https://github.com/microsoftgraph/msgraph-sdk-powershell/discussions
+    about: Please add your question in the discussions section of the repo
+  - name: Question on use of kiota
+    url: https://github.com/microsoft/kiota/discussions
+    about: Please add your question in the discussions section of the repo
