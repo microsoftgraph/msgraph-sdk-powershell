@@ -6,6 +6,24 @@
       "_justification": "[Applications] hard code password in application password HTTP example"
     },
     {
+      "placeholder": "P@55w0rd",
+      "_justification": "[AuthenticationTests] hard code password in AuthenticationTest for self signed certificate"
+    },
+    {
+      "file": [
+        "src\\Authentication\\Authentication\\test\\Get-MgContext.Tests.ps1",
+        "src\\Authentication\\Authentication.Test\\Helpers\\AuthenticationHelpersTests.cs",
+        "src\\Authentication\\Authentication.Test\\Helpers\\AuthenticationHelpersTests.cs"
+      ],
+      "_justification": "[Authentication] Examples contain random values recognized as secret"
+    },
+    {
+      "file": [
+        "autorest.powershell\\docs\\samples\\timeswire\\readme.md"
+      ],
+      "_justification": "[AutoRest] Examples contain random values recognized as secret"
+    },
+    {
       "file": [
         "src\\Applications\\beta\\examples\\New-MgBetaServicePrincipalPasswordSingleSignOnCredentials.md",
         "src\\Applications\\beta\\examples\\Remove-MgBetaApplicationPassword.md",
@@ -29,6 +47,12 @@
         "src\\DeviceManagement.Actions\\beta\\examples\\Update-MgBetaDeviceManagementVirtualEndpointOnPremisConnectionAdDomainPassword.md"
       ],
       "_justification": "[DeviceManagement.Actions] Examples contain random values recognized as secret"
+    },
+    {
+      "file": [
+        "tools\\Tests\\loadEnv.md"
+      ],
+      "_justification": "[ToolsTest] Examples contain random values recognized as secret"
     }
   ]
 }
