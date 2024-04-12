@@ -1,168 +1,187 @@
-# Copyright (c) Microsoft Corporation. All rights reserved.
-# Licensed under the MIT License.
-
+# This Yaml Document has been converted by ESAI Yaml Pipeline Conversion Tool.
+# Please make sure to check all the converted content, it is your team's responsibility to make sure that the pipeline is still valid and functions as expected.
+# This pipeline will be extended to the OneESPT template
+# If you are not using the E+D shared hosted pool with windows-2022, replace the pool section with your hosted pool, os, and image name. If you are using a Linux image, you must specify an additional windows image for SDL: https://eng.ms/docs/cloud-ai-platform/devdiv/one-engineering-system-1es/1es-docs/1es-pipeline-templates/features/sdlanalysis/overview#how-to-specify-a-windows-pool-for-the-sdl-source-analysis-stage
+# The Task 'PublishBuildArtifacts@1' has been converted to an output named 'Publish Module Artifacts' in the templateContext section.
+# The Task 'NuGetCommand@2' has been converted to an output named 'Publish NuGet to feed' in the templateContext section.
+# Output added to job "MsGraphPsSdkWeeklyGeneration" with YAML conditionals extracted using AI. Review this expression against the originating file for correctness.
+# Output added to job "MsGraphPsSdkWeeklyGeneration" with YAML conditionals extracted using AI. Review this expression against the originating file for correctness.
 name: $(BuildDefinitionName)_$(SourceBranchName)_$(Date:yyyyMMdd)$(Rev:.r)
-
 parameters:
-  - name: BuildAgent
-    displayName: Build Agent
-    default: 1es-windows-ps-compute
-  - name: BaseBranch
-    displayName: Base Branch
-    default: dev
-  - name: GenerationBranch
-    displayName: Generation branch
-    default: v2/generation
-  - name: SkipForceRefresh
-    displayName: Skip Force Refresh
-    default: false
-    type: boolean
-  - name: Test
-    type: boolean
-    default: true
-  - name: Pack
-    type: boolean
-    default: true
-  - name: Sign
-    type: boolean
-    default: true
-  - name: CreatePullRequest
-    type: boolean
-    default: true
-  - name: SkipOpenAPIDocsDownload
-    displayName: Skip OpenAPI Docs Download
-    default: false
-    type: boolean
-
+- name: BuildAgent
+  displayName: Build Agent
+  default: 1es-windows-ps-compute
+- name: BaseBranch
+  displayName: Base Branch
+  default: dev
+- name: GenerationBranch
+  displayName: Generation branch
+  default: v2/generation
+- name: SkipForceRefresh
+  displayName: Skip Force Refresh
+  default: false
+  type: boolean
+- name: Test
+  type: boolean
+  default: true
+- name: Pack
+  type: boolean
+  default: true
+- name: Sign
+  type: boolean
+  default: true
+- name: CreatePullRequest
+  type: boolean
+  default: true
+- name: SkipOpenAPIDocsDownload
+  displayName: Skip OpenAPI Docs Download
+  default: false
+  type: boolean
 variables:
   Branch: "WeeklyApiRefresh"
   BaseBranch: ${{ parameters.BaseBranch }}
   GenerationBranch: ${{ parameters.GenerationBranch }}
   BuildAgent: ${{ parameters.BuildAgent }}
   SkipForceRefresh: ${{ parameters.SkipForceRefresh }}
-
-pool: $(BuildAgent)
 trigger: none
 pr: none
 schedules:
-  - cron: "0 12 * * TUE" # Run every Tuesday at noon UTC
-    displayName: "PS SDK Weekly Refresh"
-    branches:
-      include:
-        - dev
-    always: true
-jobs:
-  - job: RefreshOpenAPIDocuments
-    displayName: Refresh OpenApi documents
-    timeoutInMinutes: 240
+- cron: "0 12 * * TUE"
+  displayName: "PS SDK Weekly Refresh"
+  branches:
+    include:
+    - dev
+  always: true
+resources:
+  repositories:
+  - repository: 1ESPipelineTemplates
+    type: git
+    name: 1ESPipelineTemplates/1ESPipelineTemplates
+    ref: refs/tags/release
+extends:
+  template: v1/1ES.Official.PipelineTemplate.yml@1ESPipelineTemplates
+  parameters:
     pool: $(BuildAgent)
-    steps:
-      - template: common-templates/download-openapi-docs.yml
-        parameters:
-          Branch: $(Branch)
-          BaseBranch: $(BaseBranch)
-          BuildAgent: $(BuildAgent)
-          SkipForceRefresh: $(SkipForceRefresh)
-          SkipOpenAPIDocsDownload: ${{ parameters.SkipOpenAPIDocsDownload }}
-
-  - job: MsGraphPsSdkWeeklyGeneration
-    dependsOn: RefreshOpenAPIDocuments
-    displayName: Microsoft Graph PowerShell SDK Generation
-    condition: and(succeeded(), ne(dependencies.RefreshOpenAPIDocuments.outputs['OpenAPIDocDiff.ModulesWithChanges'], ''))
-    timeoutInMinutes: 840
-    variables:
-      WeeklyBranch: $[ dependencies.RefreshOpenAPIDocuments.outputs['ComputeBranch.WeeklyBranch'] ]
-    steps:
-      - template: ./common-templates/checkout.yml
-        parameters:
-          TargetBranch: $(WeeklyBranch)
-      - template: ./common-templates/install-tools.yml
-      - template: ./common-templates/security-pre-checks.yml
-      - template: ./generation-templates/authentication-module.yml
-        parameters:
-          Test: ${{ parameters.Test }}
-          Pack: ${{ parameters.Pack }}
-          Sign: ${{ parameters.Sign }}
-      - template: ./generation-templates/workload-modules.yml
-        parameters:
-          Test: ${{ parameters.Test }}
-          Pack: ${{ parameters.Pack }}
-          Sign: ${{ parameters.Sign }}
-      - template: ./generation-templates/meta-module.yml
-        parameters:
-          Test: ${{ parameters.Test }}
-          Pack: ${{ parameters.Pack }}
-          Sign: ${{ parameters.Sign }}
-      - ${{ if and(eq(parameters.Pack, true), eq(parameters.Sign, true)) }}:
-          - template: ./common-templates/esrp/codesign-nuget.yml
-            parameters:
-              FolderPath: "$(Build.ArtifactStagingDirectory)"
-              Pattern: "Microsoft.Graph*.nupkg"
-          - task: PublishBuildArtifacts@1
-            displayName: Publish Module Artifacts
-            inputs:
-              PathtoPublish: "$(Build.ArtifactStagingDirectory)"
-              ArtifactName: "drop"
+    sdl:
+      credscan:
+        suppressionsFile: $(Build.SourcesDirectory)/.azure-pipelines/config/credscan/credscan-suppressions.json
+      policheck:
+        exclusionFile: $(Build.SourcesDirectory)/.azure-pipelines/config/policheck/policheck-exclusions.xml
+    customBuildTags:
+    - ES365AIMigrationTooling
+    stages:
+    - stage: stage
+      jobs:
+      - job: RefreshOpenAPIDocuments
+        displayName: Refresh OpenApi documents
+        timeoutInMinutes: 1200
+        steps:
+        - template: .azure-pipelines/common-templates/download-openapi-docs.yml@self
+          parameters:
+            Branch: $(Branch)
+            BaseBranch: $(BaseBranch)
+            BuildAgent: $(BuildAgent)
+            SkipForceRefresh: $(SkipForceRefresh)
+            SkipOpenAPIDocsDownload: ${{ parameters.SkipOpenAPIDocsDownload }}
+      - job: MsGraphPsSdkWeeklyGeneration
+        dependsOn: RefreshOpenAPIDocuments
+        displayName: Microsoft Graph PowerShell SDK Generation
+        condition: and(succeeded(), ne(dependencies.RefreshOpenAPIDocuments.outputs['OpenAPIDocDiff.ModulesWithChanges'], ''))
+        timeoutInMinutes: 840
+        variables:
+          WeeklyBranch: $[ dependencies.RefreshOpenAPIDocuments.outputs['ComputeBranch.WeeklyBranch'] ]
+        templateContext:
+          outputs:
+          - ${{ if and(eq(parameters.Pack, true), eq(parameters.Sign, true)) }}:
+            - output: pipelineArtifact
+              displayName: 'Publish Module Artifacts'
+              targetPath: "$(Build.ArtifactStagingDirectory)"
+              artifactName: "drop"
               publishLocation: "Container"
-          - task: NuGetCommand@2
-            displayName: Publish NuGet to feed
-            inputs:
-              command: push
+          - ${{ if and(eq(parameters.Pack, true), eq(parameters.Sign, true)) }}:
+            - output: nuget
+              displayName: 'Publish NuGet to feed'
+              packageParentPath: '$(Build.ArtifactStagingDirectory)'
               packagesToPush: $(Build.ArtifactStagingDirectory)/**/Microsoft.Graph.*.nupkg
               publishVstsFeed: $(PROJECT_NAME)/$(FEED_NAME)
               allowPackageConflicts: true
-      - template: ./generation-templates/generate-command-metadata.yml
-      - template: ./common-templates/security-post-checks.yml
-      - ${{ if eq(parameters.CreatePullRequest, true) }}:
-          - template: common-templates/create-pr.yml
+        steps:
+        - template: .azure-pipelines/common-templates/checkout.yml@self
+          parameters:
+            TargetBranch: $(WeeklyBranch)
+        - template: .azure-pipelines/common-templates/install-tools.yml@self
+        - template: .azure-pipelines/common-templates/security-pre-checks.yml@self
+        - template: .azure-pipelines/generation-templates/authentication-module.yml@self
+          parameters:
+            Test: ${{ parameters.Test }}
+            Pack: ${{ parameters.Pack }}
+            Sign: ${{ parameters.Sign }}
+        - template: .azure-pipelines/generation-templates/workload-modules.yml@self
+          parameters:
+            Test: ${{ parameters.Test }}
+            Pack: ${{ parameters.Pack }}
+            Sign: ${{ parameters.Sign }}
+        - template: .azure-pipelines/generation-templates/meta-module.yml@self
+          parameters:
+            Test: ${{ parameters.Test }}
+            Pack: ${{ parameters.Pack }}
+            Sign: ${{ parameters.Sign }}
+        - ${{ if and(eq(parameters.Pack, true), eq(parameters.Sign, true)) }}:
+          - template: .azure-pipelines/common-templates/esrp/codesign-nuget.yml@self
+            parameters:
+              FolderPath: "$(Build.ArtifactStagingDirectory)"
+              Pattern: "Microsoft.Graph*.nupkg"
+        - template: .azure-pipelines/generation-templates/generate-command-metadata.yml@self
+        - template: .azure-pipelines/common-templates/security-post-checks.yml@self
+        - ${{ if eq(parameters.CreatePullRequest, true) }}:
+          - template: .azure-pipelines/common-templates/create-pr.yml@self
             parameters:
               BaseBranch: $(BaseBranch)
               TargetBranch: $(WeeklyBranch)
               Title: "[v2] Weekly OpenApiDocs Refresh"
               Body: "This pull request was automatically created by Azure Pipelines. **Important** Check for unexpected deletions or changes in this PR."
-      # Push SDK artifacts to generation branch.
-      - task: PowerShell@2
-        name: "ComputeGenerationBranch"
-        displayName: "Compute weekly generation branch name"
-        inputs:
-          targetType: inline
-          script: |
-            $branch = "{0}/{1}" -f "WeeklyGeneration", (Get-Date -Format yyyyMMddHHmm)
-            Write-Host "##vso[task.setvariable variable=WeeklyGenerationBranch;isOutput=true]$branch"
-      - task: Bash@3
-        displayName: "Create weekly generation branch"
-        inputs:
-          targetType: inline
-          script: |
-            git status
-            git branch $(ComputeGenerationBranch.WeeklyGenerationBranch)
-            git checkout $(ComputeGenerationBranch.WeeklyGenerationBranch)
-            git status
-      - task: Bash@3
-        displayName: Commit Generated SDK artifacts
-        enabled: true
-        env:
-          GITHUB_TOKEN: $(GITHUB_TOKEN)
-        inputs:
-          targetType: inline
-          script: |
-            git add .
-            git commit -m 'Adds generated module artifacts'
-            git push "https://$(GITHUB_TOKEN)@github.com/microsoftgraph/msgraph-sdk-powershell.git"
-            git status
-      - task: Bash@3
-        displayName: Sync with generation branch
-        enabled: true
-        env:
-          GITHUB_TOKEN: $(GITHUB_TOKEN)
-        inputs:
-          targetType: inline
-          script: |
-            git merge $(GenerationBranch) -s ours
-            git push "https://$(GITHUB_TOKEN)@github.com/microsoftgraph/msgraph-sdk-powershell.git"
-            git status
-      - ${{ if eq(parameters.CreatePullRequest, true) }}:
-          - template: common-templates/create-pr.yml
+        - task: PowerShell@2
+          name: "ComputeGenerationBranch"
+          displayName: "Compute weekly generation branch name"
+          inputs:
+            targetType: inline
+            script: |
+              $branch = "{0}/{1}" -f "WeeklyGeneration", (Get-Date -Format yyyyMMddHHmm)
+              Write-Host "##vso[task.setvariable variable=WeeklyGenerationBranch;isOutput=true]$branch"
+        - task: Bash@3
+          displayName: "Create weekly generation branch"
+          inputs:
+            targetType: inline
+            script: |
+              git status
+              git branch $(ComputeGenerationBranch.WeeklyGenerationBranch)
+              git checkout $(ComputeGenerationBranch.WeeklyGenerationBranch)
+              git status
+        - task: Bash@3
+          displayName: Commit Generated SDK artifacts
+          enabled: true
+          env:
+            GITHUB_TOKEN: $(GITHUB_TOKEN)
+          inputs:
+            targetType: inline
+            script: |
+              git add .
+              git commit -m 'Adds generated module artifacts'
+              git push "https://$(GITHUB_TOKEN)@github.com/microsoftgraph/msgraph-sdk-powershell.git"
+              git status
+        - task: Bash@3
+          displayName: Sync with generation branch
+          enabled: true
+          env:
+            GITHUB_TOKEN: $(GITHUB_TOKEN)
+          inputs:
+            targetType: inline
+            script: |
+              git merge $(GenerationBranch) -s ours
+              git push "https://$(GITHUB_TOKEN)@github.com/microsoftgraph/msgraph-sdk-powershell.git"
+              git status
+        - ${{ if eq(parameters.CreatePullRequest, true) }}:
+          - template: .azure-pipelines/common-templates/create-pr.yml@self
             parameters:
               BaseBranch: $(GenerationBranch)
               TargetBranch: $(ComputeGenerationBranch.WeeklyGenerationBranch)
