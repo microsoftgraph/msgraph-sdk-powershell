@@ -1,8 +1,14 @@
 blank_issues_enabled: true
 contact_links:
+  - name: For issues related to authentication and service errors
+    url: https://learn.microsoft.com/powershell/microsoftgraph/troubleshooting
+    about: please refer to our troubleshooting guide
   - name: Question on use of powershell sdk
     url: https://github.com/microsoftgraph/msgraph-sdk-powershell/discussions
     about: Please add your question in the discussions section of the repo
   - name: Question on use of kiota
     url: https://github.com/microsoft/kiota/discussions
     about: Please add your question in the discussions section of the repo
+  - name: Question, bug report or feature Request for the MS Graph API
+    url: https://aka.ms/msgraphsupport
+    about: Report an issue or limitation with the MS Graph service APIs
