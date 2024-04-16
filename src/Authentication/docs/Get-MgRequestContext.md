@@ -13,7 +13,7 @@ Gets graph request context details
 ## SYNTAX
 
 ```
-Get-MgRequestContext [-WhatIf] [-Confirm] [<CommonParameters>]
+Get-MgRequestContext [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -32,6 +32,21 @@ ClientTimeout     RetryDelay                      MaxRetry                 Retri
 Gets graph request context details
 
 ## PARAMETERS
+
+### -ProgressAction
+{{ Fill ProgressAction Description }}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
@@ -70,11 +85,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### None
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Authentication.Core.Interfaces.IRequestContext
-
 ## NOTES
 
 ## RELATED LINKS
