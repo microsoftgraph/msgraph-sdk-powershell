@@ -8948,11 +8948,11 @@ paths:
     get:
       tags:
         - identity.conditionalAccessRoot
-      summary: Get namedLocation
-      description: Retrieve the properties and relationships of a namedLocation object.
+      summary: Get countryNamedLocation
+      description: Retrieve the properties and relationships of a countryNamedLocation object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/namedlocation-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/countrynamedlocation-get?view=graph-rest-1.0
       operationId: identity.conditionalAccess_GetNamedLocation
       parameters:
         - name: namedLocation-id
@@ -9031,11 +9031,11 @@ paths:
     delete:
       tags:
         - identity.conditionalAccessRoot
-      summary: Delete countryNamedLocation
-      description: Delete a countryNamedLocation object.
+      summary: Delete ipNamedLocation
+      description: Delete an ipNamedLocation object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/countrynamedlocation-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/ipnamedlocation-delete?view=graph-rest-1.0
       operationId: identity.conditionalAccess_DeleteNamedLocation
       parameters:
         - name: namedLocation-id
@@ -24462,11 +24462,11 @@ paths:
     patch:
       tags:
         - tenantRelationships.multiTenantOrganization
-      summary: Create multiTenantOrganization
-      description: 'Create a new multi-tenant organization. By default, the creator tenant becomes an owner tenant upon successful creation. Only owner tenants can manage a multi-tenant organization. To allow for asynchronous processing, you must wait a minimum of 2 hours between creation and joining a multi-tenant organization.'
+      summary: Update multiTenantOrganization
+      description: Update the properties of a multi-tenant organization.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/tenantrelationship-put-multitenantorganization?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/multitenantorganization-update?view=graph-rest-1.0
       operationId: tenantRelationship_UpdateMultiTenantOrganization
       requestBody:
         description: New navigation property values
@@ -39922,11 +39922,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: 'Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn''t included in the response.'
           nullable: true
       additionalProperties:
         type: object

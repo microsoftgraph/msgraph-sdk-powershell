@@ -95,11 +95,11 @@ paths:
     get:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
-      summary: List deviceEnrollmentWindowsHelloForBusinessConfigurations
-      description: List properties and relationships of the deviceEnrollmentWindowsHelloForBusinessConfiguration objects.
+      summary: List deviceEnrollmentLimitConfigurations
+      description: List properties and relationships of the deviceEnrollmentLimitConfiguration objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-onboarding-deviceenrollmentwindowshelloforbusinessconfiguration-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-onboarding-deviceenrollmentlimitconfiguration-list?view=graph-rest-1.0
       operationId: deviceManagement_ListDeviceEnrollmentConfiguration
       parameters:
         - $ref: '#/components/parameters/top'
@@ -176,11 +176,11 @@ paths:
     get:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
-      summary: Get deviceEnrollmentConfiguration
-      description: Read properties and relationships of the deviceEnrollmentConfiguration object.
+      summary: Get deviceEnrollmentPlatformRestrictionsConfiguration
+      description: Read properties and relationships of the deviceEnrollmentPlatformRestrictionsConfiguration object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-onboarding-deviceenrollmentconfiguration-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-onboarding-deviceenrollmentplatformrestrictionsconfiguration-get?view=graph-rest-1.0
       operationId: deviceManagement_GetDeviceEnrollmentConfiguration
       parameters:
         - name: deviceEnrollmentConfiguration-id
@@ -224,11 +224,11 @@ paths:
     patch:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
-      summary: Update deviceEnrollmentPlatformRestrictionsConfiguration
-      description: Update the properties of a deviceEnrollmentPlatformRestrictionsConfiguration object.
+      summary: Update deviceEnrollmentLimitConfiguration
+      description: Update the properties of a deviceEnrollmentLimitConfiguration object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-onboarding-deviceenrollmentplatformrestrictionsconfiguration-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-onboarding-deviceenrollmentlimitconfiguration-update?view=graph-rest-1.0
       operationId: deviceManagement_UpdateDeviceEnrollmentConfiguration
       parameters:
         - name: deviceEnrollmentConfiguration-id
@@ -259,11 +259,11 @@ paths:
     delete:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
-      summary: Delete deviceEnrollmentLimitConfiguration
-      description: Deletes a deviceEnrollmentLimitConfiguration.
+      summary: Delete deviceEnrollmentWindowsHelloForBusinessConfiguration
+      description: Deletes a deviceEnrollmentWindowsHelloForBusinessConfiguration.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-onboarding-deviceenrollmentlimitconfiguration-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-onboarding-deviceenrollmentwindowshelloforbusinessconfiguration-delete?view=graph-rest-1.0
       operationId: deviceManagement_DeleteDeviceEnrollmentConfiguration
       parameters:
         - name: deviceEnrollmentConfiguration-id
