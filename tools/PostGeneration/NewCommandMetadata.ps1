@@ -102,9 +102,15 @@ $ApiVersion | ForEach-Object {
                                 Description     = $_.consentDisplayName
                                 FullDescription = $_.consentDescription
                                 IsAdmin         = $_.IsAdmin
+                                ScopeType       = $_.ScopeType
+                                IsLeastPrivilege = $_.isLeastPrivilege
                             }
                         }
-                        $MappingValue.Permissions = ($Permissions | Sort-Object -Property Name -Unique)
+                        $Permissions = $Permissions | Sort-Object -Property Name -Unique
+                        $Permissions = $Permissions | Sort-Object -Property ScopeType
+                        $Permissions = $Permissions | Sort-Object -Property IsLeastPrivilege
+                        [array]::Reverse($Permissions)
+                        $MappingValue.Permissions = $Permissions
                     }
                     catch {
                         Write-Warning "Failed to fetch permissions: $($PermissionsUrl)?requesturl=$($MappingValue.Uri)&method=$($MappingValue.Method)"
