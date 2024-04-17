@@ -107,5 +107,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Models
         /// Least privilege flag shows whether the permission is the least privilege.
         /// </summary>
         public bool IsLeastPrivilege { get; set; }
+        
+        /// <summary>
+        /// Permission scope type. It can either be delegated or application scope.
+        /// </summary>
+        public string PermissionType { get; set; }
     }
 }
