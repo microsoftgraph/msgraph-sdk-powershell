@@ -4593,7 +4593,7 @@ paths:
       description: The messages in a mailbox or folder. Read-only. Nullable.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/user-list-messages?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0
       operationId: user_ListMessage
       parameters:
         - name: user-id
@@ -4757,11 +4757,11 @@ paths:
     patch:
       tags:
         - users.message
-      summary: Update eventMessage
-      description: Update the properties of an eventMessage object.
+      summary: Update message
+      description: Update the properties of a message object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/eventmessage-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/message-update?view=graph-rest-1.0
       operationId: user_UpdateMessage
       parameters:
         - name: user-id
@@ -4800,11 +4800,11 @@ paths:
     delete:
       tags:
         - users.message
-      summary: Delete eventMessage
-      description: Delete eventMessage.
+      summary: Delete message
+      description: 'Delete a message in the specified user''s mailbox, or delete a relationship of the message. For example, you can delete a specific @-mention of the specified user in the message.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/eventmessage-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/message-delete?view=graph-rest-1.0
       operationId: user_DeleteMessage
       parameters:
         - name: user-id
@@ -4842,7 +4842,7 @@ paths:
       summary: Get media content for the navigation property messages from users
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/user-list-messages?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0
       operationId: user_GetMessagesContent
       parameters:
         - name: user-id

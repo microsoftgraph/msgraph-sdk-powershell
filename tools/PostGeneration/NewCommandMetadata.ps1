@@ -48,7 +48,6 @@ $ApiVersion | ForEach-Object {
         $SplitFileName = $_.BaseName.Split("_")
         $CommandName = (New-Object regex -ArgumentList "Mg").Replace($SplitFileName[0], "-Mg", 1)
         $VariantName = $SplitFileName[1]
-
         if ($_.DirectoryName -match "\\src\\(.*?.)\\") {
             $ModuleName = ($CurrentApiVersion -eq "beta") ? "Beta.$($Matches.1)" : $Matches.1
         }
@@ -64,12 +63,12 @@ $ApiVersion | ForEach-Object {
                 $SegmentBuilder = ""
                 # Trim nested namespace segments.
                 $NestedNamespaceSegments = $Matches.1 -split "/"
-                foreach($Segment in $NestedNamespaceSegments){
+                foreach ($Segment in $NestedNamespaceSegments) {
                     # Remove microsoft.graph prefix and trailing '()' from functions.
-                    $Segment = $segment.Replace("microsoft.graph.","").Replace("()", "")
+                    $Segment = $segment.Replace("microsoft.graph.", "").Replace("()", "")
                     # Get resource object name from segment if it exists. e.g get 'updateAudience' from windowsUpdates.updateAudience
                     $ResourceObj = $Segment.Split(".")
-                    $Segment = $ResourceObj[$ResourceObj.Count-1]       
+                    $Segment = $ResourceObj[$ResourceObj.Count - 1]       
                     $SegmentBuilder += "/$Segment"
                 }
                 $Uri = $Uri -replace [Regex]::Escape($MatchedUriSegment), $SegmentBuilder
@@ -98,13 +97,19 @@ $ApiVersion | ForEach-Object {
                         $PermissionsResponse = Invoke-RestMethod -Uri "$($PermissionsUrl)?requesturl=$($MappingValue.Uri)&method=$($MappingValue.Method)" -ErrorAction SilentlyContinue
                         $PermissionsResponse | ForEach-Object {
                             $Permissions += [PSCustomObject]@{
-                                Name            = $_.value
-                                Description     = $_.consentDisplayName
-                                FullDescription = $_.consentDescription
-                                IsAdmin         = $_.IsAdmin
+                                Name             = $_.value
+                                Description      = $_.consentDisplayName
+                                FullDescription  = $_.consentDescription
+                                IsAdmin          = $_.IsAdmin
+                                PermissionType   = $_.ScopeType
+                                IsLeastPrivilege = $_.isLeastPrivilege
                             }
                         }
-                        $MappingValue.Permissions = ($Permissions | Sort-Object -Property Name -Unique)
+                        $Permissions = $Permissions | Sort-Object -Property Name -Unique
+                        $Permissions = $Permissions | Sort-Object -Property PermissionType
+                        $Permissions = $Permissions | Sort-Object -Property IsLeastPrivilege
+                        [array]::Reverse($Permissions)
+                        $MappingValue.Permissions = $Permissions
                     }
                     catch {
                         Write-Warning "Failed to fetch permissions: $($PermissionsUrl)?requesturl=$($MappingValue.Uri)&method=$($MappingValue.Method)"
