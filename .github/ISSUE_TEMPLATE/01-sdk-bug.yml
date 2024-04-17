@@ -1,0 +1,110 @@
+name: SDK Bug Report
+description: File SDK bug report
+labels: ["type:bug", "status:waiting-for-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Thank you for taking the time to fill out this bug report!**
+        💥Before submitting a new request, please search existing issues to see if an issue already exists.
+        💥You may also check whether you can reproduce this issue using the latest released version of [Microsoft.Graph](https://www.powershellgallery.com/packages/Microsoft.Graph) or [Microsoft.Graph.Beta](https://www.powershellgallery.com/packages/Microsoft.Graph.Beta).
+  - type: textarea
+    id: description
+    attributes:
+      label: Describe the bug
+      description: |
+        Provide a description of the actual behavior observed. If applicable please include any error messages, exception stacktraces or a screenshot.
+      placeholder: I am trying to do [...] but [...]
+    validations:
+      required: true
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Expected behavior
+      description: |
+        A clear and concise description of what you expected to happen.
+      placeholder: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: repro-steps
+    attributes:
+      label: How to reproduce
+      description: |
+        Please include minimal steps to reproduce the problem if possible. E.g.: the smallest possible code snippet; or steps to run project in link above. If possible include text as text rather than screenshots (so it shows up in searches).
+        If there's a link to a public repo where the sample code exists, include it too.
+      placeholder: |
+        1. Execute `-Mg-` with `...`
+        2. See error at `...`
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: SDK Version
+      placeholder: e.g. 5.32.1
+      description: |
+        Version of the SDK with the bug described above.
+          * Please run `Get-Module Microsoft.Graph*` after cmdlet execution and paste the output here.
+          * If a module cannot be installed or imported, please run `Get-Module -ListAvailable` and paste the output.
+    validations:
+      required: false
+  - type: input
+    id: regression
+    attributes:
+      label: Latest version known to work for scenario above?
+      description: |
+        Did this work in a previous build or release of the SDK or API client? If you can try a previous release or build to find out, that can help us narrow down the problem. If you don't know, that's OK.
+      placeholder: version-number
+    validations:
+      required: false
+  - type: textarea
+    id: known-workarounds
+    attributes:
+      label: Known Workarounds
+      description: |
+        Please provide a description of any known workarounds.
+      placeholder: Known Workarounds
+    validations:
+      required: false
+  - type: textarea
+    id: logs
+    attributes:
+      label: Debug output
+      description: |
+       Please copy and paste the output when using the `-Debug` flag. This will be automatically formatted into code, so no need for backticks.
+       Be sure to remove any sensitive information that may be in the logs.
+      value: |
+        <details><summary>Click to expand log</summary>
+        ```
+
+        <Log output here>
+
+        ```
+        </details>
+    validations:
+      required: false
+  - type: textarea
+    id: configuration
+    attributes:
+      label: Configuration
+      description: |
+        Please provide more information on your SDK configuration:
+          * Please run `$PSVersionTable` and paste the output below.
+          * If running the Docker container image, indicate the tag of the image used and the version of Docker engine.
+          * What OS and version, and what distro if applicable (Windows 10, Windows 11, MacOS Catalina, Ubuntu 22.04)?
+          * What is the architecture (x64, x86, ARM, ARM64)?
+          * Do you know whether it is specific to that configuration?
+      placeholder: |
+        - OS:
+        - architecture:
+    validations:
+      required: false
+  - type: textarea
+    id: other-info
+    attributes:
+      label: Other information
+      description: |
+        If you have an idea where the problem might lie, let us know that here. Please include any pointers to code, relevant changes, or related issues you know of.
+      placeholder: Other information
+    validations:
+      required: false
